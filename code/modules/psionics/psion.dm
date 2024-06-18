@@ -35,6 +35,8 @@
 			affected.owner.visible_message(SPAN_DANGER("Nanites inside [affected.owner] devour the ascended flesh!"))
 			qdel(src)
 			return
+		else
+			psion_verb_install()
 	..(affected)
 
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.
@@ -96,6 +98,7 @@
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
+	psion_verb_remove()
 	disabled = TRUE
 	allow_loop = TRUE
 

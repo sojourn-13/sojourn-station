@@ -186,6 +186,11 @@
 	return FALSE
 //ADD "return FALSE" to random_organ_by_process
 
+/mob/living/carbon/human/proc/first_organ_by_process(organ_process)
+	if(organ_list_by_process(organ_process).len)
+		return organ_list_by_process(organ_process)[1]
+	return FALSE
+
 // basically has_limb()
 /mob/living/carbon/human/has_appendage(var/appendage_check)	//returns TRUE if found, type of organ modification if limb is robotic, FALSE if not found
 
