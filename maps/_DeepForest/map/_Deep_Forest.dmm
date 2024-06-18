@@ -1890,6 +1890,15 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"bxA" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "bxF" = (
 /obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
@@ -2228,7 +2237,8 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "1-2";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
@@ -3619,6 +3629,15 @@
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
+"cKJ" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "cKX" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/wood/wild4,
@@ -3763,6 +3782,22 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"cPu" = (
+/obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	dir = 1;
+	icon_state = "term"
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "cPv" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -7011,6 +7046,21 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"fsc" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "fsd" = (
 /obj/random/closet,
 /obj/random/pouch/hardcase/low_chance,
@@ -8554,9 +8604,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper)
 "gAe" = (
-/obj/structure/catwalk{
-	icon_state = "catwalk12-0"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -8567,6 +8614,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -13028,6 +13078,13 @@
 /obj/item/storage/toolbox/emergency,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"jSM" = (
+/obj/item/circuitboard/apc,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "jTE" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/small{
@@ -14947,10 +15004,6 @@
 	},
 /obj/item/device/radio/headset{
 	icon_state = "bs_bowman_headset"
-	},
-/obj/item/clothing/accessory/ranks/brigadier{
-	name = "First Officer shoulderboards";
-	desc = "Red, gold, and silver shoulderboards denoting the rank of a WhiteGuard First Officer"
 	},
 /obj/item/clothing/head/exceslior/excelsior_officer{
 	name = "officer cap";
@@ -16907,6 +16960,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/random/mob/spiders,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -17533,7 +17587,9 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/zoo)
 "npU" = (
-/obj/machinery/power/smes,
+/obj/item/circuitboard/smes,
+/obj/item/stock_parts/smes_coil,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -18048,7 +18104,9 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
 	})
 "nLB" = (
-/obj/structure/table/steel_reinforced,
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -22534,6 +22592,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -22880,10 +22939,7 @@
 	})
 "riC" = (
 /obj/structure/cable,
-/obj/machinery/power/apc{
-	name = "South APC";
-	pixel_y = -28
-	},
+/obj/item/cell/large/high,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -24941,6 +24997,13 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"sOh" = (
+/obj/item/frame/apc,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "sOp" = (
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/food/snacks/openable/syndicake{
@@ -25612,6 +25675,14 @@
 /obj/random/tool_upgrade/rare,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"tpK" = (
+/obj/structure/catwalk,
+/obj/random/mob/spiders/low_chance,
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "tpT" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
@@ -30334,6 +30405,13 @@
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"xfI" = (
+/obj/random/mob/spiders,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "xgb" = (
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/wall/jungle,
@@ -66326,7 +66404,7 @@ wpC
 jrn
 jrn
 jrn
-jrn
+bxA
 jbU
 jbU
 uVu
@@ -66739,11 +66817,11 @@ jbU
 pZg
 jbU
 hLR
-gEz
+fsc
 wpC
 jrn
-jrn
-jrn
+bxA
+tpK
 jrn
 jbU
 jbU
@@ -67367,11 +67445,11 @@ pZg
 jbU
 hbF
 gEz
-wpC
+xfI
 jrn
 jrn
 jrn
-jrn
+bxA
 jbU
 jbU
 fVR
@@ -67993,11 +68071,11 @@ uVu
 pZg
 jbU
 piq
-gEz
+fsc
 wpC
 jrn
 jrn
-jrn
+tpK
 jrn
 jbU
 jbU
@@ -68205,7 +68283,7 @@ hLR
 gEz
 wpC
 jrn
-jrn
+bxA
 jrn
 jrn
 jbU
@@ -68834,7 +68912,7 @@ pjt
 hXK
 lOX
 qUy
-hLR
+sOh
 jbU
 jbU
 mbx
@@ -69041,7 +69119,7 @@ jbU
 gqZ
 jbU
 npU
-cxO
+cPu
 mUC
 riC
 jbU
@@ -69252,7 +69330,7 @@ jbU
 npU
 cxO
 qXw
-hLR
+jSM
 jbU
 jbU
 wNT
@@ -69665,11 +69743,11 @@ rcD
 nLB
 nLB
 nLB
+cKJ
 nLB
 nLB
 nLB
-nLB
-nLB
+cKJ
 nLB
 nok
 rcD
