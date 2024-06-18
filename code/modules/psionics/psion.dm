@@ -13,6 +13,7 @@
 			var/obj/item/organ/internal/psionic_tumor/B = new /obj/item/organ/internal/psionic_tumor
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 /mob/proc/make_psion_psych()
 	var/mob/living/carbon/human/user = src
@@ -25,6 +26,7 @@
 			var/obj/item/organ/internal/psionic_tumor/psychiatrist/B = new /obj/item/organ/internal/psionic_tumor/psychiatrist
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 //Special proc call for psions to check for nanogate
 /obj/item/organ/internal/psionic_tumor/replaced(obj/item/organ/external/affected)
@@ -35,8 +37,6 @@
 			affected.owner.visible_message(SPAN_DANGER("Nanites inside [affected.owner] devour the ascended flesh!"))
 			qdel(src)
 			return
-		else
-			psion_verb_install()
 	..(affected)
 
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.

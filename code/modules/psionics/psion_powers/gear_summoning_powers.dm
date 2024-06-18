@@ -214,7 +214,7 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		var/obj/item/gun/kinetic_blaster/KB = new(src, user, src)
+		var/obj/item/gun/kinetic_blaster/KB = new(src, user, PT)
 		user.visible_message(
 			"[user] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"
@@ -233,7 +233,7 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		var/obj/item/gun/kinetic_blaster/cryo/KB = new(src, user, src)
+		var/obj/item/gun/kinetic_blaster/cryo/KB = new(src, user, PT)
 		user.visible_message(
 			"[user] clenches their hand into a fist, electric energy crackling around it before a cryo-kinetic orb forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a cryo-kinetic orb forms over it!"
@@ -251,7 +251,7 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		var/obj/item/gun/kinetic_blaster/pyro/KB = new(src, user, src)
+		var/obj/item/gun/kinetic_blaster/pyro/KB = new(src, user, PT)
 		user.visible_message(
 			"[user] clenches their hand into a fist, electric energy crackling around it before a pyro-kinetic orb forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a pyro-kinetic orb forms over it!"
@@ -269,7 +269,7 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		var/obj/item/gun/kinetic_blaster/electro/KB = new(src, user, src)
+		var/obj/item/gun/kinetic_blaster/electro/KB = new(src, user, PT)
 		user.visible_message(
 			"[user] clenches their hand into a fist, electric energy crackling around it before an electro-kinetic orb forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before an electro-kinetic orb forms over it!"
