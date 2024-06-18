@@ -2436,7 +2436,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/computer/prisoner,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/command/cro)
 "azs" = (
 /obj/machinery/camera/network/colony_surface{
@@ -2810,6 +2810,10 @@
 "aCL" = (
 /obj/machinery/door/airlock/maintenance_rnd{
 	req_access = list(5)
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
@@ -10569,16 +10573,10 @@
 	name = "Science Expedition prep"
 	})
 "ckH" = (
-/obj/structure/table/standard,
-/obj/item/device/camera,
-/obj/item/folder/black{
-	pixel_x = 6
+/obj/structure/bed/chair{
+	dir = 4
 	},
-/obj/item/folder/blue,
-/obj/item/folder/red{
-	pixel_x = -6
-	},
-/turf/simulated/floor/carpet/blucarpet,
+/turf/simulated/floor/tiled/steel/violetcorener,
 /area/nadezhda/rnd/rbreakroom)
 "ckN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -32950,10 +32948,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/detectives_office)
 "gIk" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(33)
-	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -32966,6 +32960,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chemistry Lab";
+	req_access = list(33)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "gIr" = (
@@ -33824,6 +33822,10 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/lab)
 "gQX" = (
@@ -35209,8 +35211,17 @@
 	name = "Residential District Maintenance"
 	})
 "hfO" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/rnd/rbreakroom)
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/medical/chemistry)
 "hfY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/monofloor{
@@ -48811,7 +48822,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "jPJ" = (
 /obj/machinery/computer/mecha,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/command/cro)
 "jPM" = (
 /obj/structure/flora/small/busha2,
@@ -49872,6 +49883,10 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/teleporter)
 "kbF" = (
@@ -51499,6 +51514,10 @@
 /obj/machinery/door/airlock/glass_research{
 	name = "Research and Development";
 	req_access = list(5)
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
@@ -64912,10 +64931,8 @@
 	name = "Residential District Maintenance"
 	})
 "neL" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/blucarpet,
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/rbreakroom)
 "nfc" = (
 /obj/machinery/firealarm{
@@ -65251,6 +65268,10 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/lab)
 "niH" = (
@@ -72497,6 +72518,12 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
+"oAM" = (
+/obj/machinery/door/airlock/glass{
+	name = "Break Room"
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/rnd/rbreakroom)
 "oAR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -77628,7 +77655,7 @@
 	})
 "pBD" = (
 /obj/machinery/computer/robotics,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/command/cro)
 "pBF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -79144,10 +79171,16 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm4)
 "pQG" = (
-/obj/structure/bed/chair{
-	dir = 4
+/obj/structure/table/standard,
+/obj/item/device/camera,
+/obj/item/folder/black{
+	pixel_x = 6
 	},
-/turf/simulated/floor/tiled/steel/violetcorener,
+/obj/item/folder/blue,
+/obj/item/folder/red{
+	pixel_x = -6
+	},
+/turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/rnd/rbreakroom)
 "pQH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -84671,6 +84704,10 @@
 /obj/machinery/door/airlock/maintenance_rnd{
 	req_access = list(5)
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/command/teleporter)
 "qWf" = (
@@ -85108,6 +85145,10 @@
 	id = "RD"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/cro)
 "raV" = (
@@ -88817,10 +88858,7 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "rNy" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/violetcorener,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/rnd/rbreakroom)
 "rNB" = (
 /obj/structure/table/rack/shelf,
@@ -89654,10 +89692,6 @@
 	name = "Residential District Maintenance"
 	})
 "rXm" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chem/Viro Labs";
-	req_access = list(5)
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -89674,6 +89708,10 @@
 	layer = 2.6;
 	name = "Medbay Total Lockdown";
 	opacity = 0
+	},
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chem/Viro Labs";
+	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
@@ -93998,6 +94036,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "sOH" = (
@@ -99597,6 +99639,10 @@
 "tUE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/window_lwall_spawn/smartspawnplasma,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/teleporter)
 "tUF" = (
@@ -100195,7 +100241,7 @@
 /area/nadezhda/hallway/surface/section1)
 "uaT" = (
 /obj/machinery/computer/aifixer,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/command/cro)
 "uaY" = (
 /obj/machinery/vending/hydronutrients,
@@ -100530,6 +100576,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/disposaldrop)
+"uef" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/violetcorener,
+/area/nadezhda/rnd/rbreakroom)
 "ues" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -107652,11 +107704,15 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vwZ" = (
-/obj/machinery/door/airlock/glass{
-	name = "Break Room"
+/obj/machinery/button/remote/airlock{
+	dir = 4;
+	id = "researchlockdown";
+	name = "Research Wing Lockdown";
+	req_access = list(30);
+	pixel_y = 10
 	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/rnd/rbreakroom)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/cro)
 "vxh" = (
 /obj/machinery/vending/boozeomat{
 	req_access = list(25)
@@ -108460,6 +108516,10 @@
 	req_access = list(5)
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/rnd/xenobiology)
 "vGk" = (
@@ -109083,8 +109143,10 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vLU" = (
-/obj/machinery/vending/snack,
-/turf/simulated/floor/tiled/white/monofloor,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/rnd/rbreakroom)
 "vMe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -121538,6 +121600,10 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	name = "RESEARCH LOCKDOWN";
+	id = "researchlockdown"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/teleporter)
 "ykF" = (
@@ -136064,7 +136130,7 @@ nZB
 cFw
 rlJ
 rlJ
-rlJ
+vwZ
 rlJ
 rlJ
 rlJ
@@ -176458,7 +176524,7 @@ fws
 ebY
 dSd
 gIk
-enD
+hfO
 fws
 uhB
 btQ
@@ -176650,7 +176716,7 @@ dQp
 hdq
 hdq
 hdq
-hfO
+rNy
 bcl
 mpA
 txJ
@@ -176849,10 +176915,10 @@ nTx
 bcQ
 txJ
 apk
-pQG
+ckH
 fLc
 tgU
-hfO
+rNy
 uMy
 lmZ
 txJ
@@ -177051,7 +177117,7 @@ uRs
 tUa
 txJ
 jHF
-ckH
+pQG
 eMB
 vwn
 xaP
@@ -177253,7 +177319,7 @@ oxA
 pxF
 txJ
 aVR
-neL
+vLU
 hVu
 heC
 hdq
@@ -177657,16 +177723,16 @@ leS
 ekq
 txJ
 oMe
-rNy
+uef
 hdq
-vLU
+neL
 hdq
 jOo
 iZg
 txJ
 qcz
 vIr
-enD
+hfO
 ivk
 uYv
 kYu
@@ -177862,7 +177928,7 @@ txJ
 txJ
 txJ
 mrK
-vwZ
+oAM
 xKB
 mrK
 txJ
