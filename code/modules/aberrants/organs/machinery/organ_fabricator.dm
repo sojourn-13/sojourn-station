@@ -103,13 +103,32 @@
 
 /obj/machinery/autolathe/organ_fabricator/attackby(obj/item/I, mob/user)
 	// Warn about deconstruction
+
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
 	if(panel_open)
-		var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING), src)
-		if(tool_type == QUALITY_PRYING)
-			var/starting_loc = user.loc		// Save location so user can't magically deconstruct it from a distance
-			var/choice = alert("If you deconstruct this machine, the biomatter inside will be destroyed. Are you sure you want to continue?", "Deconstruction Warning", "Deconstruct", "Leave it alone")
-			if(choice != "Deconstruct" || starting_loc != user.loc)
+		usable_qualities.Add(QUALITY_PRYING)
+
+	if(usable_qualities)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+			if(QUALITY_PRYING)
+				var/starting_loc = user.loc		// Save location so user can't magically deconstruct it from a distance
+				var/choice = alert("If you deconstruct this machine, the biomatter inside will be destroyed. Are you sure you want to continue?", "Deconstruction Warning", "Deconstruct", "Leave it alone")
+				if(choice != "Deconstruct" || starting_loc != user.loc)
+					return TRUE
+				..()
 				return
+
+			if(QUALITY_SCREW_DRIVING)
+				var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+					panel_open = !panel_open
+					to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
+				return TRUE
+
+			if(ABORT_CHECK)
+				return
+
 
 	..()
 
