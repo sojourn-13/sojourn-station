@@ -96,8 +96,8 @@
 
 // Proc when attacking the generator with something, used for upgrades, inserting fuel cells & wrenching it to the ground
 /obj/machinery/power/hydrogen_gen/attackby(obj/item/W, mob/user)
-
-	if(default_deconstruction(W, user))
+	if(active)
+		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
 		return
 
 	if(default_part_replacement(W, user))
@@ -108,26 +108,32 @@
 		updateDialog()
 		return
 
-	if(active)
-		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
-	else
-		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
-		var/tool_type = W.get_tool_type(user, usable_qualities, src)
-		switch(tool_type)
-			if(QUALITY_BOLT_TURNING)
-				if(istype(get_turf(src), /turf/space) && !anchored)
-					to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
-					return
-				if(W.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [W]."))
-					anchored = !anchored
-					if(anchored)
-						connect_to_network()
-					else
-						disconnect_from_network()
-
-			if(ABORT_CHECK)
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_PRYING)
+	var/tool_type = W.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+		if(QUALITY_BOLT_TURNING)
+			if(istype(get_turf(src), /turf/space) && !anchored)
+				to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
 				return
+			if(W.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				to_chat(user, SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [W]."))
+				anchored = !anchored
+				if(anchored)
+					connect_to_network()
+				else
+					disconnect_from_network()
+
+		if(QUALITY_SCREW_DRIVING)
+			default_deconstruction(W, user)
+			return
+
+		if(QUALITY_PRYING)
+			default_deconstruction(W, user)
+			return
+
+		if(ABORT_CHECK)
+			return
+
 
 	..()
 
