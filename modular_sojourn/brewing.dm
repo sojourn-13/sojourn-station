@@ -6,334 +6,100 @@
 	density = TRUE
 	throwpass = TRUE
 	climbable = TRUE
-	reagent_flags = OPENCONTAINER | NO_REACT	//Lids open, we dont react to prevent some conflicting requrements
-	var/ready_for_bottleing = FALSE				//After brewing we can sell or bottle, this is for the latter
-	var/brewing = FALSE							//If we currently brewing a booze or not
-	var/brew_to									//What we are making
-	var/fake_name								//Used for Exsamine
+	reagent_flags = OPENCONTAINER | NO_REACT			//Lids open, we dont react to prevent some conflicting requrements
+	var/ready_for_bottleing = FALSE						//After brewing we can sell or bottle, this is for the latter
+	var/brewing = FALSE									//If we currently brewing a booze or not
 	//Needed crops
-	var/needed_crop								//crop by kitch tag needed
-	var/needed_crop_amount						//crop amount need
-	var/stored_crop = 0							//how much of needed crop is stored
-	var/needed_crop_one							//a second crop that would be needed - kitch tag
-	var/needed_crop_one_amount					//a second crop needed amount
-	var/stored_crop_one = 0						//how much of second needed crop is stored
-	var/needed_crop_two							//a third crop that would be needed - kitch tag
-	var/needed_crop_two_amount					//a third crop needed amount
-	var/stored_crop_two = 0						//how much of third needed crop is stored
-	//Needed Chems
-	var/needed_water							//how much water we need, should need a lot i.e 120u
-	var/needed_chem_one							//a chemical that would be needed
-	var/needed_chem_one_amount					//a chemical needed amount
-	var/needed_chem_two							//a second chemical that would be needed
-	var/needed_chem_two_amount					//a second chemical needed amount
-	//Misc after the fact stuff
-	var/brewed_amount							//how many bottles we give
-	var/brew_timer								//How *long* it takes to brew a booze (in seconds)
-	var/price_tag_setter						//For selling pre-brewed kegs
-
+	var/list/recipe_crop_stocks							//crop by kitch tag needed
 	price_tag = 150
 
-/obj/item/bottle_kit
-	name = "Bottling Kit"
-	desc = "A box that holds glasses fabricators, lables, caps and quarks ready for home brewing and bottling."
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "bottler_box"
-	w_class = ITEM_SIZE_NORMAL
-	matter = list(MATTER_STEEL = 10, MATTER_GLASS = 10)
+	var/datum/brewing_product/selected_recipe = null	//The repice we have seleceted to brew! woo
 
 /obj/structure/fermentation_keg/Initialize()
 	. = ..()
 	create_reagents(240) //on agv it should be 120u for water then rest can be other needed chemicals
+	recipe_crop_stocks = list()
 
 /obj/structure/fermentation_keg/attack_hand(mob/user as mob)
-	if(!brew_to)
-		shopping_run(user, 1)
-		return
-
-	if(ready_for_bottleing)
-		shopping_run(user, 2)
-
+	shopping_run(user)
 
 	if(try_n_brew(user))
 		start_brew()
 	..()
 
 /obj/structure/fermentation_keg/attackby(obj/item/I, mob/user)
+	var/produce_list
+	var/obj/item/storage/bag/produce/POUCH
+
 	if(istype(I, /obj/item/bottle_kit))
-		bottle()
+		var/obj/item/bottle_kit/BK = I
+		bottle(BK.glass_colour)
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/grown))
-		var/obj/item/reagent_containers/food/snacks/grown/G = I
-		if(G.seed.kitchen_tag == needed_crop)
-			stored_crop += 1
-			qdel(G)
-		if(G.seed.kitchen_tag == needed_crop_one)
-			stored_crop_one += 1
-			qdel(G)
-		if(G.seed.kitchen_tag == needed_crop_two)
-			stored_crop_two += 1
-			qdel(G)
+		produce_list = list(I)
 
 	if(istype(I, /obj/item/storage/bag/produce))
-		var/obj/item/storage/bag/produce/POUCH = I
-		for(var/obj/item/reagent_containers/food/snacks/grown/G in POUCH.contents)
-			if(G.seed.kitchen_tag == needed_crop)
-				stored_crop += 1
-				qdel(G)
-			if(G.seed.kitchen_tag == needed_crop_one)
-				stored_crop_one += 1
-				qdel(G)
-			if(G.seed.kitchen_tag == needed_crop_two)
-				stored_crop_two += 1
-				qdel(G)
-		POUCH.refresh_all()
+		POUCH = I
+		produce_list = POUCH.contents
+
+	for(var/obj/item/reagent_containers/food/snacks/grown/G in produce_list)
+		if(G.seed.kitchen_tag in selected_recipe?.needed_crops)
+			var/amount = recipe_crop_stocks[G.seed.kitchen_tag] || 0
+			recipe_crop_stocks[G.seed.kitchen_tag] = amount + 1
+			qdel(G)
+
+	POUCH?.refresh_all()
 
 	..()
 
 /obj/structure/fermentation_keg/examine(mob/user)
 	..()
-	if(brew_to)
-		if(!fake_name)
-			fake_name = "Unknown brew"
 
-		var/message = "Currently making: [fake_name].\n"
-		//Water
-		if(needed_water)
-			message += "Water Required: [needed_water], current water level is [reagents.get_reagent_amount("water")].\n"
+	if(selected_recipe)
+		var/message = "Currently making: [selected_recipe.display_name].\n"
 
-		//Crops
-		if(needed_crop)
-			message += "Crop Needed: [needed_crop] x [needed_crop_amount], current amount of [needed_crop] is [stored_crop].\n"
-		if(needed_crop_one)
-			message += "Second Crop Needed: [needed_crop_one] x [needed_crop_one_amount], current amount of [needed_crop_one] is [stored_crop_one].\n"
-		if(needed_crop_two)
-			message += "Third Crop Needed: [needed_crop_two] x [needed_crop_two_amount], current amount of [needed_crop_two] is [stored_crop_two].\n"
+		for(var/required_chem in selected_recipe.needed_chems)
+			message += "Reagent Needed: [get_reagent_name_by_id(required_chem)] [selected_recipe.needed_chems[required_chem]].\n"
 
-		//Chems
-		if(needed_chem_one)
-			message += "Reagent Needed: [get_reagent_name_by_id(needed_chem_one)] in a amount of at least [needed_chem_one_amount].\n"
-		if(needed_chem_two)
-			message += "Second Reagent Needed: [get_reagent_name_by_id(needed_chem_two)] in a amount of at least [needed_chem_two_amount].\n"
+		for(var/required_crop in selected_recipe.needed_crops)
+			message += "Crop Needed: [required_crop] [selected_recipe.needed_crops[required_crop]], Current Amount: [recipe_crop_stocks[required_crop]].\n"
 
 		//time
-		if(brew_timer)
-			if(brew_timer >= 60)
-				message += "Once set, will take [brew_timer/60] Minutes.\n"
+		if(selected_recipe.brew_timer)
+			if(selected_recipe.brew_timer >= 600)
+				message += "Once set, will take [selected_recipe.brew_timer/600] Minutes.\n"
 			else
-				message += "Once set, will take [brew_timer] Seconds.\n"
+				message += "Once set, will take [selected_recipe.brew_timer] Seconds.\n"
 
 		//How many are brewed
-		if(brewed_amount)
-			message += "Will produce [brewed_amount] bottles when finished.\n"
+		if(selected_recipe.brewed_amount)
+			message += "Will produce [selected_recipe.brewed_amount] bottles when finished.\n"
 
 		to_chat(user, "<span class='info'>[message]</span>")
 
-/obj/structure/fermentation_keg/proc/shopping_run(mob/user as mob, fermentation = 1)
+/obj/structure/fermentation_keg/proc/shopping_run(mob/user as mob)
 	if(brewing)
 		return
 
 	var/list/options = list()
-	if(fermentation == 1)
-		options["Beer"] = "beer"
-		options["Wine"] = "wine"
-		options["Rum"] = "rum"
-		options["Ale"] = "ale"
-		options["Vodka"] = "vodka"
-		options["Whiskey"] = "whiskey"
-	if(fermentation == 2)
-		switch(brew_to)
-			if("beer")
-				options["Special Sleepy Brew"] = "beer2"
-			if("vodka")
-				options["Kvass"] = "Kvass"
-			if("wine")
-				options["Warlock Velvet"] = "pwine"
-				//options["Cahors Wine"] = "ntcahors"
-				options["Red Candy Liquor"] = "redcandyliquor" //Its a wine
+	for(var/path in typesof(/datum/brewing_product) - /datum/brewing_product)
+		var/datum/brewing_product/recipe = path
+		var/prereq = initial(recipe.prerequisite)
+		if((!ready_for_bottleing && prereq == null) || (selected_recipe?.reagent_to_brew == prereq && ready_for_bottleing))
+			options[initial(recipe.display_name)] = recipe
 
-
-	if(!options.len)
-		to_chat(user, "<span class='info'>[brew_to] can not be processed further.</span>")
+	if(options.len == 0)
+		to_chat(user, "Their is no further brewing to be done, clear this barrel out or sell it.")
 		return
 
 	var/choice = input(user,"What brew do you want to make?") as null|anything in options
 
-	var/shopping = options[choice]
+	if(!choice)
+		return
 
-	if(shopping)
-		clear_out(TRUE)
+	var/choice_to_spawn = options[choice]
 
-	//Little long but at lest its clean and easy to read
-	switch(shopping)
-		if("beer")
-			brew_to = "beer"
-			fake_name = "beer"
-			needed_water = 120
-			needed_crop = "wheat"
-			needed_crop_amount = 40
-			needed_crop_one = "poppy" //Hopps
-			needed_crop_one_amount = 5
-			price_tag_setter = 1750
-			brew_timer = 120 //2 mins
-			brewed_amount = 12 //12 pack
-
-		if("beer2")
-			brew_to = "beer2"
-			fake_name = "sleepy beer"
-			needed_water = 60
-			needed_crop = "wheat"
-			needed_crop_amount = 10
-			needed_crop_one = "poppy" //Hopps
-			needed_crop_one_amount = 5
-			//chems
-			needed_chem_one = "chloralhydrate"
-			needed_chem_one_amount = 5
-			price_tag_setter = 2250
-			brew_timer = 120 //2 mins
-			brewed_amount = 6 //6 pack
-
-		if("wine")
-			brew_to = "wine"
-			fake_name = "wine"
-			needed_water = 160
-			needed_crop = "grapes"
-			needed_crop_amount = 80
-			needed_crop_one = "towercap"
-			needed_crop_one_amount = 5
-			//chems
-			needed_chem_one = "sugar"
-			needed_chem_one_amount = 15
-			price_tag_setter = 3000
-			brew_timer = 480 //8 mins
-			brewed_amount = 2 //2 pack
-
-		if("pwine")
-			brew_to = "pwine"
-			fake_name = "fungal wine (poison)"
-			needed_water = -1
-			needed_crop = "grapes"
-			needed_crop_amount = 10
-			needed_crop_one = "towercap"
-			needed_crop_one_amount = 5
-			needed_crop_two = "plumphelmet"
-			needed_crop_two_amount = 5
-			//chems
-			needed_chem_one = "amatoxin"
-			needed_chem_one_amount = 15
-			price_tag_setter = 4000
-			brew_timer = 960 //16 mins
-			brewed_amount = 1 //1 pack
-
-		if("redcandyliquor")
-			brew_to = "redcandyliquor"
-			fake_name = "red candy wine"
-			needed_water = -1
-			needed_crop = "grapes"
-			needed_crop_amount = 10
-			needed_crop_one = "sunflowers"
-			needed_crop_one_amount = 5
-			needed_crop_two = "harebells"
-			needed_crop_two_amount = 5
-			//chems
-			needed_chem_one = "sugar"
-			needed_chem_one_amount = 15
-			price_tag_setter = 4000
-			brew_timer = 960 //16 mins
-			brewed_amount = 1 //1 pack
-
-		if("ntcahors")
-			brew_to = "ntcahors"
-			fake_name = "blessed wine"
-			needed_water = -1
-			needed_crop = "greengrapes"
-			needed_crop_amount = 30
-			needed_crop_one = "sugarcane"
-			needed_crop_one_amount = 25
-			//chems
-			needed_chem_one = "carbon"
-			needed_chem_one_amount = 120
-			needed_chem_two = "holywater"
-			needed_chem_two_amount = 120
-			price_tag_setter = 6000
-			brew_timer = 3600 //1 hour
-			brewed_amount = 1 //1 pack
-
-		if("rum")
-			brew_to = "rum"
-			fake_name = "rum"
-			needed_water = 120
-			needed_crop = "sugarcane"
-			needed_crop_amount = 60
-			needed_crop_one = "towercap"
-			needed_crop_one_amount = 5
-			//chems
-			needed_chem_one = "sodiumchloride"
-			needed_chem_one_amount = 5
-			price_tag_setter = 2000
-			brew_timer = 420 //7 mins
-			brewed_amount = 4 //4 pack
-
-		if("ale")
-			brew_to = "ale"
-			fake_name = "ale"
-			needed_water = 120
-			needed_crop = "wheat"
-			needed_crop_amount = 60
-			needed_crop_one = "towercap"
-			needed_crop_one_amount = 5
-			needed_crop_two = "poppy"
-			needed_crop_two_amount = 25
-			//chems
-			needed_chem_one = "honey"
-			needed_chem_one_amount = 5
-			price_tag_setter = 4000
-			brew_timer = 840 //14 mins
-			brewed_amount = 12 //12 pack
-
-		//Fast n cheap
-		if("vodka")
-			brew_to = "vodka"
-			fake_name = "vodka"
-			needed_water = 80
-			needed_crop = "potato"
-			needed_crop_amount = 30
-			needed_crop_one = "corn"
-			needed_crop_one_amount = 15
-			price_tag_setter = 1000
-			brewed_amount = 4 //4 pack
-			brew_timer = 60 //1 mins
-
-		if("Kvass")
-			brew_to = "Kvass"
-			fake_name = "kvass"
-			needed_water = 200
-			needed_crop = "wheat"
-			needed_crop_amount = 30
-			price_tag_setter = 1200
-			brewed_amount = 3 //3 pack
-			brew_timer = 180 //3 mins
-
-		if("whiskey")
-			brew_to = "whiskey"
-			fake_name = "whiskey"
-			needed_water = 120
-			needed_crop = "wheat"
-			needed_crop_amount = 40
-			needed_crop_one = "towercap" //For that iTs AgEd iN aN OAk BaRrEl
-			needed_crop_one_amount = 5
-			price_tag_setter = 2000
-			brew_timer = 1200 //20 mins, whiskey takes long to be done
-			brewed_amount = 10 //10 pack
-
-//Nom nom nom, so if the person is mass making we dont cheat them out of crops as much
-/obj/structure/fermentation_keg/proc/consume_consume_consume_consume_consume_consume_consume_consume()
-	if(reagents)
-		//consume consume consume consume
-		reagents.clear_reagents()
-	stored_crop -= needed_crop_amount
-	stored_crop_one -= needed_crop_one_amount
-	stored_crop_two -= needed_crop_two_amount
+	selected_recipe = new choice_to_spawn
 
 //Remove only chemicals
 /obj/structure/fermentation_keg/proc/clear_out_chemicals()
@@ -352,29 +118,19 @@
 	if(reagents)
 		reagents.clear_reagents()
 
-	if(forceful)
-		brew_to = null
-
 	ready_for_bottleing = FALSE
-	fake_name = null
 	icon_state = "barrel_tapless_open"
 
-	pitty_system(needed_crop, stored_crop)
-	stored_crop = 0
-	needed_crop = null
-	needed_crop_amount = 0
+	for(var/crop in recipe_crop_stocks)
+		pitty_system(crop, recipe_crop_stocks[crop])
 
-	pitty_system(needed_crop_one, stored_crop_one)
-	stored_crop_one = 0
-	needed_crop_one = null
-	needed_crop_one_amount = 0
+	recipe_crop_stocks.Cut()
 
-	pitty_system(needed_crop_two, stored_crop_two)
-	stored_crop_two = 0
-	needed_crop_two = null
-	needed_crop_two_amount = 0
-	needed_water = 0
 	price_tag = 150
+
+	if(forceful)
+		selected_recipe = null
+
 	return TRUE
 
 //For returning plants that are leftover
@@ -416,120 +172,69 @@
 
 /obj/structure/fermentation_keg/proc/start_brew()
 	brewing = TRUE
-	consume_consume_consume_consume_consume_consume_consume_consume()
-	addtimer(CALLBACK(src, .proc/end_brew), brew_timer SECONDS)
+
+	for(var/G in selected_recipe.needed_crops)
+		var/amount = recipe_crop_stocks[G] || 0
+		recipe_crop_stocks[G] = amount - selected_recipe.needed_crops[G]
+
+	if(reagents)
+		//consume consume consume consume
+		reagents.clear_reagents()
+
+	addtimer(CALLBACK(src, .proc/end_brew), selected_recipe.brew_timer)
 	icon_state = "barrel_tapless"
 
 /obj/structure/fermentation_keg/proc/end_brew()
 	icon_state = "barrel_tapless_ready"
 	ready_for_bottleing = TRUE
 	brewing = FALSE
-	price_tag = price_tag_setter
+	price_tag = selected_recipe.price_tag_setter
 
 
 /obj/structure/fermentation_keg/proc/try_n_brew(mob/user)
-	if(!brew_to)
+	var/ready = TRUE
+	if(!selected_recipe)
 		if(user)
 			to_chat(user, SPAN_NOTICE("You need to set a booze to brew!"))
-		return FALSE
+		ready = FALSE
 
 	if(brewing)
 		if(user)
 			to_chat(user, SPAN_NOTICE("This keg is already brewing a mix!"))
-		return FALSE
-
-
-	if(!water_check(user))
-		return FALSE
+		ready = FALSE
 
 	//Crops
-	if(needed_crop)
-		if(needed_crop_amount > stored_crop)
+	for(var/needed_crop in selected_recipe.needed_crops)
+		if(recipe_crop_stocks[needed_crop]<selected_recipe.needed_crops[needed_crop])
 			if(user)
 				to_chat(user, SPAN_NOTICE("This keg lacks [needed_crop]!"))
-			return FALSE
+				ready = FALSE
 
-	if(needed_crop_one)
-		if(needed_crop_one_amount > stored_crop)
+
+	for(var/required_chem in selected_recipe.needed_chems)
+		if(selected_recipe.needed_chems[required_chem]>reagents.get_reagent_amount(required_chem))
 			if(user)
-				to_chat(user, SPAN_NOTICE("This keg lacks [needed_crop_one]!"))
-			return FALSE
-	if(needed_crop_two)
-		if(needed_crop_two_amount > stored_crop)
-			if(user)
-				to_chat(user, SPAN_NOTICE("This keg lacks [needed_crop_two]!"))
-			return FALSE
-	//Chems
-	if(needed_chem_one)
-		var/chem_one_has = reagents.get_reagent_amount("[needed_chem_one]")
-		if(needed_chem_one_amount > chem_one_has)
-			if(user)
-				to_chat(user, SPAN_NOTICE("This keg lacks [get_reagent_name_by_id(needed_chem_one)]!"))
-			return FALSE
+				to_chat(user, SPAN_NOTICE("The keg's unable to brew well lacking [required_chem]!"))
+				ready = FALSE
 
-	if(needed_chem_two)
-		var/chem_one_has = reagents.get_reagent_amount("[needed_chem_two]")
-		if(needed_chem_one_amount > chem_one_has)
-			if(user)
-				to_chat(user, SPAN_NOTICE("This keg lacks [get_reagent_name_by_id(needed_chem_two)]!"))
-			return FALSE
+	return ready
 
-	return TRUE
+/obj/structure/fermentation_keg/proc/bottle(glass_colour)
+	if(selected_recipe.reagent_to_brew && ready_for_bottleing)
+		if(!glass_colour)
+			glass_colour = "brew_bottle"
 
-//returns eather true or false, checks if we have the required water amount
-/obj/structure/fermentation_keg/proc/water_check(mob/user)
-	if(!needed_water || 0 >= needed_water)
-		return TRUE
-	var/water_has = 0
-	if(reagents)
-		water_has = reagents.get_reagent_amount("water")
-		if(water_has >= needed_water)
-			return TRUE
-	if(user)
-		to_chat(user, SPAN_NOTICE("\The [src] needs at least [needed_water] units of water, currently only [water_has]!"))
-	return FALSE
-
-
-/obj/structure/fermentation_keg/proc/bottle()
-	if(brew_to && ready_for_bottleing)
-		var/bottles
-		var/able = FALSE
-		switch(brew_to)
-			if("beer")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/small/beer
-			if("beer2")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/small/beer_two
-			if("wine")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/wine
-			if("redcandywine")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/redcandywine
-			if("pwine")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/pwine
-			if("ntcahors")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/ntcahors
-			if("vodka")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/vodka
-			if("Kavss")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/small/kvass
-			if("rum")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/rum
-			if("ale")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/small/ale
-			if("whiskey")
-				bottles = /obj/item/reagent_containers/food/drinks/bottle/whiskey
-
-
-		if(bottles)
-			able = TRUE
-
-		if(able)
-			ready_for_bottleing = FALSE
-			brewing = FALSE
-			price_tag = 150
-			icon_state = "barrel_tapless_open"
-			var/bottlecaps
-			for(bottlecaps=0, bottlecaps<brewed_amount, bottlecaps++)
-				new bottles(get_turf(src))
+		ready_for_bottleing = FALSE
+		brewing = FALSE
+		price_tag = 150
+		icon_state = "barrel_tapless_open"
+		var/bottlecaps
+		for(bottlecaps=0, bottlecaps<selected_recipe.brewed_amount, bottlecaps++)
+			var/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle(get_turf(src))
+			bottle_made.icon_state = "[glass_colour]"
+			bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount)
+			bottle_made.icon_state_full = "[glass_colour]"
+			bottle_made.icon_state_empty = "[glass_colour]_empty"
 
 /obj/structure/fermentation_keg/verb/reset_keg()
 	set name = "Clear Keg (Completely Resets)"

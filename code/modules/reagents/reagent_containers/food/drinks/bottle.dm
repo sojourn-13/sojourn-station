@@ -440,3 +440,11 @@
 	isGlass = 0
 	center_of_mass = list("x"=16, "y"=12)
 	preloaded_reagents = list("Kvass" = 30)
+
+//glassess bottle
+/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle
+	name = "Flash Bottle"
+	desc = "A quickly printed bottle using a non-recycleable glass."
+	icon_state = "brew_bottle"
+	matter = null
+	isGlass = FALSE
