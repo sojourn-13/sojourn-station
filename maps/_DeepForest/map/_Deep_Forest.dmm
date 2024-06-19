@@ -4708,12 +4708,6 @@
 "dxG" = (
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"dxH" = (
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "dxI" = (
 /obj/structure/boulder,
 /obj/structure/cable{
@@ -5367,16 +5361,6 @@
 /area/nadezhda/dungeon/outside/smuggler_zone{
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
-	})
-"dWC" = (
-/obj/structure/railing/grey{
-	dir = 1;
-	icon_state = "grey_railing0"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
 	})
 "dWV" = (
 /obj/structure/flora/small/grassb3,
@@ -6482,6 +6466,12 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"ePp" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "ePq" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -6652,16 +6642,15 @@
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
 "eYA" = (
-/obj/machinery/door/airlock/vault{
-	name = "LIMA-09";
-	welded = 1;
-	id_tag = "lima9entrance"
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2";
 	pixel_y = 0
+	},
+/obj/machinery/door/airlock/vault{
+	name = "LIMA-09";
+	id_tag = "lima9entrance"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -16916,13 +16905,6 @@
 /obj/structure/grille/broken,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
-"mJC" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "mJX" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/asteroid/grass,
@@ -18551,12 +18533,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"nQi" = (
-/turf/simulated/mineral/planet,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "nQk" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -28869,6 +28845,12 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"vsJ" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "vsV" = (
 /obj/machinery/light{
 	dir = 1
@@ -29689,6 +29671,13 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"wbn" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "wbq" = (
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -31890,6 +31879,16 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"xOO" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "xOU" = (
 /obj/structure/flora/small/bushc1,
 /turf/simulated/mineral/planet,
@@ -96734,7 +96733,7 @@ qxe
 qxe
 wFt
 wFt
-dxH
+vsJ
 jbU
 gnx
 oHa
@@ -96743,7 +96742,7 @@ oHa
 arv
 otY
 jbU
-dxH
+vsJ
 wFt
 hRL
 dqw
@@ -96945,7 +96944,7 @@ pZg
 pZg
 jbU
 jbU
-dxH
+vsJ
 tDk
 tDk
 wab
@@ -97153,11 +97152,11 @@ idB
 idB
 idB
 sZr
-nQi
-mJC
-mJC
-nQi
-nQi
+ePp
+wbn
+wbn
+ePp
+ePp
 wab
 naL
 dpG
@@ -97363,9 +97362,9 @@ gID
 idB
 idB
 pZg
-nQi
-nQi
-nQi
+ePp
+ePp
+ePp
 bOF
 tXo
 tDk
@@ -97572,9 +97571,9 @@ pdB
 idB
 idB
 pZg
-nQi
-nQi
-nQi
+ePp
+ePp
+ePp
 fKb
 wab
 tDk
@@ -97781,9 +97780,9 @@ eeC
 idB
 idB
 pZg
-nQi
-nQi
-nQi
+ePp
+ePp
+ePp
 nwU
 tDk
 lDq
@@ -97989,11 +97988,11 @@ mYW
 mYW
 idB
 idB
-nQi
-mJC
-nQi
+ePp
+wbn
+ePp
 nwU
-dxH
+vsJ
 eQs
 lAL
 mPI
@@ -98201,8 +98200,8 @@ eYA
 dxI
 pGf
 uBU
-dxH
-dxH
+vsJ
+vsJ
 kvd
 iID
 tcN
@@ -98618,7 +98617,7 @@ idB
 idB
 sGr
 sGr
-dWC
+xOO
 tDk
 vuX
 tDk
@@ -99452,8 +99451,8 @@ nqw
 pZg
 pZg
 pZg
-nQi
-nQi
+ePp
+ePp
 aCq
 tDk
 tXo
@@ -99658,8 +99657,8 @@ hRL
 hRL
 qxe
 qxe
-nQi
-nQi
+ePp
+ePp
 jbU
 jbU
 tXo
@@ -99869,7 +99868,7 @@ dtl
 hRL
 qxe
 qxe
-nQi
+ePp
 jbU
 oHa
 oHa
