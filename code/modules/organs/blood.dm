@@ -48,8 +48,6 @@
 	if (!QDELETED(src))
 		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
 			if(B.id == "blood")
-				B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-								"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
 				B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
@@ -167,9 +165,11 @@
 /mob/living/carbon/proc/get_blood()
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
-		if(res.data["donor"] != src) //If it's not theirs, then we look for theirs
+		var/datum/weakref/ref = res.data["donor"]
+		if(istype(ref) && ref.resolve() != src)
 			for(var/datum/reagent/organic/blood/D in vessel.reagent_list)
-				if(D.data["donor"] == src)
+				ref = D.data["donor"]
+				if(ref.resolve() == src)
 					return D
 	return res
 
@@ -322,11 +322,11 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	return min(blood_volume, 100)
 
 /mob/living/carbon/human/proc/regenerate_blood(var/amount)
-	amount *= (species.blood_volume / SPECIES_BLOOD_DEFAULT)
+	amount *= (vessel.maximum_volume / species.blood_volume)
 	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	amount = max(0,min(amount, species.blood_volume - blood_volume_raw))
+	amount = clamp(amount,0,vessel.maximum_volume - blood_volume_raw)
 	if(VAMPIRE in mutations)
-		amount *= 1.50 //25% more
+		amount *= 1.50 //25% more //trilby, how is that 25% -DimasW
 	if(amount)
 		vessel.add_reagent("blood", amount, get_blood_data())
 	return amount

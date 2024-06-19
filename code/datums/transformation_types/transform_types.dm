@@ -346,7 +346,7 @@
 	if (copyvaluetarget)
 		src.value_target = to_copy_from.value_target //dont worry, its already in weakref form
 
-/datum/transform_type/proc/update_holder_status(to_be_held_by = holder, to_use_for_values = to_be_held_by)
+/datum/transform_type/proc/update_holder_status(to_be_held_by, to_use_for_values)
 	holder = to_be_held_by
 	value_target = WEAKREF(to_use_for_values)
 

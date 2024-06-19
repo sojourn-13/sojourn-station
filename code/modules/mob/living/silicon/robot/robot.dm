@@ -6,8 +6,8 @@
 	real_name = "Cyborg"
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 	defaultHUD = "BorgStyle"
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
@@ -326,8 +326,14 @@
 	var/module_type = robot_modules[modtype]
 	var/obj/item/robot_module/RM = new module_type() //Spawn a dummy module to read values from
 
+	var/armourHealth = 0
+	for(var/V in src.components)
+		var/datum/robot_component/C = src.components[V]
+		if (V == "armour")
+			armourHealth = C.max_damage
+
 	switch(alert(src, "[RM.desc] \n \n\
-	Health: [RM.health] \n\
+	Health: [RM.health + armourHealth] \n\
 	Power Efficiency: [RM.power_efficiency*100]%\n\
 	Movement Speed: [RM.speed_factor*100]%",
 	"[modtype] module", "Yes", "No"))
@@ -414,10 +420,12 @@
 	set name = "Show Crew Manifest"
 	show_manifest(src)
 
+/*
 /mob/living/silicon/robot/proc/self_diagnosis()
 	if(!is_component_functioning("diagnosis unit"))
 		return null
 
+	return
 	var/dat = "<HEAD><TITLE>[name] Self-Diagnosis Report</TITLE></HEAD><BODY>\n"
 	for (var/V in components)
 		var/datum/robot_component/C = components[V]
@@ -430,12 +438,12 @@
 			</table><br>
 		"}
 
-	return dat
+	return dat */
 
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
 	set category = "Silicon Commands"
-	to_chat(src, "You begin [locked ? "" : "un"]locking your panel.")
+	to_chat(src, "You begin [locked ? "un" : ""]locking your panel.")
 	if(!opened && has_power && do_after(usr, 80) && !opened && has_power)
 		to_chat(src, "You [locked ? "un" : ""]locked your panel.")
 		locked = !locked
@@ -465,8 +473,13 @@
 	var/datum/robot_component/CO = get_component("diagnosis unit")
 	if (!cell_use_power(CO.active_usage))
 		to_chat(src, SPAN_DANGER("Low Power."))
+		return
+	var/obj/item/device/robotanalyzer/diagnosis = new /obj/item/device/robotanalyzer(src) // Hiding it inside us for now
+	diagnosis.attack(src,src) // Hit ourselves with it.
+	qdel(diagnosis)
+/*
 	var/dat = self_diagnosis()
-	src << browse(dat, "window=robotdiagnosis")
+	src << browse(dat, "window=robotdiagnosis") */
 
 
 /mob/living/silicon/robot/verb/toggle_component()
@@ -577,6 +590,9 @@
 				if(istype(WC))
 					C.brute_damage = WC.brute
 					C.electronics_damage = WC.burn
+					C.max_damage = WC.internal_damage
+					C.brute_mult = WC.brute_mult
+					C.burn_mult = WC.burn_mult
 
 				to_chat(usr, SPAN_NOTICE("You install the [I.name]."))
 
@@ -623,8 +639,8 @@
 					return
 
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 					adjustBruteLoss(-30)
+					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 					updatehealth()
 					add_fingerprint(user)
 					for(var/mob/O in viewers(user, null))
@@ -739,7 +755,10 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/stack/cable_coil) && (wiresexposed || isdrone(src)))
+	if(istype(I, /obj/item/stack/cable_coil))
+		if (src == user)
+			to_chat(user, SPAN_WARNING("You lack the reach to be able to repair yourself."))
+			return
 		if (!getFireLoss())
 			to_chat(user, "Nothing to fix here!")
 			return
@@ -748,8 +767,11 @@
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			adjustFireLoss(-30)
 			updatehealth()
+			add_fingerprint(user)
 			for(var/mob/O in viewers(user, null))
 				O.show_message(text(SPAN_DANGER("[user] has fixed some of the burnt wires on [src]!")), 1)
+			return
+
 
 	else if (istype(I, /obj/item/stock_parts/matter_bin) && opened) // Installing/swapping a matter bin
 		if(storage)
@@ -857,7 +879,7 @@
 			user.put_in_active_hand(broken_device)
 
 //Robots take half damage from basic attacks.
-/mob/living/silicon/robot/attack_generic(var/mob/user, var/damage, var/attack_message)
+/mob/living/silicon/robot/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	return ..(user,FLOOR(damage * 0.5, 1),attack_message)
 
 /mob/living/silicon/robot/proc/allowed(atom/movable/A)

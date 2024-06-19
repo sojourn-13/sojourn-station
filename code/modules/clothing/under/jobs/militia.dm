@@ -21,13 +21,13 @@
  * Extra Fatigues
  */
 
-/obj/item/clothing/under/rank/fatigues/green
+/obj/item/clothing/under/rank/fatigues
 	name = "green utility uniform"
 	desc = "A green utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "greenutility"
 	item_state = "greenutility"
 
-/obj/item/clothing/under/rank/fatigues/green/verb/toggle_style()
+/obj/item/clothing/under/rank/fatigues/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -63,7 +63,7 @@
 	icon_state = "greyutility"
 	item_state = "greyutility"
 
-/obj/item/clothing/under/rank/fatigues/grey/verb/toggle_style()
+/obj/item/clothing/under/rank/fatigues/grey/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -98,7 +98,7 @@
 	icon_state = "navyutility"
 	item_state = "navyutility"
 
-/obj/item/clothing/under/rank/fatigues/navy/verb/toggle_style()
+/obj/item/clothing/under/rank/fatigues/navy/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -134,7 +134,7 @@
 	icon_state = "tanutility"
 	item_state = "tanutility"
 
-/obj/item/clothing/under/rank/fatigues/tan/verb/toggle_style()
+/obj/item/clothing/under/rank/fatigues/tan/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -169,7 +169,7 @@
 	icon_state = "camoutility"
 	item_state = "camoutility"
 
-/obj/item/clothing/under/rank/fatigues/camo/verb/toggle_style()
+/obj/item/clothing/under/rank/fatigues/camo/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -201,24 +201,30 @@
 
 /obj/item/clothing/under/rank/fatigues/kav //My beautiful baby boi Kavrick, thank u for the sprites.
 	name = "grey Blackshield fatigues"
-	desc = "A robust, grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	desc = "A robust, grey utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bsgrey"
 	item_state = "bsgrey"
 
 /obj/item/clothing/under/rank/fatigues/kav/green
 	name = "green Blackshield fatigues"
-	desc = "A robust, geen grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	desc = "A robust, olive green grey utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bsgreen"
 	item_state = "bsgreen"
 
 /obj/item/clothing/under/rank/fatigues/kav/tan
 	name = "tan Blackshield fatigues"
-	desc = "A robust, tan utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	desc = "A robust, tan utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bstan"
 	item_state = "bstan"
 
-/obj/item/clothing/under/rank/fatigues/kav/verb/toggle_style()
-	set name = "Adjust style"
+/obj/item/clothing/under/rank/fatigues/kav/jungle
+	name = "jungle Blackshield fatigues"
+	desc = "A robust, jungle green utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
+	icon_state = "bsjungle"
+	item_state = "bsjungle"
+
+/obj/item/clothing/under/rank/fatigues/kav/toggle_style()
+	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
 

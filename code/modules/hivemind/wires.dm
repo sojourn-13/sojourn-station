@@ -12,6 +12,7 @@
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
 	var/my_area
+	var/assimilation_timer
 
 /obj/effect/plant/hivemind/New()
 	..()
@@ -35,6 +36,10 @@
 		GLOB.hivemind_areas.Remove(my_area)
 	return ..()
 
+/obj/effect/plant/hivemind/die_off()
+	if(assimilation_timer)
+		deltimer(assimilation_timer)
+	return ..()
 
 /obj/effect/plant/hivemind/after_spread(obj/effect/plant/child, turf/target_turf)
 	if(master_node)
@@ -48,6 +53,9 @@
 	if(target_turf.holy) //Holy tiles can kill off the wire sometimes!
 		if(prob(30))
 			die_off()
+	else
+		if(prob(5)) //5% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
+			new /obj/random/structures/hivemind_mob(src.loc)
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
@@ -83,7 +91,52 @@
 
 
 /obj/effect/plant/hivemind/update_neighbors()
-	..()
+	// Update our list of valid neighboring turfs.
+	neighbors = list()
+	var/list/tocheck = get_cardinal_neighbors()
+	var/add_to_neighbors = TRUE
+	for(var/turf/simulated/floor in tocheck)
+		var/turf/zdest = get_connecting_turf(floor, loc)//Handling zlevels
+		add_to_neighbors = TRUE
+		if(get_dist(parent, floor) > spread_distance)
+			add_to_neighbors = FALSE
+
+		//We check zdest, not floor, for existing plants
+		if((locate(/obj/effect/plant) in zdest.contents) || (locate(/obj/effect/dead_plant) in zdest.contents))
+			if(!(seed.get_trait(TRAIT_INVASIVE)))//Invasive ones can invade onto other tiles
+				add_to_neighbors = FALSE
+			var/obj/effect/plant/neighbor_plant = (locate(/obj/effect/plant) in zdest.contents)
+			if(neighbor_plant.seed.get_trait(TRAIT_INVASIVE))//If it's also invasive, don't invade (for better performance and plants not eating at itself)
+				add_to_neighbors = FALSE
+
+		if(!near_external && floor.density)
+			add_to_neighbors = FALSE
+		if(!Adjacent(floor))
+			add_to_neighbors = FALSE
+		if(!floor.CanPass(src, floor))
+			add_to_neighbors = FALSE
+
+		if((locate(/obj/structure/low_wall) in floor))
+			add_to_neighbors = FALSE
+
+			var/obj/machinery/door/found_door = null
+			for (var/obj/machinery/door/D in floor)
+				if(D.density || !D.welded)
+					found_door = D
+
+			if(found_door)
+				var/can_pass = door_interaction(found_door, floor)
+				if(!can_pass)
+					add_to_neighbors = FALSE
+
+
+		if(add_to_neighbors)
+			neighbors |= floor
+	// Update all of our friends.
+	var/turf/T = get_turf(src)
+	for(var/obj/effect/plant/neighbor in range(1,src))
+		neighbor.neighbors -= T
+
 	update_connections()
 	update_icon()
 	update_openspace()
@@ -232,13 +285,16 @@
 		if(target.density)
 			return FALSE
 
-		if(locate(/obj/structure) in target)
+		if(locate(/obj/machinery/door) in target.contents)
+			return FALSE
+
+		if(locate(/obj/machinery) in target.contents)
+			return TRUE
+
+		if(locate(/obj/structure) in target.contents)
 			for(var/obj/structure/S in target)
 				if(S.density && S.anchored)
 					return FALSE
-
-		if(locate(/obj/machinery/door) in target)
-			return FALSE
 
 		return TRUE
 	else
@@ -327,23 +383,23 @@
 	//Corpse reanimation
 	if(isliving(subject) && !ishivemindmob(subject))
 		//human bodies
-		if(ishuman(subject))
+		if(ishuman(subject) && !assimilation_timer)
 			var/mob/living/L = subject
 
-			if(GLOB.hive_data_bool["gibbing_dead"])
-			//We we dont touch the dead via are controler we dont want to pk people form the round
+			if(!GLOB.hive_data_float["gibbing_warning_timer"]) //If the value is set to 0 (the default) we don't touch player humans
 				return
 
-			//if our target has cruciform, let's just leave it
-			if(is_neotheology_disciple(L))
+			var/timer = GLOB.hive_data_float["gibbing_warning_timer"] SECONDS //If we've continued, then there's a value there and we want it in seconds
+
+			if(is_neotheology_disciple(L)) //If our target has a cruciform, we don't touch it
 				return
 
-			for(var/obj/item/W in L)
-				L.drop_from_inventory(W)
-			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
-			new M(loc)
+			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
+			assimilation_timer = addtimer(CALLBACK(src, .proc/assimilate_human, L), timer, TIMER_STOPPABLE)
+			return
+
 		//robot corpses
-		else if(issilicon(subject))
+		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
 			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
@@ -352,6 +408,15 @@
 
 		qdel(subject)
 
+/obj/effect/plant/hivemind/proc/assimilate_human(var/mob/living/L)
+	if(!locate(/obj/effect/plant/hivemind) in L.loc || !(L.stat == DEAD)) //If we don't see any wires after the alotted time or we're alive again, we don't get got
+		return
+	for(var/obj/item/W in L)
+		L.drop_from_inventory(W)
+	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	new M(loc)
+
+	L.dust()
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////>RESPONSE CODE<//////////////////////////

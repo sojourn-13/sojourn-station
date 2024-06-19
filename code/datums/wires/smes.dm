@@ -22,12 +22,11 @@ var/const/SMES_WIRE_FAILSAFES = 16	// Cut to disable failsafes, mend to reenable
 		return 1
 	return 0
 
-
-/datum/wires/smes/GetInteractWindow(mob/living/user)
+/datum/wires/smes/get_status(mob/living/user)
 	var/obj/machinery/power/smes/buildable/S = holder
-	. += ..(user)
-	. += "The green light is [(S.input_cut || S.input_pulsed || S.output_cut || S.output_pulsed) ? "off" : "on"]<br>"
-	. += "The red light is [(S.safeties_enabled || S.grounding) ? "off" : "blinking"]<br>"
+	. = ..()
+	. += "The green light is [(S.input_cut || S.input_pulsed || S.output_cut || S.output_pulsed) ? "off" : "on"]"
+	. += "The red light is [(S.safeties_enabled || S.grounding) ? "off" : "blinking"]"
 	. += "The blue light is [S.RCon ? "on" : "off"]"
 
 

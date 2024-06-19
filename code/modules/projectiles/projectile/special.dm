@@ -264,6 +264,21 @@
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
 			M.sanity_damage = 8
+			
+/obj/item/projectile/IRKdebilitate //Marking for future use
+	name = "debilitator bolt"
+	damage_types = list(BRUTE = 12) //Intended to be brute
+	agony = 20
+	icon_state = "declone"
+	armor_penetration = 10
+	recoil = 2
+
+/obj/item/projectile/IRKdebilitate/on_impact(atom/target) 
+	if(ishuman(target))
+		if (!testing)
+			var/mob/living/carbon/human/M = target
+			M.confused += rand(1,2)
+			M.sanity_damage = 3 //Somehow these bolts mess with your head, must be some really weird scifi bullshit
 
 /obj/item/projectile/chameleon
 	name = "bullet"
@@ -351,6 +366,21 @@
 
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
+
+//Used for bluecross only atm
+/obj/item/projectile/bullet/flare/yellow
+	luminosity_color = COLOR_WHEAT //softer on the eyes
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
+/obj/item/projectile/bullet/flare/white
+	luminosity_color = COLOR_SILVER //Not perfect white to help with rounding out shadows
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
 
 // Special projectile that one-shot ameridian-related stuff
 /obj/item/projectile/sonic_bolt

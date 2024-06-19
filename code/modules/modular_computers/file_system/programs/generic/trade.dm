@@ -20,7 +20,7 @@
 	nanomodule_path = /datum/nano_module/program/trade
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "cart-plus"
 	extended_desc = "A trade tool, requires sending and receiving beacons."
 	size = 21
 	available_on_ntnet = FALSE
@@ -564,7 +564,7 @@
 				if(get_area(sending) != get_area(computer))
 					to_chat(usr, SPAN_WARNING("ERROR: Sending beacon is too far from \the [computer]."))
 					return
-				SStrade.export(sending)
+				SStrade.export(sending, account)
 				return TRUE
 
 			var/t2n = text2num(href_list["PRG_sell"])

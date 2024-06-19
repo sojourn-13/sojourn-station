@@ -155,7 +155,7 @@ var/list/ai_verbs_default = list(
         return
     ..()
 
-/mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/B, var/safety = 0)
+/mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/digital/posibrain/B, var/safety = 0)
 	announcement = new()
 	announcement.title = "A.I. Announcement"
 	announcement.announcement_type = "A.I. Announcement"
@@ -200,7 +200,7 @@ var/list/ai_verbs_default = list(
 	add_language(LANGUAGE_ROBOT, 1)
 	add_language(LANGUAGE_COMMON, 1)
 	add_language(LANGUAGE_ILLYRIAN, 1)
-	add_language(LANGUAGE_JIVE, 1) //can understand but obviously can't speak it.
+	add_language(LANGUAGE_JIVE, 0) //can understand but obviously can't speak it.
 	add_language(LANGUAGE_EURO, 1)
 	add_language(LANGUAGE_JANA, 1)
 	add_language(LANGUAGE_CYRILLIC, 1)

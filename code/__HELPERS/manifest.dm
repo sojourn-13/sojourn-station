@@ -1,22 +1,16 @@
 // Generates a simple HTML crew manifest for use in various places
 
 //Intended for open manifest in separate window
-/proc/show_manifest(var/mob/user, var/datum/src_object = user, nano_state = GLOB.default_state)
-	var/list/data = list()
-	data["crew_manifest"] = html_crew_manifest(TRUE)
-
-	var/datum/nanoui/ui = SSnano.try_update_ui(user, src_object, "manifest", null, data, TRUE)
-	if (!ui)
-		ui = new(user, src_object, "manifest", "crew_manifest.tmpl", "Crew Manifest", 450, 600, state = nano_state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+/proc/show_manifest(mob/user)
+	var/datum/tgui_module/manifest/manifest = new(user)
+	manifest.ui_interact(user)
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Marshal and Blackshield", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Marshals", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Blackshield", "flag" = BLACKSHIELD),
 		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
 		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
@@ -142,6 +136,7 @@
 		"heads" = filtered_nano_crew_manifest(command_positions),\
 		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"sec" = filtered_nano_crew_manifest(security_positions),\
+		"bls" = filtered_nano_crew_manifest(blackshield_positions),\
 		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"med" = filtered_nano_crew_manifest(medical_positions),\
 		"sup" = filtered_nano_crew_manifest(cargo_positions),\

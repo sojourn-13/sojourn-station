@@ -97,8 +97,22 @@
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/guild/robotmelee //Lots of steps
-	name = "robot mark v armor plating"
+/datum/craft_recipe/guild/robotmelee //Lots of heating and hammering. Forge your blade samurai.
+	name = "robot mark III reinforced armor plating"
+	result = /obj/item/robot_parts/robot_component/armour/mkiii
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_CUTTING, 30, "time" = 180),
+	)
+
+/datum/craft_recipe/guild/robothp //Lots of steps
+	name = "robot mark v extra armor plating"
 	result = /obj/item/robot_parts/robot_component/armour/mkv
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 90),
@@ -251,6 +265,27 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
+	
+/datum/craft_recipe/guild/IRKDissolver
+	name = "Dissolver Beam Rifle"
+	result = /obj/item/gun/energy/IRKDissolver
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/gun/energy/gun/nuclear, 1, "time" = 60),
+		list(/obj/item/gun_upgrade/mechanism/overdrive, 1, "time" = 40),
+		list(/obj/item/gun_upgrade/mechanism/battery_shunt, 1, "time" = 40),
+		list(/obj/item/stack/cable_coil, 30, "time" = 20),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_GOLD, "time" = 20),
+		list(CRAFT_MATERIAL, 6, MATERIAL_SILVER, "time" = 20),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)	
 
 /datum/craft_recipe/guild/railgunpistol
 	name = "myrmidon rail pistol"

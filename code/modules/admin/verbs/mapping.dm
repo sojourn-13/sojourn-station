@@ -117,12 +117,34 @@ var/intercom_range_display_status = 0
 				if (!(F in view(7, I.loc)))
 					qdel(F)
 
+/client/proc/populate_fake_crew_records()
+	set name = "Populate Fake Crew Records"
+	set desc = "Creates fake crew records for debugging datacore problems"
+	set category = "Debug"
+
+	var/amount = input(usr, "Enter amount of fake entries to create", "Fake Crew Records", null) as null|num
+
+	if(amount)
+		log_admin("[key_name(usr)] has created [amount] fake crew record(s).")
+		message_admins("\blue [key_name_admin(usr)] has created [amount] fake crew record(s).", 1)
+	
+		for(var/i in 1 to amount)
+			var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
+			scramble_crew_record(CR)
+			GLOB.all_crew_records.Add(CR)
+
+/proc/scramble_crew_record(datum/computer_file/report/crew_record/CR)
+	CR.set_name(random_name())
+	var/datum/job/J = SSjob.occupations_by_name[pick(JOBS_OVERALL)]
+	var/list/possible_titles = list(J.title) + J.alt_titles
+	CR.set_job(pick(possible_titles))
 
 var/list/debug_verbs = list (
 	/client/proc/do_not_use_these
 	,/client/proc/camera_view
 	,/client/proc/sec_camera_report
 	,/client/proc/intercom_view
+	,/client/proc/populate_fake_crew_records
 	,/client/proc/Cell
 	,/client/proc/atmosscan
 	,/client/proc/powerdebug

@@ -32,6 +32,6 @@
 // Export price multipliers
 #define NONEXPORTABLE 0
 #define JUNK 0.1
-#define EXPORTABLE 0.6
+#define EXPORTABLE 0.8 //20% Taxs
 #define HOCKABLE 0.3		// Term for items being sold to a pawnbroker; means the item can be exported but is not a typical export, sold at 30% value
 #define REFUND 1

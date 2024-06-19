@@ -30,7 +30,7 @@
 				return
 	visible_message(SPAN_DANGER("[user] is trying to force \the [target] onto \the [src]!"))
 	if(do_after(user, 80))
-		if(spike(target))
+		if(spike(user, target))
 			visible_message(SPAN_DANGER("[user] has forced [target] onto \the [src], killing them instantly!"))
 			target.damage_through_armor(201, BRUTE, BP_CHEST)
 			for(var/obj/item/thing in target)
@@ -41,7 +41,7 @@
 		return FALSE
 
 
-/obj/structure/kitchenspike/proc/spike(mob/living/victim)
+/obj/structure/kitchenspike/proc/spike(mob/user, mob/living/victim)
 
 	if(!istype(victim))
 		return FALSE
@@ -55,12 +55,18 @@
 		var/mob/living/simple_animal/animal = victim
 		if(!ispath(animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
 			return FALSE
+		if(animal.mob_size > MOB_MEDIUM)
+			to_chat(user, SPAN_WARNING("The [animal] will not fit!"))
+			return FALSE
 		meat_type = animal.meat_type
 		icon_state = "spike_Monkey"
 		meat = animal.meat_amount
 	else if (issuperioranimal(victim))
 		var/mob/living/carbon/superior_animal/s_animal = victim
 		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+			return FALSE
+		if(s_animal.mob_size > MOB_MEDIUM)
+			to_chat(user, SPAN_WARNING("The [s_animal] will not fit!"))
 			return FALSE
 		meat_type = s_animal.meat_type
 		icon_state = "spike_Monkey"

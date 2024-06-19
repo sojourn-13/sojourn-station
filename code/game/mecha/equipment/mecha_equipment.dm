@@ -7,7 +7,7 @@
 	name = "mecha equipment"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_equip"
-	force = 5
+	force = 10
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_STEEL = 20)
 	var/equip_cooldown = 0 //time between 'uses'
@@ -17,6 +17,9 @@
 	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
+	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
+	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
+
 
 /obj/item/mecha_parts/mecha_equipment/Destroy()
 	if(chassis)
@@ -88,7 +91,10 @@
 		return 0
 	return 1
 
-/obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
+/obj/item/mecha_parts/mecha_equipment/proc/action(atom/target, mob/living/user)
+	if(!chassis) //If you're not in the mech
+		to_chat(user, SPAN_DANGER("You cannot use this tool by hand!"))
+		return FALSE
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/attack_object(obj/T, mob/living/user) // To prevent having mechs attacking other mechs accidentally attach their weapons on the opposing mech
@@ -112,12 +118,12 @@
 /obj/item/mecha_parts/mecha_equipment/attack(mob/living/M, mob/living/user, target_zone) // Copy of item_attack code, modified to not take into account user stats or health since the mech's doing all the hard work
 	if(!user)
 		return FALSE
-	
+
 	if(!force || (flags & NOBLUDGEON))
 		return FALSE
 
 	if(!chassis) //If you're not in the mech
-		to_chat(user, SPAN_DANGER("You cannot use this weapon by hand!"))
+		to_chat(user, SPAN_DANGER("You cannot manually use this equipment, it belongs on a mech!"))
 		return FALSE
 
 	user.lastattacked = M
@@ -129,14 +135,17 @@
 		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
 
 	if(user.a_intent == I_HELP) // Checks if you have help intent on
-		step_away(M, chassis)
-		occupant_message("You push [M] out of the way.")
-		chassis.visible_message("[chassis] pushes [M] out of the way.")
+		if(!src.harmful) // If not a harmful tool (aka, a sleeper)
+			src.action(M, user)
+		else
+			step_away(M, chassis)
+			occupant_message("You push [M] out of the way.")
+			chassis.visible_message("[chassis] pushes [M] out of the way.")
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
-		if(hit_zone) 
+		if(hit_zone)
 		//	do_attack_animation(chassis) // TODO - Make mech animation happen
-			apply_hit_effect(M, user, hit_zone) 
+			apply_hit_effect(M, user, hit_zone)
 
 	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	user.setClickCooldown(equip_cooldown)

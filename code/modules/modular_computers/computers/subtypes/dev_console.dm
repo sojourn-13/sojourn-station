@@ -25,6 +25,14 @@
 		else
 			playsound(src, "keystroke", 40)
 
+/obj/item/modular_computer/console/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(iscarbon(usr))
+		if(prob(50))
+			playsound(src, "keyboard", 40)
+		else
+			playsound(src, "keystroke", 40)
+
 /obj/item/modular_computer/console/break_apart()
 	..()
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()

@@ -40,6 +40,8 @@
 	var/datum/admins/holder = null
 	var/datum/admins/deadmin_holder = null
 	var/buildmode		= 0
+	///Used for admin AI interaction
+	var/AI_Interact = FALSE
 
 	///Contains the last message sent by this client - used to protect against copy-paste spamming.
 	var/last_message = ""
@@ -119,3 +121,5 @@
 	/// Last asset send job id.
 	var/last_asset_job = 0
 	var/last_completed_asset_job = 0
+
+	var/obj/screen/click_catcher/void

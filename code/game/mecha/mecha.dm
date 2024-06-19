@@ -386,26 +386,31 @@
 		target = safepick(view(3,target))
 		if(!target)
 			return
-	if(istype(target, /obj/machinery))
-		if (src.interface_action(target))
-			return
+
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
-			selected.action(target)
+			selected.action(target, user)
+
 	else if(selected) // If target is adjacent
-		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment)) // Check if you're using equipment
 			if(istype(target, /mob/living))
-				selected.attack(target, user, user.targeted_organ)
-			else if(istype(target, /obj))
+				selected.attack(target, user, user.targeted_organ) // Against living targets
+			else if(istype(target, /obj/machinery))
+				if(user.a_intent == I_HELP) // This allows us to interface on help intent with machinery, so we don't break a computer we're trying to access
+					interface_action(target)
+				else // If not machinery or help intent, attack
+					selected.attack_object(target, user)
+			else if(istype(target, /obj/mecha)) // So it can attack mechs
 				selected.attack_object(target, user)
-			else if(istype(target, /turf/simulated/wall))
-				target.attackby(selected, user)
-		else if(selected.is_melee())
-			selected.action(target)
-	else
-		if(istype(target, /obj/machinery))
-			interface_action(target)
-		src.melee_action(target)
+			else // If not machinery, not mech or not alive, do the fancy tool uses
+				selected.action(target, user)
+
+	else // Empty handed, no equipment selected
+		if(user.a_intent == I_HELP && istype(target, /obj/machinery))
+			interface_action(target, user)
+			return
+		else
+			src.melee_action(target)
 	return
 
 /obj/mecha/proc/interface_action(obj/machinery/target)
@@ -2209,7 +2214,7 @@ assassination method if you time it right*/
 	return FALSE
 
 
-/obj/mecha/attack_generic(var/mob/user, var/damage, var/attack_message)
+/obj/mecha/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage)
 		return 0

@@ -1,6 +1,9 @@
 //Hivemind various machines
 
 #define REGENERATION_SPEED 		4
+#define TURRET_PRIORITY_TARGET 2
+#define TURRET_SECONDARY_TARGET 1
+#define TURRET_NOT_TARGET 0
 
 
 
@@ -35,6 +38,7 @@
 	name_pick()
 	health = max_health
 	set_light(2, 3, illumination_color)
+	icon = 'icons/obj/hivemind_machines.dmi'
 
 
 /obj/machinery/hivemind_machine/update_icon()
@@ -59,7 +63,7 @@
 
 /obj/machinery/hivemind_machine/Process()
 	if(!hive_mind_ai || (wireweeds_required && !locate(/obj/effect/plant/hivemind) in loc))
-		take_damage(5, on_damage_react = FALSE)
+		take_damage(35, on_damage_react = FALSE)
 
 	if(SDP)
 		SDP.check_conditions()
@@ -443,26 +447,90 @@
 	max_health = 220
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "turret"
-	cooldown_time = 5 SECONDS
+	cooldown_time = 1 SECONDS
 	spawn_weight  = 60
+	var/firing_range = 7
+	var/last_target					//last target fired at, prevents turrets from erratically firing at all valid targets in range
+	var/shot_delay = 30				//3 seconds between each shot by default, gets faster with evo level
+	var/last_fired = 0				//1: if the turret is cooling down from a shot, 0: turret is ready to fire
 	var/proj_type = /obj/item/projectile/goo
 
-
-/obj/machinery/hivemind_machine/turret/Process()
+/obj/machinery/hivemind_machine/turret/Process() //Copied mostly from porta_turret code now
 	if(!..())
 		return
 
-	var/mob/living/target = locate() in all_mobs_in_view(world.view, src)
-	if(target && is_attackable(target) && target.faction != HIVE_FACTION)
-		use_ability(target)
-		set_cooldown()
+	var/list/targets = list()			//Primary targets
+	var/list/secondarytargets = list()	//targets that are less important
 
+	shot_delay = max(30 - hive_mind_ai.evo_level * 5, 5) //Scales at half a second faster for each evo level, minimum half a second
+
+	for(var/mob/living/M in view(firing_range, src))
+		assess_and_assign(M, targets, secondarytargets)
+
+	for(var/obj/mecha/mech in GLOB.mechas_list)
+		if (mech.z == z && (get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
+
+	if(!tryToShootAt(targets))
+		tryToShootAt(secondarytargets)
+
+/obj/machinery/hivemind_machine/turret/proc/assess_and_assign(var/mob/living/L, var/list/targets, var/list/secondarytargets)
+	switch(assess_living(L))
+		if(TURRET_PRIORITY_TARGET)
+			targets += L
+		if(TURRET_SECONDARY_TARGET)
+			secondarytargets += L
+
+/obj/machinery/hivemind_machine/turret/proc/assess_living(var/mob/living/L)
+	if(L.faction == "hive") //Don't shoot hive mobs
+		return TURRET_NOT_TARGET
+	if(L.stat == DEAD)
+		return TURRET_NOT_TARGET //Don't shoot the dead either
+	if(L.lying) //Lying down people are lower priority to shoot
+		return TURRET_SECONDARY_TARGET
+	return TURRET_PRIORITY_TARGET //If you ain't hive or lying, you're a priority target
+
+/obj/machinery/hivemind_machine/turret/proc/tryToShootAt(var/list/mob/living/targets)
+	if(targets.len && last_target && (last_target in targets) && target(last_target))
+		return TRUE
+
+	while(targets.len > 0)
+		var/mob/living/M = pick(targets)
+		targets -= M
+		if(target(M))
+			return TRUE
+
+/obj/machinery/hivemind_machine/turret/proc/target(var/mob/living/target)
+	if(target)
+		last_target = target
+		set_dir(get_dir(src, target))	//even if you can't shoot, follow the target
+		spawn()
+			shootAt(target)
+		return TRUE
+	return
+
+/obj/machinery/hivemind_machine/turret/proc/shootAt(var/mob/living/target)
+	if(last_fired)	//prevents rapid-fire shooting
+		return
+	last_fired = 1
+	spawn()
+		sleep(shot_delay)
+		last_fired = 0
+
+	var/turf/T = get_turf(src)
+	var/turf/U = get_turf(target)
+	if(!istype(T) || !istype(U))
+		return
+
+	use_ability(target)
 
 /obj/machinery/hivemind_machine/turret/use_ability(atom/target)
 	var/obj/item/projectile/proj = new proj_type(loc)
+	proj.faction_iff = "hive" //We get some iff so we're not used as a weapon against the hive... we should pretty much always have mobs attacking!
 	proj.launch(target)
 	playsound(src, 'sound/effects/blobattack.ogg', 70, 1)
-
 
 
 //MOB PRODUCER
@@ -726,3 +794,6 @@
 
 
 #undef REGENERATION_SPEED
+#undef TURRET_PRIORITY_TARGET
+#undef TURRET_SECONDARY_TARGET
+#undef TURRET_NOT_TARGET

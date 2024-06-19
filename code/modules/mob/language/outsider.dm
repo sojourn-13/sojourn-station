@@ -42,7 +42,7 @@
 	exclaim_verb = list("chants")
 	colour = "cult"
 	key = "c"
-	flags = RESTRICTED
+	flags = RESTRICTED | NO_TRANSLATE
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
 	syllables = list("phlegethor","kadishtu","nahlizet","naf'lthagn","fhtagn","jatkaa","mgar","balaq", "karazet", "exim’ha", \
@@ -93,7 +93,7 @@
 	exclaim_verb = list("screeches")
 	colour = "opifex"
 	key = "f"
-	flags = RESTRICTED
+	flags = RESTRICTED | NO_TRANSLATE
 	partial_understanding = list(
 		LANGUAGE_YASSARI = 20
 	)
@@ -183,7 +183,6 @@
 	key = "p"
 	has_written_form = FALSE //Hiveminds don't get a written language.
 
-
 //Naramad language. full credit to Yanniert for all of the details herein contained.
 /datum/language/merp
 	name = LANGUAGE_MERP
@@ -201,3 +200,23 @@
 	shorthand = "NP"
 	space_chance = 5
 	syllables = list("Punainen", "Koira", "Tuolla", "Rikas", "syvä", "kivääri", "ulkomaalainen", "ihmisen", "sammakko", "taivaaseen", "Koti", "tilaa",  "sinä", "vastustamaton", "heimo", "klaani",  "kotitalous", "raha", "iso", "pieni", "sairaus", "ruokaa", "alkoholia", "kana", "asevelvollisuus", "alus", "joki", "saari", "ase", "veitsi", "juusto", "pää", "häntää", "taistelevat", "halaamalla", "ystävät", "ystävyys", "kansainyhteisö", "liitto", "aurinko", "missä", "mitä", "kun", "Miten", "siksi", "laulu", "kalastaa", "hämärä", "epäilyttävä", "luottamus", "kusipää", "paskiainen", "ääliö", "munata", "*!*")
+
+//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld. 
+/datum/language/weh
+	name = LANGUAGE_WEH
+	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
+	speech_verb = list("says", "hisses")
+	ask_verb = list("inquires")
+	exclaim_verb = list("bellows")
+	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
+	key = "u"
+	has_written_form = TRUE
+	partial_understanding = list(
+		LANGUAGE_COMMON = 20, 
+		LANGUAGE_YASSARI = 10, 
+		LANGUAGE_EURO = 10, 
+		LANGUAGE_JANA = 10 
+	)
+	shorthand = "CRV"
+	space_chance = 50
+	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")

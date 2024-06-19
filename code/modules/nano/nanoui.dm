@@ -97,11 +97,12 @@ nanoui is used to open and update nano browser uis
 		ref = nref
 
 	add_common_assets()
-
-	var/datum/asset/nanoui = get_asset_datum(/datum/asset/simple/directories/nanoui)
-	if (nanoui.send(user.client))
-		to_chat(user, span_warning("Currently sending <b>all</b> nanoui assets, please wait!"))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
+	
+	if(user?.client)
+		var/datum/asset/nanoui = get_asset_datum(/datum/asset/simple/directories/nanoui)
+		if(nanoui.send(user.client))
+			to_chat(user, span_warning("Currently sending <b>all</b> nanoui assets, please wait!"))
+			user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
 
 //Do not qdel nanouis. Use close() instead.
@@ -224,18 +225,8 @@ nanoui is used to open and update nano browser uis
 
 	var/list/send_data = list("config" = config_data)
 
-	if (!isnull(data))
-		var/list/types = parse_for_paths(data)
-
-		var/list/potential_catalog_data = list()
-		for(var/type in types)
-			var/datum/catalog_entry/E = get_catalog_entry(type)
-			if(E)
-				potential_catalog_data.Add(list(list("entry_name" = E.title, "entry_img_path" = E.image_path, "entry_type" = E.thing_type)))
-
-		send_data["potential_catalog_data"] = potential_catalog_data
+	if(!isnull(data))
 		send_data["data"] = data
-
 
 	return send_data
 

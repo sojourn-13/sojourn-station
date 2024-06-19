@@ -32,7 +32,7 @@
 if (Datum.is_processing) {\
 	if(Datum.is_processing != #Processor)\
 	{\
-		CRASH("Failed to start processing. [log_info_line(Datum)] is already being processed by [Datum.is_processing] but queue attempt occured on [#Processor]."); \
+		log_debug("Warning: Failed to start processing. [log_info_line(Datum)] is already being processed by [Datum.is_processing] but queue attempt occured on [#Processor]."); \
 	}\
 } else {\
 	Datum.is_processing = #Processor;\
@@ -41,11 +41,11 @@ if (Datum.is_processing) {\
 
 #define STOP_PROCESSING(Processor, Datum) \
 if(Datum.is_processing) {\
-	if(Processor.processing.Remove(Datum)) {\
-		Datum.is_processing = null;\
-	} else {\
-		CRASH("Failed to stop processing. [log_info_line(Datum)] is being processed by [Datum.is_processing] but de-queue attempt occured on [#Processor]."); \
+	Processor.currentrun -= Datum;\
+	if(!Processor.processing.Remove(Datum)) {\
+		log_debug("Warning: Failed to stop processing. [log_info_line(Datum)] is being processed by [Datum.is_processing] but de-queue attempt occured on [#Processor]."); \
 	}\
+	Datum.is_processing = null;\
 }
 
 /// Returns true if the MC is initialized and running.

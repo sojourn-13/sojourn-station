@@ -7,7 +7,7 @@
 	price_tag = 100
 	cant_hold = list(/obj/item/storage/pouch) //Pouches in pouches was a misstake
 
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_BELT //Pouches can be worn on belt
 	storage_slots = 1
 	max_w_class = ITEM_SIZE_SMALL
@@ -16,6 +16,10 @@
 	attack_verb = list("pouched")
 
 	var/sliding_behavior = FALSE
+	var/internal_bulk = 0 //How much are inside items grows are size
+	var/used_storage_space = 0 //How much space is already used in the container, used for growing extra bulk
+	var/free_space_percent = 0 //0 means 100% free space, well 100% means no free space
+	var/plus_extra_bulk = 0    //Used for adding bulk to the item, as the normal var gets overwrote
 
 /obj/item/storage/pouch/verb/toggle_slide()
 	set name = "Toggle Slide"
@@ -39,6 +43,56 @@
 		remove_from_storage(I, T)
 		usr.put_in_hands(I)
 		add_fingerprint(user)
+
+/obj/item/storage/pouch/Initialize(mapload)
+	..()
+	pouch_size_increase() //Do to plus_extra_bulk
+
+/obj/item/storage/pouch/handle_item_insertion(obj/item/W as obj, prevent_warning = FALSE, mob/user, suppress_warning = FALSE)
+	..()
+	//Grow when we add in are items
+	pouch_size_increase()
+
+/obj/item/storage/pouch/remove_from_storage(obj/item/W as obj, atom/new_location)
+	..()
+	//So that we can accually shrink when taking items out
+	pouch_size_increase()
+
+//Little complex at glance but shockingly simple!
+/obj/item/storage/pouch/proc/pouch_size_increase()
+	//Interal bulk is how much over-weight class you store it over with.
+	internal_bulk = 0
+	used_storage_space = 0
+	free_space_percent = 0
+
+	//Cycle through are contents and find everything ever
+	for(var/obj/item/I in contents)
+		var/over_filled = 0 //Now we got to get what a REAL w-class is per object
+		over_filled = I.w_class + I.extra_bulk //Extrabulk for sake of calulations is insainly rough
+		used_storage_space += over_filled
+		if(over_filled > w_class) //If we are item is bigger then are pouch then we get get bigger!
+			internal_bulk += over_filled - w_class
+
+	if(used_storage_space) //Prevents devide by 0
+		free_space_percent = used_storage_space / max_storage_space //20 / 5 = 4
+		free_space_percent *= 100 //To get it to be base 100%
+		//This **LOOKS** harsh but its not, unlike w_class these are lineral numbers not mulitied by silly hidden things
+		switch(free_space_percent)
+			if(0 to 25)
+				internal_bulk += 1
+			if(25 to 50)
+				internal_bulk += 1.5
+			if(50 to 75)
+				internal_bulk += 2
+			if(75 to INFINITY)
+				internal_bulk += 2.5
+
+	extra_bulk = internal_bulk + plus_extra_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
+	if(extra_bulk < 0)
+		extra_bulk = 0
+	if(istype(loc, /obj/item/storage))
+		var/obj/item/storage/SO = loc
+		SO.refresh_all() //So we can see are items take up more space and prevent confusion
 
 /obj/item/storage/pouch/small_generic
 	name = "small generic pouch"
@@ -70,6 +124,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
 	level = BELOW_PLATING_LEVEL //As we can
+	plus_extra_bulk = 1 //Anti-quatom scaling with smaller items
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
@@ -87,13 +142,14 @@
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_generic"
 	item_state = "large_generic"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_BULKY //This is like a second satchle, is this size for belt/box ect nesting tricks
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 800
+	plus_extra_bulk = 6 //Anti-quatom scaling with smaller items
 
 obj/item/storage/pouch/large_generic/advmedic
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket. This one is well worn and reeks like the inside of a frontier-chemlab."
@@ -194,7 +250,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "engineering_supply"
 
 	storage_slots = 3
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -224,7 +280,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "janitor_supply"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -244,7 +300,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "ammo"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -259,7 +315,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "flare"
 
 	storage_slots = 7
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -309,7 +365,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "grow"
 	matter = list(MATERIAL_PLASTIC = 1)
 	storage_slots = 7
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_TINY
 
 	can_hold = list(
@@ -338,8 +394,9 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	item_state = "pistol_holster"
 
 	storage_slots = 1
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
+	plus_extra_bulk = -1
 
 	can_hold = list(
 		/obj/item/gun/projectile/makarov,
@@ -460,9 +517,10 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	matter = list(MATERIAL_BIOMATTER = 10)
 	storage_slots = 4 // 12 arrows
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 	sliding_behavior = TRUE // It is by default a quickdraw quiver
+	plus_extra_bulk = -2
 
 	can_hold = list(
 		/obj/item/ammo_casing/arrow,
@@ -502,9 +560,10 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	matter = list(MATERIAL_BIOMATTER = 15) // Can hold a full stack of rods.
 	storage_slots = 4
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_BULKY // Just in case a full stack won't fit.
 	sliding_behavior = TRUE // Quickdraw!
+	plus_extra_bulk = -2
 
 	can_hold = list(
 		/obj/item/stack/rods,

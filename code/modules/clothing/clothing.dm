@@ -117,48 +117,65 @@
 
 	return english_list(body_partsL)
 
-/obj/item/clothing/nano_ui_data()
-	var/list/data = list()
-	var/list/armorlist = armor.getList()
-	if(armorlist.len)
-		var/list/armor_vals = list()
-		for(var/i in armorlist)
-			if(armorlist[i])
-				armor_vals += list(list(
-					"name" = i,
-					"value" = armorlist[i]
-					))
-		data["armor_info"] = armor_vals
-	if(body_parts_covered)
-		var/body_part_string = body_part_coverage_to_string(body_parts_covered)
-		data["body_coverage"] = body_part_string
-	data["slowdown"] = slowdown
-	data["stiffness"] = stiffness
-	data["obscuration"] = obscuration
-	if(heat_protection)
-		data["heat_protection"] = body_part_coverage_to_string(heat_protection)
-		data["heat_protection_temperature"] = max_heat_protection_temperature
-	if(cold_protection)
-		data["cold_protection"] = body_part_coverage_to_string(cold_protection)
-		data["cold_protection_temperature"] = min_cold_protection_temperature
-	data["equip_delay"] = equip_delay
-	return data
-
-/obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = nano_ui_data(user)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "clothing_stats.tmpl", name, 650, 550, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-
 /obj/item/clothing/ui_action_click(mob/living/user, action_name)
 	if(action_name == "Clothing information")
-		nano_ui_interact(user)
+		ui_interact(user)
 		return TRUE
 	return ..()
+
+/obj/item/clothing/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ItemStats", name)
+		ui.open()
+
+/obj/item/clothing/ui_data(mob/user)
+	var/list/data = list()
+
+	var/list/stats = list()
+
+	var/list/armor_stats = list()
+
+	var/list/armorlist = armor.getList()
+	if(armorlist.len)
+		for(var/i in armorlist)
+			if(armorlist[i])
+				armor_stats += list(list(
+					"type" = "ProgressBar",
+					"name" = capitalize(i) + " armor",
+					"value" = armorlist[i],
+					"max" = 100,
+					"color" = armorlist[i] > 25 ? (armorlist[i] > 50 ? "good" : "average") : "bad",
+					"unit" = "%"
+				))
+
+	stats["Armor Stats"] = armor_stats
+
+	var/list/equipment_stats = list()
+
+	equipment_stats += list(list("name" = "Slowdown", "type" = "ProgressBar", "unit" = " delay units", "value" = slowdown, "min" = -5, "max" = 20, "color" = slowdown < 1 ? "good" : (slowdown > 1 ? "bad" : "average")))
+	equipment_stats += list(list("name" = "Stiffness", "type" = "ProgressBar", "unit" = " delay units", "value" = stiffness, "min" = -5, "max" = 20, "color" = stiffness < 1 ? "good" : (stiffness > 1 ? "bad" : "average")))
+	equipment_stats += list(list("name" = "Obscuration", "type" = "ProgressBar", "unit" = " delay units", "value" = obscuration, "min" = -5, "max" = 20, "color" = obscuration < 1 ? "good" : (obscuration > 1 ? "bad" : "average")))
+	equipment_stats += list(list("name" = "Coverage", "type" = "String", "value" = body_part_coverage_to_string(body_parts_covered)))
+	equipment_stats += list(list("name" = "Time To Equip", "type" = "ProgressBar", "unit" = equip_delay == 1 ? " second" : " seconds", "value" = equip_delay / 10, "min" = 0, "max" = 10, "color" = equip_delay < 10 ? "good" : (equip_delay > 50 ? "bad" : "average")))
+
+	stats["Equipment Stats"] = equipment_stats
+
+	var/list/temperature_stats = list()
+
+	if(heat_protection && max_heat_protection_temperature)
+		temperature_stats += list(list("name" = "Heat Protection Coverage", "type" = "String", "value" = body_part_coverage_to_string(heat_protection)))
+		temperature_stats += list(list("name" = "Max Temperature", "type" = "AnimatedNumber", "value" = max_heat_protection_temperature, "unit" = " deg K"))
+
+	if(cold_protection && min_cold_protection_temperature)
+		temperature_stats += list(list("name" = "Cold Protection Coverage", "type" = "String", "value" = body_part_coverage_to_string(cold_protection)))
+		temperature_stats += list(list("name" = "Minimum Temperature", "type" = "AnimatedNumber", "value" = min_cold_protection_temperature, "unit" = " deg K"))
+
+	stats["Temperature Stats"] = temperature_stats
+
+	data["stats"] = stats
+
+	return data
 
 /obj/screen/item_action/top_bar/clothing_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
@@ -413,7 +430,7 @@ BLIND     // can't see anything
 	if(!mob_wear_hat(user))
 		return ..()
 
-/obj/item/clothing/head/attack_generic(var/mob/user)
+/obj/item/clothing/head/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(!istype(user) || !mob_wear_hat(user))
 		return ..()
 
@@ -704,7 +721,8 @@ BLIND     // can't see anything
 /obj/item/clothing/under/New()
 	..()
 	item_state_slots[slot_w_uniform_str] = icon_state //TODO: drop or gonna use it?
-	sensor_mode = 3 // All clothing on tracking by default now.
+	if(isOnStationLevel(src))
+		sensor_mode = 3 // Clothing spawning on colony levels is on tracking by default.
 
 /obj/item/clothing/under/examine(mob/user)
 	..(user)
@@ -757,7 +775,7 @@ BLIND     // can't see anything
 					V.show_message("[usr] sets [src.loc]'s sensors to maximum.", 1)
 
 /obj/item/clothing/under/attackby(var/obj/item/I, var/mob/U)
-	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U) && !is_sharp(I)) // No setting sensors with knives!
+	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U))
 		set_sensors(U)
 	else
 		return ..()

@@ -21,6 +21,8 @@
 
 /datum/task_master/task/New(mob/living/holding_mob)
 	forwards_refence = holding_mob
+	if(unlocked)
+		level += 1 //Unlocked tasks start at level 1 rather then 0
 	if(forwards_refence)
 		if(gain_text)
 			to_chat(forwards_refence, SPAN_NOTICE("[gain_text]"))

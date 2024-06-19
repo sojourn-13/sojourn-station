@@ -70,7 +70,7 @@
 	new /obj/item/clothing/accessory/armband/cargo(src)
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster
-	name = "chief executive officer's locker"
+	name = "surface operations manager's locker"
 	req_access = list(access_merchant)
 	icon_state = "qm"
 
@@ -80,7 +80,7 @@
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/suit/fire(src)
-	new /obj/item/clothing/accessory/halfcape/ceo(src)
+	new /obj/item/clothing/accessory/halfcape/som(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
@@ -109,9 +109,9 @@
 
 
 /obj/structure/closet/secure_closet/personal/prospector/proc/gain_rng()
-	main_weapon_cache = pickweight(list("SMG" = 18, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 8, "WILDCARDS" = 8, "SHORT_WILDCARDS" = 12))
+	main_weapon_cache = pickweight(list("SMG" = 18, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 15, "WILDCARDS" = 8, "SHORT_WILDCARDS" = 12))
 	side_arm_cache = pickweight(list("PISTOL" = 16, "REVOLVER" = 8, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cache = pickweight(list("MACHETE" = 18, "KATANA" = 6, "PHAMMER" = 4, "CHAINSAW" = 1))
+	melee_cache = pickweight(list("MACHETE" = 18, "LONGSWORD" = 12, "KATANA" = 6, "PHAMMER" = 4, "CHAINSAW" = 1))
 	bag_cache = pickweight(list("INDUSTRIAL" = 36, "DUFFEL" = 28, "MILI" = 16, "BLUESPACE" = 1))
 	armor_cache = pickweight(list("BASIC_A" = 16, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 4))
 
@@ -207,39 +207,60 @@
 				new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 				new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		if("EGUN")
-			if(prob(50))
-				new /obj/item/gun/energy/cog(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
-			else
-				new /obj/item/gun/energy/lasercore(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
+			switch(rand(1,100))
+				if(1 to 35) //35% chance Cog
+					new /obj/item/gun/energy/cog(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+				if(36 to 65) //30% chance lasercore
+					new /obj/item/gun/energy/lasercore(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+				if(66 to 95) //30% chance Lightfall
+					new /obj/item/gun/energy/laser(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+					new /obj/item/cell/medium(src)
+				if(96 to 100) //5% chance Concillium, you only get two cells because they're large
+					new /obj/item/gun/energy/concillium(src)
+					new /obj/item/cell/large(src)
+					new /obj/item/cell/large(src)
 
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 
 	switch(side_arm_cache)
 		if("PISTOL")
-			if(prob(50))
-				new /obj/item/gun/projectile/ladon/sa(src)
-				new /obj/item/ammo_magazine/magnum_40(src)
-				new /obj/item/ammo_magazine/magnum_40(src)
-			else
-				new /obj/item/gun/projectile/mk58(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
+			switch(rand(1,100))
+				if(1 to 40) //40% Sigia
+					new /obj/item/gun/projectile/ladon/sa(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+				if(41 to 70) //30% Thorn
+					new /obj/item/gun/projectile/mk58(src)
+					new /obj/item/ammo_magazine/highcap_pistol_35(src)
+					new /obj/item/ammo_magazine/highcap_pistol_35(src)
+				if(71 to 100) //30% Rose
+					new /obj/item/gun/projectile/mk58/wood(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
 		if("REVOLVER")
-			if(prob(50))
-				new /obj/item/gun/projectile/revolver/detective(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-			else
-				new /obj/item/gun/projectile/revolver/rev10/rex10(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+			switch(rand(1,100))
+				if(1 to 30) //30% Havelock
+					new /obj/item/gun/projectile/revolver/detective(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+				if(31 to 60) //30% Cowboy
+					new /obj/item/gun/projectile/revolver/rev10/rex10(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+				if(61 to 100) //40% Pilgrim
+					new /obj/item/gun/projectile/revolver/lemant(src)
+					new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+					new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+					new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		if("GOOD_PISTOL")
 			if(prob(50))
 				new /obj/item/gun/projectile/colt(src)
@@ -275,6 +296,9 @@
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
+		if ("LONGSWORD")
+			new /obj/item/clothing/accessory/holster/saber/greatsword/churchprint(src)
+			new /obj/item/tool/sword/nt/longsword(src)
 		if("KATANA")
 			new /obj/item/tool/sword/katana(src)
 		if("PHAMMER")
@@ -317,9 +341,9 @@
 
 
 /obj/structure/closet/secure_closet/personal/salvager/proc/gain_rng()
-	main_weapon_cache = pickweight(list("SMG" = 12, "WILDCARDS" = 4, "SHORT_WILDCARDS" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	main_weapon_cache = pickweight(list("SMG" = 12, "WILDCARDS" = 4, "SHORT_WILDCARDS" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 6))
 	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
+	melee_cache = pickweight(list("MACHETE" = 12, "LONGSWORD" = 8, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
 	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
@@ -396,15 +420,24 @@
 				new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 				new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		if("EGUN")
-			if(prob(50))
-				new /obj/item/gun/energy/cog(src)
-				new /obj/random/powercell/medium_safe_lonestar(src)
-				new /obj/item/cell/medium(src)
-			else
-				new /obj/item/gun/energy/lasercore(src)
-				new /obj/random/powercell/medium_safe_lonestar(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
+			switch(rand(1,100))
+				if(1 to 35) //35% chance Cog
+					new /obj/item/gun/energy/cog(src)
+					new /obj/random/powercell/medium_safe_lonestar(src)
+					new /obj/item/cell/medium(src)
+				if(36 to 65) //30% chance lasercore
+					new /obj/item/gun/energy/lasercore(src)
+					new /obj/random/powercell/medium_safe_lonestar(src)
+					new /obj/item/cell/medium(src)
+				if(66 to 95) //30% chance Lightfall
+					new /obj/item/gun/energy/laser(src)
+					new /obj/random/powercell/medium_safe_lonestar(src)
+					new /obj/item/cell/medium(src)
+				if(96 to 100) //5% chance Concillium, you only get two cells because they're large
+					new /obj/item/gun/energy/concillium(src)
+					new /obj/item/cell/large(src)
+					new /obj/item/cell/large(src)
+
 
 
 	//pistols
@@ -412,23 +445,34 @@
 
 	switch(side_arm_cache)
 		if("PISTOL")
-			if(prob(50))
-				new /obj/item/gun/projectile/giskard(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
-			else
-				new /obj/item/gun/projectile/mk58(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
+			switch(rand(1,100))
+				if(1 to 40) //40% Sigia
+					new /obj/item/gun/projectile/ladon/sa(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+				if(41 to 70) //30% Thorn
+					new /obj/item/gun/projectile/mk58(src)
+					new /obj/item/ammo_magazine/highcap_pistol_35(src)
+					new /obj/item/ammo_magazine/highcap_pistol_35(src)
+				if(71 to 100) //30% Rose
+					new /obj/item/gun/projectile/mk58/wood(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
+					new /obj/item/ammo_magazine/magnum_40(src)
 		if("REVOLVER")
-			if(prob(50))
-				new /obj/item/gun/projectile/revolver/detective(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-			else
-				new /obj/item/gun/projectile/revolver/rev10/rex10(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-				new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+			switch(rand(1,100))
+				if(1 to 30) //30% Havelock
+					new /obj/item/gun/projectile/revolver/detective(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+				if(31 to 60) //30% Cowboy
+					new /obj/item/gun/projectile/revolver/rev10/rex10(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+					new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+				if(61 to 100) //40% Pilgrim
+					new /obj/item/gun/projectile/revolver/lemant(src)
+					new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+					new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+					new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		if("GOOD_PISTOL")
 			if(prob(50))
 				new /obj/item/gun/projectile/colt(src)
@@ -463,6 +507,9 @@
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
+		if ("LONGSWORD")
+			new /obj/item/clothing/accessory/holster/saber/greatsword/churchprint(src)
+			new /obj/item/tool/sword/nt/longsword(src)
 		if("KATANA")
 			new /obj/item/tool/sword/katana(src)
 		if("PHAMMER")
@@ -518,7 +565,7 @@
 /obj/structure/closet/secure_closet/reinforced/foreman/proc/gain_rng()
 	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
 	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
+	melee_cache = pickweight(list("MACHETE" = 12, "LONGSWORD" = 8, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
 	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
@@ -580,7 +627,7 @@
 			new /obj/item/ammo_magazine/rifle_75(src)
 			new /obj/item/ammo_magazine/rifle_75(src)
 		if("SHOTGUN")
-			new /obj/item/gun/projectile/shotgun/pump(src)
+			new /obj/item/gun/projectile/shotgun/pump/combat(src) //Foreman can get Regulator rather than the lame regular pump
 			new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
 			new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
 		if("GOOD_SMG")
@@ -610,6 +657,9 @@
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
+		if ("LONGSWORD")
+			new /obj/item/clothing/accessory/holster/saber/greatsword/churchprint(src)
+			new /obj/item/tool/sword/nt/longsword(src)
 		if("KATANA")
 			new /obj/item/tool/sword/katana(src)
 		if("PHAMMER")

@@ -376,6 +376,8 @@
 						/datum/design/research/item/robot_upgrade/rcd,
 						/datum/design/research/item/robot_upgrade/arc_welder,
 						/datum/design/research/item/mechfab/robot/component/armour,
+						/datum/design/research/item/mechfab/robot/component/armour/mkii,
+						/datum/design/research/item/mechfab/robot/component/armour/mkv,
 						/datum/design/research/circuit/repair_station
 						)
 

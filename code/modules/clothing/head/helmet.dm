@@ -49,7 +49,7 @@
 		rad = 0
 	)
 
-/obj/item/clothing/head/armor/helmet/tanker/verb/toggle_style()
+/obj/item/clothing/head/helmet/tanker/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -1804,7 +1804,11 @@
 					continue
 				crewmembers_recently_reported += entry["name"]
 				schedule_memory_cleanup(entry["name"])
-				to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal. Access monitoring software for details.'"))
+				if((entry["area"]))
+					to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal from [entry["area"]]. Access monitoring software for details.'"))
+				else
+					to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal from an unidentified location. Access monitoring software for details.'"))
+
 
 	schedule_scan()
 

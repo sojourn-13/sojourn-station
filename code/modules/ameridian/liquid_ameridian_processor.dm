@@ -147,7 +147,7 @@
 			if(path["path"] == L_path)
 				successful = TRUE
 				break
-		if(L["cost"] <= 0)
+		if(L["cost"] <= 0 || L["amount"] <= 0 || L["amount"] > 120)
 			successful = FALSE
 		if(!successful)
 			return

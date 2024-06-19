@@ -214,6 +214,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/datum/controller/subsystem/SS in subsystems)
 		if (SS.flags & SS_NO_INIT || SS.initialized) //Don't init SSs with the correspondig flag or if they already are initialzized
 			continue
+		rustg_time_reset(SS_INIT_TIMER_KEY)
 		SS.Initialize(REALTIMEOFDAY)
 		CHECK_TICK
 	current_ticklimit = TICK_LIMIT_RUNNING
@@ -227,6 +228,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		SetRunLevel(1)
 
 	world.TgsInitializationComplete()
+
+	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content(text = "A new round has begun!"))
 
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)

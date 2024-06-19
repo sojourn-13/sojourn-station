@@ -326,7 +326,7 @@
 	// Handle gas production.
 	if(exude_gasses && exude_gasses.len && !check_only)
 		for(var/gas in exude_gasses)
-			environment.adjust_gas(gas, max(1,round((exude_gasses[gas]*(get_trait(TRAIT_POTENCY)/5))/exude_gasses.len)))
+			environment.adjust_gas_temp(gas, max(1,round((exude_gasses[gas]*(get_trait(TRAIT_POTENCY)/5))/exude_gasses.len)), T20C)
 
 	//Handle temperature change.
 	if(get_trait(TRAIT_ALTER_TEMP) != 0 && !check_only)
@@ -519,6 +519,8 @@
 	if(prob(5))
 		set_trait(TRAIT_BIOLUM,1)
 		set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
+	if(prob(1))
+		set_trait(TRAIT_CHEM_PRODUCTION,1)
 
 	set_trait(TRAIT_ENDURANCE,rand(60,100))
 	set_trait(TRAIT_YIELD,rand(3,15))
@@ -711,14 +713,14 @@
 		if(GENE_FRUIT)
 			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
 		if(GENE_SPECIAL)
-			traits_to_copy = list(TRAIT_TELEPORTING)
+			traits_to_copy = list(TRAIT_TELEPORTING, TRAIT_CHEM_PRODUCTION)
 
 	for(var/trait in traits_to_copy)
 		P.values[trait] = get_trait(trait)
 	return P
 
 //Place the plant products at the feet of the user.
-/datum/seed/proc/harvest(mob/living/user,yield_mod,harvest_sample,force_amount)
+/datum/seed/proc/harvest(mob/living/user,yield_mod,potency_mod,harvest_sample,force_amount)
 
 	if(!user)
 		return
@@ -727,12 +729,6 @@
 		if(istype(user)) to_chat(user, SPAN_DANGER("You fail to harvest anything useful."))
 	else
 		if(istype(user)) to_chat(user, "You [harvest_sample ? "take a sample" : "harvest"] from the [display_name].")
-
-		// Users with green thumb perk gain sanity when harvesting plants
-		if(ishuman(user) && user.stats && user.stats.getPerk(PERK_GREENTHUMB) && !harvest_sample)
-			var/mob/living/carbon/human/H = user
-			if(H.sanity)
-				H.sanity.changeLevel(2.5)
 
 		//This may be a new line. Update the global if it is.
 		if(name == "new line" || !(name in plant_controller.seeds))
@@ -747,31 +743,43 @@
 			return
 
 		var/total_yield = 0
+		if(get_trait(TRAIT_YIELD) > -1)
+			if(isnull(yield_mod))
+				yield_mod = 0
+				total_yield = get_trait(TRAIT_YIELD)
+			else
+				total_yield = get_trait(TRAIT_YIELD) + yield_mod
+
+			// Users with green thumb perk gain sanity when harvesting plants
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(user.stats.getPerk(PERK_GREENTHUMB))
+					to_chat(H, SPAN_NOTICE("Thanks to your gardening experience, you managed to harvest even more!"))
+					total_yield += 1
+					if(H.sanity)
+						H.sanity.changeLevel(2.5)
+
+				if(prob(H.stats.getStat(STAT_BIO)))
+					total_yield += 1
+					to_chat(H, SPAN_NOTICE("You have managed to harvest more!"))
+
+				if(H.stats.getPerk(PERK_MASTER_HERBALIST))
+					total_yield += 2
+					to_chat(H, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
+
 		if(!isnull(force_amount))
 			total_yield = force_amount
-		else
-			if(get_trait(TRAIT_YIELD) > -1)
-				if(isnull(yield_mod) || yield_mod < 1)
-					yield_mod = 0
-					total_yield = get_trait(TRAIT_YIELD)
-				else
-					total_yield = get_trait(TRAIT_YIELD) + rand(yield_mod)
-				if(prob(user.stats.getStat(STAT_BIO)))
-					total_yield += 1
-					to_chat(user, SPAN_NOTICE("You have managed to harvest more!"))
-				total_yield = max(1,total_yield)
 
-				if(user.stats.getPerk(PERK_MASTER_HERBALIST))
-					total_yield += 2
-					to_chat(user, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
-				total_yield = max(2,total_yield)
+		if(total_yield <= 0)
+			to_chat(user, SPAN_NOTICE("You fail to harvest anything do to a bad yield!"))
+			return
 
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product
 			if(has_mob_product)
 				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name)
+				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name,potency_mod)
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!ismob(product))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)

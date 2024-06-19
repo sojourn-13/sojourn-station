@@ -98,7 +98,7 @@
 
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
-	name = "executive officer coat"
+	name = "surface manager coat"
 	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "chief executive officer's jacket"
-	desc = "A well tailored and rich jacket for the Chief Executive Officer."
+	name = "surface operations manager's jacket"
+	desc = "A well tailored and rich jacket for the Surface Operations Manager."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"

@@ -83,6 +83,10 @@
 
 #define isdrone(A) istype(A, /mob/living/silicon/robot/drone)
 
+///Define on whether A has access to Silicon stuff either through being a silicon, admin ghost or is a non-silicon holding the Silicon remote.
+///This can only be used for instances where you are not specifically looking for silicon, but access.
+#define HAS_SILICON_ACCESS(A) (issilicon(A) || isAdminGhostAI(A) || A.has_unlimited_silicon_privilege)  // || istype(A.get_active_held_item(), /obj/item/machine_remote))
+
 //-----------------Objects
 #define ismovable(A) istype(A, /atom/movable)
 
@@ -115,3 +119,11 @@
 #define isMultitool(A) istype(A, /obj/item/tool/multitool)
 
 #define isCrowbar(A) istype(A, /obj/item/tool/crowbar)
+
+/// isnum() returns TRUE for NaN. Also, NaN != NaN. Checkmate, BYOND.
+#define isnan(x) ( (x) != (x) )
+
+#define isinf(x) (isnum((x)) && (((x) == SYSTEM_TYPE_INFINITY) || ((x) == -SYSTEM_TYPE_INFINITY)))
+
+/// NaN isn't a number, damn it. Infinity is a problem too.
+#define isnum_safe(x) ( isnum((x)) && !isnan((x)) && !isinf((x)) )

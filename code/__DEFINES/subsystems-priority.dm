@@ -17,6 +17,7 @@ var/list/bitflags = list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
 #define SS_PRIORITY_TICKER			300	// Gameticker processing.
 #define SS_PRIORITY_MOVEMENT_LOOPS	175  // Only so high in an attempt to make movement loops not stutter as much. Fairly arbitrary.
 #define FIRE_PRIORITY_TGUI 			110
+#define FIRE_PRIORITY_ASSETS		105
 #define SS_PRIORITY_MOB				100	// Mob Life().
 #define SS_PRIORITY_CHAT			100  // Chat subsystem.
 #define SS_PRIORITY_MACHINERY		100	// Machinery + powernet ticks.

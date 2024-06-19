@@ -184,6 +184,13 @@
 	melee_damage_lower = 0
 	melee_damage_upper = 10
 
+	//Type of damage, atm only brute
+	var/melee_damage_type = BRUTE
+	//If are melee attacks are sharp, used for delimming
+	var/melee_sharp = FALSE
+	//Used for what type of armor were fighting against
+	var/attacking_armor_type = ARMOR_MELEE
+
 	/// Determines if the mob will target whoever attacked them in the absence of an existing target. Ignores view range.
 	var/react_to_attack = TRUE
 	/// Determines what the mob will fire at if reacting to an attack they can't see. DO NOT MERGE IF NIKO DOES NOT REMOVE THIS COMMENT

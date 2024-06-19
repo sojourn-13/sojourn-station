@@ -24,6 +24,11 @@ $separator-color: colors.$primary !default;
   }
 }
 
+.Section--force-background {
+  background-color: functions.fake-alpha($background-color, base.$color-bg) !important;
+  background-color: $background-color;
+}
+
 .Section__title {
   position: relative;
   padding: 0.5em;

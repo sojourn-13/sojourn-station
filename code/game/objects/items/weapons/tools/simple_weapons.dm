@@ -53,6 +53,9 @@
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 30
 
+/obj/item/tool/hatchet/robo //for the service borg
+	embed_mult = 0
+
 /obj/item/tool/fireaxe
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
@@ -499,6 +502,7 @@
 	degradation = 0.4 //Used a lot
 	var/max_reagents = 30
 	embed_mult = 0
+	unacidable = TRUE //So if we do acid injections we dont melt
 
 /obj/item/tool/sword/saber/injection_rapier/refresh_upgrades()
 	..()

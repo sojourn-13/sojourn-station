@@ -1,6 +1,6 @@
 /*
 	important notes
-	catalogs are handled in /datum/nano_module, check there
+	catalogs are handled in /datum/tgui_module/catalog, check there
 	important procs are:
 		browse_catalog_entry()
 		browse_catalog()
@@ -32,25 +32,23 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 			for(var/id in D.heating_products)
 				var/datum/catalog_entry/reagent/E = get_catalog_entry(get_reagent_type_by_id(id))
 				if(E)
-					E.add_decomposition_from(D.type)
+					// D decomposes into E, tell E that its "parent" is D
+					E.add_decomposition_from(D)
 
 		if(D.chilling_products && D.chilling_point)
-			for(var/id in D.chilling_point)
-				var/datum/catalog_entry/reagent/E = get_catalog_entry(D.type)
+			for(var/id in D.chilling_products)
+				var/datum/catalog_entry/reagent/E = get_catalog_entry(get_reagent_type_by_id(id))
 				if(E)
-					E.add_decomposition_from(D.type)
+					// D decomposes into E, tell E that its "parent" is D
+					E.add_decomposition_from(D)
 
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_REAGENTS]
-	C.associated_template = "catalog_list_reagents.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	C = GLOB.catalogs[CATALOG_CHEMISTRY]
-	C.associated_template = "catalog_list_reagents.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_chem)
 	C = GLOB.catalogs[CATALOG_DRINKS]
-	C.associated_template = "catalog_list_drinks.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	C = GLOB.catalogs[CATALOG_ALL]
-	C.associated_template = "catalog_list_general.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	createCookingCatalogs()
 	return 1
@@ -90,7 +88,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 /datum/catalog
 	var/id
 	var/list/datum/catalog_entry/entry_list = list()
-	var/associated_template
 
 /datum/catalog/New(var/_id)
 	. = ..()
@@ -108,12 +105,12 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 /datum/catalog/proc/remove_entry(var/datum/catalog_entry/entry)
 	entry_list.Remove(entry)
 
-/datum/catalog/nano_ui_data(mob/user, ui_key = "main", var/search_value)
+/datum/catalog/ui_data(mob/user, search_value)
 	var/list/data = list()
 	var/list/entries_data = list()
 	for(var/datum/catalog_entry/E in entry_list)
 		if(!search_value || E.search_value(search_value))
-			entries_data.Add(list(E.catalog_ui_data(user, ui_key)))
+			entries_data.Add(list(E.catalog_ui_data(user)))
 	data["entries"] = entries_data
 	return data
 
@@ -122,7 +119,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	var/image_path	//image path in client cache
 	var/title
 	var/description
-	var/associated_template
 	var/thing_nature 	// reagent/weapon/device/etc.
 
 /datum/catalog_entry/New(var/datum/V)
@@ -134,7 +130,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	if(findtext(thing_nature, value))
 		return TRUE
 
-/datum/catalog_entry/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/ui_data(mob/user)
 	var/list/data = list()
 	data["id"] = thing_type
 	data["thing_nature"] = thing_nature
@@ -143,7 +139,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 
 // this used to get nano_ui_data for list
 // usually this is shorter nano_ui_data
-/datum/catalog_entry/proc/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/proc/catalog_ui_data(mob/user)
 	var/list/data = list()
 	data["id"] = thing_type
 	data["name"] = title
@@ -153,7 +149,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	return data
 
 /datum/catalog_entry/reagent
-	associated_template = "catalog_entry_reagent.tmpl"
 	var/reagent_type
 	var/reagent_state
 	var/metabolism_blood
@@ -172,8 +167,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	var/list/recipe_data
 	var/list/result_of_decomposition_in
 	var/list/can_be_used_in
-	var/list/also_gives
-	var/list/cant_be_made_with
 
 /datum/catalog_entry/reagent/search_value(var/value)
 	if(..())
@@ -181,37 +174,29 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	if(findtext(reagent_type, value))
 		return TRUE
 
-/datum/catalog_entry/reagent/proc/add_decomposition_from(var/reagent_type)
-	if(!result_of_decomposition_in)
-		result_of_decomposition_in = list()
-	for(var/V in result_of_decomposition_in)
-		if(V == reagent_type)
+/datum/catalog_entry/reagent/proc/add_decomposition_from(var/datum/reagent/D)
+	LAZYINITLIST(result_of_decomposition_in)
+	for(var/list/V in result_of_decomposition_in)
+		if(V["type"] == D.type)
 			return
-	result_of_decomposition_in.Add(reagent_type)
+	result_of_decomposition_in += list(list( "name" = D.name, "type" = D.type ))
+	// for(var/V in result_of_decomposition_in)
+	// 	if(V == reagent_type)
+	// 		return
+	// result_of_decomposition_in.Add(reagent_type)
 
-/datum/catalog_entry/reagent/proc/add_can_be_used_in(var/reagent_type)
-	if(!can_be_used_in)
-		can_be_used_in = list()
-	for(var/V in can_be_used_in)
-		if(V == reagent_type)
+/datum/catalog_entry/reagent/proc/add_can_be_used_in(var/datum/reagent/D)
+	LAZYINITLIST(can_be_used_in)
+	for(var/list/V in can_be_used_in)
+		if(V["type"] == D.type)
 			return
-	can_be_used_in.Add(reagent_type)
-
-/datum/catalog_entry/reagent/proc/add_also_gives(var/reagent_type)
-	if(!also_gives)
-		also_gives = list()
-	for(var/V in also_gives)
-		if(V == reagent_type)
-			return
-	also_gives.Add(reagent_type)
-
-/datum/catalog_entry/reagent/proc/add_cant_be_made_with(var/reagent_type)
-	if(!cant_be_made_with)
-		cant_be_made_with = list()
-	for(var/V in cant_be_made_with)
-		if(V == cant_be_made_with)
-			return
-	cant_be_made_with.Add(reagent_type)
+	can_be_used_in += list(list( "name" = D.name, "type" = D.type ))
+	// if(!can_be_used_in)
+	// 	can_be_used_in = list()
+	// for(var/V in can_be_used_in)
+	// 	if(V == reagent_type)
+	// 		return
+	// can_be_used_in.Add(reagent_type)
 
 /datum/catalog_entry/reagent/New(datum/reagent/V)
 	if(!istype(V))
@@ -232,7 +217,9 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		var/list/dat = list()
 		dat["types"] = list()
 		for(var/id in V.heating_products)
-			dat["types"] += get_reagent_type_by_id(id)
+			var/datum/reagent/D = GLOB.chemical_reagents_list["[id]"]
+			if(D)
+				dat["types"] += list(list( "name" = D.name, "type" = D.type ))
 		heating_decompose = dat
 		heating_point = V.heating_point
 
@@ -240,7 +227,9 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		var/list/dat = list()
 		dat["types"] = list()
 		for(var/id in V.chilling_products)
-			dat["types"] += get_reagent_type_by_id(id)
+			var/datum/reagent/D = GLOB.chemical_reagents_list["[id]"]
+			if(D)
+				dat["types"] += list(list( "name" = D.name, "type" = D.type ))
 		chilling_decompose = dat
 		chilling_point = V.chilling_point
 
@@ -252,18 +241,12 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		for(var/datum/chemical_reaction/R in recipes)
 			recipe_data += list(R.nano_ui_data())
 	var/list/used_in = GLOB.chemical_reactions_list[V.id]
-	if(also_gives)
-		for(var/datum/chemical_reaction/R in also_gives)
-			if(R.byproducts)
-				add_also_gives(get_reagent_type_by_id(R.byproducts))
-	if(cant_be_made_with)
-		for(var/datum/chemical_reaction/R in cant_be_made_with)
-			if(R.inhibitors)
-				add_cant_be_made_with(get_reagent_type_by_id(R.inhibitors))
 	if(used_in)
 		for(var/datum/chemical_reaction/R in used_in)
 			if(R.result)
-				add_can_be_used_in(get_reagent_type_by_id(R.result))
+				var/datum/reagent/D = GLOB.chemical_reagents_list["[R.result]"]
+				if(D)
+					add_can_be_used_in(D)
 
 	// DESCRIPTION
 	description = V.description
@@ -273,13 +256,13 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		addiction_chance = V.addiction_threshold ? "high" : V.addiction_chance <= 10 ? "Low" : V.addiction_chance <= 25 ? "Moderate" : "High"
 		addiction_threshold = V.addiction_threshold
 
-/datum/catalog_entry/reagent/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/reagent/catalog_ui_data(mob/user)
 	var/list/data = ..()
 	data["reagent_state"] = reagent_state
 	data["reagent_type"] = reagent_type
 	return data
 
-/datum/catalog_entry/reagent/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/reagent/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS
@@ -296,8 +279,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	data["scannable"] = scannable
 	data["overdose"] = overdose
 	data["result_of_decomposition_in"] = result_of_decomposition_in
-	data["cant_be_made_with"] = cant_be_made_with
-	data["also_gives"] = also_gives
 	data["can_be_used_in"] = can_be_used_in
 
 
@@ -313,7 +294,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	return data
 
 /datum/catalog_entry/atom
-	associated_template = "catalog_entry_atom.tmpl"
 
 /datum/catalog_entry/atom/New(var/atom/V)
 	if(!istype(V))
@@ -327,7 +307,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	image_path = SSassets.transport.get_asset_url(V)
 
 
-/datum/catalog_entry/atom/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/atom/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS
@@ -340,7 +320,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 
 
 /datum/catalog_entry/drink
-	associated_template = "catalog_entry_drink.tmpl"
 	var/temperature
 	var/nutrition
 	var/taste
@@ -386,7 +365,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		for(var/datum/chemical_reaction/R in recipes)
 			recipe_data += list(R.nano_ui_data())
 
-/datum/catalog_entry/drink/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/drink/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS

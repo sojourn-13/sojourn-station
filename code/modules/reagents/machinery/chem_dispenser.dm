@@ -227,8 +227,30 @@
 	. = ..()
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)
-	if(default_deconstruction(I, user))
-		return
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_PRYING)
+
+	if(length(hacked_reagents))
+		usable_qualities.Add(QUALITY_PULSING)
+
+	if(usable_qualities)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+
+			if(QUALITY_PULSING)
+				to_chat(usr, SPAN_WARNING("You pulse a few wires, changing the dispensing restrictions."))
+				hacked()
+				return
+
+			if(QUALITY_SCREW_DRIVING)
+				default_deconstruction(I, user)
+				return
+
+			if(QUALITY_PRYING)
+				default_deconstruction(I, user)
+				return
+
+			if(ABORT_CHECK)
+				return
 
 	if(default_part_replacement(I, user))
 		return
@@ -236,10 +258,6 @@
 	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
-
-	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
-		to_chat(usr, SPAN_WARNING("You pulse a few wires, unlocking the dispensing restrictions."))
-		hacked()
 
 	var/obj/item/reagent_containers/B = I
 	if(beaker)

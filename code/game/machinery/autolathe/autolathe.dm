@@ -105,39 +105,25 @@
 	QDEL_NULL(image_load_material)
 	return ..()
 
+/obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Autolathe", name)
+		ui.open()
 
-// Also used by R&D console UI.
-/obj/machinery/autolathe/proc/materials_data()
+/obj/machinery/autolathe/ui_static_data(mob/user)
 	var/list/data = list()
 
-	data["mat_efficiency"] = mat_efficiency
-	data["mat_capacity"] = storage_capacity
-
-	data["container"] = !!container
-	if(container && container.reagents)
-		var/list/L = list()
-		for(var/datum/reagent/R in container.reagents.reagent_list)
-			var/list/LE = list("name" = R.name, "amount" = R.volume)
-			L.Add(list(LE))
-
-		data["reagents"] = L
-
-	var/list/M = list()
-	for(var/mtype in stored_material)
-		if(stored_material[mtype] <= 0)
-			continue
-
-		var/material/MAT = get_material_by_name(mtype)
-		var/list/ME = list("name" = MAT.display_name, "id" = mtype, "amount" = stored_material[mtype], "ejectable" = !!MAT.stack_type)
-
-		M.Add(list(ME))
-
-	data["materials"] = M
+	var/list/L = list()
+	for(var/d in design_list())
+		var/datum/computer_file/binary/design/design_file = d
+		if(!show_category || design_file.design.category == show_category)
+			L.Add(list(design_file.nano_ui_data()))
+	data["designs"] = L
 
 	return data
 
-
-/obj/machinery/autolathe/nano_ui_data()
+/obj/machinery/autolathe/ui_data(mob/user)
 	var/list/data = list()
 
 	data["have_disk"] = have_disk
@@ -158,26 +144,27 @@
 			"license" = disk.license,
 			"read_only" = disk.read_only
 		)
+	else
+		data["disk"] = null
 
 	if(categories)
 		data["categories"] = categories
 		data["show_category"] = show_category
+	else
+		data["categories"] = null
+		data["show_category"] = null
 
 	data["special_actions"] = special_actions
 
 	data |= materials_data()
 
-	var/list/L = list()
-	for(var/d in design_list())
-		var/datum/computer_file/binary/design/design_file = d
-		if(!show_category || design_file.design.category == show_category)
-			L.Add(list(design_file.nano_ui_data()))
-	data["designs"] = L
-
 
 	if(current_file)
 		data["current"] = current_file.nano_ui_data()
 		data["progress"] = progress
+	else
+		data["current"] = null
+		data["progress"] = null
 
 	var/list/Q = list()
 	var/licenses_used = 0
@@ -215,30 +202,44 @@
 
 	return data
 
+/obj/machinery/autolathe/ui_assets(mob/user)
+	if(user?.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES)
+		return list()
+	return list(
+		get_asset_datum(/datum/asset/spritesheet_batched/design_icons)
+	)
 
-/obj/machinery/autolathe/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data(user, ui_key)
+// Also used by R&D console UI.
+/obj/machinery/autolathe/proc/materials_data()
+	var/list/data = list()
 
-	var/datum/asset/designIcons = get_asset_datum(/datum/asset/simple/design_icons)
-	if (designIcons.send(user.client))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
+	data["mat_efficiency"] = mat_efficiency
+	data["mat_capacity"] = storage_capacity
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "autolathe.tmpl", capitalize(name), 550, 655)
+	data["container"] = !!container
+	if(container && container.reagents)
+		var/list/L = list()
+		for(var/datum/reagent/R in container.reagents.reagent_list)
+			var/list/LE = list("name" = R.name, "amount" = R.volume)
+			L.Add(list(LE))
 
-		// template keys starting with _ are not appended to the UI automatically and have to be called manually
-		ui.add_template("_materials", "autolathe_materials.tmpl")
-		ui.add_template("_reagents", "autolathe_reagents.tmpl")
-		ui.add_template("_designs", "autolathe_designs.tmpl")
-		ui.add_template("_queue", "autolathe_queue.tmpl")
+		data["reagents"] = L
+	else
+		data["reagents"] = null
 
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
+	var/list/M = list()
+	for(var/mtype in stored_material)
+		if(stored_material[mtype] <= 0)
+			continue
+
+		var/material/MAT = get_material_by_name(mtype)
+		var/list/ME = list("name" = MAT.display_name, "id" = mtype, "amount" = stored_material[mtype], "ejectable" = !!MAT.stack_type)
+
+		M.Add(list(ME))
+
+	data["materials"] = M
+
+	return data
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
 
@@ -265,7 +266,7 @@
 		return
 
 	user.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user)
 
 
 /obj/machinery/autolathe/attack_hand(mob/user)
@@ -273,110 +274,100 @@
 		return TRUE
 
 	user.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user)
 	wires.Interact(user)
 
-/obj/machinery/autolathe/Topic(href, href_list)
-	if(..())
+/obj/machinery/autolathe/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
 		return
 
-	usr.set_machine(src)
+	switch(action)
+		if("abort_print")
+			abort()
+			. = TRUE
 
-	if(href_list["insert"])
-		eat(usr)
-		return 1
+		if("pause")
+			paused = !paused
+			. = TRUE
 
-	if(href_list["disk"])
-		if(disk)
+		if("eject_disk")
 			eject_disk(usr)
-		else
-			insert_disk(usr)
-		return 1
+			. = TRUE
 
-	if(href_list["container"])
-		if(container)
+		if("eject_beaker")
 			eject_beaker(usr)
-		else
-			insert_beaker(usr)
-		return 1
+			. = TRUE
 
-	if(href_list["category"] && categories && (href_list["category"] in categories))
-		show_category = href_list["category"]
-		return 1
+		if("clear_queue")
+			queue.Cut()
+			. = TRUE
 
-	if(href_list["eject_material"] && (!current_file || paused || error))
-		var/material = href_list["eject_material"]
-		var/material/M = get_material_by_name(material)
+		if("insert_material")
+			eat(usr)
+			. = TRUE
 
-		if(!M.stack_type)
-			return
+		if("eject_material")
+			if(!current_file || paused || error)
+				var/material = params["id"]
+				var/material/M = get_material_by_name(material)
 
-		var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
-		if(!CanUseTopic(usr))
-			return
+				if(!M.stack_type)
+					return FALSE
 
-		num = min(max(num,0), stored_material[material])
+				var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
+				if(!CanUseTopic(usr))
+					return FALSE
 
-		eject(material, num)
-		return 1
+				num = min(max(num,0), stored_material[material])
 
+				eject(material, num)
+				. = TRUE
 
-	if(href_list["add_to_queue"])
-		var/recipe_filename = href_list["add_to_queue"]
-		var/datum/computer_file/binary/design/design_file
+		if("add_to_queue")
+			var/recipe_filename = params["filename"]
+			var/datum/computer_file/binary/design/design_file
 
-		for(var/f in design_list())
-			var/datum/computer_file/temp_file = f
-			if(temp_file.filename == recipe_filename)
-				design_file = temp_file
-				break
+			for(var/f in design_list())
+				var/datum/computer_file/temp_file = f
+				if(temp_file.filename == recipe_filename)
+					design_file = temp_file
+					break
 
-		if(design_file)
-			var/amount = 1
+			if(design_file)
+				var/amount = 1
 
-			if(href_list["several"])
-				amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
-				if(!CanUseTopic(usr) || !(design_file in design_list()))
-					return
+				if(params["several"])
+					amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
+					if(!CanUseTopic(usr) || !(design_file in design_list()) || amount == null)
+						return FALSE
 
-			queue_design(design_file, amount)
+				queue_design(design_file, amount)
 
-		return 1
+			. = TRUE
 
-	if(href_list["remove_from_queue"])
-		var/ind = text2num(href_list["remove_from_queue"])
-		if(ind >= 1 && ind <= queue.len)
-			queue.Cut(ind, ind + 1)
-		return 1
+		if("remove_from_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len)
+				queue.Cut(ind, ind + 1)
+			. = TRUE
 
-	if(href_list["move_up_queue"])
-		var/ind = text2num(href_list["move_up_queue"])
-		if(ind >= 2 && ind <= queue.len)
-			queue.Swap(ind, ind - 1)
-		return 1
+		if("move_up_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 2 && ind <= queue.len)
+				queue.Swap(ind, ind - 1)
+			. = TRUE
+		
+		if("move_down_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len-1)
+				queue.Swap(ind, ind + 1)
+			. = TRUE
 
-	if(href_list["move_down_queue"])
-		var/ind = text2num(href_list["move_down_queue"])
-		if(ind >= 1 && ind <= queue.len-1)
-			queue.Swap(ind, ind + 1)
-		return 1
-
-
-	if(href_list["abort_print"])
-		abort()
-		return 1
-
-	if(href_list["pause"])
-		paused = !paused
-		return 1
-
-	if(href_list["unfold"])
-		if(unfolded == href_list["unfold"])
-			unfolded = null
-		else
-			unfolded = href_list["unfold"]
-		return 1
-
+		if("switch_category")
+			show_category = params["category"]
+			update_static_data(usr, ui)
+			. = TRUE
 
 /obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	if(!inserted_disk && istype(user))
@@ -402,7 +393,7 @@
 	inserted_disk.forceMove(src)
 	disk = inserted_disk
 	to_chat(user, SPAN_NOTICE("You insert \the [inserted_disk] into [src]."))
-	SSnano.update_uis(src)
+	update_static_data_for_all_viewers()
 
 
 /obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
@@ -470,6 +461,7 @@
 	//Now they will graciously allow you to eject the disk
 	disk.forceMove(drop_location())
 	to_chat(usr, SPAN_NOTICE("You remove \the [disk] from \the [src]."))
+	update_static_data_for_all_viewers()
 
 	if(istype(user) && Adjacent(user))
 		user.put_in_active_hand(disk)
@@ -506,7 +498,7 @@
 	if(!eating && istype(user))
 		eating = user.get_active_hand()
 
-	if(!istype(eating))
+	if(!istype(eating) || QDELETED(eating))
 		return FALSE
 
 	if(stat)

@@ -29,6 +29,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/seedarkness = 1
 
 	var/obj/item/tool/multitool/ghost_multitool
+	var/datum/tgui_module/manifest/manifest_panel = null
 	incorporeal_move = 1
 
 /mob/observer/ghost/New(mob/body)
@@ -563,7 +564,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
 	set category = "Ghost"
-	show_manifest(src)
+
+	if(!istype(manifest_panel))
+		manifest_panel = new(src)
+	manifest_panel.ui_interact(src)
 
 //This is called when a ghost is drag clicked to something.
 /mob/observer/ghost/MouseDrop(atom/over)
@@ -665,12 +669,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/canface()
 	return 1
-
-/mob/proc/can_admin_interact()
-    return 0
-
-/mob/observer/ghost/can_admin_interact()
-	return check_rights(R_ADMIN, 0, src)
 
 /mob/observer/ghost/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"

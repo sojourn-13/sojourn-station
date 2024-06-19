@@ -17,7 +17,7 @@
 	gain_text = "Your body is modified enough already; pushing it further might be bad."
 
 //Genetics is made reliably enough that simply increasing total instability, a dynamically changing value, will be permanent until removed.
-/datum/perk/splicer/assign(mob/living/carbon/human/H)
+/datum/perk/splicer/assign(mob/living/L)
 	..()
 	holder.unnatural_mutations.total_instability += 20
 

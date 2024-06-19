@@ -22,7 +22,7 @@
 .adminticket {color: #386AFF; font-weight: bold;}
 
 /* Radio: Misc */
-.deadsay				{color: #530FAD;}
+.deadsay
 .angelsay				{color: #ffaa00;}
 .deptradio				{color: #ff00ff;}	/* when all other department colors fail */
 .newscaster				{color: #750000;}
@@ -63,6 +63,7 @@
 .akula					{color: #f8412c}
 .plant					{color: #882d17}
 .opifex					{color: #e96443}
+.cindarite				{color: #fa7373}
 
 .good                   {color: #4f8529; font-weight: bold;}
 .bad                    {color: #ee0000; font-weight: bold;}

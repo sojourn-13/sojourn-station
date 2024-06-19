@@ -7,7 +7,7 @@
 	set src = usr.contents
 
 	if(wearer && wearer.back == src)
-		nano_ui_interact(usr)
+		ui_interact(usr)
 
 /obj/item/rig/verb/toggle_vision()
 
@@ -320,3 +320,38 @@
 
 	to_chat(usr, "<font color='blue'><b>You attempt to engage the [module.interface_name].</b></font>")
 	module.engage()
+
+/obj/item/rig/verb/injector_fast_change()
+
+	set name = "Adjust Modular Injectors"
+	set desc = "Change the amount of units a modular injector will inject."
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	if(malfunction_check(usr))
+		return
+
+	if(canremove)
+		to_chat(usr, SPAN_WARNING("The suit is not active."))
+		return
+
+	if(!istype(wearer) || !wearer.back == src)
+		to_chat(usr, SPAN_WARNING("The hardsuit is not being worn."))
+		return
+
+	if(!check_power_cost(usr, 0, 0, 0, 0))
+		return
+
+	if(!selected_module)
+		to_chat(usr, SPAN_WARNING("No selected module!"))
+		return
+
+	if(istype(selected_module, /obj/item/rig_module/modular_injector))
+		var/obj/item/rig_module/modular_injector/module = selected_module
+		var/mob/M = usr
+		to_chat(usr, "<font color='blue'><b>You attempt to engage the [module.interface_name].</b></font>")
+		module.quick_change(M)
+		return
+	else
+		to_chat(usr, SPAN_WARNING("The actively selected module is not a modular injector!"))
+	return

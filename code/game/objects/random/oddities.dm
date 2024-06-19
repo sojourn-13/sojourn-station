@@ -50,16 +50,58 @@
 	spawn_nothing_percentage = 60
 
 /obj/random/oddity_guns
-	name = "random gun oddities"
+	name = "random oddities weapons spawn"
 	icon_state = "techloot-grey"
+	has_postspawn = TRUE
 
 /obj/random/oddity_guns/item_to_spawn()
+	var/item_to_spawn = random_grabber()
+	var/doup_found = FALSE
+	var/doup_found_2 = FALSE
+	for(var/doup in GLOB.reapeat_odditie_weapon_spawn)
+		if(item_to_spawn in GLOB.reapeat_odditie_weapon_spawn)
+			item_to_spawn = random_grabber() //Roll again
+			doup_found = TRUE
+			break
+
+	if(doup_found)
+		//Run it again to make sure are second pull isnt a doup, but only for adding to the list
+		for(var/doup_2 in GLOB.reapeat_odditie_weapon_spawn)
+			if(item_to_spawn in GLOB.reapeat_odditie_weapon_spawn)
+				doup_found_2 = TRUE
+				break
+
+	if(!doup_found_2)
+		GLOB.reapeat_odditie_weapon_spawn += item_to_spawn
+
+	return item_to_spawn
+
+/obj/random/oddity_guns/post_spawn(var/list/spawns)
+	for(var/picked_spawn in spawns)
+
+		//The gimmic of this gun is that you can duel wield 2 of them.
+		if(istype(picked_spawn, /obj/item/gun/projectile/clarissa/devil_eye))
+			new /obj/item/gun/projectile/clarissa/devil_eye(src.loc)
+
+		//The gimmic of the of the revolver is that it has a lot of ammo it *can* store, so we give starting ammo
+		if(istype(picked_spawn, /obj/item/gun/projectile/revolver/mistral/elite))
+			new /obj/item/ammo_magazine/ammobox/magnum_40/large(src.loc)
+
+		//The gimmic of the maxim was that its non-exl and powerful, do to powercreep of non-exl maxims we give starting ammo
+		if(istype(picked_spawn, /obj/item/gun/projectile/automatic/maxim/replica))
+			new /obj/item/ammo_magazine/maxim_75(src.loc)
+
+		//Just one of the weakest of the spawns, so we give extra ammo
+		if(istype(picked_spawn, /obj/item/gun/projectile/that_gun))
+			new /obj/item/ammo_magazine/highcap_pistol_35/drum(src.loc)
+	return
+
+/obj/random/oddity_guns/proc/random_grabber()
 	return pickweight(list(
 				//Bullet
 				/obj/item/gun/projectile/deaglebolt = 1,
 				/obj/item/gun/projectile/revolver/mistral/elite = 1,
 				/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun = 1,
-				/obj/item/gun/projectile/automatic/pulse_rifle = 1,
 				/obj/item/gun/projectile/silenced/rat = 1,
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/gun/projectile/revolver/deacon = 1,
@@ -76,6 +118,7 @@
 				/obj/item/gun/energy/captain/zapper = 1,
 				/obj/item/gun/energy/xray/psychic_cannon = 1,
 				/obj/item/gun/energy/lasersmg/chaos_engine = 1,
+				/obj/item/gun/energy/painted_flaregun = 1,
 				//Hydrogen
 				/obj/item/gun/hydrogen/incinerator = 1,
 				//Tools / Melee
@@ -86,6 +129,8 @@
 				/obj/item/tool/scythe/spectral_harvester = 1,
 				/obj/item/tool/knife/dagger/vail_render = 1,
 				/obj/item/shield/riot/mass_grave = 1,
+				/obj/item/tool/sword/saber/nightmare_saber = 1,
+				/obj/item/tool/crit_pipe_bluecross = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,

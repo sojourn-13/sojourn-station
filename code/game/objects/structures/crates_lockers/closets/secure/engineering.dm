@@ -109,3 +109,4 @@
 	new /obj/item/storage/hcases/parts(src)
 	new /obj/item/storage/hcases/engi(src)
 	new /obj/item/rpd(src)
+	new /obj/item/taperoll/engineering(src)

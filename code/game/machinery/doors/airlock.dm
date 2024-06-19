@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 
 	damage_smoke = TRUE
 
-/obj/machinery/door/airlock/attack_generic(mob/user, damage)
+/obj/machinery/door/airlock/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(stat & (BROKEN|NOPOWER))
 		if(damage >= 10)
 			if(density)
@@ -649,7 +649,7 @@ There are 9 wires.
 	set category = "Object"
 	set src in view(1)
 
-	if(!isliving(usr) || !CanUseTopic(usr))
+	if(!isliving(usr) || usr.incapacitated())
 		return
 
 	if(wedged_item)
@@ -754,81 +754,171 @@ There are 9 wires.
 				playsound(loc, 'sound/machines/Custom_deny.ogg', 50, 1, -2)
 	return
 
+// AIs being able to actually use buttons is handled in ui_act
+// we want it to remain STATUS_INTERACTIVE so they can hit the hack button
+/obj/machinery/door/airlock/CanUseTopic(mob/user)
+	if(operating < 0)
+		to_chat(user, SPAN_WARNING("Unable to interface: Internal error."))
+		return STATUS_CLOSE
+	if(isAllPowerLoss())
+		to_chat(user, SPAN_WARNING("Unable to interface: Connection timed out."))
+		return STATUS_CLOSE
+	. = ..()
+
 /obj/machinery/door/airlock/attack_ai(mob/user as mob)
-	nano_ui_interact(user)
+	ui_interact(user)
 
-/obj/machinery/door/airlock/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
-	var/data[0]
-
-	data["main_power_loss"]		= round(main_power_lost_until 	> 0 ? max(main_power_lost_until - world.time,	0) / 10 : main_power_lost_until,	1)
-	data["backup_power_loss"]	= round(backup_power_lost_until	> 0 ? max(backup_power_lost_until - world.time,	0) / 10 : backup_power_lost_until,	1)
-	data["electrified"] 		= round(electrified_until		> 0 ? max(electrified_until - world.time, 	0) / 10 	: electrified_until,		1)
-	data["open"] = !density
-
-	var/commands[0]
-	commands[++commands.len] = list(
-		"name" = "IdScan",
-		"command" = "idscan",
-		"active" = !aiDisabledIdScanner,
-		"enabled" = "Enabled",
-		"disabled" = "Disable",
-		"danger" = 0,
-		"act" = 1
-	)
-	commands[++commands.len] = list(
-		"name" = "Bolts",
-		"command" = "bolts",
-		"active" = !locked,
-		"enabled" = "Raised ",
-		"disabled" = "Dropped",
-		"danger" = 0,
-		"act" = 0
-	)
-	commands[++commands.len] = list(
-		"name" = "Bolt Lights",
-		"command" = "lights",
-		"active" = lights,
-		"enabled" = "Enabled",
-		"disabled" = "Disable",
-		"danger" = 0,
-		"act" = 1
-	)
-	commands[++commands.len] = list(
-		"name" = "Safeties",
-		"command"= "safeties",
-		"active" = safe,
-		"enabled" = "Nominal",
-		"disabled" = "Overridden",
-		"danger" = 1,
-		"act" = 0
-	)
-	commands[++commands.len] = list(
-		"name" = "Timing",
-		"command" = "timing",
-		"active" = normalspeed,
-		"enabled" = "Nominal",
-		"disabled" = "Overridden",
-		"danger" = 1,
-		"act" = 0
-	)
-	commands[++commands.len] = list(
-		"name" = "Door State",
-		"command" = "open",
-		"active" = density,
-		"enabled" = "Closed",
-		"disabled" = "Opened",
-		"danger" = 0,
-		"act" = 0
-	)
-
-	data["commands"] = commands
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "door_control.tmpl", "Door Controls", 450, 350, state = state)
-		ui.set_initial_data(data)
+/obj/machinery/door/airlock/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AiAirlock", name)
 		ui.open()
-		ui.set_auto_update(1)
+
+/obj/machinery/door/airlock/ui_data(mob/user)
+	var/list/data = list()
+
+	// Allow silicons to hack into an airlock via the UI
+	data["allowed"] = user_allowed_ai(user) || isghost(user) // Ghosts can see the full UI but not touch it
+	data["aiHacking"] = aiHacking
+	data["canHack"] = canAIHack()
+
+	var/list/power = list()
+	power["main"] = main_power_lost_until > 0 ? 0 : 2
+	power["main_timeleft"] = round(main_power_lost_until > 0 ? max(main_power_lost_until - world.time,	0) / 10 : main_power_lost_until, 1)
+	power["backup"] = backup_power_lost_until > 0 ? 0 : 2
+	power["backup_timeleft"] = round(backup_power_lost_until > 0 ? max(backup_power_lost_until - world.time, 0) / 10 : backup_power_lost_until, 1)
+	data["power"] = power
+
+	data["shock"] = (electrified_until == 0) ? 2 : 0
+	data["shock_timeleft"] = round(electrified_until > 0 ? max(electrified_until - world.time, 	0) / 10 : electrified_until, 1)
+	data["id_scanner"] = !aiDisabledIdScanner
+	data["locked"] = locked // bolted
+	data["lights"] = lights // bolt lights
+	data["safe"] = safe // safeties
+	data["speed"] = normalspeed // safe speed
+	data["welded"] = welded // welded
+	data["opened"] = !density // opened
+
+	var/list/wire = list()
+	wire["main_1"] = !wires.IsIndexCut(AIRLOCK_WIRE_MAIN_POWER1)
+	wire["main_2"] = !wires.IsIndexCut(AIRLOCK_WIRE_MAIN_POWER2)
+	wire["backup_1"] = !wires.IsIndexCut(AIRLOCK_WIRE_BACKUP_POWER1)
+	wire["backup_2"] = !wires.IsIndexCut(AIRLOCK_WIRE_BACKUP_POWER2)
+	wire["shock"] = !wires.IsIndexCut(AIRLOCK_WIRE_ELECTRIFY)
+	wire["id_scanner"] = !wires.IsIndexCut(AIRLOCK_WIRE_IDSCAN)
+	wire["bolts"] = !wires.IsIndexCut(AIRLOCK_WIRE_DOOR_BOLTS)
+	wire["lights"] = !wires.IsIndexCut(AIRLOCK_WIRE_LIGHT)
+	wire["safe"] = !wires.IsIndexCut(AIRLOCK_WIRE_SAFETY)
+	wire["timing"] = !wires.IsIndexCut(AIRLOCK_WIRE_SPEED)
+	data["wires"] = wire
+
+	return data
+
+/obj/machinery/door/airlock/proc/user_allowed_ai(mob/user)
+	var/allowed = (issilicon(user) && canAIControl(user))
+	if(!allowed && isAdminGhostAI(user))
+		allowed = TRUE
+	return allowed
+
+/obj/machinery/door/airlock/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	if(issilicon(usr))
+		switch(action)
+			if("hack")
+				if(canAIHack())
+					hack(usr)
+				else
+					to_chat(usr, SPAN_WARNING("Unable to hack airlock."))
+				// Play directly into their head
+				usr.playsound_local(null, 'sound/machines/synth_buttonpress.ogg', 100, is_global = TRUE)
+				return TRUE
+
+	if(!user_allowed_ai(usr))
+		return TRUE
+
+	switch(action)
+		if("disrupt-main")
+			if(!main_power_lost_until)
+				loseMainPower()
+			else
+				to_chat(usr, "<span class='warning'>Main power is already offline.</span>")
+			. = TRUE
+		if("disrupt-backup")
+			if(!backup_power_lost_until)
+				loseBackupPower()
+			else
+				to_chat(usr, "<span class='warning'>Backup power is already offline.</span>")
+			. = TRUE
+		if("shock-restore")
+			electrify(0, 1)
+			. = TRUE
+		if("shock-temp")
+			electrify(30, 1)
+			. = TRUE
+		if("shock-perm")
+			electrify(-1, 1)
+			. = TRUE
+		if("idscan-toggle")
+			set_idscan(aiDisabledIdScanner, 1)
+			. = TRUE
+		if("bolt-toggle")
+			toggle_bolt(usr)
+			. = TRUE
+		if("light-toggle")
+			if(wires.IsIndexCut(AIRLOCK_WIRE_LIGHT))
+				to_chat(usr, "The bolt lights wire is cut - The door bolt lights are permanently disabled.")
+				return TRUE
+			lights = !lights
+			update_icon()
+			. = TRUE
+		if("safe-toggle")
+			set_safeties(!safe, 1)
+			. = TRUE
+		if("speed-toggle")
+			if(wires.IsIndexCut(AIRLOCK_WIRE_SPEED))
+				to_chat(usr, "The timing wire is cut - Cannot alter timing.")
+				return TRUE
+			normalspeed = !normalspeed
+			. = TRUE
+		if("open-close")
+			user_toggle_open(usr)
+			. = TRUE
+
+	if(.)
+		// Play directly into their head
+		usr.playsound_local(null, 'sound/machines/synth_buttonpress.ogg', 100, is_global = TRUE)
+		update_icon()
+
+/obj/machinery/door/airlock/proc/toggle_bolt(mob/user)
+	if(!user_allowed_ai(user))
+		return
+	if(wires.IsIndexCut(AIRLOCK_WIRE_DOOR_BOLTS))
+		to_chat(user, SPAN_WARNING("The door bolt drop wire is cut - you can't toggle the door bolts."))
+		return
+	if(locked)
+		if(!arePowerSystemsOn())
+			to_chat(user, SPAN_WARNING("The door has no power - you can't raise the door bolts."))
+		else
+			unlock()
+			to_chat(user, SPAN_NOTICE("The door bolts have been raised."))
+	else
+		lock()
+		to_chat(user, SPAN_WARNING("The door bolts have been dropped."))
+
+/obj/machinery/door/airlock/proc/user_toggle_open(mob/user)
+	if(!user_allowed_ai(user))
+		return
+	if(welded)
+		to_chat(user, SPAN_WARNING("The airlock has been welded shut!"))
+	else if(locked)
+		to_chat(user, SPAN_WARNING("The door bolts are down!"))
+	else if(!density)
+		close()
+	else
+		open()
 
 /obj/machinery/door/airlock/proc/hack(mob/user as mob)
 	if(!aiHacking)
@@ -894,24 +984,6 @@ There are 9 wires.
 			if(shock(user, 100))
 				return
 
-	// No. -- cib
-	/**
-	if(ishuman(user) && prob(40) && density)
-		var/mob/living/carbon/human/H = user
-		if(H.getBrainLoss() >= 60)
-			playsound(loc, 'sound/effects/bang.ogg', 25, 1)
-			if(!istype(H.head, /obj/item/clothing/head/helmet))
-				visible_message(SPAN_WARNING("[user] headbutts the airlock."))
-				var/obj/item/organ/external/affecting = H.get_organ(BP_HEAD)
-				H.Stun(8)
-				H.Weaken(5)
-				if(affecting.take_damage(10, 0))
-					H.UpdateDamageIcon()
-			else
-				visible_message(SPAN_WARNING("[user] headbutts the airlock. Good thing they're wearing a helmet."))
-			return
-	**/
-
 	if(user.a_intent == I_GRAB && wedged_item && !user.get_active_hand())
 		take_out_wedged_item(user)
 		return
@@ -922,80 +994,6 @@ There are 9 wires.
 	else
 		..(user)
 	return
-
-/obj/machinery/door/airlock/CanUseTopic(mob/user)
-	if(operating < 0) //emagged
-		to_chat(user, SPAN_WARNING("Unable to interface: Internal error."))
-		return STATUS_CLOSE
-	if(issilicon(user) && !canAIControl())
-		if(canAIHack(user))
-			hack(user)
-		else
-			if (isAllPowerLoss()) //don't really like how this gets checked a second time, but not sure how else to do it.
-				to_chat(user, SPAN_WARNING("Unable to interface: Connection timed out."))
-			else
-				to_chat(user, SPAN_WARNING("Unable to interface: Connection refused."))
-		return STATUS_CLOSE
-
-	return ..()
-
-/obj/machinery/door/airlock/Topic(href, href_list)
-	if(..())
-		return TRUE
-
-	var/activate = text2num(href_list["activate"])
-	switch (href_list["command"])
-		if("idscan")
-			set_idscan(activate, 1)
-		if("main_power")
-			if(!main_power_lost_until)
-				loseMainPower()
-		if("backup_power")
-			if(!backup_power_lost_until)
-				loseBackupPower()
-		if("bolts")
-			if(isWireCut(AIRLOCK_WIRE_DOOR_BOLTS))
-				to_chat(usr, "The door bolt control wire is cut - Door bolts permanently dropped.")
-			else if(activate && lock())
-				to_chat(usr, "The door bolts have been dropped.")
-			else if(!activate && unlock())
-				to_chat(usr, "The door bolts have been raised.")
-		if("electrify_temporary")
-			electrify(30 * activate, 1)
-		if("electrify_permanently")
-			electrify(-1 * activate, 1)
-		if("open")
-			if(welded)
-				to_chat(usr, text("The airlock has been welded shut!"))
-			else if(locked)
-				to_chat(usr, text("The door bolts are down!"))
-			else if(activate && density)
-				open()
-			else if(!activate && !density)
-				close()
-		if("safeties")
-			set_safeties(!activate, 1)
-		if("timing")
-			// Door speed control
-			if(isWireCut(AIRLOCK_WIRE_SPEED))
-				to_chat(usr, text("The timing wire is cut - Cannot alter timing."))
-			else if (activate && normalspeed)
-				normalspeed = FALSE
-			else if (!activate && !normalspeed)
-				normalspeed = TRUE
-		if("lights")
-			// Bolt lights
-			if(isWireCut(AIRLOCK_WIRE_LIGHT))
-				to_chat(usr, "The bolt lights wire is cut - The door bolt lights are permanently disabled.")
-			else if (!activate && lights)
-				lights = FALSE
-				to_chat(usr, "The door bolt lights have been disabled.")
-			else if (activate && !lights)
-				lights = TRUE
-				to_chat(usr, "The door bolt lights have been enabled.")
-
-	update_icon()
-	return TRUE
 
 /obj/machinery/door/airlock/attackby(obj/item/I, mob/user)
 	if(!issilicon(usr))

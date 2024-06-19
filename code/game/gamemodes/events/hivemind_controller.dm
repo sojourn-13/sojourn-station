@@ -6,14 +6,14 @@ GLOBAL_LIST_INIT(hive_data_bool, list(
 	"allow_tyrant_spawn"			= TRUE,
 	"tyrant_death_kills_hive"		= FALSE,
 	"all_church_to_battle"			= FALSE,
-	"gibbing_dead"					= FALSE,
 	"pop_lock"						= TRUE,
 	"slime_pop_lock"				= TRUE))
 
 GLOBAL_LIST_INIT(hive_data_float, list(
 	"maximum_controlled_areas"		= 0, // Stop expansion when controlling certain number of areas, 0 to disable
 	"maximum_existing_mobs"			= 50, // Should be true in "hive_data_bool" to take effect, 0 means no hive mob spawn (except champions)
-	"core_oddity_drop_chance"		= 50)) // prob() of hive node leaving hive-themed oddity on death
+	"gibbing_warning_timer"			= 0, //How many seconds of warning should be given before a humanoid body is gibbed by hivemind wires. 0 means it doesn't at all
+	"core_oddity_drop_chance"		= 50,)) // prob() of hive node leaving hive-themed oddity on death
 
 GLOBAL_LIST_INIT(hive_names, list("Von Neumann", "Lazarus", "Abattoir", "Auto-Surgeon", "NanoTrasen",
 				"NanoNurse", "Vivisector", "Ex Costa", "Apostasy", "Gnosis", "Balaam", "Ophite",
@@ -92,6 +92,9 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>Core oddity drop chance: [GLOB.hive_data_float["core_oddity_drop_chance"]] \
 	<a href='?src=\ref[src];rig_gacha=1'>\[SET\]</a>"
 
+	data += "<br>How Long before Gibbing Humans? (0 is disabled): [GLOB.hive_data_float["gibbing_warning_timer"]] \
+	<a href='?src=\ref[src];set_gibbing_warning_timer=1'>\[SET\]</a>"
+
 	data += "<br>Spread trough burrows: [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_burrow=1'>\[TOGGLE\]</a>"
 
@@ -109,9 +112,6 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	data += "<br>All Church To Inquisitors: [GLOB.hive_data_bool["all_church_to_battle"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_inquisitors=1'>\[TOGGLE\]</a>"
-
-	data += "<br>Prevent Hivemind Gibbing Dead Victims: [GLOB.hive_data_bool["gibbing_dead"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_gibbing_dead=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Prevent Hivemind Events Below 7 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
@@ -147,6 +147,10 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	if(href_list["rig_gacha"])
 		var/percent = input(usr, "Percentage probability of hive node dropping oddity on destruction", "Rigging gacha") as null|num
 		GLOB.hive_data_float["core_oddity_drop_chance"] = CLAMP(percent ? percent : 0, 0, 100)
+
+	if(href_list["set_gibbing_warning_timer"])
+		var/timer = input(usr, "Time in seconds before human bodies are destroyed on wires, 0 to disable", "Time in Seconds") as null|num
+		GLOB.hive_data_float["gibbing_warning_timer"] = CLAMP(timer ? timer : 0, 0, 300)
 
 	if(href_list["set_name"])
 		var/name = input(usr, "Choose wisely", "Hivemind name") as null|anything in GLOB.hive_names
@@ -203,9 +207,6 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	if(href_list["toggle_tyrant_gameover"])
 		GLOB.hive_data_bool["tyrant_death_kills_hive"] = !GLOB.hive_data_bool["tyrant_death_kills_hive"]
-
-	if(href_list["toggle_gibbing_dead"])
-		GLOB.hive_data_bool["gibbing_dead"] = !GLOB.hive_data_bool["gibbing_dead"]
 
 	if(href_list["toggle_pop_lock"])
 		GLOB.hive_data_bool["pop_lock"] = !GLOB.hive_data_bool["pop_lock"]

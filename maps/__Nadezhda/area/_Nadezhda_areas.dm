@@ -687,7 +687,7 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/merchant
-	name = "\improper Lonestar - CEO's Office"
+	name = "\improper Lonestar - Manager's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
@@ -1412,6 +1412,10 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/vacantoffice2
 	name = "\improper Vacant Office"
+	icon_state = "security"
+
+/area/nadezhda/security/secrecroom
+	name = "Security - Recreation Room"
 	icon_state = "security"
 
 /area/nadezhda/security/inspectors_office

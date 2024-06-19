@@ -29,7 +29,7 @@
 
 	var/mob_size	= MOB_MEDIUM
 	var/virus_immune
-	var/blood_volume = 560
+	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
 	var/always_blood = FALSE 						 // Can we process reagents without blood?
 	var/always_ingest = FALSE 		                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
@@ -425,3 +425,5 @@
 		H.add_language(LANGUAGE_MERP)
 	if(H.species.reagent_tag == IS_SLIME)
 		H.add_language(LANGUAGE_BLORP)
+	if(H.species.reagent_tag == IS_CINDARITE)
+		H.add_language(LANGUAGE_WEH)

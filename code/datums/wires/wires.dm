@@ -78,7 +78,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	var/datum/wire_description/wd = get_description(index)
 	if(!wd)
 		return
-	if(wd.skill_level > mec_stat)
+	if(wd.skill_level >= mec_stat)
 		return
 	return wd.description
 
@@ -91,112 +91,134 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	wire_log += "\[[time_stamp()]\] [user.name] ([user.ckey]) [message]"
 
 /datum/wires/proc/Interact(mob/living/user)
+	if(istype(user) && holder && CanUse(user))
+		ui_interact(user)
 
-	var/html = null
-	if(holder && CanUse(user))
-		html = GetInteractWindow(user)
-	if(html)
-		user.set_machine(holder)
-	else
-		user.unset_machine()
-		// No content means no window.
-		user << browse(null, "window=wires")
+/datum/wires/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Wires", "[holder.name] wires")
+		ui.open()
+
+/// Users will be interacting with our holder object and not the wire datum directly, therefore we need to return the holder.
+/datum/wires/ui_host()
+	return holder
+
+/datum/wires/ui_state(mob/user)
+	return GLOB.physical_state
+
+/datum/wires/ui_data(mob/user)
+	var/list/data = list()
+
+	var/list/wires_list = list()
+	for(var/color in wires)
+		var/datum/wire_description/wd = get_description(GetIndex(color))
+
+		var/color_name = color
+		if(color in LIST_COLOR_RENAME)
+			color_name = LIST_COLOR_RENAME[color]
+
+		wires_list += list(list(
+			"color" = color,
+			"color_name" = color_name,
+			// was wire
+			"desc" = can_see_wire_info(user, wd) ? wd.description : null,
+			"cut" = IsColourCut(color),
+			"attached" = IsAttached(color)
+		))
+	data["wires"] = wires_list
+
+	// Get the information shown at the bottom of wire TGUI window, such as "The red light is blinking", etc.
+	// If the user is colorblind, we need to replace these colors as well.
+	data["status"] = get_status(user)
+
+	return data
+
+/datum/wires/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
 		return
 
-	var/datum/browser/popup = new(user, "wires", holder.name, window_x, window_y)
-	popup.set_content(html)
-	popup.open()
+	var/mob/user = usr
+	if(!CanUse(user))
+		return
 
-/datum/wires/proc/GetInteractWindow(mob/living/user)
-	var/user_skill
-	var/html = "<div class='block'>"
-	html += "<h3>Exposed Wires</h3>"
-	html += "<table[table_options]>"
+	var/obj/item/I = user.get_active_hand()
+	var/color = lowertext(params["wire"])
+	holder.add_hiddenprint(user)
 
-	if(!user)
-		user = usr
+	switch(action)
+		 // Toggles the cut/mend status.
+		if("cut")
+			if(!istype(I))
+				return TRUE
 
-	if(istype(user))
-		user_skill = user.stats.getStat(STAT_MEC)
+			var/tool_type = null
+			if(QUALITY_CUTTING in I.tool_qualities)
+				tool_type = QUALITY_CUTTING
 
-	for(var/colour in wires)
-		html += "<tr>"
-		var/datum/wire_description/wd = get_description(GetIndex(colour))
-		if(wd)
-			if(user.stats && user.stats.getPerk(PERK_HANDYMAN) || user_skill && (wd.skill_level <= user_skill))
-				html += "<td[row_options1]><font color='[colour]'>[wd.description]</font></td>"
-			else
-				html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
-		else
-			html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
-		html += "<td[row_options2]>"
-		html += "<A href='?src=\ref[src];action=1;cut=[colour]'>[IsColourCut(colour) ? "Mend" :  "Cut"]</A>"
-		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse</A>"
-		html += " <A href='?src=\ref[src];action=1;attach=[colour]'>[IsAttached(colour) ? "Detach" : "Attach"] Signaller</A>"
-	html += "</table>"
-	html += "</div>"
+			if(QUALITY_WIRE_CUTTING in I.tool_qualities)
+				tool_type = QUALITY_WIRE_CUTTING
 
-	return html
+			if(!tool_type)
+				to_chat(user, SPAN_WARNING("You need something that can cut!"))
+				return TRUE
 
-/datum/wires/Topic(href, href_list)
-	..()
-	if(in_range(holder, usr) && isliving(usr))
+			if(I.use_tool(user, holder, WORKTIME_INSTANT, tool_type, FAILCHANCE_ZERO))
+				add_log_entry(user, "has [IsColourCut(color) ? "mended" : "cut"] the <font color='[color]'>[capitalize(color)]</font> wire")
+				CutWireColour(color)
+				return TRUE
 
-		var/mob/living/L = usr
-		if(CanUse(L) && href_list["action"])
-			var/obj/item/I = L.get_active_hand()
-			holder.add_hiddenprint(L)
-			if(href_list["cut"]) // Toggles the cut/mend status
-				if (!istype(I))
-					return
-				var/tool_type = null
-				if(QUALITY_CUTTING in I.tool_qualities)
-					tool_type = QUALITY_CUTTING
-				if(QUALITY_WIRE_CUTTING in I.tool_qualities)
-					tool_type = QUALITY_WIRE_CUTTING
-				if(tool_type)
-					if(I.use_tool(L, holder, WORKTIME_INSTANT, tool_type, FAILCHANCE_ZERO))
-						var/colour = href_list["cut"]
-						add_log_entry(L, "has [IsColourCut(colour) ? "mended" : "cut"] the <font color='[colour]'>[capitalize(colour)]</font> wire")
-						CutWireColour(colour)
-				else
-					to_chat(L, SPAN_WARNING("You need something that can cut!"))
+		// Pulse a wire.
+		if("pulse")
+			if(!istype(I))
+				return  TRUE
 
-			else if(href_list["pulse"])
-				if (!istype(I))
-					return
-				if(I.get_tool_type(usr, list(QUALITY_PULSING), holder))
-					if(I.use_tool(L, holder, WORKTIME_INSTANT, QUALITY_PULSING, FAILCHANCE_ZERO))
-						var/colour = href_list["pulse"]
-						add_log_entry(L, "has pulsed the <font color='[colour]'>[capitalize(colour)]</font> wire")
-						PulseColour(colour)
-				else
-					to_chat(L, SPAN_WARNING("You need a multitool!"))
+			if(!I.get_tool_type(user, list(QUALITY_PULSING), holder))
+				to_chat(user, SPAN_WARNING("You need a multitool!"))
+				return TRUE
 
-			else if(href_list["attach"])
-				var/colour = href_list["attach"]
-				// Detach
-				if(IsAttached(colour))
-					var/obj/item/O = Detach(colour)
-					add_log_entry(L, "has detached [O] from the <font color='[colour]'>[capitalize(colour)]</font> wire")
-					if(O)
-						L.put_in_hands(O)
+			if(I.use_tool(user, holder, WORKTIME_INSTANT, QUALITY_PULSING, FAILCHANCE_ZERO))
+				add_log_entry(user, "has pulsed the <font color='[color]'>[capitalize(color)]</font> wire")
+				PulseColour(color)
+				return TRUE
 
-				// Attach
-				else
-					if(istype(I, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark))
-						L.drop_item()
-						add_log_entry(L, "has attached [I] to the <font color='[colour]'>[capitalize(colour)]</font> wire")
-						Attach(colour, I)
-					else
-						to_chat(L, SPAN_WARNING("You need a remote signaller!"))
+		 // Attach a signaler to a wire.
+		if("attach")
+			if(IsAttached(color))
+				var/obj/item/O = Detach(color)
+				add_log_entry(user, "has detached [O] from the <font color='[color]'>[capitalize(color)]</font> wire")
+				if(O)
+					user.put_in_hands(O)
+					return TRUE
 
-		// Update Window
-			Interact(usr)
+			if(!(istype(I, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark)))
+				to_chat(user, SPAN_WARNING("You need a remote signaller!"))
+				return TRUE
 
-	if(href_list["close"])
-		usr << browse(null, "window=wires")
-		usr.unset_machine(holder)
+			if(!user.unEquip(I))
+				to_chat(user, SPAN_WARNING("[I] is stuck to your hand!"))
+				return TRUE
+
+			add_log_entry(user, "has attached [I] to the <font color='[color]'>[capitalize(color)]</font> wire")
+			Attach(color, I)
+			return TRUE
+
+/datum/wires/proc/can_see_wire_info(mob/living/user, datum/wire_description/wd)
+	if(!istype(wd))
+		return FALSE
+
+	if(user?.stats.getPerk(PERK_HANDYMAN))
+		return TRUE
+
+	var/user_skill = user.stats?.getStat(STAT_MEC) || 0
+	if(user_skill > wd.skill_level)
+		return TRUE
+
+	return FALSE
+
+/datum/wires/proc/get_status(mob/living/user)
+	return list()
 
 //
 // Overridable Procs

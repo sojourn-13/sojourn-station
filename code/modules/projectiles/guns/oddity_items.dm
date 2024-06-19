@@ -54,7 +54,6 @@
 		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
 		)
 
-
 /obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun/bolt_act(mob/living/user)
 	bolt_open = !bolt_open
 	if(bolt_open)
@@ -101,7 +100,6 @@
 	excelsior = FALSE
 	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
-
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -138,6 +136,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
+	icon = 'icons/obj/guns/projectile/rafale_bluecross.dmi'
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
 	penetration_multiplier = 3.1
@@ -169,10 +168,10 @@
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
-			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
+			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags, even drums!"
 	price_tag = 2000
 	gun_parts = null
-	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG | MAG_WELL_DRUM
 	damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
@@ -262,6 +261,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A \"presumebly\" endless supply of slaught-o-matics when drawn. You are never really able to tell when and how a new one takes its place when you draw one."
 	price_tag = 4000
+	icon_state = "holster_lock_pick"
 	var/spam_protection = 2 //The amount of guns we currently store
 	var/spam_protection_delay = 2.5 SECOND //How fast we recharge our storage
 	var/stored = 2
@@ -328,6 +328,28 @@
 	serial_type = "BlueCross"
 	allow_greyson_mods = FALSE
 
+/obj/item/gun/energy/painted_flaregun
+	name = "\"Palette\" flaregun"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A flaregun that has its barrel longer then most to store inside complex fabrication of flares on demand."
+	icon = 'icons/obj/guns/energy/flaregun_bluecross.dmi'
+	fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	icon_state = "painted_flare"
+	charge_cost = 50
+	item_charge_meter = FALSE
+	charge_meter = FALSE
+	serial_type = "BlueCross"
+	self_recharge = TRUE
+	price_tag = 2250
+	init_firemodes = list(
+		list(mode_name="red", mode_desc="fires a red flare", projectile_type=/obj/item/projectile/bullet/flare, charge_cost = 50, icon="stun"),
+		list(mode_name="green", mode_desc="fires a green flare", projectile_type=/obj/item/projectile/bullet/flare/green, charge_cost = 50, icon="stun"),
+		list(mode_name="blue", mode_desc="fires a blue flare", projectile_type=/obj/item/projectile/bullet/flare/blue, charge_cost = 50, icon="stun"),
+		list(mode_name="wild", mode_desc="fires a random coloured flare", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost = 10, icon="kill"),
+		list(mode_name="key", mode_desc="fires a random yellow flare", projectile_type=/obj/item/projectile/bullet/flare/yellow, charge_cost = 100, icon="kill"),
+		list(mode_name="thinner", mode_desc="fires a random colourless flare", projectile_type=/obj/item/projectile/bullet/flare/white, charge_cost = 200, icon="kill")
+	)
+
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -348,7 +370,6 @@
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	serial_type = "BlueCross"
 
-
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -364,7 +385,7 @@
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	damage_multiplier = 1.25
 	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
@@ -372,7 +393,8 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
+		BURST_2_ROUND_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
 		)
 	serial_type = "BlueCross"
 
@@ -435,8 +457,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	serial_type = "BlueCross"
 	gun_parts = null
-	slowdown = -0.5
-	slowdown_hold = -0.5
+	slowdown = -0.2
+	slowdown_hold = -0.2
 
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
@@ -583,6 +605,8 @@
 	degradation = 0.7
 	max_upgrades = 4
 	price_tag = 1500
+	effective_faction = list("excelsior")
+	damage_mult = 2
 
 /obj/item/tool/saw/hyper/doombringer
 	name = "\"Doombringer\" chainsword"
@@ -626,6 +650,99 @@
 	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
+
+//Movement = Damage
+/obj/item/tool/sword/saber/nightmare_saber
+	name = "dusk saber"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			A fine blade for cutting and dicing though the ranks of lower beings and nightmares. The more momentum you have the more damage it deals, at the cost of requiring you to be missing an arm."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "nightmare_saber"
+	item_state = "saber"
+	price_tag = 5000
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("hilts", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 0.2
+	effective_faction = list("psi_monster", "stalker") //Nightmares!
+	damage_mult = 1.2
+	embed_mult = 0
+	degradation = 0.1 //We do a LOT of attacks
+	//Normal force is 26
+	//Normal AP is 10
+	var/coin_tracker = 0 //Number not false
+	var/tracker
+
+/obj/item/tool/sword/saber/nightmare_saber/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
+	//Little icky but it works
+	clickdelay_offset = 0
+	if(coin_tracker >= 5)
+		coin_tracker = 0
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/able_to_use = FALSE
+		var/robo_lim = 0 //Counts byond just true or false
+		//message_admins("1knife: H [H]")
+		//message_admins("1knife: give_coin [give_coin]")
+		if(!H.get_organ(BP_L_ARM) || !H.get_organ(BP_R_ARM))
+			able_to_use = TRUE
+		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/stump))
+			able_to_use = TRUE
+		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/stump))
+			able_to_use = TRUE
+		//Robo *lim* bypasses needing only 1 arm, but having 2 robo lims cancle one another out
+		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(robo_lim == 1)
+			able_to_use = TRUE
+
+		//message_admins("1knife: able_to_use [able_to_use]")
+
+		if(able_to_use)
+			//message_admins("2knife: able_to_use [able_to_use]")
+			var/speedy_dashing = H.momentum_speed
+			//message_admins("2knife: speedy_dashing [speedy_dashing]")
+			if(speedy_dashing > 0)
+				//Hopefully your running around to accually use this
+				armor_penetration *= speedy_dashing
+				force *= speedy_dashing
+			if(tracker == target.name && give_coin)
+				coin_tracker += 1
+			else
+				if(ismob(target))
+					tracker = target.name
+					coin_tracker = 0
+			//message_admins("3knife: coin_tracker [coin_tracker]")
+			if(coin_tracker >= 4)
+				for(var/mob/living/victim in range(1, H))
+					if(victim != user)
+						var/turf/T = get_turf(victim)
+						new /atom/movable/DuskCut(T, src)
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again!
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 2x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 3x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 4x
+				coin_tracker = 0
+
+			clickdelay_offset = -speedy_dashing
+	.=..()
+	refresh_upgrades()
+
+/atom/movable/DuskCut
+	icon = 'icons/obj/weapons-blades.dmi'
+	color = "#ffffff"
+	icon_state = "nightmare_saber_arc"
+	alpha = 200
+	layer = 9 //Random number to be ontop of everything
+	var/qdel_timer
+
+/atom/movable/DuskCut/Initialize(mapload)
+	dir = pick(NORTH, SOUTH, EAST, WEST) //Random
+	qdel_timer = QDEL_IN(src, 4)
 
 /obj/item/tool/sword/katana/crimson_arc
 	name = "\"Crimson Arc\" katana"
@@ -718,6 +835,51 @@
 /obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
 	return TRUE //We are always adjacent
 
+/obj/item/tool/crit_pipe_bluecross
+	name = "\"TingTang\" lead pipe"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+	Luck correlates with skill."
+	icon_state = "lead_pipe"
+	price_tag = 3750
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_IRON, MATERIAL_URANIUM = 2)
+	icon = 'icons/obj/oddities.dmi'
+	max_upgrades = 0 //No...
+	embed_mult = 0
+	degradation = 0.01 //Lead pipes NEVER break!
+	force = WEAPON_FORCE_DANGEROUS + 5 //scaling starts at 25
+
+/obj/item/tool/crit_pipe_bluecross/resolve_attackby(atom/target, mob/user)
+	//Little icky but it works
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/luck = 0
+		for(var/stat in ALL_STATS)
+			luck += H.stats.getStat(stat, FALSE, TRUE)
+		var/luck_lops = 1
+		var/crits_happend = 0
+		while(luck_lops)
+		//	to_chat(H, SPAN_DANGER("luck [luck], force: [force]!"))
+
+			if(prob(luck))
+				crits_happend += 1
+				force *= 1.2 //Crit!
+				luck -= 100 //You spent the crit!
+			else
+				luck_lops = 0
+
+		if(crits_happend)
+			H.visible_message(SPAN_DANGER("[H]'s [src] lands with a heavyer hit!"))
+			if(crits_happend >= 2)
+				to_chat(H, SPAN_DANGER("You land a mega critical hit with [src.name]!"))
+			else
+				to_chat(H, SPAN_DANGER("You land a critical hit with [src.name]!"))
+
+
+	.=..()
+	refresh_upgrades()
+
+
+
 // Shield
 
 /obj/item/shield/riot/mass_grave
@@ -741,14 +903,12 @@
 	//Its a bad weapon
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = ARMOR_PEN_SHALLOW
+	has_alt_mode = FALSE
 
 /obj/item/shield/riot/mass_grave/check_shield_arc()
 	return TRUE
 
 /obj/item/shield/riot/mass_grave/refresh_upgrades()
-	return
-
-/obj/item/shield/riot/mass_grave/alt_mode_activeate_one()
 	return
 
 /obj/item/shield/riot/mass_grave/proc/upgrade_mass_grave()
@@ -800,7 +960,6 @@
 		mass_grave_counter -= 1
 	..()
 
-
 /obj/item/shield/riot/mass_grave/get_protected_area(mob/user)
 	return BP_ALL_LIMBS
 
@@ -822,7 +981,6 @@
 	..()
 
 //Armor
-
 
 // Regal Outfit (Crimson Clothing)
 /obj/item/clothing/suit/crimsoncross_regaloutfit

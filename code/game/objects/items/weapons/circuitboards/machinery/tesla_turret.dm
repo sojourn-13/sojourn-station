@@ -5,7 +5,8 @@
 	frame_type = FRAME_VERTICAL
 	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 5)
 	req_components = list(
-		/obj/item/stock_parts/capacitor = 1
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/smes_coil = 1
 	)
 
 /obj/item/circuitboard/os_turret

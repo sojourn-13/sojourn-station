@@ -827,7 +827,7 @@
 	if(!Adjacent(targetted_mob))
 		return
 
-	if(world.time > special_ability_cooldown && !passenger)
+	if(world.time > special_ability_cooldown && !passenger && !ismecha(targetted_mob.loc) && !ismecha(targetted_mob))
 		special_ability(targetted_mob)
 
 	..()
@@ -899,7 +899,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	if(GLOB.hive_data_bool["gibbing_dead"])
+	if(GLOB.hive_data_bool["prevent_gibbing_dead"])
 		qdel(passenger)
 	else
 		release_passenger(TRUE) //HAS to be true or we do an endless loop!

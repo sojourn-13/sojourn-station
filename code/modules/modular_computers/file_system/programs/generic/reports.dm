@@ -4,6 +4,7 @@
 /datum/computer_file/program/reports
 	filename = "repview"
 	filedesc = "Report Editor"
+	program_menu_icon = "paperclip"
 	nanomodule_path = /datum/nano_module/program/reports
 	extended_desc = "A general paperwork viewing and editing utility."
 	size = 6

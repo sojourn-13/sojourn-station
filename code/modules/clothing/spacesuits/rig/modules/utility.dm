@@ -9,9 +9,9 @@
  * /obj/item/rig_module/maneuvering_jets
  * /obj/item/rig_module/foam_sprayer
  * /obj/item/rig_module/device/broadcaster
- * /obj/item/rig_module/chem_dispenser
- * /obj/item/rig_module/chem_dispenser/injector
- * /obj/item/rig_module/chem_dispenser/medical
+ * /obj/item/rig_module/modular_injector
+ * /obj/item/rig_module/modular_injector/injector
+ * /obj/item/rig_module/modular_injector/medical
  * /obj/item/rig_module/voice
  * /obj/item/rig_module/device/paperdispenser
  * /obj/item/rig_module/device/pen
@@ -116,7 +116,6 @@
 		device.afterattack(target,holder.wearer,1)
 	return 1
 
-
 /obj/item/rig_module/modular_injector
 	name = "mounted modular dispenser"
 	desc = "A specialized system for injecting chemicals."
@@ -134,6 +133,7 @@
 	var/list/beakers = list()
 	var/max_beakers = 5
 	var/injection_amount = 5
+	//""max"" injection is for quick-selections, if you use a wrench directly on the modular injector you can set it to *any number you want*
 	var/max_injection_amount = 20
 	var/empties = 0
 	var/initial_beakers = null
@@ -219,12 +219,20 @@
 			user.visible_message("[user] removes \the [sel_ref.name] from \the [src]")
 			if(!user.put_in_active_hand(sel_ref))
 				sel_ref.loc = get_turf(src)
+	//Unlike fast change this lets you adjust to any number you want! (oh no)
 	if(W.get_tool_quality(QUALITY_BOLT_TURNING))
-		var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+		var/amount = input(user, "Choose reagent injection amount", null) as null|num
 		if(amount != null)
 			injection_amount = amount
 			to_chat(user, "You set the injection amount to [amount] on \the [src]")
 			user.visible_message("[user] tweaks the injection amount on \the [src]")
+
+/obj/item/rig_module/modular_injector/proc/quick_change(mob/user)
+	var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+	if(amount != null)
+		injection_amount = amount
+		to_chat(user, "You set the injection amount to [amount] on \the [src]")
+		user.visible_message("[user] tweaks the injection amount on \the [src]")
 
 /obj/item/rig_module/modular_injector/engage(atom/target)
 
@@ -283,20 +291,22 @@
 	max_injection_amount = 30
 	max_beakers = 6
 	injection_to_others_delay = 1
-	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/large, "hyperzine", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
-	)
 	interface_name = "integrated chemical combat dispenser"
 	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
+
+/obj/item/rig_module/modular_injector/combat/preloaded
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_hyperzine,     "hyperzine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tramadol,      "tramadol", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_nutriment,     "nutriment", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tricordrazine, "tricordrazine", 60)
+	)
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
 	desc = "A specialized system for injecting chemicals in patients."
 	price_tag = 3750
-	max_injection_amount = 3
+	max_injection_amount = 5 //3 was for 10 injections on max turns, now its 5 for 6 injects max. Evens out I suppose
 	injection_amount = 1
 	max_beakers = 8 //We have limitations in injection amount, time and *maxium* storage, this is a fair trade.
 	usable = 0
@@ -304,17 +314,19 @@
 	disruptive = 1
 	vial_only = TRUE
 	injection_to_others_delay = 7 //Not nerely as long as you would think
-	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/vial, "inaprovaline",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "dexalinp",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "tramadol",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "bicaridine", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "kelotane",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "anti_toxin", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "spaceacillin", 15)
-	)
 	interface_name = "integrated chemical injector"
 	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
+
+/obj/item/rig_module/modular_injector/medical/preloaded
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline, "inaprovaline",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp,     "dexalinp",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_tramadol,     "tramadol",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_bicaridine,   "bicaridine", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_kelotane,     "kelotane",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin,   "anti_toxin", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin, "spaceacillin", 15)
+	)
 
 /obj/item/rig_module/voice
 
@@ -480,6 +492,7 @@
 	autodoc_processor.set_patient(holder.wearer)
 	nano_ui_interact(usr)
 	return 1
+
 /obj/item/rig_module/autodoc/Topic(href, href_list)
 	return autodoc_processor.Topic(href, href_list)
 
@@ -500,8 +513,10 @@
 
 /obj/item/rig_module/autodoc/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/nano_topic_state/state = GLOB.deep_inventory_state)
 	autodoc_processor.nano_ui_interact(user, ui_key, ui, force_open, state = GLOB.deep_inventory_state)
+
 /obj/item/rig_module/autodoc/activate()
 	return
+
 /obj/item/rig_module/autodoc/deactivate()
 	return
 

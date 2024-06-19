@@ -113,7 +113,7 @@
 	return O
 
 //human -> robot
-/mob/living/proc/Robotize()
+/mob/living/proc/Robotize(posibrain = FALSE)
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
@@ -130,9 +130,12 @@
 
 	O.loc = loc
 	O.job = "Robot"
-	if(O.mind.assigned_role == "Robot")
+	if(O.mind.role_alt_title == "Robot")
+		posibrain = TRUE
+	if(!posibrain)
 		O.mmi = new /obj/item/device/mmi(O)
-		O.mmi.transfer_identity(src)
+	else O.mmi = new /obj/item/device/mmi/digital/posibrain
+	O.mmi.transfer_identity(src)
 
 	callHook("borgify", list(O))
 	O.Namepick()

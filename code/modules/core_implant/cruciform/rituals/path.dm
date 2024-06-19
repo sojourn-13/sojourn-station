@@ -395,16 +395,16 @@
 	cooldown = TRUE
 	cooldown_time = 30 MINUTES
 	cooldown_category = "bulwark_of_harmony"
-	effect_time = 5 MINUTES
+	effect_time = 1 MINUTES
 	power = 60
-	var/brute_mod_monomial
+	/*var/brute_mod_monomial
 	var/burn_mod_monomial
 	var/toxin_mod_monomial
-	var/oxygen_mod_monomial
+	var/oxygen_mod_monomial*/
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 
-	brute_mod_monomial = (user.brute_mod_perk * 0.5)
+	/*brute_mod_monomial = (user.brute_mod_perk * 0.5)
 	user.brute_mod_perk -= brute_mod_monomial
 
 	burn_mod_monomial = (user.burn_mod_perk * 0.5)
@@ -414,20 +414,31 @@
 	user.toxin_mod_perk -= toxin_mod_monomial
 
 	oxygen_mod_monomial = (user.oxy_mod_perk * 0.5)
-	user.oxy_mod_perk -= oxygen_mod_monomial
+	user.oxy_mod_perk -= oxygen_mod_monomial*/
 
-	user.add_chemical_effect(CE_SLOWDOWN, 5, 1 MINUTES, "monomial_slow")
+	user.brute_mod_perk *= 0.5
+	user.burn_mod_perk *= 0.5
+	user.toxin_mod_perk *= 0.5
+	user.oxy_mod_perk *= 0.5
+
+	user.added_movedelay += 5
 
 	to_chat(user, SPAN_NOTICE("You feel your body stiffening, your stout refusal to change slowing down the world around you as you remain at a fixed point."))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, .proc/discard_effect, user), src.cooldown_time)
+	addtimer(CALLBACK(src, .proc/discard_effect, user), src.effect_time)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony/proc/discard_effect(mob/living/carbon/human/user, amount)
-	user.brute_mod_perk -= brute_mod_monomial
-	user.burn_mod_perk -= burn_mod_monomial
-	user.toxin_mod_perk -= toxin_mod_monomial
-	user.oxy_mod_perk -= oxygen_mod_monomial
+	to_chat(user, SPAN_NOTICE("Your body quickens as you slip once more into the flow of normal spacetime."))
+	/*user.brute_mod_perk += brute_mod_monomial
+	user.burn_mod_perk += burn_mod_monomial
+	user.toxin_mod_perk += toxin_mod_monomial
+	user.oxy_mod_perk += oxygen_mod_monomial*/
+	user.brute_mod_perk /= 0.5
+	user.burn_mod_perk /= 0.5
+	user.toxin_mod_perk /= 0.5
+	user.oxy_mod_perk /= 0.5
+	user.added_movedelay -= 5
 
 //////////////////////////////////////////////////
 /////////         DIVISOR                /////////

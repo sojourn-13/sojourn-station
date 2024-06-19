@@ -6,6 +6,7 @@
 	name = "helmet"
 	item_flags = 		 THICKMATERIAL|COVER_PREVENT_MANIPULATION
 	flags_inv = 		 HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	overslot = TRUE
 	body_parts_covered = HEAD|FACE|EYES
 	heat_protection =    HEAD|FACE|EYES
 	cold_protection =    HEAD|FACE|EYES
@@ -16,7 +17,7 @@
 /obj/item/clothing/gloves/rig
 	name = "gauntlets"
 	item_flags = THICKMATERIAL|COVER_PREVENT_MANIPULATION
-	overslot = 1
+	overslot = TRUE
 	body_parts_covered = ARMS
 	heat_protection =    ARMS
 	cold_protection =    ARMS
@@ -34,6 +35,7 @@
 	gender = PLURAL
 	icon_base = null
 	matter = list(MATERIAL_STEEL = 1)
+	can_hold_knife = TRUE
 
 /obj/item/clothing/suit/space/rig
 	name = "chestpiece"
@@ -44,6 +46,7 @@
 	flags_inv =          HIDEJUMPSUIT|HIDETAIL
 	item_flags =         STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	slowdown = 0
+	overslot = TRUE
 	breach_threshold = 5
 	resilience = 0.087
 	can_breach = 1

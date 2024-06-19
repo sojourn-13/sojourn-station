@@ -150,7 +150,7 @@
 
 /obj/screen/item_action/top_bar/update_icon()
 	..()
-	if(!ismob(owner.loc))
+	if(!owner || !ismob(owner.loc))
 		return
 
 	var/mob/living/M = owner.loc
@@ -493,7 +493,7 @@
 	if(!istype(C) || C.stat == DEAD)
 		return
 	cut_overlays()
-	switch(C.metabolism_effects.get_nsa())
+	switch(C.metabolism_effects.get_nsa() * 100/C.metabolism_effects.calculate_nsa(TRUE))
 		if(200 to INFINITY)
 			add_overlay( ovrls["nsa10"])
 		if(-INFINITY to 20)

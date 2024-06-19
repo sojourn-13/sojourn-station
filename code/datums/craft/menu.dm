@@ -1,5 +1,5 @@
 /mob/living
-	var/datum/nano_module/craft/CM
+	var/datum/tgui_module/craft/TGCM
 
 //this one is called when you need just a regular CM, without strick tab opened
 /mob/living/verb/craft_menu()
@@ -9,117 +9,71 @@
 
 //this is called when you use any proc and not verb, like atack_self and want to give tab name to be opened
 /mob/living/proc/open_craft_menu(category = null)
-	if(!CM)
-		CM = new(src)
-	CM.set_category(category, src)
-	CM.nano_ui_interact(src)
+	if(!TGCM)
+		TGCM = new(src)
+	TGCM.ui_interact(src)
 
-/datum/nano_module/craft
+/datum/tgui_module/craft
 	name = "Craft menu"
-	available_to_ai = FALSE
+	tgui_id = "CraftMenu"
 
-/datum/nano_module/craft/proc/get_category(mob/mob)
-	var/ckey = mob.ckey
-	if(!(ckey in SScraft.current_category))
-		SScraft.current_category[ckey] = SScraft.cat_names[1]
-	return SScraft.current_category[ckey]
+/datum/tgui_module/craft/ui_assets(mob/user)
+	if(user?.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES)
+		return list()
 
-/datum/nano_module/craft/proc/set_category(category, mob/mob)
-	if(!category || !(category in SScraft.cat_names))
-		return FALSE
-	SScraft.current_category[mob.ckey] = category
-	set_item(null, usr)
-	return TRUE
+	return list(
+		get_asset_datum(/datum/asset/simple/craft),
+		get_asset_datum(/datum/asset/simple/materials),
+	)
 
-/datum/nano_module/craft/proc/get_item(mob/mob)
-	return (mob.ckey in SScraft.current_item) ? SScraft.current_item[mob.ckey] : null
-
-/datum/nano_module/craft/proc/set_item(item_ref, mob/mob)
-	SScraft.current_item[mob.ckey] = locate(item_ref)
-
-/datum/nano_module/craft/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
-	if(!usr)
-		return
-	if(usr.incapacitated())
-		return
-
+/datum/tgui_module/craft/ui_data(mob/user)
 	var/list/data = list()
-	var/curr_category = get_category(usr)
 
-	var/list/unlocked_names
+	data["is_admin"] = check_rights(show_msg = FALSE, C = user)
 
-	unlocked_names = SScraft.cat_names.Copy(1,0)
+	return data
 
-	for(var/path in subtypesof(/datum/craft_recipe))
-		var/datum/craft_recipe/CX = path
-		CX = new CX
+/datum/tgui_module/craft/ui_static_data(mob/user)
+	var/list/data = list()
 
-		if (CX.requiredPerk && !user.stats.getPerk(CX.requiredPerk))	// Goes through all the different subtypes of recipes, and checks to see if they require a perk.
-			unlocked_names.Remove(CX.category)							// If it requires a perk and the user doesn't possess that perk, it removes the category from being displayed.
+	var/list/crafting_recipes = list()
 
-		if (!unlocked_names.Find(curr_category))						// If somehow the current category selected is not in the listed categories
-			while (!unlocked_names.Find(curr_category))					// Picks a random category and assigns it to be the current category.
-				curr_category = pick(SScraft.cat_names)
-			SScraft.current_category[user.ckey] = curr_category
+	for(var/category in SScraft.categories)
+		if(isnull(crafting_recipes[category]))
+			crafting_recipes[category] = list()
 
-	data["is_admin"] = check_rights(show_msg = FALSE)
-	data["categories"] = unlocked_names
-	data["cur_category"] = curr_category
-	var/datum/craft_recipe/CR = get_item(usr)
-	data["cur_item"] = null
-	if(CR)
-		data["cur_item"] = list(
-			"name" = CR.name,
-			"icon" = SSassets.transport.get_asset_url(sanitizeFileName("[CR.result].png")),
-			"ref"  = "[REF(CR)]",
-			"desc" = CR.get_description(),
-			"batch" = CR.flags & CRAFT_BATCH
-		)
-	var/list/items = list()
-	for(var/datum/craft_recipe/recipe in SScraft.categories[curr_category])
-		items += list(list(
-			"name" = capitalize(recipe.name),
-			"ref" = "[REF(recipe)]"
-			))
-	data["items"] = items
+		var/list/recipes = SScraft.categories[category]
 
-	var/datum/asset/craftIcons = get_asset_datum(/datum/asset/simple/craft)
-	var/datum/asset/materialIcons = get_asset_datum(/datum/asset/simple/materials)
-	if (craftIcons.send(user.client) || materialIcons.send(user.client))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
+		for(var/datum/craft_recipe/CX in recipes)
+			if(CX.requiredPerk && !user.stats.getPerk(CX.requiredPerk))	// Goes through all the different subtypes of recipes, and checks to see if they require a perk.
+				continue							// If it requires a perk and the user doesn't possess that perk, it removes the category from being displayed.
+			
+			crafting_recipes[category] += list(CX.ui_data(user))
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "craft.tmpl", "[src]", 800, 450, state = state)
-		ui.set_initial_data(data)
-		ui.open()
+	data["crafting_recipes"] = crafting_recipes
 
-/datum/nano_module/craft/Topic(href, href_list)
-	if(..())
-		return TRUE
+	return data
 
-	if(usr.incapacitated())
+/datum/tgui_module/craft/ui_act(action, list/params)
+	. = ..()
+	if(.)
 		return
 
-	if(href_list["build"])
-		var/datum/craft_recipe/CR = locate(href_list["build"])
-		var/amount = href_list["amount"]
-		if(amount && (CR.flags & CRAFT_BATCH))
-			if(amount == "input")
-				amount = input("How many \"[CR.name]\" you want to craft?", "Craft batch") as null|num
+	switch(action)
+		if("build")
+			var/datum/craft_recipe/CR = locate(params["ref"])
+			var/amount = params["amount"]
+			if(amount && (CR.flags & CRAFT_BATCH))
+				if(amount == "input")
+					amount = input("How many \"[CR.name]\" do you want to craft?", "Craft batch") as null|num
+				else
+					amount = text2num(amount)
+				amount = CLAMP(amount, 0, 50)
+				if(!amount)
+					return
+				CR.build_batch(usr, amount)
 			else
-				amount = text2num(amount)
-			amount = CLAMP(amount, 0, 50)
-			if(!amount)
-				return
-			CR.build_batch(usr, amount)
-		else
-			CR.try_build(usr)
-	else if(href_list["view_vars"] && check_rights())
-		usr.client.debug_variables(locate(href_list["view_vars"]))
-	else if(href_list["category"])
-		set_category(href_list["category"], usr)
-		SSnano.update_uis(src)
-	else if(href_list["item"])
-		set_item(href_list["item"], usr)
-		SSnano.update_uis(src)
+				CR.try_build(usr)
+		if("view_vars")
+			if(check_rights())
+				usr.client.debug_variables(locate(params["ref"]))

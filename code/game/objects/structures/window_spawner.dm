@@ -31,7 +31,7 @@
 /obj/effect/window_lwall_spawn/attack_ghost()
 	attack_generic()
 
-/obj/effect/window_lwall_spawn/attack_generic()
+/obj/effect/window_lwall_spawn/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	activate()
 
 /obj/effect/window_lwall_spawn/Initialize()

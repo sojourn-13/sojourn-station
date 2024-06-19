@@ -37,6 +37,26 @@
 	if(! (flags & CRAFT_ON_FLOOR) && (slot in list(slot_r_hand, slot_l_hand)))
 		user.put_in_hands(M)
 
+/datum/craft_recipe/ui_data(mob/user)
+	var/list/data = list()
+
+	data["name"] = name
+	data["ref"] = "[REF(src)]"
+	
+	// because of course we have recipes that don't produce anything
+	data["icon"] = result ? SSassets.transport.get_asset_url(sanitizeFileName("[result].png")) : null
+	data["batch"] = flags & CRAFT_BATCH
+
+	var/atom/A = result
+	data["desc"] = "[initial(A.desc)]"
+
+	var/list/step_data = list()
+	for(var/datum/craft_step/CS in steps)
+		step_data += list(CS.ui_data(user))
+	data["steps"] = step_data
+
+	return data
+
 /datum/craft_recipe/proc/get_description(pass_steps, obj/item/craft/C)
 	. = list()
 	var/atom/A = result

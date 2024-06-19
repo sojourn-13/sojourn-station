@@ -181,7 +181,7 @@
 /obj/machinery/power/os_turret/emp_act()
 	..()
 	stat |= EMPED
-	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE)
+	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/machinery/power/os_turret/bullet_act(obj/item/projectile/proj)
 	var/damage = proj.get_structure_damage()
@@ -202,6 +202,12 @@
 			if(istype(obj, /obj/machinery/power/os_turret))
 				return		// Don't shoot other turrets
 		try_shoot(proj_start_turf)
+
+/obj/machinery/power/os_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
 
 /obj/machinery/power/os_turret/attackby(obj/item/I, mob/user)
 	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
@@ -303,7 +309,7 @@
 		returning_fire = FALSE
 
 /obj/machinery/power/os_turret/proc/shoot(atom/target, def_zone)
-	if(QDELETED(target))
+	if(QDELETED(target) || stat & BROKEN)
 		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)

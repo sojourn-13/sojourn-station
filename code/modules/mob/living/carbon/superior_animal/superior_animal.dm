@@ -468,7 +468,8 @@
 
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+					if(!QDELETED(src))
+						addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)
@@ -586,7 +587,7 @@
 			if (can_burrow && bad_environment)
 				evacuate()
 			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
+			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0

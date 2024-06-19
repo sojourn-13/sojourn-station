@@ -35,7 +35,7 @@
 	meat_amount = 6
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = MOB_LARGE
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	sanity_damage = 3
 
@@ -181,14 +181,17 @@
 	if(zoomeye == 7)
 		zoomeye = 9
 		usr.client.view = 9
+		usr.client.apply_clickcatcher()
 		return
 	if(zoomeye == 9)
 		zoomeye = 12
 		usr.client.view = 12
+		usr.client.apply_clickcatcher()
 		return
 	if(zoomeye == 12)
 		zoomeye = 7
 		usr.client.view = 7
+		usr.client.apply_clickcatcher()
 		return
 	return
 
@@ -374,7 +377,7 @@
 	var/nocooldown = 0 //If set to 1, we don't use cooldowns.
 	rapid = 1
 	can_burrow = FALSE
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/poporavtomat/ex_act(severity, target)
 	switch (severity)

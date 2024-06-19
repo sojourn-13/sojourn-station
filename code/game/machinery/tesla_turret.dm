@@ -59,11 +59,12 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	var/last_fired = 0		//1: if the turret is cooling down from a shot, 0: turret is ready to fire
 	var/shot_delay = 70		//7 seconds between each shot by default, made better with parts
+	var/damage_mod = 0.7
 
-	/// How far we will fire at mobs from. 7 by default.
+	/// How far we will fire at mobs from. 6 by default.
 	var/firing_range = 6
 
-// Used to not target allied mobs
+	// Used to not target allied mobs
 	var/colony_allied_turret = FALSE //Are we allied with the colony?
 	var/lethal = FALSE
 	var/check_arrest = FALSE	//checks if the perp is set to arrest
@@ -168,7 +169,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	settings[++settings.len] = list("category" = "Target Unauthorized Colonists", "setting" = "check_access", "value" = shock_net.check_access)
 	settings[++settings.len] = list("category" = "Target All Synthetics", "setting" = "check_synth", "value" = shock_net.check_synth)
 	settings[++settings.len] = list("category" = "Target Fauna", "setting" = "check_anomalies", "value" = shock_net.check_anomalies)
-	settings[++settings.len] = list("category" = "Filter out Friendly Fauna", "setting" = "colony_allied_turret", "value" = shock_net.colony_allied_turret)
+	settings[++settings.len] = list("category" = "Filter out Colony Members", "setting" = "colony_allied_turret", "value" = shock_net.colony_allied_turret)
 	settings[++settings.len] = list("category" = "Toggle AI Access", "setting" = "ailock", "value" = shock_net.ailock)
 	data["settings"] = settings
 
@@ -413,8 +414,12 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret/RefreshParts()
 	shot_delay = initial(shot_delay)
+	damage_mod = initial(damage_mod)
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
-		shot_delay -= (C.rating * 15)
+		shot_delay -= min((C.rating * 15), 60)
+
+	for(var/obj/item/stock_parts/smes_coil/coil in component_parts)
+		damage_mod += (coil.rating * 0.1)
 
 /obj/machinery/tesla_turret/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
@@ -440,6 +445,12 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		spark_system.start()
 	if(health <= 0)
 		die()	//the death process :(
+
+/obj/machinery/tesla_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
 
 /obj/machinery/tesla_turret/bullet_act(obj/item/projectile/Proj)
 	var/damage = Proj.get_structure_damage()
@@ -614,7 +625,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		return
 	last_fired = TRUE
 	spawn()
-		sleep(shot_delay)
+		sleep(shot_delay+rand(0,20))
 		last_fired = FALSE
 
 	var/power = min(apc.terminal.powernet.avail*0.25, damage_cap * power_damage_ratio)
@@ -632,7 +643,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(zapdir)
 		. = zapdir
 
-	var/shock_damage = CLAMP(round(power/400), 10, 90) + rand(-5, 5)
+	var/shock_damage = CLAMP(round((power/400)*damage_mod), 10, 90) + rand(-5, 5)
 	if(ishuman(target))
 		target.electrocute_act(shock_damage, src, 1, ran_zone())
 	else

@@ -234,9 +234,28 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.stats.getPerk(PERK_MARKET_PROF))
-			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
-		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
-			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
+			message += "\n<blue>Export value: [get_item_cost() * SStrade.get_export_price_multiplier(src)][CREDITS]"
+
+			var/offer_message = "\nThis item is requested at: "
+			var/has_offers = FALSE
+			for(var/datum/trade_station/TS in SStrade.discovered_stations)
+				for(var/path in TS.special_offers)
+					if(istype(src, path))
+						has_offers = TRUE
+						var/list/offer_content = TS.special_offers[path]
+						var/offer_price = offer_content["price"]
+						var/offer_amount = offer_content["amount"]
+						if(offer_amount)
+							offer_message += "[TS.name] ([round(offer_price / offer_amount, 1)][CREDITS] each, [offer_amount] requested), "
+						else
+							offer_message += "[TS.name] (offer fulfilled, awaiting new contract), "
+
+			if(has_offers)
+				offer_message = copytext(offer_message, 1, LAZYLEN(offer_message) - 1)
+				message += SPAN_NOTICE(offer_message)
+
+			if(surplus_tag)
+				message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
 
 	return ..(user, distance, "", message)
 
@@ -531,6 +550,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		//if(usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 		usr.client.view = viewsize
+		usr.client.apply_clickcatcher()
 		zoom = 1
 
 		var/tilesize = 32
@@ -556,6 +576,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		H.using_scope = src
 	else
 		usr.client.view = world.view
+		usr.client.apply_clickcatcher()
 		//if(!usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()
 		zoom = 0
