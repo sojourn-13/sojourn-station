@@ -82,6 +82,8 @@
 #define HAS_SILICON_ACCESS(A) (issilicon(A) || isAdminGhostAI(A) || A.has_unlimited_silicon_privilege)  // || istype(A.get_active_held_item(), /obj/item/machine_remote))
 
 //-----------------Objects
+#define isobj(A) istype(A, /obj) //override the byond proc because it returns true on children of /atom/movable that aren't objs
+
 #define isHUDobj(A) istype(A, /obj/screen)
 
 #define isitem(A) istype(A, /obj/item)
