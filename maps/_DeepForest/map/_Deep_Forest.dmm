@@ -177,6 +177,21 @@
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
+"akg" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "akF" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/junk/nondense,
@@ -204,6 +219,12 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -224,6 +245,22 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"amD" = (
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
 	})
 "amG" = (
 /obj/machinery/gym/toughness,
@@ -341,6 +378,7 @@
 	},
 /obj/structure/low_wall,
 /obj/structure/grille,
+/obj/machinery/door/blast/regular,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -622,6 +660,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
 /obj/machinery/light/small,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -841,6 +885,21 @@
 /obj/random/structures,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"aID" = (
+/obj/machinery/button/remote/airlock{
+	dir = 4;
+	id = "radshutt";
+	pixel_x = -32;
+	pixel_y = 4;
+	specialfunctions = 4;
+	name = "Radiation Shutter control"
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "aIM" = (
 /obj/random/junk,
 /obj/random/melee/low_chance,
@@ -1798,6 +1857,20 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"buD" = (
+/obj/random/junk,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "buR" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -2259,6 +2332,29 @@
 /obj/effect/step_trigger/vault_bunker_1B,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"bOq" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "bOF" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/grass,
@@ -2292,6 +2388,12 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -3560,6 +3662,34 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"cGs" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "cGz" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/ausbushes/grassybush,
@@ -3618,6 +3748,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /obj/structure/girder,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -3667,6 +3802,29 @@
 	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
+"cKU" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -4134,6 +4292,30 @@
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"daE" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "daI" = (
 /turf/simulated/mineral/random/rogue,
 /area/colony/exposedsun/crashed_shop/outsider)
@@ -4606,6 +4788,28 @@
 /obj/random/junk/nondense,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"duE" = (
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "duM" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -4656,6 +4860,12 @@
 "dwj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -5453,6 +5663,17 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"eaw" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "ebi" = (
 /obj/machinery/cooking_with_jane/stove,
 /obj/structure/table/marble,
@@ -5691,6 +5912,11 @@
 	},
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -5816,12 +6042,65 @@
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"enc" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "eno" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"env" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "enJ" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -5926,9 +6205,13 @@
 "erv" = (
 /obj/structure/cable{
 	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -6351,6 +6634,12 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"eKx" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "eKJ" = (
 /obj/structure/flora/small/trailrockb1,
 /turf/simulated/floor/beach/sand,
@@ -6466,12 +6755,6 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
-"ePp" = (
-/turf/simulated/mineral/planet,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "ePq" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -6491,6 +6774,30 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"ePC" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "ePS" = (
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
@@ -6499,6 +6806,18 @@
 /obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"eQl" = (
+/obj/structure/cable/green{
+	d1 = 32;
+	d2 = 2;
+	icon_state = "32-2"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "eQs" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing{
@@ -6551,7 +6870,12 @@
 	dir = 4;
 	icon_state = "railing0"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -6663,6 +6987,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/rock/manmade/road{
 	name = "dust"
 	},
@@ -7999,10 +8329,15 @@
 /obj/effect/floor_decal/corner_oldtile{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
 	dir = 1;
 	light_color = "#0892d0"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -8065,6 +8400,33 @@
 "fYU" = (
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"fZh" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "fZu" = (
 /obj/machinery/porta_turret/excelsior/preloaded,
 /obj/effect/decal/cleanable/dirt,
@@ -8513,12 +8875,14 @@
 	name = "Abandoned Bunker"
 	})
 "gqZ" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /obj/structure/catwalk{
 	icon_state = "catwalk0-0"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
 	},
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/simulated/floor/plating/under,
@@ -8875,6 +9239,20 @@
 	icon_state = "9,23"
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
+"gCW" = (
+/obj/random/dungeon_gun_ballistic,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "gDf" = (
 /obj/structure/closet/secure_closet/bar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -9429,6 +9807,33 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"hab" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "hac" = (
 /obj/machinery/porta_turret/prepper,
 /turf/simulated/floor/plating/under,
@@ -10255,6 +10660,35 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"hEt" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spider/stickyweb,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
 	})
 "hEU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11111,6 +11545,18 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"ikz" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "ikD" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/records,
@@ -11146,12 +11592,6 @@
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "ilp" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gib6";
 	pixel_y = 15
@@ -11946,6 +12386,30 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
+"iQa" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "iQR" = (
 /obj/random/tank/low_chance,
 /turf/simulated/floor/plating/under,
@@ -12019,6 +12483,16 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -13742,7 +14216,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "kiT" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "kjp" = (
@@ -14161,6 +14637,13 @@
 /obj/item/ammo_magazine/light_rifle_257/empty,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"kBt" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "kBQ" = (
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/tiled/cafe,
@@ -14419,17 +14902,25 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/meadow)
 "kMD" = (
-/obj/machinery/door/airlock/vault{
-	name = "LIMA-09";
-	id_tag = "lima9entrance"
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
 	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/steel/techfloor,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -14540,6 +15031,32 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"kRI" = (
+/obj/effect/overlay/water{
+	color = "#61DE2A"
+	},
+/obj/effect/overlay/water/top{
+	color = "#61DE2A"
+	},
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/mob/living/carbon/superior_animal/roach/kaiser{
+	name = "Malformed Kaiser Roach";
+	color = "#61DE2A";
+	maxHealth = 2500;
+	health = 2500
+	},
+/turf/simulated/floor/beach/water/swamp{
+	color = "#61DE2A";
+	name = "Radioactive Waste"
+	},
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "kSg" = (
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -15677,6 +16194,30 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"lOA" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "lOU" = (
 /obj/structure/flora/pottedplant/star_root,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -15719,6 +16260,23 @@
 /obj/random/mob/roomba/mecha/low,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"lPz" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
+	},
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "lPF" = (
 /obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -15820,6 +16378,30 @@
 /obj/structure/salvageable/machine,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"lUd" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "lUu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -17861,7 +18443,10 @@
 	icon_state = "catwalk0-0"
 	},
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/machinery/door/blast/regular,
+/obj/machinery/door/blast/regular{
+	use_power = 0;
+	id = "radshutt"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -17941,6 +18526,46 @@
 "nrh" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"nrr" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
+"nru" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "nrW" = (
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -18309,6 +18934,28 @@
 /obj/item/material/shard,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo)
+"nEZ" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central5{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central3,
+/obj/machinery/door/blast/regular/open{
+	name = "LOCKDOWN";
+	id = "cmdcentre"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "nFb" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -19143,7 +19790,10 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "onw" = (
 /obj/structure/table/standard,
-/obj/item/gun/projectile/boltgun,
+/obj/random/contraband,
+/obj/random/credits,
+/obj/random/credits,
+/obj/item/clothing/gloves/dusters/gold,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -19390,6 +20040,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -19770,6 +20426,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/rock/manmade/road{
 	name = "dust"
 	},
@@ -19936,6 +20598,29 @@
 /obj/machinery/botany,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
+"oPO" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "oQe" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/small/busha1,
@@ -20306,6 +20991,27 @@
 /obj/random/mob/voidwolf,
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
+"peO" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "peX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/closet_tech/low_chance,
@@ -20715,6 +21421,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/rock/manmade/road{
 	name = "dust"
 	},
@@ -21324,6 +22035,31 @@
 /obj/structure/flora/small/busha2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"pLU" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/rock/manmade/road{
+	name = "dust"
+	},
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "pMg" = (
 /obj/item/material/shard,
 /obj/item/material/shard,
@@ -21729,6 +22465,24 @@
 /mob/living/simple_animal/hostile/republicon,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"pYM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "pYT" = (
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -22202,6 +22956,14 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"qom" = (
+/mob/living/carbon/superior_animal/roach/tazntz,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "qox" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
@@ -22330,6 +23092,22 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"qtE" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "qtO" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -22888,6 +23666,31 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"qPK" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "qPO" = (
 /obj/structure/table/rack/shelf,
 /obj/random/medical,
@@ -23409,6 +24212,35 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/colony/exposedsun/pastgate)
+"rkq" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "rkA" = (
 /obj/random/mob/roomba/range/low,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -23772,7 +24604,6 @@
 	dir = 1;
 	icon_state = "grey_railing0"
 	},
-/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -23963,6 +24794,28 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"rFU" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central5,
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "LOCKDOWN";
+	id = "cmdcentre"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "rGb" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/electronic_assembly/drone,
@@ -24135,10 +24988,28 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "rPF" = (
-/obj/machinery/power/port_gen/pacman/diesel/anchored,
-/obj/item/reagent_containers/glass/bottle/petrel,
-/obj/structure/cable,
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -24493,6 +25364,11 @@
 "sem" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/rock/manmade/road{
 	name = "dust"
 	},
@@ -25129,6 +26005,19 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
+"syM" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "syT" = (
 /obj/structure/scrap/large,
 /turf/simulated/floor/tiled/dark,
@@ -25255,9 +26144,15 @@
 	name = "Abandoned Bunker"
 	})
 "sEy" = (
-/obj/item/circuitboard/smes,
-/obj/machinery/constructable_frame/machine_frame,
-/obj/item/stock_parts/smes_coil,
+/obj/item/circuitboard/apc,
+/obj/item/cell/large/high{
+	name = "Sakaba OmniCell 6000W Large"
+	},
+/obj/item/frame/apc,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -25688,6 +26583,12 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"sVJ" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	})
 "sWb" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/dungeon_gun_mods/low_chance,
@@ -25887,6 +26788,12 @@
 /obj/effect/floor_decal/corner_oldtile/white,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -26364,6 +27271,60 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
+"typ" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
+"tyA" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spider/stickyweb,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "tyI" = (
 /obj/structure/closet/random_medsupply,
 /obj/item/storage/firstaid,
@@ -27508,6 +28469,35 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"uop" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "uoJ" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
@@ -28026,6 +29016,22 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"uKC" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
 	})
 "uKY" = (
 /obj/structure/bed/chair,
@@ -28619,6 +29625,35 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"vjv" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "vjy" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/tree/jungle_small/variant3,
@@ -28810,14 +29845,11 @@
 /area/nadezhda/outside/meadow)
 "vqn" = (
 /obj/structure/cable{
+	d1 = 1;
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "1-2";
+	pixel_y = 0
 	},
-/obj/item/frame/apc,
-/obj/item/cell/large/high{
-	name = "Sakaba OmniCell 6000W Large"
-	},
-/obj/item/circuitboard/apc,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -28844,12 +29876,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
-	})
-"vsJ" = (
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
 	})
 "vsV" = (
 /obj/machinery/light{
@@ -28998,7 +30024,9 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vBg" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "vBq" = (
@@ -29671,13 +30699,6 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
-"wbn" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "wbq" = (
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -29705,6 +30726,18 @@
 /obj/item/clothing/head/hairflower,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"wcX" = (
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/mob/living/carbon/superior_animal/roach/tazntz,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "wcZ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -29792,6 +30825,33 @@
 /obj/item/trash/cigbutt/toha,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"whR" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "whU" = (
 /obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
@@ -29854,6 +30914,39 @@
 /obj/structure/closet/secure_closet/injection,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/zoo)
+"wkc" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	name = "LOCKDOWN";
+	id = "lima9entrance2"
+	},
+/obj/effect/spider/stickyweb,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "wkd" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -30380,6 +31473,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"wIW" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "wJm" = (
 /obj/random/junk,
 /turf/simulated/floor/wood/wild1,
@@ -31419,6 +32525,33 @@
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"xuL" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "xuR" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall34";
@@ -31517,6 +32650,25 @@
 /obj/item/reagent_containers/food/snacks/openable/mre,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"xzb" = (
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "xzf" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -31879,16 +33031,6 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
-"xOO" = (
-/obj/structure/railing/grey{
-	dir = 1;
-	icon_state = "grey_railing0"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/abandoned_outpost{
-	name = "Site LIMA-09";
-	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
-	})
 "xOU" = (
 /obj/structure/flora/small/bushc1,
 /turf/simulated/mineral/planet,
@@ -32190,6 +33332,31 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
+"ybs" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "ybu" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -56184,7 +57351,7 @@ aHX
 tOP
 pxf
 iTu
-kKX
+xuL
 lXN
 idB
 coU
@@ -56393,7 +57560,7 @@ aHX
 tOP
 pxf
 kKX
-lXN
+cGs
 tbr
 idB
 coU
@@ -56602,7 +57769,7 @@ aHX
 tOP
 pxf
 lXN
-lXN
+cGs
 lXN
 idB
 coU
@@ -56810,8 +57977,8 @@ sdL
 sdL
 sdL
 izC
-lXN
-lXN
+fZh
+cGs
 lXN
 idB
 coU
@@ -57019,8 +58186,8 @@ coU
 coU
 coU
 idB
-lXN
-lXN
+whR
+cGs
 lXN
 idB
 coU
@@ -57229,7 +58396,7 @@ qbU
 coU
 idB
 kKX
-kKX
+tyA
 lXN
 idB
 coU
@@ -57438,7 +58605,7 @@ qbU
 coU
 idB
 pJU
-kKX
+tyA
 qjP
 idB
 coU
@@ -57647,7 +58814,7 @@ qbU
 coU
 idB
 kKX
-lXN
+cGs
 lXN
 idB
 coU
@@ -57856,7 +59023,7 @@ qbU
 coU
 idB
 lXN
-tbr
+vjv
 lXN
 idB
 coU
@@ -58065,7 +59232,7 @@ qbU
 coU
 idB
 lXN
-lXN
+cGs
 lXN
 idB
 coU
@@ -58274,7 +59441,7 @@ qbU
 coU
 idB
 lXN
-lXN
+cGs
 lXN
 idB
 coU
@@ -58483,7 +59650,7 @@ qbU
 coU
 idB
 kKX
-lXN
+cGs
 lXN
 idB
 coU
@@ -58675,11 +59842,11 @@ xLo
 byT
 eOo
 rBp
-hpw
-hpw
-hpw
-hpw
-hpw
+bOq
+enc
+nrr
+nrr
+nrr
 sem
 byT
 cju
@@ -58692,7 +59859,7 @@ qbU
 coU
 idB
 kKX
-kKX
+tyA
 kKX
 idB
 coU
@@ -58883,11 +60050,11 @@ diE
 aRH
 aRH
 pqO
-hpw
-hpw
-hpw
-hpw
-hpw
+nrr
+rkq
+env
+env
+daE
 hpw
 oJK
 cdY
@@ -58901,7 +60068,7 @@ qbU
 coU
 idB
 kKX
-kKX
+tyA
 kKX
 idB
 coU
@@ -59091,7 +60258,7 @@ idB
 idB
 hpw
 hpw
-hpw
+lUd
 lNG
 coZ
 idB
@@ -59110,7 +60277,7 @@ coU
 coU
 idB
 lXN
-kKX
+tyA
 lXN
 idB
 coU
@@ -59300,14 +60467,14 @@ idB
 bMK
 hpw
 hpw
-hpw
+lUd
 coZ
 fdQ
 djX
 dzt
 upP
 coZ
-hAJ
+pLU
 hpw
 bMK
 idB
@@ -59319,7 +60486,7 @@ idB
 idB
 idB
 seX
-lXN
+cGs
 nsu
 idB
 coU
@@ -59509,14 +60676,14 @@ jim
 hpw
 hpw
 hpw
-hpw
+lUd
 idB
 kHB
 kHB
 aYQ
 upP
 coZ
-hpw
+lUd
 hpw
 bMK
 aOH
@@ -59709,33 +60876,33 @@ coU
 oGU
 iiu
 cJL
-hpw
-hpw
-hpw
-hpw
-gTN
-dCV
-hpw
-hpw
-hpw
-hpw
+nrr
+nrr
+nrr
+nrr
+rFU
+nEZ
+nrr
+nrr
+nrr
+cKU
 blK
 kHB
 kHB
 stV
 qrL
 coZ
-hpw
-hka
-hpw
-aOH
+oPO
+qPK
+nrr
+wkc
 ovW
-kKX
-lXN
-lXN
-kKX
-kKX
-tbr
+hEt
+rPF
+rPF
+hEt
+hEt
+uop
 bOU
 ejz
 oGU
@@ -59917,7 +61084,7 @@ qbU
 coU
 oGU
 mTV
-hpw
+lUd
 hpw
 hpw
 lCM
@@ -59934,7 +61101,7 @@ kHB
 gjB
 upP
 coZ
-hpw
+daE
 hpw
 hpw
 aOH
@@ -60126,7 +61293,7 @@ qbU
 coU
 idB
 mTV
-hpw
+lUd
 hpw
 idB
 idB
@@ -60143,7 +61310,7 @@ fdQ
 oIt
 upP
 coZ
-hpw
+lOA
 hpw
 hpw
 idB
@@ -60335,7 +61502,7 @@ qbU
 coU
 idB
 hpw
-hka
+lUd
 hpw
 idB
 sZr
@@ -60544,7 +61711,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -60557,9 +61724,9 @@ bMK
 hpw
 hpw
 hpw
-hpw
-huK
-huK
+daE
+ybs
+env
 lUG
 hAJ
 msB
@@ -60753,7 +61920,7 @@ oGU
 sZr
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -60767,7 +61934,7 @@ hpw
 hpw
 hpw
 huK
-huK
+ybs
 hka
 hpw
 jbf
@@ -60962,7 +62129,7 @@ idB
 idB
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -61171,8 +62338,8 @@ rVv
 idB
 idB
 hpw
-hpw
-hpw
+lUd
+peO
 idB
 sZr
 oGU
@@ -61199,7 +62366,7 @@ mfI
 fVR
 eiq
 giQ
-fVR
+iEl
 fVR
 fVR
 rWO
@@ -61380,7 +62547,7 @@ jem
 idB
 idB
 jJt
-hpw
+lUd
 ckd
 idB
 sZr
@@ -61589,12 +62756,12 @@ hOe
 idB
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
 oGU
-fVR
+syM
 gpK
 oGU
 sZr
@@ -61618,7 +62785,7 @@ fVR
 fVR
 fVR
 fVR
-fVR
+wOZ
 fVR
 fVR
 fVR
@@ -61798,12 +62965,12 @@ nLz
 hRI
 hRI
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
 oGU
-fVR
+syM
 fVR
 oGU
 oGU
@@ -62007,7 +63174,7 @@ xHf
 idB
 erU
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -62017,8 +63184,8 @@ fVR
 wOZ
 fVR
 giQ
-fVR
-fVR
+syM
+syM
 fVR
 fVR
 fph
@@ -62033,7 +63200,7 @@ fVR
 fVR
 fVR
 gZs
-fVR
+iEl
 oGU
 oGU
 oGU
@@ -62215,8 +63382,8 @@ qGy
 tjA
 idB
 nDu
-hpw
-hpw
+peO
+lUd
 hpw
 idB
 sZr
@@ -62425,7 +63592,7 @@ oZS
 idB
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -62634,8 +63801,8 @@ idB
 idB
 idB
 hpw
-hpw
-hpw
+lUd
+env
 idB
 sZr
 oGU
@@ -62843,7 +64010,7 @@ idB
 sZr
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -63052,7 +64219,7 @@ idB
 sZr
 idB
 fWS
-hpw
+lUd
 ckd
 idB
 sZr
@@ -63260,13 +64427,13 @@ sHM
 idB
 sZr
 idB
-hpw
-hpw
+env
+lUd
 hpw
 idB
 idB
 aDV
-rPC
+wIW
 mFH
 nQk
 mFH
@@ -63279,7 +64446,7 @@ sZr
 oGU
 fVR
 fVR
-fVR
+syM
 oGU
 sZr
 coU
@@ -63462,7 +64629,7 @@ qbU
 qbU
 qbU
 idB
-lWR
+xzb
 aBw
 oie
 ceQ
@@ -63470,11 +64637,11 @@ idB
 idB
 bsT
 hpw
-hka
-hpw
+lUd
+peO
 idB
 idB
-rPC
+wIW
 wUn
 nlO
 onM
@@ -63486,7 +64653,7 @@ lgI
 idB
 sZr
 oGU
-qMC
+gCW
 fVR
 wOZ
 oGU
@@ -63679,7 +64846,7 @@ wpC
 kVg
 kVg
 hpw
-hpw
+lUd
 hpw
 idB
 idB
@@ -63695,8 +64862,8 @@ wic
 idB
 sZr
 oGU
-giQ
-fVR
+buD
+qox
 fVR
 oGU
 sZr
@@ -63888,7 +65055,7 @@ idB
 idB
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 idB
@@ -63905,7 +65072,7 @@ idB
 sZr
 oGU
 oGU
-fVR
+qox
 oGU
 oGU
 sZr
@@ -64097,7 +65264,7 @@ idB
 sZr
 idB
 hpw
-hpw
+lUd
 ckd
 dwm
 idB
@@ -64109,12 +65276,12 @@ nlO
 onM
 nlO
 iJF
-qlu
+qtE
 idB
 sZr
 oGU
 oGU
-fVR
+qox
 oGU
 oGU
 sZr
@@ -64306,7 +65473,7 @@ idB
 sZr
 idB
 hpw
-hpw
+lUd
 hpw
 mEc
 jim
@@ -64323,8 +65490,8 @@ idB
 sZr
 oGU
 oGU
-fVR
-fVR
+amD
+syM
 oGU
 sZr
 coU
@@ -64515,8 +65682,8 @@ idB
 sZr
 idB
 hpw
-hpw
-hpw
+lUd
+peO
 gTN
 dCV
 rPC
@@ -64525,13 +65692,13 @@ rPC
 rPC
 rPC
 rPC
-rPC
+pYM
 lwU
 qtr
 idB
 sZr
 oGU
-fVR
+fph
 fVR
 iwY
 oGU
@@ -64723,8 +65890,8 @@ oGU
 oGU
 sZr
 idB
-hpw
-hpw
+peO
+lUd
 hpw
 mEc
 jim
@@ -64740,9 +65907,9 @@ wKx
 idB
 sZr
 oGU
+duE
 fVR
-fVR
-fVR
+amD
 oGU
 sZr
 coU
@@ -64933,7 +66100,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 ckd
 dwm
 idB
@@ -64949,9 +66116,9 @@ tEk
 idB
 sZr
 oGU
+syM
 fVR
-fVR
-fVR
+amD
 oGU
 sZr
 coU
@@ -65142,8 +66309,8 @@ qbU
 coU
 idB
 hpw
-hpw
-hpw
+lUd
+env
 idB
 idB
 xMK
@@ -65351,7 +66518,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 idB
@@ -65560,7 +66727,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 idB
@@ -65769,8 +66936,8 @@ qbU
 coU
 idB
 hpw
+lUd
 hpw
-hka
 idB
 idB
 rPC
@@ -65978,7 +67145,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 idB
@@ -66187,7 +67354,7 @@ qbU
 coU
 idB
 hpw
-hpw
+hab
 hpw
 idB
 sZr
@@ -66396,7 +67563,7 @@ qbU
 coU
 idB
 jJt
-hpw
+lUd
 ckd
 idB
 sZr
@@ -66604,8 +67771,8 @@ qbU
 qbU
 coU
 idB
-hpw
-hpw
+env
+lUd
 hpw
 idB
 sZr
@@ -66625,7 +67792,7 @@ iBJ
 iBJ
 aNE
 sgT
-tPd
+wcX
 dig
 oGU
 sZr
@@ -66813,8 +67980,8 @@ qbU
 qbU
 coU
 idB
-hpw
-hpw
+env
+lUd
 hpw
 idB
 sZr
@@ -66830,8 +67997,8 @@ idB
 idB
 oGU
 dig
-tPd
-dhf
+wcX
+kRI
 nnY
 dhf
 dhf
@@ -67022,8 +68189,8 @@ qbU
 qbU
 coU
 idB
-hka
 hpw
+lUd
 hpw
 idB
 sZr
@@ -67232,7 +68399,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -67441,7 +68608,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -67650,7 +68817,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -67674,7 +68841,7 @@ nnY
 dhf
 dhf
 dhf
-tPd
+wcX
 oGU
 coU
 coU
@@ -67859,7 +69026,7 @@ qbU
 coU
 idB
 jJt
-hpw
+hab
 ckd
 idB
 sZr
@@ -67874,7 +69041,7 @@ wpC
 idB
 idB
 fVR
-tPd
+wcX
 dhf
 dhf
 nnY
@@ -68068,7 +69235,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -68082,7 +69249,7 @@ jrn
 bxA
 idB
 idB
-fVR
+qom
 dig
 aNE
 dhf
@@ -68277,7 +69444,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -68486,7 +69653,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 hpw
 idB
 sZr
@@ -68503,9 +69670,9 @@ idB
 tPd
 nMo
 tPd
-tPd
-tPd
-tPd
+wcX
+wcX
+wcX
 oXa
 nep
 dhf
@@ -68695,7 +69862,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 mTV
 oGU
 sZr
@@ -68904,7 +70071,7 @@ qbU
 coU
 idB
 hpw
-hpw
+lUd
 mTV
 oGU
 sZr
@@ -68920,7 +70087,7 @@ idB
 idB
 heS
 bBW
-bBW
+aID
 vPD
 xrn
 arg
@@ -69113,7 +70280,7 @@ qbU
 coU
 idB
 jJt
-mTV
+kMD
 iiu
 oGU
 sZr
@@ -69322,7 +70489,7 @@ qbU
 coU
 idB
 hpw
-mTV
+kMD
 iiu
 oGU
 sZr
@@ -69531,7 +70698,7 @@ qbU
 coU
 idB
 hpw
-mTV
+kMD
 iiu
 oGU
 sZr
@@ -69740,7 +70907,7 @@ qbU
 coU
 idB
 hpw
-mTV
+kMD
 iiu
 oGU
 sZr
@@ -69948,14 +71115,14 @@ qbU
 qbU
 coU
 idB
-hpw
-mTV
+bOq
+iQa
 iiu
 oGU
 sZr
 idB
 idB
-nLB
+uKC
 idB
 npU
 cxO
@@ -70157,14 +71324,14 @@ qbU
 qbU
 coU
 idB
-hpw
+lUd
 hpw
 mTV
 idB
 scc
 idB
 idB
-nLB
+uKC
 idB
 idB
 idB
@@ -70366,14 +71533,14 @@ qbU
 qbU
 coU
 idB
-mTV
-hpw
-mTV
-rcD
-nLB
-nLB
-nLB
-cKJ
+ePC
+nrr
+typ
+lPz
+nru
+nru
+nru
+akg
 nLB
 nLB
 nLB
@@ -96733,7 +97900,7 @@ qxe
 qxe
 wFt
 wFt
-vsJ
+eKx
 jbU
 gnx
 oHa
@@ -96742,7 +97909,7 @@ oHa
 arv
 otY
 jbU
-vsJ
+eKx
 wFt
 hRL
 dqw
@@ -96944,7 +98111,7 @@ pZg
 pZg
 jbU
 jbU
-vsJ
+eKx
 tDk
 tDk
 wab
@@ -97152,11 +98319,11 @@ idB
 idB
 idB
 sZr
-ePp
-wbn
-wbn
-ePp
-ePp
+sVJ
+kBt
+kBt
+sVJ
+sVJ
 wab
 naL
 dpG
@@ -97362,9 +98529,9 @@ gID
 idB
 idB
 pZg
-ePp
-ePp
-ePp
+sVJ
+sVJ
+sVJ
 bOF
 tXo
 tDk
@@ -97571,9 +98738,9 @@ pdB
 idB
 idB
 pZg
-ePp
-ePp
-ePp
+sVJ
+sVJ
+sVJ
 fKb
 wab
 tDk
@@ -97780,9 +98947,9 @@ eeC
 idB
 idB
 pZg
-ePp
-ePp
-ePp
+sVJ
+sVJ
+sVJ
 nwU
 tDk
 lDq
@@ -97984,15 +99151,15 @@ ybu
 ybu
 nBD
 pxf
-mYW
-mYW
+eQl
+ikz
 idB
 idB
-ePp
-wbn
-ePp
+sVJ
+kBt
+sVJ
 nwU
-vsJ
+eKx
 eQs
 lAL
 mPI
@@ -98195,13 +99362,13 @@ eXe
 pxf
 huG
 erv
-kMD
+eYA
 eYA
 dxI
 pGf
 uBU
-vsJ
-vsJ
+eKx
+eKx
 kvd
 iID
 tcN
@@ -98617,7 +99784,7 @@ idB
 idB
 sGr
 sGr
-xOO
+rAq
 tDk
 vuX
 tDk
@@ -98826,7 +99993,7 @@ jYE
 ruF
 tjo
 gmK
-rAq
+eaw
 tDk
 tDk
 wab
@@ -99030,12 +100197,12 @@ sEy
 vqn
 hZw
 ilp
-rPF
+mYW
 idB
 nPu
 jRe
 gmK
-rAq
+eaw
 tDk
 tDk
 lDq
@@ -99451,8 +100618,8 @@ nqw
 pZg
 pZg
 pZg
-ePp
-ePp
+sVJ
+sVJ
 aCq
 tDk
 tXo
@@ -99657,8 +100824,8 @@ hRL
 hRL
 qxe
 qxe
-ePp
-ePp
+sVJ
+sVJ
 jbU
 jbU
 tXo
@@ -99868,7 +101035,7 @@ dtl
 hRL
 qxe
 qxe
-ePp
+sVJ
 jbU
 oHa
 oHa
