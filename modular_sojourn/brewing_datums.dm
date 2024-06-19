@@ -38,7 +38,7 @@
 	display_name = "Wine"
 
 	brewed_amount = 2
-	needed_crops = list("grapes" = 80, "towercap" = 5)
+	needed_crops = list("grape" = 80, "towercap" = 5)
 	needed_chems = list("water" = 160, "sugar"= 15)
 
 	price_tag_setter = 3000
@@ -90,7 +90,7 @@
 	reagent_to_brew = "vodka"
 	display_name = "Vodka"
 	needed_crops = list("potato" = 30, "corn" = 15)
-	needed_chems = list("water" = 80, "honey" = 5)
+	needed_chems = list("water" = 80)
 
 	price_tag_setter = 1000
 	brew_timer = 1 MINUTES
@@ -102,7 +102,7 @@
 	prerequisite = "vodka"
 
 	needed_crops = list("wheat" = 30)
-	needed_chems = list("water" = 200, "honey" = 5)
+	needed_chems = list("water" = 200)
 
 	price_tag_setter = 1200
 	brew_timer = 3 MINUTES

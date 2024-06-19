@@ -102,7 +102,7 @@
 	category = "Consumer"
 	time = 200
 	related_stats = list(STAT_MEC)
-	icon_state = "device"
+	icon_state = "electronic"
 
 
 /datum/craft_recipe/consumer/toaster
