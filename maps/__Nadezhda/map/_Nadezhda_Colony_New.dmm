@@ -35308,11 +35308,6 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
-"heC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/rbreakroom)
 "heL" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/stack/ore,
@@ -80540,19 +80535,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/drinks/mug/moebius,
-/obj/item/reagent_containers/food/drinks/mug/moebius{
-	pixel_y = 10;
-	pixel_x = 4;
-	layer = 4
-	},
-/obj/item/reagent_containers/food/drinks/mug/white{
-	pixel_x = 8
-	},
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/rnd/rbreakroom)
 "qaf" = (
@@ -81480,6 +81466,15 @@
 /obj/machinery/newscaster/directional/south,
 /obj/structure/table/marble,
 /obj/item/storage/box/donkpockets,
+/obj/item/reagent_containers/food/drinks/mug/moebius,
+/obj/item/reagent_containers/food/drinks/mug/white{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/mug/moebius{
+	pixel_y = 10;
+	pixel_x = 4;
+	layer = 4
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/rnd/rbreakroom)
 "qjV" = (
@@ -178276,7 +178271,7 @@ txJ
 oMe
 xsv
 rNy
-heC
+rNy
 aLQ
 mtn
 iZg
