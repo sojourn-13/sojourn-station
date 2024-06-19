@@ -11,12 +11,6 @@
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
-
-#define islist(A) istype(A, /list)
-
-
-#define ismob(A) istype(A, /mob)
-
 #define ismecha(A) istype(A, /obj/mecha)
 
 #define isobserver(A) istype(A, /mob/observer)
@@ -88,10 +82,6 @@
 #define HAS_SILICON_ACCESS(A) (issilicon(A) || isAdminGhostAI(A) || A.has_unlimited_silicon_privilege)  // || istype(A.get_active_held_item(), /obj/item/machine_remote))
 
 //-----------------Objects
-#define ismovable(A) istype(A, /atom/movable)
-
-#define isobj(A) istype(A, /obj)
-
 #define isHUDobj(A) istype(A, /obj/screen)
 
 #define isitem(A) istype(A, /obj/item)
