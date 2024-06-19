@@ -21,7 +21,9 @@
 	recipe_crop_stocks = list()
 
 /obj/structure/fermentation_keg/attack_hand(mob/user as mob)
-	shopping_run(user)
+	if(!brewing && (!selected_recipe || ready_for_bottleing))
+		shopping_run(user)
+		return
 
 	if(try_n_brew(user))
 		start_brew()
@@ -101,6 +103,12 @@
 
 	selected_recipe = new choice_to_spawn
 
+	//Second stage brewing gives no refunds! - This is intented design to help make it so folks dont quit halfway through and still get a rebate
+	//Grind core maxing!
+	ready_for_bottleing = FALSE
+	price_tag = 150
+	icon_state = "barrel_tapless_open"
+
 //Remove only chemicals
 /obj/structure/fermentation_keg/proc/clear_out_chemicals()
 	if(reagents)
@@ -144,7 +152,7 @@
 			PS = /obj/plant_spawner/wheat
 		if("poppies")
 			PS = /obj/plant_spawner/poppy
-		if("grapes")
+		if("grape")
 			PS = /obj/plant_spawner/grapes
 		if("greengrapes")
 			PS = /obj/plant_spawner/green_grapes
@@ -189,7 +197,6 @@
 	ready_for_bottleing = TRUE
 	brewing = FALSE
 	price_tag = selected_recipe.price_tag_setter
-
 
 /obj/structure/fermentation_keg/proc/try_n_brew(mob/user)
 	var/ready = TRUE
