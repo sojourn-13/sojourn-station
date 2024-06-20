@@ -108196,9 +108196,9 @@
 /obj/machinery/button/remote/airlock{
 	dir = 4;
 	id = "researchlockdown";
-	name = "Research Wing Lockdown";
+	name = "Research Lockdown";
 	req_access = list(30);
-	pixel_y = 10
+	pixel_y = 7
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/cro)
