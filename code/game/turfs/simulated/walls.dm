@@ -210,7 +210,7 @@
 			return PROJECTILE_CONTINUE
 		src.ricochet_id = 0
 	var/proj_damage = Proj.get_structure_damage()
-	var/ricochet_mult = Proj.get_ricochet_modifier()
+//	var/ricochet_mult = Proj.get_//ricochet_modifier()
 	if(istype(Proj,/obj/item/projectile/beam))
 		if (!(Proj.testing))
 			burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
@@ -222,7 +222,7 @@
 		var/ricochetchance = 1
 		if(proj_damage <= 60)
 			ricochetchance = 2 + round((60 - proj_damage) / 5)
-			ricochetchance = min(ricochetchance * ricochetchance * ricochet_mult, 100)
+//			ricochetchance = min(ricochetchance * ricochetchance * ricochet_mult, 100)
 		// here it is multiplied by 1/2 temporally, changes will be required when new wall system gets implemented
 		ricochetchance = round(ricochetchance * projectile_reflection(Proj, TRUE) / 2)
 		ricochetchance = min(max(ricochetchance, 0), 100)

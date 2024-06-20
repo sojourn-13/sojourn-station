@@ -4,9 +4,9 @@
 	icon_state = "acolyte"
 	item_state = "acolyte"
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -20,9 +20,9 @@
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 20)
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -35,9 +35,9 @@
 	icon_state = "botanist"
 	item_state = "botanist"
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -51,9 +51,9 @@
 	slowdown = 0
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 30)
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -66,9 +66,9 @@
 	icon_state = "custodian"
 	item_state = "custodian"
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 90
@@ -83,9 +83,9 @@
 	slowdown = 0.05
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 30)
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 90
@@ -102,9 +102,9 @@
 	brightness_on = 4 //luminosity when on
 	light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT //Holyer then thou!
 	armor_list = list(
-		melee = 40,
-		bullet = 30,
-		energy = 30,
+		melee = 10,
+		bullet = 7,
+		energy = 7,
 		bomb = 30,
 		bio = 100,
 		rad = 50
@@ -120,9 +120,9 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 25)
 	slowdown = 0.15
 	armor_list = list(
-		melee = 40,
-		bullet = 30,
-		energy = 30,
+		melee = 10,
+		bullet = 7,
+		energy = 7,
 		bomb = 30,
 		bio = 100,
 		rad = 50
@@ -149,9 +149,9 @@
 	icon_state = "inqarmor_hood"
 	item_state = "inqarmor_hood"
 	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
+		melee = 16,
+		bullet = 16,
+		energy = 16,
 		bomb = 70,
 		bio = 100,
 		rad = 100
@@ -197,9 +197,9 @@
 	slowdown = 0
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
+		melee = 16,
+		bullet = 16,
+		energy = 16,
 		bomb = 70,
 		bio = 100,
 		rad = 100

@@ -106,7 +106,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.4)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)

@@ -29,7 +29,7 @@
 	icon = 'icons/obj/robot_items.dmi'
 	icon_state = "security_rifle"
 	item_state = "security_rifle"
-	damage_multiplier = 1.2 //all firemodes are -0.2 so this should go down to 1.0
+	damage_multiplier = 1.3
 	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
@@ -38,10 +38,10 @@
 	charge_meter = TRUE
 	serial_type = "NM"
 	init_firemodes = list(
-		list(mode_name="Rubbers Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/rubber, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst", damage_mult_add = -0.2),
-		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_75, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst", damage_mult_add = -0.2),
-		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 , fire_delay = 10,  icon="burst", damage_mult_add = -0.2),
-		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20, icon="burst", damage_mult_add = -0.2),
+		list(mode_name="Rubbers Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/rubber, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
+		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_75, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
+		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 , fire_delay = 10,  icon="burst"),
+		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20, icon="burst"),
 		)
 
 /obj/item/gun/energy/dazzlation //the last gun you'll ever need.

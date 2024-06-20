@@ -5,7 +5,7 @@
 	icon_state = "deckard"
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
-	max_shells = 6 // Standardizing speedloaders
+	max_shells = 5 // Standardizing speedloaders //Absolutely not. Stop powercreeping up the mag-capacities of weapons that have anemic performance, just make the damage more menaningful - CDB
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1300 //one of most robust revolvers here
 	damage_multiplier = 1.2

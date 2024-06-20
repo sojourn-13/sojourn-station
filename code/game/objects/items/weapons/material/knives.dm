@@ -4,6 +4,7 @@
 	icon_state = "butterflyknife"
 	item_state = null
 	hitsound = null
+	clickdelay_offset = FAST_WEAPON_COOLDOWN
 	var/active = 0
 	var/backstab_damage = 10
 	w_class = ITEM_SIZE_SMALL

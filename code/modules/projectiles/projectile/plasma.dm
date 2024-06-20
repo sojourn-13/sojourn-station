@@ -4,7 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 28)
-	armor_penetration = 15
+	armor_divisor = 1.1
 	check_armour = ARMOR_ENERGY
 	fire_stacks = 1 //Blasma
 
@@ -18,13 +18,13 @@
 	impact_type = /obj/effect/projectile/plasma/impact
 
 /obj/item/projectile/plasma/shell
-	damage_types = list(BURN = 36)
+	damage_types = list(BURN = 40)
 	recoil = 12
 
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
-	damage_types = list(BURN = 28)
-	armor_penetration = 0
+	damage_types = list(BURN = 33)
+	armor_divisor = 0.65
 	recoil = 7
 
 /obj/item/projectile/plasma/heavy
@@ -36,7 +36,7 @@
 	fire_stacks = 1
 
 	damage_types = list(BURN = 30)
-	armor_penetration = 30
+	armor_divisor = 2.3
 
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
@@ -61,8 +61,7 @@
 /obj/item/projectile/plasma/stun
 	name = "stun plasma bolt"
 	taser_effect = 1
-	agony = 30
-	damage_types = list(HALLOS = 0)
+	damage_types = list(HALLOS = 30)
 	impact_type = /obj/effect/projectile/stun/impact
 	recoil = 7
 	fire_stacks = 0
@@ -191,7 +190,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
 	damage_types = list(BRUTE = 54)
-	armor_penetration = 65
+	armor_divisor = 4
 	check_armour = ARMOR_BULLET
 	affective_damage_range = 16
 	affective_ap_range = 16
@@ -202,7 +201,7 @@
 /obj/item/projectile/plasma/check_penetrate(var/atom/A)
 	if(istype(A, /obj/item/shield))
 		var/obj/item/shield/S = A
-		var/loss = round(S.durability / armor_penetration / 8)
+		var/loss = min(round(armor_divisor * 2 / S.durability), 1)
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)

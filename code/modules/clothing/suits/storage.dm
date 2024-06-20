@@ -293,7 +293,7 @@
 /obj/item/clothing/suit/storage/toggle/miljacket_marshal
 	name = "Marshal jacket"
 	desc = "A Resistant Marshal Coloured jacket with reflective yellow patches on it."
-	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	icon_state = "marshal_jacket"
 	item_state = "marshal_jacket"
@@ -529,7 +529,7 @@
 	desc = "A sturdy grey jacket made out of synthetic leather."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	siemens_coefficient = 0.7
@@ -542,7 +542,7 @@
 	item_state = "midriff_leather"
 	icon_open = "midriff_leather_open"
 	icon_closed = "midriff_leather"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/leather/bikermidriff
@@ -550,7 +550,7 @@
 	desc = "A stylish, midriff jacket made of synthetic leather. Red inner padding and thick layers, it'd be a great jacket for cruising down the road; If not for the length"
 	icon_state = "bikermidriff"
 	item_state = "bikermidriff"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/leather/bikermidriff/verb/toggle_style()
@@ -694,9 +694,9 @@
 	icon_state = "absolutehoodie"
 	item_state = "absolutehoodie"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 100,
 		rad = 0)
@@ -795,8 +795,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "aerostatic_bomber_jacket"
 	item_state = "aerostatic_bomber_jacket"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		energy = 0,
 		bomb = 5,
 		bio = 30,
@@ -811,8 +811,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		energy = 0,
 		bomb = 5,
 		bio = 30,
@@ -827,9 +827,9 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "tojojacket"
 	item_state = "tojojacket"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0)
@@ -913,9 +913,9 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "mchestrig"
 	item_state = "mchestrig"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 5,
 		bio = 5,
 		rad = 0
@@ -1193,7 +1193,7 @@ obj/item/clothing/suit/sweater/blue
 	desc = "A long and rugged black trenchcoat, the perfect complement for your film noir ensemble. \n All you need now is a smoke, a whiskey, unlimited ammo and a license to kill." // Max Payne reference.
 	icon_state = "black_trench"
 	item_state = "black_trench"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/livesey // The word Rum and the word Death should mean the same to you. - Seb
@@ -1202,9 +1202,9 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "livesey"
 	item_state = "livesey"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 10,
 		rad = 0

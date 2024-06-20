@@ -9,18 +9,18 @@
 
 	mob_size = MOB_MEDIUM
 
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * SPIDER_HEALTH_MOD
+	health = 100 * SPIDER_HEALTH_MOD
 
 	attack_sound = 'sound/weapons/spiderlunge.ogg'
 	speak_emote = list("chitters")
 	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
-	get_stat_modifier = TRUE //We get randomized addition armor
-	armor_penetration = 5
+	get_stat_modifier = FALSE //We're too baby to get extra mods.
+	armor_divisor = 1
 
-	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 1, bio = 10, rad = 25)
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous = 33,

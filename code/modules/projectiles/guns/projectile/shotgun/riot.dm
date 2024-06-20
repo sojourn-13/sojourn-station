@@ -69,7 +69,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1000
 	damage_multiplier = 0.8
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	zoom_factors = list(0.2)
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold our stocks

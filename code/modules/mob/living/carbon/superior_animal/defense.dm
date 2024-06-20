@@ -396,13 +396,12 @@
 	if(!damage || !istype(user))
 		return
 
-	var/penetration = 0
+	var/penetration = 1
 	if(istype(user, /mob/living))
 		var/mob/living/L = user
-		penetration = L.armor_penetration
+		penetration = L.armor_divisor
 
-	damage_through_armor(damage = damage, damagetype = damagetype, def_zone = null, attack_flag = ARMOR_MELEE, armour_pen = penetration, sharp = sharp, edge = sharp)
-
+	damage_through_armor(damage, BRUTE, attack_flag=ARMOR_MELEE, armor_divisor=penetration)
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
 	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))

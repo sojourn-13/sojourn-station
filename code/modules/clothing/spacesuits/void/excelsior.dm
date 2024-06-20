@@ -17,9 +17,9 @@
 	)
 
 	armor_list = list(
-		melee = 45, // Excel Not made for Close range combat, Melee armor reflects this
-		bullet = 55,
-		energy = 70,
+		melee = 11, // Excel Not made for Close range combat, Melee armor reflects this
+		bullet = 13,
+		energy = 17,
 		bomb = 80,
 		bio = 90,
 		rad = 25
@@ -41,9 +41,9 @@
 	//Decent all around, but less ballistic resistance
 	stiffness = MEDIUM_STIFFNESS
 	armor_list = list(
-		melee = 45, // Excel Not made for Close range combat, Melee armor reflects this
-		bullet = 55,
-		energy = 70,
+		melee = 11, // Excel Not made for Close range combat, Melee armor reflects this
+		bullet = 13,
+		energy = 17,
 		bomb = 80,
 		bio = 90,
 		rad = 25
@@ -64,9 +64,9 @@
 	desc = "An ancient space suit design. Provides good protection, especially against energy discharges. This one appears to be an older, less advanced model that is notably free of techno-communist corruption."
 	slowdown = 0.6 //slightly less slowdown, slightly less armor.
 	armor_list = list(
-		melee = 40,
-		bullet = 50,
-		energy = 60,
+		melee = 10,
+		bullet = 12,
+		energy = 15,
 		bomb = 70,
 		bio = 90,
 		rad = 25
@@ -92,9 +92,9 @@
 	)
 
 	armor_list = list(
-		melee = 40,
-		bullet = 50,
-		energy = 60,
+		melee = 10,
+		bullet = 12,
+		energy = 15,
 		bomb = 70,
 		bio = 90,
 		rad = 25

@@ -12,13 +12,14 @@ Has ability of every roach.
 	density = TRUE
 
 	turns_per_move = 6
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 1000 * LEVIATHAN_HEALTH_MOD
+	health = 1000 * LEVIATHAN_HEALTH_MOD
 	contaminant_immunity = TRUE
+	get_stat_modifier = TRUE
 
 	var/datum/reagents/gas_sac
 
-	armor = list(melee = 40, bullet = 35, energy = 25, bomb = 50, bio = 20, rad = 100, agony = 0)
+	armor = list(melee = 10, bullet = 8, energy = 6, bomb = 50, bio = 20, rad = 100, agony = 0)
 
 	knockdown_odds = 10
 	melee_damage_lower = 20
@@ -29,7 +30,7 @@ Has ability of every roach.
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
 	flash_resistances = 9.9 // were not fully flash proof but almost...
-	armor_penetration = 75
+	armor_divisor = 4
 
 	var/distress_call_stage = 3
 

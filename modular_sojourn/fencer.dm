@@ -15,7 +15,7 @@
 
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	armor_penetration = 35
+	armor_divisor = 2
 	deathmessage = "Gives a short wave and steps forwards into nothing..."
 
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 500, rad = 500, agony = 0)
@@ -93,7 +93,7 @@
 		melee_damage_lower = 15
 		melee_damage_upper = 15
 
-	armor_penetration = 35 * (coins + 1) //AP grows faster then raw damage
+	armor_divisor = 2 * (coins + 1) //AP grows faster then raw damage
 
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A

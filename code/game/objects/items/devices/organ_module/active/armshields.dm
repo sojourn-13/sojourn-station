@@ -3,7 +3,7 @@
 	desc = "An embedded shield adept at blocking objects from connecting with the torso of the shield wielder."
 	icon_state = "marine_shield"
 	item_state = "marine_shield"
-	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 0, bio = 0, rad = 0)
 	attack_verb = list("bashed")
 	base_block_chance = 50
 

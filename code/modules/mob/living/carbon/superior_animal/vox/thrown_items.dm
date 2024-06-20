@@ -2,7 +2,7 @@
 	name = "sharp stone"
 	damage_types = list(BRUTE = 16)
 	agony = 12
-	armor_penetration = 5
+	armor_divisor = 1
 	step_delay = 1.15
 	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
@@ -15,7 +15,7 @@
 	name = "rock fragements"
 	damage_types = list(BRUTE = 24) //Same as a .40
 	agony = 15
-	armor_penetration = 25
+	armor_divisor = 1.25 //primitive.
 	step_delay = 1
 	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE

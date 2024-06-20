@@ -9,9 +9,9 @@
 		)
 	unacidable = 1 //No longer shall our kind be foiled by lone chemists with spray bottles!
 	armor_list = list(
-		melee = 40,
-		bullet = 40,
-		energy = 20,
+		melee = 10,
+		bullet = 10,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 90
@@ -27,9 +27,9 @@
 	slowdown = 1
 	unacidable = 1
 	armor_list = list(
-		melee = 40,
-		bullet = 40,
-		energy = 20,
+		melee = 10,
+		bullet = 10,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 90

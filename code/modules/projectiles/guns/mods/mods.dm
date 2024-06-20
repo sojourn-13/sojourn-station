@@ -42,7 +42,7 @@
 		UPGRADE_BULK = 2,
 		GUN_UPGRADE_STEPDELAY_MULT = 2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.5,
-		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.75,
 		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
 		GUN_UPGRADE_OFFSET = 21,
 		GUN_UPGRADE_RECOIL = 2.5,
@@ -103,7 +103,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PEN_MULT = 1.1,
 		GUN_UPGRADE_PIERC_MULT = 1, // Adds 1 to the gun's penetrating value
 		GUN_UPGRADE_STEPDELAY_MULT = 0.8,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
@@ -124,7 +124,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.75,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_OFFSET = 5,
 		GUN_UPGRADE_RECOIL = 1.3,
@@ -148,7 +148,7 @@
 		GUN_UPGRADE_HONK = TRUE,
 		GUN_UPGRADE_RECOIL = 1.2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
-		GUN_UPGRADE_PEN_MULT = 0.8,
+		GUN_UPGRADE_PEN_MULT = 0.9,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MUZZLEFLASH = 1.2,
@@ -318,7 +318,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
-		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
+		GUN_UPGRADE_PEN_MULT = 1.1, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
 		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
@@ -343,7 +343,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
-		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
+		GUN_UPGRADE_PEN_MULT = 1.5, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
 		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
 		GUN_UPGRADE_RECOIL = 0.75, //25% less recoil (dosnt help as much without stacking it with other mods)
@@ -647,6 +647,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_BRUTE = 5,
 		GUN_UPGRADE_PEN_BASE = 0.2,
+		GUN_UPGRADE_PEN_MULT = 1.1,
 		GUN_UPGRADE_PIERC_MULT = 1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_RECOIL = 1.2,
@@ -828,7 +829,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = rand(5,15),
-		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
+		GUN_UPGRADE_PEN_MULT = rand(2,4)/10,
 		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
 	)
 	I.destroy_on_removal = TRUE
@@ -847,7 +848,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
+		GUN_UPGRADE_PEN_MULT = rand(2,4)/10,
 		GUN_UPGRADE_STEPDELAY_MULT = rand(12,18)/10,
 	)
 	I.destroy_on_removal = TRUE

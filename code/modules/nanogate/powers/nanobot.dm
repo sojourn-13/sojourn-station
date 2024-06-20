@@ -100,7 +100,7 @@ List of powers in this page :
 	set name = "Upgrade Nanobot - Armor (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobots armor to better reduce and mitigate incoming damage."
 	nano_point_cost = 1
-	var/armor_boost = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 100) // How much armor does the nanobot get?
+	var/armor_boost = list(melee = 15, bullet = 15, energy = 3, bomb = 75, bio = 100, rad = 100) // How much armor does the nanobot get?
 
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))

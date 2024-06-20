@@ -11,7 +11,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 20)
-	armor_penetration = 20 //Some AP
+	armor_divisor = 1.2 //Some AP
+	wounding_mult = 1.2 //and some wounding mult
 	check_armour = ARMOR_ENERGY
 	var/frequency = 1
 	hitscan = 1
@@ -28,7 +29,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/check_penetrate(var/atom/A) // For shields to actually block projectiles
 	if(istype(A, /obj/item/shield))
 		var/obj/item/shield/S = A
-		var/loss = round(S.durability / armor_penetration / 8)
+		var/loss = round(S.durability / armor_divisor * 8)
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
@@ -37,22 +38,22 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
-	armor_penetration = 40 //Good AP, its for slow firing weapon
+	armor_divisor = 2.5 //Good AP, its for slow firing weapon
 	eyeblur = 1
 	damage_types = list(BURN = 25) //According to Rain Chule recommendation
 
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)
-	armor_penetration = 10 //Some AP
+	armor_divisor = 1.1 //Some AP
 	recoil = 2
 
 /obj/item/projectile/beam/pulse/drone
 	damage_types = list(BURN = 10)
-	armor_penetration = 5 //No AP we deal 30 damage in 3 shots
+	armor_divisor = 1 //No AP we deal 30 damage in 3 shots
 
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
-	armor_penetration = 15 //Some AP
+	armor_divisor = 1.15 //Some AP
 	recoil = 2
 
 // Laser bullets are your premium and expensive upgrade to your traditional bullets.
@@ -63,52 +64,52 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 // 223 is a middle ground between 408 and 75. Damage of 408, AP of 75
 /obj/item/projectile/beam/laser_223
 	damage_types = list(BURN = 20)
-	armor_penetration = 20
+	armor_divisor = 2
 	recoil = 5
 	wounding_mult = WOUNDING_SERIOUS
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
-	armor_penetration = 36
+	armor_divisor = 3
 	recoil = 7
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 1
 
 /obj/item/projectile/beam/laser_223/lethal
 	damage_types = list(BURN = 27)
-	armor_penetration = 15
+	armor_divisor = 1
 	recoil = 5
 	wounding_mult = WOUNDING_WIDE
 */
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 15)
-	armor_penetration = 20
+	armor_divisor = 2
 	recoil = 2.5
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 14)
-	armor_penetration = 30
+	armor_divisor = 3
 	recoil = 3.5
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 15.5)
-	armor_penetration = 36
+	armor_divisor = 3
 	recoil = 5
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 20)
-	armor_penetration = 46
+	armor_divisor = 4
 	recoil = 10
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 19)
-	armor_penetration = 33
+	armor_divisor = 3
 	recoil = 4.5
 
 /obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 23.5)
-	armor_penetration = 35
+	armor_divisor = 3
 	recoil = 8
 
 /obj/item/projectile/beam/weak/smg
@@ -120,23 +121,23 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/weak/lethal
 	damage_types = list(BURN = 20)
-	armor_penetration = 0 //cant have negitive armor sadly
+	armor_divisor = 1 //cant have negitive armor sadly
 
 /obj/item/projectile/beam/weak/ap
 	damage_types = list(BURN = 15)
-	armor_penetration = 25
+	armor_divisor = 1.25
 
 /obj/item/projectile/beam/weak/ap/reaver
 	damage_types = list(BURN = 16.5)
 
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
-	armor_penetration = 10
+	armor_divisor = 1.1
 	recoil = 2
 
 /obj/item/projectile/beam/shotgun/strong
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
-	armor_penetration = 10
+	armor_divisor = 1.1
 	eyeblur = 4
 	recoil = 4
 
@@ -150,13 +151,14 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/midlaser // Middle ground between better than stock but worse than heavy.
 	damage_types = list(BURN = 25)
-	armor_penetration = 25
+	armor_divisor = 1.25
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
 	damage_types = list(BURN = 35)
-	armor_penetration = 25
+	armor_divisor = 1.5
+	wounding_mult = 1.3
 	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
@@ -167,7 +169,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "x-ray beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
-	armor_penetration = 40
+	armor_divisor = 2.25
+	wounding_mult = 1
 	eyeblur = 4
 	recoil = 1
 	penetrating = 1 //Pierces walls
@@ -179,7 +182,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "pulse"
 	icon_state = "u_laser"
 	damage_types = list(BURN = 40)
-	armor_penetration = 25
+	armor_divisor = 2 //it's a pulse blast.
+	wounding_mult = 1.5
 	eyeblur = 4
 	recoil = 3
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
@@ -194,7 +198,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/pulse/heavy
 	name = "heavy pulse"
 	damage_types = list(BURN = 50)
-	armor_penetration = 35
+	armor_divisor = 2.25
 	recoil = 5
 
 /obj/item/projectile/beam/emitter
@@ -210,7 +214,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "nuclear beam"
 	icon_state = "emitter"
 	damage_types = list(BURN = 40)
-	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
+	armor_divisor = 1.75 //Experimental and extremely rare but also self recharging so take it as you will
 	recoil = 7
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
@@ -230,7 +234,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "dissolver ray"
 	icon_state = "emitter"
 	damage_types = list(BURN = 30) //Less burn but also less recoil
-	armor_penetration = 40 //Experimental and extremely rare but also self recharging so take it as you will
+	armor_divisor = 4 //Experimental and extremely rare but also self recharging so take it as you will
 	recoil = 5 //Less recoil but also less burn
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
@@ -250,15 +254,15 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "desolator ray"
 	icon_state = "xray"
 	damage_types = list(BURN = 20) //Worse Xray
-	armor_penetration = 25
+	armor_divisor = 2
 	eyeblur = 4
 	recoil = 6
 	penetrating = 1
-	
+
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
-		
+
 /obj/item/projectile/beam/IRKdesolator/on_impact(atom/target)
 	var/mob/living/M = target
 	var/mob/living/carbon/human/H = M
@@ -266,13 +270,13 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(istype(target, /mob/living/carbon/))
 			H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
 	else
-		return 1			
+		return 1
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 50)
-	armor_penetration = 40
+	armor_divisor = 2
 	//stun = 3
 	//weaken = 3
 	//stutter = 3
@@ -285,11 +289,10 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/stun
 	name = "stun beam"
 	icon_state = "stun"
-	armor_penetration = 0
+	armor_divisor = 1
 	nodamage = 1
 	taser_effect = 1
-	agony = 30
-	damage_types = list(BURN = 1)
+	damage_types = list(BURN = 1, HALLOSS = 30)
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -301,8 +304,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "stun"
 	nodamage = 1
 	taser_effect = 1
-	agony = 65 // Middle ground between an instant electrode stun and stunbeam
-	damage_types = list(BURN = 0) // Just in case, this is supposed to be 100% nonlethal
+	damage_types = list(BURN = 0, HALLOSS = 65) // Middle ground between an instant electrode stun and stunbeam
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
@@ -313,9 +315,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/sniper/judgement
 	name = "lighting"
 	icon_state = "stun"
-	agony = 5
-	damage_types = list(BURN = 10)
-	armor_penetration = 0
+	damage_types = list(BURN = 10, HALLOSS = 5)
+	armor_divisor = 1
 	eyeblur = 0
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
@@ -327,7 +328,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "sin"
 	icon_state = "xray"
 	damage_types = list(TOX = 10)
-	armor_penetration = 0
+	armor_divisor = 1
 	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
@@ -338,7 +339,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "grace"
 	icon_state = "xray"
 	damage_types = list(TOX = 0)//Shouldnt do anything but just in case its toxin
-	armor_penetration = 0
+	armor_divisor = 1
 	stun = 0
 	weaken = 0
 	eyeblur = 0
@@ -371,7 +372,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/tesla
 	name = "lightning"
 	damage_types = list(BURN = 30)
-	armor_penetration = 10
+	armor_divisor = 1.1
 	hitscan = TRUE
 
 	muzzle_type = /obj/effect/projectile/tesla/muzzle
@@ -390,7 +391,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "infrared radiation"
 	icon_state = "invisible"
 	damage_types = list(BURN = 15)
-	armor_penetration = 15 //less ap
+	armor_divisor = 1.25 //less ap
 	eyeblur = 0
 	muzzle_type = null
 	tracer_type = null

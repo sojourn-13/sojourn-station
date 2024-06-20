@@ -12,9 +12,9 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GLASS = 2)
 	var/up = 0
 	armor_list = list(
-		melee = 20,
-		bullet = 5,
-		energy = 10,
+		melee = 5,
+		bullet = 1,
+		energy = 2,
 		bomb = 5,
 		bio = 0,
 		rad = 0
@@ -178,4 +178,4 @@
 			is none other than the Matriarch of the Hunting Lodge."
 	icon_state = "matriarch_cape"
 	item_state = "matriarch_cape"
-	armor_list = list(melee = 45, bullet = 25, energy = 25, bomb = 25, bio = 20, rad = 15)
+	armor_list = list(melee = 11, bullet = 6, energy = 6, bomb = 25, bio = 20, rad = 15)

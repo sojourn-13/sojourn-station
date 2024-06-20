@@ -29,20 +29,20 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage
 
 	armor_adjustment = list(
-		melee = -40,
-		bullet = -35,
-		energy = -35,
+		melee = -10,
+		bullet = -8,
+		energy = -8,
 		bomb = -40,
-		agony = 50 //it doesnt care, it just wants you dead
+		agony = 12 //it doesnt care, it just wants you dead
 	)
 
 	maxHealth_mult = 0.8 //80% hp
 
 	move_to_delay_increment = -1.3 // fast
 
-	projectile_armor_penetration_mult_increment = 0.5
-	armor_penetration_mult = 1.5
-	armor_penetration_zeroth = 0.1
+	projectile_armor_divisor_mult_increment = 0.5
+	armor_divisor_mult = 1.5
+	armor_divisor_zeroth = 0.1
 
 	melee_damage_lower_mult = 1.5
 	melee_damage_upper_mult = 1.5

@@ -254,6 +254,7 @@
 	sanctified = TRUE //Isn't affected by the general Absolutist speed penalty, still has its slow workspseed
 	flags = CONDUCT
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 30, QUALITY_WELDING = 30, QUALITY_PRYING = 30, QUALITY_DIGGING = 30, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_EXCAVATION = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30)
+	no_double_tact = TRUE
 	degradation = 0
 	workspeed = 0.8
 	max_upgrades = 0 // Can't upgrade it

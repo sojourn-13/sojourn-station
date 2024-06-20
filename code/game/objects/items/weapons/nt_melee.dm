@@ -6,9 +6,11 @@
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
+	w_class = ITEM_SIZE_NORMAL
+	extra_bulk = 3 //a little more size, it's awkward to store out of a sheath.
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
@@ -28,7 +30,7 @@
 	item_state = "nt_shortsword"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
@@ -38,8 +40,8 @@
 	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_longsword"
 	item_state = "nt_longsword"
-	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_EXTREME
+	force = WEAPON_FORCE_ROBUST + 4
+	armor_divisor = ARMOR_PEN_HALF
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 500
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
@@ -52,7 +54,7 @@
 	icon_state = "nt_dagger"
 	item_state = "nt_dagger"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_MASSIVE
+	armor_divisor = ARMOR_PEN_MASSIVE
 	price_tag = 120
 	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
 
@@ -65,8 +67,13 @@
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
 	wielded_icon = "nt_halberd_wielded"
-	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_MASSIVE
+	force = WEAPON_FORCE_BRUTAL + 5
+	armor_divisor = ARMOR_PEN_MODERATE
+	max_upgrades = 3
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	extended_reach = TRUE
+	forced_broad_strike = TRUE
 	price_tag = 600
 	matter = list(MATERIAL_BIOMATTER = 60, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
@@ -78,8 +85,8 @@
 	item_state = "nt_scourge"
 	force = WEAPON_FORCE_ROBUST
 	var/force_extended = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_MASSIVE
-	var/armor_penetration_extended = ARMOR_PEN_HALF
+	armor_divisor = 1
+	var/armor_divisor_extended = 0.5
 	var/extended = FALSE
 	var/agony = 20
 	var/agony_extended = 45 //Church harmbaton! This is legit better then a normal baton as it can be upgraded AND has base 15 damage
@@ -98,7 +105,7 @@
 /obj/item/tool/sword/nt/scourge/proc/extend()
 	extended = TRUE
 	force += (force_extended - initial(force))
-	armor_penetration += (armor_penetration_extended - initial(armor_penetration))
+	armor_divisor += (armor_divisor_extended - initial(armor_divisor))
 	agony += (agony_extended - initial(agony))
 	slot_flags = null
 	w_class = ITEM_SIZE_HUGE
@@ -110,7 +117,7 @@
 	w_class = initial(w_class)
 	agony = initial(agony)
 	slot_flags = initial(slot_flags)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	refresh_upgrades() //it's also sets all to default
 	update_icon()
 
@@ -140,9 +147,12 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
 	throwforce = WEAPON_FORCE_LETHAL * 1.5
-	armor_penetration = ARMOR_PEN_MASSIVE
+	armor_divisor = ARMOR_PEN_MASSIVE
 	throw_speed = 3
-	price_tag = 150
+	price_tag = 450
+	allow_spin = FALSE
+	extended_reach = TRUE
+	push_attack = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
 
 /obj/item/tool/sword/nt/spear/equipped(mob/living/W)
@@ -179,7 +189,7 @@
 	icon_state = "nt_flanged"
 	item_state = "nt_flanged"
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_MASSIVE
+	armor_divisor = ARMOR_PEN_HALF
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
@@ -229,9 +239,9 @@
 	icon_state = "nt_warhammer"
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
-	force = WEAPON_FORCE_DANGEROUS //Naturally weaker do to knockbacking are targets (can stun lock)
+	force = WEAPON_FORCE_BRUTAL - 3 //Naturally weaker do to knockbacking are targets (can stun lock)
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 8)
@@ -258,8 +268,10 @@
 	switched_on_icon_state = "nt_force_on"
 	switched_on_item_state = "nt_force_on"
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
+	no_swing = TRUE
+	f
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 6, MATERIAL_GOLD = 3)
 	toggleable = TRUE
 	heat = 3800
@@ -313,7 +325,7 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
-	armor_list = list(melee = 20, bullet = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 2, bomb = 15, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 35, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_GOLD = 3)
 	price_tag = 1000
 	base_block_chance = 60
@@ -445,7 +457,7 @@
 	icon_state = "crusader"
 	item_state = "crusader"
 	force = WEAPON_FORCE_LETHAL
-	armor_penetration = ARMOR_PEN_HALF
+	armor_divisor = ARMOR_PEN_HALF
 	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_GOLD = 3)
 	price_tag = 10000
 
@@ -458,7 +470,7 @@
 	item_state = "nt_shortsword"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
@@ -482,7 +494,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
 	throwforce = WEAPON_FORCE_LETHAL
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	throw_speed = 3
 	price_tag = 150
 	allow_spin = FALSE

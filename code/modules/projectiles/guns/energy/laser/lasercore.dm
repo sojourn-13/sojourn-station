@@ -83,9 +83,8 @@
 	item_state = "gleam"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 4, MATERIAL_WOOD = 12, MATERIAL_SILVER = 15, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 3) //steal the COs laser for copper wire.
 	extra_bulk = 15 //A bit more bulk than an unfolded laser-core.
-	projectile_type = /obj/item/projectile/beam/midlaser //a step down but we're also a good bit more energy efficient.
 	damage_multiplier = 1.1 //essentially the same bonus you get from
-	armor_penetration = 1.2
+	armor_divisor = 0.2
 	zoom_factors = list(0.4)
 	extra_damage_mult_scoped = 0.2
 	max_upgrades = 3 //we're already pretty beefy.

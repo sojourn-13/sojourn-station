@@ -33,9 +33,9 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
+		melee = 8,
+		bullet = 8,
+		energy = 8,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -79,9 +79,9 @@
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
 	icon_state = "armor_handmade"
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
+		melee = 7,
+		bullet = 5,
+		energy = 4,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -119,9 +119,9 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
+		melee =7,
+		bullet = 4,
+		energy = 3,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -187,7 +187,7 @@
 	icon_state = "botanist"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 20, bio = 100, rad = 80)
+	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 20, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/botanist/verb/toggle_style()
@@ -219,7 +219,7 @@
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
+	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/acolyte/verb/toggle_style()
@@ -261,7 +261,7 @@
 	icon_state = "vinculum_cassock"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
+	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/path/divisor
@@ -410,7 +410,7 @@
 	icon_state = "rosaria_armor"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
@@ -444,7 +444,7 @@
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
+	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/custodian/verb/toggle_style()
@@ -476,7 +476,7 @@
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
@@ -513,7 +513,7 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
@@ -534,7 +534,7 @@
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_upgrades = 2
-	armor_list = list(melee = 35, bullet = 25, energy = 25, bomb = 30, bio = 50, rad = 50)
+	armor_list = list(melee =8, bullet = 6, energy = 6, bomb = 30, bio = 50, rad = 50)
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
 						 /obj/item/tool_upgrade,
@@ -559,9 +559,9 @@
 	blood_overlay_type = "armor"
 	slowdown = 0.15
 	armor_list = list(
-		melee = 25,
-		bullet = 60,
-		energy = 25,
+		melee = 6,
+		bullet = 15,
+		energy = 6,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -602,9 +602,9 @@
 	icon_state = "northtech"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
 	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 50,
+		melee = 3,
+		bullet = 3,
+		energy = 12,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -616,9 +616,9 @@
 	icon_state = "northtech"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 10)
 	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 60,
+		melee = 3,
+		bullet = 3,
+		energy = 15,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -637,9 +637,9 @@
 	blood_overlay_type = "armor"
 	slowdown = 0.2 //it's reflective gear...there's no reason for it to be so heavy.
 	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 60,
+		melee = 6,
+		bullet = 6,
+		energy = 15,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -673,9 +673,9 @@
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 65,
+		melee = 5,
+		bullet = 5,
+		energy = 16,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -692,7 +692,7 @@
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 	slowdown = 0.2
-	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 6, bullet = 6, energy = 15, bomb = 10, bio = 0, rad = 0)
 
 //Flak Vests
 /obj/item/clothing/suit/armor/flakvest
@@ -703,7 +703,7 @@
 	blood_overlay_type = "armor"
 	price_tag = 250
 	slowdown = 0.2
-	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 50, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/verb/toggle_style()
 	set name = "Adjust Style"
@@ -737,7 +737,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.3 // Bulkier due to protecting more
-	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
+	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
 /obj/item/clothing/suit/armor/flakvest/full/toggle_style()
 	set name = "Adjust Style"
@@ -836,7 +836,7 @@
 	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
-	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
 
 
 /obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
@@ -872,9 +872,9 @@
 	slowdown = 0.2 // Bulkier due to protecting more
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(
-		melee = 45,
-		bullet = 50,
-		energy = 30,
+		melee = 11,
+		bullet = 12,
+		energy = 7,
 		bomb = 50,
 		bio = 0,
 		rad = 0
@@ -901,9 +901,9 @@
 	max_upgrades = 2
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor_list = list(
-		melee = 50,
-		bullet = 45,
-		energy = 50,
+		melee = 12,
+		bullet = 11,
+		energy = 12,
 		bomb = 40,
 		bio = 0,
 		rad = 0
@@ -933,9 +933,9 @@
 	item_state = "swat_suit"
 	flags_inv = HIDEJUMPSUIT
 	armor_list = list(
-		melee = 60,
-		bullet = 25,
-		energy = 25,
+		melee = 15,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -959,9 +959,9 @@
 	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
 	tool_qualities = list(QUALITY_ARMOR = 100) //every armor should have this. Just give it 'no upgrades' if it isnt supposed to have them lol
 	armor_list = list(
-		melee = 20,
-		bullet = 30,
-		energy = 20,
+		melee = 5,
+		bullet = 7,
+		energy = 5,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -982,9 +982,9 @@
 	icon_state = "webvest_ironhammer"
 	slowdown = 0.1
 	armor_list = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
+		melee =8,
+		bullet = 8,
+		energy = 8,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -1000,9 +1000,9 @@
 	tool_qualities = list()
 	price_tag = 300
 	armor_list = list(
-		melee = 55,
-		bullet = 55,
-		energy = 55,
+		melee = 13,
+		bullet = 13,
+		energy = 13,
 		bomb = 45,
 		bio = 0,
 		rad = 0
@@ -1024,9 +1024,9 @@
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	armor_list = list(
-		melee = 40,
-		bullet = 35,
-		energy = 40,
+		melee = 10,
+		bullet = 10,
+		energy = 10,
 		bomb = 35,
 		bio = 0,
 		rad = 0
@@ -1070,7 +1070,7 @@
 	icon_state = "platecarrier"
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
-	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee =8, bullet = 11, energy = 5, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/verb/toggle_style()
 	set name = "Adjust Style"
@@ -1204,7 +1204,7 @@
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with Corpsman livery and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
-	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
+	armor_list = list(melee =8, bullet = 11, energy = 5, bomb = 10, bio = 20, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/toggle_style()
 	set name = "Adjust Style"
@@ -1236,7 +1236,7 @@
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman livery and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
 	icon_state = "platecarrier_corpsman_fullbody"
 	item_state = "platecarrier_corpsman_fullbody"
-	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
+	armor_list = list(melee = 8, bullet = 11, energy = 5, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
@@ -1272,7 +1272,7 @@
 	item_state = "platecarrier_ih"
 	blood_overlay_type = "armor"
 	slowdown = 0.10
-	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/hos/toggle_style()
 	set name = "Adjust Style"
@@ -1347,9 +1347,9 @@
 	item_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor_list = list(
-		melee = 40,
-		bullet = 40,
-		energy = 30,
+		melee = 10,
+		bullet = 10,
+		energy = 7,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -1392,7 +1392,7 @@
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 7, bomb = 25, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	min_cold_protection_temperature = T0C - 20
@@ -1437,14 +1437,14 @@
 /obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
-	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee =7, bullet = 8, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
 /obj/item/clothing/suit/storage/armor/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
-	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 8, bullet = 7, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
 
@@ -1476,7 +1476,7 @@
 /obj/item/clothing/suit/storage/armor/marshal_coat_ss
 	name = "supply specialist's jacket"
 	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
-	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 
@@ -1492,9 +1492,9 @@
 	item_state = "reactiveoff"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 20,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -1543,9 +1543,9 @@
 	item_state = "hunter_armor"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
+		melee =7,
+		bullet = 5,
+		energy = 5,
 		bomb = 10,
 		bio = 0,
 		rad = 0 )
@@ -1560,9 +1560,9 @@
 	item_state = "hunter_armor_bone"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 45,
-		bullet = 25,
-		energy = 25,
+		melee = 11,
+		bullet = 6,
+		energy = 6,
 		bomb = 10,
 		bio = 0,
 		rad = 0)
@@ -1574,9 +1574,9 @@
 	item_state = "hunter_armor_reinforced"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 30,
-		bullet = 45,
-		energy = 25,
+		melee = 7,
+		bullet = 11,
+		energy = 6,
 		bomb = 10,
 		bio = 0,
 		rad = 0)
@@ -1589,9 +1589,9 @@
 	item_state = "hunter_armor_leather"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 45,
+		melee = 7,
+		bullet = 6,
+		energy = 11,
 		bomb = 10,
 		bio = 0,
 		rad = 0)
@@ -1602,9 +1602,9 @@
 	icon_state = "hm_woodvest"
 	item_state = "hm_woodvest"
 	armor_list = list(
-		melee = 25, //It's made of mostly wood and cloth, shittiest armor in the game easily, but does have bio and rad, giving it a rare but still possible boost over handmade. -Kaz
-		bullet = 15, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
-		energy = 10, // It's mostly made of wood, it will char easily.
+		melee = 6, //It's made of mostly wood and cloth, shittiest armor in the game easily, but does have bio and rad, giving it a rare but still possible boost over handmade. -Kaz
+		bullet = 3, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
+		energy = 2, // It's mostly made of wood, it will char easily.
 		bomb = 10,
 		bio = 25,
 		rad = 25
@@ -1626,9 +1626,9 @@
 		MATERIAL_SILVER = 2
 		)
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 7,
+		bullet = 7,
+		energy = 7,
 		bomb = 10,
 		bio = 100,
 		rad = 50
@@ -1692,9 +1692,9 @@
 	max_upgrades = 0 //No upgrading this one
 	tool_qualities = list()
 	armor_list = list(
-		melee = 55,
-		bullet = 55,
-		energy = 55,
+		melee = 13,
+		bullet = 13,
+		energy = 13,
 		bomb = 60,
 		bio = 0,
 		rad = 0
@@ -1711,7 +1711,7 @@
 	item_state = "platecarrier_sfa"
 	blood_overlay_type = "armor"
 	slowdown = 0.05
-	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/solfed/corpsman
@@ -1721,5 +1721,5 @@
 	item_state = "platecarrier_sfc"
 	blood_overlay_type = "armor"
 	slowdown = 0.05
-	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 40, rad = 0)
+	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 40, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS

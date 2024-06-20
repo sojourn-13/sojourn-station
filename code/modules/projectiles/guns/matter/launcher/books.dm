@@ -45,7 +45,7 @@
 	//Theirs better weapons then this!
 	fire_sound = 'sound/weapons/magical.ogg'
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_divisor = ARMOR_PEN_EXTREME
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_stored_matter = 20
 	fire_delay = 15

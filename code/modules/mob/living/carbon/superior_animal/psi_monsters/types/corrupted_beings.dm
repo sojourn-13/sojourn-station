@@ -5,8 +5,8 @@
 	icon_state = "q-hound"
 	icon_living = "q-hound"
 	icon = 'icons/mob/mobs-monster.dmi'
-	maxHealth = 200
-	health = 200
+	maxHealth = 200 * DVEY_HEALTH_MOD
+	health = 200 * DVEY_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 20
 	melee_damage_upper = 30
@@ -22,11 +22,11 @@
 	special_parts = list(/obj/item/animal_part/chimera_fang)
 
 
-	armor_penetration = 25 //Sharp bones
+	armor_divisor = 2 //Sharp bones
 
 
 	//Good stats baseline in case admins dont edit these
-	armor = list(melee = 45, bullet = 15, energy = 45, bomb = 10, bio = 100, rad = 100, agony = 70)
+	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 17)
 
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower
@@ -35,8 +35,8 @@
 	icon_state = "psisolder_hm_sword"
 	icon_living = "psisolder_hm_sword"
 	icon = 'icons/mob/mobs-daskvey.dmi'
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	attack_sound = 'sound/weapons/slice.ogg'
 	melee_damage_lower = 26
 	melee_damage_upper = 26
@@ -54,7 +54,7 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-	armor_penetration = 15
+	armor_divisor = 1.25
 
 	color = "#49D6F2"
 
@@ -63,7 +63,7 @@
 	can_leave = TRUE //freedom
 
 	//Same armor that they are warning
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 50)
 
 /*
 Note about the deepmaints_bound!
@@ -103,7 +103,7 @@ They are soully made and reflavoured to be for PVE.
 	move_to_delay = 1
 	attacktext = "rends apart"
 
-	armor_penetration = 35
+	armor_divisor = 2.5
 
 	color = null
 
@@ -122,7 +122,7 @@ They are soully made and reflavoured to be for PVE.
 	//Scale armor ref from CDDA
 	//Dragons are weak to melee - source: Dnd
 	//Ive never seen a wizard NOT nuke a dragon with fire ball
-	armor = list(melee = 40, bullet = 30, energy = 95, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 10, bullet = 17, energy = 23, bomb = 40, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
 	var/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/shooter = src //We're the shooter.
@@ -188,8 +188,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
 	icon_state = "psisolder_hm_axe"
 	icon_living = "psisolder_hm_axe"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -200,7 +200,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints)
 
-	armor_penetration = 15
+	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound
 	name = "Wild Daskveyian Wall Breaker"
@@ -218,8 +218,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
 	icon_state = "psisolder_hm_plasma"
 	icon_living = "psisolder_hm_plasma"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -236,7 +236,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound
 	name = "Wild Daskveyian Plasma Caster"
@@ -252,8 +252,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "Trained Gunner of the Hand of Daskvey, their hands blessed with a fine laser rifle to burn away that which would threaten them or their fellow followers."
 	icon_state = "psisolder_hm_laser"
 	icon_living = "psisolder_hm_laser"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -273,7 +273,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/beam
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound
 	name = "Wild Daskveyian Las-Gunner"
@@ -289,8 +289,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A basic Gunner of the Hand of Daskvey, fervent and ready to fight, their weapon sprays waves of lead to any that would harm those that they hold dear."
 	icon_state = "psisolder_hm_smg"
 	icon_living = "psisolder_hm_smg"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -314,7 +314,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/bullet/pistol_35/scrap
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/Initialize(mapload)
 	. = ..()
@@ -337,8 +337,8 @@ They are soully made and reflavoured to be for PVE.
 
 	icon_state = "psisolder_hm_rifle"
 	icon_living = "psisolder_hm_rifle"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -361,7 +361,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/bullet/rifle_75/scrap
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/Initialize(mapload)
 	. = ..()
@@ -383,8 +383,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unbending steel, for they are the wall that holds back any that seek to harm their kin."
 	icon_state = "psi_juggernaut_glass_Shield"
 	icon_living = "psi_juggernaut_glass_Shield"
-	maxHealth = 300
-	health = 300
+	maxHealth = 300 * DVEY_HEALTH_MOD
+	health = 300 * DVEY_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -394,8 +394,8 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_penetration = 0
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
+	armor_divisor = 1
+	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 	var/knockdown_odds = 30
 
 // BUMP!
@@ -424,8 +424,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
 	icon_state = "psi_juggernaut_glass_halberd"
 	icon_living = "psi_juggernaut_glass_halberd"
-	maxHealth = 280
-	health = 280
+	maxHealth = 280 * DVEY_HEALTH_MOD
+	health = 280 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
 	emote_see = list("looks left then right", "breaths heavilly", "adjusts their armour")
@@ -435,8 +435,8 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_penetration = 30
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
+	armor_divisor = 1.5
+	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound
 	name = "Wild Daskveyian Halberdier"
@@ -452,8 +452,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A soul recently uplifted by the Hand of Daskvey, still lost and recovering from its pains, they find themselves lost in a trance of forgotten memories."
 	icon_state = "psion_h"
 	icon_living = "psion_h"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")
@@ -463,7 +463,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound
@@ -480,8 +480,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers."
 	icon_state = "psion_v"
 	icon_living = "psion_v"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")
@@ -491,7 +491,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1
@@ -529,8 +529,8 @@ They are soully made and reflavoured to be for PVE.
 	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. Their knowledge of psionics is of a scholarly level."
 	icon_state = "psion_v_master"
 	icon_living = "psion_v_master"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")
@@ -540,7 +540,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1

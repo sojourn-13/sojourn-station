@@ -81,6 +81,10 @@
 	var/obj/item/I = get_active_hand()
 	unEquip(I, Target, MOVED_DROP)
 
+/mob/proc/drop_offhand(var/atom/Target)
+	var/obj/item/I = get_inactive_hand()
+	unEquip(I, Target, MOVED_DROP)
+
 /mob/proc/is_holding(var/obj/item/W)
 	return is_holding_in_active_hand(W) || is_holding_in_inactive_hand(W)
 

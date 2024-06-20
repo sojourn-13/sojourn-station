@@ -84,7 +84,7 @@
 	health = 400
 	melee_damage_lower = 40
 	melee_damage_upper = 45
-	armor = list(melee = 30, bullet = 30, energy = 20, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 7, bullet = 7, energy = 5, bomb = 5, bio = 10, rad = 25)
 
 /mob/living/carbon/superior_animal/lodge/cerberus/chimera/sun
 	name = "Solis"
@@ -96,7 +96,7 @@
 	health = 500
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 10, bio = 15, rad = 25)
+	armor = list(melee = 10, bullet = 10, energy = 7, bomb = 10, bio = 15, rad = 25)
 
 //Baby cerberus
 //Grows into a cerberus or chimera. Credit to BigBimmer#2319 for the sprite.

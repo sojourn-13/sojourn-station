@@ -6,8 +6,8 @@
 	icon_state = "crab3"
 	icon_living = "crab3"
 
-	maxHealth = 1400
-	health = 1400
+	maxHealth = 1400 * PSIBOSS_HEALTH_MOD
+	health = 1400 * PSIBOSS_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 50
 	melee_damage_upper = 60
@@ -20,7 +20,7 @@
 	default_pixel_x = -16
 	default_pixel_y = 0
 	size_pixel_offset_x = -16
-	armor_penetration = 65
+	armor_divisor = 4
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
 	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\" The answering calls of his court echoing through the realm!</font></b>"
 	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\" The strongest of his court heard affirming his call!</font></b>"

@@ -12,6 +12,9 @@
 /obj/item/ammo_casing/pistol_35/prespawned
 	amount = 15
 
+/obj/item/ammo_casing/pistol_35/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -928,7 +931,7 @@
 	w_class = ITEM_SIZE_SMALL
 	caliber = CAL_ARROW
 	force = WEAPON_FORCE_NORMAL
-	armor_penetration = ARMOR_PEN_GRAZING
+	armor_divisor = ARMOR_PEN_GRAZING
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
 	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
 	maxamount = 3
@@ -959,7 +962,7 @@
 	name = "broadhead arrow"
 	icon_state = "arrow-broad"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = 0
+	armor_divisor = 1
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, capable of causing severe damage to unarmored targets, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
@@ -967,7 +970,7 @@
 	name = "serrated arrow"
 	icon_state = "arrow-serrated"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = 0
+	armor_divisor = 1
 	desc = "A good-quality handmade aerodinamic arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, letting it stick in wounds easily, penetrating thick hide and armor alike at fast speeds."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 

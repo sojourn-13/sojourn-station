@@ -19,7 +19,7 @@
 			owner.update_hair()
 	..()
 
-/obj/item/organ/external/head/take_damage(amount, damage_type, armor_divisor = max(1, armor_penetration), wounding_multiplier = 1, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
+/obj/item/organ/external/head/take_damage(amount, damage_type, armor_divisor = max(1, armor_divisor), wounding_multiplier = 1, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
 	. = ..()
 	if(. && !disfigured)
 		if(amount > 25)

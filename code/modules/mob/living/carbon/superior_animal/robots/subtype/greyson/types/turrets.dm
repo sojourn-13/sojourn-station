@@ -9,8 +9,8 @@
 
 	mob_size = MOB_MEDIUM
 
-	maxHealth = 75
-	health = 75
+	maxHealth = 75 * GREYSONWEAK_HEALTH_MOD
+	health = 75 * GREYSONWEAK_HEALTH_MOD
 
 	faction = "greyson"
 
@@ -31,7 +31,7 @@
 	melee_damage_lower = 12
 	melee_damage_upper = 17
 	destroy_surroundings = FALSE
-	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 8, bullet = 6, energy = 10, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 	times_to_get_stat_modifiers = 2 //two prefixes
 
@@ -92,8 +92,8 @@
 	ranged_cooldown = 8
 	rounds_left = 33
 	mags_left = 3
-	maxHealth = 125
-	health = 125
+	maxHealth = 125 * GREYSONROBUST_HEALTH_MOD
+	health = 125 * GREYSONROBUST_HEALTH_MOD
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 
@@ -142,12 +142,12 @@
 	mag_type = /obj/item/stalker_fuel_rod/depleted
 	mags_left = 2
 
-	armor = list(melee = 35, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
+	armor = list(melee = 8, bullet = 12, energy = 20, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
 
 	get_stat_modifier = FALSE // lol no
 
-	maxHealth = 400 //tanky
-	health = 400
+	maxHealth = 400 * GREYSONROBUST_HEALTH_MOD //tanky
+	health = 400 * GREYSONROBUST_HEALTH_MOD
 
 	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
 	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"

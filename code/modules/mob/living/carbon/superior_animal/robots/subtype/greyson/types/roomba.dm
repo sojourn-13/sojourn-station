@@ -23,8 +23,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems to have a knife taped to it..?"
 	icon_state = "roomba_knife"
-	health = 30
-	maxHealth = 30
+	health = 30 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 30 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 12
 	melee_damage_upper = 17
 	drop2 = /obj/item/tool/knife
@@ -33,8 +33,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
 	icon_state = "roomba_batton"
-	health = 30
-	maxHealth = 30
+	health = 30 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 30 * GREYSONWEAK_HEALTH_MOD
 	move_to_delay = 2 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12
@@ -57,8 +57,8 @@
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it and seems to have added armor..."
 	icon_state = "roomba_IH_batton"
-	health = 80
-	maxHealth = 80
+	health = 80 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 80 * GREYSONWEAK_HEALTH_MOD
 	move_to_delay = 2 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12
@@ -67,8 +67,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. Is that a fucking anti-personel mine?!"
 	icon_state = "boomba"
-	health = 15
-	maxHealth = 15
+	health = 15 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 15 * GREYSONWEAK_HEALTH_MOD
 	move_to_delay = 4
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -86,8 +86,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. And this one has a gun."
 	icon_state = "roomba_lmg"
-	health = 30
-	maxHealth = 30
+	health = 30 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 30 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	ranged = TRUE
@@ -110,8 +110,8 @@
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a overclocked gun."
 	icon_state = "roomba_lmg"
-	health = 50
-	maxHealth = 50
+	health = 50 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 50 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	rounds_left = 10 //takes more per shot!
@@ -121,8 +121,8 @@
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor."
 	icon_state = "roomba_IH_lmg"
-	health = 70
-	maxHealth = 70
+	health = 70 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 70 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 
@@ -130,8 +130,8 @@
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_drugs"
-	health = 20
-	maxHealth = 20
+	health = 20 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 20 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 7
 	melee_damage_upper = 12
 	var/injection_per_hit = 2
@@ -149,8 +149,8 @@
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"
-	health = 20
-	maxHealth = 20
+	health = 20 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 20 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 	injection_per_hit = 1
@@ -160,8 +160,8 @@
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"
-	health = 20
-	maxHealth = 20
+	health = 20 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 20 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 	injection_per_hit = 3

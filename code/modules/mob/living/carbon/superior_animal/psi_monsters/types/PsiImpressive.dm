@@ -5,8 +5,8 @@
 	icon_state = "vargo"
 	icon_living = "vargo"
 
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40
@@ -18,7 +18,7 @@
 	death_spawn_gift = /obj/random/cluster/psi_monster/maggot_death_gasp
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"
@@ -26,8 +26,8 @@
 	icon_state = "eelo"
 	icon_living = "eelo"
 
-	maxHealth = 400
-	health = 400
+	maxHealth = 400 * PSIMOB_HEALTH_MOD
+	health = 400 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	emote_see = list("whirls about, its massive singular eye spasming,", "suddenly halts, its singular pupil dilating!", "whistles a small tune...")
@@ -35,7 +35,7 @@
 	healing_factor = 10
 	attacktext = "rammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_penetration = 20
+	armor_divisor = 1.2
 	leach_on_odds = 30
 	can_leach = TRUE
 	steal_odds = 15
@@ -48,8 +48,8 @@
 	icon_state = "guardA"
 	icon_living = "guardA"
 
-	maxHealth = 600
-	health = 600
+	maxHealth = 600 * PSIMOB_HEALTH_MOD
+	health = 600 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	emote_see = list("crackles and pops as its head burns!", "looses a haunting scream!", "claws at its head, trying to put out the flames!")
@@ -61,7 +61,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_penetration = 50
+	armor_divisor = 1.5
 
 /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher
 	name = "cerebral crusher"
@@ -69,8 +69,8 @@
 	icon_state = "farartbot"
 	icon_living = "farartbot"
 	life_cycles_before_sleep = 60
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40
@@ -80,7 +80,7 @@
 	healing_factor = 10
 	attacktext = "slammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_penetration = 30
+	armor_divisor = 1.3
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly
 	name = "crimson jelly"
@@ -90,8 +90,8 @@
 	icon_state = "oormat"
 	icon_living = "oormat"
 
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	chameleon_skill = 10
 	healing_factor = 10
 	pixel_x = 0
@@ -102,9 +102,9 @@
 	real_mutator = TRUE
 	lethal_to_captive = TRUE //We kill are captives
 	knockdown_odds = 15
-	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_penetration = 50
+	armor_divisor = 2.3
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -113,11 +113,11 @@
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "hyper"
 	icon_living = "hyper"
-	maxHealth = 1250
-	health = 1250
+	maxHealth = 1250 * PSIMOB_HEALTH_MOD
+	health = 1250 * PSIMOB_HEALTH_MOD
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_penetration = 70
+	armor_divisor = 4
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
 /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron

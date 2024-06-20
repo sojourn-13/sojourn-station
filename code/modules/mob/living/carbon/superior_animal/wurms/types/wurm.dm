@@ -141,8 +141,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	projectiletype = /obj/item/projectile/goo
 
 //Health related variables
-	maxHealth = WURM_HEALTH_LOW
-	health = WURM_HEALTH_LOW
+	maxHealth = WURM_HEALTH_LOW * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_LOW * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_MED
@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 10, bullet = 15, energy = 15, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = 8, energy = 8, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -167,8 +167,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 25, bullet = 20, energy = 10, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 12, bullet = 8, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -193,8 +193,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_MED
-	health = WURM_HEALTH_MED
+	maxHealth = WURM_HEALTH_MED * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_MED * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_HIGH
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 15, bullet = 30, energy = 10, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 8, bullet = 14, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
@@ -220,8 +220,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 20, energy = 25, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = 8, energy = 12, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
@@ -249,8 +249,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	destroy_surroundings = FALSE
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
@@ -261,7 +261,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 20, energy = 25, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = 8, energy = 12, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron // given something just in case.

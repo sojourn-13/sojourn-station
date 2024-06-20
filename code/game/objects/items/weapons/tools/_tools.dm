@@ -224,7 +224,7 @@
 	item_stats += list(list( "name" = "Damage", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10 ))
 	if (extra_bulk)
 		item_stats += list(list( "name" = "Extra Volume", "type" = "AnimatedNumber", "value" = extra_bulk ))
-	item_stats += list(list( "name" = "Armor Penetration", "type" = "AnimatedNumber", "value" = armor_penetration ))
+	item_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
 
 	stats["Item Stats"] = item_stats
 
@@ -263,7 +263,7 @@
 				"type" = "ProgressBar",
 				"value" = cell.percent(),
 				"unit" = "%",
-				"max" = 100, 
+				"max" = 100,
 				"ranges" = list(
 					"good" = list(100, 100),
 					"average" = list(25, 100),
@@ -286,7 +286,7 @@
 	data["stats"] = stats
 
 	data["max_upgrades"] = max_upgrades
-	
+
 	var/list/attachments = list()
 	for(var/atom/A in item_upgrades)
 		attachments += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(sanitizeFileName("[A.type].png"))))
@@ -794,7 +794,7 @@
 	if(switched_on_forcemult)
 		force *= switched_on_forcemult
 	if(switched_on_penmult)
-		armor_penetration *= switched_on_penmult
+		armor_divisor *= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
 	if(switched_on_icon_state)
@@ -820,7 +820,7 @@
 	if(switched_on_forcemult)
 		force /= switched_on_forcemult
 	if(switched_on_penmult)
-		armor_penetration /= switched_on_penmult
+		armor_divisor /= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
 	if(switched_on_icon_state)
@@ -945,7 +945,7 @@
 	use_fuel_cost = initial(use_fuel_cost)
 	use_power_cost = initial(use_power_cost)
 	force = initial(force)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	damtype = initial(damtype)
 	force_upgrade_mults = initial(force_upgrade_mults)
 	force_upgrade_mods = initial(force_upgrade_mods)

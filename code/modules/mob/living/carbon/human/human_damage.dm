@@ -355,7 +355,7 @@ This function restores all organs.
 		if(damagetype == PSY)
 			sanity.onPsyDamage(damage)
 			var/obj/item/organ/brain = random_organ_by_process(BP_BRAIN)
-			brain.take_damage(damage, PSY, (armor_penetration * 0.1), wounding_multiplier)
+			brain.take_damage(damage, PSY, (armor_divisor * 0.1), wounding_multiplier)
 			return TRUE
 
 		if(damagetype == TOX && stats.getPerk(PERK_BLOOD_OF_LEAD))
@@ -382,7 +382,7 @@ This function restores all organs.
 		return FALSE
 
 	damageoverlaytemp = 20
-	if(organ.take_damage(damage, damagetype, (armor_penetration * 0.1), wounding_multiplier, sharp, edge, used_weapon))
+	if(organ.take_damage(damage, damagetype, armor_divisor, wounding_multiplier, sharp, edge, used_weapon))
 		UpdateDamageIcon()
 
 	sanity.onDamage(damage)

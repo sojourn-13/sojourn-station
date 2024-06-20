@@ -17,5 +17,5 @@
 	meat_type = /obj/item/stack/material/gold/random
 	drop1 = /obj/item/stack/material/gold/random
 	drop2 = /obj/item/book/ritual/cruciform
-	armor = list(melee = 75, bullet = 25, energy = 20, bomb = 30, bio = 100, rad = 100, agony = 100)
+	armor = list(melee = 18, bullet = 6, energy = 5, bomb = 30, bio = 100, rad = 100, agony = 100)
 	target_dummy = TRUE

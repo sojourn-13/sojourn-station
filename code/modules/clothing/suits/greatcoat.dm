@@ -6,7 +6,7 @@
 	item_state = "cap_coat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor_list = list(melee = 35, bullet = 35, energy = 15, bomb = 5, bio = 0, rad = 0)
+	armor_list = list(melee =8, bullet = 8, energy = 3, bomb = 5, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
@@ -45,9 +45,9 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
-		energy = 10,
+		melee = 7,
+		bullet = 7,
+		energy = 2,
 		bomb = 30,
 		bio = 100,
 		rad = 100
@@ -66,9 +66,9 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 10,
 		bio = 100,
 		rad = 100
@@ -87,9 +87,9 @@
 	permeability_coefficient = 0.50
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
-		melee = 15,
-		bullet = 15,
-		energy = 15,
+		melee = 3,
+		bullet = 3,
+		energy = 3,
 		bomb = 10,
 		bio = 100,
 		rad = 50
@@ -208,8 +208,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
+		melee = 2,
+		bullet = 2,
 		energy = 0,
 		bomb = 10,
 		bio = 0,
@@ -222,7 +222,7 @@
 	icon_state = "os_overcoat"
 	item_state = "os_overcoat"
 	blood_overlay_type = "coat"
-	armor_list = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
+	armor_list = list(melee = 7, bullet = 2, energy = 6, bomb = 25, bio = 0, rad = 40)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -235,7 +235,7 @@
 	icon_state = "os_overcoat"
 	item_state = "os_overcoat"
 	blood_overlay_type = "coat"
-	armor_list = list(melee = 5, bullet = 5, energy = 15, bomb = 0, bio = 0, rad = 25)
+	armor_list = list(melee = 1, bullet = 1, energy = 3, bomb = 0, bio = 0, rad = 25)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

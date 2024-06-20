@@ -310,25 +310,26 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	qdel(src)
 
 /obj/structure/scrap/attackby(obj/item/W, mob/living/carbon/human/user)
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
-	var/tool_type = W.get_tool_type(user, usable_qualities, src)
-	switch(tool_type)
-		if(QUALITY_SHOVELING)
-			if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
-				user.do_attack_animation(src)
-				if(user.stats.getPerk(PERK_JUNKBORN))
-					rare_item = TRUE
-				else
-					rare_item = FALSE
-				dig_out_lump(user.loc, 0)
-				shuffle_loot()
-				clear_if_empty()
-		if(QUALITY_HAMMERING)
-			if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
-				make_cube()
+	if(user.a_intent != I_HURT)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+		var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
+		var/tool_type = W.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+			if(QUALITY_SHOVELING)
+				if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
+					user.do_attack_animation(src)
+					if(user.stats.getPerk(PERK_JUNKBORN))
+						rare_item = TRUE
+					else
+						rare_item = FALSE
+					dig_out_lump(user.loc, 0)
+					shuffle_loot()
+					clear_if_empty()
+			if(QUALITY_HAMMERING)
+				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
+					make_cube()
 
 /obj/structure/scrap/large
 	name = "large scrap pile"

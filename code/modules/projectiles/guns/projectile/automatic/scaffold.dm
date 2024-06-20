@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.5 //simular to 257
-	penetration_multiplier = 3
+	penetration_multiplier = 2
 	init_recoil = LMG_RECOIL(0.6)
 	serial_type = "GP"
 

@@ -3,8 +3,8 @@
 	desc = "A monstrous, dog-sized cockroach. This one smells like hell and secretes strange vapors."
 	icon_state = "seuche"
 	turns_per_move = 6
-	maxHealth = 15
-	health = 15
+	maxHealth = 15 * ROACH_HEALTH_MOD
+	health = 15 * ROACH_HEALTH_MOD
 	var/datum/reagents/gas_sac //Stores gas. Can't use the default reagents since that is now bloodstream
 	melee_damage_upper = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche

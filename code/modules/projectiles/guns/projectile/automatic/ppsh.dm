@@ -65,7 +65,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	price_tag = 800
 	damage_multiplier = 0.9
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	init_recoil = SMG_RECOIL(1.3)
 	auto_eject = 0
 	serial_type = "NM"
