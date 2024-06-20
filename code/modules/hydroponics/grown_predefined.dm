@@ -8,6 +8,11 @@
 /obj/plant_spawner
 	name = "plant spawner"
 	var/seedtype = "ambrosia" //default to ambrosia for roach taming
+	var/spawn_growth_auto = TRUE
+
+/obj/plant_spawner/non_auto_spawn
+	spawn_growth_auto = FALSE
+
 /*
 /obj/plant_spawner/Initialize(mapload)
 	var/datum/seed/S = plant_controller.seeds[seedtype]
@@ -15,7 +20,8 @@
 	spawn(1) if(src) qdel(src)
 */
 /obj/plant_spawner/New()
-	addtimer(CALLBACK(src, /obj/plant_spawner/proc/spawn_growth), 2)
+	if(spawn_growth_auto)
+		addtimer(CALLBACK(src, /obj/plant_spawner/proc/spawn_growth), 2)
 
 /obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]
@@ -63,3 +69,9 @@
 
 /obj/plant_spawner/plumphelmet
 	seedtype = "plumphelmet"
+
+/obj/plant_spawner/soybeans
+	seedtype = "soybean"
+
+/obj/plant_spawner/pineapple
+	seedtype = "pineapple"

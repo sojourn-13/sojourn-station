@@ -45,9 +45,9 @@
 		produce_list = POUCH.contents
 
 	for(var/obj/item/reagent_containers/food/snacks/grown/G in produce_list)
-		if(G.seed.kitchen_tag in selected_recipe?.needed_crops)
-			var/amount = recipe_crop_stocks[G.seed.kitchen_tag] || 0
-			recipe_crop_stocks[G.seed.kitchen_tag] = amount + 1
+		if(G.seed.name in selected_recipe?.needed_crops)
+			var/amount = recipe_crop_stocks[G.seed.name] || 0
+			recipe_crop_stocks[G.seed.name] = amount + 1
 			qdel(G)
 
 	POUCH?.refresh_all()
@@ -145,37 +145,11 @@
 /obj/structure/fermentation_keg/proc/pitty_system(pitty_crop, sack_of_potatos)
 	if(!pitty_crop)
 		return //fast return
-	var/PS
-	var/able = FALSE
-	switch(pitty_crop)
-		if("wheat")
-			PS = /obj/plant_spawner/wheat
-		if("poppies")
-			PS = /obj/plant_spawner/poppy
-		if("grape")
-			PS = /obj/plant_spawner/grapes
-		if("greengrapes")
-			PS = /obj/plant_spawner/green_grapes
-		if("towercap")
-			PS = /obj/plant_spawner/towercaps
-		if("sugarcane")
-			PS = /obj/plant_spawner/sugarcane
-		if("corn")
-			PS = /obj/plant_spawner/corn
-		if("potato")
-			PS = /obj/plant_spawner/potato
-		if("plumphelmet")
-			PS = /obj/plant_spawner/plumphelmet
-		if("sunflowers")
-			PS = /obj/plant_spawner/sunflower
-
-	if(PS)
-		able = TRUE
-
-	if(able)
-		var/tickets
-		for(tickets=0, tickets<sack_of_potatos, tickets++)
-			new PS(get_turf(src))
+	var/tickets
+	for(tickets=0, tickets<sack_of_potatos, tickets++)
+		var/obj/plant_spawner/non_auto_spawn/PS = new /obj/plant_spawner/non_auto_spawn(get_turf(src))
+		PS.seedtype = pitty_crop
+		PS.spawn_growth()
 	return
 
 /obj/structure/fermentation_keg/proc/start_brew()

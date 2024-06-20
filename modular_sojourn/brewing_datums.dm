@@ -15,7 +15,7 @@
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
 	display_name = "Beer"
-	needed_crops = list("wheat" = 40, "poppy" = 5)
+	needed_crops = list("wheat" = 40, "poppies" = 5)
 	needed_chems = list("water" = 60)
 
 	price_tag_setter = 1750
@@ -27,7 +27,7 @@
 	display_name = "Sleepy Beer"
 	prerequisite = "beer"
 	brewed_amount = 2 //its beer2
-	needed_crops = list("wheat" = 10, "poppy" = 5)
+	needed_crops = list("wheat" = 10, "poppies" = 5)
 	needed_chems = list("water" = 60, "chloralhydrate" = 5)
 
 	price_tag_setter = 2250
@@ -38,7 +38,7 @@
 	display_name = "Wine"
 
 	brewed_amount = 2
-	needed_crops = list("grape" = 80, "towercap" = 5)
+	needed_crops = list("grapes" = 80, "towercap" = 5)
 	needed_chems = list("water" = 160, "sugar"= 15)
 
 	price_tag_setter = 3000
@@ -58,9 +58,9 @@
 /datum/brewing_product/redcandyliquor
 	reagent_to_brew = "redcandyliquor"
 	display_name = "Red Candy Wine"
-	prerequisite = "wine" // (string, so that we can make multiple recipes for the 'same' drink if needed)
+	prerequisite = "wine"
 	brewed_amount = 1
-	needed_crops = list("grape" = 10, "sunflower" = 5, "harebell" = 5)
+	needed_crops = list("grapes" = 10, "sunflowers" = 5, "harebells" = 5)
 	needed_chems = list("sugar" = 15)
 
 	price_tag_setter = 4000
@@ -76,10 +76,21 @@
 	brew_timer = 7 MINUTES
 	brewed_amount = 4
 
+/datum/brewing_product/rum
+	reagent_to_brew = "deadrum"
+	display_name = "Deadrum (Seawater Rum)"
+	prerequisite = "rum"
+	needed_crops = list("sugarcane" = 30, "towercap" = 15)
+	needed_chems = list("water" = 60, "sodiumchloride" = 60)
+
+	price_tag_setter = 5000
+	brew_timer = 10 MINUTES
+	brewed_amount = 2
+
 /datum/brewing_product/ale
 	reagent_to_brew = "ale"
 	display_name = "Ale"
-	needed_crops = list("wheat" = 60, "towercap" = 5, "poppy" = 5)
+	needed_crops = list("wheat" = 60, "towercap" = 5, "poppies" = 5)
 	needed_chems = list("water" = 120, "honey" = 5)
 
 	price_tag_setter = 2000
@@ -119,6 +130,47 @@
 	brew_timer = 20 MINUTES
 	brewed_amount = 10
 
+//THE SLUGE
+/datum/brewing_product/glucose
+	reagent_to_brew = "glucose"
+	display_name = "Glucose"
+	needed_crops = list("wheat" = 60, "corn" = 30)
+	needed_chems = list("water" = 30, "sugar" = 30, "honey" = 5)
+	brew_timer = 12 MINUTES
+	brewed_amount = 1
+	bottled_brew_amount = 5
+	price_tag_setter = 4750
+
+/datum/brewing_product/soysauce
+	reagent_to_brew = "soysauce"
+	display_name = "Soy Sauce"
+	needed_crops = list("wheat" = 20, "soybean" = 30, "plumphelmet" = 2)
+	needed_chems = list("water" = 30, "sodiumchloride" = 30, "vinegar" = 15)
+	brew_timer = 5 MINUTES
+	brewed_amount = 3
+	price_tag_setter = 2750
+
+/datum/brewing_product/vinegar
+	reagent_to_brew = "vinegar"
+	display_name = "Vinegar"
+	prerequisite = "wine"//IDK this is what copoilet says to do
+	needed_crops = list("apple" = 20, "pineapple" = 30)
+	needed_chems = list("water" = 30)
+	brew_timer = 15 MINUTES
+	brewed_amount = 6
+	price_tag_setter = 2500
+
+//Fast-ish for drying
+/datum/brewing_product/blackpepper
+	reagent_to_brew = "blackpepper"
+	display_name = "Pepper Pepper Pepper"
+	needed_crops = list("chili" = 10, "ambrosia" = 15, "towercap" = 10)
+	needed_chems = list("sodiumchloride" = 15, "cornoil" = 5)
+	brew_timer = 3 MINUTES
+	brewed_amount = 1
+	price_tag_setter = 1500
+
+
 //The graveyard of uncoded yet coded wines, may their sprites rest not well in the stomic of those that drank it.
 
 /* Coded out for lore reasons - Lore head hates fun >:T
@@ -127,7 +179,7 @@
 	display_name = "#Blessed Wine"
 	prerequisite = "wine" // (string, so that we can make multiple recipes for the 'same' drink if needed)
 	brewed_amount = 1
-	needed_crops = list("greengrapes" = 30, "sugarcane" = 25, "harebells" = 5)
+	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
 	needed_chems = list("carbon" = 120, "holywater" = 120)
 
 	price_tag_setter = 6000
