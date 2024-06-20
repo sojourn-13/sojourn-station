@@ -17,7 +17,7 @@
 	if(!.)
 		return
 	if(allow_attack_build)
-		attack_build_up += 1
+		attack_build_up += CLAMP(GLOB.chaos_level, 0, 2) //If were at chaos level 2 then is at every other attack, otherwise every 3rd attack
 		if(attack_build_up >= 3)
 			attack_build_up = 0
 			if(ismob(A))
@@ -26,7 +26,6 @@
 				var/turf/T = get_turf(A)
 				var/turf/T2 = get_step(T, dir)
 				var/turf/starter = get_turf(src)
-				visible_message(SPAN_WARNING("T[T] T2[T2] [starter]!"))
 
 				var/allow_skitter_skit = TRUE
 				var/obj/structure/catwalk/kitty
@@ -41,7 +40,6 @@
 				if(!allow_skitter_skit)
 					return
 				if(T2.Enter(src)) //We can walk into the tile behind then we do are supper cool attack!
-					visible_message(SPAN_WARNING("T2[T2] pass!"))
 					sleep(1)
 					forceMove(T)
 					var/melee_damage_lower_save = melee_damage_lower
@@ -49,7 +47,7 @@
 					melee_damage_lower *= 0.2
 					melee_damage_upper *= 0.2
 					UnarmedAttack(M, proximity, allow_attack_build = FALSE)
-					sleep(1)
+					sleep(2)
 					forceMove(T2)
 					dir = M.dir
 					sleep(2)
