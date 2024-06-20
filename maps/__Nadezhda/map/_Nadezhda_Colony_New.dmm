@@ -24542,7 +24542,8 @@
 	dir = 4;
 	pixel_x = -32;
 	id = "researchlockdown";
-	pixel_y = 8
+	pixel_y = 8;
+	name = "Research Lockdown"
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
@@ -101246,11 +101247,6 @@
 	name = "Residential District Maintenance"
 	})
 "ufO" = (
-/obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
-	req_access = list(30);
-	id_tag = "crodoor"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -101259,6 +101255,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/command{
+	name = "Soteria Research Overseer's Office";
+	req_access = list(30);
+	id_tag = "crodoor"
+	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/cro)
 "ufP" = (
