@@ -778,6 +778,7 @@
 	display_name = "harebells"
 	mutants = list("silverbells")
 	chems = list("nutriment" = list(1,20))
+	kitchen_tag = "harebell"
 
 /datum/seed/flower/New()
 	..()

@@ -60,7 +60,7 @@
 	display_name = "Red Candy Wine"
 	prerequisite = "wine" // (string, so that we can make multiple recipes for the 'same' drink if needed)
 	brewed_amount = 1
-	needed_crops = list("grapes" = 10, "sunflowers" = 5, "harebells" = 5)
+	needed_crops = list("grape" = 10, "sunflower" = 5, "harebell" = 5)
 	needed_chems = list("sugar" = 15)
 
 	price_tag_setter = 4000
