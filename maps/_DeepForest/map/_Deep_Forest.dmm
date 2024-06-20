@@ -457,15 +457,6 @@
 	name = "officer cap";
 	desc = "A peaked cap with a red triangle insignia."
 	},
-/mob/living/simple_animal/hostile/creature{
-	name = "Mutated Tissue";
-	desc = "An amalgamation of flesh and bone";
-	color = "#8B0000";
-	melee_damage_lower = 50;
-	melee_damage_upper = 85;
-	maxHealth = 350;
-	health = 350
-	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -4661,10 +4652,11 @@
 	icon_state = "0-2"
 	},
 /obj/item/frame/apc,
-/obj/item/cell/large/high{
-	name = "Sakaba OmniCell 6000W Large"
-	},
 /obj/item/circuitboard/apc,
+/obj/item/cell/large/high{
+	name = "Sakaba OmniCell 6000W Large";
+	desc = "An unknown brand power cell rating at 6000W, Large model"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -13937,6 +13929,15 @@
 "jUK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -18823,6 +18824,21 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo)
+"nqW" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "nrh" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -20373,6 +20389,23 @@
 /obj/random/mob/render/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"oxL" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "oxY" = (
 /obj/structure/table/rack/shelf,
 /obj/random/gun_cheap,
@@ -21124,6 +21157,23 @@
 /obj/random/traps,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"oYZ" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "oZm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/remains/posi,
@@ -23344,6 +23394,18 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"qvG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+	name = "WhiteGuard Solutions Autonomous Guard unit"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "qvJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/pack/junk_machine,
@@ -25048,6 +25110,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"rHX" = (
+/obj/structure/catwalk,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "rHY" = (
 /turf/unsimulated/mineral,
 /area/colony/exposedsun/pastgate)
@@ -26368,14 +26447,15 @@
 	name = "Abandoned Bunker"
 	})
 "sEy" = (
-/obj/item/circuitboard/apc,
-/obj/item/cell/large/high{
-	name = "Sakaba OmniCell 6000W Large"
-	},
-/obj/item/frame/apc,
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/item/circuitboard/apc,
+/obj/item/frame/apc,
+/obj/item/cell/large/high{
+	name = "Sakaba OmniCell 6000W Large";
+	desc = "An unknown brand power cell rating at 6000W, Large model"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -64578,7 +64658,7 @@ qbU
 idB
 eVz
 ndO
-ndO
+rHX
 sHM
 idB
 sZr
@@ -65204,7 +65284,7 @@ qbU
 qbU
 idB
 lWR
-oie
+oYZ
 vTK
 dwj
 idB
@@ -65415,7 +65495,7 @@ idB
 alx
 ndO
 ndO
-sHM
+oxL
 idB
 sZr
 idB
@@ -65431,7 +65511,7 @@ onM
 nlO
 onM
 nlO
-iJF
+nqW
 gfv
 idB
 sZr
@@ -65839,11 +65919,11 @@ sZr
 idB
 hpw
 jCD
-eTv
+hpw
 gTN
 dCV
 rPC
-rPC
+qvG
 rPC
 rPC
 rPC
@@ -66046,7 +66126,7 @@ oGU
 oGU
 sZr
 idB
-eTv
+hpw
 jCD
 hpw
 mEc
@@ -66894,7 +66974,7 @@ gEx
 nlO
 aDt
 nlO
-iJF
+nqW
 rPC
 idB
 sZr
