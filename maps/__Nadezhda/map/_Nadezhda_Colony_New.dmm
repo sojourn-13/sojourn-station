@@ -24538,6 +24538,12 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/machinery/button/remote/blast_door{
+	dir = 4;
+	pixel_x = -32;
+	id = "researchlockdown";
+	pixel_y = 8
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "eWl" = (
@@ -108192,16 +108198,6 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
-"vwZ" = (
-/obj/machinery/button/remote/airlock{
-	dir = 4;
-	id = "researchlockdown";
-	name = "Research Lockdown";
-	req_access = list(30);
-	pixel_y = 7
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/command/cro)
 "vxh" = (
 /obj/machinery/vending/boozeomat{
 	req_access = list(25)
@@ -136676,7 +136672,7 @@ nZB
 cFw
 rlJ
 rlJ
-vwZ
+rlJ
 rlJ
 rlJ
 rlJ
