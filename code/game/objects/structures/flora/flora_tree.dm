@@ -23,7 +23,7 @@
 	underlays += shadow_overlay_grabber
 	if(prob(5))
 		infested = TRUE
-		desc = "An unsettling feeling comes from this tree. Webs criss-cross the branches."
+		desc = "An unsettling feeling comes from this tree. Buzzing can be heard."
 
 	//This code is only added to the compiler when 'JANEDEBUG' is defined. We can use it this way this for bugtesting.
 	#ifdef JANEDEBUG
@@ -89,10 +89,13 @@
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new stump_type(get_turf(src))
 			if(infested)
-				visible_message(SPAN_DANGER("A pack of spiders erupt from the Tree's bark, burrowing out to attack!"))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter/viper(get_turf(src))
+				visible_message(SPAN_DANGER("Wasps stay behind to protect escaping bees!"))
+				new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+				new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+				new /obj/item/honey_frame/frameless(get_turf(src))
+				if(prob(30))
+					new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+					new /obj/item/honey_frame/frameless(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return
