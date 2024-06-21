@@ -20322,9 +20322,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo)
 "nqW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor/tiled/cafe,
+/obj/machinery/door/airlock/external{
+	name = "Elevator Door"
+	},
+/obj/structure/barricade,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -25133,16 +25137,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "qvG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature{
-	name = "Mutated Tissue";
-	desc = "An amalgamation of flesh and bone";
-	color = "#8B0000";
-	melee_damage_lower = 50;
-	melee_damage_upper = 85;
-	maxHealth = 350;
-	health = 350
-	},
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -32115,6 +32110,24 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"uXF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "vag" = (
 /obj/structure/flora/small/grassa4,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -60221,7 +60234,7 @@ sdL
 xoG
 aHX
 tOP
-pxf
+nqW
 iTu
 mho
 sch
@@ -60430,7 +60443,7 @@ pQw
 aHX
 aHX
 tOP
-pxf
+nqW
 kKX
 mUC
 tbr
@@ -60639,7 +60652,7 @@ sdL
 iRj
 aHX
 tOP
-pxf
+nqW
 lXN
 mUC
 lXN
@@ -63758,7 +63771,7 @@ nhS
 nhS
 nhS
 eBR
-nqW
+qvG
 kHB
 kHB
 stV
@@ -68562,7 +68575,7 @@ rPC
 rPC
 rPC
 rPC
-qvG
+uXF
 rPC
 avl
 lwU
@@ -68768,7 +68781,7 @@ hpw
 mEc
 jim
 rPC
-qvG
+uXF
 qlu
 rPC
 qlu
