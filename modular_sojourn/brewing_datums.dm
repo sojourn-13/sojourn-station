@@ -12,6 +12,12 @@
 	var/brewed_amount = 1					//How many bottles are made at the end of the day
 	var/bottled_brew_amount = 30			//How much we give per bottle
 
+	var/other_name							//Used for alt items display names
+	var/alt_brew_item						//If it prodces an item (See Cheese)
+	var/alt_brew_item_amount = 1			//If it prodces an item (See Cheese)
+
+	var/info_helper							//Simple string to give folks an extra line of info.
+
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
 	display_name = "Beer"
@@ -21,6 +27,7 @@
 	price_tag_setter = 1750
 	brew_timer = 2 MINUTES
 	brewed_amount = 12 //12 pack
+	info_helper = "Further brewing can be done when finished."
 
 /datum/brewing_product/sleepy_beer
 	reagent_to_brew = "beer2"
@@ -43,6 +50,7 @@
 
 	price_tag_setter = 3000
 	brew_timer = 6 MINUTES
+	info_helper = "Further brewing can be done when finished."
 
 /datum/brewing_product/pwine
 	reagent_to_brew = "pwine"
@@ -75,8 +83,9 @@
 	price_tag_setter = 2000
 	brew_timer = 7 MINUTES
 	brewed_amount = 4
+	info_helper = "Further brewing can be done when finished."
 
-/datum/brewing_product/rum
+/datum/brewing_product/deadrum
 	reagent_to_brew = "deadrum"
 	display_name = "Deadrum (Seawater Rum)"
 	prerequisite = "rum"
@@ -106,6 +115,17 @@
 	price_tag_setter = 1000
 	brew_timer = 1 MINUTES
 	brewed_amount = 4
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/ethanol
+	reagent_to_brew = "ethanol"
+	display_name = "Ethanol"
+	prerequisite = "vodka"
+	needed_crops = list("corn" = 30)
+	needed_chems = list("water" = 30)
+	brew_timer = 5 MINUTES
+	brewed_amount = 3
+	price_tag_setter = 1500
 
 /datum/brewing_product/Kvass
 	reagent_to_brew = "Kvass"
@@ -118,6 +138,7 @@
 	price_tag_setter = 1200
 	brew_timer = 3 MINUTES
 	brewed_amount = 3
+	info_helper = "Further brewing can be done when finished."
 
 /datum/brewing_product/whiskey
 	reagent_to_brew = "whiskey"
@@ -134,18 +155,32 @@
 /datum/brewing_product/glucose
 	reagent_to_brew = "glucose"
 	display_name = "Glucose"
+	prerequisite = "Kvass"
 	needed_crops = list("wheat" = 60, "corn" = 30)
 	needed_chems = list("water" = 30, "sugar" = 30, "honey" = 5)
 	brew_timer = 12 MINUTES
 	brewed_amount = 1
 	bottled_brew_amount = 5
 	price_tag_setter = 4750
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/nothing
+	reagent_to_brew = "nothing"
+	display_name = "Nothing"
+	prerequisite = "glucose"
+	needed_crops = list("cinnamon" = 10)
+	needed_chems = list("water" = 200)
+	brew_timer = 30 MINUTES
+	brewed_amount = 1
+	bottled_brew_amount = 50
+	price_tag_setter = 404 //this is more or less a joke price, you make a lot more by mixing silencer
 
 /datum/brewing_product/soysauce
 	reagent_to_brew = "soysauce"
 	display_name = "Soy Sauce"
+	prerequisite = "vinegar"
 	needed_crops = list("wheat" = 20, "soybean" = 30, "plumphelmet" = 2)
-	needed_chems = list("water" = 30, "sodiumchloride" = 30, "vinegar" = 15)
+	needed_chems = list("water" = 30, "sodiumchloride" = 30)
 	brew_timer = 5 MINUTES
 	brewed_amount = 3
 	price_tag_setter = 2750
@@ -157,8 +192,35 @@
 	needed_crops = list("apple" = 20, "pineapple" = 30)
 	needed_chems = list("water" = 30)
 	brew_timer = 15 MINUTES
-	brewed_amount = 6
+	brewed_amount = 3
 	price_tag_setter = 2500
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/cream
+	reagent_to_brew = "cream"
+	display_name = "Cream"
+	needed_crops = list("soybean" = 40)
+	needed_chems = list("milk" = 30, "vinegar" = 10)
+	brew_timer = 3 MINUTES
+	brewed_amount = 3
+	price_tag_setter = 800
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/cheese
+	reagent_to_brew = "vinegar" //Gives back some vinegar
+	display_name = "Cheese Wheels (Byproduct Vinegar)"
+	prerequisite = "cream"
+	needed_crops = list("soybean" = 20)
+	needed_chems = list("water" = 30, "milk" = 30, "vinegar" = 5)
+	brew_timer = 2 MINUTES
+	brewed_amount = 1
+	bottled_brew_amount = 5
+	price_tag_setter = 1000
+
+	other_name = "Cheese Wheel"
+	alt_brew_item = /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
+	alt_brew_item_amount = 3
+	info_helper = "The bottles will produced Vinegar."
 
 //Fast-ish for drying
 /datum/brewing_product/blackpepper
@@ -170,6 +232,31 @@
 	brewed_amount = 1
 	price_tag_setter = 1500
 
+/datum/brewing_product/dough
+	reagent_to_brew = "ethanol"
+	display_name = "Dough (Ethanol Byproduct)"
+	needed_crops = list("wheat" = 30)
+	needed_chems = list("sodiumchloride" = 5, "egg" = 5, "sugar" = 10, "water" = 30)
+	brew_timer = 1 MINUTES
+	brewed_amount = 1
+	price_tag_setter = 800 //Its cheap and fast and just uncooked bread
+	bottled_brew_amount = 5 //Just a little bit as a byproduct
+
+	other_name = "Dough"
+	alt_brew_item = /obj/item/reagent_containers/food/snacks/dough
+	alt_brew_item_amount = 6 //Mass production
+	info_helper = "The bottles produced are Ethanol."
+
+//Asked Microsoft Copoilet for this one, idk looks fine to me - Trilby
+/datum/brewing_product/enzyme
+	reagent_to_brew = "enzyme"
+	display_name = "Universal Enzyme"
+	prerequisite = "vinegar"
+	needed_crops = list("mint" = 20, "pineapple" = 30, "grass" = 120, "orange" = 30)
+	needed_chems = list("water" = 30, "ethanol" = 60)
+	brew_timer = 15 MINUTES
+	brewed_amount = 1
+	price_tag_setter = 7500
 
 //The graveyard of uncoded yet coded wines, may their sprites rest not well in the stomic of those that drank it.
 

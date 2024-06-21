@@ -77,6 +77,15 @@
 		if(selected_recipe.brewed_amount)
 			message += "Will produce [selected_recipe.brewed_amount] bottles when finished.\n"
 
+		if(selected_recipe.alt_brew_item && selected_recipe.alt_brew_item_amount)
+			var/name_to_use = selected_recipe.other_name
+			if(!name_to_use)
+				name_to_use = selected_recipe.display_name
+			message += "Will produce [name_to_use] x [selected_recipe.alt_brew_item_amount] when finished.\n"
+
+		if(selected_recipe.info_helper)
+			message += "[selected_recipe.info_helper].\n"
+
 		to_chat(user, "<span class='info'>[message]</span>")
 
 /obj/structure/fermentation_keg/proc/shopping_run(mob/user as mob)
@@ -201,21 +210,30 @@
 	return ready
 
 /obj/structure/fermentation_keg/proc/bottle(glass_colour)
-	if(selected_recipe.reagent_to_brew && ready_for_bottleing)
-		if(!glass_colour)
-			glass_colour = "brew_bottle"
+	if(ready_for_bottleing)
 
 		ready_for_bottleing = FALSE
 		brewing = FALSE
 		price_tag = 150
 		icon_state = "barrel_tapless_open"
-		var/bottlecaps
-		for(bottlecaps=0, bottlecaps<selected_recipe.brewed_amount, bottlecaps++)
-			var/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle(get_turf(src))
-			bottle_made.icon_state = "[glass_colour]"
-			bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount)
-			bottle_made.icon_state_full = "[glass_colour]"
-			bottle_made.icon_state_empty = "[glass_colour]_empty"
+
+		if(selected_recipe.reagent_to_brew)
+			if(!glass_colour)
+				glass_colour = "brew_bottle"
+
+			var/bottlecaps
+			for(bottlecaps=0, bottlecaps<selected_recipe.brewed_amount, bottlecaps++)
+				var/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle(get_turf(src))
+				bottle_made.icon_state = "[glass_colour]"
+				bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount)
+				bottle_made.icon_state_full = "[glass_colour]"
+				bottle_made.icon_state_empty = "[glass_colour]_empty"
+
+		if(selected_recipe.alt_brew_item)
+			var/items_given
+			for(items_given=0, items_given<selected_recipe.alt_brew_item_amount, items_given++)
+				new selected_recipe.alt_brew_item(get_turf(src))
+
 
 /obj/structure/fermentation_keg/verb/reset_keg()
 	set name = "Clear Keg (Completely Resets)"
