@@ -50,6 +50,7 @@
 // Interfaces
 @include meta.load-css('./interfaces/AlertModal.scss');
 @include meta.load-css('./interfaces/Changelog.scss');
+@include meta.load-css('./interfaces/ChemHeater.scss');
 @include meta.load-css('./interfaces/CrewManifest.scss');
 @include meta.load-css('./interfaces/Emojipedia.scss');
 @include meta.load-css('./interfaces/ExperimentConfigure.scss');
@@ -83,6 +84,8 @@
 @include meta.load-css('./interfaces/Canister.scss');
 @include meta.load-css('./interfaces/SuitStorageUnit.scss');
 @include meta.load-css('./interfaces/IDCard.scss');
+@include meta.load-css('./interfaces/Terminal.scss');
+@include meta.load-css('./interfaces/Catalog.scss');
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');

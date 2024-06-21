@@ -128,13 +128,31 @@
 				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4
 				)
 
+//At higher levels we throw in CRAZY NOT CONNECTED TO THE REAL CULT daskvey TYPE MOBS, they are harder to fight with less
 /obj/random/mob/psi_monster/item_to_spawn()
 	if(GLOB.chaos_level > 0)
 		mobs += list(/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = (2 * GLOB.chaos_level))
+
 	if(GLOB.chaos_level > 1)
 		mobs += list(/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = (0.5 * GLOB.chaos_level))
-	if(GLOB.chaos_level > 4) //Once admin only
-		mobs += list(/mob/living/carbon/superior_animal/psi_monster/ploge = (0.1 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound = (0.5 * GLOB.chaos_level))
+
+	if(GLOB.chaos_level > 2)
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/deepmaints_bound = (0.5 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound = (0.3 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield/deepmaints_bound = (0.2 * GLOB.chaos_level))
+
+	if(GLOB.chaos_level > 3)
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/deepmaints_bound = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/deepmaints_bound = (0.1 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound = (0.2 * GLOB.chaos_level))
+
+	if(GLOB.chaos_level > 4)
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter/deepmaints_bound = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master/deepmaints_bound = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/psi_monster/ploge = (0.1 * GLOB.chaos_level)) //Once admin only
 
 	return pickweight(mobs)
 
@@ -436,7 +454,7 @@
 	return pickweight(mobs)
 
 /obj/random/mob/vox/low_chance
-	name = "low chance nightmare"
+	name = "low chance vox"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 50 //Coin flip
 

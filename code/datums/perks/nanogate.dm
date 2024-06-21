@@ -49,7 +49,7 @@
 	icon_state = "naniteskinweave"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
-/datum/perk/nanite_power/nanite_armor/assign(mob/living/carbon/human/H)
+/datum/perk/nanite_power/nanite_armor/assign(mob/living/L)
 	..()
 	holder.maxHealth += 40
 	holder.health += 40

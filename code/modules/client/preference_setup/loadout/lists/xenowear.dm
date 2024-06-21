@@ -81,14 +81,14 @@
 	path = /obj/item/clothing/accessory/kricape
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/kriosansuit
 	display_name = "kriosan fatigues"
 	path = /obj/item/clothing/under/kriosansuit
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/cossackcoat
 	display_name = "jaeger coat selection"

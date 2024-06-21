@@ -30,13 +30,25 @@
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
-		for(var/mob/living/target_mob as anything in hearers(src, viewRange)) //as anything works because isvalid has a isliving check, change if necessary
-			if (isValidAttackTarget(target_mob))
+		for(var/mob/living/target_mob in hearers(src, viewRange)) //as anything : Removed do optimization
+			if(isValidAttackTarget(target_mob))
 				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
 
-		for (var/obj/mecha/M as anything in GLOB.mechas_list)
+		for(var/obj/machinery/tesla_turret/tesla_turret in view(src, viewRange))
+			if(isValidAttackTarget(tesla_turret))
+				filteredTargets += tesla_turret
+
+		for(var/obj/machinery/porta_turret/porta_turret in view(src, viewRange))
+			if(isValidAttackTarget(porta_turret))
+				filteredTargets += porta_turret
+
+		for(var/obj/machinery/power/os_turret/os_turret in view(src, viewRange))
+			if(isValidAttackTarget(os_turret))
+				filteredTargets += os_turret
+
+		for(var/obj/mecha/M in GLOB.mechas_list)
 			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
 			if(M.z == z)
 				if(get_dist(src, M) <= viewRange)
@@ -140,6 +152,39 @@
 		if (can_see(src, O, get_dist(src, O))) //can we even see it?
 			var/obj/mecha/M = O
 			return isValidAttackTarget(M.occupant)
+
+	if (istype(O, /obj/machinery/tesla_turret))
+		var/obj/machinery/tesla_turret/TT = O
+		if(TT.stat & (BROKEN | NOPOWER))
+			return FALSE
+		if(TT.colony_allied_turret && friendly_to_colony) //dont target your own turret unless they are haywire
+			return FALSE
+		if(!TT.colony_allied_turret && !friendly_to_colony) //its on are side!
+			return FALSE
+		return TRUE
+
+	if (istype(O, /obj/machinery/power/os_turret))
+		var/obj/machinery/power/os_turret/OST = O
+		if(OST.faction_iff == faction) //What are you doing fool?!
+			return FALSE
+		if(OST.stat & (BROKEN | NOPOWER))
+			return FALSE
+		if(!OST.should_target_players && friendly_to_colony) //dont target your own turret unless they are haywire
+			return FALSE
+		return TRUE
+
+	if (istype(O, /obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/PO = O
+		if(PO.faction_iff == faction) //What are you doing fool?!
+			return FALSE
+		if(PO.stat & (BROKEN | NOPOWER))
+			return FALSE
+		if(PO.colony_allied_turret && friendly_to_colony)
+			return FALSE
+		//So we dont try and attack turrets that are not attacking us
+		if(!PO.colony_allied_turret && !friendly_to_colony)
+			return FALSE
+		return TRUE
 
 	return FALSE
 

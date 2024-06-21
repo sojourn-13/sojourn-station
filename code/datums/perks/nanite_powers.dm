@@ -9,11 +9,13 @@
 	var/emped = FALSE				//Whether we are currently being affected by an EMP
 	var/emp_duration = 0			//Duration of EMP effects
 
-/datum/perk/nanite_power/assign(mob/living/carbon/human/H)
+/datum/perk/nanite_power/assign(mob/living/L)
 	. = ..()
-	var/obj/item/organ/internal/nanogate/target_ng = holder.random_organ_by_process(BP_NANOGATE)
-	RegisterSignal(target_ng, COMSIG_NANOGATE_EMP, .proc/on_emp)
-	RegisterSignal(target_ng, COMSIG_NANOGATE_REMOVED, .proc/remove_power)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		var/obj/item/organ/internal/nanogate/target_ng = H.random_organ_by_process(BP_NANOGATE)
+		RegisterSignal(target_ng, COMSIG_NANOGATE_EMP, .proc/on_emp)
+		RegisterSignal(target_ng, COMSIG_NANOGATE_REMOVED, .proc/remove_power)
 
 //Used for handling behaviors when EMP'd, such as shutting off regeneration or applying negative effects
 //Remember that severity 1 is the strongest EMP

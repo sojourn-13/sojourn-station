@@ -446,6 +446,12 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(health <= 0)
 		die()	//the death process :(
 
+/obj/machinery/tesla_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
+
 /obj/machinery/tesla_turret/bullet_act(obj/item/projectile/Proj)
 	var/damage = Proj.get_structure_damage()
 

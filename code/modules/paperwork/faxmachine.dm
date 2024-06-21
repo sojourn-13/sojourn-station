@@ -225,20 +225,22 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	message_chat_admins(sender, faxname, sent, faxid, font_colour)
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax(fax)
+	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
+	var/export_dir = "[config.fax_export_dir]/[date_string]"
 	var faxid = "[num2text(world.realtime,12)]_[rand(10000)]"
 	if (istype(fax, /obj/item/paper))
 		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-		file("[config.fax_export_dir]/fax_[faxid].html") << text;
+		file("[export_dir]/fax_[faxid].html") << text;
 	else if (istype(fax, /obj/item/photo))
 		var/obj/item/photo/H = fax
-		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
+		fcopy(H.img, "[export_dir]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-		file("[config.fax_export_dir]/fax_[faxid].html") << text
+		file("[export_dir]/fax_[faxid].html") << text
 	else if (istype(fax, /obj/item/paper_bundle))
 		var/obj/item/paper_bundle/B = fax
 		var/data = ""
@@ -247,7 +249,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			var/page_faxid = export_fax(pageobj)
 			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
 		var/text = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
-		file("[config.fax_export_dir]/fax_[faxid].html") << text
+		file("[export_dir]/fax_[faxid].html") << text
 	return faxid
 
 /**
@@ -270,4 +272,4 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 // the object they are overriding. So all /mob/living together, etc.
 //
 /datum/configuration
-	var/fax_export_dir = "data/faxes"	// Directory in which to write exported fax HTML files.
+	var/fax_export_dir = "data/logs/faxes"	// Directory in which to write exported fax HTML files.

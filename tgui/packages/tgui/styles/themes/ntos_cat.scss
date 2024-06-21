@@ -28,7 +28,7 @@ $scrollbar-color-multiplier: 0.5;
 );
 
 @use '../base.scss' with (
-    $color-bg: orange,
+    $color-bg: #ffa500,
     $color-bg-grad-spread: 12%,
     //$border-radius: 0,
   );
@@ -144,5 +144,13 @@ $scrollbar-color-multiplier: 0.5;
   .Flex {
     color: white;
     background-color: rgba(0, 0, 0, 0);
+  }
+  // NTOS header bar
+  .NtosWindow__header {
+    background: 
+    linear-gradient(
+      rgba(228, 133, 56, 0.5),
+      rgba(228, 133, 56, 0.5)
+    ), url('../../assets/ntos_header_pattern.png') 0 5% repeat;
   }
 }

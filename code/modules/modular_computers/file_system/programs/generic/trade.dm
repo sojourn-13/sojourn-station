@@ -20,7 +20,7 @@
 	nanomodule_path = /datum/nano_module/program/trade
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "cart-plus"
 	extended_desc = "A trade tool, requires sending and receiving beacons."
 	size = 21
 	available_on_ntnet = FALSE

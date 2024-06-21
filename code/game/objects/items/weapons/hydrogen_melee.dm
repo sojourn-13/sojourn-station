@@ -95,8 +95,9 @@
 			deactivate()
 		update_icon()
 
+/*
 /obj/item/tool/hydrogen_sword/emp_act(severity)
-	if(active) // Blow up.
+  if(active) // Blow up.
 		var/turf/T = get_turf(src)
 		src.visible_message(SPAN_DANGER("[src]'s active magnetic field get disturbed by an EMP, violently exploding and scorching everything nearby!"))
 		explosion(T, 0, 1, 2, 4) // Explode
@@ -104,8 +105,8 @@
 		for(var/mob/M in view(1, T)) // Burn every mob nearby.
 			to_chat(M, SPAN_DANGER("You feel a wave of heat scorch your body!"))
 			M.take_overall_damage(0, rand(emp_burn_min, emp_burn_max))
-		spawn(20)
-			qdel(src)
+	qdel(src)
+*/
 
 /obj/item/tool/hydrogen_sword/attack(mob/M as mob, mob/living/user as mob)
 	..()

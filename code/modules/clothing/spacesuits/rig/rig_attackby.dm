@@ -1,13 +1,13 @@
-/obj/item/rig/attackby(obj/item/I, mob/user)
+/obj/item/rig/proc/can_maintenance()
+	return !is_worn()
 
+/obj/item/rig/attackby(obj/item/I, mob/user)
 	if(!isliving(user))
 		return
 
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
-
-
 
 	// Lock or unlock the access panel.
 	if(I.GetIdCard())
@@ -37,10 +37,6 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if (is_worn())
-				to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
-				return 1
-
 			if(open)
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					var/list/current_mounts = list()
@@ -58,15 +54,22 @@
 								to_chat(user, "[src]'s power cell cannot be removed")
 								return TRUE
 							if(cell)
-								to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
-								for(var/obj/item/rig_module/module in installed_modules)
-									module.deactivate()
-								user.put_in_hands(cell)
-								cell = null
+								to_chat(user, "You start removing \the [cell].")
+								if(do_after(usr,seal_delay*4/3,src))//4 for each piece. Taking one a third of its total time to get off.
+									to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
+									for(var/obj/item/rig_module/module in installed_modules)
+										module.deactivate()
+									user.put_in_hands(cell)
+									cell = null
+								else
+									to_chat(user, "You need to stand still to detatch \the [cell].")
 							else
 								to_chat(user, "There is nothing loaded in that mount.")
 
 						if("system module")
+							if(!can_maintenance())
+								to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
+								return 1
 							var/list/possible_removals = list()
 							for(var/obj/item/rig_module/module in installed_modules)
 								if(module.permanent)
@@ -127,11 +130,6 @@
 				if(!air_supply)
 					to_chat(user, "There is not tank to remove.")
 					return
-
-				if (is_worn())
-					to_chat(user, "You can't remove an installed tank while the hardsuit is being worn.")
-					return 1
-
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					user.put_in_hands(air_supply)
 					to_chat(user, "You detach and remove \the [air_supply].")

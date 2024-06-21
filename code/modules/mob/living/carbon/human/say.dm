@@ -63,6 +63,7 @@
 		LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_SAY, message)
 
 /mob/living/carbon/human/proc/forcesay(list/append)
+	force_say()
 	if(stat == CONSCIOUS)
 		if(client)
 			var/virgin = 1	//has the text been modified yet?

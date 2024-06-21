@@ -129,6 +129,7 @@
 // #include "teleporters.dm"
 #include "tgui_create_message.dm"
 #include "timer_sanity.dm"
+#include "trait_addition_and_removal.dm"
 #include "unit_test.dm"
 // #include "wizard.dm"
 

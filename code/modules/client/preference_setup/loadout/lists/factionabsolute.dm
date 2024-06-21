@@ -51,7 +51,7 @@
 	display_name = "laurel selection"
 	path = /obj/item/clothing/head/laurel
 	flags = GEAR_HAS_TYPE_SELECTION
-	cost = 1
+	cost = 0
 
 /datum/gear/factionabsolute/tabard
 	display_name = "tabard selection"

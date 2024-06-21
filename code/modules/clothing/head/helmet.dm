@@ -49,7 +49,7 @@
 		rad = 0
 	)
 
-/obj/item/clothing/head/armor/helmet/tanker/verb/toggle_style()
+/obj/item/clothing/head/helmet/tanker/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr

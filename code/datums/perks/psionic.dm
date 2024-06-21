@@ -6,7 +6,7 @@
 	gain_text = "You suddenly get a splitting headache before your vision blurs painfully. By the time its over, you feel like a whole new world of possibilities has opened for you."
 	icon_state = "psionic"
 
-/datum/perk/psion/assign(mob/living/carbon/human/H)
+/datum/perk/psion/assign(mob/living/L)
 	..()
 	holder.maxHealth -=20
 	holder.health -=20
@@ -54,7 +54,7 @@
 	gain_text = "Everything falls into place, all things become clear. You feel stronger, more alert, quicker. You have not attained perfection but you feel you are closer than ever before \
 	and the last mental block you had has been removed, the flood gates of success filling your mind."
 
-/datum/perk/psi_peace_of_the_psion/assign(mob/living/carbon/human/H)
+/datum/perk/psi_peace_of_the_psion/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)

@@ -193,7 +193,7 @@ macro "borghotkeymode"
 		command = ".options"
 	elem
 		name = "F2"
-		command = "ooc"
+		command = "ooc-verb"
 	elem
 		name = "F2+REP"
 		command = ".screenshot auto"
@@ -420,7 +420,7 @@ macro "macro"
 		command = ".options"
 	elem
 		name = "F2"
-		command = "ooc"
+		command = "ooc-verb"
 	elem
 		name = "F2+REP"
 		command = ".screenshot auto"
@@ -640,6 +640,9 @@ macro "hotkeymode"
 		name = "SHIFT+X"
 		command = ".wield"
 	elem
+		name = "SHIFT+C"
+		command = ".toggle_scope"
+	elem
 		name = "Y"
 		command = "Activate-Held-Object"
 	elem
@@ -686,7 +689,7 @@ macro "hotkeymode"
 		command = ".options"
 	elem
 		name = "F2"
-		command = "ooc"
+		command = "ooc-verb"
 	elem
 		name = "F2+REP"
 		command = ".screenshot auto"
@@ -874,7 +877,7 @@ macro "borgmacro"
 		command = ".options"
 	elem
 		name = "F2"
-		command = "ooc"
+		command = "ooc-verb"
 	elem
 		name = "F2+REP"
 		command = ".screenshot auto"
@@ -1183,6 +1186,15 @@ window "mainwindow"
 		anchor2 = -1,-1
 		is-visible = false
 		saved-params = ""
+	elem "commandbar_spy"
+		type = BROWSER
+		is-default = false
+		pos = 0,0
+		size = 200x200
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		is-visible = false
+		saved-params = ""
 
 window "mapwindow"
 	elem "mapwindow"
@@ -1457,3 +1469,22 @@ window "text_editor"
 		border = line
 		saved-params = ""
 		multi-line = true
+
+window "tgui_say"
+	elem "tgui_say"
+		type = MAIN
+		pos = 410,400
+		size = 231x30
+		anchor1 = 50,50
+		anchor2 = 50,50
+		is-visible = false
+		saved-params = ""
+		statusbar = false
+		can-minimize = false
+	elem "browser"
+		type = BROWSER
+		pos = 0,0
+		size = 231x30
+		anchor1 = 0,0
+		anchor2 = 0,0
+		saved-params = ""

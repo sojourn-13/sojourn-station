@@ -19,6 +19,8 @@
 
 	/// Active timers with this datum as the target
 	var/list/active_timers
+	/// Status traits attached to this datum. associative list of the form: list(trait name (string) = list(source1, source2, source3,...))
+	var/list/_status_traits
 
 	var/tmp/is_processing = FALSE
 
@@ -75,6 +77,7 @@
 			continue
 		qdel(timer)
 	SSnano.close_uis(src)
+	SStgui.close_uis(src)
 
 	//BEGIN: ECS SHIT
 	signal_enabled = FALSE

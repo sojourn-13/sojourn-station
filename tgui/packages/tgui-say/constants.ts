@@ -15,19 +15,21 @@ export enum LINE_LENGTHS {
 /**
  * Radio prefixes.
  * Displays the name in the left button, tags a css class.
- */
+*/
 export const RADIO_PREFIXES = {
-  ':a ': 'Hive',
-  ':b ': 'io',
+  ':b ': 'BlkShld',
   ':c ': 'Cmd',
-  ':e ': 'Engi',
-  ':g ': 'Cling',
+  ':e ': 'Guild',
+  ':h ': 'Dept',
+  ':j ': 'MedIcm',
+  ':k ': 'Prosp',
   ':m ': 'Med',
   ':n ': 'Sci',
-  ':o ': 'AI',
-  ':s ': 'Sec',
-  ':t ': 'Synd',
+  ':p ': 'AI',
+  ':s ': 'Marsh',
+  ':t ': 'Church',
   ':u ': 'Supp',
   ':v ': 'Svc',
-  ':y ': 'CCom',
+  ':w ': 'Whis',
+  ':y ': 'Merc',
 } as const;

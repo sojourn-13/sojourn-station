@@ -5,7 +5,7 @@
 	ui_header = "crew_green.gif"
 	program_icon_state = "crew"
 	program_key_state = "med_key"
-	program_menu_icon = "heart"
+	program_menu_icon = "heartbeat"
 	extended_desc = "This program connects to life signs monitoring system to provide basic information on crew health."
 	required_access = access_medical_suits
 	requires_ntnet = 1

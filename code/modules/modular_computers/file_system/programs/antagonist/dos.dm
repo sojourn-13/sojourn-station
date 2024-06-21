@@ -3,7 +3,7 @@
 	filedesc = "DoS Traffic Generator"
 	program_icon_state = "hostile"
 	program_key_state = "security_key"
-	program_menu_icon = "arrow-4-diag"
+	program_menu_icon = "book-dead"
 	extended_desc = "This script can perform denial of service attacks against quantum network relays. The system administrator will probably notice this. Multiple devices can run this program together against the same relay for increased effect"
 	size = 20
 	requires_ntnet = 1

@@ -62,7 +62,7 @@
 			/obj/item/clothing/suit/armor/vest,
 			/obj/item/clothing/suit/armor/vest/ironhammer,
 			/obj/item/clothing/suit/storage/vest,
-			/obj/item/clothing/head/armor/helmet/tanker,
+			/obj/item/clothing/head/helmet/tanker,
 			/obj/item/clothing/suit/armor/bulletproof,
 			/obj/item/clothing/suit/armor/laserproof
 		)
@@ -102,11 +102,11 @@
 		)
 	)
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol or rifle", 5000, 2),
-		/obj/item/tool/shovel/combat = offer_data("combat crovel", 500, 13),
+		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol or rifle", 2500, 2),
+		/obj/item/tool/shovel/combat = offer_data("combat crovel", 400, 13),
 		/obj/item/tool_upgrade/armor/melee = offer_data("melee armor plate", 500, 5),
 		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 3),
 		/obj/item/tool_upgrade/armor/bomb = offer_data("bomb proofing armor plate", 800, 3),
 		/obj/item/tool_upgrade/armor/energy = offer_data("energy armor plate", 2000, 2),
-		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 2)
+		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 2000, 2)
 	)
