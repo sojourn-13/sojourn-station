@@ -151,3 +151,23 @@
 		"icon_override" = 'icons/fluff/clothing_mob.dmi',
 		"item_state" = "ghostechoe"
 	)
+
+// guidesa/SSGT_BR
+/datum/gear/fluff/guidesa_sheath
+	ckey_whitelist = list("ssgtbr")
+	display_name = "Runed Sheath Conversion Kit"
+	path = /obj/item/fluff_conversion_kit/guidesa_sheath
+
+// guidesa/SSGT_BR
+/obj/item/fluff_conversion_kit/guidesa_sheath
+	name = "Runed Sheath Conversion Kit"
+	target_type = /obj/item/storage/sheath/non_church/general
+
+	name_change = "Runed Sheath"
+	icon_change = 'icons/fluff/fluff_items.dmi'
+	vars_change = list(
+		"desc" = "An old adorned sheath meant to hold a variety of weapons and swords. It looks elegant.",
+		"icon_override" = 'icons/fluff/clothing_mob.dmi',
+		"base_icon_state" = "runed_sheath",
+		"base_item_state" = "runed_sheath"
+	)
