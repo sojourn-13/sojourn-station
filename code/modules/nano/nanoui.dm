@@ -59,6 +59,8 @@ nanoui is used to open and update nano browser uis
 	var/list/datum/nanoui/children = list()
 	var/datum/nano_topic_state/state = null
 
+	var/ready_for_updates = FALSE
+
  /**
   * Create a new nanoui instance.
   *
@@ -505,11 +507,12 @@ nanoui is used to open and update nano browser uis
 		return // Closed
 	if (status == STATUS_DISABLED && !force_push)
 		return // Cannot update UI, no visibility
+	if(!ready_for_updates)
+		return // Nano hasn't pinged back to say "im ready and loaded"
 
 	var/list/send_data = get_send_data(data)
 
 //	to_chat(user, list2json_usecache(send_data))// used for debugging //NANO DEBUG HOOK
-
 	user << output(list2params(list(strip_improper(json_encode(send_data)))),"[window_id].browser:receiveUpdateData")
 
  /**
@@ -522,6 +525,10 @@ nanoui is used to open and update nano browser uis
 /datum/nanoui/Topic(href, href_list)
 	update_status(0) // update the status
 	if (status != STATUS_INTERACTIVE || user != usr) // If UI is not interactive or usr calling Topic is not the UI user
+		return
+
+	if(href_list["nano_internal_ready"])
+		ready_for_updates = TRUE
 		return
 
 	// This is used to toggle the nano map ui
