@@ -15080,15 +15080,6 @@
 "jUK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature{
-	name = "Mutated Tissue";
-	desc = "An amalgamation of flesh and bone";
-	color = "#8B0000";
-	melee_damage_lower = 50;
-	melee_damage_upper = 85;
-	maxHealth = 350;
-	health = 350
-	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -15203,6 +15194,7 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
 "jYE" = (
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -16496,6 +16488,7 @@
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "kVg" = (
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -20329,14 +20322,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo)
 "nqW" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
-	name = "WhiteGuard Solutions Autonomous Guard unit"
-	},
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -25147,8 +25134,14 @@
 "qvG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
-	name = "WhiteGuard Solutions Autonomous Guard unit"
+/mob/living/simple_animal/hostile/creature{
+	name = "Mutated Tissue";
+	desc = "An amalgamation of flesh and bone";
+	color = "#8B0000";
+	melee_damage_lower = 50;
+	melee_damage_upper = 85;
+	maxHealth = 350;
+	health = 350
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -63765,7 +63758,7 @@ nhS
 nhS
 nhS
 eBR
-kHB
+nqW
 kHB
 kHB
 stV
@@ -63964,7 +63957,7 @@ coU
 oGU
 mTV
 jCD
-eTv
+hpw
 hpw
 lCM
 hpw
@@ -64591,7 +64584,7 @@ coU
 idB
 hpw
 jCD
-hpw
+eTv
 idB
 sZr
 oGU
@@ -64798,7 +64791,7 @@ oGU
 oGU
 sZr
 idB
-eTv
+hpw
 jCD
 hpw
 idB
@@ -65216,7 +65209,7 @@ tEX
 rVv
 idB
 idB
-hpw
+eTv
 jCD
 hpw
 idB
@@ -68154,7 +68147,7 @@ onM
 nlO
 onM
 nlO
-nqW
+iJF
 gfv
 idB
 sZr
@@ -68566,10 +68559,10 @@ hpw
 gTN
 dCV
 rPC
+rPC
+rPC
+rPC
 qvG
-rPC
-rPC
-rPC
 rPC
 avl
 lwU
@@ -68775,7 +68768,7 @@ hpw
 mEc
 jim
 rPC
-rPC
+qvG
 qlu
 rPC
 qlu
@@ -69617,7 +69610,7 @@ gEx
 nlO
 aDt
 nlO
-nqW
+iJF
 rPC
 idB
 sZr
