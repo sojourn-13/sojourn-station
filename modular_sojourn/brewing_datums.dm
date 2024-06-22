@@ -247,6 +247,15 @@
 	alt_brew_item_amount = 6 //Mass production
 	info_helper = "The bottles produced are Ethanol."
 
+/datum/brewing_product/salt
+	reagent_to_brew = "sodiumchloride"
+	display_name = "Salt"
+	needed_crops = list("orange" = 10, "pineapple" = 10, "lemon" = 10, "lime" = 10)
+	needed_chems = list("water" = 20)
+	brew_timer = 5 MINUTES
+	brewed_amount = 1
+	price_tag_setter = 900
+
 //Asked Microsoft Copoilet for this one, idk looks fine to me - Trilby
 /datum/brewing_product/enzyme
 	reagent_to_brew = "enzyme"
