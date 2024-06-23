@@ -40,6 +40,28 @@
 	price_tag_setter = 2250
 	brew_timer = 2 MINUTES
 
+/datum/brewing_product/melonliquor
+	reagent_to_brew = "melonliquor"
+	display_name = "Melon Liquor"
+
+	brewed_amount = 2
+	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppies" = 35)
+	needed_chems = list("water" = 160)
+
+	price_tag_setter = 2000
+	brew_timer = 6 MINUTES
+
+/datum/brewing_product/bluecuracao
+	reagent_to_brew = "bluecuracao"
+	display_name = "Blue Curacao"
+
+	brewed_amount = 2
+	needed_crops = list("orange" = 80, "towercap" = 15, "poppies" = 35)
+	needed_chems = list("water" = 160)
+
+	price_tag_setter = 2100
+	brew_timer = 8 MINUTES
+
 /datum/brewing_product/wine
 	reagent_to_brew = "wine"
 	display_name = "Wine"
@@ -51,6 +73,18 @@
 	price_tag_setter = 3000
 	brew_timer = 6 MINUTES
 	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/vermouth
+	reagent_to_brew = "vermouth"
+	prerequisite = "wine"
+	display_name = "Vermouth"
+
+	brewed_amount = 3
+	needed_crops = list("grass" = 60, "towercap" = 15, "blueberries" = 30)
+	needed_chems = list("water" = 160)
+
+	price_tag_setter = 3500
+	brew_timer = 8 MINUTES
 
 /datum/brewing_product/pwine
 	reagent_to_brew = "pwine"
@@ -95,6 +129,88 @@
 	price_tag_setter = 5000
 	brew_timer = 10 MINUTES
 	brewed_amount = 2
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/nanatsunoumi
+	reagent_to_brew = "nanatsunoumi"
+	display_name = "Nanatsunoumi"
+	prerequisite = "deadrum"
+	needed_crops = list("rice" = 30, "towercap" = 15, "poppies" = 5)
+	needed_chems = list("water" = 80)
+
+	price_tag_setter = 8000
+	brew_timer = 20 MINUTES
+	brewed_amount = 3
+
+/datum/brewing_product/kahlua
+	reagent_to_brew = "kahlua"
+	prerequisite = "rum"
+	display_name = "Kahlua"
+
+	brewed_amount = 3
+	needed_crops = list("gelthi" = 40, "cinnamon" = 5)
+	needed_chems = list("water" = 30, "sugar" = 30)
+
+	price_tag_setter = 3000
+	brew_timer = 3 MINUTES
+
+/datum/brewing_product/gin
+	reagent_to_brew = "gin"
+	display_name = "Gin"
+
+	brewed_amount = 3
+	needed_crops = list("berries" = 40, "lemon" = 40, "towercap" = 5, "cinnamon" = 25)
+	needed_chems = list("water" = 160, "sugar"= 15)
+
+	price_tag_setter = 3200
+	brew_timer = 9 MINUTES
+
+/datum/brewing_product/schnapps
+	reagent_to_brew = "schnapps"
+	display_name = "Cinnamon Schnapps (Kros Style)"
+
+	brewed_amount = 4
+	needed_crops = list("berries" = 40, "strawberries" = 40, "towercap" = 5, "cinnamon" = 5)
+	needed_chems = list("water" = 160, "sugar"= 35)
+
+	price_tag_setter = 1200 //Flooded market
+	brew_timer = 5 MINUTES
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/goldschlager
+	reagent_to_brew = "goldschlager"
+	prerequisite = "schnapps"
+	display_name = "Goldschlager"
+
+	brewed_amount = 4
+	needed_crops = list("berries" = 40, "goldapple" = 5, "cinnamon" = 55)
+	needed_chems = list("water" = 10)
+
+	price_tag_setter = 6500
+	brew_timer = 20 MINUTES
+
+/datum/brewing_product/tequilla
+	reagent_to_brew = "tequilla"
+	display_name = "Tequilla"
+
+	brewed_amount = 2
+	needed_crops = list("lime" = 40, "lemon" = 40, "towercap" = 5, "pineapple" = 10)
+	needed_chems = list("water" = 50, "sodiumchloride"= 5)
+
+	price_tag_setter = 2250
+	brew_timer = 3 MINUTES
+
+/datum/brewing_product/patron
+	reagent_to_brew = "patron"
+	display_name = "Patron"
+
+	brewed_amount = 1
+	needed_crops = list("wheat" = 80,  "mint" = 30)
+	needed_chems = list("water" = 30)
+
+	price_tag_setter = 2000
+	brew_timer = 15 MINUTES
+
 
 /datum/brewing_product/ale
 	reagent_to_brew = "ale"
@@ -126,6 +242,20 @@
 	brew_timer = 5 MINUTES
 	brewed_amount = 3
 	price_tag_setter = 1500
+	info_helper = "Further brewing can be done when finished."
+
+/datum/brewing_product/absinthe
+	reagent_to_brew = "absinthe"
+	prerequisite = "ethanol"
+	display_name = "Absinthe"
+
+	brewed_amount = 1
+	bottled_brew_amount = 50
+	needed_crops = list("towercap" = 120, "maidengrass" = 5, "moon tear" = 30)
+	needed_chems = list("water" = 230)
+
+	price_tag_setter = 12000 //Takes FOREVERRRRR to brew + needs SI to make maidengrass
+	brew_timer = 60 MINUTES
 
 /datum/brewing_product/Kvass
 	reagent_to_brew = "Kvass"
@@ -206,6 +336,15 @@
 	price_tag_setter = 800
 	info_helper = "Further brewing can be done when finished."
 
+/datum/brewing_product/grenadine
+	reagent_to_brew = "grenadine"
+	display_name = "Grenadine"
+	needed_crops = list("cherry" = 20, "strawberries" = 20)
+	needed_chems = list("water" = 30, "sugar" = 20)
+	brew_timer = 5 MINUTES
+	brewed_amount = 2
+	price_tag_setter = 1300
+
 /datum/brewing_product/cheese
 	reagent_to_brew = "vinegar" //Gives back some vinegar
 	display_name = "Cheese Wheels (Byproduct Vinegar)"
@@ -280,5 +419,16 @@
 
 	price_tag_setter = 6000
 	brew_timer = 3600 //1 hour
+
+//Coded out do to not sure how to accually make this, and the copoilet quarries are able to help me
+/datum/brewing_product/fernet
+	reagent_to_brew = "fernet"
+	display_name = "Fernet"
+	needed_crops = list("mint" = 20, "thaadra" = 20, "harebell" = 5)
+	needed_chems = list("water" = 60)
+	brew_timer = 15 MINUTES
+	brewed_amount = 1
+	price_tag_setter = 1500
+
 
 */
