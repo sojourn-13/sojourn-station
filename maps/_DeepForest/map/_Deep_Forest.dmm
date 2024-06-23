@@ -7315,7 +7315,7 @@
 	icon_state = "catwalk12-0"
 	},
 /obj/structure/lattice,
-/turf/simulated/open,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -7452,7 +7452,7 @@
 /obj/structure/catwalk{
 	icon_state = "catwalk-broken"
 	},
-/turf/simulated/open,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -11179,7 +11179,7 @@
 	icon_state = "catwalk12-0"
 	},
 /obj/structure/lattice,
-/turf/simulated/open,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -16262,6 +16262,8 @@
 	name = "LIMA-09";
 	id_tag = "lima9entrance"
 	},
+/obj/structure/barricade,
+/obj/structure/grille,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -20335,6 +20337,7 @@
 	name = "Elevator Door"
 	},
 /obj/structure/barricade,
+/obj/structure/grille,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -20655,7 +20658,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "nBD" = (
-/turf/simulated/open,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -23026,7 +23030,7 @@
 	icon_state = "catwalk12-0"
 	},
 /obj/structure/lattice,
-/turf/simulated/open,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -23519,12 +23523,12 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "pxf" = (
-/obj/machinery/door/airlock/external{
-	name = "Elevator Door"
+/obj/structure/lattice,
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
 	},
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
+/obj/effect/floor_decal/sign/a/one,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -26090,9 +26094,10 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "rbC" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/simulated/open,
+/obj/structure/showcase/sign{
+	name = "WARNING: COLDLAB"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -27896,6 +27901,29 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/simulated/floor/wood,
 /area/asteroid/rogue)
+"ska" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/sign/a,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/abandoned_outpost{
+	name = "Site LIMA-09";
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
+	dynamic_lighting = 1
+	})
 "skh" = (
 /obj/structure/table/rack/shelf,
 /obj/random/cloth/belt,
@@ -36244,7 +36272,8 @@
 /area/colony/exposedsun/crashed_shop/outsider)
 "ybu" = (
 /obj/structure/lattice,
-/turf/simulated/open,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
@@ -60441,7 +60470,7 @@ qbU
 coU
 pQw
 aHX
-aHX
+ska
 tOP
 nqW
 kKX
@@ -64792,16 +64821,16 @@ qbU
 qbU
 qbU
 qbU
-qbU
-oGU
-oGU
-oGU
-oGU
-oGU
-oGU
-oGU
-oGU
-oGU
+coU
+sZr
+sZr
+sZr
+sZr
+sZr
+sZr
+sZr
+sZr
+sZr
 sZr
 idB
 hpw
@@ -65001,7 +65030,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 idB
 idB
@@ -65210,7 +65239,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 onw
 ipv
@@ -65419,7 +65448,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 wpr
 uVu
@@ -65628,7 +65657,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 uVu
 uVu
@@ -65837,7 +65866,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 idB
 idB
@@ -66046,11 +66075,11 @@ qbU
 qbU
 qbU
 qbU
-qbU
-oGU
-oGU
-oGU
-oGU
+coU
+sZr
+sZr
+sZr
+sZr
 idB
 nzP
 nLz
@@ -66259,7 +66288,7 @@ qbU
 qbU
 qbU
 qbU
-oGU
+sZr
 idB
 mVn
 nLz
@@ -66468,7 +66497,7 @@ qbU
 qbU
 qbU
 qbU
-oGU
+sZr
 idB
 gGn
 tCs
@@ -66676,8 +66705,8 @@ qbU
 qbU
 qbU
 qbU
-qbU
-oGU
+coU
+sZr
 idB
 idB
 idB
@@ -66885,7 +66914,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 idB
 idB
@@ -67094,7 +67123,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 mJj
 qrH
@@ -67303,7 +67332,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 eVz
 ndO
@@ -67512,7 +67541,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 nhk
 aBw
@@ -67721,7 +67750,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 cJX
 oie
@@ -67930,7 +67959,7 @@ daI
 qbU
 qbU
 qbU
-qbU
+coU
 idB
 lWR
 oYZ
@@ -68139,7 +68168,7 @@ daI
 daI
 qbU
 qbU
-qbU
+coU
 idB
 alx
 ndO
@@ -68348,7 +68377,7 @@ daI
 daI
 daI
 qbU
-qbU
+coU
 idB
 eob
 iHx
@@ -68557,7 +68586,7 @@ daI
 daI
 daI
 daI
-qbU
+coU
 idB
 idB
 idB
@@ -68766,13 +68795,13 @@ daI
 daI
 daI
 daI
-qbU
-oGU
-oGU
-oGU
-oGU
-oGU
-oGU
+coU
+sZr
+sZr
+sZr
+sZr
+sZr
+sZr
 sZr
 idB
 hpw
@@ -102032,10 +102061,10 @@ dqw
 hRL
 naj
 idB
-ybu
+eXe
 ybu
 nBD
-pxf
+nqW
 eTi
 lCL
 idB
@@ -102242,9 +102271,9 @@ hRL
 naj
 idB
 nBD
-ybu
-eXe
 pxf
+eXe
+nqW
 huG
 erv
 kMD
@@ -102451,13 +102480,13 @@ hRL
 naj
 idB
 uXw
-rbC
+ybu
 nBD
-pxf
+nqW
 pir
 tjo
 idB
-idB
+rbC
 nCA
 nCA
 gPQ
