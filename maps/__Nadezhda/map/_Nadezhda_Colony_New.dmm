@@ -17280,9 +17280,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/holoposter{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	pixel_y = 8
 	},
