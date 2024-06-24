@@ -156,14 +156,20 @@
 	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
 
 	L.adjustBruteLoss(45)
-	if(istype(L, /mob/living/carbon/human))
+
+	if(issilicon(L))
+		return
+
+	if(L.nutrition < 100)
+		return
+	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
+		slab_name = H.real_name
+		slab_type = /obj/item/reagent_containers/food/snacks/meat/human
 		H.nutrition -= 100
+
 		if(H.isMonkey())
 			slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
-		else
-			slab_name = H.real_name
-			slab_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 	var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
 	new_meat.name = "[slab_name] [new_meat.name]"
