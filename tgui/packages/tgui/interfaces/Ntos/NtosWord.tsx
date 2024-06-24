@@ -18,6 +18,7 @@ type Data = {
   loaded_data: string;
   /** Loaded Data for open file but passed through pencode2html */
   loaded_data_html: string;
+  max_length: number;
 };
 
 export const NtosWord = (props) => {
@@ -129,7 +130,7 @@ export const FileBrowser = (props: { uiControl: MetaUIControlProps }) => {
 export const Word = (props: { uiControl: MetaUIControlProps }) => {
   const { act, data } = useBackend<Data>();
   const { setShowFileBrowser, edited, setEdited } = props.uiControl;
-  const { open_file, loaded_data, loaded_data_html } = data;
+  const { open_file, loaded_data, loaded_data_html, max_length } = data;
 
   const [showPreview, setShowPreview] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
@@ -234,13 +235,14 @@ export const Word = (props: { uiControl: MetaUIControlProps }) => {
           scrollbar
           fluid
           height="100%"
+          maxLength={max_length}
           multilineEnter
           value={loaded_data}
           onInput={(e, val) => {
             setEdited(true);
           }}
-          onChange={(e, val) => {
-            act('PRG_editfile', { text: val.replaceAll('\n', '[br]') });
+          onChange={(e, text) => {
+            act('PRG_editfile', { text });
             setEdited(true);
           }}
         />

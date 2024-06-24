@@ -267,6 +267,7 @@
 		user.drop_item(I)
 		I.forceMove(src)
 		power_source = I
+		update_static_data_for_all_viewers()
 		return
 
 	if(power_source)
@@ -409,7 +410,7 @@
 		next_file()
 
 	update_icon()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 
 
