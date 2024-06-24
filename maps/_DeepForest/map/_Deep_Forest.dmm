@@ -12139,8 +12139,11 @@
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
 	name = "";
-	pixel_x = -135;
-	pixel_y = -50
+	pixel_x = 0;
+	pixel_y = 0;
+	density = 0;
+	alpha = 0;
+	icon_state = "error"
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
