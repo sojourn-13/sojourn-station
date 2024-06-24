@@ -12139,8 +12139,11 @@
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
 	name = "";
-	pixel_x = -135;
-	pixel_y = -50
+	pixel_x = 0;
+	pixel_y = 0;
+	density = 0;
+	alpha = 0;
+	icon_state = "error"
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
@@ -21127,11 +21130,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "nTY" = (
-/obj/item/clothing/head/radiation{
-	armor_list = list("melee" = 60, "bullet" = 55, "energy" = 50, "bomb" = 75, "bio" = 100, "rad" = 100);
-	name = "Hazardous Enviroment Protection suit helmet";
-	desc = "A hood that comes with the hazardous protection suit, comes with a retractable visor for easy nutriment intake"
-	},
+/obj/item/clothing/head/hev,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
@@ -27416,11 +27415,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "rWO" = (
-/obj/item/clothing/suit/radiation{
-	armor_list = list("melee" = 60, "bullet" = 55, "energy" = 50, "bomb" = 75, "bio" = 100, "rad" = 100);
-	name = "Hazardous Enviroment Protection suit";
-	desc = "A suit designed to protect you from the harshest of enviroments."
-	},
+/obj/item/clothing/suit/hev,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/abandoned_outpost{
 	name = "Site LIMA-09";
