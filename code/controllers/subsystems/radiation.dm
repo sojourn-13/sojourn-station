@@ -82,8 +82,9 @@ proc/produce_radiation(var/Source, var/Power, var/Range)
 		return
 
 	for(var/mob/living/M in range(Range, Source))
-		M.apply_effect(Power, IRRADIATE)
-		M.updatehealth()
+		if(isInSight(Source, M))
+			M.apply_effect(((Power / 10) * ( 1 / (Range**2) )), IRRADIATE) //inverse square lawed, adjust the Power/10 to tweak this value
+			M.updatehealth()
 		for(var/obj/item/device/geiger/G in M.contents)
 			G.add_rads(Power)
 
