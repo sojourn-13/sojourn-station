@@ -423,7 +423,7 @@
 	desc = "A bottle of what looks like a beer but is a mix of sleeping agents, malt and hops."
 	icon_state = "beer"
 	center_of_mass = list("x"=16, "y"=12)
-	preloaded_reagents = list("beer" = 30)
+	preloaded_reagents = list("beer2" = 30)
 
 /obj/item/reagent_containers/food/drinks/bottle/small/ale
 	name = "\improper Magm-Ale"
@@ -440,3 +440,11 @@
 	isGlass = 0
 	center_of_mass = list("x"=16, "y"=12)
 	preloaded_reagents = list("Kvass" = 30)
+
+//glassess bottle
+/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle
+	name = "Flash Bottle"
+	desc = "A quickly printed bottle using a non-recycleable glass."
+	icon_state = "brew_bottle"
+	matter = null
+	isGlass = FALSE
