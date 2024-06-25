@@ -62,12 +62,12 @@
 /datum/perk/nanite_power/nanite_armor/on_emp()
 	if(emped)
 		return
-	holder.adjustBruteLoss -= 40
+	holder.adjustBruteLoss(40)
 	..()
 
 /datum/perk/nanite_power/nanite_armor/end_emp()
-    holder.adjustBruteLoss += 40
-    ..()
+	holder.adjustBruteLoss(-40)
+	..()
 
 /datum/perk/nanite_power/nanite_metal_drinker
 	name = "Nanite Metal Drinker"
