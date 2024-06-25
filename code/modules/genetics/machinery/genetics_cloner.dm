@@ -302,7 +302,6 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/proc/init_disposal_holder()
 	var/obj/structure/disposalholder/holder = new()
 
-	holder.gas = air_contents// transfer gas resv. into holder object -- let's be explicit about the data this proc consumes, please.
 	holder.from_cloner = TRUE
 
 	//Check for any living mobs trigger hasmob.
