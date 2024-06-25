@@ -191,7 +191,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
-	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
+	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1) * (owner.stats.getPerk(PERK_NANITE_PYSCHEBOOST) ? 1.05 : 1))
 	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)
 			give_resting(1)

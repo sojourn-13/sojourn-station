@@ -35,6 +35,8 @@
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_stats,
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
+		/obj/item/organ/internal/nanogate/proc/psyche_boost,
+		/obj/item/organ/internal/nanogate/proc/nano_purge,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
@@ -76,6 +78,8 @@ obj/item/organ/internal/nanogate/artificer
 		/obj/item/organ/internal/nanogate/proc/nanite_stats,
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
+		/obj/item/organ/internal/nanogate/proc/psyche_boost,
+		/obj/item/organ/internal/nanogate/proc/nano_purge,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
 		/obj/item/organ/internal/nanogate/proc/nanite_mod,

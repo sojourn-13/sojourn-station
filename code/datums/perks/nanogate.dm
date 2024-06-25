@@ -20,7 +20,7 @@
 
 /datum/perk/nanite_power/nanite_regen/on_emp(nano, severity)
 	if(severity) //Let's NOT divide by any zeroes!
-		emp_duration = (120 SECONDS / severity) //Duration that the regeneration is disabled.
+		emp_duration = (240 SECONDS / severity) //Duration that the regeneration is disabled. // 4 minutes to re-activate
 	..()
 
 /datum/perk/nanite_power/nanite_regen/on_process()
@@ -39,7 +39,7 @@
 
 /datum/perk/nanite_power/nanite_muscle/on_emp(nano, severity)
 	if(severity) //Let's NOT divide by any zeroes!
-		emp_duration = (30 SECONDS / severity) //Duration that your speed is disabled.
+		emp_duration = (60 SECONDS / severity) //Duration that your speed is disabled.
 	..()
 
 /datum/perk/nanite_power/nanite_armor
@@ -58,6 +58,16 @@
 	holder.maxHealth -= 40
 	holder.health -= 40
 	..()
+
+/datum/perk/nanite_power/nanite_armor/on_emp()
+	if(emped)
+		return
+	holder.adjustBruteLoss -= 40
+	..()
+
+/datum/perk/nanite_power/nanite_armor/end_emp()
+    holder.adjustBruteLoss += 40
+    ..()
 
 /datum/perk/nanite_power/nanite_metal_drinker
 	name = "Nanite Metal Drinker"
@@ -202,3 +212,50 @@
 
 	anti_cheat = FALSE
 	return ..()
+
+//Inspired by the mental inprinters.
+////////////////
+//Current list//
+////////////////
+
+/datum/perk/nanite_power/psyche_boost
+	name = "PsycheBoost Nanite Augment"
+	desc = "You are augmented with a nanites that enchance your mental capacity and awarness, but making you physically weak, making you essentially have a second brain. While nowhere near as powerful as the real thing, it does alleviate a lot of strain on your actual brain, allowing you to process information faster."
+	gain_text = "Your head feels heavy and then light as if huge burden was carried away."
+	lose_text = "Your head starts feeling heavy again."
+
+/datum/perk/cognitive_enhancer/assign(mob/living/L)
+	..()
+	holder.stats.changeStat(STAT_COG, 25)
+	holder.stats.changeStat(STAT_TGH, -10)
+	holder.stats.changeStat(STAT_ROB, -10)
+	holder.stats.changeStat(STAT_VIG, 10)
+
+/datum/perk/cognitive_enhancer/remove()
+	holder.stats.changeStat(STAT_COG, -25)
+	holder.stats.changeStat(STAT_TGH, 10)
+	holder.stats.changeStat(STAT_ROB, 10)
+	holder.stats.changeStat(STAT_VIG, -10)
+	..()
+
+/datum/perk/nanite_power/nano_purge
+	name = "Nano Purge Augment"
+	desc = "You are augmented with a Nano Purge Augment, a nanite-based mechanism designed to detoxify your system. It rapidly neutralizes toxins and other harmful substances that is highly addictive, ensuring your body and mind remain unaffected by various poisons and drugs."
+	gain_text = "You feel unnatural calmness on your liver."
+	lose_text = "Your start to crave after things again."
+
+/datum/perk/chemical_neutralizer/assign(mob/living/L)
+	..()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 0.05
+		H.metabolism_effects.nsa_bonus += 4.5
+		H.metabolism_effects.calculate_nsa()
+
+/datum/perk/chemical_neutralizer/remove()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 0.05
+		H.metabolism_effects.nsa_bonus -= 4.5
+		H.metabolism_effects.calculate_nsa()
+	..()

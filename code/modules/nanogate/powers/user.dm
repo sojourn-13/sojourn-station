@@ -12,9 +12,9 @@ List of powers in this page :
 // Give the user a perk that constantly heal a tiny bit of damage.
 /obj/item/organ/internal/nanogate/proc/nanite_regen()
 	set category = "Nanogate Powers"
-	set name = "Nanite Regeneration (7)"
-	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing."
-	nano_point_cost = 7
+	set name = "Nanite Regeneration (6)"
+	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing. However EMPs can disrupt the healing."
+	nano_point_cost = 6
 
 	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
 		if(pay_power_cost(nano_point_cost))
@@ -28,9 +28,9 @@ List of powers in this page :
 // Give the user a perk that make him move faster
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Nanofiber Muscles (5)"
-	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster."
-	nano_point_cost = 5 // Install two augments on both legs
+	set name = "Nanite Augment - Nanofiber Muscles (4)"
+	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster. However getting EMPed means that your muscles get disrupted for a moment."
+	nano_point_cost = 4 // Install two augments on both legs
 
 	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
@@ -44,9 +44,9 @@ List of powers in this page :
 // Give the user a perk that reduce incoming damage
 /obj/item/organ/internal/nanogate/proc/nanite_armor()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Nanite Skin-Weave (3)"
+	set name = "Nanite Augment - Nanite Skin-Weave (2)" // It is now affected by EMPs
 	set desc = "Spend some of your nanites to create nanite weave mesh to protect your body."
-	nano_point_cost = 3
+	nano_point_cost = 2
 
 	if(!owner.stats.getPerk(PERK_NANITE_ARMOR)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
@@ -173,9 +173,9 @@ List of powers in this page :
 // Spends points for stats
 /obj/item/organ/internal/nanogate/proc/nanite_stats()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Mindbanking (2)"
+	set name = "Nanite Augment - Mindbanking (1)"
 	set desc = "Spend some of your nanites to increase your knowledge."
-	nano_point_cost = 2
+	nano_point_cost = 1
 
 	var/list/choices_stats = list(	"Mechanical" = STAT_MEC,
 									"Cognition" = STAT_COG,
@@ -210,9 +210,9 @@ List of powers in this page :
 // Allows you to drink metals for food
 /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Metal-Eater (2)"
+	set name = "Nanite Augment - Metal-Eater (1)" // It is now affected by EMPs
 	set desc = "Spend some of your nanites to allow you to drink basic metals for nutrition. Does not nullifies any harmful effects of drinking said metal."
-	nano_point_cost = 2
+	nano_point_cost = 1
 
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
@@ -226,5 +226,38 @@ List of powers in this page :
 			//perk_list += PERK_NANITE_METAL_EATER
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker
 
+/obj/item/organ/internal/nanogate/proc/nano_purge()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Nano Purge (1)"
+	set desc = "Spend some of your nanites to allow you to be more resistant to chemicals side-effects."
+	nano_point_cost = 1
+
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nano_purge
+		return
+
+	if(!owner.stats.getPerk(PERK_NANITE_NANOPURGE)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to help you handle chemicals")
+			owner.stats.addPerk(PERK_NANITE_NANOPURGE)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nano_purge
+
+/obj/item/organ/internal/nanogate/proc/psyche_boost()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Psyche Boost (2)"
+	set desc = "Spend some of your nanites to allow you to be slightly more inspired and be more smarter and aware. But making your combat skills worse as a side-effect."
+	nano_point_cost = 2
+
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/psyche_boost
+		return
+
+	if(!owner.stats.getPerk(PERK_NANITE_PYSCHEBOOST)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to help you handle chemicals")
+			owner.stats.addPerk(PERK_NANITE_PYSCHEBOOST)
+			verbs -= /obj/item/organ/internal/nanogate/proc/psyche_boost
 
 
