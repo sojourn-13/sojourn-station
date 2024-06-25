@@ -7,6 +7,11 @@
 	var/change_floor_to_path = /turf/simulated/floor/plating/under
 	var/activated = FALSE
 
+/obj/effect/flooring_type_spawner/concrete
+	name = "concrete spawner"
+	change_floor_to_path = /turf/simulated/floor/rock/manmade/concrete
+	icon_state = "concrete_spawner"
+
 /obj/effect/flooring_type_spawner/Initialize()
 	. = ..()
 	if(!change_floor_to_path)
@@ -27,9 +32,9 @@
 	var/turf/Tsrc = get_turf(src)
 	if(Tsrc)
 		Tsrc.ChangeTurf(change_floor_to_path)
-	if(loc)
-		new change_floor_to_path(src.loc)
-	return
+	//Returns are for debugging spawners
+		return TRUE
+	return FALSE
 
 /obj/effect/flooring_type_spawner/proc/activate()
 	handle_flooring_spawn(src)
