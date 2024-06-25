@@ -488,6 +488,8 @@ obj/item/clothing/suit/gownrisque/alt
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	item_flags = COVER_PREVENT_MANIPULATION
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
 	price_tag = 2000

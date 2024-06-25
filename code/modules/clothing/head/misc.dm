@@ -638,5 +638,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	w_class = ITEM_SIZE_NORMAL
 	item_flags = STOPPRESSUREDAMAGE //hardhat has it? So this gets it to.
 	heat_protection = HEAD
+	cold_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
 	price_tag = 1000
+	unacidable = TRUE
