@@ -89,7 +89,7 @@
 		call(src,triggerproc)(M)
 		return
 
-	if(ismob(M))
+	if(isliving(M))
 		triggered = 1
 		call(src,triggerproc)(M)
 
