@@ -643,4 +643,3 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	unacidable = TRUE
 	price_tag = 1000
-	unacidable = TRUE
