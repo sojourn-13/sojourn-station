@@ -303,3 +303,14 @@
 		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
 		list(QUALITY_WELDING, 10, 20)
 	)
+
+//Techinally it stores produce
+/datum/craft_recipe/storage/fermentation_keg
+	name = "fermentation keg"
+	result = /obj/structure/fermentation_keg
+	related_stats = list(STAT_MEC)
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(/obj/item/stack/rods, 2)
+	)
