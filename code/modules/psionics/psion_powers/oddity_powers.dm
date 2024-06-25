@@ -1,18 +1,20 @@
 
 //Powers that affect/transform oddites in some way
 
-/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
+/mob/living/carbon/human/psionic_tumor/proc/psionic_weapon()
 	set category = "Psionic powers"
 	set name = "Psionic Weapon Construction (3)"
 	set desc = "Expend three psi points to shape an oddity into a range weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
-	psi_point_cost = 3
+	var/psi_point_cost = 3
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	var/obj/item/oddity/active = usr.get_active_hand()
 	if(istype(usr.get_active_hand(), /obj/item/oddity))
 		if(!active.oddity_stats)
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
-		if(pay_power_cost(psi_point_cost) && check_possibility())
+		if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
@@ -35,11 +37,13 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/obj/item/organ/internal/psionic_tumor/proc/psionic_melee()
+/mob/living/carbon/human/psionic_tumor/proc/psionic_melee()
 	set category = "Psionic powers"
 	set name = "Psionic Melee Construction (3)"
 	set desc = "Expend three psi points to shape an oddity into a melee weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
-	psi_point_cost = 3
+	var/psi_point_cost = 3
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	var/obj/item/oddity/active = usr.get_active_hand()
 	if(istype(usr.get_active_hand(), /obj/item/oddity))
@@ -47,7 +51,7 @@
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
 
-		if(pay_power_cost(psi_point_cost) && check_possibility())
+		if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
@@ -72,18 +76,20 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/obj/item/organ/internal/psionic_tumor/proc/psionic_tool()
+/mob/living/carbon/human/psionic_tumor/proc/psionic_tool()
 	set category = "Psionic powers"
 	set name = "Psionic Tool Creation (2)"
 	set desc = "Expend two psi points to shape an oddity into a tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
-	psi_point_cost = 2
+	var/psi_point_cost = 2
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	var/obj/item/oddity/active = usr.get_active_hand()
 	if(istype(usr.get_active_hand(), /obj/item/oddity))
 		if(!active.oddity_stats)
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
-		if(pay_power_cost(psi_point_cost) && check_possibility())
+		if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
@@ -109,20 +115,22 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation()
+/mob/living/carbon/human/psionic_tumor/proc/psychoactive_manipulation()
 	set category = "Psionic powers"
 	set name = "Psychoactive Manipulation (2)"
 	set desc = "Expend two points of essence to psionically manipulate an oddity. Unlike other, more refined methods, this process is entirely random. The process could make the oddity or anomaly \
 	better or worse."
-	psi_point_cost = 2
+	var/psi_point_cost = 2
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
-	var/obj/item/oddity/O = owner.get_active_hand()
+	var/obj/item/oddity/O = user.get_active_hand()
 	if(!istype(O, /obj/item/oddity))
-		to_chat(owner, SPAN_NOTICE("You're not holding an oddity or proper anomaly!"))
+		to_chat(user, SPAN_NOTICE("You're not holding an oddity or proper anomaly!"))
 		return FALSE
 
-	if(pay_power_cost(psi_point_cost) && check_possibility())
-		owner.visible_message("<b><font color='purple'>[owner] concentrates on the anomaly in their hand, something about it changing in a subtle way.</font><b>", "<b><font color='purple'>You focus on the energies around the object, swaying them to your will and trying to change it!</font><b>")
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		user.visible_message("<b><font color='purple'>[user] concentrates on the anomaly in their hand, something about it changing in a subtle way.</font><b>", "<b><font color='purple'>You focus on the energies around the object, swaying them to your will and trying to change it!</font><b>")
 
 		if(O.oddity_stats)
 			for(var/stat in O.oddity_stats)
