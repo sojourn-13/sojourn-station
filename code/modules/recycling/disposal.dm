@@ -8,6 +8,7 @@
 #define SEND_PRESSURE (700 + ONE_ATMOSPHERE) //kPa - assume the inside of a dispoal pipe is 1 atm, so that needs to be added.
 #define PRESSURE_TANK_VOLUME 150	//L
 #define PUMP_MAX_FLOW_RATE 90		//L/s - 4 m/s using a 15 cm by 15 cm inlet
+#define PERCENT_PER_PROCESS 0.084 // ~12 cycles = 24 seconds
 
 #define DISPOSALS_OFF "Off"
 #define DISPOSALS_CHARGING "Pressurizing"
@@ -22,7 +23,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = LOW_OBJ_LAYER //This allows disposal bins to be underneath tables
-	var/datum/gas_mixture/air_contents	// internal reservoir
+	var/percent_charged = 1
 	var/mode = DISPOSALS_CHARGED
 	var/flush = 0	// true if flush handle is pulled
 	var/obj/structure/disposalpipe/trunk/trunk = null // the attached pipe trunk
@@ -30,15 +31,15 @@
 	var/flush_every_ticks = 30 //Every 30 ticks it will look whether it is ready to flush
 	var/flush_count = 0 //this var adds 1 once per tick. When it reaches flush_every_ticks it resets and tries to flush.
 	var/last_sound = 0
-	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
+	active_power_usage = 1100 // per tick, goal is 13,210 power over 12 cycles = 1100
 	idle_power_usage = 100
 
-// create a new disposal
-// find the attached trunk (if present) and init gas resvr.
 /obj/machinery/disposal/Initialize(mapload, d)
 	..()
 	return INITIALIZE_HINT_LATELOAD
 	
+// create a new disposal
+// find the attached trunk (if present) 
 /obj/machinery/disposal/LateInitialize(mapload)
 	. = ..()
 
@@ -49,13 +50,13 @@
 	else
 		trunk.linked = src	// link the pipe trunk to self
 
-	air_contents = new/datum/gas_mixture(PRESSURE_TANK_VOLUME)
 	update()
 
 /obj/machinery/disposal/Destroy()
 	eject()
 	if(trunk)
 		trunk.linked = null
+	trunk = null
 	return ..()
 
 /obj/machinery/disposal/affect_grab(mob/living/user, mob/living/target)
@@ -274,7 +275,6 @@
 		"handle" = flush,
 		"panel" = panel_open,
 		"eject" = length(contents) ? TRUE : FALSE,
-		"pressure" = CLAMP01(100 * air_contents.return_pressure() / SEND_PRESSURE)
 	)
 	return data
 
@@ -340,9 +340,9 @@
 		add_overlay(image(icon, "dispover-handle"))
 
 // timed process
-// charge the gas reservoir and perform flush if ready
+// charge the "gas" reservoir and perform flush if ready
 /obj/machinery/disposal/Process()
-	if(!air_contents || (stat & BROKEN)) // nothing can happen if broken
+	if(stat & BROKEN) // nothing can happen if broken
 		update_use_power(0)
 		return
 
@@ -355,12 +355,12 @@
 		flush_count = 0
 
 	// flush can happen even without power
-	if(flush && air_contents.return_pressure() >= SEND_PRESSURE)
+	if(flush && percent_charged >= 1)
 		flush()
 
 	if(mode != DISPOSALS_CHARGING)
 		update_use_power(1)
-	else if(air_contents.return_pressure() >= SEND_PRESSURE)
+	else if(percent_charged >= 1)
 		mode = DISPOSALS_CHARGED
 		update()
 	else
@@ -372,16 +372,11 @@
 		update_use_power(0)
 		return
 
-	var/atom/L = loc // recharging from loc turf
-	var/datum/gas_mixture/env = L.return_air()
+	if(percent_charged >= 1)
+		return
 
-	var/power_draw = -1
-	if(env && env.temperature > 0)
-		var/transfer_moles = (PUMP_MAX_FLOW_RATE/env.volume)*env.total_moles	//group_multiplier is divided out here
-		power_draw = pump_gas(src, env, air_contents, transfer_moles, active_power_usage)
-
-	if(power_draw > 0)
-		use_power(power_draw)
+	use_power(active_power_usage)
+	percent_charged = CLAMP01(percent_charged + PERCENT_PER_PROCESS)
 
 // perform a flush
 /obj/machinery/disposal/proc/flush()
@@ -407,13 +402,12 @@
 		last_sound = world.time
 	sleep(5) // wait for animation to finish
 
-	H.init(src, air_contents)	// copy the contents of disposer to holder
-	air_contents = new(PRESSURE_TANK_VOLUME)	// new empty gas resv.
-
+	H.init(src)	// copy the contents of disposer to holder
 	H.start(src) // start the holder processing movement
 	flushing = 0
 	// now reset disposal state
 	flush = 0
+	percent_charged = 0
 	if(mode == DISPOSALS_CHARGED)
 		mode = DISPOSALS_CHARGING
 	update()
@@ -440,7 +434,6 @@
 					if(AM)
 						AM.throw_at(target, 5, 1)
 
-		H.vent_gas(loc)
 		qdel(H)
 
 /obj/machinery/disposal/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
@@ -469,13 +462,10 @@
 // virtual disposal object
 // travels through pipes in lieu of actual items
 // contents will be items flushed by the disposal
-// this allows the gas flushed to be tracked
-
 /obj/structure/disposalholder
 	invisibility = 101
 	dir = 0
 
-	var/datum/gas_mixture/gas = null	// gas used to flush, will appear at exit point
 	var/active = 0	// true if the holder is moving, otherwise inactive
 	var/count = 2048	//*** can travel 2048 steps before going inactive (in case of loops)
 	var/destinationTag = "" // changes if contains a delivery container
@@ -486,15 +476,14 @@
 
 
 // initialize a holder from the contents of a disposal unit
-/obj/structure/disposalholder/proc/init(obj/machinery/disposal/D, datum/gas_mixture/flush_gas)
-	gas = flush_gas// transfer gas resv. into holder object -- let's be explicit about the data this proc consumes, please.
-
+/obj/structure/disposalholder/proc/init(obj/machinery/disposal/D)
 	// these three loops are here to prevent someone from mailing themselves into a sensitive area
 	// by simply including a delivery in the same package as them
 
 	//Check for any living mobs trigger hasmob.
 	//hasmob effects whether the package goes to cargo or its tagged destination.
 	for(var/mob/living/M in D)
+		M.reset_view(src)
 		if(M && M.stat != DEAD && !isdrone(M))
 			has_mob = TRUE
 
@@ -503,6 +492,7 @@
 	for(var/obj/O in D)
 		if(O.contents)
 			for(var/mob/living/M in O.contents)
+				M.reset_view(src)
 				if(M && M.stat != DEAD && !isdrone(M))
 					has_mob = TRUE
 
@@ -631,13 +621,7 @@
 
 	playsound(loc, 'sound/effects/clang.ogg', 50, 0, 0)
 
-// called to vent all gas in holder to a location
-/obj/structure/disposalholder/proc/vent_gas(atom/location)
-	location.assume_air(gas)  // vent all gas to turf
-	return
-
 /obj/structure/disposalholder/Destroy()
-	qdel(gas)
 	active = 0
 	return ..()
 
@@ -684,8 +668,7 @@
 				AM.forceMove(T)
 				AM.pipe_eject(0)
 			qdel(H)
-			..()
-			return
+			return ..()
 
 		// otherwise, do normal expel from turf
 		if(H)
@@ -774,7 +757,6 @@
 				spawn(1)
 					if(AM)
 						AM.throw_at(target, 100, 1)
-			H.vent_gas(T)
 			qdel(H)
 
 	else	// no specified direction, so throw in random direction
@@ -789,7 +771,6 @@
 					if(AM)
 						AM.throw_at(target, 5, 1)
 
-			H.vent_gas(T)	// all gas vent to turf
 			qdel(H)
 
 // call to break the pipe
@@ -906,30 +887,6 @@
 	C.update()
 
 	qdel(src)
-
-// pipe is deleted
-// ensure if holder is present, it is expelled
-/obj/structure/disposalpipe/Destroy()
-	var/obj/structure/disposalholder/H = locate() in src
-	if(H)
-		// holder was present
-		H.active = FALSE
-		var/turf/T = loc
-		if(T.density)
-			// deleting pipe is inside a dense turf (wall)
-			// this is unlikely, but just dump out everything into the turf in case
-
-			for(var/atom/movable/AM in H)
-				AM.forceMove(T)
-				AM.pipe_eject(0)
-			qdel(H)
-
-			return ..()
-
-		// otherwise, do normal expel from turf
-		if(H)
-			expel(H, T, 0)
-	. = ..()
 
 /obj/structure/disposalpipe/hides_under_flooring()
 	return TRUE
@@ -1417,7 +1374,6 @@
 			if(!isdrone(AM)) //Drones keep smashing windows from being fired out of chutes. Bad for the station. ~Z
 				spawn(5)
 					AM.throw_at(target, 3, 1)
-		H.vent_gas(loc)
 		qdel(H)
 
 
