@@ -1005,9 +1005,11 @@ var/list/flooring_types
 
 /decl/flooring/dirt/mud
 	icon_base = "mud_dark"
+	tally_addition_decl = 0.1
 
 /decl/flooring/dirt/mud/light
 	icon_base = "mud_light"
+	tally_addition_decl = 0.1
 
 /*Rock*/
 /decl/flooring/rock
