@@ -411,9 +411,10 @@ Technomancer RIG
 
 /obj/item/rig/light/ultra_light/cmo
 	name = "SI 'Medtek' control module"
-	desc = "An upgraded and somewhat customized soteria 'retainer' RIGsuit. Though superficially and aesthetically similar this suit has undergone a series of upgrades so as to improve its utility \
-	for Soterias resident overworked Chief of Medicine. Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	suit_type = "SI 'Medtek"
+	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	icon_state = "cmo_rig"
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
