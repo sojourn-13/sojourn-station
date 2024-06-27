@@ -53,7 +53,7 @@
  *
  * @param {int} toIndex - The index to stop sorting at. Default: 0.
  */
-/proc/sortTim(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0) as /list
+/proc/sortTim(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0)
 	CREATE_SORT_INSTANCE(to_sort, cmp, associative, fromIndex, toIndex)
 
 	sorter.timSort(fromIndex, toIndex)
@@ -68,7 +68,7 @@
  * @see
  * - https://en.wikipedia.org/wiki/Merge_sort
  */
-/proc/sortMerge(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0) as /list
+/proc/sortMerge(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0)
 	CREATE_SORT_INSTANCE(to_sort, cmp, associative, fromIndex, toIndex)
 
 	sorter.mergeSort(fromIndex, toIndex)
@@ -84,7 +84,7 @@
  * @see
  * - https://en.wikipedia.org/wiki/Insertion_sort
  */
-/proc/sortInsert(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0) as /list
+/proc/sortInsert(list/to_sort, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = FALSE, fromIndex = 1, toIndex = 0)
 	CREATE_SORT_INSTANCE(to_sort, cmp, associative, fromIndex, toIndex)
 
 	sorter.binarySort(fromIndex, toIndex)
