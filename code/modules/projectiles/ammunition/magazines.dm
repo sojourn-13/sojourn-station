@@ -1143,7 +1143,7 @@
 	cut_overlays()
 	if(stored_ammo.len)
 		var/obj/item/ammo_casing/AC = stored_ammo[1] //look at next casing.
-		overlays += "m12_shell_[AC.shell_color]" //look and display the overlay for the ammo
+		add_overlay("m12_shell_[AC.shell_color]") //look and display the overlay for the ammo
 
 /obj/item/ammo_magazine/m12/Initialize()
 	. = ..()

@@ -268,10 +268,6 @@
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
 
-// Overlays
-// (placeholders for if/when TG overlays system is ported)
-//#define cut_overlays(...)			overlays.Cut()
-
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
 
 
@@ -379,27 +375,6 @@
 
 //Lying animation
 #define ANIM_LYING_TIME 2
-
-// Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
-// TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
-#define COMPILE_OVERLAYS(A)\
-	do {\
-		var/list/ad = A.add_overlays;\
-		var/list/rm = A.remove_overlays;\
-		var/list/po = A.priority_overlays;\
-		if(LAZYLEN(rm)){\
-			A.overlays -= rm;\
-			rm.Cut();\
-		}\
-		if(LAZYLEN(ad)){\
-			A.overlays |= ad;\
-			ad.Cut();\
-		}\
-		if(LAZYLEN(po)){\
-			A.overlays |= po;\
-		}\
-		A.flags &= ~OVERLAY_QUEUED;\
-	} while(FALSE)
 
 #define LIST_COLOR_RENAME 				\
 	list(								\

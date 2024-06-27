@@ -167,8 +167,6 @@ Please contact me on #coderbus IRC. ~Carn x
 	else
 		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
 
-	COMPILE_OVERLAYS(src)
-
 	. = ..()
 
 	var/list/scale = get_scale()

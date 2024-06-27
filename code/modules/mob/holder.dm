@@ -278,14 +278,13 @@ var/list/holder_mob_icon_cache = list()
 
 /obj/item/holder/proc/sync(var/mob/living/M)
 	dir = 2
-	cut_overlays()
 	icon = M.icon
 	icon_state = M.icon_state
 	item_state = M.item_state
 	color = M.color
 	name = M.name
 	desc = M.desc
-	add_overlay(M.get_overlays())
+	copy_overlays(M, TRUE)
 	last_holder = loc
 	update_wear_icon()
 

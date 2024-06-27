@@ -185,13 +185,6 @@ world
 #define TO_HEX_DIGIT(n) ascii2text((n&15) + ((n&15)<10 ? 48 : 87))
 
 icon
-
-	Destroy()
-
-		SSoverlays.overlay_icon_cache -= src
-
-		. = ..()
-
 	proc/MakeLying()
 		var/icon/I = new(src, dir=SOUTH)
 		I.BecomeLying()
@@ -1007,7 +1000,7 @@ proc/getFlatTypeIcon(var/path, defdir=2, deficon=null, defstate="", defblend=BLE
 //For photo camera.
 /proc/build_composite_icon(atom/A)
 	var/icon/composite = icon(A.icon, A.icon_state, A.dir, 1)
-	for(var/O in A.get_overlays())
+	for(var/O in A.overlays)
 		var/image/I = O
 		composite.Blend(icon(I.icon, I.icon_state, I.dir, 1), ICON_OVERLAY)
 	return composite

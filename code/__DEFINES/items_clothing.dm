@@ -72,7 +72,6 @@
 #define LOUD			    0x80 	// Loud as hell tools
 #define HONKING			    0x100 	// Honking tools
 // 0x80 not used for no reason, feel free
-#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_over-lays
 #define INITIALIZED			0x200
 #define ADMIN_SPAWNED		0x400
 
