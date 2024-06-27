@@ -65399,6 +65399,8 @@
 /obj/random/lathe_disk,
 /obj/machinery/smartfridge/disk,
 /obj/structure/table/steel,
+/obj/item/computer_hardware/hard_drive/portable/design/scav/forman,
+/obj/item/computer_hardware/hard_drive/portable/design/guns/vector,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "ngJ" = (
