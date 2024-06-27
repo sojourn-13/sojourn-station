@@ -575,8 +575,6 @@
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
 	switch(bag_cache)
 		if("INDUSTRIAL")
 			if(prob(80))
