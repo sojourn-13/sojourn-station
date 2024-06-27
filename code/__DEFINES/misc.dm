@@ -143,7 +143,7 @@
 //Soj Changes
 #define CLIENT_MIN_FPS 0 //SERVER sync
 
-#define CLIENT_MAX_FPS 60 //Do not go above this or byond goes fucky
+#define CLIENT_MAX_FPS 200 //Do not go above this or byond goes fucky
 //Soj End of SoJ
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
