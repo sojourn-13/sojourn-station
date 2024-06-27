@@ -120,20 +120,17 @@ SUBSYSTEM_DEF(overlays)
  *  @param priority If true, also will cut priority over-lays.
  */
 /atom/proc/cut_overlays(priority = FALSE)
-	var/list/cached_overlays = our_overlays
-	var/list/cached_priority = priority_overlays
+	LAZYINITLIST(priority_overlays)
+	LAZYINITLIST(remove_overlays)
+	LAZYINITLIST(add_overlays)
+	remove_overlays = overlays.Copy()
+	add_overlays.Cut()
 
-	var/need_compile = FALSE
+	if(priority)
+		priority_overlays.Cut()
 
-	if(LAZYLEN(cached_overlays)) //don't queue empty lists, don't cut priority over-lays
-		cached_overlays.Cut()  //clear regular over-lays
-		need_compile = TRUE
-
-	if(priority && LAZYLEN(cached_priority))
-		cached_priority.Cut()
-		need_compile = TRUE
-
-	if(NOT_QUEUED_ALREADY && need_compile)
+	//If not already queued for work and there are overlays to remove
+	if(NOT_QUEUED_ALREADY && remove_overlays.len)
 		QUEUE_FOR_COMPILE
 
 /**
@@ -145,19 +142,27 @@ SUBSYSTEM_DEF(overlays)
 /atom/proc/cut_overlay(list/overlays, priority)
 	if(!overlays)
 		return
-
 	overlays = build_appearance_list(overlays)
+	LAZYINITLIST(add_overlays) //always initialized after this point
+	LAZYINITLIST(priority_overlays)
+	LAZYINITLIST(remove_overlays)
+	var/a_len = add_overlays.len
+	var/r_len = remove_overlays.len
+	var/p_len = priority_overlays.len
+	remove_overlays += overlays
+	add_overlays -= overlays
 
-	var/list/cached_overlays = our_overlays	//sanic
-	var/list/cached_priority = priority_overlays
-	var/init_o_len = LAZYLEN(cached_overlays)
-	var/init_p_len = LAZYLEN(cached_priority)  //starter pokemon
 
-	LAZYREMOVE(cached_overlays, overlays)
 	if(priority)
+		var/list/cached_priority = priority_overlays
 		LAZYREMOVE(cached_priority, overlays)
 
-	if(NOT_QUEUED_ALREADY && ((init_o_len != LAZYLEN(cached_overlays)) || (init_p_len != LAZYLEN(cached_priority))))
+	var/fa_len = add_overlays.len
+	var/fr_len = remove_overlays.len
+	var/fp_len = priority_overlays.len
+
+	//If not already queued and there is work to be done
+	if(NOT_QUEUED_ALREADY && (fa_len != a_len || fr_len != r_len || fp_len != p_len))
 		QUEUE_FOR_COMPILE
 
 /**
@@ -179,24 +184,21 @@ SUBSYSTEM_DEF(overlays)
 
 	overlays = build_appearance_list(overlays)
 
-	LAZYINITLIST(our_overlays)	//always initialized after this point
+	LAZYINITLIST(add_overlays) //always initialized after this point
 	LAZYINITLIST(priority_overlays)
-
-	var/list/cached_overlays = our_overlays	//sanic
-	var/list/cached_priority = priority_overlays
-	var/init_o_len = cached_overlays.len
-	var/init_p_len = cached_priority.len  //starter pokemon
-	var/need_compile
+	var/a_len = add_overlays.len
+	var/p_len = priority_overlays.len
 
 	if(priority)
-		cached_priority += overlays  //or in the image. Can we use [image] = image?
-		need_compile = init_p_len != cached_priority.len
+		priority_overlays += overlays  //or in the image. Can we use [image] = image?
+		var/fp_len = priority_overlays.len
+		if(NOT_QUEUED_ALREADY && fp_len != p_len)
+			QUEUE_FOR_COMPILE
 	else
-		cached_overlays += overlays
-		need_compile = init_o_len != cached_overlays.len
-
-	if(NOT_QUEUED_ALREADY && need_compile) //have we caught more pokemon?
-		QUEUE_FOR_COMPILE
+		add_overlays += overlays
+		var/fa_len = add_overlays.len
+		if(NOT_QUEUED_ALREADY && fa_len != a_len)
+			QUEUE_FOR_COMPILE
 
 /**
  * Copy the overlays from another atom, either replacing all of ours or appending to our existing overlays.
@@ -205,18 +207,17 @@ SUBSYSTEM_DEF(overlays)
  * @param other The atom to copy overlays from.
  * @param cut_old If true, all of our overlays will be *replaced* by the other's. If other is null, that means cutting all ours.
  */
-/atom/proc/copy_overlays(atom/other, cut_old)	//copys our_over-lays from another atom
+/atom/proc/copy_overlays(atom/other, cut_old)	//copys our over-lays from another atom
 	if(!other)
 		if(cut_old)
 			cut_overlays()
 		return
 
-	var/list/cached_other = other.our_overlays
+	var/list/cached_other = other.overlays.Copy()
 	if(cached_other)
-		if(cut_old || !LAZYLEN(our_overlays))
-			our_overlays = cached_other.Copy()
-		else
-			our_overlays |= cached_other
+		if(cut_old || !LAZYLEN(overlays))
+			remove_overlays = overlays
+		add_overlays = cached_other
 		if(NOT_QUEUED_ALREADY)
 			QUEUE_FOR_COMPILE
 	else if(cut_old)
@@ -244,14 +245,11 @@ SUBSYSTEM_DEF(overlays)
 			cut_overlays()
 		return
 
-	var/list/cached_other
-	if("our_overlays" in other.vars)
-		if(other.our_overlays)
-			cached_other = other.our_overlays
-		if(cached_other)
-			if(cut_old || !overlays.len)
-				overlays = cached_other.Copy()
-			else
-				overlays |= cached_other
-		else if(cut_old)
-			cut_overlays()
+	var/list/cached_other = other.overlays.Copy()
+	if(cached_other)
+		if(cut_old || !overlays.len)
+			overlays = cached_other
+		else
+			overlays |= cached_other
+	else if(cut_old)
+		cut_overlays()

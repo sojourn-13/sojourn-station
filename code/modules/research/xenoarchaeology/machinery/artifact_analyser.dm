@@ -85,7 +85,7 @@
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<br>"
 		P.info += "\icon[scanned_object] [results]"
-		P.copy_overlays(list("paper_stamped"), TRUE)
+		P.add_overlay(list("paper_stamped"), TRUE)
 		if(scanned_object)
 			P.artifact_type = scanned_object.type
 			if(istype(scanned_object, /obj/machinery/artifact))

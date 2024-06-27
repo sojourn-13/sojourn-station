@@ -878,7 +878,6 @@ proc/GaussRandRound(var/sigma, var/roundto)
 					var/old_dir1 = T.dir
 					var/old_icon_state1 = T.icon_state
 					var/old_icon1 = T.icon
-					var/old_overlays = T.overlays.Copy()
 					var/old_underlays = T.underlays.Copy()
 					var/old_decals = T.decals
 					var/old_opacity = T.opacity // For shuttle windows
@@ -887,7 +886,7 @@ proc/GaussRandRound(var/sigma, var/roundto)
 					X.set_dir(old_dir1)
 					X.icon_state = old_icon_state1
 					X.icon = old_icon1 //Shuttle floors are in shuttle.dmi while the defaults are floors.dmi
-					X.copy_overlays(old_overlays, TRUE)
+					X.copy_overlays(T, TRUE)
 					X.underlays = old_underlays
 					X.decals = old_decals
 					X.opacity = old_opacity
@@ -1043,7 +1042,6 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 					var/old_dir1 = T.dir
 					var/old_icon_state1 = T.icon_state
 					var/old_icon1 = T.icon
-					var/old_overlays = T.overlays.Copy()
 					var/old_underlays = T.underlays.Copy()
 
 					if(platingRequired)
@@ -1055,7 +1053,7 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 					X.set_dir(old_dir1)
 					X.icon_state = old_icon_state1
 					X.icon = old_icon1 //Shuttle floors are in shuttle.dmi while the defaults are floors.dmi
-					X.copy_overlays(old_overlays, TRUE)
+					X.copy_overlays(T, TRUE)
 					X.underlays = old_underlays
 
 					var/list/objs = new/list()

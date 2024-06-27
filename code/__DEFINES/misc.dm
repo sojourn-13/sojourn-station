@@ -383,25 +383,23 @@
 // Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
 // TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
 #define COMPILE_OVERLAYS(A)\
-    do {\
-        var/list/oo = A.our_overlays;\
-        var/list/po = A.priority_overlays;\
-        if(LAZYLEN(po)){\
-            if(LAZYLEN(oo)){\
-                A.overlays = oo + po;\
-            }\
-            else{\
-                A.overlays = po;\
-            }\
-        }\
-        else if(LAZYLEN(oo)){\
-            A.overlays = oo;\
-        }\
-        else{\
-            A.overlays.Cut();\
-        }\
-        A.flags &= ~OVERLAY_QUEUED;\
-    } while (FALSE)
+	if (TRUE) {\
+		var/list/ad = A.add_overlays;\
+		var/list/rm = A.remove_overlays;\
+		var/list/po = A.priority_overlays;\
+		if(LAZYLEN(rm)){\
+			A.overlays -= rm;\
+			rm.Cut();\
+		}\
+		if(LAZYLEN(ad)){\
+			A.overlays |= ad;\
+			ad.Cut();\
+		}\
+		if(LAZYLEN(po)){\
+			A.overlays |= po;\
+		}\
+		A.flags &= ~OVERLAY_QUEUED;\
+	}
 
 #define LIST_COLOR_RENAME 				\
 	list(								\

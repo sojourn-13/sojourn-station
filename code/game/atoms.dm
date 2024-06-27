@@ -64,10 +64,10 @@
 	  */
 	var/list/atom_colours
 
-
 	// over-lays
-	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
-	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
+	var/tmp/list/priority_overlays	//overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
+	var/tmp/list/remove_overlays // a very temporary list of overlays to remove
+	var/tmp/list/add_overlays // a very temporary list of overlays to add
 
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
 	// Why are areas derived from /atom instead of /datum?  They're abstracts!
