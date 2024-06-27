@@ -162,7 +162,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
-		/obj/item/rig_module/storage/engi
+		/obj/item/rig_module/storage/large
 		)
 
 /obj/item/clothing/gloves/rig/ce
@@ -212,7 +212,7 @@ Technomancer RIG
 
 /obj/item/rig/techno/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage/engi,
+		/obj/item/rig_module/storage/large,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
 		)
@@ -367,7 +367,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
 /obj/item/rig/recovery_suit
@@ -406,7 +406,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
 /obj/item/rig/light/ultra_light/cmo
@@ -433,7 +433,7 @@ Technomancer RIG
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
 
@@ -502,5 +502,5 @@ Technomancer RIG
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage/combat
+		/obj/item/rig_module/storage/large
 		)
