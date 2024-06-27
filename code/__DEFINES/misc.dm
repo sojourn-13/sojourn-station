@@ -383,7 +383,7 @@
 // Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
 // TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
 #define COMPILE_OVERLAYS(A)\
-	if (TRUE) {\
+	do {\
 		var/list/ad = A.add_overlays;\
 		var/list/rm = A.remove_overlays;\
 		var/list/po = A.priority_overlays;\
@@ -399,7 +399,7 @@
 			A.overlays |= po;\
 		}\
 		A.flags &= ~OVERLAY_QUEUED;\
-	}
+	} while(FALSE)
 
 #define LIST_COLOR_RENAME 				\
 	list(								\
