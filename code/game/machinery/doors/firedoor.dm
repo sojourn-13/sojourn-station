@@ -86,7 +86,7 @@
 
 /obj/machinery/door/firedoor/Initialize(mapload)
 	if(mapload)
-		addtimer(CALLBACK(src, .proc/link_to_zas), 30 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(link_to_zas)), 30 SECONDS)
 	else
 		link_to_zas()
 	. = ..()
@@ -140,8 +140,8 @@
 			continue
 		var/zone = registered_zas_zones[cardinal_inside]
 		registered += zone
-		RegisterSignal(zone, COMSIG_ZAS_TICK, .proc/update_firedoor_data)
-		RegisterSignal(zone, COMSIG_ZAS_DELETE, .proc/link_to_zas)
+		RegisterSignal(zone, COMSIG_ZAS_TICK, PROC_REF(update_firedoor_data))
+		RegisterSignal(zone, COMSIG_ZAS_DELETE, PROC_REF(link_to_zas))
 
 
 /obj/machinery/door/firedoor/get_material()

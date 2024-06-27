@@ -192,9 +192,9 @@
 		walk(src,0)
 		update_icons()
 		if(prob(50) && get_dist(src,target_mob) <= 3 || forced_slash_combo)
-			addtimer(CALLBACK(src, .proc/SlashCombo), ATTACK_INTERMISSION_TIME)
+			addtimer(CALLBACK(src, PROC_REF(SlashCombo)), ATTACK_INTERMISSION_TIME)
 			return
-		addtimer(CALLBACK(src, .proc/LeapAttack), ATTACK_INTERMISSION_TIME + rand(0,3))
+		addtimer(CALLBACK(src, PROC_REF(LeapAttack)), ATTACK_INTERMISSION_TIME + rand(0,3))
 		return
 	attack_state = MOOK_ATTACK_RECOVERY
 	ResetNeutral()
@@ -204,9 +204,9 @@
 		attack_state = MOOK_ATTACK_ACTIVE
 		update_icons()
 		SlashAttack()
-		addtimer(CALLBACK(src, .proc/SlashAttack), 3)
-		addtimer(CALLBACK(src, .proc/SlashAttack), 6)
-		addtimer(CALLBACK(src, .proc/AttackRecovery), 9)
+		addtimer(CALLBACK(src, PROC_REF(SlashAttack)), 3)
+		addtimer(CALLBACK(src, PROC_REF(SlashAttack)), 6)
+		addtimer(CALLBACK(src, PROC_REF(AttackRecovery)), 9)
 
 /mob/living/simple_animal/hostile/mook/proc/SlashAttack()
 	if(target_mob && !stat && attack_state == MOOK_ATTACK_ACTIVE)
@@ -241,7 +241,7 @@
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, TRUE)
 		playsound(src, 'sound/voice/mook_leap_yell.ogg', 100, TRUE)
 		var/target_turf = get_turf(target_mob)
-		throw_at(target_turf, 7, 1, src, FALSE, callback = CALLBACK(src, .proc/AttackRecovery))
+		throw_at(target_turf, 7, 1, src, FALSE, callback = CALLBACK(src, PROC_REF(AttackRecovery)))
 		return
 	attack_state = MOOK_ATTACK_RECOVERY
 	ResetNeutral()
@@ -260,11 +260,11 @@
 				if(isliving(target_mob))
 					var/mob/living/L = target_mob
 					if(L.incapacitated() && L.stat != DEAD)
-						addtimer(CALLBACK(src, .proc/WarmupAttack, TRUE), ATTACK_INTERMISSION_TIME)
+						addtimer(CALLBACK(src, PROC_REF(WarmupAttack), TRUE), ATTACK_INTERMISSION_TIME)
 						return
-			addtimer(CALLBACK(src, .proc/WarmupAttack), ATTACK_INTERMISSION_TIME)
+			addtimer(CALLBACK(src, PROC_REF(WarmupAttack)), ATTACK_INTERMISSION_TIME)
 			return
-		addtimer(CALLBACK(src, .proc/ResetNeutral), ATTACK_INTERMISSION_TIME)
+		addtimer(CALLBACK(src, PROC_REF(ResetNeutral)), ATTACK_INTERMISSION_TIME)
 
 /mob/living/simple_animal/hostile/mook/proc/ResetNeutral()
 	if(attack_state == MOOK_ATTACK_RECOVERY)

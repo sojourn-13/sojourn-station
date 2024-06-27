@@ -17,7 +17,7 @@
 /obj/mecha/medical/odysseus/Initialize()
 	. = ..()
 	hud = new /obj/item/clothing/glasses/hud/health/mech(src)
-	RegisterSignal(hud, COMSIG_HUD_DELETED, .proc/hud_deleted)
+	RegisterSignal(hud, COMSIG_HUD_DELETED, PROC_REF(hud_deleted))
 
 /obj/mecha/medical/odysseus/Destroy()
 	if (hud)

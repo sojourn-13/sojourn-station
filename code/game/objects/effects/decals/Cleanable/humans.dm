@@ -67,7 +67,7 @@ var/global/list/image/splatter_cache=list()
 
 	if(should_dry)
 		drytime = world.time + DRYING_TIME * (amount+1)
-		addtimer(CALLBACK(src, .proc/dry), drytime)
+		addtimer(CALLBACK(src, PROC_REF(dry)), drytime)
 
 /obj/effect/decal/cleanable/blood/handle_merge_decal(obj/effect/decal/cleanable/blood/merger)
 	. = ..()

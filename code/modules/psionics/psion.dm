@@ -86,9 +86,9 @@
 
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
-			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
+			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
 		else
-			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES))
+			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES))
 
 		if(psi_points < max_psi_points)
 			psi_points += 1

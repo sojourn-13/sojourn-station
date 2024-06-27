@@ -395,7 +395,7 @@
 				return
 
 			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
-			assimilation_timer = addtimer(CALLBACK(src, .proc/assimilate_human, L), timer, TIMER_STOPPABLE)
+			assimilation_timer = addtimer(CALLBACK(src, PROC_REF(assimilate_human), L), timer, TIMER_STOPPABLE)
 			return
 
 		//robot corpses

@@ -141,7 +141,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	if(ext_moved_triggerable)
 		moved_event_created = TRUE
 		moved_object = get_object()
-		GLOB.moved_event.register(moved_object, src, .proc/ext_moved)
+		GLOB.moved_event.register(moved_object, src, PROC_REF(ext_moved))
 
 /obj/item/integrated_circuit/proc/on_data_written() //Override this for special behaviour when new data gets pushed to the circuit.
 	return

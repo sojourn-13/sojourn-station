@@ -47,7 +47,7 @@
 	..()
 	if(istype(I, /obj/item/ameridian_core))
 		if(!is_growing)
-			addtimer(CALLBACK(src, .proc/spread), rand(40,90)) //So people have time to prepare for the worst
+			addtimer(CALLBACK(src, PROC_REF(spread)), rand(40,90)) //So people have time to prepare for the worst
 			is_growing = TRUE
 			to_chat(user, "<span class='info'>The spire begins to</span><span class='rose'> grow rapidly as it consumes the </span><span class='angelsay'>[I]</span><span class='moderate'> whole.</span>")
 			if(!rads_producter)

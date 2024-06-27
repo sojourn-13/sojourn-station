@@ -8,13 +8,13 @@
 	environment_cap_buff = value
 	var/atom/current_parent = parent
 	current_parent.description_info += "This item reduces sanity damage taken from environmental factors. \n"
-	RegisterSignal(current_parent, COMSIG_CLOTH_EQUIPPED, .proc/handle_sanity_buffs, TRUE)
+	RegisterSignal(current_parent, COMSIG_CLOTH_EQUIPPED, PROC_REF(handle_sanity_buffs), TRUE)
 
 /datum/component/clothing_sanity_protection/proc/handle_sanity_buffs(mob/living/carbon/human/user)
 	var/obj/item/current_parent = parent
 	if(current_parent.is_worn())
 		user.sanity.environment_cap_coeff *= environment_cap_buff
-		RegisterSignal(user, COMSIG_CLOTH_DROPPED, .proc/handle_sanity_debuff, TRUE)
+		RegisterSignal(user, COMSIG_CLOTH_DROPPED, PROC_REF(handle_sanity_debuff), TRUE)
 		current_user = user
 
 /datum/component/clothing_sanity_protection/proc/handle_sanity_debuff()

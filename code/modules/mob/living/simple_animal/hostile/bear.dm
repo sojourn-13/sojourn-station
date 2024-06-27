@@ -59,12 +59,12 @@
 					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negative as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
 
 		anchored = TRUE
-		addtimer(CALLBACK(src, .proc/unanchor), 10)
+		addtimer(CALLBACK(src, PROC_REF(unanchor)), 10)
 
 
 /mob/living/simple_animal/hostile/bear/proc/unanchor()
 	anchored = FALSE
-	addtimer(CALLBACK(src, .proc/rawr_xd_recharge), 120) //should be tolds of time for people to kill the bear
+	addtimer(CALLBACK(src, PROC_REF(rawr_xd_recharge)), 120) //should be tolds of time for people to kill the bear
 
 /mob/living/simple_animal/hostile/bear/proc/rawr_xd_recharge()
 	rawr_cooldown = FALSE
