@@ -315,6 +315,7 @@
 					/obj/item/device/kit/paint/ripley/clark_veteran = 3,
 					//Ivan
 					/obj/item/device/kit/paint/rust_ivan = 3,
+					/obj/item/device/kit/paint/utility_ivan = 3,
 					//Ody
 					/obj/item/device/kit/paint/odysseus = 3,
 					/obj/item/device/kit/paint/odysseus/blue_racer = 3,
