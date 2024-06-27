@@ -252,15 +252,29 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(!H.stats.getPerk(PERK_NO_OBFUSCATION))
-				to_chat(H, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
+				var/obfuscation_word = obfuscation(difficulty)
+				to_chat(H, SPAN_NOTICE("You failed to release the trap. There is [obfuscation_word] chance of success"))
 			else
 				to_chat(H, SPAN_NOTICE("You failed to release the trap. There was a [difficulty]% chance of failer"))
 		else
 			to_chat(user, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
 
-		to_chat(user, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
 		if (user == buckled_mob)
 			to_chat(user, SPAN_NOTICE("Freeing yourself is very difficult. Perhaps you should call for help?"))
+
+/obj/item/beartrap/proc/obfuscation(var/difficulty)
+	var/wordplay = "impossable to fail"
+	if(difficulty >= 0)
+		wordplay = "really good"
+	if(difficulty >= 25)
+		wordplay = "good"
+	if(difficulty >= 50)
+		wordplay = "unlikely"
+	if(difficulty >= 75)
+		wordplay = "not much"
+	if(difficulty >= 100)
+		wordplay = "no"
+	return wordplay
 
 /obj/item/beartrap/proc/attack_mob(mob/living/L)
 	//Small mobs won't trigger the trap
@@ -279,16 +293,20 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 
 
 	//armour
-	if( L.damage_through_armor(fail_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
+	if( L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
 	//No damage - no stun
 		L.Stun(4) //A short stun prevents spamming failure attempts
 		shake_camera(L, 2, 1)
 
 	//trap the victim in place
 	set_dir(L.dir)
-	can_buckle = TRUE
-	buckle_mob(L)
-	to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
+	if(L.mob_size < MOB_LARGE) //large mobs dont get stuck, but do take additional damage
+		can_buckle = TRUE
+		buckle_mob(L)
+		to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
+	else
+		//If you are using it on a big mob you can ue the extra damage
+		L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src)
 
 	//If the victim is nonhuman and has no client, start processing.
 	if (!ishuman(L) && !L.client)

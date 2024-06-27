@@ -123,6 +123,9 @@
 			return
 
 /obj/machinery/beehive/attack_hand(var/mob/user)
+	if(used_now)
+		to_chat(user, SPAN_NOTICE("Someone is already removing frames."))
+
 	if(!closed)
 		if(honeycombs < 100)
 			to_chat(user, SPAN_NOTICE("There are no filled honeycombs."))
@@ -130,6 +133,7 @@
 		if(!smoked && bee_count)
 			to_chat(user, SPAN_NOTICE("The bees won't let you take the honeycombs out like this, smoke them first."))
 			return
+		used_now = TRUE
 		user.visible_message(SPAN_NOTICE("\The [user] starts taking the honeycombs out of \the [src]."), SPAN_NOTICE("You start taking the honeycombs out of \the [src]..."))
 		while(honeycombs >= 100 && do_after(user, 30, src))
 			new /obj/item/honey_frame/filled(loc)
@@ -138,6 +142,7 @@
 			update_icon()
 		if(honeycombs < 100)
 			to_chat(user, SPAN_NOTICE("You take all filled honeycombs out."))
+		used_now = FALSE
 		return
 
 /obj/machinery/beehive/Process()
