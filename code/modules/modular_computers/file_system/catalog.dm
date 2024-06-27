@@ -43,13 +43,13 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 					E.add_decomposition_from(D)
 
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_REAGENTS]
-	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
+	C.entry_list = sortTim(C.entry_list, GLOBAL_PROC_REF(cmp_catalog_entry_asc))
 	C = GLOB.catalogs[CATALOG_CHEMISTRY]
-	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_chem)
+	C.entry_list = sortTim(C.entry_list, GLOBAL_PROC_REF(cmp_catalog_entry_chem))
 	C = GLOB.catalogs[CATALOG_DRINKS]
-	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
+	C.entry_list = sortTim(C.entry_list, GLOBAL_PROC_REF(cmp_catalog_entry_asc))
 	C = GLOB.catalogs[CATALOG_ALL]
-	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
+	C.entry_list = sortTim(C.entry_list, GLOBAL_PROC_REF(cmp_catalog_entry_asc))
 	createCookingCatalogs()
 	return 1
 

@@ -378,7 +378,7 @@
 	if(!on) return
 
 	if(!washing_callback)
-		addtimer(CALLBACK(src, /obj/machinery/shower/proc/try_to_wash_stuff), max(60 - soap_modifer, 20))
+		addtimer(CALLBACK(src, PROC_REF(try_to_wash_stuff)), max(60 - soap_modifer, 20))
 		washing_callback = TRUE
 	wash_floor()
 	reagents.add_reagent("water", reagents.get_free_space())

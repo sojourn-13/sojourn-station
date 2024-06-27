@@ -206,7 +206,7 @@
 
 
 	//After 30 seconds, your view is forced back to yourself
-	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, reset_view), user), 300)
 
 	return TRUE
 

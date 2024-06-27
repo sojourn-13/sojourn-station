@@ -221,7 +221,7 @@
 	if (istype(stuck, /obj/item/paper))
 		icon_state = stuck.icon_state
 		copy_overlays(stuck, TRUE)
-		add_overlay("tape_overlay", TRUE)
+		add_overlay("tape_overlay")
 	else
 		var/mutable_appearance/MA = new(stuck)
 		MA.layer = layer-0.1

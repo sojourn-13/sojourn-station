@@ -253,7 +253,7 @@
 
 /datum/move_loop/has_target/proc/handle_no_target()
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(GLOBAL_PROC, /proc/qdel, src)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src)
 
 
 /**

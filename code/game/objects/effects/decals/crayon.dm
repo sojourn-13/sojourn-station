@@ -388,7 +388,7 @@
 		M.stunned += 1
 		M.confused += 2
 		if(ishuman(M))
-			addtimer(CALLBACK(M, /atom/proc/SpinAnimation, 3, 3), 1)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, SpinAnimation), 3, 3), 1)
 
 	//We already would have rejected you, run along now.
 	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)

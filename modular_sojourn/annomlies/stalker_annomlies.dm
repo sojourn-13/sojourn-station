@@ -601,7 +601,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.adjustBruteLoss(witch)
-		addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/atom, SpinAnimation), 3, 3), 1)
 		H.stunned = black_and_white
 		H.confused += kansists
 		H.updatehealth()

@@ -47,5 +47,5 @@
 	S.loc = get_turf(src)
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	summon_ready = FALSE
-	addtimer(CALLBACK(src, /datum/genetics/mutation/wurm_cry/proc/summon_ready), scream_cooldown)
+	addtimer(CALLBACK(wurm_cry_mutation, TYPE_PROC_REF(/datum/genetics/mutation/wurm_cry, summon_ready)), scream_cooldown)
 	return
