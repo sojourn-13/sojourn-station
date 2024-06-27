@@ -218,6 +218,13 @@
 	new_icon = "ivan-rust"
 	allowed_types = list("ivan")
 
+/obj/item/device/kit/paint/utility_ivan
+	name = "\"Utility\" Ivan customization kit"
+	new_name = "APLU \"Ivan\" Utility Vehicle"
+	new_desc = "The Ivan, while worse in almost every way when compared to the much more used Ripley, has at least the advantage of being simple and cheap to make. This one seems to be painted in high-visibility paint."
+	new_icon = "ivan-utility"
+	allowed_types = list("ivan")
+
 //Odysseus kits.
 /obj/item/device/kit/paint/odysseus
 	name = "\"Medgax\" Odysseus customization kit"
