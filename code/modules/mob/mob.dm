@@ -177,6 +177,15 @@
 		. += 6
 	if(lying) //Crawling, it's slower
 		. += 14 + (weakened)
+
+	var/turf/T = get_turf(src)
+	if(T)
+		if(istype(T, /turf/simulated/floor))
+			var/turf/simulated/floor/TF = T
+			if(TF.flooring)
+				. += TF.flooring.tally_addition_decl
+		. += T.tally_addition
+
 	. += move_intent.move_delay
 
 
