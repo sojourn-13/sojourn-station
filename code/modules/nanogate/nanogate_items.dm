@@ -2,7 +2,7 @@
 /obj/item/rig/nanite
 	name = "nanite suit control module"
 	desc = "A lighter, less armoured rig suit made from nanites and attached to someone's spine."
-	icon_state = "ihs_rig_old"
+	icon_state = "nanite_rig"
 	suit_type = "nanite"
 	armor_list = list(
 		melee = 35,
@@ -29,6 +29,7 @@
 	var/recharge_time = 10
 
 /obj/item/rig/nanite/opifex
+	icon_state = "nanite_rig_birb"
 	air_type = /obj/item/tank/nitrogen
 	air_supply = /obj/item/tank/nitrogen
 
