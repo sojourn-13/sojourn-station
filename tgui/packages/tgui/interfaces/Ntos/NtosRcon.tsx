@@ -137,14 +137,17 @@ const Smes = (props: { smes: SMESData }) => {
             }
           >
             <Slider
-              value={smes.output_val}
+              value={smes.output_val / 1000}
               minValue={0}
-              maxValue={smes.output_max}
-              fillValue={smes.output_load}
-              step={1000}
-              format={(val) => formatPower(round(val, 2))}
+              maxValue={smes.output_max / 1000}
+              fillValue={smes.output_load / 1000}
+              step={1}
+              format={(val) => formatPower(round(val * 1000, 2))}
               onChange={(e, value) =>
-                act('smes_out_set', { smes: smes.RCON_tag, value })
+                act('smes_out_set', {
+                  smes: smes.RCON_tag,
+                  value: value * 1000,
+                })
               }
             >
               {formatPower(round(smes.output_load, 2))} Load /{' '}

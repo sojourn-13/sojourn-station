@@ -10,7 +10,9 @@
     }
     &--modal {
       width: 30rem;
+      max-height: 30rem;
       overflow: hidden;
+      overflow-y: auto;
       border-radius: 0.5rem;
     }
     &--cancel {

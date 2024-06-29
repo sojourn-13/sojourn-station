@@ -240,6 +240,12 @@
 		icon_state = "dragon-horns"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
+		
+	uni_horn
+		name = "Unicorn Horn"
+		icon_state = "unicorn_horn"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
 
 	elven_ears
 		name = "Elven Ears"

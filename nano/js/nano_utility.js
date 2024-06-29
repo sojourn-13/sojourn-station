@@ -64,6 +64,7 @@ $(document).ready(function () {
 	NanoStateManager.init();
 	NanoTemplate.init();
 	NanoBaseHelpers.init();
+	window.location = "byond://" + NanoUtility.generateHref({ "nano_internal_ready": 1 });
 });
 
 if (!Array.prototype.indexOf)

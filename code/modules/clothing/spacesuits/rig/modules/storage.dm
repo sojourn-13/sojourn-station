@@ -4,7 +4,6 @@
 	desc = "A series of straps, pouches and internal modifications for a RIGsuit. Has space for quite a few items, though it's a bit bulky and awkward."
 	interface_name = "internal storage compartment"
 	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
-	module_bulk = 0.5 //This gets doubled for stiffness and halved for slowdown.meaning it offers medium stiffness and 0.25 slowdown
 	price_tag = 100
 
 	var/obj/item/storage/internal/container = null
@@ -17,9 +16,17 @@
 	//These vars will be passed onto the storage
 	var/list/can_hold = list() //List of objects which this item can store (if set, it can't store anything else)
 	var/list/cant_hold = list(/obj/item/rig) //List of objects which this item can't store (in effect only if can_hold isn't set)
-	var/max_w_class = ITEM_SIZE_NORMAL //Max size of objects that this object can store (in effect only if can_hold isn't set)
-	var/max_storage_space = DEFAULT_BULKY_STORAGE * 0.7 //This is about a satchel worth of storage.
+	var/max_w_class = ITEM_SIZE_BULKY  //Max size of objects that this object can store (in effect only if can_hold isn't set)
+	var/max_storage_space = DEFAULT_BULKY_STORAGE * 0.5 //This is about a satchel worth of storage
 	var/storage_slots = null //The number of storage slots in this container.
+
+/obj/item/rig_module/storage/large
+	name= "RIG distributed storage system"
+	desc = "A series of straps, pouches and internal modifications for a RIGsuit. This model is distributed across the whole body, and can hold more items but only of a smaller size."
+	interface_name = "large internal storage compartment"
+	interface_desc = "A system of storage integrated into the suits control module."
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_BULKY_STORAGE * 0.7
 
 /obj/item/rig_module/storage/med
 	name = "medical storage system"
@@ -142,6 +149,7 @@
 	container.max_storage_space = max_storage_space
 	container.storage_slots = storage_slots
 	container.master_item = src //If its installed immediately after creation this will get set to the rig in install proc
+	container.w_class = w_class
 	.=..()
 /*****************************
 	Installation

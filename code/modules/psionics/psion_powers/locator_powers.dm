@@ -1,12 +1,14 @@
 
 // Psionic powers that assit in locating someone or something
 
-/obj/item/organ/internal/psionic_tumor/proc/detect_thoughts()
+/mob/living/carbon/human/psionic_tumor/proc/detect_thoughts()
 	set category = "Psionic powers"
 	set name = "Locate Mind-Essence (5)"
 	set desc = "Expend five points of essence to psionically detect the thoughts and location of another higher life form. Does not work on animals, cruciform bearers, synthetics, or those \
 	wearing psionic protection. Can locate lingering echoes of thoughts in the deceased, allowing you to find bodies."
-	psi_point_cost = 5
+	var/psi_point_cost = 5
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	var/list/creatures = list() // Who we can talk to
 	for(var/mob/living/carbon/human/h in world) // Check every players in the game
@@ -16,10 +18,10 @@
 	if (isnull(target))
 		return
 
-	if(pay_power_cost(psi_point_cost) && check_possibility()) //Doesn't use the normal check possibility flags since we want it to work on dead people
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility()) //Doesn't use the normal check possibility flags since we want it to work on dead people
 		if(target.psi_blocking >= 10)
-			owner.stun_effect_act(0, target.psi_blocking * 5, BP_HEAD)
-			owner.weakened = target.psi_blocking
+			user.stun_effect_act(0, target.psi_blocking * 5, BP_HEAD)
+			user.weakened = target.psi_blocking
 			usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
 		else
 			var/area/t = get_area(target)

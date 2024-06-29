@@ -99,6 +99,10 @@
 	display_name = "sexy maid dress"
 	path = /obj/item/clothing/under/sexymaid
 
+/datum/gear/uniform/proper_maid
+	display_name = "proper maid dress"
+	path = /obj/item/clothing/under/costume/propermaid
+
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
 	path = /obj/item/clothing/under/modular

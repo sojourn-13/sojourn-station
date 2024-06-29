@@ -10,6 +10,8 @@
 	available_on_ntnet = TRUE
 	var/browsing
 	var/open_file
+	// WARNING: UNSANITIZED VARIABLE
+	// THIS MUST BE SANITIZED BEFORE BEING SENT ANYWHERE VULNERABLE TO HTML
 	var/loaded_data = ""
 	var/error
 	var/is_edited
@@ -74,8 +76,9 @@
 	data["usbfiles"] = usbfiles
 	
 	data["open_file"] = open_file
-	data["loaded_data"] = replacetext(loaded_data, "\[br\]", "\n")
-	data["loaded_data_html"] = pencode2html(loaded_data)
+	data["loaded_data"] = loaded_data
+	data["loaded_data_html"] = pencode2html(sanitize(replacetext(loaded_data, "\n", "\[br\]"), MAX_TEXTFILE_LENGTH))
+	data["max_length"] = MAX_TEXTFILE_LENGTH
 
 	return data
 
@@ -131,14 +134,14 @@
 			. = TRUE
 
 		if("PRG_editfile")
-			loaded_data = sanitize(params["text"], MAX_TEXTFILE_LENGTH)
+			loaded_data = copytext(params["text"], 1, MAX_TEXTFILE_LENGTH)
 			return TRUE
 
 		if("PRG_printfile")
 			if(!computer.printer)
 				error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 				return TRUE
-			if(!computer.printer.print_text(pencode2html(loaded_data)))
+			if(!computer.printer.print_text(pencode2html(sanitize(replacetext(loaded_data, "\n", "\[br\]"), MAX_TEXTFILE_LENGTH))))
 				error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 				return TRUE
 			. = TRUE

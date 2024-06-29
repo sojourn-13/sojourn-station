@@ -74,7 +74,8 @@
 			/obj/item/rig_module/storage,
 			/obj/item/rig_module/storage/engi,
 			/obj/item/rig_module/storage/med,
-			/obj/item/rig_module/storage/combat
+			/obj/item/rig_module/storage/combat,
+			/obj/item/rig_module/storage/large
 		)
 	)
 

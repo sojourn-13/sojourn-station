@@ -13,6 +13,7 @@
 			var/obj/item/organ/internal/psionic_tumor/B = new /obj/item/organ/internal/psionic_tumor
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 /mob/proc/make_psion_psych()
 	var/mob/living/carbon/human/user = src
@@ -25,6 +26,7 @@
 			var/obj/item/organ/internal/psionic_tumor/psychiatrist/B = new /obj/item/organ/internal/psionic_tumor/psychiatrist
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 //Special proc call for psions to check for nanogate
 /obj/item/organ/internal/psionic_tumor/replaced(obj/item/organ/external/affected)
@@ -96,6 +98,7 @@
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
+	psion_verb_remove()
 	disabled = TRUE
 	allow_loop = TRUE
 

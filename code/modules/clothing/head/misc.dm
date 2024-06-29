@@ -611,3 +611,35 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	desc = "A religious hood that can be colored."
 	icon_state = "general_hood"
 	item_state = "general_hood"
+
+
+/obj/item/clothing/head/hev
+
+	name = "Hazardous Enviroment Protection suit helmet"
+	desc = "A hood that comes with the hazardous protection suit."
+	icon_state = "rad"
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "hardhat_light"
+	armor_list = list(
+		melee = 60,
+		bullet = 55,
+		energy = 50,
+		bomb = 75,
+		bio = 100,
+		rad = 100
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	siemens_coefficient = 0.4
+	w_class = ITEM_SIZE_NORMAL
+	item_flags = STOPPRESSUREDAMAGE //hardhat has it? So this gets it to.
+	heat_protection = HEAD
+	cold_protection = HEAD
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
+	price_tag = 1000
