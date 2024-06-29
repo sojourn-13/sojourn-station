@@ -40,11 +40,6 @@
 	icon_state = "folder_yellow"
 	bg_color = "#b88f3d"
 
-/obj/item/folder/white
-	desc = "A white folder."
-	icon_state = "folder_white"
-	bg_color = "#d9d9d9"
-
 /obj/item/folder/syndicate
 	icon_state = "folder_red"
 	bg_color = "#3f3f3f"
