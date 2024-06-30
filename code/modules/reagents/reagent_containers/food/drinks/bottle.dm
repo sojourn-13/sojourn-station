@@ -354,6 +354,7 @@
 	name = "Neuland Himbeergeist"
 	desc = "A kriosan-approved spirits covered in german text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
 	icon_state = "neulandschnapps"
+	icon_state_empty = "neulandschnapps"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("schnapps" = 100)
 
