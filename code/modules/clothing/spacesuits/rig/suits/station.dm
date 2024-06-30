@@ -15,6 +15,9 @@
 /obj/item/clothing/head/helmet/space/rig/medical
 	camera_networks = list(NETWORK_MEDICAL)
 
+/obj/item/clothing/head/helmet/space/rig/cmo
+	camera_networks = list(NETWORK_MEDICAL)
+
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera_networks = list(NETWORK_SECURITY)
@@ -409,7 +412,7 @@ Technomancer RIG
 		/obj/item/rig_module/storage/large
 		)
 
-/obj/item/rig/light/ultra_light/cmo
+/obj/item/rig/cmo
 	name = "SI 'Medtek' control module"
 	suit_type = "SI 'Medtek"
 	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
@@ -424,10 +427,10 @@ Technomancer RIG
 		rad = 20
 	)
 	req_access = list(access_cmo)
-	airtight = 0
 	seal_delay = 4 //built for speed
 	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
-
+	helm_type = /obj/item/clothing/head/helmet/space/rig/cmo
+	max_upgrades = 1
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/modular_injector/medical/preloaded,
