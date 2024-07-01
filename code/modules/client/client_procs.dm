@@ -98,8 +98,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return prefs.process_link(usr,href_list)
 		if("vars")
 			return view_var_Topic(href,href_list,hsrc)
-		if("chat")
-			return chatOutput.Topic(href, href_list)
 
 	switch(href_list["action"])
 		if("openLink")
@@ -203,11 +201,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	clients += src
 	directory[ckey] = src
 
-	// Instantiate ~~tgui~~ goonchat panel
-	// tgui_panel = new(src)
+	// Instantiate tgui panel
+	tgui_panel = new(src, "browseroutput")
+
 	tgui_say = new(src, "tgui_say")
 	initialize_commandbar_spy()
-	chatOutput = new /datum/chatOutput(src)
 
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
@@ -278,10 +276,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Initialize tgui panel
 	// src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
-	// tgui_panel.initialize()
+	// Initialize tgui panel
+	tgui_panel.initialize()
+
 	tgui_say.initialize()
-	// Starts the chat
-	chatOutput.start()
 
 	connection_time = world.time
 	connection_realtime = world.realtime

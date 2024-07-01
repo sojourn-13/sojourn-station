@@ -39,7 +39,7 @@
 /datum/tgui_panel/proc/initialize(force = FALSE)
 	set waitfor = FALSE
 	// Minimal sleep to defer initialization to after client constructor
-	sleep(1)
+	sleep(1 TICKS)
 	initialized_at = world.time
 	// Perform a clean initialization
 	window.initialize(
@@ -49,7 +49,7 @@
 		))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))
-	window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat))
+	// window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat)) // Emoji, language icons, CRAFTING ITEMS
 	// Other setup
 	request_telemetry()
 	addtimer(CALLBACK(src, PROC_REF(on_initialize_timed_out)), 5 SECONDS)
