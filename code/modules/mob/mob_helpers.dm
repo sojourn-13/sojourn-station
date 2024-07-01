@@ -713,7 +713,7 @@ proc/is_blind(A)
 		if (temporary_walk)
 			var/current_time = world.time
 			Ref.walk_to_initial_time = current_time
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), timer)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(walk_to_wrapper_timer), Ref, 0, current_time), timer)
 	walk_to(Ref, Trg, Min, Lag, Speed)
 	return TRUE
 

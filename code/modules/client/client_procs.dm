@@ -111,11 +111,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	//fun fact: Topic() acts like a verb and is executed at the end of the tick like other verbs. So we have to queue it if the server is
 	//overloaded
-	if(hsrc && hsrc != holder && DEFAULT_TRY_QUEUE_VERB(VERB_CALLBACK(src, .proc/_Topic, hsrc, href, href_list)))
+	if(hsrc && hsrc != holder && DEFAULT_TRY_QUEUE_VERB(VERB_CALLBACK(src, PROC_REF(_Topic), hsrc, href, href_list)))
 		return
 	..() //redirect to hsrc.Topic()
 
-///dumb workaround because byond doesnt seem to recognize the .proc/Topic() typepath for /datum/proc/Topic() from the client Topic,
+///dumb workaround because byond doesnt seem to recognize the PROC_REF(Topic)() typepath for /datum/proc/Topic() from the client Topic,
 ///so we cant queue it without this
 /client/proc/_Topic(datum/hsrc, href, list/href_list)
 	return hsrc.Topic(href, href_list)
@@ -264,11 +264,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			// log_suspicious_login("Failed Login: [key] - Spoofed byond version")
 			qdel(src)
 
-		// TODO: Remove when 515 is stable
-		if (byond_version >= 515)
-			to_chat(src, span_userdanger("WARNING: This server does not support BYOND versions above 514.1589, but you are running [byond_version].[byond_build]! This is known to cause issues such as UI windows not working!"))
-			to_chat(src, span_danger("Please downgrade to <a href=\"https://secure.byond.com/download/build/514\">BYOND 514.1589</a> or earlier."))
-
 		if (num2text(byond_build) in GLOB.blacklisted_builds)
 			log_access("Failed login: [key] - blacklisted byond version")
 			to_chat(src, span_userdanger("Your version of byond is blacklisted."))
@@ -282,7 +277,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	// Initialize tgui panel
 	// src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	// addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
+	// addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
 	// tgui_panel.initialize()
 	tgui_say.initialize()
 	// Starts the chat
@@ -592,7 +587,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 		//Precache the client with all other assets slowly, so as to not block other browse() calls
 		// if (CONFIG_GET(flag/asset_simple_preload))
-		addtimer(CALLBACK(SSassets.transport, /datum/asset_transport.proc/send_assets_slow, src, SSassets.transport.preload), 5 SECONDS)
+		addtimer(CALLBACK(SSassets.transport, TYPE_PROC_REF(/datum/asset_transport, send_assets_slow), src, SSassets.transport.preload), 5 SECONDS)
 
 		// #if (PRELOAD_RSC == 0)
 		// for (var/name in GLOB.vox_sounds)

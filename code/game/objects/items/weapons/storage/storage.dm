@@ -52,25 +52,25 @@
 /HUD_element/slottedItemBackground
 	icon = 'icons/HUD/block.png'
 
-/obj/item/storage/proc/storageBackgroundClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
+/proc/storageBackgroundClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
 	var/atom/A = sourceElement.getData("item")
 	if(A)
 		var/obj/item/I = clientMob.get_active_hand()
 		if(I)
 			clientMob.ClickOn(A)
 
-/obj/item/storage/proc/itemBackgroundClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
+/proc/itemBackgroundClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
 	var/atom/A = sourceElement.getData("item")
 	if(A)
 		clientMob.ClickOn(A)
 
-/obj/item/storage/proc/closeButtonClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
+/proc/closeButtonClick(var/HUD_element/sourceElement, var/mob/clientMob, location, control, params)
 	var/obj/item/storage/S = sourceElement.getData("item")
 	if(S)
 		S.close(clientMob)
 
 /obj/item/storage/proc/setupItemBackground(var/HUD_element/itemBackground, var/atom/item, var/itemCount)
-	itemBackground.setClickProc(.proc/itemBackgroundClick)
+	itemBackground.setClickProc(GLOBAL_PROC_REF(itemBackgroundClick))
 	itemBackground.setData("item", item)
 
 	var/HUD_element/itemIcon = itemBackground.add(new/HUD_element())
@@ -100,7 +100,7 @@
 	closeButton.setName("HUD Storage Close Button")
 	closeButton.setIcon(icon("icons/mob/screen1.dmi","x"))
 	closeButton.setHideParentOnClick(TRUE)
-	closeButton.setClickProc(.proc/closeButtonClick)
+	closeButton.setClickProc(GLOBAL_PROC_REF(closeButtonClick))
 	closeButton.setData("item", src)
 
 	//storage space based items
@@ -114,7 +114,7 @@
 		storageBackground.setName("HUD Storage Background")
 		storageBackground.setHideParentOnHide(TRUE)
 
-		storageBackground.setClickProc(.proc/storageBackgroundClick)
+		storageBackground.setClickProc(GLOBAL_PROC_REF(storageBackgroundClick))
 		storageBackground.setData("item", src)
 
 		var/paddingSides = 2 //in pixels
@@ -198,7 +198,7 @@
 
 				currentItemNumber++
 			else //empty slots
-				itemBackground.setClickProc(.proc/storageBackgroundClick)
+				itemBackground.setClickProc(GLOBAL_PROC_REF(storageBackgroundClick))
 				itemBackground.setData("item", src)
 
 			totalWidth += itemBackground.getWidth() + spacingBetweenSlots

@@ -44,11 +44,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		if (ishuman(body))
 			var/mob/living/carbon/human/H = body
 			icon = H.stand_icon
-			copy_overlays(H.overlays_standing, TRUE)
+			copy_overlays(H, TRUE)
 		else
 			icon = body.icon
 			icon_state = body.icon_state
-			copy_overlays(body.get_overlays(), TRUE)
+			copy_overlays(body, TRUE)
 
 		alpha = 127
 

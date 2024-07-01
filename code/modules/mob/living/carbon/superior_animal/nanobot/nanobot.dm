@@ -128,8 +128,8 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/nanobot/update_icon()
-	overlays.Cut()
-	overlays += image(icon, "[icon_state]_lights")
+	cut_overlays()
+	add_overlay(image(icon, "[icon_state]_lights"))
 
 
 // For repairing damage to the bot.

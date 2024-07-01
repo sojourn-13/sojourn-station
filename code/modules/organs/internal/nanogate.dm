@@ -110,4 +110,4 @@ obj/item/organ/internal/nanogate/artificer
 		targeted_organ = owner.random_organ_by_process(pick(listed_organs))
 		targeted_organ.damage += rand (5,10)
 		owner.apply_effect(60, HALLOSS)
-		addtimer(CALLBACK(src, .proc/die), 1 MINUTES, TIMER_STOPPABLE)
+		addtimer(CALLBACK(src, PROC_REF(die)), 1 MINUTES, TIMER_STOPPABLE)

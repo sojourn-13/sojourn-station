@@ -526,7 +526,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	can_fire_next = FALSE
-	addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), fire_delay)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), fire_delay)
 
 	if(muzzle_flash)
 		set_light(muzzle_flash)
@@ -606,7 +606,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
-		addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), min(0, (fire_delay - fire_delay * 0.33)))
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), min(0, (fire_delay - fire_delay * 0.33)))
 
 	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()

@@ -10,7 +10,7 @@ if(!decls_by_name) \
 	for(var/decl_type in decls_by_type) \
 	{\
 		var##decl_prototype/decl_instance = decls_by_type[decl_type];\
-		ADD_SORTED(decls_by_name, decl_instance.name, /proc/cmp_text_asc);\
+		ADD_SORTED(decls_by_name, decl_instance.name, GLOBAL_PROC_REF(cmp_text_asc));\
 		decls_by_name[decl_instance.name] = decl_instance;\
 	}\
 }

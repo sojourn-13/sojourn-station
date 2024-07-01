@@ -116,7 +116,7 @@
 
 /obj/item/gun/energy/zwang/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stunshot")
 		add_overlay("tazer_zwang")

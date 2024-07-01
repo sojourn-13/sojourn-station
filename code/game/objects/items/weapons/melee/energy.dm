@@ -292,10 +292,10 @@
 
 /obj/item/melee/energy/blade/attack_self(mob/user as mob)
 	user.drop_from_inventory(src)
-	addtimer(CALLBACK(src, .proc/dequel_check), 1)
+	addtimer(CALLBACK(src, PROC_REF(dequel_check)), 1)
 
 /obj/item/melee/energy/blade/dropped()
-	addtimer(CALLBACK(src, .proc/dequel_check), 1)
+	addtimer(CALLBACK(src, PROC_REF(dequel_check)), 1)
 
 /obj/item/melee/energy/blade/Process()
 	if(!creator || loc != creator || (creator.l_hand != src && creator.r_hand != src))
@@ -310,7 +310,7 @@
 			host.pinned -= src
 			host.embedded -= src
 			host.drop_from_inventory(src)
-		addtimer(CALLBACK(src, .proc/dequel_check), 1)
+		addtimer(CALLBACK(src, PROC_REF(dequel_check)), 1)
 
 /obj/item/melee/energy/blade/organ_module //just to make sure that blade doesnt delet itself
 	dequel_self = FALSE

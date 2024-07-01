@@ -32,7 +32,7 @@ particle whenever the target moves
 
 	//Moved event is a global datum of type /decl/observ/moved
 	//It will fire a proc whenever the holder atom moves from one turf to another
-	GLOB.moved_event.register(holder, src, /datum/effect/effect/system/trail/proc/holder_moved)
+	GLOB.moved_event.register(holder, src, TYPE_PROC_REF(/datum/effect/effect/system/trail, holder_moved))
 
 	active = TRUE
 
@@ -50,7 +50,7 @@ particle whenever the target moves
 	return E
 
 /datum/effect/effect/system/trail/proc/stop()
-	GLOB.moved_event.unregister(holder, src, /datum/effect/effect/system/trail/proc/holder_moved)
+	GLOB.moved_event.unregister(holder, src, TYPE_PROC_REF(/datum/effect/effect/system/trail, holder_moved))
 	active = FALSE
 
 /////////////////////////////////////////////
@@ -108,7 +108,7 @@ Their only special behaviour atm is to delete themselves shortly after creation
 	opacity = FALSE
 
 /obj/effect/trail_particle/Initialize()
-	addtimer(CALLBACK(src, .proc/finish, TRUE), lifetime)
+	addtimer(CALLBACK(src, PROC_REF(finish), TRUE), lifetime)
 
 /obj/effect/trail_particle/proc/finish()
 	qdel(src)

@@ -18,7 +18,7 @@
 
 	//Do a sort
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_COOKING]
-	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_cook)
+	C.entry_list = sortTim(C.entry_list, GLOBAL_PROC_REF(cmp_catalog_entry_cook))
 
 //Because I want it to be EXTREMELY ORGANIZED.
 /proc/cmp_catalog_entry_cook(datum/catalog_entry/cooking/a, datum/catalog_entry/cooking/b)

@@ -448,10 +448,10 @@
 
 /obj/machinery/door/proc/swap_density(opening)
 	if(opening == TRUE)
-		addtimer(CALLBACK(src, .proc/open_layering), 6)
+		addtimer(CALLBACK(src, PROC_REF(open_layering)), 6)
 		density = FALSE
 	else
-		addtimer(CALLBACK(src, .proc/closeing_layering), 7)
+		addtimer(CALLBACK(src, PROC_REF(closeing_layering)), 7)
 		density = TRUE
 	update_nearby_tiles()
 
@@ -468,11 +468,11 @@
 
 	do_animate("opening")
 	icon_state = "door0"
-	addtimer(CALLBACK(src, .proc/swap_density, TRUE), 3)
+	addtimer(CALLBACK(src, PROC_REF(swap_density), TRUE), 3)
 
 	if(autoclose)
 		var/wait = normalspeed ? 150 : 5
-		addtimer(CALLBACK(src, .proc/close), wait)
+		addtimer(CALLBACK(src, PROC_REF(close)), wait)
 
 	return TRUE
 
@@ -491,7 +491,7 @@
 	operating = TRUE
 
 	do_animate("closing")
-	addtimer(CALLBACK(src, .proc/swap_density, density, FALSE), 3)
+	addtimer(CALLBACK(src, PROC_REF(swap_density), density, FALSE), 3)
 
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!

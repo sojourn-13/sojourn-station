@@ -527,12 +527,12 @@
 	return ..()
 
 /obj/machinery/matter_nanoforge/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	icon_state = initial(icon_state)
 
 	if(panel_open)
-		overlays.Add(image(icon, "[icon_state]_panel"))
+		add_overlay(image(icon, "[icon_state]_panel"))
 
 	if(working) // if paused, work animation looks awkward.
 		if(paused || error)

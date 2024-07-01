@@ -125,7 +125,7 @@
 
 /obj/item/gun/energy/begin_charge(mob/living/user)
 	to_chat(user, SPAN_NOTICE("You begin charging \the [src]."))
-	overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
+	overcharge_timer = addtimer(CALLBACK(src, PROC_REF(add_charge), user), overcharge_timer_step, TIMER_STOPPABLE)
 
 /obj/item/gun/energy/add_charge(mob/living/user)
 	deltimer(overcharge_timer)
@@ -134,7 +134,7 @@
 		to_chat(user, SPAN_NOTICE("[src] is now at [overcharge_level]/[overcharge_max] beam charge."))
 		set_light(2, overcharge_level/2, "#ff0d00")
 		if(overcharge_level < overcharge_max)
-			overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
+			overcharge_timer = addtimer(CALLBACK(src, PROC_REF(add_charge), user), overcharge_timer_step, TIMER_STOPPABLE)
 		else
 			visible_message(SPAN_NOTICE("\The [src] clicks."))
 		return

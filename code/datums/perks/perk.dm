@@ -91,7 +91,7 @@
 	if(istype(L))
 		SHOULD_CALL_PARENT(TRUE)
 		holder = L
-		RegisterSignal(holder, COMSIG_MOB_LIFE, .proc/on_process)
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
 		to_chat(holder, SPAN_NOTICE("[gain_text]"))
 		return TRUE
 

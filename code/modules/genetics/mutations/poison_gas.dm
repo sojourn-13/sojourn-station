@@ -27,7 +27,7 @@
 	//Every minute, add 10u of Blattedin. This means that the ability can be used every minute,
 	//Or, optionally, the effect can be saved and used once every 10 minutes.
 	if(!call_back_true)
-		addtimer(CALLBACK(src, /datum/genetics/mutation/psn_breath/proc/add_blattedin_to_sac), reagent_add_cooldown)
+		addtimer(CALLBACK(src, PROC_REF(add_blattedin_to_sac)), reagent_add_cooldown)
 		call_back_true = TRUE
 	return
 

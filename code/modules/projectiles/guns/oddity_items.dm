@@ -218,7 +218,7 @@
 	if (user)
 		user.show_message(SPAN_WARNING("Your [src] charges up! Throw it at your enemies!"))
 	throwforce = WEAPON_FORCE_LETHAL //Bonus style!
-	timerid = addtimer(CALLBACK(src, .proc/crack), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(crack)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/crack()
 	var/turf/T = get_turf(src)
@@ -232,7 +232,7 @@
 	qdel(src)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/borrowedtime()
-	timerid = addtimer(CALLBACK(src, .proc/crack), 1 MINUTES, TIMER_UNIQUE|TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(crack)), 1 MINUTES, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/throw_impact(atom/hit_atom)
 	if(!..()) //not caught in mid-air
@@ -283,7 +283,7 @@
 /obj/item/clothing/accessory/holster/bluecross/proc/recharge()
 	if(stored < spam_protection)
 		stored++
-	addtimer(CALLBACK(src, .proc/recharge), spam_protection_delay)
+	addtimer(CALLBACK(src, PROC_REF(recharge)), spam_protection_delay)
 
 /obj/item/clothing/accessory/holster/bluecross/unholster(mob/user as mob)
 	if(user.lying)

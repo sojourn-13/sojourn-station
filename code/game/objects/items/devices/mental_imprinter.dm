@@ -43,7 +43,7 @@
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)//Buzz go brr, just flavor
 		return ..()
 
-	INVOKE_ASYNC(src, .proc/imprint, user)
+	INVOKE_ASYNC(src, PROC_REF(imprint), user)
 
 /obj/item/device/mental_imprinter/examine(mob/user)
 	. = ..()

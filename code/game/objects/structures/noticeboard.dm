@@ -109,7 +109,7 @@
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: Equipment handling"
 	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that duty-gear is not to be left lying around and unsecured - Agent Sanja"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -117,7 +117,7 @@
 	P.name = "Memo RE: Recorder"
 	P.info = "<br>A small note for all personnel, new and old alike. It has come to our attention that there is a fatal operating error in the software of handheld universal recorders that causes them to make \
 	audio files inaccessible should the file fill up. Make a note of it, and switch to a new file BEFORE the recorder turns off due to a full-file, the techies are getting a bit tired of recovering data from these broken files - Ranger Doe"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -127,14 +127,14 @@
 <li> Clearing hallway maintenance tunnels and any potential dangers <small>{The main point is to avoid any local vermin from wandering into the hallways and to reduce any potential injuries. Take it slow if you must and bring back up when needed. You're the last line of defence for the colony when others fail or are too weak to defend themselves. Stay alive and stay smart}</small><li> Scocial presence and patrols \
 <small>{Our job is not to sit around and hide in our box, get out there and keep the public trust with a simple 'Hello' and asking about their day. We're what they look to for support when times get tough. Keep your eyes open for possible infractions and always represent the marshals with the safety of the colony in mind}</small> <li> Study and training\
 <small>{It's not a shameful thing to look back on your knowledge for help, some days we all need a hand. Being able to keep an active mind like steel and the ability to accurately divine the law will be a well  used skill. Much like our local church they teach us to keep body spirit and mind in balance, so to must we learn to improve on these with mental drills, situational training with our team, and rest when we need it.}</small></ul> <hr><hr>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
 	P = new()
 	P.name = "Instructions; Bullet Fabrication Operation"
 	P.info = "<br>An instructional guide to the usage of our newly aquired bullet fabricator. <br> - Do <b>NOT</b> stick your hand in it. <br> - Do <b>NOT</b> stick your head in it. <br> - Do <b>NOT</b> insert wood into it. <br> - The <b>better</b> quality of the resources inserted, the more ammo you can print; including refined scrap."
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -149,7 +149,7 @@
 				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
 				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
 				<i>C.Mallory</i></small>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -163,7 +163,7 @@
 				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
 				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
 				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -178,7 +178,7 @@
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: Equipment handling"
 	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that duty-gear is not to be left lying around - Agent Sanja"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -186,7 +186,7 @@
 	P.name = "Memo RE: Gate procedure"
 	P.info = "<br>This is a firm reminder to all Blackshield Personnel to draw their attention to the Gate Operations section of S.O.P, <b>particularly</b> the section detailing proper bolting of the gate when present and \
 	<b><i>UNBOLTING</b></i> of the gate in a <b><i>TIMELY</b></i> fashion that means within not more than five m The next trooper to get a fax sent because he left the foreman bolted outside is going to be scrubbing the latrines with his toothbrust - Sgt Dansen"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -201,7 +201,7 @@
 				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
 				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
 				<i>C.Mallory</i></small>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -215,7 +215,7 @@
 				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
 				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
 				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -231,7 +231,7 @@
 	P.name = "Memo RE: Initial setup"
 	P.info = "<br>Note to all biolab staff:<br> Please remember to set up the cryo cooler to 80K, attach anesthetic tanks to the surgery stands and make the following basic chems -<br><ul> <li> Bicaridine<br><li> Keloderm (1 part Kelotane, 1 part Dermaline)<br>\
 	<li> Carthatoline<br><li> Dexalin Plus (in 5u pills)<br> <li> Tramadol (in 5u pills)<br><li> Sanguinum<br><li> Peridaxon using the leftover Cronexadone<br><li> Cronexadone (to be mixed in two parts with the beakers next to the cryo tubes)</ul><br>Thank you Dears - Dr M. Bright"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -256,7 +256,7 @@
 	<li> Reseed the field. In case the field get removed completely, more crystals can be seeded with either 5 ameridian shard, or by splashing at least 10u of Liquid Ameridian on the floor.\
 	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
 	<li> Carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -284,7 +284,7 @@
 	<li>Step 4: Get a Cargo Tech or SOM to export the wrapped crate. \
 	<li>Step 5: Make sure to get your cut of the sale, and then have the crate when they are done with it.<hr></li>\
 	<b>Signed Pravel Marsk<br>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -313,7 +313,7 @@
 	<li> Seismic activity 6: SEVEN BURROWS. FIVE TERMITES. Expect basically ONLY the beefy motherfuckers and get ready to BEAT SHIT DOWN FAST. THEY ARE COMING, AND THERE ARE MANY. Now it's literally two minutes between burrows and only sixty seconds between large groups coming from them. \
 	<b>Do not put your drill on an activity 6 spot if you ain't prepared for it, stuff WILL get out of hand, you WILL be overrun.</b></ul><br>Yeah that's about it, see ya'.<br>\
 	P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -328,7 +328,7 @@
 	<li> You can also use the Handheld Sonic emitter to destroy the golem, using said Sonic emitter will not result in you getting extra shards from the golems, or from the crystals if used.\
 	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
 	<li> If you set up a Sonic Fence, carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
@@ -342,7 +342,7 @@
 	<li>Step 4: EXPORT the <b>WRAPPED CRATE</b>.\
 	<li>Step 5: Make sure to give them their cut of the sale, and the crate back when done.<hr></li>\
 	<b>Signed Pravel Marsk<br>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	update_icon()
@@ -358,7 +358,7 @@
 	var/obj/item/paper/P = new()  write this later, idr the steps
 	P.name = "Memo RE: Bio-gen troubleshooting"
 	P.info = "<br> "
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	*/

@@ -8,7 +8,7 @@
 	if(cooldown == FALSE)
 		cooldown = TRUE
 		emp_in(src.loc, 4, 6, 0)
-		addtimer(CALLBACK(src, .proc/cool_dowed), 360)
+		addtimer(CALLBACK(src, PROC_REF(cool_dowed)), 360)
 
 /obj/structure/satellite/proc/cool_dowed()
 	cooldown = FALSE

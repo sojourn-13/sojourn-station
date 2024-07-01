@@ -143,7 +143,7 @@
 //Soj Changes
 #define CLIENT_MIN_FPS 0 //SERVER sync
 
-#define CLIENT_MAX_FPS 60 //Do not go above this or byond goes fucky
+#define CLIENT_MAX_FPS 200 //Do not go above this or byond goes fucky
 //Soj End of SoJ
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
@@ -268,10 +268,6 @@
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
 
-// Overlays
-// (placeholders for if/when TG overlays system is ported)
-//#define cut_overlays(...)			overlays.Cut()
-
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
 
 
@@ -379,29 +375,6 @@
 
 //Lying animation
 #define ANIM_LYING_TIME 2
-
-// Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
-// TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
-#define COMPILE_OVERLAYS(A)\
-    do {\
-        var/list/oo = A.our_overlays;\
-        var/list/po = A.priority_overlays;\
-        if(LAZYLEN(po)){\
-            if(LAZYLEN(oo)){\
-                A.overlays = oo + po;\
-            }\
-            else{\
-                A.overlays = po;\
-            }\
-        }\
-        else if(LAZYLEN(oo)){\
-            A.overlays = oo;\
-        }\
-        else{\
-            A.overlays.Cut();\
-        }\
-        A.flags &= ~OVERLAY_QUEUED;\
-    } while (FALSE)
 
 #define LIST_COLOR_RENAME 				\
 	list(								\
