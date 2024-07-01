@@ -10,9 +10,9 @@ List of powers in this page :
 // Create the nanite rig
 /obj/item/organ/internal/nanogate/proc/nanite_rig()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Installation (3)"
+	set name = "Nanite Rigsuit - Installation (1)"
 	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
-	nano_point_cost = 3
+	nano_point_cost = 1
 
 	if(!nanite_rig)
 		nanite_rig = new /obj/item/rig/nanite(src)
@@ -31,19 +31,29 @@ List of powers in this page :
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_meson
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module
 
 			//Add to owner_verbs so it can be removed properly should the need arise.
 			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_meson
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module
 
 // Create the *opifex* nanite rig
 /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Installation (3)"
+	set name = "Nanite Rigsuit - Installation (1)"
 	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
-	nano_point_cost = 3
+	nano_point_cost = 1
 
 	if(!nanite_rig)
 		nanite_rig = new /obj/item/rig/nanite/opifex(src)
@@ -62,12 +72,23 @@ List of powers in this page :
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_meson
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module
 
 			//Add to owner_verbs so it can be removed properly should the need arise.
 			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_meson
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module
+
 /*
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
@@ -77,7 +98,7 @@ List of powers in this page :
 	nano_point_cost = 1
 
 	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+		to_chat(owner, "You need a rig to use this power")
 		return
 
 	if(pay_power_cost(nano_point_cost))
@@ -88,12 +109,12 @@ List of powers in this page :
 // Give the nanite rig a Laser Cannon
 /obj/item/organ/internal/nanogate/proc/nanite_rig_laser()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Laser Module (2)"
+	set name = "Nanite Rigsuit - Laser Module (1)"
 	set desc = "Use some of your nanites to create a mounted laser gun on your rigsuit."
-	nano_point_cost = 2
+	nano_point_cost = 1
 
 	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+		to_chat(owner, "You need a rig to use this power.")
 		return
 
 	if(pay_power_cost(nano_point_cost))
@@ -104,12 +125,12 @@ List of powers in this page :
 // Give the nanite rig an Autodoc Module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Autodoc Module (5)"
+	set name = "Nanite Rigsuit - Autodoc Module (2)"
 	set desc = "Use many of your nanites to create a surgery module inside your hardsuit."
-	nano_point_cost = 5
+	nano_point_cost = 2
 
 	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+		to_chat(owner, "You need a rig to use this power")
 		return
 
 	if(pay_power_cost(nano_point_cost))
@@ -130,7 +151,7 @@ List of powers in this page :
 	nano_point_cost = 1
 
 	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+		to_chat(owner, "You need a rig to use this power")
 		return
 
 	if(pay_power_cost(nano_point_cost))
@@ -140,5 +161,104 @@ List of powers in this page :
 		eva_module.Initialize()
 
 		nanite_rig.install(eva_module)
-		to_chat(owner, "Your spine hurt as the nanites start to work on making an autodoc module.")
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an eva module.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+
+/obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Health Scanner Module (1)"
+	set desc = "Use some of your nanites to create a health scanner inside your hardsuit."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		var/obj/item/rig_module/device/healthscanner/healhtscanner_module = new /obj/item/rig_module/device/healthscanner(src)
+		healhtscanner_module.Initialize()
+
+		nanite_rig.install(healhtscanner_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_healthscanner
+
+/obj/item/organ/internal/nanogate/proc/nanite_rig_meson()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Meson Module (1)"
+	set desc = "Use some of your nanites to create a meson scanner inside your hardsuit."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		var/obj/item/rig_module/vision/meson/meson_module = new /obj/item/rig_module/vision/meson(src)
+		meson_module.Initialize()
+
+		nanite_rig.install(meson_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_meson
+
+/obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Power Sink Module (1)"
+	set desc = "Use some of your nanites to create a power sink inside your hardsuit. Make sure to only use it on floor wires to not mess with APCs."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		var/obj/item/rig_module/power_sink/power_sink_module = new /obj/item/rig_module/power_sink(src)
+		power_sink_module.Initialize()
+
+		nanite_rig.install(power_sink_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_power_sink
+
+/obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Energy Blade Module (1)"
+	set desc = "Use some of your nanites to create a energy blade inside your hardsuit."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		var/obj/item/rig_module/held/energy_blade/energy_blade_module = new /obj/item/rig_module/held/energy_blade(src)
+		energy_blade_module.Initialize()
+
+		nanite_rig.install(energy_blade_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_e_blade
+
+
+
+/obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Storage Module (1)"
+	set desc = "Use some of your nanites to create a storage module inside your hardsuit."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		var/obj/item/rig_module/storage_module = new /obj/item/rig_module/storage(src)
+		storage_module.Initialize()
+
+		nanite_rig.install(storage_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_storage_module
+
+

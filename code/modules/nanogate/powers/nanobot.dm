@@ -15,9 +15,9 @@ List of powers in this page :
 // Create the nanobot everything else on this page is centered around.
 /obj/item/organ/internal/nanogate/proc/create_nanobot()
 	set category = "Nanogate Powers"
-	set name = "Create Nanobot (2)"
+	set name = "Create Nanobot (1)"
 	set desc = "Spend some of your nanites to create a loyal robot you have an extensive amount of control over."
-	nano_point_cost = 2
+	nano_point_cost = 1
 
 	if(!Stand) // Do they already have the bot?
 		var/bot_name = input(owner, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as text
@@ -129,9 +129,9 @@ List of powers in this page :
 // Powers that activate various modes for the bot.
 /obj/item/organ/internal/nanogate/proc/autodoc_mode()
 	set category = "Nanogate Robot"
-	set name = "Activate Nanobot Protocol - Medibot (4)"
+	set name = "Activate Nanobot Protocol - Medibot (2)"
 	set desc = "Spend some of your nanites to activate a medical protocol in your nanobot."
-	nano_point_cost = 4
+	nano_point_cost = 2
 
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
