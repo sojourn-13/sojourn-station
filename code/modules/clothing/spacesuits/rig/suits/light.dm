@@ -69,6 +69,7 @@
 /obj/item/clothing/shoes/magboots/rig/light/ultra_light
 /obj/item/clothing/head/helmet/space/rig/light/ultra_light
 	name = "HUD"
+	body_parts_covered = EYES|EARS
 	flags_inv = 0
 	camera_networks = list(NETWORK_RESEARCH)
 
@@ -129,6 +130,7 @@
 //The cybersuit is not space-proof. It does however, have good siemens_coefficient values
 /obj/item/clothing/head/lightrig/hacker
 	name = "HUD"
+	body_parts_covered = EYES|EARS
 	siemens_coefficient = 0.4
 	flags = 0
 
