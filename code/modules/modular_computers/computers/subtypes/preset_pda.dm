@@ -32,17 +32,21 @@
 
 /obj/item/modular_computer/pda/engineering
 	icon_state = "pda-e"
+	icon_state_unpowered = "pda-e"
 	scanner_type = /obj/item/computer_hardware/scanner/atmos
 
 /obj/item/modular_computer/pda/security
 	icon_state = "pda-s"
+	icon_state_unpowered = "pda-s"
 
 /obj/item/modular_computer/pda/forensics
 	icon_state = "pda-s"
+	icon_state_unpowered = "pda-s"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
 /obj/item/modular_computer/pda/corpsman
 	icon_state = "pda-s"
+	icon_state_unpowered = "pda-s"
 	scanner_type = /obj/item/computer_hardware/scanner/medical
 
 /obj/item/modular_computer/pda/science
@@ -55,27 +59,33 @@
 
 /obj/item/modular_computer/pda/science/science
 	icon_state = "pda-nt"
+	icon_state_unpowered = "pda-nt"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
 /obj/item/modular_computer/pda/science/medical
 	icon_state = "pda-m"
+	icon_state_unpowered = "pda-m"
 	scanner_type = /obj/item/computer_hardware/scanner/medical
 
 /obj/item/modular_computer/pda/science/chemistry
 	icon_state = "pda-m"
+	icon_state_unpowered = "pda-m"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
 /obj/item/modular_computer/pda/science/roboticist
 	icon_state = "pda-robot"
+	icon_state_unpowered = "pda-robot"
 
 
 /obj/item/modular_computer/pda/church
 	icon_state = "pda-neo"
+	icon_state_unpowered = "pda-neo"
 
 
 /obj/item/modular_computer/pda/heads
 	name = "command PDA"
 	icon_state = "pda-h"
+	icon_state_unpowered = "pda-h"
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv
 	processor_unit_type = /obj/item/computer_hardware/processor_unit/adv/small
 	network_card_type = /obj/item/computer_hardware/network_card/advanced
@@ -84,18 +94,22 @@
 
 /obj/item/modular_computer/pda/heads/hop
 	icon_state = "pda-hop"
+	icon_state_unpowered = "pda-hop"
 	scanner_type = /obj/item/computer_hardware/scanner/paper
 
 /obj/item/modular_computer/pda/heads/hos
 	icon_state = "pda-hos"
+	icon_state_unpowered = "pda-hos"
 	scanner_type = /obj/item/computer_hardware/scanner/paper
 
 /obj/item/modular_computer/pda/heads/ce
 	icon_state = "pda-ce"
+	icon_state_unpowered = "pda-ce"
 	scanner_type = /obj/item/computer_hardware/scanner/atmos
 
 /obj/item/modular_computer/pda/heads/cmo
 	icon_state = "pda-cmo"
+	icon_state_unpowered = "pda-cmo"
 	scanner_type = /obj/item/computer_hardware/scanner/medical
 
 /obj/item/modular_computer/pda/heads/cmo/install_default_programs()
@@ -104,10 +118,12 @@
 
 /obj/item/modular_computer/pda/heads/rd
 	icon_state = "pda-rd"
+	icon_state_unpowered = "pda-rd"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
 /obj/item/modular_computer/pda/captain
 	icon_state = "pda-c"
+	icon_state_unpowered = "pda-c"
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv
 	processor_unit_type = /obj/item/computer_hardware/processor_unit/adv/small
 	network_card_type = /obj/item/computer_hardware/network_card/advanced
@@ -116,6 +132,7 @@
 
 /obj/item/modular_computer/pda/ert
 	icon_state = "pda-h"
+	icon_state_unpowered = "pda-h"
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv
 	processor_unit_type = /obj/item/computer_hardware/processor_unit/adv/small
 	network_card_type = /obj/item/computer_hardware/network_card/advanced
@@ -123,10 +140,12 @@
 
 /obj/item/modular_computer/pda/cargo
 	icon_state = "pda-sup"
+	icon_state_unpowered = "pda-sup"
 	scanner_type = /obj/item/computer_hardware/scanner/price
 
 /obj/item/modular_computer/pda/syndicate
 	icon_state = "pda-syn"
+	icon_state_unpowered = "pda-syn"
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv
 	processor_unit_type = /obj/item/computer_hardware/processor_unit/adv/small
 	network_card_type = /obj/item/computer_hardware/network_card/advanced
@@ -134,6 +153,7 @@
 
 /obj/item/modular_computer/pda/club_worker
 	icon_state = "pda-club"
+	icon_state_unpowered = "pda-club"
 
 /obj/item/modular_computer/pda/club_worker/install_default_programs()
 	..()

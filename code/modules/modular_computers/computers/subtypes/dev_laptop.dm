@@ -5,6 +5,7 @@
 	hardware_flag = PROGRAM_LAPTOP
 	icon = 'icons/obj/modular_laptop.dmi'
 	icon_state = "laptop"
+	icon_state_unpowered = "laptop"
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 4)
 	w_class = ITEM_SIZE_NORMAL
 	base_idle_power_usage = 25
@@ -34,7 +35,6 @@
 /obj/item/modular_computer/laptop/update_icon()
 	..()
 
-	icon_state = initial(icon_state)
 	if(!anchored)
 		cut_overlays()
 		icon_state += "-closed"

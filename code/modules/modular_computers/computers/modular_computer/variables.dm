@@ -29,8 +29,11 @@
 
 	icon = null												// This thing isn't meant to be used on it's own. Subtypes should supply their own icon.
 	icon_state = null
+	var/base
+	var/overlay_icon = null									// Icon file used for overlays - automatically set to "icon" if not present
 	center_of_mass = null									// No pixelshifting by placing on tables, etc.
 	randpixel = 0											// And no random pixelshifting on-creation either.
+	var/icon_state_unpowered = null
 	var/icon_state_menu = "menu"							// Icon state overlay when the computer is turned on, but no program is loaded that would override the screen.
 	var/icon_state_screensaver = "standby"
 	var/max_hardware_size = 0								// Maximal hardware size. Currently, tablets have 1, laptops 2 and consoles 3. Limits what hardware types can be installed.

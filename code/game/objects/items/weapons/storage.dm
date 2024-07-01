@@ -3,8 +3,11 @@
 	desc = "Made to store only the swords of the church."
 	icon = 'icons/obj/sheath.dmi'
 
-	icon_state = "sheath"
-	item_state = "sheath"
+	icon_state = "sheath_0"
+	item_state = "sheath_0"
+	var/base_icon_state = "sheath"
+	var/base_item_state = "sheath"
+
 	slot_flags = SLOT_BELT
 	price_tag = 50
 	matter = list(MATERIAL_BIOMATTER = 5)
@@ -23,23 +26,6 @@
 	insertion_sound = 'sound/effects/sheathin.ogg'
 	extraction_sound = 'sound/effects/sheathout.ogg'
 
-/obj/item/storage/sheath/non_church/general
-	name = "sword sheath"
-	desc = "A leathery-like sheath made to store blades."
-	icon_state = "general_sheath"
-	item_state = "general_sheath"
-
-	can_hold = list(
-		/obj/item/tool/cheap
-		)
-	cant_hold = list(
-		/obj/item/tool/cheap/spear
-		)
-
-/obj/item/storage/sheath/non_church
-	name = "sheath_0"
-	desc = "Made to store swords."
-
 /obj/item/storage/sheath/attack_hand(mob/living/carbon/human/user)
 	if(contents.len && (src in user))
 		var/obj/item/I = contents[contents.len]
@@ -52,12 +38,31 @@
 	else
 		..()
 
+/obj/item/storage/sheath/Initialize(mapload, ...)
+	. = ..()
+	update_icon()
+
 /obj/item/storage/sheath/update_icon()
-	icon_state = initial(icon_state)
-	item_state = initial(item_state)
 	var/icon_to_set
 	for(var/obj/item/SW in contents)
 		icon_to_set = SW.icon_state
-	icon_state = "[icon_state]_[contents.len ? icon_to_set :"0"]"
-	item_state = "[item_state]_[contents.len ? icon_to_set :"0"]"
+	icon_state = "[base_icon_state]_[contents.len ? icon_to_set : "0"]"
+	item_state = "[base_item_state]_[contents.len ? icon_to_set : "0"]"
 	..()
+
+/obj/item/storage/sheath/non_church
+	name = "sheath_0"
+	desc = "Made to store swords."
+
+/obj/item/storage/sheath/non_church/general
+	name = "sword sheath"
+	desc = "A leathery-like sheath made to store blades."
+	base_icon_state = "general_sheath"
+	base_item_state = "general_sheath"
+
+	can_hold = list(
+		/obj/item/tool/cheap
+	)
+	cant_hold = list(
+		/obj/item/tool/cheap/spear
+	)

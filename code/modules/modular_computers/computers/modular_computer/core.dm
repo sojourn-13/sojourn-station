@@ -58,6 +58,12 @@
 			hard_drive.store_file(prog_file)
 
 /obj/item/modular_computer/Initialize()
+	if(!overlay_icon)
+		overlay_icon = icon
+	// Legacy
+	if(!icon_state_unpowered)
+		icon_state_unpowered = icon_state
+
 	START_PROCESSING(SSobj, src)
 
 	if(stores_pen && ispath(stored_pen))
@@ -109,28 +115,40 @@
 		return TRUE
 
 /obj/item/modular_computer/update_icon()
+	icon_state = icon_state_unpowered
+
 	cut_overlays()
-	if (screen_on)
-		if(bsod)
-			add_overlay("bsod")
-			set_light(screen_light_range, screen_light_strength, get_average_color(icon,"bsod"), skip_screen_check = TRUE)
-			return
-		if(!enabled)
-			if(icon_state_screensaver && try_use_power(0))
-				add_overlay(icon_state_screensaver)
-			set_light(0, skip_screen_check = TRUE)
-			return
-		if(active_program)
-			add_overlay(active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
-			var/target_color = get_average_color(icon,active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
-			set_light(screen_light_range, screen_light_strength, target_color, skip_screen_check = TRUE)
-			if(active_program.program_key_state)
-				add_overlay(active_program.program_key_state)
-		else
-			add_overlay(icon_state_menu)
-			set_light(screen_light_range, screen_light_strength, get_average_color(icon,icon_state_menu), skip_screen_check = TRUE)
-	else
+
+	. = list()
+
+	if(!screen_on)
 		set_light(0, skip_screen_check = TRUE)
+		return
+
+	if(!enabled)
+		if(icon_state_screensaver && try_use_power(0))
+			. += mutable_appearance(overlay_icon, icon_state_screensaver)
+		set_light(0, skip_screen_check = TRUE)
+		return add_overlay(.)
+
+	if(bsod)
+		. += mutable_appearance(overlay_icon, "bsod")
+		return add_overlay(.)
+
+	var/target_color
+
+	if(active_program)
+		. += mutable_appearance(overlay_icon, active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+		target_color = get_average_color(overlay_icon, active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+		if(active_program.program_key_state)
+			. += mutable_appearance(overlay_icon, active_program.program_key_state)
+	else
+		. += mutable_appearance(overlay_icon, icon_state_menu)
+		target_color = get_average_color(overlay_icon, icon_state_menu)
+	
+	set_light(screen_light_range, screen_light_strength, target_color, skip_screen_check = TRUE)
+
+	return add_overlay(.)
 
 //skip_screen_check is used when set_light is called from update_icon
 /obj/item/modular_computer/set_light(range, brightness, color, skip_screen_check = FALSE)
