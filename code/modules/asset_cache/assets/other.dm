@@ -55,14 +55,6 @@
 		insert_icon(sprite, uni_icon('icons/obj/chemical.dmi', sprite))
 	insert_icon("supeyrette", uni_icon('icons/obj/syringe.dmi', "supeyrette"))
 
-/datum/asset/simple/perks/register()
-	for(var/type in subtypesof(/datum/perk))
-		var/datum/perk/P = new type
-		var/filename = sanitizeFileName("[type].png")
-		var/icon/I = icon(P.icon, P.icon_state)
-		assets[filename] = I
-	..()
-
 /datum/asset/simple/codicon
 	assets = list(
 		"codicon.css" = 'html/codicon/codicon.css',
