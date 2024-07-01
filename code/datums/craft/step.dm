@@ -62,7 +62,6 @@
 	else if(reqed_material)
 		var/material/M = get_material_by_name("[reqed_material]")
 		tool_name = "units of [M.display_name]"
-	make_desc()
 
 /datum/craft_step/ui_data(mob/user)
 	var/list/data = list()
@@ -72,14 +71,13 @@
 	data["reqed_material"] = reqed_material
 
 	data["icon"] = null
-	data["icon_is_image"] = TRUE
 	if(reqed_type)
-		data["icon"] = iconfile
+		var/datum/asset/spritesheet/crafting/sprites = get_asset_datum(/datum/asset/spritesheet/crafting)
+		data["icon"] = sprites.icon_class_name(sanitize_css_class_name("[reqed_type]"))
 	else if(reqed_material)
 		var/material/M = get_material_by_name("[reqed_material]")
 		var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
 		data["icon"] = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
-		data["icon_is_image"] = FALSE
 
 	return data
 
@@ -91,13 +89,16 @@
 		amt = craft_items[C]
 
 	var/icon = ""
-	if(reqed_type)
-		icon = " <img style=\"margin-bottom:-8px\" src=\"[iconfile]\" height=\"24\" width=\"24\" />"
-	else if(reqed_material)
-		var/material/M = get_material_by_name("[reqed_material]")
-		var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
-		var/css = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
-		icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+	if(SSassets.initialized)
+		if(reqed_type)
+			var/datum/asset/spritesheet/crafting/sprites = get_asset_datum(/datum/asset/spritesheet/crafting)
+			var/css = sprites.icon_class_name(sanitize_css_class_name("[reqed_type]"))
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+		else if(reqed_material)
+			var/material/M = get_material_by_name("[reqed_material]")
+			var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+			var/css = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
 
 	switch(amt)
 		if(0)

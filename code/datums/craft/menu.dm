@@ -22,7 +22,7 @@
 		return list()
 
 	return list(
-		get_asset_datum(/datum/asset/simple/craft),
+		get_asset_datum(/datum/asset/spritesheet/crafting),
 		get_asset_datum(/datum/asset/spritesheet_batched/materials),
 	)
 

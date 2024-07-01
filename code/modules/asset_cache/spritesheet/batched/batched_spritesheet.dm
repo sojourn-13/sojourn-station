@@ -224,7 +224,7 @@
 			return
 		if(ignore_associated_icon_state_errors && findtext(err, "Could not find associated icon state"))
 			return
-		CRASH("Error during spritesheet generation for [name]: [data["error"]]")
+		CRASH("Error during spritesheet generation for [name]: [err]")
 
 /datum/asset/spritesheet_batched/queued_generation()
 	realize_spritesheets(yield = TRUE)
