@@ -7977,6 +7977,7 @@
 	name = "Chemistry Desk";
 	req_access = list(33)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "bGg" = (
@@ -15430,6 +15431,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/reception)
 "dfz" = (
@@ -16903,6 +16905,7 @@
 /area/nadezhda/rnd/xenobiology)
 "duz" = (
 /obj/machinery/vending/medical,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/chemistry)
 "duA" = (
@@ -19335,6 +19338,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "dSm" = (
@@ -20315,6 +20319,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "ecj" = (
@@ -33638,6 +33643,7 @@
 	name = "Chemistry Lab";
 	req_access = list(33)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "gIr" = (
@@ -73042,6 +73048,7 @@
 	name = "Chemistry Desk";
 	req_access = list(33)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "otf" = (
@@ -106818,6 +106825,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/reception)
 "uVu" = (
@@ -120281,6 +120289,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/reception)
 "xBz" = (
@@ -122168,6 +122177,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "xUT" = (
