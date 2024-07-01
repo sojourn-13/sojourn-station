@@ -37,6 +37,7 @@
 		/datum/design/autolathe/sec/gun_case,
 		/datum/design/autolathe/container/ammocan_ih,
 		/datum/design/autolathe/container/ammocan_serb, //Moved from actual ammo disks
+		/datum/design/autolathe/clothing/bmask = 10,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos

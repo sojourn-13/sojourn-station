@@ -50,3 +50,8 @@
 	build_path = /obj/item/clothing/head/space/void/riggedvoidsuit
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 8, MATERIAL_PLASTEEL = 3) //so hand crafting is better
 
+/datum/design/autolathe/clothing/bmask
+	name = "Ballistic Mask"
+	build_path = /obj/item/clothing/head/helmet/faceshield/bmask
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10)
+
