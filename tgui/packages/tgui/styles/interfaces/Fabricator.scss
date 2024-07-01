@@ -38,6 +38,7 @@
   padding: 0.5em;
   border-radius: 0 0 0.25em 0.25em;
   transition: opacity 0.5s ease-in-out;
+  height: 100px;
 }
 
 .MaterialDock--active {
@@ -163,8 +164,8 @@
 .FabricatorMaterialIcon {
   display: inline-block;
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
 
   &__Icon {
     position: absolute;

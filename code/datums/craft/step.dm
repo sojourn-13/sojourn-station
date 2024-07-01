@@ -70,7 +70,16 @@
 	data["amt"] = req_amount
 	data["tool_name"] = tool_name
 	data["reqed_material"] = reqed_material
-	data["icon"] = iconfile
+
+	data["icon"] = null
+	data["icon_is_image"] = TRUE
+	if(reqed_type)
+		data["icon"] = iconfile
+	else if(reqed_material)
+		var/material/M = get_material_by_name("[reqed_material]")
+		var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+		data["icon"] = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
+		data["icon_is_image"] = FALSE
 
 	return data
 
@@ -81,6 +90,15 @@
 			craft_items[C] = req_amount
 		amt = craft_items[C]
 
+	var/icon = ""
+	if(reqed_type)
+		icon = " <img style=\"margin-bottom:-8px\" src=\"[iconfile]\" height=\"24\" width=\"24\" />"
+	else if(reqed_material)
+		var/material/M = get_material_by_name("[reqed_material]")
+		var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+		var/css = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
+		icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+
 	switch(amt)
 		if(0)
 			desc = "Apply [tool_name]"
@@ -88,13 +106,13 @@
 			end_msg = "%USER% applied %ITEM% to %TARGET%"
 		if(1)
 			if(reqed_material)
-				desc = "Attach [amt] [tool_name] <img style=\"margin-bottom:-8px\" src=\"[iconfile]\" height=\"24\" width=\"24\">"
+				desc = "Attach [amt] [tool_name][icon]"
 			else
-				desc = "Attach [tool_name] <img style=\"margin-bottom:-8px\" src=\"[iconfile]\" height=\"24\" width=\"24\">"
+				desc = "Attach [tool_name][icon]"
 			start_msg = "%USER% starts attaching %ITEM% to %TARGET%"
 			end_msg = "%USER% attached %ITEM% to %TARGET%"
 		else
-			desc = "Attach [amt] [tool_name] <img style=\"margin-bottom:-8px\" src=\"[iconfile]\" height=\"24\" width=\"24\">"
+			desc = "Attach [amt] [tool_name][icon]"
 			start_msg = "%USER% starts attaching %ITEM% to %TARGET%"
 			end_msg = "%USER% attached %ITEM% to %TARGET%"
 

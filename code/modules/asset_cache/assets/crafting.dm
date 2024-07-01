@@ -1,11 +1,3 @@
-
-/datum/asset/simple/materials/register()
-	for(var/type in subtypesof(/obj/item/stack/material) - typesof(/obj/item/stack/material/cyborg))
-		var/filename = sanitizeFileName("[type].png")
-		var/icon/I = getFlatTypeIcon(type)
-		assets[filename] = I
-	..()
-
 /datum/asset/simple/craft/register()
 	var/list/craftStep = list()
 	for(var/name in SScraft.categories)
@@ -48,4 +40,15 @@
 		var/class_name = sanitize_css_class_name("[type]")
 		var/datum/universal_icon/I = uni_icon(initial(O.icon), initial(O.icon_state))
 		I.scale(64, 64)
+		insert_icon(class_name, I)
+
+/datum/asset/spritesheet_batched/materials
+	name = "materials"
+
+/datum/asset/spritesheet_batched/materials/create_spritesheets()
+	for(var/type in subtypesof(/obj/item/stack/material) - typesof(/obj/item/stack/material/cyborg))
+		var/obj/item/stack/material/M = type
+		var/class_name = sanitize_css_class_name("[type]")
+		var/datum/universal_icon/I = uni_icon(initial(M.icon), initial(M.icon_state))
+		I.scale(32, 32)
 		insert_icon(class_name, I)

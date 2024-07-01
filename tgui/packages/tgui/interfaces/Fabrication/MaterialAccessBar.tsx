@@ -169,7 +169,11 @@ const EjectAllButton = (props: { onEjectRequested: () => void }) => {
           height="100%"
         >
           <Flex.Item>
-            <Icon name="eject" className="FabricatorMaterialIcon" />
+            <Flex height="64px" align="center" justify="center">
+              <Flex.Item>
+                <Icon name="eject" />
+              </Flex.Item>
+            </Flex>
           </Flex.Item>
           <Flex.Item>Eject All</Flex.Item>
         </Flex>

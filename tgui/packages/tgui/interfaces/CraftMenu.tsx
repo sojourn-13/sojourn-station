@@ -37,6 +37,8 @@ export type CraftingStepData = {
   tool_name: string;
   // Icon url
   icon: string;
+  // Icon is image or css class
+  icon_is_image: BooleanLike;
   // Used to indicate if tool_name is a material stack, used for correct pluralization
   reqed_material: BooleanLike;
 };
@@ -45,14 +47,14 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   const { config } = useBackend();
   const { step } = props;
 
-  const { amt, tool_name, icon, reqed_material } = step;
+  const { amt, tool_name, icon, icon_is_image, reqed_material } = step;
 
   if (amt === 0) {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            {icon_is_image ? <Image src={icon} /> : <Box className={icon} />}
           </Stack.Item>
         )}
         <Stack.Item>Apply {tool_name}</Stack.Item>
@@ -62,9 +64,9 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   } else if (amt === 1 && !reqed_material) {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            {icon_is_image ? <Image src={icon} /> : <Box className={icon} />}
           </Stack.Item>
         )}
         <Stack.Item>Attach {tool_name}</Stack.Item>
@@ -73,9 +75,9 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   } else {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            {icon_is_image ? <Image src={icon} /> : <Box className={icon} />}
           </Stack.Item>
         )}
         <Stack.Item>
