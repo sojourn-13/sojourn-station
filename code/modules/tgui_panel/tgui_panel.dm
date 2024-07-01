@@ -91,6 +91,9 @@
 	if(type == "telemetry")
 		analyze_telemetry(payload)
 		return TRUE
+	if(type == "chat/resend")
+		SSchat.handle_resend(client, payload)
+		return TRUE
 
 /**
  * public
