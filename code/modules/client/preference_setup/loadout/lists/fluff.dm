@@ -13,7 +13,7 @@
 	name = "Conversion Kit"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "modkit"
-	
+
 	// ckeys are always lowercase
 	var/list/ckey_whitelist = list()
 
@@ -150,6 +150,25 @@
 		"desc" = "A military duster that's seen more combat than it probably should have, riddled with holes, tears and a healthy amount of dried blood. It likely should have been thrown away a long time ago, instead recently a peace symbol was drawn over it's back. The state of the duster and the symbol on it's back left it at odds with itself.",
 		"icon_override" = 'icons/fluff/clothing_mob.dmi',
 		"item_state" = "ghostechoe"
+	)
+
+// SLRaptor
+/datum/gear/fluff/slr_patterned_serape
+	ckey_whitelist = list("slraptor")
+	display_name = "Patterned Serape Conversion Kit"
+	path = /obj/item/fluff_conversion_kit/slr_patterned_serape
+
+// SLRaptor
+/obj/item/fluff_conversion_kit/slr_patterned_serape
+	name = "Patterned Serape Conversion Kit"
+	target_type = /obj/item/clothing/suit/storage/vest/scav
+	name_change = "Worn Serape"
+	icon_change = 'icons/fluff/fluff_items.dmi'
+	icon_state_change = "serape"
+	vars_change = list(
+		"desc" = "A red and white serape. This shawl is well faded and well worn from years of heavy outdoor use, the pattern and colors are splotched with new patches hastily sewn with discolored thread",
+		"icon_override" = 'icons/fluff/clothing_mob.dmi',
+		"item_state" = "serape"
 	)
 
 // guidesa/SSGT_BR
