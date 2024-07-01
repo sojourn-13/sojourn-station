@@ -281,7 +281,7 @@
 
 /obj/machinery/smelter/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/simple/ores),
+		get_asset_datum(/datum/asset/spritesheet_batched/ores),
 		get_asset_datum(/datum/asset/simple/materials)
 	)
 
@@ -306,10 +306,16 @@
 
 		var/list/item_data = list(
 			"name" = current_item.name,
-			"materials" = item_materials_data
+			"materials" = item_materials_data,
+			"icon_is_image" = TRUE,
 		)
 
-		if(istype(current_item, /obj/item/stack/ore) || istype(current_item, /obj/item/stack/material))
+		if(istype(current_item, /obj/item/stack/ore))
+			var/class_name = sanitize_css_class_name("[current_item.type]")
+			var/datum/asset/spritesheet_batched/ores/sprite = get_asset_datum(/datum/asset/spritesheet_batched/ores)
+			item_data["icon"] = sprite.icon_class_name(class_name)
+			item_data["icon_is_image"] = FALSE
+		else if(istype(current_item, /obj/item/stack/material))
 			item_data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[current_item.type].png"))
 		else
 			item_data["icon"] = icon2base64tgui(current_item.type)

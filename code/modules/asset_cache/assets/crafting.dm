@@ -6,13 +6,6 @@
 		assets[filename] = I
 	..()
 
-/datum/asset/simple/ores/register()
-	for(var/type in subtypesof(/obj/item/stack/ore))
-		var/filename = sanitizeFileName("[type].png")
-		var/icon/I = getFlatTypeIcon(type)
-		assets[filename] = I
-	..()
-
 /datum/asset/simple/craft/register()
 	var/list/craftStep = list()
 	for(var/name in SScraft.categories)
@@ -43,4 +36,16 @@
 /datum/asset/spritesheet_batched/tool_upgrades/create_spritesheets()
 	for(var/type in subtypesof(/obj/item/tool_upgrade))
 		var/obj/item/tool_upgrade/T = type
-		insert_icon(sanitize_css_class_name("[type]"), uni_icon(initial(T.icon), initial(T.icon_state)))
+		var/class_name = sanitize_css_class_name("[type]")
+		insert_icon(class_name, uni_icon(initial(T.icon), initial(T.icon_state)))
+
+/datum/asset/spritesheet_batched/ores
+	name = "ores"
+
+/datum/asset/spritesheet_batched/ores/create_spritesheets()
+	for(var/type in subtypesof(/obj/item/stack/ore))
+		var/obj/item/stack/ore/O = type
+		var/class_name = sanitize_css_class_name("[type]")
+		var/datum/universal_icon/I = uni_icon(initial(O.icon), initial(O.icon_state))
+		I.scale(64, 64)
+		insert_icon(class_name, I)
