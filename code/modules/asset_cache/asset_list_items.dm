@@ -87,23 +87,6 @@
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
 
-/datum/asset/simple/goonchat
-	legacy = TRUE
-	assets = list(
-		"json2.min.js"             = 'code/modules/goonchat/browserassets/js/json2.min.js',
-		"browserOutput.js"         = 'code/modules/goonchat/browserassets/js/browserOutput.js',
-		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput.css',
-		"browserOutput_white.css"  = 'code/modules/goonchat/browserassets/css/browserOutput_white.css',
-		"browserOutput_override.css"  = 'code/modules/goonchat/browserassets/css/browserOutput_override.css',
-	)
-
-/datum/asset/group/goonchat
-	children = list(
-		/datum/asset/simple/jquery,
-		/datum/asset/simple/goonchat,
-		/datum/asset/simple/namespaced/fontawesome
-	)
-
 /datum/asset/simple/namespaced/common
 	assets = list("padlock.png" = 'icons/ui_icons/common/padlock.png')
 	parents = list("common.css" = 'html/browser/common.css')
