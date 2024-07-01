@@ -37,9 +37,10 @@
 		CS.iconfile = SSassets.transport.get_asset_url(CS.reqed_material ? sanitizeFileName("[material_stack_type(CS.reqed_material)].png") : null, assets[sanitizeFileName("[CS.reqed_type].png")])
 		CS.make_desc() // redo it
 
-/datum/asset/simple/tool_upgrades/register()
+/datum/asset/spritesheet_batched/tool_upgrades
+	name = "tool_upgrades"
+
+/datum/asset/spritesheet_batched/tool_upgrades/create_spritesheets()
 	for(var/type in subtypesof(/obj/item/tool_upgrade))
-		var/filename = sanitizeFileName("[type].png")
-		var/icon/I = getFlatTypeIcon(type)
-		assets[filename] = I
-	..()
+		var/obj/item/tool_upgrade/T = type
+		insert_icon(sanitize_css_class_name("[type]"), uni_icon(initial(T.icon), initial(T.icon_state)))
