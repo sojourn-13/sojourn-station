@@ -69,7 +69,7 @@ var/global/datum/repository/crew/crew_repository = new()
 					if (crewmemberData["alert"])
 						cache_data_alert[num2text(z_level)] = TRUE
 
-	crewmembers = sortNames(crewmembers)
+	crewmembers = sortTim(crewmembers, GLOBAL_PROC_REF(cmp_name_in_list_asc))
 	cache_entry.timestamp = world.time + 5 SECONDS
 	cache_entry.data = crewmembers
 
