@@ -77,9 +77,6 @@ export const Panel = (props) => {
         )}
         <Stack.Item grow>
           <Section fill fitted position="relative">
-            <Pane.Content scrollable>
-              <ChatPanel lineHeight={settings.lineHeight} />
-            </Pane.Content>
             <Notifications>
               {game.connectionLostAt && (
                 <Notifications.Item rightSlot={<ReconnectButton />}>
@@ -94,6 +91,9 @@ export const Panel = (props) => {
                 </Notifications.Item>
               )}
             </Notifications>
+            <Pane.Content scrollable>
+              <ChatPanel lineHeight={settings.lineHeight} />
+            </Pane.Content>
           </Section>
         </Stack.Item>
       </Stack>

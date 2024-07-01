@@ -12,5 +12,6 @@
 	return "{\"sequence\":[sequence],\"content\":[json_encode(content)]}"
 
 /// Returns an HTML-encoded message from our contents.
+/// Used for fallback chat
 /datum/chat_payload/proc/get_content_as_html()
 	return message_to_html(content)
