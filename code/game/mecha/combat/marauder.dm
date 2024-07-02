@@ -4,6 +4,7 @@
 	icon_state = "marauder"
 	initial_icon = "marauder"
 	step_in = 3
+	normal_step_energy_drain = 3
 	step_energy_drain = 3
 	price_tag = 25000 //Rare spawns + uncraftable
 	health = 1500
@@ -244,6 +245,7 @@
 	icon_state = "seraph"
 	initial_icon = "seraph"
 	step_in = 2
+	normal_step_energy_drain = 1
 	step_energy_drain = 1
 	health = 1800
 	wreckage = /obj/effect/decal/mecha_wreckage/seraph

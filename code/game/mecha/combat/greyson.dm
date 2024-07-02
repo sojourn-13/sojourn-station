@@ -5,6 +5,7 @@
 	icon_state = "greyson_mech"
 	initial_icon = "greyson_mech"
 	step_in = 3
+	normal_step_energy_drain = 3
 	step_energy_drain = 3
 	dir_in = 1 //Facing North.
 	health = 1500

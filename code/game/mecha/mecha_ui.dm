@@ -74,28 +74,27 @@
 	var/tank_pressure = internal_tank ? round(internal_tank.return_pressure(), 0.01) : "None"
 	var/tank_temperature = internal_tank ? "[internal_tank.return_temperature()]K|[internal_tank.return_temperature() - T0C]&deg;C" : "Unknown" //Results in type mismatch if there is no tank.
 	var/cabin_pressure = round(return_pressure(), 0.01)
-	var/output = {"[report_internal_damage()]
-		[integrity < 30 ? "<font color='red'><b>DAMAGE LEVEL CRITICAL</b></font><br>":null]
-		<b>Integrity: </b> [integrity]%<br>
-		<b>Powercell charge: </b>[isnull(cell_charge)?"No powercell installed":"[cell.percent()]%"]<br>
-		<b>Air source: </b>[use_internal_tank?"Internal Airtank":"Environment"]<br>
-		<b>Airtank pressure: </b>[tank_pressure]kPa<br>
-		<b>Airtank temperature: </b>[tank_temperature]<br>
-		<b>Cabin pressure: </b>[cabin_pressure>WARNING_HIGH_PRESSURE ? "<font color='red'>[cabin_pressure]</font>": cabin_pressure]kPa<br>
-		<b>Cabin temperature: </b> [return_temperature()]K|[return_temperature() - T0C]&deg;C<br>
-		<b>Lights: </b>[lights ? "on" : "off"]<br>
-		[dna ? "<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna]</span> \[<a href='?src=\ref[src];reset_dna=1'>Reset</a>\]<br>":null]
-		[defense_action.owner ? "<b>Defense Mode: </b> [defense_mode ? "Enabled" : "Disabled"]<br>" : ""]
-	"}
+	. = "[report_internal_damage()]"
+	. += "[integrity < 30 ? "<font color='red'><b>DAMAGE LEVEL CRITICAL</b></font><br>":null]"
+	. += "<b>Integrity: </b> [integrity]%<br>"
+	. += "<b>Powercell charge: </b>[isnull(cell_charge)?"No powercell installed":"[cell.percent()]%"]<br>"
+	. += "<b>Air source: </b>[use_internal_tank?"Internal Airtank":"Environment"]<br>"
+	. += "<b>Airtank pressure: </b>[tank_pressure]kPa<br>"
+	. += "<b>Airtank temperature: </b>[tank_temperature]<br>"
+	. += "<b>Cabin pressure: </b>[cabin_pressure>WARNING_HIGH_PRESSURE ? "<font color='red'>[cabin_pressure]</font>": cabin_pressure]kPa<br>"
+	. += "<b>Cabin temperature: </b> [return_temperature()]K|[return_temperature() - T0C]&deg;C<br>"
+	. += "<b>Lights: </b>[lights ? "on" : "off"]<br>"
+	. += "[dna ? "<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna]</span> \[<a href='?src=\ref[src];reset_dna=1'>Reset</a>\]<br>":null]"
+	. += "[defense_action.owner ? "<b>Defense Mode: </b> [defense_mode ? "Enabled" : "Disabled"]<br>" : ""]"
+	. += "[overload_action.owner ? "<b>Leg Actuators Overload: </b> [leg_overload_mode ? "Enabled" : "Disabled"]<br>" : ""]"
 	if(cargo_capacity > 0)
-		output += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
+		. += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
 		if(LAZYLEN(cargo))
 			for(var/obj/O in cargo)
-				output += "<a href='?src=\ref[src];drop_from_cargo=\ref[O]'>Unload</a> : [O]<br>"
+				. += "<a href='?src=\ref[src];drop_from_cargo=\ref[O]'>Unload</a> : [O]<br>"
 		else
-			output += "Nothing"
-		output += "</div>"
-	return output
+			. += "Nothing"
+		. += "</div>"
 
 /obj/mecha/proc/get_commands()
 	var/output = {"<div class='wr'>

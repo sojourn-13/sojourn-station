@@ -4,6 +4,7 @@
 	icon_state = "ripley"
 	initial_icon = "ripley"
 	step_in = 2
+	normal_step_energy_drain = 6
 	step_energy_drain = 6
 	max_temperature = 20000
 	price_tag = 5000
@@ -17,6 +18,7 @@
 	name = "APLU \"Firefighter\""
 	icon_state = "firefighter"
 	initial_icon = "firefighter"
+	normal_step_energy_drain = 8
 	step_energy_drain = 8
 	max_temperature = 65000
 	price_tag = 6500
@@ -32,6 +34,7 @@
 	icon_state = "deathripley"
 	initial_icon = "deathripley"
 	step_in = 1
+	normal_step_energy_drain = 1
 	step_energy_drain = 1
 	opacity = 0
 	lights_power = 60

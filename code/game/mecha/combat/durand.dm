@@ -4,6 +4,7 @@
 	icon_state = "durand"
 	initial_icon = "durand"
 	step_in = 3
+	normal_step_energy_drain = 3
 	step_energy_drain = 3
 	dir_in = 1 //Facing North.
 	health = 1200

@@ -10,6 +10,7 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
+	normal_step_energy_drain = 1
 	step_energy_drain = 1
 	max_equip = 5
 	cargo_capacity = 1

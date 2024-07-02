@@ -27,7 +27,7 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	var/initial_icon = null //Mech type for resetting icon. Only used for reskinning kits (see custom items)
-	var/can_move = 0
+	var/can_move = 0 // world.time of next allowed movement
 	var/mob/living/carbon/occupant = null
 	var/list/dropped_items = list()
 
@@ -44,7 +44,9 @@
 	//Movement
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
+	var/normal_step_energy_drain = 10
 	var/step_energy_drain = 10
+	var/overload_step_energy_drain_min = 100
 	var/obj/item/mecha_parts/mecha_equipment/thruster/thruster = null
 
 	//the values in this list show how much damage will pass through, not how much will be absorbed.
@@ -107,6 +109,8 @@
 	var/defense_mode_boost = 30
 	var/list/cargo = list()
 	var/cargo_capacity = 0
+	var/leg_overload_mode = FALSE
+	var/leg_overload_coeff = 100
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -606,6 +610,13 @@
 				A.target = possible_port
 		else
 			occupant.clear_alert("mechaport")
+	if(leg_overload_mode)
+		take_damage(1)
+		if(health < initial(health) - initial(health) / 3)
+			leg_overload_mode = FALSE
+			step_in = initial(step_in)
+			step_energy_drain = normal_step_energy_drain
+			occupant_message(SPAN_DANGER("Leg actuators damage threshold exceded. Disabling overload."))
 
 /obj/mecha/proc/mechturn(direction, movemode = MOVEMODE_STEP)
 	//When turning in 0g with a thruster, we do a little airburst to rotate us

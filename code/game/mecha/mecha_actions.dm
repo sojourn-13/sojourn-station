@@ -5,6 +5,7 @@
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/reload_gun/reload_action = new
 	var/datum/action/innate/mecha/mech_defence_mode/defense_action = new
+	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
 
 /obj/mecha/proc/GrantActions(mob/living/user)
 	eject_action.Grant(user, src)
@@ -96,4 +97,32 @@
 
 	chassis.toggle_defense_mode()
 	button_icon_state = "mech_defense_mode_[chassis.defense_mode ? "on" : "off"]"
+	button?.UpdateIcon()
+
+
+/datum/action/innate/mecha/mech_overload_mode
+	name = "Toggle leg actuators overload"
+	button_icon_state = "mech_overload_off"
+
+/datum/action/innate/mecha/mech_overload_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	if(chassis.health < initial(chassis.health) - initial(chassis.health) / 3)
+		chassis.occupant_message(SPAN_DANGER("The leg actuators are too damaged to overload!"))
+		return // Can't activate them if the mech is too damaged
+	chassis.leg_overload_mode = !chassis.leg_overload_mode
+	button_icon_state = "mech_overload_[chassis.leg_overload_mode ? "on" : "off"]"
+	chassis.log_message("Toggled leg actuators overload.")
+	if(chassis.leg_overload_mode)
+		chassis.leg_overload_mode = 1
+		// chassis.bumpsmash = 1
+		chassis.step_in = min(1, round(chassis.step_in / 2))
+		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min, chassis.step_energy_drain * chassis.leg_overload_coeff)
+		chassis.occupant_message(SPAN_DANGER("You enable leg actuators overload."))
+	else
+		chassis.leg_overload_mode = 0
+		// chassis.bumpsmash = 0
+		chassis.step_in = initial(chassis.step_in)
+		chassis.step_energy_drain = chassis.normal_step_energy_drain
+		chassis.occupant_message(SPAN_NOTICE("You disable leg actuators overload."))
 	button?.UpdateIcon()
