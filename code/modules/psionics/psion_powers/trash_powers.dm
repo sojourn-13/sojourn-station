@@ -1,7 +1,7 @@
 /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile()
 	set category = "Psionic powers"
 	set name = "Scrap Togather (4)"
-	set desc = "Exspend some essence to collect trash from deepmaints and pile it infrount of you."
+	set desc = "Expend some essence to collect trash from deepmaints and pile it in front of you."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -13,13 +13,13 @@
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 		var/turf/T = get_step(user, user.dir)
 		if(T)
-			to_chat(user, "Your mind works to geather random junk fallin deepmaints and bring them to your current location.")
+			to_chat(user, "Your mind works to gather random junk fallin in deepmaints to bring them to your current location.")
 			new /obj/random/scrap/moderate_weighted(T.contents)
 
 /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress()
 	set category = "Psionic powers"
 	set name = "Reorganize (2)"
-	set desc = "Exspend a small amount of essene to compress a scrap pile into a condenced cube for easyer transportation."
+	set desc = "Expend a small amount of essence to compress a scrap pile into a condensed cube for easier transportation."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -37,7 +37,7 @@
 				refund = FALSE
 				break
 			if(refund)
-				to_chat(user, "Do to being unable to compress down a scrap pile you dont waste your essene.")
+				to_chat(user, "Due to being unable to compress down a scrap pile you dont waste your essence.")
 				PT.psi_points += psi_point_cost
 			return
 
@@ -62,6 +62,6 @@
 				refund = FALSE
 				break
 			if(refund)
-				to_chat(user, "Do to being unable to rapidly decompress a scrap pile you dont waste your essene.")
+				to_chat(user, "Due to being unable to rapidly decompress a scrap pile you don't waste your essence.")
 				PT.psi_points += psi_point_cost
 			return
