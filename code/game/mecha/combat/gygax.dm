@@ -49,7 +49,7 @@
 	internal_damage_threshold = 45
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax/marshals
 
-/obj/mecha/combat/gygax/marshals/New()
+/obj/mecha/combat/gygax/marshals/Initialize()
 	. = ..()//Let it equip whatever is needed. TODO: This is stupid
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.
@@ -85,7 +85,7 @@
 	step_energy_drain = 1
 	cargo_capacity = 5
 
-/obj/mecha/combat/gygax/dark/New()
+/obj/mecha/combat/gygax/dark/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	ME.attach(src)

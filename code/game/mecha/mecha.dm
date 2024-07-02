@@ -60,7 +60,8 @@
 	var/add_req_access = 1
 	var/maint_access = 1
 	var/dna	//dna-locking the mech
-	var/datum/effect/effect/system/spark_spread/spark_system = new
+	var/datum/effect/effect/system/spark_spread/spark_system
+	var/datum/effect/effect/system/smoke_spread/smoke_system
 	var/lights = 0
 	var/lights_power = 6
 	var/force = 0
@@ -111,6 +112,10 @@
 	var/cargo_capacity = 0
 	var/leg_overload_mode = FALSE
 	var/leg_overload_coeff = 100
+	var/smoke = 5
+	var/smoke_ready = TRUE
+	var/smoke_cooldown = 100
+	var/zoom_mode = FALSE
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -135,8 +140,12 @@
 	add_radio()
 	add_cabin()
 	add_airtank() //All mecha currently have airtanks. No need to check unless changes are made.
+	spark_system = new()
 	spark_system.set_up(2, 0, src)
 	spark_system.attach(src)
+	smoke_system = new()
+	smoke_system.set_up(3, 0, src)
+	smoke_system.attach(src)
 	add_cell()
 	START_PROCESSING(SSobj, src)
 	log_message("[name] created.")
@@ -195,6 +204,7 @@
 	QDEL_NULL(events)
 	QDEL_NULL(cabin_air)
 	QDEL_NULL(spark_system)
+	QDEL_NULL(smoke_system)
 
 	GLOB.mechas_list -= src //global mech list
 	remove_hearing()
@@ -542,6 +552,11 @@
 	if(defense_mode)
 		if(world.time - last_message > 20)
 			occupant_message(SPAN_DANGER("Unable to move while in defense mode."))
+			last_message = world.time
+		return 0
+	if(zoom_mode)
+		if(world.time - last_message > 20)
+			occupant_message(SPAN_DANGER("Unable to move while in zoom mode."))
 			last_message = world.time
 		return 0
 
@@ -1336,6 +1351,9 @@ assassination method if you time it right*/
 	occupant.clear_alert("mechaport")
 	occupant.clear_alert("mechaport_d")
 	RemoveActions(occupant)
+	occupant.client?.view = world.view
+	occupant.client?.apply_clickcatcher()
+	zoom_mode = FALSE
 
 	for(var/item in dropped_items)
 		var/atom/movable/I = item

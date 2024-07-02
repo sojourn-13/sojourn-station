@@ -32,13 +32,24 @@
 	M.thruster = src
 	thrust.gastank = chassis.internal_tank
 	//We pass the chassis as the object to track, and the jetpack as the thing to check for jetpack stuff
-	thrust.trail.set_up(chassis, thrust)
+	// If we're spawned on a roundstart mech it'll take some time for thruster to initialize, so we wanna wait until it's finished
+	if(thrust.trail)
+		thrust.trail.set_up(chassis, thrust)
+	else
+		addtimer(CALLBACK(src, PROC_REF(late_set_trail), M), 5 SECONDS)
 
+/obj/item/mecha_parts/mecha_equipment/thruster/proc/late_set_trail(obj/mecha/M)
+	if(thrust.trail)
+		thrust.trail.set_up(chassis, thrust)
+	else
+		// Loop until the thruster is ready
+		addtimer(CALLBACK(src, PROC_REF(late_set_trail), M), 5 SECONDS)
 
 /obj/item/mecha_parts/mecha_equipment/thruster/detach(atom/moveto)
 	chassis.thruster = null
 	thrust.gastank = null
-	thrust.trail.set_up(src, thrust)
+	if(thrust.trail)
+		thrust.trail.set_up(src, thrust)
 	. = ..()
 
 //Attempts to turn on the jetpack
@@ -76,7 +87,6 @@
 		return TRUE
 	turn_off()
 	return FALSE
-
 
 /obj/item/mecha_parts/mecha_equipment/thruster/get_equip_info()
 	if(!chassis)

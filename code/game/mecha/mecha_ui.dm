@@ -87,6 +87,8 @@
 	. += "[dna ? "<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna]</span> \[<a href='?src=\ref[src];reset_dna=1'>Reset</a>\]<br>":null]"
 	. += "[defense_action.owner ? "<b>Defense Mode: </b> [defense_mode ? "Enabled" : "Disabled"]<br>" : ""]"
 	. += "[overload_action.owner ? "<b>Leg Actuators Overload: </b> [leg_overload_mode ? "Enabled" : "Disabled"]<br>" : ""]"
+	. += "[smoke_action.owner ? "<b>Smoke: </b> [smoke]<br>" : ""]"
+	. += "[zoom_action.owner ? "<b>Zoom: </b> [zoom_mode ? "Enabled" : "Disabled"]<br>" : ""]"
 	if(cargo_capacity > 0)
 		. += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
 		if(LAZYLEN(cargo))

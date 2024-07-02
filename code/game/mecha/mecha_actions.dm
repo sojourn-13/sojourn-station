@@ -6,6 +6,8 @@
 	var/datum/action/innate/mecha/reload_gun/reload_action = new
 	var/datum/action/innate/mecha/mech_defence_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
+	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
+	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
 
 /obj/mecha/proc/GrantActions(mob/living/user)
 	eject_action.Grant(user, src)
@@ -125,4 +127,41 @@
 		chassis.step_in = initial(chassis.step_in)
 		chassis.step_energy_drain = chassis.normal_step_energy_drain
 		chassis.occupant_message(SPAN_NOTICE("You disable leg actuators overload."))
+	button?.UpdateIcon()
+
+/datum/action/innate/mecha/mech_smoke
+	name = "Smoke"
+	button_icon_state = "mech_smoke"
+
+/datum/action/innate/mecha/mech_smoke/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	if(chassis.smoke_ready && chassis.smoke > 0)
+		chassis.smoke_system.start()
+		chassis.smoke--
+		chassis.smoke_ready = 0
+		spawn(chassis.smoke_cooldown)
+			chassis.smoke_ready = 1
+	else
+		chassis.occupant_message("<span class='warning'>You are either out of smoke, or the smoke isn't ready yet.</span>")
+
+/datum/action/innate/mecha/mech_zoom
+	name = "Zoom"
+	button_icon_state = "mech_zoom_off"
+
+/datum/action/innate/mecha/mech_zoom/Activate()
+	if(!owner || !chassis || chassis.occupant != owner || !owner.client)
+		return
+
+	chassis.zoom_mode = !chassis.zoom_mode
+	button_icon_state = "mech_zoom_[chassis.zoom_mode ? "on" : "off"]"
+	chassis.log_message("Toggled zoom mode.")
+	chassis.occupant_message("<font color='[chassis.zoom_mode ? "blue" : "red"]'>Zoom mode [chassis.zoom_mode ? "en" : "dis"]abled.</font>")
+	if(chassis.zoom_mode)
+		owner.client.view = 12
+		owner.client.apply_clickcatcher()
+		SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
+	else
+		owner.client.view = world.view//world.view - default mob view size
+		owner.client.apply_clickcatcher()
 	button?.UpdateIcon()
