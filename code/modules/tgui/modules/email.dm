@@ -426,7 +426,7 @@
 				current_account.deleted.Remove(M)
 				qdel(M)
 			else
-				current_account.deleted.Add(M)
+				current_account.deleted |= M
 				current_account.inbox.Remove(M)
 				current_account.spam.Remove(M)
 				current_account.outbox.Remove(M)
