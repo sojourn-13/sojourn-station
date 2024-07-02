@@ -105,6 +105,8 @@
 	// Functionality that used to be on subtypes
 	var/defense_mode = FALSE
 	var/defense_mode_boost = 30
+	var/list/cargo = list()
+	var/cargo_capacity = 0
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -143,6 +145,11 @@
 
 	for(var/mob/M in src) //Let's just be ultra sure
 		M.forceMove(loc)
+
+	for(var/atom/movable/AM in cargo)
+		AM.forceMove(loc)
+
+	cargo.Cut()
 
 	if(loc)
 		loc.Exited(src)
@@ -492,7 +499,6 @@
 
 /obj/mecha/proc/range_action(atom/target)
 	return
-
 
 //////////////////////////////////
 ////////  Movement procs  ////////
@@ -1425,6 +1431,11 @@ assassination method if you time it right*/
 	if(MOVED_DROP == special_event)
 		dropped_items |= AM
 		return ..(AM, old_loc, 0)
+	return ..()
+
+/obj/mecha/Exit(atom/movable/AM)
+	if(AM in cargo)
+		return 0
 	return ..()
 
 /obj/mecha/Exited(atom/movable/AM, atom/old_loc, special_event)

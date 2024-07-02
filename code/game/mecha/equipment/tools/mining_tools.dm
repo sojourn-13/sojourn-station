@@ -24,7 +24,7 @@
 	..() // strike the earth
 
 	if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment) // load ore if any is nearby after striking something
-		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
+		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis.cargo
 		if(ore_box)
 			for(var/obj/item/stack/ore/ore in range(chassis,1))
 				if(get_dir(chassis,ore)&chassis.dir)
@@ -49,7 +49,7 @@
 	..() // strike the earth
 
 	if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment) // load ore if any is nearby after striking something
-		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
+		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis.cargo
 		if(ore_box)
 			for(var/obj/item/stack/ore/ore in range(chassis,1))
 				if(get_dir(chassis,ore)&chassis.dir)

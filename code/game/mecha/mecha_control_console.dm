@@ -95,9 +95,8 @@
 						<b>Location:</b> [get_area(M)||"Unknown"]<br>
 						<b>Active equipment:</b> [M.selected||"None"]"}
 
-	if(istype(M, /obj/mecha/working/ripley))
-		var/obj/mecha/working/ripley/RM = M
-		answer += "<b>Used cargo space:</b> [RM.cargo.len/RM.cargo_capacity*100]%<br>"
+	if(M.cargo_capacity > 0)
+		answer += "<b>Used cargo space:</b> [(M.cargo.len / M.cargo_capacity) * 100]%<br>"
 
 	return answer
 

@@ -87,6 +87,14 @@
 		[dna ? "<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna]</span> \[<a href='?src=\ref[src];reset_dna=1'>Reset</a>\]<br>":null]
 		[defense_action.owner ? "<b>Defense Mode: </b> [defense_mode ? "Enabled" : "Disabled"]<br>" : ""]
 	"}
+	if(cargo_capacity > 0)
+		output += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
+		if(LAZYLEN(cargo))
+			for(var/obj/O in cargo)
+				output += "<a href='?src=\ref[src];drop_from_cargo=\ref[O]'>Unload</a> : [O]<br>"
+		else
+			output += "Nothing"
+		output += "</div>"
 	return output
 
 /obj/mecha/proc/get_commands()
@@ -480,3 +488,13 @@
 				usr << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel=4, volume=100)
 				occupant_message("<font color='red'>Recalibration failed.</font>")
 				log_message("Recalibration of coordination system failed with 1 error.",1)
+	if(href_list["drop_from_cargo"])
+		if(usr != occupant)
+			return
+		var/obj/O = locate(href_list["drop_from_cargo"])
+		if(O && (O in cargo))
+			occupant_message(SPAN_NOTICE("You unload [O]."))
+			O.forceMove(get_turf(src))
+			cargo -= O
+			O.reset_plane_and_layer()
+			log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - cargo.len]")

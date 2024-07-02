@@ -2,7 +2,7 @@
  * Contains
  * /obj/item/mecha_parts/mecha_equipment/tool
  * /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp
- * /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+ * /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp
  * /obj/item/mecha_parts/mecha_equipment/tool/extinguisher
  * /obj/item/mecha_parts/mecha_equipment/tool/rcd
  * /obj/item/mecha_parts/mecha_equipment/tool/cable_layer
@@ -20,10 +20,15 @@
 	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 30) // This is a literal industrial clamp
 	force = 20
 	armor_penetration = ARMOR_PEN_SHALLOW
-	var/obj/mecha/working/ripley/cargo_holder
-	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
+	var/obj/mecha/cargo_holder
+	var/can_load_living = FALSE
 
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/attach(obj/mecha/M as obj)
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/can_attach(obj/mecha/M)
+	if(M.cargo_capacity == 0)
+		return FALSE
+	. = ..()
+
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/attach(obj/mecha/M)
 	. = ..()
 	cargo_holder = M
 
@@ -38,7 +43,7 @@
 		var/obj/T = A
 		if(T.buckled_mob)
 			return
-		if(locate(/mob/living) in T)
+		if(!can_load_living && locate(/mob/living) in T)
 			occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 			return
 		if(istype(T, /obj/structure/scrap))
@@ -49,14 +54,12 @@
 					S.make_cube()
 					occupant_message(SPAN_NOTICE("[chassis] compresses [T] into a cube with [src]."))
 			return
-
 		if(T.anchored && !istype(T, /obj/structure/salvageable))
 			attack_object(T, user)
 			return
 		if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 			occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 			return
-
 		if(user.a_intent == I_HELP) // So, if we want to do something stupid like searching a trash pile or hitting a locker, we can on non help intent
 			occupant_message("You lift [T] and start to load it into cargo compartment.")
 			playsound(src, 'sound/mecha/hydraulic.ogg',100,1)
@@ -73,70 +76,15 @@
 			occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
 			log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 			return
-
 	attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
 //This is pretty much just for the death-ripley so that it is harmless / MY BROTHER IN CHRIST IT DOES 90 DAMAGE WHAT DO YOU MEAN
-/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp
 	name = "\improper KILL CLAMP"
-	icon_state = "mecha_clamp"
-	equip_cooldown = 15
 	energy_drain = 0
-	tool_qualities = list(QUALITY_CLAMPING = 10,  QUALITY_HAMMERING = 40, QUALITY_PRYING = 40, QUALITY_BOLT_TURNING = 5, QUALITY_EXCAVATION = 15, QUALITY_SHOVELING = 20) // A bit tweaked from a normal clamp
 	force = 90 //Lmao, the mech sword deals 60
 	armor_penetration = ARMOR_PEN_EXTREME //This thing is hilarious, I'm just adding to it
-	var/obj/mecha/working/ripley/cargo_holder
-	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
-
-/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp/attach(obj/mecha/M)
-	. = ..()
-	cargo_holder = M
-
-/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp/action(atom/A, mob/living/user) // fancy non attackby interactions
-	if(!action_checks(A))
-		return
-	if(!cargo_holder)
-		return
-
-	//clamp loading code
-	if(istype(A, /obj)) //if it's not an object, don't even bother loading, none of the code beyond here will work with non objects
-		var/obj/T = A
-		if(T.buckled_mob)
-			return
-		if(istype(T, /obj/structure/scrap))
-			occupant_message(SPAN_NOTICE("[chassis] begins compressing [T] with [src]."))
-			if(do_after_cooldown(T))
-				if(istype(T, /obj/structure/scrap))
-					var/obj/structure/scrap/S = T
-					S.make_cube()
-					occupant_message(SPAN_NOTICE("[chassis] compresses [T] into a cube with [src]."))
-			return
-
-		if(T.anchored && !istype(T, /obj/structure/salvageable))
-			attack_object(T, user)
-			return
-		if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
-			occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
-			return
-
-		if(user.a_intent == I_HELP) // So, if we want to do something stupid like searching a trash pile or hitting a locker, we can on non help intent
-			occupant_message("You lift [T] and start to load it into cargo compartment.")
-			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
-			chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
-			var/anchor_state_before_load = T.anchored
-			T.anchored = TRUE
-			if(!do_after_cooldown(T))
-				occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-				T.anchored = anchor_state_before_load
-				return			
-			cargo_holder.cargo += T
-			T.forceMove(chassis)
-			T.anchored = FALSE
-			occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
-			log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-			return
-
-	attack_object(A, user) // If none of these has come to pass, we do normal item interactions
+	can_load_living = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/tool/extinguisher
 	name = "extinguisher"

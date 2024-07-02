@@ -68,7 +68,7 @@
 		/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
 		/obj/item/mecha_parts/mecha_equipment/generator,
 		/obj/item/mecha_parts/mecha_equipment/generator/nuclear,
-		/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp,
+		/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp,
 		/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 		/obj/item/mecha_parts/mecha_equipment/thruster,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,

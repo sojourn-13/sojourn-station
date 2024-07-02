@@ -12,13 +12,6 @@
 	cargo_capacity = 25
 	max_equip = 6
 
-/obj/mecha/working/ripley/Destroy()
-	for(var/atom/movable/A in cargo)
-		A.forceMove(loc)
-		step_rand(A)
-	cargo.Cut()
-	. = ..()
-
 /obj/mecha/working/ripley/firefighter
 	desc = "Standard APLU chassis that has been refitted with additional thermal protection."
 	name = "APLU \"Firefighter\""
@@ -48,7 +41,7 @@
 
 /obj/mecha/working/ripley/deathripley/New()
 	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak/loaded
 	ME.attach(src)
