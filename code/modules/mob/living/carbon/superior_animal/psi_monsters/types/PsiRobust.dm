@@ -14,6 +14,7 @@
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
 	armor_penetration = 30
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/ponderous
 
 /mob/living/carbon/superior_animal/psi_monster/hovering_nightmare
 	name = "hovering nightmare"
