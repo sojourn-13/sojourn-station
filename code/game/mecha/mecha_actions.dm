@@ -8,6 +8,8 @@
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
 	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
+	var/datum/action/innate/mecha/mech_toggle_phasing/phasing_action = new
+	var/datum/action/innate/mecha/mech_switch_damtype/switch_damtype_action = new
 
 /obj/mecha/proc/GrantActions(mob/living/user)
 	eject_action.Grant(user, src)
@@ -164,4 +166,44 @@
 	else
 		owner.client.view = world.view//world.view - default mob view size
 		owner.client.apply_clickcatcher()
+	button?.UpdateIcon()
+
+/datum/action/innate/mecha/mech_toggle_phasing
+	name = "Toggle Phasing"
+	button_icon_state = "mech_phasing_off"
+
+/datum/action/innate/mecha/mech_toggle_phasing/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	chassis.phasing = !chassis.phasing
+	button_icon_state = "mech_phasing_[chassis.phasing ? "on" : "off"]"
+	if(chassis.phasing)
+		chassis.occupant_message(SPAN_NOTICE("Enabled phasing."))
+	else
+		chassis.occupant_message(SPAN_WARNING("Disabled phasing."))
+	
+	button?.UpdateIcon()
+
+
+/datum/action/innate/mecha/mech_switch_damtype
+	name = "Reconfigure arm microtool arrays"
+	button_icon_state = "mech_damtype_brute"
+
+/datum/action/innate/mecha/mech_switch_damtype/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	var/new_damtype
+	switch(chassis.damtype)
+		if(TOX)
+			new_damtype = BRUTE
+			chassis.occupant_message("Your exosuit's hands form into fists.")
+		if(BRUTE)
+			new_damtype = BURN
+			chassis.occupant_message("A torch tip extends from your exosuit's hand, glowing red.")
+		if(BURN)
+			new_damtype = TOX
+			chassis.occupant_message("A bone-chillingly thick plasteel needle protracts from the exosuit's palm.")
+	chassis.damtype = new_damtype
+	button_icon_state = "mech_damtype_[new_damtype]"
+	playsound(src, 'sound/mecha/mechmove01.ogg', 50, 1)
 	button?.UpdateIcon()

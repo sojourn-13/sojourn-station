@@ -89,6 +89,8 @@
 	. += "[overload_action.owner ? "<b>Leg Actuators Overload: </b> [leg_overload_mode ? "Enabled" : "Disabled"]<br>" : ""]"
 	. += "[smoke_action.owner ? "<b>Smoke: </b> [smoke]<br>" : ""]"
 	. += "[zoom_action.owner ? "<b>Zoom: </b> [zoom_mode ? "Enabled" : "Disabled"]<br>" : ""]"
+	. += "[phasing_action.owner ? "<b>Phase Modulator: </b> [phasing ? "Enabled" : "Disabled"]<br>" : ""]"
+
 	if(cargo_capacity > 0)
 		. += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
 		if(LAZYLEN(cargo))

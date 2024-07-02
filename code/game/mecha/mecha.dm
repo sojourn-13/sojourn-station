@@ -116,6 +116,9 @@
 	var/smoke_ready = TRUE
 	var/smoke_cooldown = 100
 	var/zoom_mode = FALSE
+	var/phasing = FALSE
+	var/phasing_energy_drain = 200
+	var/phase_state = "" //icon_state when phasing
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -353,6 +356,9 @@
 	if(!occupant || occupant != user)
 		return
 	if(user.incapacitated())
+		return
+	if(phasing)
+		occupant_message(SPAN_WARNING("Unable to interact with objects while phasing."))
 		return
 	if(state)
 		occupant_message("<font color='red'>Maintenance protocols in effect.</font>")
@@ -641,22 +647,32 @@
 
 	set_dir(direction)
 
-	if(movemode == MOVEMODE_STEP)
+	if(movemode == MOVEMODE_STEP && step_turn_sound)
 		playsound(src, step_turn_sound,40,1)
 
 	return 1
 
 /obj/mecha/proc/mechstep(direction, movemode = MOVEMODE_STEP)
 	. = step(src, direction)
-	if(.)
-		if(movemode == MOVEMODE_STEP)
-			playsound(src,step_sound,100,1)
+	if(!.)
+		if(phasing && get_charge() >= phasing_energy_drain)
+			if(can_move < world.time)
+				. = FALSE // We lie to mech code and say we didn't get to move, because we want to handle power usage + cooldown ourself
+				flick(phase_state, src)
+				var/delay = step_in * 3
+				forceMove(get_step(src, dir), glide_size_override = DELAY2GLIDESIZE(delay))
+				use_power(phasing_energy_drain)
+				if(step_sound)
+					playsound(src, step_sound, 40, 1)
+				can_move = world.time + delay
+	else if(movemode == MOVEMODE_STEP && step_sound)
+		playsound(src,step_sound,100,1)
 
 
 /obj/mecha/proc/mechsteprand(movemode = MOVEMODE_STEP)
 	. = step_rand(src)
 	if(.)
-		if(movemode == MOVEMODE_STEP)
+		if(movemode == MOVEMODE_STEP && step_sound)
 			playsound(src,step_sound,100,1)
 
 //Used for jetpacks

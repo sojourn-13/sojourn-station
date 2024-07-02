@@ -14,11 +14,13 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/hoverpod
 	cargo_capacity = 5
 	max_equip = 3
+	step_sound = 'sound/machines/hiss.ogg'
+	step_turn_sound = null
 	var/datum/effect/effect/system/trail/ion/trail
 	var/stabilization_enabled = 1
 
-/obj/mecha/working/hoverpod/New()
-	..()
+/obj/mecha/working/hoverpod/Initialize()
+	. = ..()
 	trail = new /datum/effect/effect/system/trail/ion()
 	trail.set_up(src)
 	trail.start()
