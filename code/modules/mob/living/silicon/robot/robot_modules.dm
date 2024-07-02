@@ -700,6 +700,7 @@ var/global/list/robot_modules = list(
 	sprites = list(
 					"Bloodhound" = "syndie_bloodhound",
 					"Treadhound" = "syndie_treadhound",
+					"Classic" = "defenceborg",
 					"Precision" = "syndi-medi",
 					"Heavy" = "syndi-heavy",
 					"Artillery" = "spidersyndi",
