@@ -158,6 +158,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	var/load_immediately = FALSE
 	/// Allows resizing all icons it comes across by a multiplier (32x32 * 2 = 64x64)
 	var/resize = 1
+	/// If this asset should CRASH or ignore when duplicate sprite keys are added
+	var/duplicates_allowed = FALSE
 
 /datum/asset/spritesheet/proc/should_load_immediately()
 #ifdef DO_NOT_DEFER_ASSETS
@@ -420,6 +422,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	var/size = sizes[size_id]
 
 	if(sprites[sprite_name])
+		if(duplicates_allowed)
+			return // No crash
 		CRASH("duplicate sprite \"[sprite_name]\" in sheet [name] ([type])")
 
 	if(size)

@@ -153,15 +153,15 @@ export class NumberInput extends Component<Props, State> {
       return;
     }
     document.body.style['pointer-events'] = 'auto';
-
     clearInterval(this.dragInterval);
     clearTimeout(this.dragTimeout);
-
     this.setState({
       dragging: false,
       editing: !dragging,
       previousValue: currentValue,
     });
+    document.removeEventListener('mousemove', this.handleDragMove);
+    document.removeEventListener('mouseup', this.handleDragEnd);
     if (dragging) {
       onChange?.(currentValue);
       onDrag?.(currentValue);
@@ -169,15 +169,14 @@ export class NumberInput extends Component<Props, State> {
       const input = this.inputRef.current;
       if (input) {
         input.value = `${currentValue}`;
-        setTimeout(() => {
+        // IE8: Dies when trying to focus a hidden element
+        // (Error: Object does not support this action)
+        try {
           input.focus();
           input.select();
-        }, 1);
+        } catch {}
       }
     }
-
-    document.removeEventListener('mousemove', this.handleDragMove);
-    document.removeEventListener('mouseup', this.handleDragEnd);
   };
 
   handleBlur: FocusEventHandler<HTMLInputElement> = (event) => {

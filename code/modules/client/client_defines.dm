@@ -112,8 +112,6 @@
 	var/connection_realtime //world.realtime they connected
 	var/connection_timeofday //world.timeofday they connected
 
-	var/datum/chatOutput/chatOutput
-
 	// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
 	var/list/sent_assets = list()
 	/// List of all completed blocking send jobs awaiting acknowledgement by send_asset

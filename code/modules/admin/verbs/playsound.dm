@@ -82,3 +82,4 @@ ADMIN_VERB_ADD(/client/proc/stop_sounds_admin, R_SOUND, FALSE)
 	set category = "OOC"
 	set desc = "Stop Current Sounds"
 	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 100))
+	tgui_panel?.stop_music()

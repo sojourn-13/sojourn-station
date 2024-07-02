@@ -36,3 +36,23 @@ GLOBAL_DATUM(changelog_tgui, /datum/changelog)
 
 // TGS //
 GLOBAL_REAL_VAR(client_count)
+
+// Strings //
+GLOBAL_VAR_INIT(TAB, "&nbsp;&nbsp;&nbsp;&nbsp;")
+GLOBAL_LIST_INIT(symbols_unicode_keys, list(
+	"�" = "&#x201A;",
+	"�" = "&#x201E;",
+	"�" = "&#x2026;",
+	"�" = "&#x2020;",
+	"�" = "&#x2021;",
+	"�" = "&#x2030;",
+	"�" = "&#x2039;",
+	"�" = "&#x2018;",
+	"�" = "&#x2019;",
+	"�" = "&#x201C;",
+	"�" = "&#x201D;",
+	"�" = "&#x2022;",
+	"�" = "&#x2013;",
+	"�" = "&#x2014;",
+	"�" = "&#x2122;"
+))

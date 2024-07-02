@@ -1,0 +1,104 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: #000000;
+}
+
+body {
+  background: #fff;
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+a {
+  color: #0000ff;
+}
+
+a.visited {
+  color: #ff00ff;
+}
+
+a:visited {
+  color: #ff00ff;
+}
+
+a.popt {
+  text-decoration: none;
+}
+
+/* MOTD */
+.motd {
+  color: #638500;
+  font-family: Verdana, sans-serif;
+  white-space: normal;
+}
+
+.motd h1,
+.motd h2,
+.motd h3,
+.motd h4,
+.motd h5,
+.motd h6 {
+  color: #638500;
+  text-decoration: underline;
+}
+
+.motd a,
+.motd a:link,
+.motd a:visited,
+.motd a:active,
+.motd a:hover {
+  color: #638500;
+}
+
+/* OUTPUT COLORS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0000ff;
+  font-family: Georgia, Verdana, sans-serif;
+}
+
+h1.alert,
+h2.alert {
+  color: #000000;
+}
+
+.interface {
+  color: #330033;
+}
+
+.newscaster {
+  color: #800000;
+}
+
+/* Color Overrides */
+.green {
+  color: #03ff39;
+}
+
+.blue {
+  color: #0000ff;
+}
+
+.nicegreen {
+  color: #14a833;
+}
+
+.boldnicegreen {
+  color: #14a833;
+  font-weight: bold;
+}
+
+.purple {
+  color: #5e2d79;
+}

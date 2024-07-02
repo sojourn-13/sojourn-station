@@ -8,7 +8,6 @@ import {
   Box,
   Button,
   Divider,
-  Image,
   Input,
   Section,
   Stack,
@@ -50,9 +49,9 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   if (amt === 0) {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            <Box className={icon} />
           </Stack.Item>
         )}
         <Stack.Item>Apply {tool_name}</Stack.Item>
@@ -62,9 +61,9 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   } else if (amt === 1 && !reqed_material) {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            <Box className={icon} />
           </Stack.Item>
         )}
         <Stack.Item>Attach {tool_name}</Stack.Item>
@@ -73,9 +72,9 @@ export const CraftingStep = (props: { step: CraftingStepData }) => {
   } else {
     return (
       <Stack align="center">
-        {!config.window.toaster && (
+        {!config.window.toaster && icon !== null && (
           <Stack.Item>
-            <Image src={icon} />
+            <Box className={icon} />
           </Stack.Item>
         )}
         <Stack.Item>
@@ -121,7 +120,7 @@ export const CraftingRecipe = (props: {
       <Stack>
         {!config.window.toaster && (
           <Stack.Item>
-            <Image src={recipe.icon} />
+            <Box className={recipe.icon} />
           </Stack.Item>
         )}
         <Stack.Item grow>

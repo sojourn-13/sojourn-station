@@ -175,7 +175,7 @@
 
 /datum/tgui_module/catalog/cooking/ui_assets(mob/user)
 	. = ..()
-	. += get_asset_datum(/datum/asset/simple/cooking_icons)
+	. += get_asset_datum(/datum/asset/spritesheet/cooking_icons)
 
 // Drinks Catalog
 /datum/tgui_module/catalog/drinks

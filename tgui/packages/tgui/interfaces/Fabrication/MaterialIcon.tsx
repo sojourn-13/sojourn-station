@@ -1,4 +1,4 @@
-import { Icon, Image } from '../../components';
+import { Box, Icon } from '../../components';
 import { Material } from './Types';
 
 export type MaterialIconProps = {
@@ -16,5 +16,9 @@ export const MaterialIcon = (props: MaterialIconProps) => {
     return <Icon name="question-circle" />;
   }
 
-  return <Image className="FabricatorMaterialIcon" src={material.icon} />;
+  return (
+    <Box className="FabricatorMaterialIcon">
+      <Box className={material.icon} />
+    </Box>
+  );
 };

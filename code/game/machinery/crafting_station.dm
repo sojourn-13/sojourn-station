@@ -93,7 +93,7 @@
 
 /obj/machinery/craftingstation/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/simple/materials)
+		get_asset_datum(/datum/asset/spritesheet_batched/materials)
 	)
 
 /obj/machinery/craftingstation/ui_static_data(mob/user)

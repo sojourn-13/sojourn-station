@@ -121,7 +121,7 @@
 		flick("flash2", src)
 		if(!issilicon(M))
 
-			user.visible_message("<span class='disarm'>[user] blinds [M] with the flash!</span>")
+			user.visible_message("<span class='danger'>[user] blinds [M] with the flash!</span>")
 		else
 
 			user.visible_message(SPAN_NOTICE("[user] overloads [M]'s sensors with the flash!"))
@@ -194,5 +194,5 @@
 				if(safety < FLASH_PROTECTION_MINOR)
 					M.flash(10-(10*safety), FALSE, FALSE, TRUE)
 					for(var/mob/O in viewers(M, null))
-						O.show_message("<span class='disarm'>[M] is blinded by the flash!</span>")
+						O.show_message("<span class='danger'>[M] is blinded by the flash!</span>")
 	..()
