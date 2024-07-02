@@ -198,7 +198,6 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/jetpack,
-							/datum/design/research/item/mecha/ai_holder,
 							/datum/design/research/item/mecha/wormhole_gen,
 							/datum/design/research/item/mecha/rcd,
 							/datum/design/research/item/mecha/gravcatapult,

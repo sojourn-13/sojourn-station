@@ -122,7 +122,7 @@
 		</div>
 		<div id='equipment_menu'>[get_equipment_menu()]</div>
 		<hr>
-		[(/obj/mecha/verb/eject in verbs)?"<a href='?src=\ref[src];eject=1'>Eject</a><br>":null]
+		<a href='?src=\ref[src];eject=1'>Eject</a><br>
 	"}
 	return output
 
@@ -283,12 +283,11 @@
 			visible_message("[src] lowers [selected]")
 			selected = null
 			send_byjax(occupant,"exosuit.browser","eq_list",get_equipment_list())
-
 	if(href_list["eject"])
 		if(usr != occupant)
 			return
 		playsound(src,'sound/mecha/ROBOTIC_Servo_Large_Dual_Servos_Open_mono.ogg',100,1)
-		eject()
+		go_out()
 		return
 	if(href_list["toggle_lights"])
 		if(usr != occupant)
@@ -442,10 +441,6 @@
 		return
 	if(href_list["dna_lock"])
 		if(usr != occupant)
-			return
-		if(isbrain(occupant))
-			usr << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel=4, volume=100)
-			occupant_message("You are a brain. No.")
 			return
 		if(occupant)
 			usr << sound('sound/mecha/UI_SCI-FI_Compute_01_Wet_stereo.ogg',channel=4, volume=100)

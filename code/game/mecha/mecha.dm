@@ -117,7 +117,7 @@
 
 	return cell.drain_power(drain_check)
 
-/obj/mecha/New()
+/obj/mecha/Initialize()
 	. = ..()
 
 	events = new()
@@ -300,6 +300,25 @@
 /obj/mecha/hear_talk(mob/M, text, verb, datum/language/speaking, speech_volume)
 	if(M == occupant && radio.broadcasting)
 		radio.talk_into(M, text, speech_volume = speech_volume)
+
+/obj/mecha/proc/toggle_lights()
+	lights = !lights
+
+	if(lights)
+		set_light(light_range + lights_power)
+	else
+		set_light(light_range - lights_power)
+
+	occupant_message("Toggled lights [lights ? "on" : "off"].")
+	log_message("Toggled lights [lights ? "on" : "off"].")
+
+/obj/mecha/proc/toggle_internal_tank()
+	use_internal_tank = !use_internal_tank
+	occupant_message("Now taking air from [use_internal_tank ? "internal airtank" : "environment"].")
+	log_message("Now taking air from [use_internal_tank ? "internal airtank" : "environment"].")
+
+/obj/mecha/proc/view_stats(mob/user)
+	user << browse(get_stats_html(), "window=exosuit")
 
 ////////////////////////////
 ///// Action processing ////
@@ -1263,7 +1282,7 @@ assassination method if you time it right*/
 		H.forceMove(src)
 		H.reset_view(src)
 		add_fingerprint(H)
-		//GrantActions(H, human_occupant=1)
+		GrantActions(H)
 		forceMove(loc)
 		log_append_to_last("[H] moved in as pilot.")
 		update_icon()
@@ -1274,6 +1293,13 @@ assassination method if you time it right*/
 		return 1
 	return 0
 
+/obj/mecha/verb/attempt_enter()
+	set category = "Object"
+	set name = "Enter Exosuit"
+	set src in oview(1)
+
+	move_inside(usr)
+
 /obj/mecha/proc/go_out()
 	if(!occupant)
 		return
@@ -1283,37 +1309,17 @@ assassination method if you time it right*/
 	occupant.clear_alert("mech damage")
 	occupant.clear_alert("mechaport")
 	occupant.clear_alert("mechaport_d")
-	if(ishuman(occupant) || isAI(occupant))
-		mob_container = occupant
-		//RemoveActions(occupant, human_occupant=1)
-	else if(isbrain(occupant))
-		var/mob/living/carbon/brain/brain = occupant
-		// RemoveActions(brain)
-		mob_container = brain.container
-	else
-		return
+	RemoveActions(occupant)
 
 	for(var/item in dropped_items)
 		var/atom/movable/I = item
 		I.forceMove(loc)
 	dropped_items.Cut()
 
-	if(isAI(mob_container))
-		AIeject()
-		return
-
-	//Eject for AI in mecha
-	if(mob_container.forceMove(loc))//ejecting mob container
+	if(occupant.forceMove(loc)) //ejecting mob
 		log_message("[mob_container] moved out.")
 		occupant.reset_view()
 		occupant << browse(null, "window=exosuit")
-		if(istype(mob_container, /obj/item/device/mmi))
-			var/obj/item/device/mmi/mmi = mob_container
-			if(mmi.brainmob)
-				occupant.forceMove(mmi)
-			mmi.mecha = null
-			occupant.canmove = 0
-			verbs += /obj/mecha/verb/eject
 		occupant = null
 		update_icon()
 		set_dir(dir_in)
