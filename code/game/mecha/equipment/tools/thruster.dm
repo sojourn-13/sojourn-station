@@ -15,27 +15,42 @@
 	equip_ready = FALSE
 
 /obj/item/mecha_parts/mecha_equipment/thruster/New()
-	thrust = new/obj/item/tank/jetpack/mecha(src)
-	..()
+	thrust = new /obj/item/tank/jetpack/mecha(src)
+	. = ..()
+
+/obj/item/mecha_parts/mecha_equipment/thruster/Destroy()
+	QDEL_NULL(thrust)
+	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/thruster/can_attach(obj/mecha/M)
-	.=..()
+	. = ..()
 	if(M.thruster)
 		return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/thruster/attach(obj/mecha/M)
-	..()
+	. = ..()
 	M.thruster = src
 	thrust.gastank = chassis.internal_tank
 	//We pass the chassis as the object to track, and the jetpack as the thing to check for jetpack stuff
-	thrust.trail.set_up(chassis, thrust)
+	// If we're spawned on a roundstart mech it'll take some time for thruster to initialize, so we wanna wait until it's finished
+	if(thrust.trail)
+		thrust.trail.set_up(chassis, thrust)
+	else
+		addtimer(CALLBACK(src, PROC_REF(late_set_trail), M), 5 SECONDS)
 
+/obj/item/mecha_parts/mecha_equipment/thruster/proc/late_set_trail(obj/mecha/M)
+	if(thrust.trail)
+		thrust.trail.set_up(chassis, thrust)
+	else
+		// Loop until the thruster is ready
+		addtimer(CALLBACK(src, PROC_REF(late_set_trail), M), 5 SECONDS)
 
 /obj/item/mecha_parts/mecha_equipment/thruster/detach(atom/moveto)
 	chassis.thruster = null
 	thrust.gastank = null
-	thrust.trail.set_up(src, thrust)
-	..()
+	if(thrust.trail)
+		thrust.trail.set_up(src, thrust)
+	. = ..()
 
 //Attempts to turn on the jetpack
 //Mecha thrusters have always-on stabilisation, it can't be individually toggled
@@ -46,9 +61,8 @@
 	return equip_ready
 
 /obj/item/mecha_parts/mecha_equipment/thruster/proc/turn_on()
-
 	//Make sure enabling both thrust and stabilisation works, otherwise turn off and abort
-	if (!(thrust.enable_thruster() && thrust.enable_stabilizer()))
+	if(!(thrust.enable_thruster() && thrust.enable_stabilizer()))
 		turn_off()
 		return
 	set_ready_state(TRUE)
@@ -66,22 +80,20 @@
 	log_message("Deactivated")
 
 /obj/item/mecha_parts/mecha_equipment/thruster/proc/do_move(var/direction, var/turn)
-	if (!equip_ready)
+	if(!equip_ready)
 		return FALSE
 
-	if (thrust.allow_thrust(user = chassis, stabilization_check = turn))
+	if(thrust.allow_thrust(user = chassis, stabilization_check = turn))
 		return TRUE
 	turn_off()
 	return FALSE
 
-
 /obj/item/mecha_parts/mecha_equipment/thruster/get_equip_info()
-	if(!chassis) return
-	return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;[src.name] \[<a href=\"?src=\ref[src];toggle=1\">Toggle</a>\]"
-
-
+	if(!chassis)
+		return
+	return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;[name] \[<a href=\"?src=\ref[src];toggle=1\">Toggle</a>\]"
 
 /obj/item/mecha_parts/mecha_equipment/thruster/Topic(href,href_list)
-	..()
+	. = ..()
 	if(href_list["toggle"])
 		toggle()

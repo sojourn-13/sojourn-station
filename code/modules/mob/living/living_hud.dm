@@ -34,6 +34,7 @@
 		for (var/i=1,i<=HUDtech.len,i++)
 			var/p = HUDtech[i]
 			src.client.screen += HUDtech[p]
+		hud_used?.reorganize_alerts()
 //For HUD checking needs
 	return
 

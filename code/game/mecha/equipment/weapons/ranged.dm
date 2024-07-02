@@ -16,6 +16,7 @@
 	var/fire_volume = 50 //How loud it is played.
 	var/auto_rearm = 0 //Does the weapon reload itself after each shot?
 	required_type = list(/obj/mecha/combat, /obj/mecha/working/hoverpod/combatpod)
+	destroy_sound = 'sound/mecha/weapdestr.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/action_checks(atom/target)
 	if(projectiles <= 0)
@@ -25,29 +26,32 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/action(atom/target)
 	if(!action_checks(target))
 		return
+
 	var/turf/curloc = chassis.loc
 	var/turf/targloc = get_turf(target)
 	if(!curloc || !targloc)
 		return
+
 	chassis.use_power(energy_drain)
 	chassis.visible_message(SPAN_WARNING("[chassis] fires [src]!"))
 	occupant_message(SPAN_WARNING("You fire [src]!"))
 	log_message("Fired from [src], targeting [target].")
-	set_ready_state(0)
+	start_cooldown()
+
 	for(var/i = 1 to min(projectiles, projectiles_per_shot))
 		var/turf/aimloc = targloc
 		if(!aimloc || aimloc == curloc)
 			break
+
 		playsound(chassis, fire_sound, fire_volume, 1)
 		projectiles--
 		var/P = new projectile(curloc)
 		Fire(P, target)
 		if(fire_cooldown)
 			sleep(fire_cooldown)
+
 	if(auto_rearm)
 		projectiles = projectiles_per_shot
-	do_after_cooldown()
-	return
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/proc/Fire(atom/A, atom/target)
 	var/obj/item/projectile/P = A

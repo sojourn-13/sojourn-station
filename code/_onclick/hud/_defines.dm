@@ -40,6 +40,13 @@
 #define ui_borg_store "CENTER+2,SOUTH:5"	//borgs
 #define ui_borg_inventory "CENTER-2,SOUTH:5"//borgs
 
+//Upper-middle right (alerts)
+#define ui_alert1 "EAST-1:28,CENTER+5:27"
+#define ui_alert2 "EAST-1:28,CENTER+4:25"
+#define ui_alert3 "EAST-1:28,CENTER+3:23"
+#define ui_alert4 "EAST-1:28,CENTER+2:21"
+#define ui_alert5 "EAST-1:28,CENTER+1:19"
+
 #define ui_monkey_mask "WEST+4:14,SOUTH:5"	//monkey
 #define ui_monkey_back "WEST+5:14,SOUTH:5"	//monkey
 

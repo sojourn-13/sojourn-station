@@ -4,6 +4,7 @@
 	icon_state = "ivan"
 	initial_icon = "ivan"
 	step_in = 3
+	normal_step_energy_drain = 10
 	step_energy_drain = 10
 	max_temperature = 20000
 	health = 400

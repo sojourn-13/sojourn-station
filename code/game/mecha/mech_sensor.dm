@@ -15,16 +15,18 @@
 	var/frequency = 1379
 	var/datum/radio_frequency/radio_connection
 
-/obj/machinery/mech_sensor/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(!src.enabled()) return 1
-	if(air_group || (height==0)) return 1
+/obj/machinery/mech_sensor/CanPass(atom/movable/mover, turf/target, height = 0, air_group = 0)
+	if(!enabled())
+		return 1
+	if(air_group || (height == 0))
+		return 1
 
-	if ((get_dir(loc, target) & dir) && src.is_blocked(mover))
-		src.give_feedback(mover)
+	if((get_dir(loc, target) & dir) && is_blocked(mover))
+		give_feedback(mover)
 		return 0
 	return 1
 
-/obj/machinery/mech_sensor/proc/is_blocked(O as obj)
+/obj/machinery/mech_sensor/proc/is_blocked(O)
 	if(istype(O, /obj/mecha/medical/odysseus))
 		var/obj/mecha/medical/odysseus/M = O
 		for(var/obj/item/mecha_parts/mecha_equipment/ME in M.equipment)
@@ -35,7 +37,7 @@
 
 	return istype(O, /obj/mecha) || istype(O, /obj/vehicle)
 
-/obj/machinery/mech_sensor/proc/give_feedback(O as obj)
+/obj/machinery/mech_sensor/proc/give_feedback(O)
 	var/block_message = SPAN_WARNING("Movement control overridden. Area denial active.")
 	var/feedback_timer = 0
 	if(feedback_timer)
@@ -59,12 +61,12 @@
 
 /obj/machinery/mech_sensor/power_change()
 	var/old_stat = stat
-	..()
+	. = ..()
 	if(old_stat != stat)
 		update_icon()
 
 /obj/machinery/mech_sensor/update_icon(var/safety = 0)
-	if (enabled())
+	if(enabled())
 		icon_state = "airlock_sensor_standby"
 	else
 		icon_state = "airlock_sensor_off"
@@ -88,7 +90,7 @@
 
 	if(signal.data["command"] == "enable")
 		on = 1
-	else if (signal.data["command"] == "disable")
+	else if(signal.data["command"] == "disable")
 		on = 0
 
 	update_icon()

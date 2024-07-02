@@ -856,7 +856,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/safety_clamp
 	name = "Hydraulic clamp overclock: KILL CLAMP"
-	result = /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+	result = /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp
 	steps = list(
 		list(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp, 1, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40),

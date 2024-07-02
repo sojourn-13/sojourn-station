@@ -208,6 +208,9 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/list/HUDtech = list()
 	var/defaultHUD = "" //Default mob hud
 
+	/// lazy list. contains /obj/screen/alert only,  On /mob so clientless mobs will throw alerts properly
+	var/list/alerts
+
 	var/list/progressbars = null
 
 	///The z level this mob is currently registered in

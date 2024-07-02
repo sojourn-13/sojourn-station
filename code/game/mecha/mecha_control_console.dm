@@ -10,13 +10,14 @@
 	var/screen = FALSE
 	var/stored_data
 
-/obj/machinery/computer/mecha/attack_ai(var/mob/user as mob)
-	return src.attack_hand(user)
+/obj/machinery/computer/mecha/attack_ai(mob/user)
+	return attack_hand(user)
 
-/obj/machinery/computer/mecha/attack_hand(var/mob/user as mob)
-	if(..())
+/obj/machinery/computer/mecha/attack_hand(mob/user)
+	. = ..()
+	if(.)
 		return
-	nano_ui_interact(user)
+	interact(user)
 
 /obj/machinery/computer/mecha/Topic(href, href_list)// TODO: fix everything
 	if(..())
@@ -39,22 +40,19 @@
 	if(href_list["return"])
 		screen = FALSE
 	if(href_list["print"])
-		to_chat(usr, "The [src] hums as it begins printing a report.")
+		to_chat(usr, "[src] hums as it begins printing a report.")
 		sleep(50)
 		print_report(usr)
-	src.updateUsrDialog()
-	return
+	updateUsrDialog()
 
-/obj/machinery/computer/mecha/proc/print_report(var/mob/living/user)
+/obj/machinery/computer/mecha/proc/print_report(mob/living/user)
 	new /obj/item/paper(get_turf(src), stored_data, "Exosuit Log") // Spawn the log of the mech
-	src.visible_message("\The [src] spits out a piece of paper.")
+	visible_message("[src] spits out a piece of paper.")
 
 //I have no idea what im doing
-/obj/machinery/computer/mecha/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
-	if(..())
-		return
+/obj/machinery/computer/mecha/interact(mob/user)
 	user.set_machine(src)
-	var/dat = "<html><head><title>[src.name]</title><style>h3 {margin: 0px; padding: 0px;}</style></head><body>"
+	var/dat = "<html><head><title>[name]</title><style>h3 {margin: 0px; padding: 0px;}</style></head><body>"
 	if(screen == FALSE)
 		dat += "<h3>Tracking beacons data</h3>"
 		for(var/obj/item/mecha_parts/mecha_tracking/TR in world)
@@ -74,7 +72,6 @@
 
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")
-	return
 
 
 /obj/item/mecha_parts/mecha_tracking //Whe is this here WE HAVE FILES FOR THIS?!
@@ -88,7 +85,7 @@
 /obj/item/mecha_parts/mecha_tracking/proc/get_mecha_info()
 	if(!in_mecha())
 		return FALSE
-	var/obj/mecha/M = src.loc
+	var/obj/mecha/M = loc
 	var/cell_charge = M.get_charge()
 	var/answer = {"<b>Name:</b> [M.name]<br>
 						<b>Integrity:</b> [M.health/initial(M.health)*100]%<br>
@@ -97,23 +94,21 @@
 						<b>Pilot:</b> [M.occupant||"None"]<br>
 						<b>Location:</b> [get_area(M)||"Unknown"]<br>
 						<b>Active equipment:</b> [M.selected||"None"]"}
-	if(istype(M, /obj/mecha/working/ripley))
-		var/obj/mecha/working/ripley/RM = M
-		answer += "<b>Used cargo space:</b> [RM.cargo.len/RM.cargo_capacity*100]%<br>"
+
+	if(M.cargo_capacity > 0)
+		answer += "<b>Used cargo space:</b> [(M.cargo.len / M.cargo_capacity) * 100]%<br>"
 
 	return answer
 
 /obj/item/mecha_parts/mecha_tracking/emp_act()
-	qdel(src)
 	return
 
 /obj/item/mecha_parts/mecha_tracking/ex_act()
 	qdel(src)
-	return
 
 /obj/item/mecha_parts/mecha_tracking/proc/in_mecha()
-	if(istype(src.loc, /obj/mecha))
-		return src.loc
+	if(istype(loc, /obj/mecha))
+		return loc
 	return FALSE
 
 /obj/item/mecha_parts/mecha_tracking/proc/shock()
@@ -123,11 +118,10 @@
 	qdel(src)
 
 /obj/item/mecha_parts/mecha_tracking/proc/get_mecha_log()
-	if(!src.in_mecha())
+	if(!in_mecha())
 		return FALSE
-	var/obj/mecha/M = src.loc
+	var/obj/mecha/M = loc
 	return M.get_log_html()
-
 
 /obj/item/storage/box/mechabeacons //Whe is this here?!
 	name = "Exosuit Tracking Beacons"

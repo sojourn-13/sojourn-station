@@ -12,26 +12,26 @@
 	matter = list(MATERIAL_STEEL = 35)
 
 /obj/item/mech_ammo_box/examine(mob/user)
-	..()
+	. = ..()
 	to_chat(user, "<span class='info'>Ammo left: [ammo_amount_left]</span>")
 	to_chat(user, "<span class='info'>Ammo type: [ammo_type]</span>")
 
 /obj/item/mech_ammo_box/attackby(obj/item/I, mob/user as mob)
-	..()
-	if (istype(I, /obj/item/mech_ammo_box))
-		while(1)
-			if(ammo_type != src.ammo_type)
-				to_chat(user, SPAN_WARNING("Wrong ammo type!"))
-				return 0
-			if(ammo_amount_left <= 0)
-				to_chat(user, SPAN_WARNING("The box is out of ammo."))
-				return 0
-			if(src.ammo_max_amout <= src.ammo_amount_left)
-				to_chat(user, SPAN_WARNING("The box is full."))
-				return 0
-			ammo_amount_left -= amount_per_click
-			src.ammo_amount_left += amount_per_click
-			return 1
+	. = ..()
+	if(istype(I, /obj/item/mech_ammo_box))
+		var/obj/item/mech_ammo_box/FMJ = I //Full metal jecket
+		if(FMJ.ammo_type != ammo_type)
+			to_chat(user, SPAN_WARNING("Wrong ammo type!"))
+			return 0
+		if(FMJ.ammo_amount_left <= 0)
+			to_chat(user, SPAN_WARNING("[FMJ] is out of ammo."))
+			return 0
+		if(ammo_amount_left >= ammo_max_amout)
+			to_chat(user, SPAN_WARNING("[src] is full."))
+			return 0
+		FMJ.ammo_amount_left -= amount_per_click
+		ammo_amount_left += amount_per_click
+		return 1
 
 ///////////
 /// HMG ///
@@ -95,13 +95,12 @@
 	throwforce = 15
 	allow_spin = 0
 
-	throw_impact(atom/hit_atom)
-		if(primed)
-			explosion(hit_atom, 0, 1, 2, 4)
-			qdel(src)
-		else
-			..()
-		return
+/obj/item/missile/throw_impact(atom/hit_atom)
+	if(primed)
+		explosion(hit_atom, 0, 1, 2, 4)
+		qdel(src)
+	else
+		..()
 
 /obj/item/longtom
 	icon = 'icons/obj/grenade.dmi'
@@ -110,10 +109,9 @@
 	throwforce = 10
 	allow_spin = 0
 
-	throw_impact(atom/hit_atom)
-		if(primed)
-			explosion(hit_atom, 3, 4, 6, 5)
-			qdel(src)
-		else
-			..()
-		return
+/obj/item/longtom/throw_impact(atom/hit_atom)
+	if(primed)
+		explosion(hit_atom, 3, 4, 6, 5)
+		qdel(src)
+	else
+		..()

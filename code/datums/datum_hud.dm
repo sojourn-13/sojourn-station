@@ -1,5 +1,6 @@
 /datum/hud
 	var/name
+	var/mob/mymob = null
 	var/list/HUDneed //for "active" elements (health)
 //	var/list/HUDprocess = list()
 	var/list/slot_data //inventory stuff (for mob variable HUDinventory)
@@ -79,12 +80,17 @@
 /mob/update_plane()
 	..()
 	if(hud_used)
-		hud_used.updatePlaneMasters(src)
+		hud_used.updatePlaneMasters()
 
 
-/datum/hud/New(mob/mymob)
+/datum/hud/New(mob/new_mymob)
+	mymob = new_mymob
 	if(mymob)
-		updatePlaneMasters(mymob)
+		updatePlaneMasters()
+
+/datum/hud/Destroy()
+	mymob = null
+	. = ..()
 
 /datum/hud/human
 	name = "ErisStyle"

@@ -9038,7 +9038,7 @@
 "TV" = (
 /obj/structure/table/rack/shelf,
 /obj/structure/disposalpipe/segment,
-/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp,
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "TW" = (

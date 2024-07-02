@@ -7,7 +7,7 @@
 	range = MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/get_equip_info()
-		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
+	return "[..()]\[[projectiles]\][(projectiles < initial(projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)
@@ -19,15 +19,13 @@
 			projectiles++
 			projectiles_to_add--
 			chassis.use_power(projectile_energy_cost)
-	send_byjax(chassis.occupant,"exosuit.browser","\ref[src]",src.get_equip_info())
-	log_message("Rearmed [src.name].")
-	return
+	send_byjax(chassis.occupant, "exosuit.browser", "\ref[src]", get_equip_info())
+	log_message("Rearmed [name].")
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/Topic(href, href_list)
-	..()
-	if (href_list["rearm"])
-		src.rearm()
-	return
+	. = ..()
+	if(href_list["rearm"])
+		rearm()
 
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
@@ -47,7 +45,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare/Fire(atom/movable/AM, atom/target, turf/aimloc)
 	var/obj/item/device/lighting/glowstick/flare/fired = AM
 	fired.turn_on()
-	..()
+	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive
 	name = "\improper ATM-9 missile rack"
@@ -70,7 +68,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive/Fire(atom/movable/AM, atom/target)
 	var/obj/item/missile/M = AM
 	M.primed = 1
-	..()
+	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/long
 	name = "\improper \"Arrowhead\" S1 Long Tom missile launcher"
@@ -91,7 +89,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/long/Fire(atom/movable/AM, atom/target)
 	var/obj/item/longtom/M = AM
 	M.primed = 1
-	..()
+	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 	name = "\improper SGL-4 grenade launcher"
@@ -106,7 +104,7 @@
 	var/det_time = 20
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang/Fire(atom/movable/AM, atom/target)
-	..()
+	. = ..()
 	var/obj/item/grenade/flashbang/F = AM
 	spawn(det_time)
 		F.prime()

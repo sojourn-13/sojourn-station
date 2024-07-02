@@ -60,10 +60,8 @@
 			done = 0
 	if(done)
 		stop_charging()
-	return
 
 /obj/machinery/mech_recharger/attackby(var/obj/item/I, var/mob/user)
-
 	if(default_deconstruction(I, user))
 		return
 
@@ -73,15 +71,14 @@
 /obj/machinery/mech_recharger/proc/start_charging(var/obj/mecha/M)
 	if(stat & (NOPOWER | BROKEN))
 		M.occupant_message(SPAN_WARNING("Power port not responding. Terminating."))
-
 		return
+
 	if(M.cell)
 		M.occupant_message(SPAN_NOTICE("Now charging..."))
 		charging = M
-	return
 
 /obj/machinery/mech_recharger/proc/stop_charging()
 	if(!charging)
-
 		return
+
 	charging = null
