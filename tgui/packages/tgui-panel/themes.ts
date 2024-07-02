@@ -57,8 +57,8 @@ export const setClientTheme = (name) => {
       'wikiurl.text-color': '#000000',
       'discordurl.background-color': 'none',
       'discordurl.text-color': '#000000',
-      'github.background-color': 'none',
-      'github.text-color': '#000000',
+      'githuburl.background-color': 'none',
+      'githuburl.text-color': '#000000',
       // Status and verb tabs
       'output.background-color': 'none',
       'output.text-color': '#000000',
