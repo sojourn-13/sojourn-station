@@ -225,6 +225,10 @@
 	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
 	qdel(src)
 
+/obj/effect/decal/cleanable/psi_ash/ponderous
+	name = "ponderous of strange ashes"
+	catalyst_drop = /obj/random/psi_catalyst/ponderous
+
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"
 	desc = "He will be back."
