@@ -4,6 +4,7 @@
 	var/datum/action/innate/mecha/mech_toggle_lights/lights_action = new
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/reload_gun/reload_action = new
+	var/datum/action/innate/mecha/mech_defence_mode/defense_action = new
 
 /obj/mecha/proc/GrantActions(mob/living/user)
 	eject_action.Grant(user, src)
@@ -84,3 +85,15 @@
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
 	chassis.reload_gun()
+
+/datum/action/innate/mecha/mech_defence_mode
+	name = "Toggle Defence Mode"
+	button_icon_state = "mech_defense_mode_off"
+
+/datum/action/innate/mecha/mech_defence_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+
+	chassis.toggle_defense_mode()
+	button_icon_state = "mech_defense_mode_[chassis.defense_mode ? "on" : "off"]"
+	button?.UpdateIcon()

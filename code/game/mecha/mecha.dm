@@ -102,6 +102,10 @@
 	// set to a direction to make the mech go inertial
 	var/inertial_movement = 0
 
+	// Functionality that used to be on subtypes
+	var/defense_mode = FALSE
+	var/defense_mode_boost = 30
+
 /obj/mecha/can_prevent_fall()
 	return TRUE
 
@@ -524,6 +528,11 @@
 	if(inertial_movement)
 		return 0
 	if(!has_charge(step_energy_drain))
+		return 0
+	if(defense_mode)
+		if(world.time - last_message > 20)
+			occupant_message(SPAN_DANGER("Unable to move while in defense mode."))
+			last_message = world.time
 		return 0
 
 	var/turn = FALSE //If true, we are turning in place instead of moving
@@ -1566,3 +1575,14 @@ assassination method if you time it right*/
 	if(hud == source)
 		UnregisterSignal(source, COMSIG_HUD_DELETED)
 		hud = null
+
+// Helpers for previously subtyped features
+/obj/mecha/proc/toggle_defense_mode()
+	defense_mode = !defense_mode
+	if(defense_mode)
+		deflect_chance += defense_mode_boost
+		occupant_message(SPAN_NOTICE("You enable [src] defense mode."))
+	else
+		deflect_chance -= defense_mode_boost
+		occupant_message(SPAN_DANGER("You disable [src] defense mode."))
+	log_message("Toggled defence mode.")
