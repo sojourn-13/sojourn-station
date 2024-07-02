@@ -422,6 +422,12 @@
 /obj/item/mecha_parts/mecha_equipment/tool/passenger/Exit(atom/movable/O)
 	return 0
 
+// Make absolutely sure this alert is cleared
+/obj/item/mecha_parts/mecha_equipment/tool/passenger/Exited(mob/living/L)
+	. = ..()
+	if(istype(L))
+		L.clear_alert("passenger_cabin")
+
 /obj/item/mecha_parts/mecha_equipment/tool/passenger/proc/move_inside(var/mob/user)
 	if(chassis)
 		chassis.visible_message(SPAN_NOTICE("[user] starts to climb into [chassis]."))
@@ -432,31 +438,23 @@
 			occupant = user
 			log_message("[user] boarded.")
 			occupant_message("[user] boarded.")
+			occupant.throw_alert("passenger_cabin", /obj/screen/alert/exit_passenger_compartment)
 		else if(occupant != user)
 			to_chat(user, SPAN_WARNING("[occupant] was faster. Try better next time, loser."))
 	else
 		to_chat(user, "You stop entering the exosuit.")
 
-/obj/item/mecha_parts/mecha_equipment/tool/passenger/verb/eject()
-	set name = "Eject"
-	set category = "Exosuit Interface"
-	set src = usr.loc
-	set popup_menu = 0
-
-	if(usr != occupant)
-		return
-	to_chat(occupant, "You climb out from [src].")
-	go_out()
-	occupant_message("[occupant] disembarked.")
-	log_message("[occupant] disembarked.")
-	add_fingerprint(usr)
-
 /obj/item/mecha_parts/mecha_equipment/tool/passenger/proc/go_out()
 	if(!occupant)
 		return
+	to_chat(occupant, "You climb out from [src].")
 	occupant.forceMove(get_turf(src))
 	occupant.reset_view()
+	occupant.clear_alert("passenger_cabin")
 	occupant = null
+	occupant_message("[occupant] disembarked.")
+	log_message("[occupant] disembarked.")
+	add_fingerprint(usr)
 	return
 
 /obj/item/mecha_parts/mecha_equipment/tool/passenger/attach()

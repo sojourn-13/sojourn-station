@@ -469,6 +469,17 @@ so as to remain in compliance with the most up-to-date laws."
 	desc = "Maintenance protocols are currently in effect, most actions disabled."
 	icon_state = "locked"
 
+/obj/screen/alert/exit_passenger_compartment
+	name = "Inside Passenger Compartment"
+	desc = "You're currently in a passenger compartment, click the alert to leave!"
+	icon_state = "buckled"
+
+/obj/screen/alert/exit_passenger_compartment/Click()
+	if(!..())
+		return
+	var/obj/item/mecha_parts/mecha_equipment/tool/passenger/M = usr.loc
+	if(istype(M))
+		M.go_out()
 
 //GHOSTS
 //TODO: expand this system to replace the pollCandidates/CheckAntagonist/"choose quickly"/etc Yes/No messages
