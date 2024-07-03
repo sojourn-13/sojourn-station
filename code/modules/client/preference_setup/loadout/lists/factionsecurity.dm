@@ -33,7 +33,7 @@
 /datum/gear/factionsecurity/beretironhammer
 	display_name = "beret, security"
 	path = /obj/item/clothing/head/rank/ironhammer
-	allowed_roles = list("Ranger","Marshal Officer")
+	allowed_roles = list("Ranger","Marshal Officer", "Marshal Officer Jr")
 	slot = slot_head
 
 /datum/gear/factionsecurity/capsarge

@@ -72,8 +72,8 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
-	noob_name = "Soteria Research Student"
-	alt_titles = list("Soteria Research Student","Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
+	noob_name = "Soteria Research Learnie"
+	alt_titles = list("Soteria Intern","Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -119,7 +119,7 @@
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
 	noob_name = "Soteria Roboticist Trainee"
-	alt_titles = list("Soteria Roboticist Trainee", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
+	alt_titles = list("Lab Assistant", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
