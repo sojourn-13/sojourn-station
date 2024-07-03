@@ -18,13 +18,14 @@
 	var/list/obj/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 	var/list/obj/screen/openspace_overlay/openspace_overlays = list()
 
-/datum/hud/proc/updatePlaneMasters(mob/mymob)
-	if(!mymob || !mymob.client)
+/datum/hud/proc/updatePlaneMasters(mob/viewmob)
+	var/mob/screenmob = viewmob || mymob
+	if(!screenmob || !screenmob.client)
 		return
 
-	var/atom/player = mymob
-	if(mymob.client.virtual_eye)
-		player = mymob.client.virtual_eye
+	var/atom/player = screenmob
+	if(screenmob.client.virtual_eye)
+		player = screenmob.client.virtual_eye
 
 	var/turf/T = get_turf(player)
 	if(!T)
@@ -41,14 +42,14 @@
 
 	for(var/pmaster in plane_masters)
 		var/obj/screen/plane_master/instance = plane_masters[pmaster]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	plane_masters.Cut()
 
 	for(var/over in openspace_overlays)
 		var/obj/screen/openspace_overlay/instance = openspace_overlays[over]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	openspace_overlays.Cut()
@@ -63,8 +64,8 @@
 			instance.plane = calculate_plane(zi,instance.plane)
 
 			plane_masters["[zi]-[relative_level]-[instance.plane]-[mytype]"] = instance
-			mymob.client.screen += instance
-			instance.backdrop(mymob)
+			screenmob.client.screen += instance
+			instance.backdrop(screenmob)
 
 		for(var/pl in list(GAME_PLANE,FLOOR_PLANE))
 			if(zi < z)
@@ -74,19 +75,19 @@
 				oover.plane = calculate_plane(zi,pl)
 				oover.alpha = min(255,zdiff*50 + 30)
 				openspace_overlays["[zi]-[relative_level]-[oover.plane]"] = oover
-				mymob.client.screen += oover
+				screenmob.client.screen += oover
 
 
 /mob/update_plane()
 	..()
 	if(hud_used)
-		hud_used.updatePlaneMasters()
+		hud_used.updatePlaneMasters(src)
 
 
 /datum/hud/New(mob/new_mymob)
 	mymob = new_mymob
 	if(mymob)
-		updatePlaneMasters()
+		updatePlaneMasters(mymob)
 
 /datum/hud/Destroy()
 	mymob = null
