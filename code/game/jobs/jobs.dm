@@ -36,6 +36,9 @@ var/const/CYBORG			=(1<<9)
 var/const/SWO				=(1<<10)
 var/const/OFFICER			=(1<<11)
 var/const/SERG				=(1<<12)
+var/const/OFFICERJR			=(1<<13)
+var/const/APPRENTICE		=(1<<14)
+var/const/BSCADET			=(1<<15)
 
 
 var/const/MEDSCI			=(1<<1)
@@ -47,6 +50,7 @@ var/const/CBO				=(1<<3)
 var/const/DOCTOR			=(1<<4)
 var/const/PSYCHIATRIST		=(1<<5)
 var/const/ROBOTICIST		=(1<<6)
+var/const/DOCTORJR			=(1<<7)
 
 
 var/const/STEWARD			=(1<<0)

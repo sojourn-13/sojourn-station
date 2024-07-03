@@ -57,3 +57,6 @@
 	head = /obj/item/clothing/head/rank/trooper/cap
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/trooper = 1)
+
+/decl/hierarchy/outfit/job/blackshield/troop/cadet
+	name = OUTFIT_JOB_NAME("Blackshield - Cadet")
