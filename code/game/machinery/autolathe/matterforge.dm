@@ -267,6 +267,7 @@
 		user.drop_item(I)
 		I.forceMove(src)
 		power_source = I
+		update_static_data_for_all_viewers()
 		return
 
 	if(power_source)
@@ -409,7 +410,7 @@
 		next_file()
 
 	update_icon()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 
 
@@ -526,12 +527,12 @@
 	return ..()
 
 /obj/machinery/matter_nanoforge/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	icon_state = initial(icon_state)
 
 	if(panel_open)
-		overlays.Add(image(icon, "[icon_state]_panel"))
+		add_overlay(image(icon, "[icon_state]_panel"))
 
 	if(working) // if paused, work animation looks awkward.
 		if(paused || error)

@@ -454,7 +454,7 @@
 	return pickweight(mobs)
 
 /obj/random/mob/vox/low_chance
-	name = "low chance nightmare"
+	name = "low chance vox"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 50 //Coin flip
 

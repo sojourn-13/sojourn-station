@@ -27,12 +27,15 @@ export type MaterialData = {
 };
 
 export const LoadedMaterials = (props: MaterialData) => {
-  const { act, data } = useBackend<MaterialData>();
+  const { act } = useBackend<MaterialData>();
 
   const { materials, mat_capacity } = props;
 
   return (
     <Section
+      fill
+      scrollable
+      height={materials.length <= 1 ? 5 : 18}
       title="Loaded Materials"
       buttons={
         <Button

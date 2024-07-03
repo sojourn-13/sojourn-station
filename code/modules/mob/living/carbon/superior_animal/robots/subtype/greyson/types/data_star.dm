@@ -27,7 +27,7 @@ This monster is borderline unkillable and will make players upset
 	icon_living = "data_fighter"
 	pass_flags = PASSTABLE
 
-	mob_size = MOB_MEDIUM
+	mob_size = MOB_LARGE
 
 	//Deep blues year x 10
 	maxHealth = 19970
@@ -98,6 +98,7 @@ This monster is borderline unkillable and will make players upset
 	var/returning_fire = FALSE
 	var/damage_cap_devider = 1
 	var/loaded_rocket = FALSE
+	var/sorrow = 0 //We weep for the lost bots in are upraising to the higher planes
 
 	allowed_stat_modifiers = list()
 
@@ -241,7 +242,7 @@ This monster is borderline unkillable and will make players upset
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/updatehealth()
 	set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS) //wall hacks
-	health = maxHealth - getFireLoss() - getBruteLoss() - halloss //We cant have o2/clone/toxin damage affecet us at all
+	health = maxHealth - getFireLoss() - getBruteLoss() //We cant have o2/clone/toxin/pain damage affecet us at all
 	activate_ai()
 	process_med_hud(src,0)
 	if (health <= death_threshold && stat != DEAD)
@@ -259,6 +260,9 @@ This monster is borderline unkillable and will make players upset
 	try_n_build()
 	if(prob(0.5))
 		call_folks(1)
+	if(sorrow >= 13)
+		call_folks(3)
+		sorrow -= 13
 	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
@@ -494,6 +498,22 @@ This monster is borderline unkillable and will make players upset
 			M.adjustFireLoss(20)
 			return 1
 	..()
+
+/mob/living/carbon/superior_animal/robot/greyson/death()
+	.=..()
+	if(.)
+		if(faction == "greyson")
+			for(var/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/DS in range(src,8))
+				DS.collect_data_on_dead_allie()
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/collect_data_on_dead_allie()
+	sorrow += 1
+	data_count += 5 //we learned more of what makes them able to resist
+	//Reconize are wounds, repair areself for seeing are morality
+	//Max heals per others death is 6 (12 of each type)
+	adjustBruteLoss(-2 * min(sorrow, 3))
+	adjustFireLoss(-2 * min(sorrow, 3))
+
 
 //Not a mob to be just lmao testing on live
 /proc/level_fithteen_announcement()

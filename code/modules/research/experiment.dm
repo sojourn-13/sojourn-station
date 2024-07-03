@@ -576,7 +576,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/obj/holding_obj //we ASSUME that are holder is an object, after all what else would be able to *PHYSICALY* hold points????
 
 /datum/component/rnd_points/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_transfer)
+	RegisterSignal(parent, COMSIG_ATTACKBY, PROC_REF(attempt_transfer))
 
 /datum/component/rnd_points/proc/attempt_transfer(obj/I, var/mob/living/user, params)
 	if(!holding_obj)

@@ -74,19 +74,25 @@
 
 /obj/item/mine_old/Bumped(mob/M as mob|obj)
 
-	if(triggered) return
+	if(triggered)
+		return
 
 	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			to_chat(O, "<font color='red'>[M] triggered the \icon[src] [src]</font>")
+		visible_message(SPAN_NOTICE("[M] triggeres \the [src]."))
+		triggered = 1
+		call(src,triggerproc)(M)
+		return
+
+	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+		visible_message(SPAN_NOTICE("[M] steps over the \the [src] but still triggeres its payload."))
+		triggered = 1
+		call(src,triggerproc)(M)
+		return
+
+	if(isliving(M))
 		triggered = 1
 		call(src,triggerproc)(M)
 
-	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
-		for(var/mob/O in viewers(world.view, src.loc))
-			to_chat(O, "<font color='red'>[M] steps over the \icon[src] [src] but still triggeres its payload.</font>")
-		triggered = 1
-		call(src,triggerproc)(M)
 
 /obj/item/spider_shadow_trap
 	name = "odd shadow"

@@ -13,7 +13,7 @@
 
 /datum/individual_objective/upgrade/assign()
 	..()
-	RegisterSignal(mind_holder, COMSIG_HUMAN_ROBOTIC_MODIFICATION, .proc/completed)
+	RegisterSignal(mind_holder, COMSIG_HUMAN_ROBOTIC_MODIFICATION, PROC_REF(completed))
 
 /datum/individual_objective/upgrade/completed()
 	if(completed) return
@@ -27,7 +27,7 @@
 
 /datum/individual_objective/inspiration/assign()
 	..()
-	RegisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN, PROC_REF(task_completed))
 
 /datum/individual_objective/inspiration/task_completed(mob/living/L, datum/breakdown/breakdown)
 	if(istype(breakdown, breakdown_type) && L != mind_holder)
@@ -55,7 +55,7 @@
 	var/list/valid_targets = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - mind_holder
 	target = pick(valid_targets)
 	desc = "[target] really pisses you off, ensure that they will get a mental breakdown."
-	RegisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN, PROC_REF(task_completed))
 
 /datum/individual_objective/derange/task_completed(mob/living/L, datum/breakdown/breakdown)
 	if(L == target)
@@ -81,7 +81,7 @@
 	..()
 	timer = world.time
 	desc = "The stress of life and frontier living weighs on the mind, staying a bit buzzed on alcohol or drugs for [unit2time(units_requested)] minutes would absolutely ease that stress."
-	RegisterSignal(mind_holder, COMSIG_CARBON_HAPPY, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_CARBON_HAPPY, PROC_REF(task_completed))
 
 /datum/individual_objective/addict/task_completed(datum/reagent/happy, signal)
 	if(!drugs.len)
@@ -108,7 +108,7 @@
 
 /datum/individual_objective/gift/assign()
 	..()
-	RegisterSignal(mind_holder, COMSIG_HUMAN_LEVEL_UP, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_HUMAN_LEVEL_UP, PROC_REF(task_completed))
 
 /datum/individual_objective/gift/task_completed(mob/living/carbon/human/H, obj/item/O)
 	if(mind_holder == H) return
@@ -142,7 +142,7 @@
 	desc = "You're not sure why but you feel as though [target] needs to be protected, ensure their health is not lowered to [health_threshold] and below \
 			for [unit2time(units_requested)] minutes. If it happens, you'll need to wait longer to ensure their safe and healthy."
 	timer = world.time
-	RegisterSignal(target, COMSIG_HUMAN_HEALTH, .proc/task_completed)
+	RegisterSignal(target, COMSIG_HUMAN_HEALTH, PROC_REF(task_completed))
 
 /datum/individual_objective/protector/task_completed(health)
 	if(health < health_threshold)
@@ -182,7 +182,7 @@
 	desc = "Ensure that [target] will not get their sanity lowered to [sanity_threshold] and below \
 			for [unit2time(units_requested)] minutes. Timer resets if sanity reaches the threshold."
 	timer = world.time
-	RegisterSignal(target, COMSIG_HUMAN_SANITY, .proc/task_completed)
+	RegisterSignal(target, COMSIG_HUMAN_SANITY, PROC_REF(task_completed))
 
 /datum/individual_objective/helper/task_completed(sanity)
 	if(sanity < sanity_threshold)
@@ -220,7 +220,7 @@
 	target = pick(valid_targets)
 	desc = "There is something interesting about [target]. For [unit2time(units_requested)] minutes, you should observe them in person. Cameras will not work."
 	timer = world.time
-	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, PROC_REF(task_completed))
 
 /datum/individual_objective/obsession/task_completed()
 	if(target in view(mind_holder))
@@ -256,7 +256,7 @@
 	target = pick_faction_item(mind_holder, TRUE)
 	desc = "Acquire and hold \the [target] for [unit2time(units_requested)] minutes. Greed is good."
 	timer = world.time
-	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, PROC_REF(task_completed))
 
 /datum/individual_objective/greed/task_completed()
 	var/find = FALSE
@@ -288,7 +288,7 @@
 	..()
 	target = pick_candidates()
 	desc = "Get your hands on a [target.name]. Collecting knick knacks is a common past time after all."
-	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, PROC_REF(task_completed))
 
 /datum/individual_objective/collenction/task_completed(obj/item/W)
 	if(W.type == target.type)
@@ -331,7 +331,7 @@
 	desc = "The money must always flow but you must also prevent fees from ruining you.  \
 			Make a back transfer from you personal to \"[target.account_number]\" account for amount of [units_requested][CREDITS].\
 			Back transfer meaning adding the [units_requested][CREDITS] must be added account \"[target.account_number]\""
-	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
+	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, PROC_REF(task_completed))
 
 /datum/individual_objective/economy/task_completed(datum/money_account/S, datum/money_account/T, amount)
 	if(S == owner.initial_account && amount >= units_requested && T != S)
@@ -369,7 +369,7 @@
 	target = pick(valids_targets)
 	units_requested = rand(1000, 2000) //Housing water and power, shouldnt be cheap
 	desc = "The bills must be payed or you could be without housing, or other normal luxuries, provide this account number: \"[target.account_number]\" with the sum of [units_requested][CREDITS]..."
-	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
+	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, PROC_REF(task_completed))
 
 /datum/individual_objective/bills/task_completed(datum/money_account/S, datum/money_account/T, amount)
 	if(S == owner.initial_account && amount >= units_requested && T != S)

@@ -587,7 +587,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false welding, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
@@ -600,7 +600,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false hammering, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
@@ -674,7 +674,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		addtimer(CALLBACK(src, .proc/force_enter_burrow, L), 8)
+		addtimer(CALLBACK(src, PROC_REF(force_enter_burrow), L), 8)
 
 /obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
 	L.forceMove(src)

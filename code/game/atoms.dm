@@ -64,11 +64,6 @@
 	  */
 	var/list/atom_colours
 
-
-	// over-lays
-	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
-	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
-
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
 	// Why are areas derived from /atom instead of /datum?  They're abstracts!
 	var/health    = 99999 // RPG boss unless  otherwise defined

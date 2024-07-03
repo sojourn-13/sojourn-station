@@ -147,6 +147,20 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
 	var/overcharge_max = 10
 
+/mob/living/proc/attempt_scope()
+	var/obj/item/I = get_active_hand()
+	if(!I)
+		return
+	if(!istype(I, /obj/item/gun))
+		return
+
+	var/obj/item/gun/G = I
+	G.toggle_scope(src)
+
+/mob/living/verb/scope_hotkey()
+	set name = ".toggle_scope"
+	attempt_scope()
+
 /obj/item/gun/wield(mob/user)
 	if(!wield_delay)
 		..()
@@ -396,7 +410,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			to_chat(user, "<span class='info'>Projectile Serial Calibration: ERROR.</span>")
 
 
-	var/list/usable_qualities = list()
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
 	if(saw_off)
 		usable_qualities.Add(QUALITY_SAWING)
 
@@ -470,6 +484,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				plusing_intraction(I, user)
 				return
 
+			//This is litterly just a stop gap so you dont accidently decon your weapon.
+			if(QUALITY_SCREW_DRIVING)
+				..()
+				return
+
 			if(ABORT_CHECK)
 				return
 
@@ -507,7 +526,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	can_fire_next = FALSE
-	addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), fire_delay)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), fire_delay)
 
 	if(muzzle_flash)
 		set_light(muzzle_flash)
@@ -587,7 +606,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
-		addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), min(0, (fire_delay - fire_delay * 0.33)))
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), min(0, (fire_delay - fire_delay * 0.33)))
 
 	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()

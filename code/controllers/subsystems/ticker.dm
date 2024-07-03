@@ -273,7 +273,7 @@ SUBSYSTEM_DEF(ticker)
 	generate_blackshield_contracts(min(6 + round(minds.len / 5), 12))
 	excel_check()
 	//blackshield_check() - does nothing FOR NOWWWW!!!! - likely ever
-	addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(contract_tick)), 15 MINUTES)
 
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
@@ -434,7 +434,7 @@ SUBSYSTEM_DEF(ticker)
 
 ///datum/controller/subsystem/ticker/proc/blackshield_check()
 
-//	addtimer(CALLBACK(src, .proc/blackshield_check), 3 MINUTES)
+//	addtimer(CALLBACK(src, PROC_REF(blackshield_check)), 3 MINUTES)
 
 /datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	var/list/candidates = subtypesof(/datum/antag_contract/excel)
@@ -474,13 +474,13 @@ SUBSYSTEM_DEF(ticker)
 					marked_areas += 1
 		if (marked_areas >= 3)
 			M.complete()
-	addtimer(CALLBACK(src, .proc/excel_check), 3 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(excel_check)), 3 MINUTES)
 
 /datum/controller/subsystem/ticker/proc/contract_tick()
 	generate_contracts(1)
 	generate_blackshield_contracts(1)
 	generate_excel_contracts(1)
-	addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(contract_tick)), 15 MINUTES)
 
 /datum/controller/subsystem/ticker/proc/equip_characters()
 	var/captainless = TRUE

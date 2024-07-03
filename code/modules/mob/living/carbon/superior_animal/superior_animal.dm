@@ -41,7 +41,7 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
-	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
+	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
@@ -469,7 +469,7 @@
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
 					if(!QDELETED(src))
-						addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+						addtimer(CALLBACK(src, PROC_REF(OpenFire), targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)

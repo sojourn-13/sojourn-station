@@ -1,4 +1,18 @@
-//Lallander was here
+/mob/living/carbon/human/whisper_wrapper()
+	if(client?.get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(client, null, "command=[client.tgui_say_create_open_command(WHIS_CHANNEL)]")
+		return
+
+	client?.start_thinking()
+	// set_typing_indicator(TRUE)
+	// hud_typing = TRUE
+	var/message = input("", "whisper (text)") as text|null
+	// hud_typing = FALSE
+	// set_typing_indicator(FALSE)
+	client?.stop_thinking()
+	if(message)
+		whisper(message)
+
 /mob/living/carbon/human/whisper(message as text)
 	var/alt_name = ""
 
@@ -102,12 +116,12 @@
 				temp_message[H] = ninjaspeak(temp_message[H])
 				pick_list -= H
 			message = jointext(temp_message, " ")
-			message = replacetext(message, "o", "¤")
-			message = replacetext(message, "p", "þ")
-			message = replacetext(message, "l", "£")
-			message = replacetext(message, "s", "§")
-			message = replacetext(message, "u", "µ")
-			message = replacetext(message, "b", "ß")
+			message = replacetext(message, "o", "ï¿½")
+			message = replacetext(message, "p", "ï¿½")
+			message = replacetext(message, "l", "ï¿½")
+			message = replacetext(message, "s", "ï¿½")
+			message = replacetext(message, "u", "ï¿½")
+			message = replacetext(message, "b", "ï¿½")
 
 	var/list/listening = hearers(message_range, src)
 	listening |= src

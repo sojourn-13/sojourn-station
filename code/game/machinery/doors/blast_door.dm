@@ -75,7 +75,7 @@
 	update_nearby_tiles()
 	update_icon()
 	set_opacity(0)
-	addtimer(CALLBACK(src, .proc/layer_operating), 15)
+	addtimer(CALLBACK(src, PROC_REF(layer_operating)), 15)
 
 /obj/machinery/door/blast/proc/layer_operating()
 	layer = open_layer
@@ -94,7 +94,7 @@
 	update_nearby_tiles()
 	update_icon()
 	set_opacity(1)
-	addtimer(CALLBACK(src, .proc/operating), 15)
+	addtimer(CALLBACK(src, PROC_REF(operating)), 15)
 
 /obj/machinery/door/blast/proc/operating()
 	operating = FALSE

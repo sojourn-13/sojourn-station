@@ -237,6 +237,27 @@
 		STAT_MEC = 3
 	)
 
+/obj/item/oddity/common/instructional_bio
+	name = "first-aid book"
+	desc = "Instructional manual for Soteria personnel giving basic knowledge of CPR and how to deal with Unruly patients"
+	icon_state = "instructional_bio"
+	prob_perk = 5 //Grounded and talked about, instructional manual for Lifeline techs
+	oddity_stats = list(
+		STAT_BIO = 6,
+		STAT_ROB = 4,
+	)
+
+/obj/item/oddity/common/instructional_cog_python
+	name = "old coding book"
+	desc = "A guide giving instructions on how to write computer code, This one seems to be covered in tears with the initials L.T. under the book's cover."
+	icon_state = "instructional_cog_python"
+	prob_perk = 15 //references
+	oddity_stats = list(
+		STAT_TGH = 4,
+		STAT_COG = 6
+	)
+
+
 /obj/item/oddity/common/old_money
 	name = "old money"
 	desc = "It's not like the organization that issued this exists anymore."
@@ -288,6 +309,16 @@
 		STAT_ROB = 7,
 		STAT_TGH = 7,
 		STAT_VIG = 7
+	)
+
+/obj/item/oddity/common/tattoo
+	name = "tattoo kit"
+	desc = "An odd box containing various tools used in the process of creating tattoos. You have a feeling this set of tools was well taken care of and cherished, but do to age they are rendered unuseable."
+	icon_state = "tattoo_kit"
+	prob_perk = 7 //ponder and devote yourself to the craft like the artist before you.
+	oddity_stats = list(
+		STAT_COG = 8,
+		STAT_TGH = 8
 	)
 
 /obj/item/oddity/common/old_knife

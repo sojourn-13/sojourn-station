@@ -27,13 +27,18 @@
 		return 2
 	return 0
 
-/obj/item/storage/hcases/verb/apply_sticker(mob/user)
+/obj/item/storage/hcases/verb/apply_sticker()
 	set name = "Apply Sticker"
 	set category = "Object"
-	set src in usr
+	set src in view(1)
+
+	if(isghost(usr))
+		to_chat(usr, SPAN_NOTICE("The stickers can't sence ghosts artistic design."))
+		return
 
 	if(!isliving(loc))
 		return
+
 //	sticker(user)
 
 ///obj/item/storage/hcases/proc/sticker(mob/user)
@@ -44,7 +49,7 @@
 	options["Red"] = "[sticker_name]_sticker_r"
 	options["Green"] = "[sticker_name]_sticker_g"
 	options["Purple"] = "[sticker_name]_sticker_p"
-	options["IH Blue"] = "[sticker_name]_sticker_ih"
+	options["Darker Blue"] = "[sticker_name]_sticker_ih"
 
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -67,15 +72,19 @@
 
 	. = ..()
 
-/obj/item/storage/hcases/verb/quick_open_close(mob/user)
+/obj/item/storage/hcases/verb/quick_open_close()
 	set name = "Close Lid"
 	set category = "Object"
-	set src in oview(1)
+	set src in view(1)
 
-	if(can_interact(user) == 1)	//can't use right click verbs inside bags so only need to check for ablity
+	if(isghost(usr))
+		to_chat(usr, SPAN_NOTICE("The lid dosnt move even at your suggestion."))
 		return
 
-	open_close(user)
+	if(can_interact(usr) == 1)	//can't use right click verbs inside bags so only need to check for ablity
+		return
+
+	open_close(usr)
 
 /obj/item/storage/hcases/AltClick(mob/user)
 

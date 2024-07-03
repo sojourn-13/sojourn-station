@@ -53,7 +53,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage/combat
+		/obj/item/rig_module/storage
 		)
 
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
@@ -88,7 +88,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -236,7 +236,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -272,7 +272,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -314,7 +314,7 @@
 /obj/item/rig/combat/solfed/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/stealth_field,
 		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/grenade_launcher,

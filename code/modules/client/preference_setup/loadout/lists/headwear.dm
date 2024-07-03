@@ -155,7 +155,7 @@
 
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker/rugby helmet"
-	path = /obj/item/clothing/head/armor/helmet/tanker
+	path = /obj/item/clothing/head/helmet/tanker
 	cost = 1
 
 /datum/gear/head/ribbon

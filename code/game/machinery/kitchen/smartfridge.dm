@@ -352,6 +352,7 @@
 				else
 					P.remove_from_storage(G,src)
 					plants_loaded++
+		P.refresh_all()
 		if(plants_loaded)
 			update_icon()
 			user.visible_message(SPAN_NOTICE("[user] loads \the [src] with \the [P]."), SPAN_NOTICE("You load \the [src] with \the [P]."))
@@ -391,7 +392,7 @@
 	data["emagged"] = emagged
 	data["secure"] = is_secure
 	data["allowed"] = allowed(user)
-	
+
 	var/list/items = list()
 
 	for(var/obj/item/I in src)

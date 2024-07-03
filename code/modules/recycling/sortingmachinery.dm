@@ -377,12 +377,15 @@
 	layer = BELOW_OBJ_LAYER //So that things being ejected are visible
 	var/c_mode = 0
 
-/obj/machinery/disposal/deliveryChute/New()
+/obj/machinery/disposal/deliveryChute/Initialize(mapload, d)
 	..()
-	spawn(5)
-		trunk = locate() in src.loc
-		if(trunk)
-			trunk.linked = src	// link the pipe trunk to self
+	return INIT_ORDER_LATELOAD
+	
+/obj/machinery/disposal/deliveryChute/LateInitialize(mapload)
+	. = ..()
+	trunk = locate() in loc
+	if(trunk)
+		trunk.linked = src	// link the pipe trunk to self
 
 /obj/machinery/disposal/deliveryChute/interact()
 	return
@@ -390,29 +393,29 @@
 /obj/machinery/disposal/deliveryChute/update()
 	return
 
-/obj/machinery/disposal/deliveryChute/Bumped(var/atom/movable/AM) //Go straight into the chute
-	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))	return
-	if(AM.loc && src.loc)
+/obj/machinery/disposal/deliveryChute/Bumped(atom/movable/AM) //Go straight into the chute
+	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))
+		return
+	if(AM.loc && loc)
 		switch(dir)
 			if(NORTH)
-				if(AM.loc.y != src.loc.y+1) return
+				if(AM.loc.y != loc.y + 1) return
 			if(EAST)
-				if(AM.loc.x != src.loc.x+1) return
+				if(AM.loc.x != loc.x + 1) return
 			if(SOUTH)
-				if(AM.loc.y != src.loc.y-1) return
+				if(AM.loc.y != loc.y - 1) return
 			if(WEST)
-				if(AM.loc.x != src.loc.x-1) return
+				if(AM.loc.x != loc.x - 1) return
 
 	if(isobj(AM) || ismob(AM))
 		AM.forceMove(src)
-	src.flush()
+	flush()
 
 /obj/machinery/disposal/deliveryChute/flush()
 	flushing = 1
 	flick("intake-closing", src)
 	var/obj/structure/disposalholder/H = new()	// virtual holder object which actually
 												// travels through the pipes.
-	//air_contents = new()		// new empty gas resv.
 
 	sleep(10)
 	if(sound_on)
@@ -420,7 +423,6 @@
 	sleep(5) // wait for animation to finish
 
 	H.init(src)	// copy the contents of disposer to holder
-
 	H.start(src) // start the holder processing movement
 	flushing = 0
 	// now reset disposal state

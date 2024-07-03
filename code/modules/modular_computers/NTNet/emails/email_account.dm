@@ -63,7 +63,7 @@
 		spam.Add(received_message)
 	else
 		inbox.Add(received_message)
-		for(var/datum/nano_module/email_client/ec in connected_clients)
+		for(var/datum/tgui_module/email_client/ec in connected_clients)
 			ec.mail_received(received_message)
 		for(var/datum/computer_file/program/email_client/ec in connected_clients)
 			ec.mail_received(received_message)

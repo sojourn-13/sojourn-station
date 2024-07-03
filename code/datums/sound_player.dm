@@ -90,7 +90,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	else
 		sound.channel = 0
 
-	GLOB.destroyed_event.register(source, src, /datum/proc/qdel_self)
+	GLOB.destroyed_event.register(source, src, TYPE_PROC_REF(/datum, qdel_self))
 
 	if(ismovable(source))
 		proxy_listener = new(source, /datum/sound_token/proc/add_listener, /datum/sound_token/proc/locate_listeners, range, proc_owner = src)
@@ -129,7 +129,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = null
 	listener_status = null
 
-	GLOB.destroyed_event.unregister(source, src, /datum/proc/qdel_self)
+	GLOB.destroyed_event.unregister(source, src, TYPE_PROC_REF(/datum, qdel_self))
 	QDEL_NULL(proxy_listener)
 	source = null
 
@@ -171,16 +171,16 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	sound.status = status | listener_status[listener]
 	sound_to(listener, sound)
 
-	GLOB.moved_event.register(listener, src, /datum/sound_token/proc/update_listener_loc)
-	GLOB.destroyed_event.register(listener, src, /datum/sound_token/proc/remove_listener)
+	GLOB.moved_event.register(listener, src, PROC_REF(update_listener_loc))
+	GLOB.destroyed_event.register(listener, src, PROC_REF(remove_listener))
 
 	update_listener_loc(listener)
 
 /datum/sound_token/proc/remove_listener(var/atom/listener, var/sound/null_sound)
 	null_sound = null_sound || new(channel = sound.channel)
 	sound_to(listener, null_sound)
-	GLOB.moved_event.unregister(listener, src, /datum/sound_token/proc/update_listener_loc)
-	GLOB.destroyed_event.unregister(listener, src, /datum/sound_token/proc/remove_listener)
+	GLOB.moved_event.unregister(listener, src, PROC_REF(update_listener_loc))
+	GLOB.destroyed_event.unregister(listener, src, PROC_REF(remove_listener))
 	listeners -= listener
 
 /datum/sound_token/proc/update_listener_loc(var/atom/listener)

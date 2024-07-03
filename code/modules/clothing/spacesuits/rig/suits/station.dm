@@ -15,6 +15,9 @@
 /obj/item/clothing/head/helmet/space/rig/medical
 	camera_networks = list(NETWORK_MEDICAL)
 
+/obj/item/clothing/head/helmet/space/rig/cmo
+	camera_networks = list(NETWORK_MEDICAL)
+
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera_networks = list(NETWORK_SECURITY)
@@ -166,7 +169,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
-		/obj/item/rig_module/storage/engi
+		/obj/item/rig_module/storage/large
 		)
 
 /obj/item/clothing/gloves/rig/ce
@@ -217,7 +220,7 @@ Technomancer RIG
 
 /obj/item/rig/techno/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage/engi,
+		/obj/item/rig_module/storage/large,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
 		)
@@ -376,7 +379,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
 /obj/item/rig/recovery_suit
@@ -415,14 +418,15 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
-/obj/item/rig/light/ultra_light/cmo
+/obj/item/rig/cmo
 	name = "SI 'Medtek' control module"
-	desc = "An upgraded and somewhat customized soteria 'retainer' RIGsuit. Though superficially and aesthetically similar this suit has undergone a series of upgrades so as to improve its utility \
-	for Soterias resident overworked Chief of Medicine. Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	suit_type = "SI 'Medtek"
+	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	icon_state = "cmo_rig"
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
@@ -432,16 +436,16 @@ Technomancer RIG
 		rad = 20
 	)
 	req_access = list(access_cmo)
-	airtight = 0
 	seal_delay = 4 //built for speed
 	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
-
+	helm_type = /obj/item/clothing/head/helmet/space/rig/cmo
+	max_upgrades = 1
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/med
+		/obj/item/rig_module/storage/large
 		)
 
 
@@ -513,5 +517,5 @@ Technomancer RIG
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage/combat
+		/obj/item/rig_module/storage/large
 		)

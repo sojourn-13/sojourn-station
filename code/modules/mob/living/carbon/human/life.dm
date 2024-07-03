@@ -1030,6 +1030,7 @@
 		if(stat == DEAD)
 			holder.icon_state = "hudhealth-100" 	// X_X
 		else
+			holder.cut_overlays()
 			var/organ_health
 			var/organ_damage
 			var/limb_health
@@ -1040,6 +1041,22 @@
 				organ_damage += E.severity_internal_wounds
 				limb_health += E.max_damage
 				limb_damage += max(E.brute_dam, E.burn_dam)
+				if(E.status & ORGAN_BROKEN)
+					holder.add_overlay("hud_broken_bone")
+				if(E.status & ORGAN_BLEEDING)
+					holder.add_overlay("hud_bleeding")
+				if(E.status & ORGAN_INFECTED)
+					holder.add_overlay("hud_infection")
+				if(E.status & ORGAN_WOUNDED)
+					holder.add_overlay("hud_generic_wound")
+
+
+
+			if(vessel)
+				var/blood_volume = vessel.get_reagent_amount("blood")
+				var/blood_percent =  round((blood_volume / species.blood_volume)*100)
+				if(blood_percent * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+					holder.add_overlay("hud_low_blood")
 
 			var/crit_health = (health / maxHealth) * 100
 			var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100

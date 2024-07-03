@@ -28,6 +28,8 @@
 	/obj/item/oddity/common/book_bible,
 	/obj/item/oddity/common/book_log,
 	/obj/item/oddity/common/book_unholy,
+	/obj/item/oddity/common/instructional_bio,
+	/obj/item/oddity/common/instructional_cog_python,
 	/obj/item/oddity/chem_book,
 	/obj/item/oddity/code_book,
 	/obj/item/oddity/ls/manual,

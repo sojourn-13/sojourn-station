@@ -28,7 +28,7 @@
 	get_targets()
 
 /mob/living/bot/cleanbot/proc/handle_target()
-	if(loc == target.loc)
+	if((get_dist(loc, target.loc) <= 1))
 		if(!cleaning)
 			UnarmedAttack(target)
 			return 1
@@ -107,8 +107,8 @@
 	if(!istype(D))
 		return
 
-	if(D.loc != loc)
-		return
+//	if(D.loc != loc)
+//		return
 
 	cleaning = 1
 	visible_message("[src] begins to clean up \the [D]")

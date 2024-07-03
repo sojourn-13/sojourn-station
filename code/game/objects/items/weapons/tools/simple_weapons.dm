@@ -477,7 +477,7 @@
 					M.dust()
 					add_points(50)
 					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
-					addtimer(CALLBACK(src, /atom.proc/update_icon), 11)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 11)
 					return
 
 /obj/item/tool/sword/saber/injection_rapier

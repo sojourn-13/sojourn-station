@@ -33,7 +33,7 @@
 
 /obj/item/gun/energy/sunrise/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -55,13 +55,13 @@
 		itemstring += "_mag"
 
 	if(istype(cell, /obj/item/cell/medium/moebius/nuclear))
-		overlays += image(icon, "nuke_cell")
+		add_overlay(image(icon, "nuke_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/moebius))
-		overlays += image(icon, "moeb_cell")
+		add_overlay(image(icon, "moeb_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/excelsior))
-		overlays += image(icon, "excel_cell")
+		add_overlay(image(icon, "excel_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium))
-		overlays += image(icon, "guild_cell")
+		add_overlay(image(icon, "guild_cell"))

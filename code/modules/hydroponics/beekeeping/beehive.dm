@@ -123,6 +123,9 @@
 			return
 
 /obj/machinery/beehive/attack_hand(var/mob/user)
+	if(used_now)
+		to_chat(user, SPAN_NOTICE("Someone is already removing frames."))
+
 	if(!closed)
 		if(honeycombs < 100)
 			to_chat(user, SPAN_NOTICE("There are no filled honeycombs."))
@@ -130,6 +133,7 @@
 		if(!smoked && bee_count)
 			to_chat(user, SPAN_NOTICE("The bees won't let you take the honeycombs out like this, smoke them first."))
 			return
+		used_now = TRUE
 		user.visible_message(SPAN_NOTICE("\The [user] starts taking the honeycombs out of \the [src]."), SPAN_NOTICE("You start taking the honeycombs out of \the [src]..."))
 		while(honeycombs >= 100 && do_after(user, 30, src))
 			new /obj/item/honey_frame/filled(loc)
@@ -138,6 +142,7 @@
 			update_icon()
 		if(honeycombs < 100)
 			to_chat(user, SPAN_NOTICE("You take all filled honeycombs out."))
+		used_now = FALSE
 		return
 
 /obj/machinery/beehive/Process()
@@ -202,6 +207,7 @@
 		return
 	else if(istype(I, /obj/item/honey_frame))
 		var/obj/item/honey_frame/H = I
+		var/frame_return = H.framed
 		if(!H.honey)
 			to_chat(user, SPAN_NOTICE("\The [H] is empty, put it into a beehive."))
 			return
@@ -210,11 +216,13 @@
 		icon_state = "centrifuge_moving"
 		qdel(H)
 		spawn(spin_time)
-			new /obj/item/honey_frame(loc)
+			if(frame_return)
+				new /obj/item/honey_frame(loc)
 			new /obj/item/stack/wax(loc)
 			honey += processing
 			processing = 0
 			icon_state = "centrifuge"
+
 	else if(istype(I, /obj/item/reagent_containers/glass))
 		if(!honey)
 			to_chat(user, SPAN_NOTICE("There is no honey in \the [src]."))
@@ -241,6 +249,15 @@
 	w_class = ITEM_SIZE_SMALL
 
 	var/honey = 0
+	var/framed = TRUE
+
+/obj/item/honey_frame/frameless
+	name = "honeycomb"
+	desc = "Honeycombs filled with honey, requires processing to get the honey out."
+	icon_state = "honeycomb"
+	honey = 20
+	preloaded_reagents = list("honey" = 20, "woodpulp" = 10)
+	framed = FALSE //So we dont give a frame when processed
 
 /obj/item/honey_frame/filled
 	name = "filled beehive frame"

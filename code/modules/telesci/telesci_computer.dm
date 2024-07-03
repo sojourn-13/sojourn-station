@@ -135,7 +135,7 @@
 			playsound(blocker,'sound/effects/telesci_inhibitor_alarm.ogg', 80, FALSE, 7, extrarange = 10, is_global = FALSE, ignore_walls = TRUE)
 			blocker.visible_message(SPAN_DANGER("\The [src] sparks violently and begins to shake!"))
 			do_sparks(6, FALSE, get_turf(blocker))
-			addtimer(CALLBACK(blocker, /obj/machinery/telesci_inhibitor/proc/explode), 1 SECOND)
+			addtimer(CALLBACK(blocker, TYPE_PROC_REF(/obj/machinery/telesci_inhibitor, explode)), 1 SECOND)
 
 		if(inhibitorExploded)
 			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)

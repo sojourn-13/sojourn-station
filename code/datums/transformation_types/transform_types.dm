@@ -254,7 +254,7 @@
 	// note: timsort is a stable algorithm, meaning 2 adjacent values with the same value will be kept in order
 	// ex: a list of (a = 200, b = 250, c = 250, d = 150). this will be sorted into (d, a, b, c). note that b and c's position doesnt actually really change,
 	// and their order relative to eachother is preserved
-	sortTim(transform_types, /proc/cmp_numeric_asc, TRUE) //sort from least to greatest
+	sortTim(transform_types, GLOBAL_PROC_REF(cmp_numeric_asc), TRUE) //sort from least to greatest
 
 	for (key as anything in transform_types)
 		transform_types[key] = cached_transforms[key] //now that it's sorted, we can reapply our original values

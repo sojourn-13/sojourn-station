@@ -359,7 +359,7 @@ mob/proc/format_say_message(var/message = null)
 	for(var/client/C in show_to)
 		C.images += I
 	animate(I, transform = 0, alpha = 255, time = 5, easing = ELASTIC_EASING)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_speechbubble, I), duration-5)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_speechbubble), I), duration-5)
 
 /proc/fade_speechbubble(image/I)
 	animate(I, alpha = 0, time = 5, easing = EASE_IN)

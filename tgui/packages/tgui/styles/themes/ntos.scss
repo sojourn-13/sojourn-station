@@ -41,4 +41,13 @@ $nanotrasen: #384e68;
     '../layouts/TitleBar.scss',
     $with: ('background-color': color.scale($nanotrasen, $lightness: -25%))
   );
+
+  // NTOS header bar
+  .NtosWindow__header {
+    background: 
+    linear-gradient(
+      rgba(56, 78, 104, 0.5), 
+      rgba(56, 78, 104, 0.5)
+    ), url('../../assets/ntos_header_pattern.png') 0 5% repeat;
+  }
 }

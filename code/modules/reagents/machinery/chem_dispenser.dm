@@ -1,20 +1,5 @@
-
 //How many cell charge do we use per unit of chemical?
 #define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE)
-
-//list of available bottle sprites, holding 60u bottles that hold just about any chem
-#define BOTTLE_SPRITES list("bottle", "potion", "tincture")
-
-//Pill bottles themselfs
-#define PILL_BOTTLE_MODELS list("pill_canister", "pill_lred", "pill_dred", \
-"pill_red", "pill_pink", "pill_orange", "pill_yellow", "pill_green", "pill_blue", \
-"pill_white", "pill_black", "pill_rainbow")
-
-//Syretties, the samll 5u refillable injectors
-#define SYRETTE_SPRITES list("syrette", "syrette_red", "syrette_orange", \
-"syrette_yellow", "syrette_green", "syrette_cyan", "syrette_blue", "syrette_magenta", \
-"syrette_spacealine", "syrette_hyperzine", "syrette_fun", "syrette_fun1", "syrette_antitox", \
-"syrette_inopravoline", "syrette_dexalinplus", "syrette_tricord", "syrette_quickclot") //list of available syrette sprites
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,7 +76,7 @@
 	var/addenergy = cell.give(clamp((cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2),0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
-		SSnano.update_uis(src) // update all UIs attached to src
+		SStgui.update_uis(src)
 
 /obj/machinery/chemical_dispenser/Process()
 	if(cell && cell.percent() < 100)
@@ -100,21 +85,21 @@
 /obj/machinery/chemical_dispenser/power_change()
 	..()
 	update_icon()
-	SSnano.update_uis(src) // update all UIs attached to src
+	SStgui.update_uis(src)
 
 /obj/machinery/chemical_dispenser/proc/hacked(mob/user)
 	//..()
 	if(!hackedcheck)
 		to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
 		dispensable_reagents += hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = TRUE
 		return
 
 	else
 		to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
 		dispensable_reagents -= hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = FALSE
 		return
 
@@ -126,7 +111,7 @@
 	if(fancy_hack) // Does the machine start already hacked?
 		hackedcheck = !hackedcheck // Not sure what this var do, but better safe than sorry
 		dispensable_reagents += hacked_reagents // Add the hacked chems
-		SSnano.update_uis(src) // Update the ui to be safe.
+		SStgui.update_uis(src)
 
 /obj/machinery/chemical_dispenser/ex_act(severity)
 	switch(severity)
@@ -138,38 +123,67 @@
 				qdel(src)
 				return
 
-/obj/machinery/chemical_dispenser/nano_ui_data()
+/obj/machinery/chemical_dispenser/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ChemDispenser", name)
+		ui.open()
+
+/obj/machinery/chemical_dispenser/ui_data(mob/user)
 	var/list/data = list()
 	data["amount"] = amount
 	data["energy"] = round(cell.charge)
 	data["maxEnergy"] = round(cell.maxcharge)
 	data["accept_beaker"] = accept_beaker
+	data["use_smaller_units"] = FALSE
 
 	var/list/chemicals = list()
-	for (var/re in dispensable_reagents)
+	for(var/re in dispensable_reagents)
 		var/datum/reagent/temp = GLOB.chemical_reagents_list[re]
 		if(temp)
-			chemicals.Add(list(list("title" = temp.name, "id" = temp.id, "commands" = list("dispense" = temp.id)))) // list in a list because Byond merges the first list...
+			chemicals += list(list(
+				"title" = temp.name,
+				"id" = temp.id,
+				"commands" = list("dispense" = temp.id))
+			)
 	data["chemicals"] = chemicals
 
 	if(beaker)
 		data["beaker"] = beaker.reagents.nano_ui_data()
+	else
+		data["beaker"] = null
 
 	return data
 
-/obj/machinery/chemical_dispenser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data()
+/obj/machinery/chemical_dispenser/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-        // for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "chem_dispenser.tmpl", ui_title, 390, 655)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
+	switch(action)
+		if("amount")
+			amount = CLAMP(round(text2num(params["amount"]), 1), 0, 120)
+			playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
+			. = TRUE
+
+		if("dispense")
+			var/reagent = params["reagent"]
+			if(dispensable_reagents.Find(reagent) && beaker && beaker.is_refillable())
+				var/obj/item/reagent_containers/B = beaker
+				var/datum/reagents/R = B.reagents
+				var/space = R.maximum_volume - R.total_volume
+
+				var/added_amount = min(amount, cell.charge / chemical_dispenser_ENERGY_COST, space)
+				R.add_reagent(reagent, added_amount)
+				cell.use(added_amount * chemical_dispenser_ENERGY_COST)
+				investigate_log("dispensed [reagent] into [B], while being operated by [key_name(usr)]", "chemistry")
+				playsound(src, 'sound/machines/reagent_dispense.ogg', 25, 1)
+				. = TRUE
+
+		if("eject")
+			detach()
+			playsound(src, 'sound/items/Glass_Fragment_drop.ogg', 50, 1)
+			. = TRUE
 
 /obj/machinery/chemical_dispenser/proc/detach()
 	if(beaker)
@@ -186,32 +200,6 @@
 		return
 	src.detach()
 
-/obj/machinery/chemical_dispenser/Topic(href, href_list)
-	if(..())
-		return
-
-	if(href_list["amount"])
-		// We do a little adjustment since we can now choose finnicky amounts of chems
-		amount = round(text2num(href_list["amount"]), 1) // round to nearest 1
-		amount = max(0, min(120, amount)) // Sanity check so that we don't transfer 0 units of chems
-
-	if(href_list["dispense"])
-		if (dispensable_reagents.Find(href_list["dispense"]) && beaker && beaker.is_refillable())
-			var/obj/item/reagent_containers/B = src.beaker
-			var/datum/reagents/R = B.reagents
-			var/space = R.maximum_volume - R.total_volume
-
-			var/added_amount = min(amount, cell.charge / chemical_dispenser_ENERGY_COST, space)
-			R.add_reagent(href_list["dispense"], added_amount)
-			cell.use(added_amount * chemical_dispenser_ENERGY_COST)
-			investigate_log("dispensed [href_list["dispense"]] into [B], while being operated by [key_name(usr)]", "chemistry")
-
-	if(href_list["ejectBeaker"])
-		src.detach()
-
-	return 1 // update UIs attached to this object
-
-
 /obj/machinery/chemical_dispenser/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
@@ -222,13 +210,35 @@
 			I.add_fingerprint(user)
 			beaker = I
 			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
-			SSnano.update_uis(src) // update all UIs attached to src
+			SStgui.update_uis(src)
 			return
 	. = ..()
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)
-	if(default_deconstruction(I, user))
-		return
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_PRYING)
+
+	if(length(hacked_reagents))
+		usable_qualities.Add(QUALITY_PULSING)
+
+	if(usable_qualities)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+
+			if(QUALITY_PULSING)
+				to_chat(usr, SPAN_WARNING("You pulse a few wires, changing the dispensing restrictions."))
+				hacked()
+				return
+
+			if(QUALITY_SCREW_DRIVING)
+				default_deconstruction(I, user)
+				return
+
+			if(QUALITY_PRYING)
+				default_deconstruction(I, user)
+				return
+
+			if(ABORT_CHECK)
+				return
 
 	if(default_part_replacement(I, user))
 		return
@@ -236,10 +246,6 @@
 	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
-
-	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
-		to_chat(usr, SPAN_WARNING("You pulse a few wires, unlocking the dispensing restrictions."))
-		hacked()
 
 	var/obj/item/reagent_containers/B = I
 	if(beaker)
@@ -252,7 +258,7 @@
 		if (user.unEquip(B, src))
 			to_chat(user, "You set [B] on the machine.")
 			update_icon()
-			SSnano.update_uis(src) // update all UIs attached to src
+			SStgui.update_uis(src)
 			return
 
 /obj/machinery/chemical_dispenser/attack_hand(mob/living/user)
@@ -261,7 +267,7 @@
 	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
-	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/chemical_dispenser/soda
 	icon_state = "soda_dispenser"
@@ -286,26 +292,24 @@
 	hacked_reagents = list("thirteenloko", "energy_drink_monster", "energy_drink_baton")
 	circuit = /obj/item/circuitboard/chemical_dispenser/soda
 
-/obj/machinery/chemical_dispenser/soda/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data()
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
-		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
-		ui.set_initial_data(data)
-		ui.open()
+/obj/machinery/chemical_dispenser/soda/ui_data(mob/user)
+	var/list/data = ..()
+
+	data["use_smaller_units"] = TRUE
+	
+	return data
 
 /obj/machinery/chemical_dispenser/soda/hacked(mob/user)
 	if(!hackedcheck)
 		to_chat(user, "You change the mode from 'McNano' to 'Pizza King'.")
 		dispensable_reagents += hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = TRUE
 		return
 	else
 		to_chat(user, "You change the mode from 'Pizza King' to 'McNano'.")
 		dispensable_reagents -= hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = FALSE
 		return
 
@@ -338,14 +342,12 @@
 	level4 = list("kahlua")
 	circuit = /obj/item/circuitboard/chemical_dispenser/coffee_master
 
-/obj/machinery/chemical_dispenser/coffee_master/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data()
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
-		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
-		ui.set_initial_data(data)
-		ui.open()
+/obj/machinery/chemical_dispenser/coffee_master/ui_data(mob/user)
+	var/list/data = ..()
+
+	data["use_smaller_units"] = TRUE
+
+	return data
 
 /obj/machinery/chemical_dispenser/beer
 	icon_state = "booze_dispenser"
@@ -371,26 +373,24 @@
 	hacked_reagents = list("goldschlager","patron","berryjuice")
 	circuit = /obj/item/circuitboard/chemical_dispenser/beer
 
-/obj/machinery/chemical_dispenser/beer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data()
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
-		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
-		ui.set_initial_data(data)
-		ui.open()
+/obj/machinery/chemical_dispenser/beer/ui_data(mob/user)
+	var/list/data = ..()
+
+	data["use_smaller_units"] = TRUE
+
+	return data
 
 /obj/machinery/chemical_dispenser/beer/hacked(mob/user)
 	if(!hackedcheck)
 		to_chat(user, "You disable the 'cheap bastards' lock, enabling hidden and very expensive boozes.")
 		dispensable_reagents += hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = TRUE
 		return
 	else
 		to_chat(user, "You re-enable the 'cheap bastards' lock, disabling hidden and very expensive boozes.")
 		dispensable_reagents -= hacked_reagents
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		hackedcheck = FALSE
 		return
 

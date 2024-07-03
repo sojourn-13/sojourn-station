@@ -13,6 +13,7 @@
 			var/obj/item/organ/internal/psionic_tumor/B = new /obj/item/organ/internal/psionic_tumor
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 /mob/proc/make_psion_psych()
 	var/mob/living/carbon/human/user = src
@@ -25,6 +26,7 @@
 			var/obj/item/organ/internal/psionic_tumor/psychiatrist/B = new /obj/item/organ/internal/psionic_tumor/psychiatrist
 			B.disabled = FALSE
 			B.replaced(head)
+			B.psion_verb_install()
 
 //Special proc call for psions to check for nanogate
 /obj/item/organ/internal/psionic_tumor/replaced(obj/item/organ/external/affected)
@@ -84,9 +86,9 @@
 
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
-			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
+			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
 		else
-			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES))
+			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES))
 
 		if(psi_points < max_psi_points)
 			psi_points += 1
@@ -96,6 +98,7 @@
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
+	psion_verb_remove()
 	disabled = TRUE
 	allow_loop = TRUE
 

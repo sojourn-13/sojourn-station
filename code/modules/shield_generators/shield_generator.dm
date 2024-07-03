@@ -654,7 +654,7 @@
 	if (reportDamage)
 		report_scheduled = TRUE
 
-		addtimer(CALLBACK(src, .proc/report_damage), report_delay)
+		addtimer(CALLBACK(src, PROC_REF(report_damage)), report_delay)
 
 
 

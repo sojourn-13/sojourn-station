@@ -35,6 +35,10 @@
 	/// WARNING: Currently to use a density shortcircuiting this does not support dense turfs with special allow through function
 	var/pathing_pass_method = TURF_PATHING_PASS_DENSITY
 
+	//USE THIS WITH NON FLOOR
+	//if its /floor then use a /decl/flooring and have it attached in that!
+	var/tally_addition = 0
+
 /turf/New()
 	..()
 	for(var/atom/movable/AM as mob|obj in src)

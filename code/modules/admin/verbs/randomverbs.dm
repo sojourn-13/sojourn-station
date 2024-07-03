@@ -887,6 +887,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_view_range, R_ADMIN, FALSE)
 		view = world.view
 	if(mob)
 		mob.parallax.update()
+	apply_clickcatcher()
 	log_admin("[key_name(usr)] changed their view range to [view].")
 	//message_admins("\blue [key_name_admin(usr)] changed their view range to [view].", 1)	//why? removed by order of XSI
 

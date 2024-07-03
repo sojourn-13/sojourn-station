@@ -295,10 +295,10 @@
 		death() // Kill the roomba which will in turn trigger the bomb.
 
 /mob/living/carbon/superior_animal/handmade/roomba/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(panel_open)
-		overlays += image(icon, "roomba_panel")
+		add_overlay(image(icon, "roomba_panel"))
 	if(armored)
-		overlays += image(icon, "roomba_plating")
+		add_overlay(image(icon, "roomba_plating"))
 	if(weaponry)
-		overlays += image(icon, "roomba_gun")
+		add_overlay(image(icon, "roomba_gun"))

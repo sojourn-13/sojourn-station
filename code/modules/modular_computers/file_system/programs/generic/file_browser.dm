@@ -4,192 +4,204 @@
 	extended_desc = "This program allows management of files."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "folder-collapsed"
+	program_menu_icon = "folder"
 	size = 6
 	requires_ntnet = 0
 	available_on_ntnet = 0
 	undeletable = 1
-	nanomodule_path = /datum/nano_module/program/computer_filemanager/
+	usage_flags = PROGRAM_ALL
 	var/open_file
 	var/error
-	usage_flags = PROGRAM_ALL
 
-/datum/computer_file/program/filemanager/Topic(href, href_list)
-	if(..())
-		return 1
+/datum/computer_file/program/filemanager/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "NtosFileManager")
+		ui.open()
 
-	if(href_list["PRG_openfile"])
-		. = 1
-		open_file = href_list["PRG_openfile"]
-	if(href_list["PRG_newtextfile"])
-		. = 1
-		var/newname = sanitize(input(usr, "Enter file name or leave blank to cancel:", "File rename") as text|null)
-		if(!newname)
-			return 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/data/F = new/datum/computer_file/data()
-		F.filename = newname
-		F.filetype = "TXT"
-		HDD.store_file(F)
-	if(href_list["PRG_deletefile"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/file = HDD.find_file_by_name(href_list["PRG_deletefile"])
-		if(!file || file.undeletable)
-			return 1
-		HDD.remove_file(file)
-	if(href_list["PRG_usbdeletefile"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/RHDD = computer.portable_drive
-		if(!RHDD)
-			return 1
-		var/datum/computer_file/file = RHDD.find_file_by_name(href_list["PRG_usbdeletefile"])
-		if(!file || file.undeletable)
-			return 1
-		RHDD.remove_file(file)
-	if(href_list["PRG_closefile"])
-		. = 1
-		open_file = null
-		error = null
-	if(href_list["PRG_clone"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/F = HDD.find_file_by_name(href_list["PRG_clone"])
-		if(!F || !istype(F))
-			return 1
-		var/datum/computer_file/C = F.clone(1)
-		HDD.store_file(C)
-	if(href_list["PRG_rename"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/file = HDD.find_file_by_name(href_list["PRG_rename"])
-		if(!file || !istype(file))
-			return 1
-		var/newname = sanitize(input(usr, "Enter new file name:", "File rename", file.filename) as text|null)
-		if(file && newname)
-			file.filename = newname
-	if(href_list["PRG_edit"])
-		. = 1
-		if(!open_file)
-			return 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/data/F = HDD.find_file_by_name(open_file)
-		if(!F || !istype(F))
-			return 1
-		if(F.read_only && (alert("WARNING: This file is not compatible with editor. Editing it may result in permanently corrupted formatting or damaged data consistency. Edit anyway?", "Incompatible File", "No", "Yes") == "No"))
-			return 1
+/datum/computer_file/program/filemanager/ui_data(mob/user)
+	var/list/data = ..()
 
-		var/oldtext = html_decode(F.stored_data)
-		oldtext = replacetext(oldtext, "\[br\]", "\n")
+	data["error"] = error
 
-		var/newtext = sanitize(replacetext(input(usr, "Editing file [open_file]. You may use most tags used in paper formatting:", "Text Editor", oldtext) as text|null, "\n", "\[br\]"), MAX_TEXTFILE_LENGTH)
-		if(!newtext)
-			return
+	data["internal_disk"] = computer.hard_drive.nano_ui_data()
+	data["portable_disk"] = computer.portable_drive?.nano_ui_data()
 
-		if(F)
-			var/datum/computer_file/data/backup = F.clone()
-			HDD.remove_file(F)
-			F.stored_data = newtext
-			F.calculate_size()
-			// We can't store the updated file, it's probably too large. Print an error and restore backed up version.
-			// This is mostly intended to prevent people from losing texts they spent lot of time working on due to running out of space.
-			// They will be able to copy-paste the text from error screen and store it in notepad or something.
-			if(!HDD.store_file(F))
-				error = "I/O error: Unable to overwrite file. Hard drive is probably full. You may want to backup your changes before closing this window:<br><br>[html_decode(F.stored_data)]<br><br>"
-				HDD.store_file(backup)
-	if(href_list["PRG_printfile"])
-		. = 1
-		if(!open_file)
-			return 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
-		var/datum/computer_file/data/F = HDD.find_file_by_name(open_file)
-		if(!F || !istype(F))
-			return 1
-		if(!computer.printer)
-			error = "Missing Hardware: Your computer does not have required hardware to complete this operation."
-			return 1
-		if(!computer.printer.print_text(pencode2html(F.stored_data)))
-			error = "Hardware error: Printer was unable to print the file. It may be out of paper."
-			return 1
-	if(href_list["PRG_copytousb"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
-		if(!HDD || !RHDD)
-			return 1
-		var/datum/computer_file/F = HDD.find_file_by_name(href_list["PRG_copytousb"])
-		if(!F || !istype(F))
-			return 1
-		var/datum/computer_file/C = F.clone(0)
-		RHDD.store_file(C)
-	if(href_list["PRG_copyfromusb"])
-		. = 1
-		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-		var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
-		if(!HDD || !RHDD)
-			return 1
-		var/datum/computer_file/F = RHDD.find_file_by_name(href_list["PRG_copyfromusb"])
-		if(!F || !istype(F))
-			return 1
-		var/datum/computer_file/C = F.clone(0)
-		HDD.store_file(C)
-	if(.)
-		SSnano.update_uis(NM)
-
-/datum/nano_module/program/computer_filemanager
-	name = "File Manager"
-
-/datum/nano_module/program/computer_filemanager/nano_ui_data()
-	var/list/data = host.initial_data()
-
-	var/datum/computer_file/program/filemanager/PRG
-	PRG = program
-
-	if(PRG.error)
-		data["error"] = PRG.error
-
-	if(!PRG.computer || !PRG.computer.hard_drive)
-		data["error"] = "I/O ERROR: Unable to access hard drive."
-
+	if(open_file)
+		var/datum/computer_file/data/file
+		file = computer.hard_drive.find_file_by_name(open_file)
+		
+		if(file.filetype == "AUD")
+			data["error"] = "Software error: Please use a dedicated Audio Player program to read audio files."
+		else if(!istype(file))
+			data["error"] = "I/O ERROR: Unable to open file."
+		else
+			data["open_file"] = list(
+				"filedata" = pencode2html(file.stored_data),
+				"filename" = "[file.filename].[file.filetype]"
+			)
 	else
-		if(PRG.computer.hard_drive)
-			data["internal_disk"] = PRG.computer.hard_drive.nano_ui_data()
-
-		if(PRG.computer.portable_drive)
-			data["portable_disk"] = PRG.computer.portable_drive.nano_ui_data()
-
-		if(PRG.open_file)
-			var/datum/computer_file/data/file
-
-			file = PRG.computer.hard_drive.find_file_by_name(PRG.open_file)
-			if(file.filetype == "AUD")
-				data["error"] = "Software error: Please use a dedicated Audio Player program to read audio files."
-			else if(!istype(file))
-				data["error"] = "I/O ERROR: Unable to open file."
-			else
-				data["filedata"] = pencode2html(file.stored_data)
-				data["filename"] = "[file.filename].[file.filetype]"
+		data["open_file"] = null
 
 	return data
 
-/datum/nano_module/program/computer_filemanager/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
-	var/list/data = nano_ui_data()
+/datum/computer_file/program/filemanager/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "mpc_file_manager.tmpl", name, 575, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	switch(action)
+		if("set_open_file")
+			open_file = params["file"]
+			. = TRUE
+
+		if("new_text_file")
+			var/newname = sanitize(input(usr, "Enter file name or leave blank to cancel:", "File rename") as text|null)
+			if(!newname)
+				return
+
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			if(!HDD || HDD.read_only)
+				return
+
+			var/datum/computer_file/data/F = new/datum/computer_file/data()
+			F.filename = newname
+			F.filetype = "TXT"
+			HDD.store_file(F)
+
+			. = TRUE
+
+		if("delete_file")
+			var/obj/item/computer_hardware/hard_drive/HDD
+			if(params["portable"])
+				HDD = computer.portable_drive
+			else
+				HDD = computer.hard_drive
+
+			if(!HDD)
+				return
+
+			var/datum/computer_file/file = HDD.find_file_by_name(params["file"])
+			if(!file || file.undeletable)
+				return
+
+			HDD.remove_file(file)
+			. = TRUE
+
+		if("close_file")
+			open_file = null
+			error = null
+			. = TRUE
+
+		if("clone_file")
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			if(!HDD || HDD.read_only)
+				return
+
+			var/datum/computer_file/F = HDD.find_file_by_name(params["file"])
+			if(!F || !istype(F) || !F.clone_able || F.undeletable)
+				return
+
+			var/datum/computer_file/C = F.clone(1)
+			HDD.store_file(C)
+			. = TRUE
+
+		if("rename_file")
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			if(!HDD || HDD.read_only)
+				return
+
+			var/datum/computer_file/file = HDD.find_file_by_name(params["file"])
+			if(!file || !istype(file) || file.undeletable)
+				return
+
+			var/newname = sanitize(input(usr, "Enter new file name:", "File rename", file.filename) as text|null)
+			if(file && newname)
+				file.filename = newname
+			. = TRUE
+
+		if("edit_file")
+			if(!open_file)
+				return
+
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			if(!HDD || HDD.read_only)
+				return
+
+			var/datum/computer_file/data/F = HDD.find_file_by_name(open_file)
+			if(!F || !istype(F) || F.undeletable)
+				return
+
+			if(F.read_only && (alert("WARNING: This file is not compatible with editor. Editing it may result in permanently corrupted formatting or damaged data consistency. Edit anyway?", "Incompatible File", "No", "Yes") == "No"))
+				return
+
+			var/oldtext = html_decode(F.stored_data)
+			oldtext = replacetext(oldtext, "\[br\]", "\n")
+
+			var/newtext = sanitize(replacetext(input(usr, "Editing file [open_file]. You may use most tags used in paper formatting:", "Text Editor", oldtext) as message|null, "\n", "\[br\]"), MAX_TEXTFILE_LENGTH)
+			if(!newtext)
+				return
+
+			if(F)
+				var/datum/computer_file/data/backup = F.clone()
+				HDD.remove_file(F)
+				F.stored_data = newtext
+				F.calculate_size()
+				// We can't store the updated file, it's probably too large. Print an error and restore backed up version.
+				// This is mostly intended to prevent people from losing texts they spent lot of time working on due to running out of space.
+				// They will be able to copy-paste the text from error screen and store it in notepad or something.
+				if(!HDD.store_file(F))
+					error = "I/O error: Unable to overwrite file. Hard drive is probably full. You may want to backup your changes before closing this window:<br><br>[html_decode(F.stored_data)]<br><br>"
+					HDD.store_file(backup)
+
+			. = TRUE
+
+		if("print_file")
+			if(!open_file)
+				return
+
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			if(!HDD)
+				return
+
+			var/datum/computer_file/data/F = HDD.find_file_by_name(open_file)
+			if(!F || !istype(F))
+				return
+
+			if(!computer.printer)
+				error = "Missing Hardware: Your computer does not have required hardware to complete this operation."
+				return
+
+			if(!computer.printer.print_text(pencode2html(F.stored_data)))
+				error = "Hardware error: Printer was unable to print the file. It may be out of paper."
+				return
+
+			. = TRUE
+
+		if("copy_to_usb")
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+			if(!HDD || !RHDD)
+				return
+
+			var/datum/computer_file/F = HDD.find_file_by_name(params["file"])
+			if(!F || !istype(F) || F.undeletable || !F.clone_able)
+				return
+
+			var/datum/computer_file/C = F.clone(0)
+			RHDD.store_file(C)
+			. = TRUE
+
+		if("copy_from_usb")
+			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+			if(!HDD || !RHDD)
+				return
+
+			var/datum/computer_file/F = RHDD.find_file_by_name(params["file"])
+			if(!F || !istype(F) || F.undeletable || !F.clone_able)
+				return
+
+			var/datum/computer_file/C = F.clone(0)
+			HDD.store_file(C)
+			. = TRUE

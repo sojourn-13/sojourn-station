@@ -463,3 +463,33 @@ obj/item/clothing/suit/gownrisque/alt
 	cold_protection = UPPER_TORSO|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
+
+/obj/item/clothing/suit/hev
+
+	name = "Hazardous Enviroment Protection suit" //funny reference suit. stronk rare and includes some degree of fire and hazard protection just not a space suit.
+	desc = "An advanced suit designed to protect you from the harshest of enviroments as long as that enviroment is not space. A shame most of it's systems seem broken down..."
+	icon_state = "rad"
+	item_state = "rad_suit"
+	w_class = ITEM_SIZE_BULKY
+	stiffness = LIGHT_STIFFNESS
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	siemens_coefficient = 0.4
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(
+		melee = 60,
+		bullet = 55,
+		energy = 50,
+		bomb = 75,
+		bio = 100,
+		rad = 100
+	)
+	equip_delay = 2 SECONDS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	item_flags = COVER_PREVENT_MANIPULATION
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
+	price_tag = 2000

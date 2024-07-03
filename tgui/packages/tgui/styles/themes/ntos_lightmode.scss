@@ -32,7 +32,10 @@ $nanotrasen: #ffffff;
   );
   @include meta.load-css(
     '../components/Section.scss',
-    $with: ('background-color': rgba(119, 119, 119, 0.4))
+    $with: (
+      'background-color': rgba(119, 119, 119, 0.4),
+      'title-text-color': black
+    )
   );
   @include meta.load-css(
     '../components/Tooltip.scss',
@@ -63,5 +66,14 @@ $nanotrasen: #ffffff;
   .Tab--selected {
     color: white;
     background-color: darkgray;
+  }
+  // NTOS header bar
+  .NtosWindow__header {
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ), url('../../assets/ntos_header_pattern.png') 0 5% repeat;
+    color: black;
   }
 }

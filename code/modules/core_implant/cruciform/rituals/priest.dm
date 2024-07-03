@@ -206,7 +206,7 @@
 
 
 	//After 30 seconds, your view is forced back to yourself
-	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, reset_view), user), 300)
 
 	return TRUE
 
@@ -392,7 +392,7 @@
 	for(var/stat in stats_to_boost)
 		var/amount = stats_to_boost[stat]
 		participant.stats.addTempStat(stat, amount, effect_time, src.name)
-		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+		addtimer(CALLBACK(src, PROC_REF(take_boost), participant, stat, amount), effect_time)
 	spawn(30)
 		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
 
@@ -558,7 +558,7 @@
 
 /datum/ritual/cruciform/priest/accelerated_growth/proc/give_boost(datum/seed/S)
 	S.set_trait(TRAIT_BOOSTED_GROWTH, boost_value)
-	addtimer(CALLBACK(src, .proc/take_boost, S), effect_time)
+	addtimer(CALLBACK(src, PROC_REF(take_boost), S), effect_time)
 
 /datum/ritual/cruciform/priest/accelerated_growth/proc/take_boost(datum/seed/S, stat, amount)
 	// take_boost is automatically triggered by a callback function when the boost ends but the seed

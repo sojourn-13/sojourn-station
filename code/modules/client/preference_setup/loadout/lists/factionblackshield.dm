@@ -97,7 +97,7 @@
 /datum/gear/factionblackshield/fatigueselection/New() //Like so.
 	..()
 	var/fatigues = list(
-		"Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/green,
+		"Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues,
 		"Navy Fatigues"			=	/obj/item/clothing/under/rank/fatigues/navy,
 		"Grey Fatigues"			=	/obj/item/clothing/under/rank/fatigues/grey,
 		"Camo Fatigues"				=	/obj/item/clothing/under/rank/fatigues/camo,

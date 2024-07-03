@@ -49,7 +49,7 @@
 		rad = 0
 	)
 
-/obj/item/clothing/head/armor/helmet/tanker/verb/toggle_style()
+/obj/item/clothing/head/helmet/tanker/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -256,6 +256,7 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
 
 /*
  * Factions
@@ -1604,6 +1605,53 @@
 			to_chat(usr, "You flip the [src] down to protect your face.")
 
 		usr.update_action_buttons()
+
+//S E C M A S K//
+
+/obj/item/clothing/head/helmet/faceshield/bmask
+	name = "ballistic mask"
+	desc = "An armored mask, Protects the head and face from impacts and shrapnel."
+	icon_state = "bmask"
+	armor_up = list(melee = 15, bullet = 15, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 20, bio = 0, rad = 0)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10)
+	flags_inv = null
+	siemens_coefficient = 1
+	up = TRUE
+
+/obj/item/clothing/head/helmet/faceshield/bmask/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Black"] = "bmask"
+	options["Tan"] = "bmask_tan"
+	options["Green"] = "bmask_green"
+	options["Steel"] = "bmask_steel"
+	options["Kriosan"] = "bmask_snoot"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		base_state = options[choice]
+		icon_state = options[choice]
+		item_state = options[choice]
+		if(up)
+			icon_state = "[base_state]up"
+		item_state_slots = list(
+		slot_l_hand_str = options[choice],
+		slot_r_hand_str = options[choice],
+		)
+		to_chat(M, "You adjusted your mask's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 // S E R B I A //
 

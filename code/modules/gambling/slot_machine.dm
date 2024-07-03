@@ -68,14 +68,14 @@
 				icon_state = "[icon_type]_off"
 
 /obj/machinery/slotmachine/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	//From left to right
 	var/offset = -6
 	var/image/img
 	for(var/slot in slots)
 		img = new/image(src.icon, "slot_[slots[slot]]")
 		img.pixel_x += offset
-		overlays += img
+		add_overlay(img)
 		offset += 6
 
 /obj/machinery/slotmachine/proc/check_win()

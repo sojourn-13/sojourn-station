@@ -613,7 +613,7 @@
 		ADD_TRANSFORMATION_MOVEMENT_HANDLER(M)
 		M.canmove = 0
 		M.icon = null
-		M.overlays.Cut()
+		M.cut_overlays()
 		M.invisibility = 101
 		for(var/obj/item/W in M) //for every item in a entity including internal components and inventory
 			if(istype(W, /obj/item/implant) || istype(W, /obj/item/organ/external/robotic))  //Check if item is implant or prosthetic

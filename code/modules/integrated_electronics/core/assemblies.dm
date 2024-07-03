@@ -519,12 +519,12 @@
 		icon_state = initial(icon_state) + "-open"
 	else
 		icon_state = initial(icon_state)
-	overlays.Cut()
+	cut_overlays()
 	if(detail_color == COLOR_ASSEMBLY_BLACK) //Black colored overlay looks almost but not exactly like the base sprite, so just cut the overlay and avoid it looking kinda off.
 		return
 	var/image/detail_overlay = image('icons/obj/assemblies/electronic_setups.dmi', src,"[icon_state]-color")
 	detail_overlay.color = detail_color
-	overlays.Add(detail_overlay)
+	add_overlay(detail_overlay)
 
 /obj/item/device/electronic_assembly/proc/return_total_complexity()
 	var/returnvalue = 0
@@ -1155,7 +1155,7 @@
 /obj/item/device/electronic_assembly/implant/update_icon()
 	..()
 	implant.icon_state = icon_state
-	implant.overlays = overlays
+	implant.copy_overlays(src)
 
 /obj/item/device/electronic_assembly/implant/save()
 	var/list/saved_data = ..()

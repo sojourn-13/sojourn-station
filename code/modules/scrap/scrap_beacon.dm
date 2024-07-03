@@ -39,7 +39,7 @@
 	icon_state = "beacon1"
 	visible_message("<span class='notice'><b><font size='3px'><font color='red'>An alarm blares as the scrap beacon turns on and begins pulling debris from space!</font></b></span>")
 	playsound(src.loc, "sound/misc/bloblarm.ogg", 100, 1)
-	addtimer(CALLBACK(src, .proc/scrap_summon), 8)
+	addtimer(CALLBACK(src, PROC_REF(scrap_summon)), 8)
 
 
 /obj/structure/scrap_beacon/proc/scrap_summon()
