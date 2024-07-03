@@ -238,15 +238,16 @@
 
 /obj/item/storage/belt/medical/opifex/full/populate_contents()
 	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
 	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
 	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
-	new /obj/item/storage/pill_bottle/tramadol(src)
-	new /obj/item/storage/pill_bottle/prosurgeon(src)
-	new /obj/item/storage/pill_bottle/bicaridine(src)
-	new /obj/item/storage/pill_bottle/dermaline(src)
-	new /obj/item/storage/pill_bottle/dexalin_plus(src)
-	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/storage/pill_bottle/opifex(src)
+	new /obj/item/storage/pill_bottle/opifex(src)
+	//Opifex medical gets SI oint/bruise packs cuz they pre-order it on opi-fedex
+	new /obj/item/stack/medical/ointment/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/extinguisher/mini(src)
 
