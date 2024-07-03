@@ -195,6 +195,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	playtimerequired = 240
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 

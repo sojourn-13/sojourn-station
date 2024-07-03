@@ -83,7 +83,7 @@
 	)
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_BSSYNTH, FORM_NASHEF)
-	playtimerequired = 2400 //4 hours
+	playtimerequired = 240 //4 hours
 
 
 	stat_modifiers = list(

@@ -188,7 +188,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
-	playtimerequired = 2400 //4 hours
+	playtimerequired = 240 //4 hours
 
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop

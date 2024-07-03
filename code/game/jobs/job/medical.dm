@@ -76,7 +76,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
-	playtimerequired = 2400 //4 hours
+	playtimerequired = 240 //4 hours
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
