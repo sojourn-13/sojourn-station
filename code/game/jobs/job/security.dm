@@ -232,7 +232,7 @@
 	join_tag = /datum/job/officer
 
 /datum/job/officerjr
-	title = "Marshal Officer Jr"
+	title = "Junior Marshal Officer"
 	flag = OFFICERJR
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
@@ -241,7 +241,6 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Marshal Officer Jr"
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_INTERN
 	health_modifier = 10
@@ -279,6 +278,6 @@
 		Learn how to be a real Marshal Officer"
 
 /obj/landmark/join/start/officerjr
-	name = "Marshal Officer Jr"
+	name = "Junior Marshal Officer"
 	icon_state = "player-blue-lower"
 	join_tag = /datum/job/officerjr

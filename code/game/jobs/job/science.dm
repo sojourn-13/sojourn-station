@@ -118,7 +118,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
-	noob_name = "Soteria Roboticist Trainee"
+	noob_name = "Soteria Roboticist Learner"
 	alt_titles = list("Lab Assistant", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL

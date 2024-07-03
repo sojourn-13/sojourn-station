@@ -77,7 +77,6 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
 	alt_titles = list("Guild Electrician", "Guild Mechanical Engineer")
-	noob_name = "Guild Jr Adept"
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
@@ -133,7 +132,6 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	selection_color = "#d5c88f"
 	wage = WAGE_LABOUR_INTERN
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer/apprentice
-	noob_name = "Guild Apprentice"
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
