@@ -605,6 +605,9 @@ SUBSYSTEM_DEF(trade)
 				invoice_contents_info += "<li>[item.name]</li>"
 				cost += export_value
 				LEGACY_SEND_SIGNAL(src, COMSIG_TRADE_BEACON, item)
+				if(istype(item, /obj/structure/bigDelivery)) //This is a little janky but works to prevent the create from sticking around well it deletes
+					var/obj/structure/bigDelivery/BD = item
+					BD.wrapped = null
 				qdel(item)
 			else
 				item.forceMove(get_turf(AM))		// Should be the same tile
