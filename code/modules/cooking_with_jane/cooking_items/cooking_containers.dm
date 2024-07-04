@@ -157,13 +157,23 @@
 		tracker = null
 	return return_value
 
-//TODO: Handle the contents of the container being ruined via burning.
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_burning()
+	clear()
+	new obj/item/reagent_containers/food/snacks/badrecipe(container)
 	return
 
-//TODO: Handle the contents of the container lighting on actual fire.
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_ignition()
-	return FALSE
+//Deletes contents of container.
+//Used when food is burned, before replacing it with a burned mess
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear()
+	QDEL_LIST(contents)
+	contents=list()
+	reagents.clear_reagents()
+	if(tracker)
+		qdel(tracker)
+		tracker = null
+	clear_cooking_data()
+	update_icon()
+
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/verb/empty()
 	set src in view(1)
@@ -215,17 +225,6 @@
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/AltClick(var/mob/user)
 	do_empty(user)
-
-//Deletes contents of container.
-//Used when food is burned, before replacing it with a burned mess
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear()
-	QDEL_LIST(contents)
-	contents=list()
-	reagents.clear_reagents()
-	if(tracker)
-		qdel(tracker)
-		tracker = null
-	clear_cooking_data()
 
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear_cooking_data()

@@ -24,16 +24,22 @@
 
 	var/on_fire = FALSE //if the oven has caught fire or not.
 
+	var/datum/effect/effect/system/smoke_spread/bad/bsmoke = new /datum/effect/effect/system/smoke_spread/bad
+
 	circuit = /obj/item/circuitboard/cooking_with_jane/oven
 
 	scan_types = list("smile", "peep")
 
+/obj/machinery/cooking_with_jane/oven/New()
+	..()
+	bsmoke.attach(src)
+	bsmoke.set_up(10, 0, src.loc)
 
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/oven/Process()
 
-	//if(on_fire)
-		//Do bad things if it is on fire.
+	if(on_fire)
+		emit_fire()
 
 	if(switches)
 		handle_cooking(null, FALSE)
@@ -103,48 +109,71 @@
 	if(!(items && istype(items, /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
-	if(container.handle_ignition())
-		on_fire = TRUE
+	//Initial burst of smoke so it matches the fire alarm
+	bsmoke.start()
+
+	//Trigger fire alarms
+	var/area/area = get_area(src)
+	for(var/obj/machinery/firealarm/FA in area)
+		fire_alarm.triggerAlarm(loc, FA, 0)
+
+	on_fire = TRUE
+
+/obj/machinery/cooking_with_jane/oven/proc/emit_fire()
+	bsmoke.start()
 
 /obj/machinery/cooking_with_jane/oven/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
 
-	var/center_selected = getInput(params)
-
-	if(opened && center_selected)
-
-		if(istype(used_item, /obj/item/gripper))
-			var/obj/item/gripper/gripper = used_item
-			if(!gripper.wrapped && items)
-				var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
-				var/turf/T = get_turf(src)
-				container.forceMove(T)
-				items = null
-				update_icon()
+	if(on_fire && istype(used_item, /obj/item/extinguisher))
+		var/obj/item/extinguisher/exting = used_item
+		if(!exting.safety)
+			if (exting.reagents.total_volume < 1)
+			to_chat(usr, SPAN_NOTICE("\The [exting] is empty."))
 			return
 
-		if(items != null)
+			if (world.time < exting.last_use + 20)
+				return
+
+			exting.last_use = world.time
+
+			playsound(exting.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+
+			exting.reagents.remove_any(20)
+
+			on_fire = FALSE
+
+			return
+
+	if(istype(used_item, /obj/item/gripper))
+		var/obj/item/gripper/gripper = used_item
+		if(!gripper.wrapped && items)
 			var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
+			var/turf/T = get_turf(src)
+			container.forceMove(T)
+			items = null
+			update_icon()
+		return
 
-			if(istype(used_item, /obj/item/spatula))
-				container.do_empty(user, target=src, reagent_clear = FALSE)
-			else
-				container.process_item(used_item, params)
+	if(items != null)
+		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
 
-		else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container))
-			to_chat(usr, SPAN_NOTICE("You put a [used_item] in the oven."))
-			if(usr.canUnEquip(used_item))
-				usr.unEquip(used_item, src)
-			else
-				used_item.forceMove(src)
-			items = used_item
-			if(switches == 1)
-				cooking_timestamp = world.time
+		if(istype(used_item, /obj/item/spatula))
+			container.do_empty(user, target=src, reagent_clear = FALSE)
+		else
+			container.process_item(used_item, params)
 
-	else
-		handle_open(user)
+	else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container))
+		to_chat(usr, SPAN_NOTICE("You put a [used_item] in the oven."))
+		if(usr.canUnEquip(used_item))
+			usr.unEquip(used_item, src)
+		else
+			used_item.forceMove(src)
+		items = used_item
+		if(switches == 1)
+			cooking_timestamp = world.time
+
 	update_icon()
 
 //Retrieve whether or not the oven door has been clicked.
@@ -206,12 +235,15 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/CtrlClick called ")
 	#endif
-	var/choice = alert(user,"Select an action","Select One:","Set temperature","Set timer","Cancel")
+	var/choice = alert(user,"Select an action","Select One:","Set temperature","Set timer","Start Oven","Cancel")
 	switch(choice)
 		if("Set temperature")
 			handle_temperature(user)
 		if("Set timer")
 			handle_timer(user)
+		if("Start Oven")
+			handle_switch(user)
+
 
 //Switch the cooking device on or off
 /obj/machinery/cooking_with_jane/oven/CtrlShiftClick(var/mob/user, params)
@@ -262,7 +294,7 @@
 	#endif
 	var/old_timerstamp = timerstamp
 	spawn(timer)
-		log_debug("Comparimg timerstamp() of [timerstamp] to old_timerstamp [old_timerstamp]")
+		log_debug("Comparing timerstamp() of [timerstamp] to old_timerstamp [old_timerstamp]")
 		if(old_timerstamp == timerstamp)
 			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 
@@ -319,12 +351,7 @@
 	log_debug("     oven_data: [container.oven_data]")
 	#endif
 
-
-	if(container.oven_data[temperature])
-		container.oven_data[temperature] += reference_time
-	else
-		container.oven_data[temperature] = reference_time
-
+	container.oven_data[temperature] = reference_time
 
 	if(user && user.Adjacent(src))
 		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
