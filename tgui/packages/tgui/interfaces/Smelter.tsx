@@ -172,8 +172,8 @@ const ItemMaterials = (props: ItemMaterialsProps) => {
           <Stack.Item key={index} m={-1}>
             <Tooltip content={toTitleCase(data.name)} position="bottom">
               <Flex align="center" justify="center" direction="column">
-                <Flex.Item>
-                  <Image width={5} height={5} src={data.icon} m={-1} />
+                <Flex.Item width={4}>
+                  <Box className={data.icon} />
                 </Flex.Item>
                 <Flex.Item color="label" mt={-1}>
                   {round(data.count, 2)}
