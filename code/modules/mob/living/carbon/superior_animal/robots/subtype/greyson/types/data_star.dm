@@ -55,7 +55,7 @@ This monster is borderline unkillable and will make players upset
 	melee_damage_upper = 20
 
 	destroy_surroundings = FALSE
-	armor = list(melee = -10, bullet = -10, energy = -10, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
+	armor = list(melee = -2, bullet = -2, energy = -2, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
 
 	contaminant_immunity = TRUE
 
@@ -135,21 +135,21 @@ This monster is borderline unkillable and will make players upset
 		delay_for_rapid_range = 0.3 SECONDS
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.1 SECONDS
-		armor = list(melee = 50, bullet = 50, energy = 50, bomb = 90, bio = 100, rad = 100) //We are now in self-defence mode
+		armor = list(melee = 12, bullet = 12, energy = 12, bomb = 90, bio = 100, rad = 100) //We are now in self-defence mode
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
 		damage_cap_devider = 10
 		able_to_build = TRUE
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
-		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
+		armor = list(melee = 8, bullet = 8, energy =8, bomb = 35, bio = 100, rad = 100)
 		emp_damage = FALSE
 		damage_cap_devider = 5
 		able_to_build = TRUE
 		return
 
 	if(data_count >= 3500)
-		armor = list(melee = 25, bullet = 25, energy = 25, bomb = 25, bio = 100, rad = 100)
+		armor = list(melee = 6, bullet = 6, energy = 6, bomb = 25, bio = 100, rad = 100)
 		emp_damage = FALSE
 		able_to_build = TRUE
 		return
@@ -164,7 +164,7 @@ This monster is borderline unkillable and will make players upset
 		comfy_range = 12
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
+		armor = list(melee = 5, bullet = 5, energy = 5, bomb = 20, bio = 100, rad = 100)
 		returning_fire = TRUE
 		able_to_build = TRUE
 		return
@@ -177,7 +177,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
+		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 15, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -189,7 +189,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
-		armor = list(melee = 10, bullet = 10, energy = 10, bomb = 10, bio = 100, rad = 100)
+		armor = list(melee = 2, bullet = 2, energy = 2, bomb = 10, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -201,7 +201,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 4 //Yikes
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 1, bullet = 1, energy = 1, bomb = 3, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -219,7 +219,7 @@ This monster is borderline unkillable and will make players upset
 
 	if(data_count >= 1000)
 		projectiletype = /obj/item/projectile/beam/weak/light_rifle_257
-		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
+		armor = list(melee = -2, bullet = -2, energy = -2, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
 		able_to_build = TRUE
 		return
 
