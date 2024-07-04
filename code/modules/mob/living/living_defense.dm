@@ -153,16 +153,16 @@
 	//In order to show both target and everyone around that armor is actually working, we are going to send message for both of them
 	//Goon/tg chat should take care of spam issue on this one
 	switch(effective_armor)
-		if(INFINITY to 90)
+		if(90 to INFINITY)
 			armor_message(SPAN_NOTICE("[src] armor absorbs the blow!"),
 							SPAN_NOTICE("Your armor absorbed the impact!"))
-		if(90 to 74)
+		if(74 to 90)
 			armor_message(SPAN_NOTICE("[src] armor easily absorbs the blow!"),
 							SPAN_NOTICE("Your armor reduced the impact greatly!"))
-		if(74 to 49)
+		if(49 to 74)
 			armor_message(SPAN_NOTICE("[src] armor absorbs most of the damage!"),
 							SPAN_NOTICE("Your armor protects you from the impact!"))
-		if(24 to -INFINITY)
+		if(-INFINITY to 24)
 			armor_message(SPAN_NOTICE("[src] armor reduces the impact by a little."),
 							SPAN_NOTICE("Your armor reduced the impact a little."))
 
