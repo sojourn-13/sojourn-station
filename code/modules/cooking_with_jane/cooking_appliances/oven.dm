@@ -156,7 +156,7 @@
 			update_icon()
 		return
 
-	if(items != null)
+	if(items != null && opened)
 		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
 
 		if(istype(used_item, /obj/item/spatula))
@@ -165,14 +165,17 @@
 			container.process_item(used_item, params)
 
 	else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container))
-		to_chat(usr, SPAN_NOTICE("You put a [used_item] in the oven."))
-		if(usr.canUnEquip(used_item))
-			usr.unEquip(used_item, src)
+		if(opened)
+			to_chat(usr, SPAN_NOTICE("You put a [used_item] in the oven."))
+			if(usr.canUnEquip(used_item))
+				usr.unEquip(used_item, src)
+			else
+				used_item.forceMove(src)
+			items = used_item
+			if(switches == 1)
+				cooking_timestamp = world.time
 		else
-			used_item.forceMove(src)
-		items = used_item
-		if(switches == 1)
-			cooking_timestamp = world.time
+			handle_open()
 
 	update_icon()
 
@@ -352,9 +355,9 @@
 	container.oven_data[temperature] = reference_time
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
+		container.process_item(src, user, lower_quality_on_fail=0, send_message=TRUE)
 	else
-		container.process_item(src, user,  lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION)
+		container.process_item(src, user,  lower_quality_on_fail=0)
 
 
 

@@ -331,17 +331,13 @@
 	log_debug("     grill_data: [container.grill_data]")
 	#endif
 
-
-	if(container.grill_data[temperature[input]])
-		container.grill_data[temperature[input]] += reference_time
-	else
-		container.grill_data[temperature[input]] = reference_time
+	container.grill_data[temperature[input]] = reference_time
 
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
+		container.process_item(src, user, lower_quality_on_fail=0, send_message=TRUE)
 	else
-		container.process_item(src, user,  lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION)
+		container.process_item(src, user,  lower_quality_on_fail=0)
 
 
 

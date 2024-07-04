@@ -291,10 +291,7 @@
 	#endif
 
 
-	if(container.stove_data[temperature[input]])
-		container.stove_data[temperature[input]] += reference_time
-	else
-		container.stove_data[temperature[input]] = reference_time
+	container.stove_data[temperature[input]] = reference_time
 
 
 	if(user && user.Adjacent(src))
