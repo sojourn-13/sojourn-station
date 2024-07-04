@@ -104,12 +104,7 @@
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_ignition(input)
-	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
-		return
-
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
-	if(container.handle_ignition())
-		on_fire = TRUE
+	on_fire = TRUE
 
 //Retrieve which quadrant of the baking pan is being used.
 /obj/machinery/cooking_with_jane/stove/proc/getInput(params)

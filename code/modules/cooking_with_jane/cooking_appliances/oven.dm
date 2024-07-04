@@ -130,8 +130,8 @@
 		var/obj/item/extinguisher/exting = used_item
 		if(!exting.safety)
 			if (exting.reagents.total_volume < 1)
-			to_chat(usr, SPAN_NOTICE("\The [exting] is empty."))
-			return
+				to_chat(usr, SPAN_NOTICE("\The [exting] is empty."))
+				return
 
 			if (world.time < exting.last_use + 20)
 				return
@@ -235,14 +235,12 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/CtrlClick called ")
 	#endif
-	var/choice = alert(user,"Select an action","Select One:","Set temperature","Set timer","Start Oven","Cancel")
+	var/choice = alert(user,"Select an action","Select One:","Set temperature","Set timer","Cancel")
 	switch(choice)
 		if("Set temperature")
 			handle_temperature(user)
 		if("Set timer")
 			handle_timer(user)
-		if("Start Oven")
-			handle_switch(user)
 
 
 //Switch the cooking device on or off

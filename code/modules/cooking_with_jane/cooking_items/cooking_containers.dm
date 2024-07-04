@@ -159,7 +159,8 @@
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_burning()
 	clear()
-	new obj/item/reagent_containers/food/snacks/badrecipe(container)
+	new /obj/item/reagent_containers/food/snacks/badrecipe(src)
+	update_icon()
 	return
 
 //Deletes contents of container.
