@@ -15,6 +15,7 @@
 	var/sanity_value = 2 + rand(0,2)
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
 	price_tag += rand(0,5000)
+	sanity_damage = -(sanity_value/10) //Heals sanity slowly
 
 /obj/structure/artwork_statue/get_item_cost(export)
 	. = ..()
