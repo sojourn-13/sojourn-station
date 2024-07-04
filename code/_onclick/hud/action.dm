@@ -21,7 +21,7 @@
 	var/processing = 0
 	var/active = 0
 	var/obj/screen/movable/action_button/button = null
-	var/button_icon = 'icons/mob/actions.dmi'
+	var/button_icon = 'icons/mob/actions/actions.dmi'
 	var/button_icon_state = "default"
 	var/background_icon_state = "bg_default"
 	var/mob/living/owner
@@ -159,7 +159,7 @@
 //Hide/Show Action Buttons ... Button
 /obj/screen/movable/action_button/hide_toggle
 	name = "Hide Buttons"
-	icon = 'icons/mob/actions.dmi'
+	icon = 'icons/mob/actions/actions.dmi'
 	icon_state = "bg_default"
 	var/hidden = 0
 
@@ -225,6 +225,11 @@
 
 /datum/action/item_action/hands_free
 	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE
+
+//Preset for general and toggled actions
+/datum/action/innate
+	check_flags = 0
+	action_type = AB_INNATE
 
 #undef AB_WEST_OFFSET
 #undef AB_NORTH_OFFSET
