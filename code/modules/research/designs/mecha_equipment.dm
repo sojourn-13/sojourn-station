@@ -53,10 +53,6 @@
 	name = "jetpack module"
 	build_path = /obj/item/mecha_parts/mecha_equipment/thruster
 
-/datum/design/research/item/mecha/ai_holder
-	name = "AI holder"
-	build_path = /obj/item/mecha_parts/mecha_equipment/tool/ai_holder
-
 //obj/item/mecha_parts/mecha_equipment/repair_droid,
 //Ballistic Mech Ammo
 

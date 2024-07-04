@@ -11,7 +11,7 @@
 		to_chat(H, "Some problem has occurred, use default HUD type")
 		H.defaultHUD = "ErisStyle"
 		recreate_flag = TRUE
-	else if (H.client.prefs.UI_style != H.defaultHUD)//Если стиль у МОБА не совпадает со стилем у клинета
+	else if (H.client.prefs.UI_style != H.defaultHUD)//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		H.defaultHUD = H.client.prefs.UI_style
 		recreate_flag = TRUE
 
@@ -46,8 +46,8 @@
 /mob/living/carbon/human/check_HUDdatum()//correct a datum?
 	var/mob/living/carbon/human/H = src
 
-	if (H.client.prefs.UI_style && !(H.client.prefs.UI_style == "")) //если у клиента моба прописан стиль\тип ХУДа
-		if(GLOB.HUDdatums.Find(H.client.prefs.UI_style))//Если существует такой тип ХУДА
+	if (H.client.prefs.UI_style && !(H.client.prefs.UI_style == "")) //пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+		if(GLOB.HUDdatums.Find(H.client.prefs.UI_style))//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 			return TRUE
 
 	return FALSE
@@ -107,6 +107,7 @@
 	var/obj/item/I = get_active_hand()
 	if(I)
 		I.update_hud_actions()
+	hud_used?.reorganize_alerts()
 /*	update_inv_w_uniform(0)
 	update_inv_wear_id(0)
 	update_inv_gloves(0)
@@ -150,7 +151,7 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
-	for (var/gear_slot in species.hud.gear)//Добавляем Элементы ХУДа (инвентарь)
+	for (var/gear_slot in species.hud.gear)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 		if (!HUDdatum.slot_data.Find(gear_slot))
 			log_debug("[usr] try take inventory data for [gear_slot], but HUDdatum not have it!")
 			to_chat(H, "Sorry, but something went wrong with creating inventory slots, we recommend changing HUD type or call admins")
@@ -176,8 +177,8 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
-	for(var/HUDname in species.hud.ProcessHUD) //Добавляем Элементы ХУДа (не инвентарь)
-		if (!(HUDdatum.HUDneed.Find(HUDname))) //Ищем такой в датуме
+	for(var/HUDname in species.hud.ProcessHUD) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
+		if (!(HUDdatum.HUDneed.Find(HUDname))) //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			log_debug("[usr] try create a [HUDname], but it no have in HUDdatum [HUDdatum.name]")
 		else
 			var/HUDtype = HUDdatum.HUDneed[HUDname]["type"]
@@ -188,16 +189,16 @@
 
 			if(HUDdatum.HUDneed[HUDname]["hideflag"])
 				HUD.hideflag = HUDdatum.HUDneed[HUDname]["hideflag"]
-			H.HUDneed[HUD.name] += HUD//Добавляем в список худов
-			if (HUD.process_flag)//Если худ нужно процессить
-				H.HUDprocess += HUD//Вливаем в соотвествующий список
+			H.HUDneed[HUD.name] += HUD//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+			if (HUD.process_flag)//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+				H.HUDprocess += HUD//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	return
 
 /mob/living/carbon/human/create_HUDfrippery()
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
-	//Добавляем Элементы ХУДа (украшения)
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 	for (var/list/whistle in HUDdatum.HUDfrippery)
 		var/obj/screen/frippery/F = new (whistle["icon_state"],whistle["loc"],H)
 		F.icon = HUDdatum.icon
@@ -210,7 +211,7 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
-	//Добавляем технические элементы(damage,flash,pain... оверлеи)
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(damage,flash,pain... пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 	for (var/techobject in HUDdatum.HUDoverlays)
 		var/HUDtype = HUDdatum.HUDoverlays[techobject]["type"]
 
@@ -219,9 +220,9 @@
 		 HUDdatum.HUDoverlays[techobject]["icon_state"] ? HUDdatum.HUDoverlays[techobject]["icon_state"] : null)
 		HUD.layer = FLASH_LAYER
 
-		H.HUDtech[HUD.name] += HUD//Добавляем в список худов
-		if (HUD.process_flag)//Если худ нужно процессить
-			H.HUDprocess += HUD//Вливаем в соотвествующий список
+		H.HUDtech[HUD.name] += HUD//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+		if (HUD.process_flag)//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			H.HUDprocess += HUD//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	return
 
 

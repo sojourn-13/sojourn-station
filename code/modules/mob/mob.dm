@@ -5,6 +5,8 @@
 	GLOB.mob_list -= src
 	unset_machine()
 	QDEL_NULL(hud_used)
+	for(var/alert in alerts)
+		clear_alert(alert)
 	languages = null
 	move_intent = null
 	QDEL_NULL(weak_reference)
