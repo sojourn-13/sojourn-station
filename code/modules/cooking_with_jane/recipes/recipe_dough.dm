@@ -3,8 +3,8 @@
 	cooking_container = BOWL
 	product_type = /obj/item/reagent_containers/food/snacks/dough
 	step_builder = list(
-		list(CWJ_ADD_REAGENT, "egg", 3),
-		list(CWJ_ADD_REAGENT, "flour", 10),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=1),
+		list(CWJ_ADD_REAGENT, "flour", 10, remain_percent=0),
 		list(CWJ_ADD_REAGENT, "water", 2, remain_percent=0)
 	)
 
@@ -14,9 +14,12 @@
 	product_type = /obj/item/reagent_containers/food/snacks/dough
 	product_count = 5
 	step_builder = list(
-		list(CWJ_ADD_REAGENT, "enzyme", 1, remain_percent=0),
-		list(CWJ_ADD_REAGENT, "egg", 15),
-		list(CWJ_ADD_REAGENT, "flour", 50),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.2),
+		list(CWJ_ADD_REAGENT, "flour", 50, remain_percent=0),
 		list(CWJ_ADD_REAGENT, "water", 10, remain_percent=0)
 	)
 

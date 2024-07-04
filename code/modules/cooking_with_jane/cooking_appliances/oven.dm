@@ -33,7 +33,7 @@
 /obj/machinery/cooking_with_jane/oven/New()
 	..()
 	bsmoke.attach(src)
-	bsmoke.set_up(10, 0, src.loc)
+	bsmoke.set_up(7, 0, src.loc)
 
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/oven/Process()
