@@ -992,6 +992,7 @@
 	..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"
+	price_tag += rand(100, 3000)
 
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -999,18 +1000,17 @@
 	UPGRADE_WORKSPEED = rand(-1,3),
 	UPGRADE_PRECISION = rand(-3,15),
 	UPGRADE_FORCE_MOD = rand(-2,5),
-	UPGRADE_BULK = rand(-1,1),
-	price_tag += rand(100, 3000)
+	UPGRADE_BULK = rand(-1,1)
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = rand(-0.4,0.2),
-	GUN_UPGRADE_DAMAGE_MULT = rand(-0.2,0.4),
-	GUN_UPGRADE_PEN_MULT = rand(-1.2,1.4),
-	GUN_UPGRADE_FIRE_DELAY_MULT = rand(-0.4,0.2),
-	GUN_UPGRADE_MOVE_DELAY_MULT = rand(-0.4,0.2),
-	GUN_UPGRADE_MUZZLEFLASH = rand(-0.4,0.2),
-	GUN_UPGRADE_CHARGECOST = rand(-0.4,0.2),
-	GUN_UPGRADE_OVERCHARGE_MAX = rand(-0.4,0.2),
-	GUN_UPGRADE_OVERCHARGE_RATE = rand(-0.4,0.2)
+	GUN_UPGRADE_RECOIL = rand(-4,2) * 0.1,
+	GUN_UPGRADE_DAMAGE_MULT = rand(-2,4) * 0.1,
+	GUN_UPGRADE_PEN_MULT = rand(-2,4) * 0.1,
+	GUN_UPGRADE_FIRE_DELAY_MULT = rand(-4,2) * 0.1,
+	GUN_UPGRADE_MOVE_DELAY_MULT = rand(-4,2) * 0.1,
+	GUN_UPGRADE_MUZZLEFLASH = rand(-4,2) * 0.1,
+	GUN_UPGRADE_CHARGECOST = rand(-4,2) * 0.1,
+	GUN_UPGRADE_OVERCHARGE_MAX = rand(-4,2) * 0.1,
+	GUN_UPGRADE_OVERCHARGE_RATE = rand(-4,2) * 0.1
 	)
 	I.prefix = "artistic"
