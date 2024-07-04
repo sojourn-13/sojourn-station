@@ -25,5 +25,10 @@ SUBSYSTEM_DEF(craft)
 			categories[CR.category] = list()
 		categories[CR.category] += CR
 		CHECK_TICK
+
+	if(/datum/asset/spritesheet/crafting in GLOB.asset_datums)
+		var/datum/asset/spritesheet/crafting/C = get_asset_datum(/datum/asset/spritesheet/crafting)
+		C.regenerate()
+
 	return ..()
 

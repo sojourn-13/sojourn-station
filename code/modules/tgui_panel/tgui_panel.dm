@@ -51,10 +51,16 @@
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))
 	// window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat)) // Emoji, language icons, CRAFTING ITEMS
 	window.send_asset(get_asset_datum(/datum/asset/spritesheet_batched/materials))
-	window.send_asset(get_asset_datum(/datum/asset/spritesheet/crafting))
 	// Other setup
 	request_telemetry()
 	addtimer(CALLBACK(src, PROC_REF(on_initialize_timed_out)), 5 SECONDS)
+
+	// Wait for SSassets to let us load our sensitive assets
+	if(SSassets.initialized)
+		send_late_assets()
+
+/datum/tgui_panel/proc/send_late_assets()
+	window.send_asset(get_asset_datum(/datum/asset/spritesheet/crafting))
 
 /**
  * private
