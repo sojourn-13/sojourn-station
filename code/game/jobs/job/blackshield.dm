@@ -127,7 +127,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Corpsman Cadet", "Combat Medic")
+	alt_titles = list("Combat Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -244,7 +244,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop/cadet
 
-	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_CHEM_CONTRABAND)
 
 	access = list(
 		access_security, access_eva,
@@ -262,8 +262,8 @@
 
 	description = "The Trooper forms the base of the Blackshield, the front line against pirates, terrorists, and xenos.<br>\
 	You are learning to become a Trooper and help protect the colony. Employ your talents to bring an end to threats and conflict situations.<br>\
-	Tactics and teamwork are vital, make sure to learn some. You are paid to follow and learn orders, not to question. Remember your focus on external threats - leave otherwise to Marshals.<br>\
-	When there are no standing orders, your ongoing task is to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
+	Tactics and teamwork are vital, make sure to learn some. You are paid to follow and learn orders, not to question. Remember your focus is on external threats - leave otherwise to Marshals.<br>\
+	When there are no standing orders, your ongoing task is to learn the contraband laws and Blackshield SOP and to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
 	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
 
 	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\

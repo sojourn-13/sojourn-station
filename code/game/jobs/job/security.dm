@@ -233,7 +233,7 @@
 	join_tag = /datum/job/officer
 
 /datum/job/officerjr
-	title = "Junior Marshal Officer"
+	title = "Marshal Junior Officer"
 	flag = OFFICERJR
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
@@ -267,8 +267,8 @@
 
 	description = "The Marshal Officer forms the brunt of the Marshals, internally enforcing law and keeping the peace.<br>\
 	You are learning to become a Marshal and are expected to be a learn how to problem solve and handle descalate situations, reach peaceful agreements, and maintain public trust.<br>\
-	Keep your weapons holstered unless the situation demands otherwise - exercise good judgment and follow Blackshield orders.<br>\
-	When there are no standing orders, your ongoing task is to patrol the colony and be on the lookout for threats or problems. <br>\
+	Keep your weapons holstered unless the situation demands otherwise - exercise good judgment and follow orders from full Marshals.<br>\
+	When there are no standing orders, your ongoing task is to better learn the laws and Marshal SOP, patrol the colony, be on the lookout for threats or problems. <br>\
 	Check in at departments and watch the main gate. You have access to most places to help with your duties  - do not abuse this."
 
 	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\

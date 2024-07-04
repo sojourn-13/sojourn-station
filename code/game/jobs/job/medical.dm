@@ -110,7 +110,7 @@
 	join_tag = /datum/job/doctor
 
 /datum/job/medstudent
-	title = "Soteria Med Student"
+	title = "Soteria Medical Resident"
 	flag = DOCTORJR
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
