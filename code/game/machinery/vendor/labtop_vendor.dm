@@ -174,74 +174,22 @@
 		return total_price
 	return FALSE
 
+/obj/machinery/lapvend/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	
+	ui_interact(user)
 
+/obj/machinery/lapvend/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ComputerFabricator", name)
+		ui.open()
 
+/obj/machinery/lapvend/ui_data(mob/user)
+	var/list/data = list()
 
-
-/obj/machinery/lapvend/Topic(href, href_list)
-	if(..())
-		return TRUE
-
-	if(href_list["pick_device"])
-		if(state) // We've already picked a device type
-			return FALSE
-		devtype = text2num(href_list["pick_device"])
-		state = 1
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["clean_order"])
-		reset_order()
-		return TRUE
-	if((state != 1) && devtype) // Following IFs should only be usable when in the Select Loadout mode
-		return FALSE
-	if(href_list["confirm_order"])
-		state = 2 // Wait for ID swipe for payment processing
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_cpu"])
-		dev_cpu = text2num(href_list["hw_cpu"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_battery"])
-		dev_battery = text2num(href_list["hw_battery"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_disk"])
-		dev_disk = text2num(href_list["hw_disk"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_netcard"])
-		dev_netcard = text2num(href_list["hw_netcard"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_tesla"])
-		dev_tesla = text2num(href_list["hw_tesla"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_nanoprint"])
-		dev_nanoprint = text2num(href_list["hw_nanoprint"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_card"])
-		dev_card = text2num(href_list["hw_card"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	if(href_list["hw_aislot"])
-		dev_aislot = text2num(href_list["hw_aislot"])
-		fabricate_and_recalc_price(0)
-		return TRUE
-	return FALSE
-
-/obj/machinery/lapvend/attack_hand(var/mob/user)
-	nano_ui_interact(user)
-
-/obj/machinery/lapvend/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	if(stat & (BROKEN | NOPOWER | MAINT))
-		if(ui)
-			ui.close()
-		return FALSE
-
-	var/list/data[0]
 	data["state"] = state
 	if(state == 1)
 		data["devtype"] = devtype
@@ -255,16 +203,68 @@
 		data["hw_aislot"] = dev_aislot
 	if(state == 1 || state == 2)
 		data["totalprice"] = total_price
+	
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "computer_fabricator.tmpl", "Personal Computer Vendor", 500, 400)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/lapvend/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state_shitass_not_used)
+	. = ..()
+	if(.)
+		return
 
+	switch(action)
+		if("pick_device")
+			if(state) // We've already picked a device type
+				return FALSE
+			devtype = text2num(params["device"])
+			state = 1
+			fabricate_and_recalc_price(0)
+			return TRUE
+		if("clean_order")
+			reset_order()
+			return TRUE
 
-obj/machinery/lapvend/attackby(obj/item/W as obj, mob/user as mob)
+	if((state != 1) && devtype) // Following IFs should only be usable when in the Select Loadout mode
+		return FALSE
+
+	switch(action)
+		if("confirm_order")
+			state = 2 // Wait for ID swipe for payment processing
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_cpu")
+			dev_cpu = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_battery")
+			dev_battery = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_disk")
+			dev_disk = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_netcard")
+			dev_netcard = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_tesla")
+			dev_tesla = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_nanoprint")
+			dev_nanoprint = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_card")
+			dev_card = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+		if("hw_aislot")
+			dev_aislot = text2num(params["value"])
+			fabricate_and_recalc_price(0)
+			. = TRUE
+
+/obj/machinery/lapvend/attackby(obj/item/W as obj, mob/user as mob)
 	if(inoperable())
 		to_chat(user, SPAN_WARNING("[src] is not responding."))
 		return
