@@ -132,7 +132,7 @@ export const CraftingStation = (props) => {
         <Section
           title="Crafting"
           fill
-          height={!!materials && materials.length > 0 ? '85%' : '100%'}
+          height={!!materials && materials.length > 0 ? '80%' : '100%'}
         >
           <Stack fill vertical>
             <Stack.Item>

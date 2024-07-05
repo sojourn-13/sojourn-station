@@ -246,7 +246,15 @@ const CatalogListCooking = (props: { entries: CookingEntry[] }) => {
           {entries.map((entry) => (
             <Stack key={entry.id} height={4} align="center" p={1}>
               <Stack.Item basis="10%">
-                <Image src={entry.icon} />
+                <Box width="32px" height="32px" position="relative">
+                  <Box
+                    position="absolute"
+                    left="-32px"
+                    top="-48px"
+                    className={entry.icon}
+                    style={{ transform: 'scale(0.25)' }}
+                  />
+                </Box>
               </Stack.Item>
               <Stack.Item basis="40%">
                 <Button
@@ -511,7 +519,7 @@ const CatalogEntryCooking = (props: {
           <Box>{description}</Box>
         </Stack.Item>
         <Stack.Item grow textAlign="center">
-          <Image src={icon} width={15} />
+          <Box className={icon} />
         </Stack.Item>
       </Stack>
       <Box fontSize={1.5} bold mt={1}>

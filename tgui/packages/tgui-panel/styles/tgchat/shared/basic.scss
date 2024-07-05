@@ -1,0 +1,276 @@
+/* Basic styles to make the chat look better */
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: pixelated;
+}
+
+img.icon {
+  height: 1em;
+  min-height: 16px;
+  width: auto;
+  vertical-align: bottom;
+}
+
+/*****************************************
+*
+* OUTPUT ACTUALLY RELATED TO MESSAGES
+*
+******************************************/
+
+/* ADD HERE FOR BOLD */
+.bold,
+.name,
+.prefix,
+.ooc,
+.looc,
+.admin,
+.medal,
+.yell {
+  font-weight: bold;
+}
+
+/* ADD HERE FOR ITALIC */
+.italic,
+.italics,
+.emote {
+  font-style: italic;
+}
+
+/* OUTPUT COLORS */
+.highlight {
+  background: yellow;
+}
+
+.log_message {
+  color: #386aff;
+  font-weight: bold;
+}
+
+/* OOC styles */
+.ooc .looc {
+  color: #3a9696;
+}
+.ooc .rlooc {
+  color: #276161;
+}
+.ooc .elevated {
+  color: #2e78d9;
+}
+.ooc .moderator {
+  color: #184880;
+}
+.ooc .developer {
+  color: #1b521f;
+}
+.ooc .admin {
+  color: #b82e00;
+}
+
+.adminhelp {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.suicide {
+  color: #ff5050;
+  font-style: italic;
+}
+
+.grey {
+  color: #838383;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.sans {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.papyrus {
+  font-family: 'Papyrus', cursive, sans-serif;
+}
+
+.robot {
+  font-family: 'Courier New', cursive, sans-serif;
+}
+
+.small {
+  font-size: 60%;
+}
+
+.big {
+  font-size: 185%;
+}
+
+.reallybig {
+  font-size: 245%;
+}
+
+.extremelybig {
+  font-size: 310%;
+}
+
+.singing {
+  font-family: 'Trebuchet MS', cursive, sans-serif;
+  font-style: italic;
+}
+
+.icon {
+  height: 1em;
+  width: auto;
+}
+
+.upside_down {
+  display: inline;
+  -moz-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -ms-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+.text-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Admin: Private Messages */
+.pm .howto {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 200%;
+}
+.pm .in {
+  color: #ff0000;
+}
+.pm .out {
+  color: #ff0000;
+}
+.pm .other {
+  color: #0000ff;
+}
+
+/* Admin: Channels */
+.mod_channel {
+  color: #735638;
+  font-weight: bold;
+}
+.mod_channel .admin {
+  color: #b82e00;
+  font-weight: bold;
+}
+.admin_channel {
+  color: #9611d4;
+  font-weight: bold;
+}
+.adminticket {
+  color: #386aff;
+  font-weight: bold;
+}
+
+/* Languages */
+.slime {
+  color: #00ced1;
+}
+.monkey {
+  color: #975032;
+}
+.chthive {
+  color: #4f8529;
+}
+.rough {
+  font-family:
+    Trebuchet MS,
+    cursive,
+    sans-serif;
+}
+.say_quote {
+  font-family: Georgia, Verdana, sans-serif;
+}
+.slavic {
+  color: #635d17;
+}
+.illyrian {
+  color: #ad6f1d;
+}
+.jive {
+  color: #666666;
+}
+.jana {
+  color: #993399;
+}
+.latin {
+  color: #deb63d;
+}
+.romana {
+  color: #ed7961;
+}
+.euro {
+  color: #6533da;
+}
+.yassari {
+  color: #5fbf4e;
+}
+.marqua {
+  color: #5ec2e7;
+}
+.akula {
+  color: #f8412c;
+}
+.plant {
+  color: #882d17;
+}
+.opifex {
+  color: #e96443;
+}
+.cindarite {
+  color: #fa7373;
+}
+.neutral {
+  color: #555555;
+  font-weight: bold;
+}
+
+/* Radio: Misc */
+.angelsay {
+  color: #ffaa00;
+}
+.deptradio {
+  color: #ff00ff;
+} /* when all other department colors fail */
+
+.supradio {
+  color: #5f4519;
+}
+
+.moderate {
+  color: #cc0000;
+}
+
+.alium {
+  color: #00ff00;
+}
+.revolution {
+  color: #b00030;
+  font-weight: bold;
+  font-style: italic;
+}
+.reflex_shoot {
+  color: #000099;
+  font-style: italic;
+}
