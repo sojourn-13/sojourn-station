@@ -157,19 +157,20 @@ const EjectAllButton = (props: { onEjectRequested: () => void }) => {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       className={classes(['MaterialDock', hovering && 'MaterialDock--active'])}
-      style={{ height: '100%' }}
     >
-      <Flex direction="column-reverse" height="100%">
+      <Flex direction="column-reverse">
         <Flex
           direction="column"
           textAlign="center"
-          justify="center"
           onClick={() => onEjectRequested()}
           className="MaterialDock__Label"
-          height="100%"
         >
           <Flex.Item>
-            <Icon name="eject" className="FabricatorMaterialIcon" />
+            <Flex align="center" justify="center" height="34px">
+              <Flex.Item>
+                <Icon name="eject" />
+              </Flex.Item>
+            </Flex>
           </Flex.Item>
           <Flex.Item>Eject All</Flex.Item>
         </Flex>

@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Divider,
-  Image,
   LabeledList,
   NoticeBox,
   ProgressBar,
@@ -16,49 +15,49 @@ import { Window } from 'tgui/layouts';
 enum StatType {
   AnimatedNumber = 'AnimatedNumber',
   ProgressBar = 'ProgressBar',
-  String = 'String'
+  String = 'String',
 }
 
 type ProgressBarData = {
-  min?: number
-  max?: number
-  ranges?: Record<string, [number, number]>
-  color?: string
-}
+  min?: number;
+  max?: number;
+  ranges?: Record<string, [number, number]>;
+  color?: string;
+};
 
 type StatsData = {
-  type: StatType
-  name: string
-  value: string | number
-  unit?: string
-} & ProgressBarData
+  type: StatType;
+  name: string;
+  value: string | number;
+  unit?: string;
+} & ProgressBarData;
 
 type ToolData = {
-  attachments?: { name: string; icon: string }[]
-  max_upgrades?: number
-}
+  attachments?: { name: string; icon: string }[];
+  max_upgrades?: number;
+};
 
 type FiremodesData = {
-  sel_mode: number
+  sel_mode: number;
   modes: {
-    index: number
-    name: string
-    desc: string
-    stats: StatsData[]
-    projectile?: StatsData[]
-  }[]
-}
+    index: number;
+    name: string;
+    desc: string;
+    stats: StatsData[];
+    projectile?: StatsData[];
+  }[];
+};
 
 type WeaponData = {
-  firemodes?: FiremodesData
-}
+  firemodes?: FiremodesData;
+};
 
 type Data = {
-  stats: Record<string, StatsData[]>
+  stats: Record<string, StatsData[]>;
 } & ToolData &
-  WeaponData
+  WeaponData;
 
-export const ItemStats = props => {
+export const ItemStats = (props) => {
   const { act, data } = useBackend<Data>();
 
   const { stats, attachments, max_upgrades, firemodes } = data;
@@ -72,7 +71,7 @@ export const ItemStats = props => {
           .map(([title, data]) => (
             <Section title={title} key={title}>
               <LabeledList>
-                {data.map(stats => (
+                {data.map((stats) => (
                   <StatDisplay key={stats.name} stats={stats} />
                 ))}
               </LabeledList>
@@ -149,7 +148,7 @@ export const Attachments = (props: ToolData) => {
 
   if (attachments === undefined) {
     return (
-      <Section title='Attachments'>
+      <Section title="Attachments">
         <NoticeBox danger>Attachment Data Invalid</NoticeBox>
       </Section>
     );
@@ -161,13 +160,13 @@ export const Attachments = (props: ToolData) => {
     >
       <Stack vertical>
         {attachments.length === 0 && 'None attached.'}
-        {attachments.map(attachment => (
+        {attachments.map((attachment) => (
           <Stack.Item key={attachment.name}>
-            <Stack align='center'>
+            <Stack align="center">
               <Stack.Item>
-                <Image
+                <Box
                   style={{ border: '1px solid #3e6189', borderRadius: '5%' }}
-                  src={attachment.icon}
+                  className={attachment.icon}
                 />
               </Stack.Item>
               <Stack.Item grow>{attachment.name}</Stack.Item>
@@ -190,8 +189,8 @@ export const Firemodes = (props: { firemodes: FiremodesData }) => {
 
   return (
     <Section title={'Firemodes: ' + firemodes.modes.length}>
-      {firemodes.modes.map(mode => (
-        <Box as='span' key={mode.index}>
+      {firemodes.modes.map((mode) => (
+        <Box as="span" key={mode.index}>
           <Section
             p={1}
             title={mode.name}
@@ -210,7 +209,7 @@ export const Firemodes = (props: { firemodes: FiremodesData }) => {
               <Stack.Item grow pr={1}>
                 <Section>
                   <LabeledList>
-                    {mode.stats.map(stats => (
+                    {mode.stats.map((stats) => (
                       <StatDisplay key={stats.name} stats={stats} />
                     ))}
                   </LabeledList>
@@ -220,7 +219,7 @@ export const Firemodes = (props: { firemodes: FiremodesData }) => {
                 <Stack.Item grow pl={1}>
                   <Section>
                     <LabeledList>
-                      {mode.projectile.map(stats => (
+                      {mode.projectile.map((stats) => (
                         <StatDisplay key={stats.name} stats={stats} />
                       ))}
                     </LabeledList>

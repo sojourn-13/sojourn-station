@@ -1151,7 +1151,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 /obj/item/gun/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/simple/tool_upgrades)
+		get_asset_datum(/datum/asset/spritesheet_batched/tool_upgrades)
 	)
 
 /obj/item/gun/ui_data(mob/user)
@@ -1248,7 +1248,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data["max_upgrades"] = max_upgrades
 	var/list/attachments = list()
 	for(var/atom/A in item_upgrades)
-		attachments += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(sanitizeFileName("[A.type].png"))))
+		var/datum/asset/spritesheet_batched/tool_upgrades/T = get_asset_datum(/datum/asset/spritesheet_batched/tool_upgrades)
+		attachments += list(list("name" = A.name, "icon" = T.icon_class_name(sanitize_css_class_name("[A.type]"))))
 	data["attachments"] = attachments
 
 	data["stats"] = stats

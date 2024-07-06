@@ -44,7 +44,11 @@
 	data["ref"] = "[REF(src)]"
 	
 	// because of course we have recipes that don't produce anything
-	data["icon"] = result ? SSassets.transport.get_asset_url(sanitizeFileName("[result].png")) : null
+	data["icon"] = null
+	if(result)
+		var/datum/asset/spritesheet/crafting/sprite = get_asset_datum(/datum/asset/spritesheet/crafting)
+		data["icon"] = sprite.icon_class_name(sanitize_css_class_name("[result]"))
+		
 	data["batch"] = flags & CRAFT_BATCH
 
 	var/atom/A = result

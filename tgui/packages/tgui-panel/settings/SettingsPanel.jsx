@@ -109,19 +109,18 @@ export const SettingsGeneral = (props) => {
                 width={'100%'}
                 buttons={
                   <Button
-                    content="Custom font"
                     icon={freeFont ? 'lock-open' : 'lock'}
                     color={freeFont ? 'good' : 'bad'}
                     onClick={() => {
                       setFreeFont(!freeFont);
                     }}
-                  />
+                  >Custom font
+                  </Button>
                 }
               >
                 {FONTS.map((FONT) => (
                   <Button
                     key={FONT}
-                    content={FONT}
                     fontFamily={FONT}
                     selected={fontFamily === FONT}
                     color="transparent"
@@ -132,7 +131,8 @@ export const SettingsGeneral = (props) => {
                         }),
                       )
                     }
-                  />
+                  >{FONT}
+                  </Button>
                 ))}
               </Collapsible>
             )) || (
@@ -140,7 +140,7 @@ export const SettingsGeneral = (props) => {
                 <Input
                   width={'100%'}
                   value={fontFamily}
-                  onChange={(value) =>
+                  onChange={(e, value) =>
                     dispatch(
                       updateSettings({
                         fontFamily: value,
@@ -161,11 +161,16 @@ export const SettingsGeneral = (props) => {
             )}
           </Stack.Item>
         </LabeledList.Item>
-        <LabeledList.Item label="Font size">
+        <LabeledList.Item label="Font size" verticalAlign='middle'>
+          <Stack align="center">
+            <Stack.Item>
+              <Button icon="minus" onClick={() => dispatch(updateSettings({ fontSize: Math.max(fontSize - 1, 8) }))} />
+            </Stack.Item>
+            <Stack.Item>
           <NumberInput
             width="4.2em"
             step={1}
-            stepPixelSize={10}
+            stepPixelSize={5}
             minValue={8}
             maxValue={32}
             value={fontSize}
@@ -179,8 +184,18 @@ export const SettingsGeneral = (props) => {
               )
             }
           />
+            </Stack.Item>
+            <Stack.Item>
+            <Button icon="plus" onClick={() => dispatch(updateSettings({ fontSize: Math.min(fontSize + 1, 32) }))} />
+            </Stack.Item>
+          </Stack>
         </LabeledList.Item>
-        <LabeledList.Item label="Line height">
+        <LabeledList.Item label="Line height" verticalAlign='middle'>
+          <Stack align="center">
+            <Stack.Item>
+              <Button icon="minus" onClick={() => dispatch(updateSettings({ lineHeight: Math.max(lineHeight - 0.01, 0.8) }))} />
+            </Stack.Item>
+            <Stack.Item>
           <NumberInput
             width="4.2em"
             step={0.01}
@@ -197,6 +212,11 @@ export const SettingsGeneral = (props) => {
               )
             }
           />
+            </Stack.Item>
+            <Stack.Item>
+            <Button icon="plus" onClick={() => dispatch(updateSettings({ lineHeight: Math.min(lineHeight + 0.01, 5) }))} />
+            </Stack.Item>
+          </Stack>
         </LabeledList.Item>
       </LabeledList>
       <Divider />

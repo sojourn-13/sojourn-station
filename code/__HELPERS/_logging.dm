@@ -109,10 +109,6 @@
 	if (config.log_attack)
 		game_log("ATTACK", text)
 
-/proc/log_adminsay(text)
-	if (config.log_adminchat)
-		game_log("ADMINSAY", text)
-
 /proc/log_adminwarn(text)
 	if (config.log_adminwarn)
 		game_log("ADMINWARN", text)

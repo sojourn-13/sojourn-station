@@ -22,8 +22,8 @@
 		return list()
 
 	return list(
-		get_asset_datum(/datum/asset/simple/craft),
-		get_asset_datum(/datum/asset/simple/materials),
+		get_asset_datum(/datum/asset/spritesheet/crafting),
+		get_asset_datum(/datum/asset/spritesheet_batched/materials),
 	)
 
 /datum/tgui_module/craft/ui_data(mob/user)

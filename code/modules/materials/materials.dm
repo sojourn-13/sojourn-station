@@ -139,7 +139,10 @@ var/list/name_to_material
 	var/list/data = list()
 
 	data["name"] = name
-	data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[stack_type].png"))
+
+	var/class_name = sanitize_css_class_name("[stack_type]")
+	var/datum/asset/spritesheet_batched/materials/sprite = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+	data["icon"] = sprite.icon_class_name(class_name)
 
 	return data
 
