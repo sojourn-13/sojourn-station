@@ -1,7 +1,7 @@
 
 //Psionic powers that summan items and when drop destory said item
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_omnitool()
+/mob/living/carbon/human/proc/psionic_omnitool()
 	set category = "Psionic powers"
 	set name = "Telekinetic Omnitool (2)"
 	set desc = "Expend two points of your psi essence to create an omnitool. It disappears when dropped or if it leaves your hand."
@@ -34,7 +34,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(tool)
 
-/mob/living/carbon/human/psionic_tumor/proc/pyrokinetic_spark()
+/mob/living/carbon/human/proc/pyrokinetic_spark()
 	set category = "Psionic powers"
 	set name = "Pyrokinetic Spark (1)"
 	set desc = "Expend a single point of your psi essence to create a tiny flickering fire in your hand that will shine light and ignite combustible materials, can be thrown but will extinguish quickly."
@@ -51,7 +51,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(flame)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_knife()
+/mob/living/carbon/human/proc/psionic_knife()
 	set category = "Psionic powers"
 	set name = "Psychic Blade (1)"
 	set desc = "Expend a single point of your psi essence to create a low quality but still deadly knife. It's power and damage scale with your robustness."
@@ -68,7 +68,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(knife)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_shield()
+/mob/living/carbon/human/proc/psionic_shield()
 	set category = "Psionic powers"
 	set name = "Psychic Shield (1)"
 	set desc = "Expend a single point of your psi essence to create an energy shield capable of blocking melee attacks. \
@@ -147,7 +147,7 @@
 			shield.adjustShieldDurability(-10, user)
 		usr.put_in_active_hand(shield)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_shield_layered()
+/mob/living/carbon/human/proc/psionic_shield_layered()
 	set category = "Psionic powers"
 	set name = "Layered Psychic Shield (1)"
 	set desc = "Expend a single point of your psi essence to create a layered shield capable of blocking bullets, energy beams, and melee attacks."
@@ -165,7 +165,7 @@
 		usr.put_in_active_hand(shield)
 
 
-/mob/living/carbon/human/psionic_tumor/proc/telekinetic_fist()
+/mob/living/carbon/human/proc/telekinetic_fist()
 	set category = "Psionic powers"
 	set name = "Telekinetic Fist (1)"
 	set desc = "Expend a single point of your psi essence to create a telekinetic fist, hitting some with it in melee will damage and knock them back. It's knockback and power \
@@ -183,7 +183,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(fist)
 
-/mob/living/carbon/human/psionic_tumor/proc/kinetic_barrier()
+/mob/living/carbon/human/proc/kinetic_barrier()
 	set category = "Psionic powers"
 	set name = "Kinetic Barrier (2)"
 	set desc = "Expend two psi points to create a psychic barrier a short distance from where the psion is facing. It blocks all movement and projectiles, but not vision."
@@ -205,7 +205,7 @@
 
 // Psionic Orbs
 
-/mob/living/carbon/human/psionic_tumor/proc/kinetic_blaster()
+/mob/living/carbon/human/proc/kinetic_blaster()
 	set category = "Psionic powers"
 	set name = "Kinetic Orb (0)"
 	set desc = "Expend none of your essence to create a kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends a single psi point per shot."
@@ -223,7 +223,7 @@
 		usr.put_in_active_hand(KB)
 
 
-/mob/living/carbon/human/psionic_tumor/proc/cryo_kinetic_blaster()
+/mob/living/carbon/human/proc/cryo_kinetic_blaster()
 	set category = "Psionic powers"
 	set name = "Cryo-Kinetic Orb (0)"
 	set desc = "Expend none of your essence to create a cryo-kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends four psi points per shot. \
@@ -241,7 +241,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(KB)
 
-/mob/living/carbon/human/psionic_tumor/proc/pyro_kinetic_blaster()
+/mob/living/carbon/human/proc/pyro_kinetic_blaster()
 	set category = "Psionic powers"
 	set name = "Pyro-Kinetic Orb (0)"
 	set desc = "Expend none of your essence to create a pyro-kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends three psi points per explosive shot. \
@@ -259,7 +259,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(KB)
 
-/mob/living/carbon/human/psionic_tumor/proc/electro_kinetic_blaster()
+/mob/living/carbon/human/proc/electro_kinetic_blaster()
 	set category = "Psionic powers"
 	set name = "Electro-Kinetic Orb (0)"
 	set desc = "Expend none of your essence to create a electro-kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends a two psi points per shot. \

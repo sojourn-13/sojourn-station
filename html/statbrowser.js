@@ -125,10 +125,15 @@ function removePermanentTab(name) {
 }
 
 function checkStatusTab() {
+	let toRemove = [];
 	for (var i = 0; i < menu.children.length; i++) {
 		if (!verb_tabs.includes(menu.children[i].id) && !permanent_tabs.includes(menu.children[i].id)) {
-			menu.removeChild(menu.children[i]);
+			toRemove.push(menu.children[i]);
 		}
+	}
+	// Must be done in two passes or it won't iterate over all menu children
+	for (var i = 0; i < toRemove.length; i++) {
+		menu.removeChild(toRemove[i])
 	}
 }
 

@@ -191,6 +191,12 @@
 		return organ_list_by_process(organ_process)[1]
 	return FALSE
 
+/mob/living/carbon/human/proc/first_organ_by_type(type)
+	for(var/organ in internal_organs)
+		if(istype(organ, type))
+			return organ
+	return null
+
 // basically has_limb()
 /mob/living/carbon/human/has_appendage(var/appendage_check)	//returns TRUE if found, type of organ modification if limb is robotic, FALSE if not found
 

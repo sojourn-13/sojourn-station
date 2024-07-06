@@ -28,9 +28,6 @@
 	examine_stat = STAT_BIO
 	examine_difficulty = STAT_LEVEL_EXPERT
 
-	// Internal organ stuff
-	var/list/owner_verb_adds = list()
-
 	// Additive adjustments
 	var/list/organ_efficiency_mod = list()
 	var/specific_organ_size_mod = null
@@ -141,9 +138,6 @@
 
 	if(scanner_hidden)
 		holder.scanner_hidden = scanner_hidden
-
-	for(var/owner_verb in owner_verb_adds)
-		holder.owner_verbs |= owner_verb
 
 /datum/component/modification/organ/uninstall(obj/item/I, mob/living/user)
 	..()

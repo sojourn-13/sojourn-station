@@ -1,7 +1,7 @@
 
 //Powers that affect/transform oddites in some way
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_weapon()
+/mob/living/carbon/human/proc/psionic_weapon()
 	set category = "Psionic powers"
 	set name = "Psionic Weapon Construction (3)"
 	set desc = "Expend three psi points to shape an oddity into a range weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
@@ -37,7 +37,7 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_melee()
+/mob/living/carbon/human/proc/psionic_melee()
 	set category = "Psionic powers"
 	set name = "Psionic Melee Construction (3)"
 	set desc = "Expend three psi points to shape an oddity into a melee weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
@@ -76,7 +76,7 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_tool()
+/mob/living/carbon/human/proc/psionic_tool()
 	set category = "Psionic powers"
 	set name = "Psionic Tool Creation (2)"
 	set desc = "Expend two psi points to shape an oddity into a tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
@@ -115,7 +115,7 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/mob/living/carbon/human/psionic_tumor/proc/psychoactive_manipulation()
+/mob/living/carbon/human/proc/psychoactive_manipulation()
 	set category = "Psionic powers"
 	set name = "Psychoactive Manipulation (2)"
 	set desc = "Expend two points of essence to psionically manipulate an oddity. Unlike other, more refined methods, this process is entirely random. The process could make the oddity or anomaly \

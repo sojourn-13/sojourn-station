@@ -1,7 +1,7 @@
 
 // Psionic powers that assit in locating someone or something
 
-/mob/living/carbon/human/psionic_tumor/proc/detect_thoughts()
+/mob/living/carbon/human/proc/detect_thoughts()
 	set category = "Psionic powers"
 	set name = "Locate Mind-Essence (5)"
 	set desc = "Expend five points of essence to psionically detect the thoughts and location of another higher life form. Does not work on animals, cruciform bearers, synthetics, or those \

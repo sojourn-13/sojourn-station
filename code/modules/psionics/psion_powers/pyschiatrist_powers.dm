@@ -1,7 +1,7 @@
 // These powers are specific to certain jobs and are obtained by joining as that job with the proper implant. They may be balanced differently and may cost standard or greater power points.
 
 // Psychiatrist/Psychologist
-/mob/living/carbon/human/psionic_tumor/proc/peace_of_mind()
+/mob/living/carbon/human/proc/peace_of_mind()
 	set category = "Psionic powers"
 	set name = "Peace of Mind (4)"
 	set desc = "Expend four psi points to put whatever person you are currently grabbing to sleep for a short time."
@@ -26,7 +26,7 @@
 				)
 		L.AdjustSleeping(60)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_heal_other()
+/mob/living/carbon/human/proc/psionic_heal_other()
 	set category = "Psionic powers"
 	set name = "Psychosomatic Restoration (2)"
 	set desc = "Expend two psi points of your psi essence to heal the body of one you are grappling of both brute and burn. Unlike standard psionic healing, this causes no pain in the target \
@@ -45,7 +45,7 @@
 		L.heal_overall_damage(30,30)
 
 
-/mob/living/carbon/human/psionic_tumor/proc/meditative_focus_other()
+/mob/living/carbon/human/proc/meditative_focus_other()
 	set category = "Psionic powers"
 	set name = "Psionic Tranquility (2)"
 	set desc = "Expend two psi points of your psi essence to calm the mind of another person you are grappling and restore their sanity."
@@ -78,7 +78,7 @@
 			if(user.stats.getPerk(PERK_PSI_MANIA))
 				L.sanity.changeLevel(10)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_heal_brain()
+/mob/living/carbon/human/proc/psionic_heal_brain()
 	set category = "Psionic powers"
 	set name = "Cerebral Regeneration (3)"
 	set desc = "Expend three psi points of your psi essence to heal the brain damage of another person you are grappling or yourself if you are grappling no one. When used on yourself, the cost is free."
@@ -99,7 +99,7 @@
 					)
 			L.adjustBrainLoss(-60)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_gift()
+/mob/living/carbon/human/proc/psionic_gift()
 	set category = "Psionic powers"
 	set name = "Gift of the Psion (4)"
 	set desc = "Expend four psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \

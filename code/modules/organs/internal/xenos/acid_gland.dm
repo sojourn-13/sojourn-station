@@ -4,30 +4,34 @@
 	icon_state = "xgibtorso"
 	organ_tag = BP_ACID
 	owner_verbs = list(
-		/obj/item/organ/internal/xenos/acidgland/proc/neurotoxin,
-		/obj/item/organ/internal/xenos/acidgland/proc/corrosive_acid
+		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/carbon/human/proc/corrosive_acid
 	)
 
 /obj/item/organ/internal/xenos/acidgland/drone
 	owner_verbs = list(
-		/obj/item/organ/internal/xenos/acidgland/proc/corrosive_acid
+		/mob/living/carbon/human/proc/corrosive_acid
 	)
 
 
-/obj/item/organ/internal/xenos/acidgland/proc/neurotoxin(mob/target as mob in oview(world.view, owner))
+/mob/living/carbon/human/proc/neurotoxin(mob/target as mob in oview(world.view, src))
 	set name = "Spit Neurotoxin (50)"
 	set desc = "Spits neurotoxin at someone, paralyzing them for a short time if they are not wearing protective gear."
 	set category = "Abilities"
 
-	if(!check_alien_ability(50))
+	var/obj/item/organ/internal/xenos/acidgland/organ = first_organ_by_type(/obj/item/organ/internal/xenos/acidgland)
+	if(!organ)
 		return
 
-	if(owner.stat || owner.paralysis || owner.stunned || owner.weakened || owner.lying || owner.restrained() || owner.buckled)
-		to_chat(owner, "You cannot spit neurotoxin in your current state.")
+	if(!organ.check_alien_ability(50))
 		return
 
-	owner.visible_message(
-		SPAN_WARNING("[owner] spits neurotoxin at [target]!"),
+	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
+		to_chat(src, "You cannot spit neurotoxin in your current state.")
+		return
+
+	visible_message(
+		SPAN_WARNING("[src] spits neurotoxin at [target]!"),
 		"<span class='alium'>You spit neurotoxin at [target].</span>"
 	)
 
@@ -38,24 +42,28 @@
 
 	if(!U || !T)
 		return
-	if (target == owner)
-		owner.bullet_act(new /obj/item/projectile/energy/neurotoxin(owner.loc), owner.get_organ_target())
+	if(target == src)
+		bullet_act(new /obj/item/projectile/energy/neurotoxin(loc), src.get_organ_target())
 		return
 
-	var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/neurotoxin(usr.loc)
+	var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/neurotoxin(loc)
 	A.current = U
 	A.yo = U.y - T.y
 	A.xo = U.x - T.x
 	A.Process()
 
 //If they right click to corrode, an error will flash if its an invalid target./N
-/obj/item/organ/internal/xenos/acidgland/proc/corrosive_acid(O as obj|turf in oview(1, owner))
+/mob/living/carbon/human/proc/corrosive_acid(O as obj|turf in oview(1, src))
 	set name = "Corrosive Acid (200)"
 	set desc = "Drench an object in acid, destroying it over time."
 	set category = "Abilities"
 
-	if(!(O in oview(1, owner)))
-		to_chat(owner, "<span class='alium'>[O] is too far away.</span>")
+	var/obj/item/organ/internal/xenos/acidgland/organ = first_organ_by_type(/obj/item/organ/internal/xenos/acidgland)
+	if(!organ)
+		return
+
+	if(!(O in oview(1, src)))
+		to_chat(src, "<span class='alium'>[O] is too far away.</span>")
 		return
 
 	// OBJ CHECK
@@ -75,12 +83,12 @@
 				cannot_melt = TRUE
 
 	if(cannot_melt)
-		to_chat(owner, "<span class='alium'>You cannot dissolve this object.</span>")
+		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
 		return
 
-	if(check_alien_ability(200))
+	if(organ.check_alien_ability(200))
 		new /obj/effect/acid(get_turf(O), O)
-		owner.visible_message(
+		visible_message(
 			"<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>"
 		)
 

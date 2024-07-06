@@ -1,6 +1,6 @@
 // These powers are obtained by killing bosses/enemies in deep maints and have a scary thematic scheme. Unlike other powers, these are immensely powerful or thematic,
 
-/mob/living/carbon/human/psionic_tumor/proc/bring_darkness()
+/mob/living/carbon/human/proc/bring_darkness()
 	set category = "Psionic powers"
 	set name = "Bring Darkness (3)"
 	set desc = "Expend three psi points to break all the lights connected to the power grid near you. Does not work on independent light sources, sunlight, or grant you sight in darkness."
@@ -21,7 +21,7 @@
 				var/obj/effect/decal/cleanable/blood/writing/sign = new /obj/effect/decal/cleanable/blood/writing(T)
 				sign.message = "He dreamed of this place."
 
-/mob/living/carbon/human/psionic_tumor/proc/kings_decorum()
+/mob/living/carbon/human/proc/kings_decorum()
 	set category = "Psionic powers"
 	set name = "Kings Decorum (2)"
 	set desc = "Expend two psi points to expel gore, blood, and smoke to decorate the world as the king desires."
@@ -83,7 +83,7 @@
 			smoke.start()
 
 
-/mob/living/carbon/human/psionic_tumor/proc/merge_flesh_and_steel()
+/mob/living/carbon/human/proc/merge_flesh_and_steel()
 	set category = "Psionic powers"
 	set name = "Merge Flesh and Steel (10)"
 	set desc = "Expend a massive pool of ten psi points and your own body to become something greater. To grasp at perfection, one must make sacrifices..."
@@ -99,7 +99,7 @@
 			log_and_message_admins("[user] has merged flesh and steel and become a hivemind node!")
 
 
-/mob/living/carbon/human/psionic_tumor/proc/ascend_another()
+/mob/living/carbon/human/proc/ascend_another()
 	set category = "Psionic powers"
 	set name = "Psionic Ascension (5)"
 	set desc = "Expend five psi points to ascend someone standing in front of you, making them a psion. The process is extremely damaging to the mind and you must stand still during it."
@@ -129,7 +129,7 @@
 		to_chat(src, "You must face your target!")
 
 
-/mob/living/carbon/human/psionic_tumor/proc/cerebral_hemorrhage()
+/mob/living/carbon/human/proc/cerebral_hemorrhage()
 	set category = "Psionic powers"
 	set name = "Cerebral Hemorrhage (5)"
 	set desc = "Expend five psi points to destroy the brain of anyone you are grappling. Lesser creatures will be instantly slain in a messy fashion, unless they are harmless."

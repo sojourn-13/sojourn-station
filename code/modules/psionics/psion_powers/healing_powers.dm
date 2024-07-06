@@ -1,7 +1,7 @@
 
 //Powers that heal people or self, or antiheal people
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_healing()
+/mob/living/carbon/human/proc/psionic_healing()
 	set category = "Psionic powers"
 	set name = "Psychosomatic healing (1)"
 	set desc = "Expend a single point of your psi essence to heal your body, the process however is extremely painful."
@@ -23,7 +23,7 @@
 			)
 
 //antiheals people with halloss
-/mob/living/carbon/human/psionic_tumor/proc/pain_infliction()
+/mob/living/carbon/human/proc/pain_infliction()
 	set category = "Psionic powers"
 	set name = "Pain Infliction (2)"
 	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
@@ -49,7 +49,7 @@
 		L.adjustHalLoss(30)
 
 //Transfers pain from grabbed to grabber
-/mob/living/carbon/human/psionic_tumor/proc/pain_transference()
+/mob/living/carbon/human/proc/pain_transference()
     set category = "Psionic powers"
     set name = "Pain Transference (2)"
     set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
@@ -82,7 +82,7 @@
             user.adjustHalLoss(amount)
 
 //Heals hunger
-/mob/living/carbon/human/psionic_tumor/proc/psychosomatictransfer()
+/mob/living/carbon/human/proc/psychosomatictransfer()
 	set category = "Psionic powers"
 	set name = "Psychosomatic Fullness (1)"
 	set desc = "Expend a single point of your psi essence to convince your stomach it's not actually that hungry, burning fat reserves to keep going strong. Taxing on the mind and causes minor burns."
@@ -100,7 +100,7 @@
 		to_chat(user, "You feel energized, though there is minor pain from burning so much fat so quickly.")
 
 // Heals stuns/other misc things
-/mob/living/carbon/human/psionic_tumor/proc/chosen_control()
+/mob/living/carbon/human/proc/chosen_control()
 	set category = "Psionic powers"
 	set name = "Chosen Control (4)"
 	set desc = "Expend four psi points to clear all effects that impede one's control. Remove stuns, paralysis, pain, agony, restrainments, and clears the users body of all chemicals and addictions."
@@ -136,7 +136,7 @@
 			qdel(R)
 
 // Heals sanity
-/mob/living/carbon/human/psionic_tumor/proc/meditative_focus()
+/mob/living/carbon/human/proc/meditative_focus()
 	set category = "Psionic powers"
 	set name = "Meditative Focus (2)"
 	set desc = "Expend two psi points of your psi essence to focus your mind and increase your sanity."

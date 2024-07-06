@@ -2703,7 +2703,6 @@
 #include "code\modules\nano\modules\nano_module.dm"
 #include "code\modules\nanogate\nanogate.dm"
 #include "code\modules\nanogate\nanogate_items.dm"
-#include "code\modules\nanogate\nanogate_powers.dm"
 #include "code\modules\nanogate\nanogate_vm.dm"
 #include "code\modules\nanogate\powers\nanobot.dm"
 #include "code\modules\nanogate\powers\rig.dm"
