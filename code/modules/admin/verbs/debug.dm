@@ -330,7 +330,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_areatest()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test areas"
 
 	var/list/areas_all = list()

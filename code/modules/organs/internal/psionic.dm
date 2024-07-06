@@ -86,7 +86,7 @@
 	)
 
 /obj/item/organ/internal/psionic_tumor/proc/psion_verb_install()
-	owner.verbs |= psion_verbs
+	add_verb(owner, psion_verbs)
 
 /obj/item/organ/internal/psionic_tumor/proc/psion_verb_remove()
-	owner.verbs -= psion_verbs
+	remove_verb(owner, psion_verbs)

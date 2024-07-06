@@ -6,10 +6,6 @@ SUBSYSTEM_DEF(overlays)
 /datum/controller/subsystem/overlays/PreInit()
 	stats = list()
 
-/datum/controller/subsystem/overlays/stat_entry(msg)
-	msg += "Ov:[length(queue)]"
-	return ..()
-
 /datum/controller/subsystem/overlays/Shutdown()
 	text2file(render_stats(stats), "[GLOB.log_directory]/overlay.log")
 
