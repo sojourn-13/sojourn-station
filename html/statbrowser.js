@@ -258,9 +258,6 @@ function tab_change(tab) {
 		draw_verbs(tab);
 	} else if (tab == "Debug Stat Panel") {
 		draw_debug();
-	} else if (tab == "Tickets") {
-		draw_tickets();
-		draw_interviews();
 	} else if (tab == "SDQL2") {
 		draw_sdql2();
 	} else if (tab == turfname) {
@@ -932,9 +929,9 @@ Byond.subscribeTo('create_listedturf', function (TN) {
 Byond.subscribeTo('remove_admin_tabs', function () {
 	href_token = null;
 	remove_mc();
-	remove_tickets();
-	remove_sdql2();
-	remove_interviews();
+	// remove_tickets();
+	// remove_sdql2();
+	// remove_interviews();
 });
 
 Byond.subscribeTo('update_listedturf', function (TC) {
@@ -959,6 +956,7 @@ Byond.subscribeTo('update_split_admin_tabs', function (status) {
 			removeStatusTab("Events");
 			removeStatusTab("Fun");
 			removeStatusTab("Game");
+			removeStatusTab("Sound");
 		}
 		update_verbs();
 	}
@@ -968,7 +966,7 @@ Byond.subscribeTo('update_split_admin_tabs', function (status) {
 Byond.subscribeTo('add_admin_tabs', function (ht) {
 	href_token = ht;
 	addPermanentTab("MC");
-	addPermanentTab("Tickets");
+	// addPermanentTab("Tickets");
 });
 
 Byond.subscribeTo('update_sdql2', function (S) {

@@ -321,7 +321,7 @@ var/list/_client_preferences_by_type
 /datum/client_preference/staff/split_admin_tabs
 	description = "Split Admin Tabs"
 	key = "CHAT_SPLIT_TABS"
-	default_value = GLOB.PREF_YES
+	default_value = GLOB.PREF_NO
 
 /datum/client_preference/staff/fast_mc_refresh
 	description = "Fast MC Tab Refresh"

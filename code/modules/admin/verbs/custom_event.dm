@@ -1,7 +1,7 @@
 ADMIN_VERB_ADD(/client/proc/cmd_admin_change_custom_event, R_ADMIN|R_FUN, FALSE)
 // verb for admins to set custom event
 /client/proc/cmd_admin_change_custom_event()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Change Custom Event"
 
 	if(!holder)
@@ -28,7 +28,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_change_custom_event, R_ADMIN|R_FUN, FALSE)
 ADMIN_VERB_ADD(/client/proc/cmd_admin_change_server_ad, R_ADMIN|R_FUN, FALSE)
 // verb for admins to change the server advertisement
 /client/proc/cmd_admin_change_server_ad()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Change Server Advert"
 
 	if(!holder)
