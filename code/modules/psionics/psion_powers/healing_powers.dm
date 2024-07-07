@@ -167,9 +167,9 @@
 // remove all chemicals (other then blood)
 /mob/living/carbon/human/psionic_tumor/proc/purefie()
 	set category = "Psionic Purefie"
-	set name = "Meditative Focus (3)"
-	set desc = "Expend three psi points of your psi essence clear out any chemical in your body, helpful or not."
-	var/psi_point_cost = 3
+	set name = "Meditative Focus (1)"
+	set desc = "Expend a psi points of your psi essence clear out any chemical in your body, helpful or not."
+	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
