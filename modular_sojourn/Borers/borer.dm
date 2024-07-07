@@ -186,21 +186,13 @@
 	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
 
-/mob/living/simple_animal/borer/Stat()
+/mob/living/simple_animal/borer/get_status_tab_items()
 	. = ..()
-	statpanel("Status")
-
-	if(evacuation_controller)
-		var/eta_status = evacuation_controller.get_status_panel_eta()
-		if(eta_status)
-			stat(null, eta_status)
-
-	if (client?.statpanel == "Status")
-		stat("Evolution Level", borer_level)
-		stat("Chemicals", host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]")
-		if(host)
-			stat("Host health", host.stat == DEAD ? "Deceased" : host.health)
-			stat("Host brain damage", host.getBrainLoss())
+	. += "Evolution Level: [borer_level]"
+	. += "Chemicals: [host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]"]"
+	if(host)
+		. += "Host health: [host.stat == DEAD ? "Deceased" : host.health]"
+		. += "Host brain damage: [host.getBrainLoss()]"
 
 /mob/living/simple_animal/borer/proc/detatch()
 
