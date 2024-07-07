@@ -161,7 +161,7 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/shoes/jackboots/claws_hoofs_paws
+/obj/item/clothing/shoes/claws_hoofs_paws
 	name = "clawsteps"
 	desc = "A pair of claws (hoofs or paws). Aside of the person not wearing exactly anything on their feet aside of being barefoot, it does looks sturdy enough to walk in glass and probably protect againts some damage"
 	icon_state = "feet_hoof_paw"
