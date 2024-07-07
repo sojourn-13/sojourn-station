@@ -160,3 +160,13 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/shoes/jackboots/claws_hoofs_paws
+	name = "clawsteps"
+	desc = "A pair of claws (hoofs or paws). Aside of the person not wearing exactly anything on their feet aside of being barefoot, it does looks sturdy enough to walk in glass and probably protect againts some damage"
+	icon_state = "feet_hoof_paw"
+	item_state = "feet_hoof_paw"
+	force = WEAPON_FORCE_HARMLESS
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0) //Not modified. Since jackboots are so easily found.
+	siemens_coefficient = 0.6
+	can_hold_knife = FALSE //ITS YOUR FEEET!! YOU CAN'T HOLD A KNIFE ON YOUR FEET!!
