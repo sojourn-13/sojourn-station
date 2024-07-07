@@ -817,6 +817,7 @@ window "outputwindow"
 		is-default = true
 		border = line
 		saved-params = "command"
+		font-size = 10
 	elem "oocbutton"
 		type = BUTTON
 		pos = 599,460
