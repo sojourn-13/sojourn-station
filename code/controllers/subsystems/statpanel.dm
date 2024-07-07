@@ -24,13 +24,15 @@ SUBSYSTEM_DEF(statpanels)
 		num_fires++
 		global_data = list(
 			"Storyteller: [master_storyteller ? master_storyteller : "being democratically elected"]",
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Round Time: [roundduration2text()]",
-			"Ship Time: [stationtime2text()]",
+			"Real Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			"Colony Time: [stationtime2text()]",
+			"Colony Date: [stationdate2text()]",
+			"Round Duration: [roundduration2text()]",
+			"Round End Timer: [rounddurationcountdown2text()]"
 		)
 		var/eta_status = evacuation_controller.get_status_panel_eta()
 		if(eta_status)
-			global_data += eta_status
+			global_data += "Evacuation: [eta_status]"
 		src.currentrun = clients.Copy()
 		mc_data = null
 
@@ -166,11 +168,11 @@ SUBSYSTEM_DEF(statpanels)
 		list("Byond:", "(FPS:[world.fps]) (TickCount:[world.time/world.tick_lag]) (TickDrift:[round(Master.tickdrift,1)]([round((Master.tickdrift/(world.time/world.tick_lag))*100,0.1)]%)) (Internal Tick Usage: [round(MAPTICK_LAST_INTERNAL_TICK_USAGE,0.1)]%)"),
 		list("Master Controller:", Master.stat_entry(), "\ref[Master]"),
 		list("Failsafe Controller:", Failsafe.stat_entry(), "\ref[Failsafe]"),
-		list("","")
+		list("Camera Net", "Cameras: [LAZYLEN(cameranet.cameras)] | Chunks: [LAZYLEN(cameranet.chunks)]", "\ref[cameranet]"),
+		list("", "")
 	)
 	for(var/datum/controller/subsystem/sub_system as anything in Master.subsystems)
 		mc_data[++mc_data.len] = list("\[[sub_system.state_letter()]][sub_system.name]", sub_system.stat_entry(), "\ref[sub_system]")
-	mc_data[++mc_data.len] = list("Camera Net", "Cameras: [LAZYLEN(cameranet.cameras)] | Chunks: [LAZYLEN(cameranet.chunks)]", "\ref[cameranet]")
 
 ///immediately update the active statpanel tab of the target client
 /datum/controller/subsystem/statpanels/proc/immediate_send_stat_data(client/target)
