@@ -26,22 +26,22 @@
 	var/obj/item/modular_computer/tablet/nanogate/vm //The virtual tablet that comes with your nanogate
 	min_broken_damage = 10 //Should break when organ is at 10 health of its 60.
 
-	owner_verbs = list(
+	var/nanogate_verbs = list(
 		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
 
-		/obj/item/organ/internal/nanogate/proc/create_nanobot,
+		/mob/living/carbon/human/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.
-		/obj/item/organ/internal/nanogate/proc/nanite_stats,
-		/obj/item/organ/internal/nanogate/proc/nanite_regen,
-		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
-		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem,
-		/obj/item/organ/internal/nanogate/proc/nanite_food_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker,
+		/mob/living/carbon/human/nanogate/proc/nanite_stats,
+		/mob/living/carbon/human/nanogate/proc/nanite_regen,
+		/mob/living/carbon/human/nanogate/proc/nanite_muscle,
+		/mob/living/carbon/human/nanogate/proc/nanite_armor,
+		/mob/living/carbon/human/nanogate/proc/nanite_chem,
+		/mob/living/carbon/human/nanogate/proc/nanite_food_storage,
+		/mob/living/carbon/human/nanogate/proc/nanite_metal_drinker,
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig
+		/mob/living/carbon/human/nanogate/proc/nanite_rig
 
 		)
 
@@ -67,26 +67,41 @@ obj/item/organ/internal/nanogate/artificer
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_GOLD = 12, MATERIAL_SILVER = 12, MATERIAL_PLASTIC = 20, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 3)
 	origin_tech = list(TECH_ENGINEERING = 25, TECH_BIO = 15, TECH_DATA = 10)
 
-	owner_verbs = list(
+	nanogate_verbs = list(
 		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
-		/obj/item/organ/internal/nanogate/proc/create_nanobot,
+		/mob/living/carbon/human/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.
-		/obj/item/organ/internal/nanogate/proc/nanite_stats,
-		/obj/item/organ/internal/nanogate/proc/nanite_regen,
-		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
-		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem,
-		/obj/item/organ/internal/nanogate/proc/nanite_mod,
-		/obj/item/organ/internal/nanogate/proc/nanite_ammo,
-		/obj/item/organ/internal/nanogate/proc/nanite_food_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker,
+		/mob/living/carbon/human/nanogate/proc/nanite_stats,
+		/mob/living/carbon/human/nanogate/proc/nanite_regen,
+		/mob/living/carbon/human/nanogate/proc/nanite_muscle,
+		/mob/living/carbon/human/nanogate/proc/nanite_armor,
+		/mob/living/carbon/human/nanogate/proc/nanite_chem,
+		/mob/living/carbon/human/nanogate/proc/nanite_mod,
+		/mob/living/carbon/human/nanogate/proc/nanite_ammo,
+		/mob/living/carbon/human/nanogate/proc/nanite_food_storage,
+		/mob/living/carbon/human/nanogate/proc/nanite_metal_drinker,
 
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
+		/mob/living/carbon/human/nanogate/proc/nanite_rig_opifex
 		)
 
+//Used for refreshing and resorting verbs
+/obj/item/organ/internal/nanogate/proc/cacophony_polyphony()
+	if(owner)
+		owner.verbs -= nanogate_verbs
+		owner.verbs |= nanogate_verbs
+
+//Used for adding all known verbs
+/obj/item/organ/internal/nanogate/proc/polyphony()
+	if(owner)
+		owner.verbs |= nanogate_verbs
+
+//Used for removing all known verbs
+/obj/item/organ/internal/nanogate/proc/cacophony()
+	if(owner)
+		owner.verbs -= nanogate_verbs
 
 // Nanogates use either nanomachines or electromagnetic nanites. So - you would be impacted by EMPs.
 /obj/item/organ/internal/nanogate/emp_act(severity)

@@ -17,6 +17,7 @@
 				if("Opifex")
 					B = new /obj/item/organ/internal/nanogate/opifex
 			B.replaced(head)
+			B.polyphony()
 			return TRUE
 	return FALSE
 
@@ -61,6 +62,7 @@
 /obj/item/organ/internal/nanogate/removed_mob()
 	//Remove purchased powers
 	SEND_SIGNAL(src, COMSIG_NANOGATE_REMOVED)
+	cacophony()
 	..()
 
 /obj/item/organ/internal/nanogate/proc/give_internal_computer()

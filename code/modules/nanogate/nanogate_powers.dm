@@ -17,24 +17,35 @@ var/global/datum/computer_file/data/email_account/service/nanogate/nano_mailer =
 /proc/setup_nanite_mailer()
 	nano_mailer = new
 
-/obj/item/organ/internal/nanogate/proc/nanite_antenna()
+/mob/living/carbon/human/nanogate/proc/nanite_antenna()
 	set category = "Nanogate Powers"
 	set name = "Nanogate Antenna (1)"
 	set desc = "Turns the user's body into an antenna that allows them to send emails freely to other colonists."
-	nano_point_cost = 1 // It's not free.
-	if(pay_power_cost(nano_point_cost))
-		verbs += /obj/item/organ/internal/nanogate/proc/nanite_message
+	var/nano_point_cost = 1 // It's not free.
+	var/obj/item/organ/internal/nanogate/thrdprn = random_organ_by_process(BP_NANOGATE)
 
-		owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_message //Add to owner_verbs so it is removed properly.
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_antenna
-		usr.show_message("\blue You feel a brief headache as nanobots form an antenna inside of you.")
+	if(!thrdprn)
+		to_chat(src, SPAN_WARNING("You dont have a nanogate that is active!"))
+		return
 
+	if(thrdprn.pay_power_cost(nano_point_cost))
+		verbs += /mob/living/carbon/human/nanogate/proc/nanite_message
+		thrdprn.nanogate_verbs += /mob/living/carbon/human/nanogate/proc/nanite_message //Add to nanogate_verbs so it is removed properly.
 
-/obj/item/organ/internal/nanogate/proc/nanite_message()
+		verbs -= /mob/living/carbon/human/nanogate/proc/nanite_antenna
+		thrdprn.nanogate_verbs -= /mob/living/carbon/human/nanogate/proc/nanite_antenna
+		to_chat(src, "You feel a brief headache as nanobots form an antenna inside of you.!")
+
+/mob/living/carbon/human/nanogate/proc/nanite_message()
 	set category = "Nanogate Powers"
 	set name = "Nanite Email"
 	set desc = "Send a message to anyone via email."
-	nano_point_cost = 0 // It's free (once activated).
+	var/nano_point_cost = 0 // It's free (once activated).
+	var/obj/item/organ/internal/nanogate/thrdprn = random_organ_by_process(BP_NANOGATE)
+
+	if(!thrdprn)
+		to_chat(src, SPAN_WARNING("You dont have a nanogate that is active!"))
+		return
 
 	var/list/mob/living/carbon/human/target_list = list() // Who we can talk to
 
@@ -48,28 +59,28 @@ var/global/datum/computer_file/data/email_account/service/nanogate/nano_mailer =
 	var/say = sanitize(input("What do you wish to say?"))
 
 	if(!topic)
-		usr.show_message("\blue Your email must have a topic.")
+		src.show_message("\blue Your email must have a topic.")
 	else if(!say)
-		usr.show_message("\blue Your email must have a message.")
-	else if(pay_power_cost(nano_point_cost)) // Just in case we decide to not make it free.
+		src.show_message("\blue Your email must have a message.")
+	else if(thrdprn.pay_power_cost(nano_point_cost)) // Just in case we decide to not make it free.
 
 		//target.show_message("\blue <b><font size='3px'> You receive a message from [usr.real_name] : [say] </font><b>")
 
 		var/datum/computer_file/data/email_message/message = new()
 		message.title = topic
-		message.stored_data = "INCOMING TRANSMISSION FROM [owner.real_name]:\n\n \
+		message.stored_data = "INCOMING TRANSMISSION FROM [real_name]:\n\n \
 		MESSAGE: [say]\n\n \
 		----------------------------\n \
 		Sent via Nanogate Satellite Uplink\n\n"
 
 		message.source = nano_mailer.login
 		if(!nano_mailer.send_mail(target, message))
-			usr.show_message("\blue Your attempt to send a message failed.")
+			src.show_message("\blue Your attempt to send a message failed.")
 		else
-			usr.show_message("\blue You send a message to [target] : [say]")
+			src.show_message("\blue You send a message to [target] : [say]")
 			log_say("[key_name(usr)] sent a nanite message to [target]: [say]")
 			for(var/mob/observer/ghost/G in world)
-				G.show_message("<i>Nanite message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
+				G.show_message("<i>Nanite message from <b>[real_name]</b> to <b>[target]</b>: [say]</i>")
 
 
 /*
