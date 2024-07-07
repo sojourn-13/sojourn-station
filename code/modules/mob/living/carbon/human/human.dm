@@ -124,13 +124,6 @@
 	if(N)
 		. += "Nanites Point: [N.nanite_points]"
 
-	// else if(statpanel("Perks"))
-	// 	for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
-	// 		perkHolder.update()
-
-	// if(mind)
-	// 	statpanel("Perks",src.stats.perk_stats)
-
 	src.stats.initialized = TRUE
 
 /mob/living/carbon/human/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE, eye_damage = 0)
