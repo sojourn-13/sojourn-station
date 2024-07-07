@@ -167,6 +167,5 @@
 	icon_state = "feet_hoof_paw"
 	item_state = "feet_hoof_paw"
 	force = WEAPON_FORCE_HARMLESS
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0) //Not modified. Since jackboots are so easily found.
 	siemens_coefficient = 0.6
 	can_hold_knife = FALSE //ITS YOUR FEEET!! YOU CAN'T HOLD A KNIFE ON YOUR FEET!!
