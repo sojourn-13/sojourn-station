@@ -22,19 +22,19 @@
 /datum/gear/factionblackshield/cadet
 	display_name = "uniform, cadet"
 	path = /obj/item/clothing/under/rank/trooper/cadet
-	allowed_roles = list("Corpsman","Blackshield Trooper")
+	allowed_roles = list("Corpsman","Blackshield Trooper", "Blackshield Cadet")
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/gorkasecurity
 	display_name = "gorka jumpsuit, security"
 	path = /obj/item/clothing/under/rank/security/gorka_ih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper")
+	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/gorka_pants
 	display_name = "gorka security pants"
 	path = /obj/item/clothing/under/rank/security/gorkapantsih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper")
+	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/gorka_pants
@@ -58,7 +58,7 @@
 /datum/gear/factionblackshield/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper")
+	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
 	slot = slot_wear_suit
 
 /datum/gear/factionblackshield/gorka_ih_med_b

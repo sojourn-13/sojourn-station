@@ -34,6 +34,7 @@
 	restricted_jobs = list(
 		/datum/job/doctor,
 		/datum/job/recovery_team,
+		/datum/job/medstudent,
 		/datum/job/premier,
 		/datum/job/pg,
 		/datum/job/chaplain,
