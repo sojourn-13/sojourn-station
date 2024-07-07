@@ -50,36 +50,36 @@
 
 //Transfers pain from grabbed to grabber
 /mob/living/carbon/human/psionic_tumor/proc/pain_transference()
-    set category = "Psionic powers"
-    set name = "Pain Transference (2)"
-    set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
-    var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
-    var/amount
-    var/absorbed = 50
-    var/mob/living/carbon/human/user = src
-    var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+	set category = "Psionic powers"
+	set name = "Pain Transference (2)"
+	set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
+	var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
+	var/amount
+	var/absorbed = 50
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
-    var/mob/living/carbon/human/L = get_grabbed_mob(user)
-    var/obj/item/grab/G = locate() in user
-    if(!G || !istype(G))
-        usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
-        return
+	var/mob/living/carbon/human/L = get_grabbed_mob(user)
+	var/obj/item/grab/G = locate() in user
+	if(!G || !istype(G))
+		usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
+		return
 
-    if(G.state < GRAB_AGGRESSIVE)
-        usr.show_message(SPAN_DANGER("You must have an aggressive grab take somebodies pain!"))
-        return
+	if(G.state < GRAB_AGGRESSIVE)
+		usr.show_message(SPAN_DANGER("You must have an aggressive grab take somebodies pain!"))
+		return
 
-    if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility(TRUE, L))
-        usr.visible_message(
-                SPAN_DANGER("[usr] presses their hands upon [L] shoulders in an attempt to take their pain."),
-                SPAN_DANGER("You press your hands onto the shoulders of [L] expanding your mind and transferring their pain!")
-                )
-        amount = min(absorbed,L.getHalLoss())
-        L.adjustHalLoss(-amount)
-        if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-            user.adjustHalLoss(amount/2) //Psi Attunement shunts some pain into the environment
-        else
-            user.adjustHalLoss(amount)
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility(TRUE, L))
+		usr.visible_message(
+				SPAN_DANGER("[usr] presses their hands upon [L] shoulders in an attempt to take their pain."),
+				SPAN_DANGER("You press your hands onto the shoulders of [L] expanding your mind and transferring their pain!")
+				)
+		amount = min(absorbed,L.getHalLoss())
+		L.adjustHalLoss(-amount)
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			user.adjustHalLoss(amount/2) //Psi Attunement shunts some pain into the environment
+		else
+			user.adjustHalLoss(amount)
 
 //Heals hunger
 /mob/living/carbon/human/psionic_tumor/proc/psychosomatictransfer()
@@ -163,3 +163,42 @@
 				"[user]'s head lowers for a concentrated moment.",
 				"A second turns to eternity, your mind assures its place in the universe"
 				)
+
+// remove all chemicals (other then blood)
+/mob/living/carbon/human/psionic_tumor/proc/purefie()
+	set category = "Psionic Purefie"
+	set name = "Meditative Focus (3)"
+	set desc = "Expend three psi points of your psi essence clear out any chemical in your body, helpful or not."
+	var/psi_point_cost = 3
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		if(bloodstr)
+			bloodstr.clear_reagents()
+		if(ingested)
+			ingested.clear_reagents()
+		if(touching)
+			touching.clear_reagents()
+		user.visible_message(
+			"[user] shifts around a moment then flicks something off.",
+			"You pool any and all chemicals from your bloodstream, stomic and skin to a single point and then flick it off into deepmaints."
+			)
+
+// Heals heat/cold
+/mob/living/carbon/human/psionic_tumor/proc/temp_regulate()
+	set category = "Psionic powers"
+	set name = "Psionic Temperature Regulate (4)"
+	set desc = "Expend four psi points to eather heat or cool your body."
+	var/psi_point_cost = 4
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		user.frost = 0 //The reason why its expsensive
+		user.bodytemperature = 310.055	//98.7 F
+		playsound(user.loc,'sound/effects/telesci_ping.ogg', 25, 1)
+		user.visible_message(
+			"[user] curls into a ball then springs upwards.",
+			"You convence your body its not to cold, not to hot."
+			)

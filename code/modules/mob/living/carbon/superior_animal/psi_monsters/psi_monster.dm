@@ -226,8 +226,12 @@
 	qdel(src)
 
 /obj/effect/decal/cleanable/psi_ash/ponderous
-	name = "ponderous of strange ashes"
+	name = "strange ashes of ponderous"
 	catalyst_drop = /obj/random/psi_catalyst/ponderous
+
+/obj/effect/decal/cleanable/psi_ash/flesh_behemoth
+	name = "strange ashes of flesh behemoth"
+	catalyst_drop = /obj/random/psi_catalyst/flesh_behemoth
 
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"

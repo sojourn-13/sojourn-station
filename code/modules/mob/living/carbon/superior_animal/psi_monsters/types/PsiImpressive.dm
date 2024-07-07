@@ -19,6 +19,7 @@
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_penetration = 15
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"

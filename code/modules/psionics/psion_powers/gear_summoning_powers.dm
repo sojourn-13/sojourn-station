@@ -276,3 +276,30 @@
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(KB)
+
+/mob/living/carbon/human/psionic_tumor/proc/needle_n_thread()
+	set category = "Psionic powers"
+	set name = "Psionic Suture (1)"
+	set desc = "Expend one of your essence to create a psionic suture in hand, able to stop bleeding. If you are more psionically giften even help heal wounds."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		var/obj/item/stack/medical/bruise_pack/psionic/PS = new(src, user)
+		user.visible_message(
+			"[user] swirls a finger in the air collecting string!",
+			"You swirl a finger in the air, collecting string from your thoughts, producing a needle soon after."
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		var/suture_amount = 1
+
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			suture_amount += 1
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			suture_amount += 1
+
+		PS.amount = suture_amount
+		PS.update_icon()
+
+		usr.put_in_active_hand(PS)
