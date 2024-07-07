@@ -193,21 +193,21 @@
 	name = "psionic catalyst: Psionic Suture"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body dosn't bleed..."
+	A healthy body doesn't bleed..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
 
 /obj/item/device/psionic_catalyst/purefie
 	name = "psionic catalyst: Psionic Purefie"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body dosn't have junk in it's systems..."
+	A healthy body doesn't have junk in it's systems..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purefie
 
 /obj/item/device/psionic_catalyst/temp_regulate
 	name = "psionic catalyst: Psionic Temperature Regulate"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body dosn't sweat or shiver..."
+	A healthy body doesn't sweat or shiver..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/temp_regulate
 
 
