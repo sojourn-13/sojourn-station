@@ -1124,7 +1124,7 @@ obj/screen/fire/DEADelize()
 	var/mob/living/carbon/human/H = parentmob
 	if(istype(H))
 		var/obj/item/organ/external/E = H.organs_by_name[target_organ]
-		E?.module?.activate(H, E)
+		E?.module?.trigger(H, E)
 //-----------------------bionics (implant)------------------------------
 /obj/screen/implant_bionics
 	name = "implant bionics"
