@@ -188,7 +188,7 @@
 
 /datum/gear/xenowear/footwear
 	display_name = "barefoot footwear / (No sprite on mob) / (Change the name and desc)"
-	path = /obj/item/clothing/shoes/jackboots/claws_hoofs_paws
+	path = /obj/item/clothing/shoes/claws_hoofs_paws
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	cost = 0
