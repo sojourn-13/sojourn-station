@@ -40,31 +40,19 @@ SUBSYSTEM_DEF(mapping)
 	for(var/area/A in world)
 		GLOB.map_areas += A
 
-	// Do the same for teleport locs
-	for(var/area/AR in world)
-		if(istype(AR, /area/shuttle) ||  istype(AR, /area/wizard_station)) continue
-		if(teleportlocs.Find(AR.name)) continue
-		var/turf/picked = pick_area_turf(AR.type, list(/proc/is_station_turf))
-		if (picked)
-			teleportlocs += AR.name
-			teleportlocs[AR.name] = AR
+		if(!teleportlocs.Find("[A.name]") && !istype(A, /area/shuttle) && !istype(A, /area/wizard_station))
+			if(area_has_station_turf(A))
+				teleportlocs["[A.name]"] = A
 
-	teleportlocs = sortAssoc(teleportlocs)
+		if(!ghostteleportlocs.Find("[A.name]"))
+			if(istype(A, /area/turret_protected/aisat) || istype(A, /area/derelict) || istype(A, /area/shuttle/specops/centcom))
+				ghostteleportlocs["[A.name]"] = A
+			else if(area_has_station_turf(A))
+				ghostteleportlocs["[A.name]"] = A
 
-	// And the same for ghost teleport locs
+	teleportlocs = sortList(teleportlocs)
+	ghostteleportlocs = sortList(ghostteleportlocs)
 
-
-	for(var/area/AR in world)
-		if(ghostteleportlocs.Find(AR.name)) continue
-		if(istype(AR, /area/turret_protected/aisat) || istype(AR, /area/derelict) || istype(AR, /area/shuttle/specops/centcom))
-			ghostteleportlocs += AR.name
-			ghostteleportlocs[AR.name] = AR
-		var/turf/picked = pick_area_turf(AR.type, list(/proc/is_station_turf))
-		if (picked)
-			ghostteleportlocs += AR.name
-			ghostteleportlocs[AR.name] = AR
-
-	ghostteleportlocs = sortAssoc(ghostteleportlocs)
 	return ..()
 
 /datum/controller/subsystem/mapping/proc/build_overmap()

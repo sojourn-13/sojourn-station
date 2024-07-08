@@ -814,7 +814,7 @@
 		if(isdatum(key))
 			new_key = "[key] [REF(key)]"
 		else if(key == world)
-			new_key = "world [REF(world)]"
+			new_key = "world \ref[world]"
 		else if(islist(key))
 			new_key = refify_list(key)
 		var/value
@@ -823,7 +823,7 @@
 		if(isdatum(value))
 			value = "[value] [REF(value)]"
 		else if(value == world)
-			value = "world [REF(world)]"
+			value = "world \ref[world]"
 		else if(islist(value))
 			value = refify_list(value)
 		var/list/to_add = list(new_key)
