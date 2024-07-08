@@ -15,7 +15,7 @@
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/railgun
 	damage_multiplier = 1.3 //Less capacity and charge speed than a Posi'd Myrmidion, even when fully tuned; hits like a brick, to compensate.
 	penetration_multiplier = 1.3
-	cell_type = /obj/item/cell/medium
+	cell_type = /obj/item/cell/medium/guild
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	init_firemodes = list(
 		list(mode_name="kill", mode_desc="fires scrap at relativistic speed", icon="kill"),
