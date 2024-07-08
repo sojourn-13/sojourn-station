@@ -10,7 +10,6 @@
 	item_charge_meter = FALSE
 	self_recharge = 1
 	recharge_time = 20
-	recharge_amount = 30
 	charge_cost = 100
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/railgun
 	damage_multiplier = 1.3 //Less capacity and charge speed than a Posi'd Myrmidion, even when fully tuned; hits like a brick, to compensate.
