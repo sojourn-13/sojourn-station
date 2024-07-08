@@ -64,6 +64,7 @@
 /datum/transform_type/ameridian_structures/crystal_resizing
 	flag = AMERIDIAN_CRYSTAL_RESIZING_TRANSFORM
 	priority = AMERIDIAN_CRYSTAL_RESIZING_TRANSFORM_PRIORITY
+	needs_value_target = TRUE
 
 /datum/transform_type/ameridian_structures/crystal_resizing/update_values()
 	. = ..()
@@ -82,6 +83,7 @@
 /datum/transform_type/shard/variable_size
 	flag = SHARD_VARIABLE_SIZE_TRANSFORM
 	priority = SHARD_VARIABLE_SIZE_TRANSFORM_PRIORITY
+	needs_value_target = TRUE
 
 /datum/transform_type/shard/variable_size/update_values()
 
@@ -105,6 +107,7 @@
 /datum/transform_type/human/size_scaling
 	flag = HUMAN_SIZE_SCALING_TRANSFORM
 	priority = HUMAN_SIZE_SCALING_TRANSFORM_PRIORITY
+	needs_value_target = TRUE
 
 //I'm not sure if this obsolete or not. Size transofrmations should be handled now in update_icons.dm --Evie
 /datum/transform_type/human/size_scaling/update_values()

@@ -23,6 +23,8 @@
 	var/override = FALSE
 	/// The atom we are applied to.
 	var/atom/holder
+	/// If you actually use value_target, set this to TRUE. Weakrefs aren't free.
+	var/needs_value_target = FALSE
 	/// The atom we use for updating our values and such. Weakreffed, as we have no way of ensuring it isn't being deleted.
 	var/datum/weakref/value_target
 
@@ -348,5 +350,6 @@
 
 /datum/transform_type/proc/update_holder_status(to_be_held_by, to_use_for_values)
 	holder = to_be_held_by
-	value_target = WEAKREF(to_use_for_values)
+	if(needs_value_target)
+		value_target = WEAKREF(to_use_for_values)
 
