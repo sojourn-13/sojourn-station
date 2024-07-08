@@ -245,8 +245,9 @@
 	new /obj/item/storage/pill_bottle/opifex(src)
 	new /obj/item/storage/pill_bottle/opifex(src)
 	//Opifex medical gets SI oint/bruise packs cuz they pre-order it on opi-fedex
-	new /obj/item/stack/medical/ointment/soteria(src)
-	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	//Downside is that they cant be split do to how naming and descs are rewrote
+	new /obj/item/stack/medical/ointment/soteria{splittable=FALSE;name="opifex optimized ointments";singular_name="opifex optimized ointment";desc="Used to treat those nasty burns. Its formula massively improved by including toxin-purging sterilizing nanites."}(src)
+	new /obj/item/stack/medical/bruise_pack/soteria{splittable=FALSE;name="opifex optimized gauze";singular_name="opifex optimized gauze";desc="A sterile gauze to wrap around bloody stumps. Do to nanites these sterilize wounds as ointment would."}(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/extinguisher/mini(src)
