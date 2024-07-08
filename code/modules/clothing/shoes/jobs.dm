@@ -167,5 +167,4 @@
 	icon_state = "feet_hoof_paw"
 	item_state = "feet_hoof_paw"
 	force = WEAPON_FORCE_HARMLESS
-	siemens_coefficient = 0.6
 	can_hold_knife = FALSE //ITS YOUR FEEET!! YOU CAN'T HOLD A KNIFE ON YOUR FEET!!
