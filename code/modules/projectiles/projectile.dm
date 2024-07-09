@@ -340,6 +340,11 @@
 /obj/item/projectile/proc/redirect(new_x, new_y, atom/starting_loc, mob/new_firer=null)
 	var/turf/new_target = locate(new_x, new_y, src.z)
 
+	// They gave us invalid coordinates, we're just gonna disappear
+	if(!new_target)
+		qdel(src)
+		return
+
 	original = new_target
 	if(new_firer)
 		firer = src
