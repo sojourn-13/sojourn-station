@@ -39,7 +39,7 @@
 	var/list/allowed_stat_modifiers = null
 
 	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
-	var/list/current_stat_modifiers = list()
+	var/list/current_stat_modifiers = null
 
 	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
 	var/list/prefixes = list()
@@ -96,7 +96,7 @@
 			qdel(move_packet)
 		move_packet = null
 
-	QDEL_LIST(current_stat_modifiers)
+	QDEL_LAZYLIST(current_stat_modifiers)
 
 	. = ..()
 
@@ -120,14 +120,14 @@
 	. = ..()
 
 //Soj Edits
-	if(LAZYLEN(current_stat_modifiers))
-		var/list/descriptions_to_print = list()
-		for(var/datum/stat_modifier/mod in current_stat_modifiers)
-			if(mod.description)
-				if(!(mod.description in descriptions_to_print))
-					descriptions_to_print += mod.description
-		for(var/description in descriptions_to_print)
-			to_chat(user, SPAN_NOTICE(description))
+	var/list/descriptions_to_print = list()
+	// `in null` is fine, it just won't iterate
+	for(var/datum/stat_modifier/mod in current_stat_modifiers)
+		if(mod.description)
+			if(!(mod.description in descriptions_to_print))
+				descriptions_to_print += mod.description
+	for(var/description in descriptions_to_print)
+		to_chat(user, SPAN_NOTICE(description))
 
 
 /atom/movable/Bump(var/atom/A, yes)

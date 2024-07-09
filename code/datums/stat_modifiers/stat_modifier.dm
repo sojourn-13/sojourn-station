@@ -72,7 +72,7 @@
 	holder.prefixes -= prefix
 	holder.update_prefixes()
 
-	holder.current_stat_modifiers -= src
+	LAZYREMOVE(holder.current_stat_modifiers, src)
 
 	// First, we check how many of us are in our holder...
 	var/instances_in_target = instances_of_type_in_list(src, holder.current_stat_modifiers)
@@ -106,7 +106,7 @@
 /datum/stat_modifier/Destroy()
 
 	if (holder)
-		holder.current_stat_modifiers -= src
+		LAZYREMOVE(holder.current_stat_modifiers, src)
 		holder = null
 
 	return ..()
@@ -135,7 +135,7 @@
 
 	holder_original_prob = LAZYACCESS(holder.allowed_stat_modifiers, type) // we need this in case we disable ourselves and remove ourselves later
 
-	target.current_stat_modifiers += src // add ourselves to their currently held modifiers
+	LAZYADD(target.current_stat_modifiers, src) // add ourselves to their currently held modifiers
 
 	for (var/typepath in mutually_exclusive_with)
 		mutually_exclusive_with[typepath] = LAZYACCESS(holder.allowed_stat_modifiers, typepath) //store the value for if we get removed
