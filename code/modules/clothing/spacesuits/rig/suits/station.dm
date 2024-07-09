@@ -57,8 +57,8 @@
 		/obj/item/rcd
 	)
 
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 	max_upgrades = 1
 
 /obj/item/rig/industrial/equipped
@@ -104,8 +104,8 @@
 
 	max_upgrades = 1
 
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 /obj/item/rig/eva/equipped
 	initial_modules = list(
@@ -156,7 +156,7 @@ Advanced Voidsuit: Guild Master
 	max_upgrades = 1
 
 	req_access = list(access_ce)
-	req_one_access = list()
+	req_one_access = null
 
 /obj/item/rig/ce/equipped
 	initial_modules = list(
@@ -267,8 +267,8 @@ Technomancer RIG
 	)
 	max_upgrades = 1
 
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 /obj/item/rig/hazmat/equipped
 
@@ -321,7 +321,7 @@ Technomancer RIG
 		/obj/item/storage/bag/fossils
 	)
 	max_upgrades = 1
-	req_access = list()
+	req_access = null
 
 /obj/item/clothing/suit/space/rig/advhazmat
 
@@ -362,8 +362,8 @@ Technomancer RIG
 	)
 
 /obj/item/rig/medical/equipped
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
@@ -401,8 +401,8 @@ Technomancer RIG
 
 
 /obj/item/rig/recovery_suit/equipped
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
@@ -463,8 +463,8 @@ Technomancer RIG
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
 	max_upgrades = 1
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 
 /obj/item/rig/hazard/equipped
@@ -495,7 +495,7 @@ Technomancer RIG
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
 	max_upgrades = 1
 	req_access = list(access_hop)
-	req_one_access = list()
+	req_one_access = null
 
 
 	initial_modules = list(

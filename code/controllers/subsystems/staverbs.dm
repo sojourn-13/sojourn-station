@@ -206,7 +206,7 @@ SUBSYSTEM_DEF(statverbs)
 		if(do_mob(user, target, timer))
 			keyboardsound.stop()
 			keyboardsound = null
-			target.req_access.Cut()
+			LAZYNULL(target.req_access)
 			target.hacked = 1
 			user.visible_message(
 				SPAN_DANGER("[user] breaks the access encryption on [target]!"),

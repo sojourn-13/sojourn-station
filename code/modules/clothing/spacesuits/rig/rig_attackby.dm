@@ -20,7 +20,7 @@
 			to_chat(user, SPAN_DANGER("The lock clicks uselessly."))
 			return
 
-		if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
+		if(!LAZYLEN(req_access) && !LAZYLEN(req_one_access))
 			locked = 0
 			to_chat(user, SPAN_DANGER("\The [src] doesn't seem to have a locking mechanism."))
 			return
@@ -226,8 +226,8 @@
 
 /obj/item/rig/emag_act(remaining_charges, mob/user)
 	if(!subverted)
-		req_access.Cut()
-		req_one_access.Cut()
+		LAZYNULL(req_access)
+		LAZYNULL(req_one_access)
 		if (locked != -1)
 			locked = 0
 		subverted = 1

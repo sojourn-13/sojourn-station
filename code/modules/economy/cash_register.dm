@@ -4,7 +4,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "register_idle"
 	flags = NOBLUDGEON
-	req_access = list()
+	req_access = null
 	anchored = TRUE
 
 	var/locked = TRUE
@@ -514,7 +514,7 @@
 	if(!emagged)
 		visible_message(SPAN_DANGER("The [src]'s cash box springs open as [user] swipes the card through the scanner!"))
 		playsound(src, "sparks", 50, 1)
-		req_access = list()
+		req_access = null
 		emagged = TRUE
 		locked = FALSE
 		cash_locked = FALSE
