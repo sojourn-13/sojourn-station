@@ -19,7 +19,7 @@
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
 	/// Associative list containing FLAG -> transform_type. Holds all transform_types currently applying their effects to us.
-	var/list/transform_types = list()
+	var/list/transform_types = null
 
 	///Chemistry.
 	var/reagent_flags = NONE
@@ -176,7 +176,7 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
-	QDEL_LIST_ASSOC_VAL(transform_types)
+	QDEL_LAZYLIST_ASSOC_VAL(transform_types)
 
 	spawn()
 		update_openspace()

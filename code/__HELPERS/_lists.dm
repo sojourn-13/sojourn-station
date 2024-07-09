@@ -45,6 +45,10 @@
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 ///Qdel every item in the list before setting the list to null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+///Qdel every key and item in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC(L) for(var/I in L) { qdel(L[I]); qdel(I); }; L = null;
+///Qdel every value but not key in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC_VAL(L) for(var/I in L) qdel(L[I]); L = null;
 //These methods don't null the list
 ///Use LAZYLISTDUPLICATE instead if you want it to null with no entries
 #define LAZYCOPY(L) (L ? L.Copy() : list() )
