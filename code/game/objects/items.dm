@@ -17,7 +17,7 @@
 	pass_flags = PASSTABLE
 
 	var/obj/item/master = null
-	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
+	var/list/origin_tech = null   //Used by R&D to determine what research bonuses it grants.
 	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
@@ -51,11 +51,11 @@
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
-	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
+	var/list/armor_list = null //A list version of the armor datum, for initialization.
 	var/datum/armor/armor// Ref to the armor datum
 
-	var/list/allowed = list() //suit storage stuff.
-	var/list/blacklisted_allowed = list()//suit storage stuff.
+	var/list/allowed = null //suit storage stuff.
+	var/list/blacklisted_allowed = null //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
@@ -66,12 +66,12 @@
 
 	//** These specify item/icon overrides for _slots_
 
-	var/list/item_state_slots = list() //overrides the default item_state for particular slots.
+	var/list/item_state_slots = null //overrides the default item_state for particular slots.
 
 	// Used to specify the icon file to be used when the item is worn. If not set the default icon for that slot will be used.
 	// If icon_override or sprite_sheets are set they will take precendence over this, assuming they apply to the slot in question.
 	// Only slot_l_hand/slot_r_hand are implemented at the moment. Others to be implemented as needed.
-	var/tmp/list/item_icons = list()
+	var/tmp/list/item_icons = null
 
 	// HUD action buttons. Only used by guns atm.
 	var/list/hud_actions
@@ -88,12 +88,12 @@
 	var/list/item_upgrades = list()
 
 	/// Any upgrades in here will be applied on initialize().
-	var/list/initialized_upgrades = list()
+	var/list/initialized_upgrades = null
 
 	var/max_upgrades = 3
 	var/allow_greyson_mods = FALSE
 	name_prefixes = null
-	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
+	var/list/blacklist_upgrades = null //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
 
 	var/list/effective_faction = list() // Which faction the item is effective against.

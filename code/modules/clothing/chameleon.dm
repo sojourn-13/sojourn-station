@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(chameleon_key_to_path, list(
 	body_parts_covered = copy.body_parts_covered
 	flags_inv = copy.flags_inv
 
-	item_icons = copy.item_icons.Copy()
+	item_icons = copy.item_icons?.Copy()
 	item_state_slots = copy.item_state_slots?.Copy()
 	update_wear_icon()
 
@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(chameleon_key_to_path, list(
 	name = "psychedelic"
 	desc = "Groovy!"
 	icon_state = "psyche"
-	item_state_slots[slot_w_uniform_str] = "psyche"
+	LAZYSET(item_state_slots, slot_w_uniform_str, "psyche")
 	update_icon()
 	update_wear_icon()
 

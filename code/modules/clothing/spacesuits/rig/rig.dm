@@ -161,8 +161,8 @@
 	wires = new(src)
 
 	//Add on any extra items allowed into suit storage
-	if (extra_allowed.len)
-		allowed |= extra_allowed
+	if(LAZYLEN(extra_allowed))
+		LAZYOR(allowed, extra_allowed)
 
 	if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
 		locked = FALSE
@@ -194,7 +194,7 @@
 		chest = new chest_type(src)
 		chest.equip_delay = 0
 		if(allowed)
-			chest.allowed |= allowed
+			LAZYOR(chest.allowed, allowed)
 		chest.slowdown = offline_slowdown
 		chest.stiffness = stiffness
 		rig_verbs |= /mob/living/carbon/human/rig/verb/toggle_chest

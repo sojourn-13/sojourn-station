@@ -672,7 +672,7 @@ BLIND     // can't see anything
 	restricted_accessory_slots = list("utility", "armband")
 
 /obj/item/clothing/suit/New()
-	allowed |= extra_allowed
+	LAZYOR(allowed, extra_allowed)
 	.=..()
 
 /obj/item/clothing/suit/refresh_upgrades()
@@ -720,7 +720,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/under/New()
 	..()
-	item_state_slots[slot_w_uniform_str] = icon_state //TODO: drop or gonna use it?
+	LAZYSET(item_state_slots, slot_w_uniform_str, icon_state) //TODO: drop or gonna use it?
 	if(isOnStationLevel(src))
 		sensor_mode = 3 // Clothing spawning on colony levels is on tracking by default.
 
