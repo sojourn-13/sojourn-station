@@ -66,6 +66,53 @@
 	LAZYINITLIST(lazy_list[key]); \
 	lazy_list[key] |= value;
 
+/client/verb/lists_in_objs()
+	set category = "Debug"
+	set name = "Find empty lists in objects"
+
+	var/list/all_lists_heap = list()
+	var/list/all_lists_joined = list()
+	var/counter = 0
+	for(var/obj/O)
+		var/found_empty_list = FALSE
+		for(var/key in O.vars)
+			var/value = O.vars[key]
+			if(islist(value) && !LAZYLEN(value))
+				found_empty_list = TRUE
+		if(found_empty_list)
+			all_lists_heap["[O.type]"] += 1
+
+		counter += 1
+		if(counter % 10000 == 0)
+			to_chat(usr, "Completed [counter]")
+		CHECK_TICK
+
+	sortTim(all_lists_heap, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = TRUE)
+
+	for(var/thing in all_lists_heap)
+		all_lists_joined += "<br>[thing], count: [all_lists_heap[thing]]</br>\n"
+	usr << browse(all_lists_joined.Join(), "window=listlog")
+
+/client/verb/grab_all_lists()
+	set category = "Debug"
+	set name = "Find empty lists"
+
+	var/list/all_lists_heap = list("No length" = 0)
+	var/list/all_lists_joined = list()
+	for(var/list/thing)
+		if(!length(thing))
+			all_lists_heap["No length"]++
+		else if(all_lists_heap["[thing[1]]"])
+			all_lists_heap["[thing[1]]"]++
+		else
+			all_lists_heap["[thing[1]]"] += 1
+
+	sortTim(all_lists_heap, cmp = GLOBAL_PROC_REF(cmp_numeric_asc), associative = TRUE)
+
+	for(var/thing in all_lists_heap)
+		all_lists_joined += "<br>[thing], count: [all_lists_heap[thing]]</br>\n"
+	usr << browse(all_lists_joined.Join(), "window=listlog")
+
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]
 /// Passed into BINARY_INSERT to compare values
