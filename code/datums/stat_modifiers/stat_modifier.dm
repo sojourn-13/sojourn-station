@@ -21,7 +21,7 @@
 	var/holder_original_prob
 
 	/// The atom we have applied our changes to
-	var/atom/holder
+	var/atom/movable/holder
 
 	/// The prefix that will be applied to the name of target
 	var/prefix = null
@@ -118,7 +118,7 @@
  * from the latter list.
  *
 **/
-/datum/stat_modifier/proc/valid_check(var/atom/target, var/list/arguments)
+/datum/stat_modifier/proc/valid_check(var/atom/movable/target, var/list/arguments)
 
 	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) // how many of us are in our target?
 
@@ -158,9 +158,9 @@
  * general effects.
  *
  * Args:
- * atom/target: The target the effects will be applied to.
+ * atom/movable/target: The target the effects will be applied to.
 **/
-/datum/stat_modifier/proc/apply_to(var/atom/target, var/list/arguments, arguments_to_pass)
+/datum/stat_modifier/proc/apply_to(var/atom/movable/target, var/list/arguments, arguments_to_pass)
 
 	if (maxHealth_mult)
 		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, maxHealth_mult, maxHealth_zeroth))
@@ -181,7 +181,7 @@
 
 	return TRUE
 
-/datum/stat_modifier/proc/consider_custom_effect(atom/target, list/arguments, arguments_to_pass, status)
+/datum/stat_modifier/proc/consider_custom_effect(atom/movable/target, list/arguments, arguments_to_pass, status)
 
 	var/list_length
 
@@ -197,15 +197,15 @@
 	return // only happens if no custom effect is present
 
 /// Holder proc for any logic that has to be run before apply_to()
-/datum/stat_modifier/proc/before_apply(atom/target, list/arguments, arg_length)
+/datum/stat_modifier/proc/before_apply(atom/movable/target, list/arguments, arg_length)
 	return
 
 /// Holder proc for any logic that has to be run after apply_to(), but before prefixes and descriptions are determined
-/datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
+/datum/stat_modifier/proc/after_apply(atom/movable/target, list/arguments, arg_length, arguments_to_pass)
 	return
 
 /// Uses a ratio to determine which prefix and description will be gained. If arguments_to_pass is null, uses ratio1 and ratio2 instead. Returns if force_default_prefix is true.
-/datum/stat_modifier/proc/determine_description_and_prefixes(atom/target, arguments_to_pass, ratio1, ratio2)
+/datum/stat_modifier/proc/determine_description_and_prefixes(atom/movable/target, arguments_to_pass, ratio1, ratio2)
 
 	if (force_default_prefix || (!(target.get_prefix)))
 		return FALSE
@@ -261,5 +261,5 @@
 
 	stattags = NOTHING_STATTAG
 
-/datum/stat_modifier/none/apply_to(var/atom/target)
+/datum/stat_modifier/none/apply_to(var/atom/movable/target)
 	return FALSE
