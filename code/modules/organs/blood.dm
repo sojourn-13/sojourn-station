@@ -134,7 +134,7 @@
 		var/datum/disease2/disease/sniffle = sniffles[ID]
 		infect_virus2(src,sniffle,1)
 	if (injected.data["antibodies"] && prob(5))
-		antibodies |= injected.data["antibodies"]
+		LAZYOR(antibodies, injected.data["antibodies"])
 	var/list/chems = list()
 	chems = params2list(injected.data["trace_chem"])
 	for(var/C in chems)

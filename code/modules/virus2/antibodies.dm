@@ -10,9 +10,7 @@ var/global/list/ALL_ANTIGENS = list(
 
 // iterate over the list of antigens and see what matches
 /proc/antigens2string(list/antigens, none="None")
-	if(!istype(antigens))
-		CRASH("Illegal type!")
-	if(!antigens.len)
+	if(!LAZYLEN(antigens))
 		return none
 
 	var/code = ""

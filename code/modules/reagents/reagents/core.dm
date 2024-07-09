@@ -1,5 +1,5 @@
 /datum/reagent/organic/blood
-	data = new/list("donor" = null, "viruses" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = list(), "carrion" = null)
+	data = new/list("donor" = null, "viruses" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = null, "carrion" = null)
 	name = "Blood"
 	id = "blood"
 	reagent_state = LIQUID
@@ -81,7 +81,7 @@
 				if(V.spreadtype == "Contact")
 					infect_virus2(M, V.getcopy())
 	if(data && data["antibodies"])
-		M.antibodies |= data["antibodies"]
+		LAZYOR(M.antibodies, data["antibodies"])
 
 /datum/reagent/organic/blood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.inject_blood(src, volume)
@@ -89,7 +89,7 @@
 
 // pure concentrated antibodies
 /datum/reagent/organic/antibodies
-	data = list("antibodies"=list())
+	data = list("antibodies" = null)
 	name = "Antibodies"
 	taste_description = "slime"
 	id = "antibodies"
@@ -97,8 +97,8 @@
 	color = "#0050F0"
 
 /datum/reagent/organic/antibodies/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(src.data)
-		M.antibodies |= src.data["antibodies"]
+	if(data && data["antibodies"])
+		LAZYOR(M.antibodies, data["antibodies"])
 	..()
 
 #define WATER_LATENT_HEAT 19000 // How much heat is removed when applied to a hot turf, in J/unit (19000 makes 120 u of water roughly equivalent to 4L)

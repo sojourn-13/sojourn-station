@@ -330,7 +330,7 @@
 		for(var/ID in M.virus2)
 			var/datum/disease2/disease/V = M.virus2[ID]
 			if(prob(5))
-				M.antibodies |= V.antigen
+				LAZYOR(M.antibodies, V.antigen)
 				if(prob(50))
 					M.apply_effect(50, IRRADIATE, check_protection = 0) // curing it that way may kill you instead
 

@@ -34,8 +34,8 @@
 			if(!V) continue
 
 			// check if we're immune
-			var/list/common_antibodies = V.antigen & src.antibodies
-			if(common_antibodies.len)
+			var/list/common_antibodies = V.antigen & antibodies
+			if(LAZYLEN(common_antibodies))
 				V.cure(src)
 
 	return

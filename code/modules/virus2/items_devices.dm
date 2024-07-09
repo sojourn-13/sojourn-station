@@ -23,7 +23,7 @@
 			flick("viroscanner2", src)
 			return
 
-	if(!C.antibodies.len)
+	if(!LAZYLEN(C.antibodies))
 		report("Scan Complete: No antibodies detected.", user)
 		flick("viroscanner2", src)
 		return
