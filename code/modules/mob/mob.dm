@@ -14,6 +14,7 @@
 	transform = null
 	QDEL_NULL(transform)
 	QDEL_NULL(shadow)
+
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
@@ -36,6 +37,8 @@
 	if (spawned_from)
 		spawned_from.currently_spawned[type] -= src
 		spawned_from = null
+
+	QDEL_LIST(current_stat_modifiers)
 
 	return ..()
 

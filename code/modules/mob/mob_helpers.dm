@@ -690,6 +690,52 @@ proc/is_blind(A)
 /mob/proc/get_health()
 	return health
 
+//Mobs mainly suppier and simple can get additive stat blocks ranging from damage up to health down, new attack patterns ect. This handles getting them
+/mob/stat_gather()
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/list/excavated = list()
+			for (var/entry in allowed_stat_modifiers)
+				var/to_add = allowed_stat_modifiers[entry]
+				if (islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/list/successful_rolls = list()
+			for (var/typepath in excavated)
+				if (prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if (successful_rolls.len)
+				picked = pick(successful_rolls)
+
+			if (isnull(picked))
+				continue
+
+			var/list/arguments
+			if (islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
+				if (length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
+
+			var/datum/stat_modifier/chosen_modifier = new picked
+			if (!(chosen_modifier.valid_check(src, arguments)))
+				QDEL_NULL(chosen_modifier)
+
+/mob/examine(mob/user)
+	.()
+	if (current_stat_modifiers && current_stat_modifiers.len)
+		var/list/descriptions_to_print = list()
+		for (var/datum/stat_modifier/mod in current_stat_modifiers)
+			if (mod.description)
+				if (!(mod.description in descriptions_to_print))
+					descriptions_to_print += mod.description
+		for (var/description in descriptions_to_print)
+			to_chat(user, SPAN_NOTICE(description))
+
 /**
  * Wrapper for walk_to. Most cases of walk_to should be instead substituted for this, although this has slightly worse performance than stock walk_to.
  *

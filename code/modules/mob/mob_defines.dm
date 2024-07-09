@@ -229,3 +229,17 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally
 
 	var/click_delay_addition = 0
+
+/**
+ * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
+ *
+ * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
+**/
+
+	allowed_stat_modifiers = list()
+
+	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
+	current_stat_modifiers = list()
+
+	/// List of all stored prefixes. Used for stat_modifiers
+	prefixes = list()

@@ -26,17 +26,13 @@
 	 *
 	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
 	**/
-	var/list/allowed_stat_modifiers = list(
-
-	)
+	var/list/allowed_stat_modifiers
 
 	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
-	var/list/current_stat_modifiers = list(
-
-	)
+	var/list/current_stat_modifiers
 
 	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
-	var/list/prefixes = list()
+	var/list/prefixes
 
 	var/get_stat_modifier = FALSE
 	var/times_to_get_stat_modifiers = 1
@@ -165,42 +161,15 @@
 		for(var/reagent in preloaded_reagents)
 			reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
-	if (get_stat_modifier)
-		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
-
-			var/list/excavated = list()
-			for (var/entry in allowed_stat_modifiers)
-				var/to_add = allowed_stat_modifiers[entry]
-				if (islist(allowed_stat_modifiers[entry]))
-					var/list/entrylist = allowed_stat_modifiers[entry]
-					to_add = entrylist[1]
-				excavated[entry] = to_add
-
-			var/list/successful_rolls = list()
-			for (var/typepath in excavated)
-				if (prob(excavated[typepath]))
-					successful_rolls += typepath
-
-			var/picked
-			if (successful_rolls.len)
-				picked = pick(successful_rolls)
-
-			if (isnull(picked))
-				continue
-
-			var/list/arguments
-			if (islist(allowed_stat_modifiers[picked]))
-				var/list/nested_list = allowed_stat_modifiers[picked]
-				if (length(nested_list) > 1)
-					arguments = nested_list.Copy(2)
-
-			var/datum/stat_modifier/chosen_modifier = new picked
-			if (!(chosen_modifier.valid_check(src, arguments)))
-				QDEL_NULL(chosen_modifier)
-
 	add_initial_transforms()
 
 	return INITIALIZE_HINT_NORMAL
+
+/**
+ * Used for mobs put down here for furture proofing as well as allowing maybe down the line obj or decal stat block affects
+*/
+/atom/proc/stat_gather()
+	return
 
 /**
  * Late Intialization, for code that should run after all atoms have run Intialization
@@ -231,7 +200,8 @@
 		QDEL_NULL(reagents)
 
 	QDEL_LIST_ASSOC_VAL(transform_types)
-	QDEL_LIST(current_stat_modifiers)
+	//Moved to mob.dm left here for furture refence
+//	QDEL_LIST(current_stat_modifiers)
 
 	spawn()
 		update_openspace()
@@ -444,6 +414,7 @@ its easier to just keep the beam vertical.
 		if(pref == GLOB.PREF_YES)
 			user.client.statpanel = "Examine"
 //Soj Edits
+/* this code block was moved to mob_helpers.dm, left here for refence if system is attached to something new
 	if (current_stat_modifiers && current_stat_modifiers.len)
 		var/list/descriptions_to_print = list()
 		for (var/datum/stat_modifier/mod in current_stat_modifiers)
@@ -452,7 +423,7 @@ its easier to just keep the beam vertical.
 					descriptions_to_print += mod.description
 		for (var/description in descriptions_to_print)
 			to_chat(user, SPAN_NOTICE(description))
-
+*/
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
 			to_chat(user, SPAN_NOTICE("It contains:"))
