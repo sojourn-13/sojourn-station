@@ -78,8 +78,9 @@
 	var/instances_in_target = instances_of_type_in_list(src, holder.current_stat_modifiers)
 
 	// ...and if it's less than our max, and we are disabled, let's restore our probability
-	if (instances_in_target < maximum_instances && (holder.allowed_stat_modifiers[type] == 0))
-		holder.allowed_stat_modifiers[type] = holder_original_prob
+	// in case of not existing, lazyaccess will return null, which != 0
+	if (instances_in_target < maximum_instances && (LAZYACCESS(holder.allowed_stat_modifiers, type) == 0))
+		LAZYSET(holder.allowed_stat_modifiers, type, holder_original_prob)
 		holder_original_prob = null // dont need to hold onto this anymore
 
 	// if we arent in the target anymore...
@@ -93,7 +94,7 @@
 						do_we_readd = FALSE // ..and if one is, theyre still mutually exclusive, so lets break and say "we're not re-adding them"
 						break
 				if (do_we_readd) // ...if nothing is mutually exclusive...
-					holder.allowed_stat_modifiers[typepath] = mutually_exclusive_with[typepath] // ...we use our stored value to restore it!
+					LAZYSET(holder.allowed_stat_modifiers, typepath, mutually_exclusive_with[typepath]) // ...we use our stored value to restore it!
 
 	holder = null //we no longer have a holder
 
@@ -123,7 +124,7 @@
 	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) // how many of us are in our target?
 
 	if (instances_in_target >= maximum_instances) // this shouldnt ever be true, but if it is, lets make sure it doesnt happen again
-		target.allowed_stat_modifiers[type] = 0 // by disabling ourselves
+		LAZYSET(target.allowed_stat_modifiers, type, 0) // by disabling ourselves
 		return FALSE // and returning
 
 	for (var/entry in target.current_stat_modifiers) // if we're allowed in...
@@ -132,17 +133,17 @@
 
 	holder = target // they are now our holder!
 
-	holder_original_prob = holder.allowed_stat_modifiers[type] // we need this in case we disable ourselves and remove ourselves later
+	holder_original_prob = LAZYACCESS(holder.allowed_stat_modifiers, type) // we need this in case we disable ourselves and remove ourselves later
 
 	target.current_stat_modifiers += src // add ourselves to their currently held modifiers
 
 	for (var/typepath in mutually_exclusive_with)
-		mutually_exclusive_with[typepath] = holder.allowed_stat_modifiers[typepath] //store the value for if we get removed
-		holder.allowed_stat_modifiers[typepath] = 0 // you are now forbidden from having these
+		mutually_exclusive_with[typepath] = LAZYACCESS(holder.allowed_stat_modifiers, typepath) //store the value for if we get removed
+		LAZYSET(holder.allowed_stat_modifiers, typepath, 0) // you are now forbidden from having these
 
 	instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) //refresh the var
 	if (instances_in_target >= maximum_instances) // if we are now at the maximum of our own instances...
-		target.allowed_stat_modifiers[type] = 0 // ...disable ourselves
+		LAZYSET(target.allowed_stat_modifiers, type, 0) // ...disable ourselves
 		//we dont return here, since we already added ourselves to the list
 
 	var/arguments_to_pass = consider_custom_effect(target, arguments, status = PRIOR_TO_APPLY) // lets see if we have any pre_apply effects

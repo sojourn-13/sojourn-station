@@ -36,7 +36,7 @@
 	 *
 	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
 	**/
-	var/list/allowed_stat_modifiers = list()
+	var/list/allowed_stat_modifiers = null
 
 	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
 	var/list/current_stat_modifiers = list()
@@ -50,39 +50,40 @@
 
 /atom/movable/Initialize()
 	. = ..()
-	
-	if (get_stat_modifier)
-		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+	init_stat_modifiers()
 
+/atom/movable/proc/init_stat_modifiers()
+	if(get_stat_modifier)
+		for(var/i in 0 to (times_to_get_stat_modifiers - 1))
 			var/list/excavated = list()
-			for (var/entry in allowed_stat_modifiers)
+			for(var/entry in allowed_stat_modifiers)
 				var/to_add = allowed_stat_modifiers[entry]
-				if (islist(allowed_stat_modifiers[entry]))
+				if(islist(allowed_stat_modifiers[entry]))
 					var/list/entrylist = allowed_stat_modifiers[entry]
 					to_add = entrylist[1]
 				excavated[entry] = to_add
 
 			var/list/successful_rolls = list()
-			for (var/typepath in excavated)
-				if (prob(excavated[typepath]))
+			for(var/typepath in excavated)
+				if(prob(excavated[typepath]))
 					successful_rolls += typepath
 
 			var/picked
-			if (successful_rolls.len)
+			if(LAZYLEN(successful_rolls))
 				picked = pick(successful_rolls)
 
-			if (isnull(picked))
+			if(isnull(picked))
 				continue
 
 			var/list/arguments
-			if (islist(allowed_stat_modifiers[picked]))
+			if(islist(allowed_stat_modifiers[picked]))
 				var/list/nested_list = allowed_stat_modifiers[picked]
-				if (length(nested_list) > 1)
+				if(length(nested_list) > 1)
 					arguments = nested_list.Copy(2)
 
 			var/datum/stat_modifier/chosen_modifier = new picked
-			if (!(chosen_modifier.valid_check(src, arguments)))
-				QDEL_NULL(chosen_modifier)
+			if(!(chosen_modifier.valid_check(src, arguments)))
+				qdel(chosen_modifier)
 
 /atom/movable/Destroy()
 	var/turf/T = loc
