@@ -1898,6 +1898,7 @@
 #include "code\modules\cooking_with_jane\cooking_items\spatula.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_donuts.dm"
+#include "code\modules\cooking_with_jane\recipes\recipe_dough.dm"
 #include "code\modules\cooking_with_jane\step_types\add_item.dm"
 #include "code\modules\cooking_with_jane\step_types\add_produce.dm"
 #include "code\modules\cooking_with_jane\step_types\add_reagent.dm"
