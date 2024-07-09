@@ -725,7 +725,7 @@ proc/is_blind(A)
 			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 
-/mob/examine(mob/user)
+/mob/examine(mob/user, distance, infix, suffix)
 	.()
 	if (current_stat_modifiers && current_stat_modifiers.len)
 		var/list/descriptions_to_print = list()
