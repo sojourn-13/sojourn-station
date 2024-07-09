@@ -42,7 +42,7 @@
 	var/list/current_stat_modifiers = null
 
 	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
-	var/list/prefixes = list()
+	var/list/name_prefixes = null
 
 	var/get_stat_modifier = FALSE
 	var/times_to_get_stat_modifiers = 1
@@ -508,5 +508,5 @@
 /atom/movable/proc/update_prefixes()
 	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"

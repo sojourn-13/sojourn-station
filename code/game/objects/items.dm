@@ -92,7 +92,7 @@
 
 	var/max_upgrades = 3
 	var/allow_greyson_mods = FALSE
-	prefixes = list()
+	name_prefixes = null
 	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
 
@@ -680,7 +680,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 
 	extra_bulk = initial(extra_bulk)
 	flags = initial(flags)
@@ -688,7 +688,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	//Now lets have each upgrade reapply its modifications
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 	SSnano.update_uis(src)
 

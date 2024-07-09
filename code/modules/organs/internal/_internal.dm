@@ -420,7 +420,7 @@
 	name = initial(name)
 	color = initial(color)
 	max_upgrades = initial(max_upgrades)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
 	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
@@ -444,7 +444,7 @@
 
 	refresh_damage()
 
-	for(var/prefix in prefixes)
+	for(var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 /obj/item/organ/internal/proc/refresh_damage()

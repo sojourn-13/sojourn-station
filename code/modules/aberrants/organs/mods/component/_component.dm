@@ -74,7 +74,7 @@
 	if(new_name && using_generated_name)
 		holder.name = new_name
 	if(prefix)
-		holder.prefixes += prefix
+		LAZYADD(holder.name_prefixes, prefix)
 	if(new_desc)
 		holder.desc = new_desc
 	if(new_color && !using_generated_color)

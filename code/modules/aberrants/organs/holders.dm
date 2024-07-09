@@ -114,7 +114,7 @@
 	else
 		name = ruined ? ruined_name : name
 
-	for(var/prefix in prefixes)
+	for(var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 /obj/item/organ/internal/scaffold/proc/try_ruin()
@@ -204,7 +204,7 @@
 	name = initial(name)
 	color = initial(color)
 	max_upgrades = max_upgrades ? initial(max_upgrades) : 0		// If no max upgrades, it must be a ruined teratoma. So, leave it at 0.
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
 	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2

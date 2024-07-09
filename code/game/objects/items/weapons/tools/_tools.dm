@@ -963,12 +963,12 @@
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 
 	//Now lets have each upgrade reapply its modifications
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 	health_threshold = max(0, health_threshold)

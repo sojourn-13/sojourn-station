@@ -312,7 +312,7 @@
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_armor_rig(var/obj/item/rig/R)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
@@ -325,7 +325,7 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes |= prefix
+	LAZYOR(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/remove_values_armor_rig(var/obj/item/rig/R)
@@ -339,7 +339,7 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes -= prefix
+	LAZYREMOVE(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
@@ -394,7 +394,7 @@
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
 	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
@@ -521,7 +521,7 @@
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
 
-	G.prefixes |= prefix
+	LAZYOR(G.name_prefixes, prefix)
 
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)

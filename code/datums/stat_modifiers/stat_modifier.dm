@@ -69,7 +69,7 @@
 		holder.health = ZERO_OR_MORE((holder.health / maxHealth_mult))
 
 	// Remove our prefix, and then regenerate prefixes
-	holder.prefixes -= prefix
+	LAZYREMOVE(holder.name_prefixes, prefix)
 	holder.update_prefixes()
 
 	LAZYREMOVE(holder.current_stat_modifiers, src)
@@ -176,8 +176,7 @@
 	determine_description_and_prefixes(target, ratio)
 
 	if (prefix && target.get_prefix) // do we have a prefix, and does our target want a prefix?
-		target.prefixes += prefix // if so, lets add ours to their prefix list...
-
+		LAZYADD(target.name_prefixes, prefix) // if so, lets add ours to their prefix list...
 		target.update_prefixes() // ...and regenerate their prefixes
 
 	return TRUE
