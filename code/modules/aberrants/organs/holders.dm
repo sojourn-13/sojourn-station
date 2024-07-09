@@ -33,10 +33,9 @@
 /obj/item/organ/internal/scaffold/Destroy()
 	..()
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
-	if(LAZYLEN(item_upgrades))
-		for(var/datum/mod in item_upgrades)
-			SEND_SIGNAL(mod, COMSIG_REMOVE, src)
-			qdel(mod)
+	for(var/datum/mod in item_upgrades)
+		SEND_SIGNAL(mod, COMSIG_REMOVE, src)
+		qdel(mod)
 	return ..()
 
 /obj/item/organ/internal/scaffold/Process()
@@ -100,7 +99,7 @@
 		icon_state = initial(icon_state)
 
 /obj/item/organ/internal/scaffold/proc/update_color()
-	if(!use_generated_color || !item_upgrades.len)
+	if(!use_generated_color || !LAZYLEN(item_upgrades))
 		color = ruined ? ruined_color : color
 		generated_color = null
 		return

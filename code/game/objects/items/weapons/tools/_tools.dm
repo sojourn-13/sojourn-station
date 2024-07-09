@@ -1009,7 +1009,7 @@
 	if(workspeed != 1)
 		to_chat(user, "Work Speed: [SPAN_NOTICE("[workspeed*100]%")]")
 
-	if(item_upgrades.len)
+	if(LAZYLEN(item_upgrades))
 		to_chat(user, "It has the following upgrades installed:")
 		for (var/obj/item/TU in item_upgrades)
 			to_chat(user, SPAN_NOTICE(TU.name))

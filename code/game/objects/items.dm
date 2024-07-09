@@ -85,7 +85,7 @@
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
 
-	var/list/item_upgrades = list()
+	var/list/item_upgrades = null
 
 	/// Any upgrades in here will be applied on initialize().
 	var/list/initialized_upgrades = null

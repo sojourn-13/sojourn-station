@@ -32,7 +32,7 @@
 	handle_blood()
 
 /obj/item/organ/internal/Destroy()
-	QDEL_LIST(item_upgrades)
+	QDEL_LAZYLIST(item_upgrades)
 	for(var/comp in GetComponents(/datum/component/internal_wound))
 		remove_wound(comp)
 	UnregisterSignal(src, COMSIG_IORGAN_ADD_WOUND)
@@ -212,8 +212,8 @@
 		to_chat(user, SPAN_NOTICE("Requirements: <span style='color:red'>[blood_req]</span>/<span style='color:blue'>[oxygen_req]</span>/<span style='color:orange'>[nutriment_req]</span>"))
 		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
 
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organ grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
+		if(LAZYLEN(item_upgrades))
+			to_chat(user, SPAN_NOTICE("Organ grafts present ([LAZYLEN(item_upgrades)]/[max_upgrades]). Use a laser cutting tool to remove."))
 
 /obj/item/organ/internal/is_usable()
 	return ..() && !is_broken()
