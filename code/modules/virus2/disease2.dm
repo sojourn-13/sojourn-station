@@ -130,7 +130,7 @@
 /datum/disease2/disease/proc/cure(var/mob/living/carbon/mob)
 	for(var/datum/disease2/effectholder/e in effects)
 		e.effect.deactivate(mob)
-	mob.virus2.Remove("[uniqueID]")
+	LAZYREMOVE(mob.virus2, "[uniqueID]")
 	BITSET(mob.hud_updateflag, STATUS_HUD)
 
 /datum/disease2/disease/proc/minormutate()

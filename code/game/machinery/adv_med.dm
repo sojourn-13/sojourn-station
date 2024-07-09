@@ -230,7 +230,7 @@
 		"stationtime" = stationtime2text(),
 		"stat" = H.stat,
 		"health" = round(H.health / H.maxHealth * 100),
-		"virus_present" = H.virus2.len,
+		"virus_present" = LAZYLEN(H.virus2),
 		"bruteloss" = H.getBruteLoss(),
 		"fireloss" = H.getFireLoss(),
 		"oxyloss" = H.getOxyLoss(),

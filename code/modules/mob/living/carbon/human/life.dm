@@ -324,7 +324,7 @@
 /mob/living/carbon/human/handle_post_breath(datum/gas_mixture/breath)
 	..()
 	//spread some viruses while we are at it
-	if(breath && virus2.len > 0 && prob(10))
+	if(breath && LAZYLEN(virus2) > 0 && prob(10))
 		for(var/mob/living/carbon/M in view(1,src))
 			src.spread_disease_to(M)
 
@@ -1105,7 +1105,7 @@
 			holder2.icon_state = "hudxeno"
 		else if(has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
-		else if(virus2.len)
+		else if(LAZYLEN(virus2))
 			holder2.icon_state = "hudill"
 		else
 			holder2.icon_state = "hudhealthy"

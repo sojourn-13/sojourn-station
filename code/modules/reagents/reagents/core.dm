@@ -66,20 +66,18 @@
 		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 	if(data && data["virus2"])
 		var/list/vlist = data["virus2"]
-		if(vlist.len)
-			for(var/ID in vlist)
-				var/datum/disease2/disease/V = vlist[ID]
-				if(V.spreadtype == "Contact")
-					infect_virus2(M, V.getcopy())
+		for(var/ID in vlist)
+			var/datum/disease2/disease/V = vlist[ID]
+			if(V.spreadtype == "Contact")
+				infect_virus2(M, V.getcopy())
 
 /datum/reagent/organic/blood/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(data && data["virus2"])
 		var/list/vlist = data["virus2"]
-		if(vlist.len)
-			for(var/ID in vlist)
-				var/datum/disease2/disease/V = vlist[ID]
-				if(V.spreadtype == "Contact")
-					infect_virus2(M, V.getcopy())
+		for(var/ID in vlist)
+			var/datum/disease2/disease/V = vlist[ID]
+			if(V.spreadtype == "Contact")
+				infect_virus2(M, V.getcopy())
 	if(data && data["antibodies"])
 		LAZYOR(M.antibodies, data["antibodies"])
 

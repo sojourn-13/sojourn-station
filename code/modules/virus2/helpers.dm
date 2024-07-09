@@ -102,7 +102,7 @@ proc/airborne_can_reach(turf/source, turf/target)
 		var/datum/disease2/disease/D = disease.getcopy()
 		D.minormutate()
 //		log_debug("Adding virus")
-		M.virus2["[D.uniqueID]"] = D
+		LAZYSET(M.virus2, "[D.uniqueID]", D)
 		BITSET(M.hud_updateflag, STATUS_HUD)
 
 
@@ -134,29 +134,28 @@ proc/airborne_can_reach(turf/source, turf/target)
 		return "retardation"
 
 //	log_debug("Spreading [vector] diseases from [src] to [victim]")
-	if (virus2.len > 0)
-		for (var/ID in virus2)
+	for (var/ID in virus2)
 //			log_debug("Attempting virus [ID]")
-			var/datum/disease2/disease/V = virus2[ID]
-			if(V.spreadtype != vector) continue
+		var/datum/disease2/disease/V = virus2[ID]
+		if(V.spreadtype != vector) continue
 
-			//It's hard to get other people sick if you're in an airtight suit.
-			if(!infection_spreading_check(src, V.spreadtype)) continue
+		//It's hard to get other people sick if you're in an airtight suit.
+		if(!infection_spreading_check(src, V.spreadtype)) continue
 
-			if (vector == "Airborne")
-				if(airborne_can_reach(get_turf(src), get_turf(victim)))
+		if (vector == "Airborne")
+			if(airborne_can_reach(get_turf(src), get_turf(victim)))
 //					log_debug("In range, infecting")
-					infect_virus2(victim,V)
+				infect_virus2(victim,V)
 //				else
 //					log_debug("Could not reach target")
 
-			if (vector == "Contact")
-				if (Adjacent(victim))
+		if (vector == "Contact")
+			if (Adjacent(victim))
 //					log_debug("In range, infecting")
-					infect_virus2(victim,V)
+				infect_virus2(victim,V)
 
 	//contact goes both ways
-	if (victim.virus2.len > 0 && vector == "Contact" && Adjacent(victim))
+	if (LAZYLEN(victim.virus2) > 0 && vector == "Contact" && Adjacent(victim))
 //		log_debug("Spreading [vector] diseases from [victim] to [src]")
 		var/nudity = 1
 

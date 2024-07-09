@@ -17,7 +17,7 @@ var/global/list/image/splatter_cache=list()
 	var/list/viruses = list()
 	blood_DNA = list()
 	var/basecolor="#A10808" // Color when wet.
-	var/list/datum/disease2/disease/virus2 = list()
+	var/list/datum/disease2/disease/virus2 = null
 	var/amount = 5
 	var/drytime
 	sanity_damage = 0.25
@@ -262,7 +262,7 @@ var/global/list/image/splatter_cache=list()
 	icon_state = "mucus"
 	random_icon_states = list("mucus")
 
-	var/list/datum/disease2/disease/virus2 = list()
+	var/list/datum/disease2/disease/virus2 = null
 	var/dry = FALSE // Keeps the lag down
 
 /obj/effect/decal/cleanable/mucus/New()
