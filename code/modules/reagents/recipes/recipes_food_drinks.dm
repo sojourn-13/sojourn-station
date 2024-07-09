@@ -23,11 +23,6 @@
 	required_reagents = list("eznutrient" = 1, "sugar" = 3, "carbon" = 3)
 	result_amount = 7
 
-/datum/chemical_reaction/virus_food
-	result = "virusfood"
-	required_reagents = list("water" = 1, "milk" = 1)
-	result_amount = 5
-
 /* Food */
 
 /datum/chemical_reaction/tofu

@@ -28,7 +28,6 @@
 	var/gibbed_anim = "gibbed-h"
 
 	var/mob_size	= MOB_MEDIUM
-	var/virus_immune
 	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
 	var/always_blood = FALSE 						 // Can we process reagents without blood?
 	var/always_ingest = FALSE 		                               // Initial blood volume.
