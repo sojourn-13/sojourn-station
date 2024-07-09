@@ -169,7 +169,41 @@
  * Used for mobs put down here for furture proofing as well as allowing maybe down the line obj or decal stat block affects
 */
 /atom/proc/stat_gather()
-	return
+	LAZYINITLIST(current_stat_modifiers)
+
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/list/excavated = list()
+			for (var/entry in allowed_stat_modifiers)
+				var/to_add = allowed_stat_modifiers[entry]
+				if (islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/list/successful_rolls = list()
+			for (var/typepath in excavated)
+				if (prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if (successful_rolls.len)
+				picked = pick(successful_rolls)
+
+			if (isnull(picked))
+				continue
+
+			var/list/arguments
+			if (islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
+				if (length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
+
+			var/datum/stat_modifier/chosen_modifier = new picked
+			if (!(chosen_modifier.valid_check(src, arguments)))
+				QDEL_NULL(chosen_modifier)
+
 
 /**
  * Late Intialization, for code that should run after all atoms have run Intialization
@@ -400,6 +434,15 @@ its easier to just keep the beam vertical.
 			full_name += "<span class='danger'>blood-stained</span> [name][infix]!"
 		else
 			full_name += "oil-stained [name][infix]."
+
+	if(LAZYLEN(current_stat_modifiers))
+		var/list/descriptions_to_print = list()
+		for (var/datum/stat_modifier/mod in current_stat_modifiers)
+			if (mod.description)
+				if (!(mod.description in descriptions_to_print))
+					descriptions_to_print += mod.description
+		for (var/description in descriptions_to_print)
+			to_chat(user, SPAN_NOTICE(description))
 
 	if(isobserver(user))
 		to_chat(user, "\icon[src] This is [full_name] [suffix]")

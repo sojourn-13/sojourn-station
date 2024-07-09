@@ -60,7 +60,8 @@
 	GLOB.mob_list += src
 	move_intent = decls_repository.get_decl(move_intent)
 	. = ..()
-	stat_gather()
+	if(get_stat_modifier)
+		stat_gather()
 
 /**
  * Generate the tag for this mob
