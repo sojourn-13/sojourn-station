@@ -17,8 +17,8 @@
 	pass_flags = PASSTABLE
 
 	var/obj/item/master = null
-	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
-	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	var/list/origin_tech			//Used by R&D to determine what research bonuses it grants.
+	var/list/attack_verb = list() 	//Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
@@ -54,8 +54,8 @@
 	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
 	var/datum/armor/armor// Ref to the armor datum
 
-	var/list/allowed = list() //suit storage stuff.
-	var/list/blacklisted_allowed = list()//suit storage stuff.
+	var/list/allowed //suit storage stuff.
+	var/list/blacklisted_allowed//suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
@@ -88,7 +88,7 @@
 	var/list/item_upgrades = list()
 
 	/// Any upgrades in here will be applied on initialize().
-	var/list/initialized_upgrades = list()
+	var/list/initialized_upgrades
 
 	var/max_upgrades = 3
 	var/allow_greyson_mods = FALSE
@@ -123,11 +123,12 @@
 
 /obj/item/Initialize()
 
-	for (var/upgrade_typepath in initialized_upgrades)
-		var/obj/item/upgrade = new upgrade_typepath
+	if(initialized_upgrades)
+		for (var/upgrade_typepath in initialized_upgrades)
+			var/obj/item/upgrade = new upgrade_typepath
 
-		if (!(LEGACY_SEND_SIGNAL(upgrade, COMSIG_IATTACK, src, null)))
-			QDEL_NULL(upgrade)
+			if (!(LEGACY_SEND_SIGNAL(upgrade, COMSIG_IATTACK, src, null)))
+				QDEL_NULL(upgrade)
 
 	if(armor_list)
 		armor = getArmor(arglist(armor_list))
