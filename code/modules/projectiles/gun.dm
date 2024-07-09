@@ -1326,7 +1326,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	force = initial(force)
 	armor_penetration = initial(armor_penetration)
 	sharp = initial(sharp)
-	attack_verb = list()
+	attack_verb = list("struck", "hit", "bashed")
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()

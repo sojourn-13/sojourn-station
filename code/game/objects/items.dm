@@ -18,7 +18,7 @@
 
 	var/obj/item/master = null
 	var/list/origin_tech = null   //Used by R&D to determine what research bonuses it grants.
-	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	var/list/attack_verb = null //Used in attackby() to say how something was attacked "[x] has been [LAZYPICK(z.attack_verb) || "attacked"] by [y] with [z]"
 
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
@@ -115,7 +115,7 @@
 
 	var/has_alt_mode = FALSE
 	var/alt_mode_damagetype = HALLOSS
-	var/alt_mode_verbs = list("wack", "bash", "thump")
+	var/list/alt_mode_verbs = list("wack", "bash", "thump")
 	var/alt_mode_active = FALSE
 	var/alt_mode_toggle = ""
 	var/alt_mode_lossrate = 0.5
@@ -722,6 +722,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	damtype = alt_mode_damagetype
 	force = force *= alt_mode_lossrate
 	armor_penetration = armor_penetration *= alt_mode_lossrate
-	attack_verb = alt_mode_verbs
+	attack_verb = LAZYCOPY(alt_mode_verbs)
 	sharp = alt_mode_sharp
 	flags |= NOBLOODY

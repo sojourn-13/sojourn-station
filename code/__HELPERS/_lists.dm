@@ -54,6 +54,8 @@
 #define LAZYCOPY(L) (L ? L.Copy() : list() )
 /// Consider LAZYNULL instead
 #define LAZYCLEARLIST(L) if(L) L.Cut()
+/// Pick a value from a lazylist, or null if the list is empty
+#define LAZYPICK(L) ( L ? pick(L) : null )
 ///Returns the list if it's actually a valid list, otherwise will initialize it
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverse_range(L.Copy())
