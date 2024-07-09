@@ -198,12 +198,10 @@
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
 			var/dmult = 1
-			if(LAZYLEN(P.effective_faction))
-				if(faction in P.effective_faction)
-					dmult += P.damage_mult
-			if(LAZYLEN(P.supereffective_types))
-				if(is_type_in_list(src, P.supereffective_types, TRUE))
-					dmult += P.supereffective_mult
+			if(faction in P.effective_faction)
+				dmult += P.damage_mult
+			if(is_type_in_list(src, P.supereffective_types, TRUE))
+				dmult += P.supereffective_mult
 			damage *= dmult
 			if (!(P.testing))
 				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)

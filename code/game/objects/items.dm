@@ -96,7 +96,7 @@
 	var/list/blacklist_upgrades = null //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
 
-	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/list/effective_faction = null // Which faction the item is effective against.
 	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
 	//Stolen things form tool qualities
 	var/eye_hazard = FALSE
