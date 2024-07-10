@@ -243,6 +243,20 @@
 	if(default_part_replacement(I, user))
 		return
 
+	if(panel_open && istype(I, /obj/item/cell/medium))
+		if(!user.unEquip(I, src))
+			to_chat(user, SPAN_DANGER("[I] is stuck to your hand!"))
+			return
+		I.loc = null
+		component_parts += I
+		if(cell)
+			component_parts -= cell
+			cell.forceMove(loc)
+			user.put_in_active_hand(cell)
+		to_chat(user, SPAN_NOTICE("You replace [cell] with [I]."))
+		RefreshParts()
+		return
+
 	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return

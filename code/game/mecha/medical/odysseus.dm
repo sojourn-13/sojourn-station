@@ -64,12 +64,6 @@
 	for(var/mob/living/carbon/human/patient in view(M.loc))
 		if(M.see_invisible < patient.invisibility)
 			continue
-		var/foundVirus = 0
-
-		for(var/ID in patient.virus2)
-			if(ID in virusDB)
-				foundVirus = 1
-				break
 
 		holder = patient.hud_list[HEALTH_HUD]
 		if(patient.stat == 2)
@@ -84,8 +78,6 @@
 			holder.icon_state = "huddead"
 		else if(patient.status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
-		else if(foundVirus)
-			holder.icon_state = "hudill"
 		else if(patient.has_brain_worms())
 			var/mob/living/simple_animal/borer/B = patient.has_brain_worms()
 			if(B.controlling)

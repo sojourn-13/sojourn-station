@@ -20,7 +20,7 @@
 			to_chat(user, SPAN_DANGER("The lock clicks uselessly."))
 			return
 
-		if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
+		if(!LAZYLEN(req_access) && !LAZYLEN(req_one_access))
 			locked = 0
 			to_chat(user, SPAN_DANGER("\The [src] doesn't seem to have a locking mechanism."))
 			return
@@ -204,7 +204,7 @@
 	..()
 
 
-/obj/item/rig/attack_hand(var/mob/user)
+/obj/item/rig/attack_hand(mob/user)
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
@@ -218,7 +218,7 @@
 
 
 //For those pesky items which incur effects on the rigsuit, an altclick will force them to go in if possible
-/obj/item/rig/AltClick(var/mob/user)
+/obj/item/rig/AltClick(mob/user)
 	if (storage && user.get_active_hand())
 		if (user == loc || Adjacent(user)) //Rig must be on or near you
 			storage.accepts_item(user.get_active_hand())
@@ -231,12 +231,12 @@
 		return TRUE
 	return ..()
 
-/obj/item/rig/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/rig/emag_act(remaining_charges, mob/user)
 	if(!subverted)
-		req_access.Cut()
-		req_one_access.Cut()
+		LAZYNULL(req_access)
+		LAZYNULL(req_one_access)
 		if (locked != -1)
 			locked = 0
 		subverted = 1
 		to_chat(user, SPAN_DANGER("You short out the access protocol for the suit."))
-		return 1
+		return TRUE

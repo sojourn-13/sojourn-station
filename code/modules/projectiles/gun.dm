@@ -1328,7 +1328,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	force = initial(force)
 	armor_divisor = initial(armor_divisor)
 	sharp = initial(sharp)
-	attack_verb = list()
+	attack_verb = list("struck", "hit", "bashed")
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
@@ -1337,7 +1337,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
 	color = initial(color)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
 
@@ -1364,7 +1364,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 	update_icon()

@@ -262,6 +262,9 @@ uniquic_armor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
+
+	visible_message("<span class='danger'>[src] has been [LAZYPICK(I.attack_verb) || "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
+
 	var/EF = unique_armor_check(I, user, effective_force)
 	if(EF)
 		effective_force = EF

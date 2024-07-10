@@ -945,7 +945,7 @@ assassination method if you time it right*/
 					if(prob(20))
 						occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
 						visible_message("Sparks fly from the [name] as the projectile strikes a critical component!")
-						spark_system.start()
+						spark_system?.start()
 						// check_internal_damage rolls a chance to damage again, so do our own critical damage handling here to guarantee that a component is damaged.
 						var/list/possible_int_damage = list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT)
 						if(prob(90))

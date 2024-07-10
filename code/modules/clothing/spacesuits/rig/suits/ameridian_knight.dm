@@ -23,8 +23,8 @@
 							/obj/item/rig_module/vision/nvg,
 							/obj/item/rig_module/maneuvering_jets)
 	max_upgrades = 0 //no
-	req_access = list()
-	req_one_access = list()
+	req_access = null
+	req_one_access = null
 
 /obj/item/clothing/suit/space/rig/ameridian_knight
 	name = "suit"

@@ -127,8 +127,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Corpsman Cadet"
-	alt_titles = list("Corpsman Cadet", "Combat Medic")
+	alt_titles = list("Combat Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -179,8 +178,8 @@
 	department = DEPARTMENT_BLACKSHIELD
 	department_flag = BLACKSHIELD
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	noob_name = "Blackshield Cadet"
@@ -189,6 +188,8 @@
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	playtimerequired = 240 //4 hours
+
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop
 
@@ -224,3 +225,55 @@
 	name = "Blackshield Trooper"
 	icon_state = "player-blue"
 	join_tag = /datum/job/trooper
+
+
+/datum/job/cadet
+	title = "Blackshield Cadet"
+	flag = BSCADET
+	department = DEPARTMENT_BLACKSHIELD
+	department_flag = BLACKSHIELD
+	faction = MAP_FACTION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Blackshield Commander"
+	difficulty = "Easy."
+	selection_color = "#a7bbc6"
+	wage = WAGE_LABOUR_INTERN
+	health_modifier = 10
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+
+	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop/cadet
+
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_CHEM_CONTRABAND)
+
+	access = list(
+		access_security, access_eva,
+		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
+	)
+
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 20,
+		STAT_VIG = 25,
+	)
+
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
+
+	description = "The Trooper forms the base of the Blackshield, the front line against pirates, terrorists, and xenos.<br>\
+	You are learning to become a Trooper and help protect the colony. Employ your talents to bring an end to threats and conflict situations.<br>\
+	Tactics and teamwork are vital, make sure to learn some. You are paid to follow and learn orders, not to question. Remember your focus is on external threats - leave otherwise to Marshals.<br>\
+	When there are no standing orders, your ongoing task is to learn the contraband laws and Blackshield SOP and to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
+	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
+
+	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
+		Deal with external threats to the colony such as pirates, hostile xenos, and anything that endangers colonists.<br>\
+		Exterminate monsters, giant vermin and hostile machines.<br>\
+		Follow orders from the chain of command.<br>\
+		Obey the law. You are not above it.<br>\
+		Learn everything you need to know to be a real Trooper"
+
+/obj/landmark/join/start/cadet
+	name = "Blackshield Cadet"
+	icon_state = "player-blue-lower"
+	join_tag = /datum/job/cadet

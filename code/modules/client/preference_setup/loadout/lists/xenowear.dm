@@ -186,6 +186,14 @@
 	sort_category = "Xenowear"
 	cost = 1
 
+/datum/gear/xenowear/footwear
+	display_name = "barefoot footwear / (No sprite on mob) / (Change the name and desc)"
+	path = /obj/item/clothing/shoes/claws_hoofs_paws
+	slot = slot_shoes
+	sort_category = "Xenowear"
+	cost = 0
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/xenowear
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless

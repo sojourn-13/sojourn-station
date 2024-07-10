@@ -711,7 +711,6 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -763,7 +762,6 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -821,7 +819,6 @@
 	slowdown = 0.3
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -885,7 +882,6 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -948,7 +944,6 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -1010,7 +1005,6 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -1073,7 +1067,6 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 3
@@ -1125,7 +1118,6 @@
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
-	virus_immune = TRUE
 	always_blood = TRUE
 	always_ingest = TRUE
 	breath_type = null

@@ -27,9 +27,9 @@
 	//Why are we using vars instead of defines or anything else?
 	//Because we need them to be shown in the tool info UI.
 
-	var/obj/item/master
-	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
-	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	var/obj/item/master = null
+	var/list/origin_tech = null   //Used by R&D to determine what research bonuses it grants.
+	var/list/attack_verb = null //Used in attackby() to say how something was attacked "[x] has been [LAZYPICK(z.attack_verb) || "attacked"] by [y] with [z]"
 
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
@@ -62,11 +62,11 @@
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
-	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
+	var/list/armor_list = null //A list version of the armor datum, for initialization.
 	var/datum/armor/armor// Ref to the armor datum
 
-	var/list/allowed = list() //suit storage stuff.
-	var/list/blacklisted_allowed = list()//suit storage stuff.
+	var/list/allowed = null //suit storage stuff.
+	var/list/blacklisted_allowed = null //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
@@ -77,12 +77,12 @@
 
 	//** These specify item/icon overrides for _slots_
 
-	var/list/item_state_slots = list() //overrides the default item_state for particular slots.
+	var/list/item_state_slots = null //overrides the default item_state for particular slots.
 
 	// Used to specify the icon file to be used when the item is worn. If not set the default icon for that slot will be used.
 	// If icon_override or sprite_sheets are set they will take precendence over this, assuming they apply to the slot in question.
 	// Only slot_l_hand/slot_r_hand are implemented at the moment. Others to be implemented as needed.
-	var/tmp/list/item_icons = list()
+	var/tmp/list/item_icons = null
 
 	// HUD action buttons. Only used by guns atm.
 	var/list/hud_actions
@@ -95,18 +95,18 @@
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
 
-	var/list/item_upgrades = list()
+	var/list/item_upgrades = null
 
 	/// Any upgrades in here will be applied on initialize().
-	var/list/initialized_upgrades = list()
+	var/list/initialized_upgrades = null
 
 	var/max_upgrades = 3
 	var/allow_greyson_mods = FALSE
-	prefixes = list()
-	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
+	name_prefixes = null
+	var/list/blacklist_upgrades = null //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
 
-	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/list/effective_faction = null // Which faction the item is effective against.
 	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
 	//Stolen things form tool qualities
 	var/eye_hazard = FALSE
@@ -125,7 +125,7 @@
 
 	var/has_alt_mode = FALSE
 	var/alt_mode_damagetype = HALLOSS
-	var/alt_mode_verbs = list("wack", "bash", "thump")
+	var/list/alt_mode_verbs = list("wack", "bash", "thump")
 	var/alt_mode_active = FALSE
 	var/alt_mode_toggle = ""
 	var/alt_mode_lossrate = 0.5
@@ -690,7 +690,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 
 	extra_bulk = initial(extra_bulk)
 	flags = initial(flags)
@@ -698,7 +698,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	//Now lets have each upgrade reapply its modifications
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 	SSnano.update_uis(src)
 
@@ -732,6 +732,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	damtype = alt_mode_damagetype
 	force = force *= alt_mode_lossrate
 	armor_divisor= armor_divisor *= alt_mode_lossrate
-	attack_verb = alt_mode_verbs
+	attack_verb = LAZYCOPY(alt_mode_verbs)
 	sharp = alt_mode_sharp
 	flags |= NOBLOODY

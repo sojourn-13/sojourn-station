@@ -15160,7 +15160,6 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/toilet/public)
 "aNm" = (
-/obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aNn" = (
@@ -15176,7 +15175,6 @@
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
-/obj/item/device/antibody_scanner,
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
@@ -15436,7 +15434,6 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aNV" = (
-/obj/machinery/disease2/incubator,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aNW" = (
@@ -15448,9 +15445,6 @@
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
-/obj/structure/reagent_dispensers/virusfood{
-	pixel_x = -32
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aNY" = (
@@ -15775,7 +15769,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/smartfridge/secure/virology,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aOM" = (
@@ -16554,7 +16547,6 @@
 /area/nadezhda/crew_quarters/clothingstorage)
 "aQT" = (
 /obj/structure/table/standard,
-/obj/item/virusdish/random,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "aQU" = (
@@ -19966,15 +19958,6 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "baA" = (
 /obj/structure/table/standard,
-/obj/item/virusdish/random,
-/obj/item/virusdish/random{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/obj/item/virusdish/random{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/storage/lockbox/vials,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -33519,14 +33502,12 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section4)
 "bHV" = (
-/obj/machinery/computer/curer,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "bHW" = (
-/obj/machinery/computer/diseasesplicer,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "bHX" = (

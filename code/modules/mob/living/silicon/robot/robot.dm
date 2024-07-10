@@ -883,12 +883,12 @@
 	return ..(user,FLOOR(damage * 0.5, 1),attack_message)
 
 /mob/living/silicon/robot/proc/allowed(atom/movable/A)
-	if(!length(req_access)) //no requirements
+	if(!LAZYLEN(req_access)) //no requirements
 		return TRUE
 
 	var/list/access = A?.GetAccess()
 
-	if(!length(access)) //no ID or no access
+	if(!LAZYLEN(access)) //no ID or no access
 		return FALSE
 	for(var/req in req_access)
 		if(req in access) //have one of the required accesses

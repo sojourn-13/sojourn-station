@@ -67,8 +67,7 @@ var/list/flooring_types
 
 	//How we smooth with other flooring
 	var/floor_smooth = SMOOTH_ALL
-	var/list/flooring_whitelist = list() //Smooth with nothing except the contents of this list
-	var/list/flooring_blacklist = list() //Smooth with everything except the contents of this list
+	var/list/flooring_whitelist = null //Smooth with nothing except the contents of this list
 
 	//How we smooth with walls
 	var/wall_smooth = SMOOTH_NONE
@@ -106,8 +105,8 @@ var/list/flooring_types
 
 	*/
 	var/smooth_movable_atom = SMOOTH_NONE
-	var/list/movable_atom_whitelist = list()
-	var/list/movable_atom_blacklist = list()
+	var/list/movable_atom_whitelist = null
+	var/list/movable_atom_blacklist = null
 
 	//Slowdown when on the tile, not moving TO the tile! Set to negitives to be a speed boost (i.e roads)
 	var/tally_addition_decl = 0
@@ -196,7 +195,6 @@ var/list/flooring_types
 	health = 100
 	has_base_range = 18
 	floor_smooth = SMOOTH_BLACKLIST
-	flooring_blacklist = list(/decl/flooring/reinforced/plating/under,/decl/flooring/reinforced/plating/hull) //Smooth with everything except the contents of this list
 	smooth_movable_atom = SMOOTH_GREYLIST
 	movable_atom_blacklist = list(
 		list(/obj, list("density" = TRUE, "anchored" = TRUE), 1)

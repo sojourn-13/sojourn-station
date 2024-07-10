@@ -1267,7 +1267,7 @@
 /obj/item/projectile/bullet/reusable/arrow/reagent
 	name = "chemical arrow"
 	icon_state = "arrow-reagent"
-	effective_faction = list()
+	effective_faction = null
 	damage_types = list(BRUTE = 0.5) //Low damage, but chem-warfarable.
 	embed = FALSE
 	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
@@ -1321,7 +1321,7 @@
 	name = "explosive arrow"
 	desc = "Holy shit, there's a bomb taped to this arrow!"
 	icon_state = "arrow-grenade"
-	effective_faction = list()
+	effective_faction = null
 	damage_types = list(HALLOSS = 1)
 	embed = FALSE //impact fuze
 	step_delay = 1.1 //slower

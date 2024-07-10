@@ -5,7 +5,7 @@
 	var/climbable
 	var/breakable
 	var/parts
-	var/list/climbers = list()
+	var/list/climbers = null
 
 /**
  * An overridable proc used by SSfalling to determine whether if the object deals
@@ -39,7 +39,7 @@
 			if(H.species.can_shred(user))
 				attack_generic(user,1,"slices")
 
-	if(climbers.len && !(user in climbers))
+	if(!(user in climbers))
 		user.visible_message(SPAN_WARNING("[user.name] shakes \the [src]."), \
 					SPAN_NOTICE("You shake \the [src]."))
 		structure_shaken()
@@ -129,30 +129,30 @@
 		return
 
 	user.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
-	climbers |= user
+	LAZYOR(climbers, user)
 
 	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration, src))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if (!can_climb(user, post_climb_check=1))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	user.forceMove(get_turf(src))
 
 	if (get_turf(user) == get_turf(src))
 		user.visible_message(SPAN_WARNING("[user] climbs onto \the [src]!"))
-	climbers -= user
+	LAZYREMOVE(climbers, user)
 	add_fingerprint(user)
 
 /obj/structure/proc/structure_shaken()
 	for(var/mob/living/M in climbers)
 		M.Weaken(1)
 		to_chat(M, SPAN_DANGER("You topple as you are shaken off \the [src]!"))
-		climbers.Cut(1,2)
+	LAZYNULL(climbers)
 
 	for(var/mob/living/M in get_turf(src))
 		if(M.lying) return //No spamming this on people.
