@@ -216,9 +216,9 @@
 			//The stronger you are, the louder you strike!
 			var/attack_volume = 25 + H.stats.getStat(STAT_ROB)
 			playsound(loc, attack.attack_sound, attack_volume, 1, -1)
-			H.attack_log += text("\[[time_stamp()]\] <font color='red'>[LAZYPICK(attack.attack_verb)] [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been [LAZYPICK(attack.attack_verb)] by [H.name] ([H.ckey])</font>")
-			msg_admin_attack("[key_name(H)] has [LAZYPICK(attack.attack_verb)] [key_name(src)]")
+			H.attack_log += text("\[[time_stamp()]\] <font color='red'>[LAZYPICK(attack.attack_verb) || "attacked"] [src.name] ([src.ckey])</font>")
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been [LAZYPICK(attack.attack_verb) || "attacked"] by [H.name] ([H.ckey])</font>")
+			msg_admin_attack("[key_name(H)] has [LAZYPICK(attack.attack_verb) || "attacked"] [key_name(src)]")
 
 			var/real_damage = stat_damage
 			real_damage += attack.get_unarmed_damage(H)
