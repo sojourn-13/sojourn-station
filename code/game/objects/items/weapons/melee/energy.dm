@@ -150,7 +150,7 @@
 		to_chat(user, SPAN_NOTICE("\The [src] deactivates!"))
 	icon_state = initial(icon_state)
 	..()
-	attack_verb = list()
+	LAZYNULL(attack_verb)
 	tool_qualities = initial(tool_qualities)
 
 /* Outdated and dosnt fit with shield balance as easy as it is to make or get them
@@ -233,7 +233,7 @@
 	icon_state = initial(icon_state)
 	wielded_icon = initial(wielded_icon)
 	..()
-	attack_verb = list()
+	LAZYNULL(attack_verb)
 	tool_qualities = initial(tool_qualities)
 	flags &= ~NOBLOODY
 

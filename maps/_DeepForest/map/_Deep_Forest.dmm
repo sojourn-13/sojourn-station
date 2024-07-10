@@ -1422,7 +1422,6 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "aYw" = (
-/obj/machinery/disease2/incubator,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "aYQ" = (
@@ -3404,7 +3403,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
 "cqG" = (
-/obj/machinery/smartfridge/secure/virology,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "cqL" = (
@@ -4311,7 +4309,6 @@
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
-/obj/item/device/antibody_scanner,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "cSe" = (
@@ -7156,7 +7153,6 @@
 	dynamic_lighting = 1
 	})
 "eOs" = (
-/obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "eOx" = (
@@ -12817,9 +12813,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "ivd" = (
-/obj/machinery/computer/curer{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "ivt" = (
@@ -18230,9 +18223,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "mgk" = (
-/obj/machinery/computer/diseasesplicer{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
 "mgm" = (
@@ -20650,15 +20640,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "nAH" = (
 /obj/structure/table/standard,
-/obj/item/virusdish/random,
-/obj/item/virusdish/random{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/obj/item/virusdish/random{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/storage/lockbox/vials,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)

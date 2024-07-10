@@ -28,18 +28,6 @@
 	crate_name = "medical crate"
 	group = "Medical / Science"
 
-/datum/supply_pack/virus
-	name = "Virus Sample Crate"
-	contains = list(/obj/item/virusdish/random,
-					/obj/item/virusdish/random,
-					/obj/item/virusdish/random,
-					/obj/item/virusdish/random)
-	cost = 200
-	containertype = /obj/structure/closet/crate/secure
-	crate_name = "virus sample crate"
-	access = access_cmo
-	group = "Medical / Science"
-
 /datum/supply_pack/coolanttank
 	name = "Coolant Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/coolanttank)

@@ -56,7 +56,7 @@
 		icon_state = initial(icon_state)
 		w_class = initial(w_class)
 		tool_qualities = list()
-		attack_verb = initial(attack_verb)
+		attack_verb = list("patted", "tapped")
 
 /obj/item/material/butterfly/switchblade
 	name = "switchblade"

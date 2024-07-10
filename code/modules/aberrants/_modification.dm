@@ -76,7 +76,7 @@
 	return FALSE
 
 /datum/component/modification/proc/check_item(obj/item/I, mob/living/user)
-	if(I.item_upgrades.len >= I.max_upgrades)
+	if(LAZYLEN(I.item_upgrades) >= I.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("\The [I] can not fit anymore modifications!"))
 		return FALSE
@@ -127,7 +127,7 @@
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
 	I.forceMove(A)
-	A.item_upgrades.Add(I)
+	LAZYADD(A.item_upgrades, I)
 	RegisterSignal(A, trigger_signal, PROC_REF(trigger))
 	RegisterSignal(A, COMSIG_APPVAL, PROC_REF(apply_values))
 
@@ -193,7 +193,7 @@
 
 /datum/component/modification/proc/uninstall(obj/item/I, mob/living/user)
 	var/obj/item/P = parent
-	I.item_upgrades -= P
+	LAZYREMOVE(I.item_upgrades, P)
 	if(destroy_on_removal)
 		UnregisterSignal(I, trigger_signal)
 		UnregisterSignal(I, COMSIG_APPVAL)
@@ -232,9 +232,9 @@
 
 	ASSERT(istype(upgrade_loc))
 
-	if(upgrade_loc.item_upgrades.len && C.has_quality(removal_tool_quality))
+	if(LAZYLEN(upgrade_loc.item_upgrades) && C.has_quality(removal_tool_quality))
 		var/obj/item/modification/toremove
-		if(upgrade_loc.item_upgrades.len == 1)
+		if(LAZYLEN(upgrade_loc.item_upgrades) == 1)
 			toremove = upgrade_loc.item_upgrades[1]
 		else
 			var/list/possibles = upgrade_loc.item_upgrades.Copy()

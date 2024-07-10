@@ -41,14 +41,12 @@ see multiz/movement.dm for some info.
 
 	var/open = FALSE
 	var/turf/below
-	var/list/underlay_references
-	var/global/overlay_map = list()
 	is_hole = TRUE
 
 	// A lazy list to contain a list of mobs who are currently scaling
 	// up this turf. Used in human/can_fall.
 
-	var/tmp/list/climbers = list()
+	var/tmp/list/climbers = null
 
 	pathing_pass_method = TURF_PATHING_PASS_PROC
 
@@ -292,20 +290,20 @@ see multiz/movement.dm for some info.
 
 	usr.visible_message(SPAN_WARNING("[user] starts descenting onto [structure]!"))
 	structure.visible_message(SPAN_WARNING("Someone starts descenting onto [structure]!"))
-	climbers |= user
+	LAZYOR(climbers, user)
 
 	var/delay = (issmall(user) ? 32 : 60) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration, src))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(!can_descent(user, structure, post_descent_check = 1))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	usr.forceMove(GetBelow(src))
 
 	if(get_turf(user) == GetBelow(src))
 		usr.visible_message(SPAN_WARNING("[user] descents onto [structure]!"))
-	climbers -= user
+	LAZYREMOVE(climbers, user)

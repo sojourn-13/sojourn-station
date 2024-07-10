@@ -70,7 +70,6 @@
 			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
 		),
 		"Misc" = list(
-//			/obj/item/virusdish/random,		// Spawns without an icon
 			/obj/structure/reagent_dispensers/coolanttank,
 			/obj/item/clothing/mask/breath/medical,
 			/obj/item/clothing/mask/surgical,

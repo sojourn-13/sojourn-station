@@ -417,20 +417,6 @@
 	var /obj/item/slime_potion/slimes_reviver/R = new /obj/item/slime_potion/slimes_reviver
 	R.loc = get_turf(holder.my_atom)
 
-/* Centrifuge */
-
-/datum/chemical_reaction/curing
-	result = "antibodies"
-	required_reagents = list("blood" = 1)
-	result_amount = 1
-	reaction_rate = REACTION_RATE(0.3)
-	rotation_required = TRUE
-	supports_decomposition_by_electrolysis = FALSE
-	mix_message = null
-
-/datum/chemical_reaction/curing/send_data(datum/reagents/T)
-	return list("antibodies" = T.get_data("blood")["antibodies"])
-
 /* Solidification */
 
 /datum/chemical_reaction/plasmasolidification

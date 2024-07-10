@@ -339,8 +339,8 @@ for reference:
 /obj/machinery/deployable/barrier/emag_act(remaining_charges, mob/user)
 	if(emagged == FALSE)
 		emagged = TRUE
-		req_access.Cut()
-		req_one_access.Cut()
+		LAZYNULL(req_access)
+		LAZYNULL(req_one_access)
 		to_chat(user, "You break the ID authentication lock on \the [src].")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(2, 1, src)

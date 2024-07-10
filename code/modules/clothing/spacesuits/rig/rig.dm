@@ -17,8 +17,8 @@
 	icon = 'icons/obj/rig_modules.dmi'
 	desc = "A back-mounted hardsuit deployment and control mechanism."
 	slot_flags = SLOT_BACK
-	req_one_access = list()
-	req_access = list()
+	req_one_access = null
+	req_access = null
 	w_class = ITEM_SIZE_BULKY
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 
@@ -161,10 +161,10 @@
 	wires = new(src)
 
 	//Add on any extra items allowed into suit storage
-	if (extra_allowed.len)
-		allowed |= extra_allowed
+	if(LAZYLEN(extra_allowed))
+		LAZYOR(allowed, extra_allowed)
 
-	if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
+	if(!LAZYLEN(req_access) && !LAZYLEN(req_one_access))
 		locked = FALSE
 
 	spark_system = new()
@@ -194,7 +194,7 @@
 		chest = new chest_type(src)
 		chest.equip_delay = 0
 		if(allowed)
-			chest.allowed |= allowed
+			LAZYOR(chest.allowed, allowed)
 		chest.slowdown = offline_slowdown
 		chest.stiffness = stiffness
 		rig_verbs |= /mob/living/carbon/human/rig/verb/toggle_chest
