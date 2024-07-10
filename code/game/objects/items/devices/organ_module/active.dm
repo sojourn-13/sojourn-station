@@ -48,8 +48,6 @@
 
 /datum/action/organ_module
 	check_flags = 0
-	
-	var/desc = ""
 
 /datum/action/organ_module/New(Target, verb_name, verb_desc)
 	. = ..()

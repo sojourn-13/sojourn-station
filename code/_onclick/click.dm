@@ -37,6 +37,8 @@
 
 
 /client/Click(var/atom/target, location, control, params)
+	SEND_SIGNAL(src, COMSIG_CLIENT_CLICK, target, location, control, params, usr)
+
 	var/list/L = params2list(params) //convert params into a list
 	var/dragged = L["drag"] //grab what mouse button they are dragging with, if any.
 	if(dragged && !L[dragged]) //check to ensure they aren't using drag clicks to aimbot

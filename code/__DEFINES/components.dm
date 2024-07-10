@@ -67,6 +67,10 @@
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
 
+// /client signals
+/// from base of client/Click(): (atom/target, atom/location, control, params, mob/user)
+#define COMSIG_CLIENT_CLICK "atom_client_click"
+
 // /atom signals
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"  //update_overlays()
@@ -185,6 +189,10 @@
 #define COMSIG_ABERRANT_OUTPUT "aberrant_output"
 #define COMSIG_ABERRANT_SECONDARY "aberrant_secondary"
 #define COMSIG_ABERRANT_COOLDOWN "aberrant_cooldown"
+
+// Note that this is only defined for actions because this could be a good bit expensive otherwise
+/// From base of /atom/movable/screen/movable/action_button/MouseWheel(src, delta_x, delta_y, location, control, params)
+#define COMSIG_ACTION_SCROLLED "action_scrolled"
 
 /*******Component Specific Signals*******/
 //Janitor

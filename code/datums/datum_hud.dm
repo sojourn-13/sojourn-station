@@ -17,6 +17,10 @@
 	var/old_z
 	var/list/obj/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 	var/list/obj/screen/openspace_overlay/openspace_overlays = list()
+	// Elements used for action buttons
+	// -- the main clickable buttons
+	var/obj/screen/action_palette/toggle_palette
+	var/action_buttons_hidden = FALSE
 
 /datum/hud/proc/updatePlaneMasters(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
@@ -76,7 +80,6 @@
 				oover.alpha = min(255,zdiff*50 + 30)
 				openspace_overlays["[zi]-[relative_level]-[oover.plane]"] = oover
 				screenmob.client.screen += oover
-
 
 /mob/update_plane()
 	..()
@@ -150,8 +153,8 @@
 	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "7:19,1",             "minloc" = "6:20,2",       "background" = "back16"),
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "minloc" = "9:-1,2",       "background" = "back16"),
 
-	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0:8",                "minloc" = "1,1:8",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1")
-
+	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0:8",                "minloc" = "1,1:8",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "EAST+1,BOTTOM+8:15",   "minloc" = "RIGHT,10:10")
 	)
 
 	slot_data = list (
@@ -194,8 +197,7 @@
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame1-1"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame3-3"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame0-4"),
-		list("loc" = "EAST+1,BOTTOM+8:14", "icon_state" = "frame0-1"),
-		list("loc" = "EAST+1,BOTTOM+8:14", "icon_state" = "frame3-1")
+		list("loc" = "EAST+1,BOTTOM+9:8", "icon_state" = "frame3-1")
 		)
 		//list("loc" = "2,3", "icon_state" = "block",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 

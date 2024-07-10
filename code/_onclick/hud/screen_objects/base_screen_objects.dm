@@ -72,6 +72,11 @@
 			usr.unset_machine()
 
 	return TRUE
+
+// Called with minimalized = 1 when switching to minimal mode, with = 0 switching back
+/obj/screen/proc/update_minimalized(minimalized)
+	return
+
 //--------------------------------------------------close---------------------------------------------------------
 
 /obj/screen/close

@@ -17,7 +17,6 @@
 	var/datum/perk/P = target
 	// if(P.passivePerk)
 	// 	return FALSE
-	// TODO: display tooltip 
 	if(P.cooldown_time > world.time) // On cooldown
 		return FALSE
 	. = ..()
@@ -45,8 +44,7 @@
 	if(!passivePerk)
 		perk_action = new(src)
 		perk_action.name = name
-		// TODO: description tooltips
-		// perk_action.desc = desc
+		perk_action.desc = desc
 		perk_action.button_icon = icon
 		perk_action.button_icon_state = icon_state
 
@@ -97,6 +95,15 @@
 		to_chat(usr, "You deactivate [src]")
 	else if(activate(holder))
 		to_chat(usr, "You activate [src]")
+
+	if(cooldown_time > world.time && perk_action)
+		perk_action.desc = "[desc] - Unavailable till [worldtime2stationtime(cooldown_time)]"
+		usr.update_action_buttons()
+		addtimer(CALLBACK(src, PROC_REF(fix_perk_desc)), cooldown_time - world.time) // fix the description after we change it
+
+/datum/perk/proc/fix_perk_desc()
+	perk_action?.desc = "[desc]"
+	usr.update_action_buttons()
 
 /datum/perk/proc/activate()
 	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined activate called")

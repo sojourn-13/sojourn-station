@@ -9,8 +9,8 @@
 	else
 		to_chat(src, SPAN_DANGER("The wiki URL is not set in the server configuration."))
 
-/client/verb/discordurl()
-	set name = "discordurl"
+/client/verb/discord()
+	set name = "discord"
 	set desc = "Visit the Discord Server."
 	set hidden = TRUE
 	var/discordurl = config.discordurl
@@ -19,8 +19,8 @@
 	else
 		to_chat(src, SPAN_WARNING("The Discord invite is not set in the server configuration."))
 
-/client/verb/githuburl()
-	set name = "githuburl"
+/client/verb/github()
+	set name = "github"
 	set desc = "Visit the Github."
 	set hidden = TRUE
 	var/githuburl = config.githuburl
@@ -28,6 +28,12 @@
 		src << link(githuburl)
 	else
 		to_chat(src, SPAN_WARNING("The Github is not set in the server configuration."))
+
+/client/verb/tickets()
+	set name = "tickets"
+	set desc = "View open admin tickets"
+	set hidden = TRUE
+	openAdminUserUI()
 
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
