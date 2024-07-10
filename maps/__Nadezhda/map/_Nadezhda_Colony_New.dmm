@@ -34253,6 +34253,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"gNL" = (
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/virology)
 "gNN" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/random/flora/jungle_tree,
@@ -45314,7 +45317,6 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/command/hallway)
 "iUx" = (
-/obj/structure/plasticflaps,
 /obj/machinery/conveyor/east{
 	id = "disposals grinder";
 	operating = 1
@@ -50727,6 +50729,7 @@
 	id = "disposals grinder";
 	operating = 1
 	},
+/obj/structure/plasticflaps,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
 "jZa" = (
@@ -71703,13 +71706,10 @@
 /obj/effect/floor_decal/border/carpet/orange/corner,
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
-"odD" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "odF" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
-/obj/structure/window/reinforced,
+/obj/structure/railing,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
 "odM" = (
@@ -176252,10 +176252,10 @@ cnr
 pHr
 cOx
 edp
-odD
+gNL
 otL
 huz
-odD
+gNL
 pdU
 dWI
 cyo
@@ -193469,7 +193469,7 @@ sOw
 sVn
 hgO
 odF
-iUx
+jYT
 mQR
 cXt
 tip
@@ -193873,7 +193873,7 @@ sgw
 osE
 vWt
 dqA
-jYT
+iUx
 nuH
 nEC
 tip
