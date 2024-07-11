@@ -283,6 +283,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		inline_js = file2text('html/statbrowser.js'),
 		inline_css = file2text('html/statbrowser.css'),
 	)
+	// We want these assets to be available eventually, but they're not a hard requirement for the panel
+	// so we use send_asset instead of specifying it in initialize()
+	stat_panel.send_asset(get_asset_datum(/datum/asset/simple/statpanel_styles))
 	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 	// Initialize tgui panel
 	tgui_panel.initialize()

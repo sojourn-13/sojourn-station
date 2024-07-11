@@ -20,7 +20,7 @@ body.dark {
 }
 
 #menu {
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	position: fixed;
 	width: 100%;
 	z-index: 100;
@@ -36,7 +36,7 @@ body.dark {
 
 a {
 	color: black;
-	text-decoration: none
+	text-decoration: none;
 }
 
 .dark a {
@@ -224,13 +224,4 @@ img {
 .interview_panel_controls,
 .interview_panel_stats {
 	margin-bottom: 10px;
-}
-
-/* Some common colors/span classes */
-.bad {
-	color: #c82121;
-}
-
-.dark .bad {
-	color: #db2828
 }

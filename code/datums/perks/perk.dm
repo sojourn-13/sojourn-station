@@ -113,8 +113,10 @@
 	if(usr != holder) // only our holder is allowed to trigger us
 		return
 
-	if(href_list["trigger"] && !passivePerk)
+	if(href_list["trigger"] && !passivePerk && holder.client)
 		invoke()
+		// Immediately hit them with an update
+		SSstatpanels.set_perks_tab(holder.client, holder)
 
 /* Uncomment this when more shared abilities are used
 /datum/perk/proc/check_shared_abilities(list/ability_bitflags)

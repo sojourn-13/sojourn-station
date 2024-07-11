@@ -1,0 +1,6 @@
+@use 'sass:meta';
+@use '~tgui/styles/colors.scss';
+
+.dark {
+  @include meta.load-css('~tgui/styles/atomic/color.scss');
+}

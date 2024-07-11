@@ -1,12 +1,11 @@
 // Polyfills and compatibility ------------------------------------------------
-var decoder = decodeURIComponent || unescape;
 if (!Array.prototype.includes) {
 	Array.prototype.includes = function (thing) {
 		for (var i = 0; i < this.length; i++) {
 			if (this[i] == thing) return true;
 		}
 		return false;
-	}
+	};
 }
 if (!String.prototype.trim) {
 	String.prototype.trim = function () {
@@ -23,9 +22,6 @@ var spells = [];
 var spell_tabs = [];
 var verb_tabs = [];
 var verbs = [["", ""]]; // list with a list inside
-var tickets = [];
-var interviewManager = { status: "", interviews: [] };
-var sdql2 = [];
 var permanent_tabs = []; // tabs that won't be cleared by wipes
 var turfcontents = [];
 var turfname = "";
@@ -109,12 +105,12 @@ function sortVerbs() {
 			return -1;
 		}
 		return 0;
-	})
+	});
 }
 
 window.onresize = function () {
 	under_menu.style.height = menu.clientHeight + 'px';
-}
+};
 
 function addPermanentTab(name) {
 	if (!permanent_tabs.includes(name)) {
@@ -133,15 +129,15 @@ function removePermanentTab(name) {
 }
 
 function checkStatusTab() {
-	let toRemove = [];
+	var toRemove = [];
 	for (var i = 0; i < menu.children.length; i++) {
 		if (!verb_tabs.includes(menu.children[i].id) && !permanent_tabs.includes(menu.children[i].id)) {
 			toRemove.push(menu.children[i]);
 		}
 	}
 	// Must be done in two passes or it won't iterate over all menu children
-	for (var i = 0; i < toRemove.length; i++) {
-		menu.removeChild(toRemove[i])
+	for (var ti = 0; ti < toRemove.length; ti++) {
+		menu.removeChild(toRemove[ti]);
 	}
 }
 
@@ -150,7 +146,7 @@ function remove_verb(v) {
 	for (var i = verbs.length - 1; i >= 0; i--) {
 		var part_to_remove = verbs[i];
 		if (part_to_remove[1] == verb_to_remove[1]) {
-			verbs.splice(i, 1)
+			verbs.splice(i, 1);
 		}
 	}
 }
@@ -180,11 +176,11 @@ function verbs_cat_check(cat) {
 		var part = verbs[v];
 		verbcat = part[0];
 		if (verbcat.indexOf(".") != -1) {
-			var splitName = verbcat.split(".");
-			if (split_admin_tabs && splitName[0] === "Admin")
-				verbcat = splitName[1];
+			var splitNameVerb = verbcat.split(".");
+			if (split_admin_tabs && splitNameVerb[0] === "Admin")
+				verbcat = splitNameVerb[1];
 			else
-				verbcat = splitName[0];
+				verbcat = splitNameVerb[0];
 		}
 		if (verbcat != tabCat || verbcat.trim() == "") {
 			continue;
@@ -273,8 +269,6 @@ function tab_change(tab) {
 		draw_verbs(tab);
 	} else if (tab == "Debug Stat Panel") {
 		draw_debug();
-	} else if (tab == "SDQL2") {
-		draw_sdql2();
 	} else if (tab == turfname) {
 		draw_listedturf();
 	} else {
@@ -293,13 +287,13 @@ function draw_debug() {
 	statcontentdiv.textContent = "";
 	var wipeverbstabs = document.createElement("div");
 	var link = document.createElement("a");
-	link.onclick = function () { wipe_verbs() };
+	link.onclick = function () { wipe_verbs(); };
 	link.textContent = "Wipe All Verbs";
 	wipeverbstabs.appendChild(link);
 	document.getElementById("statcontent").appendChild(wipeverbstabs);
 	var wipeUpdateVerbsTabs = document.createElement("div");
 	var updateLink = document.createElement("a");
-	updateLink.onclick = function () { update_verbs() };
+	updateLink.onclick = function () { update_verbs(); };
 	updateLink.textContent = "Wipe and Update All Verbs";
 	wipeUpdateVerbsTabs.appendChild(updateLink);
 	document.getElementById("statcontent").appendChild(wipeUpdateVerbsTabs);
@@ -322,7 +316,7 @@ function draw_debug() {
 		td1.textContent = part;
 		var a = document.createElement("a");
 		a.onclick = function (part) {
-			return function () { removeStatusTab(part) };
+			return function () { removeStatusTab(part); };
 		}(part);
 		a.textContent = " Delete Tab " + part;
 		td1.appendChild(a);
@@ -350,8 +344,8 @@ function draw_debug() {
 	text3.textContent = "Permanent Tabs:";
 	document.getElementById("statcontent").appendChild(text3);
 	var table3 = document.createElement("table");
-	for (var i = 0; i < permanent_tabs.length; i++) {
-		var part3 = permanent_tabs[i];
+	for (var t = 0; t < permanent_tabs.length; t++) {
+		var part3 = permanent_tabs[t];
 		var trrr = document.createElement("tr");
 		var tddd1 = document.createElement("td");
 		tddd1.textContent = part3;
@@ -408,7 +402,7 @@ function draw_mc() {
 function draw_perks() {
 	statcontentdiv.textContent = "";
 	if (perks_tab_parts.length === 0) {
-		statcontentdiv.textContent = "No Perks Available"
+		statcontentdiv.textContent = "No Perks Available";
 		return;
 	}
 
@@ -417,51 +411,24 @@ function draw_perks() {
 		var part = perks_tab_parts[i];
 		var tr = document.createElement("tr");
 		var td1 = document.createElement("td");
-		td1.title = part["desc"] || "No Description";
-		if (!part["passive"]) {
+		td1.title = part.desc || "No Description";
+		if (!part.passive) {
 			var a = document.createElement("a");
-			a.href = "?src=" + part["ref"] + ";trigger=1"
-			if (part["cooldown"] > perks_tab_time) {
-				a.textContent = part["name"] + " (Coooldown: " + Math.floor((part["cooldown"] - perks_tab_time) / 10) + " seconds)";
-				a.className = "bad";
+			a.href = "?src=" + part.ref + ";trigger=1";
+			if (part.cooldown > perks_tab_time) {
+				a.textContent = part.name + " (Cooldown: " + Math.floor((part.cooldown - perks_tab_time) / 10) + " seconds)";
+				a.className = "color-bad";
 			} else {
-				a.textContent = part["name"];
+				a.textContent = part.name;
 			}
 			td1.appendChild(a);
 		} else {
-			td1.textContent = "[Passive] " + part["name"];
+			td1.textContent = "[Passive] " + part.name;
 		}
 		tr.appendChild(td1);
 		table.appendChild(tr);
 	}
 	statcontentdiv.appendChild(table);
-}
-
-function remove_tickets() {
-	if (tickets) {
-		tickets = [];
-		removePermanentTab("Tickets");
-		if (current_tab == "Tickets")
-			tab_change("Status");
-	}
-	checkStatusTab();
-}
-
-function remove_sdql2() {
-	if (sdql2) {
-		sdql2 = [];
-		removePermanentTab("SDQL2");
-		if (current_tab == "SDQL2")
-			tab_change("Status");
-	}
-	checkStatusTab();
-}
-
-function remove_interviews() {
-	if (tickets) {
-		tickets = [];
-	}
-	checkStatusTab();
 }
 
 function iconError(e) {
@@ -470,14 +437,14 @@ function iconError(e) {
 	}
 	setTimeout(function () {
 		var node = e.target;
-		var current_attempts = Number(node.getAttribute("data-attempts")) || 0
+		var current_attempts = Number(node.getAttribute("data-attempts")) || 0;
 		if (current_attempts > imageRetryLimit) {
 			return;
 		}
 		var src = node.src;
 		node.src = null;
 		node.src = src + '#' + current_attempts;
-		node.setAttribute("data-attempts", current_attempts + 1)
+		node.setAttribute("data-attempts", current_attempts + 1);
 	}, imageRetryDelay);
 }
 
@@ -486,38 +453,38 @@ function draw_listedturf() {
 	var table = document.createElement("table");
 	for (var i = 0; i < turfcontents.length; i++) {
 		var part = turfcontents[i];
+		var img;
 		if (storedimages[part[1]] == null && part[2]) {
-			var img = document.createElement("img");
+			img = document.createElement("img");
 			img.src = part[2];
 			img.id = part[1];
 			storedimages[part[1]] = part[2];
 			img.onerror = iconError;
 			table.appendChild(img);
 		} else {
-			var img = document.createElement("img");
+			img = document.createElement("img");
 			img.onerror = iconError;
 			img.src = storedimages[part[1]];
 			img.id = part[1];
 			table.appendChild(img);
 		}
 		var b = document.createElement("div");
-		var clickcatcher = "";
 		b.className = "link";
 		b.onmousedown = function (part) {
 			// The outer function is used to close over a fresh "part" variable,
 			// rather than every onmousedown getting the "part" of the last entry.
 			return function (e) {
 				e.preventDefault();
-				clickcatcher = "?src=" + part[1];
+				var clickcatcher = "?src=" + part[1];
 				switch (e.button) {
 					case 1:
-						clickcatcher += ";statpanel_item_click=middle"
+						clickcatcher += ";statpanel_item_click=middle";
 						break;
 					case 2:
-						clickcatcher += ";statpanel_item_click=right"
+						clickcatcher += ";statpanel_item_click=right";
 						break;
 					default:
-						clickcatcher += ";statpanel_item_click=left"
+						clickcatcher += ";statpanel_item_click=left";
 				}
 				if (e.shiftKey) {
 					clickcatcher += ";statpanel_item_shiftclick=1";
@@ -529,7 +496,7 @@ function draw_listedturf() {
 					clickcatcher += ";statpanel_item_altclick=1";
 				}
 				window.location.href = clickcatcher;
-			}
+			};
 		}(part);
 		b.textContent = part[0];
 		table.appendChild(b);
@@ -551,112 +518,6 @@ function remove_mc() {
 	if (current_tab == "MC") {
 		tab_change("Status");
 	}
-};
-
-function draw_sdql2() {
-	statcontentdiv.textContent = "";
-	var table = document.createElement("table");
-	for (var i = 0; i < sdql2.length; i++) {
-		var part = sdql2[i];
-		var tr = document.createElement("tr");
-		var td1 = document.createElement("td");
-		td1.textContent = part[0];
-		var td2 = document.createElement("td");
-		if (part[2]) {
-			var a = document.createElement("a");
-			a.href = "?src=" + part[2] + ";statpanel_item_click=left";
-			a.textContent = part[1];
-			td2.appendChild(a);
-		} else {
-			td2.textContent = part[1];
-		}
-		tr.appendChild(td1);
-		tr.appendChild(td2);
-		table.appendChild(tr);
-	}
-	document.getElementById("statcontent").appendChild(table);
-}
-
-function draw_tickets() {
-	statcontentdiv.textContent = "";
-	var table = document.createElement("table");
-	if (!tickets) {
-		return;
-	}
-	for (var i = 0; i < tickets.length; i++) {
-		var part = tickets[i];
-		var tr = document.createElement("tr");
-		var td1 = document.createElement("td");
-		td1.textContent = part[0];
-		var td2 = document.createElement("td");
-		if (part[2]) {
-			var a = document.createElement("a");
-			a.href = "?_src_=holder;admin_token=" + href_token + ";ahelp=" + part[2] + ";ahelp_action=ticket;statpanel_item_click=left;action=ticket";
-			a.textContent = part[1];
-			td2.appendChild(a);
-		} else if (part[3]) {
-			var a = document.createElement("a");
-			a.href = "?src=" + part[3] + ";statpanel_item_click=left";
-			a.textContent = part[1];
-			td2.appendChild(a);
-		} else {
-			td2.textContent = part[1];
-		}
-		tr.appendChild(td1);
-		tr.appendChild(td2);
-		table.appendChild(tr);
-	}
-	document.getElementById("statcontent").appendChild(table);
-}
-
-function draw_interviews() {
-	var body = document.createElement("div");
-	var header = document.createElement("h3");
-	header.textContent = "Interviews";
-	body.appendChild(header);
-	var manDiv = document.createElement("div");
-	manDiv.className = "interview_panel_controls"
-	var manLink = document.createElement("a");
-	manLink.textContent = "Open Interview Manager Panel";
-	manLink.href = "?_src_=holder;admin_token=" + href_token + ";interview_man=1;statpanel_item_click=left";
-	manDiv.appendChild(manLink);
-	body.appendChild(manDiv);
-
-	// List interview stats
-	var statsDiv = document.createElement("table");
-	statsDiv.className = "interview_panel_stats";
-	for (var key in interviewManager.status) {
-		var d = document.createElement("div");
-		var tr = document.createElement("tr");
-		var stat_name = document.createElement("td");
-		var stat_text = document.createElement("td");
-		stat_name.textContent = key;
-		stat_text.textContent = interviewManager.status[key];
-		tr.appendChild(stat_name);
-		tr.appendChild(stat_text);
-		statsDiv.appendChild(tr);
-	}
-	body.appendChild(statsDiv);
-	document.getElementById("statcontent").appendChild(body);
-
-	// List interviews if any are open
-	var table = document.createElement("table");
-	table.className = "interview_panel_table";
-	if (!interviewManager) {
-		return;
-	}
-	for (var i = 0; i < interviewManager.interviews.length; i++) {
-		var part = interviewManager.interviews[i];
-		var tr = document.createElement("tr");
-		var td = document.createElement("td");
-		var a = document.createElement("a");
-		a.textContent = part["status"];
-		a.href = "?_src_=holder;admin_token=" + href_token + ";interview=" + part["ref"] + ";statpanel_item_click=left";
-		td.appendChild(a);
-		tr.appendChild(td);
-		table.appendChild(tr);
-	}
-	document.getElementById("statcontent").appendChild(table);
 }
 
 function draw_spells(cat) {
@@ -708,9 +569,9 @@ function draw_verbs(cat) {
 		var part = verbs[i];
 		var name = part[0];
 		if (split_admin_tabs && name.lastIndexOf(".") != -1) {
-			var splitName = name.split(".");
-			if (splitName[0] === "Admin")
-				name = splitName[1];
+			var splitNameVerb = name.split(".");
+			if (splitNameVerb[0] === "Admin")
+				name = splitNameVerb[1];
 		}
 		var command = part[1];
 		var desc = part[2];
@@ -741,41 +602,61 @@ function draw_verbs(cat) {
 	content.appendChild(table);
 
 	// Append additional sub-categories if relevant
-	for (var cat in additions) {
-		if (additions.hasOwnProperty(cat)) {
+	for (var addCat in additions) {
+		if (additions.hasOwnProperty(addCat)) {
 			// do addition here
 			var header = document.createElement("h3");
-			header.textContent = cat;
+			header.textContent = addCat;
 			content.appendChild(header);
-			content.appendChild(additions[cat]);
+			content.appendChild(additions[addCat]);
 		}
 	}
 }
 
 function set_theme(which) {
 	if (which == "light") {
-		document.body.className = "";
-		// set_style_sheet("browserOutput_white");
+		document.body.className = "light";
+		// WARNING: DO NOT REMOVE
+		// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
+		set_style_sheet("light");
 	} else if (which == "dark") {
 		document.body.className = "dark";
-		// set_style_sheet("browserOutput");
+		// WARNING: DO NOT REMOVE
+		// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
+		set_style_sheet("dark");
 	}
 }
 
-// function set_style_sheet(sheet) {
-// 	if (document.getElementById("goonStyle")) {
-// 		var currentSheet = document.getElementById("goonStyle");
-// 		currentSheet.parentElement.removeChild(currentSheet);
-// 	}
-// 	var head = document.getElementsByTagName('head')[0];
-// 	var sheetElement = document.createElement("link");
-// 	sheetElement.id = "goonStyle";
-// 	sheetElement.rel = "stylesheet";
-// 	sheetElement.type = "text/css";
-// 	sheetElement.href = sheet + ".css";
-// 	sheetElement.media = 'all';
-// 	head.appendChild(sheetElement);
-// }
+// WARNING: DO NOT REMOVE
+// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
+function set_style_sheet(sheet) {
+	if (document.getElementById("goonStyle")) {
+		var currentSheet = document.getElementById("goonStyle");
+		currentSheet.parentElement.removeChild(currentSheet);
+	}
+	var head = document.getElementsByTagName('head')[0];
+	var sheetElement = document.createElement("link");
+	sheetElement.id = "goonStyle";
+	sheetElement.rel = "stylesheet";
+	sheetElement.type = "text/css";
+	sheetElement.href = sheet + ".css";
+	sheetElement.media = 'all';
+	head.appendChild(sheetElement);
+}
+
+// Minimal asset/mappings impl to receive our tgui derived stylesheet
+// This has to be es5 compliant
+Byond.subscribeTo('asset/mappings', function (payload) {
+	for (var name in payload) {
+		if (payload.hasOwnProperty(name)) {
+			var url = payload[name];
+			var ext = name.split(".").pop();
+			if (ext === 'css') {
+				Byond.loadCss(url);
+			}
+		}
+	}
+});
 
 function restoreFocus() {
 	run_after_focus(function () {
@@ -783,19 +664,6 @@ function restoreFocus() {
 			focus: true,
 		});
 	});
-}
-
-function getCookie(cname) {
-	var name = cname + '=';
-	var ca = document.cookie.split(';');
-	for (var i = 0; i < ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') c = c.substring(1);
-		if (c.indexOf(name) === 0) {
-			return decoder(c.substring(name.length, c.length));
-		}
-	}
-	return '';
 }
 
 function add_verb_list(payload) {
@@ -826,7 +694,7 @@ function add_verb_list(payload) {
 			createStatusTab(category);
 		}
 	}
-};
+}
 
 function init_spells() {
 	var cat = "";
@@ -914,7 +782,7 @@ Byond.subscribeTo('update_stat', function (payload) {
 
 	parsed = payload.other_str;
 
-	for (var i = 0; i < parsed.length; i++) if (parsed[i] != null) status_tab_parts.push(parsed[i]);
+	for (var p = 0; p < parsed.length; p++) if (parsed[p] != null) status_tab_parts.push(parsed[p]);
 
 	if (current_tab == "Status") {
 		draw_status();
@@ -953,10 +821,14 @@ Byond.subscribeTo('update_perks', function (payload) {
 	}
 });
 
-Byond.subscribeTo('remove_spells', function () {
+function remove_spells() {
 	for (var s = 0; s < spell_tabs.length; s++) {
 		removeStatusTab(spell_tabs[s]);
 	}
+}
+
+Byond.subscribeTo('remove_spells', function () {
+	remove_spells();
 });
 
 Byond.subscribeTo('init_spells', function () {
@@ -994,22 +866,12 @@ Byond.subscribeTo('create_listedturf', function (TN) {
 Byond.subscribeTo('remove_admin_tabs', function () {
 	href_token = null;
 	remove_mc();
-	// remove_tickets();
-	// remove_sdql2();
-	// remove_interviews();
 });
 
 Byond.subscribeTo('update_listedturf', function (TC) {
 	turfcontents = TC;
 	if (current_tab == turfname) {
 		draw_listedturf();
-	}
-});
-
-Byond.subscribeTo('update_interviews', function (I) {
-	interviewManager = I;
-	if (current_tab == "Tickets") {
-		draw_interviews();
 	}
 });
 
@@ -1031,34 +893,9 @@ Byond.subscribeTo('update_split_admin_tabs', function (status) {
 Byond.subscribeTo('add_admin_tabs', function (ht) {
 	href_token = ht;
 	addPermanentTab("MC");
-	// addPermanentTab("Tickets");
-});
-
-Byond.subscribeTo('update_sdql2', function (S) {
-	sdql2 = S;
-	if (sdql2.length > 0 && !verb_tabs.includes("SDQL2")) {
-		verb_tabs.push("SDQL2");
-		addPermanentTab("SDQL2");
-	}
-	if (current_tab == "SDQL2") {
-		draw_sdql2();
-	}
-});
-
-Byond.subscribeTo('update_tickets', function (T) {
-	tickets = T;
-	if (!verb_tabs.includes("Tickets")) {
-		verb_tabs.push("Tickets");
-		addPermanentTab("Tickets");
-	}
-	if (current_tab == "Tickets") {
-		draw_tickets();
-	}
 });
 
 Byond.subscribeTo('remove_listedturf', remove_listedturf);
-
-Byond.subscribeTo('remove_sdql2', remove_sdql2);
 
 Byond.subscribeTo('remove_mc', remove_mc);
 
