@@ -68,6 +68,10 @@ SUBSYSTEM_DEF(statpanels)
 			// 	if(num_fires % default_wait == 0)
 			// 		set_spells_tab(target, target_mob)
 
+			if(target.stat_tab == "Perks" && LAZYLEN(target_mob?.stats?.perks))
+				if(num_fires % default_wait == 0)
+					set_perks_tab(target, target_mob)
+
 			// Handle the examined turf of the stat panel, if it's been long enough, or if we've generated new images for it
 			var/turf/listed_turf = target_mob?.listed_turf
 			if(listed_turf && num_fires % default_wait == 0)
@@ -91,6 +95,12 @@ SUBSYSTEM_DEF(statpanels)
 	if(!mc_data)
 		generate_mc_data()
 	target.stat_panel.send_message("update_mc", list(mc_data = mc_data, coord_entry = coord_entry))
+
+/datum/controller/subsystem/statpanels/proc/set_perks_tab(client/target, mob/target_mob)
+	var/list/perk_data = list()
+	for(var/datum/perk/P as anything in target_mob?.stats?.perks)
+		perk_data += list(list("name" = P.name, "desc" = P.desc, "cooldown" = P.cooldown_time, "ref" = "[REF(P)]", "passive" = P.passivePerk))
+	target.stat_panel.send_message("update_perks", list("world_time" = world.time, "perk_data" = perk_data))
 
 /datum/controller/subsystem/statpanels/proc/set_turf_examine_tab(client/target, mob/target_mob)
 	var/list/overrides = list()
@@ -201,6 +211,10 @@ SUBSYSTEM_DEF(statpanels)
 
 	if(target.stat_tab == "MC")
 		set_MC_tab(target)
+		return TRUE
+
+	if(target.stat_tab == "Perks" && target_mob)
+		set_perks_tab(target, target_mob)
 		return TRUE
 
 	// if(target.stat_tab == "Tickets")

@@ -225,3 +225,12 @@ img {
 .interview_panel_stats {
 	margin-bottom: 10px;
 }
+
+/* Some common colors/span classes */
+.bad {
+	color: #c82121;
+}
+
+.dark .bad {
+	color: #db2828
+}

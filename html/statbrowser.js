@@ -36,6 +36,8 @@ var under_menu = document.getElementById('under_menu');
 var statcontentdiv = document.getElementById('statcontent');
 var storedimages = [];
 var split_admin_tabs = false;
+var perks_tab_parts = [];
+var perks_tab_time = 0;
 
 // Any BYOND commands that could result in the client's focus changing go through this
 // to ensure that when we relinquish our focus, we don't do it after the result of
@@ -68,8 +70,14 @@ function createStatusTab(name) {
 	B.className = "button";
 	//ORDERING ALPHABETICALLY
 	B.style.order = name.charCodeAt(0);
-	if (name == "Status" || name == "MC") {
-		B.style.order = name == "Status" ? 1 : 2;
+	// Override for status/MC/perks
+	// this works because ascii chars start at 65
+	if (name == "Status") {
+		B.style.order = 1;
+	} else if (name == "MC") {
+		B.style.order = 2;
+	} else if (name == "Perks") {
+		B.style.order = 3;
 	}
 	//END ORDERING
 	menu.appendChild(B);
@@ -257,6 +265,8 @@ function tab_change(tab) {
 		draw_status();
 	} else if (tab == "MC") {
 		draw_mc();
+	} else if (tab == "Perks") {
+		draw_perks();
 	} else if (spell_tabs_thingy) {
 		draw_spells(tab);
 	} else if (verb_tabs_thingy) {
@@ -393,6 +403,38 @@ function draw_mc() {
 		table.appendChild(tr);
 	}
 	document.getElementById("statcontent").appendChild(table);
+}
+
+function draw_perks() {
+	statcontentdiv.textContent = "";
+	if (perks_tab_parts.length === 0) {
+		statcontentdiv.textContent = "No Perks Available"
+		return;
+	}
+
+	var table = document.createElement("table");
+	for (var i = 0; i < perks_tab_parts.length; i++) {
+		var part = perks_tab_parts[i];
+		var tr = document.createElement("tr");
+		var td1 = document.createElement("td");
+		td1.title = part["desc"] || "No Description";
+		if (!part["passive"]) {
+			var a = document.createElement("a");
+			a.href = "?src=" + part["ref"] + ";trigger=1"
+			if (part["cooldown"] > perks_tab_time) {
+				a.textContent = part["name"] + " (Coooldown: " + Math.floor((part["cooldown"] - perks_tab_time) / 10) + " seconds)";
+				a.className = "bad";
+			} else {
+				a.textContent = part["name"];
+			}
+			td1.appendChild(a);
+		} else {
+			td1.textContent = "[Passive] " + part["name"];
+		}
+		tr.appendChild(td1);
+		table.appendChild(tr);
+	}
+	statcontentdiv.appendChild(table);
 }
 
 function remove_tickets() {
@@ -713,27 +755,27 @@ function draw_verbs(cat) {
 function set_theme(which) {
 	if (which == "light") {
 		document.body.className = "";
-		set_style_sheet("browserOutput_white");
+		// set_style_sheet("browserOutput_white");
 	} else if (which == "dark") {
 		document.body.className = "dark";
-		set_style_sheet("browserOutput");
+		// set_style_sheet("browserOutput");
 	}
 }
 
-function set_style_sheet(sheet) {
-	if (document.getElementById("goonStyle")) {
-		var currentSheet = document.getElementById("goonStyle");
-		currentSheet.parentElement.removeChild(currentSheet);
-	}
-	var head = document.getElementsByTagName('head')[0];
-	var sheetElement = document.createElement("link");
-	sheetElement.id = "goonStyle";
-	sheetElement.rel = "stylesheet";
-	sheetElement.type = "text/css";
-	sheetElement.href = sheet + ".css";
-	sheetElement.media = 'all';
-	head.appendChild(sheetElement);
-}
+// function set_style_sheet(sheet) {
+// 	if (document.getElementById("goonStyle")) {
+// 		var currentSheet = document.getElementById("goonStyle");
+// 		currentSheet.parentElement.removeChild(currentSheet);
+// 	}
+// 	var head = document.getElementsByTagName('head')[0];
+// 	var sheetElement = document.createElement("link");
+// 	sheetElement.id = "goonStyle";
+// 	sheetElement.rel = "stylesheet";
+// 	sheetElement.type = "text/css";
+// 	sheetElement.href = sheet + ".css";
+// 	sheetElement.media = 'all';
+// 	head.appendChild(sheetElement);
+// }
 
 function restoreFocus() {
 	run_after_focus(function () {
@@ -802,6 +844,7 @@ document.addEventListener("keyup", restoreFocus);
 
 if (!current_tab) {
 	addPermanentTab("Status");
+	addPermanentTab("Perks");
 	tab_change("Status");
 }
 
@@ -892,6 +935,21 @@ Byond.subscribeTo('update_mc', function (payload) {
 
 	if (current_tab == "MC") {
 		draw_mc();
+	}
+});
+
+Byond.subscribeTo('update_perks', function (payload) {
+	perks_tab_parts = payload.perk_data;
+	perks_tab_time = payload.world_time;
+
+	if (!verb_tabs.includes("Perks")) {
+		verb_tabs.push("Perks");
+	}
+
+	createStatusTab("Perks");
+
+	if (current_tab == "Perks") {
+		draw_perks();
 	}
 });
 
