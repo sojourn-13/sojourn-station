@@ -11,7 +11,7 @@
 	circuit = /obj/item/circuitboard/slab_consol
 	dir = NORTH
 	var/all_cleared = FALSE
-	var/point_reward = 1000
+	var/point_reward = 300
 	var/first_time = TRUE //So we dont give a free 1k on first spawn
 
 /obj/item/circuitboard/slab_consol
