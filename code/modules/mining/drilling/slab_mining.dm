@@ -109,7 +109,7 @@
 	if(all_cleared)
 		all_cleared = FALSE
 		stored_points += point_reward
-	if(!first_time) //"Why not just map it filled in?" then you dont get the dymantic rng + furture proofing, you goof! You fool, you baffoon, you silly person you for asking that!
+	if(first_time) //"Why not just map it filled in?" then you dont get the dymantic rng + furture proofing, you goof! You fool, you baffoon, you silly person you for asking that!
 		first_time = FALSE
 		stored_points = 0
 
