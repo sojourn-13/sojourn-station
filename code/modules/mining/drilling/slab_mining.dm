@@ -12,6 +12,7 @@
 	dir = NORTH
 	var/all_cleared = FALSE
 	var/point_reward = 1000
+	var/first_time = TRUE //So we dont give a free 1k on first spawn
 
 /obj/item/circuitboard/slab_consol
 	build_name = "SMC M.E.M A"
@@ -108,9 +109,19 @@
 	if(all_cleared)
 		all_cleared = FALSE
 		stored_points += point_reward
+	if(!first_time) //"Why not just map it filled in?" then you dont get the dymantic rng + furture proofing, you goof! You fool, you baffoon, you silly person you for asking that!
+		first_time = FALSE
+		stored_points = 0
 
+	//Quite bad at statistics so grain of salt ya? - Trilby
+	//20 out of 300 so 6% chance of nothing (refills soil digging)
+	//140 out of 300 so 46ish% chance of normal rockwalls basically useless
+	//139 out of 300 so 45ish% to be mineral wall could be any materal - as of commiting the weights are 100% to spawn with
+	//list(ORE_URANIUM = 5, ORE_PLATINUM = 5, ORE_IRON = 35, ORE_CARBON = 35, ORE_DIAMOND = 1, ORE_GOLD = 5, ORE_SILVER = 5, ORE_PLASMA = 10, ORE_HYDROGEN = 1)
+
+	//And then a 1 out of 300 or about 0.3% chance of a rocky friend :3c
 	for(var/turf/simulated/floor/asteroid/MS in work_area.contents)
-		switch (pickweight(list("nothing" = 10,"rockwall" = 120, "mineral_wall" = 69, "ameridian_crystal" = 1)))
+		switch (pickweight(list("nothing" = 20,"rockwall" = 140, "mineral_wall" = 139, "ameridian_crystal" = 1)))
 			if("nothing")
 				if(MS.dug)
 					MS.dug = FALSE
