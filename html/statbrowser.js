@@ -475,7 +475,7 @@ function draw_listedturf() {
 			// rather than every onmousedown getting the "part" of the last entry.
 			return function (e) {
 				e.preventDefault();
-				var clickcatcher = "?src=" + part[1];
+				var clickcatcher = "?_src_=listedturf_click;item_ref=" + part[1];
 				switch (e.button) {
 					case 1:
 						clickcatcher += ";statpanel_item_click=middle";
