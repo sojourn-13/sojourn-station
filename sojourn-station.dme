@@ -2162,6 +2162,7 @@
 #include "code\modules\mining\drilling\drill.dm"
 #include "code\modules\mining\drilling\ore_sonar.dm"
 #include "code\modules\mining\drilling\scanner.dm"
+#include "code\modules\mining\drilling\slab_mining.dm"
 #include "code\modules\mining\drilling\termite_burrow.dm"
 #include "code\modules\mining\drilling\termite_controller.dm"
 #include "code\modules\mining\drilling\termite_wave.dm"
