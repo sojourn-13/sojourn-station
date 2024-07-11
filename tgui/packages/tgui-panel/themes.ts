@@ -6,6 +6,8 @@
 
 export const THEMES = ['light', 'dark'];
 
+// warning: if you change this, also update /mob/verb/hotkey_toggle's detection
+// also /mob/living/silicon/robot/hotkey_toggle
 const COLOR_DARK_BG = '#202020';
 const COLOR_DARK_BG_DARKER = '#171717';
 const COLOR_DARK_TEXT = '#a4bad6';
@@ -67,6 +69,8 @@ export const setClientTheme = (name) => {
       'saybutton.text-color': '#000000',
       'oocbutton.background-color': 'none',
       'oocbutton.text-color': '#000000',
+      'hotkey_toggle.background-color': 'none',
+      'hotkey_toggle.text-color': '#000000',
       'mebutton.background-color': 'none',
       'mebutton.text-color': '#000000',
       'input.background-color': '#FFFFFF',
@@ -114,6 +118,8 @@ export const setClientTheme = (name) => {
       'saybutton.text-color': COLOR_DARK_TEXT,
       'oocbutton.background-color': COLOR_DARK_BG,
       'oocbutton.text-color': COLOR_DARK_TEXT,
+      'hotkey_toggle.background-color': COLOR_DARK_BG,
+      'hotkey_toggle.text-color': COLOR_DARK_TEXT,
       'mebutton.background-color': COLOR_DARK_BG,
       'mebutton.text-color': COLOR_DARK_TEXT,
       'input.background-color': COLOR_DARK_BG_DARKER,
