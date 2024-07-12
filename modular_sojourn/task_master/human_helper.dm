@@ -4,7 +4,7 @@
 /datum/task_master/labourer
 	var/mob/living/holder //Who is holding the knowings of the task. Null, if contained within a device.
 
-	var/list/learnt_tasks = list() //Each task learnt held by the creature.
+	var/list/learnt_tasks = null //Each task learnt held by the creature.
 
 
 //Build a holder from scratch
@@ -21,25 +21,28 @@
 //Function must return a task datum from the task pool on a success, and a null value that evaluates to FALSE on a fail.
 /datum/task_master/labourer/proc/get_task_mastery(key)
 	RETURN_TYPE(/datum/task_master/task)
-	for(var/datum/task_master/task/source_task in learnt_tasks)
-		if(source_task.key == key)
-			return source_task
+	if(LAZYLEN(learnt_tasks))
+		for(var/datum/task_master/task/source_task in learnt_tasks)
+			if(source_task.key == key)
+				return source_task
 	return null
 
 //Gets the level as a number
 /datum/task_master/labourer/proc/get_task_mastery_level(key)
 	RETURN_TYPE(/datum/task_master/task)
-	for(var/datum/task_master/task/source_task in learnt_tasks)
-		if(source_task.key == key)
-			return source_task.level
+	if(LAZYLEN(learnt_tasks))
+		for(var/datum/task_master/task/source_task in learnt_tasks)
+			if(source_task.key == key)
+				return source_task.level
 	return FALSE
 
 
 /datum/task_master/labourer/proc/get_task_mastery_and_proc(key)
 	RETURN_TYPE(/datum/task_master/task)
-	for(var/datum/task_master/task/source_task in learnt_tasks)
-		if(source_task.key == key)
-			source_task.activate_affect(holder)
+	if(LAZYLEN(learnt_tasks))
+		for(var/datum/task_master/task/source_task in learnt_tasks)
+			if(source_task.key == key)
+				source_task.activate_affect(holder)
 
 //Generate a new task and force it in if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates.
@@ -62,3 +65,4 @@
 
 	incoming_master.worker = src
 	learnt_tasks += incoming_master
+	LAZYADD(learnt_tasks, incoming_master)
