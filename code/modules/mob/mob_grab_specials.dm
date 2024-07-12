@@ -291,7 +291,7 @@
 	for (var/turf/T in range(1, attacker.loc))
 		if(istype(T, /turf/simulated/wall))
 			free_space = FALSE
-		if(!T.CanPass(attacker, T))
+		if(!T.Enter(attacker))
 			free_space = FALSE
 	if(!free_space)
 		to_chat(attacker, SPAN_WARNING("There is not enough space around you to do this."))
@@ -318,7 +318,7 @@
 		sleep(1)
 
 	target.throw_at(get_edge_target_turf(target, dir), 7, 2)//this is very fast, and very painful for any obstacle involved
-	target.damage_through_armor(damage, HALLOSS, attack_flag = ARMOR_MELEE)
+	target.damage_through_armor(damage, HALLOSS, armor_divisor = 2)
 //	attacker.regen_slickness(0.4)
 
 	//admin messaging

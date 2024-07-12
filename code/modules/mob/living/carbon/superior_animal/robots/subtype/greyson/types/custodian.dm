@@ -5,8 +5,8 @@
 	icon_state = "drone_os"
 	attacktext = "zapped"
 
-	health = 40
-	maxHealth = 40
+	health = 40 * GREYSONWEAK_HEALTH_MOD
+	maxHealth = 40 * GREYSONWEAK_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 13
 	ranged_cooldown = 5

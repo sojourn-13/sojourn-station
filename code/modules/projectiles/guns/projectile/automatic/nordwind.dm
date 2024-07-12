@@ -142,7 +142,7 @@
 	zoom_factors = list(0.8)
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.1)
 	see_invisible_gun = -1
 	auto_eject = FALSE
@@ -150,5 +150,4 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "NM"
-
 	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)

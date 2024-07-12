@@ -246,8 +246,8 @@
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
-	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING, QUALITY_SHOVELING, QUALITY_DIGGING)
-	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_PRYING)
+	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING, QUALITY_HAMMERING)
 	I.prefix = "diamond-edged"
 
 /obj/item/tool_upgrade/productivity/oxyjet
@@ -726,7 +726,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_FORCE_MULT = 1.25,
 	UPGRADE_PRECISION = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5
@@ -783,7 +783,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_FORCE_MULT = 1.3,
 	UPGRADE_PRECISION = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5

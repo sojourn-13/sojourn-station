@@ -57,5 +57,5 @@
 
 /datum/matter_synth/wire
 	name = "Wire Synthesizer"
-	max_energy = 50
+	max_energy = 12
 	recharge_rate = 2

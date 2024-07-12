@@ -428,7 +428,7 @@
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/armorer/service
@@ -542,4 +542,4 @@
 /obj/item/clothing/under/rank/fatigues/camo/solfed
 	name = "camo utility uniform"
 	desc = "A camo utility uniform, bearing worn patches of the Solar armed forces.."
-	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 0)

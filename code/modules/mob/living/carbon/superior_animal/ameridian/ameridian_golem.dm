@@ -15,15 +15,15 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	status_flags = CANPUSH // Cannot be stun, weakened or paralyzed
 
-	armor = list(melee = 30, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 7, bullet = 4, energy = 8, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 	do_gibs = FALSE
 
 	attack_sound = 'sound/weapons/heavysmash.ogg' //So we dont make bite sounds
 
 	deathmessage = "shatters in a pile of rubbles."
-	health = 60
-	maxHealth = 60
+	health = 60 * AMGOLEM_HEALTH_MOD
+	maxHealth = 60 * AMGOLEM_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	leather_amount = 0

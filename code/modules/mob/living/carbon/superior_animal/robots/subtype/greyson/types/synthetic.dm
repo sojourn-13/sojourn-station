@@ -6,8 +6,8 @@
 	attacktext = "punched"
 	turns_per_move = 7
 	move_to_delay = 2
-	health = 100
-	maxHealth = 100
+	health = 100 * GREYSONROBUST_HEALTH_MOD
+	maxHealth = 100 * GREYSONROBUST_HEALTH_MOD
 	cleaning = FALSE
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol
@@ -49,9 +49,9 @@
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked super cog laser rifle built in its arm."
 	icon_state = "nanotrasen_ert"
 	projectiletype = /obj/item/projectile/beam
-	health = 150
-	maxHealth = 150
-	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	health = 150 * GREYSONROBUST_HEALTH_MOD
+	maxHealth = 150 * GREYSONROBUST_HEALTH_MOD
+	armor = list(melee = 8, bullet = 6, energy = 10, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 /// base type, dont use
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper

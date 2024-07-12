@@ -580,17 +580,8 @@ macro "hotkeymode"
 		name = "CTRL+E"
 		command = "quick-equip"
 	elem
-		name = "F"
-		command = "a-intent left"
-	elem
-		name = "CTRL+F"
-		command = "a-intent left"
-	elem
-		name = "G"
-		command = "a-intent right"
-	elem
-		name = "CTRL+G"
-		command = "a-intent right"
+		name = "V"
+		command = "blocking"
 	elem
 		name = "H"
 		command = "holster"

@@ -21,12 +21,13 @@
 	req_access = null
 	w_class = ITEM_SIZE_BULKY
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
+	price_tag = 600
 
 	// These values are passed on to all component pieces.
 	armor = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
+		melee = 7,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 50
@@ -39,6 +40,9 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	obscuration = LIGHT_OBSCURATION
+	var/ablative_armor = 0
+	var/ablative_max = 0
+	var/ablation = ABLATION_STANDARD
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 	blacklist_upgrades = list(
@@ -154,6 +158,20 @@
 		to_chat(usr, "The maintenance panel is [open ? "open" : "closed"].")
 		to_chat(usr, "Hardsuit systems are [offline ? "<font color='red'>offline</font>" : "<font color='green'>online</font>"].")
 
+	if(ablative_max) // If ablative armor is replaced with a module system, this should be called as a proc on the module
+		var/ablative_ratio = ablative_armor / ablative_max
+		switch(ablative_ratio)
+			if(1) // First we get this over with
+				to_chat(usr, "The armor system reports pristine condition.")
+			if(-INFINITY to 0.1)
+				to_chat(usr, "The armor system reports system error. Repairs mandatory.")
+			if(0.1 to 0.5)
+				to_chat(usr, "The armor system reports critical failure! Repairs mandatory.")
+			if(0.5 to 0.8)
+				to_chat(usr, "The armor system reports heavy damage. Repairs required.")
+			if(0.8 to 1)
+				to_chat(usr, "The armor system reports insignificant damage. Repairs advised.")
+
 /obj/item/rig/Initialize()
 	. = ..()
 
@@ -219,6 +237,7 @@
 		piece.unacidable = unacidable
 		if(armor) piece.armor = armor
 
+	ablative_armor = ablative_max
 	update_icon(1)
 
 /obj/item/rig/proc/updateArmor()
@@ -744,6 +763,30 @@
 		spark_system.start()
 		if(user.stunned)
 			return TRUE
+	return FALSE
+
+/obj/item/rig/block_bullet(mob/user, var/obj/item/projectile/P, def_zone)
+	if(!active || !ablative_armor)
+		return FALSE
+
+	var/ablative_stack = ablative_armor // Follow-up attacks drain this
+
+	for(var/damage_type in P.damage_types)
+		if(damage_type in list(BRUTE, BURN)) // Ablative armor affects both brute and burn damage
+			var/damage = P.damage_types[damage_type]
+			P.damage_types[damage_type] -= ablative_stack / armor_divisor
+
+			ablative_stack = max(ablative_stack - damage, 0)
+		else if(damage_type == HALLOSS)
+			P.damage_types[damage_type] -= ablative_stack / armor_divisor
+
+		if(P.damage_types[damage_type] <= 0)
+			P.damage_types -= damage_type
+
+	ablative_armor -= max(-(ablative_stack - ablative_armor) / ablation - armor.getRating(P.check_armour), 0) // Damage blocked (not halloss) reduces ablative armor, base armor protects ablative armor
+
+	if(!P.damage_types.len)
+		return TRUE
 	return FALSE
 
 /obj/item/rig/proc/take_hit(damage, source, is_emp=0)

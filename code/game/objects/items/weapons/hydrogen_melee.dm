@@ -11,6 +11,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
 	throw_range = 5
+	no_double_tact = TRUE //for now.
 	w_class = ITEM_SIZE_SMALL
 	switched_on_qualities = list(QUALITY_WELDING = 5, QUALITY_CAUTERIZING = 25, QUALITY_CUTTING = 50)
 	worksound = WORKSOUND_WELDING
@@ -47,7 +48,7 @@
 	active = TRUE
 	force = active_force
 	throwforce = active_throwforce
-	armor_penetration = active_ap
+	armor_divisor = active_ap
 	sharp = TRUE
 	edge = TRUE
 	w_class = active_w_class
@@ -62,7 +63,7 @@
 	active = FALSE
 	force = initial(force)
 	throwforce = initial(throwforce)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	sharp = initial(sharp)
 	edge = initial(edge)
 	w_class = initial(w_class)

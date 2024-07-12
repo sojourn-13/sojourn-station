@@ -10,7 +10,7 @@
 	maxHealth = 75
 	health = 75
 
-	armor = list(melee = 30, bullet = 30, energy = 20, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 //range/ammo stuff
 	ranged = TRUE
@@ -67,7 +67,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 40, bullet = 40, energy = 25, bomb = 35, bio = 100, rad = 100)
+	armor = list(melee = 10, bullet = 10, energy = 6, bomb = 35, bio = 100, rad = 100)
 
 	ranged = FALSE
 
@@ -89,7 +89,7 @@
 	maxHealth = 125
 	health = 125
 
-	armor = list(melee = 45, bullet = 45, energy = 30, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 11, bullet = 11, energy = 7, bomb = 40, bio = 100, rad = 100)
 
 	casingtype = /obj/item/ammo_casing/shotgun/spent
 

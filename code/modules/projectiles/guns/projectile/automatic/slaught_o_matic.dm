@@ -26,7 +26,7 @@
 	var/choosen_color = ""
 
 	damage_multiplier = 0.8
-	penetration_multiplier = 0.2
+	penetration_multiplier = 0.8
 	init_recoil = HANDGUN_RECOIL(1.6)
 	gun_parts = list(/obj/item/stack/material/plastic = 4)
 

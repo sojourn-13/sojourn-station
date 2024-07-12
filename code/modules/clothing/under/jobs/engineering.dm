@@ -96,10 +96,10 @@
 	icon_state = "engineadv"
 	item_state = "engineadv"
 	armor_list = list(
-		melee = 20, //if they are not waring any armor over this then we give *something*
-		bullet = 20,
-		energy = 25,
-		bomb = 40,
+		melee = 5, //if they are not waring any armor over this then we give *something*
+		bullet = 5,
+		energy = 6,
+		bomb = 10,
 		bio = 50,
 		rad = 100 //Rad proof
 	)
@@ -110,9 +110,9 @@
 	icon_state = "chiefengineeradv"
 	item_state = "chiefengineeradv"
 	armor_list = list(
-		melee = 30, //if they are not waring any armor over this then we give *something*
-		bullet = 30,
-		energy = 45,
+		melee = 7, //if they are not waring any armor over this then we give *something*
+		bullet = 7,
+		energy = 11,
 		bomb = 80,
 		bio = 70,
 		rad = 100 //Rad proof

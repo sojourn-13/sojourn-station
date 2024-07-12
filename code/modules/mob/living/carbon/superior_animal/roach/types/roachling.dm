@@ -4,15 +4,15 @@
 	icon_state = "roachling"
 
 	turns_per_move = 3
-	maxHealth = 10
-	health = 10
+	maxHealth = 10 * ROACH_HEALTH_MOD
+	health = 10 * ROACH_HEALTH_MOD
 	move_to_delay = 3.5
 
 	knockdown_odds = 3
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 5, rad = 0, agony = 0)
+	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 5, rad = 0, agony = 0)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1

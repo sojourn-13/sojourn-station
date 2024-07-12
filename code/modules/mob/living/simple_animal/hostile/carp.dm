@@ -11,10 +11,10 @@
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
 	speed = 4
-	maxHealth = 25
+	maxHealth = 25 * CARP_HEALTH_MOD
 	health = 25
 
-	armor = list(melee = 5, bullet = 10, energy = 50, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+	armor = list(melee = 1, bullet = 2, energy = 12, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
 
 	harm_intent_damage = 8
@@ -35,8 +35,8 @@
 	desc = "A ferocious, fang-bearing creature that resembles a fish. This one is quite young."
 	icon_state = "babycarp"
 	icon_gib = "carp_gib"
-	maxHealth = 10
-	health = 10
+	maxHealth = 10 * CARP_HEALTH_MOD
+	health = 10 * CARP_HEALTH_MOD
 
 	harm_intent_damage = 8
 	melee_damage_lower = 4
@@ -54,8 +54,8 @@
 
 	//pixel_x = -16
 
-	health = 75
-	maxHealth = 75
+	health = 75 * CARP_HEALTH_MOD
+	maxHealth = 75 * CARP_HEALTH_MOD
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	harm_intent_damage = 5
@@ -74,8 +74,8 @@
 	move_to_delay = 3
 	mob_size = MOB_LARGE
 
-	health = 200
-	maxHealth = 200
+	health = 150 * CARP_HEALTH_MOD
+	maxHealth = 150 * CARP_HEALTH_MOD
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/carp_fang)
 	melee_damage_lower = 25
@@ -90,8 +90,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "megacarp"
 	icon_dead = "megacarp_dead"
-	maxHealth = 345 //WHITE WHALE
-	health = 345
+	maxHealth = 245  * CARP_HEALTH_MOD//WHITE WHALE
+	health = 245 * CARP_HEALTH_MOD  //HOLY GRAIL
 	//attack_same = 1 We no longer attack are yonger less rare of breeds
 	speed = 1
 	meat_amount = 10
@@ -108,7 +108,7 @@
 						 /obj/item/animal_part/carp_fang,
 						 /obj/item/animal_part/carp_fang) //HOLY GRAIL
 
-	armor = list(melee = 25, bullet = 10, energy = 65, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+	armor = list(melee = 6, bullet = 2, energy = 16, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
 
 /mob/living/simple_animal/hostile/carp/allow_spacemove()

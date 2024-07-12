@@ -66,6 +66,7 @@ var/const/tk_maxrange = 7 //Do not increase further - stops abusing of TK mechan
 	icon = 'icons/obj/magic.dmi'//Needs sprites
 	icon_state = "2"
 	flags = NOBLUDGEON
+	no_double_tact = TRUE
 	//item_state = null
 	w_class = ITEM_SIZE_COLOSSAL
 	layer = ABOVE_HUD_LAYER

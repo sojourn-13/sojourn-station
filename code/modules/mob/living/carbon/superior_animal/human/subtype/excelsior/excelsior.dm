@@ -6,17 +6,17 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * EXCELSIOR_HEALTH_MOD
+	health = 100 * EXCELSIOR_HEALTH_MOD
 
-	armor = list(melee = 55, bullet = 55, energy = 70, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
+	armor = list(melee = 13, bullet = 13, energy = 17, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
 	//range/ammo stuff
 	ranged = 1
 	rapid = 1
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -65,7 +65,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
@@ -74,7 +74,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
@@ -84,7 +84,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/vintorez)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
@@ -93,7 +93,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/magnum_40/hv
+	projectiletype = /obj/item/projectile/bullet/magnum_40
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
@@ -110,12 +110,12 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield
 	icon_state = "excel_hammer_shield"
-	maxHealth = 150 //More hp do to shield
-	health = 150
+	maxHealth = 150 * EXCELSIOR_HEALTH_MOD //More hp do to shield
+	health = 150 * EXCELSIOR_HEALTH_MOD
 
 	melee_damage_lower = 33
 	melee_damage_upper = 40
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 
 	ranged = 0
 	rapid = 0
