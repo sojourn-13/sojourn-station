@@ -1,5 +1,4 @@
 import { isEscape } from 'common/keys';
-import { BooleanLike } from 'common/react';
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Button, Input, Section, Stack } from 'tgui/components';
@@ -11,12 +10,11 @@ import { SearchItem } from './types';
 
 type Data = {
   contents: SearchItem[];
-  searching: BooleanLike;
 };
 
 export function LootPanel(props) {
   const { act, data } = useBackend<Data>();
-  const { contents = [], searching } = data;
+  const { contents = [] } = data;
 
   const [grouping, setGrouping] = useState(true);
   const [searchText, setSearchText] = useState('');
@@ -55,7 +53,6 @@ export function LootPanel(props) {
               </Stack.Item>
               <Stack.Item>
                 <Button
-                  disabled={!!searching}
                   icon="sync"
                   onClick={() => act('refresh')}
                   tooltip="Refresh"

@@ -95,8 +95,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			hsrc = mob
 		if("statpanel")
 			hsrc = locate(href_list["statpanel_ref"])
-		if("listedturf_click")
-			return handle_listedturf_click(href, href_list)
 		if("prefs")
 			return prefs.process_link(usr,href_list)
 		if("vars")
@@ -857,33 +855,3 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	generate_clickcatcher()
 	var/list/actualview = getviewsize(view)
 	void.UpdateGreed(actualview[1],actualview[2])
-
-/// Passes Stat Browser Panel clicks to the game and calls client click on an atom
-/// We do this different than /tg/ because we have lots of shitty Topic overrides on atoms that are impossible to work
-/// around.
-/client/proc/handle_listedturf_click(href, href_list)
-	var/list/paramslist = list()
-
-	if(href_list["statpanel_item_click"])
-		switch(href_list["statpanel_item_click"])
-			if("left")
-				paramslist[LEFT_CLICK] = "1"
-			if("right")
-				paramslist[RIGHT_CLICK] = "1"
-			if("middle")
-				paramslist[MIDDLE_CLICK] = "1"
-			else
-				return
-
-		if(href_list["statpanel_item_shiftclick"])
-			paramslist[SHIFT_CLICK] = "1"
-		if(href_list["statpanel_item_ctrlclick"])
-			paramslist[CTRL_CLICK] = "1"
-		if(href_list["statpanel_item_altclick"])
-			paramslist[ALT_CLICK] = "1"
-
-		var/mouseparams = list2params(paramslist)
-		var/atom/A = locate(href_list["item_ref"])
-		if(istype(A) && !QDELETED(A))
-			Click(A, A.loc, null, mouseparams)
-		return TRUE

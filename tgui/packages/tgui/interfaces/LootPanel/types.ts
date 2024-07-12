@@ -4,7 +4,6 @@ export type SearchItem = {
   ref: string;
 } & Partial<{
   icon: string;
-  icon_state: string;
 }>;
 
 export type SearchGroup = {
