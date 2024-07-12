@@ -51,7 +51,7 @@
 		switch(action)
 			if("Yes!")
 				if(run_checks(user))
-					process_new_slab()
+					process_new_slab(user)
 				return
 			if("Checking!")
 				run_checks(user)
@@ -104,11 +104,15 @@
 
 	return passes_checked
 
-/obj/machinery/mining/slab_consol/proc/process_new_slab()
+/obj/machinery/mining/slab_consol/proc/process_new_slab(mob/user)
 	var/area/work_area = get_area(get_step(src, dir)) //Yes do this again
 	if(all_cleared)
 		all_cleared = FALSE
 		stored_points += point_reward
+		if(isliving(user))
+			var/mob/living/clearer = user
+			clearer.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/slab_clearer, "SLAB_CLEARER", skill_gained = 1, learner = clearer)
+
 	if(first_time) //"Why not just map it filled in?" then you dont get the dymantic rng + furture proofing, you goof! You fool, you baffoon, you silly person you for asking that!
 		first_time = FALSE
 		stored_points = 0

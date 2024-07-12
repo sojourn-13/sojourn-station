@@ -12,3 +12,4 @@
 #define POORS /datum/task_master/task/poors
 #define PARCORE /datum/task_master/task/parcore
 #define SLIP_N_DIE /datum/task_master/task/slip_n_die
+#define SLAB_CLEARER /datum/task_master/task/slab_clearer

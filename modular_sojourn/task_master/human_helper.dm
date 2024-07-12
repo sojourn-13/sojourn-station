@@ -2,7 +2,7 @@
 //Code is HEAVILLY reused and stolen from Hex's Genetics with miner tweaks
 
 /datum/task_master/labourer
-	var/mob/living/carbon/human/holder //Who is holding the knowings of the task. Null, if contained within a device.
+	var/mob/living/holder //Who is holding the knowings of the task. Null, if contained within a device.
 
 	var/list/learnt_tasks = list() //Each task learnt held by the creature.
 

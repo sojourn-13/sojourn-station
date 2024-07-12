@@ -489,8 +489,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 	if(smoking_allowed && !smoking_no)
 		changeLevel(1) //1+ for smoking in the correct area
-		if(ishuman(owner))
-			var/mob/living/carbon/human/H = owner
+		if(isliving(owner))
+			var/mob/living/H = owner
 			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_area_smoker, "PROPER_AREA_SMOKER", skill_gained = 0.1, learner = H)
 
 	changeLevel(smoking_change)

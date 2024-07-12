@@ -147,7 +147,7 @@
 	gain_text = "Oops."
 	level_threshholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
 
-/datum/task_master/task/proper_sealer/activate_affect()
+/datum/task_master/task/tool_breaker/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
 
 /datum/task_master/task/proper_area_smoker
@@ -191,4 +191,13 @@
 	gain_text = "Ouch, my toe"
 	level_threshholds = 1 //You fall down a lot
 	alt_scaling_number = 2 //But it does hurt
+	unlocked = TRUE
+
+//Digging and Mining gets +1 ore per level
+/datum/task_master/task/slab_clearer
+	name = "Mining Skill"
+	key = "SLAB_CLEARER"
+	desc = "Do to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
+	gain_text = "A fully cleared slab allows insight into maxizing mineral gains."
+	level_threshholds = 1 // 1->20->30
 	unlocked = TRUE
