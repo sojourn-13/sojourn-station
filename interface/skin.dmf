@@ -1,911 +1,911 @@
 macro "macro"
-	elem
+	elem "tab"
 		name = "Tab"
 		command = ".winset \"mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true\""
-	elem
+	elem "center"
 		name = "Center+REP"
 		command = ".center"
-	elem
+	elem "northeast"
 		name = "Northeast"
 		command = ".northeast"
-	elem
+	elem "southeast"
 		name = "Southeast"
 		command = ".southeast"
-	elem
+	elem "southwest"
 		name = "Southwest"
 		command = ".southwest"
-	elem
+	elem "northwest"
 		name = "Northwest"
 		command = ".northwest"
-	elem
+	elem "west"
 		name = "West"
 		command = "MoveKey 8 1"
-	elem
+	elem "altwest"
 		name = "ALT+West"
 		command = "westfaceperm"
-	elem
+	elem "ctrlwest"
 		name = "CTRL+West"
 		command = "westface"
-	elem
+	elem "ctrlshiftwest"
 		name = "CTRL+SHIFT+West"
 		command = "westshift"
-	elem
+	elem "westup"
 		name = "West+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "north"
 		name = "North"
 		command = "MoveKey 1 1"
-	elem
+	elem "altnorth"
 		name = "ALT+North"
 		command = "northfaceperm"
-	elem
+	elem "ctrlnorth"
 		name = "CTRL+North"
 		command = "northface"
 	elem "northshift"
 		name = "CTRL+SHIFT+North"
 		command = "northshift"
-	elem
+	elem "northup"
 		name = "North+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "east"
 		name = "East"
 		command = "MoveKey 4 1"
-	elem
+	elem "alteast"
 		name = "ALT+East"
 		command = "eastfaceperm"
-	elem
+	elem "ctrleast"
 		name = "CTRL+East"
 		command = "eastface"
 	elem "eastshift"
 		name = "CTRL+SHIFT+East"
 		command = "eastshift"
-	elem
+	elem "eastup"
 		name = "East+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "south"
 		name = "South"
 		command = "MoveKey 2 1"
-	elem
+	elem "altsouth"
 		name = "ALT+South"
 		command = "southfaceperm"
-	elem
+	elem "ctrlsouth"
 		name = "CTRL+South"
 		command = "southface"
 	elem "southshift"
 		name = "CTRL+SHIFT+South"
 		command = "southshift"
-	elem
+	elem "southup"
 		name = "South+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "insert"
 		name = "Insert"
 		command = "a-intent right"
-	elem
+	elem "delete"
 		name = "Delete"
 		command = "delete-key-pressed"
-	elem
+	elem "ctrl1"
 		name = "CTRL+1"
 		command = "a-intent help"
-	elem
+	elem "ctrl2"
 		name = "CTRL+2"
 		command = "a-intent disarm"
-	elem
+	elem "ctrl3"
 		name = "CTRL+3"
 		command = "a-intent grab"
-	elem
+	elem "ctrl4"
 		name = "CTRL+4"
 		command = "a-intent harm"
-	elem
+	elem "ctrla"
 		name = "CTRL+A"
 		command = "MoveKey 8 1"
-	elem
+	elem "ctrlaup"
 		name = "CTRL+A+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "ctrld"
 		name = "CTRL+D"
 		command = "MoveKey 4 1"
-	elem
+	elem "ctrldup"
 		name = "CTRL+D+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "ctrle"
 		name = "CTRL+E"
 		command = "quick-equip"
-	elem
+	elem "ctrlf"
 		name = "CTRL+F"
 		command = "a-intent left"
-	elem
+	elem "ctrlg"
 		name = "CTRL+G"
 		command = "a-intent right"
-	elem
+	elem "ctrlshiftg"
 		name = "CTRL+SHIFT+G"
 		command = ".configure graphics-hwmode on"
-	elem
+	elem "ctrlq"
 		name = "CTRL+Q"
 		command = ".northwest"
-	elem
+	elem "ctrlr"
 		name = "CTRL+R"
 		command = ".southwest"
-	elem
+	elem "ctrls"
 		name = "CTRL+S"
 		command = "MoveKey 2 1"
-	elem
+	elem "ctrlsup"
 		name = "CTRL+S+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "ctrlw"
 		name = "CTRL+W"
 		command = "MoveKey 1 1"
-	elem
+	elem "ctrlwup"
 		name = "CTRL+W+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "ctrlx"
 		name = "CTRL+X"
 		command = ".northeast"
-	elem
+	elem "ctrly"
 		name = "CTRL+Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlz"
 		name = "CTRL+Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlnumpad1"
 		name = "CTRL+Numpad1"
 		command = "body-r-leg"
-	elem
+	elem "ctrlnumpad2"
 		name = "CTRL+Numpad2"
 		command = "body-groin"
-	elem
+	elem "ctrlnumpad3"
 		name = "CTRL+Numpad3"
 		command = "body-l-leg"
-	elem
+	elem "ctrlnumpad4"
 		name = "CTRL+Numpad4"
 		command = "body-r-arm"
-	elem
+	elem "ctrlnumpad5"
 		name = "CTRL+Numpad5"
 		command = "body-chest"
-	elem
+	elem "ctrlnumpad6"
 		name = "CTRL+Numpad6"
 		command = "body-l-arm"
-	elem
+	elem "ctrlnumpad8"
 		name = "CTRL+Numpad8"
 		command = "body-toggle-head"
-	elem
+	elem "f1"
 		name = "F1"
 		command = "adminhelp"
-	elem
+	elem "ctrlshiftf1rep"
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
-	elem
+	elem "f2"
 		name = "F2"
 		command = "ooc-verb"
-	elem
+	elem "f2rep"
 		name = "F2+REP"
 		command = ".screenshot auto"
-	elem
+	elem "shiftf2rep"
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
-	elem
+	elem "f3"
 		name = "F3"
 		command = "say-verb"
-	elem
+	elem "f4"
 		name = "F4"
 		command = "me-verb"
-	elem
+	elem "f5"
 		name = "F5"
 		command = "asay"
-	elem
+	elem "f6"
 		name = "F6"
 		command = "Player-Panel"
-	elem
+	elem "f7"
 		name = "F7"
 		command = "Admin-PM"
-	elem
+	elem "f8"
 		name = "F8"
 		command = "Invisimin"
-	elem
+	elem "f11"
 		name = "F11"
 		command = "Toggle-Fullscreen"
-	elem
+	elem "f12"
 		name = "F12"
 		command = "F12"
 
 macro "hotkeymode"
-	elem
+	elem "tab"
 		name = "Tab"
 		command = ".winset \"mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true\""
-	elem
+	elem "centerrep"
 		name = "Center+REP"
 		command = ".center"
-	elem
+	elem "northeast"
 		name = "Northeast"
 		command = "Move-Upwards"
-	elem
+	elem "southeast"
 		name = "Southeast"
 		command = "Move-Downwards"
-	elem
+	elem "southwest"
 		name = "Southwest"
 		command = ".southwest"
-	elem
+	elem "northwest"
 		name = "Northwest"
 		command = ".northwest"
-	elem
+	elem "west"
 		name = "West"
 		command = "MoveKey 8 1"
-	elem
+	elem "altwest"
 		name = "ALT+West"
 		command = "westfaceperm"
-	elem
+	elem "ctrlwest"
 		name = "CTRL+West"
 		command = "westface"
 	elem "westshift"
 		name = "CTRL+SHIFT+West"
 		command = "westshift"
-	elem
+	elem "westup"
 		name = "West+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "north"
 		name = "North"
 		command = "MoveKey 1 1"
-	elem
+	elem "altnorth"
 		name = "ALT+North"
 		command = "northfaceperm"
-	elem
+	elem "ctrlnorth"
 		name = "CTRL+North"
 		command = "northface"
 	elem "northshift"
 		name = "CTRL+SHIFT+North"
 		command = "northshift"
-	elem
+	elem "northup"
 		name = "North+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "east"
 		name = "East"
 		command = "MoveKey 4 1"
-	elem
+	elem "alteast"
 		name = "ALT+East"
 		command = "eastfaceperm"
-	elem
+	elem "ctrleast"
 		name = "CTRL+East"
 		command = "eastface"
 	elem "eastshift"
 		name = "CTRL+SHIFT+East"
 		command = "eastshift"
-	elem
+	elem "eastup"
 		name = "East+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "south"
 		name = "South"
 		command = "MoveKey 2 1"
-	elem
+	elem "altsouth"
 		name = "ALT+South"
 		command = "southfaceperm"
-	elem
+	elem "ctrlsouth"
 		name = "CTRL+South"
 		command = "southface"
-	elem
+	elem "ctrlshiftsouth"
 		name = "CTRL+SHIFT+South"
 		command = "southshift"
-	elem
+	elem "southup"
 		name = "South+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "insert"
 		name = "Insert"
 		command = "a-intent right"
-	elem
+	elem "delete"
 		name = "Delete"
 		command = "delete-key-pressed"
-	elem
+	elem "one"
 		name = "1"
 		command = "a-intent help"
-	elem
+	elem "ctrl1"
 		name = "CTRL+1"
 		command = "a-intent help"
-	elem
+	elem "two"
 		name = "2"
 		command = "a-intent disarm"
-	elem
+	elem "ctrl2"
 		name = "CTRL+2"
 		command = "a-intent disarm"
-	elem
+	elem "three"
 		name = "3"
 		command = "a-intent grab"
-	elem
+	elem "ctrl3"
 		name = "CTRL+3"
 		command = "a-intent grab"
-	elem
+	elem "four"
 		name = "4"
 		command = "a-intent harm"
-	elem
+	elem "ctrl4"
 		name = "CTRL+4"
 		command = "a-intent harm"
-	elem
+	elem "five"
 		name = "5"
 		command = "me-verb"
-	elem
+	elem "a"
 		name = "A"
 		command = "MoveKey 8 1"
-	elem
+	elem "aup"
 		name = "A+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "d"
 		name = "D"
 		command = "MoveKey 4 1"
-	elem
+	elem "dup"
 		name = "D+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "eup"
 		name = "E"
 		command = "quick-equip"
-	elem
+	elem "ctrle"
 		name = "CTRL+E"
 		command = "quick-equip"
-	elem
+	elem "v"
 		name = "V"
 		command = "blocking"
-	elem
+	elem "h"
 		name = "H"
 		command = "holster"
-	elem
+	elem "ctrlh"
 		name = "CTRL+H"
 		command = "holster"
-	elem
+	elem "j"
 		name = "J"
 		command = "toggle-gun-mode"
-	elem
+	elem "ctrlj"
 		name = "CTRL+J"
 		command = "toggle-gun-mode"
-	elem
+	elem "q"
 		name = "Q"
 		command = ".northwest"
-	elem
+	elem "ctrlq"
 		name = "CTRL+Q"
 		command = ".northwest"
-	elem
+	elem "r"
 		name = "R"
 		command = ".southwest"
-	elem
+	elem "ctrlr"
 		name = "CTRL+R"
 		command = ".southwest"
-	elem
+	elem "s"
 		name = "S"
 		command = "MoveKey 2 1"
-	elem
+	elem "sup"
 		name = "S+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "t"
 		name = "T"
 		command = "say-verb"
-	elem
+	elem "w"
 		name = "W"
 		command = "MoveKey 1 1"
-	elem
+	elem "wup"
 		name = "W+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "x"
 		name = "X"
 		command = ".northeast"
-	elem
+	elem "ctrlx"
 		name = "CTRL+X"
 		command = ".northeast"
-	elem
+	elem "shiftx"
 		name = "SHIFT+X"
 		command = ".wield"
-	elem
+	elem "shiftc"
 		name = "SHIFT+C"
 		command = ".toggle_scope"
-	elem
+	elem "y"
 		name = "Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrly"
 		name = "CTRL+Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "c"
 		name = "C"
 		command = "rest"
-	elem
+	elem "cup"
 		name = "C+UP"
 		command = "stopSliding"
-	elem
+	elem "z"
 		name = "Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlz"
 		name = "CTRL+Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "numpad1"
 		name = "Numpad1"
 		command = "body-r-leg"
-	elem
+	elem "numpad2"
 		name = "Numpad2"
 		command = "body-groin"
-	elem
+	elem "numpad3"
 		name = "Numpad3"
 		command = "body-l-leg"
-	elem
+	elem "numpad4"
 		name = "Numpad4"
 		command = "body-r-arm"
-	elem
+	elem "numpad5"
 		name = "Numpad5"
 		command = "body-chest"
-	elem
+	elem "numpad6"
 		name = "Numpad6"
 		command = "body-l-arm"
-	elem
+	elem "numpad8"
 		name = "Numpad8"
 		command = "body-toggle-head"
-	elem
+	elem "f1"
 		name = "F1"
 		command = "adminhelp"
-	elem
+	elem "ctrlshiftf1rep"
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
-	elem
+	elem "f2"
 		name = "F2"
 		command = "ooc-verb"
-	elem
+	elem "f2rep"
 		name = "F2+REP"
 		command = ".screenshot auto"
-	elem
+	elem "shiftf2rep"
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
-	elem
+	elem "f3"
 		name = "F3"
 		command = "say-verb"
-	elem
+	elem "f4"
 		name = "F4"
 		command = "me-verb"
-	elem
+	elem "f5"
 		name = "F5"
 		command = "asay"
-	elem
+	elem "f6"
 		name = "F6"
 		command = "Player-Panel"
-	elem
+	elem "f7"
 		name = "F7"
 		command = "Admin-PM"
-	elem
+	elem "f8"
 		name = "F8"
 		command = "Invisimin"
-	elem
+	elem "f11"
 		name = "F11"
 		command = "Toggle-Fullscreen"
-	elem
+	elem "f12"
 		name = "F12"
 		command = "F12"
 
 macro "borgmacro"
-	elem
+	elem "west"
 		name = "WEST"
 		command = "MoveKey 8 1"
-	elem
+	elem "westup"
 		name = "WEST+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "ctrla"
 		name = "CTRL+A"
 		command = "MoveKey 8 1"
-	elem
+	elem "ctrlaup"
 		name = "CTRL+A+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "north"
 		name = "NORTH"
 		command = "MoveKey 1 1"
-	elem
+	elem "northup"
 		name = "NORTH+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "ctrlw"
 		name = "CTRL+W"
 		command = "MoveKey 1 1"
-	elem
+	elem "ctrlwup"
 		name = "CTRL+W+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "east"
 		name = "EAST"
 		command = "MoveKey 4 1"
-	elem
+	elem "eastup"
 		name = "EAST+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "ctrld"
 		name = "CTRL+D"
 		command = "MoveKey 4 1"
-	elem
+	elem "ctrldup"
 		name = "CTRL+D+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "south"
 		name = "SOUTH"
 		command = "MoveKey 2 1"
-	elem
+	elem "southup"
 		name = "SOUTH+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "ctrls"
 		name = "CTRL+S"
 		command = "MoveKey 2 1"
-	elem
+	elem "ctrlsup"
 		name = "CTRL+S+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "tab"
 		name = "TAB"
 		command = ".winset \"mainwindow.macro=borghotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true\""
-	elem
+	elem "centerrep"
 		name = "CENTER+REP"
 		command = ".center"
-	elem
+	elem "northeast"
 		name = "NORTHEAST"
 		command = ".northeast"
-	elem
+	elem "southeast"
 		name = "SOUTHEAST"
 		command = ".southeast"
-	elem
+	elem "southwest"
 		name = "SOUTHWEST"
 		command = ".southwest"
-	elem
+	elem "northwest"
 		name = "NORTHWEST"
 		command = ".northwest"
-	elem
+	elem "altwest"
 		name = "ALT+WEST"
 		command = "westfaceperm"
-	elem
+	elem "ctrlwest"
 		name = "CTRL+WEST"
 		command = "westface"
-	elem
+	elem "altnorth"
 		name = "ALT+NORTH"
 		command = "northfaceperm"
-	elem
+	elem "ctrlnorth"
 		name = "CTRL+NORTH"
 		command = "northface"
-	elem
+	elem "alteast"
 		name = "ALT+EAST"
 		command = "eastfaceperm"
-	elem
+	elem "ctrleast"
 		name = "CTRL+EAST"
 		command = "eastface"
-	elem
+	elem "altsouth"
 		name = "ALT+SOUTH"
 		command = "southfaceperm"
-	elem
+	elem "ctrlsouth"
 		name = "CTRL+SOUTH"
 		command = "southface"
-	elem
+	elem "insert"
 		name = "INSERT"
 		command = "a-intent right"
-	elem
+	elem "delete"
 		name = "DELETE"
 		command = "delete-key-pressed"
-	elem
+	elem "ctrl1"
 		name = "CTRL+1"
 		command = "toggle-module 1"
-	elem
+	elem "ctrl2"
 		name = "CTRL+2"
 		command = "toggle-module 2"
-	elem
+	elem "ctrl3"
 		name = "CTRL+3"
 		command = "toggle-module 3"
-	elem
+	elem "ctrl4"
 		name = "CTRL+4"
 		command = "a-intent left"
-	elem
+	elem "ctrlf"
 		name = "CTRL+F"
 		command = "a-intent left"
-	elem
+	elem "ctrlg"
 		name = "CTRL+G"
 		command = "a-intent right"
-	elem
+	elem "ctrlq"
 		name = "CTRL+Q"
 		command = ".northwest"
-	elem
+	elem "ctrlr"
 		name = "CTRL+R"
 		command = ".southwest"
-	elem
+	elem "ctrlx"
 		name = "CTRL+X"
 		command = ".northeast"
-	elem
+	elem "ctrly"
 		name = "CTRL+Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlz"
 		name = "CTRL+Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlnumpad1"
 		name = "CTRL+NUMPAD1"
 		command = "body-r-leg"
-	elem
+	elem "ctrlnumpad2"
 		name = "CTRL+NUMPAD2"
 		command = "body-groin"
-	elem
+	elem "ctrlnumpad3"
 		name = "CTRL+NUMPAD3"
 		command = "body-l-leg"
-	elem
+	elem "ctrlnumpad4"
 		name = "CTRL+NUMPAD4"
 		command = "body-r-arm"
-	elem
+	elem "ctrlnumpad5"
 		name = "CTRL+NUMPAD5"
 		command = "body-chest"
-	elem
+	elem "ctrlnumpad6"
 		name = "CTRL+NUMPAD6"
 		command = "body-l-arm"
-	elem
+	elem "ctrlnumpad8"
 		name = "CTRL+NUMPAD8"
 		command = "body-toggle-head"
-	elem
+	elem "f1"
 		name = "F1"
 		command = "adminhelp"
-	elem
+	elem "ctrlshiftf1rep"
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
-	elem
+	elem "f2"
 		name = "F2"
 		command = "ooc-verb"
-	elem
+	elem "f2rep"
 		name = "F2+REP"
 		command = ".screenshot auto"
-	elem
+	elem "shiftf2rep"
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
-	elem
+	elem "f3"
 		name = "F3"
 		command = "say-verb"
-	elem
+	elem "f4"
 		name = "F4"
 		command = "me-verb"
-	elem
+	elem "f5"
 		name = "F5"
 		command = "asay"
-	elem
+	elem "f6"
 		name = "F6"
 		command = "Player-Panel"
-	elem
+	elem "f7"
 		name = "F7"
 		command = "Admin-PM"
-	elem
+	elem "f8"
 		name = "F8"
 		command = "Invisimin"
-	elem
+	elem "f11"
 		name = "F11"
 		command = "Toggle-Fullscreen"
-	elem
+	elem "f12"
 		name = "F12"
 		command = "F12"
 
 macro "borghotkeymode"
-	elem
+	elem "west"
 		name = "WEST"
 		command = "MoveKey 8 1"
-	elem
+	elem "westup"
 		name = "WEST+UP"
 		command = "MoveKey 8 0"
 	elem "westshift"
 		name = "CTRL+SHIFT+West"
 		command = "westshift"
-	elem
+	elem "north"
 		name = "NORTH"
 		command = "MoveKey 1 1"
-	elem
+	elem "northup"
 		name = "NORTH+UP"
 		command = "MoveKey 1 0"
 	elem "northshift"
 		name = "CTRL+SHIFT+North"
 		command = "northshift"
-	elem
+	elem "east"
 		name = "EAST"
 		command = "MoveKey 4 1"
-	elem
+	elem "eastup"
 		name = "EAST+UP"
 		command = "MoveKey 4 0"
 	elem "eastshift"
 		name = "CTRL+SHIFT+East"
 		command = "eastshift"
-	elem
+	elem "south"
 		name = "SOUTH"
 		command = "MoveKey 2 1"
-	elem
+	elem "southup"
 		name = "SOUTH+UP"
 		command = "MoveKey 2 0"
 	elem "southshift"
 		name = "CTRL+SHIFT+South"
 		command = "southshift"
-	elem
+	elem "a"
 		name = "A"
 		command = "MoveKey 8 1"
-	elem
+	elem "aup"
 		name = "A+UP"
 		command = "MoveKey 8 0"
-	elem
+	elem "w"
 		name = "W"
 		command = "MoveKey 1 1"
-	elem
+	elem "wup"
 		name = "W+UP"
 		command = "MoveKey 1 0"
-	elem
+	elem "d"
 		name = "D"
 		command = "MoveKey 4 1"
-	elem
+	elem "dup"
 		name = "D+UP"
 		command = "MoveKey 4 0"
-	elem
+	elem "s"
 		name = "S"
 		command = "MoveKey 2 1"
-	elem
+	elem "sup"
 		name = "S+UP"
 		command = "MoveKey 2 0"
-	elem
+	elem "tab"
 		name = "TAB"
 		command = ".winset \"mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true\""
-	elem
+	elem "centerrep"
 		name = "CENTER+REP"
 		command = ".center"
-	elem
+	elem "northeast"
 		name = "NORTHEAST"
 		command = ".northeast"
-	elem
+	elem "southeast"
 		name = "SOUTHEAST"
 		command = ".southeast"
-	elem
+	elem "southwest"
 		name = "SOUTHWEST"
 		command = ".southwest"
-	elem
+	elem "northwest"
 		name = "NORTHWEST"
 		command = ".northwest"
-	elem
+	elem "altwest"
 		name = "ALT+WEST"
 		command = "westfaceperm"
-	elem
+	elem "ctrlwest"
 		name = "CTRL+WEST"
 		command = "westface"
-	elem
+	elem "altnorth"
 		name = "ALT+NORTH"
 		command = "northfaceperm"
-	elem
+	elem "ctrlnorth"
 		name = "CTRL+NORTH"
 		command = "northface"
-	elem
+	elem "alteast"
 		name = "ALT+EAST"
 		command = "eastfaceperm"
-	elem
+	elem "ctrleast"
 		name = "CTRL+EAST"
 		command = "eastface"
-	elem
+	elem "altsouth"
 		name = "ALT+SOUTH"
 		command = "southfaceperm"
-	elem
+	elem "ctrlsouth"
 		name = "CTRL+SOUTH"
 		command = "southface"
-	elem
+	elem "insert"
 		name = "INSERT"
 		command = "a-intent right"
-	elem
+	elem "delete"
 		name = "DELETE"
 		command = "delete-key-pressed"
-	elem
+	elem "one"
 		name = "1"
 		command = "toggle-module 1"
-	elem
+	elem "ctrl1"
 		name = "CTRL+1"
 		command = "toggle-module 1"
-	elem
+	elem "two"
 		name = "2"
 		command = "toggle-module 2"
-	elem
+	elem "ctrl2"
 		name = "CTRL+2"
 		command = "toggle-module 2"
-	elem
+	elem "three"
 		name = "3"
 		command = "toggle-module 3"
-	elem
+	elem "ctrl3"
 		name = "CTRL+3"
 		command = "toggle-module 3"
-	elem
+	elem "four"
 		name = "4"
 		command = "a-intent left"
-	elem
+	elem "ctrl4"
 		name = "CTRL+4"
 		command = "a-intent left"
-	elem
+	elem "5"
 		name = "5"
 		command = "me-verb"
-	elem
+	elem "f"
 		name = "F"
 		command = "a-intent left"
-	elem
+	elem "ctrlf"
 		name = "CTRL+F"
 		command = "a-intent left"
-	elem
+	elem "g"
 		name = "G"
 		command = "a-intent right"
-	elem
+	elem "ctrlg"
 		name = "CTRL+G"
 		command = "a-intent right"
-	elem
+	elem "j"
 		name = "J"
 		command = "toggle-gun-mode"
-	elem
+	elem "ctrlj"
 		name = "CTRL+J"
 		command = "toggle-gun-mode"
-	elem
+	elem "q"
 		name = "Q"
 		command = "unequip-module"
-	elem
+	elem "ctrlq"
 		name = "CTRL+Q"
 		command = "unequip-module"
-	elem
+	elem "r"
 		name = "R"
 		command = ".southwest"
-	elem
+	elem "ctrlr"
 		name = "CTRL+R"
 		command = ".southwest"
-	elem
+	elem "t"
 		name = "T"
 		command = "say-verb"
-	elem
+	elem "x"
 		name = "X"
 		command = ".northeast"
-	elem
+	elem "ctrlx"
 		name = "CTRL+X"
 		command = ".northeast"
-	elem
+	elem "y"
 		name = "Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrly"
 		name = "CTRL+Y"
 		command = "Activate-Held-Object"
-	elem
+	elem "z"
 		name = "Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "ctrlz"
 		name = "CTRL+Z"
 		command = "Activate-Held-Object"
-	elem
+	elem "f1"
 		name = "F1"
 		command = "adminhelp"
-	elem
+	elem "ctrlshiftf1rep"
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
-	elem
+	elem "f2"
 		name = "F2"
 		command = "ooc-verb"
-	elem
+	elem "f2rep"
 		name = "F2+REP"
 		command = ".screenshot auto"
-	elem
+	elem "shiftf2rep"
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
-	elem
+	elem "f3"
 		name = "F3"
 		command = "say-verb"
-	elem
+	elem "f4"
 		name = "F4"
 		command = "me-verb"
-	elem
+	elem "f5"
 		name = "F5"
 		command = "asay"
-	elem
+	elem "f6"
 		name = "F6"
 		command = "Player-Panel"
-	elem
+	elem "f7"
 		name = "F7"
 		command = "Admin-PM"
-	elem
+	elem "f8"
 		name = "F8"
 		command = "Invisimin"
-	elem
+	elem "f11"
 		name = "F11"
 		command = "Toggle-Fullscreen"
-	elem
+	elem "f12"
 		name = "F12"
 		command = "F12"
-	elem
+	elem "numpad8"
 		name = "NUMPAD8"
 		command = "body-toggle-head"
-	elem
+	elem "numpad5"
 		name = "NUMPAD5"
 		command = "body-chest"
-	elem
+	elem "numpad4"
 		name = "NUMPAD4"
 		command = "body-r-arm"
-	elem
+	elem "numpad6"
 		name = "NUMPAD6"
 		command = "body-l-arm"
-	elem
+	elem "numpad2"
 		name = "NUMPAD2"
 		command = "body-groin"
-	elem
+	elem "numpad1"
 		name = "NUMPAD1"
 		command = "body-r-leg"
-	elem
+	elem "numpad3"
 		name = "NUMPAD3"
 		command = "body-l-leg"
 

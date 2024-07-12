@@ -88,32 +88,22 @@ const handlePassthrough = (key: KeyEvent) => {
     key.event.defaultPrevented
     || key.isModifierKey()
     || hotKeysAcquired.includes(key.code)
+    || key.repeat // no repeating
   ) {
     return;
   }
-  const byondKeyCode = keyCodeToByond(key.code);
+  let byondKeyCode = keyCodeToByond(key.code);
   if (!byondKeyCode) {
     return;
+  }
+  if (key.isUp()) {
+    byondKeyCode += "+UP";
   }
   // Macro
   const macro = byondMacros[byondKeyCode];
   if (macro) {
     logger.debug('macro', macro);
     return Byond.command(macro);
-  }
-  // KeyDown
-  if (key.isDown() && !keyState[byondKeyCode]) {
-    keyState[byondKeyCode] = true;
-    const command = `KeyDown "${byondKeyCode}"`;
-    logger.debug(command);
-    return Byond.command(command);
-  }
-  // KeyUp
-  if (key.isUp() && keyState[byondKeyCode]) {
-    keyState[byondKeyCode] = false;
-    const command = `KeyUp "${byondKeyCode}"`;
-    logger.debug(command);
-    return Byond.command(command);
   }
 };
 
@@ -151,37 +141,49 @@ type ByondSkinMacro = {
 };
 
 export const setupHotKeys = () => {
-  // Read macros
-  Byond.winget('default.*').then((data: Record<string, string>) => {
-    // Group each macro by ref
-    const groupedByRef: Record<string, ByondSkinMacro> = {};
-    for (let key of Object.keys(data)) {
-      const keyPath = key.split('.');
-      const ref = keyPath[1];
-      const prop = keyPath[2];
-      if (ref && prop) {
-        // This piece of code imperatively adds each property to a
-        // ByondSkinMacro object in the order we meet it, which is hard
-        // to express safely in typescript.
-        if (!groupedByRef[ref]) {
-          groupedByRef[ref] = {} as any;
+  // This finds all active macros
+  Byond.winget(null, "macros").then((data: string) => {
+    const separated = data.split(";");
+
+    const promises: Promise<any>[] = [];
+    for (let set of separated) {
+      promises.push(Byond.winget(set + ".*"));
+    }
+
+    // Wait for all of our wingets
+    Promise.all(promises).then((sets: { [key: string]: string }[]) => {
+      const groupedByRef: Record<string, ByondSkinMacro> = {};
+      for (let set of sets) {
+        for (let key of Object.keys(set)) {
+          const keyPath = key.split(".");
+          const ref = keyPath[1];
+          const prop = keyPath[2];
+          if (ref && prop) {
+            // This piece of code imperatively adds each property to a
+            // ByondSkinMacro object in the order we meet it, which is hard
+            // to express safely in typescript.
+            if (!groupedByRef[ref]) {
+              groupedByRef[ref] = {} as any;
+            }
+            groupedByRef[ref][prop] = set[key];
+          }
         }
-        groupedByRef[ref][prop] = data[key];
       }
-    }
-    // Insert macros
-    const escapedQuotRegex = /\\"/g;
-    // prettier-ignore
-    const unescape = (str: string) => str
-      .substring(1, str.length - 1)
-      .replace(escapedQuotRegex, '"');
-    for (let ref of Object.keys(groupedByRef)) {
-      const macro = groupedByRef[ref];
-      const byondKeyName = unescape(macro.name);
-      byondMacros[byondKeyName] = unescape(macro.command);
-    }
-    logger.debug('loaded macros', byondMacros);
+      // Insert macros
+      const escapedQuotRegex = /\\"/g;
+      // prettier-ignore
+      const unescape = (str: string) => str
+        .substring(1, str.length - 1)
+        .replace(escapedQuotRegex, '"');
+      for (let ref of Object.keys(groupedByRef)) {
+        const macro = groupedByRef[ref];
+        const byondKeyName = unescape(macro.name);
+        byondMacros[byondKeyName] = unescape(macro.command);
+      }
+      logger.debug('loaded macros', byondMacros);
+    });
   });
+
   // Setup event handlers
   globalEvents.on('window-blur', () => {
     releaseHeldKeys();
