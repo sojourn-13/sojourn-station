@@ -55,7 +55,7 @@
 
 /decl/hierarchy/outfit/job/medical/doctor/medStudent
 	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Student")
-	suit =  /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 
 /decl/hierarchy/outfit/job/medical/doctor/medNurse
 	name = OUTFIT_JOB_NAME("Soteria - Soteria Nurse")
