@@ -195,7 +195,7 @@
 //This affect is in plating directly
 /datum/task_master/task/slip_n_die
 	name = "Face planting trips"
-	key = "TRIPS"
+	key = "SLIP_N_DIE"
 	desc = "Triping sucks, gotta be more careful..."
 	gain_text = "Ouch, my toe"
 	level_threshholds = 1 //You fall down a lot
