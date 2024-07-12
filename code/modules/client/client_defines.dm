@@ -70,8 +70,8 @@
 	var/stat_tab
 	/// list of all tabs
 	var/list/panel_tabs = list()
-	///Our object window datum. It stores info about and handles behavior for the object tab
-	var/datum/object_window_info/obj_window
+	/// Loot panel for the client
+	var/datum/lootpanel/loot_panel
 
 	/// If this client has been fully initialized or not
 	var/fully_created = FALSE

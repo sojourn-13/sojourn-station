@@ -55,6 +55,8 @@
 #define COMSIG_PARENT_QDELETING "parent_qdeleting"			  // just before a datum's Destroy() is called: (force), at this point none of the other components chose to interrupt qdel and Destroy will be called
 #define COMSIG_PARENT_QDELETED "parent_qdeleted"				//after a datum's Destroy() is called: (force, qdel_hint), at this point none of the other components chose to interrupt qdel and Destroy has been called
 
+#define COMSIG_QDELETING_NEW "parent_qdeleting_new"
+
 #define COMSIG_SHUTTLE_SUPPLY "shuttle_supply"  //form sell()
 #define COMSIG_TRADE_BEACON "trade_beacon"
 
@@ -86,6 +88,7 @@
 
 // /turf signals
 #define COMSIG_TURF_LEVELUPDATE "turf_levelupdate" //levelupdate()
+#define COMSIG_TURF_CHANGE "turf_change"
 
 // /atom/movable signals
 #define COMSIG_MOVABLE_MOVED "movable_moved"					//from base of atom/movable/Moved(): (/atom, origin_loc, new_loc)

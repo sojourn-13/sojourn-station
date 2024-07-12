@@ -341,6 +341,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
 
+	loot_panel = new(src)
+
 	Master.UpdateTickRate()
 	fully_created = TRUE
 
@@ -361,8 +363,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		holder.owner = null
 		admins -= src
 	QDEL_NULL(tooltips)
-	if(obj_window)
-		QDEL_NULL(obj_window)
+	QDEL_NULL(loot_panel)
 	if(dbcon.IsConnected())
 		var/DBQuery/query = dbcon.NewQuery("UPDATE players SET last_seen = Now() WHERE id = [src.id]")
 		if(!query.Execute())
