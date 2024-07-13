@@ -282,6 +282,12 @@
 						B = new(src)
 				if(mineral) //This entire segment can be done better.
 					var/mineral_result = CEILING((mineral.result_amount * dig_bonus) - (mined_ore * dig_bonus), 1)
+					if(isliving(user))
+						var/mob/living/digger = user
+						var/task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+						if(task_level)
+							mineral_result += task_level
+
 					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
 					var/obj/item/stack/ore/O = DropMineral(mineral_result)
 					if(box && O)
@@ -509,22 +515,30 @@
 			return
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_ROB))
 			to_chat(user, SPAN_NOTICE("You dug a hole."))
-			gets_dug()
+			gets_dug(user)
 
 	else
 		..(I,user)
 
-/turf/simulated/floor/asteroid/proc/gets_dug()
+/turf/simulated/floor/asteroid/proc/gets_dug(mob/user)
 
 	if(dug)
 		return
 
-	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
-	newsand.amount = rand(3)+2
-	newsand = new /obj/item/stack/ore(src)
-	newsand.amount = rand(3)+2
+	var/task_level = 0
+	if(isliving(user))
+		var/mob/living/digger = user
+		task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+		if(!task_level)
+			task_level = 0
 
-	dug = 1
+
+	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
+	newsand.amount = rand(3)+2 + task_level
+	newsand = new /obj/item/stack/ore(src)
+	newsand.amount = rand(3)+2 + task_level
+
+	dug = TRUE
 	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return

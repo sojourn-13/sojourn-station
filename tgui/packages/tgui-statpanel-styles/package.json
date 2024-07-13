@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "tgui-statpanel-styles",
+  "version": "5.0.1",
+  "dependencies": {
+    "tgui": "workspace:*"
+  }
+}

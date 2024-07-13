@@ -37773,7 +37773,8 @@
 	dir = 1
 	},
 /obj/machinery/conveyor/east{
-	id = "disposals grinder"
+	id = "disposals grinder";
+	operating = 1
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
@@ -41441,8 +41442,7 @@
 /obj/machinery/button/remote/blast_door{
 	id = "AI_maint_hatch";
 	name = "Maintenance Hatch Control";
-	pixel_x = -24;
-	req_access = null
+	pixel_x = -24
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -45318,9 +45318,9 @@
 /area/nadezhda/command/hallway)
 "iUx" = (
 /obj/machinery/conveyor/east{
-	id = "disposals grinder"
+	id = "disposals grinder";
+	operating = 1
 	},
-/obj/structure/plasticflaps,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
 "iUy" = (
@@ -50726,8 +50726,10 @@
 /area/nadezhda/crew_quarters/pool)
 "jYT" = (
 /obj/machinery/conveyor/east{
-	id = "disposals grinder"
+	id = "disposals grinder";
+	operating = 1
 	},
+/obj/structure/plasticflaps,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
 "jZa" = (
@@ -56774,8 +56776,7 @@
 /obj/machinery/button/remote/blast_door{
 	id = "maint_hatch_telecomm";
 	name = "Maintenance Hatch Control";
-	pixel_x = -24;
-	req_access = null
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/command/tcommsat/computer)
@@ -71705,13 +71706,10 @@
 /obj/effect/floor_decal/border/carpet/orange/corner,
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
-"odD" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "odF" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
-/obj/structure/window/reinforced,
+/obj/structure/railing,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
 "odM" = (
@@ -91343,7 +91341,8 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rTM" = (
 /obj/machinery/conveyor/east{
-	id = "disposals grinder"
+	id = "disposals grinder";
+	operating = 1
 	},
 /obj/machinery/pile_ripper,
 /turf/simulated/floor/plating/under,
@@ -94535,8 +94534,7 @@
 "sxQ" = (
 /obj/machinery/smelter/cargo_t2_parts{
 	input_side = 8;
-	output_side = 4;
-	refuse_output_side = 1
+	output_side = 1
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
@@ -95275,7 +95273,8 @@
 /area/nadezhda/maintenance/substation/sec)
 "sFu" = (
 /obj/machinery/conveyor/east{
-	id = "disposals grinder"
+	id = "disposals grinder";
+	operating = 1
 	},
 /obj/item/scrap_lump,
 /turf/simulated/floor/plating/under,
@@ -176253,7 +176252,7 @@ cnr
 pHr
 cOx
 edp
-odD
+gNL
 otL
 huz
 gNL
@@ -193470,7 +193469,7 @@ sOw
 sVn
 hgO
 odF
-iUx
+jYT
 mQR
 cXt
 tip
@@ -193874,7 +193873,7 @@ sgw
 osE
 vWt
 dqA
-jYT
+iUx
 nuH
 nEC
 tip

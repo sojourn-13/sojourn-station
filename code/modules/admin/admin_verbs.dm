@@ -23,17 +23,17 @@ var/list/admin_verbs = list("default" = list(), "hideable" = list())
 
 /client/proc/add_admin_verbs()
 	if(holder)
-		verbs += admin_verbs["default"]
+		add_verb(src, admin_verbs["default"])
 		for(var/text_right in admin_verbs)
 			if(text2num(text_right) & holder.rights)
-				verbs += admin_verbs[text_right]
+				add_verb(src, admin_verbs[text_right])
 
 		if(check_rights(config.profiler_permission))
 			control_freak = 0 // enable profiler
 
 /client/proc/remove_admin_verbs()
 	for(var/right in admin_verbs)
-		verbs.Remove(admin_verbs[right])
+		remove_verb(src, admin_verbs[right])
 	control_freak = initial(control_freak)
 
 ADMIN_VERB_ADD(/client/proc/hide_most_verbs, null, FALSE)
@@ -43,8 +43,9 @@ ADMIN_VERB_ADD(/client/proc/hide_most_verbs, null, FALSE)
 	set name = "Adminverbs - Hide Most"
 	set category = "Admin"
 
-	verbs.Remove(/client/proc/hide_most_verbs, admin_verbs["hideable"])
-	verbs += /client/proc/show_verbs
+	remove_verb(src, /client/proc/hide_most_verbs)
+	remove_verb(src, admin_verbs["hideable"])
+	add_verb(src, /client/proc/show_verbs)
 
 	to_chat(src, "<span class='interface'>Most of your adminverbs have been hidden.</span>")
 
@@ -56,7 +57,7 @@ ADMIN_VERB_ADD(/client/proc/hide_verbs, null, TRUE)
 	set category = "Admin"
 
 	remove_admin_verbs()
-	verbs += /client/proc/show_verbs
+	add_verb(src, /client/proc/show_verbs)
 
 	to_chat(src, "<span class='interface'>Almost all of your adminverbs have been hidden.</span>")
 
@@ -66,12 +67,10 @@ ADMIN_VERB_ADD(/client/proc/hide_verbs, null, TRUE)
 	set name = "Adminverbs - Show"
 	set category = "Admin"
 
-	verbs -= /client/proc/show_verbs
+	remove_verb(src, /client/proc/show_verbs)
 	add_admin_verbs()
 
 	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
-
-
 
 
 ADMIN_VERB_ADD(/client/proc/admin_ghost, R_ADMIN|R_MOD, TRUE)
@@ -79,7 +78,8 @@ ADMIN_VERB_ADD(/client/proc/admin_ghost, R_ADMIN|R_MOD, TRUE)
 /client/proc/admin_ghost()
 	set category = "Admin"
 	set name = "Aghost"
-	if(!holder)	return
+	if(!holder)
+		return
 	if(isghost(mob))
 		//re-enter
 		var/mob/observer/ghost/ghost = mob
@@ -98,8 +98,8 @@ ADMIN_VERB_ADD(/client/proc/admin_ghost, R_ADMIN|R_MOD, TRUE)
 	else
 		//ghostize
 		var/mob/body = mob
-		var/mob/observer/ghost/ghost = body.ghostize(1)
-		ghost.admin_ghosted = 1
+		var/mob/observer/ghost/ghost = body.ghostize(can_reenter_corpse = TRUE)
+		ghost.admin_ghosted = TRUE
 		if(body)
 			body.teleop = ghost
 			if(!body.key)
@@ -171,9 +171,10 @@ ADMIN_VERB_ADD(/client/proc/secrets, R_ADMIN, FALSE)
 ADMIN_VERB_ADD(/client/proc/colorooc, R_ADMIN, FALSE)
 //allows us to set a custom colour for everythign we say in ooc
 /client/proc/colorooc()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "OOC Text Color"
-	if(!holder)	return
+	if(!holder)
+		return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
 	if(response == "Pick new color")
 		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
@@ -191,7 +192,8 @@ ADMIN_VERB_ADD(/client/proc/stealth, R_ADMIN, TRUE)
 			holder.fakekey = null
 		else
 			var/new_key = ckeyEx(input("Enter your desired display name.", "Fake Key", key) as text|null)
-			if(!new_key)	return
+			if(!new_key)
+				return
 			if(length(new_key) >= 26)
 				new_key = copytext(new_key, 1, 26)
 			holder.fakekey = new_key
@@ -201,7 +203,7 @@ ADMIN_VERB_ADD(/client/proc/stealth, R_ADMIN, TRUE)
 
 ADMIN_VERB_ADD(/client/proc/hivemind_panel, R_FUN, TRUE)
 /client/proc/hivemind_panel()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Hivemind Panel"
 	if(holder && GLOB.hivemind_panel)
 		var/datum/hivemind_panel/H = GLOB.hivemind_panel
@@ -209,27 +211,34 @@ ADMIN_VERB_ADD(/client/proc/hivemind_panel, R_FUN, TRUE)
 
 ADMIN_VERB_ADD(/client/proc/deepmaints_panel, R_FUN, TRUE)
 /client/proc/deepmaints_panel()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Deepmaint Psionic Panel"
 	if(holder && GLOB.deepmaints_panel)
 		var/datum/deepmaints_panel/H = GLOB.deepmaints_panel
 		H.main_interact()
 
+ADMIN_VERB_ADD(/client/proc/debugstatpanel, R_DEBUG, TRUE)
+/client/proc/debugstatpanel()
+	set category = "Debug"
+	set name = "Debug Stat Panel"
+	stat_panel.send_message("create_debug")
+
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
 
 /client/proc/warn(warned_ckey)
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_ADMIN))
+		return
 
-	if(!warned_ckey || !istext(warned_ckey))	return
+	if(!warned_ckey || !istext(warned_ckey))
+		return
 	if(warned_ckey in admin_datums)
 		to_chat(usr, "<font color='red'>Error: warn(): You can't warn admins.</font>")
 		return
 
 	var/datum/preferences/D
 	var/client/C = directory[warned_ckey]
-	if(C)	D = C.prefs
-	else	D = SScharacter_setup.preferences_datums[warned_ckey]
+	D = C ? C.prefs : SScharacter_setup.preferences_datums[warned_ckey]
 
 	if(!D)
 		to_chat(src, "<font color='red'>Error: warn(): No such ckey found.</font>")
@@ -260,7 +269,7 @@ ADMIN_VERB_ADD(/client/proc/deepmaints_panel, R_FUN, TRUE)
 
 ADMIN_VERB_ADD(/client/proc/drop_bomb, R_FUN, FALSE)
 /client/proc/drop_bomb() // Some admin dickery that can probably be done better -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
 
@@ -285,8 +294,8 @@ ADMIN_VERB_ADD(/client/proc/drop_bomb, R_FUN, FALSE)
 	message_admins("\blue [ckey] creating an admin explosion at [epicenter.loc].")
 
 ADMIN_VERB_ADD(/client/proc/make_sound, R_FUN, FALSE)
-/client/proc/make_sound(var/obj/O in range(world.view)) // -- TLE
-	set category = "Special Verbs"
+/client/proc/make_sound(obj/O in range(world.view)) // -- TLE
+	set category = "Admin.Special"
 	set name = "Make Sound"
 	set desc = "Display a message to everyone who can hear the target"
 	if(O)
@@ -302,7 +311,7 @@ ADMIN_VERB_ADD(/client/proc/make_sound, R_FUN, FALSE)
 ADMIN_VERB_ADD(/client/proc/togglebuildmodeself, R_FUN, FALSE)
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	if(src.mob)
 		togglebuildmode(src.mob)
 
@@ -310,7 +319,7 @@ ADMIN_VERB_ADD(/client/proc/list_mob_groups, R_FUN, FALSE)
 /client/proc/list_mob_groups()
 	set name = "List Mob Groups"
 	set desc = "List the keys of all currently saved mob groups"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 
 	if(!check_rights(R_FUN))
 		return
@@ -323,7 +332,7 @@ ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
 /client/proc/list_mob_group_contents(key as text)
 	set name = "List Mob Group Contents"
 	set desc = "List the contents of a given mob group using a key"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 
 	if(!check_rights(R_FUN))
 		return
@@ -342,7 +351,7 @@ ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/object_talk, R_FUN, FALSE)
 /client/proc/object_talk(var/msg as text) // -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "oSay"
 	set desc = "Display a message to everyone who can hear the target"
 	if(mob.control_object)
@@ -388,7 +397,7 @@ ADMIN_VERB_ADD(/client/proc/kill_air, R_DEBUG, FALSE)
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
 		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least just the colony.</span>")
-		verbs -= /client/proc/readmin_self
+		remove_verb(src, /client/proc/readmin_self)
 
 
 ADMIN_VERB_ADD(/client/proc/deadmin_self, null, TRUE)
@@ -403,14 +412,15 @@ ADMIN_VERB_ADD(/client/proc/deadmin_self, null, TRUE)
 			message_admins("[src] deadmined themself.", 1)
 			deadmin()
 			to_chat(src, "<span class='interface'>You are now a normal player.</span>")
-			verbs |= /client/proc/readmin_self
+			add_verb(src, /client/proc/readmin_self)
 
 
 ADMIN_VERB_ADD(/client/proc/toggle_log_hrefs, R_SERVER, FALSE)
 /client/proc/toggle_log_hrefs()
 	set name = "Toggle href logging"
 	set category = "Server"
-	if(!holder)	return
+	if(!holder)
+		return
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
@@ -425,18 +435,20 @@ ADMIN_VERB_ADD(/client/proc/check_ai_laws, R_ADMIN, TRUE)
 	set name = "Check AI Laws"
 	set category = "Admin"
 	if(holder)
-		src.holder.output_ai_laws()
+		holder.output_ai_laws()
 
 ADMIN_VERB_ADD(/client/proc/rename_silicon, R_ADMIN, FALSE)
 //properly renames silicons
 /client/proc/rename_silicon()
 	set name = "Rename Silicon"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 
-	if(!check_rights(R_ADMIN)) return
+	if(!check_rights(R_ADMIN))
+		return
 
 	var/mob/living/silicon/S = input("Select silicon.", "Rename Silicon.") as null|anything in GLOB.silicon_mob_list
-	if(!S) return
+	if(!S)
+		return
 
 	var/new_name = sanitizeSafe(input(src, "Enter new name. Leave blank or as is to cancel.", "[S.real_name] - Enter new silicon name", S.real_name))
 	if(new_name && new_name != S.real_name)
@@ -450,10 +462,12 @@ ADMIN_VERB_ADD(/client/proc/manage_silicon_laws, R_ADMIN, TRUE)
 	set name = "Manage Silicon Laws"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN)) return
+	if(!check_rights(R_ADMIN))
+		return
 
 	var/mob/living/silicon/S = input("Select silicon.", "Manage Silicon Laws") as null|anything in GLOB.silicon_mob_list
-	if(!S) return
+	if(!S)
+		return
 
 	var/datum/nano_module/law_manager/L = new(S)
 	L.nano_ui_interact(usr, state = GLOB.admin_state)
@@ -465,12 +479,14 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_admin, R_ADMIN, FALSE)
 /client/proc/change_human_appearance_admin()
 	set name = "Change Mob Appearance - Admin"
 	set desc = "Allows you to change the mob appearance"
-	set category = "Fun"
+	set category = "Admin.Events"
 
-	if(!check_rights(R_FUN)) return
+	if(!check_rights(R_FUN))
+		return
 
 	var/mob/living/carbon/human/H = input("Select mob.", "Change Mob Appearance - Admin") as null|anything in GLOB.human_mob_list
-	if(!H) return
+	if(!H)
+		return
 
 	log_and_message_admins("is altering the appearance of [H].")
 	H.change_appearance(APPEARANCE_ALL, usr, usr, check_species_whitelist = 0, state = GLOB.admin_state)
@@ -481,12 +497,14 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_self, R_ADMIN, FALSE)
 /client/proc/change_human_appearance_self()
 	set name = "Change Mob Appearance - Self"
 	set desc = "Allows the mob to change its appearance"
-	set category = "Fun"
+	set category = "Admin.Events"
 
-	if(!check_rights(R_FUN)) return
+	if(!check_rights(R_FUN))
+		return
 
 	var/mob/living/carbon/human/H = input("Select mob.", "Change Mob Appearance - Self") as null|anything in GLOB.human_mob_list
-	if(!H) return
+	if(!H)
+		return
 
 	if(!H.client)
 		to_chat(usr, "Only mobs with clients can alter their own appearance.")
@@ -507,7 +525,8 @@ ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
-	if(!check_rights(R_FUN))	return
+	if(!check_rights(R_FUN))
+		return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 	var/decl/security_level/new_security_level = input(usr, "It's currently [security_state.current_security_level.name].", "Select Security Level")  as null|anything in (security_state.all_security_levels - security_state.current_security_level)
@@ -551,7 +570,8 @@ ADMIN_VERB_ADD(/client/proc/toggledrones, R_ADMIN, FALSE)
 /client/proc/toggledrones()
 	set name = "Toggle maintenance drones"
 	set category = "Server"
-	if(!holder)	return
+	if(!holder)
+		return
 	if(config)
 		if(config.allow_drone_spawn)
 			config.allow_drone_spawn = 0
@@ -565,7 +585,7 @@ ADMIN_VERB_ADD(/client/proc/toggledrones, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/man_up, R_ADMIN, FALSE)
 /client/proc/man_up(mob/T as mob in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
@@ -577,7 +597,7 @@ ADMIN_VERB_ADD(/client/proc/man_up, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 /client/proc/perkadd(mob/T as mob in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Add Perk"
 	set desc = "Add a perk to a person."
 	var/datum/perk/perkname = input("What perk do you want to add?") as null|anything in subtypesof(/datum/perk/)
@@ -592,7 +612,7 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 /*
 ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
 /client/proc/perkbreakdown(mob/living/carbon/T as mob in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Add Breakdown"
 	set desc = "Add a Breakdown to a person."
 	var/datum/breakdown/breakdown_name = input("What perk do you want to add?") as null|anything in subtypesof(/datum/breakdown/)
@@ -608,22 +628,24 @@ ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 /client/proc/playtimebypass(mob/T as mob in GLOB.player_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Bypass Playtime"
 	set desc = "Allow a job to be played without the time requirements."
 
 	var/key = T.ckey
 	var/datum/job/J = input("Which job do you wish to change?") as null|anything in typesof(/datum/job)
-	if(!J) return
+	if(!J)
+		return
 	var/mode = input("Enable, or disable?") in list("Enable", "Disable")
-	if(!mode) return
+	if(!mode)
+		return
 	SSjob.JobTimeForce(key, "[J]", (mode=="Enable"))
 	message_admins("\blue [key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.", 1)
 	log_admin("[key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.")
 
 ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 /client/proc/perkremove(mob/T as mob in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Remove Perk"
 	set desc = "Remove a perk from a person."
 	if (T.stats.perks.len ==0)
@@ -640,7 +662,7 @@ ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/skill_issue, R_ADMIN, FALSE)
 /client/proc/skill_issue(mob/T as mob in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Skill Issue"
 	set desc = "Tells mob that it is a skill issue and to git gud."
 
@@ -652,7 +674,7 @@ ADMIN_VERB_ADD(/client/proc/skill_issue, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 /client/proc/global_man_up()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Man Up Global"
 	set desc = "Tells everyone to man up and deal with it."
 
@@ -701,7 +723,7 @@ ADMIN_VERB_ADD(/client/proc/toggleHUBVisibility, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/manage_custom_kits, R_FUN, FALSE)
 /client/proc/manage_custom_kits()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Manage Custom Kits"
 
 	var/const/header = "Custom kit management"
@@ -784,3 +806,14 @@ ADMIN_VERB_ADD(/client/proc/manage_custom_kits, R_FUN, FALSE)
 									GLOB.custom_kits -= kit_of_choice
 			else
 				groundhog_day = FALSE
+
+ADMIN_VERB_ADD(/client/proc/toggle_split_admin_tabs, R_ADMIN|R_DEBUG, FALSE)
+/client/proc/toggle_split_admin_tabs()
+	set name = "Toggle Split Admin Tabs"
+	set category = "Admin"
+	set desc = "Toggle the admin tab being split into separate tabs instead of being merged into one"
+	if(!holder)
+		return
+
+	cycle_preference(/datum/client_preference/staff/split_admin_tabs)
+	to_chat(src, "Admin tabs will now [(get_preference_value(/datum/client_preference/staff/split_admin_tabs) == GLOB.PREF_YES) ? "be" : "not be"] split.")

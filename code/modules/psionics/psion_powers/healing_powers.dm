@@ -1,7 +1,7 @@
 
 //Powers that heal people or self, or antiheal people
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_healing()
+/mob/living/carbon/human/proc/psionic_healing()
 	set category = "Psionic powers"
 	set name = "Psychosomatic healing (1)"
 	set desc = "Expend a single point of your psi essence to heal your body, the process however is extremely painful."
@@ -23,7 +23,7 @@
 			)
 
 //antiheals people with halloss
-/mob/living/carbon/human/psionic_tumor/proc/pain_infliction()
+/mob/living/carbon/human/proc/pain_infliction()
 	set category = "Psionic powers"
 	set name = "Pain Infliction (2)"
 	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
@@ -49,40 +49,41 @@
 		L.adjustHalLoss(30)
 
 //Transfers pain from grabbed to grabber
-/mob/living/carbon/human/psionic_tumor/proc/pain_transference()
-	set category = "Psionic powers"
-	set name = "Pain Transference (2)"
-	set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
-	var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
-	var/amount
-	var/absorbed = 50
-	var/mob/living/carbon/human/user = src
-	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
-	var/mob/living/carbon/human/L = get_grabbed_mob(user)
-	var/obj/item/grab/G = locate() in user
-	if(!G || !istype(G))
-		usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
-		return
+/mob/living/carbon/human/proc/pain_transference()
+    set category = "Psionic powers"
+    set name = "Pain Transference (2)"
+    set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
+    var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
+    var/amount
+    var/absorbed = 50
+    var/mob/living/carbon/human/user = src
+    var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
-	if(G.state < GRAB_AGGRESSIVE)
-		usr.show_message(SPAN_DANGER("You must have an aggressive grab take somebodies pain!"))
-		return
+    var/mob/living/carbon/human/L = get_grabbed_mob(user)
+    var/obj/item/grab/G = locate() in user
+    if(!G || !istype(G))
+        usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
+        return
 
-	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility(TRUE, L))
-		usr.visible_message(
-				SPAN_DANGER("[usr] presses their hands upon [L] shoulders in an attempt to take their pain."),
-				SPAN_DANGER("You press your hands onto the shoulders of [L] expanding your mind and transferring their pain!")
-				)
-		amount = min(absorbed,L.getHalLoss())
-		L.adjustHalLoss(-amount)
-		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-			user.adjustHalLoss(amount/2) //Psi Attunement shunts some pain into the environment
-		else
-			user.adjustHalLoss(amount)
+    if(G.state < GRAB_AGGRESSIVE)
+        usr.show_message(SPAN_DANGER("You must have an aggressive grab take somebodies pain!"))
+        return
+
+    if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility(TRUE, L))
+        usr.visible_message(
+                SPAN_DANGER("[usr] presses their hands upon [L] shoulders in an attempt to take their pain."),
+                SPAN_DANGER("You press your hands onto the shoulders of [L] expanding your mind and transferring their pain!")
+                )
+        amount = min(absorbed,L.getHalLoss())
+        L.adjustHalLoss(-amount)
+        if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+            user.adjustHalLoss(amount/2) //Psi Attunement shunts some pain into the environment
+        else
+            user.adjustHalLoss(amount)
 
 //Heals hunger
-/mob/living/carbon/human/psionic_tumor/proc/psychosomatictransfer()
+/mob/living/carbon/human/proc/psychosomatictransfer()
 	set category = "Psionic powers"
 	set name = "Psychosomatic Fullness (1)"
 	set desc = "Expend a single point of your psi essence to convince your stomach it's not actually that hungry, burning fat reserves to keep going strong. Taxing on the mind and causes minor burns."
@@ -100,7 +101,7 @@
 		to_chat(user, "You feel energized, though there is minor pain from burning so much fat so quickly.")
 
 // Heals stuns/other misc things
-/mob/living/carbon/human/psionic_tumor/proc/chosen_control()
+/mob/living/carbon/human/proc/chosen_control()
 	set category = "Psionic powers"
 	set name = "Chosen Control (4)"
 	set desc = "Expend four psi points to clear all effects that impede one's control. Remove stuns, paralysis, pain, agony, restrainments, and clears the users body of all chemicals and addictions."
@@ -136,7 +137,7 @@
 			qdel(R)
 
 // Heals sanity
-/mob/living/carbon/human/psionic_tumor/proc/meditative_focus()
+/mob/living/carbon/human/proc/meditative_focus()
 	set category = "Psionic powers"
 	set name = "Meditative Focus (2)"
 	set desc = "Expend two psi points of your psi essence to focus your mind and increase your sanity."

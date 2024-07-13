@@ -1,6 +1,6 @@
 /proc/togglebuildmode(mob/M as mob in GLOB.player_list)
 	set name = "Toggle Build Mode"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	if(M.client)
 		if(M.client.buildmode)
 			log_and_message_admins("[key_name(usr)] has left build mode at \the [jumplink(usr)]") //So we can go to it

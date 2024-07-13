@@ -137,6 +137,12 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
 	price_tag = 15
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "homewrecker0"
+		)
+
 
 /obj/item/tool/hammer/ironhammer
 	name = "Seinemetall Defense \"Ironhammer\" Breaching Hammer"

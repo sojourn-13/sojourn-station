@@ -1,8 +1,8 @@
 /obj/item/rig/proc/rig_verb_giveith()
-	wearer.verbs |= rig_verbs
+	add_verb(wearer, rig_verbs)
 
 /obj/item/rig/proc/rig_verb_takeith()
-	wearer.verbs -= rig_verbs
+	remove_verb(wearer, rig_verbs)
 
 // Interface for humans.
 /mob/living/carbon/human/rig/verb/hardsuit_interface()

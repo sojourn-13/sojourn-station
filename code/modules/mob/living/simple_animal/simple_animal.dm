@@ -137,7 +137,7 @@
 	seek_move_delay = (1 / seek_speed) / (world.tick_lag / 10)//number of ticks between moves
 	turns_since_scan = rand(min_scan_interval, max_scan_interval)//Randomise this at the start so animals don't sync up
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 
 	if(mob_size)
 		nutrition_step = mob_size * 0.03 * metabolic_factor
@@ -524,11 +524,11 @@
 
 	return tally
 
-/mob/living/simple_animal/Stat()
+/mob/living/simple_animal/get_status_tab_items()
 	. = ..()
 
-	if(statpanel("Status") && show_stat_health)
-		stat(null, "Health: [round((health / maxHealth) * 100)]%")
+	if(show_stat_health)
+		. += "Health: [round((health / maxHealth) * 100)]%"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
 	SSmove_manager.stop_looping(src)

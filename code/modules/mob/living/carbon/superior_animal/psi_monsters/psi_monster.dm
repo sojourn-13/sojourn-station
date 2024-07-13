@@ -112,7 +112,7 @@
 
 	objectsInView = new
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = size_pixel_offset_x
 	pixel_y = 0
 

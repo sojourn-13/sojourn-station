@@ -1,7 +1,7 @@
 
 //Psionic powers that intract with the oldification system
 
-/mob/living/carbon/human/psionic_tumor/proc/rust()
+/mob/living/carbon/human/proc/rust()
 	set category = "Psionic powers"
 	set name = "Rust (1)"
 	set desc = "Expend a single psi point to wither an object, making it rust away and weaken."
@@ -16,7 +16,7 @@
 		else
 			to_chat(user, "You must hold an item in your active hand to wither it.")
 
-/mob/living/carbon/human/psionic_tumor/proc/decay()
+/mob/living/carbon/human/proc/decay()
 	set category = "Psionic powers"
 	set name = "Decay (2)"
 	set desc = "Expend two psi points to wither and rust every object a person you are grabbing is holding or wearing, rendering each object worse and weaker."

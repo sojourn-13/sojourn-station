@@ -180,7 +180,7 @@
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
 
-	LEGACY_SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, origin, loc)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, origin, loc)
 
 	// Only update plane if we're located on map
 	if(isturf(loc))
@@ -470,7 +470,7 @@
 				onTransitZ(get_z(oldloc, get_z(loc)))
 				update_plane()
 
-		LEGACY_SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, loc)
+		SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, loc)
 
 // Wrapper of step() that also sets glide size to a specific value.
 /proc/step_glide(atom/movable/AM, newdir, glide_size_override)

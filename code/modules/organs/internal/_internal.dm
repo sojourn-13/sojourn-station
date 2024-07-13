@@ -58,8 +58,9 @@
 		if(I.type == type)
 			skipverbs = TRUE
 	if(!skipverbs)
-		for(var/verb_path in owner_verbs)
-			verbs -= verb_path
+		remove_verb(owner, owner_verbs)
+	// Reset when removed
+	owner_verbs = initial_owner_verbs.Copy()
 	..()
 
 /obj/item/organ/internal/replaced(obj/item/organ/external/affected)
@@ -79,8 +80,17 @@
 			owner.internal_organs_by_efficiency[process] = list()
 		owner.internal_organs_by_efficiency[process] += src
 
-	for(var/proc_path in owner_verbs)
-		verbs |= proc_path
+	add_verb(owner, owner_verbs)
+
+/obj/item/organ/internal/proc/organ_add_verb(procpath/P)
+	owner_verbs |= P
+	if(owner)
+		add_verb(owner, P)
+
+/obj/item/organ/internal/proc/organ_remove_verb(procpath/P)
+	owner_verbs -= P
+	if(owner)
+		remove_verb(owner, P)
 
 /obj/item/organ/internal/proc/get_process_efficiency(process_define)
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
@@ -424,7 +434,6 @@
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
 	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
-	owner_verbs = initial_owner_verbs.Copy()
 	organ_efficiency = initial_organ_efficiency.Copy()
 	scanner_hidden = initial(scanner_hidden)
 	unique_tag = initial(unique_tag)

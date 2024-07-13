@@ -6,3 +6,4 @@
 	matter = list(MATERIAL_BIO = 8, MATERIAL_STEEL = 4)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/storage/pouch/medium_generic/opifex
+	completely_hide_from_scanners = TRUE

@@ -28,65 +28,59 @@
 	var/inhibited = FALSE      //Whether or not the organ has been inhibited by an external force
 	var/allow_loop = TRUE      //Used for starting a looping process of regenning poings
 
-	var/list/psion_verbs = list(
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_healing,
-		/mob/living/carbon/human/psionic_tumor/proc/meditative_focus,
-		/mob/living/carbon/human/psionic_tumor/proc/psychosomatictransfer,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_telepathy,
-		/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress,
-		/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress_end,
-		/mob/living/carbon/human/psionic_tumor/proc/pyrokinetic_spark,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_omnitool,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_knife,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_shield,
-		/mob/living/carbon/human/psionic_tumor/proc/telekinetic_fist,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_weapon,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_melee,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_tool,
-		/mob/living/carbon/human/psionic_tumor/proc/psychic_call,
-		/mob/living/carbon/human/psionic_tumor/proc/psychic_banish,
-        /mob/living/carbon/human/psionic_tumor/proc/pain_infliction,
-		/mob/living/carbon/human/psionic_tumor/proc/pain_transference,
-		/mob/living/carbon/human/psionic_tumor/proc/journey_to_nowhere,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_armor,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_swarm,
-		/mob/living/carbon/human/psionic_tumor/proc/kinetic_blaster
+	owner_verbs = list(
+		/mob/living/carbon/human/proc/psionic_healing,
+		/mob/living/carbon/human/proc/meditative_focus,
+		/mob/living/carbon/human/proc/psychosomatictransfer,
+		/mob/living/carbon/human/proc/psionic_telepathy,
+		/mob/living/carbon/human/proc/telekineticprowress,
+		/mob/living/carbon/human/proc/telekineticprowress_end,
+		/mob/living/carbon/human/proc/pyrokinetic_spark,
+		/mob/living/carbon/human/proc/psionic_omnitool,
+		/mob/living/carbon/human/proc/psionic_knife,
+		/mob/living/carbon/human/proc/psionic_shield,
+		/mob/living/carbon/human/proc/telekinetic_fist,
+		/mob/living/carbon/human/proc/psionic_weapon,
+		/mob/living/carbon/human/proc/psionic_melee,
+		/mob/living/carbon/human/proc/psionic_tool,
+		/mob/living/carbon/human/proc/psychic_call,
+		/mob/living/carbon/human/proc/psychic_banish,
+        /mob/living/carbon/human/proc/pain_infliction,
+		/mob/living/carbon/human/proc/pain_transference,
+		/mob/living/carbon/human/proc/journey_to_nowhere,
+		/mob/living/carbon/human/proc/psionic_armor,
+		/mob/living/carbon/human/proc/psionic_swarm,
+		/mob/living/carbon/human/proc/kinetic_blaster
 	)
 
 /obj/item/organ/internal/psionic_tumor/psychiatrist
 	name = "cultured flesh"
-	psion_verbs = list(
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_healing,
-		/mob/living/carbon/human/psionic_tumor/proc/meditative_focus,
-		/mob/living/carbon/human/psionic_tumor/proc/psychosomatictransfer,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_telepathy,
-		/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress,
-		/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress_end,
-		/mob/living/carbon/human/psionic_tumor/proc/pyrokinetic_spark,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_omnitool,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_knife,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_shield,
-		/mob/living/carbon/human/psionic_tumor/proc/telekinetic_fist,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_weapon,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_melee,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_tool,
-		/mob/living/carbon/human/psionic_tumor/proc/psychic_call,
-		/mob/living/carbon/human/psionic_tumor/proc/psychic_banish,
-        /mob/living/carbon/human/psionic_tumor/proc/pain_infliction,
-		/mob/living/carbon/human/psionic_tumor/proc/pain_transference,
-		/mob/living/carbon/human/psionic_tumor/proc/journey_to_nowhere,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_armor,
-		/mob/living/carbon/human/psionic_tumor/proc/kinetic_blaster,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_swarm,
-		/mob/living/carbon/human/psionic_tumor/proc/peace_of_mind,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_heal_other,
-		/mob/living/carbon/human/psionic_tumor/proc/meditative_focus_other,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_heal_brain,
-		/mob/living/carbon/human/psionic_tumor/proc/psionic_gift
+	owner_verbs = list(
+		/mob/living/carbon/human/proc/psionic_healing,
+		/mob/living/carbon/human/proc/meditative_focus,
+		/mob/living/carbon/human/proc/psychosomatictransfer,
+		/mob/living/carbon/human/proc/psionic_telepathy,
+		/mob/living/carbon/human/proc/telekineticprowress,
+		/mob/living/carbon/human/proc/telekineticprowress_end,
+		/mob/living/carbon/human/proc/pyrokinetic_spark,
+		/mob/living/carbon/human/proc/psionic_omnitool,
+		/mob/living/carbon/human/proc/psionic_knife,
+		/mob/living/carbon/human/proc/psionic_shield,
+		/mob/living/carbon/human/proc/telekinetic_fist,
+		/mob/living/carbon/human/proc/psionic_weapon,
+		/mob/living/carbon/human/proc/psionic_melee,
+		/mob/living/carbon/human/proc/psionic_tool,
+		/mob/living/carbon/human/proc/psychic_call,
+		/mob/living/carbon/human/proc/psychic_banish,
+        /mob/living/carbon/human/proc/pain_infliction,
+		/mob/living/carbon/human/proc/pain_transference,
+		/mob/living/carbon/human/proc/journey_to_nowhere,
+		/mob/living/carbon/human/proc/psionic_armor,
+		/mob/living/carbon/human/proc/kinetic_blaster,
+		/mob/living/carbon/human/proc/psionic_swarm,
+		/mob/living/carbon/human/proc/peace_of_mind,
+		/mob/living/carbon/human/proc/psionic_heal_other,
+		/mob/living/carbon/human/proc/meditative_focus_other,
+		/mob/living/carbon/human/proc/psionic_heal_brain,
+		/mob/living/carbon/human/proc/psionic_gift
 	)
-
-/obj/item/organ/internal/psionic_tumor/proc/psion_verb_install()
-	owner.verbs |= psion_verbs
-
-/obj/item/organ/internal/psionic_tumor/proc/psion_verb_remove()
-	owner.verbs -= psion_verbs

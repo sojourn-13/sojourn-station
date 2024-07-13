@@ -354,8 +354,8 @@
 			fail_modifer += 10//below 5% is -10 precision. Good luck!
 
 	//If a hooman does this with a the tool_breaker tasks they get less odds of failer
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
+	if(isliving(user))
+		var/mob/living/H = user
 		var/task_level = H.learnt_tasks.get_task_mastery_level("TOOL_BREAKER")
 		if(task_level)
 			fail_modifer -= task_level
@@ -565,8 +565,8 @@
 	isbroken = TRUE
 
 	if(user)
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
+		if(isliving(user))
+			var/mob/living/H = user
 			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/tool_breaker, "TOOL_BREAKER", skill_gained = 1, learner = H)
 
 		to_chat(user, SPAN_DANGER("Your [src] broke!"))

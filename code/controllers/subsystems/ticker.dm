@@ -228,7 +228,6 @@ SUBSYSTEM_DEF(ticker)
 	GLOB.storyteller.announce()
 
 	setup_economy()
-	setup_nanite_mailer()
 	newscaster_announcements = pick(newscaster_standard_feeds)
 
 	create_characters() //Create player characters and transfer them

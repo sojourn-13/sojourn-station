@@ -1,5 +1,5 @@
 
-/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress()
+/mob/living/carbon/human/proc/telekineticprowress()
 	set category = "Psionic powers"
 	set name = "Telekinetic Prowess (1)"
 	set desc = "Expend a single point of your psi essence to gain telekinesis. Lasts indefinitely unless a genetics lab or you yourself willingly end it."
@@ -18,7 +18,7 @@
 		else
 			to_chat(user, "You already have telekinesis.")
 
-/mob/living/carbon/human/psionic_tumor/proc/telekineticprowress_end()
+/mob/living/carbon/human/proc/telekineticprowress_end()
 	set category = "Psionic powers"
 	set name = "End Telekinesis (0)"
 	set desc = "End your telekinesis at will, at no essence cost. Beware, you will need to expend more to get telekinesis back."

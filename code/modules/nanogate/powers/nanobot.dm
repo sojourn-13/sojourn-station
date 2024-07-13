@@ -13,207 +13,229 @@ List of powers in this page :
 */
 
 // Create the nanobot everything else on this page is centered around.
-/obj/item/organ/internal/nanogate/proc/create_nanobot()
+/mob/living/carbon/human/proc/create_nanobot()
 	set category = "Nanogate Powers"
 	set name = "Create Nanobot (2)"
 	set desc = "Spend some of your nanites to create a loyal robot you have an extensive amount of control over."
-	nano_point_cost = 2
 
-	if(!Stand) // Do they already have the bot?
-		var/bot_name = input(owner, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as text
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to form a nanobot.")
-			Stand = new /mob/living/carbon/superior_animal/nanobot(owner.loc)
-			Stand.name = bot_name
-			Stand.creator += owner
-			Stand.friends += owner
-			Stand.icon_state = input(owner, "Choose your nanobot's model : ", "Nanobot Model") in list("nanobot", "wide", "squats", "heavy", "blitz")
-			Stand.icon_living = Stand.icon_state
-			Stand.icon_dead = "[Stand.icon_state]_dead"
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(!organ.Stand) // Do they already have the bot?
+		var/bot_name = input(src, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as text
+		if(organ.pay_power_cost(2))
+			to_chat(src, "You permanently assign some of your nanites to form a nanobot.")
+			organ.Stand = new /mob/living/carbon/superior_animal/nanobot(loc)
+			organ.Stand.name = bot_name
+			organ.Stand.creator += src
+			organ.Stand.friends += src
+			organ.Stand.icon_state = input(src, "Choose your nanobot's model : ", "Nanobot Model") in list("nanobot", "wide", "squats", "heavy", "blitz")
+			organ.Stand.icon_living = organ.Stand.icon_state
+			organ.Stand.icon_dead = "[organ.Stand.icon_state]_dead"
 
 			//Add Nanobot verbs here, at activation
-			verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
-			verbs += /obj/item/organ/internal/nanogate/proc/stand_health
-			verbs += /obj/item/organ/internal/nanogate/proc/stand_armor
-			verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
-			verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
-			verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
-			verbs += /obj/item/organ/internal/nanogate/proc/console_mode
-			verbs += /obj/item/organ/internal/nanogate/proc/control_bot
-
-			//Add to owner_verbs so it can be removed properly should the need arise.
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_health
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_armor
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/console_mode
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/control_bot
+			organ.organ_add_verb(/mob/living/carbon/human/proc/stand_damage)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/stand_health)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/stand_armor)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/stand_repair)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/autodoc_mode)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/radio_mode)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/console_mode)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/control_bot)
 
 			//Add in the Opifex specific procs
-			if(istype(src, /obj/item/organ/internal/nanogate/opifex))
-				verbs += /obj/item/organ/internal/nanogate/proc/food_mode
-				owner_verbs += /obj/item/organ/internal/nanogate/proc/food_mode
+			if(istype(organ, /obj/item/organ/internal/nanogate/opifex))
+				organ.organ_add_verb(/mob/living/carbon/human/proc/food_mode)
 
-			verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/create_nanobot)
 	else
-		to_chat(owner, "Your nanogate is already as its limit controlling one Nanobot. Making more would end badly.")
+		to_chat(src, "Your nanogate is already as its limit controlling one Nanobot. Making more would end badly.")
 
 // Boost the nanobot's damage
-/obj/item/organ/internal/nanogate/proc/stand_damage()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/stand_damage()
+	set category = "Nanogate Powers.Robot"
 	set name = "Upgrade Nanobot - Damage (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot with greater offensive power."
-	nano_point_cost = 1
 	var/damage_boost = 20 // How much bonus damage does the nanobot get?
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to boost your nanobot's damage output.")
-			Stand.melee_damage_lower += damage_boost
-			Stand.melee_damage_upper += damage_boost
-			verbs -= /obj/item/organ/internal/nanogate/proc/stand_damage
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to boost your nanobot's damage output.")
+			organ.Stand.melee_damage_lower += damage_boost
+			organ.Stand.melee_damage_upper += damage_boost
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/stand_damage)
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
 // Boost the nanobot's health
-/obj/item/organ/internal/nanogate/proc/stand_health()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/stand_health()
+	set category = "Nanogate Powers.Robot"
 	set name = "Upgrade Nanobot - Health (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot to endure far more punishment."
-	nano_point_cost = 1
 	var/health_boost = 150 // How much bonus health does the nanobot get?
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to reinforce your nanobot's durability.")
-			Stand.health += health_boost
-			Stand.maxHealth += health_boost
-			verbs -= /obj/item/organ/internal/nanogate/proc/stand_health
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to reinforce your nanobot's durability.")
+			organ.Stand.health += health_boost
+			organ.Stand.maxHealth += health_boost
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/stand_health)
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
 // Boost the nanobot's armor
-/obj/item/organ/internal/nanogate/proc/stand_armor()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/stand_armor()
+	set category = "Nanogate Powers.Robot"
 	set name = "Upgrade Nanobot - Armor (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobots armor to better reduce and mitigate incoming damage."
-	nano_point_cost = 1
 	var/armor_boost = list(melee = 15, bullet = 15, energy = 3, bomb = 75, bio = 100, rad = 100) // How much armor does the nanobot get?
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to reinforce your nanobot's armor.")
-			Stand.armor = armor_boost
-			verbs -= /obj/item/organ/internal/nanogate/proc/stand_armor
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to reinforce your nanobot's armor.")
+			organ.Stand.armor = armor_boost
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/stand_armor)
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
 // Boost the nanobot's armor
-/obj/item/organ/internal/nanogate/proc/stand_repair()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/stand_repair()
+	set category = "Nanogate Powers.Robot"
 	set name = "Upgrade Nanobot - Self-Repair (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot to enable self repair diagnostics."
-	nano_point_cost = 1
 	var/repair_rate = 5 // How fast does the nanobot repair itself?
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to diagnose and repair any damage your nanobot takes.")
-			Stand.repair_rate += repair_rate
-			verbs -= /obj/item/organ/internal/nanogate/proc/stand_repair
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to diagnose and repair any damage your nanobot takes.")
+			organ.Stand.repair_rate += repair_rate
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/stand_repair)
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
 // Powers that activate various modes for the bot.
-/obj/item/organ/internal/nanogate/proc/autodoc_mode()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/autodoc_mode()
+	set category = "Nanogate Powers.Robot"
 	set name = "Activate Nanobot Protocol - Medibot (4)"
 	set desc = "Spend some of your nanites to activate a medical protocol in your nanobot."
-	nano_point_cost = 4
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to have your nanobot act as a medibot.")
-			Stand.ai_flag |= AUTODOC_MODE
-			verbs -= /obj/item/organ/internal/nanogate/proc/autodoc_mode
-			Stand.updateDialog()
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(4))
+			to_chat(src, "You permanently assign some of your nanites to have your nanobot act as a medibot.")
+			organ.Stand.ai_flag |= AUTODOC_MODE
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/autodoc_mode)
+			organ.Stand.updateDialog()
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/radio_mode()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/radio_mode()
+	set category = "Nanogate Powers.Robot"
 	set name = "Activate Nanobot Protocol - Radio (1)"
 	set desc = "Spend some of your nanites to activate a protocol in your bot."
-	nano_point_cost = 1
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to shape into a ham radio for communication.")
-			Stand.ai_flag |= RADIO_MODE
-			verbs -= /obj/item/organ/internal/nanogate/proc/radio_mode
-			Stand.updateDialog()
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to shape into a ham radio for communication.")
+			organ.Stand.ai_flag |= RADIO_MODE
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/radio_mode)
+			organ.Stand.updateDialog()
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/console_mode()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/console_mode()
+	set category = "Nanogate Powers.Robot"
 	set name = "Activate Nanobot Protocol - Console (1)"
 	set desc = "Spend some of your nanites to activate convert your nanobots into a modular console capable of functioning as a portable computer."
-	nano_point_cost = 1
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites function as a modular console.")
-			Stand.ai_flag |= CONSOLE_MODE
-			verbs -= /obj/item/organ/internal/nanogate/proc/console_mode
-			Stand.updateDialog()
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites function as a modular console.")
+			organ.Stand.ai_flag |= CONSOLE_MODE
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/console_mode)
+			organ.Stand.updateDialog()
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/food_mode()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/food_mode()
+	set category = "Nanogate Powers.Robot"
 	set name = "Activate Nanobot Protocol - Food (1)"
 	set desc = "Spend some of your nanites to activate a protocol in your bot, allowing you to generate safe and stimulant laced food."
-	nano_point_cost = 1
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to activate the food dispencer system in your nanobot.")
-			Stand.ai_flag |= FOOD_MODE
-			verbs -= /obj/item/organ/internal/nanogate/proc/food_mode
-			Stand.updateDialog()
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to activate the food dispencer system in your nanobot.")
+			organ.Stand.ai_flag |= FOOD_MODE
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/food_mode)
+			organ.Stand.updateDialog()
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/control_bot()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/control_bot()
+	set category = "Nanogate Powers.Robot"
 	set name = "Activate Nanobot Remote Control (1)"
 	set desc = "Spend some of your nanites to remotely control your nanobot at will."
-	nano_point_cost = 1
 
-	if(Stand) // Do they have the bot?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to create a remote control setup in your bot.")
-			verbs -= /obj/item/organ/internal/nanogate/proc/control_bot
-			verbs += /obj/item/organ/internal/nanogate/proc/control
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.pay_power_cost(1))
+			to_chat(src, "You permanently assign some of your nanites to create a remote control setup in your bot.")
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/control_bot)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/control)
 	else
-		to_chat(owner, "You do not have a nanobot to upgrade!")
+		to_chat(src, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/control()
-	set category = "Nanogate Robot"
+/mob/living/carbon/human/proc/control()
+	set category = "Nanogate Powers.Robot"
 	set name = "Remote Control"
 	set desc = "Remotely control your nanobot. Don't die while controlling it though!"
-	nano_point_cost = 0
 
-	if(Stand) // Do they have the bot?
-		if(Stand.stat == DEAD)
-			to_chat(owner, SPAN_WARNING("Your nanobot is destroyed and unable to be controlled!"))
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(organ.Stand) // Do they have the bot?
+		if(organ.Stand.stat == DEAD)
+			to_chat(src, SPAN_WARNING("Your nanobot is destroyed and unable to be controlled!"))
 			return
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You remotely control your bot.")
-			Stand.controller = owner
-			owner.mind.transfer_to(Stand)
+		if(organ.pay_power_cost(0))
+			to_chat(src, "You remotely control your bot.")
+			organ.Stand.controller = src
+			mind.transfer_to(organ.Stand)
 	else
-		to_chat(owner, "You do not have a nanobot to control!")
+		to_chat(src, "You do not have a nanobot to control!")
