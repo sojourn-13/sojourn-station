@@ -39,7 +39,7 @@
 			if(H.species.can_shred(user))
 				attack_generic(user,1,"slices")
 
-	if(!(user in climbers))
+	if(LAZYLEN(climbers) && !(user in climbers))
 		user.visible_message(SPAN_WARNING("[user.name] shakes \the [src]."), \
 					SPAN_NOTICE("You shake \the [src]."))
 		structure_shaken()
