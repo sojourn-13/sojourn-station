@@ -12,6 +12,16 @@
 	change_floor_to_path = /turf/simulated/floor/rock/manmade/concrete
 	icon_state = "concrete_spawner"
 
+/obj/effect/flooring_type_spawner/mining_wall_oreful
+	name = "mineral spawner - always give ores"
+	change_floor_to_path = /turf/simulated/mineral/random
+	icon_state = "raise_rocks"
+
+/obj/effect/flooring_type_spawner/mining_wall
+	name = "mineral spawner"
+	change_floor_to_path = /turf/simulated/mineral
+	icon_state = "raise_rocks"
+
 /obj/effect/flooring_type_spawner/Initialize()
 	. = ..()
 	if(!change_floor_to_path)

@@ -291,7 +291,7 @@ var/list/flooring_types
 	//BSTs need this or they generate tons of soundspam while flying through the ship
 	if(!ishuman(M)|| M.incorporeal_move || !has_gravity(get_turf(M)))
 		return
-	var/mob/living/carbon/human/our_trippah = M
+	var/mob/living/our_trippah = M
 	if(MOVING_QUICKLY(M))
 		if(M.stats.getPerk(PERK_SURE_STEP))
 			return

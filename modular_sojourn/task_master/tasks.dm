@@ -10,7 +10,7 @@
 	var/datum/task_master/labourer/worker
 
 	//Pulled up from worker for easyer refencing and debugging
-	var/mob/living/carbon/human/forwards_refence
+	var/mob/living/forwards_refence
 
 
 	//Name of the Task
@@ -50,8 +50,10 @@
 
 /datum/task_master/task/self_value/activate_affect()
 	//log_debug("[forwards_refence] Has gained additonal insight.")
-	forwards_refence.sanity.give_insight(level + 3)
-	forwards_refence.sanity.give_insight_rest(level + 3)
+	if(ishuman(forwards_refence))
+		var/mob/living/carbon/human/forward_human = forwards_refence
+		forward_human.sanity.give_insight(level + 3)
+		forward_human.sanity.give_insight_rest(level + 3)
 //	forwards_refence.sanity.resting += level //This was to powerful
 
 
@@ -99,9 +101,12 @@
 
 /datum/task_master/task/rebound_case/activate_affect()
 	forwards_refence.stats.changeStat(STAT_COG, -5) //Yes this is infact a bad thing
-	forwards_refence.vessel.maximum_volume  += 10 //Increases maxium blood do to your shock/recovering body panicing or something like that
 	forwards_refence.maxHealth += 5 //Scars and battle wounds heal back stronger.
 	forwards_refence.health += 5 //Scars and battle wounds heal back stronger.
+
+	if(ishuman(forwards_refence))
+		var/mob/living/carbon/human/forward_human = forwards_refence
+		forward_human.vessel.maximum_volume  += 10 //Increases maxium blood do to your shock/recovering body panicing or something like that
 
 //Gym buff
 /datum/task_master/task/gym_goer
@@ -114,7 +119,9 @@
 /datum/task_master/task/gym_goer/activate_affect()
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
 	forwards_refence.max_nutrition += (level * 5) //405 level 1 -> 415 level 2 -> 430 level 3 ect ect
-	forwards_refence.vessel.maximum_volume  += 5 //Blood flow is being aided
+	if(ishuman(forwards_refence))
+		var/mob/living/carbon/human/forward_human = forwards_refence
+		forward_human.vessel.maximum_volume  += 10 //Blood flow is being aided
 
 //Floor/Wallet Pill buff
 /datum/task_master/task/dr_floor
@@ -147,7 +154,7 @@
 	gain_text = "Oops."
 	level_threshholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
 
-/datum/task_master/task/proper_sealer/activate_affect()
+/datum/task_master/task/tool_breaker/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
 
 /datum/task_master/task/proper_area_smoker
@@ -158,7 +165,9 @@
 	level_threshholds = 10
 
 /datum/task_master/task/proper_area_smoker/activate_affect()
-	forwards_refence.sanity.change_max_level(level)
+	if(ishuman(forwards_refence))
+		var/mob/living/carbon/human/forward_human = forwards_refence
+		forward_human.sanity.change_max_level(level)
 
 //Taking bad perks should not be all bad!
 /datum/task_master/task/poors
@@ -186,9 +195,18 @@
 //This affect is in plating directly
 /datum/task_master/task/slip_n_die
 	name = "Face planting trips"
-	key = "TRIPS"
+	key = "SLIP_N_DIE"
 	desc = "Triping sucks, gotta be more careful..."
 	gain_text = "Ouch, my toe"
 	level_threshholds = 1 //You fall down a lot
 	alt_scaling_number = 2 //But it does hurt
+	unlocked = TRUE
+
+//Digging and Mining gets +1 ore per level
+/datum/task_master/task/slab_clearer
+	name = "Mining Skill"
+	key = "SLAB_CLEARER"
+	desc = "Do to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
+	gain_text = "A fully cleared slab allows insight into maxizing mineral gains."
+	level_threshholds = 1 // 1->20->30
 	unlocked = TRUE
