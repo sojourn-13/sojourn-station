@@ -22,7 +22,7 @@ export function LootPanel(props) {
   const total = contents.length ? contents.length - 1 : 0;
 
   return (
-    <Window height={275} width={190} title={`Contents: ${total}`}>
+    <Window height={300} width={240} title={`Contents: ${total}`}>
       <Window.Content
         onKeyDown={(event) => {
           if (isEscape(event.key)) {
