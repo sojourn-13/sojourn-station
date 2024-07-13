@@ -1,4 +1,12 @@
-client/script = {"<style>
+/// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/// !!!!!!!!!!HEY LISTEN!!!!!!!!!!!!!!!!!!!!!!!!
+/// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// If you modify this file you ALSO need to modify tgui/packages/tgui-panel/styles/tgchat/chat-light.scss and chat-dark.scss
+// BUT you have to use PX font sizes with are on a x8 scale of these font sizes
+// Sample font-size: DM: 8 CSS: 64px
+
+/client/script = {"<style>
 body					{font-family: Verdana, sans-serif;}
 
 h1, h2, h3, h4, h5, h6	{color: #0000ff;font-family: Georgia, Verdana, sans-serif;}
@@ -116,3 +124,4 @@ h1.alert, h2.alert		{color: #000000;}
 BIG IMG.icon 			{width: 32px; height: 32px;}
 
 </style>"}
+

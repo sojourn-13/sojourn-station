@@ -67,7 +67,6 @@
 	//When this mob spawns at roundstart, a burrow will be created near it if it can't find one
 
 	var/mob/living/cameraFollow = null
-	var/list/datum/action/actions = list()
 	var/step_count = 0
 
 	var/tod = null // Time of death

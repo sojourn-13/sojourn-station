@@ -37,6 +37,8 @@
 
 
 /client/Click(var/atom/target, location, control, params)
+	SEND_SIGNAL(src, COMSIG_CLIENT_CLICK, target, location, control, params, usr)
+
 	var/list/L = params2list(params) //convert params into a list
 	var/dragged = L["drag"] //grab what mouse button they are dragging with, if any.
 	if(dragged && !L[dragged]) //check to ensure they aren't using drag clicks to aimbot
@@ -320,16 +322,30 @@
 	A.AltClick(src)
 	return
 
+/**
+ * Alt click on an atom.
+ * Performs alt-click actions before attempting to open a loot window.
+ * Returns TRUE if successful, FALSE if not.
+ */
 /atom/proc/AltClick(var/mob/user)
 	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
-	var/turf/T = get_turf(src)
-	if(T && user.TurfAdjacent(T))
-		if(user.listed_turf == T)
-			user.listed_turf = null
-		else
-			user.listed_turf = T
-			user.client.statpanel = "Turf"
-	return 1
+
+	var/turf/tile = get_turf(src)
+	if(isnull(tile))
+		return FALSE
+
+	if(!isturf(loc) && !isturf(src))
+		return FALSE
+
+	if(!user.TurfAdjacent(tile))
+		return FALSE
+
+	var/datum/lootpanel/panel = user.client?.loot_panel
+	if(isnull(panel))
+		return FALSE
+
+	panel.open(tile)
+	return TRUE
 
 /mob/proc/TurfAdjacent(var/turf/T)
 	return T.AdjacentQuick(src)

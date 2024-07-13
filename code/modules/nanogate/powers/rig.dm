@@ -8,137 +8,116 @@ List of powers in this page :
 */
 
 // Create the nanite rig
-/obj/item/organ/internal/nanogate/proc/nanite_rig()
+/mob/living/carbon/human/proc/nanite_rig()
 	set category = "Nanogate Powers"
 	set name = "Nanite Rigsuit - Installation (3)"
 	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
-	nano_point_cost = 3
 
-	if(!nanite_rig)
-		nanite_rig = new /obj/item/rig/nanite(src)
-		nanite_rig.seal_delay = 0 // No delay to put it on because nanites, and moving while putting it one make it disapear
-
-	if(owner.can_equip(nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
-		if(pay_power_cost(nano_point_cost))
-			owner.visible_message("[owner.name]'s back erupt in a black goo that quickly transform into a rig suit module.",
-									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
-			owner.replace_in_slot(nanite_rig, slot_back, skip_covering_check = TRUE)
-			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
-			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig
-
-			// Add the nanite rig verbs at activation
-			//verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
-
-			//Add to owner_verbs so it can be removed properly should the need arise.
-			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
-
-// Create the *opifex* nanite rig
-/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex()
-	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Installation (3)"
-	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
-	nano_point_cost = 3
-
-	if(!nanite_rig)
-		nanite_rig = new /obj/item/rig/nanite/opifex(src)
-		nanite_rig.seal_delay = 0 // No delay to put it on because nanites, and moving while putting it one make it disapear
-
-	if(owner.can_equip(nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
-		if(pay_power_cost(nano_point_cost))
-			owner.visible_message("[owner.name]'s back erupt in a black goo that quickly transform into a rig suit module.",
-									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
-			owner.replace_in_slot(nanite_rig, slot_back, skip_covering_check = TRUE)
-			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
-			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
-
-			// Add the nanite rig verbs at activation
-			//verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
-
-			//Add to owner_verbs so it can be removed properly should the need arise.
-			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
-/*
-// Give the nanite rig a storage module
-/obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
-	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Storage Module (1)"
-	set desc = "Use some of your nanites to create a storage compartment into your nanite rigsuit."
-	nano_point_cost = 1
-
-	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
 		return
 
-	if(pay_power_cost(nano_point_cost))
-		nanite_rig.install(new /obj/item/rig_module/storage)
-		to_chat(owner, "Your spine hurt as the nanites start to work on making a storage module.")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-*/
+	if(!organ.nanite_rig)
+		organ.nanite_rig = new /obj/item/rig/nanite(organ)
+		organ.nanite_rig.seal_delay = 0 // No delay to put it on because nanites, and moving while putting it one make it disapear
+
+	if(can_equip(organ.nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
+		if(organ.pay_power_cost(3))
+			visible_message("[name]'s back erupt in a black goo that quickly transform into a rig suit module.",
+									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
+			replace_in_slot(organ.nanite_rig, slot_back, skip_covering_check = TRUE)
+			organ.nanite_rig.seal_delay = initial(organ.nanite_rig.seal_delay) // resetting the seal delay
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/nanite_rig)
+
+			// Add the nanite rig verbs at activation
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_laser)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_autodoc)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_eva)
+
+// Create the *opifex* nanite rig
+/mob/living/carbon/human/proc/nanite_rig_opifex()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Installation (3)"
+	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
+
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
+		return
+
+	if(!organ.nanite_rig)
+		organ.nanite_rig = new /obj/item/rig/nanite/opifex(organ)
+		organ.nanite_rig.seal_delay = 0 // No delay to put it on because nanites, and moving while putting it one make it disapear
+
+	if(can_equip(organ.nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
+		if(organ.pay_power_cost(3))
+			visible_message("[name]'s back erupt in a black goo that quickly transform into a rig suit module.",
+									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
+			replace_in_slot(organ.nanite_rig, slot_back, skip_covering_check = TRUE)
+			organ.nanite_rig.seal_delay = initial(organ.nanite_rig.seal_delay) // resetting the seal delay
+			organ.organ_remove_verb(/mob/living/carbon/human/proc/nanite_rig_opifex)
+
+			// Add the nanite rig verbs at activation
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_laser)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_autodoc)
+			organ.organ_add_verb(/mob/living/carbon/human/proc/nanite_rig_eva)
+
 // Give the nanite rig a Laser Cannon
-/obj/item/organ/internal/nanogate/proc/nanite_rig_laser()
+/mob/living/carbon/human/proc/nanite_rig_laser()
 	set category = "Nanogate Powers"
 	set name = "Nanite Rigsuit - Laser Module (2)"
 	set desc = "Use some of your nanites to create a mounted laser gun on your rigsuit."
-	nano_point_cost = 2
 
-	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
 		return
 
-	if(pay_power_cost(nano_point_cost))
-		nanite_rig.install(new /obj/item/rig_module/mounted/egun)
-		to_chat(owner, "Your spine hurt as the nanites start to work on making a laser canon.")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
+	if(!organ.nanite_rig)
+		to_chat(src, "You need a rig to use this power you idiot.")
+		return
+
+	if(organ.pay_power_cost(2))
+		organ.nanite_rig.install(new /obj/item/rig_module/mounted/egun)
+		to_chat(src, "Your spine hurt as the nanites start to work on making a laser canon.")
+		organ.organ_remove_verb(/mob/living/carbon/human/proc/nanite_rig_laser)
 
 // Give the nanite rig an Autodoc Module
-/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc()
+/mob/living/carbon/human/proc/nanite_rig_autodoc()
 	set category = "Nanogate Powers"
 	set name = "Nanite Rigsuit - Autodoc Module (5)"
 	set desc = "Use many of your nanites to create a surgery module inside your hardsuit."
-	nano_point_cost = 5
 
-	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
 		return
 
-	if(pay_power_cost(nano_point_cost))
+	if(!organ.nanite_rig)
+		to_chat(src, "You need a rig to use this power you idiot.")
+		return
 
+	if(organ.pay_power_cost(5))
 		// Creating it early because we need to manually initialize some stuff
-		var/obj/item/rig_module/autodoc/autodoc_module = new /obj/item/rig_module/autodoc(src)
-		autodoc_module.Initialize()
-
-		nanite_rig.install(autodoc_module)
-		to_chat(owner, "Your spine hurt as the nanites start to work on making an autodoc module.")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+		var/obj/item/rig_module/autodoc/autodoc_module = new /obj/item/rig_module/autodoc(organ)
+		organ.nanite_rig.install(autodoc_module)
+		to_chat(src, "Your spine hurt as the nanites start to work on making an autodoc module.")
+		organ.organ_remove_verb(/mob/living/carbon/human/proc/nanite_rig_autodoc)
 
 // Give the nanite rig an EVA Module
-/obj/item/organ/internal/nanogate/proc/nanite_rig_eva()
+/mob/living/carbon/human/proc/nanite_rig_eva()
 	set category = "Nanogate Powers"
 	set name = "Nanite Rigsuit - EVA Module (1)"
 	set desc = "Use some of your nanites to create thrusters inside your hardsuit."
-	nano_point_cost = 1
 
-	if(!nanite_rig)
-		to_chat(owner, "You need a rig to use this power you idiot.")
+	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
+	if(!organ)
 		return
 
-	if(pay_power_cost(nano_point_cost))
+	if(!organ.nanite_rig)
+		to_chat(src, "You need a rig to use this power you idiot.")
+		return
 
+	if(organ.pay_power_cost(1))
 		// Creating it early because we need to manually initialize some stuff
-		var/obj/item/rig_module/maneuvering_jets/eva_module = new /obj/item/rig_module/maneuvering_jets(src)
-		eva_module.Initialize()
-
-		nanite_rig.install(eva_module)
-		to_chat(owner, "Your spine hurt as the nanites start to work on making an autodoc module.")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+		var/obj/item/rig_module/maneuvering_jets/eva_module = new /obj/item/rig_module/maneuvering_jets(organ)
+		organ.nanite_rig.install(eva_module)
+		to_chat(src, "Your spine hurt as the nanites start to work on making an autodoc module.")
+		organ.organ_remove_verb(/mob/living/carbon/human/proc/nanite_rig_eva)

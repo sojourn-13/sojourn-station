@@ -61,6 +61,7 @@
 			HUD.underlays.Cut()
 			if(HUDdatum.HUDneed[p]["minloc"])
 				HUD.screen_loc = HUDdatum.HUDneed[p]["minloc"]
+			HUD.update_minimalized(TRUE)
 
 		for (var/p in H.HUDtech)
 			var/obj/screen/HUD = H.HUDtech[p]
@@ -76,14 +77,15 @@
 					break
 		for (var/obj/screen/frippery/HUDfri in H.HUDfrippery)
 			H.client.screen -= HUDfri
+		winset(src, "mapwindow.status_bar", "size=270x16")
 	else
-
 		for (var/p in H.HUDneed)
 			var/obj/screen/HUD = H.HUDneed[p]
 			HUD.underlays.Cut()
 			if (HUDdatum.HUDneed[p]["background"])
 				HUD.underlays += HUDdatum.IconUnderlays[HUDdatum.HUDneed[p]["background"]]
 			HUD.screen_loc = HUDdatum.HUDneed[p]["loc"]
+			HUD.update_minimalized(FALSE)
 
 		for (var/p in H.HUDtech)
 			var/obj/screen/HUD = H.HUDtech[p]
@@ -99,6 +101,7 @@
 					break
 		for (var/obj/screen/frippery/HUDfri in H.HUDfrippery)
 			H.client.screen += HUDfri
+		winset(src, "mapwindow.status_bar", "size=320x16")
 	//update_equip_icon_position()
 	for(var/obj/item/I in get_equipped_items(1))
 		var/slotID = get_inventory_slot(I)

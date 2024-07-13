@@ -16,9 +16,6 @@
 /datum/component/modification/organ/stromal/get_function_info()
 	var/function_info = "<i>"
 
-	//for(var/owner_verb in owner_verb_adds)
-	//	holder.owner_verbs |= owner_verb
-
 	var/eff_details
 	if(organ_efficiency_mod.len)
 		eff_details += "Adds organ functions: "

@@ -283,14 +283,6 @@
 			var/obj/item/organ/external/organ = owner?.HUDneed["right arm bionics"]
 			organ?.update_icon()
 
-/obj/item/organ/external/proc/activate_module()
-	set name = "Activate module"
-	set category = "Cybernetics" //changed this to be in line with excelsior's cyber implants and such
-	set src in usr
-
-	if(module)
-		module.activate(owner, src)
-
 /obj/item/organ/external/emp_act(severity)
 	var/rand_modifier = rand(1,3)
 	if(!BP_IS_ROBOTIC(src))
@@ -826,7 +818,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
-		owner.verbs += /mob/proc/yank_out_object
+		add_verb(owner, /mob/proc/yank_out_object)
 
 	owner.embedded_flag = 1
 	W.on_embed(owner)

@@ -169,6 +169,7 @@
 /datum/asset/spritesheet/cooking_icons
 	name = "cooking_icons"
 	resize = 4
+	duplicates_allowed = TRUE // there are some duplicates
 
 /datum/asset/spritesheet/cooking_icons/create_spritesheets()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)

@@ -541,7 +541,7 @@
 
 	return TRUE
 
-/obj/item/rig/proc/notify_ai(message)
+/obj/item/rig/proc/notify_ai(var/message)
 	for(var/obj/item/rig_module/ai_container/module in installed_modules)
 		if(module.integrated_ai && module.integrated_ai.client && !module.integrated_ai.stat)
 			to_chat(module.integrated_ai, "[message]")

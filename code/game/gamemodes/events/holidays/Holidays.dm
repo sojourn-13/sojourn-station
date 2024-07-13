@@ -122,7 +122,7 @@ var/global/Holiday = null
 ADMIN_VERB_ADD(/client/proc/Set_Holiday, R_SERVER, null)
 /client/proc/Set_Holiday(T as text|null)
 	set name = ".Set Holiday"
-	set category = "Fun"
+	set category = "Admin.Events"
 	set desc = "Force-set the Holiday variable to make the game think it's a certain day."
 	if(!check_rights(R_SERVER))	return
 

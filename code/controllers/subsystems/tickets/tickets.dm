@@ -56,8 +56,9 @@ SUBSYSTEM_DEF(tickets)
 		log_admin("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>")
 		message_admins("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>", mod_send_message = TRUE)
 
-/datum/controller/subsystem/tickets/stat_entry()
-	..("Tickets: [LAZYLEN(allTickets)]")
+/datum/controller/subsystem/tickets/stat_entry(msg)
+	msg += "Tickets: [LAZYLEN(allTickets)]"
+	return ..()
 
 /datum/controller/subsystem/tickets/proc/checkStaleness()
 	var/stales = list()
@@ -387,9 +388,6 @@ UI STUFF
 */
 
 /datum/controller/subsystem/tickets/proc/returnUI(tab = TICKET_OPEN)
-	set name = "Open Ticket Interface"
-	set category = "Tickets"
-
 //dat
 	var/trStyle = "border-top:2px solid; border-bottom:2px solid; padding-top: 5px; padding-bottom: 5px;"
 	var/tdStyleleft = "border-top:2px solid; border-bottom:2px solid; width:150px; text-align:center;"

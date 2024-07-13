@@ -19,7 +19,6 @@
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 12000
 	var/nanite_points = 10
-	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 	//var/list/perk_list = list() //List of activated perks for later removal
@@ -27,22 +26,18 @@
 	min_broken_damage = 10 //Should break when organ is at 10 health of its 60.
 
 	owner_verbs = list(
-		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
-
-		/obj/item/organ/internal/nanogate/proc/create_nanobot,
-
+		/mob/living/carbon/human/proc/create_nanobot,
 		// Upgrades of the user.
-		/obj/item/organ/internal/nanogate/proc/nanite_stats,
-		/obj/item/organ/internal/nanogate/proc/nanite_regen,
-		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
-		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem,
-		/obj/item/organ/internal/nanogate/proc/nanite_food_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker,
+		/mob/living/carbon/human/proc/nanite_stats,
+		/mob/living/carbon/human/proc/nanite_regen,
+		/mob/living/carbon/human/proc/nanite_muscle,
+		/mob/living/carbon/human/proc/nanite_armor,
+		/mob/living/carbon/human/proc/nanite_chem,
+		/mob/living/carbon/human/proc/nanite_food_storage,
+		/mob/living/carbon/human/proc/nanite_metal_drinker,
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig
-
+		/mob/living/carbon/human/proc/nanite_rig
 		)
 
 // Guild made the original blue prints. There version is better than the one they give to others,
@@ -68,23 +63,20 @@ obj/item/organ/internal/nanogate/artificer
 	origin_tech = list(TECH_ENGINEERING = 25, TECH_BIO = 15, TECH_DATA = 10)
 
 	owner_verbs = list(
-		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
-		/obj/item/organ/internal/nanogate/proc/create_nanobot,
-
+		/mob/living/carbon/human/proc/create_nanobot,
 		// Upgrades of the user.
-		/obj/item/organ/internal/nanogate/proc/nanite_stats,
-		/obj/item/organ/internal/nanogate/proc/nanite_regen,
-		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
-		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem,
-		/obj/item/organ/internal/nanogate/proc/nanite_mod,
-		/obj/item/organ/internal/nanogate/proc/nanite_ammo,
-		/obj/item/organ/internal/nanogate/proc/nanite_food_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker,
-
+		/mob/living/carbon/human/proc/nanite_stats,
+		/mob/living/carbon/human/proc/nanite_regen,
+		/mob/living/carbon/human/proc/nanite_muscle,
+		/mob/living/carbon/human/proc/nanite_armor,
+		/mob/living/carbon/human/proc/nanite_chem,
+		/mob/living/carbon/human/proc/nanite_mod,
+		/mob/living/carbon/human/proc/nanite_ammo,
+		/mob/living/carbon/human/proc/nanite_food_storage,
+		/mob/living/carbon/human/proc/nanite_metal_drinker,
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
+		/mob/living/carbon/human/proc/nanite_rig_opifex
 		)
 
 

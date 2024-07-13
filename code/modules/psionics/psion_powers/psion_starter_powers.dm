@@ -3,7 +3,7 @@
 // If you add to this power set make sure to to also add them to psion implant.
 // Adding or tweaking powers here should be on the side of "Psions are intented to get powerful thoughout the shift"
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_telepathy()
+/mob/living/carbon/human/proc/psionic_telepathy()
 	set category = "Psionic powers"
 	set name = "Telepathic projection (1)"
 	set desc = "Expend a single point of your psi essence to send a message to someone. Cruciform users are shielded from this heresy and synthetics lack the flesh for it."

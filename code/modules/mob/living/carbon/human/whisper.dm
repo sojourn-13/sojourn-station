@@ -14,6 +14,9 @@
 		whisper(message)
 
 /mob/living/carbon/human/whisper(message as text)
+	set name = "Whisper"
+	set category = "IC"
+
 	var/alt_name = ""
 
 	if(say_disabled)	//This is here to try to identify lag problems

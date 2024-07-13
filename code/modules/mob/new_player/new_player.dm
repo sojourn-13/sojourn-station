@@ -74,21 +74,30 @@
 	panel.open()
 	return
 
-/mob/new_player/Stat()
+/mob/new_player/get_status_tab_items()
 	. = ..()
 
-	if(statpanel("Status"))
-		if(SSticker.current_state == GAME_STATE_PREGAME)
-			stat("Storyteller:", "[master_storyteller]") // Old setting for showing the game mode
-			stat("Time To Start:", "[SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]")
-			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
-			totalPlayers = 0
-			totalPlayersReady = 0
-			for(var/mob/new_player/player in GLOB.player_list)
-				if(player.ready)
-					stat("[player.client.prefs.real_name]", (player.ready)?("[player.client.prefs.job_high]"):(null))
-				totalPlayers++
-				if(player.ready)totalPlayersReady++
+	if(SSticker.current_state == GAME_STATE_PREGAME)
+		// stat("Storyteller:", "[master_storyteller]") // Old setting for showing the game mode
+		. += "Time To Start: [SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]"
+		. += "Players: [totalPlayers]"
+		. += "Players Ready: [totalPlayersReady]"
+
+		totalPlayers = 0
+		totalPlayersReady = 0
+		for(var/mob/new_player/player in GLOB.player_list)
+			totalPlayers++
+			if(player.ready)
+				totalPlayersReady++
+				var/job_of_choice = "Unknown"
+				// Player chose to be a vagabond, that takes priority over all other settings,
+				// and is in a low priority job list for some reason
+				if("Colonist" in player.client.prefs.job_low)
+					job_of_choice = "Colonist"
+				// Only take top priority job into account, no use divining what lower priority job player could get
+				else if(player.client.prefs.job_high)
+					job_of_choice = player.client.prefs.job_high
+				. += "[player.client.prefs.real_name] : [job_of_choice]"
 
 /mob/new_player/Topic(href, href_list[])
 	if(src != usr || !client)
@@ -168,7 +177,7 @@
 			observer.real_name = client.prefs.real_name
 			observer.name = observer.real_name
 			if(!client.holder && !config.antag_hud_allowed)           // For new ghosts we remove the verb from even showing up if it's not allowed.
-				observer.verbs -= /mob/observer/ghost/verb/toggle_antagHUD        // Poor guys, don't know what they are missing!
+				remove_verb(observer, /mob/observer/ghost/verb/toggle_antagHUD)        // Poor guys, don't know what they are missing!
 			//observer.key = key
 			observer.ckey = ckey
 			observer.initialise_postkey()
@@ -557,6 +566,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 	new_character.update_eyes()
 	new_character.regenerate_icons()
 	new_character.key = key//Manually transfer the key to log them in
+	new_character.client.init_verbs()
 
 	return new_character
 

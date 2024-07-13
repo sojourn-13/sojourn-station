@@ -115,9 +115,9 @@
 	SSmove_manager.stop_looping(src)
 	..()
 
-/mob/living/simple_animal/parrot/Stat()
+/mob/living/simple_animal/parrot/get_status_tab_items()
 	. = ..()
-	stat("Held Item", held_item)
+	. += "Held Item: [held_item]"
 
 /*
  * Inventory

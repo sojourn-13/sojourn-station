@@ -11,10 +11,10 @@
 	var/summon_ready = TRUE
 
 /datum/genetics/mutation/wurm_cry/onMobImplant()
-	container.holder.verbs += /mob/living/proc/mutation_wurm_cry
+	add_verb(container.holder, /mob/living/proc/mutation_wurm_cry)
 
 /datum/genetics/mutation/wurm_cry/onMobRemove()
-	container.holder.verbs -= /mob/living/proc/mutation_wurm_cry
+	remove_verb(container.holder, /mob/living/proc/mutation_wurm_cry)
 
 /datum/genetics/mutation/wurm_cry/proc/summon_ready()
 	summon_ready = TRUE
@@ -31,7 +31,7 @@
 	//Get the mutation if it exists (delete the verb if it doesn't)
 	var/datum/genetics/mutation/wurm_cry/wurm_cry_mutation = src.unnatural_mutations.getMutation("MUTATION_WURM_CRY", TRUE)
 	if(!wurm_cry_mutation)
-		src.verbs -= /mob/living/proc/mutation_wurm_cry
+		remove_verb(src, /mob/living/proc/mutation_wurm_cry)
 		return
 
 	var/summon_ready = wurm_cry_mutation.summon_ready

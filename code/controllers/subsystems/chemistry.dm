@@ -26,5 +26,6 @@ SUBSYSTEM_DEF(chemistry)
 	if(holder.process_reactions())
 		active_holders += holder
 
-/datum/controller/subsystem/chemistry/stat_entry()
-	..("[active_holders.len] reagent holder\s")
+/datum/controller/subsystem/chemistry/stat_entry(msg)
+	msg += "[active_holders.len] reagent holder\s"
+	return ..()

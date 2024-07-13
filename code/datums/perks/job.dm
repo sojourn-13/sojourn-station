@@ -25,6 +25,7 @@
 	name = "Artist"
 	desc = "You have a lot of expertise in making works of art. You gain more insight from all sources but can only increase \
 			your stats by creating works of art."
+	icon_state = "paintbrush"
 	var/old_max_insight = INFINITY
 	var/old_max_resting = INFINITY
 	var/old_insight_rest_gain_multiplier = 1
@@ -54,6 +55,7 @@
 	name = "Hyperzine Injections"
 	desc = "A standard issue injector hidden away that is designed for Surface Operations Managers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
+	icon_state = "adrenalineburst_tim"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -603,12 +605,11 @@
 /datum/perk/codespeak/assign(mob/living/L)
 	..()
 	if(holder)
-		holder.verbs += codespeak_procs
-
+		add_verb(holder, codespeak_procs)
 
 /datum/perk/codespeak/remove()
 	if(holder)
-		holder.verbs -= codespeak_procs
+		remove_verb(holder, codespeak_procs)
 	..()
 
 /datum/perk/gunsmith

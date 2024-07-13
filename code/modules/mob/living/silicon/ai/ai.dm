@@ -115,11 +115,10 @@ var/list/ai_verbs_default = list(
 	defaultHUD = "Eris"
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
-	src.verbs |= ai_verbs_default
+	add_verb(src, ai_verbs_default)
 
 /mob/living/silicon/ai/proc/remove_ai_verbs()
-	src.verbs -= ai_verbs_default
-
+	remove_verb(src, ai_verbs_default)
 
 /mob/living/silicon/ai/MiddleClickOn(var/atom/A)
     if(!control_disabled && A.AIMiddleClick(src))

@@ -72,6 +72,11 @@
 			usr.unset_machine()
 
 	return TRUE
+
+// Called with minimalized = 1 when switching to minimal mode, with = 0 switching back
+/obj/screen/proc/update_minimalized(minimalized)
+	return
+
 //--------------------------------------------------close---------------------------------------------------------
 
 /obj/screen/close
@@ -959,11 +964,6 @@ obj/screen/fire/DEADelize()
 	screen_loc = "15,2"
 
 /obj/screen/HUDthrow/New()
-	/*if(usr)
-		//parentmob = usr
-		//usr.verbs += /obj/screen/HUDthrow/verb/toggle_throw_mode()
-		if(usr.client)
-			usr.client.screen += src*/
 	..()
 	update_icon()
 
@@ -1129,7 +1129,7 @@ obj/screen/fire/DEADelize()
 	var/mob/living/carbon/human/H = parentmob
 	if(istype(H))
 		var/obj/item/organ/external/E = H.organs_by_name[target_organ]
-		E?.module?.activate(H, E)
+		E?.module?.trigger(H, E)
 //-----------------------bionics (implant)------------------------------
 /obj/screen/implant_bionics
 	name = "implant bionics"

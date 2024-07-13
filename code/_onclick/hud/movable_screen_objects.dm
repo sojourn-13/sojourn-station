@@ -10,7 +10,11 @@
 
 /obj/screen/movable
 	var/snap2grid = FALSE
-	var/moved = FALSE
+	var/moved = null
+	var/x_off = -16
+	var/y_off = -16
+	// add a green overlay
+	mouse_drag_pointer = 'icons/mouse_icons/screen_drag.dmi'
 
 //Snap Screen Object
 //Tied to the grid, snaps to the nearest turf
@@ -18,76 +22,32 @@
 /obj/screen/movable/snap
 	snap2grid = TRUE
 
-
 /obj/screen/movable/MouseDrop(over_object, src_location, over_location, src_control, over_control, params)
-	var/list/PM = params2list(params)
-
-	//No screen-loc information? abort.
-	if(!PM || !PM["screen-loc"])
+	var/position = mouse_params_to_position(params)
+	if(!position)
 		return
 
-	//Split screen-loc up into X+Pixel_X and Y+Pixel_Y
-	var/list/screen_loc_params = splittext(PM["screen-loc"], ",")
+	screen_loc = position
+	moved = position
 
-	//Split X+Pixel_X up into list(X, Pixel_X)
-	var/list/screen_loc_X = splittext(screen_loc_params[1],":")
-	screen_loc_X[1] = encode_screen_X(text2num(screen_loc_X[1]))
-	//Split Y+Pixel_Y up into list(Y, Pixel_Y)
-	var/list/screen_loc_Y = splittext(screen_loc_params[2],":")
-	screen_loc_Y[1] = encode_screen_Y(text2num(screen_loc_Y[1]))
+/// Takes mouse parmas as input, returns a string representing the appropriate mouse position
+/obj/screen/movable/proc/mouse_params_to_position(params)
+	var/list/modifiers = params2list(params)
+
+	//No screen-loc information? abort.
+	if(!LAZYACCESS(modifiers, SCREEN_LOC))
+		return
+
+	var/client/our_client = usr.client
+	var/list/offset	= screen_loc_to_offset(LAZYACCESS(modifiers, SCREEN_LOC))
 
 	if(snap2grid) //Discard Pixel Values
-		screen_loc = "[screen_loc_X[1]],[screen_loc_Y[1]]"
-
+		offset[1] = FLOOR(offset[1], world.icon_size) // drops any pixel offset
+		offset[2] = FLOOR(offset[2], world.icon_size) // drops any pixel offset
 	else //Normalise Pixel Values (So the object drops at the center of the mouse, not 16 pixels off)
-		var/pix_X = text2num(screen_loc_X[2]) - 16
-		var/pix_Y = text2num(screen_loc_Y[2]) - 16
-		screen_loc = "[screen_loc_X[1]]:[pix_X],[screen_loc_Y[1]]:[pix_Y]"
-
-/obj/screen/movable/proc/encode_screen_X(X)
-	if(X > usr.client.view+1)
-		. = "EAST-[usr.client.view*2 + 1-X]"
-	else if(X < usr.client.view+1)
-		. = "WEST+[X-1]"
-	else
-		. = "CENTER"
-
-/obj/screen/movable/proc/decode_screen_X(X)
-	//Find EAST/WEST implementations
-	if(findtext(X, "EAST-"))
-		var/num = text2num(copytext(X, 6)) //Trim EAST-
-		if(!num)
-			num = 0
-		. = usr.client.view*2 + 1 - num
-	else if(findtext(X, "WEST+"))
-		var/num = text2num(copytext(X, 6)) //Trim WEST+
-		if(!num)
-			num = 0
-		. = num+1
-	else if(findtext(X, "CENTER"))
-		. = usr.client.view+1
-
-/obj/screen/movable/proc/encode_screen_Y(Y)
-	if(Y > usr.client.view+1)
-		. = "NORTH-[usr.client.view*2 + 1-Y]"
-	else if(Y < usr.client.view+1)
-		. = "SOUTH+[Y-1]"
-	else
-		. = "CENTER"
-
-/obj/screen/movable/proc/decode_screen_Y(Y)
-	if(findtext(Y, "NORTH-"))
-		var/num = text2num(copytext(Y, 7)) //Trim NORTH-
-		if(!num)
-			num = 0
-		. = usr.client.view*2 + 1 - num
-	else if(findtext(Y, "SOUTH+"))
-		var/num = text2num(copytext(Y, 7)) //Time SOUTH+
-		if(!num)
-			num = 0
-		. = num+1
-	else if(findtext(Y, "CENTER"))
-		. = usr.client.view+1
+		offset[1] += x_off
+		offset[2] += y_off
+	return offset_to_screen_loc(offset[1], offset[2], our_client?.view)
 
 //Debug procs
 /client/proc/test_movable_UI()
@@ -107,7 +67,6 @@
 	M.screen_loc = screen_l
 
 	screen += M
-
 
 /client/proc/test_snap_UI()
 	set category = "Debug"
