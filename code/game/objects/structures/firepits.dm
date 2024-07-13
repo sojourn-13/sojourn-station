@@ -148,7 +148,7 @@
 		visible_message("<span class='warning'>\The [src] starts burning!</span>")
 
 /obj/structure/bonfire/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(burning)
 		var/state
 		switch(fuel)
@@ -158,13 +158,13 @@
 				state = "bonfire_hot"
 		var/image/I = image(icon, state)
 		I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
-		overlays += I
+		add_overlay(I)
 		if(buckled_mob && fuel >= 5)
 			I = image(icon, "bonfire_intense")
 			I.pixel_y = 13
 			I.layer = MOB_LAYER + 0.1
 			I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
-			overlays += I
+			add_overlay(I)
 		var/light_strength = max(clamp(fuel/10, 1, 7), 2)
 		set_light(light_strength, light_strength, "#FF9933")
 	else
@@ -172,7 +172,7 @@
 	if(grill)
 		var/image/grille_image = image(icon, "bonfire_grill")
 		grille_image.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
-		overlays += grille_image
+		add_overlay(grille_image)
 
 /obj/structure/bonfire/post_buckle_mob(mob/living/M)
 	if(M.buckled == src) // Just buckled someone

@@ -13,11 +13,11 @@
 	phaser = FALSE
 	psionic_respawn = FALSE
 
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 1000 * PSIMOB_HEALTH_MOD
+	health = 1000 * PSIMOB_HEALTH_MOD
 
 	//Good stats baseline in case admins dont edit these
-	armor = list(melee = 60, bullet = 30, energy = 30, bomb = 20, bio = 50, rad = 100, agony = 100)
+	armor = list(melee = 15, bullet = 7, energy = 7, bomb = 20, bio = 50, rad = 100, agony = 100)
 
 	ranged = TRUE
 	comfy_range = 8
@@ -29,7 +29,7 @@
 	can_burrow = FALSE
 	melee_damage_lower = 15
 	melee_damage_upper = 25
-	armor_penetration = 50
+	armor_divisor = 3
 	ranged = TRUE
 
 	pixel_x = 0
@@ -61,7 +61,7 @@
 		knockdown_odds = 50
 		melee_damage_lower = 30
 		melee_damage_upper = 35
-		armor_penetration = 60
+		armor_divisor = 4
 		transform_ed = TRUE
 		projectiletype = /obj/item/projectile/tether/lash
 		for(var/mob/living/target in targets_in_range(in_hear_range = TRUE))
@@ -112,7 +112,7 @@
 
 /mob/living/carbon/superior_animal/psi_monster/ploge/right_after_firing(atom/firing_target, obj/item/projectile/trace_arg)
 	ranged = FALSE
-	addtimer(CALLBACK(src, .proc/regain_range), 60) // gives some time for the monster to run upto or attack the mob
+	addtimer(CALLBACK(src, PROC_REF(regain_range)), 60) // gives some time for the monster to run upto or attack the mob
 
 /mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)
 	..()

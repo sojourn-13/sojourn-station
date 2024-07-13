@@ -514,8 +514,8 @@
 		return FALSE
 
 	if(give_discounts && give_discount_points)
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
+		if(isliving(user))
+			var/mob/living/H = user
 			if(currently_vending.price)
 				var/points_rewarded = (currently_vending.price / 100) //Shockingly this is MORE fair then a flat value as it rewards better for high spenders well still punishing low value endless transations
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)

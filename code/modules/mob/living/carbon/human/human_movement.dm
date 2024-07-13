@@ -26,6 +26,8 @@
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
+		tally -= 0.5
+	if(blocking)
 		tally += 1
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -134,7 +136,7 @@
 
 /mob/living/carbon/human/proc/update_momentum()
 	if(momentum_speed)
-		momentum_reduction_timer = addtimer(CALLBACK(src, .proc/calc_momentum), 1 SECONDS, TIMER_STOPPABLE)
+		momentum_reduction_timer = addtimer(CALLBACK(src, PROC_REF(calc_momentum)), 1 SECONDS, TIMER_STOPPABLE)
 	else
 		momentum_speed = 0
 		deltimer(momentum_reduction_timer)

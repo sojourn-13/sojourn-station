@@ -274,7 +274,7 @@
 		//create report
 		var/obj/item/paper/geo_info/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
-		P.copy_overlays(list("paper_stamped"), TRUE)
+		P.add_overlay(list("paper_stamped"), TRUE)
 
 		//work out data
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"

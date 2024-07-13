@@ -21,7 +21,7 @@
 */
 /obj/plant_spawner/New()
 	if(spawn_growth_auto)
-		addtimer(CALLBACK(src, /obj/plant_spawner/proc/spawn_growth), 2)
+		addtimer(CALLBACK(src, PROC_REF(spawn_growth)), 2)
 
 /obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]

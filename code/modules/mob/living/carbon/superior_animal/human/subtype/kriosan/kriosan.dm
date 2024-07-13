@@ -9,7 +9,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 12, bullet = 12, energy = 11, bomb = 50, bio = 100, rad = 100)
 
     //range/ammo stuff
 	ranged = 1
@@ -54,7 +54,7 @@
 	icon_state = "kriosan_troop_riot"
 	icon_dead = "kriosan_troop_riot_dead"
 
-	armor = list(melee = 60, bullet = 70, energy = 50, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 15, bullet = 17, energy = 12, bomb = 40, bio = 100, rad = 100)
 
 	//range/ammo stuff
 	rapid = 1
@@ -78,7 +78,7 @@
 	icon_state = "kriosan_troop_chaingun"
 	icon_dead = "kriosan_troop_chaingun_dead"
 
-	armor = list(melee = 70, bullet = 55, energy = 40, bomb = 70, bio = 100, rad = 100)
+	armor = list(melee = 17, bullet = 13, energy = 10, bomb = 70, bio = 100, rad = 100)
 
 
 	rapid = 1

@@ -517,12 +517,12 @@ There are 9 wires.
 /obj/machinery/door/airlock/proc/loseMainPower()
 	main_power_lost_until = mainPowerCablesCut() ? -1 : SecondsToTicks(60)
 	if(main_power_lost_until > 0)
-		addtimer(CALLBACK(src, .proc/regainMainPower), main_power_lost_until)
+		addtimer(CALLBACK(src, PROC_REF(regainMainPower)), main_power_lost_until)
 
 	// If backup power is permanently disabled then activate in 10 seconds if possible, otherwise it's already enabled or a timer is already running
 	if(backup_power_lost_until == -1 && !backupPowerCablesCut())
 		backup_power_lost_until = SecondsToTicks(10)
-		addtimer(CALLBACK(src, .proc/regainBackupPower), backup_power_lost_until)
+		addtimer(CALLBACK(src, PROC_REF(regainBackupPower)), backup_power_lost_until)
 
 	// Disable electricity if required
 	if(electrified_until && isAllPowerLoss())
@@ -531,7 +531,7 @@ There are 9 wires.
 /obj/machinery/door/airlock/proc/loseBackupPower()
 	backup_power_lost_until = backupPowerCablesCut() ? -1 : SecondsToTicks(60)
 	if(backup_power_lost_until > 0)
-		addtimer(CALLBACK(src, .proc/regainBackupPower), backup_power_lost_until)
+		addtimer(CALLBACK(src, PROC_REF(regainBackupPower)), backup_power_lost_until)
 
 	// Disable electricity if required
 	if(electrified_until && isAllPowerLoss())
@@ -569,7 +569,7 @@ There are 9 wires.
 		message = "The door is now electrified [duration == -1 ? "permanently" : "for [duration] second\s"]."
 		electrified_until = duration == -1 ? -1 : SecondsToTicks(duration)
 		if(electrified_until > 0)
-			addtimer(CALLBACK(src, .proc/electrify), electrified_until)
+			addtimer(CALLBACK(src, PROC_REF(electrify)), electrified_until)
 
 	if(feedback && message)
 		to_chat(usr, message)
@@ -1293,7 +1293,7 @@ There are 9 wires.
 			for(var/atom/movable/AM in turf)
 				if(AM.blocks_airlock())
 					if(autoclose && tryingToLock)
-						addtimer(CALLBACK(src, .proc/close), 30 SECONDS)
+						addtimer(CALLBACK(src, PROC_REF(close)), 30 SECONDS)
 					if(world.time > next_beep_at)
 						playsound(loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
 						next_beep_at = world.time + SecondsToTicks(120)
@@ -1386,10 +1386,10 @@ There are 9 wires.
 		//update the door's access to match the electronics'
 		secured_wires = electronics.secure
 		if(electronics.one_access)
-			req_access.Cut()
+			LAZYNULL(req_access)
 			req_one_access = electronics.conf_access
 		else
-			req_one_access.Cut()
+			LAZYNULL(req_one_access)
 			req_access = electronics.conf_access
 
 		//get the name from the assembly
@@ -1438,9 +1438,9 @@ There are 9 wires.
 	//update the electronics to match the door's access
 	if(!req_access)
 		check_access()
-	if(req_access.len)
+	if(LAZYLEN(req_access))
 		electronics.conf_access = req_access
-	else if (req_one_access.len)
+	else if (LAZYLEN(req_one_access))
 		electronics.conf_access = req_one_access
 		electronics.one_access = TRUE
 

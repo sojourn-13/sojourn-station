@@ -761,7 +761,7 @@ and which aren't.
 	if(href_list["sync_console"])
 		menuOption = VAT_MENU_WORKING
 		//This is too wierd to chance using.
-		//addtimer(CALLBACK(src, .proc/sync), 3 SECONDS)
+		//addtimer(CALLBACK(src, PROC_REF(sync)), 3 SECONDS)
 		sync()
 
 	add_fingerprint(usr)

@@ -42,9 +42,9 @@
 	var/greyson_moding = FALSE
 
 /datum/component/item_upgrade/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
+	RegisterSignal(parent, COMSIG_IATTACK, PROC_REF(attempt_install))
+	RegisterSignal(parent, COMSIG_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_REMOVE, PROC_REF(uninstall))
 
 /datum/component/item_upgrade/proc/attempt_install(atom/A, var/mob/living/user, params)
 	return can_apply(A, user) && apply(A, user)
@@ -105,7 +105,7 @@
 	if(!tool_upgrades.len)
 		to_chat(user, SPAN_WARNING("\The [parent] can not be attached to a tool."))
 		return FALSE
-	if(T.item_upgrades.len >= T.max_upgrades)
+	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("This tool can't fit anymore modifications!"))
 		return FALSE
@@ -177,7 +177,7 @@
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_rig(var/obj/item/rig/R, var/mob/living/user)
-	if(R.item_upgrades.len >= R.max_upgrades)
+	if(LAZYLEN(R.item_upgrades) >= R.max_upgrades)
 		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
 		return FALSE
 
@@ -195,7 +195,7 @@
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
-	if(T.item_upgrades.len >= T.max_upgrades)
+	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
 		return FALSE
 
@@ -218,7 +218,7 @@
 			to_chat(user, SPAN_WARNING("\The [parent] can not be applied to guns!"))
 		return FALSE //Can't be applied to a weapon
 
-	if(G.item_upgrades.len >= G.max_upgrades)
+	if(LAZYLEN(G.item_upgrades) >= G.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("This weapon can't fit anymore modifications!"))
 		return FALSE
@@ -257,9 +257,9 @@
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
 	I.forceMove(A)
-	A.item_upgrades.Add(I)
-	RegisterSignal(A, COMSIG_APPVAL, .proc/apply_values)
-	RegisterSignal(A, COMSIG_ADDVAL, .proc/add_values)
+	LAZYADD(A.item_upgrades, I)
+	RegisterSignal(A, COMSIG_APPVAL, PROC_REF(apply_values))
+	RegisterSignal(A, COMSIG_ADDVAL, PROC_REF(add_values))
 	A.AddComponent(/datum/component/upgrade_removal)
 	A.refresh_upgrades()
 	return TRUE
@@ -269,7 +269,7 @@
 	if(unique_removal)
 		var/obj/item/gun/G = I
 		G.gun_tags.Remove(unique_removal_type)
-	I.item_upgrades -= P
+	LAZYREMOVE(I.item_upgrades, P)
 	if(destroy_on_removal)
 		UnregisterSignal(I, COMSIG_ADDVAL)
 		UnregisterSignal(I, COMSIG_APPVAL)
@@ -312,7 +312,7 @@
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_armor_rig(var/obj/item/rig/R)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
@@ -325,7 +325,7 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes |= prefix
+	LAZYOR(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/remove_values_armor_rig(var/obj/item/rig/R)
@@ -339,7 +339,7 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes -= prefix
+	LAZYREMOVE(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
@@ -394,7 +394,7 @@
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
 	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
@@ -521,7 +521,7 @@
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
 
-	G.prefixes |= prefix
+	LAZYOR(G.name_prefixes, prefix)
 
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
@@ -607,15 +607,18 @@
 				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
-			to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
-
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_BASE]
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
@@ -780,7 +783,7 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 
 /datum/component/upgrade_removal/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_uninstall)
+	RegisterSignal(parent, COMSIG_ATTACKBY, PROC_REF(attempt_uninstall))
 
 /datum/component/upgrade_removal/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ATTACKBY)
@@ -804,7 +807,7 @@
 	//Removing upgrades from a tool. Very difficult, but passing the check only gets you the perfect result
 	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
 	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
-	if(upgrade_loc.item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
+	if(LAZYLEN(upgrade_loc.item_upgrades) && C.has_quality(QUALITY_SCREW_DRIVING))
 		var/list/possibles = upgrade_loc.item_upgrades.Copy()
 		possibles += "Cancel"
 		var/obj/item/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles

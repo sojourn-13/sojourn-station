@@ -61,7 +61,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
-	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
+//	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -153,7 +153,7 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i] * post_penetration_dammult
+		val += damage_types[i]
 	return val
 
 /obj/item/projectile/proc/is_halloss()
@@ -162,12 +162,16 @@
 			return FALSE
 	return TRUE
 
+/obj/item/projectile/proc/get_pain_damage()
+	if (damage_types[HALLOSS])
+		return damage_types[HALLOSS]
+
 /obj/item/projectile/multiply_projectile_damage(newmult)
 	for(var/i in damage_types)
-		damage_types[i] *= newmult
+		damage_types[i] *= i == HALLOSS ? 1 : newmult
 
-/obj/item/projectile/multiply_projectile_penetration(newmult)
-	armor_penetration = initial(armor_penetration) * newmult
+/obj/item/projectile/add_projectile_penetration(newmult)
+	armor_divisor = initial(armor_divisor) + newmult
 
 /obj/item/projectile/multiply_pierce_penetration(newmult)
 	penetrating = initial(penetrating) + newmult
@@ -175,9 +179,6 @@
 /obj/item/projectile/multiply_projectile_step_delay(newmult)
 	if(!hitscan)
 		step_delay = initial(step_delay) * newmult
-
-/obj/item/projectile/multiply_projectile_agony(newmult)
-	agony = initial(agony) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
 	fire_stacks = initial(fire_stacks) + newmult
@@ -218,21 +219,21 @@
 			playsound(src, hitsound_wall, 50, 1, -2)
 	return
 
-/obj/item/projectile/multiply_pierce_penetration(newmult)
-	penetrating = initial(penetrating) + newmult
-
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
 	//embed must be enabled and damage type must be brute
 	if(!embed || damage_types[BRUTE] <= 0)
 		return FALSE
 	return TRUE
-
+/*
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
-
-/obj/item/projectile/proc/get_ricochet_modifier()
-	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
+*/
+/obj/item/projectile/proc/get_structure_damage(var/injury_type)
+	if(!injury_type) // Assume homogenous
+		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(INJURY_TYPE_HOMOGENOUS, wounding_mult, edge, sharp) * 2
+	else
+		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(injury_type, wounding_mult, edge, sharp) * 2
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
@@ -279,11 +280,11 @@
 			for (var/entry in livingfirer.projectile_damage_increment)
 				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
 
-		if (livingfirer.projectile_armor_penetration_mult != 1)
-			multiply_projectile_penetration(livingfirer.projectile_armor_penetration_mult)
+		if (livingfirer.projectile_armor_divisor_mult != 1)
+			add_projectile_penetration(livingfirer.projectile_armor_divisor_mult)
 
-		if (livingfirer.projectile_armor_penetration_adjustment)
-			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
+		if (livingfirer.projectile_armor_divisor_adjustment)
+			armor_divisor *= livingfirer.projectile_armor_divisor_adjustment
 
 		if (livingfirer.projectile_speed_mult != 1)
 			multiply_projectile_step_delay(livingfirer.projectile_speed_mult)
@@ -339,6 +340,11 @@
 //Used to change the direction of the projectile in flight.
 /obj/item/projectile/proc/redirect(new_x, new_y, atom/starting_loc, mob/new_firer=null)
 	var/turf/new_target = locate(new_x, new_y, src.z)
+
+	// They gave us invalid coordinates, we're just gonna disappear
+	if(!new_target)
+		qdel(src)
+		return
 
 	original = new_target
 	if(new_firer)
@@ -723,7 +729,7 @@
 */
 		playsound(target_mob, pick(mob_hit_sound), 40, 1)
 
-		//admin logs
+	//admin logs
 	if(!no_attack_log)
 		if(ismob(firer))
 
@@ -731,34 +737,33 @@
 			var/victim_message = "shot with \a [src.type]"
 			var/admin_message = "shot (\a [src.type])"
 
-			admin_attack_log(original_firer, target_mob, attacker_message, victim_message, admin_message)
+			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
 		else
 			target_mob.attack_log += "\[[time_stamp()]\] <b>[original_firer] (May No Longer Exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-			if(target_mob.ckey && original_firer.ckey) //We dont care about PVE
+			if(target_mob?.ckey && original_firer?.ckey) //We dont care about PVE
 				msg_admin_attack("[original_firer.name] (May No Longer Exists) shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+				log_admin("[target_mob.real_name] Ckey [original_firer.ckey] shot with [src.type] by [original_firer.ckey] named [original_firer.real_name]")
 
-	//sometimes bullet_act() will want the projectile to continue flying
-	if (result == PROJECTILE_CONTINUE)
+	if(target_mob.mob_classification & CLASSIFICATION_ORGANIC)
+		var/turf/target_loca = get_turf(target_mob)
+		var/mob/living/L = target_mob
+		if(damage_types[BRUTE] > 10)
+			var/splatter_dir = dir
+			if(starting)
+				splatter_dir = get_dir(starting, target_loca)
+				target_loca = get_step(target_loca, splatter_dir)
+			var/blood_color = "#C80000"
+			if(ishuman(target_mob))
+				var/mob/living/carbon/human/H = target_mob
+				blood_color = H.species.blood_color
+			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(target_mob.loc, splatter_dir, blood_color)
+			if(target_loca && prob(50))
+				target_loca.add_blood(L)
+
+	if(result == PROJECTILE_STOP)
+		return TRUE
+	else
 		return FALSE
-
-	if (!testing)
-		if(target_mob.mob_classification & CLASSIFICATION_ORGANIC)
-			var/turf/target_loca = get_turf(target_mob)
-			var/mob/living/L = target_mob
-			if(damage_types[BRUTE] > 10)
-				var/splatter_dir = dir
-				if(starting)
-					splatter_dir = get_dir(starting, target_loca)
-					target_loca = get_step(target_loca, splatter_dir)
-				var/blood_color = "#C80000"
-				if(ishuman(target_mob))
-					var/mob/living/carbon/human/H = target_mob
-					blood_color = H.form.blood_color
-				new /obj/effect/overlay/temp/dir_setting/bloodsplatter(target_mob.loc, splatter_dir, blood_color)
-				if(target_loca && prob(50))
-					target_loca.add_blood(L)
-
-	return TRUE
 
 /obj/item/projectile/Bump(atom/A as mob|obj|turf|area, forced = FALSE)
 	if(A == src)
@@ -766,6 +771,7 @@
 	if(A == firer)
 		loc = A.loc
 		return FALSE //go fuck yourself in another place pls
+
 
 	if((bumped && !forced) || (A in permutated))
 		return FALSE
@@ -802,8 +808,12 @@
 					impact_atom = C
 				qdel(src)
 				return TRUE
-
 	if(ismob(A))
+		// Mobs inside containers shouldnt get bumped(such as mechs or closets)
+		if(!isturf(A.loc))
+			bumped = FALSE
+			return FALSE
+
 		var/mob/M = A
 		if(isliving(A))
 			//if they have a neck grab on someone, that person gets hit instead
@@ -834,8 +844,6 @@
 	if(passthrough)
 		//move ourselves onto A so we can continue on our way
 		if (!tempLoc)
-			if (testing)
-				impact_atom = A
 			qdel(src)
 			return TRUE
 
@@ -851,8 +859,7 @@
 	density = FALSE
 	invisibility = 101
 
-	if (testing)
-		impact_atom = A
+
 	qdel(src)
 	return TRUE
 
@@ -886,7 +893,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_penetration = max(0, armor_penetration - ap_drop_off)
+				armor_divisor = max(0, armor_divisor - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -955,7 +962,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_penetration = max(0, armor_penetration - ap_drop_off)
+				armor_divisor = max(0, armor_divisor - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -1100,7 +1107,7 @@
 			P.activate(P.lifetime)
 
 /obj/item/projectile/proc/block_damage(var/amount, atom/A)
-	amount /= armor_penetration
+	amount /= armor_divisor
 	var/dmg_total = 0
 	var/dmg_remaining = 0
 	for(var/dmg_type in damage_types)
@@ -1109,11 +1116,12 @@
 			dmg_total += dmg
 		if(dmg && amount)
 			var/dmg_armor_difference = dmg - amount
-			amount = dmg_armor_difference ? 0 : -dmg_armor_difference
-			dmg = dmg_armor_difference ? dmg_armor_difference : 0
+			var/is_difference_positive = dmg_armor_difference > 0
+			amount = is_difference_positive ? 0 : -dmg_armor_difference
+			dmg = is_difference_positive ? dmg_armor_difference : 0
 			if(!(dmg_type == HALLOSS))
 				dmg_remaining += dmg
-		if(dmg)
+		if(dmg > 0)
 			damage_types[dmg_type] = dmg
 		else
 			damage_types -= dmg_type
@@ -1121,7 +1129,7 @@
 		on_impact(A)
 		qdel(src)
 
-	return dmg_total ? (dmg_remaining / dmg_total) : 0
+	return dmg_total > 0 ? (dmg_remaining / dmg_total) : 0
 
 //"Tracing" projectile
 /obj/item/projectile/test //Used to see if you can hit them.
@@ -1221,3 +1229,4 @@
 	var/icon/I = new(P.icon, P.icon_state)
 	I.Blend(color)
 	return I
+

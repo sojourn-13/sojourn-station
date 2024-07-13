@@ -20,7 +20,7 @@
 		animation.icon = 'icons/mob/mob.dmi'
 		animation.master = src
 		flick(anim, animation)
-		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+		addtimer(CALLBACK(src, PROC_REF(check_delete), animation), 15)
 	else
 		qdel(src)
 
@@ -56,7 +56,7 @@
 		animation.icon = iconfile
 		animation.master = src
 		flick(anim, animation)
-		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+		addtimer(CALLBACK(src, PROC_REF(check_delete), animation), 15)
 	else
 		qdel(src)
 

@@ -67,8 +67,7 @@ var/list/flooring_types
 
 	//How we smooth with other flooring
 	var/floor_smooth = SMOOTH_ALL
-	var/list/flooring_whitelist = list() //Smooth with nothing except the contents of this list
-	var/list/flooring_blacklist = list() //Smooth with everything except the contents of this list
+	var/list/flooring_whitelist = null //Smooth with nothing except the contents of this list
 
 	//How we smooth with walls
 	var/wall_smooth = SMOOTH_NONE
@@ -106,8 +105,8 @@ var/list/flooring_types
 
 	*/
 	var/smooth_movable_atom = SMOOTH_NONE
-	var/list/movable_atom_whitelist = list()
-	var/list/movable_atom_blacklist = list()
+	var/list/movable_atom_whitelist = null
+	var/list/movable_atom_blacklist = null
 
 	//Slowdown when on the tile, not moving TO the tile! Set to negitives to be a speed boost (i.e roads)
 	var/tally_addition_decl = 0
@@ -196,7 +195,6 @@ var/list/flooring_types
 	health = 100
 	has_base_range = 18
 	floor_smooth = SMOOTH_BLACKLIST
-	flooring_blacklist = list(/decl/flooring/reinforced/plating/under,/decl/flooring/reinforced/plating/hull) //Smooth with everything except the contents of this list
 	smooth_movable_atom = SMOOTH_GREYLIST
 	movable_atom_blacklist = list(
 		list(/obj, list("density" = TRUE, "anchored" = TRUE), 1)
@@ -293,13 +291,13 @@ var/list/flooring_types
 	//BSTs need this or they generate tons of soundspam while flying through the ship
 	if(!ishuman(M)|| M.incorporeal_move || !has_gravity(get_turf(M)))
 		return
-	var/mob/living/carbon/human/our_trippah = M
+	var/mob/living/our_trippah = M
 	if(MOVING_QUICKLY(M))
 		if(M.stats.getPerk(PERK_SURE_STEP))
 			return
 		var/task_level = our_trippah.learnt_tasks.get_task_mastery_level("SLIP_N_DIE")
  // The art of calculating the vectors required to avoid tripping on the metal beams requires big quantities of brain power
-		if(prob(50 - (our_trippah.stats.getStat(STAT_COG)) + task_level)) //50 cog makes you unable to trip, or if you trip alot
+		if(prob(50 - ((our_trippah.stats.getStat(STAT_COG)) + task_level))) //50 cog makes you unable to trip, or if you trip alot
 			if(!our_trippah.back)
 				return
 			our_trippah.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/slip_n_die, "SLIP_N_DIE", skill_gained = 1, learner = our_trippah)

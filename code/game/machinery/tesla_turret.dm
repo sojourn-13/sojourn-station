@@ -93,7 +93,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret/New()
 	..()
-	req_access.Cut()
+	LAZYNULL(req_access)
 
 	//Sets up a spark system
 	spark_system = new /datum/effect/effect/system/spark_spread

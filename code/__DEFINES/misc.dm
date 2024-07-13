@@ -143,7 +143,7 @@
 //Soj Changes
 #define CLIENT_MIN_FPS 0 //SERVER sync
 
-#define CLIENT_MAX_FPS 60 //Do not go above this or byond goes fucky
+#define CLIENT_MAX_FPS 200 //Do not go above this or byond goes fucky
 //Soj End of SoJ
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
@@ -181,8 +181,10 @@
 
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
-#define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
-#define PROJECTILE_FORCE_MISS -2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_STOP					 1 //if the projectile should stop flying after calling bullet_act()
+#define PROJECTILE_CONTINUE				-1 //if the projectile should continue flying after calling bullet_act()
+#define PROJECTILE_FORCE_MISS			-2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_FORCE_MISS_SILENCED	-2.5 //if the projectile should do the same thing as above, but not give the miss message
 
 //Camera capture modes
 #define CAPTURE_MODE_REGULAR 0 //Regular polaroid camera mode
@@ -234,11 +236,6 @@
 #define CUPGRADE_WRATH_OF_GOD /obj/item/cruciform_upgrade/wrath_of_god
 #define CUPGRADE_SPEED_OF_THE_CHOSEN /obj/item/cruciform_upgrade/speed_of_the_chosen
 
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 0
-#define MOUSE_OPACITY_ICON 1
-#define MOUSE_OPACITY_OPAQUE 2
-
 //Filters
 #define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
 
@@ -267,10 +264,6 @@
 #define SPAN(class, X) "<span class='" + ##class + "'>" + ##X + "</span>"
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
-
-// Overlays
-// (placeholders for if/when TG overlays system is ported)
-//#define cut_overlays(...)			overlays.Cut()
 
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
 
@@ -380,29 +373,6 @@
 //Lying animation
 #define ANIM_LYING_TIME 2
 
-// Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
-// TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
-#define COMPILE_OVERLAYS(A)\
-    do {\
-        var/list/oo = A.our_overlays;\
-        var/list/po = A.priority_overlays;\
-        if(LAZYLEN(po)){\
-            if(LAZYLEN(oo)){\
-                A.overlays = oo + po;\
-            }\
-            else{\
-                A.overlays = po;\
-            }\
-        }\
-        else if(LAZYLEN(oo)){\
-            A.overlays = oo;\
-        }\
-        else{\
-            A.overlays.Cut();\
-        }\
-        A.flags &= ~OVERLAY_QUEUED;\
-    } while (FALSE)
-
 #define LIST_COLOR_RENAME 				\
 	list(								\
 		"rebeccapurple" = "dark purple",\
@@ -428,3 +398,12 @@
 /// BYOND's string procs don't support being used on datum references (as in it doesn't look for a name for stringification)
 /// We just use this macro to ensure that we will only pass strings to this BYOND-level function without developers needing to really worry about it.
 #define LOWER_TEXT(thing) lowertext(UNLINT("[thing]"))
+
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * This is the more performant version, it is unfortunately necessary.
+**/
+#define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))

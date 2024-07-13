@@ -20,9 +20,9 @@
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/storage/toolbox)
 	armor_list = list(
-		melee = 10,
+		melee = 2,
 		bullet = 0,
-		energy = 30,
+		energy = 1,
 		bomb = 10,
 		bio = 10,
 		rad = 0
@@ -62,7 +62,7 @@
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 25,
+		energy = 6,
 		bomb = 0,
 		bio = 90,
 		rad = 100
@@ -84,7 +84,7 @@
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 25,
+		energy = 6,
 		bomb = 0,
 		bio = 90,
 		rad = 100

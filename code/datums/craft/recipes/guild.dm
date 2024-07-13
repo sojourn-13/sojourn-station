@@ -125,6 +125,62 @@
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
 
+//Cells --------------------------
+/datum/craft_recipe/guild/cellsmall
+	name = "Artificer's Guild \"Workhorse 300S\""
+	result = /obj/item/cell/small/guild/depleted
+	icon_state = "electronic"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_DRILLING, 60, "time" = 180),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20)
+	)
+
+/datum/craft_recipe/guild/cellmedium
+	name = "Artificer's Guild \"Workhorse 1200M\""
+	result = /obj/item/cell/medium/guild/depleted
+	icon_state = "electronic"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_DRILLING, 60, "time" = 180),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20)
+	)
+
+/datum/craft_recipe/guild/cellbig
+	name = "Artificer's Guild \"Workhorse 14000L\""
+	result = /obj/item/cell/large/guild/depleted
+	icon_state = "electronic"
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_DRILLING, 60, "time" = 180),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20)
+	)
+
+
 //Tools --------------------------
 /datum/craft_recipe/guild/arcwelder
 	name = "arc welder"
@@ -265,7 +321,7 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
-	
+
 /datum/craft_recipe/guild/IRKDissolver
 	name = "Dissolver Beam Rifle"
 	result = /obj/item/gun/energy/IRKDissolver
@@ -285,7 +341,7 @@
 		list(QUALITY_WIRE_CUTTING, 40, 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
-	)	
+	)
 
 /datum/craft_recipe/guild/railgunpistol
 	name = "myrmidon rail pistol"
@@ -856,7 +912,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/safety_clamp
 	name = "Hydraulic clamp overclock: KILL CLAMP"
-	result = /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+	result = /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp
 	steps = list(
 		list(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp, 1, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40),

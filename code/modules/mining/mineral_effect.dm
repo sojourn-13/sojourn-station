@@ -9,13 +9,15 @@
 	var/ore_key
 	var/image/scanner_image
 
-/obj/effect/mineral/New(var/newloc, var/ore/M)
-	..(newloc)
+/obj/effect/mineral/New(loc, ore/M)
+	. = ..(loc)
 	name = "[M.display_name] deposit"
 	ore_key = M.name
 	icon_state = "rock_[ore_key]"
 	var/turf/T = get_turf(src)
-	T.overlays += image('icons/obj/mining.dmi', "rock_[ore_key]", dir = 1)
+	var/mutable_appearance/app = mutable_appearance('icons/obj/mining.dmi', "rock_[ore_key]")
+	app.dir = SOUTH
+	T.add_overlay(app)
 	if(T.color)
 		color = T.color
 

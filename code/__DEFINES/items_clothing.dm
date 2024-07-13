@@ -72,7 +72,6 @@
 #define LOUD			    0x80 	// Loud as hell tools
 #define HONKING			    0x100 	// Honking tools
 // 0x80 not used for no reason, feel free
-#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_over-lays
 #define INITIALIZED			0x200
 #define ADMIN_SPAWNED		0x400
 
@@ -240,3 +239,12 @@
 #define MEDIUM_OBSCURATION 3
 #define HEAVY_OBSCURATION 5
 
+//RIG ablation
+#define ABLATION_CERAMIC 3
+#define ABLATION_SOFT 5
+#define ABLATION_STANDARD 10
+#define ABLATION_RESILIENT 15
+#define ABLATION_DURABLE 20
+#define ABLATION_EVERLASTING 30
+
+//Style amount

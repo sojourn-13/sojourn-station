@@ -50,8 +50,8 @@
 /datum/perk/oddity/toxic_revenger/assign(mob/living/L)
 	..()
 	initial_time = world.time
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
+	if(isliving(holder))
+		var/mob/living/H = holder
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 /datum/perk/oddity/toxic_revenger/on_process()
@@ -127,8 +127,8 @@
 	holder.brute_mod_perk *= 1.25
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
+	if(isliving(holder))
+		var/mob/living/H = holder
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
@@ -163,8 +163,8 @@
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
+	if(isliving(holder))
+		var/mob/living/H = holder
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
@@ -185,8 +185,8 @@
 	holder.stats.changeStat(STAT_COG, -5)
 	holder.stats.changeStat(STAT_MEC, -5)
 	holder.stats.changeStat(STAT_BIO, -5)
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
+	if(isliving(holder))
+		var/mob/living/H = holder
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 

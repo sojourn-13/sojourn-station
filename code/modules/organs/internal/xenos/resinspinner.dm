@@ -4,23 +4,31 @@
 	icon_state = "xgibmid2"
 	organ_tag = BP_RESIN
 	owner_verbs = list(
-		/obj/item/organ/internal/xenos/resinspinner/proc/plant,
-		/obj/item/organ/internal/xenos/resinspinner/proc/resin
+		/mob/living/carbon/human/proc/xeno_plant,
+		/mob/living/carbon/human/proc/xeno_resin
 	)
 
-/obj/item/organ/internal/xenos/resinspinner/proc/plant()
+/mob/living/carbon/human/proc/xeno_plant()
 	set name = "Plant Weeds (50)"
 	set desc = "Plants some alien weeds"
 	set category = "Abilities"
 
-	if(check_alien_ability(50, TRUE))
+	var/obj/item/organ/internal/xenos/resinspinner/organ = first_organ_by_type(/obj/item/organ/internal/xenos/resinspinner)
+	if(!organ)
+		return
+
+	if(organ.check_alien_ability(50, TRUE))
 		owner.visible_message("<span class='alium'><B>[owner] has planted some alien weeds!</B></span>")
 		new /obj/structure/alien/node(loc)
 
-/obj/item/organ/internal/xenos/resinspinner/proc/resin() // -- TLE
+/mob/living/carbon/human/proc/xeno_resin() // -- TLE
 	set name = "Secrete Resin (75)"
 	set desc = "Secrete tough, malleable resin."
 	set category = "Abilities"
+
+	var/obj/item/organ/internal/xenos/resinspinner/organ = first_organ_by_type(/obj/item/organ/internal/xenos/resinspinner)
+	if(!organ)
+		return
 
 	var/list/buildings = list(
 		"resin door" = /obj/machinery/door/unpowered/simple/resin,
@@ -32,11 +40,11 @@
 	if(!choice)
 		return
 
-	if(!check_alien_ability(75, TRUE))
+	if(!organ.check_alien_ability(75, TRUE))
 		return
 
-	owner.visible_message(
-		SPAN_WARNING("<B>[owner] vomits up a thick purple substance and begins to shape it!</B>"),
+	visible_message(
+		SPAN_WARNING("<B>[src] vomits up a thick purple substance and begins to shape it!</B>"),
 		"<span class='alium'>You shape a [choice].</span>"
 	)
 	var/selected_type = buildings[choice]

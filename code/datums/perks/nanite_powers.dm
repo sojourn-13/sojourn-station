@@ -14,8 +14,8 @@
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		var/obj/item/organ/internal/nanogate/target_ng = H.random_organ_by_process(BP_NANOGATE)
-		RegisterSignal(target_ng, COMSIG_NANOGATE_EMP, .proc/on_emp)
-		RegisterSignal(target_ng, COMSIG_NANOGATE_REMOVED, .proc/remove_power)
+		RegisterSignal(target_ng, COMSIG_NANOGATE_EMP, PROC_REF(on_emp))
+		RegisterSignal(target_ng, COMSIG_NANOGATE_REMOVED, PROC_REF(remove_power))
 
 //Used for handling behaviors when EMP'd, such as shutting off regeneration or applying negative effects
 //Remember that severity 1 is the strongest EMP
@@ -24,7 +24,7 @@
 		to_chat(holder, SPAN_WARNING("[emped_message]"))
 	if(emp_duration > 0 && !emped) //Only actually set emped to true if we have a duration, and if we aren't already EMP'd (So we don't make an unnecessary number of timers)
 		emped = TRUE
-		addtimer(CALLBACK(src, .proc/end_emp), emp_duration, TIMER_STOPPABLE)
+		addtimer(CALLBACK(src, PROC_REF(end_emp)), emp_duration, TIMER_STOPPABLE)
 	return
 
 //Called when EMP effect ends

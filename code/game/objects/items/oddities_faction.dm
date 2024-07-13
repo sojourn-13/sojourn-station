@@ -173,7 +173,7 @@
 
 		if(blood_amount)
 			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
+			blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
 			blood_amount = 0
 			visible_message(SPAN_NOTICE("[src] drop [blood_pack]."))
 		else

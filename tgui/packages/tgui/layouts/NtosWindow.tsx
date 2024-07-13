@@ -66,7 +66,7 @@ export type Login = {
 };
 
 export const NtosWindow = (props) => {
-  const { title, width = 575, height = 700, children } = props;
+  const { title, width = 575, height = 700, children, theme } = props;
   const { act, data } = useBackend<NTOSData>();
   const {
     has_gps,
@@ -91,7 +91,8 @@ export const NtosWindow = (props) => {
       title={title}
       width={width}
       height={height}
-      theme={PC_device_theme || ''}
+      // Allows people to specify themes for syndicate-only apps
+      theme={theme || PC_device_theme || ''}
     >
       <div className="NtosWindow">
         <div

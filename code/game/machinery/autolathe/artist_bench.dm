@@ -195,47 +195,49 @@
 				R.caliber = pick(CAL_PISTOL)
 				R.damage_multiplier = 1.2 + rand(-5,5)/10
 				R.penetration_multiplier = 1.2 + rand(-5,5)/10
+				R.max_shells = rand(5,7)
 
 			if("magnum") //From consul.dm, Arbitrary values
 				R.caliber = CAL_MAGNUM
 				R.damage_multiplier = 1.2 + rand(-5,5)/10
 				R.penetration_multiplier = 1.2 + rand(-5,5)/10
+				R.max_shells = rand(6,12)
 
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
 				R.damage_multiplier = 0.8 + rand(-2,2)/10
-				R.penetration_multiplier = 0.75 + rand(-3,3)/10
+				R.penetration_multiplier = -0.25 + rand(-3,3)/10
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+				R.max_shells = rand(3,9)
 
 			if("rifle")
 				R.caliber = pick(CAL_HRIFLE, CAL_LRIFLE, CAL_RIFLE)
 				R.fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
-
-			//No gun currently uses CAL_357 far as I know
-			//	if("revolver")
-			//		caliber = pick(CAL_357)
+				R.max_shells = rand(11,21)
 
 			if("sniper")//From sniper.dm, Arbitrary values
 				R.caliber = CAL_ANTIM
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
+				R.max_shells = rand(1,3)
 
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
+				R.max_shells = rand(1,3)
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
 				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
-
-		R.recoil = R.recoil.modifyAllRatings(1+rand(-2,2)/10)
+				R.max_shells = rand(1,3)
 
 		if(R.max_shells == 3 && (gun_pattern == "shotgun"||"rocket"))//From Timesplitters triple-firing RPG far as I know
 			R.init_firemodes = list(
 				list(mode_name="Single shot", mode_desc="fire one barrel at a time", burst=1, icon="semi"),
 				list(mode_name="Triple barrel",mode_desc="fire three barrels at once", burst=3, icon="auto"),
 				)
+		R.ensure_updates()
 		return R
 
 	else if(full_artwork == "artwork_statue")

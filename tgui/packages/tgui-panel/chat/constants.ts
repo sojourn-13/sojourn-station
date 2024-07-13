@@ -60,7 +60,7 @@ export const MESSAGE_TYPES = [
     name: 'Radio',
     description: 'All departments of radio messages',
     selector:
-      '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .comradio, .secradio, .gangradio, .engradio, .medradio, .sciradio, .suppradio, .servradio, .radio, .deptradio, .binarysay, .newscaster, .resonate, .abductor, .alien, .changeling',
+      '.alert, .minorannounce, .syndradio, .centcomradio, .airadio, .comradio, .secradio, .bsradio, .proradio, .gangradio, .engradio, .medradio, .sciradio, .suppradio, .radio, .deptradio, .binarysay, .newscaster, .abductor, .alien, .changeling',
   },
   {
     type: MESSAGE_TYPE_INFO,
@@ -74,19 +74,19 @@ export const MESSAGE_TYPES = [
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
     selector:
-      '.warning:not(.pm), .critical, .userdanger, .italics, .alertsyndie, .warningplain',
+      '.warning:not(.pm), .critical, .userdanger, .italics, .warningplain',
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
     name: 'Deadchat',
     description: 'All of deadchat',
-    selector: '.deadsay, .ghostalert',
+    selector: '.deadsay',
   },
   {
     type: MESSAGE_TYPE_OOC,
     name: 'OOC',
     description: 'The bluewall of global OOC messages',
-    selector: '.ooc, .adminooc, .adminobserverooc, .oocplain',
+    selector: '.ooc',
   },
   {
     type: MESSAGE_TYPE_ADMINPM,
@@ -110,7 +110,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ADMINCHAT,
     name: 'Admin Chat',
     description: 'ASAY messages',
-    selector: '.admin_channel, .adminsay',
+    selector: '.admin_channel',
     admin: true,
   },
   {

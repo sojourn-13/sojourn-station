@@ -16,7 +16,7 @@
 	target = pick(candidates)
 	desc = "You swear you saw to [target] somewhere before, and in your line of job it cannot mean good. Search them, \
 	remove their backpack or empty their pockets."
-	RegisterSignal(mind_holder, COMSIG_EMPTY_POCKETS, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_EMPTY_POCKETS, PROC_REF(task_completed))
 
 /datum/individual_objective/familiar_face/task_completed(n_target)
 	if(n_target == target)
@@ -35,7 +35,7 @@
 /datum/individual_objective/time_to_action/assign()
 	..()
 	desc = "Slay or observe the slaying of 20 hostiles (Roaches, Spiders, ect)."
-	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, PROC_REF(task_completed))
 
 /datum/individual_objective/time_to_action/task_completed(mob/mob_death)
 	..(1)
@@ -55,7 +55,7 @@
 	units_requested = rand(3,4)
 	desc = "The criminals are here, somewhere, you can feel that. Search [units_requested] people, \
 			remove their backpack or empty their pockets."
-	RegisterSignal(mind_holder, COMSIG_EMPTY_POCKETS, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_EMPTY_POCKETS, PROC_REF(task_completed))
 
 /datum/individual_objective/paranoia/task_completed(mob/living/carbon/n_target)
 	if((n_target in vitims) || !n_target.client)
@@ -85,7 +85,7 @@
 	..()
 	target = pick_faction_item(mind_holder)
 	desc = "\The [target] is clear danger to colony. Destroy it with any means possible."
-	RegisterSignal(mind_holder, COMSIG_OBJ_FACTION_ITEM_DESTROY, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_OBJ_FACTION_ITEM_DESTROY, PROC_REF(task_completed))
 
 /datum/individual_objective/danger/task_completed(obj/item/I)
 	if(target.type == I.type)
@@ -105,7 +105,7 @@
 	..()
 	target_area = random_ship_area()
 	desc = "[target_area] needs fortification for colony safety. All sorts of bugs and monsters tunnel into the colony constantly. Have a turret built there, preferably an Artificer Guild turret."
-	RegisterSignal(target_area, COMSIG_TURRENT, .proc/task_completed)
+	RegisterSignal(target_area, COMSIG_TURRENT, PROC_REF(task_completed))
 
 /datum/individual_objective/guard/task_completed()
 		completed()

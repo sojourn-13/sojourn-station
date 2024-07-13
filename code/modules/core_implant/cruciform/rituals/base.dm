@@ -52,7 +52,7 @@
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		addtimer(CALLBACK(M, /obj/item/book/ritual/cruciform/proc/glowient), 6000)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/obj/item/book/ritual/cruciform, glowient)), 6000)
 		set_personal_cooldown(H)
 		return TRUE
 	else

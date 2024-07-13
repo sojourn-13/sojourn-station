@@ -42,7 +42,7 @@
 	..()
 	update_icon()
 	if(is_growing)
-		addtimer(CALLBACK(src, .proc/spread), rand(fast_improvement,slow_improvement))
+		addtimer(CALLBACK(src, PROC_REF(spread)), rand(fast_improvement,slow_improvement))
 	if(!randomized_colour)
 		gooners()
 		return
@@ -67,7 +67,7 @@
 	if(growth >= 5)
 		self_improvement = FALSE
 		return
-	addtimer(CALLBACK(src, .proc/self_improvements), rand(fast_improvement,slow_improvement)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
+	addtimer(CALLBACK(src, PROC_REF(self_improvements)), rand(fast_improvement,slow_improvement)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 	growth += 1
 	update_icon()
 
@@ -169,7 +169,7 @@
 			new crystal(T) // We spread
 
 
-	addtimer(CALLBACK(src, .proc/spread), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
+	addtimer(CALLBACK(src, PROC_REF(spread)), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 /obj/structure/ameridian_crystal/proc/toggle_growing()
 	is_growing = !is_growing

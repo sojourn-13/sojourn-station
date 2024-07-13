@@ -42,7 +42,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2
-	penetration_multiplier = 2
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
 	gun_parts = null
@@ -139,7 +139,7 @@
 	icon = 'icons/obj/guns/projectile/rafale_bluecross.dmi'
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
-	penetration_multiplier = 3.1
+	penetration_multiplier = 1.5
 	price_tag = 2350
 	serial_type = "BlueCross"
 
@@ -218,7 +218,7 @@
 	if (user)
 		user.show_message(SPAN_WARNING("Your [src] charges up! Throw it at your enemies!"))
 	throwforce = WEAPON_FORCE_LETHAL //Bonus style!
-	timerid = addtimer(CALLBACK(src, .proc/crack), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(crack)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/crack()
 	var/turf/T = get_turf(src)
@@ -232,7 +232,7 @@
 	qdel(src)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/borrowedtime()
-	timerid = addtimer(CALLBACK(src, .proc/crack), 1 MINUTES, TIMER_UNIQUE|TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(crack)), 1 MINUTES, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/throw_impact(atom/hit_atom)
 	if(!..()) //not caught in mid-air
@@ -283,7 +283,7 @@
 /obj/item/clothing/accessory/holster/bluecross/proc/recharge()
 	if(stored < spam_protection)
 		stored++
-	addtimer(CALLBACK(src, .proc/recharge), spam_protection_delay)
+	addtimer(CALLBACK(src, PROC_REF(recharge)), spam_protection_delay)
 
 /obj/item/clothing/accessory/holster/bluecross/unholster(mob/user as mob)
 	if(user.lying)
@@ -430,7 +430,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	penetration_multiplier = 1.2 // So that it's good for PVE too
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
@@ -505,7 +505,7 @@
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_HALF
+	armor_divisor = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	tool_qualities = list(QUALITY_HAMMERING = 20)
 	max_upgrades = 2
@@ -529,9 +529,9 @@
 	real_mod *= 0.5 //Insainly op
 
 //	message_admins("3ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
-//	message_admins("4ogre: armor_penetration [armor_penetration]")
-	armor_penetration += real_mod
-//	message_admins("5ogre: armor_penetration [armor_penetration]")
+//	message_admins("4ogre: armor_divisor [armor_divisor]")
+	armor_divisor += real_mod
+//	message_admins("5ogre: armor_divisor [armor_divisor]")
 	clickdelay_offset = delay_adder
 
 	.=..()
@@ -547,7 +547,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 12)
 	force = 15 //Base level
 	backstab_damage = 15 //base is 15 but grows
-	armor_penetration = ARMOR_PEN_MASSIVE //Less do to how powerful it is
+	armor_divisor = ARMOR_PEN_MASSIVE //Less do to how powerful it is
 	throwforce = WEAPON_FORCE_ROBUST
 	price_tag = 3500
 	max_upgrades = 2
@@ -622,7 +622,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	switched_on_forcemult = 4.4 //88
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	switched_on_penmult = 2.5 //50
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)
@@ -708,7 +708,7 @@
 			//message_admins("2knife: speedy_dashing [speedy_dashing]")
 			if(speedy_dashing > 0)
 				//Hopefully your running around to accually use this
-				armor_penetration *= speedy_dashing
+				armor_divisor *= speedy_dashing
 				force *= speedy_dashing
 			if(tracker == target.name && give_coin)
 				coin_tracker += 1
@@ -752,7 +752,7 @@
 	item_state = "katana"
 	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 2050
 	clickdelay_offset = 0
 	max_upgrades = 1//Already over powered.
@@ -781,7 +781,7 @@
 	icon_state = "spectral_harvester"
 	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	price_tag = 2750
 	clickdelay_offset = 15 //This stacks with base
 	max_upgrades = 0 //No...
@@ -902,7 +902,7 @@
 	slowdown_hold = 0.3
 	//Its a bad weapon
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	has_alt_mode = FALSE
 
 /obj/item/shield/riot/mass_grave/check_shield_arc()
@@ -916,33 +916,33 @@
 	max_durability += 1
 	switch(mass_grave_counter)
 		if(5)
-			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_DANGEROUS
-			armor_penetration = ARMOR_PEN_MODERATE
+			armor_divisor = ARMOR_PEN_MODERATE
 			slowdown = 0.25
 			slowdown_hold = 0.25
 		if(10)
-			armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_ROBUST
-			armor_penetration = ARMOR_PEN_DEEP
+			armor_divisor = ARMOR_PEN_DEEP
 			slowdown = 0.20
 			slowdown_hold = 0.20
 		if(20)
-			armor_list = list(melee = 25, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_BRUTAL
-			armor_penetration = ARMOR_PEN_EXTREME
+			armor_divisor = ARMOR_PEN_EXTREME
 			slowdown = 0.15
 			slowdown_hold = 0.15
 		if(50)
-			armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 9, bullet = 9, energy = 9, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL
-			armor_penetration = ARMOR_PEN_MASSIVE
+			armor_divisor = ARMOR_PEN_MASSIVE
 			slowdown = 0.10
 			slowdown_hold = 0.10
 		if(100)
-			armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL + 5
-			armor_penetration = ARMOR_PEN_MASSIVE + 5
+			armor_divisor = ARMOR_PEN_MASSIVE + 5
 			slowdown = 0.05
 			slowdown_hold = 0.05
 
@@ -950,7 +950,7 @@
 		//Endless Growth
 		name = "mass grave marker shield"
 		force += 1
-		armor_penetration += 1
+		armor_divisor += 1
 		post_moder_game_balance *= 1.1 //150 x 1.1 = 165 -> 165 x 1.1 = 181.5(182) ect ect
 		post_moder_game_balance = round(post_moder_game_balance)
 
@@ -991,7 +991,7 @@
 	icon_state = "regaloutfit_redder" //Sprite by Ayshe / gid_git
 	item_state = "regaloutfit_redder"
 	blood_overlay_type = "coat"
-	armor_list = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	min_cold_protection_temperature = T0C - 60

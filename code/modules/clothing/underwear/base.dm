@@ -139,12 +139,14 @@
 			else
 				to_chat(user, "\red You must hold \the [P] steady to burn \the [src].")
 
-/obj/item/underwear/verb/RemoveSocks()
+/mob/living/carbon/human/verb/RemoveUnderwear()
 	set name = "Remove Underwear"
-	set category = "Object"
-	set src in usr
+	set category = "IC"
+	set src = usr
 
-	RemoveUnderwear(usr, usr)
+	var/obj/item/underwear/U = tgui_input_list(usr, "Select underwear to remove", "Remove Underwear", worn_underwear)
+	if(istype(U))
+		U.RemoveUnderwear(usr, src)
 
 /obj/item/underwear/socks
 	required_free_body_parts = LEGS

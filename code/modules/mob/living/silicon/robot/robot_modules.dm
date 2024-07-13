@@ -174,7 +174,6 @@ var/global/list/robot_modules = list(
 	R.handle_regular_hud_updates()
 	R.stats.removeAllPerks() //Dont stack perks fix 1
 	R.stats.perks =  list() //READ BELOW COMMENT
-	R.stats.perk_stats =  list() //EMERGENCY BACKUP INCASE THE NEW FIX BREAKS DUE TO BUS - GENERALLY DO NOT DO THIS PLEASE.
 
 
 	R.pixel_x = initial(pixel_x)
@@ -700,6 +699,7 @@ var/global/list/robot_modules = list(
 	sprites = list(
 					"Bloodhound" = "syndie_bloodhound",
 					"Treadhound" = "syndie_treadhound",
+					"Classic" = "defenceborg",
 					"Precision" = "syndi-medi",
 					"Heavy" = "syndi-heavy",
 					"Artillery" = "spidersyndi",

@@ -1,236 +1,118 @@
 SUBSYSTEM_DEF(overlays)
 	name = "Overlay"
-	flags = SS_TICKER
-	wait = 1
-	priority = SS_PRIORITY_OVERLAYS
-	init_order = INIT_ORDER_OVERLAY
-
-	var/list/queue						// Queue of atoms needing overlay compiling (TODO-VERIFY!)
+	flags = SS_NO_FIRE|SS_NO_INIT
 	var/list/stats
-	var/list/overlay_icon_state_caches	// Cache thing
-	var/list/overlay_icon_cache			// Cache thing
 
 /datum/controller/subsystem/overlays/PreInit()
-	overlay_icon_state_caches = list()
-	overlay_icon_cache = list()
-	queue = list()
 	stats = list()
 
-/datum/controller/subsystem/overlays/Initialize()
-	initialized = TRUE
-	fire(mc_check = FALSE)
-	..()
-
-/datum/controller/subsystem/overlays/stat_entry()
-	..("Ov:[length(queue)]")
-
-
 /datum/controller/subsystem/overlays/Shutdown()
-	text2file(render_stats(stats), "[diary_filename]-overlay.log")
+	text2file(render_stats(stats), "[GLOB.log_directory]/overlay.log")
 
 /datum/controller/subsystem/overlays/Recover()
-	overlay_icon_state_caches = SSoverlays.overlay_icon_state_caches
-	overlay_icon_cache = SSoverlays.overlay_icon_cache
-	queue = SSoverlays.queue
+	stats = SSoverlays.stats
 
-
-/datum/controller/subsystem/overlays/fire(resumed = FALSE, mc_check = TRUE)
-
-	var/list/queue = src.queue
-	var/static/count = 0
-	if (count)
-		var/c = count
-		count = 0 //so if we runtime on the Cut, we don't try again.
-		queue.Cut(1,c+1)
-
-	for (var/atom/thing in queue)
-		count++
-		if(thing && (thing.flags & OVERLAY_QUEUED)) //Don't compile something if it's dequeued itself. -kfive
-			STAT_START_STOPWATCH
-			var/atom/A = thing
-			COMPILE_OVERLAYS(A)
-			STAT_STOP_STOPWATCH
-			STAT_LOG_ENTRY(stats, A.type)
-		if(mc_check)
-			if(MC_TICK_CHECK)
-				break
-		else
-			CHECK_TICK
-
-	if (count)
-		queue.Cut(1,count+1)
-		count = 0
+/// Converts an overlay list into text for debug printing
+/// Of note: overlays aren't actually mutable appearances, they're just appearances
+/// Don't have access to that type tho, so this is the best you're gonna get
+/proc/overlays2text(list/overlays)
+	var/list/unique_overlays = list()
+	// As anything because we're basically doing type coerrsion, rather then actually filtering for mutable apperances
+	for(var/mutable_appearance/overlay as anything in overlays)
+		var/key = "[overlay.icon]-[overlay.icon_state]-[overlay.dir]"
+		unique_overlays[key] += 1
+	var/list/output_text = list()
+	for(var/key in unique_overlays)
+		output_text += "([key]) = [unique_overlays[key]]"
+	return output_text.Join("\n")
 
 /proc/iconstate2appearance(icon, iconstate)
-	// var/static/image/stringbro = new() // Moved to be superglobal due to BYOND insane init order stupidness.
-	var/list/icon_states_cache = SSoverlays.overlay_icon_state_caches
-	var/list/cached_icon = icon_states_cache[icon]
-	if (cached_icon)
-		var/cached_appearance = cached_icon["[iconstate]"]
-		if (cached_appearance)
-			return cached_appearance
+	var/static/image/stringbro = new()
 	stringbro.icon = icon
 	stringbro.icon_state = iconstate
-	if (!cached_icon) //not using the macro to save an associated lookup
-		cached_icon = list()
-		icon_states_cache[icon] = cached_icon
-	var/cached_appearance = stringbro.appearance
-	cached_icon["[iconstate]"] = cached_appearance
-	return cached_appearance
+	return stringbro.appearance
 
 /proc/icon2appearance(icon)
-	// var/static/image/iconbro = new() // Moved to be superglobal due to BYOND insane init order stupidness.
-	var/list/icon_cache = SSoverlays.overlay_icon_cache
-	. = icon_cache[icon]
-	if (!.)
-		iconbro.icon = icon
-		. = iconbro.appearance
-		icon_cache[icon] = .
+	var/static/image/iconbro = new()
+	iconbro.icon = icon
+	return iconbro.appearance
 
-/atom/proc/build_appearance_list(old_overlays)
-	// var/static/image/appearance_bro = new() // Moved to be superglobal due to BYOND insane init order stupidness.
-	var/list/new_overlays = list()
-	if (!islist(old_overlays))
-		old_overlays = list(old_overlays)
-	for (var/overlay in old_overlays)
+/atom/proc/build_appearance_list(list/build_overlays)
+	if (!islist(build_overlays))
+		build_overlays = list(build_overlays)
+	for (var/overlay in build_overlays)
 		if(!overlay)
+			build_overlays -= overlay
 			continue
 		if (istext(overlay))
-			new_overlays += iconstate2appearance(icon, overlay)
+			// This is too expensive to run normally but running it during CI is a good test
+			// if (PERFORM_ALL_TESTS(focus_only/invalid_overlays))
+			// 	var/list/icon_states_available = icon_states(icon)
+			// 	if(!(overlay in icon_states_available))
+			// 		var/icon_file = "[icon]" || "Unknown Generated Icon"
+			// 		stack_trace("Invalid overlay: Icon object '[icon_file]' [REF(icon)] used in '[src]' [type] is missing icon state [overlay].")
+			// 		continue
+
+			var/index = build_overlays.Find(overlay)
+			build_overlays[index] = iconstate2appearance(icon, overlay)
 		else if(isicon(overlay))
-			new_overlays += icon2appearance(overlay)
-		else
-			if(isloc(overlay))
-				var/atom/A = overlay
-				if (A.flags & OVERLAY_QUEUED)
-					COMPILE_OVERLAYS(A)
-			appearance_bro.appearance = overlay //this works for images and atoms too!
-			if(!ispath(overlay))
-				var/image/I = overlay
-				appearance_bro.dir = I.dir
-			new_overlays += appearance_bro.appearance
-	return new_overlays
+			var/index = build_overlays.Find(overlay)
+			build_overlays[index] = icon2appearance(overlay)
+	return build_overlays
 
-#define NOT_QUEUED_ALREADY (!(flags & OVERLAY_QUEUED))
-#define QUEUE_FOR_COMPILE flags |= OVERLAY_QUEUED; SSoverlays.queue += src;
+/atom/proc/cut_overlays()
+	STAT_START_STOPWATCH
+	overlays = null
+	POST_OVERLAY_CHANGE(src)
+	STAT_STOP_STOPWATCH
+	STAT_LOG_ENTRY(SSoverlays.stats, type)
 
-/**
- * Cut all of atom's normal overlays.  Usually leaves "priority" overlays untouched.
- *
- *  @param priority If true, also will cut priority over-lays.
- */
-/atom/proc/cut_overlays(priority = FALSE)
-	var/list/cached_overlays = our_overlays
-	var/list/cached_priority = priority_overlays
-
-	var/need_compile = FALSE
-
-	if(LAZYLEN(cached_overlays)) //don't queue empty lists, don't cut priority over-lays
-		cached_overlays.Cut()  //clear regular over-lays
-		need_compile = TRUE
-
-	if(priority && LAZYLEN(cached_priority))
-		cached_priority.Cut()
-		need_compile = TRUE
-
-	if(NOT_QUEUED_ALREADY && need_compile)
-		QUEUE_FOR_COMPILE
-
-/**
- * Removes specific overlay(s) from the atom.  Usually does not remove them from "priority" over-lays.
- *
- * @param overlays The overlays to removed, type can be anything that is allowed for add_overlay().
- * @param priority If true, also will remove them from the "priority" overlays.
- */
-/atom/proc/cut_overlay(list/overlays, priority)
+/atom/proc/cut_overlay(list/remove_overlays)
 	if(!overlays)
 		return
+	STAT_START_STOPWATCH
+	overlays -= build_appearance_list(remove_overlays)
+	POST_OVERLAY_CHANGE(src)
+	STAT_STOP_STOPWATCH
+	STAT_LOG_ENTRY(SSoverlays.stats, type)
 
-	overlays = build_appearance_list(overlays)
-
-	var/list/cached_overlays = our_overlays	//sanic
-	var/list/cached_priority = priority_overlays
-	var/init_o_len = LAZYLEN(cached_overlays)
-	var/init_p_len = LAZYLEN(cached_priority)  //starter pokemon
-
-	LAZYREMOVE(cached_overlays, overlays)
-	if(priority)
-		LAZYREMOVE(cached_priority, overlays)
-
-	if(NOT_QUEUED_ALREADY && ((init_o_len != LAZYLEN(cached_overlays)) || (init_p_len != LAZYLEN(cached_priority))))
-		QUEUE_FOR_COMPILE
-
-/**
- * Adds specific overlay(s) to the atom.
- * It is designed so any of the types allowed to be added to /atom/overlays can be added here too. More details below.
- *
- * @param overlays The overlay(s) to add.  These may be
- *	- A string: In which case it is treated as an icon_state of the atom's icon.
- *	- An icon: It is treated as an icon.
- *	- An atom: Its own overlays are compiled and then it's appearance is added. (Meaning its current apperance is frozen).
- *	- An image: Image's apperance is added (i.e. subsequently editing the image will not edit the overlay)
- *	- A type path: Added to overlays as is.  Does whatever it is BYOND does when you add paths to overlays.
- *	- Or a list containing any of the above.
- * @param priority The overlays are added to the "priority" list istead of the normal one.
- */
-/atom/proc/add_overlay(list/overlays, priority = FALSE)
+/atom/proc/add_overlay(list/add_overlays)
 	if(!overlays)
 		return
+	STAT_START_STOPWATCH
+	overlays += build_appearance_list(add_overlays)
+	VALIDATE_OVERLAY_LIMIT(src)
+	POST_OVERLAY_CHANGE(src)
+	STAT_STOP_STOPWATCH
+	STAT_LOG_ENTRY(SSoverlays.stats, type)
 
-	overlays = build_appearance_list(overlays)
-
-	LAZYINITLIST(our_overlays)	//always initialized after this point
-	LAZYINITLIST(priority_overlays)
-
-	var/list/cached_overlays = our_overlays	//sanic
-	var/list/cached_priority = priority_overlays
-	var/init_o_len = cached_overlays.len
-	var/init_p_len = cached_priority.len  //starter pokemon
-	var/need_compile
-
-	if(priority)
-		cached_priority += overlays  //or in the image. Can we use [image] = image?
-		need_compile = init_p_len != cached_priority.len
-	else
-		cached_overlays += overlays
-		need_compile = init_o_len != cached_overlays.len
-
-	if(NOT_QUEUED_ALREADY && need_compile) //have we caught more pokemon?
-		QUEUE_FOR_COMPILE
-
-/**
- * Copy the overlays from another atom, either replacing all of ours or appending to our existing overlays.
- * Note: This copies only the normal overlays, not the "priority" overlays.
- *
- * @param other The atom to copy overlays from.
- * @param cut_old If true, all of our overlays will be *replaced* by the other's. If other is null, that means cutting all ours.
- */
-/atom/proc/copy_overlays(atom/other, cut_old)	//copys our_over-lays from another atom
+/atom/proc/copy_overlays(atom/other, cut_old) //copys our_overlays from another atom
 	if(!other)
 		if(cut_old)
 			cut_overlays()
 		return
 
-	var/list/cached_other = other.our_overlays
-	if(cached_other)
-		if(cut_old || !LAZYLEN(our_overlays))
-			our_overlays = cached_other.Copy()
+	STAT_START_STOPWATCH
+	var/list/cached_other = other.overlays.Copy()
+	if(cut_old)
+		if(cached_other)
+			overlays = cached_other
 		else
-			our_overlays |= cached_other
-		if(NOT_QUEUED_ALREADY)
-			QUEUE_FOR_COMPILE
-	else if(cut_old)
-		cut_overlays()
-
-/atom/proc/get_overlays()
-	return overlays
-
-#undef NOT_QUEUED_ALREADY
-#undef QUEUE_FOR_COMPILE
+			overlays = null
+		VALIDATE_OVERLAY_LIMIT(src)
+		POST_OVERLAY_CHANGE(src)
+		STAT_STOP_STOPWATCH
+		STAT_LOG_ENTRY(SSoverlays.stats, type)
+	else if(cached_other)
+		overlays += cached_other
+		VALIDATE_OVERLAY_LIMIT(src)
+		POST_OVERLAY_CHANGE(src)
+		STAT_STOP_STOPWATCH
+		STAT_LOG_ENTRY(SSoverlays.stats, type)
 
 //TODO: Better solution for these?
 /image/proc/add_overlay(x)
-	overlays += x
+	overlays |= x
 
 /image/proc/cut_overlay(x)
 	overlays -= x
@@ -244,14 +126,108 @@ SUBSYSTEM_DEF(overlays)
 			cut_overlays()
 		return
 
-	var/list/cached_other
-	if("our_overlays" in other.vars)
-		if(other.our_overlays)
-			cached_other = other.our_overlays
-		if(cached_other)
-			if(cut_old || !overlays.len)
-				overlays = cached_other.Copy()
-			else
-				overlays |= cached_other
-		else if(cut_old)
-			cut_overlays()
+	var/list/cached_other = other.overlays.Copy()
+	if(cached_other)
+		if(cut_old || !overlays.len)
+			overlays = cached_other
+		else
+			overlays |= cached_other
+	else if(cut_old)
+		cut_overlays()
+
+// Debug procs
+
+/atom
+	/// List of overlay "keys" (info about the appearance) -> mutable versions of static appearances
+	/// Drawn from the overlays list
+	var/list/realized_overlays
+	/// List of underlay "keys" (info about the appearance) -> mutable versions of static appearances
+	/// Drawn from the underlays list
+	var/list/realized_underlays
+
+/image
+	/// List of overlay "keys" (info about the appearance) -> mutable versions of static appearances
+	/// Drawn from the overlays list
+	var/list/realized_overlays
+	/// List of underlay "keys" (info about the appearance) -> mutable versions of static appearances
+	/// Drawn from the underlays list
+	var/list/realized_underlays
+
+/// Takes the atoms's existing overlays and underlays, and makes them mutable so they can be properly vv'd in the realized_overlays/underlays list
+/atom/proc/realize_overlays()
+	realized_overlays = realize_appearance_queue(overlays)
+	realized_underlays = realize_appearance_queue(underlays)
+
+/// Takes the image's existing overlays, and makes them mutable so they can be properly vv'd in the realized_overlays list
+/image/proc/realize_overlays()
+	realized_overlays = realize_appearance_queue(overlays)
+	realized_underlays = realize_appearance_queue(underlays)
+
+/// Takes a list of appearnces, makes them mutable so they can be properly vv'd and inspected
+/proc/realize_appearance_queue(list/appearances)
+	var/list/real_appearances = list()
+	var/list/queue = appearances.Copy()
+	var/queue_index = 0
+	while(queue_index < length(queue))
+		queue_index++
+		// If it's not a command, we assert that it's an appearance
+		var/mutable_appearance/appearance = queue[queue_index]
+		if(!appearance) // Who fucking adds nulls to their sublists god you people are the worst
+			continue
+
+		var/mutable_appearance/new_appearance = new /mutable_appearance()
+		new_appearance.appearance = appearance
+		var/key = "[appearance.icon]-[appearance.icon_state]-[appearance.plane]-[appearance.layer]-[appearance.dir]-[appearance.color]"
+		var/tmp_key = key
+		var/appearance_indx = 1
+		while(real_appearances[tmp_key])
+			tmp_key = "[key]-[appearance_indx]"
+			appearance_indx++
+
+		real_appearances[tmp_key] = new_appearance
+		var/add_index = queue_index
+		// Now check its children
+		for(var/mutable_appearance/child_appearance as anything in appearance.overlays)
+			add_index++
+			queue.Insert(add_index, child_appearance)
+		for(var/mutable_appearance/child_appearance as anything in appearance.underlays)
+			add_index++
+			queue.Insert(add_index, child_appearance)
+	return real_appearances
+
+/// Takes two appearances as args, prints out, logs, and returns a text representation of their differences
+/// Including suboverlays
+/proc/diff_appearances(mutable_appearance/first, mutable_appearance/second, iter = 0)
+	var/list/diffs = list()
+	var/list/firstdeet = first.vars
+	var/list/seconddeet = second.vars
+	var/diff_found = FALSE
+	for(var/name in first.vars)
+		var/firstv = firstdeet[name]
+		var/secondv = seconddeet[name]
+		if(firstv ~= secondv)
+			continue
+		if((islist(firstv) || islist(secondv)) && length(firstv) == 0 && length(secondv) == 0)
+			continue
+		if(name == "vars") // Go away
+			continue
+		if(name == "_listen_lookup") // This is just gonna happen with marked datums, don't care
+			continue
+		if(name == "overlays")
+			first.realize_overlays()
+			second.realize_overlays()
+			var/overlays_differ = FALSE
+			for(var/i in 1 to length(first.realized_overlays))
+				if(diff_appearances(first.realized_overlays[i], second.realized_overlays[i], iter + 1))
+					overlays_differ = TRUE
+
+			if(!overlays_differ)
+				continue
+
+		diff_found = TRUE
+		diffs += "Diffs detected at [name]: First ([firstv]), Second ([secondv])"
+
+	var/text = "Depth of: [iter]\n\t[diffs.Join("\n\t")]"
+	message_admins(text)
+	log_world(text)
+	return diff_found

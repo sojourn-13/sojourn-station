@@ -1,7 +1,7 @@
 
 //Powers that give armor, cloathing or other such ablities
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_armor()
+/mob/living/carbon/human/proc/psionic_armor()
 	set category = "Psionic powers"
 	set name = "Psionic armor (4)"
 	set desc = "Creates a set of armor from somewhere that does not exist. Anything taken off disappears and whatever clothing you are wearing when this power is used is destroyed."
@@ -20,7 +20,7 @@
 		user.replace_in_slot(new /obj/item/clothing/gloves/occultgloves, slot_gloves, skip_covering_check = TRUE)
 		user.replace_in_slot(new /obj/item/clothing/head/helmet/space/occulthood, slot_head, skip_covering_check = TRUE)
 
-/mob/living/carbon/human/psionic_tumor/proc/Hpsi_armor()
+/mob/living/carbon/human/proc/Hpsi_armor()
 	set category = "Psionic powers"
 	set name = "Durable shell (8)"
 	set desc = "Creates a set of very strong armor, using your mind and the environment as the material. Each piece of armor replaces the clothes you are already wearing, and provides additional strength to your body, in exchange for your psionic abilities."
@@ -38,7 +38,7 @@
 		user.replace_in_slot(new /obj/item/clothing/suit/space/occulHtist, slot_wear_suit, skip_covering_check = TRUE)
 		user.replace_in_slot(new /obj/item/clothing/head/helmet/space/occultHhood, slot_head, skip_covering_check = TRUE)
 
-/mob/living/carbon/human/psionic_tumor/proc/Light_psi_armor()
+/mob/living/carbon/human/proc/Light_psi_armor()
 	set category = "Psionic powers"
 	set name = "Void robe (6)"
 	set desc = "When applied, it creates an ultra-light protected cloak, spurring the wearer to new adventures in the kingdom of the king of dreams! Each part of the kit enhances the psion's thinking abilities and accelerates his step."

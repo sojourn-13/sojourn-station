@@ -185,16 +185,17 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Junior Marshal Officer"
-	alt_titles = list("Junior Marshal Officer", "Marshal Civil Servant")
+	noob_name = "Marshal Assistant"
+	alt_titles = list("Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	playtimerequired = 240
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
@@ -230,3 +231,54 @@
 	name = "Marshal Officer"
 	icon_state = "player-blue"
 	join_tag = /datum/job/officer
+
+/datum/job/officerjr
+	title = "Marshal Junior Officer"
+	flag = OFFICERJR
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY
+	faction = MAP_FACTION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
+	selection_color = "#a7bbc6"
+	wage = WAGE_LABOUR_INTERN
+	health_modifier = 10
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+
+	outfit_type = /decl/hierarchy/outfit/job/security/ihoper/jr
+
+	access = list(
+		access_security, access_moebius, access_engine, access_mailsorting, access_eva, access_forensics_lockers, access_medspec,
+		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen, access_medical_suits
+	)
+
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_VIG = 20,
+	)
+
+	perks = list(PERK_CODESPEAK, PERK_CHEM_CONTRABAND)
+
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
+
+	description = "The Marshal Officer forms the brunt of the Marshals, internally enforcing law and keeping the peace.<br>\
+	You are learning to become a Marshal and are expected to be a learn how to problem solve and handle descalate situations, reach peaceful agreements, and maintain public trust.<br>\
+	Keep your weapons holstered unless the situation demands otherwise - exercise good judgment and follow orders from full Marshals.<br>\
+	When there are no standing orders, your ongoing task is to better learn the laws and Marshal SOP, patrol the colony, be on the lookout for threats or problems. <br>\
+	Check in at departments and watch the main gate. You have access to most places to help with your duties  - do not abuse this."
+
+	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
+		Deal with internal threats to the colony such as criminals, saboteurs, and anything that endangers colonists.<br>\
+		Ensure that people follow the law and SoP to maintain order.<br>\
+		Follow orders from the chain of command.<br>\
+		Obey the law. You are not above it.<br>\
+		Learn how to be a real Marshal Officer"
+
+/obj/landmark/join/start/officerjr
+	name = "Junior Marshal Officer"
+	icon_state = "player-blue-lower"
+	join_tag = /datum/job/officerjr

@@ -140,8 +140,8 @@
 
 /obj/item/gun/energy/laser/railgun/railrifle/Initialize()
 	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, 50, 60, 5, 0.01, 2)
-	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/venteventreductor) //this sould just be a fluff message, proc can be anything
-	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheatreductor) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	RegisterSignal(src, COMSIG_HEAT_VENT, PROC_REF(venteventreductor)) //this sould just be a fluff message, proc can be anything
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, PROC_REF(handleoverheatreductor)) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
 	START_PROCESSING(SSobj, src)
 	..()
 
@@ -204,8 +204,8 @@
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
 	..()
 	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
-	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
-	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	RegisterSignal(src, COMSIG_HEAT_VENT, PROC_REF(ventEvent)) //this sould just be a fluff message, proc can be anything
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, PROC_REF(handleoverheat)) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
 	update_icon()
 	START_PROCESSING(SSobj, src)
 

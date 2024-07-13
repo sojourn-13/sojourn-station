@@ -15,7 +15,7 @@
 	see_in_dark = 10
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned
@@ -69,7 +69,6 @@
 	var/treatment_oxy = "dexalinp"
 	var/treatment_fire = "dermaline"
 	var/treatment_tox = "carthatoline"
-	var/treatment_virus = "spaceacillin"
 	never_stimulate_air = TRUE
 
 /mob/living/carbon/superior_animal/nanobot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
@@ -128,8 +127,8 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/nanobot/update_icon()
-	overlays.Cut()
-	overlays += image(icon, "[icon_state]_lights")
+	cut_overlays()
+	add_overlay(image(icon, "[icon_state]_lights"))
 
 
 // For repairing damage to the bot.

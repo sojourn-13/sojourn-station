@@ -645,9 +645,9 @@
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src) //has silver eye
 	new /obj/item/gun/projectile/silvereye(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
 	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
 	//melee
 
@@ -698,9 +698,10 @@
 /obj/structure/closet/secure_closet/reinforced/foreman/fence/populate_contents()
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
 	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
-	new /obj/item/gun/projectile/shotgun/bull/bison(src)
-	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
-	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
+	new /obj/item/gun/projectile/automatic/vector(src)
+	new /obj/item/ammo_magazine/smg_magnum_40(src)
+	new /obj/item/ammo_magazine/smg_magnum_40(src)
+	new /obj/item/ammo_magazine/smg_magnum_40/lethal(src)
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 	new /obj/item/gun/projectile/ladon/sa(src)
 	new /obj/item/ammo_magazine/magnum_40(src)

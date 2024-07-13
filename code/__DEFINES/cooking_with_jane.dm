@@ -80,9 +80,9 @@
 
 //Ignite times for reagents interacting with a stove.
 //The stove will catch fire if left on too long with flammable reagents in any of its holders.
-#define CWJ_IGNITE_TIME_LOW		1 HOUR
-#define CWJ_IGNITE_TIME_MEDIUM	30 MINUTES
-#define CWJ_IGNITE_TIME_HIGH	15 MINUTES
+#define CWJ_IGNITE_TIME_LOW		20 MINUTES
+#define CWJ_IGNITE_TIME_MEDIUM	12 MINUTES
+#define CWJ_IGNITE_TIME_HIGH	10 MINUTES
 
 //Determines how much quality is taken from a food each tick when a 'no recipe' response is made.
 #define CWJ_BASE_QUAL_REDUCTION 5

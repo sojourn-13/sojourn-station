@@ -58,7 +58,7 @@
 					if (gas_sac.has_reagent("condensedcapsaicinspider", amount_per_transfer_from_this))
 						if (!((target.weakened) || (target.stunned))) //anti-stunlock
 							var/delay = rand(spray_delay_minimum, spray_delay_maximum)
-							addtimer(CALLBACK(src, .proc/sprayPepper, targetted_mob), delay)
+							addtimer(CALLBACK(src, PROC_REF(sprayPepper), targetted_mob), delay)
 							cooldown = (world.time + cooldown_increment)
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/proc/sprayPepper(var/atom/targetted_mob)

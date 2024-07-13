@@ -217,7 +217,7 @@
 	for(var/stat in stats_to_boost)
 		var/amount = stats_to_boost[stat]
 		participant.stats.addTempStat(stat, amount, effect_time, src.name)
-		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+		addtimer(CALLBACK(src, PROC_REF(take_boost), participant, stat, amount), effect_time)
 	spawn(30)
 		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
 
@@ -339,7 +339,7 @@
 	user.stats.addTempStat(STAT_MEC, 10, effect_time)
 	to_chat(user, SPAN_NOTICE("You feel at peace with yourself, your body and mind going beyond their limits."))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, .proc/discard_effect, user), src.cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.cooldown_time)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -425,7 +425,7 @@
 
 	to_chat(user, SPAN_NOTICE("You feel your body stiffening, your stout refusal to change slowing down the world around you as you remain at a fixed point."))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, .proc/discard_effect, user), src.effect_time)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.effect_time)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -546,7 +546,7 @@
 	user.damage_multiplier += wrath_damage
 	to_chat(user, SPAN_NOTICE("You feel divine wrath empowering you with immense but fleeting strength!"))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, .proc/discard_effect, user), src.cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.cooldown_time)
 	return TRUE
 
 /datum/ritual/cruciform/divisor/divisor_smite/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -650,7 +650,7 @@
 		user.stats.addTempStat(STAT_TGH, debuff_amount, debuff_length, src.name)
 		user.stats.addTempStat(STAT_ROB, debuff_amount, debuff_length, src.name)
 		user.stats.addTempStat(STAT_VIG, debuff_amount, debuff_length, src.name)
-		addtimer(CALLBACK(src, .proc/debuff_over, user), debuff_length)
+		addtimer(CALLBACK(src, PROC_REF(debuff_over), user), debuff_length)
 		set_personal_cooldown(user)
 		return TRUE
 
@@ -702,7 +702,7 @@
 			H.stats.addTempStat(STAT_TGH, debuff_amount_healed, debuff_length_healed, src.name)
 			H.stats.addTempStat(STAT_ROB, debuff_amount_healed, debuff_length_healed, src.name)
 			H.stats.addTempStat(STAT_VIG, debuff_amount_healed, debuff_length_healed, src.name)
-			addtimer(CALLBACK(src, .proc/healed_debuff_over, H), debuff_length_healed)
+			addtimer(CALLBACK(src, PROC_REF(healed_debuff_over), H), debuff_length_healed)
 
 	if(number_healed > 0)
 		debuff_amount_healer = -5 * number_healed
@@ -711,7 +711,7 @@
 		user.stats.addTempStat(STAT_VIG, debuff_amount_healer, debuff_length_healer, src.name)
 		set_personal_cooldown(user)
 		to_chat(user, "You feel your energy flowing into those you have blessed. The drain will significantly interfere with your combat abilities for a few minutes.")
-		addtimer(CALLBACK(src, .proc/healer_debuff_over, user), debuff_length_healer)
+		addtimer(CALLBACK(src, PROC_REF(healer_debuff_over), user), debuff_length_healer)
 		return TRUE
 
 /datum/ritual/cruciform/factorial/mass_repair/proc/healed_debuff_over(mob/living/carbon/human/H)

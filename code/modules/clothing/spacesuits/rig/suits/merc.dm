@@ -5,23 +5,26 @@
 
 /obj/item/rig/merc
 	name = "crimson hardsuit control module"
-	desc = "A blood-red hardsuit featuring some fairly advanced technology."
+	desc = "A blood-red hardsuit featuring some fairly advanced technology. Advanced armor plating can last through extended firefights."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
 	armor_list = list(
-		melee = 40,
-		bullet = 40,
-		energy = 30,
+		melee = 10,
+		bullet = 10,
+		energy = 7,
 		bomb = 75,
 		bio = 100,
 		rad = 50
 	)
+	ablative_max = 12
+	ablation = ABLATION_DURABLE
 	slowdown = 0.3
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	stiffness = 0
 	obscuration = 0
+	price_tag = 2000
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
 

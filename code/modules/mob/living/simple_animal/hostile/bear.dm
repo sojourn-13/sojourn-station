@@ -48,7 +48,7 @@
 					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
-					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60)
+					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, clear_movement_delay), -0.1), 60)
 					to_chat(H, SPAN_WARNING("\The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
 				else
 					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ignore such things."))
@@ -56,15 +56,15 @@
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
-					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negative as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
+					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, clear_movement_delay), -0.1), 60) //Needs to be a negative as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
 
 		anchored = TRUE
-		addtimer(CALLBACK(src, .proc/unanchor), 10)
+		addtimer(CALLBACK(src, PROC_REF(unanchor)), 10)
 
 
 /mob/living/simple_animal/hostile/bear/proc/unanchor()
 	anchored = FALSE
-	addtimer(CALLBACK(src, .proc/rawr_xd_recharge), 120) //should be tolds of time for people to kill the bear
+	addtimer(CALLBACK(src, PROC_REF(rawr_xd_recharge)), 120) //should be tolds of time for people to kill the bear
 
 /mob/living/simple_animal/hostile/bear/proc/rawr_xd_recharge()
 	rawr_cooldown = FALSE
@@ -139,9 +139,9 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "combatbear_dead"
 	faction = "excelsior"
-	armor = list(melee = 20, bullet = 15, energy = 5, bomb = 10, bio = 100, rad = 100, agony = 0) // It's an ARMORED bear
-	maxHealth = 400
-	health = 400
+	armor = list(melee = 5, bullet = 3, energy = 1, bomb = 10, bio = 100, rad = 100, agony = 0) // It's an ARMORED bear
+	maxHealth = 300 * EXCELSIOR_HEALTH_MOD
+	health = 300 * EXCELSIOR_HEALTH_MOD
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
@@ -154,8 +154,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "yaoguai"
 	icon_dead = "yaoguai_dead"
-	maxHealth = 400
-	health = 400
+	maxHealth = 400 * MEGAFAUNA_HEALTH_MOD
+	health = 400 * MEGAFAUNA_HEALTH_MOD
 	melee_damage_lower = 40 //Low health but an extremely powerful hitter
 	melee_damage_upper = 50 //You call 400 HP LOW HEALTH?! - Seb
 	leather_amount = 10

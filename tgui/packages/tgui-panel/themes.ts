@@ -6,6 +6,8 @@
 
 export const THEMES = ['light', 'dark'];
 
+// warning: if you change this, also update /mob/verb/hotkey_toggle's detection
+// also /mob/living/silicon/robot/hotkey_toggle
 const COLOR_DARK_BG = '#202020';
 const COLOR_DARK_BG_DARKER = '#171717';
 const COLOR_DARK_TEXT = '#a4bad6';
@@ -36,7 +38,7 @@ export const setClientTheme = (name) => {
       // Main windows
       'infowindow.background-color': 'none',
       'infowindow.text-color': '#000000',
-      'info.background-color': 'none',
+      'info.background-color': '#FFFFFF',
       'info.text-color': '#000000',
       'browseroutput.background-color': 'none',
       'browseroutput.text-color': '#000000',
@@ -51,36 +53,33 @@ export const setClientTheme = (name) => {
       'rules.text-color': '#000000',
       'wiki.background-color': 'none',
       'wiki.text-color': '#000000',
-      'forum.background-color': 'none',
-      'forum.text-color': '#000000',
       'github.background-color': 'none',
       'github.text-color': '#000000',
-      'report-issue.background-color': 'none',
-      'report-issue.text-color': '#000000',
+      'discord.background-color': 'none',
+      'discord.text-color': '#000000',
+      'tickets.background-color': 'none',
+      'tickets.text-color': '#000000',
       // Status and verb tabs
       'output.background-color': 'none',
       'output.text-color': '#000000',
       'statwindow.background-color': 'none',
       'statwindow.text-color': '#000000',
-      'stat.background-color': '#FFFFFF',
-      'stat.tab-background-color': 'none',
-      'stat.text-color': '#000000',
-      'stat.tab-text-color': '#000000',
-      'stat.prefix-color': '#000000',
-      'stat.suffix-color': '#000000',
       // Say, OOC, me Buttons etc.
       'saybutton.background-color': 'none',
       'saybutton.text-color': '#000000',
       'oocbutton.background-color': 'none',
       'oocbutton.text-color': '#000000',
+      'hotkey_toggle.background-color': 'none',
+      'hotkey_toggle.text-color': '#000000',
       'mebutton.background-color': 'none',
       'mebutton.text-color': '#000000',
+      'input.background-color': '#FFFFFF',
+      'input.text-color': '#000000',
+      // Asset cache/tooltip
       'asset_cache_browser.background-color': 'none',
       'asset_cache_browser.text-color': '#000000',
       'tooltip.background-color': 'none',
       'tooltip.text-color': '#000000',
-      'input.background-color': '#FFFFFF',
-      'input.text-color': '#000000',
     });
   }
   if (name === 'dark') {
@@ -103,36 +102,33 @@ export const setClientTheme = (name) => {
       'rules.text-color': COLOR_DARK_TEXT,
       'wiki.background-color': '#494949',
       'wiki.text-color': COLOR_DARK_TEXT,
-      'forum.background-color': '#494949',
-      'forum.text-color': COLOR_DARK_TEXT,
       'github.background-color': '#3a3a3a',
       'github.text-color': COLOR_DARK_TEXT,
-      'report-issue.background-color': '#492020',
-      'report-issue.text-color': COLOR_DARK_TEXT,
+      'discord.background-color': '#494949',
+      'discord.text-color': COLOR_DARK_TEXT,
+      'tickets.background-color': '#494949',
+      'tickets.text-color': COLOR_DARK_TEXT,
       // Status and verb tabs
       'output.background-color': COLOR_DARK_BG_DARKER,
       'output.text-color': COLOR_DARK_TEXT,
       'statwindow.background-color': COLOR_DARK_BG_DARKER,
       'statwindow.text-color': COLOR_DARK_TEXT,
-      'stat.background-color': COLOR_DARK_BG_DARKER,
-      'stat.tab-background-color': COLOR_DARK_BG,
-      'stat.text-color': COLOR_DARK_TEXT,
-      'stat.tab-text-color': COLOR_DARK_TEXT,
-      'stat.prefix-color': COLOR_DARK_TEXT,
-      'stat.suffix-color': COLOR_DARK_TEXT,
       // Say, OOC, me Buttons etc.
       'saybutton.background-color': COLOR_DARK_BG,
       'saybutton.text-color': COLOR_DARK_TEXT,
       'oocbutton.background-color': COLOR_DARK_BG,
       'oocbutton.text-color': COLOR_DARK_TEXT,
+      'hotkey_toggle.background-color': COLOR_DARK_BG,
+      'hotkey_toggle.text-color': COLOR_DARK_TEXT,
       'mebutton.background-color': COLOR_DARK_BG,
       'mebutton.text-color': COLOR_DARK_TEXT,
+      'input.background-color': COLOR_DARK_BG_DARKER,
+      'input.text-color': COLOR_DARK_TEXT,
+      // Asset cache/tooltip
       'asset_cache_browser.background-color': COLOR_DARK_BG,
       'asset_cache_browser.text-color': COLOR_DARK_TEXT,
       'tooltip.background-color': COLOR_DARK_BG,
       'tooltip.text-color': COLOR_DARK_TEXT,
-      'input.background-color': COLOR_DARK_BG_DARKER,
-      'input.text-color': COLOR_DARK_TEXT,
     });
   }
 };

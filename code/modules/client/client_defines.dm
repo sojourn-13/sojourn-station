@@ -64,6 +64,18 @@
 
 	var/adminhelped = 0
 
+	/// Disables default BYOND verb panel in favor of Stat Panel™
+	show_verb_panel = FALSE
+	/// our current tab
+	var/stat_tab
+	/// list of all tabs
+	var/list/panel_tabs = list()
+	/// Loot panel for the client
+	var/datum/lootpanel/loot_panel
+
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE
+
 		///////////////
 		//SOUND STUFF//
 		///////////////
@@ -111,8 +123,6 @@
 	var/connection_time //world.time they connected
 	var/connection_realtime //world.realtime they connected
 	var/connection_timeofday //world.timeofday they connected
-
-	var/datum/chatOutput/chatOutput
 
 	// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
 	var/list/sent_assets = list()

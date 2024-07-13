@@ -28,6 +28,7 @@ type Material = {
 type CurrentItemData = {
   name: string;
   icon: string;
+  icon_is_image: BooleanLike;
   materials: Material[];
 };
 
@@ -115,6 +116,7 @@ const SmelterPipeline = (props: SmelterPipelineProps) => {
           <CurrentItem
             present={!!current_item}
             icon={current_item?.icon}
+            icon_is_image={current_item?.icon_is_image}
             progress={progress}
           />
         </Stack.Item>
@@ -170,8 +172,8 @@ const ItemMaterials = (props: ItemMaterialsProps) => {
           <Stack.Item key={index} m={-1}>
             <Tooltip content={toTitleCase(data.name)} position="bottom">
               <Flex align="center" justify="center" direction="column">
-                <Flex.Item>
-                  <Image width={5} height={5} src={data.icon} m={-1} />
+                <Flex.Item width={4}>
+                  <Box className={data.icon} />
                 </Flex.Item>
                 <Flex.Item color="label" mt={-1}>
                   {round(data.count, 2)}
@@ -188,9 +190,10 @@ const ItemMaterials = (props: ItemMaterialsProps) => {
 const CurrentItem = (props: {
   present: boolean;
   icon?: string;
+  icon_is_image?: BooleanLike;
   progress: number;
 }) => {
-  const { present, icon, progress } = props;
+  const { present, icon, icon_is_image, progress } = props;
 
   if (!present) {
     return (
@@ -214,7 +217,11 @@ const CurrentItem = (props: {
         <Flex.Item>
           <ShakingElement>
             {icon ? (
-              <Image width={5} height={5} src={icon} m={-1} />
+              icon_is_image ? (
+                <Image width={5} height={5} src={icon} m={-1} />
+              ) : (
+                <Box className={icon} />
+              )
             ) : (
               <Icon
                 inline

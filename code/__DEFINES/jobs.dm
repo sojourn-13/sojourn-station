@@ -1,9 +1,9 @@
 //Jobs depatment lists for use in constant expressions
-#define JOBS_SECURITY "Warrant Officer","Supply Specialist","Ranger","Marshal Officer"
-#define JOBS_BLACKSHIELD "Blackshield Commander","Sergeant","Corpsman","Blackshield Trooper"
+#define JOBS_SECURITY "Warrant Officer","Supply Specialist","Ranger","Marshal Officer","Marshal Junior Officer"
+#define JOBS_BLACKSHIELD "Blackshield Commander","Sergeant","Corpsman","Blackshield Trooper", "Blackshield Cadet"
 #define JOBS_COMMAND "Premier","Steward","Blackshield Commander","Warrant Officer","Surface Operations Manager","Guild Master","Chief Biolab Overseer","Chief Research Overseer","Prime","Foreman"
-#define JOBS_ENGINEERING "Guild Master","Guild Adept"
-#define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician"
+#define JOBS_ENGINEERING "Guild Master","Guild Adept","Guild Apprentice"
+#define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician","Soteria Medical Resident"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
 #define JOBS_LSS "Surface Operations Manager","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
@@ -13,7 +13,7 @@
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Fence","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Lifeline Technician","Soteria Roboticist","Lonestar Miner"
+#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Fence","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Lifeline Technician","Soteria Roboticist","Lonestar Miner", "Blackshield Cadet", "Marshal Junior Officer"
 
 #define CREDITS "&cent;"
 #define CREDS "&cent;"

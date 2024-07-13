@@ -172,7 +172,7 @@
 		//consume consume consume consume
 		reagents.clear_reagents()
 
-	addtimer(CALLBACK(src, .proc/end_brew), selected_recipe.brew_timer)
+	addtimer(CALLBACK(src, PROC_REF(end_brew)), selected_recipe.brew_timer)
 	icon_state = "barrel_tapless"
 
 /obj/structure/fermentation_keg/proc/end_brew()

@@ -37,7 +37,7 @@
 	get_power()
 
 /datum/component/inspiration/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
+	RegisterSignal(parent, COMSIG_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/inspiration/proc/on_examine(mob/user)
 	for(var/stat  in stats)

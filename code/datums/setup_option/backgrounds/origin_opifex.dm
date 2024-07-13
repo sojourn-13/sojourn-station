@@ -35,7 +35,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 10,
+		STAT_BIO = 15,
 		STAT_MEC = -5,
 		STAT_COG = -5
 	)

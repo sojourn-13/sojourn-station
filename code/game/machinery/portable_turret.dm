@@ -108,7 +108,7 @@
 
 /obj/machinery/porta_turret/New()
 	..()
-	req_access.Cut()
+	LAZYNULL(req_access)
 	req_one_access = list(access_security, access_heads, access_occupy)
 
 	//Sets up a spark system
@@ -121,7 +121,7 @@
 
 /obj/machinery/porta_turret/crescent/New()
 	..()
-	req_one_access.Cut()
+	LAZYNULL(req_one_access)
 	req_access = list(access_cent_specops)
 
 /obj/machinery/porta_turret/Destroy()
@@ -408,7 +408,7 @@ var/list/turret_icons
 							SPAN_DANGER("[user] tripped the security protocol on the [src]! Run!"),
 							SPAN_DANGER("You trip the security protocol! Run!")
 						)
-						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
+						addtimer(CALLBACK(src, PROC_REF(reset_hackfail)), 30 SECOND)
 					else
 						to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
 					return TRUE //No whacking the turret with tools on help intent
@@ -432,7 +432,7 @@ var/list/turret_icons
 					if(TOOL_USE_SUCCESS)
 						to_chat(user, SPAN_NOTICE("You disconnect the turret's security protocol override!"))
 						overridden = 1
-						req_one_access.Cut()
+						LAZYNULL(req_one_access)
 						req_one_access = list(access_occupy)
 					if(TOOL_USE_FAIL)
 						user.visible_message(
@@ -441,7 +441,7 @@ var/list/turret_icons
 						)
 						enabled = 1
 						hackfail = 1
-						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
+						addtimer(CALLBACK(src, PROC_REF(reset_hackfail)), 30 SECOND)
 			return TRUE //No whacking the turret with tools on help intent
 
 	if (!(I.flags & NOBLUDGEON) && I.force && !(stat & BROKEN))

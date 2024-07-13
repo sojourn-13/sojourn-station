@@ -1,7 +1,7 @@
 
 // Powers that affect Simple/Super Mobs
 
-/mob/living/carbon/human/psionic_tumor/proc/psychic_call()
+/mob/living/carbon/human/proc/psychic_call()
 	set category = "Psionic powers"
 	set name = "Psychic Call (2)"
 	set desc = "Expend two points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
@@ -20,7 +20,7 @@
 	else
 		to_chat(user, "You lack enough psi essence to call creatures from burrows.")
 
-/mob/living/carbon/human/psionic_tumor/proc/psychic_banish()
+/mob/living/carbon/human/proc/psychic_banish()
 	set category = "Psionic powers"
 	set name = "Psychic Banish (4)"
 	set desc = "Expend four points of your psi essence to banish nearby creatures capable of burrowing back into the holes from whence they came. Effected creatures must be able to burrow and may \
@@ -40,7 +40,7 @@
 	else
 		to_chat(user, "You lack enough psi essence to banish nearby creatures.")
 
-/mob/living/carbon/human/psionic_tumor/proc/mind_jack()
+/mob/living/carbon/human/proc/mind_jack()
 	set category = "Psionic powers"
 	set name = "Mindjack (3)"
 	set desc = "Expend three psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
@@ -73,7 +73,7 @@
 		else
 			usr.show_message("\blue You are not holding someone you can use this power on.")
 
-/mob/living/carbon/human/psionic_tumor/proc/seek_the_dream()
+/mob/living/carbon/human/proc/seek_the_dream()
 	set category = "Psionic powers"
 	set name = "Seek the Dream (5)"
 	set desc = "Expend five psi points and wither your body and mind to call three dreaming daemons from somewhere else. They are not inherently allied to you."
@@ -116,7 +116,7 @@
 		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(user.loc)
 		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(user.loc)
 
-/mob/living/carbon/human/psionic_tumor/proc/psionic_swarm()
+/mob/living/carbon/human/proc/psionic_swarm()
 	set category = "Psionic powers"
 	set name = "Psionic Swarm (2)"
 	set desc = "Spend two psionic essence to call forth a psionic energy cloud that will rip at foes and protect you for a short time."

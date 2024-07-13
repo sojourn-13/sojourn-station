@@ -52,10 +52,10 @@
 	var/new_color
 
 /datum/component/modification/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/try_modify)
-	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
+	RegisterSignal(parent, COMSIG_IATTACK, PROC_REF(attempt_install))
+	RegisterSignal(parent, COMSIG_ATTACKBY, PROC_REF(try_modify))
+	RegisterSignal(parent, COMSIG_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_REMOVE, PROC_REF(uninstall))
 
 /datum/component/modification/proc/attempt_install(atom/A, mob/living/user, params)
 	return can_apply(A, user) && apply(A, user)
@@ -76,7 +76,7 @@
 	return FALSE
 
 /datum/component/modification/proc/check_item(obj/item/I, mob/living/user)
-	if(I.item_upgrades.len >= I.max_upgrades)
+	if(LAZYLEN(I.item_upgrades) >= I.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("\The [I] can not fit anymore modifications!"))
 		return FALSE
@@ -127,9 +127,9 @@
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
 	I.forceMove(A)
-	A.item_upgrades.Add(I)
-	RegisterSignal(A, trigger_signal, .proc/trigger)
-	RegisterSignal(A, COMSIG_APPVAL, .proc/apply_values)
+	LAZYADD(A.item_upgrades, I)
+	RegisterSignal(A, trigger_signal, PROC_REF(trigger))
+	RegisterSignal(A, COMSIG_APPVAL, PROC_REF(apply_values))
 
 	var/datum/component/modification_removal/MR = A.AddComponent(/datum/component/modification_removal)
 	MR.removal_tool_quality = removal_tool_quality
@@ -193,7 +193,7 @@
 
 /datum/component/modification/proc/uninstall(obj/item/I, mob/living/user)
 	var/obj/item/P = parent
-	I.item_upgrades -= P
+	LAZYREMOVE(I.item_upgrades, P)
 	if(destroy_on_removal)
 		UnregisterSignal(I, trigger_signal)
 		UnregisterSignal(I, COMSIG_APPVAL)
@@ -219,7 +219,7 @@
 
 // Signal thingy should change from attackby to something else when the modification extraction machines are coded
 /datum/component/modification_removal/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_uninstall)
+	RegisterSignal(parent, COMSIG_ATTACKBY, PROC_REF(attempt_uninstall))
 
 /datum/component/modification_removal/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ATTACKBY)
@@ -232,9 +232,9 @@
 
 	ASSERT(istype(upgrade_loc))
 
-	if(upgrade_loc.item_upgrades.len && C.has_quality(removal_tool_quality))
+	if(LAZYLEN(upgrade_loc.item_upgrades) && C.has_quality(removal_tool_quality))
 		var/obj/item/modification/toremove
-		if(upgrade_loc.item_upgrades.len == 1)
+		if(LAZYLEN(upgrade_loc.item_upgrades) == 1)
 			toremove = upgrade_loc.item_upgrades[1]
 		else
 			var/list/possibles = upgrade_loc.item_upgrades.Copy()

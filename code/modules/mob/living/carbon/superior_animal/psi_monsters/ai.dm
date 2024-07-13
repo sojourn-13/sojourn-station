@@ -32,7 +32,7 @@
 
 	if(psionic_respawn && GLOB.deepmaints_data_bool["allow_respawning"])
 		var/my_little_location = get_turf(src)
-		addtimer(CALLBACK(my_little_location, /turf/proc/psionic_respawn, my_little_location, respawn_mob_type), rand(fast_respawn,slow_respawn))
+		addtimer(CALLBACK(my_little_location, TYPE_PROC_REF(/turf, psionic_respawn), my_little_location, respawn_mob_type), rand(fast_respawn,slow_respawn))
 
 	qdel(src)
 
@@ -51,7 +51,7 @@
 			var/obj/effect/decal/cleanable/crayon/trap/rebound_joy = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
 			rebound_joy.caprice_spell()
 		else
-			addtimer(CALLBACK(src, /turf/proc/psionic_respawn, src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, psionic_respawn), src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))
 			holy = FALSE
 		return
 	new respawn_mob_type(my_little_location)

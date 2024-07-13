@@ -11,7 +11,7 @@
 /datum/asset_transport/proc/Load()
 	// if (CONFIG_GET(flag/asset_simple_preload))
 	for(var/client/C in clients)
-		addtimer(CALLBACK(src, .proc/send_assets_slow, C, preload), 1 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(send_assets_slow), C, preload), 1 SECONDS)
 
 /// Initialize - Called when SSassets initializes.
 /datum/asset_transport/proc/Initialize(list/assets)
@@ -19,7 +19,7 @@
 	// if (!CONFIG_GET(flag/asset_simple_preload))
 	// 	return
 	for(var/client/C in clients)
-		addtimer(CALLBACK(src, .proc/send_assets_slow, C, preload), 1 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(send_assets_slow), C, preload), 1 SECONDS)
 
 
 /**
@@ -85,6 +85,10 @@
 /// asset_list - A list of asset filenames to be sent to the client. Can optionally be assoicated with the asset's asset_cache_item datum.
 /// Returns TRUE if any assets were sent.
 /datum/asset_transport/proc/send_assets(client/client, list/asset_list)
+#if defined(UNIT_TESTS)
+	return
+#endif
+
 	if (!istype(client))
 		if (ismob(client))
 			var/mob/M = client
@@ -140,7 +144,7 @@
 
 			client.sent_assets[new_asset_name] = ACI.hash
 
-		addtimer(CALLBACK(client, /client/proc/asset_cache_update_json), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
+		addtimer(CALLBACK(client, TYPE_PROC_REF(/client, asset_cache_update_json)), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
 		return TRUE
 	return FALSE
 

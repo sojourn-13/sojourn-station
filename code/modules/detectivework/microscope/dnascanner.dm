@@ -104,7 +104,7 @@
 	if(bloodsamp)
 		var/obj/item/paper/P = new(src)
 		P.name = "[src] report #[++report_num]: [bloodsamp.name]"
-		P.copy_overlays(list("paper_stamped"), TRUE)
+		P.add_overlay(list("paper_stamped"), TRUE)
 		//dna data itself
 		var/data = "No scan information available."
 		if(bloodsamp.dna != null)

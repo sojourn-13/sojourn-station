@@ -20,7 +20,7 @@
 /obj/machinery/power/ex_bluespace_repairer/Initialize()
 	. = ..()
 	is_on = TRUE
-	addtimer(CALLBACK(src, .proc/lower_entropy), 5 MINUTES, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(lower_entropy)), 5 MINUTES, TIMER_STOPPABLE)
 
 /obj/machinery/power/ex_bluespace_repairer/examine(mob/living/user, distance)
 	. = ..()

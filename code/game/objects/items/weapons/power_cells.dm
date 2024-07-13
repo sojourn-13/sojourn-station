@@ -33,6 +33,20 @@
 	maxcharge = 20000
 	price_tag = 300
 
+/obj/item/cell/large/guild
+	name = "Artificer's Guild \"Workhorse 14000L\""
+	desc = "Artificer's Guild-branded rechargeable L-standardized power cell. This one is made with gold, and charges slightly faster than contemporary cells."
+	icon_state = "ag_b_sup"
+	maxcharge = 14000
+	max_chargerate = 0.16
+	origin_tech = list(TECH_POWER = 5)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
+	price_tag = 350
+
+/obj/item/cell/large/guild/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
 /obj/item/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
 	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one is as cheap as Lonestar models, yet improved in all senses."
@@ -186,6 +200,20 @@
 	charge = 0
 	starts_max_charge = FALSE
 
+/obj/item/cell/medium/guild
+	name = "Artificer's Guild \"Workhorse 1200M\""
+	desc = "Artificer's Guild branded rechargeable M-standardized power cell. This one is made with gold, and charges slightly faster than contemporary cells."
+	icon_state = "ag_m_sup"
+	maxcharge = 1200
+	max_chargerate = 0.16 // Charges twice as fast as the default
+	origin_tech = list(TECH_POWER = 5)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+	price_tag = 200 // More expensive, owing to the gold content
+
+/obj/item/cell/medium/guild/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
 /obj/item/cell/medium/moebius
 	name = "Soteria \"Power-Geyser 800M\""
 	desc = "Soteria branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
@@ -320,6 +348,20 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
 	price_tag = 90
+
+/obj/item/cell/small/guild
+	name = "Artificer's Guild \"Workhorse 300S\""
+	desc = "Artificer's Guild branded rechargeable S-standardized power cell. This one is made with gold, and charges slightly faster than contemporary cells."
+	icon_state = "ag_s_sup"
+	maxcharge = 300
+	max_chargerate = 0.16
+	origin_tech = list(TECH_POWER = 5)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+	price_tag = 100
+
+/obj/item/cell/small/guild/depleted
+	charge = 0
+	starts_max_charge = FALSE
 
 /obj/item/cell/small/moebius
 	name = "Soteria \"Power-Geyser 120S\""

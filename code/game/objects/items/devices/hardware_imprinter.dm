@@ -67,7 +67,7 @@
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()//Beeps and messages to actually let player know that they need to do something to continue
 
-	INVOKE_ASYNC(src, .proc/imprint, user)
+	INVOKE_ASYNC(src, PROC_REF(imprint), user)
 
 /obj/item/device/hardware_imprinter/examine(mob/user)
 	. = ..()

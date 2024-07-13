@@ -16,6 +16,8 @@
 	var/list/cooking_timestamp = list(0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[2]
 
+	var/datum/effect/effect/system/smoke_spread/bad/bsmoke = new /datum/effect/effect/system/smoke_spread/bad
+
 	use_power = 0
 	interact_offline = TRUE
 
@@ -33,6 +35,11 @@
 	var/obj/effect/flicker_overlay/hopper_insert
 	scan_types = list("scan_1")
 
+/obj/machinery/cooking_with_jane/grill/New()
+	..()
+	bsmoke.attach(src)
+	bsmoke.set_up(7, 0, src.loc)
+
 /obj/machinery/cooking_with_jane/grill/Initialize()
 	. = ..()
 	hopper_insert = new(src)
@@ -40,8 +47,12 @@
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/grill/Process()
 
-	//if(on_fire)
-		//Do bad things if it is on fire.
+	if(on_fire)
+		if(stored_wood)
+			emit_fire()
+		else
+			on_fire = FALSE
+
 
 	for(var/i=1, i<=2, i++)
 		if(switches[i])
@@ -133,12 +144,21 @@
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_ignition(input)
-	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
+	if(!(items && istype(items, /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
-	if(container.handle_ignition())
-		on_fire = TRUE
+	//Initial burst of smoke so it matches the fire alarm
+	bsmoke.start()
+
+	//Trigger fire alarms
+	var/area/area = get_area(src)
+	for(var/obj/machinery/firealarm/FA in area)
+		fire_alarm.triggerAlarm(loc, FA, 0)
+
+	on_fire = TRUE
+
+/obj/machinery/cooking_with_jane/grill/proc/emit_fire()
+	bsmoke.start()
 
 //Retrieve which quadrant of the baking pan is being used.
 /obj/machinery/cooking_with_jane/grill/proc/getInput(params)
@@ -157,6 +177,26 @@
 /obj/machinery/cooking_with_jane/grill/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
+
+	if(on_fire && istype(used_item, /obj/item/extinguisher))
+		var/obj/item/extinguisher/exting = used_item
+		if(!exting.safety)
+			if (exting.reagents.total_volume < 1)
+				to_chat(usr, SPAN_NOTICE("\The [exting] is empty."))
+				return
+
+			if (world.time < exting.last_use + 20)
+				return
+
+			exting.last_use = world.time
+
+			playsound(exting.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+
+			exting.reagents.remove_any(20)
+
+			on_fire = FALSE
+
+			return
 
 	if(istype(used_item, /obj/item/stack/material/wood))
 		var/obj/item/stack/material/wood/stack = used_item
@@ -336,17 +376,13 @@
 	log_debug("     grill_data: [container.grill_data]")
 	#endif
 
-
-	if(container.grill_data[temperature[input]])
-		container.grill_data[temperature[input]] += reference_time
-	else
-		container.grill_data[temperature[input]] = reference_time
+	container.grill_data[temperature[input]] = reference_time
 
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
+		container.process_item(src, user, lower_quality_on_fail=0, send_message=TRUE)
 	else
-		container.process_item(src, user,  lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION)
+		container.process_item(src, user,  lower_quality_on_fail=0)
 
 
 

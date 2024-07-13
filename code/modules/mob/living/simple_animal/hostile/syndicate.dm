@@ -271,7 +271,7 @@
 	stop_automated_movement_when_pulled = 0
 	maxHealth = 350
 	health = 350
-	armor = list(melee = 45, bullet = 50, energy = 30, bomb = 0, bio = 100, rad = 50)
+	armor = list(melee = 11, bullet = 12, energy = 7, bomb = 0, bio = 100, rad = 50)
 	vision_range = 16
 	harm_intent_damage = 5
 	melee_damage_lower = 10
@@ -313,7 +313,7 @@
 	melee_damage_upper = 35
 	maxHealth = 450 //Boosted because melee given armor/shield
 	health = 450
-	armor = list(melee = 65, bullet = 40, energy = 30, bomb = 0, bio = 100, rad = 50)
+	armor = list(melee = 16, bullet = 10, energy = 7, bomb = 0, bio = 100, rad = 50)
 	icon_state = "syndicate_stormtrooper_sword"
 	drop_items = list(/obj/item/melee/energy/sword/red, /obj/item/shield/buckler/energy)
 	attacktext = "slashed"
@@ -339,7 +339,7 @@
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4
 	rapid = 0
-	armor = list(melee = 65, bullet = 50, energy = 20, bomb = 0, bio = 100, rad = 50)
+	armor = list(melee = 16, bullet = 12, energy = 5, bomb = 0, bio = 100, rad = 50)
 	health = 450
 	maxHealth = 450
 	icon_state = "syndicate_stormtrooper_shotgun"

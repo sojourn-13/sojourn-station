@@ -3,7 +3,7 @@
 	desc = "Seinemetall Defense GmbH solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
 	item_state = "powerglove"
-	armor_list = list(melee = 25, bullet = 10, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 6, bullet = 2, energy = 5, bomb = 0, bio = 0, rad = 0)
 	action_button_name = "Toggle Power Glove"
 	price_tag = 250
 	var/stunforce = 0
@@ -123,7 +123,7 @@
 	icon_state = "sipowerglove"
 	item_state = "sipowerglove"
 	permeability_coefficient = 0.01
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 100, rad = 0)  //same armor values as jackboots + bio protection.
+	armor_list = list(melee = 3, bullet = 0, energy = 2, bomb = 0, bio = 100, rad = 0)  //same armor values as jackboots + bio protection.
 	action_button_name = "Toggle placeholder Glove"
 	price_tag = 500 //rarer and harder to find.
 	agonyforce = 40 //same as the stun baton, these are slightly better than the Marshal version thusly.

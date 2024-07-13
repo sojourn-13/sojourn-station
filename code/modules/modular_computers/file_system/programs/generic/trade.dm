@@ -345,7 +345,7 @@
 		trade_screen = ORDER_SCREEN
 		if(account != department_accounts[DEPARTMENT_LSS])
 			orders_locked = TRUE
-			addtimer(CALLBACK(src, .proc/unlock_ordering), 10 SECONDS, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src, PROC_REF(unlock_ordering)), 10 SECONDS, TIMER_STOPPABLE)
 		return TRUE
 
 	if(href_list["PRG_view_order"])
@@ -576,7 +576,7 @@
 					to_chat(usr, SPAN_WARNING("TIMER ERROR: Slow Down!."))
 					return
 				to_fast_to_soon = TRUE
-				addtimer(CALLBACK(src, /datum/computer_file/program/trade/proc/anti_lag, src), 1 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(anti_lag), src), 1 SECONDS)
 				var/path = get_2d_matrix_cell(station.inventory, chosen_category, t2n)
 				SStrade.sell_thing(sending, account, locate(path) in SStrade.assess_offer(sending, path), station)
 				return TRUE

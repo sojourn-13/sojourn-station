@@ -811,7 +811,7 @@
 
 /obj/item/ammo_magazine/kurtz_50
 	name = "heavy pistol magazine"
-	desc = "A 10 round magazine marked for 12mm."
+	desc = "A 7 round magazine marked for 12mm."
 	icon_state = "kurtz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -819,7 +819,7 @@
 	caliber = CAL_50
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/kurtz_50
-	max_ammo = 10
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/kurtz_50/empty
@@ -951,13 +951,13 @@
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50
 	name = "speed loader (12mm Special)"
-	desc = "A 6 round speed loader marked for 12mm."
+	desc = "A 5 round speed loader marked for 12mm."
 	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
 	ammo_type = /obj/item/ammo_casing/kurtz_50
 	matter = list(MATERIAL_STEEL = 3)
-	max_ammo = 6
+	max_ammo = 5
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
 	cut_overlays()
@@ -1143,7 +1143,7 @@
 	cut_overlays()
 	if(stored_ammo.len)
 		var/obj/item/ammo_casing/AC = stored_ammo[1] //look at next casing.
-		overlays += "m12_shell_[AC.shell_color]" //look and display the overlay for the ammo
+		add_overlay("m12_shell_[AC.shell_color]") //look and display the overlay for the ammo
 
 /obj/item/ammo_magazine/m12/Initialize()
 	. = ..()

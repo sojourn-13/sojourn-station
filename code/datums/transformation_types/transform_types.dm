@@ -23,14 +23,16 @@
 	var/override = FALSE
 	/// The atom we are applied to.
 	var/atom/holder
+	/// If you actually use value_target, set this to TRUE. Weakrefs aren't free.
+	var/needs_value_target = FALSE
 	/// The atom we use for updating our values and such. Weakreffed, as we have no way of ensuring it isn't being deleted.
 	var/datum/weakref/value_target
 
 /datum/transform_type/Destroy()
 
-	if (holder)
-		if (holder.transform_types && holder.transform_types[flag] == src) //we can be deleted by an overridding thing so we must check
-			holder.transform_types -= flag //for sanity
+	if(holder)
+		if(LAZYACCESS(holder.transform_types, flag) == src) //we can be deleted by an overridding thing so we must check
+			LAZYREMOVE(holder.transform_types, flag) //for sanity
 		update_holder_status(null, null)
 	value_target = null
 
@@ -48,7 +50,7 @@
 
 /// Updates the transform with the given flag in the transform_types list.
 /atom/proc/update_transform(transform_flag)
-	if (!(transform_types[transform_flag]))
+	if (!(LAZYACCESS(transform_types, transform_flag)))
 		return
 	var/datum/transform_type/transform_datum = transform_types[transform_flag]
 
@@ -144,9 +146,6 @@
  * valuetarget = src: The atom to be used for update_values() and such, weakreffed. Needed for things that use the values of others, like shadows.
 **/
 /atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = src)
-	if (!transform_types)
-		transform_types = list()
-
 	var/result = transform_datum.apply_custom_values(arglist(params)) //dont worry this still works even if params is null or empty
 	if (result != TRUE) //result can return a string in an error state, so we explicitely check for true
 		qdel(transform_datum)
@@ -159,7 +158,7 @@
 			qdel(transform_datum)
 			return
 
-	transform_types[transform_datum.flag] = transform_datum
+	LAZYSET(transform_types, transform_datum.flag, transform_datum)
 	transform_datum.update_holder_status(src, valuetarget)
 
 	if (rebuild)
@@ -197,14 +196,10 @@
 
 /// Remove this flag's associated datum from ourselves, and remove its effects, then remove the flag.
 /atom/proc/remove_transformation(flag, rebuild = TRUE)
-	if (!transform_types)
-		transform_types = list()
-		return //theres literally nothing in here
-
-	if (!(flag in transform_types))
+	if(!(flag in transform_types))
 		return
 	qdel(transform_types[flag]) //since its no longer needed we can delete it and unassign the flag
-	transform_types -= flag
+	LAZYREMOVE(transform_types, flag)
 
 	if (rebuild)
 		rebuild_transform()
@@ -228,7 +223,7 @@
 	else
 		transform = matrix() //reset the transform
 
-	QDEL_LIST_ASSOC_VAL(transform_types) //and then destroy everything in the list
+	QDEL_LAZYLIST_ASSOC_VAL(transform_types) //and then destroy everything in the list
 
 /**
  * This is where we rebuild transforms post-modification. Any removal, addition, or modification of a existing transform type will cause this proc to be called
@@ -243,26 +238,27 @@
 **/
 /atom/proc/rebuild_transform(update = TRUE, update_values = TRUE, rebuild = FALSE)
 
-	var/list/cached_transforms = transform_types.Copy()
+	var/list/cached_transforms = LAZYCOPY(transform_types)
 
 	var/datum/transform_type/transform_datum
 	var/key
-	for (key as anything in transform_types) //unhappy with the amount of loops in this proc
+	for(key as anything in transform_types) //unhappy with the amount of loops in this proc
 		transform_datum = transform_types[key]
 		transform_types[key] = transform_datum.priority //temporarily replace it with the priority, for sorting
 
 	// note: timsort is a stable algorithm, meaning 2 adjacent values with the same value will be kept in order
 	// ex: a list of (a = 200, b = 250, c = 250, d = 150). this will be sorted into (d, a, b, c). note that b and c's position doesnt actually really change,
 	// and their order relative to eachother is preserved
-	sortTim(transform_types, /proc/cmp_numeric_asc, TRUE) //sort from least to greatest
+	if(transform_types)
+		sortTim(transform_types, GLOBAL_PROC_REF(cmp_numeric_asc), TRUE) //sort from least to greatest
 
-	for (key as anything in transform_types)
+	for(key as anything in transform_types)
 		transform_types[key] = cached_transforms[key] //now that it's sorted, we can reapply our original values
 
 	var/matrix/new_transform = matrix() //destroy the current matrix and reassign a new one
 	transform = new_transform
 
-	for (var/i = 1, i <= transform_types.len, i++) //reapply all our transforms, in the order of their priority
+	for(var/i in 1 to LAZYLEN(transform_types)) //reapply all our transforms, in the order of their priority
 		key = transform_types[i]
 		transform_datum = transform_types[key]
 		apply_transformation(transform_datum, update, update_values, rebuild)
@@ -348,5 +344,6 @@
 
 /datum/transform_type/proc/update_holder_status(to_be_held_by, to_use_for_values)
 	holder = to_be_held_by
-	value_target = WEAKREF(to_use_for_values)
+	if(needs_value_target)
+		value_target = WEAKREF(to_use_for_values)
 

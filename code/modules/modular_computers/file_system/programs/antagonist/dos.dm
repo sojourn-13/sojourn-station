@@ -9,7 +9,6 @@
 	requires_ntnet = 1
 	available_on_ntnet = 0
 	available_on_syndinet = 1
-	nanomodule_path = /datum/nano_module/program/computer_dos
 	var/obj/machinery/ntnet_relay/target = null
 	var/dos_speed = 0
 	var/error = ""
@@ -34,76 +33,72 @@
 
 	..()
 
-/datum/nano_module/program/computer_dos
-	name = "DoS Traffic Generator"
+/datum/computer_file/program/ntnet_dos/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "NtosDOS")
+		ui.open()
 
-/datum/nano_module/program/computer_dos/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
-	if(!ntnet_global)
-		return
-	var/datum/computer_file/program/ntnet_dos/PRG = program
-	var/list/data = list()
-	if(!istype(PRG))
-		return
-	data = PRG.get_header_data()
+/datum/computer_file/program/ntnet_dos/ui_data(mob/user)
+	var/list/data = ..()
 
-	if(PRG.error)
-		data["error"] = PRG.error
-	else if(PRG.target && PRG.executed)
-		data["target"] = 1
-		data["speed"] = PRG.dos_speed
+	data["error"] = error
+
+	data["target"] = FALSE
+	if(target && executed)
+		data["target"] = TRUE
+		data["speed"] = dos_speed
 
 		// The UI template uses this to draw a block of 1s and 0s, the more 1s the closer you are to overloading target
 		// Combined with UI updates this adds quite nice effect to the UI
-		data["completion_fraction"] = PRG.target.dos_overload / PRG.target.dos_capacity
+		data["completion_fraction"] = target.dos_overload / target.dos_capacity
 	else
 		var/list/relays = list()
 		for(var/obj/machinery/ntnet_relay/R in ntnet_global.relays)
-			relays.Add(R.uid)
+			relays += list(R.uid)
 		data["relays"] = relays
-		data["focus"] = PRG.target ? PRG.target.uid : null
+		data["focus"] = target ? target.uid : null
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "mpc_dos.tmpl", name, 500, 400, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/datum/computer_file/program/ntnet_dos/Topic(href, href_list)
-	if(..())
-		return 1
-	if(href_list["PRG_target_relay"])
-		for(var/obj/machinery/ntnet_relay/R in ntnet_global.relays)
-			if("[R.uid]" == href_list["PRG_target_relay"])
-				target = R
-		return 1
-	if(href_list["PRG_reset"])
-		if(target)
-			target.dos_sources.Remove(src)
-			target = null
-		executed = 0
-		error = ""
-		return 1
-	if(href_list["PRG_execute"])
-		if(!target)
-			return 1
-		executed = 1
-		target.dos_sources.Add(src)
-		operator_skill = get_operator_skill(usr, STAT_COG)
+/datum/computer_file/program/ntnet_dos/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-		var/list/sources_to_show = list(computer.network_card.get_network_tag())
-		var/extra_to_show = 2 * max(operator_skill - STAT_LEVEL_ADEPT, 0)
-		if(extra_to_show)
-			var/list/candidates = list()
-			for(var/obj/item/modular_computer/C in SSobj.processing) // Apparently the only place these are stored.
-				if(C.z in GetConnectedZlevels(computer.z))
-					candidates += C
-			for(var/i = 1, i <= extra_to_show, i++)
-				var/obj/item/modular_computer/C = pick_n_take(candidates)
-				sources_to_show += C.network_card.get_network_tag()
+	switch(action)
+		if("target_relay")
+			for(var/obj/machinery/ntnet_relay/R in ntnet_global.relays)
+				if("[R.uid]" == params["target"])
+					target = R
+			. = TRUE
+		if("reset")
+			if(target)
+				target.dos_sources.Remove(src)
+				target = null
+			executed = 0
+			error = ""
+			. = TRUE
+		if("execute")
+			if(!target)
+				return FALSE
+			executed = 1
+			target.dos_sources.Add(src)
+			operator_skill = get_operator_skill(usr, STAT_COG)
 
-		if(ntnet_global.intrusion_detection_enabled)
-			ntnet_global.add_log("IDS WARNING - Excess traffic flood targeting relay [target.uid] detected from [length(sources_to_show)] device\s: [english_list(sources_to_show)]")
-			ntnet_global.intrusion_detection_alarm = 1
-		return 1
+			var/list/sources_to_show = list(computer.network_card?.get_network_tag())
+			var/extra_to_show = 2 * max(operator_skill - STAT_LEVEL_ADEPT, 0)
+			if(extra_to_show)
+				var/list/candidates = list()
+				for(var/obj/item/modular_computer/C in SSobj.processing) // Apparently the only place these are stored.
+					if(C.z in GetConnectedZlevels(computer.z) && C.network_card)
+						candidates += C
+				for(var/i = 1, i <= extra_to_show, i++)
+					var/obj/item/modular_computer/C = pick_n_take(candidates)
+					if(C)
+						sources_to_show += C.network_card.get_network_tag()
+
+			if(ntnet_global.intrusion_detection_enabled)
+				ntnet_global.add_log("IDS WARNING - Excess traffic flood targeting relay [target.uid] detected from [length(sources_to_show)] device\s: [english_list(sources_to_show)]")
+				ntnet_global.intrusion_detection_alarm = 1
+			. = TRUE

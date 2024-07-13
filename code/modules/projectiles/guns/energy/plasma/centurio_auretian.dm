@@ -50,7 +50,7 @@
 	serial_type = "SI"
 
 /obj/item/gun/energy/plasma/auretian/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	..()
 	if(cell)
-		overlays += image(icon, "cell_guild")
+		add_overlay(image(icon, "cell_guild"))

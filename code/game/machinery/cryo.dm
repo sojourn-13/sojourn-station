@@ -210,7 +210,7 @@
 
 	if(occupant)
 		var/image/pickle = image(occupant.icon, occupant.icon_state)
-		pickle.copy_overlays(occupant.overlays, TRUE)
+		pickle.copy_overlays(occupant, TRUE)
 		pickle.pixel_z = 18
 		pickle.layer = WALL_OBJ_LAYER
 		add_overlay(pickle)
