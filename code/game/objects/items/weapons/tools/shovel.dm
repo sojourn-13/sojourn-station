@@ -75,6 +75,12 @@
 	switched_on_forcemult = 1.3 //26 damage. Slightly worse than a chainsaw. Gets bonus damage vs spiders, like all shovels
 	workspeed = 1.3
 	w_class = ITEM_SIZE_NORMAL //Bigger than a normal crovel, doesn't fit in your pocket
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "Powercrovel"
+		)
+
 
 	toggleable = TRUE
 	use_fuel_cost = 0.1
