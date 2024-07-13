@@ -74,7 +74,7 @@
 			R.malfunction = MALFUNCTION_PERMANENT
 		if(istype(O, /obj/item/organ/internal))
 			var/obj/item/organ/internal/I = O
-			if(!I.item_upgrades.len)
+			if(!LAZYLEN(I.item_upgrades))
 				continue
 			if(I.owner != wearer)
 				continue

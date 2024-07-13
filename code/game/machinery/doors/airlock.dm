@@ -1386,10 +1386,10 @@ There are 9 wires.
 		//update the door's access to match the electronics'
 		secured_wires = electronics.secure
 		if(electronics.one_access)
-			req_access.Cut()
+			LAZYNULL(req_access)
 			req_one_access = electronics.conf_access
 		else
-			req_one_access.Cut()
+			LAZYNULL(req_one_access)
 			req_access = electronics.conf_access
 
 		//get the name from the assembly
@@ -1438,9 +1438,9 @@ There are 9 wires.
 	//update the electronics to match the door's access
 	if(!req_access)
 		check_access()
-	if(req_access.len)
+	if(LAZYLEN(req_access))
 		electronics.conf_access = req_access
-	else if (req_one_access.len)
+	else if (LAZYLEN(req_one_access))
 		electronics.conf_access = req_one_access
 		electronics.one_access = TRUE
 

@@ -409,15 +409,13 @@
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
 		var/dmult = 1
-		if(LAZYLEN(Proj.effective_faction))
-			if(faction in Proj.effective_faction)
-				dmult += Proj.damage_mult
-		if(LAZYLEN(Proj.supereffective_types))
-			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
-				dmult += Proj.supereffective_mult
+		if(faction in Proj.effective_faction)
+			dmult += Proj.damage_mult
+		if(is_type_in_list(src, Proj.supereffective_types, TRUE))
+			dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
+			return damage_through_armor(damage, def_zone, attack_flag = Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()

@@ -1594,7 +1594,6 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aps" = (
-/obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "apB" = (
@@ -10849,9 +10848,6 @@
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
-/obj/structure/reagent_dispensers/virusfood{
-	pixel_y = -32
-	},
 /obj/item/reagent_containers/syringe/spaceacillin,
 /obj/item/storage/box/masks,
 /obj/item/storage/box/gloves,
@@ -21680,7 +21676,6 @@
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
-/obj/item/device/antibody_scanner,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -26059,15 +26054,6 @@
 /area/nadezhda/crew_quarters)
 "feH" = (
 /obj/structure/table/standard,
-/obj/item/virusdish/random,
-/obj/item/virusdish/random{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/obj/item/virusdish/random{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/storage/lockbox/vials,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -49634,10 +49620,6 @@
 "jEL" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/monkeycubes,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "jEM" = (
@@ -67947,7 +67929,6 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm1)
 "nef" = (
-/obj/machinery/smartfridge/secure/virology,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
@@ -82206,7 +82187,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pTD" = (
-/obj/machinery/disease2/isolator,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "pTS" = (
@@ -88403,7 +88383,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "reB" = (
-/obj/machinery/computer/diseasesplicer,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "reI" = (
@@ -104929,7 +104908,6 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "utF" = (
-/obj/machinery/disease2/incubator,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "utH" = (

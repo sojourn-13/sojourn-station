@@ -281,17 +281,16 @@ SUBSYSTEM_DEF(trade)
 /datum/controller/subsystem/trade/proc/check_attachments(item, offer_path, list/attachments, attach_count)
 	if(attachments && attach_count)
 		var/obj/item/I = item
-		if(I.item_upgrades && I.item_upgrades.len)
-			var/success_count = 0
-			for(var/mod in I.item_upgrades)
-				var/list/attachments_to_compare = attachments.Copy()
-				for(var/path in attachments_to_compare)
-					if(istype(mod, path))
-						++success_count
-						if(attachments_to_compare.len == attach_count)
-							attachments_to_compare.Remove(path)
-			if(success_count >= attach_count)
-				return TRUE
+		var/success_count = 0
+		for(var/mod in I.item_upgrades)
+			var/list/attachments_to_compare = attachments.Copy()
+			for(var/path in attachments_to_compare)
+				if(istype(mod, path))
+					++success_count
+					if(attachments_to_compare.len == attach_count)
+						attachments_to_compare.Remove(path)
+		if(success_count >= attach_count)
+			return TRUE
 		return FALSE	// If we're looking for attachments and the item has no upgrades, fail
 	return TRUE			// If attachments and attach_count are null, we're not looking for an item with attactments
 
@@ -605,6 +604,9 @@ SUBSYSTEM_DEF(trade)
 				invoice_contents_info += "<li>[item.name]</li>"
 				cost += export_value
 				LEGACY_SEND_SIGNAL(src, COMSIG_TRADE_BEACON, item)
+				if(istype(item, /obj/structure/bigDelivery)) //This is a little janky but works to prevent the create from sticking around well it deletes
+					var/obj/structure/bigDelivery/BD = item
+					BD.wrapped = null
 				qdel(item)
 			else
 				item.forceMove(get_turf(AM))		// Should be the same tile

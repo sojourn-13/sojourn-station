@@ -6,7 +6,7 @@
 	item_state = "tacticool_revolver"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	caliber = CAL_50
-	max_shells = 6
+	max_shells = 5
 	fire_delay = 4
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)

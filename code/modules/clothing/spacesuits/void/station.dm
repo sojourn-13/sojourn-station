@@ -16,8 +16,8 @@
 		slot_r_hand_str = "eng_helm",
 		)
 	armor_list = list(
-		melee = 35,
-		bullet = 30,
+		melee = 8,
+		bullet = 7,
 		energy =30,
 		bomb = 40,
 		bio = 100,
@@ -56,9 +56,9 @@
 	icon_state = "technosuit_void"
 	item_state = "technosuit_void"
 	armor_list = list(
-		melee = 35,
-		bullet = 30,
-		energy = 30,
+		melee = 8,
+		bullet = 7,
+		energy = 7,
 		bomb = 40,
 		bio = 100,
 		rad = 100
@@ -89,9 +89,9 @@
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 6,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 0
@@ -131,9 +131,9 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
+		melee = 7,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 0
@@ -164,9 +164,9 @@
 		slot_r_hand_str = "mining_helm",
 		)
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -180,9 +180,9 @@
 	icon_state = "miner_suit"
 	slowdown = 0.35
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -202,9 +202,9 @@
 		slot_r_hand_str = "goldilocks_helm",
 		)
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -219,9 +219,9 @@
 	icon_state = "goldilocks_suit"
 	slowdown = 0
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -242,9 +242,9 @@
 		slot_r_hand_str = "medical_helm",
 		)
 	armor_list = list(
-		melee = 20, // It's a literal glass cube
-		bullet = 10,
-		energy = 35,
+		melee = 5, // It's a literal glass cube
+		bullet = 2,
+		energy = 8,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -264,9 +264,9 @@
 		/obj/item/roller
 	)
 	armor_list = list(
-		melee = 35,
-		bullet = 10,
-		energy = 35,
+		melee = 8,
+		bullet = 2,
+		energy = 8,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -289,9 +289,9 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -307,9 +307,9 @@
 	item_state = "ihvoidsuit"
 	slowdown = 1
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -337,9 +337,9 @@
 		)
 
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -355,9 +355,9 @@
 	item_state = "odst"
 	slowdown = 1
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -453,9 +453,9 @@
 		slot_r_hand_str = "atmos_helm",
 		)
 	armor_list = list(
-		melee = 30,
-		bullet = 10,
-		energy = 10,
+		melee = 7,
+		bullet = 2,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -470,9 +470,9 @@
 	name = "atmos voidsuit"
 	item_state = "atmos_voidsuit"
 	armor_list = list(
-		melee = 30,
-		bullet = 10,
-		energy = 10,
+		melee = 7,
+		bullet = 2,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -502,9 +502,9 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 40,
-		bullet = 65,
-		energy = 50,
+		melee = 10,
+		bullet = 16,
+		energy = 12,
 		bomb = 70,
 		bio = 75,
 		rad = 50
@@ -559,7 +559,7 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 40,
+		melee = 10,
 		bullet = 65,
 		energy = 50,
 		bomb = 70,
@@ -576,9 +576,9 @@
 	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
 	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
 	armor_list = list(
-		melee = 50,
-		bullet = 75,
-		energy = 60,
+		melee = 12,
+		bullet = 18,
+		energy = 15,
 		bomb = 80,
 		bio = 100,
 		rad = 50
@@ -595,9 +595,9 @@
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
 	armor_list = list(
-		melee = 50,
-		bullet = 75,
-		energy = 60,
+		melee = 12,
+		bullet = 18,
+		energy = 15,
 		bomb = 80,
 		bio = 100,
 		rad = 50
@@ -627,9 +627,9 @@
 		)
 
 	armor_list = list(
-		melee = 25,
-		bullet = 30,
-		energy = 40,
+		melee = 6,
+		bullet = 7,
+		energy = 10,
 		bomb = 35,
 		bio = 100,
 		rad = 90
@@ -645,9 +645,9 @@
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
 	armor_list = list(
-		melee = 35,
-		bullet = 35,
-		energy = 55,
+		melee = 8,
+		bullet = 8,
+		energy = 13,
 		bomb = 40,
 		bio = 100,
 		rad = 90
@@ -685,9 +685,9 @@
 	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
 	icon_state = "marquahelm"
 	armor_list = list(
-		melee = 25,
-		bullet = 40,
-		energy = 40,
+		melee = 6,
+		bullet = 10,
+		energy = 10,
 		bomb = 20,
 		bio = 100,
 		rad = 75
@@ -706,9 +706,9 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(
-		melee = 25,
-		bullet = 40,
-		energy = 40,
+		melee = 6,
+		bullet = 10,
+		energy = 10,
 		bomb = 20,
 		bio = 100,
 		rad = 75

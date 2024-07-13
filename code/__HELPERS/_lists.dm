@@ -45,11 +45,17 @@
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 ///Qdel every item in the list before setting the list to null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+///Qdel every key and item in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC(L) for(var/I in L) { qdel(L[I]); qdel(I); }; L = null;
+///Qdel every value but not key in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC_VAL(L) for(var/I in L) qdel(L[I]); L = null;
 //These methods don't null the list
 ///Use LAZYLISTDUPLICATE instead if you want it to null with no entries
 #define LAZYCOPY(L) (L ? L.Copy() : list() )
 /// Consider LAZYNULL instead
 #define LAZYCLEARLIST(L) if(L) L.Cut()
+/// Pick a value from a lazylist, or null if the list is empty
+#define LAZYPICK(L) ( L ? pick(L) : null )
 ///Returns the list if it's actually a valid list, otherwise will initialize it
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverse_range(L.Copy())
@@ -814,7 +820,7 @@
 		if(isdatum(key))
 			new_key = "[key] [REF(key)]"
 		else if(key == world)
-			new_key = "world [REF(world)]"
+			new_key = "world \ref[world]"
 		else if(islist(key))
 			new_key = refify_list(key)
 		var/value
@@ -823,7 +829,7 @@
 		if(isdatum(value))
 			value = "[value] [REF(value)]"
 		else if(value == world)
-			value = "world [REF(world)]"
+			value = "world \ref[world]"
 		else if(islist(value))
 			value = refify_list(value)
 		var/list/to_add = list(new_key)

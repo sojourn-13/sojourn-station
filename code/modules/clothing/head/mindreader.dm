@@ -9,9 +9,9 @@
 	var/last_use = 0
 	w_class = ITEM_SIZE_NORMAL
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 0,
 		bio = 0,
 		rad = 0

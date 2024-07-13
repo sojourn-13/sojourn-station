@@ -9,7 +9,7 @@
 	health = 250
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
 
-	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 8, bullet = 8, energy = 3, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35
@@ -109,7 +109,7 @@
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
-	armor = list(melee = 30, bullet = 30, energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 3, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35

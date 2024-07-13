@@ -3,8 +3,8 @@
 	desc = "A monstrous, dog-sized cockroach. This one smells like welding fuel. Likely to explode when shot!"
 	icon_state = "boomroach"
 	turns_per_move = 4
-	maxHealth = 25
-	health = 25
+	maxHealth = 25 * ROACH_HEALTH_MOD
+	health = 25 * ROACH_HEALTH_MOD
 	melee_damage_upper = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/nitro
 	meat_amount = 3

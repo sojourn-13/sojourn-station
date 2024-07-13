@@ -8,7 +8,7 @@
 	see_in_dark = 10
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned

@@ -1,5 +1,6 @@
 /datum/hud
 	var/name
+	var/mob/mymob = null
 	var/list/HUDneed //for "active" elements (health)
 //	var/list/HUDprocess = list()
 	var/list/slot_data //inventory stuff (for mob variable HUDinventory)
@@ -17,13 +18,14 @@
 	var/list/obj/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 	var/list/obj/screen/openspace_overlay/openspace_overlays = list()
 
-/datum/hud/proc/updatePlaneMasters(mob/mymob)
-	if(!mymob || !mymob.client)
+/datum/hud/proc/updatePlaneMasters(mob/viewmob)
+	var/mob/screenmob = viewmob || mymob
+	if(!screenmob || !screenmob.client)
 		return
 
-	var/atom/player = mymob
-	if(mymob.client.virtual_eye)
-		player = mymob.client.virtual_eye
+	var/atom/player = screenmob
+	if(screenmob.client.virtual_eye)
+		player = screenmob.client.virtual_eye
 
 	var/turf/T = get_turf(player)
 	if(!T)
@@ -40,14 +42,14 @@
 
 	for(var/pmaster in plane_masters)
 		var/obj/screen/plane_master/instance = plane_masters[pmaster]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	plane_masters.Cut()
 
 	for(var/over in openspace_overlays)
 		var/obj/screen/openspace_overlay/instance = openspace_overlays[over]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	openspace_overlays.Cut()
@@ -62,8 +64,8 @@
 			instance.plane = calculate_plane(zi,instance.plane)
 
 			plane_masters["[zi]-[relative_level]-[instance.plane]-[mytype]"] = instance
-			mymob.client.screen += instance
-			instance.backdrop(mymob)
+			screenmob.client.screen += instance
+			instance.backdrop(screenmob)
 
 		for(var/pl in list(GAME_PLANE,FLOOR_PLANE))
 			if(zi < z)
@@ -73,7 +75,7 @@
 				oover.plane = calculate_plane(zi,pl)
 				oover.alpha = min(255,zdiff*50 + 30)
 				openspace_overlays["[zi]-[relative_level]-[oover.plane]"] = oover
-				mymob.client.screen += oover
+				screenmob.client.screen += oover
 
 
 /mob/update_plane()
@@ -82,9 +84,14 @@
 		hud_used.updatePlaneMasters(src)
 
 
-/datum/hud/New(mob/mymob)
+/datum/hud/New(mob/new_mymob)
+	mymob = new_mymob
 	if(mymob)
 		updatePlaneMasters(mymob)
+
+/datum/hud/Destroy()
+	mymob = null
+	. = ..()
 
 /datum/hud/human
 	name = "ErisStyle"
@@ -108,6 +115,8 @@
 		"glassesoverlay" = list("type" = /obj/screen/glasses_overlay, "loc" = "1,1:-32", "icon_state" = "blank"),
 	)
 
+	/* !!!! IF YOU WANT TO ADD A VERB TO THIS - ADD ITS NAME TO code\modules\mob\living\carbon\human\species\species_hud.dm
+	PLEASE DON'T REPEAT MY MISTAKES, I'VE WASTED HOURS OF MY LIFE ON THIS - Kegdo 2022*/
 	HUDneed = list(
 //status
 	"nutrition"          = list("type" = /obj/screen/nutrition,         "loc" = "EAST+1:1,BOTTOM+3:25",   "minloc" = "RIGHT:1,5:26",  "background" = "back17"),
@@ -121,13 +130,14 @@
 	"toxin"              = list("type" = /obj/screen/toxin,             "loc" = "EAST+1:16,BOTTOM+7:15",  "minloc" = "RIGHT:16,9:12", "background" = "back18"),
 	"internal"           = list("type" = /obj/screen/internal,          "loc" = "EAST+1,BOTTOM+8:-2",     "minloc" = "RIGHT,10:-5",   "background" = "back15"),
 //corner buttons
-	"jump"               = list("type" = /obj/screen/jump,              "loc" = "EAST+1,BOTTOM+1:-6", "minloc" = "RIGHT,3:-6",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	//"jump"               = list("type" = /obj/screen/jump,              "loc" = "EAST+1,BOTTOM+1:-6", "minloc" = "RIGHT,3:-6",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"look up"            = list("type" = /obj/screen/look_up,           "loc" = "EAST,BOTTOM+1:13",   "minloc" = "RIGHT-1,2:13", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"throw"              = list("type" = /obj/screen/HUDthrow,          "loc" = "EAST+1,BOTTOM+1:13", "minloc" = "RIGHT,2:13",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"pull"               = list("type" = /obj/screen/pull,              "loc" = "EAST-1,BOTTOM+1:13", "minloc" = "RIGHT-2,2:13", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"drop"               = list("type" = /obj/screen/drop,              "loc" = "EAST+1,BOTTOM+1",    "minloc" = "RIGHT,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"resist"             = list("type" = /obj/screen/resist,            "loc" = "EAST-1,BOTTOM+1",    "minloc" = "RIGHT-2,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"rest"               = list("type" = /obj/screen/rest,              "loc" = "EAST,BOTTOM+1",      "minloc" = "RIGHT-1,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"block"              = list("type" = /obj/screen/block,             "loc" = "EAST+1,BOTTOM+1:26", "minloc" = "RIGHT,3:-6", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"move intent"        = list("type" = /obj/screen/mov_intent,        "loc" = "EAST,BOTTOM",        "minloc" = "RIGHT-1,1",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 	"implant bionics"    = list("type" = /obj/screen/implant_bionics,   "loc" = "EAST-2,BOTTOM-1",    "minloc" = "12,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
 	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "12:16,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),

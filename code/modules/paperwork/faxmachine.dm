@@ -8,7 +8,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	icon = 'icons/obj/library.dmi'
 	icon_state = "fax"
 	insert_anim = "faxsend"
-	req_one_access = list() //No access required but you will get Bluespace Cannoned if you misuse it.
+	req_one_access = null //No access required but you will get Bluespace Cannoned if you misuse it.
 
 	density = 0//It's a small machine that sits on a table, this allows small things to walk under that table
 	use_power = IDLE_POWER_USE

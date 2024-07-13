@@ -1,6 +1,6 @@
 /obj/effect/decal/cleanable
 	layer = ABOVE_NORMAL_TURF_LAYER
-	var/list/random_icon_states = list()
+	var/list/random_icon_states = null
 	random_rotation = 1
 	///When two of these are on a same tile or do we need to merge them into just one?
 	var/mergeable_decal = FALSE
@@ -13,8 +13,8 @@
 
 /obj/effect/decal/cleanable/Initialize()
 	. = ..()
-	if(random_icon_states && length(random_icon_states) > 0)
-		icon_state = pick(src.random_icon_states)
+	if(LAZYLEN(random_icon_states))
+		icon_state = pick(random_icon_states)
 	
 	if(loc && isturf(loc))
 		for(var/obj/effect/decal/cleanable/C in loc)

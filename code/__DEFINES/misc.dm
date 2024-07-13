@@ -181,8 +181,10 @@
 
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
-#define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
-#define PROJECTILE_FORCE_MISS -2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_STOP					 1 //if the projectile should stop flying after calling bullet_act()
+#define PROJECTILE_CONTINUE				-1 //if the projectile should continue flying after calling bullet_act()
+#define PROJECTILE_FORCE_MISS			-2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_FORCE_MISS_SILENCED	-2.5 //if the projectile should do the same thing as above, but not give the miss message
 
 //Camera capture modes
 #define CAPTURE_MODE_REGULAR 0 //Regular polaroid camera mode
@@ -401,3 +403,9 @@
 /// BYOND's string procs don't support being used on datum references (as in it doesn't look for a name for stringification)
 /// We just use this macro to ensure that we will only pass strings to this BYOND-level function without developers needing to really worry about it.
 #define LOWER_TEXT(thing) lowertext(UNLINT("[thing]"))
+
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * This is the more performant version, it is unfortunately necessary.
+**/
+#define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")

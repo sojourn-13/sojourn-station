@@ -9,7 +9,7 @@
 	maxHealth = 450
 	ranged = FALSE
 
-	armor = list(melee = 35, bullet = 70, energy = 35, bomb = 35, bio = 100, rad = 50)
+	armor = list(melee = 7, bullet = 17, energy = 7, bomb = 35, bio = 100, rad = 50)
 	faction = "pirate"
 	icon = 'icons/mob/mobs-humanoid.dmi'
 
@@ -40,7 +40,7 @@
 	stop_automated_movement_when_pulled = 0
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	armor = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 100, rad = 50)
+	armor = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 100, rad = 50)
 
 
 /mob/living/carbon/superior_animal/human/voidwolf/eventwolf/explosive/UnarmedAttack()

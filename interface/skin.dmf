@@ -580,17 +580,8 @@ macro "hotkeymode"
 		name = "CTRL+E"
 		command = "quick-equip"
 	elem
-		name = "F"
-		command = "a-intent left"
-	elem
-		name = "CTRL+F"
-		command = "a-intent left"
-	elem
-		name = "G"
-		command = "a-intent right"
-	elem
-		name = "CTRL+G"
-		command = "a-intent right"
+		name = "V"
+		command = "blocking"
 	elem
 		name = "H"
 		command = "holster"
@@ -1238,8 +1229,8 @@ window "outputwindow"
 		type = MAIN
 		pos = 0,0
 		size = 640x480
-		anchor1 = none
-		anchor2 = none
+		anchor1 = 0,0
+		anchor2 = 100,100
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "browseroutput"
@@ -1267,17 +1258,18 @@ window "rpane"
 		type = MAIN
 		pos = 281,0
 		size = 640x480
-		anchor1 = none
-		anchor2 = none
+		anchor1 = 0,0
+		anchor2 = 100,100
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 640x499
-		anchor1 = 0,0
+		size = 640x480
+		anchor1 = 0,4
 		anchor2 = 100,100
 		saved-params = "splitter"
+		left = "infowindow"
 		right = "outputwindow"
 		is-vert = false
 	elem "githuburl"
@@ -1336,23 +1328,11 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		is-visible = false
+		is-visible = true
 		saved-params = "is-checked"
 		text = "Text"
 		command = ".winset \"rpanewindow.left=;\""
-		is-checked = true
-		group = "rpanemode"
-		button-type = pushbox
-	elem "browseb"
-		type = BUTTON
-		pos = 576,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		is-visible = false
-		saved-params = "is-checked"
-		text = "Browser"
-		command = ".winset \"rpanewindow.left=browserwindow\""
+		is-checked = false
 		group = "rpanemode"
 		button-type = pushbox
 	elem "infob"
@@ -1361,10 +1341,11 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		is-visible = false
+		is-visible = true
 		saved-params = "is-checked"
 		text = "Info"
 		command = ".winset \"rpanewindow.left=infowindow\""
+		is-checked = true
 		group = "rpanemode"
 		button-type = pushbox
 	elem "mediapanel"
@@ -1376,49 +1357,27 @@ window "rpane"
 		is-visible = false
 		saved-params = ""
 
-window "browserwindow"
-	elem "browserwindow"
-		type = MAIN
-		pos = 281,0
-		size = 640x480
-		anchor1 = none
-		anchor2 = none
-		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Browser"
-		is-pane = true
-	elem "browser"
-		type = BROWSER
-		pos = 0,0
-		size = 640x499
-		anchor1 = 0,0
-		anchor2 = 100,100
-		background-color = #ffffff
-		is-default = true
-		saved-params = ""
-		on-show = ".winset\"rpane.infob.is-visible=true?rpane.infob.pos=130,0;rpane.textb.is-visible=true;rpane.browseb.is-visible=true;rpane.browseb.is-checked=true;rpane.rpanewindow.pos=0,30;rpane.rpanewindow.size=0x0;rpane.rpanewindow.left=browserwindow\""
-		on-hide = ".winset\"rpane.infob.is-visible=true?rpane.infob.is-checked=true rpane.infob.pos=65,0 rpane.rpanewindow.left=infowindow:rpane.rpanewindow.left=textwindow rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0\""
-
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 281,0
+		pos = 0,0
 		size = 640x480
-		anchor1 = none
-		anchor2 = none
+		anchor1 = 0,0
+		anchor2 = 100,100
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Info"
 		is-pane = true
 	elem "info"
 		type = INFO
 		pos = 0,0
-		size = 638x477
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-default = true
 		saved-params = ""
 		highlight-color = #00aa00
-		on-show = ".winset\"rpane.infob.is-visible=true;rpane.browseb.is-visible=true?rpane.infob.pos=130,0:rpane.infob.pos=65,0 rpane.textb.is-visible=true rpane.infob.is-checked=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=infowindow\""
-		on-hide = ".winset\"rpane.infob.is-visible=false;rpane.browseb.is-visible=true?rpane.browseb.is-checked=true rpane.rpanewindow.left=browserwindow:rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=\""
+		on-show = ".winset\"rpane.infob.is-checked=true;rpane.textb.is-checked=false;rpane.rpanewindow.left=infowindow\""
+		on-hide = ".winset\"rpane.infob.is-checked=false;rpane.textb.is-checked=true;rpane.rpanewindow.left=\""
 
 window "text_editor"
 	elem "text_editor"

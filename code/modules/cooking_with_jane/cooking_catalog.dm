@@ -77,7 +77,8 @@
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
-	data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName(recipe.icon_image_file))
+	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)	
+	data["icon"] = sprites.icon_class_name(recipe.icon_image_file)
 	data["product_is_reagent"] = 0
 	if(recipe.product_name)
 		data["product_name"] = recipe.product_name
@@ -107,12 +108,14 @@
 	data["name"] = recipe.name
 	data["id"] = recipe.type
 
-	var/url = SSassets.transport.get_asset_url(sanitizeFileName(recipe.icon_image_file))
+	var/icon = recipe.icon_image_file
+	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)	
+	icon = sprites.icon_class_name(icon)
 	#ifdef CWJ_DEBUG
-	log_debug("Retrieved [url] for [recipe.icon_image_file]")
+	log_debug("Retrieved [icon] for [recipe.icon_image_file]")
 	#endif
 
-	data["icon"] = url
+	data["icon"] = icon
 	data["product_is_reagent"] = 0
 	if(recipe.product_name)
 		data["product_name"] = recipe.product_name
@@ -163,28 +166,28 @@
 	return data
 
 //===========================================================
-/datum/asset/simple/cooking_icons
-	keep_local_name = FALSE
+/datum/asset/spritesheet/cooking_icons
+	name = "cooking_icons"
+	resize = 4
 
-/datum/asset/simple/cooking_icons/register()
+/datum/asset/spritesheet/cooking_icons/create_spritesheets()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)
 		var/icon/I = null
-		var/filename = null
+		var/sprite_name = null
 		if(our_recipe.product_type)
-			filename = sanitizeFileName("[our_recipe.product_type].png")
+			sprite_name = sanitize_css_class_name("[our_recipe.product_type]")
 			I = getFlatTypeIcon(our_recipe.product_type)
 		else if(our_recipe.reagent_id)
 			var/obj/item/reagent_containers/food/snacks/dollop/test_dollop = new(null, our_recipe.reagent_id, 1)
 
-			filename = sanitizeFileName("[test_dollop.type][test_dollop.color].png")
+			sprite_name = sanitize_css_class_name("[test_dollop.type][test_dollop.color]")
 			I = getFlatIcon(test_dollop)
 			//I.Blend(test_dollop.color) --might not be needed
 		if(I)
-			assets[filename] = I
-			our_recipe.icon_image_file = filename
+			Insert(sprite_name, I)
+			our_recipe.icon_image_file = sprite_name
 			#ifdef CWJ_DEBUG
 			log_debug("Created cooking icon under file name [filename]")
 			#endif
-	..()
 
 

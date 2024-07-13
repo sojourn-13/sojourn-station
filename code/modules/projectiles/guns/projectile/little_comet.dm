@@ -14,7 +14,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 5000
 	damage_multiplier = 1.1 //because pistol round
-	penetration_multiplier = 20
+	penetration_multiplier = 10 //Max.
 	pierce_multiplier =  5
 	init_recoil = RIFLE_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)

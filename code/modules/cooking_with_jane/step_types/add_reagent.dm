@@ -30,7 +30,6 @@
 /datum/cooking_with_jane/recipe_step/add_reagent/check_conditions_met(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/obj/item/container = tracker.holder_ref.resolve()
 
-	
 	if((container.reagents.total_volume + required_reagent_amount - container.reagents.get_reagent_amount(required_reagent_id)) > container.reagents.maximum_volume)
 		return CWJ_CHECK_FULL
 
@@ -43,6 +42,8 @@
 	if(our_item.amount_per_transfer_from_this <= 0)
 		return CWJ_CHECK_INVALID
 	if(our_item.reagents.total_volume == 0)
+		return CWJ_CHECK_INVALID
+	if(our_item.reagents.get_reagent_amount(required_reagent_id) == 0)
 		return CWJ_CHECK_INVALID
 
 	return CWJ_CHECK_VALID

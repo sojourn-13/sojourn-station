@@ -32,7 +32,7 @@
 	handle_blood()
 
 /obj/item/organ/internal/Destroy()
-	QDEL_LIST(item_upgrades)
+	QDEL_LAZYLIST(item_upgrades)
 	for(var/comp in GetComponents(/datum/component/internal_wound))
 		remove_wound(comp)
 	UnregisterSignal(src, COMSIG_IORGAN_ADD_WOUND)
@@ -85,7 +85,7 @@
 /obj/item/organ/internal/proc/get_process_efficiency(process_define)
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
-/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, silent = FALSE, sharp = FALSE, edge = FALSE, silent = FALSE) //Deals damage to the organ itself
+/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, silent = FALSE, sharp = FALSE, edge = FALSE) //Deals damage to the organ itself
 	if(!damage_type || status & ORGAN_DEAD)
 		return FALSE
 
@@ -212,8 +212,8 @@
 		to_chat(user, SPAN_NOTICE("Requirements: <span style='color:red'>[blood_req]</span>/<span style='color:blue'>[oxygen_req]</span>/<span style='color:orange'>[nutriment_req]</span>"))
 		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
 
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organ grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
+		if(LAZYLEN(item_upgrades))
+			to_chat(user, SPAN_NOTICE("Organ grafts present ([LAZYLEN(item_upgrades)]/[max_upgrades]). Use a laser cutting tool to remove."))
 
 /obj/item/organ/internal/is_usable()
 	return ..() && !is_broken()
@@ -420,7 +420,7 @@
 	name = initial(name)
 	color = initial(color)
 	max_upgrades = initial(max_upgrades)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
 	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
@@ -444,7 +444,7 @@
 
 	refresh_damage()
 
-	for(var/prefix in prefixes)
+	for(var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 /obj/item/organ/internal/proc/refresh_damage()

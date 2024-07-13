@@ -13,7 +13,7 @@
 
 	mob_size = MOB_LARGE
 	viewRange = 8
-	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
 	cant_gib = TRUE

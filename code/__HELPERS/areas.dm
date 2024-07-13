@@ -24,11 +24,20 @@
 
 	return contents
 
-
 /proc/pick_area_turf(var/areatype, var/list/predicates)
 	var/list/turfs = get_area_turfs(areatype, predicates)
 	if(turfs && turfs.len)
 		return pick(turfs)
+
+// Used by SSmapping
+// We just need to find a single turf that's on the station level
+/proc/area_has_station_turf(area/A)
+	for(var/turf/T in A.contents) // cursed world iteration
+		if(isStationLevel(T.z))
+			return TRUE
+	return FALSE
+
+
 
 /proc/is_matching_vessel(var/atom/A, var/atom/B)
 	var/area/area1 = get_area(A)

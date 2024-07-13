@@ -143,7 +143,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/can_pull_mobs = MOB_PULL_LARGER       // Whether or not the mob can pull other mobs.
 
 	var/datum/dna/dna = null//Carbon
-	var/list/active_genes=list()
+	var/list/active_genes = null
 	var/list/mutations = list() //Carbon -- Doohl
 	//see: setup.dm for list of mutations
 
@@ -207,6 +207,9 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/list/HUDprocess = list() //What HUD object need process
 	var/list/HUDtech = list()
 	var/defaultHUD = "" //Default mob hud
+
+	/// lazy list. contains /obj/screen/alert only,  On /mob so clientless mobs will throw alerts properly
+	var/list/alerts
 
 	var/list/progressbars = null
 

@@ -62,3 +62,7 @@
 	head = /obj/item/clothing/head/seccap
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
+
+//same as normal officer but different name
+/decl/hierarchy/outfit/job/security/ihoper/jr
+	name = OUTFIT_JOB_NAME("Marshal - Jr. Marshal Officer")

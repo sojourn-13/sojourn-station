@@ -82,6 +82,7 @@
 	icon_state = "mateba"
 	item_state = "mateba"
 	caliber = CAL_50
+	max_shells = 5
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 5)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLATINUM = 2)
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
@@ -89,7 +90,7 @@
 	damage_multiplier = 1.3 // Not as good as the Deckard in penetration for balance purposes, still quite good.
 	init_recoil = HANDGUN_RECOIL(0.5) // Takes no mods that assist with recoil.
 	wield_delay = 0.6 SECOND
-	wield_delay_factor = 0.6 // 60 vig, heavy gun
+	wield_delay_factor = 0.3 // 30 vig, heavy gun - but still a handgun.
 	can_dual = FALSE
 	max_upgrades = 4 // Deckard on steroids, let's not get out of hand
 	blacklist_upgrades = list( // Gun already has amazing recoil control, barrels that reduce recoil interfere with the sliding recoil control mechanism.

@@ -555,7 +555,7 @@
 			var/mob/living/carbon/human/firer = Proj.firer
 			chance -= firer.stats.getStat(STAT_VIG, FALSE) / 5
 		var/obj/item/projectile/bullet/B = Proj
-		chance = max((chance - B.armor_penetration), 0)
+		chance = max((chance / B.armor_divisor), 0)
 		if (!(Proj.testing))
 			if(B.starting && prob(chance)) // disregard this for test because its luck based
 				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armour!"))
@@ -883,12 +883,12 @@
 	return ..(user,FLOOR(damage * 0.5, 1),attack_message)
 
 /mob/living/silicon/robot/proc/allowed(atom/movable/A)
-	if(!length(req_access)) //no requirements
+	if(!LAZYLEN(req_access)) //no requirements
 		return TRUE
 
 	var/list/access = A?.GetAccess()
 
-	if(!length(access)) //no ID or no access
+	if(!LAZYLEN(access)) //no ID or no access
 		return FALSE
 	for(var/req in req_access)
 		if(req in access) //have one of the required accesses

@@ -28,7 +28,6 @@
 	var/gibbed_anim = "gibbed-h"
 
 	var/mob_size	= MOB_MEDIUM
-	var/virus_immune
 	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
 	var/always_blood = FALSE 						 // Can we process reagents without blood?
 	var/always_ingest = FALSE 		                               // Initial blood volume.
@@ -60,6 +59,7 @@
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
+	var/injury_type =  INJURY_TYPE_LIVING    // From _DEFINES/weapons.dm
 
 	var/list/hair_styles
 	var/list/facial_hair_styles

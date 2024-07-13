@@ -320,9 +320,9 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "field_numerical_hat"
 	desc = "A tall hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
-		melee = 10,
+		melee = 2,
 		bullet = 0,
-		energy = 10,
+		energy = 2,
 		bomb = 5,
 		bio = 100,
 		rad = 0
@@ -384,7 +384,7 @@ obj/item/clothing/head/ribbon/red
 	name = "jingasa"
 	desc = "A sturdy metal cap designed to protect the head from weather and falling objects."
 	icon_state = "jingasa"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/head/headband
 	name = "headband"
@@ -456,7 +456,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	name = "kin voidhelm"
 	desc = "An old, battered voidhelmet. Its original source unknown and its seals long since worn out - still, it makes for a decent helmet, if nothing else is available."
 	icon_state = "kin_voidhelm"
-	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
 	item_flags = THICKMATERIAL
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
@@ -495,9 +495,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	siemens_coefficient = 1
 	price_tag = 600
 	armor_list = list(
-		melee = 20,
-		bullet = 15,
-		energy = 10,
+		melee = 5,
+		bullet = 3,
+		energy = 2,
 		bomb = 0,
 		bio = 20,
 		rad = 25
@@ -509,7 +509,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "os_cap"
 	item_state = "os_cap"
 	armor_list = list(
-		melee = 5,
+		melee = 1,
 		bullet = 0,
 		energy = 0,
 		bomb = 0,
@@ -525,7 +525,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 5,
+		energy = 1,
 		bomb = 0,
 		bio = 5,
 		rad = 5
@@ -560,7 +560,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "ragged_hood"
 	item_state = "ragged_hood"
 	flags_inv = HIDEEARS|BLOCKHAIR
-	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 1, bullet = 0, energy = 2, bomb = 0, bio = 5, rad = 5)
 
 // hoods for the tacticool ponchos.
 

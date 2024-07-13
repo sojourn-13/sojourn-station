@@ -931,10 +931,6 @@ var/list/rank_prefix = list(\
 						qdel(H)
 
 
-	for (var/ID in virus2)
-		var/datum/disease2/disease/V = virus2[ID]
-		V.cure(src)
-
 	losebreath = 0
 
 	..()
@@ -1452,13 +1448,13 @@ var/list/rank_prefix = list(\
 	return ..()
 
 /mob/living/carbon/human/verb/pull_punches()
-	set name = "Pull Punches"
+	set name = "Hold your attacks back"
 	set desc = "Try not to hurt them."
 	set category = "IC"
 
 	if(stat) return
-	pulling_punches = !pulling_punches
-	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "" : "not "]pulling your punches.</span>")
+	holding_back = !holding_back
+	to_chat(src, SPAN_NOTICE("You are now [holding_back ? "holding back your attacks" : "not holding back your attacks"]."))
 	return
 
 //generates realistic-ish pulse output based on preset levels
@@ -1635,5 +1631,93 @@ var/list/rank_prefix = list(\
 	remoteview_target = A
 	reset_view(A)
 	reset_view(A)
+
+
+/*
+/mob/living/carbon/human/proc/resuscitate()
+	var/obj/item/organ/internal/heart_organ = random_organ_by_process(OP_HEART)
+	var/obj/item/organ/internal/brain_organ = random_organ_by_process(BP_BRAIN)
+
+	if(!is_asystole() && !(heart_organ && brain_organ) || (heart_organ.is_broken() || brain_organ.is_broken()))
+		return 0
+
+	if(world.time >= (timeofdeath + NECROZTIME))
+		return 0
+
+	var/oxyLoss = getOxyLoss()
+	if(oxyLoss > 20)
+		setOxyLoss(20)
+
+	if(health <= (HEALTH_THRESHOLD_DEAD - oxyLoss))
+		visible_message(SPAN_WARNING("\The [src] twitches a bit, but their body is too damaged to sustain life!"))
+		timeofdeath = 0
+		return 0
+
+	visible_message(SPAN_NOTICE("\The [src] twitches a bit as their heart restarts!"))
+	pulse = PULSE_NORM
+	handle_pulse()
+	timeofdeath = 0
+	stat = UNCONSCIOUS
+	jitteriness += 3 SECONDS
+	updatehealth()
+	switch_from_dead_to_living_mob_list()
+	if(mind)
+		for(var/mob/observer/ghost/G in GLOB.player_list)
+			if(G.can_reenter_corpse && G.mind == mind)
+				if(alert("Do you want to enter your body?","Resuscitate","OH YES","No, I'm autist") == "OH YES")
+					G.reenter_corpse()
+					break
+				else
+					break
+	return 1
+
+/mob/living/carbon/human/proc/generate_dna()
+	if(!b_type)
+		b_type = pick(GLOB.blood_types)
+
+	if(!isMonkey(src))
+		while(dormant_mutations.len < STARTING_MUTATIONS)
+			var/datum/mutation/M = pickweight(list(
+				pick(subtypesof(/datum/mutation/t0)) = 45,
+				pick(subtypesof(/datum/mutation/t1)) = 25,
+				pick(subtypesof(/datum/mutation/t2)) = 15,
+				pick(subtypesof(/datum/mutation/t3)) = 10,
+				pick(subtypesof(/datum/mutation/t4)) = 5))
+			dormant_mutations |= new M
+*/
+/mob/living/carbon/human/verb/blocking()
+	set name = "Blocking"
+	set desc = "Block an incoming melee attack, or lower your guard."
+	set category = "IC"
+
+	if(stat || restrained())
+		return
+	if(!blocking)
+		start_blocking()
+	else
+		stop_blocking()
+
+/mob/living/carbon/human/proc/start_blocking()
+	if(blocking)//already blocking with an item somehow?
+		return
+	blocking = TRUE
+	visible_message(SPAN_WARNING("[src] tenses up, ready to block!"))
+	if(HUDneed.Find("block"))
+		var/obj/screen/block/HUD = HUDneed["block"]
+		HUD.update_icon()
+	update_block_overlay()
+	return
+
+/mob/living/carbon/human/proc/stop_blocking()
+	if(!blocking)//already blockingn't with an item somehow?
+		return
+	blocking = FALSE
+	visible_message(SPAN_NOTICE("[src] lowers \his guard."))
+	if(HUDneed.Find("block"))
+		var/obj/screen/block/HUD = HUDneed["block"]
+		HUD.update_icon()
+	update_block_overlay()
+	return
+
 
 #undef SLIME_TRANSPARENCY

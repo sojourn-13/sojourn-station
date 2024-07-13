@@ -1,7 +1,7 @@
 /datum/gear/factionartificer
 	display_name = "winter coat, artificer"
 	path = /obj/item/clothing/suit/hooded/wintercoat/engineering
-	allowed_roles = list("Guild Master","Guild Adept")
+	allowed_roles = list("Guild Master","Guild Adept", "Guild Apprentice")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 	cost = 0
@@ -39,7 +39,7 @@
 /datum/gear/factionartificer/cloaktechnomancer
 	display_name = "cloak, artificer"
 	path = /obj/item/clothing/accessory/job/cape/technomancer
-	allowed_roles = list("Guild Master","Guild Adept")
+	allowed_roles = list("Guild Master","Guild Adept", "Guild Apprentice")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 
@@ -53,13 +53,13 @@
 /datum/gear/factionartificer/snowsuittechno
 	display_name = "snowsuit, artificer"
 	path = /obj/item/clothing/suit/storage/snowsuit/engineering
-	allowed_roles = list("Guild Master","Guild Adept")
+	allowed_roles = list("Guild Master","Guild Adept", "Guild Apprentice")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/winterboots
 	display_name = "winter boots, artificer"
 	path = /obj/item/clothing/shoes/winter/engineering
-	allowed_roles = list("Guild Master","Guild Adept")
+	allowed_roles = list("Guild Master","Guild Adept", "Guild Apprentice")
 	slot = slot_shoes
 	sort_category = "Faction: Artificer"

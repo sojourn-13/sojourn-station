@@ -275,4 +275,4 @@
 	icon_screen = "request"
 	circuit = /obj/item/circuitboard/ordercomp
 	requestonly = TRUE
-	req_access = list()
+	req_access = null

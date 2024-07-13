@@ -31,8 +31,61 @@
 	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.
 	var/spawn_tags
 
-/atom/movable/Destroy()
+	/**
+	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
+	 *
+	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
+	**/
+	var/list/allowed_stat_modifiers = null
 
+	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
+	var/list/current_stat_modifiers = null
+
+	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
+	var/list/name_prefixes = null
+
+	var/get_stat_modifier = FALSE
+	var/times_to_get_stat_modifiers = 1
+	var/get_prefix = TRUE
+
+/atom/movable/Initialize()
+	. = ..()
+	init_stat_modifiers()
+
+/atom/movable/proc/init_stat_modifiers()
+	if(get_stat_modifier)
+		for(var/i in 0 to (times_to_get_stat_modifiers - 1))
+			var/list/excavated = list()
+			for(var/entry in allowed_stat_modifiers)
+				var/to_add = allowed_stat_modifiers[entry]
+				if(islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/list/successful_rolls = list()
+			for(var/typepath in excavated)
+				if(prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if(LAZYLEN(successful_rolls))
+				picked = pick(successful_rolls)
+
+			if(isnull(picked))
+				continue
+
+			var/list/arguments
+			if(islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
+				if(length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
+
+			var/datum/stat_modifier/chosen_modifier = new picked
+			if(!(chosen_modifier.valid_check(src, arguments)))
+				qdel(chosen_modifier)
+
+/atom/movable/Destroy()
 	var/turf/T = loc
 	if(opacity && istype(T))
 		T.reconsider_lights()
@@ -42,6 +95,8 @@
 		if(!QDELETED(move_packet))
 			qdel(move_packet)
 		move_packet = null
+
+	QDEL_LAZYLIST(current_stat_modifiers)
 
 	. = ..()
 
@@ -60,6 +115,20 @@
 	for (var/datum/movement_handler/handler in movement_handlers)
 		handler.host = null
 		movement_handlers -= handler //likely unneeded but just in case
+
+/atom/movable/examine(mob/user, distance, infix, suffix)
+	. = ..()
+
+//Soj Edits
+	var/list/descriptions_to_print = list()
+	// `in null` is fine, it just won't iterate
+	for(var/datum/stat_modifier/mod in current_stat_modifiers)
+		if(mod.description)
+			if(!(mod.description in descriptions_to_print))
+				descriptions_to_print += mod.description
+	for(var/description in descriptions_to_print)
+		to_chat(user, SPAN_NOTICE(description))
+
 
 /atom/movable/Bump(var/atom/A, yes)
 	if(src.throwing)
@@ -434,3 +503,10 @@
 
 /atom/movable/proc/preventsTurfInteractions()
 	return FALSE
+
+/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
+/atom/movable/proc/update_prefixes()
+	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
+
+	for (var/prefix in name_prefixes)
+		name = "[prefix] [name]"

@@ -358,21 +358,21 @@
 
 	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	add_fingerprint(user)
-	climbers |= user
+	LAZYOR(climbers, user)
 
 	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay //basiclly this will let you clime things insainly fast when you have leap perk normal if you dont
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(!can_climb(user, post_climb_check=1))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(!neighbor_turf_passable())
 		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(get_turf(user) == get_turf(src))
@@ -382,7 +382,7 @@
 
 	usr.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
 	if(!anchored)	take_damage(maxhealth) // Fatboy
-	climbers -= user
+	LAZYREMOVE(climbers, user)
 
 /obj/structure/railing/get_fall_damage(var/turf/from, var/turf/dest)
 	var/damage = health * 0.4

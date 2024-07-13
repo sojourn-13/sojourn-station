@@ -633,3 +633,15 @@ proc/TextPreview(var/string, var/len=40)
 /proc/sanitize_css_class_name(name)
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
 	return replacetext(name, regex, "")
+
+/proc/symbols_to_unicode(text)
+	for(var/key in GLOB.symbols_unicode_keys)
+		text = replacetext(text, key, GLOB.symbols_unicode_keys[key])
+	return text
+
+/proc/color_macro_to_html(text)
+	text = replacetext(text,"\red","<span class='red'>")
+	text = replacetext(text,"\blue","<span class='blue'>")
+	text = replacetext(text,"\green","<span class='green'>")
+	return text
+

@@ -8,7 +8,7 @@
 	throw_speed = 4
 	throw_range = 10
 	slot_flags = SLOT_BELT|SLOT_POCKET // QOL improvement tbh
-	req_access = list(list(access_heads, access_security))
+	req_access = list(access_heads, access_security)
 	var/boss_name = "Nadezhda Marshals" //The issuing authority. Can be VVed to make a warrant out to be from another party for whatever reason
 	var/station_name = "Nadezhda Colony" //As above
 	var/language = LANGUAGE_COMMON //More stuff put here so it can theoretically be VVed
