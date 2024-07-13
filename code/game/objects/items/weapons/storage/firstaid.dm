@@ -754,6 +754,27 @@
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 
+/obj/item/storage/pill_bottle/opifex
+	name = "bottle of mixed supplements"
+	icon_state = "pill_rainbow"
+	desc = "A mixed bottle of pills."
+
+
+/obj/item/storage/pill_bottle/opifex/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/bloodregen(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/prosurgeon(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/bicaridine(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/tramadol(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/dermaline(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/dexalin_plus(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/antitox(src)
 
 /obj/item/storage/pill_bottle/njoy
 	name = "bottle of mixed Njoy pills"

@@ -362,20 +362,28 @@
 				if(is_type_in_list(I,known_implants))
 					var/obj/item/implant/device = I
 					other_wounds += "[device.get_scanner_name()] implanted"
-				else if(is_type_in_list(I,known_cybernetics))
+					continue
+				if(is_type_in_list(I,known_cybernetics))
 					var/obj/item/organ_module/active/simple/device = I
 					other_wounds += "[device.get_scanner_name()] detected"
-				else if(istype(I, /obj/item/implant/generic))
+					continue
+				if(istype(I, /obj/item/implant/generic))
 					var/obj/item/implant/device = I
 					other_wounds += "[device.get_scanner_name()] detected"
-				else if(istype(I, /obj/item/material/shard/shrapnel))
+					continue
+				if(istype(I, /obj/item/material/shard/shrapnel))
 					other_wounds += "Embedded shrapnel"
-				else if(istype(I, /obj/item/implant))
+					continue
+				if(istype(I, /obj/item/implant))
 					var/obj/item/implant/device = I
 					if(!device.scanner_hidden)
 						unknown_body = TRUE
-				else
-					unknown_body = TRUE
+				//Secondary fancy check for truely hidden organ modules
+				if(istype(I, /obj/item/organ_module))
+					var/obj/item/organ_module/OM = I
+					if(OM.completely_hide_from_scanners)
+						continue
+				unknown_body = TRUE
 			if(unknown_body)
 				other_wounds += "Unknown body present"
 		if (e.is_stump() || e.burn_dam || e.brute_dam || other_wounds.len)
