@@ -519,3 +519,46 @@ Technomancer RIG
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/storage/large
 		)
+
+/***************************************
+	MU66 Suit
+****************************************/
+/obj/item/rig/sea
+	name = "MU-66 Atmos suit"
+	suit_type = "MU66 Soft-suit"
+	desc = "A light RIG for performing minute repairs and maintenance in atypical atmospheres."
+	icon_state = "sea_rig"
+	armor_list = list(
+		melee = 40,
+		bullet = 30,
+		energy = 20,
+		bomb = 10,
+		bio = 100,
+		rad = 100
+	)
+	seal_delay = 20
+	slowdown = 0
+	offline_slowdown = 1
+	offline_vision_restriction = 1
+	removable_cell = TRUE
+	cell_type =  /obj/item/cell/large/moebius/nuclear
+	air_type =   /obj/item/tank/oxygen
+	suitable_cell = /obj/item/cell/large
+
+	extra_allowed = list(
+		/obj/item/storage/toolbox,
+		/obj/item/storage/briefcase/inflatable,
+		/obj/item/device/t_scanner,
+		/obj/item/rcd
+	)
+
+	max_upgrades = 1
+
+	req_access = list()
+	req_one_access = list()
+
+/obj/item/rig/sea/equipped
+	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/vision/meson
+		)

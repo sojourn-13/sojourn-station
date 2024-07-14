@@ -30,7 +30,8 @@
 			/obj/item/gun/projectile/colt/ten = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/greasegun = custom_good_amount_range(list(2, 3)),
-			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1))
+			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1)),
+			/obj/item/clothing/suit/armor/vest/breach1 = custom_good_amount_range(list(2, 3)),
 		),
 		"Useful Stuff" = list(
 			// Autoinjectors defined in hypospray.dm

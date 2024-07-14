@@ -74,6 +74,88 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/armor/vest/breach1
+	name = "chemical corps vest"
+	desc = "A reinforced combat vest from solfed surplus stockpiles. Originally an enviroment protection suit clad in armor plating for full body protection and points for mounting specialist equipment. This set seems void of typical additions."
+	icon_state = "breach1"
+	item_state = "breach1"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	stiffness = LIGHT_STIFFNESS
+	armor_list = list(
+		melee = 50,
+		bullet = 55,
+		energy = 45,
+		bomb = 35,
+		bio = 100,
+		rad = 85
+	)
+
+/obj/item/clothing/suit/armor/vest/breach1/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "breach1"
+	options["Brown"] = "breach1_brown"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/vest/breach2
+	name = "chemical breacher vest"
+	desc = "A reinforced combat vest from solfed surplus stockpiles. Originally an enviroment protection suit clad in armor plating for full body protection and points for mounting specialist equipment. This comes with enough pouches to hold any mission essential equipment like pens, pencils, chocolate or a brick of plastique."
+	icon_state = "breach2"
+	item_state = "breach2"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	stiffness = LIGHT_STIFFNESS
+	armor_list = list(
+		melee = 50,
+		bullet = 50,
+		energy = 45,
+		bomb = 30,
+		bio = 100,
+		rad = 85
+	)
+
+/obj/item/clothing/suit/storage/vest/breach2/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "breach2"
+	options["Brown"] = "breach2_brown"
+	options["Base Large"] = "breach2_big"
+	options["Brown Large"] = "breach2_big_brown"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/vest/handmade
 	name = "handmade armor vest"
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
