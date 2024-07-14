@@ -82,13 +82,14 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
+	price_tag = 600
 	armor_list = list(
 		melee = 10,
-		bullet = 14,
-		energy = 12,
-		bomb = 50,
+		bullet = 11,
+		energy = 10,
+		bomb = 25,
 		bio = 100,
-		rad = 75
+		rad = 70
 	)
 
 /obj/item/clothing/suit/armor/vest/breach1/verb/toggle_style()
@@ -122,13 +123,14 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
+	price_tag = 600
 	armor_list = list(
 		melee = 10,
-		bullet = 14,
-		energy = 12,
-		bomb = 50,
+		bullet = 11,
+		energy = 10,
+		bomb = 25,
 		bio = 100,
-		rad = 75
+		rad = 70
 	)
 
 /obj/item/clothing/suit/storage/vest/breach2/verb/toggle_style()
