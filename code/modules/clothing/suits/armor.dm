@@ -123,7 +123,7 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
-	price_tag = 600
+	price_tag = 1100
 	armor_list = list(
 		melee = 10,
 		bullet = 11,
