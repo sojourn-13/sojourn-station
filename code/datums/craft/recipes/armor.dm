@@ -321,7 +321,7 @@
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
-	/datum/craft_recipe/armor/breach2
+/datum/craft_recipe/armor/breach2
 	name = "chemical breacher vest"
 	result =  /obj/item/clothing/suit/storage/vest/breach2
 	steps = list(
