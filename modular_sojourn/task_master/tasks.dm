@@ -208,5 +208,14 @@
 	key = "SLAB_CLEARER"
 	desc = "Do to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
 	gain_text = "A fully cleared slab allows insight into maxizing mineral gains."
-	level_threshholds = 1 // 1->20->30
+	level_threshholds = 1 // 1->2->3
 	unlocked = TRUE
+
+/datum/task_master/task/sheath_arts
+	name = "Learned Style"
+	key = "SHEATH_ARTS"
+	desc = "Quickly unsheathing and attacking. With trainning it should be possable to get a bit more range."
+	gain_text = "With endless trainning it should be possable..."
+	level_threshholds = 100 // 100->1000->10k
+	alt_scaling_number = 10
+	unlocked = FALSE

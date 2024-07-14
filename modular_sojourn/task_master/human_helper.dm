@@ -32,10 +32,10 @@
 //Gets the level as a number
 /datum/task_master/labourer/proc/get_task_mastery_level(key, simple = TRUE)
 	RETURN_TYPE(/datum/task_master/task)
-	log_debug("key == [key].")
+//	log_debug("key == [key].")
 
 	for(var/datum/task_master/task/source_task in learnt_tasks)
-		log_debug("source_task == [source_task], source_task_key == [source_task.key], key == [key].")
+//		log_debug("source_task == [source_task], source_task_key == [source_task.key], key == [key].")
 		if(source_task.key == key)
 			if(simple && source_task.level == 0)
 				return TRUE
@@ -54,16 +54,16 @@
 //Generate a new task and force it in if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates.
 /datum/task_master/labourer/proc/attempt_add_task_mastery(datum/task_master/task/incoming_task, task_key, skill_gained, learner)
-	log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
+//	log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
 	if(!get_task_mastery(task_key, FALSE))
-		log_debug("I failed?")
+//		log_debug("I failed?")
 		var/datum/task_master/task/new_mastery = new incoming_task(learner)
 		add_task_mastery(new_mastery)
 		return TRUE
-	log_debug("I passed?")
+//	log_debug("I passed?")
 	if(get_task_mastery(task_key))
 		var/datum/task_master/task/pushforwards = get_task_mastery(task_key)
-		log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
+//		log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
 		pushforwards.gain_value(value_to_gain = skill_gained)
 	return FALSE
 

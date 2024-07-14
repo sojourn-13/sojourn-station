@@ -963,6 +963,8 @@
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
+	extended_reach = initial(extended_reach)
+	no_swing = initial(no_swing)
 	LAZYNULL(name_prefixes)
 
 	//Now lets have each upgrade reapply its modifications
@@ -979,6 +981,12 @@
 
 	if(alt_mode_active)
 		alt_mode_activeate_two()
+
+	if(isliving(loc) && extended_reach)
+		var/mob/living/location_of_item = loc
+		if(location_of_item.stats.getPerk(PERK_NATURAL_STYLE))
+			extended_reach += 1
+
 
 	SStgui.update_uis(src)
 

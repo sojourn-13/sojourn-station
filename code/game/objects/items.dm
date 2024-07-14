@@ -19,7 +19,10 @@
 	//The cool stuff for melee
 	var/screen_shake = FALSE 		//If a weapon can shake the victim's camera on hit.
 	var/forced_broad_strike = FALSE //If a weapon is forced to always perform broad strikes.
-	var/extended_reach = FALSE		//Wielded spears can hit alive things one tile further.
+	//Mostly used for spears when wielded, but can be placed on any item
+	//Any value above 1 adds extra tiles it checks for reach
+	//Also used in holsters and sheaths, code for handing is in item_attack.dm with "fancy_ranged_melee_attack"
+	var/extended_reach = FALSE
 	var/ready = FALSE				//All weapons that are ITEM_SIZE_BULKY or bigger have double tact, meaning you have to click twice.
 	var/no_double_tact = FALSE		//for when you,  for some inconceivable reason, want a huge item to not have double tact
 	var/no_swing = FALSE            //for when you do not want an item to swing-attack
@@ -690,6 +693,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
+	extended_reach = initial(extended_reach)
+	no_swing = initial(no_swing)
 	LAZYNULL(name_prefixes)
 
 	extra_bulk = initial(extra_bulk)
@@ -704,6 +709,12 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	if(alt_mode_active)
 		alt_mode_activeate_two()
+
+	if(isliving(loc) && extended_reach)
+		var/mob/living/location_of_item = loc
+		if(location_of_item.stats.getPerk(PERK_NATURAL_STYLE))
+			extended_reach += 1
+
 
 	return
 

@@ -259,13 +259,64 @@ avoid code duplication. This includes items that may sometimes act as a standard
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
 /obj/item/proc/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
-	if((!proximity && !ismob(A)) || !wielded || !extended_reach)//extended reach is only for mobs when you wield the spear
+	if((!proximity && !ismob(A)) || !wielded || !extended_reach)//extended reach is only for mobs, and things with added reach
 		return
-	if(get_dist(user.loc, A.loc) < 3)//okay, we are in reach, now we need to check if there is anything dense in our path
-		var/turf/T = get_step(user.loc, get_dir(user, A))
-		if(T.Enter(user))
+	fancy_ranged_melee_attack(A, user)
+	return
+
+//This handles how we attack in with range, we are only blocked by windows, walls and mechas - later might need changing
+//This isnt accually as complicated as it seems and has commited out debug messages if you wish to edit/improve it
+/obj/item/proc/fancy_ranged_melee_attack(atom/A as mob|obj|turf|area, mob/user, params)
+	if(!ismob(A))//extended reach is only for mobs
+		return
+
+	if(get_dist(user.loc, A.loc) < (2 + extended_reach))//okay, we are in reach, now we need to check if there is anything dense in our path
+		var/able_to_reach = TRUE
+		var/turf/T = get_step(user.loc, get_dir(user, A)) //We move tile to tile
+		var/tiles_to_check = extended_reach
+		//message_admins("T = [T]")
+		//message_admins("extended_reach = [extended_reach]")
+
+		var/i
+		for(i=0,tiles_to_check>i, i++)
+			//message_admins("tiles_to_check = [tiles_to_check], T = [T], i = [i]")
+			if(!i==0)
+				T = get_step(T, get_dir(user, A))
+			//else
+				//message_admins("0th tile bypassed")
+
+			//message_admins("second T = [T], T.density = [T.density]")
+			if(T.density)
+				able_to_reach = FALSE
+				break
+			for(var/obj/structure/S in T.contents)
+				//Do to pathing and annoyence windows flat out block
+				if(istype(S, /obj/structure/window))
+					//message_admins("S")
+					able_to_reach = FALSE
+					break
+			for(var/obj/machinery/door/D in T.contents)
+				//message_admins("D1 = [D.density]")
+				if(D.density)
+					//message_admins("D")
+					able_to_reach = FALSE
+					break
+			for(var/obj/mecha/M in T.contents)
+				//message_admins("M1 = [M.density]")
+				if(M.density)
+					//message_admins("M")
+					able_to_reach = FALSE
+					break
+			if(A in T.contents)
+				//message_admins("A found")
+				break
+
+		//message_admins("able_to_reach = [able_to_reach]")
+
+		if(able_to_reach)
 			resolve_attackby(A, user, params)
 	return
+
 
 //I would prefer to rename this attack_as_weapon(), but that would involve touching hundreds of files.
 /obj/item/proc/attack(mob/living/M, mob/living/user, target_zone)

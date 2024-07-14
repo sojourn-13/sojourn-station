@@ -25,16 +25,7 @@
 	if(!wielded || !user)
 		return
 	wielded = FALSE
-	if(force_wielded_multiplier)
-		force = (force / force_wielded_multiplier)
-	else
-		force = (force / 1.3)
-
-	var/sf = findtext(name," (Wielded)")
-	if(sf)
-		name = copytext(name,1,sf)
-	else //something went wrong
-		name = "[initial(name)]"//Returns name from compile-time instead of name with changes that've happened since
+	refresh_upgrades()
 	update_unwield_icon()
 	update_icon()
 	if(user)
@@ -54,6 +45,8 @@
 		return
 	if(!is_held_twohanded(user))
 		return
+	//This is here to help with gathering a perk
+	refresh_upgrades()
 	var/obj/item/X = user.get_inactive_hand()
 	if(X)
 		if(!X.canremove)
