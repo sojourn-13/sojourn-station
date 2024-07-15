@@ -65,9 +65,9 @@
 	)
 	cant_hold = list(
 		/obj/item/tool/cheap/spear
- 	)
- 
- /obj/item/storage/sheath/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
+	)
+
+/obj/item/storage/sheath/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
 
 	//message_admins("I ran, A = [A], user = [user]")
 	for(var/obj/item/I in contents)
@@ -114,4 +114,3 @@
 		break
 	..()
 
- 
