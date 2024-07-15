@@ -100,7 +100,7 @@
 		to_chat(user, "It is empty.")
 
 	if(sheath_arts)
-		to_chat(user, "This is a sheath that is relays the items attack that are held inside.")
+		to_chat(user, "This is a sheath that will relay the stored item as the attacking weapon.")
 
 /obj/item/clothing/accessory/holster/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
