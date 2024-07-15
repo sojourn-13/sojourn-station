@@ -724,8 +724,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
 		name = "[name] (Wielded)"
 
-
-
 	return
 
 
