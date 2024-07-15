@@ -262,7 +262,7 @@
 
 /datum/category_item/setup_option/background/bckgrnd/natural_style
 	name = "Natural Style"
-	desc = "Do to intense trainning and study into how to replicate shealth arts you can weather both a mental storm, and a battle field. \
+	desc = "Due to intense training and study into how to replicate sheath arts you can weather both a mental storm, and a battle field. \
 	All melee weapons that attack at range have a little bit extra reach when you wield them."
 	perks = list(PERK_NATURAL_STYLE)
 

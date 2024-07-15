@@ -214,8 +214,8 @@
 /datum/task_master/task/sheath_arts
 	name = "Learned Style"
 	key = "SHEATH_ARTS"
-	desc = "Quickly unsheathing and attacking. With trainning it should be possable to get a bit more range."
-	gain_text = "With endless trainning it should be possable..."
+	desc = "Quickly unsheathing and attacking. With training it should be possible to get a bit more range."
+	gain_text = "With endless training it should be possible...."
 	level_threshholds = 100 // 100->1000->10k
 	alt_scaling_number = 10
 	unlocked = FALSE

@@ -263,7 +263,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 /datum/perk/natural_style
 	name = "Natural Style"
-	desc = "Do to your intest trainning and upbrining you already know how to use the shealth arts, as well as how to handle the mind. \
+	desc = "Due to your intense training and upbringing you already know how to use the sheath arts, as well as how to handle the mind. \
 	All melee weapons that attack at range have a little bit extra reach when you wield them."
 	icon_state = "paintbrush"
 
