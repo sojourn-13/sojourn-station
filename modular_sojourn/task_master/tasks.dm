@@ -219,3 +219,8 @@
 	level_threshholds = 100 // 100->1000->10k
 	alt_scaling_number = 10
 	unlocked = FALSE
+
+/datum/task_master/task/sheath_arts/activate_affect()
+	//We skip over level 1 do to some check stuff with how sheaths work
+	if(level == 1)
+		level = 2

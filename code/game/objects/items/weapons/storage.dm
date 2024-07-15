@@ -114,12 +114,13 @@
 
 /obj/item/storage/sheath/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
 
-//	message_admins("I ran, A = [A], user = [user]")
+	//message_admins("I ran, A = [A], user = [user]")
 	for(var/obj/item/I in contents)
 		//message_admins("I found = [I]")
 		var/added_reach = 0
 		var/is_alive_target = FALSE
 		var/damage_mult = 0.5
+		var/ad_loss = 1
 		if(isliving(A))
 			//message_admins("A is living")
 			var/mob/living/target_maybe_alive = A
@@ -135,12 +136,14 @@
 				if(melee_arts.stats.getPerk(PERK_NATURAL_STYLE))
 					added_reach += 1
 					damage_mult = 0.7
+					ad_loss = 0.5
 				//So first we give all the reach we need to are obj held inside
 				//Then we set it to be unable to embed, as well as not able to swing do to issues with that
 				I.extended_reach = added_reach
 				I.no_swing = TRUE
 				I.embed_mult = 0
 				I.force *= damage_mult
+				I.armor_divisor -= ad_loss
 				//This is a uniquic attack proc that has smaller checks, this is to
 				I.fancy_ranged_melee_attack(A, user)
 				I.refresh_upgrades()

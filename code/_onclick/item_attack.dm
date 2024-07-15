@@ -51,7 +51,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /obj/item/proc/double_tact(mob/user, atom/atom_target, adjacent)
 	if(atom_target.loc == user)//putting stuff in your backpack, or something else on your person?
 		return TRUE //regular bags won't even be able to hold items this big, but who knows
-	if((w_class >= ITEM_SIZE_HUGE /*|| (w_class == ITEM_SIZE_HUGE && !wielded)*/) && !abstract && !istype(src, /obj/item/gun) && !no_double_tact)//grabs have colossal w_class. You can't raise something that does not exist.
+	//If we dont need to click twice return early, if not not not not need to click twice then
+	if((w_class >= ITEM_SIZE_HUGE || double_tact_required) && !abstract && !istype(src, /obj/item/gun) && !no_double_tact)//grabs have colossal w_class. You can't raise something that does not exist.
 		if(!adjacent || istype(atom_target, /turf) || istype(atom_target, /mob) || user.a_intent == I_HURT)//guns have the point blank privilege
 			if(!ready)
 				user.visible_message(SPAN_DANGER("[user] raises [src]!"))
@@ -282,6 +283,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 			//message_admins("tiles_to_check = [tiles_to_check], T = [T], i = [i]")
 			if(!i==0)
 				T = get_step(T, get_dir(user, A))
+				force = force * 0.8 //20% less damage each step forwards
+				armor_divisor -= 0.2 //Lower AD a little, per tile
 			//else
 				//message_admins("0th tile bypassed")
 
@@ -315,6 +318,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 		if(able_to_reach)
 			resolve_attackby(A, user, params)
+		refresh_upgrades()
 	return
 
 

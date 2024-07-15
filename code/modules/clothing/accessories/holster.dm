@@ -11,6 +11,7 @@
 	var/list/can_hold
 	var/list/cant_hold = new/list()
 	var/sheath_arts = FALSE
+	no_swing = TRUE
 
 /obj/item/clothing/accessory/holster/proc/holster(var/obj/item/I, var/mob/living/user)
 	if(holstered && istype(user))
@@ -439,6 +440,7 @@ Sword holsters
 		var/added_reach = 0
 		var/is_alive_target = FALSE
 		var/damage_mult = 0.5
+		var/ad_loss = 1
 		if(isliving(A))
 			//message_admins("A is living")
 			var/mob/living/target_maybe_alive = A
@@ -454,12 +456,14 @@ Sword holsters
 				if(melee_arts.stats.getPerk(PERK_NATURAL_STYLE))
 					added_reach += 1
 					damage_mult = 0.7
+					ad_loss = 0.5
 				//So first we give all the reach we need to are obj held inside
 				//Then we set it to be unable to embed, as well as not able to swing do to issues with that
 				I.extended_reach = added_reach
-				I.force *= damage_mult
 				I.no_swing = TRUE
 				I.embed_mult = 0
+				I.force *= damage_mult
+				I.armor_divisor -= ad_loss
 				//This is a uniquic attack proc that has smaller checks, this is to
 				I.fancy_ranged_melee_attack(A, user)
 				I.refresh_upgrades()
@@ -472,5 +476,6 @@ Sword holsters
 					if(target_maybe_alive.stat == DEAD)
 						//message_admins("melee arts")
 						melee_arts.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/sheath_arts, "SHEATH_ARTS", skill_gained = 1, learner = melee_arts)
+		break
 	..()
 

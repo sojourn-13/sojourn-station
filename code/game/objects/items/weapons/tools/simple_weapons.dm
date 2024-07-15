@@ -737,7 +737,7 @@
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
 	alt_mode_toggle = "switches their stance to strike at targets with the shaft"
 	alt_mode_lossrate = 0.4
-
+	no_swing = TRUE
 
 
 /obj/item/tool/spear/steel
