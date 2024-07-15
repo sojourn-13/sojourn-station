@@ -65,7 +65,7 @@
 	)
 	cant_hold = list(
 		/obj/item/tool/cheap/spear
- 
+ 	)
  
  /obj/item/storage/sheath/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
 
