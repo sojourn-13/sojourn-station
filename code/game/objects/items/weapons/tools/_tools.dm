@@ -987,6 +987,13 @@
 		if(location_of_item.stats.getPerk(PERK_NATURAL_STYLE))
 			extended_reach += 1
 
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
+
 
 	SStgui.update_uis(src)
 

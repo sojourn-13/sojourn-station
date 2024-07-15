@@ -11,6 +11,12 @@
 	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/energy/cog/xenoarch/update_icon()
@@ -24,6 +30,12 @@
 	self_recharge = TRUE
 
 /obj/item/gun/energy/xray/xenoarch/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/energy/xray/xenoarch/update_icon()
@@ -37,6 +49,12 @@
 	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/captain/xenoarch/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/energy/captain/xenoarch/update_icon()
@@ -49,6 +67,12 @@
 	max_shells = 12
 
 /obj/item/gun/projectile/revolver/xenoarch/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/projectile/revolver/xenoarch/update_icon()
@@ -65,6 +89,12 @@
 	return
 
 /obj/item/gun/projectile/revolver/sixshot/xenoarch/update_icon()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch
@@ -73,6 +103,12 @@
 	damage_multiplier = 1.5
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/update_icon()

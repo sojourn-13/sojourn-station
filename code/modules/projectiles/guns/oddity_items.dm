@@ -909,6 +909,12 @@
 	return TRUE
 
 /obj/item/shield/riot/mass_grave/refresh_upgrades()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return
 
 /obj/item/shield/riot/mass_grave/proc/upgrade_mass_grave()
