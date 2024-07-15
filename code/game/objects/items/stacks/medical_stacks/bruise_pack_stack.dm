@@ -252,7 +252,7 @@
 		return
 
 
-/obj/item/stack/medical/bruise_pack/advanced/nt/update_icon()
+/obj/item/stack/medical/bruise_pack/psionic/update_icon()
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
