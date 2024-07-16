@@ -94547,8 +94547,8 @@
 /area/nadezhda/security/tactical)
 "sxQ" = (
 /obj/machinery/smelter/cargo_t2_parts{
-	input_side = NORTH;
-	output_side = EAST
+	input_side = 1;
+	output_side = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
@@ -107833,9 +107833,9 @@
 	id = "trash"
 	},
 /obj/machinery/smelter/cargo_t2_parts{
-	input_side = NORTH;
-	output_side = EAST;
-	refuse_output_side = WEST
+	input_side = 1;
+	output_side = 4;
+	refuse_output_side = 8
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
