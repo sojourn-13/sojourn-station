@@ -1,16 +1,17 @@
-import { useBackend } from '../backend';
-import { Box, Button, Section, Stack } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+import { Box, Section, Stack } from 'tgui-core/components';
 
 type Data = {
-  theme: string
-  bg_color: string
-  folder_name: string
-  contents: string[]
-  contents_ref: string
-}
+  theme: string;
+  bg_color: string;
+  folder_name: string;
+  contents: string[];
+  contents_ref: string;
+};
 
-export const Folder = props => {
+export const Folder = (props) => {
   const { act, data } = useBackend<Data>();
   const { theme, bg_color, folder_name, contents, contents_ref } = data;
 
@@ -24,7 +25,7 @@ export const Folder = props => {
       <Window.Content backgroundColor={bg_color || '#7f7f7f'} scrollable>
         {!contents.length && (
           <Section>
-            <Box color='lightgrey' align='center'>
+            <Box color="lightgrey" align="center">
               This folder is empty!
             </Box>
           </Section>
@@ -32,22 +33,22 @@ export const Folder = props => {
         {contents.map((item, index) => (
           <Stack
             key={contents_ref[index]}
-            color='black'
-            backgroundColor='white'
+            color="black"
+            backgroundColor="white"
             style={{ padding: '2px 2px 0 2px' }}
           >
-            <Stack.Item align='center' grow>
-              <Box align='center'>{item}</Box>
+            <Stack.Item align="center" grow>
+              <Box align="center">{item}</Box>
             </Stack.Item>
             <Stack.Item>
               {
                 <Button
-                  icon='search'
+                  icon="search"
                   onClick={() => act('examine', { ref: contents_ref[index] })}
                 />
               }
               <Button
-                icon='eject'
+                icon="eject"
                 onClick={() => act('remove', { ref: contents_ref[index] })}
               />
             </Stack.Item>

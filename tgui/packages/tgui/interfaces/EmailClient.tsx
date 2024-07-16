@@ -1,24 +1,22 @@
-import { BooleanLike } from 'common/react';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+import { Button, Input, TextArea } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+import { NTOSData } from 'tgui/layouts/NtosWindow';
 import {
   AnimatedNumber,
   Box,
-  Button,
   Dimmer,
   Divider,
   Icon,
-  Input,
   LabeledList,
   ProgressBar,
   Section,
   Stack,
   Tabs,
-  TextArea,
   VirtualList,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
-import { NTOSData } from 'tgui/layouts/NtosWindow';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { SearchBar } from './Fabrication/SearchBar';
 
@@ -282,16 +280,22 @@ export const ViewMessageScreen = (props: ViewMessageScreenProps) => {
             <Button
               color="transparent"
               icon="save"
+              tooltip="Save Message"
+              tooltipPosition="bottom"
               onClick={() => act('save_message', { uid })}
             />
             <Button
               color="transparent"
               icon="print"
+              tooltip="Print Message"
+              tooltipPosition="bottom"
               onClick={() => act('print_message', { uid })}
             />
             <Button
               color="transparent"
               icon="reply"
+              tooltip="Reply"
+              tooltipPosition="bottom"
               onClick={() => {
                 setRecipient(source);
                 setSubject('RE: ' + title);
@@ -301,6 +305,8 @@ export const ViewMessageScreen = (props: ViewMessageScreenProps) => {
             <Button
               color="transparent"
               icon="trash"
+              tooltip="Delete"
+              tooltipPosition="bottom"
               onClick={() => act('delete_message', { uid })}
             />
           </Stack.Item>
