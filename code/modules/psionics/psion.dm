@@ -86,7 +86,7 @@
 
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.5), 0, cognitive_potential_max))
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, cognitive_potential_max), 0.1)
 
 		var/regen_points_timer = (5 MINUTES - cognitive_potential MINUTES)
 		var/min_timer = 1 MINUTES
@@ -117,29 +117,31 @@
 /obj/item/organ/internal/psionic_tumor/proc/psionic_equipment_check(type)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		var/max_bonus_return
+		var/bonus_return
 		switch(type)
 			if("psi_max_bonus")
 				//Waring 4 ear rings does stack in this case
 				if(istype(H.l_ear, /obj/item/clothing/ears/psionic_ear_rings))
 					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.l_ear
-					max_bonus_return += PESR.storage_addition
+					bonus_return += PESR.storage_addition
 				if(istype(H.r_ear, /obj/item/clothing/ears/psionic_ear_rings))
 					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.r_ear
-					max_bonus_return += PESR.storage_addition
+					bonus_return += PESR.storage_addition
 
-				return max_bonus_return
+				return bonus_return
 
 			if("psi_regen_helpers")
-				var/max_bonus_return
 				if(istype(H.glasses, /obj/item/clothing/glasses/psionic_lens))
-					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.glasses
-					max_bonus_return += PESR.psionic_seconds
+					var/obj/item/clothing/glasses/psionic_lens/PL = H.glasses
+					bonus_return += PL.psionic_seconds
 
-				return max_bonus_return
+				return bonus_return
 
 			if("cognitive_potential_max_bonus")
-				return FALSE
+				if(istype(H.w_uniform , /obj/item/clothing/under/psionic_cloths))
+					var/obj/item/clothing/under/psionic_cloths/PC = H.glasses
+					bonus_return += PC.cognitive_potential
+				return bonus_return
 
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
