@@ -221,3 +221,55 @@
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
+
+
+/obj/item/stack/medical/bruise_pack/psionic
+	name = "Mindspindle"
+	singular_name = "Mindstring"
+	desc = "A sharp needle made with a sharp mind and thread from a stream of thought able to stop bleeding, it takes next to no skill to use."
+	icon_state = "suture"
+	heal_brute = -1
+	bio_requirement = -15
+	needed_perk = PERK_PSION
+	stacktype_alt = null
+	amount = 1
+	max_amount = 3
+	color = "#5B0E4F" //spooooky!!!!!
+	consumable = FALSE //So we dont mess with dropping it
+	var/mob/living/carbon/holder // The one that prevent the tool from fading
+
+/obj/item/stack/medical/bruise_pack/psionic/New(loc, mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/stack/medical/bruise_pack/psionic/Process()
+	..()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+
+/obj/item/stack/medical/bruise_pack/psionic/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
+	color = "#5B0E4F"
+
+//MAX is 29 healing, MIN is -1
+/obj/item/stack/medical/bruise_pack/psionic/grabbed_medical_skill(mob/living/carbon/user)
+	if(ishuman(user))
+		var/psionic_things = 0
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PEACE))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psionic_things *= 2
+		return psionic_things
+	else
+		return FALSE
