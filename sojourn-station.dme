@@ -3448,6 +3448,8 @@
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "interface\fonts\fonts_datum.dm"
+#include "interface\fonts\grand_9k.dm"
 #include "maps\_map_shims.dm"
 #include "maps\__Nadezhda\Map_Nadezhda.dm"
 #include "maps\_dungeons\crawler\crawler.dm"
