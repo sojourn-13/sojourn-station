@@ -124,3 +124,49 @@
 	icon_state = "ring_of_dispel"
 	price_tag = 1000
 	psi_blocking = 50
+
+/obj/item/clothing/ears/psionic_ear_rings
+	name = "Psionic ear rings"
+	desc = "A set of ear rings design to aid people that are less able to build up psionic power."
+	icon_state = "psionic_earring"
+	icon = 'icons/inventory/ears/icon.dmi'
+	slot_flags = SLOT_EARS
+	//returns are spars,
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
+	var/storage_addition = 1
+
+/obj/item/clothing/ears/psionic_ear_rings/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst)
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		if(storage_addition >= 2)
+			to_chat(user, "These ear rings are already as tuned as can ge.")
+			return
+		to_chat(user, "The power stored in [PC] is leaked out into the cold void as the [src] is tuned")
+		PC.stored_power = null //Nom!
+		storage_addition += 1
+	..()
+
+/obj/item/clothing/glasses/psionic_lens
+	name = "Psionic glasses"
+	desc = "A set of slightly pink glasses made of somewhat rare materials, designed to help people be able to collect psionic essence a little bit faster."
+	icon_state = "psionic_lens"
+	item_state = "psionic_lens"
+	prescription = 1
+	var/psionic_seconds = 5
+
+/obj/item/clothing/glasses/psionic_lens/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst)
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		if(storage_addition >= 15)
+			to_chat(user, "The lens are already as tuned as can be.")
+			return
+		to_chat(user, "The power stored in [PC] is leaked out into the cold void as the [src] is tuned")
+		PC.stored_power = null //Nom!
+		storage_addition += 5 //Two lens
+	..()
