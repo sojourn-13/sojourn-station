@@ -477,9 +477,9 @@ obj/item/clothing/suit/gownrisque/alt
 	siemens_coefficient = 0.4
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(
-		melee = 60,
-		bullet = 55,
-		energy = 50,
+		melee = 16,
+		bullet = 15,
+		energy = 13,
 		bomb = 75,
 		bio = 100,
 		rad = 100

@@ -622,9 +622,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	brightness_on = 5
 	light_overlay = "hardhat_light"
 	armor_list = list(
-		melee = 60,
-		bullet = 55,
-		energy = 50,
+		melee = 16,
+		bullet = 15,
+		energy = 13,
 		bomb = 75,
 		bio = 100,
 		rad = 100
