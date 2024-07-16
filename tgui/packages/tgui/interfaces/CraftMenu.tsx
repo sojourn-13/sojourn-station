@@ -1,19 +1,18 @@
+import { sortBy } from 'common/collections';
 import { useState } from 'react';
-
-import { sortBy } from '../../common/collections';
-import { BooleanLike } from '../../common/react';
-import { createSearch } from '../../common/string';
-import { useBackend, useSharedState } from '../backend';
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   Box,
-  Button,
   Divider,
   Input,
   Section,
   Stack,
   Tabs,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
 
 const GroupTitle = ({ title }) => {
   return (

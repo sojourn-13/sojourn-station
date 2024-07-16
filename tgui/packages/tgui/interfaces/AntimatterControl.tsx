@@ -1,7 +1,6 @@
-import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
 import { formatPower } from 'tgui/format';
-
-import { useBackend } from '../backend';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Button,
@@ -10,8 +9,8 @@ import {
   ProgressBar,
   Section,
   Stack,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   active: BooleanLike;

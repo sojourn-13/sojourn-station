@@ -1,10 +1,10 @@
 import { uniq } from 'common/collections';
-import { round } from 'common/math';
-import { BooleanLike } from 'common/react';
-import { toTitleCase } from 'common/string';
 import { useBackend, useSharedState } from 'tgui/backend';
-import { Box, Button, Section, Stack, Tabs } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Box, Button, Section, Stack, Tabs } from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
+import { toTitleCase } from 'tgui-core/string';
 
 import { MaterialAccessBar } from './Fabrication/MaterialAccessBar';
 import { Material } from './Fabrication/Types';

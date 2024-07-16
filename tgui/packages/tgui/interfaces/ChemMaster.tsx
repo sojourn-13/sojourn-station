@@ -1,16 +1,16 @@
-import { BooleanLike, classes } from 'common/react';
-import React, { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
-  Button,
   LabeledList,
   Section,
   Stack,
   Table,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { BooleanLike, classes } from 'tgui-core/react';
 
 import { Reagent, Reagents } from './common/Reagents';
 
@@ -83,7 +83,7 @@ const NoBeaker = (props) => {
 
 const SpriteMenu = (props: {
   type: string;
-  setSpriteMenu: React.Dispatch<React.SetStateAction<SpriteType | null>>;
+  setSpriteMenu: Dispatch<SetStateAction<SpriteType | null>>;
 }) => {
   const { act, data } = useBackend<Data>();
   const { type, setSpriteMenu } = props;
@@ -209,7 +209,7 @@ const AnalyzeReagent = (props: {
 };
 
 const MainScreen = (props: {
-  setSpriteMenu: React.Dispatch<React.SetStateAction<SpriteType | null>>;
+  setSpriteMenu: Dispatch<SetStateAction<SpriteType | null>>;
 }) => {
   const { act, data } = useBackend<Data>();
   const { beaker, buffer, set_sprites, mode, condi } = data;

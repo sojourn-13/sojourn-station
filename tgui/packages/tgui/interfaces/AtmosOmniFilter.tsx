@@ -1,7 +1,8 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
-import { Box, Button, LabeledList, Section } from 'tgui/components';
+import { Button } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Box, LabeledList, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 const getStatusText = (port) => {
   if (port.input) {

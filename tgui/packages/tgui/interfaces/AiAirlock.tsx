@@ -1,7 +1,13 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
-import { Button, Icon, LabeledList, Section, Stack } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import {
+  Button,
+  Icon,
+  LabeledList,
+  Section,
+  Stack,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 const dangerMap = {
   2: {
