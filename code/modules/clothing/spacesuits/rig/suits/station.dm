@@ -537,6 +537,8 @@ Technomancer RIG
 		rad = 100
 	)
 	seal_delay = 20
+	ablative_max = 10
+	ablation = ABLATION_DURABLE
 	slowdown = 0
 	offline_slowdown = 1
 	offline_vision_restriction = 1
