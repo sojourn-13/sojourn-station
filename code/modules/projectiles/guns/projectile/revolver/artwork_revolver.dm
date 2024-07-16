@@ -18,6 +18,7 @@
 	init_recoil = HANDGUN_RECOIL(1.2)
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier

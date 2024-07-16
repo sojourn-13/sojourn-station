@@ -11,6 +11,7 @@
 	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -30,6 +31,7 @@
 	self_recharge = TRUE
 
 /obj/item/gun/energy/xray/xenoarch/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -49,6 +51,7 @@
 	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/captain/xenoarch/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -67,6 +70,7 @@
 	max_shells = 12
 
 /obj/item/gun/projectile/revolver/xenoarch/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -89,6 +93,7 @@
 	return
 
 /obj/item/gun/projectile/revolver/sixshot/xenoarch/update_icon()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -103,6 +108,7 @@
 	damage_multiplier = 1.5
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
+	force = initial(force)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
