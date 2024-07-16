@@ -295,6 +295,14 @@ var/list/_client_preferences_by_type
 /datum/client_preference/tgui_say_light_mode/changed(mob/preference_mob, new_value)
 	preference_mob?.client?.tgui_say?.load()
 
+/datum/client_preference/status_bar
+	description = "Disable built-in status bar"
+	key = "disable_status_bar"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/status_bar/changed(mob/preference_mob, new_value)
+	winset(preference_mob, "status_bar", "is-visible=[new_value == GLOB.PREF_YES ? "false" : "true"]")
+
 /********************
 * General Staff Preferences *
 ********************/

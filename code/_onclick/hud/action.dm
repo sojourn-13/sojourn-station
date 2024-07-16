@@ -287,7 +287,7 @@
 
 
 #define AB_WEST_OFFSET 4
-#define AB_NORTH_OFFSET 26
+#define AB_NORTH_OFFSET 23
 #define AB_MAX_COLUMNS 10
 
 /datum/hud/proc/ButtonNumberToScreenCoords(var/number) // TODO : Make this zero-indexed for readabilty

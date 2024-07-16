@@ -828,6 +828,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		winset(usr, "mainwindow", "titlebar=true")
 		winset(usr, "mainwindow", "can-resize=true")
 
+	if(try_get_preference_value(/datum/client_preference/status_bar) == GLOB.PREF_YES)
+		winset(usr, "status_bar", "is-visible=false")
+	else
+		winset(usr, "status_bar", "is-visible=true")
+
 	if(fully_created)
 		INVOKE_ASYNC(src, VERB_REF(fit_viewport))
 	else
