@@ -1,6 +1,6 @@
-import { BooleanLike } from 'common/react';
 import { useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
@@ -10,8 +10,8 @@ import {
   Knob,
   Section,
   Stack,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   panel_open: BooleanLike;

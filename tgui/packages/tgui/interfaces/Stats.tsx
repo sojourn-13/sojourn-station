@@ -1,32 +1,31 @@
-import { classes } from 'common/react';
-import { capitalize } from 'common/string';
 import { useState } from 'react';
-
-import { useBackend } from '../backend';
-import { Box, Section, Stack, Tabs, Tooltip } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { capitalize } from 'tgui-core/string';
 
 enum TABS {
   stats,
-  perks
+  perks,
 }
 
 interface StatData {
-  name: string
-  value: number
+  name: string;
+  value: number;
 }
 
 interface PerkData {
-  name: string
-  icon: string
-  desc: string
+  name: string;
+  icon: string;
+  desc: string;
 }
 
 interface StatsData {
-  name: string
-  hasPerks: boolean
-  stats: StatData[]
-  perks: PerkData[]
+  name: string;
+  hasPerks: boolean;
+  stats: StatData[];
+  perks: PerkData[];
 }
 
 const perk = (perk: PerkData) => {
@@ -34,8 +33,8 @@ const perk = (perk: PerkData) => {
 
   return (
     <Stack.Item>
-      <Tooltip position='bottom' content={desc}>
-        <Stack position='relative' fill>
+      <Tooltip position="bottom" content={desc}>
+        <Stack position="relative" fill>
           <Stack.Item
             className={classes(['Stats__box--icon', 'Stats__content'])}
           >
@@ -53,12 +52,12 @@ const perk = (perk: PerkData) => {
   );
 };
 
-const PerksTab = props => {
+const PerksTab = (props) => {
   const { data } = useBackend<StatsData>();
   const { perks } = data;
 
   return (
-    <Stack fill vertical justify='start'>
+    <Stack fill vertical justify="start">
       {perks.map((value, i) => perk(value))}
     </Stack>
   );
@@ -87,25 +86,25 @@ const stat = (stat: StatData) => {
   );
 };
 
-const StatsTab = props => {
+const StatsTab = (props) => {
   const { data } = useBackend<StatsData>();
   const { stats } = data;
 
   return (
-    <Stack fill vertical justify='space-around'>
+    <Stack fill vertical justify="space-around">
       {stats.map((value, i) => stat(value))}
     </Stack>
   );
 };
 
-export const Stats = props => {
+export const Stats = (props) => {
   const { data } = useBackend<StatsData>();
   const { name, hasPerks } = data;
 
   const [currentTab, setCurrentTab] = useState(TABS.stats);
 
   return (
-    <Window width={285} height={320} title={`${name}'s Stats`}>
+    <Window width={320} height={320} title={`${name}'s Stats`}>
       <Window.Content style={{ backgroundImage: 'none' }}>
         <Stack fill vertical>
           {(hasPerks && (

@@ -1,5 +1,4 @@
 import { useBackend } from 'tgui/backend';
-import { formatPower } from 'tgui/format';
 import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
@@ -10,6 +9,7 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
 import { BooleanLike } from 'tgui-core/react';
 
 type Data = {

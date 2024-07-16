@@ -1,4 +1,5 @@
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
@@ -9,8 +10,7 @@ import {
   ProgressBar,
   Section,
   Stack,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
 
 enum StatType {
   AnimatedNumber = 'AnimatedNumber',
