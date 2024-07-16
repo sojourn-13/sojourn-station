@@ -3045,6 +3045,7 @@
 #include "code\modules\psionics\psion_powers\pyschiatrist_powers.dm"
 #include "code\modules\psionics\psion_powers\telekinetsis_powers.dm"
 #include "code\modules\psionics\psion_powers\teleporation_powers.dm"
+#include "code\modules\psionics\psion_powers\trash_powers.dm"
 #include "code\modules\psionics\psionic_items\psi_armor.dm"
 #include "code\modules\psionics\psionic_items\psi_artifacts.dm"
 #include "code\modules\psionics\psionic_items\psi_catalysts.dm"
