@@ -72,7 +72,6 @@
 #include "component_tests.dm"
 #include "extension_sanity.dm"
 #include "loadout_tests.dm"
-#include "lootpanel.dm"
 #include "map_tests.dm"
 #include "mob_tests.dm"
 #include "movement_tests.dm"
