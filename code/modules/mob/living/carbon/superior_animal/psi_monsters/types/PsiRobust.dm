@@ -13,7 +13,8 @@
 	poison_per_bite = 2
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
-	armor_divisor = 32
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/ponderous
+	armor_divisor = 3
 
 /mob/living/carbon/superior_animal/psi_monster/hovering_nightmare
 	name = "hovering nightmare"

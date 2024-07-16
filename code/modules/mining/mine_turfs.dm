@@ -297,9 +297,9 @@
 						if(bag.can_be_inserted(O, TRUE))
 							bag.handle_item_insertion(O, suppress_warning = TRUE)
 				if(B)
-					GetDrilled(0)
+					GetDrilled(0, FALSE)
 				else
-					GetDrilled(1)
+					GetDrilled(1, FALSE)
 				return
 			return
 
@@ -340,9 +340,9 @@
 	O.amount = mineralamount
 	return O
 
-/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
+/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0, give_minerals = TRUE)
 	//var/destroyed = 0 //used for breaking strange rocks
-	if (mineral && mineral.result_amount)
+	if (mineral && mineral.result_amount && give_minerals)
 
 		//if the turf has already been excavated, some of it's ore has been removed
 		DropMineral(mineral.result_amount - mined_ore)

@@ -49,6 +49,7 @@
 		L.adjustHalLoss(30)
 
 //Transfers pain from grabbed to grabber
+
 /mob/living/carbon/human/proc/pain_transference()
     set category = "Psionic powers"
     set name = "Pain Transference (2)"
@@ -163,3 +164,42 @@
 				"[user]'s head lowers for a concentrated moment.",
 				"A second turns to eternity, your mind assures its place in the universe"
 				)
+
+// remove all chemicals (other then blood)
+/mob/living/carbon/human/psionic_tumor/proc/purefie()
+	set category = "Psionic Purefie"
+	set name = "Meditative Focus (1)"
+	set desc = "Expend a psi points of your psi essence clear out any chemical in your body, helpful or not."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		if(bloodstr)
+			bloodstr.clear_reagents()
+		if(ingested)
+			ingested.clear_reagents()
+		if(touching)
+			touching.clear_reagents()
+		user.visible_message(
+			"[user] shifts around a moment then flicks something off.",
+			"You pool any and all chemicals from your bloodstream, stomic and skin to a single point and then flick it off into deepmaints."
+			)
+
+// Heals heat/cold
+/mob/living/carbon/human/psionic_tumor/proc/temp_regulate()
+	set category = "Psionic powers"
+	set name = "Psionic Temperature Regulate (4)"
+	set desc = "Expend four psi points to eather heat or cool your body."
+	var/psi_point_cost = 4
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		user.frost = 0 //The reason why its expsensive
+		user.bodytemperature = 310.055	//98.7 F
+		playsound(user.loc,'sound/effects/telesci_ping.ogg', 25, 1)
+		user.visible_message(
+			"[user] curls into a ball then springs upwards.",
+			"You convence your body its not to cold, not to hot."
+			)
