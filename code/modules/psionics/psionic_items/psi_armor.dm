@@ -269,6 +269,7 @@
 	matter = list(MATERIAL_SILK = 5)
 	var/cognitive_potential = 0.1 //cube sink
 
+
 /obj/item/clothing/under/psionic_cloths/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/psionic_catalyst))
 		var/obj/item/device/psionic_catalyst/PC = I
@@ -304,6 +305,8 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
 		to_chat(M, "You adjusted your cloth's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
