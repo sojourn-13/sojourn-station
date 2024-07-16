@@ -107832,11 +107832,6 @@
 /obj/machinery/conveyor/southwest{
 	id = "trash"
 	},
-/obj/machinery/smelter/cargo_t2_parts{
-	input_side = 1;
-	output_side = 4;
-	refuse_output_side = 8
-	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "vch" = (
