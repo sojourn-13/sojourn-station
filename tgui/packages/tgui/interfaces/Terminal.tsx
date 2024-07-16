@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import { Box, Input, Section, Stack } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Box, Input, Section, Stack } from 'tgui-core/components';
 
 type Data = {
   history: string[];
