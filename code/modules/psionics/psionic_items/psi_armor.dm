@@ -281,6 +281,7 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
 		cognitive_potential += 0.1
 	..()
 
@@ -341,6 +342,7 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
 		storage_addition += 1
 	..()
 
@@ -363,5 +365,6 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
 		psionic_seconds += 5 //Two lens
 	..()
