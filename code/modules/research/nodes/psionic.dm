@@ -1,6 +1,6 @@
 /datum/technology/psi_uniform
-	name = "Psionic Uniform"
-	desc = "A high-tech uniform designed for Psions"
+	name = "S8.9-Type Outfit" //S for silk
+	desc = "High-tech experimental uniform designed for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.5 //Middle center
@@ -15,8 +15,8 @@
 	cost = 2500
 
 /datum/technology/psi_glasses
-	name = "Psionic Glasses"
-	desc = "High-tech glasses for Psions"
+	name = "Glasses P-22.1 LR" //P for plasma, LR for low risk
+	desc = "High-tech stablized experimental glasses for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.5
@@ -31,8 +31,8 @@
 	cost = 3000
 
 /datum/technology/psi_earring
-	name = "Psionic Ear Rings"
-	desc = "High-tech ear accessories for Psions"
+	name = "Earrings P-3.1" //P for plasma
+	desc = "High-tech experimental ear accessories for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.6

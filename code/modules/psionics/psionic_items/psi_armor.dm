@@ -259,13 +259,13 @@
 	pointamounts = 30 //Hope you didnt have combat chems
 
 /obj/item/clothing/under/psionic_cloths
-	name = "psion cloths"
+	name = "S8.9-Type Outfit" // S for silk
 	icon_state = "psi_uniform"
 	item_state = "psi_uniform"
 	icon = 'icons/obj/psionic/occicon.dmi'
 	icon_override = 'icons/obj/psionic/occmob.dmi'
 
-	desc = "A set of cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
+	desc = "A set of experimental cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
 	matter = list(MATERIAL_SILK = 5)
 	var/cognitive_potential = 0.1 //cube sink
 
@@ -308,7 +308,7 @@
 		icon_state = options[choice]
 		item_state = options[choice]
 		item_state_slots = null
-		to_chat(M, "You adjusted your cloth's style into [choice] mode.")
+		to_chat(M, "You rethink your cloth's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -322,8 +322,8 @@
 	psi_blocking = 50
 
 /obj/item/clothing/ears/psionic_ear_rings
-	name = "Psionic earrings"
-	desc = "A set of earrings designed to aid people that are less able to build up psionic power."
+	name = "Earrings P-3.1" // P for plasma
+	desc = "A set of experimental earrings designed to aid people that are less able to build up psionic power."
 	icon_state = "psionic_earring"
 	icon = 'icons/inventory/ears/icon.dmi'
 	slot_flags = SLOT_EARS
@@ -347,8 +347,8 @@
 	..()
 
 /obj/item/clothing/glasses/psionic_lens
-	name = "Psionic glasses"
-	desc = "A set of light pink glasses made of somewhat rare materials, designed to assist Psions in collecting essence slightly faster."
+	name = "Glasses P-22.1 LR" //LR for low risk, P for plasma
+	desc = "A set of stablized experimental light pink glasses made of somewhat rare materials, designed to assist Psions in collecting essence slightly faster."
 	icon_state = "psionic_lens"
 	item_state = "psionic_lens"
 	prescription = 1
