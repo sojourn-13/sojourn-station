@@ -46,6 +46,23 @@
 
 	cost = 2000
 
+/datum/technology/psi_pouch
+	name = "Woven Pouch C-7v89" //c for cloth, 7 *ate* 9
+	desc = "High-tech experimental pouch for Psions"
+	tech_type = RESEARCH_PSI
+
+	x = 0.6
+	y = 0.8
+	icon = "psi_pouch"
+
+	required_technologies = list()
+	required_tech_levels = list(RESEARCH_PSI = 3) //All others atm
+
+	unlocks_designs = list(/datum/design/research/item/psionic_pouch)
+
+	cost = 12500
+
+
 /*
 /datum/technology/psi_wand_basic
 	name = "W.A.N.D Type-2"

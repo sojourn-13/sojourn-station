@@ -19,3 +19,18 @@
 	build_path = /obj/item/clothing/glasses/psionic_lens
 	materials = list(MATERIAL_PLASMA = 4, MATERIAL_DIAMOND = 0.5, MATERIAL_SILVER = 4, MATERIAL_GOLD = 1)
 	category = CAT_CLOTHING
+
+/datum/design/research/item/psionic_pouch
+	name = "Woven Pouch C-7v89" //Plasma - Low Risk
+	desc = "A stablized experimental pouch design to assist Psions in every day life."
+	build_path = /obj/item/storage/pouch/medium_generic/psionic
+	materials = list(MATERIAL_PLASMA = 8, MATERIAL_DIAMOND = 2, MATERIAL_SILVER = 4, MATERIAL_GOLD = 2)
+	category = CAT_CLOTHING
+
+/datum/design/research/item/clothing/tinfoil
+	name = "Blue-Ink Psionic Shielding Apparatus"
+	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
+	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
+	Despite the advanced technology involved, it looks a little like a tin-foil hat."
+	build_path = /obj/item/clothing/head/psionic/tinfoil
+

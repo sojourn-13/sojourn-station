@@ -258,6 +258,18 @@
 	damage_to_sanity = -5 //Should *heal* sanity not damage
 	pointamounts = 30 //Hope you didnt have combat chems
 
+//The anti-psion hat
+/obj/item/clothing/head/psionic/tinfoil
+	name = "Blue-Ink Psionic Shielding Apparatus"
+	icon_state = "tinfoil"
+	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
+	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
+	Despite the advanced technology involved, it looks a little like a tin-foil hat."
+	origin_tech = list(TECH_MAGNET = 6)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
+	psi_blocking = 10
+	price_tag = 150
+
 /obj/item/clothing/under/psionic_cloths
 	name = "S8.9-Type Outfit" // S for silk
 	icon_state = "psi_uniform"
