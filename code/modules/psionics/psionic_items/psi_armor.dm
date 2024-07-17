@@ -291,10 +291,12 @@
 		if(cognitive_potential >= 1)
 			to_chat(user, "The [src] are already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
 		PC.icon_state = "psi_catalyst_dull"
 		cognitive_potential += 0.1
+		//Idk how to word this without it being videogamey
+		to_chat(user, "The [src] shimmers and adjusts for a moment to better allow psionic channeling.")
 	..()
 
 /obj/item/clothing/under/psionic_cloths/verb/toggle_style()
@@ -352,10 +354,11 @@
 		if(storage_addition >= 2)
 			to_chat(user, "These earrings are already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
 		PC.icon_state = "psi_catalyst_dull"
 		storage_addition += 1
+		to_chat(user, "The [src] seem to help build up psionic power even better now.")
 	..()
 
 /obj/item/clothing/glasses/psionic_lens
@@ -376,8 +379,10 @@
 		if(psionic_seconds >= 15)
 			to_chat(user, "The lens is already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
 		PC.icon_state = "psi_catalyst_dull"
 		psionic_seconds += 5 //Two lens
+		to_chat(user, "The [src] seem to help collect essence slightly faster now.")
+
 	..()

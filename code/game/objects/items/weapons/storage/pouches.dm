@@ -162,10 +162,10 @@
 	set category = "Object"
 
 	if(contents.len >= 1)
-		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well items are inside [src]"))
+		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well items are inside [src]."))
 		return
 	if(!isturf(loc))
-		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well [src] is on person"))
+		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well [src] is on person."))
 		return
 	repression = !repression
 	psionic_tune()
@@ -192,19 +192,19 @@
 		if(psionic_scaling_mult < 1.5)
 			psionic_scaling_mult += 0.1
 			used = TRUE
-			to_chat(user, "It seems a little easyer to use your maxium psionic pool to increase the [src] space")
+			to_chat(user, "It seems a little easyer to use your maxium psionic pool to increase the [src] space.")
 
 		if(psionic_storage < 15 && !used)
 			psionic_storage += 1
 			used = TRUE
-			to_chat(user, "It seems [src] has a little more space")
+			to_chat(user, "It seems [src] has a little more space.")
 
 		if(!used)
 			psionic_storage_cap += 2
 			to_chat(user, "It seems catalysts can only increase potential, using more catalyst on this pouch might be wasteful!")
 
 
-		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
 		PC.icon_state = "psi_catalyst_dull"
 
@@ -246,7 +246,7 @@
 
 /obj/item/storage/pouch/large_generic
 	name = "large generic pouch"
-	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket."
 	icon_state = "large_generic"
 	item_state = "large_generic"
 	w_class = ITEM_SIZE_BULKY //This is like a second satchle, is this size for belt/box ect nesting tricks
@@ -285,7 +285,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 
 
 /obj/item/storage/pouch/large_generic/leather
-	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket."
 	icon_state = "large_leather"
 	item_state = "large_leather"
 	price_tag = 900
