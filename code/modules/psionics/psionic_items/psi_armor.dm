@@ -265,7 +265,7 @@
 	icon = 'icons/obj/psionic/occicon.dmi'
 	icon_override = 'icons/obj/psionic/occmob.dmi'
 
-	desc = "A set of cloths made of somewhat rare materials and silk, allowing psionic users to better consolidate psionic essence."
+	desc = "A set of cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
 	matter = list(MATERIAL_SILK = 5)
 	var/cognitive_potential = 0.1 //cube sink
 
@@ -279,7 +279,7 @@
 		if(cognitive_potential >= 1)
 			to_chat(user, "The [src] are already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] is leaked out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
 		cognitive_potential += 0.1
 	..()
@@ -321,8 +321,8 @@
 	psi_blocking = 50
 
 /obj/item/clothing/ears/psionic_ear_rings
-	name = "Psionic ear rings"
-	desc = "A set of ear rings design to aid people that are less able to build up psionic power."
+	name = "Psionic earrings"
+	desc = "A set of earrings designed to aid people that are less able to build up psionic power."
 	icon_state = "psionic_earring"
 	icon = 'icons/inventory/ears/icon.dmi'
 	slot_flags = SLOT_EARS
@@ -337,16 +337,16 @@
 			to_chat(user, "[PC] has no stored power!")
 			return
 		if(storage_addition >= 2)
-			to_chat(user, "These ear rings are already as tuned as can be.")
+			to_chat(user, "These earrings are already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] is leaked out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
 		storage_addition += 1
 	..()
 
 /obj/item/clothing/glasses/psionic_lens
 	name = "Psionic glasses"
-	desc = "A set of slightly pink glasses made of somewhat rare materials, designed to help people be able to collect psionic essence a little bit faster."
+	desc = "A set of light pink glasses made of somewhat rare materials, designed to assist Psions in collecting essence slightly faster."
 	icon_state = "psionic_lens"
 	item_state = "psionic_lens"
 	prescription = 1
@@ -359,9 +359,9 @@
 			to_chat(user, "[PC] has no stored power!")
 			return
 		if(psionic_seconds >= 15)
-			to_chat(user, "The lens are already as tuned as can be.")
+			to_chat(user, "The lens is already as tuned as can be.")
 			return
-		to_chat(user, "The power stored in [PC] is leaked out into the cold void as the [src] is tuned")
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned")
 		PC.stored_power = null //Nom!
 		psionic_seconds += 5 //Two lens
 	..()

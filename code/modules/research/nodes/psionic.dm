@@ -1,6 +1,6 @@
 /datum/technology/psi_uniform
 	name = "Psionic Uniform"
-	desc = "A high-tech uniform for psionic users"
+	desc = "A high-tech uniform designed for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.5 //Middle center
@@ -16,7 +16,7 @@
 
 /datum/technology/psi_glasses
 	name = "Psionic Glasses"
-	desc = "High-tech glasses for psionic users"
+	desc = "High-tech glasses for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.5
@@ -32,7 +32,7 @@
 
 /datum/technology/psi_earring
 	name = "Psionic Ear Rings"
-	desc = "High-tech ear accessories for psionic users"
+	desc = "High-tech ear accessories for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.6
