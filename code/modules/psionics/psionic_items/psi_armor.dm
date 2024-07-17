@@ -353,6 +353,7 @@
 	item_state = "psionic_lens"
 	prescription = 1
 	var/psionic_seconds = 5
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1)
 
 /obj/item/clothing/glasses/psionic_lens/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/psionic_catalyst))
