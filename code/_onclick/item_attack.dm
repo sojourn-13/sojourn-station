@@ -262,7 +262,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /obj/item/proc/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
 	if((!proximity && !ismob(A)) || !wielded || !extended_reach)//extended reach is only for mobs, and things with added reach
 		return
-	fancy_ranged_melee_attack(A, user)
+	if(!proximity)
+		fancy_ranged_melee_attack(A, user)
 	return
 
 //This handles how we attack in with range, we are only blocked by windows, walls and mechas - later might need changing
