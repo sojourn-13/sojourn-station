@@ -140,7 +140,7 @@
 //We do medium for scaling reasons
 /obj/item/storage/pouch/medium_generic/psionic
 	name = "Woven Pouch C-7v89"
-	desc = "A small on the outside exsperimental hand bag only useable for psionic users."
+	desc = "A small on the outside experimental hand bag only useable for psionic users."
 	icon_state = "medium_generic"
 	item_state = "medium_psion"
 	storage_slots = null //Uses generic capacity
