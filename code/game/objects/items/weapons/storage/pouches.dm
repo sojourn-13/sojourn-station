@@ -158,7 +158,7 @@
 
 /obj/item/storage/pouch/medium_generic/psionic/verb/toggle_repression()
 	set name = "Toggle Storage Repression"
-	set desc = "Repression makes it so at higher storage points you may put in larger items, at the cost of."
+	set desc = "Repression makes it so at higher storage points you may put in larger items, at the cost of losing some storage slot options (i.e Belt/Pockets)."
 	set category = "Object"
 
 	if(contents.len >= 1)
