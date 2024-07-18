@@ -149,7 +149,7 @@
 	price_tag = 800
 	level = BELOW_PLATING_LEVEL //As we can
 	matter = list(MATERIAL_CLOTH = 15, MATERIAL_PLASMA = 1)
-	var/psionic_storage_cap = DEFAULT_SMALL_STORAGE
+	var/psionic_storage_cap = DEFAULT_SMALL_STORAGE + 5 //Starting out the peak is 1.5 medium pouches
 	var/psionic_scaling_mult = 1
 	var/psionic_storage = 5
 	var/repression = TRUE
