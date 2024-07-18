@@ -1,6 +1,7 @@
 /obj/item/modular_computer/tablet/nanogate
 	action_button_name = "Access Nanogate Interface"
 	icon_state = "generic"
+	icon_state_unpowered = "generic"
 	screen_light_range = 0 //So our nanogate users don't look like they work for the federal government
 	screen_light_strength = 0
 	var/obj/item/organ/internal/nanogate/linked_nanogate

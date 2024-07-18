@@ -357,7 +357,7 @@
 			if(ind >= 2 && ind <= queue.len)
 				queue.Swap(ind, ind - 1)
 			. = TRUE
-		
+
 		if("move_down_queue")
 			var/ind = text2num(params["index"])
 			if(ind >= 1 && ind <= queue.len-1)
@@ -516,6 +516,10 @@
 
 	if(!length(eating.get_matter()))
 		to_chat(user, SPAN_WARNING("\The [eating] does not contain significant amounts of useful materials and cannot be accepted."))
+		return FALSE
+
+	if(istype(eating, /obj/item/stack/ore))
+		to_chat(user, SPAN_WARNING("\The [eating] can not be accepted do to being unprocessed."))
 		return FALSE
 
 	if(istype(eating, /obj/item/computer_hardware/hard_drive/portable))

@@ -1,0 +1,13 @@
+{
+	"file": "code/modules/unit_tests/_unit_tests.dm",
+	"scannable_directory": "code/modules/unit_tests/",
+	"subdirectories": false,
+	"excluded_files": [
+		"find_reference_sanity.dm",
+		"glasses_vision.dm",
+		"lootpanel.dm",
+		"observation_tests.dm",
+		"zas_tests.dm"
+	],
+	"forbidden_includes": []
+}

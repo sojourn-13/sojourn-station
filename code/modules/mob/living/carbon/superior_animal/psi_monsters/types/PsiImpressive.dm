@@ -18,7 +18,9 @@
 	death_spawn_gift = /obj/random/cluster/psi_monster/maggot_death_gasp
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
 	armor_divisor = 1
+
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"
