@@ -13516,7 +13516,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "cLK" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -44703,9 +44703,6 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "iOe" = (
-/obj/machinery/camera/network/cargo{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
