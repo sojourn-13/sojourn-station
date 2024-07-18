@@ -260,7 +260,7 @@
 
 /obj/random/psi_catalyst/ponderous/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 85,
+				/obj/random/psi_catalyst = 20,
 				/obj/item/device/psionic_catalyst/summan_trash_pile = 10,
 				/obj/item/device/psionic_catalyst/trash_pile_compress = 10,
 				/obj/item/device/psionic_catalyst/trash_pile_exploid = 10))
@@ -271,10 +271,10 @@
 
 /obj/random/psi_catalyst/flesh_behemoth/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 85,
-				/obj/item/device/psionic_catalyst/summan_trash_pile = 10,
+				/obj/random/psi_catalyst = 20,
+				/obj/item/device/psionic_catalyst/needle_n_thread = 10,
 				/obj/item/device/psionic_catalyst/purefie = 10,
-				/obj/item/device/psionic_catalyst/trash_pile_exploid = 10))
+				/obj/item/device/psionic_catalyst/temp_regulate = 10))
 
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz
