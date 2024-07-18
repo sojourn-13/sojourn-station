@@ -54478,10 +54478,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"kMD" = (
-/obj/machinery/atmospherics/unary/vent_pump,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/lab)
 "kMG" = (
 /obj/structure/table/glass,
 /obj/random/medical/low_chance,
@@ -140176,7 +140172,7 @@ abl
 rLm
 rLm
 rLm
-kMD
+rLm
 rLm
 qfi
 xnE
