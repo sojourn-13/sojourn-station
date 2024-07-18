@@ -83,7 +83,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	price_tag = 900
-		max_upgrades = 1
+	max_upgrades = 1
 	armor_list = list(
 		melee = 10,
 		bullet = 11,
