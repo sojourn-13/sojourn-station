@@ -160,6 +160,7 @@
 	set name = "Toggle Storage Repression"
 	set desc = "Repression makes it so at higher storage points you may put in larger items, at the cost of losing some storage slot options (i.e Belt/Pockets)."
 	set category = "Object"
+	set src in view(1)
 
 	if(contents.len >= 1)
 		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well items are inside [src]."))
