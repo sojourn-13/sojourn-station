@@ -99137,7 +99137,7 @@
 	dir = 4
 	},
 /obj/structure/multiz/stairs/active,
-/turf/simulated/wall/r_wall,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "tyv" = (
 /obj/machinery/door/airlock/glass_engineering{
@@ -111051,7 +111051,7 @@
 	dir = 4
 	},
 /obj/structure/multiz/stairs/enter,
-/turf/simulated/wall/r_wall,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "vKU" = (
 /obj/structure/window/reinforced{
