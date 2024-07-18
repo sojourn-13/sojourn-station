@@ -118,7 +118,7 @@
 
 /obj/item/clothing/suit/storage/vest/breach2
 	name = "chemical breacher vest"
-	desc = "A reinforced combat vest from solfed surplus stockpiles. Originally an enviroment protection suit clad in armor plating for full body protection and points for mounting specialist equipment. This comes with enough pouches to hold any mission essential equipment like pens, pencils, chocolate or a brick of plastique."
+	desc = "A reinforced combat vest from solfed surplus stockpiles. Originally an enviroment protection suit clad in armor plating for full body protection and points for mounting specialist equipment. This comes with enough pouches to hold any mission essential equipment like pens, pencils, chocolate or a brick of plastique at the cost of some range of movement."
 	icon_state = "breach2"
 	item_state = "breach2"
 	blood_overlay_type = "armor"
@@ -126,6 +126,7 @@
 	stiffness = LIGHT_STIFFNESS
 	price_tag = 1300
 	max_upgrades = 0
+	slowdown = 0.1
 	armor_list = list(
 		melee = 10,
 		bullet = 11,
