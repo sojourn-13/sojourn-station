@@ -9053,16 +9053,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/disposalpipe/junction/yjunction{
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "bQl" = (
@@ -25128,17 +25121,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "eWY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/lab)
+/turf/simulated/floor/wood,
+/area/nadezhda/command/cro)
 "eXi" = (
 /obj/structure/table/woodentable,
 /obj/item/book/manual/fiction/theinvisibleman,
@@ -25266,6 +25253,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"eYh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/command/cro)
 "eYl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -73829,6 +73822,25 @@
 /obj/structure/table/bar_special,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm1)
+"ozZ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/junction/yjunction{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/lab)
 "oAo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair{
@@ -94180,13 +94192,13 @@
 /area/nadezhda/crew_quarters)
 "sxn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
@@ -176752,7 +176764,7 @@ rEy
 ggs
 pIe
 dxK
-bQk
+ozZ
 dVz
 cPh
 sxn
@@ -176954,10 +176966,10 @@ pJj
 dib
 pIe
 nhN
-eWY
+bQk
 npr
 xYL
-iHs
+eYh
 iIp
 gNE
 bpa
@@ -177156,10 +177168,10 @@ xkn
 vwS
 qBg
 meF
-eWY
+bQk
 npr
 bpP
-pOh
+eWY
 iHs
 fAk
 bpa
@@ -177358,7 +177370,7 @@ dPU
 ycC
 dPU
 mOx
-eWY
+bQk
 npr
 qWI
 awz
