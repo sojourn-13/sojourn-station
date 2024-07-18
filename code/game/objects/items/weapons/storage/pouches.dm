@@ -141,8 +141,8 @@
 /obj/item/storage/pouch/medium_generic/psionic
 	name = "Woven Pouch C-7v89"
 	desc = "A small on the outside experimental hand bag only useable for psionic users."
-	icon_state = "medium_generic"
-	item_state = "medium_psion"
+	icon_state = "medium_psion"
+	item_state = "medium_generic"
 	storage_slots = null //Uses generic capacity
 	max_storage_space = 1 // This increases in size based on the user
 	max_w_class = ITEM_SIZE_TINY //Increases in size with user
