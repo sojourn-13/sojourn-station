@@ -12064,7 +12064,7 @@
 /obj/structure/multiz/stairs/enter/bottom,
 /obj/machinery/door/window{
 	name = "Server Room Door";
-	req_access = list(16);
+	req_access = list(30);
 	dir = 2
 	},
 /turf/simulated/floor/tiled/white,
@@ -19676,10 +19676,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "dVz" = (
-/obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
-	req_access = list(30)
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19690,6 +19686,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment{
 	dir = 2
+	},
+/obj/machinery/door/airlock/command{
+	id_tag = "crodoor2";
+	name = "Soteria Research Overseer's Office";
+	req_access = list(30)
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/cro)
@@ -21687,7 +21688,9 @@
 	icon_state = "shutter0";
 	id = "research_shutters";
 	name = "R&D Privacy Shutters";
-	opacity = 0
+	opacity = 0;
+	layer = 3.2;
+	open_layer = 3.2
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -53109,7 +53112,7 @@
 	},
 /obj/machinery/door/window{
 	name = "Server Room Door";
-	req_access = list(16);
+	req_access = list(30);
 	dir = 2
 	},
 /turf/simulated/floor/tiled/white/monofloor,
@@ -76836,11 +76839,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/captain/quarters)
 "pdU" = (
-/obj/machinery/door/airlock/command{
-	id_tag = "crodoor";
-	name = "Soteria Research Overseer's Office";
-	req_access = list(30)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 1
 	},
@@ -76849,6 +76847,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/command{
+	name = "Soteria Research Overseer's Office";
+	req_access = list(30)
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/cro)
