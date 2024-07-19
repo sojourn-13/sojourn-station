@@ -19688,7 +19688,7 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/command{
-	id_tag = "crodoor2";
+	id_tag = "crodoor";
 	name = "Soteria Research Overseer's Office";
 	req_access = list(30)
 	},
