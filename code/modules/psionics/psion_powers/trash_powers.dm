@@ -14,7 +14,7 @@
 		var/turf/T = get_step(user, user.dir)
 		if(T)
 			to_chat(user, "Your mind works to gather random junk fallin in deepmaints to bring them to your current location.")
-			new /obj/random/scrap/moderate_weighted(T.contents)
+			new /obj/random/scrap/moderate_weighted(T)
 
 /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress()
 	set category = "Psionic powers"

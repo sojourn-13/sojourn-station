@@ -218,6 +218,7 @@
 		var/obj/item/organ/internal/psionic_tumor/PT = psionc.first_organ_by_process(BP_PSION)
 		if(PT)
 			slot_flags = initial(slot_flags)
+			w_class = initial(w_class)
 			failed_to_be_psion = FALSE
 			//This balancing is REALLY weird so make sure you know what your doing before tweaking
 			//Basically every psionic point is a "tiny item of space"
@@ -234,13 +235,17 @@
 				//We are matching large pouches
 					max_w_class = ITEM_SIZE_NORMAL
 					slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+					w_class = ITEM_SIZE_BULKY
+
 				//We are matching backpacks pouches
 				if(max_storage_space >= 30) //DEFAULT_BULKY_STORAGE
 					max_w_class = ITEM_SIZE_BULKY
 					slot_flags = SLOT_DENYPOCKET | SLOT_BACK
+					w_class = ITEM_SIZE_HUGE
 
 
 	if(failed_to_be_psion)
+		w_class = initial(w_class)
 		max_storage_space = 1 // this is set to one do stop devide by 0
 		max_w_class = ITEM_SIZE_TINY //Increases in size with user
 		slot_flags = SLOT_BELT | SLOT_DENYPOCKET //non-psionics cant hold this in a pocket without psionic first doing some handing over

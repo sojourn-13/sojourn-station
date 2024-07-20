@@ -139,7 +139,7 @@
 
 			if("cognitive_potential_max_bonus")
 				if(istype(H.w_uniform , /obj/item/clothing/under/psionic_cloths))
-					var/obj/item/clothing/under/psionic_cloths/PC = H.glasses
+					var/obj/item/clothing/under/psionic_cloths/PC = H.w_uniform
 					bonus_return += PC.cognitive_potential
 				return bonus_return
 
