@@ -56260,8 +56260,16 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "lgF" = (
-/turf/space,
-/area/nadezhda/medical/organ_lab)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "lgN" = (
 /obj/machinery/light{
 	dir = 4
@@ -182467,7 +182475,7 @@ nMZ
 nMZ
 fWM
 fWM
-lgF
+fWM
 fWM
 nMZ
 nMZ
@@ -182843,7 +182851,7 @@ eqq
 whU
 klO
 fls
-kYc
+lgF
 fls
 wiu
 gzw
