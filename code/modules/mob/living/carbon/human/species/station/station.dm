@@ -409,6 +409,7 @@
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
 	permitted_wings = list("Harpy Wings",
+		"Harpy Wings Two Tone",
 		"Fantail Wings",
 		"Feathered Wings, Small",
 		"Feathered Wings, Medium",
