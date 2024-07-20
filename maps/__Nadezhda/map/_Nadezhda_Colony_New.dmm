@@ -9427,13 +9427,13 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/inside_colony)
 "bUS" = (
-/obj/machinery/camera/network/colony_underground,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/directions/generic{
 	dir = 4;
 	name = "stairs sign";
 	pixel_y = 32
 	},
+/obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "bUW" = (
@@ -183045,8 +183045,8 @@ erG
 mpm
 mpm
 mpm
-whU
 bUS
+whU
 tnO
 mAJ
 whU
