@@ -94315,10 +94315,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "sxQ" = (
-/obj/machinery/smelter/cargo_t2_parts{
-	input_side = 1;
-	output_side = 4
-	},
+/obj/machinery/smelter/cargo_t2_parts,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_waste)
 "sxU" = (
