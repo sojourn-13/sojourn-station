@@ -837,7 +837,6 @@
 	armor_divisor = 1.5
 	embed = FALSE
 	sharp = FALSE
-	wounding_mult = WOUNDING_WIDE
 	step_delay = 1.65
 	affective_damage_range = 5
 	affective_ap_range = 2
