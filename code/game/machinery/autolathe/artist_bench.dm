@@ -219,7 +219,7 @@
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 				R.max_shells = rand(3,9)
-				R.fire_rate = rand(1,3)
+				R.fire_delay = rand(1,3)
 
 			if("rifle")
 				R.caliber = pick(CAL_HRIFLE, CAL_LRIFLE, CAL_RIFLE)
