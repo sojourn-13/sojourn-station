@@ -33,6 +33,8 @@
 
 /obj/machinery/smelter/cargo_t2_parts
 	input_side = WEST
+	output_side = NORTH
+	refuse_output_side = EAST
 
 /obj/machinery/smelter/cargo_t2_parts/Initialize()
 	. = ..()
