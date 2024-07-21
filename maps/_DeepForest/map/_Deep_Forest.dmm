@@ -35,6 +35,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
+"abl" = (
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/asteroid/rogue)
 "aca" = (
 /obj/structure/curtain/open,
 /obj/random/junk/nondense,
@@ -123,6 +126,22 @@
 /obj/structure/boulder,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"agQ" = (
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "ahb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -932,17 +951,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "aGK" = (
-/obj/machinery/door/blast/regular/open,
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
+/obj/structure/multiz/stairs{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
-/obj/structure/flora/big/bush1{
-	pixel_x = -15
-	},
-/turf/simulated/floor/tiled/steel/brown_perforated,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/plating/under,
 /area/asteroid/rogue)
 "aGT" = (
 /turf/simulated/floor/tiled/white/panels,
@@ -1466,6 +1480,27 @@
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
+"aXN" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "aXQ" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -1682,6 +1717,22 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"bfN" = (
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "bfY" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 4
@@ -1744,6 +1795,9 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /obj/structure/catwalk,
+/obj/item/trash/material/metal{
+	icon_state = "metal2"
+	},
 /turf/simulated/floor/plating/under,
 /area/asteroid/rogue)
 "biJ" = (
@@ -2258,6 +2312,10 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"bza" = (
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "bzc" = (
 /obj/random/dungeon_ammo/low_chance,
 /obj/random/dungeon_ammo/low_chance,
@@ -2332,6 +2390,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"bAW" = (
+/turf/simulated/floor/tiled/white/monofloor,
+/area/asteroid/rogue)
 "bBT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
@@ -2766,6 +2827,10 @@
 /obj/structure/grille,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"bRc" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "bRy" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/asteroid/grass,
@@ -3009,6 +3074,10 @@
 /obj/random/tool/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"bZM" = (
+/obj/mecha/working/ripley,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/asteroid/rogue)
 "bZN" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -3155,6 +3224,9 @@
 /obj/structure/flora/small/grassb5,
 /turf/simulated/wall/wood_old,
 /area/colony/exposedsun/pastgate)
+"cfv" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/asteroid/rogue)
 "cfS" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/secure/briefcase,
@@ -3355,6 +3427,14 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/flooded,
 /area/asteroid/rogue)
+"ckV" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "clb" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/cloth/armor/low_chance,
@@ -3482,6 +3562,21 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"cpc" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/table/rack/shelf,
+/obj/random/ammo/shotgun/low_chance,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "cpm" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/reagent_containers/food/condiment/enzyme,
@@ -4904,6 +4999,10 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"dgx" = (
+/obj/structure/sign/warning/nosmoking/small,
+/turf/simulated/wall/r_wall,
+/area/asteroid/rogue)
 "dgA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -5975,6 +6074,13 @@
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"dOD" = (
+/obj/structure/disposalconstruct{
+	dir = 4
+	},
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "dOM" = (
 /obj/item/bee_pack,
 /obj/structure/table/standard,
@@ -6070,6 +6176,13 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"dTl" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "dTs" = (
 /obj/structure/flora/small/bushb1,
 /turf/unsimulated/mineral,
@@ -6111,6 +6224,15 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"dVT" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "dWh" = (
 /obj/structure/flora/big/bush1,
 /turf/unsimulated/wall/jungle,
@@ -6893,6 +7015,10 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"evq" = (
+/obj/structure/boulder,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/asteroid/rogue)
 "evT" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -6944,6 +7070,11 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"ewG" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "ewS" = (
 /obj/structure/salvageable/server_os,
 /turf/simulated/floor/plating/under,
@@ -7056,6 +7187,17 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"eBl" = (
+/obj/structure/boulder,
+/turf/simulated/floor/tiled/steel/danger,
+/area/asteroid/rogue)
+"eBC" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/asteroid/rogue)
 "eBR" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -7255,6 +7397,17 @@
 /obj/random/tool_upgrade/rare/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"eKO" = (
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/structure/boulder,
+/obj/item/trash/material/metal{
+	icon_state = "metal3"
+	},
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "eKP" = (
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -7578,6 +7731,20 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"eUT" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "eUU" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -7649,6 +7816,17 @@
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"eVP" = (
+/obj/structure/girder{
+	name = "Crane Claw";
+	desc = "A mechanical claw of a crane, riddled with all sorts of hydraulic tubes and intricate machinery";
+	color = "#B7410E"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/asteroid/rogue)
 "eVV" = (
 /obj/structure/table/rack/shelf,
 /obj/item/device/radio,
@@ -9621,6 +9799,23 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"gki" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "gkM" = (
 /obj/structure/sign/neon/beer,
 /turf/simulated/wall/r_wall,
@@ -9838,6 +10033,24 @@
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"grl" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/random/cigarettes,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "grE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/watertank/huge/derelict,
@@ -10788,6 +11001,29 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"gWt" = (
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/head/hardhat,
+/obj/item/clothing/under/overalls,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/mask/gas/old,
+/obj/item/tank/oxygen,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "gWu" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/mineral/planet,
@@ -11061,6 +11297,14 @@
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"hfF" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/corner_oldtile/white,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "hgL" = (
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -11400,6 +11644,10 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"hpL" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "hqp" = (
 /obj/item/ammo_magazine/ammobox/antim_small,
 /obj/item/bedsheet/brown,
@@ -11460,6 +11708,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/asteroid/rogue)
 "htJ" = (
@@ -11841,6 +12090,13 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"hGg" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "hGj" = (
 /obj/structure/table/standard,
 /obj/random/medical_lowcost/low_chance,
@@ -12979,6 +13235,9 @@
 /obj/random/cloth/armor,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"ipc" = (
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/asteroid/rogue)
 "ipv" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/rock/grey,
@@ -15949,6 +16208,13 @@
 /obj/random/firstaid/low_chance,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
+"kkH" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/decal/mecha_wreckage/ripley,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/asteroid/rogue)
 "kkW" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/syndie_kit/spy,
@@ -16324,6 +16590,23 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"kzj" = (
+/obj/effect/floor_decal/border/techfloor/hole{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/hole{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/hole/right{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/hole/right{
+	dir = 8
+	},
+/turf/simulated/wall/untinted/onestar_reinforced{
+	name = "Loading Crane"
+	},
+/area/asteroid/rogue)
 "kzu" = (
 /obj/effect/decal/cleanable/filth,
 /obj/random/junk,
@@ -17196,6 +17479,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"lfp" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "lfF" = (
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -17606,6 +17898,28 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"luL" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/structure/dispenser/oxygen,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "luO" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/small/bushb1,
@@ -17663,6 +17977,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"lws" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "lwK" = (
 /obj/machinery/door/airlock/freezer,
 /turf/simulated/floor/tiled/techmaint_cargo,
@@ -17967,6 +18289,7 @@
 /obj/structure/catwalk{
 	icon_state = "catwalk-broken"
 	},
+/obj/item/scrap_lump,
 /turf/simulated/floor/plating/under,
 /area/asteroid/rogue)
 "lHB" = (
@@ -18028,6 +18351,13 @@
 /obj/random/mob/render/low_chance,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"lJv" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "lJy" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -18511,6 +18841,12 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"lXO" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/machinery/floodlight,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "lXT" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
@@ -18876,6 +19212,21 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"mmO" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/item/device/radio/phone,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "mmY" = (
 /obj/item/remains,
 /obj/effect/decal/cleanable/dirt,
@@ -19508,6 +19859,7 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/item/scrap_lump,
 /turf/simulated/floor/asteroid/grass,
 /area/asteroid/rogue)
 "mHA" = (
@@ -20190,6 +20542,21 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"naJ" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/table/rack/shelf,
+/obj/random/ammo_fancy,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "naL" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -20629,6 +20996,21 @@
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
+"nnj" = (
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/tool/baton/mini,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "nnn" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -20670,6 +21052,9 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"nnP" = (
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/asteroid/rogue)
 "nnU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/tiled/white,
@@ -21576,6 +21961,16 @@
 /obj/structure/invislight,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"nSz" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/catwalk,
+/obj/item/trash/material/metal,
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "nTA" = (
 /turf/simulated/floor/asteroid/grass/colonialjungle4,
 /area/nadezhda/outside/meadow)
@@ -21910,6 +22305,23 @@
 "ofZ" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"ogb" = (
+/obj/effect/floor_decal/border/techfloor/hole{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/hole{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/hole/right{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/hole/right{
+	dir = 8
+	},
+/turf/simulated/wall/untinted/onestar_reinforced{
+	name = "Loading Crane"
+	},
+/area/asteroid/rogue)
 "ogc" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -22297,6 +22709,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"osJ" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/asteroid/rogue)
 "osM" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/random/pouch/hardcase,
@@ -22486,6 +22904,12 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"owm" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/effect/decal/mecha_wreckage/ripley,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "owt" = (
 /obj/item/mine/armed,
 /turf/simulated/floor/rock/manmade/ruin2,
@@ -23051,6 +23475,9 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"oMS" = (
+/turf/simulated/floor/tiled/steel/danger,
+/area/asteroid/rogue)
 "oNj" = (
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -23108,6 +23535,12 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"oQn" = (
+/obj/structure/flora/big/bush1{
+	pixel_x = -15
+	},
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/asteroid/rogue)
 "oQy" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/mineral/planet,
@@ -23361,6 +23794,10 @@
 "oYC" = (
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/mineral,
+/area/asteroid/rogue)
+"oYU" = (
+/obj/structure/sign/warning/nosmoking/largeburnt,
+/turf/simulated/wall/r_wall,
 /area/asteroid/rogue)
 "oYZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -24029,6 +24466,10 @@
 /obj/item/tool/hammer/dumbbell,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"pvx" = (
+/obj/structure/sign/warning/secure_area/small,
+/turf/simulated/wall/r_wall,
+/area/asteroid/rogue)
 "pvM" = (
 /obj/random/turret/os,
 /turf/simulated/floor/bluegrid,
@@ -24094,6 +24535,16 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"pxa" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/structure/boulder,
+/obj/item/trash/material/metal{
+	icon_state = "metal2"
+	},
+/turf/simulated/floor/plating/under,
+/area/asteroid/rogue)
 "pxf" = (
 /obj/structure/lattice,
 /obj/structure/catwalk{
@@ -24378,6 +24829,12 @@
 /obj/structure/scrap_cube,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"pGc" = (
+/obj/structure/catwalk,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "pGf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -25164,6 +25621,15 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"qct" = (
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/turf/simulated/wall/untinted/onestar_reinforced{
+	name = "Loading Crane"
+	},
+/area/asteroid/rogue)
 "qdm" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/excelsior/mixed{
@@ -26511,6 +26977,22 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"qVB" = (
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/machinery/door/window{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "qVJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/remains,
@@ -27149,6 +27631,13 @@
 /obj/effect/gibspawner,
 /turf/simulated/floor/reinforced,
 /area/asteroid/rogue)
+"ruB" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/turf/simulated/floor/tiled/steel/danger,
+/area/asteroid/rogue)
 "ruE" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -27329,6 +27818,9 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"rzw" = (
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/asteroid/rogue)
 "rzG" = (
 /obj/structure/closet/crate/trashcart,
 /obj/structure/boulder,
@@ -27497,6 +27989,23 @@
 /obj/structure/sign/warning/caution/small2,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
+"rDg" = (
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "rDk" = (
 /obj/machinery/light{
 	dir = 1
@@ -27634,6 +28143,12 @@
 "rHY" = (
 /turf/unsimulated/mineral,
 /area/colony/exposedsun/pastgate)
+"rIr" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/asteroid/rogue)
 "rIw" = (
 /obj/structure/flora/big/rocks1,
 /obj/effect/overlay/water,
@@ -27749,6 +28264,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"rNG" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/asteroid/rogue)
 "rOc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/data,
@@ -28634,6 +29155,10 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay";
 	dynamic_lighting = 1
 	})
+"smF" = (
+/obj/structure/sign/warning/nosmoking/large,
+/turf/simulated/wall/r_wall,
+/area/asteroid/rogue)
 "smK" = (
 /obj/structure/table/rack/shelf,
 /obj/random/junkfood,
@@ -29361,6 +29886,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"sHF" = (
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/obj/effect/decal/mecha_wreckage/ripley,
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/flooded,
+/area/asteroid/rogue)
 "sHM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/greengrid,
@@ -30304,6 +30836,8 @@
 /obj/effect/floor_decal/corner_oldtile{
 	dir = 4
 	},
+/obj/item/paper_bin,
+/obj/item/pen/multi,
 /turf/simulated/floor/tiled/cafe,
 /area/asteroid/rogue)
 "toy" = (
@@ -30807,6 +31341,25 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"tEB" = (
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/structure/table/rack,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "tEI" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -32726,6 +33279,12 @@
 /obj/random/scrap/dense_even,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"uUi" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/danger,
+/area/asteroid/rogue)
 "uUm" = (
 /turf/simulated/floor/asteroid/grass/colonialjungle1,
 /area/nadezhda/dungeon/outside/zoo)
@@ -32885,6 +33444,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /obj/machinery/door/blast/regular/open,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/asteroid/rogue)
 "vag" = (
@@ -35103,6 +35663,12 @@
 /obj/item/material/shard,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"wGI" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/asteroid/rogue)
 "wGX" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
@@ -35550,6 +36116,21 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"wXo" = (
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/structure/table/rack/shelf,
+/obj/random/ammo/shotgun/low_chance,
+/turf/simulated/floor/tiled/cafe,
+/area/asteroid/rogue)
 "wXs" = (
 /obj/effect/decal/cleanable/rubble,
 /mob/living/simple_animal/hostile/scarybat,
@@ -35869,8 +36450,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "xgN" = (
-/obj/machinery/floodlight,
-/turf/simulated/floor/plating/under,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/flooded,
 /area/asteroid/rogue)
 "xhC" = (
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -36357,6 +36940,18 @@
 "xAR" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
+/area/asteroid/rogue)
+"xAU" = (
+/obj/structure/girder{
+	name = "Crane Claw";
+	desc = "A mechanical claw of a crane, riddled with all sorts of hydraulic tubes and intricate machinery";
+	color = "#B7410E"
+	},
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/asteroid/rogue)
 "xBk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37630,21 +38225,21 @@ qbU
 qbU
 qbU
 qbU
+coU
+coU
+rKz
+opQ
+opQ
+opQ
+rKz
+rKz
+rKz
+rKz
+rKz
+rKz
 qbU
 qbU
-rKz
-opQ
-opQ
-opQ
-rKz
-rKz
-rKz
-rKz
-rKz
-rKz
-rKz
-rKz
-rKz
+qbU
 rKz
 rKz
 rKz
@@ -37839,7 +38434,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 kwa
@@ -37851,27 +38446,27 @@ uVX
 mtY
 vcg
 aYw
-uVX
-uVX
-uVX
+qbU
+qbU
+qbU
 xgN
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+dVT
+dVT
+dVT
+dVT
+idK
+luL
+gWt
+gWt
+tEB
+rIr
+bZM
 rKz
 coU
 coU
 coU
 rKz
-bQf
+rKz
 bQf
 bQf
 bQf
@@ -38048,7 +38643,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -38060,27 +38655,27 @@ uVX
 mtY
 wqh
 aYw
-uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+sHF
+xgN
+xgN
+lXO
+pGc
+pGc
+pGc
+pGc
+aGK
+rDg
+rDg
+rDg
+rDg
+hpL
+hpL
 rKz
 cfW
 cfW
 cfW
 rKz
-bQf
+rKz
 bQf
 bQf
 bQf
@@ -38257,7 +38852,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -38269,27 +38864,27 @@ uVX
 mtY
 lSY
 syv
-uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+idK
+ewG
+ewG
+ewG
+pGc
+pGc
+pGc
+pGc
+aGK
+rDg
+rDg
+rDg
+rDg
+kkH
+bAW
 rKz
 tzH
 lVY
 pgA
 rKz
-bQf
+rKz
 bQf
 bQf
 bQf
@@ -38466,7 +39061,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -38480,17 +39075,17 @@ jGS
 aYw
 uVX
 uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+ewG
+ewG
+pGc
+pGc
+pGc
+pGc
+lfp
+aXN
+rDg
+rDg
+rDg
 rKz
 rKz
 rKz
@@ -38675,7 +39270,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -38688,22 +39283,22 @@ mtY
 vcg
 aYw
 uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+ewG
+ewG
+ewG
+pGc
+pGc
+pGc
+pGc
+lfp
+hfF
+pxa
+rDg
+rDg
 aSi
 fTm
 mGZ
-uzW
+nSz
 vhI
 tAJ
 eOs
@@ -38884,7 +39479,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -38897,18 +39492,18 @@ kwa
 cGB
 iIG
 uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+ewG
+ewG
+ewG
+pGc
+pGc
+pGc
+pGc
+aGK
+dOD
+qbU
+dTl
+rDg
 kGw
 fTm
 vCu
@@ -39093,7 +39688,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -39106,18 +39701,18 @@ mtY
 vcg
 aYw
 uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+ewG
+owm
+ewG
+pGc
+pGc
+pGc
+pGc
+aGK
+qbU
+qbU
+qbU
+hGg
 aSi
 cqG
 mGZ
@@ -39125,7 +39720,7 @@ lHA
 uJD
 lTv
 bcG
-cqG
+fTm
 aSi
 bQf
 bQf
@@ -39302,7 +39897,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 mtY
@@ -39313,20 +39908,20 @@ uVX
 uVX
 mtY
 dqi
-aYw
-uVX
-uVX
-uVX
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qct
+ewG
+ewG
+ewG
+ewG
+lws
+lws
+lws
+lws
+idK
+qbU
+qbU
+dOD
+eKO
 rKz
 rKz
 rKz
@@ -39511,7 +40106,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 era
@@ -39543,7 +40138,7 @@ mGZ
 dIi
 mGZ
 rKz
-bQf
+rKz
 bQf
 bQf
 bQf
@@ -39720,7 +40315,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 rKz
 coU
@@ -39748,7 +40343,7 @@ rKz
 rKz
 rKz
 rKz
-aGK
+loc
 loc
 gDZ
 rKz
@@ -39929,7 +40524,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 coU
 beR
@@ -39944,34 +40539,34 @@ bwK
 uVX
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+qbU
+qbU
+qbU
+qbU
+qbU
+qbU
+bza
+oMS
+oMS
+oMS
+oMS
 rKz
-aSi
+oQn
 pjj
-aSi
+evq
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+qbU
+qbU
+qbU
+bza
+rzw
+abl
+rzw
+abl
+rzw
+abl
 rKz
 bQf
 bQf
@@ -40138,7 +40733,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 coU
 lBv
@@ -40153,34 +40748,34 @@ aYw
 dpk
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+bza
+qbU
+qbU
+qbU
+qbU
+bza
+bza
+oMS
+oMS
+oMS
+oMS
+oMS
+cfv
+cfv
+bza
+qbU
+qbU
+qbU
+qbU
+bza
+bza
+abl
+abl
+abl
+abl
+abl
+abl
 rKz
 bQf
 bQf
@@ -40347,7 +40942,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 rKz
 coU
 hIO
@@ -40361,36 +40956,36 @@ eRe
 aYw
 wqG
 rKz
-rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-rKz
+oYU
+bza
+bza
+qbU
+bza
+bza
+bza
+bza
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+cfv
+cfv
+abl
+bza
+qbU
+bza
+bza
+bza
+abl
+rzw
+abl
+rzw
+abl
+abl
+abl
+smF
 bQf
 bQf
 bQf
@@ -40556,8 +41151,8 @@ bTm
 fcE
 qbU
 qbU
-qbU
-rKz
+coU
+coU
 oYC
 eMX
 idK
@@ -40571,34 +41166,34 @@ aYw
 qbU
 rKz
 rKz
+oMS
 bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+bza
+bza
+oMS
+oMS
+oMS
+oMS
+ruB
+ruB
+ruB
+oMS
+oMS
+wGI
+wGI
+abl
+abl
+bza
+eBC
+eBC
+eBC
+abl
+abl
+abl
+abl
+abl
+abl
+abl
 rKz
 bQf
 bQf
@@ -40765,8 +41360,8 @@ bTm
 fcE
 lKW
 dQF
-dQF
-rKz
+coU
+coU
 coU
 qyE
 qIP
@@ -40788,6 +41383,9 @@ ivd
 ivd
 ivd
 ivd
+ogb
+ogb
+ogb
 ivd
 ivd
 ivd
@@ -40795,12 +41393,9 @@ ivd
 ivd
 ivd
 ivd
-ivd
-ivd
-ivd
-ivd
-ivd
-ivd
+ogb
+ogb
+ogb
 ivd
 ivd
 ivd
@@ -40989,34 +41584,34 @@ rKz
 rKz
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+lJv
+lJv
+lJv
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+lJv
+lJv
+lJv
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
 rKz
 bQf
 bQf
@@ -41184,7 +41779,7 @@ rVc
 rSp
 rSp
 dQF
-rKz
+pvx
 rKz
 tfO
 bTm
@@ -41192,40 +41787,40 @@ oCX
 oCX
 oCX
 rKz
-bQf
-bQf
-bQf
+hpL
+hpL
+hpL
 fTm
-bQf
+hpL
 fTm
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+ipc
+aSi
+aSi
+ipc
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
 rKz
 bQf
 bQf
@@ -41401,40 +41996,40 @@ kcw
 kcw
 kcw
 uXE
-bQf
-bQf
-bQf
+nnP
+nnP
+nnP
 fTm
-bQf
+nnP
 fTm
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+ipc
+bAW
+ipc
+eVP
+bAW
+ipc
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
 rKz
 bQf
 bQf
@@ -41610,40 +42205,40 @@ otT
 otT
 otT
 uXE
-bQf
-bQf
-bQf
+nnP
+nnP
+nnP
 fTm
-bQf
+nnP
 fTm
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+ipc
+bAW
+ipc
+xAU
+bAW
+ipc
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
+ipc
+bAW
+ipc
+aSi
+aSi
 rKz
 bQf
 bQf
@@ -41811,48 +42406,48 @@ wZR
 rVc
 rSp
 dQF
+pvx
 rKz
-rKz
 oCX
 oCX
 oCX
 oCX
 oCX
 rKz
-bQf
-bQf
-bQf
+hpL
+hpL
+hpL
 fTm
-bQf
+hpL
 fTm
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+ipc
+aSi
+aSi
+ipc
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
+bAW
+bAW
+bAW
+aSi
+aSi
 rKz
 bQf
 bQf
@@ -42022,7 +42617,7 @@ rSp
 dQF
 rKz
 rKz
-rKz
+dgx
 toc
 toc
 toc
@@ -42034,34 +42629,34 @@ rKz
 rKz
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+ckV
+ckV
+ckV
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+ckV
+ckV
+ckV
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
+bRc
 rKz
 bQf
 bQf
@@ -42251,6 +42846,9 @@ gtn
 gtn
 gtn
 gtn
+kzj
+kzj
+kzj
 gtn
 gtn
 gtn
@@ -42258,12 +42856,9 @@ gtn
 gtn
 gtn
 gtn
-gtn
-gtn
-gtn
-gtn
-gtn
-gtn
+kzj
+kzj
+kzj
 gtn
 gtn
 gtn
@@ -42442,9 +43037,9 @@ rKz
 rKz
 tot
 hbp
+bfN
 hbp
-hbp
-tot
+mmO
 rKz
 bQf
 bQf
@@ -42452,34 +43047,34 @@ bQf
 bQf
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+bza
+bza
+oMS
+oMS
+oMS
+oMS
+oMS
+uUi
+uUi
+uUi
+oMS
+oMS
+osJ
+osJ
+abl
+abl
+abl
+rNG
+rNG
+rNG
+abl
+abl
+abl
+abl
+abl
+abl
+abl
 rKz
 bQf
 bQf
@@ -42649,11 +43244,11 @@ dQF
 dQF
 rKz
 rKz
-tot
-hbp
-hbp
-hbp
-tot
+grl
+agQ
+qVB
+agQ
+gki
 rKz
 bQf
 bQf
@@ -42661,35 +43256,35 @@ bQf
 bQf
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-rKz
+qbU
+qbU
+bza
+bza
+bza
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+cfv
+cfv
+abl
+rzw
+abl
+rzw
+abl
+rzw
+abl
+bza
+bza
+bza
+abl
+rzw
+abl
+smF
 bQf
 bQf
 bQf
@@ -42858,11 +43453,11 @@ dQF
 dQF
 rKz
 rKz
+wXo
 hbp
 hbp
 hbp
-hbp
-hbp
+nnj
 rKz
 bQf
 bQf
@@ -42870,34 +43465,34 @@ bQf
 bQf
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+qbU
+qbU
+qbU
+qbU
+bza
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+cfv
+cfv
+abl
+abl
+abl
+abl
+abl
+abl
+abl
+bza
+qbU
+qbU
+bza
+abl
+abl
 rKz
 bQf
 bQf
@@ -43067,11 +43662,11 @@ dQF
 dQF
 rKz
 rKz
+naJ
 oqK
 oqK
 oqK
-oqK
-oqK
+cpc
 rKz
 bQf
 bQf
@@ -43079,34 +43674,34 @@ bQf
 bQf
 rKz
 rKz
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
-bQf
+qbU
+qbU
+qbU
+qbU
+qbU
+eBl
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+oMS
+cfv
+cfv
+abl
+abl
+rzw
+abl
+rzw
+abl
+bza
+qbU
+qbU
+qbU
+qbU
+bza
+abl
 rKz
 bQf
 bQf
@@ -43278,7 +43873,7 @@ rKz
 rKz
 rKz
 rKz
-oqK
+eUT
 rKz
 rKz
 rKz
