@@ -123,6 +123,17 @@
 	tag = "icon-cargoshwall15"
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
+"agi" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "agk" = (
 /obj/effect/floor_decal/corner_oldtile/white,
 /obj/effect/floor_decal/corner_oldtile/white{
@@ -1180,14 +1191,11 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony/exposedsun/pastgate)
 "aMQ" = (
-/obj/random/pack/junk_machine,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "aMZ" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1387,18 +1395,10 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "aTI" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
 /obj/structure/salvageable/data_os{
 	icon_state = "server0"
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server0"
-	},
+/obj/effect/damagedfloor/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "aUB" = (
@@ -1886,8 +1886,11 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "bmu" = (
-/obj/random/pack/junk_machine,
-/turf/simulated/floor/bluegrid,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "bmI" = (
 /obj/machinery/light/small{
@@ -2365,6 +2368,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"bBf" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "bBT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
@@ -2546,6 +2563,16 @@
 "bJG" = (
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"bJJ" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "bJS" = (
 /obj/structure/table/bench/wooden,
 /obj/random/mob/voidwolf,
@@ -2642,14 +2669,7 @@
 /turf/simulated/shuttle/wall/cargo,
 /area/colony/exposedsun/crashed_shop/outsider)
 "bMh" = (
-/obj/random/pack/junk_machine,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "bMw" = (
 /obj/structure/cable{
@@ -3091,14 +3111,20 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "caG" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "computer0"
+	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_idle";
 	name = "biomass";
 	color = "#750008"
 	},
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "caN" = (
 /mob/living/simple_animal/hostile/creature/tissue,
@@ -3833,6 +3859,22 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"cwf" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data1"
+	},
+/obj/effect/damagedfloor/fire,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "cwm" = (
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/blood/gibs,
@@ -4159,6 +4201,20 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"cGr" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "cGz" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/ausbushes/grassybush,
@@ -4231,10 +4287,12 @@
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
 "cIW" = (
-/obj/structure/salvageable/data_os{
-	icon_state = "data0"
+/obj/structure/salvageable/computer_os{
+	dir = 4;
+	pixel_x = -5
 	},
-/turf/simulated/floor/greengrid,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "cJm" = (
 /obj/structure/table/reinforced,
@@ -4527,6 +4585,10 @@
 /obj/structure/boulder,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"cQj" = (
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "cQp" = (
 /turf/simulated/floor/wood/wild4,
 /area/asteroid/rogue)
@@ -4899,6 +4961,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"dbJ" = (
+/obj/structure/girder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "dbO" = (
 /obj/structure/table/onestar,
 /obj/structure/salvageable/console_os,
@@ -5591,6 +5663,19 @@
 /obj/item/tank/anesthetic,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"dyI" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "dyP" = (
 /obj/machinery/cooking_with_jane/grill,
 /obj/structure/table/marble,
@@ -5658,6 +5743,15 @@
 /obj/random/powercell,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"dzS" = (
+/obj/item/device/lighting/glowstick/undark,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/item/trash/material/metal,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "dzZ" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -5666,6 +5760,11 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/delta)
+"dAb" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/structure/railing,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "dAl" = (
 /obj/structure/bed/chair{
@@ -5913,8 +6012,9 @@
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "dHB" = (
-/obj/random/pack/junk_machine,
-/turf/simulated/floor/greengrid,
+/turf/simulated/wall/untinted/onestar_reinforced{
+	name = "Hull"
+	},
 /area/nadezhda/dungeon/outside/prepper/delta)
 "dHD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6139,6 +6239,17 @@
 /obj/random/closet_tech/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"dQT" = (
+/obj/structure/girder,
+/obj/effect/damagedfloor/fire,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "dRb" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -6743,6 +6854,16 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"eoA" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "eoC" = (
 /obj/structure/closet/gimmick/russian,
 /obj/effect/decal/cleanable/dirt,
@@ -6948,6 +7069,19 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"euz" = (
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "euG" = (
 /obj/structure/cable{
 	d2 = 4;
@@ -7077,8 +7211,10 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eyt" = (
-/obj/random/lathe_disk/lmg,
-/turf/simulated/floor/bluegrid,
+/obj/structure/catwalk{
+	icon_state = "catwalk11-12"
+	},
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "eyw" = (
 /obj/structure/table/onestar,
@@ -7226,6 +7362,24 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"eFF" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	layer = 4
+	},
+/obj/item/clothing/accessory/ranks/brigadier{
+	name = "First Officer shoulderboards";
+	desc = "Red, gold, and silver shoulderboards denoting the rank of a WhiteGuard First Officer"
+	},
+/obj/item/clothing/suit/greatcoat/general,
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia."
+	},
+/obj/item/remains/mummy2,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "eFP" = (
 /obj/random/pouch/hardcase/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -7381,6 +7535,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"eMc" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "eMv" = (
 /obj/random/closet_tech,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -7435,13 +7602,14 @@
 	},
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eOq" = (
+/obj/structure/girder,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
+	icon_state = "blob_idle";
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "eOs" = (
 /obj/effect/overlay/water,
@@ -7852,7 +8020,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "fce" = (
-/obj/random/oddity_guns,
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/obj/effect/damagedfloor/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "fcp" = (
@@ -8087,14 +8262,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/asteroid/rogue)
 "fjN" = (
-/obj/item/clothing/suit/hev,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/greengrid,
+/obj/structure/salvageable/data_os,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "fjS" = (
 /obj/effect/floor_decal/corner/white/border,
@@ -9046,6 +9216,17 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"fQH" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "fRg" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -9369,13 +9550,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "fYX" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/greengrid,
+/obj/structure/girder,
+/turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "fZu" = (
 /obj/machinery/porta_turret/excelsior/preloaded,
@@ -9553,6 +9729,11 @@
 	icon_state = "9,23"
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
+"gha" = (
+/obj/structure/salvageable/computer_os,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ghn" = (
 /obj/structure/snowfall{
 	name = "radioactive dust";
@@ -9718,6 +9899,19 @@
 /obj/random/traps,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"gnn" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "gnx" = (
 /obj/structure/cable{
 	d2 = 2;
@@ -9885,8 +10079,25 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/zoo)
 "gso" = (
-/obj/item/clothing/head/hev,
-/turf/simulated/floor/bluegrid,
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/obj/effect/damagedfloor/fire,
+/obj/random/lathe_disk/rifle_heavy,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
+"gsu" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/machinery/constructable_frame/machine_frame,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "gtn" = (
 /obj/effect/floor_decal/border/techfloor/hole{
@@ -10129,6 +10340,10 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper)
+"gzR" = (
+/obj/item/device/lighting/glowstick/undark,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "gAe" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -11182,6 +11397,13 @@
 /obj/item/remains/mummy2,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"his" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "hiu" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -11807,6 +12029,12 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/pastgate)
+"hzp" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "hzS" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
@@ -11840,6 +12068,14 @@
 	name = "dust"
 	},
 /area/nadezhda/dungeon/outside/prepper/lima)
+"hAO" = (
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/obj/effect/damagedfloor/fire,
+/obj/random/lathe_disk/ammo,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "hAQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -11932,6 +12168,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"hDP" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "hEU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/lathe_disk,
@@ -11943,6 +12189,11 @@
 	stat = 1
 	},
 /turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/delta)
+"hFk" = (
+/obj/structure/girder,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "hFr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12831,6 +13082,22 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"ihS" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/obj/effect/damagedfloor/fire,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ihW" = (
 /obj/structure/table/woodentable,
 /obj/item/paper/card/flower{
@@ -13193,6 +13460,11 @@
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
+"itm" = (
+/obj/effect/damagedfloor/fire,
+/obj/item/clothing/head/hev,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "itu" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
@@ -13860,6 +14132,13 @@
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"iOe" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "iOA" = (
 /obj/machinery/door/airlock/engineering,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
@@ -14041,8 +14320,8 @@
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "iXb" = (
-/obj/random/pack/junk_machine,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/floor_decal/industrial/inputgate,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "iXn" = (
 /obj/structure/cable{
@@ -14099,6 +14378,15 @@
 	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"iZu" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/machinery/constructable_frame/machine_frame/vertical,
+/obj/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "iZA" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/voidsuit,
@@ -14573,6 +14861,15 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"jln" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/machinery/constructable_frame/machine_frame,
+/obj/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "jlz" = (
 /obj/item/storage/deferred/crate/tools,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -15069,7 +15366,20 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "jHD" = (
-/turf/simulated/floor/bluegrid,
+/obj/effect/floor_decal/steeldecal/steel_decals_central1{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 8
+	},
+/obj/effect/damagedfloor/fire,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "jHF" = (
 /obj/structure/catwalk,
@@ -15356,6 +15666,16 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"jRK" = (
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "jSh" = (
 /obj/structure/showcase/sign2{
 	desc = "A warning sign depicting a small gun and a hazard symbol.";
@@ -15541,6 +15861,17 @@
 /obj/structure/flora/small/busha2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"jZr" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data1"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "jZs" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -17109,13 +17440,14 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "kZD" = (
+/obj/effect/floor_decal/industrial/caution,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
+	icon_state = "blob_damaged2";
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "laa" = (
 /obj/structure/table/steel_reinforced,
@@ -17535,6 +17867,16 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"lpR" = (
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "lpV" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/cafe,
@@ -17868,6 +18210,20 @@
 /obj/structure/flora/small/grassb3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
+"lDr" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "lDz" = (
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
@@ -17990,16 +18346,11 @@
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
 "lGJ" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/bed/chair/office/light{
+	dir = 1
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
-/turf/simulated/floor/greengrid,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "lHg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18205,6 +18556,19 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"lON" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "lOU" = (
 /obj/structure/flora/pottedplant/star_root,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -18248,7 +18612,8 @@
 /area/nadezhda/outside/one_star)
 "lPX" = (
 /obj/item/device/lighting/glowstick/undark,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "lQj" = (
 /obj/item/tool/baton/excelbaton,
@@ -18376,6 +18741,18 @@
 "lTC" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"lTI" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "lTQ" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -18425,6 +18802,16 @@
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"lVe" = (
+/obj/structure/catwalk,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "lVm" = (
 /obj/structure/flora/small/bushc1,
 /obj/random/mob/voidwolf,
@@ -19645,6 +20032,20 @@
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
+"mIH" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "mIL" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/light_construct,
@@ -20347,20 +20748,18 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ndh" = (
-/obj/structure/inflatable/wall,
-/obj/structure/railing{
-	dir = 4;
-	icon_state = "railing0"
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 4
 	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 1
 	},
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 8
+/obj/effect/floor_decal/steeldecal/steel_decals_central5{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/machinery/door/blast/regular/open,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "ndl" = (
 /obj/structure/flora/big/bush1,
@@ -21429,14 +21828,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "nHH" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk11-12"
+	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
 	name = "biomass";
 	color = "#750008"
 	},
-/obj/structure/boulder,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "nHN" = (
 /obj/structure/table/rack/shelf,
@@ -21629,20 +22030,34 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "nQn" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk7-3"
+	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
 	name = "biomass";
 	color = "#750008"
 	},
-/obj/structure/boulder,
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "nQC" = (
 /obj/structure/table/standard,
 /obj/item/tool/tape_roll/flextape,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"nQJ" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "nQU" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -21734,8 +22149,8 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "nUM" = (
-/obj/item/storage/deferred/toolmod,
-/turf/simulated/floor/greengrid,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "nUU" = (
 /obj/effect/decal/cleanable/rubble,
@@ -22029,6 +22444,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"ofM" = (
+/obj/structure/girder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ofO" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush3,
@@ -23659,6 +24084,11 @@
 /obj/structure/flora/small/grassb4,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"phj" = (
+/obj/effect/damagedfloor/fire,
+/obj/random/oddity_guns,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "phk" = (
 /obj/structure/coatrack,
 /turf/simulated/floor/wood/wild1,
@@ -23666,6 +24096,20 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"php" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warningdust,
+/obj/effect/floor_decal/steeldecal/steel_decals_central5{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular/open,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "phr" = (
 /obj/item/ammo_magazine/heavy_rifle_408/empty,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -24591,6 +25035,16 @@
 	name = "Radioactive Waste"
 	},
 /area/nadezhda/dungeon/outside/prepper/lima)
+"pII" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central1{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 4
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "pIN" = (
 /obj/structure/table/onestar,
 /obj/item/oddity/common/paper_omega{
@@ -24843,6 +25297,19 @@
 /obj/structure/flora/small/grassb3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"pPl" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/machinery/constructable_frame/machine_frame/vertical,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "pPF" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/wood/wild5,
@@ -25519,6 +25986,20 @@
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/zoo)
+"qkl" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "qkK" = (
 /obj/item/modular_computer/console/preset/civilian/professional{
 	dir = 8
@@ -25536,6 +26017,16 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"qkY" = (
+/obj/structure/girder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "qkZ" = (
 /obj/structure/bed/chair/office/light,
 /obj/structure/railing/grey{
@@ -25663,8 +26154,10 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "qpj" = (
-/obj/random/lathe_disk/rifle_heavy,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/structure/catwalk{
+	icon_state = "catwalk7-3"
+	},
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "qpl" = (
 /obj/structure/multiz/ladder,
@@ -25900,6 +26393,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"qwh" = (
+/obj/structure/salvageable/data_os{
+	icon_state = "computer0"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "qwo" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
@@ -26183,9 +26683,14 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "qGn" = (
-/obj/structure/boulder,
-/obj/structure/boulder,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "qGy" = (
 /obj/structure/table/glass,
@@ -26429,6 +26934,15 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"qPy" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "qPO" = (
 /obj/structure/table/rack/shelf,
 /obj/random/medical,
@@ -26447,6 +26961,17 @@
 /obj/random/cloth/gloves,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"qPV" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "qQw" = (
 /mob/living/simple_animal/hostile/bear/polar,
 /turf/simulated/floor/asteroid/dirt,
@@ -26748,6 +27273,19 @@
 /obj/structure/closet/random_medsupply,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"raP" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "rbk" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall8";
@@ -27508,8 +28046,13 @@
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/pastgate)
 "rAc" = (
-/mob/living/simple_animal/hostile/render/malformed,
-/turf/simulated/floor/greengrid,
+/obj/machinery/door/airlock/hatch{
+	name = "MAINFRAME ACCESS"
+	},
+/obj/machinery/door/blast/regular{
+	name = "MAINFRAME ACCESS"
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "rAq" = (
 /obj/structure/railing/grey{
@@ -27801,6 +28344,11 @@
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"rJa" = (
+/obj/structure/salvageable/console_broken_os,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "rJd" = (
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
@@ -27973,6 +28521,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"rRj" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "rRu" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -28548,6 +29104,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"shs" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "shv" = (
 /obj/structure/table/onestar,
 /obj/random/pack/tech_loot/onestar,
@@ -30518,6 +31084,20 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"ttu" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warningdust,
+/obj/effect/floor_decal/steeldecal/steel_decals_central5{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular/open,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ttx" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/wood/wild3,
@@ -30545,6 +31125,13 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"tuw" = (
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "tuO" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -30934,6 +31521,18 @@
 /obj/item/mine/armed,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"tGp" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial/outputgate,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "tHh" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
@@ -30980,8 +31579,17 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "tIF" = (
-/obj/structure/boulder,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "tIV" = (
 /obj/asteroid_spawner/rogue_teleporter,
@@ -31752,6 +32360,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"ugq" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ugr" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -32131,8 +32749,12 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "uvR" = (
-/obj/random/lathe_disk/ammo,
-/turf/simulated/floor/greengrid,
+/obj/structure/salvageable/console_broken_os{
+	dir = 8
+	},
+/obj/effect/damagedfloor/fire,
+/obj/item/storage/deferred/toolmod,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "uwr" = (
 /obj/structure/table/onestar,
@@ -32988,6 +33610,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
+"uYO" = (
+/mob/living/simple_animal/hostile/render/malformed,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "vag" = (
 /obj/structure/flora/small/grassa4,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -33694,6 +34320,19 @@
 /obj/item/device/synthesized_instrument/trumpet,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"vAd" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "vAu" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/steel/danger,
@@ -33891,6 +34530,14 @@
 "vFt" = (
 /obj/random/scrap,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/delta)
+"vGs" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/machinery/constructable_frame/machine_frame,
+/obj/fire,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "vGv" = (
 /obj/structure/table/steel_reinforced,
@@ -34582,6 +35229,17 @@
 /obj/structure/salvageable/autolathe,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
+"wea" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/obj/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wed" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt,
@@ -34605,6 +35263,20 @@
 /obj/effect/damagedfloor,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"wgv" = (
+/obj/effect/floor_decal/industrial/outputgate,
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wgB" = (
 /obj/structure/flora/small/trailrockb1,
 /turf/simulated/floor/asteroid/dirt,
@@ -34692,6 +35364,16 @@
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
+"wjE" = (
+/obj/effect/damagedfloor/fire,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wjL" = (
 /obj/structure/closet/secure_closet/injection,
 /turf/simulated/floor/tiled/white/panels,
@@ -35046,6 +35728,16 @@
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
+"wvI" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wvJ" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -35116,6 +35808,21 @@
 /obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"wxA" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wxR" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
@@ -35292,6 +35999,17 @@
 /obj/item/material/shard,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"wGM" = (
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/item/trash/material/metal{
+	icon_state = "metal3"
+	},
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wGX" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
@@ -35517,6 +36235,14 @@
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"wOU" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/machinery/constructable_frame/machine_frame/vertical,
+/obj/fire,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "wOZ" = (
 /obj/random/mob/render/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -36309,6 +37035,14 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"xoH" = (
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
+	},
+/obj/effect/damagedfloor/fire,
+/obj/random/lathe_disk/lmg,
+/turf/simulated/floor/greengrid,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "xoX" = (
 /obj/structure/inflatable/door,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -36503,19 +37237,14 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "xvK" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
 	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "xvL" = (
 /obj/machinery/door/airlock/multi_tile/metal{
@@ -36594,6 +37323,21 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"xzM" = (
+/obj/machinery/door/airlock/hatch{
+	name = "MAINFRAME ACCESS"
+	},
+/obj/machinery/door/blast/regular{
+	name = "MAINFRAME ACCESS"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "xzW" = (
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -36682,7 +37426,21 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /obj/effect/floor_decal/industrial/road/straight3,
 /obj/structure/girder,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
+"xDv" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central3{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central5{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/machinery/door/blast/regular/open,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "xDB" = (
 /obj/structure/table/reinforced,
@@ -36721,13 +37479,18 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "xEm" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/machinery/constructable_frame/machine_frame,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "xEH" = (
 /obj/machinery/door/airlock,
@@ -37139,10 +37902,23 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
+"xRH" = (
+/obj/effect/damagedfloor/fire,
+/obj/item/clothing/suit/hev,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "xRN" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"xSr" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/obj/effect/floor_decal/industrial/inputgate,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "xSt" = (
 /obj/structure/curtain/open,
 /obj/effect/decal/cleanable/dirt,
@@ -37399,6 +38175,11 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"ycL" = (
+/obj/structure/girder,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ycO" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/small/busha1,
@@ -37452,6 +38233,15 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"ydJ" = (
+/obj/effect/floor_decal/corner_oldtile/white,
+/obj/effect/floor_decal/corner_oldtile/white{
+	dir = 4
+	},
+/obj/item/trash/material/metal,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "ydX" = (
 /obj/structure/sign/misc/techshop,
 /turf/simulated/wall/r_wall,
@@ -37514,6 +38304,13 @@
 /obj/random/surgery_tool,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"yhl" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "yhx" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -37590,13 +38387,8 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "yjT" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/floor_decal/industrial/outputgate,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "yjW" = (
 /obj/structure/flora/small/busha3,
@@ -38133,32 +38925,32 @@ qbU
 qbU
 coU
 nLW
-opB
-opB
-opB
-opB
-opB
-opB
+bMh
+bMh
+bMh
+bMh
 yjT
+iXb
 yjT
+dAb
+qpj
+qpj
+qpj
+qpj
+qpj
+qpj
+qpj
+qpj
+rRj
+iXb
+nLW
 yjT
-caG
-opB
-opB
-opB
-opB
-opB
-opB
-opB
-tIF
-tIF
-tIF
 qGn
-xEm
-kZD
-kZD
-kZD
-jHD
+jRK
+qGn
+bMh
+bMh
+nLW
 nLW
 nLW
 kwa
@@ -38342,32 +39134,32 @@ qbU
 qbU
 coU
 nLW
-opB
-opB
-opB
-yjT
-yjT
-yjT
+dHB
+dHB
+dHB
+dHB
+jRK
+iXb
 yjT
 iXb
 eOq
 caG
-opB
-opB
-opB
-opB
-opB
-opB
-opB
-xVq
-dzZ
-dzZ
-dzZ
-xEm
-xEm
-kZD
-jHD
-jHD
+jZr
+fQH
+fce
+jln
+xvK
+dbJ
+rRj
+qGn
+nLW
+lON
+gnn
+euz
+yhl
+bMh
+bMh
+nLW
 nLW
 nLW
 mtY
@@ -38550,34 +39342,34 @@ qbU
 qbU
 qbU
 coU
-nLW
-opB
+dHB
+qwh
 aMQ
-yjT
-kZD
 gso
-eyt
-xEm
-xEm
-xEm
-xEm
-nQn
-opB
-opB
-opB
-opB
-opB
-opB
-nQn
-fYX
-fYX
+xoH
+dHB
+qGn
+yjT
+qGn
+dQT
+ugq
+vGs
+wxA
+pPl
+wvI
+cwf
+dbJ
+cGr
+qGn
+nLW
+qkY
 fYX
 fYX
 nLW
 nLW
 nLW
 nLW
-lPX
+gzR
 nLW
 mtY
 nND
@@ -38759,35 +39551,35 @@ qbU
 qbU
 qbU
 coU
-nLW
-yjT
-cIW
-fYX
-fjN
 dHB
-dzZ
-dzZ
-dzZ
+fjN
+cIW
+nUM
+nUM
+dHB
+raP
+raP
+bBf
 qpj
-dzZ
+qpj
 nQn
-opB
-opB
-opB
-opB
 nQn
-xEm
-xEm
-bWJ
-bWJ
-bWJ
-bWJ
+nQn
+nQn
+nQn
+qpj
+tGp
+xSr
+nLW
+swg
+nQJ
+qzG
 nLW
 nLW
-lPX
+dzS
 tIF
-kUv
-khV
+ydJ
+ycL
 mtY
 aMc
 cFh
@@ -38968,35 +39760,35 @@ qbU
 qbU
 qbU
 coU
-nLW
-yjT
-fYX
+dHB
+rJa
+eFF
 nUM
-bWJ
-bWJ
-xEm
-xEm
-xEm
+nUM
+xzM
+lVe
+fRw
+lVe
 jHD
-jHD
-kZD
-xEm
-xEm
-xEm
-xEm
-xEm
+wjE
+cQj
+wjE
+cQj
+dzZ
+dzZ
+wjE
 bmu
 kZD
-bWJ
-bWJ
-bWJ
-bWJ
-ndh
-ndh
-kUv
-kUv
-kUv
-kUv
+swg
+nQJ
+qPy
+qzG
+ttu
+xDv
+shs
+qPV
+his
+bJJ
 xDj
 rFz
 syv
@@ -39177,34 +39969,34 @@ qbU
 qbU
 qbU
 coU
-nLW
-yjT
+dHB
+gha
 lGJ
-bWJ
-bWJ
+phj
+nUM
 rAc
-bWJ
-bWJ
-rCa
-rCa
-rCa
-bWJ
-rCa
-rCa
-rCa
-bWJ
-bWJ
-rCa
-rCa
-bWJ
-bWJ
-bWJ
-bWJ
-ndh
-ndh
-tIF
+fRw
+fRw
+fRw
+pII
 kUv
-khV
+uYO
+wjE
+dzZ
+cQj
+wjE
+xVq
+vAd
+kZD
+qPy
+swg
+qzG
+qzG
+php
+ndh
+eoA
+wGM
+dyI
 nLW
 mtY
 rum
@@ -39386,34 +40178,34 @@ qbU
 qbU
 qbU
 coU
-nLW
-yjT
+dHB
+fjN
 uvR
-bWJ
-bWJ
-bWJ
-rCa
-rCa
-bWJ
-bWJ
-bWJ
-rCa
-rCa
-bWJ
-fYX
+itm
+xRH
+dHB
+lTI
+hzp
+iOe
+eyt
+eyt
+eyt
+eyt
+eyt
+eyt
 nHH
-rCa
-bWJ
-bWJ
-bWJ
-bWJ
-bWJ
-bWJ
+eyt
+agi
+eMc
+nLW
+qPy
+swg
+qzG
 nLW
 nLW
 khV
 lPX
-khV
+ycL
 nLW
 mtY
 kxi
@@ -39595,28 +40387,28 @@ laY
 bWq
 qbU
 coU
-nLW
-yjT
+dHB
+tuw
 aTI
-bWJ
-bWJ
-bWJ
-jHD
-jHD
-jHD
-jHD
-jHD
-jHD
+hAO
+gso
+dHB
+qGn
+jRK
+qGn
+hFk
+fQH
+iZu
+xvK
 xEm
-xEm
-xEm
-xEm
-xEm
-xEm
-jHD
-bWJ
-bWJ
-bWJ
+hDP
+wea
+eOq
+rRj
+qGn
+nLW
+ofM
+qkY
 fYX
 hxd
 nLW
@@ -39805,31 +40597,31 @@ bWq
 qbU
 coU
 nLW
+dHB
+dHB
+dHB
+dHB
 yjT
-cIW
-fYX
-fYX
-fce
-rCa
-qpj
-rCa
-rCa
-rCa
-kZD
-xEm
-opB
-opB
-opB
-opB
-xEm
-tIF
-dzZ
-dzZ
-dzZ
-xEm
-kZD
-kZD
-kZD
+iXb
+yjT
+qGn
+hFk
+vGs
+wxA
+gsu
+ugq
+ihS
+wOU
+dbJ
+cGr
+iXb
+nLW
+lDr
+mIH
+wgv
+qkl
+bMh
+bMh
 nLW
 nLW
 nLW
@@ -40014,31 +40806,31 @@ bWq
 qbU
 coU
 nLW
-opB
-yjT
-yjT
-xEm
-xEm
-jHD
-jHD
-jHD
-xvK
 bMh
-kZD
-opB
-opB
-opB
-opB
-opB
-opB
-dzZ
-dzZ
-xVq
-dzZ
-xEm
-xEm
-xEm
-kZD
+bMh
+bMh
+bMh
+yjT
+iXb
+yjT
+dAb
+nHH
+nHH
+eyt
+eyt
+eyt
+eyt
+eyt
+eyt
+rRj
+iXb
+nLW
+lpR
+qGn
+yjT
+iXb
+bMh
+bMh
 nLW
 nLW
 nLW
@@ -40223,16 +41015,16 @@ bWq
 qbU
 coU
 nLW
-opB
-opB
-opB
-yjT
-xEm
-xEm
-xEm
-xEm
-xEm
-yjT
+nLW
+nLW
+nLW
+nLW
+nLW
+nLW
+nLW
+nLW
+nLW
+nLW
 nLW
 nLW
 nLW
@@ -40431,18 +41223,18 @@ aZe
 laY
 qbU
 coU
-nLW
-opB
-opB
-opB
-yjT
-yjT
-yjT
-yjT
-aMQ
-yjT
-yjT
-nLW
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
 sZq
 sZq
 sZq
@@ -40640,18 +41432,18 @@ hjh
 mUr
 qbU
 coU
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
-nLW
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
+sZq
 sZq
 opB
 opB
