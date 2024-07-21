@@ -200,15 +200,15 @@
 
 			if("pistol") //From havelock.dm, Arbitrary Values
 				R.caliber = pick(CAL_PISTOL)
-				R.damage_multiplier = 1.2 + rand(-5,5)/10
-				R.penetration_multiplier = 1.2 + (rand(-5,5)/10)
-				R.max_shells = rand(5,7)
+				R.damage_multiplier = 1.2 + rand(-2,4)/10
+				R.penetration_multiplier = 1.2 + (rand(-2,4)/10)
+				R.max_shells = rand(6,12)
 
 			if("magnum") //From consul.dm, Arbitrary values
 				R.caliber = CAL_MAGNUM
-				R.damage_multiplier = 1.2 + (rand(-5,5)/10)
-				R.penetration_multiplier = 1.2 + (rand(-5,5)/10)
-				R.max_shells = rand(6,12)
+				R.damage_multiplier = 1.2 + (rand(-1,5)/10)
+				R.penetration_multiplier = 1.2 + (rand(-1,5)/10)
+				R.max_shells = rand(8,16)
 
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
