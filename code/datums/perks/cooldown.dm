@@ -50,3 +50,19 @@
 		holder.stats.changeStat(STAT_COG, 5)
 	..()
 
+/datum/perk/cooldown/artist_no
+	name = "Burnout"
+	desc = "Art as taken its toll and you are resting the soul. Tea would help."
+	icon_state = "paintbrush_no"
+	perk_lifetime = 10 MINUTES //6 arts an hour or if you drink enuff green tea it should be more
+
+/datum/perk/cooldown/artist_no/on_process()
+	if(holder.reagents.has_reagent("icegreentea"))
+		perk_lifetime -= 4 SECONDS
+	else if(holder.reagents.has_reagent("greentea"))
+		perk_lifetime -= 3 SECONDS
+	else if(holder.reagents.has_reagent("icetea"))
+		perk_lifetime -= 2 SECONDS
+	else if(holder.reagents.has_reagent("tea"))
+		perk_lifetime -= 1 SECONDS
+	..()
