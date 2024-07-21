@@ -12,7 +12,7 @@
 	name = get_artwork_name(TRUE)
 	icon_state = "artwork_statue_[rand(1,6)]"
 
-	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	AddComponent(/datum/component/atom_sanity, 2+(rand(0,2)), "")
 	price_tag += rand(0,5000)
 	sanity_damage = -((rand(0,2))*0.1) //Heals sanity slowly
 
