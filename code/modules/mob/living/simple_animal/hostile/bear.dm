@@ -154,10 +154,10 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "yaoguai"
 	icon_dead = "yaoguai_dead"
-	maxHealth = 400 * MEGAFAUNA_HEALTH_MOD
-	health = 400 * MEGAFAUNA_HEALTH_MOD
+	maxHealth = 300 * MEGAFAUNA_HEALTH_MOD
+	health = 300 * MEGAFAUNA_HEALTH_MOD
 	melee_damage_lower = 40 //Low health but an extremely powerful hitter
-	melee_damage_upper = 50 //You call 400 HP LOW HEALTH?! - Seb
+	melee_damage_upper = 50 //You call 400 HP LOW HEALTH?! - Seb //I got you Seb...little better now.
 	leather_amount = 10
 	bones_amount = 10
 	pixel_x = -16

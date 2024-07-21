@@ -235,7 +235,7 @@
 	turns_per_move = 4
 	vision_range = 8
 	aggro_vision_range = 20
-	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)	
+	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
@@ -374,8 +374,8 @@
 	icon_dead = "slepnir_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 550 * MEGAFAUNA_HEALTH_MOD
-	health = 550 * MEGAFAUNA_HEALTH_MOD
+	maxHealth = 350 * MEGAFAUNA_HEALTH_MOD
+	health = 350 * MEGAFAUNA_HEALTH_MOD
 	vision_range = 8
 	aggro_vision_range = 16
 	move_to_delay = 1

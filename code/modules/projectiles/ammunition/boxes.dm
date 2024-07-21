@@ -95,7 +95,7 @@
 // 9mm BIG BAWKS
 /obj/item/ammo_magazine/ammobox/pistol_35/large
 	name = "ammunition box (9mm)"
-	desc = "A large box of police grade 9mm. Has a proper less-than-lethal certification on the label."
+	desc = "A large box of police grade 9mm."
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
 	max_ammo = 200
