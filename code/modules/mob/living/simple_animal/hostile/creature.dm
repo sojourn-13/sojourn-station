@@ -30,6 +30,15 @@
 
 	supernatural = 1
 
+/mob/living/simple_animal/hostile/creature/tissue
+	name  = "Mutated Tissue"
+	desc = "An amalgamation of flesh and bone"
+	color = "#8B0000"
+	health = 350
+	maxHealth = 350
+	melee_damage_lower = 50
+	melee_damage_upper = 85
+
 /mob/living/simple_animal/hostile/retaliate/spaceman
 	name = "spaceman"
 	desc = "This strange being resembles a human, but is something different entirely."

@@ -77,6 +77,13 @@
 	density = FALSE
 	return ..(gibbed,deathmessage)
 
+/mob/living/simple_animal/hostile/render/malformed
+	name = "Malformed Render"
+	maxHealth = 1500
+	health = 1500
+	melee_damage_lower = 55
+	melee_damage_upper = 75
+	color = "#8B0000"
 
 /mob/living/simple_animal/hostile/render/chunks
 	name = "Chunks"
@@ -235,7 +242,7 @@
 	turns_per_move = 4
 	vision_range = 8
 	aggro_vision_range = 20
-	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)	
+	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
