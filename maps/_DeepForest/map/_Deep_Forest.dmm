@@ -7367,10 +7367,6 @@
 	dir = 1;
 	layer = 4
 	},
-/obj/item/clothing/accessory/ranks/brigadier{
-	name = "First Officer shoulderboards";
-	desc = "Red, gold, and silver shoulderboards denoting the rank of a WhiteGuard First Officer"
-	},
 /obj/item/clothing/suit/greatcoat/general,
 /obj/item/clothing/head/exceslior/excelsior_officer{
 	name = "officer cap";
@@ -9563,6 +9559,7 @@
 	})
 "fZK" = (
 /obj/machinery/papershredder,
+/obj/item/oddity/common/paper_bundle,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "gab" = (
@@ -14384,7 +14381,6 @@
 	icon_state = "grey_railing0"
 	},
 /obj/machinery/constructable_frame/machine_frame/vertical,
-/obj/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "iZA" = (
@@ -14867,7 +14863,6 @@
 	icon_state = "grey_railing0"
 	},
 /obj/machinery/constructable_frame/machine_frame,
-/obj/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "jlz" = (
@@ -31960,6 +31955,11 @@
 /obj/item/stock_parts/manipulator/one_star,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"tXe" = (
+/obj/machinery/papershredder,
+/obj/item/oddity/common/paper_crumpled,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/dungeon/outside/prepper/delta)
 "tXm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/multi_tile/metal{
@@ -34536,7 +34536,6 @@
 	dir = 4
 	},
 /obj/machinery/constructable_frame/machine_frame,
-/obj/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "vGv" = (
@@ -35230,15 +35229,9 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "wea" = (
-/obj/structure/railing/grey{
-	dir = 8;
-	icon_state = "grey_railing0"
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
-/obj/fire,
-/turf/simulated/floor/greengrid,
+/obj/machinery/photocopier,
+/obj/item/oddity/common/old_money,
+/turf/simulated/floor/wood/wild2,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "wed" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -36240,7 +36233,6 @@
 	dir = 4
 	},
 /obj/machinery/constructable_frame/machine_frame/vertical,
-/obj/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "wOZ" = (
@@ -40402,7 +40394,7 @@ iZu
 xvK
 xEm
 hDP
-wea
+xvK
 eOq
 rRj
 qGn
@@ -45680,7 +45672,7 @@ nLW
 aDN
 aDN
 nLW
-clJ
+wea
 qPQ
 pcu
 wxs
@@ -46098,7 +46090,7 @@ nLW
 ycQ
 ycQ
 nLW
-fZK
+tXe
 fpP
 qPQ
 wxs
