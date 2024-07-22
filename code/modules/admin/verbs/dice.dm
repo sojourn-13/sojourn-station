@@ -1,6 +1,6 @@
 ADMIN_VERB_ADD(/client/proc/roll_dices, R_FUN, FALSE)
 /client/proc/roll_dices()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Roll Dice"
 	if(!check_rights(R_FUN))
 		return

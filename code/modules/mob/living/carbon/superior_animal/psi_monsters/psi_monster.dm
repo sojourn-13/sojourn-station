@@ -13,7 +13,7 @@
 
 	mob_size = MOB_LARGE
 	viewRange = 8
-	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
 	cant_gib = TRUE
@@ -112,7 +112,7 @@
 
 	objectsInView = new
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = size_pixel_offset_x
 	pixel_y = 0
 
@@ -224,6 +224,14 @@
 		new catalyst_drop(src.loc)
 	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
 	qdel(src)
+
+/obj/effect/decal/cleanable/psi_ash/ponderous
+	name = "strange ashes of ponderous"
+	catalyst_drop = /obj/random/psi_catalyst/ponderous
+
+/obj/effect/decal/cleanable/psi_ash/flesh_behemoth
+	name = "strange ashes of flesh behemoth"
+	catalyst_drop = /obj/random/psi_catalyst/flesh_behemoth
 
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"

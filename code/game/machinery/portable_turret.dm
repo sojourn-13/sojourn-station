@@ -108,7 +108,7 @@
 
 /obj/machinery/porta_turret/New()
 	..()
-	req_access.Cut()
+	LAZYNULL(req_access)
 	req_one_access = list(access_security, access_heads, access_occupy)
 
 	//Sets up a spark system
@@ -121,7 +121,7 @@
 
 /obj/machinery/porta_turret/crescent/New()
 	..()
-	req_one_access.Cut()
+	LAZYNULL(req_one_access)
 	req_access = list(access_cent_specops)
 
 /obj/machinery/porta_turret/Destroy()
@@ -432,7 +432,7 @@ var/list/turret_icons
 					if(TOOL_USE_SUCCESS)
 						to_chat(user, SPAN_NOTICE("You disconnect the turret's security protocol override!"))
 						overridden = 1
-						req_one_access.Cut()
+						LAZYNULL(req_one_access)
 						req_one_access = list(access_occupy)
 					if(TOOL_USE_FAIL)
 						user.visible_message(

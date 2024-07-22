@@ -11,7 +11,7 @@
 	full_reload_message  = "[reload_message]"
 	reload_message = "[name] [full_reload_message]"
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 

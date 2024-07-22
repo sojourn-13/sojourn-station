@@ -25,8 +25,8 @@
 	item_state = "dusters_plasteel"
 	punch_increase = 10
 	armor = list(
-		melee = 15, //Just a litttttle bit of armor so your not defenceless
-		bullet = 5,
+		melee = 3, //Just a litttttle bit of armor so your not defenceless
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -43,9 +43,9 @@
 	item_state = "scav_gloves"
 	punch_increase = 8 //Armored so this should be weaker then the plasteel dust
 	armor_list = list(
-		melee = 35, // 10 more than combat, Plasteel reinforced
-		bullet = 15,
-		energy = 20, // No ablative materials means energy protection stays the same
+		melee = 8, // 10 more than combat, Plasteel reinforced
+		bullet = 3,
+		energy = 5, // No ablative materials means energy protection stays the same
 		bomb = 10, // Plasteel protects a little bit against bombs
 		bio = 0,
 		rad = 0
@@ -100,8 +100,8 @@
 	item_state = "knuckles"
 	punch_increase = 10
 	armor = list(
-		melee = 10, //Just a litttttle bit of armor so your not defenceless
-		bullet = 5,
+		melee = 2, //Just a litttttle bit of armor so your not defenceless
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,

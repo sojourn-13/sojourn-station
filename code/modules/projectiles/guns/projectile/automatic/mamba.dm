@@ -14,8 +14,8 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
-	damage_multiplier = 1.0
-	penetration_multiplier = 1.0
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	extra_damage_mult_scoped = 0.2
 	zoom_factors = list(0.8)
 	price_tag = 950

@@ -13,6 +13,12 @@
 		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
 	)
 
+/datum/asset/simple/statpanel_styles
+	keep_local_name = TRUE
+	assets = list(
+		"tgui-statpanel-styles.bundle.css" = file("tgui/public/tgui-statpanel-styles.bundle.css"),
+	)
+
 /datum/asset/simple/namespaced/tgfont
 	assets = list(
 		"tgfont.eot" = file("tgui/packages/tgfont/static/tgfont.eot"),

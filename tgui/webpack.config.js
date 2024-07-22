@@ -7,6 +7,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractCssPlugin = require('mini-css-extract-plugin');
+const RemovePlugin = require('remove-files-webpack-plugin');
 
 const createStats = (verbose) => ({
   assets: verbose,
@@ -34,6 +35,7 @@ module.exports = (env = {}, argv) => {
       tgui: ['./packages/tgui-polyfill', './packages/tgui'],
       'tgui-panel': ['./packages/tgui-polyfill', './packages/tgui-panel'],
       'tgui-say': ['./packages/tgui-polyfill', './packages/tgui-say'],
+      'tgui-statpanel-styles': ['./packages/tgui-statpanel-styles'],
     },
     output: {
       path: argv.useTmpFolder
@@ -115,6 +117,19 @@ module.exports = (env = {}, argv) => {
       new ExtractCssPlugin({
         filename: '[name].bundle.css',
         chunkFilename: '[name].bundle.css',
+      }),
+      // This just makes sure no one tries to depend on a JS file that is only there for webpack workaround reasons
+      new RemovePlugin({
+        after: {
+          test: [
+            {
+              folder: 'public',
+              method: (absoluteItemPath) => {
+                return new RegExp(/tgui-statpanel-styles\.bundle\.js$/, "m").test(absoluteItemPath);
+              },
+            },
+          ],
+        },
       }),
     ],
   };

@@ -298,7 +298,6 @@
 	var/active_blood_req_mod = 0
 	var/active_nutriment_req_mod = 0
 	var/active_oxygen_req_mod = 0
-	var/list/active_owner_verb_adds = list()
 
 	// Internal
 	// Keeps track of original values since we can't use initial() (vars aren't defined by default)
@@ -307,7 +306,6 @@
 	var/old_blood_req_mod = 0
 	var/old_nutriment_req_mod = 0
 	var/old_oxygen_req_mod = 0
-	var/list/old_owner_verb_adds = list()
 
 /datum/component/modification/organ/output/activate_organ_functions/get_function_info()
 	var/description = "<span style='color:blue'>Functional information (output):</span> conditional organ functions"
@@ -336,12 +334,10 @@
 		old_blood_req_mod = blood_req_mod
 		old_nutriment_req_mod = nutriment_req_mod
 		old_oxygen_req_mod = oxygen_req_mod
-		old_owner_verb_adds = owner_verb_adds
 		active_organ_efficiency_mod |= old_organ_efficiency_mod
 		active_blood_req_mod += old_blood_req_mod
 		active_nutriment_req_mod += old_nutriment_req_mod
 		active_oxygen_req_mod += old_oxygen_req_mod
-		active_owner_verb_adds |= old_owner_verb_adds
 		are_values_stored = TRUE
 
 	if(LAZYLEN(input))
@@ -355,7 +351,6 @@
 				blood_req_mod = active_blood_req_mod * organ_multiplier * input_multiplier
 				nutriment_req_mod = active_nutriment_req_mod * organ_multiplier * input_multiplier
 				oxygen_req_mod = active_oxygen_req_mod * organ_multiplier * input_multiplier
-				owner_verb_adds = active_owner_verb_adds.Copy()
 
 				if(LAZYLEN(active_organ_efficiency_mod))
 					for(var/process in active_organ_efficiency_mod)
@@ -372,7 +367,6 @@
 	blood_req_mod = old_blood_req_mod
 	nutriment_req_mod = old_nutriment_req_mod
 	oxygen_req_mod = old_oxygen_req_mod
-	owner_verb_adds = old_owner_verb_adds
 
 	if(LAZYLEN(active_organ_efficiency_mod) && !LAZYLEN(organ_efficiency_mod))
 		for(var/process in active_organ_efficiency_mod)

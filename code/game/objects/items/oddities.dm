@@ -908,7 +908,7 @@
 	slot_flags = SLOT_BELT
 	sharp = TRUE
 	edge = TRUE
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 
 	oddity_stats = list(
 		STAT_ROB = 7

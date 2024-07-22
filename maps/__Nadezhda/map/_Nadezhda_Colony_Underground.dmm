@@ -29173,7 +29173,6 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "bQJ" = (
-/obj/machinery/disease2/incubator,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "bQK" = (
@@ -29425,7 +29424,6 @@
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
-/obj/item/device/antibody_scanner,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -33103,7 +33101,6 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "exs" = (
-/obj/machinery/smartfridge/secure/virology,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "exw" = (
@@ -33793,9 +33790,6 @@
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
 /obj/item/storage/fancy/vials,
-/obj/structure/reagent_dispensers/virusfood{
-	pixel_y = -32
-	},
 /obj/item/reagent_containers/syringe/spaceacillin,
 /obj/item/storage/box/masks,
 /obj/item/storage/box/gloves,
@@ -40844,7 +40838,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/pool)
 "jGc" = (
-/obj/machinery/computer/curer,
 /obj/machinery/newscaster{
 	dir = 8;
 	pixel_x = -30;
@@ -45565,15 +45558,6 @@
 /area/nadezhda/security/hut_cell1)
 "mFD" = (
 /obj/structure/table/standard,
-/obj/item/virusdish/random,
-/obj/item/virusdish/random{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/obj/item/virusdish/random{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/storage/lockbox/vials,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -47079,7 +47063,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "nEL" = (
-/obj/machinery/computer/diseasesplicer,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "nFf" = (
@@ -48728,7 +48711,6 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "oJb" = (
-/obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "oJe" = (
@@ -59813,10 +59795,6 @@
 "vSV" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/monkeycubes,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
-/obj/item/diseasedisk,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "vTb" = (

@@ -1,6 +1,6 @@
 /proc/togglebuildmode(mob/M as mob in GLOB.player_list)
 	set name = "Toggle Build Mode"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	if(M.client)
 		if(M.client.buildmode)
 			log_and_message_admins("[key_name(usr)] has left build mode at \the [jumplink(usr)]") //So we can go to it
@@ -296,7 +296,7 @@
 						if(ispath(objholder,/mob) && !check_rights(R_DEBUG,0))
 							objholder = /obj/structure/closet
 				if(3)
-					var/list/locked = list("vars", "key", "ckey", "client", "firemut", "ishulk", "telekinesis", "xray", "virus", "viruses", "cuffed", "ka", "last_eaten", "urine")
+					var/list/locked = list("vars", "key", "ckey", "client", "firemut", "ishulk", "telekinesis", "xray", "cuffed", "ka", "last_eaten", "urine")
 
 					master.buildmode.varholder = input(usr,"Enter variable name:" ,"Name", "name")
 					if(master.buildmode.varholder in locked && !check_rights(R_DEBUG,0))

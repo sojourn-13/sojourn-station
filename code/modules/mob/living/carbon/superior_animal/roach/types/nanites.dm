@@ -6,8 +6,8 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	meat_amount = 3
 	turns_per_move = 1
-	maxHealth = 30
-	health = 30
+	maxHealth = 30 * ROACH_HEALTH_MOD
+	health = 30 * ROACH_HEALTH_MOD
 
 	knockdown_odds = 3
 	melee_damage_lower = 1
@@ -22,7 +22,7 @@
 
 	min_air_pressure = 0
 	min_bodytemperature = 0
-	armor_penetration = 50
+	armor_divisor = 2
 	never_stimulate_air = TRUE
 
 	var/list/nanite_swarms = list()

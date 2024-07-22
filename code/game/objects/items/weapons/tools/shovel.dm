@@ -44,7 +44,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
 	w_class = ITEM_SIZE_SMALL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
 	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
@@ -57,7 +57,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
 	w_class = ITEM_SIZE_SMALL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
 	tool_qualities = list(QUALITY_SHOVELING = 85, QUALITY_DIGGING = 85, QUALITY_PRYING = 70, QUALITY_CUTTING = 30, QUALITY_SAWING = 45)
 	workspeed = 1.5
@@ -75,6 +75,12 @@
 	switched_on_forcemult = 1.3 //26 damage. Slightly worse than a chainsaw. Gets bonus damage vs spiders, like all shovels
 	workspeed = 1.3
 	w_class = ITEM_SIZE_NORMAL //Bigger than a normal crovel, doesn't fit in your pocket
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "Powercrovel"
+		)
+
 
 	toggleable = TRUE
 	use_fuel_cost = 0.1

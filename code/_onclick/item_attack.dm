@@ -36,9 +36,115 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if (pre_attack(A, user, params))
 		return 1 //Returning 1 passes an abort signal upstream
 	add_fingerprint(user)
+	if(ishuman(user))//monkeys can use items, unfortunately
+		var/mob/living/carbon/human/H = user
+		if(H.blocking)
+			H.stop_blocking()
+	if(ishuman(user) && !(user == A) && !(user.loc == A) && (w_class >=  ITEM_SIZE_NORMAL) && wielded && user.a_intent == I_HURT && !istype(src, /obj/item/gun) && !istype(A, /obj/structure) && !istype(A, /turf/simulated/wall) && A.loc != user && !no_swing)
+		swing_attack(A, user, params)
+		if(istype(A, /turf/simulated/floor)) // shitty hack so you can attack floors while wielding a large weapon
+			return A.attackby(src, user, params)
+		return 1 //Swinging calls its own attacks
 	return A.attackby(src, user, params)
 
-// No comment
+//Returns TRUE if attack is to be carried out, FALSE otherwise.
+/obj/item/proc/double_tact(mob/user, atom/atom_target, adjacent)
+	if(atom_target.loc == user)//putting stuff in your backpack, or something else on your person?
+		return TRUE //regular bags won't even be able to hold items this big, but who knows
+	if((w_class >= ITEM_SIZE_HUGE /*|| (w_class == ITEM_SIZE_HUGE && !wielded)*/) && !abstract && !istype(src, /obj/item/gun) && !no_double_tact)//grabs have colossal w_class. You can't raise something that does not exist.
+		if(!adjacent || istype(atom_target, /turf) || istype(atom_target, /mob) || user.a_intent == I_HURT)//guns have the point blank privilege
+			if(!ready)
+				user.visible_message(SPAN_DANGER("[user] raises [src]!"))
+				ready = TRUE
+				var/obj/effect/effect/melee/alert/A = new()
+				user.vis_contents += A
+				qdel(A)
+				var/unready_time = world.time + (10 SECONDS)
+				while(world.time < unready_time)
+					sleep(1)
+					if(!(ready))
+						user.vis_contents -= A
+						return FALSE
+					if(!(is_equipped()))
+						ready = FALSE
+						user.vis_contents -= A
+						return FALSE
+				user.visible_message(SPAN_NOTICE("[user] lowers \his [src]."))
+				ready = FALSE
+				user.vis_contents -= A
+				return FALSE
+			else
+				ready = FALSE
+				return TRUE
+		else
+			return TRUE
+	else
+		return TRUE
+
+
+/obj/item/proc/swing_attack(atom/A, mob/user, params)
+	var/holdinghand = user.get_inventory_slot(src)
+	if(params && islist(params) && params["mech"])
+		holdinghand = params["mech_hand"]
+	var/turf/R
+	var/turf/C
+	var/turf/L
+	if(A.x == 0 && A.y == 0 && A.z == 0) //Attacking equipped items results in them getting forwarded
+		C = get_turf(user)
+	else
+		C = get_turf(A)
+	var/_dir
+	if(C == get_turf(user)) //If turf matches with user, move the attack towards where the user is facing
+		_dir = user.dir
+		C = get_step(C, _dir)
+	else
+		_dir = get_dir(user, A)
+	switch(_dir)
+		if(NORTH)
+			R = get_step(C, EAST)
+			L = get_step(C, WEST)
+		if(SOUTH)
+			R = get_step(C, WEST)
+			L = get_step(C, EAST)
+		if(EAST)
+			R = get_step(C, SOUTH)
+			L = get_step(C, NORTH)
+		if(WEST)
+			R = get_step(C, NORTH)
+			L = get_step(C, SOUTH)
+		if(NORTHEAST)
+			R = get_step(C, SOUTH)
+			L = get_step(C, WEST)
+		if(NORTHWEST)
+			R = get_step(C, EAST)
+			L = get_step(C, SOUTH)
+		if(SOUTHEAST)
+			R = get_step(C, WEST)
+			L = get_step(C, NORTH)
+		if(SOUTHWEST)
+			R = get_step(C, NORTH)
+			L = get_step(C, EAST)
+	var/obj/effect/effect/melee/swing/S = new(get_turf(user))
+	S.dir = _dir
+	user.visible_message(SPAN_DANGER("[user] swings \his [src]"))
+	playsound(loc, 'sound/effects/swoosh.ogg', 50, 1, -1)
+	switch(holdinghand)
+		if(slot_l_hand)
+			flick("left_swing", S)
+			var/dmg_modifier = 1
+			dmg_modifier = tileattack(user, L, modifier = 1)
+			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)
+			tileattack(user, R, modifier = dmg_modifier)
+			QDEL_IN(S, 2 SECONDS)
+		if(slot_r_hand)
+			flick("right_swing", S)
+			var/dmg_modifier = 1
+			dmg_modifier = tileattack(user, R, modifier = 1)
+			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)
+			tileattack(user, L, modifier = dmg_modifier)
+			QDEL_IN(S, 2 SECONDS)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
 /atom/proc/attackby(obj/item/W, mob/user, params)
 	return
 
@@ -52,6 +158,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 			playsound(loc, I.hitsound, 50, 1, -1)
 		visible_message(SPAN_DANGER("[src] has been hit by [user] with [I]."))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
 
 /obj/proc/nt_sword_attack(obj/item/I, mob/living/user)//for sword of truth
 	. = FALSE
@@ -78,13 +185,86 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /mob/living/attackby(obj/item/I, mob/living/user, var/params)
 	if(!ismob(user))
 		return FALSE
-	if(can_operate(src, user) && do_surgery(src, user, I)) //Surgery
+	var/surgery_check = can_operate(src, user)
+	if(surgery_check && do_surgery(src, user, I, surgery_check)) //Surgery
 		return TRUE
-	return I.attack(src, user, user.targeted_organ)
+	else
+		return I.attack(src, user, user.targeted_organ)
+
+//Used by Area of effect attacks, if it returns FALSE, it failed
+/obj/item/proc/attack_with_multiplier(mob/living/user, var/atom/target, var/modifier = 1)
+	if(!wielded && modifier > 0)
+		return FALSE
+	var/original_force = force
+	var/original_unwielded_force = force_wielded_multiplier ? force / force_wielded_multiplier : force / 1.3
+	force *= modifier
+	target.attackby(src, user)
+	force = wielded ? original_force : round(original_unwielded_force, 1)
+	return TRUE
+
+//Same as above but for mobs
+/obj/item/proc/attack_with_multiplier_mob(mob/living/user, var/mob/living/target, var/modifier = 1)
+	if(!wielded && modifier > 0)
+		return FALSE
+	var/original_force = force
+	var/original_unwielded_force = force_wielded_multiplier ? force / force_wielded_multiplier : force / 1.3
+	force *= modifier
+	attack(target, user, user.targeted_organ)
+	force = wielded ? original_force : round(original_unwielded_force, 1)
+	return TRUE
+
+//Area of effect attacks (swinging), return remaining damage
+/obj/item/proc/tileattack(mob/living/user, turf/targetarea, var/modifier = 1, var/swing_degradation = 0.2, var/original_target)
+	if(istype(targetarea, /turf/simulated/wall))
+		var/turf/simulated/W = targetarea
+		if(attack_with_multiplier(user, W, modifier))
+			return (modifier - swing_degradation) // We hit a static object, prevents hitting anything underneath
+	var/successful_hit = FALSE
+	for(var/obj/S in targetarea)
+		if ((S.density || istype(S, /obj/effect/plant)) && !istype(S, /obj/structure/table) && !istype(S, /obj/machinery/disposal) && !istype(S, /obj/structure/closet))
+			if(attack_with_multiplier(user, S, modifier))
+				successful_hit = TRUE // Livings or targeted mobs can still be hit
+	if(successful_hit)
+		modifier -= swing_degradation // Only deduct damage once for dense objects
+	var/list/living_mobs = new/list()
+	var/list/dead_mobs = new/list()
+	for(var/mob/living/M in targetarea)
+		if(M != user)
+			if(M.stat == DEAD)
+				dead_mobs.Add(M)
+			else
+				living_mobs.Add(M)
+	var/mob/living/target
+	if(original_target && istype(original_target, /mob/living)) // Check if original target is a mob
+		if(LAZYFIND(living_mobs, original_target) || LAZYFIND(dead_mobs, original_target)) // Check if original target is a mob on this tile
+			target = original_target
+			if(attack_with_multiplier_mob(user, target, modifier))
+				modifier -= swing_degradation
+			if(target.density) // If the original target was dense, the rest of the mobs are shielded
+				return modifier
+
+	while(living_mobs.len && modifier > 0)
+		target = pick_n_take(living_mobs)
+		if(attack_with_multiplier_mob(user, target, modifier))
+			modifier -= swing_degradation
+		successful_hit = TRUE
+		if(target.density) // If we hit a dense target, the rest of the mobs are shielded
+			return modifier
+	if(!successful_hit && dead_mobs.len) // If we hit nothing, try to hit dead mobs
+		target = pick(dead_mobs)
+		if(attack_with_multiplier_mob(user, target, modifier))
+			modifier -= swing_degradation
+	return modifier
 
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
-/obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, params)
+/obj/item/proc/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity, params)
+	if((!proximity && !ismob(A)) || !wielded || !extended_reach)//extended reach is only for mobs when you wield the spear
+		return
+	if(get_dist(user.loc, A.loc) < 3)//okay, we are in reach, now we need to check if there is anything dense in our path
+		var/turf/T = get_step(user.loc, get_dir(user, A))
+		if(T.Enter(user))
+			resolve_attackby(A, user, params)
 	return
 
 //I would prefer to rename this attack_as_weapon(), but that would involve touching hundreds of files.
@@ -128,9 +308,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		var/obj/item/organ/external/current_hand = H.organs_by_name[H.hand ? BP_L_ARM : BP_R_ARM]
 		power = power + ((current_hand.limb_efficiency - 100) / 10) //Organ damage in the arms reduces melee damage, Improved efficiency increases melee damage. Slap Harder.
 		power *= H.damage_multiplier
+		if(H.holding_back)
+			power /= 2
 	if(HULK in user.mutations)
 		power *= 2
-	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
+	if(target.faction in effective_faction) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
 	target.hit_with_weapon(src, user, power, hit_zone)
 	return

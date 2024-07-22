@@ -318,8 +318,9 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 100,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
-	custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them
+	//custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them - Turns out they just abuse it to get free stuff, and they just make a custom vendor if they want to sell
 
+/* We don't actually use this code at all, check_NT is hardcoded to always return true, so why run the proc every time?
 /obj/machinery/vending/theomat/proc/check_NT(mob/user)
 	var/bingo = TRUE //SoJ tweak, were always true, sadly for us church likes non-churchies (lame I know)
 	if(ishuman(user))
@@ -352,6 +353,7 @@
 /obj/machinery/vending/theomat/try_to_buy(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
 	if(check_NT(user))
 		..()
+*/
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"

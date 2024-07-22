@@ -361,9 +361,10 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup medicine. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing and surgery kit out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/storage/belt/medical/opifex/full(usr.loc)
+	new /obj/item/storage/firstaid/surgery(usr.loc)
 	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 

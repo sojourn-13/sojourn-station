@@ -519,31 +519,32 @@
 // this function displays jetpack pressure in the stat panel
 /mob/living/silicon/robot/proc/show_jetpack_pressure()
 	// if you have a jetpack, show the internal tank pressure
-	if (jetpack)
-		stat("Internal Atmosphere Info", jetpack.name)
-		stat("Tank Pressure", jetpack.gastank.air_contents.return_pressure())
+	. = list()
+	if(jetpack)
+		. += "Internal Atmosphere Info: [jetpack.name]"
+		. += "Tank Pressure: [jetpack.gastank.air_contents.return_pressure()]"
 
 
 // this function displays the cyborgs current cell charge in the stat panel
 /mob/living/silicon/robot/proc/show_cell_power()
+	. = list()
 	if(cell)
-		stat(null, text("Charge Left: [round(cell.percent())]%"))
-		stat(null, text("Cell Rating: [round(cell.maxcharge)]")) // Round just in case we somehow get crazy values
-		stat(null, text("Power Cell Load: [round(used_power_this_tick)]W"))
+		. += "Charge Left: [round(cell.percent())]%"
+		. += "Cell Rating: [round(cell.maxcharge)]" // Round just in case we somehow get crazy values
+		. += "Power Cell Load: [round(used_power_this_tick)]W"
 	else
-		stat(null, text("No Cell Inserted!"))
+		. += "No Cell Inserted!"
 
 
 // update the status screen display
-/mob/living/silicon/robot/Stat()
+/mob/living/silicon/robot/get_status_tab_items()
 	. = ..()
-	if (statpanel("Status"))
-		show_cell_power()
-		show_jetpack_pressure()
-		stat(null, text("Lights: [lights_on ? "ON" : "OFF"]"))
-		if(module)
-			for(var/datum/matter_synth/ms in module.synths)
-				stat("[ms.name]: [ms.energy]/[ms.max_energy_multiplied]")
+	. += show_cell_power()
+	. += show_jetpack_pressure()
+	. += "Lights: [lights_on ? "ON" : "OFF"]"
+	if(module)
+		for(var/datum/matter_synth/ms in module.synths)
+			. += "[ms.name]: [ms.energy]/[ms.max_energy_multiplied]"
 
 /mob/living/silicon/robot/restrained()
 	return FALSE
@@ -555,7 +556,7 @@
 			var/mob/living/carbon/human/firer = Proj.firer
 			chance -= firer.stats.getStat(STAT_VIG, FALSE) / 5
 		var/obj/item/projectile/bullet/B = Proj
-		chance = max((chance - B.armor_penetration), 0)
+		chance = max((chance / B.armor_divisor), 0)
 		if (!(Proj.testing))
 			if(B.starting && prob(chance)) // disregard this for test because its luck based
 				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armour!"))
@@ -883,12 +884,12 @@
 	return ..(user,FLOOR(damage * 0.5, 1),attack_message)
 
 /mob/living/silicon/robot/proc/allowed(atom/movable/A)
-	if(!length(req_access)) //no requirements
+	if(!LAZYLEN(req_access)) //no requirements
 		return TRUE
 
 	var/list/access = A?.GetAccess()
 
-	if(!length(access)) //no ID or no access
+	if(!LAZYLEN(access)) //no ID or no access
 		return FALSE
 	for(var/req in req_access)
 		if(req in access) //have one of the required accesses
@@ -1105,7 +1106,7 @@
 	if(R)
 		R.UnlinkSelf()
 		to_chat(R, "Buffers flushed and reset. Camera system shutdown.  All systems operational.")
-		verbs -= /mob/living/silicon/robot/proc/ResetSecurityCodes
+		remove_verb(src, /mob/living/silicon/robot/proc/ResetSecurityCodes)
 
 /mob/living/silicon/robot/proc/SetLockdown(var/state = 1)
 	// They stay locked down if their wire is cut.
@@ -1133,7 +1134,7 @@
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
 		return
 	if (icon_selected == 1)
-		verbs -= /mob/living/silicon/robot/proc/choose_icon
+		remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 		return
 
 
@@ -1158,10 +1159,10 @@
 	icon_selected = 1 //MEW
 	post_icon_giving()
 
-	verbs -= /mob/living/silicon/robot/proc/choose_icon
+	remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 
 	if(allow_resting)
-		verbs += /mob/living/silicon/robot/verb/resting_icon_mode
+		add_verb(src, /mob/living/silicon/robot/verb/resting_icon_mode)
 
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
 
@@ -1174,10 +1175,10 @@
 	toggle_sensor_mode()
 
 /mob/living/silicon/robot/proc/add_robot_verbs()
-	verbs |= robot_verbs_default
+	add_verb(src, robot_verbs_default)
 
 /mob/living/silicon/robot/proc/remove_robot_verbs()
-	verbs -= robot_verbs_default
+	remove_verb(src, robot_verbs_default)
 
 // Uses power from cyborg's cell. Returns 1 on success or 0 on failure.
 // Properly converts using CELLRATE now! Amount is in Joules.

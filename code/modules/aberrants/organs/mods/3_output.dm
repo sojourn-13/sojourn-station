@@ -139,6 +139,5 @@
 		O.active_blood_req_mod = organ_stats[4] * modifier
 		O.active_nutriment_req_mod = organ_stats[5] * modifier
 		O.active_oxygen_req_mod = organ_stats[6] * modifier
-		O.active_owner_verb_adds = organ_stats[8]
 		O.new_name = output
 	..()

@@ -2,7 +2,6 @@
 	var/tmp/mob/living/holder
 	var/list/stat_list = list()
 	var/list/datum/perk/perks = list()
-	var/list/obj/effect/perk_stats = list() // Holds effects representing perks, to display them in stat()
 	var/initialized = FALSE //Whether or not the stats have had time to be properly filled. Not always used. For players, it is set in human/Stat(), used for Stat-dependant organs
 
 /datum/stat_holder/New(mob/living/L)
@@ -16,8 +15,7 @@
 		holder.stats = null
 		holder = null
 
-	QDEL_LIST(perks) //i dont know if this is needed but hey
-	QDEL_LIST(perk_stats)
+	QDEL_LIST(perks) // Definitely needed to clean up properly
 
 	stat_list.Cut()
 	return ..()
@@ -151,7 +149,6 @@
 		var/datum/perk/P = new perkType
 		perks += P
 		P.assign(holder)
-		perk_stats += P.statclick
 		. = TRUE
 
 
@@ -161,10 +158,9 @@
 	if(P)
 		perks -= P
 		P.remove()
-		perk_stats -= P.statclick
 
 /datum/stat_holder/proc/removeAllPerks()
-	for(var/datum/perk/P in (perk_stats || perks))
+	for(var/datum/perk/P in perks)
 		removePerk(P)
 
 

@@ -72,7 +72,7 @@
 			qdel(src)
 
 /obj/effect/spider/attackby(var/obj/item/I, var/mob/user)
-	if(I.attack_verb.len)
+	if(LAZYLEN(I.attack_verb))
 		visible_message("<span class='warning'>\The [src] have been [pick(I.attack_verb)] with \the [I][(user ? " by [user]." : ".")]</span>")
 	else
 		visible_message("<span class='warning'>\The [src] have been attacked with \the [I][(user ? " by [user]." : ".")]</span>")

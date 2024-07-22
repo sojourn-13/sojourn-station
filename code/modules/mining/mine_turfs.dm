@@ -282,6 +282,12 @@
 						B = new(src)
 				if(mineral) //This entire segment can be done better.
 					var/mineral_result = CEILING((mineral.result_amount * dig_bonus) - (mined_ore * dig_bonus), 1)
+					if(isliving(user))
+						var/mob/living/digger = user
+						var/task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+						if(task_level)
+							mineral_result += task_level
+
 					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
 					var/obj/item/stack/ore/O = DropMineral(mineral_result)
 					if(box && O)
@@ -291,9 +297,9 @@
 						if(bag.can_be_inserted(O, TRUE))
 							bag.handle_item_insertion(O, suppress_warning = TRUE)
 				if(B)
-					GetDrilled(0)
+					GetDrilled(0, FALSE)
 				else
-					GetDrilled(1)
+					GetDrilled(1, FALSE)
 				return
 			return
 
@@ -334,9 +340,9 @@
 	O.amount = mineralamount
 	return O
 
-/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
+/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0, give_minerals = TRUE)
 	//var/destroyed = 0 //used for breaking strange rocks
-	if (mineral && mineral.result_amount)
+	if (mineral && mineral.result_amount && give_minerals)
 
 		//if the turf has already been excavated, some of it's ore has been removed
 		DropMineral(mineral.result_amount - mined_ore)
@@ -509,22 +515,30 @@
 			return
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_ROB))
 			to_chat(user, SPAN_NOTICE("You dug a hole."))
-			gets_dug()
+			gets_dug(user)
 
 	else
 		..(I,user)
 
-/turf/simulated/floor/asteroid/proc/gets_dug()
+/turf/simulated/floor/asteroid/proc/gets_dug(mob/user)
 
 	if(dug)
 		return
 
-	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
-	newsand.amount = rand(3)+2
-	newsand = new /obj/item/stack/ore(src)
-	newsand.amount = rand(3)+2
+	var/task_level = 0
+	if(isliving(user))
+		var/mob/living/digger = user
+		task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+		if(!task_level)
+			task_level = 0
 
-	dug = 1
+
+	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
+	newsand.amount = rand(3)+2 + task_level
+	newsand = new /obj/item/stack/ore(src)
+	newsand.amount = rand(3)+2 + task_level
+
+	dug = TRUE
 	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return

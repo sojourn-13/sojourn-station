@@ -12,7 +12,6 @@
 
 /client/verb/ooc(msg as text)
 	set name = "OOC"
-	set category = "OOC"
 	set hidden = TRUE
 
 	if(say_disabled)	//This is here to try to identify lag problems
@@ -92,7 +91,6 @@
 /client/verb/looc(msg as text)
 	set name = "LOOC"
 	set desc = "Local OOC, seen only by those in view."
-	set category = "OOC"
 	set hidden = TRUE
 
 	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)

@@ -200,7 +200,7 @@
 	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_mg.ogg' // Yay snowflake silenced sound!
 	caliber = CAL_RIFLE
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	init_recoil = HMG_RECOIL(0.6) // Better slap a bipod on this one! Impossible to fire steady if not braced.
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced.
 	serial_type = "NM"

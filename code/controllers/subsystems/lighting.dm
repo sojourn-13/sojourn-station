@@ -145,8 +145,7 @@ SUBSYSTEM_DEF(lighting)
 
 		DUAL_TICK_CHECK
 
-/datum/controller/subsystem/lighting/stat_entry(msg_prefix)
-	var/list/msg = list(msg_prefix)
+/datum/controller/subsystem/lighting/stat_entry(msg)
 	msg += "T:{"
 	msg += "S [total_lighting_sources] | "
 	msg += "C [total_lighting_corners] | "
@@ -157,7 +156,7 @@ SUBSYSTEM_DEF(lighting)
 	msg += "C [round(cost_corners, 1)] | "
 	msg += "O [round(cost_overlays, 1)]"
 	msg += "}"
-	..(msg.Join())
+	return ..()
 
 #undef DUAL_TICK_CHECK
 #undef SSLIGHTING_STAGE_LIGHTS

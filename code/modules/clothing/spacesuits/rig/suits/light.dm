@@ -5,9 +5,9 @@
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 6,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 100
@@ -44,13 +44,15 @@
 	icon_state = "hacker_rig"
 	suit_type = "SI 'Spacer"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		energy = 0,
 		bomb = 25,
 		bio = 100,
 		rad = 45
 	)
+	ablative_max = 12
+	ablation = ABLATION_SOFT
 	airtight = 0
 	seal_delay = 5
 	slowdown = -0.2 //We speed up the user at cost of horrable armor
@@ -78,9 +80,9 @@
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
 	suit_type = "SI 'retainer"
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
+		melee =7,
+		bullet = 6,
+		energy = 7,
 		bomb = 30,
 		bio = 100,
 		rad = 80
@@ -109,9 +111,9 @@
 	desc = "An advanced powered armour suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
 	icon_state = "hacker_rig"
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 6,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 80
@@ -165,8 +167,8 @@
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
+		melee = 7,
+		bullet = 7,
 		energy = 20,
 		bomb = 25,
 		bio = 100,
@@ -175,6 +177,7 @@
 	seal_delay = 15
 	emp_protection = 40 //change this to 30 if too high.
 	slowdown = 0
+	price_tag = 1000 //rare but ultimately not much to write home about other than its modules.
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ninja
 	glove_type = /obj/item/clothing/gloves/rig/light/ninja

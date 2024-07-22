@@ -1525,6 +1525,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
 
+/area/nadezhda/quartermaster/mining_dreg
+	name = "Slate Mining Pad MEH A" //Mining Excation Head
+	icon_state = "erisblue"
+
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
 	icon_state = "erisred"

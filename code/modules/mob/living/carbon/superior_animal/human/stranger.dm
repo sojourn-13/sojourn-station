@@ -20,7 +20,7 @@
 	status_flags = CANPUSH
 	ranged = TRUE
 	rapid = TRUE
-	armor = list(melee = 10, bullet = 35, energy = 40, bomb = 25, bio = 100, rad = 100) //Were in a space suit thing?
+	armor = list(melee = 6, bullet = 3, energy = 5, bomb = 25, bio = 100, rad = 100) //Were in a space suit thing?
 	projectiletype = /obj/item/projectile/plasma/heavy
 	projectilesound = 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'
 	faction = "bluespace"

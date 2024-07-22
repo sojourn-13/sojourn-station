@@ -121,9 +121,9 @@
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASTIC = 20)
 	max_upgrades = 1
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 25,
+		melee = 6,
+		bullet = 5,
+		energy = 6,
 		bomb = 15,
 		bio = 50,
 		rad = 25

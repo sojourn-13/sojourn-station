@@ -137,75 +137,45 @@
 
 
 /obj/structure/janitorialcart/attack_hand(mob/user)
-	nano_ui_interact(user)
-	return
+	var/list/choices = list()
 
-/obj/structure/janitorialcart/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/data[0]
-	data["name"] = capitalize(name)
-	data["bag"] = mybag ? capitalize(mybag.name) : null
-	data["bucket"] = mybucket ? capitalize(mybucket.name) : null
-	data["mop"] = mymop ? capitalize(mymop.name) : null
-	data["spray"] = myspray ? capitalize(myspray.name) : null
-	data["replacer"] = myreplacer ? capitalize(myreplacer.name) : null
-	data["signs"] = signs ? "[signs] sign\s" : null
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "janitorcart.tmpl", "Janitorial cart", 240, 160)
-		ui.set_initial_data(data)
-		ui.open()
-
-
-/obj/structure/janitorialcart/Topic(href, href_list)
-	if(!in_range(src, usr))
+	var/obj/item/caution/C = locate() in src
+	// These may be nulls, we let byond do the typechecking in this loop
+	for(var/obj/I in list(mybag, mybucket, mymop, myspray, myreplacer, C))
+		choices[I] = I.appearance
+	
+	var/chosen = show_radial_menu(user, src, choices, tooltips = TRUE)
+	if(!chosen)
 		return
-	if(!isliving(usr))
-		return
-	var/mob/living/user = usr
 
-	if(href_list["take"])
-		switch(href_list["take"])
-			if("garbage")
-				if(mybag)
-					user.put_in_hands(mybag)
-					to_chat(user, SPAN_NOTICE("You take [mybag] from [src]."))
-					mybag = null
-			if("mop")
-				if(mymop)
-					user.put_in_hands(mymop)
-					to_chat(user, SPAN_NOTICE("You take [mymop] from [src]."))
-					mymop = null
-			if("spray")
-				if(myspray)
-					user.put_in_hands(myspray)
-					to_chat(user, SPAN_NOTICE("You take [myspray] from [src]."))
-					myspray = null
-			if("replacer")
-				if(myreplacer)
-					user.put_in_hands(myreplacer)
-					to_chat(user, SPAN_NOTICE("You take [myreplacer] from [src]."))
-					myreplacer = null
-			if("sign")
-				if(signs)
-					var/obj/item/caution/Sign = locate() in src
-					if(Sign)
-						user.put_in_hands(Sign)
-						to_chat(user, SPAN_NOTICE("You take \a [Sign] from [src]."))
-						signs--
-					else
-						warning("[src] signs ([signs]) didn't match contents")
-						signs = 0
-			if("bucket")
-				if(mybucket)
-					mybucket.forceMove(get_turf(user))
-					to_chat(user, "<span class='notice'>You unmount [mybucket] from [src].</span>")
-					mybucket = null
+	var/obj/item/taken = null
+	if(chosen == mybag)
+		taken = mybag
+		mybag = null
+	else if(chosen == mymop)
+		taken = mymop
+		mymop = null
+	else if(chosen == myspray)
+		taken = myspray
+		myspray = null
+	else if(chosen == myreplacer)
+		taken = myreplacer
+		myreplacer = null
+	// In case someone else takes it (others are safe because they're object vars)
+	else if(chosen == C && C.loc == src && signs > 0)
+		taken = C
+		signs--
+	else if(chosen == mybucket)
+		// Special case for structure
+		mybucket.forceMove(get_turf(src))
+		to_chat(user, SPAN_NOTICE("You unmount [mybucket] from [src]."))
+		mybucket = null
+		update_icon()
 
-	update_icon()
-	updateUsrDialog()
-
-
+	if(taken)
+		user.put_in_hands(taken)
+		to_chat(user, SPAN_NOTICE("You take [taken] from [src]."))
+		update_icon()
 
 /obj/structure/janitorialcart/update_icon()
 	cut_overlays()
@@ -224,10 +194,6 @@
 		add_overlay("cart_replacer")
 	if(signs)
 		add_overlay("cart_sign[signs]")
-
-
-
-
 
 
 //This is called if the cart is caught in an explosion, or destroyed by weapon fire

@@ -135,7 +135,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/currently_firing = FALSE
 
 	var/wield_delay = 0 // Gun wielding delay , generally in seconds.
-	var/wield_delay_factor = 0 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
+	var/wield_delay_factor = 2 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
 
 	//Gun numbers and stuf
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
@@ -545,9 +545,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		projectile.multiply_projectile_damage(damage_multiplier)
 
 		if(extra_proj_penmult)
-			projectile.multiply_projectile_penetration(extra_proj_penmult)
+			projectile.add_projectile_penetration(penetration_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
+		projectile.add_projectile_penetration(penetration_multiplier)
 
 		if(extra_proj_wallbangmult)
 			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
@@ -1208,7 +1208,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/melee_stats = list()
 
 	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
-	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_penetration, "max" = 100, "unit" = "%"))
+	melee_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
 
 	stats["Physical Details"] = melee_stats
 
@@ -1277,8 +1277,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	data += list(list("name" = "Projectile Type", "type" = "String", "value" = P.name))
 	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
-	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_penetration * penetration_multiplier))
-	data += list(list("name" = "Overall Pain", "type" = "String", "value" = P.agony * proj_agony_multiplier))
+	data += list(list("name" = "Armor Divisor", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
+	data += list(list("name" = "Overall Pain", "type" = "String", "value" = (P.get_pain_damage()) * proj_agony_multiplier))
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
 
@@ -1290,9 +1290,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
+	data["projectile_AP"] = P.armor_divisor + penetration_multiplier
 	data["projectile_WOUND"] = P.wounding_mult
-	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
-	data["projectile_pain"] = P.agony * proj_agony_multiplier
+	data["unarmoured_damage"] = min(0, ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult)
+	data["armoured_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
+	data["armoured_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data
@@ -1324,9 +1326,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	vision_flags = initial(vision_flags)
 	see_invisible_gun = initial(see_invisible_gun)
 	force = initial(force)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	sharp = initial(sharp)
-	attack_verb = list()
+	attack_verb = list("struck", "hit", "bashed")
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
@@ -1335,7 +1337,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
 	color = initial(color)
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
 
@@ -1362,7 +1364,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 	update_icon()

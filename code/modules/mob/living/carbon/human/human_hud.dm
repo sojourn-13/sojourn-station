@@ -61,6 +61,7 @@
 			HUD.underlays.Cut()
 			if(HUDdatum.HUDneed[p]["minloc"])
 				HUD.screen_loc = HUDdatum.HUDneed[p]["minloc"]
+			HUD.update_minimalized(TRUE)
 
 		for (var/p in H.HUDtech)
 			var/obj/screen/HUD = H.HUDtech[p]
@@ -77,13 +78,13 @@
 		for (var/obj/screen/frippery/HUDfri in H.HUDfrippery)
 			H.client.screen -= HUDfri
 	else
-
 		for (var/p in H.HUDneed)
 			var/obj/screen/HUD = H.HUDneed[p]
 			HUD.underlays.Cut()
 			if (HUDdatum.HUDneed[p]["background"])
 				HUD.underlays += HUDdatum.IconUnderlays[HUDdatum.HUDneed[p]["background"]]
 			HUD.screen_loc = HUDdatum.HUDneed[p]["loc"]
+			HUD.update_minimalized(FALSE)
 
 		for (var/p in H.HUDtech)
 			var/obj/screen/HUD = H.HUDtech[p]

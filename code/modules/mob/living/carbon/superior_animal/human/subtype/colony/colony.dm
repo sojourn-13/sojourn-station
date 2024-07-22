@@ -20,7 +20,7 @@
 	target_telegraph = "fumbles to ready their weapon, preparing to engage"
 	rush_target_telegraph = "quickly snaps their aim toward"
 
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 10, bullet = 10, energy = 7, bomb = 30, bio = 100, rad = 50)
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
@@ -120,7 +120,7 @@
 	melee_damage_upper = 10
 	egun = TRUE
 	suited_for_space = TRUE
-	armor = list(melee = 50, bullet = 50, energy = 40, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 12, bullet = 12, energy = 10, bomb = 30, bio = 100, rad = 50)
 	projectiletype = /obj/item/projectile/beam
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
@@ -150,7 +150,7 @@
 	egun = TRUE
 	suited_for_space = TRUE
 	projectiletype = /obj/item/projectile/beam
-	armor = list(melee = 50, bullet = 50, energy = 40, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 12, bullet = 12, energy = 10, bomb = 30, bio = 100, rad = 50)
 
 //They are all waring space suits
 	breath_required_type = NONE

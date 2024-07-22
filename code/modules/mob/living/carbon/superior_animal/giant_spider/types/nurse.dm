@@ -9,8 +9,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
 	icon_state = "nurse"
 	icon_living = "nurse"
-	maxHealth = 30
-	health = 30
+	maxHealth = 30 * SPIDER_HEALTH_MOD
+	health = 30 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	poison_per_bite = 2
@@ -22,7 +22,7 @@
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
 	move_to_delay = 4 //slightly faster than guardians but slower than hunters
-	armor = list(melee = 0, bullet = 0, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
 	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
@@ -32,8 +32,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
 	icon_state = "midwife"
 	icon_living = "midwife"
-	maxHealth = 50
-	health = 50
+	maxHealth = 50 * SPIDER_HEALTH_MOD
+	health = 50 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
@@ -45,8 +45,8 @@
 	desc = "Furry and white, it makes you shudder to look at it. This one has brilliant blue eyes and a pale cold body."
 	icon_state = "nurse_E"
 	icon_living = "nurse_E"
-	maxHealth = 100 // Slow but tanky
-	health = 100
+	maxHealth = 100 * SPIDER_HEALTH_MOD // Slow but tanky
+	health = 100 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
@@ -88,16 +88,16 @@
 	icon_living = "webslinger"
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
 	web_activity = 70
-	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
 	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
 	icon_state = "recluse"
 	icon_living = "recluse"
-	maxHealth = 15
-	health = 15
-	poison_per_bite = 1
+	maxHealth = 15 * SPIDER_HEALTH_MOD
+	health = 15 * SPIDER_HEALTH_MOD
+	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
@@ -106,7 +106,7 @@
 	move_to_delay = 5 // Very slow do to being 1 hit unfun
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
-	armor_penetration = 70
+	armor_divisor = 3
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "empress spider"
@@ -114,8 +114,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
 	icon_living = "spider_queen"
-	maxHealth = 200
-	health = 200
+	maxHealth = 200 * SPIDER_HEALTH_MOD
+	health = 200 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
@@ -126,9 +126,10 @@
 	egg_inject_chance = 10 //Likely
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	get_stat_modifier =  TRUE
+	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
-	armor_penetration = 35
+	armor_divisor = 2
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()

@@ -181,8 +181,10 @@
 
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
-#define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
-#define PROJECTILE_FORCE_MISS -2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_STOP					 1 //if the projectile should stop flying after calling bullet_act()
+#define PROJECTILE_CONTINUE				-1 //if the projectile should continue flying after calling bullet_act()
+#define PROJECTILE_FORCE_MISS			-2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_FORCE_MISS_SILENCED	-2.5 //if the projectile should do the same thing as above, but not give the miss message
 
 //Camera capture modes
 #define CAPTURE_MODE_REGULAR 0 //Regular polaroid camera mode
@@ -233,11 +235,6 @@
 #define CUPGRADE_MARTYR_GIFT /obj/item/cruciform_upgrade/martyr_gift
 #define CUPGRADE_WRATH_OF_GOD /obj/item/cruciform_upgrade/wrath_of_god
 #define CUPGRADE_SPEED_OF_THE_CHOSEN /obj/item/cruciform_upgrade/speed_of_the_chosen
-
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 0
-#define MOUSE_OPACITY_ICON 1
-#define MOUSE_OPACITY_OPAQUE 2
 
 //Filters
 #define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
@@ -401,3 +398,16 @@
 /// BYOND's string procs don't support being used on datum references (as in it doesn't look for a name for stringification)
 /// We just use this macro to ensure that we will only pass strings to this BYOND-level function without developers needing to really worry about it.
 #define LOWER_TEXT(thing) lowertext(UNLINT("[thing]"))
+
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * This is the more performant version, it is unfortunately necessary.
+**/
+#define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
+
+// Font metrics bitfield
+/// Include leading A width and trailing C width in GetWidth() or in DrawText()
+#define INCLUDE_AC (1<<0)

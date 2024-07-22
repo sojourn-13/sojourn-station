@@ -206,7 +206,7 @@
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
 				R.damage_multiplier = 0.8 + rand(-2,2)/10
-				R.penetration_multiplier = 0.75 + rand(-3,3)/10
+				R.penetration_multiplier = -0.25 + rand(-3,3)/10
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 				R.max_shells = rand(3,9)

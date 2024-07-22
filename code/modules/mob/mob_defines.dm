@@ -143,7 +143,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/can_pull_mobs = MOB_PULL_LARGER       // Whether or not the mob can pull other mobs.
 
 	var/datum/dna/dna = null//Carbon
-	var/list/active_genes=list()
+	var/list/active_genes = null
 	var/list/mutations = list() //Carbon -- Doohl
 	//see: setup.dm for list of mutations
 
@@ -229,3 +229,4 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally
 
 	var/click_delay_addition = 0
+	var/list/datum/action/actions = list()

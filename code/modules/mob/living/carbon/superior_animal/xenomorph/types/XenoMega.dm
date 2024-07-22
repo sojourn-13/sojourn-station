@@ -12,7 +12,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
-	armor = list(melee = 30, bullet = 35, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 8, energy = 1, bomb = 30, bio = 100, rad = 100)
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
@@ -40,7 +40,7 @@
 	health = 1500
 	poison_per_bite = 10
 
-	armor = list(melee = 40, bullet = 45, energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 10, bullet = 11, energy = 3, bomb = 30, bio = 100, rad = 100)
 
 
 	melee_damage_lower = 40

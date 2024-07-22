@@ -21,7 +21,7 @@
 	var/holder_original_prob
 
 	/// The atom we have applied our changes to
-	var/atom/holder
+	var/atom/movable/holder
 
 	/// The prefix that will be applied to the name of target
 	var/prefix = null
@@ -69,17 +69,18 @@
 		holder.health = ZERO_OR_MORE((holder.health / maxHealth_mult))
 
 	// Remove our prefix, and then regenerate prefixes
-	holder.prefixes -= prefix
+	LAZYREMOVE(holder.name_prefixes, prefix)
 	holder.update_prefixes()
 
-	holder.current_stat_modifiers -= src
+	LAZYREMOVE(holder.current_stat_modifiers, src)
 
 	// First, we check how many of us are in our holder...
 	var/instances_in_target = instances_of_type_in_list(src, holder.current_stat_modifiers)
 
 	// ...and if it's less than our max, and we are disabled, let's restore our probability
-	if (instances_in_target < maximum_instances && (holder.allowed_stat_modifiers[type] == 0))
-		holder.allowed_stat_modifiers[type] = holder_original_prob
+	// in case of not existing, lazyaccess will return null, which != 0
+	if (instances_in_target < maximum_instances && (LAZYACCESS(holder.allowed_stat_modifiers, type) == 0))
+		LAZYSET(holder.allowed_stat_modifiers, type, holder_original_prob)
 		holder_original_prob = null // dont need to hold onto this anymore
 
 	// if we arent in the target anymore...
@@ -93,7 +94,7 @@
 						do_we_readd = FALSE // ..and if one is, theyre still mutually exclusive, so lets break and say "we're not re-adding them"
 						break
 				if (do_we_readd) // ...if nothing is mutually exclusive...
-					holder.allowed_stat_modifiers[typepath] = mutually_exclusive_with[typepath] // ...we use our stored value to restore it!
+					LAZYSET(holder.allowed_stat_modifiers, typepath, mutually_exclusive_with[typepath]) // ...we use our stored value to restore it!
 
 	holder = null //we no longer have a holder
 
@@ -105,7 +106,7 @@
 /datum/stat_modifier/Destroy()
 
 	if (holder)
-		holder.current_stat_modifiers -= src
+		LAZYREMOVE(holder.current_stat_modifiers, src)
 		holder = null
 
 	return ..()
@@ -118,12 +119,12 @@
  * from the latter list.
  *
 **/
-/datum/stat_modifier/proc/valid_check(var/atom/target, var/list/arguments)
+/datum/stat_modifier/proc/valid_check(var/atom/movable/target, var/list/arguments)
 
 	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) // how many of us are in our target?
 
 	if (instances_in_target >= maximum_instances) // this shouldnt ever be true, but if it is, lets make sure it doesnt happen again
-		target.allowed_stat_modifiers[type] = 0 // by disabling ourselves
+		LAZYSET(target.allowed_stat_modifiers, type, 0) // by disabling ourselves
 		return FALSE // and returning
 
 	for (var/entry in target.current_stat_modifiers) // if we're allowed in...
@@ -132,17 +133,17 @@
 
 	holder = target // they are now our holder!
 
-	holder_original_prob = holder.allowed_stat_modifiers[type] // we need this in case we disable ourselves and remove ourselves later
+	holder_original_prob = LAZYACCESS(holder.allowed_stat_modifiers, type) // we need this in case we disable ourselves and remove ourselves later
 
-	target.current_stat_modifiers += src // add ourselves to their currently held modifiers
+	LAZYADD(target.current_stat_modifiers, src) // add ourselves to their currently held modifiers
 
 	for (var/typepath in mutually_exclusive_with)
-		mutually_exclusive_with[typepath] = holder.allowed_stat_modifiers[typepath] //store the value for if we get removed
-		holder.allowed_stat_modifiers[typepath] = 0 // you are now forbidden from having these
+		mutually_exclusive_with[typepath] = LAZYACCESS(holder.allowed_stat_modifiers, typepath) //store the value for if we get removed
+		LAZYSET(holder.allowed_stat_modifiers, typepath, 0) // you are now forbidden from having these
 
 	instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) //refresh the var
 	if (instances_in_target >= maximum_instances) // if we are now at the maximum of our own instances...
-		target.allowed_stat_modifiers[type] = 0 // ...disable ourselves
+		LAZYSET(target.allowed_stat_modifiers, type, 0) // ...disable ourselves
 		//we dont return here, since we already added ourselves to the list
 
 	var/arguments_to_pass = consider_custom_effect(target, arguments, status = PRIOR_TO_APPLY) // lets see if we have any pre_apply effects
@@ -158,9 +159,9 @@
  * general effects.
  *
  * Args:
- * atom/target: The target the effects will be applied to.
+ * atom/movable/target: The target the effects will be applied to.
 **/
-/datum/stat_modifier/proc/apply_to(var/atom/target, var/list/arguments, arguments_to_pass)
+/datum/stat_modifier/proc/apply_to(var/atom/movable/target, var/list/arguments, arguments_to_pass)
 
 	if (maxHealth_mult)
 		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, maxHealth_mult, maxHealth_zeroth))
@@ -175,13 +176,12 @@
 	determine_description_and_prefixes(target, ratio)
 
 	if (prefix && target.get_prefix) // do we have a prefix, and does our target want a prefix?
-		target.prefixes += prefix // if so, lets add ours to their prefix list...
-
+		LAZYADD(target.name_prefixes, prefix) // if so, lets add ours to their prefix list...
 		target.update_prefixes() // ...and regenerate their prefixes
 
 	return TRUE
 
-/datum/stat_modifier/proc/consider_custom_effect(atom/target, list/arguments, arguments_to_pass, status)
+/datum/stat_modifier/proc/consider_custom_effect(atom/movable/target, list/arguments, arguments_to_pass, status)
 
 	var/list_length
 
@@ -197,15 +197,15 @@
 	return // only happens if no custom effect is present
 
 /// Holder proc for any logic that has to be run before apply_to()
-/datum/stat_modifier/proc/before_apply(atom/target, list/arguments, arg_length)
+/datum/stat_modifier/proc/before_apply(atom/movable/target, list/arguments, arg_length)
 	return
 
 /// Holder proc for any logic that has to be run after apply_to(), but before prefixes and descriptions are determined
-/datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
+/datum/stat_modifier/proc/after_apply(atom/movable/target, list/arguments, arg_length, arguments_to_pass)
 	return
 
 /// Uses a ratio to determine which prefix and description will be gained. If arguments_to_pass is null, uses ratio1 and ratio2 instead. Returns if force_default_prefix is true.
-/datum/stat_modifier/proc/determine_description_and_prefixes(atom/target, arguments_to_pass, ratio1, ratio2)
+/datum/stat_modifier/proc/determine_description_and_prefixes(atom/movable/target, arguments_to_pass, ratio1, ratio2)
 
 	if (force_default_prefix || (!(target.get_prefix)))
 		return FALSE
@@ -261,5 +261,5 @@
 
 	stattags = NOTHING_STATTAG
 
-/datum/stat_modifier/none/apply_to(var/atom/target)
+/datum/stat_modifier/none/apply_to(var/atom/movable/target)
 	return FALSE

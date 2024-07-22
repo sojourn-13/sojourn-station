@@ -137,7 +137,7 @@
 	seek_move_delay = (1 / seek_speed) / (world.tick_lag / 10)//number of ticks between moves
 	turns_since_scan = rand(min_scan_interval, max_scan_interval)//Randomise this at the start so animals don't sync up
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 
 	if(mob_size)
 		nutrition_step = mob_size * 0.03 * metabolic_factor
@@ -409,15 +409,13 @@
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
 		var/dmult = 1
-		if(LAZYLEN(Proj.effective_faction))
-			if(faction in Proj.effective_faction)
-				dmult += Proj.damage_mult
-		if(LAZYLEN(Proj.supereffective_types))
-			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
-				dmult += Proj.supereffective_mult
+		if(faction in Proj.effective_faction)
+			dmult += Proj.damage_mult
+		if(is_type_in_list(src, Proj.supereffective_types, TRUE))
+			dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
+			return damage_through_armor(damage, def_zone, attack_flag = Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
@@ -526,11 +524,11 @@
 
 	return tally
 
-/mob/living/simple_animal/Stat()
+/mob/living/simple_animal/get_status_tab_items()
 	. = ..()
 
-	if(statpanel("Status") && show_stat_health)
-		stat(null, "Health: [round((health / maxHealth) * 100)]%")
+	if(show_stat_health)
+		. += "Health: [round((health / maxHealth) * 100)]%"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
 	SSmove_manager.stop_looping(src)

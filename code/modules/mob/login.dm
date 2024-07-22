@@ -79,9 +79,9 @@
 
 	//set macro to normal incase it was overriden (like cyborg currently does)
 	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
-		winset(client, null, "mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
+		winset(client, null, "mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true")
 	else
-		winset(client, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
+		winset(client, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true")
 
 	if(client)
 		if(client.UI)
@@ -90,5 +90,6 @@
 			client.create_UI(src.type)
 		client.CAN_MOVE_DIAGONALLY = FALSE
 		add_click_catcher()
-
-	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
+		client.fullscreen_check()
+		client.init_verbs()
+		update_action_buttons()

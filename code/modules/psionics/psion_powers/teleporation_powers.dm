@@ -1,7 +1,7 @@
 
 // Powers that teleport the user or others around
 
-/mob/living/carbon/human/psionic_tumor/proc/journey_to_nowhere()
+/mob/living/carbon/human/proc/journey_to_nowhere()
 	set category = "Psionic powers"
 	set name = "Journey to Nowhere (5)"
 	set desc = "Expend five psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \

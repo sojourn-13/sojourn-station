@@ -56,3 +56,8 @@ GLOBAL_LIST_INIT(symbols_unicode_keys, list(
 	"�" = "&#x2014;",
 	"�" = "&#x2122;"
 ))
+
+//All characters forbidden by filenames: ", \, \n, \t, /, ?, %, *, :, |, <, >, ..
+GLOBAL_DATUM_INIT(filename_forbidden_chars, /regex, regex(@{""|[\\\n\t/?%*:|<>]|\.\."}, "g"))
+GLOBAL_PROTECT(filename_forbidden_chars)
+// had to use the OR operator for quotes instead of putting them in the character class because it breaks the syntax highlighting otherwise.

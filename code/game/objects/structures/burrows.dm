@@ -605,8 +605,8 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 				qdel(src)
 
 	//Soj Edit
-	if(ishuman(user) && dug_out && success)
-		var/mob/living/carbon/human/H = user
+	if(iscarbon(user) && dug_out && success)
+		var/mob/living/carbon/H = user
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_sealer, "PROPER_SEALER", skill_gained = 1, learner = H)
 
 /obj/structure/burrow/proc/false_removal()

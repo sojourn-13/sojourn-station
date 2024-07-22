@@ -64,4 +64,10 @@
   .Layout__content {
     background-image: url('../../assets/bg-syndicate.svg');
   }
+  // NTOS header bar
+  .NtosWindow__header {
+    background:
+      linear-gradient(rgba(157, 8, 8, 0.5), rgba(157, 8, 8, 0.5)),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
+  }
 }
