@@ -270,6 +270,12 @@ Procs:
 	shown = FALSE
 	item_tech_req = TECH_ILLEGAL // research any contractor item and this tech will show up
 
+/datum/tech/psi
+	name = "Soteria Psionic Research"
+	shortname = "Psionic Tech"
+	desc = "Research into the unknown that is Psionics"
+	rare = 2
+
 /datum/technology
 	var/name = "name"
 	var/desc = "description"                // Not used because lazy

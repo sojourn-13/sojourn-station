@@ -66,8 +66,8 @@
 		remove_synthetics()
 
 		//Now we do are math to under are point cap and regen
-		var/psi_max_bonus = 0
-		var/cognitive_potential = 1
+		cognitive_potential_max += psionic_equipment_check("cognitive_potential_max_bonus")
+
 
 		if(!owner.stats.getPerk(PERK_PSION))
 			owner.stats.addPerk(PERK_PSION)
@@ -78,21 +78,66 @@
 		if(owner.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
 			psi_max_bonus += 5
 
+		psi_max_bonus += psionic_equipment_check("psi_max_bonus")
+
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.5), 0, 3))
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, cognitive_potential_max), 0.1)
 
+		var/regen_points_timer = (5 MINUTES - cognitive_potential MINUTES)
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
-			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
-		else
-			addtimer(CALLBACK(src, PROC_REF(regen_points)), (5 MINUTES - cognitive_potential MINUTES))
+			regen_points_timer *= 0.5
+
+		regen_points_timer -= (psionic_equipment_check("psi_regen_helpers") SECONDS)
+
+		regen_points_timer -= cognitive_potential MINUTES
+
+		if(min_timer > regen_points_timer)
+			regen_points_timer = min_timer
+
+		addtimer(CALLBACK(src, PROC_REF(regen_points)), regen_points_timer)
 
 		if(psi_points < max_psi_points)
 			psi_points += 1
 
 		if(owner.psi_blocking < 0) //resets psiblock to zero so people can't somehow farm it into the negatives.
 			owner.psi_blocking = 0
+
+//The major types are:
+//"psi_max_bonus"
+//"psi_regen_helpers" - This is in seconds!
+//"cognitive_potential_max_bonus" - caps at 4
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_equipment_check(type)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		var/bonus_return = 0
+		switch(type)
+			if("psi_max_bonus")
+				//Waring 4 ear rings does stack in this case
+				if(istype(H.l_ear, /obj/item/clothing/ears/psionic_ear_rings))
+					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.l_ear
+					bonus_return += PESR.storage_addition
+				if(istype(H.r_ear, /obj/item/clothing/ears/psionic_ear_rings))
+					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.r_ear
+					bonus_return += PESR.storage_addition
+
+				return bonus_return
+
+			if("psi_regen_helpers")
+				if(istype(H.glasses, /obj/item/clothing/glasses/psionic_lens))
+					var/obj/item/clothing/glasses/psionic_lens/PL = H.glasses
+					bonus_return += PL.psionic_seconds
+
+				return bonus_return
+
+			if("cognitive_potential_max_bonus")
+				if(istype(H.w_uniform , /obj/item/clothing/under/psionic_cloths))
+					var/obj/item/clothing/under/psionic_cloths/PC = H.w_uniform
+					bonus_return += PC.cognitive_potential
+				return bonus_return
+
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()

@@ -137,9 +137,122 @@
 	icon_state = "medium_opifex"
 	item_state = "medium_opifex"
 
+//We do medium for scaling reasons
+/obj/item/storage/pouch/medium_generic/psionic
+	name = "Woven Pouch C-7v89"
+	desc = "A small on the outside experimental hand bag only useable for psionic users."
+	icon_state = "medium_psion"
+	item_state = "medium_generic"
+	storage_slots = null //Uses generic capacity
+	max_storage_space = 1 // This increases in size based on the user
+	max_w_class = ITEM_SIZE_TINY //Increases in size with user
+	price_tag = 800
+	level = BELOW_PLATING_LEVEL //As we can
+	matter = list(MATERIAL_CLOTH = 15, MATERIAL_PLASMA = 1)
+	var/psionic_storage_cap = DEFAULT_NORMAL_STORAGE + 5 //Starting out the peak is 2.25 medium pouches
+	var/psionic_scaling_mult = 1
+	var/psionic_storage = 5
+	var/repression = TRUE
+	cant_hold = list(/obj/item/storage/pouch, /obj/item/device/psionic_catalyst)
+	plus_extra_bulk = 30 //Heavily limited in putting it in modular storage
+
+/obj/item/storage/pouch/medium_generic/psionic/verb/toggle_repression()
+	set name = "Toggle Storage Repression"
+	set desc = "Repression makes it so at higher storage points you may put in larger items, at the cost of losing some storage slot options (i.e Belt/Pockets)."
+	set category = "Object"
+	set src in view(1)
+
+	if(contents.len >= 1)
+		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well items are inside [src]."))
+		return
+	if(!isturf(loc))
+		to_chat(usr, SPAN_NOTICE("You are not allow to toggle repression well [src] is on person."))
+		return
+	repression = !repression
+	psionic_tune()
+	to_chat(usr, SPAN_NOTICE("Repression: [repression ? "Actived" : "Deactived"] "))
+
+
+/obj/item/storage/pouch/medium_generic/psionic/pouch_size_increase()
+	psionic_tune()
+	..()
+
+/obj/item/storage/pouch/medium_generic/psionic/attack_hand(mob/user as mob)
+	psionic_tune()
+	..()
+
+/obj/item/storage/pouch/medium_generic/psionic/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst))
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		var/used = FALSE
+		//Todo: improved feedback on what your improving
+		//I cant make it not sound videogamey
+		if(psionic_scaling_mult < 1.5)
+			psionic_scaling_mult += 0.1
+			used = TRUE
+			to_chat(user, "It seems a little easyer to use your maxium psionic pool to increase the [src] space.")
+
+		if(psionic_storage < 15 && !used)
+			psionic_storage += 1
+			used = TRUE
+			to_chat(user, "It seems [src] has a little more space.")
+
+		if(!used)
+			psionic_storage_cap += 2
+			to_chat(user, "It seems catalysts can only increase potential, using more catalyst on this pouch might be wasteful!")
+
+
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
+		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
+
+	..()
+
+/obj/item/storage/pouch/medium_generic/psionic/proc/psionic_tune()
+	var/failed_to_be_psion = TRUE
+	if(ishuman(loc))
+		var/mob/living/carbon/human/psionc = loc
+		var/obj/item/organ/internal/psionic_tumor/PT = psionc.first_organ_by_process(BP_PSION)
+		if(PT)
+			slot_flags = initial(slot_flags)
+			w_class = initial(w_class)
+			failed_to_be_psion = FALSE
+			//This balancing is REALLY weird so make sure you know what your doing before tweaking
+			//Basically every psionic point is a "tiny item of space"
+			//Normal pouches DEFAULT_SMALL_STORAGE, aka 10 according to __DEFINES/inventory_sizes.dm
+			//10 psionic points MATCHES small pouches, aka 100 cog.
+			//Now thats insainly bad and unfun so we do a bit of safty netting, aka the MINIUM you can have is a small pouch
+			//First we eat cubes upto a max of 10, for at lest 1 medium pouch
+			//Second After that we just increase the cap endlessly
+			max_storage_space = round(PT.max_psi_points * psionic_scaling_mult) + psionic_storage
+			max_storage_space = clamp(max_storage_space, 5, psionic_storage_cap)
+			max_w_class = ITEM_SIZE_SMALL
+			if(!repression)
+				if(max_storage_space >= 20) //DEFAULT_NORMAL_STORAGE
+				//We are matching large pouches
+					max_w_class = ITEM_SIZE_NORMAL
+					slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+					w_class = ITEM_SIZE_BULKY
+
+				//We are matching backpacks pouches
+				if(max_storage_space >= 30) //DEFAULT_BULKY_STORAGE
+					max_w_class = ITEM_SIZE_BULKY
+					slot_flags = SLOT_DENYPOCKET | SLOT_BACK
+					w_class = ITEM_SIZE_HUGE
+
+
+	if(failed_to_be_psion)
+		w_class = initial(w_class)
+		max_storage_space = 1 // this is set to one do stop devide by 0
+		max_w_class = ITEM_SIZE_TINY //Increases in size with user
+		slot_flags = SLOT_BELT | SLOT_DENYPOCKET //non-psionics cant hold this in a pocket without psionic first doing some handing over
+
 /obj/item/storage/pouch/large_generic
 	name = "large generic pouch"
-	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket."
 	icon_state = "large_generic"
 	item_state = "large_generic"
 	w_class = ITEM_SIZE_BULKY //This is like a second satchle, is this size for belt/box ect nesting tricks
@@ -178,7 +291,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 
 
 /obj/item/storage/pouch/large_generic/leather
-	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket."
 	icon_state = "large_leather"
 	item_state = "large_leather"
 	price_tag = 900

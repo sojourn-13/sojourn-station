@@ -257,3 +257,132 @@
 	stat_to_change = STAT_VIV
 	damage_to_sanity = -5 //Should *heal* sanity not damage
 	pointamounts = 30 //Hope you didnt have combat chems
+
+//The anti-psion hat
+/obj/item/clothing/head/psionic/tinfoil
+	name = "Blue-Ink Psionic Shielding Apparatus"
+	icon_state = "tinfoil"
+	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
+	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
+	Despite the advanced technology involved, it looks a little like a tin-foil hat."
+	origin_tech = list(TECH_MAGNET = 6)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
+	psi_blocking = 10
+	price_tag = 150
+
+/obj/item/clothing/under/psionic_cloths
+	name = "S8.9-Type Outfit" // S for silk
+	icon_state = "psi_uniform"
+	item_state = "psi_uniform"
+	icon = 'icons/obj/psionic/occicon.dmi'
+	icon_override = 'icons/obj/psionic/occmob.dmi'
+
+	desc = "A set of experimental cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
+	matter = list(MATERIAL_SILK = 5)
+	var/cognitive_potential = 0.1 //cube sink
+
+
+/obj/item/clothing/under/psionic_cloths/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst))
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		if(cognitive_potential >= 1)
+			to_chat(user, "The [src] are already as tuned as can be.")
+			return
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
+		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
+		cognitive_potential += 0.1
+		//Idk how to word this without it being videogamey
+		to_chat(user, "The [src] shimmers and adjusts for a moment to better allow psionic channeling.")
+	..()
+
+/obj/item/clothing/under/psionic_cloths/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Basic Cloth"] = "psi_uniform"
+	options["Basic Cloth rolled sleeves"] = "psi_uniform_rs"
+	options["Psionic Toga"] = "psi_toga"
+	options["Psionic White Toga"] = "psi_toga_white"
+	options["Psionic Vest"] = "psi_vest"
+	options["Psionic Dress"] = "psi_dress"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You rethink your cloth's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/gloves/psionic_ring
+	name = "Ring of Dispelling"
+	desc = "A sacred ring of metal, said to have been used in the production of the original cruciform prototypes. The Cartographer has blessed it, giving it powerful anti-psionic properties, and bestowed it to the upper church for use in psionic crises. It is irreplacable."
+	icon_state = "ring_of_dispel"
+	price_tag = 1000
+	psi_blocking = 50
+
+/obj/item/clothing/ears/psionic_ear_rings
+	name = "Earrings P-3.1" // P for plasma
+	desc = "A set of experimental earrings designed to aid people that are less able to build up psionic power."
+	icon_state = "psionic_earring"
+	icon = 'icons/inventory/ears/icon.dmi'
+	slot_flags = SLOT_EARS
+	//returns are spars,
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
+	var/storage_addition = 1
+
+/obj/item/clothing/ears/psionic_ear_rings/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst))
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		if(storage_addition >= 2)
+			to_chat(user, "These earrings are already as tuned as can be.")
+			return
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
+		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
+		storage_addition += 1
+		to_chat(user, "The [src] seem to help build up psionic power even better now.")
+	..()
+
+/obj/item/clothing/glasses/psionic_lens
+	name = "Glasses P-22.1 LR" //LR for low risk, P for plasma
+	desc = "A set of stablized experimental light pink glasses made of somewhat rare materials, designed to assist Psions in collecting essence slightly faster."
+	icon_state = "psionic_lens"
+	item_state = "psionic_lens"
+	prescription = 1
+	var/psionic_seconds = 5
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1)
+
+/obj/item/clothing/glasses/psionic_lens/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/device/psionic_catalyst))
+		var/obj/item/device/psionic_catalyst/PC = I
+		if(!PC.stored_power)
+			to_chat(user, "[PC] has no stored power!")
+			return
+		if(psionic_seconds >= 15)
+			to_chat(user, "The lens is already as tuned as can be.")
+			return
+		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
+		PC.stored_power = null //Nom!
+		PC.icon_state = "psi_catalyst_dull"
+		psionic_seconds += 5 //Two lens
+		to_chat(user, "The [src] seem to help collect essence slightly faster now.")
+
+	..()

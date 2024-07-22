@@ -28,6 +28,18 @@
 	var/inhibited = FALSE      //Whether or not the organ has been inhibited by an external force
 	var/allow_loop = TRUE      //Used for starting a looping process of regenning poings
 
+	//code/modules/psionics/psion.dm to see these vars in use.
+	//Minium timer for when a psionic point is generated
+	var/min_timer = 1 MINUTES
+	//Used for increasing psionic points though outside sources, resets on regen
+	var/psi_max_bonus = 0
+	//How much cog affects are cooldown for regen its in mins
+	var/cognitive_potential = 0
+	//The maxium amount are cog can lower cooldown
+	var/cognitive_potential_max = 3
+
+
+
 	owner_verbs = list(
 		/mob/living/carbon/human/proc/psionic_healing,
 		/mob/living/carbon/human/proc/meditative_focus,
