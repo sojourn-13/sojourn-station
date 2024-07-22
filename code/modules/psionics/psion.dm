@@ -66,10 +66,6 @@
 		remove_synthetics()
 
 		//Now we do are math to under are point cap and regen
-		var/psi_max_bonus = 0
-		var/cognitive_potential = 1
-		var/cognitive_potential_max = 3
-
 		cognitive_potential_max += psionic_equipment_check("cognitive_potential_max_bonus")
 
 
@@ -89,7 +85,6 @@
 		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, cognitive_potential_max), 0.1)
 
 		var/regen_points_timer = (5 MINUTES - cognitive_potential MINUTES)
-		var/min_timer = 1 MINUTES
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
 			regen_points_timer *= 0.5
@@ -117,7 +112,7 @@
 /obj/item/organ/internal/psionic_tumor/proc/psionic_equipment_check(type)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		var/bonus_return
+		var/bonus_return = 0
 		switch(type)
 			if("psi_max_bonus")
 				//Waring 4 ear rings does stack in this case
