@@ -21,7 +21,7 @@
 	req_access = null
 	w_class = ITEM_SIZE_BULKY
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
-	price_tag = 600
+	price_tag = 1500
 
 	// These values are passed on to all component pieces.
 	armor = list(
@@ -42,7 +42,7 @@
 	obscuration = LIGHT_OBSCURATION
 	var/ablative_armor = 0
 	var/ablative_max = 0
-	var/ablation = ABLATION_STANDARD
+	var/ablation = ABLATION_SOFT
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 	blacklist_upgrades = list(

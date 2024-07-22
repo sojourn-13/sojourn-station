@@ -17,6 +17,7 @@
 	slowdown = 0
 	obscuration = 0
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
+	price_tag = 1000
 	offline_slowdown = 0
 	offline_vision_restriction = 0
 	drain = 2
@@ -51,8 +52,6 @@
 		bio = 100,
 		rad = 45
 	)
-	ablative_max = 12
-	ablation = ABLATION_SOFT
 	airtight = 0
 	seal_delay = 5
 	slowdown = -0.2 //We speed up the user at cost of horrable armor
@@ -80,7 +79,7 @@
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
 	suit_type = "SI 'retainer"
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 6,
 		energy = 7,
 		bomb = 30,
@@ -88,10 +87,13 @@
 		rad = 80
 	)
 	emp_protection = 20
+	ablative_armor = ABLATION_STANDARD //high quality armor
+	ablative_max = 6 //but not a lot of it.
 	seal_delay = 5
 	airtight = 0
 	icon_state = "hacker_rig"
 	req_access = list(access_hop)
+	price_tag = 2000
 
 	initial_modules = list(
 		/obj/item/rig_module/mounted/taser,

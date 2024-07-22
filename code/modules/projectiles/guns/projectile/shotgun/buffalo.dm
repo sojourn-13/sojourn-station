@@ -22,7 +22,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 800
-	penetration_multiplier = 0.8
+	penetration_multiplier = 1.5
 	pierce_multiplier = 2
 	damage_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.4)

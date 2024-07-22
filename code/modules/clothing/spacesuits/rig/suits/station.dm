@@ -42,13 +42,14 @@
 		bio = 100,
 		rad = 100
 	)
-	ablative_max = 8
-	ablation = ABLATION_SOFT
+	ablative_max = 14 //heavy ass suit, big ass armor.
+	ablation = ABLATION_STANDARD
 	slowdown = 0.3
 	drain = 3
 	offline_slowdown = 10
 	offline_vision_restriction = 2
 	emp_protection = -20
+	price_tag = 1500
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/industrial
 
@@ -91,6 +92,7 @@
 		rad = 100
 	)
 	seal_delay = 20
+	ablative_max = 5 //common suit, not really much in the way of room for armor.
 	slowdown = 0
 	offline_slowdown = 1
 	offline_vision_restriction = 1
@@ -135,7 +137,7 @@ Advanced Voidsuit: Guild Master
 		rad = 100
 	)
 	ablative_max = 10
-	ablation = ABLATION_RESILIENT
+	ablation = ABLATION_STANDARD
 	seal_delay = 15
 	slowdown = 0
 	stiffness = 0
@@ -190,7 +192,7 @@ Technomancer RIG
 	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
 	icon_state = "techno_rig"
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 7,
 		energy = 7,
 		bomb = 50,
@@ -198,7 +200,6 @@ Technomancer RIG
 		rad = 100
 	)
 	ablative_max = 10
-	ablation = ABLATION_DURABLE
 	drain = 3
 	offline_slowdown = 3
 	offline_vision_restriction = 0
@@ -244,7 +245,7 @@ Technomancer RIG
 	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it."
 	icon_state = "science_rig"
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 5,
 		energy = 10,
 		bomb = 90,
@@ -297,7 +298,7 @@ Technomancer RIG
 	This advanced verson is made with speed in mind as well better armor plates at the cost of power."
 	icon_state = "science_ami_rig"
 	armor_list = list(
-		melee =8,
+		melee = 8,
 		bullet = 7,
 		energy = 10,
 		bomb = 90,
@@ -356,7 +357,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
-	ablative_max = 10
+	ablative_max = 50
 	ablation = ABLATION_CERAMIC
 	slowdown = 0
 	offline_vision_restriction = 1
@@ -438,6 +439,8 @@ Technomancer RIG
 	req_access = list(access_cmo)
 	seal_delay = 4 //built for speed
 	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+	ablative_armor = 0
+	ablative_max = 0 //no armor, none.
 	helm_type = /obj/item/clothing/head/helmet/space/rig/cmo
 	max_upgrades = 1
 	initial_modules = list(
@@ -465,7 +468,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
-	price_tag = 1500
+	price_tag = 3000
 	ablative_max = 8
 	ablation = ABLATION_DURABLE // Lasts longer than most rigs
 	slowdown = 0.3
