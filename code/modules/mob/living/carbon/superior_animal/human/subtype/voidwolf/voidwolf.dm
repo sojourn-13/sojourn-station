@@ -301,15 +301,15 @@
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/ubgl.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
-	drop_items = list(/obj/item/gun/projectile/gyropistol,/obj/random/cloth/assault/reaver)
+	drop_items = list(/obj/random/cloth/assault/reaver/*,obj/item/gun/projectile/gyropistol*/)
 	rapid = FALSE
 	rounds_left = 4
-	mag_type = /obj/item/ammo_magazine/a75/empty
+	//mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
 
 	get_stat_modifier = FALSE
 
-	casingtype = /obj/item/ammo_casing/a75/spent
+	//casingtype = /obj/item/ammo_casing/a75/spent
 	melee_sharp = FALSE
 	armor_divisor = 1
 

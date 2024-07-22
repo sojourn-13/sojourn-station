@@ -201,7 +201,7 @@
 
 /obj/random/dungeon_ammo/item_to_spawn()
 	return pickweight(list(/obj/item/ammo_magazine/c10x24 = 3,
-				/obj/item/ammo_magazine/a75 = 3,
+				//obj/item/ammo_magazine/a75 = 3,
 				/obj/item/ammo_magazine/heavy_rifle_408_drum = 3,
 				/obj/item/ammo_magazine/m12/pellet = 6,
 				/obj/item/ammo_magazine/ammobox/rifle_75/lethal = 6,

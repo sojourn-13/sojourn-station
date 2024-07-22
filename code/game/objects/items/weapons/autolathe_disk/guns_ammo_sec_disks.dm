@@ -432,7 +432,7 @@
 		/datum/design/autolathe/ammo/sbaw_slug,
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/sbaw_beanbag,
-		/datum/design/autolathe/ammo/sbaw_payload = 3,
+		//datum/design/autolathe/ammo/sbaw_payload = 3,
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 

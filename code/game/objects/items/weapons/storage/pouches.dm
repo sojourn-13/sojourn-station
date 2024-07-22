@@ -517,7 +517,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/gun/projectile/colt,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
-		/obj/item/gun/projectile/gyropistol,
+		//obj/item/gun/projectile/gyropistol,
 		/obj/item/gun/projectile/lamia,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,

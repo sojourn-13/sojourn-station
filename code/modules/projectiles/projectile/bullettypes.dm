@@ -1058,7 +1058,7 @@
 	muzzle_type = /obj/effect/projectile/plasma/muzzle/red
 	check_armour = ARMOR_ENERGY
 	recoil = 7
-
+/*
 //For the love of God don't make this common.
 /obj/item/projectile/bullet/shotgun/payload
 	name = "explosive bolt"
@@ -1079,7 +1079,7 @@
 	if (!testing)
 		explosion(target, 0, 0, 2)
 	return TRUE
-
+*/
 //Miscellaneous
 /obj/item/projectile/bullet/blank
 	invisibility = 101

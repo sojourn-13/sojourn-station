@@ -501,16 +501,16 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	name = "17mm ball ammo box"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/ball
-
+/*
 // gyrojet
 /datum/recipe_crafting_station/ammo/gyrojet
 	subcategory = CAL_70
 
 /datum/recipe_crafting_station/ammo/gyrojet/mag
-	name = "EMPTY 19mm Gyrojet magazine" 
+	name = "EMPTY 19mm Gyrojet magazine"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/a75/empty
-
+*/
 // |----------------------------|
 // | BARRELS                    |
 // |----------------------------|
@@ -722,7 +722,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/rocket/rpg
 	name = "RPG shell"
 	result = /obj/item/ammo_casing/rocket/scrap/prespawned
-
+/*
 /datum/recipe_crafting_station/rocket/gyrojet
 	name = "19mm gyrojet rocket"
 	result = /obj/item/ammo_casing/a75
+*/

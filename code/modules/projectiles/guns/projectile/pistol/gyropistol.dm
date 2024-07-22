@@ -1,3 +1,4 @@
+/* Leaving this for postereity, but handheld rapidfire explosives have just been cancer for the whole time we had them. regular players ignore them, powergamers abuse them let em die. - CDB
 /obj/item/gun/projectile/gyropistol
 	name = "SA GP \"Novichok\""
 	desc = "A bulky pistol designed to fire 19mm self-propelled explosive rockets. Commonly referred to as the 'man-opener' by Void Wolves."
@@ -39,3 +40,4 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
+*/

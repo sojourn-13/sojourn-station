@@ -221,7 +221,7 @@
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
 				R.max_shells = rand(1,3)
-
+/*
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 				R.max_shells = rand(1,3)
@@ -231,7 +231,7 @@
 				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
 				R.max_shells = rand(1,3)
-
+*/
 		if(R.max_shells == 3 && (gun_pattern == "shotgun"||"rocket"))//From Timesplitters triple-firing RPG far as I know
 			R.init_firemodes = list(
 				list(mode_name="Single shot", mode_desc="fire one barrel at a time", burst=1, icon="semi"),

@@ -88,8 +88,8 @@
 		"Xanorath Smugged Gear" = list(
 			/obj/item/clothing/suit/space/void/merc/xanorath,
 			/obj/item/melee/energy/sword/pirate,
-			/obj/item/gun/projectile/gyropistol = good_data("Novichok", list(0, 2), 28000), //holster sized 'i win' gun, keep this expensive and rare.
-			/obj/item/ammo_magazine/a75,
+//			/obj/item/gun/projectile/gyropistol = good_data("Novichok", list(0, 2), 28000), //holster sized 'i win' gun, keep this expensive and rare.
+//			/obj/item/ammo_magazine/a75,
 			/obj/item/reagent_containers/hypospray/autoinjector/drugs,
 			/obj/item/reagent_containers/syringe/drugs,
 			/obj/item/reagent_containers/pill/zoom,

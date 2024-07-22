@@ -775,12 +775,12 @@
 	name = "ammunition packet (20mm Stun Shells)"
 	icon_state = "stunslug"
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
-
+/*
 /obj/item/ammo_magazine/ammobox/shotgun/payload
 	name = "ammunition packet (20mm Explosive Shells)"
 	icon_state = "explosive"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
-
+*/
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 	name = "ammunition packet (20mm Incendiary)"
 	icon_state = "incendiary"
