@@ -32,6 +32,9 @@
 	var/scrap_multiplier = 0.5 //50% refunds
 
 /obj/machinery/smelter/cargo_t2_parts
+	input_side = WEST
+	output_side = NORTH
+	refuse_output_side = EAST
 
 /obj/machinery/smelter/cargo_t2_parts/Initialize()
 	. = ..()
@@ -296,11 +299,11 @@
 				var/material/M = get_material_by_name(mtype)
 				var/mat_ui_data = M.ui_data(user)
 				mat_ui_data["count"] = item_materials[mtype]
-			
+
 				if(istype(current_item, /obj/item/stack))
 					var/obj/item/stack/S = current_item
 					mat_ui_data["count"] *= S.amount
-				else 
+				else
 					mat_ui_data["count"] *= scrap_multiplier
 
 				item_materials_data += list(mat_ui_data)
