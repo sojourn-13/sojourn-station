@@ -36028,6 +36028,9 @@
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/surgery)
+"hfp" = (
+/turf/simulated/wall/cloth,
+/area/nadezhda/medical/ward)
 "hft" = (
 /obj/machinery/atmospherics/pipe/zpipe/up,
 /obj/structure/cable/cyan{
@@ -139873,11 +139876,11 @@ wGH
 wGH
 wGH
 cVw
-wGH
-wGH
-wGH
-wGH
-wGH
+hfp
+hfp
+hfp
+hfp
+hfp
 wGH
 cZb
 cZb
@@ -140079,7 +140082,7 @@ bFY
 gWK
 hLi
 kws
-wGH
+hfp
 wGH
 cZb
 cZb
@@ -140281,7 +140284,7 @@ bvj
 hlr
 kws
 lCy
-wGH
+hfp
 wGH
 cZb
 cZb
@@ -140483,7 +140486,7 @@ bFY
 iJu
 dED
 kws
-wGH
+hfp
 wGH
 cZb
 cZb
@@ -140681,11 +140684,11 @@ qXJ
 wGH
 nCu
 nrg
-wGH
-wGH
-wGH
-wGH
-wGH
+hfp
+hfp
+hfp
+hfp
+hfp
 wGH
 rGU
 cZb
@@ -140887,7 +140890,7 @@ bFY
 gWK
 kws
 urG
-wGH
+hfp
 wGH
 sYJ
 xSO
@@ -141089,7 +141092,7 @@ qNz
 mMf
 kws
 lCy
-wGH
+hfp
 wGH
 cZb
 sYJ
@@ -141291,7 +141294,7 @@ bFY
 iJu
 dED
 kws
-wGH
+hfp
 wGH
 gga
 cOg
@@ -141489,11 +141492,11 @@ sRJ
 wGH
 huv
 nrg
-wGH
-wGH
-wGH
-wGH
-wGH
+hfp
+hfp
+hfp
+hfp
+hfp
 wGH
 rGU
 dxp
@@ -141695,7 +141698,7 @@ bFY
 gWK
 kws
 kws
-wGH
+hfp
 wGH
 cZb
 sYJ
@@ -141897,7 +141900,7 @@ ved
 mMf
 kws
 lCy
-wGH
+hfp
 wGH
 cZb
 sYJ
@@ -142099,7 +142102,7 @@ lNn
 iJu
 dED
 bhB
-wGH
+hfp
 wGH
 cZb
 rGU
@@ -142297,11 +142300,11 @@ wGH
 wGH
 wGH
 wGH
-wGH
-wGH
-wGH
-wGH
-wGH
+hfp
+hfp
+hfp
+hfp
+hfp
 wGH
 cZb
 cZb
