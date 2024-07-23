@@ -15418,7 +15418,6 @@
 "keY" = (
 /obj/structure/closet/crate/secure/plasma,
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells,
-//obj/item/ammo_casing/shotgun/payload/prespawned,
 /obj/item/plastique,
 /obj/item/plastique,
 /obj/item/plastique,
