@@ -66,6 +66,7 @@
 		remove_synthetics()
 
 		//Now we do are math to under are point cap and regen
+		psi_max_bonus = 0 + psi_max_other_sources
 		cognitive_potential_max += psionic_equipment_check("cognitive_potential_max_bonus")
 
 
