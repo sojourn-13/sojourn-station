@@ -53,7 +53,6 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.prefix = "LTL"
 
-
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged
 	name = "Forged barrel"

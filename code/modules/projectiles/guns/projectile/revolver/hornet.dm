@@ -11,10 +11,10 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200
 	can_dual = TRUE
-	proj_agony_multiplier = 1.4
-	damage_multiplier = 0.8
+	proj_agony_multiplier = 1.5
+	damage_multiplier = 0.6
 	penetration_multiplier = 1
-	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
+	init_recoil = HANDGUN_RECOIL(2) //Low controle do to painmaker
 	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
@@ -26,6 +26,11 @@
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
 	gun_parts = list(/obj/item/part/gun/frame/hornet = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/gun/projectile/revolver/hornet/refresh_upgrades()
+	..()
+	//We give anything we shoot a bit of halloss
+	proj_damage_adjust[HALLOSS] += 20
 
 /obj/item/part/gun/frame/hornet
 	name = "Hornet frame"
