@@ -152,8 +152,6 @@
 
 	// Start shredding meat
 
-	var/slab_name = L.name
-	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
 
 	L.adjustBruteLoss(45)
 
@@ -163,6 +161,9 @@
 	if(L.nutrition < 100)
 		return
 	if(ishuman(L))
+		var/slab_name = L.name
+		var/slab_type = /obj/item/reagent_containers/food/snacks/meat
+
 		var/mob/living/carbon/human/H = L
 		slab_name = H.real_name
 		slab_type = /obj/item/reagent_containers/food/snacks/meat/human
@@ -171,7 +172,14 @@
 		if(H.isMonkey())
 			slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
 
-	var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
-	new_meat.name = "[slab_name] [new_meat.name]"
+		var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
+		new_meat.name = "[slab_name] [new_meat.name]"
 
-	new_meat.reagents.add_reagent("nutriment", 10)
+		new_meat.reagents.add_reagent("nutriment", 10)
+	if(issuperioranimal(L))
+		var/mob/living/carbon/superior_animal/SA = L
+		SA.harvest(SA) //Self harvest
+	if(isanimal(L))
+		var/mob/living/simple_animal/SA = L
+		SA.harvest(SA) //Self harvest
+

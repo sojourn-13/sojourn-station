@@ -4,7 +4,7 @@
 	var/actual_leather_amount = max(0,(leather_amount/2))
 	var/actual_bones_amount = max(0,(bones_amount/2))
 
-	if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
+	if(user?.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
 		actual_leather_amount = max(0,(leather_amount))
 		actual_meat_amount = max(1,(meat_amount))
 		actual_bones_amount = max(0,(bones_amount))
@@ -30,20 +30,23 @@
 				var/obj/item/non_meat = new meat_type(get_turf(src))
 				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
-			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
+			if(user != src)
+				user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			blood_effect.basecolor = bloodcolor
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			if(user.stats.getPerk(PERK_BUTCHER))
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+			if(user?.stats.getPerk(PERK_BUTCHER))
+				if(user != src)
+					user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
 				var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 				blood_effect.basecolor = bloodcolor
 				blood_effect.update_icon()
 				qdel(src)
 			else
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
+				if(user != src)
+					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
 				gib()
 
 /mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
