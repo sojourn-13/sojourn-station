@@ -19,8 +19,8 @@
 	//Head of staff
 	//obj/item/rig/ce = 10,
 	//obj/item/rig/ce/equipped = 5,
-	/obj/item/rig/hazmat = 1,
-	/obj/item/rig/hazmat/equipped = 1,
+	/obj/item/rig/hazmat = 5,
+	/obj/item/rig/hazmat/equipped = 2,
 
 	//Heavy armor
 	//obj/item/rig/combat = 10,
