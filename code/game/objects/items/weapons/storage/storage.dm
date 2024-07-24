@@ -25,6 +25,7 @@
 	var/extraction_sound
 
 	var/exspand_when_spawned = TRUE
+	no_swing = TRUE
 
 /obj/item/storage/debug
 	name = "Destickinator"

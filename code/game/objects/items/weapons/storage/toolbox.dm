@@ -16,6 +16,7 @@
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
 	hitsound = 'sound/weapons/smash.ogg'
+	no_swing = FALSE
 
 /obj/item/storage/toolbox/emergency
 	name = "emergency toolbox"

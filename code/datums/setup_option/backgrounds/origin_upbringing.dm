@@ -259,3 +259,20 @@
 		STAT_TGH = 5,
 		STAT_VIV = -5
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/natural_style
+	name = "Natural Style"
+	desc = "Due to intense training and study into how to replicate sheath arts you can weather both a mental storm, and a battle field. \
+	All melee weapons that attack at range have a little bit extra reach when you wield them."
+	perks = list(PERK_NATURAL_STYLE)
+
+	//You have been trainning with a sword for speed and hitting a target
+	//+1 range to all ranged melee + sanity stablization, this perk is **good**
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_BIO = 2,
+		STAT_VIG = -10,
+		STAT_COG = -10,
+		STAT_VIV = -30
+	)

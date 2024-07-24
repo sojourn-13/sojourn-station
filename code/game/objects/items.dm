@@ -19,9 +19,14 @@
 	//The cool stuff for melee
 	var/screen_shake = FALSE 		//If a weapon can shake the victim's camera on hit.
 	var/forced_broad_strike = FALSE //If a weapon is forced to always perform broad strikes.
-	var/extended_reach = FALSE		//Wielded spears can hit alive things one tile further.
-	var/ready = FALSE				//All weapons that are ITEM_SIZE_BULKY or bigger have double tact, meaning you have to click twice.
-	var/no_double_tact = FALSE		//for when you,  for some inconceivable reason, want a huge item to not have double tact
+	//Mostly used for spears when wielded, but can be placed on any item
+	//Any value above 1 adds extra tiles it checks for reach
+	//Also used in holsters and sheaths, code for handing is in item_attack.dm with "fancy_ranged_melee_attack"
+	var/extended_reach = FALSE
+	var/ready = FALSE					//All weapons that are ITEM_SIZE_BULKY or bigger have double tact, meaning you have to click twice.
+	var/no_double_tact = FALSE			//for when you,  for some inconceivable reason, want a huge item to not have double tact
+	var/double_tact_required = FALSE	//for when you,  you want smaller then huge items to have double tact - note no_double_tact removes this affect
+
 	var/no_swing = FALSE            //for when you do not want an item to swing-attack
 	var/push_attack = FALSE			//Hammers and spears can push the victim away on hit when you aim groin.
 	//Why are we using vars instead of defines or anything else?
@@ -690,6 +695,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
+	extended_reach = initial(extended_reach)
+	no_swing = initial(no_swing)
 	LAZYNULL(name_prefixes)
 
 	extra_bulk = initial(extra_bulk)
@@ -704,6 +711,18 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	if(alt_mode_active)
 		alt_mode_activeate_two()
+
+	if(isliving(loc) && extended_reach)
+		var/mob/living/location_of_item = loc
+		if(location_of_item.stats.getPerk(PERK_NATURAL_STYLE))
+			extended_reach += 1
+
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 
 	return
 

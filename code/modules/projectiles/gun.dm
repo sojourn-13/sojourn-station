@@ -1367,6 +1367,14 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
+
+
 	update_icon()
 	//then update any UIs with the new stats
 	SStgui.update_uis(src)

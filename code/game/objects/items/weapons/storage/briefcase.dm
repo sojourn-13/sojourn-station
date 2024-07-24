@@ -13,6 +13,8 @@
 	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
 	price_tag = 90
+	no_swing = FALSE //Incase we ever do make fancy briefcase weapons...
+
 /*
 /obj/item/storage/briefcase/rifle //replaced with the 'duffel' child item
 	name = "gun case"

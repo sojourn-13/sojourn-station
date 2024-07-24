@@ -260,3 +260,22 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 
 	return ..()
+
+/datum/perk/natural_style
+	name = "Natural Style"
+	desc = "Due to your intense training and upbringing you already know how to use the sheath arts, as well as how to handle the mind. \
+	All melee weapons that attack at range have a little bit extra reach when you wield them."
+	icon_state = "paintbrush"
+
+/datum/perk/natural_style/assign(mob/living/L)
+	if(..() && ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.sanity.view_damage_threshold  -= 15
+		H.sanity.change_max_level(50)
+
+/datum/perk/natural_style/remove()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.view_damage_threshold += 15
+		H.sanity.change_max_level(-50)
+	..()

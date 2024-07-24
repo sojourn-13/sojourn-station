@@ -18,6 +18,14 @@
 	init_recoil = HANDGUN_RECOIL(1.2)
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
+	force = initial(force)
+	name = initial(name)
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 	return //Same reason why we dont have max upgrades, refreshing in this case is always bad
 
 /obj/item/gun/projectile/revolver/artwork_revolver/proc/ensure_updates()

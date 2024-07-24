@@ -32,10 +32,10 @@
 //Gets the level as a number
 /datum/task_master/labourer/proc/get_task_mastery_level(key, simple = TRUE)
 	RETURN_TYPE(/datum/task_master/task)
-	//log_debug("key == [key].")
+//	log_debug("key == [key].")
 
 	for(var/datum/task_master/task/source_task in learnt_tasks)
-		//log_debug("source_task == [source_task], source_task_key == [source_task.key], key == [key].")
+//	log_debug("source_task == [source_task], source_task_key == [source_task.key], key == [key].")
 		if(source_task.key == key)
 			if(simple && source_task.level == 0)
 				return TRUE

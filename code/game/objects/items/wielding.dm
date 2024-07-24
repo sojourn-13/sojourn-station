@@ -25,16 +25,7 @@
 	if(!wielded || !user)
 		return
 	wielded = FALSE
-	if(force_wielded_multiplier)
-		force = (force / force_wielded_multiplier)
-	else
-		force = (force / 1.3)
-
-	var/sf = findtext(name," (Wielded)")
-	if(sf)
-		name = copytext(name,1,sf)
-	else //something went wrong
-		name = "[initial(name)]"//Returns name from compile-time instead of name with changes that've happened since
+	refresh_upgrades()
 	update_unwield_icon()
 	update_icon()
 	if(user)
@@ -54,6 +45,8 @@
 		return
 	if(!is_held_twohanded(user))
 		return
+	//This is here to help with gathering a perk
+	refresh_upgrades()
 	var/obj/item/X = user.get_inactive_hand()
 	if(X)
 		if(!X.canremove)
@@ -61,14 +54,10 @@
 		user.drop_offhand()
 		to_chat(user, SPAN_WARNING("You dropped \the [X]."))
 	wielded = TRUE
-	if(force_wielded_multiplier)
-		force = force * force_wielded_multiplier
-	else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
-		force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
-	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
-	name = "[name] (Wielded)"
 	update_wield_icon()
 	update_icon()//Legacy
+	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
+	refresh_upgrades()
 	if(user)
 		user.update_inv_r_hand()
 		user.update_inv_l_hand()

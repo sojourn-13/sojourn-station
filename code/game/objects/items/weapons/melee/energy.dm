@@ -13,6 +13,22 @@
 	hitsound = "sound/weapons/blade1.ogg" //Make these lightsaber thingies do the sound they're intended to do on attack.
 	eye_hazard = TRUE
 
+
+/obj/item/melee/energy/refresh_upgrades()
+	..()
+
+	if(active)
+		force = active_force
+		throwforce = active_throwforce
+
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
+
+
 /obj/item/melee/energy/is_hot()
 	if (active)
 		return heat
