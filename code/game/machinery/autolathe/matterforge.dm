@@ -80,6 +80,12 @@
 	)
 
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
+	if(!check_user(user))
+		return
+
+	if(!design_list?.len)
+		get_designs()
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Matterforge", name)
@@ -148,13 +154,13 @@
 			if(ind >= 2 && ind <= queue.len)
 				queue.Swap(ind, ind - 1)
 			. = TRUE
-		
+
 		if("move_down_queue")
 			var/ind = text2num(params["index"])
 			if(ind >= 1 && ind <= queue.len-1)
 				queue.Swap(ind, ind + 1)
 			. = TRUE
-	
+
 		if("abort_print")
 			abort()
 			. = TRUE
@@ -260,6 +266,9 @@
 	if(default_part_replacement(I, user))
 		return
 
+	if(!check_user(user))
+		return
+
 	GET_COMPONENT_FROM(comp, /datum/component/inspiration, I)
 	if(comp && comp.get_power() > 0)
 		if(power_source)
@@ -278,6 +287,9 @@
 		to_chat(user, SPAN_WARNING("\The [src] does not have any artifact powering it."))
 
 /obj/machinery/matter_nanoforge/proc/eat(mob/living/user, obj/item/eating)
+	if(!check_user(user))
+		return FALSE
+
 	var/used_sheets
 
 	if(!eating && istype(user))
@@ -620,5 +632,6 @@
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN))
 		return TRUE
+	design_list = list()
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

@@ -607,7 +607,7 @@
 				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
 			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
