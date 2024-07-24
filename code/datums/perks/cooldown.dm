@@ -20,10 +20,12 @@
 	icon_state = "exertion" //https://game-icons.net/1x1/delapouite/weight-lifting-up.html
 
 /datum/perk/cooldown/exertion/on_process()
-	if(holder.reagents.has_reagent("protein_shake"))
-		perk_lifetime -= 3 SECONDS
-	else if(holder.reagents.has_reagent("protein_shake_commercial"))
-		perk_lifetime -= 2 SECONDS
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		if(H.ingested.has_reagent("protein_shake"))
+			perk_lifetime -= 3 SECONDS
+		else if(H.ingested.has_reagent("protein_shake_commercial"))
+			perk_lifetime -= 2 SECONDS
 	..()
 
 /datum/perk/cooldown/exertion/assign(mob/living/carbon/human/H)
@@ -50,3 +52,24 @@
 		holder.stats.changeStat(STAT_COG, 5)
 	..()
 
+/datum/perk/cooldown/artist_no
+	name = "Burnout"
+	desc = "Art as taken its toll and you are resting the soul. Tea would help."
+	icon_state = "paintbrush_no"
+	perk_lifetime = 10 MINUTES //6 arts an hour or if you drink enuff green tea it should be more
+	gain_text = "You feel tired. Your mind needs some time to recover from all this exspression."
+	lose_text = "You feel a bit more rested from the burnout."
+
+
+/datum/perk/cooldown/artist_no/on_process()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		if(H.ingested.has_reagent("icegreentea"))
+			perk_lifetime -= 2 SECONDS
+		else if(H.ingested.has_reagent("greentea"))
+			perk_lifetime -= 1.5 SECONDS
+		else if(H.ingested.has_reagent("icetea"))
+			perk_lifetime -= 1 SECONDS
+		else if(H.ingested.has_reagent("tea"))
+			perk_lifetime -= 0.5 SECONDS
+	..()

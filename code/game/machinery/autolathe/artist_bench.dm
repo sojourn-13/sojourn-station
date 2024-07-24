@@ -73,12 +73,16 @@
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
 				var/ins_used = 0
-				if(H.stats.getPerk(PERK_ARTIST) && H.sanity.insight > 40)
-					ins_used = input("How much of your insight will you dedicate to this work? 40-[H.sanity.insight > 100 ? 100 : H.sanity.insight]","Insight Used") as null|num
+				if(H.stats.getPerk(PERK_ARTIST_NO))
+					to_chat(H, SPAN_NOTICE("The soul it took to make your last artwork is still recovering."))
+					. = FALSE
 				else
-					ins_used = H.sanity.insight
-				create_art(ins_used, H)
-				. = TRUE
+					if(H.stats.getPerk(PERK_ARTIST) && H.sanity.insight > 40)
+						ins_used = input("How much of your insight will you dedicate to this work? 40-[H.sanity.insight > 100 ? 100 : H.sanity.insight]","Insight Used") as null|num
+					else
+						ins_used = H.sanity.insight
+					create_art(ins_used, H)
+					. = TRUE
 			else
 				. = FALSE
 
@@ -132,18 +136,21 @@
 
 	var/weight_artwork_statue = 20
 	var/weight_artwork_revolver = 1 + LStats[STAT_VIG] * 2
-	var/weight_artwork_weapon = 1 + max(LStats[STAT_ROB], LStats[STAT_TGH]) * 2
+//	var/weight_artwork_weapon = 1 + max(LStats[STAT_ROB], LStats[STAT_TGH]) * 2
 	var/weight_artwork_oddity = 1 + max(LStats[STAT_COG], LStats[STAT_BIO]) * 2
 	var/weight_artwork_tool = 2 + LStats[STAT_MEC] * 2
 	var/weight_artwork_toolmod = 2 + LStats[STAT_MEC] * 2
 	var/weight_artwork_gunmod = 2 + LStats[STAT_COG] * 2
 
+	if(ins_used >= 100)//Arbitrary values
+		weight_artwork_revolver += 5
+		//weight_artwork_weapon += 5
 	if(ins_used >= 85)//Arbitrary values
 		weight_artwork_revolver += 9
-		weight_artwork_weapon += 9
+		//weight_artwork_weapon += 9
 	if(ins_used >= 70)
 		weight_artwork_revolver += 4
-		weight_artwork_weapon += 4
+		//weight_artwork_weapon += 4
 		weight_artwork_oddity += 13
 		weight_artwork_gunmod += 8
 	if(ins_used >= 55)
@@ -193,44 +200,56 @@
 
 			if("pistol") //From havelock.dm, Arbitrary Values
 				R.caliber = pick(CAL_PISTOL)
-				R.damage_multiplier = 1.2 + rand(-5,5)/10
-				R.penetration_multiplier = 1.2 + rand(-5,5)/10
-				R.max_shells = rand(5,7)
+				R.damage_multiplier = 1.2 + rand(-2,4)/10
+				R.penetration_multiplier = 1.2 + (rand(-2,4)/10)
+				R.max_shells = rand(6,12)
+				R.fire_delay = rand(0.1,2)
 
 			if("magnum") //From consul.dm, Arbitrary values
 				R.caliber = CAL_MAGNUM
-				R.damage_multiplier = 1.2 + rand(-5,5)/10
-				R.penetration_multiplier = 1.2 + rand(-5,5)/10
-				R.max_shells = rand(6,12)
+				R.damage_multiplier = 1.2 + (rand(-1,5)/10)
+				R.penetration_multiplier = 1.2 + (rand(-1,5)/10)
+				R.max_shells = rand(8,16)
+				R.fire_delay = rand(0.5,2)
 
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
-				R.damage_multiplier = 0.8 + rand(-2,2)/10
-				R.penetration_multiplier = -0.25 + rand(-3,3)/10
+				R.damage_multiplier = 0.8 + (rand(-2,2)/10)
+				R.penetration_multiplier = 0.75 + (rand(-3,3)/10)
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 				R.max_shells = rand(3,9)
+				R.fire_delay = rand(1,3)
 
 			if("rifle")
 				R.caliber = pick(CAL_HRIFLE, CAL_LRIFLE, CAL_RIFLE)
 				R.fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 				R.max_shells = rand(11,21)
+				R.damage_multiplier = 1.2 + (rand(-1,4)/10)
+				R.penetration_multiplier = 1 + (rand(-3,3)/10)
+				R.fire_delay = rand(0.2,1)
 
 			if("sniper")//From sniper.dm, Arbitrary values
 				R.caliber = CAL_ANTIM
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
 				R.max_shells = rand(1,3)
+				R.damage_multiplier = 1
+				R.penetration_multiplier = 1
 
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 				R.max_shells = rand(1,3)
+				R.damage_multiplier = 1
+				R.penetration_multiplier = 1
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
 				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
 				R.max_shells = rand(1,3)
+				R.damage_multiplier = 1
+				R.penetration_multiplier = 1
 
 		if(R.max_shells == 3 && (gun_pattern == "shotgun"||"rocket"))//From Timesplitters triple-firing RPG far as I know
 			R.init_firemodes = list(
@@ -247,16 +266,22 @@
 	else if(full_artwork == "artwork_oddity")
 		var/obj/item/oddity/artwork/O = new(src)
 		var/list/oddity_stats = list(STAT_MEC = rand(0,1), STAT_COG = rand(0,1), STAT_BIO = rand(0,1), STAT_ROB = rand(0,1), STAT_TGH = rand(0,1), STAT_VIG = rand(0,1))//May not be nessecary
-		var/stats_amt = 2
-		if(ins_used >= 85)//Arbitrary values
+		var/stats_amt = 4
+		if(ins_used >= 100)
+			stats_amt += 4 //bad luck gets rewarded
+		if(ins_used >= 90)
+			stats_amt += 2
+		if(ins_used >= 85)
 			stats_amt += 2
 		if(ins_used >= 70)
 			stats_amt += 2
+		if(ins_used >= 60)
+			stats_amt += 2
 		if(ins_used >= 55)
-			stats_amt += 2//max = 2*4*2+6 = 24 points, min 2*4+6 = 14
+			stats_amt += 2
 		for(var/i in 1 to stats_amt)
 			var/stat = pick(ALL_STATS_FOR_LEVEL_UP)
-			oddity_stats[stat] = min(oddity_stats[stat]+rand(1,2))
+			oddity_stats[stat] = (oddity_stats[stat]+rand(1,2))
 
 		O.oddity_stats = oddity_stats
 		O.AddComponent(/datum/component/inspiration, O.oddity_stats, O.perk)
@@ -311,6 +336,7 @@
 	if(isitem(artwork) && Adjacent(user))
 		user.put_in_hands(artwork)
 	user.sanity.insight -= ins_used
+	user.stats.addPerk(PERK_ARTIST_NO)
 	if(!user.stats.getPerk(PERK_ARTIST))
 		var/list/stat_change = list()
 
