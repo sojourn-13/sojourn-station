@@ -252,10 +252,11 @@ Technomancer RIG
 		rad = 100
 	)
 	ablative_max = 12
-	ablation = ABLATION_EVERLASTING
+	ablation = ABLATION_DURABLE
 	slowdown = 0.3
 	drain = 3
 	offline_vision_restriction = 1
+	price_tag = 3000 //same as hazard suit, it is arguably better than that one because it has hella bomb armor.
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazmat
 
