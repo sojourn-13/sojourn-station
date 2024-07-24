@@ -806,7 +806,7 @@
 				if(isarmor(I) && I.is_worn())
 					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
 				else
-					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * (100 - getarmor(null,ARMOR_BIO))
+					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * min(1,(100 - getarmor(null,ARMOR_BIO)))
 		if(!(status_flags & GODMODE) && prob(10))
 			bloodstr.add_reagent("plasma", total_plasmaloss)
 
