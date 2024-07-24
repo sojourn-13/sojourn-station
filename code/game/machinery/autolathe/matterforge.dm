@@ -80,6 +80,12 @@
 	)
 
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
+	if(!check_user(user))
+		return
+
+	if(!design_list?.len)
+		get_designs()
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Matterforge", name)
@@ -626,5 +632,6 @@
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN))
 		return TRUE
+	design_list = list()
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE
