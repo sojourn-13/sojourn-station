@@ -157,6 +157,15 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
+/obj/item/clothing/suit/storage/vest/breach2/New()
+	..()
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 5	//five slots
+	pockets.max_w_class = ITEM_SIZE_SMALL
+	pockets.max_storage_space = 10
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
+
+
 /*Dresscoats*/
 
 /obj/item/clothing/suit/storage/vic_dresscoat
