@@ -583,7 +583,7 @@
 /mob/living/simple_animal/proc/harvest(mob/user)
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
-	if(user.stats.getPerk(PERK_BUTCHER))
+	if(user?.stats.getPerk(PERK_BUTCHER))
 		var/actual_leather_amount = max(0,(leather_amount/2))
 		if(actual_leather_amount > 0 && (stat == DEAD))
 			for(var/i=0;i<actual_leather_amount;i++)
@@ -611,12 +611,14 @@
 				var/obj/item/non_meat = new meat_type(get_turf(src))
 				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
-			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
+			if(user != src)
+				user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
-			if(user.stats.getPerk(PERK_BUTCHER))
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+			if(user?.stats.getPerk(PERK_BUTCHER))
+				if(user != src)
+					user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
 				new blood_from_harvest(get_turf(src))
 				qdel(src)
 			else
