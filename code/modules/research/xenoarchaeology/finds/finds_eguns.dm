@@ -12,6 +12,7 @@
 
 /obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -32,6 +33,7 @@
 
 /obj/item/gun/energy/xray/xenoarch/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -52,6 +54,7 @@
 
 /obj/item/gun/energy/captain/xenoarch/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -71,6 +74,7 @@
 
 /obj/item/gun/projectile/revolver/xenoarch/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
@@ -90,16 +94,17 @@
 	saw_off = FALSE
 
 /obj/item/gun/projectile/revolver/sixshot/xenoarch/refresh_upgrades()
-	return
-
-/obj/item/gun/projectile/revolver/sixshot/xenoarch/update_icon()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
 		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
 			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
 		name = "[name] (Wielded)"
+	return
+
+/obj/item/gun/projectile/revolver/sixshot/xenoarch/update_icon()
 	return
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch
@@ -109,6 +114,7 @@
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier

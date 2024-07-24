@@ -19,6 +19,7 @@
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
 	force = initial(force)
+	name = initial(name)
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
