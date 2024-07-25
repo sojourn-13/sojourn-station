@@ -239,7 +239,6 @@
 
 	ablative_armor = ablative_max
 	update_icon(1)
-	updateArmor()
 
 /obj/item/rig/proc/updateArmor()
 	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
@@ -284,6 +283,7 @@
 
 /obj/item/rig/proc/toggle_seals(mob/initiator,instant)
 
+	updateArmor()
 	if(sealing) return
 
 	// Seal toggling can be initiated by the suit AI, too
