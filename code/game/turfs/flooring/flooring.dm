@@ -1067,3 +1067,376 @@ var/list/flooring_types
 	footstep_sound = "water"
 	resistance = RESISTANCE_TOUGH
 	health = 9999999
+
+// TILE INDUSTERAL
+
+/decl/flooring/industrial
+	icon = 'icons/turf/flooring/tiles_industeral.dmi'
+	flags = TURF_REMOVE_CROWBAR | TURF_CAN_BREAK | TURF_CAN_BURN | TURF_HIDES_THINGS
+	build_type = /obj/item/stack/tile/floor
+	can_paint = 1
+	resistance = RESISTANCE_FRAGILE
+
+	floor_smooth = SMOOTH_NONE
+	wall_smooth = SMOOTH_NONE
+	space_smooth = SMOOTH_NONE
+
+	damage_temperature = T0C+200
+	footstep_sound = "floor"
+	var/can_repair = FALSE
+	var/repair_into = /obj/effect/flooring_type_spawner/concrete
+
+/decl/flooring/industrial/attackby(var/obj/item/I, var/mob/user, var/turf/simulated/T)
+	if(can_repair)
+		if(istype(I, /obj/item/cement_bag))
+			var/obj/item/cement_bag/CB = I
+			if(CB.inuse)
+				to_chat(user, SPAN_NOTICE("You cant poor the [src] that fast!"))
+				return
+			if(!T.wet)
+				to_chat(user, SPAN_NOTICE("The floor needs to be wet before pooring [src]!"))
+				return
+			CB.inuse = TRUE
+			to_chat(user, SPAN_NOTICE("You start pooring and smoothing the [src]..."))
+			if(do_after(user,60))
+				new repair_into(T)
+				qdel(CB)
+			else
+				to_chat(user, SPAN_NOTICE("You must stand still to finish the job!"))
+				CB.inuse = FALSE
+
+//concrete
+
+/decl/flooring/industrial/concrete_small
+	name = "concrete slab"
+	desc = "Placed down slab of stone mixed with sand and heated into an aged design."
+	icon_base = "concrete_small"
+	has_base_range = 5
+	can_repair = TRUE
+	descriptor = "concrete"
+	repair_into = /obj/effect/flooring_type_spawner/concrete_small_fixed
+	build_type = /obj/item/stack/tile/concrete_small
+
+/decl/flooring/industrial/concrete_small_fixed
+	name = "concrete slab"
+	desc = "Placed down slab of stone mixed with sand and heated into an aged design."
+	icon_base = "concrete_small"
+	descriptor = "concrete"
+	build_type = /obj/item/stack/tile/concrete_small_fixed
+	tally_addition_decl = -0.1
+
+//bricks
+
+/decl/flooring/industrial/concrete_bricks
+	name = "concrete bricks"
+	desc = "A bunch of concrete bricks placed down as flooring."
+	icon_base = "concrete_bricks"
+	has_base_range = 8
+	can_repair = TRUE
+	descriptor = "concrete"
+	repair_into = /obj/effect/flooring_type_spawner/concrete_bricks_fixed
+	build_type = /obj/item/stack/tile/concrete_bricks
+
+/decl/flooring/industrial/concrete_bricks_fixed
+	name = "concrete bricks"
+	desc = "A bunch of concrete bricks placed down as flooring."
+	icon_base = "concrete_bricks"
+	descriptor = "concrete"
+	build_type = /obj/item/stack/tile/concrete_bricks_fixed
+	tally_addition_decl = -0.1
+
+//bricks - not odditie
+
+/decl/flooring/industrial/bricks
+	name = "bricks"
+	desc = "A bunch of stone bricks placed down as flooring."
+	icon_base = "concrete_bricks"
+	has_base_range = 8
+	can_repair = TRUE
+	descriptor = "brick"
+	repair_into = /obj/effect/flooring_type_spawner/bricks_fixed
+	build_type = /obj/item/stack/tile/bricks
+
+/decl/flooring/industrial/bricks_fixed
+	name = "bricks"
+	desc = "A bunch of stone bricks placed down as flooring."
+	icon_base = "concrete_bricks"
+	descriptor = "brick"
+	build_type = /obj/item/stack/tile/bricks_fixed
+	tally_addition_decl = -0.1
+
+//ornate
+
+/decl/flooring/industrial/ornate
+	name = "ornate flooring"
+	desc = "Dark tiles with some painting on it."
+	icon_base = "ornate"
+	has_base_range = 3
+	can_repair = TRUE
+	descriptor = "ornate"
+	repair_into = /obj/effect/flooring_type_spawner/ornate_fixed
+	build_type = /obj/item/stack/tile/ornate
+
+/decl/flooring/industrial/ornate_fixed
+	name = "ornate flooring"
+	desc = "Dark tiles with some painting on it."
+	icon_base = "ornate"
+	descriptor = "ornate"
+	build_type = /obj/item/stack/tile/ornate_fixed
+	tally_addition_decl = -0.1
+
+//sierra
+
+/decl/flooring/industrial/sierra
+	name = "ornate flooring"
+	desc = "Dark tiles with some painting on it."
+	icon_base = "sierra"
+	has_base_range = 3
+	can_repair = TRUE
+	descriptor = "ornate"
+	repair_into = /obj/effect/flooring_type_spawner/sierra_fixed
+	build_type = /obj/item/stack/tile/sierra
+
+/decl/flooring/industrial/sierra_fixed
+	name = "ornate flooring"
+	desc = "Dark tiles with some painting on it."
+	icon_base = "sierra"
+	descriptor = "ornate"
+	build_type = /obj/item/stack/tile/sierra_fixed
+	tally_addition_decl = -0.1
+
+//ceramic
+
+/decl/flooring/industrial/ceramic
+	name = "ceramic"
+	desc = "Hardened clay slates locked together as flooring."
+	icon_base = "ceramic"
+	has_base_range = 2
+	can_repair = TRUE
+	descriptor = "ceramic"
+	repair_into = /obj/effect/flooring_type_spawner/ceramic_fixed
+	build_type = /obj/item/stack/tile/ceramic
+
+/decl/flooring/industrial/ceramic_fixed
+	name = "ceramic"
+	desc = "Hardened clay slates locked together as flooring."
+	icon_base = "ceramic"
+	descriptor = "ceramic"
+	build_type = /obj/item/stack/tile/ceramic_fixed
+	tally_addition_decl = -0.1
+
+//gray slate
+
+/decl/flooring/industrial/grey_slates_long
+	name = "grey slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "grey_long"
+	has_base_range = 6
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/grey_slates_long_fixed
+	build_type = /obj/item/stack/tile/grey_slates_long
+
+/decl/flooring/industrial/grey_slates_long_fixed
+	name = "grey slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "grey_long"
+	build_type = /obj/item/stack/tile/grey_slates_long_fixed
+	tally_addition_decl = -0.1
+
+//blue slate
+
+/decl/flooring/industrial/blue_slates_long
+	name = "blue slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "blue_long"
+	has_base_range = 6
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/blue_slates_long_fixed
+	build_type = /obj/item/stack/tile/blue_slates_long
+
+/decl/flooring/industrial/blue_slates_long_fixed
+	name = "blue slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "blue_long"
+	build_type = /obj/item/stack/tile/blue_slates_long_fixed
+	tally_addition_decl = -0.1
+
+//gray slates
+
+/decl/flooring/industrial/grey_slates
+	name = "grey slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "grey"
+	has_base_range = 8
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/grey_slates_fixed
+	build_type = /obj/item/stack/tile/grey_slates
+
+/decl/flooring/industrial/grey_slates_fixed
+	name = "grey slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "grey"
+	build_type = /obj/item/stack/tile/grey_slates_fixed
+	tally_addition_decl = -0.1
+
+//blue slates
+
+/decl/flooring/industrial/blue_slates
+	name = "blue slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "blue"
+	has_base_range = 8
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/blue_slates_fixed
+	build_type = /obj/item/stack/tile/blue_slates
+
+/decl/flooring/industrial/blue_slates_fixed
+	name = "blue slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "blue"
+	build_type = /obj/item/stack/tile/blue_slates_fixed
+	tally_addition_decl = -0.1
+
+//navy slate
+
+/decl/flooring/industrial/navy_slates
+	name = "navy slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "navy"
+	has_base_range = 7
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/navy_slates_fixed
+	build_type = /obj/item/stack/tile/navy_slates
+
+/decl/flooring/industrial/navy_slates_fixed
+	name = "navy slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "navy"
+	build_type = /obj/item/stack/tile/navy_slates_fixed
+	tally_addition_decl = -0.1
+
+//fancy
+
+/decl/flooring/industrial/fancy_slates
+	name = "disk slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "fancy"
+	has_base_range = 7
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/fancy_slates_fixed
+	build_type = /obj/item/stack/tile/fancy_slates
+
+/decl/flooring/industrial/fancy_slates_fixed
+	name = "disk slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "fancy"
+	build_type = /obj/item/stack/tile/fancy_slates_fixed
+	tally_addition_decl = -0.1
+
+//navy
+
+/decl/flooring/industrial/navy_large_slates
+	name = "large navy slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "navy_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/navy_large_slates_fixed
+	build_type = /obj/item/stack/tile/navy_large_slates
+
+/decl/flooring/industrial/navy_large_slates_fixed
+	name = "large navy slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "navy_large_fixed"
+	build_type = /obj/item/stack/tile/navy_large_slates_fixed
+	tally_addition_decl = -0.1
+
+//ashen
+
+/decl/flooring/industrial/black_large_slates
+	name = "large black slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "black_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/black_large_slates_fixed
+	build_type = /obj/item/stack/tile/black_large_slates
+
+/decl/flooring/industrial/black_large_slates_fixed
+	name = "large black slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "black_large_fixed"
+	build_type = /obj/item/stack/tile/black_large_slates_fixed
+	tally_addition_decl = -0.1
+
+//Green
+
+/decl/flooring/industrial/green_large_slates
+	name = "green large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "green_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/green_large_slates_fixed
+	build_type = /obj/item/stack/tile/green_large_slates
+
+/decl/flooring/industrial/green_large_slates_fixed
+	name = "green large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "green_large_fixed"
+	build_type = /obj/item/stack/tile/green_large_slates_fixed
+	tally_addition_decl = -0.1
+
+//slabs
+
+/decl/flooring/industrial/white_large_slates
+	name = "white large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "white_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/white_large_slates_fixed
+	build_type = /obj/item/stack/tile/white_large_slates
+
+/decl/flooring/industrial/white_large_slates_fixed
+	name = "white large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "white_large_fixed"
+	build_type = /obj/item/stack/tile/white_large_slates_fixed
+	tally_addition_decl = -0.1
+
+//checker
+
+/decl/flooring/industrial/checker_large
+	name = "white and black large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "checker_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/checker_large_fixed
+	build_type = /obj/item/stack/tile/checker_large
+
+/decl/flooring/industrial/checker_large_fixed
+	name = "white and black large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "checker_large_fixed"
+	build_type = /obj/item/stack/tile/checker_large_fixed
+	tally_addition_decl = -0.1
+
+//cafe
+
+/decl/flooring/industrial/cafe_large
+	name = "white and red large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "cafe_large"
+	has_base_range = 3
+	can_repair = TRUE
+	repair_into = /obj/effect/flooring_type_spawner/cafe_large_fixed
+	build_type = /obj/item/stack/tile/cafe_large
+
+/decl/flooring/industrial/cafe_large_fixed
+	name = "white and red large slates"
+	desc = "Cut down and thinned rock slates used for flooring."
+	icon_base = "cafe_large_fixed"
+	build_type = /obj/item/stack/tile/cafe_large_fixed
+	tally_addition_decl = -0.1
