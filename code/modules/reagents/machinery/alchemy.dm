@@ -166,7 +166,9 @@
 	storage_slots = 5 // Five flasks
 	sliding_behavior = TRUE // Fast access!
 	can_hold = list(
-		/obj/item/reagent_containers/food/drinks/bottle/alchemy
+		/obj/item/reagent_containers/food/drinks/bottle/alchemy,
+		/obj/item/reagent_containers/glass/beaker/flask_alchemy,
+		/obj/item/weldpack/canister/oil
 		)
 	var/open = FALSE
 
