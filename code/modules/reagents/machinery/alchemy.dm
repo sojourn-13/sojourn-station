@@ -16,6 +16,7 @@
 
 /obj/structure/alchemy/New()
 	update_icon()
+	reset_plane_and_layer()
 
 /obj/structure/alchemy/examine(mob/user)
 	..()
@@ -36,8 +37,8 @@
 		return
 
 	beaker.reagent_flags &= ~(NO_REACT)
-	spawn(5)
 	beaker.reagents.process_reactions()
+	spawn(5)
 	beaker.reagent_flags |= NO_REACT
 
 /obj/structure/alchemy/verb/detach_beaker()
