@@ -358,12 +358,6 @@
 							if(helmet)
 								helmet.update_light(wearer)
 
-					//sealed pieces become airtight, protecting against diseases
-					if (seal_target)
-						piece.armor.bio = 100
-					else
-						piece.armor.bio = armor.bio
-
 				else
 					failed_to_seal = 1
 
@@ -629,6 +623,7 @@
 			check_slot = wearer.wear_suit
 
 	if(use_obj)
+		use_obj.refresh_upgrades()
 		if(check_slot == use_obj && deploy_mode != ONLY_DEPLOY)
 			if (active && !(use_obj.retract_while_active))
 				to_chat(wearer, SPAN_DANGER("The [use_obj] is locked in place while [src] is active. You must deactivate it first!"))
