@@ -79,10 +79,10 @@
 
 /mob/living/simple_animal/hostile/render/malformed
 	name = "Malformed Render"
-	maxHealth = 1500
-	health = 1500
-	melee_damage_lower = 55
-	melee_damage_upper = 75
+	maxHealth = 800
+	health = 800
+	melee_damage_lower = 40
+	melee_damage_upper = 45
 	color = "#8B0000"
 
 /mob/living/simple_animal/hostile/render/chunks
