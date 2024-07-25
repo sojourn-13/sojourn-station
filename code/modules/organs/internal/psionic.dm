@@ -37,8 +37,8 @@
 	var/cognitive_potential = 0
 	//The maxium amount are cog can lower cooldown
 	var/cognitive_potential_max = 3
-
-
+	//Used for things outside of when we gather it in regen
+	var/psi_max_other_sources = 0
 
 	owner_verbs = list(
 		/mob/living/carbon/human/proc/psionic_healing,

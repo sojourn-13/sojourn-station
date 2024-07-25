@@ -66,8 +66,7 @@
 		remove_synthetics()
 
 		//Now we do are math to under are point cap and regen
-		cognitive_potential_max += psionic_equipment_check("cognitive_potential_max_bonus")
-
+		psi_max_bonus = 0 + psi_max_other_sources
 
 		if(!owner.stats.getPerk(PERK_PSION))
 			owner.stats.addPerk(PERK_PSION)
@@ -82,7 +81,7 @@
 
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, cognitive_potential_max), 0.1)
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, (cognitive_potential_max+psionic_equipment_check("cognitive_potential_max_bonus"))), 0.1)
 
 		var/regen_points_timer = (5 MINUTES - cognitive_potential MINUTES)
 
