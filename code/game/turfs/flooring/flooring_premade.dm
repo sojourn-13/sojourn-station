@@ -975,7 +975,7 @@
 /turf/simulated/floor/industrial/checker_large_fixed
 	name = "large white and black slates"
 	icon_state = "checker_large_fixed"
-	initial_flooring = /decl/flooring/industrial/checker_large
+	initial_flooring = /decl/flooring/industrial/checker_large_fixed
 
 /turf/simulated/floor/industrial/cafe_large_fixed
 	name = "large white and red slates"

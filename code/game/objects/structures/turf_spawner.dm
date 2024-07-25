@@ -107,7 +107,6 @@
 	change_floor_to_path = /turf/simulated/floor/industrial/cafe_large_fixed
 	icon_state = "concrete_spawner"
 
-
 /obj/effect/flooring_type_spawner/mining_wall_oreful
 	name = "mineral spawner - always give ores"
 	change_floor_to_path = /turf/simulated/mineral/random
