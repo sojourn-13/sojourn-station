@@ -283,6 +283,7 @@
 
 /obj/item/rig/proc/toggle_seals(mob/initiator,instant)
 
+	updateArmor()
 	if(sealing) return
 
 	// Seal toggling can be initiated by the suit AI, too
@@ -629,6 +630,7 @@
 			check_slot = wearer.wear_suit
 
 	if(use_obj)
+		use_obj.refresh_upgrades()
 		if(check_slot == use_obj && deploy_mode != ONLY_DEPLOY)
 			if (active && !(use_obj.retract_while_active))
 				to_chat(wearer, SPAN_DANGER("The [use_obj] is locked in place while [src] is active. You must deactivate it first!"))
@@ -721,6 +723,9 @@
 
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, H, ONLY_DEPLOY)
+
+
+	updateArmor()
 
 /obj/item/rig/dropped(mob/user)
 	..()
