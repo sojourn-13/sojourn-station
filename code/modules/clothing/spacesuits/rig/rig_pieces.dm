@@ -18,7 +18,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -37,7 +37,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -57,7 +57,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -83,7 +83,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -125,7 +125,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -143,7 +143,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -160,7 +160,7 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
 
@@ -178,6 +178,6 @@
 	..()
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
-		if(istype(/obj/item/rig, H.back))
+		if(istype(H.back, /obj/item/rig))
 			var/obj/item/rig/R = H.back
 			R.updateArmor()
