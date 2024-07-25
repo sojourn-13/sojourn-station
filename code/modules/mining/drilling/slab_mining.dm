@@ -118,14 +118,14 @@
 		stored_points = 0
 
 	//Quite bad at statistics so grain of salt ya? - Trilby
-	//20 out of 450 so 14ish% chance of nothing (refills soil digging)
-	//250 out of 450 so 56ish% chance of normal rockwalls basically useless
-	//139 out of 450 so 30ish% to be mineral wall could be any materal - as of commiting the weights are 100% to spawn with
+	//60 out of 450 so 8ish% chance of nothing (refills soil digging)
+	//250 out of 450 so 71ish% chance of normal rockwalls basically useless
+	//139 out of 450 so 19ish% to be mineral wall could be any materal - as of commiting the weights are 100% to spawn with
 	//list(ORE_URANIUM = 5, ORE_PLATINUM = 5, ORE_IRON = 35, ORE_CARBON = 35, ORE_DIAMOND = 1, ORE_GOLD = 5, ORE_SILVER = 5, ORE_PLASMA = 10, ORE_HYDROGEN = 1)
 
 	//And then a 1 out of 300 or about 0.3% chance of a rocky friend :3c
 	for(var/turf/simulated/floor/asteroid/MS in work_area.contents)
-		switch (pickweight(list("nothing" = 60,"rockwall" = 250, "mineral_wall" = 139, "ameridian_crystal" = 1)))
+		switch (pickweight(list("nothing" = 60, "rockwall" = 499, "mineral_wall" = 139, "ameridian_crystal" = 1)))
 			if("nothing")
 				if(MS.dug)
 					MS.dug = FALSE
