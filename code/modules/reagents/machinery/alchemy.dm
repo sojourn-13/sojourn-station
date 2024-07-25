@@ -16,6 +16,7 @@
 
 /obj/structure/alchemy/New()
 	update_icon()
+	reset_plane_and_layer()
 
 /obj/structure/alchemy/examine(mob/user)
 	..()
@@ -36,9 +37,9 @@
 		return
 
 	beaker.reagent_flags &= ~(NO_REACT)
+	beaker.reagents.process_reactions()
 	spawn(5)
 	beaker.reagent_flags |= NO_REACT
-	beaker.reagents.process_reactions()
 
 /obj/structure/alchemy/verb/detach_beaker()
 	set category = "Object"
@@ -165,7 +166,9 @@
 	storage_slots = 5 // Five flasks
 	sliding_behavior = TRUE // Fast access!
 	can_hold = list(
-		/obj/item/reagent_containers/food/drinks/bottle/alchemy
+		/obj/item/reagent_containers/food/drinks/bottle/alchemy,
+		/obj/item/reagent_containers/glass/beaker/flask_alchemy,
+		/obj/item/weldpack/canister/oil
 		)
 	var/open = FALSE
 
