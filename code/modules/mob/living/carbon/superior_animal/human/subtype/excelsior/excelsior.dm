@@ -120,7 +120,7 @@
 	ranged = 0
 	rapid = 0
 	//Baseline armor + a littlebit of armor from the shield they hold
-	armor = list(melee = 65, bullet = 60, energy = 75, bomb = 85, bio = 100, rad = 25)
+	armor = list(melee = 16, bullet = 15, energy = 18, bomb = 85, bio = 100, rad = 25)
 	//Atm snowflake code for these 2 mobs to not bloat the parrent anymore
 	var/block_chance = 50
 	var/give_cooldown_odds = 60
