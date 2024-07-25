@@ -37,8 +37,8 @@
 
 	beaker.reagent_flags &= ~(NO_REACT)
 	spawn(5)
-	beaker.reagent_flags |= NO_REACT
 	beaker.reagents.process_reactions()
+	beaker.reagent_flags |= NO_REACT
 
 /obj/structure/alchemy/verb/detach_beaker()
 	set category = "Object"
