@@ -1583,4 +1583,64 @@ obj/effect/floor_decal/corner_techfloor_gray
 	name = "shale edge"
 	icon_state = "shale_edge_corner"
 
+/* Industrail Plant*/
 
+/obj/effect/floor_decal/industrial_plant
+	name = "steel industrial header"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_industrial"
+
+/obj/effect/floor_decal/industrial_plant/border
+	name = "steel industrial border"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_industrial_b"
+
+/obj/effect/floor_decal/industrial_plant/border_corner
+	name = "steel industrial border corner"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_industrial_b_corner"
+
+/obj/effect/floor_decal/industrial_plant/border_sides
+	name = "steel industrial border sides"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_industrial_b_sides"
+
+/obj/effect/floor_decal/industrial_plant/border_cap
+	name = "steel industrial border cap"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_industrial_b_end"
+
+/obj/effect/floor_decal/industrial_plant/steel_grate
+	name = "steel industrial grate"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_grate"
+
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt
+	name = "steel industrial grate alt"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_grate_alt"
+
+/obj/effect/floor_decal/industrial_plant/steel_grate_border
+	name = "steel industrial grate border"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_grate_border"
+
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning
+	name = "steel industrial grate warning"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_grate_warning"
+
+/obj/effect/floor_decal/industrial_plant/steel_warning
+	name = "steel industrial warning box"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_warning"
+
+/obj/effect/floor_decal/industrial_plant/steel_stayclear
+	name = "steel industrial stayclear"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_stayclear"
+
+/obj/effect/floor_decal/industrial_plant/steel_stayclear
+	name = "steel industrial stayclear"
+	icon = 'icons/turf/flooring/decals.dmi'
+	icon_state = "steel_stayclear"
