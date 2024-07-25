@@ -16,16 +16,17 @@
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	init_recoil = HANDGUN_RECOIL(1.2)
+	var/fake_name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
 	force = initial(force)
-	name = initial(name)
+	name = fake_name
 	if(wielded)
 		if(force_wielded_multiplier)
 			force = force * force_wielded_multiplier
 		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
 			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
-		name = "[name] (Wielded)"
+		name = "[fake_name] (Wielded)"
 	return //Same reason why we dont have max upgrades, refreshing in this case is always bad
 
 /obj/item/gun/projectile/revolver/artwork_revolver/proc/ensure_updates()
@@ -38,6 +39,7 @@
 		init_recoil = HANDGUN_RECOIL(1.2)
 		recoil = getRecoil(arglist(init_recoil))
 		recoil = recoil.modifyAllRatings(1+rand(-2,2)/10)
+	fake_name = name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/Initialize()
 	name = get_weapon_name(capitalize = TRUE)

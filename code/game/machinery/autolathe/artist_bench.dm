@@ -203,14 +203,14 @@
 				R.damage_multiplier = 1.2 + rand(-2,4)/10
 				R.penetration_multiplier = 1.2 + (rand(-2,4)/10)
 				R.max_shells = rand(6,12)
-				R.fire_delay = rand(0.1,2)
+				R.fire_delay = pick(0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,1.2,1.4,1.6,1.8,2)
 
 			if("magnum") //From consul.dm, Arbitrary values
 				R.caliber = CAL_MAGNUM
 				R.damage_multiplier = 1.2 + (rand(-1,5)/10)
 				R.penetration_multiplier = 1.2 + (rand(-1,5)/10)
 				R.max_shells = rand(8,16)
-				R.fire_delay = rand(0.5,2)
+				R.fire_delay = pick(0.5,0.6,0.7,0.8,0.9,1,1.2,1.4,1.6,1.8,2)
 
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
@@ -227,7 +227,7 @@
 				R.max_shells = rand(11,21)
 				R.damage_multiplier = 1.2 + (rand(-1,4)/10)
 				R.penetration_multiplier = 1 + (rand(-3,3)/10)
-				R.fire_delay = rand(0.2,1)
+				R.fire_delay = pick(0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1)
 
 			if("sniper")//From sniper.dm, Arbitrary values
 				R.caliber = CAL_ANTIM

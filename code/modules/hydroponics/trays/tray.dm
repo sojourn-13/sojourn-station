@@ -654,6 +654,12 @@
 	return
 
 /obj/machinery/portable_atmospherics/hydroponics/attack_tk(mob/user as mob)
+	if(blue_ink_tk_blocker)
+		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
+		return
+
+	//if forwhatever reason we allow teleportation trays
+
 	if(dead)
 		remove_dead(user)
 	else if(harvest)
