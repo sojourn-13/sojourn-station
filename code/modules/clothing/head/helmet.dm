@@ -1612,8 +1612,8 @@
 	name = "ballistic mask"
 	desc = "An armored mask, Protects the head and face from impacts and shrapnel."
 	icon_state = "bmask"
-	armor_up = list(melee = 15, bullet = 15, energy = 15, bomb = 10, bio = 0, rad = 0)
-	armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 20, bio = 0, rad = 0)
+	armor_up = list(melee = 4, bullet = 4, energy = 4, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 9, bullet = 9, energy = 9, bomb = 20, bio = 0, rad = 0)
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10)
 	flags_inv = null
 	siemens_coefficient = 1
