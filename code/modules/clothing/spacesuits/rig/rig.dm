@@ -724,6 +724,9 @@
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, H, ONLY_DEPLOY)
 
+
+	updateArmor()
+
 /obj/item/rig/dropped(mob/user)
 	..()
 	remove()
