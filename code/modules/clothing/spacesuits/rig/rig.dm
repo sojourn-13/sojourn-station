@@ -358,6 +358,12 @@
 							if(helmet)
 								helmet.update_light(wearer)
 
+					//sealed pieces become airtight, protecting against diseases
+					if (seal_target)
+						piece.armor.bio = 100
+					else
+						piece.armor.bio = armor.bio
+
 				else
 					failed_to_seal = 1
 
