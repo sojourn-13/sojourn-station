@@ -442,6 +442,14 @@
 	price_tag = 2
 	novariants = FALSE
 
+/obj/item/stack/steel/glass/five
+	name = "five glass sheets"
+	amount = 5
+
+/obj/item/stack/steel/glass/ten
+	name = "ten glass sheets"
+	amount = 10
+
 /obj/item/stack/material/glass/full
 	amount = 120
 
