@@ -305,7 +305,6 @@
 
 		prereq += " To Resonances: [victory.out_put_name]"
 		blurb += prereq
-		qdel(thething)
 
 	if(blurb)
 		blurb = pick(blurb)
