@@ -382,7 +382,7 @@
 	price_tag = 1
 
 /obj/item/stack/steel/cloth/five
-	name = "five cloth sheets
+	name = "five cloth sheets"
 	icon_state = "sheet-cloth"
 	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
