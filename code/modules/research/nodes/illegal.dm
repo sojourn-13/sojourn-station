@@ -183,7 +183,7 @@
 
 /datum/technology/arm_pouch
 	name = "Embedded Pouch"
-	desc = "A hidden pouch able to stow away tiny items, unable to be picked up on scanners."
+	desc = "A hidden pouch able to stow away small items, unable to be picked up on scanners."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.5

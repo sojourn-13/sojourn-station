@@ -9,8 +9,8 @@
 	completely_hide_from_scanners = TRUE
 
 /obj/item/organ_module/active/simple/small_pouch
-	name = "embedded tiny pouch"
-	desc = "A tiny pouch that can be put inside a person at the cost of some of the users muscles."
+	name = "embedded small pouch"
+	desc = "A small pouch that can be put inside a person at the cost of some of the users muscles."
 	verb_name = "Deploy small pouch"
 	icon_state = "small_implanted"
 	//Exspensive
