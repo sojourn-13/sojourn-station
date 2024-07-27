@@ -179,7 +179,9 @@
 	if(issuperioranimal(L))
 		var/mob/living/carbon/superior_animal/SA = L
 		SA.harvest(SA) //Self harvest
+		return
 	if(isanimal(L))
 		var/mob/living/simple_animal/SA = L
 		SA.harvest(SA) //Self harvest
-
+		return
+	return
