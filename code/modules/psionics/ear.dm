@@ -280,10 +280,12 @@
 	for(var/path in typesof(/datum/eternal_ascension_resonances) - /datum/eternal_ascension_resonances)
 		var/datum/eternal_ascension_resonances/victory = path
 		var/prereq = initial(victory.rune_resonance)
-		var/obj/thething = initial(victory.output)
+		var/obj/thething = new victory.output
+
 
 		prereq += " To Resonances: [thething.name]"
 		blurb += prereq
+		qdel(thething)
 
 	if(blurb)
 		blurb = pick(blurb)
