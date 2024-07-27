@@ -30,7 +30,6 @@
 	if(message)
 		say_verb(message)
 
-
 /mob/verb/say_verb(message as text)
 	set name = "Say"
 	set hidden = TRUE
@@ -186,3 +185,22 @@
 			return L
 
 	return null
+
+//Not Antighost but its more sneaky around folks
+
+/mob/verb/subtle_wrapper()
+	set name = "Subtle verb"
+	set category = "IC"
+	var/message = input("", "subtle (text)") as text|null
+	if(message)
+		subtle_verb(message)
+
+/mob/verb/subtle_verb(message as text)
+	set name = "Subtle"
+	set hidden = TRUE
+	if(say_disabled)
+		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled"))
+	if(use_subtle)
+		usr.emote("subtle", usr.emote_type, message)
+	else
+		usr.emote(message)
