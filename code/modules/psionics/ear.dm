@@ -280,7 +280,7 @@
 	for(var/path in typesof(/datum/eternal_ascension_resonances) - /datum/eternal_ascension_resonances)
 		var/datum/eternal_ascension_resonances/victory = path
 		var/prereq = initial(victory.rune_resonance)
-		var/obj/thething = new victory.output
+		var/obj/thething = new victory.output(src.loc)
 
 
 		prereq += " To Resonances: [thething.name]"
