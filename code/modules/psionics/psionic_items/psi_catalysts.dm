@@ -17,6 +17,10 @@
 	var/stored_power
 	var/resonances = "Anything"
 
+/obj/item/device/psionic_catalyst/examine(mob/user)
+	..()
+	if(resonances)
+		to_chat(user, "<span class='info'>Has a Resonances Keyword of: [resonances]</span>")
 
 /obj/item/device/psionic_catalyst/dull
 	name = "dull psionic catalyst"
