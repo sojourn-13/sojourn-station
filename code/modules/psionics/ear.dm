@@ -302,8 +302,9 @@
 	for(var/path in typesof(/datum/eternal_ascension_resonances) - /datum/eternal_ascension_resonances)
 		var/datum/eternal_ascension_resonances/victory = path
 		var/prereq = initial(victory.rune_resonance)
+		var/then_name = initial(victory.out_put_name)
 
-		prereq += " To Resonances: [victory.out_put_name]"
+		prereq += " To Resonances: [then_name]"
 		blurb += prereq
 
 	if(blurb)
