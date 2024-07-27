@@ -315,10 +315,14 @@
 	novariants = FALSE
 
 /obj/item/stack/steel/steel/five
+	icon_state = "sheet-metal"
+	icon = 'icons/obj/stack/material.dmi'
 	name = "five steel sheets"
 	amount = 5
 
 /obj/item/stack/steel/steel/ten
+	icon_state = "sheet-metal"
+	icon = 'icons/obj/stack/material.dmi'
 	name = "ten steel sheets"
 	amount = 10
 
@@ -348,15 +352,20 @@
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
 
 /obj/item/stack/steel/wood/five
 	name = "five wood plank"
+	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
 /obj/item/stack/steel/wood/ten
 	name = "ten wood plank"
+	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/wood/full
@@ -373,11 +382,15 @@
 	price_tag = 1
 
 /obj/item/stack/steel/cloth/five
-	name = "five cloth sheets"
+	name = "five cloth sheets
+	icon_state = "sheet-cloth"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
 /obj/item/stack/steel/cloth/ten
 	name = "ten cloth sheets"
+	icon_state = "sheet-cloth"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/cloth/random
@@ -404,10 +417,14 @@
 
 /obj/item/stack/steel/cardboard/five
 	name = "five cardboard sheets"
+	icon_state = "sheet-card"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
 /obj/item/stack/steel/cardboard/ten
 	name = "ten cardboard sheets"
+	icon_state = "sheet-card"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 
@@ -444,10 +461,14 @@
 
 /obj/item/stack/steel/glass/five
 	name = "five glass sheets"
+	icon_state = "sheet-glass"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
 /obj/item/stack/steel/glass/ten
 	name = "ten glass sheets"
+	icon_state = "sheet-glass"
+	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/glass/full
