@@ -12,7 +12,6 @@
 	fire_sound_text = "a metallic thunk"
 	price_tag = 1200
 	serial_type = "SD GmbH"
-
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , heavy stuff
 	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1)

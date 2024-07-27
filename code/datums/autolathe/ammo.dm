@@ -49,12 +49,12 @@
 	name = "shotgun shells box (caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun/biomatter
 	materials = list(MATERIAL_BIOMATTER = 60) //Double the cost of magnum rounds, i guess? It works.
-
+/*
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned
 	chemicals = list("phosphorus" = 2)
-
+*/
 /datum/design/autolathe/ammo/shotgun_speedloader_slug
 	name = "20mm loader tube (slug)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun
@@ -107,12 +107,12 @@
 	name = "SBAW magazine (20mm beanbag)"
 	build_path = /obj/item/ammo_magazine/sbaw/beanbag
 	materials = list(MATERIAL_STEEL = 10)
-
+/*
 /datum/design/autolathe/ammo/sbaw_payload
 	name = "SBAW magazine (20mm HEFI)"
 	build_path = /obj/item/ammo_magazine/sbaw/he
 	materials = list(MATERIAL_STEEL = 10)
-
+*/
 /datum/design/autolathe/ammo/sbaw_empty
 	name = "SBAW magazine (empty)"
 	build_path = /obj/item/ammo_magazine/sbaw/empty

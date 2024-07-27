@@ -1108,7 +1108,7 @@
 	matter = list(MATERIAL_STEEL = 2)
 	max_ammo = 8
 	multiple_sprites = 1
-
+/*
 /obj/item/ammo_magazine/a75
 	name = "ammo magazine (19mm gyro)"
 	desc = "A 4 magazine in 19mm gyro."
@@ -1124,7 +1124,7 @@
 /obj/item/ammo_magazine/a75/empty
 	initial_ammo = 0
 	icon_state = "gyropistol-0"
-
+*/
 ////////////Shotguns!////////////
 
 /obj/item/ammo_magazine/m12
@@ -1192,12 +1192,12 @@
 	name = "20mm SBAW magazine (buckshot)"
 	icon_state = "sbaw_buck"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-
+/*
 /obj/item/ammo_magazine/sbaw/he
 	name = "20mm SBAW magazine (HEFI)"
 	icon_state = "sbaw_he"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
-
+*/
 // SCI ammo
 /obj/item/ammo_magazine/rifle_223
 	name = "short carbine magazine"

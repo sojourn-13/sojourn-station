@@ -682,7 +682,7 @@
 
 /obj/item/ammo_casing/shotgun/laser/prespawned
 	amount = 5
-
+/*
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
@@ -695,7 +695,7 @@
 
 /obj/item/ammo_casing/shotgun/payload/prespawned
 	amount = 5
-
+*/
 /obj/item/ammo_casing/shotgun/plasma
 	name = "plasma shell"
 	desc = "A 20mm plasma shell."
@@ -791,7 +791,7 @@
 	name = "PG-7EMP grenade"
 	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
-
+/*
 /obj/item/ammo_casing/a75
 	name = "microjet casing"
 	desc = "A 19mm gyrojet rocket."
@@ -800,7 +800,7 @@
 
 /obj/item/ammo_casing/a75/spent
 	projectile_type = null
-
+*/
 /obj/item/ammo_casing/cap
 	name = "cap"
 	desc = "A cap for children toys."

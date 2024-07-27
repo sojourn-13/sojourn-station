@@ -239,7 +239,7 @@
 			list(name="Shells (20mm Illumination)", cost=50, path=/obj/item/ammo_casing/shotgun/illumination/prespawned),
 			list(name="Shells (20mm Blank)", cost=50, path=/obj/item/ammo_casing/shotgun/blank/prespawned),
 			list(name="Shells (20mm Practice)", cost=50, path=/obj/item/ammo_casing/shotgun/practice/prespawned),
-			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
+			//list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
 		"20mm Shotgun shells, magazines",
 			list(name="Loader Tube (20mm Slug)", cost = 400, path=/obj/item/ammo_magazine/speed_loader_shotgun),
 			list(name="Loader Tube (20mm Buckshot)", cost = 400, path=/obj/item/ammo_magazine/speed_loader_shotgun/pellet),
@@ -249,7 +249,7 @@
 			list(name="SBAW Magazine (20mm Sabot Slug)", cost=600, path=/obj/item/ammo_magazine/sbaw),
 			list(name="SBAW Magazine (20mm Buckshot)", cost=600, path=/obj/item/ammo_magazine/sbaw/pellet),
 			list(name="SBAW Magazine (20mm Beanbag)", cost=5000, path=/obj/item/ammo_magazine/sbaw/beanbag),
-			list(name="SBAW Magazine (20mm HEFI)", cost=2600, path=/obj/item/ammo_magazine/sbaw/he),
+			//list(name="SBAW Magazine (20mm HEFI)", cost=2600, path=/obj/item/ammo_magazine/sbaw/he),
 			list(name="SBAW Magazine (20mm Empty)", cost=400, path=/obj/item/ammo_magazine/sbaw/empty),
 			list(name="Ammo Drum (20mm Sabot slug)", cost=850, path=/obj/item/ammo_magazine/m12),
 			list(name="Ammo Drum (20mm Buckshot)", cost=850, path=/obj/item/ammo_magazine/m12/pellet),
@@ -265,7 +265,7 @@
 			list(name="Box (20mm Blank)", cost=500, path=/obj/item/ammo_magazine/ammobox/shotgun/blanks),
 			list(name="Box (20mm Practice)", cost=500, path=/obj/item/ammo_magazine/ammobox/shotgun/practiceshells),
 			list(name="Box (20mm Incendiary)", cost=4500, path=/obj/item/ammo_magazine/ammobox/shotgun/incendiary),
-			list(name="Box (20mm Payload)", cost=7500, path=/obj/item/ammo_magazine/ammobox/shotgun/payload),
+			//list(name="Box (20mm Payload)", cost=7500, path=/obj/item/ammo_magazine/ammobox/shotgun/payload),
 		"40mm Grenade",
 			list(name="Grenade Shell Baton", cost=250, path=/obj/item/ammo_casing/grenade),
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
@@ -321,7 +321,7 @@
 			user.remove_from_mob(I)
 			I.forceMove(src)
 			to_chat(user, SPAN_NOTICE("You put [I] in [src]"))
-	
+
 	update_icon()
 
 /obj/machinery/bulletfabricator/ui_interact(mob/user, datum/tgui/ui)

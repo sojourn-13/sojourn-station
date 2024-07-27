@@ -174,11 +174,11 @@
 	if(inspiration && user.stats.getPerk(PERK_ARTIST))
 		LStats = inspiration.calculate_statistics()
 
-	var/weight_mechanical = 0 + LStats[STAT_MEC]
+	//var/weight_mechanical = 0 + LStats[STAT_MEC] //currently unused for anything.
 	var/weight_cognition = 0 + LStats[STAT_COG]
 	var/weight_biology = 0 + LStats[STAT_BIO]
 	var/weight_robustness = 0 + LStats[STAT_ROB]
-	var/weight_toughness = 0 + LStats[STAT_TGH]
+	//var/weight_toughness = 0 + LStats[STAT_TGH] //currently unused for anything.
 	var/weight_vigilance = 0 + LStats[STAT_VIG]
 
 	//var/list/LWeights = list(weight_mechanical, weight_cognition, weight_biology, weight_robustness, weight_toughness, weight_vigilance)
@@ -191,9 +191,9 @@
 			"magnum" = 8 + weight_vigilance,
 			"shotgun" = 8 + weight_robustness,
 			"rifle" = 8 + weight_vigilance,
-			"sniper" = 8 + max(weight_vigilance + weight_cognition),
-			"gyro" = 1 + weight_robustness + weight_mechanical,
-			"grenade" = 8 + weight_toughness
+			"sniper" = 8 + max(weight_vigilance + weight_cognition)
+			//"gyro" = 1 + weight_robustness + weight_mechanical,
+			//"grenade" = 8 + weight_toughness
 		))
 
 		switch(gun_pattern)
@@ -236,7 +236,7 @@
 				R.max_shells = rand(1,3)
 				R.damage_multiplier = 1
 				R.penetration_multiplier = 1
-
+/*
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 				R.max_shells = rand(1,3)
@@ -255,7 +255,8 @@
 			R.init_firemodes = list(
 				list(mode_name="Single shot", mode_desc="fire one barrel at a time", burst=1, icon="semi"),
 				list(mode_name="Triple barrel",mode_desc="fire three barrels at once", burst=3, icon="auto"),
-				)
+
+				)*/
 		R.ensure_updates()
 		return R
 
