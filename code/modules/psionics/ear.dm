@@ -158,11 +158,7 @@
 	var/rune_resonance = "AnythingNullNullNull" //Mostly for debug
 	//Output, the psionic item (typically catalyst/powers) we get for matching the code
 	var/output = /obj/item/device/psionic_catalyst/dull
-
-
-/datum/eternal_ascension_resonances/debug
-	//Debug one to just hold the default
-
+	var/out_put_name = ""
 
 /datum/eternal_ascension_resonances/psychoactive_manipulation
 	rune_resonance = "SeekGreater"
