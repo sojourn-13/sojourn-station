@@ -167,106 +167,132 @@
 /datum/eternal_ascension_resonances/psychoactive_manipulation
 	rune_resonance = "SeekGreater"
 	output = /obj/item/device/psionic_catalyst/psychoactive_manipulation
+	out_put_name = "Psychoactive Manipulation"
 
 /datum/eternal_ascension_resonances/detect_thoughts
 	rune_resonance = "ClimentRegicideSuppression"
 	output = /obj/item/device/psionic_catalyst/detect_thoughts
+	out_put_name = "Locate Mind-Essence"
 
 /datum/eternal_ascension_resonances/nightmare_mind
 	rune_resonance = "QuickSeek"
 	output = /obj/item/device/psionic_catalyst/nightmare_mind
+	out_put_name = "Nightmarish Thoughts"
 
 /datum/eternal_ascension_resonances/bring_darkness
 	rune_resonance = "AgeNight"
 	output = /obj/item/device/psionic_catalyst/bring_darkness
+	out_put_name = "Bring Darkness"
 
 /datum/eternal_ascension_resonances/rust
 	rune_resonance = "QuickQuick"
 	output = /obj/item/device/psionic_catalyst/rust
+	out_put_name = "Rust"
 
 /datum/eternal_ascension_resonances/decay
 	rune_resonance = "QuickAge"
 	output = /obj/item/device/psionic_catalyst/decay
+	out_put_name = "Decay"
 
 /datum/eternal_ascension_resonances/dream_seeker
 	rune_resonance = "SeekNight"
 	output = /obj/item/device/psionic_catalyst/dream_seeker
+	out_put_name = "Dream Seeker"
 
 /datum/eternal_ascension_resonances/kings_decorum
 	rune_resonance = "AgeRustCarbon"
 	output = /obj/item/device/psionic_catalyst/kings_decorum
+	out_put_name = "Kings Decorum"
 
 /datum/eternal_ascension_resonances/heretical_ascension
 	rune_resonance = "CarbonRustAgeQuick"
 	output = /obj/item/device/psionic_catalyst/heretical_ascension
+	out_put_name = "Heretical Ascension"
 
 /datum/eternal_ascension_resonances/psionic_ascension
 	rune_resonance = "SteelRustAgeQuick"
 	output = /obj/item/device/psionic_catalyst/psionic_ascension
+	out_put_name = "Psionic Sscension"
 
 /datum/eternal_ascension_resonances/cerebral_hemorrhage
 	rune_resonance = "CarbonRegicideNight"
 	output = /obj/item/device/psionic_catalyst/cerebral_hemorrhage
+	out_put_name = "Cerebral Hemorrhage"
 
 /datum/eternal_ascension_resonances/enslavement
 	rune_resonance = "RegicideAgeCarbon"
 	output = /obj/item/device/psionic_catalyst/enslavement
+	out_put_name = "Enslavement"
 
 /datum/eternal_ascension_resonances/cryo_kinetic_blaster
 	rune_resonance = "SuppressionAgeCliment"
 	output = /obj/item/device/psionic_catalyst/cryo_kinetic_blaster
+	out_put_name = "Cryo Kinetic Blaster"
 
 /datum/eternal_ascension_resonances/pyro_kinetic_blaster
 	rune_resonance = "SuppressionClimentHeal"
 	output = /obj/item/device/psionic_catalyst/pyro_kinetic_blaster
+	out_put_name = "Pryo Kinetic Blaster"
 
 /datum/eternal_ascension_resonances/electro_kinetic_blaster
 	rune_resonance = "WarmColdClimentHeal"
 	output = /obj/item/device/psionic_catalyst/electro_kinetic_blaster
+	out_put_name = "Electro Kinetic Blaster"
 
 /datum/eternal_ascension_resonances/kinetic_barrier
 	rune_resonance = "ProtectionWarm"
 	output = /obj/item/device/psionic_catalyst/kinetic_barrier
+	out_put_name = "Kinetic Barrier"
 
 /datum/eternal_ascension_resonances/chosen_control
 	rune_resonance = "HealSuppressionClimentCarbon"
 	output = /obj/item/device/psionic_catalyst/chosen_control
+	out_put_name = "Chosen Control"
 
 /datum/eternal_ascension_resonances/Light_psi_armor
 	rune_resonance = "ProtectionSuppression"
 	output = /obj/item/device/psionic_catalyst/Light_psi_armor
+	out_put_name = "Void robe"
 
 /datum/eternal_ascension_resonances/Hpsi_armor
 	rune_resonance = "SuppressionProtectionProtectionProtection"
 	output = /obj/item/device/psionic_catalyst/Hpsi_armor
+	out_put_name = "Durable shell"
 
 /datum/eternal_ascension_resonances/layered_psi_shield
 	rune_resonance = "ProtectionProtection"
 	output = /obj/item/device/psionic_catalyst/layered_psi_shield
+	out_put_name = "Layered Shield"
 
 /datum/eternal_ascension_resonances/trash_pile_exploid
 	rune_resonance = "WarmCliment"
 	output = /obj/item/device/psionic_catalyst/trash_pile_exploid
+	out_put_name = "Discombobulate"
 
 /datum/eternal_ascension_resonances/trash_pile_compress
 	rune_resonance = "QuickSuppression"
 	output = /obj/item/device/psionic_catalyst/trash_pile_compress
+	out_put_name = "Reorganize"
 
 /datum/eternal_ascension_resonances/summan_trash_pile
 	rune_resonance = "QuickSinking"
 	output = /obj/item/device/psionic_catalyst/summan_trash_pile
+	out_put_name = "Scrap Togather"
 
 /datum/eternal_ascension_resonances/needle_n_thread
 	rune_resonance = "HealNull"
 	output = /obj/item/device/psionic_catalyst/needle_n_thread
+	out_put_name = "Psionic Suture"
 
 /datum/eternal_ascension_resonances/purefie
 	rune_resonance = "QuickNullDark"
 	output = /obj/item/device/psionic_catalyst/purefie
+	out_put_name = "Psionic Purefie"
 
 /datum/eternal_ascension_resonances/temp_regulate
 	rune_resonance = "ColdWarm"
 	output = /obj/item/device/psionic_catalyst/temp_regulate
+	out_put_name = "Psionic Temperature Regulate"
 
 /obj/structure/sign/ear
 	name = "EGO: E.A.R Music Sheet"
@@ -280,10 +306,8 @@
 	for(var/path in typesof(/datum/eternal_ascension_resonances) - /datum/eternal_ascension_resonances)
 		var/datum/eternal_ascension_resonances/victory = path
 		var/prereq = initial(victory.rune_resonance)
-		var/obj/thething = new victory.output(src.loc)
 
-
-		prereq += " To Resonances: [thething.name]"
+		prereq += " To Resonances: [victory.out_put_name]"
 		blurb += prereq
 		qdel(thething)
 
