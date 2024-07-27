@@ -19,6 +19,7 @@
 	init_recoil = RIFLE_RECOIL(0.6)
 	saw_off = FALSE //No
 	folding_stock = TRUE //we can fold are stocks
+	gun_parts = null //no deconstructing
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

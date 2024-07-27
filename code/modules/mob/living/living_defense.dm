@@ -23,7 +23,7 @@
 		dmg_types[damagetype] += damage
 
 	if(armor_divisor <= 0)
-		armor_divisor = 1
+		armor_divisor = 0.001
 		log_debug("[used_weapon] applied damage to [name] with a nonpositive armor divisor")
 
 	var/total_dmg = 0

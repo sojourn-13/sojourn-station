@@ -14,7 +14,7 @@
 		bio = 100,
 		rad = 100
 	)
-	price_tag = 1500
+	price_tag = 3500
 	slowdown = 0.3
 	drain = 4
 	offline_slowdown = 3
