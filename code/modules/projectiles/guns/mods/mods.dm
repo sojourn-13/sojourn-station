@@ -41,17 +41,17 @@
 	I.weapon_upgrades = list(
 		UPGRADE_BULK = 2,
 		GUN_UPGRADE_STEPDELAY_MULT = 2,
-		GUN_UPGRADE_DAMAGE_MULT = 0.5,
-		GUN_UPGRADE_PEN_MULT = 0.75,
+		GUN_UPGRADE_DAMAGE_MULT = 0.3,
+		GUN_UPGRADE_PEN_MULT = 0.5,
 		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
-		GUN_UPGRADE_OFFSET = 21,
-		GUN_UPGRADE_RECOIL = 2.5,
+		GUN_UPGRADE_OFFSET = 25,
+		GUN_UPGRADE_RECOIL = 5,
+		GUN_UPGRADE_DAMAGE_HALLOSS = 20,
 		GUN_UPGRADE_PAIN_MULT = 2
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.prefix = "LTL"
-
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged
