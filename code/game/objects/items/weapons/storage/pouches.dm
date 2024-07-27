@@ -105,6 +105,12 @@
 	matter = list(MATERIAL_BIOMATTER = 5)
 	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
 
+/obj/item/storage/pouch/small_generic/implanted
+	name = "tiny generic pouch"
+	desc = "Can hold nearly anything in it, but only a tiny amount."
+	icon_state = "small_implanted"
+	max_w_class = ITEM_SIZE_TINY
+
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
 	item_state = "small_generic_p"
