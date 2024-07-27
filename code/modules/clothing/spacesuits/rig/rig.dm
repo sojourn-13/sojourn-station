@@ -169,7 +169,7 @@
 				to_chat(usr, "The armor system reports critical failure! Repairs mandatory.")
 			if(0.5 to 0.8)
 				to_chat(usr, "The armor system reports heavy damage. Repairs required.")
-			if(0.8 to 1)
+			if(0.8 to 0.99)
 				to_chat(usr, "The armor system reports insignificant damage. Repairs advised.")
 
 /obj/item/rig/Initialize()
