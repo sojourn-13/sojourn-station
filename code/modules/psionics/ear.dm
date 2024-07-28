@@ -1,6 +1,6 @@
 /obj/machinery/eternal_ascension_resonances
 	name = "EGO: E.A.R. T-01-92beta S-23"// EGO as in the ego, T as in Tech, S for Sanity
-	desc = "A grand work of SI's psionic advancements. Marbel pilers that only can hold psionic catalyst, converting the power of many into one."
+	desc = "A grand work of SI's psionic advancements. Marble pillars that only can hold psionic catalysts, converting the power of many into one."
 	description_info = "Design and prototyped by a non psionic CRO, many personal touches are engraved in runes, fractal patterns and small engraving of a name starting with a stylized T."
 	icon = 'icons/obj/psionic/occmachinery.dmi'
 	icon_state = "ear"
