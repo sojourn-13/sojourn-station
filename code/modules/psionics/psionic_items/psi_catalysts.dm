@@ -70,7 +70,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	A curious person may not like what must be sacrificed pursuing the truth. Perhaps it will find them first?"
 	stored_power = /mob/living/carbon/human/proc/seek_the_dream
-	resonances = "Seek"
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/kings_decorum
 	name = "psionic catalyst: Kings Decorum"
@@ -160,7 +160,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	We all have some spark."
 	stored_power = /mob/living/carbon/human/proc/detect_thoughts
-	resonances = "Seek"
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/psychoactive_manipulation
 	name = "psionic catalyst: Psychoactive Manipulation"
@@ -216,7 +216,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	One persons trash is anothers treaser, lets dig for some!"
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile
-	resonances = "Seek"
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/needle_n_thread
 	name = "psionic catalyst: Psionic Suture"
@@ -224,7 +224,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't bleed..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
-	resonances = "Heal"
+	resonances = "Healing"
 
 /obj/item/device/psionic_catalyst/purefie
 	name = "psionic catalyst: Psionic Purefie"
@@ -232,7 +232,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't have junk in it's systems..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purefie
-	resonances = "Heal"
+	resonances = "Healing"
 
 /obj/item/device/psionic_catalyst/temp_regulate
 	name = "psionic catalyst: Psionic Temperature Regulate"
@@ -240,7 +240,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't sweat or shiver..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/temp_regulate
-	resonances = "Climent"
+	resonances = "Climate"
 
 
 /obj/item/device/psionic_catalyst/add_initial_transforms()

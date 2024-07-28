@@ -161,17 +161,17 @@
 	var/out_put_name = ""
 
 /datum/eternal_ascension_resonances/psychoactive_manipulation
-	rune_resonance = "SeekGreater"
+	rune_resonance = "SeekingGreater"
 	output = /obj/item/device/psionic_catalyst/psychoactive_manipulation
 	out_put_name = "Psychoactive Manipulation"
 
 /datum/eternal_ascension_resonances/detect_thoughts
-	rune_resonance = "ClimentRegicideSuppression"
+	rune_resonance = "ClimateRegicideSuppression"
 	output = /obj/item/device/psionic_catalyst/detect_thoughts
 	out_put_name = "Locate Mind-Essence"
 
 /datum/eternal_ascension_resonances/nightmare_mind
-	rune_resonance = "QuickSeek"
+	rune_resonance = "QuickSeeking"
 	output = /obj/item/device/psionic_catalyst/nightmare_mind
 	out_put_name = "Nightmarish Thoughts"
 
@@ -191,7 +191,7 @@
 	out_put_name = "Decay"
 
 /datum/eternal_ascension_resonances/dream_seeker
-	rune_resonance = "SeekNight"
+	rune_resonance = "SeekingNight"
 	output = /obj/item/device/psionic_catalyst/dream_seeker
 	out_put_name = "Dream Seeker"
 
@@ -221,17 +221,17 @@
 	out_put_name = "Enslavement"
 
 /datum/eternal_ascension_resonances/cryo_kinetic_blaster
-	rune_resonance = "SuppressionAgeCliment"
+	rune_resonance = "SuppressionAgeClimate"
 	output = /obj/item/device/psionic_catalyst/cryo_kinetic_blaster
 	out_put_name = "Cryo Kinetic Blaster"
 
 /datum/eternal_ascension_resonances/pyro_kinetic_blaster
-	rune_resonance = "SuppressionClimentHeal"
+	rune_resonance = "SuppressionClimateHealing"
 	output = /obj/item/device/psionic_catalyst/pyro_kinetic_blaster
 	out_put_name = "Pryo Kinetic Blaster"
 
 /datum/eternal_ascension_resonances/electro_kinetic_blaster
-	rune_resonance = "WarmColdClimentHeal"
+	rune_resonance = "WarmColdClimateHealing"
 	output = /obj/item/device/psionic_catalyst/electro_kinetic_blaster
 	out_put_name = "Electro Kinetic Blaster"
 
@@ -241,7 +241,7 @@
 	out_put_name = "Kinetic Barrier"
 
 /datum/eternal_ascension_resonances/chosen_control
-	rune_resonance = "HealSuppressionClimentCarbon"
+	rune_resonance = "HealingSuppressionClimateCarbon"
 	output = /obj/item/device/psionic_catalyst/chosen_control
 	out_put_name = "Chosen Control"
 
@@ -261,7 +261,7 @@
 	out_put_name = "Layered Shield"
 
 /datum/eternal_ascension_resonances/trash_pile_exploid
-	rune_resonance = "WarmCliment"
+	rune_resonance = "WarmClimate"
 	output = /obj/item/device/psionic_catalyst/trash_pile_exploid
 	out_put_name = "Discombobulate"
 
@@ -276,7 +276,7 @@
 	out_put_name = "Scrap Togather"
 
 /datum/eternal_ascension_resonances/needle_n_thread
-	rune_resonance = "HealNull"
+	rune_resonance = "HealingNull"
 	output = /obj/item/device/psionic_catalyst/needle_n_thread
 	out_put_name = "Psionic Suture"
 
