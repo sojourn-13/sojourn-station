@@ -34,10 +34,10 @@
 	name  = "Mutated Tissue"
 	desc = "An amalgamation of flesh and bone"
 	color = "#8B0000"
-	health = 350
-	maxHealth = 350
-	melee_damage_lower = 50
-	melee_damage_upper = 85
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 20
+	melee_damage_upper = 35
 
 /mob/living/simple_animal/hostile/retaliate/spaceman
 	name = "spaceman"
