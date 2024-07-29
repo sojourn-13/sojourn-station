@@ -525,8 +525,8 @@ Technomancer RIG
 	MU66 Suit
 ****************************************/
 /obj/item/rig/sea
-	name = "MU-66 Atmos suit"
-	suit_type = "MU66 Soft-suit"
+	name = "S-170 Atmos suit"
+	suit_type = "S-170 Soft-suit"
 	desc = "A light RIG for performing minute repairs and maintenance in atypical atmospheres."
 	icon_state = "sea_rig"
 	armor_list = list(
