@@ -6834,7 +6834,7 @@
 /area/nadezhda/rnd/outpostgeneral)
 "ry" = (
 /obj/machinery/door/airlock/glass_research{
-	name = "Medical Outpost"
+	name = "E.A.R Study"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -16099,8 +16099,8 @@ jJ
 lI
 tn
 jJ
-jJ
 nG
+jJ
 uK
 Ha
 jJ
@@ -16301,8 +16301,8 @@ jH
 jH
 jH
 jH
-jH
 km
+jH
 jH
 PS
 jH
@@ -16503,8 +16503,8 @@ lj
 jH
 jH
 jH
-jH
 km
+jH
 jH
 jH
 jH
