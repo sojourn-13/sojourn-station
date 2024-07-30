@@ -50,6 +50,7 @@
 			/obj/item/gun/energy/crossbow = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/suit/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/head/helmet/space/syndicate = custom_good_amount_range(list(1, 1)),
+			/obj/item/clothing/suit/armor/vest/breach1 = custom_good_amount_range(list(2, 3)),
 			/obj/item/clothing/glasses/powered/night = custom_good_amount_range(list(1, 1))
 		),
 		"Syndicate Gun Mods" = list(
