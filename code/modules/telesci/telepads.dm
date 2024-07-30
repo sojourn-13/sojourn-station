@@ -2,7 +2,7 @@
 #define BS_CAPACITOR_POWER 10000
 #define BS_PORTAL_POWER_USE 2000
 
-//Sprites by - @Michiyamenotehifunana and @Sigmasquad!
+//Sprites by - @Michiyamenotehifunana and @Sigmasquad, at commission from Fel#3285
 
 /obj/machinery/telepad //For mapping
 	name = "short range stable telepad"
