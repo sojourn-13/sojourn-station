@@ -123,16 +123,40 @@
 /obj/item/stack/material/iron/full
 	amount = 120
 
+/obj/item/stack/material/iron/five
+	name = "five iron bars"
+	amount = 5
+
+/obj/item/stack/material/iron/ten
+	name = "ten iron bars"
+	amount = 10
+
 /obj/item/stack/material/sandstone
 	name = "sandstone brick"
 	icon_state = "sheet-sandstone"
 	default_type = MATERIAL_SANDSTONE
 	price_tag = 1
 
+/obj/item/stack/material/sandstone/five
+	name = "five sandstone brick"
+	amount = 5
+
+/obj/item/stack/material/sandstone/ten
+	name = "ten sandstone brick"
+	amount = 10
+
 /obj/item/stack/material/marble
 	name = "marble brick"
 	icon_state = "sheet-marble"
 	default_type = MATERIAL_MARBLE
+
+/obj/item/stack/material/marble/five
+	name = "five marble brick"
+	amount = 5
+
+/obj/item/stack/material/marble/ten
+	name = "ten marble brick"
+	amount = 10
 
 /obj/item/stack/material/diamond
 	name = "diamond"
@@ -192,6 +216,14 @@
 	default_type = MATERIAL_PLASTIC
 	price_tag = 2
 	novariants = FALSE
+
+/obj/item/stack/material/plastic/five
+	name = "five plastic sheets"
+	amount = 5
+
+/obj/item/stack/material/plastic/ten
+	name = "ten plastic sheets"
+	amount = 10
 
 /obj/item/stack/material/plastic/full
 	amount = 120
@@ -282,6 +314,18 @@
 	price_tag = 2
 	novariants = FALSE
 
+/obj/item/stack/steel/steel/five
+	icon_state = "sheet-metal"
+	icon = 'icons/obj/stack/material.dmi'
+	name = "five steel sheets"
+	amount = 5
+
+/obj/item/stack/steel/steel/ten
+	icon_state = "sheet-metal"
+	icon = 'icons/obj/stack/material.dmi'
+	name = "ten steel sheets"
+	amount = 10
+
 //A stack which starts with the max amount
 /obj/item/stack/material/steel/full
 	amount = 120
@@ -308,8 +352,21 @@
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
+
+/obj/item/stack/steel/wood/five
+	name = "five wood plank"
+	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 5
+
+/obj/item/stack/steel/wood/ten
+	name = "ten wood plank"
+	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 10
 
 /obj/item/stack/material/wood/full
 	amount = 120
@@ -323,6 +380,18 @@
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
 	price_tag = 1
+
+/obj/item/stack/steel/cloth/five
+	name = "five cloth sheets"
+	icon_state = "sheet-cloth"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 5
+
+/obj/item/stack/steel/cloth/ten
+	name = "ten cloth sheets"
+	icon_state = "sheet-cloth"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 10
 
 /obj/item/stack/material/cloth/random
 	rand_min = 3
@@ -345,6 +414,19 @@
 	icon_state = "sheet-card"
 	default_type = MATERIAL_CARDBOARD
 	price_tag = 3
+
+/obj/item/stack/steel/cardboard/five
+	name = "five cardboard sheets"
+	icon_state = "sheet-card"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 5
+
+/obj/item/stack/steel/cardboard/ten
+	name = "ten cardboard sheets"
+	icon_state = "sheet-card"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 10
+
 
 /obj/item/stack/material/cardboard/full
 	amount = 120
@@ -376,6 +458,18 @@
 	default_type = MATERIAL_GLASS
 	price_tag = 2
 	novariants = FALSE
+
+/obj/item/stack/steel/glass/five
+	name = "five glass sheets"
+	icon_state = "sheet-glass"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 5
+
+/obj/item/stack/steel/glass/ten
+	name = "ten glass sheets"
+	icon_state = "sheet-glass"
+	icon = 'icons/obj/stack/material.dmi'
+	amount = 10
 
 /obj/item/stack/material/glass/full
 	amount = 120

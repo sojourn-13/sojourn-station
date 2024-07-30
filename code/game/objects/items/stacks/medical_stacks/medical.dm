@@ -25,6 +25,7 @@
 	var/bounce_faith_healer_amount = 5
 
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
+	var/always_useful = FALSE
 
 /obj/item/stack/medical/proc/try_to_save_use(mob/living/user)
 	if(ishuman(user))
@@ -120,11 +121,12 @@
 				M.updatehealth()
 				return TRUE
 
-			to_chat(user, SPAN_WARNING("This isn't useful at all on a robotic limb."))
-			return TRUE
+			if(!always_useful)
+				to_chat(user, SPAN_WARNING("This isn't useful at all on a robotic limb."))
+				return TRUE
 
-		for(var/datum/wound/W in affecting.wounds)
-			if(disinfectant)
+		if(disinfectant)
+			for(var/datum/wound/W in affecting.wounds)
 				W.disinfect()
 
 		H.UpdateDamageIcon()
