@@ -39,10 +39,10 @@
 		init_recoil = HANDGUN_RECOIL(1.2)
 		recoil = getRecoil(arglist(init_recoil))
 		recoil = recoil.modifyAllRatings(1+rand(-2,2)/10)
-	fake_name = name
+	name = fake_name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/Initialize()
-	name = get_weapon_name(capitalize = TRUE)
+	fake_name = get_weapon_name(capitalize = TRUE)
 
 	var/random_icon = rand(1,5)
 	icon_state = "artwork_revolver_[random_icon]"

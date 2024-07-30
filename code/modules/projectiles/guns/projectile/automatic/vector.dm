@@ -4,7 +4,7 @@
 	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed than most of their usual product line. \
 	Regardless, it sports a robust recoil control system that dampens its shots to almost no kickback, an array of firing modes for the discerning shooter, \
 	and even a folding stock for those with strong wrists or weak shoulders. Has a threaded barrel for silencer attachments and a nice top mount for a scope to be attached."
-	icon = 'icons/obj/guns/projectile/vector.dmi'
+	icon = 'icons/obj/guns/projectile/vector.dmi' //A sprited Toriate sprite, Credit to Toriate(Sprite base and flow)
 	icon_state = "vector"
 	item_state = "vector"
 	fire_sound = 'sound/weapons/guns/fire/vector_fire.ogg'
