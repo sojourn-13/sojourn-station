@@ -9,6 +9,7 @@ This is from the groundwork code and majority of the sprites and sprite base, ar
 Both Harmor and Larmor sprites are by Dark-Umbrella
 
 psionic catalyst are made by HOUND
+Dreaming king, and hound of the crown are made by HOUND
 
 
 **If their is any improper credit please reach out.**
