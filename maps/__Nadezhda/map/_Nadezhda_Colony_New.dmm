@@ -71705,9 +71705,6 @@
 /obj/effect/floor_decal/border/carpet/orange/corner,
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
-"odD" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "odF" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
@@ -84290,6 +84287,9 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/device/defib_kit,
+/obj/structure/table/standard,
+/obj/item/cell/large,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -176253,7 +176253,7 @@ cnr
 pHr
 cOx
 edp
-odD
+gNL
 otL
 huz
 gNL
