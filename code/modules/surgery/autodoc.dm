@@ -168,7 +168,7 @@
 			patchnote.surgery_operations &= ~AUTODOC_INTERNAL_WOUNDS
 
 /datum/autodoc/Process()
-	if(!patient || picked_patchnotes.len <= current_step)
+	if(!patient || picked_patchnotes.len <= current_step - 1)
 		stop()
 		return
 
