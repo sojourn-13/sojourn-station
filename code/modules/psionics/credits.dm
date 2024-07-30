@@ -1,10 +1,9 @@
 /*
 
 A file to list out and explain how psionics for soj came to be:
-
 A **majority** of the code, items and sprites are from https://github.com/Occulus-Server/Occulus-Eris
-
 This is from the groundwork code and majority of the sprites and sprite base, artist to credit is Sigmasquad
+
 
 Both Harmor and Larmor sprites are by Dark-Umbrella
 
