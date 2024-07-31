@@ -1166,6 +1166,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	chewtime--
 
+
+	if(chewtime > 150)
+		hand_reagents()
+
 	if(chewtime < 0)
 		to_chat(M, SPAN_WARNING("Your dip has run clear"))
 		STOP_PROCESSING(SSobj, src)
@@ -1190,7 +1194,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A disgusting spitwad."
 	icon = 'icons/inventory/face/icon.dmi'
 	icon_state = "spit-chew"
-	slot_flags = SLOT_EARS | SLOT_MASK
+	slot_flags = SLOT_MASK
 
 /obj/item/clothing/mask/chewable/proc/spitout(var/transfer_color = 1, var/no_message = 0)
 	if(type_butt)
@@ -1248,11 +1252,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A disgusting chewed up wad of gum."
 	icon = 'icons/inventory/face/icon.dmi'
 	icon_state = "spit-gum"
-	slot_flags = SLOT_EARS | SLOT_MASK
+	slot_flags = SLOT_MASK
 
-	/obj/item/trash/spitpouch
+/obj/item/trash/spitpouch
 	name = "old dyn pouch"
 	desc = "A disgusting chewed up dyn pouch."
 	icon = 'icons/inventory/face/icon.dmi'
 	icon_state = "spit-pouch"
-	slot_flags = SLOT_EARS | SLOT_MASK
+	slot_flags = SLOT_MASK
