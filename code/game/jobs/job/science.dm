@@ -16,7 +16,7 @@
 
 
 	outfit_type = /decl/hierarchy/outfit/job/science/rd
-	playtimerequired = 1200
+//	playtimerequired = 1200 // Equinox Edit
 	access = list(
 		access_rd, access_heads, access_tox, access_genetics, access_morgue,
 		access_tox_storage, access_teleporter, access_sec_doors,

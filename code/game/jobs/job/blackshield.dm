@@ -15,7 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 2500
+//	playtimerequired = 2500 // Equinox Edit
 	health_modifier = 25
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -76,7 +76,7 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
-	playtimerequired = 1200
+//	playtimerequired = 1200 // Equinox Edit
 	health_modifier = 20
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
@@ -188,7 +188,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
-	playtimerequired = 240 //4 hours
+//	playtimerequired = 240 //4 hours // Equinox Edit
 
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop
