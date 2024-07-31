@@ -87,7 +87,7 @@
 	armor_list = list(
 		melee = 12,
 		bullet = 12,
-		energy = 1,
+		energy = 3,
 		bomb = 25,
 		bio = 100,
 		rad = 70
