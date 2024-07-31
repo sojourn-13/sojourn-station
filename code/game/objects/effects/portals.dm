@@ -105,7 +105,7 @@ var/list/portal_cache = list()
 	if (M.anchored && !istype(M, /obj/mecha))
 		return
 	if (!( target ))
-		qdel(src)
+		close()		//SOJOURN EDIT: Prevents edgecases where mobs cross the junk field side before the station side portal is generated properly.
 		return
 	if (istype(M, /atom/movable))
 		if(prob(failchance)) //oh dear a problem, put em in deep space
