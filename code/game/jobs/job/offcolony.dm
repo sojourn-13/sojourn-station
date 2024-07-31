@@ -26,7 +26,7 @@
 		STAT_MEC = 5,
 		STAT_COG = 0
 	)
-	playtimerequired = 1200
+//	playtimerequired = 1200 // Equinox Edit
 	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As the Hunt \
 	Master your job is to lead your fledgling hunters on expeditions and generally work towards keeping them alive while thriving in your lodge. You are not nearly as well \
 	equipped as the colony is, but special training by the Lodge has given you the ability to live off the land."

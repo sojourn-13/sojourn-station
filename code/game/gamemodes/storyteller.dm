@@ -76,7 +76,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	if(debug_mode || SSticker.start_immediately)
 		return TRUE
 
-	//var/engineer = FALSE
+	var/engineer = FALSE
 	//var/command = FALSE
 	var/single_person = FALSE
 	for(var/mob/new_player/player in GLOB.player_list)
@@ -84,17 +84,17 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 			single_person = TRUE
 			//if(player.mind.assigned_role in list(JOBS_COMMAND))
 				//command = TRUE
-			//if(player.mind.assigned_role in list(JOBS_ENGINEERING))
-				//engineer = FALSE
-				//return TRUE
+			if(player.mind.assigned_role in list(JOBS_ENGINEERING))
+				engineer = TRUE
+				return TRUE
 			//if(command && engineer)
 				//return TRUE
 
 	var/tcol = "#ffaa00"
 
-//	if(announce)
-//		if(!engineer)
-//			to_chat(world, "<b><font color='[tcol]'>A Guild Member is required to start the round.</font></b>")
+	if(announce)
+		if(!engineer)
+			to_chat(world, "<b><font color='[tcol]'>A Guild Member is required to start the round.</font></b>")
 
 	if(!single_person)
 		to_chat(world, "<b><font color='[tcol]'>A single ready player is required to start the round.</font></b>")

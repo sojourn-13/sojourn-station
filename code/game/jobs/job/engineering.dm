@@ -11,7 +11,7 @@
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
-	playtimerequired = 1200
+//	playtimerequired = 1200 // Equinox Edit
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 25
@@ -83,7 +83,7 @@
 	)
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_BSSYNTH, FORM_NASHEF)
-	playtimerequired = 240 //4 hours
+//	playtimerequired = 240 //4 hours // Equinox Edit
 
 
 	stat_modifiers = list(

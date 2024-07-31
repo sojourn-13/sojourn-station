@@ -22,7 +22,7 @@
 
 	ideal_character_age = 40
 	minimum_character_age = 25
-	playtimerequired = 1200
+//	playtimerequired = 1200 // Equinox Edit
 	health_modifier = 5
 
 	stat_modifiers = list(
