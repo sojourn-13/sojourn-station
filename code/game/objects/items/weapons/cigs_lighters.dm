@@ -1115,9 +1115,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		wrapped = FALSE
 		to_chat(user, SPAN_NOTICE("You unwrap \the [name]."))
 		playsound(src.loc, 'sound/items/drop/wrapper.ogg', 50, 1)
-		slot_flags = SLOT_EARS | SLOT_MASK
+		slot_flags = SLOT_MASK
 		update_icon()
-
 
 /obj/item/clothing/mask/chewable/Initialize()
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
@@ -1150,7 +1149,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/chewable/proc/hand_reagents()
 	var/mob/living/carbon/human/C = loc
-	chewtime = 0
 	if(reagents && reagents.total_volume)
 		if(ishuman(C))
 			reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.1)
@@ -1161,13 +1159,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/chewable/Process()
 	var/mob/living/M = loc
 
-	if(isliving(loc))
-		M.IgniteMob()
-
 	chewtime--
 
 
-	if(chewtime > 150)
+	if(chewtime % 10 == 0)
 		hand_reagents()
 
 	if(chewtime < 0)
@@ -1222,16 +1217,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "chewing tobacco"
 	desc = "A chewy wad of cheap tobacco. Cut in long strands and treated with syrup so it tastes less like an ashtray when you stuff it into your face."
 	preloaded_reagents = list("nicotine" = 5)
+	icon_state = "chew_bad"
 
 /obj/item/clothing/mask/chewable/tobacco/deli
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ashtray when you stuff it into your face."
 	preloaded_reagents = list("nicotine" = 5)
+	icon_state = "chew_deli"
 
 /obj/item/clothing/mask/chewable/tobacco/fine
 	name = "chewing tobacco"
 	desc = "A chewy wad of fine tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ashtray when you stuff it into your face."
 	preloaded_reagents = list("nicotine" = 5)
+	icon_state = "chew_fine"
 
 /obj/item/clothing/mask/chewable/tobacco/nico
 	name = "nicotine gum"
