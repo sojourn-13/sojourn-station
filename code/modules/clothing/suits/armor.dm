@@ -85,9 +85,9 @@
 	price_tag = 900
 	max_upgrades = 1
 	armor_list = list(
-		melee = 12,
+		melee = 10,
 		bullet = 12,
-		energy = 3,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 70
@@ -129,9 +129,9 @@
 	max_upgrades = 0
 	slowdown = 0.1
 	armor_list = list(
-		melee = 12,
+		melee = 10,
 		bullet = 12,
-		energy = 3,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 70
