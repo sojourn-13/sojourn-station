@@ -95,7 +95,9 @@
 	reagent_flags = REFILLABLE | NO_REACT
 
 /obj/item/storage/chewables/tobacco/bad/populate_contents()
-	new /obj/item/clothing/mask/chewable/tobacco/bad(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/bad(src)
+
 
 /obj/item/storage/chewables/tobacco/deli
 	name = "tin of Mendell Smooth chewing tobacco"
@@ -111,7 +113,8 @@
 	reagent_flags = REFILLABLE | NO_REACT
 
 /obj/item/storage/chewables/tobacco/deli/populate_contents()
-	new /obj/item/clothing/mask/chewable/tobacco/deli(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/deli(src)
 
 /obj/item/storage/chewables/tobacco/fine
 	name = "tin of Taba-Kamu chewing tobacco"
@@ -127,7 +130,8 @@
 	reagent_flags = REFILLABLE | NO_REACT
 
 /obj/item/storage/chewables/tobacco/fine/populate_contents()
-	new /obj/item/clothing/mask/chewable/tobacco/fine(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/fine(src)
 
 /obj/item/storage/chewables/tobacco/nico
 	name = "box of Nico-Tine gum"
@@ -143,7 +147,8 @@
 	reagent_flags = REFILLABLE | NO_REACT
 
 /obj/item/storage/chewables/tobacco/nico/populate_contents()
-	new /obj/item/clothing/mask/chewable/tobacco/nico(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/nico(src)
 
 /obj/item/storage/chewables/tobacco/dyn
 	name = "tin of Dyn nicotine pouches"
@@ -159,4 +164,5 @@
 	reagent_flags = REFILLABLE | NO_REACT
 
 /obj/item/storage/chewables/tobacco/dyn/populate_contents()
-	new /obj/item/clothing/mask/chewable/tobacco/dyn(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/dyn(src)
