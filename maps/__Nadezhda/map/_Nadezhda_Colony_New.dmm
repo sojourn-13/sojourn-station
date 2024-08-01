@@ -3974,6 +3974,12 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
+"aPy" = (
+/obj/machinery/atm_exchange{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/hallway/side/f2section1)
 "aPC" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -33757,6 +33763,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/courtroom)
+"gEP" = (
+/obj/machinery/atm_exchange{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/engineering/workshop)
 "gEZ" = (
 /obj/machinery/holoposter{
 	pixel_y = 32
@@ -35366,6 +35378,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/medical)
+"gVB" = (
+/obj/machinery/atm_exchange,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/hallway/surface/section1)
 "gVE" = (
 /obj/item/circuitboard/broken,
 /obj/machinery/constructable_frame/machine_frame/vertical,
@@ -63859,6 +63875,12 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
+"mCT" = (
+/obj/machinery/atm_exchange{
+	dir = 4
+	},
+/turf/simulated/wall,
+/area/nadezhda/hallway/side/f2section1)
 "mCX" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Artificer Power Substation";
@@ -66184,6 +66206,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"mZT" = (
+/obj/machinery/atm_exchange{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild3,
+/turf/simulated/wall,
+/area/nadezhda/crew_quarters)
 "mZU" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/alarm{
@@ -118693,6 +118722,12 @@
 /obj/structure/flora/small/busha2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"xbr" = (
+/obj/machinery/atm_exchange{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "xbB" = (
 /obj/machinery/light{
 	dir = 1
@@ -122048,6 +122083,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
+"xII" = (
+/obj/machinery/atm_exchange{
+	dir = 8
+	},
+/turf/simulated/wall,
+/area/nadezhda/crew_quarters/pool)
 "xIL" = (
 /obj/structure/salvageable/computer,
 /obj/structure/table/steel,
@@ -122699,6 +122740,10 @@
 /obj/machinery/vending/kink,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"xPQ" = (
+/obj/machinery/atm_exchange,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/inside_colony)
 "xPS" = (
 /obj/machinery/papershredder,
 /obj/item/device/radio/intercom{
@@ -176618,7 +176663,7 @@ iGz
 iGz
 iGz
 iGz
-iGz
+mZT
 iGz
 iGz
 sqp
@@ -181870,7 +181915,7 @@ sqp
 oHP
 jYM
 jYM
-jYM
+xII
 gCP
 jYM
 jYM
@@ -183832,7 +183877,7 @@ erG
 erG
 erG
 erG
-mpm
+aPy
 mpm
 mpm
 bUS
@@ -187503,7 +187548,7 @@ uca
 jti
 nrr
 fyk
-fyk
+xbr
 fyk
 mOM
 leF
@@ -191709,7 +191754,7 @@ mpm
 bwI
 vCe
 ghk
-vpF
+mCT
 vpF
 klI
 dLT
@@ -194566,7 +194611,7 @@ vSI
 cGH
 gfO
 bDF
-bpF
+gEP
 bpF
 hxQ
 tNm
@@ -222620,7 +222665,7 @@ vXv
 sAH
 fEL
 fEL
-xja
+gVB
 juN
 fYz
 dfI
@@ -225661,7 +225706,7 @@ xja
 haC
 xzJ
 xja
-xja
+gVB
 qYF
 tXF
 jTs
@@ -226297,7 +226342,7 @@ xJo
 ijO
 xUV
 uKJ
-cwC
+xPQ
 sYH
 vEp
 pHc
@@ -228650,7 +228695,7 @@ uiJ
 nrP
 pdW
 pdW
-xja
+gVB
 pFC
 eTd
 wJq
