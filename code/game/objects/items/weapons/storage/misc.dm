@@ -94,11 +94,10 @@
 	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
 	reagent_flags = REFILLABLE | NO_REACT
 
-
 /obj/item/storage/chewables/tobacco/bad/populate_contents()
 	new /obj/item/clothing/mask/chewable/tobacco/bad(src)
 
-	/obj/item/storage/chewables/tobacco/deli
+/obj/item/storage/chewables/tobacco/deli
 	name = "tin of Mendell Smooth chewing tobacco"
 	desc = "Packaged and shipped straight from District 8, popularised by the city-slickers of Vega De Rosa."
 	icon = 'icons/obj/cigarettes.dmi'
