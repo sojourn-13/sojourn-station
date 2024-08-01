@@ -532,7 +532,7 @@ log transactions
 
 	switch(exchange_type)
 		if("credits")
-			var/obj/item/spacecash/SC = new /obj/item/spacecash(loc)
+			var/obj/item/spacecash/bundle/SC = new /obj/item/spacecash/bundle(loc)
 			SC.worth = exchange
 			SC.update_icon()
 
@@ -544,6 +544,7 @@ log transactions
 
 		if("Yuan")
 			var/obj/item/stack/os_cash/OS = new /obj/item/stack/os_cash(loc)
+			exchange /= 10
 			OS.amount = exchange
 			OS.update_icon()
 
