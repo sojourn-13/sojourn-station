@@ -11,6 +11,22 @@
 	var/number = 0
 	var/area/linked_area
 
+	var/global/list/channel_indicators = list(
+		num2text(PUB_FREQ) = "intercom-channel-common",
+		num2text(AI_FREQ) = "intercom-channel-ai",
+		num2text(SEC_FREQ) = "intercom-channel-sec",
+		num2text(SEC_I_FREQ) = "intercom-channel-sec-i",
+		//num2text(BLS_FREQ) = "intercom-channel-sec-bs", //nope
+		num2text(MED_FREQ) = "intercom-channel-med",
+		num2text(MED_I_FREQ) = "intercom-channel-med-i",
+		num2text(PT_BT_FREQ) = "intercom-channel-tag-b",
+		num2text(PT_RT_FREQ) = "intercom-channel-tag-r",
+		num2text(PT_YT_FREQ) = "intercom-channel-tag-y",
+		num2text(PT_GT_FREQ) = "intercom-channel-tag-g",
+
+		num2text(SYND_FREQ) = "intercom-channel-common"
+	)
+
 /obj/item/device/radio/intercom/custom
 	name = "colony intercom (Custom)"
 	broadcasting = 0
@@ -40,6 +56,10 @@
 /obj/item/device/radio/intercom/New()
 	..()
 	loop_area_check()
+
+/obj/item/device/radio/intercom/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/device/radio/intercom/department/medbay/New()
 	..()
@@ -91,7 +111,7 @@
 
 /obj/item/device/radio/intercom/proc/change_status()
 	on = linked_area.powered(STATIC_EQUIP)
-	icon_state = on ? "intercom" : "intercom-p"
+	update_icon()
 
 /obj/item/device/radio/intercom/proc/loop_area_check()
 	var/area/target_area = get_area(src)
@@ -107,8 +127,32 @@
 	UnregisterSignal(linked_area, COMSIG_AREA_APC_POWER_CHANGE)
 	linked_area = null
 	on = FALSE
-	icon_state = "intercom-p"
+	update_icon()
 	addtimer(CALLBACK(src, PROC_REF(loop_area_check)), 30 SECONDS)
+
+/obj/item/device/radio/intercom/update_icon()
+	cut_overlays()
+	if(!on) return
+	var/tx_indicator = "intercom-stat-[(listening || frequency == SYND_FREQ)? "r" : ""][(broadcasting && frequency != SYND_FREQ) ? "t" : ""]x"
+	var/channel_indicator = channel_indicators[num2text(frequency)] || "intercom-channel-default"
+	add_overlay(tx_indicator)
+	add_overlay(channel_indicator)
+
+/obj/item/device/radio/intercom/set_frequency()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/ToggleBroadcast()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/ToggleReception()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/emp_act(severity)
+	. = ..()
+	update_icon()
 
 /obj/item/device/radio/intercom/broadcasting
 	broadcasting = 1
