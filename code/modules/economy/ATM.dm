@@ -545,7 +545,7 @@ log transactions
 		if("Yuan")
 			var/obj/item/stack/os_cash/OS = new /obj/item/stack/os_cash(loc)
 			exchange /= 10
-			OS.amount = exchange
+			OS.amount = round(exchange)
 			OS.update_icon()
 
 	return
