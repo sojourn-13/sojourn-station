@@ -6,8 +6,8 @@
 #include "data/shuttles-eris.dm"
 #include "data/reports.dm"
 
-#include "map/_Nadezhda_Colony_New.dmm"
-//#include "map/_Nadezhda_CoffeColony.dmm" coffe maps
+//#include "map/_Nadezhda_Colony_New.dmm"
+#include "map/_Nadezhda_CoffeColony.dmm"
 //#include "_Nadezhda_Colony_Underground.dmm"
 //#include "_Nadezhda_Colony_Transition.dmm"
 //#include "_Nadezhda_Colony_Surface.dmm"
