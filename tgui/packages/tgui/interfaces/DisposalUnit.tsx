@@ -15,12 +15,11 @@ type DisposalUnitData = {
   panel: boolean;
   eject: boolean;
   handle: boolean;
-  pressure: number;
 };
 
-export const DisposalUnit = (props: any, context: any) => {
-  const { act, data } = useBackend<DisposalUnitData>(context);
-  const { isai, mode, handle, panel, eject, pressure } = data;
+export const DisposalUnit = (props) => {
+  const { act, data } = useBackend<DisposalUnitData>();
+  const { isai, mode, handle, panel, eject } = data;
   let modeColor = MODE2COLOR[panel ? 'Panel' : mode];
   let modeText = panel ? 'Power Disabled' : mode;
 
@@ -63,7 +62,7 @@ export const DisposalUnit = (props: any, context: any) => {
                 disabled={!eject}
                 content="Eject"
                 textAlign="center"
-                style={{ 'font-size': '15px' }}
+                style={{ fontSize: '15px' }}
                 onClick={() => {
                   act('eject');
                 }}

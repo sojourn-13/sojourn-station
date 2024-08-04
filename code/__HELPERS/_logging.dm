@@ -109,10 +109,6 @@
 	if (config.log_attack)
 		game_log("ATTACK", text)
 
-/proc/log_adminsay(text)
-	if (config.log_adminchat)
-		game_log("ADMINSAY", text)
-
 /proc/log_adminwarn(text)
 	if (config.log_adminwarn)
 		game_log("ADMINWARN", text)
@@ -123,6 +119,8 @@
 
 /proc/log_href_exploit(atom/user)
 	log_admin("[key_name_admin(user)] has potentially attempted an href exploit.")
+
+GLOBAL_VAR(tgui_log)
 
 /**
  * Appends a tgui-related log entry. All arguments are optional.
@@ -154,8 +152,7 @@
 	// Insert message
 	if(message)
 		entry += "\n[message]"
-	game_log("TGUI", entry)
-	// WRITE_LOG(GLOB.tgui_log, entry)
+	SEND_TEXT(GLOB.tgui_log, entry)
 
 
 /proc/log_to_dd(text)

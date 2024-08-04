@@ -590,7 +590,7 @@
 
 	set_occupant(null)
 
-	addtimer(CALLBACK(src, .proc/seeyalater), 300)
+	addtimer(CALLBACK(src, PROC_REF(seeyalater)), 300)
 
 /obj/machinery/cryopod/proc/seeyalater()
 	state("Please remember to check inside if any belongings are missing.")

@@ -6,6 +6,7 @@
 
 	var/enabled = 0											// Whether the computer is turned on.
 	var/screen_on = 1										// Whether the computer is active/opened/it's screen is on.
+	var/device_theme = ""									// TGUI theme to use
 	var/datum/computer_file/program/active_program = null	// A currently active program running on the computer.
 	var/hardware_flag = 0									// A flag that describes this device type
 	var/last_power_usage = 0								// Last tick power usage of this computer
@@ -28,8 +29,11 @@
 
 	icon = null												// This thing isn't meant to be used on it's own. Subtypes should supply their own icon.
 	icon_state = null
+	var/base
+	var/overlay_icon = null									// Icon file used for overlays - automatically set to "icon" if not present
 	center_of_mass = null									// No pixelshifting by placing on tables, etc.
 	randpixel = 0											// And no random pixelshifting on-creation either.
+	var/icon_state_unpowered = null
 	var/icon_state_menu = "menu"							// Icon state overlay when the computer is turned on, but no program is loaded that would override the screen.
 	var/icon_state_screensaver = "standby"
 	var/max_hardware_size = 0								// Maximal hardware size. Currently, tablets have 1, laptops 2 and consoles 3. Limits what hardware types can be installed.

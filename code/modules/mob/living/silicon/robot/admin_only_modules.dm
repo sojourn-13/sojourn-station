@@ -24,7 +24,7 @@
 	//src.modules += new /obj/item/melee/energy/glaive(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/tool/multitool/robotic(src)
-	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/robotic_omni/engi(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/device/gps(src)
 
@@ -64,7 +64,7 @@
 	src.modules += new /obj/item/melee/energy/sword(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/tool/multitool/robotic(src)
-	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/robotic_omni/engi(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //handcuffs and mouth tape
 	//Todo, replace these with suitable weapons from eris
 	//src.modules += new /obj/item/gun/energy/mountedsmg(src)
@@ -97,7 +97,7 @@
 	src.modules += new /obj/item/rcd/borg(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/tool/multitool/robotic(src)
-	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/robotic_omni/engi(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/gripper/no_use/loader(src)
@@ -208,7 +208,7 @@
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/med(src)
 	src.modules += new /obj/item/device/scanner/health(src)
-	src.modules += new /obj/item/tool/robotic_omni_standard(src)
+	src.modules += new /obj/item/tool/robotic_omni/standard(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src)
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/hatton/robot(src)

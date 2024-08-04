@@ -7,17 +7,21 @@
 	icon_state = "security_rig"
 	suit_type = "combat hardsuit"
 	armor_list = list(
-		melee = 50,
-		bullet = 45,
-		energy = 30,
+		melee = 12,
+		bullet = 11,
+		energy = 7,
 		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
+	price_tag = 3500
 	slowdown = 0.3
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 1
@@ -33,7 +37,7 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/modular_injector/combat
+		/obj/item/rig_module/modular_injector/combat/preloaded
 		)
 
 
@@ -49,7 +53,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage/combat
+		/obj/item/rig_module/storage
 		)
 
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
@@ -62,9 +66,9 @@
 	icon_state = "blackshield_rig"
 	suit_type = "blackshield hardsuit"
 	armor_list = list(
-		melee = 60,
-		bullet = 55,
-		energy = 40,
+		melee = 15,
+		bullet = 13,
+		energy = 10,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -84,7 +88,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -106,9 +110,9 @@
 	icon_state = "hussar_rig" //Rig modula by Gundam Tanaka#9565
 	suit_type = "hussar hardsuit"
 	armor_list = list(
-		melee = 50,
-		bullet = 45,
-		energy = 30,
+		melee = 12,
+		bullet = 11,
+		energy = 7,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -118,6 +122,8 @@
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	max_upgrades = 1
+	ablative_max = 5
+	ablation = ABLATION_CERAMIC //lots of gold and filigree
 	chest_type = /obj/item/clothing/suit/space/rig/combat/knight
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/knight
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/knight
@@ -141,9 +147,9 @@
 	desc = "One's spirit is generally the greatest shield."
 	light_overlay = "helmet_light_dual"
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 30,
+		melee = 12,
+		bullet = 10,
+		energy = 7,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -157,13 +163,16 @@
 	suit_type = "tactical armored hardsuit"
 	req_access = list(access_hos)
 	armor_list = list(
-		melee = 50,
-		bullet = 65,
-		energy = 65,
+		melee = 12,
+		bullet = 16,
+		energy = 16,
 		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
+	ablative_armor = 12
+	ablative_max = 12
+	ablation = ABLATION_EVERLASTING
 	slowdown = 0.4 //Heavy ass armor. This isn't for rapid deployment. It is for slapping the shit out of a threat to the colony that has been foolish enough to stay in one place.
 	drain = 12
 	offline_slowdown = 3
@@ -178,7 +187,7 @@
 /obj/item/rig/combat/ert/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/vision/multi,
 		/obj/item/rig_module/device/flash,
@@ -202,13 +211,16 @@
 	icon_state = "ert_rig"
 	suit_type = "blackshield tactical hardsuit"
 	armor_list = list(
-		melee = 60,
-		bullet = 55,
-		energy = 40,
+		melee = 15,
+		bullet = 13,
+		energy = 10,
 		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	slowdown = 0.5 //Heavy ass armor. This isn't for rapid deployment. It is for slapping the shit out of a threat to the colony that has been foolish enough to stay in one place.
 	drain = 25
 	offline_slowdown = 3
@@ -224,7 +236,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -237,9 +249,9 @@
 	suit_type = "marshal tactical"
 	req_access = list(access_hos)
 	armor_list = list(
-		melee = 50,
-		bullet = 45,
-		energy = 30,
+		melee = 12,
+		bullet = 11,
+		energy = 7,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -248,6 +260,9 @@
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 1
@@ -257,7 +272,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -273,9 +288,9 @@
 	icon_state = "military_rig"
 	suit_type = "Pathfinder hardsuit advanced armored"
 	armor_list = list(
-		melee = 60,
-		bullet = 70,
-		energy = 70,
+		melee = 15,
+		bullet = 17,
+		energy = 17,
 		bomb = 60,
 		bio = 100,
 		rad = 100
@@ -284,6 +299,9 @@
 	drain = 2
 	offline_slowdown = 4 // aalso fucking heavy.
 	offline_vision_restriction = 1
+	ablative_armor = 15
+	ablative_max = 15
+	ablation = ABLATION_EVERLASTING
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 0
@@ -296,9 +314,9 @@
 /obj/item/rig/combat/solfed/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage/combat,
+		/obj/item/rig_module/storage,
 		/obj/item/rig_module/stealth_field,
-		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/vision/multi,
 		/obj/item/rig_module/mounted,

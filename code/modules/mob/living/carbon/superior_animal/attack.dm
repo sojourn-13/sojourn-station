@@ -17,7 +17,8 @@
 			var/mob/living/carbon/human/target_human = L
 			if(target_human.check_shields(damage, null, src, null, attacktext))
 				return 0
-	. = A.attack_generic(src, damage, attacktext, environment_smash)
+
+	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
 	if(.)
 		if (attack_sound && loc && prob(attack_sound_chance))
@@ -80,7 +81,7 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, PROC_REF(Shoot), target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src, trace = trace_arg)

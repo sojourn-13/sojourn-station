@@ -33,6 +33,10 @@
 	var/issuperUV = 0
 	var/safeties = TRUE
 
+	var/suit_base64 = ""
+	var/helmet_base64 = ""
+	var/mask_base64 = ""
+
 	var/overlay_color
 
 	// A vis_contents hack for door animation.
@@ -44,10 +48,13 @@
 
 	if(SUIT_TYPE)
 		SUIT = new SUIT_TYPE(src)
+		suit_base64 = icon2base64tgui(getFlatIcon(SUIT))
 	if(HELMET_TYPE)
 		HELMET = new HELMET_TYPE(src)
+		helmet_base64 = icon2base64tgui(getFlatIcon(HELMET))
 	if(MASK_TYPE)
 		MASK = new MASK_TYPE(src)
+		mask_base64 = icon2base64tgui(getFlatIcon(MASK))
 
 	if(icon_state == "suit_storage_map")
 		icon_state = "suit_storage"
@@ -97,6 +104,7 @@
 		if(isUV || issuperUV)
 			add_overlay("working")
 
+
 /obj/machinery/suit_storage_unit/ex_act(severity)
 	switch(severity)
 		if(1.0)
@@ -113,96 +121,92 @@
 			return
 
 /obj/machinery/suit_storage_unit/attack_hand(mob/user as mob)
-	var/dat
-	if(..())
-		return
-	if(stat & NOPOWER)
-		return
-	if(!user.IsAdvancedToolUser())
-		return 0
-	if(panel_open) //The maintenance panel is open. Time for some shady stuff
-		dat += "<HEAD><TITLE>Suit storage unit: Maintenance panel</TITLE></HEAD>"
-		dat += "<B>Maintenance panel controls</B><HR>"
-		dat += "A small dial with a small lambda symbol on it. It's pointing towards a gauge that reads [issuperUV ? "15nm" : "185nm"]</font>.<BR> <font color='blue'><A href='?src=\ref[src];toggleUV=1'> Turn towards [issuperUV ? "185nm" : "15nm"]</A><BR>"
-		dat += "A thick old-style button, with 2 grimy LED lights next to it. The <B>[safeties? "<font color='green'>GREEN</font>" : "<font color='red'>RED</font>"]</B> LED is on.</font><BR><font color ='blue'><A href='?src=\ref[src];togglesafeties=1'>Press button</a>"
-	else if(isUV) //The thing is running its cauterisation cycle. You have to wait.
-		dat += "<HEAD><TITLE>Suit storage unit</TITLE></HEAD>"
-		dat += "<font color ='red'><B>Unit is cauterising contents with selected UV ray intensity. Please wait.</font></B><BR>"
+	return ui_interact(user)
 
+/obj/machinery/suit_storage_unit/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SuitStorageUnit", name)
+		ui.open()
+
+/obj/machinery/suit_storage_unit/ui_static_data(mob/user)
+	var/list/data = list()
+
+	if(user.get_preference_value(/datum/client_preference/tgui_toaster) != GLOB.PREF_YES)
+		data["helmet_icon"] = helmet_base64
+		data["suit_icon"] = suit_base64
+		data["mask_icon"] = mask_base64
 	else
-		dat += "<HEAD><TITLE>Suit storage unit</TITLE></HEAD>"
-		dat += "<font color='blue'><font size = 4><B>Suit Storage Unit</B></FONT><HR>"
-		dat += "Helmet storage compartment: <B>[HELMET ? HELMET.name : "<font color ='grey'>No helmet detected.</font>"]</B><BR>"
-		if(HELMET && isopen)
-			dat += "<A href='?src=\ref[src];dispense_helmet=1'>Dispense helmet</A><BR>"
-		dat += "Suit storage compartment: <B>[SUIT ? SUIT.name : "<font color ='grey'>No exosuit detected.</font>"]</B><BR>"
-		if(SUIT && isopen)
-			dat += "<A href='?src=\ref[src];dispense_suit=1'>Dispense suit</A><BR>"
-		dat += "Breathmask storage compartment: <B>[MASK ? MASK.name : "<font color ='grey'>No breathmask detected.</font>"]</B><BR>"
-		if(MASK && isopen)
-			dat += "<A href='?src=\ref[src];dispense_mask=1'>Dispense mask</A><BR>"
-		if(OCCUPANT)
-			dat += "<HR><B><font color ='red'>WARNING: Biological entity detected inside the Unit's storage. Please remove.</B></font><BR>"
-			dat += "<A href='?src=\ref[src];eject_guy=1'>Eject extra load</A>"
-		dat += "<HR><font color='black'>Unit is: [isopen ? "Open" : "Closed"] - <A href='?src=\ref[src];toggle_open=1'>[isopen ? "Close" : "Open"] Unit</A></font>"
-		if(isopen)
-			dat += "<HR>"
-		else
-			dat += " - <A href='?src=\ref[src];toggle_lock=1'><font color ='orange'>*[locked ? "Unlock" : "Lock"] Unit*</A></font><HR>"
-		dat += "Unit status: <B>[locked? "<font color ='red'>**LOCKED**</font>" : "<font color ='green'>**UNLOCKED**</font>"]</B><BR>"
-		dat += "<A href='?src=\ref[src];start_UV=1'>Start Disinfection cycle</A><BR>"
+		data["helmet_icon"] = null
+		data["suit_icon"] = null
+		data["mask_icon"] = null
 
-	user << browse(dat, "window=suit_storage_unit;size=400x500")
-	onclose(user, "suit_storage_unit")
-	return
+	return data
 
+/obj/machinery/suit_storage_unit/ui_data(mob/user)
+	var/list/data = list()
 
-/obj/machinery/suit_storage_unit/Topic(href, href_list) //I fucking HATE this proc
-	if(..())
-		return 1
+	data["panel_open"] = panel_open
+	data["isSuperUV"] = issuperUV
+	data["safeties"] = safeties
 
-	usr.set_machine(src)
-	if (href_list["toggleUV"])
-		src.toggleUV(usr)
-	if (href_list["togglesafeties"])
-		src.togglesafeties(usr)
-	if (href_list["dispense_helmet"])
-		dispense_object(HELMET, usr)
-	if (href_list["dispense_suit"])
-		dispense_object(SUIT, usr)
-	if (href_list["dispense_mask"])
-		dispense_object(MASK, usr)
-	if (href_list["toggle_open"])
-		src.toggle_open(usr)
-	if (href_list["toggle_lock"])
-		src.toggle_lock(usr)
-	if (href_list["start_UV"])
-		src.start_UV(usr)
-	if (href_list["eject_guy"])
-		src.eject_occupant(usr)
-	updateUsrDialog()
-	update_icon()
+	data["isUV"] = isUV
+	data["isOpen"] = isopen
+	data["occupied"] = !!OCCUPANT
+	data["locked"] = locked
 
+	data["helmet"] = HELMET?.name
+	data["suit"] = SUIT?.name
+	data["mask"] = MASK?.name
 
+	return data
 
-/obj/machinery/suit_storage_unit/proc/toggleUV(mob/user)
-	if(!panel_open)
+/obj/machinery/suit_storage_unit/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
 		return
 
-	if(issuperUV)
-		to_chat(user, "You slide the dial back towards \"185nm\".")
-		issuperUV = FALSE
-	else
-		to_chat(user, "You crank the dial all the way up to \"15nm\".")
-		issuperUV = TRUE
-
+	switch(action)
+		if("toggle_super_UV")
+			if(!panel_open)
+				return FALSE
+			issuperUV = !!params["on"]
+			. = TRUE
+		if("toggle_safeties")
+			togglesafeties(usr)
+			. = TRUE
+		if("toggle_open")
+			toggle_open(usr)
+			. = TRUE
+		if("toggle_lock")
+			toggle_lock(usr)
+			. = TRUE
+		if("dispense_helmet")
+			dispense_object(HELMET, usr)
+			. = TRUE
+		if("dispense_suit")
+			dispense_object(SUIT, usr)
+			. = TRUE
+		if("dispense_mask")
+			dispense_object(MASK, usr)
+			. = TRUE
+		if("start_UV")
+			start_UV(usr)
+			. = TRUE
+		if("eject_guy")
+			eject_occupant(usr)
+			. = TRUE
+	
+	if(.)
+		add_fingerprint(usr)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
+		update_icon()
 
 
 /obj/machinery/suit_storage_unit/proc/togglesafeties(mob/user)
 	if(!panel_open) //Needed check due to bugs
 		return
 
-	to_chat(user, "You push the button. The colored LED next to it changes.")
 	safeties = !safeties
 
 
@@ -212,13 +216,17 @@
 
 	if(dispensed == MASK)
 		MASK = null
+		mask_base64 = ""
 	else if(dispensed == HELMET)
 		HELMET = null
+		helmet_base64 = ""
 	else if(dispensed == SUIT)
 		SUIT = null
+		suit_base64 = ""
 
 	dispensed.forceMove(drop_location())
 	update_icon()
+	update_static_data_for_all_viewers()
 
 
 /obj/machinery/suit_storage_unit/proc/dump_everything()
@@ -430,12 +438,16 @@
 	switch(slot)
 		if(LOAD_SLOT_MASK)
 			MASK = I
+			mask_base64 = icon2base64tgui(getFlatIcon(MASK))
 		if(LOAD_SLOT_HELMET)
 			HELMET = I
+			helmet_base64 = icon2base64tgui(getFlatIcon(HELMET))
 		if(LOAD_SLOT_SUIT)
 			SUIT = I
+			suit_base64 = icon2base64tgui(getFlatIcon(SUIT))
 
 	update_icon()
+	update_static_data_for_all_viewers()
 	updateUsrDialog()
 
 

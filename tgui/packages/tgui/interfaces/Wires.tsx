@@ -1,102 +1,88 @@
 import { BooleanLike } from 'common/react';
-import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NoticeBox, Section, Stack } from '../components';
-import { Window } from '../layouts';
+import { capitalize } from 'common/string';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, LabeledList, Section } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+
+type Wire = {
+  color: string;
+  color_name: string;
+  desc: string;
+  cut: BooleanLike;
+  attached: BooleanLike;
+};
 
 type Data = {
-  proper_name: string;
   wires: Wire[];
   status: string[];
 };
 
-type Wire = {
-  color: string;
-  cut: BooleanLike;
-  attached: BooleanLike;
-  wire: string;
-};
+export const Wires = (props) => {
+  const { act, data } = useBackend<Data>();
 
-export const Wires = (props, context) => {
-  const { data } = useBackend<Data>(context);
-  const { proper_name, status = [], wires = [] } = data;
-  const dynamicHeight = 150 + wires.length * 30 + (proper_name ? 30 : 0);
+  const wires = data.wires || [];
+  const statuses = data.status || [];
 
   return (
-    <Window width={350} height={dynamicHeight}>
+    <Window width={350} height={150 + wires.length * 30}>
       <Window.Content>
-        <Stack fill vertical>
-          {!!proper_name && (
-            <Stack.Item>
-              <NoticeBox textAlign="center">
-                {proper_name} Wire Configuration
-              </NoticeBox>
-            </Stack.Item>
-          )}
-          <Stack.Item grow>
-            <Section fill>
-              <WireMap />
-            </Section>
-          </Stack.Item>
-          {!!status.length && (
-            <Stack.Item>
-              <Section>
-                {status.map((status) => (
-                  <Box key={status}>{status}</Box>
-                ))}
-              </Section>
-            </Stack.Item>
-          )}
-        </Stack>
+        <Section>
+          <LabeledList>
+            {wires.map((wire) => (
+              <LabeledList.Item
+                key={wire.color}
+                className="candystripe"
+                label={capitalize(wire.color_name)}
+                labelColor={wire.color}
+                color={wire.color}
+                buttons={
+                  <>
+                    <Button
+                      onClick={() =>
+                        act('cut', {
+                          wire: wire.color,
+                        })
+                      }
+                    >
+                      {wire.cut ? 'Mend' : 'Cut'}
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        act('pulse', {
+                          wire: wire.color,
+                        })
+                      }
+                    >
+                      Pulse
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        act('attach', {
+                          wire: wire.color,
+                        })
+                      }
+                    >
+                      {wire.attached ? 'Detach' : 'Attach'}
+                    </Button>
+                  </>
+                }
+              >
+                {!!wire.desc && <i>({wire.desc})</i>}
+              </LabeledList.Item>
+            ))}
+          </LabeledList>
+        </Section>
+
+        {!!statuses.length && (
+          <Section>
+            {statuses.map((status) => (
+              <Box key={status} color="lightgray" mt={0.1}>
+                {status}
+              </Box>
+            ))}
+          </Section>
+        )}
       </Window.Content>
     </Window>
-  );
-};
-
-/** Returns a labeled list of wires */
-const WireMap = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
-  const { wires } = data;
-
-  return (
-    <LabeledList>
-      {wires.map((wire) => (
-        <LabeledList.Item
-          key={wire.color}
-          className="candystripe"
-          label={wire.color}
-          labelColor={wire.color}
-          color={wire.color}
-          buttons={
-            <>
-              <Button
-                content={wire.cut ? 'Mend' : 'Cut'}
-                onClick={() =>
-                  act('cut', {
-                    wire: wire.color,
-                  })
-                }
-              />
-              <Button
-                content="Pulse"
-                onClick={() =>
-                  act('pulse', {
-                    wire: wire.color,
-                  })
-                }
-              />
-              <Button
-                content={wire.attached ? 'Detach' : 'Attach'}
-                onClick={() =>
-                  act('attach', {
-                    wire: wire.color,
-                  })
-                }
-              />
-            </>
-          }>
-          {!!wire.wire && <i>({wire.wire})</i>}
-        </LabeledList.Item>
-      ))}
-    </LabeledList>
   );
 };

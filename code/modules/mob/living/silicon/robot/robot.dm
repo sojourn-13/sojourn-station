@@ -6,8 +6,8 @@
 	real_name = "Cyborg"
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 	defaultHUD = "BorgStyle"
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
@@ -326,8 +326,14 @@
 	var/module_type = robot_modules[modtype]
 	var/obj/item/robot_module/RM = new module_type() //Spawn a dummy module to read values from
 
+	var/armourHealth = 0
+	for(var/V in src.components)
+		var/datum/robot_component/C = src.components[V]
+		if (V == "armour")
+			armourHealth = C.max_damage
+
 	switch(alert(src, "[RM.desc] \n \n\
-	Health: [RM.health] \n\
+	Health: [RM.health + armourHealth] \n\
 	Power Efficiency: [RM.power_efficiency*100]%\n\
 	Movement Speed: [RM.speed_factor*100]%",
 	"[modtype] module", "Yes", "No"))
@@ -414,10 +420,12 @@
 	set name = "Show Crew Manifest"
 	show_manifest(src)
 
+/*
 /mob/living/silicon/robot/proc/self_diagnosis()
 	if(!is_component_functioning("diagnosis unit"))
 		return null
 
+	return
 	var/dat = "<HEAD><TITLE>[name] Self-Diagnosis Report</TITLE></HEAD><BODY>\n"
 	for (var/V in components)
 		var/datum/robot_component/C = components[V]
@@ -430,12 +438,12 @@
 			</table><br>
 		"}
 
-	return dat
+	return dat */
 
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
 	set category = "Silicon Commands"
-	to_chat(src, "You begin [locked ? "" : "un"]locking your panel.")
+	to_chat(src, "You begin [locked ? "un" : ""]locking your panel.")
 	if(!opened && has_power && do_after(usr, 80) && !opened && has_power)
 		to_chat(src, "You [locked ? "un" : ""]locked your panel.")
 		locked = !locked
@@ -465,8 +473,13 @@
 	var/datum/robot_component/CO = get_component("diagnosis unit")
 	if (!cell_use_power(CO.active_usage))
 		to_chat(src, SPAN_DANGER("Low Power."))
+		return
+	var/obj/item/device/robotanalyzer/diagnosis = new /obj/item/device/robotanalyzer(src) // Hiding it inside us for now
+	diagnosis.attack(src,src) // Hit ourselves with it.
+	qdel(diagnosis)
+/*
 	var/dat = self_diagnosis()
-	src << browse(dat, "window=robotdiagnosis")
+	src << browse(dat, "window=robotdiagnosis") */
 
 
 /mob/living/silicon/robot/verb/toggle_component()
@@ -506,31 +519,32 @@
 // this function displays jetpack pressure in the stat panel
 /mob/living/silicon/robot/proc/show_jetpack_pressure()
 	// if you have a jetpack, show the internal tank pressure
-	if (jetpack)
-		stat("Internal Atmosphere Info", jetpack.name)
-		stat("Tank Pressure", jetpack.gastank.air_contents.return_pressure())
+	. = list()
+	if(jetpack)
+		. += "Internal Atmosphere Info: [jetpack.name]"
+		. += "Tank Pressure: [jetpack.gastank.air_contents.return_pressure()]"
 
 
 // this function displays the cyborgs current cell charge in the stat panel
 /mob/living/silicon/robot/proc/show_cell_power()
+	. = list()
 	if(cell)
-		stat(null, text("Charge Left: [round(cell.percent())]%"))
-		stat(null, text("Cell Rating: [round(cell.maxcharge)]")) // Round just in case we somehow get crazy values
-		stat(null, text("Power Cell Load: [round(used_power_this_tick)]W"))
+		. += "Charge Left: [round(cell.percent())]%"
+		. += "Cell Rating: [round(cell.maxcharge)]" // Round just in case we somehow get crazy values
+		. += "Power Cell Load: [round(used_power_this_tick)]W"
 	else
-		stat(null, text("No Cell Inserted!"))
+		. += "No Cell Inserted!"
 
 
 // update the status screen display
-/mob/living/silicon/robot/Stat()
+/mob/living/silicon/robot/get_status_tab_items()
 	. = ..()
-	if (statpanel("Status"))
-		show_cell_power()
-		show_jetpack_pressure()
-		stat(null, text("Lights: [lights_on ? "ON" : "OFF"]"))
-		if(module)
-			for(var/datum/matter_synth/ms in module.synths)
-				stat("[ms.name]: [ms.energy]/[ms.max_energy_multiplied]")
+	. += show_cell_power()
+	. += show_jetpack_pressure()
+	. += "Lights: [lights_on ? "ON" : "OFF"]"
+	if(module)
+		for(var/datum/matter_synth/ms in module.synths)
+			. += "[ms.name]: [ms.energy]/[ms.max_energy_multiplied]"
 
 /mob/living/silicon/robot/restrained()
 	return FALSE
@@ -542,7 +556,7 @@
 			var/mob/living/carbon/human/firer = Proj.firer
 			chance -= firer.stats.getStat(STAT_VIG, FALSE) / 5
 		var/obj/item/projectile/bullet/B = Proj
-		chance = max((chance - B.armor_penetration), 0)
+		chance = max((chance / B.armor_divisor), 0)
 		if (!(Proj.testing))
 			if(B.starting && prob(chance)) // disregard this for test because its luck based
 				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armour!"))
@@ -577,6 +591,9 @@
 				if(istype(WC))
 					C.brute_damage = WC.brute
 					C.electronics_damage = WC.burn
+					C.max_damage = WC.internal_damage
+					C.brute_mult = WC.brute_mult
+					C.burn_mult = WC.burn_mult
 
 				to_chat(usr, SPAN_NOTICE("You install the [I.name]."))
 
@@ -623,8 +640,8 @@
 					return
 
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 					adjustBruteLoss(-30)
+					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 					updatehealth()
 					add_fingerprint(user)
 					for(var/mob/O in viewers(user, null))
@@ -739,7 +756,10 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/stack/cable_coil) && (wiresexposed || isdrone(src)))
+	if(istype(I, /obj/item/stack/cable_coil))
+		if (src == user)
+			to_chat(user, SPAN_WARNING("You lack the reach to be able to repair yourself."))
+			return
 		if (!getFireLoss())
 			to_chat(user, "Nothing to fix here!")
 			return
@@ -748,8 +768,11 @@
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			adjustFireLoss(-30)
 			updatehealth()
+			add_fingerprint(user)
 			for(var/mob/O in viewers(user, null))
 				O.show_message(text(SPAN_DANGER("[user] has fixed some of the burnt wires on [src]!")), 1)
+			return
+
 
 	else if (istype(I, /obj/item/stock_parts/matter_bin) && opened) // Installing/swapping a matter bin
 		if(storage)
@@ -857,16 +880,16 @@
 			user.put_in_active_hand(broken_device)
 
 //Robots take half damage from basic attacks.
-/mob/living/silicon/robot/attack_generic(var/mob/user, var/damage, var/attack_message)
+/mob/living/silicon/robot/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	return ..(user,FLOOR(damage * 0.5, 1),attack_message)
 
 /mob/living/silicon/robot/proc/allowed(atom/movable/A)
-	if(!length(req_access)) //no requirements
+	if(!LAZYLEN(req_access)) //no requirements
 		return TRUE
 
 	var/list/access = A?.GetAccess()
 
-	if(!length(access)) //no ID or no access
+	if(!LAZYLEN(access)) //no ID or no access
 		return FALSE
 	for(var/req in req_access)
 		if(req in access) //have one of the required accesses
@@ -874,15 +897,15 @@
 	return FALSE
 
 /mob/living/silicon/robot/updateicon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat == CONSCIOUS && !actively_resting)
-		overlays += "eyes-[module_sprites[icontype]]"
+		add_overlay("eyes-[module_sprites[icontype]]")
 
 	if(stat == DEAD && has_wreck_sprite)
 		icon_state = "[module_sprites[icontype]]-wreck"
 
 	if(lights_on && !actively_resting)
-		overlays += "[module_sprites[icontype]]_l"
+		add_overlay("[module_sprites[icontype]]_l")
 
 	if(allow_resting && stat == CONSCIOUS)
 		if(actively_resting && !opened)
@@ -893,14 +916,14 @@
 	if(opened)
 		var/panelprefix = custom_sprite ? ckey : "ov"
 		if(wiresexposed)
-			overlays += "[panelprefix]-openpanel +w"
+			add_overlay("[panelprefix]-openpanel +w")
 		else if(cell)
-			overlays += "[panelprefix]-openpanel +c"
+			add_overlay("[panelprefix]-openpanel +c")
 		else
-			overlays += "[panelprefix]-openpanel -c"
+			add_overlay("[panelprefix]-openpanel -c")
 
 	if(module_active && istype(module_active,/obj/item/borg/combat/shield))
-		overlays += "[module_sprites[icontype]]-shield"
+		add_overlay("[module_sprites[icontype]]-shield")
 
 	if(modtype == "Combat")
 		if(module_active && istype(module_active,/obj/item/borg/combat/mobility))
@@ -1083,7 +1106,7 @@
 	if(R)
 		R.UnlinkSelf()
 		to_chat(R, "Buffers flushed and reset. Camera system shutdown.  All systems operational.")
-		verbs -= /mob/living/silicon/robot/proc/ResetSecurityCodes
+		remove_verb(src, /mob/living/silicon/robot/proc/ResetSecurityCodes)
 
 /mob/living/silicon/robot/proc/SetLockdown(var/state = 1)
 	// They stay locked down if their wire is cut.
@@ -1111,7 +1134,7 @@
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
 		return
 	if (icon_selected == 1)
-		verbs -= /mob/living/silicon/robot/proc/choose_icon
+		remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 		return
 
 
@@ -1136,10 +1159,10 @@
 	icon_selected = 1 //MEW
 	post_icon_giving()
 
-	verbs -= /mob/living/silicon/robot/proc/choose_icon
+	remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 
 	if(allow_resting)
-		verbs += /mob/living/silicon/robot/verb/resting_icon_mode
+		add_verb(src, /mob/living/silicon/robot/verb/resting_icon_mode)
 
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
 
@@ -1152,10 +1175,10 @@
 	toggle_sensor_mode()
 
 /mob/living/silicon/robot/proc/add_robot_verbs()
-	verbs |= robot_verbs_default
+	add_verb(src, robot_verbs_default)
 
 /mob/living/silicon/robot/proc/remove_robot_verbs()
-	verbs -= robot_verbs_default
+	remove_verb(src, robot_verbs_default)
 
 // Uses power from cyborg's cell. Returns 1 on success or 0 on failure.
 // Properly converts using CELLRATE now! Amount is in Joules.

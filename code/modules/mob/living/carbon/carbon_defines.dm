@@ -5,8 +5,6 @@
 	var/species_aan = ""
 	var/species_color_key = "#000000"
 	var/species_name = "Carbon Lifeform"
-	var/list/datum/disease2/disease/virus2 = list()
-	var/list/antibodies = list()
 
 	var/life_tick = 0      // The amount of life ticks that have processed on this mob.
 	var/analgesic = 0 // when this is set, the mob isn't affected by shock or pain

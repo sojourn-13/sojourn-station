@@ -20,7 +20,7 @@
 	nanomodule_path = /datum/nano_module/program/trade
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "cart-plus"
 	extended_desc = "A trade tool, requires sending and receiving beacons."
 	size = 21
 	available_on_ntnet = FALSE
@@ -345,7 +345,7 @@
 		trade_screen = ORDER_SCREEN
 		if(account != department_accounts[DEPARTMENT_LSS])
 			orders_locked = TRUE
-			addtimer(CALLBACK(src, .proc/unlock_ordering), 10 SECONDS, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src, PROC_REF(unlock_ordering)), 10 SECONDS, TIMER_STOPPABLE)
 		return TRUE
 
 	if(href_list["PRG_view_order"])
@@ -564,7 +564,7 @@
 				if(get_area(sending) != get_area(computer))
 					to_chat(usr, SPAN_WARNING("ERROR: Sending beacon is too far from \the [computer]."))
 					return
-				SStrade.export(sending)
+				SStrade.export(sending, account)
 				return TRUE
 
 			var/t2n = text2num(href_list["PRG_sell"])
@@ -576,7 +576,7 @@
 					to_chat(usr, SPAN_WARNING("TIMER ERROR: Slow Down!."))
 					return
 				to_fast_to_soon = TRUE
-				addtimer(CALLBACK(src, /datum/computer_file/program/trade/proc/anti_lag, src), 1 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(anti_lag), src), 1 SECONDS)
 				var/path = get_2d_matrix_cell(station.inventory, chosen_category, t2n)
 				SStrade.sell_thing(sending, account, locate(path) in SStrade.assess_offer(sending, path), station)
 				return TRUE

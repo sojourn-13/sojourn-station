@@ -116,7 +116,7 @@
 					update_icon()
 					return
 
-/obj/structure/shield_deployed/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes", var/wallbreaker)//Occulus Edit
+/obj/structure/shield_deployed/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(damage)//Occulus edit
 		damage(damage)//Occulus Edit
 		attack_animation(user)
@@ -230,21 +230,21 @@
 		return
 
 	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
-	climbers |= user
+	LAZYOR(climbers, user)
 
 	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(!can_climb(user, post_climb_check=1))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(!neighbor_turf_passable())
 		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
-		climbers -= user
+		LAZYREMOVE(climbers, user)
 		return
 
 	if(get_turf(user) == get_turf(src))
@@ -253,4 +253,4 @@
 		usr.forceMove(get_turf(src))
 
 	usr.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
-	climbers -= user
+	LAZYREMOVE(climbers, user)

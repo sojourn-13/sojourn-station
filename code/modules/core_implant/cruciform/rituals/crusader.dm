@@ -87,7 +87,7 @@
 	log_and_message_admins("performed a crusade litany")
 	to_chat(user, SPAN_NOTICE("You feel an extraordinary burst of energy."))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, .proc/discard_effect, user, count), src.cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user, count), src.cooldown_time)
 	return TRUE
 
 /datum/ritual/cruciform/crusader/battle_call/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -140,3 +140,14 @@
 	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
 	set_personal_cooldown(user)
 	return TRUE
+
+/datum/ritual/targeted/cruciform/crusader/end_crusade
+	name = "End Crusade"
+	phrase = "Tempus occidendi, et tempus sanandi; tempus destruendi, et tempus aedificandi." //"A time to kill and a time to heal, a time to tear down and a time to build"
+	desc = "Ends your Crusade, returning you to the state you were in when you entered the upper levels."
+	power = 5 //This is literally a litany to depower yourself, it shouldn't cost much
+
+/datum/ritual/targeted/cruciform/crusader/end_crusade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	for(var/datum/antagonist/A in user.mind.antagonist)
+		if(A.id == ROLE_INQUISITOR)
+			A.remove_antagonist()

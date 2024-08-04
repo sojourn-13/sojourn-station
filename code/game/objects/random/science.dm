@@ -18,8 +18,8 @@
 	/obj/item/stock_parts/micro_laser/high = 2,
 	/obj/item/computer_hardware/hard_drive/portable/research_points = 5,
 	/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1,
-	/obj/item/rig/hazmat = 2,
-	/obj/item/rig/hazmat/equipped = 1,
+	/obj/item/rig/hazmat = 0.5,
+	/obj/item/rig/hazmat/equipped = 0.25,
 	/obj/item/tool/multitool/uplink = 0.001, //REALLY RARE
 	/obj/item/device/radio/headset/uplink = 0.001,
 	/obj/item/hydrogen_fuel_cell = 0.1,

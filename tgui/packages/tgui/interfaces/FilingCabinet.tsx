@@ -1,39 +1,43 @@
 import { useBackend } from '../backend';
-import { Box, Button, Section, Stack } from '../components';
+import { Box, Button, Flex, Section } from '../components';
 import { Window } from '../layouts';
 
 type Data = {
   cabinet_name: string;
+  hex_code_for_backround: string;
+  contents_ref: string[];
   contents: string[];
-  contents_ref: string;
 };
 
-export const FilingCabinet = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
-  const { cabinet_name, contents, contents_ref } = data;
-
+export const FilingCabinet = (props) => {
+  const { act, data } = useBackend<Data>();
+  const { cabinet_name, hex_code_for_backround, contents, contents_ref } = data;
   return (
     <Window title={cabinet_name || 'Filing Cabinet'} width={350} height={300}>
-      <Window.Content backgroundColor="#B88F3D" scrollable>
+      <Window.Content
+        backgroundColor={hex_code_for_backround || '#7f7f7f'}
+        scrollable
+      >
         {contents.map((object, index) => (
-          <Stack
+          <Flex
             key={contents_ref[index]}
             color="black"
             backgroundColor="white"
             style={{ padding: '2px' }}
-            mb={0.5}>
-            <Stack.Item align="center" grow={1}>
+            mb={0.5}
+          >
+            <Flex.Item align="center" grow={1}>
               <Box align="center">{object}</Box>
-            </Stack.Item>
-            <Stack.Item>
+            </Flex.Item>
+            <Flex.Item>
               <Button
                 icon="eject"
                 onClick={() =>
                   act('remove_object', { ref: contents_ref[index] })
                 }
               />
-            </Stack.Item>
-          </Stack>
+            </Flex.Item>
+          </Flex>
         ))}
         {contents.length === 0 && (
           <Section>

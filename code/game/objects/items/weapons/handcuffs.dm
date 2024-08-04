@@ -186,6 +186,7 @@ var/last_chew = 0
 			update_icon(user)
 
 /obj/item/handcuffs/cyborg
+	desc = "Use this to keep prisoners in line. Includes a onboard handcuff recycler."
 	dispenser = 1
 
 /obj/item/handcuffs/cyborg/afterattack(atom/A, mob/user as mob, proximity)

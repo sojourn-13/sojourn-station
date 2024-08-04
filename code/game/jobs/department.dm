@@ -56,19 +56,25 @@
 **************/
 //These departments are paid out of colony funding
 /datum/department/ironhammer
-	name = "Marshal and Blackshield Division"
+	name = "Nadezhda Marshals"
 	id = DEPARTMENT_SECURITY
-	//Without nepotism a full team 34300 in 5 hours
-	//With nepotism a full team 42250 in 5 hours
-	account_initial_balance = 46000 //Estimated 4k extra credits than what is required for wages on a full roster.
-	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 25000 //Required to run a full roster with nepotism and almost 4k for expenses.
+	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/inspector","/datum/job/officer","/datum/job/officerjr")
+
+/datum/department/blackshield
+	name = "Blackshield Division"
+	id = DEPARTMENT_BLACKSHIELD
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 21200 //Required to run full roster with nepotism and basically nothing else.
+	jobs_in_department = list("/datum/job/smc","/datum/job/serg","/datum/job/medspec","/datum/job/trooper","/datum/job/cadet")
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
 	account_initial_balance = 17000 //17000 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
-	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
+	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer","/datum/job/apprentice")
 
 
 /datum/department/civilian
@@ -87,7 +93,7 @@
 	id = DEPARTMENT_MEDICAL
 	//30225 in 5 hours with full crew + nepotism
 	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
-	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
+	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist","/datum/job/medstudent")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
@@ -112,7 +118,7 @@
 	id = DEPARTMENT_LSS
 
 	/*
-		The LSS account represents the holdings of the local branch, and CEO.
+		The LSS account represents the holdings of the local branch, and SOM.
 	*/
 	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
@@ -232,6 +238,10 @@
 /datum/perk/experienced/shitcurity
 	name = "Experienced: Shitcurity"
 	dept = DEPARTMENT_SECURITY
+
+/datum/perk/experienced/blokeshield
+	name = "Experienced: Friendly Fire Militia"
+	dept = DEPARTMENT_BLACKSHIELD
 
 /datum/perk/experienced/unaligned
 	name = "Experienced: Other"

@@ -6,7 +6,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
@@ -44,7 +44,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
@@ -83,7 +83,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
@@ -124,7 +124,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -147,10 +147,10 @@
 							 /datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports)
 
-	description = "артист выступает здесь в качестве универсального исполнителя, развлекающего колонию.<br>\
-	Вы можете обнаружить, что ваши коллеги отвлекаются на скучные обязанности или бессмысленные препирательства, поэтому усердно работайте, чтобы привить им настоящую культуру.<br>\
-	Генеральный директор платит вам ужасно низкую плату, так что используйте свой ум, чтобы обеспечить себя - возможно, попросите свою аудиторию о пожертвованиях.r>\
-	Кроме того, вы не получаете желаний, как другие члены колонии, вместо этого вы проводите свое время за своим рабочим столом, создавая дорогие произведения искусства, которые стоит продать."
+	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
+	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
+	The SOM pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
+	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
 
 	duties = "Обеспечьте (Безопасное для семейного просмотра) развлечение для экипажа с помощью ваших разнообразных талантов.<br>\
 		Создавайте и продавайте ценные произведения искусства в своей мастерской художника.<br>\
@@ -169,7 +169,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")

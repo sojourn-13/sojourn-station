@@ -39,9 +39,15 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/reinforced/medical
 	back = /obj/item/storage/backpack/satchel/medical
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1, \
-							/obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1, /obj/item/bodybag/cryobag = 2, \
-							/obj/item/storage/firstaid/blackshield/large = 1, /obj/item/storage/firstaid/surgery/si = 1, /obj/item/roller/compact  = 1, /obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
+	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1,
+							/obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1,
+							/obj/item/gun_upgrade/trigger/dnalock = 1,
+							/obj/item/gun_upgrade/muzzle/silencer = 1,
+							/obj/item/bodybag/cryobag = 2,
+							/obj/item/storage/firstaid/blackshield/large = 1,
+							/obj/item/storage/firstaid/surgery/si = 1,
+							/obj/item/roller/compact  = 1,
+							/obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/medical_ert
 
@@ -110,11 +116,9 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/guild_ert
 
 /decl/hierarchy/outfit/lss_ert
-	name = "Auditor"
-	l_ear = /obj/item/device/radio/headset/headset_com
-	head = /obj/item/clothing/head/helmet/technomancersuit //Looks good enuff and has good armor I guess
+	name = "Internal Affairs Agent"
+	l_ear = /obj/item/device/radio/headset/heads/merchant
 	uniform = /obj/item/clothing/under/suit_jacket/executive
-	suit = /obj/item/clothing/suit/storage/cargovest
 	r_pocket = /obj/item/device/t_scanner/advanced
 	pda_type = /obj/item/modular_computer/pda/heads
 	glasses = /obj/item/clothing/glasses/sunglasses/big

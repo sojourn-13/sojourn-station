@@ -7,13 +7,7 @@
 	reagents = bloodstr
 	..()
 
-/mob/living/carbon/Life()
-	. = ..()
-
-	handle_viruses()
-
 /mob/living/carbon/Destroy()
-
 	bloodstr.parent = null //these exist due to a GC failure linked to these vars
 	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
 
@@ -341,8 +335,6 @@
 	if(now_pushing || !yes)
 		return
 	..()
-	if(iscarbon(AM) && prob(10))
-		src.spread_disease_to(AM, "Contact")
 
 /mob/living/carbon/cannot_use_vents()
 	return

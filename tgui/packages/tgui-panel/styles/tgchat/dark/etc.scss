@@ -1,0 +1,86 @@
+a {
+  color: #397ea5;
+}
+
+a.visited {
+  color: #7c00e6;
+}
+
+a:visited {
+  color: #7c00e6;
+}
+
+a.popt {
+  text-decoration: none;
+}
+
+/* MOTD */
+.motd {
+  color: #a4bad6;
+  font-family: Verdana, sans-serif;
+  white-space: normal;
+}
+
+.motd h1,
+.motd h2,
+.motd h3,
+.motd h4,
+.motd h5,
+.motd h6 {
+  color: #a4bad6;
+  text-decoration: underline;
+}
+
+.motd a,
+.motd a:link,
+.motd a:visited,
+.motd a:active,
+.motd a:hover {
+  color: #a4bad6;
+}
+
+/* OUTPUT COLORS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #a4bad6;
+  font-family: Georgia, Verdana, sans-serif;
+}
+
+h1.alert,
+h2.alert {
+  color: #a4bad6;
+}
+
+.interface {
+  color: #750e75;
+}
+
+.newscaster {
+  color: #c05d5d;
+}
+
+/* Color Overrides */
+.green {
+  color: #059223;
+}
+
+.blue {
+  color: #215cff;
+}
+
+.nicegreen {
+  color: #059223;
+}
+
+.boldnicegreen {
+  color: #059223;
+  font-weight: bold;
+}
+
+.purple {
+  color: #9956d3;
+}

@@ -1,7 +1,7 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-/obj/var/list/req_access = list()
-/obj/var/list/req_one_access = list()
+/obj/var/list/req_access = null
+/obj/var/list/req_one_access = null
 
 //returns 1 if this mob has sufficient access to use this object
 /obj/proc/allowed(mob/M)
@@ -30,18 +30,16 @@
 /obj/proc/check_access(obj/item/I)
 	return check_access_list(I ? I.GetAccess() : list())
 
-/obj/proc/check_access_list(var/list/L)
-	if(!req_access)		req_access = list()
-	if(!req_one_access)	req_one_access = list()
+/obj/proc/check_access_list(list/L)
 	if(!L)	return 0
 	if(!istype(L, /list))	return 0
 	return has_access(req_access, req_one_access, L)
 
-/proc/has_access(var/list/req_access, var/list/req_one_access, var/list/accesses)
+/proc/has_access(list/req_access, list/req_one_access, list/accesses)
 	for(var/req in req_access)
 		if(!(req in accesses)) //doesn't have this access
 			return 0
-	if(req_one_access.len)
+	if(LAZYLEN(req_one_access))
 		for(var/req in req_one_access)
 			if(req in accesses) //has an access from the single access list
 				return 1

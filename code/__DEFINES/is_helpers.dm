@@ -11,12 +11,6 @@
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
-
-#define islist(A) istype(A, /list)
-
-
-#define ismob(A) istype(A, /mob)
-
 #define ismecha(A) istype(A, /obj/mecha)
 
 #define isobserver(A) istype(A, /mob/observer)
@@ -83,10 +77,12 @@
 
 #define isdrone(A) istype(A, /mob/living/silicon/robot/drone)
 
-//-----------------Objects
-#define ismovable(A) istype(A, /atom/movable)
+///Define on whether A has access to Silicon stuff either through being a silicon, admin ghost or is a non-silicon holding the Silicon remote.
+///This can only be used for instances where you are not specifically looking for silicon, but access.
+#define HAS_SILICON_ACCESS(A) (issilicon(A) || isAdminGhostAI(A) || A.has_unlimited_silicon_privilege)  // || istype(A.get_active_held_item(), /obj/item/machine_remote))
 
-#define isobj(A) istype(A, /obj)
+//-----------------Objects
+#define isobj(A) istype(A, /obj) //override the byond proc because it returns true on children of /atom/movable that aren't objs
 
 #define isHUDobj(A) istype(A, /obj/screen)
 
@@ -115,3 +111,11 @@
 #define isMultitool(A) istype(A, /obj/item/tool/multitool)
 
 #define isCrowbar(A) istype(A, /obj/item/tool/crowbar)
+
+/// isnum() returns TRUE for NaN. Also, NaN != NaN. Checkmate, BYOND.
+#define isnan(x) ( (x) != (x) )
+
+#define isinf(x) (isnum((x)) && (((x) == SYSTEM_TYPE_INFINITY) || ((x) == -SYSTEM_TYPE_INFINITY)))
+
+/// NaN isn't a number, damn it. Infinity is a problem too.
+#define isnum_safe(x) ( isnum((x)) && !isnan((x)) && !isinf((x)) )

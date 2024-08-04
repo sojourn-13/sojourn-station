@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/supply
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "shopping-cart"
 	extended_desc = "A management tool that allows for ordering of various supplies through the colony's cargo system. Some features may require additional access."
 	size = 21
 	available_on_ntnet = 1

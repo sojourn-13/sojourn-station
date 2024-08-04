@@ -17,6 +17,8 @@
 	fire_sound_text = "a metallic thunk"
 	init_recoil = HANDGUN_RECOIL(2)
 	max_shells = 6
+	fire_delay = 15
+	slowdown_hold = 1
 	zoom_factors = list(2.0)
 	var/throw_distance = 7
 	var/release_force = 5

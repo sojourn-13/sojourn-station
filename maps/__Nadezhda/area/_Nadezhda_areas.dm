@@ -244,6 +244,36 @@
 
 /area/nadezhda/dungeon/outside/prepper/vault/entryway
 
+
+/area/nadezhda/dungeon/outside/prepper/lima
+	name = "Site LIMA-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/lima/turret_powered_tile
+	name = "Site LIMA-09"
+	icon_state = "erisred"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/lima/outside
+	name = "Site LIMA-09"
+	icon_state = "erisgreen"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	dynamic_lighting = FALSE
+
+/area/nadezhda/dungeon/outside/prepper/delta
+	name = "Site DELTA-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/delta/turret_powered_tile
+	name = "Site DELTA-09"
+	icon_state = "erisred"
+	requires_power = FALSE
+
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
@@ -412,6 +442,25 @@
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	is_dungeon_lootable = FALSE
+
+/area/nadezhda/outside/kepler //Off-world location
+	name = "barren planet"
+	icon_state = "erisblue"
+	area_light_color = COLOR_LIGHTING_BLUE_DARK
+	forced_ambience = list('sound/ambience/windamb1.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
+
+/area/nadezhda/outside/kepler/red //Off-world location, meant for areas near and inside huts
+	name = "barren planet - indoors"
+	area_light_color = COLOR_LIGHTING_RED_DARK
+	forced_ambience = list('sound/ambience/windamb2.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
@@ -668,7 +717,7 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/merchant
-	name = "\improper Lonestar - CEO's Office"
+	name = "\improper Lonestar - Manager's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
@@ -1395,6 +1444,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Vacant Office"
 	icon_state = "security"
 
+/area/nadezhda/security/secrecroom
+	name = "Security - Recreation Room"
+	icon_state = "security"
+
 /area/nadezhda/security/inspectors_office
 	name = "Inspectors Office"
 	icon_state = "hammerblue"
@@ -1501,6 +1554,10 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/mining_outside_doc
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
+
+/area/nadezhda/quartermaster/mining_dreg
+	name = "Slate Mining Pad MEH A" //Mining Excation Head
+	icon_state = "erisblue"
 
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"

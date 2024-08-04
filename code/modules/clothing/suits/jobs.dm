@@ -11,9 +11,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -28,9 +28,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -44,9 +44,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -61,9 +61,9 @@
 	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 5,
+		melee = 2,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -98,16 +98,16 @@
 
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
-	name = "executive officer coat"
+	name = "surface manager coat"
 	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor_list = list(
-		melee = 20,
-		bullet = 10,
-		energy = 5,
+		melee = 5,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "chief executive officer's jacket"
-	desc = "A well tailored and rich jacket for the Chief Executive Officer."
+	name = "surface operations manager's jacket"
+	desc = "A well tailored and rich jacket for the Surface Operations Manager."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -150,8 +150,8 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -170,9 +170,9 @@
 	siemens_coefficient = 0.7
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 2)
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 2,
 		bomb = 30,
 		bio = 100,
 		rad = 100
@@ -185,9 +185,9 @@
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 15,
-		bullet = 10,
-		energy = 5,
+		melee = 3,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 100,
 		rad = 75
@@ -257,7 +257,7 @@
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee =7, bullet = 6, energy = 6, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/insp_trench/verb/toggle_style()
@@ -330,7 +330,7 @@
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 50
 	armor_list = list(
-		melee = 10,
+		melee = 2,
 		bullet = 0,
 		energy = 0,
 		bomb = 0,

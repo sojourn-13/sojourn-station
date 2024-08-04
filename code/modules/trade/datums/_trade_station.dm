@@ -22,7 +22,7 @@
 	var/list/name_pool = list()
 
 	var/markup = WHOLESALE_GOODS
-	var/markdown = 0.8				 // Default markdown is 20% - SoJ edit they get less markdown.
+	var/markdown = 0.8			 // If increased above 1, then it turns into an exploit of buy n sell
 	var/favour_purchase_ratio = 0.125  // 8 credits = 1 favour
 
 
@@ -149,7 +149,7 @@
 	else
 		initialized = TRUE
 	update_time = rand(8,12) MINUTES
-	addtimer(CALLBACK(src, .proc/update_tick), update_time, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(update_tick)), update_time, TIMER_STOPPABLE)
 	update_timer_start = world.time
 
 // The station will restock based on base_income + wealth, then check unlockables.
@@ -309,14 +309,14 @@
 //	overmap_object.icon_stages = list(icon_states[1], icon_states[2], "poi")
 
 	if(!start_discovered)
-		GLOB.entered_event.register(overmap_location, src, .proc/discovered)
+		GLOB.entered_event.register(overmap_location, src, PROC_REF(discovered))
 
 /datum/trade_station/proc/discovered(_, obj/effect/overmap/ship/ship)
 //	if(!istype(ship) || !ship.base)
 	return
 
 //	SStrade.discovered_stations |= src
-//	GLOB.entered_event.unregister(overmap_location, src, .proc/discovered)
+//	GLOB.entered_event.unregister(overmap_location, src, PROC_REF(discovered))
 
 /datum/trade_station/proc/generate_offer()
 	if(!length(offer_types))

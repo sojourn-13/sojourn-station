@@ -312,6 +312,10 @@
 		if(findtext(spell, "Satchel.") && candle_amount >= 5)
 			satchel_spell(M, alchemist)
 
+		//Both book and knife work with this one
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
+
 		/* WIP!!!
 		if(findtext(spell, "Transmute." && candle_amount >= 6)
 			transmutation_spell(M)
@@ -344,6 +348,9 @@
 
 		if(findtext(spell, "Tea Party.") && candle_amount >= 4)
 			tea_party_spell(M)
+
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
 
 		if(findtext(spell, "Fountain.") && candle_amount >= 7)
 			basin_spell(M, able_to_cast)
@@ -381,7 +388,7 @@
 		M.stunned += 1
 		M.confused += 2
 		if(ishuman(M))
-			addtimer(CALLBACK(M, /atom/proc/SpinAnimation, 3, 3), 1)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, SpinAnimation), 3, 3), 1)
 
 	//We already would have rejected you, run along now.
 	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
@@ -1386,6 +1393,37 @@
 			M.stats.addTempStat(stat, stat_amount, stat_amount MINUTES, "Tea Party")
 	return
 
+// Cessation: Baba is gone? - Removes you from player from the world for an equal amount of candles
+/obj/effect/decal/cleanable/crayon/proc/cessation_spell(mob/living/carbon/human/M, candle_number)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/cn
+	//Dont change the top lines they are real letters BYOND DM cant see normally
+	var/list/hmm = list("༒", "༎༐།", "‽", "⸘", "༑", \
+	"Sipping sounds echo in you.", "Nothing is around you.", "Nothing is still.", "Sounds are felt here, not heard.", "Where are you?")
+
+	B.remove_self(candle_number)
+
+	for(cn=0, cn<candle_number, cn++)
+		var/huh = pick(hmm)
+		to_chat(M, "<span class='info'>[huh]</span>") //Spammy!
+	M.loc = null
+
+	if(prob(candle_number))
+		to_chat(M, "<span class='info'>A secondary voice of a canvus being painted on fittles \"You wanted me to paint a slow path back for you? Don't blame me for what you dont hear!\".</span>")
+		candle_number *= 60
+	else
+		to_chat(M, "<span class='info'>A primary chipper voice of musical notes drips \"You wish to get away from here quickly? I'll lead the way! Te Te Te. Don't blame me for what you dont see!\".</span>")
+
+	//Surely nothing bad will happen
+	var/cn_s = candle_number SECONDS
+	sleep(cn_s)
+	var/turf/source = get_turf(src)
+	if(source)
+		M.loc = source
+		to_chat(M, "<span class='info'>In a instance you find yourself back at the rune...</span>")
+	else
+		to_chat(M, "<span class='info'>The path back is no longer, as the planet no longer can find you.</span>")
+
 /******************************/
 /* SCROLL SPELLS PROCS START! */
 /******************************/
@@ -1538,7 +1576,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		if(!surround.is_space())
 			var/obj/structure/annomlies_diet/spidersilk/non_spreader/weave = new /obj/structure/annomlies_diet/spidersilk/non_spreader(surround)
 			bluespace_entropy(5, M.loc)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,weave), 3 MINUTES)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel),weave), 3 MINUTES)
 	ScrollBurn()
 
 // Joke: Makes people in the radius of effect ether giggle, laugh or groan from the bad joke. Chance to be any of the 3 but everyone should match the type.
@@ -1591,8 +1629,8 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		var/obj/structure/annomlies_diet/ball_lightning/zappy = new /obj/structure/annomlies_diet/ball_lightning(pick(turf_list))
 		to_chat(M, SPAN_WARNING("A loud crackling fills the air as something forms."))
 		again = pick(TRUE, FALSE) //It will spawn more and more till it gets a bad flip on a 50/50 chance. How bad is your luck?
-		//creates a callback, global_proc is a mystery to me. But the .proc/ is actually required. As is the , between qdel and zappy. This fucking voodoo proc.
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,zappy), 3 MINUTES)
+		//creates a callback, global_proc is a mystery to me. But the GLOBAL_PROC_REF() is actually required. As is the , between qdel and zappy. This fucking voodoo proc.
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel),zappy), 3 MINUTES)
 	ScrollBurn()
 
 
@@ -1738,7 +1776,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			user.update_inv_gloves(1)
 		else
 			to_chat(user, SPAN_NOTICE("Voices boom in your thoughts. TAKE NOT! INEXPERIENCED PUPPET!"))
-		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
+		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
 
 /obj/structure/sink/basion/crayon/attackby(obj/item/I, mob/user)
 	if(I.has_quality(QUALITY_BOLT_TURNING))

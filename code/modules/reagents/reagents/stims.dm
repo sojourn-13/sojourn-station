@@ -271,7 +271,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.stats.addPerk(PERK_ULTRASURGEON)
-		addtimer(CALLBACK(H.stats, /datum/stat_holder/proc/removePerk, PERK_ULTRASURGEON), 600 * volume)
+		addtimer(CALLBACK(H.stats, TYPE_PROC_REF(/datum/stat_holder, removePerk), PERK_ULTRASURGEON), 600 * volume)
 	. = ..()
 
 /datum/reagent/stim/ultra_surgeon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

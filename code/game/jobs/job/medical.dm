@@ -65,18 +65,18 @@
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Soteria Medical Student"=/decl/hierarchy/outfit/job/medical/doctor/medStudent,"Soteria Nurse"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Soteria Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
-	noob_name = "Soteria Medical Student"
+	alt_titles = list("Soteria Nurse"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Soteria Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	playtimerequired = 240 //4 hours
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
@@ -108,6 +108,55 @@
 	name = "Soteria Doctor"
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
+
+/datum/job/medstudent
+	title = "Soteria Medical Resident"
+	flag = DOCTORJR
+	department = DEPARTMENT_MEDICAL
+	department_flag = MEDICAL
+	faction = MAP_FACTION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Chief Biolab Overseer"
+	difficulty = "Boring to Overwhelming."
+	selection_color = "#a8b69a"
+	wage = WAGE_PROFESSIONAL
+	minimum_character_age = 20
+	outfit_type = /decl/hierarchy/outfit/job/medical/doctor/medStudent
+	department_account_access = TRUE
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
+	access = list(
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology
+	)
+
+	stat_modifiers = list(
+		STAT_BIO = 40,
+		STAT_COG = 10
+	)
+
+	perks = list(PERK_MEDICAL_EXPERT, PERK_ADVANCED_MEDICAL, PERK_CHEMIST)
+
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							/datum/computer_file/program/chem_catalog,
+							/datum/computer_file/program/camera_monitor)
+
+	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
+	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
+	You are not expected to be an expert in all: specializing in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
+	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
+	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients and learn to be just like a real Doctor."
+
+	duties = "Heal the sick and injured, whatever their complaint.<br>\
+		Diagnose illnesses, offer general services, perform surgery, or even study viruses.<br>\
+		Fill in at chemistry if a Chemist is unavailable.<br>\
+		Learn how to be a real doctor."
+
+/obj/landmark/join/start/medstudent
+	name = "Soteria Student"
+	icon_state = "player-green-lower"
+	join_tag = /datum/job/medstudent
 
 /datum/job/recovery_team
 	title = "Soteria Lifeline Technician"

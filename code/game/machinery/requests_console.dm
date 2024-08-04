@@ -258,9 +258,9 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = "Premier's Desk"
 
 /obj/machinery/requests_console/preset/command/ceo
-	name = "CEO Request Console"
-	department = "Chief Executive Officer's Desk"
-	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //CEO should be able to get supply requests
+	name = "SOM Request Console"
+	department = "Surface Operations Manager's Desk"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //SOM should be able to get supply requests
 
 /obj/machinery/requests_console/preset/command/cbo
 	name = "CBO Request Console"

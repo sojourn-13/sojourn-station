@@ -1,254 +1,302 @@
-import { useBackend } from '../backend';
-import { LabeledList, Section, ProgressBar, Collapsible, Stack, Icon, Box, Tooltip, Button } from '../components';
+import { BooleanLike } from '../../common/react';
+import { decodeHtmlEntities } from '../../common/string';
+import { useBackend, useSharedState } from '../backend';
+import {
+  Box,
+  Button,
+  LabeledList,
+  Section,
+  Stack,
+  VirtualList,
+} from '../components';
 import { Window } from '../layouts';
-import { capitalize } from 'common/string';
-import { Design, MaterialMap } from './Fabrication/Types';
-import { DesignBrowser } from './Fabrication/DesignBrowser';
-import { BooleanLike, classes } from 'common/react';
-import { MaterialCostSequence } from './Fabrication/MaterialCostSequence';
-import { Material } from './Fabrication/Types';
+import { SearchBar } from './Fabrication/SearchBar';
+import {
+  AutolatheItem,
+  AutolatheQueue,
+  AutolatheQueueData,
+  Design,
+  LoadedMaterials,
+  MaterialData,
+} from './Matterforge';
 
-type AutolatheDesign = Design & {
-  buildable: BooleanLike;
-  mult5: BooleanLike;
-  mult10: BooleanLike;
-  mult25: BooleanLike;
-  mult50: BooleanLike;
-  sheet: BooleanLike;
-  maxmult: number;
+export type ReagentData = {
+  container: BooleanLike;
+  reagents: { name: string; amount: number }[];
 };
 
-type AutolatheData = {
-  materials: Material[];
-  materialtotal: number;
-  materialsmax: number;
-  designs: AutolatheDesign[];
-  active: BooleanLike;
-};
+export const Reagents = (props: ReagentData) => {
+  const { act } = useBackend();
 
-export const Autolathe = (props, context) => {
-  const { act, data } = useBackend<AutolatheData>(context);
-  const { materialtotal, materialsmax, materials, designs, active } = data;
-
-  const filteredMaterials = materials.filter((material) => material.amount > 0);
-
-  const availableMaterials: MaterialMap = {};
-
-  for (const material of filteredMaterials) {
-    availableMaterials[material.name] = material.amount;
-  }
+  const { container, reagents } = props;
 
   return (
-    <Window title="Autolathe" width={670} height={600}>
-      <Window.Content scrollable>
-        <Stack vertical fill>
+    <Section
+      height="100%"
+      title="Inserted beaker"
+      buttons={
+        container ? (
+          <Button
+            icon="eject"
+            tooltip="Eject Beaker"
+            onClick={() => act('eject_beaker')}
+          />
+        ) : null
+      }
+    >
+      {container ? (
+        reagents.length > 0 ? (
+          <LabeledList>
+            {reagents.map((reagent) => (
+              <LabeledList.Item key={reagent.name} label={reagent.name}>
+                {reagent.amount}
+              </LabeledList.Item>
+            ))}
+          </LabeledList>
+        ) : (
+          'Empty.'
+        )
+      ) : (
+        'Not inserted.'
+      )}
+    </Section>
+  );
+};
+
+export type DiskData = {
+  disk: {
+    name: string;
+    license: number;
+    read_only: BooleanLike;
+  };
+};
+
+export const Disk = (props: DiskData) => {
+  const { act } = useBackend();
+
+  const { disk } = props;
+
+  return (
+    <Section>
+      <LabeledList>
+        <LabeledList.Item
+          label="Disk"
+          color={disk ? 'white' : 'grey'}
+          buttons={
+            disk ? (
+              <Button
+                icon="eject"
+                tooltip="Eject Disk"
+                onClick={() => {
+                  act('eject_disk');
+                }}
+              />
+            ) : null
+          }
+        >
+          {disk ? decodeHtmlEntities(disk.name) : 'Not inserted.'}
+        </LabeledList.Item>
+        {disk && disk.license > 0 ? (
+          <LabeledList.Item label="License Points">
+            {disk.license}
+          </LabeledList.Item>
+        ) : null}
+      </LabeledList>
+    </Section>
+  );
+};
+
+type Data = MaterialData &
+  ReagentData &
+  DiskData &
+  AutolatheQueueData & {
+    have_reagents: BooleanLike;
+    have_materials: BooleanLike;
+    have_design_selector: BooleanLike;
+    designs: Design[];
+    error: string | null;
+    paused: BooleanLike;
+    speed: number;
+    special_actions: { name: string; icon: string; action: string }[];
+    mat_efficiency: number;
+    queue_max: number;
+    have_disk: BooleanLike;
+    categories: string[];
+    show_category: string;
+  };
+
+export const Autolathe = (props) => {
+  const { act, data } = useBackend<Data>();
+
+  const {
+    have_design_selector,
+    have_disk,
+    disk,
+    mat_capacity,
+    materials,
+    container,
+    reagents,
+    have_materials,
+    have_reagents,
+    designs,
+    current,
+    error,
+    paused,
+    progress,
+    queue,
+    queue_max,
+    special_actions,
+    categories,
+    show_category,
+    mat_efficiency,
+  } = data;
+
+  const [searchText, setSearchText] = useSharedState('search_text', '');
+
+  return (
+    <Window width={720} height={700}>
+      <Window.Content>
+        <Stack vertical height="100%">
           <Stack.Item>
-            <Section title="Total Materials">
-              <LabeledList>
-                <LabeledList.Item label="Total Materials">
-                  <ProgressBar
-                    value={materialtotal}
-                    minValue={0}
-                    maxValue={materialsmax}
-                    ranges={{
-                      'good': [materialsmax * 0.85, materialsmax],
-                      'average': [materialsmax * 0.25, materialsmax * 0.85],
-                      'bad': [0, materialsmax * 0.25],
-                    }}>
-                    {materialtotal + '/' + materialsmax + ' cm³'}
-                  </ProgressBar>
-                </LabeledList.Item>
-                <LabeledList.Item>
-                  {filteredMaterials.length > 0 && (
-                    <Collapsible title="Materials">
-                      <LabeledList>
-                        {filteredMaterials.map((material) => (
-                          <LabeledList.Item
-                            key={material.name}
-                            label={capitalize(material.name)}>
-                            <ProgressBar
-                              style={{
-                                transform: 'scaleX(-1) scaleY(1)',
-                              }}
-                              value={materialsmax - material.amount}
-                              maxValue={materialsmax}
-                              backgroundColor={material.color}
-                              color="black">
-                              <div style={{ transform: 'scaleX(-1)' }}>
-                                {material.amount + ' cm³'}
-                              </div>
-                            </ProgressBar>
-                          </LabeledList.Item>
-                        ))}
-                      </LabeledList>
-                    </Collapsible>
-                  )}
-                </LabeledList.Item>
-              </LabeledList>
-            </Section>
+            <Stack>
+              {have_materials ? (
+                <Stack.Item grow>
+                  <LoadedMaterials
+                    mat_capacity={mat_capacity}
+                    materials={materials}
+                  />
+                </Stack.Item>
+              ) : null}
+              {have_reagents ? (
+                <Stack.Item grow>
+                  <Reagents container={container} reagents={reagents} />
+                </Stack.Item>
+              ) : null}
+            </Stack>
           </Stack.Item>
+          {have_disk ? (
+            <Stack.Item>
+              <Disk disk={disk} />
+            </Stack.Item>
+          ) : null}
+          {special_actions ? (
+            <Stack.Item>
+              <Section title="Special Actions">
+                <Stack>
+                  {special_actions.map((action) => (
+                    <Stack.Item key={action.action}>
+                      <Button
+                        icon={action.icon}
+                        onClick={() => {
+                          act('special_action', { action: action.action });
+                        }}
+                      >
+                        {action.name}
+                      </Button>
+                    </Stack.Item>
+                  ))}
+                </Stack>
+              </Section>
+            </Stack.Item>
+          ) : null}
+          {categories ? (
+            <Stack.Item>
+              <Section>
+                <Stack fill wrap justify="center" align="center">
+                  {categories.map((category) => (
+                    <Stack.Item key={category} mb={0.5} mt={0.5}>
+                      <Button
+                        selected={category === show_category}
+                        onClick={() =>
+                          act('switch_category', { category: category })
+                        }
+                      >
+                        {category}
+                      </Button>
+                    </Stack.Item>
+                  ))}
+                </Stack>
+              </Section>
+            </Stack.Item>
+          ) : null}
           <Stack.Item grow>
-            <DesignBrowser
-              busy={!!active}
-              designs={designs}
-              availableMaterials={availableMaterials}
-              buildRecipeElement={(
-                design,
-                availableMaterials,
-                _onPrintDesign
-              ) => (
-                <AutolatheRecipe
-                  design={design}
-                  availableMaterials={availableMaterials}
-                />
-              )}
-            />
+            <Stack height="95%">
+              {designs ? (
+                <Stack.Item grow height="100%">
+                  {have_design_selector ? (
+                    <Section title="Recipes" fill>
+                      <Box style={{ paddingBottom: '8px' }}>
+                        <SearchBar
+                          searchText={searchText}
+                          onSearchTextChanged={setSearchText}
+                          hint={'Search all designs...'}
+                        />
+                      </Box>
+                      <Section
+                        style={{
+                          paddingRight: '4px',
+                          paddingBottom: '30px',
+                        }}
+                        fill
+                        scrollable
+                      >
+                        <Stack vertical>
+                          <VirtualList>
+                            {searchText.length > 0
+                              ? designs
+                                  .filter((design) =>
+                                    design.name
+                                      .toLowerCase()
+                                      .includes(searchText),
+                                  )
+                                  .map((design) => {
+                                    return (
+                                      <Stack.Item key={design.id + design.name}>
+                                        <AutolatheItem
+                                          design={design}
+                                          mat_efficiency={mat_efficiency}
+                                        />
+                                      </Stack.Item>
+                                    );
+                                  })
+                              : designs.map((design) => {
+                                  return (
+                                    <Stack.Item key={design.id + design.name}>
+                                      <AutolatheItem
+                                        design={design}
+                                        mat_efficiency={mat_efficiency}
+                                      />
+                                    </Stack.Item>
+                                  );
+                                })}
+                          </VirtualList>
+                        </Stack>
+                      </Section>
+                    </Section>
+                  ) : (
+                    <Section color="bad">
+                      This equipment is operated remotely.
+                    </Section>
+                  )}
+                </Stack.Item>
+              ) : null}
+              {queue ? (
+                <Stack.Item grow>
+                  <AutolatheQueue
+                    current={current}
+                    error={error}
+                    paused={paused}
+                    progress={progress}
+                    queue={queue}
+                    queue_max={queue_max}
+                    mat_efficiency={mat_efficiency}
+                  />
+                </Stack.Item>
+              ) : null}
+            </Stack>
           </Stack.Item>
         </Stack>
       </Window.Content>
     </Window>
-  );
-};
-
-type PrintButtonProps = {
-  design: Design;
-  quantity: number;
-  availableMaterials: MaterialMap;
-};
-
-const PrintButton = (props: PrintButtonProps, context) => {
-  const { act, data } = useBackend<AutolatheData>(context);
-  const { design, quantity, availableMaterials } = props;
-
-  const canPrint = !Object.entries(design.cost).some(
-    ([material, amount]) =>
-      !availableMaterials[material] ||
-      amount * quantity > (availableMaterials[material] ?? 0)
-  );
-
-  return (
-    <Tooltip
-      content={
-        <MaterialCostSequence
-          design={design}
-          amount={quantity}
-          available={availableMaterials}
-        />
-      }>
-      <div
-        className={classes([
-          'FabricatorRecipe__Button',
-          !canPrint && 'FabricatorRecipe__Button--disabled',
-        ])}
-        color={'transparent'}
-        onClick={() => act('make', { id: design.id, multiplier: quantity })}>
-        &times;{quantity}
-      </div>
-    </Tooltip>
-  );
-};
-
-type AutolatheRecipeProps = {
-  design: AutolatheDesign;
-  availableMaterials: MaterialMap;
-};
-
-const AutolatheRecipe = (props: AutolatheRecipeProps, context) => {
-  const { act, data } = useBackend<AutolatheData>(context);
-  const { design, availableMaterials } = props;
-
-  const canPrint = !Object.entries(design.cost).some(
-    ([material, amount]) =>
-      !availableMaterials[material] ||
-      amount > (availableMaterials[material] ?? 0)
-  );
-
-  return (
-    <div className="FabricatorRecipe">
-      <Tooltip content={design.desc} position="right">
-        <div
-          className={classes([
-            'FabricatorRecipe__Button',
-            'FabricatorRecipe__Button--icon',
-            !canPrint && 'FabricatorRecipe__Button--disabled',
-          ])}>
-          <Icon name="question-circle" />
-        </div>
-      </Tooltip>
-      <Tooltip
-        content={
-          <MaterialCostSequence
-            design={design}
-            amount={1}
-            available={availableMaterials}
-          />
-        }>
-        <div
-          className={classes([
-            'FabricatorRecipe__Title',
-            !canPrint && 'FabricatorRecipe__Title--disabled',
-          ])}
-          onClick={() => act('make', { id: design.id, multiplier: 1 })}>
-          <div className="FabricatorRecipe__Icon">
-            <Box
-              width={'32px'}
-              height={'32px'}
-              className={classes(['design32x32', design.icon])}
-            />
-          </div>
-          <div className="FabricatorRecipe__Label">{design.name}</div>
-        </div>
-      </Tooltip>
-
-      {!!design.mult5 && (
-        <PrintButton
-          design={design}
-          quantity={5}
-          availableMaterials={availableMaterials}
-        />
-      )}
-
-      {!!design.mult10 && (
-        <PrintButton
-          design={design}
-          quantity={10}
-          availableMaterials={availableMaterials}
-        />
-      )}
-
-      {!!design.mult25 && (
-        <PrintButton
-          design={design}
-          quantity={25}
-          availableMaterials={availableMaterials}
-        />
-      )}
-
-      {!!design.mult50 && (
-        <PrintButton
-          design={design}
-          quantity={50}
-          availableMaterials={availableMaterials}
-        />
-      )}
-
-      <div
-        className={classes([
-          'FabricatorRecipe__Button',
-          !canPrint && 'FabricatorRecipe__Button--disabled',
-        ])}>
-        <Button.Input
-          content={'[Max: ' + design.maxmult + ']'}
-          color={'transparent'}
-          maxValue={design.maxmult}
-          onCommit={(_e, value: string) =>
-            act('make', {
-              id: design.id,
-              multiplier: value,
-            })
-          }
-        />
-      </div>
-    </div>
   );
 };

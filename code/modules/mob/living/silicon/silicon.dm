@@ -1,6 +1,7 @@
 /mob/living/silicon
 	gender = NEUTER
 	voice_name = "synthesized voice"
+	has_unlimited_silicon_privilege = TRUE
 	var/syndicate = 0
 	var/const/MAIN_CHANNEL = "Main Frequency"
 	var/lawchannel = MAIN_CHANNEL // Default channel on which to state laws
@@ -55,6 +56,7 @@
 	add_language(LANGUAGE_SYNTHETIC)
 	add_language(LANGUAGE_MERP)
 	add_language(LANGUAGE_BLORP)
+	add_language(LANGUAGE_WEH)
 	init_id()
 	init_subsystems()
 
@@ -162,15 +164,16 @@
 
 // this function shows the health of the AI in the Status panel
 /mob/living/silicon/proc/show_system_integrity()
+	. = list()
 	if(!src.stat)
-		stat(null, text("System integrity: [round((health/maxHealth)*100)]%"))
+		. += "System integrity: [round((health/maxHealth)*100)]%"
 	else
-		stat(null, text("Systems nonfunctional"))
+		. += "Systems nonfunctional"
 
 
 // This is a pure virtual function, it should be overwritten by all subclasses
 /mob/living/silicon/proc/show_malf_ai()
-	return 0
+	return list()
 
 // this function displays the shuttles ETA in the status panel if the shuttle has been called
 /mob/living/silicon/proc/show_emergency_shuttle_eta()
@@ -181,12 +184,10 @@
 
 
 // This adds the basic clock, shuttle recall timer, and malf_ai info to all silicon lifeforms
-/mob/living/silicon/Stat()
-	if(statpanel("Status"))
-		show_emergency_shuttle_eta()
-		show_system_integrity()
-		show_malf_ai()
+/mob/living/silicon/get_status_tab_items()
 	. = ..()
+	. += show_system_integrity()
+	. += show_malf_ai()
 
 //can't inject synths
 /mob/living/silicon/can_inject(var/mob/user, var/error_msg, var/target_zone)
@@ -259,7 +260,7 @@
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null) as text)
 
 /mob/living/silicon/verb/recalibrate_hotkeys()
 	set name = "Recalibrate Hotkeys"
@@ -267,10 +268,9 @@
 	set category = "OOC"
 
 	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
 	else
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
-
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

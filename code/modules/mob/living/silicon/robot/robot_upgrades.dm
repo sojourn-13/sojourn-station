@@ -38,6 +38,8 @@
 	R.modtype = initial(R.modtype)
 
 	R.notify_ai(ROBOT_NOTIFICATION_MODULE_RESET, R.module.name)
+	if(R.shown_robot_modules)
+		R.toggle_show_robot_modules() //fix for borgs fucking their inventory windows up by reseting with it open.
 	R.module.Reset(R)
 	R.module = null
 	R.updatename("Default")

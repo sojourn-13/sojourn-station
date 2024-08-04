@@ -14,31 +14,39 @@
 	max_upgrades = 0 //Upgrading this revolver destorys its stats
 	serial_type = "INDEX" //We live in a suscity
 	serial_shown = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	init_recoil = HANDGUN_RECOIL(1.2)
+	var/fake_name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
+	force = initial(force)
+	name = fake_name
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[fake_name] (Wielded)"
 	return //Same reason why we dont have max upgrades, refreshing in this case is always bad
 
+/obj/item/gun/projectile/revolver/artwork_revolver/proc/ensure_updates()
+	if(caliber == CAL_PISTOL)
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_9MM)// if we get 9mm then we should take 9mm upgrades
+
+	if(recoil)
+		recoil = recoil.modifyAllRatings(1+rand(-2,2)/10)
+	else
+		init_recoil = HANDGUN_RECOIL(1.2)
+		recoil = getRecoil(arglist(init_recoil))
+		recoil = recoil.modifyAllRatings(1+rand(-2,2)/10)
+	name = fake_name
+
 /obj/item/gun/projectile/revolver/artwork_revolver/Initialize()
-	name = get_weapon_name(capitalize = TRUE)
+	fake_name = get_weapon_name(capitalize = TRUE)
 
 	var/random_icon = rand(1,5)
 	icon_state = "artwork_revolver_[random_icon]"
 	item_state = "artwork_revolver_[random_icon]"
-	caliber = pick(CAL_MAGNUM,CAL_PISTOL)
-	if(caliber == CAL_PISTOL)
-		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_9MM)// if we get 9mm then we should take 9mm upgrades
-	else
-		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
-	max_shells += rand(-2,7)
-
-	var/sanity_value = 0.2 + pick(0,0.1,0.2)
-	AddComponent(/datum/component/atom_sanity, sanity_value, "")
-
-	//var/gun_pattern = pick("pistol","magnum","shotgun","rifle","sniper","gyro","cap","rocket","grenade")
-	var/random_recoil = rand(0.8, 1.2)
-	recoil = recoil.modifyAllRatings(random_recoil)
-	damage_multiplier += pick(-0.2,-0.1,0,0.1,0.2)
-	penetration_multiplier += pick(-0.2,-0.1,0,0.1,0.2)
 	. = ..()
 
 /obj/item/gun/projectile/revolver/artwork_revolver/get_item_cost(export)

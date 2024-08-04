@@ -137,7 +137,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define L_HAND_LAYER			29
 #define R_HAND_LAYER			30
 #define FIRE_LAYER				31		//If you're on fire
-#define TOTAL_LAYERS			31
+#define BLOCKING_LAYER		    32
+#define TOTAL_LAYERS			32
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -166,8 +167,6 @@ Please contact me on #coderbus IRC. ~Carn x
 )
 	else
 		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
-
-	COMPILE_OVERLAYS(src)
 
 	. = ..()
 
@@ -494,6 +493,7 @@ var/global/list/wings_icon_cache = list()
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
 				valid_body_parts += part
+			CHECK_TICK
 		var/icon/specific_marking_icon
 		var/cache_key = "[markname]-[valid_body_parts.Join("_")]"
 		var/advanced_cache_key = "B*[cache_key]*[body_markings[markname]]*[real_marking.blend]" //The *B is there to prevent collisions.
@@ -516,6 +516,7 @@ var/global/list/wings_icon_cache = list()
 			marking_icon.Blend(specific_marking_icon, ICON_OVERLAY)
 		else //WARNING: THIS WILL BREAK IF WE EVER USE INCONSISTENT MARKING SIZES
 			marking_icon = specific_marking_icon
+		CHECK_TICK
 	return image(marking_icon)
 
 //Insert Furry Bits
@@ -1376,6 +1377,13 @@ mob/living/carbon/human/proc/get_wings_image()
 		overlays_standing[FIRE_LAYER] = image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing", "layer"=FIRE_LAYER)
 
 	if(update_icons)   update_icons()
+
+/mob/living/carbon/human/proc/update_block_overlay(var/update_icons=1)
+	overlays_standing[BLOCKING_LAYER] = null
+	if(blocking)
+		overlays_standing[BLOCKING_LAYER] = image("icon"='icons/mob/misc_overlays.dmi', "icon_state"="block", "layer"=BLOCKING_LAYER)
+
+	update_icons()
 
 /mob/living/carbon/human/proc/update_surgery(var/update_icons=1)
 	overlays_standing[SURGERY_LAYER] = null

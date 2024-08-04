@@ -87,6 +87,12 @@ obj/item/clothing/under/costume/history/pirate
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/under/costume/propermaid
+	name = "formal maid dress"
+	desc = "A proper black dress with a frilly white apron."
+	icon_state = "propermaid"
+	item_state = "propermaid"
+
 /*Kinky*/
 
 /obj/item/clothing/under/costume/kinky/latex_maid

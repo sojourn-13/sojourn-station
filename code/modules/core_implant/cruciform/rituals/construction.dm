@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		C.is_busy = FALSE
 		return FALSE
 
-	user.visible_message(SPAN_NOTICE("You see as [user] passes his hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
+	user.visible_message(SPAN_NOTICE("You see as [user] passes their hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
 
 	if(C.get_module(CRUCIFORM_FACT)) //Factorials get 25% build time reduction. Value can change if things get unbalanced with golems.
 		construct_time *= 0.75
@@ -116,7 +116,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 	effect.success()
 	C.is_busy = FALSE
-	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
+	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes their ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
 	return TRUE
@@ -380,7 +380,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/machinery/bioreactor_unloader
 	name = "Biomatter Reactor: Unloader" //Basically a hopper
-	build_path = /obj/machinery/multistructure/bioreactor_part/platform
+	build_path = /obj/machinery/multistructure/bioreactor_part/unloader
 	materials = list(
 		/obj/item/stack/material/steel = 10
 	)
@@ -406,27 +406,8 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	)
 	build_time = 6 SECONDS
 
-/datum/nt_blueprint/machinery/bioreactor_biotank
-	name = "Biomatter Reactor: Tank"
-	build_path = /obj/machinery/multistructure/bioreactor_part/biotank_platform
-	materials = list(
-		/obj/item/stack/material/plastic = 10,
-		/obj/item/stack/material/steel = 20,
-		/obj/structure/reagent_dispensers/biomatter/large = 1
-	)
-	build_time = 6 SECONDS
 
-/datum/nt_blueprint/machinery/bioreactor_unloader
-	name = "Biomatter Reactor: Unloader"
-	build_path = /obj/machinery/multistructure/bioreactor_part/unloader
-	materials = list(
-		/obj/item/stack/material/plastic = 10,
-		/obj/item/stack/rods = 5,
-		/obj/structure/reagent_dispensers/biomatter = 1
-	)
-	build_time = 8 SECONDS
-
-/datum/nt_blueprint/machinery/bioreactor_unloader
+/datum/nt_blueprint/machinery/platform
 	name = "Biomatter Reactor: Bioreactor Platform"
 	build_path = /obj/machinery/multistructure/bioreactor_part/platform
 	materials = list(
@@ -558,7 +539,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	)
 	build_time = 8 SECONDS
 
-
+/* Removed do to exploits
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
 /datum/nt_blueprint/weapons
 	blueprint_type = "item"
@@ -639,4 +620,4 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/silver = 1
 	)
 	build_time = 5 SECONDS
-
+*/

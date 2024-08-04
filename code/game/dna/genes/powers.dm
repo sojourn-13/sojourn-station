@@ -35,7 +35,7 @@
 
 	activate(var/mob/M, var/connected, var/flags)
 		..(M,connected,flags)
-		M.verbs += /mob/living/carbon/human/proc/remoteobserve
+		add_verb(M, /mob/living/carbon/human/proc/remoteobserve)
 
 /datum/dna/gene/basic/regenerate
 	name="Regenerate"
@@ -63,7 +63,7 @@
 
 	activate(var/mob/M, var/connected, var/flags)
 		..(M,connected,flags)
-		M.verbs += /mob/living/carbon/human/proc/remotesay
+		add_verb(M, /mob/living/carbon/human/proc/remotesay)
 
 /datum/dna/gene/basic/morph
 	name="Morph"
@@ -75,7 +75,7 @@
 
 	activate(var/mob/M)
 		..(M)
-		M.verbs += /mob/living/carbon/human/proc/morph
+		add_verb(M, /mob/living/carbon/human/proc/morph)
 
 /* Not used on bay
 /datum/dna/gene/basic/heat_resist

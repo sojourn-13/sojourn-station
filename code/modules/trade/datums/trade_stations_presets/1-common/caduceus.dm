@@ -70,7 +70,6 @@
 			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
 		),
 		"Misc" = list(
-//			/obj/item/virusdish/random,		// Spawns without an icon
 			/obj/structure/reagent_dispensers/coolanttank,
 			/obj/item/clothing/mask/breath/medical,
 			/obj/item/clothing/mask/surgical,
@@ -120,9 +119,9 @@
 	offer_types = list(
 		/obj/item/organ/internal/scaffold = offer_data_mods("aberrant organ (input, process, output)", 1200, 4, OFFER_ABERRANT_ORGAN, 3),
 		/datum/reagent/medicine/ossisine = offer_data("ossissine bottle (60u)", 2000, 1),
-		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 200, 3),
-		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 200, 3),
-		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 200, 3),
+		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 250, 3),
+		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 250, 3),
+		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 250, 3),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)
 		)

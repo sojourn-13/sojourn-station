@@ -34,9 +34,9 @@
 	/// The buildmode holders this mob is currently selected by.
 	var/list/obj/effect/bmode/buildholder/selected_by = list()
 
-	var/armor_penetration = 0 //Used for generic attacks
-	var/projectile_armor_penetration_adjustment = 0
-	var/projectile_armor_penetration_mult = 1
+	var/armor_divisor = 1 //Used for generic attacks
+	var/projectile_armor_divisor_adjustment = 0
+	var/projectile_armor_divisor_mult = 1
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -46,6 +46,8 @@
 	var/cloneloss = 0	//Damage caused by being cloned or ejected from the cloner early. slimes also deal cloneloss damage to victims
 	var/brainloss = 0	//'Retardation' damage caused by someone hitting you in the head with a bible or being infected with brainrot.
 	var/halloss = 0		//Hallucination damage. 'Fake' damage obtained through hallucinating or the holodeck. Sleeping should cause it to wear off.
+
+	var/injury_type = INJURY_TYPE_LIVING //Humanmob uses species instead
 
 	var/last_special = 0 //Used by the resist verb, likely used to prevent players from bypassing next_move by logging in/out.
 
@@ -65,7 +67,6 @@
 	//When this mob spawns at roundstart, a burrow will be created near it if it can't find one
 
 	var/mob/living/cameraFollow = null
-	var/list/datum/action/actions = list()
 	var/step_count = 0
 
 	var/tod = null // Time of death
@@ -116,7 +117,7 @@
 	var/mod_climb_delay = 1 // delay for climb
 	var/noise_coeff = 1 //noise coefficient
 	var/brute_mod_perk = 1 //this and the ones below adjust various damages via perks
-	var/burn_mod_perk = 1
+	var/burn_mod_perk = 1 //Please make any and all adjustments multiplicative only for all damage mods
 	var/toxin_mod_perk = 1
 	var/oxy_mod_perk = 1
 
@@ -139,3 +140,6 @@
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
 	var/next_onfire_brn = 0 //burn
+
+	/// Icon used for speechbubbles
+	var/bubble_icon = "default"

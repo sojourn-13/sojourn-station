@@ -143,7 +143,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/can_pull_mobs = MOB_PULL_LARGER       // Whether or not the mob can pull other mobs.
 
 	var/datum/dna/dna = null//Carbon
-	var/list/active_genes=list()
+	var/list/active_genes = null
 	var/list/mutations = list() //Carbon -- Doohl
 	//see: setup.dm for list of mutations
 
@@ -168,6 +168,9 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/update_icon = 1 //Set to 1 to trigger update_icons() at the next life() call
 
 	var/status_flags = CANSTUN|CANWEAKEN|CANPARALYSE|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canweaken, canstun, etc)
+
+	/// Can they interact with station electronics
+	var/has_unlimited_silicon_privilege = FALSE
 
 	var/area/lastarea = null
 
@@ -205,6 +208,9 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/list/HUDtech = list()
 	var/defaultHUD = "" //Default mob hud
 
+	/// lazy list. contains /obj/screen/alert only,  On /mob so clientless mobs will throw alerts properly
+	var/list/alerts
+
 	var/list/progressbars = null
 
 	///The z level this mob is currently registered in
@@ -223,3 +229,4 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally
 
 	var/click_delay_addition = 0
+	var/list/datum/action/actions = list()

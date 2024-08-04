@@ -145,7 +145,7 @@
 		if(H.belt == src && !annomlie_givith)
 			annomlie_givith = TRUE
 			to_remove_givith = TRUE
-			addtimer(CALLBACK(src, /obj/item/stalker_hand_annomlie/dice/proc/rngus, H), timer_to_mins MINUTES)
+			addtimer(CALLBACK(src, PROC_REF(rngus), H), timer_to_mins MINUTES)
 		if(to_remove_givith && !(H.belt == src))
 			annomlie_givith = FALSE
 			to_remove_givith = FALSE

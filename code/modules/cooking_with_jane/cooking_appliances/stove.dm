@@ -17,6 +17,8 @@
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[4]
 
+	var/datum/effect/effect/system/smoke_spread/bad/bsmoke = new /datum/effect/effect/system/smoke_spread/bad
+
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
 	var/power_cost = 2500 //Power cost per process step for a particular burner
 	var/check_on_10 = 0
@@ -26,11 +28,17 @@
 	circuit = /obj/item/circuitboard/cooking_with_jane/stove
 	scan_types = list("scan_1")
 
+/obj/machinery/cooking_with_jane/stove/New()
+	..()
+	bsmoke.attach(src)
+	bsmoke.set_up(7, 0, src.loc)
+
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/stove/Process()
 
-	//if(on_fire)
-		//Do bad things if it is on fire.
+	if(on_fire)
+		emit_fire()
+
 	for(var/i=1, i<=4, i++)
 		if(switches[i])
 			handle_cooking(null, i, FALSE)
@@ -104,12 +112,21 @@
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_ignition(input)
-	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
+	if(!(items && istype(items, /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
-	if(container.handle_ignition())
-		on_fire = TRUE
+	//Initial burst of smoke so it matches the fire alarm
+	bsmoke.start()
+
+	//Trigger fire alarms
+	var/area/area = get_area(src)
+	for(var/obj/machinery/firealarm/FA in area)
+		fire_alarm.triggerAlarm(loc, FA, 0)
+
+	on_fire = TRUE
+
+/obj/machinery/cooking_with_jane/stove/proc/emit_fire()
+	bsmoke.start()
 
 //Retrieve which quadrant of the baking pan is being used.
 /obj/machinery/cooking_with_jane/stove/proc/getInput(params)
@@ -134,6 +151,26 @@
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
+
+	if(on_fire && istype(used_item, /obj/item/extinguisher))
+		var/obj/item/extinguisher/exting = used_item
+		if(!exting.safety)
+			if (exting.reagents.total_volume < 1)
+				to_chat(usr, SPAN_NOTICE("\The [exting] is empty."))
+				return
+
+			if (world.time < exting.last_use + 20)
+				return
+
+			exting.last_use = world.time
+
+			playsound(exting.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+
+			exting.reagents.remove_any(20)
+
+			on_fire = FALSE
+
+			return
 
 	var/input = getInput(params)
 
@@ -296,10 +333,7 @@
 	#endif
 
 
-	if(container.stove_data[temperature[input]])
-		container.stove_data[temperature[input]] += reference_time
-	else
-		container.stove_data[temperature[input]] = reference_time
+	container.stove_data[temperature[input]] = reference_time
 
 
 	if(user && user.Adjacent(src))

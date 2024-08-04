@@ -1,5 +1,22 @@
-//Lallander was here
+/mob/living/carbon/human/whisper_wrapper()
+	if(client?.get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(client, null, "command=[client.tgui_say_create_open_command(WHIS_CHANNEL)]")
+		return
+
+	client?.start_thinking()
+	// set_typing_indicator(TRUE)
+	// hud_typing = TRUE
+	var/message = input("", "whisper (text)") as text|null
+	// hud_typing = FALSE
+	// set_typing_indicator(FALSE)
+	client?.stop_thinking()
+	if(message)
+		whisper(message)
+
 /mob/living/carbon/human/whisper(message as text)
+	set name = "Whisper"
+	set category = "IC"
+
 	var/alt_name = ""
 
 	if(say_disabled)	//This is here to try to identify lag problems

@@ -290,7 +290,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/show_player_panel, null, TRUE)
 ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 //allows access of newscasters
 /datum/admins/proc/access_news_network() //MARKER
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Access Newscaster Network"
 	set desc = "Allows you to view, add and edit news feeds."
 
@@ -619,7 +619,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/restart, R_SERVER, FALSE)
 ADMIN_VERB_ADD(/datum/admins/proc/announce, R_ADMIN, FALSE)
 //priority announce something to all clients.
 /datum/admins/proc/announce()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Announce"
 	set desc="Announce your desires to the world"
 	if(!check_rights(0))
@@ -778,22 +778,37 @@ ADMIN_VERB_ADD(/datum/admins/proc/delay, R_SERVER, FALSE)
 /datum/admins/proc/delay()
 	set category = "Server"
 	set desc="Delay the game start/end"
-	set name="Delay"
+	set name="Start/End Delay"
 
 	if(!check_rights(R_SERVER))
 		return
 	if (SSticker.current_state != GAME_STATE_PREGAME && SSticker.current_state != GAME_STATE_STARTUP)
-		SSticker.delay_end = !SSticker.delay_end
-		log_admin("[key_name(usr)] [SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
-		message_admins("\blue [key_name(usr)] [SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].", 1)
+		SSticker.delay_end = TRUE
+		log_admin("[key_name(usr)] delayed the round end")
+		message_admins("\blue [key_name(usr)] delayed the round end.", 1)
 		return
-	round_progressing = !round_progressing
-	if (!round_progressing)
-		to_chat(world, "<b>The game start has been delayed.</b>")
-		log_admin("[key_name(usr)] delayed the game.")
-	else
-		to_chat(world, "<b>The game will start soon.</b>")
-		log_admin("[key_name(usr)] removed the delay.")
+
+	round_progressing = FALSE
+	to_chat(world, "<b>The game start has been delayed.</b>")
+	log_admin("[key_name(usr)] delayed the game.")
+
+
+ADMIN_VERB_ADD(/datum/admins/proc/resume, R_SERVER, FALSE)
+/datum/admins/proc/resume()
+	set category = "Server"
+	set desc="Resume the game start/end"
+	set name="Start/End Resume"
+
+	if(!check_rights(R_SERVER))
+		return
+	if (SSticker.current_state != GAME_STATE_PREGAME && SSticker.current_state != GAME_STATE_STARTUP)
+		SSticker.delay_end = FALSE
+		log_admin("[key_name(usr)] has made the round end normally.")
+		message_admins("\blue [key_name(usr)] has made the round end normally.", 1)
+		return
+	round_progressing = TRUE
+	to_chat(world, "<b>The game will start soon.</b>")
+	log_admin("[key_name(usr)] removed the delay.")
 
 ADMIN_VERB_ADD(/datum/admins/proc/adjump, R_SERVER, FALSE)
 /datum/admins/proc/adjump()
@@ -987,7 +1002,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/remove_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 /datum/admins/proc/remove_var_copy(var/target_copy as text)
 	set name = "Remove Copy"
 	set desc = "Remove a vareditted var template"
-	set category = "Fun"
+	set category = "Admin.Events"
 
 	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
 		return
@@ -1014,7 +1029,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 /datum/admins/proc/spawn_var_copy(var/target_copy as text)
 	set name = "Spawn Copy"
 	set desc = "Spawn a atom with a vareditted var template"
-	set category = "Fun"
+	set category = "Admin.Events"
 
 	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
 		return
@@ -1042,7 +1057,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/list_var_copies, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 /datum/admins/proc/list_var_copies()
 	set name = "List Copy Names"
 	set desc = "List the names of all currently saved var copies"
-	set category = "Fun"
+	set category = "Admin.Events"
 
 	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
 		return
@@ -1270,7 +1285,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/force_mode_latespawn, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/datum/admins/proc/paralyze_mob, R_ADMIN, FALSE)
 /datum/admins/proc/paralyze_mob(mob/living/H as mob)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Toggle Paralyze"
 	set desc = "Paralyzes a player. Or unparalyses them."
 

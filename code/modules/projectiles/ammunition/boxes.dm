@@ -95,7 +95,7 @@
 // 9mm BIG BAWKS
 /obj/item/ammo_magazine/ammobox/pistol_35/large
 	name = "ammunition box (9mm)"
-	desc = "A large box of police grade 9mm. Has a proper less-than-lethal certification on the label."
+	desc = "A large box of police grade 9mm."
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
 	max_ammo = 200
@@ -341,7 +341,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
-	name = "ammunition box (7.62mm Rifle High-Velocity)"
+	name = "ammunition box (7.62mm Rifle APDS)"
 	icon_state = "boxhrifle-hv"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
@@ -366,7 +366,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.62mm Rifle high-velocity)"
+	name = "ammunition packet (7.62mm Rifle APDS)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
@@ -535,7 +535,7 @@
 	name = "ammunition packet (8.6mm ball)"
 	icon_state = "hrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_CARDBOARD = 1)
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 40
@@ -707,7 +707,7 @@
 	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_NORMAL //so we dont magiclly shrink
 	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 35
+	max_ammo = 40 //Down to 40 from 50 from original 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/update_icon()
 	var/iconstring = initial(icon_state)
@@ -775,12 +775,12 @@
 	name = "ammunition packet (20mm Stun Shells)"
 	icon_state = "stunslug"
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
-
+/*
 /obj/item/ammo_magazine/ammobox/shotgun/payload
 	name = "ammunition packet (20mm Explosive Shells)"
 	icon_state = "explosive"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
-
+*/
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 	name = "ammunition packet (20mm Incendiary)"
 	icon_state = "incendiary"
@@ -800,4 +800,3 @@
 	name = "old ammunition packet (20mm Slug)"
 	icon_state = "shot_ss"
 	ammo_type = /obj/item/ammo_casing/shotgun/scrap
-

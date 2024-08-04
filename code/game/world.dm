@@ -12,6 +12,8 @@ var/global/datum/global_init/init = new ()
 	Pre-map initialization stuff should go here.
 */
 
+#define TGS_TOPIC var/tgs_topic_return = TgsTopic(args[1]); if(tgs_topic_return) return tgs_topic_return
+
 /datum/global_init/New()
 	generate_gameid()
 	load_configuration()
@@ -84,10 +86,11 @@ var/game_id
 	href_logfile = file("data/logs/[date_string] hrefs.htm")
 	diary = file("data/logs/[date_string].log")
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
+	GLOB.tgui_log = file("data/logs/[date_string] tgui.log") // TODO: rustg logs
 
 	// TODO: globalize me
 	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
-	changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for telling if the changelog has changed recently
+	changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for dtelling if the changelog has changed recently
 
 	world_qdel_log = file("data/logs/[date_string] qdel.log")	// GC Shutdown log
 
@@ -128,7 +131,7 @@ var/game_id
 	#endif
 
 	if(config.ToRban)
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, /proc/ToRban_autoupdate))
+		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ToRban_autoupdate)))
 
 	call_restart_webhook()
 
@@ -142,11 +145,11 @@ var/game_id
 	// CONFIG_SET(number/round_end_countdown, 0)
 	var/datum/callback/cb
 #ifdef UNIT_TESTS
-	cb = CALLBACK(GLOBAL_PROC, /proc/RunUnitTests)
+	cb = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(RunUnitTests))
 #else
 	cb = VARSET_CALLBACK(global, universe_has_ended, TRUE)
 #endif
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, /proc/_addtimer, cb, 10 SECONDS))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_addtimer), cb, 10 SECONDS))
 
 /world/proc/SetupLogs()
 	var/override_dir = params[OVERRIDE_LOG_DIRECTORY_PARAMETER]
@@ -166,6 +169,7 @@ var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
 
 /world/Topic(T, addr, master, key)
+	TGS_TOPIC
 	var/list/topic_handlers = WorldTopicHandlers()
 
 	var/list/input = params2list(T)

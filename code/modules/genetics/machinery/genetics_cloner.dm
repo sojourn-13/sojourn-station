@@ -302,7 +302,6 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/proc/init_disposal_holder()
 	var/obj/structure/disposalholder/holder = new()
 
-	holder.gas = air_contents// transfer gas resv. into holder object -- let's be explicit about the data this proc consumes, please.
 	holder.from_cloner = TRUE
 
 	//Check for any living mobs trigger hasmob.
@@ -651,7 +650,7 @@ and which aren't.
 
 	var/cloneLog = ""
 	var/menuOption = VAT_MENU_SELECT
-
+	circuit = /obj/item/circuitboard/genetics/clone_console
 	var/obj/machinery/genetics/cloner/linked_cloner
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
 
@@ -762,7 +761,7 @@ and which aren't.
 	if(href_list["sync_console"])
 		menuOption = VAT_MENU_WORKING
 		//This is too wierd to chance using.
-		//addtimer(CALLBACK(src, .proc/sync), 3 SECONDS)
+		//addtimer(CALLBACK(src, PROC_REF(sync)), 3 SECONDS)
 		sync()
 
 	add_fingerprint(usr)

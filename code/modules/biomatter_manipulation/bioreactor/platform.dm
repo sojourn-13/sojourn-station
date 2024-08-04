@@ -70,6 +70,9 @@
 							if(stack_type)
 								var/obj/item/stack/material/waste = new stack_type(MS_bioreactor.misc_output)
 								waste.amount = target.matter[material]
+								waste.amount = round(waste.amount) //So we dont get half stacks
+								if(waste.amount <= 0)
+									waste.amount = 1 //If we have negitive materal or 0 then magically give 1 to prevent bugs
 								waste.update_strings()
 							target.matter -= material
 						consume(target)
@@ -203,7 +206,7 @@
 
 
 /obj/structure/window/reinforced/bioreactor/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	..()
 	if(contamination_level)
 		var/biomass_alpha = min((50*contamination_level), 255)
@@ -212,7 +215,7 @@
 		biomass.Turn(-40, 40)
 		biomass.Blend(rgb(0, 0, 0, biomass_alpha))
 		default.Blend(biomass, ICON_MULTIPLY)
-		overlays += default
+		add_overlay(default)
 
 
 /obj/structure/window/reinforced/bioreactor/proc/apply_dirt(var/amount)

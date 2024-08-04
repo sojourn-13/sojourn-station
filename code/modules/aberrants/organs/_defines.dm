@@ -11,16 +11,16 @@
 #define ALL_STANDARD_ORGAN_EFFICIENCIES list(OP_HEART, OP_LUNGS, OP_LIVER, OP_KIDNEYS, OP_APPENDIX, OP_STOMACH, OP_BONE, OP_MUSCLE, OP_NERVE, OP_BLOOD_VESSEL) // OP_EYES, causes runtimes and not particularly useful
 
 #define ALL_ORGAN_STATS list(\
-		OP_HEART		= list(100,   2,   0,   0,   10,  10,  list("he", "ar", "t"), list()),\
-		OP_LUNGS		= list(100,   2,   50,	10,  10,  0,   list("l", "un", "gs"), list()),\
-		OP_LIVER		= list(100,   1,   25,	5,   5,   7,   list("l", "iv", "er"), list()),\
-		OP_KIDNEYS		= list(100,   2,   15,  3,   4,   5, list("k", "idn", "ey"), list()),\
-		OP_APPENDIX		= list(100,   0,   0,	0,   0,   0,   list("app", "end", "ix"), list()),\
-		OP_STOMACH		= list(100,   1,   25,	5,   0,   5,   list("st", "om", "ach"), list()),\
-		OP_BONE			= list(100,   1,   0,	0,   0,   0,   list("b", "on", "e"), list()),\
-		OP_MUSCLE		= list(100,   0.5, 2.5, 0.5, 0.5, 0,   list("m", "us", "cle"), list()),\
-		OP_NERVE		= list(100,   0,   2.5, 0.5, 0.5, 0,   list("n", "er", "ve"), list()),\
-		OP_BLOOD_VESSEL	= list(100,   0.5, 100, 0,   1,   2,   list("blood v", "ess", "el"), list())\
+		OP_HEART		= list(100,   2,   0,   0,   10,  10,  list("he", "ar", "t")),\
+		OP_LUNGS		= list(100,   2,   50,	10,  10,  0,   list("l", "un", "gs")),\
+		OP_LIVER		= list(100,   1,   25,	5,   5,   7,   list("l", "iv", "er")),\
+		OP_KIDNEYS		= list(100,   2,   15,  3,   4,   5, list("k", "idn", "ey")),\
+		OP_APPENDIX		= list(100,   0,   0,	0,   0,   0,   list("app", "end", "ix")),\
+		OP_STOMACH		= list(100,   1,   25,	5,   0,   5,   list("st", "om", "ach")),\
+		OP_BONE			= list(100,   1,   0,	0,   0,   0,   list("b", "on", "e")),\
+		OP_MUSCLE		= list(100,   0.5, 2.5, 0.5, 0.5, 0,   list("m", "us", "cle")),\
+		OP_NERVE		= list(100,   0,   2.5, 0.5, 0.5, 0,   list("n", "er", "ve")),\
+		OP_BLOOD_VESSEL	= list(100,   0.5, 100, 0,   1,   2,   list("blood v", "ess", "el"))\
 	)	//organ			= eff, size, max blood, blood req, nutriment req, oxygen req, name chunks, verbs
 
 #define DAMAGE_TYPES_BASIC list(BRUTE, BURN, TOX, OXY)

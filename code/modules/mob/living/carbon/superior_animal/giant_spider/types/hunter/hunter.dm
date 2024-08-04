@@ -4,8 +4,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes."
 	icon_state = "hunter"
 	icon_living = "hunter"
-	maxHealth = 70
-	health = 70
+	maxHealth = 70 * SPIDER_HEALTH_MOD
+	health = 70 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
@@ -18,7 +18,7 @@
 	name = "cloaker spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
@@ -30,8 +30,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
 	icon_state = "viper"
 	icon_living = "viper"
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * SPIDER_HEALTH_MOD
+	health = 100 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -41,8 +41,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is infused with plasma and has mutated spikes protruding from its chitin."
 	icon_state = "phoron"
 	icon_living = "phoron"
-	maxHealth = 30
-	health = 30
+	maxHealth = 30 * SPIDER_HEALTH_MOD
+	health = 30 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	poison_per_bite = 2
@@ -51,7 +51,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
-	armor_penetration = 50
+	armor_divisor = 3
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
@@ -64,13 +64,13 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is an absolute unit of chitin, armor, and chittering horror."
 	icon_state = "tarantula"
 	icon_living = "tarantula"
-	maxHealth = 110
-	health = 110
+	maxHealth = 110 * SPIDER_HEALTH_MOD
+	health = 110 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
@@ -165,8 +165,8 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	maxHealth = 130
-	health = 130
+	maxHealth = 130 * SPIDER_HEALTH_MOD
+	health = 130 * SPIDER_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
@@ -184,8 +184,8 @@
 	icon_state = "burrowing"
 	icon_living = "burrowing"
 	poison_type = "stoxin"
-	maxHealth = 90
-	health = 90
+	maxHealth = 90 * SPIDER_HEALTH_MOD
+	health = 90 * SPIDER_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"
@@ -193,8 +193,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_emperor"
 	icon_living = "spider_emperor"
-	maxHealth = 200
-	health = 200
+	maxHealth = 200 * SPIDER_HEALTH_MOD
+	health = 200 * SPIDER_HEALTH_MOD
 	move_to_delay = 1
 	turns_per_move = 7
 	viewRange = 9
@@ -204,10 +204,10 @@
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
-	armor = list(melee = 25, bullet = 10, energy = 5, bomb = 25, bio = 10, rad = 25, agony = 0)
-	armor_penetration = 25
+	armor = list(melee = 6, bullet = 6, energy = 2, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor_divisor = 2
 
-	get_stat_modifier = FALSE //Were not getting armor
+	get_stat_modifier = TRUE //Were not getting armor //Yes we are.
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 4 //So its more worth killing these
@@ -216,6 +216,7 @@
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	var/attack_build_up = 0
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/New()
 	..()
@@ -227,8 +228,8 @@
 	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
 	icon_state = "terror_empress"
 	icon_living = "terror_empress"
-	maxHealth = 750
-	health = 750
+	maxHealth = 750 * LEVIATHAN_HEALTH_MOD
+	health = 750 * LEVIATHAN_HEALTH_MOD
 	move_to_delay = 2
 	turns_per_move = 1
 	melee_damage_lower = 40
@@ -237,7 +238,7 @@
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
-	armor_penetration = 30
+	armor_divisor = 3
 
 	get_stat_modifier = FALSE //Were not getting armor
 

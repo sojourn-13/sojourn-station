@@ -7,11 +7,17 @@
 	var/max_amount = 1
 	var/spread_range = 0
 	var/has_postspawn = FALSE
+	var/late_handling = FALSE
 	invisibility = INVISIBILITY_MAXIMUM	// Hides these spawners from the dmm-tools minimap renderer of SpacemanDMM
+
+/obj/random/mob
+	var/list/mobs = list()
 
 // creates a new object and deletes itself
 /obj/random/Initialize()
 	..()
+	if(late_handling)
+		return
 	if(!prob(spawn_nothing_percentage))
 		var/list/spawns = spawn_item()
 		if (has_postspawn && spawns.len)
@@ -27,6 +33,14 @@
 /obj/random/proc/post_spawn(var/list/spawns)
 	return
 
+// used for things that are meant to spawn mid-round
+/obj/random/proc/late_handling()
+	if(!prob(spawn_nothing_percentage))
+		var/list/spawns = spawn_item()
+		if (has_postspawn && spawns.len)
+			post_spawn(spawns)
+
+	return INITIALIZE_HINT_QDEL
 
 // creates the random item
 /obj/random/proc/spawn_item()

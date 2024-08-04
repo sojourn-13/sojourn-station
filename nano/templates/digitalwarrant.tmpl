@@ -57,8 +57,8 @@
 					<tr><td>{{:helper.link('Edit Charges', null, {'editwarrantcharges' : 1})}}
 				{{/if}}
 				{{if data.type == "search"}}
-					<tr><td>{{:helper.link('Edit Name/Location', null, {'editwarrantnamecustom' : 1})}}
-					<tr><td>{{:helper.link('Edit Reason', null, {'editwarrantcharges' : 1})}}	
+					<tr><td>{{:helper.link('Edit Name/Location', null, {'editwarrantnamesearch' : 1})}}
+					<tr><td>{{:helper.link('Edit Reason', null, {'editwarrantsearchreason' : 1})}}
 				{{/if}}
 				<tr><td>{{:helper.link('Authorize', null, {'editwarrantauth' : 1})}}
 				<tr><td>{{:helper.link('Save', null, {'savewarrant' : 1})}}
@@ -85,7 +85,7 @@
 				<td>{{:helper.link('', 'pencil', {'editwarrant' : value.id})}}
 				{{:helper.link('Archive', null, {'sendtoarchive' : value.id})}}
 				{{:helper.link('', 'trash', {'deletewarrant' : value.id})}}</td>
-			{{/for}}		
+			{{/for}}
 		</table>
 	{{/if}}
 	<h2>Search warrants</h2>
@@ -100,7 +100,7 @@
 				<td>{{:helper.link('', 'pencil', {'editwarrant' : value.id})}}
 				{{:helper.link('Archive', null, {'sendtoarchive' : value.id})}}
 				{{:helper.link('', 'trash', {'deletewarrant' : value.id})}}</td>
-			{{/for}}		
+			{{/for}}
 		</table>
 	{{/if}}
 	<h2 style="color:#888888">Archived</h2>

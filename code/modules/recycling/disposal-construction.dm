@@ -289,7 +289,7 @@
 						P.base_icon_state = base_state
 						P.set_dir(dir)
 						P.pipe_dir = pipe_dir
-						P.updateicon()
+						P.update_icon()
 
 						//Needs some special treatment ;)
 						if(pipe_type in list(PIPE_TYPE_JUNC_SORT, PIPE_TYPE_JUNC_SORT_FLIP))

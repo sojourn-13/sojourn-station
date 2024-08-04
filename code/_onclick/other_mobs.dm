@@ -1,5 +1,5 @@
 // Generic damage proc (slimes and monkeys).
-/atom/proc/attack_generic(mob/user as mob)
+/atom/proc/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	return 0
 
 /*
@@ -33,23 +33,24 @@
 
 //Return a non FALSE value to cancel whatever called this from propagating, if it respects it.
 /atom/proc/_try_interact(mob/user)
-	if(is_admin(user) && isghost(user)) //admin abuse
+	if(isAdminGhostAI(user)) //admin abuse
 		return interact(user)
 	if(can_interact(user))
 		return interact(user)
 	return FALSE
 
-/atom/proc/can_interact(mob/user, require_adjacent_turf = TRUE)
+/atom/proc/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	// if(!user.can_interact_with(src, interaction_flags_atom & INTERACT_ATOM_ALLOW_USER_LOCATION))
 	// 	return FALSE
 	// if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !ISADVANCEDTOOLUSER(user))
 	// 	to_chat(user, span_warning("You don't have the dexterity to do this!"))
 	// 	return FALSE
-	if(is_admin(user) && isghost(user)) //admin abuse
+	if(isAdminGhostAI(user)) //admin abuse
 		return TRUE
 	// BANAID: advanced tool usrs can only interact uis
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		if(show_message)
+			to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 
 	// if(!(interaction_flags_atom & INTERACT_ATOM_IGNORE_INCAPACITATED))
@@ -63,14 +64,14 @@
 	// 		return FALSE
 	return TRUE
 
-/atom/ui_status(mob/user)
+/atom/ui_status(mob/user, datum/ui_state/state)
 	. = ..()
 	//Check if both user and atom are at the same location
-	if(!can_interact(user))
+	if(!can_interact(user, show_message = FALSE))
 		. = min(., UI_UPDATE)
 
-/atom/movable/can_interact(mob/user)
-	. = ..()
+/atom/movable/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
+	. = ..(user, require_adjacent_turf, show_message)
 	if(!.)
 		return
 	// if(!anchored && (interaction_flags_atom & INTERACT_ATOM_REQUIRES_ANCHORED))

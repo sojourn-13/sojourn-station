@@ -50,7 +50,7 @@
 		affectareas -= get_areas(V)
 
 	weather_duration = rand(weather_duration_lower, weather_duration_upper)
-	START_PROCESSING(SSweather, src)
+	SSweather.processing += src
 	update_areas()
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
@@ -60,7 +60,7 @@
 			if(telegraph_sound)
 				SEND_SOUND(M, sound(telegraph_sound))
 	if(telegraph_duration)
-		addtimer(CALLBACK(src, .proc/start), telegraph_duration)
+		addtimer(CALLBACK(src, PROC_REF(start)), telegraph_duration)
 
 /datum/weather/proc/start()
 	if(stage >= MAIN_STAGE)
@@ -75,7 +75,7 @@
 			if(weather_sound)
 				SEND_SOUND(M, sound(weather_sound))
 	if(weather_duration)
-		addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
+		addtimer(CALLBACK(src, PROC_REF(wind_down)), weather_duration)
 
 
 /datum/weather/proc/wind_down()
@@ -91,13 +91,13 @@
 			if(end_sound)
 				SEND_SOUND(M, sound(end_sound))
 	if(end_duration)
-		addtimer(CALLBACK(src, .proc/end), end_duration)
+		addtimer(CALLBACK(src, PROC_REF(end)), end_duration)
 
 /datum/weather/proc/end()
 	if(stage == END_STAGE)
 		return 1
 	stage = END_STAGE
-	STOP_PROCESSING(SSweather, src)
+	SSweather.processing -= src
 	update_areas()
 
 /datum/weather/proc/can_weather_act(mob/living/L) //Can this weather impact a mob?

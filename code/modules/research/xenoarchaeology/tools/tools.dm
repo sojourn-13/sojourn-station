@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	emped = 1
 	cut_overlays()
 	add_overlay(image(icon, "emp"))
-	addtimer(CALLBACK(src, .proc/post_emp), 300)
+	addtimer(CALLBACK(src, PROC_REF(post_emp)), 300)
 
 /obj/item/device/gps/proc/post_emp()
 	emped = 0

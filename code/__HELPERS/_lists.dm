@@ -5,6 +5,14 @@
  * Sorting
  */
 
+// Generic listoflist safe add and removal macros:
+///If value is a list, wrap it in a list so it can be used with list add/remove operations
+#define LIST_VALUE_WRAP_LISTS(value) (islist(value) ? list(value) : value)
+///Add an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_ADD(list, item) (list += LIST_VALUE_WRAP_LISTS(item))
+///Remove an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_REMOVE(list, item) (list -= LIST_VALUE_WRAP_LISTS(item))
+
 /*
  * Misc
  */
@@ -45,11 +53,17 @@
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 ///Qdel every item in the list before setting the list to null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+///Qdel every key and item in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC(L) for(var/I in L) { qdel(L[I]); qdel(I); }; L = null;
+///Qdel every value but not key in the list before setting the list to null
+#define QDEL_LAZYLIST_ASSOC_VAL(L) for(var/I in L) qdel(L[I]); L = null;
 //These methods don't null the list
 ///Use LAZYLISTDUPLICATE instead if you want it to null with no entries
 #define LAZYCOPY(L) (L ? L.Copy() : list() )
 /// Consider LAZYNULL instead
 #define LAZYCLEARLIST(L) if(L) L.Cut()
+/// Pick a value from a lazylist, or null if the list is empty
+#define LAZYPICK(L) ( L ? pick(L) : null )
 ///Returns the list if it's actually a valid list, otherwise will initialize it
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverse_range(L.Copy())
@@ -497,20 +511,20 @@
 
 ///for sorting clients or mobs by ckey
 /proc/sort_key(list/ckey_list, order=1)
-	return sortTim(ckey_list, order >= 0 ? /proc/cmp_ckey_asc : /proc/cmp_ckey_dsc)
+	return sortTim(ckey_list, order >= 0 ? GLOBAL_PROC_REF(cmp_ckey_asc) : GLOBAL_PROC_REF(cmp_ckey_dsc))
 
 ///Specifically for record datums in a list.
 /proc/sort_record(list/record_list, field = "name", order = 1)
 	GLOB.cmp_field = field
-	return sortTim(record_list, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
+	return sortTim(record_list, order >= 0 ? GLOBAL_PROC_REF(cmp_records_asc) : GLOBAL_PROC_REF(cmp_records_dsc))
 
 ///sort any value in a list
-/proc/sort_list(list/list_to_sort, cmp=/proc/cmp_text_asc)
+/proc/sort_list(list/list_to_sort, cmp=GLOBAL_PROC_REF(cmp_text_asc))
 	return sortTim(list_to_sort.Copy(), cmp)
 
 ///uses sort_list() but uses the var's name specifically. This should probably be using mergeAtom() instead
 /proc/sort_names(list/list_to_sort, order=1)
-	return sortTim(list_to_sort.Copy(), order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
+	return sortTim(list_to_sort.Copy(), order >= 0 ? GLOBAL_PROC_REF(cmp_name_asc) : GLOBAL_PROC_REF(cmp_name_dsc))
 
 ///Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield_to_list(bitfield = 0, list/wordlist)
@@ -671,6 +685,21 @@
 			.[i] = key
 			.[key] = value
 
+/// A version of deep_copy_list that actually supports associative list nesting: list(list(list("a" = "b"))) will actually copy correctly.
+/proc/deep_copy_list_alt(list/inserted_list)
+	if(!islist(inserted_list))
+		return inserted_list
+	var/copied_list = inserted_list.Copy()
+	. = copied_list
+	for(var/key_or_value in inserted_list)
+		if(isnum_safe(key_or_value) || !inserted_list[key_or_value])
+			continue
+		var/value = inserted_list[key_or_value]
+		var/new_value = value
+		if(islist(value))
+			new_value = deep_copy_list_alt(value)
+		copied_list[key_or_value] = new_value
+
 ///takes an input_key, as text, and the list of keys already used, outputting a replacement key in the format of "[input_key] ([number_of_duplicates])" if it finds a duplicate
 ///use this for lists of things that might have the same name, like mobs or objects, that you plan on giving to a player as input
 /proc/avoid_assoc_duplicate_keys(input_key, list/used_key_list)
@@ -799,7 +828,7 @@
 		if(isdatum(key))
 			new_key = "[key] [REF(key)]"
 		else if(key == world)
-			new_key = "world [REF(world)]"
+			new_key = "world \ref[world]"
 		else if(islist(key))
 			new_key = refify_list(key)
 		var/value
@@ -808,7 +837,7 @@
 		if(isdatum(value))
 			value = "[value] [REF(value)]"
 		else if(value == world)
-			value = "world [REF(world)]"
+			value = "world \ref[world]"
 		else if(islist(value))
 			value = refify_list(value)
 		var/list/to_add = list(new_key)
@@ -1081,28 +1110,28 @@
 
 //for sorting clients or mobs by ckey
 /proc/sortKey(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_ckey_asc : /proc/cmp_ckey_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_ckey_asc) : GLOBAL_PROC_REF(cmp_ckey_dsc))
 
 //Specifically for record datums in a list.
 /proc/sortRecord(list/L, field = "name", order = 1)
 	GLOB.cmp_field = field
-	return sortTim(L, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_records_asc) : GLOBAL_PROC_REF(cmp_records_dsc))
 //SoJ edit
 //Specifically for mutation datums in a list.
 /proc/sortMutation(list/L, order = TRUE)
-	return sortTim(L, (order ? /proc/cmp_mutations_asc : /proc/cmp_mutations_dsc))
+	return sortTim(L, (order ? GLOBAL_PROC_REF(cmp_mutations_asc) : GLOBAL_PROC_REF(cmp_mutations_dsc)))
 //Soj edit end
 //any value in a list
-/proc/sortList(list/L, cmp=/proc/cmp_text_asc)
+/proc/sortList(list/L, cmp=GLOBAL_PROC_REF(cmp_text_asc))
 	return sortTim(L.Copy(), cmp)
 
 //uses sortList() but uses the var's name specifically. This should probably be using mergeAtom() instead
 /proc/sortNames(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_name_asc) : GLOBAL_PROC_REF(cmp_name_dsc))
 
 //for sorting entries by their associated values, rather than keys.
 /proc/sortAssoc(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_text_asc : /proc/cmp_text_dsc, TRUE) //third argument for fetching L[L[i]] instead of L[i]
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_text_asc) : GLOBAL_PROC_REF(cmp_text_dsc), TRUE) //third argument for fetching L[L[i]] instead of L[i]
 
 //returns an unsorted list of nearest map objects from a given list to sourceLocation using get_dist, acceptableDistance sets tolerance for distance
 //result is intended to be used with pick()

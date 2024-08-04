@@ -12,12 +12,12 @@
 	var/reagent_add_cooldown = 1 MINUTE
 
 /datum/genetics/mutation/psn_breath/onMobImplant()
-	container.holder.verbs += /mob/living/proc/mutation_psn_breath
+	add_verb(container.holder, /mob/living/proc/mutation_psn_breath)
 	gas_sac = new /datum/reagents(100, container.holder)
 	initializeProcessing()
 
 /datum/genetics/mutation/psn_breath/onMobRemove()
-	container.holder.verbs -= /mob/living/proc/mutation_psn_breath
+	remove_verb(container.holder, /mob/living/proc/mutation_psn_breath)
 	qdel(gas_sac)
 	haltProcessing()
 
@@ -27,7 +27,7 @@
 	//Every minute, add 10u of Blattedin. This means that the ability can be used every minute,
 	//Or, optionally, the effect can be saved and used once every 10 minutes.
 	if(!call_back_true)
-		addtimer(CALLBACK(src, /datum/genetics/mutation/psn_breath/proc/add_blattedin_to_sac), reagent_add_cooldown)
+		addtimer(CALLBACK(src, PROC_REF(add_blattedin_to_sac)), reagent_add_cooldown)
 		call_back_true = TRUE
 	return
 
@@ -46,7 +46,7 @@
 	//Get the gas mutation if it exists (delete the verb if it doesn't)
 	var/datum/genetics/mutation/psn_breath/gas_mutation = src.unnatural_mutations.getMutation("MUTATION_PSN_BREATH", TRUE)
 	if(!gas_mutation)
-		src.verbs -= /mob/living/proc/mutation_psn_breath
+		remove_verb(src, /mob/living/proc/mutation_psn_breath)
 		return
 
 	var/datum/reagents/gas_sac = gas_mutation.gas_sac

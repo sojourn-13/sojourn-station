@@ -119,7 +119,7 @@
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Sawbones", "Rookie Salvager")
-	alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
+	//alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round-start.
 	wage = WAGE_LABOUR_HAZARD
@@ -141,7 +141,7 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-	perks = list(PERK_JUNKBORN, PERK_STALKER)
+	perks = list(PERK_JUNKBORN, PERK_STALKER, PERK_MEDICAL_EXPERT)
 
 	description = "Спасатель это неформальный обученный специалист, работающий как инженер и доктор.<br>\
     Ваша основная роль - полевой медик. Лечите и стабилизируйте раненных в тылу боя, и эвакуируйте критически раненных.<br>\

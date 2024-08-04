@@ -10,6 +10,7 @@
 	filedesc = "Shield Control"
 	nanomodule_path = /datum/nano_module/shield_control
 	program_icon_state = "engine"
+	program_menu_icon = "shield-alt"
 	extended_desc = "This program allows remote management of the hull shield generator. Cannot be run on tablet computers."
 	required_access = access_engine
 	requires_ntnet = 1

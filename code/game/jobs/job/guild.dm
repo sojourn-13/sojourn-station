@@ -1,6 +1,6 @@
 //Cargo
 /datum/job/merchant
-	title = "Chief Executive Officer"
+	title = "Surface Operations Manager"
 	flag = MERCHANT
 	department = DEPARTMENT_LSS
 	head_position = TRUE
@@ -12,7 +12,7 @@
 	supervisors = "the Nadezhda Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
-	wage = WAGE_COMMAND	//CEO now gets paid the money moola muh [redacted] -Kaz
+	wage = WAGE_COMMAND	//SOM now gets paid the money moola muh [redacted] -Kaz
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
@@ -31,12 +31,12 @@
 		STAT_MEC = 15,
 		STAT_VIG = 10
 	)
-	description = "Chief Executive Officer координирует дела местного филиала Lone star Shipping Solutions.<br>\
-	Ваша главная цель, прямо скажем, состоит в том, чтобы заработать как можно больше денег. Скупайте и заказывайте товары, а затем продавайте их с прибылью.<br>\
-	Ваши грузчики будут выполнять большую часть грубой работы, а ваши шахтеры будут добывать полезные ископаемые. Они способные ребята почти всегда - используйте их с умом.<br>\
-	Поставщики, найденные по всей колонии, также управляются вашей организацией. Они приносят вам деньги - убедитесь, что они функциональны и хорошо снабжены.<br>\
-	Существует рынок контрабанды и более недобросовестных услуг. Исследование этой области может оказаться прибыльным, но сопряжено с риском.<br>\
-	Вы не получаете зарплату, но можете пополнять ее самостоятельно со счета компании. Найдите баланс между собственными потребностями и потребностями компании в целом."
+	description = "The Surface Operations Manager coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
+Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
+Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
+The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
+There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but comes with risk.<br>\
+You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
 
 	duties = "Обеспечьте экипаж всем, что им может понадобиться, - для получения солидной прибыли.<br>\
 	Скупайте ценные предметы у мусорщиков и получайте прибыль, перепродавая их.<br>\
@@ -55,7 +55,7 @@
 	perks = list(PERK_TIMEISMONEY, PERK_MARKET_PROF, PERK_BARTENDER, PERK_CHEM_CONTRABAND)
 
 /obj/landmark/join/start/merchant
-	name = "Chief Executive Officer"
+	name = "Surface Operations Manager"
 	icon_state = "player-beige-officer"
 	join_tag = /datum/job/merchant
 
@@ -67,7 +67,7 @@
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
 	selection_color = "#c3b9a6"
@@ -121,7 +121,7 @@
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner")
 	selection_color = "#c3b9a6"

@@ -73,7 +73,7 @@
 /obj/item/gun/projectile/bow/begin_charge(mob/living/user)
 	to_chat(user, SPAN_NOTICE("You begin drawing back the string on [src]."))
 	playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
-	overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
+	overcharge_timer = addtimer(CALLBACK(src, PROC_REF(add_charge), user), overcharge_timer_step, TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/bow/add_charge(mob/living/user)
 	deltimer(overcharge_timer)
@@ -82,7 +82,7 @@
 		to_chat(user, SPAN_NOTICE("You continue drawing the bow back..."))
 		update_icon()
 		if(overcharge_level < overcharge_max)
-			overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
+			overcharge_timer = addtimer(CALLBACK(src, PROC_REF(add_charge), user), overcharge_timer_step, TIMER_STOPPABLE)
 		else
 			to_chat(user, SPAN_NOTICE("\The [src] is fully drawn!"))
 		return

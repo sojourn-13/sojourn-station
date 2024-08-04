@@ -50,7 +50,7 @@
 
 /datum/chemical_reaction/work_tonic
 	result = "work_tonic"
-	required_reagents = list("protein" = 1, "egg" = 1, "milk" = 1)
+	required_reagents = list("milk" = 1, "protein" = 1, "egg" = 1)
 	result_amount = 1
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
 

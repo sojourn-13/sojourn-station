@@ -321,3 +321,13 @@
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
+
+/datum/craft_recipe/armor/breach2
+	name = "chemical breacher vest"
+	result =  /obj/item/clothing/suit/storage/vest/breach2
+	steps = list(
+		list(/obj/item/clothing/suit/armor/vest/breach1, 1, "time" = 30),
+		list(/obj/item/clothing/suit/storage/vest/chestrig, 1),
+		list(QUALITY_ADHESIVE, 15, 30),
+		list(QUALITY_CUTTING, 30, 30)
+	)

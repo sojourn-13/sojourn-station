@@ -11,7 +11,7 @@
 	full_reload_message  = "[reload_message]"
 	reload_message = "[name] [full_reload_message]"
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
@@ -41,7 +41,7 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
-	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
+	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
@@ -468,7 +468,8 @@
 
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+					if(!QDELETED(src))
+						addtimer(CALLBACK(src, PROC_REF(OpenFire), targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)
@@ -586,7 +587,7 @@
 			if (can_burrow && bad_environment)
 				evacuate()
 			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
+			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0

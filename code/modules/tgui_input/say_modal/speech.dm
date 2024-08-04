@@ -10,7 +10,7 @@
 /datum/tgui_say/proc/alter_entry(payload)
 	var/entry = payload["entry"]
 	/// No OOC leaks
-	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL)
+	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL || payload["channel"] == LOOC_CHANNEL)
 		return pick(hurt_phrases)
 	/// Random trimming for larger sentences
 	if(length(entry) > 50)
@@ -44,6 +44,15 @@
 		if(OOC_CHANNEL)
 			client.ooc(entry)
 			return TRUE
+		// if(ADMIN_CHANNEL)
+			// SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, entry)
+			// return TRUE
+		if(LOOC_CHANNEL)
+			client.looc(entry)
+			return TRUE
+		if(WHIS_CHANNEL)
+			client.mob.whisper(entry)
+			return TRUE
 	return FALSE
 
 /**
@@ -61,10 +70,11 @@
 	if(stat != CONSCIOUS || !client?.tgui_say?.window_open)
 		return FALSE
 	client.tgui_say.force_say()
-	if(client.typing_indicators)
-		log_speech_indicators("[key_name(client)] FORCED to stop typing, indicators enabled.")
-	else
-		log_speech_indicators("[key_name(client)] FORCED to stop typing, indicators DISABLED.")
+	// if(client.typing_indicators)
+	// 	log_speech_indicators("[key_name(client)] FORCED to stop typing, indicators enabled.")
+	// else
+	// 	log_speech_indicators("[key_name(client)] FORCED to stop typing, indicators DISABLED.")
+	// SEND_SIGNAL(src, COMSIG_HUMAN_FORCESAY)
 
 /**
  * Handles text entry and forced speech.
@@ -85,8 +95,8 @@
 		return TRUE
 	if(type == "force")
 		var/target_channel = payload["channel"]
-		if(target_channel == ME_CHANNEL || target_channel == OOC_CHANNEL)
-			target_channel = SAY_CHANNEL // No ooc leaks
+		if(target_channel == ME_CHANNEL || target_channel == OOC_CHANNEL || target_channel == LOOC_CHANNEL)
+			target_channel = SAY_CHANNEL // No ooc leaks - this is fine because alter_entry will override this completely
 		delegate_speech(alter_entry(payload), target_channel)
 		return TRUE
 	return FALSE

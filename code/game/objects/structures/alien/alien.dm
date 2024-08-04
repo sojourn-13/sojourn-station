@@ -44,8 +44,8 @@
 	..()
 	return
 
-/obj/structure/alien/attack_generic()
-	attack_hand(usr)
+/obj/structure/alien/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	attack_hand(user)
 
 /obj/structure/alien/attackby(var/obj/item/W, var/mob/user)
 	health = max(0, health - W.force)

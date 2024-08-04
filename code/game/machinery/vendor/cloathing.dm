@@ -532,6 +532,7 @@
 				/obj/item/legcuffs/fuzzy = 5)
 
 	contraband = list(/obj/item/clothing/under/costume/maid = 5, // plain, modest, humble clothing, you sick freak
+				/obj/item/clothing/under/costume/propermaid = 5,
 				/obj/item/clothing/suit/costume/job/nun = 5,
 				/obj/item/clothing/head/costume/job/nun = 5,
 				/obj/item/clothing/under/bride_white = 5,
@@ -567,6 +568,7 @@
 				/obj/item/clothing/suit/straight_jacket = 100,
 				/obj/item/legcuffs/fuzzy = 100,
 				/obj/item/clothing/under/costume/maid = 100,
+				/obj/item/clothing/under/costume/propermaid = 100,
 				/obj/item/clothing/suit/costume/job/nun = 100,
 				/obj/item/clothing/head/costume/job/nun = 100,
 				/obj/item/clothing/under/bride_white = 100,

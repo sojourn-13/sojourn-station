@@ -57,7 +57,11 @@
 	gun = _gun
 
 	for(var/propname in settings)
-		if(propname in gun.vars)
+		if(propname == "damage_mult_add")
+			gun.damage_multiplier += settings[propname]
+			continue
+		
+		try
 			gun.vars[propname] = settings[propname]
 
 			// Apply gunmods effects that have been erased by the previous line
@@ -71,8 +75,9 @@
 					var/datum/component/item_upgrade/IU = I.GetComponent(/datum/component/item_upgrade)
 					if(IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 						gun.vars["fire_delay"] *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		else if(propname == "damage_mult_add")
-			gun.damage_multiplier += settings[propname]
+		catch
+			// throw away exception, we don't care
+			continue
 
 
 

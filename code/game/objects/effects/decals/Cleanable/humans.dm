@@ -14,13 +14,13 @@ var/global/list/image/splatter_cache=list()
 	icon_state = "mfloor1"
 	random_icon_states = list("mfloor1", "mfloor2", "mfloor3", "mfloor4", "mfloor5", "mfloor6", "mfloor7")
 	var/base_icon = 'icons/effects/blood.dmi'
-	var/list/viruses = list()
 	blood_DNA = list()
 	var/basecolor="#A10808" // Color when wet.
-	var/list/datum/disease2/disease/virus2 = list()
 	var/amount = 5
 	var/drytime
 	sanity_damage = 0.25
+	mergeable_decal = TRUE
+	var/should_dry = TRUE
 	// List of are shoe prints we got
 	var/list/shoe_types = list()
 
@@ -58,21 +58,21 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/blood/New()
 	..()
 	fall_to_floor()
+
+/obj/effect/decal/cleanable/blood/Initialize()
+	. = ..()
 	update_icon()
 
-	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
-		return
-	if(type == /obj/effect/decal/cleanable/blood)
-		if(loc && isturf(loc))
-			for(var/obj/effect/decal/cleanable/blood/B in loc)
-				if(B != src)
-					if(B.blood_DNA)
-						blood_DNA |= B.blood_DNA.Copy()
-					if(B.shoe_types)
-						shoe_types |= B.shoe_types.Copy()
-					qdel(B)
-	drytime = world.time + DRYING_TIME * (amount+1)
-	addtimer(CALLBACK(src, .proc/dry), drytime)
+	if(should_dry)
+		drytime = world.time + DRYING_TIME * (amount+1)
+		addtimer(CALLBACK(src, PROC_REF(dry)), drytime)
+
+/obj/effect/decal/cleanable/blood/handle_merge_decal(obj/effect/decal/cleanable/blood/merger)
+	. = ..()
+	if(blood_DNA)
+		LAZYOR(merger.blood_DNA, blood_DNA.Copy())
+	if(shoe_types)
+		LAZYOR(merger.shoe_types, shoe_types.Copy())
 
 /obj/effect/decal/cleanable/blood/update_icon()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
@@ -145,7 +145,7 @@ var/global/list/image/splatter_cache=list()
 		user.bloody_hands += taken
 		user.hand_blood_color = basecolor
 		user.update_inv_gloves(1)
-		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
+		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
 
 /obj/effect/decal/cleanable/blood/splatter
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
@@ -179,10 +179,11 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/writing/New()
 	..()
-	if(random_icon_states.len)
+	if(LAZYLEN(random_icon_states))
 		for(var/obj/effect/decal/cleanable/blood/writing/W in loc)
-			random_icon_states.Remove(W.icon_state)
-		icon_state = pick(random_icon_states)
+			LAZYREMOVE(random_icon_states, W.icon_state)
+		if(LAZYLEN(random_icon_states))
+			icon_state = pick(random_icon_states)
 	else
 		icon_state = "writing1"
 
@@ -200,6 +201,8 @@ var/global/list/image/splatter_cache=list()
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mgibbl5"
 	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6")
+	mergeable_decal = FALSE
+	should_dry = FALSE
 	var/fleshcolor = "#FFFFFF"
 
 /obj/effect/decal/cleanable/blood/gibs/update_icon()
@@ -257,7 +260,6 @@ var/global/list/image/splatter_cache=list()
 	icon_state = "mucus"
 	random_icon_states = list("mucus")
 
-	var/list/datum/disease2/disease/virus2 = list()
 	var/dry = FALSE // Keeps the lag down
 
 /obj/effect/decal/cleanable/mucus/New()

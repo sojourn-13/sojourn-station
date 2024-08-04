@@ -38,6 +38,7 @@
 	var/floorOnly = FALSE
 	var/ignoreExAct = FALSE
 	alpha = 128
+	atmos_canpass = CANPASS_PROC
 
 /obj/effect/shield/floor
 	alpha = 32
@@ -138,11 +139,11 @@ Like for example singulo act and whatever.
 	update_icon()
 	update_explosion_resistance()
 
-/obj/effect/shield/attack_generic(var/source, var/damage, var/emote)
+/obj/effect/shield/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	take_damage(damage, SHIELD_DAMTYPE_PHYSICAL, src)
-	if(gen.check_flag(MODEFLAG_OVERCHARGE) && istype(source, /mob/living/))
-		overcharge_shock(source)
-	..(source, damage, emote)
+	if(gen.check_flag(MODEFLAG_OVERCHARGE) && istype(user, /mob/living/))
+		overcharge_shock(user)
+	..(user, damage, attack_message)
 
 
 // Fails shield segments in specific range. Range of 1 affects the shielded turf only.

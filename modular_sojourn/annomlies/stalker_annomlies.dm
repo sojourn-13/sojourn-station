@@ -34,26 +34,26 @@
 /obj/structure/annomlies_diet/flashy_coin/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/flashy_check), flashy_coin_timer)
-	addtimer(CALLBACK(src, .proc/loop_timer), flashy_coin_reppeater_timer)
+	addtimer(CALLBACK(src, PROC_REF(flashy_check)), flashy_coin_timer)
+	addtimer(CALLBACK(src, PROC_REF(loop_timer)), flashy_coin_reppeater_timer)
 
 /obj/structure/annomlies_diet/flashy_coin/Crossed(mob/M)
 	if(isliving(M))
 		flick("flash_hole_trigger", src)
-		addtimer(CALLBACK(src, .proc/check_for_angels), 16.2)
+		addtimer(CALLBACK(src, PROC_REF(check_for_angels)), 16.2)
 	.=..()
 
 /obj/structure/annomlies_diet/flashy_coin/proc/flashy_check(mob/M)
 	flick("flash_hole_trigger", src)
-	addtimer(CALLBACK(src, .proc/check_for_angels), 16.2)
+	addtimer(CALLBACK(src, PROC_REF(check_for_angels)), 16.2)
 
 /obj/structure/annomlies_diet/flashy_coin/proc/check_for_angels(mob/M)
 	for(M in living_mobs_in_view(3, src))
 		flashy_stun(M)
 
 /obj/structure/annomlies_diet/flashy_coin/proc/loop_timer()
-	addtimer(CALLBACK(src, .proc/flashy_check), flashy_coin_timer)
-	addtimer(CALLBACK(src, .proc/loop_timer), flashy_coin_reppeater_timer)
+	addtimer(CALLBACK(src, PROC_REF(flashy_check)), flashy_coin_timer)
+	addtimer(CALLBACK(src, PROC_REF(loop_timer)), flashy_coin_reppeater_timer)
 
 /obj/structure/annomlies_diet/flashy_coin/proc/flashy_stun(mob/living/carbon/M) //Flashbang_bang but bang-less.
 	if(ishuman(M))
@@ -99,8 +99,8 @@
 /obj/structure/annomlies_diet/haze/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/nonchemical_reaction), infino_timer)
-	addtimer(CALLBACK(src, .proc/loop_timer), infino_reppeater_timer)
+	addtimer(CALLBACK(src, PROC_REF(nonchemical_reaction)), infino_timer)
+	addtimer(CALLBACK(src, PROC_REF(loop_timer)), infino_reppeater_timer)
 
 /obj/structure/annomlies_diet/haze/Crossed(mob/M)
 	if(isliving(M))
@@ -115,8 +115,8 @@
 	visible_message(SPAN_WARNING("\red [src] sparks to life blasting a heat wave and flaming ambers!"))
 
 /obj/structure/annomlies_diet/haze/proc/loop_timer()
-	addtimer(CALLBACK(src, .proc/nonchemical_reaction), infino_timer)
-	addtimer(CALLBACK(src, .proc/loop_timer), infino_reppeater_timer)
+	addtimer(CALLBACK(src, PROC_REF(nonchemical_reaction)), infino_timer)
+	addtimer(CALLBACK(src, PROC_REF(loop_timer)), infino_reppeater_timer)
 
 /obj/structure/annomlies_diet/spidersilk
 	name = "Fairy silk"
@@ -142,7 +142,7 @@
 /obj/structure/annomlies_diet/spidersilk/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/spread), spread_speed_slow)
+	addtimer(CALLBACK(src, PROC_REF(spread)), spread_speed_slow)
 
 /obj/structure/annomlies_diet/spidersilk/non_spreader
 	is_growing = FALSE
@@ -195,7 +195,7 @@
 			light_color = "#391285"
 		if(prob(40))
 			light_color = "#FFE4E1"
-		addtimer(CALLBACK(src, .proc/spread), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
+		addtimer(CALLBACK(src, PROC_REF(spread)), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 
 // Check the given turf to see if there is any special things that would prevent the spread
@@ -230,7 +230,7 @@
 
 /obj/structure/annomlies_diet/ball_lightning/New()
 	lighting_in_a_bottle = new /obj/item/cell/large/greyson(src)
-	addtimer(CALLBACK(src, .proc/wings), movement_activity)
+	addtimer(CALLBACK(src, PROC_REF(wings)), movement_activity)
 	spark_system = new()
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
@@ -258,7 +258,7 @@
 		throw_at(T, movement_range, movement_speed_as_in_when_it_moves_not_how_active_it_moves, src)
 
 
-	addtimer(CALLBACK(src, .proc/wings), movement_activity)
+	addtimer(CALLBACK(src, PROC_REF(wings)), movement_activity)
 
 /obj/structure/annomlies_diet/ball_lightning/Bumped(atom/user)
 	if (electrocute_mob(user, lighting_in_a_bottle, src)) //electrocute_mob() handles removing charge from the cell, no need to do that here.
@@ -288,7 +288,7 @@
 //user bodytemperature = 310.055 rounding ish in shift so were basing it on this
 
 /obj/structure/annomlies_diet/hell/New()
-	addtimer(CALLBACK(src, .proc/perma_frost), freeze_ray_cooldowns)
+	addtimer(CALLBACK(src, PROC_REF(perma_frost)), freeze_ray_cooldowns)
 	..()
 
 /obj/structure/annomlies_diet/hell/proc/perma_frost(mob/M)
@@ -300,7 +300,7 @@
 	for(M in living_mobs_in_view(1, src))
 		orb(M, temp_for_close_area_subtractor)
 
-	addtimer(CALLBACK(src, .proc/perma_frost), freeze_ray_cooldowns)
+	addtimer(CALLBACK(src, PROC_REF(perma_frost)), freeze_ray_cooldowns)
 
 /obj/structure/annomlies_diet/hell/proc/orb(mob/living/carbon/M, temp_to_use)
 	if(ishuman(M))
@@ -308,10 +308,10 @@
 		H.bodytemperature -= temp_to_use
 
 /obj/structure/annomlies_diet/hell/Bumped(atom/user)
-	addtimer(CALLBACK(src, .proc/frozen_soild, user, temp_for_bump_subtractor), 1)
+	addtimer(CALLBACK(src, PROC_REF(frozen_soild), user, temp_for_bump_subtractor), 1)
 
 /obj/structure/annomlies_diet/hell/Bump(atom/user)
-	addtimer(CALLBACK(src, .proc/frozen_soild, user, temp_for_bump_subtractor), 1)
+	addtimer(CALLBACK(src, PROC_REF(frozen_soild), user, temp_for_bump_subtractor), 1)
 
 /obj/structure/annomlies_diet/hell/proc/frozen_soild(atom/user)
 	if(ishuman(user))
@@ -342,8 +342,8 @@
 /obj/structure/annomlies_diet/thumper/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/check_for_newtons), apple_timer)
-	addtimer(CALLBACK(src, .proc/growing_season), apple_timer_growing)
+	addtimer(CALLBACK(src, PROC_REF(check_for_newtons)), apple_timer)
+	addtimer(CALLBACK(src, PROC_REF(growing_season)), apple_timer_growing)
 
 /obj/structure/annomlies_diet/thumper/Crossed(mob/M)
 	.=..()
@@ -379,12 +379,12 @@
 
 /obj/structure/annomlies_diet/thumper/proc/harsh_winds(mob/M)
 	flick("crusher_cloud_crush", src)
-	addtimer(CALLBACK(src, .proc/check_for_newtons), 17.6)
-	addtimer(CALLBACK(src, .proc/warnings_for_newtons), 17.6)
+	addtimer(CALLBACK(src, PROC_REF(check_for_newtons)), 17.6)
+	addtimer(CALLBACK(src, PROC_REF(warnings_for_newtons)), 17.6)
 
 /obj/structure/annomlies_diet/thumper/proc/growing_season()
-	addtimer(CALLBACK(src, .proc/harsh_winds), apple_timer)
-	addtimer(CALLBACK(src, .proc/growing_season), apple_timer_growing)
+	addtimer(CALLBACK(src, PROC_REF(harsh_winds)), apple_timer)
+	addtimer(CALLBACK(src, PROC_REF(growing_season)), apple_timer_growing)
 
 
 /obj/structure/annomlies_diet/echo
@@ -601,7 +601,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.adjustBruteLoss(witch)
-		addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/atom, SpinAnimation), 3, 3), 1)
 		H.stunned = black_and_white
 		H.confused += kansists
 		H.updatehealth()
@@ -645,7 +645,7 @@
 /obj/structure/annomlies_diet/razer/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/spread), spread_speed_slow)
+	addtimer(CALLBACK(src, PROC_REF(spread)), spread_speed_slow)
 
 /obj/structure/annomlies_diet/razer/non_spreader
 	is_growing = FALSE
@@ -696,7 +696,7 @@
 				is_growing = FALSE
 
 	if(spidersilk && is_growing) //Anti-lag breaking the chain
-		addtimer(CALLBACK(src, .proc/spread), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
+		addtimer(CALLBACK(src, PROC_REF(spread)), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 // Check the given turf to see if there is any special things that would prevent the spread
 /obj/structure/annomlies_diet/razer/proc/can_twirl_to(var/turf/T)
@@ -738,8 +738,8 @@
 /obj/structure/annomlies_diet/glacier/New()
 	..()
 	set_awake()
-	addtimer(CALLBACK(src, .proc/dramatics), grab_timer)
-	addtimer(CALLBACK(src, .proc/scateing_season), grab_timer_repeater)
+	addtimer(CALLBACK(src, PROC_REF(dramatics)), grab_timer)
+	addtimer(CALLBACK(src, PROC_REF(scateing_season)), grab_timer_repeater)
 
 /obj/structure/annomlies_diet/glacier/Crossed(mob/M)
 	.=..()
@@ -760,8 +760,8 @@
 
 /obj/structure/annomlies_diet/glacier/proc/dramatics(mob/M)
 //	flick("sunshine", src)
-	addtimer(CALLBACK(src, .proc/scaters_in_the_ring), 1)
+	addtimer(CALLBACK(src, PROC_REF(scaters_in_the_ring)), 1)
 
 /obj/structure/annomlies_diet/glacier/proc/scateing_season()
-	addtimer(CALLBACK(src, .proc/dramatics), grab_timer)
-	addtimer(CALLBACK(src, .proc/scateing_season), grab_timer_repeater)
+	addtimer(CALLBACK(src, PROC_REF(dramatics)), grab_timer)
+	addtimer(CALLBACK(src, PROC_REF(scateing_season)), grab_timer_repeater)

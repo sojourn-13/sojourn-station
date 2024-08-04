@@ -14,6 +14,7 @@
 	slot_flags = null
 	flags = CONDUCT
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 25, QUALITY_BOLT_TURNING = 25, QUALITY_DRILLING = 25, QUALITY_WELDING = 25, QUALITY_CAUTERIZING = 25, QUALITY_PRYING = 25, QUALITY_DIGGING = 25, QUALITY_PULSING = 25, QUALITY_WIRE_CUTTING = 25, QUALITY_HAMMERING = 25, QUALITY_SHOVELING = 25, QUALITY_EXCAVATION = 25, QUALITY_CLAMPING = 25, QUALITY_RETRACTING = 25, QUALITY_SAWING = 25, QUALITY_BONE_SETTING = 25, QUALITY_CUTTING = 25, QUALITY_BONE_GRAFTING = 25)
+	no_double_tact = TRUE
 	degradation = 0 // Can't degrade
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
@@ -132,7 +133,7 @@
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
-		armor_penetration = ARMOR_PEN_HALF
+		armor_divisor = ARMOR_PEN_HALF
 
 	var/throwdir = get_dir(user,target)
 	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
@@ -190,7 +191,7 @@
 
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
-		armor_penetration = ARMOR_PEN_HALF
+		armor_divisor = ARMOR_PEN_HALF
 
 	..()
 	force = initial(force) // Reset the damage just in case
@@ -218,7 +219,7 @@
 	max_durability = 80 //Can be made on mass and is meant to to be a light weak shield
 	durability = 80
 	slowdown_time = 0 //Were crappy and mass made by the mind
-	armor_list = list(melee = 15, bullet = 15, energy = 35, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 3, bullet = 3, energy = 2, bomb = 15, bio = 0, rad = 0)
 	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 	//Got to do a little more effort to make this block proj (min cost of 2 points)
@@ -244,7 +245,7 @@
 	max_durability = 120
 	durability = 120
 	base_block_chance = 50
-	armor_list = list(melee = 25, bullet = 20, energy = 40, bomb = 25, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 5, energy = 2, bomb = 25, bio = 0, rad = 0)
 
 // Psionic gun.
 /obj/item/gun/kinetic_blaster
@@ -288,7 +289,7 @@
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
 			force = /obj/item/projectile/kinetic_blast/brutal
-			armor_penetration = ARMOR_PEN_HALF
+			armor_divisor = ARMOR_PEN_HALF
 
 		projectile_type = force
 
@@ -359,7 +360,7 @@
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
 			force = /obj/item/projectile/kinetic_blast_electro/brutal
-			armor_penetration = ARMOR_PEN_HALF
+			armor_divisor = ARMOR_PEN_HALF
 
 		projectile_type = force
 

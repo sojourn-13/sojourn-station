@@ -619,9 +619,15 @@ Food quality is calculated based on the steps taken.
 //-----------------------------------------------------------------------------------
 //default function for creating a product
 /datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer/pointer)
+	#ifdef CWJ_DEBUG
+	log_debug("/recipe/proc/create_product: Called Function.")
+	#endif
 	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
 	var/obj/item/container = parent.holder_ref.resolve()
 	if(container)
+		//Calculate quality for reagents before we mess around with the datum
+		var/reagent_quality = calculate_reagent_quality(pointer)
+
 		//Build up a list of reagents that went into this.
 		var/datum/reagents/slurry = new /datum/reagents(max=1000000, A=container)
 
@@ -699,9 +705,6 @@ Food quality is calculated based on the steps taken.
 			QDEL_LIST(container.contents)
 			container.contents = list()
 
-			var/reagent_quality = calculate_reagent_quality(pointer)
-
-
 			//Produce Item descriptions based on the steps taken
 			var/cooking_description_modifier = ""
 			for(var/id in pointer.steps_taken)
@@ -736,7 +739,7 @@ Food quality is calculated based on the steps taken.
 
 		if(reagent_id) //Make a reagent
 			//quality handling
-			var/total_quality = pointer.tracked_quality + calculate_reagent_quality(pointer)
+			var/total_quality = pointer.tracked_quality + reagent_quality
 
 			//Create our Reagent
 			container.reagents.add_reagent(reagent_id, reagent_amount, data=list("FOOD_QUALITY" = total_quality))
@@ -746,6 +749,9 @@ Food quality is calculated based on the steps taken.
 //Extra Reagents in a recipe take away recipe quality for every extra unit added to the concoction.
 //Reagents are calculated in two areas. Here and /datum/cooking_with_jane/recipe_step/add_reagent/calculate_quality
 /datum/cooking_with_jane/recipe/proc/calculate_reagent_quality(var/datum/cooking_with_jane/recipe_pointer/pointer)
+	#ifdef CWJ_DEBUG
+	log_debug("/recipe/proc/calculate_reagent_quality: Calculating product")
+	#endif
 	if(!GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"])
 		return 0
 	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
@@ -762,6 +768,11 @@ Food quality is calculated based on the steps taken.
 		calculated_volume += active_step.required_reagent_amount
 
 		calculated_quality += active_step.base_quality_award
+	#ifdef CWJ_DEBUG
+	log_debug("/recipe/proc/calculate_reagent_quality: Calculated quality - [calculated_quality]")
+	log_debug("/recipe/proc/calculate_reagent_quality: Calculated volume - [calculated_volume]")
+	log_debug("/recipe/proc/calculate_reagent_quality: Total volume - [total_volume]")
+	#endif
 
 	return calculated_quality - (total_volume - calculated_volume)
 

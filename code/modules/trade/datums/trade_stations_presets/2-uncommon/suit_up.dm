@@ -38,6 +38,7 @@
 		),
 		"RIGs" =  list(
 			/obj/item/rig/eva = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/sea = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/medical = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/light = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/hazmat = custom_good_amount_range(list(1, 5)),
@@ -74,7 +75,8 @@
 			/obj/item/rig_module/storage,
 			/obj/item/rig_module/storage/engi,
 			/obj/item/rig_module/storage/med,
-			/obj/item/rig_module/storage/combat
+			/obj/item/rig_module/storage/combat,
+			/obj/item/rig_module/storage/large
 		)
 	)
 

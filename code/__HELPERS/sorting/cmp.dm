@@ -7,6 +7,9 @@
 /proc/cmp_name_dsc(atom/a, atom/b)
 	return sorttext(a.name, b.name)
 
+/proc/cmp_name_in_list_asc(list/a, list/b)
+	return sorttext(b["name"], a["name"])
+
 /proc/cmp_catalog_entry_asc(datum/catalog_entry/a, datum/catalog_entry/b)
 	return sorttext(b.title, a.title)
 

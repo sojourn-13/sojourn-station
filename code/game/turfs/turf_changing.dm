@@ -40,6 +40,9 @@
 		if(S.zone)
 			S.zone.rebuild()
 
+	var/list/post_change_callbacks = list()
+	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, N, flags, post_change_callbacks)
+
 	if(ispath(N, /turf/simulated/floor))
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
 		T = W
@@ -72,6 +75,9 @@
 		T.levelupdate()
 		. =  T
 
+	for(var/datum/callback/callback as anything in post_change_callbacks)
+		callback.InvokeAsync(.)
+
 	for(var/turf/neighbour in trange(1, src))
 		if (istype(neighbour, /turf/space))
 			var/turf/space/SP = neighbour
@@ -102,7 +108,7 @@
 	src.set_dir(other.dir)
 	src.icon_state = other.icon_state
 	src.icon = other.icon
-	src.copy_overlays(other.overlays.Copy(), TRUE)
+	src.copy_overlays(other, TRUE)
 	src.underlays = other.underlays.Copy()
 	src.opacity = other.opacity
 	if(hasvar(src, "blocks_air"))

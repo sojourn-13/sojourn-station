@@ -22,9 +22,9 @@
 
 /obj/machinery/ameridian_refinery/update_icon()
 	cut_overlays()
-	overlays += "liquid_overlay"
-	overlays += "refinery_top"
-	overlays += "glass_overlay"
+	add_overlay("liquid_overlay")
+	add_overlay("refinery_top")
+	add_overlay("glass_overlay")
 
 /obj/machinery/ameridian_refinery/examine(mob/user)
 	..()

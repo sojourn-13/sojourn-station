@@ -1,14 +1,14 @@
 /mob/living/carbon/superior_animal/handmade
 	name = "Custom-made Drone"
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
-	icon = 'icons/mob/custom_bot.dmi'
+	icon = 'icons/mob/custom_bot.dmi' //roomba in this file was created by Toriate#0657
 	faction = "neutral"
 	pass_flags = PASSTABLE
 	turns_per_move = 5
 	see_in_dark = 10
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned

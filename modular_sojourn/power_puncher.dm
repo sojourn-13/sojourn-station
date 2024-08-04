@@ -96,7 +96,7 @@
 			take_damage(bomb_scale_six, BRUTE)
 	return
 
-/obj/machinery/power/puncher/attack_generic(mob/user, damage)
+/obj/machinery/power/puncher/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
@@ -112,8 +112,8 @@
 			take_damage(dmg, dmg_type)
 		if(P.agony)
 			take_damage(P.agony, HALLOSS)
-		if(P.armor_penetration)
-			take_damage(P.armor_penetration, HALLOSS)
+		if(P.armor_divisor)
+			take_damage(P.armor_divisor * 10, HALLOSS)
 
 /obj/machinery/power/puncher/Destroy()
 	return ..()

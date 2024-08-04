@@ -10,3 +10,7 @@
 #define TOOL_BREAKER /datum/task_master/task/tool_breaker
 #define PROPER_AREA_SMOKER /datum/task_master/task/proper_area_smoker
 #define POORS /datum/task_master/task/poors
+#define PARCORE /datum/task_master/task/parcore
+#define SLIP_N_DIE /datum/task_master/task/slip_n_die
+#define SLAB_CLEARER /datum/task_master/task/slab_clearer
+#define SHEATH_ARTS /datum/task_master/task/sheath_arts

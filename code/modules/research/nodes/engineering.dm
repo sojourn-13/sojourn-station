@@ -495,6 +495,7 @@
 	cost = 1875
 
 	unlocks_designs = list(/datum/design/research/item/storage,
+							/datum/design/research/item/storage/large,
 							/datum/design/research/item/storageengi,
 							/datum/design/research/item/storagemed,
 							/datum/design/research/item/storagetac,

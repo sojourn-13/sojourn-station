@@ -51,7 +51,7 @@
 
 /obj/machinery/recycle_vendor/update_icon()
 	SSnano.update_uis(src)
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)
 		icon_state = "recycle_broken"
 		return
@@ -61,12 +61,12 @@
 	if(stat & NOPOWER || !anchored)
 		return
 
-	overlays += sales_paused || !materials_allowed.len	? "recycle_screen_red"			: "recycle_screen_green"
-	overlays += materials_stored.len					? "recycle_button_top_green"	: "recycle_button_top_red"
-	overlays += vagabond_charity_budget > 500			? "recycle_button_bottom_green"	: "recycle_button_bottom_red"
+	add_overlay(sales_paused || !materials_allowed.len	? "recycle_screen_red"			: "recycle_screen_green")
+	add_overlay(materials_stored.len					? "recycle_button_top_green"	: "recycle_button_top_red")
+	add_overlay(vagabond_charity_budget > 500			? "recycle_button_bottom_green"	: "recycle_button_bottom_red")
 
 	if(panel_open)
-		overlays += "recycle_panel"
+		add_overlay("recycle_panel")
 
 
 /obj/machinery/recycle_vendor/attackby(obj/item/I, mob/living/user)

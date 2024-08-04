@@ -40,6 +40,7 @@
 	name = "C20r frame"
 	desc = "A C20r SMG frame. The syndicate's bread and butter. Curiously, it has two sets of threads for a barrel in differing sizes."
 	icon_state = "frame_syndi"
+	nra = FALSE
 	result = /obj/item/gun/projectile/automatic/c20r
 	resultvars = list(/obj/item/gun/projectile/automatic/c20r)
 	gripvars = list(/obj/item/part/gun/grip/black)
@@ -79,7 +80,6 @@
 	name = "C20m frame"
 	desc = "A C20m SMG frame. The syndicate's bread and butter, reverse-engineered. Curiously, it has two sets of threads for a barrel in differing sizes."
 	icon_state = "frame_sci"
-	nra = FALSE
 	result = /obj/item/gun/projectile/automatic/c20r/sci
 	resultvars = list(/obj/item/gun/projectile/automatic/c20r/sci)
 	gripvars = list(/obj/item/part/gun/grip/black)

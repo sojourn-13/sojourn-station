@@ -1,176 +1,53 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
-/client/verb/wikiurl()
-	set name = "wikiurl"
+/client/verb/wiki()
+	set name = "wiki"
 	set desc = "Visit the wiki."
-	set hidden = 1
-	if( config.wikiurl )
-		if(alert("This will open the wiki in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.wikiurl)
+	set hidden = TRUE
+	var/wikiurl = config.wikiurl
+	if(wikiurl)
+		src << link(wikiurl)
 	else
-		to_chat(src, SPAN_WARNING("The wiki URL is not set in the server configuration."))
-	return
+		to_chat(src, SPAN_DANGER("The wiki URL is not set in the server configuration."))
 
-/client/verb/discordurl()
-	set name = "discordurl"
+/client/verb/discord()
+	set name = "discord"
 	set desc = "Visit the Discord Server."
-	set hidden = 1
-	if( config.discordurl )
-		if(alert("This will open the Discord invite in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.discordurl)
+	set hidden = TRUE
+	var/discordurl = config.discordurl
+	if(discordurl)
+		src << link(discordurl)
 	else
 		to_chat(src, SPAN_WARNING("The Discord invite is not set in the server configuration."))
-	return
 
-/client/verb/githuburl()
-	set name = "githuburl"
+/client/verb/github()
+	set name = "github"
 	set desc = "Visit the Github."
-	set hidden = 1
-	if( config.githuburl )
-		if(alert("This will open the Github page in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.githuburl)
+	set hidden = TRUE
+	var/githuburl = config.githuburl
+	if(githuburl)
+		src << link(githuburl)
 	else
 		to_chat(src, SPAN_WARNING("The Github is not set in the server configuration."))
-	return
 
+/client/verb/tickets()
+	set name = "tickets"
+	set desc = "View open admin tickets"
+	set hidden = TRUE
+	openAdminUserUI()
 
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"
 	set desc = "Show Server Rules."
-	set hidden = 1
+	set hidden = TRUE
 	src << browse(file(RULES_FILE), "window=rules;size=480x320")
 #undef RULES_FILE
 
-/client/verb/hotkeys_help()
-	set name = "hotkeys-help"
-	set category = "OOC"
-
-	var/admin = {"<font color='purple'>
-	Admin:
-	\tF5 = Aghost (admin-ghost)
-	\tF6 = player-panel
-	\tF7 = admin-pm
-	\tF8 = Invisimin
-	Admin Ghost:
-	\tShift + Ctrl + Click = View Variables
-</font>"}
-
-	var/hotkey_mode = {"<font color='purple'>
-Режим горячих клавиш (горячие клавиши должны быть включены)
-\tTAB = включить режим горячих клавиш
-\ta = влево
-\ts = вниз
-\td = вправо
-\tw = вверх
-\tq = положить
-\te = экипировать
-\tr = бросить
-\tt = говорить
-\t5 = описывать действия персонажа
-\tx = переключить активную руку
-\tz = активировать предмет в активной руке (или y)
-\tj = переключить режим прицеливания
-\tf = переключить намерения влево
-\tg = переключить намеренья вправо
-\t1 = намеренье помощи
-\t2 = намеренье разоружения
-\t3 = намеренье захвата
-\t4 = намеренье вреда
-\tCtrl = тащить
-\tShift = осмотреть
-</font>"}
-
-	var/other = {"<font color='purple'>
-Любой-режим: (Включённый режим горячих клавиш не требуется)
-\tCtrl+a = влево
-\tCtrl+s = вниз
-\tCtrl+d = вправо
-\tCtrl+w = вверх
-\tCtrl+q = положить
-\tCtrl+e = экипировать
-\tCtrl+r = бросить
-\tCtrl+x = переключить активную руку
-\tCtrl+z =активировать предмет в активной руке (или Ctrl+y)
-\tCtrl+f = переключать намеренья влево
-\tCtrl+g = переключать намеренья вправо
-\tCtrl+1 = намеренье помощи
-\tCtrl+2 = намеренье разоружения
-\tCtrl+3 = намеренье захвата
-\tCtrl+4 = намеренье вреда
-\tF1 = помощь администрации
-\tF2 = внеигровой чат
-\tF3 = говорить
-\tF4 = описывать действия персонажа
-\tDEL = тащить
-\tINS = переключать намеренья вправо
-\tHOME = положить
-\tPGUP = переключить активную руку
-\tPGDN = активировать предмет в активной руке
-\tEND = бросить
-</font>"}
-
-	var/robot_hotkey_mode = {"<font color='purple'>
-Режим горячих клавиш: (режим горячих клавиш должен быть включён)
-\tTAB = включить режим горячих клавиш
-\ta = влево
-\ts = вниз
-\td = вправо
-\tw = вверх
-\tq = убрать активный модуль
-\tt = говорить
-\tx = переключать активные модули
-\tz = активировать предмет в руке (или y)
-\tf = переключать намеренья влево
-\tg = переключать намеренья вправо
-\t1 = активировать модуль 1
-\t2 = активировать модуль 2
-\t3 = активировать модуль 3
-\t4 = переключить намеренья
-\t5 = описывать действия персонажа
-\tCtrl = тащить
-\tShift = осмотреть
-</font>"}
-
-	var/robot_other = {"<font color='purple'>
-Любой-режим: (Включённый режим горячих клавиш не требуется)
-\tCtrl+a = влево
-\tCtrl+s = вниз
-\tCtrl+d = вправо
-\tCtrl+w = вверх
-\tCtrl+q = снять активный модуль
-\tCtrl+x = переключать активные модули
-\tCtrl+z = активировать объект в руке (или Ctrl+y)
-\tCtrl+f = переключать-намеренья-влево
-\tCtrl+g = переключать-намеренья-вправо
-\tCtrl+1 = активация модуля 1
-\tCtrl+2 = активация модуля 2
-\tCtrl+3 = активация модуля 3
-\tCtrl+4 = переключить намеренья
-\tF1 = помощь администрации
-\tF2 = внеигровой чат
-\tF3 = говорить
-\tF4 = описывать действия персонажа
-\tDEL = тащить
-\tINS = переключить взаимодействия
-\tPGUP = переключать активные модули
-\tPGDN = активировать объект в руке
-</font>"}
-
-	if(isrobot(src.mob))
-		to_chat(src, robot_hotkey_mode)
-		to_chat(src, robot_other)
-	else
-		to_chat(src, hotkey_mode)
-		to_chat(src, other)
-	if(holder)
-		to_chat(src, admin)
-
 /client/verb/changelog()
 	set name = "Changelog"
-	set category = "OOC"
+	set desc = "See what's new"
+	set hidden = TRUE
+
 	if(!GLOB.changelog_tgui)
 		GLOB.changelog_tgui = new /datum/changelog()
 
@@ -179,3 +56,79 @@
 		prefs.lastchangelog = changelog_hash
 		prefs.save_preferences()
 		winset(src, "rpane.changelog", "background-color=none;font-style=;")
+
+/client/verb/hotkeys_help()
+	set name = "Hotkeys Help"
+	set category = "OOC"
+
+	var/static/admin = {"<font color='purple'>
+	Admin:
+	\tF5 = Aghost (admin-ghost)
+	\tF6 = player-panel
+	\tF7 = admin-pm
+	\tF8 = Invisimin
+	Admin Ghost:
+	\tShift + Ctrl + Click = View Variables
+	</font>"}
+
+	var/static/default = {"<font color='blue'>
+	Hotkey-Mode: (hotkey-mode must be on)
+	\tTAB = change focus between the chat and the game
+	\ta = left
+	\ts = down
+	\td = right
+	\tw = up
+	\tq = drop
+	\te = equip
+	\tf = block
+	\tb = resist
+	\tc = rest
+	\tShift+e = belt-equip
+	\tShift+q = suit-storage-equip
+	\tShift+b = bag-equip
+	\tr = throw
+	\tt = say
+	\t5 = emote
+	\tx = swap-hand
+	\tz = activate held object (or y)
+	\tl = toogle flashlight
+	\tj = toggle-aiming-mode
+	\tf = cycle-intents-left
+	\tg = cycle-intents-right
+	\t1 = help-intent
+	\t2 = disarm-intent
+	\t3 = grab-intent
+	\t4 = harm-intent
+	\tCtrl = drag
+	\tShift = examine
+	\tF11 = toggle fullscreen
+	</font>"}
+
+	var/static/robot = {"<font color='purple'>
+	\tTAB = change focus between the chat and the game
+	\ta = left
+	\ts = down
+	\td = right
+	\tw = up
+	\tq = unequip active module
+	\tt = say
+	\tx = cycle active modules
+	\tz = activate held object (or y)
+	\tf = cycle-intents-left
+	\tg = cycle-intents-right
+	\t1 = activate module 1
+	\t2 = activate module 2
+	\t3 = activate module 3
+	\t4 = toggle intents
+	\t5 = emote
+	\tCtrl = drag
+	\tShift = examine
+	\tF11 = toggle fullscreen
+	</font>"}
+
+	if(isrobot(mob))
+		to_chat(src, robot)
+	else
+		to_chat(src, default)
+	if(holder)
+		to_chat(src, admin)

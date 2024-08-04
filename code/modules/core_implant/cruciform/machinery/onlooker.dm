@@ -23,7 +23,7 @@
 	my_area = get_area(src)
 	. = ..()
 	update_icon()
-	addtimer(CALLBACK(src, .proc/lower_entropy), time_step, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(lower_entropy)), time_step, TIMER_STOPPABLE)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/examine(mob/living/user, distance)
 	if(my_area.bluespace_entropy)
@@ -45,7 +45,7 @@
 	else //If we're not active, we still lower the BS, but by a LOT less
 		my_area.bluespace_entropy -= 1
 		GLOB.bluespace_entropy -= 1
-	addtimer(CALLBACK(src, .proc/lower_entropy), time_step, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(lower_entropy)), time_step, TIMER_STOPPABLE)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/attack_hand(mob/user as mob)
 	if(active_mode)

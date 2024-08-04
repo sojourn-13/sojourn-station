@@ -5,7 +5,8 @@
 	frame_type = FRAME_VERTICAL
 	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 5)
 	req_components = list(
-		/obj/item/stock_parts/capacitor = 1
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/smes_coil = 1
 	)
 
 /obj/item/circuitboard/os_turret
@@ -19,7 +20,7 @@
 		/obj/item/stock_parts/scanning_module/one_star = 1,
 		/obj/item/cell/large = 1
 	)
-	var/target_superior_mobs = FALSE
+	var/should_target_players = TRUE
 
 /obj/item/circuitboard/os_turret/laser
 	build_name = "Greyson Positronic laser turret"

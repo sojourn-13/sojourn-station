@@ -431,7 +431,7 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 			for(var/loot_item in loot)
 				if(ispath(loot_item, /obj))
 					var/obj/instanced_item = new loot_item()
-					instanced_item.loc = src.loc
+					instanced_item.loc = get_turf(src)
 			qdel(src)
 		else
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)

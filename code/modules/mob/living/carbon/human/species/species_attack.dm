@@ -53,7 +53,7 @@
 	attack_verb = list("stabbed", "jabbed", "shanked")
 	attack_noun = list("stab", "jab", "shank")
 	damage = 2
-	armor_penetration = 10
+	armor_divisor = 1.2
 
 /datum/unarmed_attack/horns
 	deal_halloss = 9
@@ -83,7 +83,7 @@
 		user.adjustNutrition(-40)
 		last_attack = world.time
 		user.visible_message(SPAN_DANGER("[user] electrocutes \the [target] with their arms!"), SPAN_NOTICE("You electrocute \the [target] with your arm!"), SPAN_WARNING("You hear a splash of water and a sharp electric buzz!"), 5)
-		addtimer(CALLBACK(src, .proc/warn_recharge, user), delay)
+		addtimer(CALLBACK(src, PROC_REF(warn_recharge), user), delay)
 
 /datum/unarmed_attack/slime_glomp/proc/warn_recharge(mob/living/carbon/human/user)
 	to_chat(user, SPAN_NOTICE("Your arms are ready to shock again!"))

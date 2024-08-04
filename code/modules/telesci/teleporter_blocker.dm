@@ -52,10 +52,11 @@
 	..()
 
 /obj/machinery/telesci_inhibitor/update_icon()
+	cut_overlays()	
 	if(!(stat & NOPOWER))
-		overlays += "inhibitor-powered"
+		add_overlay("inhibitor-powered")
 	if(panel_open)
-		overlays += "inhibitor-panel"
+		add_overlay("inhibitor-panel")
 
 /obj/machinery/telesci_inhibitor/Destroy()
 	area.tele_inhibitors -= src
@@ -98,7 +99,8 @@
 	amount_extra_blocked = 0
 
 /obj/machinery/telesci_inhibitor/mini/update_icon()
+	cut_overlays()	
 	if(!(stat & NOPOWER))
-		overlays += "minihibitor-powered"
+		add_overlay("minihibitor-powered")
 	if(panel_open)
-		overlays += "minihibitor-panel"
+		add_overlay("minihibitor-panel")

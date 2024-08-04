@@ -203,9 +203,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "punk_vest"
 	item_state = "punk_vest"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -231,8 +231,8 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "punkvest"
 	item_state = "punkvest"
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -250,7 +250,7 @@ obj/item/clothing/suit/gownrisque/alt
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 5,
+		energy = 1,
 		bomb = 0,
 		bio = 30,
 		rad = 10
@@ -263,9 +263,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "cyberpunk"
 	item_state = "cyberpunk"
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -281,9 +281,9 @@ obj/item/clothing/suit/gownrisque/alt
 	stiffness = MEDIUM_STIFFNESS
 	equip_delay = 2 SECONDS
 	armor_list = list(
-		melee = 30, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
-		bullet = 20,
-		energy = 25,
+		melee = 7, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
+		bullet = 5,
+		energy = 6,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -321,9 +321,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "scav_heavy"
 	item_state = "scav_heavy"
 	armor_list = list(
-		melee = 50, //A bit worse than riot armour
-		bullet = 25,
-		energy = 25,
+		melee = 12, //A bit worse than riot armour
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -359,9 +359,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -376,9 +376,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "akira"
 	item_state = "akira"
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -392,9 +392,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "outcast_cloak"
 	item_state = "outcast_cloak"
 	armor_list = list(
-		melee = 20,
-		bullet = 10,
-		energy = 20,
+		melee = 5,
+		bullet = 2,
+		energy = 5,
 		bomb = 10,
 		bio = 5,
 		rad = 5
@@ -410,9 +410,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "field_numerical"
 	item_state = "field_numerical"
 	armor_list = list(
-		melee = 10,
+		melee = 2,
 		bullet = 0, //well armored its not going to help a bullet
-		energy = 10,
+		energy = 2,
 		bomb = 5,
 		bio = 100,
 		rad = 0
@@ -442,3 +442,54 @@ obj/item/clothing/suit/gownrisque/alt
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+
+// Miscs
+
+/obj/item/clothing/suit/storage/omni_robes
+	name = "religious robe"
+	desc = "A robe made of cloth that can be colored."
+	icon_state = "general_priest_cloth"
+	item_state = "general_priest_cloth"
+	armor_list = list(
+		melee = 2,
+		bullet = 1,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 50
+
+/obj/item/clothing/suit/hev
+
+	name = "Hazardous Enviroment Protection suit" //funny reference suit. stronk rare and includes some degree of fire and hazard protection just not a space suit.
+	desc = "An advanced suit designed to protect you from the harshest of enviroments as long as that enviroment is not space. A shame most of it's systems seem broken down..."
+	icon_state = "rad"
+	item_state = "rad_suit"
+	w_class = ITEM_SIZE_BULKY
+	stiffness = LIGHT_STIFFNESS
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	siemens_coefficient = 0.4
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(
+		melee = 16,
+		bullet = 15,
+		energy = 13,
+		bomb = 75,
+		bio = 100,
+		rad = 100
+	)
+	equip_delay = 2 SECONDS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	item_flags = COVER_PREVENT_MANIPULATION
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
+	price_tag = 2000
