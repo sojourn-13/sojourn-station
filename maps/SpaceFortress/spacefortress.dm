@@ -1,7 +1,7 @@
 //#include "map/spacefortress.dmm"
 //#include "map/blackstone_temple.dmm"
 //#include "map/space_dungeons.dmm"
-#include "map/space_ambush.dmm"
+//#include "map/space_ambush.dmm"
 
 /obj/map_data/spacefortress
 	name = "Excelsior Fortress"
