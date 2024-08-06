@@ -46943,7 +46943,6 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "jht" = (
-/obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -63209,6 +63208,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
+"muu" = (
+/obj/structure/table/woodentable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+	pixel_y = 2;
+	pixel_x = 5
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/maintenance/undergroundfloor2west)
 "muB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/sofa{
@@ -73705,6 +73717,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+	pixel_y = 4;
+	pixel_x = 4
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "ori" = (
@@ -89865,6 +89881,16 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"rxq" = (
+/obj/structure/table/woodentable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+	pixel_y = 3;
+	pixel_x = -5
+	},
+/obj/random/booze,
+/turf/simulated/floor/wood,
+/area/nadezhda/maintenance/undergroundfloor2west)
 "rxy" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -108377,9 +108403,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "uZT" = (
-/obj/structure/reagent_dispensers/premiumwhiskey,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/random/booze,
+/obj/random/booze,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "vac" = (
@@ -171919,10 +171947,10 @@ tvc
 xUC
 xUC
 xUC
-iEo
+rxq
 aZL
 kWk
-iEo
+muu
 tvc
 tvc
 tvc
