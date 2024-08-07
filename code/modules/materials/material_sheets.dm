@@ -347,6 +347,8 @@
 
 /obj/item/stack/material/wood
 	name = "wooden plank"
+	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
 
