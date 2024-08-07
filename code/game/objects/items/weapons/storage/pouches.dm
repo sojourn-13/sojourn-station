@@ -207,6 +207,7 @@
 
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
+		PC.resonances = "Null"
 		PC.icon_state = "psi_catalyst_dull"
 
 	..()
