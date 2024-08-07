@@ -60,7 +60,7 @@
 		if(propname == "damage_mult_add")
 			gun.damage_multiplier += settings[propname]
 			continue
-		
+
 		try
 			gun.vars[propname] = settings[propname]
 
@@ -83,4 +83,7 @@
 
 //Called whenever the firemode is switched to, or the gun is picked up while its active
 /datum/firemode/proc/update()
+	return
+
+/datum/firemode/proc/force_deselect(mob/user)
 	return
