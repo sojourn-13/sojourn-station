@@ -186,7 +186,7 @@
 	out_put_name = "Rust"
 
 /datum/eternal_ascension_resonances/decay
-	rune_resonance = "QuickAge"
+	rune_resonance = "QuickRust"
 	output = /obj/item/device/psionic_catalyst/decay
 	out_put_name = "Decay"
 
