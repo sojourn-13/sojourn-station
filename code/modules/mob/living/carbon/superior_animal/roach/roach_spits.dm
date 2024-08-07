@@ -31,7 +31,8 @@
 
 /obj/item/projectile/roach_spit/large/on_hit(atom/target)
 	. = ..()
-	new /obj/effect/decal/cleanable/greenglow/bile(src.loc)
+	if(!(locate(/obj/effect/decal/cleanable/greenglow/bile) in target.loc))		//Equinox edit: Prevents excessive stacking of hundreds of puddles that process and irradiate
+		new /obj/effect/decal/cleanable/greenglow/bile(target.loc)		//Equinox edit: Makes the puddles drop right on the intended target instead of harmlessly splatering on distant walls
 	if(isliving(target))
 		if (!testing)
 			var/mob/living/L = target

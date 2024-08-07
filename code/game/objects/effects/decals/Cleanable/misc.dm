@@ -36,7 +36,7 @@
 	. = ..()
 	for(var/mob/living/carbon/l in range(4))
 		if(prob(25))
-			to_chat(src, SPAN_WARNING("The air begins to feel warm."))
+			to_chat(src, SPAN_WARNING("The air begins to feel warm, accompanied by a hideous aroma."))	//Equinox edit: makes the danger more obvious
 		l.apply_effect(0.5, IRRADIATE) //we spit out THREE of these.
 
 /obj/effect/decal/cleanable/dirt
@@ -144,7 +144,9 @@
 
 /obj/effect/decal/cleanable/greenglow/bile
 	name = "glowing bile"
-	desc = "A small puddle of glowing green bile, it utterly reeks. Just being near it makes you feel a bit warmer."
+	desc = "A small puddle of glowing green bile, it utterly reeks. Just being near it makes you feel a bit warmer. It appears to be highly volatile and is slowly evaporating away." //Equinox edit: Less hidden mechanics, more documented information
+	icon = 'icons/effects/effects.dmi'		//Equinox edit: Changes the icon to be a lot more obvious
+	icon_state = "toxic_puddle"
 
 
 /obj/effect/decal/cleanable/slimecorpse // Slimepeople remains
