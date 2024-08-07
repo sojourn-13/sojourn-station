@@ -110,6 +110,7 @@
 	desc = "Can hold nearly anything in it, but only a small amount."
 	icon_state = "small_implanted"
 	max_storage_space = DEFAULT_SMALL_STORAGE * 0.4
+	matter = list(MATERIAL_SILK = 1)
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
