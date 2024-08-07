@@ -320,6 +320,26 @@
 							/datum/design/research/item/mechfab/prosthesis_moebius/chest
 							)
 
+/datum/technology/blood_n_guts
+	name = "Blood and Hunger Cyberware"
+	desc = "A set of cyberware for helping with hunger and blood. Storage Nutrience: Advanced Cal Keeper and Sanguin-Stash!"
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.7
+	y = 0.5
+	icon = "scalpelmanager"
+
+	required_technologies = list(	/datum/technology/top_biotech
+								)
+	required_tech_levels = list()
+	cost = 1250
+
+	unlocks_designs = list(
+							/datum/design/research/item/mechfab/modules/snack_system,
+							/datum/design/research/item/mechfab/modules/sanguin_stash
+							)
+
+
 /datum/technology/omega_biotech
 	name = "Advanced Augmentations Biotech"
 	desc = "Refined and end of the line advancements that both body and mind can handle."
@@ -346,6 +366,25 @@
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,
 							/datum/design/research/item/mechfab/modules/hud/welder
+							)
+
+/datum/technology/brain_ware
+	name = "Brain Cyberware"
+	desc = "A set of highly advanced Cyberwares for the brain."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.85
+	y = 0.9
+	icon = "scalpelmanager"
+
+	required_technologies = list(	/datum/technology/omega_biotech
+								)
+	required_tech_levels = list()
+	cost = 2000
+
+	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/sanity_on_a_buget,
+							/datum/design/research/item/mechfab/modules/viv_bank,
+							/datum/design/research/item/mechfab/modules/sanity_mind_helper
 							)
 
 /datum/technology/rig_medical_stuff
