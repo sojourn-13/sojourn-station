@@ -1,11 +1,17 @@
 import { sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-import { toTitleCase } from 'common/string';
 import { useEffect, useState } from 'react';
-
-import { useBackend } from '../backend';
-import { Box, Button, Flex, NoticeBox, Section, Table } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Box,
+  Button,
+  Flex,
+  NoticeBox,
+  Section,
+  Table,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { toTitleCase } from 'tgui-core/string';
 
 type Data = {
   allowed: BooleanLike;

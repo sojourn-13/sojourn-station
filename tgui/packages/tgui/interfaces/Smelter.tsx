@@ -1,20 +1,19 @@
-import { round } from 'common/math';
-import { BooleanLike } from 'common/react';
-import { toTitleCase } from 'common/string';
 import { ReactNode, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+import { Button, Icon } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   Box,
-  Button,
   Flex,
-  Icon,
   Image,
   ProgressBar,
   Section,
   Stack,
   Tooltip,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
+import { toTitleCase } from 'tgui-core/string';
 
 import { IconProps } from '../components/Icon';
 import { MaterialAccessBar } from './Fabrication/MaterialAccessBar';

@@ -1,6 +1,7 @@
-import { useBackend } from '../backend';
-import { Button, LabeledList, Section, Stack } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+import { LabeledList, Section, Stack } from 'tgui-core/components';
 
 const MODE2COLOR = {
   Off: 'bad',

@@ -1,5 +1,5 @@
-import { round } from 'common/math';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
@@ -9,8 +9,8 @@ import {
   Stack,
   Table,
   Tooltip,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { round } from 'tgui-core/math';
 
 enum State {
   DeviceSelection = 0,
@@ -93,12 +93,13 @@ const DeviceSelection = (props) => {
   return (
     <Section fill height="88%" title="Step 1: Select Device Type">
       <Stack align="center" justify="space-around" height="100%">
-        <Stack.Item>
+        <Stack.Item grow>
           <Button
             textAlign="center"
             p={2}
             pt={4}
             fontSize={2}
+            fluid
             onClick={() => act('pick_device', { device: DeviceType.Laptop })}
           >
             <Stack vertical>
@@ -109,12 +110,13 @@ const DeviceSelection = (props) => {
             </Stack>
           </Button>
         </Stack.Item>
-        <Stack.Item>
+        <Stack.Item grow>
           <Button
             textAlign="center"
             p={2}
             pt={4}
             fontSize={2}
+            fluid
             onClick={() => act('pick_device', { device: DeviceType.Tablet })}
           >
             <Stack vertical>
@@ -156,9 +158,8 @@ const HardwareSelection = (props) => {
           <Table.Cell collapsing>
             <AnimatedNumber
               value={totalprice}
-              format={(val) => round(val, 2)}
+              format={(val) => round(val, 2) + 'cr'}
             />
-            cr
           </Table.Cell>
         </Table.Row>
         <HardwareSelectionRow

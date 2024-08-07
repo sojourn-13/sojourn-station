@@ -1,16 +1,15 @@
-import { round } from 'common/math';
-
-import { useBackend } from '../backend';
+import { useBackend } from 'tgui/backend';
+import { Grid } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
-  Grid,
   LabeledList,
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { round } from 'tgui-core/math';
 
 type Data = {
   generated: number;
@@ -133,7 +132,7 @@ export const SolarControl = (props) => {
                   value={azimuth_rate}
                   format={(rate) => {
                     const sign = Math.sign(rate) > 0 ? '+' : '-';
-                    return round(sign + Math.abs(rate), 1);
+                    return sign + round(Math.abs(rate), 1).toString();
                   }}
                   onChange={(value) => act('azimuth_rate', { value })}
                 />

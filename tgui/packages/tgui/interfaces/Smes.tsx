@@ -1,16 +1,15 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { Button, Flex } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   Box,
-  Button,
-  Flex,
   LabeledList,
   ProgressBar,
   Section,
   Slider,
-} from 'tgui/components';
-import { formatPower } from 'tgui/format';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
+import { BooleanLike } from 'tgui-core/react';
 
 // Common power multiplier
 const POWER_MUL = 1e3;

@@ -1,6 +1,13 @@
-import { useBackend } from '../backend';
-import { Box, Flex, Icon, Image, LabeledList, Section } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Box,
+  Flex,
+  Icon,
+  Image,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
 
 const rank2icon = {
   // Blackshield

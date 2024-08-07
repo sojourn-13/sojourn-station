@@ -1,34 +1,34 @@
-import { round, toFixed } from 'common/math';
-
-import { BooleanLike } from '../../common/react';
-import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section } from '../components';
-import { RADIO_CHANNELS } from '../constants';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { RADIO_CHANNELS } from 'tgui/constants';
+import { Window } from 'tgui/layouts';
+import { Box, LabeledList, NumberInput, Section } from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
-  rawfreq: number
-  minFrequency: number
-  maxFrequency: number
-  listening: BooleanLike
-  broadcasting: BooleanLike
-  subspace: BooleanLike
-  subspaceSwitchable: BooleanLike
+  rawfreq: number;
+  minFrequency: number;
+  maxFrequency: number;
+  listening: BooleanLike;
+  broadcasting: BooleanLike;
+  subspace: BooleanLike;
+  subspaceSwitchable: BooleanLike;
   chan_list: {
-    chan: string
-    display_name: string
-    secure_channel: BooleanLike
-    sec_channel_listen: BooleanLike
-    freq: number
-  }[]
-  loudspeaker: BooleanLike
-  loudspeakerSwitchable: BooleanLike
-  mic_cut: BooleanLike
-  spk_cut: BooleanLike
-  useSyndMode: BooleanLike
-}
+    chan: string;
+    display_name: string;
+    secure_channel: BooleanLike;
+    sec_channel_listen: BooleanLike;
+    freq: number;
+  }[];
+  loudspeaker: BooleanLike;
+  loudspeakerSwitchable: BooleanLike;
+  mic_cut: BooleanLike;
+  spk_cut: BooleanLike;
+  useSyndMode: BooleanLike;
+};
 
-export const Radio = props => {
+export const Radio = (props) => {
   const { act, data } = useBackend<Data>();
   const {
     rawfreq,
@@ -47,7 +47,7 @@ export const Radio = props => {
   } = data;
 
   const tunedChannel = RADIO_CHANNELS.find(
-    channel => channel.freq === Number(rawfreq)
+    (channel) => channel.freq === Number(rawfreq),
   );
 
   // Calculate window height
@@ -68,17 +68,17 @@ export const Radio = props => {
       <Window.Content>
         <Section>
           <LabeledList>
-            <LabeledList.Item label='Frequency'>
+            <LabeledList.Item label="Frequency">
               <NumberInput
                 animated
-                unit='kHz'
+                unit="kHz"
                 step={0.2}
                 stepPixelSize={10}
                 minValue={minFrequency / 10}
                 maxValue={maxFrequency / 10}
                 value={rawfreq / 10}
-                format={value => toFixed(value, 1)}
-                onDrag={value =>
+                format={(value) => toFixed(value, 1)}
+                onDrag={(value) =>
                   act('setFrequency', {
                     freq: round(value * 10, 1),
                   })
@@ -90,18 +90,18 @@ export const Radio = props => {
                 </Box>
               )}
             </LabeledList.Item>
-            <LabeledList.Item label='Audio'>
+            <LabeledList.Item label="Audio">
               <Button
-                textAlign='center'
-                width='37px'
+                textAlign="center"
+                width="37px"
                 icon={listening ? 'volume-up' : 'volume-mute'}
                 selected={listening}
                 disabled={spk_cut}
                 onClick={() => act('listen')}
               />
               <Button
-                textAlign='center'
-                width='37px'
+                textAlign="center"
+                width="37px"
                 icon={broadcasting ? 'microphone' : 'microphone-slash'}
                 selected={broadcasting}
                 disabled={mic_cut}
@@ -110,7 +110,7 @@ export const Radio = props => {
               {!!subspaceSwitchable && (
                 <Box>
                   <Button
-                    icon='bullhorn'
+                    icon="bullhorn"
                     selected={subspace}
                     onClick={() => act('subspace')}
                   >
@@ -132,18 +132,18 @@ export const Radio = props => {
             </LabeledList.Item>
           </LabeledList>
         </Section>
-        <Section title='Channels'>
+        <Section title="Channels">
           {(!chan_list || chan_list.length === 0) && (
-            <Box inline color='bad'>
+            <Box inline color="bad">
               No channels detected.
             </Box>
           )}
           <LabeledList>
             {!chan_list
               ? null
-              : chan_list.map(channel => {
+              : chan_list.map((channel) => {
                   const channeldata = RADIO_CHANNELS.find(
-                    c => c.freq === Number(channel.freq)
+                    (c) => c.freq === Number(channel.freq),
                   );
                   let color = 'default';
                   if (channeldata) {
@@ -154,7 +154,7 @@ export const Radio = props => {
                       key={channel.chan}
                       label={channel.display_name}
                       labelColor={color}
-                      textAlign='right'
+                      textAlign="right"
                     >
                       {channel.secure_channel && subspace ? (
                         <Button
@@ -173,7 +173,7 @@ export const Radio = props => {
                         />
                       ) : (
                         <Button
-                          content='Switch'
+                          content="Switch"
                           selected={channel.freq === rawfreq}
                           onClick={() =>
                             act('specFreq', {

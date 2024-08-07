@@ -1,6 +1,6 @@
-import { capitalize } from 'common/string';
-
-import { useBackend } from '../backend';
+import { useBackend } from 'tgui/backend';
+import { GameIcon } from 'tgui/components/GameIcon';
+import { Window } from 'tgui/layouts';
 import {
   BlockQuote,
   Box,
@@ -11,9 +11,8 @@ import {
   NoticeBox,
   Section,
   Stack,
-} from '../components';
-import { GameIcon } from '../components/GameIcon';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
 
 interface OwnerData {
   name: string;
