@@ -45,7 +45,7 @@
 	wielded_icon = "powered_hammer_on"
 	switched_on_forcemult = 2.2 //33 total
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 1)
 	price_tag = 340
