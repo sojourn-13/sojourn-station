@@ -899,7 +899,7 @@
 					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
 					if(client || sleeping > 3)
 						AdjustSleeping(-1)
-						sanity.changeLevel(0.25)
+						sanity.changeLevel(5)
 				if(prob(2) && health)
 					spawn(0)
 						emote("snore")
