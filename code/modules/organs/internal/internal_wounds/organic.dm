@@ -271,7 +271,7 @@
 	severity = 0
 	severity_max = 0
 	status_flag = null
-
+/*	Not relevant to us as this is for the NT Church on Eris validing players
 /datum/component/internal_wound/organic/parenchyma/RegisterWithParent()
 	. = ..()
 	var/obj/item/organ/O = parent
@@ -282,10 +282,11 @@
 /datum/component/internal_wound/organic/parenchyma/UnregisterFromParent()
 	. = ..()
 	var/obj/item/organ/O = parent
-	
+
 	if(O.owner)
 		O.owner.mutation_index--
-	
+*/
+
 /datum/component/internal_wound/organic/parenchyma/heart
 	name = "heart parenchyma"
 	organ_efficiency_mod = list(OP_HEART = 10)
