@@ -19,10 +19,11 @@
 
 //For initializing genetics information for meat, so it's easy to call.
 /obj/item/reagent_containers/food/snacks/meat/proc/initialize_genetics(mob/living/meat_source)
-	inherent_mutations = meat_source.inherent_mutations.Copy()
-	unnatural_mutations = meat_source.unnatural_mutations.Copy()
-	source_mob = meat_source.type
-	source_name = meat_source.name
+	if(meat_source)	//EQUINOX EDIT: basic sanity check to prevent runtimes
+		inherent_mutations = meat_source.inherent_mutations.Copy()
+		unnatural_mutations = meat_source.unnatural_mutations.Copy()
+		source_mob = meat_source.type
+		source_name = meat_source.name
 
 /obj/item/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"
