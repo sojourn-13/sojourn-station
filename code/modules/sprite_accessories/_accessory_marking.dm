@@ -1921,7 +1921,7 @@
 		body_parts = list(BP_HEAD)
 
 	skull_mask_full_kintsugi
-		name = "Skull Mask, full Kintsugi"
+		name = "Skull Mask, Full Kintsugi"
 		icon_state = "skull_full_kintsugi"
 		blend = ICON_ADD
 		body_parts = list(BP_HEAD)
