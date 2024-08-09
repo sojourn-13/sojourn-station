@@ -8,13 +8,12 @@
 	question = "End Shift?"
 	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 150 MINUTES //Minimum round length before it can be called for the first time
 	cooldown = 15 MINUTES //Cooldown is set to 15 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
 
-	multiple_votes = TRUE //Duel votes are fun
 	can_revote = TRUE
 	can_unvote = TRUE //In case you heck up
 
