@@ -13,11 +13,8 @@
       "ESNext",
       "ScriptHost"
     ],
-    "paths": {
-      "tgui/*": [ "./packages/tgui/*" ]
-    },
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

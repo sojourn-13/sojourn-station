@@ -1,6 +1,7 @@
-import { useBackend } from '../backend';
-import { Box, Button, Flex, Section } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+import { Box, Flex, Section } from 'tgui-core/components';
 
 type Data = {
   cabinet_name: string;

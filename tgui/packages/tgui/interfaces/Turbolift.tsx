@@ -1,26 +1,26 @@
 import { useBackend } from 'tgui/backend';
-import { Button, Flex, Section } from 'tgui/components';
+import { Button } from 'tgui/components';
 import { Window } from 'tgui/layouts';
-
-import { BooleanLike } from '../../common/react';
+import { Flex, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 type Floor = {
-  id: number
-  ref: string
-  queued: BooleanLike
-  target: BooleanLike
-  current: BooleanLike
-  label: string
-  name: string
-}
+  id: number;
+  ref: string;
+  queued: BooleanLike;
+  target: BooleanLike;
+  current: BooleanLike;
+  label: string;
+  name: string;
+};
 
 type Data = {
-  doors_open: BooleanLike
-  fire_mode: BooleanLike
-  floors: Floor[]
-}
+  doors_open: BooleanLike;
+  fire_mode: BooleanLike;
+  floors: Floor[];
+};
 
-export const Turbolift = props => {
+export const Turbolift = (props) => {
   const { act, data } = useBackend<Data>();
 
   const { floors, doors_open, fire_mode } = data;
@@ -30,7 +30,7 @@ export const Turbolift = props => {
       <Window.Content>
         <Section
           fill
-          title='Floor Selection'
+          title="Floor Selection"
           className={fire_mode ? 'Section--elevator--fire' : null}
           buttons={
             <>
@@ -47,8 +47,8 @@ export const Turbolift = props => {
                   : 'Doors Closed'}
               </Button>
               <Button
-                icon='exclamation-triangle'
-                color='bad'
+                icon="exclamation-triangle"
+                color="bad"
                 onClick={() => act('emergency_stop')}
               >
                 Emergency Stop
@@ -58,34 +58,34 @@ export const Turbolift = props => {
         >
           {!fire_mode || (
             <Section
-              className='Section--elevator--fire'
-              textAlign='center'
-              title='FIREFIGHTER MODE ENGAGED'
+              className="Section--elevator--fire"
+              textAlign="center"
+              title="FIREFIGHTER MODE ENGAGED"
             />
           )}
-          <Flex wrap='wrap'>
-            {floors.map(floor => (
-              <Flex.Item basis='100%' key={floor.id}>
-                <Flex align='center' justify='space-around'>
-                  <Flex.Item basis='40%' textAlign='right' mr={2}>
+          <Flex wrap="wrap">
+            {floors.map((floor) => (
+              <Flex.Item basis="100%" key={floor.id}>
+                <Flex align="center" justify="space-around">
+                  <Flex.Item basis="40%" textAlign="right" mr={2}>
                     {floor.label || 'Floor #' + floor.id}
                   </Flex.Item>
-                  <Flex.Item basis='8%'>
+                  <Flex.Item basis="8%">
                     <Button
-                      icon='circle'
+                      icon="circle"
                       color={
                         floor.current
                           ? 'red'
                           : floor.target
-                          ? 'green'
-                          : floor.queued
-                          ? 'yellow'
-                          : null
+                            ? 'green'
+                            : floor.queued
+                              ? 'yellow'
+                              : null
                       }
                       onClick={() => act('move_to_floor', { ref: floor.ref })}
                     />
                   </Flex.Item>
-                  <Flex.Item basis='50%' grow={1}>
+                  <Flex.Item basis="50%" grow={1}>
                     {floor.name}
                   </Flex.Item>
                 </Flex>

@@ -1,6 +1,7 @@
 import { useBackend } from 'tgui/backend';
-import { Box, Button, LabeledList, Section, Slider } from 'tgui/components';
+import { Button } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Box, LabeledList, Section, Slider } from 'tgui-core/components';
 
 import { Data as GeneralAirControlData, Sensors } from './GeneralAirControl';
 

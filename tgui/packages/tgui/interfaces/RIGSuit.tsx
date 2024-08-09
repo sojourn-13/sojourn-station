@@ -1,6 +1,5 @@
-import { BooleanLike } from 'common/react';
-import { capitalize, toTitleCase } from 'common/string';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
@@ -8,8 +7,9 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { capitalize, toTitleCase } from 'tgui-core/string';
 
 import { Data as TankData } from './Tank';
 

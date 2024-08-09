@@ -1,13 +1,13 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
-  Button,
   LabeledList,
   Section,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { Data as GeneralAirControlData, Sensors } from './GeneralAirControl';
 

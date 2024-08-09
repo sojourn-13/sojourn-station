@@ -1,10 +1,11 @@
 import { uniq } from 'common/collections';
-import { decodeHtmlEntities } from 'common/string';
 import { useBackend } from 'tgui/backend';
-import { Section, Table } from 'tgui/components';
+import { Section } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Table } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { classes } from '../../common/react';
 import { departmentData } from './common/departments';
 
 export type CrewMember = {

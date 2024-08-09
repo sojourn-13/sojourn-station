@@ -1,6 +1,6 @@
-import { round } from 'common/math';
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { formatPressureKpa } from 'tgui/format';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
@@ -8,9 +8,9 @@ import {
   LabeledList,
   Section,
   Stack,
-} from 'tgui/components';
-import { formatPressureKpa } from 'tgui/format';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 import { PortConnector, PressureRegulator } from './common/AtmosComponents';
 

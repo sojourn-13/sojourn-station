@@ -1,8 +1,8 @@
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../backend';
-import { Box, Button, Flex, Knob, LabeledList, Section } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+import { Box, Flex, Knob, LabeledList, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 enum OreAction {
   Storing = 0,

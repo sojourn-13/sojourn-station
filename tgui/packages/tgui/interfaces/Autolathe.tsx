@@ -1,15 +1,16 @@
-import { BooleanLike } from '../../common/react';
-import { decodeHtmlEntities } from '../../common/string';
-import { useBackend, useSharedState } from '../backend';
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   Box,
-  Button,
   LabeledList,
   Section,
   Stack,
   VirtualList,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
 import { SearchBar } from './Fabrication/SearchBar';
 import {
   AutolatheItem,

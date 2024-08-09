@@ -1089,3 +1089,169 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper Brass Zippo lighter"
 	desc = "A shiney brass zippo made to last, for some reason the metal is always cold to the touch and rather then the flint to start the flame makes a ticking sound when used."
 	icon_state = "brass_zippo"
+
+/////////////
+//CHEWABLES//
+/////////////
+
+/obj/item/clothing/mask/chewable
+	name = "chewable item master"
+	desc = "If you are seeing this, ahelp it."
+	icon = 'icons/inventory/face/icon.dmi'
+	body_parts_covered = 0
+
+	var/damage_per_crunch // if set to a number, chewing something will cause this amount of damage in brute and half of it in pain.
+	var/crunching = FALSE
+	var/type_butt = null
+	var/chem_volume = 0
+	var/chewtime = 0
+	var/brand
+	var/waste = 0
+	var/transfer_amount = 0.1
+	var/wrapped = FALSE
+
+/obj/item/clothing/mask/chewable/attack_self(mob/user)
+	if(wrapped)
+		wrapped = FALSE
+		to_chat(user, SPAN_NOTICE("You unwrap \the [name]."))
+		playsound(src.loc, 'sound/items/drop/wrapper.ogg', 50, 1)
+		slot_flags = SLOT_MASK
+		update_icon()
+
+/obj/item/clothing/mask/chewable/Initialize()
+	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
+	. = ..()
+	reagent_flags |= NO_REACT // so it doesn't react until you light it
+	if(wrapped)
+		slot_flags = null
+		update_icon()
+
+/obj/item/clothing/mask/chewable/equipped(var/mob/living/user, var/slot)
+	. = ..()
+	switch(slot)
+		if(slot_wear_mask)
+			to_chat(user, SPAN_NOTICE("You start chewing."))
+			reagent_flags &= ~(NO_REACT)
+			update_icon()
+			START_PROCESSING(SSobj, src)
+		if(slot_l_hand, slot_r_hand)
+			reagent_flags |= NO_REACT
+			update_icon()
+			STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/mask/chewable/dropped()
+	STOP_PROCESSING(SSprocessing, src)
+	..()
+
+/obj/item/clothing/mask/chewable/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSprocessing, src)
+
+/obj/item/clothing/mask/chewable/proc/hand_reagents()
+	var/mob/living/carbon/human/C = loc
+	if(reagents && reagents.total_volume)
+		if(ishuman(C))
+			reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.1)
+			C.sanity.onSmoke(src)
+		else
+			reagents.remove_any(waste)
+
+/obj/item/clothing/mask/chewable/Process()
+	var/mob/living/M = loc
+
+	chewtime--
+
+
+	if(chewtime % 10 == 0)
+		hand_reagents()
+
+	if(chewtime < 0)
+		to_chat(M, SPAN_WARNING("Your dip has run clear"))
+		STOP_PROCESSING(SSobj, src)
+		spitout()
+	return
+
+
+/obj/item/clothing/mask/chewable/tobacco
+	name = "wad"
+	desc = "A chewy wad of tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ashtray when you stuff it into your face."
+	throw_speed = 0.5
+	icon_state = "chew"
+	type_butt = /obj/item/trash/spitwad
+	w_class = ITEM_SIZE_TINY
+	slot_flags = SLOT_EARS | SLOT_MASK
+	chem_volume = 50
+	chewtime = 300
+	brand = "tobacco"
+
+/obj/item/trash/spitwad
+	name = "spit wad"
+	desc = "A disgusting spitwad."
+	icon = 'icons/inventory/face/icon.dmi'
+	icon_state = "spit-chew"
+	slot_flags = SLOT_MASK
+
+/obj/item/clothing/mask/chewable/proc/spitout(var/transfer_color = 1, var/no_message = 0)
+	if(type_butt)
+		var/obj/item/butt = new type_butt(src.loc)
+		transfer_fingerprints_to(butt)
+		if(transfer_color)
+			butt.color = color
+		if(brand)
+			butt.desc += " This one is \a [brand]."
+		if(ismob(loc))
+			var/mob/living/M = loc
+			if(!no_message)
+				to_chat(M, SPAN_NOTICE("The [name] runs out of flavor."))
+			if(M.wear_mask)
+				M.remove_from_mob(src) //un-equip it so the overlays can update
+				M.update_inv_wear_mask(0)
+				if(!M.equip_to_slot_if_possible(butt, slot_wear_mask))
+					M.update_inv_l_hand(0)
+					M.update_inv_r_hand(1)
+					M.put_in_hands(butt)
+	STOP_PROCESSING(SSprocessing, src)
+	qdel(src)
+
+/obj/item/clothing/mask/chewable/tobacco/bad
+	name = "chewing tobacco"
+	desc = "A chewy wad of cheap tobacco. Cut in long strands and treated with syrup so it tastes less like an ashtray when you stuff it into your face."
+	preloaded_reagents = list("nicotine" = 5)
+
+/obj/item/clothing/mask/chewable/tobacco/deli
+	name = "chewing tobacco"
+	desc = "A chewy wad of tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ashtray when you stuff it into your face."
+	preloaded_reagents = list("nicotine" = 5)
+
+/obj/item/clothing/mask/chewable/tobacco/fine
+	name = "chewing tobacco"
+	desc = "A chewy wad of fine tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ashtray when you stuff it into your face."
+	preloaded_reagents = list("nicotine" = 5)
+
+/obj/item/clothing/mask/chewable/tobacco/nico
+	name = "nicotine gum"
+	desc = "A chewy wad of synthetic rubber, laced with nicotine. Possibly the least disgusting method of nicotine delivery."
+	preloaded_reagents = list("nicotine" = 3, "mint" = 2)
+	icon_state = "nic_gum"
+	type_butt = /obj/item/trash/spitgum
+
+/obj/item/clothing/mask/chewable/tobacco/dyn
+	name = "dyn nicotine pouch"
+	desc = "A white pouch filled with nicotine salts artificially flavored for the wannabe tobacco enthusiast."
+	preloaded_reagents = list("nicotine" = 5)
+	icon_state = "nic_pouch"
+	type_butt = /obj/item/trash/spitpouch
+
+/obj/item/trash/spitgum
+	name = "old gum"
+	desc = "A disgusting chewed up wad of gum."
+	icon = 'icons/inventory/face/icon.dmi'
+	icon_state = "spit-gum"
+	slot_flags = SLOT_MASK
+
+/obj/item/trash/spitpouch
+	name = "old dyn pouch"
+	desc = "A disgusting chewed up dyn pouch."
+	icon = 'icons/inventory/face/icon.dmi'
+	icon_state = "spit-pouch"
+	slot_flags = SLOT_MASK

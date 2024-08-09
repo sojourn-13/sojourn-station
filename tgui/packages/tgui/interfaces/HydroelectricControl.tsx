@@ -1,16 +1,16 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui/components';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
-  Button,
   LabeledList,
   ProgressBar,
   Section,
   Stack,
-} from 'tgui/components';
-import { formatPower } from 'tgui/format';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   waterheld: number;

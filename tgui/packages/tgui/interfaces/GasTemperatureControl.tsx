@@ -1,6 +1,5 @@
-import { round } from 'common/math';
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Button,
@@ -10,8 +9,9 @@ import {
   Section,
   Slider,
   Stack,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   on: BooleanLike;
@@ -103,12 +103,12 @@ export const GasTemperatureControl = (props) => {
           >
             <AnimatedNumber
               value={gasTemperature}
-              format={(val) => round(val, 2)}
+              format={(val) => round(val, 2).toString()}
             />{' '}
             /{' '}
             <AnimatedNumber
               value={targetGasTemperature}
-              format={(val) => round(val, 2)}
+              format={(val) => round(val, 2).toString()}
             />{' '}
             K
           </Slider>

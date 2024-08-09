@@ -1,15 +1,9 @@
-import { round } from 'common/math';
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
-import {
-  Box,
-  Button,
-  LabeledList,
-  Section,
-  Slider,
-  Stack,
-} from 'tgui/components';
+import { Button } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+import { Box, LabeledList, Section, Slider, Stack } from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 import {
   ColoredSecurityLevel,

@@ -1,5 +1,6 @@
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { NTOSData } from 'tgui/layouts/NtosWindow';
 import {
   Box,
   Button,
@@ -12,9 +13,8 @@ import {
   Section,
   Stack,
   VirtualList,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
-import { NTOSData } from 'tgui/layouts/NtosWindow';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 enum CatalogKey {
   All = 'all',

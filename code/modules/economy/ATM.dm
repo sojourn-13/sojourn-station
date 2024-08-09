@@ -439,3 +439,118 @@ log transactions
 		human_user.put_in_hands(E)
 	E.worth = sum
 	E.owner_name = authenticated_account.owner_name
+
+
+
+
+//Converts bettewn the "three" sets of currency we have
+
+/obj/machinery/atm_exchange
+	name = "automatic exchange machine"
+	desc = "Converts credits to Yuan, Yuan to credits! Also has a slot for disks and hardrives to convert K-oin to credits or Yuan"
+	icon = 'icons/obj/terminals.dmi'
+	icon_state = "aem"
+	anchored = TRUE
+	use_power = IDLE_POWER_USE
+	var/tax = 0.9 //This is a % rounded
+	var/exchange_type = "credits"
+
+/obj/machinery/atm_exchange/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Currently the exchanger is set to [exchange_type]. Tax is currently [tax]%</span>")
+
+/obj/machinery/atm_exchange/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I, /obj/item/spacecash) || istype(I, /obj/item/stack/os_cash))
+		exchange_tabulate(I, user)
+		return
+	//this is for disks/hardrives
+	if(istype(I, /obj/item/computer_hardware/hard_drive))
+		exchange_tabulate(I, user)
+		return
+	..()
+
+/obj/machinery/atm_exchange/attack_hand(mob/user)
+	..()
+	change_settings(user)
+
+/obj/machinery/atm_exchange/proc/change_settings(mob/user)
+
+	var/list/options = list()
+	options["Credits"] = "credits"
+	options["E-Wallet"] = "e-wallet"
+	options["GP Yuan"] = "Yuan"
+
+	if(!options.len)
+		to_chat(user, "<span class='info'>The [src] is limited to only credits!</span>")
+		exchange_type = "credits"
+		return
+
+	var/choice = input(user,"What currency do you pick?") as null|anything in options
+
+	var/printing_choice = options[choice]
+
+	if(!printing_choice)
+		exchange_type = "credits"
+		return
+
+	exchange_type = printing_choice
+
+
+/obj/machinery/atm_exchange/proc/exchange_tabulate(obj/item/I as obj, mob/user)
+	var/exchange_medium
+
+
+	if(istype(I, /obj/item/spacecash))
+		var/obj/item/spacecash/C = I
+		exchange_medium = round(C.worth*tax)
+		qdel(C)
+
+	if(istype(I, /obj/item/stack/os_cash))
+		var/obj/item/stack/os_cash/OS = I
+		//One GP coin = 10 credis according to the exchange
+		exchange_medium = round(((OS.amount*10)*tax))
+		qdel(OS)
+
+	if(istype(I, /obj/item/computer_hardware/hard_drive))
+		var/obj/item/computer_hardware/hard_drive/HD = I
+		for(var/datum/computer_file/program/coin_miner/CM in HD.stored_files)
+			exchange_medium += (CM.size * CM.added_wealth)
+			CM.size = 0
+		exchange_medium = round(exchange_medium*tax)
+
+	if(!exchange_medium)
+		to_chat(user, "<span class='info'>Whatever you fed into the [src] was not currency!</span>")
+		return
+
+	exchange_currency(exchange_medium, user)
+
+/obj/machinery/atm_exchange/proc/exchange_currency(exchange, mob/user)
+
+	if(!exchange)
+		to_chat(user, "<span class='info'>The [src] spits out dust! Must be broken.</span>")
+		return
+
+	switch(exchange_type)
+		if("credits")
+			var/obj/item/spacecash/bundle/SC = new /obj/item/spacecash/bundle(loc)
+			SC.worth = exchange
+			SC.update_icon()
+
+		if("e-wallet")
+			var/obj/item/spacecash/ewallet/E = new /obj/item/spacecash/ewallet(loc)
+			E.worth = exchange
+			//piggybacking off GS for randomized ticket numbers
+			E.owner_name = "AEM Ticket-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+
+		if("Yuan")
+			var/obj/item/stack/os_cash/OS = new /obj/item/stack/os_cash(loc)
+			exchange /= 10
+			OS.amount = round(exchange)
+			OS.update_icon()
+
+	return
+
+
+
+
+

@@ -1,11 +1,12 @@
-import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section, Stack } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Button, LabeledList, Section, Stack } from 'tgui-core/components';
+
 import { LoadedMaterials, MaterialData } from './Matterforge';
 
 export type OddityTagProps = {
-  level: number
-}
+  level: number;
+};
 
 export const OddityTag = (props: OddityTagProps) => {
   const { level } = props;
@@ -35,14 +36,14 @@ export const OddityTag = (props: OddityTagProps) => {
 };
 
 type Data = MaterialData & {
-  oddity_name: string
+  oddity_name: string;
   oddity_stats: {
-    name: string
-    level: number
-  }[]
-}
+    name: string;
+    level: number;
+  }[];
+};
 
-export const ArtistBench = props => {
+export const ArtistBench = (props) => {
   const { act, data } = useBackend<Data>();
 
   const { mat_capacity, materials, oddity_name, oddity_stats } = data;
@@ -52,7 +53,7 @@ export const ArtistBench = props => {
       <Window.Content>
         <LoadedMaterials mat_capacity={mat_capacity} materials={materials} />
         <Section
-          title='Model Oddity'
+          title="Model Oddity"
           buttons={
             <Button
               icon={oddity_name ? 'eject' : 'caret-up'}
@@ -65,14 +66,14 @@ export const ArtistBench = props => {
           }
         >
           <LabeledList>
-            <LabeledList.Item label='Name'>
+            <LabeledList.Item label="Name">
               {oddity_name || 'None'}
             </LabeledList.Item>
           </LabeledList>
           {oddity_stats ? (
-            <Section title='Stats'>
+            <Section title="Stats">
               <Stack vertical>
-                {oddity_stats.map(stat => (
+                {oddity_stats.map((stat) => (
                   <Stack.Item key={stat.name}>
                     <OddityTag level={stat.level} /> aspect of{' '}
                     <b>{stat.name}</b>
@@ -84,9 +85,9 @@ export const ArtistBench = props => {
         </Section>
         <Button
           fluid
-          fontSize='24px'
-          textAlign='center'
-          icon='brush'
+          fontSize="24px"
+          textAlign="center"
+          icon="brush"
           onClick={() => {
             act('create_art');
           }}

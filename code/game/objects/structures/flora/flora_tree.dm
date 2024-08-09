@@ -34,7 +34,6 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	name = "Tree stump"
 	desc = "Once a tall tree, now a small stub in the groumd, without a voice..."
-	anchored = FALSE
 	density = FALSE
 	icon_state = "tree_stump"
 	pixel_x = -50
