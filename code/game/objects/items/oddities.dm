@@ -20,7 +20,7 @@
 	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
 	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
 	var/min_stats = 1 //The lowest amount it can give when randomizing
-	var/kill_stats = FALSE
+	var/kill_stats = TRUE
 
 
 /obj/item/oddity/Initialize()
