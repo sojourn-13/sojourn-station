@@ -507,6 +507,7 @@
 		to_chat(src, SPAN_DANGER("You enable [C.name]."))
 
 /mob/living/silicon/robot/proc/update_robot_light()
+	light_color = null	//Equinox edit: Permanent bandaid fix to prevent fires from permanently tinting cyborg lights red.
 	if(lights_on)
 		if(intenselight)
 			set_light(integrated_light_power * 2, integrated_light_power)
