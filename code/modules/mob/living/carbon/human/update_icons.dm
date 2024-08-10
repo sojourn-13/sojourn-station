@@ -336,7 +336,7 @@ var/global/list/wings_icon_cache = list()
 		stand_icon.Blend(base_icon,ICON_OVERLAY)
 
 	//ears, wings and tail
-	update_marking(0)
+	//update_marking(0)	Equinox edit - Switching body markings to per-limb system
 	update_ears(0)
 	update_tail(0)
 	update_wings(0)

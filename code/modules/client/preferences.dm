@@ -254,6 +254,20 @@
 				character.wings = GLOB.wings_styles_list[wings_style] //6
 				character.wings_colors = wings_colors
 				character.body_markings = body_markings //6
+//EQUINOX EDIT START
+				for(var/N in character.organs_by_name)
+					var/obj/item/organ/external/O = character.organs_by_name[N]
+					O.markings.Cut()
+
+				for(var/M in body_markings)
+					var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_list[M]
+					var/mark_color = "[body_markings[M]]"
+
+					for(var/BP in mark_datum.body_parts)
+						var/obj/item/organ/external/O = character.organs_by_name[BP]
+						if(O)
+							O.markings[M] = list("color" = mark_color, "datum" = mark_datum)
+//EQUINOX EDIT END
 			if ("Augmentation",)
 				categoriesChanged=null
 				character.update_implants(0) //7-8
