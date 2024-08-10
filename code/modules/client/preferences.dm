@@ -67,7 +67,7 @@
 
 	sanitize_preferences()
 	if(client)
-		// Can't find anything else that modifies a client var like this, there 
+		// Can't find anything else that modifies a client var like this, there
 		// seems to be no better way to do it than this special exception
 		client.apply_fps(clientfps)
 		if(istype(client.mob, /mob/new_player))
