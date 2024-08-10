@@ -100,7 +100,7 @@
 
 /obj/machinery/power/smes/Destroy()
 	GLOB.smes_list -= src
-	..()
+	. = ..()
 
 /obj/machinery/power/smes/add_avail(var/amount)
 	if(..(amount))
