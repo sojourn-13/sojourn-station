@@ -64,7 +64,7 @@
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
-	color = "#FF8000"
+	color = "#700122"
 	overdose = REAGENTS_OVERDOSE * 2.5
 	scannable = TRUE
 	nerve_system_accumulations = 10
