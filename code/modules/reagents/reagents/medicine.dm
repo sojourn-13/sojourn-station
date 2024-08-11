@@ -165,14 +165,16 @@
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
-	color = "#914A01"
+	color = "#FF8000"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = TRUE
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/dermaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.sleeping)
-		M.heal_organ_damage(0, 1.5 * effect_multiplier, 0, 5 * effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 2.5 * effect_multiplier)
+		return
+	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
 
 /datum/reagent/medicine/dreamderm
 	name = "DreamDerm"
@@ -181,17 +183,15 @@
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
-	color = "#FF8000"
+	color = "#914A01"
 	overdose = REAGENTS_OVERDOSE * 2.5
 	scannable = TRUE
 	nerve_system_accumulations = 10
 
 //Only works on touch
 /datum/reagent/medicine/dreamderm/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_SLIME)
-		M.heal_organ_damage(0, 2 * effect_multiplier)
-		return
-	M.heal_organ_damage(0, 3 * effect_multiplier)
+	if(M.sleeping)
+		M.heal_organ_damage(0, 1.5 * effect_multiplier, 0, 5 * effect_multiplier)
 
 /datum/reagent/medicine/dylovene
 	name = "Dylovene"
