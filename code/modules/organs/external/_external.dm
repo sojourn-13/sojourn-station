@@ -86,6 +86,8 @@
 	// Generation behavior
 	var/generation_flags = ORGAN_HAS_BONES | ORGAN_HAS_BLOOD_VESSELS | ORGAN_HAS_MUSCLES | ORGAN_HAS_NERVES
 
+	var/list/markings = list() //EQUINOX EDIT - List of body markings for use in update_icon under organ_icon.dm (per-limb markings)
+
 /obj/item/organ/external/New(mob/living/carbon/human/holder, datum/organ_description/OD)
 	if(OD)
 		set_description(OD)
