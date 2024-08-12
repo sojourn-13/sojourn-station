@@ -293,6 +293,7 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
+		PC.resonances = "Null"
 		PC.icon_state = "psi_catalyst_dull"
 		cognitive_potential += 0.1
 		//Idk how to word this without it being videogamey
@@ -356,6 +357,7 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
+		PC.resonances = "Null"
 		PC.icon_state = "psi_catalyst_dull"
 		storage_addition += 1
 		to_chat(user, "The [src] seem to help build up psionic power even better now.")
@@ -381,6 +383,7 @@
 			return
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
+		PC.resonances = "Null"
 		PC.icon_state = "psi_catalyst_dull"
 		psionic_seconds += 5 //Two lens
 		to_chat(user, "The [src] seem to help collect essence slightly faster now.")
