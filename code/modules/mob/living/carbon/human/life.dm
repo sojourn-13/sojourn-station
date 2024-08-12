@@ -889,19 +889,20 @@
 			stat = UNCONSCIOUS
 			adjustHalLoss(-3)
 
-		if(paralysis)
-			AdjustParalysis(-1)
+			if(paralysis)
+				AdjustParalysis(-1)
 
-		else if(sleeping)
-			speech_problem_flag = 1
-			handle_dreams()
-			if (mind)
-				//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
-				if(client || sleeping > 3)
-					AdjustSleeping(-1)
-			if( prob(2) && health)
-				spawn(0)
-					emote("snore")
+			if(sleeping)
+				speech_problem_flag = 1
+				handle_dreams()
+				if (mind)
+					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
+					if(client || sleeping > 3)
+						AdjustSleeping(-1)
+						sanity.changeLevel(5)
+				if(prob(2) && health)
+					spawn(0)
+						emote("snore")
 		//CONSCIOUS
 		else
 			stat = CONSCIOUS
