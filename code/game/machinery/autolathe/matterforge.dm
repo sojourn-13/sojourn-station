@@ -60,7 +60,7 @@
 		design_object.AssembleDesignInfo()
 		var/total_mat = 0
 		for(var/dmat in design_object.materials)
-			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2 + design_object.materials[dmat]
+			total_mat = total_mat +  ((1 - lst[dmat]) * 10) + design_object.materials[dmat]
 		design_object.materials = list(MATERIAL_COMPRESSED_MATTER = total_mat)
 		var/datum/design/reference = SSresearch.get_design(f)
 		var/reference_icon = reference.nano_ui_data["icon"]
