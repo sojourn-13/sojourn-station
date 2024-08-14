@@ -84985,7 +84985,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/engineering/atmos/surface)
 "qxS" = (
-/obj/map_data/nadezda_new,
+/obj/map_data/nadezda,
 /turf/unsimulated/mineral,
 /area/colony)
 "qxT" = (
