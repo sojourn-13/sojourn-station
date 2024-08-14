@@ -155,8 +155,8 @@
 	required_reagents = list("acetone" = 1, "phosphorus" = 1, "kelotane" = 1)
 	result_amount = 3
 
-/datum/chemical_reaction/dreamderm
-	result = "dreamderm"
+/datum/chemical_reaction/dermahypnodol
+	result = "dermahypnodol"
 	required_reagents = list("dermaline" = 1, "tramadol" = 1, "sodium" = 1)
 	result_amount = 1
 	catalysts = list("water" = 15)
@@ -181,8 +181,8 @@
 	inhibitors = list("sugar" = 1) // Messes up with inaprovaline
 	result_amount = 2
 
-/datum/chemical_reaction/sleeparidol
-	result = "sleeparidol"
+/datum/chemical_reaction/somnadine
+	result = "somnadine"
 	required_reagents = list("bicaridine" = 1, "tramadol" = 1, "carbon" = 1)
 	result_amount = 1
 	catalysts = list("water" = 15)

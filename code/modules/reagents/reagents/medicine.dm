@@ -57,10 +57,10 @@
 	M.heal_organ_damage(0.1 * effect_multiplier, 0, 1 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
-/datum/reagent/medicine/sleeparidol
-	name = "Sleeparidol"
-	id = "sleeparidol"
-	description = "sleeparidol a complex treat blunt trauma gel that when a person is asleep and applied to skin will quickly and affectively clear up cuts and other skin level damage, with a out a big risk to OD"
+/datum/reagent/medicine/somnadine
+	name = "Somnadine"
+	id = "somnadine"
+	description = "Somnadine a complex treat blunt trauma gel that when a person is asleep and applied to skin will quickly and affectively clear up cuts and other skin level damage, with a out a big risk to OD"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -70,7 +70,7 @@
 	nerve_system_accumulations = 10
 
 //Only works on touch
-/datum/reagent/medicine/dreamderm/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/somnadine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.sleeping)
 		M.heal_organ_damage(1.5 * effect_multiplier, 0)
 
@@ -176,10 +176,10 @@
 		return
 	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
 
-/datum/reagent/medicine/dreamderm
-	name = "DreamDerm"
-	id = "dreamderm"
-	description = "DreamDerm a complex anti-burn gel that when a person is asleep and applied to skin will quickly and affectively clear up burns with a out a big risk to OD"
+/datum/reagent/medicine/dermahypnodol
+	name = "Dermahypnodol"
+	id = "dermahypnodol"
+	description = "Dermahypnodol a complex anti-burn gel that when a person is asleep and applied to skin will quickly and affectively clear up burns with a out a big risk to OD"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -189,7 +189,7 @@
 	nerve_system_accumulations = 10
 
 //Only works on touch
-/datum/reagent/medicine/dreamderm/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/dermahypnodol/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.sleeping)
 		M.heal_organ_damage(0, 1.5 * effect_multiplier, 0, 5 * effect_multiplier)
 
