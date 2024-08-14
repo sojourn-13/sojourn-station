@@ -448,8 +448,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Standard helmet"] = "helmet"
+	options["standard helmet"] = "helmet"
 	options["visored helmet"] = "helmet_ironhammer"
+	options["tactical helmet"] = "helmet_marshal"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
