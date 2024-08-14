@@ -54,7 +54,7 @@
 	var/emagged //Emagging removes Sec check.
 
 /obj/item/clothing/accessory/badge/holo/tag
-	name = ""MARSHAL" holotag"
+	name = "marshal holotag"
 	desc = "This pair of glowing plates is meant to be attached to armor or clothing and marks the wearer as a member of security."
 	icon_state = "holotag"
 	item_state = "holotag"
