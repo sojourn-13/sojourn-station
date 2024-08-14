@@ -157,10 +157,12 @@
 	price_tag = 600
 
 /obj/item/reagent_containers/food/drinks/cans/cahors/cargo/New()
+	..()
 	price_tag = 60
 
 /obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
 	price_tag = 1200
 
 /obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo/New()
+	..()
 	price_tag = 100

@@ -293,15 +293,15 @@
 
 /proc/statPointsToLevel(var/points)
 	switch(points)
-		if (-1000 to -100)
+		if (-100 to -1000)
 			return "Hopeless"
-		if (-100 to -50)
+		if (-50 to -100)
 			return "Blundering"
-		if (-50 to -20)
+		if (-20 to -50)
 			return "Incompetent"
-		if (-20 to -15)
-			return "Inept"
 		if (-15 to -1)
+			return "Inept"
+		if (-1 to -15)
 			return "Misinformed"
 		if (STAT_LEVEL_NONE to STAT_LEVEL_BASIC)
 			return "Untrained"
