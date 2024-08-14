@@ -15,11 +15,11 @@
 	break_stuff_probability = 100
 	stop_automated_movement = 1
 	armor = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0, //robot
+		melee = 7,
+		bullet = 7,
+		energy = 4,
+		bomb = 10,
+		bio = 100, //robot
 		rad = 100, //ROBOT
 		agony = 100 ///robot
 	)
