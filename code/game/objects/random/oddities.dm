@@ -66,6 +66,10 @@
 
 	layer = SIGN_LAYER
 
+/obj/random/oddity_guns/propis_box
+	has_postspawn = TRUE
+	late_handling = FALSE //Only used in GP moon base
+
 /obj/random/oddity_guns/attack_hand(mob/user as mob)
 	if(anticheat)
 		to_chat(user, SPAN_NOTICE("The rift drops a rare cross item before you even lift a hand to it."))
