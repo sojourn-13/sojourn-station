@@ -53,6 +53,9 @@
 
 	UnregisterSignal(src, COMSIG_ATTACKED)
 
+	if(move_and_attack)
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(movement_tech))
+
 	lastarea = null
 
 	known_languages = null
