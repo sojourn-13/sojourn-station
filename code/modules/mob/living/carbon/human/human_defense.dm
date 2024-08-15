@@ -571,11 +571,15 @@ uniquic_armor_act
 /mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
 	//message_admins("unique_armor_check([user.name]) EF [EF]")
 	//Optimiation based on only 1 suit being this check, no point in asking for 99.99% of the time past this by types
-	if(!wear_suit) return EF
+	if(!wear_suit)
+		//message_admins("No suit found")
+		return EF
 	//We at this moment only have one outfit that we check and its by path for now.
 	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
+		//message_admins("Suit found")
 		//We hate you synth, please die!
-		if(!has_synthetics())
+		if(has_synthetics())
+			//message_admins("Synth found, plz directly die!")
 			return EF //Foolishness
 		var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
 		//message_admins("bluecross_regaloutfit (Pass)")
@@ -603,45 +607,45 @@ uniquic_armor_act
 				//message_admins("bluecross_regaloutfit proj pass")
 				var/obj/item/projectile/Proj = A
 				if(Proj.original_firer)
-				//	message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
+					//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
 					for(var/MWH in mobs_we_hitless)
-					//	message_admins("[MWH] vs [Proj.original_firer]")
+						//message_admins("[MWH] vs [Proj.original_firer]")
 						if(istype(Proj.original_firer, MWH))
-					//		message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
+							//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
 							en_passant = TRUE
 							break
 					if(ishuman(Proj.original_firer))
 						var/mob/living/carbon/human/H = Proj.original_firer
-						if(H.species.reagent_tag == IS_SYNTHETIC)
-					//		message_admins("bluecross_regaloutfit Proj Pass")
+						if(H.has_synthetics())
+							//message_admins("bluecross_regaloutfit Proj Pass")
 							en_passant = TRUE
 					if(en_passant)
-					//	message_admins("unique_armor_check en_passant ranged")
-					//	message_admins("prj ranged [Proj.penetrating]")
+						//message_admins("unique_armor_check en_passant ranged")
+						//message_admins("prj ranged [Proj.penetrating]")
 						Proj.armor_divisor *= 0.5
 						Proj.check_armour = ARMOR_MELEE //Foolishness
 						Proj.fire_stacks = 0   //No witches here
 						Proj.wounding_mult = 1 //Foolishness!
 						if(Proj.damage_types[BRUTE])
-						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
 							Proj.damage_types[BRUTE] *= 0.15
-						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
 						if(Proj.damage_types[BURN])
-						//	message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
 							Proj.damage_types[BURN] *= 0.15
-						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
 						//message_admins("prj ranged [Proj.penetrating]")
 
 					else
-					//	message_admins("unique_armor_check en_passant ranged")
-					//	message_admins("prj ranged [Proj.penetrating]")
+						//message_admins("unique_armor_check en_passant ranged")
+						//message_admins("prj ranged [Proj.penetrating]")
 						Proj.armor_divisor *= 2
 						if(Proj.damage_types[BRUTE])
-						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
 							Proj.damage_types[BRUTE] *= 1.5
-						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
 						if(Proj.damage_types[BURN])
-						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
 							Proj.damage_types[BURN] *= 2
 						//message_admins("prj ranged [Proj.penetrating]")
 
@@ -656,7 +660,7 @@ uniquic_armor_act
 				return EF
 			if(user)
 				for(var/MWH in mobs_we_hitless)
-				//	message_admins("[MWH] vs [mobs_we_hitless]")
+					//message_admins("[MWH] vs [mobs_we_hitless]")
 					if(istype(user, MWH))
 						//message_admins("bluecross_regaloutfit Proj Melee - [mobs_we_hitless] !!!!!!")
 						en_passant = TRUE
