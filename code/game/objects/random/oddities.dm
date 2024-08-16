@@ -58,17 +58,16 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "wormhole_unstable"
 	has_postspawn = TRUE
-	late_handling = TRUE //Only used in GP moon base
+	late_handling = TRUE
 	anchored = TRUE
 	var/anticheat = TRUE
 	alpha = 255
 	invisibility = 0
-
 	layer = SIGN_LAYER
 
 /obj/random/oddity_guns/propis_box
 	has_postspawn = TRUE
-	late_handling = FALSE //Only used in GP moon base
+	late_handling = FALSE
 
 /obj/random/oddity_guns/attack_hand(mob/user as mob)
 	if(anticheat)
