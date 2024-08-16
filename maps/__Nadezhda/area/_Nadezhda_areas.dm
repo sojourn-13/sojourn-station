@@ -766,6 +766,10 @@
 	name = "Medbay Toilet"
 	icon_state = "nadezhdayellow"
 
+/area/nadezhda/crew_quarters/arcade
+	name = "Arcade"
+	icon_state = "nadezhdayellow"
+
 /area/nadezhda/crew_quarters/dorm1
 	name = "\improper Dormitories"
 	icon_state = "Sleep"
