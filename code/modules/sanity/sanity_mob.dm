@@ -29,7 +29,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define SANITY_COOLDOWN_SAY rand(30 SECONDS, 45 SECONDS)
 #define SANITY_COOLDOWN_BREAKDOWN rand(7 MINUTES, 10 MINUTES)
 
-#define SANITY_CHANGE_FADEOFF(level_change) (level_change * 0.25)
+#define SANITY_CHANGE_FADEOFF(level_change) (level_change * 0.75)
 
 #define INSIGHT_PASSIVE_GAIN 0.05
 #define INSIGHT_GAIN(level_change) (INSIGHT_PASSIVE_GAIN + level_change / 15)
