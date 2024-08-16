@@ -9,7 +9,9 @@
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
-	if(moved) damage *= move_attack_mult
+	if(moved)
+		damage *= move_attack_mult
+
 //Here we handle blocking chance against superior mobs, yeah.
 	if(isliving(A))
 		var/mob/living/L = A
