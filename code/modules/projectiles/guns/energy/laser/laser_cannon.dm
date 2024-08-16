@@ -45,3 +45,6 @@
 		WEAPON_CHARGE
 		)
 	serial_type = "SI"
+
+/obj/item/gun/energy/lasercannon/rnd/pre_loaded
+	cell = /obj/item/cell/medium/moebius

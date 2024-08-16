@@ -27,4 +27,4 @@
 	desc = "A laser cannon designed to be inserted into an arm. Typically installed into combat type synthics."
 	verb_name = "Deploy laser cannon SMG"
 	icon_state = "si_lasercannon"
-	holding_type = /obj/item/gun/energy/lasercannon/rnd
+	holding_type = /obj/item/gun/energy/lasercannon/rnd/pre_loaded
