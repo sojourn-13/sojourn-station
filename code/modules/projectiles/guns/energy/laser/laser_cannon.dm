@@ -49,8 +49,6 @@
 /obj/item/gun/energy/lasercannon/rnd/pre_loaded
 
 /obj/item/gun/energy/lasercannon/rnd/pre_loaded/New()
-	cell = new /obj/item/cell/small/high(src)
+	cell = new /obj/item/cell/medium/moebius(src)
 	. = ..()
 	update_icon()
-
-	cell = new /obj/item/cell/medium/moebius(src)
