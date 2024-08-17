@@ -170,7 +170,6 @@ datum/preferences
 			var/new_marking = input(user, "Choose a marking to add:", CHARACTER_PREFERENCE_INPUT_TITLE, null) as null|anything in GLOB.body_marking_list - pref.body_markings
 			if(new_marking && CanUseTopic(user))
 				pref.body_markings[new_marking] = "#000000"
-				log_and_message_admins("[key_name(usr)] has picked a new marking.") // So that admins can see who's crashing the server through sparkledogs.
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking"])
 		if(CanUseTopic(user))
