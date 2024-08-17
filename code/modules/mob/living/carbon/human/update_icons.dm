@@ -611,7 +611,7 @@ var/global/list/wings_icon_cache = list()
 		var/icon/extra_overlay = icon(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
 		extra_overlay.Blend(tail_colors[i], tailtype.blend)
 		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
-	//if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
+	if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16) //Equinox edit, part of enabling taurs
 
 	var/tail_image = image(tail_icon)
 	tail_icon_cache[cache_key] = tail_image
