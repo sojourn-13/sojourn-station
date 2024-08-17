@@ -142,10 +142,7 @@
 /obj/structure/multiz/ladder/attack_hand(var/mob/M)
 	if (M.buckled)//Prevents buckled mobs from getting stuck on ladders
 		return
-	if (isrobot(M) && !isdrone(M))
-		var/mob/living/silicon/robot/R = M
-		climb(M, (climb_delay*3)/R.speed_factor) //Robots are not built for climbing, they should go around where possible
-		//I'd rather make them unable to use ladders at all, but eris' labyrinthine maintenance necessitates it
+	//Equinox edit: Deletes code that makes cyborgs take 3x longer to climb ladders
 	else
 		climb(M, climb_delay)
 
