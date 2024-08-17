@@ -14682,6 +14682,9 @@
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/item/reagent_containers/food/snacks/meatsteak{
+	name = "ian's dinner"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain)
 "cVZ" = (
@@ -22310,9 +22313,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "esf" = (
-/obj/item/reagent_containers/food/snacks/meatsteak{
-	name = "ian's dinner"
-	},
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
@@ -33331,7 +33331,6 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "gzo" = (
-/obj/effect/floor_decal/industrial/warningred,
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
@@ -89026,6 +89025,7 @@
 	dir = 1;
 	icon_state = "spline_fancy_corner"
 	},
+/obj/item/reagent_containers/food/snacks/meat/runtimes_dinner,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "rny" = (
