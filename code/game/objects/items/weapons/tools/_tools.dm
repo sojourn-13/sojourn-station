@@ -1107,9 +1107,8 @@
 					var/tool_repair = T.max_health * (0.8 + (user.stats.getStat(STAT_MEC))/200)
 					var/damage_to_repair = T.max_health - T.health
 					tool_repair = min(tool_repair, damage_to_repair)
-					var/perma_health_loss = tool_repair * 0.50 //50%
 
-					T.max_health -= perma_health_loss
+
 					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
 						to_chat(user, SPAN_NOTICE("You knowledge in tools helped you repair it better."))
