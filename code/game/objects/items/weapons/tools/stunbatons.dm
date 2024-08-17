@@ -14,6 +14,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2)
 	attack_verb = list("beaten")
+	hitsound = 'sound/weapons/blunthit.ogg'
 	price_tag = 500
 	stunforce = 0
 	agonyforce = 40
