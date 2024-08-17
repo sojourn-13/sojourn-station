@@ -39,16 +39,16 @@
 
 	if(minimum_win_percentage <= 0.2)
 		SSticker.shift_end(15 MINUTES)
-		for (var/mob/M as mob in SSmobs.mob_list)
-			to_chat(M, "<br><center><span class='danger'><b><font size=4>The round is ending do to exceeding 8 hours.</font></b><br></span></center><br>")
+		for(var/mob/M as mob in SSmobs.mob_list)
+			to_chat(M, "<br><center><span class='danger'><b><font size=4>The round is ending due to exceeding 8 hours.</font></b><br></span></center><br>")
 
 /datum/poll/restart/admin
 	non_admin = FALSE
-	name = "Supper Majority: End Round"
+	name = "Super Majority: End Round"
 	question = "End Shift?"
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
 	minimum_win_percentage = 0.75
-	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 4 HOURS + 15 MINUTES //Minimum round length before it can be called for the first time
 	cooldown = 30 MINUTES //Cooldown is set to 30 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
 	only_admin = FALSE
 

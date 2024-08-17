@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(vote)
 	start_vote(/datum/poll/storyteller)
 
 /datum/controller/subsystem/vote/proc/start_restart_vote_loop()
-	addtimer(CALLBACK(src, /datum/controller/subsystem/vote/proc/recall_vote), 240 MINUTES)
+	addtimer(CALLBACK(src, /datum/controller/subsystem/vote/proc/recall_vote), 4 HOURS)
 
 /datum/controller/subsystem/vote/proc/recall_vote_loop()
 	addtimer(CALLBACK(src, /datum/controller/subsystem/vote/proc/recall_vote), 60 MINUTES)
