@@ -584,11 +584,15 @@
 
 /obj/item/storage/belt/webbing/artificer
 	name = "artificer guild web harness"
-	desc = "Everything you need at hand, at belt. This one is hand crafted by the artificer guild, allowing it to better store larger items by sacrificing space. Better than most tool belts."
+	desc = "Everything you need at hand, in a modular series of belts and harnesses. Hand crafted by the artificer guild, it holds more than most tool belts and can be adjusted to accomodate various setups."
 	cant_hold = list(/obj/item/storage/pouch,
 					 /obj/item/storage/firstaid,
 					 /obj/item/storage/toolbox,
 					 /obj/item/storage/briefcase) //These types of storage in a belt
+
+/obj/item/storage/belt/webbing/artificer/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>\The [src] can be adjusted to fit varying amounts of differently sized items by right clicking on it and selecting the Adjust Storage option.</span>")
 
 /obj/item/storage/belt/webbing/artificer/verb/toggle_storage()
 	set name = "Adjust Storage"

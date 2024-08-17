@@ -483,25 +483,25 @@
 		name = "Modular Longsock (Right Arm)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	osocks_larm
 		name = "Modular Longsock (Left Arm)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	osocks_rleg
 		name = "Modular Longsock (Right Leg)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	osocks_lleg
 		name = "Modular Longsock (Left Leg)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	monoeye
 		name = "Monoeye"
