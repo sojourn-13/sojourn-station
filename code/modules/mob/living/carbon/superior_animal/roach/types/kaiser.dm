@@ -190,4 +190,6 @@ Has ability of every roach.
 
 /mob/living/carbon/superior_animal/roach/kaiser/movement_tech()
 	moved = TRUE
-	attemptAttackOnTarget()
+	if(!weakened && stat == CONSCIOUS)
+		attemptAttackOnTarget()
+
