@@ -178,7 +178,7 @@
 
 /obj/item/storage/box/vendor_lootbox/oddity_low/populate_contents()
 	if(prob(1)) //Lucky!
-		new /obj/random/oddity_guns(src)
+		new /obj/random/oddity_guns/propis_box(src)
 	else
 		new /obj/random/common_oddities/always_spawn(src)
 
@@ -189,7 +189,7 @@
 
 /obj/item/storage/box/vendor_lootbox/oddity_moderate/populate_contents()
 	if(prob(5)) //Lucky!
-		new /obj/random/oddity_guns(src)
+		new /obj/random/oddity_guns/propis_box(src)
 	else
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)
@@ -201,7 +201,7 @@
 
 /obj/item/storage/box/vendor_lootbox/oddity_high/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/random/oddity_guns(src)
+		new /obj/random/oddity_guns/propis_box(src)
 	else
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)

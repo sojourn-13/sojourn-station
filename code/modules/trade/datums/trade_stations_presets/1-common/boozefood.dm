@@ -109,18 +109,21 @@
 	price_tag = 1000
 
 /obj/structure/reagent_dispensers/beerkeg/cargo/New()
+	..()
 	price_tag = 100
 
 /obj/structure/reagent_dispensers/meadkeg/cargo
 	price_tag = 3800
 
 /obj/structure/reagent_dispensers/meadkeg/cargo/New()
+	..()
 	price_tag = 900
 
 /obj/structure/reagent_dispensers/premiumwhiskey/cargo
 	price_tag = 5000
 
 /obj/structure/reagent_dispensers/premiumwhiskey/cargo/New()
+	..()
 	price_tag = 500
 
 

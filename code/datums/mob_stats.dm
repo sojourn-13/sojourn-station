@@ -70,6 +70,10 @@
 	var/datum/stat/S = stat_list[statName]
 	S.add_stat_cap(amount)
 
+/datum/stat_holder/proc/set_Stat_cap(statName, amount)
+	var/datum/stat/S = stat_list[statName]
+	S.set_stat_cap(amount)
+
 /datum/stat_holder/proc/grab_Stat_cap(statName)
 	var/datum/stat/S = stat_list[statName]
 	var/number = S.grabbed_stat_cap()
@@ -249,6 +253,9 @@
 
 /datum/stat/proc/add_stat_cap(amount)
 	stat_cap += amount
+
+/datum/stat/proc/set_stat_cap(amount)
+	stat_cap = amount
 
 /datum/stat/proc/grabbed_stat_cap()
 	return stat_cap

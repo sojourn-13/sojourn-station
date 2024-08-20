@@ -15,7 +15,12 @@
 	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
 	price_tag = 0
 	var/stored_power
+	var/resonances = "Anything"
 
+/obj/item/device/psionic_catalyst/examine(mob/user)
+	..()
+	if(resonances)
+		to_chat(user, "<span class='info'>Has a Resonances Keyword of: [resonances]</span>")
 
 /obj/item/device/psionic_catalyst/dull
 	name = "dull psionic catalyst"
@@ -24,6 +29,7 @@
 	item_state = "psi_catalyst"
 	origin_tech = list(TECH_BIO = 2, TECH_MATERIAL = 1, TECH_PLASMA = 1)
 	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1)
+	resonances = "Null"
 
 // Found catalysts
 /obj/item/device/psionic_catalyst/nightmare_mind
@@ -32,6 +38,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	Within this catalyst is the collected psyche of... other things, a certain restructuring of your thoughts may yet let you find allies elsewhere, in darker places."
 	stored_power = /mob/living/carbon/human/proc/nightmare_mind
+	resonances = "Night"
 
 /obj/item/device/psionic_catalyst/bring_darkness
 	name = "psionic catalyst: Bring Darkness"
@@ -39,6 +46,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	Some things are better left hidden from the warmth of the light."
 	stored_power = /mob/living/carbon/human/proc/bring_darkness
+	resonances = "Dark"
 
 /obj/item/device/psionic_catalyst/rust
 	name = "psionic catalyst: Rust"
@@ -46,6 +54,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	It is better this way. It will eventually be this way. We all will."
 	stored_power = /mob/living/carbon/human/proc/rust
+	resonances = "Rust"
 
 /obj/item/device/psionic_catalyst/decay
 	name = "psionic catalyst: Decay"
@@ -53,6 +62,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	Progress must sometimes be forced and such advancements can be useful."
 	stored_power = /mob/living/carbon/human/proc/decay
+	resonances = "Age"
 
 /obj/item/device/psionic_catalyst/dream_seeker
 	name = "psionic catalyst: Dream Seeker"
@@ -60,6 +70,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	A curious person may not like what must be sacrificed pursuing the truth. Perhaps it will find them first?"
 	stored_power = /mob/living/carbon/human/proc/seek_the_dream
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/kings_decorum
 	name = "psionic catalyst: Kings Decorum"
@@ -67,6 +78,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	What a wonderful world..."
 	stored_power = /mob/living/carbon/human/proc/kings_decorum
+	resonances = "Regicide"
 
 /obj/item/device/psionic_catalyst/heretical_ascension
 	name = "psionic catalyst: Heretical Ascension"
@@ -74,6 +86,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	To grasp at perfection, to reach farther than one ever could, to be Icarus and soar beneath the sun instead of falling to hubris. Shall that be your fate?"
 	stored_power = /mob/living/carbon/human/proc/merge_flesh_and_steel
+	resonances = "Steel"
 
 /obj/item/device/psionic_catalyst/psionic_ascension
 	name = "psionic catalyst: Psionic Ascension"
@@ -81,6 +94,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	The creation of more of our kind is sacrosanct, to allow more to see beyond the veil of reality is to bring more minds, more eyes, to what we wish to show them."
 	stored_power = /mob/living/carbon/human/proc/ascend_another
+	resonances = "Carbon"
 
 /obj/item/device/psionic_catalyst/cerebral_hemorrhage
 	name = "psionic catalyst: Cerebral Hemorrhage"
@@ -88,6 +102,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	A sturdy mind is destroyed by revelation, a weak mind is eviscerated."
 	stored_power = /mob/living/carbon/human/proc/cerebral_hemorrhage
+	resonances = "Sinking"
 
 /obj/item/device/psionic_catalyst/enslavement
 	name = "psionic catalyst: Enslavement"
@@ -95,6 +110,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	Kneel."
 	stored_power = /mob/living/carbon/human/proc/mind_jack
+	resonances = "Greater"
 
 
 // Researched catalysts
@@ -104,6 +120,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	The cold and the winter are what has seperated the living from the doomed."
 	stored_power = /mob/living/carbon/human/proc/cryo_kinetic_blaster
+	resonances = "Cold"
 
 /obj/item/device/psionic_catalyst/pyro_kinetic_blaster
 	name = "psionic catalyst: Pyro-Kinetic Orb"
@@ -111,6 +128,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Fire often destroys everything it touches, even if we wish it did not."
 	stored_power = /mob/living/carbon/human/proc/pyro_kinetic_blaster
+	resonances = "Warm"
 
 /obj/item/device/psionic_catalyst/electro_kinetic_blaster
 	name = "psionic catalyst: Electro-Kinetic Orb"
@@ -118,6 +136,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	How shocking."
 	stored_power = /mob/living/carbon/human/proc/electro_kinetic_blaster
+	resonances = "Quick"
 
 /obj/item/device/psionic_catalyst/kinetic_barrier
 	name = "psionic catalyst: Kinetic Barrier"
@@ -125,6 +144,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Protection of body and mind."
 	stored_power = /mob/living/carbon/human/proc/kinetic_barrier
+	resonances = "Suppression"
 
 /obj/item/device/psionic_catalyst/chosen_control
 	name = "psionic catalyst: Chosen Control"
@@ -132,6 +152,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	The universe bends to your will alone and at times, it must be reminded."
 	stored_power = /mob/living/carbon/human/proc/chosen_control
+	resonances = "Suppression"
 
 /obj/item/device/psionic_catalyst/detect_thoughts
 	name = "psionic catalyst: Locate Mind-Essence"
@@ -139,6 +160,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	We all have some spark."
 	stored_power = /mob/living/carbon/human/proc/detect_thoughts
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/psychoactive_manipulation
 	name = "psionic catalyst: Psychoactive Manipulation"
@@ -146,6 +168,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Are we truly changing anything?"
 	stored_power = /mob/living/carbon/human/proc/psychoactive_manipulation
+	resonances = "Greater"
 
 /obj/item/device/psionic_catalyst/Light_psi_armor
 	name = "psionic catalyst: Void robe"
@@ -153,6 +176,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Can we really afford to not be in are shell?"
 	stored_power = /mob/living/carbon/human/proc/Light_psi_armor
+	resonances = "Protection"
 
 /obj/item/device/psionic_catalyst/Hpsi_armor
 	name = "psionic catalyst: Durable shell"
@@ -160,6 +184,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Pain accompanies you, broken bones, torn flesh have become your companions. This catalyst will help to minimize suffering by giving your mind and body a rest."
 	stored_power = /mob/living/carbon/human/proc/Hpsi_armor
+	resonances = "Protection"
 
 /obj/item/device/psionic_catalyst/layered_psi_shield
 	name = "psionic catalyst: Layered Shield"
@@ -167,6 +192,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	If we put are mind to it, we can think of many shapes at the same time."
 	stored_power = /mob/living/carbon/human/proc/psionic_shield_layered
+	resonances = "Protection"
 
 /obj/item/device/psionic_catalyst/trash_pile_exploid
 	name = "psionic catalyst: Discombobulate"
@@ -174,6 +200,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Any pile of junk can be a good distraction heheh."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_exploid
+	resonances = "Warm"
 
 /obj/item/device/psionic_catalyst/trash_pile_compress
 	name = "psionic catalyst: Reorganize"
@@ -181,6 +208,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Sometimes you need a to store your treaser for easyer hoarding."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress
+	resonances = "Suppression"
 
 /obj/item/device/psionic_catalyst/summan_trash_pile
 	name = "psionic catalyst: Scrap Togather"
@@ -188,6 +216,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	One persons trash is anothers treaser, lets dig for some!"
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile
+	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/needle_n_thread
 	name = "psionic catalyst: Psionic Suture"
@@ -195,6 +224,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't bleed..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
+	resonances = "Healing"
 
 /obj/item/device/psionic_catalyst/purefie
 	name = "psionic catalyst: Psionic Purefie"
@@ -202,6 +232,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't have junk in it's systems..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purefie
+	resonances = "Healing"
 
 /obj/item/device/psionic_catalyst/temp_regulate
 	name = "psionic catalyst: Psionic Temperature Regulate"
@@ -209,6 +240,7 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't sweat or shiver..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/temp_regulate
+	resonances = "Climate"
 
 
 /obj/item/device/psionic_catalyst/add_initial_transforms()
@@ -234,6 +266,7 @@
 	var/mob/living/carbon/human/M = usr
 	var/obj/item/organ/internal/psionic_tumor/tumor = M.random_organ_by_process(BP_PSION)
 	tumor.organ_add_verb(stored_power)
+	resonances = "Null"
 
 // Putting this here since its easier to reference. -Kaz
 /obj/random/psi_catalyst

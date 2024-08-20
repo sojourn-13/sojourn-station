@@ -78,6 +78,13 @@
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is
 
+/datum/firemode/automatic/force_deselect(mob/user)
+	if(!CH)
+		return
+	if(CH.owner) //Remove our handler from the client
+		CH.owner.CH = null //wew
+		QDEL_NULL(CH) //And delete it
+
 /****************************
 	Charge gun click handler
 *****************************/

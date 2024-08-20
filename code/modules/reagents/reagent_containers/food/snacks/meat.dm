@@ -241,3 +241,11 @@
 	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quickclot" = 5)
 	slice_path = /obj/item/reagent_containers/food/snacks/chickenbreast
 	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/meat/runtimes_dinner
+	name = "Runtime's Dinner"
+	desc = "A plate of wet catfood, it smells."
+	icon_state = "soydope"
+	filling_color = "#3B8529"
+	preloaded_reagents = list("protein" = 8, "nutriment" = 15, "polystem" = 1)
+	slices_num = 0

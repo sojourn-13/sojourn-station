@@ -144,6 +144,39 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Farming Multitool"
 	build_path = /obj/item/organ_module/active/multitool/farmer
 
+//increases max sanity
+/datum/design/research/item/mechfab/modules/sanity_mind_helper
+	name = "S.M.H Enhancer" //Sanity Mental Hider
+	build_path = /obj/item/organ_module/sanity_mind_helper
+
+//Helps regen sanity faster passively
+/datum/design/research/item/mechfab/modules/sanity_on_a_buget
+	name = "Cortex Support Cyberware"
+	build_path = /obj/item/organ_module/sanity_on_a_buget
+
+//litterly a small arm pouch
+/datum/design/research/item/mechfab/modules/arm_pouch
+	name = "Embedded Pouch"
+	build_path = /obj/item/organ_module/active/simple/small_pouch
+
+//increases nsa
+/datum/design/research/item/mechfab/modules/viv_bank
+	name = "NSA Banker"
+	build_path = /obj/item/organ_module/viv_bank
+
+//increases how much you can store hunger
+//TODO: better explain to the player that this is accually 2 implants in one!
+//The little bit of lore is that the two creaters had a friendly compition on what would be better, storing more foor, or using less
+//In the end a they were able to merge them into one, best of both worlds
+/datum/design/research/item/mechfab/modules/snack_system
+	name = "S.N.A.C.K System" //Storage Nutrience: Advanced Cal Keeper
+	build_path = /obj/item/organ_module/snack_system
+
+//increases how much you can store blood
+/datum/design/research/item/mechfab/modules/sanguin_stash
+	name = "Sanguin-Stash"
+	build_path = /obj/item/organ_module/sanguin_stash
+
 //Implants
 /datum/design/research/item/implant
 	build_type = PROTOLATHE | MECHFAB

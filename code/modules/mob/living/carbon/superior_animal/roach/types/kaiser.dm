@@ -34,9 +34,11 @@ Has ability of every roach.
 
 	var/distress_call_stage = 3
 
-	var/health_marker_1 = 1500
-	var/health_marker_2 = 1000
-	var/health_marker_3 = 500
+	var/health_marker_1 = 900
+	var/health_marker_2 = 500
+	var/health_marker_3 = 250
+
+	move_and_attack = TRUE //When we move forwards we also want to attack around us
 
 	blattedin_revives_left = 0
 
@@ -47,6 +49,7 @@ Has ability of every roach.
 	special_parts = list(/obj/item/animal_part/kingly_pheromone_gland)
 	ranged = TRUE // RUN, COWARD!
 	limited_ammo = TRUE //Do we run out of ammo?
+	mags_left = 0
 	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat Nnnnope.
 	projectiletype = /obj/item/projectile/roach_spit/large
 	fire_verb = "spits glowing bile"
@@ -136,6 +139,18 @@ Has ability of every roach.
 		return TRUE
 	return FALSE
 
+/mob/living/carbon/superior_animal/roach/kaiser/updatehealth()
+	..()
+	speed_cycle()
+
+/mob/living/carbon/superior_animal/roach/kaiser/proc/speed_cycle()
+	if(health_marker_1 >= health)
+		move_to_delay = 4
+	if(health_marker_2 >= health)
+		move_to_delay = 3.5
+	if(health_marker_3 >= health)
+		move_to_delay = 2.5
+
 /mob/living/carbon/superior_animal/roach/kaiser/slip(slipped_on)
 	return FALSE
 
@@ -172,3 +187,9 @@ Has ability of every roach.
 		return TRUE
 	visible_message("[src] snaps out of its trance and rushes at [user]!")
 	return FALSE
+
+/mob/living/carbon/superior_animal/roach/kaiser/movement_tech()
+	moved = TRUE
+	if(!weakened && stat == CONSCIOUS)
+		attemptAttackOnTarget()
+

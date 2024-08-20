@@ -96,6 +96,11 @@
 			to_chat(user, SPAN_WARNING("There is already a module installed in [get_surgery_name()]."))
 			return FALSE
 
+		var/obj/item/organ_module/om = I
+		if(om.allowed_organs && om.allowed_organs.len && !(organ_tag in om.allowed_organs))
+			to_chat(user, SPAN_WARNING("[om] doesn't go into [get_surgery_name()]."))
+			return FALSE
+
 		return TRUE
 
 	// Implants

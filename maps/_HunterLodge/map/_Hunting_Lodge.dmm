@@ -677,9 +677,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dx" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dz" = (

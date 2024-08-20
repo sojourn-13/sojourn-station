@@ -41,6 +41,10 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
+	if(move_and_attack)
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(movement_tech))
+
+
 	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
 /mob/living/carbon/superior_animal/Destroy()

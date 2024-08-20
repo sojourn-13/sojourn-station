@@ -1068,6 +1068,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
 
+/obj/item/gun/proc/force_firemode_deselect(mob/user)
+	if (sel_mode && firemodes && firemodes.len)
+		var/datum/firemode/new_mode = firemodes[sel_mode]
+		new_mode.force_deselect(user)
+
+
 /obj/item/gun/AltClick(mob/user)
 	if(user.incapacitated())
 		to_chat(user, SPAN_WARNING("You can't do that right now!"))
@@ -1116,10 +1122,13 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/dropped(mob/user)
 	// I really fucking hate this but this is how this is going to work.
 	var/mob/living/carbon/human/H = user
+	if(wielded)
+		unwield(H)
 	if (istype(H) && H.using_scope)
 		toggle_scope(H)
 	update_firemode(FALSE)
 	.=..()
+	force_firemode_deselect(H)
 
 /obj/item/gun/swapped_from()
 	.=..()
