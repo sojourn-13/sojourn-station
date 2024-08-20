@@ -410,6 +410,18 @@ SUBSYSTEM_DEF(job)
 					make_antagonist(H.mind, ROLE_INQUISITOR)
 
 		//Occulus Edit, Right here! Custom skills.
+
+		//Caps before stats
+		H.stats.set_Stat_cap(STAT_BIO, H.client.prefs.BIO_CAP)
+		H.stats.set_Stat_cap(STAT_COG, H.client.prefs.COG_CAP)
+		H.stats.set_Stat_cap(STAT_MEC, H.client.prefs.MEC_CAP)
+		H.stats.set_Stat_cap(STAT_ROB, H.client.prefs.ROB_CAP)
+		H.stats.set_Stat_cap(STAT_TGH, H.client.prefs.TGH_CAP)
+		H.stats.set_Stat_cap(STAT_VIG, H.client.prefs.VIG_CAP)
+		H.stats.set_Stat_cap(STAT_VIV, H.client.prefs.VIV_CAP)
+		H.stats.set_Stat_cap(STAT_ANA, H.client.prefs.ANA_CAP)
+
+		//Stats get added here after cap so we dont have silly over-filling
 		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
 		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
 		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)

@@ -117,12 +117,12 @@
 
 /obj/item/clothing/shoes/hermes_shoes
 	name = "Hermes Boots"
-	desc = "Boots used by the faithful to spread the word of God more quickly by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
+	desc = "Boots used by the faithful to spread the word of God more affectively with bulky items by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2)
 	icon_state = "hermes"
 	item_state = "hermes"
-	slowdown = SHOES_SLOWDOWN - 0.1 //10% speed buff
+	slowdown = SHOES_SLOWDOWN - 0.3 //Less of a speed buff more of an off-set to slowdown
 	can_hold_knife = 1//Still boots
 	price_tag = 120
 

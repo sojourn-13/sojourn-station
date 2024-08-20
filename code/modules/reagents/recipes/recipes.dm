@@ -155,6 +155,14 @@
 	required_reagents = list("acetone" = 1, "phosphorus" = 1, "kelotane" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/dermahypnodol
+	result = "dermahypnodol"
+	required_reagents = list("dermaline" = 1, "tramadol" = 1, "sodium" = 1)
+	result_amount = 1
+	catalysts = list("water" = 15)
+	inhibitors = list("kelotane" = 1)
+	byproducts = list("sodiumchloride" = 0.1)
+
 /datum/chemical_reaction/dexalinp
 	result = "dexalinp"
 	required_reagents = list("dexalin" = 1, "iron" = 1, "acetone" = 1)
@@ -172,6 +180,14 @@
 	required_reagents = list("inaprovaline" = 1, "carbon" = 1)
 	inhibitors = list("sugar" = 1) // Messes up with inaprovaline
 	result_amount = 2
+
+/datum/chemical_reaction/somnadine
+	result = "somnadine"
+	required_reagents = list("bicaridine" = 1, "tramadol" = 1, "carbon" = 1)
+	result_amount = 1
+	catalysts = list("water" = 15)
+	inhibitors = list("bicaridine" = 1)
+	byproducts = list("sodiumchloride" = 0.1)
 
 /datum/chemical_reaction/vermicetol
 	result = "vermicetol"

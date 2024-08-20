@@ -1952,7 +1952,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/machinery/chem_master/condimaster,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "auz" = (
@@ -14682,6 +14682,9 @@
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/item/reagent_containers/food/snacks/meatsteak{
+	name = "ian's dinner"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain)
 "cVZ" = (
@@ -22310,9 +22313,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "esf" = (
-/obj/item/reagent_containers/food/snacks/meatsteak{
-	name = "ian's dinner"
-	},
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
@@ -31709,9 +31709,8 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
 "gjS" = (
-/obj/machinery/cooking_with_jane/oven,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
-/turf/simulated/floor/tiled/cafe,
+/obj/machinery/chem_master/condimaster,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "gjY" = (
 /obj/structure/grille,
@@ -33332,7 +33331,6 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "gzo" = (
-/obj/effect/floor_decal/industrial/warningred,
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
@@ -42151,9 +42149,8 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ijo" = (
-/obj/structure/table/marble,
-/obj/machinery/cooking_with_jane/grill,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/obj/machinery/cooking_with_jane/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "ijr" = (
@@ -56520,7 +56517,6 @@
 	},
 /area/nadezhda/security/vacantoffice2)
 "ldd" = (
-/obj/landmark/join/start/clubworker,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -58732,10 +58728,11 @@
 	},
 /area/nadezhda/maintenance/surfacesec)
 "lCp" = (
-/obj/machinery/vending/dinnerware,
 /obj/structure/sign/warning/smoking/small{
 	pixel_x = -32
 	},
+/obj/structure/table/marble,
+/obj/machinery/microwave,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "lCy" = (
@@ -60685,6 +60682,13 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
+"lVn" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "lVu" = (
 /obj/structure/closet/acolyte,
 /turf/simulated/floor/wood,
@@ -84980,7 +84984,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/engineering/atmos/surface)
 "qxS" = (
-/obj/map_data/nadezda_new,
+/obj/map_data/nadezda,
 /turf/unsimulated/mineral,
 /area/colony)
 "qxT" = (
@@ -89021,6 +89025,7 @@
 	dir = 1;
 	icon_state = "spline_fancy_corner"
 	},
+/obj/item/reagent_containers/food/snacks/meat/runtimes_dinner,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "rny" = (
@@ -90910,12 +90915,12 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
 "rHX" = (
-/obj/structure/table/marble,
 /obj/item/material/kitchen/rollingpin,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/cookingoil,
 /obj/machinery/reagentgrinder/portable,
+/obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "rIb" = (
@@ -95870,7 +95875,9 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "sDC" = (
-/obj/machinery/reagentgrinder/industrial,
+/obj/machinery/cooking_with_jane/grill,
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "sDD" = (
@@ -106413,6 +106420,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "uIb" = (
@@ -108886,11 +108894,12 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/courtroom)
 "veV" = (
-/obj/structure/table/marble,
-/obj/machinery/microwave,
 /obj/machinery/camera/network/colony_underground{
 	dir = 1
 	},
+/obj/structure/table/rack/shelf,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "veX" = (
@@ -110268,6 +110277,7 @@
 /area/nadezhda/outside/inside_colony)
 "vrX" = (
 /obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "vsb" = (
@@ -113153,7 +113163,6 @@
 	name = "Residential District Maintenance"
 	})
 "vUm" = (
-/obj/structure/table/marble,
 /obj/item/pen,
 /obj/item/paper_bin,
 /obj/item/book/manual/wiki/chef_recipes,
@@ -113185,6 +113194,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "vUn" = (
@@ -116456,6 +116466,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/machinery/reagentgrinder/industrial,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "wAb" = (
@@ -121543,6 +121554,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "xAn" = (
@@ -122960,6 +122972,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/landmark/join/start/clubworker,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "xNu" = (
@@ -123541,6 +123554,10 @@
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/xenobiology)
+"xTC" = (
+/obj/machinery/vending/dinnerware,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "xTO" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/lighting/toggleable/lamp,
@@ -147500,7 +147517,7 @@ cZb
 cZb
 bgV
 jHH
-nvz
+gjS
 rNE
 oKd
 uyF
@@ -187699,7 +187716,7 @@ tSY
 wEu
 bCN
 iVK
-wAa
+lVn
 aut
 iaX
 iaX
@@ -188308,7 +188325,7 @@ bCN
 bCN
 bCN
 gmt
-gjS
+knK
 ldd
 iYO
 bCN
@@ -188510,7 +188527,7 @@ btu
 whU
 glV
 gmt
-knK
+xTC
 ayH
 acQ
 bCN

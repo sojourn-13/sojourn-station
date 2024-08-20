@@ -892,15 +892,15 @@
 
 
 			if(has_drop_off) //Does this shot get weaker as it goes?
-				//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating] | armor_divisor [armor_divisor].")
 				range_shot++ //We get the distence form the shooter to what it hit
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_divisor = max(0, armor_divisor - ap_drop_off)
+				armor_divisor = max(0.001, armor_divisor - (ap_drop_off * 0.01))
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
-				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating] | armor_divisor [armor_divisor].")
 				if(damage_types[BRUTE])
 					damage_types[BRUTE] -= max(0, damage_drop_off - penetrating / 2) //1 penitration gives 25 tiles| 2 penitration 50 tiles making 0 drop
 

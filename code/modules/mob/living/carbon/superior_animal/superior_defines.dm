@@ -112,6 +112,7 @@
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
+	var/move_and_attack = FALSE
 	universal_understand = TRUE //QoL to admins controling mobs
 	var/do_gibs = TRUE //Do we gib?
 	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner

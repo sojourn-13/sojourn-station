@@ -62,8 +62,6 @@
 	lose_text = "It was but a nightmare."
 	icon_state = "celestial"
 	var/statis_amount = 0
-	active = FALSE
-	passivePerk = FALSE
 
 /datum/perk/skill_cap_expanding/assign(mob/living/L)
 	..()
@@ -71,29 +69,27 @@
 		var/gather_increase = holder.stats.grab_Stat_cap(stat)
 		gather_increase *= 0.5
 		statis_amount = gather_increase
-		holder.stats.add_Stat_cap(gather_increase)
+		holder.stats.add_Stat_cap(stat, gather_increase)
 
 /datum/perk/skill_cap_expanding/remove()
 	for(var/stat in ALL_STATS)
-		holder.stats.add_Stat_cap(-statis_amount)
+		holder.stats.add_Stat_cap(stat, -statis_amount)
 	..()
 
 /datum/perk/skill_cap_addition
-	name = "Comsic Gazing"
+	name = "Cosmic Gazing"
 	desc = "The normal limit of the mind has been exspanded by 30"
 	gain_text = "Looking into the stars is starting to becoming productive!"
 	lose_text = "The void above is the same as below."
 	icon_state = "void_eye"
-	active = FALSE
-	passivePerk = FALSE
 
 /datum/perk/skill_cap_addition/assign(mob/living/L)
 	..()
 	for(var/stat in ALL_STATS)
-		holder.stats.add_Stat_cap(30)
+		holder.stats.add_Stat_cap(stat, 30)
 
 /datum/perk/skill_cap_addition/remove()
 	for(var/stat in ALL_STATS)
-		holder.stats.add_Stat_cap(-30)
+		holder.stats.add_Stat_cap(stat, -30)
 	..()
 

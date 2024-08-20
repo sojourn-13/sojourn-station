@@ -275,13 +275,12 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
+	cut_overlays()
+
 	if(ammo_magazine)
 		add_overlay("_mag[ammo_magazine.max_ammo]")
-	else
-		cut_overlays()
-		return
 
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+	if(!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
 	icon_state = iconstring
