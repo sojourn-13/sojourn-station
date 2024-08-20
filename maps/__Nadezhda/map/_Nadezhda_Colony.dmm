@@ -21299,6 +21299,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/effect/floor_decal/spline/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/colony_underground{
+	dir = 8
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "ehT" = (
@@ -25955,6 +25958,9 @@
 "fbj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/spline/wood{
+	dir = 1
+	},
+/obj/machinery/camera/network/colony_underground{
 	dir = 1
 	},
 /turf/simulated/floor/wood/wild1,
@@ -32093,14 +32099,13 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "glV" = (
-/obj/structure/table/woodentable,
-/obj/structure/railing/grey{
-	dir = 8;
-	pixel_x = -4
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/colony_underground{
+	dir = 1
 	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/bar)
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "glW" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
@@ -38322,6 +38327,9 @@
 /area/nadezhda/engineering/engine_waste)
 "hxL" = (
 /obj/structure/flora/small/rock4,
+/obj/machinery/camera/network/colony_underground{
+	dir = 8
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/arcade)
 "hxQ" = (
@@ -57311,13 +57319,12 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
 "ljc" = (
-/obj/structure/table/woodentable,
-/obj/structure/railing/grey{
-	dir = 1;
-	pixel_y = 4
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/colony_underground{
+	dir = 1
 	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/bar)
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "ljs" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -70758,6 +70765,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "nLZ" = (
 /obj/structure/flora/small/lavarock1,
+/obj/machinery/camera/network/colony_underground{
+	dir = 4
+	},
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/crew_quarters/arcade)
 "nMb" = (
@@ -96097,6 +96107,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
+"sDo" = (
+/obj/machinery/computer/arcade/battle,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/colony_underground,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/nadezhda/crew_quarters/arcade)
 "sDr" = (
 /turf/simulated/floor/plating/under,
 /area/asteroid/cave)
@@ -190363,7 +190381,7 @@ dTY
 uCW
 qLz
 pdT
-qSe
+sDo
 rbu
 peN
 iRC
@@ -190376,13 +190394,13 @@ itt
 vcP
 cCl
 jVr
-whU
+ljc
 cPd
 tvD
-hwZ
+abn
 lTH
 oYB
-ljc
+abn
 skW
 rtV
 hlv
@@ -190985,7 +191003,7 @@ eYE
 axX
 cPd
 dYG
-glV
+abn
 lTH
 nHn
 ibb
@@ -191187,10 +191205,10 @@ jVr
 whU
 stI
 rBi
-hwZ
+abn
 kQT
 mUH
-ljc
+abn
 abn
 hwZ
 rtV
@@ -192792,7 +192810,7 @@ whU
 oqU
 bbM
 bbM
-bbM
+glV
 vpF
 rQH
 iuL
