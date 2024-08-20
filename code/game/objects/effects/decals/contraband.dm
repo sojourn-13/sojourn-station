@@ -798,15 +798,3 @@
 	icon_state = "mrshield"
 	name = "Mr Shield Blackshield poster"
 	desc = "A poster reflecting Blackshield's recent viral mascot, Mr. Shield. Known broadcaster and philanthropist."
-
-
-
-//coffee
-
-/obj/item/contraband/poster/placed/coffee/rat1
-	icon_state = "coffee_poster_1"
-	name = "Mr peperat poster"
-	desc = "A poster ."
-
-
-
