@@ -82,6 +82,7 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
+/obj/item/maneki_neko,
 /obj/structure/table/onestar,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
@@ -3989,7 +3990,6 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/machinery/camera/network/research,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/medical/cryo)
 "aRL" = (
@@ -13191,9 +13191,6 @@
 "cNR" = (
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/machinery/camera/network/cargo{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
@@ -32000,9 +31997,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
-/obj/machinery/camera/network/cargo{
-	dir = 8
-	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
 "gBA" = (
@@ -39796,9 +39790,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/research{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
 "igI" = (
@@ -91871,9 +91862,6 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/machinery/camera/network/research{
-	dir = 1
-	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "sOd" = (
@@ -119062,7 +119050,7 @@ tad
 tad
 tad
 tad
-tad
+qxS
 "}
 (2,1,1) = {"
 tad
@@ -174902,11 +174890,11 @@ rmk
 vkX
 doC
 lUr
-lGy
-lGy
-lGy
-lGy
-lGy
+qUI
+qUI
+qUI
+cZb
+toi
 rIX
 onp
 nlp
