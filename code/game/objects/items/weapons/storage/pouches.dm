@@ -105,13 +105,6 @@
 	matter = list(MATERIAL_BIOMATTER = 5)
 	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
 
-/obj/item/storage/pouch/small_generic/implanted
-	name = "implanted generic pouch"
-	desc = "Can hold nearly anything in it, but only a small amount."
-	icon_state = "small_implanted"
-	max_storage_space = DEFAULT_SMALL_STORAGE * 0.4
-	matter = list(MATERIAL_SILK = 1)
-
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
 	item_state = "small_generic_p"
@@ -214,7 +207,6 @@
 
 		to_chat(user, "The power stored in [PC] leaks out into the cold void as the [src] is tuned.")
 		PC.stored_power = null //Nom!
-		PC.resonances = "Null"
 		PC.icon_state = "psi_catalyst_dull"
 
 	..()

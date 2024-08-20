@@ -204,7 +204,7 @@
 			silent = FALSE
 			return TRUE
 
-		if(paralysis)
+		if(paralysis && paralysis > 0)
 			handle_paralysed()
 			blinded = TRUE
 			stat = UNCONSCIOUS
@@ -216,8 +216,11 @@
 			sleeping = max(sleeping-1, 0)
 			blinded = TRUE
 			stat = UNCONSCIOUS
+		else if(resting)
+			if(halloss > 0)
+				adjustHalLoss(-3)
 
-		if(!sleeping && !paralysis)
+		else
 			stat = CONSCIOUS
 			if(halloss > 0)
 				adjustHalLoss(-1)

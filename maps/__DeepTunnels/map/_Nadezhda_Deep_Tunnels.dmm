@@ -2453,7 +2453,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "gX" = (
-/obj/machinery/atmospherics/unary/vent_scrubber{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -2576,7 +2576,7 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -5763,9 +5763,6 @@
 /area/nadezhda/rnd/outpostbreakroom)
 "oK" = (
 /obj/structure/bed/padded,
-/obj/structure/sign/ear{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisoltwo)
 "oM" = (
@@ -6280,8 +6277,6 @@
 /obj/item/tool/multitool{
 	pixel_x = 10
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/outpostgeneral)
 "pZ" = (
@@ -6338,9 +6333,6 @@
 /area/nadezhda/rnd/mixing)
 "qg" = (
 /obj/structure/bed/padded,
-/obj/structure/sign/ear{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolone)
 "qi" = (
@@ -6618,7 +6610,10 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "qQ" = (
-/obj/effect/floor_decal/industrial/danger/corner,
+/obj/machinery/status_display{
+	layer = 4;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "qR" = (
@@ -6703,6 +6698,11 @@
 /area/nadezhda/rnd/outpostgeneral)
 "rc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -6710,13 +6710,21 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "rd" = (
-/obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/airlock/glass_research{
+	name = "Medical Outpost"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
+/area/nadezhda/rnd/outpostgeneral)
 "re" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4;
-	tag = "icon-danger (EAST)"
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -6783,15 +6791,18 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rp" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/bed/roller,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rq" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/sleeper{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rr" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -6834,7 +6845,7 @@
 /area/nadezhda/rnd/outpostgeneral)
 "ry" = (
 /obj/machinery/door/airlock/glass_research{
-	name = "E.A.R Study"
+	name = "Medical Outpost"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -6851,17 +6862,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rB" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rC" = (
@@ -6881,7 +6882,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rE" = (
 /obj/structure/closet/secure_closet/anesthetics{
 	locked = 0
@@ -6889,15 +6890,13 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rF" = (
-/obj/structure/table/rack/shelf,
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpostgeneral)
-"rG" = (
-/obj/machinery/status_display{
-	layer = 4;
-	pixel_y = 32
-	},
+/obj/structure/medical_stand,
 /obj/machinery/atmospherics/unary/vent_scrubber,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
+"rG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/industrial/danger/corner,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rH" = (
@@ -6918,7 +6917,7 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -6927,31 +6926,32 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rK" = (
-/obj/machinery/atmospherics/unary/vent_scrubber,
-/obj/structure/sign/ear{
-	pixel_y = 32
-	},
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpostgeneral)
-"rL" = (
-/obj/effect/floor_decal/industrial/danger{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
+"rL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
 "rM" = (
-/obj/machinery/eternal_ascension_resonances,
-/turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	tag = "icon-danger (EAST)"
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
 "rN" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -6963,7 +6963,7 @@
 /obj/random/medical/low_chance,
 /obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rP" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
@@ -6972,22 +6972,16 @@
 /obj/random/medical/low_chance,
 /obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "rQ" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/structure/table/standard,
+/obj/random/medical_lowcost/low_chance,
+/obj/random/medical_lowcost/low_chance,
+/obj/random/medical_lowcost/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
 "rR" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/firstaid/fire,
@@ -7007,11 +7001,9 @@
 /area/nadezhda/rnd/outpostmedical)
 "rS" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/outpostmedical)
 "rT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -7322,11 +7314,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "sF" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /obj/machinery/light/small{
 	dir = 8
-	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
@@ -7493,11 +7485,11 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "th" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /obj/machinery/camera/network/engineering{
 	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -7621,7 +7613,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/area/nadezhda/rnd/outpostmedical)
 "tz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8222,22 +8214,6 @@
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating,
 /area/mine/hallway)
-"wC" = (
-/obj/machinery/light,
-/obj/random/medical/low_chance,
-/obj/random/medical/low_chance,
-/obj/random/medical_lowcost/low_chance,
-/obj/random/medical_lowcost/low_chance,
-/obj/random/medical_lowcost/low_chance,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
-"wM" = (
-/obj/structure/table/standard,
-/obj/item/pen/multi,
-/obj/item/paper_bin,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
 "wP" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -8383,12 +8359,6 @@
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
-"BH" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
 "BN" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -8494,6 +8464,11 @@
 "DX" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
@@ -8670,19 +8645,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolfive)
 "HP" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/unsimulated/mineral,
+/area/nadezhda/rnd/outpostmedical)
 "HY" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
@@ -8732,10 +8696,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
-"Kk" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/outpostmedical)
 "Kn" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -8820,20 +8780,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"LC" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
 "LE" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/beach/water/swamp,
@@ -8989,18 +8935,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"QD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/door/window/brigdoor/eastright{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
 "QF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -9036,23 +8970,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"RT" = (
-/obj/machinery/door/airlock/glass_research{
-	name = "Medical Outpost"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
 "RU" = (
 /turf/simulated/mineral/random/high_chance,
 /area/nadezhda/quartermaster/mining_outside_doc)
@@ -9150,10 +9067,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
-"Th" = (
-/obj/structure/medical_stand,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/outpostmedical)
 "Tr" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/techfloor_grid,
@@ -9249,24 +9162,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"VQ" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
 "VU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -9334,12 +9229,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"XP" = (
-/obj/machinery/camera/network/research{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/rnd/outpostgeneral)
 "XW" = (
 /obj/structure/noticeboard/research{
 	pixel_y = 32
@@ -15911,10 +15800,10 @@ jH
 xX
 jH
 ih
-ih
-ih
-ih
-ih
+qd
+qd
+qd
+qd
 ti
 ti
 aa
@@ -16099,24 +15988,24 @@ jJ
 lI
 tn
 jJ
-nG
 jJ
+nG
 uK
 Ha
 jJ
 UU
 RW
-VQ
+lI
 DX
-rm
-rm
+jJ
+jJ
 rc
 rm
 rx
 rD
 rI
 rO
-ih
+qd
 ti
 ti
 aa
@@ -16301,24 +16190,24 @@ jH
 jH
 jH
 jH
-km
 jH
+km
 jH
 PS
 jH
 LS
 jH
-HP
+jH
 PS
 jH
 jH
-jH
+lu
 vf
 ry
-rq
+rA
 rJ
 rP
-ih
+qd
 ti
 ti
 aa
@@ -16503,6 +16392,7 @@ lj
 jH
 jH
 jH
+jH
 km
 jH
 jH
@@ -16510,17 +16400,16 @@ jH
 jH
 jH
 jH
-HP
 jH
 jH
 jH
-jH
+lu
 jH
 qN
-rq
+rA
 rJ
 tw
-ih
+qd
 ti
 ti
 aa
@@ -16701,6 +16590,7 @@ ih
 iD
 kv
 ih
+jA
 lJ
 lJ
 lJ
@@ -16710,19 +16600,18 @@ oi
 jA
 lJ
 lJ
-qd
-Kk
-RT
-Kk
-qd
-rd
-rd
-rd
+jA
 ih
-rK
-QD
+ih
+ih
+qN
+rd
+qN
+ih
+rE
+rJ
 rQ
-ih
+qd
 ti
 ti
 aa
@@ -16903,6 +16792,7 @@ ih
 jX
 kv
 ih
+jA
 uo
 lK
 lK
@@ -16912,19 +16802,18 @@ lK
 oE
 lK
 up
+jA
+qd
+qd
 qd
 qO
-rB
+re
 rn
 rz
-Th
-rE
-rR
-ih
 rF
-DW
-wM
-ih
+rK
+rR
+qd
 ti
 ti
 aa
@@ -17105,6 +16994,7 @@ ih
 iD
 kv
 ih
+jA
 lL
 mn
 mL
@@ -17114,19 +17004,18 @@ mn
 mn
 mn
 pp
+jA
+qd
+qd
 qd
 qP
-rB
+re
 ro
 rA
 rA
-rA
-wC
-ih
-rL
 rL
 rS
-ih
+qd
 ti
 ti
 aa
@@ -17307,6 +17196,7 @@ tR
 iD
 kv
 ih
+jA
 lM
 mn
 mr
@@ -17316,19 +17206,18 @@ oj
 oF
 mn
 pq
+jA
 qd
-rG
-LC
-BH
-rA
+qd
+qd
 qQ
 re
-rT
-ih
-rt
+rp
+rB
+rG
 rM
-rt
-ih
+rT
+qd
 ti
 ti
 aa
@@ -17509,6 +17398,7 @@ iD
 iD
 kw
 ih
+jA
 lN
 mo
 mM
@@ -17518,19 +17408,18 @@ ok
 oG
 pa
 pr
+jA
+qd
+qd
 qd
 qR
 rf
-rp
+rq
 rC
 tv
 rN
 rN
-ih
-rt
-XP
-rt
-ih
+qd
 ti
 ti
 aa
@@ -17715,11 +17604,13 @@ jA
 jA
 jA
 jA
+jA
 nM
 jA
 jA
 jA
 jA
+jA
 qd
 qd
 qd
@@ -17728,11 +17619,9 @@ qd
 qd
 qd
 qd
-ih
-ih
-ih
-ih
-ih
+qd
+qd
+qd
 ti
 ti
 aa
@@ -17913,6 +17802,7 @@ rt
 rt
 jA
 jA
+jA
 lO
 mp
 mN
@@ -17923,9 +17813,8 @@ oH
 pb
 ps
 jA
-jA
-jA
-jA
+qd
+qd
 ti
 ti
 ti
@@ -18115,6 +18004,7 @@ rt
 kf
 jA
 jA
+jA
 lP
 mn
 mn
@@ -18125,9 +18015,8 @@ mn
 pc
 pt
 jA
-jA
-jA
-jA
+qd
+qd
 ti
 ti
 ti
@@ -18317,6 +18206,7 @@ ke
 ih
 jA
 jA
+jA
 lQ
 mq
 mq
@@ -18327,12 +18217,11 @@ mn
 pd
 pu
 jA
-jA
-jA
-jA
-jA
-jA
-jA
+qd
+qd
+qd
+qd
+qd
 ti
 ti
 ti
@@ -18519,6 +18408,7 @@ jA
 jA
 jA
 jA
+jA
 lR
 mr
 mO
@@ -18529,13 +18419,12 @@ oI
 oj
 pv
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
+qd
+qd
+qd
+qd
+qd
+qd
 ti
 ti
 ti
@@ -18721,6 +18610,7 @@ jA
 jA
 jA
 jA
+jA
 lJ
 lJ
 mP
@@ -18734,10 +18624,9 @@ jA
 jA
 jA
 jA
-jA
-jA
-jA
-jA
+qd
+qd
+qd
 ti
 ti
 ti
@@ -18937,9 +18826,9 @@ vr
 jA
 jA
 jA
-jA
-jA
-jA
+qd
+qd
+qd
 ti
 ti
 ti
@@ -19139,9 +19028,9 @@ vr
 jA
 jA
 jA
-jA
-jA
-jA
+qd
+qd
+qd
 ti
 ti
 ti
@@ -19341,9 +19230,9 @@ jA
 jA
 jA
 jA
-jA
-jA
-jA
+qd
+qd
+qd
 ti
 ti
 ti
@@ -19543,9 +19432,9 @@ jA
 jA
 jA
 jA
-jA
-jA
-jA
+qd
+qd
+qd
 ti
 ti
 ti
@@ -19745,9 +19634,9 @@ DY
 VU
 jA
 jA
-Ek
-jA
-jA
+HP
+qd
+qd
 ti
 ti
 Ek

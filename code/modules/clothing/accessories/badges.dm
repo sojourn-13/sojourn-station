@@ -50,15 +50,8 @@
 	desc = "This glowing blue badge marks the holder as a member of security."
 	icon_state = "holobadge"
 	item_state = "holobadge"
-	badge_string = "Marshals"
+	badge_string = "Security"
 	var/emagged //Emagging removes Sec check.
-
-/obj/item/clothing/accessory/badge/holo/tag
-	name = "marshal holotag"
-	desc = "This pair of glowing plates is meant to be attached to armor or clothing and marks the wearer as a member of security."
-	icon_state = "holotag"
-	item_state = "holotag"
-	badge_string = "Marshals"
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"
@@ -122,8 +115,8 @@
 	New()
 		new /obj/item/clothing/accessory/badge/holo(src)
 		new /obj/item/clothing/accessory/badge/holo(src)
-		new /obj/item/clothing/accessory/badge/holo/tag(src)
-		new /obj/item/clothing/accessory/badge/holo/tag(src)
+		new /obj/item/clothing/accessory/badge/holo(src)
+		new /obj/item/clothing/accessory/badge/holo(src)
 		new /obj/item/clothing/accessory/badge/holo/cord(src)
 		new /obj/item/clothing/accessory/badge/holo/cord(src)
 		..()
