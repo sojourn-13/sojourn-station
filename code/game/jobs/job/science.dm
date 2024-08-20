@@ -72,6 +72,7 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	department_account_access = TRUE
 	noob_name = "Soteria Research Student"
 	alt_titles = list("Soteria Intern","Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
