@@ -178,7 +178,8 @@
 				/obj/structure/plushie/carp,\
 				/obj/structure/plushie/beepsky,\
 				/obj/item/toy/plushie/fumo/arcueid,\
-				/obj/item/toy/plushie/fumo/necochaos) // Not a dense structure like the rest, but it's actually life sized.
+				/obj/item/toy/plushie/fumo/necochaos,\
+				/obj/item/toy/plushie/shark) // Not a dense structure like the rest, but it's actually life sized.
 
 /obj/random/toy/plushie_onlycarp
 	name = "random carp plushie"
@@ -338,7 +339,8 @@
 				/obj/structure/plushie/carp,\
 				/obj/structure/plushie/beepsky,\
 				/obj/item/toy/plushie/fumo/arcueid,\
-				/obj/item/toy/plushie/fumo/necochaos)
+				/obj/item/toy/plushie/fumo/necochaos,\
+				/obj/item/toy/plushie/shark)
 
 /*Arcade Junk*/
 

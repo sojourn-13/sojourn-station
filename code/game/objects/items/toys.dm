@@ -1344,6 +1344,17 @@
 	name = "void carp plushie"
 	icon_state = "voidcarp"
 
+/obj/item/toy/plushie/shark
+	name = "shark plush"
+	desc = "A plushie depicting a somewhat cartoonish shark. The tag calls it a 'hákarl', noting that it was made by an obscure furniture manufacturer in old Scandinavia."
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/items/lefthand_plushes.dmi',
+		slot_r_hand_str = 'icons/mob/items/righthand_plushes.dmi',
+	)
+	icon_state = "blahaj"
+	item_state = "blahaj"
+
+
 /*Inflatable Duck*/
 
 /obj/item/toy/junk/inflatable_duck
