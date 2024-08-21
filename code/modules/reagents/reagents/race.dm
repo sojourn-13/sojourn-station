@@ -47,7 +47,7 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(1, 0.8, 4, 2) // Barely buffed up Hustimdol without the sleepyness, any more would be too good. Remember this has a half hour cooldown.
+	M.heal_organ_damage(1, 0.8, 4, 2) // Barely buffed up Hustimdol without the sleepyness, any more would be too good.
 	M.adjustOxyLoss(-1)
 	M.add_chemical_effect(CE_TOXIN, -1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.4)

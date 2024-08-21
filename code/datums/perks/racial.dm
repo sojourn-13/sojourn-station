@@ -44,7 +44,7 @@
 ///////////////////////////////////////Mar'qua perks
 /datum/perk/suddenbrilliance
 	name = "Sudden Brilliance"
-	desc = "Your intelligence is above the 'lesser races' and even the humblest of Mar'qua can prove it easily in moments of focus. Use this to center your thoughts and increase all your mental abilities."
+	desc = "Use this to center your thoughts and increase all your mental abilities." //Equinox edit. Removed rather... problematic phrasing from marqua perks.
 	icon_state = "suddenbrilliance"
 	active = FALSE
 	passivePerk = FALSE
@@ -69,7 +69,7 @@
 
 /datum/perk/alien_nerves
 	name = "Adapted Nervous System"
-	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
+	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. You can handle a wide variety of chemicals before showing any side effects and you'll never become addicted." //Equinox edit. Calm down, Sojourn.
 	icon_state = "adaptednervoussystem"
 
 /datum/perk/alien_nerves/assign(mob/living/L)
