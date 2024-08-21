@@ -30,8 +30,17 @@
 	..()
 	create_reagents(50)
 
-/obj/item/implant/chem/trigger(emote, mob/living/source)
-	if(emote == "deathgasp")
+/obj/item/implant/chem/on_install(mob/living/source)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/implant/chem/Process()
+	if (!implanted)
+		return
+	var/mob/M = wearer
+
+	if(isnull(M)) // If the mob got gibbed
+		activate()
+	else if(M.stat == DEAD)
 		activate()
 
 /obj/item/implant/chem/activate()
@@ -42,6 +51,7 @@
 	if(!src.reagents.total_volume)
 		to_chat(wearer, "You hear a faint click from your [part].")
 		spawn(0)
+			STOP_PROCESSING(SSobj, src)
 			qdel(src)
 
 /obj/item/implant/chem/emp_act(severity)
