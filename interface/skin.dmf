@@ -1041,7 +1041,7 @@ window "mainwindow"
 		anchor2 = -1,-1
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Sojourn Station"
+		title = "Equinox"
 		statusbar = false
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
