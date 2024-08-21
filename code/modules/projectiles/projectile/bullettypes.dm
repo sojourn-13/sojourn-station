@@ -1089,7 +1089,7 @@
 
 /obj/item/projectile/bullet/cap
 	name = "cap"
-	damage_types = list(HALLOS = 0)
+	damage_types = list(HALLOSS = 0)
 	nodamage = TRUE
 	embed = FALSE
 	sharp = FALSE

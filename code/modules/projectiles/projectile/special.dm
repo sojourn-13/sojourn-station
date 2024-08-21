@@ -283,7 +283,7 @@
 /obj/item/projectile/chameleon
 	name = "bullet"
 	icon_state = "bullet"
-	damage_types = list(HALLOS = 1)
+	damage_types = list(HALLOSS = 1)
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
