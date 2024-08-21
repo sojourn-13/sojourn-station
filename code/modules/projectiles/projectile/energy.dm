@@ -52,7 +52,7 @@
 	armor_divisor= 1.2
 	nodamage = 1
 	taser_effect = 1
-	damage_types = list(HALLOS = 40)
+	damage_types = list(HALLOSS = 40)
 	recoil = 6
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
