@@ -716,7 +716,7 @@
 
 /obj/item/gun_upgrade/scope/killer
 	name = "Void Wolf \"Contract Killer\" scope"
-	desc = "A digital scope machine printed by void wolf reavers, often combined with gauss weaponry and thermal scanners to cause breaches to ships and dead pilots in void-based dog fights."
+	desc = "A digital scope machine-printed by void wolf reavers, often combined with gauss weaponry and thermal scanners to cause breaches to ships and dead pilots in void-based dog fights."
 	icon_state = "Killer"
 	price_tag = 60
 

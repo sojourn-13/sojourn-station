@@ -22,7 +22,7 @@
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
 		var/datum/perk/nanite_power/nanite_muscle/P = stats.getPerk(PERK_NANITE_MUSCLE)
 		if(!P.emped)
-			tally -= 0.3
+			tally -= P.speedup
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))

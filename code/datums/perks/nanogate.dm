@@ -14,7 +14,7 @@
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
 	icon_state = "naniteregeneration"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
-	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
+	var/regen_rate = 0.7 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
 	emped_message = "You feel an uncomfortable tingling numbness throughout your entire body, like a limb that has just gone to sleep."
 	emped_end_message = "The tingling stops as your nanogate informs you that it has restored its regenerative nanites."
 
@@ -36,6 +36,7 @@
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	emped_message = "You feel your legs cramp as your nanite-augmented muscles seize."
 	emped_end_message = "The pain in your legs fades as mobility returns to your muscles."
+	var/speedup = 0.3
 
 /datum/perk/nanite_power/nanite_muscle/on_emp(nano, severity)
 	if(severity) //Let's NOT divide by any zeroes!
@@ -48,15 +49,15 @@
 	mesh weave shield just before a strike connects."
 	icon_state = "naniteskinweave"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+	var/max_health_adjust = 0
 
-/datum/perk/nanite_power/nanite_armor/assign(mob/living/L)
-	..()
-	holder.maxHealth += 40
-	holder.health += 40
+/datum/perk/nanite_power/nanite_armor/proc/adjustMaxHP()
+	holder.maxHealth += max_health_adjust
+	holder.health += max_health_adjust
 
 /datum/perk/nanite_power/nanite_armor/remove()
-	holder.maxHealth -= 40
-	holder.health -= 40
+	holder.maxHealth -= max_health_adjust
+	holder.health -= max_health_adjust
 	..()
 
 /datum/perk/nanite_power/nanite_metal_drinker
@@ -72,17 +73,17 @@
 	passivePerk = FALSE
 	var/chem_id = "nanites"
 	var/chem_amount = 15
-	var/anti_cheat = FALSE //Used to prevent multy stacking clicking
+	var/cooldown_amount = 15 MINUTES
 
 /datum/perk/nanite_power/nanite_chem/activate()
 	..()
-	if(anti_cheat)
-		to_chat(holder, "Something feels cold.")
-		return
-	anti_cheat = TRUE
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your nanite reserve is still refilling, you'll need to wait longer."))
+		return FALSE
+	cooldown_time = world.time + cooldown_amount
 	to_chat(holder, "You feel a sudden rush as the pre-programed nanites enter your bloodstream.")
 	holder.reagents.add_reagent(chem_id, chem_amount)
-	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
+
 
 //Unused, because this kind of nanite doesn't exist?!?!
 /datum/perk/nanite_power/nanite_chem/implantoids
@@ -123,12 +124,12 @@
 /datum/perk/nanite_power/nanite_ammo
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
-	half an hour between uses."
+	up to fifteen minutes between uses."
 	icon_state = "munitionfabrication"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
-	var/cooldown = 30 MINUTES
+	var/cooldown = 15 MINUTES
 	var/anti_cheat = FALSE //No more spaming...
 
 /datum/perk/nanite_power/nanite_ammo/activate()
@@ -163,8 +164,6 @@
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap,
 						/obj/item/ammo_magazine/ammobox/laser_223/box,
-						//obj/item/ammo_magazine/ammobox/laser_223/box/ap,
-						//obj/item/ammo_magazine/ammobox/laser_223/box/lethal,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/hv,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/laser,
 						/obj/item/ammo_magazine/ammobox/antim, //Unlike the small box holds 15
@@ -198,6 +197,89 @@
 	choice = ammo_boxes[choice]
 	usr.put_in_hands(new choice(get_turf(usr)))
 	cooldown_time = world.time + cooldown
+
+	anti_cheat = FALSE
+	return ..()
+
+
+
+/datum/perk/nanite_power/nanite_mods
+	name = "Modification Fabrication"
+	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into tool modifications. The process is quite intensive and requires \
+	an hour between uses."
+	icon_state = "munitionfabrication"
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+	active = FALSE
+	passivePerk = FALSE
+	var/cooldown = 60 MINUTES
+	var/anti_cheat = FALSE //No more spaming...
+
+/datum/perk/nanite_power/nanite_mods/activate()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your nanites aren't ready to produce another modification yet."))
+		return FALSE
+
+	if(anti_cheat)
+		return
+	anti_cheat = TRUE
+	// Add illegal shit here
+	var/list/blacklisted_types = list(	/obj/item/tool_upgrade/reinforcement,
+						/obj/item/tool_upgrade/productivity,
+						/obj/item/tool_upgrade/refinement,
+						/obj/item/tool_upgrade/augment,
+						/obj/item/tool_upgrade/armor,
+						/obj/item/tool_upgrade/augment/holding_tank,
+						/obj/item/tool_upgrade/augment/ai_tool,
+						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
+						/obj/item/tool_upgrade/augment/repair_nano,
+						/obj/item/tool_upgrade/augment/randomizer,
+						/obj/item/tool_upgrade/augment/holy_oils,
+						/obj/item/tool_upgrade/augment/crusader_seal,
+						/obj/item/tool_upgrade/artwork_tool_mod,
+						/obj/item/tool_upgrade/augment/sanctifier,	//Has biomatter, sadly nanites are not able to use that
+						/obj/item/gun_upgrade/barrel,
+						/obj/item/gun_upgrade/muzzle,
+						/obj/item/gun_upgrade/mechanism,
+						/obj/item/gun_upgrade/trigger,
+						/obj/item/gun_upgrade/magwell,
+						/obj/item/gun_upgrade/scope,
+						/obj/item/gun_upgrade/underbarrel,
+						/obj/item/gun_upgrade/barrel/forged,
+						/obj/item/gun_upgrade/barrel/bore,
+						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter
+						/obj/item/gun_upgrade/mechanism/upgrade_kit,
+						/obj/item/gun_upgrade/mechanism/clock_block,//Brass and unknown tech
+						/obj/item/gun_upgrade/trigger/boom,			//Illegal
+						/obj/item/gun_upgrade/scope/watchman,
+						/obj/item/gun_upgrade/mechanism/glass_widow,
+						/obj/item/gun_upgrade/mechanism/greyson_master_catalyst,
+						/obj/item/gun_upgrade/mechanism/brass_kit,
+						/obj/item/gun_upgrade/trigger/honker,
+						/obj/item/gun_upgrade/mechanism/bikehorn,
+						/obj/item/gun_upgrade/mechanism/faulty_trapped,
+						/obj/item/gun_upgrade/trigger/faulty,
+						/obj/item/gun_upgrade/barrel/faulty,
+						/obj/item/gun_upgrade/muzzle/faulty,
+						/obj/item/gun_upgrade/mechanism/faulty,
+						/obj/item/gun_upgrade/scope/faulty
+	)
+
+	var/list/choice_mods = list()
+	// add new paths into the format of + subtypesof(XXX)
+	var/list/types = subtypesof(/obj/item/tool_upgrade) + subtypesof(/obj/item/gun_upgrade)
+	for (var/mod in types)
+		if (mod in blacklisted_types)
+			continue
+		var/obj/O = mod
+		choice_mods[initial(O.name)] = mod
+
+	var/obj/item/choice = input(usr, "Which modification do you want?", "Mod Choice", null) as null|anything in choice_mods
+
+	if(choice)
+		to_chat(src, "You assign some of your nanites to create a modification.")
+		choice = choice_mods[choice]
+		usr.put_in_hands(new choice(get_turf(src)))
+		cooldown_time = world.time + cooldown
 
 	anti_cheat = FALSE
 	return ..()

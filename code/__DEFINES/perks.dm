@@ -182,6 +182,7 @@
 #define PERK_NANITE_ARMOR /datum/perk/nanite_power/nanite_armor
 #define PERK_NANITE_AMMO /datum/perk/nanite_power/nanite_ammo
 #define PERK_NANITE_METAL_EATER /datum/perk/nanite_power/nanite_metal_drinker
+#define PERK_NANITE_MODS /datum/perk/nanite_power/nanite_mods
 
 // Crayon Mage Perks
 #define PERK_ALCHEMY /datum/perk/alchemist
