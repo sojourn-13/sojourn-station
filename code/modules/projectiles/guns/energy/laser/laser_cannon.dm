@@ -45,3 +45,10 @@
 		WEAPON_CHARGE
 		)
 	serial_type = "SI"
+
+/obj/item/gun/energy/lasercannon/rnd/pre_loaded
+
+/obj/item/gun/energy/lasercannon/rnd/pre_loaded/New()
+	cell = new /obj/item/cell/medium/moebius(src)
+	. = ..()
+	update_icon()

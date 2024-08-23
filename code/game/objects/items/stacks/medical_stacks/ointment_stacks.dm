@@ -72,6 +72,10 @@
 		else
 			to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a [src]!"))
 
+/obj/item/stack/medical/ointment/non_consumable
+	consumable = FALSE
+	splittable = FALSE
+
 /obj/item/stack/medical/ointment/blacshield
 	stacktype_alt = /obj/item/stack/medical/ointment
 	icon_state = "bs_ointment"

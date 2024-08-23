@@ -112,6 +112,11 @@
 			else
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
+//Used for implants
+/obj/item/stack/medical/bruise_pack/non_consumable
+	consumable = FALSE
+	splittable = FALSE
+
 /obj/item/stack/medical/bruise_pack/blacshield
 	stacktype_alt = /obj/item/stack/medical/bruise_pack
 	icon_state = "bs_brutepack"
