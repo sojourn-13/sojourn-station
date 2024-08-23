@@ -25,10 +25,11 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	structure_damage_factor = 2 //Bullets are great at destorying things, unlike lasers
 
 /obj/item/projectile/bullet/on_hit(atom/target)
-	if (..(target))
-		var/mob/living/L = target
-		if (!testing)
-			shake_camera(L, 1, 1, 0.5)
+	if(!testing)
+		if (..(target))
+			var/mob/living/L = target
+			if (!testing)
+				shake_camera(L, 1, 1, 0.5)
 
 /obj/item/projectile/bullet/attack_mob(var/mob/living/target_mob, distance, miss_modifier)
 	if(penetrating > 0 && damage_types[BRUTE] > 20 && prob(damage_types[BRUTE]))
