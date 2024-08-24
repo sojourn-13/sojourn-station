@@ -1830,9 +1830,11 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/bridge)
 "aua" = (
-/obj/structure/closet/crate/trashcart,
-/obj/structure/closet/crate/trashcart,
-/turf/simulated/shuttle/floor/mining,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,22"
+	},
 /area/shuttle/rocinante_shuttle_area)
 "aud" = (
 /obj/structure/catwalk,
@@ -3599,10 +3601,6 @@
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
-"aMk" = (
-/obj/structure/bed/chair,
-/turf/simulated/shuttle/floor/mining,
-/area/shuttle/rocinante_shuttle_area)
 "aMv" = (
 /obj/effect/floor_decal/industrial/stand_clear/white{
 	dir = 1
@@ -4474,6 +4472,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "aXQ" = (
@@ -11368,9 +11367,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,20"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "cvC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -20981,6 +20978,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/stack/medical/splint,
 /obj/item/storage/firstaid/regular,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/shuttle/rocinante_shuttle_area)
 "eqW" = (
@@ -22195,9 +22193,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "3,7"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "eDM" = (
 /obj/machinery/door/airlock/command{
@@ -25084,9 +25080,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,20"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "fiC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -26143,9 +26137,17 @@
 	req_one_access = list()
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "3,7"
-	},
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/tool/saw/improvised,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "fsa" = (
 /obj/structure/boulder,
@@ -27638,13 +27640,6 @@
 /obj/machinery/camera/network/mining{
 	dir = 4
 	},
-/obj/item/tool/saw/improvised,
-/obj/item/stack/material/wood/random,
-/obj/item/stack/material/wood/random,
-/obj/item/stack/material/wood/random,
-/obj/item/stack/material/wood/random,
-/obj/item/stack/material/wood/random,
-/obj/item/stack/material/wood/random,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -27979,7 +27974,9 @@
 	dir = 9
 	},
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/shuttle/floor/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
 /area/shuttle/rocinante_shuttle_area)
 "fMZ" = (
 /obj/structure/table/woodentable,
@@ -31467,7 +31464,10 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "gwD" = (
-/turf/simulated/shuttle/floor/mining,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,21"
+	},
 /area/shuttle/rocinante_shuttle_area)
 "gwF" = (
 /obj/structure/table/woodentable,
@@ -32054,8 +32054,6 @@
 /area/nadezhda/pros/prep)
 "gDX" = (
 /obj/structure/table/steel,
-/obj/item/tool/crowbar,
-/obj/item/device/radio/off,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "gEe" = (
@@ -35858,6 +35856,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,11"
 	},
@@ -37879,9 +37878,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,20"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "hQk" = (
 /obj/machinery/papershredder,
@@ -41327,8 +41324,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/steel,
-/obj/machinery/microwave,
 /obj/machinery/alarm{
 	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
@@ -41336,6 +41331,7 @@
 	pixel_x = 27;
 	req_one_access = list()
 	},
+/obj/structure/table/rack,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -42706,6 +42702,7 @@
 "iNn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/rocinante_shuttle_area)
 "iNu" = (
@@ -45159,6 +45156,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "jni" = (
@@ -46047,6 +46045,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/rocinante_shuttle_area)
 "jwK" = (
@@ -47186,10 +47185,12 @@
 /area/shuttle/rocinante_shuttle_area)
 "jJu" = (
 /obj/structure/table/steel,
-/obj/item/cell/large/high,
-/obj/item/cell/large/high,
-/obj/item/cell/large/high,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -6
+	},
+/obj/machinery/recharger{
+	pixel_x = 6
+	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -50711,13 +50712,12 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kuA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 1;
-	frequency = 1380;
-	id_tag = "research_shuttle_pump_back"
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/mining,
+/obj/structure/table/steel,
+/obj/machinery/microwave,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
 /area/shuttle/rocinante_shuttle_area)
 "kuC" = (
 /obj/structure/shuttle_part/mining{
@@ -56014,9 +56014,7 @@
 /obj/machinery/camera/network/mining{
 	dir = 9
 	},
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "3,7"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "lCJ" = (
 /obj/structure/catwalk,
@@ -56389,6 +56387,12 @@
 /area/nadezhda/security/tactical_blackshield)
 "lGs" = (
 /obj/machinery/recharge_station,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "research_shuttle_pump";
+	power_rating = 30000
+	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "lGv" = (
@@ -58715,9 +58719,7 @@
 /area/nadezhda/medical/sleeper)
 "mfA" = (
 /obj/machinery/atmospherics/pipe/tank/air,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "3,7"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "mfD" = (
 /obj/structure/scrap/cloth,
@@ -59213,9 +59215,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,20"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "mkK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -59656,8 +59656,15 @@
 	pixel_y = 32
 	},
 /obj/structure/table/rack,
-/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
 /obj/item/storage/toolbox/emergency,
+/obj/item/tool/crowbar,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -6
+	},
+/obj/item/device/radio/off,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -66792,7 +66799,9 @@
 	})
 "nLe" = (
 /obj/structure/closet/crate/trashcart,
-/turf/simulated/shuttle/floor/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
 /area/shuttle/rocinante_shuttle_area)
 "nLi" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
@@ -72440,10 +72449,8 @@
 /area/nadezhda/hallway/surface/section1)
 "oRJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "oRK" = (
@@ -74892,10 +74899,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
 "psS" = (
-/obj/structure/table/steel,
-/obj/item/storage/box/donkpockets,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
-	icon_state = "8,23"
+	icon_state = "8,22"
 	},
 /area/shuttle/rocinante_shuttle_area)
 "psY" = (
@@ -83826,6 +83835,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rjU" = (
 /obj/structure/table/steel,
+/obj/item/storage/box/donkpockets,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
 /obj/item/reagent_containers/food/drinks/bottle/small/beer,
 /obj/item/reagent_containers/food/drinks/bottle/small/beer,
 /turf/simulated/shuttle/floor/mining{
@@ -84094,6 +84105,7 @@
 	pixel_x = 27;
 	req_one_access = list()
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "rna" = (
@@ -88893,10 +88905,9 @@
 /obj/structure/cable/orange{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank/huge,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,7"
-	},
+/turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "smQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -94979,6 +94990,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "tzq" = (
@@ -96182,8 +96194,8 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/armory_blackshield)
 "tLY" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/rocinante_shuttle_area)
 "tMa" = (
@@ -213687,7 +213699,7 @@ aSk
 gUq
 fIY
 nLe
-aua
+nLe
 bKh
 sgM
 eFN
@@ -213885,11 +213897,11 @@ fiz
 cjZ
 xML
 oRJ
-kuA
+hJI
 hJI
 jJu
 hJI
-gwD
+hJI
 czF
 wKC
 ktL
@@ -214290,12 +214302,12 @@ kVH
 lme
 uZh
 nsF
-nsF
-hJI
+aua
+gwD
 kXn
 nsF
 hJI
-aMk
+vUC
 vQT
 mSY
 mGF
@@ -214491,10 +214503,10 @@ nWe
 uhu
 uDb
 owx
-nsF
 kXn
+psS
 jng
-nsF
+kXn
 hJI
 hJI
 rmX
@@ -214896,8 +214908,8 @@ ljf
 fTn
 nUh
 hJI
-psS
-hJI
+gNf
+kuA
 vUC
 rjU
 hvP
