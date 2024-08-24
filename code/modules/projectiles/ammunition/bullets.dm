@@ -22,7 +22,10 @@
 	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
-/obj/item/ammo_casing/pistol_35/hv/spent
+/obj/item/ammo_casing/pistol_35/spent/hv
+	shell_color = "hv"
+	icon_state = "pistol_c_hv"
+	spent_icon = "pistol_c_hv-spent"
 	projectile_type = null
 
 /obj/item/ammo_casing/pistol_35/practice
@@ -57,6 +60,10 @@
 	desc = "A 9mm hollow-point bullet casing."
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
+
+/obj/item/ammo_casing/pistol_35/spent/lethal
+	projectile_type = null
+	shell_color = "l"
 
 /obj/item/ammo_casing/pistol_35/scrap
 	desc = "An old 9mm bullet casing."

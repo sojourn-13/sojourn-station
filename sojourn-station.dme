@@ -2369,6 +2369,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\kriosan\kriosan.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\prisoners\prisoners.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\solgov\marines.dm"
+#include "code\modules\mob\living\carbon\superior_animal\human\subtype\voidwolf\reaver.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\voidwolf\voidwolf.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\xiang jiang\xiang.dm"
 #include "code\modules\mob\living\carbon\superior_animal\lodge\ai.dm"

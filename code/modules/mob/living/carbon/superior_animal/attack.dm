@@ -108,15 +108,17 @@
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
 	if(rounds_left <= 0 && mags_left >= 1) //If were out of ammo and can reload
-		mags_left -= 1
-		rounds_left = initial(rounds_left)
-		visible_message(reload_message)
-		if(mag_drop)
-			new mag_type(get_turf(src))
-		return
+		mob_reload()
 	if(rounds_left <= 0 && mags_left <= 0) //If were out of ammo and can't reload
 		ranged = FALSE
 		rapid = FALSE
+
+/mob/living/carbon/superior_animal/proc/mob_reload()
+	mags_left -= 1
+	rounds_left = initial(rounds_left)
+	visible_message(reload_message)
+	if(mag_drop)
+		new mag_type(get_turf(src))
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
 	if(weakened)

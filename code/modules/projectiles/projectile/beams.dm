@@ -36,6 +36,12 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		return FALSE
 	return TRUE
 
+/obj/item/projectile/beam/voidwolf/attack_mob(mob/living/target_mob, distance, miss_modifier=0) // No friendly firing
+	if(target_mob.faction == "pirate")
+		return FALSE
+	else
+		return ..()
+
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
 	armor_divisor = 2.5 //Good AP, its for slow firing weapon
@@ -129,6 +135,12 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/weak/ap/reaver
 	damage_types = list(BURN = 16.5)
+
+/obj/item/projectile/beam/weak/ap/reaver/attack_mob(mob/living/target_mob, distance, miss_modifier=0) // No friendly firing
+	if(target_mob.faction == "pirate")
+		return FALSE
+	else
+		return ..()
 
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
