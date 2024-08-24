@@ -532,6 +532,11 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	stacktype = /obj/item/stack/cable_coil
 	preloaded_reagents = list("copper" = 12, "plasticide" = 6) //Normal is 8 copper 2 plastic
 
+//Used for implants
+/obj/item/stack/cable_coil/non_consumable
+	consumable = FALSE
+	splittable = FALSE
+
 /obj/item/stack/cable_coil/cyborg
 	name = "cable coil synthesizer"
 	desc = "A device that makes cable."

@@ -15,7 +15,9 @@
 							/datum/design/research/item/part/basic_sensor,
 							/datum/design/research/item/medical/autopsy_scanner,
 							/datum/design/research/item/beaker/smoll,
-							/datum/design/research/item/beaker/big
+							/datum/design/research/item/beaker/big,
+							/datum/design/research/item/implant/pad,
+							/datum/design/research/item/implant/track
 						)
 
 /datum/technology/medical_cooling
