@@ -626,7 +626,7 @@
 	name = "Abandoned Bunker"
 	})
 "aya" = (
-/obj/item/gun/energy/tesla_gun,
+/obj/item/gun/energy/tesla_shotgun,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "ayn" = (
