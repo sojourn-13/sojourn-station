@@ -1546,8 +1546,8 @@
 	name = "riot helmet"
 	desc = "It's a outdated helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
-	armor_up = list(melee =8, bullet = 6, energy = 6, bomb = 20, bio = 0, rad = 0)
-	armor_list = list(melee = 10, bullet = 10, energy = 7, bomb = 35, bio = 0, rad = 0)
+	armor_up = list(melee = 4, bullet = 4, energy = 4, bomb = 20, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 5, energy = 5, bomb = 35, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 
@@ -1660,8 +1660,8 @@
 	name = "altyn helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
-	armor_up = list(melee = 5, bullet = 4, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_list = list(melee = 2, bullet = 3, energy = 2, bomb = 35, bio = 0, rad = 0)
+	armor_up = list(melee = 2, bullet = 3, energy = 2, bomb = 35, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 4, energy = 0, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 

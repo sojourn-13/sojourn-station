@@ -247,6 +247,11 @@
 		if(armor_list)
 			piece.armor = armor
 
+		if(canremove)
+			piece.item_flags &= ~(STOPPRESSUREDAMAGE|AIRTIGHT)
+		else
+			piece.item_flags |=  (STOPPRESSUREDAMAGE|AIRTIGHT)
+
 /obj/item/rig/Destroy()
 	for(var/obj/item/piece in list(gloves,boots,helmet,chest))
 		QDEL_NULL(piece)
