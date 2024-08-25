@@ -639,6 +639,40 @@
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 500
 
+/obj/item/tool/cannibal_scythe
+	name = "\"Cannibal Strike\" scythe"
+	desc = "A heavy grotesque handmade scythe made from parts of the most terrible creatures living on Amethyn. A real hunter's weapon that requires serious skills to handle itself.\
+	 What are you waiting for, hunter? The Matriarch is calling for a great hunt!"
+	icon = 'icons/obj/cannibal_scythe.dmi'
+	icon_state = "cannibal"
+	item_state = "cannibal"
+	wielded_icon = "_doble"
+	var/x_offset = -16
+	var/offset = -16
+	slot_flags = SLOT_BACK
+	max_upgrades = 3
+	degradation = 0.3 //high quality hunting weapon.
+	tool_qualities = list(QUALITY_CUTTING = 40,  QUALITY_SAWING = 35)
+	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding.
+	throwforce = WEAPON_FORCE_LETHAL
+	armor_divisor = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list(TECH_COMBAT = 5)
+	attack_verb = list("chopped", "sliced", "cut", "reaped", "lacerated", "slashed")
+	price_tag = 4000 //megafauna parts.
+	item_icons = list(
+		slot_back_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_s_store_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_l_hand_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_r_hand_str = 'icons/obj/cannibal_scythe.dmi'
+		)
+	item_state_slots = list(
+		slot_l_hand_str = "lefthand",
+		slot_r_hand_str = "righthand",
+		slot_back_str   = "back",
+		slot_s_store_str= "onsuit"
+		)
+
 /obj/item/tool/gauntlet
 	name = "render gauntlet"
 	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."

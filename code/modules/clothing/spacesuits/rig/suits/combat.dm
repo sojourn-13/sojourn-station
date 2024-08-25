@@ -332,3 +332,55 @@
 
 /obj/item/clothing/head/helmet/space/rig/combat/solfed
 	camera_networks = null//list(NETWORK_SOYFED) //It is over general, I have depicted your murderous federation as the soyjack and my glorious homeland as the chad. To do, maybe actually set this up.
+
+//Hunters
+
+/obj/item/rig/combat/hunter
+	name = "Lodge \"Apex\" control module"
+	desc = "A protective suit made by a local hunting lodge, the raw material for which was the most terrible creatures of this world. A technological miracle fueled by the power of oddity fused with the savvy of the hunting craft.\
+	 The wearer of this costume receives the powers of the enemies he defeated! So who's the apex predator here now?!"
+	icon_state = "hunting_rig"
+	suit_type = "hunting hardsuit"
+	armor_list = list(
+		melee = 17,
+		bullet = 11,
+		energy = 11,
+		bomb = 50,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0
+	drain = 25
+	offline_slowdown = 3
+	offline_vision_restriction = 5
+	max_upgrades = 0
+	initial_modules = list(
+		/obj/item/rig_module/storage,
+		/obj/item/rig_module/held/energy_blade,
+		/obj/item/rig_module/stealth_field,
+		/obj/item/rig_module/voice,
+		/obj/item/rig_module/vision/nvg
+		)
+	chest_type = /obj/item/clothing/suit/space/rig/combat/hunter
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/hunter
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/hunter
+	glove_type = /obj/item/clothing/gloves/rig/combat/hunter
+
+/obj/item/rig/combat/hunter/equipped
+	initial_modules = list(
+		/obj/item/rig_module/held/energy_blade,
+		/obj/item/rig_module/storage,
+		/obj/item/rig_module/stealth_field,
+		/obj/item/rig_module/voice,
+		/obj/item/rig_module/vision/nvg
+		)
+
+/obj/item/clothing/suit/space/rig/combat/hunter
+
+/obj/item/clothing/gloves/rig/combat/hunter
+
+/obj/item/clothing/shoes/magboots/rig/combat/hunter
+
+/obj/item/clothing/head/helmet/space/rig/combat/hunter
+	desc = "A killer's gaze, cold-blooded and calculating.\
+	 Ragnarok is coming."
