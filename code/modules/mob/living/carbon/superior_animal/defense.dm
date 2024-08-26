@@ -410,3 +410,8 @@
 	user.do_attack_animation(src)
 	spawn(1) updatehealth()
 	return TRUE
+
+/mob/living/carbon/superior_animal/getarmor(def_zone, type)
+	//log_and_message_admins("LOG 1.5: def_zone [def_zone] | type [type] | armor(type) [armor[type]].")
+	return armor[type]
+
