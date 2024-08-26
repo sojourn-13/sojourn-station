@@ -1150,7 +1150,7 @@ var/list/flooring_types
 /decl/flooring/industrial/bricks
 	name = "bricks"
 	desc = "A bunch of stone bricks placed down as flooring."
-	icon_base = "concrete_bricks"
+	icon_base = "brick"
 	has_base_range = 8
 	can_repair = TRUE
 	descriptor = "brick"
@@ -1160,7 +1160,7 @@ var/list/flooring_types
 /decl/flooring/industrial/bricks_fixed
 	name = "bricks"
 	desc = "A bunch of stone bricks placed down as flooring."
-	icon_base = "concrete_bricks"
+	icon_base = "brick"
 	descriptor = "brick"
 	build_type = /obj/item/stack/tile/bricks_fixed
 	tally_addition_decl = -0.1
