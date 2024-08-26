@@ -111,6 +111,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		new_value = max(0, value * insight_gain_multiplier * GLOB.GLOBAL_INSIGHT_MOD)
 	insight = min(insight + new_value, max_insight)
 
+/datum/sanity/proc/remove_insight(value)
+	insight = max(0, insight - value)
+
 /datum/sanity/proc/give_resting(value)
 	resting = min(resting + value, max_resting)
 
