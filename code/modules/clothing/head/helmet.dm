@@ -604,6 +604,17 @@
 	options["lemniscate helmet"] = "lemniscate_helmet"
 	options["divisor helmet"] = "divisor_helmet"
 	options["monomial helmet"] = "monomial_helmet"
+	options["divisor plate greathelm"] = "divisor_plate_greathelm"
+	options["divisor guard helmet"] = "divisor_guardsmen_helmet"
+	options["tessellate veil"] = "tessellate_veil"
+	options["tessellate maskheadgear"] = "tessellate_maskheadgear"
+	options["factorial powerhood"] = "factorial_powerhood"
+	options["factorial vessel shlemofon"] = "factorial_vesselcrew_shlemofon"
+	options["divisor plate greathelm_alt"] = "divisor_plate_greathelm_alt"
+	options["divisor guardsmen helmet snout"] = "divisor_guardsmen_helmet_alt"
+	options["tessellate veil snout"] = "tessellate_veil_alt"
+	options["tessellate maskheadgear snout"] = "tessellate_maskheadgear_alt"
+	options["factorial powerhood snout"] = "factorial_powerhood_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

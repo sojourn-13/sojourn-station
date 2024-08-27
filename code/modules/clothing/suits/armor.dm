@@ -331,6 +331,16 @@
 	options["vinculum dress garbs"] = "vinculum_cassock"
 	options["tessellate plague garbs"] = "tessellate_plague_garbs"
 	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
+	options["divisor plate armor"] = "divisor_plate_armor"
+	options["tangent guard armor"] = "divisor_guardsmen_armor"
+	options["tessellate riding habit"] = "tessellate_riding_habit"
+	options["tessellate doctor garbs"] = "tessellate_doctor_garbs"
+	options["lemniscate garbs"] = "lemniscate_garbs"
+	options["lemniscate caftan"] = "lemniscate_caftan"
+	options["monomial kasaya"] = "monomial_kasaya"
+	options["monomial gusoku"] = "monomial_gusoku"
+	options["factorial powergarb"] = "factorial_powergarb"
+	options["factorial vessel armor"] = "factorial_vesselcrew_armor"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
