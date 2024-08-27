@@ -670,7 +670,7 @@
 	use_power_cost = 0
 	toggleable = TRUE
 	suitable_cell = /obj/item/cell/large/potato
-	var/double_tact_required = TRUE
+	double_tact_required = TRUE
 	var/coin_tracker = 0 //Number not false
 	var/tracker
 	var/last_launch
@@ -747,7 +747,7 @@
 		playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
 		no_swing = FALSE
 		return FALSE
-		..()
+	..()
 
 /obj/item/tool/cannibal_scythe/turn_off(mob/user)
 	item_state = initial(item_state)

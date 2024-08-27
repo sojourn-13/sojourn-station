@@ -38,18 +38,15 @@
 	else
 		amount--
 		update_icon()
-		update_state()
 
 		var/obj/item/stack/thrown/J = new src.type(get_turf(src))
 		J.throwforce = throwforce
 		J.amount = 1
 		J.update_icon()
-		var/j.update_state()
-		var/j.update_wear_icon()
+		update_wear_icon()
 		J.launchAt(target, C)
 	visible_message(SPAN_DANGER("[C] has thrown \the [src]."))
 	update_icon()
-	update_state()
 
 /obj/item/stack/thrown/proc/launchAt(atom/target, mob/living/carbon/C)
 	throw_at(target, throw_range, throw_speed, C)
