@@ -50,7 +50,7 @@
 
 	var/datum/seed/produce_seed = plant_controller.seeds[added_produce.plantname]
 
-	if(produce_seed != null && (produce_seed.seed_name == required_produce_type || produce_seed.seed_name == "modified "+required_produce_type || produce_seed.seed_name == "mutant "+required_produce_type))
+	if(produce_seed != null && (produce_seed.seed_name == required_produce_type || produce_seed.seed_name == "modified "+required_produce_type || produce_seed.seed_name == "mutant "+required_produce_type || produce_seed.name == required_produce_type || produce_seed.name == "modified "+required_produce_type || produce_seed.name == "mutant "+required_produce_type))
 		return CWJ_CHECK_VALID
 
 	return CWJ_CHECK_INVALID
