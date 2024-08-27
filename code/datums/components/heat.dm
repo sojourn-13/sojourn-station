@@ -1,10 +1,10 @@
 /datum/component/heat
 	var/currentHeat = 0
-	var/heatThresholdSpecial //set this value to above overheat+heatperfire if you dont want to use it
+	var/heatThresholdSpecial //set this value to something above overheat+heatperfire if you dont want to use it
 	var/overheatThreshold = 100
 	var/lastFiredTick
 	var/heatPerFire
-	var/coolPerTick = 0.01 //world.time ticks in ds
+	var/coolPerTick = 0.01 //world.time ticks in ds, so x10 for cool per second
 	var/ventCooldown = 30 SECONDS
 	var/lastVentedTick
 

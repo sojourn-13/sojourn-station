@@ -130,10 +130,6 @@
 	materials = list(MATERIAL_BIOMATTER = 25)
 
 // This separates regular clothes designs from NT clothes designs //
-/datum/design/bioprinter/nt_clothes/armor_kit
-	name = "Armor Bundle"
-	build_path = /obj/item/gunbox/church
-	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"

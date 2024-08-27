@@ -432,9 +432,9 @@
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."
 
 /datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/list/OBJS = get_front(user)
+	var/list/get_front_list = get_front(user)
 
-	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in get_front_list
 
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
@@ -452,20 +452,22 @@
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
 
 /datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/list/OBJS = get_front(user)
+	var/list/get_front_list = get_front(user)
 
-	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in get_front_list
 	var/altar_cooldown = 10 MINUTES //How long we're going to make the altar wait before doing this again
 
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
 		return FALSE
 
+
+
 	if(altar)
+		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","Factorial","No Path","Cancel Litany")
 		if(altar.request_cooldown)
 			fail("This altar cannot provide another item yet.", user, C)
 			return FALSE
-		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","Factorial","No Path","Cancel Litany")
 		if (response == "Lemniscate")
 			new /obj/item/implant/core_implant/cruciform/lemniscate(altar.loc)
 			altar.cooldown(altar_cooldown)
@@ -651,8 +653,8 @@
 	category = "Vitae"
 
 /datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/list/OBJS = get_front(user)
-	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/list/get_front_list = get_front(user)
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in get_front_list
 	var/O = "prosthetic limb"
 	var/altar_cooldown = 10 MINUTES
 	success_message = "On the verge of audibility you hear pleasant music, the altar slides open and a [O] slips out."
@@ -662,10 +664,10 @@
 		return FALSE
 
 	if(altar)
+		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Longsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if(altar.request_cooldown)
 			fail("This altar cannot provide another item yet.", user, C)
 			return FALSE
-		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Longsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
 			altar.cooldown(altar_cooldown)
@@ -710,9 +712,9 @@
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
 
 /datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
-	var/list/OBJS = get_front(user)
+	var/list/get_front_list = get_front(user)
 
-	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in get_front_list
 	var/altar_cooldown = 10 MINUTES
 
 	if(!altar)
@@ -904,9 +906,9 @@
 	power = 20
 
 /datum/ritual/cruciform/priest/offering/buy_item/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C, targets)
-	var/list/OBJS = get_front(H)
+	var/list/get_front_list = get_front(H)
 
-	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
+	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in get_front_list
 	if(!EOTP)
 		fail("You must be in front of the Will of the Protector.", H, C)
 		return FALSE
@@ -925,9 +927,9 @@
 	var/list/miracles = list(ALERT, INSPIRATION, STAT_BUFF, ENERGY_REWARD)
 
 /datum/ritual/cruciform/priest/offering/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C, targets)
-	var/list/OBJS = get_front(H)
+	var/list/get_front_list = get_front(H)
 
-	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
+	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in get_front_list
 	if(!EOTP)
 		fail("You must be in front of the Will of the Protector.", H, C)
 		return FALSE

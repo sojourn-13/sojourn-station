@@ -72,16 +72,16 @@
 
 /datum/design/research/item/rig_grenade_launcher
 	name = "hardsuit grenade launcher"
-	desc = "A mounted grenade launcher onto a rig. Holds smoke bombs, emps and flashbangs for non-lethal riot controle."
+	desc = "A mounted grenade launcher onto a rig. Holds smoke bombs, EMP grenades and flashbangs for non-lethal riot control."
 	build_path = /obj/item/rig_module/grenade_launcher
-	materials = list(MATERIAL_STEEL = 75, MATERIAL_PLASTIC = 65)
+	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 30)
 	category = "RIG"
 
 /datum/design/research/item/rig_flash
 	name = "hardsuit integrated flash"
 	desc = "A flash that has been integrated into a hardsuit."
 	build_path = /obj/item/rig_module/device/flash
-	materials = list(MATERIAL_STEEL = 25, MATERIAL_PLASTIC = 25, MATERIAL_GLASS = 45)
+	materials = list(MATERIAL_STEEL = 25, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 20)
 	category = "RIG"
 
 //MISC and odds and sods for hardsuits/rigs
@@ -90,14 +90,14 @@
 	name = "hardsuit storage system"
 	desc = "A storage case that has been integrated into a hardsuit."
 	build_path = /obj/item/rig_module/storage
-	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 25)
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 15)
 	category = "RIG"
 
 /datum/design/research/item/storage/large
 	name = "hardsuit distributed storage system"
 	desc = "A system of pouches that has been integrated into a hardsuit."
 	build_path = /obj/item/rig_module/storage/large
-	materials = list(MATERIAL_STEEL = 60, MATERIAL_PLASTIC = 40)
+	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 40)
 	category = "RIG"
 
 /datum/design/research/item/storagemed
@@ -141,7 +141,7 @@
 	name = "hardsuit integrated jetpack"
 	desc = "Integrated jets into a hardsuit."
 	build_path = /obj/item/rig_module/maneuvering_jets //Kinda useless on a planet...
-	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 25)
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 15)
 	category = "RIG"
 
 /datum/design/research/item/rig_drill
@@ -155,7 +155,7 @@
 	name = "hardsuit integrated anomaly scanner"
 	desc = "Integrated anomaly scanner for a hardsuit."
 	build_path = /obj/item/rig_module/device/anomaly_scanner
-	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 15)
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
 	category = "RIG"
 
 /datum/design/research/item/rig_ore_scanner
@@ -201,7 +201,7 @@
 	name = "hardsuit integrated grappler"
 	desc = "Integrated grappling hook into a hardsuit."
 	build_path = /obj/item/rig_module/grappler
-	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 50)
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 30)
 	category = "RIG"
 
 /datum/design/research/item/rig_clamp

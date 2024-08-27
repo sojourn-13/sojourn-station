@@ -10,6 +10,7 @@
 	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 0.5
 	projectile_type = /obj/item/arrow/cleansing
+	gun_parts = list()
 
 	init_firemodes = list(
 		list(mode_name="normal", mode_desc="Small short lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
