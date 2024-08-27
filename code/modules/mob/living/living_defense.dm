@@ -254,6 +254,8 @@
 				dmult += P.supereffective_mult
 			damage *= dmult
 		hit_impact(P.get_structure_damage(), hit_dir)
+		//log_debug("DEBUG Proj Pre DTA:def_zone = [def_zone_hit], attack_flag = [P.check_armour], armor_divisor = [P.armor_divisor], used_weapon = [P], sharp = [is_sharp(P)], edge = [has_edge(P)], wounding_multiplier = [P.wounding_mult], dmg_types = [P.damage_types])")
+
 		return damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armour, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types, return_continuation = TRUE)
 
 	return PROJECTILE_CONTINUE
