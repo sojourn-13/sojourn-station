@@ -337,7 +337,8 @@
 
 /obj/item/rig/combat/hunter
 	name = "Lodge \"Apex\" control module"
-	desc = "A protective suit made by a local hunting lodge, the raw material for which was the most terrible creatures of this world. A technological miracle fueled by the power of oddity fused with the savvy of the hunting craft.\
+	desc = "A protective suit made by a local hunting lodge, the raw material for which was the most terrible creatures of this world.\
+	 A technological miracle fueled by the power of oddity fused with the savvy of the hunting craft.\
 	 The wearer of this costume receives the powers of the enemies he defeated! So who's the apex predator here now?!"
 	icon_state = "hunting_rig"
 	suit_type = "hunting hardsuit"
@@ -354,11 +355,9 @@
 	offline_slowdown = 3
 	offline_vision_restriction = 5
 	max_upgrades = 0
+	var/light_overlay = "null"
 	initial_modules = list(
 		/obj/item/rig_module/storage,
-		/obj/item/rig_module/held/energy_blade,
-		/obj/item/rig_module/stealth_field,
-		/obj/item/rig_module/voice,
 		/obj/item/rig_module/vision/nvg
 		)
 	chest_type = /obj/item/clothing/suit/space/rig/combat/hunter
@@ -368,19 +367,44 @@
 
 /obj/item/rig/combat/hunter/equipped
 	initial_modules = list(
-		/obj/item/rig_module/held/energy_blade,
 		/obj/item/rig_module/storage,
-		/obj/item/rig_module/stealth_field,
-		/obj/item/rig_module/voice,
 		/obj/item/rig_module/vision/nvg
 		)
 
 /obj/item/clothing/suit/space/rig/combat/hunter
 
 /obj/item/clothing/gloves/rig/combat/hunter
+	var/punch_increase = 15
 
 /obj/item/clothing/shoes/magboots/rig/combat/hunter
 
 /obj/item/clothing/head/helmet/space/rig/combat/hunter
 	desc = "A killer's gaze, cold-blooded and calculating.\
 	 Ragnarok is coming."
+	light_overlay = "helmet_light_dual_green_h"
+	light_color = "0DFF01"
+	var/glow_color = COLOR_GREEN
+
+/obj/item/clothing/head/helmet/space/rig/combat/hunter/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["hunter helmet default"] = "hunting_rig_sealed"
+	options["hunter helmet alt"] = "hunting_rig_sealed_alt"
+
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

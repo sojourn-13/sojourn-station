@@ -52,6 +52,44 @@
 		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
+/datum/craft_recipe/lodge/throwing_knife/bone_needle
+	name = "throwing bone needles"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(QUALITY_SAWING, 20, "time" = 5),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_CUTTING, 50, "time" = 1)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison
+	name = "poisoned throwing bone needle"
+	result = list(
+		/obj/item/stack/thrown/throwing_knife/bone_needle/poison,
+		/obj/item/stack/thrown/throwing_knife/bone_needle/poison,
+		/obj/item/stack/thrown/throwing_knife/bone_needle/poison)
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/datum/seed/mushroom/poison, 3, "time" = 5),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/hunter
+	name = "throwing hunting knife"
+	result = /obj/item/stack/thrown/throwing_knife/hunter
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL = 10, "time" = 1), //Takes a second
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 1, "time" = 5),
+		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_CUTTING, 30, "time" = 1),
+		list(/obj/item/tool_upgrade/augment/spikes, 1),
+		list(QUALITY_WELDING, 30, "time" = 60)
+	)
+
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque

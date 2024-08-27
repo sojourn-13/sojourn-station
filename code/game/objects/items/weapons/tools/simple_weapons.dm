@@ -647,19 +647,33 @@
 	icon_state = "cannibal"
 	item_state = "cannibal"
 	wielded_icon = "_doble"
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	var/x_offset = -16
 	var/offset = -16
+	sharp = TRUE
+	edge = TRUE
+	var/wield_delay = 1
 	slot_flags = SLOT_BACK
+	var/twohanded = TRUE
 	max_upgrades = 3
 	degradation = 0.3 //high quality hunting weapon.
 	tool_qualities = list(QUALITY_CUTTING = 40,  QUALITY_SAWING = 35)
-	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding.
+	force = 66
+	switched_on_forcemult = 0.7
+	no_swing = TRUE
 	throwforce = WEAPON_FORCE_LETHAL
 	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("chopped", "sliced", "cut", "reaped", "lacerated", "slashed")
 	price_tag = 4000 //megafauna parts.
+	use_power_cost = 0
+	toggleable = TRUE
+	suitable_cell = /obj/item/cell/large/potato
+	var/double_tact_required = TRUE
+	var/coin_tracker = 0 //Number not false
+	var/tracker
+	var/last_launch
 	item_icons = list(
 		slot_back_str = 'icons/obj/cannibal_scythe.dmi',
 		slot_s_store_str = 'icons/obj/cannibal_scythe.dmi',
@@ -672,6 +686,107 @@
 		slot_back_str   = "back",
 		slot_s_store_str= "onsuit"
 		)
+
+/obj/item/tool/cannibal_scythe/pre_attack(atom/a, mob/user, var/params)
+	if(!wielded)
+		return TRUE
+	..()
+
+/obj/item/tool/cannibal_scythe/afterattack(mob/living/M, mob/living/user, target_zone)
+	if(!wielded)
+		to_chat(user, SPAN_DANGER("\The [src.name] is too heavy to swing with one hand!"))
+		return FALSE
+
+/obj/item/tool/cannibal_scythe/MouseDrop(over_object)
+	if(!suitable_cell)
+		if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+			cell = null
+			update_icon()
+	if(suitable_cell)
+		to_chat(usr, SPAN_WARNING("You study the shaft of the scythe, but you find absolutely nothing unusual!"))
+
+/obj/item/tool/cannibal_scythe/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
+	clickdelay_offset = 0
+	if(coin_tracker >= 5)
+		coin_tracker = 0
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/speedy_dashing = H.momentum_speed
+		if(speedy_dashing > 0)
+			armor_divisor *= speedy_dashing
+			force *= speedy_dashing
+			if(tracker == target.name && give_coin)
+				coin_tracker += 1
+				to_chat(user, SPAN_DANGER("You are gaining momentum for the next hit!"))
+			else
+				if(ismob(target))
+					tracker = target.name
+					coin_tracker = 0
+			if(coin_tracker >= 4)
+				for(var/mob/living/victim in range(1, H))
+					if(victim != user)
+						var/turf/T = get_turf(victim)
+						new /atom/movable/DuskCut(T, src)
+						resolve_attackby(victim, user, give_coin = FALSE)
+						resolve_attackby(victim, user, give_coin = FALSE)
+						resolve_attackby(victim, user, give_coin = FALSE)
+						resolve_attackby(victim, user, give_coin = FALSE)
+				coin_tracker = 0
+
+			clickdelay_offset = -speedy_dashing
+	.=..()
+	refresh_upgrades()
+
+/obj/item/tool/cannibal_scythe/turn_on(mob/user)
+	if (cell && cell.charge >= 0)
+		item_state = "cannibal"
+		icon_state = "cannibal"
+		if(!wielded)
+			item_state = "cannibal"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
+		no_swing = FALSE
+		return FALSE
+		..()
+
+/obj/item/tool/cannibal_scythe/turn_off(mob/user)
+	item_state = initial(item_state)
+	icon_state = initial(icon_state)
+	if(!wielded)
+		item_state = "cannibal"
+	no_swing = TRUE
+	playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
+
+/obj/item/tool/cannibal_scythe/Destroy()
+	return ..()
+
+/obj/item/tool/cannibal_scythe/afterattack(atom/target, mob/user, proximity_flag, params)
+	if(!switched_on || world.time < last_launch + 3 SECONDS)
+		return
+	var/cost = 0*get_dist(target, user)
+	if(user.check_gravity())
+		cost *= (user.mob_size/10)
+
+	if(cell?.checked_use(cost))
+		if(!wielded)
+			var/drop_prob = 80
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				drop_prob *= H.stats.getMult(STAT_ROB, STAT_LEVEL_EXPERT)
+			if(prob(drop_prob))
+				to_chat(user, SPAN_WARNING("\The [src] launches from your grasp!"))
+				user.drop_item(src)
+				playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+				throw_at(target, get_dist(target, user), 1, user)
+				last_launch = world.time
+				return
+		last_launch = world.time
+		to_chat(usr, SPAN_WARNING("[src] it strains the body for a hunting leap!"))
+		playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+		user.throw_at(target, get_dist(target, user), 1, user)
+
 
 /obj/item/tool/gauntlet
 	name = "render gauntlet"
