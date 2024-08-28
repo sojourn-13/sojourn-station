@@ -40,7 +40,6 @@
 		/datum/job/chaplain,
 		/datum/job/chief_engineer,
 		/datum/job/merchant,
-		/datum/job/rd,
 		/datum/job/smc,
 		/datum/job/swo,
 		/datum/job/cyborg, //To stop people auto dropping these
