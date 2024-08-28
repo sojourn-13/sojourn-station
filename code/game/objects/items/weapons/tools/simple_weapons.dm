@@ -649,17 +649,13 @@
 	wielded_icon = "_doble"
 	hitsound = 'sound/weapons/flamesword.ogg'
 	toggleable = TRUE
-	var/x_offset = -16
-	var/offset = -16
 	sharp = TRUE
 	edge = TRUE
-	var/wield_delay = 1
 	slot_flags = SLOT_BACK
-	var/twohanded = TRUE
 	max_upgrades = 3
 	degradation = 0.3 //high quality hunting weapon.
 	tool_qualities = list(QUALITY_CUTTING = 40,  QUALITY_SAWING = 35)
-	force = 66
+	force = WEAPON_FORCE_LETHAL + 20
 	switched_on_forcemult = 0.7
 	no_swing = TRUE
 	throwforce = WEAPON_FORCE_LETHAL
@@ -699,23 +695,20 @@
 		return FALSE
 
 /obj/item/tool/cannibal_scythe/MouseDrop(over_object)
-	if(!suitable_cell)
-		if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
-			cell = null
-			update_icon()
 	if(suitable_cell)
 		to_chat(usr, SPAN_WARNING("You study the shaft of the scythe, but you find absolutely nothing unusual!"))
 
 /obj/item/tool/cannibal_scythe/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
-	clickdelay_offset = 0
-	if(coin_tracker >= 5)
-		coin_tracker = 0
+	clickdelay_offset = 2
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/speedy_dashing = H.momentum_speed
 		if(speedy_dashing > 0)
-			armor_divisor *= speedy_dashing
-			force *= speedy_dashing
+			//Unlike dusk sabor we dont punish folks for not always being speedy
+			clickdelay_offset = -speedy_dashing
+			//Normally momentum can get upto like 3-4
+			armor_divisor += (speedy_dashing * 3)
+			force += (speedy_dashing * 3)
 			if(tracker == target.name && give_coin)
 				coin_tracker += 1
 				to_chat(user, SPAN_DANGER("You are gaining momentum for the next hit!"))
@@ -723,31 +716,22 @@
 				if(ismob(target))
 					tracker = target.name
 					coin_tracker = 0
-			if(coin_tracker >= 4)
-				for(var/mob/living/victim in range(1, H))
-					if(victim != user)
-						var/turf/T = get_turf(victim)
-						new /atom/movable/DuskCut(T, src)
-						resolve_attackby(victim, user, give_coin = FALSE)
-						resolve_attackby(victim, user, give_coin = FALSE)
-						resolve_attackby(victim, user, give_coin = FALSE)
-						resolve_attackby(victim, user, give_coin = FALSE)
-				coin_tracker = 0
+			//Do we have gained coins?
+			if(coin_tracker)
+				//If we do add are coins as pure damage and then 1/10th of an AD
+				armor_divisor += (coin_tracker * 0.1)
+				force += coin_tracker
 
-			clickdelay_offset = -speedy_dashing
 	.=..()
 	refresh_upgrades()
 
 /obj/item/tool/cannibal_scythe/turn_on(mob/user)
-	if (cell && cell.charge >= 0)
-		item_state = "cannibal"
-		icon_state = "cannibal"
-		item_state = "cannibal"
-		to_chat(user, SPAN_NOTICE("You take a mobile stand, ready to take off at any moment or make a wide swing with your body!"))
-		playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
-		no_swing = FALSE
+	item_state = "cannibal"
+	icon_state = "cannibal"
+	to_chat(user, SPAN_NOTICE("You take a mobile stand, ready to take off at any moment or make a wide swing with your body!"))
+	playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
+	no_swing = FALSE
 	..()
-
 
 /obj/item/tool/cannibal_scythe/turn_off(mob/user)
 	no_swing = TRUE
@@ -755,13 +739,15 @@
 	playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
 	..()
 
-/obj/item/tool/cannibal_scythe/Destroy()
-	return ..()
+/obj/item/tool/cannibal_scythe/refresh_upgrades()
+	..()
+	if(switched_on)
+		no_swing = FALSE
 
 /obj/item/tool/cannibal_scythe/afterattack(atom/target, mob/user, proximity_flag, params)
 	if(!switched_on || world.time < last_launch + 3 SECONDS)
 		return
-	var/cost = 0*get_dist(target, user)
+	var/cost = 0 * get_dist(target, user)
 	if(user.check_gravity())
 		cost *= (user.mob_size/10)
 
@@ -782,7 +768,6 @@
 		to_chat(usr, SPAN_WARNING("You takes off from his place, making a sharp dodge in the style of a leap hunter!"))
 		playsound(src, 'sound/misc/sandjump.ogg', 50, 0, 0)
 		user.throw_at(target, get_dist(target, user), 1, user)
-
 
 /obj/item/tool/gauntlet
 	name = "render gauntlet"
