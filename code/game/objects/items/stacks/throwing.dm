@@ -97,23 +97,19 @@
 	edge = TRUE
 	embed_mult = 90
 	tool_qualities = list()
-	max_upgrades = 0
 	attack_verb = list("flies in", "stabbed", "pierces", "torn", "penetrates")
 	hitsound = 'sound/weapons/pierce.ogg'
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	matter = list(MATERIAL_BONE = 2)
-	amount = 1
-	max_amount = 3
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_NORMAL
-	var/agony = 20
 	throwforce = WEAPON_FORCE_BRUTAL
 	armor_divisor = 0.5
 	slot_flags = SLOT_BELT
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/launchAt(atom/target, mob/living/carbon/C)
 	var/ROB_throwing_damage = max(C.stats.getStat(STAT_ROB), 1)
-	throwforce = 35 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
+	throwforce = WEAPON_FORCE_BRUTAL / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
 	..()
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/update_icon()
@@ -138,20 +134,24 @@
 	force = WEAPON_FORCE_NORMAL
 	reagent_flags = INJECTABLE
 	embed_mult = 90
-	agony = 20
 	amount = 1
 	max_amount = 3
 	damtype = BRUTE
 	preloaded_reagents = list("amatoxin" = 3)
-	var/volume = 3
-	force = WEAPON_FORCE_NORMAL
 	throwforce = 36
 	armor_divisor = 1
 	slot_flags = SLOT_BELT
 
+/obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	amount = 3
+
+/obj/item/stack/thrown/throwing_knife/bone_needle/poison/full/New()
+	..()
+	update_icon()
+
 /obj/item/stack/thrown/throwing_knife/bone_needle/poison/launchAt(atom/target, mob/living/carbon/C)
 	var/ROB_throwing_damage = max(C.stats.getStat(STAT_ROB), 1)
-	throwforce = 35 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
+	throwforce = 36 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
 	..()
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/poison/update_icon()
@@ -187,7 +187,7 @@
 
 /obj/item/stack/thrown/throwing_knife/hunter/launchAt(atom/target, mob/living/carbon/C)
 	var/ROB_throwing_damage = max(C.stats.getStat(STAT_ROB), 1)
-	throwforce = 35 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
+	throwforce = (35 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)) * wounding
 	..()
 
 /obj/item/stack/thrown/throwing_knife/hunter/update_icon()

@@ -64,14 +64,31 @@
 
 /datum/craft_recipe/lodge/throwing_knife/bone_needle/poison
 	name = "poisoned throwing bone needle"
-	result = list(
-		/obj/item/stack/thrown/throwing_knife/bone_needle/poison,
-		/obj/item/stack/thrown/throwing_knife/bone_needle/poison,
-		/obj/item/stack/thrown/throwing_knife/bone_needle/poison)
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
 	steps = list(
 		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
-		list(/datum/seed/mushroom/poison, 3, "time" = 5),
+		list(/obj/item/reagent_containers/food/snacks/amanitajelly, 1, "time" = 1),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison_spider_alt
+	name = "poisoned throwing bone needle (Spider Alt)"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/meat/spider, 1, "time" = 5),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison_spider_alt
+	name = "poisoned throwing bone needle (Roach Alt)"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing, 1, "time" = 1),
 		list(QUALITY_HAMMERING, 30, "time" = 40)
 	)
 
@@ -79,7 +96,7 @@
 	name = "throwing hunting knife"
 	result = /obj/item/stack/thrown/throwing_knife/hunter
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL = 10, "time" = 1), //Takes a second
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 1), //Takes a second
 		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 1, "time" = 5),
 		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 60),
