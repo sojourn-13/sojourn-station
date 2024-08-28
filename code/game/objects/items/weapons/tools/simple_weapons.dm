@@ -647,7 +647,8 @@
 	icon_state = "cannibal"
 	item_state = "cannibal"
 	wielded_icon = "_doble"
-	hitsound = 'sound/weapons/heavyslash.ogg'
+	hitsound = 'sound/weapons/flamesword.ogg'
+	toggleable = TRUE
 	var/x_offset = -16
 	var/offset = -16
 	sharp = TRUE
@@ -741,22 +742,17 @@
 	if (cell && cell.charge >= 0)
 		item_state = "cannibal"
 		icon_state = "cannibal"
-		if(!wielded)
-			item_state = "cannibal"
-		to_chat(user, SPAN_NOTICE("You switch [src] on."))
-		playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
+		item_state = "cannibal"
+		to_chat(user, SPAN_NOTICE("You take a mobile stand, ready to take off at any moment or make a wide swing with your body!"))
+		playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
 		no_swing = FALSE
-		return FALSE
 	..()
 
+
 /obj/item/tool/cannibal_scythe/turn_off(mob/user)
-	item_state = initial(item_state)
-	icon_state = initial(icon_state)
-	if(!wielded)
-		item_state = "cannibal"
 	no_swing = TRUE
-	playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
-	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	to_chat(user, SPAN_NOTICE("You're taking up a defensive stance, preparing to fight something serious! Your every stroke is full of precision!"))
+	playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
 	..()
 
 /obj/item/tool/cannibal_scythe/Destroy()
@@ -778,13 +774,13 @@
 			if(prob(drop_prob))
 				to_chat(user, SPAN_WARNING("\The [src] launches from your grasp!"))
 				user.drop_item(src)
-				playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+				playsound(src, 'sound/misc/sandjump.ogg', 50, 0, 0)
 				throw_at(target, get_dist(target, user), 1, user)
 				last_launch = world.time
 				return
 		last_launch = world.time
-		to_chat(usr, SPAN_WARNING("[src] it strains the body for a hunting leap!"))
-		playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+		to_chat(usr, SPAN_WARNING("You takes off from his place, making a sharp dodge in the style of a leap hunter!"))
+		playsound(src, 'sound/misc/sandjump.ogg', 50, 0, 0)
 		user.throw_at(target, get_dist(target, user), 1, user)
 
 
