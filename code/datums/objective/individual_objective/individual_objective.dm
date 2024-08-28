@@ -65,7 +65,7 @@
 	update_faction_score()
 	to_chat(owner,  SPAN_NOTICE("You have completed the personal objective: [name]"))
 	H.sanity.give_insight(insight_reward)
-	H.sanity.finish_rest()
+	//H.sanity.finish_rest()	//Uncommenting this line causes anyone to gain a level one minute after they finish the personal objective. Please. Please do not release this.
 
 /datum/individual_objective/proc/get_description()
 	var/n_desc = desc

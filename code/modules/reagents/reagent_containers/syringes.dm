@@ -225,6 +225,20 @@
 								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 				else
 					to_chat(target, SPAN_NOTICE("You feel a tiny prick!"))
+			if(istype(target, /obj/item/reagent_containers/food/snacks))
+				var/cheesecheck = FALSE
+				var/blamereagent
+				var/list/blacklistedreagents = list("water", "nutriment")
+				for(var/datum/reagent/R in src.reagents.reagent_list)
+					if(R.id in blacklistedreagents)
+						cheesecheck = TRUE
+						blamereagent = R.id
+						continue
+				if(cheesecheck)
+					to_chat(user, "Adding [blamereagent] to [target] seems like it would ruin it.")
+					return
+				else
+					trans = reagents.trans_to(target, amount_per_transfer_from_this)
 			else
 				trans = reagents.trans_to(target, amount_per_transfer_from_this)
 			to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
