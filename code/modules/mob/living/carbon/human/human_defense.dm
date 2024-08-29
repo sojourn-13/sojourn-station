@@ -427,6 +427,7 @@ uniquic_armor_act
 			return
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		/// Get hit with glass shards , your fibers are on them now, or with a rod idk.
 		O.add_fibers(src)

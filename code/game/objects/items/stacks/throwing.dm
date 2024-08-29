@@ -141,6 +141,7 @@
 	throwforce = 36
 	armor_divisor = 1
 	slot_flags = SLOT_BELT
+	var/toxin_damage = 10
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
 	amount = 3
@@ -153,6 +154,17 @@
 	var/ROB_throwing_damage = max(C.stats.getStat(STAT_ROB), 1)
 	throwforce = 36 / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
 	..()
+
+/obj/item/stack/thrown/throwing_knife/bone_needle/poison/post_thrown_hit(mob)
+	if(isliving(mob))
+		var/mob/living/L
+		if(ishuman(L))
+			var/mob/living/carbon/human/H
+			H.damage_through_armor(toxin_damage, BURN, null, ARMOR_BIO, armor_divisor, used_weapon = src, sharp = is_sharp(src), edge = has_edge(src))
+		else
+			//To non-human mobs we deal 30 toxin damage
+			L.damage_through_armor((toxin_damage*3), TOX, null, ARMOR_BIO, armor_divisor, used_weapon = src, sharp = is_sharp(src), edge = has_edge(src))
+
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/poison/update_icon()
 	item_state = "needle[amount]"
