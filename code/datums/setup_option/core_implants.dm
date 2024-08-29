@@ -37,6 +37,8 @@
 		/datum/job/medstudent,
 		/datum/job/premier,
 		/datum/job/pg,
+		/datum/job/roboticist,//Coffee edit
+		/datum/job/scientist,//Coffee edit
 		/datum/job/chaplain,
 		/datum/job/chief_engineer,
 		/datum/job/merchant,
@@ -46,7 +48,7 @@
 		/datum/job/ai
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
-	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /datum/category_item/setup_option/core_implant/nanogate
