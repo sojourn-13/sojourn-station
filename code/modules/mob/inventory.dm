@@ -236,7 +236,7 @@
 
 	var/obj/item/storage/S
 
-	for(var/i in list(get_inactive_hand(), back, get_active_hand()))
+	for(var/i in list(back, get_active_hand())) //equinox edit. Inactive hand is irrelevant. original: for(var/i in list(get_inactive_hand(), back, get_active_hand()))
 		if(istype(i, /obj/item/storage))
 			S = i
 			break
@@ -259,3 +259,37 @@
 		equip_to_slot_if_possible(store.contents[store.contents.len], return_hand)
 		return TRUE
 	return FALSE
+
+// Equinox Additions
+
+/mob/living/carbon/human/verb/belt_equip()
+	set name = "belt-equip"
+	set hidden = TRUE
+
+	var/obj/item/storage/S
+
+	for(var/i in list(belt, get_active_hand()))
+		if(istype(i, /obj/item/storage))
+			S = i
+			break
+
+	if(S && istype(S, /obj/item/storage)) //LSS: bag-equip checks for whether the item is a backpack or not a backpack. If its not a backpack, storage is not abated. if it is a backpack, it checks if its blocking storage by being worn.
+		equip_to_from_bag(get_active_hand(), S)
+
+/mob/living/carbon/human/verb/suit_storage_equip()
+	set name = "suit-storage-equip"
+	set hidden = TRUE
+
+	var/obj/item/storage/S
+
+	for(var/i in list(s_store, get_active_hand()))
+		if(istype(i, /obj/item/storage))
+			S = i
+			break
+
+	if(istype(S, /obj/item/storage/backpack/guncase)) //so people wont get quiet shut-downs
+		to_chat(client, SPAN_WARNING("The gun case is latched!"))
+		return
+
+	if(S && !istype(S, /obj/item/storage/backpack/guncase)) //So, This is to avoid allowing gun cases (a backpack subtype) from being used as a storage for several guns all on quick access while allowing you to, otherwise, access the list of saner fringe cases brought up by individual suit storage lists.
+		equip_to_from_bag(get_active_hand(), S)
