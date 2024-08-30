@@ -417,7 +417,7 @@
 			return
 
 		if(QUALITY_SAWING, QUALITY_BOLT_TURNING)
-			if(opened)
+			if(opened && user.a_intent != I_HELP)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					visible_message(
 						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
