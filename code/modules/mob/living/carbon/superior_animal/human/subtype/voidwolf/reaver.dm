@@ -168,6 +168,49 @@ casingtype = /obj/item/ammo_casing/a75/spent
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return TRUE
 
+/mob/living/carbon/superior_animal/human/voidwolf/elite/captain
+	name = "Void Reaver Captain"
+	desc = "A void wolf reaver captain, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
+	icon_state = "reaver_cap_elite"
+	melee_damage_lower = 35
+	melee_damage_upper = 40
+	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/gun/energy/gun, /obj/random/cloth/assault/reaver)
+
+	projectiletype = /obj/item/projectile/beam/voidwolf
+	melee_sharp = TRUE //Eswords
+	armor_divisor = 3
+	var/block_chance = 65
+	move_and_attack = TRUE
+
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 8
+	mag_type = /obj/item/cell/small/high/depleted
+	mags_left = 1
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(prob(block_chance) || moved)
+		moved = FALSE
+		visible_message("\red \b [src] evades the [O]!")
+		flick("reaver_cap_elite_evade",src)
+		return
+	..()
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/bullet_act(var/obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(block_chance))
+		..()
+	else if (!(Proj.testing))
+		visible_message("\red <B>[src] evades [Proj]!</B>")
+		flick("reaver_cap_elite_evade",src)
+	return TRUE
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/Initialize()
+	..()
+	icon_state = "reaver_cap_elite"
+
+
 /mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
 	..()
 	if(prob(50))
