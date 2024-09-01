@@ -397,21 +397,14 @@
 /area/nadezhda/maintenance/substation/science)
 "aey" = (
 /obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /obj/structure/cable/ender{
 	id = "surface to stairs"
 	},
 /obj/machinery/camera/network/research_outpost,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aez" = (
@@ -3659,9 +3652,7 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "aMQ" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/spray/sterilizine,
-/turf/simulated/floor/tiled/white/monofloor,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/surgery)
 "aMT" = (
 /obj/structure/table/woodentable,
@@ -3763,6 +3754,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "aOu" = (
@@ -4057,20 +4049,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "aSE" = (
+/obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/dungeon/outside/abandoned_solars)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/medical/sleeper)
 "aSP" = (
 /obj/machinery/space_heater,
 /obj/machinery/firealarm{
@@ -5242,25 +5225,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"beR" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/abandoned_solars)
 "beW" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/bushb1,
@@ -8018,24 +7982,11 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bIc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/abandoned_solars)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/medical/sleeper)
 "bIf" = (
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance{
@@ -8395,6 +8346,7 @@
 	equipment = 1;
 	pixel_y = 26
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "bLg" = (
@@ -11183,25 +11135,6 @@
 /obj/machinery/space_heater,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/command/tcommsat/computer)
-"ctZ" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest)
 "cug" = (
 /obj/machinery/light{
 	dir = 1
@@ -11559,7 +11492,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/railing/grey,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "cwT" = (
@@ -15606,6 +15538,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
 "doD" = (
@@ -16059,11 +15992,6 @@
 "dtI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -16391,6 +16319,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "dwN" = (
@@ -16777,7 +16708,6 @@
 	dir = 8
 	},
 /obj/structure/closet,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "dAn" = (
@@ -16840,6 +16770,7 @@
 	name = "utility sink";
 	pixel_y = 28
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
@@ -19497,14 +19428,9 @@
 /area/nadezhda/outside/inside_colony)
 "ebU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/abandoned_solars)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/medical/sleeper)
 "ebV" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -24564,7 +24490,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "fcq" = (
@@ -28802,7 +28728,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /obj/machinery/door/airlock/glass_research{
 	name = "SI Solar Outpost";
 	req_access = list(5)
@@ -29970,6 +29895,20 @@
 	pixel_y = -32
 	},
 /obj/machinery/recharger,
+/obj/machinery/button/remote/blast_door{
+	id = "research_enterance";
+	name = "R&D Enterance Lockdown";
+	pixel_y = -24;
+	req_access = list(5);
+	pixel_x = -8
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "research_shutters";
+	name = "R&D shutter control";
+	pixel_y = -24;
+	req_access = list(5);
+	pixel_x = 8
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "ghg" = (
@@ -31295,6 +31234,10 @@
 /area/nadezhda/rnd/robotics)
 "gut" = (
 /obj/structure/table/woodentable,
+/obj/item/storage/box/ids{
+	pixel_x = 3
+	},
+/obj/item/storage/box/PDAs,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain)
 "guA" = (
@@ -34882,7 +34825,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "hjS" = (
@@ -35660,7 +35602,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "htk" = (
@@ -37748,6 +37689,7 @@
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "hMH" = (
@@ -39671,6 +39613,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
 "igI" = (
@@ -44307,16 +44252,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jef" = (
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Lake Side Solars - 2"
-	},
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "jej" = (
@@ -45211,8 +45150,6 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "jmR" = (
 /obj/structure/reagent_dispensers/fueltank/huge,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "jmU" = (
@@ -45698,7 +45635,7 @@
 /obj/item/contraband/poster/placed/coffee/rat1{
 	pixel_x = -30
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/surgery)
 "jrZ" = (
 /obj/structure/table/standard,
@@ -46864,9 +46801,9 @@
 	RCon_tag = "Substation - Surface";
 	charge = 2.5e+006;
 	input_attempt = 1;
-	input_level = 600000;
+	input_level = 750000;
 	output_attempt = 1;
-	output_level = 600000
+	output_level = 200000
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -58889,19 +58826,10 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "mfQ" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/abandoned_solars)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/medical/sleeper)
 "mfT" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/armor/platecarrier,
@@ -66668,17 +66596,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters/fitness)
-"nIe" = (
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 1;
-	icon_state = "term"
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/dungeon/outside/abandoned_solars)
 "nIx" = (
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -69472,7 +69389,6 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "okh" = (
@@ -69995,7 +69911,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "oqq" = (
@@ -72844,7 +72759,6 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
@@ -73632,6 +73546,7 @@
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "pdo" = (
@@ -73896,7 +73811,13 @@
 /area/nadezhda/command/courtroom)
 "pgk" = (
 /obj/structure/table/glass,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/button/windowtint{
+	id = "surgery";
+	pixel_y = -22
+	},
+/obj/item/reagent_containers/spray/sterilizine,
+/obj/item/reagent_containers/spray/sterilizine,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/surgery)
 "pgu" = (
 /obj/structure/grille{
@@ -79746,8 +79667,6 @@
 /area/nadezhda/maintenance/surfacenorth)
 "qqG" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "qqM" = (
@@ -84212,6 +84131,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rmk" = (
 /obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "rml" = (
@@ -84540,11 +84460,6 @@
 /area/nadezhda/security/tactical)
 "rpN" = (
 /obj/structure/closet,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "rpP" = (
@@ -88670,7 +88585,7 @@
 /obj/machinery/mech_recharger,
 /obj/random/mecha/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/abandoned_solars)
 "shI" = (
 /obj/machinery/power/rad_collector,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -89700,21 +89615,6 @@
 /mob/living/simple_animal/soteria_roomba/medical,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"stl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/abandoned_solars)
 "stI" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
@@ -91020,7 +90920,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "sGI" = (
@@ -94720,11 +94619,6 @@
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
-"tvL" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/spray/sterilizine,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/surgery)
 "tvR" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/psych)
@@ -98242,6 +98136,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "ude" = (
@@ -98726,6 +98621,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
@@ -102367,7 +102263,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "uTf" = (
@@ -104050,6 +103945,8 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vkX" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "vkZ" = (
@@ -104442,14 +104339,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
-"vpk" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/dungeon/outside/abandoned_solars)
 "vpq" = (
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
@@ -109591,10 +109480,6 @@
 	dir = 4;
 	pixel_x = 11
 	},
-/obj/machinery/button/windowtint{
-	id = "surgery";
-	pixel_y = -22
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
@@ -111945,13 +111830,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "wSZ" = (
-/obj/machinery/button/remote/blast_door{
-	id = "research_enterance";
-	name = "R&D Enterance Lockdown";
-	pixel_y = -24;
-	req_access = list(5);
-	pixel_x = -8
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /obj/item/paper_bin{
@@ -111961,13 +111839,6 @@
 /obj/item/pen{
 	pixel_x = -1;
 	pixel_y = 3
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "research_shutters";
-	name = "R&D shutter control";
-	pixel_y = -24;
-	req_access = list(5);
-	pixel_x = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
@@ -117881,7 +117752,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
@@ -171872,7 +171742,7 @@ pzc
 bpa
 pmC
 rAj
-tvL
+aMQ
 aMQ
 rAj
 pmC
@@ -173288,7 +173158,7 @@ fws
 uhB
 lgF
 umh
-umh
+mfQ
 umh
 umh
 umh
@@ -173490,7 +173360,7 @@ fws
 rBD
 uXa
 oUB
-pWe
+aSE
 yhO
 jbu
 jbu
@@ -173894,12 +173764,12 @@ fws
 sPZ
 lgF
 umh
-vkX
-rlb
-lEP
-lEP
-rlb
 fxD
+rlb
+lEP
+lEP
+rlb
+vkX
 vjl
 qgb
 qUI
@@ -174096,12 +173966,12 @@ fws
 iwW
 lgF
 nie
+nie
 jEC
 jEC
 jEC
 jEC
-jEC
-jEC
+bIc
 qZJ
 oiB
 rJk
@@ -174298,12 +174168,12 @@ duz
 ifd
 lgF
 nie
-jEC
+nie
 jEC
 dPj
 jEC
 jEC
-jEC
+nie
 nCl
 uoq
 wdH
@@ -174502,8 +174372,8 @@ lbQ
 umh
 vkX
 rmk
-lEP
-lEP
+ebU
+ebU
 rmk
 vkX
 doC
@@ -175111,7 +174981,7 @@ vaj
 stb
 jeN
 wMO
-vkX
+fxD
 vjl
 igE
 lGy
@@ -218397,13 +218267,13 @@ fqz
 xqc
 luh
 pOC
-mfQ
+aJo
 htk
 ryY
-bIc
+ryY
 dyx
 ryY
-bIc
+ryY
 htk
 hjP
 oZR
@@ -219207,12 +219077,12 @@ luh
 pOC
 keC
 ryY
-bIc
-bIc
+ryY
+ryY
 rei
-beR
-beR
-beR
+htk
+htk
+htk
 udH
 htj
 cyy
@@ -220014,13 +219884,13 @@ xqc
 xoo
 lUU
 mpP
-bIc
-beR
+ryY
+htk
 htk
 dyx
 htk
-bIc
-ctZ
+ryY
+htk
 udH
 cwS
 cZV
@@ -220823,11 +220693,11 @@ icJ
 pOC
 keC
 ryY
-bIc
-bIc
+ryY
+ryY
 rei
 htk
-beR
+htk
 htk
 rqx
 oZR
@@ -221630,14 +221500,14 @@ lcz
 icJ
 qnL
 aJo
-beR
-beR
+htk
+htk
 ryY
 dyx
 ryY
-beR
-beR
-stl
+htk
+htk
+rqx
 edZ
 aHG
 aHG
@@ -222438,7 +222308,7 @@ tfW
 aGD
 qdg
 sER
-ebU
+rgj
 sGD
 rgj
 uSZ
@@ -223448,8 +223318,8 @@ tfW
 tfW
 aHG
 aey
-vpk
-aSE
+cRE
+dtI
 cRE
 cRE
 cRE
@@ -223650,7 +223520,7 @@ tfW
 tfW
 aHG
 jef
-nIe
+cRE
 dtI
 cRE
 cRE
