@@ -78,6 +78,8 @@
 	\ts = down
 	\td = right
 	\tw = up
+	\tf = a-intent left (cycles left)
+	\tg = a-intent right (cycles right)
 	\tq = drop
 	\te = equip
 	\tv = block
@@ -95,10 +97,10 @@
 	\tz = activate held object (or y)
 	\tl = looc-verb
 	\to = ooc-verb
-	\t1 = help-intent
-	\t2 = disarm-intent
-	\t3 = grab-intent
-	\t4 = harm-intent
+	\t1 = a-intent help
+	\t2 = a-intent disarm
+	\t3 = a-intent grab
+	\t4 = a-intent harm
 	\tCtrl = drag
 	\tShift = examine
 	\tF11 = toggle fullscreen
