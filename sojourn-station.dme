@@ -3490,6 +3490,7 @@
 #include "modular_sojourn\brewing.dm"
 #include "modular_sojourn\brewing_datums.dm"
 #include "modular_sojourn\cement_bag.dm"
+#include "modular_sojourn\churn.dm"
 #include "modular_sojourn\fencer.dm"
 #include "modular_sojourn\lamp.dm"
 #include "modular_sojourn\pixelshift.dm"
