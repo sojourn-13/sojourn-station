@@ -129,7 +129,7 @@
 			anti_cheat = FALSE
 			return
 		if("Piller Tree")
-			if(!slot_two)
+			if(!slot_three)
 				to_chat(user, "You add [PC]'resonance into the Third Piller.")
 			else
 				to_chat(user, "You carefully take out the override the resonance in [PC], Third Piller.")
@@ -139,7 +139,7 @@
 			anti_cheat = FALSE
 			return
 		if("Piller Four")
-			if(!slot_two)
+			if(!slot_four)
 				to_chat(user, "You add [PC]'resonance into the Forth Piller.")
 			else
 				to_chat(user, "You carefully take out the override the resonance in [PC], Forth Piller.")
