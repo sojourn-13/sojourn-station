@@ -314,15 +314,11 @@
 	price_tag = 2
 	novariants = FALSE
 
-/obj/item/stack/steel/steel/five
-	icon_state = "sheet-metal"
-	icon = 'icons/obj/stack/material.dmi'
+/obj/item/stack/material/steel/five
 	name = "five steel sheets"
 	amount = 5
 
-/obj/item/stack/steel/steel/ten
-	icon_state = "sheet-metal"
-	icon = 'icons/obj/stack/material.dmi'
+/obj/item/stack/material/steel/ten
 	name = "ten steel sheets"
 	amount = 10
 
@@ -356,16 +352,12 @@
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
 
-/obj/item/stack/steel/wood/five
+/obj/item/stack/material/wood/five
 	name = "five wood plank"
-	icon_state = "sheet-wood"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
-/obj/item/stack/steel/wood/ten
+/obj/item/stack/material/wood/ten
 	name = "ten wood plank"
-	icon_state = "sheet-wood"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/wood/full
@@ -381,16 +373,12 @@
 	default_type = MATERIAL_CLOTH
 	price_tag = 1
 
-/obj/item/stack/steel/cloth/five
+/obj/item/stack/material/cloth/five
 	name = "five cloth sheets"
-	icon_state = "sheet-cloth"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
-/obj/item/stack/steel/cloth/ten
+/obj/item/stack/material/cloth/ten
 	name = "ten cloth sheets"
-	icon_state = "sheet-cloth"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/cloth/random
@@ -415,16 +403,12 @@
 	default_type = MATERIAL_CARDBOARD
 	price_tag = 3
 
-/obj/item/stack/steel/cardboard/five
+/obj/item/stack/material/cardboard/five
 	name = "five cardboard sheets"
-	icon_state = "sheet-card"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
-/obj/item/stack/steel/cardboard/ten
+/obj/item/stack/material/cardboard/ten
 	name = "ten cardboard sheets"
-	icon_state = "sheet-card"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 
@@ -459,16 +443,12 @@
 	price_tag = 2
 	novariants = FALSE
 
-/obj/item/stack/steel/glass/five
+/obj/item/stack/material/glass/five
 	name = "five glass sheets"
-	icon_state = "sheet-glass"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 5
 
-/obj/item/stack/steel/glass/ten
+/obj/item/stack/material/glass/ten
 	name = "ten glass sheets"
-	icon_state = "sheet-glass"
-	icon = 'icons/obj/stack/material.dmi'
 	amount = 10
 
 /obj/item/stack/material/glass/full
