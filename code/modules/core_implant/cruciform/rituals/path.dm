@@ -591,7 +591,7 @@
 					if(howfar <= closerange)
 						simplesclose += 1
 
-	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine) in view(closerange, H))
+	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine || /obj/effect/decal/cleanable/crayon/trap) in view(closerange, H))
 		traps = TRUE
 		was_triggered = TRUE
 
