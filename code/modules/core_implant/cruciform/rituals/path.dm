@@ -613,7 +613,7 @@
 		if(spiders)
 			return_message +="There are [spiders] giant spiders nearby, [spidersclose] of them are close!.\n"
 		if(termites)
-			return_message +=There are [termites] giant termites nearby, [termitesclose] of them are close!\n"
+			return_message += "There are [termites] giant termites nearby, [termitesclose] of them are close!\n"
 		if(ameridian)
 			return_message += "There are [ameridian] ameridian golems nearby, [ameridianclose] of them are close!\n"
 		if(psionic)
