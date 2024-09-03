@@ -594,7 +594,7 @@
 					if(howfar <= closerange)
 						simplesclose += 1
 
-	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine) in view(closerange, H))
+	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine || /obj/effect/decal/cleanable/crayon/trap) in view(closerange, H))
 		traps = TRUE
 		was_triggered = TRUE
 
@@ -607,23 +607,25 @@
 	if(!was_triggered) //Nothing to see here!
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
 	else //Bad things around
+		var/return_message = ""
 		if(roaches)
-			to_chat(H, SPAN_NOTICE("There are [roaches] giant roaches nearby, [roachesclose] of them are close!"))
+			return_message += "There are [roaches] giant roaches nearby, [roachesclose] of them are close!.\n"
 		if(spiders)
-			to_chat(H, SPAN_NOTICE("There are [spiders] giant spiders nearby, [spidersclose] of them are close!"))
+			return_message +="There are [spiders] giant spiders nearby, [spidersclose] of them are close!.\n"
 		if(termites)
-			to_chat(H, SPAN_NOTICE("There are [termites] giant termites nearby, [termitesclose] of them are close!"))
+			return_message +=There are [termites] giant termites nearby, [termitesclose] of them are close!\n"
 		if(ameridian)
-			to_chat(H, SPAN_NOTICE("There are [ameridian] ameridian golems nearby, [ameridianclose] of them are close!"))
+			return_message += "There are [ameridian] ameridian golems nearby, [ameridianclose] of them are close!\n"
 		if(psionic)
-			to_chat(H, SPAN_NOTICE("There are [psionic] psionic abominations nearby, [psionicclose] of them are close!"))
+			return_message += "There are [psionic] psionic abominations nearby, [psionicclose] of them are close!\n"
 		if(simples)
-			to_chat(H, SPAN_NOTICE("There are [simples] dumb beasts nearby, [simplesclose] of them are close!"))
+			return_message += "There are [simples] dumb beasts nearby, [simplesclose] of them are close!\n"
 		if(traps)
-			to_chat(H, SPAN_NOTICE("There are potential traps close, but the number of them cannot be determined!"))
+			return_message += "There are potential traps close, but the number of them cannot be determined!\n"
 		if(other)
-			to_chat(H, SPAN_NOTICE("There are [other] unidentifiable threats nearby, [otherclose] of them are close!"))
-		if(carrion)
+			return_message += "There are [other] unidentifiable threats nearby, [otherclose] of them are close!" //No other threats to add to the return message so we don't add a blank line to the end
+		to_chat(H, SPAN_NOTICE("[return_message]."))
+		if(carrion) //This one being an antag gets its own red text and second message
 			to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity whose views intelligent beings as prey. You know there is a carrion close."))
 	return TRUE
 
