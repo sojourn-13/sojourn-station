@@ -227,7 +227,7 @@
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
 		fail("Only Primes and Crusaders have the authority to address the flock.", user, C)
 		return FALSE
-	var/text = input(user, "What message will you speak to the Church? The message will be recieved telepathically.", "Sending a message") as text|null
+	var/text = input(user, "What message will you speak to the Church? The message will be recieved by their cruciforms and heard in their mind.", "Sending a message") as text|null
 	if (!text)
 		return FALSE //Unlike Sending, this doesn't give you a list of everyone, so we can refund if you decide not to say anything
 	for(var/mob/living/H in disciples)
