@@ -620,6 +620,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				user.drop_item()
 		else
 			handle_click_empty(user)
+		currently_firing = FALSE	//Add this here or else people who have clumsy will permanently break guns and prevent them from firing if they fuck up with it.
 		return FALSE
 
 	currently_firing = FALSE
