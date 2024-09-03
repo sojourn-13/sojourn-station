@@ -218,7 +218,7 @@
 
 /datum/ritual/cruciform/priest/announcement
 	name = "Address the Flock"
-	phrase = "Cum autem magna conquisitio fieret, surgens Petrus dixit ad eos." //"After much discussion, Peter got up and addressed them"
+	phrase = "Et dixit ad me: Fili hominis, vade ad domum Israel, et loqueris verba mea ad eos." //"And he said to me, “Son of man, eat what is before you, eat this scroll; then go and speak to the people of Israel.”
 	desc = "This litany acts as a mass Sending, addressing all disciples."
 	category = "Episcopal"
 	power = 30
