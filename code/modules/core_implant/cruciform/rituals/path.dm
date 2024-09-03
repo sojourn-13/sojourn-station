@@ -253,7 +253,7 @@
 /datum/ritual/cruciform/lemniscate/holy_boost
 	name = "Bolster the Fellowship"
 	phrase = "Benedicat tibi Dominus, et custodiat te. Ostendat Dominus faciem suam tibi, et misereatur tui. Convertat Dominus vultum suum ad te, et det tibi pacem." //“The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.”
-	var/stats_to_boost = list(STAT_MEC = 15, STAT_COG = 15, STAT_BIO = 15, STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
+	var/stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10, STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 30 MINUTES
