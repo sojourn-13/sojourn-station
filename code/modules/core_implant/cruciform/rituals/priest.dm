@@ -216,6 +216,30 @@
 		if(target.wearer && target.wearer.stat != DEAD)
 			return target
 
+/datum/ritual/cruciform/priest/announcement
+	name = "Address the Flock"
+	phrase = "Cum autem magna conquisitio fieret, surgens Petrus dixit ad eos." //"After much discussion, Peter got up and addressed them"
+	desc = "This litany acts as a mass Sending, addressing all disciples."
+	category = "Episcopal"
+	power = 30
+
+/datum/ritual/cruciform/priest/announcement/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/text = input(user, "What message will you speak to the Church? The message will be recieved telepathically.", "Sending a message") as text|null
+	if (!text)
+		return FALSE //Unlike Sending, this doesn't give you a list of everyone, so we can refund if you decide not to say anything
+	for(var/mob/living/H in disciples)
+		if(H != user) //Don't send it to ourselves
+			to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
+			playsound(H, 'sound/machines/signal.ogg', 50, 1)
+	to_chat(user, "<span class='info'><font color='#ffaa00'>You say to the Church: \"[text]\"</font></span>")
+	log_and_message_admins("[user.real_name] made an announcement to all other disciples with text \"[text]\"")
+	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+	for(var/mob/observer/ghost/G in world)
+		if(G.get_preference_value(/datum/client_preference/ghost_ears_plus) == GLOB.PREF_YES)
+			G.show_message("<i>Cruciform announcement from <b>[user]</b>: [text]</i>")
+
+	return TRUE
+
 /datum/ritual/cruciform/priest/install
 	name = "Commitment"
 	phrase = "Iter tuum para." //"Prepare for your journey."*
