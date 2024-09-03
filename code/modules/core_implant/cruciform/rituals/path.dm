@@ -254,6 +254,9 @@
 	name = "Bolster the Fellowship"
 	phrase = "Benedicat tibi Dominus, et custodiat te. Ostendat Dominus faciem suam tibi, et misereatur tui. Convertat Dominus vultum suum ad te, et det tibi pacem." //“The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.”
 	var/stats_to_boost = list(STAT_MEC = 15, STAT_COG = 15, STAT_BIO = 15, STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	effect_time = 30 MINUTES
 	desc = "This litany boosts all the stats of all disciples who hear you for thirty minutes, but has no effect on those without cruciforms."
 
 /datum/ritual/cruciform/lemniscate/holy_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
