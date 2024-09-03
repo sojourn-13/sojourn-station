@@ -232,7 +232,7 @@
 		return FALSE //Unlike Sending, this doesn't give you a list of everyone, so we can refund if you decide not to say anything
 	for(var/mob/living/H in disciples)
 		if(H != user) //Don't send it to ourselves
-			to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
+			to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks to the Church: \"[text]\"</font><b></span>")
 			playsound(H, 'sound/machines/signal.ogg', 50, 1)
 	to_chat(user, "<span class='info'><font color='#ffaa00'>You say to the Church: \"[text]\"</font></span>")
 	log_and_message_admins("[user.real_name] made an announcement to all other disciples with text \"[text]\"")
