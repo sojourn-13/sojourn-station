@@ -372,7 +372,9 @@ var/global/list/robot_modules = list(
 				"Tall Tanker" = "k4tmed",
 				"Tall Tanker Alt" = "k4tmed_alt1",
 				"Tall Female" = "fmekamed",
-				"Tall Male" = "mmekamed"
+				"Tall Male" = "mmekamed",
+				"Dullahan Medical" = "dullahanmed",
+				"FoxTrot Med" = "ftpeace"
 				)
 
 	tall_sprites = list(
@@ -381,7 +383,10 @@ var/global/list/robot_modules = list(
 				"k4tmed",
 				"k4tmed_alt1",
 				"fmekamed",
-				"mmekamed"
+				"mmekamed",
+				"mekasecalt",
+				"dullahanmed",
+				"ftpeace"
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -518,7 +523,9 @@ var/global/list/robot_modules = list(
 					"Tall Porter" = "k4tcargo",
 					"Tall Porter Alt" = "k4tcargo_alt1",
 					"Tall Crate Pusher" = "fmekacargo",
-					"Tall Crate Pusher Alt" = "mmekacargo"
+					"Tall Crate Pusher Alt" = "mmekacargo",
+					"Dullahan Hazard" = "dullahaneng",
+					"Dullahan" = "dullahancargo"
 					)
 
 	tall_sprites = list(
@@ -531,7 +538,9 @@ var/global/list/robot_modules = list(
 				"k4tcargo",
 				"k4tcargo_alt1",
 				"fmekacargo",
-				"mmekacargo"
+				"mmekacargo",
+				"dullahaneng",
+				"dullahancargo"
 				)
 
 	health = 120 //Slightly above average
@@ -714,7 +723,8 @@ var/global/list/robot_modules = list(
 					"Contractor Traffic Light" = "fmekasyndi",
 					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
 					"Contractor Riot Stopper" = "mmekasyndi",
-					"Marshal Riot Unit" = "mmekasyndi_marshal"
+					"Marshal Riot Unit" = "mmekasyndi_marshal",
+					"Dullahan Riot Unit" = "dullahansyndi"
 				)
 
 	tall_sprites = list(
@@ -728,7 +738,8 @@ var/global/list/robot_modules = list(
 					"fmekasyndi",
 					"fmekasyndi_marshal",
 					"mmekasyndi",
-					"mmekasyndi_marshal"
+					"mmekasyndi_marshal",
+					"dullahansyndi"
 				)
 
 /obj/item/robot_module/security/defense/New(var/mob/living/silicon/robot/R)
@@ -804,7 +815,8 @@ var/global/list/robot_modules = list(
 					"Contractor Traffic Light" = "fmekasyndi",
 					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
 					"Contractor Riot Stopper" = "mmekasyndi",
-					"Marshal Riot Unit" = "mmekasyndi_marshal"
+					"Marshal Riot Unit" = "mmekasyndi_marshal",
+					"Dullahan Riot Unit" = "dullahansyndi"
 				)
 
 	tall_sprites = list(
@@ -817,7 +829,8 @@ var/global/list/robot_modules = list(
 					"fmekasyndi",
 					"fmekasyndi_marshal",
 					"mmekasyndi",
-					"mmekasyndi_marshal"
+					"mmekasyndi_marshal",
+					"dullahansyndi"
 				)
 
 /obj/item/robot_module/security/enforcement/New(var/mob/living/silicon/robot/R)
@@ -891,7 +904,9 @@ var/global/list/robot_modules = list(
 					"Tall Tanker" = "k4tjani",
 					"Tall Tanker Alt" = "k4tjani_alt1",
 					"Tall Maid" = "fmekajani",
-					"Tall Maid Alt" = "mmekajani"
+					"Tall Maid Alt" = "mmekajani",
+					"Dullahan Cleaner" = "dullahanjani",
+					"Dullahan Sweeper" = "dullahanpeace"
 					)
 
 	tall_sprites = list(
@@ -903,7 +918,9 @@ var/global/list/robot_modules = list(
 					"k4tjani",
 					"k4tjani_alt1",
 					"fmekajani",
-					"mmekajani"
+					"mmekajani",
+					"dullahanjani",
+					"dullahanpeace"
 				)
 
 	health = 120 //Bulky
@@ -987,7 +1004,9 @@ var/global/list/robot_modules = list(
 					"Tall k4tserve Alt" = "k4tserve_alt1",
 					"Tall Tanker Maid" = "k4tserve_alt2",
 					"Tall Female Maid" = "fmekaserv",
-					"Tall Male Maid" = "mmekaserv"
+					"Tall Male Maid" = "mmekaserv",
+					"Dullahan Server" = "dullahanserv",
+					"Dullahan Server Alt" = "dullahanserv_alt"
 				)
 
 	tall_sprites = list(
@@ -999,7 +1018,9 @@ var/global/list/robot_modules = list(
 					"k4tserve_alt1",
 					"k4tserve_alt2",
 					"fmekaserv",
-					"mmekaserv"
+					"mmekaserv",
+					"dullahanserv",
+					"dullahanserv_alt"
 				)
 
 	health = 120
@@ -1098,7 +1119,8 @@ var/global/list/robot_modules = list(
 					"Tall Female Feline" = "fmekamine",
 					"Tall Male Feline" = "mmekamine",
 					"Tall Tanker" = "k4tmine",
-					"Tall Tanker Alt" = "k4tmine_alt1"
+					"Tall Tanker Alt" = "k4tmine_alt1",
+					"Dullahan Miner" = "dullahanmine"
 				)
 
 
@@ -1108,7 +1130,8 @@ var/global/list/robot_modules = list(
 					"fmekamine",
 					"mmekamine",
 					"k4tmine",
-					"k4tmine_alt1"
+					"k4tmine_alt1",
+					"dullahanmine"
 				)
 
 	health = 160 //Pretty tough
@@ -1173,11 +1196,12 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_med",
 					"Tall Felinal" = "mekapeace",
 					"Tall Felinal Alt" = "mekapeace_alt",
-					"Tall " = "mekaninja",
-					"Tall  Alt" = "mekaninj_alt",
-					"Tall  Tanker" = "k4tninja",
-					"Tall  Female" = "fmekaninja",
-					"Tall  Male" = "mmekaninja"
+					"Tall" = "mekaninja",
+					"Tall Alt" = "mekaninja_alt",
+					"Tall Tanker" = "k4tninja",
+					"Tall Female" = "fmekaninja",
+					"Tall Male" = "mmekaninja",
+					"Dullahan Researcher" = "dullahanninja"
 					)
 
 	tall_sprites = list(
@@ -1187,7 +1211,8 @@ var/global/list/robot_modules = list(
 					"mekaninj_alt",
 					"k4tninja",
 					"fmekaninja",
-					"mmekaninja"
+					"mmekaninja",
+					"dullahanninja"
 					)
 
 	health = 120 //Weak
