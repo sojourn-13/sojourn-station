@@ -3496,6 +3496,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
+"aIU" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/empty,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/command/tcommsat/computer)
 "aIV" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -10014,6 +10021,15 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bXd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/blucarpet,
+/area/nadezhda/command/meeting_room)
 "bXm" = (
 /obj/structure/invislight,
 /turf/unsimulated/mineral,
@@ -10379,6 +10395,9 @@
 /obj/structure/catwalk,
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
@@ -10821,6 +10840,9 @@
 /obj/structure/bed/chair/office/light{
 	dir = 8;
 	name = "biolab overseer seat"
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/meeting_room)
@@ -13804,6 +13826,13 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
+"cKI" = (
+/obj/effect/floor_decal/industrial_plant/border_sides,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/command/panic_room)
 "cKJ" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -26171,6 +26200,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/meeting_room)
 "eZZ" = (
@@ -32295,6 +32326,15 @@
 /obj/machinery/chem_master/condimaster,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/kitchen)
+"gjV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/command/meeting_room)
 "gjY" = (
 /obj/structure/grille,
 /obj/structure/barricade,
@@ -33487,6 +33527,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "guA" = (
@@ -35117,7 +35160,7 @@
 /area/nadezhda/outside/inside_colony)
 "gNf" = (
 /obj/machinery/atmospherics/pipe/tank/air{
-	dir = 1
+	dir = 4
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
@@ -40320,6 +40363,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
+"hKn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/command/meeting_room)
 "hKs" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/small/busha1,
@@ -41040,6 +41092,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "hSX" = (
@@ -53373,6 +53429,8 @@
 	name = "Command Passageway";
 	req_access = list(61)
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "kmm" = (
@@ -73131,6 +73189,21 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
+"obf" = (
+/obj/effect/floor_decal/industrial/caution/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/command/meeting_room)
 "obk" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -74789,6 +74862,7 @@
 /area/nadezhda/security/maingate/east)
 "ord" = (
 /obj/structure/railing,
+/obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "ore" = (
@@ -74840,6 +74914,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/meeting_room)
 "orD" = (
@@ -75360,7 +75436,9 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "owd" = (
-/obj/structure/closet/crate/trashcart,
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 4
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "owe" = (
@@ -77804,6 +77882,28 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"oUd" = (
+/obj/machinery/door/window/eastright{
+	req_access = list(61)
+	},
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id = "bridge_c_room";
+	name = "Conference Room Shutters";
+	opacity = 0
+	},
+/obj/effect/floor_decal/industrial/hatch,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/command/meeting_room)
 "oUl" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -90005,6 +90105,12 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
+"rkD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/turf/simulated/floor/carpet/blucarpet,
+/area/nadezhda/command/meeting_room)
 "rlb" = (
 /obj/machinery/body_scanconsole,
 /obj/effect/floor_decal/industrial/hatch,
@@ -96935,6 +97041,9 @@
 /obj/structure/bed/chair/office/light{
 	name = "executive officer seat"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/meeting_room)
 "sAK" = (
@@ -100527,6 +100636,9 @@
 /obj/structure/bed/chair/office/light{
 	dir = 4;
 	name = "VIP"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/meeting_room)
@@ -106455,6 +106567,8 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "urD" = (
@@ -115499,6 +115613,9 @@
 /obj/structure/catwalk,
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
@@ -125933,6 +126050,9 @@
 "xZr" = (
 /obj/structure/bed/chair/office/light{
 	name = "foreman seat"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/meeting_room)
@@ -149113,7 +149233,7 @@ bTR
 bUJ
 krN
 owd
-krN
+aIU
 bUJ
 bUJ
 npD
@@ -149522,7 +149642,7 @@ kmj
 urz
 eZT
 orC
-bbR
+hKn
 oON
 rrz
 bIi
@@ -149724,7 +149844,7 @@ bUJ
 bUJ
 npD
 aJP
-rmU
+oUd
 npD
 npD
 npD
@@ -149926,7 +150046,7 @@ cZb
 tad
 npD
 gtx
-nes
+obf
 xeO
 uDW
 nSS
@@ -150128,7 +150248,7 @@ cZb
 tad
 npD
 yeO
-qwP
+gjV
 qXP
 qKf
 qXP
@@ -150330,7 +150450,7 @@ tad
 npD
 npD
 lvp
-tjr
+bXd
 tnD
 kSD
 uQc
@@ -150936,7 +151056,7 @@ tad
 npD
 qIT
 yjd
-tjr
+rkD
 cgu
 hVO
 tIx
@@ -187474,7 +187594,7 @@ tad
 tad
 fXW
 oPZ
-aDc
+cKI
 cOl
 geT
 oEo
