@@ -654,8 +654,7 @@
 /datum/ritual/cruciform/divisor/zoom_litany
 	name = "Speed of Battle"
 	phrase = "Festinavit David et cucurrit ad pugnam ex adverso Philisthaei." //"David ran quickly toward the battle line to meet him."
-	desc = "Empowers the speaker with enhanced movement speed, allowing them to run faster for a short time. While useful, the body must rest after exceeding its limits, normally for \
-	only a mere ten minutes."
+	desc = "Empowers the speaker with enhanced movement speed, allowing them to run faster for a short time. To avoid overtaxing the body, this may only be used once every five minutes."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	effect_time = 1 MINUTES
