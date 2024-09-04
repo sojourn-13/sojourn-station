@@ -632,7 +632,7 @@
 /datum/ritual/cruciform/divisor/divisor_smite
 	name = "Divine Smite"
 	phrase = "In maxilla asini, in mandibula pulli asinarum, delevi eos, et percussi mille viros." //"With a donkey’s jawbone, I have made donkeys of them. With a donkey’s jawbone, I have killed a thousand men"
-	desc = "A short litany spoken in the middle of battle. Gives the speaker additional power and strength when swinging a melee weapon for two minutes. Takes five minutes to recharge."
+	desc = "A short litany spoken in the middle of battle. Gives the speaker additional power and strength when swinging a melee weapon for ninety seconds. Takes five minutes to recharge."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	cooldown_category = "divisor_smite"
@@ -652,8 +652,8 @@
 	user.damage_multiplier -= wrath_damage
 
 /datum/ritual/cruciform/divisor/zoom_litany
-	name = "Infinite Hymn"
-	phrase = "Quam pulchri super montes pedes annuntiantis et praedicantis pacem; annuntiantis bonum, praedicantis salutem, dicentis Sion: Regnabit Deus tuus!" //"How beautiful on the mountains are the feet of those who bring good news, who proclaim peace, who bring good tidings, who proclaim salvation, who say to Zion, “Your God reigns!”"
+	name = "Speed of Battle"
+	phrase = "Festinavit David et cucurrit ad pugnam ex adverso Philisthaei." //"David ran quickly toward the battle line to meet him."
 	desc = "Empowers the speaker with enhanced movement speed, allowing them to run faster for a short time. While useful, the body must rest after exceeding its limits, normally for \
 	only a mere ten minutes."
 	cooldown = TRUE
