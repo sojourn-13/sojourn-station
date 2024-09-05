@@ -10300,7 +10300,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/hallway/surface/section1)
 "cal" = (
-/obj/machinery/camera/network/command,
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/catwalk/rgfloor,
 /turf/simulated/open,
 /area/nadezhda/command/hallway)
 "can" = (
@@ -10558,6 +10562,16 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"ccR" = (
+/obj/machinery/camera/network/command,
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 8;
+	pixel_x = -4
+	},
+/obj/structure/catwalk/rgfloor,
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "ccY" = (
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -16463,6 +16477,17 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
+"dkL" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	pixel_x = -4
+	},
+/obj/structure/catwalk/rgfloor,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "dkM" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/cable/cyan{
@@ -59545,6 +59570,16 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
+"lyE" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/catwalk/rgfloor,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "lyI" = (
 /obj/structure/bed/chair/sofa/black/left{
 	dir = 4
@@ -189703,12 +189738,12 @@ rfl
 vsb
 vsb
 vsb
-cal
+vsb
+ccR
 egM
 egM
 egM
-egM
-egM
+dkL
 vsb
 vsb
 vsb
@@ -189905,12 +189940,12 @@ nkL
 vsb
 vsb
 vsb
+vsb
+cal
 egM
 egM
 egM
-egM
-egM
-egM
+lyE
 vsb
 vsb
 vsb
