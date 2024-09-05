@@ -41,7 +41,8 @@
 		H.sanity.insight_gain_multiplier *= 2 //We need to gain more faster for are job
 		H.sanity.max_resting = 1
 		H.sanity.insight_rest_gain_multiplier = 0
-		H.sanity.level_change_cap *= 5 // Artists use this stuff for their work, so we need them to be able get larger amounts
+//CoffeEdit - remove this.
+//		H.sanity.level_change_cap *= 5 // Artists use this stuff for their work, so we need them to be able get larger amounts
 
 /datum/perk/job/artist/remove()
 	if(ishuman(holder))
