@@ -197,12 +197,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
+//CoffeEdit - No, no cap, I cast "Remove lesser evil" on this file.
 	//If we are above are cap set to the cap
-	if(level_change > level_change_cap)
-		level_change = level_change_cap
+//	if(level_change > level_change_cap)
+//		level_change = level_change_cap
 	//If we are below are minium, simply set it to minium
-	if(level_change < level_change_min)
-		level_change = level_change_min
+//	if(level_change < level_change_min)
+//		level_change = level_change_min
 
 	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
