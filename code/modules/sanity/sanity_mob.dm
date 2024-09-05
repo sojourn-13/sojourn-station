@@ -55,8 +55,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/level
 	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
-	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
-	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
+//CoffeEdit - no, I simply am not okay with this. Insight is still abusable even with this little saboutage. - Pereebca
+//	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
+//	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
 	var/insight
 	var/max_insight = INFINITY
