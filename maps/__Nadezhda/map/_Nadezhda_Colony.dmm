@@ -151,6 +151,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/sec)
+"abt" = (
+/obj/effect/floor_decal/industrial_plant/border_sides,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26
+	},
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/command/panic_room)
 "abw" = (
 /obj/structure/grille,
 /obj/effect/floor_decal/spline/plain{
@@ -10300,8 +10308,7 @@
 /area/nadezhda/hallway/surface/section1)
 "cal" = (
 /obj/structure/railing/grey{
-	dir = 8;
-	pixel_x = -4
+	dir = 4
 	},
 /obj/structure/catwalk/rgfloor,
 /obj/structure/railing/grey{
@@ -19959,6 +19966,9 @@
 /area/nadezhda/outside/inside_colony)
 "dRP" = (
 /obj/structure/bed/chair/comfy/black,
+/obj/machinery/alarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/command/panic_room)
 "dRS" = (
@@ -47027,10 +47037,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/maingate/west)
 "iZo" = (
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 8
-	},
 /obj/machinery/camera/network/command{
 	dir = 4
 	},
@@ -59461,16 +59467,6 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/disposaldrop)
-"lxw" = (
-/obj/machinery/camera/network/command,
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 8;
-	pixel_x = -4
-	},
-/obj/structure/catwalk/rgfloor,
-/turf/simulated/open,
-/area/nadezhda/command/hallway)
 "lxA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -63480,6 +63476,17 @@
 /obj/random/gun_shotgun,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"mkv" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	pixel_x = -4
+	},
+/obj/structure/catwalk/rgfloor,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "mkx" = (
 /obj/random/material,
 /obj/effect/decal/cleanable/dirt,
@@ -64057,13 +64064,6 @@
 "mqd" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
-	},
-/obj/effect/floor_decal/industrial/box/red/corners,
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain)
@@ -71193,16 +71193,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"nFS" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/catwalk/rgfloor,
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/nadezhda/command/hallway)
 "nFW" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/big/bush3,
@@ -71673,6 +71663,15 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
+"nKE" = (
+/obj/effect/floor_decal/industrial_plant/border_sides,
+/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26
+	},
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/command/panic_room)
 "nKG" = (
 /obj/machinery/floodlight,
 /obj/effect/decal/cleanable/dirt,
@@ -88887,6 +88886,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/account_database{
+	dir = 8
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "qXu" = (
@@ -91182,6 +91184,16 @@
 /obj/random/dungeon_gun_mods/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/scave)
+"rvk" = (
+/obj/machinery/camera/network/command,
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 8;
+	pixel_x = -4
+	},
+/obj/structure/catwalk/rgfloor,
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "rvn" = (
 /obj/structure/table/rack/shelf,
 /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
@@ -93400,6 +93412,14 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"rRi" = (
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/catwalk/rgfloor,
+/turf/simulated/open,
+/area/nadezhda/command/hallway)
 "rRm" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -94985,9 +95005,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/railing,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
 "sgb" = (
@@ -104582,14 +104599,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
-"tXC" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/catwalk/rgfloor,
-/turf/simulated/open,
-/area/nadezhda/command/hallway)
 "tXF" = (
 /obj/structure/disposalpipe/junction{
 	dir = 8;
@@ -187904,7 +187913,7 @@ tad
 tad
 fXW
 oPZ
-aDc
+nKE
 cOl
 geT
 oEo
@@ -189747,11 +189756,11 @@ vsb
 vsb
 vsb
 vsb
-lxw
+rvk
 egM
 egM
 egM
-cal
+mkv
 vsb
 vsb
 vsb
@@ -189949,11 +189958,11 @@ vsb
 vsb
 vsb
 vsb
-tXC
+rRi
 egM
 egM
 egM
-nFS
+cal
 vsb
 vsb
 vsb
@@ -190734,7 +190743,7 @@ hIk
 fXW
 geT
 oRl
-geT
+abt
 gQm
 vsb
 jNG
