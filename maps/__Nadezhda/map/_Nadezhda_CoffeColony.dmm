@@ -783,15 +783,15 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "aiv" = (
-/obj/machinery/door/airlock/command{
-	id_tag = "securestorage";
-	name = "Secure Tech Storage";
-	req_access = list(19,23)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass_command{
+	id_tag = "gmdoor";
+	name = "Guild Masters Office";
+	req_access = list(56)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/gmaster)
 "aiF" = (
@@ -11311,7 +11311,11 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/storage/primary)
 "cvo" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/airlock/command{
+	id_tag = "securestorage";
+	name = "Guild Masters Office";
+	req_access = list(56)
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
 "cvt" = (
@@ -63331,11 +63335,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "nby" = (
-/obj/machinery/door/airlock/glass_command{
-	id_tag = "gmdoor";
-	name = "Guild Masters Office";
-	req_access = list(19)
-	},
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -63351,6 +63350,11 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/command{
+	id_tag = "securestorage";
+	name = "Guild Masters Office";
+	req_access = list(56)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/gmaster)
 "nbA" = (
@@ -107875,12 +107879,16 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/surfaceeast)
 "wbb" = (
-/obj/machinery/door/unpowered/simple/wood,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/glass_command{
+	id_tag = "gmdoor";
+	name = "Guild Masters Office";
+	req_access = list(56)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
