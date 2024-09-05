@@ -592,7 +592,7 @@
 
 /area/nadezhda/command
 	name = "\improper Command"
-	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
+	area_light_color = COLOR_PALE_BLUE_GRAY
 
 /area/nadezhda/command/bridge
 	name = "\improper Control Room"
@@ -607,6 +607,7 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+	area_light_color = COLOR_COMMAND_BLUE
 
 /area/nadezhda/command/armory
 	name = "\improper Command Center Armory"
