@@ -51,7 +51,7 @@
 		H.sanity.insight_gain_multiplier /= 2
 		H.sanity.max_resting += old_max_resting - 1
 		H.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
-//		H.sanity.level_change_cap *= 0.2 
+//		H.sanity.level_change_cap *= 0.2 //CoffeEdit - the same as the above, removing the obsolete nerf.
 	..()
 
 /datum/perk/timeismoney
