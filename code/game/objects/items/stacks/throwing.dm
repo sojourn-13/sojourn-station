@@ -97,7 +97,7 @@
 	edge = TRUE
 	embed_mult = 90
 	tool_qualities = list()
-	attack_verb = list("flies in", "stabbed", "pierces", "torn", "penetrates")
+	attack_verb = list("tears", "stabs", "pierces", "torn", "penetrates")
 	hitsound = 'sound/weapons/pierce.ogg'
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	matter = list(MATERIAL_BONE = 2)
