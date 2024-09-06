@@ -37,3 +37,4 @@
 	verb_name = "Deploy ammo pouch"
 	icon_state = "small_implanted"
 	completely_hide_from_scanners = FALSE
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
