@@ -339,7 +339,7 @@
 	name = "Lodge \"Apex\" control module"
 	desc = "A protective suit made by a local hunting lodge, the raw material for which was the most terrible creatures of this world.\
 	 A technological miracle fueled by the power of oddity fused with the savvy of the hunting craft.\
-	 The wearer of this costume receives the powers of the enemies he defeated! So who's the apex predator here now?!"
+	 The wearer of this suit receives the powers of the enemies he defeated! So who's the apex predator here now?!"
 	icon_state = "hunting_rig"
 	suit_type = "hunting hardsuit"
 	armor_list = list(
