@@ -1,6 +1,6 @@
 /obj/item/organ_module/sanity_mind_helper
 	name = "S.M.H Module"
-	desc = "Sanity Maintenance Handler is an assortment of electrodes that apply low-voltage pulses to certain areas of the brain to numb the user's \
+	desc = "Sanity Mental Hider is an assortment of electrodes that apply low-voltage pulses to certain areas of the brain to numb the user's \
 	perception of stress. A design that already proved itself invaluable in mental health field, as well as dirty frontier work."
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_GOLD = 3, MATERIAL_SILVER = 3, MATERIAL_PLATINUM = 2,  MATERIAL_DIAMOND = 1)
 	allowed_organs = list(BP_HEAD)
