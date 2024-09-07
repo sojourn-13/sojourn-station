@@ -41,7 +41,7 @@
 		H.sanity.insight_gain_multiplier *= 2 //We need to gain more faster for are job
 		H.sanity.max_resting = 1
 		H.sanity.insight_rest_gain_multiplier = 0
-//CoffeEdit - remove this.
+//CoffeEdit - revert of Insight womp #5629 
 //		H.sanity.level_change_cap *= 5 // Artists use this stuff for their work, so we need them to be able get larger amounts
 
 /datum/perk/job/artist/remove()
@@ -51,7 +51,7 @@
 		H.sanity.insight_gain_multiplier /= 2
 		H.sanity.max_resting += old_max_resting - 1
 		H.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
-//		H.sanity.level_change_cap *= 0.2 //CoffeEdit - the same as the above, removing the obsolete nerf.
+//		H.sanity.level_change_cap *= 0.2 //CoffeEdit - revert of Insight womp #5629 
 	..()
 
 /datum/perk/timeismoney
