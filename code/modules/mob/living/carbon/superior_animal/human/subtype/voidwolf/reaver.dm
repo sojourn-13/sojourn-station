@@ -174,7 +174,7 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	icon_state = "reaver_cap_elite"
 	melee_damage_lower = 35
 	melee_damage_upper = 40
-	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/gun/energy/gun, /obj/random/cloth/assault/reaver)
+	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/gun/energy/gun, /obj/random/cloth/assault/reaver)
 
 	projectiletype = /obj/item/projectile/beam/voidwolf
 	melee_sharp = TRUE //Eswords
