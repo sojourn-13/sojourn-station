@@ -1,0 +1,142 @@
+# TODO: Move out code into separate scripts
+
+## Required Vars:
+# TGS_USERNAME
+# TGS_INSTANCE
+## Required Secrets:
+# TGS_PASSWORD
+# AES_KEY
+
+name: Label Test Merges
+on:
+  # pull_request:
+  #   branches:
+  #   - master
+  #   types:
+  #   - labeled
+  #   - unlabeled
+  #   - closed
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  update_prs_based_on_tgs:
+    # Run on schedule to check which PRs are test-merged in TGS
+    # This will (un)label the relevant PRs
+    runs-on: ubuntu-22.04
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Authenticate with TGS
+        id: authenticate
+        run: |
+          response=$(curl -L -X 'POST' \
+            'https://control.bluespace.engineer/api' \
+            -H 'accept: application/json' \
+            -H 'Api: Tgstation.Server.Api/10.7.0' \
+            -H "Authorization: Basic $(echo -n "${{ vars.TGS_USERNAME }}:${{ secrets.TGS_PASSWORD }}" | base64)"
+          )
+          encrypted=$(echo "$response" | jq -r '.bearer' | openssl aes-256-cbc -a -salt -pass pass:${{ secrets.AES_KEY }})
+          echo "TGS_BEARER=$encrypted" >> "$GITHUB_OUTPUT"
+      - name: Get PRs from TGS
+        id: get_prs
+        run: |
+          bearer=$(echo ${{ steps.authenticate.outputs.bearer }} | openssl aes-256-cbc -d -a -salt -pass pass:${{ secrets.AES_KEY }})
+          response=$(curl -L -X 'GET' \
+            'https://control.bluespace.engineer/api/Repository' \
+            -H 'accept: application/json' \
+            -H 'Api: Tgstation.Server.Api/10.7.0' \
+            -H 'Instance: ${{ vars.TGS_INSTANCE }}' \
+            -H "Authorization: Bearer $bearer"
+          )
+          echo "$response" >> "$GITHUB_OUTPUT"
+      - uses: octokit/graphql-action@v2
+        name: Get PRs from GitHub
+        id: get_prs_github
+        # This action is limited to 100 open PRs, and 10 labels per PR before it starts potentially missing stuff
+        # I doubt we'll ever hit that limit, but it's worth keeping in mind
+        with:
+          query: |
+            query ($repositoryOwner: String!, $repositoryName: String!, $label: String!) {
+              repository(owner: $repositoryOwner, name: $repositoryName) {
+                pullRequests(
+                  states: OPEN
+                  first: 100
+                  orderBy: {field: UPDATED_AT, direction: DESC}
+                  labels: [$label]
+                ) {
+                  nodes {
+                    number
+                  }
+                }
+              }
+            }
+          variables: |
+            owner: ${{ github.event.repository.owner.name }}
+            repo: ${{ github.event.repository.name }}
+            label: "Testmerge"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update PRs
+        id: update_prs
+        run: |
+          eval "github_prs=( $(echo '${{ steps.get_prs_github.outputs.data }}' | jq -r '@sh "\([.data.repository.pullRequests.nodes[].number])"') )"
+          eval "tgs_prs=( $(echo '${{ steps.get_prs.outputs.stdout }}' | jq -r '@sh "\([.revisionInformation.activeTestMerges[].number])"') )"
+
+          # Sort for unique values (This shouldn't be necessary, but it's a good idea anyway)
+          sorted_github_prs=($(printf "%s\n" "${github_prs[@]}" | sort -u))
+          sorted_tgs_prs=($(printf "%s\n" "${tgs_prs[@]}" | sort -u))
+
+          # Find which test merges are already labeled
+          intersection=($(comm -12 <(printf "%s\n" "${sorted_github_prs[@]}") <(printf "%s\n" "${sorted_tgs_prs[@]}")))
+
+          # PRs in github that are not in TGS -- Remove label
+          leftover_github=($(comm -23 <(printf "%s\n" "${sorted_github_prs[@]}") <(printf "%s\n" "${intersection[@]}")))
+
+          # PRs in TGS that are not in github -- Add label
+          leftover_tgs=($(comm -13 <(printf "%s\n" "${sorted_github_prs[@]}") <(printf "%s\n" "${intersection[@]}")))
+
+          for pr in "${leftover_github[@]}"; do
+            echo "Removing label from PR $pr"
+            curl -L -X 'DELETE' \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/issues/$pr/labels/Testmerge"
+          done
+
+          for pr in "${leftover_tgs[@]}"; do
+            echo "Adding label to PR $pr"
+            curl -L -X 'POST' \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -d '{"labels":["Testmerge"]}'
+              "https://api.github.com/repos/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/issues/$pr/labels"
+          done
+
+
+## These do nothing for now, pending discussion on whether this is wanted.
+
+  # enable_test_merge_based_on_label:
+  #   # Run when a PR is labeled with the 'test merge' label
+  #   # This will prompt TGS to test merge this PR
+  #   runs-on: ubuntu-22.04
+  #   if: |
+  #     github.event_name == 'pull_request' &&
+  #     github.event.action == 'labeled' &&
+  #     github.event.label.name == 'test merge'
+  #   steps:
+  #     - name: Do nothing
+  #       run: echo "Nothing to do"
+
+  # disable_test_merge_based_on_label:
+  #   # Run when a PR is unlabeled with the 'test merge' label
+  #   # This will prompt TGS to un-'test merge' this PR
+  #   runs-on: ubuntu-22.04
+  #   if: |
+  #     github.event_name == 'pull_request' &&
+  #     github.event.action == 'unlabeled' &&
+  #     github.event.label.name == 'test merge'
+  #   steps:
+  #     - name: Do nothing
+  #       run: echo "Nothing to do"
