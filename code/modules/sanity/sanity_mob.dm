@@ -55,7 +55,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/level
 	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
-//CoffeEdit - no, I simply am not okay with this. Insight is still abusable even with this little saboutage. - Pereebca
+//CoffeEdit - revert of Insight womp #5629 
 //	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
 //	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
@@ -197,7 +197,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
-//CoffeEdit - No, no cap, I cast "Remove lesser evil" on this file.
+//CoffeEdit - revert of Insight womp #5629 
 	//If we are above are cap set to the cap
 //	if(level_change > level_change_cap)
 //		level_change = level_change_cap
