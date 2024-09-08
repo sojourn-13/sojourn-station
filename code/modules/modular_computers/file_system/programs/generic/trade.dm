@@ -247,6 +247,12 @@
 		station = S
 		return TRUE
 
+	if(href_list["PRG_disallow_mass"])
+		if(!station)
+			return
+		station.disallow_mass = !station.disallow_mass
+		return TRUE
+
 	if(href_list["PRG_cart_reset"])
 		reset_shop_list()
 		return TRUE
@@ -652,6 +658,7 @@
 		.["station_favor_needed"] = max(PRG.station.hidden_inv_threshold, PRG.station.recommendation_threshold)
 		.["station_recommendations_needed"] = PRG.station.recommendations_needed
 		.["offer_time"] = time2text((PRG.station.update_time - (world.time - PRG.station.update_timer_start)), "mm:ss")
+		.["disallow_mass"] = "[PRG.station.disallow_mass_message()]"
 
 	if(PRG.sending)
 		.["export_time_max"] = round(PRG.sending.export_cooldown / (1 SECOND))

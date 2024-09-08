@@ -51,6 +51,8 @@
 
 	var/regain_stock = TRUE
 
+	var/disallow_mass = FALSE //If we dont allow mass fill orders to this station
+
 /datum/trade_station/New(init_on_new)
 	. = ..()
 	if(init_on_new)
@@ -366,3 +368,8 @@
 
 /datum/trade_station/proc/offer_tick()
 	generate_offer()
+
+/datum/trade_station/proc/disallow_mass_message()
+	if(disallow_mass)
+		return "Mass Auto Fulfill Disabled"
+	return "Mass Auto Fulfill Enabled"
