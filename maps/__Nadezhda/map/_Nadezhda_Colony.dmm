@@ -7429,6 +7429,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/maintenance_common,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/nadezhda/hallway/side/f2section1)
 "bwu" = (
@@ -8888,6 +8889,7 @@
 	})
 "bKy" = (
 /obj/machinery/door/airlock/maintenance_common,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/nadezhda/hallway/side/f2section1)
 "bKz" = (
@@ -86757,10 +86759,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
-"qAY" = (
-/obj/machinery/door/airlock/maintenance_common,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/substation/science)
 "qAZ" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -185566,7 +185564,7 @@ erG
 erG
 erG
 erG
-qAY
+erG
 dfH
 goP
 htN
