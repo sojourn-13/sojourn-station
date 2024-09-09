@@ -15619,6 +15619,21 @@
 /obj/random/mob/spiders/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"dbq" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "premier_office2";
+	name = "Office Shutters";
+	opacity = 0
+	},
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "Captain"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/command/captain)
 "dbA" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -91694,6 +91709,9 @@
 /obj/machinery/alarm{
 	pixel_y = 28
 	},
+/obj/structure/mirror{
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/fo)
 "rzk" = (
@@ -109852,9 +109870,6 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "uUH" = (
-/obj/effect/window_lwall_spawn/reinforced/polarized{
-	id = "Captain"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
 	density = 0;
@@ -109863,6 +109878,9 @@
 	id = "premier_office2";
 	name = "Office Shutters";
 	opacity = 0
+	},
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "Captain"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/captain)
@@ -193216,7 +193234,7 @@ fWJ
 urc
 vmG
 aiF
-iLR
+dbq
 xJM
 aHr
 oNS
@@ -193418,7 +193436,7 @@ ugD
 uUQ
 lor
 gks
-iLR
+dbq
 uCW
 xFJ
 oNS
