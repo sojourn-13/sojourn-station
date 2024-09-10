@@ -37,6 +37,11 @@
 	desc = "[initial(desc)] It has already been used."
 	return
 
+/obj/item/grenade/smokebomb/vw_empty
+	name = "void wolf smoke grenade"
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "vw_smoke"
+
 /obj/item/grenade/smokebomb/nt
 	name = "NT smoke grenade \"Holy Fog\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."

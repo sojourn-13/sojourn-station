@@ -539,3 +539,50 @@
 		electrocute_mob(target, 1)
 		new/obj/effect/sparks(target.loc)
 	return TRUE
+
+//Throwing Grenades.
+
+/obj/item/projectile/grenade/throwing
+	var/obj/item/create_type
+	muzzle_type = null
+
+/obj/item/projectile/grenade/throwing/on_impact(atom/A)
+	..()
+	if(create_type && !testing)
+		new create_type(get_turf(src))
+
+/obj/item/projectile/grenade/throwing
+	name = "grenade"
+	icon_state = "grenade_t"
+	damage_types = list(BRUTE = 5)
+	armor_divisor = 0.3
+	embed = FALSE
+	check_armour = ARMOR_MELEE
+	step_delay = 1.2
+	affective_damage_range = 6
+	affective_ap_range = 6
+	recoil = 0
+	ignition_source = FALSE
+	create_type = /obj/item/vw_empty
+	kill_count = 6
+	paralyze = 1
+
+/obj/item/projectile/grenade/throwing/voidwolf/attack_mob(mob/living/target_mob, distance, miss_modifier=0) // No friendly firing
+	if(target_mob.faction == "pirate")
+		return FALSE
+	else
+		return ..()
+
+/obj/item/vw_empty
+	name = "void wolf teargas grenade"
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "vw_tear"
+
+/obj/item/projectile/grenade/throwing/voidwolf/smoke
+	name = "smoke grenade"
+	create_type = /obj/item/vw_empty/smoke
+
+/obj/item/vw_empty/smoke
+	name = "void wolf smoke grenade"
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "vw_smoke"

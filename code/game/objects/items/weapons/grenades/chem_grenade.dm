@@ -371,3 +371,7 @@
 #undef EMPTY
 #undef WIRED
 #undef READY
+
+/obj/item/grenade/chem_grenade/teargas/vw
+	name = "void wolf teargas grenade"
+	icon_state = "vw_tear"
