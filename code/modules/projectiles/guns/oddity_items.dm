@@ -345,7 +345,7 @@
 		list(mode_name="red", mode_desc="fires a red flare", projectile_type=/obj/item/projectile/bullet/flare, charge_cost = 50, icon="stun"),
 		list(mode_name="green", mode_desc="fires a green flare", projectile_type=/obj/item/projectile/bullet/flare/green, charge_cost = 50, icon="stun"),
 		list(mode_name="blue", mode_desc="fires a blue flare", projectile_type=/obj/item/projectile/bullet/flare/blue, charge_cost = 50, icon="stun"),
-		list(mode_name="wild", mode_desc="fires a random coloured flare", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost = 10, icon="kill"),
+		list(mode_name="wild", mode_desc="fires a random coloured flare", projectile_type=/obj/item/projectile/bullet/flare/chaos, charge_cost = 10, icon="kill"),
 		list(mode_name="key", mode_desc="fires a random yellow flare", projectile_type=/obj/item/projectile/bullet/flare/yellow, charge_cost = 100, icon="kill"),
 		list(mode_name="thinner", mode_desc="fires a random colourless flare", projectile_type=/obj/item/projectile/bullet/flare/white, charge_cost = 200, icon="kill")
 	)
