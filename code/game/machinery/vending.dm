@@ -518,9 +518,9 @@
 			var/mob/living/H = user
 			if(currently_vending.price)
 				var/points_rewarded = (currently_vending.price / 100) //Shockingly this is MORE fair then a flat value as it rewards better for high spenders well still punishing low value endless transations
-				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vendor_e_shopper, "VENDOR_E_SHOPPER", skill_gained = points_rewarded, learner = H)
 			//Small order of operations here to prevent first time buyers being SCAMMED out of point rewards and such.
-			var/task_level = H.learnt_tasks.get_task_mastery_level("VENDER_E_SHOPPER")
+			var/task_level = H.learnt_tasks.get_task_mastery_level("VENDOR_E_SHOPPER")
 
 			if(task_level < currently_vending.price) //so free stuff dosnt get discounted/givepoints
 				currently_vending.price -= task_level

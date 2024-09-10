@@ -83,7 +83,7 @@
 
 /datum/technology/GP_unmaker
 	name = "Greyson Positronic Tyrant Destroyers"
-	desc = "The rare and highly vauleable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
+	desc = "The rare and highly valueable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.5 //Bottom middle

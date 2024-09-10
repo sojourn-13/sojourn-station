@@ -3,7 +3,7 @@
 
 /obj/item/reagent_containers/glass/solution_tray
 	name = "solution tray"
-	desc = "A small, open-topped glass container for delicate research samples. It sports a re-useable strip for labelling with a pen."
+	desc = "A small, open-topped glass container for delicate research samples. It sports a re-usable strip for labelling with a pen."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "solution_tray"
 	matter = list(MATERIAL_GLASS = 1)

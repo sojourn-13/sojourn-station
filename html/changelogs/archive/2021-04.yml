@@ -248,7 +248,7 @@
   MLGTASTICa:
   - balance: AI Emergency forcefield health quadruped (100 > 400)
   - balance: AI Emergency forcefield no longer dissipates
-  - bugfix: Fixed AI Emergency forcefield not being useable
+  - bugfix: Fixed AI Emergency forcefield not being usable
   Medcar:
   - rscadd: Balaclava resprite and vending machine buyab;e
   Shazbot:

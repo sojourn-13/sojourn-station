@@ -248,7 +248,7 @@
 	new /obj/item/ammo_magazine/ammobox/shotgun/stunshells(src)
 
 /obj/structure/closet/crate/secure/weapon/amr
-	name = "antimateriel rifle crate"
+	name = "antimaterial rifle crate"
 	desc = "A secure weapons crate."
 	icon_state = "weaponcrate"
 

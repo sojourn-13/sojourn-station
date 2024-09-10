@@ -190,7 +190,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 				continue
 			if(!O.invisibility && !O.hides_under_flooring())
 				continue //if it's already visible don't need an overlay for it
-			//Hiding contraband just got a lot easyer >:D, and stashes. Still can see the skull and bones tho on many spawns of stashs
+			//Hiding contraband just got a lot easier >:D, and stashes. Still can see the skull and bones tho on many spawns of stashs
 			if(istype(O, /obj/item/storage) && !advanced)
 				continue
 			. += O

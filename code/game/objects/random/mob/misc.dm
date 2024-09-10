@@ -296,7 +296,7 @@
 		/mob/living/simple_animal/hostile/republicon/range = 8,
 		)
 
-//This is made out of a 100 fo easyer math
+//This is made out of a 100 fo easier math
 /obj/random/mob/prepper/item_to_spawn()
 	if(GLOB.chaos_level > 2)
 		mobs += list(/mob/living/carbon/superior_animal/sentinal_seeker = (0.1 * GLOB.chaos_level))

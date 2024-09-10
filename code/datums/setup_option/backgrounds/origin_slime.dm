@@ -1,5 +1,5 @@
 /datum/category_item/setup_option/background/ethnicity/slime_robust
-	name = "Aram(Red Aulvae)"
+	name = "Aram (Red)"
 	desc = "Though far from a martial species, the Aulvae are nothing if not versatile. Laborers and brawler in equal part - \
 	The Aram are rare examples of physical strength made manifest amongst their kin."
 
@@ -15,7 +15,7 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_fighter
-	name = "Arum(Orange)"
+	name = "Arum (Orange)"
 	desc = "Not unlike their more powerful kin the Aram, the Arum exhibit surprising strength and durability \
 	amongst the Aulvae. "
 
@@ -31,7 +31,7 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_sniper
-	name = "Arul(yellow)"
+	name = "Arul (Yellow)"
 	desc = "Keen of eye and sharp of tongue, none can deny the Aruls natural gifts that make them perfectly suited to \
 	the life of a hunter."
 
@@ -47,7 +47,7 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_soldier
-	name = "Arun(green)"
+	name = "Arun (Green)"
 	desc = "Particularly hardy and calm of mind the Arun fit the archetype of a soldier. One might\
 	muse as to the role they filled in their lost society."
 
@@ -63,9 +63,9 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_doc
-	name = "Aren(cyan)"
+	name = "Aren (Cyan)"
 	desc = "Despite the unfamiliarity between the Aulvae and the younger sentient races of the galaxy \
-	the Aren and their dogged curiosity of these new forms of life(to them, anyway) have quickly managed to fill the gaps in their knowledge.\
+	the Aren and their dogged curiosity of these new forms of life (to them, anyway) have quickly managed to fill the gaps in their knowledge.\
 	Consummate doctors, they have thus far been instrumental in ellucidating the more arcane details of Aulvae biology."
 
 	restricted_to_species = list(FORM_SLIME)
@@ -80,7 +80,7 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_mechanic
-	name = "Arun(blue)"
+	name = "Arun (Blue)"
 	desc = "Oft mistaken for their viridescent kin amongst the Aulvae, the Arun are to machines what Aren are to lifeforms.\
 	Somewhat of a menace since their arrival, they've demonstrated the very same curiosity and a similar adaptability."
 
@@ -96,7 +96,7 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_scientist
-	name = "Arul(violet)"
+	name = "Arul (Violet)"
 	desc = "The first amongst their kin to establish communication, the Arul display a startling intelligence and an oft\
 	more serious disposition to their kin."
 
@@ -112,8 +112,8 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/slime_corpsman
-	name = "Aral(Magenta)"
-	desc = "With particularly thick dermis and a gentle affect the Aral are hypothesized to have fit something of an equivilent \
+	name = "Aral (Magenta)"
+	desc = "With a particularly thick dermis and a gentle effect, the Aral are hypothesized to have fit something of a equivalent \
 	role to field-medics and paramedics in their society."
 
 	restricted_to_species = list(FORM_SLIME)

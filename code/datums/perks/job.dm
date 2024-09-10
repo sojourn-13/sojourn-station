@@ -50,7 +50,7 @@
 		H.sanity.insight_gain_multiplier /= 2
 		H.sanity.max_resting += old_max_resting - 1
 		H.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
-		H.sanity.level_change_cap *= 0.2 
+		H.sanity.level_change_cap *= 0.2
 	..()
 
 /datum/perk/timeismoney
@@ -675,7 +675,7 @@
 
 /datum/perk/true_name
 	name = "Rename Self"
-	desc = "No one knows you thus your name is what ever you need or want to be."
+	desc = "Nobody knows you, thus your name is whatever you need or want to be."
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -684,7 +684,7 @@
 /datum/perk/true_name/activate()
 	..()
 	if(anti_cheat)
-		to_chat(holder, "You can only keep up so many personallitys.")
+		to_chat(holder, "You can only keep up so many personalities.")
 		return FALSE
 	anti_cheat = TRUE
 	var/mob/M = usr

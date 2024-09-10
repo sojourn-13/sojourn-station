@@ -949,7 +949,7 @@ default behaviour is:
 				"name" = T.name,
 				"desc" = T.desc,
 				"value" = T.value,
-				"level_threshold" = T.level_threshholds,
+				"level_threshold" = T.level_thresholds,
 				"level" = T.level
 			))
 
