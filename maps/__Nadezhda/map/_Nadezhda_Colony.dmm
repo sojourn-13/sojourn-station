@@ -32545,6 +32545,20 @@
 	opacity = 0
 	},
 /area/nadezhda/hallway/main/stairwell)
+"glj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/command/teleporter)
 "gll" = (
 /obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/door/firedoor,
@@ -37087,15 +37101,13 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical_blackshield)
 "hel" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/effect/floor_decal/spline/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/colony_underground{
+	dir = 1
 	},
-/obj/structure/railing/grey{
-	pixel_y = -4
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/command/teleporter)
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "hem" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/disposalpipe/segment,
@@ -39111,6 +39123,9 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8;
 	tag = "icon-danger (WEST)"
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
@@ -42493,6 +42508,19 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"idm" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -1;
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "idr" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/table/bench/wooden,
@@ -48002,6 +48030,9 @@
 	tag = "icon-danger (WEST)"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "jig" = (
@@ -53366,6 +53397,13 @@
 "kjS" = (
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
+"kjV" = (
+/obj/effect/floor_decal/spline/wood,
+/obj/machinery/camera/network/colony_underground{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "kkb" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -59874,6 +59912,8 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/leafybush,
+/obj/machinery/camera/network/colony_underground,
+/obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/crew_quarters)
 "lBV" = (
@@ -69359,6 +69399,28 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"npP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4
+	},
+/obj/machinery/camera/network/colony_underground{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "npR" = (
 /obj/structure/closet/crate/secure/large,
 /obj/effect/decal/cleanable/dirt,
@@ -95629,9 +95691,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/secrecroom)
 "smB" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -105569,6 +105628,9 @@
 	name = "Residential District Maintenance"
 	})
 "ufO" = (
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
 "ufP" = (
@@ -107062,6 +107124,25 @@
 /obj/machinery/multistructure/bioreactor_part/unloader,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
+"uuB" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "uuD" = (
 /obj/structure/sink{
 	dir = 4;
@@ -141956,7 +142037,7 @@ mgQ
 duj
 mZg
 nZB
-cFw
+idm
 rLm
 rLm
 rLm
@@ -142966,7 +143047,7 @@ stT
 wwr
 smY
 pNs
-cFw
+uuB
 rLm
 nQC
 nQC
@@ -146595,7 +146676,7 @@ cZb
 cZb
 cZb
 oCs
-hgt
+glj
 mOp
 rSq
 hvE
@@ -146800,7 +146881,7 @@ oCs
 nCB
 xIl
 nXS
-hel
+hvE
 rwF
 smB
 isX
@@ -179569,7 +179650,7 @@ lQn
 cTQ
 dpH
 feZ
-wjx
+hel
 htd
 mBl
 ydX
@@ -181791,7 +181872,7 @@ atw
 xqU
 xqU
 wph
-wjx
+hel
 wpG
 wpG
 wpG
@@ -182793,7 +182874,7 @@ kxB
 ppa
 bYF
 mmE
-mmE
+npP
 uUv
 xXa
 xKy
@@ -183609,7 +183690,7 @@ xCG
 arI
 brw
 sJK
-atw
+kjV
 lUB
 ute
 usR
