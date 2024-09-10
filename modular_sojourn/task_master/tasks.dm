@@ -9,14 +9,14 @@
 	//Reference to the containing labourer
 	var/datum/task_master/labourer/worker
 
-	//Pulled up from worker for easyer refencing and debugging
+	//Pulled up from worker for easier refencing and debugging
 	var/mob/living/forwards_refence
 
 
 	//Name of the Task
 	var/name = "Unknown Task"
 
-	var/desc = "A task unable to be known"
+	var/desc = "A task unable to be known."
 
 	//The key of the object, used to search for it easily. Often matches the Macro text.
 	var/key = "DEFAULT"
@@ -32,9 +32,9 @@
 	var/level = 0
 
 	//For weather we level up this task or not
-	var/level_threshholds = 10
+	var/level_thresholds = 10
 
-	//For when we want to scale are level_threshholds at a different rate
+	//For when we want to scale are level_thresholds at a different rate
 	var/alt_scaling_number = 0
 
 	//The text displayed to a player when they gain a learnt task.
@@ -44,9 +44,9 @@
 /datum/task_master/task/self_value
 	name = "Self Motivation"
 	key = "MASTER_QUEST_COMPLETER"
-	desc = "Completing your own set goals inspirers you to continue your self improvements."
+	desc = "Completing your own set goals inspires you to continue your self improvements."
 	gain_text = "Setting your own missions is rewarding."
-	level_threshholds = 5 //Rewarding people that do their personal objectives with some reason to do this
+	level_thresholds = 5 //Rewarding people that do their personal objectives with some reason to do this
 
 /datum/task_master/task/self_value/activate_affect()
 	//log_debug("[forwards_refence] Has gained additonal insight.")
@@ -62,33 +62,33 @@
 	key = "CLAY_THUMB_CONISOUR"
 	desc = "Thanks to regularly maintaining small potted plants, your knowledge of biodiversity grows!"
 	gain_text = "Keeping potted plants alive sure is rewarding labour!"
-	level_threshholds = 10 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 10 points are wasted
+	level_thresholds = 10 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 10 points are wasted
 
 /datum/task_master/task/clay_thumb/activate_affect()
-	forwards_refence.stats.changeStat(STAT_BIO, 2) //so its accully vauleable
+	forwards_refence.stats.changeStat(STAT_BIO, 2) //so its actually valueable
 
-/datum/task_master/task/vender_e_shopper
-	name = "Vender Point Shopper"
-	key = "VENDER_E_SHOPPER"
-	desc = "Paper bills, coins they all suck! The Card with your bank account attached to it is clearly the best way to shop!"
+/datum/task_master/task/vendor_e_shopper
+	name = "Vendor Point Shopper"
+	key = "VENDOR_E_SHOPPER"
+	desc = "Paper bills? Coins? They all suck! The Card with your bank account attached to it is clearly the best way to shop!"
 	gain_text = "Shopping with an Ecard sure is the way to go."
-	level_threshholds = 10 //So people dont game this as easy
+	level_thresholds = 10 //So people dont game this as easy
 
-/datum/task_master/task/vender_e_shopper/activate_affect()
-	forwards_refence.stats.changeStat(STAT_COG, 2) //so its accully vauleable
+/datum/task_master/task/vendor_e_shopper/activate_affect()
+	forwards_refence.stats.changeStat(STAT_COG, 2) //so its actually valueable
 
-//Restlessness... Nawing hunger...
+//Restlessness... knawing hunger...
 /datum/task_master/task/return_to_sender
 	name = "Return To Sender"
 	key = "RETURN_TO_SENDER"
 	desc = "I was dead! Pulled back? Returned to this place this life?!"
 	gain_text = "Walking again?"
-	level_threshholds = 1
+	level_thresholds = 1
 	unlocked = TRUE //Morality
 
 /datum/task_master/task/return_to_sender/activate_affect()
 	forwards_refence.max_nutrition += (level * 15) //415 level 1 -> 445 level 2 -> 490 level 3 ect ect
-	forwards_refence.stats.changeStat(STAT_VIV, (level + 2)) //Exstreamly miner: 3 level 1 -> 7 level 2 -> 13 level 3 ect ect
+	forwards_refence.stats.changeStat(STAT_VIV, (level + 2)) //Extremely minor: 3 level 1 -> 7 level 2 -> 13 level 3 ect ect
 
 //Huskification
 /datum/task_master/task/rebound_case
@@ -96,7 +96,7 @@
 	key = "REBOUND_CASE"
 	desc = "Alive, dead, alive dead. Put back together time and time again..."
 	gain_text = "Back again."
-	level_threshholds = 2
+	level_thresholds = 2
 	unlocked = TRUE //Immorality
 
 /datum/task_master/task/rebound_case/activate_affect()
@@ -114,7 +114,7 @@
 	key = "GYM_GOER"
 	desc = "Nothing beats hitting the gym."
 	gain_text = "Feels great to be fit."
-	level_threshholds = 3 //Gym has long cooldowns and costs a bit
+	level_thresholds = 3 //Gym has long cooldowns and costs a bit
 
 /datum/task_master/task/gym_goer/activate_affect()
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
@@ -129,7 +129,7 @@
 	key = "DR_FLOOR"
 	desc = "Either do to drug withdraw, or hope, its hard to denie that this helps build up resistance."
 	gain_text = "Self prescription..."
-	level_threshholds = 5 //Tons of wallet/floor pills
+	level_thresholds = 5 //Tons of wallet/floor pills
 
 /datum/task_master/task/dr_floor/activate_affect()
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
@@ -140,7 +140,7 @@
 	key = "PROPER_SEALER"
 	desc = "Taking the hardway on sealing up borrows leaves tougher hands and more knowings on how to repair."
 	gain_text = "Making the colony a safer place sure is fulfilling work."
-	level_threshholds = 5 //Theirs so many borrows...
+	level_thresholds = 5 //Theirs so many borrows...
 
 /datum/task_master/task/proper_sealer/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
@@ -152,7 +152,7 @@
 	key = "TOOL_BREAKER"
 	desc = "Sometimes things just break. At lest its a good learning experience..."
 	gain_text = "Oops."
-	level_threshholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
+	level_thresholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
 
 /datum/task_master/task/tool_breaker/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
@@ -162,7 +162,7 @@
 	key = "PROPER_AREA_SMOKER"
 	desc = "Do to smoking in the proper area helps make you feel more connected to the community."
 	gain_text = "Smoking in a proper area is rather soothing."
-	level_threshholds = 10
+	level_thresholds = 10
 
 /datum/task_master/task/proper_area_smoker/activate_affect()
 	if(ishuman(forwards_refence))
@@ -175,7 +175,7 @@
 	key = "POORS"
 	desc = "Just bad luck with getting the right items..."
 	gain_text = "Unlucky day huh..."
-	level_threshholds = 1
+	level_thresholds = 1
 	alt_scaling_number = 2 // 1 2 4 8 ect,
 	unlocked = TRUE
 
@@ -186,9 +186,9 @@
 /datum/task_master/task/parcore
 	name = "Acrobatics"
 	key = "PARCORE"
-	desc = "Diving around with after a warmup sure does make it easyer!"
+	desc = "Diving around with after a warmup sure does make it easier!"
 	gain_text = "Duck n Cover!"
-	level_threshholds = 10
+	level_thresholds = 10
 	alt_scaling_number = 2 // You can dive whenever
 	unlocked = TRUE
 
@@ -198,7 +198,7 @@
 	key = "SLIP_N_DIE"
 	desc = "Triping sucks, gotta be more careful..."
 	gain_text = "Ouch, my toe"
-	level_threshholds = 1 //You fall down a lot
+	level_thresholds = 1 //You fall down a lot
 	alt_scaling_number = 2 //But it does hurt
 	unlocked = TRUE
 
@@ -208,7 +208,7 @@
 	key = "SLAB_CLEARER"
 	desc = "Do to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
 	gain_text = "A fully cleared slab allows insight into maxizing mineral gains."
-	level_threshholds = 1 // 1->2->3
+	level_thresholds = 1 // 1->2->3
 	unlocked = TRUE
 
 /datum/task_master/task/sheath_arts
@@ -216,7 +216,7 @@
 	key = "SHEATH_ARTS"
 	desc = "Quickly unsheathing and attacking. With training it should be possible to get a bit more range."
 	gain_text = "With endless training it should be possible...."
-	level_threshholds = 100 // 100->1000->10k
+	level_thresholds = 10 // 10->100->1k-> 10k (This is do to the first 2 levels being useless)
 	alt_scaling_number = 10
 	unlocked = FALSE
 

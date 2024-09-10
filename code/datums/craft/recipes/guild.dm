@@ -12,7 +12,7 @@
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 1),
-		list(QUALITY_WELDING, 40, "time" = 5), //Insainly quick do tobeing 1 sheet a time
+		list(QUALITY_WELDING, 40, "time" = 5), //Insanely quick do tobeing 1 sheet a time
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMA, "time" = 1),
 		list(QUALITY_WELDING, 40, "time" = 5),
 		list(QUALITY_SAWING, 30, "time" = 5)

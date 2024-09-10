@@ -1,5 +1,5 @@
 /datum/surgery_step/robotic
-	difficulty = FAILCHANCE_EASY //WAY easyer to do it on a robot then any old carbon!
+	difficulty = FAILCHANCE_EASY //WAY easier to do it on a robot then any old carbon!
 	required_stat = STAT_MEC
 	inflict_agony = 0 // Robotic organs can't feel pain anyway
 	is_robotic = TRUE // Metal over flesh

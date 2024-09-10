@@ -4,12 +4,12 @@
 
 /datum/task_master/task/proc/gain_value(value_to_gain)
 	value += value_to_gain
-	if(value >= level_threshholds)
+	if(value >= level_thresholds)
 		level += 1
 		if(!alt_scaling_number)
-			level_threshholds += (level_threshholds * min(1, level))
+			level_thresholds += (level_thresholds * min(1, level))
 		else
-			level_threshholds += (level_threshholds * alt_scaling_number)
+			level_thresholds += (level_thresholds * alt_scaling_number)
 		if(!unlocked)
 			unlocked = TRUE
 		else

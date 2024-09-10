@@ -385,7 +385,7 @@
 	caliber = CAL_FLARE
 	icon_state = "old-shell"
 	spent_icon = "old-shell-spent"
-	projectile_type = /obj/item/projectile/bullet/flare/choas
+	projectile_type = /obj/item/projectile/bullet/flare/chaos
 	matter = list(MATERIAL_PLASTIC = 1)
 	matter_reagents = list("phosphorus" = 3)
 	maxamount = 1

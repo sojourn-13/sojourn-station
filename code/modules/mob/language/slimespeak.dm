@@ -1,6 +1,6 @@
 /datum/language/sonnet
 	name = LANGUAGE_BLORP
-	desc = "A peculiar tonal language used by the Aulvae charictarized by inclusion of aural elements only possible using their unique non-solid anatomy. Though often \
+	desc = "A peculiar tonal language used by the Aulvae characterized by inclusion of aural elements only possible using their unique non-solid anatomy. Though often \
 	chaotic and dissonant sounding, when spoken slowly one can almost hear the underlying music that the Aulvae claim is present."
 	speech_verb = list("hums")
 	ask_verb = list("chimes")

@@ -36,7 +36,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 
 	init_firemodes = list(
 		list(mode_name="laser pellets", mode_desc="fires a shower of spreading lasers", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, icon="kill"),
-		list(mode_name="flare shell", mode_desc="fires an illuminating flare of variable colors", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost=100, icon="grenade"),
+		list(mode_name="flare shell", mode_desc="fires an illuminating flare of variable colors", projectile_type=/obj/item/projectile/bullet/flare/chaos, charge_cost=100, icon="grenade"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/rocket/railgun, charge_cost=30000, icon="grenade")
 	)
 	consume_cell = FALSE
