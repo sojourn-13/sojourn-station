@@ -526,7 +526,7 @@
 	delay_adder = clamp(delay_adder, 0, 8)
 //	message_admins("2ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
 	real_mod += -safty_math
-	real_mod *= 0.5 //Insainly op
+	real_mod *= 0.5 //Insanely op
 
 //	message_admins("3ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
 //	message_admins("4ogre: armor_divisor [armor_divisor]")
@@ -771,7 +771,7 @@
 		current_health = 8
 	else
 		current_health = round(current_health)
-	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insainly good
+	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insanely good
 	clickdelay_offset = -current_health
 
 /obj/item/tool/scythe/spectral_harvester

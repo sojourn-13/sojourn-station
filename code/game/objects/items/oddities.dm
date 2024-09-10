@@ -512,7 +512,7 @@
 		STAT_ROB = 12
 	)
 	price_tag = 2000 //Its a good tie for a collector
-	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+	perk = PERK_SURE_STEP //Insanely rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
 
 /obj/item/oddity/rare/moon_fragment
 	name = "Fragment of Moon"
