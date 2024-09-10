@@ -928,7 +928,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 0.8 //Poor
 
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
-							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs,
+							  /obj/item/borg/upgrade/arc_welder)
 
 	robot_traits = CYBORG_TRAIT_CLEANING_WALK
 	stat_modifiers = list(
@@ -1155,11 +1156,10 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/miner/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/tool/robotic_omni/miner(src)
-	src.modules += new /obj/item/tool/pickaxe(src)
+	src.modules += new /obj/item/tool/pickaxe/borgonly(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/material(src)
 	src.modules += new /obj/item/storage/bag/robotic/ore(src)
-	src.modules += new /obj/item/tool/pickaxe/diamonddrill(src)
 	src.modules += new /obj/item/storage/bag/robotic/sheetsnatcher(src)
 	src.modules += new /obj/item/gripper/miner(src)
 	src.modules += new /obj/item/gripper/no_use/loader(src) //They have to sell materials over desks at times.
@@ -1222,12 +1222,12 @@ var/global/list/robot_modules = list(
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
 	duties, this module prioritises flexibility over efficiency. Capable of working in R&D, Toxins, \
 	chemistry, xenobiology and robotics."
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs,/obj/item/borg/upgrade/arc_welder)
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
 		STAT_COG = 120,
-		STAT_MEC = 30
+		STAT_MEC = 60 //So a cyborg that is meant to work in robotics can work robotics.
 	)
 
 /obj/item/robot_module/research/New(var/mob/living/silicon/robot/R)
@@ -1262,13 +1262,19 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
+	var/datum/matter_synth/wire = new /datum/matter_synth/wire(30)
 	synths += nanite
+	synths += wire
 
 	var/obj/item/stack/nanopaste/N = new /obj/item/stack/nanopaste(src)
 	N.uses_charge = 1
 	N.charge_costs = list(1000)
 	N.synths = list(nanite)
 	src.modules += N
+
+	var/obj/item/stack/cable_coil/cyborg/C = new /obj/item/stack/cable_coil/cyborg(src)
+	C.synths = list(wire)
+	src.modules += C
 
 	//We know medical and robotics, were a mix.
 	R?.stats?.addPerk(PERK_MEDICAL_EXPERT)
