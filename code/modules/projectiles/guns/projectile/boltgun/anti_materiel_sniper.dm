@@ -48,7 +48,7 @@
 	mechanismvar = /obj/item/part/gun/mechanism/boltgun
 	barrelvars = list(/obj/item/part/gun/barrel/antim)
 
-/* - Old compoonents system. Updated with weapon pars system instead.
+/* - Old components system. Updated with weapon pars system instead.
 
 /obj/item/weaponparts
 	var/part_color = ""

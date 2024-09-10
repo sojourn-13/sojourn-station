@@ -282,7 +282,7 @@
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
     tipText = "There are many machines that can be upgraded, use an RPED on them to learn what parts it contains, and upgrade those with better ones to increase their efficiency."
 
-/tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
+/tipsAndTricks/jobs/upgrade_chemdispensers_sleeper
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
     tipText = "Chem dispensers get more chemical capacity the higher their cell capacity is. Omega (Medium) cells are the best for them, don't waste Atomcells on them!"
 
@@ -336,7 +336,7 @@
 
 /tipsAndTricks/jobs/cleaning_carbine
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if theirs no janitor around."
+    tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if there's no janitor around."
 
 /tipsAndTricks/jobs/hunter_meds
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
