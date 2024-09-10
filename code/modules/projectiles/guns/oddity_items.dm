@@ -182,7 +182,7 @@
 	name = "\"Handcock\" lever action rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			This lever action rifle seems to be masterfully rebored, its loading port skillfully enlarged to allow 14.5mm anti-materiel rounds to be loaded! \
-			Wild-west styled antimaterial rifle... who would have thought?"
+			Wild-west styled antimateriel rifle... who would have thought?"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"

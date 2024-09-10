@@ -486,7 +486,7 @@
 /obj/item/ammo_magazine/ammobox/antim
 	name = "ammunition box (14.5mm AP)"
 	icon_state = "antim"
-	desc = "A box of large 14.5×114mm antimaterial rounds."
+	desc = "A box of large 14.5×114mm antimateriel rounds."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM
