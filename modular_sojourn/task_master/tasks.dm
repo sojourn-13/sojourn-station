@@ -216,7 +216,7 @@
 	key = "SHEATH_ARTS"
 	desc = "Quickly unsheathing and attacking. With training it should be possible to get a bit more range."
 	gain_text = "With endless training it should be possible...."
-	level_thresholds = 100 // 100->1000->10k
+	level_thresholds = 10 // 10->100->1k-> 10k (This is do to the first 2 levels being useless)
 	alt_scaling_number = 10
 	unlocked = FALSE
 
