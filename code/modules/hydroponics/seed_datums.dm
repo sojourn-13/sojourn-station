@@ -477,7 +477,6 @@
 	display_name = "plump helmet mushrooms"
 	mutants = list("walkingmushroom","towercap")
 	chems = list("nutriment" = list(2,10), "spaceacillin" = list(2,10))
-	kitchen_tag = "plumphelmet"
 
 /datum/seed/mushroom/plump/New()
 	..()
@@ -528,6 +527,7 @@
 	display_name = "liberty cap mushrooms"
 	mutants = null
 	chems = list("nutriment" = list(1), "stoxin" = list(3,3), "space_drugs" = list(1,25))
+
 
 /datum/seed/mushroom/hallucinogenic/strong/New()
 	..()

@@ -34,10 +34,10 @@
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		//Add some mushrooms to give it some zest. Only one kind is allowed!
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plump helmet", qmod=0.4, reagent_skip=TRUE),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 
 		//Beat that meat to increase its quality
@@ -140,10 +140,10 @@
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plump helmet", qmod=0.4, reagent_skip=TRUE),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
@@ -277,10 +277,10 @@
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plump helmet", qmod=0.4, reagent_skip=TRUE),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The pork was Spiced with chili powder."),
@@ -359,10 +359,10 @@
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=3, reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plump helmet", qmod=0.4, reagent_skip=TRUE),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_USE_STOVE, J_HI, 30 SECONDS)
@@ -877,7 +877,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_ADD_PRODUCE, "carrot", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "potato", reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "chanterelle", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_USE_STOVE, J_MED, 15 SECONDS)
@@ -921,12 +921,12 @@
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plump helmet", qmod=0.4, reagent_skip=TRUE),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_STOVE, J_MED, 15 SECONDS)
 	)
@@ -1424,7 +1424,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/plump_pie
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
@@ -1471,7 +1471,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "water", 5),
 		list(CWJ_ADD_REAGENT, "flour", 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
@@ -1483,7 +1483,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/chawanmushi
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "water", 5),
 		list(CWJ_ADD_REAGENT, "soysauce", 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5),
@@ -1533,11 +1533,12 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		//Mushroom pizza is uniquic in that it takes any mushroom rather then a required type
+		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 35 SECONDS)
 	)
 
@@ -1553,7 +1554,7 @@
 		list(CWJ_ADD_PRODUCE, "eggplant", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cabbage", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "carrot", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushrooms", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 35 SECONDS)
 	)
 
@@ -1625,9 +1626,9 @@
 	product_type = /obj/item/reagent_containers/food/snacks/helmet_tisane
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
 	)
