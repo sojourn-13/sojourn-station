@@ -303,7 +303,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/tool/baton/robot(src)
-	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/extinguisher/advanced/robotic(src)
 	src.modules += new /obj/item/tool/robotic_omni/standard(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
@@ -346,6 +346,11 @@ var/global/list/robot_modules = list(
 	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
+
+	var/obj/item/extinguisher/advanced/robotic/EX = locate() in src.modules //space cleaner
+	if(B)
+		EX?.reagents?.add_reagent("abwater", 2 * amount)
+
 
 /obj/item/robot_module/medical
 	name = "medical robot module"
@@ -560,7 +565,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/engineering/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
-	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/extinguisher/advanced/robotic(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/tool/multitool/robotic(src)
 	src.modules += new /obj/item/tool/robotic_omni/engi(src)
@@ -657,6 +662,10 @@ var/global/list/robot_modules = list(
 	if(src.modules)
 		var/obj/item/reagent_containers/spray/cleaner/SC = locate() in src.modules //space cleaner
 		SC?.reagents?.add_reagent("cleaner", 2 * amount)
+
+		var/obj/item/extinguisher/advanced/robotic/EX = locate() in src.modules //space cleaner
+		EX?.reagents?.add_reagent("abwater", 2 * amount)
+
 	..()
 
 	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
@@ -1246,7 +1255,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
-	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/extinguisher/advanced/robotic(src)
 	src.modules += new /obj/item/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/device/science_tool(src)
 	src.modules += new /obj/item/device/scanner/price(src)
@@ -1284,6 +1293,10 @@ var/global/list/robot_modules = list(
 
 	..(R)
 
+/obj/item/robot_module/research/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	if(src.modules)
+		var/obj/item/extinguisher/advanced/robotic/EX = locate() in src.modules //space cleaner
+		EX?.reagents?.add_reagent("abwater", 2 * amount)
 
 /obj/item/robot_module/drone
 	name = "drone module"
@@ -1309,7 +1322,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/no_use/loader(src)
 	src.modules += new /obj/item/gripper/chemistry(src)// For refilling autolathens with sillicon
 	src.modules += new /obj/item/storage/part_replacer/mini(src)
-	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/extinguisher/advanced/robotic(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
@@ -1390,6 +1403,10 @@ var/global/list/robot_modules = list(
 
 		var/obj/item/device/lightreplacer/LR = locate() in src.modules
 		LR?.Charge(R, amount)
+
+		var/obj/item/extinguisher/advanced/robotic/EX = locate() in src.modules //space cleaner
+		EX?.reagents?.add_reagent("abwater", 2 * amount)
+
 
 	..()
 
