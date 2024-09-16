@@ -82,7 +82,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
 	name = "vegetable pizza"
-	desc = "A pizza made with vegatables to replace cheese."
+	desc = "A pizza made with vegetables to replace meat."
 	icon_state = "vegetablepizza"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/vegetablepizzaslice

@@ -389,7 +389,7 @@
 	name = "meat pie"
 	icon_state = "meatpie"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
-	desc = "A pie stuffed with meats rather then fruits or vegetables."
+	desc = "A pie stuffed with meats rather than fruits or vegetables."
 	trash = /obj/item/trash/plate
 	filling_color = "#948051"
 	bitesize = 2

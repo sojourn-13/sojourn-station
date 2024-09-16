@@ -379,7 +379,7 @@
 
 /obj/item/reagent_containers/food/drinks/flask/vacuumflask
 	name = "vacuum flask"
-	desc = "A flask for keeping drinks eather colder or hotter for longer."
+	desc = "A flask for keeping drinks either cold or hot for longer."
 	icon_state = "vacuumflask"
 	volume = 60
 	center_of_mass = list("x"=15, "y"=4)

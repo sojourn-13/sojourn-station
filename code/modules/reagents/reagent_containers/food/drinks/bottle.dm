@@ -243,7 +243,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
 	name = "John Prince's Goldschlager"
-	desc = "A brand of goldschlager branded."
+	desc = "A generic brand of goldschlager."
 	icon_state = "goldschlagerbottle"
 	center_of_mass = list("x"=15, "y"=3)
 	preloaded_reagents = list("goldschlager" = 100)
@@ -352,7 +352,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/neulandschnapps
 	name = "Neuland Himbeergeist"
-	desc = "A kriosan-approved spirits covered in kriosan text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
+	desc = "A kriosan-approved spirits covered in Kriosan text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
 	icon_state = "neulandschnapps"
 	icon_state_empty = "neulandschnapps"
 	center_of_mass = list("x"=16, "y"=6)

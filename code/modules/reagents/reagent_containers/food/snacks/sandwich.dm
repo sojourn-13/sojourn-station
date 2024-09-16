@@ -117,7 +117,7 @@
 
 /obj/item/reagent_containers/food/snacks/sandwich
 	name = "sandwich"
-	desc = "A simple snadwich of meat, cheese, bread, and several leaves of lettuce."
+	desc = "A simple sandwich of meat, cheese, bread, and several leaves of lettuce."
 	icon_state = "sandwich"
 	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#D9BE29"
@@ -218,7 +218,7 @@
 
 /obj/item/reagent_containers/food/snacks/cubancarp
 	name = "cuban carp"
-	desc = "A spicy sandwich that has been tasted."
+	desc = "A spicy sandwich that has been toasted."
 	icon_state = "cubancarp"
 	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	trash = /obj/item/trash/plate

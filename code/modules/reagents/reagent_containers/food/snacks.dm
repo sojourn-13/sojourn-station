@@ -436,7 +436,7 @@
 
 /obj/item/reagent_containers/food/snacks/cookie
 	name = "cookie"
-	desc = "cookie!"
+	desc = "Cookie!"
 	icon_state = "COOKIE!!!"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#DBC94F"
@@ -845,7 +845,7 @@
 
 /obj/item/reagent_containers/food/snacks/popcorn
 	name = "popcorn"
-	desc = "A light snack of corn seeds that have been heated in oil untill exploided."
+	desc = "A light snack of corn seed heated in oil until puffed."
 	icon_state = "popcorn"
 	taste_tag = list(SALTY_FOOD)
 	trash = /obj/item/trash/popcorn
@@ -948,7 +948,7 @@
 
 /obj/item/reagent_containers/food/snacks/badrecipe
 	name = "burned mess"
-	desc = "A misstake of cooking."
+	desc = "A cooking mistake."
 	icon_state = "badrecipe"
 	taste_tag = list(BLAND_FOOD)
 	filling_color = "#211F02"
@@ -1108,7 +1108,7 @@
 
 /obj/item/reagent_containers/food/snacks/enchiladas
 	name = "enchiladas"
-	desc = "Rolled meat chili and corn into one."
+	desc = "Meat, chili and corn rolled into tortillas."
 	icon_state = "enchiladas"
 	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/tray
@@ -1236,7 +1236,7 @@
 
 /obj/item/reagent_containers/food/snacks/ricepudding
 	name = "rice pudding"
-	desc = "A rice base pudding."
+	desc = "A rice based pudding."
 	icon_state = "rpudding"
 	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -1311,7 +1311,7 @@
 
 /obj/item/reagent_containers/food/snacks/meatballspagetti
 	name = "spaghetti & meatballs"
-	desc = "Speghetti served with meatballs."
+	desc = "Spaghetti served with meatballs."
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	icon_state = "meatballspagetti"
 	trash = /obj/item/trash/plate
@@ -1326,7 +1326,7 @@
 
 /obj/item/reagent_containers/food/snacks/spesslaw
 	name = "spesslaw"
-	desc = "Meatballs served with speghetti."
+	desc = "Meatballs served with spaghetti."
 	icon_state = "spesslaw"
 	filling_color = "#DE4545"
 	bitesize = 2
@@ -1354,7 +1354,7 @@
 
 /obj/item/reagent_containers/food/snacks/candiedapple
 	name = "candied apple"
-	desc = "An apple coated in liquidifed sugar before being cooled."
+	desc = "An apple coated in liquified sugar before being cooled."
 	icon_state = "candiedapple"
 	taste_tag = list(SWEET_FOOD)
 	filling_color = "#F21873"
@@ -1448,7 +1448,7 @@
 
 /obj/item/reagent_containers/food/snacks/appletart
 	name = "golden apple streusel tart"
-	desc = "A dessert made from golden apples rather then normal apples."
+	desc = "A dessert made from golden apples rather than normal apples."
 	icon_state = "gappletart"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -1514,7 +1514,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/tofubread
 	name = "tofubread"
-	icon_state = "A bread meatbread made from tofu rather then meat."
+	icon_state = "A bread meatbread made from tofu rather than meat."
 	icon_state = "tofubread"
 	taste_tag = list(BLAND_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/tofubreadslice

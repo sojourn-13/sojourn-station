@@ -138,7 +138,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/carp
 	name = "carp fillet"
-	desc = "A juicy fillet cut from a carp. The known for its potent and powerful venom they produce."
+	desc = "A juicy fillet cut from a carp. They are known for the potent and powerful venom they produce."
 	icon_state = "fishfillet"
 	filling_color = "#FFDEFE"
 	center_of_mass = list("x"=17, "y"=13)

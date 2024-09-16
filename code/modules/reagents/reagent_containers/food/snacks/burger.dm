@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheeseburger
 	name = "cheeseburger"
-	desc = "A normal burger apart form the addition of a yellow square of cheese."
+	desc = "A normal burger apart from the addition of a yellow square of cheese."
 	icon_state = "cheeseburger"
 	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	center_of_mass = list("x"=16, "y"=11)
@@ -65,7 +65,7 @@
 
 /obj/item/reagent_containers/food/snacks/baconburger
 	name = "bacon burger"
-	desc = "A normal burger apart form some strips of bacon added."
+	desc = "A normal burger apart from some strips of bacon added."
 	icon_state = "baconburger"
 	taste_tag = list(MEAT_FOOD, SALTY_FOOD)
 	bitesize = 3
