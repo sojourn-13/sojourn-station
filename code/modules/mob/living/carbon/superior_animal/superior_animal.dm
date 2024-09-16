@@ -348,7 +348,6 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		if (stat != DEAD)
 			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
-		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
@@ -511,11 +510,14 @@
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
 	if (critcheck)
-		if (istype(src, /mob/living/carbon/human))
-			if(health > HEALTH_THRESHOLD_CRIT) //only matters for humans
+		if (ishuman(src))
+			var/mob/living/carbon/human/H = src
+			if(H.health > HEALTH_THRESHOLD_CRIT) //only matters for humans
 				return TRUE
-			else
-				return FALSE
+			if(!H.resting && stat == CONSCIOUS)
+				return TRUE
+
+			return FALSE
 	if(health > 0)
 		return TRUE
 	return FALSE

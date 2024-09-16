@@ -30,23 +30,32 @@
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
-		for(var/mob/living/target_mob in hearers(src, viewRange)) //as anything : Removed do optimization
+		var/list/inview = view(src, viewRange)
+
+		for(var/obj/item/item_clearing in inview) //removes all items from are list this should make mobs target faster
+			inview -= item_clearing
+
+		for(var/mob/living/target_mob in inview) //as anything : Removed do optimization
 			if(isValidAttackTarget(target_mob))
 				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
+			inview -= target_mob
 
 		for(var/obj/machinery/tesla_turret/tesla_turret in view(src, viewRange))
 			if(isValidAttackTarget(tesla_turret))
 				filteredTargets += tesla_turret
+			inview -= tesla_turret
 
 		for(var/obj/machinery/porta_turret/porta_turret in view(src, viewRange))
 			if(isValidAttackTarget(porta_turret))
 				filteredTargets += porta_turret
+			inview -= porta_turret
 
 		for(var/obj/machinery/power/os_turret/os_turret in view(src, viewRange))
 			if(isValidAttackTarget(os_turret))
 				filteredTargets += os_turret
+			inview -= os_turret
 
 		for(var/obj/mecha/M in GLOB.mechas_list)
 			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
@@ -140,7 +149,8 @@
 		var/mob/living/L = O
 		if(L.stat != CONSCIOUS)
 			return FALSE
-		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0))
+		//If we are standing well below crit, then it is still a threat
+		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0) && resting)
 			return FALSE
 		if((!attack_same && (L.faction == faction)) || (L in friends)) //just cuz your a friend dosnt mean it magically will no longer attack same
 			return FALSE

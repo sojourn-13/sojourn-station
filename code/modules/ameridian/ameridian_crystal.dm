@@ -140,7 +140,7 @@
 /obj/structure/ameridian_crystal/proc/harvest_crystals()
 	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 	T.amount = growth // Drop more crystal the further along we are
-	activate_mobs_in_range(src, 7) // Wake up the nearby golems
+	activate_mobs_in_range(src, 7, TRUE) // Wake up the nearby golems
 	qdel(src)
 
 
