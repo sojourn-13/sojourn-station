@@ -1,3 +1,5 @@
+#define NORMAL_MASK_SANITY_COEFF_BUFF 1.3
+
 /obj/item/clothing/mask/muzzle
 	name = "muzzle"
 	desc = "To stop that awful noise."
@@ -6,7 +8,7 @@
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	voicechange = 1
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/muzzle/tape
 	name = "length of tape"
@@ -27,6 +29,15 @@
 		return 0
 	..()
 
+/obj/item/clothing/mask/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/device/assembly/voice))
+		if(src.muffle_voice == TRUE)
+			to_chat(user, SPAN_NOTICE("[src] already has a voice transmitter in it!"))
+			return
+		to_chat(user, SPAN_NOTICE("[user] installs a voice transmitter in [src]."))
+		src.muffle_voice = TRUE
+		qdel(W)
+
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
 	desc = "A sterile mask designed to help prevent the spread of diseases."
@@ -37,7 +48,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -46,6 +57,20 @@
 		rad = 0
 	)
 	price_tag = 10
+
+/obj/item/clothing/mask/surgical/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, NORMAL_MASK_SANITY_COEFF_BUFF)
+
+//Alt race masks here
+/obj/item/clothing/mask/surgical/kriosan
+	name = "kriosan surgical mask"
+	desc = "A sterile mask designed and fitted to help prevent the spread of diseases for your local kriosan."
+	icon_state = "kriosan_sterile"
+	flags_inv = HIDEFACE
+	body_parts_covered = 0
+
+//End
 
 /obj/item/clothing/mask/snorkel
 	name = "snorkel"
@@ -63,7 +88,8 @@
 	body_parts_covered = 0
 	var/mob/observer/eye/aiEye/eye
 
-/obj/item/clothing/mask/ai/New()
+/obj/item/clothing/mask/ai/Initialize(mapload, ...)
+	. = ..()
 	eye = new(src)
 
 /obj/item/clothing/mask/ai/equipped(var/mob/user, var/slot)
@@ -97,6 +123,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 20
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/bandana/equipped(var/mob/user, var/slot)
 	switch(slot)

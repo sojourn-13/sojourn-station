@@ -2,10 +2,6 @@
 "a" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"b" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "c" = (
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
@@ -46,6 +42,10 @@
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
+"Y" = (
+/obj/random/structures/os,
+/turf/simulated/floor/asteroid/grass,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -71,13 +71,13 @@ a
 "}
 (3,1,1) = {"
 a
-c
+Y
 g
 e
 e
 e
 o
-c
+Y
 a
 "}
 (4,1,1) = {"
@@ -95,9 +95,9 @@ a
 a
 d
 a
-b
 e
-b
+e
+e
 a
 d
 p
@@ -105,11 +105,11 @@ p
 (6,1,1) = {"
 p
 e
-b
+e
 e
 h
 e
-b
+e
 e
 p
 "}
@@ -127,11 +127,11 @@ p
 (8,1,1) = {"
 p
 e
-b
 e
 e
 e
-b
+e
+e
 e
 p
 "}
@@ -139,9 +139,9 @@ p
 a
 f
 a
-b
 e
-b
+e
+e
 a
 f
 p
@@ -159,13 +159,13 @@ a
 "}
 (11,1,1) = {"
 a
-c
+Y
 g
 e
 h
 e
 o
-c
+Y
 a
 "}
 (12,1,1) = {"

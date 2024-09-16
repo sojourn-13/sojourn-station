@@ -13,16 +13,28 @@
 	permeability_coefficient = 0.05
 	item_flags = NOSLIP | SILENT
 	origin_tech = list(TECH_ILLEGAL = 3)
-	var/list/clothing_choices = list()
 	siemens_coefficient = 0 // DAMN BOI
-	species_restricted = null
+
+/obj/item/clothing/shoes/ablasive
+	name = "ablative jackboots"
+	desc = "A thick pair of boots that excels in protecting the wearer against energy projectiles."
+	armor_list = list(melee = 2, bullet = 2, energy = 3, bomb = 30, bio = 10, rad = 0)
+	icon_state = "swat"
+	force = WEAPON_FORCE_WEAK
+	siemens_coefficient = 0.6
+	can_hold_knife = TRUE
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 15, MATERIAL_PLATINUM = 2)
+
+/obj/item/clothing/shoes/ablasive/iron_lock_security
+	name = "outdated jackboots"
+	desc = "An \"Iron Lock Security\" ablative boots with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
 /obj/item/clothing/shoes/swat
 	name = "\improper SWAT shoes"
 	desc = "When you want to turn up the heat."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
-	armor = list(melee = 80, bullet = 60, energy = 25, bomb = 50, bio = 10, rad = 0)
+	armor_list = list(melee = 5, bullet = 2, energy = 6, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.6
 
@@ -31,9 +43,10 @@
 	desc = "When you REALLY want to turn up the heat."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
-	armor = list(melee = 80, bullet = 60, energy = 25, bomb = 50, bio = 10, rad = 0)
+	armor_list = list(melee = 5, bullet = 2, energy = 6, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.4
+	can_hold_knife = 1
 
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
@@ -52,7 +65,7 @@
 
 /obj/item/clothing/shoes/cult
 	name = "boots"
-	desc = "A pair of boots worn by the followers of Nar-Sie."
+	desc = "A pair of boots worn by the followers of ... something."
 	icon_state = "cult"
 	item_state = "cult"
 	force = WEAPON_FORCE_WEAK
@@ -99,6 +112,28 @@
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
 
+/obj/item/clothing/shoes/leather/regal
+	name = "Regal leather shoes"
+	desc = "A pair of leather shoes worn by a magistrate of sorts."
+	icon_state = "detective"
+	price_tag = 50
+
+/obj/item/clothing/shoes/jackboots/redboot
+	name = "red boots"
+	desc = "A pair of stylish red boots."
+	icon_state = "redboots"
+	item_state = "redboots"
+	can_hold_knife = TRUE
+	price_tag = 30
+
+/obj/item/clothing/shoes/jackboots/longboot
+	name = "long boots"
+	desc = "A pair of stylish vertically long boots."
+	icon_state = "longboots"
+	item_state = "longboots"
+	can_hold_knife = TRUE
+	price_tag = 40
+
 /obj/item/clothing/shoes/laceup
 	name = "black dress shoes"
 	desc = "A pair of sleek black polished shoes."
@@ -114,11 +149,55 @@
 	desc = "A pair of customized dress shoes in a tailored color."
 	icon_state = "whitedress"
 
+/obj/item/clothing/shoes/aerostatic_boots
+	name = "aerostatic boots"
+	desc = "A pair of running shoes that are designed with speed in mind, though they don't really make you run faster, they just look quite nice."
+	icon_state = "aerostatic_boots"
+	can_hold_knife = TRUE
+
+/obj/item/clothing/shoes/render //Armored a bit do to the hide
+	name = "lizardskin shoes"
+	desc = "A green pair of shoes made of lizardskin, likely a young render..."
+	icon_state = "lizardskin_shoes"
+	armor_list = list(melee = 5, bullet = 3, energy = 2, bomb = 10, bio = 10, rad = 0)
+
+/obj/item/clothing/shoes/church_blacksilk_boots
+	name = "blacksilk boots"
+	desc = "A pair of silk boots that is common to see in more faithful places."
+	icon_state = "church_blacksilk_boots"
+	can_hold_knife = TRUE
+
+/obj/item/clothing/shoes/track_shoes
+	name = "running shoes"
+	desc = "A pair of light, stripped running shoes. Good for squatting."
+	icon_state = "trackshoes_black"
+
+/*High Heels*/
+
 /obj/item/clothing/shoes/highheels
-	name = "high heels"
-	desc = "A pair of fancy high heels."
+	name = "white high heels"
+	desc = "A pair of 'sterile' high heels."
 	icon_state = "heels"
 
+/obj/item/clothing/shoes/highheels/red
+	name = "red high heels"
+	desc = "A pair of vain high heels."
+	icon_state = "redheels"
+
+/obj/item/clothing/shoes/highheels/black
+	name = "black high heels"
+	desc = "A pair of edgy high heels, you suddenly want Kimchi."
+	icon_state = "blackheels"
+
+/obj/item/clothing/shoes/highheels/purple
+	name = "purple high heels"
+	desc = "A pair of luxurious high heels."
+	icon_state = "purpleheels"
+
+/obj/item/clothing/shoes/highheels/blue
+	name = "blue high heels"
+	desc = "Une paire de talons hauts appropriés."
+	icon_state = "blueheels"
 
 /*Flats*/
 
@@ -217,11 +296,35 @@
 	desc = "A pair of yellow shoes that extends past the ankle."
 	icon_state = "yellowhi"
 
+/obj/item/clothing/shoes/hitops/pink
+	name = "pink high-tops"
+	desc = "A pair of pink shoes that extends past the ankle."
+	icon_state = "pinkhi"
 /obj/item/clothing/shoes/customhitops
 	name = "high-tops"
 	desc = "A pair of customized high-tops in a tailored color."
 	icon_state = "whitehi"
 	item_state_slots = list(slot_r_hand_str = "white", slot_l_hand_str = "white")
+
+// These were always identical to hi-tops, these sprites are all now in line with hi tops
+// and thus no longer necessary unless someone sprites a different enough sprite to justify them
+
+/*Sneakers
+/obj/item/clothing/shoes/sneakers
+	name = "purple sneakers"
+	desc = "A pair of purple sneaker-style shoes. Drippy!"
+	icon_state = "sneakerspurple"
+
+/obj/item/clothing/shoes/sneakers/blue
+	name = "blue sneakers"
+	desc = "A pair of blue sneaker-style shoes. Drippy!"
+	icon_state = "sneakersblue"
+
+/obj/item/clothing/shoes/sneakers/red
+	name = "red sneakers"
+	desc = "A pair of red sneaker-style shoes. Drippy!"
+	icon_state = "sneakersblue"
+*/
 
 /*Cowboy*/
 
@@ -229,16 +332,19 @@
 	name = "horseman cowboy boots"
 	desc = "A standard pair of cowboy boots."
 	icon_state = "cowboy"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/cowboy/classic
 	name = "trail cowboy boots"
 	desc = "A classic looking pair of durable cowboy boots."
 	icon_state = "cowboy_classic"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/cowboy/snakeskin
 	name = "snakeskin cowboy boots"
 	desc = "A pair of cowboy boots made from python skin."
 	icon_state = "cowboy_snakeskin"
+	can_hold_knife = TRUE
 
 /*Footwrap*/
 
@@ -247,12 +353,28 @@
 	desc = "A roll of treated canvas used for wrapping claws or paws."
 	icon_state = "clothwrap"
 
+/obj/item/clothing/shoes/footwraps1
+	name = "blue footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap"
+
+/obj/item/clothing/shoes/footwraps2
+	name = "red footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap2"
+
+/obj/item/clothing/shoes/bugsocks
+    name = "insect socks"
+    desc = "An extra durable set of extremely small and grippy socks. Usually used by the cht'mant to protect their oddly shaped nubs. Much more preferable to standard shoes if not very protective."
+    icon_state = "chtman_grippys"
+
 /*Winter Boots*/
 
 /obj/item/clothing/shoes/winter
 	name = "winter boots"
 	desc = "A pair of furred boots perfect for cold environments."
 	icon_state = "winterboots"
+	can_hold_knife = TRUE
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
@@ -260,50 +382,60 @@
 	name = "security winter boots"
 	desc = "A pair of reinforced winter boots with a security design."
 	icon_state = "winterboots_sec"
-	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)
+	can_hold_knife = TRUE
+	armor_list = list(melee = 2, bullet = 0, energy = 3, bomb = 20, bio = 0, rad = 0) //Laser?
 
 /obj/item/clothing/shoes/winter/science
 	name = "science winter boots"
 	desc = "A pair of winter boots with a science design."
 	icon_state = "winterboots_sci"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/command
 	name = "command winter boots"
 	desc = "A pair of winter boots with a command design."
 	icon_state = "winterboots_cap"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/engineering
 	name = "technomancer winter boots"
 	desc = "A pair of winter boots with a technomancer design."
 	icon_state = "winterboots_eng"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/atmos
 	name = "atmospherics winter boots"
 	desc = "A pair of winter boots with a atmospherics design."
 	icon_state = "winterboots_atmos"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/medical
 	name = "medical winter boots"
 	desc = "A pair of winter boots with a medical design."
 	icon_state = "winterboots_med"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/mining
 	name = "mining winter boots"
 	desc = "A pair of winter boots with a mining design."
 	icon_state = "winterboots_mining"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/supply
 	name = "guild winter boots"
 	desc = "A pair of winter boots with a guild design."
 	icon_state = "winterboots_sup"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/botany
 	name = "botany winter boots"
 	desc = "A pair of winter boots with a botany design."
 	icon_state = "winterboots_hydro"
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/winter/explorer
 	name = "explorer boots"
 	desc = "A pair of rugged boots designed for hazardous environment exploration."
 	icon_state = "explorer"
-	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)
+	can_hold_knife = TRUE
+	armor_list = list(melee = 2, bullet = 0, energy = 3, bomb = 20, bio = 0, rad = 0)

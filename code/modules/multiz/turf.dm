@@ -41,14 +41,14 @@ see multiz/movement.dm for some info.
 
 	var/open = FALSE
 	var/turf/below
-	var/list/underlay_references
-	var/global/overlay_map = list()
 	is_hole = TRUE
 
 	// A lazy list to contain a list of mobs who are currently scaling
 	// up this turf. Used in human/can_fall.
 
-	var/tmp/list/climbers
+	var/tmp/list/climbers = null
+
+	pathing_pass_method = TURF_PATHING_PASS_PROC
 
 /turf/simulated/open/New()
 	icon_state = "transparentclickable"
@@ -72,14 +72,14 @@ see multiz/movement.dm for some info.
 	if(open)
 		fallThrough(mover)
 
-/turf/simulated/open/proc/updateFallability()
+/turf/simulated/open/proc/updateFallability(var/obj/structure/catwalk/catwalk)
 	var/wasOpen = open
-	open = isOpen()
+	open = isOpen(catwalk)
 	if(open && open != wasOpen)
 		for(var/atom/A in src)
 			fallThrough(A)
 
-/turf/simulated/open/proc/isOpen()
+/turf/simulated/open/proc/isOpen(var/obj/structure/catwalk/catwalk)
 	. = FALSE
 	// only fall down in defined areas (read: areas with artificial gravitiy)
 	if(!istype(below)) //make sure that there is actually something below
@@ -87,7 +87,7 @@ see multiz/movement.dm for some info.
 		if(!below)
 			return
 
-	if(locate(/obj/structure/catwalk) in src)
+	if(catwalk != (locate(/obj/structure/catwalk) in src))
 		return
 
 	if(locate(/obj/structure/multiz/stairs) in src)
@@ -107,7 +107,7 @@ see multiz/movement.dm for some info.
 		return
 
 
-	// No gravit, No fall.
+	// No gravity, No fall.
 	if(!has_gravity(src))
 		return
 
@@ -149,10 +149,22 @@ see multiz/movement.dm for some info.
 					"You hear a soft whoosh.[M.stat ? "" : ".. and some screaming."]"
 				)
 			else
-				M.visible_message(
-					"\The [mover] falls from the deck above and slams into \the [below]!",
-					"You land on \the [below].", "You hear a soft whoosh and a crunch"
-				)
+				for(var/mob/living/m in below)
+					if(istype(m))//is m real?
+
+						if(ishuman(mover))//REAL SHIT
+							var/mob/living/carbon/human/H = mover
+							if(H.a_intent == I_HURT && !(m == H))
+								M.visible_message(
+									SPAN_DANGER("\The [mover] falls from the deck above and slams elbow-first into [m]!"),
+									SPAN_DANGER("You slam elbow-first into [m]!"),
+									SPAN_NOTICE("You hear a soft whoosh and a crunch.")
+									)
+					else
+						M.visible_message(
+							"\The [mover] falls from the deck above and slams into \the [below]!",
+							"You land on \the [below].", "You hear a soft whoosh and a crunch."
+						)
 
 		// Handle people getting hurt, it's funny!
 		mover.fall_impact(src, below)
@@ -161,9 +173,18 @@ see multiz/movement.dm for some info.
 
 		for(var/mob/living/M in below)
 			var/fall_damage = mover.get_fall_damage()
+			if(ishuman(mover))
+				var/mob/living/carbon/human/H = mover
+				if(H.a_intent == I_HURT)
+					fall_damage = (H.mob_size + (min(min(H.stats.getStat(STAT_ROB), 1), 60) / 2)) //max is 50(a lot)
 			if(M == mover)
 				continue
-			M.Weaken(10)
+			if(ishuman(M))
+				if(!M.stats.getPerk(PERK_PARKOUR))
+					M.Weaken(10)
+			else
+				M.Weaken(10)
+				continue
 			if(fall_damage >= FALL_GIB_DAMAGE)
 				M.gib()
 			else
@@ -172,7 +193,7 @@ see multiz/movement.dm for some info.
 
 				while(fall_damage > 0)
 					fall_damage -= tmp_damage = rand(0, fall_damage)
-					M.apply_damage(tmp_damage, BRUTE, organ)
+					M.damage_through_armor(tmp_damage, BRUTE, organ, used_weapon = mover)
 					organ = pickweight(list(BP_HEAD = 0.3, BP_CHEST = 0.8, BP_R_ARM = 0.6, BP_L_ARM = 0.6))
 
 
@@ -240,3 +261,49 @@ see multiz/movement.dm for some info.
 	else
 		return null
 
+/turf/simulated/open/MouseDrop_T(mob/target, mob/user)
+	var/mob/living/H = user
+	var/obj/structure/S = locate(/obj/structure) in GetBelow(src)
+	if(istype(H) && can_descent(H, S) && target == user)
+		do_descent(target, S)
+	else
+		return ..()
+
+/turf/simulated/open/proc/can_descent(var/mob/living/user, var/obj/structure/structure, post_descent_check = 0)
+	if(!structure || !structure.climbable || (!post_descent_check && (user in climbers)))
+		return
+
+	if(!user.Adjacent(src))
+		to_chat(user, SPAN_DANGER("You can't descent there, the way is blocked."))
+		return
+
+	var/obj/occupied = structure.turf_is_crowded()
+	if(occupied)
+		to_chat(user, SPAN_DANGER("There's \a [occupied] in the way."))
+		return
+
+	return 1
+
+/turf/simulated/open/proc/do_descent(var/mob/living/user, var/obj/structure/structure)
+	if(!can_descent(user, structure))
+		return
+
+	usr.visible_message(SPAN_WARNING("[user] starts descenting onto [structure]!"))
+	structure.visible_message(SPAN_WARNING("Someone starts descenting onto [structure]!"))
+	LAZYOR(climbers, user)
+
+	var/delay = (issmall(user) ? 32 : 60) * user.mod_climb_delay
+	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+	if(!do_after(user, duration, src))
+		LAZYREMOVE(climbers, user)
+		return
+
+	if(!can_descent(user, structure, post_descent_check = 1))
+		LAZYREMOVE(climbers, user)
+		return
+
+	usr.forceMove(GetBelow(src))
+
+	if(get_turf(user) == GetBelow(src))
+		usr.visible_message(SPAN_WARNING("[user] descents onto [structure]!"))
+	LAZYREMOVE(climbers, user)

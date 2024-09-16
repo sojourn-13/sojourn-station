@@ -5,7 +5,7 @@
 	nanomodule_path = /datum/nano_module/docking
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "triangle-2-e-w"
+	program_menu_icon = "anchor"
 	extended_desc = "A management tool that lets you see the status of the docking ports."
 	size = 10
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
@@ -28,7 +28,7 @@
 		return
 	docking_controllers.Cut()
 	var/list/zlevels = GetConnectedZlevels(AM.z)
-	for(var/obj/machinery/embedded_controller/radio/airlock/docking_port/D in SSmachines.machinery)
+	for(var/obj/machinery/embedded_controller/radio/airlock/docking_port/D in GLOB.machines)
 		if(D.z in zlevels)
 			var/shuttleside = 0
 			for(var/sname in SSshuttle.shuttles) //do not touch shuttle-side ones
@@ -41,7 +41,7 @@
 				continue
 			docking_controllers += D.docking_program.id_tag
 
-/datum/nano_module/docking/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
+/datum/nano_module/docking/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/list/docks = list()
 	for(var/docktag in docking_controllers)

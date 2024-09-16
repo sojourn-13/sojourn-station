@@ -2,130 +2,121 @@
 
 /datum/design/autolathe/circuit/airlockmodule
 	name = "airlock electronics"
-	build_path = /obj/item/weapon/airlock_electronics
+	build_path = /obj/item/airlock_electronics
 
 /datum/design/autolathe/circuit/airalarm
 	name = "air alarm electronics"
-	build_path = /obj/item/weapon/airalarm_electronics
+	build_path = /obj/item/airalarm_electronics
 
 /datum/design/autolathe/circuit/firealarm
 	name = "fire alarm electronics"
-	build_path = /obj/item/weapon/firealarm_electronics
+	build_path = /obj/item/firealarm_electronics
 
 /datum/design/autolathe/circuit/powermodule
 	name = "power control module"
-	build_path = /obj/item/weapon/circuitboard/apc
+	build_path = /obj/item/circuitboard/apc
 
 /datum/design/autolathe/circuit/vending
-	name = "custom Vendomat"
-	build_path = /obj/item/weapon/circuitboard/vending
+	name = "custom vendomat"
+	build_path = /obj/item/circuitboard/vending
 
 /datum/design/autolathe/circuit/autolathe_excelsior
 	name = "excelsior autolathe"
-	build_path = /obj/item/weapon/circuitboard/excelsiorautolathe
+	build_path = /obj/item/circuitboard/excelsiorautolathe
 
 /datum/design/autolathe/circuit/autolathe_disk_cloner
 	name = "autolathe disk cloner"
-	build_path = /obj/item/weapon/circuitboard/autolathe_disk_cloner
+	build_path = /obj/item/circuitboard/autolathe_disk_cloner
 
 /datum/design/autolathe/circuit/recharger
 	name = "recharger"
-	build_path = /obj/item/weapon/circuitboard/recharger
+	build_path = /obj/item/circuitboard/recharger
 
 /datum/design/autolathe/circuit/helm
 	name = "helm control console"
-	build_path = /obj/item/weapon/circuitboard/helm
+	build_path = /obj/item/circuitboard/helm
 
 /datum/design/autolathe/circuit/nav
 	name = "navigation console"
-	build_path = /obj/item/weapon/circuitboard/nav
+	build_path = /obj/item/circuitboard/nav
 
 /datum/design/autolathe/circuit/shieldgen_excelsior
 	name = "excelsior shield wall generator"
-	build_path = /obj/item/weapon/circuitboard/excelsiorshieldwallgen
+	build_path = /obj/item/circuitboard/excelsiorshieldwallgen
+
+/datum/design/autolathe/circuit/jtb
+	name = "junk tractor beam control console"
+	build_path = /obj/item/circuitboard/jtb
 
 /datum/design/autolathe/circuit/reconstructor_excelsior
 	name = "excelsior implant reconstructor"
-	build_path = /obj/item/weapon/circuitboard/excelsiorreconstructor
+	build_path = /obj/item/circuitboard/excelsiorreconstructor
 
 /datum/design/autolathe/circuit/diesel_excelsior
-	name = "excelsior diesel generator"
-	build_path = /obj/item/weapon/circuitboard/diesel
+	name = "diesel generator"
+	build_path = /obj/item/circuitboard/diesel
 
 /datum/design/autolathe/circuit/teleporter_excelsior
 	name = "excelsior long-range teleporter"
-	build_path = /obj/item/weapon/circuitboard/excelsior_teleporter
+	build_path = /obj/item/circuitboard/excelsior_teleporter
 
 /datum/design/autolathe/circuit/turret_excelsior
 	name = "excelsior turret"
-	build_path = /obj/item/weapon/circuitboard/excelsior_turret
+	build_path = /obj/item/circuitboard/excelsior_turret
+
+/datum/design/autolathe/circuit/excelsior_autodoc
+	name = "excelsior autodoc"
+	build_path = /obj/item/circuitboard/excelsior_autodoc
+
+/datum/design/autolathe/circuit/turret_artificer
+	name = "artificer turret"
+	build_path = /obj/item/circuitboard/artificer_turret
 
 /datum/design/autolathe/circuit/centrifuge
 	name = "centrifuge"
-	build_path = /obj/item/weapon/circuitboard/centrifuge
+	build_path = /obj/item/circuitboard/centrifuge
 
 /datum/design/autolathe/circuit/electrolyzer
 	name = "electrolyzer"
-	build_path = /obj/item/weapon/circuitboard/electrolyzer
+	build_path = /obj/item/circuitboard/electrolyzer
 
 /datum/design/autolathe/circuit/reagentgrinder
 	name = "reagent grinder"
-	build_path = /obj/item/weapon/circuitboard/reagentgrinder
+	build_path = /obj/item/circuitboard/reagentgrinder
 
-/datum/design/autolathe/circuit/bioprinter
-	name = "Absolutism Biomatter Printer"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioprinter
+/datum/design/autolathe/circuit/smelter
+	name = "smelter"
+	build_path = /obj/item/circuitboard/smelter
 
-/datum/design/autolathe/circuit/solidifier
-	name = "Absolutism Biomatter Solidifier"
-	build_path = /obj/item/weapon/circuitboard/neotheology/solidifier
+/datum/design/autolathe/circuit/sorter
+	name = "sorter"
+	build_path = /obj/item/circuitboard/sorter
 
-/*
-/datum/design/autolathe/circuit/cloner
-	name = "NeoTheology Cloner, Pod"
-	build_path = /obj/item/weapon/circuitboard/neotheology/cloner
+/datum/design/autolathe/circuit/recycler
+	name = "recycler"
+	build_path = /obj/item/circuitboard/recycler
 
-/datum/design/autolathe/circuit/reader
-	name = "NeoTheology Cloner, Cruciform Reader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/reader
-*/
+/datum/design/autolathe/circuit/pile_ripper
+	name = "pile ripper"
+	build_path = /obj/item/circuitboard/pile_ripper
 
-/datum/design/autolathe/circuit/biocan
-	name = "Absolutism Cloner, Biomass container"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biocan
+/datum/design/autolathe/circuit/trade_beacon_receiving
+	name = "trade receiver beacon"
+	build_path = /obj/item/circuitboard/trade_beacon/receiving
 
-/datum/design/autolathe/circuit/biogen
-	name = "Absolutism Biomatter Generator, Power Generator"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen
+/datum/design/autolathe/circuit/trade_beacon_sending
+	name = "trade sending beacon"
+	build_path = /obj/item/circuitboard/trade_beacon/sending
 
-/datum/design/autolathe/circuit/biogen_console
-	name = "Absolutism Biomatter Generator, Power Generator Console"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen_console
+/datum/design/autolathe/circuit/smartfridge
+	name = "smartfridge"
+	build_path = /obj/item/circuitboard/smartfridge
 
-/datum/design/autolathe/circuit/biogen_port
-	name = "Absolutism Biomatter Generator, Power Generator Port"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen_port
+/datum/design/autolathe/circuit/smartfridge/disk
+	name = "disk storage"
+	build_path = /obj/item/circuitboard/smartfridge/disk
 
-/datum/design/autolathe/circuit/bioreactor_loader
-	name = "Absolutism Biomatter Reactor, Loader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_loader
-
-/datum/design/autolathe/circuit/bioreactor_metrics
-	name = "Absolutism Biomatter Reactor, Metrics"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_metrics
-
-/datum/design/autolathe/circuit/bioreactor_port
-	name = "Absolutism Biomatter Reactor, Port"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_port
-
-/datum/design/autolathe/circuit/bioreactor_biotank
-	name = "Absolutism Biomatter Reactor, Biomatter Tank"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_biotank
-
-/datum/design/autolathe/circuit/bioreactor_unloader
-	name = "Absolutism Biomatter Reactor, Unloader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_unloader
-
-/datum/design/autolathe/circuit/bioreactor_platform
-	name = "Absolutism Biomatter Reactor, Platform"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_platform
+//Soj thing
+/datum/design/autolathe/circuit/nanite_reconstitution_apparatus
+	name = "nanite reconstitution apparatus"
+	build_path = /obj/item/circuitboard/nanite_reconstitution_apparatus

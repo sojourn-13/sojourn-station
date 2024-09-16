@@ -3,8 +3,8 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "b" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/light/floor,
+/obj/random/mob/roomba,
+/obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "c" = (
@@ -67,7 +67,6 @@
 "o" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/machinery/light/floor,
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "p" = (
@@ -229,11 +228,11 @@ a
 (4,1,1) = {"
 a
 a
-b
+j
 t
 A
 p
-r
+b
 a
 a
 "}
@@ -299,7 +298,7 @@ o
 p
 n
 F
-b
+j
 a
 a
 "}

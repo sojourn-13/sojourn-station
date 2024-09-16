@@ -1,13 +1,13 @@
 /*
  * Premade paper
  */
-/obj/item/weapon/paper/court
+/obj/item/paper/court
 	name = "Judgement"
 	info = {"For crimes against the colony, the offender is sentenced to:
 	<BR>\n
 	<BR>\n"}
 
-/obj/item/weapon/paper/toxin
+/obj/item/paper/toxin
 	name = "Chemical Information"
 	info = {"Known Onboard Toxins:
 	<BR>\n\tGrade A Semi-Liquid Plasma:
@@ -40,13 +40,13 @@
 	<BR>\n\t\t\tThe effect are cumulative.
 	<BR>\n\t\tWARNING: It is a crime to use this without authorization"}
 
-/obj/item/weapon/paper/courtroom
+/obj/item/paper/courtroom
 	name = "A Crash Course in Legal SOP on the colony."
 	info = {"<B>Roles:</B>
 	<BR>\nThe Ranger is basically the investigator and prosecutor.
 	<BR>\nThe Staff Assistant can perform these functions with written authority from the Ranger.
-	<BR>\nThe warrant officer/militia commander/premier is ct as the judicial authority.
-	<BR>\nThe Marshal Officers (or if none present militia troopers) are responsible for executing warrants, security during trial, and prisoner transport.
+	<BR>\nThe warrant officer/blackshield commander/premier is ct as the judicial authority.
+	<BR>\nThe Marshal Officers (or if none present blackshield troopers) are responsible for executing warrants, security during trial, and prisoner transport.
 	<BR>\n
 	<BR>\n<B>Investigative Phase:</B>
 	<BR>\nAfter the crime has been committed the Ranger's job is to gather evidence and try to ascertain not only who did it but what happened. He must take special care to catalogue everything and don't leave anything out. Write out all the evidence on paper. Make sure you take an appropriate number of fingerprints. If he must ask someone questions he has permission to confront them. If the person refuses he can ask a judicial authority to write a subpoena for questioning. If again he fails to respond then that person is to be jailed as insubordinate and obstructing justice. Said person will be released after he cooperates.
@@ -83,7 +83,7 @@
 	<BR>\nTADA you're done. Security then executes the sentence and adds the applicable convictions to the person's record.
 	<BR>\n"}
 
-/obj/item/weapon/paper/botanist
+/obj/item/paper/botanist
 	name = "Greetings from Billy Bob"
 	info = {"<B>Hey fellow botanist!</B>
 	<BR>\n
@@ -114,7 +114,7 @@
 	<BR>\n<B>Water keeps weeds such as nettles alive!</B>
 	<BR>\n<B>All other plants need both.</B>"}
 
-/obj/item/weapon/paper/djstation
+/obj/item/paper/djstation
 	name = "DJ Listening Outpost"
 	info = {"<B>Welcome new owner!</B>
 	<BR>
@@ -122,12 +122,12 @@
 	<br><ol><li>Equip yourself with a multi-tool</li><li>Use the multitool on each machine, that is the broadcaster, receiver and the relay.</li><li>Turn all the machines on, it has already been configured for you to listen on.</li></ol> Simple as that. Now to listen to the private channels, you'll have to configure the intercoms, located on the front desk. Here is a list of frequencies for you to listen on.
 	<br><ul><li>145.7 - Common Channel</li><li>144.7 - Private AI Channel</li><li>135.9 - Security Channel</li><li>135.7 - Engineering Channel</li><li>135.5 - Medical Channel</li><li>135.3 - Command Channel</li><li>135.1 - Science Channel</li><li>134.9 - Mining Channel</li><li>134.7 - Cargo Channel</li>"}
 
-/obj/item/weapon/paper/jobs
+/obj/item/paper/jobs
 	name = "Job Information"
 	info = {"Information on all formal jobs that can be assigned on the colony can be found on this document.
 	<BR>\nIt just contains a crudely drawn picture of a stick figure orgy and a bunch of animal abhumans."}
 
-/obj/item/weapon/paper/sop
+/obj/item/paper/sop
 	name = "paper- 'Standard Operating Procedure'"
 	info = {"Alert Levels:
 	<BR>\nBlue- Emergency
@@ -184,7 +184,7 @@
 	<BR>\n\t\tIf ship does not arrive-
 	<BR>\n\t\t\tEvacuate to a nearby safe area!"}
 
-/obj/item/weapon/paper/fortune
+/obj/item/paper/fortune
 	name = "fortune card"
 	info = {"<center>YOUR FORTUNE</center>"}
 	icon_state = "fortunecard"
@@ -246,9 +246,44 @@
 		[pick(fortune)]</font>"}
 		return ..() // moving the
 
-/obj/item/weapon/paper/fortune/update_icon()
+/obj/item/paper/fortune/update_icon()
 	if(info)
 		icon_state = "fortunecard"
 	else
 		icon_state = "fortunecard"
 	return
+
+/obj/item/paper/laber_camp
+	name = "Labor Notice"
+	info = {"Hard Labor Notice:
+	<BR>\n\tHard Rock Wall:
+	<BR>\n\t\tReally hard to mine through, but has many geodes.
+	<BR>\n\t\tAny blasts will not affect the hard rock.
+	<BR>\n\t\tMining through to the other side is impossible.
+	<BR>\n
+	<BR>\n\tSand Below Your Feet:
+	<BR>\n\t\tThe sand below you can be dug for rocks.
+	<BR>\n\t\tDigging in a small area is wise as well as piling the sand into ore boxes.
+	<BR>\n
+	<BR>\n\tSmall rocks:
+	<BR>\n\t\tThe small rocks dig out from the hard walls or sand can be crushed into more sand.
+	<BR>\n\t\tSome rocks even have small amounts of ore if the caves yield none.
+	<BR>\n
+	<BR>\n\t\tWARNING: It is a crime to mine here without authorization"}
+
+/obj/item/paper/laber_camp_notice
+	name = "Mining Rights and Conservation"
+	info = {"From Artificer Guild and Soteria Xenoarch Division:
+	<BR>\n\tArtificer Guild:
+	<BR>\n\t\tDue to LSS mining operations and Soteria Toxin testing the labor camp might have rock falls refilling the area from time to time.
+	<BR>\n\t\tWith this issue ever present, we are unable to add any power networking down into the camp.
+	<BR>\n
+	<BR>\n\tSoteria Xenoarch Division:
+	<BR>\n\t\tXenoarch may ask to use the local camp for digging out artifacts .
+	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
+	<BR>\n
+	<BR>\n\t\tWARNING: Well Boris Kilmeade has full rights to mining the labor camp sight it may be used by any prisoner that wishes to do labor or a time sentence"}
+
+/obj/item/paper/cro_pistol
+	name = "Classia Pistol"
+	info = {"This weapon is highly volatile and extremely dangerous if fired too many times to quickly, be sure to allow it to vent properly lest it over heats. This weapon is also explosive, so be aware of contraband laws and potential damage to the colony. A screwdriver is required to remove the hydrogen tanks, do be careful even then, lest you scorch your hand."}

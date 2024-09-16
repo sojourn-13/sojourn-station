@@ -1,10 +1,10 @@
-/obj/item/weapon/circuitboard/pile_ripper
-	name = T_BOARD("Pile Ripper")
+/obj/item/circuitboard/pile_ripper
+	build_name = "Pile Ripper"
 	build_path = /obj/machinery/pile_ripper
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 3)
 	req_components = list(
-		/obj/item/weapon/stock_parts/manipulator = 1
+		/obj/item/stock_parts/manipulator = 1
 	)
 
 /obj/machinery/pile_ripper
@@ -15,9 +15,9 @@
 	layer = MOB_LAYER + 1 // Overhead
 	anchored = TRUE
 	density = TRUE
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 300
-
+	circuit = /obj/item/circuitboard/pile_ripper
 	var/safety_mode = FALSE // Temporality stops the machine if it detects a mob
 	var/icon_name = "grinder-b"
 	var/blood = 0
@@ -52,13 +52,17 @@
 			break
 		if(istype(ripped_item, /obj/structure/scrap))
 			var/obj/structure/scrap/pile = ripped_item
-			while(pile.dig_out_lump(loc, 1))
+			while(!pile.clear_if_empty())
+				pile.dig_out_lump()
+				pile.shuffle_loot()
+				for(var/obj/item/looted_things in pile.loot)
+					pile.loot.remove_from_storage(looted_things, src.loc)
 				if(prob(20))
 					break
 			count++
 		else if(istype(ripped_item, /obj/item))
 			ripped_item.forceMove(src.loc)
-			if(prob(20))
+			if(emagged)
 				qdel(ripped_item)
 		else if(istype(ripped_item, /obj/structure/scrap_cube))
 			var/obj/structure/scrap_cube/cube = ripped_item
@@ -84,7 +88,11 @@
 	update_icon()
 
 /obj/machinery/pile_ripper/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/card/emag))
+	if(istype(I, /obj/item/card/emag))
+		emag_act(user)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+
+	if(panel_open && I.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_IMPOSSIBLE, required_stat = STAT_MEC))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 
@@ -103,7 +111,7 @@
 			safety_mode = FALSE
 			update_icon()
 		playsound(loc, "sparks", 75, 1, -1)
-		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
+		to_chat(user, SPAN_NOTICE("You use disable the safeties on the [name]."))
 
 /obj/machinery/pile_ripper/update_icon()
 	..()
@@ -124,7 +132,7 @@
 	if(iscarbon(L))
 		gib = FALSE
 		if(!L.stat)
-			L.emote("scream", , , 1)
+			L.emote("painscream", , , 1)
 		add_blood(L)
 	if(!blood && !issilicon(L))
 		blood = TRUE
@@ -144,22 +152,36 @@
 
 	// Start shredding meat
 
-	var/slab_name = L.name
-	var/slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 
 	L.adjustBruteLoss(45)
-	if(istype(L, /mob/living/carbon/human))
-		var/mob/living/carbon/human/H = L
-		H.nutrition -= 100
-		if(H.nutrition <= 0)
-			H.gib()
-		if(H.isMonkey())
-			slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
-		else
+
+	if(issilicon(L))
+		return
+
+	if(L.nutrition > 100)
+		if(ishuman(L))
+			var/slab_name = L.name
+			var/slab_type = /obj/item/reagent_containers/food/snacks/meat
+
+			var/mob/living/carbon/human/H = L
 			slab_name = H.real_name
-			slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+			slab_type = /obj/item/reagent_containers/food/snacks/meat/human
+			H.nutrition -= 100
 
-	var/obj/item/weapon/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
-	new_meat.name = "[slab_name] [new_meat.name]"
+			if(H.isMonkey())
+				slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
 
-	new_meat.reagents.add_reagent("nutriment", 10)
+			var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
+			new_meat.name = "[slab_name] [new_meat.name]"
+
+			new_meat.reagents.add_reagent("nutriment", 10)
+
+	if(issuperioranimal(L))
+		var/mob/living/carbon/superior_animal/SA = L
+		SA.harvest(SA) //Self harvest
+		return
+	if(isanimal(L))
+		var/mob/living/simple_animal/SA = L
+		SA.harvest(SA) //Self harvest
+		return
+	return

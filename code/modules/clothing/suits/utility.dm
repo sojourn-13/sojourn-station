@@ -17,11 +17,12 @@
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	extra_allowed = list(/obj/item/weapon/extinguisher)
-	armor = list(
-		melee = 10,
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/storage/toolbox)
+	armor_list = list(
+		melee = 2,
 		bullet = 0,
-		energy = 0,
+		energy = 1,
 		bomb = 10,
 		bio = 10,
 		rad = 0
@@ -58,10 +59,10 @@
 	desc = "A hood with radiation protective properties."
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 30,
+		energy = 6,
 		bomb = 0,
 		bio = 90,
 		rad = 100
@@ -79,11 +80,11 @@
 	permeability_coefficient = 0.5
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	extra_allowed = list(/obj/item/clothing/head/radiation)
-	slowdown = 0.4
-	armor = list(
+	//slowdown = 0.4
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 30,
+		energy = 6,
 		bomb = 0,
 		bio = 90,
 		rad = 100

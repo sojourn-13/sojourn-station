@@ -16,10 +16,22 @@
 	var/body_parts = list() //A list of bodyparts this covers, in organ_tag defines
 	//Reminder: BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_TORSO,BP_GROIN,BP_HEAD
 
-	alurane
+	alraune
 		name = "Alraune Body"
-		icon_state = "alurane"
+		icon_state = "alraune"
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	mooscles
+		name = "Toned Muscles (Male)"
+		icon_state = "poomp_male"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_TORSO, BP_GROIN, BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM) // I don't know if the arms and legs are THAT affected but let's not skip biceps and leg day. - Seb
+
+	mooscles_f
+		name = "Toned Muscles (Female)"
+		icon_state = "poomp_female"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_TORSO, BP_GROIN, BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM)
 
 /*Anime Eyes*/
 
@@ -31,6 +43,26 @@
 	animeeyesouter
 		name = "Anime Eyes Outer"
 		icon_state = "animeeyesouter"
+		body_parts = list(BP_HEAD)
+
+	bugeyeleft
+		name = "Bug Eye (Left)"
+		icon_state = "bugeyeleft"
+		body_parts = list(BP_HEAD)
+
+	bugeyeright
+		name = "Bug Eye (right)"
+		icon_state = "bugeyeright"
+		body_parts = list(BP_HEAD)
+
+	oneye
+		name = "Cyclops monoeye"
+		icon_state = "cyclops"
+		body_parts = list(BP_HEAD)
+
+	bigeye
+		name = "Cyclops monoeye (big) - Use with Blank Round Face"
+		icon_state = "cyclops_big"
 		body_parts = list(BP_HEAD)
 
 /*Back Stripe*/
@@ -73,7 +105,7 @@
 		species_allowed = list(SPECIES_TAJ)
 
 	blank_face
-		name = "Blank Round Face (Use With Monster Mouth)"
+		name = "Blank Round Face"
 		icon_state = "blankface"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
@@ -114,6 +146,28 @@
 		icon_state = "chooves"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT)
+
+/*Makeup + Lipstick*/
+
+	lipstick
+		name = "Lipstick (Human/Regular)"
+		icon_state = "lipstick"
+		body_parts = list(BP_HEAD)
+
+	lipstickkriosan
+		name = "Lipstick (Kriosan/Vulpkanin)"
+		icon_state = "lipstickkriosan"
+		body_parts = list(BP_HEAD)
+
+	lipsticknaramad
+		name = "Lipstick (Naramad)"
+		icon_state = "lipsticknaramad"
+		body_parts = list(BP_HEAD)
+
+	lipstickakula
+		name = "Lipstick (Akula)"
+		icon_state = "lipstickakula"
+		body_parts = list(BP_HEAD)
 
 /*Color Bands + Patches*/
 
@@ -169,6 +223,12 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
+	ram_horns
+		name = "Ram Horns"
+		icon_state = "ram-horns"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
 	demon_horns2
 		name = "Demon Horns"
 		icon_state = "demon-horns2"
@@ -178,6 +238,18 @@
 	dragon_horns
 		name = "Dragon Horns"
 		icon_state = "dragon-horns"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	uni_horn
+		name = "Unicorn Horn"
+		icon_state = "unicorn_horn"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	elven_ears
+		name = "Elven Ears"
+		icon_state = "elfs"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
@@ -196,6 +268,11 @@
 	fangs
 		name = "Fangs"
 		icon_state = "fangs"
+		body_parts = list(BP_HEAD)
+
+	fangskriosan
+		name = "Fangs (Kriosan/Vulpkanin)"
+		icon_state = "fangskriosan"
 		body_parts = list(BP_HEAD)
 
 	eboop_panels
@@ -251,6 +328,155 @@
 		icon_state = "jagged"
 		body_parts = list(BP_HEAD)
 
+/*Handlebars*/
+	handlebars
+		name = "Handlebars"
+		icon_state = "handlebars"
+		body_parts = list(BP_HEAD)
+
+/*FBP 'chasis' markings*/
+	athena_body
+		name = "FBP-Athena chassis"
+		icon_state ="athena"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	athena_head
+		name = "FBP-Athena head"
+		icon_state ="athena"
+		body_parts = list(BP_HEAD)
+
+	ward_body
+		name = "FBP-Ward Takehashi chassis"
+		icon_state ="ward"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	ward_head
+		name = "FBP-Ward Takehashi head"
+		icon_state ="ward"
+		body_parts = list(BP_HEAD)
+
+	hesphaistos_body
+		name = "FBP-Hesphaistos chassis"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	hesphaistos_head
+		name = "FBP-Hesphaistos head"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_HEAD)
+
+	bishop_body
+		name = "FBP-Bishop chassis"
+		icon_state ="bishop"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	bishop_head
+		name = "FBP-Bishop head"
+		icon_state ="bishop"
+		body_parts = list(BP_HEAD)
+
+	xion_body
+		name = "FBP-Xion chassis"
+		icon_state ="xion"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	xion_head
+		name = "FBP-Xion head"
+		icon_state ="xion"
+		body_parts = list(BP_HEAD)
+
+	spirit_body
+		name = "FBP-Ward Spirit chassis"
+		icon_state ="spirit"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	spirit_head
+		name = "FBP-Ward Spirit head"
+		icon_state ="spirit"
+		body_parts = list(BP_HEAD)
+
+	warmonger_body
+		name = "FBP-Warmonger chassis"
+		icon_state ="warmonger"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	warmonger_head
+		name = "FBP-Warmonger head"
+		icon_state ="warmonger"
+		body_parts = list(BP_HEAD)
+
+	bishop_alt_optics
+		name = "FBP-Bishop Alt. Optics (IPC)"
+		icon_state = "bishop_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	ward_alt_optics
+		name = "FBP-Ward Takahashi Alt. Optics (IPC)"
+		icon_state = "wardtakahashi_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	xion_alt_optics
+		name = "FBP-Xion Alt. Optics (IPC)"
+		icon_state = "xion_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	hesphaistos_alt_optics
+		name = "FBP-Hesphaistos Alt. Optics (IPC)"
+		icon_state = "hephaestus_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	morpheus_alt_optics
+		name = "FBP-Morpheus Optics (IPC)"
+		icon_state = "morpheus_optics"
+		body_parts = list(BP_HEAD)
+
+	synth_eyes_l
+		name = "FBP-Synthflesh eye (left)"
+		icon_state = "synth_eye_l"
+		body_parts = list(BP_HEAD)
+
+	synth_eyes_r
+		name = "FBP-Synthflesh eye (right)"
+		icon_state = "synth_eye_r"
+		body_parts = list(BP_HEAD)
+
+	synthskin_human
+		name = "FBP-Human synthskin"
+		icon_state = "synthskinhuman"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_humanf
+		name = "FBP-Human Female synthskin"
+		icon_state = "synthskinhumanf"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_canine
+		name = "FBP-Canine synthskin"
+		icon_state = "synthskincanine"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_feline
+		name = "FBP-Feline synthskin"
+		icon_state = "synthskinfeline"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_shark
+		name = "FBP-Shark synthskin"
+		icon_state = "synthskinshark"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_lizard
+		name = "FBP-Lizard synthskin"
+		icon_state = "synthskinlizard"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+
 /*Modular Longsock*/
 
 	osocks_rarm
@@ -283,7 +509,7 @@
 		body_parts = list(BP_HEAD)
 
 	monster_mouth
-		name = "Monster Mouth"
+		name = "Monster Mouth (Use With Blank Round Face)"
 		icon_state = "monster"
 		body_parts = list(BP_HEAD)
 
@@ -432,55 +658,55 @@
 /*Taj*/
 
 	taj_belly
-		name = "Taj Belly Fur"
+		name = "Feline Belly Fur"
 		icon_state = "taj_belly"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_bellyfull
-		name = "Taj Belly Fur Wide"
+		name = "Feline Belly Fur Wide"
 		icon_state = "taj_bellyfull"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_earsout
-		name = "Taj Outer Ear"
+		name = "Feline Outer Ear"
 		icon_state = "taj_earsout"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_earsin
-		name = "Taj Inner Ear"
+		name = "Feline Inner Ear"
 		icon_state = "taj_earsin"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_nose
-		name = "Taj Nose Color"
+		name = "Feline Nose Color"
 		icon_state = "taj_nose"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_crest
-		name = "Taj Chest Fur Crest"
+		name = "Feline Chest Fur Crest"
 		icon_state = "taj_crest"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_muzzle
-		name = "Taj Muzzle Color"
+		name = "Feline Muzzle Color"
 		icon_state = "taj_muzzle"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_face
-		name = "Taj Cheeks Color"
+		name = "Feline Cheeks Color"
 		icon_state = "taj_face"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_all
-		name = "Taj All Head"
+		name = "Feline All Head"
 		icon_state = "taj_all"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
@@ -630,6 +856,12 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
+	bat_nose
+		name = "Bat Nose"
+		icon_state = "bat_nose"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
 	snoutstripe
 		name = "Vulp Snout Stripe"
 		icon_state = "snoutstripe"
@@ -770,3 +1002,912 @@
 		leftleg
 			name = "Sablekyne (Bone, L.Leg)"
 			body_parts = list (BP_L_LEG)
+
+/*Marqua*/
+
+	frogeyes
+		name = "Marqua Eyes"
+		icon_state = "frogeyes"
+		body_parts = list(BP_HEAD)
+
+/*Horse*/
+
+	horseface
+		name = "Horse Face"
+		icon_state = "horseface"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	horsemuzzle
+		name = "Horse Muzzle"
+		icon_state = "horsemuzzle"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+/*Bandages*/
+
+	bandage_head
+		name = "Bandage - Head"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+//Left Arm
+
+	bandage_l_arm
+		name = "Bandage - Left Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM)
+
+//Left Hand
+
+	bandage_l_hand
+		name = "Bandage - Left Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_HAND)
+
+//Left Leg
+
+	bandage_l_leg
+		name = "Bandage - Left Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG)
+
+//Left Foot
+
+	bandage_l_foot
+		name = "Bandage - Left Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT)
+
+//Right Arm
+
+	bandage_r_arm
+		name = "Bandage - Right Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM)
+
+//Right Hand
+
+	bandage_r_hand
+		name = "Bandage - Right Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_HAND)
+
+//Right Leg
+
+	bandage_r_leg
+		name = "Bandage - Right Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG)
+
+//Right Foot
+
+	bandage_r_foot
+		name = "Bandage - Right Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_FOOT)
+
+/*Jackal*/
+
+	jackal_bare
+		name = "Jackal Back"
+		icon_state = "jackal_bareback"
+		body_parts = list(BP_CHEST, BP_GROIN, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY
+
+	jackal_spotted
+		name = "Jackal Markings"
+		icon_state = "jackal_backpattern"
+		body_parts = list(BP_CHEST, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY
+
+/*Prosthetic Markings*/
+
+//church
+
+	church_arm_right_male
+		name = "Absolute Prosthetic Right Arm, Male"
+		icon_state = "church_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	chuch_arm_left_male
+		name = "Absolute Prosthetic Left Arm, Male"
+		icon_state = "church_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	church_leg_right_male
+		name = "Absolute Prosthetic Right Leg, Male"
+		icon_state = "church_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	church_leg_left_male
+		name = "Absolute Prosthetic Left Leg, Male"
+		icon_state = "church_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	church_arm_right_female
+		name = "Absolute Prosthetic Right Arm, Female"
+		icon_state = "church_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	chuch_arm_left_female
+		name = "Absolute Prosthetic Left Arm, Female"
+		icon_state = "church_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	church_leg_right_female
+		name = "Absolute Prosthetic Right Leg, Female"
+		icon_state = "church_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	church_leg_left_female
+		name = "Absolute Prosthetic Left Leg, Female"
+		icon_state = "church_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//junktech/ghetto
+
+	ghetto_arm_right_male
+		name = "Junktech Prosthetic Right Arm, Male"
+		icon_state = "ghetto_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	ghetto_arm_left_male
+		name = "Junktech Prosthetic Left Arm, Male"
+		icon_state = "ghetto_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	ghetto_leg_right_male
+		name = "Junktech Prosthetic Right Leg, Male"
+		icon_state = "ghetto_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	ghetto_leg_left_male
+		name = "Junktech Prosthetic Left Leg, Male"
+		icon_state = "ghetto_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	ghetto_arm_right_female
+		name = "Junktech Prosthetic Right Arm, Female"
+		icon_state = "ghetto_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	ghetto_arm_left_female
+		name = "Junktech Prosthetic Left Arm, Female"
+		icon_state = "ghetto_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	ghetto_leg_right_female
+		name = "Junktech Prosthetic Right Leg, Female"
+		icon_state = "ghetto_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	ghetto_leg_left_female
+		name = "Junktech Prosthetic Left Leg, Female"
+		icon_state = "ghetto_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Lonestar Movement Lock
+
+	lonestar_arm_right_male
+		name = "Lonestar Prosthetic Right Arm, Male"
+		icon_state = "lonestar_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	lonestar_arm_left_male
+		name = "Lonestar Prosthetic Left Arm, Male"
+		icon_state = "lonestar_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	lonestar_leg_right_male
+		name = "Lonestar Prosthetic Right Leg, Male"
+		icon_state = "lonestar_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	lonestar_leg_left_male
+		name = "Lonestar Prosthetic Left Leg, Male"
+		icon_state = "lonestar_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	lonestar_arm_right_female
+		name = "Lonestar Prosthetic Right Arm, Female"
+		icon_state = "lonestar_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	lonestar_arm_left_female
+		name = "Lonestar Prosthetic Left Arm, Female"
+		icon_state = "lonestar_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	lonestar_leg_right_female
+		name = "Lonestar Prosthetic Right Leg, Female"
+		icon_state = "lonestar_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	lonestar_leg_left_female
+		name = "Lonestar Prosthetic Left Leg, Female"
+		icon_state = "lonestar_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Bishop
+
+	bishop_arm_right_male
+		name = "Bishop Prosthetic Right Arm, Male"
+		icon_state = "bishop_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	bishop_arm_left_male
+		name = "Bishop Prosthetic Left Arm, Male"
+		icon_state = "bishop_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	bishop_leg_right_male
+		name = "Bishop Prosthetic Right Leg, Male"
+		icon_state = "bishop_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	bishop_leg_left_male
+		name = "Bishop Prosthetic Left Leg, Male"
+		icon_state = "bishop_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	bishop_arm_right_female
+		name = "Bishop Prosthetic Right Arm, Female"
+		icon_state = "bishop_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	bishop_arm_left_female
+		name = "Bishop Prosthetic Left Arm, Female"
+		icon_state = "bishop_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	bishop_leg_right_female
+		name = "Bishop Prosthetic Right Leg, Female"
+		icon_state = "bishop_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	bishop_leg_left_female
+		name = "Bishop Prosthetic Left Leg, Female"
+		icon_state = "bishop_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Blackshield
+
+	blackshield_arm_right_male
+		name = "Blackshield Prosthetic Right Arm, Male"
+		icon_state = "bs_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	blackshield_arm_left_male
+		name = "Blackshield Prosthetic Left Arm, Male"
+		icon_state = "bs_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	blackshield_leg_right_male
+		name = "Blackshield Prosthetic Right Leg, Male"
+		icon_state = "bs_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	blackshield_leg_left_male
+		name = "Blackshield Prosthetic Left Leg, Male"
+		icon_state = "bs_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	blackshield_arm_right_female
+		name = "Blackshield Prosthetic Right Arm, Female"
+		icon_state = "bs_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	blackshield_arm_left_female
+		name = "Blackshield Prosthetic Left Arm, Female"
+		icon_state = "bs_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	blackshield_leg_right_female
+		name = "Blackshield Prosthetic Right Leg, Female"
+		icon_state = "bs_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	blackshield_leg_left_female
+		name = "Blackshield Prosthetic Left Leg, Female"
+		icon_state = "bs_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Soteria
+
+	soteria_arm_right_male
+		name = "Soteria Prosthetic Right Arm, Male"
+		icon_state = "soteria_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	soteria_arm_left_male
+		name = "Soteria Prosthetic Left Arm, Male"
+		icon_state = "soteria_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	soteria_leg_right_male
+		name = "Soteria Prosthetic Right Leg, Male"
+		icon_state = "soteria_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	soteria_leg_left_male
+		name = "Soteria Prosthetic Left Leg, Male"
+		icon_state = "soteria_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	soteria_arm_right_female
+		name = "Soteria Prosthetic Right Arm, Female"
+		icon_state = "soteria_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	soteria_arm_left_female
+		name = "Soteria Prosthetic Left Arm, Female"
+		icon_state = "soteria_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	soteria_leg_right_female
+		name = "Soteria Prosthetic Right Leg, Female"
+		icon_state = "soteria_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	soteria_leg_left_female
+		name = "Soteria Prosthetic Left Leg, Female"
+		icon_state = "soteria_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//FBP blank
+
+	fbp_arm_right_male
+		name = "FBP Prosthetic Right Arm, Male"
+		icon_state = "fbp_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	fbp_arm_left_male
+		name = "FBP Prosthetic Left Arm, Male"
+		icon_state = "fbp_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	fbp_leg_right_male
+		name = "FBP Prosthetic Right Leg, Male"
+		icon_state = "fbp_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	fbp_leg_left_male
+		name = "FBP Prosthetic Left Leg, Male"
+		icon_state = "fbp_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	fbp_arm_right_female
+		name = "FBP Prosthetic Right Arm, Female"
+		icon_state = "fbp_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	fbp_arm_left_female
+		name = "FBP Prosthetic Left Arm, Female"
+		icon_state = "fbp_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	fbp_leg_right_female
+		name = "FBP Prosthetic Right Leg, Female"
+		icon_state = "fbp_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	fbp_leg_left_female
+		name = "FBP Prosthetic Left Leg, Female"
+		icon_state = "fbp_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Generic / Robotic
+
+	generic_arm_right_male
+		name = "Generic Prosthetic Right Arm, Male"
+		icon_state = "generic_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	generic_arm_left_male
+		name = "Generic Prosthetic Left Arm, Male"
+		icon_state = "generic_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	generic_leg_right_male
+		name = "Generic Prosthetic Right Leg, Male"
+		icon_state = "generic_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	generic_leg_left_male
+		name = "Generic Prosthetic Left Leg, Male"
+		icon_state = "generic_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	generic_arm_right_female
+		name = "Generic Prosthetic Right Arm, Female"
+		icon_state = "generic_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	generic_arm_left_female
+		name = "Generic Prosthetic Left Arm, Female"
+		icon_state = "generic_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	generic_leg_right_female
+		name = "Generic Prosthetic Right Leg, Female"
+		icon_state = "generic_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	generic_leg_left_female
+		name = "Generic Prosthetic Left Leg, Female"
+		icon_state = "generic_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Hephaistos Default
+
+	heph_arm_right_male
+		name = "Hephaistos Prosthetic Right Arm, Male"
+		icon_state = "heph_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	heph_arm_left_male
+		name = "Hephaistos Prosthetic Left Arm, Male"
+		icon_state = "heph_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	heph_leg_right_male
+		name = "Hephaistos Prosthetic Right Leg, Male"
+		icon_state = "heph_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	heph_leg_left_male
+		name = "Hephaistos Prosthetic Left Leg, Male"
+		icon_state = "heph_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	heph_arm_right_female
+		name = "Hephaistos Prosthetic Right Arm, Female"
+		icon_state = "heph_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	heph_arm_left_female
+		name = "Hephaistos Prosthetic Left Arm, Female"
+		icon_state = "heph_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	heph_leg_right_female
+		name = "Hephaistos Prosthetic Right Leg, Female"
+		icon_state = "heph_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	heph_leg_left_female
+		name = "Hephaistos Prosthetic Left Leg, Female"
+		icon_state = "heph_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Hephaistos Athena
+
+	athena_arm_right_male
+		name = "Hephaistos Prosthetic Right Arm, Male"
+		icon_state = "athena_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	athena_arm_left_male
+		name = "Hephaistos Prosthetic Left Arm, Male"
+		icon_state = "athena_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	athena_leg_right_male
+		name = "Hephaistos Prosthetic Right Leg, Male"
+		icon_state = "athena_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	athena_leg_left_male
+		name = "Hephaistos Prosthetic Left Leg, Male"
+		icon_state = "athena_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	athena_arm_right_female
+		name = "Hephaistos Prosthetic Right Arm, Female"
+		icon_state = "athena_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	athena_arm_left_female
+		name = "Hephaistos Prosthetic Left Arm, Female"
+		icon_state = "athena_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	athena_leg_right_female
+		name = "Hephaistos Prosthetic Right Leg, Female"
+		icon_state = "athena_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	athena_leg_left_female
+		name = "Hephaistos Prosthetic Left Leg, Female"
+		icon_state = "athena_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Serbian / Void Wolf
+
+	serbian_arm_right_male
+		name = "Void Wolf Prosthetic Right Arm, Male"
+		icon_state = "serbian_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	serbian_arm_left_male
+		name = "Void Wolf Prosthetic Left Arm, Male"
+		icon_state = "serbian_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	serbian_leg_right_male
+		name = "Void Wolf Prosthetic Right Leg, Male"
+		icon_state = "serbian_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	serbian_leg_left_male
+		name = "Void Wolf Prosthetic Left Leg, Male"
+		icon_state = "serbian_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	serbian_arm_right_female
+		name = "Void Wolf Prosthetic Right Arm, Female"
+		icon_state = "serbian_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	serbian_arm_left_female
+		name = "Void Wolf Prosthetic Left Arm, Female"
+		icon_state = "serbian_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	serbian_leg_right_female
+		name = "Void Wolf Prosthetic Right Leg, Female"
+		icon_state = "serbian_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	serbian_leg_left_female
+		name = "Void Wolf Prosthetic Left Leg, Female"
+		icon_state = "serbian_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Ward Spirit
+
+	spirit_arm_right_male
+		name = "Spirit Prosthetic Right Arm, Male"
+		icon_state = "spirit_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	spirit_arm_left_male
+		name = "Spirit Prosthetic Left Arm, Male"
+		icon_state = "spirit_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	spirit_leg_right_male
+		name = "Spirit Prosthetic Right Leg, Male"
+		icon_state = "spirit_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	spirit_leg_left_male
+		name = "Spirit Prosthetic Left Leg, Male"
+		icon_state = "spirit_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	spirit_arm_right_female
+		name = "Spirit Prosthetic Right Arm, Female"
+		icon_state = "spirit_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	spirit_arm_left_female
+		name = "Spirit Prosthetic Left Arm, Female"
+		icon_state = "spirit_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	spirit_leg_right_female
+		name = "Spirit Prosthetic Right Leg, Female"
+		icon_state = "spirit_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	spirit_leg_left_female
+		name = "Spirit Prosthetic Left Leg, Female"
+		icon_state = "spirit_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Technomancer / Guild
+
+	techno_arm_right_male
+		name = "Artificer Prosthetic Right Arm, Male"
+		icon_state = "techno_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	techno_arm_left_male
+		name = "Artificer Prosthetic Left Arm, Male"
+		icon_state = "techno_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	techno_leg_right_male
+		name = "Artificer Prosthetic Right Leg, Male"
+		icon_state = "techno_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	techno_leg_left_male
+		name = "Artificer Prosthetic Left Leg, Male"
+		icon_state = "techno_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	techno_arm_right_female
+		name = "Artificer Prosthetic Right Arm, Female"
+		icon_state = "techno_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	techno_arm_left_female
+		name = "Artificer Prosthetic Left Arm, Female"
+		icon_state = "techno_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	techno_leg_right_female
+		name = "Artificer Prosthetic Right Leg, Female"
+		icon_state = "techno_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	techno_leg_left_female
+		name = "Artificer Prosthetic Left Leg, Female"
+		icon_state = "techno_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Ward-Takahashi
+
+	ward_arm_right_male
+		name = "Ward-Takehashi Prosthetic Right Arm, Male"
+		icon_state = "ward_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	ward_arm_left_male
+		name = "Ward-Takehashi Prosthetic Left Arm, Male"
+		icon_state = "ward_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	ward_leg_right_male
+		name = "Ward-Takehashi Prosthetic Right Leg, Male"
+		icon_state = "ward_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	ward_leg_left_male
+		name = "Ward-Takehashi Prosthetic Left Leg, Male"
+		icon_state = "ward_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	ward_arm_right_female
+		name = "Ward-Takehashi Prosthetic Right Arm, Female"
+		icon_state = "ward_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	ward_arm_left_female
+		name = "Ward-Takehashi Prosthetic Left Arm, Female"
+		icon_state = "ward_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	ward_leg_right_female
+		name = "Ward-Takehashi Prosthetic Right Leg, Female"
+		icon_state = "ward_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	ward_leg_left_female
+		name = "Ward-Takehashi Prosthetic Left Leg, Female"
+		icon_state = "ward_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Xion
+
+	xion_arm_right_male
+		name = "Xion Prosthetic Right Arm, Male"
+		icon_state = "xion_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	xion_arm_left_male
+		name = "Xion Prosthetic Left Arm, Male"
+		icon_state = "xion_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	xion_leg_right_male
+		name = "Xion Prosthetic Right Leg, Male"
+		icon_state = "xion_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	xion_leg_left_male
+		name = "Xion Prosthetic Left Leg, Male"
+		icon_state = "xion_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	xion_arm_right_female
+		name = "Xion Prosthetic Right Arm, Female"
+		icon_state = "xion_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	xion_arm_left_female
+		name = "Xion Prosthetic Left Arm, Female"
+		icon_state = "xion_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	xion_leg_right_female
+		name = "Xion Prosthetic Right Leg, Female"
+		icon_state = "xion_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	xion_leg_left_female
+		name = "Xion Prosthetic Left Leg, Female"
+		icon_state = "xion_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+//Zeng-Hu
+
+	zeng_arm_right_male
+		name = "Zeng-Hu Prosthetic Right Arm, Male"
+		icon_state = "zeng_r_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	zeng_arm_left_male
+		name = "Zeng-Hu Prosthetic Left Arm, Male"
+		icon_state = "zeng_l_arm_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	zeng_leg_right_male
+		name = "Zeng-Hu Prosthetic Right Leg, Male"
+		icon_state = "zeng_r_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	zeng_leg_left_male
+		name = "Zeng-Hu Prosthetic Left Leg, Male"
+		icon_state = "zeng_l_leg_m"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
+
+	zeng_arm_right_female
+		name = "Zeng-Hu Prosthetic Right Arm, Female"
+		icon_state = "zeng_r_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM, BP_R_HAND)
+
+	zeng_arm_left_female
+		name = "Zeng-Hu Prosthetic Left Arm, Female"
+		icon_state = "zeng_l_arm_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM, BP_L_HAND)
+
+	zeng_leg_right_female
+		name = "Zeng-Hu Prosthetic Right Leg, Female"
+		icon_state = "zeng_r_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
+
+	zeng_leg_left_female
+		name = "Zeng-Hu Prosthetic Left Leg, Female"
+		icon_state = "zeng_l_leg_f"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG, BP_L_FOOT)

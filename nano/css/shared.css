@@ -189,6 +189,10 @@ abbr {
     color: #ee0000;
 }
 
+.unimportant {
+    color: #808080;
+}
+
 .idle {
     color: #272727;
 }
@@ -664,8 +668,12 @@ table.pmon td, table.pmon th {
 
 /* Table Stuffs for manifest*/
 
+tr.bottom_bordered td, .bottom_bordered{
+    border-bottom: 1px solid #aaf
+}
+
 th.command {
-    background: #3333FF;
+    background: #3333ff;
     font-weight: bold;
     color: #ffffff;
 }
@@ -765,7 +773,7 @@ th.bot {
     width: 75px;
 }
 .wideTable tr:nth-child(odd) {
-    background-color: #272727;
+	background-color: #272727;
 }
 
 /* Candystriped rows for tables */
@@ -774,6 +782,20 @@ th.bot {
 }
 .candystripe:nth-child(odd) {
 	background-color: rgba(0, 0, 0, 0.16);
+}
+.nanoMap{
+    background: url(nanomapBackground.png) repeat;
+    border: 1px solid #40628a;
+    overflow: auto;
+    position: relative;
+    padding: 10px;
+    margin: 5px 0;
+}
+#SpecialOffer{
+    border: 1px solid #40628a;
+    border-radius: 10px 0;
+    width: 99%;
+    padding: 5px;
 }
 
 #sciTechTreeContainer {
@@ -784,8 +806,30 @@ th.bot {
 	border: 1px solid #40628a;
 	background: url(nanomapBackground.png);
 }
+#tradeTreeContainer {
+	width: 100%;
+    height: 590px;
+}
 
 /* [Tooltips of description] */
+.withToolTip .ImTooltip, .withToolTipInTooltip .ImTooltipInTooltip{
+	display			: none;
+	padding			: 10px;
+	margin-left		: 8px;
+	width			: 200px;
+	z-index			: 999;
+	background      : #717177;
+	border          : 4px solid #666;
+	border-radius   : 0px 5px;
+	color           : #d1d1dd;
+	text-align      : center;
+    white-space     : pre-line;
+    overflow: wrap;
+}
+.withToolTip:hover .ImTooltip, .withToolTipInTooltip:hover .ImTooltipInTooltip{
+	display			: block;
+	position		: absolute;
+}
 .sciTechTreeIcon span {
 	visibility		: hidden;
 	opacity			: 0;
@@ -809,6 +853,10 @@ th.bot {
 img.sciTechTreeIconToolTip {
     background-image: url(science.png);
 }
+.tradeTreeIcon .ImTooltip img{
+	background-image: url(overmap.png);
+}
+
 /* [/Tooltips of description] */
 .sciTechTreeIcon {
 	position: absolute;
@@ -857,6 +905,7 @@ img.sciTechTreeIconToolTip {
 .icon-monitoring { background-position: -160px 0px; }
 .icon-rd { background-position: -192px 0px; }
 .icon-tesla { background-position: -224px 0px; }
+.icon-ameridian { background-position: -352px 0px; }
 
 .icon-spaceheater { background-position: 0px -32px; }
 .icon-pda { background-position: -32px -32px; }
@@ -866,6 +915,7 @@ img.sciTechTreeIconToolTip {
 .icon-jackhammer { background-position: -160px -32px; }
 .icon-advmatterbin { background-position: -192px -32px; }
 .icon-supermatterbin { background-position: -224px -32px; }
+.icon-cog_alt { background-position: -352px -32px; }
 
 .icon-bluespacematterbin { background-position: 0px -64px; }
 .icon-rped { background-position: -32px -64px; }
@@ -878,6 +928,7 @@ img.sciTechTreeIconToolTip {
 .icon-operationcomputer { background-position: -224px -64px; }
 .icon-autolathe { background-position: -256px -64px; }
 
+
 .icon-vialbox { background-position: 0px -96px; }
 .icon-sleeper { background-position: -32px -96px; }
 .icon-medhud { background-position: -64px -96px; }
@@ -886,19 +937,31 @@ img.sciTechTreeIconToolTip {
 .icon-rapidsyringegun { background-position: -160px -96px; }
 .icon-scalpelmanager { background-position: -192px -96px; }
 .icon-stunbaton { background-position: -224px -96px; }
+.icon-cryobag { background-position: -256px -256px; }
+.icon-omnisurgery { background-position: -288px -96px; }
+.icon-moetablet { background-position: -320px -288px; }
+
 
 .icon-seccomputer { background-position: 0px -128px; }
 .icon-flash { background-position: -32px -128px; }
 .icon-recharger { background-position: -64px -128px; }
 .icon-ammobox { background-position: -96px -128px; }
 .icon-submachinegun { background-position: -128px -128px; }
+.icon-sonic { background-position: -64px -192px; }
 .icon-tempgun { background-position: -160px -128px; }
 .icon-teslagun { background-position: -192px -128px; }
 .icon-stunrevolver { background-position: -224px -128px; }
+.icon-armor { background-position: -288px -0px; }
+.icon-void_suit { background-position: -288px -32px; }
+.icon-abnegate { background-position: -320px -256px; }
+.icon-hydrogen { background-position: -320px -320px; }
 
 .icon-supercell { background-position: 0px -160px; }
 .icon-hypercell { background-position: -32px -160px; }
+.icon-omegacell { background-position: -288px -224px; }
+.icon-atomsmall { background-position: -288px -160px; }
 .icon-bluespacecell { background-position: -64px -160px; }
+.icon-atomlarge { background-position: -288px -192px; }
 .icon-solarcontrol { background-position: -96px -160px; }
 .icon-generator { background-position: -128px -160px; }
 .icon-supergenerator { background-position: -160px -160px; }
@@ -932,8 +995,9 @@ img.sciTechTreeIconToolTip {
 .icon-rigtaser { background-position: -192px -256px; }
 .icon-rignuclearreactor { background-position: -224px -256px; }
 .icon-riglethals { background-position: -256px -96px; }
-.icon-rigstorage { background-position: -256px -224px; }
+.icon-riginjector { background-position: -256px -128px; }
 .icon-rigmining { background-position: -256px -160px; }
+.icon-rigstorage { background-position: -256px -224px; }
 
 .icon-shield { background-position: 0px -288px; }
 .icon-fusion { background-position: -32px -288px; }
@@ -944,9 +1008,147 @@ img.sciTechTreeIconToolTip {
 .icon-freedom { background-position: -160px -288px; }
 .icon-module { background-position: -192px -288px; }
 .icon-borgmodule { background-position: -224px -288px; }
+.icon-combatdefib { background-position: -288px -64px; }
+.icon-cleaner { background-position: -288px -256px; }
+.icon-artemis { background-position: -352px -64px; }
+
+.icon-plasmablock { background-position: 0px -320px; }
+.icon-booster { background-position: -32px -320px; }
+.icon-compensatedbarrel { background-position: -64px -320px; }
+.icon-cellmount { background-position: -96px -320px; }
+.icon-toxincoater { background-position: -128px -320px; }
+.icon-mindswapper { background-position: -160px -320px; }
+.icon-holdingpouch { background-position: -192px -320px; }
+
+.icon-cog { background-position: -256px -288px; }
+.icon-window { background-position: -320px -96px; }
+.icon-mastermind { background-position: -320px -64px; }
+.icon-greysoncells { background-position: -288px -128px; }
+.icon-greysonsaw { background-position: -320px -192px; }
+.icon-greysonwelder { background-position: -288px -288px; }
+.icon-greysondrill { background-position: -256px -320px; }
+.icon-greysonai { background-position: -224px -320px; }
+.icon-greysonfuel { background-position: -288px -320px; }
+.icon-greysonstockparts { background-position: -320px 0px; }
+.icon-greysonroboticleg { background-position: -320px -32px; }
+.icon-greysonthermals { background-position: -320px -128px; }
+.icon-greysonarmor { background-position: -320px -160px; }
+.icon-roomba_kit { background-position: -320px -224px; }
+
+.icon-psi_uniform { background-position: -352px -96px; }
+.icon-psi_glasses { background-position: -352px -128px; }
+.icon-psi_earring { background-position: -352px -160px; }
+.icon-psi_pouch { background-position: -352px -192px; }
+
+
 
 .sciMenuButton {
     width: 300px;
     float: left;
 }
 
+/* Trade tree */
+.tradeTreeIcon {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	background-image: url(overmap.png);
+	background-position: -0px -0px;
+	background-repeat: no-repeat;
+	zoom: 1;
+}
+
+.tradeTreeIconBox {
+	width: 32px;
+	height: 32px;
+}
+
+.tradeDiscovered {
+	background: #2f943c;
+}
+
+.tradeDiscovered:hover {
+    background: #3fB44c;
+}	
+
+.tradeNotDiscovered {
+	background: #942f3c;
+}
+
+.tradeNotDiscovered:hover {
+    background: #B43f4c;
+}
+
+.tradeSelected {
+	background: #3333cc;
+}
+
+.tradeSelected:hover {
+    background: #3333cf;
+}
+
+.icon-object { background-position: 0px 0px; }
+.icon-ship { background-position: -32px 0px; }
+.icon-planet { background-position: -64px 0px; }
+.icon-station { background-position: -96px 0px; }
+.icon-bluedwarf { background-position: -128px 0px; }
+.icon-reddwarf { background-position: -160px 0px; }
+.icon-yellowgiant { background-position: -192px 0px; }
+.icon-blackhole { background-position: -224px 0px; }
+
+.icon-illusive { background-position: 0px -32px; }
+.icon-clockwork{ background-position: -32px -32px; }
+.icon-barren { background-position: -64px -32px; }
+.icon-chlorine { background-position: -96px -32px; }
+.icon-desert { background-position: -128px -32px; }
+.icon-ruined { background-position: -160px -32px; }
+.icon-lush { background-position: -192px -32px; }
+.icon-penumbra { background-position: -224px -32px; }
+
+.icon-frozen { background-position: 0px -64px; }
+.icon-volcanic { background-position: -32px -64px; }
+.icon-metallic { background-position: -64px -64px; }
+.icon-dyson { background-position: -256px -0px; }
+.icon-os_fortress { background-position: -96px -64px; }
+.icon-ring { background-position: -128px -64px; }
+.icon-ring_active { background-position: -160px -64px; }
+.icon-asteroid0 { background-position: -192px -64px; }
+
+.icon-asteroid1 { background-position: 0px -96px; }
+.icon-asteroid2 { background-position: -32px -96px; }
+.icon-asteroid3 { background-position: -64px -96px; }
+.icon-os_ruins { background-position: -96px -96px; }
+.icon-spacehulk { background-position: -128px -96px; }
+.icon-eris { background-position: -160px -96px; }
+.icon-htu_station { background-position: -192px -96px; }
+.icon-htu_capital { background-position: -224px -96px; }
+
+.icon-htu_cruiser { background-position: 0px -128px; }
+.icon-htu_destroyer { background-position: -32px -128px; }
+.icon-htu_frigate { background-position: -64px -128px; }
+.icon-moe_station { background-position: -96px -128px; }
+.icon-moe_capital { background-position: -128px -128px; }
+.icon-moe_cruiser { background-position: -160px -128px; }
+.icon-moe_destroyer { background-position: -192px -128px; }
+.icon-moe_frigate { background-position: -224px -128px; }
+
+.icon-ihs_capital { background-position: 0px -160px; }
+.icon-ihs_cruiser { background-position: -32px -160px; }
+.icon-ihs_destroyer { background-position: -64px -160px; }
+.icon-ihs_frigate { background-position: -96px -160px; }
+.icon-nt_cruiser { background-position: -128px -160px; }
+.icon-nt_destroyer { background-position: -160px -160px; }
+.icon-nt_frigate { background-position: -192px -160px; }
+.icon-serb_cruiser { background-position: -224px -160px; }
+
+.icon-serb_destroyer { background-position: 0px -192px; }
+.icon-serb_frigate { background-position: -32px -192px; }
+.icon-oberth_cruiser { background-position: -64px -192px; }
+.icon-oberth_destroyer { background-position: -96px -192px; }
+.icon-oberth_frigate { background-position: -128px -192px; }
+.icon-greyson_frigate { background-position: -160px -192px; }
+.icon-capital { background-position: -192px -192px; }
+.icon-mothership { background-position: -224px -192px; }
+
+.icon-planetcracker { background-position: 0px -224px; }
+.icon-unkn { background-position: -32px -224px; }

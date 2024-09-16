@@ -9,10 +9,6 @@
 "c" = (
 /turf/simulated/floor/wood,
 /area/crawler)
-"d" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/wood,
-/area/crawler)
 "e" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood,
@@ -23,13 +19,11 @@
 /area/crawler)
 "g" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/wood,
 /area/crawler)
 "h" = (
-/obj/machinery/door/blast/shutters{
-	id = 2
-	},
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "i" = (
@@ -45,21 +39,15 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/crawler)
 "l" = (
-/obj/machinery/shieldwallgen{
-	anchored = 1
-	},
+/obj/random/turret/os,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "m" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "n" = (
-/mob/living/simple_animal/hostile/roomba/boomba,
+/obj/random/mob/roomba,
 /turf/simulated/floor/wood,
-/area/crawler)
-"o" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/cafe,
 /area/crawler)
 "p" = (
 /turf/simulated/floor/tiled/cafe,
@@ -72,6 +60,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/random/booze,
+/obj/random/booze,
 /turf/simulated/floor/wood,
 /area/crawler)
 "r" = (
@@ -82,6 +72,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
 /turf/simulated/floor/wood,
 /area/crawler)
 "s" = (
@@ -107,17 +99,16 @@
 "y" = (
 /obj/structure/table/onestar,
 /obj/item/device/lighting/toggleable/lamp/green,
+/obj/random/booze,
 /turf/simulated/floor/wood,
 /area/crawler)
 "z" = (
-/obj/machinery/door/blast/shutters{
-	id = 2
-	},
-/obj/structure/low_wall,
+/obj/structure/low_wall/onestar,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "A" = (
 /obj/structure/table/onestar,
+/obj/random/structures/os,
 /turf/simulated/floor/wood,
 /area/crawler)
 "B" = (
@@ -161,6 +152,35 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/crawler)
+"I" = (
+/obj/random/structures/os,
+/turf/simulated/floor/wood,
+/area/crawler)
+"N" = (
+/obj/structure/table/onestar,
+/obj/random/structures/os,
+/turf/simulated/floor/carpet/bcarpet,
+/area/crawler)
+"O" = (
+/obj/random/credits,
+/turf/simulated/floor/tiled/cafe,
+/area/crawler)
+"W" = (
+/obj/random/credits,
+/turf/simulated/floor/wood,
+/area/crawler)
+"Y" = (
+/obj/structure/table/rack,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/random/gun_fancy,
+/obj/random/gun_fancy,
+/turf/simulated/floor/wood,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -180,26 +200,26 @@ y
 A
 c
 v
-p
+O
 G
 a
 "}
 (3,1,1) = {"
 a
-d
+c
 c
 B
 c
 a
 p
-o
+p
 a
 "}
 (4,1,1) = {"
 a
 g
 s
-c
+W
 c
 a
 F
@@ -220,11 +240,11 @@ b
 (6,1,1) = {"
 b
 c
-d
+c
 j
 j
 j
-d
+c
 q
 b
 "}
@@ -234,7 +254,7 @@ c
 c
 C
 E
-k
+N
 c
 r
 b
@@ -243,11 +263,11 @@ b
 b
 e
 c
+N
 k
-k
-k
+N
 c
-q
+Y
 b
 "}
 (9,1,1) = {"
@@ -257,19 +277,19 @@ n
 D
 D
 j
-c
+W
 c
 b
 "}
 (10,1,1) = {"
 a
 c
-d
 c
 c
 c
-d
 c
+c
+I
 a
 "}
 (11,1,1) = {"

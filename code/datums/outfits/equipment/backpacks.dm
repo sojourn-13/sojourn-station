@@ -13,21 +13,97 @@
 	return
 
 /decl/backpack_outfit/backpack
-	name = "Backpack"
-	path = /obj/item/weapon/storage/backpack
+	name = "Department Backpack"
+	path = /obj/item/storage/backpack
 
 /decl/backpack_outfit/backsport
-	name = "Sport Backpack"
-	path = /obj/item/weapon/storage/backpack/sport
+	name = "Department Sport Backpack"
+	path = /obj/item/storage/backpack/sport
 
 /decl/backpack_outfit/satchel
-	name = "Satchel"
-	path = /obj/item/weapon/storage/backpack/satchel
+	name = "Department Satchel"
+	path = /obj/item/storage/backpack/satchel
 	is_default = TRUE
 
+/decl/backpack_outfit/grey_satchel
+	name = "Grey Satchel"
+	path = /obj/item/storage/backpack/satchel
+
+/decl/backpack_outfit/grey_backpack
+	name = "Grey Backpack"
+	path = /obj/item/storage/backpack
+
+/decl/backpack_outfit/grey_satchel
+	name = "Grey Sport Backpack"
+	path = /obj/item/storage/backpack/sport
+
+/decl/backpack_outfit/white_satchel
+	name = "White Satchel"
+	path = /obj/item/storage/backpack/satchel/white
+
+/decl/backpack_outfit/purple_satchel
+	name = "Purple Satchel"
+	path = /obj/item/storage/backpack/satchel/purple
+
+/decl/backpack_outfit/blue_satchel
+	name = "Blue Satchel"
+	path = /obj/item/storage/backpack/satchel/blue
+
+/decl/backpack_outfit/green_satchel
+	name = "Green Satchel"
+	path = /obj/item/storage/backpack/satchel/green
+
+/decl/backpack_outfit/orange_satchel
+	name = "Orange Satchel"
+	path = /obj/item/storage/backpack/satchel/orange
+
+/decl/backpack_outfit/white_backpack
+	name = "White Backpack"
+	path = /obj/item/storage/backpack/white
+
+/decl/backpack_outfit/purple_backpack
+	name = "Purple Backpack"
+	path = /obj/item/storage/backpack/purple
+
+/decl/backpack_outfit/blue_backpack
+	name = "Blue Backpack"
+	path = /obj/item/storage/backpack/blue
+
+/decl/backpack_outfit/green_backpack
+	name = "Green Backpack"
+	path = /obj/item/storage/backpack/green
+
+/decl/backpack_outfit/orange_backpack
+	name = "Orange Backpack"
+	path = /obj/item/storage/backpack/orange
+
+/decl/backpack_outfit/white_sportpack
+	name = "White Sport Backpack"
+	path = /obj/item/storage/backpack/sport/white
+
+/decl/backpack_outfit/purple_sportpack
+	name = "Purple Sport Backpack"
+	path = /obj/item/storage/backpack/sport/purple
+
+/decl/backpack_outfit/green_sportpack
+	name = "Green Sport Backpack"
+	path = /obj/item/storage/backpack/sport/green
+
+/decl/backpack_outfit/orange_sportpack
+	name = "Orange Sport Backpack"
+	path = /obj/item/storage/backpack/sport/orange
+
 /decl/backpack_outfit/duffelbag
-	name = "Duffelbag"
-	path = /obj/item/weapon/storage/backpack/duffelbag
+	name = "Duffel Bag"
+	path = /obj/item/storage/backpack/duffelbag
+
+/decl/backpack_outfit/lootbag
+	name = "Lootbag"
+	path = /obj/item/storage/backpack/duffelbag/loot
+
+/decl/backpack_outfit/Leather_satchel
+	name = "Leather satchel"
+	path = /obj/item/storage/backpack/satchel/leather
 
 /* Code */
 /decl/backpack_outfit
@@ -81,7 +157,7 @@
 /datum/backpack_tweak/proc/get_backpack_type(var/given_backpack_type)
 	return given_backpack_type
 
-/datum/backpack_tweak/proc/tweak_backpack(var/obj/item/weapon/storage/backpack/backpack, var/metadata)
+/datum/backpack_tweak/proc/tweak_backpack(var/obj/item/storage/backpack/backpack, var/metadata)
 	return
 
 
@@ -108,7 +184,7 @@
 		if(!istext(selection_key))
 			CRASH("Expected a valid selection key, was [log_info_line(selection_key)]")
 		var/selection_type = selections[selection_key]
-		if(!ispath(selection_type, /obj/item/weapon/storage/backpack))
+		if(!ispath(selection_type, /obj/item/storage/backpack))
 			CRASH("Expected a valid selection value, was [log_info_line(selection_type)]")
 
 	src.selections = selections

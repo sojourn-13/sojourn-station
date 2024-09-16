@@ -3,9 +3,15 @@
 	var/hair_color = "#000000"
 	var/h_style = "Bald"
 
+	death_threshold = HEALTH_THRESHOLD_DEAD
+
 	//Facial hair colour and style
 	var/facial_color = "#000000"
 	var/f_style = "Shaved"
+
+	//Hair gradiants
+	var/grad_style = "none"
+	var/grad_color = "#000000"
 
 	//Eye colour
 	var/eyes_color = "#000000"
@@ -16,6 +22,7 @@
 	var/skin_color = "#FFE0D0"
 
 	var/size_multiplier = 1 //multiplier for the mob's icon size
+	var/scale_effect = 0	//new multiplier. The one above is obsolete
 	var/damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
 
@@ -70,16 +77,21 @@
 	var/xylophone = 0 //For the spoooooooky xylophone cooldown
 
 	var/mob/remoteview_target = null
+	var/remoteviewer = FALSE //for Glassification breakdown
 	var/hand_blood_color
 
 	var/gunshot_residue
-	var/pulling_punches // Are you trying not to hurt your opponent?
+	var/holding_back // Are you trying not to hurt your opponent?
+	var/blocking = FALSE //ready to block melee attacks?
+	var/dodging = TRUE // are you dodging those shots?
 
 	mob_bump_flag = HUMAN
 	mob_push_flags = ~HEAVY
 	mob_swap_flags = ~HEAVY
 
 	var/flash_protection = 0				// Total level of flash protection
+	var/psi_blocking = 0					// Total level of psi protection
+	var/psi_blocking_additive = 0			// Added level of psi protection, form things like perks or other such things.
 	var/equipment_tint_total = 0			// Total level of visualy impairing items
 	var/equipment_darkness_modifier			// Darkvision modifier from equipped items
 	var/equipment_vision_flags				// Extra vision flags from equipped items
@@ -99,8 +111,26 @@
 
 
 	var/datum/sanity/sanity = null
+	var/rest_points = 0
 
 	var/shock_resist = 0 // Resistance to paincrit
 
+	var/punch_damage_increase = 0 // increases... punch damage... can be affected by clothing or implants.
+
 	var/language_blackout = 0
 	var/suppress_communication = 0
+
+	var/momentum_speed = 0 // The amount of run-up
+	var/momentum_dir = 0 // Direction of run-up
+	var/momentum_reduction_timer
+
+
+	var/added_movedelay = 0 //Used for humans only
+
+	//Lib edits
+	var/frost = 0
+	var/frost_emote
+	var/frost_emote_cooldown = 49
+	var/frost_warnings
+	var/frost_warnings_cooldown = 49
+	var/max_frost = 1200 //were out of 1.2k so are values are a bit inflated

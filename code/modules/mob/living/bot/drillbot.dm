@@ -1,11 +1,12 @@
 /mob/living/bot/miningonestar
 	name = "Greyson Positronic Bot"
-	desc = "it looks like a drillbot. Ancient drillbot"
+	desc = "It looks like a drillbot. An ancient drillbot"
 	health = 20
 	maxHealth = 20
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'icons/mob/build_a_drone.dmi'
+	icon_state = "drone_os"
+	faction = "greyson"
 	layer = MOB_LAYER
-	icon_state = "mining_drone"
 	var/obj/item/loot
 	var/attacktext = "drills"
 	var/environment_smash = 1
@@ -17,16 +18,17 @@
 
 /mob/living/bot/miningonestar/Destroy()
 	loot = null
+	. = ..()
 
 /mob/living/bot/miningonestar/death()
 	loot.forceMove(loc)
-	explode()
+	qdel(src)
 
 /mob/living/bot/miningonestar/resources/Initialize()
 	..()
 	update_icons()
 
-	botcard = new /obj/item/weapon/card/id(src)
+	botcard = new /obj/item/card/id(src)
 	botcard.access = botcard_access.Copy()
 
 	access_scanner = new /obj(src)
@@ -47,13 +49,13 @@
 		if(get_dist(src, H) >= 1)
 			UnarmedAttack(H)
 		else
-			walk_to(src,H,1,5,0)
+			SSmove_manager.move_to(src,H,1,5)
 
 /mob/living/bot/miningonestar/resources/agressive/with_support/Initialize()
 	..()
 	update_icons()
 
-	botcard = new /obj/item/weapon/card/id(src)
+	botcard = new /obj/item/card/id(src)
 	botcard.access = botcard_access.Copy()
 
 	access_scanner = new /obj(src)
@@ -71,7 +73,7 @@
 
 /mob/living/bot/miningonestar/resources/in_work/Life()
 	..()
-	if(health <= 0)
+	if(health < 1)
 		death()
 		return
 	weakened = 0
@@ -81,4 +83,4 @@
 		if(get_dist(src, AST) >= 1)
 			UnarmedAttack(AST)
 		else
-			walk_to(src,AST,1,5,0)
+			SSmove_manager.move_to(src,AST, 1, 5)

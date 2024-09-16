@@ -1,13 +1,13 @@
 #define DEBUG
 // Turf-only flags.
 #define NOJAUNT 1 // This is used in literally one place, turf.dm, to block ethereal jaunt.
+#define TURF_FLAG_NORUINS 2
 
 #define TRANSITIONEDGE 7 // Distance from edge to move to another z-level.
+#define RUIN_MAP_EDGE_PAD 15
 
 // Invisibility constants.
-#define INVISIBILITY_NONE                 0
 #define INVISIBILITY_LIGHTING             20
-#define INVISIBILITY_WEAK                 25
 #define INVISIBILITY_ANGEL                30
 #define INVISIBILITY_LEVEL_ONE            35
 #define INVISIBILITY_LEVEL_TWO            45
@@ -25,6 +25,26 @@
 #define SEE_INVISIBLE_MINIMUM 5
 #define INVISIBILITY_MAXIMUM 100
 
+// MultiZAS directions.
+#define NORTHUP (NORTH|UP)
+#define EASTUP (EAST|UP)
+#define SOUTHUP (SOUTH|UP)
+#define WESTUP (WEST|UP)
+#define NORTHDOWN (NORTH|DOWN)
+#define EASTDOWN (EAST|DOWN)
+#define SOUTHDOWN (SOUTH|DOWN)
+#define WESTDOWN (WEST|DOWN)
+
+// Stat modifier defines
+#define MELEE_STATTAG (1<<1)
+#define RANGED_STATTAG (1<<2)
+#define DEFENSE_STATTAG (1<<3)
+#define NEGATIVE_DEFENSE_STATTAG (1<<4)
+#define NOTHING_STATTAG (1<<5)
+
+#define PRIOR_TO_APPLY "prior"
+#define AFTER_APPLY "after"
+
 // Some arbitrary defines to be used by self-pruning global lists.
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 #define MAX_GEAR_COST 5 // Used in chargen for accessory loadout limit.
@@ -39,11 +59,12 @@
 #define SPECIALROLE_HUD 7 // AntagHUD image.
 #define  STATUS_HUD_OOC 8 // STATUS_HUD without virus DB check for someone being ill.
 #define        LIFE_HUD 9 // STATUS_HUD that only reports dead or alive
+#define   EXCELSIOR_HUD 10 // Used by excelsior to see who else is excel
 
 // These define the time taken for the shuttle to get to the space station, and the time before it leaves again.
 
 #define PODS_PREPTIME 	600	//10 mins = 600 sec - hol long pods will wait before launch
-#define PODS_TRANSIT 	120 //2 mins - how long pods takes to get to the centcomm
+#define PODS_TRANSIT 	120 //2 mins - how long pods takes to get to the centcom
 #define PODS_LOCKDOWN	90	//1.5 mins - how long pods stay opened, if evacuation will be cancelled
 
 // Shuttle moving status.
@@ -59,8 +80,8 @@
 #define WAIT_FINISH  4
 
 // Setting this much higher than 1024 could allow spammers to DOS the server easily.
-#define MAX_MESSAGE_LEN       3072
-#define MAX_PAPER_MESSAGE_LEN 4096
+#define MAX_MESSAGE_LEN       8192
+#define MAX_PAPER_MESSAGE_LEN 16384
 #define MAX_BOOK_MESSAGE_LEN  12288
 #define MAX_LNAME_LEN         64
 #define MAX_NAME_LEN          26
@@ -73,14 +94,6 @@
 #define MANIFEST_ERROR_NAME			1
 #define MANIFEST_ERROR_CONTENTS		2
 #define MANIFEST_ERROR_ITEM			4
-
-// Bureaucracy Bitfields
-#define STAMP_GENERIC	0x1		//Most stamps should apply this.
-#define STAMP_APPROVAL	0x2		//No special behaviour usually, a checkmark stamp would apply it.
-#define STAMP_DENIAL	0x4		//Applied by the denied stamp, though some others also have cross symbols.
-#define STAMP_FACTION	0x8		//For factions. A faction will have an official stamp they can use.
-#define STAMP_DOCUMENT	0xF		//For stuff like ATM printouts.
-#define STAMP_ADMIN		0x10	//Admin Fax Replies
 
 //General-purpose life speed define for plants.
 #define HYDRO_SPEED_MULTIPLIER 1
@@ -127,7 +140,11 @@
 #define MATERIAL_UNMELTABLE 0x1
 #define MATERIAL_BRITTLE    0x2
 #define MATERIAL_PADDING    0x4
+//Soj Changes
+#define CLIENT_MIN_FPS 0 //SERVER sync
 
+#define CLIENT_MAX_FPS 200 //Do not go above this or byond goes fucky
+//Soj End of SoJ
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
 #define BOMBCAP_DVSTN_RADIUS (max_explosion_range/4)
@@ -141,9 +158,9 @@
 #define NTNET_SYSTEMCONTROL 4		// Control of various systems, RCon, air alarm control, etc.
 
 // NTNet transfer speeds, used when downloading/uploading a file/program.
-#define NTNETSPEED_LOWSIGNAL 0.05	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
-#define NTNETSPEED_HIGHSIGNAL 0.15	// GQ/s transfer speed when the device is wirelessly connected and on High signal
-#define NTNETSPEED_ETHERNET 0.40		// GQ/s transfer speed when the device is using wired connection
+#define NTNETSPEED_LOWSIGNAL 0.25	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
+#define NTNETSPEED_HIGHSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on High signal
+#define NTNETSPEED_ETHERNET 1		// GQ/s transfer speed when the device is using wired connection
 #define NTNETSPEED_DOS_AMPLIFICATION 2	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
@@ -164,8 +181,10 @@
 
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
-#define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
-#define PROJECTILE_FORCE_MISS -2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_STOP					 1 //if the projectile should stop flying after calling bullet_act()
+#define PROJECTILE_CONTINUE				-1 //if the projectile should continue flying after calling bullet_act()
+#define PROJECTILE_FORCE_MISS			-2 //if the projectile should treat the attack as a miss (suppresses attack and admin logs) - only applies to mobs.
+#define PROJECTILE_FORCE_MISS_SILENCED	-2.5 //if the projectile should do the same thing as above, but not give the miss message
 
 //Camera capture modes
 #define CAPTURE_MODE_REGULAR 0 //Regular polaroid camera mode
@@ -176,39 +195,46 @@
 //HUD element hidings flags
 #define F12_FLAG 1 // 0001
 #define TOGGLE_INVENTORY_FLAG 2 //0010
+#define TOGGLE_BOTTOM_FLAG 4 //0100
 
-// Default name for announsment system
-#define ANNOUNSER_NAME "Nadezhda Colony System Announcer"
+// Default name for announcement system
+#define ANNOUNCER_NAME "Nadezhda Colony System Announcer"
 
 
-#define LIST_OF_CONSONANT list("b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "á", "â", "ã", "ä", "æ", "ç", "é", "ê", "ë", "ì", "í", "ï", "ð", "ñ", "ò", "ô", "õ", "ö", "÷", "ø", "ù")
-
+#define LIST_OF_CONSONANT list("a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "á", "â", "ã", "ä", "æ", "ç", "é", "ê", "ë", "ì", "í", "ï", "ð", "ñ", "ò", "ô", "õ", "ö", "÷", "ø", "ù")
+#define EN_ALPHABET list("a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z")
 //Multi-z
 #define FALL_GIB_DAMAGE 999
 
 //distance
 #define RANGE_ADJACENT -1
 
+
 //Core implants
 #define CORE_ACTIVATED /datum/core_module/activatable
 
 //Cruciform
 #define CRUCIFORM_COMMON /datum/core_module/rituals/cruciform/base
-#define CRUCIFORM_PRIEST /datum/core_module/rituals/cruciform/priest
+#define CRUCIFORM_CLERGY /datum/core_module/rituals/cruciform/priest //Formerly CRUCIFORM_PRIEST, still is on Eris
 #define CRUCIFORM_INQUISITOR /datum/core_module/rituals/cruciform/inquisitor
 #define CRUCIFORM_CRUSADER /datum/core_module/rituals/cruciform/crusader
 #define CRUCIFORM_UPLINK /datum/core_module/cruciform/uplink
-#define CRUCIFORM_REDLIGHT /datum/core_module/cruciform/red_light
+#define CRUCIFORM_PRIME /datum/core_module/cruciform/red_light //Formerly CRUCIFORM_REDLIGHT, still is on Eris
 #define CRUCIFORM_CLONING /datum/core_module/cruciform/cloning
+//#define CRUCIFORM_ACOLYTE /datum/core_module/rituals/cruciform/priest/acolyte
+//#define CRUCIFORM_AGROLYTE /datum/core_module/rituals/cruciform/agrolyte
+//#define CRUCIFORM_CUSTODIAN /datum/core_module/rituals/cruciform/custodian
 
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert
 #define CRUCIFORM_OBEY_ACTIVATOR /datum/core_module/activatable/cruciform/obey_activator
 
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 0
-#define MOUSE_OPACITY_ICON 1
-#define MOUSE_OPACITY_OPAQUE 2
+#define CUPGRADE_NATURES_BLESSING /obj/item/cruciform_upgrade/natures_blessing
+#define CUPGRADE_FAITHS_SHIELD /obj/item/cruciform_upgrade/faiths_shield
+#define CUPGRADE_CLEANSING_PSESENCE /obj/item/cruciform_upgrade/cleansing_presence
+#define CUPGRADE_MARTYR_GIFT /obj/item/cruciform_upgrade/martyr_gift
+#define CUPGRADE_WRATH_OF_GOD /obj/item/cruciform_upgrade/wrath_of_god
+#define CUPGRADE_SPEED_OF_THE_CHOSEN /obj/item/cruciform_upgrade/speed_of_the_chosen
 
 //Filters
 #define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
@@ -218,6 +244,7 @@
 #define EMAIL_SYSADMIN  "admin@internal-services.net"
 #define EMAIL_BROADCAST "broadcast@internal-services.net"
 #define EMAIL_PAYROLL "payroll@internal-services.net"
+#define EMAIL_NANOGATE "satellite-uplink@nanogate.populi.net"
 
 #define LEGACY_RECORD_STRUCTURE(X, Y) GLOBAL_LIST_EMPTY(##X);/datum/computer_file/data/##Y/var/list/fields[0];/datum/computer_file/data/##Y/New(){..();GLOB.##X.Add(src);}/datum/computer_file/data/##Y/Destroy(){. = ..();GLOB.##X.Remove(src);}
 
@@ -227,49 +254,18 @@
  //Preference save/load cooldown. This is in deciseconds.
 #define PREF_SAVELOAD_COOLDOWN 4 //Should be sufficiently hard to achieve without a broken mouse or autoclicker while still fulfilling its intended goal.
 
-#define JOINTEXT(X) jointext(X, null)
 
 //lazy text span classes defines.
 #define SPAN_NOTICE(text)  "<span class='notice'>[text]</span>"
 #define SPAN_WARNING(text) "<span class='warning'>[text]</span>"
 #define SPAN_DANGER(text)  "<span class='danger'>[text]</span>"
-#define span(class, text) ("<span class='[class]'>[text]</span>")
+#define SPAN_PSION(text)   "<b><font color='purple'>[text]</b></font>"
+// the thing below allow using SPANning in datum definition, the above can't.
+#define SPAN(class, X) "<span class='" + ##class + "'>" + ##X + "</span>"
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
 
-#define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
-
-#define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
-
-#define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
-
-#define sound_to(target, sound)                             target << sound
-//#define to_chat(target, message)                          target << message
-#define to_world(message)                                   to_chat(world, message)
-#define to_world_log(message)                               log_world(message)
-#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
-#define to_file(file_entry, source_var)                     file_entry << source_var
-#define from_file(file_entry, target_var)                   file_entry >> target_var
-#define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
-#define open_link(target, url)             					target << link(url)
-
-#define send_output(target, msg, control) target << output(msg, control)
-#define send_link(target, url) target << link(url)
-
-#define any2ref(x) "\ref[x]"
-
-#define MAP_IMAGE_PATH "nano/images/[maps_data.path]/"
-
-#define map_image_file_name(z_level) "[maps_data.path]-[z_level].png"
-
-// Spawns multiple objects of the same type
-#define cast_new(type, num, args...) if((num) == 1) { new type(args) } else { for(var/i in 1 to num) { new type(args) } }
-
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
-// Sojourn Additions
-
-#define MAP_FACTION "CEV Eris"
-// Sojourn Additions End
 
 
 // Maploader bounds indices
@@ -294,26 +290,124 @@
 #define get_area(A) (get_step(A, 0)?.loc)
 
 
+//Misc text define. Does 4 spaces. Used as a makeshift tabulator.
+#define FOURSPACES "&nbsp;&nbsp;&nbsp;&nbsp;"
 
-// Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
-// TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
-#define COMPILE_OVERLAYS(A)\
-	if (TRUE) {\
-		var/list/oo = A.our_overlays;\
-		var/list/po = A.priority_overlays;\
-		if(LAZYLEN(po)){\
-			if(LAZYLEN(oo)){\
-				A.overlays = oo + po;\
-			}\
-			else{\
-				A.overlays = po;\
-			}\
-		}\
-		else if(LAZYLEN(oo)){\
-			A.overlays = oo;\
-		}\
-		else{\
-			A.overlays.Cut();\
-		}\
-		A.flags &= ~OVERLAY_QUEUED;\
-	}
+
+
+//Planet habitability class
+#define HABITABILITY_IDEAL  1
+#define HABITABILITY_OKAY  2
+#define HABITABILITY_BAD  3
+
+
+//Map template flags
+#define TEMPLATE_FLAG_ALLOW_DUPLICATES 1 // Lets multiple copies of the template to be spawned
+#define TEMPLATE_FLAG_SPAWN_GUARANTEED 2 // Makes it ignore away site budget and just spawn (only for away sites)
+#define TEMPLATE_FLAG_CLEAR_CONTENTS   4 // if it should destroy objects it spawns on top of
+#define TEMPLATE_FLAG_NO_RUINS         8 // if it should forbid ruins from spawning on top of it
+#define TEMPLATE_FLAG_NO_RADS          16// Removes all radiation from the template after spawning.
+
+
+//Flags for exoplanet ruin picking
+
+#define RUIN_HABITAT 	1		//long term habitat
+#define RUIN_HUMAN 		2		//human-made structure
+#define RUIN_ALIEN 		4		//artificial structure of an unknown origin
+#define RUIN_WRECK 		8		//crashed vessel
+#define RUIN_NATURAL	16		//naturally occuring structure
+#define RUIN_WATER 		32		//ruin depending on planet having water accessible
+
+#define NEWorINITIAL(variable, newvalue) variable = newvalue ? newvalue : initial(variable)
+
+//Matricies
+#define MATRIX_GREYSCALE list(0.33, 0.33, 0.33,\
+                              0.33, 0.33, 0.33,\
+                              0.33, 0.33, 0.33)
+
+//different types of atom colorations
+#define ADMIN_COLOUR_PRIORITY 		1 //only used by rare effects like greentext coloring mobs and when admins varedit color
+#define TEMPORARY_COLOUR_PRIORITY 	2 //e.g. purple effect of the revenant on a mob, black effect when mob electrocuted
+#define WASHABLE_COLOUR_PRIORITY 	3 //color splashed onto an atom (e.g. paint on turf)
+#define FIXED_COLOUR_PRIORITY 		4 //color inherent to the atom (e.g. blob color)
+#define COLOUR_PRIORITY_AMOUNT      4 //how many priority levels there are.
+
+//Sounds list
+#define WALLHIT_SOUNDS list('sound/effects/wallhit.ogg', 'sound/effects/wallhit2.ogg', 'sound/effects/wallhit3.ogg')
+
+//Prevent the master controller from starting automatically
+#define NO_INIT_PARAMETER "no-init"
+//Force the log directory to be something specific in the data/logs folder
+#define OVERRIDE_LOG_DIRECTORY_PARAMETER "log-directory"
+
+/// Required minimum values to see reagents in a beaker
+#define HUMAN_REQ_COG_FOR_REG 35
+#define HUMAN_REQ_BIO_FOR_REG 50
+
+/// Misc atmos equations
+
+#define FIRESTACKS_TEMP_CONV(firestacks) min(5200,max(2.25*round(FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE*(fire_stacks/FIRE_MAX_FIRESUIT_STACKS)**2), 700))
+
+//SoJ additions below
+#define MAP_FACTION "CEV Eris"
+//cruciform paths
+#define CRUCIFORM_TESS /datum/core_module/rituals/cruciform/tessellate
+#define CRUCIFORM_LEMN /datum/core_module/rituals/cruciform/lemniscate
+#define CRUCIFORM_MONO /datum/core_module/rituals/cruciform/monomial
+#define CRUCIFORM_DIVI /datum/core_module/rituals/cruciform/divisor
+#define CRUCIFORM_FACT /datum/core_module/rituals/cruciform/factorial
+#define CRUCIFORM_OMNI /datum/core_module/rituals/cruciform/omni
+
+// Bureaucracy Bitfields
+#define STAMP_GENERIC	0x1		//Most stamps should apply this.
+#define STAMP_APPROVAL	0x2		//No special behaviour usually, a checkmark stamp would apply it.
+#define STAMP_DENIAL	0x4		//Applied by the denied stamp, though some others also have cross symbols.
+#define STAMP_FACTION	0x8		//For factions. A faction will have an official stamp they can use.
+#define STAMP_DOCUMENT	0xF		//For stuff like ATM printouts.
+#define STAMP_ADMIN		0x10	//Admin Fax Replies
+
+//additional Aphla defines
+#define INVISIBILITY_NONE                 0
+#define INVISIBILITY_WEAK                 25
+
+//Lying animation
+#define ANIM_LYING_TIME 2
+
+#define LIST_COLOR_RENAME 				\
+	list(								\
+		"rebeccapurple" = "dark purple",\
+		"darkslategrey" = "dark grey",	\
+		"darkolivegreen"= "dark green",	\
+		"darkslateblue" = "dark blue",	\
+		"darkkhaki" 	= "khaki",		\
+		"darkseagreen" 	= "light green",\
+		"midnightblue" 	= "blue",		\
+		"lightgrey" 	= "light grey",	\
+		"darkgrey" 		= "dark grey",	\
+		"darkmagenta"	= "dark magenta",\
+		"steelblue" 	= "blue",		\
+		"goldenrod"	 	= "gold"		\
+	)
+
+/**
+ * stuff like `copytext(input, length(input))` will trim the last character of the input,
+ * because DM does it so it copies until the char BEFORE the `end` arg, so we need to bump `end` by 1 in these cases.
+ */
+#define PREVENT_CHARACTER_TRIM_LOSS(integer) (integer + 1)
+
+/// BYOND's string procs don't support being used on datum references (as in it doesn't look for a name for stringification)
+/// We just use this macro to ensure that we will only pass strings to this BYOND-level function without developers needing to really worry about it.
+#define LOWER_TEXT(thing) lowertext(UNLINT("[thing]"))
+
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * This is the more performant version, it is unfortunately necessary.
+**/
+#define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
+
+// Font metrics bitfield
+/// Include leading A width and trailing C width in GetWidth() or in DrawText()
+#define INCLUDE_AC (1<<0)

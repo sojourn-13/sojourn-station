@@ -41,7 +41,7 @@
 		src.Weaken(rand(2,4))
 		failed = 1
 
-	playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+	mob_playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 	if(failed)
 		src.Weaken(rand(2,4))
 
@@ -85,7 +85,7 @@
 
 	src.visible_message(SPAN_DANGER("\The [src] leaps at [T]!"))
 	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
-	playsound(src.loc, 'sound/voice/shriek1.ogg', 50, 1)
+	mob_playsound(src.loc, 'sound/voice/shriek1.ogg', 50, 1)
 
 	sleep(5)
 
@@ -112,7 +112,7 @@
 
 	src.visible_message(SPAN_WARNING("<b>\The [src]</b> seizes [T] aggressively!"))
 
-	var/obj/item/weapon/grab/G = new(src,T)
+	var/obj/item/grab/G = new(src,T)
 	if(use_hand == "left")
 		l_hand = G
 	else
@@ -134,7 +134,7 @@
 		to_chat(src, "\red You cannot do that in your current state.")
 		return
 
-	var/obj/item/weapon/grab/G = locate() in src
+	var/obj/item/grab/G = locate() in src
 	if(!G || !istype(G))
 		to_chat(src, "\red You are not grabbing anyone.")
 		return
@@ -196,19 +196,6 @@
 		to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
 		H.drip_blood(1)
 
-
-/mob/living/carbon/human/proc/regurgitate()
-	set name = "Regurgitate"
-	set desc = "Empties the contents of your stomach"
-	set category = "Abilities"
-
-	if(stomach_contents.len)
-		for(var/mob/M in src)
-			if(M in stomach_contents)
-				stomach_contents.Remove(M)
-				M.loc = loc
-		src.visible_message("\red <B>[src] hurls out the contents of their stomach!</B>")
-	return
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
 	set name = "Psychic Whisper"

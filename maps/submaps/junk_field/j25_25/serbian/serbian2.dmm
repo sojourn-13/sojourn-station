@@ -1,0 +1,1293 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/turf/simulated/floor,
+/area/template_noop)
+"ab" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ac" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ad" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ae" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"af" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"ag" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"ah" = (
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ai" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"aj" = (
+/obj/structure/urinal{
+	pixel_y = 32
+	},
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"ak" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"al" = (
+/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"am" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ao" = (
+/obj/structure/closet,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ay" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aP" = (
+/obj/structure/table/rack,
+/obj/item/storage/deferred/meds,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aU" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor,
+/area/template_noop)
+"bb" = (
+/obj/structure/table/rack,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bm" = (
+/obj/machinery/door/airlock/maintenance_interior{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"bs" = (
+/obj/machinery/light,
+/turf/simulated/floor,
+/area/template_noop)
+"dO" = (
+/obj/structure/bed/chair/comfy/green,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ek" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"el" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor,
+/area/template_noop)
+"fj" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"fy" = (
+/obj/structure/closet/crate/secure/loot,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"gt" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"hC" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/template_noop,
+/area/template_noop)
+"ib" = (
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"io" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor,
+/area/template_noop)
+"iz" = (
+/obj/structure/table/standard,
+/obj/item/deck/cards,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ku" = (
+/obj/structure/table/woodentable,
+/obj/item/folder/cyan,
+/obj/item/stamp/denied,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"kG" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 5
+	},
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"kQ" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"me" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"nC" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"nI" = (
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"nR" = (
+/obj/structure/table/woodentable,
+/obj/item/modular_computer/console{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"oi" = (
+/obj/structure/table/standard,
+/obj/item/packageWrap,
+/obj/item/reagent_containers/food/condiment/enzyme{
+	layer = 5
+	},
+/obj/item/reagent_containers/food/condiment/enzyme{
+	layer = 5
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"oS" = (
+/obj/structure/table/rack,
+/obj/item/storage/deferred/crate/tools,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"pa" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"qk" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"qY" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"uv" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 5;
+	pixel_y = 17
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"uP" = (
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"uQ" = (
+/obj/item/remains/human,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/head/ushanka,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"wg" = (
+/obj/item/modular_computer/console{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"xf" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"xp" = (
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"xN" = (
+/obj/structure/closet/onestar/tier2/normal,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"xO" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/clothing/head/ushanka,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"zc" = (
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"zC" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"zF" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"zN" = (
+/obj/structure/girder,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"zO" = (
+/obj/machinery/light_construct{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Ax" = (
+/obj/item/modular_computer/console{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Az" = (
+/obj/item/stool,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"AM" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/item/remains/human,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/head/ushanka,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Bb" = (
+/obj/random/junkfood/rotten,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"BD" = (
+/obj/machinery/light,
+/obj/random/junk,
+/turf/simulated/floor,
+/area/template_noop)
+"Dy" = (
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Ed" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Ej" = (
+/obj/structure/table/standard,
+/obj/item/folder/cyan,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"EA" = (
+/obj/structure/table/rack,
+/obj/random/structures,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"EQ" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"Fb" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Gt" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/snacks/mint,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 3
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"GD" = (
+/obj/structure/lattice,
+/obj/random/mob/voidwolf,
+/turf/template_noop,
+/area/template_noop)
+"Hc" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Hd" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"Js" = (
+/obj/structure/closet,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/clothing/mask/balaclava/tactical,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"JB" = (
+/obj/random/mob/voidwolf,
+/turf/template_noop,
+/area/template_noop)
+"Kg" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"La" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Lz" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"LE" = (
+/obj/structure/closet,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Mf" = (
+/obj/structure/closet/firecloset,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ME" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Ns" = (
+/obj/structure/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/structure/mirror{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"NH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"NR" = (
+/turf/simulated/floor,
+/area/template_noop)
+"Oz" = (
+/obj/structure/table/woodentable,
+/obj/machinery/recharger,
+/obj/structure/noticeboard{
+	pixel_x = 30
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Pb" = (
+/obj/structure/lattice,
+/obj/machinery/light_construct{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"Pc" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/flask/barflask,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"PT" = (
+/obj/structure/closet,
+/obj/item/tool/pickaxe/diamonddrill,
+/obj/item/storage/backpack/military,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Qn" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"Qo" = (
+/obj/random/junk,
+/turf/simulated/floor,
+/area/template_noop)
+"QE" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Rz" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"SV" = (
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/northleft,
+/obj/item/soap/deluxe,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/template_noop)
+"Th" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"Uj" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"Ur" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/storage/pouch/large_generic,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Uy" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"UT" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"Vg" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/template_noop,
+/area/template_noop)
+"VG" = (
+/obj/structure/lattice,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"VK" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain/open/shower,
+/obj/structure/window/basic{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/template_noop)
+"Xa" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/junk,
+/turf/simulated/floor,
+/area/template_noop)
+"Xg" = (
+/obj/structure/lattice,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/template_noop,
+/area/template_noop)
+"XL" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor,
+/area/template_noop)
+"XS" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Yy" = (
+/obj/item/storage/deferred/crate/alcohol,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"YE" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"YV" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Ze" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"Zt" = (
+/obj/random/lowkeyrandom,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Zy" = (
+/turf/template_noop,
+/area/template_noop)
+"ZI" = (
+/obj/random/material/low_chance,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ZJ" = (
+/obj/structure/lattice,
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+
+(1,1,1) = {"
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+qY
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+zN
+UT
+UT
+qY
+Zy
+"}
+(2,1,1) = {"
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Vg
+Zy
+Zy
+Ze
+Ed
+Uy
+Zy
+Zy
+"}
+(3,1,1) = {"
+Zy
+Zy
+Zy
+hC
+YV
+ah
+ME
+Ze
+Ze
+Ze
+ME
+Ze
+Ze
+Lz
+EQ
+JB
+Zy
+EQ
+UT
+zN
+Ze
+XL
+zN
+UT
+Zy
+"}
+(4,1,1) = {"
+Zy
+Zy
+Zy
+Vg
+Zy
+VG
+Ed
+aU
+NR
+Th
+ag
+NR
+NR
+Ed
+ah
+Pb
+EQ
+Uy
+ah
+Kg
+Qo
+aa
+Ze
+Zy
+Zy
+"}
+(5,1,1) = {"
+Zy
+Zy
+YV
+Zy
+qY
+Zy
+ah
+Ze
+Ze
+Ze
+Ze
+Ze
+XL
+Ze
+Ze
+Ze
+Ze
+Ze
+Ze
+Ze
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(6,1,1) = {"
+UT
+Lz
+Ze
+ah
+VG
+Zy
+ZI
+La
+ad
+nC
+Ej
+Ze
+NR
+Ze
+Js
+PT
+Ur
+bb
+xN
+YE
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(7,1,1) = {"
+Zy
+Uy
+Ze
+io
+ah
+YV
+UT
+ZJ
+ah
+ae
+Ax
+Ze
+Uj
+Ze
+uP
+uP
+af
+uP
+uP
+ao
+Ze
+NR
+ME
+Zy
+Zy
+"}
+(8,1,1) = {"
+Zy
+Zy
+Ze
+aU
+Ze
+ac
+zF
+ZI
+UT
+La
+Hc
+me
+NR
+bm
+uP
+uP
+uP
+uQ
+uP
+oS
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(9,1,1) = {"
+Vg
+EQ
+Ze
+NR
+Ze
+QE
+ku
+ah
+qY
+VG
+Ax
+Ze
+NR
+Ze
+Mf
+zc
+EA
+al
+uP
+aP
+Ze
+Qo
+Ze
+Zy
+Zy
+"}
+(10,1,1) = {"
+UT
+Lz
+Ze
+bs
+Ze
+dO
+nR
+Hc
+VG
+Zy
+ah
+Lz
+XL
+Ze
+Ze
+Ze
+fy
+uP
+af
+xN
+Ze
+Hd
+Ze
+Zy
+Zy
+"}
+(11,1,1) = {"
+EQ
+ah
+Ze
+NR
+Ze
+Oz
+Pc
+ab
+wg
+Uy
+Ed
+ah
+NR
+aa
+pa
+Ze
+fy
+uP
+ak
+Dy
+Ze
+NR
+ME
+Zy
+Zy
+"}
+(12,1,1) = {"
+Lz
+Ze
+Ze
+NR
+Ze
+Ze
+Ze
+XL
+Ze
+Lz
+ah
+Lz
+ME
+Ze
+NR
+Ze
+Ze
+bm
+Ze
+Ze
+Ze
+NR
+Ze
+zN
+EQ
+"}
+(13,1,1) = {"
+UT
+ay
+Ze
+NR
+XL
+NR
+el
+kQ
+NR
+XL
+NR
+ME
+hC
+ME
+NR
+XL
+NR
+NR
+ek
+NR
+XL
+ag
+XL
+ac
+UT
+"}
+(14,1,1) = {"
+Zy
+UT
+Ze
+NR
+Ze
+Ze
+Ze
+XL
+Ze
+Ze
+kQ
+Ze
+ME
+Ze
+NR
+Ze
+Lz
+XL
+Ze
+Ze
+Ze
+NR
+Ze
+Lz
+Zy
+"}
+(15,1,1) = {"
+Zy
+Zy
+Ze
+NR
+Ze
+Fb
+XS
+XS
+zc
+Ze
+Th
+NR
+NR
+NR
+Qo
+Lz
+Zy
+Ed
+xf
+ib
+Ze
+NR
+ME
+UT
+qY
+"}
+(16,1,1) = {"
+Zy
+Zy
+Ze
+bs
+Ze
+gt
+ah
+ac
+uv
+Ze
+Ze
+Ze
+XL
+Ze
+Ze
+Lz
+Rz
+Zy
+Bb
+Gt
+Ze
+Xa
+Ze
+Zy
+Zy
+"}
+(17,1,1) = {"
+Zy
+Zy
+Ze
+NR
+Ze
+fj
+qk
+Zy
+xp
+iz
+Az
+Ze
+ag
+Ze
+Ns
+Ze
+Lz
+Uy
+am
+oi
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(18,1,1) = {"
+qY
+UT
+Ze
+Qo
+Ze
+YE
+ah
+Zy
+ah
+uP
+XS
+XL
+NR
+XL
+ai
+Qn
+Ze
+Ze
+Yy
+kG
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(19,1,1) = {"
+Zy
+Lz
+Ze
+NR
+Ze
+XS
+ah
+zF
+uP
+af
+XS
+Ze
+BD
+Ze
+NH
+SV
+VK
+Ze
+Ze
+Ze
+Ze
+NR
+ME
+Zy
+Zy
+"}
+(20,1,1) = {"
+Zy
+Ed
+Ze
+aa
+Ze
+LE
+LE
+Dy
+xO
+zC
+gt
+Ze
+NR
+Ze
+aj
+nI
+nI
+bm
+Zt
+AM
+Ze
+NR
+Ze
+Zy
+Zy
+"}
+(21,1,1) = {"
+Zy
+Xg
+Ze
+NR
+Ze
+Lz
+Lz
+Lz
+Ze
+Ze
+Ze
+Ze
+XL
+Ze
+Ze
+Ze
+Ze
+Ze
+Ze
+Ze
+Lz
+ay
+Ze
+Zy
+Zy
+"}
+(22,1,1) = {"
+Zy
+Ed
+XL
+NR
+ah
+La
+EQ
+UT
+Uy
+zO
+NR
+NR
+NR
+aa
+NR
+pa
+Qo
+NR
+NR
+zO
+Ed
+ah
+Ze
+UT
+Zy
+"}
+(23,1,1) = {"
+Zy
+Lz
+Ze
+Ze
+Ze
+Lz
+UT
+qY
+GD
+Lz
+ME
+Ze
+Ze
+Ze
+ME
+Ze
+Ze
+Ze
+ME
+Lz
+EQ
+ac
+Ze
+Ze
+UT
+"}
+(24,1,1) = {"
+qY
+Zy
+Zy
+Zy
+Zy
+qY
+Vg
+qY
+Zy
+qY
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+qY
+Zy
+EQ
+ah
+Ed
+UT
+Zy
+"}
+(25,1,1) = {"
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+Zy
+"}

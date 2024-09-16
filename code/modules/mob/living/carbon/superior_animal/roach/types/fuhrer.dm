@@ -5,29 +5,39 @@
 	icon_state = "fuhrer"
 
 	turns_per_move = 4
-	maxHealth = 200
-	health = 200
+	maxHealth = 125 * ROACH_HEALTH_MOD
+	health = 125 * ROACH_HEALTH_MOD
 
+	knockdown_odds = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	move_to_delay = 8
 	mob_size = MOB_MEDIUM
+	get_stat_modifier = TRUE
 	var/distress_level = 0
 	var/distress_calls = 1 //Each fuhrer can only call for help once in its life
 	var/retreat_calls = 1 //Can call for retreat once too
 	extra_burrow_chance = 100
 	blattedin_revives_left = 0 //He only lives once, cuz he's huge
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+	flash_resistances = 5 //half stuns by flash, so we can still get up and be in the fight!
+
+	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
+	armor_divisor = 1.25
+
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
 	meat_amount = 6
 
 	sanity_damage = 1
 
+	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 
 
-/mob/living/carbon/superior_animal/roach/fuhrer/bullet_act()
+
+/mob/living/carbon/superior_animal/roach/fuhrer/bullet_act(var/obj/item/projectile/P)
 	.=..()
-	distress_call()
+	if (!(P.testing))
+		distress_call()
 
 /mob/living/carbon/superior_animal/roach/fuhrer/attackby()
 	.=..()
@@ -42,6 +52,12 @@ flood into this room and surrounding ones.
 Each leader can only call reinforcements once in its life. But it can also sound an evacuation once. If it has no
 reinforcements left it will attempt to evacuate*/
 /mob/living/carbon/superior_animal/roach/fuhrer/proc/distress_call()
+	if(stat != CONSCIOUS) // if the roach is conscious
+		return
+
+	if(stat != AI_inactive)
+		return
+
 	if (!distress_calls && !retreat_calls)
 		return
 

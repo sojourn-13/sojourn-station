@@ -10,7 +10,7 @@
 	var/silk_id = ""
 
 	var/console_id = ""
-	var/obj/machinery/computer/bssilk_control/connected_console = null
+	var/obj/machinery/computer/bssilk_control/connected_console
 
 	//animations
 	var/animation_icon = 'icons/effects/bs_snare.dmi'
@@ -34,7 +34,7 @@
 				return console_id
 
 /obj/machinery/bssilk_hub/proc/sync_with_parts()
-	for(var/obj/machinery/computer/bssilk_control/CON in SSmachines.machinery)
+	for(var/obj/machinery/computer/bssilk_control/CON in GLOB.computer_list)
 		if(!CON.connected_hub && CON.hub_id && CON.hub_id == console_id)
 			connected_console = CON
 			CON.connected_hub = src
@@ -68,17 +68,20 @@
 	return mobs
 
 /obj/machinery/bssilk_hub/proc/teleport_back(mob/target)
-	to_chat(target, SPAN_WARNING("You feel like something pull you in bluespace."))
+	to_chat(target, SPAN_WARNING("You feel like something is pulling you into bluespace."))
 	//Creat animation and move  mob into it and mob will not walking. Camera will follow animation.
 	var/obj/effect/temporary/A = new(get_turf(target), 24.5, animation_icon, back_animation)
 	target.dir = 2
 	target.forceMove(A)
+	bluespace_entropy(3, get_turf(A))
 	sleep(23)
 	target.forceMove(src)
+	bluespace_entropy(3, get_turf(src))
 	target.dir = 2
 	new /obj/effect/temporary(get_turf(src), 26.5, animation_icon, onhub_animation)
 	sleep(24)
 	target.forceMove(loc)
+	bluespace_entropy(3, get_turf(loc))
 
 /obj/machinery/bssilk_hub/Destroy()
 	. = ..()
@@ -89,13 +92,13 @@
 	name = "bluespace snare control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
-	circuit = /obj/item/weapon/circuitboard/bssilk_cons
+	circuit = /obj/item/circuitboard/bssilk_cons
 
 	icon_keyboard = "rd_key"
 	icon_screen = "telesci"
 
 	var/hub_id = ""
-	var/obj/machinery/bssilk_hub/connected_hub = null
+	var/obj/machinery/bssilk_hub/connected_hub
 
 /obj/machinery/computer/bssilk_control/Destroy()
 	. = ..()
@@ -104,10 +107,10 @@
 
 /obj/machinery/computer/bssilk_control/attack_hand(mob/user)
 	if(connected_hub) connected_hub.sync_with_parts()
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/bssilk_control/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
-	var/list/data = ui_data()
+/obj/machinery/computer/bssilk_control/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+	var/list/data = nano_ui_data()
 
 	if(!connected_hub)
 		data["fail_connect"] = TRUE
@@ -122,7 +125,7 @@
 		ui.open()
 
 /obj/machinery/computer/bssilk_control/proc/find_hub()
-	for(var/obj/machinery/bssilk_hub/HUB in SSmachines.machinery)
+	for(var/obj/machinery/bssilk_hub/HUB in GLOB.machines)
 		if(!HUB.connected_console && HUB.console_id && HUB.console_id == hub_id)
 			connected_hub = HUB
 			HUB.connected_console = src
@@ -144,6 +147,6 @@
 		hub_id = new_id
 		if(connected_hub) connected_hub.sync_with_parts()
 		connected_hub = null
-		find_hub()
+		src.find_hub()
 
 	return TOPIC_REFRESH

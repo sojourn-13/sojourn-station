@@ -1,7 +1,7 @@
 // Species flags.
 #define NO_BLOOD          0x1    // Vessel var is not filled with blood, cannot bleed out.
 #define NO_BREATHE        0x2    // Cannot suffocate or take oxygen loss.
-#define NO_SCAN           0x4    // Cannot be scanned in a DNA machine/genome-stolen.
+#define NO_SCAN           0x4    // Cannot be scanned in a DNA machine/genome-stolen. Doesn't work with new genetics.
 #define NO_PAIN           0x8    // Cannot suffer halloss/recieves deceptive health indicator.
 #define NO_SLIP           0x10   // Cannot fall over.
 #define NO_POISON         0x20   // Cannot not suffer toxloss.
@@ -24,23 +24,37 @@
 
 // Languages.
 #define LANGUAGE_COMMON		"English Common"
-#define LANGUAGE_CYRILLIC	"Techno-Russian"
-#define LANGUAGE_SERBIAN	"Serbian"
+#define LANGUAGE_CYRILLIC	"Interslavic"
+#define LANGUAGE_ILLYRIAN	"Illyrian"
 #define LANGUAGE_JIVE		"Jive"
-#define LANGUAGE_GERMAN		"German"
+#define LANGUAGE_EURO		"Eurolang"
+#define LANGUAGE_JANA	    "Jana"
+#define LANGUAGE_LATIN 		"Latin"
+#define LANGUAGE_ROMANA		"Lingua Romana"
+#define LANGUAGE_YASSARI	"Yassari"
 
+//Alein / Species specific langauges.
 #define LANGUAGE_ROBOT "Robot Talk"
-#define LANGUAGE_DRONE "Drone Talk"
-#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_OPIFEXEE "Opifexee"
+#define LANGUAGE_CHTMANT "Chthive"
+#define LANGUAGE_KRIOSAN "Kriosan"
+#define LANGUAGE_AKULA "Akula"
+#define LANGUAGE_MARQUA "Marqua"
+#define LANGUAGE_PLANT "Native Plant"
+#define LANGUAGE_SYNTHETIC "Technical Cant"
+#define LANGUAGE_MERP "Narad Pidgin"
+#define LANGUAGE_BLORP "Aulvae Sonet"
+#define LANGUAGE_WEH "Cindarite Voc"
 
+// Special / Antag langauges.
+#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_DRONE "Drone Talk"
 #define LANGUAGE_XENOMORPH "Xenomorph"
 #define LANGUAGE_HIVEMIND "Hivemind"
-#define LANGUAGE_CHANGELING "Changeling"
 #define LANGUAGE_CORTICAL "Cortical Link"
 #define LANGUAGE_CULT "Cult"
-#define LANGUAGE_OCCULT "Occult"
-#define LANGUAGE_OPIFEXEE "Opifexee"
-#define LANGUAGE_CHTMANT "Cht'Hive"
+#define LANGUAGE_OCCULT "Occult Projection"
+#define LANGUAGE_BLITZ "Blitzshell Communique"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
@@ -52,3 +66,4 @@
 #define INNATE       64  // All mobs can be assumed to speak and understand this language. (audible emotes)
 #define NO_TALK_MSG  128 // Do not show the "\The [speaker] talks into \the [radio]" message
 #define NO_STUTTER   256 // No stuttering, slurring, or other speech problems
+#define NO_TRANSLATE 512 // Prevents translation with omni translators

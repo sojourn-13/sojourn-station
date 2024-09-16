@@ -15,6 +15,7 @@
 	toggleable = 1
 	disruptable = 1
 	disruptive = 0
+	price_tag = 5000
 
 	use_power_cost = 50
 	active_power_cost = 10
@@ -37,7 +38,7 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	if(FALSE) //TODO: INSERT NINJA FULL SKILL CHECK HERE
+	/* if(FALSE) //TODO: INSERT NINJA FULL SKILL CHECK HERE
 		to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
 		H.invisibility = INVISIBILITY_LEVEL_TWO
 		H.alpha = 64
@@ -45,10 +46,10 @@
 		to_chat(H, "<font color='blue'<b>You are now cloaked to most observation.</b></font>")
 		H.invisibility = INVISIBILITY_WEAK
 		H.alpha = 8
-	else
-		to_chat(H, "<font color='blue'<b>You are now blending into your surroundings.</b></font>")
-		H.invisibility = INVISIBILITY_WEAK
-		H.alpha = 32
+	else */
+	to_chat(H, "<font color='blue'<b>You are now blending into your surroundings.</b></font>") //if this is ever fixed, turn this invisibility to weak, indent
+	H.invisibility = INVISIBILITY_LEVEL_TWO
+	H.alpha = 32
 
 	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
@@ -83,6 +84,8 @@
 	usable = 1
 	selectable = 1
 
+	price_tag = 3500
+
 	var/realign_time = 0 //Used for skill-less teleports.
 
 	engage_string = "Emergency Leap"
@@ -108,7 +111,7 @@
 	playsound(T, "sparks", 50, 1)
 	anim(T,M,'icons/mob/mob.dmi',,"phaseout",,M.dir)
 
-/obj/item/rig_module/teleporter/engage(var/atom/target, var/notify_ai)
+/obj/item/rig_module/teleporter/engage(atom/target, notify_ai)
 
 	if(!..()) return 0
 
@@ -122,15 +125,15 @@
 	var/misalignment = round((realign_time - world.time)/90)
 	if(target)
 		T = get_turf(target)
-		if(!FALSE) //TODO: INSERT NINJA FULL SKILL CHECK HERE
-			if(misalignment > 0)
-				var/x_misalignment = rand(misalignment*2 + 1) - misalignment
-				var/y_misalignment = rand(misalignment*2 + 1) - misalignment
-				if(x_misalignment || y_misalignment)
-					T = locate(T.x + x_misalignment, T.y + y_misalignment, T.z)
-					to_chat(H, SPAN_WARNING("Your teleporter malfunctions!"))
-					if(!T)
-						T = get_turf(target)
+		//if(!FALSE) //TODO: INSERT NINJA FULL SKILL CHECK HERE
+		if(misalignment > 0) //if this is ever fixed, indent this block
+			var/x_misalignment = rand(misalignment*2 + 1) - misalignment
+			var/y_misalignment = rand(misalignment*2 + 1) - misalignment
+			if(x_misalignment || y_misalignment)
+				T = locate(T.x + x_misalignment, T.y + y_misalignment, T.z)
+				to_chat(H, SPAN_WARNING("Your teleporter malfunctions!"))
+				if(!T)
+					T = get_turf(target)
 		realign_time += 30
 	else
 		T = get_teleport_loc(get_turf(H), H, rand(5, 9+round(misalignment/2)))
@@ -156,10 +159,10 @@
 	H.forceMove(T)
 	phase_in(H,get_turf(H))
 
-	for(var/obj/item/weapon/grab/G in H.contents)
+	for(var/obj/item/grab/G in H.contents)
 		if(G.affecting)
 			phase_out(G.affecting,get_turf(G.affecting))
-			G.affecting.forceMove(locate(T.x+rand(-1,1),T.y+rand(-1,1),T.z))
+			go_to_bluespace(get_turf(H), 3, TRUE, H, T)
 			phase_in(G.affecting,get_turf(G.affecting))
 
 	realign_time = max(world.time, realign_time) + 30
@@ -176,7 +179,7 @@
 
 	engage_string = "Fabricate Net"
 
-	fabrication_type = /obj/item/weapon/energy_net
+	fabrication_type = /obj/item/energy_net
 	use_power_cost = 70
 
 /obj/item/rig_module/fabricator/energy_net/engage(atom/target)
@@ -200,7 +203,7 @@
 
 	interface_name = "dead man's switch"
 	interface_desc = "An integrated self-destruct module. When the wearer dies, so does the surrounding area. Do not press this button."
-	var/list/explosion_values = list(1,2,4,5)
+	var/list/explosion_values = list(2,2,4,5)
 
 /obj/item/rig_module/self_destruct/small
 	explosion_values = list(0,0,3,4)

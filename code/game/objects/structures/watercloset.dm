@@ -52,7 +52,7 @@
 /obj/structure/toilet/attackby(obj/item/I as obj, mob/living/user as mob)
 	if(QUALITY_PRYING in I.tool_qualities)
 		to_chat(user, "<span class='notice'>You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"].</span>")
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 			user.visible_message("<span class='notice'>[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!</span>", "<span class='notice'>You [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!</span>", "You hear grinding porcelain.")
 			cistern = !cistern
 			update_icon()
@@ -75,8 +75,8 @@
 	if(!open)
 		return
 	var/H = user.get_active_hand()
-	if(istype(H,/obj/item/weapon/reagent_containers/glass) || istype(H,/obj/item/weapon/reagent_containers/food/drinks))
-		var/obj/item/weapon/reagent_containers/O = user.get_active_hand()
+	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/food/drinks))
+		var/obj/item/reagent_containers/O = user.get_active_hand()
 		if(O.reagents && O.reagents.total_volume)
 			O.reagents.clear_reagents()
 			to_chat(user, SPAN_NOTICE("You empty the [O] into the [src]."))
@@ -147,27 +147,6 @@
 	return TRUE
 
 
-/obj/machinery/shower
-	name = "shower"
-	desc = "A HS-451 shower unit. Has a bolted temperature dial."
-	icon = 'icons/obj/watercloset.dmi'
-	icon_state = "shower"
-	density = 0
-	anchored = 1
-	use_power = 0
-	var/on = 0
-	var/obj/effect/mist/mymist = null
-	var/ismist = 0				//needs a var so we can make it linger~
-	var/watertemp = "normal"	//freezing, normal, or boiling
-	var/is_washing = 0
-	var/list/temperature_settings = list("normal" = 310, "boiling" = T0C+100, "freezing" = T0C)
-
-/obj/machinery/shower/New()
-	..()
-	create_reagents(50)
-
-//add heat controls? when emagged, you can freeze to death in it?
-
 /obj/effect/mist
 	name = "mist"
 	icon = 'icons/obj/watercloset.dmi'
@@ -176,31 +155,97 @@
 	anchored = 1
 	mouse_opacity = 0
 
+/obj/machinery/shower
+	name = "shower"
+	desc = "A HS-451 shower unit. Has a bolted temperature dial."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "shower"
+	density = 0
+	anchored = 1
+	use_power = NO_POWER_USE
+	var/soap = null
+	var/on = 0
+	var/obj/effect/mist/mymist = null
+	var/ismist = 0				//needs a var so we can make it linger~
+	var/watertemp = "normal"	//freezing, normal, or boiling
+	var/is_washing = 0
+	//Boiling was edited to not be as lethal 38c for normal, 40c for boiling
+	var/list/temperature_settings = list("normal" = 311.15, "boiling" = 313.15, "freezing" = T0C)
+	var/soap_modifer = 20 //Baseline we clean up about 20 germs by water erosion
+	var/bless = FALSE
+	var/washing_callback = FALSE
+
+/obj/machinery/shower/New()
+	..()
+	create_reagents(50)
+	if(!soap && prob(10))
+		soap = new/obj/item/soap(src)
+		update_soap_mods()
+
+
+/obj/machinery/shower/proc/update_soap_mods()
+	if(soap)
+		var/obj/item/soap/soapy_the_soap = soap
+		soap_modifer = soapy_the_soap.clean_speed
+		if(soapy_the_soap.bless_tile)
+			bless = TRUE
+		update_icon()
+		return
+	soap_modifer = 20
+	bless = FALSE
+	update_icon()
+
+//add heat controls? when emagged, you can freeze to death in it?
+
 /obj/machinery/shower/attack_hand(mob/M as mob)
 	on = !on
 	update_icon()
 	if(on)
-		if (M.loc == loc)
-			wash(M)
+		if(M.loc == loc)
 			process_heat(M)
 		for (var/atom/movable/G in src.loc)
-			G.clean_blood()
+			G.clean_blood(TRUE)
+
+		if(bless)
+			var/turf/T = get_turf(src)
+			T.holy = TRUE
+	if(M.a_intent == I_GRAB && soap)
+		M.visible_message(SPAN_NOTICE("\ [M] swipes the bar of soap."), SPAN_NOTICE("You steal the soap."))
+		eject_item(soap, M)
+		soap = null
+		update_soap_mods()
+		return
 
 /obj/machinery/shower/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
 		to_chat(user, SPAN_NOTICE("The water temperature seems to be [watertemp]."))
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
 		var/newtemp = input(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve") in temperature_settings
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY,  required_stat = STAT_MEC))
 			watertemp = newtemp
 			user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src] with \the [I]."), SPAN_NOTICE("You adjust the shower with \the [I]."))
 			add_fingerprint(user)
+
+	if(istype(I, /obj/item/soap))
+		if(!soap) // Check if that cell slot is free
+			soap = I // Add the cell to the list.
+			insert_item(I, user)
+			user.visible_message(
+									SPAN_NOTICE("[user] place [I] onto [src] soap dish.")
+								)
+			update_soap_mods()
+		else
+			to_chat(user, SPAN_NOTICE("[src] already has soap."))
+
 
 /obj/machinery/shower/update_icon()	//this is terribly unreadable, but basically it makes the shower mist up
 	cut_overlays()					//once it's been on for a while, in addition to handling the water overlay.
 	if(mymist)
 		qdel(mymist)
 		mymist = null
+
+	if(soap)
+		add_overlay(image('icons/obj/watercloset.dmi', src, "soap", ABOVE_MOB_LAYER, dir))
 
 	if(on)
 		add_overlay(image('icons/obj/watercloset.dmi', src, "water", ABOVE_MOB_LAYER, dir))
@@ -239,6 +284,7 @@
 		if(M.back)
 			if(M.back.clean_blood())
 				M.update_inv_back(0)
+
 
 		//flush away reagents on the skin
 		if(M.touching)
@@ -311,12 +357,13 @@
 	if(isturf(loc))
 		var/turf/tile = loc
 		for(var/obj/effect/E in tile)
-			if(istype(E,/obj/effect/decal/cleanable) || istype(E,/obj/effect/overlay))
+			if(istype(E,/obj/effect/decal/cleanable) || istype(E,/obj/effect/overlay) && !istype(E, /obj/effect/overlay/water))
 				qdel(E)
 
 	reagents.splash(O, 10)
 
-/obj/machinery/shower/Process()
+/obj/machinery/shower/proc/try_to_wash_stuff()
+	washing_callback = FALSE
 	if(!on) return
 
 	for(var/thing in loc)
@@ -326,6 +373,13 @@
 			wash(AM)
 			if(istype(L))
 				process_heat(L)
+
+/obj/machinery/shower/Process()
+	if(!on) return
+
+	if(!washing_callback)
+		addtimer(CALLBACK(src, PROC_REF(try_to_wash_stuff)), max(60 - soap_modifer, 20))
+		washing_callback = TRUE
 	wash_floor()
 	reagents.add_reagent("water", reagents.get_free_space())
 
@@ -350,12 +404,14 @@
 		var/mob/living/carbon/human/H = M
 		if(temperature >= H.species.heat_level_1)
 			to_chat(H, SPAN_DANGER("The water is searing hot!"))
+			if(H.frost > 0)
+				H.frost -= 5
 		else if(temperature <= H.species.cold_level_1)
 			to_chat(H, SPAN_WARNING("The water is freezing cold!"))
 
-/obj/item/weapon/bikehorn/rubberducky
+/obj/item/bikehorn/rubberducky
 	name = "rubber ducky"
-	desc = "A yellow rubber ducky for bathtime. Has the most annoying squeak."
+	desc = "A yellow rubber ducky for bath time. Has the most annoying squeak."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	item_state = "rubberducky"
@@ -368,6 +424,21 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	var/busy = 0 	//Something's being washed at the moment
+	var/reagent_id = "water"
+
+//Inspired by TG plumming
+	var/limited_reagents = TRUE
+	var/amount_of_reagents = 200
+	var/max_amount = 200
+	var/refill_rate = 0.5
+
+/obj/structure/sink/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/sink/Process()
+	if(max_amount >= amount_of_reagents)
+		amount_of_reagents += refill_rate
 
 /obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	. = ..()
@@ -398,43 +469,61 @@
 	if(!Adjacent(user))
 		return
 
+	if(amount_of_reagents < 40 && limited_reagents)
+		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
+		return
+
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
 
-	to_chat(usr, SPAN_NOTICE("You start washing your hands."))
-
+	user.visible_message(
+		SPAN_NOTICE("[user] starts washing their hands using [src]."),
+		SPAN_NOTICE("You start washing your hands using [src].")
+	)
 	playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
 
-	busy = 1
-	sleep(40)
-	busy = 0
+	busy = TRUE
+	if(!do_after(user, 40, src))
+		busy = FALSE
+		return
+	busy = FALSE
 
-	if(!Adjacent(user)) return		//Person has moved away from the sink
-
+	amount_of_reagents -= 40
 	user.clean_blood()
 	if(ishuman(user))
-		user:update_inv_gloves()
-	for(var/mob/V in viewers(src, null))
-		V.show_message(SPAN_NOTICE("[user] washes their hands using \the [src]."))
+		var/mob/living/carbon/human/H = user
+		H.update_inv_gloves()
 
+	user.visible_message(
+		SPAN_NOTICE("[user] washes their hands using [src]."),
+		SPAN_NOTICE("You wash your hands using [src].")
+	)
 
 /obj/structure/sink/attackby(obj/item/O as obj, mob/living/user as mob)
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
 
-	var/obj/item/weapon/reagent_containers/RG = O
+	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_refillable())
-		RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-		user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
-		playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
+		if(amount_to_add > amount_of_reagents)
+			amount_to_add = amount_of_reagents
+		if(amount_of_reagents)
+			RG.reagents.add_reagent(reagent_id, amount_to_add)
+			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
+			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+			if(limited_reagents)
+				amount_of_reagents -= amount_to_add
+		else
+			to_chat(user, SPAN_WARNING("The sink seems to be out of pressure"))
 		return 1
 
-	else if (istype(O, /obj/item/weapon/melee/baton))
-		var/obj/item/weapon/melee/baton/B = O
+	else if (istype(O, /obj/item/tool/baton))
+		var/obj/item/tool/baton/B = O
 		if(B.cell)
-			if(B.cell.charge > 0 && B.status == 1)
+			if(B.cell.charge > 0 && B.switched_on == 1)
 				flick("baton_active", src)
 				user.Stun(10)
 				user.stuttering = 10
@@ -449,38 +538,67 @@
 					"<span class='userdanger'>[user] was stunned by \his wet [O]!</span>"
 				)
 				return 1
-	else if(istype(O, /obj/item/weapon/mop))
+	else if(istype(O, /obj/item/mop))
 		return
 
 	var/turf/location = user.loc
 	if(!isturf(location)) return
 
 	var/obj/item/I = O
-	if(!I || !istype(I,/obj/item)) return
+	if(!istype(I))
+		return
 
-	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
+	user.visible_message(
+		SPAN_NOTICE("[user] starts washing [I] using [src]"),
+		SPAN_NOTICE("You start washing [I] using [src].")
+	)
 
-	busy = 1
-	sleep(40)
-	busy = 0
+	if(amount_of_reagents < 40)
+		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
+		return
 
-	if(user.loc != location) return				//User has moved
-	if(!I) return 								//Item's been destroyed while washing
-	if(user.get_active_hand() != I) return		//Person has switched hands or the item in their hands
+	busy = TRUE
+	if(!do_after(user, 40, src))
+		busy = FALSE
+		return
+	busy = FALSE
+
+	if(limited_reagents)
+		amount_of_reagents -= 40
+
+	if(QDELETED(I))
+		return 								//Item's been destroyed while washing
+
+	if(user.get_active_hand() != I)
+		return		//Person has switched hands or the item in their hands
 
 	O.clean_blood()
-	user.visible_message( \
-		SPAN_NOTICE("[user] washes \a [I] using \the [src]."), \
-		SPAN_NOTICE("You wash \a [I] using \the [src]."))
+	user.visible_message(
+		SPAN_NOTICE("[user] washes \a [I] using \the [src]."),
+		SPAN_NOTICE("You wash \a [I] using \the [src].")
+	)
 
 /obj/structure/sink/AltClick(var/mob/living/user)
 	var/H = user.get_active_hand()
-	if(istype(H,/obj/item/weapon/reagent_containers/glass) || istype(H,/obj/item/weapon/reagent_containers/food/drinks))
-		var/obj/item/weapon/reagent_containers/O = user.get_active_hand()
+	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/food/drinks))
+		var/obj/item/reagent_containers/O = user.get_active_hand()
 		if(O.reagents && O.reagents.total_volume)
 			O.reagents.clear_reagents()
 			to_chat(user, SPAN_NOTICE("You empty the [O] into the [src]."))
 
+
+/obj/structure/sink/fountain
+	name = "water fountain"
+	desc = "A small fountain of polished stone that has a small pump at the bottom which helps pump out fresh water."
+	icon_state = "BaptismFont_Water"
+	refill_rate = 2
+
+/obj/structure/sink/basion
+	name = "water basin"
+	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
+	icon_state = "BaptismFont_Water"
+	limited_reagents = FALSE
+	refill_rate = 200
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
@@ -491,6 +609,8 @@
 	name = "puddle"
 	desc = "A puddle of still water. Great for splashing others."
 	icon_state = "puddle"
+	limited_reagents = FALSE
+	refill_rate = 200
 
 /obj/structure/sink/puddle/attack_hand(mob/M as mob)
 	icon_state = "puddle-splash"

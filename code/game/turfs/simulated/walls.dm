@@ -6,7 +6,7 @@
 	layer = CLOSED_TURF_LAYER
 	opacity = 1
 	density = TRUE
-	blocks_air = 1
+	blocks_air = TRUE
 	thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 312500 //a little over 5 cm thick , 312500 for 1 m by 2.5 m by 0.25 m plasteel wall
 
@@ -205,30 +205,38 @@
 	if(src.ricochet_id != 0)
 		if(src.ricochet_id == Proj.ricochet_id)
 			src.ricochet_id = 0
-			new /obj/effect/sparks(get_turf(Proj))
+			if (!(Proj.testing))
+				new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE
 		src.ricochet_id = 0
 	var/proj_damage = Proj.get_structure_damage()
+//	var/ricochet_mult = Proj.get_//ricochet_modifier()
 	if(istype(Proj,/obj/item/projectile/beam))
-		burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
+		if (!(Proj.testing))
+			burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
 	else if(istype(Proj,/obj/item/projectile/ion))
-		burn(500)
+		if (!(Proj.testing))
+			burn(500)
 
 	if(Proj.can_ricochet && proj_damage != 0 && (src.x != Proj.starting.x) && (src.y != Proj.starting.y))
 		var/ricochetchance = 1
 		if(proj_damage <= 60)
 			ricochetchance = 2 + round((60 - proj_damage) / 5)
-			ricochetchance = min(ricochetchance * ricochetchance, 100)
+//			ricochetchance = min(ricochetchance * ricochetchance * ricochet_mult, 100)
 		// here it is multiplied by 1/2 temporally, changes will be required when new wall system gets implemented
 		ricochetchance = round(ricochetchance * projectile_reflection(Proj, TRUE) / 2)
 		ricochetchance = min(max(ricochetchance, 0), 100)
 		if(prob(ricochetchance))
+			// projectile loses up to 50% of its damage when it ricochets, depending on situation
 			var/damagediff = round(proj_damage / 2 + proj_damage * ricochetchance / 200) // projectile loses up to 50% of its damage when it ricochets, depending on situation
-			Proj.damage = damagediff
-			take_damage(min(proj_damage - damagediff, 100))
-			visible_message("<span class='danger'>The [Proj] ricochets from the surface of wall!</span>")
+			Proj.damage_types[BRUTE] = round(Proj.damage_types[BRUTE] / 2 + Proj.damage_types[BRUTE] * ricochetchance / 200)
+			Proj.damage_types[BURN] = round(Proj.damage_types[BURN] / 2 + Proj.damage_types[BURN] * ricochetchance / 200)
+			if (!(Proj.testing))
+				visible_message("<span class='danger'>\The [Proj] ricochets from the surface of wall!</span>")
 			projectile_reflection(Proj)
-			new /obj/effect/sparks(get_turf(Proj))
+			take_damage(min(proj_damage - damagediff, 100))
+			if (!(Proj.testing))
+				new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 	//cut some projectile damage here and not in projectile.dm, because we need not to all things what are using get_str_dam() becomes thin and weak.
@@ -237,17 +245,23 @@
 	proj_damage = round(Proj.get_structure_damage() / 3)//Yo may replace 3 to 5-6 to make walls fucking stronk as a Poland
 
 	//cap the amount of damage, so that things like emitters can't destroy walls in one hit.
-	var/damage = min(proj_damage, 100)
+	var/damage_taken = 0
+	if(Proj.nocap_structures)
+		damage_taken = proj_damage * 4
+	else
+		damage_taken = min(proj_damage, 100)
 
-	create_bullethole(Proj)//Potentially infinite bullet holes but most walls don't last long enough for this to be a problem.
+	if (!(Proj.testing))
+		create_bullethole(Proj)//Potentially infinite bullet holes but most walls don't last long enough for this to be a problem.
 
-	if(Proj.damage_type == BRUTE && prob(src.damage / (material.integrity + reinf_material?.integrity) * 33))
-		var/obj/item/trash/material/metal/slug = new(get_turf(Proj))
-		slug.matter.Cut()
-		slug.matter[reinf_material ? reinf_material.name : material.name] = 0.1
-		slug.throw_at(get_turf(Proj), 0, 1)
+	if (!(Proj.testing))
+		if(Proj.damage_types[BRUTE] && prob(src.damage / (material.integrity + reinf_material?.integrity) * 33))
+			var/obj/item/trash/material/metal/slug = new(get_turf(Proj))
+			slug.matter.Cut()
+			slug.matter[reinf_material ? reinf_material.name : material.name] = 0.1
+			slug.throw_at(get_turf(Proj), 0, 1)
 
-	take_damage(damage)
+		take_damage(damage_taken)
 
 /turf/simulated/wall/hitby(AM as mob|obj, var/speed=THROWFORCE_SPEED_DIVISOR)
 	..()
@@ -344,18 +358,18 @@
 
 	return ..()
 
-/turf/simulated/wall/proc/dismantle_wall(devastated, explode, no_product)
+/turf/simulated/wall/proc/dismantle_wall(devastated, explode, no_product, mob/user)
 	playsound(src, 'sound/items/Welder.ogg', 100, 1)
 	if(!no_product)
 		if(reinf_material)
 			reinf_material.place_dismantled_girder(src, reinf_material)
 		else
 			material.place_dismantled_girder(src)
-		material.place_sheet(src, amount=3)
-
+		var/obj/sheets = material.place_sheet(src, amount=3)
+		sheets.add_fingerprint(user)
 	for(var/obj/O in src.contents) //Eject contents!
-		if(istype(O,/obj/item/weapon/contraband/poster))
-			var/obj/item/weapon/contraband/poster/P = O
+		if(istype(O,/obj/item/contraband/poster))
+			var/obj/item/contraband/poster/P = O
 			P.roll_and_drop(src)
 		else
 			O.loc = src
@@ -416,8 +430,9 @@
 	if(!total_radiation)
 		return
 
-	for(var/mob/living/L in range(3,src))
-		L.apply_effect(total_radiation, IRRADIATE,0)
+	/*for(var/mob/living/L in range(3,src))
+		L.apply_effect(total_radiation, IRRADIATE,0)*/
+	PulseRadiation(src, total_radiation, 3) // Too tired to find the proper place to add the radiate proc, so this will do.
 	return total_radiation
 
 /turf/simulated/wall/proc/burn(temperature)

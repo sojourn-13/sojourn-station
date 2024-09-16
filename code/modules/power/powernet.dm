@@ -155,9 +155,6 @@
 			return 0
 		return between(0, (avail / load) * 100, 100)
 
-// Calculation of powernet shock damage
-// Keep in mind that airlocks, the most common source of electrocution, have siemens_coefficent of 0.7, dealing only 70% of electrocution damage
-// Also, even the most common gloves and boots have siemens_coefficent < 1, offering a degree of shock protection
 /datum/powernet/proc/get_electrocute_damage()
 	switch(avail)
 		// 50+ MW - divine punishment

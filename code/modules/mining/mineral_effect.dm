@@ -3,17 +3,23 @@
 	icon = 'icons/obj/mining.dmi'
 	desc = "Shiny."
 	mouse_opacity = 0
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	layer = FLASH_LAYER
 	var/ore_key
 	var/image/scanner_image
 
-/obj/effect/mineral/New(var/newloc, var/ore/M)
-	..(newloc)
+/obj/effect/mineral/New(loc, ore/M)
+	. = ..(loc)
 	name = "[M.display_name] deposit"
 	ore_key = M.name
 	icon_state = "rock_[ore_key]"
+	var/turf/T = get_turf(src)
+	var/mutable_appearance/app = mutable_appearance('icons/obj/mining.dmi', "rock_[ore_key]")
+	app.dir = SOUTH
+	T.add_overlay(app)
+	if(T.color)
+		color = T.color
 
 /obj/effect/mineral/proc/get_scan_overlay()
 	if(!scanner_image)

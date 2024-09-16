@@ -28,11 +28,31 @@
 	icon_state = "mime"
 	item_state = "mime"
 
+/obj/item/clothing/mask/gnome
+	name = "tactical beard"
+	desc = "The fancy looking beard."
+	icon_state = "gnome_beard"
+	item_state = "gnome_beard"
+	flags_inv = HIDEFACE
+	body_parts_covered = 0
+
 /obj/item/clothing/mask/costume/job/clown
 	name = "red clown mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
 	icon_state = "clown"
 	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/rainbow
+	name = "rainbow clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "rainbow"
+	item_state = "rainbow"
+
+/obj/item/clothing/mask/costume/job/clown/joker
+	name = "joker mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "joker"
+	item_state = "joker"
 
 /obj/item/clothing/mask/costume/job/clown/blue
 	name = "blue clown mask"
@@ -267,6 +287,16 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/mask/costume/halloween/scream
+	name = "ghastly mask"
+	desc = "A spooky, ghost-like mask. Sure to elicite screams from colonists of all ages!"
+	icon_state = "ghostmask"
+	item_state = "ghostmask"
+	flags_inv = HIDEFACE
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = FACE|EYES
+
 /*History*/
 
 /obj/item/clothing/mask/costume/history/plaguedoctor
@@ -274,7 +304,7 @@
 	desc = "A modernised version of the classic design, this mask will not only filter out plasma but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
 	item_state = "gas_mask"
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 90, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 90, rad = 0)
 	body_parts_covered = HEAD|FACE|EYES
 
 /*Kinky*/

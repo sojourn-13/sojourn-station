@@ -1,3 +1,8 @@
+/// SCPR 2022
+// Code regarding /datum/money_accounts and /datum/transaction tends to be old and not properly sanitize checked all the time
+// I hopefully fixed all possible attack vectors ,but if you modify any code here , please pay more attention to anything that is a string
+// and is input by the player at any time.
+
 
 /datum/money_account
 	var/owner_name = ""
@@ -7,6 +12,13 @@
 	var/money = 0
 	var/list/transaction_log = list()
 	var/suspended = 0
+	var/employer // Linked department account's define. DEPARTMENT_COMMAND or some such
+	var/wage = 0 // How much money account should recieve on a payday
+	var/wage_original // Value passed from job datum on account creation
+	var/wage_manual = FALSE // If wage have been set manually. Prevents wage auto update on players joining/leaving deparment
+	var/debt = 0 // How much money employer owe us
+	var/department_id // Easy identification for department accounts
+	var/can_make_accounts // Individual guild members and their departments authorized to register new accounts
 	var/security_level = 0	//0 - auto-identify from worn ID, require only account number
 							//1 - require manual login / account number and pin
 							//2 - require card and manual login
@@ -37,18 +49,25 @@
 	var/time = ""
 	var/source_terminal = ""
 
-/datum/transaction/New(amount = 0, target_name, purpose, source_terminal)
-	src.amount = amount
-	src.target_name = target_name
-	src.purpose = purpose
-	src.source_terminal = source_terminal
+// the sanitzation is done here because theres a whole lot of places that create a new datum with unchecked values.
+/datum/transaction/New(_amount = 0, _target_name, _purpose, _source_terminal, _date = null, _time = null)
+	amount = _amount
+	target_name = sanitizeSafe(_target_name, MAX_NAME_LEN, TRUE)
+	purpose = sanitizeSafe(_purpose, MAX_NAME_LEN,TRUE)
+	source_terminal = _source_terminal
 
-	if(istype(source_terminal, /atom))
-		var/atom/terminal_atom = source_terminal
-		src.source_terminal = "[terminal_atom.name] at [get_area(terminal_atom)]"
+	if(istype(_source_terminal, /atom))
+		var/atom/terminal_atom = _source_terminal
+		source_terminal = "[terminal_atom.name] at [get_area(terminal_atom)]"
 
-	src.date = current_date_string
-	src.time = stationtime2text()
+	if(_date)
+		date = _date
+	else
+		date = current_date_string
+	if(_time)
+		time = _time
+	else
+		time = stationtime2text()
 
 /datum/transaction/proc/apply_to(var/datum/money_account/account)
 	if(!istype(account) || !account.is_valid())
@@ -68,34 +87,30 @@
 		src.time = stationtime2text()
 
 /datum/transaction/proc/Copy()
-	var/datum/transaction/T = new
-	T.target_name = src.target_name
-	T.purpose = src.purpose
-	T.amount = src.amount
-	T.date = src.date
-	T.time = src.time
-	T.source_terminal = src.source_terminal
-	return T
+	return new/datum/transaction(amount, target_name, purpose, source_terminal, date, time)
 
-
-/proc/create_account(new_owner_name = "Default user", starting_funds = 0, obj/machinery/account_database/source_db)
+/proc/create_account(new_owner_name = "Default user", starting_funds = 0, obj/machinery/account_database/source_db, department, wage, aster_guild_member)
 
 	//create a new account
 	var/datum/money_account/M = new()
-	M.owner_name = new_owner_name
+	M.owner_name = sanitizeSafe(new_owner_name, MAX_NAME_LEN, TRUE)
 	M.remote_access_pin = rand(1111, 9999)
 	M.money = starting_funds
+	M.employer = department
+	M.wage_original = wage
+	M.wage = wage
+	M.can_make_accounts = aster_guild_member
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new()
-	T.target_name = new_owner_name
+	T.target_name = sanitizeSafe(new_owner_name, MAX_NAME_LEN, TRUE)
 	T.purpose = "Account creation"
 	T.amount = starting_funds
 	if(!source_db)
 		//set a random date, time and location some time over the past few decades
 		T.date = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], 25[rand(10,56)]"
 		T.time = "[rand(0,24)]:[rand(11,59)]"
-		T.source_terminal = "Lonestar Guild Banking Terminal #[rand(111,1111)]"
+		T.source_terminal = "NT Banking Terminal #[rand(111,1111)]"
 
 		M.account_number = rand(11111, 99999)
 	else
@@ -109,7 +124,7 @@
 		//create a sealed package containing the account details
 		var/obj/item/smallDelivery/P = new /obj/item/smallDelivery(source_db.loc)
 
-		var/obj/item/weapon/paper/R = new /obj/item/weapon/paper(P)
+		var/obj/item/paper/R = new /obj/item/paper(P)
 		P.wrapped = R
 		R.name = "Account information: [M.owner_name]"
 		R.info = "<b>Account details (confidential)</b><br><hr><br>"
@@ -131,7 +146,16 @@
 	//add the account
 	M.transaction_log.Add(T)
 	all_money_accounts.Add(M)
+	personal_accounts.Add(M)
 
+	// Increase personnel budget of our department, if have one
+	if(department && wage)
+		var/datum/money_account/EA = department_accounts[department]
+		var/datum/department/D = GLOB.all_departments[department]
+		if(D && EA)
+			D.budget_personnel += wage
+			if(!EA.wage_manual) // Update department account's wage if it's not in manual mode
+				EA.wage = D.get_total_budget()
 	return M
 
 //Charges an account a certain amount of money which is functionally just removed from existence
@@ -139,7 +163,7 @@
 	var/datum/money_account/D = get_account(attempt_account_number)
 	if (D)
 		//create a transaction log entry
-		var/datum/transaction/T = new(amount*-1, target_name, purpose, terminal_id)
+		var/datum/transaction/T = new(-amount, target_name, purpose, terminal_id)
 		return T.apply_to(D)
 
 	return FALSE
@@ -172,6 +196,7 @@
 
 		//The transaction to give the money
 		var/datum/transaction/T2 = new(amount, source.get_name(), purpose, terminal_id)
+		LEGACY_SEND_SIGNAL(source, COMSIG_TRANSATION, source, target, amount)
 		return T2.apply_to(target)
 
 	return FALSE

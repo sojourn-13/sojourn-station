@@ -63,3 +63,8 @@
 /datum/category_item/underwear/socks/fishnet
 	name = "Fishnet"
 	icon_state = "fishnet"
+	
+/datum/category_item/underwear/socks/leggings
+	name = "Leggings"
+	icon_state = "leggings"
+	has_color = TRUE

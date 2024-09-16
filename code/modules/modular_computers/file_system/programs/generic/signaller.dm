@@ -4,7 +4,7 @@
 	extended_desc = "A tool that uses a wireless network card to send simple control signals."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "signal-diag"
+	program_menu_icon = "signal"
 	size = 4
 	requires_ntnet = 0
 	available_on_ntnet = TRUE
@@ -32,7 +32,7 @@
 
 	return TRUE
 
-/datum/computer_file/program/signaller/ui_data()
+/datum/computer_file/program/signaller/nano_ui_data()
 	var/list/data = computer.get_header_data()
 
 	data["freq"] = computer?.network_card.frequency
@@ -43,8 +43,8 @@
 	return data
 
 
-/datum/computer_file/program/signaller/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
-	var/list/data = ui_data(user)
+/datum/computer_file/program/signaller/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)

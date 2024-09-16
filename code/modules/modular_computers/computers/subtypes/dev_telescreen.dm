@@ -3,6 +3,7 @@
 	desc = "A wall-mounted touchscreen computer."
 	icon = 'icons/obj/modular_telescreen.dmi'
 	icon_state = "telescreen"
+	icon_state_unpowered = "telescreen"
 	icon_state_menu = "menu"
 	hardware_flag = PROGRAM_TELESCREEN
 	anchored = TRUE
@@ -16,13 +17,14 @@
 	max_damage = 300
 	broken_damage = 150
 	w_class = ITEM_SIZE_HUGE
+	emagged_level_up = TRUE //Were basiclly a normal computer anways
 
 /obj/item/modular_computer/telescreen/New()
 	..()
 	// Allows us to create "north bump" "south bump" etc. named objects, for more comfortable mapping.
 	name = initial(name)
 
-/obj/item/modular_computer/telescreen/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/item/modular_computer/telescreen/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if(QUALITY_PRYING in W.tool_qualities)
 		var/choice
 		if(!anchored)

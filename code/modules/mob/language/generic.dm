@@ -4,6 +4,7 @@
 	desc = "Noises"
 	key = ""
 	flags = RESTRICTED|NONGLOBAL|INNATE|NO_TALK_MSG|NO_STUTTER
+	has_written_form = FALSE
 
 /datum/language/noise/format_message(message, verb)
 	return "<span class='message'><span class='[colour]'>[message]</span></span>"

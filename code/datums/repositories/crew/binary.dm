@@ -1,23 +1,22 @@
 /* Binary */
 /crew_sensor_modifier/binary/process_crew_data(var/mob/living/carbon/human/H, var/obj/item/clothing/under/C, var/turf/pos, var/list/crew_data)
 	crew_data["alert"] = FALSE
-	// TODO: enable after baymed
-	/*if(!H.isSynthetic() && H.should_have_organ(BP_HEART))
-		var/obj/item/organ/internal/heart/O = H.internal_organs_by_name[BP_HEART]
-		if (!O || !BP_IS_ROBOTIC(O)) // Don't make medical freak out over prosthetic hearts
-			var/pulse = H.pulse()
-			if(pulse == PULSE_NONE || pulse == PULSE_THREADY)
-				crew_data["alert"] = TRUE
-		if(H.get_blood_oxygenation() < BLOOD_VOLUME_SAFE)
-			crew_data["alert"] = TRUE
-	*/
+	crew_data["muted"] = FALSE
+	if(H.name in GLOB.ignore_health_alerts_from)
+		crew_data["muted"] = TRUE
 	if(!H.isSynthetic())
-		var/obj/item/organ/internal/heart/O = H.internal_organs_by_name[BP_HEART]
-		if (!O || !BP_IS_ROBOTIC(O)) // Don't make medical freak out over prosthetic hearts
+		var/obj/item/organ/internal/vital/heart/O = H.random_organ_by_process(OP_HEART)
+		if(O && BP_IS_ORGANIC(O) || BP_IS_SLIME(O))
 			var/pulse = H.pulse()
 			if(pulse == PULSE_NONE || pulse == PULSE_THREADY)
 				crew_data["alert"] = TRUE
 		if(H.getOxyLoss() >= 20)
+			crew_data["alert"] = TRUE
+		if(H.getBruteLoss() >= 100)
+			crew_data["alert"] = TRUE
+		if(H.getFireLoss() >= 100)
+			crew_data["alert"] = TRUE
+		if(H.getToxLoss() >= 70) // At this point liver failure and MSOF start to happen, it's necessary that medical knows as soon as it happens
 			crew_data["alert"] = TRUE
 	return ..()
 

@@ -18,7 +18,7 @@ log transactions
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "atm"
 	anchored = TRUE
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	var/datum/money_account/authenticated_account
 	var/number_incorrect_tries = 0
@@ -27,7 +27,7 @@ log transactions
 	var/ticks_left_locked_down = 0
 	var/ticks_left_timeout = 0
 	var/machine_id = ""
-	var/obj/item/weapon/card/id/held_card
+	var/obj/item/card/id/held_card
 	var/editing_security_level = 0
 	var/view_screen = NO_SCREEN
 	var/datum/effect/effect/system/spark_spread/spark_system
@@ -54,7 +54,7 @@ log transactions
 		if(ticks_left_locked_down <= 0)
 			number_incorrect_tries = 0
 
-	for(var/obj/item/weapon/spacecash/S in src)
+	for(var/obj/item/spacecash/S in src)
 		S.forceMove(get_turf(src))
 		playsound(loc, pick('sound/items/polaroid1.ogg','sound/items/polaroid2.ogg'), 50, 1)
 		break
@@ -94,18 +94,18 @@ log transactions
 	return 1
 
 /obj/machinery/atm/attackby(obj/item/I as obj, mob/user as mob)
-	if(istype(I, /obj/item/weapon/card))
+	if(istype(I, /obj/item/card))
 		if(stat & NOPOWER)
 			return
 		if(emagged)
 			//prevent inserting id into an emagged ATM
 			to_chat(user, "\red \icon[src] CARD READER ERROR. This system has been compromised!")
 			return
-		else if(istype(I,/obj/item/weapon/card/emag))
+		else if(istype(I,/obj/item/card/emag))
 			I.resolve_attackby(src, user)
 			return
 
-		var/obj/item/weapon/card/id/idcard = I
+		var/obj/item/card/id/idcard = I
 		if(!held_card)
 			usr.unEquip(I)
 			I.forceMove(src)
@@ -117,8 +117,8 @@ log transactions
 	else if(authenticated_account)
 		if(stat & NOPOWER)
 			return
-		if(istype(I,/obj/item/weapon/spacecash))
-			var/obj/item/weapon/spacecash/cash = I
+		if(istype(I,/obj/item/spacecash))
+			var/obj/item/spacecash/cash = I
 			//consume the money
 			playsound(loc, pick('sound/items/polaroid1.ogg','sound/items/polaroid2.ogg'), 50, 1)
 
@@ -132,7 +132,7 @@ log transactions
 	else
 		..()
 
-/obj/machinery/atm/attack_hand(mob/user as mob)
+/obj/machinery/atm/attack_hand(mob/user)
 	if(issilicon(user))
 		to_chat(user, "\red \icon[src] Artificial unit recognized. Artificial units do not currently receive monetary compensation, as per system banking regulation #1005.")
 		return
@@ -346,7 +346,7 @@ log transactions
 						to_chat(usr, SPAN_WARNING("You don't have enough funds to do that!"))
 			if("balance_statement")
 				if(authenticated_account)
-					var/obj/item/weapon/paper/R = new(src.loc)
+					var/obj/item/paper/R = new(src.loc)
 					R.name = "Account balance: [authenticated_account.owner_name]"
 					R.info = "<b>Automated Teller Account Statement</b><br><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
@@ -365,7 +365,7 @@ log transactions
 				playsound(loc, pick('sound/items/polaroid1.ogg','sound/items/polaroid2.ogg'), 50, 1)
 			if ("print_transaction")
 				if(authenticated_account)
-					var/obj/item/weapon/paper/R = new(src.loc)
+					var/obj/item/paper/R = new(src.loc)
 					R.name = "Transaction logs: [authenticated_account.owner_name]"
 					R.info = "<b>Transaction logs</b><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
@@ -408,7 +408,7 @@ log transactions
 						to_chat(usr, "\red \icon[src] The ATM card reader rejected your ID because this machine has been sabotaged!")
 					else
 						var/obj/item/I = usr.get_active_hand()
-						if (istype(I, /obj/item/weapon/card/id))
+						if (istype(I, /obj/item/card/id))
 							usr.drop_item()
 							I.loc = src
 							held_card = I
@@ -434,8 +434,123 @@ log transactions
 	update_icon()
 
 /obj/machinery/atm/proc/spawn_ewallet(var/sum, loc, mob/living/carbon/human/human_user as mob)
-	var/obj/item/weapon/spacecash/ewallet/E = new /obj/item/weapon/spacecash/ewallet(loc)
+	var/obj/item/spacecash/ewallet/E = new /obj/item/spacecash/ewallet(loc)
 	if(ishuman(human_user) && !human_user.get_active_hand())
 		human_user.put_in_hands(E)
 	E.worth = sum
 	E.owner_name = authenticated_account.owner_name
+
+
+
+
+//Converts bettewn the "three" sets of currency we have
+
+/obj/machinery/atm_exchange
+	name = "automatic exchange machine"
+	desc = "Converts credits to Yuan, Yuan to credits! Also has a slot for disks and hardrives to convert K-oin to credits or Yuan"
+	icon = 'icons/obj/terminals.dmi'
+	icon_state = "aem"
+	anchored = TRUE
+	use_power = IDLE_POWER_USE
+	var/tax = 0.9 //This is a % rounded
+	var/exchange_type = "credits"
+
+/obj/machinery/atm_exchange/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Currently the exchanger is set to [exchange_type]. Tax is currently [tax]%</span>")
+
+/obj/machinery/atm_exchange/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I, /obj/item/spacecash) || istype(I, /obj/item/stack/os_cash))
+		exchange_tabulate(I, user)
+		return
+	//this is for disks/hardrives
+	if(istype(I, /obj/item/computer_hardware/hard_drive))
+		exchange_tabulate(I, user)
+		return
+	..()
+
+/obj/machinery/atm_exchange/attack_hand(mob/user)
+	..()
+	change_settings(user)
+
+/obj/machinery/atm_exchange/proc/change_settings(mob/user)
+
+	var/list/options = list()
+	options["Credits"] = "credits"
+	options["E-Wallet"] = "e-wallet"
+	options["GP Yuan"] = "Yuan"
+
+	if(!options.len)
+		to_chat(user, "<span class='info'>The [src] is limited to only credits!</span>")
+		exchange_type = "credits"
+		return
+
+	var/choice = input(user,"What currency do you pick?") as null|anything in options
+
+	var/printing_choice = options[choice]
+
+	if(!printing_choice)
+		exchange_type = "credits"
+		return
+
+	exchange_type = printing_choice
+
+
+/obj/machinery/atm_exchange/proc/exchange_tabulate(obj/item/I as obj, mob/user)
+	var/exchange_medium
+
+
+	if(istype(I, /obj/item/spacecash))
+		var/obj/item/spacecash/C = I
+		exchange_medium = round(C.worth*tax)
+		qdel(C)
+
+	if(istype(I, /obj/item/stack/os_cash))
+		var/obj/item/stack/os_cash/OS = I
+		//One GP coin = 10 credis according to the exchange
+		exchange_medium = round(((OS.amount*10)*tax))
+		qdel(OS)
+
+	if(istype(I, /obj/item/computer_hardware/hard_drive))
+		var/obj/item/computer_hardware/hard_drive/HD = I
+		for(var/datum/computer_file/program/coin_miner/CM in HD.stored_files)
+			exchange_medium += (CM.size * CM.added_wealth)
+			CM.size = 0
+		exchange_medium = round(exchange_medium*tax)
+
+	if(!exchange_medium)
+		to_chat(user, "<span class='info'>Whatever you fed into the [src] was not currency!</span>")
+		return
+
+	exchange_currency(exchange_medium, user)
+
+/obj/machinery/atm_exchange/proc/exchange_currency(exchange, mob/user)
+
+	if(!exchange)
+		to_chat(user, "<span class='info'>The [src] spits out dust! Must be broken.</span>")
+		return
+
+	switch(exchange_type)
+		if("credits")
+			var/obj/item/spacecash/bundle/SC = new /obj/item/spacecash/bundle(loc)
+			SC.worth = exchange
+			SC.update_icon()
+
+		if("e-wallet")
+			var/obj/item/spacecash/ewallet/E = new /obj/item/spacecash/ewallet(loc)
+			E.worth = exchange
+			//piggybacking off GS for randomized ticket numbers
+			E.owner_name = "AEM Ticket-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+
+		if("Yuan")
+			var/obj/item/stack/os_cash/OS = new /obj/item/stack/os_cash(loc)
+			exchange /= 10
+			OS.amount = round(exchange)
+			OS.update_icon()
+
+	return
+
+
+
+
+

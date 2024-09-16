@@ -20,10 +20,6 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
-"g" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/asteroid/grass,
-/area/crawler)
 "h" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -41,14 +37,14 @@
 /obj/effect/floor_decal/spline/grass_edge{
 	dir = 1
 	},
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "l" = (
 /obj/effect/floor_decal/spline/grass_edge{
 	dir = 4
 	},
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "m" = (
@@ -59,7 +55,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "p" = (
@@ -216,7 +212,7 @@ D
 (8,1,1) = {"
 b
 c
-g
+c
 a
 l
 t
@@ -228,7 +224,7 @@ D
 a
 d
 d
-g
+c
 p
 p
 p

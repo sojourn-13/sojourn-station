@@ -1,0 +1,23 @@
+/**
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ */
+
+@use 'sass:meta';
+
+@include meta.load-css('./shared/basic.scss');
+@include meta.load-css('./dark/etc.scss');
+
+/*****************************************
+*
+* OUTPUT ACTUALLY RELATED TO MESSAGES
+*
+******************************************/
+@include meta.load-css('./dark/admin.scss');
+/* RADIO COLORS */
+/* IF YOU CHANGE THIS KEEP IT IN SYNC WITH TGUI CONSTANTS */
+@include meta.load-css('./dark/radio.scss');
+@include meta.load-css('./dark/danger.scss');
+@include meta.load-css('./dark/say.scss');
+/* HELPER CLASSES */
+@include meta.load-css('./dark/helpers.scss');

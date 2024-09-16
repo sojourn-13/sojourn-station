@@ -1,6 +1,7 @@
 /datum/computer_file/program/audio
 	filename = "audioplyr"
 	filedesc = "Audio Player"
+	program_menu_icon = "music"
 	nanomodule_path = /datum/nano_module/program/audio
 	extended_desc = "This program may be used to play audio files. Features vocal transcription."
 	size = 3
@@ -131,7 +132,7 @@
 /datum/nano_module/program/audio
 	name = "Audio Player"
 
-/datum/nano_module/program/audio/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/audio/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 
 	var/datum/computer_file/program/audio/PRG
 	var/list/data = host.initial_data()
@@ -140,8 +141,8 @@
 		PRG = program
 	else
 		return
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/RHDD
+	var/obj/item/computer_hardware/hard_drive/HDD
+	var/obj/item/computer_hardware/hard_drive/portable/RHDD
 
 	if(PRG.error)
 		data["error"] = PRG.error

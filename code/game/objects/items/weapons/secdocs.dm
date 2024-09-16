@@ -1,19 +1,19 @@
-/obj/item/weapon/oddity/secdocs
+/obj/item/oddity/secdocs
 	name = "classified research"
-	desc = "This folder contains highly confidential scientific research."
+	desc = "A folder containing some papers with important scientific data."
 	icon = 'icons/obj/oddities.dmi'
-	price_tag = 5000
-
+	price_tag = 2500
+	prob_perk = 0 //The data is quite clear...
 	oddity_stats = list(
-		STAT_MEC = 8,
-		STAT_COG = 8,
-		STAT_BIO = 8,
+		STAT_MEC = 7,
+		STAT_COG = 7,
+		STAT_BIO = 7,
 	)
 
 	//var/static/inv_spawn_count = 3
 
-/obj/item/weapon/oddity/secdocs/Initialize()
-	icon_state = "paper_[pick("omega","psi","theta")]"
+/obj/item/oddity/secdocs/Initialize()
+	icon_state = "reports[rand(1,6)]"
 	desc = pick("It's labelled 'Attractor Fields Theory'.",
 				"It's labelled 'World Lines Theory'.",
 				"It's labelled 'The Door Phenomenon'.",
@@ -48,26 +48,32 @@
 				"It's labelled 'Quarterly Overseer Meeting Minutes'.",
 				"It's labelled 'Unabridged Expense Report - Do Not Publish'.",
 				"It's labelled 'For The Attention of Director Mkne'.",
+				"It's labelled 'Human Enhancement Test Results'.",
+				"It's labelled 'New Uses Of Soild Plasma'.",
+				"It's labelled 'Prototype: Liquid Fuels For Generators'.",
+				"It's labelled 'Eletric Welders And Cold Welding'.",
+				"It's labelled 'Improvements On Cryogenic Technologies'.",
 				"It's labelled 'The Future of the Soteria Institute'.",
+				"It's labelled 'Mining Advancements using Thermal Dentation'.",
+				"It's labelled 'Bluespace Connection Lines'.",
+				"It's labelled 'Psionic Advancements'.",
+				"It's labelled 'Psionic's and the health affects'.",
+				"It's labelled 'DNA Theory, what cant be done'.",
+				"It's labelled 'Genetics long term health affects'.",
+				"It's labelled 'Genetic case Bio-92'.",
+				"It's labelled 'Genetic Weapons Theory - A Rebuttal'.",
+				"It's labelled 'Weaponization of Blood'.",
+				"It's labelled 'Weaponization of DNA'.",
+				"It's labelled 'Deep Tunnels evaluation meta-data'.",
+				"It's labelled 'Deep Tunnels Anomalies'.",
+				"It's labelled 'Possible new Terms and Conditions'.",
+				"It's labelled 'Unknown Threats from Bluespace'.",
+				"It's labelled 'Possable New neuromod'.",
+				"It's about Bluespace and possable new ways to gain endless power from the ''Void''.",
 				"The label has been censored with permanent marker. Mysterious.",
 				"The label has been torn off. Maybe it's best not to pry.")
 	. = ..()
 	var/mob/living/carbon/human/owner = loc
 	if(istype(owner))
-		to_chat(owner, SPAN_NOTICE("The Soteria Institute has entrusted you with valuable research data. It is essential that you do not let it fall into the wrong hands."))
+		to_chat(owner, SPAN_NOTICE("You have valuable scientific data on your person. Do not let it fall into the wrong hands."))
 
-/hook/roundstart/proc/place_docs()
-	var/list/obj/landmark/storyevent/midgame_stash_spawn/L = list()
-	for(var/obj/landmark/storyevent/midgame_stash_spawn/S in landmarks_list)
-		L.Add(S)
-
-	L = shuffle(L)
-
-	if(L.len < 3)
-		warning("Failed to place secret documents: not enough landmarks.")
-		return FALSE
-
-	for(var/i in 1 to 3)
-		new /obj/item/weapon/oddity/secdocs(L[i].get_loc())
-
-	return TRUE

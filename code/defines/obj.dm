@@ -4,7 +4,7 @@
 	anchored = 1
 	density = 1
 
-	attackby(obj/item/weapon/W as obj, mob/user as mob)
+	attackby(obj/item/W as obj, mob/user as mob)
 		return attack_hand(user)
 
 	attack_hand(mob/user as mob)
@@ -113,6 +113,7 @@
 	icon_state = "hangskele"
 	desc = "It's an anatomical model of a human skeletal system made of plaster."
 	anchored = 0
+	density = 0
 
 /obj/structure/showcase/horrific_experiment_cryo
 	name = "horrific experiment"
@@ -128,7 +129,7 @@
 
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
-/obj/item/weapon/beach_ball
+/obj/item/beach_ball
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "ball"
 	name = "beach ball"

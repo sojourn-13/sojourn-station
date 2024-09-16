@@ -11,7 +11,7 @@
 	var/state
 	var/datum/gas_mixture/air_contents = null
 
-/obj/item/latexballon/proc/blow(obj/item/weapon/tank/tank)
+/obj/item/latexballon/proc/blow(obj/item/tank/tank)
 	if (icon_state == "latexballon_bursted")
 		return
 	src.air_contents = tank.remove_air_volume(3)
@@ -35,8 +35,9 @@
 			if (prob(50))
 				qdel(src)
 
-/obj/item/latexballon/bullet_act()
-	burst()
+/obj/item/latexballon/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		burst()
 
 /obj/item/latexballon/fire_act(datum/gas_mixture/air, temperature, volume)
 	if(temperature > T0C+100)

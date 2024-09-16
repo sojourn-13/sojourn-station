@@ -10,9 +10,9 @@
 	if(prob(2))
 		var/path = junk()
 		new path(T)
-	if(prob(2))
+	if(prob(1)) //Blood/oil processes so we dont want to clog are game with such pitty things but its nice to fine
 		new /obj/effect/decal/cleanable/blood/oil(T)
-	if(prob(1))
+	if(prob(0.5)) //Sadly the simple mouse is lag intentsive in its action
 		new /mob/living/simple_animal/mouse(T)
 	if(prob(25))	// Keep in mind that only "corners" get any sort of web
 		attempt_web(T, cardinal_turfs)

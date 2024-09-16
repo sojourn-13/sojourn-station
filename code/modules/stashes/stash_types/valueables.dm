@@ -6,11 +6,9 @@
 	contents_list_base = list(/obj/random/credits/c5000 = 1)
 
 	contents_list_random = list(/obj/item/stack/material/diamond/random = 10,
-	/obj/item/stack/telecrystal/random = 5,
 	/obj/item/stack/material/platinum/random = 10,
 	/obj/item/stack/material/gold/random = 15,
 	/obj/item/stack/material/silver/random = 25,
-	/obj/item/weapon/moneybag/vault = 15,
 	/obj/random/credits/c5000 = 30,
 	/obj/random/credits/c1000 = 60,
 	/obj/random/credits/c500 = 90)
@@ -37,7 +35,7 @@
 
 /datum/stash/valueable/pirate
 	base_type = /datum/stash/valueable/pirate
-	contents_list_extra = list(/obj/item/weapon/melee/energy/sword/pirate = 1, /obj/item/clothing/glasses/eyepatch)
+	contents_list_extra = list(/obj/item/melee/energy/sword/pirate = 1, /obj/item/clothing/glasses/eyepatch)
 
 /datum/stash/valueable/pirate/treasure
 	directions = DIRECTION_IMAGE

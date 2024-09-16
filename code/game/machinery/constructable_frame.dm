@@ -5,9 +5,10 @@
 //Circuit boards are in /code/game/objects/items/weapons/circuitboards/machinery/
 /obj/machinery/constructable_frame
 	icon = 'icons/obj/stock_parts.dmi'
-	use_power = 0
+	use_power = NO_POWER_USE
 	density = TRUE
 	anchored = TRUE
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion and shadow items
 
 /obj/machinery/constructable_frame/machine_frame //Made into a seperate type to make future revisions easier.
 	name = "machine frame"
@@ -145,8 +146,8 @@
 						icon_state = "[base_state]_1"
 
 		if(STATE_WIRES)
-			if(istype(I, /obj/item/weapon/circuitboard))
-				var/obj/item/weapon/circuitboard/B = I
+			if(istype(I, /obj/item/circuitboard))
+				var/obj/item/circuitboard/B = I
 				if(B.board_type == "machine" && frame_type == B.frame_type)
 					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 					to_chat(user, SPAN_NOTICE("You add the circuit board to the frame."))
@@ -159,9 +160,9 @@
 					req_components = circuit.req_components.Copy()
 
 					var/static/list/special_component_names = list(
-						/obj/item/weapon/cell/large = "L-class power cell",
-						/obj/item/weapon/cell/medium = "M-class power cell",
-						/obj/item/weapon/cell/small = "S-class power cell",
+						/obj/item/cell/large = "L-class power cell",
+						/obj/item/cell/medium = "M-class power cell",
+						/obj/item/cell/small = "S-class power cell",
 						)
 
 					req_component_names = list()
@@ -181,8 +182,10 @@
 					to_chat(user, SPAN_WARNING("This frame does not accept circuit boards of this type!"))
 
 		if(STATE_CIRCUIT)
+			if(istype(I, /obj/item/storage/part_replacer))
+				handle_part_replacer(I, user)
 
-			if(istype(I, /obj/item))
+			else if(istype(I, /obj/item))
 				for(var/CM in req_components)
 					if(istype(I, CM) && (req_components[CM] > 0))
 						playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
@@ -210,6 +213,65 @@
 				else
 					examine(user)
 	update_icon()
+
+/obj/machinery/constructable_frame/machine_frame/proc/handle_part_replacer(obj/item/storage/part_replacer/R, mob/user)
+	// Ahead of time prepping for bluespace RPED calling into this directly
+	if(state != STATE_CIRCUIT || !req_components)
+		return
+
+	var/took_something = FALSE
+
+	for(var/obj/item/stock_parts/replacement in R.contents)
+		// This is a cursed double loop but we have to do it this way because we have to use the CM  path key
+		// and also check if the replacement passes istype 
+		for(var/CM in req_components)
+			if(!istype(replacement, CM))
+				continue
+
+			// Found something
+			// Get some new parts from the part replacer
+			if(req_components[CM] > 0)
+				took_something = TRUE
+				R.remove_from_storage(replacement, src)
+				components += replacement
+				req_components[CM]--
+				to_chat(usr, SPAN_NOTICE("[replacement] installed in [src]."))
+				continue // no-op but we'll be explicit
+			else
+				// Try to replace existing parts 
+				for(var/obj/item/stock_parts/installed in components)
+					if(istype(installed, CM))
+						if(replacement.rating > installed.rating)
+							took_something = TRUE
+							// Replacing worse components
+							R.remove_from_storage(replacement, src)
+							R.handle_item_insertion(installed, 1)
+							components -= installed
+							components += replacement
+							to_chat(usr, SPAN_NOTICE("[installed] replaced with [replacement]."))
+							break // We took replacement, break out of our component loop
+
+	if(took_something)
+		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		examine(user)
+	else
+		to_chat(usr, SPAN_WARNING("No items in [R] could be loaded into [src]."))
+
+/obj/machinery/constructable_frame/machine_frame/MouseDrop_T(obj/A, mob/user, src_location, over_location, src_control, over_control, params)
+	if(istype(A, /obj/item))
+		attackby(A, user)
+		return
+
+	for(var/CM in req_components)
+		if(istype(A, CM) && (req_components[CM] > 0))
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			A.forceMove(src)
+			components += A
+			req_components[CM]--
+			break
+		else
+			to_chat(user, SPAN_WARNING("You cannot add that component to the machine!"))
+
 
 /obj/machinery/constructable_frame/machine_frame/proc/component_check()
 	var/ready = TRUE

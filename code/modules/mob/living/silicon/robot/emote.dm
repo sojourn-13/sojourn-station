@@ -1,5 +1,6 @@
 /mob/living/silicon/robot/emote(var/act,var/m_type=1,var/message = null)
 	var/param = null
+	var/cloud_emote = ""
 	if (findtext(act, "-", 1, null))
 		var/t1 = findtext(act, "-", 1, null)
 		param = copytext(act, t1 + 1, length(act) + 1)
@@ -63,6 +64,13 @@
 			if (!src.restrained())
 				message = "claps."
 				m_type = 2
+
+		if ("slowclap")
+			if (!src.restrained())
+				message = "activates their slow-clap processor." // Because I'M A POTATO.
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps its wings."
@@ -85,9 +93,15 @@
 			message = "nods."
 			m_type = 1
 
+		if ("honk")
+			message = "honks."
+			playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 0)
+			m_type = 1
+
 		if ("deathgasp")
 			message = "shudders violently for a moment, then becomes motionless, its eyes slowly darkening."
 			m_type = 1
+			cloud_emote = "cloud-malfunction"
 
 		if ("glare")
 			var/M = null
@@ -171,6 +185,7 @@
 			m_type = 1
 
 		if("buzz")
+			cloud_emote = "cloud-malfunction"
 			var/M = null
 			if(param)
 				for (var/mob/A in view(null, null))
@@ -187,30 +202,72 @@
 			playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 0)
 			m_type = 1
 
+		if("confirm")
+			var/M = null
+			if(param)
+				for (var/mob/A in view(null, null))
+					if (param == A.name)
+						M = A
+						break
+			if(!M)
+				param = null
+
+			if (param)
+				message = "emits an affirmative blip to [param]."
+			else
+				message = "emits an affirmative blip."
+			playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 0)
+			m_type = 1
+
+		if("deny")
+			cloud_emote = "cloud-malfunction"
+			var/M = null
+			if(param)
+				for (var/mob/A in view(null, null))
+					if (param == A.name)
+						M = A
+						break
+			if(!M)
+				param = null
+
+			if (param)
+				message = "emits a negative blip to [param]."
+			else
+				message = "emits a negative blip."
+			playsound(src.loc, 'sound/machines/synth_no.ogg', 50, 0)
+			m_type = 1
+
 		if("law")
-			if (istype(module,/obj/item/weapon/robot_module/security))
+			if (istype(module,/obj/item/robot_module/security))
 				message = "shows its legal authorization barcode."
 
 				playsound(src.loc, 'sound/voice/biamthelaw.ogg', 50, 0)
 				m_type = 2
+				cloud_emote = "cloud-scream"
 			else
 				to_chat(src, "You are not THE LAW, pal.")
 
 		if("halt")
-			if (istype(module,/obj/item/weapon/robot_module/security))
+			if (istype(module,/obj/item/robot_module/security))
 				message = "<B>[src]</B>'s speakers skreech, \"Halt! Security!\"."
 
 				playsound(src.loc, 'sound/voice/halt.ogg', 50, 0)
 				m_type = 2
+				cloud_emote = "cloud-scream"
 			else
 				to_chat(src, "You are not security.")
 
 		if ("help")
-			to_chat(src, "salute, bow-(none)/mob, clap, flap, aflap, twitch, twitch_s, nod, deathgasp, glare-(none)/mob, stare-(none)/mob, look, beep, ping, \nbuzz, law, halt")
+			to_chat(src, "salute, bow-(none)/mob, clap, flap, aflap, twitch, twitch_s, nod, deathgasp, glare-(none)/mob, stare-(none)/mob, look, beep, ping, \nbuzz, confirm, deny, law, halt")
 		else
 			to_chat(src, "\blue Unusable emote '[act]'. Say *help for a list.")
 
 	if ((message && src.stat == 0))
 		custom_emote(m_type, message)
+
+	if(cloud_emote)
+		var/image/emote_bubble = image('icons/mob/emote.dmi', src, cloud_emote, ABOVE_MOB_LAYER)
+		flick_overlay(emote_bubble, clients, 30)
+		QDEL_IN(emote_bubble, 3 SECONDS)
 
 	return

@@ -1,7 +1,9 @@
+var/const/WIRE_EXPLODE = 1
 /datum/wires/explosive
 	wire_count = 1
-
-var/const/WIRE_EXPLODE = 1
+	descriptions = list(
+		new /datum/wire_description(WIRE_EXPLODE, "Detonation"),
+	)
 
 /datum/wires/explosive/proc/explode()
 	return
@@ -18,14 +20,14 @@ var/const/WIRE_EXPLODE = 1
 				explode()
 
 /datum/wires/explosive/c4
-	holder_type = /obj/item/weapon/plastique
+	holder_type = /obj/item/plastique
 
 /datum/wires/explosive/c4/CanUse(var/mob/living/L)
-	var/obj/item/weapon/plastique/P = holder
+	var/obj/item/plastique/P = holder
 	if(P.open_panel)
 		return 1
 	return 0
 
 /datum/wires/explosive/c4/explode()
-	var/obj/item/weapon/plastique/P = holder
+	var/obj/item/plastique/P = holder
 	P.explode(get_turf(P))

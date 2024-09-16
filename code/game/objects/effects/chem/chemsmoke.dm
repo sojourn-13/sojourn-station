@@ -28,14 +28,16 @@
 	//float over to our destination, if we have one
 	destination = dest_turf
 	if(destination)
-		walk_to(src, destination)
+		SSmove_manager.move_to(src, destination)
 
 
 /obj/effect/effect/smoke/chem/Destroy()
 	if (reagents)
 		reagents.my_atom = null
 		QDEL_NULL(reagents)
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
+	destination = null
+	weak_reference = null
 	return ..()
 
 /obj/effect/effect/smoke/chem/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
@@ -52,7 +54,7 @@
 
 /obj/effect/effect/smoke/chem/Crossed(atom/movable/AM)
 	..()
-	if(!istype(AM, /obj/effect/effect/smoke))
+	if(!istype(AM, /obj/effect/effect/smoke) && reagents)
 		reagents.splash(AM, splash_amount, copy = 1)
 
 /obj/effect/effect/smoke/chem/proc/initial_splash()
@@ -90,6 +92,11 @@
 	..()
 	chemholder = new/obj()
 	chemholder.create_reagents(500)
+
+/datum/effect/effect/system/smoke_spread/chem/Destroy()
+	QDEL_NULL(chemholder)
+	return ..()
+
 
 //Sets up the chem smoke effect
 // Calculates the max range smoke can travel, then gets all turfs in that view range.
@@ -162,6 +169,15 @@
 					continue
 				else if (ismob(A))
 					chemholder.reagents.touch_mob(A)
+					if(istype(A, /mob/living/carbon))
+						var/mob/living/carbon/H = A
+						var/internals = H.get_breath_from_internal()
+						var/gasmask = FALSE
+						if(H.wear_mask)
+							gasmask = H.wear_mask.item_flags & BLOCK_GAS_SMOKE_EFFECT
+						if(!internals && !gasmask)
+							chemholder.reagents.trans_to_mob(H, 5, CHEM_INGEST, copy = FALSE)
+							chemholder.reagents.trans_to_mob(H, 5, CHEM_BLOOD, copy = FALSE)
 				else if(isobj(A) && !A.simulated)
 					chemholder.reagents.touch_obj(A)
 
@@ -257,9 +273,13 @@
 					continue
 				if(!(target in targetTurfs))
 					continue
-				if(current.c_airblock(target)) //this is needed to stop chemsmoke from passing through thin window walls
+				var/currentblock
+				ATMOS_CANPASS_TURF(currentblock, current, target)
+				if(currentblock) //this is needed to stop chemsmoke from passing through thin window walls
 					continue
-				if(target.c_airblock(current))
+				var/targetblock
+				ATMOS_CANPASS_TURF(targetblock, target, current)
+				if(targetblock)
 					continue
 				pending += target
 

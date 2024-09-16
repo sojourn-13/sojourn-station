@@ -15,14 +15,14 @@
 	path = /obj/item/rig_module/fabricator/energy_net
 
 /datum/uplink_item/item/ewar_voice
-	name = "Electrowarfare Suite and Voice Synthesiser"
+	name = "Electrowarfare Suite and Voice Synthesizer"
 	item_cost = 4
-	path = /obj/item/weapon/storage/box/syndie_kit/ewar_voice
+	path = /obj/item/storage/box/syndie_kit/ewar_voice
 
 /datum/uplink_item/item/chem_injector
 	name = "Mounted chemical injector"
-	item_cost = 8
-	path = /obj/item/rig_module/chem_dispenser
+	item_cost = 3
+	path = /obj/item/rig_module/modular_injector
 
 /datum/uplink_item/item/portable_autodoc
 	name = "Portable autodoc"

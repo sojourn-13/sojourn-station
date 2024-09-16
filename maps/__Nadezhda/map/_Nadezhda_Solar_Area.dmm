@@ -1,0 +1,13546 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"ab" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/mountainsolars)
+"ac" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"ad" = (
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ae" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"af" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ag" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ah" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"aj" = (
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"ak" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"al" = (
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"am" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"au" = (
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"av" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aw" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"ax" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aA" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"aB" = (
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"aD" = (
+/obj/structure/flora/small/busha1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aE" = (
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"aF" = (
+/obj/structure/table/standard,
+/obj/item/stack/cable_coil,
+/obj/item/stack/cable_coil,
+/obj/item/paper/solarsteup,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aG" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"aI" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/solar_control,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aJ" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"aL" = (
+/obj/structure/table/glass,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"aM" = (
+/obj/landmark/join/start/technomancer,
+/obj/structure/bed/chair/office/light,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"aN" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aO" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aP" = (
+/obj/structure/table/standard,
+/obj/item/storage/toolbox/electrical,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/stack/cable_coil,
+/obj/item/stack/cable_coil,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aQ" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aR" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"aS" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aT" = (
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aU" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aV" = (
+/obj/random/flora/small_jungle_tree/low,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"aW" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"aX" = (
+/obj/machinery/camera/network/engineering{
+	dir = 4
+	},
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"aY" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"aZ" = (
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"ba" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bb" = (
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"bc" = (
+/obj/machinery/door/airlock/multi_tile/glass,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"bd" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"be" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bh" = (
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"bi" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/mountainsolars)
+"bj" = (
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"bk" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"bl" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,18"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,15"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bn" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,18"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bo" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bp" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/turbolift/mountain/solars)
+"bq" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,6";
+	opacity = 0
+	},
+/area/nadezhda/outside/mountainsolars)
+"br" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,15"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bs" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,10"
+	},
+/area/nadezhda/outside/mountainsolars)
+"bt" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"bu" = (
+/obj/map_data/nadezda_solars,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"bw" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bx" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bz" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bB" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"bC" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"bD" = (
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bE" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"bG" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bH" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bI" = (
+/obj/structure/cable/ender{
+	id = "mountain to engineering"
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"bJ" = (
+/turf/simulated/shuttle/floor/mining,
+/area/turbolift/mountain/solars)
+"bL" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bM" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bN" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bO" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bP" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bQ" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bR" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bT" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"bV" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"ca" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cc" = (
+/mob/living/simple_animal/jungle_bird,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cd" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"cg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"ch" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"ci" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"cj" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"cl" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"cn" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"co" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"cp" = (
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cq" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cr" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"ct" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cw" = (
+/obj/structure/flora/small/bushb1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cx" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 9;
+	tag = "icon-intact (NORTHWEST)"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"cy" = (
+/obj/structure/flora/rock/variant1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cA" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cB" = (
+/obj/structure/railing,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"cD" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cE" = (
+/obj/structure/railing,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cI" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cJ" = (
+/obj/structure/table/marble,
+/obj/machinery/microwave,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"cK" = (
+/obj/structure/table/marble,
+/obj/item/storage/box/donkpockets,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"cL" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cM" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cN" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cO" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cP" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cQ" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cR" = (
+/obj/structure/flora/small/busha2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cS" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cT" = (
+/obj/random/furniture/pottedplant,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"cU" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cV" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"cW" = (
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cX" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"cY" = (
+/obj/structure/flora/small/grassb2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"cZ" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/small/grassb2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"da" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	frequency = 1442;
+	id = "SM_in";
+	pixel_y = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/outside/mountainsolars)
+"db" = (
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/mountainsolars)
+"dc" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/mountainsolars)
+"dd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"de" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"df" = (
+/mob/living/simple_animal/snail,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/mountainsolars)
+"dg" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/mountainsolars)
+"dh" = (
+/obj/structure/flora/rock,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"di" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/mountainsolars)
+"dj" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/mob/living/simple_animal/frog,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/mountainsolars)
+"dk" = (
+/obj/structure/flora/small/bushc1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dl" = (
+/obj/structure/flora/small/grassa3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dm" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/mountainsolars)
+"dn" = (
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"do" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/mountainsolars)
+"dp" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/mob/living/simple_animal/crab,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/mountainsolars)
+"dq" = (
+/obj/structure/flora/small/grassa2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dr" = (
+/obj/structure/flora/small/lavarock2,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"ds" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"dt" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"du" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dv" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"dw" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dx" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/mob/living/simple_animal/goose,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/mountainsolars)
+"dy" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/small/lavarock3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"dz" = (
+/obj/structure/flora/small/lavarock3,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"dA" = (
+/obj/random/mob/croaker/low_chance,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/mountainsolars)
+"dB" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"dC" = (
+/obj/structure/table/marble,
+/obj/random/junkfood/low_chance{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/random/booze/low_chance,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"dF" = (
+/obj/structure/cable,
+/obj/machinery/power/solar,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"dG" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/mountainsolars)
+"dI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"dK" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"dL" = (
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"dM" = (
+/turf/simulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"dN" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"dR" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"ee" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"em" = (
+/obj/structure/catwalk,
+/obj/item/caution,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"eq" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/ntnet_relay,
+/obj/machinery/door/window/northleft{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
+"eA" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"eE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/vehicle/train/cargo/trolley,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"eI" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"eM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"eT" = (
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"fn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"fo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/item/device/pipe_painter,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"fp" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"fq" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"fD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warningnew/radiation,
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"fH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"fK" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 6;
+	tag = "icon-intact (SOUTHEAST)"
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"fL" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/vehicle/train/cargo/trolley,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"gr" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"gD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"gS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/closet/crate/solar,
+/obj/effect/floor_decal/industrial/box,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"gT" = (
+/obj/machinery/door/window/southright,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"hb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"hd" = (
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"hy" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"hG" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"hV" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8;
+	name = "FILTER REFUSE"
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"hZ" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"ik" = (
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"is" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"it" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/radiation,
+/obj/item/contraband/poster/placed/generic/firesafety{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"ix" = (
+/obj/machinery/vending/dinnerware,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"iJ" = (
+/obj/structure/flora/small/grassa2,
+/obj/structure/flora/small/grassa2,
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"iY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"iZ" = (
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"ji" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"jm" = (
+/obj/structure/sign/warning/hazard_hotloop,
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"jo" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"jr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"ju" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"jE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"jH" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"jM" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ki" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"kp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/circulator,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"kq" = (
+/obj/structure/closet/crate/solar,
+/obj/effect/floor_decal/industrial/box,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"ku" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"kC" = (
+/obj/machinery/atmospherics/trinary/filter/m_filter{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"kE" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"kG" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"kO" = (
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"kP" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"lh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"lm" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"lx" = (
+/obj/structure/sign/warning/hazard_coldloop,
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"lB" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"lI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"lJ" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"lK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/circulator,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"lL" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"lW" = (
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/outside/mountainsolars)
+"lX" = (
+/obj/vehicle/train/cargo/trolley,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"mz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"mI" = (
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"mN" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ng" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"nl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"no" = (
+/obj/structure/railing,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"np" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"nt" = (
+/turf/simulated/wall,
+/area/nadezhda/engineering/dorm)
+"nx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"nz" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"nJ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"nK" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"nM" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"nU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"nW" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/empty,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"nY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"nZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holoposter{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"on" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/radiation,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"ou" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"ox" = (
+/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"oG" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"oJ" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"oM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"oP" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"oV" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"oX" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"pl" = (
+/obj/machinery/computer/general_air_control/supermatter_core{
+	sensors = list("SM_sensor" = "Tank");
+	output_tag = "SM_out";
+	name = "Supermatter Supply Control";
+	input_tag = "SM_in";
+	dir = 1;
+	frequency = 1442
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"pp" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"pq" = (
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	pixel_y = 32
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"pU" = (
+/obj/structure/sign/warning/high_voltage,
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"pV" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"qg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"ql" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"qB" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"qL" = (
+/obj/structure/table/glass,
+/obj/item/deck/cards,
+/obj/item/storage/pill_bottle/dice,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"qN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"qU" = (
+/obj/structure/flora/small/rock4,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"qX" = (
+/obj/machinery/camera/network/engineering{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"rm" = (
+/obj/random/flora/jungle_tree/low,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"rC" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"rF" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"rL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"rM" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"rR" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"rW" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"sh" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"sj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/item/circuitboard/powermonitor,
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"st" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"sw" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"sS" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"sX" = (
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"sZ" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"tc" = (
+/obj/structure/bookcase/manuals/engineering,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"te" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"tg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"tr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/southleft,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"tv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"tE" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/telecomms/relay/preset/telecomms,
+/obj/machinery/door/window/northleft{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
+"tK" = (
+/obj/machinery/camera/network/engineering,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"ug" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"ut" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"uz" = (
+/obj/machinery/atmospherics/binary/pump,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"uY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"vb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/northright,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"vk" = (
+/obj/machinery/pipedispenser,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"vl" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"vR" = (
+/obj/machinery/photocopier,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"vS" = (
+/obj/structure/bed/chair,
+/obj/item/storage/fancy/cigarettes/toha,
+/obj/item/flame/lighter/zippo/brass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"vU" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/vending/engivend,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"wi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"wl" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"wm" = (
+/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"wu" = (
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	environ = 1;
+	equipment = 1;
+	pixel_y = 26
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"wK" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"wO" = (
+/obj/machinery/air_sensor{
+	id_tag = "SM_sensor";
+	frequency = 1442;
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/outside/mountainsolars)
+"wR" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"wU" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"wZ" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"xb" = (
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"xf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"xg" = (
+/obj/structure/closet/crate/solar,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"xh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"xk" = (
+/obj/structure/flora/big/rocks3,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"xP" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"yc" = (
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"ym" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"yo" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"yp" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"yC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"yG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"yK" = (
+/obj/machinery/vending/cola,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"yU" = (
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"zb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"zi" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"zG" = (
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/outside/mountainsolars)
+"zI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"zV" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Af" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Az" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"AA" = (
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"AB" = (
+/obj/structure/table/rack/shelf,
+/obj/random/powercell/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"AN" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Be" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"Bg" = (
+/obj/machinery/door/airlock/multi_tile/glass,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"Bi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Br" = (
+/obj/machinery/atmospherics/pipe/manifold/visible,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"BA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"BD" = (
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"BI" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"BP" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"BY" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Cg" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Cm" = (
+/obj/structure/table/glass,
+/obj/item/device/lighting/toggleable/lamp/green,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Cn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"CE" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"CP" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"CY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Dg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Di" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Dm" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Dt" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Dv" = (
+/obj/structure/flora/small/lavarock3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"DA" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"DI" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"DJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/generator,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"DS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"DU" = (
+/obj/machinery/door/airlock/hatch{
+	req_one_access = list(24,10)
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"DV" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 1;
+	tag = "icon-intact (NORTH)"
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"DZ" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"El" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"En" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack/shelf,
+/obj/random/powercell/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"Eq" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/window/westright,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Es" = (
+/obj/item/modular_computer/console/preset/engineering/supermatter{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Ev" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Ew" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"EB" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"EI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"EN" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"EU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Fk" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 10
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"Fm" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"Fo" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Ft" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"FC" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"FD" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/vehicle/train/cargo/engine,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"FF" = (
+/obj/structure/flora/small/busha3,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"FR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"FX" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Gd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Gh" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Gj" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics";
+	req_access = newlist();
+	req_one_access = list(24,10)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"GD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"GU" = (
+/obj/structure/closet/crate/solar,
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"Hk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Hs" = (
+/obj/structure/cable,
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Ht" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 6
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Hw" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"HP" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"HT" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"HW" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"HX" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"Ib" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Io" = (
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"IQ" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"IT" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Jl" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"JB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"JJ" = (
+/obj/machinery/atmospherics/binary/pump/high_power/on{
+	target_pressure = 5000
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"JU" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"JX" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/engineering/dorm)
+"JZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Kb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Kf" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Kk" = (
+/obj/structure/flora/small/grassa2,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Kn" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"KB" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"KO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible/blue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"KR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 6
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"KX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Ld" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing,
+/obj/structure/invislight,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Le" = (
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Lf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Lv" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Lz" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/turf/simulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"LA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"LS" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Mg" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Mr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"My" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"MC" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"MM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"MP" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Nh" = (
+/obj/structure/flora/small/bushc2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Nn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Nq" = (
+/obj/structure/flora/small/trailrocka4,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Nt" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
+"NF" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"NK" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/window/eastleft,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"NQ" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/scrap/moderate_weighted,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Od" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Og" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/plating,
+/area/nadezhda/engineering/dorm)
+"Oj" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Ok" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/low_wall,
+/turf/simulated/floor/plating,
+/area/nadezhda/engineering/dorm)
+"Oq" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Ot" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"Oz" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"OC" = (
+/obj/structure/table/glass,
+/obj/item/paper_bin,
+/obj/item/pen{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"OJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"OM" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/engineering/dorm)
+"OU" = (
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Pd" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"PE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"PQ" = (
+/obj/machinery/door/airlock/glass_engineering{
+	name = "Engineering";
+	req_access = list(10)
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"PU" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"PX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Qa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Qh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/obj/machinery/door/window/eastleft,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Qm" = (
+/obj/structure/flora/small/bushb1,
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Qq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral,
+/area/nadezhda/outside/mountainsolars)
+"Qr" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"QH" = (
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"QL" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"QP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"QX" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Rb" = (
+/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Rd" = (
+/obj/machinery/atmospherics/pipe/manifold/visible,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Ri" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Rj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Rm" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"Rq" = (
+/obj/random/junk/cigbutt,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"RK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"RO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/engineering,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"RP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"RS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Se" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"SE" = (
+/obj/random/tool_upgrade/low_chance,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/mountainsolars)
+"SG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"SI" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"SO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
+"Td" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Te" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Tq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/tool/advanced/low_chance,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Tz" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"TB" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"TD" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"TF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"TO" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1442;
+	icon_state = "map_vent_in";
+	id_tag = "SM_out";
+	internal_pressure_bound = 2000;
+	internal_pressure_bound_default = 2000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/outside/mountainsolars)
+"Uc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/door/window/eastright,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Uj" = (
+/obj/machinery/atmospherics/valve/digital{
+	dir = 4;
+	name = "EMERGENCY COOLING"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Uk" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Um" = (
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Un" = (
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Uo" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Us" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Uu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"UE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"UF" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"UN" = (
+/obj/structure/sign/faction/technomancers{
+	pixel_y = 32
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"UT" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/space,
+/area/nadezhda/outside/mountainsolars)
+"UX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Vd" = (
+/obj/structure/sign/warning/nosmoking/largeburnt,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/mountainsolars)
+"Vz" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"VL" = (
+/obj/machinery/holoposter{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"VU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"VW" = (
+/obj/structure/sign/warningnew/radiation,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/mountainsolars)
+"VZ" = (
+/obj/structure/boulder,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Wd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Wo" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Wv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Wy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"WE" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"WH" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"WR" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"WS" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"WV" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Xa" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"Xc" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Xj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Xp" = (
+/obj/structure/catwalk,
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Xq" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/low_wall,
+/turf/simulated/floor/plating,
+/area/nadezhda/engineering/dorm)
+"Xt" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"XQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"XR" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"Ye" = (
+/obj/structure/flora/small/bushb2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Yv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"YI" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
+"YM" = (
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	environ = 1;
+	equipment = 1;
+	pixel_y = 26
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"YR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
+"Zh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"Zj" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"Zm" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/mountainsolars)
+"Zo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Zx" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Zy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"ZC" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"ZH" = (
+/obj/machinery/atmospherics/binary/pump/high_power/on{
+	dir = 1;
+	target_pressure = 295
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"ZY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/outside/mountainsolars)
+"ZZ" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bu
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ab
+ac
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+al
+al
+al
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+al
+al
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+al
+al
+al
+al
+al
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+av
+av
+av
+al
+al
+av
+bT
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+ac
+ac
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+cU
+ac
+ac
+ac
+al
+al
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+aS
+aU
+aS
+aS
+aT
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ae
+af
+ah
+ac
+ac
+al
+ac
+al
+ac
+ac
+al
+al
+ac
+ac
+ac
+al
+al
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+aS
+al
+aS
+aS
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+al
+aS
+aS
+al
+al
+al
+dh
+ac
+ac
+aU
+al
+al
+ac
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+aS
+av
+al
+aS
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+ac
+al
+bP
+aS
+av
+bL
+bL
+al
+ac
+al
+ac
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+av
+aU
+al
+bL
+av
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+al
+aS
+al
+bL
+bL
+de
+al
+ac
+al
+ac
+al
+ac
+al
+ac
+al
+al
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+av
+al
+aS
+bL
+av
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+al
+aS
+al
+bT
+al
+bL
+al
+ac
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+av
+aS
+bP
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+ac
+al
+al
+av
+aS
+aS
+bP
+al
+ac
+al
+bT
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+aS
+bP
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+cU
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+av
+bL
+bL
+aS
+bL
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+ac
+dn
+dn
+dr
+ac
+dn
+dn
+dn
+dn
+dn
+dn
+ac
+ac
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+bL
+bQ
+bP
+bQ
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+al
+al
+ac
+ac
+ac
+ac
+al
+al
+ac
+ac
+ac
+ac
+dn
+dn
+dd
+dn
+dn
+dn
+dn
+dn
+ac
+ac
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+aS
+bP
+bQ
+bQ
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+aS
+aS
+ac
+al
+al
+al
+ac
+ac
+db
+db
+db
+dd
+ds
+ds
+dc
+dd
+dd
+dn
+dn
+dn
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+aS
+bP
+bQ
+bP
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+aS
+aS
+ac
+aU
+al
+ac
+ac
+db
+db
+dm
+do
+di
+dc
+dc
+dc
+dc
+dc
+dd
+dn
+dn
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+aS
+bQ
+bP
+bP
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+aS
+aS
+al
+ac
+ac
+ac
+db
+db
+db
+dg
+di
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+dz
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+bM
+bQ
+bR
+bR
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+av
+av
+ac
+ac
+ac
+db
+db
+df
+db
+di
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+aS
+aS
+bP
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+av
+av
+ac
+ac
+db
+db
+db
+db
+dg
+di
+dc
+dc
+dc
+dc
+dc
+dc
+dj
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+aT
+al
+aS
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+av
+al
+al
+al
+db
+df
+db
+df
+dg
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+bN
+bL
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+av
+al
+al
+al
+db
+db
+db
+dg
+dc
+dc
+dc
+dc
+dj
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+av
+bO
+bL
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+bL
+aS
+ac
+ac
+db
+db
+dg
+di
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+aS
+av
+av
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+aU
+aS
+aS
+al
+ac
+db
+dg
+di
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dx
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+aS
+av
+bL
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+al
+al
+al
+ac
+db
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+av
+av
+aS
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+cW
+al
+ac
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+aU
+al
+al
+al
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+bL
+aS
+ac
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dp
+dc
+dd
+dn
+dn
+dn
+dd
+dc
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+al
+al
+al
+al
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+bL
+aS
+ac
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+dt
+dw
+dt
+dz
+dd
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+bN
+av
+aS
+aS
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+av
+al
+ac
+ac
+dc
+dc
+dc
+dj
+dc
+dc
+dc
+dc
+dd
+bV
+av
+av
+bV
+dn
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(41,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+av
+av
+al
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+bL
+al
+al
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dd
+aS
+aS
+aS
+aS
+dn
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(42,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+al
+al
+aU
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+aS
+al
+al
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dp
+dc
+ac
+du
+du
+dy
+du
+dA
+dc
+dc
+dd
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(43,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+al
+av
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+cc
+al
+al
+al
+ac
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+ac
+dv
+du
+aU
+du
+dn
+dc
+dc
+dG
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(44,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+al
+al
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+av
+bV
+ac
+al
+ac
+dd
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+ac
+dv
+du
+du
+dn
+dd
+dc
+dc
+dG
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+cX
+ac
+ac
+ac
+dd
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+ac
+ac
+ac
+dn
+dd
+dc
+dc
+ab
+dG
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(46,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+al
+al
+al
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+ac
+ac
+ac
+ac
+dd
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+dc
+ab
+dG
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(47,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+av
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ae
+ag
+dF
+ac
+ac
+al
+ac
+ac
+ac
+ab
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dd
+dG
+dG
+dG
+dG
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(48,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+av
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ac
+ac
+al
+bV
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(49,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+av
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+bx
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(50,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+av
+av
+al
+ax
+al
+Nh
+ac
+ac
+ac
+ac
+ac
+Ye
+aQ
+al
+ac
+ac
+ac
+aG
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(51,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+av
+bL
+aS
+al
+aD
+al
+al
+aS
+av
+aD
+al
+av
+aS
+al
+Ye
+ac
+ac
+aG
+ac
+ac
+ac
+cw
+al
+aS
+aS
+av
+av
+aS
+cw
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+al
+al
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(52,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+av
+av
+bT
+Ye
+aS
+cR
+al
+cR
+Ye
+ac
+ac
+ac
+FX
+FX
+FX
+ac
+ac
+Ib
+ac
+bb
+ac
+al
+al
+av
+al
+cw
+al
+al
+al
+al
+aS
+bP
+aS
+aS
+aS
+ac
+ac
+ac
+ac
+cX
+aS
+al
+al
+al
+al
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+al
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(53,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+Nh
+al
+OU
+al
+OU
+aQ
+av
+al
+aS
+ac
+ac
+aa
+aj
+ak
+ak
+ak
+ak
+aj
+aR
+aj
+aj
+ac
+al
+aS
+av
+bN
+al
+bL
+aS
+al
+av
+bL
+bL
+al
+al
+aS
+ac
+ac
+ac
+ac
+aS
+aS
+al
+al
+al
+al
+al
+al
+al
+ab
+ab
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(54,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+al
+eT
+Rb
+aS
+TD
+Rb
+OU
+al
+rm
+ac
+ac
+ab
+aa
+nt
+xg
+yU
+AB
+aF
+aN
+ci
+aX
+ak
+FX
+al
+al
+al
+al
+cc
+al
+al
+al
+al
+al
+al
+av
+av
+al
+ac
+ac
+al
+al
+av
+al
+al
+al
+aS
+aS
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(55,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aS
+al
+AA
+aS
+vS
+Rq
+aS
+Ye
+ac
+ac
+ac
+ab
+aa
+nt
+GU
+Ot
+En
+aI
+aO
+cj
+zI
+ak
+FX
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+al
+al
+cw
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+aS
+al
+aS
+al
+al
+aU
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(56,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+aV
+AA
+ox
+al
+al
+ac
+ac
+ac
+ab
+ab
+aa
+nt
+OM
+Ot
+Ot
+cd
+aP
+rF
+zI
+ak
+Zx
+au
+au
+au
+cq
+cq
+cq
+ac
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(57,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+al
+al
+OU
+aS
+ax
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+nt
+nZ
+DS
+Gd
+aB
+ut
+cl
+ut
+bc
+au
+cg
+au
+cg
+cg
+cz
+au
+cI
+al
+ac
+al
+al
+ac
+al
+ac
+ac
+ac
+ac
+aU
+al
+al
+al
+al
+al
+aT
+al
+al
+cw
+al
+al
+al
+al
+al
+al
+al
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(58,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+aS
+aS
+Nh
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+xh
+Gd
+jH
+aA
+ch
+cl
+aA
+bd
+au
+cg
+au
+cz
+cF
+cH
+au
+cI
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+cc
+dq
+al
+ac
+al
+al
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(59,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+aS
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+Gd
+Gd
+Og
+jH
+Um
+Xq
+Ok
+ak
+oJ
+ct
+cr
+cA
+cg
+cF
+cg
+cI
+aS
+cN
+bL
+bL
+aS
+al
+aS
+ac
+ac
+al
+cY
+cZ
+al
+al
+bT
+al
+al
+al
+al
+al
+al
+dq
+ac
+al
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(60,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+jH
+jH
+QX
+aE
+Di
+cn
+cJ
+ak
+Oq
+aS
+al
+cB
+cg
+cz
+cg
+cI
+aS
+av
+bQ
+bL
+aS
+cR
+aS
+ac
+ac
+al
+al
+av
+al
+al
+al
+al
+cR
+cN
+al
+aT
+al
+dq
+al
+al
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(61,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+DS
+DS
+Di
+aE
+Qa
+cn
+cK
+ak
+Oq
+al
+cy
+cp
+au
+cF
+cg
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+dk
+al
+al
+dh
+ac
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(62,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+DS
+DS
+aE
+FR
+FR
+dB
+dC
+ak
+Oq
+aS
+aS
+cB
+au
+cF
+au
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+bi
+ad
+fq
+ad
+ad
+ad
+fq
+ad
+bi
+dk
+dk
+al
+al
+ac
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(63,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+ab
+nt
+xh
+jH
+aE
+aE
+Di
+hG
+vR
+ak
+Oq
+al
+al
+cp
+au
+cz
+au
+cI
+aS
+av
+cR
+al
+bi
+bi
+bi
+bi
+ac
+bi
+ad
+bi
+dL
+dL
+dL
+bi
+ad
+bi
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(64,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+nt
+nt
+nt
+nt
+nt
+nt
+Yv
+Um
+Di
+aM
+aM
+co
+rR
+ak
+Oq
+al
+al
+cp
+cz
+cg
+au
+cI
+cN
+av
+al
+aS
+mN
+qX
+Es
+mN
+ac
+mN
+Tz
+dL
+lW
+lW
+lW
+dL
+ad
+bi
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+dM
+dM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(65,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+nt
+aw
+JJ
+ku
+Wy
+nt
+Te
+iY
+aE
+aL
+qL
+hG
+IT
+ak
+Oq
+al
+al
+cp
+cg
+cz
+au
+cI
+ac
+ac
+ac
+ac
+mN
+qg
+pl
+mN
+ZZ
+aJ
+Hs
+dL
+lW
+zG
+lW
+dL
+BD
+bi
+dl
+dl
+cN
+dq
+ac
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+dM
+dM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(66,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+nt
+Um
+Um
+Um
+BA
+Gj
+hZ
+qN
+Di
+Cm
+OC
+dB
+tc
+ak
+Oq
+al
+al
+cp
+cg
+cz
+au
+cI
+ac
+ac
+al
+al
+mN
+sX
+Us
+PQ
+wZ
+DU
+JB
+DU
+TO
+da
+wO
+dL
+ad
+bi
+al
+al
+al
+ac
+ac
+al
+al
+ac
+ac
+ac
+ac
+al
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+dM
+dM
+dM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(67,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+nt
+nW
+ZH
+ku
+Nn
+nt
+RO
+Mr
+aE
+aM
+aM
+cn
+tc
+ak
+Oq
+av
+av
+cp
+cg
+cF
+au
+cI
+ac
+al
+al
+al
+bi
+bi
+bi
+VW
+wZ
+mN
+bw
+bi
+yC
+YI
+dL
+bi
+ad
+bi
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
+al
+al
+al
+al
+ab
+ab
+ab
+ab
+ab
+ab
+dM
+dM
+dM
+dM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(68,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+nt
+nt
+nt
+nt
+nt
+nt
+xh
+Se
+rL
+aE
+Di
+aW
+aY
+ak
+Oq
+al
+av
+cp
+au
+cz
+cg
+cI
+ac
+al
+bL
+av
+av
+aS
+al
+al
+wZ
+Vd
+bw
+WV
+AN
+AN
+ad
+QP
+ad
+bi
+al
+al
+al
+al
+al
+al
+ac
+ac
+al
+al
+al
+al
+al
+dG
+dM
+ab
+ab
+dM
+dM
+oP
+mI
+My
+dM
+dM
+dM
+dM
+dM
+dM
+dM
+aa
+aa
+aa
+aa
+"}
+(69,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+nt
+VL
+Wv
+Og
+aB
+aA
+Og
+Xq
+aj
+al
+al
+al
+cE
+au
+cz
+cg
+cI
+ac
+aS
+bL
+bL
+al
+bP
+bP
+aS
+sZ
+bi
+bi
+dN
+uY
+gD
+NF
+bi
+bi
+bi
+al
+al
+al
+al
+al
+ac
+ac
+al
+al
+bT
+al
+al
+ac
+dM
+dM
+dM
+dM
+dM
+ac
+gr
+dM
+dM
+dM
+MC
+MC
+dM
+dM
+dM
+dM
+dM
+aa
+aa
+aa
+"}
+(70,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+nt
+nt
+YM
+Wv
+aA
+aA
+aA
+kq
+gS
+ak
+fp
+Gh
+Gh
+yp
+cg
+cz
+au
+cI
+ac
+al
+al
+al
+al
+cN
+av
+al
+wZ
+Qm
+al
+hV
+Az
+kC
+Hk
+xP
+al
+al
+av
+al
+al
+al
+al
+ac
+ac
+ac
+al
+al
+al
+al
+ac
+dM
+dM
+dM
+dM
+dM
+My
+oP
+dM
+yc
+dM
+dM
+MC
+MC
+MC
+dM
+dM
+dM
+dM
+aa
+aa
+"}
+(71,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+nt
+eq
+QL
+HT
+wU
+XR
+qB
+wU
+EI
+Bg
+Jl
+cg
+au
+au
+au
+cg
+cg
+cL
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+al
+wZ
+IQ
+jm
+bw
+Az
+Mg
+ZC
+kE
+al
+al
+av
+al
+al
+al
+al
+ac
+ac
+ac
+al
+al
+al
+ac
+ac
+dM
+dM
+dM
+dM
+dM
+dM
+kP
+oP
+BY
+BY
+Pd
+Le
+Le
+Rm
+dM
+dM
+dM
+dM
+aa
+aa
+"}
+(72,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+nt
+tE
+jH
+nl
+Qr
+Be
+Cn
+tg
+YR
+SO
+lJ
+cg
+cz
+cz
+cg
+au
+cz
+cz
+cO
+cQ
+cq
+cq
+cq
+jM
+bw
+bw
+Vz
+MP
+bw
+lm
+MM
+Td
+uz
+rC
+bw
+bw
+bw
+bw
+jM
+al
+al
+ac
+ac
+ac
+al
+al
+ac
+ac
+ac
+Zm
+mI
+mI
+ql
+ym
+oP
+oP
+ac
+BY
+mz
+yG
+fH
+ql
+wi
+Le
+dM
+dM
+dM
+aa
+aa
+"}
+(73,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+nt
+nt
+jH
+DS
+JX
+JX
+JX
+JX
+fn
+ak
+ct
+ct
+ct
+cD
+au
+au
+cg
+cz
+cg
+cg
+cz
+cg
+au
+bw
+aj
+aj
+fD
+Eq
+Ew
+Ew
+Uk
+Un
+Zy
+Zy
+oV
+aj
+aj
+aj
+bw
+al
+al
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+eI
+Lv
+Uo
+rM
+xb
+nJ
+Qq
+ac
+RK
+dI
+nU
+Ft
+Rm
+Rm
+MC
+dM
+dM
+dM
+dM
+aa
+"}
+(74,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+nt
+pq
+hb
+HW
+yK
+ix
+vU
+Fm
+aj
+UN
+al
+al
+cp
+au
+au
+cg
+cg
+au
+au
+cg
+au
+cg
+bw
+pU
+lK
+DJ
+TB
+SG
+eM
+Kb
+UE
+Kn
+ou
+ji
+ik
+cg
+aj
+hd
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+bi
+Xp
+bw
+dM
+dM
+dM
+dM
+dM
+ac
+ac
+dM
+dM
+dM
+dM
+dM
+Rm
+Rm
+Bi
+Ri
+dM
+dM
+dM
+aa
+"}
+(75,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aj
+Nt
+Nt
+aj
+ak
+ak
+aj
+aR
+aj
+bD
+cc
+al
+Xc
+sh
+jE
+au
+cM
+cP
+cD
+au
+cz
+ca
+bw
+vb
+KX
+cg
+kG
+CY
+SI
+TF
+XQ
+oM
+ad
+oX
+xf
+Xj
+mN
+bw
+al
+al
+ac
+ac
+al
+al
+dM
+dM
+bw
+bw
+dM
+dM
+dM
+wK
+wK
+iZ
+iZ
+wK
+BP
+dM
+dM
+dM
+dM
+Rm
+Ft
+nx
+Tq
+dM
+dM
+aa
+"}
+(76,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+FX
+FX
+aZ
+Ld
+WR
+WR
+WR
+WR
+ee
+bi
+jo
+bk
+ak
+ak
+ak
+bd
+bk
+bi
+bw
+EU
+kp
+cz
+LA
+ZY
+RS
+np
+Uj
+Xa
+RS
+oG
+EB
+cg
+tr
+bw
+ac
+ac
+ac
+ac
+al
+al
+dM
+dM
+bw
+em
+dM
+dM
+dM
+wK
+iZ
+iZ
+iZ
+iZ
+wK
+wK
+Fo
+dM
+dM
+dM
+MC
+nx
+PE
+dM
+dM
+aa
+"}
+(77,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+aZ
+be
+bw
+Oj
+al
+al
+ac
+bi
+wu
+cg
+am
+au
+am
+cg
+cg
+bi
+bw
+EU
+fo
+au
+TB
+Ht
+ad
+Lf
+JZ
+KR
+SI
+EN
+cg
+cg
+gT
+bw
+al
+ac
+ac
+ac
+al
+dM
+dM
+dM
+bw
+CE
+KB
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+wK
+wK
+wK
+wK
+VZ
+Rm
+nx
+nx
+dM
+dM
+aa
+"}
+(78,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+cp
+be
+bw
+Oj
+al
+al
+ac
+bi
+bt
+cg
+cz
+cz
+cg
+cH
+cS
+bi
+bw
+mN
+on
+cz
+VU
+DI
+Od
+wm
+DA
+st
+jr
+Dm
+cg
+vk
+mN
+bw
+ac
+ac
+ac
+ac
+al
+dM
+dM
+dM
+CE
+CE
+KB
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+wK
+Dg
+wK
+wK
+wK
+VZ
+PX
+lI
+PX
+dM
+dM
+aa
+"}
+(79,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+cp
+be
+bw
+bC
+Gh
+al
+ac
+ak
+au
+cz
+cz
+cz
+cz
+cH
+au
+ak
+bw
+aj
+it
+Wd
+cC
+Rj
+sw
+ju
+KO
+KO
+zb
+CP
+Cg
+sj
+aj
+hd
+ac
+ac
+ac
+al
+al
+al
+al
+dM
+CE
+CE
+KB
+iZ
+iZ
+iZ
+ac
+ac
+ac
+al
+dM
+dM
+dM
+BP
+wK
+wK
+Af
+lI
+lI
+dM
+dM
+aa
+"}
+(80,1,1) = {"
+aa
+aa
+aa
+fK
+te
+fK
+te
+fK
+te
+fK
+te
+fK
+te
+fK
+te
+fK
+te
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+aZ
+be
+bw
+bw
+bw
+Oj
+ac
+ak
+bj
+au
+cg
+cz
+cz
+cg
+cT
+ak
+bw
+aj
+aj
+aj
+NK
+HX
+aj
+aj
+aj
+lx
+Qh
+Uc
+aj
+aj
+aj
+bw
+ac
+ac
+ac
+al
+al
+al
+al
+no
+CE
+CE
+KB
+iZ
+dM
+yc
+dM
+yc
+al
+al
+dM
+dM
+dM
+dM
+dM
+dM
+VZ
+OJ
+PX
+dM
+dM
+aa
+"}
+(81,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+ac
+aZ
+ba
+sS
+hy
+bw
+bB
+ac
+ak
+bi
+bi
+bo
+bo
+bo
+bi
+bi
+ak
+jM
+bw
+Io
+bw
+wZ
+bw
+bw
+bw
+Io
+bw
+lh
+nY
+bw
+Io
+bw
+jM
+ac
+ac
+al
+al
+aU
+al
+mI
+no
+CE
+CE
+KB
+dM
+dM
+dM
+dM
+dM
+al
+al
+WS
+aa
+JU
+Kf
+dM
+aa
+Dt
+Uu
+VZ
+dM
+dM
+aa
+"}
+(82,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+nM
+yo
+be
+bw
+bB
+ac
+bi
+bi
+bl
+bp
+bp
+bp
+br
+bi
+bi
+ab
+ac
+ac
+bw
+WE
+bB
+ac
+ac
+bw
+bw
+Zh
+GD
+Ev
+WH
+Ev
+fL
+ac
+al
+al
+al
+al
+ab
+DZ
+FF
+CE
+CE
+KB
+dM
+dM
+dM
+aT
+al
+al
+al
+al
+WS
+WS
+JU
+JU
+aa
+Dt
+Zo
+VZ
+dM
+dM
+aa
+"}
+(83,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+aZ
+be
+bw
+bB
+ac
+bi
+bi
+bm
+bJ
+bJ
+bJ
+bm
+bi
+bi
+ab
+ab
+ac
+bw
+WE
+bB
+ac
+ac
+wl
+uz
+Br
+rW
+au
+au
+cz
+eE
+al
+al
+al
+al
+al
+iZ
+wK
+RP
+CE
+CE
+dM
+dM
+Dv
+al
+kO
+aS
+al
+al
+al
+al
+WS
+aa
+JU
+aa
+Dt
+Dt
+Dt
+dM
+dM
+aa
+"}
+(84,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aZ
+be
+bw
+bB
+ac
+bi
+bi
+bm
+bJ
+bJ
+bJ
+bm
+bi
+bi
+ab
+ab
+ac
+bw
+WE
+bB
+ac
+ac
+zV
+ZC
+Rd
+FC
+cg
+au
+cg
+lX
+al
+al
+al
+al
+ab
+iZ
+DZ
+RP
+CE
+bw
+nz
+cy
+al
+al
+Kk
+zi
+al
+zi
+zi
+al
+al
+kO
+Kf
+aa
+iZ
+OJ
+wK
+dM
+dM
+aa
+"}
+(85,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+be
+bw
+bB
+ac
+bi
+bi
+bm
+bJ
+bJ
+bJ
+bm
+bi
+bi
+ab
+ab
+ac
+bw
+WE
+bB
+ac
+ac
+bw
+bw
+ng
+rW
+Ev
+Ev
+WH
+FD
+al
+al
+ab
+ab
+iZ
+iZ
+QH
+RP
+CE
+bw
+nz
+al
+al
+al
+zi
+al
+al
+al
+al
+al
+al
+al
+JU
+aa
+Dt
+OJ
+PX
+dM
+dM
+aa
+"}
+(86,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+be
+bw
+bB
+ac
+bi
+bi
+bn
+bq
+bq
+bq
+bs
+bi
+bi
+ab
+ab
+ab
+bw
+WE
+bB
+ac
+jM
+bw
+bw
+HP
+PU
+bw
+bw
+bw
+bw
+bw
+ab
+iZ
+iZ
+iZ
+iZ
+wK
+RP
+em
+bw
+nz
+al
+al
+dM
+dM
+WS
+cy
+al
+al
+al
+al
+al
+WS
+aa
+Dt
+OJ
+Dt
+dM
+dM
+aa
+"}
+(87,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+be
+bw
+bB
+ac
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+ab
+ab
+ab
+bw
+WE
+bB
+al
+bw
+eA
+pp
+lL
+lL
+pp
+pp
+pp
+pp
+pp
+iZ
+iZ
+ab
+iZ
+iZ
+al
+cp
+bw
+bw
+nz
+al
+al
+dM
+dM
+dM
+WS
+WS
+al
+al
+al
+NQ
+aa
+aa
+VZ
+wK
+iZ
+dM
+dM
+aa
+"}
+(88,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+be
+bw
+bC
+bh
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+ab
+ab
+ab
+bw
+WE
+bB
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iJ
+al
+bw
+bw
+al
+al
+aU
+al
+ki
+Lz
+dM
+BI
+al
+al
+al
+xk
+aa
+aa
+wK
+wK
+wK
+Rm
+dM
+aa
+"}
+(89,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+be
+bw
+bw
+bw
+bw
+bw
+bw
+bi
+bI
+ad
+bi
+bw
+bw
+bw
+bw
+bw
+jM
+WE
+bB
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+aS
+al
+al
+du
+al
+al
+al
+al
+al
+dM
+dM
+dM
+dM
+al
+al
+is
+aa
+aa
+aa
+wK
+OJ
+wK
+iZ
+dM
+aa
+"}
+(90,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aZ
+ba
+bG
+bG
+bG
+bG
+bG
+bG
+bH
+bz
+cV
+bH
+bG
+bG
+bG
+bG
+Hw
+Hw
+Zj
+bB
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+aS
+wR
+qU
+al
+al
+al
+bP
+aS
+aS
+mI
+dM
+xk
+dM
+al
+al
+aa
+aa
+aa
+aa
+aa
+UF
+OJ
+UX
+iZ
+dM
+aa
+"}
+(91,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+bE
+bE
+bE
+bE
+bE
+bE
+bE
+bi
+bi
+bi
+bi
+bE
+bE
+bE
+bE
+bE
+bE
+bE
+ac
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+vl
+dw
+av
+al
+al
+al
+al
+bL
+al
+al
+al
+mI
+al
+al
+al
+al
+aa
+aa
+aa
+aa
+aa
+xb
+wK
+wK
+iZ
+dM
+aa
+"}
+(92,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+al
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+al
+al
+bT
+al
+al
+al
+al
+al
+al
+av
+av
+al
+al
+al
+al
+al
+aa
+aa
+aa
+aa
+aa
+ug
+SE
+tv
+OJ
+VZ
+dM
+aa
+"}
+(93,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+al
+al
+bw
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+al
+al
+al
+ac
+ac
+Nq
+ac
+ac
+al
+al
+al
+al
+al
+al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Dt
+Dt
+Oz
+Dt
+aa
+"}
+(94,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bi
+tK
+bw
+em
+KB
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+al
+al
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+LS
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Dt
+Dt
+Dt
+Oz
+aa
+"}
+(95,1,1) = {"
+aa
+aa
+aa
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+UT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dK
+iZ
+iZ
+iZ
+iZ
+iZ
+Xt
+Xt
+Xt
+iZ
+iZ
+lL
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Oz
+Oz
+aa
+"}
+(96,1,1) = {"
+aa
+aa
+aa
+UT
+Fk
+nK
+Fk
+nK
+Fk
+nK
+Fk
+nK
+Fk
+nK
+Fk
+nK
+Fk
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+lB
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+lB
+dR
+dR
+dR
+dR
+DV
+pV
+El
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+cx
+lL
+iZ
+iZ
+iZ
+iZ
+iZ
+aa
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(97,1,1) = {"
+aa
+aa
+aa
+Fk
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+lB
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+lB
+lB
+dR
+dR
+dR
+dR
+DV
+pV
+El
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+Wo
+cx
+iZ
+iZ
+iZ
+iZ
+iZ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(98,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dK
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+iZ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(99,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(100,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

@@ -2,18 +2,17 @@
 
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing()
-	if(life_tick%2==0 || failed_last_breath || (health < HEALTH_THRESHOLD_CRIT)) 	//First, resolve location and get a breath
+	if(life_tick%get_breath_modulo()==0 || failed_last_breath) 	//First, resolve location and get a breath
 		breathe()
+
+/mob/living/carbon/proc/get_breath_modulo()
+	return 2
 
 /mob/living/carbon/proc/breathe()
 	//if(istype(loc, /obj/machinery/atmospherics/unary/cryo_cell)) return
 	if(species && (species.flags & NO_BREATHE)) return
 
 	var/datum/gas_mixture/breath = null
-
-	//First, check if we can breathe at all
-	if(health < HEALTH_THRESHOLD_CRIT && !(CE_STABLE in chem_effects)) //crit aka circulatory shock
-		losebreath++
 
 	if(losebreath>0) //Suffocating so do not take a breath
 		losebreath--
@@ -41,7 +40,7 @@
 			return internal.remove_air_volume(volume_needed)
 	return null
 
-/mob/living/carbon/proc/get_breath_from_environment(var/volume_needed=BREATH_VOLUME)
+/mob/living/carbon/proc/get_breath_from_environment(volume_needed=BREATH_VOLUME)
 	var/datum/gas_mixture/breath = null
 
 	var/datum/gas_mixture/environment
@@ -62,17 +61,20 @@
 	return null
 
 //Handle possble chem smoke effect
-/mob/living/carbon/proc/handle_chemical_smoke(var/datum/gas_mixture/environment)
+/mob/living/carbon/proc/handle_chemical_smoke(datum/gas_mixture/environment)
 	if(species && environment.return_pressure() < species.breath_pressure/5)
 		return //pressure is too low to even breathe in.
-	if(wear_mask && (wear_mask.flags & BLOCK_GAS_SMOKE_EFFECT))
+	if(wear_mask && (wear_mask.item_flags & BLOCK_GAS_SMOKE_EFFECT))
 		return
 
 	for(var/obj/effect/effect/smoke/chem/smoke in view(1, src))
-		if(smoke.reagents.total_volume)
+		if(!smoke.reagents)
+			return
+		if(smoke.reagents && smoke.reagents.total_volume)
 			smoke.reagents.trans_to_mob(src, 5, CHEM_INGEST, copy = 1)
 			smoke.reagents.trans_to_mob(src, 5, CHEM_BLOOD, copy = 1)
 			// I dunno, maybe the reagents enter the blood stream through the lungs?
+			smoke = null //In hopes of stopping a GC error
 			break // If they breathe in the nasty stuff once, no need to continue checking
 
 /mob/living/carbon/proc/handle_breath(datum/gas_mixture/breath)

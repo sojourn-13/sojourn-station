@@ -6,7 +6,7 @@
 	icon_state = "flood00"
 	density = 1
 	var/on = 0
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	var/use = 200 // 200W light
 	var/unlocked = 0
 	var/open = 0
@@ -15,7 +15,7 @@
 
 /obj/machinery/floodlight/Initialize()
 	. = ..()
-	cell = new /obj/item/weapon/cell/large(src)
+	cell = new /obj/item/cell/large(src)
 
 /obj/machinery/floodlight/get_cell()
 	return cell
@@ -142,7 +142,7 @@
 		if(ABORT_CHECK)
 			return
 
-	if (istype(I, /obj/item/weapon/cell/large))
+	if (istype(I, /obj/item/cell/large))
 		if(open)
 			if(cell)
 				to_chat(user, SPAN_WARNING("There is a power cell already installed."))

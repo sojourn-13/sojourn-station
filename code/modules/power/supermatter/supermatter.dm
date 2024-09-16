@@ -170,8 +170,8 @@
 /obj/machinery/power/supermatter/get_transit_zlevel()
 	//don't send it back to the station -- most of the time
 	if(prob(99))
-		var/list/candidates = maps_data.accessable_levels.Copy()
-		for(var/zlevel in maps_data.station_levels)
+		var/list/candidates = GLOB.maps_data.accessable_levels.Copy()
+		for(var/zlevel in GLOB.maps_data.station_levels)
 			candidates.Remove("[zlevel]")
 		candidates.Remove("[src.z]")
 
@@ -265,19 +265,15 @@
 
 		env.merge(removed)
 
+	//This one handles hallucinations
 	for(var/mob/living/carbon/human/H in view(src, min(7, round(sqrt(power/6))))) // If they can see it without mesons on.  Bad on them.
 		if(!istype(H.glasses, /obj/item/clothing/glasses/powered/meson))
-			if (!(istype(H.wearing_rig, /obj/item/weapon/rig) && istype(H.wearing_rig.getCurrentGlasses(), /obj/item/clothing/glasses/powered/meson)))
+			if (!(istype(H.wearing_rig, /obj/item/rig) && istype(H.wearing_rig.getCurrentGlasses(), /obj/item/clothing/glasses/powered/meson)))
 				var/effect = max(0, min(200, power * config_hallucination_power * sqrt( 1 / max(1,get_dist(H, src)))) )
 				H.adjust_hallucination(effect, 0.25*effect)
 				H.add_side_effect("Headache", 11)
 
-	//adjusted range so that a power of 170 (pretty high) results in 9 tiles, roughly the distance from the core to the engine monitoring room.
-	//note that the rads given at the maximum range is a constant 0.2 - as power increases the maximum range merely increases.
-	for(var/mob/living/l in range(src, round(sqrt(power / 2) / 2)))
-		var/radius = max(get_dist(l, src), 1)
-		var/rads = (power / 10) * ( 1 / (radius**2) )
-		l.apply_effect(rads, IRRADIATE)
+	PulseRadiation(src, power, (round(sqrt(power / 2) / 2)))
 
 	power -= (power/DECAY_FACTOR)**3		//energy losses due to radiation
 
@@ -287,26 +283,27 @@
 /obj/machinery/power/supermatter/bullet_act(var/obj/item/projectile/Proj)
 	var/turf/L = loc
 	if(!istype(L))		// We don't run process() when we are in space
-		return 0	// This stops people from being able to really power up the supermatter
+		return FALSE	// This stops people from being able to really power up the supermatter
 				// Then bring it inside to explode instantly upon landing on a valid turf.
 
 
 	var/proj_damage = Proj.get_structure_damage()
-	if(istype(Proj, /obj/item/projectile/beam))
-		power += proj_damage * config_bullet_energy	* CHARGING_FACTOR / POWER_FACTOR
-	else
-		damage += proj_damage * config_bullet_energy
-	return 0
+	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/beam))
+			power += proj_damage * config_bullet_energy	* CHARGING_FACTOR / POWER_FACTOR
+		else
+			damage += proj_damage * config_bullet_energy
+	return FALSE
 
 /obj/machinery/power/supermatter/attack_robot(mob/user as mob)
 	if(Adjacent(user))
 		return attack_hand(user)
 	else
-		ui_interact(user)
+		nano_ui_interact(user)
 	return
 
 /obj/machinery/power/supermatter/attack_ai(mob/user as mob)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/power/supermatter/attack_hand(mob/user as mob)
 	user.visible_message("<span class=\"warning\">\The [user] reaches out and touches \the [src], inducing a resonance... \his body starts to glow and bursts into flames before flashing into ash.</span>",\
@@ -316,7 +313,7 @@
 	Consume(user)
 
 // This is purely informational UI that may be accessed by AIs or robots
-/obj/machinery/power/supermatter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/supermatter/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["integrity_percentage"] = round(get_integrity())
@@ -345,13 +342,11 @@
 /obj/machinery/power/supermatter/proc/transfer_energy()
 	var/transfer_energy = power * POWER_FACTOR * COLLECTOR_TRANSFER_FACTOR
 	for(var/obj/machinery/power/rad_collector/R in GLOB.rad_collectors)
-		var/distance = get_dist(R, src)
-		if(distance <= 15)
-			//for collectors using standard plasma tanks at 1013 kPa, the actual power generated will be this transfer_energy*20*29 = transfer_energy*580
-			R.receive_pulse(transfer_energy * (min(3/distance, 1))**2)
+		if (get_dist(R, src) <= 15) //Better than using orange() every process.
+			R.receive_pulse(transfer_energy*(5/(get_dist(R, src)))**2)
 
 
-/obj/machinery/power/supermatter/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/machinery/power/supermatter/attackby(obj/item/W as obj, mob/living/user as mob)
 
 	/*
 		Repairing the supermatter with duct tape, for meme value

@@ -7,8 +7,8 @@ SUBSYSTEM_DEF(chemistry)
 	var/list/chemical_reagents
 
 /datum/controller/subsystem/chemistry/Initialize(start_timeofday)
-	chemical_reactions = chemical_reactions_list
-	chemical_reagents = chemical_reagents_list
+	chemical_reactions = GLOB.chemical_reactions_list
+	chemical_reagents = GLOB.chemical_reagents_list
 	return ..()
 
 /datum/controller/subsystem/chemistry/fire()
@@ -26,5 +26,6 @@ SUBSYSTEM_DEF(chemistry)
 	if(holder.process_reactions())
 		active_holders += holder
 
-/datum/controller/subsystem/chemistry/stat_entry()
-	..("[active_holders.len] reagent holder\s")
+/datum/controller/subsystem/chemistry/stat_entry(msg)
+	msg += "[active_holders.len] reagent holder\s"
+	return ..()

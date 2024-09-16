@@ -21,6 +21,7 @@
 #define COLOR_PINK             "#ff00ff"
 #define COLOR_ORANGE           "#ff9900"
 #define COLOR_YELLOW           "#ffff00"
+#define COLOR_FLOORTILE_GRAY   "#8D8B8B"
 #define COLOR_GRAY             "#808080"
 #define COLOR_RED_GRAY         "#aa5f61"
 #define COLOR_BROWN            "#b19664"
@@ -60,15 +61,6 @@
 #define COLOR_TITANIUM         "#d1e6e3"
 #define COLOR_DARK_GUNMETAL    "#4c535b"
 
-#define	PIPE_COLOR_GREY		"#e4e7ea"	//yes white is grey
-#define	PIPE_COLOR_RED		"#c1293f"
-#define	PIPE_COLOR_BLUE		"#1f92c2"
-#define	PIPE_COLOR_CYAN		"#0c9d98"
-#define	PIPE_COLOR_GREEN	"#8ad55d"
-#define	PIPE_COLOR_YELLOW	"#deb63d"
-#define	PIPE_COLOR_BLACK	"#34383d"
-#define	PIPE_COLOR_ORANGE	"#b95a00"
-
 #define	COMMS_COLOR_DEFAULT    "#ff00ff"
 #define	COMMS_COLOR_ENTERTAIN  "#666666"
 #define	COMMS_COLOR_AI         "#ff00ff"
@@ -80,8 +72,10 @@
 #define	COMMS_COLOR_EXPLORER   "#929820"
 #define	COMMS_COLOR_ENGINEER   "#a66300"
 #define	COMMS_COLOR_SECURITY   "#930000"
+#define	COMMS_COLOR_PROSPECTOR "#209848"
+#define	COMMS_COLOR_BLSHIELD   "#00440f"
 #define	COMMS_COLOR_COMMAND    "#204090"
-#define	COMMS_COLOR_CENTCOMM   "#5c5c7c"
+#define	COMMS_COLOR_CENTCOM   "#5c5c7c"
 #define	COMMS_COLOR_SYNDICATE  "#6d3f40"
 
 #define GLASS_COLOR            "#74b1ee"

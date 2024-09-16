@@ -1,43 +1,39 @@
-#ifndef T_BOARD
-#error T_BOARD macro is not defined but we need it!
-#endif
-
-/obj/item/weapon/circuitboard/security
-	name = T_BOARD("security camera monitor")
+/obj/item/circuitboard/security
+	build_name = "security camera monitor"
 	build_path = /obj/machinery/computer/security
 	req_access = list(access_security)
 	var/list/network
 	var/locked = 1
 	var/emagged = 0
 
-/obj/item/weapon/circuitboard/security/New()
+/obj/item/circuitboard/security/New()
 	..()
 	network = station_networks
 
-/obj/item/weapon/circuitboard/security/engineering
-	name = T_BOARD("engineering camera monitor")
+/obj/item/circuitboard/security/engineering
+	build_name = "engineering camera monitor"
 	build_path = /obj/machinery/computer/security/engineering
 	req_access = list()
 
-/obj/item/weapon/circuitboard/security/engineering/New()
+/obj/item/circuitboard/security/engineering/New()
 	..()
 	network = engineering_networks
 
-/obj/item/weapon/circuitboard/security/mining
-	name = T_BOARD("mining camera monitor")
+/obj/item/circuitboard/security/mining
+	build_name = "mining camera monitor"
 	build_path = /obj/machinery/computer/security/mining
 	network = list("MINE")
 	req_access = list()
 
-/obj/item/weapon/circuitboard/security/construct(var/obj/machinery/computer/security/C)
+/obj/item/circuitboard/security/construct(var/obj/machinery/computer/security/C)
 	if (..(C))
 		C.network = network.Copy()
 
-/obj/item/weapon/circuitboard/security/deconstruct(var/obj/machinery/computer/security/C)
+/obj/item/circuitboard/security/deconstruct(var/obj/machinery/computer/security/C)
 	if (..(C))
 		network = C.network.Copy()
 
-/obj/item/weapon/circuitboard/security/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/circuitboard/security/emag_act(var/remaining_charges, var/mob/user)
 	if(emagged)
 		user << "Circuit lock is already removed."
 		return
@@ -46,8 +42,8 @@
 	locked = 0
 	return 1
 
-/obj/item/weapon/circuitboard/security/attackby(obj/item/I as obj, mob/user as mob)
-	if(istype(I,/obj/item/weapon/card/id))
+/obj/item/circuitboard/security/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I,/obj/item/card/id))
 		if(emagged)
 			user << SPAN_WARNING("Circuit lock does not respond.")
 			return
@@ -56,7 +52,7 @@
 			user << "<span class='notice'>You [locked ? "" : "un"]lock the circuit controls.</span>"
 		else
 			user << SPAN_WARNING("Access denied.")
-	else if(istype(I,/obj/item/weapon/tool/multitool))
+	else if(istype(I,/obj/item/tool/multitool))
 		if(locked)
 			user << SPAN_WARNING("Circuit controls are locked.")
 			return

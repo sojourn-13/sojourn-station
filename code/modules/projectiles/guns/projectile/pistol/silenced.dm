@@ -1,29 +1,29 @@
-/obj/item/weapon/gun/projectile/silenced
+/obj/item/gun/projectile/silenced
 	name = "\"Rafale\" silenced pistol"
-	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Uses .40 Auto-Mag. Has an integrated silencer which cannot be removed."
+	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses 10mm Auto-Mag. Has an integrated silencer which cannot be removed."
 	icon = 'icons/obj/guns/projectile/rafale.dmi'
 	icon_state = "rafale"
 	item_state = "rafale"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_MAGNUM
-	can_dual = 1
-	silencer_type = /obj/item/weapon/silencer/integrated
+	can_dual = TRUE
+	silenced = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 1500
-	load_method = MAGAZINE
+	price_tag = 800
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	damage_multiplier = 1.1
-	recoil_buildup = 14
-	one_hand_penalty = 10
-	penetration_multiplier = 0.8
+	proj_step_multiplier = 0.8
+	damage_multiplier = 1.6
+	penetration_multiplier = 1.5
+	init_recoil = HANDGUN_RECOIL(0.4)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
-//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/silenced/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
 
-/obj/item/weapon/gun/projectile/silenced/update_icon()
+/obj/item/gun/projectile/silenced/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -36,6 +36,6 @@
 
 	icon_state = iconstring
 
-/obj/item/weapon/gun/projectile/silenced/Initialize()
+/obj/item/gun/projectile/silenced/Initialize()
 	. = ..()
 	update_icon()

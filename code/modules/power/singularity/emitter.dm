@@ -4,13 +4,13 @@
 	name = "emitter"
 	desc = "It is a heavy duty industrial laser. This model has been modified to be completely silent after several complaints from engineers."
 	icon = 'icons/obj/singularity.dmi'
-	icon_state = "emitter"
+	icon_state = "emitter" //New sprites done by Eris spriter -CeUvi many thanks!
 	anchored = 0
 	density = 1
 	req_access = list(access_engine_equip)
 	var/id = null
 
-	use_power = 0	//uses powernet power, not APC power
+	use_power = NO_POWER_USE	//uses powernet power, not APC power
 	active_power_usage = 30000	//30 kW laser. I guess that means 30 kJ per shot.
 
 	var/active = 0
@@ -101,7 +101,7 @@
 /*	if((severity == 1)&&prob(1)&&prob(1))
 		if(src.active)
 			src.active = 0
-			src.use_power = 1	*/
+			src.use_power = IDLE_POWER_USE	*/
 	return 1
 
 /obj/machinery/power/emitter/Process()
@@ -145,7 +145,7 @@
 			s.start()
 
 		var/obj/item/projectile/beam/emitter/A = new /obj/item/projectile/beam/emitter( src.loc )
-		A.damage = round(power_per_shot/EMITTER_DAMAGE_POWER_TRANSFER)
+		A.damage_types[BURN] = round(power_per_shot/EMITTER_DAMAGE_POWER_TRANSFER)
 		A.launch( get_step(src.loc, src.dir) )
 
 /obj/machinery/power/emitter/attackby(obj/item/I, mob/user)
@@ -195,7 +195,7 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))
+	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if(emagged)
 			to_chat(user, SPAN_WARNING("The lock seems to be broken!"))
 			return

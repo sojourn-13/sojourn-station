@@ -1,9 +1,10 @@
 /client/var/global/list/forbidden_varedit_object_types = list(
 										/datum/admins,						//Admins editing their own admin-power object? Yup, sounds like a good idea.,
 										/obj/machinery/blackbox_recorder,	//Prevents people messing with feedback gathering
+										/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star, //Higher powers cant be cheated like this
 									)
 
-var/list/VVlocked = list("vars", "holder", "client", "virus", "viruses", "cuffed", "last_eaten", "unlock_content", "bound_x", "bound_y", "step_x", "step_y", "force_ending")
+var/list/VVlocked = list("vars", "holder", "client", "cuffed", "last_eaten", "unlock_content", "bound_x", "bound_y", "step_x", "step_y", "force_ending")
 var/list/VVicon_edit_lock = list("icon", "icon_state", "overlays", "underlays")
 var/list/VVckey_edit = list("key", "ckey")
 
@@ -129,7 +130,7 @@ var/list/VVckey_edit = list("key", "ckey")
 	message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
 
 /client/proc/mod_list(var/list/L, atom/O, original_name, objectvar)
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN | R_DEBUG))
 		return
 	if(!istype(L,/list)) src << "Not a List."
 
@@ -329,7 +330,7 @@ var/list/VVckey_edit = list("key", "ckey")
 	message_admins("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
 
 /client/proc/modify_variables(var/atom/O, var/param_var_name = null, var/autodetect_class = 0)
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN | R_DEBUG))
 		return
 
 	for(var/p in forbidden_varedit_object_types)
@@ -357,6 +358,10 @@ var/list/VVckey_edit = list("key", "ckey")
 				return
 
 		variable = param_var_name
+
+		if (GLOB.gvars_datum_protected_varlist[variable])
+			to_chat(usr, "\red This variable is protected from VV.")
+			return
 
 		var_value = O.vars[variable]
 
@@ -408,6 +413,11 @@ var/list/VVckey_edit = list("key", "ckey")
 		names = sortList(names)
 
 		variable = input("Which var?","Var") as null|anything in names
+
+		if (GLOB.gvars_datum_protected_varlist[variable])
+			to_chat(usr, "\red This variable is protected from VV.")
+			return
+
 		if(!variable)	return
 		var_value = O.vars[variable]
 
@@ -503,6 +513,10 @@ var/list/VVckey_edit = list("key", "ckey")
 	var/datum/marked_datum = holder.marked_datum()
 	if(marked_datum && class == "marked datum ([marked_datum.type])")
 		class = "marked datum"
+
+	if (GLOB.gvars_datum_protected_varlist[variable])
+		to_chat(usr, "\red This variable is protected from VV.")
+		return
 
 	switch(class)
 

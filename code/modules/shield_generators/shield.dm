@@ -1,6 +1,6 @@
 //Tells all active shield generators in the world to update, at some point in future
 /proc/update_shield_generators()
-	for (var/obj/machinery/power/shield_generator/S in SSmachines.machinery)
+	for (var/obj/machinery/power/shield_generator/S in GLOB.machines)
 		S.needs_update = TRUE
 
 /turf/proc/getEffectShield()
@@ -38,6 +38,7 @@
 	var/floorOnly = FALSE
 	var/ignoreExAct = FALSE
 	alpha = 128
+	atmos_canpass = CANPASS_PROC
 
 /obj/effect/shield/floor
 	alpha = 32
@@ -138,11 +139,11 @@ Like for example singulo act and whatever.
 	update_icon()
 	update_explosion_resistance()
 
-/obj/effect/shield/attack_generic(var/source, var/damage, var/emote)
+/obj/effect/shield/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	take_damage(damage, SHIELD_DAMTYPE_PHYSICAL, src)
-	if(gen.check_flag(MODEFLAG_OVERCHARGE) && istype(source, /mob/living/))
-		overcharge_shock(source)
-	..(source, damage, emote)
+	if(gen.check_flag(MODEFLAG_OVERCHARGE) && istype(user, /mob/living/))
+		overcharge_shock(user)
+	..(user, damage, attack_message)
 
 
 // Fails shield segments in specific range. Range of 1 affects the shielded turf only.
@@ -252,16 +253,16 @@ Like for example singulo act and whatever.
 
 // Projectiles
 /obj/effect/shield/bullet_act(var/obj/item/projectile/proj)
-	if(proj.damage_type == BURN)
-		take_damage(proj.get_structure_damage(), SHIELD_DAMTYPE_HEAT, proj)
-	else if (proj.damage_type == BRUTE)
-		take_damage(proj.get_structure_damage(), SHIELD_DAMTYPE_PHYSICAL, proj)
-	else
-		take_damage(proj.get_structure_damage(), SHIELD_DAMTYPE_EM, proj)
-
+	if (!(proj.testing))
+		if(proj.damage_types[BURN])
+			take_damage(proj.damage_types[BURN], SHIELD_DAMTYPE_HEAT, proj)
+		if(proj.damage_types[BRUTE])
+			take_damage(proj.damage_types[BRUTE], SHIELD_DAMTYPE_PHYSICAL, proj)
+		else
+			take_damage(proj.get_structure_damage(), SHIELD_DAMTYPE_EM, proj)
 
 // Attacks with hand tools. Blocked by Hyperkinetic flag.
-/obj/effect/shield/attackby(var/obj/item/weapon/I as obj, var/mob/user as mob)
+/obj/effect/shield/attackby(var/obj/item/I as obj, var/mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 

@@ -8,7 +8,7 @@
 	icon_state = "sprayer"
 	density = 0
 	anchored = 1
-	use_power = 0
+	use_power = NO_POWER_USE
 	var/id
 	var/on = 0
 	var/watertemp = "normal"
@@ -200,7 +200,7 @@
 		var/turf/tile = loc
 		loc.clean_blood()
 		for(var/obj/effect/E in tile)
-			if(istype(E,/obj/effect/decal/cleanable) || istype(E,/obj/effect/overlay))
+			if(istype(E,/obj/effect/decal/cleanable) || istype(E,/obj/effect/overlay) && !istype(E, /obj/effect/overlay/water))
 				del(E)
 
 /obj/effect/shower/Process()
@@ -210,7 +210,7 @@
 		check_heat(C)
 
 /obj/effect/shower/proc/check_heat(mob/M as mob)
-	if(!master.on || master.watertemp == "normal")
+	if(!master || !master.on || master.watertemp == "normal")
 		return
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M

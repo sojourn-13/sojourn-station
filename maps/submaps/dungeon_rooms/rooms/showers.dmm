@@ -13,6 +13,8 @@
 "d" = (
 /obj/structure/closet/l3closet,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/crawler)
 "e" = (
@@ -39,6 +41,8 @@
 /obj/structure/closet/l3closet,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/floor,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/crawler)
 "k" = (
@@ -46,10 +50,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/cafe,
-/area/crawler)
-"l" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "m" = (
 /obj/random/mob/roomba,
@@ -94,9 +94,9 @@ a
 a
 c
 f
-l
 e
-l
+e
+e
 q
 n
 a
@@ -182,9 +182,9 @@ a
 a
 c
 f
-l
 e
-l
+e
+e
 q
 n
 a

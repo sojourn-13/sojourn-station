@@ -4,7 +4,7 @@
 
 var/list/global/tank_gauge_cache = list()
 
-/obj/item/weapon/tank
+/obj/item/tank
 	name = "tank"
 	icon = 'icons/obj/tank.dmi'
 
@@ -30,7 +30,7 @@ var/list/global/tank_gauge_cache = list()
 	var/manipulated_by = null		//Used by _onclick/hud/screen_objects.dm internals to determine if someone has messed with our tank or not.
 						//If they have and we haven't scanned it with the PDA or gas analyzer then we might just breath whatever they put in it.
 
-/obj/item/weapon/tank/Initialize(mapload, ...)
+/obj/item/tank/Initialize(mapload, ...)
 	. = ..()
 	air_contents = new /datum/gas_mixture(volume)
 	air_contents.temperature = T20C
@@ -38,7 +38,7 @@ var/list/global/tank_gauge_cache = list()
 	START_PROCESSING(SSobj, src)
 	update_gauge()
 
-/obj/item/weapon/tank/Destroy()
+/obj/item/tank/Destroy()
 	if(air_contents)
 		QDEL_NULL(air_contents)
 
@@ -51,11 +51,11 @@ var/list/global/tank_gauge_cache = list()
 	. = ..()
 
 // Override in subtypes
-/obj/item/weapon/tank/proc/spawn_gas()
+/obj/item/tank/proc/spawn_gas()
 	if(default_gas)
 		air_contents.adjust_gas(default_gas, default_pressure*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
-/obj/item/weapon/tank/examine(mob/user)
+/obj/item/tank/examine(mob/user)
 	. = ..(user, 0)
 	if(.)
 		var/celsius_temperature = air_contents.temperature - T0C
@@ -75,7 +75,7 @@ var/list/global/tank_gauge_cache = list()
 				descriptive = "cold"
 		to_chat(user, SPAN_NOTICE("\The [src] feels [descriptive]."))
 
-/obj/item/weapon/tank/attackby(obj/item/weapon/W, mob/living/user)
+/obj/item/tank/attackby(obj/item/W, mob/living/user)
 	..()
 	if (istype(src.loc, /obj/item/assembly))
 		icon = src.loc
@@ -87,90 +87,83 @@ var/list/global/tank_gauge_cache = list()
 	if(istype(W, /obj/item/device/assembly_holder))
 		bomb_assemble(W,user)
 
-/obj/item/weapon/tank/attack_self(mob/living/user)
+/obj/item/tank/attack_self(mob/living/user)
+	add_fingerprint(user)
 	if (!(src.air_contents))
 		return
 
 	ui_interact(user)
 
-/obj/item/weapon/tank/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/mob/living/carbon/location = null
+/obj/item/tank/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Tank", name)
+		ui.open()
 
-	if(istype(loc, /obj/item/weapon/rig))		// check for tanks in rigs
-		if(iscarbon(loc.loc))
-			location = loc.loc
-	else if(iscarbon(loc))
-		location = loc
-
-	var/using_internal
-	if(istype(location))
-		if(location.internal==src)
-			using_internal = 1
-
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/item/tank/ui_data(mob/user)
+	var/list/data = list()
 	data["tankPressure"] = round(air_contents.return_pressure() ? air_contents.return_pressure() : 0)
 	data["releasePressure"] = round(distribute_pressure ? distribute_pressure : 0)
 	data["defaultReleasePressure"] = round(TANK_DEFAULT_RELEASE_PRESSURE)
+	data["minReleasePressure"] = 0
 	data["maxReleasePressure"] = round(TANK_MAX_RELEASE_PRESSURE)
-	data["valveOpen"] = using_internal ? 1 : 0
+	data["showToggle"] = TRUE
 
-	data["maskConnected"] = 0
+	var/mob/living/carbon/C = loc
+	if(!istype(C))
+		C = loc.loc
+		// Don't show a toggle that will never work
+		data["showToggle"] = FALSE
+	if(!istype(C))
+		return data
 
-	if(istype(location))
-		var/mask_check = 0
+	if(C.internal == src)
+		data["connected"] = TRUE
+	else
+		data["connected"] = FALSE
 
-		if(location.internal == src)	// if tank is current internal
-			mask_check = 1
-		else if(src in location)		// or if tank is in the mobs possession
-			if(!location.internal)		// and they do not have any active internals
-				mask_check = 1
-		else if(istype(src.loc, /obj/item/weapon/rig) && (src.loc in location))	// or the rig is in the mobs possession
-			if(!location.internal)		// and they do not have any active internals
-				mask_check = 1
+	data["maskConnected"] = FALSE
+	if(C.wear_mask && (C.wear_mask.item_flags & AIRTIGHT))
+		data["maskConnected"] = TRUE
+	else if(ishuman(C))
+		var/mob/living/carbon/human/H = C
+		if(H.head && (H.head.item_flags & AIRTIGHT))
+			data["maskConnected"] = TRUE
 
-		if(mask_check)
-			if(location.wear_mask && (location.wear_mask.item_flags & AIRTIGHT))
-				data["maskConnected"] = 1
-			else if(ishuman(location))
-				var/mob/living/carbon/human/H = location
-				if(H.head && (H.head.item_flags & AIRTIGHT))
-					data["maskConnected"] = 1
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-        // for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "tanks.tmpl", "Tank", 500, 300)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+/obj/item/tank/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-/obj/item/weapon/tank/Topic(href, href_list)
-	..()
-	if (usr.stat|| usr.restrained())
-		return 0
-	if (src.loc != usr)
-		return 0
+	switch(action)
+		if("pressure")
+			var/pressure = params["pressure"]
+			if(pressure == "reset")
+				pressure = TANK_DEFAULT_RELEASE_PRESSURE
+				. = TRUE
+			else if(pressure == "min")
+				pressure = 0
+				. = TRUE
+			else if(pressure == "max")
+				pressure = TANK_MAX_RELEASE_PRESSURE
+				. = TRUE
+			else if(text2num(pressure) != null)
+				pressure = text2num(pressure)
+				. = TRUE
+			if(.)
+				distribute_pressure = clamp(round(pressure), 0, TANK_MAX_RELEASE_PRESSURE)
+		if("toggle")
+			toggle_valve(usr)
+			. = TRUE
 
-	if (href_list["dist_p"])
-		if (href_list["dist_p"] == "reset")
-			src.distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
-		else if (href_list["dist_p"] == "max")
-			src.distribute_pressure = TANK_MAX_RELEASE_PRESSURE
-		else
-			var/cp = text2num(href_list["dist_p"])
-			src.distribute_pressure += cp
-		src.distribute_pressure = min(max(round(src.distribute_pressure), 0), TANK_MAX_RELEASE_PRESSURE)
-	if (href_list["stat"])
-		toggle_valve(loc)
-	return 1
+	add_fingerprint(usr)
 
-/obj/item/weapon/tank/proc/toggle_valve(var/mob/user)
+/obj/item/tank/ui_state(mob/user)
+	return GLOB.deep_inventory_state
+
+/obj/item/tank/proc/toggle_valve(var/mob/user)
 	if(iscarbon(loc))
 		var/mob/living/carbon/location = loc
 		if(location.internal == src)
@@ -195,19 +188,19 @@ var/list/global/tank_gauge_cache = list()
 				HUDelm.update_icon()
 		src.add_fingerprint(usr)
 
-/obj/item/weapon/tank/remove_air(amount)
+/obj/item/tank/remove_air(amount)
 	return air_contents.remove(amount)
 
-/obj/item/weapon/tank/return_air()
+/obj/item/tank/return_air()
 	return air_contents
 
-/obj/item/weapon/tank/assume_air(datum/gas_mixture/giver)
+/obj/item/tank/assume_air(datum/gas_mixture/giver)
 	air_contents.merge(giver)
 
 	check_status()
 	return 1
 
-/obj/item/weapon/tank/proc/remove_air_volume(volume_to_return)
+/obj/item/tank/proc/remove_air_volume(volume_to_return)
 	if(!air_contents)
 		return null
 
@@ -219,19 +212,19 @@ var/list/global/tank_gauge_cache = list()
 
 	return remove_air(moles_needed)
 
-/obj/item/weapon/tank/proc/get_total_moles()
+/obj/item/tank/proc/get_total_moles()
 	if (air_contents)
 		return air_contents.total_moles
 	return 0
 
-/obj/item/weapon/tank/Process()
+/obj/item/tank/Process()
 	//Allow for reactions
 	air_contents.react() //cooking up air tanks - add plasma and oxygen, then heat above PLASMA_MINIMUM_BURN_TEMPERATURE
 	if(gauge_icon)
 		update_gauge()
 	check_status()
 
-/obj/item/weapon/tank/proc/update_gauge()
+/obj/item/tank/proc/update_gauge()
 	var/gauge_pressure = 0
 	if(air_contents)
 		gauge_pressure = air_contents.return_pressure()
@@ -252,7 +245,7 @@ var/list/global/tank_gauge_cache = list()
 		tank_gauge_cache[indicator] = image(icon, indicator)
 	add_overlay(tank_gauge_cache[indicator])
 
-/obj/item/weapon/tank/proc/check_status()
+/obj/item/tank/proc/check_status()
 	//Handle exploding, leaking, and rupturing of the tank
 
 	if(!air_contents)

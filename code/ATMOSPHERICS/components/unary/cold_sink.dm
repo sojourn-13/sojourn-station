@@ -6,11 +6,11 @@
 	desc = "Cools gas when connected to pipe network"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "freezer_0"
-	density = 1
-	anchored = 1
-	use_power = 0
+	density = TRUE
+	anchored = TRUE
+	use_power = NO_POWER_USE
 	idle_power_usage = 5			// 5 Watts for thermostat related circuitry
-	circuit = /obj/item/weapon/circuitboard/unary_atmos/cooler
+	circuit = /obj/item/circuitboard/unary_atmos/cooler
 	var/heatsink_temperature = T20C	// The constant temperature reservoir into which the freezer pumps heat. Probably the hull of the station or something.
 	var/internal_volume = 600		// L
 
@@ -57,10 +57,16 @@
 /obj/machinery/atmospherics/unary/freezer/attack_hand(mob/user as mob)
 	ui_interact(user)
 
-/obj/machinery/atmospherics/unary/freezer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	// this is the data which will be sent to the ui
-	var/data[0]
-	data["on"] = use_power ? 1 : 0
+/obj/machinery/atmospherics/unary/freezer/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "GasTemperatureControl", name)
+		ui.open()
+
+/obj/machinery/atmospherics/unary/freezer/ui_data(mob/user)
+	var/list/data = list()
+
+	data["on"] = !!use_power
 	data["gasPressure"] = round(air_contents.return_pressure())
 	data["gasTemperature"] = round(air_contents.temperature)
 	data["minGasTemperature"] = 0
@@ -75,40 +81,33 @@
 		temp_class = "average"
 	data["gasTemperatureClass"] = temp_class
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-        // for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "freezer.tmpl", "Gas Cooling System", 440, 300)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+	return data
 
-/obj/machinery/atmospherics/unary/freezer/Topic(href, href_list)
-	if(..())
-		return 1
-	if(href_list["toggleStatus"])
-		use_power = !use_power
-		if(use_power)
-			to_chat(usr, "[src] turned on.")
-		else
-			to_chat(usr, "[src] turned off.")
-		update_icon()
-	if(href_list["temp"])
-		var/amount = text2num(href_list["temp"])
-		if(amount > 0)
-			set_temperature = min(set_temperature + amount, 1000)
-		else
-			set_temperature = max(set_temperature + amount, 0)
-	if(href_list["setPower"]) //setting power to 0 is redundant anyways
-		var/new_setting = between(0, text2num(href_list["setPower"]), 100)
-		set_power_level(new_setting)
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
-	add_fingerprint(usr)
+/obj/machinery/atmospherics/unary/freezer/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("toggleStatus")
+			use_power = !use_power
+			if(use_power)
+				to_chat(usr, "[src] turned on.")
+			else
+				to_chat(usr, "[src] turned off.")
+			update_icon()
+			. = TRUE
+		if("temp")
+			set_temperature = clamp(text2num(params["temp"]), 0, 1000)
+			. = TRUE
+		if("setPower")
+			var/new_setting = clamp(text2num(params["setPower"]), 0, 100)
+			set_power_level(new_setting)
+			. = TRUE
+
+	if(.)
+		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
+		add_fingerprint(usr)
 
 /obj/machinery/atmospherics/unary/freezer/Process()
 	..()
@@ -147,12 +146,12 @@
 	var/manip_rating = 0
 	var/bin_rating = 0
 
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/capacitor))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/capacitor))
 			cap_rating += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			manip_rating += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/matter_bin))
+		if(istype(P, /obj/item/stock_parts/matter_bin))
 			bin_rating += P.rating
 
 	power_rating = initial(power_rating) * cap_rating / 2			//more powerful

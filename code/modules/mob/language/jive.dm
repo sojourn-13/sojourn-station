@@ -6,6 +6,7 @@
 	key = "s"
 	flags = SIGNLANG | NO_STUTTER | NONVERBAL
 	shorthand = "JI"
+	has_written_form = FALSE
 
 //To maintain an air of informality, jive does not force capitalization
 /datum/language/jive/format_message(message, verb)

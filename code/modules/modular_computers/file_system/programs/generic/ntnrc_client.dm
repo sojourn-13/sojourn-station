@@ -3,7 +3,7 @@
 	filedesc = "NTNet Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
-	program_menu_icon = "comment"
+	program_menu_icon = "comment-alt"
 	extended_desc = "This program allows communication over NTNRC network"
 	size = 8
 	requires_ntnet = 1
@@ -71,7 +71,8 @@
 		var/channel_title = sanitizeSafe(input(user,"Enter channel name or leave blank to cancel:") as text|null, 64)
 		if(!channel_title)
 			return
-		var/datum/ntnet_conversation/C = new/datum/ntnet_conversation(computer.z)
+		var/turf/computer_turf = get_turf(computer)
+		var/datum/ntnet_conversation/C = new/datum/ntnet_conversation(computer_turf.z)
 		C.add_client(src)
 		C.operator = src
 		channel = C
@@ -164,8 +165,8 @@
 /datum/computer_file/program/chatclient/process_tick()
 
 	..()
-
-	if(channel && !(channel.source_z in GetConnectedZlevels(computer.z)))
+	var/turf/computer_turf = get_turf(computer)
+	if(channel && !(channel.source_z in GetConnectedZlevels(computer_turf.z)))
 		channel.remove_client(src)
 		channel = null
 
@@ -192,7 +193,7 @@
 /datum/nano_module/program/computer_chatclient
 	name = "NTNet Relay Chat Client"
 
-/datum/nano_module/program/computer_chatclient/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_chatclient/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(!ntnet_global || !ntnet_global.chat_channels)
 		return
 
@@ -224,7 +225,8 @@
 
 	else // Channel selection screen
 		var/list/all_channels[0]
-		var/list/connected_zs = GetConnectedZlevels(C.computer.z)
+		var/turf/computer_turf = get_turf(C.computer)
+		var/list/connected_zs = GetConnectedZlevels(computer_turf.z)
 		for(var/datum/ntnet_conversation/conv in ntnet_global.chat_channels)
 			if(conv && conv.title && (conv.source_z in connected_zs))
 				all_channels.Add(list(list(

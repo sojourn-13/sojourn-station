@@ -1,6 +1,8 @@
 /*
 	Meteors damage the station and the shields
-*/
+
+disabled
+
 /datum/storyevent/meteor
 	id = "meteor"
 	name = "meteor shower"
@@ -11,6 +13,7 @@
 	EVENT_LEVEL_MAJOR = POOL_THRESHOLD_MAJOR)
 
 	tags = list(TAG_DESTRUCTIVE, TAG_NEGATIVE, TAG_EXTERNAL)
+*/
 //===========================================
 
 /datum/event/meteor_wave
@@ -181,7 +184,7 @@
 		if (zlevel)
 			target_level = zlevel
 		else
-			target_level = pick(maps_data.station_levels)
+			target_level = pick(GLOB.maps_data.station_levels)
 		spawn_meteor(meteortypes, startSide, target_level)
 
 /proc/spawn_meteor(var/list/meteortypes, var/startSide, var/zlevel)
@@ -191,7 +194,7 @@
 	var/obj/effect/meteor/M = new Me(pickedstart)
 	M.dest = pickedgoal
 	spawn(0)
-		walk_towards(M, M.dest, 1)
+		SSmove_manager.home_onto(M, M.dest, 1)
 	return
 
 /proc/spaceDebrisStartLoc(startSide, Z)
@@ -318,7 +321,7 @@
 	pass_flags = PASSTABLE
 	var/heavy = 0
 	var/z_original
-	var/meteordrop = /obj/item/weapon/ore/iron
+	var/meteordrop = /obj/item/stack/ore/iron
 	var/dropamt = 1
 
 	var/move_count = 0
@@ -344,7 +347,7 @@
 		qdel(src)
 
 /obj/effect/meteor/Destroy()
-	walk(src,0) //this cancels the walk_towards() proc
+	SSmove_manager.stop_looping(src) //this cancels the walk_towards() proc
 	return ..()
 
 /obj/effect/meteor/New()
@@ -383,7 +386,7 @@
 /obj/effect/meteor/ex_act()
 	return
 
-/obj/effect/meteor/attackby(obj/item/weapon/W as obj, mob/user as mob, params)
+/obj/effect/meteor/attackby(obj/item/W as obj, mob/user as mob, params)
 	var/tool_type = W.get_tool_type(user, list(QUALITY_DIGGING, QUALITY_EXCAVATION), src)
 	if(tool_type & QUALITY_DIGGING | QUALITY_EXCAVATION)
 		if(W.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_ROB))
@@ -427,7 +430,7 @@
 	hits = 1
 	hitpwr = 3
 	dropamt = 1
-	meteordrop = /obj/item/weapon/ore/glass
+	meteordrop = /obj/item/stack/ore/glass
 
 //Medium-sized
 /obj/effect/meteor/medium
@@ -456,7 +459,7 @@
 	icon_state = "flaming"
 	hits = 5
 	heavy = 1
-	meteordrop = /obj/item/weapon/ore/plasma
+	meteordrop = /obj/item/stack/ore/plasma
 
 /obj/effect/meteor/flaming/meteor_effect()
 	..()
@@ -467,7 +470,7 @@
 	name = "glowing meteor"
 	icon_state = "glowing"
 	heavy = 1
-	meteordrop = /obj/item/weapon/ore/uranium
+	meteordrop = /obj/item/stack/ore/uranium
 
 /obj/effect/meteor/irradiated/meteor_effect()
 	..()
@@ -479,19 +482,19 @@
 	name = "golden meteor"
 	icon_state = "glowing"
 	desc = "Shiny! But also deadly."
-	meteordrop = /obj/item/weapon/ore/gold
+	meteordrop = /obj/item/stack/ore/gold
 
 /obj/effect/meteor/silver
 	name = "silver meteor"
 	icon_state = "glowing_blue"
 	desc = "Shiny! But also deadly."
-	meteordrop = /obj/item/weapon/ore/silver
+	meteordrop = /obj/item/stack/ore/silver
 
 /obj/effect/meteor/emp
 	name = "conducting meteor"
 	icon_state = "glowing_blue"
 	desc = "Hide your floppies!"
-	meteordrop = /obj/item/weapon/ore/osmium
+	meteordrop = /obj/item/stack/ore/osmium
 	dropamt = 2
 
 /obj/effect/meteor/emp/meteor_effect()
@@ -511,7 +514,7 @@
 	hits = 10
 	hitpwr = 1
 	heavy = 1
-	meteordrop = /obj/item/weapon/ore/diamond	// Probably means why it penetrates the hull so easily before exploding.
+	meteordrop = /obj/item/stack/ore/diamond	// Probably means why it penetrates the hull so easily before exploding.
 
 /obj/effect/meteor/tunguska/meteor_effect()
 	..()

@@ -11,20 +11,35 @@
 	//internals
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
-
+	var/my_area
+	var/assimilation_timer
 
 /obj/effect/plant/hivemind/New()
 	..()
 	icon = 'icons/obj/hivemind.dmi'
 	spawn(2)
 		update_neighbors()
-
+	var/area/A = get_area(src)
+	if(!A)
+		QDEL_IN(src, 1)
+		return
+	my_area = A.name
+	if(!(my_area in GLOB.hivemind_areas))
+		GLOB.hivemind_areas.Add(my_area)
+	GLOB.hivemind_areas[my_area]++
 
 /obj/effect/plant/hivemind/Destroy()
 	if(master_node)
 		master_node.my_wireweeds.Remove(src)
+	GLOB.hivemind_areas[my_area]--
+	if(!GLOB.hivemind_areas[my_area]) // Last wire in that area
+		GLOB.hivemind_areas.Remove(my_area)
 	return ..()
 
+/obj/effect/plant/hivemind/die_off()
+	if(assimilation_timer)
+		deltimer(assimilation_timer)
+	return ..()
 
 /obj/effect/plant/hivemind/after_spread(obj/effect/plant/child, turf/target_turf)
 	if(master_node)
@@ -35,7 +50,12 @@
 		child.forceMove(target_turf)
 		for(var/obj/effect/plant/hivemind/neighbor in range(1, child))
 			neighbor.update_neighbors()
-
+	if(target_turf.holy) //Holy tiles can kill off the wire sometimes!
+		if(prob(30))
+			die_off()
+	else
+		if(prob(5)) //5% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
+			new /obj/random/structures/hivemind_mob(src.loc)
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
@@ -71,15 +91,91 @@
 
 
 /obj/effect/plant/hivemind/update_neighbors()
-	..()
+	// Update our list of valid neighboring turfs.
+	neighbors = list()
+	var/list/tocheck = get_cardinal_neighbors()
+	var/add_to_neighbors = TRUE
+	for(var/turf/simulated/floor in tocheck)
+		var/turf/zdest = get_connecting_turf(floor, loc)//Handling zlevels
+		add_to_neighbors = TRUE
+		if(get_dist(parent, floor) > spread_distance)
+			add_to_neighbors = FALSE
+
+		//We check zdest, not floor, for existing plants
+		if((locate(/obj/effect/plant) in zdest.contents) || (locate(/obj/effect/dead_plant) in zdest.contents))
+			if(!(seed.get_trait(TRAIT_INVASIVE)))//Invasive ones can invade onto other tiles
+				add_to_neighbors = FALSE
+			var/obj/effect/plant/neighbor_plant = (locate(/obj/effect/plant) in zdest.contents)
+			if(neighbor_plant.seed.get_trait(TRAIT_INVASIVE))//If it's also invasive, don't invade (for better performance and plants not eating at itself)
+				add_to_neighbors = FALSE
+
+		if(!near_external && floor.density)
+			add_to_neighbors = FALSE
+		if(!Adjacent(floor))
+			add_to_neighbors = FALSE
+		if(!floor.CanPass(src, floor))
+			add_to_neighbors = FALSE
+
+		if((locate(/obj/structure/low_wall) in floor))
+			add_to_neighbors = FALSE
+
+			var/obj/machinery/door/found_door = null
+			for (var/obj/machinery/door/D in floor)
+				if(D.density || !D.welded)
+					found_door = D
+
+			if(found_door)
+				var/can_pass = door_interaction(found_door, floor)
+				if(!can_pass)
+					add_to_neighbors = FALSE
+
+
+		if(add_to_neighbors)
+			neighbors |= floor
+	// Update all of our friends.
+	var/turf/T = get_turf(src)
+	for(var/obj/effect/plant/neighbor in range(1,src))
+		neighbor.neighbors -= T
+
 	update_connections()
 	update_icon()
 	update_openspace()
 
 
 /obj/effect/plant/hivemind/spread()
-	if(hive_mind_ai && master_node)
-		..()
+	if(!hive_mind_ai || !master_node || !neighbors.len)
+		return
+
+	var/turf/target_turf = pick(neighbors)
+	if(target_turf.is_hole && !GLOB.hive_data_bool["spread_on_lower_z_level"])
+		// Not removed from neighbors, in case settings are change later
+		return
+
+	target_turf = get_connecting_turf(target_turf, loc)
+	var/area/target_area = get_area(target_turf)
+
+	// Entering the area for the first time
+	if(!(target_area.name in GLOB.hivemind_areas))
+		// If area limit is disabled (set to 0), or less than current number of occupied areas - expand and mark that area as occupied
+		if(!GLOB.hive_data_float["maximum_controlled_areas"] || GLOB.hivemind_areas.len < GLOB.hive_data_float["maximum_controlled_areas"])
+			GLOB.hivemind_areas.Add(target_area.name)
+		else
+			return
+
+	// Track amount of weed in the area, so at 0 weed area would be marked as unoccupied
+	GLOB.hivemind_areas[target_area.name]++
+
+	for(var/i in target_turf.contents)
+		if(istype(i, /obj/effect/plant) || istype(i, /obj/effect/dead_plant))
+			visible_message("[src] consumes [i]!")
+			qdel(i)
+
+	// Created on the same loc, for move animation to play properly
+	var/obj/effect/plant/child = new type(get_turf(src), seed, src)
+	after_spread(child, target_turf)
+	// Update neighboring tiles
+	for(var/obj/effect/plant/hivemind/neighbor in range(1, target_turf))
+		neighbor.neighbors -= target_turf
 
 
 /obj/effect/plant/hivemind/life()
@@ -160,7 +256,7 @@
 		anim_shake(door)
 		//first, we open our panel to give our wireweeds access to exposed airlock's electronics
 		if(!door.p_open && !istype(door, /obj/machinery/door/window))
-			if(prob(40))
+			if(prob(50))
 				door.p_open = TRUE
 				door.update_icon()
 			return FALSE
@@ -173,12 +269,12 @@
 			if(istype(door, /obj/machinery/door/airlock))
 				var/obj/machinery/door/airlock/A = door
 				if(A.locked)
-					if(prob(50))
+					if(prob(75))
 						A.unlock()
 					return FALSE
 			//and then, if airlock is closed, we begin destroy it electronics
 			if(door.density)
-				door.take_damage(rand(25, 40))
+				door.take_damage(rand(30, 70))
 				return FALSE
 
 	return TRUE
@@ -189,13 +285,16 @@
 		if(target.density)
 			return FALSE
 
-		if(locate(/obj/structure) in target)
+		if(locate(/obj/machinery/door) in target.contents)
+			return FALSE
+
+		if(locate(/obj/machinery) in target.contents)
+			return TRUE
+
+		if(locate(/obj/structure) in target.contents)
 			for(var/obj/structure/S in target)
 				if(S.density && S.anchored)
 					return FALSE
-
-		if(locate(/obj/machinery/door) in target)
-			return FALSE
 
 		return TRUE
 	else
@@ -258,7 +357,7 @@
 		//Here we have a little chance to spawn our machinery horror
 		if(istype(subject, /obj/machinery))
 			var/obj/machinery/victim = subject
-			if(prob(10) && victim.circuit)
+			if(prob(15) && victim.circuit)
 				new /mob/living/simple_animal/hostile/hivemind/mechiver(get_turf(subject))
 				new victim.circuit.type(get_turf(subject))
 				qdel(subject)
@@ -284,17 +383,23 @@
 	//Corpse reanimation
 	if(isliving(subject) && !ishivemindmob(subject))
 		//human bodies
-		if(ishuman(subject))
+		if(ishuman(subject) && !assimilation_timer)
 			var/mob/living/L = subject
-			//if our target has cruciform, let's just leave it
-			if(is_neotheology_disciple(L))
+
+			if(!GLOB.hive_data_float["gibbing_warning_timer"]) //If the value is set to 0 (the default) we don't touch player humans
 				return
-			for(var/obj/item/W in L)
-				L.drop_from_inventory(W)
-			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
-			new M(loc)
+
+			var/timer = GLOB.hive_data_float["gibbing_warning_timer"] SECONDS //If we've continued, then there's a value there and we want it in seconds
+
+			if(is_neotheology_disciple(L)) //If our target has a cruciform, we don't touch it
+				return
+
+			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
+			assimilation_timer = addtimer(CALLBACK(src, PROC_REF(assimilate_human), L), timer, TIMER_STOPPABLE)
+			return
+
 		//robot corpses
-		else if(issilicon(subject))
+		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
 			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
@@ -303,6 +408,15 @@
 
 		qdel(subject)
 
+/obj/effect/plant/hivemind/proc/assimilate_human(var/mob/living/L)
+	if(!locate(/obj/effect/plant/hivemind) in L.loc || !(L.stat == DEAD)) //If we don't see any wires after the alotted time or we're alive again, we don't get got
+		return
+	for(var/obj/item/W in L)
+		L.drop_from_inventory(W)
+	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	new M(loc)
+
+	L.dust()
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////>RESPONSE CODE<//////////////////////////
@@ -311,7 +425,7 @@
 
 //in fact, this is some kind of reinforced wires, so we can't take samples from it and inject something too
 //but we still can slice it with something sharp
-/obj/effect/plant/hivemind/attackby(obj/item/weapon/W, mob/user)
+/obj/effect/plant/hivemind/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	var/weapon_type
@@ -321,7 +435,7 @@
 		weapon_type = QUALITY_WELDING
 
 	if(weapon_type)
-		if(W.use_tool(user, src, WORKTIME_FAST, weapon_type, FAILCHANCE_EASY, required_stat = STAT_ROB))
+		if(W.use_tool(user, src, WORKTIME_FAST, weapon_type, FAILCHANCE_EASY, required_stat = STAT_MEC)) //Replaced STAT_ROB with STAT_MEC. you aren't ripping this out you are cutting it
 			user.visible_message(SPAN_DANGER("[user] cuts down [src]."), SPAN_DANGER("You cut down [src]."))
 			die_off()
 			return

@@ -10,6 +10,7 @@
 	icon = 'icons/mob/human_races/species/human/hair.dmi'
 	species_allowed = list(
 		SPECIES_HUMAN,
+		SPECIES_EXALT_HUMAN,
 		FORM_MARQUA,
 		FORM_SABLEKYNE,
 		FORM_KRIOSAN,
@@ -17,7 +18,17 @@
 		FORM_CHTMANT,
 		FORM_CINDAR,
 		FORM_NARAMAD,
-		FORM_OPIFEX
+		FORM_OPIFEX,
+		FORM_FOLKEN,
+		FORM_FBP,
+		FORM_SOTSYNTH,
+		FORM_AGSYNTH,
+		FORM_BSSYNTH,
+		FORM_CHURCHSYNTH,
+		FORM_NASHEF,
+		FORM_MYCUS,
+		FORM_SLIME,
+		FORM_UNBRANDED
 		)
 
 /datum/sprite_accessory/hair/bald
@@ -68,6 +79,14 @@
 	name = "Bedhead 3"
 	icon_state = "bedheadv3"
 
+/datum/sprite_accessory/hair/bedhead_long
+	name = "Bedhead Long"
+	icon_state = "long_bedhead"
+
+/datum/sprite_accessory/hair/bedhead_floor
+	name = "Bedhead Floor Long"
+	icon_state = "floorlength_bedhead"
+
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
 	icon_state = "beehive"
@@ -75,6 +94,10 @@
 /datum/sprite_accessory/hair/beehive2
 	name = "Beehive 2"
 	icon_state = "beehive2"
+
+/datum/sprite_accessory/hair/begone
+	name = "Begone"
+	icon_state = "begone"
 
 /datum/sprite_accessory/hair/belle
 	name = "Belle"
@@ -103,6 +126,18 @@
 /datum/sprite_accessory/hair/bowl2
 	name = "Bowl 2"
 	icon_state = "bowlcut2"
+
+/datum/sprite_accessory/hair/bonnie
+	name = "Bonnie"
+	icon_state = "bonnie"
+
+/datum/sprite_accessory/hair/bonnieshort
+	name = "Bonnie Short"
+	icon_state = "bonnie_short"
+
+/datum/sprite_accessory/hair/bonnielong
+	name = "Bonnie Long"
+	icon_state = "bonnie_long"
 
 /datum/sprite_accessory/hair/bookish
 	name = "Bookish"
@@ -156,6 +191,10 @@
 	name = "CIA"
 	icon_state = "cia"
 
+/datum/sprite_accessory/hair/country
+	name = "Country"
+	icon_state = "country"
+
 /datum/sprite_accessory/hair/combed
 	name = "Combed"
 	icon_state = "hbangs"
@@ -196,6 +235,14 @@
 	name = "Dandy Pompadour"
 	icon_state = "dandypompadour"
 
+/datum/sprite_accessory/hair/daisy
+	name = "Daisy"
+	icon_state = "daisy"
+
+/datum/sprite_accessory/hair/depresso
+	name = "Depresso"
+	icon_state = "depresso"
+
 /datum/sprite_accessory/hair/devillock
 	name = "Devil Lock"
 	icon_state = "devilock"
@@ -229,7 +276,7 @@
 	name = "Emo Fringe"
 	icon_state = "emofringe"
 
-/datum/sprite_accessory/hair/fag
+/datum/sprite_accessory/hair/flow
 	name = "Flow"
 	icon_state = "flowhair"
 
@@ -309,6 +356,22 @@
 	name = "Hime Cut 2"
 	icon_state = "himecut_alt"
 
+/datum/sprite_accessory/hair/himecutponytail
+	name = "himecut ponytail"
+	icon_state = "himecut_ponytail"
+
+/datum/sprite_accessory/hair/himecutponytailup
+	name = "Himecut high ponytail"
+	icon_state = "himecut_ponytail_up"
+
+/datum/sprite_accessory/hair/himecutlongponytail
+	name = "Himecut long ponytail"
+	icon_state = "himecut_long_ponytail"
+
+/datum/sprite_accessory/hair/himecutshort
+	name = "Himecut short"
+	icon_state = "himecut_short"
+
 /datum/sprite_accessory/hair/hitop
 	name = "Hitop"
 	icon_state = "hitop"
@@ -320,6 +383,10 @@
 /datum/sprite_accessory/hair/jessica
 	name = "Jessica"
 	icon_state = "jessica"
+
+/datum/sprite_accessory/hair/jill
+	name = "Jill"
+	icon_state = "jill"
 
 /datum/sprite_accessory/hair/joestar
 	name = "Joestar"
@@ -341,6 +408,18 @@
 	name = "Keanu"
 	icon_state = "keanu"
 
+/datum/sprite_accessory/hair/kobenir
+	name = "Kobeni Right"
+	icon_state = "kobeni_r"
+
+/datum/sprite_accessory/hair/kobenil
+	name = "Kobeni Left"
+	icon_state = "kobeni_l"
+
+/datum/sprite_accessory/hair/kobenishort
+	name = "Kobeni Short"
+	icon_state = "kobeni_short"
+
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi"
 	icon_state = "kusanagi"
@@ -352,6 +431,10 @@
 /datum/sprite_accessory/hair/ladylike2
 	name = "Ladylike 2"
 	icon_state = "ladylike2"
+
+/datum/sprite_accessory/hair/librarian
+	name = "Librarian Doo"
+	icon_state = "librarian"
 
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
@@ -545,6 +628,10 @@
 	name = "Reverse Mohawk"
 	icon_state = "reversemohawk"
 
+/datum/sprite_accessory/hair/rockstar
+	name = "Rockstar"
+	icon_state = "rockstar"
+
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
 	icon_state = "ronin"
@@ -569,9 +656,17 @@
 	name = "Scully"
 	icon_state = "scully"
 
+/datum/sprite_accessory/hair/sabitsuki
+	name = "Sabitsuki"
+	icon_state = "sabitsuki"
+
 /datum/sprite_accessory/hair/sharppony
 	name = "Sharp Ponytail"
 	icon_state = "sharp_ponytail"
+
+/datum/sprite_accessory/hair/sharppony2
+	name = "Sharp Ponytail Alt"
+	icon_state = "sharptail"
 
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Shaved Mohawk"
@@ -685,9 +780,21 @@
 	name = "Tress Shoulder"
 	icon_state = "tressshoulder"
 
+/datum/sprite_accessory/hair/tribalbraid
+	name = "Tribal Braid"
+	icon_state = "tribalbraid"
+
+/datum/sprite_accessory/hair/tribun
+	name = "Tri Bun"
+	icon_state = "tribun"
+
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"
 	icon_state = "toriyama2"
+
+/datum/sprite_accessory/hair/vriska_s
+	name = "Vriska"
+	icon_state = "vriska"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
@@ -815,6 +922,10 @@
 	name = "Lizard Ram Horns"
 	icon_state = "unathi_ramhorn_s"
 
+/datum/sprite_accessory/hair/liz_curled_horns
+	name = "Lizard Curled Horns"
+	icon_state = "lizard_horns_curled_s"
+
 /datum/sprite_accessory/hair/naramad_fairytail
 	name = "Naramad Fairytail"
 	icon_state = "serg_fairytail_s"
@@ -879,18 +990,218 @@
 	name = "Yasu Quills"
 	icon_state = "yasuquills"
 
+/datum/sprite_accessory/hair/marquafrill
+	name = "Mar'Qua pointed frills"
+	icon_state = "sidespikes"
+	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_short_frill
+	name = "Mar'Qua short frills"
+	icon_state = "longears"
+	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_witchhat
+	name = "Mar'Qua Erudite"
+	icon_state = "witchhat"
+	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_cat
+	name = "Mar'Qua Tipped frills"
+	icon_state = "topears"
+	species_allowed = list(FORM_MARQUA)
+
+
 /datum/sprite_accessory/hair/marqua_veryshort
-	name = "Mar'Qua Very Short Headtails"
+	name = "Very Short Headtails"
 	icon_state = "marqua_hair_veryshort_s"
 
 /datum/sprite_accessory/hair/marqua_short
-	name = "Mar'Qua Short Headtails"
+	name = "Short Headtails"
 	icon_state = "marqua_hair_short_s"
 
 /datum/sprite_accessory/hair/marqua_average
-	name = "Mar'Qua Average Headtails"
+	name = "Average Headtails"
 	icon_state = "marqua_hair_average_s"
 
 /datum/sprite_accessory/hair/marqua_long
-	name = "Mar'Qua Long Headtails"
+	name = "Long Headtails"
 	icon_state = "marqua_hair_verylong_s"
+
+/datum/sprite_accessory/hair/split
+	name = "Split Headtails"
+	icon_state = "marqua_hair_split_s"
+
+/datum/sprite_accessory/hair/marqua_tiedlong
+	name = "Tied Long Headtails"
+	icon_state = "marqua_hair_tiedlong_s"
+
+/datum/sprite_accessory/hair/marqua_tiedverylong
+	name = "Tied Very Long Headtails"
+	icon_state = "marqua_hair_tiedverylong_s"
+
+/datum/sprite_accessory/hair/marqua_scarflong
+	name = "Scrarf Headtails"
+	icon_state = "marqua_hair_scarflong_s"
+
+/datum/sprite_accessory/hair/marqua_scarfverylong
+	name = "Scrarf Long Headtails"
+	icon_state = "marqua_hair_scarfverylong_s"
+
+/datum/sprite_accessory/hair/marqua_wavylong
+	name = "Wavy Long Headtails"
+	icon_state = "marqua_hair_wavylong_s"
+
+/datum/sprite_accessory/hair/marqua_wavyverylong
+	name = "Wavy Very Long Headtails"
+	icon_state = "marqua_hair_wavyverylong_s"
+
+/datum/sprite_accessory/hair/marqua_pullback
+	name = "Pullback Headtails"
+	icon_state = "marqua_hair_pullback_s"
+
+/datum/sprite_accessory/hair/marqua_pullbacklong
+	name = "Pullback Long Headtails"
+	icon_state = "marqua_hair_pullbacklong_s"
+
+/datum/sprite_accessory/hair/marqua_pullbackverylong
+	name = "Pullback Very Long Headtails"
+	icon_state = "marqua_hair_pullbackverylong_s"
+
+
+/datum/sprite_accessory/hair/folken
+	species_allowed = list(FORM_FOLKEN)
+
+/datum/sprite_accessory/hair/folken/moss_hair_grayscale
+	name = "Folken Moss Hair"
+	icon_state = "moss_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/moss2_hair_grayscale
+	name = "Folken Moss Hair 2"
+	icon_state = "moss2_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/moss3_hair_grayscale
+	name = "Folken Moss Hair 3"
+	icon_state = "moss3_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/bush_hair_grayscale
+	name = "Folken Bush Hair"
+	icon_state = "bush_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/bush2_hair_grayscale
+	name = "Folken Bush Hair 2"
+	icon_state = "bush2_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/bush3_hair_grayscale
+	name = "Folken Bush Hair 3"
+	icon_state = "bush3_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/leaf_hair_grayscale
+	name = "Folken Leafy Hair"
+	icon_state = "leaf_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/leafs_hair_grayscale2
+	name = "Folken Leafy Hair 2"
+	icon_state = "leafs_hair_grayscale2"
+
+/datum/sprite_accessory/hair/folken/shawl_hair_grayscale
+	name = "Folken Leafy Shawl"
+	icon_state = "shawl_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/twig_hair_grayscale
+	name = "Folken Twig Hair"
+	icon_state = "twig_hair_grayscale"
+
+/datum/sprite_accessory/hair/folken/twig2_hair_grayscale
+	name = "Folken Twig Hair 2"
+	icon_state = "twig2_hair_grayscale"
+
+/datum/sprite_accessory/hair/mycus
+	species_allowed = list(FORM_MYCUS)
+
+/datum/sprite_accessory/hair/mycus/broad
+	name = "Mycus Broad Cap"
+	icon_state = "broad"
+
+/datum/sprite_accessory/hair/mycus/pancake
+	name = "Mycus Flat Cap"
+	icon_state = "pancake"
+
+/datum/sprite_accessory/hair/mycus/small_shroom
+	name = "Mycus Small Cap"
+	icon_state = "small_shroom"
+
+/datum/sprite_accessory/hair/mycus/round
+	name = "Mycus Round Cap"
+	icon_state = "round"
+
+/datum/sprite_accessory/hair/mycus/dick
+	name = "Mycus Round Cap 2"
+	icon_state = "dick"
+
+/datum/sprite_accessory/hair/mycus/bark
+	name = "Mycus Bark Cap"
+	icon_state = "bark"
+
+/datum/sprite_accessory/hair/mycus/bark2
+	name = "Mycus Bark Cap 2"
+	icon_state = "bark2"
+
+/datum/sprite_accessory/hair/mycus/tiny
+	name = "Mycus Tiny Cap"
+	icon_state = "tiny"
+
+/datum/sprite_accessory/hair/mycus/standard
+	name = "Mycus Standard Cap"
+	icon_state = "standard"
+
+/datum/sprite_accessory/hair/mycus/standard_wide
+	name = "Mycus Standard Cap 2"
+	icon_state = "standard_wide"
+
+/datum/sprite_accessory/hair/mycus/standard_tall
+	name = "Mycus Standard Cap 3"
+	icon_state = "standard_tall"
+
+/datum/sprite_accessory/hair/mycus/standard_thick
+	name = "Mycus Standard Cap 4"
+	icon_state = "standard_thick"
+
+/datum/sprite_accessory/hair/mycus/cup
+	name = "Mycus Cup Cap"
+	icon_state = "cup"
+
+/datum/sprite_accessory/hair/mycus/cup2
+	name = "Mycus Cup Cap 2"
+	icon_state = "cup2"
+
+/datum/sprite_accessory/hair/mycus/shrooms
+	name = "Mycus Shroom Collection"
+	icon_state = "shrooms"
+
+/datum/sprite_accessory/hair/mycus/shrooms2
+	name = "Mycus Shroom Collection 2"
+	icon_state = "shrooms2"
+
+/datum/sprite_accessory/hair/mycus/flatshrooms
+	name = "Mycus Shroom Collection 3"
+	icon_state = "flatshrooms"
+
+/datum/sprite_accessory/hair/mycus/flatshrooms2
+	name = "Mycus Shroom Collection 4"
+	icon_state = "flatshrooms2"
+
+/datum/sprite_accessory/hair/mycus/doom
+	name = "Mycus Single Shroom"
+	icon_state = "doom"
+
+/datum/sprite_accessory/hair/mycus/spore
+	name = "Mycus Spore Cap"
+	icon_state = "spore"
+
+/datum/sprite_accessory/hair/mycus/spore2
+	name = "Mycus Spore Cap 2"
+	icon_state = "spore2"
+
+/datum/sprite_accessory/hair/mycus/spore3
+	name = "Mycus Spore Cap 3"
+	icon_state = "spore3"

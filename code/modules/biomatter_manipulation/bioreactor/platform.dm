@@ -13,9 +13,6 @@
 	active_power_usage = 400
 	var/make_glasswalls_after_creation = FALSE
 
-	circuit = /obj/item/weapon/circuitboard/neotheology/bioreactor_platform
-
-
 /obj/machinery/multistructure/bioreactor_part/platform/Initialize()
 	. = ..()
 	update_icon()
@@ -36,17 +33,19 @@
 				if((issilicon(victim) || victim.mob_classification == CLASSIFICATION_SYNTHETIC) && victim.mob_size <= MOB_SMALL)
 					victim.forceMove(MS_bioreactor.misc_output)
 					continue
-				//if our target has hazard protection, then okay
-				var/hazard_protection = victim.getarmor(null, "bio")
-				if(!hazard_protection)
-					victim.apply_damage(CLONE_DAMAGE_PER_TICK, CLONE)
-					if(prob(10))
-						playsound(loc, 'sound/effects/bubbles.ogg', 45, 1)
-					if(victim.health <= -victim.maxHealth)
-						MS_bioreactor.biotank_platform.take_amount(victim.mob_size*5)
-						MS_bioreactor.biotank_platform.pipes_wearout(victim.mob_size/5, forced = TRUE)
-						consume(victim)
-					continue
+				//if our target has hazard protection, apply damage based on the protection percentage.
+				var/hazard_protection = victim.getarmor(null, ARMOR_BIO)
+				var/damage = BIOREACTOR_DAMAGE_PER_TICK - (BIOREACTOR_DAMAGE_PER_TICK * (hazard_protection/100))
+				victim.apply_damage(damage, BURN, used_weapon = "Biological")
+				victim.adjustOxyLoss(BIOREACTOR_DAMAGE_PER_TICK / 2)	// Snowflake shit, but we need the mob to die within a reasonable time frame
+
+				if(prob(10))
+					playsound(loc, 'sound/effects/bubbles.ogg', 45, 1)
+				if(victim.health <= -victim.maxHealth)
+					MS_bioreactor.biotank_platform.take_amount(victim.mob_size*5)
+					MS_bioreactor.biotank_platform.pipes_wearout(victim.mob_size/5, forced = TRUE)
+					consume(victim)
+				continue
 
 			//object processing
 			if(istype(M, /obj/item))
@@ -55,7 +54,7 @@
 				var/obj/item/target = M
 				//if we found biomatter, let's start processing
 				//it will slowly disappear. Time based at size of object and we manipulate with its alpha (we also check for it)
-				if(MATERIAL_BIOMATTER in target.matter)
+				if((MATERIAL_BIOMATTER in target.matter) && !target.unacidable)
 					target.alpha -= round(100 / target.w_class)
 					var/icon/I = new(target.icon, icon_state = target.icon_state)
 					//we turn this things to degenerate sprite a bit
@@ -71,6 +70,9 @@
 							if(stack_type)
 								var/obj/item/stack/material/waste = new stack_type(MS_bioreactor.misc_output)
 								waste.amount = target.matter[material]
+								waste.amount = round(waste.amount) //So we dont get half stacks
+								if(waste.amount <= 0)
+									waste.amount = 1 //If we have negitive materal or 0 then magically give 1 to prevent bugs
 								waste.update_strings()
 							target.matter -= material
 						consume(target)
@@ -98,7 +100,7 @@
 
 //This proc called on object/mob consumption
 /obj/machinery/multistructure/bioreactor_part/platform/proc/consume(atom/movable/object)
-	if(ishuman(object))
+	/*if(ishuman(object))
 		var/mob/living/carbon/human/H = object
 		for(var/obj/item/item in H.contents)
 			//non robotic limbs will be consumed
@@ -109,7 +111,8 @@
 				var/obj/machinery/multistructure/bioreactor_part/platform/neighbor_platform = pick(MS_bioreactor.platforms)
 				organ.forceMove(get_turf(neighbor_platform))
 				organ.removed()
-				continue
+				continue*/
+
 	qdel(object)
 	//now let's add some dirt to the glass
 	for(var/obj/structure/window/reinforced/bioreactor/glass in loc)
@@ -222,20 +225,20 @@
 		opacity = FALSE
 	if(contamination_level <= 0)
 		contamination_level = 0
-		opacity = FALSE
+		opacity = TRUE
 	update_icon()
 
 
 /obj/structure/window/reinforced/bioreactor/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
-		if(istype(I, /obj/item/weapon/mop))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap))
+		if(istype(I, /obj/item/mop))
 			if(I.reagents && !I.reagents.total_volume)
 				to_chat(user, SPAN_WARNING("Your [I] is dry!"))
 				return
 		if(user.loc != loc)
 			to_chat(user, SPAN_WARNING("You need to be inside to clean it up."))
 			return
-		to_chat(user, SPAN_NOTICE("You begin cleaning [src] with your [I]..."))
+		to_chat(user, SPAN_NOTICE("You begin cleaning [src] with [I]..."))
 		if(do_after(user, CLEANING_TIME * contamination_level, src))
 			to_chat(user, SPAN_NOTICE("You clean \the [src]."))
 			toxin_attack(user, 5*contamination_level)

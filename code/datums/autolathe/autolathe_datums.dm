@@ -15,20 +15,29 @@
 	var/time = 0					//How many ticks it requires to build. If 0, calculated from the amount of materials used.
 	var/starts_unlocked = FALSE		//If the design starts unlocked.
 
-	var/list/ui_data = null			//Pre-generated UI data, to be sent into NanoUI/TGUI interfaces.
+	var/takes_chemicals = TRUE		//This will make it so the item printed will not add its own chems when getting its chemicals in the item to print
+
+	var/list/nano_ui_data = null			//Pre-generated UI data, to be sent into NanoUI/TGUI interfaces.
 
 	// An MPC file containing this design. You can use it directly, but only if it doesn't interact with the rest of MPC system. If it does, use copies.
 	var/datum/computer_file/binary/design/file
 
 
+	//Used for determing if the printer can accually print the design Mech fabs/Organ Printers ect ect
+	var/required_printer_code = FALSE
+	var/code_dex = FALSE
 
 //These procs are used in subtypes for assigning names and descriptions dynamically
-/datum/design/proc/AssembleDesignInfo()
+/datum/design/proc/AssembleDesignInfo(atom/temp_atom)
 	if(build_path)
-		var/atom/temp_atom = Fabricate(null, 1, null)
+		var/delete_atom = FALSE
+		if(!temp_atom)
+			temp_atom = Fabricate(null, 1, null)
+			delete_atom = TRUE
 		AssembleDesignName(temp_atom)
 		AssembleDesignMaterials(temp_atom)
-		qdel(temp_atom)
+		if(delete_atom)
+			qdel(temp_atom)
 
 	AssembleDesignTime()
 	AssembleDesignDesc()
@@ -110,8 +119,9 @@
 	for(var/m in materials)
 		total_materials += materials[m]
 
-	for(var/c in chemicals)
-		total_reagents += chemicals[c]
+	if(takes_chemicals)
+		for(var/c in chemicals)
+			total_reagents += chemicals[c]
 
 	time = 5 + total_materials + (total_reagents / 5)
 	time = max(round(time), 5)
@@ -123,11 +133,10 @@
 	id = type
 
 /datum/design/proc/AssembleDesignUIData()
-	ui_data = list(
+	nano_ui_data = list(
 		"id" = "[id]", "name" = name, "desc" = desc, "time" = time,
 		"category" = category, "adjust_materials" = adjust_materials
 	)
-	// ui_data["icon"] is set in asset code.
 
 	if(length(materials))
 		var/list/RS = list()
@@ -137,22 +146,22 @@
 			if(material_datum)
 				RS.Add(list(list("id" = material, "name" = material_datum.display_name, "req" = materials[material])))
 
-		ui_data["materials"] = RS
+		nano_ui_data["materials"] = RS
 
 	if(length(chemicals))
 		var/list/RS = list()
 
 		for(var/reagent in chemicals)
-			var/datum/reagent/reagent_datum = chemical_reagents_list[reagent]
+			var/datum/reagent/reagent_datum = GLOB.chemical_reagents_list[reagent]
 			if(reagent_datum)
 				RS.Add(list(list("id" = reagent, "name" = reagent_datum.name, "req" = chemicals[reagent])))
 
-		ui_data["chemicals"] = RS
+		nano_ui_data["chemicals"] = RS
 
 
-/datum/design/ui_data()
+/datum/design/nano_ui_data()
 	RETURN_TYPE(/list)
-	return ui_data
+	return nano_ui_data
 
 //Returns a new instance of the item for this design
 //This is to allow additional initialization to be performed, including possibly additional contructor arguments.
@@ -176,4 +185,4 @@
 
 /datum/design/autolathe/corrupted
 	name = "ERROR"
-	build_path = /obj/item/weapon/material/shard/shrapnel/scrap
+	build_path = /obj/item/material/shard/shrapnel/scrap

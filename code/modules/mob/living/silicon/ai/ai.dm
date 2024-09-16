@@ -52,20 +52,24 @@ var/list/ai_verbs_default = list(
 	status_flags = CANSTUN|CANPARALYSE|CANPUSH
 //	shouldnt_see = list()
 	universal_understand = TRUE
-	var/list/network = list(NETWORK_FIRST_SECTION,
-							NETWORK_SECOND_SECTION,
-							NETWORK_THIRD_SECTION,
-							NETWORK_FOURTH_SECTION,
+	var/list/network = list(NETWORK_COLONY_SURFACE,
+							NETWORK_COLONY_UNDERGROUND,
+							NETWORK_COLONY_TRANSITION,
+							NETWORK_CHURCH,
+							NETWORK_PROP,
+							NETWORK_CARGO,
 							NETWORK_COMMAND,
 							NETWORK_ENGINE,
 							NETWORK_ENGINEERING,
 							NETWORK_CEV_ERIS,
 							NETWORK_MINE,
 							NETWORK_PRISON,
+							NETWORK_GATE,
 							NETWORK_MEDICAL,
 							NETWORK_RESEARCH,
 							NETWORK_RESEARCH_OUTPOST,
 							NETWORK_SECURITY,
+							NETWORK_PLASMA_TAG,
 							NETWORK_TELECOM
 							)
 	var/obj/machinery/camera/camera = null
@@ -73,8 +77,7 @@ var/list/ai_verbs_default = list(
 	var/aiRestorePowerRoutine = 0
 	var/viewalerts = 0
 	var/icon/holo_icon//Default is assigned when AI is created.
-	var/obj/mecha/controlled_mech //For controlled_mech a mech, to determine whether to relaymove or use the AI eye.
-	var/obj/item/weapon/tool/multitool/aiMulti = null
+	var/obj/item/tool/multitool/aiMulti = null
 	var/obj/item/device/radio/headset/heads/ai_integrated/aiRadio = null
 	var/camera_light_on = 0	//Defines if the AI toggled the light on the camera it's looking through.
 	var/datum/trackable/track = null
@@ -107,49 +110,22 @@ var/list/ai_verbs_default = list(
 
 	var/multitool_mode = 0
 
+	var/amount_of_borgs_printed = 0				// How many borgs we have printed per AI
+
 	defaultHUD = "Eris"
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
-	src.verbs |= ai_verbs_default
+	add_verb(src, ai_verbs_default)
 
 /mob/living/silicon/ai/proc/remove_ai_verbs()
-	src.verbs -= ai_verbs_default
-
-
-/mob/living/silicon/ai/proc/add_mecha_verbs()
-	verbs += /mob/living/silicon/ai/proc/view_mecha_stats
-	verbs += /mob/living/silicon/ai/proc/AIeject
-
-
-/mob/living/silicon/ai/proc/remove_mecha_verbs()
-	verbs -= /mob/living/silicon/ai/proc/view_mecha_stats
-	verbs -= /mob/living/silicon/ai/proc/AIeject
-
-/mob/living/silicon/ai/proc/view_mecha_stats()
-	set name = "View Stats"
-	set category = "Exosuit Interface"
-	set popup_menu = 0
-	if(controlled_mech)
-		controlled_mech.view_stats()
-
-
-/mob/living/silicon/ai/proc/AIeject()
-	set name = "AI Eject"
-	set category = "Exosuit Interface"
-	set popup_menu = 0
-	if(controlled_mech)
-		controlled_mech.AIeject()
-
+	remove_verb(src, ai_verbs_default)
 
 /mob/living/silicon/ai/MiddleClickOn(var/atom/A)
     if(!control_disabled && A.AIMiddleClick(src))
         return
-    if(controlled_mech) //Are we piloting a mech? Placed here so the modifiers are not overridden.
-        controlled_mech.click_action(A, src) //Override AI normal click behavior.  , params
-        return
     ..()
 
-/mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/B, var/safety = 0)
+/mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/digital/posibrain/B, var/safety = 0)
 	announcement = new()
 	announcement.title = "A.I. Announcement"
 	announcement.announcement_type = "A.I. Announcement"
@@ -171,7 +147,7 @@ var/list/ai_verbs_default = list(
 	density = 1
 	loc = loc
 
-	holo_icon = getHologramIcon(icon('icons/mob/AI.dmi',"holo1"))
+	holo_icon = getHologramIcon(icon('icons/mob/hologram.dmi',"Face"))
 
 	if(L)
 		if (istype(L, /datum/ai_laws))
@@ -193,6 +169,12 @@ var/list/ai_verbs_default = list(
 	//Languages
 	add_language(LANGUAGE_ROBOT, 1)
 	add_language(LANGUAGE_COMMON, 1)
+	add_language(LANGUAGE_ILLYRIAN, 1)
+	add_language(LANGUAGE_JIVE, 0) //can understand but obviously can't speak it.
+	add_language(LANGUAGE_EURO, 1)
+	add_language(LANGUAGE_JANA, 1)
+	add_language(LANGUAGE_CYRILLIC, 1)
+	add_language(LANGUAGE_LATIN, 1)
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
@@ -222,12 +204,12 @@ var/list/ai_verbs_default = list(
 	..()
 
 	//Stats
-	//The AI gets 100 in all three knowledge stats.
+	//The AI gets 100 in all stats except cognition for use in some RnD machinery
 	//These are only ever used to operate machinery and software
 	//It doesnt get any physical stats, like robustness, since its a disembodied mind
 	stats.changeStat(STAT_BIO, 100)
 	stats.changeStat(STAT_MEC, 100)
-	stats.changeStat(STAT_COG, 100)
+	stats.changeStat(STAT_COG, 150)
 
 /mob/living/silicon/ai/proc/on_mob_init()
 	to_chat(src, "<B>You are playing the station's AI. The AI cannot move, but can interact with many objects while viewing them (through cameras).</B>")
@@ -249,7 +231,7 @@ var/list/ai_verbs_default = list(
 
 	if (!check_special_role(ROLE_MALFUNCTION))
 		show_laws()
-		to_chat(src, "<b>These laws may be changed by other players, or by you being the traitor.</b>")
+		to_chat(src, "<b>These laws may be changed by other players, or by you being the contractor.</b>")
 
 	job = "AI"
 	setup_icon()
@@ -304,7 +286,7 @@ var/list/ai_verbs_default = list(
 	name="Power Supply"
 	active_power_usage=50000 // Station AIs use significant amounts of power. This, when combined with charged SMES should mean AI lasts for 1hr without external power.
 	use_power = 2
-	power_channel = EQUIP
+	power_channel = STATIC_EQUIP
 	var/mob/living/silicon/ai/powered_ai = null
 	invisibility = 100
 
@@ -328,11 +310,11 @@ var/list/ai_verbs_default = list(
 		qdel(src)
 		return
 	if(powered_ai.APU_power)
-		use_power = 0
+		use_power = NO_POWER_USE
 		return
 	if(!powered_ai.anchored)
 		loc = powered_ai.loc
-		use_power = 0
+		use_power = NO_POWER_USE
 		use_power(50000) // Less optimalised but only called if AI is unwrenched. This prevents usage of wrenching as method to keep AI operational without power. Intellicard is for that.
 	if(powered_ai.anchored)
 		use_power = 2
@@ -451,14 +433,12 @@ var/list/ai_verbs_default = list(
 		if(target && (!ishuman(target) || target.real_name == target.get_face_name()))
 			ai_actual_track(target)
 		else
-			to_chat(src, "\red System error. Cannot locate [rhtml_decode(href_list["trackname"])].")
+			to_chat(src, "\red System error. Cannot locate [html_decode(href_list["trackname"])].")
 		return
 
 	return
 
 /mob/living/silicon/ai/reset_view(atom/A)
-	if(controlled_mech)
-		return ..(controlled_mech)
 	if(camera)
 		camera.set_light(0)
 	if(istype(A,/obj/machinery/camera))
@@ -569,22 +549,14 @@ var/list/ai_verbs_default = list(
 			alert("No suitable records found. Aborting.")
 
 	else
-		var/icon_list[] = list(
-		"default",
-		"floating face",
-		"carp"
-		)
-		input = input("Please select a hologram:") as null|anything in icon_list
-		if(input)
+		var/list/hologramsAICanUse = list()
+		var/holograms_by_type = decls_repository.get_decls_of_subtype(/decl/ai_holo)
+		for (var/holo_type in holograms_by_type)
+			hologramsAICanUse.Add(holograms_by_type[holo_type])
+		var/decl/ai_holo/choice = input("Please select a hologram:") as null|anything in hologramsAICanUse
+		if(choice)
 			qdel(holo_icon)
-			switch(input)
-				if("default")
-					holo_icon = getHologramIcon(icon('icons/mob/AI.dmi',"holo1"))
-				if("floating face")
-					holo_icon = getHologramIcon(icon('icons/mob/AI.dmi',"holo2"))
-				if("carp")
-					holo_icon = getHologramIcon(icon('icons/mob/AI.dmi',"holo4"))
-	return
+			holo_icon = getHologramIcon(icon(choice.icon, choice.icon_state))
 
 //Toggles the luminosity and applies it by re-entereing the camera.
 /mob/living/silicon/ai/proc/toggle_camera_light()
@@ -631,13 +603,14 @@ var/list/ai_verbs_default = list(
 		camera_light_on = world.timeofday + 1 * 20 // Update the light every 2 seconds.
 
 
-/mob/living/silicon/ai/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/mob/living/silicon/ai/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/aicard))
 
 		var/obj/item/device/aicard/card = W
 		card.grab_ai(src, user)
 
-	else if(istype(W, /obj/item/weapon/tool/wrench))
+	var/tool_type = W.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	if(tool_type == QUALITY_BOLT_TURNING)
 		if(anchored)
 			user.visible_message(SPAN_NOTICE("\The [user] starts to unbolt \the [src] from the plating..."))
 			if(!do_after(user,40, src))
@@ -736,7 +709,7 @@ var/list/ai_verbs_default = list(
 	set category = "IC"
 
 	resting = 0
-	var/obj/item/weapon/rig/rig = src.get_rig()
+	var/obj/item/rig/rig = src.get_rig()
 	if(rig)
 		rig.force_rest(src)
 

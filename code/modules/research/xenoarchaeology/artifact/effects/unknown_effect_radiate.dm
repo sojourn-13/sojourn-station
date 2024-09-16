@@ -17,15 +17,11 @@
 /datum/artifact_effect/radiate/DoEffectAura()
 	if(holder)
 		var/turf/T = get_turf(holder)
-		for (var/mob/living/M in range(src.effectrange,T))
-			M.apply_effect(radiation_amount,IRRADIATE,0)
-			M.updatehealth()
+		PulseRadiation(T, radiation_amount, src.effectrange)
 		return 1
 
 /datum/artifact_effect/radiate/DoEffectPulse()
 	if(holder)
 		var/turf/T = get_turf(holder)
-		for (var/mob/living/M in range(src.effectrange,T))
-			M.apply_effect(radiation_amount * 25,IRRADIATE,0)
-			M.updatehealth()
+		PulseRadiation(T, radiation_amount * 25, src.effectrange)
 		return 1

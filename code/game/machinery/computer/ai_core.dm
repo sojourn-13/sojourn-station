@@ -6,8 +6,8 @@
 	icon_state = "0"
 	var/state = 0
 	var/datum/ai_laws/laws = new /datum/ai_laws/eris
-	var/obj/item/weapon/circuitboard/circuit = null
-	var/obj/item/device/mmi/brain = null
+	var/obj/item/circuitboard/circuit = null
+	var/obj/item/device/mmi/digital/posibrain/brain = null
 
 
 /obj/structure/AIcore/attackby(obj/item/I, mob/user)
@@ -126,7 +126,7 @@
 
 	switch(state)
 		if(1)
-			if(istype(I, /obj/item/weapon/circuitboard/aicore) && !circuit)
+			if(istype(I, /obj/item/circuitboard/aicore) && !circuit)
 				playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You place the circuit board inside the frame."))
 				icon_state = "1"
@@ -148,7 +148,7 @@
 						to_chat(user, SPAN_NOTICE("You add cables to the frame."))
 				return
 		if(3)
-			if(istype(I, /obj/item/stack/material) && I.get_material_name() == "rglass")
+			if(istype(I, /obj/item/stack/material) && I.get_material_name() == MATERIAL_RGLASS)
 				var/obj/item/stack/RG = I
 				if (RG.get_amount() < 2)
 					to_chat(user, SPAN_WARNING("You need two sheets of glass to put in the glass panel."))
@@ -161,14 +161,14 @@
 						state = 4
 						icon_state = "4"
 
-			if(istype(I, /obj/item/weapon/aiModule))
-				var/obj/item/weapon/aiModule/AIM = I
+			if(istype(I, /obj/item/aiModule))
+				var/obj/item/aiModule/AIM = I
 				AIM.transmitInstructions(src, usr)
 				to_chat(usr, "Law module applied.")
 				return
 
-			if(istype(I, /obj/item/device/mmi))
-				var/obj/item/device/mmi/M = I
+			if(istype(I, /obj/item/device/mmi/digital/posibrain))
+				var/obj/item/device/mmi/digital/posibrain/M = I
 				if(!M.brainmob)
 					to_chat(user, SPAN_WARNING("Sticking an empty [I] into the frame would sort of defeat the purpose."))
 					return
@@ -214,13 +214,13 @@
 	transfer.cancel_camera()
 	to_chat(user, "<span class='notice'>Transfer successful:</span> [transfer.name] ([rand(1000,9999)].exe) downloaded to host terminal. Local copy wiped.")
 	to_chat(transfer, "You have been uploaded to a stationary terminal. Remote device connection restored.")
-
+	playsound(src.loc, 'sound/AI/my_voice_it_is_a_book.ogg', 50, 1, -3)
 	if(card)
 		card.clear()
 
 	qdel(src)
 
-/obj/structure/AIcore/deactivated/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/structure/AIcore/deactivated/attackby(var/obj/item/W, var/mob/user)
 
 	if(istype(W, /obj/item/device/aicard))
 		var/obj/item/device/aicard/card = W
@@ -230,7 +230,7 @@
 		else
 			to_chat(user, "<span class='danger'>ERROR:</span> Unable to locate artificial intelligence.")
 		return
-	else if(istype(W, /obj/item/weapon/tool/wrench))
+	else if(istype(W, /obj/item/tool/wrench))
 		if(anchored)
 			user.visible_message(SPAN_NOTICE("\The [user] starts to unbolt \the [src] from the plating..."))
 			if(!do_after(user,40,src))

@@ -163,6 +163,12 @@
 	icon_state = "cuttop_red"
 	item_state = "cuttop_red"
 
+/obj/item/clothing/under/top/haltertop
+	name = "black halterneck top"
+	desc = "A black halterneck top and jean shorts"
+	icon_state = "haltertop"
+	item_state = "haltertop"
+
 /obj/item/clothing/under/top/outfitfrontier
 	name = "frontier outfit"
 	desc = "A leather shirt worn alongside a tan undershirt and pants."
@@ -211,12 +217,116 @@
 	icon_state = "dispatch"
 	item_state = "dispatch"
 
+/obj/item/clothing/under/top/dimmadome
+	name = "ivory texan suit"
+	desc = "An ivory set of pants with white shirt and a black collar, perfect for the haughty southerner Plasma magnate. Howdy!"
+	icon_state = "texan_suit"
+	item_state = "texan_suit"
+
+/*Hawaiian 'fits*/
+
+/obj/item/clothing/under/hawaiian
+	name = "black Hawaiian shirt"
+	desc = "A black, flowery Hawaiian shirt paired with striking tangerine hued pants."
+	icon_state = "animalstyle"
+	item_state = "animalstyle"
+
+/obj/item/clothing/under/hawaiian/vintage
+	name = "pink Hawaiian shirt"
+	desc = "A powder-pink Hawaiian shirt paired with dark khaki slacks."
+	icon_state = "3005vintage"
+	item_state = "3005vintage"
+
+/obj/item/clothing/under/hawaiian/tropico
+	name = "green Hawaiian shirt"
+	desc = "A leafy green Hawaiian shirt paired with khaki slacks."
+	icon_state = "tropicopuke"
+	item_state = "tropicopuke"
+
+/obj/item/clothing/under/hawaiian/vice
+	name = "aquamarine Hawaiian shirt"
+	desc = "An ocean blue Hawaiian shirt paired with bluejeans. The shirt's label reads 'Vercetti! Remember the name!'."
+	icon_state = "miamivice"
+	item_state = "miamivice"
+
+/obj/item/clothing/under/hawaiian/purple
+	name = "purple Hawaiian shirt"
+	desc = "A purple hawaiian shirt paired with dark khaki slacks."
+	icon_state = "purplevice" // Sprites by Obey#8642
+	item_state = "purplevice"
+
 /*Turtlenecks*/
+
+/obj/item/clothing/under/turtleneck/black
+	name = "black turtleneck"
+	desc = "A black turtleneck complete with black pants."
+	icon_state = "tn_black"
+	item_state = "tn_black"
+
+/obj/item/clothing/under/turtleneck/blackbrown
+	name = "black and drab turtleneck"
+	desc = "A black turtleneck complete with brown pants."
+	icon_state = "tn_blackdrab"
+	item_state = "tn_blackdrab"
+
+/obj/item/clothing/under/turtleneck/blackskirt
+	name = "black turtleneck with skirt"
+	desc = "A black turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_blackskirt"
+	item_state = "tn_blackskirt"
+
+/obj/item/clothing/under/turtleneck/creamblack
+	name = "cream turtleneck"
+	desc = "A cream turtleneck complete with black pants."
+	icon_state = "tn_cream"
+	item_state = "tn_cream"
+
+/obj/item/clothing/under/turtleneck/creambrown
+	name = "cream drab turtleneck"
+	desc = "A cream turtleneck complete with brown pants."
+	icon_state = "tn_creamdrab"
+	item_state = "tn_creamdrab"
+
+/obj/item/clothing/under/turtleneck/creamskirt
+	name = "cream turtleneck with skirt"
+	desc = "A cream turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_creamskirt"
+	item_state = "tn_creamskirt"
+
+/obj/item/clothing/under/turtleneck/blueblack
+	name = "blue turtleneck"
+	desc = "A blue turtleneck complete with black pants."
+	icon_state = "tn_blue"
+	item_state = "tn_blue"
+
+/obj/item/clothing/under/turtleneck/bluebrown
+	name = "blue drab turtleneck"
+	desc = "A blue turtleneck complete with brown pants."
+	icon_state = "tn_bluedrab"
+	item_state = "tn_bluedrab"
+
+/obj/item/clothing/under/turtleneck/blueskirt
+	name = "blue turtleneck with skirt"
+	desc = "A blue turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_blueskirt"
+	item_state = "tn_blueskirt"
+
+/obj/item/clothing/under/turtleneck/the_bees
+	name = "bee turtleneck"
+	desc = "A yellow and brown turtleneck reminiscent of a bee's abdomen, complete with brown pants."
+	icon_state = "tn_bees"
+	item_state = "tn_bees"
 
 /obj/item/clothing/under/turtleneck/green
 	desc = "A turquoise turtleneck complete with dark blue slacks."
 	name = "green turtleneck"
 	icon_state = "psychturtle"
+	item_state = "b_suit"
+
+/obj/item/clothing/under/turtleneck/greenskirt
+	desc = "A turquoise turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	name = "green turtleneck with skirt"
+	icon_state = "psychturtle_skirt"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/turtleneck/grey
@@ -242,3 +352,176 @@
 	name = "grey tactical turtleneck"
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
+
+/obj/item/clothing/under/turtleneck/syndicate
+	name = "syndicate turtleneck"
+	desc = "A stylish and practical grey turtleneck matched with a pair of combat cargopants. Well beloved by the Xanoranth syndicate who are more than happy to sell them to their many friends and allies."
+	icon_state = "syndsuit"
+
+//Role:premier-turtlenecks
+
+/obj/item/clothing/under/turtleneck/premier
+	name = "premier turtleneck"
+	desc = "A green turtleneck complete with black pants and golden buckle."
+	icon_state = "tn_premier"
+	item_state = "tn_premier"
+
+/obj/item/clothing/under/turtleneck/premier/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier Default"] = "tn_premier"
+	options["Premier Drab"] = "tn_premierdrab"
+	options["Premier Skirt"] = "tn_premierskirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//Role:premier-turtlenecks end
+
+/obj/item/clothing/under/dismas
+	name = "highwayman clothes"
+	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
+	icon_state = "dismas"
+	item_state = "dismas"
+
+/obj/item/clothing/under/bodysuit
+	name = "EVA skinsuit"
+	desc = "A EVA skinsuit ideally used underneath voidsuits and hardsuits for extra comfort and mobility."
+	icon_state = "skinsuit"
+	item_state = "skinsuit"
+
+/obj/item/clothing/under/bodysuit/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard Skinsuit"] = ""
+	options["Leotard Skinsuit"] = "_leo"
+	options["Grey Skinsuit"] = "_g"
+	options["Grey Leotard Skinsuit"] = "_gleo"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/skintight
+	name = "skintight bodysuit"
+	desc = "A bodysuit made of neoprene and other pliable fibers, it's elastic enough to fit skin-tight to the body of its wearer. \
+			Generally worn underneath mech pilot uniforms for the sake of motion sensor padding being easily attachable to it."
+	icon_state = "bodysuit"
+	item_state = "bodysuit"
+
+/obj/item/clothing/under/skintight/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Full bodysuit"] = ""
+	options["Rolled sleeves"] = "_sleeves"
+	options["Pants"] = "_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You decided to wear your bodysuit in the [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/greyturtleneck
+	name = "grey turtleneck"
+	desc = "A grey turtleneck complete with matching grey jeans."
+	icon_state = "quillturtleneck"
+	item_state = "quillturtleneck"
+
+/obj/item/clothing/under/greyturtleneck/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Grey jeans"] = ""
+	options["Grey skirt"] = "_s"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/* Church */
+/obj/item/clothing/under/rank/monashka
+	name = "monashka garments"
+	desc = "A dark and golden uniform warn by the faiths."
+	icon_state = "monashka_uniform"
+	item_state = "monashka_uniform"
+
+/obj/item/clothing/under/rank/lemniscate
+	name = "lemniscate skirt"
+	desc = "A dark and golden skirt warn by the faiths."
+	icon_state = "lemniscate_skirt"
+	item_state = "lemniscate_skirt"
+
+/obj/item/clothing/under/rank/ntdress
+	name = "Absolutist summer dress"
+	desc = "A white and gold summerdress, produced and oft worn by Abolutists"
+	icon_state = "summerdress_nt"
+	item_state = "summerdress_nt"
+
+/obj/item/clothing/under/sports
+	name = "White tank top"
+	desc = "Sweat stains not included."
+	icon_state = "sports"
+	item_state = "sports"

@@ -14,11 +14,14 @@
 	var/list/perks = list()           //perk paths
 	var/allow_modifications = TRUE
 	var/list/restricted_to_species = list()
+	var/obj/item/organ_module/racial_implants = null // Implants for the right arm
+	var/obj/item/organ_module/racial_implants_l = null // Implants for the left arm
+	var/obj/item/organ_module/racial_implants_head = null // head implants
 
 /datum/category_item/setup_option/New()
 	. = ..()
-	for(var/job in joblist)
-		var/datum/job/J = joblist[job]
+	for(var/job in GLOB.joblist)
+		var/datum/job/J = GLOB.joblist[job]
 		if(!J.setup_restricted)
 			if(J.type in allowed_jobs)
 				allowed_jobs -= J.type //job is not setup_restricted so no reason to keep it
@@ -36,5 +39,14 @@
 		character.stats.changeStat(stat, stat_modifiers[stat])
 	for(var/perk in src.perks)
 		character.stats.addPerk(perk)
+	if(racial_implants)
+		var/obj/item/organ_module/install_implant = new racial_implants
+		install_implant.install(character.organs_by_name[BP_R_ARM])
+	if(racial_implants_l)
+		var/obj/item/organ_module/install_implant = new racial_implants_l
+		install_implant.install(character.organs_by_name[BP_L_ARM])
+	if(racial_implants_head)
+		var/obj/item/organ_module/install_implant = new racial_implants_head
+		install_implant.install(character.organs_by_name[BP_HEAD])
 
 /datum/category_item/setup_option/proc/get_icon()

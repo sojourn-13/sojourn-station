@@ -10,8 +10,9 @@
 	filedesc = "Shield Control"
 	nanomodule_path = /datum/nano_module/shield_control
 	program_icon_state = "engine"
+	program_menu_icon = "shield-alt"
 	extended_desc = "This program allows remote management of the hull shield generator. Cannot be run on tablet computers."
-	required_access = access_syndicate //disabled for now, change to engine when fixed
+	required_access = access_engine
 	requires_ntnet = 1
 	network_destination = "shield control system"
 	requires_ntnet_feature = NTNET_SYSTEMCONTROL
@@ -21,7 +22,7 @@
 
 /datum/nano_module/shield_control
 	name = "Shield control"
-	var/obj/machinery/power/shield_generator/hull/gen = null
+	var/obj/machinery/power/shield_generator/gen = null
 	var/multigen = FALSE //Set true if multiple active hull shield generators are detected onstation
 	var/genloc = ""//A string that describes the location of our connected shield generator
 
@@ -33,11 +34,11 @@
 /datum/nano_module/shield_control/proc/connect_to_generator()
 	var/n = 0
 	gen = null
-	for (var/obj/machinery/power/shield_generator/hull/G in world)
+	for (var/obj/machinery/power/shield_generator/G in world)
 		//Check that the generator is on the same vessel as us.
 		//This allows antag ships/stations to have their own shield generators and consoles
 		if (is_matching_vessel(G, nano_host()))
-			if (G.anchored && G.tendrils_deployed) //Only look at those that are wrenched in and setup
+			if (G.anchored && !G.ai_control_disabled) //Only look at any shield generator that are wrenched in and ai control wire is intact
 				gen = G //It's a good enough candidate, we're connected!
 				n++
 
@@ -66,8 +67,9 @@
 		playsound_host('sound/machines/buzz-two.ogg', 50)
 		genloc = ""
 
-/datum/nano_module/shield_control/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
-
+/datum/nano_module/shield_control/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
+	if(!host)
+		return
 	var/list/data = host.initial_data()
 
 	if (istype(gen))
@@ -190,7 +192,7 @@
 		gen.toggle_flag(text2num(href_list["toggle_mode"]))
 		. = 1
 
-	ui_interact(usr)
+	nano_ui_interact(usr)
 /*
 
 
@@ -198,7 +200,7 @@
 
 // If PC is not null header template is loaded. Use PC.get_header_data() to get relevant nanoui data from it. All data entries begin with "PC_...."
 // In future it may be expanded to other modular computer devices.
-/datum/nano_module/power_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = default_state)
+/datum/nano_module/power_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = default_state)
 	var/list/data = host.initial_data()
 
 	var/list/sensors = list()

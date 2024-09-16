@@ -1,20 +1,21 @@
 /obj/item/clothing/gloves/stungloves
 	name = "HS Power Gloves"
-	desc = "\"Holland & Sullivan's\" solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
+	desc = "Seinemetall Defense GmbH solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
 	item_state = "powerglove"
+	armor_list = list(melee = 6, bullet = 2, energy = 5, bomb = 0, bio = 0, rad = 0)
 	action_button_name = "Toggle Power Glove"
-	price_tag = 500
+	price_tag = 250
 	var/stunforce = 0
 	var/agonyforce = 30
 	var/status = FALSE		//whether the thing is on or not
 	var/hitcost = 100
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/medium
+	cell = null
+	suitable_cell = /obj/item/cell/medium
 
 /obj/item/clothing/gloves/stungloves/Initialize()
 	. = ..()
-	cell = new /obj/item/weapon/cell/medium/high(src)
+	cell = new /obj/item/cell/medium/high(src)
 	update_icon()
 
 /obj/item/clothing/gloves/stungloves/get_cell()
@@ -29,6 +30,10 @@
 /obj/item/clothing/gloves/stungloves/proc/deductcharge(var/power_drain)
 	if(cell)
 		if(cell.checked_use(power_drain))
+			//do we have enough power for another hit?
+			if(!cell.check_charge(hitcost))
+				status = FALSE
+				update_icon()
 			return TRUE
 		else
 			status = FALSE
@@ -48,7 +53,7 @@
 
 	if(cell)
 		to_chat(user, SPAN_NOTICE("Power Glove is [round(cell.percent())]% charged."))
-	if(!cell)
+	else
 		to_chat(user, SPAN_WARNING("Power Glove does not have a power source installed."))
 
 /obj/item/clothing/gloves/stungloves/attack_self(mob/user)
@@ -86,15 +91,14 @@
 		L.visible_message(SPAN_DANGER("[L] has been punched in the [affecting.name] with [src] by [user]!"))
 	else
 		L.visible_message(SPAN_DANGER("[L] has been punched with [src] by [user]!"))
-	playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
-	L.stun_effect_act(stun, agony, user.targeted_organ, src)
-	msg_admin_attack("[key_name(user)] stunned [key_name(L)] with the [src].")
-	deductcharge(hitcost)
+	if(deductcharge(hitcost))
+		L.stun_effect_act(stun, agony, user.targeted_organ, src)
+		msg_admin_attack("[key_name(user)] stunned [key_name(L)] with the [src].")
 
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.forcesay(hit_appends)
-
+		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 
 /obj/item/clothing/gloves/stungloves/emp_act(severity)
 	if(cell)
@@ -105,7 +109,28 @@
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 		status = FALSE
+		update_icon()
 
 /obj/item/clothing/gloves/stungloves/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
+		update_icon()
+
+/obj/item/clothing/gloves/stungloves/trauma
+	name = "SI shock gloves"
+	desc = "Soterias solution to the age old question of unruly patients. Although the uneducation might call these a flagrant ripoff of Seinemetall powergloves, those more thoughtful will find that these come equipped with sterile, autoclave safe components, \
+	high-power capacitors and grippy palm-pads."
+	icon_state = "sipowerglove"
+	item_state = "sipowerglove"
+	permeability_coefficient = 0.01
+	armor_list = list(melee = 3, bullet = 0, energy = 2, bomb = 0, bio = 100, rad = 0)  //same armor values as jackboots + bio protection.
+	action_button_name = "Toggle placeholder Glove"
+	price_tag = 500 //rarer and harder to find.
+	agonyforce = 40 //same as the stun baton, these are slightly better than the Marshal version thusly.
+
+/obj/item/clothing/gloves/stungloves/trauma/update_icon()
+	if(status)
+		icon_state = "sipowerglove_active"
+	else
+		icon_state = "sipowerglove"
+	update_wear_icon()

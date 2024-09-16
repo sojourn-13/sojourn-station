@@ -12,15 +12,52 @@ GLOBAL_DATUM(lobbyScreen, /datum/lobbyscreen)
 GLOBAL_VAR(topic_status_lastcache)
 GLOBAL_LIST(topic_status_cache)
 
-// Extools vars
-//This var is updated every tick by a DLL if present, used to reduce lag
-//If no DLL is present, the default during MC init is 5% of tick_lag
-//It's bumped to MAPTICK_DEFAULT_ITU during runtime (set once MC init is done)
-GLOBAL_VAR_INIT(internal_tick_usage, 0.05 * world.tick_lag)
-GLOBAL_PROTECT(internal_tick_usage) // NO TOUCHY
+GLOBAL_LIST_INIT(custom_kits, list(
+	"Example Grayson bag of holding" = list(
+		/obj/item/storage/backpack/holding,
+		/obj/item/clothing/under/os_jumpsuit,
+		/obj/item/clothing/suit/greatcoat/os,
+		/obj/item/clothing/head/os_cap,
+		/obj/item/tank/onestar_regenerator,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/shoes/jackboots,
+		/obj/item/clothing/glasses/powered/thermal/onestar,
+		/obj/item/gun/projectile/automatic/scaffold,
+		/obj/item/ammo_magazine/ammobox/light_rifle_257,
+		/obj/item/ammo_magazine/ammobox/light_rifle_257,
+		/obj/item/ammo_magazine/ammobox/light_rifle_257)))
 
-GLOBAL_VAR_INIT(fallback_alerted, FALSE)
-GLOBAL_PROTECT(fallback_alerted) // NO TOUCHY
+GLOBAL_VAR(log_directory)
+// LOGGING  MOVE ME //
+GLOBAL_PROTECT(log_directory)
 
-GLOBAL_VAR_INIT(next_promise_id, 0)
-GLOBAL_PROTECT(next_promise_id) // NO TOUCHY
+// TGUI MOVE ME //
+GLOBAL_DATUM(changelog_tgui, /datum/changelog)
+
+// TGS //
+GLOBAL_REAL_VAR(client_count)
+
+// Strings //
+GLOBAL_VAR_INIT(TAB, "&nbsp;&nbsp;&nbsp;&nbsp;")
+GLOBAL_LIST_INIT(symbols_unicode_keys, list(
+	"�" = "&#x201A;",
+	"�" = "&#x201E;",
+	"�" = "&#x2026;",
+	"�" = "&#x2020;",
+	"�" = "&#x2021;",
+	"�" = "&#x2030;",
+	"�" = "&#x2039;",
+	"�" = "&#x2018;",
+	"�" = "&#x2019;",
+	"�" = "&#x201C;",
+	"�" = "&#x201D;",
+	"�" = "&#x2022;",
+	"�" = "&#x2013;",
+	"�" = "&#x2014;",
+	"�" = "&#x2122;"
+))
+
+//All characters forbidden by filenames: ", \, \n, \t, /, ?, %, *, :, |, <, >, ..
+GLOBAL_DATUM_INIT(filename_forbidden_chars, /regex, regex(@{""|[\\\n\t/?%*:|<>]|\.\."}, "g"))
+GLOBAL_PROTECT(filename_forbidden_chars)
+// had to use the OR operator for quotes instead of putting them in the character class because it breaks the syntax highlighting otherwise.

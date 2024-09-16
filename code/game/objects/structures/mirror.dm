@@ -30,7 +30,7 @@
 			AC.name = "SalonPro Nano-Mirror&trade;"
 			AC.flags = appearance_changer_flags
 			ui_users[user] = AC
-		AC.ui_interact(user)
+		AC.nano_ui_interact(user)
 
 /obj/structure/mirror/proc/shatter()
 	if(shattered)	return
@@ -42,11 +42,12 @@
 
 /obj/structure/mirror/bullet_act(var/obj/item/projectile/Proj)
 
-	if(prob(Proj.get_structure_damage() * 2))
-		if(!shattered)
-			shatter()
-		else
-			playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
+	if (!(Proj.testing))
+		if(prob(Proj.get_structure_damage() * 2))
+			if(!shattered)
+				shatter()
+			else
+				playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
 	..()
 
 /obj/structure/mirror/attackby(obj/item/I as obj, mob/user as mob)
@@ -61,7 +62,7 @@
 		visible_message(SPAN_WARNING("[user] hits [src] with [I]!"))
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 70, 1)
 
-/obj/structure/mirror/attack_generic(var/mob/user, var/damage)
+/obj/structure/mirror/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	attack_animation(user)
 	if(shattered)
 		playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
@@ -81,14 +82,14 @@
 	ui_users.Cut()
 	. = ..()
 
-/obj/item/weapon/mirror
+/obj/item/mirror
 	name = "mirror"
 	desc = "A SalonPro brand mirror, but portable!"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "mirror"
 	var/list/ui_users = list()
 
-/obj/item/weapon/mirror/attack_self(mob/user as mob)
+/obj/item/mirror/attack_self(mob/user as mob)
 	if(ishuman(user))
 		var/datum/nano_module/appearance_changer/AC = ui_users[user]
 		if(!AC)
@@ -96,9 +97,9 @@
 			AC.name = "SalonPro Nano-Mirror&trade;"
 			AC.flags = APPEARANCE_HAIR
 			ui_users[user] = AC
-		AC.ui_interact(user)
+		AC.nano_ui_interact(user)
 
-/obj/item/weapon/mirror/Destroy()
+/obj/item/mirror/Destroy()
 	for(var/user in ui_users)
 		var/datum/nano_module/appearance_changer/AC = ui_users[user]
 		qdel(AC)

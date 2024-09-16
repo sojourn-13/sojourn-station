@@ -1,8 +1,9 @@
 /datum/hud
 	var/name
-	var/list/HUDneed//for "active" elements (health)
+	var/mob/mymob = null
+	var/list/HUDneed //for "active" elements (health)
 //	var/list/HUDprocess = list()
-	var/list/slot_data//inventory stuff (for mob variable HUDinventory)
+	var/list/slot_data //inventory stuff (for mob variable HUDinventory)
 	var/icon/icon = null //what dmi we use
 	var/list/HUDfrippery //for nice view
 	var/list/HUDoverlays //tech stuff (flash overlay, pain overlay, etc.)
@@ -16,14 +17,19 @@
 	var/old_z
 	var/list/obj/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 	var/list/obj/screen/openspace_overlay/openspace_overlays = list()
+	// Elements used for action buttons
+	// -- the main clickable buttons
+	var/obj/screen/action_palette/toggle_palette
+	var/action_buttons_hidden = FALSE
 
-/datum/hud/proc/updatePlaneMasters(mob/mymob)
-	if(!mymob || !mymob.client)
+/datum/hud/proc/updatePlaneMasters(mob/viewmob)
+	var/mob/screenmob = viewmob || mymob
+	if(!screenmob || !screenmob.client)
 		return
 
-	var/atom/player = mymob
-	if(mymob.client.virtual_eye)
-		player = mymob.client.virtual_eye
+	var/atom/player = screenmob
+	if(screenmob.client.virtual_eye)
+		player = screenmob.client.virtual_eye
 
 	var/turf/T = get_turf(player)
 	if(!T)
@@ -40,14 +46,14 @@
 
 	for(var/pmaster in plane_masters)
 		var/obj/screen/plane_master/instance = plane_masters[pmaster]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	plane_masters.Cut()
 
 	for(var/over in openspace_overlays)
 		var/obj/screen/openspace_overlay/instance = openspace_overlays[over]
-		mymob.client.screen -= instance
+		screenmob.client.screen -= instance
 		qdel(instance)
 
 	openspace_overlays.Cut()
@@ -62,8 +68,8 @@
 			instance.plane = calculate_plane(zi,instance.plane)
 
 			plane_masters["[zi]-[relative_level]-[instance.plane]-[mytype]"] = instance
-			mymob.client.screen += instance
-			instance.backdrop(mymob)
+			screenmob.client.screen += instance
+			instance.backdrop(screenmob)
 
 		for(var/pl in list(GAME_PLANE,FLOOR_PLANE))
 			if(zi < z)
@@ -73,8 +79,7 @@
 				oover.plane = calculate_plane(zi,pl)
 				oover.alpha = min(255,zdiff*50 + 30)
 				openspace_overlays["[zi]-[relative_level]-[oover.plane]"] = oover
-				mymob.client.screen += oover
-
+				screenmob.client.screen += oover
 
 /mob/update_plane()
 	..()
@@ -82,9 +87,14 @@
 		hud_used.updatePlaneMasters(src)
 
 
-/datum/hud/New(mob/mymob)
+/datum/hud/New(mob/new_mymob)
+	mymob = new_mymob
 	if(mymob)
 		updatePlaneMasters(mymob)
+
+/datum/hud/Destroy()
+	mymob = null
+	. = ..()
 
 /datum/hud/human
 	name = "ErisStyle"
@@ -108,6 +118,8 @@
 		"glassesoverlay" = list("type" = /obj/screen/glasses_overlay, "loc" = "1,1:-32", "icon_state" = "blank"),
 	)
 
+	/* !!!! IF YOU WANT TO ADD A VERB TO THIS - ADD ITS NAME TO code\modules\mob\living\carbon\human\species\species_hud.dm
+	PLEASE DON'T REPEAT MY MISTAKES, I'VE WASTED HOURS OF MY LIFE ON THIS - Kegdo 2022*/
 	HUDneed = list(
 //status
 	"nutrition"          = list("type" = /obj/screen/nutrition,         "loc" = "EAST+1:1,BOTTOM+3:25",   "minloc" = "RIGHT:1,5:26",  "background" = "back17"),
@@ -121,27 +133,28 @@
 	"toxin"              = list("type" = /obj/screen/toxin,             "loc" = "EAST+1:16,BOTTOM+7:15",  "minloc" = "RIGHT:16,9:12", "background" = "back18"),
 	"internal"           = list("type" = /obj/screen/internal,          "loc" = "EAST+1,BOTTOM+8:-2",     "minloc" = "RIGHT,10:-5",   "background" = "back15"),
 //corner buttons
-	"jump"               = list("type" = /obj/screen/jump,              "loc" = "EAST+1,BOTTOM+1:-6",     "minloc" = "RIGHT,3:-6",   "background" = "back17-1"),
-	"look up"            = list("type" = /obj/screen/look_up,           "loc" = "EAST,BOTTOM:13",         "minloc" = "RIGHT-1,2:13", "background" = "back17-1"),
-	"throw"              = list("type" = /obj/screen/HUDthrow,          "loc" = "EAST+1,BOTTOM:13",       "minloc" = "RIGHT,2:13",   "background" = "back17-1"),
-	"pull"               = list("type" = /obj/screen/pull,              "loc" = "EAST-1,BOTTOM:13",       "minloc" = "RIGHT-2,2:13", "background" = "back17-1"),
-	"drop"               = list("type" = /obj/screen/drop,              "loc" = "EAST+1,BOTTOM",          "minloc" = "RIGHT,2",      "background" = "back17-1"),
-	"resist"             = list("type" = /obj/screen/resist,            "loc" = "EAST-1,BOTTOM",          "minloc" = "RIGHT-2,2",    "background" = "back17-1"),
-	"rest"               = list("type" = /obj/screen/rest,              "loc" = "EAST,BOTTOM",            "minloc" = "RIGHT-1,2",    "background" = "back17-1"),
-	"move intent"        = list("type" = /obj/screen/mov_intent,        "loc" = "EAST,BOTTOM-1",          "minloc" = "RIGHT-1,1",    "background" = "back1"),
-	"implant bionics"    = list("type" = /obj/screen/implant_bionics,   "loc" = "EAST-2,BOTTOM-1",        "minloc" = "12,1",         "background" = "back13"),
-	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM-1",     "minloc" = "12:16,1",      "background" = "back13"),
-	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM",       "minloc" = "12:16,2",      "background" = "back13"),
-	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM-1",        "minloc" = "13,1",         "background" = "back1"),
-	"damage zone"        = list("type" = /obj/screen/zone_sel,          "loc" = "EAST+1,BOTTOM-1",        "minloc" = "RIGHT,1",      "background" = "back1"),
+	//"jump"               = list("type" = /obj/screen/jump,              "loc" = "EAST+1,BOTTOM+1:-6", "minloc" = "RIGHT,3:-6",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"look up"            = list("type" = /obj/screen/look_up,           "loc" = "EAST,BOTTOM+1:13",   "minloc" = "RIGHT-1,2:13", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"throw"              = list("type" = /obj/screen/HUDthrow,          "loc" = "EAST+1,BOTTOM+1:13", "minloc" = "RIGHT,2:13",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"pull"               = list("type" = /obj/screen/pull,              "loc" = "EAST-1,BOTTOM+1:13", "minloc" = "RIGHT-2,2:13", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"drop"               = list("type" = /obj/screen/drop,              "loc" = "EAST+1,BOTTOM+1",    "minloc" = "RIGHT,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"resist"             = list("type" = /obj/screen/resist,            "loc" = "EAST-1,BOTTOM+1",    "minloc" = "RIGHT-2,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"rest"               = list("type" = /obj/screen/rest,              "loc" = "EAST,BOTTOM+1",      "minloc" = "RIGHT-1,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"block"              = list("type" = /obj/screen/block,             "loc" = "EAST+1,BOTTOM+1:26", "minloc" = "RIGHT,3:-6", "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
+	"move intent"        = list("type" = /obj/screen/mov_intent,        "loc" = "EAST,BOTTOM",        "minloc" = "RIGHT-1,1",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"implant bionics"    = list("type" = /obj/screen/implant_bionics,   "loc" = "EAST-2,BOTTOM-1",    "minloc" = "12,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "12:16,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM+1", "minloc" = "12:16,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM",      "minloc" = "13,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"damage zone"        = list("type" = /obj/screen/zone_sel,          "loc" = "EAST+1,BOTTOM",      "minloc" = "RIGHT,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 //hand buttons
-	"equip"              = list("type" = /obj/screen/equip,             "loc" = "8,1",                "minloc" = "7,2",          "background" = "back14-l"),
-	"swap hand"          = list("type" = /obj/screen/swap,              "loc" = "8,1",                "minloc" = "7,2"),
+	"equip"              = list("type" = /obj/screen/equip,             "loc" = "8,1",                "minloc" = "7,2",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back14-l"),
+	"swap hand"          = list("type" = /obj/screen/swap,              "loc" = "8,1",                "minloc" = "7,2",          "hideflag" = TOGGLE_BOTTOM_FLAG),
 	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "7:19,1",             "minloc" = "6:20,2",       "background" = "back16"),
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "minloc" = "9:-1,2",       "background" = "back16"),
 
-	"toggle invetory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",                "minloc" = "1,1",          "background" = "back1")
-
+	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",                "minloc" = "1,1",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "EAST+1,BOTTOM+8:15",   "minloc" = "RIGHT,10:10")
 	)
 
 	slot_data = list (
@@ -153,20 +166,20 @@
 		"Left Ear" =        list("loc" = "4,2", "minloc" = "3,3",     "state" = "ears0",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
 		"Right Ear" =        list("loc" = "4,3", "minloc" = "3,4",    "state" = "ears1",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
 		"Hat" =         list("loc" = "3,3", "minloc" = "2,4",         "state" = "hair",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Shoes" =        list("loc" = "3,0", "minloc" = "2,1",        "state" = "shoes", "background" = "back1"),
-		"Suit Storage" = list("loc" = "4,0", "minloc" = "3,1",        "state" = "suit-belt", "background" = "back1"),
-		"Back" =         list("loc" = "7,0", "minloc" = "6,1",        "state" = "back", "background" = "back1"),
-		"ID" =           list("loc" = "5,0", "minloc" = "4,1",        "state" = "id", "background" = "back1"),
-		"Left Pocket" =     list("loc" = "10,0", "minloc" = "9,1",    "state" = "pocket_l", "background" = "back1"),
-		"Right Pocket" =     list("loc" = "11,0", "minloc" = "10,1",  "state" = "pocket_r", "background" = "back1"),
-		"Belt" =         list("loc" = "6,0", "minloc" = "5,1",        "state" = "belt", "background" = "back1"),
-		"Left Hand" =       list("loc" = "9,0", "minloc" = "8,1",     "state" = "hand-l", "type" = /obj/screen/inventory/hand, "background" = "back1"),
-		"Right Hand" =       list("loc" = "8,0", "minloc" = "7,1",    "state" = "hand-r", "type" = /obj/screen/inventory/hand, "background" = "back1")
+		"Shoes" =        list("loc" = "3,0", "minloc" = "2,1",        "state" = "shoes",   "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Suit Storage" = list("loc" = "4,0", "minloc" = "3,1",        "state" = "suit-belt","hideflag" = TOGGLE_BOTTOM_FLAG,   "background" = "back1"),
+		"Back" =         list("loc" = "7,0", "minloc" = "6,1",        "state" = "back",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"ID" =           list("loc" = "5,0", "minloc" = "4,1",        "state" = "id",      "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Left Pocket" =     list("loc" = "10,0", "minloc" = "9,1",    "state" = "pocket_l","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Right Pocket" =     list("loc" = "11,0", "minloc" = "10,1",  "state" = "pocket_r","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Belt" =         list("loc" = "6,0", "minloc" = "5,1",        "state" = "belt",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Left Hand" =       list("loc" = "9,0", "minloc" = "8,1",     "state" = "hand-l",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1"),
+		"Right Hand" =       list("loc" = "8,0", "minloc" = "7,1",    "state" = "hand-r",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1")
 		)
 
 	HUDfrippery = list(
-		list("loc" = "1,0", "icon_state" = "frame0-3", ),
-		list("loc" = "1,0", "icon_state" = "frame3-4", ),
+		list("loc" = "1,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "1,0", "icon_state" = "frame3-4", "hideflag" = TOGGLE_BOTTOM_FLAG),
 		list("loc" = "1,1", "icon_state" = "frame2-2",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "1,2", "icon_state" = "frame2-3",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "1,3", "icon_state" = "frame2-1",  "hideflag" = TOGGLE_INVENTORY_FLAG),
@@ -176,16 +189,15 @@
 		list("loc" = "5,1", "icon_state" = "frame1-2",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "5,2", "icon_state" = "frame1-6",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "5,3", "icon_state" = "frame1-4", "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "8,1:13", "icon_state" = "frame1-8"),
-		list("loc" = "9,1:13", "icon_state" = "frame1-1"),
-		list("loc" = "12,0", "icon_state" = "frame3-2"),
-		list("loc" = "12,0", "icon_state" = "frame0-2"),
-		list("loc" = "12,0", "icon_state" = "frame0-3"),
+		list("loc" = "8,1:13", "icon_state" = "frame1-8", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "9,1:13", "icon_state" = "frame1-1", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "12,0", "icon_state" = "frame3-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "12,0", "icon_state" = "frame0-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "12,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame1-1"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame3-3"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame0-4"),
-		list("loc" = "EAST+1,BOTTOM+8:14", "icon_state" = "frame0-1"),
-		list("loc" = "EAST+1,BOTTOM+8:14", "icon_state" = "frame3-1")
+		list("loc" = "EAST+1,BOTTOM+9:8", "icon_state" = "frame3-1")
 		)
 		//list("loc" = "2,3", "icon_state" = "block",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 
@@ -228,8 +240,8 @@
 
 
 	HUDoverlays = list(
-		"flash" 		=  list("type" = /obj/screen, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
-		"blind" 		=  list("type" = /obj/screen, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
+		"flash" 		=  list("type" = /obj/screen/full_1_tile_overlay, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
+		"blind" 		=  list("type" = /obj/screen/full_1_tile_overlay, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
 		"glassesoverlay" = list("type" = /obj/screen/silicon/glasses_overlay, "loc" = "1,1", )
 	)
 

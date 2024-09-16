@@ -70,6 +70,7 @@
 /area/crawler)
 "r" = (
 /obj/effect/floor_decal/industrial/danger,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "s" = (
@@ -100,11 +101,20 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
 	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "y" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/techmaint_cargo,
+/area/crawler)
+"G" = (
+/obj/random/structures/os,
+/turf/simulated/floor/carpet/bcarpet,
+/area/crawler)
+"K" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
 
 (1,1,1) = {"
@@ -126,7 +136,7 @@ b
 l
 l
 l
-l
+K
 h
 "}
 (3,1,1) = {"
@@ -145,8 +155,8 @@ h
 c
 r
 b
-l
-j
+K
+G
 w
 f
 h
@@ -211,7 +221,7 @@ h
 f
 u
 j
-l
+K
 b
 x
 c
@@ -233,7 +243,7 @@ h
 q
 l
 l
-l
+K
 b
 x
 c

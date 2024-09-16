@@ -1,6 +1,6 @@
 /obj/item/organ/external/stump
 	name = "limb stump"
-	dislocated = -1
+	nerve_struck = -1
 
 /obj/item/organ/external/stump/New(var/mob/living/carbon/holder, var/OD, var/obj/item/organ/external/limb)
 	if(istype(limb))
@@ -8,7 +8,7 @@
 		body_part = limb.body_part
 		amputation_point = limb.amputation_point
 		joint = limb.joint
-		parent_organ = limb.parent_organ
+		parent_organ_base = limb.parent_organ_base
 		wounds = limb.wounds.Copy()
 	..(holder, null)
 	if(istype(limb))
@@ -25,9 +25,14 @@
 /obj/item/organ/external/stump/is_stump()
 	return TRUE
 
+/obj/item/organ/external/stump/update_icon()
+	return
+
 /obj/item/organ/external/stump/removed()
 	..()
-	qdel(src)
+	if(owner)
+		qdel(src)
+	owner = null //To stop infinate deletion loop.
 
 /obj/item/organ/external/stump/is_usable()
 	return FALSE

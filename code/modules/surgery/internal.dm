@@ -7,6 +7,10 @@
 	return organ.is_open() && organ.can_add_item(tool, user)
 
 /datum/surgery_step/insert_item/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
+	if(istype(tool, /obj/item/gripper/chemistry)) // Robots have to do surgery somehow
+		var/obj/item/gripper/chemistry/SG = tool
+		if(SG.wrapped)
+			tool = SG.wrapped // We want to install whatever the gripper is holding, not the gripper itself
 	if(istype(tool, /obj/item/organ/external))
 		user.visible_message(
 			SPAN_NOTICE("[user] starts connecting [tool] to [organ.get_surgery_name()]."),
@@ -20,6 +24,11 @@
 	organ.owner_custom_pain("The pain in your [organ.name] is living hell!", 1)
 
 /datum/surgery_step/insert_item/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
+	if(istype(tool, /obj/item/gripper/chemistry))
+		var/obj/item/gripper/chemistry/SG = tool
+		if(SG.wrapped)
+			tool = SG.wrapped
+			SG.wrapped = null // When item successfully inserted - stop referencing it in gripper
 	if(istype(tool, /obj/item/organ/external))
 		user.visible_message(
 			SPAN_NOTICE("[user] connects [tool] to [organ.get_surgery_name()]."),
@@ -31,24 +40,54 @@
 			SPAN_NOTICE("You insert [tool] into [organ.get_surgery_name()].")
 		)
 	organ.add_item(tool, user)
-	if(BP_IS_ORGANIC(organ))
+	if(BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ))
 		playsound(get_turf(organ), 'sound/effects/squelch1.ogg', 50, 1)
 
 /datum/surgery_step/insert_item/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	user.visible_message(
-		SPAN_WARNING("[user]'s hand slips, hitting [organ.get_surgery_name()] with \the [tool]!"),
-		SPAN_WARNING("Your hand slips, hitting [organ.get_surgery_name()] with \the [tool]!")
-	)
-	organ.take_damage(5, 0)
+	if(istype(tool, /obj/item/gripper/chemistry))
+		var/obj/item/gripper/chemistry/SG = tool
+		if(SG.wrapped)
+			tool = SG.wrapped
+			user.visible_message(
+				SPAN_WARNING("[user]'s gripper slips, hitting [organ.get_surgery_name()] with \the [tool]!"),
+				SPAN_WARNING("Your gripper slips, hitting [organ.get_surgery_name()] with \the [tool]!")
+			)
+			organ.take_damage(5, BRUTE)
+	else
+		user.visible_message(
+			SPAN_WARNING("[user]'s hand slips, hitting [organ.get_surgery_name()] with \the [tool]!"),
+			SPAN_WARNING("Your hand slips, hitting [organ.get_surgery_name()] with \the [tool]!")
+		)
+		organ.take_damage(5, BRUTE)
 
 /datum/surgery_step/insert_item/robotic
 	required_stat = STAT_MEC
 
 
+/obj/item/organ/external/proc/get_total_occupied_volume()
+	. = 0
+	for(var/obj/item/item in implants)
+		if(istype(item, /obj/item/implant) || istype(item, /obj/item/organ_module))
+			continue
+
+		. += item.w_class
+
+	for(var/organ_inside in internal_organs)
+		var/obj/item/organ/internal/internal = organ_inside
+		. += internal.specific_organ_size
 
 /obj/item/organ/external/proc/can_add_item(obj/item/I, mob/living/user)
 	if(!istype(I))
 		return FALSE
+
+	if(istype(I, /obj/item/gripper/chemistry))
+		var/obj/item/gripper/chemistry/SG = I
+		if(SG.wrapped)
+			I = SG.wrapped
+		else
+			return FALSE
+
+	var/total_volume = get_total_occupied_volume()	//Used for internal organs and cavity implants
 
 	// "Organ modules"
 	// TODO: ditch them
@@ -57,18 +96,23 @@
 			to_chat(user, SPAN_WARNING("There is already a module installed in [get_surgery_name()]."))
 			return FALSE
 
+		var/obj/item/organ_module/om = I
+		if(om.allowed_organs && om.allowed_organs.len && !(organ_tag in om.allowed_organs))
+			to_chat(user, SPAN_WARNING("[om] doesn't go into [get_surgery_name()]."))
+			return FALSE
+
 		return TRUE
 
 	// Implants
-	if(istype(I, /obj/item/weapon/implant))
-		var/obj/item/weapon/implant/implant = I
+	if(istype(I, /obj/item/implant))
+		var/obj/item/implant/implant = I
 
 		// Technical limitation
 		// TODO: fix this
 		if(!owner)
 			return FALSE
 
-		if(!(organ_tag in implant.allowed_organs))
+		if(implant.allowed_organs && implant.allowed_organs.len && !(organ_tag in implant.allowed_organs))
 			to_chat(user, SPAN_WARNING("[implant] doesn't fit in [get_surgery_name()]."))
 			return FALSE
 
@@ -76,31 +120,28 @@
 
 	// Organs
 	if(istype(I, /obj/item/organ/internal))
-		var/obj/item/organ/organ = I
-
-		// Technical limitation
-		// TODO: fix this
-		if(!owner)
-			return FALSE
+		var/obj/item/organ/internal/organ = I
 
 		var/o_a =  (organ.gender == PLURAL) ? "" : "a "
-		var/o_do = (organ.gender == PLURAL) ? "don't" : "doesn't"
+
+		if(organ.unique_tag)
+			for(var/obj/item/organ/internal/existing_organ in owner.internal_organs)
+				if(existing_organ.unique_tag == organ.unique_tag)
+					to_chat(user, SPAN_WARNING("[owner] already has [o_a][organ.unique_tag]."))
+					return FALSE
 
 		if(BP_IS_ROBOTIC(src) && !BP_IS_ROBOTIC(organ))
-			to_chat(user, SPAN_DANGER("You cannot install a naked organ into a robotic body."))
+			to_chat(user, SPAN_DANGER("You cannot install a naked organ into a robotic body part."))
 			return FALSE
 
-		if(!owner.species.has_organ[organ.organ_tag])
-			to_chat(user, SPAN_WARNING("You're pretty sure [owner.species.name_plural] don't normally have [o_a][organ.organ_tag]."))
+		if(total_volume + organ.specific_organ_size > max_volume)
+			to_chat(user, SPAN_DANGER("There isn't enough space in [get_surgery_name()]!"))
 			return FALSE
 
-		if(organ_tag != organ.parent_organ)
-			to_chat(user, SPAN_WARNING("\The [organ.organ_tag] [o_do] normally go in \the [name]."))
-			return FALSE
-
-		if(owner.internal_organs_by_name[organ.organ_tag])
-			to_chat(user, SPAN_WARNING("\The [owner] already has [o_a][organ.organ_tag]."))
-			return FALSE
+		if(istype(organ,/obj/item/organ/internal/bone))
+			if(!(organ.parent_organ_base == organ_tag))
+				to_chat(user, SPAN_DANGER("You can't fit [o_a][organ] inside [src]"))
+				return FALSE
 
 		return TRUE
 
@@ -128,21 +169,15 @@
 			return FALSE
 
 		// You can only attach a limb to either a parent organ or a stump of the same organ
-		if(limb.parent_organ != organ_tag && limb.organ_tag != organ_tag)
+		if(limb.parent_organ_base != organ_tag && limb.organ_tag != organ_tag)
 			to_chat(user, SPAN_WARNING("You can't attach [limb] to [get_surgery_name()]!"))
 			return FALSE
 
 		return TRUE
 
-	// Cavity implants
-	var/total_volume = I.w_class
-	for(var/obj/item/item in implants)
-		if(istype(item, /obj/item/weapon/implant) || istype(item, /obj/item/organ_module))
-			continue
+// Cavity implants
 
-		total_volume += item.w_class
-
-	if(total_volume > cavity_max_w_class)
+	if(total_volume + I.w_class > max_volume)
 		to_chat(user, SPAN_WARNING("There isn't enough space in [get_surgery_name()]!"))
 		return FALSE
 
@@ -154,6 +189,11 @@
 	if(do_check && !can_add_item(I, user))
 		return
 
+	if(istype(I, /obj/item/gripper/chemistry))
+		var/obj/item/gripper/chemistry/SG = I
+		if(SG.wrapped)
+			I = SG.wrapped
+
 	user.unEquip(I, src)
 
 	// "Organ modules"
@@ -163,21 +203,22 @@
 		organ_module.install(src)
 
 	// Implants
-	else if(istype(I, /obj/item/weapon/implant))
-		var/obj/item/weapon/implant/implant = I
+	else if(istype(I, /obj/item/implant))
+		var/obj/item/implant/implant = I
 		implant.install(owner, organ_tag)
 		owner.update_implants()
 
 	// Internal organs
 	else if(istype(I, /obj/item/organ/internal))
 		var/obj/item/organ/organ = I
-		organ.replaced(owner, src)
+		organ.replaced(src)
 
 	// Limbs
 	else if(istype(I, /obj/item/organ/external))
 		var/obj/item/organ/external/limb = I
 
 		var/obj/item/organ/external/existing_limb = owner.get_organ(limb.organ_tag)
+		var/obj/item/organ/external/target_limb = owner.get_organ(limb.parent_organ_base)
 
 		// Save the owner before removing limb stump, as it may null the owner
 		// if the operation is performed on the stump itself
@@ -192,7 +233,7 @@
 			existing_limb.removed(null, FALSE)
 			qdel(existing_limb)
 
-		limb.replaced(saved_owner)
+		limb.replaced(target_limb)
 
 		saved_owner.update_body()
 		saved_owner.updatehealth()
@@ -215,7 +256,7 @@
 
 	if(I in internal_organs)
 		var/obj/item/organ/organ = I
-		if(!istype(organ) || (organ.status && ORGAN_CUT_AWAY))
+		if(!istype(organ) || (organ.status && ORGAN_CUT_AWAY) || (istype(organ,/obj/item/organ/internal/bone) && (organ.parent.status & ORGAN_BROKEN)))
 			return TRUE
 
 	return FALSE
@@ -229,23 +270,35 @@
 	if(I in implants)
 		implants -= I
 		embedded -= I
-
-		if(istype(I, /obj/item/weapon/implant))
-			var/obj/item/weapon/implant/implant = I
+		var/isremoved = FALSE //Did we already remove the item?
+		if(isitem(I))
+			var/obj/item/item = I
+			item.on_embed_removal(owner)
+		if(istype(I, /obj/item/implant))
+			var/obj/item/implant/implant = I
 			if(implant.wearer)
 				implant.uninstall()
+				isremoved = TRUE
 			else
 				I.forceMove(drop_location())
+				isremoved = TRUE
 
-		if(istype(I, /obj/item/organ_module))
+		else if(istype(I, /obj/item/organ_module))
 			if(I == module)
 				var/obj/item/organ_module/M = I
 				M.remove(src)
+				isremoved = TRUE
 			else
 				I.forceMove(drop_location())
-
+				isremoved = TRUE
+		else
+			I.forceMove(drop_location())
+			isremoved = TRUE
 		if(owner)
 			owner.update_implants()
+
+		if(!isremoved)
+			I.forceMove(drop_location())
 
 	if(I in internal_organs)
 		var/obj/item/organ/organ = I

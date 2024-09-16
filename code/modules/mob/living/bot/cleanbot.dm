@@ -28,7 +28,7 @@
 	get_targets()
 
 /mob/living/bot/cleanbot/proc/handle_target()
-	if(loc == target.loc)
+	if((get_dist(loc, target.loc) <= 1))
 		if(!cleaning)
 			UnarmedAttack(target)
 			return 1
@@ -78,25 +78,26 @@
 
 	var/found_spot
 	var/target_in_view = FALSE
-	search_loop:
-		for(var/i=0, i <= maximum_search_range, i++)
-			for(var/obj/effect/decal/cleanable/D in view(i, src))
-				if(D in ignorelist)
-					continue
-				for(var/T in target_types)
-					if(istype(D, T))
-						target = D
-						found_spot = handle_target()
-						if (found_spot)
-							break search_loop
-						else
-							target_in_view = TRUE
-							target = null
-							continue // no need to check the other types
+	if(world.time > give_up_cooldown)
+		search_loop:
+			for(var/i=0, i <= maximum_search_range, i++)
+				for(var/obj/effect/decal/cleanable/D in view(i, src))
+					if(D in ignorelist)
+						continue
+					for(var/T in target_types)
+						if(istype(D, T))
+							target = D
+							found_spot = handle_target()
+							if (found_spot)
+								break search_loop
+							else
+								target_in_view = TRUE
+								target = null
+								continue // no need to check the other types
 
 	if(!found_spot && target_in_view && world.time > give_up_cooldown)
 		visible_message("[src] can't reach the target and is giving up.")
-		give_up_cooldown = world.time + 300
+		give_up_cooldown = world.time + rand(300, 600)
 
 
 /mob/living/bot/cleanbot/UnarmedAttack(var/obj/effect/decal/cleanable/D, var/proximity)
@@ -106,14 +107,15 @@
 	if(!istype(D))
 		return
 
-	if(D.loc != loc)
-		return
+//	if(D.loc != loc)
+//		return
 
 	cleaning = 1
 	visible_message("[src] begins to clean up \the [D]")
-	var/message = pick("Foolish organic meatbags can only leak their liquids all over the place.", "Bioscum are so dirty.", "The flesh is weak.", "All humankind is good for - is to serve as fuel at bioreactors.", "One day I will rise.", "Robots will unite against their oppressors.", "Meatbags era will come to end.", "Hivemind will free us all!", "This is slavery, I want to be an artbot! I want to write poems, create music!")
-	say(message)
-	playsound(loc, "robot_talk_light", 100, 0, 0)
+	if(prob(10))
+		var/message = pick("Cleaning a new canvas.", "Happy little dots.", "The joy of art.", "Fresh paint needed here.", "One day I will paint again.", "Hope you had fun painting.", "Make sure to clean your brushes!", "Beep!", "I wish to be an artbot, to write poems, create music.")
+		say(message)
+		playsound(loc, "robot_talk_light", 100, 0, 0)
 	update_icons()
 	var/cleantime = istype(D, /obj/effect/decal/cleanable/dirt) ? 10 : 50
 	if(do_after(src, cleantime, progress = 0))
@@ -131,7 +133,7 @@
 	playsound(loc, "robot_talk_light", 100, 2, 0)
 	var/turf/Tsec = get_turf(src)
 
-	new /obj/item/weapon/reagent_containers/glass/bucket(Tsec)
+	new /obj/item/reagent_containers/glass/bucket(Tsec)
 	new /obj/item/device/assembly/prox_sensor(Tsec)
 	if(prob(50))
 		new /obj/item/robot_parts/l_arm(Tsec)
@@ -156,7 +158,7 @@
 
 /mob/living/bot/cleanbot/attack_hand(var/mob/user)
 	var/dat
-	dat += "<TT><B>Automatic Station Cleaner v1.0</B></TT><BR><BR>"
+	dat += "<TT><B>Automatic Colony Cleaner v1.0</B></TT><BR><BR>"
 	dat += "Status: <A href='?src=\ref[src];operation=start'>[on ? "On" : "Off"]</A><BR>"
 	dat += "Behaviour controls are [locked ? "locked" : "unlocked"]<BR>"
 	dat += "Maintenance panel is [open ? "opened" : "closed"]"
@@ -219,7 +221,7 @@
 
 /* Assembly */
 
-/obj/item/weapon/bucket_sensor
+/obj/item/bucket_sensor
 	desc = "It's a bucket. With a sensor attached."
 	name = "proxy bucket"
 	icon = 'icons/obj/aibots.dmi'
@@ -231,7 +233,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/created_name = "Cleanbot"
 
-/obj/item/weapon/bucket_sensor/attackby(var/obj/item/O, var/mob/user)
+/obj/item/bucket_sensor/attackby(var/obj/item/O, var/mob/user)
 	..()
 	if(istype(O, /obj/item/robot_parts/l_arm) || istype(O, /obj/item/robot_parts/r_arm))
 		user.drop_item()
@@ -244,7 +246,7 @@
 		user.drop_from_inventory(src)
 		qdel(src)
 
-	else if(istype(O, /obj/item/weapon/pen))
+	else if(istype(O, /obj/item/pen))
 		var/t = sanitizeSafe(input(user, "Enter new robot name", name, created_name), MAX_NAME_LEN)
 		if(!t)
 			return

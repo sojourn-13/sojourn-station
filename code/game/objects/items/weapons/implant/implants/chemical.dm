@@ -1,10 +1,13 @@
-/obj/item/weapon/implant/chem
+/obj/item/implant/chem
 	name = "chemical implant"
 	desc = "Injects things."
+	icon_state = "implant_chem"
 	allow_reagents = 1
 	origin_tech = list(TECH_MATERIAL=3, TECH_BIO=4)
 
-/obj/item/weapon/implant/chem/get_data()
+	overlay_icon = "chem"
+
+/obj/item/implant/chem/get_data()
 	var/data = {"
 		<b>Implant Specifications:</b><BR>
 		<b>Name:</b> Robust Corp MJ-420 Prisoner Management Implant<BR>
@@ -23,15 +26,24 @@
 	return data
 
 
-/obj/item/weapon/implant/chem/New()
+/obj/item/implant/chem/New()
 	..()
 	create_reagents(50)
 
-/obj/item/weapon/implant/chem/trigger(emote, mob/living/source)
-	if(emote == "deathgasp")
+/obj/item/implant/chem/on_install(mob/living/source)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/implant/chem/Process()
+	if (!implanted)
+		return
+	var/mob/M = wearer
+
+	if(isnull(M)) // If the mob got gibbed
+		activate()
+	else if(M.stat == DEAD)
 		activate()
 
-/obj/item/weapon/implant/chem/activate()
+/obj/item/implant/chem/activate()
 	if(!wearer)
 		return
 	reagents.trans_to_mob(wearer, reagents.total_volume, CHEM_BLOOD)
@@ -39,9 +51,10 @@
 	if(!src.reagents.total_volume)
 		to_chat(wearer, "You hear a faint click from your [part].")
 		spawn(0)
+			STOP_PROCESSING(SSobj, src)
 			qdel(src)
 
-/obj/item/weapon/implant/chem/emp_act(severity)
+/obj/item/implant/chem/emp_act(severity)
 	if (malfunction)
 		return
 	malfunction = MALFUNCTION_TEMPORARY
@@ -58,7 +71,7 @@
 		malfunction = MALFUNCTION_NONE
 
 
-/obj/item/weapon/implantcase/chem
+/obj/item/implantcase/chem
 	name = "glass case - 'chemical'"
 	desc = "A case containing a chemical implant."
-	implant = /obj/item/weapon/implant/chem
+	implant = /obj/item/implant/chem

@@ -7,21 +7,30 @@
 	reagents = bloodstr
 	..()
 
-/mob/living/carbon/Life()
-	..()
-
-	handle_viruses()
-	// Increase germ_level regularly
-	if(germ_level < GERM_LEVEL_AMBIENT && prob(30))	//if you're just standing there, you shouldn't get more germs beyond an ambient level
-		germ_level++
-
 /mob/living/carbon/Destroy()
-	qdel(ingested)
-	qdel(touching)
-	// We don't qdel(bloodstr) because it's the same as qdel(reagents)
-	QDEL_NULL_LIST(internal_organs)
-	QDEL_NULL_LIST(stomach_contents)
-	QDEL_NULL_LIST(hallucinations)
+	bloodstr.parent = null //these exist due to a GC failure linked to these vars
+	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
+
+	ingested.parent = null
+	ingested.my_atom = null
+
+	touching.parent = null
+	touching.my_atom = null
+
+	metabolism_effects.parent = null
+	reagents = null
+	QDEL_NULL(ingested)
+	QDEL_NULL(touching)
+	QDEL_NULL(reagents) //TODO: test deleting QDEL_NULL(reagents) since QDEL_NULL(bloodstr) might be all we need
+	QDEL_NULL(bloodstr)
+	QDEL_NULL(metabolism_effects)
+	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
+	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
+	QDEL_LIST(internal_organs)
+	QDEL_LIST(hallucinations)
+	if(vessel)
+		vessel.my_atom = null //sanity check
+		QDEL_NULL(vessel)
 	return ..()
 
 /mob/living/carbon/rejuvenate()
@@ -37,45 +46,17 @@
 	. = ..()
 	if(.)
 		if (src.nutrition && src.stat != 2)
-			src.nutrition -= DEFAULT_HUNGER_FACTOR/10
+			src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
 			if (move_intent.flags & MOVE_INTENT_EXERTIVE)
-				src.nutrition -= DEFAULT_HUNGER_FACTOR/10
+				src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
 
+		if(is_watching == TRUE)
+			reset_view(null)
+			is_watching = FALSE
 
-		// Moving around increases germ_level faster
-		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
-			germ_level++
-
-/mob/living/carbon/relaymove(var/mob/living/user, direction)
-	if((user in src.stomach_contents) && istype(user))
-		if(user.last_special <= world.time)
-			user.last_special = world.time + 50
-			src.visible_message(SPAN_DANGER("You hear something rumbling inside [src]'s stomach..."))
-			var/obj/item/I = user.get_active_hand()
-			if(I && I.force)
-				var/d = rand(round(I.force / 4), I.force)
-				if(ishuman(src))
-					var/mob/living/carbon/human/H = src
-					var/obj/item/organ/external/organ = H.get_organ(BP_CHEST)
-					if (istype(organ))
-						if(organ.take_damage(d, 0))
-							H.UpdateDamageIcon()
-					H.updatehealth()
-				else
-					src.take_organ_damage(d)
-				user.visible_message(SPAN_DANGER("[user] attacks [src]'s stomach wall with the [I.name]!"))
-				playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
-
-				if(prob(src.getBruteLoss() - 50))
-					for(var/atom/movable/A in stomach_contents)
-						A.loc = loc
-						stomach_contents.Remove(A)
-					src.gib()
 
 /mob/living/carbon/gib()
 	for(var/mob/M in src)
-		if(M in src.stomach_contents)
-			src.stomach_contents.Remove(M)
 		M.loc = src.loc
 		for(var/mob/N in viewers(src, null))
 			if(N.client)
@@ -107,8 +88,9 @@
 			"\red <B>You feel a powerful shock course through your body!</B>", \
 			"\red You hear a heavy electrical crack." \
 		)
-		Stun(10)//This should work for now, more is really silly and makes you lay there forever
-		Weaken(10)
+		LEGACY_SEND_SIGNAL(src, COMSIG_CARBON_ELECTROCTE)
+		Stun(5)//This should work for now, more is really silly and makes you lay there forever
+		Weaken(5)
 	else
 		src.visible_message(
 			"\red [src] was mildly shocked by the [source].", \
@@ -239,9 +221,6 @@
 
 			playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
-/mob/living/carbon/proc/eyecheck()
-	return 0
-
 // ++++ROCKDTBEN++++ MOB PROCS -- Ask me before touching.
 // Stop! ... Hammertime! ~Carn
 
@@ -252,6 +231,14 @@
 	dna = newDNA
 
 // ++++ROCKDTBEN++++ MOB PROCS //END
+
+/mob/living/carbon/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE)
+	if(blinded)
+		return
+	if(species)
+		..(duration * flash_mod, drop_items, doblind, doblurry)
+	else
+		..(duration, drop_items, doblind, doblurry)
 
 //Throwing stuff
 /mob/proc/throw_item(atom/target)
@@ -267,8 +254,13 @@
 
 	if(!item) return
 
-	if (istype(item, /obj/item/weapon/grab))
-		var/obj/item/weapon/grab/G = item
+	if(istype(item, /obj/item/stack/thrown))
+		var/obj/item/stack/thrown/V = item
+		V.fireAt(target, src)
+		return
+
+	if (istype(item, /obj/item/grab))
+		var/obj/item/grab/G = item
 		item = G.throw_held() //throw the person instead of the grab
 		if(!item) return
 		unEquip(G, loc)
@@ -337,14 +329,12 @@
 		to_chat(usr, "\red You are already sleeping")
 		return
 	if(alert(src,"You sure you want to sleep for a while?","Sleep","Yes","No") == "Yes")
-		usr.sleeping = 20 //Short nap
+		usr.sleeping = 60 //Short nap
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
 	if(now_pushing || !yes)
 		return
 	..()
-	if(iscarbon(AM) && prob(10))
-		src.spread_disease_to(AM, "Contact")
 
 /mob/living/carbon/cannot_use_vents()
 	return
@@ -361,8 +351,8 @@
 	return 1
 
 /mob/living/carbon/proc/add_chemical_effect(var/effect, var/magnitude = 1, var/limited = FALSE)
-	if(effect == CE_ALCOHOL && stats.getPerk(/datum/perk/inspiration))
-		stats.addPerk(/datum/perk/active_inspiration)
+	if(effect == CE_ALCOHOL && stats.getPerk(PERK_INSPIRATION))
+		stats.addPerk(PERK_ACTIVE_INSPIRATION)
 	if(effect in chem_effects)
 		if(limited)
 			chem_effects[effect] = max(magnitude, chem_effects[effect])
@@ -387,7 +377,7 @@
 	<BR><B>Head(Mask):</B> <A href='?src=\ref[src];item=mask'>[(wear_mask ? wear_mask : "Nothing")]</A>
 	<BR><B>Left Hand:</B> <A href='?src=\ref[src];item=l_hand'>[(l_hand ? l_hand  : "Nothing")]</A>
 	<BR><B>Right Hand:</B> <A href='?src=\ref[src];item=r_hand'>[(r_hand ? r_hand : "Nothing")]</A>
-	<BR><B>Back:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Nothing")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/weapon/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
+	<BR><B>Back:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Nothing")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
 	<BR>[(internal ? text("<A href='?src=\ref[src];item=internal'>Remove Internal</A>") : "")]
 	<BR><A href='?src=\ref[src];item=pockets'>Empty Pockets</A>
 	<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>
@@ -397,7 +387,7 @@
 	onclose(user, "mob[name]")
 	return
 
-/mob/living/carbon/proc/should_have_organ(var/organ_check)
+/mob/living/carbon/proc/should_have_process(var/organ_check)
 	return 0
 
 /mob/living/carbon/proc/has_appendage(var/limb_check)

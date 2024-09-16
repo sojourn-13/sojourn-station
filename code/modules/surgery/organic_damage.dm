@@ -1,12 +1,13 @@
-// In this file: steps for fixing organ damage, bleeding, bone fractures, necrosis and facial damage
+// In this file: steps for fixing organ damage, bleeding, bone fractures, bone damage, necrosis, and facial damage
 
 /datum/surgery_step/fix_organ
 	target_organ_type = /obj/item/organ/internal
 	allowed_tools = list(
-		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/bruise_pack/advanced = 100,
 		/obj/item/stack/medical/bruise_pack = 20,
+		/obj/item/stack/medical/bruise_pack/advanced/mending_ichor = 100,
 	)
-
+	requires_perk = TRUE
 	duration = 80
 
 /datum/surgery_step/fix_organ/require_tool_message(mob/living/user)
@@ -14,14 +15,16 @@
 
 /datum/surgery_step/fix_organ/proc/get_tool_name(obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		tool_name = "regenerative membrane"
 	if (istype(tool, /obj/item/stack/medical/bruise_pack))
 		tool_name = "the bandaid"
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced/mending_ichor))
+		tool_name = "the mending ichor"
 	return tool_name
 
 /datum/surgery_step/fix_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.damage > 0
+	return !BP_IS_ROBOTIC(organ) && organ.is_open() && organ.damage > 0 // Assisted organs also deserve to be healed.
 
 /datum/surgery_step/fix_organ/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -40,6 +43,7 @@
 	)
 	if(tool.use(1))
 		organ.damage = 0
+		playsound(user.loc, 'sound/items/drop/flesh.ogg', 50, 1)
 
 /datum/surgery_step/fix_organ/fail_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -48,7 +52,50 @@
 	)
 	organ.take_damage(5, 0)
 
+/datum/surgery_step/fix_bone
+	target_organ_type = /obj/item/organ/internal/bone
+	required_tool_quality = QUALITY_BONE_GRAFTING
+	duration = 80
+	requires_perk = TRUE
 
+/datum/surgery_step/fix_bone/require_tool_message(mob/living/user)
+	to_chat(user, SPAN_WARNING("You need a Bone Gel, or item capable of [required_tool_quality]"))
+
+/datum/surgery_step/fix_bone/proc/get_tool_name(obj/item/stack/tool)
+	var/tool_name = "\the [tool]"
+	if (istype(tool, /obj/item/tool/tape_roll/bonegel))
+		tool_name = "bone gel"
+	if (istype(tool, /obj/item/tool/tape_roll/glue))
+		tool_name = "superglue"
+	return tool_name
+
+/datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && organ.damage > 0
+
+/datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_NOTICE("[user] starts artificially grafting lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)] ."),
+		SPAN_NOTICE("You start artificially grafting lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)].")
+	)
+
+	var/obj/item/organ/external/limb = organ.get_limb()
+	if(limb)
+		organ.owner_custom_pain("The pain in your [limb.name] is living hell!", 1)
+
+/datum/surgery_step/fix_bone/end_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_NOTICE("[user] artificially grafts lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)]."),
+		SPAN_NOTICE("You succesfuly graft lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)].")
+	)
+	organ.damage = 0
+	playsound(user.loc, 'sound/effects/creatures/nibble1.ogg', 50, 1) //As close a sound I could find!
+
+/datum/surgery_step/fix_bone/fail_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_WARNING("[user]'s hand slips, smearing [tool] all over the [organ.get_surgery_name()]!"),
+		SPAN_WARNING("Your hand slips, smearing [tool] all over the [organ.get_surgery_name()]!")
+	)
+	organ.take_damage(5, 0)
 
 /datum/surgery_step/fix_bleeding
 	required_tool_quality = QUALITY_CLAMPING
@@ -58,7 +105,7 @@
 	can_infect = TRUE
 
 /datum/surgery_step/fix_bleeding/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.open && (organ.status & ORGAN_BLEEDING)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.open && (organ.status & ORGAN_BLEEDING)
 
 /datum/surgery_step/fix_bleeding/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
@@ -80,48 +127,6 @@
 		SPAN_WARNING("Your hand slips, tearing blood vessels in [organ.get_surgery_name()] with \the [tool]!"),
 	)
 	organ.take_damage(10, 0, sharp=TRUE)
-
-
-
-/datum/surgery_step/fix_bone
-	required_tool_quality = QUALITY_BONE_SETTING
-	duration = 100
-
-	can_infect = TRUE
-	blood_level = 1
-
-/datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	. = BP_IS_ORGANIC(organ) && organ.is_open() && (organ.status & ORGAN_BROKEN)
-
-	// Otherwise, it will just immediately fracture again
-	if(. && organ.should_fracture())
-		to_chat(user, SPAN_WARNING("[organ.get_surgery_name()] is too damaged!"))
-		return FALSE
-
-	return .
-
-/datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	var/bone = organ.encased ? organ.encased : "bones"
-	user.visible_message(
-		SPAN_NOTICE("[user] starts mending the damaged [bone] in [organ.get_surgery_name()] with \the [tool]."),
-		SPAN_NOTICE("You start mending the damaged [bone] in [organ.get_surgery_name()] with \the [tool].")
-	)
-
-/datum/surgery_step/fix_bone/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	var/bone = organ.encased ? organ.encased : "bones"
-	user.visible_message(
-		SPAN_NOTICE("[user] has mended the damaged [bone] in [organ.get_surgery_name()] with \the [tool]."),
-		SPAN_NOTICE("You have mended the damaged [bone] in [organ.get_surgery_name()] with \the [tool].")
-	)
-	organ.mend_fracture()
-
-/datum/surgery_step/fix_bone/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	user.visible_message(
-		SPAN_WARNING("[user]'s hand slips, smearing [tool] in the incision in [organ.get_surgery_name()]!"),
-		SPAN_WARNING("Your hand slips, smearing [tool] in the incision in [organ.get_surgery_name()]!")
-	)
-
-
 
 /datum/surgery_step/fix_necrosis
 	required_tool_quality = QUALITY_CUTTING
@@ -163,6 +168,7 @@
 	duration = 100
 	blood_level = 1
 	can_infect = TRUE
+	requires_perk = TRUE
 
 /datum/surgery_step/fix_face/can_use(mob/living/user, obj/item/organ/external/head/organ, obj/item/tool)
 	return istype(organ) && organ.is_open() && organ.disfigured

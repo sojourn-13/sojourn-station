@@ -32,7 +32,7 @@ var/global/datum/ntnet/ntnet_global = new()
 /datum/ntnet/New()
 	if(ntnet_global && (ntnet_global != src))
 		ntnet_global = src // There can be only one.
-	for(var/obj/machinery/ntnet_relay/R in SSmachines.machinery)
+	for(var/obj/machinery/ntnet_relay/R in GLOB.machines)
 		relays.Add(R)
 		R.NTNet = src
 	build_software_lists()
@@ -41,12 +41,12 @@ var/global/datum/ntnet/ntnet_global = new()
 	build_reports_list()
 	add_log("NTNet logging system activated.")
 
-/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/computer_hardware/network_card/source = null)
 	if(intrusion_detection_enabled)
 		add_log(log_string, source)
 
 // Simplified logging: Adds a log. log_string is mandatory parameter, source is optional.
-/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log(var/log_string, var/obj/item/computer_hardware/network_card/source = null)
 	var/log_text = "[stationtime2text()] - "
 	if(source)
 		log_text += "[source.get_network_tag()] - "
@@ -238,11 +238,11 @@ var/global/datum/ntnet/ntnet_global = new()
 
 	if(issilicon(user))
 		var/mob/living/silicon/S = user
-		var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)
-		if(my_client)
-			my_client.stored_login = new_login
-			my_client.stored_password = account.password
-			my_client.log_in()
+		var/datum/tgui_module/email_client/tgui_client = S.get_subsystem_from_path(/datum/tgui_module/email_client/silicon)
+		if(tgui_client)
+			tgui_client.stored_login = new_login
+			tgui_client.stored_password = account.password
+			tgui_client.log_in()
 	sort_email_list()
 
 //Used for initial email generation.
@@ -268,19 +268,25 @@ var/global/datum/ntnet/ntnet_global = new()
 			user.mind.initial_email_login["password"] = EA.password
 			user.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
 		if(ishuman(user))
-			for(var/obj/item/modular_computer/C in user.GetAllContents())
-				var/datum/computer_file/program/email_client/P = C.getProgramByType(/datum/computer_file/program/email_client)
-				if(P)
-					P.stored_login = EA.login
-					P.stored_password = EA.password
-					P.update_email()
+			// Second pass to fix all of the stuff that's supposed to know about emails
+			for(var/obj/O in user.GetAllContents())
+				if(istype(O, /obj/item/modular_computer))
+					var/obj/item/modular_computer/C = O
+					var/datum/computer_file/program/email_client/P = C.getProgramByType(/datum/computer_file/program/email_client)
+					if(P)
+						P.stored_login = EA.login
+						P.stored_password = EA.password
+						P.update_email()
+				if(istype(O, /obj/item/card/id))
+					var/obj/item/card/id/id = O
+					id.associated_email_login = user.mind.initial_email_login.Copy()
 		else if(issilicon(user))
 			var/mob/living/silicon/S = user
-			var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)
-			if(my_client)
-				my_client.stored_login = EA.login
-				my_client.stored_password = EA.password
-				my_client.log_in()
+			var/datum/tgui_module/email_client/tgui_client = S.get_subsystem_from_path(/datum/tgui_module/email_client/silicon)
+			if(tgui_client)
+				tgui_client.stored_login = EA.login
+				tgui_client.stored_password = EA.password
+				tgui_client.log_in()
 	sort_email_list()
 
 /mob/proc/create_or_rename_email(newname, domain)

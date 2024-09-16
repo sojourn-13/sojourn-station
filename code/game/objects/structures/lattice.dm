@@ -16,9 +16,12 @@
 	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open) || istype(src.loc, /turf/simulated/floor/hull))) // || istype(src.loc, /turf/simulated/floor/open)
 ///// Z-Level Stuff
 		return INITIALIZE_HINT_QDEL
-	for(var/obj/structure/lattice/LAT in src.loc)
-		if(LAT != src)
-			qdel(LAT)
+	for(var/obj/structure/lattice/LAT in loc)
+		if(LAT == src)
+			continue
+		// commented out cuz we know already it's fucked, whatever
+		// stack_trace("multiple lattices found in ([loc.x], [loc.y], [loc.z])")
+		return INITIALIZE_HINT_QDEL
 	icon = 'icons/obj/smoothlattice.dmi'
 	icon_state = "latticeblank"
 	updateOverlays()
@@ -53,7 +56,7 @@
 	if(I.get_tool_type(user, list(QUALITY_WELDING), src))
 		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 			to_chat(user, SPAN_NOTICE("Slicing lattice joints ..."))
-			new /obj/item/stack/rods(loc)
+			new /obj/item/stack/rods(get_turf(user))
 			qdel(src)
 	if (istype(I, /obj/item/stack/rods) || istype(I, /obj/item/stack/rods/cyborg))
 		var/obj/item/stack/rods/R = I
@@ -63,7 +66,7 @@
 		else
 
 			to_chat(user, SPAN_NOTICE("You start connecting [R.name] to [src.name] ..."))
-			if(do_after(user,50, src))
+			if(do_after(user,5, src))
 				if(R.use(2))
 					src.alpha = 0
 				new /obj/structure/catwalk(src.loc)

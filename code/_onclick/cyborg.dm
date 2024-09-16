@@ -71,8 +71,8 @@
 		return
 
 	//Handling using grippers
-	if (istype(W, /obj/item/weapon/gripper))
-		var/obj/item/weapon/gripper/G = W
+	if (istype(W, /obj/item/gripper))
+		var/obj/item/gripper/G = W
 		//If the gripper contains something, then we will use its contents to attack
 		if (G.wrapped && (G.wrapped.loc == G))
 			GripperClickOn(A, params, G)
@@ -83,7 +83,7 @@
 	if(A == loc || (A in loc) || (A in contents))
 		// No adjacency checks
 
-		var/resolved = A.attackby(W, src, params)
+		var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 		if(!resolved && A && W)
 			W.afterattack(A, src, 1, params)
 		return
@@ -94,14 +94,15 @@
 	// cyborgs are prohibited from using storage items so we can I think safely remove (A.loc && isturf(A.loc.loc))
 	if(isturf(A) || isturf(A.loc))
 		if(A.Adjacent(src)) // see adjacent.dm
+			if(W)
+				// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
+				var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+				if(!resolved && A && W)
+					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
+			return
+		if(W)
+			W.afterattack(A, src, 0, params) // 0: not Adjacent
 
-			var/resolved = A.attackby(W, src)
-			if(!resolved && A && W)
-				W.afterattack(A, src, 1, params)
-			return
-		else
-			W.afterattack(A, src, 0, params)
-			return
 	return
 
 
@@ -109,7 +110,7 @@
 	Gripper Handling
 	This is used when a gripper is used on anything. It does all the handling for it
 */
-/mob/living/silicon/robot/proc/GripperClickOn(var/atom/A, var/params, var/obj/item/weapon/gripper/G)
+/mob/living/silicon/robot/proc/GripperClickOn(var/atom/A, var/params, var/obj/item/gripper/G)
 
 	var/obj/item/W = G.wrapped
 	if (!grippersafety(G))return
@@ -134,9 +135,10 @@
 
 	// cyborgs are prohibited from using storage items so we can I think safely remove (A.loc && isturf(A.loc.loc))
 	if(isturf(A) || isturf(A.loc))
-		if(A.Adjacent(src)) // see adjacent.dm
-			var/resolved = A.attackby(W, src, params)
-			if (!grippersafety(G))return
+		if(A.Adjacent(src))
+			var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+			if (!grippersafety(G))
+				return
 			if(!resolved && A && W)
 				W.afterattack(A, src, 1, params)
 			if (!grippersafety(G))return
@@ -155,16 +157,24 @@
 //Give cyborgs hotkey clicks without breaking existing uses of hotkey clicks
 // for non-doors/apcs
 /mob/living/silicon/robot/CtrlShiftClickOn(var/atom/A)
-	A.BorgCtrlShiftClick(src)
+	if(ai_access)
+		return A.BorgCtrlShiftClick(src)
+	..()
 
 /mob/living/silicon/robot/ShiftClickOn(var/atom/A)
-	A.BorgShiftClick(src)
+	if(ai_access)
+		return A.BorgShiftClick(src)
+	..()
 
 /mob/living/silicon/robot/CtrlClickOn(var/atom/A)
-	A.BorgCtrlClick(src)
+	if(ai_access)
+		return A.BorgCtrlClick(src)
+	..()
 
 /mob/living/silicon/robot/AltClickOn(var/atom/A)
-	A.BorgAltClick(src)
+	if(ai_access)
+		return A.BorgAltClick(src)
+	..()
 
 /atom/proc/BorgCtrlShiftClick(var/mob/living/silicon/robot/user) //forward to human click if not overriden
 	CtrlShiftClick(user)

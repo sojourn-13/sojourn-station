@@ -96,19 +96,18 @@
 				return
 
 /obj/structure/bed/affect_grab(var/mob/user, var/mob/target)
-	user.visible_message(SPAN_NOTICE("[user] attempts to buckle [target] into \the [src]!"))
-	if(do_after(user, 20, src) && Adjacent(target))
-		target.forceMove(loc)
-		spawn(0)
-			if(buckle_mob(target))
-				target.visible_message(
-					SPAN_DANGER("[target] is buckled to [src] by [user]!"),
-					SPAN_DANGER("You are buckled to [src] by [user]!"),
-					SPAN_NOTICE("You hear metal clanking.")
-				)
-		return TRUE
+	target.forceMove(loc)
+	spawn(0)
+		if(buckle_mob(target))
+			update_icon() // When buckling someone to a compact roller bed, update the icon so that it doesn't look like stock.
+			target.visible_message(
+				SPAN_DANGER("[target] is buckled to [src] by [user]!"),
+				SPAN_DANGER("You are buckled to [src] by [user]!"),
+				SPAN_NOTICE("You hear metal clanking.")
+			)
+	return TRUE
 
-/obj/structure/bed/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.has_quality(QUALITY_BOLT_TURNING))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		dismantle()
@@ -146,13 +145,13 @@
 		to_chat(user, "You remove the padding from \the [src].")
 		playsound(src, 'sound/items/Wirecutter.ogg', 100, 1)
 		remove_padding()
-	else if(istype(W, /obj/item/weapon/grab))
-		var/obj/item/weapon/grab/G = W
+	else if(istype(W, /obj/item/grab))
+		var/obj/item/grab/G = W
 		var/mob/living/affecting = G.affecting
 		if(user_buckle_mob(affecting, user))
 			qdel(W)
 
-	else if(!istype(W, /obj/item/weapon/bedsheet))
+	else if(!istype(W, /obj/item/bedsheet))
 		..()
 
 /obj/structure/bed/attack_robot(var/mob/user)
@@ -161,7 +160,7 @@
 
 //If there's blankets on the bed, got to roll them down before you can unbuckle the mob
 /obj/structure/bed/attack_hand(var/mob/user)
-	var/obj/item/weapon/bedsheet/blankets = (locate(/obj/item/weapon/bedsheet) in loc)
+	var/obj/item/bedsheet/blankets = (locate(/obj/item/bedsheet) in loc)
 	if (buckled_mob && blankets && !blankets.rolled && !blankets.folded)
 		if (!blankets.toggle_roll(user))
 			return
@@ -170,7 +169,7 @@
 	if (isliving(user) && user.loc == loc && user.resting)
 		var/mob/living/L = user
 		L.lay_down() //This verb toggles the resting state
-
+		update_icon() // Might help with compact roller bed changing into normal one sprite.
 	.=..()
 
 /obj/structure/bed/Move()
@@ -185,6 +184,7 @@
 			buckled_mob.forceMove(destination, special_event, (glide_size_override ? glide_size_override : glide_size))
 		else
 			unbuckle_mob()
+			update_icon()
 
 /obj/structure/bed/proc/remove_padding()
 	if(padding_material)
@@ -220,54 +220,99 @@
 /obj/structure/bed/double/padded/New(var/newloc)
 	..(newloc,"wood","cotton")
 
-/obj/structure/bed/alien
-	name = "resting contraption"
-	desc = "This looks similar to contraptions from earth. Could aliens be stealing our technology?"
-
-/obj/structure/bed/alien/New(var/newloc)
-	..(newloc, MATERIAL_RESIN)
-
 /*
  * Roller beds
  */
 /obj/structure/bed/roller
 	name = "roller bed"
 	icon = 'icons/obj/rollerbed.dmi'
+	description_info = "Use an IV bag on the bed to attach it. To hook/unhook someone to an IV bag \
+						for blood transfer, click-drag the bed to their sprite. \
+						Use an empty hand to retrieve the IV bag, if any is attached."
 	icon_state = "down"
 	anchored = 0
 	buckle_pixel_shift = "x=0;y=6"
 	var/item_form_type = /obj/item/roller	//The folded-up object path.
+	var/obj/item/reagent_containers/beaker
+	var/iv_attached = 0 // Bay port of attachable IV bags.
+	var/iv_stand = TRUE
+
+/obj/structure/bed/roller/examine(var/mob/user)
+	.=..()
+	if(iv_stand && beaker && !iv_attached)
+		to_chat(user, SPAN_NOTICE("There is a \the [beaker] attached to it."))
+	else if(iv_attached)
+		to_chat(user, SPAN_NOTICE("\The [beaker] is hooked to [buckled_mob]."))
+	else
+		to_chat(user, SPAN_NOTICE("The stand for an IV bag is empty."))
+
+/obj/structure/bed/roller/proc/remove_beaker(mob/user)
+	to_chat(user, "You detach \the [beaker] from \the [src].")
+	iv_attached = FALSE
+	beaker.forceMove(loc)
+	beaker = null
+	update_icon()
+
+/obj/structure/bed/roller/proc/attach_iv(mob/living/carbon/human/target, mob/user)
+	if(!beaker)
+		return
+	else
+		usr.visible_message(SPAN_NOTICE("\The [usr] quickly connects \the IV needle to \the [target]!"),
+					SPAN_NOTICE("You quickly hook \the IV bag on \the [src] to \the [target]."))
+		iv_attached = TRUE
+		update_icon()
+		START_PROCESSING(SSobj,src)
+
+/obj/structure/bed/roller/proc/detach_iv(mob/living/carbon/human/target, mob/user)
+	usr.visible_message(SPAN_NOTICE("\The [target] is swiftly taken off the IV on \the [src]."),
+				SPAN_NOTICE("You carefully unhook \the [target] from \the IV bag on \the [src]."))
+	iv_attached = FALSE
+	update_icon()
+	STOP_PROCESSING(SSobj,src)
 
 /obj/structure/bed/roller/update_icon()
+	cut_overlays() // Necessary for IV drip overlays
 	if(density)
 		icon_state = "up"
 	else
 		icon_state = "down"
+	if(beaker)
+		var/image/iv = image(icon, "iv[iv_attached]")
+		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25) // Rounding down to prevent invisibility at odd percentages.
+		var/image/filling = image(icon, "iv_filling[percentage]")
+		filling.color = beaker.reagents.get_color()
+		iv.add_overlay(filling)
+		if(percentage < 25)
+			iv.add_overlay(image(icon, "light_low"))
+		if(density)
+			iv.pixel_y = 6
+		add_overlay(iv)
 
 /obj/structure/bed/roller/attackby(obj/item/I as obj, mob/user as mob)
-	if(isWrench(I) || istype(I, /obj/item/stack) || isWirecutter(I))
+	if(istool(I) || istype(I, /obj/item/stack) || I.has_quality(QUALITY_WIRE_CUTTING) || istype(I, /obj/item/bedsheet)) // Rework into Eris tool qualities, preventing padding, bedsheeting and accidentally destroying it. - Seb
 		return
+	if(iv_stand && !beaker && istype(I, /obj/item/reagent_containers/blood)) // Sojourn reagent_containers repathing edit. - Seb
+		if(!user.unEquip(I, src))
+			return
+		to_chat(user, "You attach \the [I] to \the [src].")
+		beaker = I
+		update_icon() // Our queue_icon_update() proc apparently goes undefined here, despite working for APC's.
+		return 1
 	..()
+
+/obj/structure/bed/roller/attack_hand(mob/living/user)
+	if(beaker)
+		remove_beaker(user)
+	else
+		..()
 
 /obj/structure/bed/roller/proc/collapse()
 	visible_message("[usr] collapses [src].")
 	new item_form_type(get_turf(src))
 	qdel(src)
 
-/obj/item/roller
-	name = "roller bed"
-	desc = "A collapsed roller bed that can be carried around."
-	icon = 'icons/obj/rollerbed.dmi'
-	icon_state = "folded"
-	item_state = "rbed"
-	slot_flags = SLOT_BACK
-	w_class = ITEM_SIZE_HUGE // Can't be put in backpacks. Oh well. For now.
-	var/structure_form_type = /obj/structure/bed/roller	//The deployed form path.
-
 /obj/item/roller/attack_self(mob/user)
 	deploy(user)
-
-
 
 /obj/item/roller/proc/deploy(var/mob/user)
 	var/turf/T = get_turf(src) //When held, this will still find the user's location
@@ -283,16 +328,94 @@
 		icon_state = "up"
 	else
 		set_density(0)
+		if(iv_attached)
+			detach_iv(M, usr)
 		icon_state = "down"
+
+/obj/structure/bed/roller/Process()
+	if(!iv_attached || !buckled_mob || !beaker)
+		return PROCESS_KILL
+
+	if(SSobj.times_fired % 2)
+		return
+
+	if(beaker.volume > 0)
+		beaker.reagents.trans_to_mob(buckled_mob, beaker.amount_per_transfer_from_this, CHEM_BLOOD)
+		update_icon()
 
 /obj/structure/bed/roller/MouseDrop(over_object, src_location, over_location)
 	..()
 	if(!CanMouseDrop(over_object))	return
 	if(!(ishuman(usr) || isrobot(usr)))	return
+	if(over_object == buckled_mob && beaker)
+		if(iv_attached)
+			detach_iv(buckled_mob, usr)
+		else
+			attach_iv(buckled_mob, usr)
+		return
+	if(over_object != usr && ishuman(over_object))
+		if(user_buckle_mob(over_object, usr))
+			attach_iv(buckled_mob, usr)
+			return
+	if(beaker)
+		remove_beaker(usr)
+		return
 	if(buckled_mob)	return
-
 	collapse()
 
+/obj/structure/bed/roller/compact
+	name = "compact roller bed"
+	icon_state = "adv_down"
+	item_form_type = /obj/item/roller/compact	//The folded-up object path.
+
+/obj/structure/bed/roller/compact/update_icon()
+	cut_overlays()
+	if(density)
+		icon_state = "adv_up"
+	else
+		icon_state = "adv_down"
+	if(beaker) // Making these also have visible icons for the IV drips attached to them. - Seb
+		var/image/iv = image(icon, "iv[iv_attached]")
+		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25)
+		var/image/filling = image(icon, "iv_filling[percentage]")
+		filling.color = beaker.reagents.get_color()
+		iv.add_overlay(filling)
+		if(percentage < 25)
+			iv.add_overlay(image(icon, "light_low"))
+		if(density)
+			iv.pixel_y = 6
+		add_overlay(iv)
+
+/obj/structure/bed/roller/compact/post_buckle_mob(mob/living/M as mob)
+	. = ..()
+	if(M == buckled_mob)
+		set_density(1)
+		icon_state = "adv_up"
+	else
+		set_density(0)
+		if(iv_attached)
+			detach_iv(M, usr)
+		icon_state = "adv_down"
+
+/obj/item/roller
+	name = "roller bed"
+	desc = "A foldable roller bed that can be carried around."
+	icon = 'icons/obj/rollerbed.dmi'
+	icon_state = "folded"
+	item_state = "rbed"
+	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_BULKY
+	var/structure_form_type = /obj/structure/bed/roller //The deployed form path.
+	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_STEEL = 15)
+
+/obj/item/roller/compact
+	name = "compact roller bed"
+	desc = "A more durable and compact version of a collapsed roller bed that can be carried around in bags."
+	icon_state = "adv_folded"
+	slot_flags = NONE
+	w_class = ITEM_SIZE_NORMAL
+	structure_form_type = /obj/structure/bed/roller/compact
+	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_PLASTEEL = 5)
 
 /obj/item/roller_holder
 	name = "roller bed rack"

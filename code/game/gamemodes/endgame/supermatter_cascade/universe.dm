@@ -43,8 +43,7 @@ var/global/universe_has_ended = 0
 	world << sound('sound/effects/cascade.ogg')
 
 	for(var/mob/living/M in GLOB.player_list)
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
+		M.flash()
 
 	if(evacuation_controller.cancel_evacuation())
 		priority_announcement.Announce("The evacuation has been aborted due to bluespace distortion.")
@@ -70,7 +69,7 @@ The access requirements on the Asteroid Shuttles' consoles have now been revoked
 "}
 		priority_announcement.Announce(txt,"SUPERMATTER CASCADE DETECTED")
 /*
-		for(var/obj/machinery/computer/shuttle_control/C in SSmachines.machinery)
+		for(var/obj/machinery/computer/shuttle_control/C in GLOB.computer_list)
 			if(istype(C, /obj/machinery/computer/shuttle_control/research) || istype(C, /obj/machinery/computer/shuttle_control/mining))
 				C.req_access = list()
 				C.req_one_access = list()
@@ -99,12 +98,12 @@ The access requirements on the Asteroid Shuttles' consoles have now been revoked
 			OnTurfChange(T)
 
 /datum/universal_state/supermatter_cascade/proc/MiscSet()
-	for (var/obj/machinery/firealarm/alm in SSmachines.machinery)
+	for (var/obj/machinery/firealarm/alm in GLOB.firealarm_list)
 		if (!(alm.stat & BROKEN))
 			alm.ex_act(2)
 
 /datum/universal_state/supermatter_cascade/proc/APCSet()
-	for (var/obj/machinery/power/apc/APC in SSmachines.machinery)
+	for (var/obj/machinery/power/apc/APC in GLOB.apc_list)
 		if (!(APC.stat & BROKEN) && is_valid_apc(APC))
 			APC.chargemode = 0
 			if(APC.cell)
@@ -113,13 +112,8 @@ The access requirements on the Asteroid Shuttles' consoles have now been revoked
 			APC.queue_icon_update()
 
 /datum/universal_state/supermatter_cascade/proc/PlayerSet()
-	for(var/datum/antagonist/A in current_antags)
+	for(var/datum/antagonist/A in GLOB.current_antags)
 		if(!isliving(A.owner.current))
 			continue
-		if(A.owner.current.stat!=2)
-			A.owner.current.Weaken(10)
-//			flick("e_flash", M.current.flash)
-			if (A.owner.current.HUDtech.Find("flash"))
-				flick("e_flash", A.owner.current.HUDtech["flash"])
 
 		A.remove_antagonist()

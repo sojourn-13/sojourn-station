@@ -7,9 +7,9 @@
 	icon = 'icons/obj/machines/buttons.dmi'
 	icon_state = "light1"
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
-	power_channel = LIGHT
+	power_channel = STATIC_LIGHT
 	var/slow_turning_on = FALSE
 	var/forceful_toggle = FALSE
 	var/on = 1
@@ -43,7 +43,7 @@
 					if(!on)
 						dramatic_turning()
 			else
-				next_check = world.time + 10 MINUTES
+				next_check = world.time + 30 MINUTES
 		else
 			set_on(FALSE, FALSE)
 
@@ -73,7 +73,7 @@
 
 	for(var/obj/machinery/light/L in area)
 		L.seton(L.has_power())
-		if(prob(50))
+		if(prob(1)) //We have good lights that dont flicker
 			L.flicker(rand(1, 3))
 		sleep(10)
 
@@ -96,7 +96,7 @@
 		L.update_icon()
 
 	if(on_)
-		next_check = world.time + 10 MINUTES
+		next_check = world.time + 90 MINUTES
 
 	area.power_change()
 
@@ -107,7 +107,7 @@
 /obj/machinery/light_switch/power_change()
 
 	if(!otherarea)
-		if(powered(LIGHT))
+		if(powered(STATIC_LIGHT))
 			stat &= ~NOPOWER
 		else
 			stat |= NOPOWER

@@ -7,15 +7,21 @@ var/list/department_radio_keys = list(
 	"c" = "Command",
 	"n" = "Science",
 	"m" = "Medical",
+	"j" = "Medical(I)",
 	"e" = "Engineering",
-	"s" = "Security",
+	"s" = "Marshal",
+	"b" = "Blackshield",
 	"w" = "whisper",
 	"y" = "Mercenary",
 	"u" = "Supply",
 	"v" = "Service",
 	"p" = "AI Private",
 	"t" = "Church",
-	"k" = "Prospector"
+	"k" = "Prospector",
+	"a" = "Plasmatag B",
+	"o" = "Plasmatag R",
+	"q" = "Plasmatag Y",
+	"z" = "Plasmatag G"
 )
 
 
@@ -57,7 +63,9 @@ var/list/channel_to_radio_key = new
 	return default_language
 
 /mob/living/proc/is_muzzled()
-	return 0
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/handle_speech_problems(var/message, var/verb)
 	var/list/returns[3]
@@ -97,8 +105,10 @@ var/list/channel_to_radio_key = new
 /mob/living/proc/get_speech_ending(verb, var/ending)
 	if(ending=="!")
 		return pick("exclaims", "shouts", "yells")
-	if(ending=="?")
+	else if(ending=="?")
 		return "asks"
+	else if(ending=="@")
+		verb="reports"
 	return verb
 
 // returns message
@@ -116,8 +126,14 @@ var/list/channel_to_radio_key = new
 			return
 
 	if(stat)
+		var/last_symbol = copytext(message, length(message))
 		if(stat == DEAD)
 			return say_dead(message)
+		else if(last_symbol=="@")
+			if(src.stats.getPerk(PERK_CODESPEAK))
+				return
+			else
+				to_chat(src, "You don't know the codes, pal.")
 		return
 
 	if(HUSK in mutations)
@@ -162,6 +178,13 @@ var/list/channel_to_radio_key = new
 	verb = say_quote(message, speaking)
 
 	message = trim_left(message)
+	var/message_pre_stutter = message
+
+	message = format_say_message(message)
+
+	message = formatSpeech(message, "/", "<i>", "</i>")
+
+	message = formatSpeech(message, "*", "<b>", "</b>")
 
 	if(!(speaking && speaking.flags&NO_STUTTER))
 
@@ -193,7 +216,7 @@ var/list/channel_to_radio_key = new
 		var/msg
 		if(!speaking || !(speaking.flags&NO_TALK_MSG))
 			msg = SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]")
-		for(var/mob/living/M in hearers(5, src))
+		for(var/mob/living/M as anything in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)
 			if(speech_sound)
@@ -227,28 +250,28 @@ var/list/channel_to_radio_key = new
 			sound_vol *= 0.5 //muffle the sound a bit, so it's like we're actually talking through contact
 		var/falloff = (message_range + round(3 * (chem_effects[CE_SPEECH_VOLUME] ? chem_effects[CE_SPEECH_VOLUME] : 1))) //A wider radius where you're heard, but only quietly. This means you can hear people offscreen.
 		//DO NOT FUCKING CHANGE THIS TO GET_OBJ_OR_MOB_AND_BULLSHIT() -- Hugs and Kisses ~Ccomp
-		var/list/hear = hear(message_range, T)
-		var/list/hear_falloff = hear(falloff, T)
+		var/list/hear_falloff = hear_movables(falloff, T)
 
-		for(var/X in SSmobs.mob_list)
-			if(!ismob(X))
-				continue
-			var/mob/M = X
-			if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
-				listening |= M
-				continue
-			if(M.locs.len && (M.locs[1] in hear))
-				listening |= M
-				continue //To avoid seeing BOTH normal message and quiet message
-			else if(M.locs.len && (M.locs[1] in hear_falloff))
-				listening_falloff |= M
+		for(var/atom/movable/AM as anything in hear_falloff)
+			var/list/recursive_contents_with_self = (AM.get_recursive_contents_until(3))
+			recursive_contents_with_self += AM
+			for (var/atom/movable/recursive_content as anything in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
+				if (ismob(recursive_content))
+					var/distance = get_dist(get_turf(recursive_content), src)
+					if (distance <= message_range) //if we're not in the falloff distance
+						listening |= recursive_content
+						continue
+					else if (distance <= falloff) //we're in the falloff distance
+						listening_falloff |= recursive_content
+				else if (isobj(recursive_content))
+					if (recursive_content in GLOB.hearing_objects)
+						listening_obj |= recursive_content
 
-		for(var/X in hearing_objects)
-			if(!isobj(X))
+		for (var/mob/M as anything in SSmobs.ghost_list) // too scared to make a combined list
+			if(M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
+				listening |= M
+				listening_falloff &= ~M
 				continue
-			var/obj/O = X
-			if(O.locs.len && (O.locs[1] in hear))
-				listening_obj |= O
 
 	var/speech_bubble_test = say_test(message)
 	var/image/speech_bubble = image('icons/mob/talk.dmi', src, "h[speech_bubble_test]")
@@ -256,31 +279,76 @@ var/list/channel_to_radio_key = new
 	QDEL_IN(speech_bubble, 30)
 
 	var/list/speech_bubble_recipients = list()
-	for(var/X in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, getSpeechVolume(message))
-	for(var/X in listening_falloff)
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening_falloff)
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, 1)
 
 	animate_speechbubble(speech_bubble, speech_bubble_recipients, 30)
 
-	for(var/obj/O in listening_obj)
+	for(var/obj/O as anything in listening_obj)
 		spawn(0)
-			if(O) //It's possible that it could be deleted in the meantime.
-				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message))
+			if(!QDELETED(O)) //It's possible that it could be deleted in the meantime.
+				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message), message_pre_stutter)
 
 
 	log_say("[name]/[key] : [message]")
 	return TRUE
+
+mob/proc/format_say_message(var/message = null)
+
+	///List of symbols that we dont want a dot after
+	var/list/punctuation = list("!","?",".","-","~")
+
+	///Last character in the message
+	var/last_character = copytext(message,length_char(message))
+	if(!(last_character in punctuation))
+		message += "."
+	return message
+
+// Utility procs for handling speech formatting
+/proc/formatSpeech(var/message, var/delimiter, var/openTag, var/closeTag)
+	var/location = findtextEx(message, delimiter)
+	while(location)
+		if(findtextEx(message, delimiter, location + 1)) // Only work with matching pairs
+			var/list/result = replaceFirst(message, delimiter, openTag, location)
+			message = result[1]
+			result = replaceFirst(message, delimiter, closeTag, result[2])
+			message = result[1]
+			location = findtextEx(message, delimiter, result[2] + 1)
+		else
+			break
+	return message
+
+/proc/replaceFirst(var/message, var/toFind, var/replaceWith, var/startLocation)
+	var/location = findtextEx(message, toFind, startLocation)
+	var/replacedLocation = 0
+	if(location)
+		var/findLength = length(toFind)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		replacedLocation = length(head) + length(replaceWith)
+	return list(message, replacedLocation)
+
+/proc/replaceAll(var/message, var/toFind, var/replaceWith)
+	var/location = findtextEx(message, toFind)
+	var/findLength = length(toFind)
+	while(location > 0)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		location = findtextEx(message, toFind, length(head) + length(replaceWith) + 1)
+	return message
+
+
+
+
+
 
 
 /proc/animate_speechbubble(image/I, list/show_to, duration)
@@ -291,7 +359,7 @@ var/list/channel_to_radio_key = new
 	for(var/client/C in show_to)
 		C.images += I
 	animate(I, transform = 0, alpha = 255, time = 5, easing = ELASTIC_EASING)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_speechbubble, I), duration-5)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_speechbubble), I), duration-5)
 
 /proc/fade_speechbubble(image/I)
 	animate(I, alpha = 0, time = 5, easing = EASE_IN)
@@ -315,7 +383,7 @@ var/list/channel_to_radio_key = new
 
 	if(sdisabilities&DEAF || ear_deaf)
 		// INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
-		if(!language || !language.flags&INNATE)
+		if(!language || !(language.flags & INNATE))
 			if(speaker == src)
 				to_chat(src, SPAN_WARNING("You cannot hear yourself speak!"))
 			else
@@ -344,12 +412,12 @@ var/list/channel_to_radio_key = new
 		return
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
-	if(language)
+	if(language && !(verb == "reports"))
 		if(language.flags&NONVERBAL)
 			if(!speaker || (src.sdisabilities&BLIND || src.blinded) || !(speaker in view(src)))
 				message = stars(message)
 
-	if(!(language && language.flags&INNATE)) // skip understanding checks for INNATE languages
+	if(!(language && language.flags&INNATE) && !(verb == "reports")) // skip understanding checks for INNATE languages
 		if(!say_understands(speaker, language))
 			if(isanimal(speaker))
 				var/mob/living/simple_animal/S = speaker
@@ -357,12 +425,11 @@ var/list/channel_to_radio_key = new
 					message = pick(S.speak)
 			else
 				if(language)
-					message = language.scramble(message)
+					message = language.scramble(message, languages)
 				else
 					message = stars(message)
 
 	..()
-
 
 /mob/living/hear_radio(message, verb="says", datum/language/language=null, part_a, part_b, part_c, speaker = null, hard_to_hear = 0, voice_name ="")
 	if(!client)
@@ -378,27 +445,28 @@ var/list/channel_to_radio_key = new
 		return
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
-	if(language && language.flags&NONVERBAL)
-		if(!speaker || (src.sdisabilities&BLIND || src.blinded) || !(speaker in view(src)))
-			message = stars(message)
+	if(language && !(verb == "reports"))
+		if(language.flags&NONVERBAL)
+			if(!speaker || (src.sdisabilities&BLIND || src.blinded) || !(speaker in view(src)))
+				message = stars(message)
 
-	// skip understanding checks for INNATE languages
-	if(!(language && language.flags&INNATE))
-		if(!say_understands(speaker, language))
-			if(isanimal(speaker))
-				var/mob/living/simple_animal/S = speaker
-				if(S.speak && S.speak.len)
-					message = pick(S.speak)
+		// skip understanding checks for INNATE languages
+		if(!(language.flags&INNATE))
+			if(!say_understands(speaker, language))
+				if(isanimal(speaker))
+					var/mob/living/simple_animal/S = speaker
+					if(S.speak && S.speak.len)
+						message = pick(S.speak)
+					else
+						return
 				else
-					return
-			else
-				if(language)
-					message = language.scramble(message)
-				else
-					message = stars(message)
+					if(language)
+						message = language.scramble(message, languages)
+					else
+						message = stars(message)
 
-		if(hard_to_hear)
-			message = stars(message)
+			if(hard_to_hear)
+				message = stars(message)
 
 	..()
 

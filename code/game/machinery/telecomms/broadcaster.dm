@@ -11,14 +11,14 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 /obj/machinery/telecomms/broadcaster
 	name = "subspace broadcaster"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "broadcaster"
 	desc = "A dish-shaped machine used to broadcast processed subspace signals."
-	idle_power_usage = 25
+	idle_power_usage = 250 //Less then others base tends to be 600
 	machinetype = 5
 	produces_heat = 0
 	delay = 7
-	circuit = /obj/item/weapon/circuitboard/telecomms/broadcaster
+	circuit = /obj/item/circuitboard/telecomms/broadcaster
 
 /obj/machinery/telecomms/broadcaster/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 	// Don't broadcast rejected signals
@@ -110,10 +110,10 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 /obj/machinery/telecomms/allinone
 	name = "telecommunications mainframe"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "comm_server"
 	desc = "A compact machine used for portable subspace telecommuniations processing."
-	use_power = 0
+	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	machinetype = 6
 	produces_heat = 0
@@ -188,7 +188,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	@param data:
 		If specified:
 				1 -- Will only broadcast to intercoms
-				2 -- Will only broadcast to intercoms and station-bounced radios
+				2 -- Will only broadcast to intercoms and ham radios
 				3 -- Broadcast to syndicate frequency
 				4 -- AI can't track down this person. Useful for imitation broadcasts where you can't find the actual mob
 	@param compression:
@@ -265,7 +265,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	var/list/heard_gibberish= list() // completely screwed over message (ie "F%! (O*# *#!<>&**%!")
 
 	for (var/mob/R in receive)
-
+		LEGACY_SEND_SIGNAL(radio, COMSIG_MESSAGE_RECEIVED, R)
 	  /* --- Loop through the receivers and categorize them --- */
 		if(isnewplayer(R)) // we don't want new players to hear messages. rare but generates runtimes.
 			continue
@@ -348,15 +348,15 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ)
+				if(SEC_FREQ, BLS_FREQ, MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ)
+				if(SUP_FREQ, PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
-				if(SRV_FREQ)
+				if(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 					blackbox.msg_service += blackbox_msg
 				if(NT_FREQ)
 					blackbox.msg_nt += blackbox_msg
@@ -422,7 +422,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	if(data == 1)
 		for (var/obj/item/device/radio/intercom/R in connection.devices["[RADIO_CHAT]"])
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq, position.z)
 
 
@@ -434,7 +434,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 			if(istype(R, /obj/item/device/radio/headset))
 				continue
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq)
 
 
@@ -445,7 +445,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 			var/datum/radio_frequency/antag_connection = SSradio.return_frequency(freq)
 			for (var/obj/item/device/radio/R in antag_connection.devices["[RADIO_CHAT]"])
 				var/turf/position = get_turf(R)
-				if(position && position.z in levels)
+				if(position && (position.z in levels))
 					receive |= R.send_hear(freq)
 
 
@@ -454,7 +454,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	else
 		for (var/obj/item/device/radio/R in connection.devices["[RADIO_CHAT]"])
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq)
 
 
@@ -525,15 +525,15 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ)
+				if(SEC_FREQ, BLS_FREQ, MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ)
+				if(SUP_FREQ, PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
-				if(SRV_FREQ)
+				if(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 					blackbox.msg_service += blackbox_msg
 				if(NT_FREQ)
 					blackbox.msg_nt += blackbox_msg

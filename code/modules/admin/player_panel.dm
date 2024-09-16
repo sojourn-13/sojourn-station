@@ -2,7 +2,8 @@
 /datum/admins/proc/player_panel_new()//The new one
 	if (!usr.client.holder)
 		return
-	var/dat = "<html><head><title>Admin Player Panel</title></head>"
+	log_admin("[key_name(usr)] checked the player panel.")
+	var/dat = "<html><head><meta http-equiv='X-UA-Compatible' content='IE=edge; charset=UTF-8'/><title>Player Panel</title></head>"
 
 	//javascript, the part that does most of the work~
 	dat += {"
@@ -78,14 +79,15 @@
 					body += "<a href='?src=\ref[src];adminplayeropts="+ref+"'>PP</a> - "
 					body += "<a href='?src=\ref[src];notes=show;mob="+ref+"'>N</a> - "
 					body += "<a href='?_src_=vars;Vars="+ref+"'>VV</a> - "
-					body += "<a href='?src=\ref[src];traitor="+ref+"'>TP</a> - "
+					body += "<a href='?src=\ref[src];contractor="+ref+"'>TP</a> - "
 					body += "<a href='?src=\ref[usr];priv_msg=\ref"+ref+"'>PM</a> - "
 					body += "<a href='?src=\ref[src];subtlemessage="+ref+"'>SM</a> - "
 					body += "<a href='?src=\ref[src];viewlogs="+ref+"'>LOGS</a> - "
 					body += "<a href='?src=\ref[src];adminobservejump="+ref+"'>JMP</a><br>"
-					if(antagonist > 0)
+					if(antagonist > 1)
 						body += "<font size='2'><a href='?src=\ref[src];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
-
+					else if(antagonist > 0)
+						body += "<font size='2'><font color='red'><b>Limited Antagonist</b></font></font>";
 					body += "</td></tr></table>";
 
 
@@ -292,7 +294,7 @@
 					<td align='center' bgcolor='[color]'>
 						<span id='notice_span[i]'></span>
 						<a id='link[i]'
-						onmouseover='expand("item[i]","[M_job]","[M_name]","[M_rname]","--unused--","[M_key]","[M.lastKnownIP]",[is_antagonist],"\ref[M]")'
+						onmouseover='expand("item[i]","[M_job]","[M_name]","[M_rname]","--unused--","[M_key]","[M.lastKnownIP]",[is_antagonist],"[REF(M)]")'
 						>
 						<span id='search[i]'><b>[M_name] - [M_rname] - [M_key] ([M_job])</b></span>
 						</a>
@@ -321,8 +323,9 @@
 
 
 /datum/admins/proc/storyteller_panel()
-	if(get_storyteller())
-		get_storyteller().storyteller_panel()
+	var/datum/storyteller/ST = get_storyteller()
+	if(ST)
+		ST.storyteller_panel()
 	else
 		to_chat(usr, SPAN_WARNING("There is no storyteller."))
 

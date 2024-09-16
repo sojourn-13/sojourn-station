@@ -14,24 +14,23 @@
 
 	tags = list(TAG_POSITIVE)
 
-
-
 /datum/event/money_lotto
 	var/winner_name = "John Smith"
 	var/winner_sum = 0
-	var/deposit_success = 0
+	var/deposit_success = FALSE
 
 /datum/event/money_lotto/start()
-	winner_sum = pick(5000, 10000, 15000)
-	if(all_money_accounts.len)
+	winner_sum = pick(3000, 5000, 7500)
+	if(LAZYLEN(all_money_accounts))
 		var/list/private_accounts = all_money_accounts.Copy()
 		for(var/i in department_accounts)
 			private_accounts.Remove(department_accounts[i])
-		var/datum/money_account/D = pick(private_accounts)
-		winner_name = D.get_name()
-		var/datum/transaction/T = new(winner_sum, "Nyx Daily Grand Slam -Stellar- Lottery", "Winner!", "Biesel TCD Terminal #[rand(111,333)]")
-		if(T.apply_to(D))
-			deposit_success = 1
+		if(LAZYLEN(private_accounts))
+			var/datum/money_account/D = pick(private_accounts)
+			winner_name = D.get_name()
+			var/datum/transaction/T = new(winner_sum, "Nyx Daily Grand Slam -Stellar- Lottery", "Winner!", "Biesel TCD Terminal #[rand(111,333)]")
+			if(T.apply_to(D))
+				deposit_success = TRUE
 
 /datum/event/money_lotto/announce()
 	var/author = "[company_name] Editor"

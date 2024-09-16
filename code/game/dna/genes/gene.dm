@@ -27,7 +27,7 @@
 * Is the gene active in this mob's DNA?
 */
 /datum/dna/gene/proc/is_active(var/mob/M)
-	return M.active_genes && (type in M.active_genes)
+	return (type in M.active_genes)
 
 // Return 1 if we can activate.
 // HANDLE MUTCHK_FORCED HERE!
@@ -72,7 +72,7 @@
 * @params g Gender (m or f)
 * @params fat Fat? (0 or 1)
 */
-/datum/dna/gene/proc/OnDrawUnderlays(var/mob/M, var/g, var/species_form/form)
+/datum/dna/gene/proc/OnDrawUnderlays(var/mob/M, var/g, var/species_form)
 	return 0
 
 

@@ -1,7 +1,7 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-/obj/var/list/req_access = list()
-/obj/var/list/req_one_access = list()
+/obj/var/list/req_access = null
+/obj/var/list/req_one_access = null
 
 //returns 1 if this mob has sufficient access to use this object
 /obj/proc/allowed(mob/M)
@@ -13,7 +13,7 @@
 	return check_access_list(M.GetAccess())
 
 /atom/movable/proc/GetAccess()
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	return id ? id.GetAccess() : list()
 
 /proc/get_access_by_id(id)
@@ -30,18 +30,16 @@
 /obj/proc/check_access(obj/item/I)
 	return check_access_list(I ? I.GetAccess() : list())
 
-/obj/proc/check_access_list(var/list/L)
-	if(!req_access)		req_access = list()
-	if(!req_one_access)	req_one_access = list()
+/obj/proc/check_access_list(list/L)
 	if(!L)	return 0
 	if(!istype(L, /list))	return 0
 	return has_access(req_access, req_one_access, L)
 
-/proc/has_access(var/list/req_access, var/list/req_one_access, var/list/accesses)
+/proc/has_access(list/req_access, list/req_one_access, list/accesses)
 	for(var/req in req_access)
 		if(!(req in accesses)) //doesn't have this access
 			return 0
-	if(req_one_access.len)
+	if(LAZYLEN(req_one_access))
 		for(var/req in req_one_access)
 			if(req in accesses) //has an access from the single access list
 				return 1
@@ -202,7 +200,7 @@
 /mob/GetIdCard()
 	return null
 
-var/obj/item/weapon/card/id/all_access/ghost_all_access
+var/obj/item/card/id/all_access/ghost_all_access
 /mob/observer/ghost/GetIdCard()
 	if(!is_admin(src))
 		return
@@ -217,7 +215,7 @@ var/obj/item/weapon/card/id/all_access/ghost_all_access
 #define HUMAN_ID_CARDS list(get_active_hand(), wear_id, get_inactive_hand())
 /mob/living/carbon/human/GetIdCard()
 	for(var/obj/item/I in HUMAN_ID_CARDS)
-		var/obj/item/weapon/card/id = I.GetIdCard()
+		var/obj/item/card/id = I.GetIdCard()
 		if(id)
 			return id
 
@@ -226,7 +224,7 @@ var/obj/item/weapon/card/id/all_access/ghost_all_access
 	for(var/obj/item/I in HUMAN_ID_CARDS)
 		. |= I.GetAccess()
 
-	var/obj/item/weapon/implant/core_implant/C = get_core_implant()
+	var/obj/item/implant/core_implant/C = get_core_implant()
 	if(C)
 		. |= C.GetAccess()
 
@@ -239,16 +237,16 @@ var/obj/item/weapon/card/id/all_access/ghost_all_access
 
 
 proc/FindNameFromID(var/mob/M, var/missing_id_name = "Unknown")
-	var/obj/item/weapon/card/id/C = M.GetIdCard()
+	var/obj/item/card/id/C = M.GetIdCard()
 	if(C)
 		return C.registered_name
 	return missing_id_name
 
 proc/get_all_job_icons() //For all existing HUD icons
-	return joblist + list("Prisoner")
+	return GLOB.joblist + list("Prisoner")
 
 /obj/proc/GetJobName() //Used in secHUD icon generation
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 
 	if(I)
 		var/job_icons = get_all_job_icons()

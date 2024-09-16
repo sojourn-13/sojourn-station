@@ -9,7 +9,7 @@ var/list/cached_space = list()
 	known = 0
 
 /obj/effect/overmap/sector/temporary/New(var/nx, var/ny, var/nz)
-	loc = locate(nx, ny, maps_data.overmap_z)
+	loc = locate(nx, ny, GLOB.maps_data.overmap_z)
 	x = nx
 	y = ny
 	map_z += nz
@@ -19,6 +19,7 @@ var/list/cached_space = list()
 /obj/effect/overmap/sector/temporary/Destroy()
 	map_sectors["[map_z]"] = null
 	testing("Temporary sector at [x],[y] was deleted.")
+	. = ..()
 
 /obj/effect/overmap/sector/temporary/proc/can_die(var/mob/observer)
 	testing("Checking if sector at [map_z[1]] can die.")
@@ -29,7 +30,7 @@ var/list/cached_space = list()
 	return 1
 
 proc/get_deepspace(x,y)
-	var/obj/effect/overmap/sector/temporary/res = locate(x, y, maps_data.overmap_z)
+	var/obj/effect/overmap/sector/temporary/res = locate(x, y, GLOB.maps_data.overmap_z)
 	if(istype(res))
 		return res
 	else if(cached_space.len)
@@ -39,7 +40,7 @@ proc/get_deepspace(x,y)
 		res.y = y
 		return res
 	else
-		return new /obj/effect/overmap/sector/temporary(x, y, maps_data.get_empty_zlevel())
+		return new /obj/effect/overmap/sector/temporary(x, y, GLOB.maps_data.get_empty_zlevel())
 
 /atom/movable/proc/lost_in_space()
 	for(var/atom/movable/AM in contents)
@@ -88,7 +89,7 @@ proc/overmap_spacetravel(var/turf/space/T, var/atom/movable/A)
 
 	testing("[A] spacemoving from [M] ([M.x], [M.y]).")
 
-	var/turf/map = locate(M.x,M.y,maps_data.overmap_z)
+	var/turf/map = locate(M.x,M.y,GLOB.maps_data.overmap_z)
 	var/obj/effect/overmap/TM
 	for(var/obj/effect/overmap/O in map)
 		if(O != M && O.in_space && prob(50))

@@ -2,21 +2,8 @@
 "a" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"b" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict/white_red_edges,
-/area/crawler)
 "c" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"d" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "e" = (
 /obj/structure/railing,
@@ -24,9 +11,6 @@
 /area/crawler)
 "f" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light/small/built{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "g" = (
@@ -34,6 +18,7 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "h" = (
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
 "i" = (
@@ -100,10 +85,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
-"t" = (
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
 "u" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -127,6 +108,15 @@
 /obj/structure/closet/onestar/tier1,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
+"I" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"K" = (
+/obj/structure/catwalk,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -141,11 +131,11 @@ a
 "}
 (2,1,1) = {"
 a
-b
+f
 g
 g
 g
-b
+f
 a
 a
 a
@@ -158,7 +148,7 @@ h
 h
 c
 c
-c
+I
 a
 "}
 (4,1,1) = {"
@@ -174,13 +164,13 @@ a
 "}
 (5,1,1) = {"
 a
-d
+r
 j
 p
 j
 r
 v
-t
+c
 u
 "}
 (6,1,1) = {"
@@ -188,7 +178,7 @@ a
 e
 x
 k
-k
+K
 s
 c
 c
@@ -210,7 +200,7 @@ a
 e
 l
 k
-k
+K
 s
 c
 c
@@ -224,7 +214,7 @@ q
 m
 r
 c
-t
+c
 u
 "}
 (10,1,1) = {"
@@ -246,7 +236,7 @@ h
 h
 c
 c
-c
+I
 a
 "}
 (12,1,1) = {"

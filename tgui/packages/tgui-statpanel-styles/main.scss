@@ -1,0 +1,15 @@
+/**
+ * This package is just so the statbrowser can have access to some nice tgui styles without defining duplicates that could
+ * go out of sync.
+ */
+
+@use 'sass:meta';
+@use '~tgui/styles/colors.scss' with (
+  $primary: #ffffff,
+  $bg-lightness: -25%,
+  $fg-lightness: -10%,
+  $label: #3b3b3b
+);
+
+// Core styles
+@include meta.load-css('~tgui/styles/atomic/color.scss');

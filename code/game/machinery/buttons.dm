@@ -7,7 +7,7 @@
 	var/active = 0
 	var/operating = 0
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 4
 	var/_wifi_id
@@ -24,7 +24,7 @@
 	wifi_sender = null
 	return ..()
 
-/obj/machinery/button/attackby(obj/item/weapon/W, mob/user as mob)
+/obj/machinery/button/attackby(obj/item/W, mob/user as mob)
 	return attack_hand(user)
 
 /obj/machinery/button/attack_hand(mob/living/user)

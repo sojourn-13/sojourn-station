@@ -4,6 +4,7 @@
 /datum/computer_file/program/reports
 	filename = "repview"
 	filedesc = "Report Editor"
+	program_menu_icon = "paperclip"
 	nanomodule_path = /datum/nano_module/program/reports
 	extended_desc = "A general paperwork viewing and editing utility."
 	size = 6
@@ -18,7 +19,7 @@
 	var/datum/computer_file/report/saved_report        //The computer file open.
 	var/prog_state = REPORTS_VIEW
 
-/datum/nano_module/program/reports/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
+/datum/nano_module/program/reports/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	data["prog_state"] = prog_state
 	switch(prog_state)

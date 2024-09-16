@@ -1,0 +1,50 @@
+<!--
+Title: nanite reconstitution apparatus - Credits to Occulus-Eris
+Used In File(s): code\game\machinery\autolathe\nanite_reconstitution_apparatus.dm
+ -->
+<div style="display: table; width:100%">
+
+<div style="display: table-row">
+	{{if data.have_materials && data.have_reagents}}
+		<div class="fixedLeft" style="width:48%; display: table-cell; padding: 0 1%">
+			{{#def._materials}}
+		</div>
+		<div class="fixedLeft" style="width:48%; display: table-cell; padding: 0 1%">
+			{{#def._reagents}}
+		</div>
+	{{else data.have_materials}}
+		{{#def._materials}}
+	{{else data.have_reagents}}
+		{{#def._reagents}}
+	{{/if}}
+</div>
+
+<div class="block" style="padding: 0px 4px 2px 4px">
+	{{if data.currentItem && !data.activated}}
+	    <div class="item">
+	        <div class="content">{{:helper.link('Activate', '', {'activate' : 1}, null, 'bigButton')}}</div>
+			<div class="content">{{:helper.link('Eject', '', {'eject' : 1}, null, 'bigButton')}}</div>
+		</div>
+	{{/if}}
+</div>
+
+<div class='statusDisplay'>
+	{{if data.currentItem}}
+		{{if !data.activated}}
+			<center><b><h2>NANITE TARGET IDENTIFIED...</h2></b>
+		{{else data.activated}}
+			<center><b><h2>RECONSTITUTING...</h2></b>
+		{{/if}}
+		<hr></hr>
+		<h3>Loaded item: {{:data.currentItem}}</h3></center><br>
+		<div class="itemLabel">
+			Progress:
+		</div>
+		<div class="itemContent">
+			{{:helper.displayBar(data.progress, 0, 100, 'highlight')}}
+		</div>
+
+	{{else}}
+		<center><b><h2>NO ITEM</h2></b></center>
+	{{/if}}
+</div>

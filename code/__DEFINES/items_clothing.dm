@@ -69,8 +69,9 @@
 #define PLASMAGUARD        	0x10 	// Does not get contaminated by plasma.
 #define PROXMOVE           	0x20  	// Does this object require proximity checking in Enter()?
 #define SILENT				0x40 	// Sneaky shoes and silenced tools
+#define LOUD			    0x80 	// Loud as hell tools
+#define HONKING			    0x100 	// Honking tools
 // 0x80 not used for no reason, feel free
-#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_over-lays
 #define INITIALIZED			0x200
 #define ADMIN_SPAWNED		0x400
 
@@ -85,7 +86,8 @@
 #define COVER_PREVENT_MANIPULATION 0x40 // Only clothing with this flag will prevent manipulation under it. Its for space suits and such, unlike from usual Bay12 rules of clothing manipulation.
 #define DRAG_AND_DROP_UNEQUIP      0x80 // Allow you put intems in hands with drag and drop
 #define EQUIP_SOUNDS               0x100// Play sound when equipped/unequipped
-#define ABSTRACT			       0x200//For items that don't really exist. Can't be put on tables or interacted with.
+#define ABSTRACT			       0x200// For items that don't really exist. Can't be put on tables or interacted with.
+#define BLUESPACE                  0x400// For items that use bluespace technology
 
 // Flags for pass_flags.
 #define PASSTABLE  0x1
@@ -188,8 +190,8 @@
 
 // Fire.
 #define FIRE_MIN_STACKS          -20
-#define FIRE_MAX_STACKS           25
-#define FIRE_MAX_FIRESUIT_STACKS  20 // If the number of stacks goes above this firesuits won't protect you anymore. If not, you can walk around while on fire like a badass.
+#define FIRE_MAX_STACKS           40
+#define FIRE_MAX_FIRESUIT_STACKS  40 // If the number of stacks goes above this firesuits won't protect you anymore. If not, you can walk around while on fire like a badass.
 
 #define THROWFORCE_SPEED_DIVISOR    5  // The throwing speed value at which the throwforce multiplier is exactly 1.
 #define THROWNOBJ_KNOCKBACK_SPEED   15 // The minumum speed of a w_class 2 thrown object that will cause living mobs it hits to be knocked back. Heavier objects can cause knockback at lower speeds.
@@ -209,7 +211,7 @@
 #define INV_W_UNIFORM_DEF_ICON 'icons/inventory/uniform/mob.dmi'
 #define INV_ACCESSORIES_DEF_ICON 'icons/inventory/accessory/mob.dmi'
 #define INV_SUIT_DEF_ICON 'icons/inventory/suit/mob.dmi'
-#define INV_BELT_DEF_ICON 'icons/invenstory/belt/mob.dmi'
+#define INV_BELT_DEF_ICON 'icons/inventory/belt/mob.dmi'
 
 //Defines for loot stashes
 #define DIRECTION_COORDS 	1
@@ -221,3 +223,28 @@
 #define STORY_CRIME	"Crime"
 #define STORY_MUTINY "Mutiny"
 #define STORY_MALFUNCTION "Malfunction"
+
+//Recoil for suits
+#define LIGHT_STIFFNESS 0.5
+#define MEDIUM_STIFFNESS 1
+#define HEAVY_STIFFNESS 1.5
+
+//Slowdown for suits - unused but eris put it here
+#define LIGHT_SLOWDOWN 0.1
+#define MEDIUM_SLOWDOWN 0.2
+#define HEAVY_SLOWDOWN 1
+
+//Offset for helmets
+#define LIGHT_OBSCURATION 2
+#define MEDIUM_OBSCURATION 3
+#define HEAVY_OBSCURATION 5
+
+//RIG ablation
+#define ABLATION_CERAMIC 3
+#define ABLATION_SOFT 5
+#define ABLATION_STANDARD 10
+#define ABLATION_RESILIENT 15
+#define ABLATION_DURABLE 20
+#define ABLATION_EVERLASTING 30
+
+//Style amount

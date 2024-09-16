@@ -1,0 +1,261 @@
+<h1>Belvoix Genetic Analyzer</h1>
+{{if data.menu_state == 4}}
+	<h2 class='average'>The Analyzer Console is currently busy.</h2>
+	<div class='notice'>
+	<center>Working...</center>
+	</div>
+	<p>
+	Thank you for your patience!
+	</p>
+{{else data.menu_state == 1}}
+	<div class="item">
+		<div class="itemlabelNarrow">{{:helper.link('Sync with R&D', 'refresh', {'sync' : 1}, null)}}</div>
+	</div>
+	<hr>
+{{else data.menu_state == 3}}
+	<div class="item">
+		<div class="itemlabelNarrow">{{:helper.link('Cancel', 'arrowthickstop-1-w', {'back' : 1}, data.menu_state == 1 ? 'disabled' : null)}}</div>
+		<div class="itemlabelNarrow">{{:helper.link('Combine Selected', 'arrowthickstop-1-w', {'combine' : 1}, data.can_combine ? null : 'disabled')}}</div>
+	</div>
+	<hr>
+{{else data.menu_state == 5}}
+	<div class="item">
+		<div class="itemlabelNarrow">{{:helper.link('Cancel', 'arrowthickstop-1-w', {'back' : 1}, data.menu_state == 1 ? 'disabled' : null)}}</div>
+		<div class="itemlabelNarrow">{{:helper.link('Begin Destructive Analysis', 'flag', {'analyze' : 1}, data.can_analyze ? null : 'disabled')}}</div>
+	</div>
+	<hr>
+{{else}}
+	<div class="item">
+		<div class="itemlabelNarrow">{{:helper.link('Back', 'arrowthickstop-1-w', {'back' : 1}, null)}}</div>
+	</div>
+	<hr>
+{{/if}}
+
+<!-- Main Menu -->
+{{if data.menu_state == 1}}
+	{{for data.sample_plates}}
+		<div class="fixedLeftWider" style="width:300px; display: table-cell">
+			<div class="itemlabelNarrow">{{:helper.link('Eject', 'eject', {'eject' : value.unique_id}, null, 'statusValue')}}</div>
+			<div class="itemlabelNarrow">{{:helper.link('Merge', 'shuffle', {'merge' : value.unique_id}, null, 'statusValue')}}</div>
+			<div class="itemlabelNarrow">{{:helper.link('Analyze', 'calculator', {'analyze' : value.unique_id}, null, 'statusValue')}}</div>
+			<br>
+			<div class="item">
+				<div class="block" style='padding: 0px; overflow: auto'>
+					<div class="item" style="margin: 0px">
+						<div class="itemContentWidest">{{:value.name}}</div>
+					</div>
+					<div class="item">
+						<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:value.instability}}%</div>
+					</div>
+					<div class="itemLabelWidest">Mutations</div>
+					{{for value.mutation_pool :mutation:mutation_i}}
+						{{if mutation.active}}
+							<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+						{{else}}
+							<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000">
+						{{/if}}
+							<div class="item">
+								<div style=float: left;><b>{{:mutation.name}}</b>: {{:mutation.desc}}</div>
+								<br>
+								<div style=float: left;><b>Copies Present</b>: {{:mutation.count}}</div>
+								<br>
+								<div style=float: left;><b>Instability</b>: {{:mutation.instability}}</div>
+								<hr>
+								<div class="itemlabelNarrow">{{:helper.link((mutation.active == 1) ? 'Deactivate' : 'Activate', mutation.active ? 'closethick' : 'check', {'toggle_active':mutation.key, 'unique_id':value.unique_id}, null, 'statusValue')}}</div>
+								<div class="itemlabelNarrow">{{:helper.link('Irradiate', 'radiation', {'irradiate':mutation.key, 'unique_id':value.unique_id}, null, 'statusValue')}}</div>
+								<div class="itemlabelNarrow">{{:helper.link('Combine', 'key', {'combine':mutation.key, 'unique_id':value.unique_id}, null)}}</div>
+								<br>
+								<div class="itemlabelNarrow">{{:helper.link('Purge', 'trash', {'purge':mutation.key, 'unique_id':value.unique_id}, null, 'statusValue')}}</div>
+							</div>
+						</div>
+					{{/for}}
+				</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No Samples Detected!</div>
+	{{/for}}
+<!-- Merge Select Menu -->
+{{else data.menu_state == 2}}
+	<h2 class='average'>Select Sample Plate to Merge With:</h2>
+	{{for data.sample_plates}}
+		<div class="fixedLeftWider" style="width:300px; display: table-cell">
+			<div class="itemlabelNarrow">{{:helper.link('Merge', 'shuffle', {'merge' : value.unique_id}, null, 'statusValue')}}</div>
+			<br>
+			<div class="item">
+				<div class="block" style='padding: 0px; overflow: auto'>
+					<div class="item" style="margin: 0px">
+						<div class="itemContentWidest">{{:value.name}}</div>
+					</div>
+					<div class="item">
+						<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:value.instability}}%</div>
+					</div>
+					<div class="itemLabelWidest">Mutations</div>
+					{{for value.mutation_pool :mutation:mutation_i}}
+						{{if mutation.active == 1}}
+							<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+						{{else}}
+							<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000">
+						{{/if}}
+							<div class="item">
+								<div style=float: left;><b>{{:mutation.name}}</b>: {{:mutation.desc}}</div>
+								<br>
+								<div style=float: left;><b>Copies Present</b>: {{:mutation.count}}</div>
+								<br>
+								<div style=float: left;><b>Instability</b>: {{:mutation.instability}}</div>
+							</div>
+						</div>
+					{{/for}}
+				</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No Samples to Merge!</div>
+	{{/for}}
+<!-- Combine Menu -->
+{{else data.menu_state == 3}}
+	<h2 class='average'>Combining Mutations:</h2>
+		<div class="block" style='padding: 0px; overflow: auto'>
+			{{for data.mutations_to_combine.mutation_pool :mutation:mutation_i}}
+				{{if mutation.active == 1}}
+					<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45; width:300px; float:left">
+				{{else}}
+					<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000; width:300px;  float:left">
+				{{/if}}
+					<div class="item">
+						<div style=float: left;><b>{{:mutation.name}}</b>: {{:mutation.desc}}</div>
+						<br>
+						<div style=float: left;><b>Copies Present</b>: {{:mutation.count}}</div>
+						<br>
+						<div style=float: left;><b>Instability</b>: {{:mutation.instability}}</div>
+						<hr>
+						<div class="itemlabelNarrow">{{:helper.link('Remove', 'key', {'remove':mutation.key}, null)}}</div>
+					</div>
+				</div>
+			{{empty}}
+				<div class='notice'>Nothing to Combine!</div>
+			{{/for}}
+		</div>
+	<hr>
+	<div class="fixedLeftWider" style="width:300px; display: table-cell">
+		<div class="item">
+			<div class="block" style='padding: 0px; overflow: auto'>
+				<div class="item" style="margin: 0px">
+					<div class="itemContentWidest">{{:data.active_sample.name}}</div>
+				</div>
+				<div class="item">
+					<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:data.active_sample.instability}}%</div>
+				</div>
+				<div class="itemLabelWidest">Mutations</div>
+				{{for data.active_sample.mutation_pool :mutation:mutation_i}}
+					{{if mutation.active == 1}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+					{{else}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000">
+					{{/if}}
+						<div class="item">
+							<div style=float: left;><b>{{:mutation.name}}</b>: {{:mutation.desc}}</div>
+							<br>
+							<div style=float: left;><b>Copies Present</b>: {{:mutation.count}}</div>
+							<br>
+							<div style=float: left;><b>Instability</b>: {{:mutation.instability}}</div>
+							<hr>
+							<div class="itemlabelNarrow">{{:helper.link('Add', 'check', {'add':mutation.key}, null)}}</div>
+						</div>
+					</div>
+				{{/for}}
+			</div>
+		</div>
+	</div>
+<!-- Combine Result -->
+{{else data.menu_state == 6}}
+	<h2 class='average'>Combination Complete!</h2>
+	{{if data.active_mutation.active == 1}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+	{{else}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000">
+	{{/if}}
+		<div class="item">
+			<div style=float: left;><b>{{:data.active_mutation.name}}</b>: {{:data.active_mutation.desc}}</div>
+			<br>
+			<div style=float: left;><b>Copies Present</b>: {{:data.active_mutation.count}}</div>
+			<br>
+			<div style=float: left;><b>Instability</b>: {{:data.active_mutation.instability}}</div>
+		</div>
+	</div>
+
+<!-- Irradiation Result -->
+{{else data.menu_state == 7}}
+	<h2 class='average'>Irradiation Complete!</h2>
+	{{if data.active_mutation.active == 1}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+	{{else}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ff0000">
+	{{/if}}
+		<div class="item">
+			<div style=float: left;><b>{{:data.active_mutation.name}}</b>: {{:data.active_mutation.desc}}</div>
+			<br>
+			<div style=float: left;><b>Copies Present</b>: {{:data.active_mutation.count}}</div>
+			<br>
+			<div style=float: left;><b>Instability</b>: {{:data.active_mutation.instability}}</div>
+		</div>
+	</div>
+<!--Analysis Menu-->
+{{else data.menu_state == 5}}
+	<h2 class='average'>Mark Mutations for Destructive Analysis:</h2>
+	{{if data.analysis_full}}
+		<div class='notice'>Maximum Number of Scannable Mutations Reached.</div>
+		<br>
+	{{/if}}
+	<div class="fixedLeftWider" style="width:300px; display: table-cell">
+		<div class="item">
+			<div class="block" style='padding: 0px; overflow: auto'>
+				<div class="item" style="margin: 0px">
+					<div class="itemContentWidest">{{:data.active_sample.name}}</div>
+				</div>
+				<div class="item">
+					<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:data.active_sample.instability}}%</div>
+				</div>
+				<div class="itemLabelWidest">Mutations</div>
+				{{for data.active_sample.mutation_pool :mutation:mutation_i}}
+					{{if mutation.marked == 1}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+					{{else data.analysis_full}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #808080">
+					{{else}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #ffa500">
+					{{/if}}
+						<div class="item">
+							<div style=float: left;><b>{{:mutation.name}}</b>: {{:mutation.desc}}</div>
+							<br>
+							<div style=float: left;><b>Copies Present</b>: {{:mutation.count}}</div>
+							<br>
+							<div style=float: left;><b>Instability</b>: {{:mutation.instability}}</div>
+							<hr>
+							{{if mutation.marked}}
+								<div class="itemlabelNarrow">{{:helper.link('Unmark', 'close', {'unmark':mutation.key}, null)}}</div>
+							{{else}}
+								<div class="itemlabelNarrow">{{:helper.link('Mark', 'check', {'mark':mutation.key}, data.analysis_full ? 'disabled' : null)}}</div>
+							{{/if}}
+						</div>
+					</div>
+				{{/for}}
+			</div>
+		</div>
+	</div>
+{{else data.menu_state == 8}}
+	<h2 class='average'>Analysis Complete!</h2>
+	{{for data.analyzed_mutations}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+			<div class="item">
+				<div style=float: left;><b>{{:value.name}}</b>: {{:value.desc}}</div>
+				<br>
+				<div style=float: left;><b>Copies Present</b>: {{:value.count}}</div>
+				<br>
+				<div style=float: left;><b>Instability</b>: {{:value.instability}}</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No new mutations discovered!</div>
+	{{/for}}
+{{/if}}

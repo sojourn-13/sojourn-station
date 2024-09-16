@@ -1,10 +1,11 @@
 // fun if you want to typecast humans/monkeys/etc without writing long path-filled lines.
+/*
 /proc/isxenomorph(A)
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		return istype(H.species, /datum/species/xenos)
 	return 0
-
+*/
 /proc/issmall(A)
 	if(A && isliving(A))
 		var/mob/living/L = A
@@ -30,30 +31,30 @@
 /mob/living/carbon/human/isMonkey()
 	return istype(species, /datum/species/monkey)
 
-proc/isdeaf(A)
+/proc/isdeaf(A)
 	if(isliving(A))
 		var/mob/living/M = A
 		return (M.sdisabilities & DEAF) || M.ear_deaf
 	return 0
 
-proc/hasorgans(A) // Fucking really??
+/proc/hasorgans(A) // Fucking really??
 	return ishuman(A)
 
-proc/iscuffed(A)
+/proc/iscuffed(A)
 	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		if(C.handcuffed)
 			return 1
 	return 0
 
-proc/hassensorlevel(A, var/level)
+/proc/hassensorlevel(A, var/level)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
 		return U.sensor_mode >= level
 	return 0
 
-proc/getsensorlevel(A)
+/proc/getsensorlevel(A)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
@@ -140,14 +141,19 @@ var/list/global/organ_rel_size = list(
 		if(target.buckled || target.lying)
 			return zone
 		// if your target is being grabbed aggressively by someone you cannot miss either
-		for(var/obj/item/weapon/grab/G in target.grabbed_by)
+		for(var/obj/item/grab/G in target.grabbed_by)
 			if(G.state >= GRAB_AGGRESSIVE)
 				return zone
 
 	var/miss_chance = 10
 	if (zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
-	miss_chance = max(miss_chance + miss_chance_mod, 0)
+
+	//See-through people are harder to hit
+	if(CLOAKING in target.mutations)
+		miss_chance += 15
+
+	miss_chance = clamp(miss_chance + miss_chance_mod, 0, 90)
 	if(prob(miss_chance))
 		if(prob(70))
 			return null
@@ -196,7 +202,7 @@ var/list/global/organ_rel_size = list(
 	if(re_encode)
 		. = html_encode(.)
 
-proc/slur(phrase)
+/proc/slur(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
@@ -209,9 +215,9 @@ proc/slur(phrase)
 			if(lowertext(newletter)=="s")	newletter="ch"
 			if(lowertext(newletter)=="a")	newletter="ah"
 			if(lowertext(newletter)=="c")	newletter="k"
-		switch(rand(1,15))
-			if(1,3,5,8)	newletter="[lowertext(newletter)]"
-			if(2,4,6,15)	newletter="[uppertext(newletter)]"
+		switch(rand(1,7))
+			if(1,3,5)	newletter="[lowertext(newletter)]"
+			if(2,4,6)	newletter="[uppertext(newletter)]"
 			if(7)	newletter+="'"
 			//if(9,10)	newletter="<b>[newletter]</b>"
 			//if(11,12)	newletter="<big>[newletter]</big>"
@@ -220,28 +226,42 @@ proc/slur(phrase)
 	return html_encode(newphrase)
 
 /proc/stutter(phrase)
-	var/n = length(phrase)//length of the entire word
-	var/list/t = list()
-	var/p = 1//1 is the start of any word
-	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(phrase, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (lowertext(n_letter) in LIST_OF_CONSONANT))
-			if (prob(10))
-				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
-			else
-				if (prob(20))
-					n_letter = text("[n_letter]-[n_letter]-[n_letter]")
-				else
-					if (prob(5))
-						n_letter = null
-					else
-						n_letter = text("[n_letter]-[n_letter]")
-		t += n_letter //since the above is ran through for each letter, the text just adds up back to the original word.
-		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize(jointext(t,null))
+	phrase = html_decode(phrase)
+
+	var/list/split_phrase = splittext(phrase," ") //Split it up into words.
+
+	var/list/unstuttered_words = split_phrase.Copy()
+	var/i = rand(1,3)
+	for(,i > 0,i--) //Pick a few words to stutter on.
+
+		if (!unstuttered_words.len)
+			break
+		var/word = pick(unstuttered_words)
+		unstuttered_words -= word //Remove from unstuttered words so we don't stutter it again.
+		var/index = split_phrase.Find(word) //Find the word in the split phrase so we can replace it.
+
+		//Search for dipthongs (two letters that make one sound.)
+		var/first_sound = copytext(word,1,3)
+		var/first_letter = copytext(word,1,2)
+		if(lowertext(first_sound) in list("ch","th","sh"))
+			first_letter = first_sound
+
+		//Repeat the first letter to create a stutter.
+		var/rnum = rand(1,3)
+		switch(rnum)
+			if(1)
+				word = "[first_letter]-[word]"
+			if(2)
+				word = "[first_letter]-[first_letter]-[word]"
+			if(3)
+				word = "[first_letter]-[word]"
+
+		split_phrase[index] = word
+
+	return sanitize(jointext(split_phrase," "))
 
 
-proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
+/proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
@@ -335,22 +355,13 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 				a_intent = intent_numeric((intent_numeric(a_intent)+1) % 4)
 			if("left")
 				a_intent = intent_numeric((intent_numeric(a_intent)+3) % 4)
-//		if(hud_used && hud_used.action_intent)
-//			hud_used.action_intent.icon_state = "intent_[a_intent]"
 
 	else if(isrobot(src))
-		switch(input)
-			if(I_HELP)
-				a_intent = I_HELP
-			if(I_HURT)
-				a_intent = I_HURT
-			if("right","left")
-				a_intent = intent_numeric(intent_numeric(a_intent) - 3)
-/*		if(hud_used && hud_used.action_intent)
-			if(a_intent == I_HURT)
-				hud_used.action_intent.icon_state = I_HURT
-			else
-				hud_used.action_intent.icon_state = I_HELP*/
+		if(a_intent == I_HELP)
+			a_intent = I_HURT
+		else
+			a_intent = I_HELP
+
 	if (HUDneed.Find("intent"))
 		var/obj/screen/intent/I = HUDneed["intent"]
 		I.update_icon()
@@ -505,24 +516,24 @@ proc/is_blind(A)
 		return SAFE_PERP
 
 	//Agent cards lower threatlevel.
-	var/obj/item/weapon/card/id/id = GetIdCard()
-	if(id && istype(id, /obj/item/weapon/card/id/syndicate))
+	var/obj/item/card/id/id = GetIdCard()
+	if(id && istype(id, /obj/item/card/id/syndicate))
 		threatcount -= 2
 	// A proper	CentCom id is hard currency.
-	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
+	else if(id && istype(id, /obj/item/card/id/centcom))
 		return SAFE_PERP
 
 	if(check_access && !access_obj.allowed(src))
 		threatcount += 4
 
 	if(auth_weapons && !access_obj.allowed(src))
-		if(istype(l_hand, /obj/item/weapon/gun) || istype(l_hand, /obj/item/weapon/melee))
+		if(istype(l_hand, /obj/item/gun) || istype(l_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(r_hand, /obj/item/weapon/gun) || istype(r_hand, /obj/item/weapon/melee))
+		if(istype(r_hand, /obj/item/gun) || istype(r_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(belt, /obj/item/weapon/gun) || istype(belt, /obj/item/weapon/melee))
+		if(istype(belt, /obj/item/gun) || istype(belt, /obj/item/melee))
 			threatcount += 2
 
 		if(species.name != "Human")
@@ -556,12 +567,12 @@ proc/is_blind(A)
 
 #undef SAFE_PERP
 
-/mob/proc/get_multitool(var/obj/item/weapon/tool/multitool/P)
+/mob/proc/get_multitool(var/obj/item/tool/multitool/P)
 	if(istype(P))
 		return P
 
 /mob/observer/ghost/get_multitool()
-	return can_admin_interact() && ..(ghost_multitool)
+	return isAdminGhostAI(src) && ..(ghost_multitool)
 
 /mob/living/carbon/human/get_multitool()
 	return ..(get_active_hand())
@@ -578,11 +589,14 @@ proc/is_blind(A)
 /mob/proc/in_perfect_health()
 	return
 
+/mob/proc/in_good_health()
+	return
+
 /mob/living/in_perfect_health()
-	if (stat == DEAD)
+	if(stat == DEAD)
 		return FALSE
 
-	if (brainloss || bruteloss || cloneloss || fireloss || halloss || oxyloss || toxloss)
+	if(usr.health != usr.maxHealth)
 		return FALSE
 
 
@@ -597,6 +611,16 @@ proc/is_blind(A)
 			return FALSE
 
 	return ..()
+
+/mob/living/carbon/human/in_good_health()
+	if(stat == DEAD)
+		return FALSE
+
+	if(health != maxHealth)
+		return FALSE
+
+	return TRUE
+
 
 /mob/get_sex()
 	return gender
@@ -620,5 +644,180 @@ proc/is_blind(A)
 	for(var/obj/A in embedded)
 		if (A.loc == src)
 			A.forceMove(loc)
+			if(isitem(A))
+				var/obj/item/I = A
+				I.on_embed_removal(src)
 			A.tumble()
 	embedded = list()
+
+/mob/proc/skill_to_evade_traps()
+	if(!stats)
+		return 0
+	var/prob_evade = 0
+	var/base_prob_evade = 30
+	if(MOVING_DELIBERATELY(src))
+		prob_evade += base_prob_evade
+	if(!stats)
+		return prob_evade
+	prob_evade += base_prob_evade * (stats.getStat(STAT_VIG)/STAT_LEVEL_MASTER - weight_coeff())
+	if(stats.getPerk(PERK_SURE_STEP))
+		prob_evade += base_prob_evade*30/STAT_LEVEL_MASTER
+	//if(stats.getPerk(PERK_RAT))
+	//	prob_evade += base_prob_evade/1.5
+	return prob_evade
+
+/mob/proc/mob_playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff, is_global, frequency, is_ambiance = 0,  ignore_walls = TRUE, zrange = 2, override_env, envdry, envwet, use_pressure = TRUE)
+	if(isliving(src))
+		var/mob/living/L = src
+		vol *= L.noise_coeff + weight_coeff()
+		extrarange *= L.noise_coeff + weight_coeff()
+	playsound(source, soundin, vol, vary, extrarange, falloff, is_global, frequency, is_ambiance,  ignore_walls, zrange, override_env, envdry, envwet, use_pressure)
+
+/mob/proc/weight_coeff()
+	return get_max_w_class()/(ITEM_SIZE_TITANIC)
+
+// Steps used to modify wounding multiplier. Should be used alongside edge/sharp when determining final damage of BRUTE-type attacks.
+/proc/step_wounding(var/wounding, var/is_increase = FALSE) // Usually mobs are the ones attacking (no), so this should be okay here? If it gets lucky a macro would be slightly faster
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_TINY
+			if(WOUNDING_TINY)
+				return WOUNDING_SMALL
+			if(WOUNDING_SMALL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_EXTREME
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_DEVESTATING
+	else
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_TINY
+			if(WOUNDING_NORMAL)
+				return WOUNDING_SMALL
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_NORMAL
+			if(WOUNDING_WIDE)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_EXTREME)
+				return WOUNDING_WIDE
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_EXTREME
+
+/proc/step_wounding_double(var/wounding, var/is_increase = FALSE)
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_SMALL
+			if(WOUNDING_TINY)
+				return WOUNDING_NORMAL
+			if(WOUNDING_SMALL)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+	else
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_TINY
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_SMALL
+			if(WOUNDING_WIDE)
+				return WOUNDING_NORMAL
+			if(WOUNDING_EXTREME)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_WIDE
+
+// Determine wounding level. If var/wounding is provided, the attack should come from a projectile. This isn't the case yet, as we default to var/wounding = 1 until melee rework.
+/proc/wound_check(var/injurytype, var/wounding, var/edge, var/sharp)
+	if(sharp && (!edge)) // impaling/piercing, 2x damage, affected by injurytype
+		switch(injurytype)
+			if(INJURY_TYPE_HOMOGENOUS)
+				return wounding ? step_wounding_double(wounding) : 1
+			if(INJURY_TYPE_UNLIVING)
+				return wounding ? step_wounding(wounding) : 1.5
+			else
+				return wounding ? wounding : 2
+	if(sharp && edge) // cutting, 1.5x damage
+		return wounding ? wounding : 1.5
+	return wounding ? wounding : 1 // crushing, 1x damage
+
+//Soj edit
+/mob/proc/get_health()
+	return health
+
+/**
+ * Wrapper for walk_to. Most cases of walk_to should be instead substituted for this, although this has slightly worse performance than stock walk_to.
+ *
+ * Args:
+ * All the same as walk_to.
+ * deathcheck = FALSE: If deathcheck == TRUE, and Ref.stat == DEAD, we will return FALSE.
+ * respect_override = TRUE: If TRUE, we will check ref's walk_override_timer variable (set whenever this proc is called with override = TRUE), and if its more or equal to world.time, we return.
+ * temporary_walk = FALSE: If this or override is true, we calculate a timer based on distance and the Lag arg. If this is true, we set a timer to walk_to(Ref, 0) based on
+ * the aforementioned timer. The proc set for this timer is walk_to_wrapper_timer. See it's doc for more info.
+ * override = FALSE: If true, we set the ref's walk_override_timer to world.time + the aforementioned timer. See respect_override for more info.
+**/
+/proc/walk_to_wrapper(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0, deathcheck = FALSE, respect_override = TRUE, temporary_walk = FALSE, override = FALSE)
+	if (deathcheck && Ref.stat == DEAD)
+		return FALSE
+	if (respect_override && (Ref.walk_override_timer >= world.time))
+		return FALSE
+	if (override || temporary_walk)
+		var/timer = ((get_dist(Ref, Trg) * (Lag * 1.2)) + 3) // WARNING. ARBITRARY MATH. I DO NOT KNOW IF THIS WILL WORK.
+		if (override)
+			Ref.walk_override_timer = (world.time + timer)
+		if (temporary_walk)
+			var/current_time = world.time
+			Ref.walk_to_initial_time = current_time
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(walk_to_wrapper_timer), Ref, 0, current_time), timer)
+	walk_to(Ref, Trg, Min, Lag, Speed)
+	return TRUE
+
+/// For use in walk_to_wrapper exclusively. If another temporary walk has been called while this timer was active, this walk is cancelled already, so we return.
+/proc/walk_to_wrapper_timer(atom/movable/Ref, Trg, initial)
+	if (initial != Ref.walk_to_initial_time) //so multiple movements dont interrupt eachother
+		return FALSE
+	walk_to(Ref, Trg)
+
+///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
+/proc/isAdminObserver(mob/user)
+	if(!user) //Are they a mob? Auto interface updates call this with a null src
+		return
+	if(!user.client) // Do they have a client?
+		return
+	if(!isobserver(user)) // Are they a ghost?
+		return
+	if(!check_rights_for(user.client, R_ADMIN)) // Are they allowed?
+		return
+	return TRUE
+
+///Is the passed in mob an admin ghost WITH AI INTERACT enabled
+/proc/isAdminGhostAI(mob/user)
+	if(!isAdminObserver(user))
+		return
+	if(!user.client.AI_Interact) // Do they have it enabled?
+		return
+	return TRUE

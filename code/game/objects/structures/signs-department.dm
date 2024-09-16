@@ -251,95 +251,95 @@
 
 /obj/structure/sign/departmentold/genetics
 	name = "Genetics Division"
-	desc = "A sign labelling the genetics division of the station. Watch for mutants."
+	desc = "A sign labelling the genetics division of the colony. Watch for mutants."
 	icon_state = "minskygene"
 
 /obj/structure/sign/departmentold/robotics
 	name = "Robotics Division"
-	desc = "A sign labelling the robotics division of the station. Produces $6 cyborgs."
+	desc = "A sign labelling the robotics division of the colony. Produces $6 cyborgs."
 	icon_state = "minskyrobo"
 
 /obj/structure/sign/departmentold/xenobio
 	name = "Xenobiology Division"
-	desc = "A sign labelling the xenobiology division of the station. Xeno Animal Handling Permit #180924609"
+	desc = "A sign labelling the xenobiology division of the colony. Xeno Animal Handling Permit #180924609"
 	icon_state = "minskyxeno"
 
 /obj/structure/sign/departmentold/engineering2
 	name = "Engineering Department"
-	desc = "A sign labelling the engineering department of the station. The fewer moving parts the better."
+	desc = "A sign labelling the engineering department of the colony. The fewer moving parts the better."
 	icon_state = "minskyengi"
 
 /obj/structure/sign/departmentold/telecoms
 	name = "Telecommunications Department"
-	desc = "A sign labelling the telecommunications division of the station. 'Nuff said."
+	desc = "A sign labelling the telecommunications division of the colony. 'Nuff said."
 	icon_state = "minskytcom"
 
 /obj/structure/sign/departmentold/atmos
 	name = "Atmospherics Division"
-	desc = "A sign labelling the atmospherics division of the station. Making Comrade Dyatlov proud since April 26th, 1981."
+	desc = "A sign labelling the atmospherics division of the colony. Making Comrade Dyatlov proud since April 26th, 1981."
 	icon_state = "minskyatmo"
 
 /obj/structure/sign/departmentold/medical1
 	name = "Medical Department"
-	desc = "A sign labelling the medical department of the station. You'll probably get treatment here."
+	desc = "A sign labelling the medical department of the colony. You'll probably get treatment here."
 	icon_state = "minskymedic"
 
 /obj/structure/sign/departmentold/medical2
 	name = "Medical Department"
-	desc = "A sign labelling the medical department of the station. You'll probably get treatment here."
+	desc = "A sign labelling the medical department of the colony. You'll probably get treatment here."
 	icon_state = "minskymedicb"
 
 /obj/structure/sign/departmentold/cloning1
 	name = "Cloning Division"
-	desc = "A sign labelling the cloning division of the station. Your last hope."
+	desc = "A sign labelling the cloning division of the colony. Your last hope."
 	icon_state = "minskyclone"
 
 /obj/structure/sign/departmentold/cloning2
 	name = "Cloning Division"
-	desc = "A sign labelling the cloning division of the station. Your last hope."
+	desc = "A sign labelling the cloning division of the colony. Your last hope."
 	icon_state = "minskycloneb"
 
 /obj/structure/sign/departmentold/chemistry2
 	name = "Chemistry Division"
-	desc = "A sign labelling the chemicals division of the station. Similar to the kitchens, just don't lick the spoon."
+	desc = "A sign labelling the chemicals division of the colony. Similar to the kitchens, just don't lick the spoon."
 	icon_state = "minskychem"
 
 /obj/structure/sign/departmentold/chemistry3
 	name = "Chemistry Division"
-	desc = "A sign labelling the chemicals division of the station. Similar to the kitchens, just don't lick the spoon."
+	desc = "A sign labelling the chemicals division of the colony. Similar to the kitchens, just don't lick the spoon."
 	icon_state = "minskychemb"
 
 /obj/structure/sign/departmentold/viro1
 	name = "Virology Division"
-	desc = "A sign labelling the virology division of the station. Free hugs!!!."
+	desc = "A sign labelling the virology division of the colony. Free hugs!!!."
 	icon_state = "minskyviro"
 
 /obj/structure/sign/departmentold/viro2
 	name = "Virology Division"
-	desc = "A sign labelling the virology division of the station. Free hugs!!!."
+	desc = "A sign labelling the virology division of the colony. Free hugs!!!."
 	icon_state = "minskyvirob"
 
 /obj/structure/sign/departmentold/security2
 	name = "Security Department"
-	desc = "A sign labelling the security department of the station. Guilty until proven innocent."
+	desc = "A sign labelling the security department of the colony. Guilty until proven innocent."
 	icon_state = "minskysec"
 
 /obj/structure/sign/departmentold/cargo2
 	name = "Cargo Division"
-	desc = "A sign labelling the cargo division of the station. Watch your pockets and credit disks."
+	desc = "A sign labelling the cargo division of the colony. Watch your pockets and credit disks."
 	icon_state = "minskycargo"
 
 /obj/structure/sign/departmentold/mining
 	name = "Mining Division"
-	desc = "A sign labelling the mining division of the station. Minions of Smaug."
+	desc = "A sign labelling the mining division of the colony. Minions of Smaug."
 	icon_state = "minskymine"
 
 /obj/structure/sign/departmentold/janitorial
 	name = "Janitorial Division"
-	desc = "A sign labelling the janitorial closet of the station. Clean up after yourself.... please."
+	desc = "A sign labelling the janitorial closet of the colony. Clean up after yourself.... please."
 	icon_state = "minskyjani"
 
 /obj/structure/sign/departmentold/hydroponics
 	name = "Hydroponics Division"
-	desc = "A sign labelling the hydroponics division of the station. Don't mind the redeyes and giggles."
+	desc = "A sign labelling the hydroponics division of the colony. Don't mind the redeyes and giggles."
 	icon_state = "minskyhydro"

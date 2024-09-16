@@ -8,7 +8,7 @@
 	var/charging = FALSE
 	var/charge = 0
 	var/charge_max = 50
-	var/flickering = 0
+	var/flick_lighting = 0
 	var/ticks_before_next_summon = 2
 	var/mobgenlist = list(
 		/mob/living/simple_animal/hostile/bear,
@@ -20,16 +20,16 @@
 		/mob/living/simple_animal/hostile/viscerator)//duplicates to rig chances towards spawning more weaker enemies, but in favour of generally spawning more enemies
 	var/turfs_around = list()
 	var/victims_to_teleport = list()
-	var/obj/crawler/spawnpoint/target = null
-	anchored = 1
+	var/obj/crawler/spawnpoint/target
+	anchored = TRUE
 	unacidable = 1
-	density = 1
+	density = TRUE
 
 /obj/rogue/teleporter/New()
 	for(var/turf/T in orange(7, src))
 		turfs_around += T
 
-/obj/rogue/teleporter/attack_hand(var/mob/user as mob)
+/obj/rogue/teleporter/attack_hand(mob/user)
 	if(!charge)
 		target = locate(/obj/crawler/spawnpoint)
 		if(target)
@@ -38,7 +38,7 @@
 		else
 			to_chat(user, "Nothing seems to happen.")
 	else if(charging)
-		if(flickering)
+		if(flick_lighting)
 			to_chat(user, "The portal looks too unstable to pass through!")
 		else
 			to_chat(user, "The teleporter needs time to charge.")
@@ -112,8 +112,11 @@
 	for(var/mob/living/silicon/robot/R in range(8, src))//Borgs too
 		victims_to_teleport += R
 
+	for(var/obj/mecha/E in range(8, src))//And exosuits too
+		victims_to_teleport += E
+
 	for(var/mob/living/M in victims_to_teleport)
-		M.forceMove(get_turf(target))
+		go_to_bluespace(get_turf(src), 3, FALSE, M, get_turf(target))
 
 	new /obj/structure/scrap/science/large(src.loc)
 
@@ -159,7 +162,7 @@
 
 	add_overlay(image(icon, icon_state = "portal_failing"))
 	visible_message("The portal starts flickering!")
-	flickering = 1
+	flick_lighting = 1
 	sleep(100)
 	update_icon()
 
@@ -172,26 +175,15 @@
 		if (get_dist(src, O) > 8)
 			continue
 
-		var/flash_time = 8
 		if (ishuman(O))
 			var/mob/living/carbon/human/H = O
-			if(!H.eyecheck() <= 0)
-				continue
-			flash_time *= H.species.flash_mod
-			var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
-			if(!E)
-				return
-			if(E.is_bruised() && prob(E.damage + 50))
-				if (O.HUDtech.Find("flash"))
-					flick("e_flash", O.HUDtech["flash"])
-				E.damage += rand(1, 5)
+			H.flash(FALSE, FALSE , FALSE , FALSE, 8)
+
 		else
 			if(!O.blinded)
 				if (istype(O,/mob/living/silicon/ai))
 					return
-				if (O.HUDtech.Find("flash"))
-					flick("flash", O.HUDtech["flash"])
-		O.Weaken(flash_time)
+				O.flash(FALSE, FALSE, FALSE ,FALSE)
 
 		sleep(1)
 
@@ -205,9 +197,9 @@
 	var/turf/target = null
 	var/active = FALSE
 	w_class = ITEM_SIZE_GARGANTUAN
-	anchored = 1
+	anchored = TRUE
 	unacidable = 1
-	density = 1
+	density = TRUE
 	var/t_x
 	var/t_y
 	var/t_z
@@ -215,7 +207,7 @@
 
 
 
-/obj/rogue/telebeacon/attack_hand(var/mob/user as mob)
+/obj/rogue/telebeacon/attack_hand(mob/user)
 	if(!target)
 		target = locate(/obj/crawler/teleport_marker)
 	if(!active)
@@ -234,10 +226,10 @@
 		for(var/mob/living/silicon/robot/R in range(8, src))//Borgs too
 			victims_to_teleport += R
 
-		for(var/mob/living/M in victims_to_teleport)
-			M.x = target.x
-			M.y = target.y
-			M.z = target.z
+		for(var/obj/structure/closet/C in range(8, src))//Clostes as well, for transport and storage
+			victims_to_teleport += C
+		for(var/atom/movable/M in victims_to_teleport)
+			go_to_bluespace(get_turf(src), 3, FALSE, M, get_turf(target))
 			sleep(1)
 			var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 			sparks.set_up(3, 0, get_turf(loc))
@@ -249,7 +241,7 @@
 	desc = "A metallic pylon, covered in rust. It seems still operational. Barely."
 
 
-/obj/rogue/telebeacon/return_beacon/attack_hand(var/mob/user as mob)
+/obj/rogue/telebeacon/return_beacon/attack_hand(mob/user)
 	if(!target)
 		target = locate(/obj/crawler/teleport_marker)
 	if(!active)
@@ -261,7 +253,7 @@
 			to_chat(user, "The beacon has no destination, Ahelp this.")
 	else if(active)
 		to_chat(user, "You reach out and touch the beacon. A strange feeling envelops you.")
-		user.forceMove(get_turf(target))
+		go_to_bluespace(get_turf(src), 3, FALSE, user, get_turf(target))
 		sleep(1)
 		var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 		sparks.set_up(3, 0, get_turf(user))

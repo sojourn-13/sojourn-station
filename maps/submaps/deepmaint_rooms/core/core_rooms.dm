@@ -26,3 +26,52 @@
 	name = "AI core"
 	desc = " I'm sorry, Dave."
 	mappath = 'maps/submaps/deepmaint_rooms/core/ai_core.dmm'
+
+
+/datum/map_template/deepmaint_template/big/dinner
+	name = "dinner"
+	desc = "A last meal."
+	mappath = 'maps/submaps/deepmaint_rooms/core/diner.dmm'
+
+
+/datum/map_template/deepmaint_template/big/telecoms
+	name = "telecoms"
+	desc = "Calls for help in a void."
+	mappath = 'maps/submaps/deepmaint_rooms/core/telecoms.dmm'
+
+
+/datum/map_template/deepmaint_template/big/overrun
+	name = "over run"
+	desc = "A last stand before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
+
+
+/datum/map_template/deepmaint_template/big/Lab
+	name = "Lab"
+	desc = "A lab before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/Lab.dmm'
+
+
+/datum/map_template/deepmaint_template/big/Lab2
+	name = "Lab2"
+	desc = "A lab2 ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/Lab2.dmm'
+
+
+/datum/map_template/deepmaint_template/big/lab5
+	name = "lab5"
+	desc = "A lab5 before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/lab5.dmm'
+
+
+/datum/map_template/deepmaint_template/big/xenostudy
+	name = "xenostudy"
+	desc = "A xenostudy before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/xenostudy.dmm'
+
+
+/datum/map_template/deepmaint_template/big/medbay
+	name = "medbay"
+	desc = "A medbay stand before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/medbay.dmm'
+

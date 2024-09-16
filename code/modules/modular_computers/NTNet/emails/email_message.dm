@@ -23,9 +23,9 @@
 	var/list/msg = list()
 	msg += "*--*"
 	msg += SPAN_NOTICE("New mail received from [source]:")
-	msg += "<b>Subject:</b> [utf8_to_cp1251(title)]"
+	msg += "<b>Subject:</b> [title]"
 	msg += "<b>Message:</b>"
-	msg += utf8_to_cp1251(pencode2html(stored_data))
+	msg += pencode2html(stored_data)
 
 	if(attachment)
 		msg += "<b>Attachment:</b> [attachment.filename].[attachment.filetype] ([attachment.size]GQ)"
@@ -35,7 +35,7 @@
 
 	msg += "*--*"
 
-	to_chat(L, unicode_to_cyrillic(jointext(msg, "\n")))
+	to_chat(L, jointext(msg, "\n"))
 
 
 /datum/computer_file/data/email_message/proc/notify_from_source(atom/notification_source)
@@ -55,8 +55,8 @@
 // Turns /email_message/ file into regular /data/ file.
 /datum/computer_file/data/email_message/proc/export()
 	var/datum/computer_file/data/dat = new/datum/computer_file/data()
-	dat.stored_data =  "Received from [source] at [timestamp]."
-	dat.stored_data += "\[b\][title]\[/b\]"
+	dat.stored_data =  "Received from [source] at [timestamp].\[br\]"
+	dat.stored_data += "\[b\][title]\[/b\]\[br\]"
 	dat.stored_data += stored_data
 	dat.calculate_size()
 	return dat

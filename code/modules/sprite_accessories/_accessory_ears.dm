@@ -25,12 +25,51 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/antlers_a
+	name = "Antlers, With Ears alt"
+	desc = ""
+	icon_state = "elk-ears"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/antlers_small
 	name = "Antlers, Small"
 	desc = ""
 	icon_state = "smallantlers"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+//Icons form Occult sprited By Zenitheevee (I think)
+/datum/sprite_accessory/ears/antlers_marked_small_occultported
+	name = "Antlers Mark, Small"
+	desc = ""
+	icon_state = "antlermarksmall"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermarksmall_head_occultported
+	name = "Antlers Mark, Small Head"
+	desc = ""
+	icon_state = "antlermarksmall-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlers_mark_occultported
+	name = "Antlers Mark"
+	desc = ""
+	icon_state = "antlermark"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermark_head_occultported
+	name = "Antlers Mark, Head"
+	desc = ""
+	icon_state = "antlermark-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+
+//End of Occult sprited things (That im aware of)
 
 /datum/sprite_accessory/ears/antlers_smallwithears
 	name = "Antlers, Small With Ears"
@@ -67,6 +106,15 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+//Skyrats ported
+/*
+/datum/sprite_accessory/ears/bunnyhc_alt
+	name = "Bunny Ears, Alt"
+	desc = ""
+	icon_state = "bunny_alt"
+	colored_layers = 3 //Looks like 2 is intented
+	blend = ICON_MULTIPLY
+*/
 /datum/sprite_accessory/ears/bunny_floppy
 	name = "Bunny Ears, Floppy"
 	desc = ""
@@ -78,6 +126,58 @@
 	name = "Bunny Ears, Swooped"
 	desc = ""
 	icon_state = "bunny_swooped"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+/*
+//Skyrats ported
+/datum/sprite_accessory/ears/bunny_rabbet
+	name = "Bunny Ears, Rabbet"
+	desc = ""
+	icon_state = "rabbit_lop"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+//Skyrats ported
+/datum/sprite_accessory/ears/bunny_rabbet_alt
+	name = "Bunny Ears, Rabbet Alt"
+	desc = ""
+	icon_state = "rabbit"
+	colored_layers = 6
+	blend = ICON_MULTIPLY
+*/
+/datum/sprite_accessory/ears/bnnuy
+	name = "Bunny Ears, Short"
+	desc = ""
+	icon_state = "bnnuy"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/bnnuy_long
+	name = "Bunny Ears, Long"
+	desc = ""
+	icon_state = "bnnuy_long"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+/*
+//Skyrats ported
+/datum/sprite_accessory/ears/bnnuy_long_est
+	name = "Bunny Ears, Tall"
+	desc = ""
+	icon_state = "bunny_tall"
+	colored_layers = 4 //Looks like 3 is intented
+	blend = ICON_MULTIPLY
+*/
+/datum/sprite_accessory/ears/jackalope
+	name = "Jackalope ears and horns"
+	desc = ""
+	icon_state = "jackalope"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/jackalopeh
+	name = "Jackalope horns"
+	desc = ""
+	icon_state = "jackalopehorns" //wouldn't these just be deer antlers?
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -99,6 +199,12 @@
 	name = "Cow Horns"
 	desc = ""
 	icon_state = "cowearshc"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/cowcalt
+	name = "Cow Horns Alt"
+	icon_state = "cowearshcalt"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
@@ -171,7 +277,15 @@
 	icon_state = "foxearshc"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
-
+/*
+//Skyrats ported
+/datum/sprite_accessory/ears/higherlanderhc_alt
+	name = "Fox Ears Alt"
+	desc = ""
+	icon_state = "fox"
+	colored_layers = 4
+	blend = ICON_MULTIPLY
+*/
 /datum/sprite_accessory/ears/frills_aquatic
 	name = "Frills, Aquatic"
 	desc = ""
@@ -197,6 +311,13 @@
 	name = "Frills, Simple"
 	desc = ""
 	icon_state = "frills_simple"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/frills_big
+	name = "Frills, Big"
+	desc = ""
+	icon_state = "frills_big"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -235,10 +356,31 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/kittyalt
+	name = "Alternate Feline Ears"
+	desc = ""
+	icon_state = "cat_alt"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/lizard
 	name = "Lizard Horns"
 	desc = ""
 	icon_state = "molenar-deathclaw"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/ram
+	name = "Ram Horns"
+	desc = ""
+	icon_state = "ram-horns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/sheep
+	name = "Sheep ears"
+	desc = ""
+	icon_state = "sheep"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -396,3 +538,206 @@
 	icon_state = "wolf"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/wolfhc_tall
+	name = "Wolf Ears Taller"
+	desc = ""
+	icon_state = "bigwolf"
+	colored_layers = 3
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axolotl
+	name = "Axolotl Gills"
+	desc = ""
+	icon_state = "axolotl"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/liftedhorns
+	name = "Lifted Horns"
+	desc = ""
+	icon_state = "liftedhorns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/newcurlyhorn
+	name = "Bulky Curly Horn"
+	desc = ""
+	icon_state = "newcurlyhorn"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/newdragonhorns
+	name = "Bulky Dragon Horn"
+	desc = ""
+	icon_state = "newdragonhorns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shstabbers
+    name = "Sablekyne Stabber Horns"
+    desc = ""
+    icon_state = "sh_stabbers"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shdogma
+    name = "Sablekyne Dogma Horns"
+    desc = ""
+    icon_state = "sh_dogma"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shoutstretched
+    name = "Sablekyne Outstretched Horns"
+    desc = ""
+    icon_state = "sh_outstretched"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shhalo
+    name = "Sablekyne Halo Horns"
+    desc = ""
+    icon_state = "sh_halo"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shupwards
+    name = "Sablekyne Upward Horns"
+    desc = ""
+    icon_state = "sh_upwards"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shgreathorns
+    name = "Sablekyne Great Horns"
+    desc = ""
+    icon_state = "sh_greathorns"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shbuns
+    name = "Sablekyne Bun Horns"
+    desc = ""
+    icon_state = "sh_bunhorns"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shmurauder
+    name = "Sabelkyne Murauder Horns"
+    desc = ""
+    icon_state = "sh_murauder"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shfaceguard
+    name = "Sabelkyne Faceguard Horns"
+    desc = ""
+    icon_state = "sh_faceguard"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/uni
+    name = "Uni-Horn"
+    desc = ""
+    icon_state = "uni-horn"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/stabbers
+    name = "Stabber Horns (Colorable)"
+    desc = ""
+    icon_state = "stabbers"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/billbery
+    name = "Billberry Horns"
+    desc = ""
+    icon_state = "billberry"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/billberyears
+    name = "Billberry Horns (Ears)"
+    desc = ""
+    icon_state = "billberry_ears"
+    colored_layers = 2
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/elfslonger
+    name = "Long Elf Ears"
+    desc = ""
+    icon_state = "elfs_longer"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/elfswider
+    name = "Wide Elf Ears"
+    desc = ""
+    icon_state = "elfs_wide"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/elfsbroad
+    name = "Broad Elf Ears"
+    desc = ""
+    icon_state = "elfs_broad"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/elfsribbons
+    name = "Ribbon Elf Ears"
+    desc = ""
+    icon_state = "elfs_ribbons"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/goblinmassive
+    name = "Massive Goblin Ears"
+    desc = ""
+    icon_state = "goblin-massive"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/goblindroopy
+    name = "Droopy Goblin Ears"
+    desc = ""
+    icon_state = "goblin-droopy"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/goblinperky
+    name = "Perky Goblin Ears"
+    desc = ""
+    icon_state = "goblin-perky"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/goblinfluted
+    name = "Fluted Goblin Ears"
+    desc = ""
+    icon_state = "goblin-fluted"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/goblintorn
+    name = "Torn Goblin Ears"
+    desc = ""
+    icon_state = "goblin-torn"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/oxhorns
+    name = "Ox Horns"
+    desc = ""
+    icon_state = "upwardshorns"
+    colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/sheep_horn
+    name = "Sheep Horn"
+    desc = ""
+    icon_state = "sheep_horn"
+    colored_layers = 2
+    blend = ICON_MULTIPLY

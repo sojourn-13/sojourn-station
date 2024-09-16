@@ -1,11 +1,13 @@
+GLOBAL_LIST_INIT(drones, list())
+
 /obj/machinery/computer/drone_control
 	name = "maintenance drone control"
-	desc = "Used to monitor the station's drone population and the assembler that services them."
+	desc = "Used to monitor the colony's drone population and the assembler that services them."
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "power_key"
 	icon_screen = "dron_control_monitor"
 	req_access = list(access_engine_equip)
-	circuit = /obj/item/weapon/circuitboard/drone_control
+	circuit = /obj/item/circuitboard/drone_control
 
 	//Used when pinging drones.
 	var/drone_call_area = "Engineering"
@@ -24,7 +26,7 @@
 	var/dat
 	dat += "<B>Maintenance Units</B><BR>"
 
-	for(var/mob/living/silicon/robot/drone/D in world)
+	for(var/mob/living/silicon/robot/drone/D in GLOB.drones)
 		if(D.z != src.z)
 			continue
 		dat += "<BR>[D.real_name] ([D.stat == 2 ? "<font color='red'>INACTIVE</FONT>" : "<font color='green'>ACTIVE</FONT>"])"
@@ -66,7 +68,7 @@
 	else if (href_list["ping"])
 
 		to_chat(usr, SPAN_NOTICE("You issue a maintenance request for all active drones, highlighting [drone_call_area]."))
-		for(var/mob/living/silicon/robot/drone/D in world)
+		for(var/mob/living/silicon/robot/drone/D in GLOB.drones)
 			if(D.client && D.stat == 0)
 				to_chat(D, "-- Maintenance drone presence requested in: [drone_call_area].")
 

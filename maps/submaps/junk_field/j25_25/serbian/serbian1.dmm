@@ -1,0 +1,1410 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"ab" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ac" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ad" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"ae" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"af" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"ag" = (
+/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"ah" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"ai" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aj" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"aw" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aH" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aJ" = (
+/obj/structure/closet,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aK" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = list(150)
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"bi" = (
+/turf/template_noop,
+/area/template_noop)
+"bu" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/template_noop,
+/area/template_noop)
+"by" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bB" = (
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bG" = (
+/obj/random/lowkeyrandom,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"cW" = (
+/obj/structure/closet,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/shoes/magboots/merc,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"du" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"dI" = (
+/obj/structure/table/standard,
+/obj/item/storage/deferred/rations,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"dN" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"dU" = (
+/obj/random/junkfood/rotten,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"eb" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"eg" = (
+/obj/item/storage/deferred/crate/alcohol,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"eo" = (
+/obj/item/stool,
+/obj/effect/decal/cleanable/vomit,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"eT" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"eY" = (
+/obj/random/scrap/dense_weighted,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"fb" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 5;
+	pixel_y = 17
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"fM" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/snacks/mint,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 3
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"gN" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_l"
+	},
+/turf/template_noop,
+/area/template_noop)
+"ii" = (
+/obj/structure/lattice,
+/obj/random/scrap/dense_weighted,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"ip" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"iw" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"iY" = (
+/obj/structure/table/standard,
+/obj/item/packageWrap,
+/obj/item/reagent_containers/food/condiment/enzyme{
+	layer = 5
+	},
+/obj/item/reagent_containers/food/condiment/enzyme{
+	layer = 5
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"js" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"jP" = (
+/obj/structure/table/rack,
+/obj/item/storage/deferred/crate/tools,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"kl" = (
+/obj/machinery/shower{
+	pixel_y = 32
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"kx" = (
+/obj/structure/table/rack,
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"kO" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"kW" = (
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/template_noop)
+"lA" = (
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"lO" = (
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"mZ" = (
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"nu" = (
+/obj/structure/table/rack,
+/obj/structure/closet/onestar/tier2/normal,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"oL" = (
+/obj/structure/closet,
+/obj/item/tool/pickaxe/diamonddrill,
+/obj/item/storage/backpack/military,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"oX" = (
+/obj/random/junkfood/rotten,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"qa" = (
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"qA" = (
+/obj/structure/closet,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/clothing/mask/balaclava/tactical,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"qL" = (
+/obj/item/modular_computer/console,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"qX" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"rd" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/clothing/head/ushanka,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ru" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/window/reinforced/crescent{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/template_noop)
+"rL" = (
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 3;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/wine{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"rU" = (
+/obj/random/scrap/dense_weighted,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"sg" = (
+/obj/structure/closet,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ss" = (
+/obj/structure/table/rack,
+/obj/item/storage/deferred/meds,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"sx" = (
+/obj/structure/lattice,
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/template_noop,
+/area/template_noop)
+"sN" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"tv" = (
+/obj/structure/table/rack,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"tK" = (
+/obj/item/remains/human,
+/obj/item/clothing/shoes/magboots/merc,
+/obj/item/clothing/under/turtleneck,
+/obj/item/clothing/head/ushanka,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"um" = (
+/obj/item/stool,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"vt" = (
+/obj/machinery/portable_atmospherics/canister/plasma,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"vz" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 5
+	},
+/obj/machinery/light,
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"vS" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/template_noop,
+/area/template_noop)
+"wu" = (
+/obj/structure/lattice,
+/obj/random/scrap/dense_weighted,
+/turf/template_noop,
+/area/template_noop)
+"wR" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/clothing/mask/gas/tactical,
+/obj/item/storage/pouch/large_generic,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"wU" = (
+/obj/machinery/door/airlock/maintenance_interior{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"wX" = (
+/obj/structure/table/standard,
+/obj/item/folder/cyan,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"wY" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"xN" = (
+/obj/random/techpart/low_chance,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"yJ" = (
+/obj/item/stool,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"zg" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"zJ" = (
+/obj/item/stool,
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"zM" = (
+/obj/structure/table/standard,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"zT" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/template_noop,
+/area/template_noop)
+"As" = (
+/obj/item/stool,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Ba" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Bq" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"Bv" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/clothing/under/serbiansuit/brown,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Bz" = (
+/obj/item/stool,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"BQ" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Cp" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"CY" = (
+/obj/machinery/light,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Di" = (
+/obj/structure/closet/firecloset,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"DP" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Ee" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Eg" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Eo" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/item/clothing/under/serbiansuit,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"EL" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Fj" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"FS" = (
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Ga" = (
+/obj/machinery/shower{
+	pixel_y = 32
+	},
+/obj/item/soap/deluxe,
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"Hn" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"Jp" = (
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Kd" = (
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"Km" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"La" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Mb" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"MJ" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Nh" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Nt" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 26
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Ou" = (
+/obj/structure/table/standard,
+/obj/machinery/reagentgrinder/portable,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Ow" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"Pa" = (
+/obj/structure/table/standard,
+/obj/machinery/chemical_dispenser/soda{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"Po" = (
+/obj/structure/lattice,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/template_noop,
+/area/template_noop)
+"Pp" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"PH" = (
+/obj/machinery/shower{
+	pixel_y = 32
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"PN" = (
+/obj/structure/table/standard,
+/obj/item/deck/cards,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"PO" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"Rh" = (
+/obj/structure/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/structure/mirror{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"RC" = (
+/obj/random/junk,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"So" = (
+/obj/structure/urinal{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"Sy" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Vq" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/template_noop)
+"Vt" = (
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"VD" = (
+/obj/random/scrap/dense_weighted,
+/turf/template_noop,
+/area/template_noop)
+"VJ" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"Wj" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"WC" = (
+/obj/machinery/light_construct{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"WH" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Xm" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r"
+	},
+/turf/template_noop,
+/area/template_noop)
+"Xv" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Yj" = (
+/obj/structure/table/standard,
+/obj/item/storage/deferred/rations,
+/obj/machinery/light,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"Yp" = (
+/obj/item/stool,
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"YW" = (
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"YZ" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"Zt" = (
+/obj/structure/table/rack,
+/obj/structure/closet/onestar/tier2/normal,
+/turf/simulated/floor/reinforced,
+/area/template_noop)
+"ZA" = (
+/obj/random/junk,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+Ow
+bi
+bi
+bi
+bi
+Ow
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+"}
+(2,1,1) = {"
+bi
+Ow
+bi
+bi
+bi
+bi
+VD
+bi
+sx
+Hn
+VD
+Ow
+bi
+VD
+bi
+bi
+bi
+bi
+bi
+YZ
+YZ
+YZ
+YZ
+bi
+bi
+"}
+(3,1,1) = {"
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+VD
+bi
+Cp
+Hn
+wY
+bi
+Ow
+bi
+VD
+bi
+bi
+YZ
+YZ
+Ee
+WH
+ru
+gN
+bi
+"}
+(4,1,1) = {"
+bi
+eb
+YZ
+YZ
+YZ
+EL
+YZ
+YZ
+Km
+eb
+Po
+eb
+Hn
+eb
+Km
+YZ
+YZ
+EL
+YZ
+qL
+sN
+YW
+ru
+zT
+bi
+"}
+(5,1,1) = {"
+wY
+dN
+Eg
+Vt
+YW
+ac
+La
+ip
+bB
+bB
+eb
+Cp
+aw
+MJ
+bB
+YW
+La
+YW
+Eg
+YW
+oX
+ae
+ru
+gN
+bi
+"}
+(6,1,1) = {"
+Hn
+Km
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+Km
+Eg
+Km
+Eg
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+Pp
+ru
+zT
+bi
+"}
+(7,1,1) = {"
+bi
+eb
+YZ
+aJ
+VJ
+Yp
+PN
+As
+YZ
+kx
+YW
+YW
+YW
+mZ
+YZ
+Fj
+lA
+BQ
+rL
+kO
+YZ
+vt
+ru
+Xm
+bi
+"}
+(8,1,1) = {"
+Hn
+aw
+YZ
+Mb
+Kd
+Kd
+aa
+iw
+YZ
+nu
+YW
+YW
+YW
+ae
+YZ
+Jp
+Jp
+tK
+xN
+fM
+YZ
+YZ
+YZ
+bi
+bi
+"}
+(9,1,1) = {"
+Hn
+Hn
+YZ
+by
+Kd
+eT
+Kd
+js
+YZ
+wR
+YW
+um
+zJ
+um
+YZ
+Nt
+FS
+Wj
+xN
+iY
+YZ
+YZ
+Hn
+bi
+bi
+"}
+(10,1,1) = {"
+bi
+bi
+YZ
+DP
+aa
+Kd
+Kd
+DP
+YZ
+oL
+ac
+wX
+zg
+Yj
+YZ
+Ou
+FS
+ag
+FS
+vz
+YZ
+bi
+Cp
+Ow
+bi
+"}
+(11,1,1) = {"
+wY
+eb
+YZ
+DP
+VJ
+VJ
+VJ
+rd
+YZ
+qA
+bB
+Bz
+um
+yJ
+YZ
+Pa
+af
+FS
+eg
+aK
+YZ
+ii
+Cp
+wY
+Ow
+"}
+(12,1,1) = {"
+Cp
+Km
+YZ
+YZ
+YZ
+Eg
+YZ
+YZ
+Km
+Hn
+Hn
+aH
+bB
+YW
+YZ
+YZ
+YZ
+wU
+YZ
+YZ
+Km
+eb
+VD
+bi
+vS
+"}
+(13,1,1) = {"
+eb
+dN
+Eg
+YW
+Sy
+YW
+Vt
+YW
+Eg
+Xv
+Hn
+Hn
+bB
+Vt
+Eg
+YW
+Sy
+YW
+Vt
+MJ
+Hn
+wY
+wY
+ZA
+VD
+"}
+(14,1,1) = {"
+Km
+YZ
+YZ
+YZ
+YZ
+Eg
+YZ
+YZ
+YZ
+bB
+bB
+bB
+bB
+YW
+YZ
+YZ
+YZ
+Eg
+YZ
+Km
+MJ
+Po
+bi
+bi
+wY
+"}
+(15,1,1) = {"
+eb
+aH
+YZ
+DP
+bB
+Hn
+bB
+Eo
+YZ
+sg
+YW
+um
+yJ
+um
+YZ
+So
+RC
+ah
+Rh
+rU
+Km
+eb
+eb
+bi
+Ow
+"}
+(16,1,1) = {"
+bi
+eb
+YZ
+Bv
+bB
+bi
+Hn
+DP
+YZ
+jP
+YW
+zg
+dI
+zM
+YZ
+So
+lO
+lO
+PO
+ai
+YZ
+Ow
+wu
+bi
+bi
+"}
+(17,1,1) = {"
+Hn
+bi
+YZ
+DP
+ab
+bi
+bB
+js
+YZ
+ss
+YW
+zJ
+um
+um
+YZ
+kl
+kW
+qa
+YZ
+qX
+YZ
+YZ
+Hn
+Ow
+bi
+"}
+(18,1,1) = {"
+Hn
+bi
+YZ
+Mb
+Kd
+Ba
+ad
+iw
+YZ
+Zt
+ae
+YW
+YW
+CY
+YZ
+Ga
+kW
+du
+YZ
+bG
+YZ
+YZ
+YZ
+bi
+bi
+"}
+(19,1,1) = {"
+bi
+Hn
+YZ
+cW
+VJ
+eo
+fb
+eo
+YZ
+tv
+YW
+YW
+YW
+Di
+YZ
+PH
+Vq
+du
+YZ
+Bq
+YZ
+vt
+ru
+gN
+bi
+"}
+(20,1,1) = {"
+bi
+Km
+YZ
+YZ
+Km
+Km
+Km
+YZ
+YZ
+YZ
+Eg
+YZ
+Eg
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+YZ
+Pp
+ru
+zT
+bi
+"}
+(21,1,1) = {"
+eb
+aH
+Eg
+aw
+dN
+Hn
+Cp
+bB
+bB
+YW
+YW
+Nh
+YW
+ac
+bB
+bB
+WC
+YW
+Eg
+YW
+dU
+aj
+ru
+gN
+bi
+"}
+(22,1,1) = {"
+bi
+Hn
+YZ
+YZ
+YZ
+eb
+bi
+eb
+Km
+EL
+YZ
+YZ
+YZ
+EL
+Km
+eb
+Km
+EL
+YZ
+qL
+sN
+YW
+ru
+zT
+bi
+"}
+(23,1,1) = {"
+Ow
+wY
+bi
+bi
+bi
+wu
+bu
+Ow
+bi
+bi
+VD
+wY
+bi
+bi
+eY
+wY
+wY
+vS
+YZ
+YZ
+wX
+WH
+ru
+Xm
+bi
+"}
+(24,1,1) = {"
+bi
+bi
+Ow
+bi
+Cp
+eb
+bi
+wY
+VD
+bi
+wY
+bi
+wY
+bi
+bi
+bi
+VD
+wY
+bi
+YZ
+YZ
+YZ
+YZ
+bi
+bi
+"}
+(25,1,1) = {"
+bi
+bi
+bi
+wY
+bi
+Ow
+bi
+bi
+bi
+bi
+bi
+wY
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+bi
+"}

@@ -4,10 +4,11 @@
 	slot = slot_wear_suit
 	allowed_roles = list("Gardener")
 	sort_category = "Faction: Service"
+	cost = 0
 
 /datum/gear/factionservice/cloak
 	display_name = "cloak, service"
-	path = /obj/item/clothing/suit/hooded/cloak/job/service
+	path = /obj/item/clothing/accessory/job/cape/service
 	slot = slot_wear_suit
 	allowed_roles = list("Gardener","Chef","Bartender","Actor","Janitor")
 	sort_category = "Faction: Service"

@@ -68,7 +68,7 @@ var/list/outfits_decls_by_type_
 
 /decl/hierarchy/outfit/proc/post_equip(mob/living/carbon/human/H, var/equip_adjustments)
 	if(flags & OUTFIT_HAS_JETPACK)
-		var/obj/item/weapon/tank/jetpack/J = locate(/obj/item/weapon/tank/jetpack) in H
+		var/obj/item/tank/jetpack/J = locate(/obj/item/tank/jetpack) in H
 		if(!J)
 			return
 		J.toggle()
@@ -79,11 +79,11 @@ var/list/outfits_decls_by_type_
 
 	rank = id_pda_assignment || rank
 	assignment = id_pda_assignment || assignment || rank
-	var/obj/item/weapon/card/id/W = equip_id(H, rank, assignment, equip_adjustments)
+	var/obj/item/card/id/W = equip_id(H, rank, assignment, equip_adjustments)
 	if(W)
 		rank = W.rank
 		assignment = W.assignment
-	equip_pda(H, rank, assignment, equip_adjustments)
+	equip_pda(H, rank, assignment, equip_adjustments, W)
 
 	for(var/path in backpack_contents)
 		var/number = backpack_contents[path]
@@ -166,9 +166,10 @@ var/list/outfits_decls_by_type_
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
-	var/obj/item/weapon/card/id/W = new id_type(H)
-	var/datum/job/job = SSjob.GetJob(H.mind.assigned_role)
-	W.access = job.get_access()
+	var/obj/item/card/id/W = new id_type(H)
+	if(H.mind)
+		var/datum/job/job = SSjob.GetJob(H.mind.assigned_role)
+		W.access = job.get_access()
 	if(id_desc)
 		W.desc = id_desc
 	if(rank)
@@ -176,17 +177,19 @@ var/list/outfits_decls_by_type_
 	if(assignment)
 		W.assignment = assignment
 	H.set_id_info(W)
-	if(H.equip_to_slot_or_store_or_drop(W, id_slot))
+	if(H.equip_to_slot_or_store_or_drop(W, id_slot)) // keeping this here to ensure that if no PDA, ID will end up in ID slot.
 		return W
 
-/decl/hierarchy/outfit/proc/equip_pda(var/mob/living/carbon/human/H, var/rank, var/assignment, var/equip_adjustments)
+/decl/hierarchy/outfit/proc/equip_pda(var/mob/living/carbon/human/H, var/rank, var/assignment, var/equip_adjustments, var/obj/item/card/id/W)
 	if(!pda_slot || !pda_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
 	var/obj/item/modular_computer/pda/pda = new pda_type(H)
-	if(H.equip_to_slot_or_store_or_drop(pda, pda_slot))
-		return pda
+	if(W && pda) // ID's start in the PDA
+		pda.attackby(W,H,TRUE) // doing it this way ensures it passes through the attackby checks like looking for an ID slot etc instead of making unconnected checks here. Also gives the user a message so they know where it is.
+		H.equip_to_slot_or_store_or_drop(pda, id_slot) // Doing this here so that the ID stays in the ID slot if there is no PDA on spawn.
+	return pda
 
 /decl/hierarchy/outfit/dd_SortValue()
 	return name

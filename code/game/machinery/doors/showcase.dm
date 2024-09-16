@@ -2,9 +2,9 @@
 	name = "showcase"
 	icon = 'icons/obj/doors/showcase.dmi'
 	icon_state = "closed"
-	health = 100
-	maxHealth = 100
-	resistance = RESISTANCE_NONE
+	health = 150
+	maxHealth = 150
+	resistance = RESISTANCE_AVERAGE
 	opacity = 0
 	layer = 4.2
 	var/have_glass = TRUE
@@ -58,8 +58,9 @@
 
 
 /obj/machinery/door/blast/shutters/glass/bullet_act(var/obj/item/projectile/Proj)
-	if((Proj.damage_type == BRUTE || Proj.damage_type == BURN))
-		take_damage(Proj.damage)
+	if (!(Proj.testing))
+		if(Proj.get_structure_damage())
+			take_damage(Proj.get_structure_damage())
 	..()
 
 
@@ -69,7 +70,7 @@
 
 /obj/machinery/door/blast/shutters/glass/Destroy()
 	playsound(loc, 'sound/effects/Glassbr3.ogg', 75, 1)
-	new /obj/item/weapon/material/shard(src.loc)
+	new /obj/item/material/shard(src.loc)
 	return ..()
 
 /obj/machinery/door/blast/shutters/glass/update_icon()

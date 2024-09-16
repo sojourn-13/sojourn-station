@@ -1,11 +1,5 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-#define RANGE_TURFS(RADIUS, CENTER) \
-  block( \
-    locate(max(CENTER.x-(RADIUS),1),          max(CENTER.y-(RADIUS),1),          CENTER.z), \
-    locate(min(CENTER.x+(RADIUS),world.maxx), min(CENTER.y+(RADIUS),world.maxy), CENTER.z) \
-  )
-
 /proc/dopage(src, target)
 	var/href_list
 	var/href
@@ -25,28 +19,52 @@
 			return A
 	return 0
 
+// get the area's name
+/proc/get_area_name_litteral(atom/X, format_text = FALSE)
+	var/area/A = isarea(X) ? X : get_area(X)
+	if(!A)
+		return null
+	return format_text ? format_text(A.name) : A.name
+
 /proc/get_area_master(const/O)
 	var/area/A = get_area(O)
 	if (isarea(A))
 		return A
 
-/proc/in_range(source, user)
-	if(get_dist(source, user) <= 1)
-		return 1
-
-	return 0 //not in range and not telekinetic
-
 // Like view but bypasses luminosity check
 
-/proc/hear(var/range, var/atom/source)
+/proc/hear(range, atom/source)
 
 	var/lum = source.luminosity
 	source.luminosity = world.view
-
 	var/list/heard = view(range, source)
+	var/list/extra_heard = view(range+3, source) - heard
+	if(extra_heard.len)
+		for(var/mob/living/carbon/human/H in extra_heard)
+			if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+				continue
+			heard += H
 	source.luminosity = lum
 
 	return heard
+
+/proc/hear_movables(range, atom/source)
+
+	. = list()
+
+	var/lum = source.luminosity
+	source.luminosity = world.view
+	for (var/atom/movable/AM in view(range+3, source))
+		if ((get_dist(AM, source) > range))
+			if (ishuman(AM))
+				var/mob/living/carbon/human/H = AM
+				if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
+				. += H
+		else
+			. += AM
+
+	source.luminosity = lum
 
 /proc/circlerange(center=usr, radius=3)
 
@@ -116,7 +134,7 @@
 
 // Returns a list of mobs and/or objects in range of R from source. Used in radio and say code.
 
-/proc/get_mobs_or_objects_in_view(var/R, var/atom/source, var/include_mobs = 1, var/include_objects = 1)
+/proc/get_mobs_or_objects_in_view(R, atom/source, include_mobs = 1, include_objects = 1)
 
 	var/turf/T = get_turf(source)
 	var/list/hear = list()
@@ -143,52 +161,39 @@
 // then adds additional mobs or objects if they are in range 'smartly',
 // based on their presence in lists of players or registered objects
 // Type: 1-audio, 2-visual, 0-neither
-/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/type = 1, var/remote_ghosts = TRUE)
-	var/list/mobs = list()
-	var/list/objs = list()
-
-	var/list/hear = dview(range,T,INVISIBILITY_MAXIMUM)
+/proc/get_mobs_and_objs_in_view_fast(turf/T, range, list/mobs, list/objs, checkghosts = GHOSTS_ALL_HEAR)
+	var/list/hear = list()
+	DVIEW(hear, range, T, INVISIBILITY_MAXIMUM)
 	var/list/hearturfs = list()
 
-	for(var/thing in hear)
-		if(istype(thing,/obj))
-			objs += thing
-			hearturfs |= get_turf(thing)
-		else if(istype(thing,/mob))
-			mobs += thing
-			hearturfs |= get_turf(thing)
-
-	//A list of every mob with a client
-	for(var/mob in SSmobs.mob_list)
-		//VOREStation Edit - Trying to fix some vorestation bug.
-		if(!istype(mob, /mob))
-			SSmobs.mob_list -= mob
-			crash_with("There is a null or non-mob reference inside player_list ([mob]).")
-			continue
-		//VOREStation Edit End - Trying to fix some vorestation bug.
-		if(get_turf(mob) in hearturfs)
-			mobs |= mob
+	for(var/am in hear)
+		var/atom/movable/AM = am
+		if (!AM.loc)
 			continue
 
-		var/mob/M = mob
-		if(M && M.stat == DEAD && remote_ghosts && !M.forbid_seeing_deadchat)
-			switch(type)
-				if(1) //Audio messages use ghost_ears
-					if(M.is_preference_enabled(/datum/client_preference/ghost_ears))
-						mobs |= M
-				if(2) //Visual messages use ghost_sight
-					if(M.is_preference_enabled(/datum/client_preference/ghost_sight))
-						mobs |= M
+		if(ismob(AM))
+			mobs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
+		else if(isobj(AM))
+			objs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
 
-	//For objects below the top level who still want to hear
-	for(var/obj in GLOB.listening_objects)
+	for(var/m in GLOB.player_list)
+		var/mob/M = m
+		if(checkghosts == GHOSTS_ALL_HEAR && M.stat == DEAD && !isnewplayer(M) && (M.client && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH))
+			if (!mobs[M])
+				mobs[M] = TRUE
+			continue
+		if(M.loc && hearturfs[M.locs[1]])
+			if (!mobs[M])
+				mobs[M] = TRUE
+
+	for(var/obj in GLOB.hearing_objects)
 		if(get_turf(obj) in hearturfs)
 			objs |= obj
 
-	return list("mobs" = mobs, "objs" = objs)
 
-
-/proc/get_mobs_in_radio_ranges(var/list/obj/item/device/radio/radios)
+/proc/get_mobs_in_radio_ranges(list/obj/item/device/radio/radios)
 
 	set background = 1
 
@@ -254,7 +259,7 @@
 				return 0
 	return 1
 
-proc/isInSight(var/atom/A, var/atom/B)
+/proc/isInSight(atom/A, atom/B)
 	var/turf/Aturf = get_turf(A)
 	var/turf/Bturf = get_turf(B)
 
@@ -266,6 +271,12 @@ proc/isInSight(var/atom/A, var/atom/B)
 
 	else
 		return 0
+
+/proc/get_client_by_ckey(key)
+	for(var/mob/M in SSmobs.mob_list)
+		if(M.ckey == lowertext(key))
+			return M.client
+	return null
 
 /proc/get_cardinal_step_away(atom/start, atom/finish) //returns the position of a step from start away from finish, in one of the cardinal directions
 	//returns only NORTH, SOUTH, EAST, or WEST
@@ -282,7 +293,7 @@ proc/isInSight(var/atom/A, var/atom/B)
 		else
 			return get_step(start, EAST)
 
-/proc/get_mob_by_key(var/key)
+/proc/get_mob_by_key(key)
 	for(var/mob/M in SSmobs.mob_list)
 		if(M.ckey == lowertext(key))
 			return M
@@ -290,7 +301,7 @@ proc/isInSight(var/atom/A, var/atom/B)
 
 
 // Will return a list of active candidates. It increases the buffer 5 times until it finds a candidate which is active within the buffer.
-/proc/get_active_candidates(var/buffer = 1)
+/proc/get_active_candidates(buffer = 1)
 
 	var/list/candidates = list() //List of candidate KEYS to assume control of the new larva ~Carn
 	var/i = 0
@@ -341,7 +352,7 @@ proc/isInSight(var/atom/A, var/atom/B)
 		for(var/client/C in show_to)
 			C.images -= I
 
-datum/projectile_data
+/datum/projectile_data
 	var/src_x
 	var/src_y
 	var/time
@@ -351,8 +362,8 @@ datum/projectile_data
 	var/dest_x
 	var/dest_y
 
-/datum/projectile_data/New(var/src_x, var/src_y, var/time, var/distance, \
-						   var/power_x, var/power_y, var/dest_x, var/dest_y)
+/datum/projectile_data/New(src_x, src_y, time, distance, \
+						   power_x, power_y, dest_x, dest_y)
 	src.src_x = src_x
 	src.src_y = src_y
 	src.time = time
@@ -362,7 +373,7 @@ datum/projectile_data
 	src.dest_x = dest_x
 	src.dest_y = dest_y
 
-/proc/projectile_trajectory(var/src_x, var/src_y, var/rotation, var/angle, var/power)
+/proc/projectile_trajectory(src_x, src_y, rotation, angle, power)
 
 	// returns the destination (Vx, y) that a projectile shot at [src_x], [src_y], with an angle of [angle],
 	// rotated at [rotation] and with the power of [power]
@@ -395,7 +406,7 @@ datum/projectile_data
 			GetBluePart(hexa)
 		)
 
-/proc/iscolor(var/color)
+/proc/iscolor(color)
 	var/h = copytext(color, 1, 2)
 	var/r = GetRedPart(color)
 	var/g = GetGreenPart(color)
@@ -429,7 +440,7 @@ datum/projectile_data
 	var/b = mixOneColor(weights, blues)
 	return rgb(r, g, b)
 
-/proc/mixOneColor(var/list/weight, var/list/color)
+/proc/mixOneColor(list/weight, list/color)
 	if (!weight || !color || length(weight)!=length(color))
 		return 0
 
@@ -461,7 +472,7 @@ datum/projectile_data
 * Gets the highest and lowest pressures from the tiles in cardinal directions
 * around us, then checks the difference.
 */
-/proc/getOPressureDifferential(var/turf/loc)
+/proc/getOPressureDifferential(turf/loc)
 	var/minp=16777216;
 	var/maxp=0;
 	for(var/dir in cardinal)
@@ -477,13 +488,13 @@ datum/projectile_data
 		if(cp>maxp)maxp=cp
 	return abs(minp-maxp)
 
-/proc/convert_k2c(var/temp)
+/proc/convert_k2c(temp)
 	return ((temp - T0C))
 
-/proc/convert_c2k(var/temp)
+/proc/convert_c2k(temp)
 	return ((temp + T0C))
 
-/proc/getCardinalAirInfo(var/turf/loc, var/list/stats=list("temperature"))
+/proc/getCardinalAirInfo(turf/loc, list/stats=list("temperature"))
 	var/list/temps = new/list(4)
 	for(var/dir in cardinal)
 		var/direction
@@ -518,22 +529,24 @@ datum/projectile_data
 		temps[direction] = rstats
 	return temps
 
-/proc/MinutesToTicks(var/minutes)
+/proc/MinutesToTicks(minutes)
 	return SecondsToTicks(60 * minutes)
 
-/proc/SecondsToTicks(var/seconds)
+/proc/SecondsToTicks(seconds)
 	return seconds * 10
 
 /proc/get_vents()
 	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in GLOB.machines)
 		if(!temp_vent.welded && temp_vent.network && isOnStationLevel(temp_vent))
 			if(temp_vent.network.normal_members.len > 15)
 				vents += temp_vent
 	return vents
 
 
-/proc/is_opaque(var/turf/T)
+/proc/is_opaque(turf/T)
+	if(!T)
+		return FALSE
 	if (T.opacity)
 		return TRUE
 	for(var/obj/O in T.contents)
@@ -541,7 +554,7 @@ datum/projectile_data
 			return TRUE
 	return FALSE
 
-/proc/get_preferences(var/mob/target)
+/proc/get_preferences(mob/target)
 	var/datum/preferences/P = null
 	if (target.client)
 		P = target.client.prefs
@@ -554,11 +567,25 @@ datum/projectile_data
 
 
 //Picks a single random landmark of a specified type
-/proc/pick_landmark(var/ltype)
+/proc/pick_landmark(ltype)
 	var/list/L = list()
-	for(var/S in landmarks_list)
+	for(var/S in GLOB.landmarks_list)
 		if (istype(S, ltype))
 			L.Add(S)
 
 	if (L.len)
 		return pick(L)
+
+//Tells everyone thats living and is a SSmobs to wake up their AI when aplicable
+/proc/activate_mobs_in_range(atom/caller , distance)
+	var/turf/starting_point = get_turf(caller)
+	if(!starting_point)
+		return FALSE
+	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
+		if(potential_attacker == caller)
+			continue
+		if(potential_attacker.stat == DEAD)
+			continue
+		if(!(get_dist(starting_point, potential_attacker) <= distance))
+			continue
+		potential_attacker.try_activate_ai()

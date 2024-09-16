@@ -2,7 +2,7 @@
 	icon = 'icons/atmos/connector.dmi'
 	icon_state = "map_connector"
 
-	name = "connector port"
+	name = "Connector Port"
 	desc = "For connecting portables devices related to atmospherics control."
 
 	dir = SOUTH
@@ -14,8 +14,8 @@
 
 	var/datum/pipe_network/network
 
-	var/on = 0
-	use_power = 0
+	var/on = FALSE
+	use_power = NO_POWER_USE
 	level = BELOW_PLATING_LEVEL
 	layer = GAS_FILTER_LAYER
 
@@ -43,7 +43,7 @@
 	if(!on)
 		return
 	if(!connected_device)
-		on = 0
+		on = FALSE
 		return
 	if(network)
 		network.update = 1

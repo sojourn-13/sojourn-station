@@ -1,3 +1,4 @@
+/*
 ADMIN_VERB_ADD(/proc/possess, R_FUN, FALSE)
 /proc/possess(obj/O as obj)
 	set name = "Possess Obj"
@@ -37,3 +38,4 @@ ADMIN_VERB_ADD(/proc/possess, R_FUN, FALSE)
 	usr.forceMove(O.loc) // Appear where the object you were controlling is -- TLE
 	usr.client.eye = usr
 	usr.control_object = null
+*/

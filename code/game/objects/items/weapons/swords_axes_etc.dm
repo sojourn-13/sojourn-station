@@ -7,21 +7,38 @@
 /*
  * Classic Baton
  */
-/obj/item/weapon/melee/classic_baton
+/obj/item/melee/classic_baton
 	name = "police baton"
 	desc = "A wooden truncheon for beating criminal scum."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
+	hitsound = 'sound/effects/woodhit.ogg'
 	slot_flags = SLOT_BELT
-	force = WEAPON_FORCE_PAINFUL
+	damtype = BRUTE
+	armor_divisor = ARMOR_PEN_SHALLOW
+	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
-/obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
-	if ((CLUMSY in user.mutations) && prob(50))
+/obj/item/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
+	if(user.a_intent == I_HELP)
+		damtype = HALLOSS
+		force = WEAPON_FORCE_PAINFUL
+		armor_divisor = ARMOR_PEN_MODERATE
+
+	if(user.a_intent == I_DISARM)
+		damtype = HALLOSS
+		force = WEAPON_FORCE_PAINFUL
+		armor_divisor = ARMOR_PEN_SHALLOW
+
+	if(user.a_intent == I_HURT)
+		damtype = BRUTE
+		force = WEAPON_FORCE_ROBUST
+
+	if ((CLUMSY in user.mutations) && prob(10))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
 		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
-		user.Weaken(3 * force)
+		user.Weaken(0.2 * force)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)
@@ -33,7 +50,7 @@
 
 
 //Telescopic baton
-/obj/item/weapon/melee/telebaton
+/obj/item/melee/telebaton
 	name = "telescopic baton"
 	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/weapons.dmi'
@@ -46,7 +63,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
 
-/obj/item/weapon/melee/telebaton/attack_self(mob/user as mob)
+/obj/item/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
 	if(on)
 		user.visible_message(
@@ -59,6 +76,7 @@
 		update_wear_icon()
 		w_class = ITEM_SIZE_NORMAL
 		force = WEAPON_FORCE_PAINFUL//quite robust
+		damtype = BRUTE
 		attack_verb = list("smacked", "struck", "slapped")
 	else
 		user.visible_message(
@@ -88,11 +106,25 @@
 
 	return
 
-/obj/item/weapon/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
+/obj/item/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
 	if(on)
-		if ((CLUMSY in user.mutations) && prob(50))
+		if(user.a_intent == I_HELP)
+			damtype = HALLOSS
+			force = WEAPON_FORCE_PAINFUL
+			armor_divisor = ARMOR_PEN_MODERATE
+
+		if(user.a_intent == I_DISARM)
+			damtype = HALLOSS
+			force = 18 //3 more then help but not as good as a wooden classic
+			armor_divisor = ARMOR_PEN_SHALLOW
+
+		if(user.a_intent == I_HURT)
+			damtype = BRUTE
+			force = WEAPON_FORCE_DANGEROUS
+
+		if ((CLUMSY in user.mutations) && prob(10))
 			to_chat(user, SPAN_WARNING("You club yourself over the head."))
-			user.Weaken(3 * force)
+			user.Weaken(0.1 * force)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)

@@ -1,0 +1,54 @@
+<!-- 
+Title: Cloning Vat Control UI 
+Used In File(s): \code\modules\genetics\genetics_machines.dm
+ -->
+
+<!-- Processing dialogue box -->
+{{if data.menu == 0}} <!-- VAT_MENU_WORKING -->
+	<h5 class='average'>The Cloning Console is currently busy.</h5>
+	<div class='notice'>
+		<center>Working...</center>
+	</div>
+	<p>
+		Thank you for your patience!
+	</p>
+{{else !data.clonerPresent}} <!-- Error message for cloner not connected -->
+	<h1>Belvoix Xenofauna Cloning Vat</h1>
+	<div class='notice'>No Cloning Vat located. <BR>Please construct a Belvoix Cloning Vat adjacent to the console.</div>
+	
+{{else}}<!-- Processing dialogue box -->
+	<h1>Belvoix Xenofauna Cloning Vat</h1>
+	{{if data.menu == 1}} <!-- VAT_MENU_SELECT -->
+		<div style="float:left;">
+			<h2>Protein Levels:</h2>
+			<br>
+			{{if !data.linked_bidon}}
+				<div class='notice'>No bidon detected. <BR>Please anchor a bidon to the Cloning Vat.</div>
+			{{else}}
+				{{:helper.displayBar(data.protein_volume, 0, data.can_max_volume, 'average', data.protein_bar_text)}}
+			{{/if}}
+			{{if data.cloning}}
+				<hr>
+				<h2>Cloning progress:</h2>
+				<br>
+				{{:helper.displayBar(data.clone_progress, 0, data.clone_total_progress, 'average', data.clone_bar_text)}}
+			{{/if}}
+			<br>
+			<hr>
+			<h2>Manual Controls</h2>
+			<br>
+			{{:helper.link('Start Cloning', 'link', {'start_cloning' : 1}, data.cloning ? 'disabled' : null)}}
+			{{:helper.link('Flush Chamber','arrowthickstop-1-s',{'flush' : 1}, data.flush ? 'disabled' : null)}}
+			{{:helper.link('Open Chamber','eject',{'eject' : 1}, data.cloning ? null : 'disabled')}}
+			<br>
+			<hr>
+			{{:helper.link('Sync Console','transferthick-e-w',{'sync_console' : 1})}}
+			<br>
+			<hr>
+			<h2>Cloning Vat Log:</h2>
+			<div class='statusDisplayRecords' style='height:100px;font-size:82%;overflow-y:scroll;clear:both;' name='Cloning Vat Log' value=''>
+				{{:data.log}}
+			</div>
+		</div>
+	{{/if}}
+{{/if}}

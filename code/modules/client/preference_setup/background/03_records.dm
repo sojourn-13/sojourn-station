@@ -4,6 +4,12 @@
 	var/gen_record = ""
 	var/memory = ""
 
+/datum/preferences/proc/get_records()
+	if(!med_record || !sec_record || !gen_record)
+		return FALSE
+	return TRUE
+
+
 /datum/category_item/player_setup_item/background/records
 	name = "Records"
 	sort_order = 5

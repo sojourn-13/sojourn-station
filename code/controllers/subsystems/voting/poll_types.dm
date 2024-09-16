@@ -6,28 +6,28 @@
 /datum/poll/restart
 	name = "End Round"
 	question = "End Shift?"
-	time = 60
+	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 240 MINUTES //Minimum round length before it can be called for the first time
-	cooldown = 60 MINUTES
+	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
+	cooldown = 15 MINUTES //Cooldown is set to 15 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE //Duel votes are fun
 	can_revote = TRUE
-	can_unvote = FALSE
+	can_unvote = TRUE //In case you heck up
 
-	see_votes = TRUE
+	see_votes = FALSE //No swaying
 
 /*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
 	If you are alive and have been for a while, then you have the normal 1 vote
-	If you are dead, or just spawned, you get only 0.3 votes
-	If you are an antag or a head of staff, you get 2 votes
+	If you are dead, or just spawned, you get only 0.6 votes
+	If you are an antag or a head of staff, you get 1.2 votes
 */
-#define VOTE_WEIGHT_LOW	0.3
+#define VOTE_WEIGHT_LOW	0.6
 #define VOTE_WEIGHT_NORMAL	1
-#define VOTE_WEIGHT_HIGH	2
+#define VOTE_WEIGHT_HIGH	1.2 //To tie 2 dead votes but not over-rule 2 living
 #define MINIMUM_VOTE_LIFETIME	15 MINUTES
 
 /datum/poll/restart/get_vote_power(var/client/C)
@@ -83,12 +83,7 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	to_chat(world, "<b><font size='3px'>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
-	sleep(15 MINUTES)
-	to_chat(world, "<b>Restarting world due to shift end...<b>")
-	sleep(50)
-	log_game("Rebooting due to restart vote")
-	world.Reboot()
+	SSticker.shift_end(15 MINUTES)
 
 /datum/vote_choice/countinue_round
 	text = "Continue Shift"
@@ -105,16 +100,18 @@
 /datum/poll/storyteller
 	name = "Storyteller"
 	question = "Choose storyteller"
+	next_vote = 60 MINUTES //After an hour if people want let them re-vote the story teller
 	time = 120
 	choice_types = list()
 	minimum_voters = 0
 	only_admin = FALSE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE
 	can_revote = TRUE
 	can_unvote = TRUE
-	cooldown = 30 MINUTES
+	cooldown = 60 MINUTES //Unlike other votes were not to spamable do to how annoying this can get
 	see_votes = TRUE
+	only_admin = FALSE
 
 	var/pregame = FALSE
 
@@ -295,6 +292,30 @@
 	text = "Stay aboard"
 
 
+/datum/poll/chaos_level_increase
+	name = "Increase Chaos Level"
+	question = "Do you want to increase the chaos level?"
+	description = "Higher chaos level makes storyteller events much more likely."
+	time = 120
+	minimum_win_percentage = 0.75 //High % needed for something that alters the whole round
+	cooldown = 30 MINUTES
+	next_vote = 90 MINUTES //Same lenght as bluespace jump
+	choice_types = list(/datum/vote_choice/yes_chaos_level, /datum/vote_choice/no_chaos_level)
+	only_admin = FALSE
+	can_revote = TRUE
+	can_unvote = TRUE
+
+
+/datum/vote_choice/yes_chaos_level
+	text = "Increase the chaos level!"
+
+/datum/vote_choice/yes_chaos_level/on_win()
+	GLOB.chaos_level += 1
+	for (var/mob/M as mob in SSmobs.mob_list)
+		to_chat(M, "<br><center><span class='danger'><b><font size=4>Chaos Level Increased</font></b><br></span></center><br>")
+
+/datum/vote_choice/no_chaos_level
+	text = "We have enough chaos already!"
 
 
 

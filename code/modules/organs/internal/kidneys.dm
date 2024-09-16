@@ -1,39 +1,73 @@
-/obj/item/organ/internal/kidneys
-	name = "kidneys"
-	icon_state = "kidneys"
-	gender = PLURAL
-	organ_tag = BP_KIDNEYS
-	parent_organ = BP_GROIN
-	price_tag = 1500
+/obj/item/organ/internal/kidney
+	name = "kidney"
+	icon_state = "kidney_left"
+	organ_efficiency = list(OP_KIDNEYS = 50)
+	parent_organ_base = BP_GROIN
+	specific_organ_size = 1
+	blood_req = 1.5
+	max_blood_storage = 7.5
+	oxygen_req = 2.5
+	nutriment_req = 2
+	price_tag = 500
+	max_damage = IORGAN_SMALL_HEALTH
+	min_bruised_damage = IORGAN_SMALL_BRUISE
+	min_broken_damage = IORGAN_SMALL_BREAK
+	w_class =  ITEM_SIZE_TINY
 
-/obj/item/organ/internal/kidneys
-	name = "kidneys"
-	icon_state = "kidneys"
+/obj/item/organ/internal/kidney/left
+/obj/item/organ/internal/kidney/right
+	icon_state = "kidney_right"
 
-/obj/item/organ/internal/kidneys/prosthetic
+/obj/item/organ/internal/kidney/left/plant
+	name = "kidney bean"
+	desc = "A green mushy bean that produces plant liquids"
+	icon_state = "kidney_left_plant"
+
+/obj/item/organ/internal/kidney/right/plant
+	name = "kidney bean"
+	desc = "A green mushy bean that produces plant liquids"
+	icon_state = "kidney_right_plant"
+
+/obj/item/organ/internal/kidney/left/cindarite
+	name = "cindarite kidney"
+	icon_state = "kidney_left_cindar"
+	desc = "A dense set of tightly packed kidneys that work four times better than a standard kidney.\
+	Likely worth more on the black market."
+	price_tag = 1000
+	organ_efficiency = list(OP_KIDNEYS = 200)
+
+/obj/item/organ/internal/kidney/right/cindarite
+	icon_state = "kidney_right_cindar"
+	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney.\
+	Likely worth more on the black market."
+	price_tag = 1000 //The right kidney should be worth as much as the left one.
+	organ_efficiency = list(OP_KIDNEYS = 200)
+
+/obj/item/organ/internal/kidney/prosthetic
 	name = "prosthetic kidneys"
+	desc = "Prosthetic kindeys, doesn't work as well as the real deal."
 	icon_state = "kidneys-prosthetic"
 	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
+	organ_efficiency = list(OP_KIDNEYS = 50)
 
-/obj/item/organ/internal/kidneys/Process()
-	..()
+/obj/item/organ/internal/kidney/prosthetic/left
+/obj/item/organ/internal/kidney/prosthetic/right
+	icon_state = "kidneys-prosthetic2"
 
-	if(!owner)
-		return
-	var/datum/reagents/metabolism/BLOOD_METABOLISM = owner.get_metabolism_handler(CHEM_BLOOD)
-	//If your kidneys aren't working, your body's going to have a hard time cleaning your blood.
-	if(!owner.chem_effects[CE_ANTITOX])
-		if(is_bruised())
-			if(prob(5) && BLOOD_METABOLISM.get_reagent_amount("potassium") < 5)
-				BLOOD_METABOLISM.add_reagent("potassium", REM*5)
-		if(is_broken())
-			if(BLOOD_METABOLISM.get_reagent_amount("potassium") < 15)
-				BLOOD_METABOLISM.add_reagent("potassium", REM*2)
-		if(status & ORGAN_DEAD)
-			owner.adjustToxLoss(1)
+/obj/item/organ/internal/kidney/left/exalt
+	name = "Exalt kidney"
+	icon_state = "kidney_left"
+	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
+	Likely worth more on the black market."
+	price_tag = 700
+	organ_efficiency = list(OP_KIDNEYS = 150)
 
-
-/obj/item/organ/internal/kidneys/quad
-	name = "cindarite kidneys"
-	desc = "A dense set of tightly packed kidneys that work four times better than a standard kidney."
-	price_tag = 5000
+/obj/item/organ/internal/kidney/right/exalt
+	name = "Exalt kidney"
+	icon_state = "kidney_right"
+	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
+	Likely worth more on the black market."
+	price_tag = 700
+	organ_efficiency = list(OP_KIDNEYS = 150)

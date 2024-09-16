@@ -152,6 +152,13 @@
 	desc = ""
 	icon_state = "fluffdragon"
 
+/datum/sprite_accessory/tail/fluffdragon_alt
+	name = "Fluffdragon Alt Tail"
+	desc = ""
+	icon_state = "fluffdragon_alt"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/foxdown
 	name = "Fox Tail, Downwards"
 	desc = ""
@@ -192,10 +199,17 @@
 	desc = ""
 	icon_state = "kitsune_miria"
 
+/datum/sprite_accessory/tail/kitsune_rosey
+	name = "Kitsune Tails, Rosey"
+	desc = ""
+	icon_state = "kitsune_tri"
+
 /datum/sprite_accessory/tail/kitsune_tritail
 	name = "Kitsune Tails, Tritail"
 	desc = ""
-	icon_state = "kitsune_tri"
+	icon_state = "triplekitsune"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/kitsune_tamamo
 	name = "Kitsune Tails, Pentatail"
@@ -203,6 +217,14 @@
 	icon_state = "kitsune_pent"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/plugtail
+	name = "Synth, Plug-tail"
+	desc = ""
+	icon_state = "tailplug" //heehee, hoohoo
+	colored_layers = 3
+	blend = ICON_MULTIPLY
+
 
 /datum/sprite_accessory/tail/kitty
 	name = "Kitty Tail, Downwards"
@@ -232,6 +254,20 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/lizard_dt
+	name = "Lizard Tail, Dark Tiger"
+	desc = ""
+	icon_state = "liztail_dtiger"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/spiked_lizard
+	name = "Lizard Spiked Tail"
+	desc = ""
+	icon_state = "spiked_tail"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/mouse
 	name = "Mouse Tail"
 	desc = ""
@@ -250,6 +286,13 @@
 	desc = ""
 	icon_state = "otie"
 	ani_state = "otie_w"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/raccoon
+	name = "Racoon Tail"
+	desc = ""
+	icon_state = "raccoon"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -389,6 +432,13 @@
 	desc = ""
 	icon_state = "wolf"
 	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/axolotl
+	name = "Axolotl Tail"
+	desc = ""
+	icon_state = "axolotl"
+	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /*//For all species tails. Includes haircolored tails.
@@ -648,3 +698,9 @@
 	blend = ICON_MULTIPLY
 	extra_overlay = "buggofirefly_vass_markings"
 	extra_overlay_w = "buggofatfirefly_vass_markings"
+
+/datum/sprite_accessory/tail/jackal
+	name = "Jackal Tail"
+	icon_state = "jackal"
+	colored_layers = 2
+	blend = ICON_MULTIPLY

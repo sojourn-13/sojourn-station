@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(sun)
 	name = "Sun"
 	wait = 1 MINUTES
-	flags = SS_NO_TICK_CHECK|SS_NO_INIT
+	flags = SS_BACKGROUND | SS_NO_INIT
 
 	var/angle
 	var/dx
@@ -16,7 +16,8 @@ SUBSYSTEM_DEF(sun)
 		rate = -rate
 
 /datum/controller/subsystem/sun/stat_entry(msg)
-	..("P:[solars.len], A:[angle]")
+	msg += "P:[solars.len], A:[angle]"
+	return ..()
 
 /datum/controller/subsystem/sun/fire()
 	angle = (360 + angle + rate * 6) % 360 // increase/decrease the angle to the sun, adjusted by the rate

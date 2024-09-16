@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	emped = 1
 	cut_overlays()
 	add_overlay(image(icon, "emp"))
-	addtimer(CALLBACK(src, .proc/post_emp), 300)
+	addtimer(CALLBACK(src, PROC_REF(post_emp)), 300)
 
 /obj/item/device/gps/proc/post_emp()
 	emped = 0
@@ -75,7 +75,6 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 
 	var/datum/browser/popup = new(user, "GPS", name, 360, min(gps_window_height, 800))
 	popup.set_content(t)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
 
 /obj/item/device/gps/Topic(href, href_list)
@@ -121,7 +120,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 
 //todo: dig site tape
 
-/obj/item/weapon/storage/bag/fossils
+/obj/item/storage/bag/fossils
 	name = "Fossil Satchel"
 	desc = "Transports delicate fossils in suspension so they don't break during transit."
 	icon = 'icons/obj/mining.dmi'
@@ -130,4 +129,4 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/weapon/fossil)
+	can_hold = list(/obj/item/fossil)

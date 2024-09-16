@@ -6,7 +6,7 @@
 
 	PATHS THAT USE DATUMS
 		turf/simulated/wall
-		obj/item/weapon/material
+		obj/item/material
 		obj/structure/barricade
 		obj/item/stack/material
 		obj/structure/table
@@ -20,7 +20,6 @@
 		DOORS
 			stone
 			metal
-			resin
 			wood
 */
 
@@ -98,9 +97,9 @@ var/list/name_to_material
 
 	// Icons
 	var/icon_colour                                      // Colour applied to products of this material.
-	var/icon_base = "metal"                              // Wall and table base icon tag. See header.
+	var/icon_base = "solid"                              // Wall and table base icon tag. See header.
 	var/door_icon_base = "metal"                         // Door base icon tag. See header.
-	var/icon_reinf = "reinf_metal"                       // Overlay used
+	var/icon_reinf = "reinf_over"                        // Overlay used
 	var/list/stack_origin_tech = list(TECH_MATERIAL = 1) // Research level for stacks.
 
 	// Attributes
@@ -135,6 +134,17 @@ var/list/name_to_material
 	var/stack_type
 	// Wallrot crumble message.
 	var/rotting_touch_message = "crumbles under your touch"
+
+/material/ui_data(mob/user)
+	var/list/data = list()
+
+	data["name"] = name
+
+	var/class_name = sanitize_css_class_name("[stack_type]")
+	var/datum/asset/spritesheet_batched/materials/sprite = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+	data["icon"] = sprite.icon_class_name(class_name)
+
+	return data
 
 // Placeholders for light tiles and rglass.
 /material/proc/build_rod_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
@@ -217,10 +227,13 @@ var/list/name_to_material
 		G.reinforce_girder()
 
 // Use this to drop a given amount of material.
-/material/proc/place_material(target, amount=1)
+/material/proc/place_material(target, amount=1, mob/living/user = null)
 	// Drop the integer amount of sheets
-	if(place_sheet(target, round(amount)))
+	var/obj/sheets = place_sheet(target, round(amount))
+	if(sheets)
 		amount -= round(amount)
+		if(user)
+			sheets.add_fingerprint(user)
 
 	// If there is a remainder left, drop it as a shard instead
 	if(amount)
@@ -234,7 +247,7 @@ var/list/name_to_material
 // As above.
 /material/proc/place_shard(target, amount=1)
 	if(shard_type)
-		return new /obj/item/weapon/material/shard(target, src.name, amount)
+		return new /obj/item/material/shard(target, src.name, amount)
 
 // Used by walls and weapons to determine if they break or not.
 /material/proc/is_brittle()
@@ -519,7 +532,7 @@ var/list/name_to_material
 	hardness = 40
 	weight = 30
 	stack_origin_tech = "materials=2"
-	composite_material = list(MATERIAL_STEEL = 2,MATERIAL_GLASS = 3)
+	composite_material = list(MATERIAL_STEEL = 1,MATERIAL_GLASS = 1)
 	window_options = list("One Direction" = 1, "Full Window" = 6, "Windoor" = 5)
 	created_window = /obj/structure/window/reinforced
 	created_window_full = /obj/structure/window/reinforced/full
@@ -591,6 +604,7 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/mhydrogen
 	icon_colour = "#E6C5DE"
 	stack_origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 5)
+	display_name = "metallic hydrogen"
 
 /material/platinum
 	name = MATERIAL_PLATINUM
@@ -668,25 +682,22 @@ var/list/name_to_material
 /material/cloth //todo
 	name = MATERIAL_CLOTH
 	stack_origin_tech = list(TECH_MATERIAL = 2)
+	stack_type = /obj/item/stack/material/cloth
 	door_icon_base = "wood"
 	ignition_point = T0C+232
 	melting_point = T0C+300
 	flags = MATERIAL_PADDING
 
-/material/resin
-	name = "resin"
-	icon_colour = "#E85DD8"
-	dooropen_noise = 'sound/effects/attackblob.ogg'
-	door_icon_base = "resin"
+/material/silk //todo
+	name = MATERIAL_SILK
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	stack_type = /obj/item/stack/material/silk
+	door_icon_base = "wood"
+	ignition_point = T0C+232
 	melting_point = T0C+300
-	sheet_singular_name = "blob"
-	sheet_plural_name = "blobs"
-
-/material/resin/can_open_material_door(var/mob/living/user)
-	var/mob/living/carbon/M = user
-	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
-		return 1
-	return 0
+	flags = MATERIAL_PADDING
+	sheet_singular_name = "ball"
+	sheet_plural_name = "balls"
 
 /material/biomatter
 	name = MATERIAL_BIOMATTER
@@ -696,18 +707,38 @@ var/list/name_to_material
 	sheet_singular_name = "sheet"
 	sheet_plural_name = "sheets"
 
+/material/compressed_matter
+	name = MATERIAL_COMPRESSED_MATTER
+	stack_type = /obj/item/stack/material/compressed_matter
+	icon_colour = "#00E1FF"
+	sheet_singular_name = "cartrigde"
+	sheet_plural_name = "cartridges"
+
 //TODO PLACEHOLDERS:
 /material/leather
 	name = MATERIAL_LEATHER
+	stack_type = /obj/item/stack/material/leather
 	icon_colour = "#5C4831"
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+300
 	melting_point = T0C+300
 
+/material/bone
+	name = MATERIAL_BONE
+	stack_type = /obj/item/stack/material/bone
+	icon_colour = "#EDE1D1"
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	flags = MATERIAL_PADDING
+	ignition_point = T0C+300
+	melting_point = T0C+300
+	sheet_singular_name = "bit"
+	sheet_plural_name = "bits"
+
 /material/carpet
 	name = "carpet"
 	display_name = "comfy"
+	stack_type = /obj/item/stack/tile/carpet // The icon is red, thus red carpet by default
 	use_name = "red upholstery"
 	icon_colour = "#DA020A"
 	flags = MATERIAL_PADDING
@@ -719,6 +750,7 @@ var/list/name_to_material
 /material/cotton
 	name = "cotton"
 	display_name ="cotton"
+	stack_type = /obj/item/stack/material/cloth
 	icon_colour = "#FFFFFF"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -795,3 +827,21 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
 	melting_point = T0C+300
+
+/material/ameridian
+	name = MATERIAL_AMERIDIAN
+	stack_type = /obj/item/stack/material/ameridian
+	icon_colour = "#007A00"
+	sheet_singular_name = "shard"
+	sheet_plural_name = "shards"
+	stack_origin_tech = list(TECH_MATERIAL = 9)
+
+/material/refined_scrap
+	name = MATERIAL_RSCRAP
+	stack_type = /obj/item/stack/material/refined_scrap
+	composite_material = list(MATERIAL_STEEL = 1)
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	weight = 30
+	icon_colour = "B7410E"
+	sheet_singular_name = "pieces"
+	sheet_plural_name = "pieces"

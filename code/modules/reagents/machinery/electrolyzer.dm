@@ -7,17 +7,17 @@
 	icon_state = "electrolysis"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
-	circuit = /obj/item/weapon/circuitboard/electrolyzer
+	circuit = /obj/item/circuitboard/electrolyzer
 	layer = BELOW_OBJ_LAYER
-	var/obj/item/weapon/reagent_containers/beaker
-	var/obj/item/weapon/reagent_containers/separation_beaker
+	var/obj/item/reagent_containers/beaker
+	var/obj/item/reagent_containers/separation_beaker
 	var/convertion_coefficient = 2
 	var/on = FALSE
 
 
 
 // returns FALSE on errors TRUE on success and -1 if nothing to do
-/proc/electrolysis(var/obj/item/weapon/reagent_containers/primary_beaker, var/obj/item/weapon/reagent_containers/secondary_beaker, var/amount)
+/proc/electrolysis(var/obj/item/reagent_containers/primary_beaker, var/obj/item/reagent_containers/secondary_beaker, var/amount)
 	if(!primary_beaker || !secondary_beaker)
 		return FALSE
 	//check if has reagents
@@ -71,7 +71,7 @@
 
 /obj/machinery/electrolyzer/RefreshParts()
 	convertion_coefficient = initial(convertion_coefficient)
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		convertion_coefficient *= C.rating
 
 
@@ -97,19 +97,21 @@
 /obj/machinery/electrolyzer/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
-	if(istype(I, /obj/item/weapon/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
+	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
-		var/obj/item/weapon/reagent_containers/B = I
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		if(!beaker)
-			beaker = B
-		else if(!separation_beaker)
-			separation_beaker = B
-		to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
-		SSnano.update_uis(src)
-		update_icon()
-		return
+		var/obj/item/reagent_containers/B = I
+		if(user.drop_from_inventory(B))
+			user.drop_from_inventory(B)
+			B.forceMove(src)
+			B.add_fingerprint(user)
+			if(!beaker)
+				beaker = B
+			else if(!separation_beaker)
+				separation_beaker = B
+			to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
+			SSnano.update_uis(src)
+			update_icon()
+			return
 	return ..()
 
 /obj/machinery/electrolyzer/attackby(obj/item/I, mob/user, params)
@@ -119,9 +121,9 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/weapon/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
+	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
-		var/obj/item/weapon/reagent_containers/B = I
+		var/obj/item/reagent_containers/B = I
 		if(!user.unEquip(B, src))
 			return
 		if(!beaker)
@@ -145,7 +147,7 @@
 
 
 /obj/machinery/electrolyzer/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 15 so cog 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -153,10 +155,10 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/electrolyzer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+/obj/machinery/electrolyzer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -171,14 +173,14 @@
 
 
 
-/obj/machinery/electrolyzer/ui_data()
+/obj/machinery/electrolyzer/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	if(separation_beaker)
-		data["separation_beaker"] = separation_beaker.reagents.ui_data()
+		data["separation_beaker"] = separation_beaker.reagents.nano_ui_data()
 	data["has_power"] = (stat & NOPOWER) ? FALSE : TRUE
 	return data
 
@@ -220,10 +222,10 @@
 	icon_state = "electrolysis_makeshift"
 	var/on = FALSE
 	var/tick_cost = 3
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
-	var/obj/item/weapon/reagent_containers/beaker
-	var/obj/item/weapon/reagent_containers/separation_beaker
+	cell = null
+	suitable_cell = /obj/item/cell/small
+	var/obj/item/reagent_containers/beaker
+	var/obj/item/reagent_containers/separation_beaker
 
 /obj/item/device/makeshift_electrolyser/Destroy()
 	QDEL_NULL(beaker)
@@ -242,18 +244,20 @@
 		src.cell = C
 		SSnano.update_uis(src)
 		return
-	if(istype(C, /obj/item/weapon/reagent_containers) && C.is_open_container() && (!beaker || !separation_beaker))
+	if(istype(C, /obj/item/reagent_containers) && C.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
-		var/obj/item/weapon/reagent_containers/B = C
-		C.forceMove(src)
-		C.add_fingerprint(user)
-		if(!beaker)
-			beaker = B
-		else if(!separation_beaker)
-			separation_beaker = B
-		to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
-		SSnano.update_uis(src)
-		return
+		var/obj/item/reagent_containers/B = C
+		if(user.drop_from_inventory(C))
+			user.drop_from_inventory(C)
+			C.forceMove(src)
+			C.add_fingerprint(user)
+			if(!beaker)
+				beaker = B
+			else if(!separation_beaker)
+				separation_beaker = B
+			to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
+			SSnano.update_uis(src)
+			return
 
 /obj/item/device/makeshift_electrolyser/handle_atom_del(atom/A)
 	..()
@@ -291,7 +295,7 @@
 
 /obj/item/device/makeshift_electrolyser/attack_self(mob/user as mob)
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	add_fingerprint(user)
 
 /obj/item/device/makeshift_electrolyser/MouseDrop(over_object)
@@ -306,9 +310,9 @@
 		src.cell = C
 		SSnano.update_uis(src)
 		return
-	if(istype(C, /obj/item/weapon/reagent_containers) && C.is_open_container() && (!beaker || !separation_beaker))
+	if(istype(C, /obj/item/reagent_containers) && C.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
-		var/obj/item/weapon/reagent_containers/B = C
+		var/obj/item/reagent_containers/B = C
 		if(!user.unEquip(B, src))
 			return
 		if(!beaker)
@@ -320,8 +324,8 @@
 		return
 	return ..()
 
-/obj/item/device/makeshift_electrolyser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+/obj/item/device/makeshift_electrolyser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -336,22 +340,22 @@
 
 
 
-/obj/item/device/makeshift_electrolyser/ui_data()
+/obj/item/device/makeshift_electrolyser/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["has_power"] = cell ? cell.check_charge(tick_cost) : FALSE
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	if(separation_beaker)
-		data["separation_beaker"] = separation_beaker.reagents.ui_data()
+		data["separation_beaker"] = separation_beaker.reagents.nano_ui_data()
 	return data
 
 /obj/item/device/makeshift_electrolyser/attack_hand(mob/user)
 	if(loc != user && ..())
 		return TRUE
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/item/device/makeshift_electrolyser/Topic(href, href_list)
 	if(..())

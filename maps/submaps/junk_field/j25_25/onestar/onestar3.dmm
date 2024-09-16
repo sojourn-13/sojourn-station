@@ -1,0 +1,1150 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ac" = (
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ad" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ae" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"af" = (
+/obj/random/junk,
+/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"ag" = (
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/template_noop)
+"ah" = (
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/template_noop)
+"ai" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aj" = (
+/obj/structure/sign/faction/derelict2,
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/template_noop)
+"ak" = (
+/obj/machinery/door/airlock/sandstone{
+	name = "Greyson Airlock"
+	},
+/turf/simulated/floor/tiled/derelict,
+/area/template_noop)
+"al" = (
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"am" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/template_noop)
+"an" = (
+/obj/structure/closet/onestar,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"ao" = (
+/obj/structure/bed/chair/custom/onestar,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"ap" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/template_noop)
+"aq" = (
+/obj/structure/sign/faction/derelict1,
+/turf/simulated/wall/untinted/onestar,
+/area/template_noop)
+"ar" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/template_noop)
+"as" = (
+/obj/structure/sign/faction/derelict2,
+/turf/simulated/wall/untinted/onestar,
+/area/template_noop)
+"at" = (
+/obj/random/junk,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"au" = (
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/template_noop)
+"av" = (
+/obj/structure/closet/onestar/tier2/mineral,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aw" = (
+/obj/item/remains,
+/obj/random/material_rare/low_chance,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"ax" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"ay" = (
+/obj/structure/salvageable/computer_os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"az" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aA" = (
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"aB" = (
+/obj/structure/bed/chair/custom/onestar/red{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aC" = (
+/obj/structure/closet/onestar/tier1/mineral/empty,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aD" = (
+/obj/effect/floor_decal/industrial/loading,
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"aE" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"aF" = (
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aG" = (
+/turf/simulated/wall/untinted/onestar,
+/area/template_noop)
+"aH" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aI" = (
+/obj/structure/catwalk,
+/obj/structure/ore_box,
+/turf/template_noop,
+/area/template_noop)
+"aJ" = (
+/obj/structure/catwalk,
+/turf/template_noop,
+/area/template_noop)
+"aK" = (
+/obj/structure/lattice,
+/obj/item/storage/bag/ore,
+/turf/template_noop,
+/area/template_noop)
+"aL" = (
+/turf/simulated/mineral,
+/area/template_noop)
+"aM" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
+"aN" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"aO" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/inflatable/wall,
+/turf/template_noop,
+/area/template_noop)
+"aP" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/inflatable/wall,
+/turf/template_noop,
+/area/template_noop)
+"aQ" = (
+/obj/structure/inflatable/wall,
+/turf/template_noop,
+/area/template_noop)
+"aR" = (
+/obj/machinery/computer/telecomms/server,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"aS" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/inflatable/wall,
+/turf/template_noop,
+/area/template_noop)
+"aT" = (
+/obj/structure/catwalk,
+/obj/structure/inflatable/door,
+/turf/template_noop,
+/area/template_noop)
+"aU" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/inflatable/wall,
+/turf/template_noop,
+/area/template_noop)
+"aV" = (
+/turf/simulated/mineral/random,
+/area/template_noop)
+"aW" = (
+/obj/structure/inflatable/door,
+/turf/template_noop,
+/area/template_noop)
+"aX" = (
+/obj/structure/sign/directions/medical{
+	dir = 1;
+	icon_state = "direction_med"
+	},
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/template_noop)
+"aY" = (
+/obj/structure/sign/directions/evac{
+	dir = 8;
+	icon_state = "direction_evac"
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 8;
+	icon_state = "direction_eng";
+	pixel_y = 10
+	},
+/turf/simulated/wall/untinted/onestar,
+/area/template_noop)
+"aZ" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"ba" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"bb" = (
+/obj/machinery/power/port_gen/os_generator,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"bc" = (
+/obj/structure/catwalk,
+/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/turf/template_noop,
+/area/template_noop)
+"bd" = (
+/obj/machinery/door/airlock/centcom{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/template_noop)
+"be" = (
+/obj/machinery/door/airlock/centcom{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"bf" = (
+/obj/item/remains,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bg" = (
+/obj/machinery/door/airlock/centcom{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bh" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bi" = (
+/obj/item/storage/bag/ore,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bj" = (
+/obj/structure/catwalk,
+/obj/item/storage/bag/ore,
+/turf/template_noop,
+/area/template_noop)
+"bk" = (
+/obj/structure/inflatable/door,
+/obj/structure/catwalk,
+/turf/template_noop,
+/area/template_noop)
+"bl" = (
+/obj/structure/lattice,
+/obj/item/tool/pickaxe/onestar,
+/obj/item/remains,
+/turf/template_noop,
+/area/template_noop)
+"bm" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bI" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"bJ" = (
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bQ" = (
+/obj/effect/floor_decal/industrial/loading,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"bT" = (
+/obj/structure/bed/chair/custom/onestar{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"bY" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"ch" = (
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"cE" = (
+/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"dn" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"dp" = (
+/obj/structure/lattice,
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"fo" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/obj/random/material_rare,
+/turf/template_noop,
+/area/template_noop)
+"fp" = (
+/obj/random/material_rare/low_chance,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"fR" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"jf" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"jJ" = (
+/obj/random/lathe_disk/low_chance,
+/obj/structure/salvageable/autolathe_os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"ks" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"nf" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"oA" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"pn" = (
+/obj/item/stack/material/cardboard/random,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"pS" = (
+/obj/structure/bed/chair/custom/onestar/red{
+	dir = 1
+	},
+/obj/random/lathe_disk/advanced/onestar,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"sD" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"uA" = (
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"vY" = (
+/obj/random/material_rare/low_chance,
+/turf/simulated/mineral,
+/area/template_noop)
+"wu" = (
+/obj/structure/lattice,
+/obj/random/material_rare,
+/turf/template_noop,
+/area/template_noop)
+"Bx" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Eh" = (
+/obj/random/lathe_disk/advanced/onestar,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"EP" = (
+/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Hx" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"Mx" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"OL" = (
+/obj/random/junk,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Qz" = (
+/obj/random/lathe_disk/low_chance,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"Rw" = (
+/obj/structure/bed/chair/custom/onestar/red{
+	dir = 1
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/template_noop)
+"Sr" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+"Vr" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/template_noop)
+
+(1,1,1) = {"
+aa
+aa
+aa
+dn
+aa
+Hx
+aa
+aa
+ab
+ad
+ac
+ab
+oA
+ab
+dn
+aa
+uA
+uA
+aa
+aa
+dn
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+dn
+aa
+dp
+ab
+ab
+ab
+ab
+dp
+dp
+cE
+ad
+cE
+ab
+aa
+aa
+uA
+uA
+aa
+aa
+aa
+uA
+uA
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+dp
+ab
+ai
+oA
+ac
+OL
+oA
+ag
+oA
+ag
+ab
+ab
+aa
+dn
+aa
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+dn
+"}
+(4,1,1) = {"
+Hx
+ab
+dp
+oA
+ac
+cE
+ac
+ac
+ai
+ag
+ae
+ag
+dp
+uA
+uA
+aa
+aa
+ag
+aF
+aF
+aF
+aR
+aR
+ag
+aa
+"}
+(5,1,1) = {"
+ab
+ab
+ad
+Bx
+ac
+ag
+ag
+ag
+ag
+ag
+be
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+nf
+al
+al
+Qz
+fR
+ag
+uA
+"}
+(6,1,1) = {"
+aa
+ad
+EP
+ac
+ac
+ag
+aw
+bb
+an
+aY
+ch
+ch
+ch
+bg
+al
+al
+Qz
+al
+al
+al
+nf
+al
+aR
+ag
+uA
+"}
+(7,1,1) = {"
+aa
+ab
+ai
+ac
+ac
+ag
+an
+af
+an
+aG
+ch
+ch
+ch
+aG
+al
+nf
+al
+sD
+Eh
+nf
+bm
+al
+aR
+ag
+uA
+"}
+(8,1,1) = {"
+ab
+ad
+ac
+Bx
+ai
+ag
+an
+at
+an
+aG
+Sr
+ch
+ba
+aG
+ay
+aB
+al
+pn
+al
+al
+al
+al
+aR
+ag
+aa
+"}
+(9,1,1) = {"
+ab
+ag
+ag
+ag
+ag
+ag
+aG
+bd
+aG
+aq
+ch
+ch
+ba
+aG
+ay
+aB
+al
+nf
+al
+Qz
+pn
+al
+aR
+ag
+aa
+"}
+(10,1,1) = {"
+ab
+ab
+ag
+ap
+ah
+ag
+aZ
+Mx
+Mx
+aG
+ch
+ch
+ba
+aG
+az
+pS
+al
+ag
+bh
+bh
+al
+al
+fR
+ag
+dn
+"}
+(11,1,1) = {"
+ab
+ac
+ag
+am
+ah
+aj
+ch
+ch
+Mx
+aG
+ch
+Vr
+ch
+aG
+az
+Rw
+al
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+aa
+"}
+(12,1,1) = {"
+ab
+oA
+ag
+ah
+ah
+aX
+ch
+ch
+ch
+aG
+ch
+ch
+ch
+aG
+jJ
+al
+aH
+ag
+aI
+aI
+aM
+aQ
+aL
+aL
+aa
+"}
+(13,1,1) = {"
+ab
+ac
+ak
+ah
+ar
+ak
+ch
+fp
+ch
+ak
+ch
+ch
+aZ
+aG
+ag
+au
+au
+ag
+aI
+aI
+aN
+aS
+aL
+aV
+aL
+"}
+(14,1,1) = {"
+ab
+Bx
+ag
+ah
+ah
+ag
+ch
+jf
+ch
+aG
+ch
+ch
+aZ
+ch
+aA
+bQ
+bY
+aD
+aJ
+aJ
+aJ
+aT
+aJ
+aW
+aa
+"}
+(15,1,1) = {"
+ab
+ac
+ag
+ap
+ah
+ag
+ao
+ch
+ch
+aG
+ch
+ch
+ch
+ch
+ag
+ag
+ag
+ag
+aJ
+bc
+aJ
+aT
+aJ
+aW
+aa
+"}
+(16,1,1) = {"
+ab
+ai
+ag
+ap
+am
+ag
+ao
+ch
+ch
+aG
+Sr
+ch
+ch
+ch
+aA
+bI
+bY
+aE
+aJ
+aJ
+aO
+aU
+aL
+aQ
+dn
+"}
+(17,1,1) = {"
+ab
+ad
+ag
+ag
+ag
+ag
+ao
+ch
+ch
+aG
+as
+au
+bJ
+bJ
+ag
+au
+au
+ag
+aJ
+bj
+aP
+aV
+aL
+aV
+aa
+"}
+(18,1,1) = {"
+ab
+ab
+ab
+ab
+aa
+ag
+ch
+ch
+ch
+ch
+aG
+bf
+bT
+bT
+bi
+al
+bi
+ag
+aK
+aJ
+aQ
+aL
+aL
+aL
+uA
+"}
+(19,1,1) = {"
+ab
+dp
+ab
+Hx
+aa
+au
+Mx
+ch
+ch
+ch
+aG
+al
+al
+al
+al
+al
+av
+ag
+aL
+bk
+aL
+aV
+aL
+aL
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+dn
+aa
+uA
+au
+Mx
+aZ
+aZ
+ch
+ak
+al
+al
+ax
+al
+al
+av
+ag
+aL
+ks
+bl
+aL
+aL
+aL
+aa
+"}
+(21,1,1) = {"
+Hx
+aa
+aa
+aa
+aa
+au
+Mx
+Mx
+Mx
+ch
+aG
+al
+al
+al
+al
+al
+aC
+ag
+wu
+aL
+aL
+aL
+aL
+vY
+aa
+"}
+(22,1,1) = {"
+aa
+uA
+aa
+uA
+aa
+au
+ba
+ba
+Mx
+ch
+aG
+av
+av
+bh
+bh
+bh
+aC
+ag
+fo
+wu
+aL
+aa
+aL
+aL
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+Hx
+aa
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+aL
+aL
+aL
+uA
+uA
+uA
+aa
+"}
+(24,1,1) = {"
+aa
+uA
+aa
+aa
+uA
+aa
+aa
+aa
+uA
+dn
+Hx
+aa
+aa
+aa
+uA
+aa
+uA
+aa
+aL
+aa
+aa
+dn
+aa
+uA
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+uA
+aa
+aa
+aa
+aa
+aa
+uA
+aa
+aa
+aa
+uA
+aa
+uA
+aa
+uA
+aa
+aa
+aa
+aa
+"}

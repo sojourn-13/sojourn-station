@@ -1,9 +1,3 @@
-//#define TESTING
-#if DM_VERSION < 506
-#warn This compiler is out of date. You may experience issues with projectile animations.
-#endif
-
-
 //duck you byond
 var/global/image/stringbro = new() // Temporarily super-global because of BYOND init order dumbness.
 var/global/image/iconbro = new() // Temporarily super-global because of BYOND init order dumbness.
@@ -77,6 +71,7 @@ var/Debug2 = 0
 
 var/gravity_is_on = 1
 
+var/server_ad = null
 var/join_motd = null
 
 var/list/awaydestinations = list() // Away missions. A list of landmarks that the warpgate can take you to.
@@ -109,7 +104,7 @@ var/global/list/alphabet_uppercase = list("A", "B", "C", "D", "E", "F", "G", "H"
 // Some scary sounds.
 var/static/list/scarySounds = list(
 	'sound/weapons/thudswoosh.ogg',
-	'sound/weapons/Taser.ogg',
+	'sound/weapons/energy/Taser.ogg',
 	'sound/weapons/armbomb.ogg',
 	'sound/voice/hiss1.ogg',
 	'sound/voice/hiss2.ogg',

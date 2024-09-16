@@ -5,7 +5,7 @@
 	plane = FLOOR_PLANE
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	anchored = 1.0
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	var/uses = 20
 	var/disabled = 1
@@ -36,7 +36,7 @@
 	src.uses = uses
 	src.power_change()
 
-/obj/machinery/ai_slipper/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/ai_slipper/attackby(obj/item/W, mob/user)
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if (issilicon(user))

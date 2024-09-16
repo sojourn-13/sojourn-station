@@ -379,9 +379,9 @@
 				if(c_room.above)
 					if(prob(60))
 						r_template = pick(above_room_templates)
-			/*	if(c_room.under)
-					if(prob(60))
-						r_template = pick(under_room_templates)**/
+				//if(c_room.under)
+				//	if(prob(60))
+				//		r_template = pick(under_room_templates)
 				else if (!c_room.above)
 					if(prob(40))
 						r_template = pick(horizontal_room_templates)

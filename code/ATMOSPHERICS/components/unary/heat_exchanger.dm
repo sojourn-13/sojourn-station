@@ -2,10 +2,10 @@
 
 	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
 	icon_state = "intact"
-	density = 1
+	density = TRUE
 	layer = LOW_OBJ_LAYER
 
-	name = "heat exchanger"
+	name = "Heat Exchanger"
 	desc = "Exchanges heat between two input gases. Setup for fast heat transfer"
 
 	var/obj/machinery/atmospherics/unary/heat_exchanger/partner = null
@@ -66,7 +66,7 @@
 
 		return 1
 
-	attackby(var/obj/item/weapon/tool/tool, var/mob/user)
+	attackby(var/obj/item/tool/tool, var/mob/user)
 		var/datum/gas_mixture/int_air = return_air()
 		var/datum/gas_mixture/env_air = loc.return_air()
 		if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)

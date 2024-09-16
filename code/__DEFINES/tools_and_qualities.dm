@@ -15,21 +15,24 @@
 #define QUALITY_EXCAVATION				"excavation"
 #define QUALITY_ADHESIVE				"adhesive"
 #define QUALITY_SEALING					"sealing"
+#define QUALITY_HAMMERING				"hammering"
 
 //Biological Qualities
 #define QUALITY_CLAMPING				"clamping"
 #define QUALITY_CAUTERIZING				"cauterizing"
 #define QUALITY_RETRACTING				"retracting"
 #define QUALITY_DRILLING				"drilling"
-#define QUALITY_HAMMERING				"hammering"
 #define QUALITY_SAWING					"sawing"
 #define QUALITY_BONE_SETTING			"bone setting"
 #define QUALITY_CUTTING					"cutting"
 #define QUALITY_LASER_CUTTING			"laser cutting"	//laser scalpels and e-swords - bloodless cutting
+#define QUALITY_BONE_GRAFTING			"bone grafting"
 
 //Other Qualities
+#define QUALITY_WEAVING					"weaving"
 #define QUALITY_ELECTROCUTION			"electroshock"
 #define QUALITY_ARMOR					"armor"
+#define QUALITY_HEATING					"heating" //Used absure crafting
 
 
 //Time for a work for tool system calculated in that way: basic time - tool level - stat check..
@@ -37,7 +40,9 @@
 #define WORKTIME_INSTANT				0
 #define WORKTIME_NEAR_INSTANT			30
 #define WORKTIME_FAST					60
+#define WORKTIME_QUICK					75
 #define WORKTIME_NORMAL					90
+#define WORKTIME_DELAYED				105
 #define WORKTIME_SLOW					120
 #define WORKTIME_LONG					170
 #define WORKTIME_EXTREMELY_LONG			250
@@ -71,3 +76,4 @@
 #define WORKSOUND_HARD_SLASH			'sound/weapons/bladeslice.ogg'
 #define WORKSOUND_CHAINSAW				'sound/items/chainsaw.ogg'
 #define WORKSOUND_TAPE					'sound/items/duct_tape.ogg'
+#define WORKSOUND_HONK                  'sound/items/bikehorn.ogg'

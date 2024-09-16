@@ -7,6 +7,9 @@
 /proc/cmp_name_dsc(atom/a, atom/b)
 	return sorttext(a.name, b.name)
 
+/proc/cmp_name_in_list_asc(list/a, list/b)
+	return sorttext(b["name"], a["name"])
+
 /proc/cmp_catalog_entry_asc(datum/catalog_entry/a, datum/catalog_entry/b)
 	return sorttext(b.title, a.title)
 
@@ -24,6 +27,12 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 
 /proc/cmp_records_dsc(datum/data/record/a, datum/data/record/b)
 	return sorttext(a.fields[GLOB.cmp_field], b.fields[GLOB.cmp_field])
+
+/proc/cmp_mutations_asc(datum/genetics/mutation/a, datum/genetics/mutation/b)
+	return sorttext(b.name, a.name)
+/proc/cmp_mutations_dsc(datum/genetics/mutation/a, datum/genetics/mutation/b)
+	return sorttext(a.name, b.name)
+
 
 /proc/cmp_ckey_asc(client/a, client/b)
 	return sorttext(b.ckey, a.ckey)
@@ -72,3 +81,10 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	. = B[STAT_ENTRY_TIME] - A[STAT_ENTRY_TIME]
 	if (!.)
 		. = B[STAT_ENTRY_COUNT] - A[STAT_ENTRY_COUNT]
+
+/proc/cmp_rcon_smes(obj/machinery/power/smes/buildable/S1, obj/machinery/power/smes/buildable/S2)
+	return sorttext(S2.RCon_tag, S1.RCon_tag)
+
+/proc/cmp_rcon_bbox(obj/machinery/power/breakerbox/BR1, obj/machinery/power/breakerbox/BR2)
+	return sorttext(BR2.RCon_tag, BR1.RCon_tag)
+

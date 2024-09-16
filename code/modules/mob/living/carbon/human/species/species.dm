@@ -1,7 +1,6 @@
 /*
 	Datum-based species. Should make for much cleaner and easier to maintain race code.
 */
-#define SPECIES_BLOOD_DEFAULT 560
 /datum/species
 
 	// Descriptors and strings.
@@ -29,10 +28,13 @@
 	var/gibbed_anim = "gibbed-h"
 
 	var/mob_size	= MOB_MEDIUM
-	var/virus_immune
-	var/blood_volume = 560                               // Initial blood volume.
+	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
+	var/always_blood = FALSE 						 // Can we process reagents without blood?
+	var/always_ingest = FALSE 		                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
+	var/nutrition_mod = 0                                // Flat addition to max nutrition (Base is 400)
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
+	var/show_ssd = "fast asleep"
 
 	// Language/culture vars.
 	var/default_language = LANGUAGE_COMMON   // Default language is used when 'say' is used without modifiers.
@@ -57,6 +59,7 @@
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
+	var/injury_type =  INJURY_TYPE_LIVING    // From _DEFINES/weapons.dm
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
@@ -67,20 +70,23 @@
 	var/breath_type = "oxygen"                        // Non-oxygen gas breathed, if any.
 	var/poison_type = "plasma"                        // Poisonous air.
 	var/exhale_type = "carbon_dioxide"                // Exhaled gas type.
-	var/cold_level_1 = 260                            // Cold damage level 1 below this point.
-	var/cold_level_2 = 200                            // Cold damage level 2 below this point.
-	var/cold_level_3 = 120                            // Cold damage level 3 below this point.
-	var/heat_level_1 = 360                            // Heat damage level 1 above this point.
-	var/heat_level_2 = 400                            // Heat damage level 2 above this point.
-	var/heat_level_3 = 1000                           // Heat damage level 3 above this point.
+	var/cold_level_1 = 270                            // Cold damage level 1 below this point.
+	var/cold_level_2 = 230                            // Cold damage level 2 below this point.
+	var/cold_level_3 = 200                            // Cold damage level 3 below this point.
+	var/heat_level_1 = 330                            // Heat damage level 1 above this point.
+	var/heat_level_2 = 380                            // Heat damage level 2 above this point.
+	var/heat_level_3 = 460                            // Heat damage level 3 above this point.
 	var/passive_temp_gain = 0		                  // Species will gain this much temperature every second
 	var/hazard_high_pressure = HAZARD_HIGH_PRESSURE   // Dangerously high pressure.
 	var/warning_high_pressure = WARNING_HIGH_PRESSURE // High pressure warning.
 	var/warning_low_pressure = WARNING_LOW_PRESSURE   // Low pressure warning.
 	var/hazard_low_pressure = HAZARD_LOW_PRESSURE     // Dangerously low pressure.
+	var/eyes_are_impermeable = FALSE         		  // If TRUE, this species' eyes are not damaged by plasma.
 	var/light_dam                                     // If set, mob will be damaged in light over this value and heal in light below its negative.
 	var/body_temperature = 310.15	                  // Non-IS_SYNTHETIC species will try to stabilize at this temperature.
 	                                                  // (also affects temperature processing)
+	var/upper_breath_t = 333.15						  // upper limit of breathable gas temperature before lung damage
+	var/lower_breath_t = 233.15						  // lower limit of breathable gas temperature before lung damage
 	var/list/stat_modifiers = list(
 		STAT_BIO = 0,
 		STAT_COG = 0,
@@ -92,8 +98,8 @@
 
 	var/list/perks = list()
 
-	var/heat_discomfort_level = 315                   // Aesthetic messages about feeling warm.
-	var/cold_discomfort_level = 285                   // Aesthetic messages about feeling chilly.
+	var/heat_discomfort_level = 330                   // Aesthetic messages about feeling warm.
+	var/cold_discomfort_level = 270                   // Aesthetic messages about feeling chilly.
 	var/list/heat_discomfort_strings = list(
 		"You feel sweat drip down your neck.",
 		"You feel uncomfortably warm.",
@@ -117,21 +123,25 @@
 	var/flags = 0                 // Various specific features.
 	var/spawn_flags = 0           // Flags that specify who can spawn as this species
 	var/slowdown = 0              // Passive movement speed malus (or boost, if negative)
+	var/lower_sanity_process	  // Controls how much sanity is processed on the mob for performance reasons.
 	var/holder_type
 	var/gluttonous                // Can eat some mobs. Values can be GLUT_TINY, GLUT_SMALLER, GLUT_ANYTHING.
 	var/rarity_value = 1          // Relative rarity/collector value for this species.
 	                              // Determines the organs that the species spawns with and
-	var/list/has_organ = list(    // which required-organ checks are conducted.
-		BP_HEART =    /obj/item/organ/internal/heart,
-		BP_LUNGS =    /obj/item/organ/internal/lungs,
-		BP_LIVER =    /obj/item/organ/internal/liver,
-		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
-		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_APPENDIX = /obj/item/organ/internal/appendix,
-		BP_EYES =     /obj/item/organ/internal/eyes
+	var/list/has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART =    /obj/item/organ/internal/vital/heart,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
+		OP_STOMACH =  /obj/item/organ/internal/stomach,
+		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain,
+		OP_APPENDIX = /obj/item/organ/internal/appendix,
+		OP_EYES =     /obj/item/organ/internal/eyes
 		)
 	var/vision_organ              // If set, this organ is required for vision. Defaults to "eyes" if the species has them.
 
+	// The order is important!
 	var/list/has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest,
 		BP_GROIN =  new /datum/organ_description/groin,
@@ -162,7 +172,7 @@
 		hud = new()
 
 	//If the species has eyes, they are the default vision organ
-	if(!vision_organ && has_organ[BP_EYES])
+	if(!vision_organ && has_process[OP_EYES])
 		vision_organ = BP_EYES
 
 	unarmed_attacks = list()
@@ -233,13 +243,13 @@
 /datum/species/proc/remove_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			H.verbs -= verb_path
+			remove_verb(H, verb_path)
 	return
 
 /datum/species/proc/add_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			H.verbs |= verb_path
+			add_verb(H, verb_path)
 	return
 
 /datum/species/proc/handle_post_spawn(var/mob/living/carbon/human/H) //Handles anything not already covered by basic species assignment.
@@ -303,7 +313,12 @@
 		return 1
 
 	if(!H.druggy)
-		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? 8 : min(darksight + H.equipment_darkness_modifier, 8)
+		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? darksight : min(darksight + H.equipment_darkness_modifier, darksight)
+		H.see_in_dark += H.equipment_darkness_modifier
+		H.see_in_dark += H.additional_darksight //Done like this for sake of easier to read
+
+		if(H.see_in_dark <= 0)
+			H.see_in_dark = 1
 
 	if(H.equipment_see_invis)
 		H.see_invisible = H.equipment_see_invis
@@ -322,6 +337,8 @@
 			H.client.screen += global_hud.darkMask
 		else if((!H.equipment_prescription && (H.disabilities & NEARSIGHTED)) || H.equipment_tint_total == TINT_MODERATE)
 			H.client.screen += global_hud.vimpaired
+		else if(H.equipment_tint_total == TINT_LOW)
+			H.client.screen += global_hud.lightMask
 //	if(H.eye_blurry)	H.client.screen += global_hud.blurry
 //	if(H.druggy)		H.client.screen += global_hud.druggy
 
@@ -349,7 +366,7 @@
 				continue
 			if(!(get_bodytype() in S.species_allowed))
 				continue
-			ADD_SORTED(facial_hair_style_by_gender, facialhairstyle, /proc/cmp_text_asc)
+			ADD_SORTED(facial_hair_style_by_gender, facialhairstyle, GLOBAL_PROC_REF(cmp_text_asc))
 			facial_hair_style_by_gender[facialhairstyle] = S
 
 	return facial_hair_style_by_gender
@@ -363,17 +380,17 @@
 			var/datum/sprite_accessory/S = GLOB.hair_styles_list[hairstyle]
 			if(!(get_bodytype() in S.species_allowed))
 				continue
-			ADD_SORTED(L, hairstyle, /proc/cmp_text_asc)
+			ADD_SORTED(L, hairstyle, GLOBAL_PROC_REF(cmp_text_asc))
 			L[hairstyle] = S
 	return L
 
 /datum/species/proc/equip_survival_gear(mob/living/carbon/human/H, extendedtank = TRUE)
-	var/box_type = /obj/item/weapon/storage/box/survival
+	var/box_type = /obj/item/storage/box/survival
 
 	if(extendedtank)
-		box_type = /obj/item/weapon/storage/box/survival/extended
+		box_type = /obj/item/storage/box/survival/extended
 
-	if(istype(H.get_equipped_item(slot_back), /obj/item/weapon/storage))
+	if(istype(H.get_equipped_item(slot_back), /obj/item/storage))
 		H.equip_to_storage(new box_type(H.back))
 	else
 		H.equip_to_slot_or_del(new box_type(H), slot_r_hand)
@@ -393,5 +410,20 @@
 		H.faction = "roach"
 		H.add_language(LANGUAGE_CHTMANT)
 	if(H.species.reagent_tag == IS_OPIFEX)
-		H.faction = "vox"
 		H.add_language(LANGUAGE_OPIFEXEE)
+	if(H.species.reagent_tag == IS_KRIOSAN)
+		H.add_language(LANGUAGE_KRIOSAN)
+	if(H.species.reagent_tag == IS_AKULA)
+		H.add_language(LANGUAGE_AKULA)
+	if(H.species.reagent_tag == IS_MARQUA)
+		H.add_language(LANGUAGE_MARQUA)
+	if(H.species.reagent_tag == IS_TREE)
+		H.add_language(LANGUAGE_PLANT)
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		H.add_language(LANGUAGE_SYNTHETIC)
+	if(H.species.reagent_tag == IS_NARAMAD)
+		H.add_language(LANGUAGE_MERP)
+	if(H.species.reagent_tag == IS_SLIME)
+		H.add_language(LANGUAGE_BLORP)
+	if(H.species.reagent_tag == IS_CINDARITE)
+		H.add_language(LANGUAGE_WEH)

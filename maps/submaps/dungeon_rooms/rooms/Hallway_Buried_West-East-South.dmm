@@ -12,10 +12,6 @@
 "d" = (
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"e" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "f" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -30,9 +26,37 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
+"j" = (
+/obj/item/tool/pickaxe/jackhammer/onestar,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
 "k" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/floor/bluegrid,
+/area/crawler)
+"n" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"x" = (
+/obj/item/tool/pickaxe/onestar,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"y" = (
+/obj/item/tool/pickaxe/jackhammer/onestar,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"O" = (
+/obj/item/tool/pickaxe/drill/onestar,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"R" = (
+/obj/item/tool/pickaxe/onestar,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"T" = (
+/obj/item/tool/pickaxe/drill/onestar,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 
 (1,1,1) = {"
@@ -49,12 +73,12 @@ a
 (2,1,1) = {"
 a
 c
-e
-h
-h
-h
-e
 d
+h
+h
+h
+d
+x
 a
 "}
 (3,1,1) = {"
@@ -73,7 +97,7 @@ a
 c
 c
 h
-h
+T
 h
 c
 c
@@ -82,7 +106,7 @@ a
 (5,1,1) = {"
 a
 c
-d
+y
 h
 h
 c
@@ -142,7 +166,7 @@ c
 c
 c
 c
-d
+O
 a
 "}
 (11,1,1) = {"
@@ -150,7 +174,7 @@ a
 c
 c
 c
-h
+R
 h
 d
 d
@@ -160,11 +184,11 @@ a
 a
 c
 c
+j
 h
 h
-h
-e
 d
+n
 a
 "}
 (13,1,1) = {"

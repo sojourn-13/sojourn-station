@@ -16,7 +16,7 @@
 	generate_fields()
 
 /datum/computer_file/report/Destroy()
-	QDEL_NULL_LIST(fields)
+	QDEL_LIST(fields)
 	. = ..()
 
 /*

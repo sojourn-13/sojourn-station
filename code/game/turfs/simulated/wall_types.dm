@@ -1,17 +1,59 @@
 /turf/simulated/wall/r_wall
 	icon_state = "rgeneric"
+
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/cult
 	icon_state = "cult"
+
 /turf/simulated/wall/cult/New(var/newloc)
 	..(newloc,"cult","cult2")
+
 /turf/unsimulated/wall/cult
 	name = "cult wall"
 	desc = "Hideous images dance beneath the surface."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
+
+/turf/simulated/wall/tomb_king
+	name = "strange wall"
+	desc = "A reinforced wall painted obsidian and gold, glyphs and strange depictions of unknown tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "Nashef_standard"
+	icon_base = "Nashef_standard"
+	icon_base_override = "Nashef_standard"
+	icon_base_reinf = "Nashef_reinforced"
+
+/turf/simulated/wall/tomb_king/New(var/newloc)
+	..(newloc, MATERIAL_STEEL)
+
+/turf/simulated/wall/church
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "church_standard"
+	icon_base = "church_standard"
+	icon_base_override = "church_standard"
+	icon_base_reinf = "church_reinforced"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
+
+/turf/simulated/wall/church/New(var/newloc)
+	..(newloc, MATERIAL_STEEL)
+
+/turf/simulated/wall/church_reinforced
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon_state = "church_reinforced"
+	icon_base_override = "church_standard"
+	icon_base_reinf_override = "church_reinforced"
+	icon = 'icons/turf/wall_masks.dmi'
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
+
+/turf/simulated/wall/church_reinforced/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/rock
 	name = "rock wall"
@@ -108,7 +150,7 @@
 	icon_state = "wall1"
 	opacity = 1
 	density = TRUE
-	blocks_air = 1
+	blocks_air = TRUE
 
 /turf/simulated/shuttle/wall/cargo
 	name = "Cargo Transport Shuttle (A5)"
@@ -116,17 +158,17 @@
 	icon_state = "cargoshwall1"
 
 /turf/simulated/shuttle/wall/escpod
-	name = "Escape Pod"
+	name = "Shuttle Pod"
 	icon = 'icons/turf/shuttleescpod.dmi'
 	icon_state = "escpodwall1"
 
 /turf/simulated/shuttle/wall/mining
-	name = "Mining Barge"
+	name = "The Rocinante"
 	icon = 'icons/turf/shuttlemining.dmi'
 	icon_state = "11,23"
 
-/turf/simulated/shuttle/wall/science
-	name = "Science Shuttle"
+/turf/simulated/shuttle/wall/science //I guess this got repurposed into the Marshal shuttle soooooo-
+	name = "The Vasiliy"
 	icon = 'icons/turf/shuttlescience.dmi'
 	icon_state = "6,18"
 
@@ -136,18 +178,20 @@
 	anchored = 1
 	density = TRUE
 
+	atmos_canpass = CANPASS_DENSITY
+
 /obj/structure/shuttle_part/cargo
 	name = "Cargo Transport Shuttle (A5)"
 	icon = 'icons/turf/shuttlecargo.dmi'
 	icon_state = "cargoshwall1"
 
 /obj/structure/shuttle_part/escpod
-	name = "Escape Pod"
+	name = "Shuttle Pod"
 	icon = 'icons/turf/shuttleescpod.dmi'
 	icon_state = "escpodwall1"
 
 /obj/structure/shuttle_part/mining
-	name = "Mining Barge"
+	name = "The Rocinante"
 	icon = 'icons/turf/shuttlemining.dmi'
 	icon_state = "11,23"
 
@@ -186,6 +230,17 @@
 /turf/simulated/wall/wood/New(var/newloc)
 	..(newloc,MATERIAL_WOOD)
 
+/turf/simulated/wall/cloth/New(var/newloc)
+	..(newloc,MATERIAL_CLOTH)
+
+
+/turf/simulated/wall/marble/New(var/newloc)
+	..(newloc,MATERIAL_MARBLE)
+
+/turf/simulated/wall/marble/dark/New(var/newloc)
+	..(newloc,MATERIAL_MARBLE)
+	base_color = "#333333"
+
 /turf/simulated/wall/wood
 	icon_state = "wood"
 	icon_base_override = "wood"
@@ -194,14 +249,26 @@
 	icon_state = "oldwood"
 	icon_base_override = "oldwood"
 
+/turf/simulated/wall/wood_barrel
+	icon_state = "woodenwall"
+	icon_base_override = "woodenwall"
+
+/turf/simulated/wall/wood_barrel/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood_old/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
 
 // Kind of wondering if this is going to bite me in the butt.
 /turf/simulated/wall/voxshuttle/New(var/newloc)
-	..(newloc,"voxalloy")
+	..(newloc, MATERIAL_VOXALLOY)
 /turf/simulated/wall/voxshuttle/attackby()
 	return
 /turf/simulated/wall/titanium/New(var/newloc)
-	..(newloc,"titanium")
+	..(newloc, MATERIAL_VOXALLOY)
 
 
 //Untinted walls have white color, all their coloring is built into their sprite and they should really not be given a tint, it'd look awful

@@ -10,7 +10,7 @@ particle whenever the target moves
 /datum/effect/effect/system/trail
 	var/obj/effect/effect/trail_effect = /obj/effect/trail_particle/gasjet
 	var/active = FALSE
-	var/obj/item/weapon/tank/jetpack/jetpack
+	var/obj/item/tank/jetpack/jetpack
 	var/fromback = TRUE //The trail is being emitted from something on their back
 	//When the user is facing north, it will draw ontop of them
 
@@ -18,7 +18,7 @@ particle whenever the target moves
 	jetpack = null
 	return ..()
 
-/datum/effect/effect/system/trail/set_up(var/atom/_holder, var/obj/item/weapon/tank/jetpack/J)
+/datum/effect/effect/system/trail/set_up(var/atom/_holder, var/obj/item/tank/jetpack/J)
 	attach(_holder)
 	if (J)
 		jetpack = J
@@ -32,7 +32,7 @@ particle whenever the target moves
 
 	//Moved event is a global datum of type /decl/observ/moved
 	//It will fire a proc whenever the holder atom moves from one turf to another
-	GLOB.moved_event.register(holder, src, /datum/effect/effect/system/trail/proc/holder_moved)
+	GLOB.moved_event.register(holder, src, TYPE_PROC_REF(/datum/effect/effect/system/trail, holder_moved))
 
 	active = TRUE
 
@@ -50,7 +50,7 @@ particle whenever the target moves
 	return E
 
 /datum/effect/effect/system/trail/proc/stop()
-	GLOB.moved_event.unregister(holder, src, /datum/effect/effect/system/trail/proc/holder_moved)
+	GLOB.moved_event.unregister(holder, src, TYPE_PROC_REF(/datum/effect/effect/system/trail, holder_moved))
 	active = FALSE
 
 /////////////////////////////////////////////
@@ -68,6 +68,13 @@ particle whenever the target moves
 /datum/effect/effect/system/trail/steam
 	trail_effect = /obj/effect/trail_particle/gasjet
 
+
+/////////////////////////////////////////////
+//Fire trail
+/////////////////////////////////////////////
+
+/datum/effect/effect/system/trail/fire
+	trail_effect = /obj/effect/trail_particle/fire
 
 
 /********************************************************
@@ -101,7 +108,7 @@ Their only special behaviour atm is to delete themselves shortly after creation
 	opacity = FALSE
 
 /obj/effect/trail_particle/Initialize()
-	addtimer(CALLBACK(src, .proc/finish, TRUE), lifetime)
+	addtimer(CALLBACK(src, PROC_REF(finish), TRUE), lifetime)
 
 /obj/effect/trail_particle/proc/finish()
 	qdel(src)
@@ -115,3 +122,12 @@ Their only special behaviour atm is to delete themselves shortly after creation
 	name = "ion trails"
 	icon_state = "ion_fade"
 	anchored = 1.0
+
+/obj/effect/trail_particle/fire
+	name = "fire trail"
+	icon_state = "fire_trails"
+
+/obj/effect/trail_particle/fire/Initialize()
+	..()
+	var/turf/T = get_turf(src)
+	T?.hotspot_expose(1000,100)

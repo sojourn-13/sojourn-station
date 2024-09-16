@@ -1,4 +1,4 @@
-
+/*
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
@@ -17,7 +17,7 @@
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, unidentified vessel detected on long range sensors. \nVessel is approaching on an intercept course. \nHailing frequencies open."
 	departure_message = "Attention, unknown vessel has departed"
-
+*/
 
 
 
@@ -42,7 +42,7 @@
 /datum/objective/timed/merc/check_completion()
 	if (failed)
 		return FALSE
-
+/*
 	var/datum/shuttle/autodock/multi/antag/mercenary/MS = SSshuttle.get_shuttle("Mercenary")
 
 	if (!MS)
@@ -54,7 +54,7 @@
 		//The shuttle still near Eris, fail
 		//This will succeed as long as they're enroute away from eris
 		return FALSE
-
+*/
 	return TRUE
 
 

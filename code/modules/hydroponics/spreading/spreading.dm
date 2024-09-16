@@ -54,6 +54,8 @@
 		plant_controller.remove_plant(src)
 	for(var/obj/effect/plant/neighbor in range(1,src))
 		plant_controller.add_plant(neighbor)
+	if(seed.type == /datum/seed/mushroom/maintshroom)
+		GLOB.all_maintshrooms -= src
 	. = ..()
 
 /obj/effect/plant/single
@@ -92,6 +94,7 @@
 		if(seed.type == /datum/seed/mushroom/maintshroom)
 			growth_type = 0 // this is maintshroom
 			density = FALSE
+			GLOB.all_maintshrooms += src
 		else if(seed.get_trait(TRAIT_CARNIVOROUS) == 2)
 			growth_type = 1 // WOOOORMS.
 		else if(!(seed.seed_noun in list("seeds","pits")))
@@ -105,9 +108,7 @@
 			//Disabled for mold because it looks bad
 			//0 is in here several times to weight it a bit more towards normal
 			var/rot = pick(list(0,0,0, 90, 180, -90))
-			var/matrix/M = matrix()
-			M.Turn(rot)
-			transform = M
+			add_new_transformation(/datum/transform_type/modular, list(rotation = rot, flag = PLANT_INITIAL_ROTATION_TRANSFORM, priority = PLANT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
 	else
 		max_growth = seed.growth_stages
 		growth_threshold = max_health/seed.growth_stages
@@ -120,7 +121,7 @@
 	spread_distance = ((growth_type>0) ? round(spread_chance*1.0) : round(spread_chance*0.5))
 	update_icon()
 
-	if(seed.get_trait(TRAIT_CHEMS) > 0)
+	if(seed.get_trait(TRAIT_CHEMS)?:len)
 		src.create_reagents(5*(seed.chems.len))
 		for (var/reagent in seed.chems)
 			src.reagents.add_reagent(reagent, 5)
@@ -164,6 +165,10 @@
 		set_light(0)
 
 /obj/effect/plant/proc/refresh_icon()
+	if (growth_threshold == 0)
+		error("growth_threshold is somehow 0, probably never got redefined. Qdeling to prevent repeat logs")
+		qdel(src)
+		return
 	var/growth = max(1,min(max_growth,round(health/growth_threshold)))
 	var/at_fringe = dist3D(src,parent)
 	if(spread_distance > 5)
@@ -266,21 +271,21 @@ var/list/global/cutoff_plant_icons = list()
 			newDir = 1
 		else
 			wall_mount = get_step(loc, newDir)
-			var/matrix/M = matrix()
+			var/to_turn = 0
 			// should make the plant flush against the wall it's meant to be growing from.
 
 			//M.Translate(0,offset)
 
 			switch(newDir)
 				if(WEST)
-					M.Turn(90)
+					to_turn = 90
 				if(NORTH)
-					M.Turn(180)
+					to_turn = 180
 					offset_to(wall_mount, WALL_HUG_OFFSET*0.5) //Due to perspective, there's more space to the north
 					//So plants that hug a north wall will be offset 50% more
 				if(EAST)
-					M.Turn(270)
-			src.transform = M
+					to_turn = 270
+			add_new_transformation(/datum/transform_type/modular, list(rotation = to_turn, flag = PLANT_SPREAD_ROTATION_TRANSFORM, priority = PLANT_SPREAD_ROTATION_TRANSFORM_PRIORITY))
 
 			if (newDir == SOUTH)
 				//Lets cutoff part of the plant

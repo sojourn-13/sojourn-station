@@ -50,7 +50,6 @@ What is the naming convention for planes or layers?
 
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
-
 #define CLICKCATCHER_PLANE -99
 
 #define PLANE_SPACE -95
@@ -79,6 +78,10 @@ What is the naming convention for planes or layers?
 #define LYING_HUMAN_PLANE             -1 //-13 on bay// humans that are lying down
 
 	#define LYING_HUMAN_LAYER 3.8 //0 on bay
+
+	//discordia-space/CEV-Eris/issues/2051
+	#define ABOVE_LYING_MOB_LAYER 3.85
+	#define ABOVE_LYING_HUMAN_LAYER 3.85
 
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define SPACE_LAYER 1.8
@@ -177,3 +180,12 @@ What is the naming convention for planes or layers?
 
 // Check if a mob can "logically" see an atom plane
 #define MOB_CAN_SEE_PLANE(M, P) (P <= PLANE_WORLD || (P in M.planes_visible))
+
+
+//Bay port start
+
+#define DEFAULT_APPEARANCE_FLAGS (PIXEL_SCALE)
+
+/atom/appearance_flags = DEFAULT_APPEARANCE_FLAGS
+/image/appearance_flags = DEFAULT_APPEARANCE_FLAGS
+//Bay port end

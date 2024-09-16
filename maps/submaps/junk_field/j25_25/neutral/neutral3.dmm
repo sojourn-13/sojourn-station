@@ -1,0 +1,1395 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ad" = (
+/obj/random/structures,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"ae" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"af" = (
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"ag" = (
+/obj/random/structures,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"ah" = (
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"an" = (
+/obj/structure/scrap/poor/large,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ao" = (
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aq" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ar" = (
+/mob/living/simple_animal/hostile/carp/baby,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"as" = (
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ax" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aA" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/mob/living/simple_animal/hostile/carp/baby,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/template_noop)
+"aB" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"aC" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"aE" = (
+/obj/random/mob/carp,
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"aF" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"aI" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aJ" = (
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aK" = (
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"aM" = (
+/mob/living/simple_animal/hostile/carp/pike,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"aP" = (
+/obj/structure/railing,
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aQ" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"aR" = (
+/obj/random/mob/carp,
+/turf/template_noop,
+/area/template_noop)
+"aT" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"aX" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"aZ" = (
+/obj/structure/scrap_cube,
+/turf/simulated/floor/tiled/dark/danger,
+/area/template_noop)
+"ba" = (
+/turf/simulated/wall,
+/area/template_noop)
+"bb" = (
+/obj/machinery/light/small,
+/obj/structure/scrap/poor/large,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bf" = (
+/obj/random/mob/carp,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"bg" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 27
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bh" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bi" = (
+/obj/random/traps,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"bk" = (
+/obj/structure/railing,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bl" = (
+/obj/structure/sign/warning/nosmoking/largeburnt{
+	pixel_y = 32
+	},
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bo" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bp" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/material/glass{
+	amount = 120
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bq" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/material/steel{
+	amount = 120
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"br" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/mask/breath{
+	pixel_x = 4
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = 4
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bs" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/engineering{
+	name = "Wasting Room"
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bt" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"bv" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/plasma,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"by" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light/small,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bz" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bA" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bB" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bC" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bD" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bE" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bF" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bK" = (
+/obj/structure/catwalk,
+/obj/structure/sign/warning/nosmoking/largeburnt{
+	pixel_y = 32
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bL" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bS" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"bW" = (
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"bX" = (
+/obj/structure/sign/atmos/atmos_o2{
+	pixel_x = -32
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ca" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"cb" = (
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/template_noop)
+"ci" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Atmospherics Maintenance";
+	req_access = list(24)
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"ck" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/template_noop)
+"cn" = (
+/obj/random/structures,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/template_noop)
+"cp" = (
+/obj/structure/table/rack,
+/obj/random/lowkeyrandom,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"cv" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"cz" = (
+/obj/structure/table/reinforced,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"cA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/random/tank,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"cB" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Atmospherics Maintenance";
+	req_access = list(24)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/template_noop)
+"cE" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/powercell/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cF" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/traps/wire_splicing/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cG" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cH" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cI" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cJ" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cK" = (
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cM" = (
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cO" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cP" = (
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/traps/wire_splicing/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cQ" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cV" = (
+/obj/structure/catwalk,
+/obj/machinery/light/small,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cW" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cX" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cY" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"cZ" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"db" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"dc" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1379;
+	icon_state = "door_locked";
+	id_tag = "atmos_airlock_door_int";
+	locked = 1;
+	name = "Internal Atmospherics Airlock"
+	},
+/turf/simulated/floor/tiled/steel/cargo,
+/area/template_noop)
+"dd" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"de" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"df" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"di" = (
+/turf/simulated/floor/plating,
+/area/template_noop)
+"dk" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"dm" = (
+/obj/structure/railing,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"dt" = (
+/obj/structure/catwalk,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"fu" = (
+/obj/structure/lattice,
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"fY" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"iS" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"kD" = (
+/obj/random/tool,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"kS" = (
+/obj/structure/scrap_cube,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"mo" = (
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"oM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/scrap/dense_even,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"pP" = (
+/obj/structure/lattice,
+/obj/random/scrap/dense_even,
+/turf/template_noop,
+/area/template_noop)
+"rn" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"sX" = (
+/obj/structure/catwalk,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"tW" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"wa" = (
+/obj/structure/scrap_cube,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/template_noop)
+"zU" = (
+/obj/structure/scrap_cube,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"Bp" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/template_noop)
+"CB" = (
+/obj/structure/scrap_cube,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"FC" = (
+/obj/structure/lattice,
+/obj/random/mob/carp,
+/turf/template_noop,
+/area/template_noop)
+"HE" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"KV" = (
+/obj/random/scrap/dense_even,
+/turf/simulated/floor/tiled/techmaint,
+/area/template_noop)
+"Ls" = (
+/obj/random/techpart,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Na" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"NP" = (
+/turf/simulated/floor/tiled/steel/cargo,
+/area/template_noop)
+"NQ" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/scrap/poor/large,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Sn" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Sq" = (
+/obj/random/scrap/dense_even,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"ZO" = (
+/obj/structure/lattice,
+/obj/random/lowkeyrandom/low_chance,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+iS
+aJ
+ae
+aa
+mo
+fY
+ab
+ab
+ab
+ae
+mo
+aa
+aa
+aa
+aa
+aa
+fY
+aa
+fu
+aa
+aa
+aa
+HE
+ae
+ab
+"}
+(2,1,1) = {"
+ab
+NP
+ab
+fY
+aa
+db
+db
+bs
+db
+db
+ZO
+aa
+aR
+iS
+fu
+db
+db
+db
+db
+fY
+aa
+ab
+ab
+HE
+aJ
+"}
+(3,1,1) = {"
+aJ
+bf
+ae
+ao
+aa
+db
+bk
+rn
+bf
+db
+db
+db
+iS
+db
+db
+db
+ao
+aq
+db
+db
+ab
+fu
+aa
+fY
+aa
+"}
+(4,1,1) = {"
+ab
+HE
+kD
+ae
+ab
+db
+bl
+db
+bA
+db
+zU
+db
+ae
+db
+cn
+bf
+bD
+aP
+CB
+aT
+aa
+fY
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+fY
+ZO
+aJ
+aB
+aa
+aB
+an
+aJ
+ao
+db
+af
+bW
+bf
+db
+cn
+bt
+cE
+aP
+bt
+aT
+aa
+aa
+aa
+mo
+aa
+"}
+(6,1,1) = {"
+ab
+aJ
+aJ
+db
+ZO
+db
+db
+db
+aJ
+db
+db
+db
+bt
+db
+db
+cv
+cF
+bF
+ca
+db
+Na
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+fu
+Ls
+bo
+db
+aR
+ab
+iS
+db
+aq
+db
+bS
+db
+bL
+bh
+db
+bB
+cG
+bL
+KV
+db
+aa
+aa
+aR
+aa
+aa
+"}
+(8,1,1) = {"
+ab
+aJ
+aJ
+aB
+fY
+fu
+ab
+db
+aJ
+as
+aJ
+dm
+bL
+db
+db
+bt
+cH
+bL
+ag
+db
+aa
+mo
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+ae
+aJ
+HE
+db
+db
+db
+db
+db
+db
+db
+ae
+db
+bL
+db
+cn
+ca
+oM
+bL
+bt
+aT
+aa
+aa
+aa
+Na
+aa
+"}
+(10,1,1) = {"
+aa
+Sn
+aJ
+aK
+aK
+aB
+ab
+bv
+aQ
+ab
+ab
+db
+bK
+db
+cn
+bt
+cH
+bL
+ca
+aT
+iS
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+fY
+kS
+aJ
+ad
+aE
+aB
+pP
+bv
+ab
+fY
+aa
+ae
+ab
+db
+db
+cz
+cH
+bL
+bf
+db
+db
+aa
+aa
+mo
+aa
+"}
+(12,1,1) = {"
+ab
+aJ
+Ls
+aF
+aK
+aB
+ab
+bv
+ZO
+ab
+aR
+aa
+fY
+aJ
+db
+cA
+cH
+bL
+bt
+df
+db
+fu
+ab
+fY
+aa
+"}
+(13,1,1) = {"
+aa
+aJ
+aJ
+aK
+aT
+db
+db
+db
+ae
+Sq
+aa
+fY
+aa
+ae
+db
+db
+cI
+bL
+db
+db
+db
+ae
+ab
+aa
+aa
+"}
+(14,1,1) = {"
+ab
+ao
+HE
+aK
+aT
+aJ
+aJ
+ab
+ae
+an
+aa
+mo
+ab
+bo
+aJ
+bW
+bE
+bL
+dc
+aJ
+ao
+bo
+ab
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+ab
+aJ
+ah
+aT
+ab
+HE
+aJ
+db
+bL
+db
+db
+db
+db
+db
+db
+cJ
+cV
+db
+ba
+db
+ae
+ab
+mo
+aa
+"}
+(16,1,1) = {"
+mo
+ab
+aJ
+aC
+db
+ae
+Sq
+Ls
+aT
+bL
+bL
+bX
+bL
+bC
+ao
+ae
+cK
+sX
+aT
+di
+db
+ab
+ZO
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+FC
+Sn
+aC
+aT
+iS
+aJ
+bo
+aT
+NQ
+db
+tW
+ca
+db
+db
+db
+cK
+bL
+db
+db
+db
+aa
+aa
+aa
+aa
+"}
+(18,1,1) = {"
+fY
+aJ
+ax
+aK
+aT
+ab
+bo
+bo
+db
+bo
+db
+bf
+CB
+bi
+cp
+db
+cK
+cW
+dd
+aT
+iS
+mo
+aa
+mo
+aa
+"}
+(19,1,1) = {"
+aa
+aJ
+aJ
+aK
+aT
+db
+db
+db
+db
+db
+db
+db
+db
+ci
+db
+db
+cM
+cX
+de
+dk
+ab
+aa
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aJ
+Ls
+ar
+aX
+aB
+aJ
+bo
+ab
+iS
+ab
+db
+cb
+Bp
+bp
+db
+cK
+bL
+db
+db
+db
+db
+ae
+aa
+Na
+"}
+(21,1,1) = {"
+ab
+an
+HE
+ad
+aK
+aB
+iS
+aa
+aR
+Na
+fu
+db
+wa
+cb
+bq
+db
+cK
+bL
+bi
+bW
+CB
+db
+ab
+aa
+aa
+"}
+(22,1,1) = {"
+ZO
+aJ
+bo
+aK
+aZ
+aB
+ab
+aa
+fY
+ab
+ab
+db
+aA
+ck
+br
+db
+cO
+cY
+aM
+db
+db
+db
+FC
+aa
+aa
+"}
+(23,1,1) = {"
+fY
+ab
+aJ
+HE
+db
+db
+aa
+mo
+fY
+ae
+db
+db
+bg
+aJ
+by
+db
+cP
+cZ
+bt
+db
+iS
+ZO
+ab
+ae
+ab
+"}
+(24,1,1) = {"
+aa
+ab
+aJ
+aJ
+ba
+aI
+aa
+aa
+aa
+bb
+ae
+iS
+fu
+ab
+bz
+cB
+cQ
+dt
+bt
+db
+aa
+mo
+an
+ae
+ab
+"}
+(25,1,1) = {"
+mo
+aa
+fY
+ab
+ab
+Na
+fY
+fY
+aa
+aa
+aa
+aa
+aa
+Na
+ae
+db
+db
+aT
+aT
+db
+Na
+aa
+HE
+HE
+ab
+"}

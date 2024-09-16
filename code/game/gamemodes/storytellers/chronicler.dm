@@ -5,9 +5,9 @@
 	welcome = "Today will be a glorious day!"
 	description = "A storyteller with a focus on player vs player combat. Spawns lots of antagonists, but fewer random events."
 
-	gain_mult_mundane = 0.8
-	gain_mult_moderate = 0.8
-	gain_mult_major = 0.8
+	gain_mult_mundane = 0.7
+	gain_mult_moderate = 0.7
+	gain_mult_major = 0.7
 	gain_mult_roleset = 1.5
 
 	//Less combat-oriented events, so that we'll not be fighting NPC monsters much
@@ -20,5 +20,5 @@
 	EVENT_LEVEL_MUNDANE = 0, //Mundane
 	EVENT_LEVEL_MODERATE = 0, //Moderate
 	EVENT_LEVEL_MAJOR = 0, //Major
-	EVENT_LEVEL_ROLESET = 220 //Roleset
+	EVENT_LEVEL_ROLESET = -999 //Roleset
 	)

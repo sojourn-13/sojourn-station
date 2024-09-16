@@ -13,6 +13,8 @@
 	var/shield_generate_power = 7500	//how much power we use when regenerating
 	var/shield_idle_power = 1500		//how much power we use when just being sustained.
 
+	atmos_canpass = CANPASS_NEVER
+
 /obj/machinery/shield/malfai
 	name = "emergency forcefield"
 	desc = "A weak forcefield which seems to be projected by the station's emergency atmosphere containment field"
@@ -41,7 +43,7 @@
 	if(!height || air_group) return 0
 	else return ..()
 
-/obj/machinery/shield/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/shield/attackby(obj/item/W as obj, mob/user as mob)
 	if(!istype(W)) return
 
 	//Calculate damage
@@ -61,13 +63,15 @@
 	..()
 
 /obj/machinery/shield/bullet_act(var/obj/item/projectile/Proj)
-	health -= Proj.get_structure_damage()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
 	..()
-	check_failure()
-	set_opacity(TRUE)
-	spawn(20)
-		if(src)
-			set_opacity(FALSE)
+	if (!(Proj.testing))
+		check_failure()
+		set_opacity(TRUE)
+		spawn(20)
+			if(src)
+				set_opacity(FALSE)
 
 /obj/machinery/shield/ex_act(severity)
 	switch(severity)
@@ -135,7 +139,7 @@
 	var/is_open = 0 //Whether or not the wires are exposed
 	var/locked = 0
 	var/check_delay = 60	//periodically recheck if we need to rebuild a shield
-	use_power = 0
+	use_power = NO_POWER_USE
 	idle_power_usage = 0
 
 /obj/machinery/shieldgen/Destroy()
@@ -316,7 +320,7 @@
 				to_chat(user, SPAN_NOTICE("You repair the [src]!"))
 				update_icon()
 
-	else if(istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))
+	else if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if(src.allowed(user))
 			src.locked = !src.locked
 			to_chat(user, "The controls are now [src.locked ? "locked." : "unlocked."]")

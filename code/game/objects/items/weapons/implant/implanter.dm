@@ -1,22 +1,23 @@
-/obj/item/weapon/implanter
+/obj/item/implanter
 	name = "implanter"
+	desc = "An implanter that allows safe and hygienic implant implantation even to untrained personel"
 	icon = 'icons/obj/items.dmi'
-	icon_state = "implanter0"
+	icon_state = "implanter"
 	item_state = "syringe_0"
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1)
-	var/obj/item/weapon/implant/implant = null
+	var/obj/item/implant/implant = null
 
-/obj/item/weapon/implanter/New()
+/obj/item/implanter/New()
 	..()
 	if(ispath(implant))
 		implant = new implant(src)
 		update_icon()
 
 
-/obj/item/weapon/implanter/attack_self(var/mob/user)
+/obj/item/implanter/attack_self(var/mob/user)
 	if(!implant)
 		return ..()
 	user.put_in_hands(implant)
@@ -26,14 +27,13 @@
 	update_icon()
 	return
 
-/obj/item/weapon/implanter/update_icon()
-	if(implant)
-		icon_state = "implanter1"
-	else
-		icon_state = "implanter0"
+/obj/item/implanter/update_icon()
+	cut_overlays()
+	if(src.implant)
+		add_overlay("implantstorage_[implant:overlay_icon]")
 	return
 
-/obj/item/weapon/implanter/attack(mob/living/M, mob/living/user)
+/obj/item/implanter/attack(mob/living/M, mob/living/user)
 	if(!istype(M) || !implant)
 		return
 	if(!implant.is_external())
@@ -53,7 +53,6 @@
 
 	if(do_mob(user, M, 50) && src && implant)
 
-
 		if(implant.install(M, user.targeted_organ, user))
 			M.visible_message(
 			SPAN_WARNING("[user] has implanted [M] in [affected]."),
@@ -65,5 +64,16 @@
 			"Implanted with \the [src.name] ([implant.name])",
 			"used an implanter, [src.name] ([implant.name]), on"
 			)
+			log_and_message_admins(" - [implant.name] injected into [M] at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+
+			if(istype(implant, /obj/item/implant/excelsior) && ishuman(M))
+				var/datum/antag_faction/F = get_faction_by_id(FACTION_EXCELSIOR)
+				var/datum/objective/timed/excelsior/E = (locate(/datum/objective/timed/excelsior) in F.objectives)
+				if(E)
+					if(!E.active)
+						E.start_excel_timer()
+					else
+						E.on_convert()
+
 			implant = null
 			update_icon()

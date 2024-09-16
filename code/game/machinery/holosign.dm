@@ -5,7 +5,7 @@
 	icon = 'icons/obj/holosign.dmi'
 	icon_state = "sign_off"
 	layer = ABOVE_MOB_LAYER
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 4
 	anchored = 1
@@ -41,31 +41,33 @@
 /obj/machinery/holosign/power_change()
 	if (stat & NOPOWER)
 		lit = 0
-		use_power = 0
+		use_power = NO_POWER_USE
 	update_icon()
 
 /obj/machinery/holosign/surgery
 	name = "surgery holosign"
-	desc = "Small wall-mounted holographic projector. This one reads SURGERY."
+	desc = "Small wall-mounted holographic projector. This one indicates a surgery is in process on the room."
 	on_icon = "surgery"
+
+/obj/machinery/holosign/service
+	name = "in use holosign"
+	desc = "Small wall-mounted holographic projector. This one indicates the room is currently in use."
+	on_icon = "service"
+
 ////////////////////SWITCH///////////////////////////////////////
 
-/obj/machinery/button/holosign
+/obj/machinery/button/switch/holosign
 	name = "holosign switch"
 	desc = "A remote control switch for holosign."
-	icon = 'icons/obj/power.dmi'
-	icon_state = "crema_switch"
+	icon = 'icons/obj/machines/buttons.dmi'
+	icon_state = "light0"
 
-/obj/machinery/button/holosign/attack_hand(mob/user as mob)
-	if(..())
-		return 1
-
+/obj/machinery/button/switch/holosign/attack_hand(mob/user as mob)
 	use_power(5)
-
 	active = !active
-	icon_state = "light[active]"
+	icon_state = "light1"
 
-	for(var/obj/machinery/holosign/M in SSmachines.machinery)
+	for(var/obj/machinery/holosign/M in GLOB.machines)
 		if (M.id == src.id)
 			spawn( 0 )
 				M.toggle()

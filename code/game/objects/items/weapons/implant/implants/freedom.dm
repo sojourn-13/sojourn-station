@@ -1,10 +1,10 @@
 #define INSTALL_HANDS 0
 #define INSTALL_FOOTS 1
 
-/obj/item/weapon/implant/freedom
+/obj/item/implant/freedom
 	name = "freedom implant"
 	desc = "Use this to escape from those evil Red Shirts."
-	implant_color = "r"
+	icon_state = "implant_freedom"
 	var/activation_emote = "chuckle"
 	var/uses = 1.0
 	var/install_organ = INSTALL_HANDS
@@ -12,15 +12,18 @@
 	origin_tech = list(TECH_COMBAT=5, TECH_MAGNET=3, TECH_BIO=4, TECH_ILLEGAL=2)
 	allowed_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
-/obj/item/weapon/implant/freedom/trigger(emote, mob/living/carbon/source)
+	overlay_icon = "freedom"
+
+/obj/item/implant/freedom/trigger(emote, mob/living/carbon/source)
 	if (src.uses < 1)
 		to_chat (source, "You don't feel anything")
 		return
 	if (emote == src.activation_emote)
 		src.uses--
 		to_chat(source, "You feel a faint click.")
+		log_and_message_admins(" - Freedom implant used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[source]") //So we can go to it
 		if (source.handcuffed && install_organ == INSTALL_HANDS)
-			var/obj/item/weapon/W = source.handcuffed
+			var/obj/item/W = source.handcuffed
 			source.handcuffed = null
 			if(source.buckled && source.buckled.buckle_require_restraints)
 				source.buckled.unbuckle_mob()
@@ -33,7 +36,7 @@
 				if (W)
 					W.layer = initial(W.layer)
 		if (source.legcuffed && install_organ == INSTALL_FOOTS)
-			var/obj/item/weapon/W = source.legcuffed
+			var/obj/item/W = source.legcuffed
 			source.legcuffed = null
 			source.update_inv_legcuffed()
 			if (source.client)
@@ -44,11 +47,11 @@
 				if (W)
 					W.layer = initial(W.layer)
 
-/obj/item/weapon/implant/freedom/on_install(mob/living/carbon/source, obj/item/organ/O)
+/obj/item/implant/freedom/on_install(mob/living/carbon/source, obj/item/organ/O)
 	if(O.organ_tag in list(BP_L_LEG, BP_R_LEG))
 		install_organ = INSTALL_FOOTS
 
-/obj/item/weapon/implant/freedom/on_install(mob/living/source)
+/obj/item/implant/freedom/on_install(mob/living/source)
 
 	activation_emote = input("Choose activation emote:") in list("blink", "blink_r", "eyebrow", "chuckle", "twitch_s", "frown", "nod", "blush", "giggle", "grin", "groan", "shrug", "smile", "pale", "sniff", "whimper", "wink")
 	uses = rand(2, 5)
@@ -56,7 +59,7 @@
 		source.mind.store_memory("Freedom matter implant can be activated by using the [src.activation_emote] emote, <B>say *[src.activation_emote]</B> to attempt to activate.", 0, 0)
 	to_chat(source, "The freedom implant can be activated by using the [src.activation_emote] emote, <B>say *[src.activation_emote]</B> to attempt to activate.")
 
-/obj/item/weapon/implant/freedom/get_data()
+/obj/item/implant/freedom/get_data()
 	var/data = {"
 		<b>Implant Specifications:</b><BR>
 		<b>Name:</b> Freedom Beacon<BR>
@@ -73,11 +76,11 @@
 		No Implant Specifics"}
 	return data
 
-/obj/item/weapon/implantcase/freedom
+/obj/item/implantcase/freedom
 	name = "glass case - 'freedom'"
 	desc = "A case containing a freedom implant."
-	implant = /obj/item/weapon/implant/freedom
+	implant = /obj/item/implant/freedom
 
-/obj/item/weapon/implanter/freedom
+/obj/item/implanter/freedom
 	name = "implanter (freedom)"
-	implant = /obj/item/weapon/implant/freedom
+	implant = /obj/item/implant/freedom

@@ -7,13 +7,14 @@
 	icon_gib = "pine_1"
 	speak_chance = 0
 	turns_per_move = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "brushes"
 	response_disarm = "pushes"
 	response_harm = "hits"
 	speed = -1
-	maxHealth = 250
-	health = 250
+	maxHealth = 125
+	health = 125
+	sanity_damage = 1
 
 	pixel_x = -16
 
@@ -33,6 +34,8 @@
 	min_n2 = 0
 	max_n2 = 0
 	minbodytemp = 0
+	leather_amount = 0
+	bones_amount = 0
 
 	faction = "carp"
 

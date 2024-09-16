@@ -1,26 +1,43 @@
 /obj/item/device/radio/intercom
-	name = "station intercom (General)"
-	desc = "Talk through this."
+	name = "colony intercom (General)"
+	desc = "Talk through this, and everyone on the colony will hear you."
 	icon_state = "intercom"
-	anchored = 1
+	anchored = TRUE
+	spawn_tags = null
 	slot_flags = null
 	w_class = ITEM_SIZE_BULKY
 	canhear_range = 2
 	flags = CONDUCT | NOBLOODY
 	var/number = 0
-	var/last_tick //used to delay the powercheck
+	var/area/linked_area
+
+	var/global/list/channel_indicators = list(
+		num2text(PUB_FREQ) = "intercom-channel-common",
+		num2text(AI_FREQ) = "intercom-channel-ai",
+		num2text(SEC_FREQ) = "intercom-channel-sec",
+		num2text(SEC_I_FREQ) = "intercom-channel-sec-i",
+		//num2text(BLS_FREQ) = "intercom-channel-sec-bs", //nope
+		num2text(MED_FREQ) = "intercom-channel-med",
+		num2text(MED_I_FREQ) = "intercom-channel-med-i",
+		num2text(PT_BT_FREQ) = "intercom-channel-tag-b",
+		num2text(PT_RT_FREQ) = "intercom-channel-tag-r",
+		num2text(PT_YT_FREQ) = "intercom-channel-tag-y",
+		num2text(PT_GT_FREQ) = "intercom-channel-tag-g",
+
+		num2text(SYND_FREQ) = "intercom-channel-common"
+	)
 
 /obj/item/device/radio/intercom/custom
-	name = "station intercom (Custom)"
+	name = "colony intercom (Custom)"
 	broadcasting = 0
 	listening = 0
 
 /obj/item/device/radio/intercom/interrogation
-	name = "station intercom (Interrogation)"
+	name = "colony intercom (Interrogation)"
 	frequency  = 1449
 
 /obj/item/device/radio/intercom/private
-	name = "station intercom (Private)"
+	name = "colony intercom (Private)"
 	frequency = AI_FREQ
 
 /obj/item/device/radio/intercom/department
@@ -29,16 +46,20 @@
 	listening = 1
 
 /obj/item/device/radio/intercom/department/medbay
-	name = "station intercom (Medbay)"
+	name = "colony intercom (Medbay)"
 	frequency = MED_I_FREQ
 
 /obj/item/device/radio/intercom/department/security
-	name = "station intercom (Security)"
+	name = "colony intercom (Security)"
 	frequency = SEC_I_FREQ
 
 /obj/item/device/radio/intercom/New()
 	..()
-	START_PROCESSING(SSobj, src)
+	loop_area_check()
+
+/obj/item/device/radio/intercom/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/device/radio/intercom/department/medbay/New()
 	..()
@@ -62,10 +83,6 @@
 /obj/item/device/radio/intercom/syndicate/New()
 	..()
 	internal_channels[num2text(SYND_FREQ)] = list(access_syndicate)
-
-/obj/item/device/radio/intercom/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
 
 /obj/item/device/radio/intercom/attack_ai(mob/user as mob)
 	src.add_fingerprint(user)
@@ -92,23 +109,50 @@
 
 	return canhear_range
 
-/obj/item/device/radio/intercom/Process()
-	if(((world.timeofday - last_tick) > 30) || ((world.timeofday - last_tick) < 0))
-		last_tick = world.timeofday
+/obj/item/device/radio/intercom/proc/change_status()
+	on = linked_area.powered(STATIC_EQUIP)
+	update_icon()
 
-		if(!src.loc)
-			on = 0
-		else
-			var/area/A = get_area(src)
-			if(!A)
-				on = 0
-			else
-				on = A.powered(EQUIP) // set "on" to the power status
+/obj/item/device/radio/intercom/proc/loop_area_check()
+	var/area/target_area = get_area(src)
+	if(!target_area?.apc)
+		addtimer(CALLBACK(src, PROC_REF(loop_area_check)), 30 SECONDS, TIMER_STOPPABLE) // We don't proces if there is no APC , no point in doing so is there ?
+		return FALSE
+	linked_area = target_area
+	RegisterSignal(target_area, COMSIG_AREA_APC_DELETED, PROC_REF(on_apc_removal))
+	RegisterSignal(target_area, COMSIG_AREA_APC_POWER_CHANGE, PROC_REF(change_status))
 
-		if(!on)
-			icon_state = "intercom-p"
-		else
-			icon_state = "intercom"
+/obj/item/device/radio/intercom/proc/on_apc_removal()
+	UnregisterSignal(linked_area , COMSIG_AREA_APC_DELETED)
+	UnregisterSignal(linked_area, COMSIG_AREA_APC_POWER_CHANGE)
+	linked_area = null
+	on = FALSE
+	update_icon()
+	addtimer(CALLBACK(src, PROC_REF(loop_area_check)), 30 SECONDS)
+
+/obj/item/device/radio/intercom/update_icon()
+	cut_overlays()
+	if(!on) return
+	var/tx_indicator = "intercom-stat-[(listening || frequency == SYND_FREQ)? "r" : ""][(broadcasting && frequency != SYND_FREQ) ? "t" : ""]x"
+	var/channel_indicator = channel_indicators[num2text(frequency)] || "intercom-channel-default"
+	add_overlay(tx_indicator)
+	add_overlay(channel_indicator)
+
+/obj/item/device/radio/intercom/set_frequency()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/ToggleBroadcast()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/ToggleReception()
+	. = ..()
+	update_icon()
+
+/obj/item/device/radio/intercom/emp_act(severity)
+	. = ..()
+	update_icon()
 
 /obj/item/device/radio/intercom/broadcasting
 	broadcasting = 1

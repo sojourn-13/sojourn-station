@@ -9,6 +9,7 @@
 		act = copytext(act,1,length(act))
 
 	var/updateicon = 0
+	var/cloud_emote = ""
 
 	switch(act) //Alphabetical please
 		if ("me")
@@ -33,31 +34,32 @@
 			return custom_emote(m_type, message)
 
 		if("jiggle")
-			message = "<B>The [src.name]</B> jiggles!"
+			message = "<B>\The [src.name]</B> jiggles!"
 			m_type = 1
 
 		if("light")
-			message = "<B>The [src.name]</B> lights up for a bit, then stops."
+			message = "<B>\The [src.name]</B> lights up for a bit, then stops."
 			m_type = 1
 
 		if("moan")
-			message = "<B>The [src.name]</B> moans."
+			message = "<B>\The [src.name]</B> moans."
 			m_type = 2
+			cloud_emote = "cloud-love"
 
 		if("shiver")
-			message = "<B>The [src.name]</B> shivers."
+			message = "<B>\The [src.name]</B> shivers."
 			m_type = 2
 
 		if("sway")
-			message = "<B>The [src.name]</B> sways around dizzily."
+			message = "<B>\The [src.name]</B> sways around dizzily."
 			m_type = 1
 
 		if("twitch")
-			message = "<B>The [src.name]</B> twitches."
+			message = "<B>\The [src.name]</B> twitches."
 			m_type = 1
 
 		if("vibrate")
-			message = "<B>The [src.name]</B> vibrates!"
+			message = "<B>\The [src.name]</B> vibrates!"
 			m_type = 1
 
 		if("nomood")
@@ -93,4 +95,9 @@
 		send_emote(message, m_type)
 	if(updateicon)
 		regenerate_icons()
+
+	if(cloud_emote)
+		var/image/emote_bubble = image('icons/mob/emote.dmi', src, cloud_emote, ABOVE_MOB_LAYER)
+		flick_overlay(emote_bubble, clients, 30)
+		QDEL_IN(emote_bubble, 3 SECONDS)
 	return

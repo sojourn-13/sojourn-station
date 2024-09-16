@@ -95,17 +95,17 @@ Subtypes
 /datum/terminal_command/hwinfo/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(text == "hwinfo")
 		. = list("Hardware Detected:")
-		for(var/obj/item/weapon/computer_hardware/ch in  terminal.computer.get_all_components())
+		for(var/obj/item/computer_hardware/ch in  terminal.computer.get_all_components())
 			. += ch.name
 		return
 	if(length(text) < 8)
 		return "hwinfo: Improper syntax. Use hwinfo \[name\]."
 	text = copytext(text, 8)
-	var/obj/item/weapon/computer_hardware/ch = terminal.computer.find_hardware_by_name(text)
+	var/obj/item/computer_hardware/ch = terminal.computer.find_hardware_by_name(text)
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	ch.diagnostics(user)
-	return "Running diagnostic protocols..."	
+	return "Running diagnostic protocols..."
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -127,6 +127,21 @@ Subtypes
 	. = list()
 	. += "The following ids are banned:"
 	. += jointext(ntnet_global.banned_nids, ", ") || "No ids banned."
+
+//Checks if the thing is emaged or not.
+/datum/terminal_command/firewall_check
+	name = "firewall_check"
+	man_entry = list("Format: firewall_check nid", "Checks nid for firewall bypassing.")
+	pattern = "^firewall_check$"
+	req_access = list(access_network)
+
+//Todo add back in a way to "un"emag a moular computer.
+/datum/terminal_command/firewall_check/proper_input_entered(text, mob/user, terminal)
+	var/obj/item/modular_computer/comp
+	if(comp.computer_emagged)
+		return "Check: Failed, Firewall deactivated or bypassed."
+	else
+		return "Check: Passed, Firewall active."
 
 /datum/terminal_command/status
 	name = "status"
@@ -159,7 +174,7 @@ Subtypes
 	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
 	if(!comp || !comp.enabled || !comp.network_card || !comp.network_card.check_functionality())
 		return
-	return "... Estimating location: [get_area(comp)]"
+	return "... Estimating location: [get_area(comp)] at [comp.x], [comp.y], [comp.z]!"
 
 /datum/terminal_command/ping
 	name = "ping"

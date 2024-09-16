@@ -1,6 +1,6 @@
 /datum/design/research/item/mechfab/robot
 	category = CAT_ROBOT
-	build_type = AUTOLATHE | MECHFAB
+	build_type = MECHFAB
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mechfab/robot/exoskeleton
@@ -31,7 +31,6 @@
 	name = "Robot right leg"
 	build_path = /obj/item/robot_parts/r_leg
 
-
 /datum/design/research/item/mechfab/robot/component
 	name_category = "robot component"
 	category = CAT_ROBOT
@@ -42,7 +41,7 @@
 	build_path = /obj/item/robot_parts/robot_component/binary_communication_device
 
 /datum/design/research/item/mechfab/robot/component/radio
-	name = "Radio"
+	name = "Robot Radio"
 	build_path = /obj/item/robot_parts/robot_component/radio
 
 /datum/design/research/item/mechfab/robot/component/actuator
@@ -54,25 +53,31 @@
 	build_path = /obj/item/robot_parts/robot_component/diagnosis_unit
 
 /datum/design/research/item/mechfab/robot/component/camera
-	name = "Camera"
+	name = "Robot Camera"
 	build_path = /obj/item/robot_parts/robot_component/camera
 
 /datum/design/research/item/mechfab/robot/component/armour
-	name = "Armour plating"
+	name = "Robot Armour plating"
 	build_path = /obj/item/robot_parts/robot_component/armour
+
+/datum/design/research/item/mechfab/robot/component/armour/mkii
+	name = "Mark II energy armour plating"
+	build_path = /obj/item/robot_parts/robot_component/armour/mkii
+
+/datum/design/research/item/mechfab/robot/component/armour/mkv
+	name = "Mark V extra armour plating"
+	build_path = /obj/item/robot_parts/robot_component/armour/mkv
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack
-	name = "Jetpack module"
-	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
+	name = "Robot Jet Pack module"
+	desc = "Self refilling jet pack that makes the unit suitable for EVA work."
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
 
-
-
 // Robot updates
 /datum/design/research/item/robot_upgrade
-	build_type = AUTOLATHE | MECHFAB
+	build_type = MECHFAB
 	category = CAT_ROBOT
 	name_category = "robot upgrade"
 
@@ -105,6 +110,11 @@
 	desc = "Used to kick in a robot's VTEC systems, increasing their speed."
 	build_path = /obj/item/borg/upgrade/vtec
 
+/datum/design/research/item/robot_upgrade/power_saver
+	name = "Power Saver module"
+	desc = "Used to kick in a robot's Power Saver systems, increasing their power efficiency."
+	build_path = /obj/item/borg/upgrade/power_saver
+
 /datum/design/research/item/robot_upgrade/tasercooler
 	name = "Rapid taser cooling module"
 	desc = "Used to cool a mounted taser, increasing the potential current in it and thus its recharge rate."
@@ -115,7 +125,32 @@
 	desc = "A rapid construction device module for use during construction operations."
 	build_path = /obj/item/borg/upgrade/rcd
 
+/datum/design/research/item/robot_upgrade/arc_welder
+	name = "Integrated Arc Welder module"
+	desc = "An electric based, safe welder for a robotic unit."
+	build_path = /obj/item/borg/upgrade/arc_welder
+
+/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
+	name = "Expanded Medical Hypo Upgrade"
+	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for medical modules."
+	build_path = /obj/item/borg/upgrade/hypospray_medical
+
+/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
+	name = "Expanded Rescue Hypo Upgrade"
+	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for rescue modules."
+	build_path = /obj/item/borg/upgrade/hypospray_rescue
+
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
 	build_path = /obj/item/borg/upgrade/syndicate
+
+/datum/design/research/item/robot_upgrade/bigknife
+	name = "Combat Knife upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/bigknife
+
+/datum/design/research/item/robot_upgrade/satchel_of_holding_for_borgs
+	name = "Satchel of holding equipment upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/satchel_of_holding_for_borgs

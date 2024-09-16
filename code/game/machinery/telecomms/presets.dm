@@ -29,7 +29,7 @@
 	hide = 1
 	toggled = 1
 	//anchored = 1
-	//use_power = 0
+	//use_power = NO_POWER_USE
 	//idle_power_usage = 0
 	produces_heat = 0
 	autolinkers = list("c_relay")
@@ -40,15 +40,15 @@
 	id = "Hub"
 	network = "nadezhda"
 	autolinkers = list("hub", "relay", "c_relay", "s_relay", "m_relay", "r_relay", "science", "medical",
-	"supply", "service", "common", "command", "prospector", "engineering", "security", "nt", "unused",
+	"supply", "service", "common", "command", "prospector", "engineering", "security", "blackshield", "marshal", "nt", "unused",
 	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/hub/preset_cent
-	id = "CentComm Hub"
+	id = "CentCom Hub"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("hub_cent", "c_relay", "s_relay", "m_relay", "r_relay",
-	 "centcomm", "receiverCent", "broadcasterCent")
+	 "centcom", "receiverCent", "broadcasterCent")
 
 //Receivers
 
@@ -56,7 +56,7 @@
 	id = "Receiver A"
 	network = "nadezhda"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, PRO_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, BLS_FREQ, MAR_FREQ, PRO_FREQ)
 
 	//Common and other radio frequencies for people to freely use
 	New()
@@ -65,7 +65,7 @@
 		..()
 
 /obj/machinery/telecomms/receiver/preset_cent
-	id = "CentComm Receiver"
+	id = "CentCom Receiver"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("receiverCent")
@@ -96,8 +96,8 @@
 /obj/machinery/telecomms/bus/preset_three
 	id = "Bus 3"
 	network = "nadezhda"
-	freq_listening = list(SEC_FREQ, COMM_FREQ)
-	autolinkers = list("processor3", "security", "command")
+	freq_listening = list(SEC_FREQ, BLS_FREQ, MAR_FREQ, COMM_FREQ)
+	autolinkers = list("processor3", "security", "blackshield", "marshal", "command")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"
@@ -106,11 +106,11 @@
 	autolinkers = list("processor4", "engineering", "common")
 
 /obj/machinery/telecomms/bus/preset_cent
-	id = "CentComm Bus"
+	id = "CentCom Bus"
 	network = "nadezhda"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("processorCent", "centcomm")
+	autolinkers = list("processorCent", "centcom")
 
 //Processors
 
@@ -135,7 +135,7 @@
 	autolinkers = list("processor4")
 
 /obj/machinery/telecomms/processor/preset_cent
-	id = "CentComm Processor"
+	id = "CentCom Processor"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("processorCent")
@@ -163,7 +163,7 @@
 
 /obj/machinery/telecomms/server/presets/service
 	id = "service server"
-	freq_listening = list(SRV_FREQ)
+	freq_listening = list(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 	autolinkers = list("service")
 
 /obj/machinery/telecomms/server/presets/common
@@ -199,16 +199,26 @@
 	freq_listening = list(SEC_FREQ)
 	autolinkers = list("security")
 
+/obj/machinery/telecomms/server/presets/blackshield
+	id = "blackshield server"
+	freq_listening = list(BLS_FREQ)
+	autolinkers = list("blackshield")
+
+/obj/machinery/telecomms/server/presets/marshal
+	id = "marshal server"
+	freq_listening = list(MAR_FREQ)
+	autolinkers = list("marshal")
+
 /obj/machinery/telecomms/server/presets/prospector
 	id = "prospector server"
 	freq_listening = list(PRO_FREQ)
 	autolinkers = list("prospector")
 
-/obj/machinery/telecomms/server/presets/centcomm
-	id = "CentComm server"
+/obj/machinery/telecomms/server/presets/centcom
+	id = "CentCom server"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("centcomm")
+	autolinkers = list("centcom")
 
 /obj/machinery/telecomms/server/presets/nt
 	id = "Church Server"
@@ -226,7 +236,7 @@
 	autolinkers = list("broadcasterA")
 
 /obj/machinery/telecomms/broadcaster/preset_cent
-	id = "CentComm Broadcaster"
+	id = "CentCom Broadcaster"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("broadcasterCent")

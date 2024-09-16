@@ -1,4 +1,3 @@
-
 /obj/machinery/radiocarbon_spectrometer
 	name = "radiocarbon spectrometer"
 	desc = "A specialised, complex scanner for gleaning information on all manner of small things."
@@ -8,11 +7,11 @@
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "analyser"
 
-	use_power = 1			//1 = idle, 2 = active
+	use_power = IDLE_POWER_USE			//1 = idle, 2 = active
 	idle_power_usage = 20
 	active_power_usage = 300
 
-	//var/obj/item/weapon/reagent_containers/glass/coolant_container
+	//var/obj/item/reagent_containers/glass/coolant_container
 	var/scanning = 0
 	var/report_num = 0
 	//
@@ -63,7 +62,7 @@
 	coolant_reagents_purity["adminordrazine"] = 2
 
 /obj/machinery/radiocarbon_spectrometer/attack_hand(var/mob/user as mob)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/radiocarbon_spectrometer/attackby(var/obj/I as obj, var/mob/user as mob)
 	if(scanning)
@@ -77,17 +76,17 @@
 				N.use(amount_used)
 				scanner_seal_integrity = round(scanner_seal_integrity + amount_used * 10)
 				return
-		if(istype(I, /obj/item/weapon/reagent_containers/glass))
+		if(istype(I, /obj/item/reagent_containers/glass))
 			var/choice = alert("What do you want to do with the container?","Radiometric Scanner","Add coolant","Empty coolant","Scan container")
 			if(choice == "Add coolant")
-				var/obj/item/weapon/reagent_containers/glass/G = I
+				var/obj/item/reagent_containers/glass/G = I
 				var/amount_transferred = min(src.reagents.maximum_volume - src.reagents.total_volume, G.reagents.total_volume)
 				G.reagents.trans_to(src, amount_transferred)
 				to_chat(user, "<span class='info'>You empty [amount_transferred]u of coolant into [src].</span>")
 				update_coolant()
 				return
 			else if(choice == "Empty coolant")
-				var/obj/item/weapon/reagent_containers/glass/G = I
+				var/obj/item/reagent_containers/glass/G = I
 				var/amount_transferred = min(G.reagents.maximum_volume - G.reagents.total_volume, src.reagents.total_volume)
 				src.reagents.trans_to(G, amount_transferred)
 				to_chat(user, "<span class='info'>You remove [amount_transferred]u of coolant from [src].</span>")
@@ -120,7 +119,7 @@
 	if(total_purity && fresh_coolant)
 		coolant_purity = total_purity / fresh_coolant
 
-/obj/machinery/radiocarbon_spectrometer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/radiocarbon_spectrometer/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
 	if(user.stat)
 		return
@@ -200,8 +199,7 @@
 					radiation = rand() * 15 + 85
 					if(!rad_shield)
 						//irradiate nearby mobs
-						for(var/mob/living/M in view(7,src))
-							M.apply_effect(radiation / 25, IRRADIATE, 0)
+						PulseRadiation(src, radiation / 25, 7)
 				else
 					t_left_radspike = pick(10,15,25)
 
@@ -216,7 +214,7 @@
 			//modify the optimal wavelength
 			tleft_retarget_optimal_wavelength -= deltaT
 			if(tleft_retarget_optimal_wavelength <= 0)
-				tleft_retarget_optimal_wavelength = pick(4,8,15)
+				tleft_retarget_optimal_wavelength = pick(9,12,15)
 				optimal_wavelength_target = rand() * 9900 + 100
 			//
 			if(optimal_wavelength < optimal_wavelength_target)
@@ -263,33 +261,35 @@
 		src.reagents.remove_any(used_coolant)
 		used_coolant = 0
 
+// Special paper for the science tool
+/obj/item/paper/geo_info
+	var/list/rock_aged = list()
+	var/list/really_old = list()
+	var/list/odd_matter = list()
+
 /obj/machinery/radiocarbon_spectrometer/proc/complete_scan()
 	src.visible_message("\blue \icon[src] makes an insistent chime.", 2)
 
 	if(scanned_item)
 		//create report
-		var/obj/item/weapon/paper/P = new(src)
+		var/obj/item/paper/geo_info/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
-		P.copy_overlays(list("paper_stamped"), TRUE)
+		P.add_overlay(list("paper_stamped"), TRUE)
 
 		//work out data
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"
 		var/datum/geosample/G
 		switch(scanned_item.type)
-			if(/obj/item/weapon/ore)
-				var/obj/item/weapon/ore/O = scanned_item
-				if(O.geologic_data)
-					G = O.geologic_data
 
-			if(/obj/item/weapon/rocksliver)
-				var/obj/item/weapon/rocksliver/O = scanned_item
+			if(/obj/item/rocksliver)
+				var/obj/item/rocksliver/O = scanned_item
 				if(O.geological_data)
 					G = O.geological_data
 
-			if(/obj/item/weapon/archaeological_find)
+			if(/obj/item/archaeological_find)
 				data = " - Mundane object (archaic xenos origins)<br>"
 
-				var/obj/item/weapon/archaeological_find/A = scanned_item
+				var/obj/item/archaeological_find/A = scanned_item
 				if(A.talking_atom)
 					data = " - Exhibits properties consistent with sonic reproduction and audio capture technologies.<br>"
 
@@ -298,8 +298,10 @@
 			data = " - Spectometric analysis on mineral sample has determined type [finds_as_strings[responsive_carriers.Find(G.source_mineral)]]<br>"
 			if(G.age_billion > 0)
 				data += " - Radiometric dating shows age of [G.age_billion].[G.age_million] billion years<br>"
+				P.really_old += G.age_billion
 			else if(G.age_million > 0)
 				data += " - Radiometric dating shows age of [G.age_million].[G.age_thousand] million years<br>"
+				P.rock_aged += G.age_million
 			else
 				data += " - Radiometric dating shows age of [G.age_thousand * 1000 + G.age] years<br>"
 			data += " - Chromatographic analysis shows the following materials present:<br>"
@@ -308,14 +310,26 @@
 					var/index = responsive_carriers.Find(carrier)
 					if(index > 0 && index <= finds_as_strings.len)
 						data += "	> [100 * G.find_presence[carrier]]% [finds_as_strings[index]]<br>"
+						P.odd_matter += G.find_presence[carrier]
 
 			if(G.artifact_id && G.artifact_distance >= 0)
 				anom_found = 1
 				data += " - Hyperspectral imaging reveals exotic energy wavelength detected with ID: [G.artifact_id]<br>"
 				data += " - Fourier transform analysis on anomalous energy absorption indicates energy source located inside emission radius of [G.artifact_distance]m<br>"
 
+			if(G.relic_method != null)
+				switch(G.relic_method)
+					if(0)
+						data += " - Packed Sand Around Geo: Use Welder to extract Geo<br>"
+					if(1)
+						data += " - Light Cobble Around Geo: Dig cobble to extract Geo<br>"
+					if(2)
+						data += " - Hard Rocks Around Geo: Carefully Excavate to extract Geo<br>"
+
+
 		if(!anom_found)
 			data += " - No anomalous data<br>"
+
 
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<b>Scanned item:</b> [scanned_item.name]<br><br>" + data

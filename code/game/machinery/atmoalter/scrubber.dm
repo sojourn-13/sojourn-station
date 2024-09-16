@@ -21,7 +21,7 @@
 
 /obj/machinery/portable_atmospherics/powered/scrubber/New()
 	..()
-	cell = new/obj/item/weapon/cell/medium/high(src)
+	cell = new/obj/item/cell/large/high(src)
 
 /obj/machinery/portable_atmospherics/powered/scrubber/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
@@ -95,51 +95,66 @@
 	return src.attack_hand(user)
 
 /obj/machinery/portable_atmospherics/powered/scrubber/attack_hand(var/mob/user)
-	ui_interact(user)
-	return
+	return ui_interact(user)
 
-/obj/machinery/portable_atmospherics/powered/scrubber/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=NANOUI_FOCUS)
-	var/list/data[0]
-	data["portConnected"] = connected_port ? 1 : 0
-	data["tankPressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
-	data["rate"] = round(volume_rate)
-	data["minrate"] = round(minrate)
-	data["maxrate"] = round(maxrate)
-	data["powerDraw"] = round(last_power_draw)
-	data["cellCharge"] = cell ? cell.charge : 0
-	data["cellMaxCharge"] = cell ? cell.maxcharge : 1
-	data["on"] = on ? 1 : 0
-
-	data["hasHoldingTank"] = holding ? 1 : 0
-	if (holding)
-		data["holdingTank"] = list("name" = holding.name, "tankPressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0))
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "portscrubber.tmpl", "Portable Scrubber", 480, 400, state =GLOB.physical_state)
-		ui.set_initial_data(data)
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosScrubberPortable", name)
 		ui.open()
-		ui.set_auto_update(1)
 
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_data(mob/user)
+	var/list/data = list()
 
-/obj/machinery/portable_atmospherics/powered/scrubber/Topic(href, href_list)
-	if(..())
-		return 1
+	data["on"] = !!on
+	data["connected"] = !!connected_port
+	data["pressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
+	data["rate"] =  round(volume_rate)
+	data["defaultRate"] = initial(volume_rate)
+	data["minRate"] = round(minrate)
+	data["maxRate"] = round(maxrate)
+	data["powerDraw"] = round(last_power_draw)
 
-	if(href_list["power"])
-		on = !on
-		. = 1
-	if (href_list["remove_tank"])
-		if(holding)
-			holding.loc = loc
-			holding = null
-		. = 1
-	if (href_list["volume_adj"])
-		var/diff = text2num(href_list["volume_adj"])
-		volume_rate = CLAMP(volume_rate+diff, minrate, maxrate)
-		. = 1
-	update_icon()
+	if(holding)
+		data["holding"] = list(
+			"name" = holding.name,
+			"pressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0)
+		)
+	else
+		data["holding"] = null
 
+	if(cell)
+		data["cell"] = list(
+			"charge" = cell.charge,
+			"maxCharge" = cell.maxcharge,
+		)
+	else
+		data["cell"] = null
+
+	return data
+
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("power")
+			on = !on
+			. = TRUE
+		if("remove_tank")
+			if(holding)
+				holding.forceMove(loc)
+				holding = null
+			. = TRUE
+		if("set_volume")
+			volume_rate = CLAMP(params["volume"], minrate, maxrate)
+			. = TRUE
+
+	if(.)
+		add_fingerprint(usr)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
+		update_icon()
 
 //Huge scrubber
 /obj/machinery/portable_atmospherics/powered/scrubber/huge
@@ -149,7 +164,7 @@
 	volume = 50000
 	volume_rate = 5000
 
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 500		//internal circuitry, friction losses and stuff
 	active_power_usage = 100000	//100 kW ~ 135 HP
 
@@ -217,13 +232,13 @@
 		return
 
 	//doesn't use power cells
-	if(istype(I, /obj/item/weapon/cell/large))
+	if(istype(I, /obj/item/cell/large))
 		return
-	if (istype(I, /obj/item/weapon/tool/screwdriver))
+	if (istype(I, /obj/item/tool/screwdriver))
 		return
 
 	//doesn't hold tanks
-	if(istype(I, /obj/item/weapon/tank))
+	if(istype(I, /obj/item/tank))
 		return
 
 	return
@@ -250,8 +265,11 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
 	anchored = 1
+	pixel_x = -48
+	pixel_y = -16
+	var/target_temperature = T20C
 
-	use_power = 0
+	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
 
@@ -270,12 +288,60 @@
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(environment)
-		environment.temperature = T20C
+		environment.temperature = target_temperature
 		environment.gas = list("oxygen" = O2STANDARD * MolesForPressure(environment.volume), \
 							   "nitrogen" = N2STANDARD *  MolesForPressure(environment.volume))
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/update_icon()
-    return
+	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/MolesForPressure(var/gasVolume)
-	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * target_temperature)
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold
+	name = "Coldrasil"
+	desc = "You feel cold being near the tree that holds up the mountains."
+	icon = 'icons/obj/flora/snowtree.dmi'
+	icon_state = "tree3"
+	target_temperature = 240
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree
+	name = "Kriosan Tree"
+	desc = "Strange dog tree."
+	var/damage = 0.3
+	var/NOLAG = 0
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attackby(var/obj/item/I as obj, var/mob/user as mob)
+	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attack_hand(var/mob/user)
+	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/Process()
+
+	var/datum/gas_mixture/environment = loc.return_air()
+
+	if(environment)
+		environment.temperature = target_temperature
+		environment.gas = list("carbon_dioxide" = MolesForPressure(environment.volume))
+
+	if(NOLAG)
+		var/list/affected = list()
+		spawn()
+			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+				if (H.z == src.z)
+					affected.Add(H)
+			for(var/mob/living/carbon/human/affected_guy in affected)
+				affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+	else
+		var/list/affected = list()
+		for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+			if (H.z == src.z)
+				affected.Add(H)
+		for(var/mob/living/carbon/human/affected_guy in affected)
+			affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/update_icon()
+	return

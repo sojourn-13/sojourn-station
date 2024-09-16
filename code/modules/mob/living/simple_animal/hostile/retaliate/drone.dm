@@ -20,9 +20,13 @@
 	maxHealth = 150
 	speed = 4
 	projectiletype = /obj/item/projectile/beam/drone
-	projectilesound = 'sound/weapons/laser3.ogg'
+	projectilesound = 'sound/weapons/energy/laser3.ogg'
 	destroy_surroundings = 0
+	leather_amount = 0
+	bones_amount = 0
 	var/datum/effect/effect/system/trail/ion/trail
+
+	armor = list(melee = 8, bullet = 2, energy = 5, bomb = 25, bio = 0, rad = 25)
 
 	//the drone randomly switches between these states because it's malfunctioning
 	var/hostile_drone = 0
@@ -54,7 +58,7 @@
 	..()
 	if(prob(5))
 		projectiletype = /obj/item/projectile/beam/pulse/drone
-		projectilesound = 'sound/weapons/pulse2.ogg'
+		projectilesound = 'sound/weapons/energy/pulse2.ogg'
 	trail = new /datum/effect/effect/system/trail/ion(src)
 	trail.set_up(src)
 	trail.start()
@@ -90,7 +94,12 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
-		health += rand(25,100)
+		adjustBruteLoss(rand(-20,-30)) //we heal fast
+		adjustFireLoss(rand(-20,-30))
+		if(!rapid)
+			rapid = TRUE
+		if(prob(95) && !ranged)
+			ranged = TRUE
 
 	//spark for no reason
 	if(prob(5))
@@ -129,7 +138,7 @@
 			else
 				src.visible_message("\blue \icon[src] [src] suddenly lies still and quiet.")
 			disabled = rand(150, 600)
-			walk(src,0)
+			SSmove_manager.stop_looping(src)
 
 	if(exploding && prob(20))
 		if(prob(50))
@@ -144,7 +153,7 @@
 		exploding = 1
 		stat = UNCONSCIOUS
 		wander = 1
-		walk(src,0)
+		SSmove_manager.stop_looping(src)
 		spawn(rand(50,150))
 			if(!disabled && exploding)
 				explosion(get_turf(src), 0, 1, 4, 7)
@@ -153,10 +162,14 @@
 
 //ion rifle!
 /mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)
-	health -= rand(3,15) * (severity + 1)
+	adjustFireLoss(rand(20,30)*severity)
 	disabled = rand(150, 600)
 	hostile_drone = 0
-	walk(src,0)
+	SSmove_manager.stop_looping(src)
+	if(rapid)
+		rapid = FALSE
+	if(prob(5) && ranged) //Kinda would suck if they lost their only weapon
+		ranged = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/death()
 	..(null,"suddenly breaks apart.")
@@ -171,16 +184,16 @@
 		var/obj/O
 
 		//shards
-		O = new /obj/item/weapon/material/shard(src.loc)
+		O = new /obj/item/material/shard(src.loc)
 		step_to(O, get_turf(pick(view(7, src))))
 		if(prob(75))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(50))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(25))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//rods
@@ -210,7 +223,7 @@
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//also drop dummy circuit boards deconstructable for research (loot)
-		var/obj/item/weapon/circuitboard/C
+		var/obj/item/circuitboard/C
 
 		//spawn 1-4 boards of a random type
 		var/spawnees = 0
@@ -272,9 +285,3 @@
 			C.origin_tech = list(TECH_ILLEGAL = rand(3,6))
 
 	. = ..()
-
-/obj/item/projectile/beam/drone
-	damage = 15
-
-/obj/item/projectile/beam/pulse/drone
-	damage = 10

@@ -2,7 +2,7 @@
 	if (src.stat == 2)
 		return
 	else
-		if (src.health <= HEALTH_THRESHOLD_DEAD && src.stat != 2)
+		if (src.health <= death_threshold && src.stat != DEAD)
 			death()
 			return
 

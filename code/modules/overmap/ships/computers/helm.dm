@@ -4,7 +4,7 @@
 	icon_keyboard = "teleport_key"
 	icon_screen = "eris_control"
 	light_color = COLOR_LIGHTING_CYAN_MACHINERY
-	circuit = /obj/item/weapon/circuitboard/helm
+	circuit = /obj/item/circuitboard/helm
 	var/obj/effect/overmap/ship/linked			//connected overmap object
 	var/autopilot = 0
 	var/manual_control = 0
@@ -32,7 +32,7 @@
 /obj/machinery/computer/helm/Process()
 	..()
 	if (autopilot && dx && dy)
-		var/turf/T = locate(dx,dy,maps_data.overmap_z)
+		var/turf/T = locate(dx,dy,GLOB.maps_data.overmap_z)
 		if(linked.loc == T)
 			if(linked.is_still())
 				autopilot = 0
@@ -77,9 +77,9 @@
 	if(linked && manual_control)
 		user.reset_view(linked)
 
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/helm/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/helm/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(!linked)
 		return
 
@@ -216,13 +216,13 @@
 
 /obj/machinery/computer/navigation
 	name = "navigation console"
-	circuit = /obj/item/weapon/circuitboard/nav
+	circuit = /obj/item/circuitboard/nav
 	var/viewing = 0
 	var/obj/effect/overmap/ship/linked
 	icon_keyboard = "generic_key"
 	icon_screen = "helm"
 
-/obj/machinery/computer/navigation/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/navigation/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(!linked)
 		return
 
@@ -277,7 +277,7 @@
 			user.set_machine(src)
 		user.reset_view(linked)
 
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/computer/navigation/Topic(href, href_list)
 	if(..())

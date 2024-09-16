@@ -71,12 +71,21 @@ Radio:
 1351 - Science
 1353 - Command
 1355 - Medical
-1357 - Engineering
+1337 - Engineering
 1359 - Security
+1362 - Blackshield
+1363 - Marshalls
 1341 - deathsquad
 1443 - Confession Intercom
 1347 - Cargo techs
 1349 - Service people
+
+//Plasma tag!
+1549 - Blue Team
+1551 - Red  Team
+1553 - Yellow Team
+1557 - Green Team
+
 
 Devices:
 1451 - tracking implant
@@ -113,13 +122,20 @@ var/const/SYND_FREQ = 1213
 var/const/PUB_FREQ = 1459
 var/const/NT_FREQ = 1364
 var/const/SEC_FREQ = 1359
-var/const/ENG_FREQ = 1357
+var/const/BLS_FREQ = 1362
+var/const/MAR_FREQ = 1363
+var/const/ENG_FREQ = 1337 //very leet
 var/const/MED_FREQ = 1355
 var/const/SCI_FREQ = 1351
 var/const/SRV_FREQ = 1349
 var/const/SUP_FREQ = 1347
 var/const/PRO_FREQ = 1345
 
+//Plasma tag!
+var/const/PT_BT_FREQ =1549
+var/const/PT_RT_FREQ =1551
+var/const/PT_YT_FREQ =1553
+var/const/PT_GT_FREQ =1557
 
 // internal department channels
 var/const/MED_I_FREQ = 1485
@@ -132,6 +148,8 @@ var/list/radiochannels = list(
 	"Medical"		= MED_FREQ,
 	"Engineering"	= ENG_FREQ,
 	"Security" 		= SEC_FREQ,
+	"Blackshield"   = BLS_FREQ,
+	"Marshal"       = MAR_FREQ,
 	"Special Ops" 	= DTH_FREQ,
 	"Mercenary" 	= SYND_FREQ,
 	"Supply" 		= SUP_FREQ,
@@ -141,6 +159,10 @@ var/list/radiochannels = list(
 	"Medical(I)"	= MED_I_FREQ,
 	"Security(I)"	= SEC_I_FREQ,
 	"Prospector"	= PRO_FREQ,
+	"Plasmatag B"	= PT_BT_FREQ,
+	"Plasmatag R"	= PT_RT_FREQ,
+	"Plasmatag Y"	= PT_YT_FREQ,
+	"Plasmatag G"	= PT_GT_FREQ,
 )
 
 // central command channels, i.e deathsquid
@@ -150,7 +172,7 @@ var/list/CENT_FREQS = list(DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_FREQ, SEC_FREQ, BLS_FREQ, MAR_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -159,7 +181,7 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 	// Antags!
 	if (frequency in ANTAG_FREQS)
 		return "syndradio"
-	// centcomm channels
+	// centcom channels
 	if(frequency in CENT_FREQS)
 		return "centradio"
 	// command channel
@@ -171,12 +193,18 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 	// department radio formatting (poorly optimized, ugh)
 	if(frequency == SEC_FREQ)
 		return "secradio"
+	if(frequency == BLS_FREQ)
+		return "bsradio"
+	if(frequency == MAR_FREQ)
+		return "secradio"
 	if (frequency == ENG_FREQ)
 		return "engradio"
 	if(frequency == SCI_FREQ)
 		return "sciradio"
 	if(frequency == MED_FREQ)
 		return "medradio"
+	if(frequency == MED_I_FREQ)
+		return "medaltradio"
 	if(frequency == SUP_FREQ) // cargo
 		return "supradio"
 	if(frequency == SRV_FREQ) // service
@@ -254,7 +282,7 @@ var/const/RADIO_MAGNETS = "radio_magnet"
 	if (!devices_line)
 		devices_line = new
 		devices[filter] = devices_line
-	devices_line+=device
+	devices_line|=device
 //			var/list/obj/devices_line___ = devices[filter_str]
 //			var/l = devices_line___.len
 	//log_admin("DEBUG: devices_line.len=[devices_line.len]")

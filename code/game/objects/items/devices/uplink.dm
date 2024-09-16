@@ -37,7 +37,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	purchase_log = list()
 	world_uplinks += src
 	uses = telecrystals
-	addtimer(CALLBACK(src, .obj/item/device/uplink/proc/gain_TC), 600)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/device/uplink, gain_TC)), 600)
 
 /obj/item/device/uplink/Destroy()
 	world_uplinks -= src
@@ -46,7 +46,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 
 //Passive TC gain, triggers once per minute as long as the owner is alive and active
 /obj/item/device/uplink/proc/gain_TC()
-	addtimer(CALLBACK(src, .obj/item/device/uplink/proc/gain_TC), 600)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/device/uplink, gain_TC)), 600)
 	if (!uplink_owner || !uplink_owner.current)
 		return
 
@@ -102,7 +102,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 		toggle()
 	interact(user)
 
-// Checks to see if the value meets the target. Like a frequency being a traitor_frequency, in order to unlock a headset.
+// Checks to see if the value meets the target. Like a frequency being a contractor_frequency, in order to unlock a headset.
 // If true, it accesses trigger() and returns 1. If it fails, it returns false. Use this to see if you need to close the
 // current item's menu.
 /obj/item/device/uplink/hidden/proc/check_trigger(mob/user as mob, var/value)
@@ -114,15 +114,15 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 /*
 	NANO UI FOR UPLINK WOOP WOOP
 */
-/obj/item/device/uplink/hidden/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/uplink/hidden/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/title = "Remote Uplink"
 	var/data[0]
 
 	data["welcome"] = welcome
 	data["crystals"] = uses
 	data["menu"] = nanoui_menu
-	data["has_contracts"] = uplink_owner ? player_is_antag_in_list(uplink_owner, ROLES_CONTRACT)\
-	                                     : !!length(owner_roles & ROLES_CONTRACT)
+	data["has_contracts"] = uplink_owner ? player_is_antag_in_list(uplink_owner, ROLES_CONTRACT_VIEW)\
+	                                     : !!length(owner_roles & ROLES_CONTRACT_VIEW)
 	data += nanoui_data
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -138,7 +138,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 
 // Interaction code. Gathers a list of items purchasable from the paren't uplink and displays it. It also adds a lock button.
 /obj/item/device/uplink/interact(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 // The purchasing code.
 /obj/item/device/uplink/hidden/Topic(href, href_list)
@@ -152,7 +152,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	else if(href_list["lock"])
 		toggle()
 		var/datum/nanoui/ui = SSnano.get_open_ui(user, src, "main")
-		ui.close()
+		ui?.close()
 	else if(href_list["return"])
 		nanoui_menu = round(nanoui_menu/10)
 	else if(href_list["menu"])
@@ -210,10 +210,10 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 
 				nanoui_data["exploit_exists"] = 1
 				break
-	else if(nanoui_menu == 3 && (uplink_owner ? player_is_antag_in_list(uplink_owner, ROLES_CONTRACT) : !!length(owner_roles & ROLES_CONTRACT)))
+	else if(nanoui_menu == 3 && (uplink_owner ? player_is_antag_in_list(uplink_owner, ROLES_CONTRACT_VIEW) : !!length(owner_roles & ROLES_CONTRACT_VIEW)))
 		var/list/available_contracts = list()
 		var/list/completed_contracts = list()
-		for(var/datum/antag_contract/C in GLOB.all_antag_contracts)
+		for(var/datum/antag_contract/C in GLOB.various_antag_contracts)
 			var/list/entry = list(list(
 				"name" = C.name,
 				"desc" = C.desc,
@@ -254,22 +254,23 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	if(hidden_uplink)
 		hidden_uplink.trigger(user)
 
-/obj/item/weapon/tool/multitool/uplink/New(loc, mind, crystal_amount)
+/obj/item/tool/multitool/uplink/New(loc, mind, crystal_amount)
 	..(loc)
 	hidden_uplink = new(src, mind, crystal_amount)
 
 
-/obj/item/weapon/tool/multitool/uplink/attack_self(mob/user as mob)
+/obj/item/tool/multitool/uplink/attack_self(mob/user as mob)
 	if(hidden_uplink)
 		hidden_uplink.trigger(user)
 
 /obj/item/device/radio/headset/uplink
-	traitor_frequency = 1445
+	contractor_frequency = 1445
 
 /obj/item/device/radio/headset/uplink/New(loc, mind, crystal_amount = DEFAULT_TELECRYSTAL_AMOUNT)
 	..(loc)
 	hidden_uplink = new(src, mind, crystal_amount)
 	hidden_uplink.uses = DEFAULT_TELECRYSTAL_AMOUNT
+	hidden_uplink.trigger_code = 1445
 
 
 

@@ -40,7 +40,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_robotize(var/mob/living/M)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Robot"
 
 	if(ishuman(M))
@@ -51,7 +51,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_animalize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Simple Animal"
 
 	if(!M)
@@ -68,7 +68,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/makepAI(var/turf/T)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
 
@@ -95,7 +95,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_slimeize(var/mob/living/M)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make slime"
 
 	if(ishuman(M))
@@ -110,7 +110,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 /*
 /client/proc/cmd_admin_monkeyize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Monkey"
 
 	if(!ticker)
@@ -125,7 +125,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_changelinginize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Changeling"
 
 	if(!ticker)
@@ -160,7 +160,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 */
 /*
 /client/proc/make_cultist(var/mob/M in SSmobs.mob_list) // -- TLE, modified by Urist
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Cultist"
 	set desc = "Makes target a cultist"
 	if(!cultwords["travel"])
@@ -171,7 +171,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 		else
 			if(alert("Spawn that person a tome?",,"Yes","No")=="Yes")
 				to_chat(M, "\red You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie. A tome, a message from your new master, appears on the ground.")
-				new /obj/item/weapon/book/tome(M.loc)
+				new /obj/item/book/tome(M.loc)
 			else
 				to_chat(M, "\red You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie.")
 			var/glimpse=pick("1","2","3","4","5","6","7","8")
@@ -216,6 +216,35 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_del_all, R_ADMIN|R_DEBUG, FALSE)
 		log_admin("[key_name(src)] has deleted all instances of [hsbitem].")
 		message_admins("[key_name_admin(src)] has deleted all instances of [hsbitem].", 0)
 
+ADMIN_VERB_ADD(/client/proc/cmd_display_del_log, R_ADMIN|R_DEBUG, FALSE)
+/client/proc/cmd_display_del_log()
+	set category = "Debug"
+	set name = "Display del() Log"
+	set desc = "Display del's log of everything that's passed through it."
+
+	var/list/dellog = list("<B>List of things that have gone through qdel this round</B><BR><BR><ol>")
+	sortTim(SSgarbage.items, cmp=/proc/cmp_qdel_item_time, associative = TRUE)
+	for(var/path in SSgarbage.items)
+		var/datum/qdel_item/I = SSgarbage.items[path]
+		dellog += "<li><u>[path]</u><ul>"
+		if (I.failures)
+			dellog += "<li>Failures: [I.failures]</li>"
+		dellog += "<li>qdel() Count: [I.qdels]</li>"
+		dellog += "<li>Destroy() Cost: [I.destroy_time]ms</li>"
+		if (I.hard_deletes)
+			dellog += "<li>Total Hard Deletes [I.hard_deletes]</li>"
+			dellog += "<li>Time Spent Hard Deleting: [I.hard_delete_time]ms</li>"
+		if (I.slept_destroy)
+			dellog += "<li>Sleeps: [I.slept_destroy]</li>"
+		if (I.no_respect_force)
+			dellog += "<li>Ignored force: [I.no_respect_force]</li>"
+		if (I.no_hint)
+			dellog += "<li>No hint: [I.no_hint]</li>"
+		dellog += "</ul></li>"
+
+	dellog += "</ol>"
+
+	usr << browse(dellog.Join(), "window=dellog")
 
 ADMIN_VERB_ADD(/client/proc/cmd_debug_make_powernets, R_DEBUG, FALSE)
 /client/proc/cmd_debug_make_powernets()
@@ -237,7 +266,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 
 // Render stats list for round-end statistics.
-/proc/render_stats(list/stats, user, sort = /proc/cmp_generic_stat_item_time)
+/proc/render_stats(list/stats, user, sort = GLOBAL_PROC_REF(cmp_generic_stat_item_time))
 	sortTim(stats, sort, TRUE)
 
 	var/list/lines = list()
@@ -256,12 +285,12 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/weapon/card/id/id = H.GetIdCard()
+		var/obj/item/card/id/id = H.GetIdCard()
 		if(id)
 			id.icon_state = "gold"
 			id.access = get_all_accesses()
 		else
-			var/obj/item/weapon/card/id/new_id = new/obj/item/weapon/card/id(M);
+			var/obj/item/card/id/new_id = new/obj/item/card/id(M);
 			new_id.icon_state = "gold"
 			new_id.access = get_all_accesses()
 			new_id.registered_name = H.real_name
@@ -301,7 +330,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_areatest()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test areas"
 
 	var/list/areas_all = list()
@@ -391,7 +420,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_dress, R_FUN, FALSE)
 /client/proc/cmd_admin_dress()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Select equipment"
 
 	var/mob/living/carbon/human/M = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
@@ -408,7 +437,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress, R_FUN, FALSE)
 //Preserving the old one for now, so the dress lists in it can be converted into real outfits
 ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 /client/proc/cmd_admin_dress_old()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Select equipment OLD"
 
 	var/mob/living/carbon/human/M = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
@@ -429,7 +458,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 		"soviet admiral",
 		"tunnel clown",
 		"masked killer",
-		"special ops officer"
+		"special ops officer",
+		"the don"
 		)
 	var/dresscode = input("Select dress for [M]", "Robust quick dress shop") as null|anything in dresspacks
 	if (isnull(dresscode))
@@ -442,7 +472,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 		if ("strip")
 			//do nothing
 		if ("job")
-			var/selected_job = input("Select job", "Robust quick dress shop") as null|anything in joblist
+			var/selected_job = input("Select job", "Robust quick dress shop") as null|anything in GLOB.joblist
 			if (isnull(selected_job))
 				return
 
@@ -459,7 +489,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/color(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space(M), slot_wear_suit)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space(M), slot_head)
-			var /obj/item/weapon/tank/jetpack/J = new /obj/item/weapon/tank/jetpack/oxygen(M)
+			var /obj/item/tank/jetpack/J = new /obj/item/tank/jetpack/oxygen(M)
 			M.equip_to_slot_or_del(J, slot_back)
 			J.toggle()
 			M.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(M), slot_wear_mask)
@@ -474,13 +504,13 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest(M), slot_wear_suit)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/thunderdome(M), slot_head)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/plasma/destroyer(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/grenade/smokebomb(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/gun/energy/plasma/destroyer(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/tool/knife(M), slot_l_hand)
+			M.equip_to_slot_or_del(new /obj/item/grenade/smokebomb(M), slot_r_store)
 
 
 		if ("tournament gangster") //gangster are supposed to fight each other. --rastaf0
-			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector/suit(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
 
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rank/insp_trench(M), slot_wear_suit)
@@ -488,8 +518,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/inspector(M), slot_head)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/revolver(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/ammo_magazine/slmagnum(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/ammo_magazine/speed_loader_magnum_40(M), slot_l_store)
 
 		if ("tournament chef") //Steven Seagal FTW
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chef(M), slot_w_uniform)
@@ -497,26 +527,26 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/chef(M), slot_head)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/kitchen/rollingpin(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_r_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/material/kitchen/rollingpin(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/tool/knife(M), slot_l_hand)
+			M.equip_to_slot_or_del(new /obj/item/tool/knife(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/tool/knife(M), slot_s_store)
 
 		if ("tournament janitor")
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
-			var/obj/item/weapon/storage/backpack/backpack = new(M)
+			var/obj/item/storage/backpack/backpack = new(M)
 			for(var/obj/item/I in backpack)
 				qdel(I)
 			M.equip_to_slot_or_del(backpack, slot_back)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/mop(M), slot_r_hand)
-			var/obj/item/weapon/reagent_containers/glass/bucket/bucket = new(M)
+			M.equip_to_slot_or_del(new /obj/item/mop(M), slot_r_hand)
+			var/obj/item/reagent_containers/glass/bucket/bucket = new(M)
 			bucket.reagents.add_reagent("water", 70)
 			M.equip_to_slot_or_del(bucket, slot_l_hand)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/grenade/chem_grenade/cleaner(M), slot_r_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/grenade/chem_grenade/cleaner(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/grenade/chem_grenade/cleaner(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/grenade/chem_grenade/cleaner(M), slot_l_store)
 			M.equip_to_slot_or_del(new /obj/item/stack/tile/floor(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/stack/tile/floor(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/stack/tile/floor(M), slot_in_backpack)
@@ -530,13 +560,13 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/brown(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/bandana(M), slot_head)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/eyepatch(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/weapon/melee/energy/sword/pirate(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/melee/energy/sword/pirate(M), slot_r_hand)
 
 		if ("space pirate")
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/costume/history/pirate(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/brown(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/eyepatch(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/weapon/melee/energy/sword/pirate(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/melee/energy/sword/pirate(M), slot_r_hand)
 
 		if ("soviet soldier")
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/costume/history/soviet(M), slot_w_uniform)
@@ -552,16 +582,16 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/chaplain(M), slot_wear_suit)
-			M.equip_to_slot_or_del(new /obj/item/weapon/bikehorn(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/bikehorn(M), slot_r_store)
 
-			var/obj/item/weapon/card/id/W = new(M)
+			var/obj/item/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.access = get_all_station_access()
 			W.assignment = "Tunnel Clown!"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
-			var/obj/item/weapon/tool/fireaxe/fire_axe = new(M)
+			var/obj/item/tool/fireaxe/fire_axe = new(M)
 			M.equip_to_slot_or_del(fire_axe, slot_r_hand)
 
 		if("masked killer")
@@ -573,14 +603,14 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/rank/botanist(M), slot_wear_suit)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/tool/scalpel(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/tool/knife(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/tool/scalpel(M), slot_r_store)
 
-			var/obj/item/weapon/tool/fireaxe/fire_axe = new(M)
+			var/obj/item/tool/fireaxe/fire_axe = new(M)
 			M.equip_to_slot_or_del(fire_axe, slot_r_hand)
 
 			for(var/obj/item/carried_item in M.contents)
-				if(!istype(carried_item, /obj/item/weapon/implant))//If it's not an implant.
+				if(!istype(carried_item, /obj/item/implant))//If it's not an implant.
 					carried_item.add_blood(M)//Oh yes, there will be blood...
 
 		if("assassin")
@@ -588,25 +618,25 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/wcoat/black(M), slot_accessory_buffer)
-			M.equip_to_slot_or_del(new /obj/item/weapon/melee/energy/sword(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/accessory/waistcoat(M), slot_accessory_buffer)
+			M.equip_to_slot_or_del(new /obj/item/melee/energy/sword(M), slot_l_store)
 
-			var/obj/item/weapon/storage/secure/briefcase/sec_briefcase = new(M)
+			var/obj/item/storage/secure/briefcase/sec_briefcase = new(M)
 			for(var/obj/item/briefcase_item in sec_briefcase)
 				qdel(briefcase_item)
 			for(var/i=3, i>0, i--)
-				sec_briefcase.contents += new /obj/item/weapon/spacecash/bundle/c1000
-			sec_briefcase.contents += new /obj/item/weapon/gun/energy/crossbow
-			sec_briefcase.contents += new /obj/item/weapon/gun/projectile/revolver/mateba
-			sec_briefcase.contents += new /obj/item/ammo_magazine/slmagnum
-			sec_briefcase.contents += new /obj/item/weapon/plastique
+				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
+			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
+			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_magnum_40
+			sec_briefcase.contents += new /obj/item/plastique
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
 
 			var/obj/item/modular_computer/pda/pda = new(M)
 
 			M.equip_to_slot_or_del(pda, slot_belt)
 
-			var/obj/item/weapon/card/id/syndicate/W = new(M)
+			var/obj/item/card/id/syndicate/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.access = get_all_station_access()
 			W.assignment = "Reaper"
@@ -629,9 +659,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 
 			M.equip_to_slot_or_del(pda, slot_r_store)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(M), slot_l_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/clipboard(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/clipboard(M), slot_belt)
 
-			var/obj/item/weapon/card/id/W = new(M)
+			var/obj/item/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.icon_state = "centcom"
 			W.item_state = "id_inv"
@@ -651,9 +681,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 
 			M.equip_to_slot_or_del(pda, slot_r_store)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(M), slot_l_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/gun/energy(M), slot_belt)
 
-			var/obj/item/weapon/card/id/centcom/W = new(M)
+			var/obj/item/card/id/centcom/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.access = get_all_station_access()
 			W.access += get_all_centcom_access()
@@ -672,9 +702,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 
 			M.equip_to_slot_or_del(pda, slot_r_store)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(M), slot_l_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/gun/energy(M), slot_belt)
 
-			var/obj/item/weapon/card/id/centcom/W = new(M)
+			var/obj/item/card/id/centcom/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.access = get_all_station_access()
 			W.access += get_all_centcom_access()
@@ -690,10 +720,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/mask/smokable/cigarette/cigar/havana(M), slot_wear_mask)
-			M.equip_to_slot_or_del(new /obj/item/weapon/flame/lighter/zippo(M), slot_r_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/flame/lighter/zippo(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(M), slot_back)
 
-			var/obj/item/weapon/card/id/W = new(M)
+			var/obj/item/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.icon_state = "centcom"
 			W.access = get_all_station_access()
@@ -710,15 +740,45 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/revolver/mateba(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver/hornet(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/costume/history/soviet(M), slot_w_uniform)
-			var/obj/item/weapon/card/id/W = new(M)
+			var/obj/item/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.icon_state = "centcom"
 			W.access = get_all_station_access()
 			W.access += get_all_centcom_access()
 			W.assignment = "Admiral"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+
+		if("the don")
+			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/suit_jacket/smoky(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full/bst(M), slot_belt)
+
+			var/obj/item/storage/secure/briefcase/sec_briefcase = new(M)
+			for(var/obj/item/briefcase_item in sec_briefcase)
+				qdel(briefcase_item)
+			for(var/i=3, i>0, i--)
+				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
+			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
+			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
+			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
+
+			var/obj/item/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card"
+			W.icon_state = "centcom"
+			W.access = get_all_station_access()
+			W.access += get_all_centcom_access()
+			W.assignment = "The Don"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -787,7 +847,7 @@ ADMIN_VERB_ADD(/client/proc/check_positions, R_DEBUG, FALSE)
 	for(var/obj/machinery/power/rad_collector/Rad in world)
 		if(Rad.anchored)
 			if(!Rad.P)
-				var/obj/item/weapon/tank/plasma/Plasma = new/obj/item/weapon/tank/plasma(Rad)
+				var/obj/item/tank/plasma/Plasma = new/obj/item/tank/plasma(Rad)
 				Plasma.air_contents.gas["plasma"] = 70
 				Rad.drainratio = 0
 				Rad.P = Plasma
@@ -851,7 +911,7 @@ ADMIN_VERB_ADD(/client/proc/spawn_disciple, R_DEBUG, FALSE)
 		return
 
 	var/mob/living/carbon/human/H = new (get_turf(mob))
-	var/obj/item/weapon/implant/core_implant/cruciform/C = new /obj/item/weapon/implant/core_implant/cruciform(H)
+	var/obj/item/implant/core_implant/cruciform/C = new /obj/item/implant/core_implant/cruciform(H)
 
 	C.install(H)
 	C.activate()
@@ -873,3 +933,38 @@ ADMIN_VERB_ADD(/client/proc/delete_npcs, R_DEBUG, FALSE)
 		qdel(L)
 		total++
 	to_chat(world, "Deleted [total] mobs")
+
+ADMIN_VERB_ADD(/client/proc/cmd_regenerate_asset_cache, R_DEBUG, FALSE)
+/client/proc/cmd_regenerate_asset_cache()
+	set category = "Debug"
+	set name = "Regenerate Asset Cache"
+	set desc = "Clears the asset cache and regenerates it immediately."
+	if(!config?.cache_assets)
+		to_chat(usr, "<span class='warning'>Asset caching is disabled in the config!</span>")
+		return
+	var/regenerated = 0
+	for(var/datum/asset/A as() in subtypesof(/datum/asset))
+		if(!initial(A.cross_round_cachable))
+			continue
+		if(A == initial(A._abstract))
+			continue
+		var/datum/asset/asset_datum = GLOB.asset_datums[A]
+		asset_datum.regenerate()
+		regenerated++
+	to_chat(usr, "<span class='notice'>Regenerated [regenerated] asset\s.</span>")
+
+ADMIN_VERB_ADD(/client/proc/cmd_clear_smart_asset_cache, R_DEBUG, FALSE)
+/client/proc/cmd_clear_smart_asset_cache()
+	set category = "Debug"
+	set name = "Clear Smart Asset Cache"
+	set desc = "Clears the smart asset cache."
+	if(!config.smart_cache_assets)
+		to_chat(usr, "<span class='warning'>Smart asset caching is disabled in the config!</span>")
+		return
+	var/cleared = 0
+	for(var/datum/asset/spritesheet_batched/A as() in subtypesof(/datum/asset/spritesheet_batched))
+		if(A == initial(A._abstract))
+			continue
+		fdel("[ASSET_CROSS_ROUND_SMART_CACHE_DIRECTORY]/spritesheet_cache.[initial(A.name)].json")
+		cleared++
+	to_chat(usr, "<span class='notice'>Cleared [cleared] asset\s.</span>")

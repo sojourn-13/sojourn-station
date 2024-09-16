@@ -46,9 +46,10 @@
 
 /obj/machinery/door/unpowered/simple/bullet_act(var/obj/item/projectile/Proj)
 	var/damage = Proj.get_structure_damage()
-	if(damage)
-		//cap projectile damage so that there's still a minimum number of hits required to break the door
-		take_damage(min(damage, 100))
+	if (!(Proj.testing))
+		if(damage)
+			//cap projectile damage so that there's still a minimum number of hits required to break the door
+			take_damage(min(damage, 100))
 
 /obj/machinery/door/unpowered/simple/update_icon()
 	if(density)
@@ -111,7 +112,7 @@
 	src.add_fingerprint(user)
 
 	//Harm intent overrides other actions
-	if(src.density && user.a_intent == I_HURT && !istype(I, /obj/item/weapon/card))
+	if(src.density && user.a_intent == I_HURT && !istype(I, /obj/item/card))
 		hit(user, I)
 		return
 
@@ -180,8 +181,5 @@
 
 /obj/machinery/door/unpowered/simple/wood/saloon/New(var/newloc,var/material_name)
 	..(newloc, MATERIAL_WOOD)
-	glass = 1
-	set_opacity(0)
-
-/obj/machinery/door/unpowered/simple/resin/New(var/newloc,var/material_name)
-	..(newloc, MATERIAL_RESIN)
+	//glass = 1
+	//set_opacity(0)

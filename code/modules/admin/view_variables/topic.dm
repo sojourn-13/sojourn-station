@@ -8,7 +8,7 @@
 
 	//~CARN: for renaming mobs (updates their name, real_name, mind.name, their ID/PDA and datacore records).
 	else if(href_list["rename"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["rename"])
@@ -25,7 +25,7 @@
 		href_list["datumrefresh"] = href_list["rename"]
 
 	else if(href_list["varnameedit"] && href_list["datumedit"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumedit"])
@@ -36,7 +36,7 @@
 		modify_variables(D, href_list["varnameedit"], 1)
 
 	else if(href_list["varnamechange"] && href_list["datumchange"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumchange"])
@@ -47,7 +47,7 @@
 		modify_variables(D, href_list["varnamechange"], 0)
 
 	else if(href_list["varnamemass"] && href_list["datummass"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_ADMIN|R_DEBUG))
 			return
 
 		var/atom/A = locate(href_list["datummass"])
@@ -68,18 +68,6 @@
 
 		src.holder.show_player_panel(M)
 		href_list["datumrefresh"] = href_list["mob_player_panel"]
-
-	else if(href_list["give_disease2"])
-		if(!check_rights(R_ADMIN|R_FUN))
-			return
-
-		var/mob/M = locate(href_list["give_disease2"])
-		if(!istype(M))
-			to_chat(usr, "This can only be used on instances of type /mob")
-			return
-
-		src.give_disease2(M)
-		href_list["datumrefresh"] = href_list["give_spell"]
 
 	else if(href_list["godmode"])
 		if(!check_rights(R_FUN))
@@ -226,8 +214,45 @@
 			to_chat(usr, "This can only be done to instances of type /datum")
 			return
 
-		src.holder.marked_datum_weak = weakref(D)
+		src.holder.marked_datum_weak = WEAKREF(D)
 		href_list["datumrefresh"] = href_list["mark_object"]
+
+	else if(href_list["perkadd"])
+		if(!check_rights(0))
+			return
+		var/mob/S = locate (href_list["perkadd"])
+		if(!istype(S))
+			to_chat(usr, "This can only be done to instances of type /mob")
+			return
+		var/datum/perk/perkname = input("What perk do you want to add?") as null|anything in subtypesof(/datum/perk/)
+		if (!perkname)
+			return
+		if(QDELETED(S))
+			to_chat(usr, "Creature has been delete in the meantime.")
+			return
+		S.stats.addPerk(perkname)
+		message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(S)].", 1)
+		href_list["datumrefresh"] = href_list["perkadd"]
+
+	else if(href_list["perkremove"])
+		if(!check_rights(0))
+			return
+		var/mob/S = locate (href_list["perkremove"])
+		if(!istype(S))
+			to_chat(usr, "This can only be done to instances of type /mob")
+			return
+		if (S.stats.perks.len ==0)
+			to_chat(usr, "Creature has no perks to remove")
+			return
+		var/datum/perk/perkname = input("What perk do you want to remove?") as null|anything in S.stats.perks
+		if (!perkname)
+			return
+		if(QDELETED(S))
+			to_chat(usr, "Creature has been delete in the meantime.")
+			return
+		S.stats.removePerk(perkname.type)
+		message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(S)].", 1)
+		href_list["datumrefresh"] = href_list["perkremove"]
 
 	else if(href_list["rotatedatum"])
 		if(!check_rights(0))	return
@@ -401,7 +426,7 @@
 		if(!verb || verb == "Cancel")
 			return
 		else
-			H.verbs += verb
+			add_verb(H, verb)
 
 	else if(href_list["remverb"])
 		if(!check_rights(R_DEBUG))      return
@@ -418,7 +443,106 @@
 		if(!verb)
 			return
 		else
-			H.verbs -= verb
+			remove_verb(H, verb)
+
+
+	else if(href_list["saveTemplate"])
+		if(!check_rights(R_DEBUG|R_ADMIN))
+			return
+
+		var/mob/living/carbon/human/H = locate(href_list["saveTemplate"])
+
+		if(!istype(H))
+			to_chat(usr, "This can only be done to instances of type /mob/living/carbon/human")
+			return
+
+		var/templateName = input("Please select name for template.","Template name",null) as null|text
+
+		if(!templateName)
+			to_chat(usr, "Mob doesn't exist anymore")
+			return
+		else if (H.ckey)
+			to_chat(usr, "Mob must not have a ckey associated with it")
+		else if(!templateName)
+			return
+		else
+			var/savefile/F = new("data/mobTemplates/" + templateName)
+
+			var/list/contentsList = list()
+			var/list/names = list()
+			var/list/descs = list()
+			var/list/parents = list()
+			var/itemCount =0
+
+			for(var/atom/obj in H.contents)
+				if(istype(obj, /obj/item))
+					if(istype(obj, /obj/item/underwear))
+						continue // no
+					if(istype(obj, /obj/item/organ))
+						continue // no
+
+					itemCount += 1
+					parents["[itemCount]"] = "0"
+
+					names["[itemCount]"] = obj.name
+					descs["[itemCount]"] =obj.desc
+					contentsList["[itemCount]"] = obj.type
+					//log_debug("logged [itemCount] - [obj.type] to file")
+
+					if(istype(obj, /obj/item/storage))
+						var/storageItemCount = itemCount
+						var/obj/item/storage/bag = obj
+						for(var/atom/bagObj in bag.contents)
+							itemCount += 1
+							parents["[itemCount]"] = "[storageItemCount]"
+
+							contentsList["[itemCount]"] = bagObj.type
+							names["[itemCount]"] = bagObj.name
+							descs["[itemCount]"] = bagObj.desc
+							//log_debug("logged [itemCount] - [bagObj.type] to file")
+
+							if(istype(bagObj, /obj/item/storage))
+								var/storageItemCount2 = itemCount
+								var/obj/item/storage/bag2 = bagObj
+								for(var/atom/bagObj2 in bag2.contents)
+									itemCount += 1
+									parents["[itemCount]"] = "[storageItemCount2]"
+
+									contentsList["[itemCount]"] = bagObj2.type
+									names["[itemCount]"] = bagObj2.name
+									descs["[itemCount]"] = bagObj2.desc
+
+									//log_debug("logged [itemCount] -  [bagObj2.type] to file")
+
+
+
+
+
+
+			F["Name"] << H.name
+
+
+			F["Contents"] << list2params(contentsList)
+			F["names"] << list2params(names)
+			F["descs"] << list2params(descs)
+			F["parents"] << list2params(parents)
+			F["DNA"] << H.dna
+			F["stats"] << H.stats
+			F["form"] << H.form
+			F["species_name"] << H.species_name
+			F["species"] << H.species
+			F["flavor_text"] << H.flavor_text
+			F["faction"] << H.faction
+			F["body_markings"] << H.body_markings
+
+			//log_debug("Done!  [contentsList.len],[names.len],[descs.len],[parents.len]")
+
+			//F << H
+
+			//var/txtfile = file("data/mobTemplates/[templateName].txt")
+			//F.ExportText("/",txtfile)
+
+			to_chat(usr, "Template '[templateName]' saved successfully")
 
 	else if(href_list["addorgan"])
 		if(!check_rights(R_FUN))
@@ -467,23 +591,7 @@
 		qdel(rem_organ)
 
 	else if(href_list["fix_nano"])
-		if(!check_rights(R_DEBUG)) return
-
-		var/mob/H = locate(href_list["fix_nano"])
-
-		if(!istype(H) || !H.client)
-			to_chat(usr, "This can only be done on mobs with clients")
-			return
-
-		SSnano.close_uis(H)
-		H.client.cache.Cut()
-		var/datum/asset/assets = get_asset_datum(/datum/asset/directories/nanoui)
-		assets.send(H)
-
-		to_chat(usr, "Resource files sent")
-		to_chat(H, "Your NanoUI Resource files have been refreshed")
-
-		log_admin("[key_name(usr)] resent the NanoUI resource files to [key_name(H)] ")
+		to_chat(usr, "This is depricated with the new asset cache system. Do not use")
 
 	else if(href_list["regenerateicons"])
 		if(!check_rights(0))	return
@@ -552,6 +660,46 @@
 
 		usr.forceMove(get_turf(A))
 
+	else if (href_list["saveCopy"])
+		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN))
+			return
+
+		var/atom/copy_target = locate(href_list["saveCopy"])
+		if (!istype(copy_target, /atom)) //we NEED to make sure we aren't spawning datums or clients, the consequences if we were could be godawful
+			return
+
+		var/name = stripped_input(usr, "What will the name of this save slot be?") //stripped_input is arbitrary, replace if needed
+		if (name in GLOB.var_copies)
+			to_chat(usr, "<span class='warning'>A save with that name already exists! Try the remove save verb if you really want the name.</span>")
+			return
+		var/stop = FALSE
+		var/list/vars_to_add = list()
+		while(!stop) // this while loop was made out of me, niko, not understanding the optimal implementation of a loop like this, please replace if able
+			var/var_to_copy = input(usr, "What is the exact name of the var you want to copy, case sensitive? Type stop to continue.")
+			if (var_to_copy == "stop")
+				stop = TRUE
+				break
+			if (var_to_copy in GLOB.banned_vars) //prevents any naughty vars from being copied
+				to_chat(usr, "<span class='warning'>You cannot add [var_to_copy] as a copied var! It has been determined to be too dangerous/unstable.</span>")
+				continue
+
+			if (!(var_to_copy in copy_target.vars)) //causes a runtime otherwise
+				to_chat(usr, "<span class='warning'>[var_to_copy] does not exist within [copy_target]!</span>")
+				continue
+
+			if (!(var_to_copy in vars_to_add))
+				vars_to_add[var_to_copy] += copy_target.vars[var_to_copy] //we assign the value of vars[var_to_copy] to our temporary list's key of the same name
+
+		var/typepath = "type" //keys are stored as text, usually, as is the case with most vars
+		if (!vars_to_add[typepath]) //do we have a typepath?
+			vars_to_add["type"] = copy_target.vars["type"] //we add the type now, because otherwise, we wouldn't know what to spawn
+			// You may ask: Why not just forbid admins from assigning their own type? I didnt because it lets admins specify the type of thing they spawn in a roundabout way.
+
+		GLOB.var_copies[name] += vars_to_add //This is where we create the var copy
+
+		to_chat(usr, "<span class='warning'>Copy creation, named [name] successful.</span>")
+		log_and_message_admins("created a new var copy, named [name] and with a var list of [vars_to_add.len] vars.</span>")
+
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
 		if(istype(DAT, /datum) || istype(DAT, /client))
@@ -570,7 +718,7 @@
 
 		if(A.reagents)
 			var/chosen_id
-			var/list/reagent_options = sortList(chemical_reagents_list)
+			var/list/reagent_options = sortList(GLOB.chemical_reagents_list)
 			switch(alert(usr, "Choose a method.", "Add Reagents", "Enter ID", "Choose ID"))
 				if("Enter ID")
 					var/valid_id

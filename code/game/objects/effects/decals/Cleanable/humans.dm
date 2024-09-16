@@ -1,4 +1,4 @@
-#define DRYING_TIME 5 * 60*10                        //for 1 unit of depth in puddle (amount var)
+#define DRYING_TIME 5 * 36*10                        //for 1 unit of depth in puddle (amount var) should be 3 mins to dry
 
 var/global/list/image/splatter_cache=list()
 
@@ -8,59 +8,71 @@ var/global/list/image/splatter_cache=list()
 	desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
 	var/drydesc = "It's dry and crusty. Someone is not doing their job."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mfloor1"
 	random_icon_states = list("mfloor1", "mfloor2", "mfloor3", "mfloor4", "mfloor5", "mfloor6", "mfloor7")
 	var/base_icon = 'icons/effects/blood.dmi'
-	var/list/viruses = list()
 	blood_DNA = list()
 	var/basecolor="#A10808" // Color when wet.
-	var/list/datum/disease2/disease/virus2 = list()
 	var/amount = 5
 	var/drytime
-	sanity_damage = 1
+	sanity_damage = 0.25
+	mergeable_decal = TRUE
+	var/should_dry = TRUE
+	// List of are shoe prints we got
+	var/list/shoe_types = list()
+
+/obj/effect/decal/cleanable/blood/bearfoot
+	name = "bearfoot"
+
+/obj/effect/decal/cleanable/blood/examine(mob/user)
+	. = ..()
+	if(iscarbon(user) || issilicon(user))
+		if(shoe_types.len && (user.stats?.getPerk(PERK_EAR_OF_QUICKSILVER) || user.stats.getStat(STAT_VIG) >= STAT_LEVEL_EXPERT)) //Basiclly rangers are meant to do this so they have a bypass
+			to_chat(user, "<span class='info'>There is traces of shoe prints that are likely from:</span>")
+			for(var/shoe in shoe_types)
+				var/obj/item/clothing/shoes/S = shoe
+				to_chat(user, "<span class='info'>some <B>[initial(S.name)]</B> </B></span>") //as cool as  [icon2html(initial(S.icon) is it dosnt work well
+		else
+			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can recognize.</span>")
 
 /obj/effect/decal/cleanable/blood/reveal_blood()
 	if(!fluorescent)
-		fluorescent = 1
+		fluorescent = TRUE
 		basecolor = COLOR_LUMINOL
 		update_icon()
 
 /obj/effect/decal/cleanable/blood/clean_blood()
-	fluorescent = 0
+	fluorescent = FALSE
 	if(invisibility != 100)
 		invisibility = 100
 		amount = 0
-		STOP_PROCESSING(SSobj, src)
-	..(ignore=1)
+	..(ignore=TRUE)
 
 /obj/effect/decal/cleanable/blood/Destroy()
-	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(weak_reference)
 	return ..()
 
 /obj/effect/decal/cleanable/blood/New()
 	..()
 	fall_to_floor()
+
+/obj/effect/decal/cleanable/blood/Initialize()
+	. = ..()
 	update_icon()
 
+	if(should_dry)
+		drytime = world.time + DRYING_TIME * (amount+1)
+		addtimer(CALLBACK(src, PROC_REF(dry)), drytime)
 
-	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
-		return
-	if(src.type == /obj/effect/decal/cleanable/blood)
-		if(src.loc && isturf(src.loc))
-			for(var/obj/effect/decal/cleanable/blood/B in src.loc)
-				if(B != src)
-					if (B.blood_DNA)
-						blood_DNA |= B.blood_DNA.Copy()
-					qdel(B)
-	drytime = world.time + DRYING_TIME * (amount+1)
-	START_PROCESSING(SSobj, src)
-
-/obj/effect/decal/cleanable/blood/Process()
-	if(world.time > drytime)
-		dry()
+/obj/effect/decal/cleanable/blood/handle_merge_decal(obj/effect/decal/cleanable/blood/merger)
+	. = ..()
+	if(blood_DNA)
+		LAZYOR(merger.blood_DNA, blood_DNA.Copy())
+	if(shoe_types)
+		LAZYOR(merger.shoe_types, shoe_types.Copy())
 
 /obj/effect/decal/cleanable/blood/update_icon()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
@@ -79,9 +91,12 @@ var/global/list/image/splatter_cache=list()
 		hasfeet = 0
 	if(perp.shoes && !perp.buckled)//Adding blood to shoes
 		var/obj/item/clothing/shoes/S = perp.shoes
+		if(S.flags & NOBLOODY)
+			return
 		if(istype(S))
 			S.blood_color = basecolor
 			S.track_blood = max(amount,S.track_blood)
+			shoe_types |= S.type
 			if(!S.blood_overlay)
 				S.generate_blood_overlay()
 			if(!S.blood_DNA)
@@ -97,9 +112,11 @@ var/global/list/image/splatter_cache=list()
 	else if (hasfeet)//Or feet
 		perp.feet_blood_color = basecolor
 		perp.track_blood = max(amount,perp.track_blood)
+		shoe_types |= /obj/effect/decal/cleanable/blood/bearfoot
 		if(!perp.feet_blood_DNA)
 			perp.feet_blood_DNA = list()
 		perp.feet_blood_DNA |= blood_DNA.Copy()
+
 	else if (perp.buckled && istype(perp.buckled, /obj/structure/bed/chair/wheelchair))
 		var/obj/structure/bed/chair/wheelchair/W = perp.buckled
 		W.bloodiness = 4
@@ -112,14 +129,13 @@ var/global/list/image/splatter_cache=list()
 	desc = drydesc
 	color = adjust_brightness(color, -50)
 	amount = 0
-	STOP_PROCESSING(SSobj, src)
 
 /obj/effect/decal/cleanable/blood/attack_hand(mob/living/carbon/human/user)
 	..()
 	if (amount && istype(user))
 		add_fingerprint(user)
 		if (user.gloves)
-			return
+			return FALSE
 		var/taken = rand(1,amount)
 		amount -= taken
 		to_chat(user, SPAN_NOTICE("You get some of \the [src] on your hands."))
@@ -129,11 +145,15 @@ var/global/list/image/splatter_cache=list()
 		user.bloody_hands += taken
 		user.hand_blood_color = basecolor
 		user.update_inv_gloves(1)
-		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
+		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
 
 /obj/effect/decal/cleanable/blood/splatter
-        random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
-        amount = 2
+	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
+	amount = 2
+
+/obj/effect/decal/cleanable/blood/splatter/green
+	amount = 1
+	basecolor="#666600"
 
 /obj/effect/decal/cleanable/blood/drip
 	name = "drips of blood"
@@ -159,10 +179,11 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/writing/New()
 	..()
-	if(random_icon_states.len)
+	if(LAZYLEN(random_icon_states))
 		for(var/obj/effect/decal/cleanable/blood/writing/W in loc)
-			random_icon_states.Remove(W.icon_state)
-		icon_state = pick(random_icon_states)
+			LAZYREMOVE(random_icon_states, W.icon_state)
+		if(LAZYLEN(random_icon_states))
+			icon_state = pick(random_icon_states)
 	else
 		icon_state = "writing1"
 
@@ -174,12 +195,14 @@ var/global/list/image/splatter_cache=list()
 	name = "gibs"
 	desc = "They look bloody and gruesome."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	layer = LOW_OBJ_LAYER
 	icon = 'icons/effects/blood.dmi'
-	icon_state = "gibbl5"
+	icon_state = "mgibbl5"
 	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6")
+	mergeable_decal = FALSE
+	should_dry = FALSE
 	var/fleshcolor = "#FFFFFF"
 
 /obj/effect/decal/cleanable/blood/gibs/update_icon()
@@ -220,7 +243,7 @@ var/global/list/image/splatter_cache=list()
 			sleep(3)
 			if (i > 0)
 				var/obj/effect/decal/cleanable/blood/splatter/b = new(loc)
-				b.basecolor = src.basecolor
+				b.basecolor = basecolor
 				b.update_icon()
 
 			if (step_to(src, get_step(src, direction), 0))
@@ -231,23 +254,22 @@ var/global/list/image/splatter_cache=list()
 	name = "mucus"
 	desc = "Disgusting mucus."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mucus"
 	random_icon_states = list("mucus")
 
-	var/list/datum/disease2/disease/virus2 = list()
-	var/dry=0 // Keeps the lag down
+	var/dry = FALSE // Keeps the lag down
 
 /obj/effect/decal/cleanable/mucus/New()
 	spawn(DRYING_TIME * 2)
-		dry=1
+		dry = TRUE
 
 //This proc prevents blood on openspace tiles, by causing them to fall down until they hit the ground
 /obj/effect/decal/cleanable/blood/proc/fall_to_floor()
 	if (istype(loc, /turf/simulated/open))
-		anchored = 0 //Anchored things can't fall
+		anchored = FALSE //Anchored things can't fall
 		while (istype(loc, /turf/simulated/open))
 			var/turf/simulated/open/T = loc
 			T.fallThrough(src)

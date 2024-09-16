@@ -4,6 +4,7 @@
 	extended_desc = "This program allows setting up and using an attached scanner module."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "wind"
 	size = 6
 	requires_ntnet = 0
 	available_on_ntnet = 1
@@ -82,7 +83,7 @@
 /datum/nano_module/program/scanner
 	name = "Scanner"
 
-/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/scanner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/scanner/prog = program
 	if(!prog.computer)

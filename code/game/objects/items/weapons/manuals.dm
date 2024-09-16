@@ -1,18 +1,18 @@
 /*********************MANUALS (BOOKS)***********************/
 
-/obj/item/weapon/book/manual
+/obj/item/book/manual
 	icon = 'icons/obj/library.dmi'
 	due_date = 0 // Game time in 1/10th seconds
 	unique = TRUE   // FALSE - Normal book, TRUE - Should not be treated as normal book, unable to be copied, unable to be modified
 
 
-/obj/item/weapon/book/manual/engineering_construction
-	name = "Station Repairs and Construction"
+/obj/item/book/manual/engineering_construction
+	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
-	title = "Station Repairs and Construction"
+	title = "Colony Repairs and Construction"
 
-/obj/item/weapon/book/manual/engineering_construction/New()
+/obj/item/book/manual/engineering_construction/New()
 	..()
 	dat = {"
 
@@ -27,13 +27,13 @@
 
 		"}
 
-/obj/item/weapon/book/manual/engineering_particle_accelerator
+/obj/item/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
 	icon_state ="bookParticleAccelerator"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Particle Accelerator User's Guide"
 
-/obj/item/weapon/book/manual/engineering_particle_accelerator/New()
+/obj/item/book/manual/engineering_particle_accelerator/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -74,13 +74,13 @@
 			"}
 
 
-/obj/item/weapon/book/manual/supermatter_engine
+/obj/item/book/manual/supermatter_engine
 	name = "Supermatter Engine Operating Manual"
 	icon_state = "book_supermatter"
 	author = "Central Engineering Division"
 	title = "Supermatter Engine Operating Manual"
 
-/obj/item/weapon/book/manual/supermatter_engine/New()
+/obj/item/book/manual/supermatter_engine/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -147,13 +147,13 @@
 				</body>
 			</html>"}
 
-/obj/item/weapon/book/manual/engineering_hacking
+/obj/item/book/manual/engineering_hacking
 	name = "Hacking"
 	icon_state ="book_hacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
 
-/obj/item/weapon/book/manual/engineering_hacking/New()
+/obj/item/book/manual/engineering_hacking/New()
 	..()
 	dat = {"
 
@@ -168,8 +168,221 @@
 
 		"}
 
+/obj/item/book/manualshield_generator_guide
+	name = "Artificers Guild Shield Operating Guide"
+	icon_state = "book_shield"
+	author = "Jeanne Petite"
+	title = "Adv-Shield Generator Manual"
 
-/obj/item/weapon/book/manual/engineering_singularity_safety
+/obj/item/book/manualshield_generator_guide/New()
+	..()
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 13px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Operating Manual for Mk 1 Prototype Advanced Shield Generator.</h1>
+
+				<h2>Chapters</h2>
+
+				<ol>
+                  	<li><a href="#Foreward">Foreward</a></li>
+					<li><a href="#Preface">Preface</a></li>
+					<li><a href="#Setup">Shield Setup & upgrades Ch.1</a></li>
+					<li><a href="#Upgrades">Shield Setup & upgrades Ch.2</a></li>
+					<li><a href="#Maintenance">Powering the Generator.</a></li>
+				</ol>
+
+				<h2><a name="Foreward">Foreward</h2><br>
+					<h3>This document is offered in its full, unedited form having been found amongst the many unfiled documents within the Guilds primary offices. Though densely written and at times containing error, it is believed that in this form it shall serve more use than if pared back or otherwise modified from its writers original form. This document shall not be taken as overriding any procedure, instead supplementing knowledge and S.O.P regarding the Shield Generator. Any questions, concerns or similar regarding this document should be directed to the office of Grandmaster Tacitus O'conner - Guildmaster <i>Zivka Tomic</i> </h3><br>
+
+
+				<h2><a name="Preface">Preface</h2><br>
+
+The Shield Generator Room is a new asset of the colony, put together by Aenethia Fletcher, consisting of a variety of equipment relying on the various colony factions in order to perform at it's best.<br><br>
+
+In this document, you will find a comprehensive method on learning to use the Shield Generator room, it's do's and don'ts, and suggestions on what best to do with it in case of emergency -if it's needed.<br><br>
+
+Regardless of faction personnel, or personal preferences, or social bounds, this equipment is designed to perform at it's best when the whole of the factions comes together in their effort to defend our Home.<br><br>
+
+While the bubble shield is an asset of immense defensive potential, the best defense remains a good offense, and a good offense relies on our abilities to keep our fighters alive and weaponized.<br><br>
+
+At best, this equipment is to be treated as *a* -not the- non-fighter/non-medical option, for both Adepts and Scientists trying to participate during an emergency ;<br><br>
+
+In fact, not all threats need the bubble shield, and it's activation, and use of it's various settings, is a decision that should rely solely on the /concerned/ command staff, starting with the Blackshield Commander and Warrant Officer.<br><br>
+
+Extraordinary events involving -but not limited to- meteor rain, bluespace, radiation storms, solar flares, or even orbital bombardment, might require a more educated approach from either Artificer or Soteria Science personel.<br><br>
+
+Typically, while the Shield Generator relies on a massive engineering effort to power it,
+it's up to Soteria Science personel to be best educated on which settings might be more advisable during a given situation,
+the final decision must swiftly be made however, and is of course, always up to the Blackshield Commander and Warrant Officer.<br><br>
+
+The truth is, most situations won't be needing the shield at all ; it's important to correctly determine if it's even necessary to use it.<br>
+Namely, amongst a variety of threats, it certainly won't stop Excelsior Infiltrators, or Giant Spider burrowing, or Hivemind Infestations.<br><br>
+
+As always, in the end, it's all up to the the all-important cooperation between medical teams from Soteria and the Church, remaining the<br> strong arm of the colony that's keeping up with our Marshals/Blackshields and Prospectors.<br><br>
+
+
+				<h2><a name="Setup">Shield Setup & upgrades Ch.1</h2><br>
+Upon shift-start, or upon re-assembly, the shield generator must be wrenched down.<br>
+Moving it is possible, but doing so, even one single tile, will permanently remove it's ability to receive charge, regardless of if it's being wrenched down over a powered wire node or not.<br>
+As a result of this technical limitation, special attention must be put into correctly building it over a powered wire node, then immediately wrenching it in place.<br><br>
+
+However, if you've respected that very important step, then charged the generator, it is possible to then wrench it up and move the generator around.<br><br>
+
+NOTE: This action is strictly forbidden with the one generator from the Shield generator room.<br>
+Instead, if you need a generator to use elsewhere, seek the components and boards for a new one at Soteria Science.<br><br>
+
+In case of emergency such as a code <b>RED</b>, at a Blackshield Commander or Warrant Officer's decision -or their obligatory joined vote- the furnished shield generator may be moved/reassembled somewhere else within the colony infrastructure,
+assuming there is an effort from active Artificers to keep up with the new engineering effort to power the generator in a new location within the colony.<br>
+This change must be temporary, and for the express purpose of defending said colony infrastructure.<br><br>
+
+If that happens, the Low Council may choose to inform the High Council upon exiting the emergency situation -or during it- , and the shield generator must be returned without delay to it's original location with it's attributed equipment - ready for use as normal and intended.<br><br>
+A situation where a threat was problematic enough to heavily rely on the shield generator should raise valid concerns that the High Council <br><br>
+
+
+With that said ; the generator offers a variety of tactical decisions if used in the field.<br>
+Once charged, you can activate it elsewhere at will, as it will keep it's given charge.<br>
+This allows to then redeploy a bubble shield at any point in time, anywhere, at the cost of losing the ability to recharge it, once it's been moved even by one tile.<br>
+Once activated, the bubble will not move regardless of the generator's position.<br>
+It's possible to move the generator outside of the bubble without consequences.<br><br>
+
+Turning the generator off takes 60 seconds. The bubble remains active during that time.<br>
+Using the emergency shutdown is an option, but will drain the generator.<br><br>
+
+Once it's de-activated, the generator must reboot for an additional 60 seconds.<br><br>
+
+The generator is assembled from :
+<li>-The shield generator board
+<li>-A console screen
+<li>-A capacitor
+<li>-A micro-laser
+<li>-A SMES coil<br><br>
+
+Upgrading the capacitor and laser is an important task that relies on the guild.<br><br>
+
+<li>T3 parts obtained at Soteria -a super capacitor and a ultra-powered laser- should be the bare minimum.<br><br>
+
+<li>T4, known as Greyson parts, are obtained trough salvage at the Greyson base -ask prospectors-, or at the space junk field, or at Soteria, if they are performing well on research and are given some platinum.<br><br>
+
+<li>T5 parts, known as forged (a forged capacitor and a forged laser) are the best options, obtained trough Artificer craft, but they need T3 parts from Soteria for crafting, power tools, and some materials.<br><br>
+
+Upgrading the machine parts tremendously influences the performance of the shield, and should be a top priority in case of a situation where the shield is used.<br>
+While very modest, T3 remains an immense step over the T1 furnished.<br><br>
+
+
+The type of the SMES coil is equally important, and it's choice comes from a lot of careful consideration.<br>
+Those coils are furnished with the equipment however, so you won't have to worry about obtaining them, instead only replacing the one in the generator on shift start.<br><br>
+
+There are 3 types of SMES coils, known as the Basic, the Transmission and the Capacity.<br><br>
+
+Each coil allows for an increased amount of energy stored.<br><br>
+
+It's easy to assume the transmission coil would let the shield refill it's power faster, but that is a misconception ;<br>
+The type of the coil does not affect the speed at which the generator can receive charge.<br><br>
+
+To put it simply,<br>
+<li>-The bubble shield's integrity relies directly on how full is the generator.
+<li>-The Transmission coil has the lowest maximum charge.
+<li>-The current setup of the generator room + two upgraded SMES units was designed to favor a coil with the lowest maximum.<br><br>
+
+This means that like using a smaller glass, it's easier and faster to refill it to 100%.<br>
+This allows to keep the bubble's integrity as high as possible (100%) by having it constantly refilling from the 2 shield SMES units.<br><br>
+
+When nearing 10% integrity, the bubble will start having giant gaps and holes.<br>
+For this reason, keeping the generator at a low maximum is the design decision that was originally put together, with a transmission coil the maximum is 500MJ.<br><br>
+
+This is where the two SMES units come in.<br>
+A SMES can hold 5 different coils.<br>
+Each of them are intended to be assembled with 2 capacitance and 3 transmission coils.<br><br>
+
+More SMES units may be put together if the engineering effort and power production is well above base expectations.<br>
+This allows to store enormous amounts of power right next to the generator, able to keep the bubble extremely resistant trough constantly dumping power into it - no power will be wasted if the generator is already full, so you can (and should) keep the SMES's output turned on and maximized at all times.<br><br>
+
+The total amount of punition the bubble can take remains quite considerable even with 500MJ.<br>
+For future reference, the 100% integrity given from using a transmission coil already permits to block several of the the highest toxins assemblies possible with relative ease - and it's extremely rapid to recharge with the 2 SMES units.<br>
+Testing with 2 or 3 of the most powerful bombs Soteria can make, barely damaged the integrity to 85% - which was instantly refilled trough the performance of the built-in SMES's.<br><br>
+
+
+The generator should be constructed with a TRANSMISSION coil, but it can be given a much higher maximum stored power if you use a capacitance coil.<br>
+It's total holding power becomes absurdly high however, so good luck going even above 5% integrity - effectively rendering the generator useless.<br><br>
+
+A different setup isn't out of the question, from competent engineering personnel,
+assuming that care is still being put into a bubble shield that can remain at 100% integrity trough rigorous assault.<br><br>
+
+
+
+				<h2><a name="Upgrades">Shield Setup & upgrades Ch.2</h2><br>
+Once the generator is upgraded, fitted with a transmission coil, and wrenched in it's spot, max out the 2 SMES's output and leave that on.<br>
+The SMES's input however is up to your decision on how much you wish to drain from the colony grid.<br><br>
+
+
+Set the shield's radius to 85, to properly cover the whole colony wall.<br>
+The bubble shield will correctly cover not only the wall, but a full circle around the surface facility, projecting even trough the rock and tunnels preset on both sides of the wall.<br>
+You also have to turn on the generator's input, which should be set to limitless by typing in 0.<br>
+Doing so will leave it to drain from the two SMES units without limits, until it's full.<br>
+Once the generator is full, it's input should be left unlimited, as no power will be wasted, instead simply keeping stored with the SMES's with nowhere to go.<br><br>
+
+To give you an idea of how much power a SMES can hold, know that the guild's engine SMES is built with one single basic coil, wich then distributes into each substations - who also are fitted with one single basic coil.<br>
+The performance of a handful of SMES units with a single basic coil is more than enough to handle the colony grid ;<br><br>
+
+A SMES unit with even one single capacitance coil will be able to contain a tremendous amount of power, but charge/discharge slowly.<br>
+A Transmission coil will hold much less, but paired with a capacitance, it easily reaches the potency of several colony grids - for several shifts.<br><br>
+
+From there, having 2 SMES units with not 1 capacitance + 1 transmission, but 2 capacitance + 3 transmission, holds the potency of a truly massive power hold, with the ability to dump it out extremely easily back out to the generator.<br>
+With this in mind, consider that the Shield's equipment is furnished with 2 SMES units with a total of 4 capacitance and 6 transmission ;
+it's still possible to fill them up with ease if you follow the detailed list of power sources accounted within the end of this text.<br><br>
+
+This is designed to easily withstand even the most brutal attacks from whatever is out there, including planetary bombardment.<br>
+The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the Soteria Institute, Lonestar, and the Church of the Absolute.<br><br>
+
+Hypothetically, in case of an attack with nuclear warheads, the generator should instead be fitted with a capacitance coil, wich would then require a gargantuan amount of power in order to reach acceptable levels of integrity.<br>
+For obvious reasons, this has not been tested, neither really discussed given the already extremely high performance of the current design.<br><br>
+
+The only live testing has been done with a handful of Toxins assemblies, with more than satisfying results.<br>
+Still, trying more isn't out of the question, in the future.<br><br>
+
+
+It's not out of the question to connect the shield's reserves to the colony by simply hotwiring their output back to the grid.<br>
+However, doing so is an extremely special, temporary decision that should only be a temporary fix, first decided by the Guild Master, if without one, Artificers Adepts,<br><br>
+at the all-important condition that this is during an emergency, were the grid, the substations, and engine SMES are all completely drained or destroyed, with no means to use the solars / hydroelectric dam again during that emergency.<br>
+Having the shield generator backed, charged, with available reserves from it's assigned SMES units, should remain the main concern at all times - it should never, under any circumstances, be allowed to fully drain itself into the colony grid for whatever reason.<br><br>
+
+
+Indeed, hotwiring the generator to the colony grid is an option, but that has little to no real application and is in fact, a bad idea.<br>
+What really matters is to have the upgraded SMES's able to store large amounts of power and dump it directly into the shield generator, not the grid.<br>
+Going against this design decision is an option but really not recommended.<br><br>
+
+For the same reason, maxxing the SMES's input and draining as much as possible from the colony grid is a terrible idea that can and will earn you legal charges namely sabotage, terrorism.<br>
+The SoP article about this is quite explicit, you are warned on what not to do. Take this seriously, this equipment is expensive.<br>
+Taking any equipment such as the generator, the wrench, the furnished coils, the RCON console, or anything from the SMES units, out of the Generator room, even for a brief moment, for no valid reason, also is grounds for grand theft, sabotage, terrorism, etc.<br><br>
+
+				<h2><a name="Maintenance">Powering the Generator</h2>
+There are a variety of ways to power the colony, and with it, the shield.<br>
+It's worth going over that topic in detail, since it could make a difference in case of emergency.<br><br>
+Engineering alone will have their solars, the Soteria solars, then the hydroelectric dam, their 8 diesel generators, a selection of various generators of different kinds, the turbine in atmospherics, and whatever else engine they can put together using a TEG and circulators, maybe even a supermatter in rare occasions.<br><br>
+Soteria can build a wide variety of generators depending on nearly any available resources ; mining can offer large amounts of plasma for PACMAN's or fuel tanks for more Diesels ;<br>
+Built in numbers, each individual CAMPMAN while modest, will be running on planks of wood and prove quite efficient. Harvests from the surface trees or the xenoflora lab for mass production, or order at cargo.<br><br>
+On T3, Diesels, PACMANS, CAMPMANS and the likes of them, will have their performance significantly increased, without burning their fuel any faster.<br>
+Optimally, with a bunch of platinum and wood, Soteria can put together a group of CAMPMAN's running on T4 Greyson parts - and upgrade the guild's diesels by the same occasion.<br><br>
+The church has an extremely powerful biogenerator, running on their big golden canisters of biomass, but only if they've been producing them from the junk beacon, which takes some time and effort.<br><br>
+Diesels, PACMANS, CAMPMANS and the rest of them are assembled from a board printer at Soteria, one matter bin, one micro-laser, and one capacitor.<br>
+Their power output relies on the tier of the capacitor and laser, but the matter bin only affects the amount of fuel placed in before needing to be refilled - which remains more important than one might think at first, if you don't want to be constantly babysitting a room full of generators during an emergency situation.<br><br>
+On top of the solars and the hydroelectric dam, one of the most reliable, easy and rapid way to get a lot of power quickly on shift start, with no time-sinking preparation or special effort nor costly resources, is to upgrade the 8 diesels in the guild with T3 and to turn them on.
+The guild has a lot of fuel tanks in storage, and more can be ordered for rather cheap at cargo - this should be the default strategy if there is an emergency on shift start with too little time to make anything fancy.<br><br>				</body>
+			</html>
+		"}
+
+/obj/item/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
 	icon_state ="book_singularity"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -191,11 +404,11 @@
 
 				<h2>Power outage</h2>
 
-				A power problem has made the entire station lose power? Could be station-wide wiring problems or syndicate power sinks. In any case follow these steps:
+				A power problem has made the entire colony lose power? Could be colony-wide wiring problems or syndicate power sinks. In any case follow these steps:
 
 				<ol>
 					<li><b><font color='red'>PANIC!</font></b></li>
-					<li>Get your ass over to engineering! <b>QUICKLY!!!</b></li>
+					<li>Get your ass over to the Guild! <b>QUICKLY!!!</b></li>
 					<li>Get to the <b>Area Power Controller</b> which controls the power to the emitters.</li>
 					<li>Swipe it with your <b>ID card</b> - if it doesn't unlock, continue with step 15.</li>
 					<li>Open the console and disengage the cover lock.</li>
@@ -204,7 +417,7 @@
 					<li>Put in the new, <b>full power cell</b> - if you don't have one, continue with step 15.</li>
 					<li>Quickly put on a <b>Radiation suit.</b></li>
 					<li>Check if the <b>singularity field generators</b> withstood the down-time - if they didn't, continue with step 15.</li>
-					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the engineering APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
+					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the Guild APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
 					<li>Grab your crowbar and pry away the tile closest to the APC.</li>
 					<li>Use the wirecutters to cut the wire which is connecting the grid to the terminal. </li>
 					<li>Go to the bar and tell the guys how you saved them all. Stop reading this guide here.</li>
@@ -216,11 +429,11 @@
 				<ol>
 					<li><b>GET THE FUCK OUT OF THERE!!! FORGET THE WOMEN AND CHILDREN, SAVE YOURSELF!!!</b></li>
 				</ol>
-				</body>
+			</body>
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/medical_cloning
+/obj/item/book/manual/medical_cloning
 	name = "Cloning Techniques of the 26th Century"
 	icon_state ="book_cloning"
 	author = "Medical Journal, volume 3"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -295,7 +508,7 @@
 				Now go back to the lab and wait for your patient to be cloned. It won't be long now, I promise.
 
 				<a name='9'><h3>Step 9: Cryo and clean SE injector on person</h3>
-				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryo. Clonexadone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
+				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryo. Cronexidone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
 				they now have clean Structural Enzymes and their defects, if any, will disappear in a short while.
 
 				<a name='10'><h3>Step 10: Give person clothes back</h3>
@@ -306,14 +519,14 @@
 				Give the patient one last check-over - make sure they don't still have any defects and that they have all their possessions. Ask them how they died, if they know, so that you can report any foul play over the radio.
 				Once you're done, your patient is ready to go back to work! Chances are they do not have Medbay access, so you should let them out of Genetics and the Medbay main entrance.
 
-				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that traitor had his way with you for cloning his target.
+				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that contractor had his way with you for cloning his target.
 
 				</body>
 				</html>
 				"}
 
 
-/obj/item/weapon/book/manual/ripley_build_and_repair
+/obj/item/book/manual/ripley_build_and_repair
 	name = "APLU \"Ripley\" Construction and Operation Manual"
 	icon_state ="book"
 	author = "Randall Varn, Einstein Engines Senior Mechanic"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -390,7 +603,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/research_and_development
+/obj/item/book/manual/research_and_development
 	name = "Research and Development 101"
 	icon_state = "book_research"
 	author = "Dr. L. Ight"
@@ -459,7 +672,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/robotics_cyborgs
+/obj/item/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
 	icon_state = "book_robotics"
 	author = "XISC"
@@ -658,20 +871,138 @@
 				<h3>As a last resort</h3>
 				If all else fails in a case of cyborg-related emergency, there may be only one option. Using a Robotics Control console, you may have to remotely detonate the cyborg.
 				<h3>WARNING:</h3> Do not detonate a borg without an explicit reason for doing so. Cyborgs are expensive pieces of company equipment, and you may be punished for detonating them without reason.
+				</body>
+			</html>
+		"}
 
+/obj/item/book/manual/robotics_catalogue
+	name = "Soteria Cyborg Catalogue 2652"
+	icon_state = "book_robotics"
+	author = "Maeve Cinaed"
+	title = "Soteria Cyborg Catalogue 2652"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Cyborg Product Catalogue</h1>
+
+				<h2>Chapters</h2>
+
+				<ol>
+					<li><a href="#Foreword">Foreword</a></li>
+					<li><a href="#Generic">Generic Models</a></li>
+					<li><a href="#Zeng-Hu">Zeng-Hu models</a></li>
+					<li><a href="#Bishop">Bishop Models</a></li>
+					<li><a href="#Xion">Xion Models</a></li>
+					<li><a href="#Miss M">Miss M. models</a></li>
+					<li><a href="#TallBorgs">MekaNika Mekanoid models</a></li>
+					<li><a href="#K4t">Mekanika K4t Models</a></li>
+					<li><a href="#Pirate">Iron Lords 'Customized' Models</a></li>
+				</ol>
+
+
+				<h2><a name="Foreward">Authors Note</h2>
+				<p>"Hello! Thank you for picking this handy little guide up, dear reader. this piece has been a pet project
+				that i've worked on for quite some time, I'm very happy to	finally be able to place it in the hands,
+				claws, paws and grippers of my fellow Mechanists, Roboticists, Augmenticists- and any one else who
+				may be curious about the range of bots available from the Soteria Robotics Division. Piece of this
+				book have been copied from the sadly obsolete but none the less interesting 'Soteria Mechanists Handbook',
+				as well as 'SFPD - Identifying Illicit Machines, A comprehensive guide.' as well as a variety of other,
+				smaller manuals, handbooks and product-catalogues. While I have done my best to ensure the information
+				contained within is accurate much of it may be or become incorrect or outdated. A special thanks to my
+				Dear Friend, Patience Constance of the Iron Lords for her help filling in the blanks regarding
+				their line of customized MekaNIKA bots - provided to Nadehzda by our wonderful friends with the
+				Xanoranth Syndicate." - Dr. Cinead, Soteria Robotics Division.
+
+				<h2><a name="Generic"> Chassis that Respect the Users Freedom</h2>
+				<center><img src="https://sojourn13.space/w/images/5/58/Generic.png"></img></center>
+				<p>Far from being single-origin, these 'standard' frames encompass a wide variety of open source,
+				unclaimed or otherwise "freely" available frames. These frames come from sources ranging to hobbyist
+				collectives to long-since-deprecated trade claims abandoned to the public domain by their
+				corporate owners.
+
+				<h2><a name="Zeng-Hu"> 'Teknotik' - Style and Substance</h2>
+				<center><img src="https://sojourn13.space/w/images/e/ee/Zenhgu.png"></img></center>
+				<p>Another truly old but no-less respected line from the Giant of Medical Miracles and Horrors both. Where some lines
+				fixated on pure pragmatism Zeng-Hured no expense on the appearance of these bots. From Sleek humanoid frames to
+				high-speed flying drones these bots were top of the shelf for decades before finally being displaced by Greyson's
+				own. In the modern era, a flying drone or a cyborg that fits in a roughly human-shaped package are old news easily
+				reproducable(and more modularly at that.), still; these designs are a personal favorite of this author as a reminder
+				that even heights of technology once viewed as science-fiction may one day be looked back on as tragically quaint.
+
+				<h2><a name="Bishop"> 'Droid' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f0/Bishop.png"></img></center>
+				<p>A positively venerable line, Bishop long stood as giants of the cybernetics and robotics field,	shoulder to
+				shoulder with the likes of Zeng-Hu and early Greyson Positronics. While their interest in the field of robotics
+				waned during the halcyon days of Greyson Positronics these frames remains utterly ubiquitous classics.
+
+				<h2><a name="Xion"> 'Eclectic' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/6/63/Xion.png"></img></center>
+				<p>Not one cohesive line, but instead a small number of designs from little known manufacturing company 'Xion'. Once a
+				pioneer in the field of automated recursive repair solutions, Xion has never once allowed the galaxy to forget that
+				they designed the first ever repair drone - A claim supported by little more than a resemblance in their more modern
+				designs. With a preference for such nimble, spidery bots their abject failure to dislodge Zeng-Hu from their position
+				as the premier creators of automated flying machines should not go without saying - Though some will claim preference
+				for 'eyebot' style drones these bots were sadly an economic failure in their time.
+
+				<h2><a name="Miss M"> Manmade horrors never looked so friendly</h2>
+				<center><img src="https://sojourn13.space/w/images/0/0f/Miss_M.png"></img></center>
+				<p>A now dated line from the long-since defunct 'Missus Machining', the Miss M. line of cyborgs was marketed both
+				towards wealthy individuals with an eye for retro aesthetics and poorer corps without the ability to
+				procure higher end 'Customer Friendly' units. It should not go unsaid that despite the companies
+				attempts to put a friendly face on Cyborgs, they were ultimately forced	to shutter permanently following a slew
+				of accusations that the brains in their units were unethically sourced.
+
+
+				<h2><a name="Tallborgs">'tallbot' - Towering Metal Friends</h2>
+				<center><img src="https://sojourn13.space/w/images/8/86/Mekanika.png"></img></center>
+				<p>Affectionately known as 'TallBorgs', these units while wildly varying in both module and appearance
+				have proven to be quite popular both for their utility and shockingly low price, owing to their
+				pedigree as products of MekaNIKA(One of the few non-megacorp bulk producers of cyborg frames and,
+				a corp with surprisingly 'customer-first' product policy.).
+
+				<h2><a name="MekaNIKA ">'K4T' -Silicon Gentle Giants</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f5/K4T.png"></img></center>
+				<p>Amid concerns that their 'tallbot' Mekanoids "appeared too flimsy" come the K4T line. Where Tallbots
+				are svelte and graceful, K4Tbots are notably broader in appearance - It bears noting that despite
+				appearances, these walking tanks do not perform notably better or worse than their slimmer "siblings".
+				Instead, theirs is a design meant to impress and awe far more than it is to serve as the walking-exosuit
+				they nominally resemble. After all, a well programmed borg can already serve as more than a match for
+				an equivilent human.
+
+				<h2><a name="Pirate">'Homebrew' - From our friends among the Stars</h2>
+				<center><img src="https://sojourn13.space/w/images/b/bf/SYNDIE.png"></img></center>
+				<p>"I must admit, I was initially not sure /how/ to describe these units when word came to me that a deal had
+				been made with the Iron Lords- brokered by the Xanoranth Syndicate, resulting in our obtaining quite a few
+				of these uniquely modified frames. Like most frames, these are style over substance meant to mesh neatly with
+				the 'modules' the user has available. This comes with the caveat that in addition to the frame-designs, Xanoranth
+				have provided a number of fully operational units who have been run through Soterias rigorous process of integration."
 				</body>
 			</html>
 		"}
 
 
-/obj/item/weapon/book/manual/security_space_law
+
+
+/obj/item/book/manual/security_space_law
 	name = "Corporate Regulations"
-	desc = "A set of corporate guidelines for keeping law and order on privately-owned space stations."
+	desc = "A set of corporate guidelines for keeping law and order on settlements."
 	icon_state = "bookSpaceLaw"
 	author = "The Company"
 	title = "Corporate Regulations"
 
-/obj/item/weapon/book/manual/security_space_law/New()
+/obj/item/book/manual/security_space_law/New()
 	..()
 	dat = {"
 
@@ -688,14 +1019,14 @@
 
 
 
-/obj/item/weapon/book/manual/medical_diagnostics_manual
+/obj/item/book/manual/medical_diagnostics_manual
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
 	icon_state = "book_medical"
 	author = "Medical Department"
 	title = "Medical Diagnostics Manual"
 
-/obj/item/weapon/book/manual/medical_diagnostics_manual/New()
+/obj/item/book/manual/medical_diagnostics_manual/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -736,13 +1067,13 @@
 		"}
 
 
-/obj/item/weapon/book/manual/engineering_guide
+/obj/item/book/manual/engineering_guide
 	name = "Engineering Textbook"
 	icon_state ="book_engineering"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
 
-/obj/item/weapon/book/manual/engineering_guide/New()
+/obj/item/book/manual/engineering_guide/New()
 	..()
 	dat = {"
 
@@ -757,7 +1088,7 @@
 		"}
 
 
-/obj/item/weapon/book/manual/chef_recipes
+/obj/item/book/manual/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "cooked_book"
 	author = "Victoria Ponsonby"
@@ -816,7 +1147,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/barman_recipes
+/obj/item/book/manual/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "barbook"
 	author = "Sir John Rose"
@@ -871,7 +1202,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/detective
+/obj/item/book/manual/detective
 	name = "The Film Noir: Proper Procedures for Investigations"
 	icon_state ="book_forensics"
 	author = "The Company"
@@ -914,7 +1245,7 @@
 				</body>
 			</html>"}
 
-/obj/item/weapon/book/manual/nuclear
+/obj/item/book/manual/nuclear
 	name = "Fission Mailed: Nuclear Sabotage 101"
 	icon_state ="book_nuclear"
 	author = "Syndicate"
@@ -965,7 +1296,7 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/atmospipes
+/obj/item/book/manual/atmospipes
 	name = "Pipes and You: Getting To Know Your Scary Tools"
 	icon_state = "book_atmos"
 	author = "Maria Crash, Senior Atmospherics Technician"
@@ -1073,7 +1404,7 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/evaguide
+/obj/item/book/manual/evaguide
 	name = "EVA Gear and You: Not Spending All Day Inside"
 	icon_state = "book_eva"
 	author = "Maria Crash, Senior Atmospherics Technician"
@@ -1105,7 +1436,7 @@
 				<br>
 
 				EVA gear. Wonderful to use. It's useful for mining, engineering, and occasionally just surviving, if things are that bad. Most people have EVA training,
-				but apparently there are some on a space station who don't. This guide should give you a basic idea of how to use this gear, safely. It's split into two sections:
+				but apparently there are some on space stations and ships who don't. This guide should give you a basic idea of how to use this gear, safely. It's split into two sections:
 				 Civilian suits and hardsuits.<BR><BR>
 
 				<h2><a name="Civilian">Civilian Suits</a></h2>
@@ -1150,7 +1481,7 @@
 					<li>If you have modified it manually, is absolutely everything sealed perfectly?</li>
 					<li>Do you either have shoes on under the suit, or magnetic boots on over it?</li>
 					<li>Do you have a mask on and internals on the suit or your back?</li>
-					<li>Do you have a way to communicate with the station in case something goes wrong?</li>
+					<li>Do you have a way to communicate with the ship/station in case something goes wrong?</li>
 					<li>Do you have a second person watching if this is a training session?</li><BR>
 				</ul>
 
@@ -1160,16 +1491,16 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/wiki
+/obj/item/book/manual/wiki
 	var/page_link = ""
 	window_size = "970x710"
 
-/obj/item/weapon/book/manual/wiki/attack_self()
+/obj/item/book/manual/wiki/attack_self()
 	if(!dat)
 		initialize_wikibook()
 	return ..()
 
-/obj/item/weapon/book/manual/wiki/proc/initialize_wikibook()
+/obj/item/book/manual/wiki/proc/initialize_wikibook()
 	if(config.wikiurl)
 		dat = {"
 			<html><head>
@@ -1187,63 +1518,43 @@
     			}
 			</script>
 			<p id='loading'>You start skimming through the manual...</p>
-			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[config.wikiurl]/[page_link]_Eris[config.language]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[config.wikiurl][page_link][config.language]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 			</body>
 			</html>
 			"}
 
 //engineering
-/obj/item/weapon/book/manual/wiki/engineering_guide
-	name = "Engineering Textbook"
-	icon_state = "book_engineering"
-	author = "Engineering Encyclopedia"
-	title = "Engineering Textbook"
-	page_link = "Guide_to_Engineering"
 
-/obj/item/weapon/book/manual/wiki/engineering_construction
-	name = "Station Repairs and Construction"
+/obj/item/book/manual/wiki/engineering_construction
+	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"
-	title = "Station Repairs and Construction"
+	title = "Colony Repairs and Construction"
 	page_link = "Guide_to_Construction"
 
-/obj/item/weapon/book/manual/wiki/engineering_atmos
+/obj/item/book/manual/wiki/engineering_atmos
 	name = "Pipes and You: Getting To Know Your Scary Tools"
 	icon_state = "book_atmos"
 	author = "Maria Crash, Senior Atmospherics Technician"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
 	page_link = "Guide_to_Atmospherics"
 
-/obj/item/weapon/book/manual/wiki/engineering_hacking
+/obj/item/book/manual/wiki/engineering_hacking
 	name = "Hacking"
 	icon_state ="book_hacking"
 	author = "Engineering Encyclopedia"
 	title = "Hacking"
 	page_link = "Guide_to_Hacking"
 
-/obj/item/weapon/book/manual/wiki/engineering_singularity
-	name = "Singularity Safety in Special Circumstances"
-	icon_state ="book_singularity"
-	author = "Engineering Encyclopedia"
-	title = "Singularity Safety in Special Circumstances"
-	page_link = "Guide_to_Singularity"
-
-/obj/item/weapon/book/manual/wiki/engineering_supermatter
-	name = "Supermatter Engine Operating Manual"
-	icon_state = "book_supermatter"
-	author = "Central Engineering Division"
-	title = "Supermatter Engine Operating Manual"
-	page_link = "Guide_to_Supermatter"
-
 //science
-/obj/item/weapon/book/manual/wiki/science_research
+/obj/item/book/manual/wiki/science_research
 	name = "Research and Development 101"
 	icon_state = "book_rnd"
 	author = "Dr. L. Ight"
 	title = "Research and Development 101"
 	page_link = "Guide_to_Research_and_Development"
 
-/obj/item/weapon/book/manual/wiki/science_robotics
+/obj/item/book/manual/wiki/science_robotics
 	name = "Cyborgs for Dummies"
 	icon_state = "book_borg"
 	author = "XISC"
@@ -1251,31 +1562,24 @@
 	page_link = "Guide_to_Robotics"
 
 //security
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs
+/obj/item/book/manual/wiki/security_ironparagraphs
 	name = "Marshal Paragraphs"
 	desc = "A set of corporate guidelines for keeping order on privately-owned space assets."
 	icon_state = "book_ironparagraphs"
 	author = "Marshal Security"
 	title = "Marshal Paragraphs"
-	page_link = "Ironhammer_Paragraphs"
-
-/obj/item/weapon/book/manual/wiki/security_detective
-	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state = "book_forensics"
-	author = "Ironhammer Security"
-	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Guide_to_Forensics"
+	page_link = "Guide_to_Security"
 
 //medical
-/obj/item/weapon/book/manual/wiki/medical_guide
+/obj/item/book/manual/wiki/medical_guide
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
 	icon_state = "book_medical"
 	author = "Medical Journal, volume 1"
 	title = "Medical Diagnostics Manual"
-	page_link = "Guide_to_Medical"
+	page_link = "Guide_to_Medicine"
 
-/obj/item/weapon/book/manual/wiki/medical_chemistry
+/obj/item/book/manual/wiki/medical_chemistry
 	name = "Chemistry Textbook"
 	icon_state = "book"//TODO: Add icon
 	author = "Medical Journal, volume 2"
@@ -1283,29 +1587,77 @@
 	page_link = "Guide_to_Chemistry"
 
 //neotheology
-/obj/item/weapon/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.
-	name = "Cloning Rituals"
-	icon_state = "book"//TODO: Add icon
-	author = "The Church"
-	title = "Cloning Rituals"
-	page_link = "Guide_to_Cloning"
 
 //service
-/obj/item/weapon/book/manual/wiki/barman_recipes
+/obj/item/book/manual/wiki/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "book"
 	author = "Sir John Rose"
 	title = "Barman Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Drinks"
 
-/obj/item/weapon/book/manual/wiki/chef_recipes
+/obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "chefbook"
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Food"
 
-/obj/item/weapon/book/manual/fiction/ataleoftwocities
+/obj/item/book/manual/religion/c_bible
+	name = "Christian Bible"
+	desc = "A book with a silver bolder and a golden crucifix in the middle. The glass in the middle seems to shimmer and shine."
+	icon_state = "c_bible"
+	author = "Unknown"
+	title = "Holy Bible"
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+				<h1>The Holy Bible</h1>
+				<h2>Genesis 1:1-1:12</h2>
+				<ol>
+				1:1 In the beginning God created the heaven and the earth.
+
+				1:2 And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.
+
+				1:3 And God said, Let there be light: and there was light.
+
+				1:4 And God saw the light, that it was good: and God divided the light from the darkness.
+
+				1:5 And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.
+
+				1:6 And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.
+
+				1:7 And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.
+
+				1:8 And God called the firmament Heaven. And the evening and the morning were the second day.
+
+				1:9 And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.
+
+				1:10 And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good.
+
+				1:11 And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.
+
+				1:12 And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.
+
+				</ol>
+				</body>
+			</html>
+			"}
+
+/obj/item/book/manual/religion/h_book
+	name = "Holy Book"
+	desc = "An undescript book for an unnamed religion."
+	icon_state = "basic_bible"
+	author = "Unknown"
+
+/obj/item/book/manual/fiction/ataleoftwocities
 	name = "A Tale of Two Cities"
 	desc = "A novel about the adventures of a doctor in the midst of a revolution."
 	icon_state ="book2"
@@ -1320,7 +1672,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/aroundtheworld
+/obj/item/book/manual/fiction/aroundtheworld
 	name = "Around the World in 80 Days"
 	desc = "A novel about a wager to sail the world in only eighty days."
 	icon_state ="book2"
@@ -1335,7 +1687,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/theinvisibleman
+/obj/item/book/manual/fiction/theinvisibleman
 	name = "The Invisible Man"
 	desc = "A novel about a strange bandaged fellow with a dark secret."
 	icon_state ="book2"
@@ -1350,7 +1702,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/waroftheworlds
+/obj/item/book/manual/fiction/waroftheworlds
 	name = "The War of the Worlds"
 	desc = "A novel about survival in a world under invasion."
 	icon_state ="book2"
@@ -1365,7 +1717,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/achristmascarol
+/obj/item/book/manual/fiction/achristmascarol
 	name = "A Christmas Carol"
 	desc = "A novel about a miserable and bitter man who discovers the spirit of Christmas."
 	icon_state ="book2"
@@ -1380,7 +1732,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/muchadoaboutnothing
+/obj/item/book/manual/fiction/muchadoaboutnothing
 	name = "Much Ado About Nothing"
 	desc = "A comedic play about love, rumours, and trickery."
 	icon_state ="book2"
@@ -1395,7 +1747,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/romeoandjuliet
+/obj/item/book/manual/fiction/romeoandjuliet
 	name = "Romeo and Juliet"
 	desc = "A tragic play about lovers from two feuding families."
 	icon_state ="book2"
@@ -1410,7 +1762,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/kinglear
+/obj/item/book/manual/fiction/kinglear
 	name = "King Lear"
 	desc = "A tragic play about a troubled king who delves into madness."
 	icon_state ="book2"
@@ -1425,7 +1777,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/twelfthnight
+/obj/item/book/manual/fiction/twelfthnight
 	name = "Twelfth Night"
 	desc = "A comedic play about lovers, crossdressing, and a lot of confusion."
 	icon_state ="book2"
@@ -1440,7 +1792,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/macbeth
+/obj/item/book/manual/fiction/macbeth
 	name = "Macbeth"
 	desc = "A tragic play about the corruption of a noble and brave general."
 	icon_state ="book2"
@@ -1455,7 +1807,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/frankenstein
+/obj/item/book/manual/fiction/frankenstein
 	name = "Frankenstein"
 	desc = "A novel about a scientist who creates a terrifying monster."
 	icon_state ="book2"
@@ -1470,7 +1822,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/dracula
+/obj/item/book/manual/fiction/dracula
 	name = "Dracula"
 	desc = "A novel about the murderous reign of an evil vampire."
 	icon_state ="book2"
@@ -1485,7 +1837,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/journeytothecenter
+/obj/item/book/manual/fiction/journeytothecenter
 	name = "A Journey to the Center of the Earth"
 	desc = "A novel about an adventurous journey into the depths of a planet."
 	icon_state ="book2"
@@ -1500,7 +1852,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/rimeoftheancientmariner
+/obj/item/book/manual/fiction/rimeoftheancientmariner
 	name = "The Rime of the Ancient Mariner"
 	desc = "A poem about a mariner who is cursed and suffers terrible events."
 	icon_state ="book2"
@@ -1515,7 +1867,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/kublakhan
+/obj/item/book/manual/fiction/kublakhan
 	name = "Kubla Khan"
 	desc = "A rather abstract poem written about an ancient ruler."
 	icon_state ="book2"
@@ -1530,7 +1882,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/warandpeace
+/obj/item/book/manual/fiction/warandpeace
 	name = "War and Peace"
 	desc = "A novel examining a turbulent age through the stories of five families."
 	icon_state ="book2"
@@ -1545,7 +1897,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/robinsoncrusoe
+/obj/item/book/manual/fiction/robinsoncrusoe
 	name = "Robinson Crusoe"
 	desc = "A novel cataloguing the adventures of a shipwrecked sailor."
 	icon_state ="book2"
@@ -1560,7 +1912,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/thejunglebook
+/obj/item/book/manual/fiction/thejunglebook
 	name = "The Jungle Book"
 	desc = "A series of stories set in the untamed jungle."
 	icon_state ="book2"
@@ -1575,7 +1927,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/thetimemachine
+/obj/item/book/manual/fiction/thetimemachine
 	name = "The Time Machine"
 	desc = "A novel about a man who explores through time."
 	icon_state ="book2"
@@ -1590,7 +1942,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/wutheringheights
+/obj/item/book/manual/fiction/wutheringheights
 	name = "Wuthering Heights"
 	desc = "A novel about doomed love and subsequent revenge."
 	icon_state ="book2"
@@ -1605,7 +1957,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/littlewomen
+/obj/item/book/manual/fiction/littlewomen
 	name = "Little Women"
 	desc = "A novel following the lives of four sisters."
 	icon_state ="book2"
@@ -1621,7 +1973,7 @@
 		"}
 
 
-/obj/item/weapon/book/manual/nonfiction/metaphysics
+/obj/item/book/manual/nonfiction/metaphysics
 	name = "Metaphysics"
 	desc = "A complex philosophical work about existence, change, and understanding the world."
 	icon_state ="book2"
@@ -1636,7 +1988,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/meteorology
+/obj/item/book/manual/nonfiction/meteorology
 	name = "Meteorology"
 	desc = "A treatise delving into geology, geography, physics, and the elements."
 	icon_state ="book2"
@@ -1651,7 +2003,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/politics
+/obj/item/book/manual/nonfiction/politics
 	name = "Politics"
 	desc = "A philosophical work about political theory, constitutions, power, and the ideal state."
 	icon_state ="book2"
@@ -1666,7 +2018,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/ethics
+/obj/item/book/manual/nonfiction/ethics
 	name = "Nicomachean Ethics"
 	desc = "A philosophical work about how man should best live, and how this can be achieved."
 	icon_state ="book2"
@@ -1681,7 +2033,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/thescienceofright
+/obj/item/book/manual/nonfiction/thescienceofright
 	name = "The Science of Right"
 	desc = "A philosophical work about the rights man has, and should have."
 	icon_state ="book2"
@@ -1696,7 +2048,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/thetranscendentalist
+/obj/item/book/manual/nonfiction/thetranscendentalist
 	name = "The Transcendentalist"
 	desc = "A lecture and essay discussing the emergence of Transcendentalism."
 	icon_state ="book2"
@@ -1711,7 +2063,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/manthereformer
+/obj/item/book/manual/nonfiction/manthereformer
 	name = "Man The Reformer"
 	desc = "A lecture and essay discussing the ability of man to reform and change society."
 	icon_state ="book2"
@@ -1726,7 +2078,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/ageofreason
+/obj/item/book/manual/nonfiction/ageofreason
 	name = "The Age of Reason"
 	desc = "A work promoting rationality and intellectualism over religion."
 	icon_state ="book2"
@@ -1741,7 +2093,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/lifewithoutprinciple
+/obj/item/book/manual/nonfiction/lifewithoutprinciple
 	name = "Life Without Principle"
 	desc = "An essay discussing the core principles to living a righteous life."
 	icon_state ="book2"
@@ -1756,7 +2108,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/leviathan
+/obj/item/book/manual/nonfiction/leviathan
 	name = "Leviathan"
 	desc = "A work discussing the structure of society and government."
 	icon_state ="book2"
@@ -1771,7 +2123,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/suntzu
+/obj/item/book/manual/nonfiction/suntzu
 	name = "Sun Tzu on The Art of War"
 	desc = "A treatise concerning ancient military strategies and tactics."
 	icon_state ="book2"
@@ -1785,3 +2137,127 @@
 		</body>
 		</html>
 		"}
+
+/obj/item/book/manual/xenobio_recipies
+	name = "Slime cores and reactions"
+	icon_state ="book_rnd"
+	author = "Leoric M."		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	title = "Slime cores and reactions"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+				<H1>Reactions and YOU!</H1>
+				So assuming you have never used a slime core before. The process is simple! One of your still living monkeys could do it.
+				Ideally you'll want a dropper, syringe and something to store chemicals in for this. Make sure you have these ready!
+				Some reactions take 1 unit of chemicals. Others take 5 units. With slime jelly being unique in compressing at 100 units.
+				<ol>
+					<li><a href='#1'>Grey</a></li>
+					<li><a href='#2'>Green</a></li>
+					<li><a href='#3'>Metal</a></li>
+					<li><a href='#4'>Gold</a></li>
+					<li><a href='#5'>Silver</a></li>
+					<li><a href='#6'>Blue</a></li>
+					<li><a href='#7'>Dark Blue</a></li>
+					<li><a href='#8'>Orange</a></li>
+					<li><a href='#9'>Yellow</a></li>
+					<li><a href='#10'>Purple</a></li>
+					<li><a href='#11'>Dark Purple</a></li>
+					<li><a href='#12'>Red</a></li>
+					<li><a href='#13'>Pink</a></li>
+					<li><a href='#14'>Black</a></li>
+					<li><a href='#15'>Oil</a></li>
+					<li><a href='#16'>Light Pink</a></li>
+					<li><a href='#17'>Adamantine</a></li>
+					<li><a href='#18'>Rainbow</a></li>
+				</ol>
+				<a name='1'><H3>Grey</H3>
+				Grey slimes are the starting bread and butter of xenobio. Their reactions allow us to keep making monkeys and are vital to keeping the feeding process going.
+				Blood is used to create monkey cubes.
+				Blattedin is used to make roach cubes
+				Spider venom (Pararein) is used to make spiderlings.
+				<a name='2'><H3>Green</H3>
+				Ideally greens will be made when you have someone doing genetics. They are useful for purgers.
+				Water will create a ready to use genetics purger
+				plasma (more units at once the better) will create unstable mutagen!
+				<a name='3'><h3>Metal</h3>
+				Metal slimes are a workhorse of the material production process. The first step in getting raw mats for our department.
+				Plasma will produce metal sheets and the wondrous plasteel! Used in mass quantities by those seeking armaments or a mech.
+				Water will produce some plastic, ready to be molded into various shapes by lathes.
+				Radium will produce uranium. Useful for batteries and such. Be careful of the initial burst of radiation. Protection is needed!
+				<a name='4'><h3>Gold</h3>
+				Gold slimes are the gateway to adamantine slimes and produce the wondrous bars that every dragon dreams of.
+				plasma will produce gold! Wondrous gold.
+				nutriment in 5 units will produce honey. Delicious and useful for other reactions.
+				<a name='5'><h3>Silver</h3>
+				Silver slimes are a strange breed. They produce food based items. Not quite sure why. But it tends to be tasty. They can also produce silver! For batteries and such.
+				Plasma will create a bright (eye protection suggested) flash before food appears! I've yet to figure out how it can cook such a strange abundance.
+				Nutriment will create universal enzyme. A favorite of mine to make my favorite drinks. Sweet sweet curacao.
+				Liquid Uranium will create silver bars. Useful and generally needed in decent quantities.
+				<a name='6'><h3>Blue</h3>
+				Blue slimes are the least used slimes. They are generally used for glass.
+				Water will result in frost oil. In large quantities they can make quite a bit. But generally xenoflora grows its own plants for it.
+				Plasma will create glass and borosilicate glass. Borosilicate is harder to come by in a reliable manner so it does help with that if really needed.
+				<a name='7'><h3>Dark Blue</h3>
+				Dark blue slimes are a gateway slime to diamonds, creating a unique jelly inside.
+				Plasma results in a time delayed freezing effect that drastically lowers the temperature.
+				Honey in 5 units results in the rarer pure slime jelly. A vary small amount is produced per reaction.
+				<a name='8'><h3>Orange</h3>
+				Orange slimes pave the way to upgrade clothing of various kinds. They lead to red slimes which in turn lead to oil.
+				Water will create a slime jar. This one in particular makes clothing resistant to high temps (Not Flames!) and even pressure resistant.
+				Plasma will create a violent reaction that results in mass fire. Be very careful about doing this, lest you roast yourself or others.
+				Blood will create pepper spray! Useful for would-be wife poachers or spiders.
+				<a name='9'><h3>Yellow</h3>
+				Easily one of my favorite slimes just for the light it creates. Although dangerous if given blood.
+				Blood causes an EMP effect with quite a decent size to it. This can kill people with mechanical organs.
+				Water creates slime lights! It's like having a floodlight in your pocket that never runs out!
+				Plasma will create a slime jar. This one gives clothing a higher resistance to shocks. It might take more than one jar to make it shock proof though.
+				<a name='10'><h3>Purple</h3>
+				Purple slimes can be a core slime if people want to use slime steroids to produce more cores.
+				Plasma creates a slime jar. This one causes baby slimes to split their core into 3 but only while still alive.
+				Sugar creates more slime jelly. Usefull if you need to make more slime revival jars.
+				<a name='11'><h3>Dark Purple</h3>
+				Dark purple slimes are a staple. YOU NEED THESE! They are the only way to make more plasma without external shopping, trading or looting.
+				Plasma creates more plasma sheets! Grind these down!
+				Liquid Uranium, Gold and Silver all at once will create a random tool mod. I havn't figured out how they go about this reaction yet. But its like a roulette on what you get.
+				<a name='12'><h3>Red</h3>
+				A valuable yet very dangerous slime. They have a lot of reactions though.
+				Plasma makes Glycerol. A chemical used in Nitroglycerin... explosives.
+				Frost oil creates the rarely used materials of Osmium and Metallic Hydrogen.
+				Water creates a slime jar. This is one of the most wanted things xenobio produces. SPEED jars make armor easier to move in, but it takes alot of them.
+				Blood... Never use this. It enrages all the slimes around. They become nothing short of rabid and completely hostile to everything.
+				<a name='13'><h3>Pink</h3>
+				A slime coveted for making friends.
+				Nutriment in 5 units will create a slime jar useful for taming baby slimes.
+				Honey in 5 units will create a similar slime jar but for adults.
+				<a name='14'><h3>Black</h3>
+				Plasma will create a mutation toxin that's stronger than greens... It will fully turn someone into a slime... Very dangerous.
+				Unstable mutagen will cause a reaction like Grey Slimes with Plasma. Except it can create a wide variety of colors instead of just grey!
+				<a name='15'><h3>Oil</h3>
+				Oil slimes are a strange mix. They have few reactions, most of which are nothing short of illegal. But the nonslipping power of them makes them wonderful.
+				Plasma... This is nothing short of a hellishly strong hand grenade. Blackshield wishes they had fire power like this thing.
+				Water will create a intresting mod for weapons. When applied to scopes it gives them thermal vision... which sadly is illegal.
+				Space Lube in 5 units will create a reverse friction substance for shoes! NON SLIP SOLES! No more slipping on wet floors!
+				<a name='16'><h3>Light Pink</h3>
+				A strange thing to see such friendly reactions become so forceful. Plastic produces a odd colored auto pistol. And wood pulp is reformed into bats.
+				<a name='17'><h3>Adamantine</h3>
+				The only source of renewable diamonds. They take alot of work to create regardless due to needing dark blue slimes.
+				Plasma will create various strange runes upon the floor. I've worked on deciphering them but haven't fully been able to do so. I've seen golems appear from these runes however.
+				Pure slime jelly will create diamonds! This creates some biomatter too leading me to believe the pure slime jelly is actually seperating the core into various aspects somehow.
+				Liquid Uranium, Gold and Silver at the same time will create Platinum. Useful for posicells and a few stronger goods in RnD
+				<a name='18'><h3>Rainbow</h3>
+				A rare slime that I have been unable to make split and have had difficulty keeping from making a mess. Fun at parties though.
+				<p>Hopefully these notes can be condensed someday into something that will better help someone. Someday they too will be outdated I'm sure.
+				</body>
+				</html>
+				"}

@@ -3,7 +3,7 @@
 
 	This needs more thinking out, but I might as well.
 */
-var/const/tk_maxrange = 15
+var/const/tk_maxrange = 7 //Do not increase further - stops abusing of TK mechanics using scopes and/or binoculars.
 
 /*
 	Telekinetic attack:
@@ -66,6 +66,7 @@ var/const/tk_maxrange = 15
 	icon = 'icons/obj/magic.dmi'//Needs sprites
 	icon_state = "2"
 	flags = NOBLUDGEON
+	no_double_tact = TRUE
 	//item_state = null
 	w_class = ITEM_SIZE_COLOSSAL
 	layer = ABOVE_HUD_LAYER

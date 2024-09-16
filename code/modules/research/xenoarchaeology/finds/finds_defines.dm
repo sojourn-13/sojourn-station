@@ -124,9 +124,35 @@
 			return "carbon"
 	return "plasma"
 
-//see /turf/simulated/mineral/New() in code/modules/mining/mine_turfs.dm
-/proc/get_random_digsite_type()
-	return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
+/*
+	see /turf/simulated/mineral/New() in code/modules/mining/mine_turfs.dm
+	Uses map_data files from the map section to determine xenoarch digsite spawns.
+	Is fed the Z level and mapdata list from xenoarch subsystem.
+*/
+/proc/get_digsite_type(Z, Maps)
+	var/obj/map_data/map_found = null
+	for(var/obj/map_data/MD in Maps)
+		if (map_found != null)
+			continue
+		if (Z == MD.z)
+			map_found = MD
+			continue
+		while(Z >= 1 && !map_found)
+			Z--
+			if (Z == MD.z)
+				map_found = MD
+				continue
+	if (map_found.digsites != null)
+		switch (map_found.digsites)
+			if ("GARDEN") return DIGSITE_GARDEN
+			if ("ANIMAL") return DIGSITE_ANIMAL
+			if ("HOUSE") return DIGSITE_HOUSE
+			if ("TECHNICAL") return DIGSITE_TECHNICAL
+			if ("TEMPLE") return DIGSITE_TEMPLE
+			if ("WAR") return DIGSITE_WAR
+			if ("ANY") return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
+			else return DIGSITE_GARDEN
+	else return DIGSITE_GARDEN//safty catch just in case.
 
 /proc/get_random_find_type(var/digsite)
 
@@ -137,14 +163,13 @@
 			100;ARCHAEO_PLANT,\
 			25;ARCHAEO_SHELL,\
 			25;ARCHAEO_FOSSIL,\
-			5;ARCHAEO_BEARTRAP\
 			)
 		if(DIGSITE_ANIMAL)
 			find_type = pick(\
 			100;ARCHAEO_FOSSIL,\
 			50;ARCHAEO_SHELL,\
-			50;ARCHAEO_PLANT,\
-			25;ARCHAEO_BEARTRAP\
+			20;ARCHAEO_PLANT,\
+			15;ARCHAEO_BEARTRAP\
 			)
 		if(DIGSITE_HOUSE)
 			find_type = pick(\
@@ -156,12 +181,8 @@
 			100;ARCHAEO_PEN,\
 			100;ARCHAEO_LIGHTER,\
 			100;ARCHAEO_BOX,\
-			75;ARCHAEO_GASMASK,\
 			75;ARCHAEO_COIN,\
 			75;ARCHAEO_UNKNOWN,\
-			50;ARCHAEO_SHARD,\
-			50;ARCHAEO_RODS,\
-			25;ARCHAEO_METAL\
 			)
 		if(DIGSITE_TECHNICAL)
 			find_type = pick(\
@@ -174,8 +195,6 @@
 			75;ARCHAEO_SHARD,\
 			75;ARCHAEO_RODS,\
 			75;ARCHAEO_UNKNOWN,\
-			50;ARCHAEO_HANDCUFFS,\
-			50;ARCHAEO_BEARTRAP,\
 			)
 		if(DIGSITE_TEMPLE)
 			find_type = pick(\
@@ -192,10 +211,6 @@
 			25;ARCHAEO_BEARTRAP,\
 			10;ARCHAEO_KATANA,\
 			10;ARCHAEO_CLAYMORE,\
-			10;ARCHAEO_SHARD,\
-			10;ARCHAEO_RODS,\
-			10;ARCHAEO_METAL,\
-			10;ARCHAEO_GASMASK,\
 			)
 		if(DIGSITE_WAR)
 			find_type = pick(\
@@ -207,10 +222,8 @@
 			50;ARCHAEO_UNKNOWN,\
 			50;ARCHAEO_CULTROBES,\
 			50;ARCHAEO_CULTBLADE,\
-			50;ARCHAEO_GASMASK,\
 			25;ARCHAEO_HANDCUFFS,\
 			25;ARCHAEO_BEARTRAP,\
-			25;ARCHAEO_TOOL\
 			)
 	return find_type
 

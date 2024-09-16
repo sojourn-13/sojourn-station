@@ -19,20 +19,21 @@
 	icon_state = "centrifuge"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
-	circuit = /obj/item/weapon/circuitboard/centrifuge
+	circuit = /obj/item/circuitboard/centrifuge
 	layer = BELOW_OBJ_LAYER
-	var/obj/item/weapon/reagent_containers/mainBeaker
-	var/list/obj/item/weapon/reagent_containers/separationBeakers = list()
+	var/obj/item/reagent_containers/mainBeaker
+	var/list/obj/item/reagent_containers/separationBeakers = list()
 	var/workTime = 10 SECONDS
 	var/lastActivation = 0
 	var/on = FALSE
 	var/mode = MODE_SEPARATING
 	var/beakerSlots = 3
 	var/unitsPerSec = 2
+	var/amount_we_can_transfer_into = 0 // how many units can we transfer into a beaker?
 
 /obj/machinery/centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/machinery/centrifuge/update_icon()
@@ -49,10 +50,10 @@
 
 /obj/machinery/centrifuge/RefreshParts()
 	unitsPerSec = initial(unitsPerSec)
-	unitsPerSec = max(unitsPerSec * max_part_rating(/obj/item/weapon/stock_parts/manipulator))
+	unitsPerSec = max(unitsPerSec * max_part_rating(/obj/item/stock_parts/manipulator))
 	beakerSlots = initial(beakerSlots)
-	if(max_part_rating(/obj/item/weapon/stock_parts/manipulator) > 1)
-		beakerSlots += (max_part_rating(/obj/item/weapon/stock_parts/manipulator) - 1)
+	if(max_part_rating(/obj/item/stock_parts/manipulator) > 1)
+		beakerSlots += (max_part_rating(/obj/item/stock_parts/manipulator) - 1)
 
 
 /obj/machinery/centrifuge/Process()
@@ -61,8 +62,11 @@
 		return
 	if(on)
 		if(mode == MODE_SEPARATING)
+			amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+			if(unitsPerSec > amount_we_can_transfer_into)
+				amount_we_can_transfer_into = unitsPerSec
 			mainBeaker.reagents.handle_reactions()
-			mainBeaker.separate_solution(separationBeakers, unitsPerSec, mainBeaker.reagents.get_master_reagent_id())
+			mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 
 		if(world.time >= lastActivation + workTime)
 			finish()
@@ -76,10 +80,10 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(!on && istype(I, /obj/item/weapon/reagent_containers) && I.is_open_container())
+	if(!on && istype(I, /obj/item/reagent_containers) && I.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
 			. = TRUE //no afterattack
-			var/obj/item/weapon/reagent_containers/B = I
+			var/obj/item/reagent_containers/B = I
 			if(!user.unEquip(B, src))
 				return
 			if(!mainBeaker)
@@ -95,17 +99,22 @@
 /obj/machinery/centrifuge/MouseDrop_T(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !C.Adjacent(user) || user.stat)
 		return ..()
-	if(!on && istype(C, /obj/item/weapon/reagent_containers) && C.is_open_container())
+	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				user.visible_message("[user.name] places \the [C] into \the [src].", \
+					"You place \the [C] into the [src].")
+				playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
@@ -121,7 +130,7 @@
 
 
 /obj/machinery/centrifuge/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 25 so cog 50 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -129,10 +138,10 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/centrifuge/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+/obj/machinery/centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -146,7 +155,7 @@
 		ui.open()
 
 
-/obj/machinery/centrifuge/ui_data()
+/obj/machinery/centrifuge/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["mode"] = mode
@@ -156,14 +165,14 @@
 	data["UPS"] = unitsPerSec
 
 	if(mainBeaker)
-		data["mainBeaker"] = mainBeaker.reagents.ui_data()
+		data["mainBeaker"] = mainBeaker.reagents.nano_ui_data()
 	var/list/beakersData = list()
 	for(var/i = 1, i <= beakerSlots, i++)
 		var/list/beakerInfo = list()
 		if(i <= separationBeakers.len)
-			var/obj/item/weapon/reagent_containers/B = separationBeakers[i]
+			var/obj/item/reagent_containers/B = separationBeakers[i]
 			if(B && B.reagents)
-				beakerInfo = B.reagents.ui_data()
+				beakerInfo = B.reagents.nano_ui_data()
 		beakerInfo["slot"] = i
 		beakersData.Add(list(beakerInfo))
 	data["beakers"] = beakersData
@@ -184,20 +193,6 @@
 	update_icon()
 
 /obj/machinery/centrifuge/proc/finish()
-	if(mode == MODE_ISOLATING)
-		var/data = mainBeaker.reagents.get_data("blood")
-		if (data)
-			var/list/datum/disease2/disease/virus = data["virus2"]
-			//visible_message("Virus data: [virus]")
-			if(virus)
-				for (var/ID in virus)
-					if(virus[ID])
-						//visible_message("Virus data: [virus] - [ID]")
-						var/obj/item/weapon/virusdish/dish = new (loc)
-						dish.virus2 = virus[ID].getcopy()
-					else
-						visible_message("\icon[src]\The [src] states: Nothing to isolate!")
-						break
 	stop()
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, 1 -3)
 	visible_message("\icon[src]\The [src] pings indicating that cycle is complete.")
@@ -239,15 +234,16 @@
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 4)
-	var/obj/item/weapon/reagent_containers/mainBeaker
-	var/list/obj/item/weapon/reagent_containers/separationBeakers = list()
+	var/obj/item/reagent_containers/mainBeaker
+	var/list/obj/item/reagent_containers/separationBeakers = list()
 	var/beakerSlots = 2
 	var/on = FALSE
 	var/mode = MODE_SEPARATING
+	var/amount_we_can_transfer_into = 0 // how many units can we transfer into a beaker?
 
 /obj/item/device/makeshift_centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/item/device/makeshift_centrifuge/attack_self(mob/user)
@@ -258,8 +254,11 @@
 		if(mainBeaker && mainBeaker.reagents.total_volume)
 			switch(mode)
 				if(MODE_SEPARATING)
+					amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+					if(5 > amount_we_can_transfer_into)
+						amount_we_can_transfer_into = 5
 					mainBeaker.reagents.handle_reactions()
-					mainBeaker.separate_solution(separationBeakers, 5, mainBeaker.reagents.get_master_reagent_id())
+					mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 				if(MODE_SYNTHESISING)
 					mainBeaker.reagents.rotating = TRUE
 					mainBeaker.reagents.handle_reactions()
@@ -270,22 +269,24 @@
 /obj/item/device/makeshift_centrifuge/MouseDrop_T(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !C.Adjacent(user) || user.stat)
 		return ..()
-	if(!on && istype(C, /obj/item/weapon/reagent_containers) && C.is_open_container())
+	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
 /obj/item/device/makeshift_centrifuge/attackby(obj/item/C, mob/living/user)
-	if(!on && istype(C, /obj/item/weapon/reagent_containers) && C.is_open_container())
+	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
 			if(insert_item(C, user))
 				if(!mainBeaker)
@@ -302,10 +303,10 @@
 	if(loc != user && ..())
 		return TRUE
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/item/device/makeshift_centrifuge/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+/obj/item/device/makeshift_centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -318,7 +319,7 @@
 		// open the new ui window
 		ui.open()
 
-/obj/item/device/makeshift_centrifuge/ui_data()
+/obj/item/device/makeshift_centrifuge/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["mode"] = mode
@@ -326,14 +327,14 @@
 	data["minimal"] = TRUE
 
 	if(mainBeaker)
-		data["mainBeaker"] = mainBeaker.reagents.ui_data()
+		data["mainBeaker"] = mainBeaker.reagents.nano_ui_data()
 	var/list/beakersData = list()
 	for(var/i = 1, i <= beakerSlots, i++)
 		var/list/beakerInfo = list()
 		if(i <= separationBeakers.len)
-			var/obj/item/weapon/reagent_containers/B = separationBeakers[i]
+			var/obj/item/reagent_containers/B = separationBeakers[i]
 			if(B && B.reagents)
-				beakerInfo = B.reagents.ui_data()
+				beakerInfo = B.reagents.nano_ui_data()
 		beakerInfo["slot"] = i
 		beakersData.Add(list(beakerInfo))
 	data["beakers"] = beakersData

@@ -1,19 +1,3 @@
-
-// Spread germs from surgeon to the organ
-/obj/item/organ/proc/spread_germs_from(mob/living/carbon/human/user, obj/item/tool)
-	if(!istype(user)) // Robots and such are considered sterile
-		return
-
-	var/new_germ_level = user.germ_level
-	if(user.gloves)
-		new_germ_level = user.gloves.germ_level
-
-	if(tool)
-		new_germ_level = max(new_germ_level, tool.germ_level)
-
-	germ_level = max(germ_level, new_germ_level) //as funny as scrubbing microbes out with clean gloves is - no.
-
-
 // Get a name to be displayed in surgery messages
 /obj/item/organ/proc/get_surgery_name()
 	if(!owner)	// Loose organ shows its own name only
@@ -32,7 +16,6 @@
 	status_data["cut_away"] = status & ORGAN_CUT_AWAY
 	status_data["bleeding"] = status & ORGAN_BLEEDING
 	status_data["broken"] = status & ORGAN_BROKEN
-	status_data["destroyed"] = status & ORGAN_DESTROYED
 	status_data["splintered"] = status & ORGAN_SPLINTED
 	status_data["dead"] = status & ORGAN_DEAD
 	status_data["mutated"] = status & ORGAN_MUTATED
@@ -64,7 +47,7 @@
 		var/multiplier = max(0, 1 - (owner.analgesic / 100))
 
 		if(multiplier)
-			owner.apply_effect(strength * multiplier, AGONY, armor_value = 0, check_protection = FALSE)
+			owner.adjustHalLoss(strength * multiplier)
 
 
 // Get a list of surgically treatable conditions
@@ -72,6 +55,30 @@
 /obj/item/organ/proc/get_conditions()
 	return list()
 
+/obj/item/organ/proc/get_actions(var/obj/item/organ/external/parent)
+	var/list/actions_list = list()
+
+	if(BP_IS_ROBOTIC(src))
+		actions_list.Add(list(list(
+			"name" = (status & ORGAN_CUT_AWAY) ? "Connect" : "Disconnect",
+			"organ" = "\ref[src]",
+			"step" = /datum/surgery_step/robotic/connect_organ
+		)))
+	else
+		actions_list.Add(list(list(
+			"name" = (status & ORGAN_CUT_AWAY) ? "Attach" : "Separate",
+			"organ" = "\ref[src]",
+			"step" = (status & ORGAN_CUT_AWAY) ? /datum/surgery_step/attach_organ : /datum/surgery_step/detach_organ
+		)))
+
+	return actions_list
+
+/obj/item/organ/internal/proc/get_process_data()
+	var/processes = ""
+	for(var/efficiency in organ_efficiency)
+		processes += "[capitalize(efficiency)] ([organ_efficiency[efficiency]]), "
+	processes = copytext(processes, 1, length(processes) - 1)
+	return processes
 
 // Is body part open for most surgerical operations?
 // To be overridden in subtypes

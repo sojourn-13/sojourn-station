@@ -1,0 +1,106 @@
+<style>
+	.withToolTip .ImTooltip, .withToolTipInTooltip .ImTooltipInTooltip
+	{width: auto;}
+</style>
+{{:helper.link(data.prg_screen ? "To Merchants" : "To Trade Screen", null, {'PRG_prg_screen' : 1})}}
+<br>
+<hr>
+{{if data.prg_screen}}
+	{{:helper.link(data.tradescreen ? "To Offers" : "To Goods", null, {'PRG_trade_screen' : 1})}}
+	<br>
+	<hr>
+	{{if data.station_name}}
+		<div class="item" style="margin: 0px 0 0 0">
+			<table class="fixed" style="width: 80%; margin-left: 10%; background: #000000; border: 1px solid #40628a">
+				<tr>
+					<td>
+						<div class="item">
+							<div class="itemLabel">
+								Station:
+							</div>
+							<div class="itemContent" style="text-align: center">
+								<span class="average">{{:data.station_desc}}</span>
+							</div>
+						</div>
+				<tr>
+					<td>
+						<div class="item">
+							<div class="itemLabel">
+								Offer Time Remaining:
+							</div>
+							<div class="itemContent" style="text-align: center">
+								<span class="average">{{:data.offer_time}}</span>
+							</div>
+						</div>
+			</table>
+		</div>
+	{{/if}}
+	{{if data.tradescreen}}
+		{{if data.station_name}}
+			<div class='nanoMap' style='padding: 25px 50px;'>
+				{{for data.categories}}
+					{{:helper.link(value.name, (data.current_category == value.index ? 'folder-open' : 'folder-collapsed'), {'PRG_goods_category': value.index}, (data.current_category == value.index ? 'selected' : null))}}
+				{{empty}}
+					This trade station has nothing to sell.
+				{{/for}}
+				<br><br>
+				{{if data.current_category}}
+					{{if data.goods}}
+						<table class='item'>
+							<tr class="bottom_bordered">
+								<td>Name
+								<td>Available
+							{{for data.goods}}
+								<tr>
+									<td>{{:value.name}}
+									<td>{{:value.amount_available}}
+							{{/for}}
+						</table>
+					{{else}}
+						Please choose category.
+					{{/if}}
+				{{/if}}
+			</div>
+		{{else}}
+			<div class='nanoMap' style='padding: 100px 200px;'>
+				Select a trade station.
+			</div>
+		{{/if}}
+	{{else}}
+		<div class='notice' id='SpecialOffer'>
+			{{if data.offers}}
+				<h3>Special offers{{if data.offer_time}} (time left: {{:data.offer_time}}){{/if}}</h3>
+				<table class='item'>
+					<tr>
+						<th>Station
+						<th>Name
+						<th>Amount Requested
+					{{for data.offers}}
+						{{if value.name}}
+						<tr>
+							<td>{{:value.station}}
+							<td>{{:value.name}}
+							<td>{{:value.amount}}
+						{{/if}}
+					{{/for}}
+				</table>
+			{{else}}
+				No offers found.
+			{{/if}}
+		</div>
+	{{/if}}
+{{else}}
+	<table class ="fixed" style ="width: 100%">
+		<tr>
+			<td valign="top">
+				<div class ='nanoMap' id ='tradeTreeContainer'>
+					{{for data.tree_lines}}
+						<div style="position: absolute;border-{{:value.istop?'top':'bottom'}}: 1px solid white;border-{{:value.isright?'right':'left'}}: 1px solid white;width: {{:value.width}}%;height: {{:value.height}}%;left: {{:value.line_x}}%;bottom: {{:value.line_y}}%"></div>
+					{{/for}}
+					{{for data.trade_tree}}
+						<div style="position: absolute; left: {{:value.x}}%; bottom: {{:value.y}}%;margin-left: -20px;margin-bottom: -20px;">
+							{{:helper.link("<div class='withToolTip tradeTreeIcon icon-"+value.icon+"'><span class='ImTooltip'><img align='center' class='icon-"+value.icon+"'><br><b>"+value.name+"</b></span></div>", '', {'PRG_station' : value.id}, null, "link tradeTreeIconBox "+" "+((value.is_discovered == 1)?'tradeDiscovered':'tradeNotDiscovered')+" "+((value.id == data.station_id)?'tradeSelected':'') )}}
+						</div>
+					{{/for}}
+				</div>
+{{/if}}

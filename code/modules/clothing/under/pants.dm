@@ -82,6 +82,11 @@
 	desc = "A pair of trendy jeans."
 	icon_state = "jeansyoungfolks"
 
+/obj/item/clothing/under/jeans/tojo
+	name = "tojo clan jeans"
+	desc = "A pair of flashy jeans belonging to an asian gangster of sorts."
+	icon_state = "tojopants"
+
 /obj/item/clothing/under/jeans
 	name = "trendy baggy jeans"
 	desc = "A pair of baggy trendy jeans."
@@ -103,6 +108,11 @@
 	name = "black pants"
 	desc = "A pair of black pants."
 	icon_state = "blackpants"
+
+/obj/item/clothing/under/pants/black/outlaw
+	name = "black pants with lucha belt"
+	desc = "A pair of skin-tight black pants with a red lucha belt."
+	icon_state = "randopants"
 
 /obj/item/clothing/under/pants/blackbaggy
 	name = "black baggy pants"
@@ -189,6 +199,21 @@
 	desc = "A pair of athletic white track pants."
 	icon_state = "trackpantswhite"
 
+/obj/item/clothing/under/pants/leggings
+	name = "jean leggings"
+	desc = "A pair of tight-fitting nean leggings."
+	icon_state = "leggings"
+
+/obj/item/clothing/under/pants/leggingswhite
+	name = "white leggings"
+	desc = "A pair of tight-fitting white leggings."
+	icon_state = "whiteleggings"
+
+/obj/item/clothing/under/pants/leggingsprint
+	name = "leopard print leggings"
+	desc = "A pair of tight-fitting leopard print leggings."
+	icon_state = "rawrxdleggings"
+
 /obj/item/clothing/under/pants
 	name = "yoga pants"
 	desc = "A pair of tight-fitting white yoga pants."
@@ -232,6 +257,11 @@
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
 	icon_state = "gorka_pants"
 
+/obj/item/clothing/under/gorkapants/gorkacrewdark
+	name = "dark crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and dark grey liverly."
+	icon_state = "gorka_pants_ih"
+
 /obj/item/clothing/under/gorkapants
 	name = "tan gorka pants"
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
@@ -246,7 +276,7 @@
 
 /obj/item/clothing/under/rank/medspec/gorkapantsihmed
 	name = "medical specialist gorka pants"
-	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and MedSpec markings."
+	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and Corpsman markings."
 	icon_state = "gorka_pants_ih_med"
 
 /obj/item/clothing/under/rank/medical/gorkapantscrewmed

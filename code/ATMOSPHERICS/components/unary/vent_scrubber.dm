@@ -1,5 +1,6 @@
 #define SIPHONING	0
 #define SCRUBBING	1
+#define SLEEPOUT_TIME	15 SECONDS // If ZAS TICK does not occur for 15 seconds , sleep us
 
 /obj/machinery/atmospherics/unary/vent_scrubber
 	icon = 'icons/atmos/vent_scrubber.dmi'
@@ -7,9 +8,9 @@
 
 	name = "air scrubber"
 	desc = "Has a valve and pump attached to it"
-	use_power = 0
+	use_power = NO_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 7500			//7500 W ~ 10 HP
+	power_rating = 12000		//12000 W ~ 16 HP
 
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SCRUBBER //connects to regular and scrubber pipes
 
@@ -17,9 +18,12 @@
 	layer = GAS_SCRUBBER_LAYER
 
 	var/area/initial_loc
-	var/id_tag = null
+	var/id_tag
 	var/frequency = 1439
 	var/datum/radio_frequency/radio_connection
+	var/current_linked_zone = null
+	var/currently_processing = FALSE
+	var/last_zas_update = null
 
 	var/scrubbing = SCRUBBING
 	var/list/scrubbing_gas = list("carbon_dioxide","sleeping_agent","plasma")
@@ -34,12 +38,12 @@
 	var/welded = FALSE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	icon_state = "map_scrubber_on"
 
 /obj/machinery/atmospherics/unary/vent_scrubber/New()
 	..()
-	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER
+	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER * 2
 
 	initial_loc = get_area(loc)
 	area_uid = initial_loc.uid
@@ -53,7 +57,7 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/update_icon(safety = 0)
 	if(!node1)
-		use_power = 0
+		use_power = NO_POWER_USE
 
 	if(welded)
 		icon_state = "weld"
@@ -86,7 +90,7 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/proc/broadcast_status()
 	if(!radio_connection)
-		return 0
+		return FALSE
 
 	var/datum/signal/signal = new
 	signal.transmission_method = 1 //radio signal
@@ -128,21 +132,21 @@
 	..()
 
 	if (!node1)
-		use_power = 0
+		use_power = NO_POWER_USE
 		return
 	//broadcast_status()
 	if(!use_power)
-		return 0
+		return FALSE
 
 	if(stat & (NOPOWER|BROKEN))
-		return 0
+		return FALSE
 
 	if(welded)
-		return 0
+		return FALSE
 
 	var/list/environments = get_target_environments(src, expanded_range)
 	if(!length(environments))
-		return 0
+		return FALSE
 
 	var/power_draw = 0
 	var/transfer_happened = FALSE
@@ -168,9 +172,9 @@
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
-			network.update = 1
+			network.update = TRUE
 
-	return 1
+	return TRUE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/hide(var/i) //to make the little pipe section invisible, the icon changes.
 	update_icon()
@@ -194,7 +198,7 @@
 			panic = !panic
 
 		if(panic)
-			use_power = 1
+			use_power = IDLE_POWER_USE
 			scrubbing = SIPHONING
 		else
 			scrubbing = SCRUBBING
@@ -320,3 +324,4 @@
 
 #undef SIPHONING
 #undef SCRUBBING
+#undef SLEEPOUT_TIME

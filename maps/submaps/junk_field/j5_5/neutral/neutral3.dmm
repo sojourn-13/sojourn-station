@@ -1,0 +1,93 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/lattice,
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"c" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"d" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"e" = (
+/obj/random/mob/carp/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"f" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"g" = (
+/obj/structure/girder,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"l" = (
+/turf/template_noop,
+/area/template_noop)
+"A" = (
+/obj/structure/girder,
+/obj/random/material/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"I" = (
+/obj/structure/girder,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"N" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"W" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"X" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+X
+W
+l
+c
+f
+"}
+(2,1,1) = {"
+b
+c
+e
+b
+b
+"}
+(3,1,1) = {"
+X
+a
+d
+d
+X
+"}
+(4,1,1) = {"
+N
+l
+d
+I
+g
+"}
+(5,1,1) = {"
+A
+l
+b
+a
+b
+"}

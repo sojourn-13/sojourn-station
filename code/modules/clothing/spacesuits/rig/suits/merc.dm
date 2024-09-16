@@ -3,23 +3,28 @@
 	camera_networks = list(NETWORK_MERCENARY)
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
-/obj/item/weapon/rig/merc
+/obj/item/rig/merc
 	name = "crimson hardsuit control module"
-	desc = "A blood-red hardsuit featuring some fairly advanced technology."
+	desc = "A blood-red hardsuit featuring some fairly advanced technology. Advanced armor plating can last through extended firefights."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
-	armor = list(
-		melee = 50,
-		bullet = 50,
-		energy = 30,
+	armor_list = list(
+		melee = 10,
+		bullet = 10,
+		energy = 7,
 		bomb = 75,
 		bio = 100,
 		rad = 50
 	)
-	slowdown = 1
+	ablative_max = 12
+	ablation = ABLATION_DURABLE
+	slowdown = 0.3
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	stiffness = 0
+	obscuration = 0
+	price_tag = 4000
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
 
@@ -31,13 +36,13 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/combat,
+		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/fabricator/energy_net,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 
 //Has most of the modules removed
-/obj/item/weapon/rig/merc/empty
+/obj/item/rig/merc/empty
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite, //might as well

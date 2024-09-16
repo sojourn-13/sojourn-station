@@ -4,17 +4,18 @@
 	allowed_roles = list("Premier")
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
+	cost = 0
 
 /datum/gear/factioncommand/cloakcaptain
 	display_name = "cloak, premier"
-	path = /obj/item/clothing/suit/hooded/cloak/job/captain
+	path = /obj/item/clothing/accessory/job/cape
 	allowed_roles = list("Premier")
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
 
 /datum/gear/factioncommand/cloakfo
 	display_name = "cloak, steward"
-	path = /obj/item/clothing/suit/hooded/cloak/job/fo
+	path = /obj/item/clothing/accessory/job/cape/fo
 	allowed_roles = list("Steward")
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
@@ -40,3 +41,11 @@
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Command"
+
+/datum/gear/factioncommand/captainturtleneck
+	display_name = "turtleneck, premier"
+	path = /obj/item/clothing/under/turtleneck/premier
+	allowed_roles = list("Premier")
+	slot = slot_w_uniform
+	sort_category = "Faction: Command"
+	cost = 0

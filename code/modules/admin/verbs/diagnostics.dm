@@ -1,42 +1,3 @@
-ADMIN_VERB_ADD(/client/proc/air_report, R_DEBUG, FALSE)
-/client/proc/air_report()
-	set category = "Debug"
-	set name = "Show Air Report"
-
-	var/active_groups = SSair.active_zones
-	var/inactive_groups = SSair.zones.len - active_groups
-
-	var/hotspots = 0
-	for(var/obj/fire/hotspot in world)
-		hotspots++
-
-	var/active_on_main_station = 0
-	var/inactive_on_main_station = 0
-	for(var/zone/zone in SSair.zones)
-		var/turf/simulated/turf = locate() in zone.contents
-		if(isOnStationLevel(turf))
-			if(zone.needs_update)
-				active_on_main_station++
-			else
-				inactive_on_main_station++
-
-	var/output = {"<B>AIR SYSTEMS REPORT</B><HR>
-<B>General Processing Data</B><BR>
-	Cycle: [SSair.times_fired]<br>
-	Groups: [SSair.zones.len]<BR>
----- <I>Active:</I> [active_groups]<BR>
----- <I>Inactive:</I> [inactive_groups]<BR><br>
----- <I>Active on station:</i> [active_on_main_station]<br>
----- <i>Inactive on station:</i> [inactive_on_main_station]<br>
-<BR>
-<B>Special Processing Data</B><BR>
-	Hotspot Processing: [hotspots]<BR>
-<br>
-<B>Geometry Processing Data</B><BR>
-	Tile Update: [SSair.tiles_to_update.len]<BR>
-"}
-
-	usr << browse(output,"window=airreport")
 
 /client/proc/fix_next_move()
 	set category = "Debug"
@@ -94,7 +55,7 @@ ADMIN_VERB_ADD(/client/proc/air_report, R_DEBUG, FALSE)
 
 	usr << browse(output,"window=radioreport")
 
-
+/* Broken, crashes the server when used.
 ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)
 /client/proc/reload_admins()
 	set name = "Reload Admins"
@@ -104,8 +65,8 @@ ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)
 
 	message_admins("[usr] manually reloaded admins")
 	load_admins()
-
-
+*/
+/* We....don't have mentors, disabling till further notice
 ADMIN_VERB_ADD(/client/proc/reload_mentors, R_SERVER, FALSE)
 /client/proc/reload_mentors()
 	set name = "Reload Mentors"
@@ -115,7 +76,7 @@ ADMIN_VERB_ADD(/client/proc/reload_mentors, R_SERVER, FALSE)
 
 	message_admins("[usr] manually reloaded Mentors")
 	world.load_mods()
-
+*/
 /*
 //todo:
 ADMIN_VERB_ADD(/client/proc/jump_to_dead_group, R_DEBUG, FALSE)

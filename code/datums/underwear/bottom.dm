@@ -74,3 +74,13 @@
 	name = "Long John Bottoms"
 	icon_state = "ljonb"
 	has_color = TRUE
+	
+/datum/category_item/underwear/bottom/leotard
+	name = "Leotard"
+	icon_state = "leotard_bra_color"
+	has_color = TRUE
+	
+/datum/category_item/underwear/bottom/leotard_turt
+	name = "Leotard Turtleneck"
+	icon_state = "leotard_turt_color"
+	has_color = TRUE

@@ -37,6 +37,37 @@
 	qdel(animation)
 	return src
 
+/mob/living/carbon/human/proc/humanize()
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
+		return
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
+	canmove = 0
+	stunned = 1
+	icon = null
+	invisibility = 101
+	var/atom/movable/overlay/animation = new /atom/movable/overlay( loc )
+	animation.plane = plane
+	animation.layer = ABOVE_MOB_LAYER
+	animation.icon_state = "blank"
+	animation.icon = 'icons/mob/mob.dmi'
+	animation.master = src
+	flick("h2monkey", animation)
+	sleep(48)
+	//animation = null
+
+	DEL_TRANSFORMATION_MOVEMENT_HANDLER(src)
+	stunned = 0
+
+	update_lying_buckled_and_verb_status()
+	invisibility = initial(invisibility)
+
+	set_species("Human", null, FALSE)
+	dna.SetSEState(MONKEYBLOCK,0)
+
+	to_chat(src, "<B>You are now [species.name]. </B>")
+	qdel(animation)
+	return src
+
 /mob/new_player/AIize()
 	spawning = 1
 	return ..()
@@ -82,7 +113,7 @@
 	return O
 
 //human -> robot
-/mob/living/proc/Robotize()
+/mob/living/proc/Robotize(posibrain = FALSE)
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
@@ -99,9 +130,12 @@
 
 	O.loc = loc
 	O.job = "Robot"
-	if(O.mind.assigned_role == "Robot")
+	if(O.mind.role_alt_title == "Robot")
+		posibrain = TRUE
+	if(!posibrain)
 		O.mmi = new /obj/item/device/mmi(O)
-		O.mmi.transfer_identity(src)
+	else O.mmi = new /obj/item/device/mmi/digital/posibrain
+	O.mmi.transfer_identity(src)
 
 	callHook("borgify", list(O))
 	O.Namepick()
@@ -198,4 +232,4 @@
 
 	//Not in here? Must be untested!
 	return 0
-	qdel(src)
+

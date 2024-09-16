@@ -1,4 +1,4 @@
-/obj/item/weapon/energy_net
+/obj/item/energy_net
 	name = "energy net"
 	desc = "It's a net made of green energy."
 	icon = 'icons/effects/effects.dmi'
@@ -7,11 +7,11 @@
 	force = 0
 	var/net_type = /obj/effect/energy_net
 
-/obj/item/weapon/energy_net/dropped()
+/obj/item/energy_net/dropped()
 	spawn(10)
 		if(src) qdel(src)
 
-/obj/item/weapon/energy_net/throw_impact(atom/hit_atom)
+/obj/item/energy_net/throw_impact(atom/hit_atom)
 	..()
 
 	var/mob/living/M = hit_atom
@@ -93,8 +93,9 @@
 		return
 
 /obj/effect/energy_net/bullet_act(var/obj/item/projectile/Proj)
-	health -= Proj.get_structure_damage()
-	healthCheck()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
+		healthCheck()
 	return 0
 
 /obj/effect/energy_net/ex_act()
@@ -121,7 +122,7 @@
 	healthCheck()
 	return
 
-/obj/effect/energy_net/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/effect/energy_net/attackby(obj/item/W as obj, mob/user as mob)
 	health -= W.force
 	healthCheck()
 	..()

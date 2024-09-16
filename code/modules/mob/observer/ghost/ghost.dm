@@ -6,9 +6,9 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
-	canmove = 0
-	blinded = 0
-	anchored = 1	//  don't get pushed around
+	canmove = FALSE
+	blinded = FALSE
+	anchored = TRUE	//  don't get pushed around
 	layer = GHOST_LAYER
 	movement_handlers = list(/datum/movement_handler/mob/incorporeal)
 
@@ -28,13 +28,14 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/ghostvision = 1 //is the ghost able to see things humans can't?
 	var/seedarkness = 1
 
-	var/obj/item/weapon/tool/multitool/ghost_multitool
+	var/obj/item/tool/multitool/ghost_multitool
+	var/datum/tgui_module/manifest/manifest_panel = null
 	incorporeal_move = 1
 
 /mob/observer/ghost/New(mob/body)
 
 	see_in_dark = 100
-	verbs += /mob/observer/ghost/proc/dead_tele
+	add_verb(src, /mob/observer/ghost/proc/dead_tele)
 
 	if(ismob(body))
 		var/turf/T = get_turf(body)				//Where is the body located?
@@ -43,11 +44,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		if (ishuman(body))
 			var/mob/living/carbon/human/H = body
 			icon = H.stand_icon
-			copy_overlays(H.overlays_standing, TRUE)
+			copy_overlays(H, TRUE)
 		else
 			icon = body.icon
 			icon_state = body.icon_state
-			copy_overlays(body.get_overlays(), TRUE)
+			copy_overlays(body, TRUE)
 
 		alpha = 127
 
@@ -76,14 +77,14 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	real_name = name
 
 	ghost_multitool = new(src)
+	SSmobs.ghost_list += src
 	..()
-
-	AddComponent(/datum/component/fabric)
 
 /mob/observer/ghost/Destroy()
 	stop_following()
 	qdel(ghost_multitool)
 	ghost_multitool = null
+	SSmobs.ghost_list -= src
 	return ..()
 
 /mob/observer/ghost/Topic(href, href_list)
@@ -165,7 +166,9 @@ Works together with spawning an observer, noted above.
 		ghost.client = client
 		ghost.initialise_postkey()
 		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed)		// For new ghosts we remove the verb from even showing up if it's not allowed.
-			ghost.verbs -= /mob/observer/ghost/verb/toggle_antagHUD	// Poor guys, don't know what they are missing!
+			remove_verb(ghost, /mob/observer/ghost/verb/toggle_antagHUD)	// Poor guys, don't know what they are missing!
+
+		ghost.client?.create_UI(ghost.type)
 
 		return ghost
 
@@ -199,16 +202,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		ghost.timeofdeath = world.time // Because the living mob won't have a time of death and we want the respawn timer to work properly.
 		announce_ghost_joinleave(ghost)
 
-/mob/observer/ghost/can_use_hands()	return 0
-/mob/observer/ghost/is_active()		return 0
-
-/mob/observer/ghost/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+/mob/observer/ghost/can_use_hands()
+/mob/observer/ghost/is_active()
 
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"
@@ -228,6 +223,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.teleop = null
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
+	mind.current.client.init_verbs()
 	return 1
 
 /mob/observer/ghost/verb/toggle_medHUD()
@@ -278,9 +274,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!isghost(usr))
 		to_chat(usr, "Not when you're not dead!")
 		return
-	usr.verbs -= /mob/observer/ghost/proc/dead_tele
+	remove_verb(usr, /mob/observer/ghost/proc/dead_tele)
 	spawn(30)
-		usr.verbs += /mob/observer/ghost/proc/dead_tele
+		add_verb(usr, /mob/observer/ghost/proc/dead_tele)
 	var/area/thearea = SSmapping.ghostteleportlocs[A]
 	if(!thearea)	return
 
@@ -307,13 +303,24 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	usr.forceMove(pick(L))
 
 /mob/observer/ghost/verb/follow(input in getmobs())
-	set category = "Ghost"
-	set name = "Follow" // "Haunt"
+	set name = ".Follow" // "Haunt"
 	set desc = "Follow and haunt a mob."
 
 	var/target = getmobs()[input]
 	if(!target) return
 	ManualFollow(target)
+
+/mob/observer/ghost/verb/follow_player()
+	set category = "Ghost"
+	set name = "Follow player"
+
+	var/list/player_controlled_mobs = list()
+
+	for(var/mob/M in sortNames(SSmobs.mob_list))
+		if(M.ckey && !isnewplayer(M))
+			player_controlled_mobs.Add(M)
+
+	ManualFollow(input("Follow and haunt a player", "Follow player") as anything in player_controlled_mobs)
 
 // This is the ghost's follow verb with an argument
 /mob/observer/ghost/proc/ManualFollow(var/atom/movable/target)
@@ -440,7 +447,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	var/turf/T = get_turf(src)
-	if(!T || !(T.z in maps_data.station_levels))
+	if(!T || !(T.z in GLOB.maps_data.station_levels))
 		to_chat(src, "<span class='warning'>You may not spawn as a mouse on this Z-level.</span>")
 		return
 
@@ -459,7 +466,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if (spawnpoint)
 		host = new /mob/living/simple_animal/mouse(spawnpoint.loc)
 	else
-		to_chat(src, "<span class='warning'>Unable to find any safe, unwelded vents to spawn mice at. The station must be quite a mess!  Trying again might work, if you think there's still a safe place. </span>")
+		to_chat(src, "<span class='warning'>Unable to find any safe, unwelded vents to spawn mice at. The colony must be quite a mess!  Trying again might work, if you think there's still a safe place. </span>")
 
 	if(host)
 		if(config.uneducated_mice)
@@ -473,7 +480,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /proc/find_mouse_near_spawnpoint(var/turf/T)
 	var/obj/machinery/atmospherics/unary/vent_pump/nearest_safe_vent = null
 	var/nearest_dist = 999999
-	for(var/obj/machinery/atmospherics/unary/vent_pump/v in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/v in GLOB.machines)
 		if(!v.welded && v.z == T.z && !(is_turf_atmos_unsafe(get_turf(v))))
 			var/distance = dist3D(v, T)
 			if (distance < nearest_dist)
@@ -489,7 +496,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	//If we hit the limit without finding a valid one, then the best one we found is selected
 
 	var/list/found_vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/v in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/v in GLOB.machines)
 		if(!v.welded && v.z == ZLevel)
 			found_vents.Add(v)
 
@@ -549,7 +556,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
 	set category = "Ghost"
-	show_manifest(src)
+
+	if(!istype(manifest_panel))
+		manifest_panel = new(src)
+	manifest_panel.ui_interact(src)
 
 //This is called when a ghost is drag clicked to something.
 /mob/observer/ghost/MouseDrop(atom/over)
@@ -572,6 +582,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!config.ghosts_can_possess_animals)
 		to_chat(usr, "<span class='warning'>Ghosts are not permitted to possess animals.</span>")
 		return 0
+	if(!BC_IsKeyAllowedToConnect(usr.ckey) && !usr.client.holder)
+		to_chat(usr, SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
+				but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!"))
+		return 0
 	if(!M.can_be_possessed_by(src))
 		return 0
 	return M.do_possession(src)
@@ -586,7 +600,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/is_manifest = 0
 	if(!is_manifest)
 		is_manifest = 1
-		verbs += /mob/observer/ghost/proc/toggle_visibility
+		add_verb(src, /mob/observer/ghost/proc/toggle_visibility)
 
 	if(src.invisibility != 0)
 		user.visible_message( \
@@ -647,12 +661,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/canface()
 	return 1
-
-/mob/proc/can_admin_interact()
-    return 0
-
-/mob/observer/ghost/can_admin_interact()
-	return check_rights(R_ADMIN, 0, src)
 
 /mob/observer/ghost/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
@@ -800,4 +808,5 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	M.key = key
 	if(M.client)
 		M.client.create_UI(M.type)
+		M.client.init_verbs()
 	return

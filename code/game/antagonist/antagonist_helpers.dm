@@ -41,13 +41,13 @@
 
 	return TRUE
 
-/datum/antagonist/proc/is_dead()
+/datum/antagonist/proc/isdead()
 	if(!owner || !owner.current || owner.current.stat == DEAD || !owner.active)
 		return TRUE
 	return FALSE
 
 /datum/antagonist/proc/is_active()
-	if(is_dead())
+	if(isdead())
 		return FALSE
 	if(!owner.current.client && !owner.current.teleop)
 		return FALSE

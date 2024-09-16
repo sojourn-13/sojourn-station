@@ -6,15 +6,8 @@
 /obj/structure/extinguisher_cabinet,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"c" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/crawler)
 "d" = (
 /obj/machinery/antigrav,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
-"e" = (
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "f" = (
@@ -43,11 +36,11 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
 "k" = (
-/obj/machinery/r_n_d/server,
+/obj/structure/salvageable/computer_os,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "l" = (
-/obj/machinery/computer,
+/obj/structure/salvageable/console_os,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "m" = (
@@ -97,21 +90,13 @@
 /area/crawler)
 "w" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"x" = (
-/obj/machinery/constructable_frame/machine_frame/vertical,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
-"y" = (
-/obj/random/toy/plushie,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
 "z" = (
-/obj/structure/table/rack,
+/obj/structure/salvageable/data_os,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "A" = (
@@ -133,29 +118,34 @@
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
-"E" = (
-/obj/structure/salvageable/implant_container,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
 "F" = (
-/obj/structure/salvageable/server,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
-"G" = (
-/obj/structure/salvageable/machine,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
-"H" = (
-/obj/structure/salvageable/computer,
+/obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "I" = (
-/obj/structure/salvageable/data,
+/obj/structure/salvageable/console_os{
+	dir = 1
+	},
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "J" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
+/area/crawler)
+"Q" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/crawler)
+"T" = (
+/obj/structure/salvageable/console_broken_os,
+/turf/simulated/floor/bluegrid,
+/area/crawler)
+"X" = (
+/obj/structure/salvageable/machine_os,
+/turf/simulated/floor/bluegrid,
 /area/crawler)
 
 (1,1,1) = {"
@@ -172,12 +162,12 @@ a
 (2,1,1) = {"
 a
 d
-c
-e
+n
+z
 a
 B
-c
-G
+n
+I
 a
 "}
 (3,1,1) = {"
@@ -186,9 +176,9 @@ A
 n
 u
 a
-e
+z
 n
-H
+I
 a
 "}
 (4,1,1) = {"
@@ -199,7 +189,7 @@ u
 a
 C
 n
-F
+I
 a
 "}
 (5,1,1) = {"
@@ -248,9 +238,9 @@ J
 "}
 (9,1,1) = {"
 b
-j
+Q
 r
-j
+Q
 a
 j
 r
@@ -261,32 +251,32 @@ J
 a
 k
 n
-x
+z
 a
-E
+F
 n
-G
+I
 a
 "}
 (11,1,1) = {"
 a
 l
 n
-y
+B
 a
 F
 n
-H
+I
 a
 "}
 (12,1,1) = {"
 a
-k
-c
+T
+n
 z
 a
-E
-c
+X
+n
 I
 a
 "}

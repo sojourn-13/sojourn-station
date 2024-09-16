@@ -11,19 +11,28 @@
 	var/global/global_uid = 0
 	var/uid
 	var/tmp/camera_id = 0 // For automatic c_tag setting
-	//Keeping this on the default plane, GAME_PLANE, will make area over-lays fail to render on FLOOR_PLANE.
+	//Keeping this on the default plane, GAME_PLANE, will make area overlays fail to render on FLOOR_PLANE.
 	plane = BLACKNESS_PLANE
 	layer = AREA_LAYER
 	var/ship_area = FALSE
 
+	var/used_equip = 0
+	var/used_light = 0
+	var/used_environ = 0
+	var/static_equip
+	var/static_light = 0
+	var/static_environ
+
+/**
+ * Called when an area loads
+ */
 /area/New()
-	icon_state = ""
-	layer = AREA_LAYER
 	uid = ++global_uid
 	all_areas += src
 	if (ship_area)
 		ship_areas[src] = TRUE //Adds ourselves to the list of all ship areas
 
+	// Some atoms would like to use power in Initialize()
 	if(!requires_power)
 		power_light = 0
 		power_equip = 0
@@ -31,16 +40,30 @@
 
 	sanity = new(src)
 
-	..()
+	return ..()
 
+/*
+ * Initalize this area
+ *
+ * returns INITIALIZE_HINT_LATELOAD
+ */
 /area/Initialize()
-	. = ..()
+	icon_state = ""
+
 	if(!requires_power || !apc)
 		power_light = 0
 		power_equip = 0
 		power_environ = 0
-	power_change()		// all machines set to current power level, also updates lighting icon
 
+	. = ..()
+
+	return INITIALIZE_HINT_LATELOAD
+
+/**
+ * Sets machine power levels in the area
+ */
+/area/LateInitialize()
+	power_change() // all machines set to current power level, also updates icon
 
 /area/proc/get_cameras()
 	var/list/cameras = list()
@@ -140,7 +163,7 @@
 /area/proc/updateicon()
 
 	///////weather
-
+/*
 	var/weather_icon
 	for(var/V in SSweather.processing)
 		var/datum/weather/W = V
@@ -149,7 +172,7 @@
 			weather_icon = TRUE
 	if(!weather_icon)
 		icon_state = null
-
+*/
 	////////////weather
 
 	if ((fire || eject || party || atmosalm == 2) && (!requires_power||power_environ) && !istype(src, /area/space))//If it doesn't require power, can still activate this proc.
@@ -192,11 +215,11 @@
 	if(always_unpowered)
 		return 0
 	switch(chan)
-		if(EQUIP)
+		if(STATIC_EQUIP)
 			return power_equip
-		if(LIGHT)
+		if(STATIC_LIGHT)
 			return power_light
-		if(ENVIRON)
+		if(STATIC_ENVIRON)
 			return power_environ
 
 	return 0
@@ -205,21 +228,34 @@
 /area/proc/power_change()
 	for(var/obj/machinery/M in src)	// for each machine in the area
 		M.power_change()			// reverify power status (to update icons etc.)
+	SEND_SIGNAL(src, COMSIG_AREA_APC_POWER_CHANGE)
 	if (fire || eject || party)
 		updateicon()
 
 /area/proc/usage(var/chan)
 	var/used = 0
 	switch(chan)
-		if(LIGHT)
-			used += used_light
-		if(EQUIP)
-			used += used_equip
-		if(ENVIRON)
-			used += used_environ
 		if(TOTAL)
-			used += used_light + used_equip + used_environ
+			used += static_light + static_equip + static_environ + used_equip + used_light + used_environ
+		if(STATIC_EQUIP)
+			used += static_equip + used_equip
+		if(STATIC_LIGHT)
+			used += static_light + used_light
+		if(STATIC_ENVIRON)
+			used += static_environ + used_environ
 	return used
+
+/area/proc/addStaticPower(value, powerchannel)
+	switch(powerchannel)
+		if(STATIC_EQUIP)
+			static_equip += value
+		if(STATIC_LIGHT)
+			static_light += value
+		if(STATIC_ENVIRON)
+			static_environ += value
+
+/area/proc/removeStaticPower(value, powerchannel)
+	addStaticPower(-value, powerchannel)
 
 /area/proc/clear_usage()
 	used_equip = 0
@@ -228,11 +264,11 @@
 
 /area/proc/use_power(var/amount, var/chan)
 	switch(chan)
-		if(EQUIP)
+		if(STATIC_EQUIP)
 			used_equip += amount
-		if(LIGHT)
+		if(STATIC_LIGHT)
 			used_light += amount
-		if(ENVIRON)
+		if(STATIC_ENVIRON)
 			used_environ += amount
 
 
@@ -256,6 +292,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 	L.lastarea = newarea
 	play_ambience(L)
+	do_area_blurb(L) // This handles narration logic.
 
 /area/proc/play_ambience(var/mob/living/L)
     // Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
@@ -325,7 +362,8 @@ var/list/mob/living/forced_ambiance_list = new
 		var/mob/living/carbon/human/H = mob
 		if(istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & NOSLIP))
 			return
-
+		if(H.stats.getPerk(PERK_ASS_OF_CONCRETE) || H.stats.getPerk(PERK_BRAWN))
+			return
 		if(MOVING_QUICKLY(H))
 			H.AdjustStunned(2)
 			H.AdjustWeakened(2)

@@ -3,8 +3,8 @@ GLOBAL_LIST_EMPTY(all_bounty_entries)
 /datum/computer_file/report/bounty_entry
 	filetype = "BTE"
 	size = 1
-	var/obj/item/weapon/card/id/owner_id_card //Who set this bounty
-	var/obj/item/weapon/card/id/claimedby_id_card //Who completed this bounty, and was confirmed by the owner?
+	var/obj/item/card/id/owner_id_card //Who set this bounty
+	var/obj/item/card/id/claimedby_id_card //Who completed this bounty, and was confirmed by the owner?
 
 // Kept as a computer file for possible future expansion into servers. I guess ?
 /datum/computer_file/report/bounty_entry/New()
@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(all_bounty_entries)
 		if(field_from_name("Title").get_value() && field_from_name("Job description").get_value() && field_from_name("Reward").get_value() && field_from_name("Employer").get_value())
 			if(!owner_id_card)
 				return
-			var/obj/item/weapon/card/id/held_card = user.GetIdCard()
+			var/obj/item/card/id/held_card = user.GetIdCard()
 			var/datum/money_account/authenticated_account
 			if(held_card == owner_id_card)
 				if("Yes" == input(usr, "Use your ID card ?", "Credits will be instantly debited from your account.<br>Would you like to use your ID associated account for that?", list("Yes", "No")) as null|anything in list("Yes", "No"))
@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(all_bounty_entries)
 				if(!tried_account_num || !tried_pin)
 					to_chat(user, "<span class='warning'>You must enter a valid bank account + PIN to create a bounty!</span>")
 					return
-				authenticated_account = attempt_account_access(tried_account_num, tried_pin, held_card && held_card.associated_account_number == tried_account_num ? 2 : 1)
+				authenticated_account = attempt_account_access(tried_account_num, tried_pin, held_card && held_card.associated_account_number == tried_account_num ? 2 : 1, TRUE)
 			if(authenticated_account)
 				//TODO FEE that captain can set
 				/*var/fee = (reward*fee_multiplier) //Service charge. Craptain can configure, defaults to 5%

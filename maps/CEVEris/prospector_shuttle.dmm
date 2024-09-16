@@ -1,0 +1,7332 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"af" = (
+/obj/landmark/machinery/input,
+/obj/structure/ore_box,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,9"
+	},
+/area/space)
+"an" = (
+/obj/machinery/door/airlock/multi_tile/metal{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "mining_shuttle_inner";
+	locked = 1;
+	name = "Hulk External Access"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"av" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,21"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"ax" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,15"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"az" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,10"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"aC" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,11"
+	},
+/turf/space,
+/area/space)
+"aH" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,4"
+	},
+/area/space)
+"aI" = (
+/obj/landmark/machinery/output,
+/obj/machinery/conveyor/south{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"aK" = (
+/turf/space,
+/area/space)
+"aP" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,18"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"aZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"ba" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,17"
+	},
+/area/space)
+"bn" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,10"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"br" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,9"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"bs" = (
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"bA" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,7"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"bL" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,5";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"bT" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/white,
+/area/space)
+"ca" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/telecomms/relay/preset/mining,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"cn" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,19"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"cA" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"cQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,18"
+	},
+/area/space)
+"dc" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,15"
+	},
+/area/space)
+"df" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,18"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"dg" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,7"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"dw" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/telecomms/relay/preset/mining,
+/turf/simulated/floor/tiled/dark,
+/area/shuttle/rocinante_shuttle_area)
+"dR" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"dT" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,7"
+	},
+/area/space)
+"dV" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,17"
+	},
+/turf/space,
+/area/space)
+"dZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"ea" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,10"
+	},
+/area/space)
+"eb" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"ei" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"es" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,23"
+	},
+/area/space)
+"ex" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,15"
+	},
+/turf/space,
+/area/space)
+"eA" = (
+/turf/simulated/floor/tiled/white,
+/area/space)
+"eC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,1";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"eI" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "11,0"
+	},
+/turf/space,
+/area/space)
+"eR" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/steel,
+/obj/machinery/microwave,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"eV" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,23"
+	},
+/turf/space,
+/area/space)
+"fc" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "14,23"
+	},
+/turf/space,
+/area/space)
+"fj" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"fk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,19"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"fo" = (
+/obj/machinery/autolathe,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ft" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,4"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"fu" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "interior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,21"
+	},
+/area/space)
+"fy" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "2,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"fH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/camera/network/mining{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,19"
+	},
+/area/space)
+"fL" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "7,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"fS" = (
+/obj/machinery/door/airlock/multi_tile/metal{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "mining_shuttle_inner";
+	locked = 1;
+	name = "Hulk External Access"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,20"
+	},
+/area/space)
+"fU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"fW" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/tool/saw/improvised,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/shuttle/rocinante_shuttle_area)
+"gb" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,23"
+	},
+/area/space)
+"gg" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,18"
+	},
+/area/space)
+"gi" = (
+/obj/structure/table/steel,
+/obj/item/device/radio/off,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,2"
+	},
+/area/space)
+"gl" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,19"
+	},
+/turf/space,
+/area/space)
+"gq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "14,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"gu" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"gw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,20"
+	},
+/area/space)
+"gx" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,5"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"gz" = (
+/obj/structure/closet/secure_closet/personal/miner,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,9"
+	},
+/area/space)
+"gK" = (
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/emergency,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"gR" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,17"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"hd" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "13,16"
+	},
+/area/space)
+"he" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/ammobox/shotgun,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,9"
+	},
+/area/space)
+"hp" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,19"
+	},
+/turf/space,
+/area/space)
+"hO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,23"
+	},
+/turf/space,
+/area/space)
+"hT" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,22"
+	},
+/area/space)
+"hW" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,16"
+	},
+/area/space)
+"ia" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"id" = (
+/obj/machinery/mech_recharger,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/sign/department/medbay{
+	name = "TRIAGE";
+	pixel_y = 32
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"ip" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,15"
+	},
+/area/space)
+"iw" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,3"
+	},
+/area/space)
+"iC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,7"
+	},
+/area/space)
+"iE" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,11"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"iH" = (
+/obj/structure/bed/padded,
+/obj/item/bedsheet,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "6,17"
+	},
+/area/space)
+"iL" = (
+/obj/machinery/power/sensor{
+	long_range = 1;
+	name_tag = "Hulk Mining Barge Grid"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/space)
+"iM" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,7"
+	},
+/turf/space,
+/area/space)
+"iO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,16"
+	},
+/turf/space,
+/area/space)
+"iT" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,22"
+	},
+/area/space)
+"iX" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,9"
+	},
+/turf/space,
+/area/space)
+"iY" = (
+/obj/structure/bed/chair,
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"jg" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "2,2"
+	},
+/turf/space,
+/area/space)
+"ji" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/obj/item/tool/saw/improvised,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/space)
+"js" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,21"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"jD" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "15,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"jF" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"jG" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,16";
+	opacity = 0
+	},
+/area/space)
+"jJ" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,2"
+	},
+/turf/space,
+/area/space)
+"jO" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,19"
+	},
+/area/space)
+"jQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,3"
+	},
+/area/space)
+"jZ" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,23"
+	},
+/turf/space,
+/area/space)
+"kb" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/void/mining,
+/obj/item/clothing/mask/breath,
+/obj/item/device/scanner/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "2,19"
+	},
+/area/space)
+"kd" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "interior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,21"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"kg" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,6";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"kh" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,19"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"kn" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,2";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ks" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,20"
+	},
+/area/space)
+"ku" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,19"
+	},
+/area/space)
+"kw" = (
+/obj/item/modular_computer/console/preset/civilian/professional{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"kD" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,9"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"kK" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/space)
+"kL" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,1";
+	opacity = 0
+	},
+/area/space)
+"kP" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,16"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"kU" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,20"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"la" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,9"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"lh" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,17"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ll" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,8";
+	opacity = 0
+	},
+/area/space)
+"lq" = (
+/obj/machinery/conveyor/east{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"lQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"lW" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,18"
+	},
+/area/space)
+"mf" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,7"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"mn" = (
+/obj/landmark/machinery/output,
+/obj/machinery/conveyor/southeast/ccw{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"mp" = (
+/obj/structure/closet/secure_closet/personal/salvager,
+/obj/machinery/vending/wallmed/lobby{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/space)
+"mv" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,3"
+	},
+/area/space)
+"mD" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,19"
+	},
+/area/space)
+"mH" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,19"
+	},
+/area/space)
+"mL" = (
+/obj/structure/table/steel,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,6"
+	},
+/area/space)
+"mV" = (
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
+	id_tag = "hulk_shuttle";
+	pixel_x = 27;
+	req_one_access = list(13,48);
+	tag_airpump = "mining_shuttle_pump";
+	tag_chamber_sensor = "mining_shuttle_sensor";
+	tag_exterior_door = "mining_shuttle_outer";
+	tag_interior_door = "mining_shuttle_inner"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,22"
+	},
+/area/space)
+"na" = (
+/obj/structure/table/steel,
+/obj/item/oddity/ls/starscope,
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"ne" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,19"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"nl" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,8"
+	},
+/area/space)
+"nq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,22"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"nu" = (
+/obj/structure/bed/chair,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"nv" = (
+/obj/structure/reagent_dispensers/fueltank/huge,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"ny" = (
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"nz" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,5";
+	opacity = 0
+	},
+/area/space)
+"nG" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"nH" = (
+/obj/structure/table/steel,
+/obj/item/tool/crowbar,
+/obj/item/device/radio/off,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"nI" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,17"
+	},
+/area/space)
+"oa" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,19"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"or" = (
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/emergency,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"os" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,5"
+	},
+/area/space)
+"ov" = (
+/obj/machinery/camera/network/third_section{
+	dir = 4
+	},
+/obj/structure/table/steel,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ow" = (
+/obj/structure/table/steel,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"oy" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,15"
+	},
+/area/space)
+"oL" = (
+/obj/structure/table/onestar,
+/obj/item/stack/medical/splint/improvised,
+/turf/simulated/floor/tiled/white/panels,
+/area/space)
+"oO" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"pc" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,15"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"pk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"pr" = (
+/obj/machinery/mineral/processing_unit,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"pR" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,23"
+	},
+/turf/space,
+/area/space)
+"qd" = (
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"qk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,8"
+	},
+/area/space)
+"ql" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,21"
+	},
+/area/space)
+"qn" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,21"
+	},
+/area/space)
+"qy" = (
+/obj/landmark/machinery/input,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,9"
+	},
+/area/space)
+"qD" = (
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"qK" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "mining_internal";
+	name = "mining conveyor"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,6"
+	},
+/area/space)
+"qM" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,1"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"qP" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/camera/network/third_section,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/space)
+"ri" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,1";
+	opacity = 0
+	},
+/area/space)
+"rm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,23"
+	},
+/area/space)
+"rz" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/bluegrid{
+	name = "Mainframe Base"
+	},
+/area/space)
+"rM" = (
+/obj/structure/table/rack/shelf,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"rR" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,3"
+	},
+/area/space)
+"rT" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,3"
+	},
+/turf/space,
+/area/space)
+"sa" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "6,16"
+	},
+/area/space)
+"sx" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "6,0"
+	},
+/turf/space,
+/area/space)
+"sD" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,22"
+	},
+/area/space)
+"sJ" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/void/mining,
+/obj/item/clothing/mask/breath,
+/obj/item/device/scanner/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "2,20"
+	},
+/area/space)
+"sS" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,10"
+	},
+/area/space)
+"sU" = (
+/obj/machinery/mining/drill,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "13,17"
+	},
+/area/space)
+"ti" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,21"
+	},
+/area/space)
+"tk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,16"
+	},
+/area/space)
+"tl" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,3"
+	},
+/area/space)
+"tn" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"tB" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,17"
+	},
+/area/space)
+"tF" = (
+/obj/structure/table/onestar,
+/obj/item/stack/medical/splint/improvised,
+/turf/simulated/floor/tiled/white/panels,
+/area/shuttle/rocinante_shuttle_area)
+"tL" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,1"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"tR" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,4"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"tS" = (
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ul" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,8"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"uo" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,3"
+	},
+/area/space)
+"up" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "11,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"uB" = (
+/obj/structure/table/steel,
+/obj/item/storage/box/donkpockets,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"uP" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"uR" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"uV" = (
+/obj/structure/table/steel,
+/obj/item/tool/crowbar,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,2"
+	},
+/area/space)
+"va" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,17"
+	},
+/area/space)
+"vh" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,16"
+	},
+/area/space)
+"vj" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"vl" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,18"
+	},
+/turf/space,
+/area/space)
+"vn" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,1";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"vp" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"vr" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/structure/bed/chair,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,14"
+	},
+/area/space)
+"vv" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,10"
+	},
+/area/space)
+"vy" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,1";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"vU" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = -3;
+	pixel_y = 27
+	},
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,7";
+	opacity = 0
+	},
+/area/space)
+"wm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,17"
+	},
+/area/space)
+"ws" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"wF" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,18"
+	},
+/area/space)
+"wI" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"wV" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,1";
+	opacity = 0
+	},
+/area/space)
+"xm" = (
+/obj/structure/plasticflaps/mining,
+/obj/machinery/conveyor/south{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"xo" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,4"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"xq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "14,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"xt" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "6,15"
+	},
+/area/space)
+"xx" = (
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Hulk Mining Barge";
+	charge = 1.5e+007;
+	cur_coils = 3;
+	input_attempt = 1;
+	input_level = 750000;
+	input_level_max = 750000;
+	output_attempt = 1;
+	output_level = 750000;
+	output_level_max = 750000
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor,
+/area/space)
+"xy" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,15"
+	},
+/area/space)
+"xD" = (
+/obj/structure/bed/padded,
+/obj/item/bedsheet,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "6,11"
+	},
+/area/space)
+"xI" = (
+/obj/machinery/optable,
+/obj/machinery/camera/network/third_section,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/shuttle/rocinante_shuttle_area)
+"xU" = (
+/obj/structure/closet/secure_closet/personal/miner,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "4,9"
+	},
+/area/space)
+"xX" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,5"
+	},
+/turf/space,
+/area/space)
+"yd" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,8"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"yf" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,3"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"yj" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,10"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"yH" = (
+/obj/machinery/optable,
+/obj/machinery/camera/network/third_section,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/space)
+"yI" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"yR" = (
+/obj/machinery/conveyor/west{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"yV" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,18"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"yW" = (
+/obj/landmark/machinery/output,
+/obj/machinery/conveyor/southwest{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"yX" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,4"
+	},
+/area/space)
+"zh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"zk" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"zp" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"zy" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"zB" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,5"
+	},
+/area/space)
+"zC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"zT" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,17"
+	},
+/area/space)
+"zU" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,11"
+	},
+/area/space)
+"zZ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,11"
+	},
+/area/space)
+"Ac" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,20"
+	},
+/area/space)
+"Af" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Ah" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,22"
+	},
+/area/space)
+"Ak" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,22"
+	},
+/area/space)
+"Am" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,7"
+	},
+/area/space)
+"As" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,3"
+	},
+/area/space)
+"At" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,20"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Az" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,20"
+	},
+/area/space)
+"AA" = (
+/obj/structure/table/steel,
+/obj/machinery/camera/network/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,4"
+	},
+/area/space)
+"AB" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/camera/network/third_section,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"AI" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,22"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"AO" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,18"
+	},
+/area/space)
+"AQ" = (
+/obj/machinery/mech_recharger,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/sign/department/medbay{
+	name = "TRIAGE";
+	pixel_y = 32
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"AS" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,18"
+	},
+/area/space)
+"AT" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,0"
+	},
+/turf/space,
+/area/space)
+"AX" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,20"
+	},
+/area/space)
+"AZ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,23"
+	},
+/area/space)
+"Be" = (
+/obj/structure/table/steel,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Bh" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,10"
+	},
+/area/space)
+"Bl" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,21"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Br" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "15,2"
+	},
+/turf/space,
+/area/space)
+"Bv" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/machinery/camera/network/mining{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,15"
+	},
+/area/space)
+"BG" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"BL" = (
+/turf/simulated/floor,
+/area/space)
+"Cg" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Co" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/void/mining,
+/obj/item/clothing/mask/breath,
+/obj/item/device/scanner/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "2,21"
+	},
+/area/space)
+"Cw" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"Cx" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,7"
+	},
+/area/space)
+"CG" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,7"
+	},
+/area/space)
+"CO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "6,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"CQ" = (
+/obj/landmark/machinery/output,
+/obj/machinery/conveyor/west{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"CS" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/table/steel,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/machinery/recharger,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"CU" = (
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"Dm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,21"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Do" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,18"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Dp" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,23"
+	},
+/area/space)
+"Dq" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,15"
+	},
+/area/space)
+"Dv" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Dy" = (
+/obj/structure/table/steel,
+/obj/item/oddity/ls/starscope,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"DF" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,8"
+	},
+/area/space)
+"DJ" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,6"
+	},
+/area/space)
+"DK" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,20"
+	},
+/area/space)
+"DR" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman/camp{
+	anchored = 1
+	},
+/turf/simulated/floor,
+/area/shuttle/rocinante_shuttle_area)
+"DS" = (
+/obj/item/modular_computer/console/preset/civilian/professional{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"DT" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/turf/simulated/shuttle/floor{
+	icon_state = "cargofloor1"
+	},
+/area/space)
+"DU" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,18"
+	},
+/area/space)
+"DX" = (
+/obj/landmark/storyevent/midgame_stash_spawn{
+	navigation = "Mining Barge comunications room, on north-east of the barge itself."
+	},
+/turf/simulated/floor/bluegrid{
+	name = "Mainframe Base"
+	},
+/area/space)
+"Ek" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white,
+/area/space)
+"En" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,21"
+	},
+/area/space)
+"Et" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/white,
+/area/shuttle/rocinante_shuttle_area)
+"Ez" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,10"
+	},
+/area/space)
+"EA" = (
+/obj/machinery/mining/brace,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "14,17"
+	},
+/area/space)
+"EC" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,21"
+	},
+/turf/space,
+/area/space)
+"EP" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,18"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"ES" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,22"
+	},
+/area/space)
+"ET" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Fb" = (
+/obj/machinery/atmospherics/pipe/tank/air,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,21"
+	},
+/area/space)
+"Fk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,6";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Fm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,2";
+	opacity = 0
+	},
+/area/space)
+"Fq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,1"
+	},
+/turf/space,
+/area/space)
+"FD" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/table/steel,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/machinery/recharger,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/space)
+"FJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,21"
+	},
+/area/space)
+"FK" = (
+/obj/machinery/door/airlock/multi_tile/metal{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "mining_shuttle_outer";
+	locked = 1;
+	name = "Hulk External Access"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "exterior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"FM" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,5"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"FV" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,5";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"FZ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,21"
+	},
+/area/space)
+"Gj" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,15"
+	},
+/area/space)
+"Gl" = (
+/obj/structure/table/onestar,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/accessory/stethoscope,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/shuttle/rocinante_shuttle_area)
+"Gp" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,4"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Gq" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,22"
+	},
+/area/space)
+"Gy" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,11"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"GB" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,17"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"GK" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Ha" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Hl" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Hy" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,22"
+	},
+/turf/space,
+/area/space)
+"Hz" = (
+/obj/machinery/suit_storage_unit/mining,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/space)
+"HD" = (
+/obj/structure/table/rack/shelf,
+/obj/machinery/camera/network/third_section{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"HI" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,7"
+	},
+/area/space)
+"HS" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,7";
+	opacity = 0
+	},
+/area/space)
+"HT" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,11"
+	},
+/area/space)
+"Iv" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "6,7"
+	},
+/area/space)
+"IC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,2";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"IE" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,17"
+	},
+/turf/space,
+/area/space)
+"IF" = (
+/obj/machinery/mining/brace,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "14,16"
+	},
+/area/space)
+"IV" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,5"
+	},
+/turf/space,
+/area/space)
+"IX" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Ji" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,3"
+	},
+/turf/space,
+/area/space)
+"Jj" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,18"
+	},
+/turf/space,
+/area/space)
+"Jx" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,23"
+	},
+/turf/space,
+/area/space)
+"JE" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"JJ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,18"
+	},
+/area/space)
+"JM" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,17"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"JO" = (
+/obj/structure/bed/padded,
+/obj/item/bedsheet,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,11"
+	},
+/area/space)
+"JR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,19"
+	},
+/area/space)
+"JS" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,10"
+	},
+/area/space)
+"JZ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Km" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "15,23"
+	},
+/turf/space,
+/area/space)
+"Ku" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,5";
+	opacity = 0
+	},
+/area/space)
+"Kz" = (
+/obj/structure/bed/padded,
+/obj/item/bedsheet,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,17"
+	},
+/area/space)
+"KL" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "4,18"
+	},
+/area/space)
+"KT" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"Ln" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"LB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"LF" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel,
+/area/shuttle/rocinante_shuttle_area)
+"LG" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"LJ" = (
+/obj/structure/bed,
+/turf/simulated/floor/tiled/white/panels,
+/area/shuttle/rocinante_shuttle_area)
+"LK" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "2,23"
+	},
+/turf/space,
+/area/space)
+"LO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,6"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"LR" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,18"
+	},
+/area/space)
+"Mj" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,16"
+	},
+/turf/space,
+/area/space)
+"Mk" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,11"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Mp" = (
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "mining_shuttle_sensor";
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1380;
+	id_tag = "mining_shuttle_pump";
+	power_rating = 20000
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
+	id_tag = "hulk_shuttle";
+	pixel_x = 27;
+	req_one_access = list(13,48);
+	tag_airpump = "mining_shuttle_pump";
+	tag_chamber_sensor = "mining_shuttle_sensor";
+	tag_exterior_door = "mining_shuttle_outer";
+	tag_interior_door = "mining_shuttle_inner"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,22"
+	},
+/area/space)
+"Mq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,21"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Ms" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,20"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"My" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,7"
+	},
+/turf/space,
+/area/space)
+"ME" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,1";
+	opacity = 0
+	},
+/area/shuttle/rocinante_shuttle_area)
+"MG" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"MM" = (
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/structure/bed/chair,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,14"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"MP" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,10"
+	},
+/turf/space,
+/area/space)
+"MR" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "interior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"MX" = (
+/obj/structure/reagent_dispensers/fueltank/huge,
+/turf/simulated/floor,
+/area/space)
+"Ng" = (
+/obj/structure/reagent_dispensers/fueltank/huge,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Nh" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,17"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Ni" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,18"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Nt" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Nw" = (
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 1
+	},
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"Nz" = (
+/obj/machinery/conveyor/southwest/ccw{
+	id = "mining_internal"
+	},
+/turf/simulated/floor,
+/area/space)
+"NF" = (
+/obj/structure/table/steel,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,4"
+	},
+/area/space)
+"NI" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "10,0"
+	},
+/turf/space,
+/area/space)
+"NK" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,22"
+	},
+/area/space)
+"NM" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,20"
+	},
+/turf/space,
+/area/space)
+"NO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "14,2"
+	},
+/turf/space,
+/area/space)
+"NQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,9"
+	},
+/area/space)
+"NV" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,20"
+	},
+/area/space)
+"Oa" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Ob" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/space)
+"Of" = (
+/obj/machinery/mineral/stacking_unit_console,
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "13,5"
+	},
+/area/space)
+"Om" = (
+/obj/structure/table/steel,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Op" = (
+/obj/machinery/power/sensor{
+	long_range = 1;
+	name_tag = "Hulk Mining Barge Grid"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Or" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,20"
+	},
+/turf/space,
+/area/space)
+"Ow" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,21"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Ox" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/steel,
+/obj/machinery/microwave,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"OI" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,3"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"OL" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/space)
+"OV" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "12,19"
+	},
+/area/space)
+"Pb" = (
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
+	id_tag = "hulk_shuttle";
+	pixel_x = 27;
+	req_one_access = list(13,48);
+	tag_airpump = "mining_shuttle_pump";
+	tag_chamber_sensor = "mining_shuttle_sensor";
+	tag_exterior_door = "mining_shuttle_outer";
+	tag_interior_door = "mining_shuttle_inner"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Pg" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Pm" = (
+/turf/simulated/shuttle/wall/mining,
+/area/space)
+"PP" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,22"
+	},
+/area/space)
+"PR" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,2"
+	},
+/turf/space,
+/area/space)
+"PU" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"PZ" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,8"
+	},
+/area/space)
+"Qi" = (
+/obj/machinery/light,
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"Ql" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"Qo" = (
+/obj/structure/table/steel,
+/obj/item/storage/box/donkpockets,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Qr" = (
+/obj/structure/table/steel,
+/obj/item/tool/crowbar,
+/obj/item/device/radio/off,
+/obj/machinery/light,
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"QF" = (
+/obj/machinery/door/airlock/multi_tile/metal{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "mining_shuttle_outer";
+	locked = 1;
+	name = "Hulk External Access"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "exterior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"QI" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,17"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"QR" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "5,1"
+	},
+/turf/space,
+/area/space)
+"QU" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,6"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"QV" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"QY" = (
+/obj/structure/table/steel,
+/obj/item/tool/pickaxe,
+/obj/item/storage/belt/utility,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/tool/multitool,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "4,9"
+	},
+/area/space)
+"Ra" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,7"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Rb" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,2"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Rc" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Rf" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,9"
+	},
+/turf/space,
+/area/space)
+"Rm" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"Rq" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "2,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Rs" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "14,10"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"RR" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,8";
+	opacity = 0
+	},
+/area/space)
+"RT" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,16"
+	},
+/area/space)
+"RV" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,22"
+	},
+/turf/space,
+/area/space)
+"Sj" = (
+/obj/structure/bed,
+/turf/simulated/floor/tiled/white/panels,
+/area/space)
+"Sm" = (
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Hulk Mining Barge";
+	charge = 1.5e+007;
+	cur_coils = 3;
+	input_attempt = 1;
+	input_level = 750000;
+	input_level_max = 750000;
+	output_attempt = 1;
+	output_level = 750000;
+	output_level_max = 750000
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor,
+/area/shuttle/rocinante_shuttle_area)
+"SB" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,8"
+	},
+/turf/space,
+/area/space)
+"SC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,22"
+	},
+/area/space)
+"SH" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"SL" = (
+/obj/structure/table/steel,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "7,3"
+	},
+/area/space)
+"SQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,20"
+	},
+/area/space)
+"SW" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,18"
+	},
+/area/space)
+"SX" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/space)
+"Th" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,15"
+	},
+/area/space)
+"Ti" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "15,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"To" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,17"
+	},
+/area/space)
+"TC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,8"
+	},
+/area/space)
+"TF" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,20"
+	},
+/area/space)
+"Ui" = (
+/obj/structure/table/onestar,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/accessory/stethoscope,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/space)
+"Uj" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "hulk_shuttle";
+	name = "interior access button";
+	pixel_x = -25
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"Uk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "3,22"
+	},
+/area/space)
+"Ul" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,3"
+	},
+/area/space)
+"Ut" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,19"
+	},
+/area/space)
+"Uu" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "10,0"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"Uv" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "4,8"
+	},
+/area/space)
+"UF" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,1";
+	opacity = 0
+	},
+/area/space)
+"UO" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,23"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"UU" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,18"
+	},
+/area/space)
+"UZ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,11"
+	},
+/area/space)
+"Vg" = (
+/obj/structure/dispenser,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,21"
+	},
+/area/space)
+"Vs" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "7,10"
+	},
+/area/space)
+"VB" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,10"
+	},
+/area/space)
+"VC" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,8"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"VF" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,9"
+	},
+/area/space)
+"VL" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "1,8"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"VN" = (
+/obj/machinery/mineral/stacking_machine,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"VO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/camera/network/third_section{
+	dir = 9
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"VU" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "1,19"
+	},
+/area/space)
+"VW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"VZ" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "12,0"
+	},
+/turf/space,
+/area/space)
+"Wj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/closet/wall_mounted/emcloset/escape_pods{
+	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"Wn" = (
+/obj/structure/closet/secure_closet/personal/salvager,
+/obj/machinery/vending/wallmed/lobby{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/shuttle/rocinante_shuttle_area)
+"Wp" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "11,16"
+	},
+/area/space)
+"Wr" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "0,21"
+	},
+/turf/space,
+/area/space)
+"WF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"WG" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,3"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"WJ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "2,8"
+	},
+/area/space)
+"WM" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,23"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"WR" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,17"
+	},
+/area/space)
+"WX" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman/camp{
+	anchored = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"Xe" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "16,8"
+	},
+/turf/space,
+/area/space)
+"Xk" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "6,3"
+	},
+/area/space)
+"Xz" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "11,2";
+	opacity = 0
+	},
+/area/space)
+"XB" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "16,17"
+	},
+/area/space)
+"XE" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "5,10"
+	},
+/area/space)
+"XJ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "15,18"
+	},
+/area/space)
+"XL" = (
+/turf/simulated/shuttle/wall/mining,
+/area/shuttle/rocinante_shuttle_area)
+"XM" = (
+/obj/machinery/mineral/unloading_machine,
+/turf/simulated/floor,
+/area/space)
+"Yd" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/shuttle/rocinante_shuttle_area)
+"Yo" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"YC" = (
+/obj/machinery/camera/network/mining{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "10,6"
+	},
+/area/space)
+"YQ" = (
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "12,22"
+	},
+/area/shuttle/rocinante_shuttle_area)
+"YS" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "3,2"
+	},
+/turf/space,
+/area/space)
+"Zp" = (
+/obj/machinery/autolathe,
+/obj/machinery/light,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "8,23"
+	},
+/area/space)
+"Zr" = (
+/obj/machinery/door/airlock/mining{
+	name = "Hulk Internal Airlock";
+	req_access = list(48)
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/space)
+"Zy" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "7,0"
+	},
+/turf/space,
+/area/space)
+"ZC" = (
+/obj/structure/shuttle_part/mining{
+	icon_state = "17,19"
+	},
+/turf/space,
+/area/shuttle/rocinante_shuttle_area)
+"ZV" = (
+/turf/simulated/floor/tiled/white,
+/area/shuttle/rocinante_shuttle_area)
+
+(1,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(2,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(3,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(4,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(5,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(6,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+gg
+tB
+Mj
+ex
+aC
+vv
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(7,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+KL
+va
+jG
+ip
+zU
+Ez
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(8,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+lW
+Kz
+hW
+Bv
+JO
+XE
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(9,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+cQ
+iH
+sa
+xt
+xD
+ea
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(10,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+LR
+wm
+tk
+dc
+zZ
+Vs
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(11,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(12,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+gz
+PZ
+aK
+mL
+MX
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(13,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+zB
+aH
+aK
+xU
+Uv
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+uV
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(14,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+NF
+aK
+QY
+Uv
+Iv
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+gi
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(15,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+AA
+aK
+he
+nl
+Cx
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(16,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+os
+yX
+aK
+aK
+aK
+Am
+YC
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(17,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Co
+sJ
+kb
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+HI
+qK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(18,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+FJ
+ks
+ku
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+zk
+nq
+Mq
+At
+kh
+df
+gR
+kP
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(19,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Vg
+Hz
+Ut
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+UO
+vj
+Bl
+IX
+ne
+EP
+Nh
+yj
+br
+VL
+dg
+QU
+gx
+Gp
+yf
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(20,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Rq
+Ha
+CS
+fW
+DR
+Do
+lh
+iE
+bn
+VC
+mf
+kg
+bL
+xo
+JE
+fy
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(21,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+jF
+Rm
+AB
+zy
+cA
+pc
+dw
+bs
+ab
+wI
+ov
+bs
+ab
+bs
+vp
+ET
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(22,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+yI
+PU
+Op
+Sm
+ws
+gu
+Cw
+Yd
+ab
+bs
+Om
+bs
+ab
+Mk
+BG
+uP
+qM
+tn
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(23,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+gb
+Gq
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+MG
+Hl
+Ln
+fk
+fk
+az
+LF
+SH
+ab
+bs
+fo
+bs
+ab
+Qi
+ia
+kn
+vn
+CO
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(24,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+QF
+oO
+kd
+an
+MR
+Cw
+Cw
+zp
+bs
+bs
+bs
+bs
+bs
+bs
+nu
+DS
+vy
+fL
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(25,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+fH
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Dv
+Pb
+js
+pk
+Wj
+fU
+VW
+bs
+bs
+bs
+bs
+bs
+bs
+bs
+nu
+Dy
+ME
+Uu
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(26,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+JR
+aK
+Dp
+Mp
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+XL
+Rc
+Ms
+Dm
+fk
+ax
+id
+bs
+qd
+gK
+bs
+nu
+nH
+dR
+WG
+IC
+eC
+up
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(27,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+WM
+YQ
+Wn
+ZV
+ZV
+cn
+LB
+bs
+Ng
+Qo
+bs
+nu
+Be
+Gy
+JZ
+Rb
+tL
+Cg
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(28,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+xq
+PU
+xI
+ZV
+tF
+Rs
+MM
+zh
+tS
+Ox
+ny
+nu
+ei
+Ql
+Nt
+gq
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(29,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Fb
+Az
+OV
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Ti
+Af
+Gl
+Et
+LJ
+aP
+lh
+JM
+la
+yd
+Ra
+Fk
+FV
+ft
+zC
+jD
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(30,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Pg
+GK
+Ow
+lQ
+oa
+yV
+QI
+aK
+kD
+ul
+bA
+LO
+FM
+tR
+OI
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(31,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+En
+DK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+QV
+AI
+av
+kU
+ZC
+Ni
+GB
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(32,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(33,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+pR
+RV
+Wr
+Or
+hp
+vl
+IE
+iO
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(34,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+ql
+Ac
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Jx
+NK
+FZ
+TF
+VU
+UU
+nI
+MP
+Rf
+SB
+iM
+xX
+Ji
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(35,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+DT
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+LK
+iT
+FD
+ji
+WX
+JJ
+To
+UZ
+VB
+WJ
+iC
+Ku
+uo
+jg
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(36,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+jZ
+Uk
+qP
+Ob
+kK
+xy
+ca
+fj
+HD
+rM
+iY
+ow
+mv
+YS
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(37,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+rz
+DX
+aK
+aK
+aK
+aK
+aK
+JJ
+WR
+RT
+oy
+aK
+es
+Ak
+iL
+xx
+OL
+Zr
+nG
+uR
+eb
+eb
+CU
+ow
+Ul
+PR
+QR
+AT
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(38,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+SW
+ba
+Wp
+Gj
+aK
+AZ
+Ah
+SQ
+WR
+mH
+Vs
+Oa
+LG
+eb
+eb
+CU
+Zp
+Xk
+Fm
+ri
+sx
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(39,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+AS
+zT
+vh
+Th
+aK
+FK
+ES
+fu
+fS
+Uj
+nG
+nG
+KT
+CU
+CU
+CU
+CU
+iY
+kw
+UF
+Zy
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(40,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+wF
+sU
+hd
+xy
+aK
+SX
+mV
+ti
+gw
+aZ
+VO
+WF
+CU
+CU
+CU
+CU
+CU
+iY
+na
+wV
+NI
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(41,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+DU
+EA
+IF
+Dq
+aK
+Pm
+sD
+NV
+WR
+mH
+oy
+AQ
+CU
+qD
+or
+iY
+Qr
+iw
+Xz
+kL
+eI
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(42,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+rm
+hT
+mp
+bT
+eA
+jO
+Yo
+CU
+nv
+uB
+iY
+SL
+As
+jJ
+Fq
+VZ
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(43,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+fc
+Ak
+yH
+eA
+oL
+JS
+vr
+dZ
+Nw
+eR
+iY
+tl
+jQ
+NO
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(44,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Km
+PP
+Ui
+Ek
+Sj
+XJ
+To
+WR
+NQ
+TC
+CG
+nz
+rR
+Br
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(45,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+hO
+SC
+qn
+AX
+mD
+AO
+XB
+iX
+Xe
+Xe
+My
+IV
+rT
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(46,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+af
+qk
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+eV
+Hy
+EC
+NM
+gl
+Jj
+dV
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(47,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+XM
+ll
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(48,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+Nz
+xm
+mn
+RR
+dT
+DJ
+VF
+BL
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(49,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+CQ
+sS
+lq
+DF
+vU
+HS
+Of
+yR
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(50,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+HT
+Bh
+aK
+XM
+JS
+qy
+pr
+aI
+qy
+VN
+yW
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(51,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(52,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(53,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(54,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(55,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(56,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(57,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(58,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(59,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(60,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(61,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(62,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(63,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}
+(64,1,1) = {"
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+aK
+"}

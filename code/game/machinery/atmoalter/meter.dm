@@ -6,10 +6,10 @@
 	layer = GAS_PUMP_LAYER
 	var/obj/machinery/atmospherics/pipe/target = null
 	anchored = 1.0
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	var/frequency = 0
 	var/id
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 15
 
 /obj/machinery/meter/New()
@@ -21,6 +21,13 @@
 	. = ..()
 	if (!target)
 		src.target = locate(/obj/machinery/atmospherics/pipe) in loc
+
+/obj/machinery/meter/Destroy()
+
+	if(target)
+		target = null
+
+	. = ..()
 
 /obj/machinery/meter/Process()
 	if(!target)
@@ -95,8 +102,8 @@
 
 	return ..()
 
-/obj/machinery/meter/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if (!istype(W, /obj/item/weapon/tool/wrench))
+/obj/machinery/meter/attackby(var/obj/item/W as obj, var/mob/user as mob)
+	if (!istype(W, /obj/item/tool/wrench))
 		return ..()
 	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -121,5 +128,5 @@
 	if (!target)
 		src.target = loc
 
-/obj/machinery/meter/turf/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/machinery/meter/turf/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	return

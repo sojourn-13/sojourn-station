@@ -15,7 +15,7 @@
 	name = "status display"
 	anchored = 1
 	density = 0
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	var/mode = 1	// 0 = Blank
 					// 1 = Shuttle timer
@@ -48,12 +48,14 @@
 
 /obj/machinery/status_display/Destroy()
 	SSradio.remove_object(src,frequency)
+	GLOB.ai_status_display_list -= src
 	return ..()
 
 // register for radio system
 /obj/machinery/status_display/Initialize()
 	. = ..()
 	SSradio.add_object(src, frequency)
+	GLOB.ai_status_display_list += src
 
 // timed process
 /obj/machinery/status_display/Process()
@@ -166,7 +168,7 @@
 	if(timeleft < 0)
 		return ""
 	return "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
-
+/*
 /obj/machinery/status_display/proc/get_supply_shuttle_timer()
 	var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
 	if (!shuttle)
@@ -178,7 +180,7 @@
 			return "Late"
 		return "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
 	return ""
-
+*/
 /obj/machinery/status_display/proc/remove_display()
 	if(overlays.len)
 		cut_overlays()

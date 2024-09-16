@@ -8,8 +8,8 @@
 	vision_flags = SEE_MOBS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flash_protection = FLASH_PROTECTION_REDUCED
-	price_tag = 1000
-
+	price_tag = 500
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_DIAMOND = 2)
 	tick_cost = 0.5
 
 /obj/item/clothing/glasses/powered/thermal/emp_act(severity)
@@ -30,7 +30,7 @@
 	. = ..()
 	screenOverlay = global_hud.thermal
 
-/obj/item/clothing/glasses/powered/thermal/syndi	//These are now a traitor item, concealed as mesons.	-Pete
+/obj/item/clothing/glasses/powered/thermal/syndi	//These are now a contractor item, concealed as mesons.	-Pete
 	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	icon_state = "meson"
@@ -39,9 +39,11 @@
 
 /obj/item/clothing/glasses/powered/thermal/onestar
 	name = "type-73 zhenchayuan goggles"
-	desc = "Incredibly old Chinese thermals in the shape of goggles."
+	desc = "Previously nothing more than a prototype, these Greyson Positronic thermal goggles are incredibly battery-efficient."
 	icon_state = "onestar_thermal"
 	off_state = "onestar_thermal"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_PLATINUM = 2) // GP tech all use platinum
+	tick_cost = 0.25 // 400 ticks on a stock cell. Incredibly efficient due to being cutting edge tech, also justifies the research node rather than just taking syndie ones.
 
 /obj/item/clothing/glasses/powered/thermal/plain
 	toggleable = FALSE
@@ -49,8 +51,8 @@
 	action_button_name = null
 
 /obj/item/clothing/glasses/powered/thermal/plain/monocle
-	name = "thermoncle"
-	desc = "A monocle thermal."
+	name = "thermonocle"
+	desc = "A monocle with a thermal lens installed."
 	icon_state = "thermoncle"
 	flags = null //doesn't protect eyes because it's a monocle, duh
 
@@ -58,57 +60,33 @@
 
 /obj/item/clothing/glasses/powered/thermal/plain/eyepatch
 	name = "optical thermal eyepatch"
-	desc = "An eyepatch with built-in thermal optics"
+	desc = "An eyepatch with built-in thermal optics."
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/powered/thermal/plain/jensen
 	name = "optical thermal implants"
-	desc = "A set of implantable lenses designed to augment your vision"
+	desc = "A set of implantable lenses designed to augment your vision."
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"
 
-/obj/item/clothing/glasses/powered/thermal/lens
-	name = "Thermal lenses"
-	desc = "Lenses for glasses."
+/obj/item/clothing/glasses/powered/thermal/thermal_helmet
+	name = "thermal imaging goggles"
+	desc = "A pair of thermal goggles stuck to your helmet, has a slot for a medium battery inside."
+	icon_state = "bulletproof_ironhammer_goggles_thermal"
+	item_state = null
+	off_state = "bulletproof_ironhammer_goggles_thermal"
+	action_button_name = null
 	toggleable = FALSE
-	icon_state = "thermal_lens"
-	body_parts_covered = 0
-	slot_flags = 0
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	flags = ABSTRACT
+	suitable_cell = /obj/item/cell/medium
+	spawn_with_cell = FALSE
 
+	tick_cost = 1
 
-/obj/item/clothing/glasses/attackby(var/obj/item/Z, var/mob/user)
-
-	if (istype(Z,/obj/item/clothing/glasses/powered/thermal/lens))
-		screenOverlay = global_hud.thermal
-		vision_flags = SEE_MOBS
-		see_invisible = SEE_INVISIBLE_NOLIGHTING
-		protection = flash_protection
-		flash_protection = FLASH_PROTECTION_REDUCED
-		origin_tech = list(TECH_ILLEGAL = 3)
-		to_chat(usr, "You attached your lenses to your glasses")
-		have_lenses = 1
-		qdel(Z)
-
-/obj/item/clothing/glasses/powered/thermal/attackby(obj/item/C, mob/user)
-	if(istype(C, /obj/item/clothing/glasses/powered/thermal/lens))
-		to_chat(usr, "This glasses already have thermal implant")
-	..()
-
-/obj/item/clothing/glasses/verb/detach_lenses()
-	set name = "Detach lenses"
-	set category = "Object"
-	set src in view(1)
-
-	if (have_lenses == 1)
-		flash_protection = protection;
-		see_invisible = -1;
-		vision_flags = 0;
-		origin_tech = 0;
-		have_lenses = 0;
-		screenOverlay = 0;
-		to_chat(usr, "You detach lenses from your glasses");
-		var/obj/item/clothing/glasses/powered/thermal/lens/THL = new()
-		usr.put_in_hands(THL)
-	else to_chat(usr, "You haven't got any lenses in your glasses");
+/obj/item/clothing/glasses/powered/thermal/thermal_helmet/Initialize()
+	. = ..()
+	screenOverlay = global_hud.thermal

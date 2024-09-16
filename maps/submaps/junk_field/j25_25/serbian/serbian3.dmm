@@ -1,0 +1,1247 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"ac" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"ad" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ae" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"af" = (
+/obj/structure/noticeboard,
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"ag" = (
+/obj/structure/noticeboard{
+	icon_state = "nboard00"
+	},
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"ah" = (
+/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"ai" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"aj" = (
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"ak" = (
+/obj/machinery/vending/snack{
+	name = "hacked Getmore Chocolate Corp";
+	prices = list()
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"al" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"am" = (
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"an" = (
+/obj/structure/table/standard,
+/obj/machinery/chemical_dispenser/soda{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"ao" = (
+/obj/random/junk,
+/turf/simulated/floor,
+/area/template_noop)
+"ap" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"aq" = (
+/obj/item/material/shard,
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"ar" = (
+/obj/structure/bed/chair/comfy/black,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"as" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/random/booze/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster,
+/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"at" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"au" = (
+/obj/item/storage/deferred/crate/alcohol,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"av" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"aw" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/deferred/rations,
+/obj/item/reagent_containers/food/drinks/cans/monster,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"ax" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ay" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"az" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = list(150)
+	},
+/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/food/drinks/cans/monster_jungel,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"aA" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 28
+	},
+/obj/random/junkfood/rotten/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster_sol,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"aB" = (
+/obj/item/reagent_containers/food/drinks/cans/monster_blue,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"aC" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aD" = (
+/obj/structure/table/rack,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/turf/simulated/floor,
+/area/template_noop)
+"aE" = (
+/obj/structure/table/rack,
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
+/turf/simulated/floor,
+/area/template_noop)
+"aF" = (
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aG" = (
+/obj/item/paper/crumpled,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aH" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aI" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aJ" = (
+/obj/structure/closet,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aK" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/item/paper/crumpled,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aL" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor,
+/area/template_noop)
+"aM" = (
+/obj/machinery/shower{
+	dir = 8;
+	icon_state = "shower"
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aN" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/random/lowkeyrandom,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aO" = (
+/obj/item/soap,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"aP" = (
+/obj/structure/table/rack,
+/obj/random/ammo_lowcost,
+/obj/random/ammo_lowcost,
+/obj/random/ammo_lowcost,
+/turf/simulated/floor,
+/area/template_noop)
+"aQ" = (
+/obj/structure/closet/onestar/tier2/normal,
+/turf/simulated/floor,
+/area/template_noop)
+"aR" = (
+/obj/structure/computerframe{
+	anchored = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"aS" = (
+/obj/item/storage/deferred/rations,
+/obj/structure/closet,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aT" = (
+/obj/structure/closet,
+/obj/item/clothing/under/turtleneck,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aU" = (
+/obj/item/material/shard,
+/turf/template_noop,
+/area/template_noop)
+"aV" = (
+/obj/structure/closet,
+/obj/item/clothing/gloves/fingerless,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aW" = (
+/obj/structure/closet,
+/obj/item/clothing/shoes/magboots/merc,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aX" = (
+/obj/structure/closet,
+/turf/simulated/floor,
+/area/template_noop)
+"aY" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/random/toy/plushie,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"aZ" = (
+/obj/item/material/shard,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/template_noop,
+/area/template_noop)
+"ba" = (
+/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"bb" = (
+/obj/machinery/door/airlock/maintenance_interior{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor,
+/area/template_noop)
+"bc" = (
+/obj/item/material/shard,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bd" = (
+/obj/structure/table/glass,
+/obj/structure/table/glass,
+/obj/item/material/shard,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"be" = (
+/obj/random/structures,
+/turf/simulated/floor,
+/area/template_noop)
+"bf" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/drinks/cans/monster_blue,
+/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"bg" = (
+/obj/structure/table/reinforced,
+/obj/random/junkfood/rotten,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"bh" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"bi" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bj" = (
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/turf/simulated/floor,
+/area/template_noop)
+"bk" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bl" = (
+/obj/structure/closet,
+/obj/random/toy/plushie,
+/obj/item/clothing/mask/gas/tactical,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bm" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bn" = (
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen{
+	pixel_y = 4
+	},
+/obj/structure/table/glass,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bo" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bp" = (
+/obj/random/junkfood/rotten/low_chance,
+/obj/random/mob/voidwolf,
+/obj/item/reagent_containers/food/drinks/cans/monster_church,
+/obj/item/reagent_containers/food/drinks/cans/monster_sol,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"bq" = (
+/obj/random/junkfood/rotten,
+/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"br" = (
+/obj/item/material/shard,
+/obj/item/material/shard,
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"bs" = (
+/obj/item/material/shard,
+/obj/item/material/shard,
+/obj/item/material/shard,
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"bt" = (
+/obj/structure/table/reinforced,
+/obj/item/tray{
+	pixel_y = 5
+	},
+/obj/random/junkfood/rotten/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster_jungel,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"bu" = (
+/obj/random/junk,
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"bv" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/random/junk,
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"bw" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"bx" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"by" = (
+/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/turf/simulated/floor,
+/area/template_noop)
+"bz" = (
+/turf/simulated/floor,
+/area/template_noop)
+"bA" = (
+/obj/structure/closet,
+/obj/item/storage/deferred/rations,
+/turf/simulated/floor,
+/area/template_noop)
+"bC" = (
+/obj/structure/table/rack,
+/turf/simulated/floor,
+/area/template_noop)
+"bE" = (
+/obj/item/material/shard,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"bG" = (
+/obj/structure/table/rack,
+/obj/random/techpart/low_chance,
+/turf/simulated/floor,
+/area/template_noop)
+"bH" = (
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bJ" = (
+/obj/structure/lattice,
+/obj/item/storage/pouch/medium_generic,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"bL" = (
+/obj/item/storage/pouch/ammo,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bN" = (
+/obj/item/material/shard,
+/obj/item/material/shard,
+/turf/template_noop,
+/area/template_noop)
+"bO" = (
+/obj/structure/girder/low,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"bP" = (
+/obj/item/material/shard,
+/turf/simulated/floor,
+/area/template_noop)
+"bQ" = (
+/obj/item/material/shard,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"fI" = (
+/obj/random/mob/carp,
+/turf/template_noop,
+/area/template_noop)
+"js" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"nZ" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"py" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"pX" = (
+/obj/item/material/shard,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"qf" = (
+/obj/item/material/shard,
+/obj/item/material/shard,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"sM" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor,
+/area/template_noop)
+"tl" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"tt" = (
+/obj/item/paper/crumpled,
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"vp" = (
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/template_noop)
+"wZ" = (
+/obj/structure/lattice,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/template_noop,
+/area/template_noop)
+"xB" = (
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/template_noop)
+"zG" = (
+/obj/item/material/shard,
+/obj/random/material/low_chance,
+/turf/simulated/floor,
+/area/template_noop)
+"zO" = (
+/obj/random/junkfood/rotten/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster_orange,
+/obj/item/reagent_containers/food/drinks/cans/monster_red,
+/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"JU" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"PY" = (
+/obj/structure/lattice,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"QX" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/template_noop,
+/area/template_noop)
+"RM" = (
+/obj/random/junkfood/rotten/low_chance,
+/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/turf/simulated/floor/tiled/cafe,
+/area/template_noop)
+"SQ" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/template_noop)
+"Xw" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Xw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Xw
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aU
+ai
+aj
+aj
+ai
+ai
+ai
+ai
+ai
+ai
+aa
+Xw
+aa
+aa
+Xw
+aa
+aa
+Xw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+ai
+bz
+bz
+ai
+an
+bg
+au
+az
+ai
+nZ
+aa
+QX
+aa
+aa
+aa
+aa
+aa
+aa
+Xw
+aa
+aa
+aa
+Xw
+aa
+"}
+(4,1,1) = {"
+aa
+ai
+ao
+sM
+ai
+as
+bp
+bq
+bt
+ai
+nZ
+nZ
+Xw
+aa
+Xw
+Xw
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ax
+aa
+"}
+(5,1,1) = {"
+aa
+ai
+aj
+aj
+ai
+aA
+RM
+zO
+ah
+ai
+py
+av
+bi
+ai
+ai
+ai
+ai
+aD
+aD
+aE
+aP
+bG
+ai
+PY
+ax
+"}
+(6,1,1) = {"
+aU
+ai
+bz
+bz
+ai
+bf
+at
+aw
+aB
+ai
+py
+aK
+ai
+aK
+ai
+aN
+ai
+sM
+bz
+bj
+bz
+bG
+ai
+ax
+aa
+"}
+(7,1,1) = {"
+aa
+ae
+bP
+bz
+ai
+ai
+ai
+ai
+aL
+bH
+bH
+aL
+ai
+aL
+ai
+bb
+ai
+bz
+bz
+bz
+by
+bG
+ai
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+bO
+zG
+bP
+bH
+be
+ao
+bz
+ao
+bH
+aF
+bw
+aC
+aF
+aF
+aF
+ai
+bb
+ai
+ai
+ai
+ai
+ai
+bJ
+aa
+"}
+(9,1,1) = {"
+aZ
+bO
+py
+bH
+bz
+bz
+bz
+bz
+bH
+bH
+aG
+tt
+aF
+SQ
+bh
+aO
+ai
+bz
+bC
+bC
+aQ
+aQ
+bi
+nZ
+nZ
+"}
+(10,1,1) = {"
+bE
+ae
+bP
+bQ
+bx
+bz
+sM
+bH
+be
+ai
+bv
+aH
+ai
+aM
+aM
+aM
+ai
+ao
+ao
+bz
+bH
+bH
+bH
+bH
+js
+"}
+(11,1,1) = {"
+js
+ai
+bz
+bP
+bH
+bz
+bH
+bH
+bz
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ao
+bz
+sM
+bz
+bH
+bi
+bL
+nZ
+"}
+(12,1,1) = {"
+aa
+af
+ao
+ab
+bz
+bH
+bz
+ao
+bz
+aL
+bz
+bz
+bz
+ao
+bz
+bz
+bb
+bz
+bz
+bC
+bH
+ax
+bb
+JU
+bL
+"}
+(13,1,1) = {"
+aa
+ai
+bH
+bH
+bH
+be
+be
+bz
+bz
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+bz
+bz
+bz
+bH
+aQ
+ai
+bk
+ax
+"}
+(14,1,1) = {"
+ax
+bi
+bH
+av
+ai
+ai
+ai
+ai
+aL
+ai
+aY
+aI
+aI
+aI
+aI
+bm
+ai
+aX
+bH
+bH
+ao
+bC
+ai
+js
+aa
+"}
+(15,1,1) = {"
+ax
+bH
+bH
+ad
+aS
+aS
+aJ
+ad
+ad
+ai
+ad
+vp
+vp
+tl
+vp
+wZ
+ax
+ax
+bH
+bC
+bz
+bG
+ai
+js
+aa
+"}
+(16,1,1) = {"
+ax
+bH
+aJ
+ap
+ac
+vp
+vp
+ap
+ad
+ai
+ad
+vp
+vp
+vp
+ax
+ax
+bi
+bH
+bz
+bC
+ao
+bC
+ai
+aa
+aa
+"}
+(17,1,1) = {"
+ax
+bi
+aJ
+vp
+al
+al
+vp
+tl
+ad
+ai
+ad
+tl
+vp
+vp
+bH
+bn
+ai
+aX
+bz
+sM
+bz
+bC
+ai
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+ag
+ad
+vp
+am
+am
+am
+ay
+ad
+aL
+ad
+bH
+bH
+bH
+ar
+xB
+ai
+aX
+bz
+bz
+bz
+bG
+ai
+Xw
+aa
+"}
+(19,1,1) = {"
+aa
+ai
+ad
+vp
+tl
+ar
+am
+vp
+ad
+ai
+bk
+bx
+vp
+ba
+vp
+bo
+ai
+aX
+bz
+bC
+sM
+bC
+ai
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+ai
+ad
+vp
+vp
+aR
+am
+ay
+ad
+bu
+bH
+aT
+bl
+aV
+aW
+aT
+ai
+bA
+bz
+aQ
+bz
+aQ
+ai
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+ai
+ad
+ac
+vp
+vp
+bd
+ay
+bc
+nZ
+bi
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+ai
+ad
+vp
+vp
+vp
+pX
+br
+bc
+nZ
+js
+Xw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+fI
+aa
+aa
+Xw
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+ai
+ak
+ad
+aq
+bc
+bc
+bs
+bk
+bi
+nZ
+aa
+aa
+aa
+aa
+Xw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Xw
+aa
+"}
+(24,1,1) = {"
+aa
+ai
+ai
+ae
+ae
+ae
+bi
+bi
+bi
+nZ
+ax
+aa
+aa
+aa
+Xw
+aa
+aa
+Xw
+aa
+Xw
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aU
+aa
+aU
+bN
+aU
+qf
+nZ
+nZ
+Xw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Xw
+aa
+aa
+aa
+"}

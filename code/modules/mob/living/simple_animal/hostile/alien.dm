@@ -9,7 +9,7 @@
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = -1
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
 	maxHealth = 100
 	health = 100
 	harm_intent_damage = 5
@@ -32,6 +32,7 @@
 	status_flags = CANPUSH
 	minbodytemp = 0
 	heat_damage_per_tick = 20
+	sanity_damage = 2
 
 
 /mob/living/simple_animal/hostile/alien/drone
@@ -68,6 +69,7 @@
 	projectilesound = 'sound/weapons/pierce.ogg'
 	rapid = 1
 	status_flags = 0
+	sanity_damage = 4
 
 /mob/living/simple_animal/hostile/alien/queen/large
 	name = "alien empress"
@@ -79,7 +81,7 @@
 	health = 400
 
 /obj/item/projectile/neurotox
-	damage = 30
+	damage_types = list(BURN = 30)
 	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/alien/death()

@@ -38,13 +38,11 @@ var/intercom_range_display_status = 0
 	return 0
 
 /client/proc/do_not_use_these()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "-None of these are for ingame use!!"
 
-	..()
-
 /client/proc/camera_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Range Display"
 
 	if(camera_range_display_status)
@@ -65,7 +63,7 @@ var/intercom_range_display_status = 0
 
 
 /client/proc/sec_camera_report()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Report"
 
 	var/list/obj/machinery/camera/CL = list()
@@ -101,7 +99,7 @@ var/intercom_range_display_status = 0
 
 
 /client/proc/intercom_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Intercom Range Display"
 
 	if(intercom_range_display_status)
@@ -119,12 +117,34 @@ var/intercom_range_display_status = 0
 				if (!(F in view(7, I.loc)))
 					qdel(F)
 
+/client/proc/populate_fake_crew_records()
+	set name = "Populate Fake Crew Records"
+	set desc = "Creates fake crew records for debugging datacore problems"
+	set category = "Debug"
+
+	var/amount = input(usr, "Enter amount of fake entries to create", "Fake Crew Records", null) as null|num
+
+	if(amount)
+		log_admin("[key_name(usr)] has created [amount] fake crew record(s).")
+		message_admins("\blue [key_name_admin(usr)] has created [amount] fake crew record(s).", 1)
+	
+		for(var/i in 1 to amount)
+			var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
+			scramble_crew_record(CR)
+			GLOB.all_crew_records.Add(CR)
+
+/proc/scramble_crew_record(datum/computer_file/report/crew_record/CR)
+	CR.set_name(random_name())
+	var/datum/job/J = SSjob.occupations_by_name[pick(JOBS_OVERALL)]
+	var/list/possible_titles = list(J.title) + J.alt_titles
+	CR.set_job(pick(possible_titles))
 
 var/list/debug_verbs = list (
 	/client/proc/do_not_use_these
 	,/client/proc/camera_view
 	,/client/proc/sec_camera_report
 	,/client/proc/intercom_view
+	,/client/proc/populate_fake_crew_records
 	,/client/proc/Cell
 	,/client/proc/atmosscan
 	,/client/proc/powerdebug
@@ -133,12 +153,12 @@ var/list/debug_verbs = list (
 	,/client/proc/cmd_assume_direct_control
 //	,/client/proc/jump_to_dead_group
 	,/client/proc/startSinglo
-	,/client/proc/ticklag
+	,/client/proc/set_server_fps
 	,/client/proc/cmd_admin_grantfullaccess
 	,/client/proc/kaboom
 	,/client/proc/cmd_admin_areatest
 	,/client/proc/cmd_admin_rejuvenate
-	,/datum/admins/proc/show_traitor_panel
+	,/datum/admins/proc/show_contractor_panel
 	,/client/proc/print_jobban_old
 	,/client/proc/print_jobban_old_filter
 	//,/client/proc/forceEvent //Todo: Replace
@@ -150,7 +170,6 @@ var/list/debug_verbs = list (
 	,/client/proc/disable_movement
 	,/client/proc/Zone_Info
 	,/client/proc/Test_ZAS_Connection
-	,/client/proc/rebootAirMaster
 	,/client/proc/hide_debug_verbs
 	,/client/proc/testZAScolors
 	,/client/proc/testZAScolors_remove
@@ -165,9 +184,10 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 	set category = "Debug"
 	set name = "Debug verbs"
 
-	if(!check_rights(R_DEBUG)) return
+	if(!check_rights(R_DEBUG))
+		return
 
-	verbs += debug_verbs
+	add_verb(src, debug_verbs)
 
 
 
@@ -175,9 +195,10 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 	set category = "Debug"
 	set name = "Hide Debug verbs"
 
-	if(!check_rights(R_DEBUG)) return
+	if(!check_rights(R_DEBUG))
+		return
 
-	verbs -= debug_verbs
+	remove_verb(src, debug_verbs)
 
 
 /client
@@ -203,7 +224,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 
 
 /client/proc/testZAScolors()
-	set category = "ZAS"
+	set category = "Debug.ZAS"
 	set name = "Check ZAS connections"
 
 	if(!check_rights(R_DEBUG)) return
@@ -250,7 +271,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 		testZAScolors_turfs += T
 
 /client/proc/testZAScolors_remove()
-	set category = "ZAS"
+	set category = "Debug.ZAS"
 	set name = "Remove ZAS connection colors"
 
 	testZAScolors_turfs.Cut()
@@ -261,16 +282,8 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 			if(i.icon_state == "zasdebug")
 				images.Remove(i)
 
-/client/proc/rebootAirMaster()
-	set category = "ZAS"
-	set name = "Reboot ZAS"
-
-	if(alert("This will destroy and remake all zone geometry on the whole map.","Reboot ZAS","Reboot ZAS","Nevermind") == "Reboot ZAS")
-		SSair.reboot()
-
-
 /client/proc/count_objects_on_z_level()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects On Level"
 	var/level = input("Which z-level?","Level?") as text
 	if(!level) return
@@ -313,7 +326,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 
 
 /client/proc/count_objects_all()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects All"
 
 	var/type_text = input("Which type path?","") as text
@@ -343,7 +356,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 var/global/prevent_airgroup_regroup = 0
 
 /client/proc/break_all_air_groups()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Break All Airgroups"
 
 	/*prevent_airgroup_regroup = 1
@@ -352,7 +365,7 @@ var/global/prevent_airgroup_regroup = 0
 	message_admins("[src.ckey] used 'Break All Airgroups'")*/
 
 /client/proc/regroup_all_air_groups()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Regroup All Airgroups Attempt"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -363,7 +376,7 @@ var/global/prevent_airgroup_regroup = 0
 	message_admins("[src.ckey] used 'Regroup All Airgroups Attempt'")*/
 
 /client/proc/kill_pipe_processing()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Kill pipe processing"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -375,7 +388,7 @@ var/global/prevent_airgroup_regroup = 0
 		message_admins("[src.ckey] used 'kill pipe processing', restoring all pipe processing.")*/
 
 /client/proc/kill_air_processing()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Kill air processing"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -389,7 +402,7 @@ var/global/prevent_airgroup_regroup = 0
 //This proc is intended to detect lag problems relating to communication procs
 var/global/say_disabled = 0
 /client/proc/disable_communication()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Disable all communication verbs"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -404,7 +417,7 @@ var/global/say_disabled = 0
 var/global/movement_disabled = 0
 var/global/movement_disabled_exception //This is the client that calls the proc, so he can continue to run around to gauge any change to lag.
 /client/proc/disable_movement()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Disable all movement"
 
 	to_chat(usr, "\red Proc disabled.")

@@ -6,7 +6,7 @@
 	icon_gib = "bat_dead"
 	speak_chance = 0
 	turns_per_move = 3
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -19,6 +19,7 @@
 	melee_damage_upper = 10
 	attacktext = "bites"
 	attack_sound = 'sound/weapons/bite.ogg'
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)
 
 	//Space carp aren't affected by atmos.
 	min_oxy = 0
@@ -63,5 +64,5 @@
 			L.visible_message(SPAN_DANGER("\the [src] swarms all over \the [L]!"))
 
 /mob/living/simple_animal/hostile/scarybat/cult
-	faction = "cult"
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK, MUTATION_VAMPIRE)
 	supernatural = 1

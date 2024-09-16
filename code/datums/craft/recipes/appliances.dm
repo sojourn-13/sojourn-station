@@ -4,6 +4,7 @@
 /datum/craft_recipe/appliance/beehive_assembly
 	name = "beehive assembly"
 	result = /obj/item/beehive_assembly
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD)
 	)
@@ -12,6 +13,7 @@
 /datum/craft_recipe/appliance/beehive_frame
 	name = "beehive frame"
 	result = /obj/item/honey_frame
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
@@ -28,7 +30,7 @@
 
 /datum/craft_recipe/appliance/cannon_frame
 	name = "cannon frame"
-	result = /obj/item/weapon/cannonframe
+	result = /obj/item/cannonframe
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
@@ -61,10 +63,21 @@
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	related_stats = list(STAT_MEC)
 
+/datum/craft_recipe/appliance/tint_button
+	name = "window tint controller"
+	result = /obj/machinery/button/windowtint
+	time = WORKTIME_NORMAL
+	steps = list(
+		list(/obj/item/device/assembly/signaler, 1)
+		)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	related_stats = list(STAT_MEC)
+
+
 //You get some article of clothing and shred it with a blade to make a mophead. Add in some metal rods for a handle
 /datum/craft_recipe/appliance/mop
 	name = "mop"
-	result = /obj/item/weapon/mop
+	result = /obj/item/mop
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(QUALITY_CUTTING, 10, 120),

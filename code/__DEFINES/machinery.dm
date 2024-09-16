@@ -8,15 +8,15 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define ALIEN_SELECT_AFK_BUFFER  1    // How many minutes that a person can be AFK before not being allowed to be an alien.
 
 // Channel numbers for power.
-#define EQUIP   1
-#define LIGHT   2
-#define ENVIRON 3
-#define TOTAL   4 // For total power used only.
+#define TOTAL           1	//for total power used only
+#define STATIC_EQUIP    2
+#define STATIC_LIGHT    3
+#define STATIC_ENVIRON  4
 
 //Power use
-#define NO_POWER_USE		0
-#define IDLE_POWER_USE		1
-#define ACTIVE_POWER_USE	2
+#define NO_POWER_USE 0
+#define IDLE_POWER_USE 1
+#define ACTIVE_POWER_USE 2
 
 // Bitflags for machine stat variable.
 #define BROKEN   0x1
@@ -34,22 +34,26 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 
 // Camera networks
 #define NETWORK_CRESCENT "Crescent"
-#define NETWORK_FIRST_SECTION "First Section"
-#define	NETWORK_SECOND_SECTION "Second Section"
-#define	NETWORK_THIRD_SECTION "Third Section"
-#define	NETWORK_FOURTH_SECTION "Fourth Section"
+#define NETWORK_COLONY_SURFACE "Colony Surface"
+#define NETWORK_COLONY_UNDERGROUND "Colony Underground"
+#define NETWORK_COLONY_TRANSITION "Colony Transition"
+#define NETWORK_CHURCH "Absolute Network"
+#define NETWORK_PROP "Prospector Network"
+#define NETWORK_GATE "Gate Network"
+#define NETWORK_CARGO "LSS Network"
 #define NETWORK_COMMAND "Command"
 #define NETWORK_ENGINE "Engine"
 #define NETWORK_ENGINEERING "Engineering"
-#define NETWORK_CEV_ERIS "Nadzedha Colony"
+#define NETWORK_CEV_ERIS "Nadzedha Wall Colony"
 #define NETWORK_MEDICAL "Medical"
 #define NETWORK_MERCENARY "MercurialNet"
-#define NETWORK_MINE "Prospector Shuttle - The Wilbur"
+#define NETWORK_MINE "Prospector Shuttle - The Rocinante"
 #define NETWORK_RESEARCH "Research"
 #define NETWORK_RESEARCH_OUTPOST "Research Outpost"
 #define NETWORK_ROBOTS "Robots"
 #define NETWORK_PRISON "Prison"
 #define NETWORK_SECURITY "Security"
+#define NETWORK_PLASMA_TAG "Plasma Tag Area"
 #define NETWORK_TELECOM "Tcomsat"
 #define NETWORK_THUNDER "Thunderdome"
 
@@ -62,6 +66,15 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 // Those networks can only be accessed by pre-existing terminals. AIs and new terminals can't use them.
 var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 
+// Machinery process flags, for use with START_PROCESSING_MACHINE
+#define MACHINERY_PROCESS_SELF          (1<<0)
+#define MACHINERY_PROCESS_COMPONENTS    (1<<1)
+#define MACHINERY_PROCESS_ALL           (MACHINERY_PROCESS_SELF | MACHINERY_PROCESS_COMPONENTS)
+
+// Machinery init flag masks
+#define INIT_MACHINERY_PROCESS_SELF         0x1
+#define INIT_MACHINERY_PROCESS_COMPONENTS   0x2
+#define INIT_MACHINERY_PROCESS_ALL          0x3
 
 //singularity defines
 #define STAGE_ONE 	1
@@ -89,7 +102,7 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
  *	Atmospherics Machinery.
 */
 #define MAX_SIPHON_FLOWRATE   2500 // L/s. This can be used to balance how fast a room is siphoned. Anything higher than CELL_VOLUME has no effect.
-#define MAX_SCRUBBER_FLOWRATE 200  // L/s. Max flow rate when scrubbing from a turf.
+#define MAX_SCRUBBER_FLOWRATE 400  // L/s. Max flow rate when scrubbing from a turf.
 
 // These balance how easy or hard it is to create huge pressure gradients with pumps and filters.
 // Lower values means it takes longer to create large pressures differences.
@@ -99,12 +112,12 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 
 // Will not bother pumping or filtering if the gas source as fewer than this amount of moles, to help with performance.
 #define MINIMUM_MOLES_TO_PUMP   0.01
-#define MINIMUM_MOLES_TO_FILTER 0.04
+#define MINIMUM_MOLES_TO_FILTER 0.0005
 
 // The flow rate/effectiveness of various atmos devices is limited by their internal volume,
 // so for many atmos devices these will control maximum flow rates in L/s.
-#define ATMOS_DEFAULT_VOLUME_PUMP   200 // Liters.
-#define ATMOS_DEFAULT_VOLUME_FILTER 200 // L.
+#define ATMOS_DEFAULT_VOLUME_PUMP   400 // Liters.
+#define ATMOS_DEFAULT_VOLUME_FILTER 400 // L.
 #define ATMOS_DEFAULT_VOLUME_MIXER  200 // L.
 #define ATMOS_DEFAULT_VOLUME_PIPE   70  // L.
 
@@ -173,3 +186,15 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 #define MIN_TEMPERATURE -40
 
 ////////////////////////////////////////////
+
+//AUTOLATHE
+#define SANITIZE_LATHE_COST(n) round(n * mat_efficiency, 0.01)
+
+//EOTP
+#define ARMAMENTS "Armaments"
+#define ALERT "Antag Alert"
+#define INSPIRATION "Inspiration"
+#define ODDITY "Oddity"
+#define STAT_BUFF "Stat Buff"
+#define MATERIAL_REWARD "Materials"
+#define ENERGY_REWARD "Energy"

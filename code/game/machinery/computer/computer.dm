@@ -4,7 +4,7 @@
 	icon_state = "computer"
 	density = 1
 	anchored = 1.0
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 300
 	active_power_usage = 300
 	var/processing = 0
@@ -16,8 +16,13 @@
 
 /obj/machinery/computer/Initialize()
 	. = ..()
+	GLOB.computer_list += src
 	power_change()
 	update_icon()
+
+/obj/machinery/computer/Destroy()
+	GLOB.computer_list -= src
+	..()
 
 /obj/machinery/computer/Process()
 	if(stat & (NOPOWER|BROKEN))
@@ -51,12 +56,13 @@
 	return
 
 /obj/machinery/computer/bullet_act(var/obj/item/projectile/Proj)
-	if(prob(Proj.get_structure_damage()))
-		if(!(stat & BROKEN))
-			var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
-			S.set_up(3, 0, src)
-			S.start()
-		set_broken()
+	if (!(Proj.testing))
+		if(prob(Proj.get_structure_damage()))
+			if(!(stat & BROKEN))
+				var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
+				S.set_up(3, 0, src)
+				S.start()
+			set_broken()
 	..()
 
 /obj/machinery/computer/update_icon()
@@ -108,7 +114,7 @@
 				C.loc = src.loc
 			if (src.stat & BROKEN)
 				to_chat(user, SPAN_NOTICE("The broken glass falls out."))
-				new /obj/item/weapon/material/shard(src.loc)
+				new /obj/item/material/shard(src.loc)
 				A.state = 3
 				A.icon_state = "3"
 			else

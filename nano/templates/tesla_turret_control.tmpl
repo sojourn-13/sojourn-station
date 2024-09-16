@@ -1,0 +1,36 @@
+<h1>Blue-Ink Tesla Turret Network</h1>
+<h2 class='average'>Current Channel: {{:data.channel}}</h2>
+<br>
+<div class="item">
+	<div class="itemLabelWide">
+		Turret Status:
+	</div>
+	<div class="itemContentNarrow">
+		{{:helper.link('Enabled', null, {'command' : 'enable', 'value' : 1},  data.enabled ?'selected' : null)}}
+		{{:helper.link('Disabled',null, {'command' : 'enable', 'value' : 0}, !data.enabled ? 'redButton' : null)}}
+	</div>
+</div>
+
+{{if data.is_lethal}}
+	<div class="item">
+		<div class="itemLabelWide">
+			Lethal Mode:
+		</div>
+		<div class="itemContentNarrow">
+			{{:helper.link('On', null, {'command' : 'lethal', 'value' : 1},  data.lethal ?'selected' : null)}}
+			{{:helper.link('Off',null, {'command' : 'lethal', 'value' : 0}, !data.lethal ? 'redButton' : null)}}
+		</div>
+	</div>	
+{{/if}}
+
+{{for data.settings}}
+	<div class="item">
+		<div class="itemLabelWide">
+			{{:value.category}}
+		</div>
+		<div class="itemContentNarrow">
+			{{:helper.link('Active', null, {'command' : value.setting, 'value' : 1},  value.value ? 'selected' : null)}}
+			{{:helper.link('Disabled',null, {'command' : value.setting, 'value' : 0}, !value.value ? 'selected' : null)}}
+		</div>
+	</div>
+{{/for}}

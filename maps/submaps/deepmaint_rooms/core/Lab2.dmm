@@ -1,0 +1,948 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ab" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ac" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ad" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"ae" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"af" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ag" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ai" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aj" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ak" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"al" = (
+/obj/structure/table/rack/shelf,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"am" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/card_carp,
+/obj/random/card_carp,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"an" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"ao" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ap" = (
+/obj/random/pack/machine,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aq" = (
+/obj/structure/salvageable/autolathe,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"ar" = (
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"as" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/dungeon_gun_energy/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"at" = (
+/obj/machinery/door/airlock/vault{
+	name = "Laboratory 2"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"au" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"av" = (
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/deepmaint)
+"aw" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"ax" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
+"ay" = (
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"az" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/random/dungeon_ammo/low_chance,
+/obj/random/dungeon_ammo/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aA" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aB" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aC" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aD" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"aE" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/deepmaint)
+"aF" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/deepmaint)
+"aG" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aH" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aI" = (
+/obj/structure/salvageable/console_os,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aJ" = (
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
+"aK" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"aL" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/power/emitter,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"aM" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"aN" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aO" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"aP" = (
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"aQ" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aR" = (
+/obj/machinery/door/airlock/centcom,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"aS" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lathe_disk/advanced,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aT" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/emitter{
+	anchored = 1;
+	dir = 8;
+	id = "EngineEmitter";
+	state = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"aV" = (
+/obj/structure/salvageable/console_broken_os{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"aW" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"aX" = (
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"aY" = (
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"aZ" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
+"ba" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"bb" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"bc" = (
+/obj/random/junk/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bd" = (
+/obj/effect/floor_decal/rust,
+/obj/random/cluster/psi_monster,
+/obj/random/psi_megafauna,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/deepmaint)
+"be" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bf" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"bg" = (
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bh" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
+"bi" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"bj" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/deepmaint)
+"bk" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/deepmaint)
+"bm" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/pack/tech_loot,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bn" = (
+/obj/random/pack/tech_loot,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"bo" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"bp" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"bq" = (
+/obj/random/pack/gun_loot,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"br" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bs" = (
+/obj/random/closet_tech/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bt" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"bu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"bv" = (
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pack/gun_loot,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bw" = (
+/obj/random/closet_maintloot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bx" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/random/closet_maintloot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"by" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/machinery/light/small,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bz" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
+/obj/random/ammo/low_chance,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bA" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/firstaid,
+/obj/random/lathe_disk/advanced/low_chance,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bB" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"bC" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/ammo/shotgun/low_chance,
+/obj/random/ammo/shotgun/low_chance,
+/obj/random/ammo_fancy/low_chance,
+/obj/random/ammo_fancy/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bD" = (
+/obj/random/pack/rare,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"bE" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"bF" = (
+/obj/structure/salvageable/server_os,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/deepmaint)
+"bG" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"bH" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/machinery/light/small,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"iA" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"Pa" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+
+(1,1,1) = {"
+aa
+ac
+ac
+aa
+aa
+aa
+iA
+aa
+aa
+ac
+ac
+ac
+aa
+aa
+ac
+ac
+aa
+ac
+iA
+aa
+ac
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+ac
+aQ
+aa
+aa
+ac
+aa
+aa
+aa
+iA
+aa
+ac
+bo
+aa
+aa
+aa
+aa
+ac
+"}
+(3,1,1) = {"
+aa
+aa
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aa
+aa
+"}
+(4,1,1) = {"
+ac
+iA
+aX
+ag
+aN
+ay
+bb
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+bq
+bv
+bw
+bx
+aX
+aa
+aa
+"}
+(5,1,1) = {"
+ac
+aa
+aX
+am
+ay
+aG
+an
+aC
+aJ
+aJ
+bh
+aJ
+aJ
+aX
+ay
+ay
+ay
+ay
+aX
+iA
+ac
+"}
+(6,1,1) = {"
+ac
+af
+aX
+al
+ay
+aW
+aL
+aC
+aJ
+av
+bd
+aE
+aJ
+aX
+ay
+bt
+ay
+by
+aX
+bE
+ac
+"}
+(7,1,1) = {"
+ac
+aa
+aX
+am
+ay
+aN
+aL
+aC
+aJ
+av
+bj
+aF
+aJ
+aX
+ay
+aN
+aW
+bz
+aX
+ac
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aX
+ae
+ay
+ay
+an
+aC
+aZ
+ax
+aJ
+aJ
+ax
+aX
+bs
+bs
+ay
+bA
+aX
+aa
+aa
+"}
+(9,1,1) = {"
+iA
+aa
+aX
+ao
+ay
+aX
+aM
+aX
+aC
+aX
+at
+aX
+aC
+bi
+bu
+aX
+ay
+bC
+aX
+aa
+ac
+"}
+(10,1,1) = {"
+aa
+ac
+aX
+ap
+ay
+aX
+aP
+aK
+aU
+bf
+aD
+bl
+aU
+aK
+ad
+aX
+ay
+bB
+aX
+iA
+ac
+"}
+(11,1,1) = {"
+aa
+ac
+aX
+aq
+ay
+aX
+bc
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+br
+aX
+ay
+bF
+aX
+aa
+ac
+"}
+(12,1,1) = {"
+aa
+aa
+aX
+ar
+ay
+aX
+aP
+aO
+aX
+aC
+aC
+aC
+aX
+ak
+aY
+aX
+ay
+ay
+aX
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+af
+aX
+aX
+aR
+aX
+aR
+aX
+aX
+aV
+aV
+aV
+aX
+aX
+aR
+aX
+aR
+aX
+aX
+bE
+aa
+"}
+(14,1,1) = {"
+ac
+iA
+aX
+as
+aa
+aH
+au
+aX
+be
+bg
+bk
+bg
+bm
+aX
+aa
+aa
+aa
+bG
+aX
+aa
+aa
+"}
+(15,1,1) = {"
+ac
+aa
+aX
+aw
+aa
+ba
+aa
+aX
+aA
+aa
+aa
+aa
+bn
+aX
+aH
+ba
+aa
+bH
+aX
+ac
+iA
+"}
+(16,1,1) = {"
+ac
+aa
+aX
+az
+au
+aa
+aa
+aX
+ai
+aa
+au
+aa
+aa
+aX
+aH
+au
+aa
+bG
+aX
+ac
+aa
+"}
+(17,1,1) = {"
+ac
+aa
+aX
+aH
+aa
+aa
+aa
+aa
+aa
+aX
+at
+aX
+aa
+aa
+aj
+aa
+aa
+bD
+aX
+ac
+ac
+"}
+(18,1,1) = {"
+aa
+aa
+aX
+aI
+aH
+aH
+aS
+aT
+aH
+aX
+iA
+aX
+aH
+bp
+aH
+aa
+ab
+bD
+aX
+aa
+ac
+"}
+(19,1,1) = {"
+ac
+aa
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+at
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aa
+ac
+"}
+(20,1,1) = {"
+ac
+aa
+aa
+aa
+Pa
+aa
+ac
+ac
+aa
+aB
+aa
+aB
+aa
+aa
+aa
+aa
+aB
+aa
+aa
+ac
+ac
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+ac
+aa
+iA
+aa
+aa
+aa
+aa
+aa
+iA
+ac
+ac
+iA
+aa
+aa
+aa
+ac
+aa
+"}

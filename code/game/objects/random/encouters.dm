@@ -4,7 +4,7 @@
 /obj/random/encouter
 	spawn_nothing_percentage = 0
 	var/list/obj/random/spawner/encouter/encouters = list(/obj/random/spawner/encouter/mine, /obj/random/spawner/encouter/miningbot, /obj/random/spawner/encouter/strangebeacon, \
-	/obj/random/spawner/encouter/cryopod, /obj/random/spawner/encouter/satellite, /obj/random/spawner/encouter/coffin, /obj/random/spawner/encouter/omnius)
+	/obj/random/spawner/encouter/satellite, /obj/random/spawner/encouter/coffin, /obj/random/spawner/encouter/omnius)
 
 /obj/random/encouter/item_to_spawn()
 	..()
@@ -25,7 +25,7 @@
 		return pick(randspawn)
 
 /obj/random/spawner/encouter/mine
-	randspawn = list(/obj/structure/mine/mine_no_primer, /obj/item/weapon/mine, /obj/structure/mine/mine_scraps)
+	randspawn = list(/obj/structure/mine/mine_no_primer, /obj/item/mine, /obj/structure/mine/mine_scraps)
 
 /obj/random/spawner/encouter/miningbot
 	randspawn = list(/mob/living/bot/miningonestar/resources, /mob/living/bot/miningonestar/resources/agressive, /mob/living/bot/miningonestar/resources/agressive/with_support, \
@@ -35,10 +35,11 @@
 	randspawn = list(/obj/structure/strangebeacon, /obj/structure/strangebeacon/bots, /obj/structure/strangebeacon/pods, \
 	/obj/structure/strangebeacon/bombard)
 
+/* - Unused spawners. If you want to re-add a cryopod system use ghostspawner.dm ones
 /obj/random/spawner/encouter/cryopod
 	randspawn = list(/obj/structure/cryopod_spawner/ironhammer, /obj/structure/cryopod_spawner/medical, /obj/structure/cryopod_spawner/technomancer, \
 	/obj/structure/cryopod_spawner/serbian)
-
+*/
 /obj/random/spawner/encouter/satellite
 	randspawn = list(/obj/structure/satellite, /obj/structure/satellite/science)
 

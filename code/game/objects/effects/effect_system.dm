@@ -16,28 +16,16 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	unacidable = 1//So effect are not targeted by alien acid.
 	pass_flags = PASSTABLE | PASSGRILLE
 
-
-/obj/effect/Initialize(mapload, ...)
+/obj/effect/add_initial_transforms()
 	. = ..()
-	if (random_rotation)
-		var/matrix/M = transform
-		if (random_rotation == 1)
-			M.Turn(pick(0,90,180,-90))
 
-		else if (random_rotation == 2)
-			M.Turn(rand(0,360))
-
-		transform = M
-	if(random_offset)
-		pixel_x += rand(-random_offset,random_offset)
-		pixel_y += rand(-random_offset,random_offset)
-
-
-
-/obj/effect/Destroy()
-	if(reagents)
-		reagents.delete()
-	return ..()
+	var/rotation_amount = 0
+	switch (random_rotation)
+		if (1)
+			rotation_amount = pick(0, 90, 180, -90)
+		if (2)
+			rotation_amount= rand(0,360)
+	add_new_transformation(/datum/transform_type/modular, list(rotation = rotation_amount, flag = EFFECT_INITIAL_ROTATION_TRANSFORM, priority = EFFECT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
 
 /datum/effect/effect/system
 	var/number = 3
@@ -115,13 +103,22 @@ steam.start() -- spawns the effect
 // will always spawn at the items location.
 /////////////////////////////////////////////
 
+/proc/do_sparks(n, c, source)
+	// n - number of sparks
+	// c - cardinals, bool, do the sparks only move in cardinal directions?
+	// source - source of the sparks.
+
+	var/datum/effect/effect/system/spark_spread/sparks = new
+	sparks.set_up(n, c, source)
+	sparks.start()
+
 /obj/effect/sparks
 	name = "sparks"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"
-	var/amount = 6.0
 	anchored = 1.0
 	mouse_opacity = 0
+	var/amount = 6
 
 /obj/effect/sparks/New()
 	..()
@@ -208,6 +205,7 @@ steam.start() -- spawns the effect
 
 
 /obj/effect/effect/smoke/Initialize()
+	. = ..()
 	spawn(time_to_live)
 		fade_out()
 
@@ -262,18 +260,22 @@ steam.start() -- spawns the effect
 	. = ..()
 	update_light()
 
-/obj/effect/effect/light/New(var/newloc, var/radius, var/brightness)
+/obj/effect/effect/light/New(var/newloc, var/radius, var/brightness, color, selfdestruct_timer)
 	..()
 
 	src.radius = radius
 	src.brightness = brightness
 
 	set_light(radius,brightness)
+	if(selfdestruct_timer)
+		spawn(selfdestruct_timer)
+		qdel(src)
 
 /obj/effect/effect/light/set_light(l_range, l_power, l_color)
 	..()
 	radius = l_range
 	brightness = l_power
+	color = l_color
 
 /obj/effect/effect/smoke/illumination
 	name = "illumination"
@@ -281,10 +283,10 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"
 
-/obj/effect/effect/smoke/illumination/New(var/newloc, var/brightness=15, var/lifetime=10)
+/obj/effect/effect/smoke/illumination/New(var/newloc, var/brightness=15, var/lifetime=10, var/color=COLOR_WHITE)
 	time_to_live=lifetime
 	..()
-	set_light(brightness)
+	set_light(brightness, 1, color)
 
 /////////////////////////////////////////////
 // Bad smoke
@@ -308,7 +310,7 @@ steam.start() -- spawns the effect
 	if(air_group || (height==0)) return 1
 	if(istype(mover, /obj/item/projectile/beam))
 		var/obj/item/projectile/beam/B = mover
-		B.damage = (B.damage/2)
+		B.damage_types[BURN] /= 2
 	return 1
 /////////////////////////////////////////////
 // Sleep smoke
@@ -326,6 +328,18 @@ steam.start() -- spawns the effect
 		M.emote("cough")
 		spawn ( 20 )
 			M.coughedtime = 0
+
+/////////////////////////////////////////////
+//  White phosphorous
+/////////////////////////////////////////////
+
+/obj/effect/effect/smoke/white_phosphorous
+    name = "white phosphorous smoke"
+
+/obj/effect/effect/smoke/white_phosphorous/affect(mob/living/carbon/M)
+    M.fire_stacks += 5
+    M.fire_act()
+
 /////////////////////////////////////////////
 // Mustard Gas
 /////////////////////////////////////////////
@@ -396,11 +410,11 @@ steam.start() -- spawns the effect
 /datum/effect/effect/system/smoke_spread/sleepy
 	smoke_type = /obj/effect/effect/smoke/sleepy
 
-
 /datum/effect/effect/system/smoke_spread/mustard
 	smoke_type = /obj/effect/effect/smoke/mustard
 
-
+/datum/effect/effect/system/smoke_spread/white_phosphorous
+	smoke_type = /obj/effect/effect/smoke/white_phosphorous
 
 
 
@@ -411,10 +425,8 @@ steam.start() -- spawns the effect
 
 	set_up (amt, loc, flash = 0, flash_fact = 0)
 		amount = amt
-		if(istype(loc, /turf/))
-			location = loc
-		else
-			location = get_turf(loc)
+
+		location = loc
 
 		flashing = flash
 		flashing_factor = flash_fact
@@ -422,14 +434,14 @@ steam.start() -- spawns the effect
 		return
 
 	start()
-		if (amount <= 2)
+		if (amount <= 3)
 			var/datum/effect/effect/system/spark_spread/s = new
-			s.set_up(2, 1, location)
+			s.set_up(3, 1, location)
 			s.start()
 
-			for(var/mob/M in viewers(5, location))
+			for(var/mob/M in viewers(5, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
-			for(var/mob/M in viewers(1, location))
+			for(var/mob/M in viewers(1, get_turf(location)))
 				if (prob (50 * amount))
 					to_chat(M, SPAN_WARNING("The explosion knocks you down."))
 					M.Weaken(rand(1,5))
@@ -453,7 +465,7 @@ steam.start() -- spawns the effect
 			if (flashing && flashing_factor)
 				flash = (amount/4) * flashing_factor
 
-			for(var/mob/M in viewers(8, location))
+			for(var/mob/M in viewers(8, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
 			explosion(

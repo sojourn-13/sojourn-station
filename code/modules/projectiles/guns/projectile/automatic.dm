@@ -1,29 +1,33 @@
-/obj/item/weapon/gun/projectile/automatic
-	name = "automatic projectile gun"
-	desc = "A debug firearm, which should be reported if present in-game. Uses .35 rounds."
+/obj/item/gun/projectile/automatic
+	name = "old automatic projectile gun"
+	desc = "A no longer produced hologram of the base of all moder day smgs. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
 	icon_state = "generic_smg"
 	w_class = ITEM_SIZE_NORMAL
-	load_method = SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
-	max_shells = 22
-	caliber = CAL_35A
+	load_method = SINGLE_CASING|SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
+	max_shells = 1 //Automatic quick fix idk why this was set to 22 but it was. Issue fixed
+	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/pistol
+	ammo_type = /obj/item/ammo_casing/pistol_35
 	burst_delay = 2
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/smg_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
-	zoom_factor = 0 //Default zoom factor you want on all automatic weapons.
-
-	firemodes = list(
-		FULL_AUTO_400,
+	zoom_factors = list()
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	auto_rack = TRUE
+	init_firemodes = list(
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
 		BURST_3_ROUND,
 		BURST_5_ROUND
 		)
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.3 // 30 vig for insta wield
+	gun_parts = list(/obj/item/part/gun = 3 ,/obj/item/stack/material/steel = 15)
 
 
 //Automatic firing
@@ -57,8 +61,8 @@
 				can_fire = FALSE
 
 			//Projectile weapons need to have enough ammo to fire
-			if(istype(gun, /obj/item/weapon/gun/projectile))
-				var/obj/item/weapon/gun/projectile/P = gun
+			if(istype(gun, /obj/item/gun/projectile))
+				var/obj/item/gun/projectile/P = gun
 				if (!P.get_ammo())
 					can_fire = FALSE
 
@@ -89,6 +93,16 @@
 		//Create and assign the click handler
 		//A click handler intercepts mouseup/drag/down events which allow fullauto firing
 		CH = new /datum/click_handler/fullauto()
-		CH.reciever = gun //Reciever is the gun that gets the fire events
+		CH.receiver = gun //receiver is the gun that gets the fire events
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is
+
+/datum/firemode/automatic/force_deselect(mob/user)
+	if(CH)
+		if(CH.owner) //Remove our handler from the client
+			CH.owner.CH = null //wew
+			QDEL_NULL(CH) //And delete it
+	if(user.client)
+		if(user.client.CH)
+			user.client.CH = null
+			QDEL_NULL(user.client.CH)

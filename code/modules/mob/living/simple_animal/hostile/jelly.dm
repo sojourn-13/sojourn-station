@@ -12,6 +12,12 @@
 	speak_chance = 2
 	emote_hear = list("squishes","spluts","splorts","sqrshes","makes slime noises")
 	emote_see = list("undulates quietly")
+	leather_amount = 0
+	bones_amount = 0
+	sanity_damage = 1
+
+	armor = list(melee = 8, bullet = 20, energy = 2, bomb = 25, bio = 100, rad = 100) //Were basiclly ballastic jell
+
 
 /mob/living/simple_animal/hostile/jelly/bloat
 	name = "jelly bloat"

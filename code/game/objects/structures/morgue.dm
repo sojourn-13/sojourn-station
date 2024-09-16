@@ -210,7 +210,7 @@
 	AM.forceMove(src)
 
 /obj/structure/morgue/attackby(P as obj, mob/user as mob)
-	if (istype(P, /obj/item/weapon/pen))
+	if (istype(P, /obj/item/pen))
 		var/t = input(user, "What would you like the label to be?", text("[]", name), null)  as text
 		if (user.get_active_hand() != P)
 			return
@@ -286,7 +286,7 @@
 
 /obj/structure/crematorium
 	name = "crematorium"
-	desc = "A human incinerator. Works well on barbeque nights."
+	desc = "An incinerator box, used to ash bodies or unwanted objects."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "crema1"
 	density = 1
@@ -382,7 +382,7 @@
 	update()
 
 /obj/structure/crematorium/attackby(P as obj, mob/user as mob)
-	if (istype(P, /obj/item/weapon/pen))
+	if (istype(P, /obj/item/pen))
 		var/t = input(user, "What would you like the label to be?", text("[]", name), null)  as text
 		if (user.get_active_hand() != P)
 			return
@@ -427,7 +427,7 @@
 			return
 
 	else
-		if(!isemptylist(search_contents_for(/obj/item/weapon/disk/nuclear)))
+		if(!isemptylist(search_contents_for(/obj/item/disk/nuclear)))
 			to_chat(usr, "You get the feeling that you shouldn't cremate one of the items in the cremator.")
 			return
 
@@ -440,11 +440,11 @@
 		for(var/mob/living/M in contents)
 			if (M.stat!=2)
 				if (!iscarbon(M))
-					M.emote("scream")
+					M.emote("painscream")
 				else
 					var/mob/living/carbon/C = M
 					if (!(C.species && (C.species.flags & NO_PAIN)))
-						C.emote("scream")
+						C.emote("painscream")
 
 			//Logging for this causes runtimes resulting in the cremator locking up. Commenting it out until that's figured out.
 			//M.attack_log += "\[[time_stamp()]\] Has been cremated by <b>[user]/[user.ckey]</b>" //No point in this when the mob's about to be deleted
@@ -463,7 +463,6 @@
 		locked = 0
 		playsound(loc, 'sound/machines/ding.ogg', 50, 1)
 	return
-
 
 /*
  * Crematorium tray

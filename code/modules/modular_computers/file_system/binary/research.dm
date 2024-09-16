@@ -19,6 +19,9 @@
 	filetype = "RDAT"
 	size = 1 		// Scales with the amount of research points
 	var/research_id	// ID of a generated file, so you can't feed a single file into an R&D console indefinitely
+	clone_able = FALSE
+	copy_cat = TRUE //Were unable to be imported or exported hardware wise, as were already pre-downloaded somehow onto a disk.
+
 
 /datum/computer_file/binary/research_points/New(size = 1)
 	..()

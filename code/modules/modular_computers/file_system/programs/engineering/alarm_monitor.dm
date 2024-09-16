@@ -5,7 +5,7 @@
 	ui_header = "alarm_green.gif"
 	program_icon_state = "alert-green"
 	program_key_state = "atmos_key"
-	program_menu_icon = "alert"
+	program_menu_icon = "exclamation-triangle"
 	extended_desc = "This program provides visual interface for the alarm system."
 	requires_ntnet = 1
 	network_destination = "alarm monitoring network"
@@ -102,7 +102,7 @@
 		usr.switch_to_camera(C)
 		return 1
 
-/datum/nano_module/alarm_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/alarm_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	var/categories[0]

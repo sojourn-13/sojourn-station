@@ -6,7 +6,41 @@
 	blocks_air = 1
 	density = 1
 	opacity = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
+
+/turf/unsimulated/mineral/cold
+	name = "impassable rock"
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "rock-cold"
+	blocks_air = 1
+	density = 1
+	opacity = 1
+	layer = BELOW_MOB_LAYER
+
+/turf/unsimulated/mineral/transition
+	name = "path elsewhere"
+	desc = "Looks like this leads to a whole new area."
+	icon_state = "floor_transition"
+
+/turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_EXCAVATION)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_EXCAVATION)
+		to_chat(user, SPAN_NOTICE("You try to break out a rock geode or two."))
+		if(I.use_tool(user, src, WORKTIME_DELAYED, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+			new /obj/random/material_ore_small(get_turf(src))
+			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+			if(prob(25))
+				new /obj/random/material_ore_small(get_turf(src))
+			if(prob(5))
+				new /obj/random/material_ore_small(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
+			return
+		return
 
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
@@ -34,7 +68,7 @@
 	nitrogen = MOLES_N2STANDARD
 	opacity = 1
 	density = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
 	blocks_air = 1
 	temperature = T20C
 	var/mined_turf = /turf/simulated/floor/asteroid
@@ -49,13 +83,13 @@
 	var/next_rock = 0
 	var/archaeo_overlay = ""
 	var/excav_overlay = ""
-	var/obj/item/weapon/last_find
+	var/obj/item/last_find
 	var/datum/artifact_find/artifact_find
 
 	has_resources = 1
 
 /turf/simulated/mineral/Initialize()
-	..()
+	.=..()
 	icon_state = "rock[rand(0,4)]"
 	spawn(0)
 		MineralSpread()
@@ -68,23 +102,26 @@
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
-		if(2.0)
-			if (prob(70))
-				mined_ore = 1 //some of the stuff gets blown up
-				GetDrilled()
 		if(1.0)
-			mined_ore = 2 //some of the stuff gets blown up
+			mined_ore = 5 //light bomb, were not lossing much ore
+			GetDrilled()
+		if(2.0)
+			mined_ore = 4 //Heavyer bomb, we lose some ore in this
+			GetDrilled()
+		if(3.0)
+			mined_ore = 3 //Heavy bomb, we lose quite a bit of ore
 			GetDrilled()
 
 /turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
 
 	// Emitter blasts
-	if(istype(Proj, /obj/item/projectile/beam/emitter))
-		emitter_blasts_taken++
+	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/beam/emitter))
+			emitter_blasts_taken++
 
-		if(emitter_blasts_taken > 2) // 3 blasts per tile
-			mined_ore = 1
-			GetDrilled()
+			if(emitter_blasts_taken > 1) // 2 blasts per tile
+				mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
+				GetDrilled()
 
 /turf/simulated/mineral/Bumped(AM)
 	. = ..()
@@ -134,7 +171,7 @@
 //Not even going to touch this pile of spaghetti
 /turf/simulated/mineral/attackby(obj/item/I, mob/living/user)
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_DIGGING, QUALITY_EXCAVATION), src, CB = CALLBACK(src,.proc/check_radial_dig))
+	var/tool_type = I.get_tool_type(user, list(QUALITY_DIGGING, QUALITY_EXCAVATION), src, CB = CALLBACK(src,PROC_REF(check_radial_dig)))
 	switch(tool_type)
 
 		if(QUALITY_EXCAVATION)
@@ -209,9 +246,7 @@
 					next_rock += excavation_amount * 10
 					while(next_rock > 100)
 						next_rock -= 100
-						var/obj/item/weapon/ore/O = new(src)
-						geologic_data.UpdateNearbyArtifactInfo(src)
-						O.geologic_data = geologic_data
+						new /obj/item/stack/ore(src)
 				return
 			return
 
@@ -222,6 +257,7 @@
 				fail_message = ". <b>[pick("There is a crunching noise [I] collides with some different rock.","Part of the rock face crumbles away.","Something breaks under [I].")]</b>"
 			to_chat(user, SPAN_NOTICE("You start digging the [src]. [fail_message ? fail_message : ""]"))
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB))
+				var/dig_bonus = round(I.tool_qualities[QUALITY_DIGGING] / 5) / 5 //7 for normal pickaxes, 8 for drills, 9 for jackhammers, 10 for diamonddrills and GP pickaxes, 12 for GP drills, 15 for GP jackhammers- leading to ~1.2
 				to_chat(user, SPAN_NOTICE("You finish digging the [src]."))
 				if(fail_message && prob(90))
 					if(prob(25))
@@ -244,22 +280,26 @@
 					else if(prob(15))
 						//empty boulder
 						B = new(src)
-				if(mineral && istype(user.get_inactive_hand(), /obj/item/weapon/storage/bag/ore)) //This entire segment can be done better.
+				if(mineral) //This entire segment can be done better.
+					var/mineral_result = CEILING((mineral.result_amount * dig_bonus) - (mined_ore * dig_bonus), 1)
+					if(isliving(user))
+						var/mob/living/digger = user
+						var/task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+						if(task_level)
+							mineral_result += task_level
+
 					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
-					var/obj/item/weapon/storage/bag/ore/bag = user.get_inactive_hand()
-					for (, mined_ore < mineral.result_amount, mined_ore++)
-						var/obj/item/weapon/ore/O = DropMineral()
-						if(box)
-							box.contents += O
-						else
-							if(bag.can_be_inserted(O, TRUE))
-								bag.handle_item_insertion(O, TRUE)
-							else break
-					if(box) box.update_ore_count()
+					var/obj/item/stack/ore/O = DropMineral(mineral_result)
+					if(box && O)
+						O.forceMove(box)
+					else if(istype(user.get_inactive_hand(), /obj/item/storage/bag/ore))
+						var/obj/item/storage/bag/ore/bag = user.get_inactive_hand()
+						if(bag.can_be_inserted(O, TRUE))
+							bag.handle_item_insertion(O, suppress_warning = TRUE)
 				if(B)
-					GetDrilled(0)
+					GetDrilled(0, FALSE)
 				else
-					GetDrilled(1)
+					GetDrilled(1, FALSE)
 				return
 			return
 
@@ -291,24 +331,21 @@
 	for(var/obj/effect/mineral/M in contents)
 		qdel(M)
 
-/turf/simulated/mineral/proc/DropMineral()
+/turf/simulated/mineral/proc/DropMineral(mineralamount = 1)
 	if(!mineral)
 		return
 
 	clear_ore_effects()
-	var/obj/item/weapon/ore/O = new mineral.ore (src)
-	if(istype(O))
-		geologic_data.UpdateNearbyArtifactInfo(src)
-		O.geologic_data = geologic_data
+	var/obj/item/stack/ore/O = new mineral.ore(src)
+	O.amount = mineralamount
 	return O
 
-/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
+/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0, give_minerals = TRUE)
 	//var/destroyed = 0 //used for breaking strange rocks
-	if (mineral && mineral.result_amount)
+	if (mineral && mineral.result_amount && give_minerals)
 
 		//if the turf has already been excavated, some of it's ore has been removed
-		for (var/i = 1 to mineral.result_amount - mined_ore)
-			DropMineral()
+		DropMineral(mineral.result_amount - mined_ore)
 
 	//destroyed artifacts have weird, unpleasant effects
 	//make sure to destroy them before changing the turf though
@@ -324,10 +361,7 @@
 				if(prob(50))
 					M.adjustBruteLoss(5)
 			else
-				if (M.HUDtech.Find("flash"))
-					flick("flash", M.HUDtech["flash"])
-				if(prob(50))
-					M.Stun(5)
+				M.flash(10, TRUE, TRUE , TRUE, 10)
 			M.apply_effect(25, IRRADIATE)
 
 	//Add some rubble,  you did just clear out a big chunk of rock.
@@ -341,15 +375,18 @@
 /turf/simulated/mineral/proc/excavate_find(var/prob_clean = 0, var/datum/find/F)
 	//with skill and luck, players can cleanly extract finds
 	//otherwise, they come out inside a chunk of rock
-	var/obj/item/weapon/X
+	var/obj/item/X
 	if(prob_clean)
-		X = new /obj/item/weapon/archaeological_find(src, new_item_type = F.find_type)
-	else
-		X = new /obj/item/weapon/ore/strangerock(src, inside_item_type = F.find_type)
+		var/obj/item/archaeological_find/AF = new /obj/item/archaeological_find(src, new_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
-		X:geologic_data = geologic_data
+		X = AF
+	else
+		var/obj/item/stack/ore/strangerock/SR = new /obj/item/stack/ore/strangerock(src, inside_item_type = F.find_type)
+		geologic_data.UpdateNearbyArtifactInfo(src)
+		SR.geologic_data = geologic_data
+		X = SR
 
-	//some find types delete the /obj/item/weapon/archaeological_find and replace it with something else, this handles when that happens
+	//some find types delete the /obj/item/archaeological_find and replace it with something else, this handles when that happens
 	//yuck
 	var/display_name = "something"
 	if(!X)
@@ -394,12 +431,12 @@
 			if(5)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard(src)
+					new /obj/item/material/shard(src)
 
 			if(6)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard/plasma(src)
+					new /obj/item/material/shard/plasma(src)
 
 			if(7)
 				var/obj/item/stack/material/uranium/R = new(src)
@@ -407,7 +444,7 @@
 
 /turf/simulated/mineral/random
 	name = "Mineral deposit"
-	var/mineralSpawnChanceList = list("Uranium" = 5, "Platinum" = 5, "Iron" = 35, "Coal" = 35, "Diamond" = 1, "Gold" = 5, "Silver" = 5, "Plasma" = 10)
+	var/mineralSpawnChanceList = list(ORE_URANIUM = 5, ORE_PLATINUM = 5, ORE_IRON = 35, ORE_CARBON = 35, ORE_DIAMOND = 1, ORE_GOLD = 5, ORE_SILVER = 5, ORE_PLASMA = 10, ORE_HYDROGEN = 1)
 	var/mineralChance = 100 //10 //means 10% chance of this plot changing to a mineral deposit
 
 /turf/simulated/mineral/random/New()
@@ -425,7 +462,7 @@
 
 /turf/simulated/mineral/random/high_chance
 	mineralChance = 100 //25
-	mineralSpawnChanceList = list("Uranium" = 10, "Platinum" = 10, "Iron" = 20, "Coal" = 20, "Diamond" = 2, "Gold" = 10, "Silver" = 10, "Plasma" = 20)
+	mineralSpawnChanceList = list(ORE_URANIUM = 10, ORE_PLATINUM = 10, ORE_IRON = 20, ORE_CARBON = 20, ORE_DIAMOND = 2, ORE_GOLD = 10, ORE_SILVER = 10, ORE_PLASMA = 20, ORE_HYDROGEN = 1)
 
 /********************** Planet **************************/
 
@@ -478,20 +515,31 @@
 			return
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_ROB))
 			to_chat(user, SPAN_NOTICE("You dug a hole."))
-			gets_dug()
+			gets_dug(user)
 
 	else
 		..(I,user)
 
-/turf/simulated/floor/asteroid/proc/gets_dug()
+/turf/simulated/floor/asteroid/proc/gets_dug(mob/user)
 
 	if(dug)
 		return
 
-	for(var/i=0;i<(rand(3)+2);i++)
-		new/obj/item/weapon/ore/glass(src)
+	var/task_level = 0
+	if(isliving(user))
+		var/mob/living/digger = user
+		task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+		if(!task_level)
+			task_level = 0
 
-	dug = 1
+
+	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
+	newsand.amount = rand(3)+2 + task_level
+	newsand = new /obj/item/stack/ore(src)
+	newsand.amount = rand(3)+2 + task_level
+
+	dug = TRUE
+	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return
 
@@ -521,11 +569,11 @@
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		if(R.module)
-			if(istype(R.module_state_1,/obj/item/weapon/storage/bag/ore))
+			if(istype(R.module_state_1,/obj/item/storage/bag/ore))
 				attackby(R.module_state_1,R)
-			else if(istype(R.module_state_2,/obj/item/weapon/storage/bag/ore))
+			else if(istype(R.module_state_2,/obj/item/storage/bag/ore))
 				attackby(R.module_state_2,R)
-			else if(istype(R.module_state_3,/obj/item/weapon/storage/bag/ore))
+			else if(istype(R.module_state_3,/obj/item/storage/bag/ore))
 				attackby(R.module_state_3,R)
 			else
 				return

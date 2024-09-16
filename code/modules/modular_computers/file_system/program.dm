@@ -5,15 +5,20 @@
 	var/required_access = null						// Access level required to run/download the program.
 	var/requires_access_to_run = 1					// Whether the program checks for required_access when run.
 	var/requires_access_to_download = 1				// Whether the program checks for required_access when downloading.
-	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
+	// Nano Modules
+	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement nano_ui_interact.
 	var/nanomodule_path = null						// Path to nanomodule, make sure to set this if implementing new program.
+	// TGUI Modules
+	var/datum/tgui_module/TM = null					// If the program uses TguiModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
+	var/tguimodule_path = null						// Path to tguimodule, make sure to set this if implementing new program.
+	// Etc program stuff
 	var/program_state = PROGRAM_STATE_KILLED		// PROGRAM_STATE_KILLED or PROGRAM_STATE_BACKGROUND or PROGRAM_STATE_ACTIVE - specifies whether this program is running.
 	var/obj/item/modular_computer/computer			// Device that runs this program.
 	var/filedesc = "Unknown Program"				// User-friendly name of this program.
 	var/extended_desc = "N/A"						// Short description of this program's function.
 	var/program_icon_state = null					// Program-specific screen icon state
 	var/program_key_state = "standby_key"			// Program-specific keyboard icon state
-	var/program_menu_icon = "newwin"				// Icon to use for program's link in main menu
+	var/program_menu_icon = ""						// Icon to use for program's link in main menu (default handled by UI)
 	var/requires_ntnet = 0							// Set to 1 for program to require nonstop NTNet connection to run. If NTNet connection is lost program crashes.
 	var/requires_ntnet_feature = 0					// Optional, if above is set to 1 checks for specific function of NTNet (currently NTNET_SOFTWAREDOWNLOAD, NTNET_PEERTOPEER, NTNET_SYSTEMCONTROL and NTNET_COMMUNICATION)
 	var/ntnet_status = 1							// NTNet status, updated every tick by computer running this program. Don't use this for checks if NTNet works, computers do that. Use this for calculations, etc.
@@ -33,23 +38,28 @@
 
 /datum/computer_file/program/Destroy()
 	computer = null
+	holder = null
 	. = ..()
 
 /datum/computer_file/program/clone()
+	if(!clone_able && copy_cat)
+		return
 	var/datum/computer_file/program/temp = ..()
 	temp.required_access = required_access
 	temp.nanomodule_path = nanomodule_path
+	temp.tguimodule_path = tguimodule_path
 	temp.filedesc = filedesc
 	temp.program_icon_state = program_icon_state
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	temp.copy_cat = TRUE
 	return temp
 
 // Used by programs that manipulate files.
 /datum/computer_file/program/proc/get_file(var/filename)
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
 	if(!HDD && !RHDD)
 		return
 	var/datum/computer_file/data/F = HDD.find_file_by_name(filename)
@@ -63,7 +73,7 @@
 /datum/computer_file/program/proc/create_file(var/newname, var/data = "", var/file_type = /datum/computer_file/data)
 	if(!newname)
 		return
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	if(get_file(newname))
@@ -79,6 +89,11 @@
 /datum/computer_file/program/proc/update_computer_icon()
 	if(computer)
 		computer.update_icon()
+
+/datum/computer_file/program/proc/set_icon(string)
+	if(string && istext(string))
+		program_icon_state = string
+	update_computer_icon()
 
 // Attempts to create a log in global ntnet datum. Returns 1 on success, 0 on fail.
 /datum/computer_file/program/proc/generate_network_log(var/text)
@@ -134,7 +149,7 @@
 	if(!istype(user))
 		return 0
 
-	var/obj/item/weapon/card/id/I = user.GetIdCard()
+	var/obj/item/card/id/I = user.GetIdCard()
 	if(!I)
 		if(loud)
 			to_chat(user, SPAN_WARNING("RFID Error - Unable to scan ID"))
@@ -160,6 +175,10 @@
 			NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
 			if(user)
 				NM.using_access = user.GetAccess()
+		if(tguimodule_path)
+			TM = new tguimodule_path(src)
+			if(user)
+				TM.using_access = user.GetAccess()
 		if(requires_ntnet && network_destination)
 			generate_network_log("Connection opened to [network_destination].")
 		program_state = PROGRAM_STATE_ACTIVE
@@ -171,7 +190,9 @@
 	program_state = PROGRAM_STATE_KILLED
 	if(network_destination)
 		generate_network_log("Connection to [network_destination] closed.")
+	SStgui.close_uis(src)
 	QDEL_NULL(NM)
+	QDEL_NULL(TM)
 	return 1
 
 // Checks a skill of a given mob, if mob can have one.
@@ -182,21 +203,37 @@
 
 	return STAT_LEVEL_MIN
 
+/datum/computer_file/program/ui_data(mob/user)
+	var/list/data = ..()
+	
+	data += computer.get_header_data()
+
+	return data
+
+/datum/computer_file/program/ui_interact(mob/user, datum/tgui/ui)
+	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.
+		if(ui)
+			ui.close()
+		return computer.ui_interact(user)
+	if(istype(TM))
+		TM.ui_interact(user)
+		return 0
+	return 1
 
 // This is called every tick when the program is enabled. Ensure you do parent call if you override it. If parent returns 1 continue with UI initialisation.
 // It returns 0 if it can't run or if NanoModule was used instead. I suggest using NanoModules where applicable.
-/datum/computer_file/program/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/datum/computer_file/program/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.
 		if(ui)
 			ui.close()
 		return computer.ui_interact(user)
 	if(istype(NM))
-		NM.ui_interact(user, ui_key, null, force_open)
+		NM.nano_ui_interact(user, ui_key, null, force_open)
 		return 0
 	return 1
 
 // This prevents program UI from opening when the program itself is closed.
-/datum/computer_file/program/CanUseTopic(mob/user, datum/topic_state/state = GLOB.default_state)
+/datum/computer_file/program/CanUseTopic(mob/user, datum/nano_topic_state/state = GLOB.default_state)
 	if(!computer || program_state != PROGRAM_STATE_ACTIVE)
 		return STATUS_CLOSE
 	return computer.CanUseTopic(user, state)
@@ -207,6 +244,9 @@
 	if(ui_status_check)
 		return src
 	return computer.nano_host()
+
+/datum/computer_file/program/ui_host()
+	return computer.ui_host()
 
 // CONVENTIONS, READ THIS WHEN CREATING NEW PROGRAM AND OVERRIDING THIS PROC:
 // Topic calls are automagically forwarded from NanoModule this program contains.
@@ -219,12 +259,21 @@
 	if(computer)
 		return computer.Topic(href, href_list)
 
+/datum/computer_file/program/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	if(computer)
+		return computer.ui_act(action, params, ui, state)
+
 // Relays the call to nano module, if we have one
 /datum/computer_file/program/proc/check_eye(var/mob/user)
 	if(NM)
 		return NM.check_eye(user)
-	else
-		return -1
+	if(TM)
+		return TM.check_eye(user)
+	return -1
 
 /datum/computer_file/program/initial_data()
 	return computer.get_header_data()
@@ -261,7 +310,11 @@
 /datum/computer_file/program/apply_visual(mob/M)
 	if(NM)
 		NM.apply_visual(M)
+	if(TM)
+		TM.apply_visual(M)
 
 /datum/computer_file/program/remove_visual(mob/M)
 	if(NM)
 		NM.remove_visual(M)
+	if(TM)
+		TM.remove_visual(M)

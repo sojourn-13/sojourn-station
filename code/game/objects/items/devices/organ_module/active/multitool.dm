@@ -5,6 +5,7 @@
 	icon_state = "multitool"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	matter = list(MATERIAL_STEEL = 5)
+	price_tag = 535
 	var/list/items = list()
 
 /obj/item/organ_module/active/multitool/New()
@@ -16,7 +17,7 @@
 		I.canremove = FALSE
 		items += I
 
-/obj/item/organ_module/active/multitool/activate(mob/living/carbon/human/H, obj/item/organ/external/E)
+/obj/item/organ_module/active/multitool/trigger(mob/living/carbon/human/H, obj/item/organ/external/E)
 	var/target_hand = E.organ_tag == BP_L_ARM ? slot_l_hand : slot_r_hand
 	var/obj/I = H.get_active_hand()
 	if(I)

@@ -1,0 +1,141 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"b" = (
+/obj/random/junkfood/rotten/low_chance,
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"c" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/random/junk,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"d" = (
+/obj/random/junk/low_chance,
+/obj/random/scrap/dense_weighted/low_chance,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"e" = (
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"f" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"g" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"h" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"i" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/traps/wire_splicing/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"j" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/random/traps/wire_splicing/low_chance,
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"k" = (
+/obj/random/junk,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"m" = (
+/obj/structure/lattice,
+/obj/random/mob/carp/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"n" = (
+/obj/random/mob/carp/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"o" = (
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/random/traps/wire_splicing/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"p" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"A" = (
+/obj/structure/girder,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"L" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+m
+a
+a
+A
+h
+"}
+(2,1,1) = {"
+b
+f
+e
+k
+n
+"}
+(3,1,1) = {"
+c
+g
+i
+j
+o
+"}
+(4,1,1) = {"
+a
+a
+a
+a
+A
+"}
+(5,1,1) = {"
+d
+a
+m
+L
+p
+"}

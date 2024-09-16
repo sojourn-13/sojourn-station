@@ -1,6 +1,6 @@
 /mob/var/lastattacker = null
 /mob/var/lastattacked = null
-/mob/var/attack_log = list()
+/mob/var/tmp/attack_log = list()
 
 proc/log_and_message_admins(var/message as text, var/mob/user = usr, var/turf/location)
 	var/turf/T = location ? location : (user ? get_turf(user) : null)
@@ -27,7 +27,7 @@ proc/admin_attack_log(var/mob/attacker, var/mob/victim, var/attacker_message, va
 	if(attacker)
 		attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>[key_name(victim)] - [attacker_message]</font>")
 
-	msg_admin_attack("[key_name(attacker)] [admin_message] [key_name(victim)] (INTENT: [attacker? uppertext(attacker.a_intent) : "N/A"]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[attacker.x];Y=[attacker.y];Z=[attacker.z]'>JMP</a>)")
+	msg_admin_attack("[key_name(attacker)] [admin_message] [key_name(victim)] (INTENT: [attacker? uppertext(attacker.a_intent) : "N/A"]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[attacker? attacker.x : "N/A"];Y=[attacker? attacker.y : "N/A"];Z=[attacker? attacker.z : "N/A"]'>JMP</a>)")
 
 proc/admin_attacker_log_many_victims(var/mob/attacker, var/list/mob/victims, var/attacker_message, var/victim_message, var/admin_message)
 	if(!victims || !victims.len)
@@ -36,13 +36,13 @@ proc/admin_attacker_log_many_victims(var/mob/attacker, var/list/mob/victims, var
 	for(var/mob/victim in victims)
 		admin_attack_log(attacker, victim, attacker_message, victim_message, admin_message)
 
-proc/admin_inject_log(mob/attacker, mob/victim, obj/item/weapon, reagents, amount_transferred, violent=0)
+proc/admin_inject_log(mob/attacker, mob/victim, obj/item, reagents, amount_transferred, violent=0)
 	if(violent)
 		violent = "violently "
 	else
 		violent = ""
 	admin_attack_log(attacker,
 	                 victim,
-	                 "used \the [weapon] to [violent]inject - [reagents] - [amount_transferred]u transferred",
-	                 "was [violent]injected with \the [weapon] - [reagents] - [amount_transferred]u transferred",
-	                 "used \the [weapon] to [violent]inject [reagents] ([amount_transferred]u transferred) into")
+	                 "used \the [item] to [violent]inject - [reagents] - [amount_transferred]u transferred",
+	                 "was [violent]injected with \the [item] - [reagents] - [amount_transferred]u transferred",
+	                 "used \the [item] to [violent]inject [reagents] ([amount_transferred]u transferred) into")

@@ -24,12 +24,12 @@ var/global/list/ore_data = list()
 		display_name = name
 
 /ore/uranium
-	name = MATERIAL_URANIUM
+	name = ORE_URANIUM
 	display_name = "pitchblende"
 	smelts_to = MATERIAL_URANIUM
 	result_amount = 10
 	spread_chance = 10
-	ore = /obj/item/weapon/ore/uranium
+	ore = /obj/item/stack/ore/uranium
 	scan_icon = "mineral_uncommon"
 	xarch_ages = list(
 		"thousand" = 999,
@@ -38,40 +38,41 @@ var/global/list/ore_data = list()
 	xarch_source_mineral = "potassium"
 
 /ore/hematite
-	name = "hematite"
+	name = ORE_IRON
 	display_name = "hematite"
-	smelts_to = "iron"
-	alloy = 1
+	smelts_to = MATERIAL_IRON
+	alloy = TRUE
 	result_amount = 10
 	spread_chance = 25
-	ore = /obj/item/weapon/ore/iron
+	ore = /obj/item/stack/ore/iron
 	scan_icon = "mineral_common"
 
 /ore/coal
-	name = "carbon"
+	name = ORE_CARBON
 	display_name = "raw carbon"
 	smelts_to = MATERIAL_PLASTIC
-	alloy = 1
+	alloy = TRUE
 	result_amount = 10
 	spread_chance = 25
-	ore = /obj/item/weapon/ore/coal
+	ore = /obj/item/stack/ore/coal
 	scan_icon = "mineral_common"
 
 /ore/glass
-	name = "sand"
+	name = ORE_SAND
 	display_name = "sand"
 	smelts_to = MATERIAL_GLASS
 	compresses_to = MATERIAL_SANDSTONE
+	alloy = TRUE
 
 /ore/plasma
-	name = "plasma"
+	name = ORE_PLASMA
 	display_name = "plasma crystals"
-	compresses_to = "plasma"
-	alloy = 1
+	compresses_to = MATERIAL_PLASMA
+	alloy = TRUE
 	//smelts_to = something that explodes violently on the conveyor, huhuhuhu
 	result_amount = 8
 	spread_chance = 25
-	ore = /obj/item/weapon/ore/plasma
+	ore = /obj/item/stack/ore/plasma
 	scan_icon = "mineral_uncommon"
 	xarch_ages = list(
 		"thousand" = 999,
@@ -82,21 +83,21 @@ var/global/list/ore_data = list()
 	xarch_source_mineral = "plasma"
 
 /ore/silver
-	name = "silver"
+	name = ORE_SILVER
 	display_name = "native silver"
 	smelts_to = MATERIAL_SILVER
 	result_amount = 8
 	spread_chance = 10
-	ore = /obj/item/weapon/ore/silver
+	ore = /obj/item/stack/ore/silver
 	scan_icon = "mineral_uncommon"
 
 /ore/gold
 	smelts_to = MATERIAL_GOLD
-	name = "gold"
+	name = ORE_GOLD
 	display_name = "native gold"
 	result_amount = 8
 	spread_chance = 10
-	ore = /obj/item/weapon/ore/gold
+	ore = /obj/item/stack/ore/gold
 	scan_icon = "mineral_uncommon"
 	xarch_ages = list(
 		"thousand" = 999,
@@ -106,29 +107,32 @@ var/global/list/ore_data = list()
 		)
 
 /ore/diamond
-	name = "diamond"
+	name = ORE_DIAMOND
 	display_name = "diamond"
 	compresses_to = MATERIAL_DIAMOND
 	result_amount = 5
 	spread_chance = 10
-	ore = /obj/item/weapon/ore/diamond
+	ore = /obj/item/stack/ore/diamond
 	scan_icon = "mineral_rare"
 	xarch_source_mineral = "nitrogen"
 
 /ore/platinum
-	name = "platinum"
+	name = ORE_PLATINUM
 	display_name = "raw platinum"
 	smelts_to = MATERIAL_PLATINUM
-	compresses_to = "osmium"
+	compresses_to = MATERIAL_OSMIUM
 	alloy = 1
 	result_amount = 5
 	spread_chance = 10
-	ore = /obj/item/weapon/ore/osmium
+	ore = /obj/item/stack/ore/osmium
 	scan_icon = "mineral_rare"
 
 /ore/hydrogen
-	name = "mhydrogen"
+	name = ORE_HYDROGEN
 	display_name = "metallic hydrogen"
-	smelts_to = "tritium"
-	compresses_to = "mhydrogen"
+	smelts_to = MATERIAL_TRITIUM
+	compresses_to = MATERIAL_MHYDROGEN
 	scan_icon = "mineral_rare"
+	spread_chance = 5
+	result_amount = 5
+	ore = /obj/item/stack/ore/hydrogen

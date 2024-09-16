@@ -11,7 +11,7 @@
 	icon_state = "smes"
 	density = 1
 	anchored = 1
-	use_power = 0
+	use_power = NO_POWER_USE
 
 	var/capacity = 5e6 // maximum charge
 	var/charge = 1e6 // actual charge
@@ -49,6 +49,14 @@
 	var/building_terminal = 0 //Suggestions about how to avoid clickspam building several terminals accepted!
 	var/obj/machinery/power/terminal/terminal = null
 	var/should_be_mapped = 0 // If this is set to 0 it will send out warning on New()
+	var/skill_check = STAT_LEVEL_ADEPT
+
+/obj/machinery/power/smes/dummysimple
+	name = "simple power storage unit"
+	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. \
+	It goes as far as to have big red arrows pointing to the switches, \
+	and indentations on the controles to allow even the blind or unable to read to set this SMES.."
+	skill_check = -30 //So legit anyone unless exstream stat reduction
 
 /obj/machinery/power/smes/drain_power(var/drain_check, var/surge, var/amount = 0)
 
@@ -63,6 +71,7 @@
 /obj/machinery/power/smes/New()
 	..()
 	spawn(5)
+		GLOB.smes_list += src
 		if(!powernet)
 			connect_to_network()
 
@@ -88,6 +97,10 @@
 			warning("Non-buildable or Non-magical SMES at [src.x]X [src.y]Y [src.z]Z")
 
 	return
+
+/obj/machinery/power/smes/Destroy()
+	GLOB.smes_list -= src
+	..()
 
 /obj/machinery/power/smes/add_avail(var/amount)
 	if(..(amount))
@@ -159,6 +172,7 @@
 
 	//inputting
 	if(input_attempt && (!input_pulsed && !input_cut))
+		input_available = terminal.surplus()
 		target_load = min((capacity-charge)/SMESRATE, input_level)	// Amount we will request from the powernet.
 		if(terminal && terminal.powernet)
 			terminal.powernet.smes_demand += target_load
@@ -243,10 +257,100 @@
 
 /obj/machinery/power/smes/attack_hand(mob/user)
 	add_fingerprint(user)
-	ui_interact(user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
+	ui_interact(user) //REROUTED TO TGUI
 
+/obj/machinery/power/smes/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Smes", name)
+		ui.open()
+
+/obj/machinery/power/smes/ui_data()
+	var/list/data = list(
+		"capacity" = capacity,
+		"capacityPercent" = round(100*charge/capacity, 0.1),
+		"charge" = charge,
+		"inputAttempt" = input_attempt,
+		"inputting" = inputting,
+		"inputLevel" = input_level,
+		//"inputLevel_text" = display_power(input_level),
+		"inputLevelMax" = input_level_max,
+		"inputAvailable" = input_available,
+		"outputAttempt" = output_attempt,
+		"outputting" = outputting,
+		"outputLevel" = output_level,
+		//"outputLevel_text" = display_power(output_level),
+		"outputLevelMax" = output_level_max,
+		"outputUsed" = output_used,
+	)
+	return data
+
+/obj/machinery/power/smes/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("tryinput")
+			input_attempt = !input_attempt
+			log_smes(usr)
+			update_icon()
+			. = TRUE
+		if("tryoutput")
+			output_attempt = !output_attempt
+			log_smes(usr)
+			update_icon()
+			. = TRUE
+		if("input")
+			var/target = params["target"]
+			var/adjust = text2num(params["adjust"])
+			if(target == "min")
+				target = 0
+				. = TRUE
+			else if(target == "max")
+				target = input_level_max
+				. = TRUE
+			else if(adjust)
+				target = input_level + adjust
+				. = TRUE
+			else if(text2num(target) != null)
+				target = text2num(target)
+				. = TRUE
+			if(.)
+				input_level = clamp(target, 0, input_level_max)
+				log_smes(usr)
+		if("output")
+			var/target = params["target"]
+			var/adjust = text2num(params["adjust"])
+			if(target == "min")
+				target = 0
+				. = TRUE
+			else if(target == "max")
+				target = output_level_max
+				. = TRUE
+			else if(adjust)
+				target = output_level + adjust
+				. = TRUE
+			else if(text2num(target) != null)
+				target = text2num(target)
+				. = TRUE
+			if(.)
+				output_level = clamp(target, 0, output_level_max)
+				log_smes(usr)
+
+/obj/machinery/power/smes/proc/log_smes(mob/user)
+	investigate_log("Input/Output: [input_level]/[output_level] | Charge: [charge] | Output-mode: [output_attempt?"ON":"OFF"] | Input-mode: [input_attempt?"AUTO":"OFF"] by [user ? key_name(user) : "outside forces"]", "singulo")
+
+/obj/machinery/power/smes/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, skill_check))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
 
 /obj/machinery/power/smes/attackby(var/obj/item/I, var/mob/user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
 	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING,QUALITY_WIRE_CUTTING,QUALITY_PRYING,QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
@@ -305,81 +409,8 @@
 
 	return tool_type || 1
 
-/obj/machinery/power/smes/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-
-	if(stat & BROKEN)
-		return
-
-	// this is the data which will be sent to the ui
-	var/data[0]
-	data["nameTag"] = name_tag
-	data["storedCapacity"] = round(100.0*charge/capacity, 0.1)
-	data["charging"] = inputting
-	data["chargeMode"] = input_attempt
-	data["chargeLevel"] = input_level
-	data["chargeMax"] = input_level_max
-	data["outputOnline"] = output_attempt
-	data["outputLevel"] = output_level
-	data["outputMax"] = output_level_max
-	data["outputLoad"] = round(output_used)
-	data["failTime"] = failure_timer * 2
-	data["outputting"] = outputting
-
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-        // for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "smes.tmpl", "SMES Unit", 540, 380)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
-
 /obj/machinery/power/smes/proc/Percentage()
 	return round(100.0*charge/capacity, 0.1)
-
-/obj/machinery/power/smes/Topic(href, href_list)
-	if(..())
-		return 1
-
-	if( href_list["cmode"] )
-		inputting(!input_attempt)
-		update_icon()
-
-	else if( href_list["online"] )
-		outputting(!output_attempt)
-		update_icon()
-	else if( href_list["reboot"] )
-		failure_timer = 0
-		update_icon()
-	else if( href_list["input"] )
-		switch( href_list["input"] )
-			if("min")
-				input_level = 0
-			if("max")
-				input_level = input_level_max
-			if("set")
-				input_level = input(usr, "Enter new input level (0-[input_level_max])", "SMES Input Power Control", input_level) as num
-		input_level = max(0, min(input_level_max, input_level))	// clamp to range
-
-	else if( href_list["output"] )
-		switch( href_list["output"] )
-			if("min")
-				output_level = 0
-			if("max")
-				output_level = output_level_max
-			if("set")
-				output_level = input(usr, "Enter new output level (0-[output_level_max])", "SMES Output Power Control", output_level) as num
-		output_level = max(0, min(output_level_max, output_level))	// clamp to range
-
-	investigate_log("input/output; <font color='[input_level>output_level?"green":"red"][input_level]/[output_level]</font> | Output-mode: [output_attempt?"<font color='green'>on</font>":"<font color='red'>off</font>"] | Input-mode: [input_attempt?"<font color='green'>auto</font>":"<font color='red'>off</font>"] by [usr.key]","singulo")
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
-
-	return 1
 
 /obj/machinery/power/smes/proc/energy_fail(var/duration)
 	failure_timer = max(failure_timer, duration)
@@ -394,7 +425,7 @@
 			smoke.set_up(3, 0, src.loc)
 			smoke.attach(src)
 			smoke.start()
-			explosion(src.loc, -1, 0, 1, 3, 1, 0)
+			explosion(src.loc, 0, 0, 1, 3, 1, 0)
 			qdel(src)
 			return
 		else if(prob(15)) //Power drain
@@ -483,6 +514,7 @@
 	capacity = 5000000
 	output_level = 250000
 	should_be_mapped = 1
+	skill_check = 300 //Only mken, or guild can use this I guess
 
 /obj/machinery/power/smes/magical/Process()
 	charge = 5000000

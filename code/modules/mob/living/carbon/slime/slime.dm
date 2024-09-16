@@ -16,6 +16,7 @@
 
 	see_in_dark = 8
 	update_slimes = 0
+	inherent_mutations = list(MUTATION_SLIME_BONE, MUTATION_BOTTOMLESS_BELLY, MUTATION_RAND_UNSTABLE)
 
 	// canstun and canweaken don't affect slimes because they ignore stun and weakened variables
 	// for the sake of cleanliness, though, here they are.
@@ -62,7 +63,7 @@
 
 /mob/living/carbon/slime/New(var/location, var/colour="grey")
 
-	verbs += /mob/living/proc/ventcrawl
+	add_verb(src, /mob/living/proc/ventcrawl)
 
 	src.colour = colour
 	number = rand(1, 1000)
@@ -151,34 +152,34 @@
 /mob/living/carbon/slime/allow_spacemove()
 	return -1
 
-/mob/living/carbon/slime/Stat()
+/mob/living/carbon/slime/get_status_tab_items()
 	. = ..()
-
-	statpanel("Status")
-	stat(null, "Health: [round((health / maxHealth) * 100)]%")
-	stat(null, "Intent: [a_intent]")
-
-	if (client.statpanel == "Status")
-		stat(null, "Nutrition: [nutrition]/[get_max_nutrition()]")
-		if(amount_grown >= 10)
-			if(is_adult)
-				stat(null, "You can reproduce!")
-			else
-				stat(null, "You can evolve!")
-
-		stat(null,"Power Level: [powerlevel]")
+	. += "Health: [round((health / maxHealth) * 100)]%"
+	. += "Intent: [a_intent]"
+	. += "Nutrition: [nutrition]/[get_max_nutrition()]"
+	if(amount_grown >= 10)
+		if(is_adult)
+			. += "You can reproduce!"
+		else
+			. += "You can evolve!"
+	. += "Power Level: [powerlevel]"
 
 /mob/living/carbon/slime/adjustFireLoss(amount)
 	..(-abs(amount)) // Heals them
+	handle_regular_status_updates()
 	return
 
 /mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
-	attacked += 10
+	if (!(Proj.testing))
+		attacked += 10
 	..(Proj)
+	if (!(Proj.testing))
+		handle_regular_status_updates()
 	return 0
 
 /mob/living/carbon/slime/emp_act(severity)
 	powerlevel = 0 // oh no, the power!
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/ex_act(severity)
@@ -202,7 +203,7 @@
 
 	adjustBruteLoss(b_loss)
 	adjustFireLoss(f_loss)
-
+	handle_regular_status_updates()
 	updatehealth()
 
 
@@ -215,7 +216,7 @@
 /mob/living/carbon/slime/attack_hand(mob/living/carbon/human/M as mob)
 
 	..()
-
+	handle_regular_status_updates()
 	if(Victim)
 		if(Victim == M)
 			if(prob(60))
@@ -273,13 +274,13 @@
 		if (I_GRAB)
 			if (M == src || anchored)
 				return
-			var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+			var/obj/item/grab/G = new /obj/item/grab(M, src)
 
 			M.put_in_active_hand(G)
 
 			G.synch()
 
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
@@ -317,7 +318,7 @@
 /mob/living/carbon/slime/attackby(obj/item/W, mob/user)
 	if(W.force > 0)
 		attacked += 10
-		if(prob(25))
+		if(prob(25) && !user.stats?.getPerk(PERK_SI_SCI))
 			to_chat(user, SPAN_DANGER("[W] passes right through [src]!"))
 			return
 		if(Discipline && prob(50)) // wow, buddy, why am I getting attacked??
@@ -371,6 +372,7 @@
 								if(user)
 									step_away(src, user)
 							canmove = 1
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/restrained()
@@ -390,6 +392,7 @@ mob/living/carbon/slime/toggle_throw_mode()
 			powerlevel = 10
 			adjustToxLoss(-10)
 	nutrition = max(nutrition, get_max_nutrition())
+	handle_regular_status_updates()
 
 /mob/living/carbon/slime/cannot_use_vents()
 	if(Victim)

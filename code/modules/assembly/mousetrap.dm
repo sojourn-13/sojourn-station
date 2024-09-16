@@ -4,7 +4,8 @@
 	icon_state = "mousetrap"
 	origin_tech = list(TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
-	var/armed = 0
+	var/armed = FALSE
+	var/prob_catch = 100
 
 
 	examine(mob/user)
@@ -37,14 +38,14 @@
 				if("feet")
 					zone = pick(BP_L_LEG , BP_R_LEG)
 					if(!H.shoes)
-						H.apply_effect(500/(target.mob_size), AGONY)//Halloss instead of instant knockdown
+						H.adjustHalLoss(500/(target.mob_size))//Halloss instead of instant knockdown
 						//Mainly for the benefit of giant monsters like vaurca breeders
 				if(BP_L_ARM , BP_R_ARM)
 					zone = type
 					if(!H.gloves)
-						H.apply_effect(250/(target.mob_size), AGONY)
+						H.adjustHalLoss(250/(target.mob_size))
 		if (!isrobot(target))
-			target.damage_through_armor(rand(15,30), AGONY, zone, ARMOR_MELEE, used_weapon = src)
+			target.damage_through_armor(rand(15,30), HALLOSS, zone, ARMOR_MELEE, used_weapon = src)
 			target.damage_through_armor(rand(8,15), BRUTE, zone, ARMOR_MELEE, used_weapon = src)
 
 	playsound(target.loc, 'sound/effects/snap.ogg', 50, 1)
@@ -58,7 +59,7 @@
 	if(!armed)
 		to_chat(user, "<span class='notice'>You arm [src].</span>")
 	else
-		if((CLUMSY in user.mutations)&& prob(50))
+		if((CLUMSY in user.mutations)&& prob(15))
 			var/which_hand = "l_hand"
 			if(!user.hand)
 				which_hand = "r_hand"
@@ -74,7 +75,7 @@
 
 /obj/item/device/assembly/mousetrap/attack_hand(mob/living/user as mob)
 	if(armed)
-		if((CLUMSY in user.mutations) && prob(50))
+		if((CLUMSY in user.mutations) && prob(15))
 			var/which_hand = "l_hand"
 			if(!user.hand)
 				which_hand = "r_hand"

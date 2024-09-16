@@ -1,4 +1,3 @@
-
 /obj/item/device/scanner/mass_spectrometer
 	name = "mass spectrometer"
 	desc = "A hand-held mass spectrometer which identifies trace chemicals in a blood sample."
@@ -16,13 +15,13 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/mass_spectrometer/is_valid_scan_target(atom/O)
-	if(!usr.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 20)) //Takes 15 bio so 20 cog
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
 	if(!O.reagents || !O.reagents.total_volume)
 		return FALSE
-	return (O.is_open_container()) || istype(O, /obj/item/weapon/reagent_containers/syringe)
+	return (O.is_open_container()) || istype(O, /obj/item/reagent_containers/syringe)
 
 /obj/item/device/scanner/mass_spectrometer/scan(atom/A, mob/user)
 	if(A != src)
@@ -44,9 +43,7 @@
 
 /obj/item/device/scanner/mass_spectrometer/New()
 	..()
-	var/datum/reagents/R = new/datum/reagents(5)
-	reagents = R
-	R.my_atom = src
+	create_reagents(5)
 
 /obj/item/device/scanner/mass_spectrometer/on_reagent_change()
 	if(reagents.total_volume)
@@ -63,7 +60,6 @@
 			if(R.id != "blood")
 				reagents.clear_reagents()
 				return SPAN_WARNING("The sample was contaminated! Please insert another sample")
-
 			else
 				blood_traces = params2list(R.data["trace_chem"])
 				break

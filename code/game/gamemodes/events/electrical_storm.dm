@@ -1,14 +1,20 @@
+/*
+
+Just not fun
+
 /datum/storyevent/electrical_storm
 	id = "elec_storm"
 	name = "Electrical Storm"
 
 
 	event_type = /datum/event/electrical_storm
-	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE,
+	event_pools = list(//EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE, bumped to moderate as this is annoying
 	EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 
-	tags = list(TAG_SCARY, TAG_TARGETED, TAG_NEGATIVE)
+	ocurrences_max = 2 //Can only do this twice as its more annoying then fun
 
+	tags = list(TAG_SCARY, TAG_TARGETED, TAG_NEGATIVE)
+*/
 ////////////////////////////////////////////////
 
 /datum/event/electrical_storm
@@ -37,7 +43,7 @@
 		var/list/apcs = list()
 		var/list/epicentreList = list()
 
-		for(var/obj/machinery/power/apc/apc in SSmachines.machinery)
+		for(var/obj/machinery/power/apc/apc in GLOB.apc_list)
 			if(is_valid_apc(apc))
 				// Greatly reduce the chance for APCs in maintenance areas to be selected
 				var/area/A = get_area(apc)
@@ -62,7 +68,7 @@
 					apc.overload_lighting()
 
 	else
-		for(var/obj/machinery/power/apc/apc in SSmachines.machinery)
+		for(var/obj/machinery/power/apc/apc in GLOB.apc_list)
 			apc.overload_lighting()
 
 	return

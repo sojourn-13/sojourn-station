@@ -12,7 +12,7 @@
 	var/blood_mask = 'icons/mob/human_races/masks/blood_human.dmi'
 
 	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	var/gibber_type = /obj/effect/gibspawner/human
 	var/single_gib_type = /obj/effect/decal/cleanable/blood/gibs
 	var/remains_type = /obj/item/remains/xeno
@@ -23,8 +23,6 @@
 	var/death_sound
 	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
 	var/knockout_message = "has been knocked unconscious!"
-	var/halloss_message = "slumps to the ground, too weak to continue fighting."
-	var/halloss_message_self = "You're in too much pain to keep going..."
 
 	//Up/Downgrades
 	var/primitive_form = "Monkey"     // Lesser form, if any (ie. monkey for humans)
@@ -54,8 +52,6 @@
 	At runtime, each variant will seek the base variant. If the base variant it is given has its own variant
 */
 
-	var/virus_immune = FALSE
-
 	var/icon_fallback = FORM_HUMAN //Set this to fall back on another spritesheet if this one doesn't have the icon_state needed. Use form defines, it'll pull from the global list.
 	var/backpack_icon = 		'icons/inventory/back/mob.dmi'
 	var/uniform_icon = 			'icons/inventory/uniform/mob.dmi'
@@ -84,7 +80,7 @@
 		return TRUE
 	if(!variantof || variantof == name || name == start_form)
 		return FALSE
-	return GLOB.all_species_form_list[variantof]?.has_ancestor(ancestor_form, start_form ? start_form : name)
+	return GLOB.all_species_form_list[variantof]?:has_ancestor(ancestor_form, start_form ? start_form : name)
 
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I

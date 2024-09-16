@@ -16,8 +16,10 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "e" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
+/obj/machinery/conveyor_switch/oneway{
+	id = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "f" = (
 /turf/simulated/floor/tiled/derelict,
@@ -35,6 +37,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "j" = (
@@ -55,6 +58,7 @@
 /area/crawler)
 "m" = (
 /obj/structure/bed/chair/office/dark,
+/obj/random/material,
 /turf/simulated/floor/plating,
 /area/crawler)
 "n" = (
@@ -63,14 +67,14 @@
 	},
 /obj/structure/railing/grey,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/salvageable/console_os{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
-/area/crawler)
-"p" = (
-/turf/simulated/floor/bluegrid,
 /area/crawler)
 "q" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -92,6 +96,7 @@
 /obj/machinery/conveyor/northeast/ccw{
 	id = 1
 	},
+/obj/random/material_rare,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "u" = (
@@ -99,7 +104,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "v" = (
-/obj/machinery/light/floor,
 /turf/simulated/floor/plating,
 /area/crawler)
 "w" = (
@@ -110,33 +114,24 @@
 /area/crawler)
 "x" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/conveyor_switch/oneway{
-	id = 1
-	},
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "y" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
+/obj/random/material,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"z" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
 "A" = (
-/obj/structure/salvageable/autolathe,
+/obj/structure/salvageable/autolathe_os,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "B" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
+/obj/random/material_resources,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "C" = (
@@ -155,10 +150,6 @@
 /obj/structure/plushie/beepsky,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
-"F" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "G" = (
 /obj/machinery/conveyor/northwest{
 	id = 1
@@ -176,10 +167,12 @@
 /obj/machinery/conveyor/southwest{
 	id = 1
 	},
+/obj/random/material_rare,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "J" = (
 /obj/structure/table/onestar,
+/obj/random/structures/os,
 /turf/simulated/floor/plating,
 /area/crawler)
 "K" = (
@@ -190,15 +183,39 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "L" = (
 /obj/structure/table/onestar,
-/obj/machinery/light/floor,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
 /turf/simulated/floor/plating,
 /area/crawler)
 "M" = (
 /obj/random/mob/roomba,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"Q" = (
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"R" = (
+/obj/random/material,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"S" = (
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"T" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"V" = (
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 
@@ -206,9 +223,9 @@
 a
 a
 a
-p
-p
-z
+o
+o
+o
 a
 a
 a
@@ -220,19 +237,19 @@ d
 q
 q
 q
-F
-F
+T
+T
 a
 "}
 (3,1,1) = {"
 a
-e
+f
 f
 q
 M
 q
 f
-e
+f
 a
 "}
 (4,1,1) = {"
@@ -241,15 +258,15 @@ d
 d
 M
 q
-q
-F
-F
+Q
+T
+T
 a
 "}
 (5,1,1) = {"
 b
 f
-f
+S
 r
 M
 D
@@ -273,7 +290,7 @@ c
 a
 j
 t
-a
+q
 C
 G
 a
@@ -284,8 +301,8 @@ c
 a
 k
 a
-a
-a
+q
+e
 H
 a
 c
@@ -318,7 +335,7 @@ g
 m
 q
 q
-q
+R
 J
 a
 a
@@ -327,7 +344,7 @@ a
 a
 h
 v
-q
+V
 A
 E
 L

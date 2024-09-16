@@ -3,7 +3,7 @@
 	filedesc = "Revelation"
 	program_icon_state = "hostile"
 	program_key_state = "security_key"
-	program_menu_icon = "home"
+	program_menu_icon = "virus"
 	extended_desc = "This virus can destroy the hard drive of a system it is executed on. It may be obfuscated to look like another non-malicious program. Once armed, it will destroy the system upon the next execution."
 	size = 13
 	requires_ntnet = 0
@@ -34,13 +34,14 @@
 	s.start()
 
 	if(computer.hard_drive)
-		qdel(computer.hard_drive)
+		computer.hard_drive.damage = 100
+		computer.hard_drive.stored_files.Cut()
 
 	if(computer.cell && prob(25))
-		qdel(computer.cell)
+		computer.cell.charge = 0
 
 	if(computer.tesla_link && prob(50))
-		qdel(computer.tesla_link)
+		computer.tesla_link.damage = 100
 
 /datum/computer_file/program/revelation/Topic(href, href_list)
 	if(..())
@@ -69,7 +70,7 @@
 /datum/nano_module/program/revelation
 	name = "Revelation Virus"
 
-/datum/nano_module/program/revelation/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/revelation/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/list/data = list()
 	var/datum/computer_file/program/revelation/PRG = program
 	if(!istype(PRG))

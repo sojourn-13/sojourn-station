@@ -1,4 +1,4 @@
-/obj/item/weapon/grenade
+/obj/item/grenade
 	name = "grenade"
 	desc = "A hand held grenade, with an adjustable timer."
 	w_class = ITEM_SIZE_SMALL
@@ -13,10 +13,11 @@
 	var/det_time = 40
 	var/loadable = TRUE
 	var/variance = 0 //How much the fuse time varies up or down. Punishes cooking with makeshift nades, proper ones should have 0
+	price_tag = 300
 
-/obj/item/weapon/grenade/proc/clown_check(var/mob/living/user)
-	if((CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("Huh? How does this thing work?"))
+/obj/item/grenade/proc/clown_check(var/mob/living/user)
+	if((CLUMSY in user.mutations) && prob(10))
+		to_chat(user, SPAN_WARNING("Huh? ... HELL, I PRIMED THE GRENADE!"))
 
 		activate(user)
 		add_fingerprint(user)
@@ -25,7 +26,7 @@
 		return 0
 	return 1
 
-/obj/item/weapon/grenade/examine(mob/user)
+/obj/item/grenade/examine(mob/user)
 	if(..(user, 0))
 		if(det_time > 1)
 			to_chat(user, "The timer is set to [det_time/10] seconds.")
@@ -35,7 +36,7 @@
 		to_chat(user, "\The [src] is set for instant detonation.")
 
 
-/obj/item/weapon/grenade/attack_self(mob/user as mob)
+/obj/item/grenade/attack_self(mob/user as mob)
 	if(!active)
 		if(clown_check(user))
 			to_chat(user, SPAN_WARNING("You prime \the [name]! [det_time/10] seconds!"))
@@ -48,7 +49,7 @@
 	return
 
 
-/obj/item/weapon/grenade/proc/activate(mob/user as mob)
+/obj/item/grenade/proc/activate(mob/user as mob)
 	if(active)
 		return
 
@@ -59,29 +60,27 @@
 	icon_state = initial(icon_state) + "_active"
 	active = 1
 	playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+	update_icon()
 
 	if(variance)
 		det_time *= RAND_DECIMAL(1-variance, 1+variance)
 
 	spawn(det_time)
-		prime()
+		prime(user)
 		return
 
 
-/obj/item/weapon/grenade/proc/prime()
+/obj/item/grenade/proc/prime(mob/user)
 	var/turf/T = get_turf(src)
-	if(T)
-		T.hotspot_expose(700,125)
+	T.hotspot_expose(700,125)
+	user.hud_used.updatePlaneMasters(user)
 
 
-/obj/item/weapon/grenade/attackby(obj/item/I, mob/user as mob)
+/obj/item/grenade/attackby(obj/item/I, mob/user as mob)
 	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
 			switch(det_time)
 				if (1)
-					det_time = 10
-					to_chat(user, SPAN_NOTICE("You set the [name] for 1 second detonation time."))
-				if (10)
 					det_time = 30
 					to_chat(user, SPAN_NOTICE("You set the [name] for 3 second detonation time."))
 				if (30)
@@ -91,10 +90,5 @@
 					det_time = 1
 					to_chat(user, SPAN_NOTICE("You set the [name] for instant detonation."))
 			add_fingerprint(user)
-	..()
-	return
-
-/obj/item/weapon/grenade/attack_hand()
-	walk(src, null, null)
 	..()
 	return

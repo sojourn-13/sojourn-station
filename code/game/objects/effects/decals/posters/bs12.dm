@@ -263,3 +263,8 @@
 	icon_state="bsposter58"
 	name = "space carp information poster"
 	desc = "This poster showcases an old spacer saying on the dangers of migrant space carp."
+
+/datum/poster/gilld_chese
+	icon_state = "gilld_chese"
+	name = "gilld chese"
+	desc = "This is a poster of a small cat being fed a Deluxe Toasted Sandwich, one of the Artificers Guild's best culinary innovations on the use of Petrol Pumps."

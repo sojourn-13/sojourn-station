@@ -10,42 +10,29 @@
 	var/account_number = 0
 	var/account_pin
 	var/account_initial_balance = 3500	//How much money this account starts off with
+	var/list/jobs_in_department = list()
+
+	// With external, this is the name of an organisation
+	// Adding a funding source makes the game pay them out of thin air.
+	// Adding in a department flag (see sojourn-station/code/__DEFINES/jobs.dm) will make it draw form said account to wire funds for payment of wages.
+	// This is takes form the source budget_bage + wages per person
+	var/funding_source
+
+	// Budget for misc department expenses, paid regardless of it being manned or not
+	var/budget_base = 0
+
+	// Budget for crew salaries. Summed up initial wages of department's personnel
+	var/budget_personnel = 0
 
 
+	// How much account failed to pay to employees. Used for emails
+	var/total_debt = 0
 
-	//Account Funding
-	/*
-		Every payday, department accounts recieve money.
-		Part of this is their budget, it stays in the account and is to be used for department purchases
-		Most of it is wages, that are immediately paid onwards to individual crewmembers/
-	*/
-	var/account_budget = 2500	//How much money is paid into this account and kept, every payday
-
-	//Must be one of the FUNDING_XXX defines in __defines/economy.dm
-	var/funding_type = FUNDING_INTERNAL
-
-	//Where the money for wages and budget actually comes from. With internal, this is a department account ID
-	//With external, this is the name of an organisation
-	var/funding_source = DEPARTMENT_COMMAND
-
-	//This is a key value list of datacore records and their total owed wage
-	//When payday comes, accounts in the department are added here, and removed once the balance is paid off
-	//They are not removed until they are paid, so multiple paydays could rollover and stack up if unpaid
-	var/list/pending_wages
-
-	// The total of the values in the above wage list. Just cached for convenience
-	var/pending_wage_total = 0
-
-	//Increased by account_budget every payday, reset to zero when paid, works like above
-	var/pending_budget_total = 0
-
-
-//Populates the pending wage total
-/datum/department/proc/sum_wages()
-	pending_wage_total = 0
-	for (var/a in pending_wages)
-		pending_wage_total += pending_wages[a]
-
+/datum/department/proc/get_total_budget()
+	if(funding_source)
+		return budget_base + budget_personnel
+	else
+		return FALSE
 
 /*************
 	Command
@@ -61,30 +48,41 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 2000000
-	funding_type = FUNDING_NONE
-
+	account_initial_balance = 57800 //50k for emergencies, 7800 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
+	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
 
 /*************
 	Retainers
 **************/
-//These departments are paid out of ship funding
+//These departments are paid out of colony funding
 /datum/department/ironhammer
-	name = "Marshal and Blackshield Division"
+	name = "Nadezhda Marshals"
 	id = DEPARTMENT_SECURITY
-	account_initial_balance = 5000
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 25000 //Required to run a full roster with nepotism and almost 4k for expenses.
+	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/inspector","/datum/job/officer","/datum/job/officerjr")
+
+/datum/department/blackshield
+	name = "Blackshield Division"
+	id = DEPARTMENT_BLACKSHIELD
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 21200 //Required to run full roster with nepotism and basically nothing else.
+	jobs_in_department = list("/datum/job/smc","/datum/job/serg","/datum/job/medspec","/datum/job/trooper","/datum/job/cadet")
 
 /datum/department/technomancers
-	name = "Artificier's Guild"
+	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
+	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer","/datum/job/apprentice")
+
 
 /datum/department/civilian
 	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
-	account_budget = 0
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
-
+	jobs_in_department = list("/datum/job/clubmanager","/datum/job/clubworker","/datum/job/hydro","/datum/job/artist","/datum/job/janitor")
 
 /******************
 	Benefactors
@@ -93,23 +91,23 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	funding_type = FUNDING_EXTERNAL
-	funding_source = "Soteria Institution."
+	//30225 in 5 hours with full crew + nepotism
+	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
+	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist","/datum/job/medstudent")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_budget = 5000 //For buying materials and components and things of scientific value
-	funding_type = FUNDING_EXTERNAL
-	funding_source = "Soteria Institution."
+	//24375 in 5 hours with full crew + nepotism
+	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
+	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	funding_type = FUNDING_EXTERNAL
-	funding_source = "Church of Absolute"
-
-
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
+	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
 	Independant
@@ -120,15 +118,133 @@
 	id = DEPARTMENT_LSS
 
 	/*
-		The LSS account represents the holdings of the local branch, and CEO.
-		He recieves no funding, infact later he will pay guild fees out of his earnings
+		The LSS account represents the holdings of the local branch, and SOM.
 	*/
-	account_initial_balance = 7500
-	funding_type = FUNDING_NONE
+	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
+	if you manage to get this variable refferenced there you're a better man than me. godspeed
+	*/
+	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
+	account_initial_balance = 18200 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
+	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_initial_balance = 7500
-	funding_type = FUNDING_NONE
+	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
+	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro","/datm/job/fence")
 
+/datum/department/independent
+	name = "Independent Allied Factions"
+	id = DEPARTMENT_INDEPENDENT
+	jobs_in_department = list("/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
+
+/datum/department/lodge
+	name = "Lodge"
+	id = DEPARTMENT_LODGE
+	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist")
+
+/datum/department/greyson_positronic
+	name = "Greyson Positronic"
+	id = DEPARTMENT_GREYSON
+	jobs_in_department = list()
+
+
+///////////////////////DEPARTMENT EXPERIENCE PERKS//////////////////////////////////////////
+
+/datum/perk/experienced
+	name = "Experienced: HOLDER"
+	desc = "This is only a test."
+	active = FALSE
+	passivePerk = FALSE
+	var/subPerk = FALSE
+	var/datum/department/dept
+
+
+
+
+/datum/perk/experienced/activate()
+	..()
+	var/list/perkChoice
+	var/paths = subtypesof(type)
+	for (var/T in paths)
+		var/datum/perk/experienced/checker = new T
+		if (checker)
+			if ((checker.dept == dept)&&(checker.subPerk))
+				perkChoice += list(checker)
+
+	var/datum/perk/experienced/choice = input("Hey, this is the first text.", "SECOND!", FALSE) as anything in perkChoice
+	if (istype(choice,/datum/perk/experienced))
+		holder.stats.addPerk(choice.type)
+	holder.stats.removePerk(type)
+
+///////////////////////////////
+//EXPERIENCED PERKS
+//
+//When the base Department perk is clicked, it will search all subtypes of the /datum/perk/experienced/<<DEPARTMENT>>/ folder for all subperks of that particular kind.
+//It will then present an input choice list as to what "Sub-Perk" they would like to choose for being experienced.
+//////////////////////////////
+
+
+/datum/perk/experienced/Prospector
+	name = "Experienced: Prospector"
+	gain_text = "Did it work?"
+	dept = DEPARTMENT_PROSPECTOR
+
+/datum/perk/experienced/Prospector/ThingOne
+	subPerk = TRUE
+	name = "Experienced: Prospector - Thing One Check"   /////Use this format. Or don't?
+	gain_text = "Alright, you're scaring me..."
+
+/datum/perk/experienced/Science
+	name = "Experienced: Science"
+	gain_text = "Well, that apparently worked?"
+	desc = "Hm....."
+	dept = DEPARTMENT_SCIENCE
+
+/datum/perk/experienced/Medical
+	name = "Experienced: Medical"
+	dept = DEPARTMENT_MEDICAL
+
+/datum/perk/experienced/Lonestar
+	name = "Experienced: Lonestar"
+	dept = DEPARTMENT_LSS
+	gain_text = "Yay? Lonestar!!!"
+
+/datum/perk/experienced/Lonestar/Station
+	subPerk = TRUE
+	name = "Station?"
+	gain_text = "STATION!"
+	desc = "Station."
+
+/datum/perk/experienced/Lonestar/DoubleTrouble
+	subPerk = TRUE
+	name = "BOUBLE TWOBLE!"
+	gain_text = "I knojsdklakfdj;af"
+	desc = "Another boring description"
+
+/datum/perk/experienced/Cult
+	name = "Experienced: Church of the Gamer Word"
+	dept = DEPARTMENT_CHURCH
+
+/datum/perk/experienced/Service
+	name = "Experienced: Service Worker"
+	dept = DEPARTMENT_CIVILIAN
+
+/datum/perk/experienced/artificers
+	name = "Experienced: Artificer's Guild"
+	dept = DEPARTMENT_ENGINEERING
+
+/datum/perk/experienced/shitcurity
+	name = "Experienced: Shitcurity"
+	dept = DEPARTMENT_SECURITY
+
+/datum/perk/experienced/blokeshield
+	name = "Experienced: Friendly Fire Militia"
+	dept = DEPARTMENT_BLACKSHIELD
+
+/datum/perk/experienced/unaligned
+	name = "Experienced: Other"
+	dept = DEPARTMENT_INDEPENDENT
+
+//No, there is no experience perk for the Premiere, as the point of the position is suffering.

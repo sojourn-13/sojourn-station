@@ -33,7 +33,7 @@
 	if (!default_access || !default_access.len)
 		return
 	var/list/things = owner.current.get_recursive_contents()
-	for (var/obj/item/weapon/card/id/W in things)
+	for (var/obj/item/card/id/W in things)
 		W.access |= default_access
 
 /datum/antagonist/proc/create_id(var/assignment, var/equip = 1)
@@ -47,7 +47,7 @@
 	if (player.wear_id)
 		QDEL_NULL(player.wear_id)
 
-	var/obj/item/weapon/card/id/W = new id_type(player)
+	var/obj/item/card/id/W = new id_type(player)
 	if(!W) return
 	W.access |= default_access
 	W.assignment = "[assignment]"
@@ -72,5 +72,5 @@
 	H.equip_to_slot_or_del(R, slot_l_ear)
 	return R
 
-/datum/antagonist/proc/spawn_uplink(var/mob/living/carbon/human/traitor_mob)
-	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)
+/datum/antagonist/proc/spawn_uplink(var/mob/living/carbon/human/contractor_mob)
+	setup_uplink_source(contractor_mob, DEFAULT_TELECRYSTAL_AMOUNT)

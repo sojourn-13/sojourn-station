@@ -27,11 +27,11 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.visible_message(
-			"[src] slowly burn out.",
-			"[src] slowly burn out in your hand."
+			"[src] slowly burns out.",
+			"[src] slowly burns out in your hand."
 		)
 	else
-		visible_message("[src] slowly burn out")
+		visible_message("[src] slowly burns out")
 
 /obj/item/device/lighting/glowstick/update_icon()
 	cut_overlays()
@@ -74,7 +74,9 @@
 	color = "#49F37C"
 	icon_state = "glowstick"
 	action_button_name = null
-	brightness_on = 4 //Same as a flare
+	brightness_on = 6 //Same as a flare
+	light_power = 4
+	//So were actually viable for what we want to do, and that is light up a large area
 	max_fuel = 4000
 
 /obj/item/device/lighting/glowstick/red

@@ -3,7 +3,7 @@
 	filedesc = "NTNet Diagnostics and Monitoring"
 	program_icon_state = "comm_monitor"
 	program_key_state = "generic_key"
-	program_menu_icon = "wrench"
+	program_menu_icon = "network-wired"
 	extended_desc = "This program monitors the local NTNet network, provides access to logging systems, and allows for configuration changes"
 	size = 12
 	requires_ntnet = 1
@@ -15,7 +15,7 @@
 	name = "NTNet Diagnostics and Monitoring"
 	available_to_ai = TRUE
 
-/datum/nano_module/program/computer_ntnetmonitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_ntnetmonitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(!ntnet_global)
 		return
 	var/list/data = host.initial_data()

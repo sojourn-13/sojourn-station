@@ -23,7 +23,7 @@ var/list/gear_datums = list()
 		var/datum/gear/G = geartype
 		if(initial(G.category) == geartype)
 			continue
-		if(maps_data.loadout_blacklist && (geartype in maps_data.loadout_blacklist))
+		if(GLOB.maps_data.loadout_blacklist && (geartype in GLOB.maps_data.loadout_blacklist))
 			continue
 
 		var/use_name = initial(G.display_name)
@@ -60,15 +60,25 @@ var/list/gear_datums = list()
 	var/mob/preference_mob = preference_mob()
 	for(var/gear_name in gear_datums)
 		var/datum/gear/G = gear_datums[gear_name]
-		var/okay = 1
+		var/okay = TRUE
 		if(G.whitelisted && preference_mob)
-			okay = 0
+			okay = FALSE
 			// TODO: enable after baymed
 			/*for(var/species in G.whitelisted)
 				if(is_species_whitelisted(preference_mob, species))
 					okay = 1
 					break
 					*/
+		// This has to return TRUE if there is no preference_mob or client
+		// because they don't exist when we're sanitizing the gear during pref load
+		// so it'll make it impossible to save the slot
+		if(preference_mob && preference_mob.client)
+			if(G.ckey_whitelist)
+				if(!islist(G.ckey_whitelist))
+					WARNING("[G.type] has a ckey_whitelist that is not a list!")
+					okay = FALSE
+				else if(!(preference_mob.ckey in G.ckey_whitelist))
+					okay = FALSE
 		if(!okay)
 			continue
 		if(max_cost && G.cost > max_cost)
@@ -309,10 +319,13 @@ var/list/gear_datums = list()
 	var/flags              //Special tweaks in new
 	var/category
 	var/list/gear_tweaks = list() //List of datums which will alter the item after it has been spawned.
+	// Player locking
+	var/list/ckey_whitelist = null
 
 /datum/gear/New()
 	if(FLAGS_EQUALS(flags, GEAR_HAS_TYPE_SELECTION|GEAR_HAS_SUBTYPE_SELECTION))
 		CRASH("May not have both type and subtype selection tweaks")
+	gear_tweaks = list(gear_tweak_free_name, gear_tweak_free_desc)
 	if(!description)
 		var/obj/O = path
 		description = initial(O.desc)
@@ -322,6 +335,7 @@ var/list/gear_datums = list()
 		gear_tweaks += new/datum/gear_tweak/path/type(path)
 	if(flags & GEAR_HAS_SUBTYPE_SELECTION)
 		gear_tweaks += new/datum/gear_tweak/path/subtype(path)
+
 
 /datum/gear/proc/get_description(var/metadata)
 	. = description
@@ -363,8 +377,8 @@ var/list/gear_datums = list()
 	var/atom/placed_in = H.equip_to_storage(item)
 	if(placed_in)
 		to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
-	else if(H.equip_to_appropriate_slot(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
+//	else if(H.equip_to_appropriate_slot(item))
+//		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>") //Seemingly always puts items into the void
 	else if(H.put_in_hands(item))
 		to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
 	else

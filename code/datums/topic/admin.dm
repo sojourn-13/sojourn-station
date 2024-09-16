@@ -237,8 +237,8 @@
 			M.change_mob_type( /mob/observer/ghost , null, null, delmob )
 		if("angel")
 			M.change_mob_type( /mob/observer/eye/angel , null, null, delmob )
-		if("larva")
-			M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
+		//if("larva")
+		//	M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
 		if("human")
 			M.change_mob_type( /mob/living/carbon/human , null, null, delmob, input["species"])
 		if("slime")
@@ -254,7 +254,7 @@
 		if("corgi")
 			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
 			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 		if("coffee")
@@ -391,9 +391,15 @@
 	body += source.formatJobGroup(M, "Prospector Positions", "8B4513", "prospectordept", prospector_positions)
 	//Civilian (Grey)
 	body += source.formatJobGroup(M, "Civilian Positions", "dddddd", "civiliandept", civilian_positions)
+	//Lonestar (Grey)
+	body += source.formatJobGroup(M, "Lonestar Positions", "dddddd", "lonestardept", cargo_positions)
+	//Off-colony (Black)
+	body += source.formatJobGroup(M, "Independent Positions", "191919", "offcolonydept", offcolony_positions)
 	//Non-Human (Green)
 	body += source.formatJobGroup(M, "Non-human Positions", "ccffcc", "nonhumandept", nonhuman_positions + "Antag HUD")
 	//Antagonist (Orange)
+	body += source.formatJobGroup(M, "Lodge Positions", "191919", "lodgedept", lodge_positions)
+	//Off-colony Lodge (Black)
 
 	var/jobban_list = list()
 	for(var/a_id in GLOB.antag_bantypes)
@@ -465,6 +471,21 @@
 				joblist += temp.title
 		if("civiliandept")
 			for(var/jobPos in civilian_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("lonestardept")
+			for(var/jobPos in cargo_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("offcolonydept")
+			for(var/jobPos in offcolony_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("lodgedept")
+			for(var/jobPos in lodge_positions)
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title
@@ -574,7 +595,8 @@
 
 
 /datum/admin_topic/boot2
-	keyword = "boot"
+	keyword = "boot2"
+	require_perms = list(R_MOD|R_ADMIN)
 
 /datum/admin_topic/boot2/Run(list/input)
 	var/mob/M = locate(input["boot2"])
@@ -782,6 +804,28 @@
 	log_admin("[key_name(usr)] forced [key_name(M)] to say: [speech]")
 	message_admins("\blue [key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]")
 
+/datum/admin_topic/forcesanity
+	keyword = "forcesanity"
+	require_perms = list(R_FUN)
+
+/datum/admin_topic/forcesanity/Run(list/input)
+	var/mob/living/carbon/human/H = locate(input["forcesanity"])
+	if(!ishuman(H))
+		to_chat(usr, "This can only be used on instances of type /human.")
+		return
+
+	var/datum/breakdown/B = input("What breakdown will [key_name(H)] suffer from?", "Sanity Breakdown") as null | anything in subtypesof(/datum/breakdown)
+	if(!B)
+		return
+	B = new B(H.sanity)
+	if(!B.can_occur())
+		to_chat(usr, "[B] could not occur. [key_name(H)] did not meet the right conditions.")
+		qdel(B)
+		return
+	if(B.occur())
+		H.sanity.breakdowns += B
+		to_chat(usr, SPAN_NOTICE("[B] has occurred for [key_name(H)]."))
+		return
 
 /datum/admin_topic/revive
 	keyword = "revive"
@@ -982,8 +1026,8 @@
 		to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
 		return
 
-	if(!H.equip_to_slot_or_del( new /obj/item/weapon/reagent_containers/food/snacks/cookie(H), slot_l_hand ))
-		if(!H.equip_to_slot_or_del( new /obj/item/weapon/reagent_containers/food/snacks/cookie(H), slot_r_hand ))
+	if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_l_hand ))
+		if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_r_hand ))
 			log_admin("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			message_admins("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			return
@@ -1046,17 +1090,17 @@
 /datum/admin_topic/adminfaxview/Run(list/input)
 	var/obj/item/fax = locate(input["AdminFaxView"])
 
-	if (istype(fax, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/P = fax
+	if (istype(fax, /obj/item/paper))
+		var/obj/item/paper/P = fax
 		P.show_content(usr, TRUE)
-	else if (istype(fax, /obj/item/weapon/photo))
-		var/obj/item/weapon/photo/H = fax
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
 		H.show(usr)
-	else if (istype(fax, /obj/item/weapon/paper_bundle))
+	else if (istype(fax, /obj/item/paper_bundle))
 		//having multiple people turning pages on a paper_bundle can cause issues
 		//open a browse window listing the contents instead
 		var/data = ""
-		var/obj/item/weapon/paper_bundle/B = fax
+		var/obj/item/paper_bundle/B = fax
 
 		for (var/page = 1, page <= B.pages.len, page++)
 			var/obj/pageobj = B.pages[page]
@@ -1071,23 +1115,23 @@
 
 /datum/admin_topic/adminfaxviewpage/Run(list/input)
 	var/page = text2num(input["AdminFaxViewPage"])
-	var/obj/item/weapon/paper_bundle/bundle = locate(input["paper_bundle"])
+	var/obj/item/paper_bundle/bundle = locate(input["paper_bundle"])
 
 	if (!bundle)
 		return
 
-	if (istype(bundle.pages[page], /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/P = bundle.pages[page]
+	if (istype(bundle.pages[page], /obj/item/paper))
+		var/obj/item/paper/P = bundle.pages[page]
 		P.show_content(source.owner, TRUE)
-	else if (istype(bundle.pages[page], /obj/item/weapon/photo))
-		var/obj/item/weapon/photo/H = bundle.pages[page]
+	else if (istype(bundle.pages[page], /obj/item/photo))
+		var/obj/item/photo/H = bundle.pages[page]
 		H.show(source.owner)
 
 
-/datum/admin_topic/centcommfaxreply
+/datum/admin_topic/faxreply
 	keyword = "FaxReply"
 
-/datum/admin_topic/centcommfaxreply/Run(list/input)
+/datum/admin_topic/faxreply/Run(list/input)
 	var/mob/sender = locate(input["FaxReply"])
 	var/datum/faction/faction = GLOB.factions_list[input["faction"]]
 	var/obj/machinery/photocopier/faxmachine/fax = locate(input["originfax"])
@@ -1100,7 +1144,7 @@
 	var/customname = input(source.owner, "Pick a title for the report", "Title", "[faction.fax_response] - ") as text|null
 
 	// Create the reply message
-	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( null ) //hopefully the null loc won't cause trouble for us
+	var/obj/item/paper/P = new /obj/item/paper( null ) //hopefully the null loc won't cause trouble for us
 	P.name = "[customname]"
 	P.info = msg
 	P.update_icon()
@@ -1182,20 +1226,20 @@
 	source.view_log_panel(M)
 
 
-/datum/admin_topic/traitor
-	keyword = "traitor"
+/datum/admin_topic/contractor
+	keyword = "contractor"
 	require_perms = list(R_MOD|R_ADMIN)
 
-/datum/admin_topic/traitor/Run(list/input)
+/datum/admin_topic/contractor/Run(list/input)
 	if(!GLOB.storyteller)
 		alert("The game hasn't started yet!")
 		return
 
-	var/mob/M = locate(input["traitor"])
+	var/mob/M = locate(input["contractor"])
 	if(!ismob(M))
 		to_chat(usr, "This can only be used on instances of type /mob.")
 		return
-	source.show_traitor_panel(M)
+	source.show_contractor_panel(M)
 
 
 /datum/admin_topic/create_object
@@ -1505,7 +1549,7 @@
 						WANTED.backup_author = source.admincaster_signature                  //Submitted by
 						WANTED.is_admin_message = 1
 						news_network.wanted_issue = WANTED
-						for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+						for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 							NEWSCASTER.newsAlert()
 							NEWSCASTER.update_icon()
 						source.admincaster_screen = 15
@@ -1514,14 +1558,14 @@
 						news_network.wanted_issue.body = source.admincaster_feed_message.body
 						news_network.wanted_issue.backup_author = source.admincaster_feed_message.backup_author
 						source.admincaster_screen = 19
-					log_admin("[key_name_admin(usr)] issued a Station-wide Wanted Notification for [source.admincaster_feed_message.author]!")
+					log_admin("[key_name_admin(usr)] issued a Colony-wide Wanted Notification for [source.admincaster_feed_message.author]!")
 			source.access_news_network()
 
 		if("cancel_wanted")
 			var/choice = alert("Please confirm Wanted Issue removal","Network Security Handler","Confirm","Cancel")
 			if(choice=="Confirm")
 				news_network.wanted_issue = null
-				for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+				for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 					NEWSCASTER.update_icon()
 				source.admincaster_screen=17
 			source.access_news_network()

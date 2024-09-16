@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/power_monitor/
 	program_icon_state = "power_monitor"
 	program_key_state = "power_key"
-	program_menu_icon = "battery-3"
+	program_menu_icon = "battery-three-quarters"
 	extended_desc = "This program connects to sensors to provide information about electrical systems"
 	ui_header = "power_norm.gif"
 	required_access = access_engine
@@ -53,7 +53,7 @@
 
 // If PC is not null header template is loaded. Use PC.get_header_data() to get relevant nanoui data from it. All data entries begin with "PC_...."
 // In future it may be expanded to other modular computer devices.
-/datum/nano_module/power_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/power_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	var/list/sensors = list()
@@ -89,7 +89,7 @@
 	if(!T) // Safety check
 		return
 	var/connected_z_levels = GetConnectedZlevels(T.z)
-	for(var/obj/machinery/power/sensor/S in SSmachines.machinery)
+	for(var/obj/machinery/power/sensor/S in GLOB.machines)
 		if((S.long_range) || (S.loc.z in connected_z_levels)) // Consoles have range on their Z-Level. Sensors with long_range var will work between Z levels.
 			if(S.name_tag == "#UNKN#") // Default name. Shouldn't happen!
 				warning("Powernet sensor with unset ID Tag! [S.x]X [S.y]Y [S.z]Z")

@@ -62,7 +62,7 @@
 	if(!force && parent)
 		_RemoveFromParent()
 	if(!silent)
-		SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
+		LEGACY_SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
 	parent = null
 	return ..()
 
@@ -87,6 +87,12 @@
 /datum/component/proc/UnregisterFromParent()
 	return
 
+//Makes it so that only one thing can be registered on this signal type
+/datum/proc/ExclusiveRegisterSignal(datum/target, sig_type_or_types, proc_or_callback, override = FALSE)
+	if(target.comp_lookup.Find(sig_type_or_types))
+		return 0
+	return RegisterSignal(target, sig_type_or_types, proc_or_callback, override)
+
 /datum/proc/RegisterSignal(datum/target, sig_type_or_types, proc_or_callback, override = FALSE)
 	if(QDELETED(src) || QDELETED(target))
 		return
@@ -106,7 +112,7 @@
 	var/list/sig_types = islist(sig_type_or_types) ? sig_type_or_types : list(sig_type_or_types)
 	for(var/sig_type in sig_types)
 		if(!override && procs[target][sig_type])
-			crash_with("[sig_type] overridden. Use override = TRUE to suppress this warning")
+			CRASH("[sig_type] overridden. Use override = TRUE to suppress this warning")
 
 		procs[target][sig_type] = proc_or_callback
 
@@ -133,12 +139,12 @@
 			if(2)
 				lookup[sig] = (lookup[sig]-src)[1]
 			if(1)
-				crash_with("[target] ([target.type]) somehow has single length list inside comp_lookup")
 				if(src in lookup[sig])
 					lookup -= sig
 					if(!length(lookup))
 						target.comp_lookup = null
 						break
+				CRASH("[target] ([target.type]) somehow has single length list inside comp_lookup")
 			if(0)
 				lookup -= sig
 				if(!length(lookup))
@@ -158,7 +164,8 @@
 	return
 
 /datum/component/proc/PostTransfer()
-	return COMPONENT_INCOMPATIBLE //Do not support transfer by default as you must properly support it
+	return COMPONENT_NOTRANSFER
+	//Do not support transfer by default as you must properly support it
 
 /datum/component/proc/_GetInverseTypeList(our_type = type)
 	//we can do this one simple trick
@@ -261,7 +268,7 @@
 		new_comp = new nt(arglist(args)) // Dupes are allowed, act like normal
 
 	if(!old_comp && !QDELETED(new_comp)) // Nothing related to duplicate components happened and the new component is healthy
-		SEND_SIGNAL(src, COMSIG_COMPONENT_ADDED, new_comp)
+		LEGACY_SEND_SIGNAL(src, COMSIG_COMPONENT_ADDED, new_comp)
 		return new_comp
 	return old_comp
 
@@ -277,7 +284,7 @@
 	PreTransfer()
 	_RemoveFromParent()
 	parent = null
-	SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, src)
+	LEGACY_SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, src)
 
 /datum/proc/TakeComponent(datum/component/target)
 	if(!target || target.parent == src)
@@ -287,7 +294,7 @@
 	target.parent = src
 	var/result = target.PostTransfer()
 	switch(result)
-		if(COMPONENT_INCOMPATIBLE)
+		if(COMPONENT_NOTRANSFER)
 			var/c_type = target.type
 			qdel(target)
 			CRASH("Incompatible [c_type] transfer attempt to a [type]!")

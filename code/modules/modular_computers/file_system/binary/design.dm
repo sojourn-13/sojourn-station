@@ -2,13 +2,15 @@
 /datum/computer_file/binary/design
 	filetype = "CD" // Construction Design
 	size = 4
-	var/datum/design/design = null
+	var/datum/design/design
 	var/copy_protected = FALSE
+	var/point_cost = 0 	//Point cost of the design.
 
 /datum/computer_file/binary/design/clone()
 	var/datum/computer_file/binary/design/F = ..()
 	F.design = design
 	F.copy_protected = copy_protected
+	F.point_cost = point_cost
 	return F
 
 /datum/computer_file/binary/design/proc/set_filename(new_name)
@@ -22,7 +24,8 @@
 	SSresearch.initialize_design_file(src)
 
 /datum/computer_file/binary/design/proc/on_design_set()
-	set_filename(design.id)
+	if (design)
+		set_filename(design.id)
 
 /datum/computer_file/binary/design/proc/set_copy_protection(enabled)
 	copy_protected = enabled
@@ -32,12 +35,20 @@
 	else
 		filetype = "CD"
 
+/datum/computer_file/binary/design/proc/set_point_cost(cost)
+	if (isnull(cost))
+		point_cost = 1
+	else
+		point_cost = cost
+	if(point_cost)
+		set_copy_protection(TRUE)
+
 /datum/computer_file/binary/design/proc/check_license()
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
-	if(!istype(disk) || disk.license == 0)
+	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
+	if(!istype(disk) || disk.license < point_cost)
 		return FALSE
 
 	return TRUE
@@ -50,14 +61,15 @@
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
+	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
 	if(disk.license > 0)
-		disk.license -= 1
+		disk.license -= point_cost
 	return TRUE
 
 
-/datum/computer_file/binary/design/ui_data()
-	var/list/data = design.ui_data().Copy()
+/datum/computer_file/binary/design/nano_ui_data()
+	var/list/data = design.nano_ui_data().Copy()
 	data["copy_protected"] = copy_protected
 	data["filename"] = filename
+	data["point_cost"] = point_cost
 	return data

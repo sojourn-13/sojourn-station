@@ -1,9 +1,9 @@
 /obj/effect/overlay
 	name = "overlay"
 	unacidable = 1
-	var/i_attached//Added for possible image attachments to objects. For hallucinations and the like.
+	var/i_attached //Added for possible image attachments to objects. For hallucinations and the like.
 
-/obj/effect/overlay/beam//Not actually a projectile, just an effect.
+/obj/effect/overlay/beam //Not actually a projectile, just an effect.
 	name="beam"
 	icon='icons/effects/beam.dmi'
 	icon_state="b_beam"
@@ -25,6 +25,10 @@
 	set_dir(pick(cardinal))
 	spawn(lifetime)
 		qdel(src)
+
+/obj/effect/overlay/pulse/heatwave
+	icon_state = "sparks"
+	name = "heatwave sparks"
 
 /obj/effect/overlay/palmtree_r
 	name = "Palm tree"
@@ -59,6 +63,17 @@
 	icon = 'icons/effects/effects.dmi'
 	layer = WALL_OBJ_LAYER
 	icon_state = "scorch"
+	var/serial_type_index = ""
+
+/obj/effect/overlay/bmark/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(serial_type_index)
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: [serial_type_index].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: ERROR.</span>")
+
 
 /obj/effect/overlay/temp
 	anchored = 1

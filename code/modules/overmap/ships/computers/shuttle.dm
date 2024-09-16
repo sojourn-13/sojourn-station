@@ -2,7 +2,7 @@
 /obj/machinery/computer/shuttle_control/explore
 	name = "general shuttle control console"
 
-/obj/machinery/computer/shuttle_control/explore/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/shuttle_control/explore/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	var/datum/shuttle/autodock/overmap/shuttle = SSshuttle.shuttles[shuttle_tag]
 	if (!istype(shuttle))
@@ -37,7 +37,7 @@
 		if(shuttle.fuel_ports.len)
 			for(var/obj/structure/fuel_port/FP in shuttle.fuel_ports) //loop through fuel ports
 				if(FP.contents.len)
-					var/obj/item/weapon/tank/fuel_tank = FP.contents[1]
+					var/obj/item/tank/fuel_tank = FP.contents[1]
 					if(istype(fuel_tank))
 						fuel_pressure += fuel_tank.air_contents.return_pressure()
 						fuel_max_pressure += 1013

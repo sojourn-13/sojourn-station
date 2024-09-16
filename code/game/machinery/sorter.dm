@@ -48,11 +48,11 @@
 	icon_state = "sorter"
 	density = TRUE
 	anchored = TRUE
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 200
 
-	circuit = /obj/item/weapon/circuitboard/sorter
+	circuit = /obj/item/circuitboard/sorter
 	// based on levels of manipulators
 	var/speed = 25
 	// based on levels of scanners
@@ -69,6 +69,11 @@
 	//UI vars
 	var/list/custom_rule = list("accept", "sort_type", "value", "amount")
 	var/new_rule_ui = FALSE
+	var/show_config = FALSE
+	var/show_iconfig = FALSE
+	var/show_oconfig = FALSE
+	var/show_rconfig = FALSE
+	var/force_take_corps = FALSE
 
 
 /obj/machinery/sorter/Initialize()
@@ -118,7 +123,7 @@
 		return
 	var/sorted = FALSE
 	for(var/datum/sort_rule/rule in sort_settings)
-		if(rule.check_match(item_to_sort))
+		if(rule.check_match(item_to_sort) || (force_take_corps && ismob(item_to_sort)))
 			sorted = rule.accept
 			if(!sorted)
 				break
@@ -173,10 +178,10 @@
 /obj/machinery/sorter/RefreshParts()
 	..()
 	var/manipulator_rating = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		manipulator_rating += M.rating
 	var/num_settings = 0
-	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
+	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
 		num_settings += S.rating
 	number_of_settings = num_settings * initial(number_of_settings)
 	speed = manipulator_rating*10
@@ -192,12 +197,12 @@
 	..()
 
 /obj/machinery/sorter/attack_hand(mob/user as mob)
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 
 //UI
 
-/obj/machinery/sorter/ui_data()
+/obj/machinery/sorter/nano_ui_data()
 	var/list/data = list()
 	data["currentItem"] = null
 	if(current_item)
@@ -220,12 +225,19 @@
 	data["new_rule_sort"] = custom_rule["sort_type"]
 	data["new_rule_value"] = custom_rule["value"]
 	data["new_rule_amount"] = custom_rule["amount"]
+	data["sideI"] = capitalize(dir2text(input_side))
+	data["sideO"] = capitalize(dir2text(accept_output_side))
+	data["sideR"] = capitalize(dir2text(refuse_output_side))
+	data["show_config"] = show_config
+	data["show_iconfig"] = show_iconfig
+	data["show_oconfig"] = show_oconfig
+	data["show_rconfig"] = show_rconfig
 
 	return data
 
 
-/obj/machinery/sorter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
-	var/list/data = ui_data()
+/obj/machinery/sorter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
+	var/list/data = nano_ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -244,7 +256,7 @@
 		sort_settings.Remove(rule_to_remove)
 		qdel(rule_to_remove)
 	else if (href_list["add_new"])
-		new_rule_ui = TRUE
+		new_rule_ui = !new_rule_ui
 
 	else if (href_list["filter"])
 		custom_rule["accept"] = text2num(href_list["filter"])
@@ -253,7 +265,13 @@
 		custom_rule["sort_type"] = href_list["sort_type"]
 
 	else if (href_list["type_input"])
-		custom_rule["value"] = input("Please, select a material!", "Matter sorting", null, null) as null|anything in MATERIAL_LIST
+		switch(custom_rule["sort_type"])
+			if(SORT_TYPE_MATERIAL)
+				custom_rule["value"] = input("Please, select a material!", "Matter sorting", null, null) as null|anything in MATERIAL_LIST
+			if(SORT_TYPE_NAME)
+				custom_rule["value"] = input("Please, enter a name to match by!", "Name sorting", null, null) as text
+			if(SORT_TYPE_REAGENT)
+				custom_rule["value"] = input("Please, enter a reagent to search for!", "Reagent sorting", null, null) as text //Until we make a full reagent ID list
 
 	else if (href_list["amount_input"])
 		custom_rule["amount"] = text2num(input("Type amount of [custom_rule["sort_type"]]"))
@@ -276,20 +294,38 @@
 		new_rule_ui = null
 		custom_rule = list("accept", "sort_type", "value", "amount")
 
+	if(href_list["setsideI"])
+		input_side = text2dir(href_list["setsideI"])
+
+	if(href_list["setsideO"])
+		accept_output_side = text2dir(href_list["setsideO"])
+
+	if(href_list["setsideR"])
+		refuse_output_side = text2dir(href_list["setsideR"])
+
+	if(href_list["toggle_config"])
+		show_config = !show_config
+
+	if(href_list["toggle_iconfig"])
+		show_iconfig = !show_iconfig
+
+	if(href_list["toggle_oconfig"])
+		show_oconfig = !show_oconfig
+
+	if(href_list["toggle_rconfig"])
+		show_rconfig = !show_rconfig
+
 
 	SSnano.update_uis(src)
 	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 	return FALSE
 
-
-
-
-
-
-
-
 /obj/machinery/sorter/biomatter
 	name = "biomatter sorter"
+	desc = "A sorter for biomatter related objects, unlike normal sorters these always accept dead bodies from roaches to humans..."
+	accept_output_side = EAST
+	refuse_output_side = SOUTH
+	force_take_corps = TRUE
 
 /obj/machinery/sorter/biomatter/Initialize()
 	. = ..()

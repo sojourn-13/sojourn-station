@@ -1,12 +1,6 @@
 /****************************************************
 				BLOOD SYSTEM
 ****************************************************/
-//Blood levels. These are percentages based on the species blood_volume far.
-var/const/BLOOD_VOLUME_SAFE =    85
-var/const/BLOOD_VOLUME_OKAY =    75
-var/const/BLOOD_VOLUME_BAD =     60
-var/const/BLOOD_VOLUME_SURVIVE = 40
-
 /mob/living/carbon
 	var/datum/reagents/vessel // Container for blood and BLOOD ONLY. Do not transfer other chems here.
 
@@ -31,43 +25,35 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 
 /mob/living/carbon/proc/get_blood_data()
 	var/data = list()
-	data["donor"] = weakref(src)
-	if (!data["virus2"])
-		data["virus2"] = list()
-	data["virus2"] |= virus_copylist(virus2)
-	data["viruses"] = null
-	data["antibodies"] = antibodies
+	data["donor"] = WEAKREF(src)
 	data["blood_DNA"] = dna.unique_enzymes
 	data["blood_type"] = dna.b_type
 	data["species"] = species.name
 	var/list/temp_chem = list()
-	for(var/datum/reagent/R in reagents.reagent_list)
+	for(var/datum/reagent/R in reagents?.reagent_list) //TODO: Remove "?." operations.
 		temp_chem[R.type] = R.volume
 	data["trace_chem"] = temp_chem
 	data["blood_colour"] = blood_color
 	data["resistances"] = null
-	data["ling"] = check_special_role(ROLE_CHANGELING)
+	data["carrion"] = is_carrion(src)
 	return data
 
 //Resets blood data
 /mob/living/carbon/human/proc/fixblood()
-	for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
-		if(B.id == "blood")
-			var/isling = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
-			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list(), "ling" = isling)
-			B.initialize_data(get_blood_data())
+	if (!QDELETED(src))
+		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
+			if(B.id == "blood")
+				B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
 	if(in_stasis)
 		return
 
-	if(!species.has_organ[BP_HEART])
+	if(!species.has_process[OP_HEART])
 		return
 
-	var/obj/item/organ/internal/heart/H = internal_organs_by_name[BP_HEART]
-	if(!H)	//not having a heart is bad for health
+	if(!organ_list_by_process(OP_HEART).len)	//not having a heart is bad for health - true
 		setOxyLoss(max(getOxyLoss(),60))
 		adjustOxyLoss(10)
 
@@ -112,7 +98,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 ****************************************************/
 
 //Gets blood from mob to the container, preserving all data in it.
-/mob/living/carbon/proc/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/proc/take_blood(obj/item/reagent_containers/container, var/amount)
 	var/datum/reagent/B = new /datum/reagent/organic/blood
 	B.holder = container
 	B.volume = amount
@@ -123,7 +109,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	return B
 
 //For humans, blood does not appear from blue, it comes from vessels.
-/mob/living/carbon/human/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/human/take_blood(obj/item/reagent_containers/container, var/amount)
 
 	if(species && species.flags & NO_BLOOD)
 		return null
@@ -138,12 +124,6 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 /mob/living/carbon/proc/inject_blood(var/datum/reagent/organic/blood/injected, var/amount)
 	if (!injected || !istype(injected))
 		return
-	var/list/sniffles = virus_copylist(injected.data["virus2"])
-	for(var/ID in sniffles)
-		var/datum/disease2/disease/sniffle = sniffles[ID]
-		infect_virus2(src,sniffle,1)
-	if (injected.data["antibodies"] && prob(5))
-		antibodies |= injected.data["antibodies"]
 	var/list/chems = list()
 	chems = params2list(injected.data["trace_chem"])
 	for(var/C in chems)
@@ -162,7 +142,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 
 	if (!injected || !our)
 		return
-	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) )
+	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && !(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations)))
 		reagents.add_reagent("toxin",amount * 0.5)
 		reagents.update_total()
 	else
@@ -174,9 +154,11 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 /mob/living/carbon/proc/get_blood()
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
-		if(res.data["donor"] != src) //If it's not theirs, then we look for theirs
+		var/datum/weakref/ref = res.data["donor"]
+		if(istype(ref) && ref.resolve() != src)
 			for(var/datum/reagent/organic/blood/D in vessel.reagent_list)
-				if(D.data["donor"] == src)
+				ref = D.data["donor"]
+				if(ref.resolve() == src)
 					return D
 	return res
 
@@ -249,10 +231,6 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 		else
 			B.blood_DNA[source.data["blood_DNA"]] = "O+"
 
-	// Update virus information.
-	if(source.data["virus2"])
-		B.virus2 = virus_copylist(source.data["virus2"])
-
 	B.fluorescent  = 0
 	B.invisibility = 0
 	return B
@@ -278,7 +256,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 /mob/living/carbon/human/get_blood_oxygenation()
 	var/blood_volume = get_blood_circulation()
 	if(is_asystole()) // Heart is missing or isn't beating and we're not breathing (hardcrit)
-		return min(blood_volume, BLOOD_VOLUME_SURVIVE)
+		return min(blood_volume, total_blood_req)
 
 	if(!need_breathe())
 		return blood_volume
@@ -300,30 +278,40 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	return 100
 
 /mob/living/carbon/human/get_blood_circulation()
-	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	var/heart_efficiency = get_organ_efficiency(OP_HEART)
+	var/robo_check = TRUE	//check if all hearts are robotic
+	var/open_check = FALSE  //check if any heart is open
+	for(var/obj/item/organ/internal/vital/heart/heart in organ_list_by_process(OP_HEART))
+		if(!(BP_IS_ROBOTIC(heart)))
+			robo_check = FALSE
+		if(heart.open)
+			open_check = TRUE
+
 	var/blood_volume = get_blood_volume()
-	if(!heart || (heart.pulse == PULSE_NONE && !(status_flags & FAKEDEATH) && !BP_IS_ROBOTIC(heart)))
+	if( heart_efficiency <= 0 || (pulse == PULSE_NONE && !(status_flags & FAKEDEATH) && !robo_check))
 		blood_volume *= 0.25
 	else
 		var/pulse_mod = 1
-		switch(heart.pulse)
+		switch(pulse)
 			if(PULSE_SLOW)
 				pulse_mod *= 0.9
 			if(PULSE_FAST)
 				pulse_mod *= 1.1
 			if(PULSE_2FAST, PULSE_THREADY)
 				pulse_mod *= 1.25
-		blood_volume *= max(0.3, (1-(heart.damage / heart.max_damage))) * pulse_mod
+		blood_volume *= max(0.3, (heart_efficiency / 100)) * pulse_mod
 
-	if(heart && !heart.open && chem_effects[CE_BLOODCLOT])
+	if(!open_check && chem_effects[CE_BLOODCLOT])
 		blood_volume *= max(0, 1-chem_effects[CE_BLOODCLOT])
 
 	return min(blood_volume, 100)
 
 /mob/living/carbon/human/proc/regenerate_blood(var/amount)
-	amount *= (species.blood_volume / SPECIES_BLOOD_DEFAULT)
+	amount *= (vessel.maximum_volume / species.blood_volume)
 	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	amount = max(0,min(amount, species.blood_volume - blood_volume_raw))
+	amount = clamp(amount,0,vessel.maximum_volume - blood_volume_raw)
+	if(VAMPIRE in mutations)
+		amount *= 1.50 //25% more //trilby, how is that 25% -DimasW
 	if(amount)
 		vessel.add_reagent("blood", amount, get_blood_data())
 	return amount

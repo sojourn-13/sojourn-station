@@ -1,7 +1,7 @@
 /datum/storyevent/roleset/double_agents
 	id = "double_agents"
 	name = "double agents"
-	role_id = ROLE_TRAITOR
+	role_id = ROLE_CONTRACTOR
 	base_quantity = 2
 	scaling_threshold = 0
 	/*
@@ -16,7 +16,7 @@
 	*/
 
 /datum/storyevent/roleset/double_agents/trigger_event()
-	var/list/candidates = candidates_list(ROLE_TRAITOR)
+	var/list/candidates = candidates_list(ROLE_CONTRACTOR)
 	if(candidates.len < 2)
 		return FALSE
 
@@ -24,8 +24,8 @@
 	candidates.Remove(first)
 	var/datum/mind/second = pick(candidates)
 
-	var/datum/antagonist/a1 = create_antag_instance(ROLE_TRAITOR)
-	var/datum/antagonist/a2 = create_antag_instance(ROLE_TRAITOR)
+	var/datum/antagonist/a1 = create_antag_instance(ROLE_CONTRACTOR)
+	var/datum/antagonist/a2 = create_antag_instance(ROLE_CONTRACTOR)
 
 	a1.create_antagonist(first, announce = FALSE)
 	a2.create_antagonist(second, announce = FALSE)

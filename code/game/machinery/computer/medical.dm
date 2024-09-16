@@ -7,8 +7,8 @@
 	icon_screen = "medcomp"
 	light_color = COLOR_LIGHTING_GREEN_MACHINERY
 	req_one_access = list(access_moebius, access_forensics_lockers)
-	circuit = /obj/item/weapon/circuitboard/med_data
-	var/obj/item/weapon/card/id/scan = null
+	circuit = /obj/item/circuitboard/med_data
+	var/obj/item/card/id/scan = null
 	var/authenticated = null
 	var/rank = null
 	var/screen = null
@@ -36,7 +36,7 @@
 	return
 
 /obj/machinery/computer/med_data/attackby(var/obj/item/O, var/mob/user)
-	if(istype(O, /obj/item/weapon/card/id) && !scan && user.unEquip(O))
+	if(istype(O, /obj/item/card/id) && !scan && user.unEquip(O))
 		O.loc = src
 		scan = O
 		to_chat(user, "You insert \the [O].")
@@ -46,9 +46,9 @@
 /obj/machinery/computer/med_data/attack_hand(mob/user as mob)
 	if(..())
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/med_data/ui_interact(mob/user)
+/obj/machinery/computer/med_data/nano_ui_interact(mob/user)
 	var/dat
 	if (src.temp)
 		dat = text("<TT>[src.temp]</TT><BR><BR><A href='?src=\ref[src];temp=1'>Clear Screen</A>")
@@ -61,7 +61,6 @@
 <A href='?src=\ref[src];search=1'>Search Records</A>
 <BR><A href='?src=\ref[src];screen=2'>List Records</A>
 <BR>
-<BR><A href='?src=\ref[src];screen=5'>Virus Database</A>
 <BR><A href='?src=\ref[src];screen=6'>Medbot Tracking</A>
 <BR>
 <BR><A href='?src=\ref[src];screen=3'>Record Maintenance</A>
@@ -105,22 +104,6 @@
 						dat += "<B>Medical Record Lost!</B><BR>"
 						dat += text("<A href='?src=\ref[src];new=1'>New Record</A><BR><BR>")
 					dat += text("\n<A href='?src=\ref[];print_p=1'>Print Record</A><BR>\n<A href='?src=\ref[];screen=2'>Back</A><BR>", src, src)
-				if(5.0)
-					dat += "<CENTER><B>Virus Database</B></CENTER>"
-					/*	Advanced diseases is weak! Feeble! Glory to virus2!
-					for(var/Dt in typesof(/datum/disease/))
-						var/datum/disease/Dis = new Dt(0)
-						if(istype(Dis, /datum/disease/advance))
-							continue // TODO (tm): Add advance diseases to the virus database which no one uses.
-						if(!Dis.desc)
-							continue
-						dat += "<br><a href='?src=\ref[src];vir=[Dt]'>[Dis.name]</a>"
-					*/
-					for (var/ID in virusDB)
-						var/datum/data/record/v = virusDB[ID]
-						dat += "<br><a href='?src=\ref[src];vir=\ref[v]'>[v.fields["name"]]</a>"
-
-					dat += "<br><a href='?src=\ref[src];screen=1'>Back</a>"
 				if(6.0)
 					dat += "<center><b>Medical Robot Monitor</b></center>"
 					dat += "<a href='?src=\ref[src];screen=1'>Back</a>"
@@ -181,7 +164,7 @@
 
 			else
 				var/obj/item/I = usr.get_active_hand()
-				if (istype(I, /obj/item/weapon/card/id))
+				if (istype(I, /obj/item/card/id))
 					usr.drop_item()
 					I.loc = src
 					src.scan = I
@@ -209,7 +192,7 @@
 				src.rank = "[R.modtype] [R.braintype]"
 				src.screen = 1
 
-			else if (istype(src.scan, /obj/item/weapon/card/id))
+			else if (istype(src.scan, /obj/item/card/id))
 				src.active1 = null
 				src.active2 = null
 
@@ -227,14 +210,6 @@
 
 				src.active1 = null
 				src.active2 = null
-
-			if(href_list["vir"])
-				var/datum/data/record/v = locate(href_list["vir"])
-				src.temp = "<center>GNAv2 based virus lifeform V-[v.fields["id"]]</center>"
-				src.temp += "<br><b>Name:</b> <A href='?src=\ref[src];field=vir_name;edit_vir=\ref[v]'>[v.fields["name"]]</A>"
-				src.temp += "<br><b>Antigen:</b> [v.fields["antigen"]]"
-				src.temp += "<br><b>Spread:</b> [v.fields["spread type"]] "
-				src.temp += "<br><b>Details:</b><br> <A href='?src=\ref[src];field=vir_desc;edit_vir=\ref[v]'>[v.fields["description"]]</A>"
 
 			if (href_list["del_all"])
 				src.temp = text("Are you sure you wish to delete all records?<br>\n\t<A href='?src=\ref[];temp=1;del_all2=1'>Yes</A><br>\n\t<A href='?src=\ref[];temp=1'>No</A><br>", src, src)
@@ -337,20 +312,6 @@
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!issilicon(usr))) || src.active2 != a2))
 								return
 							src.active2.fields["b_dna"] = t1
-					if("vir_name")
-						var/datum/data/record/v = locate(href_list["edit_vir"])
-						if (v)
-							var/t1 = sanitize(input("Please input pathogen name:", "VirusDB", v.fields["name"], null)  as text)
-							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!issilicon(usr))) || src.active1 != a1))
-								return
-							v.fields["name"] = t1
-					if("vir_desc")
-						var/datum/data/record/v = locate(href_list["edit_vir"])
-						if (v)
-							var/t1 = sanitize(input("Please input information about pathogen:", "VirusDB", v.fields["description"], null)  as message)
-							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!issilicon(usr))) || src.active1 != a1))
-								return
-							v.fields["description"] = t1
 					else
 
 			if (href_list["p_stat"])
@@ -496,7 +457,7 @@
 					if ((istype(src.active2, /datum/data/record) && data_core.medical.Find(src.active2)))
 						record2 = active2
 					sleep(50)
-					var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( src.loc )
+					var/obj/item/paper/P = new /obj/item/paper( src.loc )
 					P.info = "<CENTER><B>Medical Record</B></CENTER><BR>"
 					if (record1)
 						P.info += text("Name: [] ID: []<BR>\nSex: []<BR>\nAge: []<BR>\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", record1.fields["name"], record1.fields["id"], record1.fields["sex"], record1.fields["age"], record1.fields["fingerprint"], record1.fields["p_stat"], record1.fields["m_stat"])

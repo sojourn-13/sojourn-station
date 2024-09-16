@@ -89,31 +89,31 @@
 
 	for(var/turf in visAdded)
 		var/turf/t = turf
-		if(t.obfuscations[obfuscation.type])
-			obscured -= t.obfuscations[obfuscation.type]
+		if(LAZYACCESS(t.obfuscations, obfuscation.type))
+			obscured -= LAZYACCESS(t.obfuscations, obfuscation.type)
 			for(var/eye in seenby)
 				var/mob/observer/eye/m = eye
 				if(!m || !m.owner)
 					continue
 				if(m.owner.client)
-					m.owner.client.images -= t.obfuscations[obfuscation.type]
+					m.owner.client.images -= LAZYACCESS(t.obfuscations, obfuscation.type)
 
 	for(var/turf in visRemoved)
 		var/turf/t = turf
 		if(obscuredTurfs[t])
-			if(!t.obfuscations[obfuscation.type])
+			if(!LAZYACCESS(t.obfuscations, obfuscation.type))
 				var/image/I = image(obfuscation.icon, t, obfuscation.icon_state, BYOND_LIGHTING_LAYER+0.1)
 				I.plane = t.get_relative_plane(BYOND_LIGHTING_PLANE)
-				t.obfuscations[obfuscation.type] = I
+				LAZYSET(t.obfuscations, obfuscation.type, I)
 
-			obscured += t.obfuscations[obfuscation.type]
+			obscured += LAZYACCESS(t.obfuscations, obfuscation.type)
 			for(var/eye in seenby)
 				var/mob/observer/eye/m = eye
 				if(!m || !m.owner)
 					seenby -= m
 					continue
 				if(m.owner.client)
-					m.owner.client.images += t.obfuscations[obfuscation.type]
+					m.owner.client.images += LAZYACCESS(t.obfuscations, obfuscation.type)
 
 /datum/chunk/proc/acquireVisibleTurfs(var/list/visible)
 
@@ -142,11 +142,11 @@
 
 	for(var/turf in obscuredTurfs)
 		var/turf/t = turf
-		if(!t.obfuscations[obfuscation.type])
+		if(!LAZYACCESS(t.obfuscations, obfuscation.type))
 			var/image/I = image(obfuscation.icon, t, obfuscation.icon_state, BYOND_LIGHTING_LAYER+0.1)
 			I.plane = t.get_relative_plane(BYOND_LIGHTING_PLANE)
-			t.obfuscations[obfuscation.type] = I
-		obscured += t.obfuscations[obfuscation.type]
+			LAZYSET(t.obfuscations, obfuscation.type, I)
+		obscured += LAZYACCESS(t.obfuscations, obfuscation.type)
 
 /proc/seen_turfs_in_range(var/source, var/range)
 	var/turf/pos = get_turf(source)

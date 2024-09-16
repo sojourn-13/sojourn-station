@@ -10,10 +10,10 @@ var/global/datum/repository/crew/crew_repository = new()
 	cache_data = list()
 	cache_data_alert = list()
 
-	var/PriorityQueue/general_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
-	var/PriorityQueue/binary_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
-	var/PriorityQueue/vital_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
-	var/PriorityQueue/tracking_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
+	var/PriorityQueue/general_modifiers = new/PriorityQueue(GLOBAL_PROC_REF(cmp_crew_sensor_modifier))
+	var/PriorityQueue/binary_modifiers = new/PriorityQueue(GLOBAL_PROC_REF(cmp_crew_sensor_modifier))
+	var/PriorityQueue/vital_modifiers = new/PriorityQueue(GLOBAL_PROC_REF(cmp_crew_sensor_modifier))
+	var/PriorityQueue/tracking_modifiers = new/PriorityQueue(GLOBAL_PROC_REF(cmp_crew_sensor_modifier))
 
 	general_modifiers.Enqueue(new/crew_sensor_modifier/general())
 	binary_modifiers.Enqueue(new/crew_sensor_modifier/binary())
@@ -34,7 +34,7 @@ var/global/datum/repository/crew/crew_repository = new()
 
 	..()
 
-/datum/repository/crew/proc/health_data(var/z_level)
+/datum/repository/crew/proc/health_data(z_level, forced = FALSE)
 	var/list/crewmembers = list()
 	if(!z_level)
 		return crewmembers
@@ -44,7 +44,7 @@ var/global/datum/repository/crew/crew_repository = new()
 		cache_entry = new/datum/cache_entry
 		cache_data[num2text(z_level)] = cache_entry
 
-	if(world.time < cache_entry.timestamp)
+	if(!forced && (world.time < cache_entry.timestamp))
 		return cache_entry.data
 
 	cache_data_alert[num2text(z_level)] = FALSE
@@ -69,7 +69,7 @@ var/global/datum/repository/crew/crew_repository = new()
 					if (crewmemberData["alert"])
 						cache_data_alert[num2text(z_level)] = TRUE
 
-	crewmembers = sortNames(crewmembers)
+	crewmembers = sortTim(crewmembers, GLOBAL_PROC_REF(cmp_name_in_list_asc))
 	cache_entry.timestamp = world.time + 5 SECONDS
 	cache_entry.data = crewmembers
 

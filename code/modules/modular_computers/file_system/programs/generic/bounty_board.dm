@@ -8,6 +8,7 @@
 	extended_desc = "This program allows creating and fulfilling requests."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "user-injured"
 	size = 2
 	requires_ntnet = 1
 	available_on_ntnet = 1
@@ -19,7 +20,7 @@
 	name = "Bounty board"
 	var/datum/computer_file/report/bounty_entry/selectedEntry
 
-/datum/nano_module/bounty_board/ui_data(mob/user)
+/datum/nano_module/bounty_board/nano_ui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/list/user_access = get_record_access(user)
 	if(selectedEntry)
@@ -52,8 +53,8 @@
 	data["claimed_bounties"] = claimed_bounties
 	return data
 
-/datum/nano_module/bounty_board/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+/datum/nano_module/bounty_board/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -125,6 +126,7 @@
 			to_chat(usr, SPAN_WARNING("Insufficient Data"))
 			return
 		selectedEntry = null
+		log_and_message_admins("[usr] has posted a bounty!")
 		return 1
 
 	if(href_list["remove"])

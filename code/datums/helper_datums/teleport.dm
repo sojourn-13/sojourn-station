@@ -148,23 +148,53 @@
 
 /datum/teleport/instant/science/setPrecision(aprecision)
 	..()
-	if(istype(teleatom, /obj/item/weapon/storage/backpack/holding))
+	if(istype(teleatom, /obj/item/storage/backpack/holding) || istype(teleatom, /obj/item/storage/pouch/holding/) || \
+	   istype(teleatom, /obj/item/storage/belt/holding) || istype(teleatom, /obj/item/storage/bag/trash/holding) || \
+	   istype(teleatom, /obj/item/storage/bag/ore/holding))
 		precision = rand(1, 100)
 
-	var/list/bagholding = teleatom.search_contents_for(/obj/item/weapon/storage/backpack/holding)
+	var/ofholding = 0
+	var/list/bagholding = teleatom.search_contents_for(/obj/item/storage/backpack/holding)
 	if(bagholding.len)
-		precision = max(rand(1, 100)*bagholding.len, 100)
+		ofholding += bagholding.len
+	var/list/pouchholding = teleatom.search_contents_for(/obj/item/storage/pouch/holding)
+	if(pouchholding.len)
+		ofholding += pouchholding.len
+	var/list/beltholding = teleatom.search_contents_for(/obj/item/storage/belt/holding)
+	if(beltholding.len)
+		ofholding += beltholding.len
+	var/list/trashholding = teleatom.search_contents_for(/obj/item/storage/bag/trash/holding)
+	if(trashholding.len)
+		ofholding += trashholding.len
+	var/list/satchelholding = teleatom.search_contents_for(/obj/item/storage/bag/ore/holding)
+	if(satchelholding.len)
+		ofholding += satchelholding.len
+
+	if(ofholding)
+		GLOB.bluespace_entropy += ofholding
+		precision = max(rand(1, 100)*ofholding, 100)
 		if(isliving(teleatom))
 			var/mob/living/MM = teleatom
-			to_chat(MM, SPAN_DANGER("The Bluespace interface on your [teleatom] interferes with the teleport!"))
+			if(bagholding.len)
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your bag of holding interferes with the teleport!"))
+			if(pouchholding.len)
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your pouch of holding interferes with the teleport!"))
+			if(beltholding.len)
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your belt of holding interferes with the teleport!"))
+			if(trashholding.len)
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your trash bag of holding interferes with the teleport!"))
+			if(satchelholding.len)
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your satchel of holding interferes with the teleport!"))
 	return 1
 
 /datum/teleport/instant/science/teleportChecks()
-	if(istype(teleatom, /obj/item/weapon/disk/nuclear)) // Don't let nuke disks get teleported --NeoFite
+	if(istype(teleatom, /obj/effect/sparks))
+		return 0
+	if(istype(teleatom, /obj/item/disk/nuclear)) // Don't let nuke disks get teleported --NeoFite
 		teleatom.visible_message(SPAN_DANGER("\The [teleatom] bounces off of the portal!"))
 		return 0
 
-	if(!isemptylist(teleatom.search_contents_for(/obj/item/weapon/disk/nuclear)))
+	if(!isemptylist(teleatom.search_contents_for(/obj/item/disk/nuclear)))
 		if(isliving(teleatom))
 			var/mob/living/MM = teleatom
 			MM.visible_message(
@@ -180,7 +210,7 @@
 			var/obj/mecha/MM = teleatom
 			to_chat(MM.occupant, SPAN_DANGER("\The [MM] would not survive the jump to a location so far away!"))
 			return 0
-		if(!isemptylist(teleatom.search_contents_for(/obj/item/weapon/storage/backpack/holding)))
+		if(!isemptylist(teleatom.search_contents_for(/obj/item/storage/backpack/holding)))
 			teleatom.visible_message(SPAN_DANGER("\The [teleatom] bounces off of the portal!"))
 			return 0
 

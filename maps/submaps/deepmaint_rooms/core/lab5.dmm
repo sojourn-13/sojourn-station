@@ -1,0 +1,779 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"ab" = (
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ac" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/item/ammo_casing,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ad" = (
+/obj/structure/flora/small/grassa2,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ae" = (
+/turf/simulated/floor/beach/water/jungle,
+/area/deepmaint)
+"af" = (
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ag" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ah" = (
+/obj/structure/flora/small/grassb5,
+/obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ai" = (
+/obj/item/ammo_casing,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aj" = (
+/turf/simulated/floor/beach/water/jungledeep,
+/area/deepmaint)
+"ak" = (
+/obj/structure/salvageable/console_broken_os,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"al" = (
+/obj/structure/salvageable/server_os,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"am" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"an" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ao" = (
+/obj/structure/flora/small/grassb3,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ap" = (
+/obj/machinery/light_construct{
+	dir = 4
+	},
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aq" = (
+/obj/structure/flora/small/grassa5,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ar" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"as" = (
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"at" = (
+/obj/structure/flora/small/grassb5,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"au" = (
+/obj/structure/flora/small/grassb5,
+/obj/structure/flora/small/grassb3,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"av" = (
+/obj/structure/flora/tree/jungle,
+/turf/simulated/floor/beach/water/jungledeep,
+/area/deepmaint)
+"aw" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ax" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ay" = (
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"az" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"aA" = (
+/obj/structure/flora/small/grassa3,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aB" = (
+/obj/structure/flora/small/grassb1,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aC" = (
+/obj/structure/flora/small/grassa2,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aD" = (
+/turf/unsimulated/wall/jungle,
+/area/deepmaint)
+"aE" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/beach/water/jungle,
+/area/deepmaint)
+"aF" = (
+/obj/machinery/door/airlock/vault{
+	name = "Laboratory 5"
+	},
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aG" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aH" = (
+/obj/structure/flora/small/grassb2,
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aI" = (
+/obj/structure/flora/small/grassb1,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aJ" = (
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"aK" = (
+/obj/structure/flora/small/grassb3,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aL" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aM" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aN" = (
+/obj/structure/salvageable/computer_os,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aO" = (
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aP" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aQ" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"aR" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/item/ammo_casing,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/random/oddity_guns,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aS" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aT" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aU" = (
+/obj/structure/flora/small/grassb5,
+/obj/item/ammo_casing,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aV" = (
+/obj/structure/flora/small/grassb1,
+/obj/structure/flora/small/grassb3,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aW" = (
+/obj/structure/flora/small/grassa4,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aX" = (
+/obj/structure/flora/tree/jungle/variant2,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aY" = (
+/obj/structure/flora/small/grassb5,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"aZ" = (
+/obj/structure/flora/small/grassa2,
+/obj/item/ammo_casing,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"ba" = (
+/obj/effect/decal/cleanable/blood,
+/obj/random/psi_megafauna,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"bb" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"bc" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/psi_catalyst,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"tf" = (
+/obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+"uN" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"Ub" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+ar
+aa
+aa
+aa
+aa
+aa
+uN
+aa
+aa
+aa
+aa
+aa
+ar
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aJ
+ab
+ab
+aO
+aD
+ab
+aA
+aZ
+aL
+ab
+as
+aA
+aD
+ab
+aL
+ab
+aJ
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aJ
+ad
+aD
+ab
+aD
+ab
+aD
+aD
+aD
+aD
+aD
+ab
+aD
+ab
+ba
+aS
+aJ
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+am
+aJ
+ab
+aD
+ab
+aD
+tf
+aD
+aY
+aD
+Ub
+ai
+ab
+aD
+ab
+ak
+bb
+aJ
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aJ
+ab
+aD
+ab
+aG
+ab
+aD
+ah
+aD
+ab
+aD
+aD
+aD
+ab
+bc
+ab
+aJ
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aJ
+ab
+aD
+aD
+aD
+aD
+aD
+ao
+aD
+as
+ab
+aD
+as
+ae
+ae
+aG
+aJ
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aJ
+ag
+aD
+aO
+ab
+aY
+ab
+au
+aD
+aT
+aw
+aD
+ab
+ae
+aD
+aD
+aJ
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aJ
+ab
+aD
+ab
+aD
+aD
+ab
+ab
+aD
+aX
+aR
+aD
+ae
+aE
+aj
+aD
+aJ
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aJ
+ad
+aD
+aG
+aZ
+aD
+ab
+aV
+aD
+aT
+ac
+aD
+ae
+aj
+aj
+aD
+aJ
+aQ
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aJ
+ab
+aD
+aD
+as
+aD
+aD
+aK
+aD
+aP
+aN
+aD
+aj
+aj
+av
+aD
+aJ
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aJ
+ab
+ab
+aq
+tf
+as
+aD
+aM
+aD
+aD
+aD
+aD
+ae
+aj
+aj
+aD
+aJ
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+am
+aJ
+aD
+aD
+aD
+aD
+an
+aD
+aB
+aM
+aD
+ab
+ab
+ae
+ae
+aD
+aD
+aJ
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aF
+ab
+ab
+aH
+aD
+ab
+aD
+aD
+aW
+aD
+aI
+aD
+ab
+ae
+ae
+ab
+aJ
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aQ
+aF
+ab
+aD
+ab
+aD
+aG
+ab
+aD
+ad
+aD
+aC
+aD
+ab
+aS
+aG
+ab
+aJ
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aJ
+ab
+aD
+aD
+aD
+aD
+ay
+aD
+ab
+ad
+aW
+aD
+ab
+al
+ab
+Ub
+aJ
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aJ
+ax
+at
+af
+ab
+as
+aU
+aD
+ax
+aB
+Ub
+aD
+ab
+ap
+ab
+ab
+aJ
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+az
+aa
+aa
+aa
+aa
+aa
+az
+aQ
+aa
+aa
+aa
+aa
+az
+aa
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

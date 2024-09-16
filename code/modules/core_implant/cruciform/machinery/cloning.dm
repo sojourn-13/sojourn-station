@@ -16,10 +16,6 @@
 	density = TRUE
 	anchored = TRUE
 	layer = 2.8
-	//circuit = /obj/item/weapon/circuitboard/neotheology/cloner
-
-	frame_type = FRAME_VERTICAL
-
 	var/obj/machinery/neotheology/reader/reader
 	var/reader_loc
 
@@ -32,7 +28,7 @@
 
 	var/progress = 0
 
-	var/time_multiplier = 1	//Try to avoid use of non integer values
+	var/cloning_speed  = 1	//Try to avoid use of non integer values
 
 	var/biomass_consumption = 2
 
@@ -51,17 +47,6 @@
 	if(occupant)
 		qdel(occupant)
 	return ..()
-
-
-/obj/machinery/neotheology/cloner/RefreshParts()
-	var/mn_rating = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		mn_rating += M.rating
-	time_multiplier = round((3 * initial(time_multiplier))/mn_rating)
-
-
-/obj/machinery/neotheology/cloner/proc/get_progress(var/prg = progress)
-	return round(prg / time_multiplier)
 
 
 /obj/machinery/neotheology/cloner/proc/find_container()
@@ -123,7 +108,7 @@
 		occupant = null
 	else
 		if(get_progress(progress) >= CLONING_MEAT)
-			new /obj/item/weapon/reagent_containers/food/snacks/meat(loc)
+			new /obj/item/reagent_containers/food/snacks/meat(loc)
 
 	update_icon()
 
@@ -230,30 +215,22 @@
 			occupant.sync_organ_dna()
 			occupant.flavor_text = R.flavor
 
-		if(progress == CLONING_BODY*time_multiplier)
+		if(progress == CLONING_BODY*cloning_speed )
 			var/datum/effect/effect/system/spark_spread/s = new
 			s.set_up(3, 1, src)
 			s.start()
 
-		if(progress == CLONING_DONE*time_multiplier)
+		if(progress == CLONING_DONE*cloning_speed )
 			open_anim()
 			closed = FALSE
 
-		if(progress >= CLONING_DONE*time_multiplier + 2)
+		if(progress >= CLONING_DONE*cloning_speed  + 2)
 			done()
 
 		update_icon()
 
 	use_power(power_cost)
 
-
-/obj/machinery/neotheology/cloner/attackby(obj/item/I, mob/user as mob)
-
-	if(default_deconstruction(I, user))
-		return
-
-	if(default_part_replacement(I, user))
-		return
 
 /obj/machinery/neotheology/cloner/update_icon()
 	icon_state = "pod_base0"
@@ -303,7 +280,7 @@
 			if(P >= CLONING_MEAT && occupant)
 				I = image(occupant.icon, occupant.icon_state)
 				I.alpha = min(255,round(((P-CLONING_MEAT)/(CLONING_BODY-CLONING_MEAT))*255))
-				I.copy_overlays(occupant.get_overlays(), TRUE)
+				I.copy_overlays(occupant, TRUE)
 				I.layer = 5
 				I.pixel_z = 11
 				add_overlay(I)
@@ -361,7 +338,6 @@
 	icon_state = "biocan"
 	density = TRUE
 	anchored = TRUE
-	circuit = /obj/item/weapon/circuitboard/neotheology/biocan
 
 	var/biomass_capacity = 600
 
@@ -371,12 +347,6 @@
 	create_reagents(biomass_capacity)
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		reagents.add_reagent("biomatter", 300)
-
-/obj/machinery/neotheology/biomass_container/RefreshParts()
-	var/T = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/M in component_parts)
-		T += M.rating * 200
-	biomass_capacity = T
 
 /obj/machinery/neotheology/biomass_container/examine(mob/user)
 	if(!..(user, 2))
@@ -388,13 +358,6 @@
 		to_chat(user, SPAN_NOTICE("Filled to [reagents.total_volume]/[biomass_capacity]."))
 
 /obj/machinery/neotheology/biomass_container/attackby(obj/item/I, mob/user as mob)
-
-	if(default_deconstruction(I, user))
-		return
-
-	if(default_part_replacement(I, user))
-		return
-
 	if (istype(I, /obj/item/stack/material/biomatter))
 		var/obj/item/stack/material/biomatter/B = I
 		if (B.biomatter_in_sheet && B.amount)
@@ -419,8 +382,8 @@
 		else
 			to_chat(user, SPAN_WARNING("\The [B.name] is exhausted and can't be melted to biomatter. "))
 
-	if(istype(I, /obj/item/weapon/reagent_containers) && I.is_open_container())
-		var/obj/item/weapon/reagent_containers/container = I
+	if(istype(I, /obj/item/reagent_containers) && I.is_open_container())
+		var/obj/item/reagent_containers/container = I
 		if(container.reagents.get_reagent_amount("biomatter") == container.reagents.total_volume)
 			container.reagents.trans_to_holder(reagents, container.amount_per_transfer_from_this)
 			to_chat(user, SPAN_NOTICE("You transfer some of biomatter from \the [container] to \the [name]."))
@@ -448,22 +411,14 @@
 	icon_state = "reader_off"
 	density = TRUE
 	anchored = TRUE
-	//circuit = /obj/item/weapon/circuitboard/neotheology/reader
 
-	var/obj/item/weapon/implant/core_implant/cruciform/implant
+	var/obj/item/implant/core_implant/cruciform/implant
 	var/reading = FALSE
 
 
 /obj/machinery/neotheology/reader/attackby(obj/item/I, mob/user as mob)
-
-	if(default_deconstruction(I, user))
-		return
-
-	if(default_part_replacement(I, user))
-		return
-
-	if(istype(I, /obj/item/weapon/implant/core_implant/cruciform))
-		var/obj/item/weapon/implant/core_implant/cruciform/C = I
+	if(istype(I, /obj/item/implant/core_implant/cruciform))
+		var/obj/item/implant/core_implant/cruciform/C = I
 		user.drop_item()
 		C.forceMove(src)
 		implant = C
@@ -506,7 +461,7 @@
 
 	if(implant)
 		var/image/I = image(icon, "reader_c_green")
-		if(implant.get_module(CRUCIFORM_PRIEST))
+		if(implant.get_module(CRUCIFORM_PRIME))
 			I = image(icon, "reader_c_red")
 		add_overlay(I)
 

@@ -5,7 +5,7 @@
 //There are six various machines where multistructure datum is just a holder, each part proccess almost independently
 
 #define CLEANING_TIME 2 SECONDS
-#define CLONE_DAMAGE_PER_TICK 5
+#define BIOREACTOR_DAMAGE_PER_TICK 20
 
 
 /datum/multistructure/bioreactor
@@ -141,13 +141,15 @@
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomatter_tank_medium"
 	amount_per_transfer_from_this = 50
-	volume = 400
+	volume = 750
+	density = FALSE //So we can build things in a space that contains it
 
 
 /obj/structure/reagent_dispensers/biomatter/large
 	name = "large biomatter canister"
 	icon_state = "biomatter_tank_large"
-	volume = 800
+	volume = 1000
+	density = TRUE
 
 
 /obj/effect/overlay/bioreactor_solution
@@ -156,3 +158,5 @@
 	icon_state = "solution"
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	anchored = TRUE
+

@@ -63,7 +63,7 @@
 	name = "multi-tile airlock assembly"
 	result = /obj/structure/door_assembly/multi_tile
 	steps = list(
-		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/airlock/research

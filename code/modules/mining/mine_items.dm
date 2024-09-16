@@ -8,24 +8,33 @@
 
 /obj/structure/closet/secure_closet/personal/miner/populate_contents()
 
-	new /obj/item/weapon/storage/backpack/industrial(src)
-	new /obj/item/weapon/storage/backpack/satchel/industrial(src)
+	new /obj/item/storage/backpack/industrial(src)
+	new /obj/item/storage/backpack/satchel/industrial(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/under/rank/miner(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
 	new /obj/item/clothing/shoes/color/black(src)
-	new /obj/item/weapon/cell/medium(src)
-	new /obj/item/weapon/cell/medium(src)
-	new /obj/item/weapon/cell/small(src)
-	new /obj/item/weapon/tool_upgrade/augment/fuel_tank(src)
+	new /obj/item/cell/medium(src)
+	new /obj/item/cell/medium(src)
+	new /obj/item/cell/small(src)
+	new /obj/item/tool_upgrade/augment/fuel_tank(src)
 	new /obj/item/device/scanner/gas(src)
-	new /obj/item/weapon/storage/bag/ore(src)
+	new /obj/item/storage/bag/ore(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/weapon/tool/shovel(src)
-	new /obj/item/weapon/tool/pickaxe(src)
-	new /obj/item/weapon/tool/pickaxe/drill(src)
+	new /obj/item/tool/shovel(src)
+	new /obj/item/tool/pickaxe(src)
+	new /obj/item/tool/pickaxe/drill(src)
 	new /obj/item/device/t_scanner(src)
+	new /obj/item/gun/projectile/boltgun/flare_gun(src)
+	new /obj/item/ammo_casing/flare(src)
+	new /obj/item/device/ore_sonar(src)
+	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
+	new /obj/item/clothing/accessory/job/cape/mining(src) // ROCK AND STONE, BRUDDAH!
+	new /obj/item/gun/projectile/shotgun/pump(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
+	new /obj/item/storage/firstaid/ifak(src)
 
 /******************************Lantern*******************************/
 
@@ -36,6 +45,13 @@
 	desc = "A mining lantern."
 	brightness_on = 4			// luminosity when on
 
+/obj/item/device/lighting/toggleable/lantern/censer
+	name = "censer"
+	icon_state = "censer"
+	item_state = "censer"
+	desc = "A silver-gold incense burner that releases a sweet, comforting perfume. Sometimes used in consecration ceremonies by the Church, where the incense is said to clean and purify the air so prayers may better reach the Absolute."
+	brightness_on = 3			// luminosity when on
+	turn_on_sound = 'sound/effects/Custom_flare.ogg'
 
 /*****************************Pickaxe********************************/
 

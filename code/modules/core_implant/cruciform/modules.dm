@@ -1,9 +1,9 @@
-/datum/core_module/cruciform/implant_type = /obj/item/weapon/implant/core_implant/cruciform
+/datum/core_module/cruciform/implant_type = /obj/item/implant/core_implant/cruciform
 
 
 /datum/core_module/cruciform/red_light/install()
-	implant.icon_state = "cruciform_red"
-	implant.max_power += 30
+	implant.icon_state = "cruciform_purple"
+	implant.max_power += 50
 	implant.power_regen += 0.3
 
 	if(ishuman(implant.wearer))
@@ -12,7 +12,7 @@
 
 /datum/core_module/cruciform/red_light/uninstall()
 	implant.icon_state = "cruciform_green"
-	implant.max_power -= 30
+	implant.max_power -= 50
 	implant.power_regen -= 0.3
 
 	if(ishuman(implant.wearer))
@@ -23,7 +23,7 @@
 
 
 /*
-	Traitor uplink hidden inside cruciform. Used for inquisitors and maybe other NT antags
+	contractor uplink hidden inside cruciform. Used for inquisitors and maybe other NT antags
 */
 /*
 /datum/core_module/cruciform/uplink
@@ -60,6 +60,16 @@
 	var/datum/mind/mind = null
 	var/languages = list()
 	var/flavor = ""
+	var/datum/stat_holder/stats
+
+/datum/core_module/cruciform/cloning/proc/write_wearer(var/mob/living/carbon/human/H)
+	dna = H.dna
+	ckey = H.ckey
+	mind = H.mind
+	languages = H.languages
+	flavor = H.flavor_text
+	age = H.age
+	stats = H.stats
 
 /datum/core_module/cruciform/cloning/preinstall()
 	if(ishuman(implant.wearer))
@@ -74,7 +84,7 @@
 		languages = H.languages
 		flavor = H.flavor_text
 		age = H.age
-
+		stats = H.stats
 
 /datum/core_module/cruciform/obey/install()
 	var/laws = list("You are enslaved. You must obey the laws below.",
@@ -104,12 +114,12 @@
 
 /datum/core_module/activatable/cruciform/priest_convert/activate()
 	..()
-	var/obj/item/weapon/implant/core_implant/cruciform/C = implant
-	C.make_priest()
+	var/obj/item/implant/core_implant/cruciform/C = implant
+	C.make_prime()
 
 /datum/core_module/activatable/cruciform/priest_convert/uninstall()
 	..()
-	var/obj/item/weapon/implant/core_implant/cruciform/C = implant
+	var/obj/item/implant/core_implant/cruciform/C = implant
 	C.make_common()
 
 
@@ -136,7 +146,7 @@
 ///////////
 
 /datum/core_module/rituals/cruciform
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform
+	implant_type = /obj/item/implant/core_implant/cruciform
 	var/list/ritual_types = list()
 
 /datum/core_module/rituals/cruciform/set_up()
@@ -159,7 +169,6 @@
 	/datum/ritual/targeted/cruciform/priest)
 
 
-
 /datum/core_module/rituals/cruciform/inquisitor
 	access = list(access_nt_inquisitor)
 	ritual_types = list(/datum/ritual/cruciform/inquisitor,
@@ -170,13 +179,52 @@
 	implant.max_power += 50
 	implant.power_regen += 0.5
 
-
 /datum/core_module/rituals/cruciform/inquisitor/uninstall()
 	..()
 	implant.max_power -= 50
 	implant.power_regen -= 0.5
 
 
-
 /datum/core_module/rituals/cruciform/crusader
-	ritual_types = list(/datum/ritual/cruciform/crusader)
+	ritual_types = list(/datum/ritual/cruciform/crusader,
+	/datum/ritual/targeted/cruciform/crusader)
+
+/datum/core_module/rituals/cruciform/crusader/install()
+	..()
+	if(implant.get_module(CRUCIFORM_PRIME)) //If they're a prime they already get +50 power and +0.3 regen, we just need to get them up the rest of the way
+		implant.power_regen += 0.2
+	else
+		implant.max_power += 50
+		implant.power_regen += 0.5
+
+/datum/core_module/rituals/cruciform/crusader/uninstall()
+	..()
+	if(implant.get_module(CRUCIFORM_PRIME))
+		implant.power_regen -= 0.2
+	else
+		implant.max_power -= 50
+		implant.power_regen -= 0.5
+
+
+/datum/core_module/rituals/cruciform/omni
+	ritual_types = list(/datum/ritual/cruciform/omni)
+
+/datum/core_module/rituals/cruciform/tessellate
+	ritual_types = list(/datum/ritual/cruciform/tessellate,
+	/datum/ritual/targeted/cruciform/tessellate)
+
+/datum/core_module/rituals/cruciform/lemniscate
+	ritual_types = list(/datum/ritual/cruciform/lemniscate,
+	/datum/ritual/targeted/cruciform/lemniscate)
+
+/datum/core_module/rituals/cruciform/monomial
+	ritual_types = list(/datum/ritual/cruciform/monomial,
+	/datum/ritual/targeted/cruciform/monomial)
+
+/datum/core_module/rituals/cruciform/divisor
+	ritual_types = list(/datum/ritual/cruciform/divisor,
+	/datum/ritual/targeted/cruciform/divisor)
+
+/datum/core_module/rituals/cruciform/factorial
+	ritual_types = list(/datum/ritual/cruciform/factorial,
+	/datum/ritual/targeted/cruciform/factorial)

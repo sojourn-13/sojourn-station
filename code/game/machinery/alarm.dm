@@ -11,10 +11,10 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm0"
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 80
 	active_power_usage = 3000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	req_one_access = list(access_atmospherics, access_engine_equip)
 	var/alarm_id = null
 	var/breach_detection = 1 // Whether to use automatic breach detection or not
@@ -31,7 +31,7 @@
 
 	var/datum/wires/alarm/wires
 
-	var/mode = AALARM_MODE_SCRUBBING
+	var/mode = AALARM_MODE_OFF
 	var/screen = AALARM_SCREEN_MAIN
 	var/area_uid
 	var/area/alarm_area
@@ -67,19 +67,21 @@
 	req_access = list(access_rd, access_atmospherics, access_engine_equip)
 	TLV["oxygen"] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa
 	TLV["carbon dioxide"] = list(-1.0, -1.0,   5,  10) // Partial pressure, kpa
-	TLV["plasma"] =			list(-1.0, -1.0, 0.2, 0.5) // Partial pressure, kpa
+	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(0, ONE_ATMOSPHERE * 0.10, ONE_ATMOSPHERE * 1.40, ONE_ATMOSPHERE * 1.60) /* kpa */
 	TLV["temperature"] =	list(20, 40, 140, 160) // K
 	target_temperature = 90
 
 /obj/machinery/alarm/Destroy()
+	GLOB.alarm_list -= src
 	unregister_radio(src, frequency)
 	qdel(wires)
 	wires = null
 	return ..()
 
 /obj/machinery/alarm/New(var/loc, var/dir, var/building = 0)
+	GLOB.alarm_list += src
 	if(building)
 		if(dir)
 			src.set_dir(dir)
@@ -110,7 +112,7 @@
 	// breathable air according to human/Life()
 	TLV["oxygen"] =			list(16, 19, 135, 140) // Partial pressure, kpa
 	TLV["carbon dioxide"] = list(-1.0, -1.0, 5, 10) // Partial pressure, kpa
-	TLV["plasma"] =			list(-1.0, -1.0, 0.2, 0.5) // Partial pressure, kpa
+	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.10,ONE_ATMOSPHERE*1.20) /* kpa */
 	TLV["temperature"] =	list(T0C-26, T0C, T0C+40, T0C+66) // K
@@ -121,6 +123,9 @@
 	set_frequency(frequency)
 	if(buildstage == 2 && !master_is_operating())
 		elect_master()
+
+/obj/machinery/alarm/fire_act()
+	return
 
 /obj/machinery/alarm/Process()
 	if((stat & (NOPOWER|BROKEN)) || shorted || buildstage != 2)
@@ -458,7 +463,7 @@
 	frequency.post_signal(src, alert_signal)
 
 /obj/machinery/alarm/attack_ai(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/alarm/attack_hand(mob/user)
 	. = ..()
@@ -467,10 +472,10 @@
 	return interact(user)
 
 /obj/machinery/alarm/interact(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	wires.Interact(user)
 
-/obj/machinery/alarm/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, var/master_ui = null, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/alarm/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, var/master_ui = null, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/data[0]
 	var/remote_connection = 0
 	var/remote_access = 0
@@ -598,7 +603,7 @@
 
 			data["thresholds"] = thresholds
 
-/obj/machinery/alarm/CanUseTopic(var/mob/user, var/datum/topic_state/state, var/href_list = list())
+/obj/machinery/alarm/CanUseTopic(var/mob/user, var/datum/nano_topic_state/state, var/href_list = list())
 	if(buildstage != 2)
 		return STATUS_CLOSE
 
@@ -622,7 +627,7 @@
 			AA.apply_danger_level(0)
 	update_icon()
 
-/obj/machinery/alarm/Topic(href, href_list, var/datum/topic_state/state)
+/obj/machinery/alarm/Topic(href, href_list, var/datum/nano_topic_state/state)
 	if(..(href, href_list, state))
 		return 1
 
@@ -650,6 +655,7 @@
 				to_chat(usr, "Temperature must be between [min_temperature]C and [max_temperature]C")
 			else
 				target_temperature = input_temperature + T0C
+			investigate_log("had it's target temperature changed by [key_name(usr)]", "atmos")
 		playsound(loc, 'sound/machines/button.ogg', 100, 1)
 		return 1
 
@@ -688,6 +694,7 @@
 					"scrubbing")
 					playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 					send_signal(device_id, list(href_list["command"] = text2num(href_list["val"]) ) )
+					investigate_log("had it's settings changed by [key_name(usr)]", "atmos")
 					return 1
 
 				if("set_threshold")
@@ -739,6 +746,7 @@
 						if(selected[3] > selected[4])
 							selected[3] = selected[4]
 
+					investigate_log("had it's tresholds changed by [key_name(usr)]", "atmos")
 					apply_mode()
 					return 1
 
@@ -766,6 +774,7 @@
 		if(href_list["atmos_reset"])
 			playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 			forceClearAlarm()
+			investigate_log("had it's alarms cleared by [key_name(usr)]", "atmos")
 			return 1
 
 		if(href_list["mode"])
@@ -814,7 +823,7 @@
 			if(buildstage == 1)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					to_chat(user, "You pry out the circuit!")
-					var/obj/item/weapon/airalarm_electronics/circuit = new /obj/item/weapon/airalarm_electronics()
+					var/obj/item/airalarm_electronics/circuit = new /obj/item/airalarm_electronics()
 					circuit.loc = user.loc
 					buildstage = 0
 					update_icon()
@@ -834,16 +843,8 @@
 
 	switch(buildstage)
 		if(2)
-			if (istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))// trying to unlock the interface with an ID card
-				if(stat & (NOPOWER|BROKEN))
-					to_chat(user, "It does nothing")
-					return
-				else
-					if(allowed(usr) && !wires.IsIndexCut(AALARM_WIRE_IDSCAN))
-						locked = !locked
-						to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the Air Alarm interface.</span>")
-					else
-						to_chat(user, SPAN_WARNING("Access denied."))
+			if (istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))// trying to unlock the interface with an ID card
+				toggle_lock(user)
 			return
 
 		if(1)
@@ -860,7 +861,7 @@
 					return
 
 		if(0)
-			if(istype(I, /obj/item/weapon/airalarm_electronics))
+			if(istype(I, /obj/item/airalarm_electronics))
 				to_chat(user, "You insert the circuit!")
 				qdel(I)
 				buildstage = 1
@@ -880,11 +881,29 @@
 		to_chat(user, "It is not wired.")
 	if (buildstage < 1)
 		to_chat(user, "The circuit is missing.")
+
+/obj/machinery/alarm/proc/toggle_lock(mob/user)
+	if(stat & (NOPOWER|BROKEN))
+		to_chat(user, "It does nothing")
+		return
+	else
+		if(allowed(user) && !wires.IsIndexCut(AALARM_WIRE_IDSCAN))
+			locked = !locked
+			to_chat(user, SPAN_NOTICE("You [ locked ? "lock" : "unlock"] the Air Alarm interface."))
+		else
+			to_chat(user, SPAN_WARNING("Access denied."))
+
+/obj/machinery/alarm/AltClick(mob/user)
+	..()
+	if(issilicon(user) || !Adjacent(user))
+		return
+	toggle_lock(user)
+
 /*
 AIR ALARM CIRCUIT
 Just a object used in constructing air alarms
 */
-/obj/item/weapon/airalarm_electronics
+/obj/item/airalarm_electronics
 	name = "air alarm electronics"
 	icon = 'icons/obj/doors/door_assembly.dmi'
 	icon_state = "door_electronics"
@@ -906,10 +925,10 @@ FIRE ALARM
 	var/timing = 0.0
 	var/lockdownbyai = 0
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 6
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	var/last_process = 0
 	var/wiresexposed = 0
 	var/buildstage = 2 // 2 = complete, 1 = no wires,  0 = circuit gone
@@ -941,7 +960,7 @@ FIRE ALARM
 			set_light(l_range = 1.5, l_power = 0.5, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else
 			icon_state = "fire0"
-			var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 			var/decl/security_level/sl = security_state.current_security_level
 
 			set_light(sl.light_max_bright, sl.light_inner_range, sl.light_outer_range, 2, sl.light_color_alarm)
@@ -959,8 +978,11 @@ FIRE ALARM
 		return
 	return ui_interact(user)
 
-/obj/machinery/firealarm/bullet_act()
-	return src.alarm()
+/obj/machinery/firealarm/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		return src.alarm()
+	else
+		return
 
 /obj/machinery/firealarm/emp_act(severity)
 	if(prob(50/severity))
@@ -1018,7 +1040,7 @@ FIRE ALARM
 			if(buildstage == 1)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					to_chat(user, "You pry out the circuit!")
-					var/obj/item/weapon/airalarm_electronics/circuit = new /obj/item/weapon/airalarm_electronics()
+					var/obj/item/firealarm_electronics/circuit = new /obj/item/firealarm_electronics()
 					circuit.loc = user.loc
 					buildstage = 0
 					update_icon()
@@ -1051,7 +1073,7 @@ FIRE ALARM
 					return
 
 		if(0)
-			if(istype(I, /obj/item/weapon/firealarm_electronics))
+			if(istype(I, /obj/item/firealarm_electronics))
 				to_chat(user, "You insert the circuit!")
 				qdel(I)
 				buildstage = 1
@@ -1086,22 +1108,50 @@ FIRE ALARM
 	spawn(rand(0,15))
 		update_icon()
 
-/obj/machinery/firealarm/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.outside_state)
-	var/data[0]
-	var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
-
-	data["seclevel"] = security_state.current_security_level.name
-	data["time"] = round(src.time)
-	data["timing"] = timing
-	var/area/A = get_area(src)
-	data["active"] = A.fire
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+/obj/machinery/firealarm/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "fire_alarm.tmpl", "Fire Alarm", 240, 330, state = state)
-		ui.set_initial_data(data)
+		ui = new(user, src, "FireAlarm", name)
 		ui.open()
-		ui.set_auto_update(1)
+
+/obj/machinery/firealarm/ui_data(mob/user)
+	var/list/data = list()
+
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+	data["seclevel"] = security_state.current_security_level.name
+
+	data["time"] = round(time)
+	data["timing"] = !!timing
+
+	var/area/A = get_area(src)
+	data["active"] = !!A.fire
+
+	return data
+
+/obj/machinery/firealarm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("alarm_toggle")
+			var/area/A = get_area(src)
+			if(A.fire)
+				reset()
+			else
+				alarm()
+			. = TRUE
+		
+		if("timer_set")
+			time = max(0, params["time"])
+			. = TRUE
+
+		if("timer_toggle")
+			timing = !timing
+			. = TRUE
+
+	if(.)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
 
 /obj/machinery/firealarm/CanUseTopic(user)
 	if(wiresexposed)
@@ -1110,28 +1160,6 @@ FIRE ALARM
 	if (buildstage != 2)
 		return STATUS_CLOSE
 	return ..()
-
-/obj/machinery/firealarm/Topic(href, href_list)
-	if(..())
-		return 1
-
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
-	if (href_list["status"] == "reset")
-		src.reset()
-		return TOPIC_REFRESH
-	else if (href_list["status"] == "alarm")
-		src.alarm()
-		return TOPIC_REFRESH
-	if (href_list["timer"] == "set")
-		time = max(0, input(usr, "Enter time delay", "Fire Alarm Timer", time) as num)
-	else if (href_list["timer"] == "start")
-		src.timing = 1
-		return TOPIC_REFRESH
-	else if (href_list["timer"] == "stop")
-		src.timing = 0
-		return TOPIC_REFRESH
-
-	return
 
 /obj/machinery/firealarm/proc/reset()
 	if (!( src.working ))
@@ -1177,11 +1205,17 @@ FIRE ALARM
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
 
+	GLOB.firealarm_list += src
+
+/obj/machinery/firealarm/Destroy()
+	GLOB.firealarm_list -= src
+	..()
+
 /*
 FIRE ALARM CIRCUIT
 Just a object used in constructing fire alarms
 */
-/obj/item/weapon/firealarm_electronics
+/obj/item/firealarm_electronics
 	name = "fire alarm electronics"
 	icon = 'icons/obj/doors/door_assembly.dmi'
 	icon_state = "door_electronics"
@@ -1200,7 +1234,7 @@ Just a object used in constructing fire alarms
 	var/timing = 0.0
 	var/lockdownbyai = 0
 	anchored = 1.0
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 6
 

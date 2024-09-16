@@ -1,7 +1,7 @@
 /obj/item/device/spy_sensor
 	name = "spying sensor"
 	icon_state = "motion0" //placeholder
-	origin_tech = list(TECH_MAGNETS = 5, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_DATA  = 5, TECH_ILLEGAL = 2)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	var/active = FALSE
 	var/datum/mind/owner
@@ -45,7 +45,7 @@
 	if(sensor_amount >= 3 && timer)
 		to_chat(usr, SPAN_NOTICE("Data collection initiated."))
 		if(owner)
-			for(var/datum/antag_contract/recon/C in GLOB.all_antag_contracts)
+			for(var/datum/antag_contract/recon/C in GLOB.various_antag_contracts)
 				if(C.completed)
 					continue
 				if(get_area(src) in C.targets)
@@ -63,7 +63,7 @@
 /obj/item/device/spy_sensor/proc/start()
 	var/list/local_sensors = get_local_sensors()
 	if(local_sensors.len >= 3)
-		timer = addtimer(CALLBACK(src, .proc/finish), 10 MINUTES, TIMER_STOPPABLE)
+		timer = addtimer(CALLBACK(src, PROC_REF(finish)), 10 MINUTES, TIMER_STOPPABLE)
 		for(var/obj/item/device/spy_sensor/S in local_sensors)
 			S.timer = timer
 			S.group = local_sensors
@@ -83,7 +83,7 @@
 	start()
 
 /obj/item/device/spy_sensor/proc/finish()
-	for(var/datum/antag_contract/recon/C in GLOB.all_antag_contracts)
+	for(var/datum/antag_contract/recon/C in GLOB.various_antag_contracts)
 		if(C.completed)
 			continue
 		C.check(src)

@@ -1,6 +1,7 @@
 /mob/living/silicon
 	gender = NEUTER
 	voice_name = "synthesized voice"
+	has_unlimited_silicon_privilege = TRUE
 	var/syndicate = 0
 	var/const/MAIN_CHANNEL = "Main Frequency"
 	var/lawchannel = MAIN_CHANNEL // Default channel on which to state laws
@@ -26,27 +27,54 @@
 	var/list/datum/alarm/queued_alarms = new()
 
 	var/list/access_rights
-	var/obj/item/weapon/card/id/idcard
-	var/idcard_type = /obj/item/weapon/card/id/synthetic
+	var/obj/item/card/id/idcard
+	var/idcard_type = /obj/item/card/id/synthetic
 
 	var/email_ringtone = TRUE
 
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	colony_friend = TRUE
 
-/mob/living/silicon/New()
+	status_flags = CANWEAKEN|CANSTUN|CANPUSH
+
+/mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src
-	..()
+	. = ..()
 	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_ROBOT)
+	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_ILLYRIAN)
+	add_language(LANGUAGE_EURO)
+	add_language(LANGUAGE_JANA)
+	add_language(LANGUAGE_CYRILLIC)
+	add_language(LANGUAGE_LATIN)
+	add_language(LANGUAGE_KRIOSAN)
+	add_language(LANGUAGE_AKULA)
+	add_language(LANGUAGE_MARQUA)
+	add_language(LANGUAGE_SYNTHETIC)
+	add_language(LANGUAGE_MERP)
+	add_language(LANGUAGE_BLORP)
+	add_language(LANGUAGE_WEH)
 	init_id()
 	init_subsystems()
+
+/mob/living/silicon/New()
+	..()
+	if(ckey)
+		recalibrate_hotkeys()
 
 /mob/living/silicon/Destroy()
 	GLOB.silicon_mob_list -= src
 	for(var/datum/alarm_handler/AH in SSalarm.all_handlers)
 		AH.unregister_alarm(src)
 	. = ..()
+
+/mob/living/silicon/lay_down()
+	resting = FALSE
+	update_lying_buckled_and_verb_status()
+	updateicon()
 
 /mob/living/silicon/proc/init_id()
 	if(idcard)
@@ -58,6 +86,7 @@
 	real_name = pickedName
 	name = real_name
 	create_or_rename_email(pickedName, "root.rt")
+	recalibrate_hotkeys()
 
 /mob/living/silicon/proc/show_laws()
 	return
@@ -71,14 +100,13 @@
 /mob/living/silicon/emp_act(severity)
 	switch(severity)
 		if(1)
-			src.take_organ_damage(0,20,emp=1)
+			src.take_organ_damage(0,20,emp=TRUE)
 			Stun(rand(5,10))
 		if(2)
-			src.take_organ_damage(0,10,emp=1)
+			src.take_organ_damage(0,10,emp=TRUE)
 			confused = (min(confused + 2, 30))
 //	flick("noise", src.flash)
-	if (HUDtech.Find("flash"))
-		flick("noise", HUDtech["flash"])
+	flash(0, FALSE , FALSE , FALSE)
 	to_chat(src, SPAN_DANGER("<B>*BZZZT*</B>"))
 	to_chat(src, SPAN_DANGER("Warning: Electromagnetic pulse detected."))
 	..()
@@ -109,18 +137,18 @@
 	return 1
 
 /mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
-	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
+	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(Proj.testing)))
 		IgniteMob()
 
 	if(!Proj.nodamage)
-		switch(Proj.damage_type)
-			if(BRUTE)
-				adjustBruteLoss(Proj.damage)
-			if(BURN)
-				adjustFireLoss(Proj.damage)
+		if(Proj.damage_types[BRUTE] && (!(Proj.testing)))
+			adjustBruteLoss(Proj.damage_types[BRUTE])
+		if(Proj.damage_types[BURN] && (!(Proj.testing)))
+			adjustFireLoss(Proj.damage_types[BURN])
 
 	Proj.on_hit(src)
-	updatehealth()
+	if (!(Proj.testing))
+		updatehealth()
 	return 2
 
 /mob/living/silicon/apply_effect(var/effect = 0,var/effecttype = STUN, var/armor_value = 0, var/check_protection = 1)
@@ -136,15 +164,16 @@
 
 // this function shows the health of the AI in the Status panel
 /mob/living/silicon/proc/show_system_integrity()
+	. = list()
 	if(!src.stat)
-		stat(null, text("System integrity: [round((health/maxHealth)*100)]%"))
+		. += "System integrity: [round((health/maxHealth)*100)]%"
 	else
-		stat(null, text("Systems nonfunctional"))
+		. += "Systems nonfunctional"
 
 
 // This is a pure virtual function, it should be overwritten by all subclasses
 /mob/living/silicon/proc/show_malf_ai()
-	return 0
+	return list()
 
 // this function displays the shuttles ETA in the status panel if the shuttle has been called
 /mob/living/silicon/proc/show_emergency_shuttle_eta()
@@ -155,12 +184,10 @@
 
 
 // This adds the basic clock, shuttle recall timer, and malf_ai info to all silicon lifeforms
-/mob/living/silicon/Stat()
-	if(statpanel("Status"))
-		show_emergency_shuttle_eta()
-		show_system_integrity()
-		show_malf_ai()
+/mob/living/silicon/get_status_tab_items()
 	. = ..()
+	. += show_system_integrity()
+	. += show_malf_ai()
 
 //can't inject synths
 /mob/living/silicon/can_inject(var/mob/user, var/error_msg, var/target_zone)
@@ -233,7 +260,17 @@
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null) as text)
+
+/mob/living/silicon/verb/recalibrate_hotkeys()
+	set name = "Recalibrate Hotkeys"
+	set desc = "Makes you use the correct borg based hotkeys."
+	set category = "OOC"
+
+	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
+	else
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"
@@ -246,9 +283,7 @@
 	return 1
 
 /mob/living/silicon/ex_act(severity)
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(0, FALSE , FALSE , FALSE)
 
 	switch(severity)
 		if(1.0)
@@ -325,8 +360,8 @@
 		cameratext += "[(cameratext == "")? "" : "|"]<A HREF='?src=\ref[src];switchcamera=\ref[C]'>[C.c_tag]</A>"
 	to_chat(src, "[A.alarm_name()]! ([(cameratext)? cameratext : "No Camera"])")
 
-/mob/living/silicon/proc/is_malf_or_traitor()
-	return check_special_role(ROLE_TRAITOR) || check_special_role(ROLE_MALFUNCTION)
+/mob/living/silicon/proc/is_malf_or_contractor()
+	return check_special_role(ROLE_CONTRACTOR) || check_special_role(ROLE_MALFUNCTION)
 
 /mob/living/silicon/adjustEarDamage()
 	return

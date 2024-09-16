@@ -1,4 +1,6 @@
-
+// SPCR 2022
+// Pay extra attention to Topic() security for anything in this code-file , everything about money_Accounts is read in HTML , printed in paper
+// and can be used for exploits if variables are not safety checked.
 /obj/machinery/account_database
 	name = "accounts uplink terminal"
 	desc = "Access transaction logs, account data and all kinds of other financial records."
@@ -9,7 +11,7 @@
 	anchored = 1
 	var/receipt_num
 	var/machine_id = ""
-	var/obj/item/weapon/card/id/held_card
+	var/obj/item/card/id/held_card
 	var/datum/money_account/detailed_account_view
 	var/creating_new_account = 0
 	var/const/fund_cap = 1000000
@@ -38,7 +40,7 @@
 	..()
 
 /obj/machinery/account_database/attackby(obj/O, mob/user)
-	if(!istype(O, /obj/item/weapon/card/id))
+	if(!istype(O, /obj/item/card/id))
 		return ..()
 
 	if(!held_card)
@@ -52,9 +54,9 @@
 
 /obj/machinery/account_database/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN)) return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/account_database/ui_interact(mob/user, ui_key="main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/account_database/nano_ui_interact(mob/user, ui_key="main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/data[0]
@@ -134,6 +136,7 @@
 
 			if("finalise_create_account")
 				var/account_name = href_list["holder_name"]
+				account_name = sanitizeSafe(account_name, MAX_NAME_LEN, TRUE)
 				var/starting_funds = max(text2num(href_list["starting_funds"]), 0)
 
 				starting_funds = CLAMP(starting_funds, 0, station_account.money)	// Not authorized to put the station in debt.
@@ -162,8 +165,8 @@
 
 				else
 					var/obj/item/I = usr.get_active_hand()
-					if (istype(I, /obj/item/weapon/card/id))
-						var/obj/item/weapon/card/id/C = I
+					if (istype(I, /obj/item/card/id))
+						var/obj/item/card/id/C = I
 						usr.drop_item()
 						C.loc = src
 						held_card = C
@@ -192,7 +195,7 @@
 
 			if("print")
 				var/text
-				var/obj/item/weapon/paper/P = new(loc)
+				var/obj/item/paper/P = new(loc)
 				if (detailed_account_view)
 					P.name = "account #[detailed_account_view.account_number] details"
 					var/title = "Account #[detailed_account_view.account_number] Details"

@@ -1,5 +1,22 @@
-//Lallander was here
+/mob/living/carbon/human/whisper_wrapper()
+	if(client?.get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(client, null, "command=[client.tgui_say_create_open_command(WHIS_CHANNEL)]")
+		return
+
+	client?.start_thinking()
+	// set_typing_indicator(TRUE)
+	// hud_typing = TRUE
+	var/message = input("", "whisper (text)") as text|null
+	// hud_typing = FALSE
+	// set_typing_indicator(FALSE)
+	client?.stop_thinking()
+	if(message)
+		whisper(message)
+
 /mob/living/carbon/human/whisper(message as text)
+	set name = "Whisper"
+	set category = "IC"
+
 	var/alt_name = ""
 
 	if(say_disabled)	//This is here to try to identify lag problems
@@ -37,7 +54,7 @@
 //This is used by both the whisper verb and human/say() to handle whispering
 /mob/living/carbon/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="whispers")
 
-	if (istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/weapon/grenade))
+	if (istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade))
 		to_chat(src, SPAN_DANGER("You're muzzled and cannot speak!"))
 		return
 
@@ -77,8 +94,8 @@
 
 	//looks like this only appears in whisper. Should it be elsewhere as well? Maybe handle_speech_problems?
 	var/voice_sub
-	if(istype(back,/obj/item/weapon/rig))
-		var/obj/item/weapon/rig/rig = back
+	if(istype(back,/obj/item/rig))
+		var/obj/item/rig/rig = back
 		// todo: fix this shit
 		if(rig.speech && rig.speech.voice_holder && rig.speech.voice_holder.active && rig.speech.voice_holder.voice)
 			voice_sub = rig.speech.voice_holder.voice
@@ -102,12 +119,12 @@
 				temp_message[H] = ninjaspeak(temp_message[H])
 				pick_list -= H
 			message = jointext(temp_message, " ")
-			message = replacetext(message, "o", "¤")
-			message = replacetext(message, "p", "þ")
-			message = replacetext(message, "l", "£")
-			message = replacetext(message, "s", "§")
-			message = replacetext(message, "u", "µ")
-			message = replacetext(message, "b", "ß")
+			message = replacetext(message, "o", "ï¿½")
+			message = replacetext(message, "p", "ï¿½")
+			message = replacetext(message, "l", "ï¿½")
+			message = replacetext(message, "s", "ï¿½")
+			message = replacetext(message, "u", "ï¿½")
+			message = replacetext(message, "b", "ï¿½")
 
 	var/list/listening = hearers(message_range, src)
 	listening |= src
@@ -147,6 +164,7 @@
 
 	QDEL_IN(speech_bubble, 30)
 
+	log_say("[name]/[key] (WHISPER) : [message]")
 	var/list/speech_bubble_recipients = list()
 	for(var/mob/M in listening)
 		if(M.client)

@@ -14,12 +14,12 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_fem
-	name = "Babydoll shirt"
+	name = "Baby Doll shirt"
 	icon_state = "undershirt_fem"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_long
-	name = "Longsleeve Shirt"
+	name = "Long Sleeve Shirt"
 	icon_state = "undershirt_long"
 	has_color = TRUE
 
@@ -29,7 +29,7 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_long_fem
-	name = "Longsleeve Shirt, feminine"
+	name = "Long Sleeve Shirt, feminine"
 	icon_state = "undershirt_long_fem"
 	has_color = TRUE
 
@@ -84,7 +84,7 @@
 	icon_state = "lover_s"
 
 /datum/category_item/underwear/undershirt/shirt_heart_fem
-	name = "Shirt, heart, babydoll"
+	name = "Shirt, heart, baby doll"
 	icon_state = "lover_fem_s"
 
 /datum/category_item/underwear/undershirt/shirt_nt
@@ -96,21 +96,21 @@
 	icon_state = "ilovent_s"
 
 /datum/category_item/underwear/undershirt/shirt_love_nt_fem
-	name = "Shirt, I<3NT, babydoll"
+	name = "Shirt, I<3NT, baby doll"
 	icon_state = "ilovent_fem_s"
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt
-	name = "Shortsleeve shirt"
+	name = "Short Sleeve shirt"
 	icon_state = "shortsleeve"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt_fem
-	name = "Shortsleeve babydoll shirt"
+	name = "Short Sleeve baby doll shirt"
 	icon_state = "shortsleeve_fem"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt_fem_vneck
-	name = "Shortsleeve babydoll shirt, v-neck"
+	name = "Short Sleeve baby doll shirt, v-neck"
 	icon_state = "shortsleeve_fem_vneck"
 	has_color = TRUE
 
@@ -132,7 +132,7 @@
 	icon_state = "blueshirtsport_s"
 
 /datum/category_item/underwear/undershirt/shirt_tiedye
-	name = "Shirt, tiedye"
+	name = "Shirt, tie-dye"
 	icon_state = "shirt_tiedye_s"
 
 /datum/category_item/underwear/undershirt/shirt_blue_striped
@@ -161,13 +161,97 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/longstripe_black
-	name = "Longsleeve Striped Shirt, Black"
+	name = "Long Sleeve Striped Shirt, Black"
 	icon_state = "longstripe"
 
 /datum/category_item/underwear/undershirt/longstripe_blue
-	name = "Longsleeve Striped Shirt, Blue"
+	name = "Long Sleeve Striped Shirt, Blue"
 	icon_state = "longstripe_blue"
 
 /datum/category_item/underwear/undershirt/tiedye
-	name = "Tiedye Shirt"
+	name = "Tie-dye Shirt"
 	icon_state = "tiedye"
+
+/datum/category_item/underwear/undershirt/bandage
+	name = "Bandage Shirt"
+	icon_state = "bandage_shirt"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/midriffkeyhole
+	name = "Midriff keyhole Shirt"
+	icon_state = "midriffkeyhole"
+
+/datum/category_item/underwear/undershirt/cropped_tanktop
+	name = "Cropped Tank Top, feminine, v-neck"
+	icon_state = "tanktop_cropped_vneck"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/tanktop_midriff
+	name = "Tanktop, midriff"
+	icon_state = "tank_midriff"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/cropped_tanktop_midriff
+	name = "Cropped Tanktop, midriff"
+	icon_state = "tank_midriff_short"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/blouse_fem
+	name = "Blouse, feminine"
+	icon_state = "blouse_fem"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/shorttank
+	name = "Tanktop, short"
+	icon_state = "short_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/turtleneck
+	name = "Turtleneck"
+	icon_state = "c_turtleneck"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/turtleneckshrt
+	name = "Turtleneck, shortsleeve"
+	icon_state = "c_shortslv_turtle"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_crop
+	name = "Cropped top"
+	icon_state = "c_crop_top"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_cropslvless
+	name = "Cropped top, Sleeveless"
+	icon_state = "c_slvless_crop_top"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tank
+	name = "Tanktop, fitted"
+	icon_state = "c_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tankcrp
+	name = "Tanktop, cropped"
+	icon_state = "c_crop_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tankshrt
+	name = "Tanktop, short crop"
+	icon_state = "c_short_crop_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_keyhole
+	name = "Sweater, keyhole"
+	icon_state = "c_keyhole_sweater"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_vneckswtr
+	name = "Sweater, V-neck"
+	icon_state = "c_vnecksweater"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_barmaid
+	name = "Blouse, barmaid"
+	icon_state = "barmaid_lite"
+	has_color = TRUE

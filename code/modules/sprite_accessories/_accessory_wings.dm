@@ -21,7 +21,7 @@
 	name = "Bat Wings"
 	desc = ""
 	icon_state = "bat"
-	colored_layers = 1
+	colored_layers = 2
 
 /datum/sprite_accessory/wings/bee
 	name = "Bee Wings"
@@ -48,13 +48,21 @@
 	name = "Demon Wings"
 	desc = ""
 	icon_state = "demon"
-	colored_layers = 1
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/dragon
 	name = "Dragon Wings"
 	desc = ""
 	icon_state = "dragon"
 	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/dragonfold
+	name = "Dragon Wings Folded"
+	desc = ""
+	icon_state = "dragonfold"
+	colored_layers = 2
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/dragonfly
@@ -96,12 +104,21 @@
 	name = "Gazer Eyestalks"
 	desc = ""
 	icon_state = "eyestalk"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/harpywings
 	name = "Harpy Wings"
 	desc = ""
 	icon_state = "harpy"
 	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/harpywingscolor
+	name = "Harpy Wings Two Tone"
+	desc = ""
+	icon_state = "harpydual"
+	colored_layers = 2
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/moth_burned
@@ -211,6 +228,13 @@
 	name = "Moth Wings, Worker"
 	desc = ""
 	icon_state = "moth_worker"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_plain
+	name = "Moth Wings, Plain"
+	desc = ""
+	icon_state = "moth_plain"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 

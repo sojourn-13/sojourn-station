@@ -162,17 +162,23 @@ var/global/list/breach_burn_descriptors = list(
 			else if(B.damtype == BURN)
 				burn_damage += B.class
 
-	if(damage >= 3)
-		if(brute_damage >= 3 && brute_damage > burn_damage)
-			name = "punctured [base_name]"
-		else if(burn_damage >= 3 && burn_damage > brute_damage)
-			name = "scorched [base_name]"
-		else
-			name = "damaged [base_name]"
-	else
-		name = "[base_name]"
+	refresh_upgrades() //handles name
 
 	return damage
+
+/obj/item/clothing/suit/space/refresh_upgrades()
+	..()
+	var/edit_name
+	if(damage >= 3)
+		if(brute_damage >= 3 && brute_damage > burn_damage)
+			edit_name = "punctured"
+		else if(burn_damage >= 3 && burn_damage > brute_damage)
+			edit_name = "scorched"
+		else
+			edit_name = "damaged"
+	else
+		name = "[edit_name] [name]"
+
 
 //Handles repairs (and also upgrades).
 
@@ -233,7 +239,7 @@ var/global/list/breach_burn_descriptors = list(
 
 		return
 
-	..()
+	.=..()
 
 /obj/item/clothing/suit/space/examine(mob/user)
 	..(user)

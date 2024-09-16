@@ -12,10 +12,10 @@
 		slot_r_hand_str = "s_helmet",
 		)
 	permeability_coefficient = 0.01
-	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+	armor_list = list(
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 0,
 		bio = 100,
 		rad = 50
@@ -26,7 +26,8 @@
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.9
 	species_restricted = list("exclude")
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
+	obscuration = LIGHT_OBSCURATION
 
 	var/obj/machinery/camera/camera
 	var/list/camera_networks
@@ -71,14 +72,14 @@
 	w_class = ITEM_SIZE_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02
-	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|COVER_PREVENT_MANIPULATION
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|COVER_PREVENT_MANIPULATION|DRAG_AND_DROP_UNEQUIP
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 10)
-	slowdown = 3
-	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+	slowdown = 3 //Bro WHAT
+	armor_list = list(
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 0,
 		bio = 100,
 		rad = 50
@@ -90,7 +91,9 @@
 	species_restricted = list("exclude")
 	equip_delay = 4 SECONDS
 	var/list/supporting_limbs //If not-null, automatically splints breaks. Checked when removing the suit.
-
+	stiffness = HEAVY_STIFFNESS
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 /obj/item/clothing/suit/space/equipped(mob/M)
 	check_limb_support()
@@ -104,7 +107,7 @@
 // broken limbs - at the time of writing, only the ninja suit, but
 // I can see it being useful for other suits as we expand them. ~ Z
 // The actual splinting occurs in /obj/item/organ/external/proc/fracture()
-/obj/item/clothing/suit/space/proc/check_limb_support(var/mob/living/carbon/human/user)
+/obj/item/clothing/suit/space/proc/check_limb_support(mob/living/carbon/human/user)
 
 	// If this isn't set, then we don't need to care.
 	if(!supporting_limbs || !supporting_limbs.len)

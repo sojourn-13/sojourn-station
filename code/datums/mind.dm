@@ -24,7 +24,7 @@
 			new_mob.key = key
 
 		The Login proc will handle making a new mob for that mobtype (including setting up stuff like mind.name). Simple!
-		However if you want that mind to have any special properties like being a traitor etc you will have to do that
+		However if you want that mind to have any special properties like being a contractor etc you will have to do that
 		yourself.
 
 */
@@ -49,8 +49,6 @@
 
 	var/has_been_rev = FALSE	//Tracks if this mind has been a rev or not
 
-	var/datum/changeling/changeling		//changeling holder
-
 	var/rev_cooldown = 0
 
 	// the world.time since the mob has been brigged, or -1 if not at all
@@ -66,7 +64,7 @@
 
 	var/last_activity = 0
 
-	var/list/knownCraftRecipes = list()
+
 	/*
 		The world time when this mind was last in a mob, controlled by a client which did something.
 		Only updated once per minute, set by the inactivity subsystem
@@ -75,18 +73,15 @@
 
 	var/creation_time = 0 //World time when this datum was New'd. Useful to tell how long since a character spawned
 
-/datum/mind/New(var/key)
+/datum/mind/New(key)
 	src.key = key
 	creation_time = world.time
-	..()
+	active = TRUE
 
 /datum/mind/proc/transfer_to(mob/living/new_character)
 	if(!istype(new_character))
 		log_world("## DEBUG: transfer_to(): Some idiot has tried to transfer_to() a non mob/living mob. Please inform Carn")
 	if(current)					//remove ourself from our old body's mind variable
-		if(changeling)
-			current.remove_changeling_powers()
-			current.verbs -= /datum/changeling/proc/EvolutionMenu
 		current.mind = null
 
 		SSnano.user_transferred(current, new_character) // transfer active NanoUI instances to new user
@@ -99,17 +94,36 @@
 	current = new_character		//link ourself to our new body
 	new_character.mind = src	//and link our new body to ourself
 
-	if(changeling)
-		new_character.make_changeling()
-
 	if(active)
 		new_character.key = key		//now transfer the key to link the client to our new body
 		last_activity = world.time
 	if(new_character.client)
 		new_character.client.create_UI(new_character.type)
+		new_character.client.init_verbs()
+		if(new_character.client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+			winset(new_character.client, null, "mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true")
+		if(istype(new_character, /mob/living/silicon/robot))
+			winset(new_character.client, null, "mainwindow.macro=borgmacro")
 
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
+
+
+/datum/mind/proc/print_individualobjectives()
+	var/output
+	if(LAZYLEN(individual_objectives))
+		output += "<HR><B>Your individual objectives:</B><UL>"
+		var/obj_count = 1
+		var/la_explanation
+		for(var/datum/individual_objective/objective in individual_objectives)
+			output += "<br><b>#[obj_count] [objective.name][objective.limited_antag ? " [objective.show_la]" : ""]</B>: [objective.get_description()]</b>"
+			obj_count++
+			if(objective.limited_antag)
+				la_explanation = objective.la_explanation
+		output += "</UL>"
+		if(la_explanation)
+			output += la_explanation
+	return output
 
 /datum/mind/proc/show_memory(mob/recipient)
 	var/output = "<B>[current.real_name]'s Memory</B><HR>"
@@ -123,7 +137,7 @@
 		else
 			output += "<br><b>Your [A.role_text] objectives:</b>"
 		output += "[A.print_objectives(FALSE)]"
-
+	output += print_individualobjectives()
 	recipient << browse(output, "window=memory")
 
 /datum/mind/proc/edit_memory()
@@ -148,6 +162,9 @@
 		out += "<br><b>[antag.role_text]</b> <a href='?src=\ref[antag]'>\[EDIT\]</a> <a href='?src=\ref[antag];remove_antagonist=1'>\[DEL\]</a>"
 	out += "</table><hr>"
 	out += "<br>[memory]"
+
+	out += print_individualobjectives()
+
 	out += "<br><a href='?src=\ref[src];edit_memory=1'>"
 	usr << browse(out, "window=edit_memory[src]")
 
@@ -160,7 +177,7 @@
 		if(antag)
 			var/ok = FALSE
 			if(antag.outer && active)
-				var/answer = alert("[antag.role_text] is outer antagonist. [name] will be taken from the current mob and spawned as antagonist. Continue?","No","Yes")
+				var/answer = alert("[antag.role_text] is an outer antagonist. [name] will be taken from the current mob and spawned as antagonist. Continue?","Confirmation", "No","Yes")
 				ok = (answer == "Yes")
 			else
 				var/answer = alert("Are you sure you want to make [name] the [antag.role_text]","Confirmation","No","Yes")
@@ -183,7 +200,7 @@
 					to_chat(usr, SPAN_WARNING("[src] could not be made into a [antag.role_text]!"))
 
 	else if(href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in joblist
+		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in GLOB.joblist
 		if (!new_role) return
 		var/datum/job/job = SSjob.GetJob(new_role)
 		if(job)
@@ -202,7 +219,7 @@
 			if("unemag")
 				var/mob/living/silicon/robot/R = current
 				if (istype(R))
-					R.emagged = 0
+					R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
 					if (R.activated(R.module.emag))
 						R.module_active = null
 					if(R.module_state_1 == R.module.emag)
@@ -220,7 +237,7 @@
 				if (isAI(current))
 					var/mob/living/silicon/ai/ai = current
 					for (var/mob/living/silicon/robot/R in ai.connected_robots)
-						R.emagged = 0
+						R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
 						if (R.module)
 							if (R.activated(R.module.emag))
 								R.module_active = null
@@ -296,7 +313,6 @@
 	//role_alt_title =  null
 	assigned_job =    null
 	//faction =       null //Uncommenting this causes a compile error due to 'undefined type', fucked if I know.
-	changeling =      null
 	role_alt_title =  null
 	initial_account = null
 	has_been_rev =    0
@@ -357,7 +373,7 @@
 /datum/mind/proc/manifest_status(var/datum/computer_file/report/crew_record/CR)
 	var/inactive_time = world.time - last_activity
 	if (inactive_time >= 60 MINUTES)
-		return null //The server hasn't seen us alive in an hour.
+		return "SSD" //The server hasn't seen us alive in an hour.
 		//We will not show on the manifest at all
 
 	//Ok we're definitely going to show on the manifest, lets see if any status is set for us in the records

@@ -13,6 +13,7 @@ SUBSYSTEM_DEF(job)
 	var/list/job_debug = list()				//Debug info
 	var/list/job_mannequins = list()				//Cache of icons for job info window
 
+
 /datum/controller/subsystem/job/Initialize(start_timeofday)
 	if(!occupations.len)
 		SetupOccupations()
@@ -28,6 +29,10 @@ SUBSYSTEM_DEF(job)
 			continue
 		occupations += job
 		occupations_by_name[job.title] = job
+
+		if(job.alt_titles)
+			for(var/alt_title in job.alt_titles)
+				occupations_by_name[alt_title] = job
 
 	if(!occupations.len)
 		to_chat(world, SPAN_WARNING("Error setting up jobs, no job datums found!"))
@@ -62,6 +67,8 @@ SUBSYSTEM_DEF(job)
 			Debug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
 			player.mind.assigned_role = rank
 			player.mind.assigned_job = job
+			if(job.alt_titles)
+				player.mind.role_alt_title = player.client.prefs.GetPlayerAltTitle(job)
 			unassigned -= player
 			job.current_positions++
 			return TRUE
@@ -108,6 +115,9 @@ SUBSYSTEM_DEF(job)
 		if(job in command_positions) //If you want a command position, select it!
 			continue
 
+		if(job.is_restricted(player.client.prefs))
+			continue
+
 		if(jobban_isbanned(player, job.title))
 			Debug("GRJ isbanned failed, Player: [player], Job: [job.title]")
 			continue
@@ -149,21 +159,16 @@ SUBSYSTEM_DEF(job)
 
 				if(age < job.minimum_character_age) // Nope.
 					continue
-
-				switch(age)
-					if(job.minimum_character_age to (job.minimum_character_age+10))
-						weightedCandidates[V] = 3 // Still a bit young.
-					if((job.minimum_character_age+10) to (job.ideal_character_age-10))
-						weightedCandidates[V] = 6 // Better.
-					if((job.ideal_character_age-10) to (job.ideal_character_age+10))
-						weightedCandidates[V] = 10 // Great.
-					if((job.ideal_character_age+10) to (job.ideal_character_age+20))
-						weightedCandidates[V] = 6 // Still good.
-					if((job.ideal_character_age+20) to INFINITY)
-						weightedCandidates[V] = 3 // Geezer.
-					else
-						// If there's ABSOLUTELY NOBODY ELSE
-						if(candidates.len == 1) weightedCandidates[V] = 1
+				else if(age <= (job.minimum_character_age + 10))
+					weightedCandidates[V] = 3 // Still a bit young.
+				else if(age <= (job.ideal_character_age - 10))
+					weightedCandidates[V] = 6 // Better.
+				else if(age <= (job.ideal_character_age + 10))
+					weightedCandidates[V] = 10 // Great.
+				else if(age <= (job.ideal_character_age + 20))
+					weightedCandidates[V] = 6 // Still good.
+				else
+					weightedCandidates[V] = 3 // Geezer.
 
 
 			var/mob/new_player/candidate = pickweight(weightedCandidates)
@@ -300,6 +305,7 @@ SUBSYSTEM_DEF(job)
 	var/datum/job/job = GetJob(rank)
 	var/list/spawn_in_storage = list()
 
+
 	if(job)
 		H.job = rank
 
@@ -317,9 +323,9 @@ SUBSYSTEM_DEF(job)
 			for(var/datum/gear/G in spawn_in_storage)
 				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
+		//job.finalTweaks(H) //Uncomment to turn on various tweaks to character creation.
 		job.add_stats(H)
 
-		job.add_knownCraftRecipes(H)
 
 		job.add_additiional_language(H)
 
@@ -334,76 +340,108 @@ SUBSYSTEM_DEF(job)
 
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
-			ntnet_global.create_email(H, H.real_name, pick(maps_data.usable_email_tlds))
+			ntnet_global.create_email(H, H.real_name, pick(GLOB.maps_data.usable_email_tlds))
+		// If they're head, give them the account info for their department
+
+		if(H.mind && (job.head_position || job.department_account_access))
+			var/remembered_info = ""
+			var/datum/money_account/department_account = department_accounts[job.department]
+			if(department_account)
+				remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
+				remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
+				remembered_info += "<b>Your department's account funds are:</b> [department_account.money][CREDS]<br>"
+
+				if(job.head_position)
+					//remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
+					//we dont have a station nuke so this isn't needed
+					department_account.owner_name = H.real_name //Register them as the point of contact for this account
+
+			H.mind.store_memory(remembered_info)
+
+		var/alt_title = null
+		if(H.mind)
+			H.mind.assigned_role = rank
+			alt_title = H.mind.role_alt_title
+
+			switch(rank)
+				if("Robot")
+					return H.Robotize()
+				if("AI")
+					return H
+				if("Premier")
+					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
+					captain_announcement.Announce("Premier [H.real_name] has signed in.", new_sound=announce_sound)
+
+		if(istype(H)) //give humans wheelchairs, if they need them.
+			var/obj/item/organ/external/l_leg = H.get_organ(BP_L_LEG)
+			var/obj/item/organ/external/r_leg = H.get_organ(BP_R_LEG)
+			if(!l_leg || !r_leg)
+				var/obj/structure/bed/chair/wheelchair/W = new /obj/structure/bed/chair/wheelchair(H.loc)
+				H.buckled = W
+				H.update_lying_buckled_and_verb_status()
+				W.set_dir(H.dir)
+				W.buckled_mob = H
+				W.add_fingerprint(H)
+
+		to_chat(H, "<B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B>")
+
+		if(job.supervisors)
+			to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+
+		if(job.req_admin_notify)
+			to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+
+		//Gives glasses to the vision impaired
+		if(H.disabilities & NEARSIGHTED)
+			var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(H), slot_glasses)
+			if(equipped != 1)
+				var/obj/item/clothing/glasses/G = H.glasses
+				G.prescription = 1
+
+		var/obj/item/implant/core_implant/C = H.get_core_implant()
+		if(C)
+			C.install_default_modules_by_job(job)
+			C.access.Add(job.cruciform_access)
+			C.install_default_modules_by_path(job)
+			C.security_clearance = job.security_clearance
+			//IDK were else to place this so it works when you late join and its active
+			if(GLOB.hive_data_bool["all_church_to_battle"])
+				if(H.client &&  H.stat != DEAD && ishuman(H)) //Basic sanity checks to prevent anything abd
+					make_antagonist(H.mind, ROLE_INQUISITOR)
+
+		//Occulus Edit, Right here! Custom skills.
+
+		//Caps before stats
+		H.stats.set_Stat_cap(STAT_BIO, H.client.prefs.BIO_CAP)
+		H.stats.set_Stat_cap(STAT_COG, H.client.prefs.COG_CAP)
+		H.stats.set_Stat_cap(STAT_MEC, H.client.prefs.MEC_CAP)
+		H.stats.set_Stat_cap(STAT_ROB, H.client.prefs.ROB_CAP)
+		H.stats.set_Stat_cap(STAT_TGH, H.client.prefs.TGH_CAP)
+		H.stats.set_Stat_cap(STAT_VIG, H.client.prefs.VIG_CAP)
+		H.stats.set_Stat_cap(STAT_VIV, H.client.prefs.VIV_CAP)
+		H.stats.set_Stat_cap(STAT_ANA, H.client.prefs.ANA_CAP)
+
+		//Stats get added here after cap so we dont have silly over-filling
+		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
+		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
+		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)
+		H.stats.changeStat(STAT_ROB, H.client.prefs.ROBMOD)
+		H.stats.changeStat(STAT_TGH, H.client.prefs.TGHMOD)
+		H.stats.changeStat(STAT_VIG, H.client.prefs.VIGMOD)
+		H.stats.changeStat(STAT_VIV, H.client.prefs.VIVMOD)
+		H.stats.changeStat(STAT_ANA, H.client.prefs.ANAMOD)
+		H.give_health_via_stats()
+		H.metabolism_effects.calculate_nsa() //update NSA incase we have any viv round start
+		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
+
+		BITSET(H.hud_updateflag, ID_HUD)
+		BITSET(H.hud_updateflag, SPECIALROLE_HUD)
+		return H
 
 	else
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 
-	// If they're head, give them the account info for their department
-	if(H.mind && (job.head_position || job.department_account_access))
-		var/remembered_info = ""
-		var/datum/money_account/department_account = department_accounts[job.department]
-		if(department_account)
-			remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
-			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
-			remembered_info += "<b>Your department's account funds are:</b> [department_account.money][CREDS]<br>"
-		if(job.head_position)
-			//remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
-			//we dont have a station nuke so this isn't needed
-			department_account.owner_name = H.real_name //Register them as the point of contact for this account
-
-		H.mind.store_memory(remembered_info)
-
-	var/alt_title = null
-	if(H.mind)
-		H.mind.assigned_role = rank
-	//	alt_title = H.mind.role_alt_title
-
-		switch(rank)
-			if("Robot")
-				return H.Robotize()
-			if("AI")
-				return H
-			if("Premier")
-				var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-				captain_announcement.Announce("Premier [H.real_name] has signed in.", new_sound=announce_sound)
-
-	if(istype(H)) //give humans wheelchairs, if they need them.
-		var/obj/item/organ/external/l_leg = H.get_organ(BP_L_LEG)
-		var/obj/item/organ/external/r_leg = H.get_organ(BP_R_LEG)
-		if(!l_leg || !r_leg)
-			var/obj/structure/bed/chair/wheelchair/W = new /obj/structure/bed/chair/wheelchair(H.loc)
-			H.buckled = W
-			H.update_lying_buckled_and_verb_status()
-			W.set_dir(H.dir)
-			W.buckled_mob = H
-			W.add_fingerprint(H)
-
-	to_chat(H, "<B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B>")
-
-	if(job.supervisors)
-		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
-
-	if(job.req_admin_notify)
-		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
-
-	//Gives glasses to the vision impaired
-	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(H), slot_glasses)
-		if(equipped != 1)
-			var/obj/item/clothing/glasses/G = H.glasses
-			G.prescription = 1
-
-	var/obj/item/weapon/implant/core_implant/C = H.get_core_implant()
-	if(C)
-		C.install_default_modules_by_job(job)
-		C.access.Add(job.cruciform_access)
-
-	BITSET(H.hud_updateflag, ID_HUD)
-	BITSET(H.hud_updateflag, SPECIALROLE_HUD)
-	return H
-
-proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
+/proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 	if(!H || !H.client)
 		return
 
@@ -416,8 +454,29 @@ proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 			if(G)
 				var/permitted = 1
 				if(permitted)
+			/*
+					var/cheater = FALSE
+					var/datum/perk/experienced/selectedPerk
+					var/datum/department/experiencedDepartment
+					for(var/datum/perk/experienced/counter in H.stats.perks)
+						if (istype(counter,/datum/perk/experienced))
+							selectedPerk = counter
+							if (selectedPerk.dept)
+								var/list/paths = subtypesof(/datum/department)									// This chunk of code works with Experienced Perks (if implemented)
+								for (var/Q in paths)															// so that Experienced Perks mean bringing in outside items from other departments
+									var/datum/department/checker = new Q										// Uncomment when those are implemented
+									if (istype(checker,/datum/department))
+										if (checker.id)
+											if (checker.id == selectedPerk.dept)
+												experiencedDepartment = checker
+												for (var/X in experiencedDepartment.jobs_in_department)
+													var/datum/job/J = new X
+													if (J.title in G.allowed_roles)
+														cheater = TRUE
+
+			*/
 					if(G.allowed_roles)
-						if(job.title in G.allowed_roles)
+						if(job.title in G.allowed_roles)// || (cheater))		// The cheater var too.
 							permitted = 1
 						else
 							permitted = 0
@@ -523,7 +582,7 @@ proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 		if(pref_spawn)
 			SP = get_spawn_point(pref_spawn, late = TRUE)
 		else
-			SP = get_spawn_point(maps_data.default_spawn, late = TRUE)
+			SP = get_spawn_point(GLOB.maps_data.default_spawn, late = TRUE)
 			to_chat(H, SPAN_WARNING("You have not selected spawnpoint in preference menu."))
 	else
 		SP = get_spawn_point(rank)
@@ -565,10 +624,138 @@ proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 
 	return SP
 
-
-
 /datum/controller/subsystem/job/proc/ShouldCreateRecords(var/title)
 	if(!title) return 0
 	var/datum/job/job = GetJob(title)
 	if(!job) return 0
 	return job.create_record
+
+
+/****************************/
+/* Playtime Tracking System */
+/****************************/
+
+//Internal Only. May be changed without warning.
+/datum/playtime
+	var/realtime = 0 //The complete time a player has played this job.
+	var/forced = FALSE //Whether the job has been enabled manually for a player by an admin.
+	var/playtime = 0 //The amount of time which actually counts toward the job.
+
+/datum/playtime/New(var/datum/playtime/old)
+	if(!old) return
+	realtime = old.realtime
+	forced = old.forced
+	playtime = old.playtime
+
+/* Procs that alter the save */
+
+//Adds played time to a single, or provided list of jobs. Should only be called automatically.
+/datum/controller/subsystem/job/proc/JobTimeAdd(ckey, jobs, seconds)
+	if(!jobs) return
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		if(!P)
+			continue
+		P.playtime += seconds
+		P.realtime += seconds
+		JobTimeSetDatum(ckey, job, P)
+
+
+//Adds a played time to a singular job. Negative numbers subtract time.
+/datum/controller/subsystem/job/proc/JobTimeAlter(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime += seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Sets the played time to a set value
+/datum/controller/subsystem/job/proc/JobTimeSet(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime = seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Forces a job to be accessible regardless of time played, or disables it if 'enable' is set false.
+/datum/controller/subsystem/job/proc/JobTimeForce(ckey, job_key, enable = TRUE)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.forced = enable
+	JobTimeSetDatum(ckey, job_key, P)
+
+/* Procs that read the save */
+
+//Returns true if either the job from job_key has been forced, or the sum of all jobs in the list exceeds req_time
+/datum/controller/subsystem/job/proc/JobTimeAutoCheck(ckey, job_key, jobs, req_time)
+	if(JobTimeAllowCheck(ckey, job_key)) return TRUE
+	return (JobTimeCheck(ckey, jobs) >= req_time)
+
+//Returns the sum of all times in the list of jobs provided.
+//If 'jobs' is not a list, it will be encapsulated in one.
+/datum/controller/subsystem/job/proc/JobTimeCheck(ckey, jobs)
+	var/total = 0
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		total += P.playtime
+	return total
+
+
+//Returns whether or not a given job has been forcibly allowed by admins.
+/datum/controller/subsystem/job/proc/JobTimeAllowCheck(ckey, job_key)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	return P.forced
+
+//Returns an associative list. "job_key" = time
+//Force-states are not considered, only the actual time is returned.
+/datum/controller/subsystem/job/proc/JobTimeGetAll(ckey)
+	//Not Implemented
+
+/* Internal Savefile Stuff - DO NOT CALL FROM OUTSIDE */
+// Seriously, implementation can change wildly depending on our needs.
+
+//We'll only need to read once per key per job, so why do it more?
+/datum/controller/subsystem/job/var/list/playtime_cache = list()
+
+/datum/controller/subsystem/job/proc/JobTimeGetDatum(ckey, job_key, ignore_cache)
+
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list()
+
+	var/datum/playtime/P
+	var/cached = TRUE
+	if(!ignore_cache)
+		P = playtime_cache[ckey][job_key]
+	if(!istype(P))
+		var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+		S.cd = job_key
+		P = new()
+		from_file(S["realtime"], P.realtime)
+		from_file(S["forced"], P.forced)
+		from_file(S["playtime"], P.playtime)
+		cached = FALSE
+	//Don't trust the savefile. We could sanitize on save, but if someone else fiddles with it, this will break.
+	//By sanitizing on load and decache, we ensure that any proc calling this gets a clean object.
+	if(!isnum(P.realtime)) P.realtime = 0
+	if(!isnum(P.playtime)) P.playtime = 0
+	if(!(P.forced == TRUE || P.forced == FALSE)) P.forced = FALSE
+
+	if(!cached)
+		playtime_cache[ckey][job_key] = new /datum/playtime(P) //So we don't load twice for no reason.
+
+	return P
+
+/datum/controller/subsystem/job/proc/JobTimeSetDatum(ckey, job_key, var/datum/playtime/datum)
+	if(!istype(datum)) return //I don't trust you to use the appropriate datums.
+
+	//Sanitize here too just to be safe.
+	if(!isnum(datum.realtime)) datum.realtime = 0
+	if(!isnum(datum.playtime)) datum.playtime = 0
+	if(!(datum.forced == TRUE || datum.forced == FALSE)) datum.forced = FALSE
+
+	var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+	S.cd = job_key
+	to_file(S["realtime"], datum.realtime)
+	to_file(S["forced"], datum.forced)
+	to_file(S["playtime"], datum.playtime)
+
+	//We cache it here rather than on the 'get' so that only changes that are saved get recorded.
+	//The cache is also a copy of the original, so that people don't get the smart idea to hold the datum and update it elsewhere.
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list() // This should never be true, but I don't trust you lot to make sure you read before writing.
+	playtime_cache[ckey][job_key] = new /datum/playtime(datum)

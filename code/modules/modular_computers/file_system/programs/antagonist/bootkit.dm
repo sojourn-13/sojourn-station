@@ -1,7 +1,7 @@
 /datum/computer_file/program/bootkit
 	filename = "bootkit"
 	filedesc = "Bootkit Installer"
-	program_menu_icon = "unlocked"
+	program_menu_icon = "laptop-house"
 	extended_desc = "Grants access to a remote software repository to any PC it runs on. The only way to remove this access is to replace PC's mainboard."
 	size = 4
 	usage_flags = PROGRAM_ALL

@@ -3,8 +3,8 @@
 	desc = "A gas turbine. Converting pressure into energy since 1884."
 	icon = 'icons/obj/pipeturbine.dmi'
 	icon_state = "turbine"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 
 	var/efficiency = 0.4
 	var/kin_energy = 0
@@ -83,7 +83,7 @@
 		if (kin_energy > 1000000)
 			add_overlay(image('icons/obj/pipeturbine.dmi', "hi-turb"))
 
-	attackby(obj/item/weapon/tool/W as obj, mob/user as mob)
+	attackby(obj/item/tool/W as obj, mob/user as mob)
 		if(!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			return ..()
 		anchored = !anchored
@@ -222,8 +222,8 @@
 	desc = "Electrogenerator. Converts rotation into power."
 	icon = 'icons/obj/pipeturbine.dmi'
 	icon_state = "motor"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 
 	var/kin_to_el_ratio = 0.1	//How much kinetic energy will be taken from turbine and converted into electricity
 	var/obj/machinery/atmospherics/pipeturbine/turbine
@@ -250,7 +250,7 @@
 		add_avail(power_generated)
 
 
-	attackby(obj/item/weapon/tool/W as obj, mob/user as mob)
+	attackby(obj/item/tool/W as obj, mob/user as mob)
 		if (!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			return ..()
 		anchored = !anchored

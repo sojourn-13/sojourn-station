@@ -69,7 +69,7 @@ This file contains the underlying code for stash datums
 
 	//What type of paper the note will be written on
 	//TODO Future, add support for digital notes on memory sticks
-	var/note_paper_type = /obj/item/weapon/paper/crumpled
+	var/note_paper_type = /obj/item/paper/crumpled
 
 	//How can we direct the user to this stash?
 	//Every stash should allow coords at least, unless you want to specifiy one particular method
@@ -82,7 +82,7 @@ This file contains the underlying code for stash datums
 
 	//What type of container will be spawned to hold the stash items. Default is a burlap sack
 	//You can also set this blank and the objects will be spawned without a container
-	var/stash_container_type = /obj/item/weapon/storage/deferred/stash/sack
+	var/stash_container_type = /obj/item/storage/deferred/stash/sack
 
 	/*If true, the stash will use deferred spawning, meaning that the items will only be spawned inworld
 	When a player finds and opens the stash. This prevents most post-spawn editing, as the post spawn
@@ -127,7 +127,8 @@ This file contains the underlying code for stash datums
 
 //This proc selects the turf where the stash will be spawned
 /datum/stash/proc/select_location()
-	select_direction()
+	if(!select_direction())
+		return
 
 	if (selected_direction == DIRECTION_LANDMARK)
 		//If we're using landmark spawning then we do that
@@ -163,22 +164,31 @@ This file contains the underlying code for stash datums
 	create_direction()
 
 /datum/stash/proc/select_direction()
+
+	var/possible_landmark
+	if(directions & DIRECTION_LANDMARK)
+		possible_landmark = pick_landmark(/obj/landmark/storyevent/midgame_stash_spawn)
+
+
 	//First of all, lets select how we're going to direct the user. This is not purely random
 
 	//If there's only one possible direction, then we take that
-	if (directions == DIRECTION_COORDS || directions == DIRECTION_LANDMARK || directions == DIRECTION_IMAGE)
+	if (directions == DIRECTION_COORDS || (directions == DIRECTION_LANDMARK && possible_landmark) || directions == DIRECTION_IMAGE)
 		selected_direction = directions
-
+		return TRUE
 	else
 		if ((directions & DIRECTION_IMAGE) && prob(50))
 			//Image is interesting, so 50% chance to do that if allowed
 			selected_direction = DIRECTION_IMAGE
-		else if ((directions & DIRECTION_LANDMARK) && prob(75))
+			return TRUE
+		else if ((directions & DIRECTION_LANDMARK) && possible_landmark && prob(75))
 			//Landmark is also interesting, high probability to do that
 			selected_direction = DIRECTION_LANDMARK
+			return TRUE
 		else
 			//Coords is the fallback
 			selected_direction = DIRECTION_COORDS
+			return TRUE
 
 
 //This proc is called after location is set, it creates the necessary info to direct the user
@@ -245,10 +255,10 @@ This file contains the underlying code for stash datums
 		results.Add(spawning_loc)
 
 	//Now lets handle deferred spawning first
-	if (deferred && istype(spawning_loc, /obj/item/weapon/storage/deferred))
+	if (deferred && istype(spawning_loc, /obj/item/storage/deferred))
 		//For deferred spawns, we just add our spawning list to its list, and we're done.
 		//The items will be spawned later when a user opens this stash
-		var/obj/item/weapon/storage/deferred/D = spawning_loc
+		var/obj/item/storage/deferred/D = spawning_loc
 		D.initial_contents += contents_list_base.Copy()
 
 
@@ -265,8 +275,8 @@ This file contains the underlying code for stash datums
 
 	//And finally lets make sure our container can fit the things we've stuffed into it
 	//And also that its hidden under the floor
-	if (istype(spawning_loc, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = spawning_loc
+	if (istype(spawning_loc, /obj/item/storage))
+		var/obj/item/storage/S = spawning_loc
 		S.expand_to_fit()
 		S.level = BELOW_PLATING_LEVEL
 		T.levelupdate()
@@ -324,7 +334,7 @@ This file contains the underlying code for stash datums
 /*
 /datum/stash/proc/spawn_note(var/atom/spawner)
 	//The passed spawner is where we will create the note
-	var/obj/item/weapon/paper/note = new note_paper_type(spawner)
+	var/obj/item/paper/note = new note_paper_type(spawner)
 	create_note_content()
 	note.info = lore
 	note.update_icon()

@@ -244,6 +244,19 @@ var/list/footstep_grass = list(\
 		'sound/effects/footstep/grass3.wav',\
 		'sound/effects/footstep/grass4.wav')
 
+var/list/footstep_ice = list(\
+		'sound/effects/footstep/ice1.ogg',\
+		'sound/effects/footstep/ice2.ogg',\
+		'sound/effects/footstep/ice3.ogg',\
+		'sound/effects/footstep/ice4.ogg',\
+		'sound/effects/footstep/ice5.ogg')
+
+var/list/footstep_snow = list(\
+		'sound/effects/footstep/snow1.ogg',\
+		'sound/effects/footstep/snow2.ogg',\
+		'sound/effects/footstep/snow3.ogg',\
+		'sound/effects/footstep/snow4.ogg')
+
 var/list/footstep_gravel = list(\
 		'sound/effects/footstep/gravel1.wav',\
 		'sound/effects/footstep/gravel2.wav',\
@@ -306,6 +319,10 @@ var/list/rummage_sound = list(\
 			toplay = pick(footstep_floor)
 		if ("grass")
 			toplay = pick(footstep_grass)
+		if ("ice")
+			toplay = pick(footstep_ice)
+		if ("snow")
+			toplay = pick(footstep_snow)
 		if ("gravel")
 			toplay = pick(footstep_gravel)
 		if ("hull")
@@ -345,8 +362,13 @@ var/list/rummage_sound = list(\
 		var/mob/M = P
 		if(!M || !M.client)
 			continue
-
-		if(get_dist(M, turf_source) <= maxdistance)
+		var/dist = get_dist(M, turf_source)
+		if(dist <= maxdistance + 3)
+			if(dist > maxdistance)
+				if(!ishuman(M))
+					continue
+				else if(!M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
 			var/turf/T = get_turf(M)
 
 			if(T && (T.z == turf_source.z || zrange && abs(T.z - turf_source.z) <= zrange))
@@ -355,7 +377,7 @@ var/list/rummage_sound = list(\
 
 var/const/FALLOFF_SOUNDS = 0.5
 
-/mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, override_env, envdry, envwet, use_pressure = TRUE)
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, override_env, envdry, envwet, use_pressure = TRUE)
 	if(!src.client || ear_deaf > 0)
 		return
 
@@ -377,7 +399,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 
 	var/turf/T = get_turf(src)
 	// 3D sounds, the technology is here!
-	if(isturf(turf_source))
+	if(T && isturf(turf_source))
 		//sound volume falloff with distance
 		var/distance = get_dist(T, turf_source)
 
@@ -439,7 +461,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 			S.environment = SPACE
 		else
 			var/area/A = get_area(src)
-			S.environment = A.sound_env
+			S.environment = A?.sound_env
 
 	var/list/echo_list = new(18)
 	echo_list[ECHO_DIRECT] = envdry
@@ -567,7 +589,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 		nextinterval *= RAND_DECIMAL(1-variance, 1+variance)
 
 	//Set the next timer handle
-	timer_handle = addtimer(CALLBACK(src, .proc/do_sound, TRUE), nextinterval, TIMER_STOPPABLE)
+	timer_handle = addtimer(CALLBACK(src, PROC_REF(do_sound), TRUE), nextinterval, TIMER_STOPPABLE)
 
 
 
@@ -575,3 +597,4 @@ var/const/FALLOFF_SOUNDS = 0.5
 	if (timer_handle)
 		deltimer(timer_handle)
 	qdel(src)
+

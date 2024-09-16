@@ -1,12 +1,12 @@
 /datum/antag_faction
-	var/id = null
+	var/id
 	var/name = "faction"	//name displayed in different places
 	var/antag = "antag"		//name for the faction members
 	var/antag_plural = "antags"
 	var/welcome_text = "Hello, antagonist!"
 
-	var/hud_indicator = null
-	var/leader_hud_indicator = null
+	var/hud_indicator
+	var/leader_hud_indicator
 	var/faction_invisible = TRUE
 
 	var/list/faction_icons = list()
@@ -17,13 +17,13 @@
 	var/list/members = list()
 	var/list/leaders = list()
 
-	var/list/verbs = list()	//List of verbs, used by this faction members
+	var/list/faction_datum_verbs = list()	//List of verbs, used by this faction members
 	var/list/leader_verbs = list()
 
 /datum/antag_faction/New()
 	if(!leader_hud_indicator)
 		leader_hud_indicator = hud_indicator
-	current_factions.Add(src)
+	GLOB.current_factions.Add(src)
 
 /datum/antag_faction/proc/add_member(var/datum/antagonist/member, var/announce = TRUE)
 	if(!member || !member.owner || !member.owner.current || (member in members) || !member.owner.current.client)
@@ -39,7 +39,7 @@
 	if (objectives.len)
 		member.set_objectives(objectives)
 
-	member.owner.current.verbs |= verbs
+	add_verb(member.owner.current, faction_datum_verbs)
 	add_icons(member)
 	update_members()
 	return TRUE
@@ -52,7 +52,7 @@
 		add_member(member,FALSE)
 
 	leaders.Add(member)
-	member.owner.current.verbs |= leader_verbs
+	add_verb(member.owner.current, leader_verbs)
 	if(announce)
 		to_chat(member.owner.current, SPAN_NOTICE("You became a <b>leader</b> of the [name]."))
 	update_members()
@@ -82,7 +82,7 @@
 	leaders.Remove(member)
 	if(announce)
 		to_chat(member.owner.current, SPAN_WARNING("You are no longer the <b>leader</b> of the [name]."))
-	member.owner.current.verbs.Remove(leader_verbs)
+	remove_verb(member.owner.current, leader_verbs)
 
 	update_members()
 	return TRUE
@@ -102,7 +102,7 @@
 		to_chat(member.owner.current, SPAN_WARNING("You are no longer a member of the [name]."))
 
 	if(member.owner && member.owner.current)
-		member.owner.current.verbs.Remove(verbs)
+		remove_verb(member.owner.current, faction_datum_verbs)
 
 	update_members()
 	return TRUE
@@ -111,7 +111,7 @@
 	for(var/datum/antagonist/A in members)
 		remove_member(A)
 
-	current_factions.Remove(src)
+	GLOB.current_factions.Remove(src)
 	return TRUE
 
 
@@ -137,13 +137,12 @@
 /datum/antag_faction/proc/customize(var/mob/leader)
 
 /datum/antag_faction/proc/communicate(var/mob/user)
-	if(!is_member(user))
+	if(!is_member(user) || user.stat != CONSCIOUS)
 		return
 
-	usr = user
-	var/message = input("Type message","[name] communication")
+	var/message = input(user, "Type message","[name] communication")
 
-	if(!message || !is_member(user))
+	if(!message || !is_member(user) || user.stat != CONSCIOUS) //Check the same things again, to prevent message-holding
 		return
 
 	message = capitalize(sanitize(message))
@@ -185,26 +184,29 @@
 		text += A.print_player()
 
 	text += "<br>"
-	var/failed = FALSE
-	var/num = 1
 
-	for(var/datum/objective/O in objectives)
-		text += "<br><b>Objective [num]:</b> [O.explanation_text] "
-		if(O.check_completion())
-			text += "<font color='green'><B>Success!</B></font>"
+	if (objectives.len)
+		var/failed = FALSE
+		var/num = 1
+
+		for(var/datum/objective/O in objectives)
+			text += "<br><b>Objective [num]:</b> [O.explanation_text] "
+			if(O.check_completion())
+				text += "<font color='green'><B>Success!</B></font>"
+			else
+				text += "<font color='red'>Fail.</font>"
+				failed = TRUE
+			num++
+
+		if(failed)
+			text += "<br><font color='red'><B>The members of the [name] failed their tasks.</B></font>"
 		else
-			text += "<font color='red'>Fail.</font>"
-			failed = TRUE
-		num++
-
-	if(failed)
-		text += "<br><font color='red'><B>The members of the [name] failed their tasks.</B></font>"
-	else
-		text += "<br><font color='green'><B>The members of the [name] accomplished their tasks!</B></font>"
-
+			text += "<br><font color='green'><B>The members of the [name] accomplished their tasks!</B></font>"
+	text += print_success_extra()
 	// Display the results.
 	return text
-
+/datum/antag_faction/proc/print_success_extra() //Placeholder for extra data for print_succes proc
+	return ""
 /datum/antag_faction/proc/get_indicator(var/datum/antagonist/A)
 	if(A in leaders)
 		return get_leader_indicator()

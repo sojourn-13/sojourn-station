@@ -20,6 +20,12 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	var/icon/bgstate = "black"
 	var/list/bgstate_options = list("steel", "dark_steel", "white_tiles", "black_tiles", "wood", "carpet", "white", "black")
 
+	var/size_multiplier = RESIZE_NORMAL
+	var/scale_effect = 0
+
+	var/grad_style = 	"None"			//Gradient style
+	var/grad_color =	"#000000"		//Gradient Color
+
 /datum/category_item/player_setup_item/physical/body
 	name = "Body"
 	sort_order = 2
@@ -32,12 +38,17 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	from_file(S["skin_base"], pref.s_base)
 	from_file(S["hair_style_name"], pref.h_style)
 	from_file(S["facial_style_name"], pref.f_style)
-	pref.preview_icon = null
+	if (!pref.generating_preview)
+		pref.preview_icon = null
 	from_file(S["bgstate"], pref.bgstate)
 	from_file(S["eyes_color"], pref.eyes_color)
 	from_file(S["skin_color"], pref.skin_color)
 	from_file(S["hair_color"], pref.hair_color)
 	from_file(S["facial_color"], pref.facial_color)
+	from_file(S["size_multiplier"], pref.size_multiplier)
+	from_file(S["scale_effect"], pref.scale_effect)
+	from_file(S["gradient_style"], pref.grad_style)
+	from_file(S["gradient_color"], pref.grad_color)
 
 /datum/category_item/player_setup_item/physical/body/save_character(var/savefile/S)
 	to_file(S["species"], pref.species)
@@ -51,21 +62,34 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	to_file(S["skin_color"], pref.skin_color)
 	to_file(S["hair_color"], pref.hair_color)
 	to_file(S["facial_color"], pref.facial_color)
+	to_file(S["size_multiplier"], pref.size_multiplier)
+	to_file(S["scale_effect"], pref.scale_effect)
+	to_file(S["gradient_style"], pref.grad_style)
+	to_file(S["gradient_color"], pref.grad_color)
 
 /datum/category_item/player_setup_item/physical/body/sanitize_character(var/savefile/S)
 	pref.h_style		= sanitize_inlist(pref.h_style, GLOB.hair_styles_list, initial(pref.h_style))
 	pref.f_style		= sanitize_inlist(pref.f_style, GLOB.facial_hair_styles_list, initial(pref.f_style))
+	pref.grad_style		= sanitize_inlist(pref.grad_style, hair_gradients_list, initial(pref.grad_style))
 	pref.hair_color		= iscolor(pref.hair_color) ? pref.hair_color : "#000000"
 	pref.facial_color	= iscolor(pref.facial_color) ? pref.facial_color : "#000000"
 	pref.skin_color		= iscolor(pref.skin_color) ? pref.skin_color : "#FFE0D0"
 	pref.eyes_color		= iscolor(pref.eyes_color) ? pref.eyes_color : "#000000"
+	pref.grad_color		= iscolor(pref.grad_color) ? pref.grad_color : "#000000"
 
-	var/datum/species/cspecies = global.all_species[pref.species]
+	if(pref.size_multiplier == null || pref.size_multiplier < RESIZE_TINY || pref.size_multiplier > RESIZE_HUGE)
+		pref.size_multiplier = initial(pref.size_multiplier)
+	if (pref.size_multiplier != 1)
+		pref.scale_effect = round(pref.size_multiplier * 100 - 100)		//So players don't have to rewrite their char sizes
+		pref.size_multiplier = initial(pref.size_multiplier)	//We don't need obsolete vars on our chars
+
 	if(!pref.species || !(pref.species in global.playable_species))
 		pref.species = SPECIES_HUMAN
 
+
+	var/datum/species/cspecies = global.all_species[pref.species]
 	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
-	if( !pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
+	if(!pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
 		pref.species_form = cspecies.default_form
 		if(!pref.species_form)
 			pref.species_form = FORM_HUMAN
@@ -80,7 +104,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 /datum/category_item/player_setup_item/physical/body/content(var/mob/user)
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
-	user << browse_rsc(pref.preview_icon, "previewicon.png")
+	if (pref.preview_icon) // failsafe, if the icon fails to render for whatever reason we at least have our customization options
+		user << browse_rsc(pref.preview_icon, "previewicon.png")
 
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
@@ -103,7 +128,6 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if(cform.name == cspecies.default_form && cspecies.obligate_form)
 			mode = "reset_form=1"
 			prefix = "&#8634; "
-		else if(cspecies.obligate_form) continue
 		formstring = "<a href='?src=\ref[src];[mode]'>[prefix][cform.name]</a>" + formstring
 		if(cform.name == cform.variantof || cform.name == cspecies.default_form && cspecies.obligate_form) break
 		cform = GLOB.all_species_form_list[cform.variantof]
@@ -113,6 +137,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. += "<b>Hair:</b> <a href='?src=\ref[src];cycle_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a>"
 	if(has_flag(mob_species_form, HAS_HAIR_COLOR))
 		. += "<a href='?src=\ref[src];hair_color=1'><span class='color_holder_box' style='background-color:[pref.hair_color]'></span></a>"
+	. += "<br>"
+
+	. += "<b>Gradient:</B><a href='?src=\ref[src];grad_style=1'>[pref.grad_style]</a>"
+	. += "<a href='?src=\ref[src];grad_color=1'><span class='color_holder_box' style='background-color:[pref.grad_color]'></span></a>"
 	. += "<br>"
 
 	. += "<b>Facial:</b> <a href='?src=\ref[src];cycle_facial_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_facial_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];facial_style=1'>[pref.f_style]</a>"
@@ -127,6 +155,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		. += "<b>Body Color: </b><a href='?src=\ref[src];skin_color=1'><span class='color_holder_box' style='background-color:[pref.skin_color]'></span></a><br>"
 	else if(has_flag(mob_species_form, HAS_SKIN_TONE))
 		. += "<b>Skin Tone: </b><a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
+
+	. += "<b>Scale:</b> <a href='?src=\ref[src];scale_effect=1'>[pref.scale_effect+100]%</a><br>"
 
 	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
 	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
@@ -143,6 +173,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
+	pref.categoriesChanged = "Body"
 	var/datum/species/mob_species = all_species[pref.species]
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["toggle_species_verbose"])
@@ -157,10 +188,14 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_species = input(user, "Choose your character's species:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species) as null|anything in global.playable_species
 		if(new_species && CanUseTopic(user))
 			pref.species = new_species
-			pref.ears_style = null
-			pref.tail_style = null
-			pref.wings_style = null
-			pref.setup_options["Origin"] = null 
+			pref.ears_style = "Default"
+			pref.tail_style = "Default"
+			pref.wings_style = "Default"
+			pref.setup_options["Career"] = "None"
+			pref.setup_options["Homeworld"] = "None"
+			pref.setup_options["Upbringing"] = "None"
+			pref.setup_options["Ethnicity"] = "None"
+			pref.setup_options["Core implant"] = "None"
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["reset_form"])
@@ -256,6 +291,21 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.h_style = new_h_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
+	else if(href_list["grad_style"])
+		var/list/valid_gradients = hair_gradients_list
+		var/new_grad_style = input(user, "Choose a color pattern for your hair:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.grad_style)  as null|anything in valid_gradients
+		if(new_grad_style && CanUseTopic(user))
+			pref.grad_style = new_grad_style
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["grad_color"])
+		if(!has_flag(mob_species_form, HAS_HAIR_COLOR))
+			return TOPIC_NOACTION
+		var/new_grad = input(user, "Choose your character's secondary hair color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.grad_color) as color|null
+		if(new_grad && has_flag(mob_species_form, HAS_HAIR_COLOR) && CanUseTopic(user))
+			pref.grad_color = new_grad
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
 	else if(href_list["facial_color"])
 		if(!has_flag(mob_species_form, HAS_HAIR_COLOR))
 			return TOPIC_NOACTION
@@ -341,6 +391,22 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			new_f_style = valid_facialhairstyles[old_pos+1]
 		if(new_f_style && CanUseTopic(user) && mob_species_form.get_facial_hair_styles())
 			pref.f_style = new_f_style
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+	else if(href_list["scale_effect"])
+		var/new_size_mult = input(user, "Choose your character's size, ranging from -20% to +20% form normal sprite size. Note that 100% is roughly equals to 1.77 meters or 5'10.", "Set Size") as num|null
+		if (!ISINRANGE(new_size_mult,-20,20))
+			//pref.size_multiplier = 1 		Obsolete
+			pref.scale_effect = 0
+			to_chat(user, "<span class='notice'>Invalid size.</span>")
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+		else if(new_size_mult == -10 || new_size_mult == 10)
+			to_chat(user, "<span class='notice'>You're trying to set character size value which will result broken sprites. Your scaling is auto adjusted.</span>")
+			if (new_size_mult == -10)
+				pref.scale_effect = -9
+			else pref.scale_effect = 9
+		else if(new_size_mult)
+		//	was pref.size_multiplier
+			pref.scale_effect = (new_size_mult)
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	return ..()

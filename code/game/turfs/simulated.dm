@@ -1,11 +1,12 @@
 /turf/simulated
-	name = "station"
+	name = "colony"
 	var/wet = 0
 	var/image/wet_overlay = null
 
 	//Mining resources (for the large drills).
 	var/has_resources
 	var/list/resources
+	var/seismic_activity = 1  // SEISMIC_MIN
 
 	var/thermite = 0
 	oxygen = MOLES_O2STANDARD
@@ -70,6 +71,12 @@
 					from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
+
+			var/obj/item/implant/core_implant/cruciform/C = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			if(C && C.active)
+				var/obj/item/cruciform_upgrade/upgrade = C.upgrade
+				if(upgrade && upgrade.active && istype(upgrade, CUPGRADE_CLEANSING_PSESENCE))
+					clean_ultimate(H)
 
 		if(src.wet)
 

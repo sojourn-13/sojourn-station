@@ -15,19 +15,91 @@
 	var/mob/pulledby = null
 	var/item_state = null // Used to specify the item state for the on-mob over-lays.
 	var/inertia_dir = 0
+	///Holds information about any movement loops currently running/waiting to run on the movable. Lazy, will be null if nothing's going on
+	var/datum/movement_packet/move_packet
+	var/can_anchor = TRUE
+	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
 
-/atom/movable/Del()
-	if(isnull(gc_destroyed) && loc)
-		testing("GC: -- [type] was deleted via del() rather than qdel() --")
-		crash_with("GC: -- [type] was deleted via del() rather than qdel() --") // stick a stack trace in the runtime logs
-//	else if(isnull(gcDestroyed))
-//		testing("GC: [type] was deleted via GC without qdel()") //Not really a huge issue but from now on, please qdel()
-//	else
-//		testing("GC: [type] was deleted via GC with qdel()")
-	..()
+	/// Used in SSmove_manager.move_to. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
+	var/walk_to_initial_time = 0
+
+	/// Used in SSmove_manager.move_to. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
+	var/walk_override_timer = 0
+
+	//spawn_values
+	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
+	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.
+	var/spawn_tags
+
+	/**
+	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
+	 *
+	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
+	**/
+	var/list/allowed_stat_modifiers = null
+
+	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
+	var/list/current_stat_modifiers = null
+
+	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
+	var/list/name_prefixes = null
+
+	var/get_stat_modifier = FALSE
+	var/times_to_get_stat_modifiers = 1
+	var/get_prefix = TRUE
+
+/atom/movable/Initialize()
+	. = ..()
+	init_stat_modifiers()
+
+/atom/movable/proc/init_stat_modifiers()
+	if(get_stat_modifier)
+		for(var/i in 0 to (times_to_get_stat_modifiers - 1))
+			var/list/excavated = list()
+			for(var/entry in allowed_stat_modifiers)
+				var/to_add = allowed_stat_modifiers[entry]
+				if(islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/list/successful_rolls = list()
+			for(var/typepath in excavated)
+				if(prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if(LAZYLEN(successful_rolls))
+				picked = pick(successful_rolls)
+
+			if(isnull(picked))
+				continue
+
+			var/list/arguments
+			if(islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
+				if(length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
+
+			var/datum/stat_modifier/chosen_modifier = new picked
+			if(!(chosen_modifier.valid_check(src, arguments)))
+				qdel(chosen_modifier)
 
 /atom/movable/Destroy()
+	var/turf/T = loc
+	if(opacity && istype(T))
+		T.reconsider_lights()
+
+	if(move_packet)
+		SSmove_manager.stop_looping(src) // not 1:1 with tg movess, niko todo: replace
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
+
+	QDEL_LAZYLIST(current_stat_modifiers)
+
 	. = ..()
+
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 
@@ -39,6 +111,24 @@
 		if (pulledby.pulling == src)
 			pulledby.pulling = null
 		pulledby = null
+
+	for (var/datum/movement_handler/handler in movement_handlers)
+		handler.host = null
+		movement_handlers -= handler //likely unneeded but just in case
+
+/atom/movable/examine(mob/user, distance, infix, suffix)
+	. = ..()
+
+//Soj Edits
+	var/list/descriptions_to_print = list()
+	// `in null` is fine, it just won't iterate
+	for(var/datum/stat_modifier/mod in current_stat_modifiers)
+		if(mod.description)
+			if(!(mod.description in descriptions_to_print))
+				descriptions_to_print += mod.description
+	for(var/description in descriptions_to_print)
+		to_chat(user, SPAN_NOTICE(description))
+
 
 /atom/movable/Bump(var/atom/A, yes)
 	if(src.throwing)
@@ -260,7 +350,7 @@
 	return
 
 /atom/movable/proc/touch_map_edge()
-	if(z in maps_data.sealed_levels)
+	if(z in GLOB.maps_data.sealed_levels)
 		return
 
 	if(config.use_overmap)
@@ -291,12 +381,12 @@
 
 //by default, transition randomly to another zlevel
 /atom/movable/proc/get_transit_zlevel()
-	var/list/candidates = maps_data.accessable_levels.Copy()
+	var/list/candidates = GLOB.maps_data.accessable_levels.Copy()
 	candidates.Remove("[src.z]")
 
 	//If something was ejected from the ship, it does not end up on another part of the ship.
-	if (z in maps_data.station_levels)
-		for (var/n in maps_data.station_levels)
+	if (z in GLOB.maps_data.station_levels)
+		for (var/n in GLOB.maps_data.station_levels)
 			candidates.Remove("[n]")
 
 	if(!candidates.len)
@@ -310,9 +400,9 @@
 	else
 		glide_size = max(min, glide_size_override)
 
-	for (var/atom/movable/AM in contents)
+/*	for (var/atom/movable/AM in contents)
 		AM.set_glide_size(glide_size, min, max)
-
+*/
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 // Spoiler alert: it is, in moved.dm
@@ -323,6 +413,7 @@
 	// To prevent issues, diagonal movements are broken up into two cardinal movements.
 
 	// Is this a diagonal movement?
+	LEGACY_SEND_SIGNAL(src, COMSIG_MOVABLE_PREMOVE, src)
 	if (Dir & (Dir - 1))
 		if (Dir & NORTH)
 			if (Dir & EAST)
@@ -376,15 +467,46 @@
 		if(isturf(loc))
 			// if we wasn't on map OR our Z coord was changed
 			if( !isturf(oldloc) || (get_z(loc) != get_z(oldloc)) )
+				onTransitZ(get_z(oldloc, get_z(loc)))
 				update_plane()
 
 		SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, loc)
 
 // Wrapper of step() that also sets glide size to a specific value.
-/proc/step_glide(var/atom/movable/am, var/dir, var/glide_size_override)
-	am.set_glide_size(glide_size_override)
-	return step(am, dir)
+/proc/step_glide(atom/movable/AM, newdir, glide_size_override)
+	AM.set_glide_size(glide_size_override)
+	return step(AM, newdir)
 
+//We're changing zlevel
+/atom/movable/proc/onTransitZ(old_z, new_z)//uncomment when something is receiving this signal
+	/*LEGACY_SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)
+	for(var/atom/movable/AM in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
+		AM.onTransitZ(old_z,new_z)*/
+
+/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+	if (registered_z != new_z)
+		if (registered_z)
+			SSmobs.mob_living_by_zlevel[registered_z] -= src
+		if (new_z)
+			SSmobs.mob_living_by_zlevel[new_z] += src
+		registered_z = new_z
 // if this returns true, interaction to turf will be redirected to src instead
+
+///Sets the anchored var and returns if it was sucessfully changed or not. Port from eris since I was getting problems currently only used for the bioreactor
+/atom/movable/proc/bio_anchored(anchorvalue)
+	SHOULD_CALL_PARENT(TRUE)
+	if(anchored == anchorvalue || !can_anchor)
+		return FALSE
+	anchored = anchorvalue
+	LEGACY_SEND_SIGNAL(src, COMSIG_ATOM_UNFASTEN, anchored)
+	. = TRUE
+
 /atom/movable/proc/preventsTurfInteractions()
 	return FALSE
+
+/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
+/atom/movable/proc/update_prefixes()
+	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
+
+	for (var/prefix in name_prefixes)
+		name = "[prefix] [name]"

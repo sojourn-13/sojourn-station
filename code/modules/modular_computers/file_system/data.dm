@@ -24,7 +24,7 @@
 /datum/computer_file/data/audio
 	filetype = "AUD"
 	var/transcribed = FALSE
-	var/max_capacity = 600
+	var/max_capacity = 10000
 	var/used_capacity = 0
 	var/list/storedinfo = list()
 	var/list/timestamp = list()

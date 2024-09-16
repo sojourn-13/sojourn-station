@@ -6,6 +6,9 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	volume = 100
+	price_tag = 150 //Mostly just to have a price for the beacon, but I guess you could sell them if you were REALLY desperate?
+
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
 
 	var/mechanical = 1         // Set to 0 to stop it from drawing the alert lights.
 	var/base_name = "tray"
@@ -23,7 +26,8 @@
 	var/sampled = 0            // Have we taken a sample?
 
 	// Harvest/mutation mods.
-	var/yield_mod = 0          // Modifier to yield
+	var/yield_mod = 0          // Modifier to yield, post harvest
+	var/potency_mod = 0        // Modifier to potency, post harvest
 	var/mutation_mod = 0       // Modifier to mutation chance
 	var/toxins = 0             // Toxicity in the tray?
 	var/mutation_level = 0     // When it hits 100, the plant mutates.
@@ -38,6 +42,7 @@
 	var/force_update           // Set this to bypass the cycle time check.
 	var/obj/temp_chem_holder   // Something to hold reagents during process_reagents()
 	var/labelled
+	var/frozen = 0			   //Is the plant frozen? -1 is used to define trays that can't be frozen. 0 is unfrozen and 1 is frozen.
 
 	// Seed details/line data.
 	var/datum/seed/seed = null // The currently planted seed
@@ -122,9 +127,9 @@
 		"radium" =  8,
 		"mutagen" = 15
 		)
-	
+
 	var/global/list/potency_reagents = list(
-		"diethylamine" =    2
+		"diethylamine" =    1
 	)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
@@ -145,17 +150,22 @@
 
 /obj/machinery/portable_atmospherics/hydroponics/bullet_act(var/obj/item/projectile/Proj)
 
-	//Don't act on seeds like dionaea that shouldn't change.
-	if(seed && seed.get_trait(TRAIT_IMMUTABLE) > 0)
-		return
+	if (!(Proj.testing))
 
-	//Override for somatoray projectiles.
-	if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
-		mutate(1)
-		return
-	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
-		yield_mod = min(10,yield_mod+rand(1,2))
-		return
+		//Don't act on seeds like dionaea that shouldn't change.
+		if(seed && seed.get_trait(TRAIT_IMMUTABLE) > 0)
+			return
+
+		//Override for somatoray projectiles.
+		if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
+			mutate(prob(25) ? 3 : 1)
+			return
+		else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
+			yield_mod = min(10,yield_mod+rand(1,2))
+			return
+		else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
+			mutate(4)
+			return
 
 	..()
 
@@ -211,10 +221,10 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, seed.get_trait(TRAIT_POTENCY) + (potency_reagents[R.id] * reagent_total * 0.5))
-				else
-					seed.set_trait(TRAIT_POTENCY, 100)
+				if((seed.get_trait(TRAIT_POTENCY) + potency_mod) < 100)
+					potency_mod = min(100, potency_mod + potency_reagents[R.id] * reagent_total)
+				//else  - If are plant is over 100 potency then adding a chemical that would *raise it* shouldnt lower it
+				//	seed.set_trait(TRAIT_POTENCY, 100)
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])
@@ -248,17 +258,37 @@
 	if(closed_system)
 		if(user) to_chat(user, "You can't harvest from the plant while the lid is shut.")
 		return
-
-	if(user)
+/*
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+		yield_mod += 2
 		seed.harvest(user,yield_mod)
 	else
-		seed.harvest(get_turf(src),yield_mod)
+*/
+	var/post_moder_yield_mod = yield_mod
+
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		post_moder_yield_mod  *= 0.5
+
+	//Fast growing crops dont get hit by the first harvest being elder
+	if(age >= 70)
+		post_moder_yield_mod -= (age * 0.005)
+	if(age >= 120 && user) //Losing yield slowly now
+		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+	post_moder_yield_mod = round(post_moder_yield_mod)
+	yield_mod = post_moder_yield_mod
+//	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
+
+	if(user)
+		seed.harvest(user,yield_mod,potency_mod)
+	else
+		seed.selfharvest(get_turf(src),yield_mod,potency_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
 
 	if(!seed.get_trait(TRAIT_HARVEST_REPEAT))
 		yield_mod = 0
+		potency_mod = 0
 		seed = null
 		dead = 0
 		age = 0
@@ -281,6 +311,7 @@
 	sampled = 0
 	age = 0
 	yield_mod = 0
+	potency_mod = 0
 	mutation_mod = 0
 
 	to_chat(user, "You remove the dead plant.")
@@ -314,11 +345,26 @@
 	// No seed, no mutations.
 	if(!seed)
 		return
+	switch(severity)
+		if (4)
+			if (seed.evolutions && seed.evolutions.len)
+				for(var/rid in seed.evolutions)
 
-	// Check if we should even bother working on the current seed datum.
-	if(seed.mutants && seed.mutants.len && severity > 1)
-		mutate_species()
-		return
+					var/list/checkEvoChems = seed.evolutions[rid]?:Copy()
+
+					if (checkEvoChems ~= (checkEvoChems & seed.chems))
+						evolve_species(rid)
+
+			return
+		if (3)
+			if(seed.greatMutants && seed.greatMutants.len)
+
+				mutate_species(seed.greatMutants)
+			return
+		if (2)
+			if(seed.mutants && seed.mutants.len)
+				mutate_species(seed.mutants)
+			return
 
 	// We need to make sure we're not modifying one of the global seed datums.
 	// If it's not in the global list, then no products of the line have been
@@ -375,10 +421,10 @@
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species()
+/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species(var/list/strains)
 
 	var/previous_plant = seed.display_name
-	var/newseed = seed.get_mutant_variant()
+	var/newseed = seed.get_mutant_variant(strains)
 	if(newseed in plant_controller.seeds)
 		seed = plant_controller.seeds[newseed]
 	else
@@ -397,14 +443,44 @@
 
 	return
 
+/obj/machinery/portable_atmospherics/hydroponics/proc/evolve_species(var/strain)
+
+
+	var/previous_plant = seed.display_name
+	var/newseed = strain
+	if (newseed in plant_controller.seeds)
+		seed = plant_controller.seeds[newseed]
+	else
+		return
+
+	dead = 0
+	mutate(1)
+	age = 0
+	health = seed.get_trait(TRAIT_ENDURANCE)
+	lastcycle = world.time
+	harvest = 0
+	weedlevel = 0
+
+	update_icon()
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly evolved into </span><span class='notice'>[seed.display_name]!"))
+
+	return
+
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING, QUALITY_BOLT_TURNING), src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING, QUALITY_PULSING), src)
 	switch(tool_type)
 
 		if(QUALITY_SHOVELING)
 			if(weedlevel == 0)
 				to_chat(user, SPAN_WARNING("This plot is completely devoid of weeds. It doesn't need uprooting."))
+				if(user.a_intent == I_HURT)
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+						user.visible_message(SPAN_DANGER("[user] starts damage the plants root."))
+						dead = 1
+						update_icon()
+					else
+						user.visible_message(SPAN_DANGER("[user] fails to kill the plant."))
 				return
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				user.visible_message(SPAN_DANGER("[user] starts uprooting the weeds."), SPAN_DANGER("You remove the weeds from the [src]."))
@@ -413,32 +489,48 @@
 				return
 			return
 
-		if(QUALITY_CUTTING)
+		if(QUALITY_WIRE_CUTTING)
 			if(!seed)
 				to_chat(user, SPAN_NOTICE("There is nothing to take a sample from in \the [src]."))
 				return
 
-			if(sampled)
+			if(sampled > 2) //3 harvests. and the 4th one will kill the plant
 				to_chat(user, SPAN_NOTICE("You have already sampled from this plant."))
+				if(user.a_intent == I_HURT)
+					to_chat(user, SPAN_NOTICE("You start killing it for one last sample."))
+					seed.harvest(user,yield_mod,potency_mod,1)
+					dead = 1
+					update_icon()
 				return
 
 			if(dead)
 				to_chat(user, SPAN_WARNING("The plant is dead."))
 				return
 
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
-				seed.harvest(user,yield_mod,1)
+				seed.harvest(user,yield_mod, potency_mod,1)
 				health -= (rand(3,5)*10)
-
-				if(prob(30))
-					sampled = 1
+				sampled += 1 //no RnG not anymore
 
 				// Bookkeeping.
 				check_health()
 				force_update = 1
 				Process()
 				return
+			return
+
+
+		if(QUALITY_PULSING)
+			if(!anchored)
+				to_chat(user, "<span class='warning'>Anchor it first!</span>")
+				return
+			if(frozen == -1)
+				to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
+				return
+			to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
+			frozen = !frozen
+			update_icon()
 			return
 
 		if(QUALITY_BOLT_TURNING)
@@ -473,9 +565,9 @@
 	if (I.is_drainable())
 		return 0
 
-	else if(istype(I, /obj/item/weapon/reagent_containers/syringe))
+	else if(istype(I, /obj/item/reagent_containers/syringe))
 
-		var/obj/item/weapon/reagent_containers/syringe/S = I
+		var/obj/item/reagent_containers/syringe/S = I
 
 		if (S.mode == 1)
 			if(seed)
@@ -519,19 +611,24 @@
 		else
 			to_chat(user, SPAN_DANGER("\The [src] already has seeds in it!"))
 
-	else if (istype(I, /obj/item/weapon/storage/bag/produce))
+	else if (istype(I, /obj/item/storage/bag/produce))
 
 		attack_hand(user)
 
-		var/obj/item/weapon/storage/bag/produce/S = I
-		for (var/obj/item/weapon/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
+		var/obj/item/storage/bag/produce/S = I
+		var/at_least_one = FALSE
+		for (var/obj/item/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
 			if(!S.can_be_inserted(G))
 				return
-			S.handle_item_insertion(G, 1)
+			if(!at_least_one)
+				at_least_one = TRUE
+			S.handle_item_insertion(G, suppress_warning = TRUE)
+		if(at_least_one)
+			to_chat(usr, SPAN_NOTICE("You put an assortment of produce in \the [I]."))
 
-	else if ( istype(I, /obj/item/weapon/plantspray) )
+	else if ( istype(I, /obj/item/plantspray) )
 
-		var/obj/item/weapon/plantspray/spray = I
+		var/obj/item/plantspray/spray = I
 		user.remove_from_mob(I)
 		toxins += spray.toxicity
 		pestlevel -= spray.pest_kill_str
@@ -542,14 +639,27 @@
 		check_health()
 
 	else if(I.force && seed)
+		if(user.a_intent == I_HURT)
+			if(!dead)
+				health = -100 //So even if we have bees around or other healing chems inside we still die
+				user.visible_message(SPAN_DANGER("\The [seed.display_name] has been hacked, and uprooted by [user] with \the [I]!"))
+				check_health()
+				harvest(user)
+				return
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been whacked by [user] with \the [I]!"))
 		if(!dead)
 			health -= I.force
 			check_health()
 	return
 
 /obj/machinery/portable_atmospherics/hydroponics/attack_tk(mob/user as mob)
+	if(blue_ink_tk_blocker)
+		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
+		return
+
+	//if forwhatever reason we allow teleportation trays
+
 	if(dead)
 		remove_dead(user)
 	else if(harvest)
@@ -559,7 +669,8 @@
 
 	if(issilicon(usr))
 		return
-
+	if(frozen == 1)
+		to_chat(user, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 	if(harvest)
 		harvest(user)
 	else if(dead)
@@ -590,6 +701,8 @@
 		to_chat(usr, SPAN_DANGER("The plant is dead."))
 	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
 		to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
+	if (frozen == 1)
+		to_chat(usr, "<span class='notice'>It is cryogenically frozen.</span>")
 
 	if(mechanical)
 		var/turf/T = loc

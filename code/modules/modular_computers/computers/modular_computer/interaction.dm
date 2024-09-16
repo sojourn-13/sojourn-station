@@ -14,17 +14,16 @@
 
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 
-/obj/item/modular_computer/proc/can_interact(var/mob/user)
-	if(usr.incapacitated())
+/obj/item/modular_computer/proc/can_press_buttons(mob/user)
+	if(user.incapacitated())
 		to_chat(user, "<span class='warning'>You can't do that.</span>")
 		return FALSE
 
-	if(!Adjacent(usr))
+	if(!Adjacent(user))
 		to_chat(user, "<span class='warning'>You can't reach it.</span>")
 		return FALSE
 
 	return TRUE
-
 
 // Forcibly shut down the device. To be used when something bugs out and the UI is nonfunctional.
 /obj/item/modular_computer/verb/emergency_shutdown()
@@ -32,7 +31,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	if(enabled)
@@ -51,7 +50,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	playsound(loc, 'sound/machines/id_swipe.ogg', 100, 1)
@@ -63,7 +62,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	proc_eject_usb(usr)
@@ -73,7 +72,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	proc_eject_ai(usr)
@@ -83,7 +82,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	if(istype(stored_pen))
@@ -98,7 +97,7 @@
 	if(!user)
 		user = usr
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	for(var/p in all_threads)
@@ -122,7 +121,7 @@
 		to_chat(user, "There is no portable device connected to \the [src].")
 		return
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/PD = portable_drive
+	var/obj/item/computer_hardware/hard_drive/portable/PD = portable_drive
 
 	uninstall_component(portable_drive, user)
 	user.put_in_hands(PD)
@@ -164,9 +163,9 @@
 	else if(!enabled && screen_on)
 		turn_on(user)
 
-/obj/item/modular_computer/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/weapon/card/id)) // ID Card, try to insert it.
-		var/obj/item/weapon/card/id/I = W
+/obj/item/modular_computer/attackby(obj/item/W, mob/user, sound_mute = FALSE)
+	if(istype(W, /obj/item/card/id)) // ID Card, try to insert it.
+		var/obj/item/card/id/I = W
 		if(!card_slot)
 			to_chat(user, "You try to insert [I] into [src], but it does not have an ID card slot installed.")
 			return
@@ -182,11 +181,12 @@
 		update_label()
 		update_uis()
 		update_verbs()
-		playsound(loc, 'sound/machines/id_swipe.ogg', 100, 1)
+		if(sound_mute == FALSE) // This is here so that the sound doesn't play every time you spawn in because ID's now get moved in to PDA's on spawn.
+			playsound(loc, 'sound/machines/id_swipe.ogg', 100, 1)
 		to_chat(user, "You insert [I] into [src].")
 
 		return
-	if(istype(W, /obj/item/weapon/pen) && stores_pen)
+	if(istype(W, /obj/item/pen) && stores_pen)
 		if(istype(stored_pen))
 			to_chat(user, "<span class='notice'>There is already a pen in [src].</span>")
 			return
@@ -199,7 +199,7 @@
 	if(scanner && scanner.do_on_attackby(user, W))
 		return
 
-	if(istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/weapon/paper_bundle))
+	if(istype(W, /obj/item/paper) || istype(W, /obj/item/paper_bundle))
 		if(printer)
 			printer.attackby(W, user)
 	if(istype(W, /obj/item/device/aicard))
@@ -210,12 +210,12 @@
 	if(!modifiable)
 		return ..()
 
-	if(istype(W, suitable_cell) || istype(W, /obj/item/weapon/computer_hardware))
+	if(istype(W, suitable_cell) || istype(W, /obj/item/computer_hardware))
 		try_install_component(W, user)
 
 
 
-	var/obj/item/weapon/tool/tool = W
+	var/obj/item/tool/tool = W
 	if(tool)
 		var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_WELDING, QUALITY_BOLT_TURNING)
 		var/tool_type = tool.get_tool_type(user, usable_qualities, src)
@@ -246,12 +246,12 @@
 					to_chat(user, "This device doesn't have any components installed.")
 					return
 				var/list/component_names = list()
-				for(var/obj/item/weapon/H in all_components)
+				for(var/obj/item/H in all_components)
 					component_names.Add(H.name)
 				var/list/options = list()
 				for(var/i in component_names)
 					for(var/X in all_components)
-						var/obj/item/weapon/TT = X
+						var/obj/item/TT = X
 						if(TT.name == i)
 							options[i] = image(icon = TT.icon, icon_state = TT.icon_state)
 				var/choice
@@ -261,7 +261,7 @@
 				if(!Adjacent(usr))
 					return
 				if(tool.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
-					var/obj/item/weapon/computer_hardware/H = find_hardware_by_name(choice)
+					var/obj/item/computer_hardware/H = find_hardware_by_name(choice)
 					if(!H)
 						return
 					uninstall_component(H, user)
@@ -279,7 +279,7 @@
 
 /obj/item/modular_computer/MouseDrop(atom/over_object)
 	var/mob/M = usr
-	if(!istype(over_object, /obj/screen) && can_interact(M))
+	if(!istype(over_object, /obj/screen) && can_press_buttons(M))
 		return attack_self(M)
 
 	if((src.loc == M) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, M))
@@ -294,4 +294,5 @@
 /obj/item/modular_computer/CtrlAltClick(mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	open_terminal(user)
+	if(user.stat_check(STAT_COG, STAT_LEVEL_BASIC)) // Make sure the user can at least do the exit command.
+		open_terminal(user)

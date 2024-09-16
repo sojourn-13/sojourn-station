@@ -9,10 +9,10 @@
 	var/mag_slow = 3
 	var/icon_base = "magboots"
 	action_button_name = "Toggle Magboots"
-	armor = list(
-		melee = 30,
-		bullet = 10,
-		energy = 20,
+	armor_list = list(
+		melee = 5,
+		bullet = 2,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 90

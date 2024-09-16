@@ -6,7 +6,7 @@ var/global/nttransfer_uid = 0
 	extended_desc = "This program allows for simple file transfer via direct peer to peer connection."
 	program_icon_state = "comm_logs"
 	program_key_state = "generic_key"
-	program_menu_icon = "transferthick-e-w"
+	program_menu_icon = "cloud-download-alt"
 	size = 7
 	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_PEERTOPEER
@@ -79,7 +79,7 @@ var/global/nttransfer_uid = 0
 /datum/nano_module/program/computer_nttransfer
 	name = "P2P Transfer Client"
 
-/datum/nano_module/program/computer_nttransfer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_nttransfer/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(!program)
 		return
 	var/datum/computer_file/program/nttransfer/PRG = program

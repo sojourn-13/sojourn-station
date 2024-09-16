@@ -2,28 +2,28 @@
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit/small(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive(src)
+	network_card = new/obj/item/computer_hardware/network_card(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive(src)
+	network_card = new/obj/item/computer_hardware/network_card(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit(src)
-	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src) //Only the advanced laptop gets a tesla link
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/advanced(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card/advanced(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src) //Only the advanced laptop gets a tesla link
+	hard_drive = new/obj/item/computer_hardware/hard_drive/advanced(src)
+	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/install_default_programs()
 	..()
@@ -36,12 +36,12 @@
 //Map presets
 /obj/item/modular_computer/laptop/preset/records/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit/small(src)
-	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card/(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	scanner = new /obj/item/weapon/computer_hardware/scanner/paper(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/(src)
+	network_card = new/obj/item/computer_hardware/network_card/(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	scanner = new /obj/item/computer_hardware/scanner/paper(src)
 
 /obj/item/modular_computer/laptop/preset/records/install_default_programs()
 	..()
@@ -54,10 +54,10 @@
 //Atmos
 /obj/item/modular_computer/laptop/preset/atmos/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit/small(src)
-	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card/(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/(src)
+	network_card = new/obj/item/computer_hardware/network_card/(src)
 
 /obj/item/modular_computer/laptop/preset/atmos/install_default_programs()
 	..()
@@ -71,13 +71,13 @@
 //debug
 /obj/item/modular_computer/laptop/preset/debug/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit/super/small(src)
-	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/cluster(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card/advanced(src)
-	scanner = new /obj/item/weapon/computer_hardware/scanner/paper(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit/super/small(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/cluster(src)
+	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
+	scanner = new /obj/item/computer_hardware/scanner/paper(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/laptop/preset/debug/install_default_programs()
 	..()
@@ -112,18 +112,22 @@
 	hard_drive.store_file(new/datum/computer_file/program/reports())
 	hard_drive.store_file(new/datum/computer_file/program/bounty_board_app())
 	hard_drive.store_file(new/datum/computer_file/program/chem_catalog())
+	hard_drive.store_file(new/datum/computer_file/program/cook_catalog())
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/elbrus4kk
 	name = "elbrus4kk laptop"
 	desc = "A portable clamshell computer made by \"Institute of Computer Engineering\" company. This one is advertized as tougher than other models on the market."
 	icon_state = "elbrus4kk"
+	icon_state_unpowered = "elbrus4kk"
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
 	name = "xenoware laptop"
 	desc = "A portable clamshell computer made by \"Xenoware\". You will feel like a real hacker with those lights."
 	icon_state = "xenoware"
+	icon_state_unpowered = "xenoware"
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
 	name = "golden laptop"
 	desc = "A portable clamshell computer with \"Kitaro Scientific\" label on the back."
 	icon_state = "golden"
+	icon_state_unpowered = "golden"

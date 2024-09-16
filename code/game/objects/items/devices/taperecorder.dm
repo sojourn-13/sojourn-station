@@ -11,9 +11,9 @@
 	var/recording = 0
 	var/playing = 0
 	var/playsleepseconds = 0
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/mydrive
+	var/obj/item/computer_hardware/hard_drive/portable/mydrive
 	var/datum/computer_file/data/audio/audio_file
-	var/starting_drive_type = /obj/item/weapon/computer_hardware/hard_drive/portable
+	var/starting_drive_type = /obj/item/computer_hardware/hard_drive/portable
 	var/datum/wires/taperecorder/wires = null // Wires datum
 	var/open_panel = 0
 	flags = CONDUCT
@@ -39,7 +39,7 @@
 		to_chat(usr, "The wire panel is open.")
 
 /obj/item/device/taperecorder/attackby(obj/item/I, mob/user, params)
-	if(!mydrive && istype(I, /obj/item/weapon/computer_hardware/hard_drive/portable))
+	if(!mydrive && istype(I, /obj/item/computer_hardware/hard_drive/portable))
 		if(insert_item(I, user))
 			mydrive = I
 			update_icon()
@@ -71,6 +71,8 @@
 		icon_state = "taperecorder_idle"
 
 /obj/item/device/taperecorder/hear_talk(mob/living/M as mob, msg, var/verb="says", datum/language/speaking=null, speech_volume)
+	if(isanimal(M))
+		return
 	if(speech_volume)
 		msg = "<FONT size='[speech_volume]'>[msg]</FONT>"
 	if(audio_file && recording)
@@ -117,7 +119,7 @@
 		to_chat(M, SPAN_DANGER("\The [src] explodes!"))
 	if(T)
 		T.hotspot_expose(700,125)
-		explosion(T, -1, -1, 0, 4)
+		explosion(T, 0, 0, 0, 4)
 	qdel(src)
 	return
 
@@ -237,7 +239,7 @@
 
 /obj/item/device/taperecorder/proc/clear_memory(var/show_message = 1)
 
-	if(usr.is_dead())
+	if(is_dead(usr))
 		return
 	else if(emagged)
 		if(show_message)

@@ -1,23 +1,23 @@
-#define AUTODOC_DAMAGE          1
-#define AUTODOC_EMBED_OBJECT	(1 << 1)
-#define AUTODOC_FRACTURE 		(1 << 2)
-#define AUTODOC_IB				(1 << 3)
-#define AUTODOC_OPEN_WOUNDS		(1 << 4)
+#define AUTODOC_DAMAGE 1
+#define AUTODOC_EMBED_OBJECT 2
+#define AUTODOC_FRACTURE 4
+#define AUTODOC_OPEN_WOUNDS 8
+#define AUTODOC_INTERNAL_WOUNDS 16
 
-#define AUTODOC_BLOOD			(1 << 5)
-#define AUTODOC_TOXIN			(1 << 6)
-#define AUTODOC_DIALYSIS		(1 << 7)
+#define AUTODOC_BLOOD 32
+#define AUTODOC_TOXIN 64
+#define AUTODOC_DIALYSIS 128
 #define AUTODOC_DIALYSIS_AMOUNT 5
 
-#define AUTODOC_SCAN_COST           200
-#define AUTODOC_DAMAGE_COST         800
-#define AUTODOC_EMBED_OBJECT_COST	1000
-#define AUTODOC_FRACTURE_COST       1200
-#define AUTODOC_IB_COST				1200
-#define AUTODOC_OPEN_WOUNDS_COST    600
-#define AUTODOC_BLOOD_COST          800
-#define AUTODOC_TOXIN_COST			600
-#define AUTODOC_DIALYSIS_COST		1000
+#define AUTODOC_SCAN_COST           	50
+#define AUTODOC_DAMAGE_COST        	 	200
+#define AUTODOC_EMBED_OBJECT_COST		500
+#define AUTODOC_FRACTURE_COST      	 	600
+#define AUTODOC_OPEN_WOUNDS_COST		100
+#define AUTODOC_INTERNAL_WOUNDS_COST	200
+#define AUTODOC_BLOOD_COST          	300
+#define AUTODOC_TOXIN_COST				200
+#define AUTODOC_DIALYSIS_COST			250
 
 /datum/autodoc_patchnote
 	var/surgery_operations = 0
@@ -42,7 +42,7 @@
 	var/current_step = 1
 	var/start_op_time
 	var/mob/living/carbon/human/patient = null
-	var/list/possible_operations = list(AUTODOC_DAMAGE, AUTODOC_EMBED_OBJECT, AUTODOC_FRACTURE, AUTODOC_OPEN_WOUNDS, AUTODOC_TOXIN, AUTODOC_DIALYSIS, AUTODOC_BLOOD)
+	var/list/possible_operations = list(AUTODOC_DAMAGE, AUTODOC_EMBED_OBJECT, AUTODOC_FRACTURE, AUTODOC_OPEN_WOUNDS, AUTODOC_INTERNAL_WOUNDS, AUTODOC_TOXIN, AUTODOC_DIALYSIS, AUTODOC_BLOOD)
 
 /datum/autodoc/New(obj/new_holder)
 	. = ..()
@@ -70,14 +70,16 @@
 		scanned_patchnotes.Add(toxnote)
 		picked_patchnotes.Add(toxnote.Copy())
 
-	if(AUTODOC_DAMAGE in possible_operations)
-		for(var/obj/item/organ/internal/internal in patient.internal_organs)
-			if(internal.damage)
-				var/datum/autodoc_patchnote/patchnote = new()
-				patchnote.organ = internal
-				patchnote.surgery_operations |= AUTODOC_DAMAGE
-				scanned_patchnotes.Add(patchnote)
-				picked_patchnotes.Add(patchnote.Copy())
+	if(AUTODOC_INTERNAL_WOUNDS in possible_operations)
+		for(var/obj/item/organ/external/external in patient.organs)
+			if(external.number_internal_wounds)
+				for(var/obj/item/organ/internal/internal in external.internal_organs)
+					if(internal.GetComponent(/datum/component/internal_wound))
+						var/datum/autodoc_patchnote/patchnote = new()
+						patchnote.organ = internal
+						patchnote.surgery_operations |= AUTODOC_INTERNAL_WOUNDS
+						scanned_patchnotes.Add(patchnote)
+						picked_patchnotes.Add(patchnote.Copy())
 
 	for(var/obj/item/organ/external/external in patient.bad_external_organs)
 		var/datum/autodoc_patchnote/patchnote = new()
@@ -93,18 +95,14 @@
 				patchnote.surgery_operations |= AUTODOC_FRACTURE
 		if(AUTODOC_EMBED_OBJECT in possible_operations)
 			if(external.implants)
-				if(/obj/item/weapon/material/shard/shrapnel in external.implants)
+				if(locate(/obj/item/material/shard/shrapnel) in external.implants)
 					patchnote.surgery_operations |= AUTODOC_EMBED_OBJECT
 
 		if(external.wounds.len)
 			for(var/datum/wound/wound in external.wounds)
-				if(wound.internal)
-					if(AUTODOC_IB in possible_operations)
-						patchnote.surgery_operations |= AUTODOC_IB
-				else
-					if(AUTODOC_OPEN_WOUNDS in possible_operations)
-						if(!wound.is_treated())
-							patchnote.surgery_operations |= AUTODOC_OPEN_WOUNDS
+				if(AUTODOC_OPEN_WOUNDS in possible_operations)
+					if(!wound.is_treated())
+						patchnote.surgery_operations |= AUTODOC_OPEN_WOUNDS
 		if(patchnote.surgery_operations)
 			scanned_patchnotes.Add(patchnote)
 			picked_patchnotes.Add(patchnote.Copy())
@@ -139,66 +137,63 @@
 				patchnote.surgery_operations &= ~AUTODOC_BLOOD
 
 	else if(patchnote.surgery_operations & AUTODOC_DAMAGE)
-		to_chat(patient, SPAN_NOTICE("Treating damage on the patients [external]."))
-		if(istype(patchnote.organ, /obj/item/organ/internal))
-			var/obj/item/organ/internal/internal = patchnote.organ
-			internal.damage -= damage_heal_amount
-			if(internal.damage < 0) internal.damage = 0
-			if(!internal.damage) patchnote.surgery_operations &= ~AUTODOC_DAMAGE
-			return !internal.damage
-
+		to_chat(patient, SPAN_NOTICE("Treating damage on the patient's [external]."))
 		external.heal_damage(damage_heal_amount, damage_heal_amount)
 		if(!external.brute_dam && !external.burn_dam) patchnote.surgery_operations &= ~AUTODOC_DAMAGE
 
 	else if(patchnote.surgery_operations & AUTODOC_EMBED_OBJECT)
-		to_chat(patient, SPAN_NOTICE("Removing embedded objects from the patients [external]."))
-		for(var/obj/item/weapon/material/shard/shrapnel/shrapnel in external.implants)
-			external.implants -= shrapnel
-			shrapnel.loc = get_turf(patient)
+		to_chat(patient, SPAN_NOTICE("Removing embedded objects from the patient's [external]."))
+		for(var/obj/item/material/shard/shrapnel/shrap in external.implants)
+			external.remove_item(shrap, patient, FALSE)
 		patchnote.surgery_operations &= ~AUTODOC_EMBED_OBJECT
 
 	else if(patchnote.surgery_operations & AUTODOC_OPEN_WOUNDS)
 		to_chat(patient, SPAN_NOTICE("Closing wounds on the patients [external]."))
 		for(var/datum/wound/wound in external.wounds)
-			if(!wound.internal)
-				wound.bandaged = 1
-				wound.clamped = 1
-				wound.salved = 1
-				wound.disinfected = 1
-				wound.germ_level = 0
+			wound.bandaged = TRUE
+			wound.clamped = TRUE
+			wound.salved = TRUE
 		patchnote.surgery_operations &= ~AUTODOC_OPEN_WOUNDS
 
 	else if(patchnote.surgery_operations & AUTODOC_FRACTURE)
-		to_chat(patient, SPAN_NOTICE("Mending fractures in the patients [external]."))
+		to_chat(patient, SPAN_NOTICE("Mending fractures in the patient's [external]."))
 		external.mend_fracture()
 		patchnote.surgery_operations &= ~AUTODOC_FRACTURE
 
-//	else if(patchnote.surgery_operations & AUTODOC_IB)
-//		to_chat(patient, SPAN_NOTICE("Treating internal bleeding in the patients [external]."))
-//		for(var/datum/wound/wound in external.wounds)
-//			if(wound.internal)
-//				external.wounds -= wound
-//				qdel(wound)
-//				external.update_damages()
-//		patchnote.surgery_operations &= ~AUTODOC_IB
-//	return !patchnote.surgery_operations
+	else if(patchnote.surgery_operations & AUTODOC_INTERNAL_WOUNDS)
+		if(istype(patchnote.organ, /obj/item/organ/internal))
+			var/obj/item/organ/internal/I = patchnote.organ
+			to_chat(patient, SPAN_NOTICE("Treating internal wounds in the patient's [I.name]."))
+			LEGACY_SEND_SIGNAL(I, COMSIG_IWOUND_TREAT, TRUE, TRUE)
+			patchnote.surgery_operations &= ~AUTODOC_INTERNAL_WOUNDS
 
 /datum/autodoc/Process()
-	if(!patient)
+	if(!patient || picked_patchnotes.len <= current_step - 1)
 		stop()
-	if(current_step > picked_patchnotes.len)
-		stop()
-		scan_user(patient)
+		return
+
+	while(!(picked_patchnotes[current_step].surgery_operations))
+		if(current_step + 1 > picked_patchnotes.len)
+			stop()
+			scan_user(patient)
+			return
+		else
+			current_step++
+
 	if(world.time > (start_op_time + processing_speed))
 		start_op_time = world.time
 		patient.updatehealth()
 		if(process_note(picked_patchnotes[current_step]))
-			current_step++
+			if(current_step + 1 > picked_patchnotes.len)
+				stop()
+				scan_user(patient)
+			else
+				current_step++
 
 /datum/autodoc/proc/fail()
 	current_step++
 
-/datum/autodoc/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
+/datum/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/nano_topic_state/state)
 	if(!patient)
 		if(ui)
 			ui.close()
@@ -257,8 +252,8 @@
 				organ["internal"] = TRUE
 				organ["inner_damage"] = internal.damage
 
-				organ["damage"] = note.surgery_operations & AUTODOC_DAMAGE
-				organ["damage_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_DAMAGE
+				organ["damage"] = note.surgery_operations & AUTODOC_INTERNAL_WOUNDS
+				organ["damage_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_INTERNAL_WOUNDS
 			else
 				var/obj/item/organ/external/external = note.organ
 				organ["name"] = external.name
@@ -276,9 +271,6 @@
 
 				organ["wound"] = note.surgery_operations & AUTODOC_OPEN_WOUNDS
 				organ["wound_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_OPEN_WOUNDS
-
-				organ["ib"] = note.surgery_operations & AUTODOC_IB
-				organ["ib_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_IB
 			organs+= list(organ)
 	data["organs"] = organs
 	return data
@@ -323,8 +315,8 @@
 				op = AUTODOC_DAMAGE
 			if("wound")
 				op = AUTODOC_OPEN_WOUNDS
-			if("ib")
-				op = AUTODOC_IB
+			if("internal_wound")
+				op = AUTODOC_INTERNAL_WOUNDS
 			if("fracture")
 				op = AUTODOC_FRACTURE
 			if("shrapnel")
@@ -369,7 +361,7 @@
 
 	data["damage_cost"] = AUTODOC_DAMAGE_COST
 	data["wound_cost"] = AUTODOC_OPEN_WOUNDS_COST
-	data["ib_cost"] = AUTODOC_IB_COST
+	data["internal_wound_cost"] = AUTODOC_INTERNAL_WOUNDS_COST
 	data["fracture_cost"] = AUTODOC_FRACTURE_COST
 	data["shrapnel_cost"] = AUTODOC_EMBED_OBJECT_COST
 	data["toxin_cost"] = AUTODOC_TOXIN_COST
@@ -407,31 +399,38 @@
 			cost += AUTODOC_TOXIN_COST
 		if(patchnote.surgery_operations & AUTODOC_DIALYSIS)
 			cost += AUTODOC_DIALYSIS_COST
-		if (patchnote.surgery_operations & AUTODOC_BLOOD)
+		if(patchnote.surgery_operations & AUTODOC_BLOOD)
 			cost += AUTODOC_BLOOD_COST
-		if( patchnote.surgery_operations & AUTODOC_DAMAGE)
+		if(patchnote.surgery_operations & AUTODOC_DAMAGE)
 			cost += AUTODOC_DAMAGE_COST
-		if( patchnote.surgery_operations & AUTODOC_EMBED_OBJECT)
+		if(patchnote.surgery_operations & AUTODOC_EMBED_OBJECT)
 			cost += AUTODOC_EMBED_OBJECT_COST
-		if( patchnote.surgery_operations & AUTODOC_OPEN_WOUNDS)
+		if(patchnote.surgery_operations & AUTODOC_OPEN_WOUNDS)
 			cost += AUTODOC_OPEN_WOUNDS_COST
-		if( patchnote.surgery_operations & AUTODOC_FRACTURE)
+		if(patchnote.surgery_operations & AUTODOC_INTERNAL_WOUNDS)
+			cost += AUTODOC_INTERNAL_WOUNDS_COST
+		if(patchnote.surgery_operations & AUTODOC_FRACTURE)
 			cost += AUTODOC_FRACTURE_COST
-		if( patchnote.surgery_operations & AUTODOC_IB)
-			cost += AUTODOC_IB_COST
 	return cost
 
 /datum/autodoc/capitalist_autodoc/proc/login()
 	if(!patient)
 		patient_account = null
 		return
-	var/obj/item/weapon/card/id/id_card = patient.GetIdCard()
+	var/obj/item/card/id/id_card = patient.GetIdCard()
 	if(id_card)
 		patient_account = get_account(id_card.associated_account_number)
-		if(patient_account.security_level)
+		if(!patient_account || !patient_account.is_valid())
+			to_chat(patient, SPAN_WARNING("Proper banking account is needed."))
+		else if(patient_account.security_level)
 			var/attempt_pin = ""
 			attempt_pin = input("Enter pin code", "Autodoc payement") as num
 			patient_account = attempt_account_access(id_card.associated_account_number, attempt_pin, 2)
+
+/datum/autodoc/capitalist_autodoc/set_patient(var/mob/living/carbon/human/human = null)
+	..()
+	if (human == null)
+		patient_account = null
 
 /datum/autodoc/capitalist_autodoc/start()
 	if(!charge(processing_cost))
@@ -458,9 +457,8 @@
 #undef AUTODOC_DAMAGE
 #undef AUTODOC_EMBED_OBJECT
 #undef AUTODOC_FRACTURE
-#undef AUTODOC_IB
 #undef AUTODOC_OPEN_WOUNDS
-
+#undef AUTODOC_INTERNAL_WOUNDS
 #undef AUTODOC_BLOOD
 #undef AUTODOC_TOXIN
 #undef AUTODOC_DIALYSIS
@@ -470,8 +468,8 @@
 #undef AUTODOC_DAMAGE_COST
 #undef AUTODOC_EMBED_OBJECT_COST
 #undef AUTODOC_FRACTURE_COST
-#undef AUTODOC_IB_COST
 #undef AUTODOC_OPEN_WOUNDS_COST
+#undef AUTODOC_INTERNAL_WOUNDS_COST
 #undef AUTODOC_BLOOD_COST
 #undef AUTODOC_TOXIN_COST
 #undef AUTODOC_DIALYSIS_COST

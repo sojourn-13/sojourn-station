@@ -40,9 +40,9 @@
 
 /obj/machinery/atmospherics/valve/New()
 	switch(dir)
-		if(NORTH || SOUTH)
+		if(NORTH, SOUTH)
 			initialize_directions = NORTH|SOUTH
-		if(EAST || WEST)
+		if(EAST, WEST)
 			initialize_directions = EAST|WEST
 	..()
 
@@ -229,7 +229,7 @@
 	icon = 'icons/atmos/digital_valve.dmi'
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 /obj/machinery/atmospherics/valve/digital/attack_ai(mob/user as mob)

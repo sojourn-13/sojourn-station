@@ -15,6 +15,36 @@
 	var/construct_op = 0
 
 
+/obj/machinery/telecomms/RefreshParts()
+	..()
+	var/mm_rating = 0
+	var/mm_amount = 0
+	for(var/obj/item/stock_parts/manipulator/MM in component_parts)
+		mm_rating += MM.rating
+		mm_amount++
+
+	idle_power_usage = round(initial(idle_power_usage)-(mm_rating*mm_amount*2))
+
+/*                     Maths time
+If 1 manips (All telecoms has 2-3 manips)
+level 1 manipulator  1 x 1 x 2 = 2w saved based    level
+level 2 manipulator  2 x 1 x 2 = 4w saved nano     level
+level 3 manipulator  3 x 1 x 2 = 6w saved pico     level
+level 4 manipulator  4 x 1 x 2 = 8w saved exl      level
+level 5 manipulator  5 x 1 x 2 = 10w saved greyson level
+If 2 manips
+level 1 manipulator  2 x 2 x 2 = 8w saved based    level
+level 2 manipulator  3 x 2 x 2 = 12w saved nano    level
+level 3 manipulator  6 x 2 x 2 = 24w saved pico    level
+level 4 manipulator  8 x 2 x 2 = 36w saved exl     level
+level 5 manipulator 10 x 2 x 2 = 40w saved greyson level
+If 3 manips
+level 1 manipulator  3 x 3 x 2 = 18w saved based   level
+level 2 manipulator  6 x 3 x 2 = 36w saved nano    level
+level 3 manipulator  9 x 3 x 2 = 54w saved pico    level
+level 4 manipulator 12 x 3 x 2 = 72w saved exl     level
+level 5 manipulator 15 x 3 x 2 = 90w saved greyson level
+*/
 /obj/machinery/telecomms/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
 		return
@@ -24,7 +54,7 @@
 
 	// Hardcoded tool paths are bad, but the tcomm code relies a "buffer" function that only the actual multitool has
 	// I really don't want to try and fix that now, so it stays that way
-	if(istype(I, /obj/item/weapon/tool/multitool))
+	if(istype(I, /obj/item/tool/multitool))
 		attack_hand(user)
 		return
 
@@ -45,13 +75,13 @@
 	// You need a multitool to use this, or be silicon
 	if(!issilicon(user))
 		// istype returns false if the value is null
-		if(!istype(user.get_active_hand(), /obj/item/weapon/tool/multitool))
+		if(!istype(user.get_active_hand(), /obj/item/tool/multitool))
 			return
 
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	var/obj/item/weapon/tool/multitool/P = get_multitool(user)
+	var/obj/item/tool/multitool/P = get_multitool(user)
 
 	user.set_machine(src)
 	var/dat
@@ -132,15 +162,15 @@
 
 /obj/machinery/telecomms/proc/get_multitool(mob/user as mob)
 
-	var/obj/item/weapon/tool/multitool/P = null
+	var/obj/item/tool/multitool/P = null
 	// Let's double check
-	if(!issilicon(user) && istype(user.get_active_hand(), /obj/item/weapon/tool/multitool))
+	if(!issilicon(user) && istype(user.get_active_hand(), /obj/item/tool/multitool))
 		P = user.get_active_hand()
 	else if(isAI(user))
 		var/mob/living/silicon/ai/U = user
 		P = U.aiMulti
 	else if(isrobot(user) && in_range(user, src))
-		if(istype(user.get_active_hand(), /obj/item/weapon/tool/multitool))
+		if(istype(user.get_active_hand(), /obj/item/tool/multitool))
 			P = user.get_active_hand()
 	return P
 
@@ -225,13 +255,13 @@
 /obj/machinery/telecomms/Topic(href, href_list)
 
 	if(!issilicon(usr))
-		if(!istype(usr.get_active_hand(), /obj/item/weapon/tool/multitool))
+		if(!istype(usr.get_active_hand(), /obj/item/tool/multitool))
 			return
 
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	var/obj/item/weapon/tool/multitool/P = get_multitool(usr)
+	var/obj/item/tool/multitool/P = get_multitool(usr)
 
 	if(href_list["input"])
 		switch(href_list["input"])

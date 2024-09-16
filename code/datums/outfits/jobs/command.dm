@@ -3,16 +3,12 @@
 	head = /obj/item/clothing/head/rank/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/captain
+	suit = /obj/item/clothing/suit/greatcoat/cap
 	l_ear = /obj/item/device/radio/headset/heads/captain
-	shoes = /obj/item/clothing/shoes/color/brown
-	id_type = /obj/item/weapon/card/id/gold
+	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/card/id/gold
 	pda_type = /obj/item/modular_computer/pda/captain
-	backpack_contents = list(/obj/item/weapon/storage/box/ids = 1)
-
-/decl/hierarchy/outfit/job/captain/New()
-	..()
-	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/weapon/storage/backpack/captain
-	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/captain
+	backpack_contents = list(/obj/item/storage/hcases/preimer = 1)
 
 /decl/hierarchy/outfit/job/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -34,5 +30,6 @@
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/reinforced
 	gloves = /obj/item/clothing/gloves/thick
-	id_type = /obj/item/weapon/card/id/hop
+	id_type = /obj/item/card/id/hop
 	pda_type = /obj/item/modular_computer/pda/heads/hop
+	backpack_contents = list(/obj/item/storage/hcases/preimer = 1)

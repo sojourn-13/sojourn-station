@@ -20,7 +20,7 @@ field_generator power level display
 	icon_state = "Field_Gen"
 	anchored = 0
 	density = 1
-	use_power = 0
+	use_power = NO_POWER_USE
 	var/const/num_power_levels = 6	// Total number of power level icon has
 	var/Varedit_start = 0
 	var/Varpower = 0
@@ -155,9 +155,10 @@ field_generator power level display
 	return 0
 
 /obj/machinery/field_generator/bullet_act(var/obj/item/projectile/Proj)
-	if(istype(Proj, /obj/item/projectile/beam))
-		power += Proj.damage * EMITTER_DAMAGE_POWER_TRANSFER
-		update_icon()
+	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/beam))
+			power += Proj.damage_types[BURN] * EMITTER_DAMAGE_POWER_TRANSFER
+			update_icon()
 	return 0
 
 
@@ -327,7 +328,7 @@ field_generator power level display
 	//I want to avoid using global variables.
 	spawn(1)
 		var/temp = 1 //stops spam
-		for(var/obj/singularity/O in SSmachines.machinery)
+		for(var/obj/singularity/O in GLOB.machines)
 			if(O.last_warning && temp)
 				if((world.time - O.last_warning) > 50) //to stop message-spam
 					temp = 0

@@ -42,7 +42,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You need to set a destination first!"))
 
-	else if(istype(W, /obj/item/weapon/pen))
+	else if(istype(W, /obj/item/pen))
 		switch(alert("What would you like to alter?",,"Title","Description", "Cancel"))
 			if("Title")
 				var/str = sanitizeSafe(input(usr,"Label text?","Set label",""), MAX_NAME_LEN)
@@ -152,7 +152,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You need to set a destination first!"))
 
-	else if(istype(W, /obj/item/weapon/pen))
+	else if(istype(W, /obj/item/pen))
 		switch(alert("What would you like to alter?",,"Title","Description", "Cancel"))
 			if("Title")
 				var/str = sanitizeSafe(input(usr,"Label text?","Set label",""), MAX_NAME_LEN)
@@ -219,7 +219,7 @@
 			to_chat(user, "<span class='notice'>It has a note attached which reads, \"[examtext]\"</span>")
 	return
 
-/obj/item/weapon/packageWrap
+/obj/item/packageWrap
 	name = "package wrapper"
 	desc = "A roll of material for wrapping packages."
 	icon = 'icons/obj/items.dmi'
@@ -228,12 +228,12 @@
 	var/amount = 25.0
 
 
-/obj/item/weapon/packageWrap/afterattack(var/obj/target as obj, mob/user as mob, proximity)
+/obj/item/packageWrap/afterattack(var/obj/target as obj, mob/user as mob, proximity)
 	if(!proximity) return
 	if(!istype(target))	//this really shouldn't be necessary (but it is).	-Pete
 		return
 	if(istype(target, /obj/item/smallDelivery) || istype(target,/obj/structure/bigDelivery) \
-	|| istype(target, /obj/item/weapon/gift) || istype(target, /obj/item/weapon/evidencebag))
+	|| istype(target, /obj/item/gift) || istype(target, /obj/item/evidencebag))
 		return
 	if(target.anchored)
 		return
@@ -245,7 +245,7 @@
 	user.attack_log += text("\[[time_stamp()]\] <font color='blue'>Has used [src.name] on \ref[target]</font>")
 	playsound(src,'sound/machines/PAPER_Fold_01_mono.ogg',100,1)
 
-	if (istype(target, /obj/item) && !(istype(target, /obj/item/weapon/storage) && !istype(target,/obj/item/weapon/storage/box)))
+	if (istype(target, /obj/item) && !(istype(target, /obj/item/storage) && !istype(target,/obj/item/storage/box)))
 		var/obj/item/O = target
 		if (src.amount > 1)
 			var/obj/item/smallDelivery/P = new /obj/item/smallDelivery(get_turf(O.loc))	//Aaannd wrap it up!
@@ -305,10 +305,8 @@
 	else
 		to_chat(user, "\blue The object you are trying to wrap is unsuitable for the sorting machinery!")
 	return
-	if (src.amount <= 0)
-		qdel(src)
-		return
-/obj/item/weapon/packageWrap/examine(mob/user)
+
+/obj/item/packageWrap/examine(mob/user)
 	if(..(user, 0))
 		to_chat(user, "\blue There are [amount] units of package wrap left!")
 
@@ -373,17 +371,21 @@
 /obj/machinery/disposal/deliveryChute
 	name = "delivery chute"
 	desc = "A chute for big and small packages alike!"
+	var/sound_on = TRUE
 	density = 1
 	icon_state = "intake"
 	layer = BELOW_OBJ_LAYER //So that things being ejected are visible
 	var/c_mode = 0
 
-/obj/machinery/disposal/deliveryChute/New()
+/obj/machinery/disposal/deliveryChute/Initialize(mapload, d)
 	..()
-	spawn(5)
-		trunk = locate() in src.loc
-		if(trunk)
-			trunk.linked = src	// link the pipe trunk to self
+	return INIT_ORDER_LATELOAD
+	
+/obj/machinery/disposal/deliveryChute/LateInitialize(mapload)
+	. = ..()
+	trunk = locate() in loc
+	if(trunk)
+		trunk.linked = src	// link the pipe trunk to self
 
 /obj/machinery/disposal/deliveryChute/interact()
 	return
@@ -391,41 +393,42 @@
 /obj/machinery/disposal/deliveryChute/update()
 	return
 
-/obj/machinery/disposal/deliveryChute/Bumped(var/atom/movable/AM) //Go straight into the chute
-	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))	return
-	switch(dir)
-		if(NORTH)
-			if(AM.loc.y != src.loc.y+1) return
-		if(EAST)
-			if(AM.loc.x != src.loc.x+1) return
-		if(SOUTH)
-			if(AM.loc.y != src.loc.y-1) return
-		if(WEST)
-			if(AM.loc.x != src.loc.x-1) return
+/obj/machinery/disposal/deliveryChute/Bumped(atom/movable/AM) //Go straight into the chute
+	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))
+		return
+	if(AM.loc && loc)
+		switch(dir)
+			if(NORTH)
+				if(AM.loc.y != loc.y + 1) return
+			if(EAST)
+				if(AM.loc.x != loc.x + 1) return
+			if(SOUTH)
+				if(AM.loc.y != loc.y - 1) return
+			if(WEST)
+				if(AM.loc.x != loc.x - 1) return
 
 	if(isobj(AM) || ismob(AM))
 		AM.forceMove(src)
-	src.flush()
+	flush()
 
 /obj/machinery/disposal/deliveryChute/flush()
 	flushing = 1
 	flick("intake-closing", src)
 	var/obj/structure/disposalholder/H = new()	// virtual holder object which actually
 												// travels through the pipes.
-	//air_contents = new()		// new empty gas resv.
 
 	sleep(10)
-	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
+	if(sound_on)
+		playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
 	sleep(5) // wait for animation to finish
 
 	H.init(src)	// copy the contents of disposer to holder
-
 	H.start(src) // start the holder processing movement
 	flushing = 0
 	// now reset disposal state
 	flush = 0
-	if(mode == 2)	// if was ready,
-		mode = 1	// switch to charging
+	if(mode == DISPOSALS_CHARGED)
+		mode = DISPOSALS_CHARGING
 	update()
 	return
 
@@ -434,41 +437,56 @@
 
 /obj/machinery/disposal/deliveryChute/attackby(var/obj/item/I, var/mob/user)
 
-	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_PULSING)
 	if(c_mode == 1)
 		usable_qualities.Add(QUALITY_WELDING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 
+		if(QUALITY_PULSING)
+			if(length(contents))
+				to_chat(user, "Eject the items first!")
+				return
+			if(!sound_on)
+				to_chat(user, "You turn on the chute alarm sound.")
+				sound_on = TRUE
+			if(sound_on)
+				to_chat(user, "You turn off the chute alarm sound.")
+				sound_on = FALSE
+
 		if(QUALITY_SCREW_DRIVING)
 			if(contents.len > 0)
 				to_chat(user, "Eject the items first!")
 				return
-			if(mode<=0)
-				var/used_sound = mode ? 'sound/machines/Custom_screwdriverclose.ogg' : 'sound/machines/Custom_screwdriveropen.ogg'
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
-					if(c_mode==0) // It's off but still not unscrewed
-						c_mode=1 // Set it to doubleoff l0l
-						to_chat(user, "You remove the screws around the power connection.")
-						return
-					else if(c_mode==1)
-						c_mode=0
-						to_chat(user, "You attach the screws around the power connection.")
-						return
+
+			if(mode != DISPOSALS_OFF)
+				to_chat(user, "Turn off the pump first!")
+				return
+
+			var/used_sound = mode ? 'sound/machines/Custom_screwdriverclose.ogg' : 'sound/machines/Custom_screwdriveropen.ogg'
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+				to_chat(user, "You [panel_open ? "attach" : "remove"] the screws around the power connection.")
+				panel_open = !panel_open
+				return
+
 			return
 
 		if(QUALITY_WELDING)
-			if(mode==-1)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY))
-					to_chat(user, "You sliced the floorweld off the disposal unit.")
-					var/obj/structure/disposalconstruct/C = new (src.loc)
-					src.transfer_fingerprints_to(C)
-					C.pipe_type = PIPE_TYPE_INTAKE
-					C.anchored = 1
-					C.density = 1
-					C.update()
-					qdel(src)
+			if(!panel_open || mode != DISPOSALS_OFF)
+				to_chat(user, "You cannot work on the delivery chute if it is not turned off with its power connection exposed.")
+				return
+
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY))
+				to_chat(user, "You sliced the floorweld off the delivery chute.")
+				var/obj/structure/disposalconstruct/C = new (src.loc)
+				src.transfer_fingerprints_to(C)
+				C.pipe_type = PIPE_TYPE_INTAKE
+				C.anchored = TRUE
+				C.density = TRUE
+				C.update()
+				qdel(src)
+				
 			return
 
 /obj/machinery/disposal/deliveryChute/Destroy()

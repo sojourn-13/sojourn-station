@@ -1,0 +1,34 @@
+/**
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ */
+
+@use '../base.scss';
+@use '../colors.scss';
+@use 'sass:color';
+
+.NtosWindow__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  line-height: 1.928em;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.3), 
+    rgba(0, 0, 0, 0.3)
+  ), url('../assets/ntos_header_pattern.png') 0 5% repeat;
+  border-bottom: 2px solid color.scale(colors.$grey, $lightness: -15%);
+  font-family: Consolas, monospace;
+  font-size: base.em(14px);
+  user-select: none;
+  -ms-user-select: none;
+}
+
+.NtosWindow__content .Layout__content {
+  margin-top: 2em;
+  font-family: Consolas, monospace;
+  font-size: base.em(14px);
+}

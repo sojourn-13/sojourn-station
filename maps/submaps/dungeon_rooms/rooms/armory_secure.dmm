@@ -11,7 +11,7 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "d" = (
-/obj/machinery/porta_turret/stationary,
+/obj/random/turret/os,
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "e" = (
@@ -41,9 +41,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/machinery/light/built{
-	dir = 4
-	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "k" = (

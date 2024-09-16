@@ -1,6 +1,6 @@
 /obj/structure/wire_splicing
 	name = "wire splicing"
-	desc = "Looks like someone was very drunk when doing this, or just didn't care. This can be removed by wirecutters."
+	desc = "The wire has frayed and worn away, creating a hazard that needs to be repaired. This can be removed by wire cutters."
 	icon = 'icons/obj/traps.dmi'
 	icon_state = "wire_splicing1"
 	density = 0
@@ -11,7 +11,6 @@
 
 /obj/structure/wire_splicing/Initialize(var/roundstart)
 	.=..()
-
 
 	//Wire splice can only exist on a cable. Lets try to place it in a good location
 	if (!(locate(/obj/structure/cable) in loc))
@@ -114,6 +113,10 @@
 				qdel(src)
 
 	if(istype(I, /obj/item/stack/cable_coil) && user.a_intent == I_HURT)
+		if(used_now)
+			to_chat(user, "The [src.name] is already being manipulated!") //so people with low stats can't spam their way past the failure chance
+			return
+		used_now = TRUE
 		if(messiness >= 10)
 			messiness = 10
 			to_chat(user, SPAN_WARNING("Enough."))
@@ -123,14 +126,17 @@
 		if(coil.get_amount() >= 1)
 			to_chat(user, SPAN_NOTICE("You started to wire to this pile of wires..."))
 			if(shock(user)) //check if he got his insulation gloves
+				used_now = FALSE
 				return 		//he didn't
-			if(do_after(src, 20))
+			if(do_after(user, 20, src))
 				if(shock(user)) //check if he got his insulation gloves. Again.
+					used_now = FALSE
 					return
 				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, FALSE)) //why not
 						to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to screw this up."))
+						used_now = FALSE
 					return
 				if(messiness >= 10)
 					messiness = 10
@@ -139,3 +145,6 @@
 				messiness += 1
 				icon_state = "wire_splicing[messiness]"
 				to_chat(user, SPAN_NOTICE("You added one more wire."))
+				used_now = FALSE
+				log_and_message_admins(" - Wire splicing trap being added to at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+

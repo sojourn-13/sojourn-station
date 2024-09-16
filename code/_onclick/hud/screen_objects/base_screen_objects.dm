@@ -6,7 +6,7 @@
 	For more information, see the byond documentation on the screen_loc and screen vars.
 */
 /image/no_recolor
-	appearance_flags = RESET_COLOR
+	appearance_flags = RESET_COLOR|DEFAULT_APPEARANCE_FLAGS
 
 
 /obj/screen
@@ -31,6 +31,9 @@
 		src.icon_state = _icon_state
 	..()
 
+/obj/screen/examine(mob/user)
+	if(desc)
+		to_chat(user, SPAN_NOTICE(desc))
 
 /obj/screen/Process()
 	return
@@ -40,6 +43,7 @@
 
 /obj/screen/Destroy()
 	master = null
+	parentmob = null
 	return ..()
 
 /obj/screen/update_plane()
@@ -50,11 +54,13 @@
 
 
 /obj/screen/Click(location, control, params)
-	if(!usr)
-		return TRUE
+	// Object Click() processed before and separately from mob's ClickOn(), thus every shift click doubles as just click
+	// This is a band aid to prevent such behavior
+	var/list/modifiers = params2list(params)
+	if(desc && modifiers["shift"])
+		return
 
 	switch(name)
-
 		if("equip")
 			if (istype(usr.loc,/obj/mecha)) // stops inventory actions in a mech
 				return TRUE
@@ -64,9 +70,13 @@
 
 		if("Reset Machine")
 			usr.unset_machine()
-		else
-			return FALSE
+
 	return TRUE
+
+// Called with minimalized = 1 when switching to minimal mode, with = 0 switching back
+/obj/screen/proc/update_minimalized(minimalized)
+	return
+
 //--------------------------------------------------close---------------------------------------------------------
 
 /obj/screen/close
@@ -77,8 +87,8 @@
 
 /obj/screen/close/Click()
 	if(master)
-		if(istype(master, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/S = master
+		if(istype(master, /obj/item/storage))
+			var/obj/item/storage/S = master
 			S.close(usr)
 	return TRUE
 //--------------------------------------------------close end---------------------------------------------------------
@@ -86,12 +96,14 @@
 
 //--------------------------------------------------GRAB---------------------------------------------------------
 /obj/screen/grab
+	icon = 'icons/mob/grab_icons.dmi'
 	name = "grab"
 
 /obj/screen/grab/Click()
-	var/obj/item/weapon/grab/G = master
-	G.s_click(src)
-	return TRUE
+	if(master)
+		var/obj/item/grab/G = master
+		G.s_click(src)
+		return TRUE
 
 /obj/screen/grab/attack_hand()
 	return
@@ -143,7 +155,7 @@
 
 /obj/screen/item_action/top_bar/update_icon()
 	..()
-	if(!ismob(owner.loc))
+	if(!owner || !ismob(owner.loc))
 		return
 
 	var/mob/living/M = owner.loc
@@ -331,6 +343,9 @@
 //--------------------------------------------------health---------------------------------------------------------
 /obj/screen/health
 	name = "health"
+	desc = "Not your actual health, but an estimate of how much pain you feel.\
+	<br>Experience too much of it, and you will lose consciousness.\
+	<br>Pain tolerance scales with your Toughness."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "health0"
 	screen_loc = "15,7"
@@ -374,6 +389,8 @@
 	add_overlay( ovrls["health7"])
 
 /obj/screen/health/Click()
+	if(!..())
+		return
 	if(ishuman(parentmob))
 		var/mob/living/carbon/human/H = parentmob
 		H.check_self_for_injuries()
@@ -381,7 +398,11 @@
 //--------------------------------------------------health end---------------------------------------------------------
 //--------------------------------------------------sanity---------------------------------------------------------
 /obj/screen/sanity
-	name = "sanity"
+	name = "inspiration"
+	desc = "The color of the icon displays how close you are to receive an epiphany from your experiences.\
+	Once your inspiration is high enough, you will crave for food, drinks or drugs, to be able to reflect upon all you've learned so far. \
+	Satisfy these cravings and you'll be able to \"rest\", improving upon your stats slightly, or depending on any anomalies held, \
+	you'll gain a new perk, for ill or good, and better stat gains."
 	icon_state = "blank"
 
 /obj/screen/sanity/New()
@@ -439,15 +460,22 @@
 	add_overlay( ovrls["sanity0"])
 
 /obj/screen/sanity/Click()
-	var/mob/living/carbon/human/H = parentmob
-	if(!istype(H))
+	if(!..())
 		return
+	if(!ishuman(parentmob))
+		return FALSE
+	var/mob/living/carbon/human/H = parentmob
+	H?.sanity?.ui_interact(H)
 	H.sanity.print_desires()
+	return	TRUE
 
 //--------------------------------------------------sanity end---------------------------------------------------------
 //--------------------------------------------------nsa---------------------------------------------------------
 /obj/screen/nsa
 	name = "nsa"
+	desc = "Neural System Accumulation depicts strain your body is experiencing from processing potent chemicals.\
+	<br>It is increased (or decreased) by certain chemicals and character backgrounds.\
+	<br>Going beyond your body's limits has negative consequences, starting from vomits and ranging to heavy intoxication."
 	icon_state = "blank"
 
 /obj/screen/nsa/New()
@@ -470,7 +498,7 @@
 	if(!istype(C) || C.stat == DEAD)
 		return
 	cut_overlays()
-	switch(C.metabolism_effects.get_nsa())
+	switch(C.metabolism_effects.get_nsa() * 100/C.metabolism_effects.calculate_nsa(TRUE))
 		if(200 to INFINITY)
 			add_overlay( ovrls["nsa10"])
 		if(-INFINITY to 20)
@@ -502,6 +530,7 @@
 //--------------------------------------------------nutrition---------------------------------------------------------
 /obj/screen/nutrition
 	name = "nutrition"
+	desc = "This bar shows how satiated you are in terms of hunger. Being malnourished (orange and below) significantly slows you down. Not updated immediately after eating."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,6"
@@ -522,8 +551,10 @@
 
 /obj/screen/nutrition/update_icon()
 	set src in usr.client.screen
-	var/mob/living/carbon/human/H = parentmob
 	cut_overlays()
+	var/mob/living/carbon/human/H = parentmob
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		return
 	switch(H.nutrition)
 		if(450 to INFINITY)				add_overlay( ovrls["nutrition0"])
 		if(350 to 450)					add_overlay( ovrls["nutrition1"])
@@ -539,6 +570,9 @@
 //--------------------------------------------------bodytemp---------------------------------------------------------
 /obj/screen/bodytemp
 	name = "bodytemp"
+	desc = "Temperature of your body. Affected by environment, health, and certain reagents.\
+	<br>Fever might be a sign of untreated infection.\
+	<br>You are slowed down if your body temperature is low enough, and hurt if it is too out of your comfort zone."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,8"
@@ -608,6 +642,8 @@
 //--------------------------------------------------pressure---------------------------------------------------------
 /obj/screen/pressure
 	name = "pressure"
+	desc = "Barometric pressure experienced by your body.\
+	<br>Being in an environment with extreme pressure without a voidsuit is fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,13"
@@ -640,6 +676,8 @@
 //--------------------------------------------------toxin---------------------------------------------------------
 /obj/screen/toxin
 	name = "toxin"
+	desc = "Warns you that there might be plasma or other bad gases in the air you're on.\
+	<br>Being in an environment with harmful gases without a voidsuit is probably fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "tox0"
 	screen_loc = "15,10"
@@ -671,6 +709,8 @@
 
 /obj/screen/oxygen
 	name = "oxygen"
+	desc = "A warning sign that you're not in a position where you can breathe properly.\
+	<br>Being in an environment with low pressure without a voidsuit is often fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "oxy0"
 	screen_loc = "15,12"
@@ -702,6 +742,8 @@
 //--------------------------------------------------fire---------------------------------------------------------
 /obj/screen/fire
 	name = "fire"
+	desc = "A warning sign if your body is probably experiencing damage from temperature or on fire.\
+	<br>Being in an environment with extreme temperature without a protection is quite fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,9"
@@ -735,6 +777,7 @@ obj/screen/fire/DEADelize()
 //-----------------------internal------------------------------
 /obj/screen/internal
 	name = "internal"
+	desc = "This is the selector for using internal air reserves."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,14"
@@ -782,16 +825,16 @@ obj/screen/fire/DEADelize()
 						tankcheck = list(C.r_hand, C.l_hand, C.back)
 
 					// Rigs are a fucking pain since they keep an air tank in nullspace.
-					if(istype(C.back,/obj/item/weapon/rig))
-						var/obj/item/weapon/rig/rig = C.back
+					if(istype(C.back,/obj/item/rig))
+						var/obj/item/rig/rig = C.back
 						if(rig.air_supply)
 							from = "in"
 							nicename |= "hardsuit"
 							tankcheck |= rig.air_supply
 
 					for(var/i=1, i<tankcheck.len+1, ++i)
-						if(istype(tankcheck[i], /obj/item/weapon/tank))
-							var/obj/item/weapon/tank/t = tankcheck[i]
+						if(istype(tankcheck[i], /obj/item/tank))
+							var/obj/item/tank/t = tankcheck[i]
 							if (!isnull(t.manipulated_by) && t.manipulated_by != C.real_name && findtext(t.desc, breathes))
 								contents.Add(t.air_contents.total_moles)	//Someone messed with the tank and put unknown gasses
 								continue					//in it, so we're going to believe the tank is what it says it is
@@ -807,7 +850,7 @@ obj/screen/fire/DEADelize()
 								if ("oxygen")
 									if(t.air_contents.gas["oxygen"] && !t.air_contents.gas["plasma"])
 										contents.Add(t.air_contents.gas["oxygen"])
-									else if(istype(t, /obj/item/weapon/tank/onestar_regenerator))
+									else if(istype(t, /obj/item/tank/onestar_regenerator))
 										contents.Add(BREATH_MOLES*2)
 									else
 										contents.Add(0)
@@ -921,11 +964,6 @@ obj/screen/fire/DEADelize()
 	screen_loc = "15,2"
 
 /obj/screen/HUDthrow/New()
-	/*if(usr)
-		//parentmob = usr
-		//usr.verbs += /obj/screen/HUDthrow/verb/toggle_throw_mode()
-		if(usr.client)
-			usr.client.screen += src*/
 	..()
 	update_icon()
 
@@ -940,6 +978,32 @@ obj/screen/fire/DEADelize()
 	else
 		icon_state = "act_throw_off"
 //-----------------------throw END------------------------------
+
+//-----------------------block------------------------------
+/obj/screen/block
+	name = "block"
+	icon_state = "block_off"
+	screen_loc = "15:-16,3"
+	layer = HUD_LAYER
+	plane = HUD_PLANE
+
+/obj/screen/block/New()
+	..()
+	update_icon()
+
+/obj/screen/block/Click()
+	if(usr.client)
+		usr.client.blocking()
+		update_icon()
+
+/obj/screen/block/update_icon()
+	if(ishuman(parentmob))//always true, but just in case
+		var/mob/living/carbon/human/H = parentmob
+		if(H.blocking)
+			icon_state = "block_on"
+		else
+			icon_state = "block_off"
+//-----------------------block END------------------------------
 
 //-----------------------drop------------------------------
 /obj/screen/drop
@@ -992,6 +1056,7 @@ obj/screen/fire/DEADelize()
 /obj/screen/mov_intent/Click()
 	var/move_intent_type = next_list_item(usr.move_intent.type, usr.move_intents)
 	var/decl/move_intent/newintent = decls_repository.get_decl(move_intent_type)
+	LEGACY_SEND_SIGNAL(parentmob, COMSIG_HUMAN_WALKINTENT_CHANGE, parentmob, newintent)
 	if (newintent.can_enter(parentmob, TRUE))
 		parentmob.move_intent = newintent
 		update_icon()
@@ -1064,7 +1129,7 @@ obj/screen/fire/DEADelize()
 	var/mob/living/carbon/human/H = parentmob
 	if(istype(H))
 		var/obj/item/organ/external/E = H.organs_by_name[target_organ]
-		E?.module?.activate(H, E)
+		E?.module?.trigger(H, E)
 //-----------------------bionics (implant)------------------------------
 /obj/screen/implant_bionics
 	name = "implant bionics"
@@ -1100,20 +1165,15 @@ obj/screen/fire/DEADelize()
 /obj/screen/intent/Click(location, control, params)
 	var/_x = text2num(params2list(params)["icon-x"])
 	var/_y = text2num(params2list(params)["icon-y"])
-
 	if(_x<=16 && _y<=16)
 		parentmob.a_intent_change(I_HURT)
-
-	else if(_x<=16 && _y>=17)
+	if(_x<=16 && _y>=17)
 		parentmob.a_intent_change(I_HELP)
-
-	else if(_x>=17 && _y<=16)
+	if(_x>=17 && _y<=16)
 		parentmob.a_intent_change(I_GRAB)
-
-	else if(_x>=17 && _y>=17)
+	if(_x>=17 && _y>=17)
 		parentmob.a_intent_change(I_DISARM)
-	else
-		return ..()
+	LEGACY_SEND_SIGNAL(parentmob, COMSIG_HUMAN_ACTIONINTENT_CHANGE, parentmob)
 
 /obj/screen/intent/update_icon()
 	src.cut_overlays()
@@ -1322,7 +1382,7 @@ obj/screen/fire/DEADelize()
 		if (G.active && G.screenOverlay)//check here need if someone want call this func directly
 			add_overlay(G.screenOverlay)
 
-	if(istype(H.wearing_rig,/obj/item/weapon/rig))
+	if(istype(H.wearing_rig,/obj/item/rig))
 		var/obj/item/clothing/glasses/G = H.wearing_rig.getCurrentGlasses()
 		if (G && H.wearing_rig.visor.active)
 			add_overlay(G.screenOverlay)
@@ -1331,7 +1391,7 @@ obj/screen/fire/DEADelize()
 /obj/screen/toggle_invetory
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "b-open"
-	name = "toggle invetory"
+	name = "toggle inventory"
 	screen_loc = "1,0"
 
 /obj/screen/toggle_invetory/proc/hideobjects()

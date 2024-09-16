@@ -86,14 +86,15 @@
 		//inv3.icon_state = "inv3"
 	for (var/obj/screen/HUDelement in HUDinventory)
 		HUDelement.underlays.Cut()
+	update_robot_modules_display()
 	updateicon()
 
 /mob/living/silicon/robot/proc/activated(obj/item/O)
 	if(module_state_1 == O || module_state_2 == O || module_state_3 == O)
 		updateicon()
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 //Helper procs for cyborg modules on the UI.
 //These are hackish but they help clean up code elsewhere.
@@ -275,11 +276,14 @@
 	else
 		to_chat(src, SPAN_NOTICE("You need to disable a module first!"))
 
+/mob/living/silicon/robot/proc/get_all_slots()  //Proc for robots to search their slots for stuff. Useful particularly for mining robot ore bags.
+	return list(module_state_1, module_state_2, module_state_3)
+
 
 //Attempt to grip the item in a gripper.
 //Parent call will drop it on the floor if gripper can't hold it
 /mob/living/silicon/robot/put_in_hands(var/obj/item/W)
-	var/obj/item/weapon/gripper/G = locate() in list(module_state_1, module_state_2, module_state_3)
+	var/obj/item/gripper/G = locate() in list(module_state_1, module_state_2, module_state_3)
 	if (G && G.grip_item(W, src, 1))
 		return 1
 	else
@@ -289,6 +293,6 @@
 /mob/living/silicon/robot/canUnEquip(obj/item/I) //Force overrides NODROP for things like wizarditis and admin undress.
 	if(!I || !I.loc)
 		return TRUE
-	if (istype(I.loc, /obj/item/weapon/gripper)) //Robots are allowed to drop the things in their gripper
+	if (istype(I.loc, /obj/item/gripper)) //Robots are allowed to drop the things in their gripper
 		return TRUE
 	return ..(I) //This will be false for things directly equipped

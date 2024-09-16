@@ -7,9 +7,9 @@
 	icon_dead = "warrior_dead"
 	icon_rest = "warrior_stunned"
 
-	maxHealth = 80
-	health = 80
-
+	maxHealth = 60
+	health = 60
+	flash_resistances = 8 //Weak xeno dies to like 3 hits of most things, lets not make it to easy
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -21,9 +21,9 @@
 	icon_living = "defender"
 	icon_dead = "defender_dead"
 	icon_rest = "defender_stunned"
-
-	maxHealth = 200
-	health = 200
+	flash_resistances = 3 //Meant to be a weaker tank let them weakly tank
+	maxHealth = 140
+	health = 140
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike
 	name = "shrike"
@@ -35,7 +35,7 @@
 
 	maxHealth = 40
 	health = 40
-
+	flash_resistances = 1 //Not really an issue to be flashing now is it?
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	var/cooldown_time = 30 SECONDS
@@ -47,7 +47,7 @@ var/datum/xenomorph/xeno_morph_ai
 	var/list/global_abilities_cooldown = list()
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/Life()
-	if((src.stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
+	if((stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
 		return // Shrikes don't get to scream when passed out or dead
 	.=..()
 	if (world.time - cooldown_time < cooldown)
@@ -103,10 +103,9 @@ var/datum/xenomorph/xeno_morph_ai
 	icon_dead = "bull_dead"
 	icon_rest = "bull_stunned"
 
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
-
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -120,11 +119,11 @@ var/datum/xenomorph/xeno_morph_ai
 	icon_rest = "boiler_stunned"
 	deathmessage = "explodes violently as it dies!"
 
-	maxHealth = 60
-	health = 60
-
+	maxHealth = 50
+	health = 50
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+	flash_resistances = 0
 
 	move_to_delay = 6
 	turns_per_move = 18

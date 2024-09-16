@@ -2,22 +2,29 @@
 	name = "exosuit fabricator"
 	desc = "A machine used for construction of robots and mechas."
 	icon_state = "mechfab"
-	circuit = /obj/item/weapon/circuitboard/mechfab
+	circuit = /obj/item/circuitboard/mechfab
 
 	build_type = MECHFAB
 	storage_capacity = 240
 	speed = 3
-
+	unsuitable_materials = list()	// Can use biomatter too for some seals and rigs.
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
+	max_efficiency = 0.2
+	code_dex = "MECHFAB"
 
 	special_actions = list(
-		list("action" = "sync", "name" = "Sync with R&D console", "icon" = "refresh")
+		list("action" = "sync", "name" = "Sync with R&D console", "icon" = "sync")
 	)
 
 	var/datum/research/files
 
+/obj/machinery/autolathe/mechfab/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_SI_SCI) || user.stat_check(STAT_MEC, 30)) //Needs same skill as it takes to maintain a mech
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
 
 /obj/machinery/autolathe/mechfab/Initialize()
 	. = ..()
@@ -36,15 +43,17 @@
 /obj/machinery/autolathe/mechfab/ui_interact()
 	if(!categories)
 		update_categories()
-	..()
+	. = ..()
 
-/obj/machinery/autolathe/mechfab/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/autolathe/mechfab/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
 
-	if(href_list["action"] == "sync")
+	if(action == "special_action" && params["action"] == "sync")
 		sync(usr)
-		return 1
+		. = TRUE
+
 
 /obj/machinery/autolathe/mechfab/proc/sync(mob/user)
 	var/sync = FALSE
@@ -71,7 +80,7 @@
 // A version with some materials already loaded, to be used on map spawn
 /obj/machinery/autolathe/mechfab/loaded
 	stored_material = list(
-		MATERIAL_STEEL = 120,
-		MATERIAL_PLASTIC = 120,
-		MATERIAL_GLASS = 120,
+		MATERIAL_STEEL = 30,
+		MATERIAL_PLASTIC = 30,
+		MATERIAL_GLASS = 30,
 		)

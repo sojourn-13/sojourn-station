@@ -26,6 +26,7 @@ var/global/ManifestJSON
 	var/list/civ = new()
 	var/list/bot = new()
 	var/list/misc = new()
+	var/list/ldg = new()
 	var/list/isactive = new()
 	var/dat = {"
 	<head><style>
@@ -84,6 +85,9 @@ var/global/ManifestJSON
 			department = 1
 		if(real_rank in civilian_positions)
 			civ[name] = rank
+			department = 1
+		if(real_rank in lodge_positions)
+			ldg[name] = rank
 			department = 1
 		if(!department && !(name in heads))
 			misc[name] = rank
@@ -155,6 +159,12 @@ var/global/ManifestJSON
 		for(name in misc)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[misc[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
+	if(ldg.len > 0)
+		dat += "<tr><th colspan=3>Lodge</th></tr>"
+		for(name in misc)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ldg[name]]</td><td>[isactive[name]]</td></tr>"
+			even = !even
+
 
 	dat += "</table>"
 	dat = replacetext(dat, "\n", "") // so it can be placed on paper correctly
@@ -194,7 +204,8 @@ var/global/ManifestJSON
 		G.fields["rank"]		= assignment
 		G.fields["age"]			= H.age
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)
-		G.fields["pay_account"]	= H.mind.initial_account.account_number
+		if(H.mind.initial_account)
+			G.fields["pay_account"]	= H.mind.initial_account.account_number
 		G.fields["email"]		= H.mind.initial_email_login["login"]
 		G.fields["p_stat"]		= "Active"
 		G.fields["m_stat"]		= "Stable"
@@ -358,11 +369,6 @@ var/global/ManifestJSON
 /proc/find_security_record(field, value)
 	return find_record(field, value, data_core.security)
 
-/proc/find_record(field, value, list/L)
-	for(var/datum/data/record/R in L)
-		if(R.fields[field] == value)
-			return R
-
 /*/proc/GetAssignment(var/mob/living/carbon/human/H)
 	if(H.mind.assigned_role)
 		return H.mind.assigned_role
@@ -392,6 +398,7 @@ var/global/ManifestJSON
 	var/civ[0]
 	var/bot[0]
 	var/misc[0]
+	var/ldg[0]
 	for(var/datum/data/record/t in data_core.general)
 		var/name = sanitize(t.fields["name"])
 		var/rank = sanitize(t.fields["rank"])
@@ -404,7 +411,7 @@ var/global/ManifestJSON
 			heads[++heads.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			depthead = 1
-			if(rank=="Captain" && heads.len != 1)
+			if(rank=="Premier" && heads.len != 1)
 				heads.Swap(1, heads.len)
 
 		if(real_rank in security_positions)
@@ -449,6 +456,12 @@ var/global/ManifestJSON
 			if(depthead && civ.len != 1)
 				civ.Swap(1, civ.len)
 
+		if(real_rank in lodge_positions)
+			ldg[++ldg.len] = list("name" = name, "rank" = rank, "active" = isactive)
+			department = 1
+			if(depthead && ldg.len != 1)
+				ldg.Swap(1, ldg.len)
+
 		if(real_rank in nonhuman_positions)
 			bot[++bot.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
@@ -467,7 +480,8 @@ var/global/ManifestJSON
 		"pro" = pro,
 		"civ" = civ,
 		"bot" = bot,
-		"misc" = misc
+		"misc" = misc,
+		"ldg" = ldg
 		)
 	ManifestJSON = json_encode(PDA_Manifest)
 	return

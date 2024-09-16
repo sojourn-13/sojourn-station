@@ -45,7 +45,7 @@
 	W.forceMove(get_turf(src))
 	W.layer = initial(W.layer)
 	W.set_plane(initial(W.plane))
-	W.dropped()
+	W.dropped(usr)
 	return FALSE
 
 // Removes an item from inventory and places it in the target atom.
@@ -79,6 +79,10 @@
 //Drops the item in our active hand. TODO: rename this to drop_active_hand or something
 /mob/proc/drop_item(var/atom/Target)
 	var/obj/item/I = get_active_hand()
+	unEquip(I, Target, MOVED_DROP)
+
+/mob/proc/drop_offhand(var/atom/Target)
+	var/obj/item/I = get_inactive_hand()
 	unEquip(I, Target, MOVED_DROP)
 
 /mob/proc/is_holding(var/obj/item/W)
@@ -147,6 +151,9 @@
 /mob/proc/unEquip(obj/item/I, var/atom/Target = null, force = 0) //Force overrides NODROP for things like wizarditis and admin undress.
 	if(!canUnEquip(I))
 		return
+	//Removed until we have features that need them, so these aren't being rapid-fired needlessly. - Hex
+	//LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, I)
+	//LEGACY_SEND_SIGNAL(I, COMSIG_CLOTH_DROPPED, src)
 	return drop_from_inventory(I,Target)
 
 //Attemps to remove an object on a mob.
@@ -189,6 +196,8 @@
 /mob/proc/get_equipped_items()
 	return list()
 
+/mob/proc/get_max_w_class()
+	return 0 //zero
 
 //Returns the inventory slot for the current hand
 /mob/proc/get_active_hand_slot()
@@ -220,3 +229,33 @@
 		var/obj/item/I = entry
 		if(I.body_parts_covered & body_parts)
 			. += I
+
+/mob/living/carbon/human/verb/bag_equip()
+	set name = "bag-equip"
+	set hidden = TRUE
+
+	var/obj/item/storage/S
+
+	for(var/i in list(get_inactive_hand(), back, get_active_hand()))
+		if(istype(i, /obj/item/storage))
+			S = i
+			break
+
+		else if(istype(i, /obj/item/rig))
+			var/obj/item/rig/R = i
+			if(R.storage)
+				S = R.storage.container
+				break
+
+	if(S && (!istype(S, /obj/item/storage/backpack) || S:worn_check()))
+		equip_to_from_bag(get_active_hand(), S)
+
+/mob/living/carbon/human/proc/equip_to_from_bag(var/obj/item/Item, obj/item/storage/store)
+	if(Item)
+		store.attackby(Item,src)
+		return TRUE
+	else if(!Item && store.contents.len >=1)
+		var/return_hand = hand ? slot_l_hand : slot_r_hand
+		equip_to_slot_if_possible(store.contents[store.contents.len], return_hand)
+		return TRUE
+	return FALSE

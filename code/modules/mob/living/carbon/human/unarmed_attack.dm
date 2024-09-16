@@ -10,13 +10,10 @@ var/global/list/sparring_attack_cache = list()
 	var/shredding = 0 // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
 	var/sharp = 0
 	var/edge = 0
-	var/armor_penetration = 0
+	var/armor_divisor = 1
 
 	var/deal_halloss
 	var/sparring_variant_type = /datum/unarmed_attack/light_strike
-
-	var/eye_attack_text
-	var/eye_attack_text_victim
 
 /datum/unarmed_attack/proc/get_sparring_variant()
 	if(sparring_variant_type)
@@ -95,7 +92,7 @@ var/global/list/sparring_attack_cache = list()
 			if(BP_L_LEG, BP_R_LEG)
 				if(!target.lying)
 					target.visible_message(SPAN_WARNING("[target] gives way slightly."))
-					target.apply_effect(attack_damage*3, AGONY)
+					target.adjustHalLoss(attack_damage*3)
 	else if(attack_damage >= 5 && !(target == user) && (stun_chance + attack_damage * 5 >= 100) ) // Chance to get the usual throwdown as well (25% standard chance)
 		if(!target.lying)
 			target.visible_message("<span class='danger'>[target] [pick("slumps", "falls", "drops")] down to the ground!</span>")
@@ -109,11 +106,11 @@ var/global/list/sparring_attack_cache = list()
 	playsound(user.loc, attack_sound, 25, 1, -1)
 
 /datum/unarmed_attack/proc/handle_eye_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
-	var/obj/item/organ/internal/eyes/eyes = target.internal_organs_by_name[BP_EYES]
-	eyes.take_damage(rand(3,4), 1)
+	var/obj/item/organ/internal/eyes/eyes = target.random_organ_by_process(OP_EYES)
+	eyes.take_damage(rand(6,10), BRUTE)
 
-	user.visible_message(SPAN_DANGER("[user] presses \his [eye_attack_text] into [target]'s [eyes.name]!"))
-	to_chat(target, SPAN_DANGER("You experience[(target.species.flags & NO_PAIN)? "" : " immense pain as you feel" ] [eye_attack_text_victim] being pressed into your [eyes.name][(target.species.flags & NO_PAIN)? "." : "!"]"))
+	user.visible_message(SPAN_DANGER("[user] presses \his fingers into [target]'s [eyes.name]!")) //no need to check for claws because only humans(monkeys?) can grab(no, humans and monkeys don't have claws)
+	to_chat(target, SPAN_DANGER("You experience[(target.species.flags & NO_PAIN)? "" : " immense pain as you feel" ] digits being pressed into your [eyes.name][(target.species.flags & NO_PAIN)? "." : "!"]"))
 
 /datum/unarmed_attack/bite
 	attack_verb = list("bit")
@@ -125,7 +122,7 @@ var/global/list/sparring_attack_cache = list()
 
 /datum/unarmed_attack/bite/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
 
-	if (user.wear_mask && (istype(user.wear_mask, /obj/item/clothing/mask/muzzle) || istype(user.wear_mask, /obj/item/weapon/grenade)))
+	if (user.wear_mask && (istype(user.wear_mask, /obj/item/clothing/mask/muzzle) || istype(user.wear_mask, /obj/item/grenade)))
 		return 0
 	if (user == target && (zone in list(BP_HEAD, BP_EYES, BP_MOUTH)))
 		return 0
@@ -134,9 +131,11 @@ var/global/list/sparring_attack_cache = list()
 /datum/unarmed_attack/punch
 	attack_verb = list("punched")
 	attack_noun = list("fist")
-	eye_attack_text = "fingers"
-	eye_attack_text_victim = "digits"
 	damage = 0
+
+/datum/unarmed_attack/punch/hammer_fist
+	attack_verb = list("haymakered")
+	damage = 5
 
 /datum/unarmed_attack/punch/show_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone, var/attack_damage)
 	var/obj/item/organ/external/affecting = target.get_organ(zone)

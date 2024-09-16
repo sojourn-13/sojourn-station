@@ -43,6 +43,7 @@
 	name = "hardsuit visor"
 	desc = "A layered, translucent visor system for a hardsuit."
 	icon_state = "optics"
+	price_tag = 200
 
 	active_power_cost = 0.05
 
@@ -87,7 +88,7 @@
 	name = "hardsuit meson scanner"
 	desc = "A layered, translucent visor system for a hardsuit."
 	icon_state = "meson"
-
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 6)
 	usable = 0
 
 	interface_name = "meson scanner"
@@ -100,8 +101,9 @@
 	name = "hardsuit thermal scanner"
 	desc = "A layered, translucent visor system for a hardsuit."
 	icon_state = "thermal"
-
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 6, MATERIAL_PLATINUM = 5)
 	usable = 0
+	price_tag = 5000
 
 	interface_name = "thermal scanner"
 	interface_desc = "An integrated thermal scanner."
@@ -113,8 +115,9 @@
 	name = "hardsuit night vision interface"
 	desc = "A multi input night vision system for a hardsuit."
 	icon_state = "night"
-
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 6, MATERIAL_PLATINUM = 5)
 	usable = 0
+	price_tag = 2000
 
 	interface_name = "night vision interface"
 	interface_desc = "An integrated night vision system."

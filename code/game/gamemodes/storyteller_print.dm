@@ -1,9 +1,9 @@
 /datum/storyteller/proc/declare_completion()
 	var/text = ""
-	if(current_antags.len)
+	if(GLOB.current_antags.len)
 		var/list/antags_by_ids = list()
 		text += "<br><font size=3><b>Round antagonists were:</b></font>"
-		for(var/datum/antagonist/A in current_antags)
+		for(var/datum/antagonist/A in GLOB.current_antags)
 			if(!A.faction)
 				if(!islist(antags_by_ids[A.id]))
 					antags_by_ids[A.id] = list()
@@ -21,9 +21,9 @@
 				text += "<br><b>The [fA.role_text]:</b>"
 				text += fA.print_success()
 
-	if(current_factions.len)
+	if(GLOB.current_factions.len)
 		text += "<br><font size=3><b>Round factions were:</b></font>"
-		for(var/datum/antag_faction/F in current_factions)
+		for(var/datum/antag_faction/F in GLOB.current_factions)
 			text += F.print_success()
 
 
@@ -59,6 +59,7 @@
 	data += "<br>Round duration: <b>[round(world.time / 36000)]:[add_zero(world.time / 600 % 60, 2)]:[world.time / 100 % 6][world.time / 100 % 10]</b>"
 	data += "<br>Debug mode: <b><a href='?src=\ref[src];toggle_debug=1'>\[[debug_mode?"ON":"OFF"]\]</a></b>"
 	data += "<br>One role per player: <b><a href='?src=\ref[src];toggle_orpp=1'>\[[one_role_per_player?"YES":"NO"]\]</a></b>"
+	data += "<br>Chaos Level: <a href='?src=\ref[src];edit_chaos=1'>\[[GLOB.chaos_level]\]</a>"
 	data += "</td><td style=\"padding-left: 40px\">"
 
 	data += "Heads: [heads] "
@@ -108,10 +109,10 @@
 
 	data += "<hr><b>Current antags:</b><div style=\"border:1px solid black;\"><ul>"
 
-	if (current_antags.len)
-		for(var/datum/antagonist/A in current_antags)
+	if (GLOB.current_antags.len)
+		for(var/datum/antagonist/A in GLOB.current_antags)
 			var/act = "<font color=red>DEAD</font>"
-			if(!A.is_dead())
+			if(!A.isdead())
 				if(!A.is_active())
 					act = "<font color=silver>AFK</font>"
 				else
@@ -198,6 +199,9 @@
 
 	if(href_list["toggle_orpp"])	//one role per player
 		one_role_per_player = !one_role_per_player
+
+	if(href_list["edit_chaos"])
+		GLOB.chaos_level = input("Enter new chaos level, only use values >=1.","Chaos Level",GLOB.chaos_level) as num
 
 	if(href_list["call_shuttle"])
 		switch(href_list["call_shuttle"])

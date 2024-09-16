@@ -6,7 +6,7 @@
 /obj/landmark/costume/chicken/New()
 	new /obj/item/clothing/suit/costume/animal/chicken(src.loc)
 	new /obj/item/clothing/head/costume/animal/chicken(src.loc)
-	new /obj/item/weapon/reagent_containers/food/snacks/egg(src.loc)
+	new /obj/item/reagent_containers/food/snacks/egg(src.loc)
 
 /obj/landmark/costume/gladiator/New()
 	new /obj/item/clothing/under/costume/history/gladiator(src.loc)
@@ -24,7 +24,7 @@
 	new /obj/item/clothing/shoes/jackboots(src.loc)
 
 /obj/landmark/costume/nyangirl/New()
-	new /obj/item/clothing/under/plaid/properblue(src.loc)
+	new /obj/item/clothing/under/dress/properblue(src.loc)
 	new /obj/item/clothing/head/costume/animal/kitty(src.loc)
 
 /obj/landmark/costume/maid/New()
@@ -33,20 +33,20 @@
 	new /obj/item/clothing/glasses/blindfold(src.loc)
 
 /obj/landmark/costume/butler/New()
-	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
+	new /obj/item/clothing/accessory/waistcoat(src.loc)
 	new /obj/item/clothing/head/tophat(src.loc)
 
 /obj/landmark/costume/highlander/New()
-	new /obj/item/clothing/under/plaid/kilt(src.loc)
+	new /obj/item/clothing/under/dress/kilt(src.loc)
 	new /obj/item/clothing/head/beret(src.loc)
 
 /obj/landmark/costume/prig/New()
-	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
+	new /obj/item/clothing/accessory/waistcoat(src.loc)
 	new /obj/item/clothing/glasses/monocle(src.loc)
 	var/CHOICE= pick( /obj/item/clothing/head/bowler, /obj/item/clothing/head/tophat)
 	new CHOICE(src.loc)
 	new /obj/item/clothing/shoes/color/black(src.loc)
-	new /obj/item/weapon/cane(src.loc)
+	new /obj/item/cane(src.loc)
 	//new /obj/item/clothing/under/sl_suit(src.loc)
 	new /obj/item/clothing/mask/costume/misc/fakemoustache(src.loc)
 

@@ -66,7 +66,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "n" = (
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
@@ -107,7 +107,7 @@
 /obj/effect/floor_decal/spline/grass_edge{
 	dir = 8
 	},
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "u" = (
@@ -121,10 +121,8 @@
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "w" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/machinery/light/floor,
+/obj/structure/catwalk,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "x" = (
@@ -135,12 +133,8 @@
 /area/crawler)
 "y" = (
 /obj/effect/floor_decal/spline/grass_edge,
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"z" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "A" = (
 /obj/effect/floor_decal/spline/grass_edge,
@@ -177,7 +171,7 @@ a
 a
 d
 m
-m
+w
 m
 x
 c
@@ -201,7 +195,7 @@ e
 m
 s
 m
-w
+x
 c
 c
 C
@@ -213,7 +207,7 @@ f
 f
 t
 a
-z
+c
 c
 C
 "}

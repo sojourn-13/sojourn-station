@@ -139,6 +139,12 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return destination
 
 
+/proc/ennumeratemobs()
+	var/i
+	var/mobnum
+	for(i=1, i<world.maxz, i++)
+		mobnum = SSmobs.mob_living_by_zlevel[i].len
+		to_chat(usr, "Z-level [i] has [mobnum] mobs on it")
 
 /proc/LinkBlocked(turf/A, turf/B)
 	if(A == null || B == null) return 1
@@ -179,6 +185,9 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 /proc/sign(x)
 	return x!=0?x/abs(x):0
+
+/proc/spow(x,y)
+	return (sign(x) * (abs(x) ** y))
 
 /proc/getline(atom/M, atom/N)//Ultra-Fast Bresenham Line-Drawing Algorithm
 	var/px=M.x		//starting x
@@ -291,8 +300,8 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		var/search_pda = 1
 
 		for(var/A in searching)
-			if( search_id && istype(A,/obj/item/weapon/card/id) )
-				var/obj/item/weapon/card/id/ID = A
+			if( search_id && istype(A,/obj/item/card/id) )
+				var/obj/item/card/id/ID = A
 				if(ID.registered_name == oldname)
 					ID.registered_name = newname
 					ID.name = "[newname]'s ID Card ([ID.assignment])"
@@ -303,8 +312,8 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 
 //Generalised helper proc for letting mobs rename themselves. Used to be clname() and ainame()
-//Last modified by Carn
-/mob/proc/rename_self(var/role, var/allow_numbers=0)
+//Last modified by Carn and Lamasmaster
+/mob/proc/rename_self(var/role, var/allow_numbers=TRUE)
 	spawn(0)
 		var/oldname = real_name
 
@@ -504,6 +513,19 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	return target
 
+// More complex proc that uses basic trigonometry to get a turf away from target . Accurate
+// it gets the difference between the center and target x and y axis. If they are - or + is handled without hardcode
+// The ratios are divided by their total (x + y ) and then multiplied by distance x / (x+y) * distance
+// this value is added ontop of the center coordinates , giving us our "away" turf.
+/proc/get_turf_away_from_target_complex(atom/center, atom/target, distance)
+	var/list/distance_reports = list(center.x - target.x, center.y - target.y)
+	var/distance_total = distance_reports[1] + distance_reports[2]
+	distance_reports[1] = round(distance_reports[1] / distance_total * distance)
+	distance_reports[2] = round(distance_reports[2] / distance_total * distance)
+	distance_reports[1] = center.x + distance_reports[1]
+	distance_reports[2] = center.y + distance_reports[2]
+	return locate(distance_reports[1], distance_reports[2], center.z)
+
 // returns turf relative to A in given direction at set range
 // result is bounded to map size
 // note range is non-pythagorean
@@ -563,24 +585,29 @@ proc/GaussRandRound(var/sigma, var/roundto)
 
 	return toReturn
 
-//Step-towards method of determining whether one atom can see another. Similar to viewers()
-/proc/can_see(var/atom/source, var/atom/target, var/length=5) // I couldn't be arsed to do actual raycasting :I This is horribly inaccurate.
+///Step-towards method of determining whether one atom can see another. Similar to viewers()
+///note: this is a line of sight algorithm, view() does not do any sort of raycasting and cannot be emulated by it accurately
+/proc/can_see(atom/source, atom/target, length=5) // I couldnt be arsed to do actual raycasting :I This is horribly inaccurate.
 	var/turf/current = get_turf(source)
 	var/turf/target_turf = get_turf(target)
-	var/steps = 0
-
-	if(!current || !target_turf)
-		return 0
-
+	if(get_dist(source, target) > length)
+		return FALSE
+	var/steps = 1
+	if(current == target_turf)//they are on the same turf, source can see the target
+		return TRUE
+	current = get_step_towards(current, target_turf)
 	while(current != target_turf)
-		if(steps > length) return 0
-		if(current.opacity) return 0
-		for(var/atom/A in current)
-			if(A.opacity) return 0
+		if(steps > length)
+			return FALSE
+		if(current.opacity)
+			return FALSE
+		var/list/contents = current.contents
+		for (var/obj/object in contents) //only /obj because we only have opaque objs right now, !!!UPDATE THIS IF WE FUCKING CHANGE IT!!!
+			if (object.opacity)
+				return FALSE
 		current = get_step_towards(current, target_turf)
 		steps++
-
-	return 1
+	return TRUE
 
 /proc/is_blocked_turf(var/turf/T)
 	var/cant_pass = 0
@@ -851,7 +878,6 @@ proc/GaussRandRound(var/sigma, var/roundto)
 					var/old_dir1 = T.dir
 					var/old_icon_state1 = T.icon_state
 					var/old_icon1 = T.icon
-					var/old_overlays = T.overlays.Copy()
 					var/old_underlays = T.underlays.Copy()
 					var/old_decals = T.decals
 					var/old_opacity = T.opacity // For shuttle windows
@@ -860,7 +886,7 @@ proc/GaussRandRound(var/sigma, var/roundto)
 					X.set_dir(old_dir1)
 					X.icon_state = old_icon_state1
 					X.icon = old_icon1 //Shuttle floors are in shuttle.dmi while the defaults are floors.dmi
-					X.copy_overlays(old_overlays, TRUE)
+					X.copy_overlays(T, TRUE)
 					X.underlays = old_underlays
 					X.decals = old_decals
 					X.opacity = old_opacity
@@ -1016,7 +1042,6 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 					var/old_dir1 = T.dir
 					var/old_icon_state1 = T.icon_state
 					var/old_icon1 = T.icon
-					var/old_overlays = T.overlays.Copy()
 					var/old_underlays = T.underlays.Copy()
 
 					if(platingRequired)
@@ -1028,7 +1053,7 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 					X.set_dir(old_dir1)
 					X.icon_state = old_icon_state1
 					X.icon = old_icon1 //Shuttle floors are in shuttle.dmi while the defaults are floors.dmi
-					X.copy_overlays(old_overlays, TRUE)
+					X.copy_overlays(T, TRUE)
 					X.underlays = old_underlays
 
 					var/list/objs = new/list()
@@ -1123,12 +1148,12 @@ proc/is_hot(obj/item/W as obj)
 	if(QUALITY_WELDING in W.tool_qualities)
 		return 3800
 	switch(W.type)
-		if(/obj/item/weapon/flame/lighter)
+		if(/obj/item/flame/lighter)
 			if(W:lit)
 				return 1500
 			else
 				return 0
-		if(/obj/item/weapon/flame/match)
+		if(/obj/item/flame/match)
 			if(W:lit)
 				return 1000
 			else
@@ -1138,7 +1163,7 @@ proc/is_hot(obj/item/W as obj)
 				return 1000
 			else
 				return 0
-		if(/obj/item/weapon/melee/energy)
+		if(/obj/item/melee/energy)
 			return 3500
 		else
 			return 0
@@ -1163,20 +1188,20 @@ proc/is_hot(obj/item/W as obj)
 	if(W.sharp) return 1
 	return ( \
 		W.sharp														|| \
-		istype(W, /obj/item/weapon/tool)							|| \
-		istype(W, /obj/item/weapon/pen)								|| \
-		istype(W, /obj/item/weapon/flame/lighter/zippo)				|| \
-		istype(W, /obj/item/weapon/flame/match)						|| \
+		istype(W, /obj/item/tool)							|| \
+		istype(W, /obj/item/pen)								|| \
+		istype(W, /obj/item/flame/lighter/zippo)				|| \
+		istype(W, /obj/item/flame/match)						|| \
 		istype(W, /obj/item/clothing/mask/smokable/cigarette)		\
 	)
 
 /proc/is_surgery_tool(obj/item/W as obj)
 	return (	\
-	istype(W, /obj/item/weapon/tool/scalpel)			||	\
-	istype(W, /obj/item/weapon/tool/hemostat)		||	\
-	istype(W, /obj/item/weapon/tool/retractor)		||	\
-	istype(W, /obj/item/weapon/tool/cautery)			||	\
-	istype(W, /obj/item/weapon/tool/bonesetter)
+	istype(W, /obj/item/tool/scalpel)			||	\
+	istype(W, /obj/item/tool/hemostat)		||	\
+	istype(W, /obj/item/tool/retractor)		||	\
+	istype(W, /obj/item/tool/cautery)			||	\
+	istype(W, /obj/item/tool/bonesetter)
 	)
 
 /proc/reverse_direction(var/dir)
@@ -1206,7 +1231,7 @@ var/list/WALLITEMS = list(
 	/obj/structure/extinguisher_cabinet, /obj/structure/reagent_dispensers/peppertank,
 	/obj/machinery/status_display, /obj/machinery/requests_console, /obj/machinery/light_switch, /obj/structure/sign,
 	/obj/machinery/newscaster, /obj/machinery/firealarm, /obj/structure/noticeboard,
-	/obj/item/weapon/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
+	/obj/item/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
 	/obj/structure/mirror, /obj/structure/fireaxecabinet, /obj/item/modular_computer/telescreen,
 	/obj/machinery/light_construct, /obj/machinery/light
 	)
@@ -1316,18 +1341,20 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	. = view(range, GLOB.dview_mob)
 	GLOB.dview_mob.loc = null
 
+
 /mob/dview
 	invisibility = 101
-	density = 0
+	density = FALSE
 
-	anchored = 1
-	simulated = 0
+	anchored = TRUE
+	simulated = FALSE
 
 	see_in_dark = 1e6
 
 /mob/dview/Destroy()
-	crash_with("Prevented attempt to delete dview mob: [log_info_line(src)]")
-	return QDEL_HINT_LETMELIVE // Prevents destruction
+	. = QDEL_HINT_LETMELIVE // Prevents destruction
+	CRASH("Prevented attempt to delete dview mob: [log_info_line(src)]")
+
 
 /atom/proc/get_light_and_color(var/atom/origin)
 	if(origin)
@@ -1335,11 +1362,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		set_light(origin.light_range, origin.light_power, origin.light_color)
 
 /mob/dview/Initialize() // Properly prevents this mob from gaining huds or joining any global lists
-	return
-
-// call to generate a stack trace and print to runtime logs
-/proc/crash_with(msg)
-	CRASH(msg)
+	return INITIALIZE_HINT_NORMAL
 
 /proc/CheckFace(var/atom/Obj1, var/atom/Obj2)
 	var/CurrentDir = get_dir(Obj1, Obj2)
@@ -1348,3 +1371,67 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return 1
 	else
 		return 0
+
+//gives us the stack trace from CRASH() without ending the current proc.
+/proc/stack_trace(msg)
+	CRASH(msg)
+
+/datum/proc/stack_trace(msg)
+	CRASH(msg)
+
+/proc/pass(...)
+	return
+
+// Makes a call in the context of a different usr
+// Use sparingly
+/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+	var/temp = usr
+	usr = M
+	if (length(args) > 2)
+		. = CB.Invoke(arglist(args.Copy(3)))
+	else
+		. = CB.Invoke()
+	usr = temp
+
+//datum may be null, but it does need to be a typed var
+#define NAMEOF(datum, X) (#X || ##datum.##X)
+
+#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbackvarset), ##target, ##var_name, ##var_value)
+//dupe code because dm can't handle 3 level deep macros
+#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbackvarset), ##datum, NAMEOF(##datum, ##var), ##var_value)
+
+/proc/___callbackvarset(list_or_datum, var_name, var_value)
+	if(length(list_or_datum))
+		list_or_datum[var_name] = var_value
+		return
+	var/datum/D = list_or_datum
+	// if(IsAdminAdvancedProcCall())
+	// 	D.vv_edit_var(var_name, var_value) //same result generally, unless badmemes
+	// else
+	D.vars[var_name] = var_value
+
+/proc/generate_single_gun_number()
+	return pick(1,2,3,4,5,6,7,8,9,0)
+
+/proc/generate_gun_serial(digit_numbers)
+	var/generated_code = ""
+	while(digit_numbers)
+		digit_numbers--
+		generated_code += "[generate_single_gun_number()]" // cast to string
+	return generated_code
+
+/proc/params2turf(scr_loc, turf/origin, client/C)
+	if(!scr_loc)
+		return null
+	var/tX = splittext(scr_loc, ",")
+	var/tY = splittext(tX[2], ":")
+	var/tZ = origin.z
+	tY = tY[1]
+	tX = splittext(tX[1], ":")
+	tX = tX[1]
+	var/list/actual_view = getviewsize(C ? C.view : world.view)
+	var/client_offset_x = C ? round(C.pixel_x / world.icon_size) : 0
+	var/client_offset_y = C ? round(C.pixel_y / world.icon_size) : 0
+	tX = clamp(origin.x + text2num(tX) + client_offset_x - round(actual_view[1] / 2) - 1, 1, world.maxx)
+	tY = clamp(origin.y + text2num(tY) + client_offset_y - round(actual_view[2] / 2) - 1, 1, world.maxy)
+	return locate(tX, tY, tZ)

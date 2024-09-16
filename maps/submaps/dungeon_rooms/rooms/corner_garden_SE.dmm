@@ -79,7 +79,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "q" = (
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "r" = (
@@ -106,12 +106,12 @@
 /obj/effect/floor_decal/spline/grass_edge{
 	dir = 4
 	},
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "x" = (
 /obj/effect/floor_decal/spline/grass_edge,
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "y" = (
@@ -123,8 +123,8 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "A" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/asteroid/grass,
+/obj/random/mob/roomba/job,
+/turf/simulated/floor/wood,
 /area/crawler)
 "C" = (
 /turf/simulated/floor/asteroid/grass,
@@ -224,7 +224,7 @@ i
 i
 w
 a
-A
+C
 C
 F
 "}
@@ -234,7 +234,7 @@ j
 r
 r
 r
-A
+C
 C
 C
 F
@@ -253,7 +253,7 @@ a
 (11,1,1) = {"
 a
 l
-r
+A
 s
 r
 C

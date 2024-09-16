@@ -1,7 +1,7 @@
 ADMIN_VERB_ADD(/client/proc/cmd_admin_change_custom_event, R_ADMIN|R_FUN, FALSE)
 // verb for admins to set custom event
 /client/proc/cmd_admin_change_custom_event()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Change Custom Event"
 
 	if(!holder)
@@ -24,6 +24,27 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_change_custom_event, R_ADMIN|R_FUN, FALSE)
 	to_chat(world, "<h2 class='alert'>A custom event is starting. OOC Info:</h2>")
 	to_chat(world, "<span class='alert'>[custom_event_msg]</span>")
 	to_chat(world, "<br>")
+
+ADMIN_VERB_ADD(/client/proc/cmd_admin_change_server_ad, R_ADMIN|R_FUN, FALSE)
+// verb for admins to change the server advertisement
+/client/proc/cmd_admin_change_server_ad()
+	set category = "Admin.Events"
+	set name = "Change Server Advert"
+
+	if(!holder)
+		to_chat(src, "Only administrators may use this command.")
+		return
+
+	var/input = input(usr, "Enter the custom advert. Keep it short and sweet. To reset the advert to config, hit cancel.", "Custom Advert", server_ad) as message|null
+	if(!input)
+		world.load_ad()
+		log_admin("[usr.key] has reset the server advert.")
+		message_admins("[key_name_admin(usr)] has reset the server advert.")
+		return
+
+	log_admin("[usr.key] has changed the server advert to: \"[input]\"")
+	message_admins("[key_name_admin(usr)] has changed the server advert.")
+	server_ad = input
 
 // normal verb for players to view info
 /client/verb/cmd_view_custom_event()

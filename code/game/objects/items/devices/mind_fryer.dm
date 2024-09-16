@@ -39,14 +39,14 @@ GLOBAL_LIST_EMPTY(active_mind_fryers)
 		if(H.get_species() != "Human" || (H in victims) || (owner && H.mind == owner))
 			continue
 		icon_state = "mind_fryer_running"
-		H.sanity.onPsyDamage(2)
+		H.apply_damage(2, PSY, wounding_multiplier = 8)
 
 	// Pick up a new contract if there is none
 	if(owner && !contract)
 		find_contract()
 
 /obj/item/device/mind_fryer/proc/find_contract()
-	for(var/datum/antag_contract/derail/C in GLOB.all_antag_contracts)
+	for(var/datum/antag_contract/derail/C in GLOB.various_antag_contracts)
 		if(C.completed)
 			continue
 		contract = C

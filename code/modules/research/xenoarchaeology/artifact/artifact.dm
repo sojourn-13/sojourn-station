@@ -8,7 +8,7 @@
 	var/artifact_detect_range
 
 /datum/artifact_find/New()
-	artifact_detect_range = rand(5,300)
+	artifact_detect_range = rand(100,500)
 
 	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha")]-[rand(100,999)]"
 
@@ -44,7 +44,7 @@
 	icon_state = "boulder[rand(1,4)]"
 	excavation_level = rand(5,50)
 
-/obj/structure/boulder/attackby(obj/item/weapon/I, mob/user )
+/obj/structure/boulder/attackby(obj/item/I, mob/user )
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_DIGGING, QUALITY_EXCAVATION), src)
 	switch(tool_type)
@@ -116,9 +116,9 @@
 	. = ..()
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
-		if((QUALITY_DIGGING in H.l_hand.tool_qualities) && (!H.hand))
+		if(!H.hand && H.l_hand && (QUALITY_DIGGING in H.l_hand.tool_qualities))
 			attackby(H.l_hand,H)
-		else if((QUALITY_DIGGING in H.r_hand.tool_qualities) && H.hand)
+		else if(H.hand && H.r_hand && (QUALITY_DIGGING in H.r_hand.tool_qualities))
 			attackby(H.r_hand,H)
 
 	else if(isrobot(AM))

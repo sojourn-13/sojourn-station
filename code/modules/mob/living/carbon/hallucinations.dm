@@ -156,7 +156,7 @@
 			var/add = prob(20) ? ", [pick(names)]" : ""
 			var/list/phrases = list("[prob(50) ? "Hey, " : ""][pick(names)]!","[prob(50) ? "Hey, " : ""][pick(names)]?","Get out[add]!","Go away[add].","What are you doing[add]?","Where's your ID[add]?")
 			if(holder.hallucination_power > 50)
-				phrases += list("What did you come here for[add]?","Don't touch me[add].","You're not getting out of here[add].", "You are a failure, [pick(names)].","Just kill yourself already, [pick(names)].","Put on some clothes[add].","Take off your clothes[add].")
+				phrases += list("What did you come here for[add]?","Don't touch me[add].","You're not getting out of here[add].", "You are a failure, [pick(names)].","Why are you alive, [pick(names)]?","Put on some clothes[add].","Take off your clothes[add].")
 			message = pick(phrases)
 			to_chat(holder,"<span class='game say'><span class='name'>[talker.name]</span> [holder.say_quote(message)], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
 		else
@@ -247,18 +247,18 @@
 
 /datum/hallucination/telepahy/start()
 	to_chat(holder,"<span class = 'notice'>You expand your mind outwards.</span>")
-	holder.verbs += /mob/living/carbon/human/proc/fakeremotesay
+	add_verb(holder, /mob/living/carbon/human/proc/fakeremotesay)
 
 /datum/hallucination/telepahy/end()
 	if(holder)
-		holder.verbs -= /mob/living/carbon/human/proc/fakeremotesay
+		remove_verb(holder, /mob/living/carbon/human/proc/fakeremotesay)
 
 /mob/living/carbon/human/proc/fakeremotesay()
 	set name = "Telepathic Message"
 	set category = "Superpower"
 
 	if(!hallucination_power)
-		src.verbs -= /mob/living/carbon/human/proc/fakeremotesay
+		remove_verb(src, /mob/living/carbon/human/proc/fakeremotesay)
 		return
 
 	if(stat)

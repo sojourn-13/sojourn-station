@@ -36,39 +36,42 @@
 	name = "protolathe"
 	desc = "A machine used for construction of advanced prototypes. Operated from an R\&D console."
 	icon_state = "protolathe"
-	circuit = /obj/item/weapon/circuitboard/protolathe
+	circuit = /obj/item/circuitboard/protolathe
 	unsuitable_materials = list() //So we can use biomatter and others
-
+	max_efficiency = 0.2
 	build_type = PROTOLATHE
 	storage_capacity = 120
+
+	code_dex = "PROTOLATHE"
 
 
 /obj/machinery/autolathe/rnd/imprinter
 	name = "circuit imprinter"
 	desc = "A machine used for printing advanced circuit boards. Operated from an R\&D console."
 	icon_state = "imprinter"
-	circuit = /obj/item/weapon/circuitboard/circuit_imprinter
-
+	circuit = /obj/item/circuitboard/circuit_imprinter
+	max_efficiency = 0.2
 	build_type = IMPRINTER
 	storage_capacity = 60
 	speed = 3
 
+	code_dex = "IMPRINTER"
 
 // Versions with some materials already loaded, to be used on map spawn
 /obj/machinery/autolathe/rnd/protolathe/loaded
 	stored_material = list(
-		MATERIAL_STEEL = 60,
-		MATERIAL_GLASS = 60,
-		MATERIAL_PLASTIC = 60
+		MATERIAL_STEEL = 15,
+		MATERIAL_GLASS = 15,
+		MATERIAL_PLASTIC = 15
 		)
 
 
 /obj/machinery/autolathe/rnd/imprinter/loaded
 	stored_material = list(
-		MATERIAL_STEEL = 30,
-		MATERIAL_PLASTIC = 30
+		MATERIAL_STEEL = 10,
+		MATERIAL_PLASTIC = 10
 		)
 
 /obj/machinery/autolathe/rnd/imprinter/loaded/Initialize()
 	. = ..()
-	container = new /obj/item/weapon/reagent_containers/glass/beaker/silicon(src)
+	container = new /obj/item/reagent_containers/glass/beaker/silicon(src)

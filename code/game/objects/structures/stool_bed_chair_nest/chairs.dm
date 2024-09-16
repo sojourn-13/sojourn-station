@@ -12,7 +12,7 @@
 	..()
 	update_layer()
 
-/obj/structure/bed/chair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if(!padding_material && istype(W, /obj/item/assembly/shock_kit))
 		var/obj/item/assembly/shock_kit/SK = W
@@ -81,14 +81,13 @@
 	if(buckled_mob)
 		buckled_mob.set_dir(dir)
 
-/obj/structure/bed/chair/verb/rotate()
+/obj/structure/bed/chair/verb/rotate_me()
 	set name = "Rotate Chair"
 	set category = "Object"
 	set src in oview(1)
 
 	if(config.ghost_interaction)
-		src.set_dir(turn(src.dir, 90))
-
+		rotate()
 		return
 
 	else
@@ -99,9 +98,13 @@
 		if(usr.stat || usr.restrained())
 			return
 
-		src.set_dir(turn(src.dir, 90))
+		rotate()
 		playsound(src,'sound/effects/CREAK_Wood_Tree_Creak_10_Bright_Very_Subtle_mono.ogg',100,1)
 		return
+
+
+/obj/structure/bed/chair/proc/rotate()
+	src.set_dir(turn(src.dir, 90))
 
 /obj/structure/bed/chair/shuttle
 	name = "chair"
@@ -117,31 +120,31 @@
 	icon_state = "comfychair_preview"
 
 /obj/structure/bed/chair/comfy/brown/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","leather")
+	..(newloc,MATERIAL_STEEL, MATERIAL_LEATHER)
 
 /obj/structure/bed/chair/comfy/red/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","carpet")
+	..(newloc,MATERIAL_STEEL, MATERIAL_CARPET)
 
 /obj/structure/bed/chair/comfy/teal/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","teal")
+	..(newloc,MATERIAL_STEEL,"teal")
 
 /obj/structure/bed/chair/comfy/black/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","black")
+	..(newloc,MATERIAL_STEEL,"black")
 
 /obj/structure/bed/chair/comfy/green/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","green")
+	..(newloc,MATERIAL_STEEL,"green")
 
 /obj/structure/bed/chair/comfy/purp/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","purple")
+	..(newloc,MATERIAL_STEEL,"purple")
 
 /obj/structure/bed/chair/comfy/blue/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","blue")
+	..(newloc,MATERIAL_STEEL,"blue")
 
 /obj/structure/bed/chair/comfy/beige/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","beige")
+	..(newloc,MATERIAL_STEEL,"beige")
 
 /obj/structure/bed/chair/comfy/lime/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","lime")
+	..(newloc,MATERIAL_STEEL,"lime")
 
 /obj/structure/bed/chair/office
 	anchored = 0
@@ -150,8 +153,8 @@
 /obj/structure/bed/chair/office/update_icon()
 	return
 
-/obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/tool/wirecutters))
+/obj/structure/bed/chair/office/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/tool/wirecutters))
 		return
 	..()
 
@@ -225,13 +228,13 @@
 /obj/structure/bed/chair/wood/update_icon()
 	return
 
-/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/tool/wirecutters))
+/obj/structure/bed/chair/wood/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/tool/wirecutters))
 		return
 	..()
 
 /obj/structure/bed/chair/wood/New(var/newloc)
-	..(newloc, "wood")
+	..(newloc, MATERIAL_WOOD)
 	var/image/I = image(icon, "[icon_state]_over")
 	I.layer = FLY_LAYER
 	add_overlay(I)
@@ -248,8 +251,8 @@
 /obj/structure/bed/chair/custom/update_icon()
 	return
 
-/obj/structure/bed/chair/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/tool/wirecutters))
+/obj/structure/bed/chair/custom/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/tool/wirecutters))
 		return
 	..()
 

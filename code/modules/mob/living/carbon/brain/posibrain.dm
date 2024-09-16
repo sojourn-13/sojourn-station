@@ -11,7 +11,7 @@
 	req_access = list(access_robotics)
 	locked = 0
 	mecha = null//This does not appear to be used outside of reference in mecha.dm.
-
+	price_tag = 750
 
 /obj/item/device/mmi/digital/posibrain/attack_self(mob/user as mob)
 	if(brainmob && !brainmob.key && searching == 0)
@@ -34,7 +34,10 @@
 		M.show_message(SPAN_NOTICE("The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?"))
 
 /obj/item/device/mmi/digital/posibrain/attack_ghost(var/mob/observer/ghost/user)
-	if(!searching || (src.brainmob && src.brainmob.key))
+	if(src.brainmob && src.brainmob.key)
+		return
+	if(!searching)
+		to_chat(user, SPAN_WARNING("The positronic brain has to be activated before you can enter it."))
 		return
 
 	var/datum/ghosttrap/G = get_ghost_trap("positronic brain")
