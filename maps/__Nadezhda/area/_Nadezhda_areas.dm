@@ -5,6 +5,7 @@
 
 /area/colony
 	base_turf = /turf/simulated/floor/asteroid
+	prevent_ship_area = TRUE
 
 /area/colony/exposedsun
 	ship_area = FALSE
@@ -302,6 +303,7 @@
 	flags = null
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
+	prevent_ship_area = TRUE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"
