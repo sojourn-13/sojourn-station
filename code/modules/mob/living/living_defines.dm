@@ -14,7 +14,7 @@
 	var/life_cycles_before_scan = 360
 
 	var/stasis = FALSE
-	var/AI_inactive = FALSE
+	var/AI_inactive = TRUE // Mobs should spawn with AI disabled by default, that way we don't have random mobs active for no reason. Why this wasn't the case is beyond me.
 
 	var/inventory_shown = 1
 

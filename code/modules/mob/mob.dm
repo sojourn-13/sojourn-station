@@ -192,7 +192,7 @@
 
 
 /mob/proc/Life()
-	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LIFE)
+	SEND_SIGNAL(src, COMSIG_MOB_LIFE) // Unsure why it was using legacy. Now uses the updated SEND_SIGNAL.
 //	if(organStructure)
 //		organStructure.ProcessOrgans()
 	return

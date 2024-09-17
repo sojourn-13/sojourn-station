@@ -11,9 +11,9 @@
 			else
 				if(check_surrounding_area(7))
 					activate_ai()
-					life_cycles_before_scan = 29 //So it doesn't fall asleep just to wake up the next tick
+					life_cycles_before_scan = 29 / rand(0.1, 1.25) //So it doesn't fall asleep just to wake up the next tick
 				else
-					life_cycles_before_scan = 240
+					life_cycles_before_scan = 240 / rand(0.75, 1.25) // Now has random ticks to not bottleneck the CPU and cause it to choke.
 
 			if(life_cycles_before_sleep)
 				life_cycles_before_sleep--
