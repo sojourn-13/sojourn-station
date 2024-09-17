@@ -479,7 +479,7 @@
 		return TRUE
 	//This checks if whoever is using the door has a client to activate mobs, specifically human mobs.
 	if(usr.client && istype(usr, /mob/living/carbon/human))
-		activate_mobs_in_range(src, 15)
+		activate_mobs_in_range(src, 15, TRUE)
 
 	return TRUE
 
