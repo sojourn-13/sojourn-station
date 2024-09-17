@@ -476,7 +476,7 @@
 	if(usr == null) //Because apparently machines are opening themselves. Spooky!
 		return TRUE
 	if(usr.client && ishuman(usr) || issilicon(usr))
-		activate_mobs_in_range(src, 15)
+		activate_mobs_in_range(src, 15, TRUE)
 
 	return TRUE
 
