@@ -25,7 +25,7 @@
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
 	id = "bicaridine"
-	description = "Bicaridine is an is analgesic medication and can be used to treat trauma at a moderate rate. Will eventually stop external bleeding. Less affective in Cht'mant."
+	description = "Bicaridine treats trauma at a moderate rate. Will lessen external bleeding. Less affective in Cht'mant."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -252,7 +252,7 @@
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
 	id = "carthatoline"
-	description = "Carthatoline is a strong evacuant used to treat severe poisoning. As well as a mild nerve system relaxant. Treats toxin damage at an accelerated rate, while healing damage to the Liver."
+	description = "Carthatoline is a strong evacuant used to treat severe poisoning. As well as a mild nerve system relaxant. Treats toxin damage at an accelerated rate, while healing damage to the liver."
 	reagent_state = LIQUID
 	color = "#225722"
 	scannable = TRUE
@@ -327,7 +327,7 @@
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
-	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as muscle repair. Heals oxygen deprivation faster than Dexalin. Removes Lexorin from the bloodstream. Also slowly and slightly heals Muscles inside the body."
+	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as muscle repair. Heals oxygen deprivation faster than Dexalin. Removes Lexorin from the bloodstream. Also slowly and slightly heals muscles inside the body."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0040FF"
@@ -550,7 +550,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/tramadol
 	name = "Tramadol"
 	id = "tramadol"
-	description = "Medium Painkiller. Generally all around useful for mild to semi-severe damage. Stronger than Paracetamol, weaker than Oxycodone. Overdose causes hallucinations, slurring, and slowdown, and eventually stuns you if you're not tough enough."
+	description = "Medium painkiller. Generally all around useful for mild to semi-severe damage. Stronger than Paracetamol, weaker than Oxycodone. Overdose causes hallucinations, slurring, and slowdown, and eventually stuns you if you're not tough enough."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#CB68FC"
@@ -573,7 +573,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/oxycodone
 	name = "Oxycodone"
 	id = "oxycodone"
-	description = "Most powerful painkiller. Useful when you run out of Anesthesics and need to keep a patient out of pain during surgery, or if near fatally hurt. Makes the user feel druggy. Overdosing causes hallucinations, drugginess, slurring, and slowed movement, it also stuns them if they are not tough enough."
+	description = "Most powerful painkiller. Useful when you run out of anesthetics and need to keep a patient out of pain during surgery, or if near fatally hurt. Makes the user feel druggy. Overdosing causes hallucinations, drugginess, slurring, and slowed movement, it also stuns them if they are not tough enough."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#800080"
@@ -692,7 +692,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/spaceacillin/holy
 	name = "Holycilin"
 	id = "holycilin"
-	description = "A theta-lactam antibiotic. Slows progression of diseases. Treats infections as long as 1 units or more are present on the body. Also treats Toxin Damage"
+	description = "A theta-lactam antibiotic. Slows progression of diseases. Treats infections as long as 1 unit or more are present on the body. Also treats Toxin damage"
 	taste_description = "sweetness"
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
@@ -947,7 +947,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/arithrazine
 	name = "Arithrazine"
 	id = "arithrazine"
-	description = "Removes radiation from patient's body more quickly and efficiently than Hyronalin. Has a chance to cause minor brute damage to patient per tick. Treats toxin damage (1 + 0.05% * effect_multiplier). Does not treat genetic damage. In most cases, should be administered with Dylovene."
+	description = "Removes radiation from patient's body more quickly and efficiently than Hyronalin. Has a chance to cause minor brute damage to patient while processing. Treats toxin damage. Does not treat genetic damage. In most cases, should be administered with Dylovene."
 	affects_dead = TRUE
 	reagent_state = LIQUID
 	color = "#008000"
