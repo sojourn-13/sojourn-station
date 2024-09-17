@@ -353,7 +353,7 @@
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
 	id = "plantbgone"
-	description = "Polytrinic acid is an extremely corrosive chemical substance. Can be used to destroy objects and Hivemind wires."
+	description = "Polytrinic acid is an extremely corrosive chemical substance. Can be used to destroy objects."
 	taste_mult = 1
 	reagent_state = LIQUID
 	color = "#49002E"
