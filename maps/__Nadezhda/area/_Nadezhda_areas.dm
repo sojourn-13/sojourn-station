@@ -1560,10 +1560,12 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/mining_outside_doc
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/mining_dreg
 	name = "Slate Mining Pad MEH A" //Mining Excation Head
 	icon_state = "erisblue"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
