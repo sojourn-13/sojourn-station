@@ -863,7 +863,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/ryetalyn
 	name = "Ryetalyn"
 	id = "ryetalyn"
-	description = "Ryetalyn can cure all genetic abnormalities via a catalytic process. Just injecting one unit is enough to eliminate all mutations and disabilities permanently, including beneficial ones. Works on dead people, allowing them to unhusk them if they died with over 400 burn damage."
+	description = "Ryetalyn can cure all genetic abnormalities via a catalytic process. Just injecting one unit is enough to eliminate all mutations and disabilities permanently, including beneficial ones. Works on dead people, allowing them to unhusk them if they have died from excessive burns."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#004000"
