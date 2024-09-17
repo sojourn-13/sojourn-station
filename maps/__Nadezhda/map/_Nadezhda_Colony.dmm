@@ -415,13 +415,13 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "aeM" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Medical Storage";
-	req_access = list(45)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Medical Storage";
+	req_access = list(45, 64)
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "aeN" = (
@@ -13396,18 +13396,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/absolutism/chapel)
-"cFV" = (
-/obj/effect/floor_decal/industrial/box/white/corners{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/box/white/corners,
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/personal,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/crew_quarters/pool)
 "cFZ" = (
 /obj/structure/door_assembly/door_assembly_eng,
 /obj/structure/barricade,
@@ -86653,12 +86641,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"qyO" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = 32
-	},
-/turf/simulated/wall,
-/area/nadezhda/crew_quarters/toilet/public)
 "qyT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -184903,7 +184885,7 @@ bUr
 bUr
 olp
 aky
-cFV
+wVs
 wVs
 ijs
 iNS
@@ -196355,7 +196337,7 @@ jTF
 bTt
 bTt
 sbc
-qyO
+kSX
 dJM
 wrB
 fUB
