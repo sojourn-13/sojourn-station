@@ -150,7 +150,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 		area_list_interact()
 
 	if(href_list["give_points"])
-		var/cap = input(usr, "How many points to give (Negitive numbers subtract)", "Hivemind Pitty Fund") as null|num
+		var/cap = input(usr, "How many points to give (Negative numbers subtract)", "Hivemind Pity Fund") as null|num
 		if(hive_mind_ai)
 			give_hivemind_points(cap)
 
