@@ -912,7 +912,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/ethylredoxrazine
 	name = "Ethylredoxrazine"
 	id = "ethylredoxrazine"
-	description = "Purges alcohol from the stomach per unit ingested. Also treats confusion, dizziness, sleepiness, and stuttering to sober up drunkards. Does nothing if injected."
+	description = "Purges alcohol from the stomach per unit ingested. Also treats confusion, dizziness, sleepiness, and stuttering to sober up drunkards."
 	reagent_state = SOLID
 	color = "#605048"
 	overdose = REAGENTS_OVERDOSE
