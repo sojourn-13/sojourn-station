@@ -420,7 +420,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass_medical{
 	name = "Medical Storage";
-	req_access = list(45, 64)
+	req_one_access = list(45, 64)
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
