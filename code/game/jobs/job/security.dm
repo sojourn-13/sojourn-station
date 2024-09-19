@@ -74,7 +74,6 @@
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
-	alt_titles = list("Quartermaster")
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
