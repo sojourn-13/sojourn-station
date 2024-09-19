@@ -324,7 +324,7 @@
 	if(status & ORGAN_DEAD)
 		return FALSE
 
-	if(species && (species.flags & NO_PAIN))
+	if((species.flags & NO_PAIN) || (PAIN_LESS in owner.mutations))
 		return FALSE
 
 	if(owner.stat >= UNCONSCIOUS)

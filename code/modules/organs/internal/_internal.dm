@@ -282,7 +282,7 @@
 				SPAN_DANGER("You hear a sickening crack.")
 			)
 
-			if(owner.species && !(owner.species.flags & NO_PAIN))
+			if(!((owner.species.flags & NO_PAIN) || (PAIN_LESS in owner.mutations)))
 				owner.emote("scream")
 			// Fractures have a chance of getting you out of restraints
 			if(prob(25))

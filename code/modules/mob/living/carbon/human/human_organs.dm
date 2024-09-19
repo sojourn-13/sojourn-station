@@ -99,7 +99,7 @@
 	// standing is poor
 	if(stance_damage >= 8 || (stance_damage >= 4 && prob(5)))
 		if(!(lying || resting))
-			if(species && !(species.flags & NO_PAIN))
+			if(!((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
 				emote("painscream")
 			custom_emote(1, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
@@ -141,7 +141,7 @@
 				if(E.limb_efficiency <= 50)
 					emote("me", 1, "drops what they were holding in their [E.name], [pick("unable to grasp it", "unable to feel it", "too weak to hold it")]!")
 				else
-					emote("me", 1, "[(species.flags & NO_PAIN) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
+					emote("me", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
 
 			else if(E.is_malfunctioning())
 				drop_from_inventory(E)

@@ -3,21 +3,12 @@
 	key = "MUTATION_NO_PAIN"
 	desc = "You no longer feel pain."
 	gain_text = "Your sensation of pain fades completely."
-	var/existed_prior = FALSE
+	var/add_mutation = PAIN_LESS
 
 /datum/genetics/mutation/painless/onMobImplant()
-	if(!istype(container.holder,/mob/living/carbon))
-		return
-	var/mob/living/carbon/target = container.holder
-	if(!(target.species.flags & NO_PAIN))
-		target.species.flags |= NO_PAIN
-	else
-		existed_prior = TRUE
+	..()
+	container.holder.mutations.Add(add_mutation)
 
 /datum/genetics/mutation/painless/onMobRemove()
-	if(!istype(container.holder,/mob/living/carbon))
-		return
-	if(existed_prior)
-		return
-	var/mob/living/carbon/target = container.holder
-	target.species.flags &= ~NO_PAIN
+	..()
+	container.holder.mutations.Remove(add_mutation)

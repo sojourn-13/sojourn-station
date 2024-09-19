@@ -7,9 +7,13 @@
 
 // proc to find out in how much pain the mob is at the moment
 /mob/living/carbon/proc/updateshock()
-	if(species && (species.flags & NO_PAIN))
+	if(species.flags & NO_PAIN)
 		traumatic_shock = 0
-		return 0
+		return FALSE
+	if(PAIN_LESS in mutations)
+		return FALSE
+		traumatic_shock = 0
+		return FALSE
 
 	traumatic_shock = get_constant_pain() + get_dynamic_pain() - get_painkiller()
 
@@ -68,7 +72,7 @@
 	..()
 	if(status_flags & GODMODE)	//godmode
 		return 0
-	if(species && species.flags & NO_PAIN)
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		return
 	if(status_flags & HARDCRIT)	//already in hardcrit
 		return
