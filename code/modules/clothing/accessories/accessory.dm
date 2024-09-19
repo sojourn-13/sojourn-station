@@ -797,6 +797,12 @@
 	icon_state = "denton"
 	item_state = "denton"
 
+/obj/item/clothing/accessory/duster/marshal
+	name = "marshal raincloak"
+	desc = "For those officers who consider themselves to be some kind of a superstar."
+	icon_state = "marshal_patrol"
+	item_state = "marshal_patrol"
+
 /*BS Coats*/
 
 /obj/item/clothing/accessory/bscloak
