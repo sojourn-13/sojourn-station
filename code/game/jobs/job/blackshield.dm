@@ -127,7 +127,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Combat Medic")
+	alt_titles = list("Combat Medic", "Field Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
