@@ -1534,11 +1534,11 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		//Mushroom pizza is uniquic in that it takes any mushroom rather then a required type
-		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plump helmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 35 SECONDS)
 	)
 
