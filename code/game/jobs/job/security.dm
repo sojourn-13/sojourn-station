@@ -52,7 +52,7 @@
 	The Blackshield Commander is your ally and you should work closely with them - they provide the muscle and guns to defend the colony."
 
 	duties = "Coordinate officers around the colony, assigning them to tasks and distress calls as needed.<br>\
-		Work with the Blackshield Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
+		Work with the Blackshield Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions or tools they need.<br>\
 		Keep the peace around the colony and ensure each officer knows their roles and carries them out precisely.<br>\
 		Oversee performance of the officers under your command and punish any that are insubordinate or incompetent.<br>\
 		Advise the council on threats to colony security and advise them towards choices that will uphold the public trust."
