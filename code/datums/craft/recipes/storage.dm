@@ -314,3 +314,12 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 2)
 	)
+//Techinally it stores reagents....
+/datum/craft_recipe/storage/churn
+	name = "churn"
+	result = /obj/structure/churn
+	related_stats = list(STAT_MEC)
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 12, MATERIAL_WOOD)
+	)
