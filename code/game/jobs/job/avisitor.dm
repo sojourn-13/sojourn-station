@@ -24,7 +24,7 @@
 	)
 
 	description = "The ideal role for new characters. You are not a member of the colony(yet) and as such do not require records, but as a foreigner who's been allowed in<br>\
-you're held to very different standards.Use this freedom to determine your place in the world; Have you come from space, hoping to make a home in this place?<br>\
+you're held to very different standards. Use this freedom to determine your place in the world; Have you come from space, hoping to make a home in this place?<br>\
 Are you a straggler from the woods, just looking for a few nights reprieve from the horrors of this planet?<br>\
 Perhaps your intent for the colony is less charitable, intent to take advantage of your hosts misplaced trust?<br>\
 <br>\
