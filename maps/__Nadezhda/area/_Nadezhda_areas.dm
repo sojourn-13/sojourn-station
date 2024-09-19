@@ -5,6 +5,7 @@
 
 /area/colony
 	base_turf = /turf/simulated/floor/asteroid
+	prevent_ship_area = TRUE
 
 /area/colony/exposedsun
 	ship_area = FALSE
@@ -302,6 +303,7 @@
 	flags = null
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
+	prevent_ship_area = TRUE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"
@@ -1558,10 +1560,12 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/mining_outside_doc
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/mining_dreg
 	name = "Slate Mining Pad MEH A" //Mining Excation Head
 	icon_state = "erisblue"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
