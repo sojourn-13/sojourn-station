@@ -594,7 +594,7 @@
 
 /area/nadezhda/command
 	name = "\improper Command"
-	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
+	area_light_color = COLOR_PALE_BLUE_GRAY
 
 /area/nadezhda/command/bridge
 	name = "\improper Control Room"
@@ -609,6 +609,7 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+	area_light_color = COLOR_COMMAND_BLUE
 
 /area/nadezhda/command/armory
 	name = "\improper Command Center Armory"
@@ -635,6 +636,7 @@
 
 /area/nadezhda/command/captain/quarters
 	name = "\improper Command - Premier's Quarters"
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/fo
 	name = "\improper Command - Steward's Quarters"
@@ -648,6 +650,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cro/quarters
 	name = "\improper Research - CRO's Quarters"
@@ -660,6 +663,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/gmaster/quarters
 	name = "\improper Engineering - Guild Master's Quarters"
@@ -672,6 +676,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cbo/quarters
 	name = "\improper Medbay - CBO's Quarters"
@@ -723,6 +728,7 @@
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/teleporter
 	name = "\improper Teleporter"
