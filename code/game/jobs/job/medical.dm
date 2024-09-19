@@ -169,6 +169,7 @@
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
+	alt_titles = list("Soteria Biolab Enforcer", "Emergency Recovery Specialist")
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
