@@ -72,7 +72,7 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Soteria Nurse"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Soteria Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
+	alt_titles = list("Soteria Nurse"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Soteria Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon, "Soteria Chemist")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
@@ -100,7 +100,7 @@
 	Due to the nature of your work you may find yourself confined to the department for the shift majority. Don't abandon patients."
 
 	duties = "Heal the sick and injured, whatever their complaint.<br>\
-		Diagnose illnesses, offer general services, perform surgery, or even study viruses.<br>\"
+		Diagnose illnesses, offer general services, perform surgery, or even study viruses."
 
 /obj/landmark/join/start/doctor
 	name = "Soteria Doctor"
