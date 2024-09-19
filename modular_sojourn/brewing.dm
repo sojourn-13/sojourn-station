@@ -96,8 +96,12 @@
 	for(var/path in typesof(/datum/brewing_product) - /datum/brewing_product)
 		var/datum/brewing_product/recipe = path
 		var/prereq = initial(recipe.prerequisite)
+		if(initial(recipe.holy) && !is_neotheology_disciple(user))
+			continue
+
 		if((!ready_for_bottleing && prereq == null) || (selected_recipe?.reagent_to_brew == prereq && ready_for_bottleing))
 			options[initial(recipe.display_name)] = recipe
+
 
 	if(options.len == 0)
 		to_chat(user, "There is no further brewing to be done, clear this barrel out or sell it.")

@@ -17,6 +17,7 @@
 	var/alt_brew_item_amount = 1			//If it prodces an item (See Cheese)
 
 	var/info_helper							//Simple string to give folks an extra line of info.
+	var/holy = FALSE						//Allows folks that are implanted with a working crusiform to produce these
 
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
@@ -406,21 +407,6 @@
 	brewed_amount = 1
 	price_tag_setter = 7500
 
-//The graveyard of uncoded yet coded wines, may their sprites rest not well in the stomic of those that drank it.
-
-/* Coded out for lore reasons - Lore head hates fun >:T
-/datum/brewing_product/ntcahors
-	reagent_to_brew = "ntcahors"
-	display_name = "#Blessed Wine"
-	prerequisite = "wine" // (string, so that we can make multiple recipes for the 'same' drink if needed)
-	brewed_amount = 1
-	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
-	needed_chems = list("carbon" = 120, "holywater" = 120)
-
-	price_tag_setter = 6000
-	brew_timer = 3600 //1 hour
-
-//Coded out do to not sure how to accually make this, and the copoilet quarries are able to help me
 /datum/brewing_product/fernet
 	reagent_to_brew = "fernet"
 	display_name = "Fernet"
@@ -430,5 +416,27 @@
 	brewed_amount = 1
 	price_tag_setter = 1500
 
+//Church exclusive brews
+/datum/brewing_product/ntcahors
+	reagent_to_brew = "ntcahors"
+	display_name = "Absolutism Cahors Wine"
+	prerequisite = "holywater"
+	brewed_amount = 6
+	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
+	needed_chems = list("carbon" = 120, "holywater" = 120)
 
-*/
+	price_tag_setter = 16000
+	brew_timer = 1 HOUR
+	holy = TRUE
+
+/datum/brewing_product/holywater
+	reagent_to_brew = "holywater"
+	display_name = "Blessed Water"
+	brewed_amount = 12
+	needed_crops = list("mint" = 20, "towercap" = 30, "harebell" = 25)
+	needed_chems = list("carbon" = 120, "water" = 120)
+
+	price_tag_setter = 1000
+	brew_timer = 5 MINUTES
+	holy = TRUE
+	info_helper = "Further brewing can be done when finished."
