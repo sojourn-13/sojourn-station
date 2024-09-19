@@ -438,7 +438,7 @@
 	mutants = list("reishi","amanita","plumphelmet")
 	chems = list("nutriment" = list(1,25))
 	splat_type = /obj/effect/plant
-	kitchen_tag = "mushroom"
+	kitchen_tag = "chanterelle"
 
 /datum/seed/mushroom/New()
 	..()
@@ -477,6 +477,7 @@
 	display_name = "plump helmet mushrooms"
 	mutants = list("walkingmushroom","towercap")
 	chems = list("nutriment" = list(2,10), "spaceacillin" = list(2,10))
+	kitchen_tag = "plump helmet"
 
 /datum/seed/mushroom/plump/New()
 	..()
