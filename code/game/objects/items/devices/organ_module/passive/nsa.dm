@@ -1,6 +1,7 @@
 /obj/item/organ_module/viv_bank
-	name = "NSA Banker"
-	desc = "A small controle box for the never system that helps regulate singles sent to and from the brain."
+	name = "NSA Banker Implant"
+	desc = "A small boxy implant that is attached to the connection point of the skull and the spine with series of small needle-like cables and electrodes, helping \
+	regulate the intensity of the signals sent to and received from the brain."
 	allowed_organs = list(BP_HEAD)
 	icon_state = "viv_banker"
 

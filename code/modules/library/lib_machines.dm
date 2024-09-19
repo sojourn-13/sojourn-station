@@ -456,7 +456,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 		O.loc = src
 		user.visible_message("[user] loads some paper into [src].", "You load some paper into [src].")
 		src.visible_message("[src] begins to hum as it warms up its printing drums.")
-		sleep(rand(5,20)) //Insainly fast do to how intensive sleep is
+		sleep(rand(5,20)) //Insanely fast do to how intensive sleep is
 		src.visible_message("[src] whirs as it prints and binds a new book.")
 		var/obj/item/book/b = new(src.loc)
 		b.dat = O:info

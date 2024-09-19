@@ -68,7 +68,7 @@
 	//Cycle through are contents and find everything ever
 	for(var/obj/item/I in contents)
 		var/over_filled = 0 //Now we got to get what a REAL w-class is per object
-		over_filled = I.w_class + I.extra_bulk //Extrabulk for sake of calulations is insainly rough
+		over_filled = I.w_class + I.extra_bulk //Extrabulk for sake of calulations is insanely rough
 		used_storage_space += over_filled
 		if(over_filled > w_class) //If we are item is bigger then are pouch then we get get bigger!
 			internal_bulk += over_filled - w_class
@@ -147,7 +147,7 @@
 //We do medium for scaling reasons
 /obj/item/storage/pouch/medium_generic/psionic
 	name = "Woven Pouch C-7v89"
-	desc = "A small on the outside experimental hand bag only useable for psionic users."
+	desc = "A small on the outside experimental hand bag only usable for psionic users."
 	icon_state = "medium_psion"
 	item_state = "medium_generic"
 	storage_slots = null //Uses generic capacity
@@ -177,7 +177,7 @@
 		return
 	repression = !repression
 	psionic_tune()
-	to_chat(usr, SPAN_NOTICE("Repression: [repression ? "Actived" : "Deactived"] "))
+	to_chat(usr, SPAN_NOTICE("Repression: [repression ? "Activated" : "Deactivated"] "))
 
 
 /obj/item/storage/pouch/medium_generic/psionic/pouch_size_increase()
@@ -200,7 +200,7 @@
 		if(psionic_scaling_mult < 1.5)
 			psionic_scaling_mult += 0.1
 			used = TRUE
-			to_chat(user, "It seems a little easyer to use your maxium psionic pool to increase the [src] space.")
+			to_chat(user, "It seems a little easier to use your maxium psionic pool to increase the [src] space.")
 
 		if(psionic_storage < 15 && !used)
 			psionic_storage += 1
@@ -232,7 +232,7 @@
 			//Basically every psionic point is a "tiny item of space"
 			//Normal pouches DEFAULT_SMALL_STORAGE, aka 10 according to __DEFINES/inventory_sizes.dm
 			//10 psionic points MATCHES small pouches, aka 100 cog.
-			//Now thats insainly bad and unfun so we do a bit of safty netting, aka the MINIUM you can have is a small pouch
+			//Now thats insanely bad and unfun so we do a bit of safty netting, aka the MINIUM you can have is a small pouch
 			//First we eat cubes upto a max of 10, for at lest 1 medium pouch
 			//Second After that we just increase the cap endlessly
 			max_storage_space = round(PT.max_psi_points * psionic_scaling_mult) + psionic_storage

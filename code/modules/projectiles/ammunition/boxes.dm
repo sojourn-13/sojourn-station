@@ -512,7 +512,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old 14.5mm Anti Materiel)"
+	name = "ammunition box (old 14.5mm Anti-Materiel)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5

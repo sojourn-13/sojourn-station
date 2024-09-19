@@ -78,7 +78,7 @@
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/serg
 

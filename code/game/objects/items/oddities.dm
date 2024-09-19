@@ -313,7 +313,7 @@
 
 /obj/item/oddity/common/tattoo
 	name = "tattoo kit"
-	desc = "An odd box containing various tools used in the process of creating tattoos. You have a feeling this set of tools was well taken care of and cherished, but do to age they are rendered unuseable."
+	desc = "An odd box containing various tools used in the process of creating tattoos. You have a feeling this set of tools was well taken care of and cherished, but do to age they are rendered unusable."
 	icon_state = "tattoo_kit"
 	prob_perk = 7 //ponder and devote yourself to the craft like the artist before you.
 	oddity_stats = list(
@@ -512,7 +512,7 @@
 		STAT_ROB = 12
 	)
 	price_tag = 2000 //Its a good tie for a collector
-	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+	perk = PERK_SURE_STEP //Insanely rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
 
 /obj/item/oddity/rare/moon_fragment
 	name = "Fragment of Moon"

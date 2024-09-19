@@ -143,7 +143,7 @@
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 
 	if(self_destroy)
-		to_chat(user, SPAN_NOTICE("<span style='color:angelsay'>An unstable decaying aura radiates from this one. It seems this type will one be useable once...</span>"))
+		to_chat(user, SPAN_NOTICE("<span style='color:angelsay'>An unstable decaying aura radiates from this one. It seems this type will one be usable once...</span>"))
 
 
 	var/strength

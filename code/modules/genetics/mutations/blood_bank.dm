@@ -74,7 +74,7 @@
 	desc = "Massively increases the amount of blood the person has."
 	gain_text = "You feel like your a blood-loon!"
 	exclusive_type = MUT_TYPE_NONE //Just free
-	instability = 40 //This one is accully a bad step before it gets better
+	instability = 40 //This one is actually a bad step before it gets better
 
 /datum/genetics/mutation/blood_sea/onPlayerImplant()
 	if(!..())

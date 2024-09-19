@@ -576,16 +576,23 @@
 	if (L.len)
 		return pick(L)
 
-//Tells everyone thats living and is a SSmobs to wake up their AI when aplicable
-/proc/activate_mobs_in_range(atom/caller , distance)
+//Tells everyone thats living to awaken, if in range.
+//If you run this proc a lot use care_about_sightline = TRUE as an optimization
+/proc/activate_mobs_in_range(atom/caller , distance, care_about_sightline = TRUE)
 	var/turf/starting_point = get_turf(caller)
 	if(!starting_point)
 		return FALSE
-	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
-		if(potential_attacker == caller)
-			continue
-		if(potential_attacker.stat == DEAD)
-			continue
-		if(!(get_dist(starting_point, potential_attacker) <= distance))
-			continue
-		potential_attacker.try_activate_ai()
+	if(!care_about_sightline)
+		for(var/mob/living/potential_attacker in orange(distance, starting_point))
+			if(potential_attacker == caller)
+				continue
+			if(potential_attacker.stat == DEAD)
+				continue
+			potential_attacker.try_activate_ai()
+	else
+		for(var/mob/living/potential_attacker in ohearers(distance, starting_point))
+			if(potential_attacker == caller)
+				continue
+			if(potential_attacker.stat == DEAD)
+				continue
+			potential_attacker.try_activate_ai()

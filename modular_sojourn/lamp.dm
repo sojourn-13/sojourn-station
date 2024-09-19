@@ -1,6 +1,6 @@
 /obj/structure/torchere
-	name = "Stone Torchere"
-	desc = "Smooth black stone torchere, its flames glow and eerie blue, while dancing and flickering in a non-existent wind."
+	name = "Stone Torchère"
+	desc = "A smooth black stone torchère. The flames glow an eerie blue while dancing and flickering in a nonexistent wind."
 	icon = 'modular_sojourn/lamps.dmi'
 	icon_state = "mixer"
 	var/lit_up = FALSE

@@ -365,7 +365,7 @@
 /obj/item/projectile/bullet/flare/green
 	luminosity_color = PIPE_COLOR_GREEN //Bit better then normal green
 
-/obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
+/obj/item/projectile/bullet/flare/chaos //MEWHEHEHE, can be any colour
 	chaos = TRUE
 
 //Used for bluecross only atm

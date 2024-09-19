@@ -4,8 +4,8 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
@@ -42,8 +42,8 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")

@@ -1574,7 +1574,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		B.remove_self(20)
 	for(var/turf/surround in oview(3))
 		if(!surround.is_space())
-			var/obj/structure/annomlies_diet/spidersilk/non_spreader/weave = new /obj/structure/annomlies_diet/spidersilk/non_spreader(surround)
+			var/obj/structure/anomalies_diet/spidersilk/non_spreader/weave = new /obj/structure/anomalies_diet/spidersilk/non_spreader(surround)
 			bluespace_entropy(5, M.loc)
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel),weave), 3 MINUTES)
 	ScrollBurn()
@@ -1626,7 +1626,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		//something went wrong!
 		ScrollBurn()
 	while(again == TRUE)
-		var/obj/structure/annomlies_diet/ball_lightning/zappy = new /obj/structure/annomlies_diet/ball_lightning(pick(turf_list))
+		var/obj/structure/anomalies_diet/ball_lightning/zappy = new /obj/structure/anomalies_diet/ball_lightning(pick(turf_list))
 		to_chat(M, SPAN_WARNING("A loud crackling fills the air as something forms."))
 		again = pick(TRUE, FALSE) //It will spawn more and more till it gets a bad flip on a 50/50 chance. How bad is your luck?
 		//creates a callback, global_proc is a mystery to me. But the GLOBAL_PROC_REF() is actually required. As is the , between qdel and zappy. This fucking voodoo proc.
