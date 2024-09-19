@@ -11,7 +11,6 @@
 		traumatic_shock = 0
 		return FALSE
 	if(PAIN_LESS in mutations)
-		return FALSE
 		traumatic_shock = 0
 		return FALSE
 
