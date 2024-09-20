@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(hive_data_bool, list(
 	"maximum_existing_mobs"			= FALSE, // Exact number set separately
-	"spread_trough_burrows"			= TRUE,
+	"spread_trough_burrows"			= FALSE,
 	"spread_maints_burrows"			= FALSE,
 
 	"spread_on_lower_z_level"		= TRUE, // Spread via wires "falling down" from higher z-level
