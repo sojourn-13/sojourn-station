@@ -111,7 +111,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	<br>Spread through maints burrows: [GLOB.hive_data_bool["spread_maints_burrows"] ? "Enabled" : "Disabled"]\
 	<a href='?src=\ref[src];toggle_maint_burrow=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Spread through maints burrows: [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
+	data += "<br>Spread through normal burrows (I.E borrows in hallways and departments.): [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_burrow=1'>\[TOGGLE\]</a>"
 
 	data += "<br<br>Spread on z level below: [GLOB.hive_data_bool["spread_on_lower_z_level"] ? "Enabled" : "Disabled"] \
