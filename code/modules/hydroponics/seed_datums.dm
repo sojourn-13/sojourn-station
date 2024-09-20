@@ -431,7 +431,7 @@
 
 //Mushrooms/varieties.
 /datum/seed/mushroom
-	name = "mushrooms"
+	name = "chanterelle"
 	seed_name = "chanterelle"
 	seed_noun = "spores"
 	display_name = "chanterelle mushrooms"
@@ -477,7 +477,7 @@
 	display_name = "plump helmet mushrooms"
 	mutants = list("walkingmushroom","towercap")
 	chems = list("nutriment" = list(2,10), "spaceacillin" = list(2,10))
-	kitchen_tag = "plump helmet"
+	kitchen_tag = "plumphelmet"
 
 /datum/seed/mushroom/plump/New()
 	..()

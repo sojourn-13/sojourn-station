@@ -32,7 +32,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
-		if(G.seed && G.seed.kitchen_tag == "plump helmet")
+		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
 				user.drop_item()
