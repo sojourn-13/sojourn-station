@@ -124,6 +124,11 @@
 	path = /obj/item/clothing/accessory/waistcoat/color
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/accessory/colorablestraps
+	display_name = "colorable drop straps"
+	path = /obj/item/clothing/accessory/dropstraps
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield
