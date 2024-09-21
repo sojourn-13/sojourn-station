@@ -519,7 +519,7 @@
 		return FALSE
 
 	if(istype(eating, /obj/item/stack/ore))
-		to_chat(user, SPAN_WARNING("\The [eating] can not be accepted do to being unprocessed."))
+		to_chat(user, SPAN_WARNING("\The [eating] can not be accepted due to being unprocessed."))
 		return FALSE
 
 	if(istype(eating, /obj/item/computer_hardware/hard_drive/portable))

@@ -171,6 +171,9 @@
 				to_chat(usr, "The armor system reports heavy damage. Repairs required.")
 			if(0.8 to 0.99)
 				to_chat(usr, "The armor system reports insignificant damage. Repairs advised.")
+		to_chat(usr, "The armor system has [ablative_max] ablative armor.")
+	else
+		to_chat(usr, "This RIG unit does not provide additional support armor plates.")
 
 /obj/item/rig/Initialize()
 	. = ..()
@@ -246,6 +249,11 @@
 			continue
 		if(armor_list)
 			piece.armor = armor
+
+		if(canremove)
+			piece.item_flags &= ~(STOPPRESSUREDAMAGE|AIRTIGHT)
+		else
+			piece.item_flags |=  (STOPPRESSUREDAMAGE|AIRTIGHT)
 
 /obj/item/rig/Destroy()
 	for(var/obj/item/piece in list(gloves,boots,helmet,chest))

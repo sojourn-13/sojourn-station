@@ -4,8 +4,8 @@
 * Pull requests should not contain any debug output, variables or procs, unless these are of value to admins/coders for live debugging.
 * Pull requests should not contain changes that do not relate with functionality described in commit messages.
 * If pull request relates with existing github issue, it should be specified in commit message, for example, "Fix broken floor sprites, close #23" (see https://help.github.com/articles/closing-issues-via-commit-messages/ for additional info).
-* If pull request contains map files changes, it MUST be fitted for the correct format exstrenal tools like Strong DMM automatical do this, local in code tools currently do not work so it is best to use proper tool then Dream Makers base. Pull request description should contain screenshots of map changes if it's not obvious from map files diff.
-* If pull request contains icon files changes, the pull request description should contain screenshots of changed icon files, well this isn't required its more perferd then digging into the file or checking the Actions Tools for your sprite changes.
+* If pull request contains map files changes, it MUST be fitted for the correct format. External tools like StrongDMM automatically do this. Local in-code tools currently do not work so it is best to use proper tools than Dream Makers base. Pull request description should contain screenshots of map changes if it's not obvious from map files diff.
+* If pull request contains icon files changes, the pull request description should contain screenshots of changed icon files. While this isn't required, it's more preferred than digging into the file or checking the Actions Tools for your sprite changes.
 * If you have the permissions, please set appropriate labels on your PRs. Including, at the very least, Good-To-Merge to indicate that its done.
 
 # Advice for new recruits

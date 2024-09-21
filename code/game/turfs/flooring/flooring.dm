@@ -816,19 +816,19 @@ var/list/flooring_types
 	icon_base = "beachcorner"
 
 /decl/flooring/beach/water/swamp
-	name = "merky water"
+	name = "murky water"
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_swamp"
 	footstep_sound = "water"
 
 /decl/flooring/beach/water/jungle
-	name = "merky water"
+	name = "murky water"
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle1"
 	footstep_sound = "water"
 
 /decl/flooring/beach/water/flooded
-	name = "merky water"
+	name = "murky water"
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle2"
 	footstep_sound = "water"
@@ -846,7 +846,7 @@ var/list/flooring_types
 	footstep_sound = "water"
 
 /decl/flooring/beach/water/jungledeep
-	name = "merky water"
+	name = "murky water"
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle3"
 	footstep_sound = "water"
@@ -1150,7 +1150,7 @@ var/list/flooring_types
 /decl/flooring/industrial/bricks
 	name = "bricks"
 	desc = "A bunch of stone bricks placed down as flooring."
-	icon_base = "concrete_bricks"
+	icon_base = "brick"
 	has_base_range = 8
 	can_repair = TRUE
 	descriptor = "brick"
@@ -1160,7 +1160,7 @@ var/list/flooring_types
 /decl/flooring/industrial/bricks_fixed
 	name = "bricks"
 	desc = "A bunch of stone bricks placed down as flooring."
-	icon_base = "concrete_bricks"
+	icon_base = "brick"
 	descriptor = "brick"
 	build_type = /obj/item/stack/tile/bricks_fixed
 	tally_addition_decl = -0.1

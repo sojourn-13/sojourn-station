@@ -54,7 +54,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_invulnerability = 0
 	var/level
 	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
-	var/level_change = 0
+	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
+	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
+	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
 	var/insight
 	var/max_insight = INFINITY
@@ -111,6 +113,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		new_value = max(0, value * insight_gain_multiplier * GLOB.GLOBAL_INSIGHT_MOD)
 	insight = min(insight + new_value, max_insight)
 
+/datum/sanity/proc/remove_insight(value)
+	insight = max(0, insight - value)
+
 /datum/sanity/proc/give_resting(value)
 	resting = min(resting + value, max_resting)
 
@@ -131,6 +136,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(owner.stat == DEAD || owner.life_tick % life_tick_modifier || owner.in_stasis || (owner.species.lower_sanity_process && !owner.client))
 		return
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION, TRUE)
 		return
 	var/affect = SANITY_PASSIVE_GAIN * sanity_passive_gain_multiplier
 	if(owner.stat) //If we're unconscious
@@ -153,7 +159,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 /datum/sanity/proc/handle_view()
 	. = 0
-	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION)
+	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION, TRUE)
 	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
@@ -191,6 +197,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
+	//If we are above are cap set to the cap
+	if(level_change > level_change_cap)
+		level_change = level_change_cap
+	//If we are below are minium, simply set it to minium
+	if(level_change < level_change_min)
+		level_change = level_change_min
+
 	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)

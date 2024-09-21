@@ -245,13 +245,13 @@
 	new /obj/item/gun/projectile/shotgun/pug(src)
 	new /obj/item/ammo_magazine/m12/pellet(src)
 
-/obj/item/storage/box/syndie_kit/antimaterial_rifle
+/obj/item/storage/box/syndie_kit/antimateriel_rifle
 	name = "sniper rifle box"
 	desc = "Sniper rifle kit. One shot for real men."
 	icon_state = "box_of_doom_big"
 	w_class = ITEM_SIZE_HUGE
 
-/obj/item/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
+/obj/item/storage/box/syndie_kit/antimateriel_rifle/populate_contents()
 	new /obj/item/part/gun/frame/heavysniper(src)
 	new /obj/item/part/gun/grip/serb(src)
 	new /obj/item/part/gun/mechanism/boltgun(src)

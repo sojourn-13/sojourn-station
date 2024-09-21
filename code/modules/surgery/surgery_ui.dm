@@ -189,7 +189,7 @@
 			return TRUE
 
 		if("remove_shrapnel")
-			//soj edits to be insainly easyer for corpsmen
+			//soj edits to be insanely easier for corpsmen
 			if(istype(usr, /mob/living))
 				var/mob/living/user = usr
 				var/target_stat = BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO

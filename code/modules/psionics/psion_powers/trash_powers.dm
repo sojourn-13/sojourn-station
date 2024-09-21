@@ -1,6 +1,6 @@
 /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile()
 	set category = "Psionic powers"
-	set name = "Scrap Togather (4)"
+	set name = "Scrap Together (4)"
 	set desc = "Expend some essence to collect trash from deepmaints and pile it in front of you."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src

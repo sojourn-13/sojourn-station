@@ -818,3 +818,7 @@
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
+
+/mob/living/simple_animal/getarmor(def_zone, type)
+	//log_and_message_admins("LOG 1.5: def_zone [def_zone] | type [type] | armor(type) [armor[type]].")
+	return armor[type]

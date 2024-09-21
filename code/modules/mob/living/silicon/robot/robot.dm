@@ -1338,28 +1338,57 @@
 			has_wreck_sprite = TRUE
 			tall_borg = TRUE
 
+	//Little gross how Dullahan and FT are done but still should be fine:tm:
+
 	if(tall_borg)
 		switch(modtype)
 			if("Medical")
 				icon = 'icons/mob/robot_tall/medical.dmi'
 
+				if(icon_state == "dullahanmed")
+					icon = 'icons/mob/robot_tall/medical_dullahan.dmi'
+
+				if(icon_state == "ftpeace")
+					icon = 'icons/mob/robot_tall/medical_ft.dmi'
+
 			if("Engineering")
 				icon = 'icons/mob/robot_tall/engi.dmi'
+
+				if(icon_state == "dullahaneng" || icon_state == "dullahancargo" )
+					icon = 'icons/mob/robot_tall/engi_dullahan.dmi'
 
 			if("Security")
 				icon = 'icons/mob/robot_tall/sec.dmi'
 
+				if(icon_state == "dullahansyndi")
+					icon = 'icons/mob/robot_tall/sec_dullahan.dmi'
+
 			if("Defense")
 				icon = 'icons/mob/robot_tall/sec.dmi'
+
+				if(icon_state == "dullahansyndi")
+					icon = 'icons/mob/robot_tall/sec_dullahan.dmi'
 
 			if("Service")
 				icon = 'icons/mob/robot_tall/server.dmi'
 
+				if(icon_state == "dullahanserv" || icon_state == "dullahanserv_alt")
+					icon = 'icons/mob/robot_tall/server_dullahan.dmi'
+
 			if("Miner")
 				icon = 'icons/mob/robot_tall/mining.dmi'
+
+				if(icon_state == "dullahanmine")
+					icon = 'icons/mob/robot_tall/mining_dullahan.dmi'
 
 			if("Research")
 				icon = 'icons/mob/robot_tall/science.dmi'
 
+				if(icon_state == "dullahanninja")
+					icon = 'icons/mob/robot_tall/science_dullahan.dmi'
+
 			if("Custodial")
 				icon = 'icons/mob/robot_tall/janitor.dmi'
+
+				if(icon_state == "dullahanjani" || icon_state == "dullahanpeace")
+					icon = 'icons/mob/robot_tall/janitor_dullahan.dmi'

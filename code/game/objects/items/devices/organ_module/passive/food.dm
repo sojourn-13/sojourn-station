@@ -1,7 +1,7 @@
 /obj/item/organ_module/snack_system
 	name = "S.N.A.C.K System"
-	desc = "The Storage Nutrience: Advanced Cal Keeper, a state of the art addition to the large intestant track, \
-	both as a helper prevent nutrition loss and store a bunch of healthy nutrition. The designs are credited to two SI students."
+	desc = "The Storage Nutrient: Advanced Calorie Keeper. A state of the art implant that is attached to the large intenstine. \
+	Aids in banking additional nutrients in human body as well as aiding in efficient distribution, this design is credited to two aspiring SI Studens."
 	matter = list(MATERIAL_WOOD = 1, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5, MATERIAL_SILVER = 1)
 	allowed_organs = list(BP_GROIN)
 	icon_state = "fluid_sack"

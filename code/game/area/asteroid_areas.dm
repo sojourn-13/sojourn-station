@@ -8,27 +8,35 @@
 
 /area/mine/prep
 	name = "Lonestar Mining Prep"
+	ship_area = TRUE
 
 /area/mine/processing
 	name = "Lonestar Ore Processing"
+	ship_area = TRUE
 
 /area/mine/hallway
 	name = "Lonestar General"
+	ship_area = TRUE
 
 /area/mine/medical
 	name = "Lonestar Triage"
+	ship_area = TRUE
 
 /area/mine/livingarea
 	name = "Lonestar Quarters"
+	ship_area = TRUE
 
 /area/mine/atmos
 	name = "Lonestar Atmos"
+	ship_area = TRUE
 
 /area/mine/power
 	name = "Lonestar Machine Room"
+	ship_area = TRUE
 
 /area/mine/lockers
 	name = "Lonestar Locker Room"
+	ship_area = TRUE
 
 /area/mine/explored
 	name = "Mine"

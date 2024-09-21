@@ -183,6 +183,10 @@ the lims and such to pull out the internal bits for other people if needed
 	name_category = "implantable biocircuit"
 	category = CAT_PROSTHESIS
 
+/datum/design/research/item/implant/pad
+	name = "Implant Pad"
+	build_path = /obj/item/implantpad
+
 /datum/design/research/item/implant/chemical
 	name = "Chemical Implant"
 	build_path = /obj/item/implantcase/chem
@@ -194,6 +198,11 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/implant/alarm
 	name = "Death Alarm Implant"
 	build_path = /obj/item/implantcase/death_alarm
+
+/datum/design/research/item/implant/track
+	name = "Tracking Implant"
+	build_path = /obj/item/implantcase/tracking
+
 
 /datum/design/research/item/mechfab/modules/hud
 

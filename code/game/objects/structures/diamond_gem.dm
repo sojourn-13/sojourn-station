@@ -8,7 +8,7 @@
 	anchored = 1
 	density = 1
 	layer = BELOW_OBJ_LAYER
-	//Insainly rare materals, tho its impossable to brake down without some adv trickery
+	//Insanely rare materals, tho its impossable to brake down without some adv trickery
 	matter = list(MATERIAL_VOXALLOY = 5, MATERIAL_DURASTEEL = 30, MATERIAL_DIAMOND = 30, MATERIAL_TITANIUM = 10, MATERIAL_OSMIUM = 20, MATERIAL_MHYDROGEN = 20, MATERIAL_PLASMAGLASS = 60, MATERIAL_PLASMA = 100)
 	price_tag = 0 //We have no buyer
 	sanity_damage = 4 //Looks nice!

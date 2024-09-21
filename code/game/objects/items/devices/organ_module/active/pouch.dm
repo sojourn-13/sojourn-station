@@ -30,3 +30,11 @@
 		var/mob/living/carbon/human/H = E.owner
 		H.stats.changeStat(STAT_TGH, 15)
 		H.stats.add_Stat_cap(STAT_TGH, 15)
+
+/obj/item/organ_module/active/simple/ammo_pouch
+	name = "embedded ammo pouch"
+	desc = "An ammo pouch, typically given to combat synths that require more ammo."
+	verb_name = "Deploy ammo pouch"
+	icon_state = "small_implanted"
+	completely_hide_from_scanners = FALSE
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)

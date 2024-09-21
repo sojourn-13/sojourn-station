@@ -425,8 +425,8 @@
 	embed_mult = 0
 
 /obj/item/tool/robotic_omni/surgery
-	name = "Surgery omni tool"
-	desc = "A surgery omni tool for borgs, uses internal power cell rather then its own."
+	name = "Surgery omnitool"
+	desc = "A surgery omnitool for cyborgs, uses the cyborg's own power supply to function. Essentially a less mobile version of the Soteria branded omnitool."
 	icon_state = "medimplant"
 	tool_qualities = list(QUALITY_CLAMPING = 60,
 						  QUALITY_RETRACTING = 60,
@@ -439,8 +439,8 @@
 						  QUALITY_DRILLING = 40)
 
 /obj/item/tool/robotic_omni/engi
-	name = "Engi omni tool"
-	desc = "Omni tool for Engineering borgs and the like has almost everything you need!"
+	name = "Engineering omnitool"
+	desc = "Omnitool for Engineering cyborgs and the like. Heavy duty monster of multifunctionality and quality."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 40,
 						  QUALITY_HAMMERING = 45,
@@ -453,8 +453,8 @@
 						  QUALITY_DRILLING = 60)
 
 /obj/item/tool/robotic_omni/standard
-	name = "Standard omni tool"
-	desc = "Omni tool for standard borgs and the like has almost everything you need!"
+	name = "Standard omnitool"
+	desc = "Omnitool for standard cyborgs and the like. Has basic, but well-performing qualities."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 40,
 						  QUALITY_HAMMERING = 30,
@@ -465,8 +465,8 @@
 						  QUALITY_SCREW_DRIVING = 40)
 
 /obj/item/tool/robotic_omni/miner
-	name = "Miner omni tool"
-	desc = "Omni tool for mining borgs and the like has almost everything you need other then a way to drill..."
+	name = "Mining omnitool"
+	desc = "Omnitool for mining cyborgs and the like. Heavy duty utility in almost everything, with no way to mine rock."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 40,
 						  QUALITY_HAMMERING = 30,
@@ -476,8 +476,8 @@
 						  QUALITY_SCREW_DRIVING = 40)
 
 /obj/item/tool/robotic_omni/sec
-	name = "Security omni tool"
-	desc = "Omni tool for Security borgs, mostly just for cutting up body and clearing borrows."
+	name = "Security omnitool"
+	desc = "Omnitool for Security cyborgs. Used for upturning and sealing burrows as well as cut up carcasses. Has additional functionality for firearm manipulation."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
 						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
@@ -489,8 +489,8 @@
 						  QUALITY_DIGGING = 40)
 
 /obj/item/tool/robotic_omni/cleaner
-	name = "Borrow Omni tool"
-	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing borrows."
+	name = "Burrow Omnitool"
+	desc = "Omnitool for Custodial cyborgs. Used for upturning and sealing up burrows as well as cut up carcasses."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
 						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
@@ -500,8 +500,8 @@
 						  QUALITY_SCREW_DRIVING = 40) //Tiles and the like
 
 /obj/item/tool/robotic_omni/sci
-	name = "Science Omni tool"
-	desc = "Omni tool for Science borgs, has a bit of everything but also leaves a lot to be wanted."
+	name = "Science Omnitool"
+	desc = "Omnitool for Science cyborgs. Has extensive tool qualities but subpar performance when compared to more specialized tools."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 30,
 						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements

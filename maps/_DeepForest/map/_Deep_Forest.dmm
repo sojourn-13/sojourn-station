@@ -626,7 +626,7 @@
 	name = "Abandoned Bunker"
 	})
 "aya" = (
-/obj/item/gun/energy/tesla_gun,
+/obj/item/gun/energy/tesla_shotgun,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "ayn" = (
@@ -23283,7 +23283,7 @@
 /area/nadezhda/outside/one_star)
 "ozJ" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/box/syndie_kit/antimaterial_rifle,
+/obj/item/storage/box/syndie_kit/antimateriel_rifle,
 /obj/random/contraband,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)

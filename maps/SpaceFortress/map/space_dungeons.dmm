@@ -7530,7 +7530,7 @@
 /area/outpost/abandoned_fortress/powered)
 "Ms" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/box/syndie_kit/antimaterial_rifle,
+/obj/item/storage/box/syndie_kit/antimateriel_rifle,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "Mu" = (

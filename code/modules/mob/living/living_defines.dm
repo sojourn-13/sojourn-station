@@ -1,5 +1,5 @@
 /mob/living
-	see_in_dark = 7 //Makes it easyer for most mobs
+	see_in_dark = 7 //Makes it easier for most mobs
 	see_invisible = SEE_INVISIBLE_LIVING
 
 	//Health and life related vars

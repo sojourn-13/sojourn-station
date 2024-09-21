@@ -50,8 +50,26 @@
 	verb_name = "Deploy energyblade"
 	icon_state = "energyblade"
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
-	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
+	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3)
 	holding_type = /obj/item/melee/energy/blade/organ_module
+
+/obj/item/organ_module/active/simple/armblade/baton
+	name = "Embedded baton"
+	desc = "A baton designed to be inserted into an arm. Good for LTL CQC."
+	verb_name = "Deploy Baton"
+	icon_state = "armblade"
+	matter = list(MATERIAL_STEEL = 16, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/tool/baton
+
+/obj/item/organ_module/active/simple/armblade/telescopic_baton
+	name = "Embedded telescopic baton"
+	desc = "A telescopic baton designed to be inserted into an arm. Good for CQC."
+	verb_name = "Deploy Baton"
+	icon_state = "armblade"
+	matter = list(MATERIAL_STEEL = 16, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 1)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/melee/telebaton
 
 /obj/item/organ_module/active/simple/armblade/bs_tomahawk
 	name = "Embedded Blackshield Tomahawk"

@@ -253,4 +253,4 @@
 	icon_state = "weaponcrate"
 
 /obj/structure/closet/crate/secure/weapon/amr/populate_contents()
-	new /obj/item/storage/box/syndie_kit/antimaterial_rifle(src)
+	new /obj/item/storage/box/syndie_kit/antimateriel_rifle(src)
