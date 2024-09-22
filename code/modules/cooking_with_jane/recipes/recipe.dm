@@ -1578,9 +1578,9 @@
 	product_type = /obj/item/reagent_containers/food/snacks/poppy_tisane
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppy", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppy", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppy", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_STOVE, J_LO, 60 SECONDS) //A bit long, this is a bottleneck to mass producing better medicine but has its own advantages.
 	)
