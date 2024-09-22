@@ -708,7 +708,6 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Verdana (Default)"] = "Verdana"
-	options["Times New Roman"] = "Times New Roman"
 	options["Segoe Script"] = "Segoe Script"
 	options["cursive"] = "cursive"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
