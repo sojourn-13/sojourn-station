@@ -45,6 +45,7 @@
 	options["Hallow Helmet"] = list(0.75,0.13,0.13,0, 0.13,0.7,0.13,0, 0.13,0.13,0.75,0, -0.06,-0.09,-0.08,1, 0,0,0,0)
 	options["Monochrome"] = COLOR_MATRIX_GRAYSCALE
 	options["Sepiatone"] = COLOR_MATRIX_SEPIATONE
+	options["Dark Sepiatone"] = list(0.393,0.349,0.272,0, 0.769,0.686,0.534,0, 0.189,0.168,0.131,0, -0.06,-0.09,-0.08,1, 0,0,0,0)
 	options["BRG"] = COLOR_MATRIX_BRG
 	options["Cyan"] = "#00FFFF"
 	options["Light Gray"] = "#cccccc"
