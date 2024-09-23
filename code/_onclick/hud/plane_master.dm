@@ -1,7 +1,7 @@
 /obj/screen/plane_master
 	screen_loc = "CENTER"
 	icon_state = "blank"
-	appearance_flags = PLANE_MASTER|DEFAULT_APPEARANCE_FLAGS //NO_CLIENT_COLOR is taken off so that BRG works
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR|DEFAULT_APPEARANCE_FLAGS
 	blend_mode = BLEND_OVERLAY
 	var/show_alpha = 255
 	var/hide_alpha = 0
