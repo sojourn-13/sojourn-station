@@ -710,6 +710,7 @@
 	options["Verdana (Default)"] = "Verdana"
 	options["Segoe Script"] = "Segoe Script"
 	options["cursive"] = "cursive"
+	options["monospace"] = "monospace"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
