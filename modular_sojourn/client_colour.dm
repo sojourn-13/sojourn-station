@@ -41,7 +41,7 @@
 	set desc = "Change your view filter from a set of pre-defined types"
 
 	var/list/options = list()
-	options["RESET/CLEAR"] = ""
+	options["RESET/CLEAR"] = null
 	options["Hallow Helmet"] = list(0.75,0.13,0.13,0, 0.13,0.7,0.13,0, 0.13,0.13,0.75,0, -0.06,-0.09,-0.08,1, 0,0,0,0)
 	options["Monochrome"] = COLOR_MATRIX_GRAYSCALE
 	options["Sepiatone"] = COLOR_MATRIX_SEPIATONE
