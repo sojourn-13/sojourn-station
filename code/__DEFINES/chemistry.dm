@@ -48,6 +48,7 @@
 #define IS_OPIFEX 9
 #define IS_NARAMAD 10
 #define IS_CINDARITE 11
+#define IS_TAJ 12
 
 #define CE_STABLE			"stable" // Inaprovaline
 #define CE_ANTIBIOTIC		"antibiotic" // Spaceacilin
