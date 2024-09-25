@@ -431,14 +431,14 @@
 
 //Mushrooms/varieties.
 /datum/seed/mushroom
-	name = "mushrooms"
+	name = "chanterelle"
 	seed_name = "chanterelle"
 	seed_noun = "spores"
 	display_name = "chanterelle mushrooms"
 	mutants = list("reishi","amanita","plumphelmet")
 	chems = list("nutriment" = list(1,25))
 	splat_type = /obj/effect/plant
-	kitchen_tag = "mushroom"
+	kitchen_tag = "chanterelle"
 
 /datum/seed/mushroom/New()
 	..()
@@ -528,6 +528,7 @@
 	display_name = "liberty cap mushrooms"
 	mutants = null
 	chems = list("nutriment" = list(1), "stoxin" = list(3,3), "space_drugs" = list(1,25))
+
 
 /datum/seed/mushroom/hallucinogenic/strong/New()
 	..()

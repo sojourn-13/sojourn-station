@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheeseburger
 	name = "cheeseburger"
-	desc = "The cheese adds a good flavor."
+	desc = "A normal burger apart from the addition of a yellow square of cheese."
 	icon_state = "cheeseburger"
 	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	center_of_mass = list("x"=16, "y"=11)
@@ -39,7 +39,7 @@
 
 /obj/item/reagent_containers/food/snacks/monkeyburger
 	name = "burger"
-	desc = "Meatkind come together, united between fluffy buns." // Pax hamburgana.
+	desc = "A burger made with a simple meat patty." // Pax hamburgana.
 	icon_state = "hburger"
 	taste_tag = list(MEAT_FOOD)
 	filling_color = "#D63C3C"
@@ -53,7 +53,7 @@
 
 /obj/item/reagent_containers/food/snacks/fishburger
 	name = "fillet-o-carp sandwich"
-	desc = "Almost like a carp is yelling somewhere... Give me back that fillet-o-carp, give me that carp."
+	desc = "A fried and bunned slab of carp fillet."
 	icon_state = "fishburger"
 	taste_tag = list(MEAT_FOOD)
 	filling_color = "#FFDEFE"
@@ -65,7 +65,7 @@
 
 /obj/item/reagent_containers/food/snacks/baconburger
 	name = "bacon burger"
-	desc = "What makes a burger even more perfect? The addition of bacon, of course."
+	desc = "A normal burger apart from some strips of bacon added."
 	icon_state = "baconburger"
 	taste_tag = list(MEAT_FOOD, SALTY_FOOD)
 	bitesize = 3
@@ -76,7 +76,7 @@
 
 /obj/item/reagent_containers/food/snacks/chickenburger
 	name = "poultry fried steak sandwich"
-	desc =	"A burger consisting of crispy fried poultry instead of a patty, a classic alternative for those who prefer chicken or whatever tastes closest to it."
+	desc = "A burger consisting of crispy fried poultry instead of a patty, a classic alternative."
 	icon_state = "chickenburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
@@ -87,7 +87,7 @@
 
 /obj/item/reagent_containers/food/snacks/tofuburger
 	name = "tofu burger"
-	desc = "What.. is that meat?"
+	desc = "A burger that was made with tofu over a meat patty."
 	icon_state = "tofuburger"
 	taste_tag = list(BLAND_FOOD)
 	filling_color = "#FFFEE0"
@@ -133,7 +133,7 @@
 
 /obj/item/reagent_containers/food/snacks/xenoburger
 	name = "xenoburger"
-	desc = "Smells caustic. Tastes like heresy."
+	desc = "A burger set apart from others by its use of xenomorph meat."
 	taste_tag = list(MEAT_FOOD)
 	icon_state = "xburger"
 	filling_color = "#43DE18"
@@ -182,7 +182,7 @@
 
 /obj/item/reagent_containers/food/snacks/jellyburger
 	name = "jelly burger"
-	desc = "Culinary delight..?"
+	desc = "A burger made with jelly as the patty."
 	taste_tag = list(SWEET_FOOD)
 	icon_state = "jellyburger"
 	filling_color = "#B572AB"
@@ -200,7 +200,7 @@
 
 /obj/item/reagent_containers/food/snacks/bigbiteburger
 	name = "big bite burger"
-	desc = "Forget the Big Mac. THIS is the future! It has big \"R\" stamped on it's bun."
+	desc = "A large stack of patties and toppings."
 	icon_state = "bigbiteburger"
 	taste_tag = list(MEAT_FOOD)
 	filling_color = "#E3D681"
@@ -212,9 +212,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 60)
 
+/obj/item/reagent_containers/food/snacks/bigbiteburger/cargo
+	desc = "A large stack of parrties and toppings. It has big \"R\" stamped on it's bun."
+
 /obj/item/reagent_containers/food/snacks/superbiteburger
 	name = "super bite burger"
-	desc = "This is a mountain of a burger. FOOD!"
+	desc = "A towering burger with all kinds of toppings and seasonings."
 	icon_state = "superbiteburger"
 	taste_tag = list(MEAT_FOOD)
 	filling_color = "#CCA26A"
@@ -230,7 +233,7 @@
 
 /obj/item/reagent_containers/food/snacks/kampferburger
 	name = "kampfer burger"
-	desc = "A burger made out of a kampfer roach. Tasty but chewy."
+	desc = "A burger made out of a kampfer roach."
 	icon_state = "kampferburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 1
@@ -243,7 +246,7 @@
 
 /obj/item/reagent_containers/food/snacks/panzerburger
 	name = "panzer burger"
-	desc = "A burger made out of a panzer roach. Surprisingly heavy."
+	desc = "A burger made out of a panzer roach."
 	icon_state = "panzerburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
@@ -256,7 +259,7 @@
 
 /obj/item/reagent_containers/food/snacks/jagerburger
 	name = "jager burger"
-	desc = "A burger made out of a jager roach. The hunter becomes the hunted."
+	desc = "A burger made out of a jager roach."
 	icon_state = "jagerburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 2
@@ -269,7 +272,7 @@
 
 /obj/item/reagent_containers/food/snacks/seucheburger
 	name = "seuche burger"
-	desc = "A burger made out of a seuche roach. This can't be healthy."
+	desc = "A burger made out of a seuche roach."
 	icon_state = "seucheburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 2
@@ -295,20 +298,20 @@
 
 /obj/item/reagent_containers/food/snacks/fuhrerburger
 	name = "fuhrer burger"
-	desc = "A burger made out of a fuhrer roach. Consume the king of bugs."
+	desc = "A burger made out of a fuhrer roach."
 	icon_state = "fuhrerburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
-	preloaded_reagents = list("protein" = 8, "Fuhrole" = 3)
+	preloaded_reagents = list("protein" = 8) // Fuhrole
 	matter = list(MATERIAL_BIOMATTER = 20)
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/kaiserburger
-	name = "kaiser Burger"
-	desc = "The rarest experience for your taste buds"
+	name = "kaiser burger"
+	desc = "A burger made out of a kaiser roach."
 	icon_state = "kaiserburger"
 	taste_tag = list(MEAT_FOOD)
 	bitesize = 3

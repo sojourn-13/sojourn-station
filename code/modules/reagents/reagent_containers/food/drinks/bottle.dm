@@ -172,21 +172,21 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
 	name = "Griffeater Gin"
-	desc = "A bottle of high quality gin, produced in the New London Space Station."
+	desc = "A bottle of high quality gin."
 	icon_state = "ginbottle"
 	center_of_mass = list("x"=16, "y"=4)
 	preloaded_reagents = list("gin" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
 	name = "Uncle Git's Special Reserve Whiskey"
-	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
+	desc = "A premium single-malt whiskey, gently matured."
 	icon_state = "whiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	preloaded_reagents = list("whiskey" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
 	name = "Tunguska Triple Distilled Vodka"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
+	desc = "A brand of vodka known for being cheap and mass produced."
 	icon_state = "vodkabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	preloaded_reagents = list("vodka" = 100)
@@ -214,14 +214,14 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
 	name = "Captain Pete's Cuban Spiced Rum"
-	desc = "This isn't just rum, oh no. It's practically GRIFF in a bottle."
+	desc = "A brand of rum beloved by pirates and bandits."
 	icon_state = "rumbottle"
 	center_of_mass = list("x"=16, "y"=8)
 	preloaded_reagents = list("rum" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rombuty
 	name = "Captain Flint's Secret Rum"
-	desc = "For some reason, to you, the label on this bottle reads the same as Death."
+	desc = "A premium brand of rum."
 	icon_state = "rombuty"
 	item_state = "rombuty"
 	center_of_mass = list("x"=16, "y"=8)
@@ -229,35 +229,35 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Goldeneye Vermouth"
-	desc = "Sweet, sweet dryness~"
+	desc = "Sweet, sweet dryness."
 	icon_state = "vermouthbottle"
 	center_of_mass = list("x"=17, "y"=3)
 	preloaded_reagents = list("vermouth" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Robert Robust's Coffee Kahlua"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936."
+	desc = "A brand of coffee-flavoured liqueur."
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	preloaded_reagents = list("kahlua" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
-	name = "College Girl Goldschlager"
-	desc = "Because they are the only ones who will drink 100 proof cinnamon schnapps."
+	name = "John Prince's Goldschlager"
+	desc = "A generic brand of goldschlager."
 	icon_state = "goldschlagerbottle"
 	center_of_mass = list("x"=15, "y"=3)
 	preloaded_reagents = list("goldschlager" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
 	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	desc = "A strong alchoholic drink, made after numerous distillations and years of maturing."
 	icon_state = "cognacbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("cognac" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/wine
 	name = "Doublebeard Bearded Special Wine"
-	desc = "A faint aura of unease and asspainery surrounds the bottle."
+	desc = "A bottle of well aged wine."
 	icon_state = "winebottle"
 	center_of_mass = list("x"=16, "y"=4)
 	preloaded_reagents = list("wine" = 100)
@@ -271,7 +271,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
 	name = "Jailbreaker Absinthe"
-	desc = "One sip of this and you just know you're gonna have a good time."
+	desc = "A brand of Absinthe."
 	icon_state = "absinthebottle"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("absinthe" = 100)
@@ -286,7 +286,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/bluecuracao
 	name = "Miss Blue Curacao"
-	desc = "A fruity, exceptionally azure drink. Does not allow the imbiber to use the fifth magic."
+	desc = "A fruity, exceptionally azure drink."
 	icon_state = "alco-blue"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("bluecuracao" = 100)
@@ -302,7 +302,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/nanatsunoumi
 	name = "Nanatsunoumi"
-	desc = "A harsh salty alcohol that is from Japanese origin."
+	desc = "A harsh salty alcohol."
 	icon_state = "alco-white"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("nanatsunoumi" = 100)
@@ -317,7 +317,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cola
 	name = "\improper Space Cola"
-	desc = "Cola. in space"
+	desc = "A can of Space Cola branded cola"
 	icon_state = "colabottle"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("cola" = 100)
@@ -345,14 +345,14 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
-	desc = "A bottle of pure Fernet Bronca, imported from Cordoba Space Station."
+	desc = "A bottle of pure Fernet Bronca."
 	icon_state = "fernetbottle"
 	center_of_mass = list("x"=16, "y"=4)
 	preloaded_reagents = list("fernet" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/neulandschnapps
 	name = "Neuland Himbeergeist"
-	desc = "A kriosan-approved spirits covered in german text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
+	desc = "A kriosan-approved spirits covered in Kriosan text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
 	icon_state = "neulandschnapps"
 	icon_state_empty = "neulandschnapps"
 	center_of_mass = list("x"=16, "y"=6)
@@ -362,7 +362,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
 	name = "Orange Juice"
-	desc = "Full of vitamins and deliciousness!"
+	desc = "Full of vitamins."
 	icon_state = "orangejuice"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=7)
@@ -371,7 +371,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "Milk Cream"
-	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
+	desc = "Cream made from milk."
 	icon_state = "cream"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)
@@ -380,7 +380,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "Tomato Juice"
-	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
+	desc = "A carton of tomato juice."
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)
@@ -389,7 +389,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "Lime Juice"
-	desc = "Sweet-sour goodness."
+	desc = "A carton of lime juice."
 	icon_state = "limejuice"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)
@@ -398,7 +398,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "Pineapple Juice"
-	desc = "Sweet, tangy juice. Imported from nearby colony's"
+	desc = "A carton of pineapple juice."
 	icon_state = "pineapplejuice"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=7)
@@ -428,7 +428,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/ale
 	name = "\improper Magm-Ale"
-	desc = "A true dorf's drink of choice."
+	desc = "A small bottle of ale."
 	icon_state = "alebottle"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
@@ -436,7 +436,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/kvass
 	name = "Magpie Kvass"
-	desc = "A traditional russian drink. Made with in colony ingredients."
+	desc = "A traditional drink of kvass."
 	icon_state = "Kvass_Bottle"
 	isGlass = 0
 	center_of_mass = list("x"=16, "y"=12)

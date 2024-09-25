@@ -62,7 +62,7 @@
 
 /obj/item/reagent_containers/food/snacks/candy/sunflowerseeds
 	name = "sunflower fried seed pack"
-	desc = "Bag of sunflower seeds that have been fried and salted for people that like to chew their food for way to long."
+	desc = "Bag of sunflower seeds that have been baked and salted for people that like to chew their food for way to long."
 	icon_state = "semki_pack"
 	taste_tag = list(SALTY_FOOD)
 	trash = /obj/item/trash/semki
@@ -85,7 +85,7 @@
 
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
-	desc = "It's a handful of candy corn. Cannot be stored in a detective's hat, alas."
+	desc = "A large candy corn."
 	icon_state = "candy_corn"
 	taste_tag = list(SWEET_FOOD)
 	filling_color = "#FFFCB0"
@@ -170,7 +170,7 @@
 /obj/item/reagent_containers/food/snacks/openable/chips
 	name = "chips packet"
 	desc = "An unbranded packet of crisps. Salty."
-	icon_state = "lays_green"
+	icon_state = "lays"
 	taste_tag = list(SALTY_FOOD)
 	trash = /obj/item/trash/chips
 	filling_color = "#E8C31E"
@@ -200,8 +200,8 @@
 	name = "syndi-cakes"
 	icon_state = "syndi_cakes" //Sprite by Michiyamenotehifunana
 	taste_tag = list(SWEET_FOOD)
-	desc = "An extremely moist snack cake that tastes just as good after being nuked."
-	alt_desc = "An open packet of extremely moist snack cake that tastes just as good after being nuked."
+	desc = "An extremely moist snack cake."
+	alt_desc = "An open packet of extremely moist snack cake."
 	filling_color = "#FF5D05"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=10)
@@ -243,8 +243,8 @@
 
 /obj/item/reagent_containers/food/snacks/openable/liquidfood
 	name = "\improper liquidfood ration"
-	desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Should this be crunchy?"
-	alt_desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Looking inside tends to loose your apatite."
+	desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go."
+	alt_desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Has a quick shelf life after being opend."
 	taste_tag = list(BLAND_FOOD)
 	icon_state = "liquidfood" //Sprite by Michiyamenotehifunana
 	trash = /obj/item/trash/liquidfood
@@ -259,8 +259,8 @@
 
 /obj/item/reagent_containers/food/snacks/openable/tastybread
 	name = "bread tube"
-	desc = "Bread in a tube. Chewy...and surprisingly tasty."
-	alt_desc = "Bread halfway in a tube. Chewy...and surprisingly tasty."
+	desc = "Bread in a tube. Chewy and light as a snack."
+	alt_desc = "Bread halfway in a tube. Chewy and light as a snack."
 	taste_tag = list(SWEET_FOOD)
 	icon_state = "tastybread" //Sprite by Michiyamenotehifunana
 	trash = /obj/item/trash/tastybread
