@@ -72,7 +72,7 @@
 	if(status_flags & GODMODE)	//godmode
 		return 0
 	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
-		return
+		return 0
 	if(status_flags & HARDCRIT)	//already in hardcrit
 		return
 
