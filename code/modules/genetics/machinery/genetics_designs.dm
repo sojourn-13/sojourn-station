@@ -3,7 +3,7 @@ Designs for various genetics components
 
 */
 /datum/design/autolathe/genetics/cloner
-	name = "Belvoix Xenofauna Cloning Vat Board"
+	name = "Soteria Xenofauna Cloning Vat Board"
 	build_path = /obj/item/circuitboard/genetics/cloner
 
 /datum/design/autolathe/genetics/clone_console
