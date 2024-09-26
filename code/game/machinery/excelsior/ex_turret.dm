@@ -342,9 +342,6 @@
 	if(get_dist(src, L) > 7)
 		return TURRET_NOT_TARGET
 
-	//if(!check_trajectory(L, src))
-		//return TURRET_NOT_TARGET
-
 	if(L.stat == DEAD)
 		return TURRET_NOT_TARGET
 
@@ -505,5 +502,5 @@
 #undef TURRET_SECONDARY_TARGET
 #undef TURRET_NOT_TARGET
 
-/*if(!check_trajectory(L, src)) 
+/*if(!check_trajectory(L, src))    unknown function. Was used in both settings lists
 	return TURRET_NOT_TARGET
