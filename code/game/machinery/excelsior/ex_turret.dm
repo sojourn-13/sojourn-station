@@ -504,3 +504,4 @@
 
 /*if(!check_trajectory(L, src))    unknown function. Was used in both settings lists
 	return TURRET_NOT_TARGET
+*/
