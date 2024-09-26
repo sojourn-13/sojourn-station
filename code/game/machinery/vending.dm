@@ -175,7 +175,7 @@
 	var/datum/wires/vending/wires = null
 	var/always_open	=	FALSE // If true, this machine allows products to be inserted without requirinf the maintenance hatch to be screwed open first
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
-	var/list/blacklisted = list() //Items that are not allowed for the vender to use if custom
+	var/list/blacklisted = list() //Items that are not allowed for the vendor to use if custom
 
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
@@ -1007,7 +1007,7 @@
 						/obj/item/shield/riot/crusader/psionic,
 						/obj/item/stack/medical/bruise_pack/psionic,
 
-	) //Items that are not allowed for the vender to use if custom
+	) //Items that are not allowed for the vendor to use if custom
 
 	//No.
 	give_discounts = FALSE
