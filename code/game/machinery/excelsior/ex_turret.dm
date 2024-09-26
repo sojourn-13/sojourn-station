@@ -107,8 +107,7 @@
 	if(get_dist(src, L) > 7)
 		return TURRET_NOT_TARGET
 
-	//if(!check_trajectory(L, src))
-		//return TURRET_NOT_TARGET
+	
 
 	if(emagged)		// If emagged not even the dead get a rest
 		return L.stat ? TURRET_SECONDARY_TARGET : TURRET_PRIORITY_TARGET
@@ -505,3 +504,6 @@
 #undef TURRET_PRIORITY_TARGET
 #undef TURRET_SECONDARY_TARGET
 #undef TURRET_NOT_TARGET
+
+/*if(!check_trajectory(L, src)) 
+	return TURRET_NOT_TARGET
