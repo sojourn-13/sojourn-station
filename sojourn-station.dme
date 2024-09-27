@@ -1910,6 +1910,7 @@
 #include "code\modules\cooking_with_jane\cooking_items\dollop.dm"
 #include "code\modules\cooking_with_jane\cooking_items\frosting.dm"
 #include "code\modules\cooking_with_jane\cooking_items\spatula.dm"
+#include "code\modules\cooking_with_jane\recipes\cubes.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_burger.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_donuts.dm"
