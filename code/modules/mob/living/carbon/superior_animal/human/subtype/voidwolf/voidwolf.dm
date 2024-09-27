@@ -27,7 +27,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	fire_verb = "fires"
-	var/block_chance = 0
+	var/block_chance = FALSE
 
 	target_telegraph = "fumbles to ready their weapon, preparing to engage"
 	rush_target_telegraph = "quickly snaps their aim toward"
@@ -522,7 +522,7 @@
 	armor_divisor = 4
 	melee_damage_type = BRUTE
 	meat_amount = 0
-	block_chance = 0
+	block_chance = FALSE
 	ranged = TRUE
 	rapid = TRUE
 	rapid_fire_shooting_amount = 4
