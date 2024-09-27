@@ -440,8 +440,8 @@
 	base_block_chance = 70
 	attack_verb = list("smashed", "bashed")
 	armor_list = list(melee = 3, bullet = 5, energy = 2, bomb = 0, bio = 0, rad = 0)
-	max_durability = 250 //So we can brake and need healing time to time
-	durability = 250
+	max_durability = 500 //Basically a hardsuit mounted deployable wall, lasts during combat
+	durability = 500
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
