@@ -1,0 +1,598 @@
+"ae" = (/obj/machinery/washing_machine,/turf/simulated/floor/tiled/cafe,/area/space)
+"ah" = (/obj/structure/closet/random_medsupply,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/tiled/white/panels,/area/space)
+"aC" = (/obj/structure/bed/chair/sofa/teal{dir = 1},/turf/simulated/floor/wood,/area/space)
+"aD" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/turf/simulated/floor/wood/wild3,/area/space)
+"aP" = (/obj/effect/window_lwall_spawn/reinforced,/obj/effect/window_lwall_spawn/reinforced,/turf/space,/area/space)
+"aR" = (/obj/structure/table/rack/shelf,/obj/random/gun_combat,/obj/random/gun_combat,/obj/random/dungeon_gun_energy/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"aU" = (/obj/structure/mopbucket,/obj/item/reagent_containers/glass/bucket,/obj/item/mop,/turf/simulated/floor/tiled/techmaint,/area/space)
+"aV" = (/obj/structure/table/standard,/obj/item/oddity/common/towel,/obj/item/soap,/turf/simulated/floor/tiled/techmaint,/area/space)
+"aX" = (/obj/effect/floor_decal/industrial/loading,/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id = "maint_hatch_telecomm"; layer = 2.6; name = "Emergency Lockdown Armory"; opacity = 0},/turf/simulated/floor/tiled/dark,/area/space)
+"ba" = (/obj/structure/table/woodentable,/obj/item/device/radio/phone,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"bc" = (/obj/structure/closet/random_milsupply,/obj/item/contraband/poster/placed/generic/space_cops{pixel_y = -32},/turf/simulated/floor/tiled/dark,/area/space)
+"bi" = (/obj/structure/table/woodentable,/obj/item/cardholder,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"bl" = (/obj/structure/closet/toolcloset,/turf/simulated/floor/tiled/dark,/area/space)
+"bu" = (/obj/structure/railing/grey,/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"bC" = (/obj/item/stool/padded,/turf/simulated/floor/wood/wild3,/area/space)
+"bI" = (/obj/effect/floor_decal/industrial/loading{dir = 1},/obj/machinery/door/blast/regular{name = "Emergency Lockdown Armory"},/turf/simulated/floor/tiled/dark,/area/space)
+"ch" = (/turf/simulated/floor/wood,/area/space)
+"cm" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"cp" = (/obj/effect/window_lwall_spawn/reinforced,/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/tiled/dark,/area/space)
+"cz" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/structure/cardboardbox,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"cC" = (/obj/machinery/conveyor/south{id = "sh_belt"},/obj/landmark/machinery/input,/turf/simulated/floor/plating/under,/area/space)
+"cF" = (/obj/machinery/chem_master,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"cK" = (/obj/machinery/vending/coffee,/turf/simulated/floor/wood,/area/space)
+"cL" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/wood/wild3,/area/space)
+"cY" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/dark,/area/space)
+"df" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/wood/wild5,/area/space)
+"dk" = (/obj/structure/table/woodentable,/obj/item/device/radio/phone,/turf/simulated/floor/tiled/cafe,/area/space)
+"dm" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 4; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/tiled/dark,/area/space)
+"du" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled/techmaint,/area/space)
+"dE" = (/obj/machinery/power/port_gen/pacman/diesel/anchored,/obj/structure/cable{icon_state = "0-4"},/turf/simulated/floor/plating/under,/area/space)
+"dG" = (/obj/structure/table/standard,/obj/item/soap,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"dK" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/wood/wild3,/area/space)
+"dT" = (/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ea" = (/obj/machinery/power/port_gen/pacman/diesel/anchored,/obj/structure/cable{dir = 1},/turf/simulated/floor/plating/under,/area/space)
+"ee" = (/obj/structure/salvageable/autolathe,/turf/simulated/floor/tiled/dark,/area/space)
+"ef" = (/obj/structure/table/rack/shelf,/obj/random/voidsuit/damaged/low_chance,/obj/random/voidsuit/damaged/low_chance,/obj/random/voidsuit/damaged/low_chance,/obj/random/voidsuit/damaged,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"el" = (/obj/structure/table/gamblingtable,/obj/item/reagent_containers/syringe/drugs_recreational,/obj/item/reagent_containers/syringe/drugs_recreational,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"eq" = (/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"et" = (/obj/structure/reagent_dispensers/fueltank,/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/tiled/dark,/area/space)
+"eD" = (/obj/item/stool/custom/bar_special,/turf/simulated/floor/wood,/area/space)
+"eN" = (/obj/machinery/recharger,/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"eO" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"eT" = (/obj/effect/floor_decal/industrial/danger{dir = 4; tag = "icon-danger (EAST)"},/obj/structure/bed/chair/office/light{dir = 1; name = "militia commander seat"},/turf/simulated/floor/tiled/dark,/area/space)
+"fb" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/turf/simulated/floor/plating/under,/area/space)
+"fc" = (/obj/structure/railing/grey,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"fd" = (/obj/structure/catwalk,/obj/structure/computerframe,/turf/simulated/floor/plating/under,/area/space)
+"fk" = (/obj/machinery/mineral/processing_unit_console/scrap_haven{pixel_x = 28},/obj/structure/window/basic{dir = 8},/obj/structure/catwalk,/obj/machinery/conveyor_switch/oneway{id = "sh_belt"; name = "mining conveyor"},/turf/simulated/floor/plating/under,/area/space)
+"fm" = (/turf/simulated/floor/wood/wild5,/area/space)
+"fn" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/syndie_kit/spy,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"fr" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/wood/wild3,/area/space)
+"ft" = (/obj/structure/window/basic{dir = 8},/turf/simulated/floor/tiled/white,/area/space)
+"fP" = (/obj/structure/catwalk,/obj/structure/catwalk,/obj/structure/table/rack/shelf,/obj/random/gun_combat,/obj/random/gun_combat,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/plating/under,/area/space)
+"fT" = (/obj/item/reagent_containers/food/snacks/chocolatecoin,/turf/simulated/floor/wood,/area/space)
+"gf" = (/obj/structure/toilet{dir = 4},/turf/simulated/floor/wood/wild3,/area/space)
+"gg" = (/turf/simulated/wall/wood_old,/area/space)
+"gk" = (/obj/machinery/computer{stat = 1; dir = 8},/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"gr" = (/obj/structure/window/reinforced,/obj/structure/table/standard,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"gw" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"gA" = (/obj/structure/table/steel_reinforced,/obj/item/device/flash,/turf/simulated/floor/tiled/dark,/area/space)
+"gL" = (/turf/space,/turf/simulated/floor/asteroid,/area/space)
+"gM" = (/obj/machinery/light/small{dir = 1},/obj/structure/closet,/obj/item/tank/anesthetic,/obj/item/storage/box/masks,/obj/item/clothing/mask/gas/old,/turf/simulated/floor/tiled/white/panels,/area/space)
+"gW" = (/obj/structure/table/rack/shelf,/obj/item/tank/oxygen,/obj/item/tank/oxygen,/obj/item/tank/oxygen,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"ho" = (/obj/effect/window_lwall_spawn/smartspawn,/obj/structure/catwalk,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"hy" = (/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"hE" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"hL" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/structure/closet/crate/bin,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ia" = (/obj/machinery/light{dir = 1; light_color = "#0892d0"},/turf/simulated/floor/wood/wild3,/area/space)
+"ib" = (/obj/machinery/light/small{dir = 8},/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/tiled/techmaint,/area/space)
+"if" = (/obj/structure/catwalk,/obj/structure/cable{icon_state = "1-4"},/turf/simulated/floor/plating/under,/area/space)
+"ih" = (/obj/machinery/door/unpowered/simple/wood,/turf/space,/area/space)
+"in" = (/obj/structure/bed/chair/office/light{dir = 1; layer = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"iv" = (/obj/structure/reagent_dispensers/fueltank/huge/derelict,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/plating/under,/area/space)
+"ja" = (/obj/structure/window/reinforced,/obj/structure/table/standard,/obj/item/storage/firstaid/surgery/combat,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"jj" = (/obj/effect/floor_decal/industrial/hatch,/obj/random/structures,/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
+"jA" = (/obj/structure/table/rack/shelf,/obj/item/stack/cable_coil/blue,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"jF" = (/obj/machinery/power/port_gen/pacman/diesel/anchored,/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/space)
+"jJ" = (/obj/item/contraband/poster/placed/pinup/engineering,/turf/simulated/wall/r_wall,/area/space)
+"jK" = (/obj/effect/window_lwall_spawn/smartspawn,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"jR" = (/obj/structure/closet/wall_mounted/firecloset{pixel_x = -32},/obj/effect/floor_decal/industrial/warningred{dir = 8},/obj/effect/floor_decal/industrial/box/red/corners,/obj/effect/floor_decal/industrial/box/red/corners{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"jS" = (/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/random/booze/low_chance,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"jT" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/wood/wild3,/area/space)
+"jZ" = (/turf/simulated/floor/wood/wild3,/area/space)
+"kd" = (/obj/machinery/shower{dir = 4},/obj/effect/floor_decal/corner_techfloor_grid,/turf/simulated/floor/tiled/cafe,/area/space)
+"ke" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/item/clothing/head/hairflower/pink,/obj/item/device/assembly/signaler,/turf/simulated/floor/wood/wild3,/area/space)
+"kf" = (/obj/structure/closet/secure_closet/personal/miner,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"kk" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"ks" = (/obj/structure/table/rack/shelf,/obj/random/gun_combat,/obj/random/gun_combat,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"ku" = (/obj/structure/table/gamblingtable,/obj/random/credits/c1000,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"kE" = (/obj/structure/table/rack/shelf,/obj/random/tool,/obj/random/tool/advanced/always_spawn,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"kI" = (/obj/structure/bookcase/metal,/obj/item/gun/projectile/automatic/c20r/reaver_modded,/turf/simulated/floor/wood/wild3,/area/space)
+"kL" = (/obj/structure/toilet{dir = 4},/turf/simulated/floor/tiled/techmaint,/area/space)
+"kM" = (/obj/structure/catwalk,/obj/structure/closet/random_milsupply,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/plating/under,/area/space)
+"kR" = (/obj/structure/bed/chair/sofa/beige/right{dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"kX" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/wood/wild3,/area/space)
+"la" = (/obj/machinery/light/floor{dir = 8; pixel_x = -5},/turf/simulated/floor/wood/wild3,/area/space)
+"lm" = (/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"ln" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/plating/under,/area/space)
+"lw" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/wood/wild3,/area/space)
+"lx" = (/obj/machinery/computer{stat = 1; dir = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"lB" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall,/area/space)
+"lO" = (/obj/machinery/floodlight{name = "floodlight"; oldified = 1},/turf/simulated/floor/plating/under,/area/space)
+"lQ" = (/obj/structure/table/rack/shelf,/obj/item/reagent_containers/glass/bottle/petrel,/obj/item/reagent_containers/glass/bottle/petrel,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"lU" = (/obj/structure/urinal{pixel_y = 30; dir = 8},/turf/simulated/floor/tiled/cafe,/area/space)
+"mb" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "Plasma to Mixing"},/turf/simulated/floor/bluegrid,/area/space)
+"mh" = (/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"mo" = (/obj/structure/bed/chair/sofa/beige,/obj/structure/bed/chair/sofa/beige,/turf/simulated/floor/wood,/area/space)
+"mt" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"mC" = (/obj/effect/floor_decal/border/stoneborder{color = "8f8f8f"},/obj/structure/curtain/black,/obj/machinery/door/window/southleft{name = "shower door"; dir = 1},/turf/simulated/floor/tiled/cafe,/area/space)
+"mE" = (/obj/structure/table/rack/shelf,/obj/random/dungeon_ammo,/obj/random/dungeon_ammo/low_chance,/obj/random/dungeon_ammo/low_chance,/obj/random/dungeon_ammo/really_low_chance,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"mF" = (/obj/structure/bookcase/metal,/obj/item/gun/projectile/automatic/c20r/reaver_modded,/turf/simulated/floor/wood,/area/space)
+"mH" = (/obj/structure/table/steel_reinforced,/obj/item/device/radio/phone,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"mP" = (/obj/structure/table/steel_reinforced,/obj/item/device/radio/phone,/turf/simulated/floor/wood/wild3,/area/space)
+"mR" = (/obj/structure/cable/heavyduty,/obj/machinery/power/apc/critical{pixel_y = 32},/turf/simulated/floor/plating/under,/area/space)
+"nm" = (/obj/structure/mopbucket,/obj/item/reagent_containers/glass/bucket,/obj/item/mop,/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/shelf,/obj/structure/catwalk,/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/space)
+"nu" = (/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/obj/item/pen/blue,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"nz" = (/obj/structure/table/woodentable,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"nH" = (/obj/structure/reagent_dispensers/fueltank,/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"nP" = (/obj/structure/catwalk,/obj/machinery/door/blast/regular{name = "Emergency Lockdown Armory"},/turf/simulated/floor/plating/under,/area/space)
+"oc" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_armor_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"on" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"op" = (/obj/effect/floor_decal/industrial/danger{dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"or" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/syndie_kit/revolver,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"oJ" = (/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/turf/simulated/floor/wood/wild3,/area/space)
+"oU" = (/obj/effect/floor_decal/industrial/danger{dir = 4; tag = "icon-danger (EAST)"},/obj/structure/sign/warningnew/secure{pixel_y = 32},/turf/simulated/floor/wood/wild5,/area/space)
+"oY" = (/obj/structure/curtain/medical,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"pd" = (/obj/structure/sign/warningnew/secure{pixel_y = 32},/turf/simulated/floor/wood/wild3,/area/space)
+"pg" = (/obj/effect/floor_decal/industrial/danger{dir = 10},/turf/simulated/floor/wood/wild3,/area/space)
+"ph" = (/obj/structure/bed/chair/comfy/black{dir = 8},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"pn" = (/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"pq" = (/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/random/booze/low_chance,/obj/random/common_oddities/always_spawn,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"pr" = (/obj/structure/catwalk,/obj/machinery/door/airlock/multi_tile/metal{dir = 4; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/plating/under,/area/space)
+"ps" = (/obj/machinery/door/blast/shutters/glass{name = "Fireplace Cover"},/obj/structure/bonfire/permanent,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood/wild3,/area/space)
+"pM" = (/obj/structure/table/steel_reinforced,/obj/item/device/radio/phone,/turf/simulated/floor/tiled/dark,/area/space)
+"pS" = (/obj/item/clothing/head/hairflower,/turf/simulated/floor/wood/wild3,/area/space)
+"pV" = (/obj/machinery/door/blast/shutters/glass{name = "Window"},/turf/simulated/floor/wood/wild5,/area/space)
+"qj" = (/obj/structure/catwalk,/obj/structure/reagent_dispensers/fueltank{name = "empty fuel tank"; volume = 0},/turf/simulated/floor/plating/under,/area/space)
+"qm" = (/obj/structure/bed/chair/sofa/beige/right,/obj/structure/bed/chair/sofa/beige/right,/turf/simulated/floor/wood,/area/space)
+"qB" = (/obj/structure/sign/department/miner_dock,/turf/simulated/wall/r_wall,/area/space)
+"qF" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_armor_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"qM" = (/obj/machinery/computer{stat = 1; dir = 1},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"qR" = (/obj/structure/fireaxecabinet,/turf/simulated/wall/r_wall,/area/space)
+"qT" = (/obj/structure/table/rack/shelf,/obj/random/firstaid,/obj/random/firstaid,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/tiled/white/panels,/area/space)
+"qY" = (/obj/machinery/mineral/unloading_machine,/turf/simulated/floor/plating/under,/area/space)
+"qZ" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/tiled/techmaint,/area/space)
+"ru" = (/obj/item/oddity/common/blueprint,/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"rz" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"rD" = (/obj/structure/railing,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"rV" = (/obj/structure/urinal{pixel_y = 30},/turf/simulated/floor/tiled/techmaint,/area/space)
+"rZ" = (/obj/machinery/computer{stat = 1; dir = 8},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"sj" = (/obj/structure/table/woodentable,/obj/item/cardholder/squirl,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"sz" = (/obj/machinery/atmospherics/binary/dp_vent_pump,/turf/simulated/floor/bluegrid,/area/space)
+"sG" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark,/area/space)
+"sH" = (/obj/effect/floor_decal/industrial/danger{dir = 4},/turf/simulated/floor/wood/wild5,/area/space)
+"sI" = (/obj/structure/closet/toolcloset,/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/dark,/area/space)
+"sO" = (/obj/machinery/mineral/stacking_unit_console{pixel_x = 28},/obj/structure/window/basic{dir = 8},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"sP" = (/obj/machinery/computer{stat = 1; dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"sW" = (/obj/machinery/conveyor/southwest{id = "sh_belt"},/obj/landmark/machinery/output,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/plating/under,/area/space)
+"tf" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"tj" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/wood/wild3,/area/space)
+"ty" = (/obj/effect/floor_decal/industrial/danger{dir = 8},/turf/simulated/floor/wood/wild5,/area/space)
+"tA" = (/obj/random/turret,/turf/simulated/floor/wood,/area/space)
+"tG" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo/low_chance,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/tiled/dark,/area/space)
+"tM" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/wood/wild5,/area/space)
+"tN" = (/obj/structure/cable/heavyduty{icon_state = "4-8"},/turf/simulated/floor/plating/under,/area/space)
+"ul" = (/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/turf/simulated/floor/tiled/dark,/area/space)
+"uq" = (/obj/structure/closet/random_milsupply,/turf/simulated/floor/tiled/dark,/area/space)
+"ur" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ux" = (/obj/structure/bed/double/padded{dir = 4},/obj/random/furniture/bedsheetdouble{dir = 4},/obj/item/device/radio/electropack,/obj/item/contraband/poster/placed/pinup/xeno{pixel_y = 32},/turf/simulated/floor/wood/wild3,/area/space)
+"uz" = (/obj/structure/window/basic{dir = 8},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"uK" = (/obj/structure/catwalk,/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/plating/under,/area/space)
+"vb" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/heavyduty{icon_state = "4-8"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/plating/under,/area/space)
+"vu" = (/obj/structure/bed/chair/office/light,/obj/random/mob/voidwolf,/turf/simulated/floor/tiled/white,/area/space)
+"vv" = (/obj/structure/curtain/medical,/obj/structure/curtain/medical,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"vF" = (/turf/simulated/floor/tiled/cafe,/area/space)
+"vN" = (/obj/structure/table/woodentable,/obj/item/device/radio/phone{pixel_x = -4},/obj/item/reagent_containers/food/drinks/coffee{desc = "Old cup of coffee. Very cold.  "; name = "Old Robust Coffee"; pixel_x = 8},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"vS" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/space)
+"vU" = (/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"vY" = (/obj/item/contraband/poster/placed/pinup/security{pixel_x = -32},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"vZ" = (/obj/structure/table/woodentable,/obj/item/paper_bin,/obj/item/pen/red,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"we" = (/obj/machinery/portable_atmospherics/canister/empty/oxygen,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
+"wh" = (/obj/structure/table/steel_reinforced,/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/item/paper_bin,/obj/item/pen/blue,/turf/simulated/floor/tiled/dark,/area/space)
+"wk" = (/obj/structure/bed/chair/sofa/beige/left,/turf/simulated/floor/wood,/area/space)
+"ws" = (/obj/structure/bed/chair/comfy/black,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"wt" = (/obj/machinery/door/airlock/vault/bolted{name = "Checkpoint"},/turf/space,/area/space)
+"wH" = (/obj/machinery/door/airlock/vault/bolted{name = "Utility room"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"wI" = (/obj/machinery/door/blast/regular/open,/turf/simulated/floor/tiled/dark,/area/space)
+"wR" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating/under,/area/space)
+"wY" = (/obj/effect/floor_decal/industrial/loading/white{dir = 4},/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
+"xf" = (/obj/structure/sign/warningnew/secure,/turf/simulated/wall/r_wall,/area/space)
+"xj" = (/obj/effect/step_trigger/riverforest_to_crash_1_B,/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"xk" = (/obj/structure/bed/chair/sofa/beige/left{dir = 1},/turf/simulated/floor/wood,/area/space)
+"xo" = (/obj/structure/bed/chair/comfy/black{dir = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"xr" = (/obj/effect/portal/wormhole/rift,/turf/simulated/floor/bluegrid,/area/space)
+"xu" = (/obj/landmark/machinery/input,/obj/machinery/conveyor/south{id = "sh_belt"},/turf/simulated/floor/plating/under,/area/space)
+"xF" = (/obj/structure/window/reinforced,/obj/structure/table/standard,/obj/item/oddity/common/healthscanner,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"xG" = (/obj/effect/floor_decal/industrial/danger{dir = 6},/turf/simulated/floor/wood/wild5,/area/space)
+"xJ" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"xK" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/plating/under,/area/space)
+"xP" = (/obj/effect/floor_decal/industrial/danger{dir = 8; tag = "icon-danger (WEST)"},/turf/simulated/floor/wood/wild5,/area/space)
+"xW" = (/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/tiled/dark,/area/space)
+"xY" = (/obj/structure/bed/chair/office/light{dir = 2},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"yj" = (/obj/machinery/conveyor/west{id = "sh_belt"},/obj/structure/plasticflaps,/turf/simulated/floor/plating/under,/area/space)
+"yk" = (/obj/effect/floor_decal/industrial/danger{dir = 4; tag = "icon-danger (EAST)"},/turf/simulated/floor/wood/wild5,/area/space)
+"ys" = (/obj/structure/table/rack/shelf,/obj/random/gun_combat,/obj/random/gun_combat,/obj/random/dungeon_gun_ballistic/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"yw" = (/obj/structure/table/gamblingtable,/obj/random/credits/c500,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"yy" = (/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/turf/simulated/floor/wood,/area/space)
+"yF" = (/obj/effect/floor_decal/industrial/danger/corner,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"yP" = (/obj/machinery/light/floor{dir = 4; pixel_x = 6},/turf/simulated/floor/wood/wild3,/area/space)
+"yQ" = (/obj/machinery/atmospherics/mains_pipe/manifold/visible,/obj/machinery/atmospherics/mains_pipe/manifold/visible,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/plating/under,/area/space)
+"yW" = (/obj/effect/floor_decal/industrial/loading/red{dir = 8},/turf/simulated/floor/tiled/white,/area/space)
+"za" = (/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"zi" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/turf/simulated/floor/wood/wild3,/area/space)
+"zm" = (/obj/effect/window_lwall_spawn/reinforced,/turf/space,/area/space)
+"zC" = (/obj/structure/table/rack/shelf,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/tiled/dark,/area/space)
+"zL" = (/obj/structure/table/woodentable,/obj/item/oddity/common/paper_bundle,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"zS" = (/obj/structure/railing/grey{dir = 8},/obj/structure/railing/grey,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"zT" = (/obj/item/mine_old,/turf/simulated/floor/tiled/techmaint,/area/space)
+"zU" = (/obj/item/contraband/poster/placed/generic/walk{pixel_x = 16; pixel_y = -32},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"zV" = (/turf/simulated/floor/tiled/white/panels,/area/space)
+"zW" = (/obj/structure/catwalk,/obj/random/toolbox,/obj/structure/table/rack/shelf,/turf/simulated/floor/plating/under,/area/space)
+"Ag" = (/obj/structure/bed{dir = 4},/turf/simulated/floor/wood/wild3,/area/space)
+"Al" = (/obj/structure/catwalk,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating/under,/area/space)
+"Ar" = (/obj/machinery/body_scanconsole,/turf/simulated/floor/tiled/white/panels,/area/space)
+"Az" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/fortressred,/obj/item/flame/lighter/zippo/red,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"AJ" = (/obj/structure/table/rack/shelf,/obj/random/cloth/armor,/obj/random/cloth/armor,/obj/random/cloth/armor/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"AO" = (/obj/machinery/conveyor/southeast{id = "sh_belt"},/obj/landmark/machinery/output,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/plating/under,/area/space)
+"AR" = (/obj/structure/table/standard,/obj/item/reagent_containers/glass/bottle/aluminum,/obj/item/reagent_containers/glass/bottle/ammonia,/obj/item/reagent_containers/glass/bottle/carbon,/obj/item/reagent_containers/glass/bottle/copper,/obj/item/reagent_containers/glass/bottle/ethanol,/obj/item/reagent_containers/glass/bottle/hclacid,/obj/item/reagent_containers/glass/bottle/hydrazine,/obj/item/reagent_containers/glass/bottle/mercury,/obj/item/reagent_containers/glass/bottle/pacid,/obj/item/reagent_containers/glass/bottle/potassium,/obj/item/reagent_containers/glass/bottle/phosphorus,/obj/item/reagent_containers/glass/bottle/radium,/obj/item/reagent_containers/glass/bottle/sacid,/obj/item/reagent_containers/glass/bottle/silicon,/obj/item/reagent_containers/glass/bottle/sodium,/obj/item/reagent_containers/glass/bottle/sulfur,/obj/item/reagent_containers/glass/bottle/tungsten,/obj/item/reagent_containers/glass/bottle/acetone,/obj/item/reagent_containers/glass/bottle/iron,/obj/item/reagent_containers/glass/bottle/lithium,/obj/item/reagent_containers/glass/bottle/sugar,/obj/structure/window/basic{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"AU" = (/obj/structure/cable{icon_state = "1-8"},/obj/structure/cable/heavyduty{icon_state = "4-8"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/plating/under,/area/space)
+"AW" = (/obj/structure/closet/wall_mounted/firecloset{pixel_y = 32},/obj/effect/floor_decal/industrial/warningred{dir = 1},/obj/effect/floor_decal/industrial/box/red/corners{dir = 1},/obj/effect/floor_decal/industrial/box/red/corners,/turf/simulated/floor/wood/wild3,/area/space)
+"AX" = (/obj/machinery/portable_atmospherics/canister/empty/oxygen,/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
+"Bl" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/coffee{desc = "Old cup of coffee. Very cold.  "; name = "Old Robust Coffee"},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Bo" = (/obj/structure/catwalk,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"BE" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo/low_chance,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/tiled/dark,/area/space)
+"BK" = (/obj/structure/curtain/medical,/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"BM" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"BO" = (/obj/structure/table/rack/shelf,/obj/item/tank/oxygen,/obj/item/tank/oxygen,/obj/item/tank/oxygen,/obj/item/tank/oxygen,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"BQ" = (/obj/machinery/light/small/autoattach/deepmaints{name = "built"},/obj/item/contraband/poster/placed/pinup/kate{pixel_x = 32},/turf/simulated/floor/tiled/cafe,/area/space)
+"BR" = (/obj/machinery/computer{stat = 1; dir = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Cb" = (/obj/structure/bed/chair/office/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"Co" = (/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,/turf/simulated/floor/tiled/cafe,/area/space)
+"Cy" = (/obj/random/tool/advanced,/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"CA" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"CN" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/wood,/area/space)
+"CT" = (/obj/effect/floor_decal/industrial/danger/corner{dir = 1},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"CU" = (/obj/machinery/computer{dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"CX" = (/obj/structure/table/rack/shelf,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"Dm" = (/obj/structure/catwalk,/obj/structure/closet/random_milsupply,/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/space)
+"Dr" = (/obj/structure/bookcase/metal,/obj/item/gun/energy/firestorm/reaver_modded,/turf/simulated/floor/wood,/area/space)
+"Dv" = (/obj/effect/floor_decal/industrial/hatch,/obj/random/structures/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
+"Dw" = (/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"DB" = (/obj/machinery/atmospherics/mains_pipe/manifold4w/visible,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating/under,/area/space)
+"DC" = (/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"DP" = (/turf/simulated/floor/tiled/techmaint,/area/space)
+"DU" = (/obj/machinery/mineral/stacking_machine,/turf/simulated/floor/plating/under,/area/space)
+"DV" = (/obj/structure/railing/grey,/obj/structure/railing,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Ee" = (/obj/structure/bookcase/metal,/obj/item/storage/firstaid/ifak,/obj/item/storage/firstaid/ifak,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/wood,/area/space)
+"Er" = (/obj/item/clothing/mask/smokable/cigarette/cigar/cohiba,/turf/unsimulated/mineral,/area/space)
+"Eu" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/item/flame/candle/pre_lit,/obj/item/contraband/poster/placed/pinup/xenobabe{pixel_y = 32},/turf/simulated/floor/wood/wild3,/area/space)
+"Ex" = (/obj/machinery/door/blast/regular,/turf/simulated/floor/plating/under,/area/space)
+"ED" = (/obj/machinery/vending/coffee,/turf/simulated/floor/wood/wild5,/area/space)
+"EI" = (/obj/structure/table/woodentable,/obj/item/clothing/mask/smokable/cigarette/cigar/cohiba,/obj/item/flame/lighter/zippo/bullet,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"EP" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"EQ" = (/obj/structure/dispenser/oxygen,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"ES" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"Fc" = (/obj/item/stool/custom/bar_special,/turf/simulated/floor/wood/wild3,/area/space)
+"Fj" = (/obj/landmark/machinery/input,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating/under,/area/space)
+"Fo" = (/obj/structure/table/gamblingtable,/obj/structure/closet/crate/voidwolf/voidwolfdrugs,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"Fu" = (/turf/unsimulated/mineral/transition,/area/space)
+"Fv" = (/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/wood,/area/space)
+"FP" = (/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/obj/item/pen/blue,/turf/simulated/floor/tiled/dark,/area/space)
+"FZ" = (/obj/structure/bed/chair/sofa/beige/right{dir = 1},/turf/simulated/floor/wood,/area/space)
+"Ga" = (/obj/structure/bed/chair/office/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"Gd" = (/turf/simulated/floor/asteroid,/area/space)
+"Gg" = (/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"Gi" = (/obj/machinery/atmospherics/mains_pipe/simple/visible,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating/under,/area/space)
+"Go" = (/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/random/booze/low_chance,/obj/random/common_oddities,/obj/random/common_oddities,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Gt" = (/obj/machinery/bodyscanner,/turf/simulated/floor/tiled/white/panels,/area/space)
+"GD" = (/obj/structure/salvageable/console_os,/turf/simulated/wall/wood_old,/area/space)
+"GG" = (/obj/structure/sign/warningnew/secure{pixel_y = 32},/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating/under,/area/space)
+"GP" = (/obj/structure/closet/toolcloset,/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"Hb" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/structure/closet/toolcloset,/obj/item/storage/deferred/crate/tools,/turf/simulated/floor/tiled/dark,/area/space)
+"He" = (/obj/effect/floor_decal/industrial/loading/red{dir = 4},/turf/simulated/floor/tiled/white,/area/space)
+"Hg" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
+"Hi" = (/obj/structure/table/woodentable,/obj/item/paper_bin,/obj/item/pen/blue,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Hs" = (/obj/structure/table/standard,/obj/structure/table/standard,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"Hu" = (/obj/machinery/power/port_gen/pacman/diesel/anchored,/obj/structure/cable,/turf/simulated/floor/plating/under,/area/space)
+"Hy" = (/obj/machinery/optable,/turf/simulated/floor/tiled/white/panels,/area/space)
+"HA" = (/obj/effect/floor_decal/industrial/danger{dir = 4; tag = "icon-danger (EAST)"},/turf/simulated/floor/tiled/dark,/area/space)
+"HE" = (/obj/structure/table/rack/shelf,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/tiled/white/panels,/area/space)
+"HF" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/plating/under,/area/space)
+"HS" = (/turf/simulated/wall/r_wall,/area/space)
+"HU" = (/obj/structure/table/rack/shelf,/obj/random/cloth/armor,/obj/random/cloth/armor,/turf/simulated/floor/tiled/dark,/area/space)
+"HW" = (/obj/item/oddity/common/paper_crumpled,/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Ic" = (/obj/item/soap/syndie,/turf/simulated/floor/tiled/cafe,/area/space)
+"Ie" = (/obj/landmark/machinery/output,/obj/machinery/conveyor/south{id = "sh_belt"},/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/plating/under,/area/space)
+"Il" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/ammo_fancy/low_chance,/turf/simulated/floor/tiled/dark,/area/space)
+"In" = (/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/random/booze/low_chance,/obj/random/common_oddities,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Iq" = (/obj/structure/table/woodentable,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Iu" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/dark,/area/space)
+"IA" = (/obj/structure/bookcase/metal,/obj/item/book/manual/fiction/warandpeace,/obj/item/book/manual/fiction/waroftheworlds,/obj/item/book/manual/fiction/journeytothecenter,/turf/simulated/floor/wood,/area/space)
+"IE" = (/obj/structure/urinal{dir = 4; pixel_x = -32},/turf/simulated/floor/wood/wild3,/area/space)
+"IP" = (/obj/structure/catwalk,/obj/structure/cable/heavyduty{icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/plating/under,/area/space)
+"IX" = (/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Jm" = (/obj/structure/table/bar_special,/obj/item/flame/candle/pre_lit,/turf/simulated/floor/wood/wild3,/area/space)
+"Jq" = (/turf/simulated/floor/tiled/white,/area/space)
+"Jr" = (/obj/item/stool/custom/bar_special,/obj/item/stool/custom/bar_special,/turf/simulated/floor/wood/wild3,/area/space)
+"Js" = (/turf/simulated/floor/tiled/dark,/area/space)
+"Jt" = (/obj/structure/table/woodentable,/obj/item/oddity/common/old_newspaper,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"JA" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/turf/simulated/floor/tiled/cafe,/area/space)
+"JE" = (/obj/effect/floor_decal/industrial/danger{dir = 6},/turf/simulated/floor/wood/wild3,/area/space)
+"JG" = (/obj/structure/catwalk,/obj/structure/sign/warningnew/secure{pixel_y = 32},/turf/simulated/floor/plating/under,/area/space)
+"JH" = (/obj/machinery/computer{stat = 1; dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"JM" = (/obj/structure/table/rack/shelf,/obj/item/storage/toolbox/emergency,/obj/item/storage/toolbox/emergency,/obj/item/storage/toolbox/emergency,/turf/simulated/floor/tiled/dark,/area/space)
+"JQ" = (/obj/structure/catwalk,/obj/machinery/conveyor_switch/oneway{id = "sh_belt"; name = "mining conveyor"},/turf/simulated/floor/plating/under,/area/space)
+"JV" = (/obj/effect/floor_decal/industrial/danger{dir = 8},/obj/structure/sign/warningnew/secure{pixel_y = 32},/turf/simulated/floor/wood/wild5,/area/space)
+"Kj" = (/obj/structure/window/basic{dir = 8},/obj/machinery/computer{stat = 1; dir = 4},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Kr" = (/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/obj/item/pen/blue,/obj/machinery/door/blast/shutters/glass{name = "Window"},/obj/structure/low_wall,/obj/structure/grille,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"Kw" = (/obj/structure/table/woodentable,/obj/item/material/ashtray{material = steel},/turf/simulated/floor/wood,/area/space)
+"KQ" = (/obj/structure/reagent_dispensers/fueltank,/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/plating/under,/area/space)
+"KS" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Lg" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating/under,/area/space)
+"Lj" = (/obj/machinery/vending/kink,/turf/simulated/floor/wood/wild3,/area/space)
+"Lr" = (/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"LA" = (/turf/space,/area/space)
+"LV" = (/obj/machinery/door/airlock/vault/bolted{name = "Checkpoint"},/turf/simulated/floor/wood/wild3,/area/space)
+"Mz" = (/obj/structure/table/rack/shelf,/obj/random/tool,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ME" = (/obj/machinery/computer{stat = 1; dir = 2},/turf/simulated/floor/tiled/dark,/area/space)
+"MF" = (/obj/machinery/holosign/surgery{icon_state = "surgery"},/turf/simulated/wall/wood_old,/area/space)
+"MI" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/tiled/dark,/area/space)
+"MP" = (/obj/item/contraband/poster/placed/generic/walk,/obj/machinery/door/airlock/vault/bolted{name = "Checkpoint"},/turf/simulated/floor/plating/under,/area/space)
+"MR" = (/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"MV" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/space)
+"Nj" = (/obj/structure/bookcase/metal,/obj/item/book/manual/fiction/theinvisibleman,/turf/simulated/floor/wood,/area/space)
+"NA" = (/turf/simulated/floor/carpet/turcarpet,/area/space)
+"NE" = (/obj/structure/catwalk,/obj/structure/cable/heavyduty{icon_state = "4-8"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/structure/cable{icon_state = "2-4"},/turf/simulated/floor/plating/under,/area/space)
+"NI" = (/obj/structure/table/gamblingtable,/obj/random/credits/c100,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"NM" = (/obj/machinery/vending/coffee,/turf/simulated/floor/wood/wild3,/area/space)
+"NP" = (/obj/machinery/door/airlock/vault/bolted{name = "Utility room"},/turf/simulated/floor/wood/wild3,/area/space)
+"NS" = (/obj/random/scrap/dense_weighted,/obj/random/scrap/dense_weighted,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
+"NU" = (/obj/machinery/mineral/processing_unit/scrap_heaven,/turf/simulated/floor/plating/under,/area/space)
+"NV" = (/obj/structure/table/gamblingtable,/obj/item/reagent_containers/hypospray/autoinjector/drugs,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"NZ" = (/obj/item/coin/gold,/obj/random/furniture/pottedplant,/turf/simulated/floor/wood,/area/space)
+"Oj" = (/obj/structure/table/rack/shelf,/obj/random/dungeon_ammo,/turf/simulated/floor/tiled/dark,/area/space)
+"Ok" = (/obj/machinery/door/airlock/vault/bolted{name = "Checkpoint"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"Ox" = (/obj/structure/table/standard,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/obj/random/medical_lowcost_handmade,/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"Oy" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 4; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"OL" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/tiled/dark,/area/space)
+"OT" = (/obj/machinery/computer{stat = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"OV" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"OY" = (/obj/structure/window/basic{dir = 8},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"OZ" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/coffee{desc = "Old cup of coffee. Very cold.  "; name = "Old Robust Coffee"},/obj/item/scale,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Pd" = (/obj/structure/bed/chair/comfy/black{dir = 1},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Pe" = (/obj/structure/table/woodentable,/obj/item/pen/blue,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Ph" = (/obj/structure/coatrack,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Pn" = (/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/window/basic{dir = 1; pixel_y = 5},/obj/structure/table/steel_reinforced,/obj/random/cigarettes,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Pp" = (/obj/structure/bed/chair/comfy/black,/turf/simulated/floor/tiled/dark,/area/space)
+"Pw" = (/obj/machinery/atmospherics/mains_pipe/manifold/visible,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/plating/under,/area/space)
+"Py" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/machinery/power/apc{dir = 8; name = "West APC"; operating = 0; pixel_x = -28},/obj/structure/cable{icon_state = "1-4"},/turf/simulated/floor/plating/under,/area/space)
+"PA" = (/obj/structure/closet/random_medsupply,/turf/simulated/floor/tiled/white/panels,/area/space)
+"PB" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/under,/area/space)
+"PJ" = (/obj/structure/bed/chair/comfy/black{dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
+"PO" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating/under,/area/space)
+"PY" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/tiled/dark,/area/space)
+"PZ" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/ammo_fancy,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/tiled/dark,/area/space)
+"Qb" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/plating/under,/area/space)
+"Qe" = (/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,/turf/simulated/floor/tiled/cafe,/area/space)
+"Qf" = (/obj/structure/catwalk,/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/turf/simulated/floor/plating/under,/area/space)
+"Qi" = (/obj/structure/table/standard,/obj/machinery/centrifuge,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"Qo" = (/obj/effect/floor_decal/industrial/danger{dir = 10},/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/obj/item/pen/blue,/turf/simulated/floor/wood/wild5,/area/space)
+"Qv" = (/obj/structure/closet/cabinet,/obj/item/spacecash/bundle/c1000,/obj/item/spacecash/bundle/c1000,/obj/item/clothing/accessory/medal/gold,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Qz" = (/obj/machinery/atmospherics/mains_pipe/simple/visible,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"QC" = (/obj/effect/floor_decal/industrial/loading{dir = 4},/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id = "maint_hatch_telecomm"; layer = 2.6; name = "Emergency Lockdown Armory"; opacity = 0},/turf/simulated/floor/tiled/dark,/area/space)
+"QH" = (/obj/machinery/door/airlock/vault/bolted{name = "Checkpoint"},/turf/simulated/floor/plating/under,/area/space)
+"QN" = (/obj/item/cardholder,/turf/simulated/floor/wood/wild3,/area/space)
+"Rd" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 4; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/wood/wild3,/area/space)
+"Rn" = (/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/wood/wild3,/area/space)
+"Rp" = (/obj/item/clothing/head/hairflower/orange,/turf/simulated/floor/wood/wild3,/area/space)
+"Rr" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigar,/obj/item/flame/lighter/zippo/gold,/turf/simulated/floor/wood,/area/space)
+"Rv" = (/obj/machinery/computer{stat = 1; dir = 2},/turf/simulated/floor/wood/wild3,/area/space)
+"Rx" = (/turf/unsimulated/mineral,/area/space)
+"RF" = (/obj/structure/sink{dir = 1; pixel_y = 16},/turf/simulated/floor/tiled/cafe,/area/space)
+"RM" = (/obj/structure/medical_stand/anesthetic,/turf/simulated/floor/tiled/white/panels,/area/space)
+"Sa" = (/obj/item/contraband/poster/placed/generic/walk,/turf/simulated/wall/r_wall,/area/space)
+"Sb" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/tiled/dark,/area/space)
+"Se" = (/obj/machinery/holosign/surgery{icon_state = "surgery"},/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"Sg" = (/obj/structure/railing/grey{dir = 1; icon_state = "grey_railing0"},/obj/machinery/holosign/surgery{icon_state = "surgery"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Si" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Sn" = (/obj/item/stool/padded,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"Su" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/wood,/area/space)
+"Sv" = (/obj/structure/bed/chair/sofa/beige/left{dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"Sx" = (/obj/machinery/porta_turret/prepper{faction_iff = "pirate"},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"SD" = (/obj/random/tool_upgrade,/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"SH" = (/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
+"SL" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo_lowcost/low_chance,/turf/simulated/floor/wood/wild3,/area/space)
+"SU" = (/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"Tb" = (/obj/structure/closet/random_milsupply{pixel_y = 0},/obj/item/contraband/poster/placed/generic/paranoia{pixel_y = -32},/turf/simulated/floor/tiled/dark,/area/space)
+"Ti" = (/obj/item/reagent_containers/blood/AMinus,/obj/item/reagent_containers/blood/APlus,/obj/item/reagent_containers/blood/BMinus,/obj/item/reagent_containers/blood/BPlus,/obj/item/reagent_containers/blood/OMinus,/obj/item/reagent_containers/blood/OPlus,/obj/structure/closet/secure_closet/freezer/blood{name = "secure blood fridge"; req_access = list(45)},/turf/simulated/floor/tiled/white/panels,/area/space)
+"Tv" = (/obj/machinery/computer{stat = 1; dir = 2},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"TC" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/wall/r_wall,/area/space)
+"TM" = (/obj/machinery/computer{stat = 1; dir = 8},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"TQ" = (/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/obj/item/pen/red,/turf/simulated/floor/tiled/dark,/area/space)
+"TS" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"TU" = (/obj/random/turret,/turf/simulated/floor/wood/wild5,/area/space)
+"TZ" = (/obj/structure/multiz/stairs/active/bottom{dir = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Ua" = (/obj/structure/bed,/turf/simulated/floor/wood/wild3,/area/space)
+"Um" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy/low_chance,/obj/item/storage/firstaid/ifak,/turf/simulated/floor/tiled/dark,/area/space)
+"Ur" = (/obj/item/flame/candle/pre_lit,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Uy" = (/obj/structure/bed/roller,/obj/structure/medical_stand,/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"UA" = (/obj/machinery/atmospherics/binary/circulator/anchored,/obj/item/bluespace_leak,/turf/simulated/floor/plating/under,/area/space)
+"UE" = (/obj/structure/table/rack/shelf,/obj/random/oddity_guns,/turf/simulated/floor/wood/wild3,/area/space)
+"UK" = (/obj/structure/table/gamblingtable,/obj/item/cardholder,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"UL" = (/obj/random/turret,/turf/simulated/floor/wood/wild3,/area/space)
+"UT" = (/obj/item/clothing/head/hairflower/violet,/turf/simulated/floor/wood/wild3,/area/space)
+"Vc" = (/obj/structure/table/gamblingtable,/obj/random/credits/c50,/turf/simulated/floor/carpet/turcarpet,/area/space)
+"Vd" = (/obj/structure/sign/warningnew/secure{pixel_y = 32},/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Vf" = (/obj/structure/window/basic{dir = 8},/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Vl" = (/obj/structure/railing/grey{dir = 8},/obj/structure/railing,/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Vq" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"Vt" = (/turf/simulated/floor/bluegrid,/area/space)
+"Vw" = (/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/wood/wild3,/area/space)
+"VD" = (/obj/structure/railing/grey,/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
+"VF" = (/obj/structure/bookcase/metal,/obj/random/cloth/assault/reaver,/turf/simulated/floor/wood,/area/space)
+"VJ" = (/obj/structure/table/standard,/obj/machinery/electrolyzer,/obj/structure/window/basic{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"VM" = (/obj/structure/table/woodentable,/obj/item/pack_card_carp,/turf/simulated/floor/carpet/bcarpet,/area/space)
+"VP" = (/obj/structure/bed/chair{dir = 4},/obj/item/modular_computer/telescreen/preset/generic,/turf/simulated/floor/tiled/dark,/area/space)
+"Wc" = (/obj/structure/table/steel_reinforced,/obj/machinery/door/blast/shutters/glass{name = "Window"},/obj/structure/low_wall,/obj/structure/grille,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"WD" = (/obj/machinery/door/blast/regular,/obj/machinery/door/blast/regular,/turf/simulated/floor/plating/under,/area/space)
+"WE" = (/obj/machinery/slotmachine,/turf/simulated/floor/wood,/area/space)
+"WL" = (/obj/structure/table/standard,/obj/item/storage/box/syringes{pixel_x = 3; pixel_y = 3},/obj/item/storage/box/beakers,/obj/item/reagent_containers/dropper{pixel_y = -4},/obj/item/reagent_containers/glass/beaker/large,/turf/simulated/floor/tiled/white/brown_platform,/area/space)
+"WT" = (/obj/structure/catwalk,/obj/structure/scrap_cube,/turf/simulated/floor/plating/under,/area/space)
+"WU" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/plating/under,/area/space)
+"WV" = (/obj/effect/floor_decal/industrial/danger{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"WX" = (/obj/structure/bed/double/padded{dir = 4},/obj/random/furniture/bedsheetdouble{dir = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"Xp" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/wood/wild3,/area/space)
+"Xs" = (/obj/structure/window/basic{dir = 8},/obj/structure/window/basic{dir = 1},/turf/simulated/floor/tiled/white,/area/space)
+"XR" = (/obj/structure/table/steel_reinforced,/obj/item/device/radio/phone,/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/structure/railing/grey{dir = 1; pixel_y = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"XT" = (/obj/structure/catwalk,/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating/under,/area/space)
+"XX" = (/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/obj/item/contraband/poster/placed/generic/walk,/turf/simulated/floor/plating/under,/area/space)
+"Yb" = (/obj/structure/table/rack/shelf,/obj/random/ammo_fancy,/obj/random/dungeon_ammo,/turf/simulated/floor/tiled/dark,/area/space)
+"Yi" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/syndie_kit/chameleon,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Yk" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/syndie_kit/c20r,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"Ys" = (/obj/structure/multiz/stairs/enter/bottom{dir = 4},/turf/simulated/floor/carpet/bcarpet,/area/space)
+"YE" = (/turf/simulated/floor/carpet/bcarpet,/area/space)
+"YH" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/obj/structure/railing{dir = 4},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"YJ" = (/obj/structure/bookcase/metal,/obj/item/shield/buckler/energy/reaver/damaged,/turf/simulated/floor/wood/wild3,/area/space)
+"YM" = (/obj/item/contraband/poster/placed/pinup/amy,/turf/simulated/wall,/area/space)
+"YQ" = (/obj/structure/curtain/medical,/turf/simulated/floor/tiled/white,/area/space)
+"YS" = (/obj/machinery/door/airlock/highsecurity{name = "Secure Airlock"s"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"YV" = (/obj/structure/railing/grey,/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/space)
+"Zu" = (/obj/structure/catwalk,/obj/structure/closet/random_milsupply,/turf/simulated/floor/plating/under,/area/space)
+"ZB" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/syndie_kit/hpistol,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ZG" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_mods,/obj/random/dungeon_gun_mods,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/sblucarpet,/area/space)
+"ZM" = (/obj/structure/table/woodentable,/obj/item/device/lighting/toggleable/lamp/green,/turf/simulated/floor/carpet/bcarpet,/area/space)
+
+(1,1,1) = {"
+RxRxRxRxRxRxRxRxRxHSFuFuHSRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxHSHSHSHSHSHSHSHSHSHSHSHSHSRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRx
+RxRxRxRxRxRxRxRxHSHSxjxjHSHSRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxHSggggggggggggggggggggggHSRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRx
+RxRxRxHSHSHSRxHSHSwRLALAwRHSHSRxRxHSHSHSHSHSRxHSHSHSHSHSHSHSgggMxFoYeqoYqTPATiHEggHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHS
+RxRxHSHSLjHSHSHSPBwRzazawRlnHSRxRxHSZuZukMHSHSHSCbJHCUEPpMHSggHyzVoYeqoYUyHeyWUyggHSULjZDPOVSghEhEhEhEhEhEcmDPjZeeeeULHSWEWEfTchchchchSuWEHS
+RxRxHSuxRpEupslBHSwRmhmhwRHSHSRxHSHSbIbIbIHSfbHSCbJHCUEPCXHSggjaRMoYeqoYSeJqJqDwggHSjZjZDPwYjjHgJswYjjHgJsKSDPjZdTdTjZMReDJrjZbCjZjZjZjZeDHS
+RxRxHSJmUTkepslBHSHSOyMRHSHSHSRxHSCUopopopHSwRHSCbJHCUEPCXHSggoYoYMFeqoYUyHeyWUyggHSjZjZDPwYDvHgJswYDvNSOLYHDPjZdTdTjZgwchjZSnUKNINVSnjZchHS
+RxRxHSHSpSHSHSwRJViadTdTiaoUwRHSHSCUEPXRJsYSJsQfJsJsJsJsJsHSggjaRMoYeqvvBKYQYQBKggHSjZjZDPwYDvHgOLwYDvHgJsIXDPtjSDCyRnHSchjZNANVFoywNAjZchHS
+RxRxRxHSUrHSPBwRtyjZzUdTjZykwRlnHSCUJswhJMHSwRHSJsJsJsJsIuHSggHyzVYQJqHeGtArJqJqggHSjZjZDPwYDvHgJswYDvSHOLIXDPtjrueNRnHSSujZNANASnNANAjZSuHS
+RxRxRxHSNPHSHSwRtyfbHSHSfbykwRHSHSHSHSHSHSHSfbHSJsJsJsHSHSHSgggMgrYQJqJqJqJqJqJqJqihjZjZDPwYDvHgOLwYDvHgOLYHDPtjCySDRnHSWEFcNAFZaCxkNAFcWEHS
+RxRxRxHSPOAlmhwHxPlaYEYEyPsHwRRvlwHSkLrVdGHSHSHSprmhHSggggggggggggMFJqHeGtArJqJqJqihjZjZDPwYDvSHOLwYDvHgJsKSDPtjSDHWRnHSWEFcNAqmmowkNAJrWEHS
+RxRxRxHSPyWUlOHSQoVwCTyFVwxGKrRnXpHSCoJAHSibzTQbchchVddTdTjZjZjZihJqJqJqJqJqJqJqggHSjZjZDPzSfcfcDVIXDVfcfcYVDPjZdTdTjZHSSujZNANANASnNAjZNZHS
+RxRxRxHSdEivjFHSwRwRpgJEwRwRHSmPjZdfvFBQHSaUduHSchchdTdTdTjZjZjZihDwDwDwDwXsJqVJggHSjZjZDPDPDPDPDPDPDPDPDPDPDPjZdTdTjZMRchjZSnVckuNVNAjZchHS
+RxRxRxHSHSHSHSHSvSHSOyMRHSvSHSHSwtHSdfHSHSHSHSHSkkkkHSggggnzHibagglxvUrzgkftvuQiggHSjZjZjZQNjZjZjZjZjZjZjZjZjZjZjZjZjZgwchjZNAelUKNISnjZchHS
+RxRxRxHSqjfduKHSHSHSmhmhHSHSHSJGmhHSmhnPWVHUHSjZYEYEjZHSggBRinYEggahHsOxahARWLcFggHSjZhyJscYjZdTdTdTdTdTdTdTjZhyJscYjZHSeDFcjZjZbCjZjZjZeDHS
+RxRxRxHSWTmhzWHSULpdjZjZpdjZjZjZULHSnmHSDmfPHSjZYEYEjZHSggggggggggggggggggggggggggHSULnHetHbULMzkEMzMzkEMzkEULGPblsIULHSWEWEchchchchchSuWEHS
+RxRxRxHSHSQbHSHScLdTdTdTdTdTdTdTcLHSHSHSHSHSHSHSkkkkHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSqRHSHSHSHSHSHSHSHSjTjTHSHSHSHSHS
+RxRxRxHSjZjZMRjZdTdTdTdTdTdTdTdTdTjZMRjZjZjZjZjZjZjZchxoVMphHSggggfbggGDggGDggGDggfbggHSHSMEMEMEHSzijZjZjZjZjZjZjZjZAWjZjZjZjZjZjZHSMEMEMEHS
+RxRxRxHSjZjZgwjZdTdTdTdTdTdTdTdTdTjZgwjZjZjZjZjZjZjZchxobaphHSggfmjZjZjZYEYEYEjZjZjZfmoJJsJsJsEPHSjZjZuzPndTchuzGodTchuzpqdTchjZjZHSpMGaJsHS
+RxRxHSHSTSTSHSHSSxYEYEdTdTdTYEYESxHSHSOyMRHSHSHSHSHSHSHSHSHSggggfmchchnzBRwsTMnzchchfmHSHSESJspMHSjZjZKjmtdTchKjmtdTchKjmtdTchjZjZHSIlJsLrHS
+RxRxHSIAdTdTrZHSHSQfSaWcWcWcSaQfHSHScLdTdTcLZMTvHSMEMEHSHSHSDCpVfmjZchIqnzvZbaIqchjZfmggHSBEJsLrHSjZjZVfPhczchVfPhhLchVfPhhLchjZjZHSUmJsLrHS
+RxRxHSHSvYdTrZHSJsJsJspMFPgAJsJsJsHSjZdTdTjZHiBMHSpMeTQCkMHSSUpVfmjZcheOHinznzpnchjZfmggHStGJsLrHSjZjZwRwRwRchwRwRwRchwRwRwRchjZjZHSzCJsLrHS
+RxRxHStMdTdTdTQfJsJsJsJsGgJsJsJsJsQfjZdTdTjZbaYEHSVPHAQCZuHSlmpVfmjZcheOnznzHipnchjZfmggHSxWxWxWHSjZjZjZjZjZjZjZjZjZjZjZjZjZjZjZjZulJsJsJsHS
+RxRxHSEDdTdTdTHSuqJsbcYbOjPZTbJsuqHSjZdTdTjZYEYEHSVqHAQCkMHSlmpVfmjZcheOHiSinzpnchjZfmggHSaXaXaXHSjZjZjZjZjZjZjZjZjZjZjZjZjZjZjZjZHSxWxWxWHS
+RxRxHSHSjRSbJsqRHSQfHSWcWcWcHSQfHSHSULjZjZjZYEYEoJJsJsHSHSHSSUpVfmjZcheOnzSiPepnchjZfmggHSZuZuZuHSjZjZuzIndTchuzjSdTchuzPndTchjZjZHSaXaXaXRx
+RxRxHSNjxoOZphHSjZjZjZjZjZjZjZjZjZHSHSRdjZHSHSHSHSHSHSHSHSHSggggfmjZchdTnznznzdTchjZfmggHSHSHSHSHSjZjZKjmtdTchKjmtdTchKjmtdTchjZjZHSZuZuZuRx
+RxRxHSIAxobiphHSzijZjZjZjZjZjZjZziHSHSjZjZjZjZjZjZjZjZjZjZULHSggfmjZchchdTdTdTchchjZfmggHSUAmbUAHSjZjZVfPhhLchVfPhhLchVfPhczchjZjZHSHSHSHSRx
+RxRxHSHSHSHSHSHSHSOyMRHSHSHSOyMRHSHSHSjZjZjZjZjZjZjZjZjZjZjZHSggTUchchdTdTdTdTdTchchTUggHSszxrszHSjZjZwRwRwRchwRwRwRchwRwRwRchjZjZqZvFvFHSRx
+ErHSNjxoBlphxoEIphjZjZxosjphjZjZHSHSHSHSHSsjBljZjZjZsjBljZjZHSggggggggggoJHSoJggHSLVHSggHSGiVtGiHSzijZjZjZjZjZjZjZjZjZjZjZjZjZjZjZHSvFQeHSRx
+RxHSIAxoAzphxoBlphjZjZxoVMphjZjZHSHSfbHSHSPdPdjZdKjZPdPdjZjZHSHSHSHSHSHSjZfbjZHSHSchHSHSHSPwDByQHSHSHSHSHSHSHSHSHSHSHSHSPYPYqBPYPYHSlUJAHSRx
+RxHSULjZjZjZjZjZjZjZjZjZjZjZjZjZHSHSfrHSHSHSHSHSHSHSHSHSjZjZjZjZjZjZjZjZjZjZjZHSdTdTdTHSHSmhQzBoHSmRmhmhmhmhmhmhlQHSHSHSIXDPSHDPIXHSkLaVHSRx
+HSHSHSdmJsHScLmHxYnucLHSdmJsHSHSHSHSUEHSHSHSHSHSHSHSHSHScLjZjZjZjZjZjZjZjZjZcLHSdTdTdTHSHSHSOkHSHStNIPvbvbvbvbvbmhKQHSHSIXDPDPDPIXHSHSHSHSRx
+HSfbwRJsJsHSdKqMqMqMNMHSJsJswRfbHSggjJggggggggggfbwRlmHSHSHSHSHSHSHSHSHSHSHSHSHSdTdTdTHSHSGGCAGGHSHSLgHuHuHuHuHumhKQHSHSIXSHSHSHIXwIFjqYAORx
+HSHSHSdmJsHSHSHSHSHSHSHSdmJsHSHSHSggZMWXQvNjIAggwRwRbuVDHSHSxonzphHSHSHSHSHSHSHSdTdTdTHSfbwRCAwRfbHSLgeaeaeaeaeamhKQHSHSEQHSQfHSEQwIfkHScCRx
+RxHSaRjZjZjZziSLSLSLzijZjZjZJsHSHSggYEYEYEjZjZTSjZjZjZjZjZjTdTdTdTTSchchchchchchchchchHSHSwRCAwRHSHSNEAUAUAUAUAUmhKQHSHSHSHSJsHSHSHSXTjKNURx
+RxHSysjZdTdTdTdTdTdTdTdTdTjZJsHSHSggKwjZjZjZjZTSjZjZjZjZjZjTdTdTdTTSchchchchchchchchchYMmhmhifHFHFHFxKmhmhmhmhmhjAHSHSkfgWHSQfHSBOwIJQhoIeRx
+RxHSksjZYionYEefefefYEZGZGjZAJHSHSggRrjZvNzLZMggwRwRxJtfHSHSHSoJHSHSHSHSHSHSHSHSwRwRwRHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSHSkfIXSHSHSHIXwIOYhoxuRx
+RxHSJsjZdTYEYEfbwRfbYEYEdTjZAJHSHSggCNjZJtPdTMggfbwRSUHSHSzijZjZjZjZjZjZjZjZjZziHSfbHSwRULHSMEsGMEsGMEMIExgLgLAXweweHSkfIXDPDPDPIXwIsOHSDURx
+RxHSJsjZYkfnYEwRwRwRYEocqFjZAJHSHSggcKjZjZjZjZggHSHSHSHSdTdTdTdTdTdTdTdTdTdTdTdTHSHSHSwRwRHSPJJsPJJsPJJsMIExGdVlJsrDHSkfIXDPSHDPIXwIMVyjsWRx
+RxHSksjZdTYEYEfbwRfbYEYEdTjZAJHSHSggggggggggjTggHSggggtAchchchchchchchchchchchchchtAHSjZjZjZJsJsJsJsCbJHMIExGdGdGdGdHSHSJsIXSHIXJsHSHSHSHSRx
+RxHSksjZoronYEYEYEYEYEYkZBjZJsHSHSggIEdkRFaejZggHSTZYsYEYEYEYEYEYEYEYEYEYEnznzYEYEYEyyjZjZkXJsJsJsOTOTOTMIExGdGdGdGdGdHSdmJsHSdmJsHSGdGdGdRx
+RxHSksjZdTdTurmEJsmEurdTdTjZJsHSHSgggfvFvFvFjZggHSTZYsYEYEYEYEYEYEYEYEYEYEbaphYEYEYEHSjZjZHSJsJsJsJsSvTQMIExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxHSxfTCTCTCHSHSQHHSHSTCTCTCMPHSfbggggggggmCmCggHSTZYsYEYEYEYEYEYEYEYEYEYEnznzYEYEYEyyjZjZjZJsJsJsJskRpMMIExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdHSfbHSYJjZjZjZkIHSfbHSBowRwRwRHSHSHSIcvFHSHSggggtAchchchchchchchchchchchchchtAHSjZjZkXJsJsJssPsPsPMIExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdHSHSHSmFchchchEeHSHSHSBoBoBomhmhmhXXkdvFHSHSHSHSHSdTdTdTdTdTdTdTdTdTdTdTdTHSHSHSwRwRHSJsJsJsJsCbJHMIExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSAgchYEYEYEchUaHSHSHSwRwRwRHSHSHSHSHSHSGdGdGdHSHSzijZjZjZjZjZjZjZjZjZziHSfbHSwRULHSPpJsPpJsPpJsMIExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSaDchYEYEYEchaDHSGdGdHSfbHSGdGdGdGdGdGdGdGdGdGdHSHSHSoJHSHSHSHSHSHSHSHSwRwRwRHSHSHSsPsGsPsGsPcpExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSAgchYEYEYEchUaHSGdGdHSHSHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdHSzmzmzmzmzmaPWDGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSaDchYEYEYEchaDHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdHSExExExExExExGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSAgchYEYEYEchUaHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSaDVFFvFvFvDraDHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdHSHSHSaXaXaXHSHSHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdHSZuZuZuHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdHSHSHSHSHSGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdRx
+RxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRxRx
+"}
+(1,1,2) = {"
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+LALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALA
+"}

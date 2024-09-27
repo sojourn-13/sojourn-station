@@ -12,6 +12,15 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony/exposedsun/crashed_shop)
+"ah" = (
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"ai" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "ak" = (
 /obj/structure/lattice,
 /obj/structure/railing,
@@ -39,6 +48,9 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/colony/exposedsun/crashed_shop)
+"az" = (
+/turf/simulated/wall,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "aD" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
@@ -62,6 +74,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
+"aX" = (
+/obj/structure/lattice,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "aZ" = (
 /obj/machinery/mech_recharger,
 /obj/random/mecha/low_chance,
@@ -95,21 +111,44 @@
 /obj/item/clothing/gloves/thick/handmade,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/colony/exposedsun/crashed_shop)
+"bo" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "bs" = (
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/colony/exposedsun/crashed_shop)
 "bt" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak,
+/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak{
+	pixel_y = 1
+	},
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
+"bw" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/remains,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "bx" = (
 /turf/simulated/floor/tiled/steel,
 /area/colony/exposedsun/crashed_shop/workshop)
 "by" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"bE" = (
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/gloves/insulated,
+/obj/item/tool/multitool/improvised,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "bI" = (
 /obj/structure/girder,
@@ -146,6 +185,12 @@
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop)
+"cq" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/blue,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "cv" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/beach/water/shallow,
@@ -247,6 +292,25 @@
 /mob/living/carbon/superior_animal/wurm/silver,
 /turf/simulated/floor/asteroid/dirt,
 /area/colony/exposedsun/crashed_shop)
+"dI" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"dK" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech{
+	pixel_x = -1
+	},
+/obj/item/contraband/poster/placed/generic/tools{
+	pixel_x = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "dM" = (
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak,
 /turf/simulated/floor/wood_old,
@@ -270,6 +334,14 @@
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"eh" = (
+/obj/machinery/power/port_gen/pacman/diesel/anchored,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "ei" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/lowkeyrandom/low_chance,
@@ -290,6 +362,11 @@
 /obj/random/gun_combat,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"eH" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/remains,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "eN" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -444,6 +521,17 @@
 /obj/item/circuitboard/chemmaster,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"hc" = (
+/obj/machinery/door/airlock/vault/bolted{
+	name = "Electrical"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "hg" = (
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -466,12 +554,26 @@
 "hJ" = (
 /turf/simulated/floor/tiled/steel/danger,
 /area/colony/exposedsun/crashed_shop/workshop)
+"hL" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "hO" = (
 /obj/structure/table/rack,
 /obj/item/tool/weldingtool,
 /obj/random/toolbox,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"hT" = (
+/obj/item/remains,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "hW" = (
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony/exposedsun/crashed_shop)
@@ -480,6 +582,15 @@
 /obj/structure/reagent_dispensers/fueltank/derelict,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"ii" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/item/remains,
+/obj/item/clothing/accessory/hunter_necklace{
+	layer = 1;
+	blood_overlay = 1
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "ij" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/material/low_chance,
@@ -504,6 +615,15 @@
 	},
 /turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
+"it" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/plasticflaps,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "ix" = (
 /obj/machinery/mineral/processing_unit_console/scrap_haven{
 	pixel_x = 28
@@ -539,15 +659,33 @@
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2";
+	icon_state = "1-1";
 	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/workshop)
+"iK" = (
+/obj/structure/low_wall,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"iP" = (
+/obj/machinery/light/small/autoattach/deepmaints{
+	name = "built"
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "iQ" = (
 /obj/structure/scrap/guns/large,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"iU" = (
+/obj/structure/closet/crate/bin,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "iZ" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/material_rare/low_chance,
@@ -648,6 +786,12 @@
 "kx" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"kC" = (
+/obj/structure/boulder,
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "kH" = (
 /obj/structure/railing{
@@ -769,6 +913,18 @@
 /obj/item/tool/shovel/improvised,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/colony/exposedsun/crashed_shop)
+"mt" = (
+/obj/structure/table/standard,
+/obj/item/soap,
+/obj/item/contraband/poster/placed/pinup/xeno{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"mv" = (
+/mob/living/simple_animal/hostile/tengcharge,
+/turf/simulated/floor/rock/grey,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "my" = (
 /obj/item/remains,
 /obj/item/clothing/head/hardhat/yellow,
@@ -781,6 +937,11 @@
 	},
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
+"mG" = (
+/obj/item/remains,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "mH" = (
 /mob/living/carbon/superior_animal/human/voidwolf/captain,
 /turf/simulated/floor/plating/under,
@@ -804,6 +965,11 @@
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/colony/exposedsun/crashed_shop)
+"mS" = (
+/obj/machinery/door/unpowered/simple/wood,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "mY" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/wall/r_wall,
@@ -834,6 +1000,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"nw" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "nx" = (
 /obj/machinery/door/window,
 /obj/effect/decal/cleanable/dirt,
@@ -853,6 +1023,12 @@
 /obj/structure/scrap/vehicle/large,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"nO" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "nU" = (
 /obj/item/scrap_lump,
 /obj/structure/invislight,
@@ -872,6 +1048,11 @@
 "oi" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"op" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "oq" = (
 /turf/simulated/floor/carpet/bcarpet,
@@ -898,6 +1079,13 @@
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/colony/exposedsun/crashed_shop)
+"oC" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "oF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood_old,
@@ -997,6 +1185,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"pK" = (
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/flooded,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "qn" = (
 /obj/structure/railing{
 	dir = 8
@@ -1008,6 +1200,16 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony/exposedsun/crashed_shop)
+"qv" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/structure/sign/warningnew/secure{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "qw" = (
 /obj/item/stack/rods/random,
 /obj/item/stack/material/steel/random,
@@ -1030,6 +1232,11 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
+"qD" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "qF" = (
 /obj/structure/railing{
 	dir = 8
@@ -1077,6 +1284,15 @@
 /obj/random/material/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
+"rw" = (
+/obj/structure/mopbucket,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack/shelf,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "rx" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -1102,11 +1318,37 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"rH" = (
+/obj/structure/boulder,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"rJ" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"rL" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "rQ" = (
 /obj/item/stack/rods/random,
 /obj/structure/reagent_dispensers/fueltank/derelict,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop)
+"rV" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/item/remains,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "rX" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1121,6 +1363,13 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"sh" = (
+/obj/machinery/floodlight{
+	name = "floodlight";
+	oldified = 1
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "si" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8
@@ -1268,6 +1517,11 @@
 /obj/item/trash/material/metal,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"uq" = (
+/obj/structure/flora/rock/variant2,
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "ur" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -1313,6 +1567,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop)
+"vj" = (
+/obj/random/mob/nightmare,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "vn" = (
 /obj/structure/lattice,
 /obj/structure/table/rack,
@@ -1414,6 +1672,15 @@
 /obj/random/mob/voidwolf,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop)
+"xf" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "xo" = (
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
 /turf/simulated/floor/wood_old,
@@ -1452,6 +1719,15 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"xS" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "xW" = (
 /obj/structure/table/rack,
 /obj/random/material_resources/low_chance,
@@ -1491,6 +1767,15 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"yD" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "yM" = (
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/colony/exposedsun/crashed_shop)
@@ -1517,11 +1802,29 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/colony/exposedsun/crashed_shop)
+"zr" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/space,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "zt" = (
 /obj/item/stack/rods/random,
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"zx" = (
+/obj/machinery/porta_turret/prepper{
+	faction_iff = "pirate"
+	},
+/obj/machinery/light/small/autoattach/deepmaints{
+	name = "built"
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"zy" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "zC" = (
 /turf/simulated/floor/tiled/white/techfloor,
 /area/colony/exposedsun/crashed_shop/workshop)
@@ -1545,6 +1848,13 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/colony/exposedsun/crashed_shop)
+"zM" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/plasticflaps,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "zO" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 4
@@ -1727,6 +2037,10 @@
 /obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"By" = (
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Bz" = (
 /obj/item/material/shard/shrapnel/scrap,
 /obj/structure/lattice,
@@ -1823,6 +2137,10 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/colony/exposedsun/crashed_shop)
+"Dn" = (
+/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Ds" = (
 /obj/structure/invislight,
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
@@ -1843,9 +2161,20 @@
 "DY" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/colony/exposedsun/crashed_shop)
+"Ea" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_combat,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Eh" = (
 /obj/item/scrap_lump,
 /turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Ei" = (
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Ek" = (
 /obj/structure/table/steel_reinforced,
@@ -1859,6 +2188,10 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop)
+"Ep" = (
+/obj/effect/step_trigger/riverforest_to_crash_1_B,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Ey" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -1907,6 +2240,12 @@
 /obj/random/science/low_chance,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"ES" = (
+/obj/machinery/light/small/autoattach/deepmaints{
+	name = "built"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "EW" = (
 /obj/item/stack/rods/random,
 /turf/simulated/floor/rock/grey,
@@ -1969,6 +2308,21 @@
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Gd" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/machinery/door/airlock/multi_tile/metal{
+	dir = 4;
+	locked = 1;
+	name = "Ironhead Compound"
+	},
+/obj/structure/sign/warningnew/secure{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Gk" = (
 /obj/structure/flora/rock,
 /turf/simulated/floor/beach/sand,
@@ -2079,6 +2433,11 @@
 /obj/item/stack/material/plasteel/random,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"Hz" = (
+/obj/item/scrap_lump,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "HC" = (
 /obj/structure/catwalk,
 /obj/structure/lattice,
@@ -2098,6 +2457,12 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"HL" = (
+/obj/structure/sign/warningnew/danger{
+	pixel_y = 32
+	},
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "HM" = (
 /turf/simulated/wall/r_wall,
 /area/colony/exposedsun/crashed_shop)
@@ -2106,6 +2471,25 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/carpet/bcarpet,
 /area/colony/exposedsun/crashed_shop/workshop)
+"HX" = (
+/obj/structure/disposalpipe/junction/yjunction,
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Ig" = (
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Ij" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech{
+	pixel_x = -1
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/colony/exposedsun/crashed_shop)
+"Il" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Io" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -2169,6 +2553,12 @@
 /obj/item/storage/bag/ore,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Jr" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/item/scrap_lump,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Jw" = (
 /obj/structure/railing{
 	dir = 1
@@ -2194,6 +2584,15 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"JF" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/effect/decal/cleanable/solid_biomass,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "JN" = (
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
@@ -2210,6 +2609,11 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Ka" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Kf" = (
 /obj/item/remains/ribcage,
 /obj/effect/decal/cleanable/blood,
@@ -2265,6 +2669,10 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"KC" = (
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "KE" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/wood_old,
@@ -2274,6 +2682,11 @@
 /obj/item/stack/rods/random,
 /obj/item/stack/material/steel/random,
 /turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"KJ" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/device/flash,
+/turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "KK" = (
 /obj/structure/flora/small/rock5,
@@ -2379,6 +2792,10 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop)
+"LW" = (
+/obj/item/remains,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "LX" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/lowkeyrandom/low_chance,
@@ -2453,6 +2870,9 @@
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
+"MO" = (
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "MR" = (
 /obj/structure/scrap/vehicle,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -2529,6 +2949,11 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
+"NP" = (
+/obj/structure/boulder,
+/obj/item/mine_old,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "NS" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -2544,6 +2969,13 @@
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop)
+"NW" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Ob" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -2657,6 +3089,19 @@
 /obj/structure/flora/small/trailrocka4,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"Pn" = (
+/obj/structure/urinal{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Pp" = (
+/turf/simulated/floor/beach/water/flooded,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"PA" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/rock,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "PK" = (
 /obj/random/scrap/dense_weighted,
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
@@ -2701,6 +3146,13 @@
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Qy" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "QA" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/booze,
@@ -2755,9 +3207,18 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Rh" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/remains,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Rm" = (
 /obj/effect/step_trigger/riverforest_to_crash_1_B,
 /turf/simulated/floor/asteroid/dirt/dust,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Ro" = (
+/obj/random/mob/nightmare,
+/turf/simulated/floor/beach/water/flooded,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Rp" = (
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
@@ -2778,9 +3239,22 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"RK" = (
+/obj/machinery/door/airlock/vault/bolted{
+	name = "Checkpoint"
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "RS" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"Sd" = (
+/obj/machinery/floodlight{
+	name = "floodlight";
+	oldified = 1
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Se" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2811,6 +3285,13 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/colony/exposedsun/crashed_shop)
+"SZ" = (
+/obj/structure/table/rack/shelf,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Ta" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/rock,
@@ -2828,6 +3309,10 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/colony/exposedsun/crashed_shop)
+"Ti" = (
+/obj/item/scrap_lump,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Tj" = (
 /obj/machinery/mineral/stacking_unit_console{
 	pixel_x = 28
@@ -2878,6 +3363,17 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/colony/exposedsun/crashed_shop/workshop)
+"TC" = (
+/obj/machinery/recharge_station,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/autoattach/deepmaints{
+	name = "built"
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "TE" = (
 /obj/structure/catwalk,
 /obj/structure/railing,
@@ -2915,7 +3411,21 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/colony/exposedsun/crashed_shop)
+"TP" = (
+/obj/random/scrap/dense_weighted,
+/turf/unsimulated/mineral,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"TR" = (
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "TS" = (
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"TY" = (
+/obj/machinery/floodlight{
+	name = "floodlight";
+	oldified = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Uc" = (
@@ -2934,6 +3444,19 @@
 /obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"Uo" = (
+/obj/machinery/power/apc/critical{
+	pixel_y = 26
+	},
+/obj/structure/cable/ender,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/structure/grille,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Uq" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/colony/exposedsun/crashed_shop)
@@ -2976,6 +3499,14 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/colony/exposedsun/crashed_shop/workshop)
+"US" = (
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"UU" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock/grey,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "UX" = (
 /turf/unsimulated/mask,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
@@ -2992,6 +3523,10 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"Vm" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/tiled/techmaint,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Vp" = (
 /obj/item/stack/rods/random,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -3038,6 +3573,11 @@
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
+"VZ" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/mob/living/carbon/superior_animal/lodge/baby_cerberus,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Wb" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/dark/danger,
@@ -3064,6 +3604,10 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"Wv" = (
+/mob/living/simple_animal/hostile/tengbrute,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "Wx" = (
 /obj/landmark/machinery/output,
 /obj/machinery/conveyor/south{
@@ -3164,6 +3708,18 @@
 	},
 /turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
+"XC" = (
+/mob/living/simple_animal/hostile/tengstalker,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
+"XH" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 "XP" = (
 /obj/structure/closet/crate/serbcrate,
 /obj/random/material_rare/low_chance,
@@ -3299,6 +3855,10 @@
 /obj/random/mob/voidwolf,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/colony/exposedsun/crashed_shop)
+"ZZ" = (
+/mob/living/simple_animal/hostile/tengcharge,
+/turf/simulated/floor/rock/dark,
+/area/colony/exposedsun/crashed_shop/bottom_floor)
 
 (1,1,1) = {"
 wv
@@ -6407,7 +6967,7 @@ Uw
 Uw
 Uf
 Lj
-uy
+mm
 lP
 wv
 wv
@@ -6575,7 +7135,7 @@ lP
 wv
 wv
 wv
-wv
+lP
 wv
 wv
 wv
@@ -6653,12 +7213,12 @@ wL
 Uf
 Uw
 Uw
+aD
+wv
+wv
 lP
-wv
-wv
-wv
-wv
-wv
+vj
+lP
 wv
 wv
 "}
@@ -6735,12 +7295,12 @@ UD
 wL
 Lj
 Uw
+aD
+Ka
 lP
 wv
-wv
-wv
-wv
-wv
+LW
+lP
 wv
 wv
 "}
@@ -6817,13 +7377,13 @@ LH
 UD
 ur
 lP
+aD
+pK
+Pp
 lP
-wv
-wv
-wv
-wv
-wv
-wv
+PA
+aD
+lP
 wv
 "}
 (44,1,1) = {"
@@ -6881,7 +7441,7 @@ GS
 Yw
 Yw
 WE
-Yw
+bw
 Yw
 Yw
 Yw
@@ -6900,12 +7460,12 @@ UD
 UD
 lP
 wv
-wv
-wv
-wv
-wv
-wv
-wv
+Pp
+Pp
+Pp
+Yw
+vj
+aD
 wv
 "}
 (45,1,1) = {"
@@ -6982,12 +7542,12 @@ Se
 Xi
 lP
 wv
-wv
-wv
-wv
-wv
-wv
-wv
+lP
+Pp
+Pp
+Yw
+LW
+aD
 wv
 "}
 (46,1,1) = {"
@@ -7061,15 +7621,15 @@ Yw
 Yw
 Yw
 wL
-HJ
+GS
 lP
 lP
 wv
-wv
-wv
-wv
-wv
-wv
+Ro
+MC
+aD
+lP
+lP
 wv
 "}
 (47,1,1) = {"
@@ -7142,15 +7702,15 @@ Yw
 Yw
 Yw
 Yw
-MC
-Yw
-HJ
+mG
+GS
+GS
 lP
 wv
-wv
-wv
-wv
-wv
+lP
+aD
+NP
+lP
 wv
 wv
 "}
@@ -7224,14 +7784,14 @@ Yw
 DP
 Yw
 Yw
-Yw
-Ta
+GS
+By
 lP
-lP
 wv
 wv
 wv
 wv
+aD
 wv
 wv
 wv
@@ -7288,7 +7848,7 @@ GS
 GS
 GS
 GS
-GS
+Rh
 GS
 GS
 vJ
@@ -7304,17 +7864,17 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-lP
+GS
+GS
+GS
+Sd
 wv
-wv
-wv
-wv
-wv
-wv
+tw
+tw
+tw
+tw
+tw
+tw
 wv
 wv
 "}
@@ -7385,18 +7945,18 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
+GS
+GS
+GS
+GS
+By
 wv
-wv
-wv
-wv
-wv
-wv
+tw
+Uo
+it
+dK
+eh
+tw
 wv
 wv
 "}
@@ -7466,19 +8026,19 @@ Yw
 WE
 Yw
 Yw
-MC
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
-wv
-wv
-wv
-wv
-wv
+mG
+GS
+GS
+GS
+GS
+KC
+tw
+tw
+tw
+tw
+Hz
+TC
+tw
 wv
 wv
 "}
@@ -7540,27 +8100,27 @@ GS
 GS
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-aQ
-Yw
-Yw
-Yw
 lf
-KK
+Yw
+Yw
+Yw
 aQ
 Yw
 Yw
 Yw
-Yw
-lP
-lP
-wv
-wv
-wv
-wv
+GS
+dI
+aQ
+GS
+GS
+KC
+iK
+zx
+tw
+TY
+xf
+bE
+tw
 wv
 wv
 "}
@@ -7630,21 +8190,21 @@ Vy
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
-wv
-wv
-wv
-wv
-wv
-wv
+GS
+GS
+aQ
+GS
+GS
+TS
+iK
+iK
+tw
+tw
+hc
+tw
+tw
+tw
+tw
 "}
 (54,1,1) = {"
 wv
@@ -7713,20 +8273,20 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-MC
-Yw
-Yw
-Yw
-Ta
-lP
-wv
-wv
-wv
-wv
-wv
-wv
+GS
+GS
+mG
+GS
+TS
+aX
+US
+Gd
+Ei
+hL
+TR
+TR
+Ep
+kM
 "}
 (55,1,1) = {"
 wv
@@ -7783,7 +8343,7 @@ GS
 GS
 GS
 GS
-Yw
+bw
 Yw
 Yw
 Yw
@@ -7795,20 +8355,20 @@ MC
 Yw
 WE
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
-wv
-wv
-wv
-wv
-wv
-wv
+GS
+GS
+GS
+GS
+TS
+aX
+US
+qv
+TR
+yD
+TR
+TR
+Ep
+kM
 "}
 (56,1,1) = {"
 wv
@@ -7877,20 +8437,20 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Ta
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
-wv
-wv
-wv
-wv
-wv
-wv
+GS
+By
+GS
+GS
+TS
+iK
+iK
+tw
+zr
+zr
+zr
+RK
+tw
+tw
 "}
 (57,1,1) = {"
 wv
@@ -7959,19 +8519,19 @@ Yw
 Yw
 Vy
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
-lP
-wv
-wv
-wv
-wv
-wv
+aQ
+GS
+GS
+GS
+KC
+iK
+zx
+tw
+KJ
+cq
+op
+MO
+tw
 wv
 "}
 (58,1,1) = {"
@@ -8028,7 +8588,7 @@ GS
 GS
 GS
 GS
-GS
+Rh
 Yw
 Yw
 Yw
@@ -8041,19 +8601,19 @@ Yw
 Yw
 Yw
 Yw
+aQ
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-lP
+GS
+GS
+uq
+tw
 wv
-wv
-wv
-wv
-wv
-wv
+tw
+iU
+oC
+MO
+iP
+tw
 wv
 "}
 (59,1,1) = {"
@@ -8125,17 +8685,17 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
+GS
+Sd
 lP
 lP
-lP
 wv
-wv
-wv
-wv
-wv
-wv
+tw
+SZ
+sh
+Ea
+MO
+tw
 wv
 "}
 (60,1,1) = {"
@@ -8207,17 +8767,17 @@ Yw
 Yw
 Yw
 Yw
-Yw
+GS
 UX
 UX
 UX
-UX
 wv
-wv
-wv
-wv
-wv
-wv
+tw
+tw
+tw
+tw
+Vm
+tw
 wv
 "}
 (61,1,1) = {"
@@ -8278,7 +8838,7 @@ Yw
 Yw
 aQ
 Yw
-Yw
+bw
 Yw
 Yw
 Vy
@@ -8292,14 +8852,14 @@ UX
 UX
 UX
 UX
-UX
-UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+HX
+tw
+bo
+Dn
+ah
+tw
 wv
 "}
 (62,1,1) = {"
@@ -8367,21 +8927,21 @@ Yw
 aQ
 aQ
 Yw
-Yw
-Yw
-UX
-UX
+UD
+Se
 UX
 UX
 UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+rL
+tw
+Pn
+xS
+ES
+tw
 wv
 "}
 (63,1,1) = {"
@@ -8438,6 +8998,7 @@ GS
 GS
 Yw
 Yw
+bw
 Yw
 Yw
 Yw
@@ -8446,12 +9007,9 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-UX
-UX
+HJ
+UD
+wL
 UX
 UX
 UX
@@ -8459,11 +9017,13 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+rL
+tw
+mS
+tw
+mt
+tw
 wv
 "}
 (64,1,1) = {"
@@ -8527,12 +9087,11 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-UX
+UD
+UD
+UD
+Il
+ur
 UX
 UX
 UX
@@ -8541,11 +9100,12 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+rL
+tw
+rw
+tw
+az
+tw
 wv
 "}
 (65,1,1) = {"
@@ -8607,14 +9167,12 @@ Yw
 Yw
 Ta
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-UX
-UX
+UD
+UD
+Xi
+Se
+wL
+UD
 UX
 UX
 UX
@@ -8623,10 +9181,12 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
+lP
+zM
+tw
+tw
+tw
+lP
 wv
 wv
 "}
@@ -8687,16 +9247,14 @@ Yw
 Yw
 Yc
 Yw
-Yw
-Yw
-Yw
-Yw
-Yw
-UX
-UX
-UX
-UX
-UX
+UD
+wL
+UD
+Se
+Il
+lP
+lP
+lP
 UX
 UX
 UX
@@ -8705,11 +9263,13 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+Qy
+ai
+NW
+XH
+kx
+lP
 wv
 "}
 (67,1,1) = {"
@@ -8767,16 +9327,14 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Vy
-Yw
-Yw
-Yw
-Yw
-UX
-UX
-UX
-UX
+Xi
+UD
+Il
+HJ
+ur
+rJ
+lP
+lP
 UX
 UX
 UX
@@ -8787,11 +9345,13 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+qD
+XH
+JF
+XH
+XH
+Jr
 wv
 "}
 (68,1,1) = {"
@@ -8849,16 +9409,14 @@ Yw
 Yw
 Yw
 Yw
-Yw
-Yw
-Yw
-UX
-UX
-UX
-UX
-UX
-UX
-UX
+wL
+lP
+lP
+lP
+lP
+aD
+lP
+wv
 UX
 UX
 UX
@@ -8869,11 +9427,13 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+lP
+qD
+XH
+XH
+XH
+qD
 wv
 "}
 (69,1,1) = {"
@@ -8931,16 +9491,15 @@ Ta
 Yw
 UX
 UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
+lP
+lP
+wv
+wv
+aQ
+aQ
+lP
+wv
+wv
 UX
 UX
 UX
@@ -8951,11 +9510,12 @@ UX
 UX
 UX
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+Jr
+XH
+rV
+JF
+qD
 wv
 "}
 (70,1,1) = {"
@@ -9015,14 +9575,14 @@ UX
 UX
 UX
 UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
+wv
+wv
+tw
+HL
+lP
+lP
+wv
+wv
 UX
 UX
 UX
@@ -9033,11 +9593,11 @@ wv
 wv
 wv
 wv
-wv
-wv
-wv
-wv
-wv
+lP
+qD
+kC
+nO
+lP
 wv
 "}
 (71,1,1) = {"
@@ -9097,14 +9657,14 @@ UX
 UX
 UX
 UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
+wv
+wv
+wv
+Yw
+lP
+lP
+wv
+wv
 UX
 UX
 UX
@@ -9116,9 +9676,9 @@ wv
 wv
 wv
 wv
-wv
-wv
-wv
+rH
+lP
+lP
 wv
 wv
 "}
@@ -9179,28 +9739,28 @@ UX
 UX
 UX
 UX
-UX
-UX
-UX
-wv
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
 wv
 wv
+wv
+aD
+oH
+lP
+wv
+wv
+UX
+UX
+UX
+UX
+UX
 wv
 wv
 wv
 wv
 wv
-wv
-wv
+lP
+Yw
+aD
+lP
 wv
 wv
 "}
@@ -9263,6 +9823,10 @@ wv
 wv
 wv
 wv
+lP
+oH
+oH
+lP
 wv
 wv
 wv
@@ -9273,15 +9837,11 @@ wv
 wv
 wv
 wv
+lP
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+lP
+DP
+lP
 wv
 wv
 wv
@@ -9346,24 +9906,24 @@ wv
 wv
 wv
 wv
+lP
+oH
+oH
+lP
 wv
 wv
 wv
 wv
 wv
 wv
+lP
 wv
+lP
+zy
+UU
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+oH
+lP
 wv
 wv
 wv
@@ -9424,29 +9984,29 @@ wv
 wv
 wv
 wv
+lP
+wv
+wv
+lP
+bY
+mv
+bY
+XC
+zy
 wv
 wv
 wv
 wv
+lP
+zy
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+hT
+Wv
+Ti
+mv
+bY
+UU
+lP
 wv
 wv
 "}
@@ -9505,30 +10065,30 @@ wv
 wv
 wv
 wv
+lP
+Xi
+rJ
 wv
+lP
+UU
+bY
+eH
+Ig
+Wv
+zy
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+lP
+lP
+zy
+ZZ
+Ig
+Ti
+Ig
+zy
+il
+bY
+UU
+TP
 wv
 wv
 "}
@@ -9587,29 +10147,29 @@ wv
 wv
 wv
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+Xi
+Il
+VZ
+aD
+aD
+lP
+UU
+lP
+Ig
+ZZ
+Ig
+eH
+Ig
+Ig
+Ig
+nw
+Ti
+Wv
+Ig
+Ig
+zy
+bY
+lP
 wv
 wv
 wv
@@ -9668,29 +10228,29 @@ wv
 wv
 wv
 wv
+lP
+Se
+ii
+Xi
+Xi
+Yw
+aD
+lP
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+lP
+Ig
+nw
+Ig
+Wv
+Ig
+nw
+XC
+zy
+Ig
+hT
+Ig
+Ig
+mv
 wv
 wv
 wv
@@ -9751,27 +10311,27 @@ wv
 wv
 wv
 wv
+lP
+Se
+lP
+lP
+lP
 wv
 wv
 wv
 wv
+lP
+zy
 wv
+zy
+zy
+lP
+lP
 wv
+UU
 wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
-wv
+lP
+lP
 wv
 wv
 wv
@@ -11543,7 +12103,7 @@ yj
 Uq
 fp
 Uq
-zI
+Ij
 Uq
 Uq
 Hr

@@ -153,6 +153,40 @@
 	armor_divisor = 1
 	melee_damage_type = BURN
 
+/mob/living/carbon/superior_animal/human/voidwolf/miner
+	name = "Void Wolf Miner"
+	desc = "A Void Wolf mercenary equipped with a sharp pickaxe. Genetically modified to work more productively underground."
+	melee_damage_lower = 25
+	melee_damage_upper = 30
+	maxHealth = 175
+	health = 175
+	icon_state = "voidminer_pickage"
+	icon_dead = "voidengie_dead"
+	attacktext = list("hit", "pierced", "sliced", "attacked")
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	drop_items = list(/obj/item/tool/pickaxe)
+	armor_divisor = 4
+
+/mob/living/carbon/superior_animal/human/voidwolf/miner/death()
+	..()
+	/obj/random/material_ore
+	/obj/random/material_ore_small
+	/obj/random/material_ore/low_chance
+	drop_death_loot()
+
+/mob/living/carbon/superior_animal/human/voidwolf/miner/Initialize()
+	..()
+	if(prob(50))
+		icon_state = "voidminer"
+		desc = "A Void Wolf mercenary equipped with a big mining drill. Genetically modified to work more productively underground."
+		maxHealth = 200
+		health = 200
+		drop_items = list(/obj/item/tool/pickaxe/drill)
+		melee_damage_lower = 30
+		melee_damage_upper = 35
+		armor_divisor = 3
+		delay_for_melee = 0.5
+
 /mob/living/carbon/superior_animal/human/voidwolf/heavy
 	name = "Void Wolf Heavy Trooper"
 	desc = "Heavy"
@@ -731,26 +765,41 @@
 	return TRUE
 
 /mob/living/carbon/superior_animal/human/voidwolf/captain/high/special_ability()
-	//Additional solders! 2 melee. 1 ranged.
-	visible_emote("whistles!")
-	playsound(src, 'sound/misc/whistle_attention.ogg', 90, 1)
-	new /mob/living/carbon/superior_animal/human/voidwolf/ranged/emergency(src)
-	new /mob/living/carbon/superior_animal/human/voidwolf/emergency(src)
-	new /mob/living/carbon/superior_animal/human/voidwolf/emergency(src)
-	if(prob(40)) //Additional solders! 2 ranged. 1 melee.
-		visible_emote("whistles!")
-		playsound(src, 'sound/misc/whistle_attention.ogg', 90, 1)
-		new /mob/living/carbon/superior_animal/human/voidwolf/ranged/emergency(src)
-		new /mob/living/carbon/superior_animal/human/voidwolf/ranged/emergency(src)
-		new /mob/living/carbon/superior_animal/human/voidwolf/emergency(src)
-	else if(prob(10)) //Elite! 2 ranged. 2 melee.
-		visible_emote("whistles!")
-		playsound(src, 'sound/items/whistle.ogg', 90, 1)
-		new /mob/living/carbon/superior_animal/human/voidwolf/elite(src)
-		new /mob/living/carbon/superior_animal/human/voidwolf/elite(src)
-		new /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon(src)
-		new /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon(src)
-	special_ability_cooldown = world.time + ability_cooldown
+    //Additional solders! 2 melee. 1 ranged.
+    visible_emote("whistles!")
+    playsound(src, 'sound/misc/whistle_attention.ogg', 90, 1)
+    var/void_elite = 0
+    var/void_myrmidon = 0
+    var/void_emergency = 2
+    var/void_ranged_emergency = 1
+    var/list/validtargets = list()
+    var/target = FALSE
+    if(prob(40)) //Additional solders! 2 ranged. 1 melee.
+        void_ranged_emergency  = 2
+        void_emergency = 1
+    else if(prob(10)) //Elite! 2 ranged. 2 melee.
+        void_elite = 2
+        void_myrmidon = 2
+    for(var/turf/simulated/floor/T in oview(2, src))
+        validtargets += T
+
+    var/spawned = 0
+    for(spawned, void_elite>=spawned, spawned++)
+        target = pick(validtargets)
+        new /mob/living/carbon/superior_animal/human/voidwolf/elite(target)
+    spawned = 0
+    for(spawned, void_myrmidon>=spawned, spawned++)
+        target = pick(validtargets)
+        new /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon(target)
+    spawned = 0
+    for(spawned, void_emergency>=spawned, spawned++)
+        target = pick(validtargets)
+        new /mob/living/carbon/superior_animal/human/voidwolf/emergency(target)
+    spawned = 0
+    for(spawned, void_ranged_emergency>=spawned, spawned++)
+        target = pick(validtargets)
+        new /mob/living/carbon/superior_animal/human/voidwolf/ranged/emergency(target)
+    special_ability_cooldown = world.time + ability_cooldown
 
 /mob/living/carbon/superior_animal/human/voidwolf/captain/high/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	.=..()
@@ -789,7 +838,7 @@
 	melee_damage_upper = 25
 	maxHealth = 150
 	health = 150
-	comfy_range = 6
+	comfy_range = 16
 	viewRange = 22
 	var/vision_range = 22
 	ranged = TRUE
@@ -895,10 +944,6 @@
 				if(prob(30))
 					projectiletype = /obj/item/projectile/bullet/antim/incend
 					visible_message(SPAN_DANGER("<b>[src]</b> loads \"Willy Pete\" shell casing in rifle!"))
-				return
-			if(prob(10))
-				projectiletype = /obj/item/projectile/bullet/antim/ion
-				visible_message(SPAN_DANGER("<b>[src]</b> loads \"Off-Switch\" shell casing in rifle!"))
 				return
 			return
 		if((get_dist(targetted_mob, src) <= range)) //-
