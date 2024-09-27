@@ -175,6 +175,8 @@
 	var/datum/wires/vending/wires = null
 	var/always_open	=	FALSE // If true, this machine allows products to be inserted without requirinf the maintenance hatch to be screwed open first
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
+	var/list/blacklisted = list() //Items that are not allowed for the vendor to use if custom
+
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
 	var/alt_currency_path	// If set, this machine will only take items of the given path as currency.
@@ -217,6 +219,11 @@
 /obj/machinery/vending/proc/stock(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
 	if(!user.unEquip(W))
 		return
+
+	for(var/a in blacklisted)
+		if(istype(W, a))
+			to_chat(user, SPAN_NOTICE("You are unable to add this product to the receptor."))
+			return FALSE
 
 	to_chat(user, SPAN_NOTICE("You insert \the [W] in the product receptor."))
 	if (R)
@@ -981,6 +988,27 @@
 	custom_vendor = TRUE
 	locked = TRUE
 	can_stock = list(/obj/item)
+	blacklisted = list(
+						/obj/item/clothing/suit/space/occultist,
+						/obj/item/clothing/head/helmet/space/occulthood,
+						/obj/item/clothing/mask/deepmaints_debuff,
+						/obj/item/clothing/shoes/occultgreaves,
+						/obj/item/clothing/gloves/occultgloves,
+						/obj/item/clothing/suit/space/occulHtist,
+						/obj/item/clothing/head/helmet/space/occultHhood,
+						/obj/item/clothing/gloves/occultHgloves,
+						/obj/item/clothing/shoes/occultHgreaves,
+						/obj/item/tool/psionic_omnitool,
+						/obj/item/projectile/kinetic_blast,
+						/obj/item/device/lighting/toggleable/lantern/psionics,
+						/obj/item/flame/pyrokinetic_spark,
+						/obj/item/tool/hammer/telekinetic_fist,
+						/obj/item/tool/knife/psionic_blade,
+						/obj/item/shield/riot/crusader/psionic,
+						/obj/item/stack/medical/bruise_pack/psionic,
+
+	) //Items that are not allowed for the vendor to use if custom
+
 	//No.
 	give_discounts = FALSE
 	give_discount_points = FALSE
