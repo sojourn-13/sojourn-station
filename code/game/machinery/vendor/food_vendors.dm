@@ -462,6 +462,7 @@
 					/obj/item/storage/lunchbox/cat = 8,
 					/obj/item/reagent_containers/food/drinks/pitcher = 9,
 					/obj/item/reagent_containers/food/drinks/teapot = 9,
+					/obj/item/reagent_containers/food/drinks/carafe = 9,
 					/obj/item/reagent_containers/food/drinks/mug = 6,
 					/obj/item/reagent_containers/food/drinks/mug/black = 6,
 					/obj/item/reagent_containers/food/drinks/mug/green = 6,
