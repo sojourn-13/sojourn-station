@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/sliceable/bread
 	name = "bread"
-	icon_state = "Some plain old Earthen bread."
+	icon_state = "Some plain old bread."
 	icon_state = "bread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice
 	slices_num = 5
@@ -14,7 +14,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice
 	name = "bread slice"
-	desc = "A slice of home."
+	desc = "A slice of generic bread."
 	icon_state = "breadslice"
 	taste_tag = list(FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -25,7 +25,7 @@
 
 /obj/item/reagent_containers/food/snacks/butterbread
 	name = "buttered toast"
-	desc = "A freshly toasted slice of bread with melting butter on top, the humblest of meals for the simple man."
+	desc = "A freshly toasted slice of bread with melting butter on top, a humble start to any breakfast."
 	icon_state = "buttertoast"
 	taste_tag = list(FLOURY_FOOD)
 	bitesize = 3
@@ -34,7 +34,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/creamcheesebread
 	name = "cream cheese bread"
-	desc = "Yum yum yum!"
+	desc = "A pillowy loaf of bread and cream cheese."
 	icon_state = "creamcheesebread"
 	taste_tag = list(CHEESE_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/creamcheesebreadslice
@@ -49,7 +49,7 @@
 
 /obj/item/reagent_containers/food/snacks/creamcheesebreadslice
 	name = "cream cheese bread slice"
-	desc = "A slice of yum!"
+	desc = "A slice of bread mixed with cream cheese."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "creamcheesebreadslice"
 	trash = /obj/item/trash/plate
@@ -62,7 +62,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/meatbread
 	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	desc = "A hearty, savory bread packed with tender chunks of seasoned meats and cheese."
 	icon_state = "meatbread"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/meatbreadslice
@@ -77,7 +77,7 @@
 
 /obj/item/reagent_containers/food/snacks/meatbreadslice
 	name = "meatbread slice"
-	desc = "A slice of delicious meatbread."
+	desc = "A slice of meatbread."
 	icon_state = "meatbreadslice"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -90,7 +90,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/xenomeatbread
 	name = "xenomeatbread loaf"
-	desc = "The culinary base of every self-respecting eloquent gentleman. Extra Heretical."
+	desc = "An acid packed loaf with rubbery chunks of seasoned meats."
 	icon_state = "xenomeatbread"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/xenomeatbreadslice
@@ -105,7 +105,7 @@
 
 /obj/item/reagent_containers/food/snacks/xenomeatbreadslice
 	name = "xenomeatbread slice"
-	desc = "A slice of delicious meatbread. Extra Heretical."
+	desc = "A slice of acidy meatbread."
 	icon_state = "xenobreadslice"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -119,7 +119,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/bananabread
 	name = "banana-nut bread"
-	desc = "A heavenly and filling treat."
+	desc = "A heavy and filling treat."
 	icon_state = "bananabread"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/bananabreadslice
@@ -134,7 +134,7 @@
 
 /obj/item/reagent_containers/food/snacks/bananabreadslice
 	name = "banana-nut bread slice"
-	desc = "A slice of delicious banana bread."
+	desc = "A slice of banana bread."
 	icon_state = "bananabreadslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate

@@ -360,7 +360,7 @@ var/global/chicken_count = 0
 /mob/living/simple_animal/pig/hog/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem hogs
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
-		if(G.seed && G.seed.kitchen_tag == "mushroom")
+		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && hogsleft < 4)
 				user.visible_message("\blue [user] feeds [O] to [name]! She snorts happily.","\blue You feed [O] to [name]! She snorts happily.")
 				user.drop_item()

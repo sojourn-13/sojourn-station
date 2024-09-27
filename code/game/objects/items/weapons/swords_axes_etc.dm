@@ -60,19 +60,25 @@
 	w_class = ITEM_SIZE_SMALL
 	force = 3
 	var/on = 0
+	var/baton_base = "telebaton"
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
+/obj/item/melee/telebaton/refresh_upgrades()
+	..()
+	if(baton_base == "rat_telebaton")
+		name = "Gilded Telebaton"
 
 /obj/item/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
+	icon_state = "[baton_base]_[on]"
+	item_state = "[baton_base]_[on]"
 	if(on)
 		user.visible_message(
 			SPAN_WARNING("With a flick of their wrist, [user] extends their telescopic baton."),
 			SPAN_WARNING("You extend the baton."),
 			"You hear an ominous click."
 		)
-		icon_state = "telebaton_1"
-		item_state = "telebaton_1"
+
 		update_wear_icon()
 		w_class = ITEM_SIZE_NORMAL
 		force = WEAPON_FORCE_PAINFUL//quite robust
@@ -84,8 +90,6 @@
 			SPAN_NOTICE("You collapse the baton."),
 			"You hear a click."
 		)
-		icon_state = "telebaton_0"
-		item_state = "telebaton_0"
 		update_wear_icon()
 		w_class = ITEM_SIZE_SMALL
 		force = 3//not so robust now

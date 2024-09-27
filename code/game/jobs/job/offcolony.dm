@@ -111,7 +111,7 @@
 	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As a Lodge Herbalist \
 	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good Lodge members \
 	work as a team under the direction of the Hunt Master or if present the Lodge Matriarch. While hunters are more combat focused, your purpose as an herbalist is to attend to the medical needs of your lodge, \
-	but additional skills as a crafter, gardener, and chemist are quite handy!"
+	but additional skills as a crafter, gardener and chemist are quite handy!"
 
 	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
 		Work as a medic for your lodge, keeping people alive and patching them up.<br>\
@@ -151,8 +151,8 @@
 
 	description = "You're an outsider, disconnected from the lodge and the colony as a whole. Whether you're an exile, stranded pirate, hermit, or just the right man in the wrong place you're \
 	entirely alone out here. What friends you can make and rely on should be cherished, for there are other looters and outsiders there who might be less than friendly short of giving out lead \
-	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell, or stockpile. Remember, you are not protected by \
-	colony law, few people with care or even raise an eyebrow if you're shot to death for whatever you're carrying."
+	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell or stockpile. Remember, you are not protected by \
+	colony law, few people will care or even raise an eyebrow if you're shot to death for whatever you're carrying."
 
 	duties = "Choose between building a home or becoming nomadic.<br>\
 		Make friends and avoid making enemies, as you're not protected like a colonist or hunter.<br>\

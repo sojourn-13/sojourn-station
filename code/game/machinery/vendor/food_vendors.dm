@@ -331,9 +331,9 @@
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
 	icon_state = "dinnerware"
 	products = list(/obj/item/tray = 8,
-					/obj/item/material/kitchen/utensil/fork = 6,
+					/obj/item/material/kitchen/utensil/fork = 10,
 					/obj/item/tool/knife = 6,
-					/obj/item/material/kitchen/utensil/spoon = 6,
+					/obj/item/material/kitchen/utensil/spoon = 10,
 					/obj/item/material/kitchen/rollingpin = 3,
 					/obj/item/spatula = 6,
 					/obj/item/reagent_containers/dropper = 3,
@@ -357,6 +357,7 @@
 					/obj/item/storage/lunchbox/cat = 3,
 					/obj/item/storage/lunchbox/lemniscate = 5,
 					/obj/item/reagent_containers/food/drinks/pitcher = 3,
+					/obj/item/reagent_containers/food/drinks/carafe = 3,
 					/obj/item/reagent_containers/food/drinks/teapot = 3,
 					/obj/item/reagent_containers/food/drinks/mug = 3,
 					/obj/item/reagent_containers/food/drinks/mug/black = 3,
@@ -387,9 +388,9 @@
 	icon_state = "dinnerware"
 	products = list(
 					/obj/item/tray = 8,
-					/obj/item/material/kitchen/utensil/fork = 6,
+					/obj/item/material/kitchen/utensil/fork = 10,
 					/obj/item/tool/knife = 6,
-					/obj/item/material/kitchen/utensil/spoon = 6,
+					/obj/item/material/kitchen/utensil/spoon = 10,
 					/obj/item/material/kitchen/rollingpin = 3,
 					/obj/item/spatula = 6,
 					/obj/item/reagent_containers/dropper = 3,
@@ -412,6 +413,7 @@
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,
 					/obj/item/reagent_containers/food/drinks/pitcher = 3,
+					/obj/item/reagent_containers/food/drinks/carafe = 3,
 					/obj/item/reagent_containers/food/drinks/teapot = 3,
 					/obj/item/reagent_containers/food/drinks/mug/black = 3,
 					/obj/item/reagent_containers/food/drinks/mug/green = 3,
@@ -460,6 +462,7 @@
 					/obj/item/storage/lunchbox/cat = 8,
 					/obj/item/reagent_containers/food/drinks/pitcher = 9,
 					/obj/item/reagent_containers/food/drinks/teapot = 9,
+					/obj/item/reagent_containers/food/drinks/carafe = 9,
 					/obj/item/reagent_containers/food/drinks/mug = 6,
 					/obj/item/reagent_containers/food/drinks/mug/black = 6,
 					/obj/item/reagent_containers/food/drinks/mug/green = 6,

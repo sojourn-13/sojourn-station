@@ -32,6 +32,13 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	cost = 0
 
+/datum/gear/cosmetic/flowercrown
+	display_name = "flower crown selecton"
+	sort_category = "Cosmetics"
+	path = /obj/item/clothing/head/flowercrown
+	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 0
+
 /datum/gear/cosmetic/pin
 	display_name = "Ear accesories"
 	sort_category = "Cosmetics"

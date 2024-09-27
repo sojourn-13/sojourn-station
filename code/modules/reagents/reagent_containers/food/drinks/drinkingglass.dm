@@ -38,7 +38,7 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/doble
 	name = "double"
-	desc = "Your standard drinking glass."
+	desc = "Your non-standard drinking glass."
 	icon_state = "double"
 	volume = 60
 	morf_glass = FALSE

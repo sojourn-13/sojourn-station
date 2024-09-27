@@ -708,7 +708,13 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if(locate(/obj/effect/plant) in loc)
 			return
 
-		if(!hive_mind_ai || !hive_mind_ai.hives.len || !GLOB.hive_data_bool["spread_trough_burrows"])
+		if(!hive_mind_ai || !hive_mind_ai.hives.len)
+			return
+
+		if(!GLOB.hive_data_bool["spread_trough_burrows"] && !GLOB.hive_data_bool["spread_maints_burrows"])
+			return
+
+		if(maintenance && !GLOB.hive_data_bool["spread_maints_burrows"])
 			return
 
 		var/area/A = get_area(src)

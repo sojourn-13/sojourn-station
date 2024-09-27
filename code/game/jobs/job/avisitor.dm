@@ -23,12 +23,12 @@
 		STAT_COG = 8
 	)
 
-	description = "The ideal role for new characters. You are not a member of the colony(yet) and as such do not require records, but as a foreigner who's been allowed in<br>\
-you're held to very different standards.Use this freedom to determine your place in the world; Have you come from space, hoping to make a home in this place?<br>\
+	description = "The ideal role for new characters. You are not a member of the colony (yet) but a foreigner who has been let in. As such, you do not require records.<br>\
+You're held to very different standards. Use this freedom to determine your place in the world; Have you come from space, hoping to make a home in this place?<br>\
 Are you a straggler from the woods, just looking for a few nights reprieve from the horrors of this planet?<br>\
-Perhaps your intent for the colony is less charitable, intent to take advantage of your hosts misplaced trust?<br>\
+Perhaps your intent for the colony is less charitable, intent to take advantage of your host's misplaced trust?<br>\
 <br>\
-Regardless of what your reasons may be, remember that you are a guest in this place. If you create issues the Marshals or Shield may simply show you the gate, or worse."
+Regardless of what your reasons may be, remember that you are a guest in this place. If you cause issues the Marshals or Shield may simply show you the gate, or worse."
 
 /obj/landmark/join/start/foreigner
 	name = "Visitor"
