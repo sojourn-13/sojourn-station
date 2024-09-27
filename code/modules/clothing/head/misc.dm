@@ -121,6 +121,51 @@
 	icon_state = "magnetpin"
 	desc = "A small metal hair pin with a magnet attached. Popular among the tiny demographic of fashionable robots."
 
+/obj/item/clothing/head/flowercrown
+	name = "poppy crown"
+	icon_state = "poppy_crown"
+	desc = "A flower crown made out of a string of bright red poppies."
+
+/obj/item/clothing/head/flowercrown/sunflower
+	name = "sunflower crown"
+	icon_state = "sunflower_crown"
+	desc = "A bright flower crown made out sunflowers that is sure to brighten up anyone's day!"
+
+/obj/item/clothing/head/flowercrown/lily
+	name = "lily crown"
+	icon_state = "lily_crown"
+	desc = "A leafy flower crown with a cluster of large white lilies at at the front."
+
+/obj/item/clothing/head/flowercrown/rainbow
+	name = "rainbow flower crown"
+	icon_state = "rainbow_bunch_crown_1"
+	desc = "A flower crown made out of the flowers of the rainbow bunch plant."
+
+/obj/item/clothing/head/flowercrown/rainbow/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["rainbow flower crown red, yellow and white"] = "rainbow_bunch_crown_1"
+	options["rainbow flower crown blue, yellow, green and white"] = "rainbow_bunch_crown_2"
+	options["rainbow flower crown red, blue, purple and pink"] = "rainbow_bunch_crown_3"
+	options["rainbow flower crown yellow, green and white"] = "rainbow_bunch_crown_4"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /*Hair Ribbons*/
 
 /obj/item/clothing/head/ribbon
