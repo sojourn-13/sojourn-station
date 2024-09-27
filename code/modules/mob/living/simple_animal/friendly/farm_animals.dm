@@ -354,7 +354,7 @@ var/global/chicken_count = 0
 
 /mob/living/simple_animal/pig/hog
 	name = "Amerethi hog"
-	desc = "The result of crossing genetics between the colony's aging sow and cerberi from the Lodge, this is a docile species with asexual reproduction when fed mushrooms, raised chiefly for its meat without the otherwise ugly connotations of raising for slaughter what should have been a valued hunting companion."
+	desc = "The result of crossing genetics between the colony's aging sow and cerberi from the Lodge, this is a docile species with asexual reproduction when fed plump helmets, raised chiefly for its meat without the otherwise ugly connotations of raising for slaughter what should have been a valued hunting companion."
 	icon_state = "pighog"
 
 /mob/living/simple_animal/pig/hog/attackby(var/obj/item/O as obj, var/mob/user as mob)
