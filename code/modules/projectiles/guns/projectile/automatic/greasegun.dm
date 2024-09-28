@@ -49,6 +49,6 @@
 	icon_state = "frame_grease"
 	result = /obj/item/gun/projectile/automatic/greasegun
 	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black)
-	resultvars = list(/obj/item/gun/projectile/automatic/greasegun)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	resultvars = list(/obj/item/gun/projectile/automatic/greasegun, /obj/item/gun/projectile/automatic/texan)
