@@ -22,7 +22,7 @@
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
 	display_name = "Beer"
-	needed_crops = list("wheat" = 40, "poppies" = 5)
+	needed_crops = list("wheat" = 40, "poppy" = 5)
 	needed_chems = list("water" = 60)
 
 	price_tag_setter = 1750
@@ -35,7 +35,7 @@
 	display_name = "Sleepy Beer"
 	prerequisite = "beer"
 	brewed_amount = 2 //its beer2
-	needed_crops = list("wheat" = 10, "poppies" = 5)
+	needed_crops = list("wheat" = 10, "poppy" = 5)
 	needed_chems = list("water" = 60, "chloralhydrate" = 5)
 
 	price_tag_setter = 2250
@@ -46,7 +46,7 @@
 	display_name = "Melon Liquor"
 
 	brewed_amount = 2
-	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2000
@@ -57,7 +57,7 @@
 	display_name = "Blue Curacao"
 
 	brewed_amount = 2
-	needed_crops = list("orange" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("orange" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2100
@@ -136,7 +136,7 @@
 	reagent_to_brew = "nanatsunoumi"
 	display_name = "Nanatsunoumi"
 	prerequisite = "deadrum"
-	needed_crops = list("rice" = 30, "towercap" = 15, "poppies" = 5)
+	needed_crops = list("rice" = 30, "towercap" = 15, "poppy" = 5)
 	needed_chems = list("water" = 80)
 
 	price_tag_setter = 8000
@@ -216,7 +216,7 @@
 /datum/brewing_product/ale
 	reagent_to_brew = "ale"
 	display_name = "Ale"
-	needed_crops = list("wheat" = 60, "towercap" = 5, "poppies" = 5)
+	needed_crops = list("wheat" = 60, "towercap" = 5, "poppy" = 5)
 	needed_chems = list("water" = 120, "honey" = 5)
 
 	price_tag_setter = 2000
