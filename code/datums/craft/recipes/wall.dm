@@ -71,3 +71,46 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 	related_stats = list(STAT_MEC)
+
+//Hammering is more of a timer check so you can spam this in combat
+/datum/craft_recipe/wall/wooden_wall
+	name = "plank wooden wall"
+	result = /obj/effect/flooring_type_spawner/wood_wall
+	time = WORKTIME_NORMAL
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(QUALITY_HAMMERING, 1, "time" = 20)
+	)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/wood_wall_old
+	name = "old plank wooden wall"
+	result = /obj/effect/flooring_type_spawner/wood_wall_old
+	time = WORKTIME_NORMAL
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(QUALITY_HAMMERING, 1, "time" = 20)
+	)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/wood_wall_barrel
+	name = "fancy plank wooden wall"
+	result = /obj/effect/flooring_type_spawner/wood_wall_barrel
+	time = WORKTIME_NORMAL
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(QUALITY_HAMMERING, 1, "time" = 20)
+	)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	related_stats = list(STAT_MEC)

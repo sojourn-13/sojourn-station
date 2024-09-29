@@ -93,12 +93,12 @@
 		if(reqed_type)
 			var/datum/asset/spritesheet/crafting/sprites = get_asset_datum(/datum/asset/spritesheet/crafting)
 			var/css = sprites.icon_class_name(sanitize_css_class_name("[reqed_type]"))
-			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>"
 		else if(reqed_material)
 			var/material/M = get_material_by_name("[reqed_material]")
 			var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
 			var/css = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
-			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>"
 
 	switch(amt)
 		if(0)
