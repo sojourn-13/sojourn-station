@@ -1,4 +1,4 @@
-/// Basically a marker perk. If the user has this perk, another will be given in certain conditions.
+// Basically a marker perk. If the user has this perk, another will be given in certain conditions.
 /datum/perk/inspiration
 	name = "Exotic Inspiration"
 	desc = "The best ideas come from a mind not entirely sober, any alcohol will give you that much needed boost... somehow."

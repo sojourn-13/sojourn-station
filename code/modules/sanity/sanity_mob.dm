@@ -55,9 +55,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/level
 	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
-//CoffeEdit - revert of Insight womp #5629 
-//	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
-//	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
+	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
+	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
 	var/insight
 	var/max_insight = INFINITY
@@ -198,13 +197,12 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
-//CoffeEdit - revert of Insight womp #5629 
 	//If we are above are cap set to the cap
-//	if(level_change > level_change_cap)
-//		level_change = level_change_cap
+	if(level_change > level_change_cap)
+		level_change = level_change_cap
 	//If we are below are minium, simply set it to minium
-//	if(level_change < level_change_min)
-//		level_change = level_change_min
+	if(level_change < level_change_min)
+		level_change = level_change_min
 
 	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
