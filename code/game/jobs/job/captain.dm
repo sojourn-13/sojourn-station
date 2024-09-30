@@ -23,6 +23,12 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	perks = list(PERK_SOMELLIER)
 
+	description = "Премьер-министр является главным посредником самой колонии, выступая в качестве доверенного советника среди своих сотрудников.<br>\
+Вам доверен контроль над банковскими аккаунтами колонии, и вы также можете контролировать доступ внутри колонии.<br>\
+Ваша основная цель - контролировать решения совета, изменять уровни доступа и выступать в качестве юриста и консультанта при принятии различных решений.<br>\
+Вы не являетесь верховным лидером колонии, и ваше слово - всего лишь совет. Единственный человек, которому вы можете отдавать законные приказы - это Стюард.<br>\
+У каждого из глав фракций, входящих в совет, есть свои собственные планы, и цели. Их интересы должны быть соблюдены, чтобы избежать проблем.<br>\
+Относитесь к командующему составу с уважением и прислушивайтесь к их советам. Старайтесь не управлять их отделами на микроуровне и не вмешиваться в их дела."
 	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
 You are trusted with control of the colony primary accounts and are also able to control access within and to the colony.<br>\
 Your primary objective is to oversee council decisions, change access levels and act as both lawyer and consultant in various decisions.<br>\
@@ -30,9 +36,10 @@ You are not the supreme leader of the colony and your word is only advisory in n
 The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
 Treat your command officers with respect and listen to their council. Try not to micromanage their departments or interfere in their affairs."
 
-	duties = "Work between the varying interests of council members to achieve colony stability.<br>\
-	Offer advise and counsel when approached, particularly during important decisions.<br>\
-	Manage the colony primary accounts and access levels accordingly."
+	duties = "Работайте с учетом различных интересов членов совета для достижения стабильности колонии.<br>\
+	Предлагайте советы и помощь когда к вам обращаются, особенно во время принятия важных решений.<br>\
+	Контролируйте банковскую систему и уровни доступа в колонии."
+
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -80,19 +87,19 @@ Treat your command officers with respect and listen to their council. Try not to
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 600
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 25
 
 	health_modifier = 5
-	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow them wherever they go.<br>\
-	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even with your own life if necessary.<br>\
-	However, you are an adviser as well as a bodyguard. Discreetly inform them of mistakes. Make sure they follow the law and remain popular.<br>\
+	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
+	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
+	However, you are an adviser as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
 	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
-	Do not embarass them, and especially do not harm their relations with faction leaders. You may not do much talking, but you have great impact."
+	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, adviser and confidant to the Premier.<br>\
+	duties = "Act as a bodyguard, adviser, and confidant to the Premier.<br>\
 	Remain conscious of any potential threats to the safety of the Premier.<br>\
 	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."
