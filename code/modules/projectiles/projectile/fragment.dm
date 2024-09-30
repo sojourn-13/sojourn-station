@@ -42,8 +42,7 @@
 	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/pellet/fragment/ember/on_hit(atom/target)
-	if (!testing)
-		var/datum/effect/effect/system/smoke_spread/white_phosphorous/S = new /datum/effect/effect/system/smoke_spread/white_phosphorous
-		S.set_up(1, 0, get_turf(src))
-		S.start()
-		return TRUE
+	var/datum/effect/effect/system/smoke_spread/white_phosphorous/S = new /datum/effect/effect/system/smoke_spread/white_phosphorous
+	S.set_up(1, 0, get_turf(src))
+	S.start()
+	return TRUE
