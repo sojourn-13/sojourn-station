@@ -16,7 +16,7 @@
 	offer_limit = 30
 	inventory = list(
 		"Burgers" = list(
-			/obj/item/reagent_containers/food/snacks/bigbiteburger = custom_good_name("Big RBurger"),
+			/obj/item/reagent_containers/food/snacks/bigbiteburger/cargo = custom_good_name("Big RBurger"),
 			/obj/item/reagent_containers/food/snacks/jellyburger/cherry = custom_good_name("JellyCherry RBurger"),
 			/obj/item/reagent_containers/food/snacks/tofuburger = custom_good_name("Tofu RBurger")
 		),

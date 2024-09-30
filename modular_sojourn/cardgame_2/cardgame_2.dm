@@ -497,7 +497,7 @@
 
 /obj/item/card_carp/bloodrock
 	name = "Blood Stone"
-	desc = "A refined stone, the blood on it is still useable, hitting it wouldnt be to good for you. H3/P0. Terrain. Thorn. Boneless, Blood Donor"
+	desc = "A refined stone, the blood on it is still usable, hitting it wouldnt be to good for you. H3/P0. Terrain. Thorn. Boneless, Blood Donor"
 	icon_state = "card_turf"
 	current_health = 3
 

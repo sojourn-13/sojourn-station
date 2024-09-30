@@ -1,26 +1,26 @@
-/obj/structure/annomlies_diet
-	name = "Coder Annomlie"
+/obj/structure/anomalies_diet
+	name = "Coder Anomaly"
 	desc = "Something not meant to be seen by the eyes of players, \
 	sad."
-	icon = 'modular_sojourn/annomlies/stalker_annomlies.dmi'
+	icon = 'modular_sojourn/anomalies/stalker_anomalies.dmi'
 	var/active = FALSE
 	pixel_x = 8
 	pixel_y = 8
 
-/obj/structure/annomlies_diet/Destroy()
+/obj/structure/anomalies_diet/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/structure/annomlies_diet/proc/set_awake()
+/obj/structure/anomalies_diet/proc/set_awake()
 	if (active)
 		return
 
 	START_PROCESSING(SSobj, src)
 	active = TRUE
 
-/obj/structure/annomlies_diet/flashy_coin
+/obj/structure/anomalies_diet/flashy_coin
 	name = "Flash"
-	desc = "An anomalous black hole in the ground, no light can shine down it, \
+	desc = "An anomalous black hole in the ground. No light can shine down it \
 	yet a small orb of light bounces up out of it every now and again."
 	icon_state = "flash_hole"
 	item_state = "flash_hole"
@@ -31,31 +31,31 @@
 	var/flashy_coin_timer = 90
 	var/flashy_coin_reppeater_timer = 240
 
-/obj/structure/annomlies_diet/flashy_coin/New()
+/obj/structure/anomalies_diet/flashy_coin/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(flashy_check)), flashy_coin_timer)
 	addtimer(CALLBACK(src, PROC_REF(loop_timer)), flashy_coin_reppeater_timer)
 
-/obj/structure/annomlies_diet/flashy_coin/Crossed(mob/M)
+/obj/structure/anomalies_diet/flashy_coin/Crossed(mob/M)
 	if(isliving(M))
 		flick("flash_hole_trigger", src)
 		addtimer(CALLBACK(src, PROC_REF(check_for_angels)), 16.2)
 	.=..()
 
-/obj/structure/annomlies_diet/flashy_coin/proc/flashy_check(mob/M)
+/obj/structure/anomalies_diet/flashy_coin/proc/flashy_check(mob/M)
 	flick("flash_hole_trigger", src)
 	addtimer(CALLBACK(src, PROC_REF(check_for_angels)), 16.2)
 
-/obj/structure/annomlies_diet/flashy_coin/proc/check_for_angels(mob/M)
+/obj/structure/anomalies_diet/flashy_coin/proc/check_for_angels(mob/M)
 	for(M in living_mobs_in_view(3, src))
 		flashy_stun(M)
 
-/obj/structure/annomlies_diet/flashy_coin/proc/loop_timer()
+/obj/structure/anomalies_diet/flashy_coin/proc/loop_timer()
 	addtimer(CALLBACK(src, PROC_REF(flashy_check)), flashy_coin_timer)
 	addtimer(CALLBACK(src, PROC_REF(loop_timer)), flashy_coin_reppeater_timer)
 
-/obj/structure/annomlies_diet/flashy_coin/proc/flashy_stun(mob/living/carbon/M) //Flashbang_bang but bang-less.
+/obj/structure/anomalies_diet/flashy_coin/proc/flashy_stun(mob/living/carbon/M) //Flashbang_bang but bang-less.
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/eye_safety = 0
@@ -75,7 +75,7 @@
 		M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 60 SECONDS, "flashy_stun")
 	M.update_icons()
 
-/obj/structure/annomlies_diet/haze
+/obj/structure/anomalies_diet/haze
 	name = "Haze"
 	desc = "A spot of hazy air, as if heatwaves rising from a hot asphalt road. Just getting close to it gives off a profound sense of warmth."
 	icon_state = "haze"
@@ -96,31 +96,31 @@
 	var/penetration = 1
 
 
-/obj/structure/annomlies_diet/haze/New()
+/obj/structure/anomalies_diet/haze/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(nonchemical_reaction)), infino_timer)
 	addtimer(CALLBACK(src, PROC_REF(loop_timer)), infino_reppeater_timer)
 
-/obj/structure/annomlies_diet/haze/Crossed(mob/M)
+/obj/structure/anomalies_diet/haze/Crossed(mob/M)
 	if(isliving(M))
 		var/turf/T = get_turf(src)
 		heatwave(T, heavy_range, weak_range, heat_damage, fire_stacks, penetration)
 		visible_message(SPAN_WARNING("\red [src] sparks to life blasting a heat wave and flaming ambers!"))
 	.=..()
 
-/obj/structure/annomlies_diet/haze/proc/nonchemical_reaction()
+/obj/structure/anomalies_diet/haze/proc/nonchemical_reaction()
 	var/turf/T = get_turf(src)
 	heatwave(T, heavy_range, weak_range, heat_damage, fire_stacks, penetration)
 	visible_message(SPAN_WARNING("\red [src] sparks to life blasting a heat wave and flaming ambers!"))
 
-/obj/structure/annomlies_diet/haze/proc/loop_timer()
+/obj/structure/anomalies_diet/haze/proc/loop_timer()
 	addtimer(CALLBACK(src, PROC_REF(nonchemical_reaction)), infino_timer)
 	addtimer(CALLBACK(src, PROC_REF(loop_timer)), infino_reppeater_timer)
 
-/obj/structure/annomlies_diet/spidersilk
+/obj/structure/anomalies_diet/spidersilk
 	name = "Fairy silk"
-	desc = "A pretty collection of floating lights, dangling from random points in the air, they glow softly, and are very pretty. Sadly they also get in the way."
+	desc = "A pretty collection of floating lights, dangling from random points in the air. They glow softly and are very pretty. Sadly, they also get in the way."
 	icon_state = "fairy_light"
 	item_state = "fairy_light"
 	density = FALSE
@@ -130,8 +130,8 @@
 	var/starting_culter = TRUE
 	var/is_growing = TRUE
 	var/spread_range = 1
-	var/spread_speed_slow = 100		// Minium amount of time it takes for a grown crystal to spread
-	var/spread_speed_high = 280		// Maxium amount of time it takes for a grown crystal to spread
+	var/spread_speed_slow = 100		// Minimum amount of time it takes for a grown crystal to spread
+	var/spread_speed_high = 280		// Maximum amount of time it takes for a grown crystal to spread
 	light_power = 1
 	light_range = 2
 	light_color = "#F5B31E"
@@ -139,19 +139,19 @@
 	pixel_x = 0
 	pixel_y = 0
 
-/obj/structure/annomlies_diet/spidersilk/New()
+/obj/structure/anomalies_diet/spidersilk/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(spread)), spread_speed_slow)
 
-/obj/structure/annomlies_diet/spidersilk/non_spreader
+/obj/structure/anomalies_diet/spidersilk/non_spreader
 	is_growing = FALSE
 	starting_culter = FALSE
 
-/obj/structure/annomlies_diet/spidersilk/spreaded
+/obj/structure/anomalies_diet/spidersilk/spreaded
 	starting_culter = FALSE
 
-/obj/structure/annomlies_diet/spidersilk/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+/obj/structure/anomalies_diet/spidersilk/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0))
 		return 1
 	if(isliving(mover))
@@ -162,7 +162,7 @@
 		return prob(60)
 	return 1
 
-/obj/structure/annomlies_diet/spidersilk/proc/spread()
+/obj/structure/anomalies_diet/spidersilk/proc/spread()
 	if(!src) //Just in case
 		return
 	if(!is_growing)
@@ -178,12 +178,12 @@
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
 
-		spidersilk = /obj/structure/annomlies_diet/spidersilk // We spread are basic type
+		spidersilk = /obj/structure/anomalies_diet/spidersilk // We spread our basic type
 
 		if(is_growing)
-			spidersilk = /obj/structure/annomlies_diet/spidersilk/spreaded
+			spidersilk = /obj/structure/anomalies_diet/spidersilk/spreaded
 			if(prob(60) && !starting_culter)
-				spidersilk = /obj/structure/annomlies_diet/spidersilk/non_spreader
+				spidersilk = /obj/structure/anomalies_diet/spidersilk/non_spreader
 
 		if(spidersilk && is_growing)
 			new spidersilk(T) // We spread
@@ -199,19 +199,19 @@
 
 
 // Check the given turf to see if there is any special things that would prevent the spread
-/obj/structure/annomlies_diet/spidersilk/proc/can_pixy_dance_to(var/turf/T)
+/obj/structure/anomalies_diet/spidersilk/proc/can_pixy_dance_to(var/turf/T)
 	if(T)
 		if(istype(T, /turf/space)) // We can't spread in SPACE!
 			return FALSE
 		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
 			return FALSE
-		if(locate(/obj/structure/annomlies_diet/spidersilk) in T) // No stacking.
+		if(locate(/obj/structure/anomalies_diet/spidersilk) in T) // No stacking.
 			return FALSE
 	return TRUE
 
-/obj/structure/annomlies_diet/ball_lightning
+/obj/structure/anomalies_diet/ball_lightning
 	name = "ball lightning"
-	desc = "A floating ball of arcing electricity, it quickly drifts through the air like a cloud, with its faint blue glow and distinct smell of ionized air."
+	desc = "A floating ball of arcing electricity. It quickly drifts through the air like a cloud, with its faint blue glow and distinct smell of ionized air."
 	icon_state = "ball_lightning"
 	item_state = "ball_lightning"
 	density = TRUE
@@ -228,7 +228,7 @@
 	var/lighting_in_a_bottle
 	var/datum/effect/effect/system/spark_spread/spark_system
 
-/obj/structure/annomlies_diet/ball_lightning/New()
+/obj/structure/anomalies_diet/ball_lightning/New()
 	lighting_in_a_bottle = new /obj/item/cell/large/greyson(src)
 	addtimer(CALLBACK(src, PROC_REF(wings)), movement_activity)
 	spark_system = new()
@@ -237,14 +237,14 @@
 	set_awake()
 	..()
 
-/obj/structure/annomlies_diet/ball_lightning/Destroy()
+/obj/structure/anomalies_diet/ball_lightning/Destroy()
 	if(lighting_in_a_bottle)
 		qdel(lighting_in_a_bottle)
 		lighting_in_a_bottle = null
 	QDEL_NULL(spark_system)
 	..()
 
-/obj/structure/annomlies_diet/ball_lightning/proc/wings()
+/obj/structure/anomalies_diet/ball_lightning/proc/wings()
 	if(!src) //Just in case
 		return
 	var/list/turf_list = list()
@@ -260,15 +260,15 @@
 
 	addtimer(CALLBACK(src, PROC_REF(wings)), movement_activity)
 
-/obj/structure/annomlies_diet/ball_lightning/Bumped(atom/user)
+/obj/structure/anomalies_diet/ball_lightning/Bumped(atom/user)
 	if (electrocute_mob(user, lighting_in_a_bottle, src)) //electrocute_mob() handles removing charge from the cell, no need to do that here.
 		spark_system.start()
 
-/obj/structure/annomlies_diet/ball_lightning/Bump(atom/user)
+/obj/structure/anomalies_diet/ball_lightning/Bump(atom/user)
 	if (electrocute_mob(user, lighting_in_a_bottle, src)) //electrocute_mob() handles removing charge from the cell, no need to do that here.
 		spark_system.start()
 
-/obj/structure/annomlies_diet/hell
+/obj/structure/anomalies_diet/hell
 	name = "Radiant"
 	desc = "A floating orb of warm yellow light, yet the area around it seems to be covered in a thin layer of frost."
 	icon_state = "radient"
@@ -287,11 +287,11 @@
 
 //user bodytemperature = 310.055 rounding ish in shift so were basing it on this
 
-/obj/structure/annomlies_diet/hell/New()
+/obj/structure/anomalies_diet/hell/New()
 	addtimer(CALLBACK(src, PROC_REF(perma_frost)), freeze_ray_cooldowns)
 	..()
 
-/obj/structure/annomlies_diet/hell/proc/perma_frost(mob/M)
+/obj/structure/anomalies_diet/hell/proc/perma_frost(mob/M)
 	//Yes we stack each time, get cryo'ed
 	for(M in living_mobs_in_view(3, src))
 		orb(M, temp_for_far_area_subtractor)
@@ -302,24 +302,24 @@
 
 	addtimer(CALLBACK(src, PROC_REF(perma_frost)), freeze_ray_cooldowns)
 
-/obj/structure/annomlies_diet/hell/proc/orb(mob/living/carbon/M, temp_to_use)
+/obj/structure/anomalies_diet/hell/proc/orb(mob/living/carbon/M, temp_to_use)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.bodytemperature -= temp_to_use
 
-/obj/structure/annomlies_diet/hell/Bumped(atom/user)
+/obj/structure/anomalies_diet/hell/Bumped(atom/user)
 	addtimer(CALLBACK(src, PROC_REF(frozen_soild), user, temp_for_bump_subtractor), 1)
 
-/obj/structure/annomlies_diet/hell/Bump(atom/user)
+/obj/structure/anomalies_diet/hell/Bump(atom/user)
 	addtimer(CALLBACK(src, PROC_REF(frozen_soild), user, temp_for_bump_subtractor), 1)
 
-/obj/structure/annomlies_diet/hell/proc/frozen_soild(atom/user)
+/obj/structure/anomalies_diet/hell/proc/frozen_soild(atom/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.bodytemperature -= 275 //This is in Kittens not Cats or Felines
 
 
-/obj/structure/annomlies_diet/thumper
+/obj/structure/anomalies_diet/thumper
 	name = "Thumper"
 	desc = "A glistening cloud of gold vapors. Small arcs of electricity dance around inside it as it slams itself forcefully into the ground, over and over."
 	icon_state = "crusher_cloud"
@@ -339,13 +339,13 @@
 /mob/living/proc/trip(tripped_on, stun_duration)
 	return FALSE
 */
-/obj/structure/annomlies_diet/thumper/New()
+/obj/structure/anomalies_diet/thumper/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(check_for_newtons)), apple_timer)
 	addtimer(CALLBACK(src, PROC_REF(growing_season)), apple_timer_growing)
 
-/obj/structure/annomlies_diet/thumper/Crossed(mob/M)
+/obj/structure/anomalies_diet/thumper/Crossed(mob/M)
 	.=..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -355,7 +355,7 @@
 		H.confused += star_strike
 		H.updatehealth()
 
-/obj/structure/annomlies_diet/thumper/proc/gravitational_theory(mob/M)
+/obj/structure/anomalies_diet/thumper/proc/gravitational_theory(mob/M)
 	visible_message(SPAN_WARNING("\red [src] SLAMS down shaking the ground!"))
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -370,24 +370,24 @@
 			else
 				organ.nerve_strike_add(1)
 
-/obj/structure/annomlies_diet/thumper/proc/check_for_newtons(mob/M)
+/obj/structure/anomalies_diet/thumper/proc/check_for_newtons(mob/M)
 	for(M in living_mobs_in_view(3, src))
 		gravitational_theory(M)
 
-/obj/structure/annomlies_diet/thumper/proc/warnings_for_newtons()
+/obj/structure/anomalies_diet/thumper/proc/warnings_for_newtons()
 	visible_message(SPAN_WARNING("\red [src] SLAMS down shaking the ground!"))
 
-/obj/structure/annomlies_diet/thumper/proc/harsh_winds(mob/M)
+/obj/structure/anomalies_diet/thumper/proc/harsh_winds(mob/M)
 	flick("crusher_cloud_crush", src)
 	addtimer(CALLBACK(src, PROC_REF(check_for_newtons)), 17.6)
 	addtimer(CALLBACK(src, PROC_REF(warnings_for_newtons)), 17.6)
 
-/obj/structure/annomlies_diet/thumper/proc/growing_season()
+/obj/structure/anomalies_diet/thumper/proc/growing_season()
 	addtimer(CALLBACK(src, PROC_REF(harsh_winds)), apple_timer)
 	addtimer(CALLBACK(src, PROC_REF(growing_season)), apple_timer_growing)
 
 
-/obj/structure/annomlies_diet/echo
+/obj/structure/anomalies_diet/echo
 	name = "Echo"
 	desc = "Shimmering blue cubes, you feel you aren't meant to see them like this."
 	icon_state = "echo"
@@ -418,20 +418,20 @@
 	var/scan_mobs = TRUE
 
 
-/obj/structure/annomlies_diet/echo/proc/activate()
+/obj/structure/anomalies_diet/echo/proc/activate()
 	toggle()
 
-/obj/structure/annomlies_diet/echo/proc/attack(mob/living/M, mob/living/user)
+/obj/structure/anomalies_diet/echo/proc/attack(mob/living/M, mob/living/user)
 	if(!scan_mobs)
 		return
 
-/obj/structure/annomlies_diet/echo/Crossed(atom/M)
+/obj/structure/anomalies_diet/echo/Crossed(atom/M)
 	if(istype(M, /mob/observer) || istype(M, /obj/item/projectile))
 		return
 
 	afterattack(M, M)
 
-/obj/structure/annomlies_diet/echo/proc/afterattack(atom/target, mob/user, proximity)
+/obj/structure/anomalies_diet/echo/proc/afterattack(atom/target, mob/user, proximity)
 	if(istype(target, /obj/item/storage))
 		return
 	if(dummy_active || !scan_mobs)
@@ -459,7 +459,7 @@
 	toggle()
 	return
 
-/obj/structure/annomlies_diet/echo/proc/toggle()
+/obj/structure/anomalies_diet/echo/proc/toggle()
 	if(!can_use || !saved_item)
 		return
 	if(dummy_active)
@@ -480,7 +480,7 @@
 		else
 			activate_holo(saved_name, saved_icon, saved_icon_state, saved_description, saved_dir, saved_appearance, saved_item_state)
 
-/obj/structure/annomlies_diet/echo/proc/activate_holo(new_name, new_icon, new_iconstate, new_description, new_dir, new_appearance, new_item_state)
+/obj/structure/anomalies_diet/echo/proc/activate_holo(new_name, new_icon, new_iconstate, new_description, new_dir, new_appearance, new_item_state)
 	name = new_name
 	desc = new_description
 	icon = new_icon
@@ -492,7 +492,7 @@
 	layer = saved_layer
 	dummy_active = TRUE
 
-/obj/structure/annomlies_diet/echo/proc/reset_data()
+/obj/structure/anomalies_diet/echo/proc/reset_data()
 	saved_name = initial(saved_name)
 	saved_item = initial(saved_item)
 	saved_type = initial(saved_type)
@@ -508,7 +508,7 @@
 	saved_layer = initial(saved_layer)
 	saved_original_plane = initial(saved_original_plane)
 
-/obj/structure/annomlies_diet/echo/examine(mob/user, var/distance = -1)
+/obj/structure/anomalies_diet/echo/examine(mob/user, var/distance = -1)
 	if(dummy_active && saved_item && saved_message)
 		to_chat(user, saved_message)
 	else if(dummy_active && saved_item)
@@ -564,23 +564,23 @@
 	else
 		. = ..()
 
-/obj/structure/annomlies_diet/echo/proc/disrupt()
+/obj/structure/anomalies_diet/echo/proc/disrupt()
 	if(dummy_active)
 		toggle()
 		can_use = 0
 		spawn(1 SECONDS)
 			can_use = 1
 
-/obj/structure/annomlies_diet/echo/attackby()
+/obj/structure/anomalies_diet/echo/attackby()
 	..()
 	disrupt()
 
-/obj/structure/annomlies_diet/echo/ex_act()
+/obj/structure/anomalies_diet/echo/ex_act()
 	..()
 	disrupt()
 
 
-/obj/structure/annomlies_diet/whirli
+/obj/structure/anomalies_diet/whirli
 	name = "Whirli"
 	desc = "An intense vortex of air, dust and debris spirals around this area. Even just standing around it gives the intense feeling of a powerful vacuum force pulling you in."
 	icon_state = "whirli"
@@ -595,7 +595,7 @@
 	var/black_and_white = 1
 	alpha = 75
 
-/obj/structure/annomlies_diet/whirli/Crossed(mob/M)
+/obj/structure/anomalies_diet/whirli/Crossed(mob/M)
 	if(M.allow_spin && src.allow_spin)
 		M.SpinAnimation(10,5)
 	if(ishuman(M))
@@ -617,9 +617,9 @@
 	.=..()
 
 
-/obj/structure/annomlies_diet/razer
+/obj/structure/anomalies_diet/razer
 	name = "Razer"
-	desc = "Field of floating red lasers, there is a distinct smell of iron in the area around them."
+	desc = "A field of floating red lasers. There is a distinct smell of iron in the area around them."
 	icon_state = "razer"
 	item_state = "razer"
 	density = FALSE
@@ -642,24 +642,24 @@
 	pixel_x = 0
 	pixel_y = 0
 
-/obj/structure/annomlies_diet/razer/New()
+/obj/structure/anomalies_diet/razer/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(spread)), spread_speed_slow)
 
-/obj/structure/annomlies_diet/razer/non_spreader
+/obj/structure/anomalies_diet/razer/non_spreader
 	is_growing = FALSE
 	starting_culter = FALSE
 
-/obj/structure/annomlies_diet/razer/spreaded
+/obj/structure/anomalies_diet/razer/spreaded
 	starting_culter = FALSE
 
-/obj/structure/annomlies_diet/razer/Crossed(mob/M)
+/obj/structure/anomalies_diet/razer/Crossed(mob/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/our_cutting = M
 		if(MOVING_QUICKLY(M))
 			if(prob(blade_runner))
-				to_chat(our_cutting, SPAN_WARNING("The red beam of light cuts into you."))
+				to_chat(our_cutting, SPAN_WARNING("The red beam of light cuts into you!"))
 				our_cutting.adjustBruteLoss(blade_sharpness_aka_damage_per_running_on_it)
 				if(!(our_cutting.species && our_cutting.species.flags & NO_BLOOD)) //We want the var for safety but we can do without the actual blood.
 					our_cutting.adjustBruteLoss(blade_sharpness_aka_damage_per_running_on_it) //FPB's get hit 2x
@@ -667,7 +667,7 @@
 				our_cutting.drip_blood(fuel)
 	.=..()
 
-/obj/structure/annomlies_diet/razer/proc/spread()
+/obj/structure/anomalies_diet/razer/proc/spread()
 	if(!src) //Just in case
 		return
 	if(!is_growing)
@@ -683,12 +683,12 @@
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
 
-		spidersilk = /obj/structure/annomlies_diet/razer // We spread are basic type
+		spidersilk = /obj/structure/anomalies_diet/razer // We spread are basic type
 
 		if(is_growing)
-			spidersilk = /obj/structure/annomlies_diet/razer/spreaded
+			spidersilk = /obj/structure/anomalies_diet/razer/spreaded
 			if(prob(60) && !starting_culter)
-				spidersilk = /obj/structure/annomlies_diet/razer/non_spreader
+				spidersilk = /obj/structure/anomalies_diet/razer/non_spreader
 
 		if(spidersilk && is_growing)
 			new spidersilk(T) // We spread
@@ -699,23 +699,23 @@
 		addtimer(CALLBACK(src, PROC_REF(spread)), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 // Check the given turf to see if there is any special things that would prevent the spread
-/obj/structure/annomlies_diet/razer/proc/can_twirl_to(var/turf/T)
+/obj/structure/anomalies_diet/razer/proc/can_twirl_to(var/turf/T)
 	if(T)
 		if(istype(T, /turf/space)) // We can't spread in SPACE!
 			return FALSE
 		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
 			return FALSE
 		//Lets not stack this
-		if(locate(/obj/structure/annomlies_diet/razer) in T)
+		if(locate(/obj/structure/anomalies_diet/razer) in T)
 			return FALSE
-		if(locate(/obj/structure/annomlies_diet/spidersilk) in T) // No stacking.
+		if(locate(/obj/structure/anomalies_diet/spidersilk) in T) // No stacking.
 			return FALSE
 	return TRUE
 
 
-/obj/structure/annomlies_diet/glacier
+/obj/structure/anomalies_diet/glacier
 	name = "Glacier"
-	desc = "Floating disk of ice, it spins slowly while never ending droplets of water form a sprite of ice underneath it. You feel as if its looking at you."
+	desc = "Floating disk of ice, it spins slowly while never ending droplets of water form a sprite of ice underneath it. You feel as if it's looking at you."
 	icon_state = "icepeak"
 	item_state = "icepeak"
 	density = FALSE
@@ -735,13 +735,13 @@
 /mob/living/proc/trip(tripped_on, stun_duration)
 	return FALSE
 */
-/obj/structure/annomlies_diet/glacier/New()
+/obj/structure/anomalies_diet/glacier/New()
 	..()
 	set_awake()
 	addtimer(CALLBACK(src, PROC_REF(dramatics)), grab_timer)
 	addtimer(CALLBACK(src, PROC_REF(scateing_season)), grab_timer_repeater)
 
-/obj/structure/annomlies_diet/glacier/Crossed(mob/M)
+/obj/structure/anomalies_diet/glacier/Crossed(mob/M)
 	.=..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -749,19 +749,19 @@
 		H.adjustOxyLoss(breathtakeing)
 		H.updatehealth()
 
-/obj/structure/annomlies_diet/glacier/proc/ice_scateing_gone_wrong(mob/M)
+/obj/structure/anomalies_diet/glacier/proc/ice_scateing_gone_wrong(mob/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.throw_at(src, lanth_of_ice, down_hill, src)
 
-/obj/structure/annomlies_diet/glacier/proc/scaters_in_the_ring(mob/M)
+/obj/structure/anomalies_diet/glacier/proc/scaters_in_the_ring(mob/M)
 	for(M in living_mobs_in_view(3, src))
 		ice_scateing_gone_wrong(M)
 
-/obj/structure/annomlies_diet/glacier/proc/dramatics(mob/M)
+/obj/structure/anomalies_diet/glacier/proc/dramatics(mob/M)
 //	flick("sunshine", src)
 	addtimer(CALLBACK(src, PROC_REF(scaters_in_the_ring)), 1)
 
-/obj/structure/annomlies_diet/glacier/proc/scateing_season()
+/obj/structure/anomalies_diet/glacier/proc/scateing_season()
 	addtimer(CALLBACK(src, PROC_REF(dramatics)), grab_timer)
 	addtimer(CALLBACK(src, PROC_REF(scateing_season)), grab_timer_repeater)

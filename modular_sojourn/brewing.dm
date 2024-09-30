@@ -1,5 +1,5 @@
 /obj/structure/fermentation_keg
-	name = "Fermentation Keg"
+	name = "fermentation keg"
 	desc = "A simple keg that is meant for making booze."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "barrel_tapless_open"
@@ -61,17 +61,17 @@
 		var/message = "Currently making: [selected_recipe.display_name].\n"
 
 		for(var/required_chem in selected_recipe.needed_chems)
-			message += "Reagent Needed: [get_reagent_name_by_id(required_chem)] [selected_recipe.needed_chems[required_chem]].\n"
+			message += "Reagent needed: [get_reagent_name_by_id(required_chem)] [selected_recipe.needed_chems[required_chem]].\n"
 
 		for(var/required_crop in selected_recipe.needed_crops)
-			message += "Crop Needed: [required_crop] [selected_recipe.needed_crops[required_crop]], Current Amount: [recipe_crop_stocks[required_crop]].\n"
+			message += "Crop needed: [required_crop] [selected_recipe.needed_crops[required_crop]], Current Amount: [recipe_crop_stocks[required_crop]].\n"
 
 		//time
 		if(selected_recipe.brew_timer)
 			if(selected_recipe.brew_timer >= 600)
-				message += "Once set, will take [selected_recipe.brew_timer/600] Minutes.\n"
+				message += "Once set, will take [selected_recipe.brew_timer/600] minutes.\n"
 			else
-				message += "Once set, will take [selected_recipe.brew_timer] Seconds.\n"
+				message += "Once set, will take [selected_recipe.brew_timer] seconds.\n"
 
 		//How many are brewed
 		if(selected_recipe.brewed_amount)
@@ -96,11 +96,15 @@
 	for(var/path in typesof(/datum/brewing_product) - /datum/brewing_product)
 		var/datum/brewing_product/recipe = path
 		var/prereq = initial(recipe.prerequisite)
+		if(initial(recipe.holy) && !is_neotheology_disciple(user))
+			continue
+
 		if((!ready_for_bottleing && prereq == null) || (selected_recipe?.reagent_to_brew == prereq && ready_for_bottleing))
 			options[initial(recipe.display_name)] = recipe
 
+
 	if(options.len == 0)
-		to_chat(user, "Their is no further brewing to be done, clear this barrel out or sell it.")
+		to_chat(user, "There is no further brewing to be done, clear this barrel out or sell it.")
 		return
 
 	var/choice = input(user,"What brew do you want to make?") as null|anything in options
@@ -204,7 +208,7 @@
 	for(var/required_chem in selected_recipe.needed_chems)
 		if(selected_recipe.needed_chems[required_chem]>reagents.get_reagent_amount(required_chem))
 			if(user)
-				to_chat(user, SPAN_NOTICE("The keg's unable to brew well lacking [required_chem]!"))
+				to_chat(user, SPAN_NOTICE("The keg's unable to brew while lacking [required_chem]!"))
 				ready = FALSE
 
 	return ready
@@ -243,4 +247,4 @@
 	if(!isghost(usr))
 		clear_out(TRUE)
 	else
-		to_chat(usr, SPAN_NOTICE("Sadly this keg isnt brewing spirits!"))
+		to_chat(usr, SPAN_NOTICE("Sadly this keg isn't brewing spirits!"))

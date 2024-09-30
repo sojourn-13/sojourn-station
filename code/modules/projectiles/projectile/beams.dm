@@ -36,6 +36,12 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		return FALSE
 	return TRUE
 
+/obj/item/projectile/beam/voidwolf/attack_mob(mob/living/target_mob, distance, miss_modifier=0) // No friendly firing
+	if(target_mob.faction == "pirate")
+		return FALSE
+	else
+		return ..()
+
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
 	armor_divisor = 2.5 //Good AP, its for slow firing weapon
@@ -130,6 +136,12 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/weak/ap/reaver
 	damage_types = list(BURN = 16.5)
 
+/obj/item/projectile/beam/weak/ap/reaver/attack_mob(mob/living/target_mob, distance, miss_modifier=0) // No friendly firing
+	if(target_mob.faction == "pirate")
+		return FALSE
+	else
+		return ..()
+
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_divisor = 1.1
@@ -191,8 +203,9 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/laser_pulse/impact
 
 /obj/item/projectile/beam/pulse/on_hit(atom/target)
-	if(isturf(target))
-		target.ex_act(2)
+	if(!testing)
+		if(isturf(target))
+			target.ex_act(2)
 	..()
 
 /obj/item/projectile/beam/pulse/heavy
@@ -222,13 +235,14 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/emitter/impact
 
 /obj/item/projectile/beam/radiation/on_impact(atom/target)
-	var/mob/living/M = target
-	var/mob/living/carbon/human/H = M
-	if(ishuman(target))
-		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(20,IRRADIATE)//woop woop ass blast USA woop woop
-	else
-		return 1
+	if(!testing)
+		var/mob/living/M = target
+		var/mob/living/carbon/human/H = M
+		if(ishuman(target))
+			if(istype(target, /mob/living/carbon/))
+				H.apply_effect(20,IRRADIATE)//woop woop ass blast USA woop woop
+		else
+			return 1
 
 /obj/item/projectile/beam/IRKdissolver //Marking this for future use with IRK
 	name = "dissolver ray"
@@ -242,13 +256,14 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/emitter/impact
 
 /obj/item/projectile/beam/IRKdissolver/on_impact(atom/target)
-	var/mob/living/M = target
-	var/mob/living/carbon/human/H = M
-	if(ishuman(target))
-		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(35,IRRADIATE)//Irradiates more
-	else
-		return 1
+	if(!testing)
+		var/mob/living/M = target
+		var/mob/living/carbon/human/H = M
+		if(ishuman(target))
+			if(istype(target, /mob/living/carbon/))
+				H.apply_effect(35,IRRADIATE)//Irradiates more
+		else
+			return 1
 
 /obj/item/projectile/beam/IRKdesolator //Marking this for future use with IRK
 	name = "desolator ray"
@@ -264,13 +279,14 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/xray/impact
 
 /obj/item/projectile/beam/IRKdesolator/on_impact(atom/target)
-	var/mob/living/M = target
-	var/mob/living/carbon/human/H = M
-	if(ishuman(target))
-		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
-	else
-		return 1
+	if(!testing)
+		var/mob/living/M = target
+		var/mob/living/carbon/human/H = M
+		if(ishuman(target))
+			if(istype(target, /mob/living/carbon/))
+				H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
+		else
+			return 1
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"

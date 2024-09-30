@@ -54,7 +54,7 @@ list(
 
 /datum/design/research/circuit/advanced_grinder
 	name = "Soteria Advanced Grinder"
-	desc = "Invented by Dr. Belvoix to make her lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
+	desc = "Invented by Soteria to make their lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
 	build_path = /obj/item/circuitboard/advanced_grinder
 	category = CAT_MEDI
 

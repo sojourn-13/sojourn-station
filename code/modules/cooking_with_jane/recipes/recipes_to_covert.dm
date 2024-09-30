@@ -1,15 +1,4 @@
 
-
-/datum/recipe/dumplings
-	fruit = list("cabbage" = 1) // A recipe that ACTUALLY uses cabbage.
-	reagents = list("soysauce" = 5, "sodiumchloride" = 1, "blackpepper" = 1, "cornoil" = 1) // No sesame oil, corn will have to do.
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawbacon,
-		/obj/item/reagent_containers/food/snacks/rawbacon, // Substitute for minced pork.
-		/obj/item/reagent_containers/food/snacks/doughslice,
-	)
-	result = /obj/item/reagent_containers/food/snacks/dumplings
-
 /datum/recipe/humanburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/human,
@@ -335,11 +324,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/bigbiteburger
 
-/datum/recipe/enchiladas
-	fruit = list("chili" = 2, "corn" = 1)
-	items = list(/obj/item/reagent_containers/food/snacks/cutlet)
-	result = /obj/item/reagent_containers/food/snacks/enchiladas
-
 /datum/recipe/creamcheesebread
 	items = list(
 		/obj/item/reagent_containers/food/snacks/dough,
@@ -348,21 +332,6 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
 	)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/creamcheesebread
-
-/datum/recipe/monkeysdelight
-	fruit = list("banana" = 1)
-	reagents = list("sodiumchloride" = 1, "blackpepper" = 1, "flour" = 10)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/monkeycube
-	)
-	result = /obj/item/reagent_containers/food/snacks/monkeysdelight
-
-/datum/recipe/fishandchips
-	items = list(
-		/obj/item/reagent_containers/food/snacks/fries,
-		/obj/item/reagent_containers/food/snacks/fishfingers,
-	)
-	result = /obj/item/reagent_containers/food/snacks/fishandchips
 
 /datum/recipe/katsudon
 	reagents = list("egg" = 3, "soysauce" = 5)
@@ -398,44 +367,6 @@
 		/obj/item/reagent_containers/food/snacks/bun
 	)
 	result = /obj/item/reagent_containers/food/snacks/jellyburger/cherry
-
-/datum/recipe/sausage
-	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawmeatball,
-		/obj/item/reagent_containers/food/snacks/rawbacon,
-	)
-	result = /obj/item/reagent_containers/food/snacks/sausage
-
-/datum/recipe/fishfingers
-	reagents = list("flour" = 5, "egg" = 3, "cornoil" = 2)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/carp,
-	)
-	result = /obj/item/reagent_containers/food/snacks/fishfingers
-
-/datum/recipe/tofurkey
-	items = list(
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/stuffing,
-	)
-	result = /obj/item/reagent_containers/food/snacks/tofurkey
-
-/datum/recipe/honey_bun
-	reagents = list("sugar" = 3, "honey" = 5, "cream" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/butterslice,
-	)
-	result = /obj/item/reagent_containers/food/snacks/honeybuns
-
-/datum/recipe/honey_pudding
-	reagents = list("sugar" = 3, "honey" = 15, "cream" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/chocolatebar,
-	)
-	result = /obj/item/reagent_containers/food/snacks/honeypudding
 
 //////////////////////////////////////////
 // bs12 food port stuff

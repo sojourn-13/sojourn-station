@@ -23,26 +23,26 @@
 
 /obj/machinery/eternal_ascension_resonances/examine(mob/user)
 	..()
-	var/message = "Pillers Reading:\n"
+	var/message = "Pillars Reading:\n"
 	if(slot_one)
-		message += "Piller One: [slot_one]\n"
+		message += "Pillar One: [slot_one]\n"
 	else
-		message += "Piller One: Has no voice.\n"
+		message += "Pillar One: Has no voice.\n"
 
 	if(slot_two)
-		message += "Piller Two: [slot_two]\n"
+		message += "Pillar Two: [slot_two]\n"
 	else
-		message += "Piller Two: Has no voice.\n"
+		message += "Pillar Two: Has no voice.\n"
 
 	if(slot_three)
-		message += "Piller Three: [slot_three]\n"
+		message += "Pillar Three: [slot_three]\n"
 	else
-		message += "Piller Three: Has no voice.\n"
+		message += "Pillar Three: Has no voice.\n"
 
 	if(slot_four)
-		message += "Piller Four: [slot_four]\n"
+		message += "Pillar Four: [slot_four]\n"
 	else
-		message += "Piller Four: Has no voice.\n"
+		message += "Pillar Four: Has no voice.\n"
 
 	to_chat(user, "<span class='info'>[message]</span>")
 
@@ -55,7 +55,7 @@
 			if("Sure")
 				if(!active)
 					active = TRUE
-					to_chat(user, "As you press down a marbel plate the Pillers plasma bulbs start to dance inside the glass casings.")
+					to_chat(user, "As you press down a marbel plate the Pillars plasma bulbs start to dance inside the glass casings.")
 					icon_state = "ear_active"
 					addtimer(CALLBACK(src, .proc/repice_index), wave_time)
 			else
@@ -65,7 +65,7 @@
 		to_chat(user, "Something's already syncing...")
 		return
 
-	to_chat(user, "The Pillers are silent, unable to resonate.")
+	to_chat(user, "The Pillars are silent, unable to resonate.")
 
 /obj/machinery/eternal_ascension_resonances/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/psionic_catalyst))
@@ -96,7 +96,7 @@
 
 /obj/machinery/eternal_ascension_resonances/proc/add_cube(obj/item/device/psionic_catalyst/PC, mob/user)
 	if(anti_cheat)
-		to_chat(user, "Your already thinking of the Piller to add a catalyst!")
+		to_chat(user, "Your already thinking of the Pillar to add a catalyst!")
 		return
 
 	if(!PC.resonances)
@@ -105,51 +105,51 @@
 
 	anti_cheat = TRUE
 
-	var/choice = input(user, "What slot do you add the [PC] in?") as null|anything in list("Piller One","Piller Two","Piller Three","Piller Four")
+	var/choice = input(user, "What slot do you add the [PC] in?") as null|anything in list("Pillar One","Pillar Two","Pillar Three","Pillar Four")
 
 	switch(choice)
 
-		if("Piller One")
+		if("Pillar One")
 			if(!slot_one)
-				to_chat(user, "You add [PC] into the First Piller.")
+				to_chat(user, "You add [PC] into the First Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], First Piller.")
+				to_chat(user, "You carefully take out the override the resonance in [PC], First Pillar.")
 			slot_one = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
-		if("Piller Two")
+		if("Pillar Two")
 			if(!slot_two)
-				to_chat(user, "You add [PC]'resonance into the Second Piller.")
+				to_chat(user, "You add [PC]'resonance into the Second Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Second Piller.")
+				to_chat(user, "You carefully take out the override the resonance in [PC], Second Pillar.")
 
 			slot_two = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
-		if("Piller Tree")
-			if(!slot_two)
-				to_chat(user, "You add [PC]'resonance into the Third Piller.")
+		if("Pillar Tree")
+			if(!slot_three)
+				to_chat(user, "You add [PC]'resonance into the Third Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Third Piller.")
+				to_chat(user, "You carefully take out the override the resonance in [PC], Third Pillar.")
 
 			slot_three = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
-		if("Piller Four")
-			if(!slot_two)
-				to_chat(user, "You add [PC]'resonance into the Forth Piller.")
+		if("Pillar Four")
+			if(!slot_four)
+				to_chat(user, "You add [PC]'resonance into the Forth Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Forth Piller.")
+				to_chat(user, "You carefully take out the override the resonance in [PC], Forth Pillar.")
 
 			slot_four = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 
 		else
-			to_chat(user, "You add [PC]'resonance into the none of the Pillers.")
+			to_chat(user, "You add [PC]'resonance into the none of the Pillars.")
 			anti_cheat = FALSE
 			return
 
@@ -273,17 +273,17 @@
 /datum/eternal_ascension_resonances/summan_trash_pile
 	rune_resonance = "QuickSinking"
 	output = /obj/item/device/psionic_catalyst/summan_trash_pile
-	out_put_name = "Scrap Togather"
+	out_put_name = "Scrap Together"
 
 /datum/eternal_ascension_resonances/needle_n_thread
 	rune_resonance = "HealingNull"
 	output = /obj/item/device/psionic_catalyst/needle_n_thread
 	out_put_name = "Psionic Suture"
 
-/datum/eternal_ascension_resonances/purefie
+/datum/eternal_ascension_resonances/purify
 	rune_resonance = "QuickNullDark"
-	output = /obj/item/device/psionic_catalyst/purefie
-	out_put_name = "Psionic Purefie"
+	output = /obj/item/device/psionic_catalyst/purify
+	out_put_name = "Psionic Purify"
 
 /datum/eternal_ascension_resonances/temp_regulate
 	rune_resonance = "ColdWarm"

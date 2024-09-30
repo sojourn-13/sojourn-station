@@ -393,7 +393,7 @@ SUBSYSTEM_DEF(trade)
 			var/offer_attach_count = offer_content["attach_count"]
 			var/list/item_list = exported[offer_path]
 
-			if(!item_list || !offer_amount)
+			if(!item_list || !offer_amount || TS.disallow_mass)
 				continue
 
 			// Check attachments after assessing offers since we need station-specific info

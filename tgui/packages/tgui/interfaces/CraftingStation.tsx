@@ -47,7 +47,7 @@ const subcategorySortingOrder = [
   '6.5mm carbine',
   '7.62mm rifle',
   '8.6mm heavy rifle',
-  '14.5mm anti materiel',
+  '14.5mm anti-materiel',
   'flare shell',
   '17mm rolled shot',
   '19mm explosive',

@@ -8,7 +8,7 @@
 #define MENU_ANALYZE_RESULT 8
 /*
 =========================================================================================================================================
-Belvoix Genetic Analyzer
+Soteria Genetic Analyzer
 
 This is the workhorse of the department. Every other machine in the department is built to eventually allow genetic sample plates to be
 loaded into this device for analysis. Without this machine, players are left in the dark about which mutations are being produced, and
@@ -17,7 +17,7 @@ cannot isolate or combine desired genes.
 
 */
 /obj/machinery/genetics/gene_analyzer
-	name = "Belvoix Genetic Analyzer"
+	name = "Soteria Genetic Analyzer"
 	desc = "An extremely complex device made to analyze the patterns in DNA and apply them to other creatures."
 	density = TRUE
 	anchored = TRUE
@@ -78,7 +78,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
+		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
 		return
 	if(default_deconstruction(I, user))
 		return
@@ -103,7 +103,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attack_hand(mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
+		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
 		return
 	if(..())
 		return TRUE

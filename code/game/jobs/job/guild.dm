@@ -32,10 +32,10 @@
 		STAT_VIG = 10
 	)
 	description = "The Surface Operations Manager coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
-Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
+Your main objective, naturally, is to make as much money as you can. Purchase and acquire goods and sell them on for a profit.<br>\
 Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
 The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
-There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but comes with risk.<br>\
+There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but not without a risk.<br>\
 You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
 
 	duties = "Обеспечьте экипаж всем, что им может понадобиться, - для получения солидной прибыли.<br>\
@@ -98,11 +98,11 @@ You do not receive a salary, but can fund yourself from the company account. Str
 							 /datum/computer_file/program/reports)
 
 
-	description = "Грузчик составляет основу Lone star Shipping Solutions, в равной степени занимаясь уборкой мусора, перетаскиванием штук и продажей.<br>\
-	Ваша главная обязанность - поддерживать местный филиал компании в рабочем состоянии и приносить прибыль. Доставляйте товары, принимайте платежи и заказы, а также покупайте товар у мусорщиков.<br>\
-	В более спокойные времена проявляйте свою инициативу. Посетите отделы, чтобы спросить, есть ли что-нибудь, что им нужно, и попробуйте продать им необычные товары.<br>\
-	Сломанные фары? Сломанные торговые автоматы? Предложите свои услуги за небольшую плату. Вы также можете поискать прибыль в туннелях технического обслуживания.<br>\
-	Однако избегайте более глубоких туннелей - эта область опасна и предназначена для обученых специалистов по горному делу."
+	description = "The Cargo Technician forms the backbone of Lonestar Shipping Solutions, equal parts scavenger, loader and salesman.<br>\
+Your main duty is to keep the local company branch operational and profitable. Deliver goods, take payments and orders and buy from scavengers.<br>\
+In quieter times use your initiative. Visit departments to ask if there's anything they need and try to sell them unusual items.<br>\
+Busted lights? Broken vendors? Offer your services for a small fee. You may also find profit in the maintenance tunnels.<br>\
+Avoid the deeper tunnels unless otherwise instructed, however - this domain is hazardous and for trained mining specialists."
 
 	duties = "Сотрудники стойки регистрации должны быть готовы обрабатывать платежи и заказы.<br>\
 	Своевременно доставляйте товары отделам и частным лицам.<br>\
@@ -131,14 +131,14 @@ You do not receive a salary, but can fund yourself from the company account. Str
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
-	description = "Шахтер - профессиональный поставщик ресурсов, приобретающий ценные минералы для личных нужд Lonestar или продажи их.<br>\
-	Ваша главная обязанность - спуститься в глубокие туннели и выкопать как можно больше руды.<br>\
-	В зону, куда можно подняться на лифте, входит аванпост со всеми удобствами для переработки указанной руды и доставки очищенных материалов, готовых к использованию.<br>\
-	Все, что вы откопаете, попадет в карго, и с этого момента ответственность за его продажу лежит на других сотрудниках LoneStar.<br>\
-	Глубокие туннели гораздо менее опасны, чем фауна обитающая в них, так что бесследная пропажа шахтеров не редкость."
+	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Lonestar Shipping Solutions.<br>\
+Your primary responsibility is to descend into the deep tunnels and dig up as much ore as you can.<br>\
+Accessed by elevator, the area contains an outpost with all the facilities to process said ore and deliver refined materials ready for use.<br>\
+Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Lonestar to sell it.<br>\
+The deep tunnels are far less dangerous than the wilderness, but pack well - disappearances are not unheard of."
 
-	duties = "Выкапывать руды и минералы для переработки в полезный материал.<br>\
-	Найдите в туннелях другие ценности, которые могут быть использованы для получения прибыли."
+	duties = "Dig up ores and minerals to be processed into usable material.<br>\
+	Locate other valuables within the tunnels that may be turned into profit."
 
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_mining,

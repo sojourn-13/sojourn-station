@@ -1,7 +1,7 @@
 //Sprite by Aeger Medela#2891
 /obj/item/scale
 	name = "Scale"
-	desc = "A 10 point scale, used when tallying points. AltClick to remove a tally, CtrlShiftClick to add a tally."
+	desc = "A 10 point scale, used when tallying points. Alt+Click to remove a tally, and Ctrl+Shift+Click to add a tally."
 	icon_state = "scale"
 	icon = 'modular_sojourn/cardgame_2/cardgame_sprites.dmi'
 	var/tally = 0 //Number
@@ -22,7 +22,7 @@
 
 /obj/item/scale/AltClick(mob/user)
 	if(-5 >= tally)
-		to_chat(user, SPAN_NOTICE("You cant tip the scale any more this way."))
+		to_chat(user, SPAN_NOTICE("You can't tip the scale any more this way."))
 		return
 	tally -= 1
 	user.visible_message(SPAN_NOTICE("[user] removes a tally from [src] making it [tally]."), SPAN_NOTICE("You remove a tally from \the [src]."))
@@ -31,7 +31,7 @@
 
 /obj/item/scale/CtrlShiftClick(mob/user)
 	if(tally >= 5)
-		to_chat(user, SPAN_NOTICE("You cant tip the scale any more this way."))
+		to_chat(user, SPAN_NOTICE("You can't tip the scale any more this way."))
 		return
 	tally += 1
 	user.visible_message(SPAN_NOTICE("[user] adds a tally into \the [src]."), SPAN_NOTICE("You put a tally into \the [src]."))
@@ -41,7 +41,7 @@
 //Sprite by Gidgit#0143
 /obj/item/bone_counter
 	name = "Bone Pile"
-	desc = "A bone pile, used when tallying marks. AltClick to remove a tally, CtrlShiftClick to add a tally.\
+	desc = "A bone pile, used when tallying marks. Alt+Click to remove a tally, and Ctrl+Shift+Click to add a tally.\
 	Used for tracking life points in special games or more commonly keeping track of bone counters. Primarily used for CardCarpCo games."
 	icon_state = "skull"
 	icon = 'modular_sojourn/cardgame_2/cardgame_sprites.dmi'
@@ -67,13 +67,13 @@
 
 /obj/item/bone_counter/AltClick(mob/user)
 	tally -= 1
-	user.visible_message(SPAN_NOTICE("[user] removes a tally from [src] making it [tally]."), SPAN_NOTICE("You remove a tally from \the [src]."))
+	user.visible_message(SPAN_NOTICE("[user] removes a tally from [src], making it [tally]."), SPAN_NOTICE("You remove a tally from \the [src], making it [tally]."))
 	update_icon()
 	return
 
 /obj/item/bone_counter/CtrlShiftClick(mob/user)
 	tally += 1
-	user.visible_message(SPAN_NOTICE("[user] adds a tally into \the [src]."), SPAN_NOTICE("You put a tally into \the [src]."))
+	user.visible_message(SPAN_NOTICE("[user] adds a tally into \the [src], making it [tally]."), SPAN_NOTICE("You put a tally into \the [src], making it [tally]."))
 	update_icon()
 	return
 

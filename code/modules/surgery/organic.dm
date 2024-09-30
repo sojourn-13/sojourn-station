@@ -187,7 +187,7 @@
 /datum/surgery_step/break_bone
 	target_organ_type = /obj/item/organ/internal
 	required_tool_quality = QUALITY_HAMMERING
-	//its easyer and faster to harm then heal
+	//its easier and faster to harm then heal
 	difficulty = 0
 	duration = 20
 	blood_level = 1
@@ -333,7 +333,7 @@
 
 /datum/surgery_step/remove_item
 	required_tool_quality = QUALITY_CLAMPING
-	//Easyer to jank something out then it is to heal the wound you made
+	//Easier to jank something out then it is to heal the wound you made
 	difficulty = 0
 	duration = 30
 

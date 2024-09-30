@@ -109,13 +109,10 @@
 		STAT_COG = 10
 	)
 
-	description = "Вы не являетесь частью колонии – по крайней мере пока.<br>\
-	Вместо этого вы решили присоединится к местной фракции охотников. Время покажет на какой срок.<br>\
-	В сферу ответственности травника общины входят земледелие и медицина.<br>\
-	Зачастую снаряжение для экспедиций придется создавать своими руками.<br>\
-	Настоящие охотники всегда работают сообща под предводительством своего лидера или матриарха.<br>\
-	Долгожители общины хорошо знакомы с Кодексом охотничьей чести. Пока охотники в основном рискуют жизнью в бою, ваша задача – залатать их раны.<br>\
-	Дополнительные навыки в создании предметов, земледелии и химии тоже пригодятся."
+	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As a Lodge Herbalist \
+	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good Lodge members \
+	work as a team under the direction of the Hunt Master or if present the Lodge Matriarch. While hunters are more combat focused, your purpose as an herbalist is to attend to the medical needs of your lodge, \
+	but additional skills as a crafter, gardener and chemist are quite handy!"
 
 	duties = "Выращивайте полезные растения, чтобы затем использовать из для изготовления лекарств.<br>\
 		Станьте врачевателем для своей общины, который не позволит смерти забрать ваших товарищей.<br>\
@@ -154,12 +151,10 @@
 		STAT_COG = 2
 	)
 
-	description = "Вы чужак, не связанный ни с охотничьей общиной, ни с колонией как таковой.<br>\
-	Неважно кто вы – изгнанник, отшельник, потерпевший крушение пират или просто жертва обстоятельств – вы сами по себе.<br>\
-	Не разбрасывайтесь теми немногочисленными друзьями, что вам удастся найти, потому что большинству будет проще вас застрелить.<br>\
-	Лучше найдите себе нору поглубже и стягивайте в нее все полезное, что только удастся найти, чтобы потом пустить на ресурсы или продать.<br>\
-	И не забывайте – закону колонии на вас наплевать.<br>\
-	Едва ли кто-то за вас заступится. Разве что облегчит вашу ношу. Буквально."
+	description = "You're an outsider, disconnected from the lodge and the colony as a whole. Whether you're an exile, stranded pirate, hermit, or just the right man in the wrong place you're \
+	entirely alone out here. What friends you can make and rely on should be cherished, for there are other looters and outsiders there who might be less than friendly short of giving out lead \
+	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell or stockpile. Remember, you are not protected by \
+	colony law, few people will care or even raise an eyebrow if you're shot to death for whatever you're carrying."
 
 	duties = "Определитесь, что вам ближе – обустраивать нору или быть кочевником.<br>\
 		Заводите себе друзей и избегайте создавать врагов. Никакой существующий закон вас не защитит.<br>\

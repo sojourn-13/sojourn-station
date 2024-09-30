@@ -1,6 +1,6 @@
 
 /obj/item/bluespace_leak
-	name = "Leaking bluespace"
+	name = "leaking bluespace"
 	desc = "It looks like some kind of waterfall made out of space, seemingly endlessly flowing in place. Best not to get close to it."
 	icon = 'modular_sojourn/spaceleak.dmi'
 	icon_state = "coder_sprite"
@@ -26,7 +26,7 @@
 		if(!(I.flags & NOBLUDGEON))
 			user.do_attack_animation(src)
 			if(I.type in clean_items)
-				user.visible_message(SPAN_NOTICE("[user] cleans the blue mess!"), SPAN_NOTICE("What ever this is, cleaning it up must be a good thing!"))
+				user.visible_message(SPAN_NOTICE("[user] cleans the blue mess!"), SPAN_NOTICE("Whatever this is, cleaning it up must be a good thing!"))
 				qdel(src)
 				return
 			if(I.hitsound)
@@ -45,4 +45,4 @@
 		victim.apply_damage(max(0, damage * hazard_protection / 100 * victim.reagent_permeability()), CLONE)
 		if(ishuman(victim))
 			var/mob/living/carbon/human/H = victim
-			H.sanity.breakdown()
+			H.sanity.remove_insight(damage)

@@ -13,7 +13,7 @@
 
 /*
 ===============================================================================================================================================
-Belvoix Cloning Chamber
+Soteria Cloning Chamber
 
 A cloning machine for Genetics- basically, it takes mutation holders and makes mobs based on what "cloning" mutation is active in it.
 This machine allows us to create more genetic research data in R&D without necessarily needing a steady supply of meat Because cloning
@@ -35,7 +35,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 */
 
 /obj/machinery/genetics/cloner
-	name = "Belvoix Xenofauna Cloning Vat"
+	name = "Soteria Xenofauna Cloning Vat"
 	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures far and beyond regular fauna. Requires a steady supply of protein to function."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"
@@ -142,7 +142,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/proc/addLog(var/message)
 	if(reader)
 		reader.addLog(message)
-	
+
 
 /obj/machinery/genetics/cloner/proc/find_reader()
 	//every direction but west and north
@@ -461,7 +461,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 /obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 180))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, you were pressing some weird buttons so I locked you out~ Maybe have a scientist help~?\""))
+		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
 		return
 
 	if(default_deconstruction(I, user))
@@ -671,7 +671,7 @@ and which aren't.
 /obj/machinery/computer/genetics/clone_console/Initialize()
 	. = ..()
 	sync()
-	addLog("Belvoix Cloning Vat Console initialized. Welcome~")
+	addLog("Soteria Cloning Vat Console initialized. Welcome~")
 
 /obj/machinery/computer/genetics/clone_console/proc/addLog(string)
 	cloneLog = "\[[stationtime2text()]\] " + string + "<br>" + cloneLog

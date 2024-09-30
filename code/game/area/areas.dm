@@ -22,6 +22,7 @@
 	var/static_equip
 	var/static_light = 0
 	var/static_environ
+	var/prevent_ship_area = FALSE //Used to make sure even if this area is in a station map level, that it will not be turned into a ship area.
 
 /**
  * Called when an area loads
@@ -404,7 +405,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 
 /area/proc/set_ship_area()
-	if (!ship_area)
+	if (!ship_area && !prevent_ship_area)
 		ship_area = TRUE
 		ship_areas[src] = TRUE
 

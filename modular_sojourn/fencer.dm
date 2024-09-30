@@ -1,9 +1,9 @@
-//Debug exsperimental conspectable boss like mechanics
+//Debug experimental conspectable boss like mechanics
 //Sprite came to me in a dream, please do not replace it or remove. - Trilby
 
 /mob/living/carbon/superior_animal/robot/fencer
 	name = "Blue Fencer"
-	desc = "Something that doesn't even match this worlds aesthetic."
+	desc = "Something that doesn't even match this world's aesthetic."
 	icon_state = "fencer" //Dream Sprite
 	icon = 'modular_sojourn/fencer.dmi'
 
@@ -16,22 +16,22 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	armor_divisor = 2
-	deathmessage = "Gives a short wave and steps forwards into nothing..."
+	deathmessage = "gives a short wave and steps forwards into nothing..."
 
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 500, rad = 500, agony = 0)
 	emp_damage = FALSE
 	drop1 = /obj/item/tool/sword/saber/nightmare_saber //A true user of the nightmare
-	//Who are we attacking? It goes by goes by TRUE NAME of the human its tracking, does not track non-humans
+	//Who are we attacking? It goes by the TRUE NAME of the human it's tracking, does not track non-humans.
 	var/tracker
 	var/coins = 0
 	var/death_hits = 0
 
 /mob/living/carbon/superior_animal/robot/fencer/death()
 	if(death_hits >= 3)
-		visible_message("<b><font color='#ffaa00'>Gives a small bow before leaving blinking out, leaving behind a different sword.</font></b>")
+		visible_message("<b><font color='#ffaa00'>\The [src] gives a small bow before leaving blinking out, leaving behind a different sword.</font></b>")
 		..()
 	else
-		visible_message("<b><font color='#ffaa00'>Glares a moment, before standing up strait still ready to fight.</font></b>")
+		visible_message("<b><font color='#ffaa00'>\The [src] glares for a moment, before standing up straight, still ready to fight.</font></b>")
 		rejuvenate() //We do this to reset health from fake data
 		death_hits += 1 //Allows brute force
 		flick("fencer_glare",src)
@@ -62,16 +62,16 @@
 		..()
 		return
 
-	visible_message("<b><font color='#ffaa00'>[src] parries the [user]'s attack with easy then points to to the red flower pins core.</font></b>")
+	visible_message("<b><font color='#ffaa00'>\The [src] parries the [user]'s attack with ease, then points to to the red flower pin's core.</font></b>")
 	if(tracker)
 		if(ishuman(user))
 			if(coins == 3)
-				visible_message("<b><font color='#ffaa00'>The [src] bickers in an etheral voice \"Tenth Flow, Repose!\"</font></b>")
+				visible_message("<b><font color='#ffaa00'>\The [src] bickers in an ethereal voice \"Tenth Flow, Repose!\"</font></b>")
 				UnarmedAttack(user, give_coins = FALSE)
 	return
 
 /mob/living/carbon/superior_animal/robot/fencer/bullet_act(obj/item/projectile/proj)
-	visible_message("<b><font color='#ffaa00'>[src] ducks and weaves past the [proj], giving a glare at such a cheap trick.</font></b>")
+	visible_message("<b><font color='#ffaa00'>\The [src] ducks and weaves past the [proj], giving a glare at such a cheap trick.</font></b>")
 	flick("fencer_glare",src)
 	return PROJECTILE_FORCE_MISS
 
@@ -80,7 +80,7 @@
 	flick("fencer_atk",src)
 
 	if(coins > 5) //Congrats they just healed from that
-		visible_message("<b><font color='#ffaa00'>The [src] sighs and then in an etheral voice \"Sixth stance, Recovery Arts Number 12.\"</font></b>")
+		visible_message("<b><font color='#ffaa00'>\The [src] sighs and then speaks in an ethereal voice, \"Sixth Stance, Recovery Arts Number 12.\"</font></b>")
 		rejuvenate() //We do this to reset health from fake data
 		death_hits = 0
 		coins = 0
@@ -98,7 +98,7 @@
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		if(H && !H.real_name == tracker)
-			visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"First Form, Tracking Arts Number 1.\"</font></b>")
+			visible_message("<b><font color='#ffaa00'>\The [src] echoes in an ethereal voice \"First Form, Tracking Arts Number 1.\"</font></b>")
 			tracker = H.real_name
 			coins = 0
 			return // Do not attack
@@ -107,15 +107,15 @@
 		if(coins == 2 && give_coins)
 			if(H.has_shield())
 				var/obj/item/shield/shield = H.has_shield()
-				visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"Second Form, Bulwark Buster Number 4.\"</font></b>")
+				visible_message("<b><font color='#ffaa00'>\The [src] echoes in an ethereal voice, \"Second Form, Bulwark Buster Number 4.\"</font></b>")
 				shield.adjustShieldDurability(-150, H)
 
 		if(coins == 4 && give_coins)
-			visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"Third Stance, Saved Slash Number 8.\"</font></b>")
+			visible_message("<b><font color='#ffaa00'>\The [src] echoes in an ethereal voice, \"Third Stance, Saved Slash Number 8.\"</font></b>")
 			UnarmedAttack(A, proximity, give_coins = FALSE)
 
 		if(coins == 5 && give_coins)
-			visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"Fith Hand, Hilt Jab Numberless.\"</font></b>")
+			visible_message("<b><font color='#ffaa00'>\The [src] echoes in an ethereal voice, \"Fifth Hand, Hilt Jab Numberless.\"</font></b>")
 			H.adjustHalLoss(25)
 
 

@@ -82,7 +82,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
 	name = "vegetable pizza"
-	desc = "No Tomato Sapiens were harmed during the baking of this pizza."
+	desc = "A pizza made with vegetables to replace meat."
 	icon_state = "vegetablepizza"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/vegetablepizzaslice
@@ -95,7 +95,7 @@
 
 /obj/item/reagent_containers/food/snacks/vegetablepizzaslice
 	name = "vegetable pizza slice"
-	desc = "A slice of the most green pizza of all pizzas not containing green ingredients."
+	desc = "A slice of vegetable pizza."
 	icon_state = "vegetablepizzaslice"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
@@ -107,7 +107,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza
 	name = "hawaiian pizza pizza"
-	desc = "A pizza with added cooked pineapple slices, some swear by it, others hate it."
+	desc = "A pizza with added cooked pineapple slices."
 	icon_state = "hawaiianpizza"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/hawaiianpizzaslice

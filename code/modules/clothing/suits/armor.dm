@@ -951,29 +951,6 @@
 	slowdown = 0.1 //faster than standard due to being fancier.
 	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
 
-
-/obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
 /obj/item/clothing/suit/armor/flakvest/commander/full
 	name = "advanced full body flak vest" //
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
@@ -993,6 +970,30 @@
 		rad = 0
 		)
 
+/obj/item/clothing/suit/armor/flakvest/commander/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Black"] = "commander_mil_fullbody"
+	options["Woodland Green"] = "commander_green_fullbody"
+	options["Desert Tan"] = "commander_tan_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Heavy Armor Types
@@ -1532,7 +1533,6 @@
 	options["Blackshield Colours"] = "commander_mil"
 	options["Desert Combat"] = "commander_tan"
 	options["Woodlands Combat"] = "commander_green"
-	options["Woodlands Blackshield Combat"] = "commander_green_mil"
 	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
 	options["BC Greatcoat"] = "mc_coat"
 

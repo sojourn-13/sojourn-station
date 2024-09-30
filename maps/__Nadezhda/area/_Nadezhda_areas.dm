@@ -5,6 +5,7 @@
 
 /area/colony
 	base_turf = /turf/simulated/floor/asteroid
+	prevent_ship_area = TRUE
 
 /area/colony/exposedsun
 	ship_area = FALSE
@@ -302,6 +303,7 @@
 	flags = null
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
+	prevent_ship_area = TRUE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"
@@ -592,7 +594,7 @@
 
 /area/nadezhda/command
 	name = "\improper Command"
-	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
+	area_light_color = COLOR_PALE_BLUE_GRAY
 
 /area/nadezhda/command/bridge
 	name = "\improper Control Room"
@@ -607,6 +609,7 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+	area_light_color = COLOR_COMMAND_BLUE
 
 /area/nadezhda/command/armory
 	name = "\improper Command Center Armory"
@@ -633,6 +636,7 @@
 
 /area/nadezhda/command/captain/quarters
 	name = "\improper Command - Premier's Quarters"
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/fo
 	name = "\improper Command - Steward's Quarters"
@@ -646,6 +650,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cro/quarters
 	name = "\improper Research - CRO's Quarters"
@@ -658,6 +663,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/gmaster/quarters
 	name = "\improper Engineering - Guild Master's Quarters"
@@ -670,6 +676,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cbo/quarters
 	name = "\improper Medbay - CBO's Quarters"
@@ -721,6 +728,7 @@
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/teleporter
 	name = "\improper Teleporter"
@@ -764,6 +772,10 @@
 
 /area/nadezhda/crew_quarters/toilet/medbay
 	name = "Medbay Toilet"
+	icon_state = "nadezhdayellow"
+
+/area/nadezhda/crew_quarters/arcade
+	name = "Arcade"
 	icon_state = "nadezhdayellow"
 
 /area/nadezhda/crew_quarters/dorm1
@@ -1554,10 +1566,12 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/mining_outside_doc
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/mining_dreg
 	name = "Slate Mining Pad MEH A" //Mining Excation Head
 	icon_state = "erisblue"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"

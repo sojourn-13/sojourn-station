@@ -45,6 +45,7 @@
 
 /mob/living/simple_animal/hostile/hivemind/New()
 	. = ..()
+	real_name = name
 	if(!(real_name in GLOB.hivemind_mobs))
 		GLOB.hivemind_mobs.Add(real_name)
 	GLOB.hivemind_mobs[real_name]++
@@ -899,7 +900,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	if(GLOB.hive_data_bool["prevent_gibbing_dead"])
+	if(GLOB.hive_data_bool["gibbing_warning_timer"])
 		qdel(passenger)
 	else
 		release_passenger(TRUE) //HAS to be true or we do an endless loop!

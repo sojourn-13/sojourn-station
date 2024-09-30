@@ -220,7 +220,7 @@
 						if(!wielded_l.is_held_twohanded(wielded_l))
 							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
 							wielded_l.unwield(H)
-				//This is insainl powerful and shuld not just happend without choas level being exstreamly high
+				//This is insanely powerful and shuld not just happend without chaos level being extremely high
 				if(GLOB.chaos_level >= 5)
 					if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
 						if(H.get_active_hand())

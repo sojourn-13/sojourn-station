@@ -61,7 +61,8 @@
 	damage_types = list(BRUTE = 30)
 
 /obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
-	explosion(target, 0, 0, 2, 3)
+	if(!testing)
+		explosion(target, 0, 0, 2, 3)
 
 /obj/item/projectile/bullet/rocket/emp
 	name = "EMP rocket"
@@ -92,7 +93,7 @@
 		for(var/mob/living/carbon/M in hear(7, get_turf(src)))
 			flashbang_bang(get_turf(src), M)
 
-		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+		for(var/obj/effect/blob/B in hear(8,get_turf(src)))	   		//Blob damage here
 			var/damage = round(30/(get_dist(B,get_turf(src))+1))
 			B.take_damage(damage)
 			B.update_icon()
@@ -283,7 +284,7 @@
 /obj/item/projectile/chameleon
 	name = "bullet"
 	icon_state = "bullet"
-	damage_types = list(HALLOS = 1)
+	damage_types = list(HALLOSS = 1)
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
@@ -364,7 +365,7 @@
 /obj/item/projectile/bullet/flare/green
 	luminosity_color = PIPE_COLOR_GREEN //Bit better then normal green
 
-/obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
+/obj/item/projectile/bullet/flare/chaos //MEWHEHEHE, can be any colour
 	chaos = TRUE
 
 //Used for bluecross only atm

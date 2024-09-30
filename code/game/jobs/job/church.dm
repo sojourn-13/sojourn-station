@@ -43,12 +43,12 @@
 		CRUCIFORM_PRIME
 	)
 
-	description = "Прайм является главой местного отделения Церкви Абсолюта. <br>\
-	Вы представляете интересы церкви и ее последователей в колонии - выявить их можно по крестообразному имплантату на их груди.<br>\
-	Ваша самая насущная обязанность - как духовного лидера. Проповедуйте пастве, вселяйте веру и силу и обращайте тех, кто ищет спасения.<br>\
-	Хотя вы не являетесь квалифицированным психологом, вы можете оказывать поддержку и направлять всех - как в светлые, так и в темные времена.<br>\
-	Дополнительная обязанность может потребовать проведения похорон по-настоящему потерянных или проведения поминок и групповых молитв.<br>\
-	Протокол Crusader также может быть введен в действие под вашим командованием, когда вы сталкиваетесь с угрозой Разума Улья. Используйте этот импульс от протокола и свою ритуальную книгу, чтобы победить зло."
+	description = "The Prime serves as the head of the local branch of the Church of the Absolute. <br>\
+	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
+	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength and convert those seeking salvation.<br>\
+	While you are no trained psychologist, you can provide support and guidance to all - in times bright or dark.<br>\
+	Additional duties may see you hosting sermons for the faithful, organizing charity events like giving out food or performing last rites for those forever lost.<br>\
+	The Crusader protocol may also be enacted under your command when facing a Hivemind threat. Use this boost, and your ritual book, to defeat evil."
 
 	duties = "Представлять интересы учеников церкви в колонии. Защищайте их от преследований и говорите за них.<br>\
 	Проводите мессы, произносите проповеди, проповедуйте верующим и проводите групповые ритуальные сеансы.<br>\
@@ -95,9 +95,9 @@
 
 	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
-	description = "Вектор служит Прайму и, в более широком смысле, церкви как последователь Веры.<br>\
-	Священные обязанности по эксплуатации биореактора и управлению биомассой для церковных машин являются вашим главным приоритетом.<br>\
-	Вы также должны работать над тем, чтобы представить Веру в позитивном свете всем колонистам. Должность Вектора может возложить на вас дополнительные обязанности во время смены."
+	description = "The Vector serves the Prime, and more generally the church, as a disciple of the Faith.<br>\
+	The sacred duties of operating the bioreactor and managing biomass for the church machines are your main priority.<br>\
+	You should also work to represent the Faith in a positive light to all colonists. The prime may issue you further duties and orders."
 
 	duties = "Обслуживайте биореактор и управляйте биомассой для церковных машин.<br>\
 	Обслуживайте территории, принадлежащие церкви, поддерживая помещения в рабочем состоянии и в надлежащем порядке.<br>\

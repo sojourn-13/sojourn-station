@@ -52,7 +52,7 @@
 
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"
-	damage_types = list(HALLOS = 0)
+	damage_types = list(HALLOSS = 0)
 	stun = 1
 	weaken = 5
 	knockback = 2
@@ -61,7 +61,7 @@
 /obj/item/projectile/plasma/stun
 	name = "stun plasma bolt"
 	taser_effect = 1
-	damage_types = list(HALLOS = 30)
+	damage_types = list(HALLOSS = 30)
 	impact_type = /obj/effect/projectile/stun/impact
 	recoil = 7
 	fire_stacks = 0

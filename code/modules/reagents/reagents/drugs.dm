@@ -405,7 +405,7 @@
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"
 	id = "hyperzine"
-	description = "Hyperzine is a highly effective, long lasting, muscle stimulant, but drains the body. Also promotes muscle regrowth. Will worsen injuries."
+	description = "Hyperzine is a highly effective, long lasting, muscle stimulant, but drains the body. Also promotes muscle regrowth. Will worsen injuries. Side effects include twitching, nervousness and addiction. Can cause minor heart damage due to high BPM."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
@@ -515,7 +515,7 @@
 /datum/reagent/drug/sanguinum
 	name = "Sanguinum"
 	id = "sanguinum"
-	description = "Forces bone marrow to produce more blood than usual. Have irritating side effects"
+	description = "Forces bone marrow to produce more blood than usual. Side effects include blood coughing."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#e06270"

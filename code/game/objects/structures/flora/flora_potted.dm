@@ -266,7 +266,7 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bush_tall
-	name = "potted bush piller"
+	name = "potted bush pillar"
 	desc = "Mini bush trimmed to be pillar shaped, makes for a generic plant to have in an office setting."
 	icon_state = "plant-42"
 	needs_to_maintain = TRUE

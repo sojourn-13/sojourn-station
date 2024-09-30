@@ -79,7 +79,6 @@
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/suit/fire(src)
 	new /obj/item/clothing/accessory/halfcape/som(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
@@ -92,6 +91,8 @@
 	new /obj/item/ammo_magazine/ammobox/pistol_35/rubber(src)
 	new /obj/item/stack/os_cash/random(src)
 	new /obj/item/direct_line(src)
+	new /obj/item/tool/omnitool(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/cargo(src)
 
 //Prospector gear, you'll notice it is immensely heavily randomized, this is intentional to add some replayibility to prospector starts.
 //To anyone editing this, I advise using if statements over switch to better have control of what loot spawns, it rolls each in order of success so you can better set the odds.

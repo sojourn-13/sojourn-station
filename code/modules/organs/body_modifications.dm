@@ -49,7 +49,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/proc/is_allowed(organ = "", datum/preferences/P, mob/living/carbon/human/H)
 	if(!organ || !(organ in body_parts))
-		//usr << "[name] isn't useable for [organ]"
+		//usr << "[name] isn't usable for [organ]"
 		return FALSE
 	var/parent_organ
 	for(var/organ_parent in organ_structure)

@@ -2,7 +2,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
-	reproduction after being fed various mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
+	reproduction after being plump helmet mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
 	obsessed with food but gladly lets itself get pulled along. Special training allows for them to follow anyone who states 'Cerberus Follow', while 'Cerberus Stop' will make them halt."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "pigrat"
@@ -32,7 +32,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
-		if(G.seed && G.seed.kitchen_tag == "mushroom")
+		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
 				user.drop_item()

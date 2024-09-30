@@ -204,7 +204,7 @@
 				For each outcome of what we find on our depth scanner there is a corresponding setting we put the Suspension Field Generator too.
 				Below you'll see I have labeled six of them. But why only six? 'Cause that's the only ones you'll ever need. The others are for other
 				fields of science that won't be covered on a xenoarch focused setup guide. Please take your time to learn these. Eventually you
-				won't even need a book to refrence!<br>
+				won't even need a book to reference!<br>
 				<ul>
 					<li><b>Trace Organic Cells</b> - We use a Diffracted <b>Carbon Dioxide Laser</b>.</li>
 					<li><b>Long Exposure Particles</b> - We slow the particles down with a <b>Potassium Refrigerant Cloud</b>.</li>

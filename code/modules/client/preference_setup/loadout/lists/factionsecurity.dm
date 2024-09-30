@@ -10,6 +10,10 @@
 	display_name = "security armored coat"
 	path = /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat
 
+/datum/gear/factionsecurity/raincloak
+	display_name = "marshal raincloak"
+	path = /obj/item/clothing/accessory/duster/marshal
+
 /datum/gear/factionsecurity/miljacket_marshal //it's a Jacket for Marshals Commisioned by pneumo/husky and sprited/coded by Dromkii
 	display_name = "marshal jacket"
 	path = /obj/item/clothing/suit/storage/toggle/miljacket_marshal

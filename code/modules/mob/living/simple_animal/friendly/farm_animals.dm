@@ -354,13 +354,13 @@ var/global/chicken_count = 0
 
 /mob/living/simple_animal/pig/hog
 	name = "Amerethi hog"
-	desc = "The result of crossing genetics between the colony's aging sow and cerberi from the Lodge, this is a docile species with asexual reproduction when fed mushrooms, raised chiefly for its meat without the otherwise ugly connotations of raising for slaughter what should have been a valued hunting companion."
+	desc = "The result of crossing genetics between the colony's aging sow and cerberi from the Lodge, this is a docile species with asexual reproduction when fed plump helmets, raised chiefly for its meat without the otherwise ugly connotations of raising for slaughter what should have been a valued hunting companion."
 	icon_state = "pighog"
 
 /mob/living/simple_animal/pig/hog/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem hogs
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
-		if(G.seed && G.seed.kitchen_tag == "mushroom")
+		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && hogsleft < 4)
 				user.visible_message("\blue [user] feeds [O] to [name]! She snorts happily.","\blue You feed [O] to [name]! She snorts happily.")
 				user.drop_item()

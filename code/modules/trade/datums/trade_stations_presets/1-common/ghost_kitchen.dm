@@ -236,7 +236,7 @@
 			/obj/item/reagent_containers/food/snacks/donut = good_data("Donut", list(-100, -50), 100),
 			/obj/item/reagent_containers/food/snacks/donut/jelly = good_data("Jelly Donut", list(-100, -50), 120),
 			/obj/item/reagent_containers/food/snacks/donut/slimejelly = good_data("Slime Jelly Donut", list(-100, -50), 130),
-			/obj/item/reagent_containers/food/snacks/donut/chaos= good_data("Choas Donut", list(-100, -50), 400),
+			/obj/item/reagent_containers/food/snacks/donut/chaos= good_data("Chaos Donut", list(-100, -50), 400),
 			/obj/item/reagent_containers/food/snacks/donut/cherryjelly = good_data("Cherry Jelly Donut", list(-100, -50), 120),
 			/obj/item/reagent_containers/food/snacks/donut/stat_buff = good_data("Masterpiece Donut", list(-100, -50), 100),
 			/obj/item/reagent_containers/food/snacks/xemeatpie = good_data("Xeno Pie", list(-100, -50), 150)

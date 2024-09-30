@@ -1979,7 +1979,7 @@
 	name = "Security Barracks"
 	})
 "ael" = (
-/obj/item/storage/box/syndie_kit/antimaterial_rifle{
+/obj/item/storage/box/syndie_kit/antimateriel_rifle{
 	name = "SA AMR kit"
 	},
 /obj/machinery/door/window/westleft,
