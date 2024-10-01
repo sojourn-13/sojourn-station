@@ -1,6 +1,6 @@
 /datum/trade_station/kriosanconfederacy
 	name_pool = list(
-		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself with our stock.\""
+		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greetings. Please amuse yourself with our stock.\""
 	)
 	icon_states = list("htu_destroyer", "ship")
 	uid = "kriosanconfederacy"
@@ -52,7 +52,7 @@
 			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-3, 1)),
 			/obj/item/tool/sword/saber = custom_good_amount_range(list(-1, 3)),
 			/obj/item/tool/sword/machete,
-			/obj/item/tool/spear //Useless other then to hand craft and sell it back to them
+			/obj/item/tool/spear //Useless other than to hand craft and sell it back to them
 		)
 	)
 	offer_types = list(
