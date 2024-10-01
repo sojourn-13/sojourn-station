@@ -13,7 +13,7 @@
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
-		"Projectiles" = list(
+		"Ballistic Weapons" = list(
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/automatic/pitbull,
@@ -40,7 +40,7 @@
 			/obj/item/ammo_magazine/ammobox/magnum_40,
 			/obj/item/ammo_magazine/ammobox/pistol_35
 		),
-		"Energy" = list(
+		"Energy Weapons" = list(
 			/obj/item/gun/energy/gun,
 			/obj/item/gun/energy/gun/martin
 		),
