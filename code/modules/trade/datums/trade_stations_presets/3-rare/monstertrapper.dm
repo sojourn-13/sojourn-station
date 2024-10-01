@@ -47,7 +47,7 @@
 			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900),
 			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000)
 		),
-		"Just Spiders" = list(
+		"Live Spiders" = list(
 			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(2, 3)),
 			/mob/living/carbon/superior_animal/giant_spider/nurse = custom_good_amount_range(list(-2, 3)),
 			/mob/living/carbon/superior_animal/giant_spider/hunter = custom_good_amount_range(list(1, 2))
