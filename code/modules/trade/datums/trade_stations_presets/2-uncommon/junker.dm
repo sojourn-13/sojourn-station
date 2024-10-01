@@ -37,7 +37,7 @@
 	)
 
 	hidden_inventory = list(
-		"\"Treaser\"" = list(
+		"\"Treasure\"" = list(
 			/obj/structure/salvageable/bliss = custom_good_amount_range(list(-1, 2)),
 			/obj/item/noslipmodule = custom_good_amount_range(list(-1, 2)),
 			/obj/item/reagent_containers/food/snacks/candy_drop_red = custom_good_amount_range(list(-1, 2)),
