@@ -1,6 +1,6 @@
 /datum/trade_station/caduceus
 	name_pool = list(
-		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the mean time.\"."
+		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the meantime.\"."
 	)
 	icon_states = list("moe_frigate", "ship")
 	tree_x = 0.26
@@ -69,7 +69,7 @@
 			/obj/item/clothing/suit/bio_suit/cmo = good_data("CMO Biohazard Suit", list(3, 4), 800),
 			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
 		),
-		"Misc" = list(
+		"Miscellaneous" = list(
 			/obj/structure/reagent_dispensers/coolanttank,
 			/obj/item/clothing/mask/breath/medical,
 			/obj/item/clothing/mask/surgical,
