@@ -401,7 +401,7 @@
 	},
 /obj/item/remains/mummy2,
 /obj/structure/snowfall{
-	color = #61DE2A;
+	color = "#61DE2A";
 	name = "dust";
 	light_color = #61DE2A;
 	light_range = 1;
