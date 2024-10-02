@@ -16,6 +16,8 @@
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_parts = null
+
 	var/fake_name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
