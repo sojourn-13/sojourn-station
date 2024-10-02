@@ -2,7 +2,7 @@
 	start_discovered = TRUE
 	spawn_always = TRUE
 	name_pool = list(
-		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices as well!\""
+		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at affordable prices as well!\""
 	)
 	icon_states = list("htu_frigate", "ship")
 	uid = "materials"
