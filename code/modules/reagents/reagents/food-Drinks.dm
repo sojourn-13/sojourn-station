@@ -418,7 +418,7 @@
 		var/mob/living/carbon/human/H = M
 		if(H.frost > 0)
 			H.frost -= 1
-		if(H.species && (H.species.flags & (NO_PAIN)))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose < agony_dose)
 		if(prob(5) || dose == metabolism) //dose == metabolism is a very hacky way of forcing the message the first time this procs
@@ -457,7 +457,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		protection = list(H.head, H.glasses, H.wear_mask)
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			no_pain = 1 //TODO: living-level can_feel_pain() proc
 		if(H.frost > 0)
 			H.frost -= 2
@@ -499,7 +499,7 @@
 /datum/reagent/organic/capsaicin/condensed/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose == metabolism)
 		to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))

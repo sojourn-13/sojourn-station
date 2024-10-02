@@ -1511,7 +1511,7 @@ var/list/rank_prefix = list(\
 		if(!istype(check_organ))
 			return 0
 		return check_organ.organ_can_feel_pain() */ //TODO: This also doesn't work on Eris :))
-	return !(species.flags & NO_PAIN)
+	return !((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 
 /mob/living/carbon/human/proc/check_self_for_injuries()
 	if(stat)

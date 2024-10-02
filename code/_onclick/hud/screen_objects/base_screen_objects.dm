@@ -375,7 +375,10 @@
 			add_overlay( ovrls["health0"])
 		else
 			var/mob/living/carbon/parentmobC = parentmob	// same parent mob but in correct type for accessing to species
-			switch(100 - ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock))
+			var/pain_affect = ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock)
+			if(PAIN_LESS in parentmobC.mutations)
+				pain_affect = 0
+			switch(100 - pain_affect)
 				if(100 to INFINITY)		add_overlay( ovrls["health0"])
 				if(80 to 100)			add_overlay( ovrls["health1"])
 				if(60 to 80)			add_overlay( ovrls["health2"])

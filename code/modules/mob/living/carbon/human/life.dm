@@ -1170,7 +1170,7 @@
 	return slurring
 
 /mob/living/carbon/human/handle_stunned()
-	if(species.flags & NO_PAIN)
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		stunned = 0
 		return 0
 	if(..())
