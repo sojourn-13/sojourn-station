@@ -390,6 +390,10 @@
 				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
 				stop_loop = TRUE
 			else
+				var/obj/item/clothing/shoes = C
+				if (shoes && shoes.holding)
+					shoes.holding.forceMove(get_turf(M))
+					shoes.holding = NULL
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
@@ -416,6 +420,15 @@
 				C.forceMove(NULLSPACE)
 				wearing_2 -= C
 				qdel(C)
+
+		for(var/obj/item/underwear/U in H.worn_underwear)
+			if(!(U.required_free_body_parts & bodypart))
+				continue
+			our_man.worn_underwear -= U
+			U.forceMove(NULLSPACE)
+			qdel(U)
+			our_man.UpdateUnderwear()
+
 		if(stop_loop)
 			continue
 		M.take_organ_damage(0, units_for_this_part * power * 0.1)
