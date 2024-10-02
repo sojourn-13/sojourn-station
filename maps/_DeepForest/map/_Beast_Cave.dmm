@@ -109,6 +109,13 @@
 /obj/random/cluster/roaches/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"aB" = (
+/obj/structure/morgue,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "aC" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -133,8 +140,18 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "aH" = (
-/obj/machinery/door/airlock/glass,
-/turf/simulated/floor/industrial/grey_slates,
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 5
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -202,13 +219,6 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "aX" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
 /turf/simulated/wall/iron,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -380,6 +390,11 @@
 	stat = 1;
 	dir = 2
 	},
+/obj/machinery/computer{
+	stat = 1;
+	dir = 1;
+	pixel_y = -5
+	},
 /obj/structure/snowfall{
 	color = #61DE2A;
 	name = "dust";
@@ -396,6 +411,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_light)
+"bN" = (
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "bO" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -455,7 +477,7 @@
 	})
 "bX" = (
 /obj/structure/scrap_cube,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -475,15 +497,6 @@
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"cb" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/obj/structure/flora/ausbushes/stalkybush,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "cc" = (
 /obj/item/tool/spear,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -1717,13 +1730,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"gE" = (
-/obj/machinery/vending/organfridge_aberrant/alt,
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "gF" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -1817,18 +1823,6 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"gY" = (
-/obj/structure/table/woodentable,
-/obj/item/paper{
-	info = "Research Log:Author: Professor Victor KallusDate: 2652.0X.XXSubject: "Renders" - Specimen Capture and Re-engineeringSeveral specimens of the biological entities termed "renders" have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's—it's all coming apart, the entire sector. We thought we had control-";
-	layer = 4;
-	icon_state = "paper_neo_words_crumpled_bloodied"
-	},
-/turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "gZ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/big/bush3,
@@ -2190,7 +2184,10 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "im" = (
-/turf/simulated/floor/wood/wild3,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -2246,14 +2243,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ix" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/damagedfloor/fire,
-/obj/item/oddity/common/broken_key,
-/obj/random/oddity_guns{
-	desc = "An odd, unstable rift";
-	color = "#FF0000"
-	},
-/turf/simulated/floor/tiled/steel/monofloor,
+/obj/machinery/optable,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -3232,6 +3223,15 @@
 "lU" = (
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
+"lV" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "lW" = (
 /obj/structure/bed/chair/custom/wood{
 	dir = 4
@@ -4417,16 +4417,6 @@
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"qh" = (
-/obj/machinery/door/unpowered/simple/wood{
-	color = "#9a977b"
-	},
-/obj/item/beartrap/armed,
-/turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "qj" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/random/material,
@@ -4452,7 +4442,8 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "qn" = (
-/turf/simulated/wall/r_wall,
+/obj/structure/closet/body_bag,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -4536,8 +4527,21 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qC" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/turf/simulated/floor/tiled/cafe,
+/obj/effect/floor_decal/corner_steel_grid/diagonal,
+/obj/effect/floor_decal/corner_steel_grid/diagonal{
+	dir = 4
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -4598,6 +4602,14 @@
 /obj/structure/flora/tree/jungle_small/variant2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"qL" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "qM" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark{
@@ -4621,6 +4633,13 @@
 	})
 "qQ" = (
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/wire_splicing,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -4643,14 +4662,18 @@
 	requires_power = 0
 	})
 "qS" = (
-/turf/simulated/wall/marble/dark,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"qT" = (
-/obj/item/remains/tajaran,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 7
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -4919,6 +4942,23 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"rD" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "rE" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -4928,9 +4968,7 @@
 	requires_power = 0
 	})
 "rF" = (
-/obj/effect/floor_decal/industrial_plant/border_sides,
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -4949,14 +4987,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"rJ" = (
-/obj/structure/table/bench/steel,
-/obj/item/oddity/common/towel,
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "rK" = (
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5009,6 +5039,15 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"rT" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/damagedfloor/fire,
+/obj/effect/decal/cleanable/ash,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "rU" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5044,6 +5083,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"sb" = (
+/mob/living/simple_animal/hostile/creature/tissue,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "sc" = (
 /obj/structure/bed/roller,
 /obj/item/remains,
@@ -5061,14 +5107,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"sf" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/machinery/door/blast/regular,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "sg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
@@ -5331,6 +5369,16 @@
 /obj/structure/flora/rock,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"sT" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 8
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "sU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/grass,
@@ -5343,6 +5391,16 @@
 	},
 /obj/structure/girder,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"sX" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/item/handcuffs,
+/turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -5436,21 +5494,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"tl" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/machinery/papershredder,
-/obj/item/shreddedp,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "tm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -5462,17 +5505,14 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"to" = (
-/obj/structure/window/reinforced{
-	dir = 1
+"tp" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
 	},
-/obj/effect/overlay/water{
-	layer = 3
-	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
-/turf/simulated/floor/beach/water/flooded,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -5484,13 +5524,6 @@
 	requires_power = 0
 	})
 "tr" = (
-/obj/structure/table/bench/steel,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -5499,6 +5532,14 @@
 "tt" = (
 /obj/item/bananapeel,
 /turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"tu" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/oddity/common/paper_crumpled,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -5585,13 +5626,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"tG" = (
-/obj/random/credits/low_chance,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "tH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -5671,8 +5705,7 @@
 	requires_power = 0
 	})
 "tR" = (
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6018,15 +6051,12 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uQ" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/obj/structure/table/steel,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/structure/wire_splicing,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6194,14 +6224,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
-"vs" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/damagedfloor/fire,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "vt" = (
 /obj/item/seeds/shandseed,
 /obj/item/seeds/shandseed,
@@ -6211,6 +6233,14 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
+"vw" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/structure/inflatable/wall,
+/turf/simulated/floor/rock/manmade/ruin2,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "vx" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water/top,
@@ -6246,25 +6276,39 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"vK" = (
-/turf/simulated/mineral/planet{
-	icon_state = "rock2"
+"vJ" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
-"vL" = (
-/obj/machinery/door/blast/regular/open,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/bed/padded,
+/obj/item/bikehorn{
+	name = "Horn of Doom";
+	desc = "A loud bike horn. Favored by entertainers system-wide. Something feels off about it"
+	},
+/obj/effect/gibspawner/human,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/simulated/floor/industrial/white_large_slates,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"vK" = (
+/turf/simulated/mineral/planet{
+	icon_state = "rock2"
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "vM" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/food/snacks/openable/mre,
@@ -6280,16 +6324,8 @@
 	dir = 4;
 	icon_state = "shower"
 	},
+/obj/random/gun_parts/high_end,
 /turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"vP" = (
-/obj/structure/sign/warning/caution/small2{
-	pixel_x = 32
-	},
-/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6318,6 +6354,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"vU" = (
+/obj/structure/curtain/medical,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "vV" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
@@ -6338,22 +6381,79 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"wa" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/mob/living/carbon/superior_animal/roach/tazntz,
+/turf/simulated/floor/industrial/fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"wb" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 1;
+	pixel_y = -5
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"wc" = (
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/mob/living/carbon/superior_animal/roach/tazntz,
+/turf/simulated/floor/industrial/fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "wd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock2,
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"wg" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+"wf" = (
+/obj/structure/bed/chair/office/light{
+	pixel_y = -4
 	},
-/obj/machinery/optable,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/item/remains/mummy2,
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/paper{
+	info = "Research Log:Author: Professor Victor KallusDate: 2652.0X.XXSubject: "Renders" - Specimen Capture and Re-engineeringSeveral specimens of the biological entities termed "renders" have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's—it's all coming apart, the entire sector. We thought we had control-";
+	layer = 4;
+	icon_state = "paper_neo_words_crumpled_bloodied"
+	},
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia.";
+	pixel_y = 10
+	},
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6376,14 +6476,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"wj" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "wk" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -6394,9 +6486,29 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"wo" = (
-/obj/item/caution/cone,
-/turf/simulated/floor/wood/wild3,
+"wn" = (
+/obj/structure/bed/chair/office/light{
+	dir = 8;
+	pixel_y = 8
+	},
+/obj/item/remains/mummy2{
+	pixel_y = 8
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia."
+	},
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6409,15 +6521,16 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wt" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/machinery/papershredder,
+/obj/item/shreddedp,
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6425,6 +6538,16 @@
 "wu" = (
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
+"wv" = (
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
+	},
+/obj/item/beartrap/armed,
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "ww" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/big/bush2,
@@ -6433,6 +6556,25 @@
 "wx" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"wC" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/overlay/water{
+	layer = 3
+	},
+/obj/effect/overlay/water/top{
+	layer = 3
+	},
+/obj/machinery/porta_turret/One_star{
+	name = "WhiteGuard turret"
+	},
+/obj/structure/low_wall,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6458,6 +6600,18 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"wF" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "wG" = (
 /obj/structure/flora/big/rocks2,
 /obj/structure/scrap/food/large,
@@ -6467,12 +6621,7 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"wI" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	layer = 4;
-	pixel_y = 7
-	},
+"wK" = (
 /obj/structure/snowfall{
 	color = #61DE2A;
 	name = "dust";
@@ -6480,7 +6629,8 @@
 	light_range = 1;
 	desc = "Thick dust fills the air"
 	},
-/turf/simulated/floor/industrial,
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6491,6 +6641,19 @@
 /obj/item/gun/projectile/automatic/vintorez/NM_colony,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"wN" = (
+/obj/item/organ/internal/bone/chest,
+/obj/item/clothing/suit/storage/toggle/labcoat{
+	layer = 2
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat{
+	layer = 2
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "wO" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/overlay/water/top,
@@ -6498,13 +6661,6 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"wP" = (
-/obj/machinery/optable,
-/turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "wQ" = (
 /obj/random/material_ore,
 /turf/simulated/floor/rock,
@@ -6559,20 +6715,20 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"xd" = (
-/obj/structure/sign/department/morgue,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "xe" = (
 /obj/structure/flora/small/trailrockb4,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"xg" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/bcarpet,
+"xi" = (
+/obj/structure/low_wall,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6583,6 +6739,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"xl" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6601,6 +6764,28 @@
 	icon_state = "cellold0"
 	},
 /turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"xt" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/overlay/water{
+	layer = 3
+	},
+/obj/effect/overlay/water/top{
+	layer = 3
+	},
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"xu" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6629,6 +6814,15 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"xB" = (
+/obj/structure/multiz/stairs{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "xC" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
@@ -6671,30 +6865,20 @@
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
-"xI" = (
-/obj/structure/girder,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "xL" = (
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"xN" = (
-/obj/structure/grille,
-/obj/structure/low_wall,
-/turf/simulated/floor/industrial,
+"xQ" = (
+/obj/machinery/door/airlock/freezer,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
 "xR" = (
-/obj/structure/showcase/horrific_experiment_cryo{
-	icon_state = "cellold0"
-	},
-/turf/simulated/floor/industrial/grey_slates,
+/obj/structure/sign/security/showers,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6719,6 +6903,12 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"xV" = (
+/turf/simulated/floor/industrial/cafe_large,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "xW" = (
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -6742,6 +6932,12 @@
 "ya" = (
 /obj/item/spider_shadow_trap,
 /turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"yc" = (
+/turf/simulated/wall/marble/dark,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6779,21 +6975,29 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"yk" = (
+/obj/machinery/door/blast/regular/open,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "ym" = (
 /obj/structure/flora/small/rock5,
 /mob/living/simple_animal/hostile/tengbrute,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"yp" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/effect/window_lwall_spawn/reinforced/polarized,
-/turf/simulated/floor/plating/under,
+"yo" = (
+/obj/structure/table/bench/steel,
+/obj/item/oddity/common/towel,
+/turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6823,13 +7027,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"yv" = (
-/obj/effect/damagedfloor/fire,
-/turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "yx" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -6848,19 +7045,16 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"yE" = (
-/obj/structure/window/reinforced,
-/obj/effect/overlay/water{
-	layer = 3
-	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
-/obj/machinery/porta_turret/One_star{
-	name = "WhiteGuard turret"
-	},
-/obj/structure/low_wall,
-/turf/simulated/floor/beach/water/flooded,
+"yC" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"yF" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6904,10 +7098,6 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"yL" = (
-/obj/structure/boulder,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "yN" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/item/reagent_containers/food/snacks/meat{
@@ -6916,6 +7106,13 @@
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"yO" = (
+/obj/structure/table/bench/steel,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "yQ" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey{
@@ -6966,8 +7163,9 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"yX" = (
-/turf/simulated/floor/asteroid/dirt/dust,
+"yY" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6985,6 +7183,15 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"zb" = (
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7021,30 +7228,26 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"zj" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 8
-	},
-/turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "zk" = (
 /obj/structure/flora/small/trailrockb5,
 /mob/living/simple_animal/hostile/sargoyle,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zl" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7057,20 +7260,17 @@
 	requires_power = 0
 	})
 "zo" = (
-/obj/item/remains/mummy1,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/flora/pottedplant/shoot,
+/turf/simulated/floor/wood_old,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"zp" = (
+"zr" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 2
+	},
 /obj/structure/snowfall{
 	color = #61DE2A;
 	name = "dust";
@@ -7078,7 +7278,6 @@
 	light_range = 1;
 	desc = "Thick dust fills the air"
 	},
-/obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -7100,13 +7299,6 @@
 	icon_state = "paper_neo_words_crumpled_bloodied"
 	},
 /turf/simulated/floor/asteroid/dirt/burned,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"zA" = (
-/obj/structure/sign/security/showers,
-/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7186,8 +7378,10 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zR" = (
-/obj/item/reagent_containers/syringe,
-/turf/simulated/floor/industrial/grey_slates_fixed,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/item/remains/mummy1,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7196,8 +7390,13 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"zY" = (
-/turf/space,
+"Aa" = (
+/obj/structure/curtain/open/shower,
+/obj/machinery/shower{
+	dir = 4;
+	icon_state = "shower"
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7239,6 +7438,14 @@
 /obj/structure/grille,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Al" = (
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Am" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Surveillance"
@@ -7266,40 +7473,6 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Au" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/obj/item/remains/mummy2,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Av" = (
-/obj/structure/girder/displaced,
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Aw" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -7325,23 +7498,6 @@
 /obj/item/remains/human,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Az" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 4
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "AA" = (
 /obj/structure/flora/small/trailrocka2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -7444,28 +7600,9 @@
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"AU" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
-/turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"AZ" = (
-/obj/effect/overlay/water{
-	color = "#61DE2A"
-	},
-/obj/effect/overlay/water/top{
-	color = "#61DE2A"
-	},
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
-/turf/simulated/floor/beach/water/swamp{
-	color = "#61DE2A";
-	name = "Radioactive Waste"
-	},
+"AX" = (
+/obj/structure/boulder,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7477,8 +7614,23 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bc" = (
-/obj/structure/table/bench/steel,
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/structure/bed/chair/office/light{
+	pixel_y = -4
+	},
+/obj/item/remains/mummy2,
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia.";
+	pixel_y = 10
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7488,6 +7640,12 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Bf" = (
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7513,9 +7671,8 @@
 	requires_power = 0
 	})
 "Bl" = (
-/obj/structure/girder/displaced,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7524,37 +7681,24 @@
 /obj/structure/flora/small/trailrocka2,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Bo" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/creature/tissue,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Bq" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Br" = (
-/obj/structure/bed/chair/office/light{
-	pixel_y = -4
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Bs" = (
 /obj/structure/flora/stump/small,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Bu" = (
-/obj/structure/scrap_cube,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Bw" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular/open,
@@ -7595,30 +7739,10 @@
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"BF" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "BG" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"BH" = (
-/obj/item/organ/internal/bone/chest,
-/obj/item/clothing/suit/storage/toggle/labcoat{
-	layer = 2
-	},
-/obj/item/clothing/suit/storage/toggle/labcoat{
-	layer = 2
-	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "BI" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -7637,6 +7761,19 @@
 /obj/structure/invislightsmall,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"BN" = (
+/obj/effect/floor_decal/floordetail/edgedrain{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 4
+	},
+/obj/item/extinguisher,
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "BO" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock/dark,
@@ -7648,6 +7785,19 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"BR" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7673,22 +7823,30 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
-"BW" = (
-/obj/structure/boulder,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "BX" = (
 /obj/structure/flora/small/trailrockb3,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"BY" = (
+/obj/structure/sign/warning/secure_area/small{
+	pixel_x = 32
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Cb" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/obj/item/remains/mummy2,
-/turf/simulated/floor/beach/water/flooded,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7712,10 +7870,30 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Ch" = (
-/obj/random/credits/low_chance,
-/obj/structure/closet/body_bag,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+"Cg" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 4
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Ci" = (
+/obj/structure/table/steel,
+/obj/item/tray,
+/obj/item/tool/scalpel,
+/obj/item/tool/wirecutters/pliers,
+/obj/item/tool/hammer,
+/turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7737,10 +7915,9 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Cm" = (
-/obj/structure/sign/warning/hazard_biohazard{
-	pixel_x = -30
-	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
+/obj/effect/floor_decal/industrial_plant/border_sides,
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7754,11 +7931,22 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Cp" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Cr" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Cs" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/simulated/floor/asteroid/dirt/flood,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Ct" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -7803,19 +7991,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"CB" = (
-/obj/structure/railing/grey{
-	dir = 4;
-	icon_state = "grey_railing0"
-	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "CC" = (
 /obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/pool,
@@ -7833,12 +8008,49 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"CK" = (
+"CF" = (
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"CG" = (
+/obj/structure/table/steel,
+/obj/item/tray,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"CJ" = (
+/obj/structure/bed/chair/office/light{
+	pixel_y = -4
+	},
+/obj/item/remains/mummy2,
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia."
+	},
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7872,27 +8084,11 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"CV" = (
-/obj/structure/curtain/medical,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "CX" = (
 /obj/structure/curtain/open/bed{
 	name = "tarnished curtain"
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"CY" = (
-/obj/effect/floor_decal/industrial/arrows/white{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7906,13 +8102,6 @@
 "Db" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Dg" = (
-/obj/item/device/radio/electropack,
-/turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7943,15 +8132,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Dw" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/damagedfloor/fire,
-/obj/item/remains/ribcage,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Dx" = (
 /obj/structure/flora/small/lavarock2,
 /obj/random/cluster/roaches,
@@ -7959,11 +8139,21 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Dy" = (
 /obj/effect/damagedfloor/fire,
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
 /turf/simulated/floor/industrial/fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Dz" = (
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/effect/decal/cleanable/ash,
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -7994,6 +8184,10 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"DG" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/asteroid/dirt/flood,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "DI" = (
 /obj/structure/girder,
 /turf/simulated/floor/industrial/grey_slates_fixed,
@@ -8019,20 +8213,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"DL" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"DM" = (
-/obj/random/scrap/dense_weighted,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "DN" = (
 /obj/random/gun_shotgun/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -8072,6 +8252,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"DY" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "DZ" = (
 /obj/item/remains,
 /obj/item/stack/material/bone,
@@ -8080,12 +8267,16 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Ea" = (
+/obj/structure/girder,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Eb" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
+/obj/structure/table/standard,
+/obj/item/reagent_containers/syringe,
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -8099,15 +8290,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Ei" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/damagedfloor/fire,
-/obj/item/remains,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Ej" = (
 /obj/effect/overlay/water,
 /obj/random/flora/small_jungle_tree,
@@ -8131,36 +8313,6 @@
 	},
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Em" = (
-/obj/structure/bed/chair/office/light{
-	pixel_y = -4
-	},
-/obj/item/remains/mummy2,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/paper{
-	info = "Research Log:Author: Professor Victor KallusDate: 2652.0X.XXSubject: "Renders" - Specimen Capture and Re-engineeringSeveral specimens of the biological entities termed "renders" have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's—it's all coming apart, the entire sector. We thought we had control-";
-	layer = 4;
-	icon_state = "paper_neo_words_crumpled_bloodied"
-	},
-/obj/item/clothing/head/exceslior/excelsior_officer{
-	name = "officer cap";
-	desc = "A peaked cap with a red triangle insignia.";
-	pixel_y = 10
-	},
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "En" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -8168,6 +8320,23 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Eo" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 3
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Ep" = (
 /obj/item/honey_frame/filled,
 /turf/simulated/floor/rock,
@@ -8190,6 +8359,19 @@
 /obj/structure/railing/grey,
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Et" = (
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Eu" = (
+/obj/machinery/vending/sovietsoda,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8225,24 +8407,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"EB" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 1;
-	pixel_y = -5
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "ED" = (
 /obj/effect/overlay/water,
 /obj/random/flora/small_jungle_tree,
@@ -8255,14 +8419,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"EH" = (
-/obj/structure/low_wall,
-/obj/structure/grille,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "EI" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/dirt,
@@ -8311,17 +8467,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"ET" = (
-/obj/structure/showcase/television,
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/turf/simulated/floor/industrial/navy_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "EU" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -8344,6 +8489,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fa" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Fb" = (
 /obj/item/bee_smoker,
 /turf/simulated/floor/rock,
@@ -8366,14 +8518,12 @@
 /obj/random/mecha/damaged,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Ff" = (
-/obj/structure/curtain/open/shower,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
+"Fg" = (
+/obj/structure/low_wall,
+/obj/structure/railing/grey{
+	dir = 8
 	},
-/obj/random/gun_parts/high_end,
-/turf/simulated/floor/industrial/grey_slates_fixed,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8425,6 +8575,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Fr" = (
 /obj/structure/low_wall,
+/obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -8434,6 +8585,23 @@
 /mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fu" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 4
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Fv" = (
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -8451,6 +8619,15 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fy" = (
+/obj/effect/floor_decal/industrial/warningdust/corner{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "FA" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -22
@@ -8505,13 +8682,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"FK" = (
-/obj/structure/morgue,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "FL" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/xeno,
@@ -8524,17 +8694,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"FQ" = (
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
-/mob/living/carbon/superior_animal/roach/tazntz,
-/turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "FT" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/tree/jungle_small/variant2,
@@ -8550,6 +8709,21 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/industrial/fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"FW" = (
+/obj/structure/table/steel,
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/random/lathe_disk/any_gun,
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8597,6 +8771,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Gh" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Gi" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8605,19 +8786,6 @@
 	name = "Connector"
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Gk" = (
-/obj/item/oddity/common/teddy,
-/obj/item/paper/card/flower{
-	info = "Why did you leave me here?"
-	},
-/obj/item/remains/mummy2{
-	pixel_x = -10
-	},
-/turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8682,6 +8850,32 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Gw" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/machinery/optable,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Gx" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0;
+	light_color = #8B0000
+	},
+/obj/structure/closet/body_bag,
+/turf/simulated/floor/asteroid/dirt/flood,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Gy" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/beach/sand,
@@ -8782,9 +8976,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"GT" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/forest/beast_cave_dark)
+"GS" = (
+/obj/item/device/radio/electropack,
+/turf/simulated/floor/industrial/navy_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "GU" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -8839,7 +9037,9 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Hi" = (
-/turf/simulated/floor/industrial/grey_slates,
+/obj/structure/low_wall,
+/obj/structure/grille,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8857,25 +9057,13 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Hl" = (
-/obj/structure/bed/chair/office/light{
-	pixel_y = -4
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
 	},
-/obj/item/remains/mummy2,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/clothing/head/exceslior/excelsior_officer{
-	name = "officer cap";
-	desc = "A peaked cap with a red triangle insignia."
-	},
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
-	},
-/turf/simulated/floor/industrial,
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8950,6 +9138,15 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"HA" = (
+/obj/structure/sign/warning/caution/small2{
+	pixel_x = 32
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "HB" = (
 /obj/structure/flora/small/trailrocka2,
 /turf/simulated/floor/rock/grey,
@@ -8968,8 +9165,10 @@
 	requires_power = 0
 	})
 "HE" = (
-/obj/item/oddity/common/old_radio,
-/turf/simulated/floor/asteroid/dirt/flood,
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9026,6 +9225,30 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"HJ" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 1
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"HK" = (
+/obj/item/caution/cone,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "HM" = (
 /obj/item/stack/material/wood/random,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -9049,16 +9272,6 @@
 /obj/random/ammo_lowcost/low_chance,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"HV" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/item/handcuffs,
-/turf/simulated/floor/industrial/navy_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "HX" = (
 /obj/structure/flora/small/rock5,
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -9107,16 +9320,6 @@
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Ig" = (
-/obj/structure/low_wall,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Ih" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -9145,6 +9348,13 @@
 "Ik" = (
 /obj/structure/catwalk,
 /obj/structure/boulder,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/wire_splicing,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -9175,30 +9385,6 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Io" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Iq" = (
-/obj/effect/floor_decal/floordetail/edgedrain{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Ir" = (
 /obj/effect/overlay/water/top,
 /obj/structure/disposalpipe/broken{
@@ -9210,11 +9396,25 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Iu" = (
-/obj/structure/table/rack/shelf{
-	pixel_y = 3
+"Is" = (
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -21
 	},
-/turf/simulated/floor/industrial/grey_slates,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Iu" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/mob/living/simple_animal/hostile/creature/tissue,
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9228,27 +9428,11 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"IA" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "ID" = (
-/obj/machinery/door/airlock/glass,
-/obj/effect/decal/cleanable/blood{
-	icon_state = "mgibbl4"
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
 	},
+/obj/structure/barricade,
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -9306,6 +9490,18 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"IO" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "IP" = (
 /obj/structure/sign/warning/high_voltage/small,
 /turf/simulated/wall/r_wall,
@@ -9336,13 +9532,9 @@
 	requires_power = 0
 	})
 "IX" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
+/obj/structure/catwalk,
+/obj/item/caution/cone,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9407,9 +9599,10 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Jh" = (
-/obj/random/traps/low_chance,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+"Jg" = (
+/obj/structure/low_wall,
+/obj/structure/grille/broken,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9526,7 +9719,6 @@
 	requires_power = 0
 	})
 "JG" = (
-/obj/structure/sign/warning/hazard_biohazard,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -9564,13 +9756,15 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JP" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
 /turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"JS" = (
+/obj/structure/table/rack/shelf,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9604,8 +9798,14 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JZ" = (
-/obj/structure/closet/random_hostilemobs,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/mob/living/simple_animal/hostile/render/malformed,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9616,11 +9816,38 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Kc" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Kd" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Kh" = (
 /obj/structure/flora/small/rock5,
 /mob/living/simple_animal/hostile/tengcharge,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Kk" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Kl" = (
 /obj/random/traps/low_chance,
 /obj/structure/invislightsmall,
@@ -9661,24 +9888,9 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Kt" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/machinery/papershredder,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Ku" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/syringe,
-/turf/simulated/floor/industrial/grey_slates_fixed,
+"Kr" = (
+/obj/item/oddity/common/old_radio,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9691,17 +9903,20 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Kz" = (
-/obj/structure/flora/small/bushb2,
-/turf/simulated/floor/asteroid/grass/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
-"KA" = (
-/obj/structure/flora/pottedplant/shoot,
-/turf/simulated/floor/wood_old,
+"Kw" = (
+/obj/effect/floor_decal/industrial_plant/border_sides{
+	dir = 4
+	},
+/obj/structure/curtain/medical,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Kz" = (
+/obj/structure/flora/small/bushb2,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KC" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/swamp,
@@ -9736,10 +9951,6 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "KI" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	pixel_y = 5
-	},
 /obj/structure/snowfall{
 	color = #61DE2A;
 	name = "dust";
@@ -9747,6 +9958,7 @@
 	light_range = 1;
 	desc = "Thick dust fills the air"
 	},
+/obj/machinery/papershredder,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -9763,19 +9975,6 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"KM" = (
-/obj/effect/floor_decal/floordetail/edgedrain{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	dir = 4
-	},
-/obj/item/extinguisher,
-/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9816,6 +10015,19 @@
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"KV" = (
+/obj/structure/railing/grey{
+	dir = 4;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "KW" = (
 /obj/structure/catwalk,
 /obj/structure/boulder,
@@ -9839,13 +10051,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"KZ" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "La" = (
 /obj/item/ammo_magazine/rifle_75,
 /obj/item/gun_upgrade/barrel/gauss,
@@ -9857,14 +10062,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Lc" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/structure/bed/roller,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Ld" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -9917,15 +10114,14 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Ll" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+"Ln" = (
+/obj/effect/floor_decal/floordetail/edgedrain{
+	dir = 4
 	},
-/mob/living/simple_animal/hostile/render/malformed,
-/turf/simulated/floor/industrial/grey_slates,
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9959,7 +10155,8 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Lu" = (
-/turf/simulated/floor/industrial/navy_slates,
+/obj/machinery/door/airlock/glass,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10007,6 +10204,20 @@
 /obj/machinery/beehive,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"LH" = (
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/shreddedp,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "LJ" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -10024,6 +10235,13 @@
 	light_color = #8B0000
 	},
 /turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"LK" = (
+/obj/item/reagent_containers/syringe,
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10051,40 +10269,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"LR" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"LS" = (
-/obj/structure/table/steel,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/random/lathe_disk/any_gun,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"LT" = (
-/obj/structure/table/bench/steel,
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "LU" = (
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -10092,6 +10276,10 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Ma" = (
+/obj/structure/boulder,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Mb" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/decal/cleanable/dirt,
@@ -10099,13 +10287,6 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Mc" = (
-/obj/structure/closet/body_bag,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Mg" = (
 /turf/unsimulated/wall/jungle{
 	layer = 3.7
@@ -10125,6 +10306,16 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Mj" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibup1_flesh";
+	layer = 3
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Mk" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -10154,26 +10345,24 @@
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Mo" = (
-/obj/structure/inflatable/wall,
-/turf/simulated/floor/plating/under,
+"Mq" = (
+/obj/structure/scrap_cube,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Mt" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/oddity/common/paper_crumpled,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+"Ms" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/item/remains/mummy2,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
 "Mu" = (
-/obj/machinery/door/unpowered/simple/wood{
-	color = "#9a977b"
-	},
-/turf/simulated/floor/industrial,
+/turf/space,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10202,6 +10391,32 @@
 /obj/item/tool/sword/saber/cutlass,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"MA" = (
+/obj/structure/sign/warning/radioactive/small,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "railing0"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/turf/simulated/wall/uranium{
+	name = "Depleted Fuel Rod";
+	desc = "A huge chunk of uranium melded together"
+	},
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "MB" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
@@ -10219,6 +10434,13 @@
 	pixel_y = 0;
 	light_color = #8B0000
 	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"ME" = (
+/obj/structure/closet/secure_closet/freezer/blood,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -10255,14 +10477,7 @@
 	requires_power = 0
 	})
 "MS" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10271,14 +10486,6 @@
 /obj/item/bee_pack,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"MV" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/structure/inflatable/wall,
-/turf/simulated/floor/rock/manmade/ruin2,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "MX" = (
 /obj/structure/lift/button{
 	icon_state = "button_fire";
@@ -10287,19 +10494,6 @@
 /turf/simulated/wall/untinted/onestar_reinforced{
 	name = "elevator cabin"
 	},
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"MY" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10317,19 +10511,15 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Nc" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	pixel_y = 4
+"Ng" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/wire_splicing,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10351,22 +10541,16 @@
 /obj/structure/scrap/medical/large,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Nk" = (
-/obj/structure/low_wall,
-/obj/structure/barricade,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Nn" = (
-/obj/effect/floor_decal/industrial_plant,
+"Nj" = (
+/obj/structure/girder,
 /obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
-/turf/simulated/floor/industrial/fixed,
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10384,14 +10568,19 @@
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Nw" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0;
-	light_color = #8B0000
+"Nv" = (
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
 	},
-/obj/structure/closet/body_bag,
-/turf/simulated/floor/asteroid/dirt/flood,
+/obj/item/clothing/head/exceslior/excelsior_officer{
+	name = "officer cap";
+	desc = "A peaked cap with a red triangle insignia."
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10447,30 +10636,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"NH" = (
-/obj/structure/boulder,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"NL" = (
-/obj/structure/table/steel,
-/obj/item/tray,
-/obj/item/tool/scalpel,
-/obj/item/tool/wirecutters/pliers,
-/obj/item/tool/hammer,
-/turf/simulated/floor/industrial/navy_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "NM" = (
 /obj/effect/shuttle_landmark/rocinante_swamp,
 /turf/simulated/floor/asteroid/dirt,
@@ -10480,6 +10645,16 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood_old,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"NR" = (
+/obj/machinery/door/airlock/glass,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mgibbl4"
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10511,15 +10686,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"NY" = (
-/obj/structure/boulder,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+"NW" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/turf/simulated/floor/industrial/grey_slates,
+/obj/structure/wire_splicing,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10541,37 +10714,6 @@
 /mob/living/simple_animal/hostile/samak,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Oc" = (
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Od" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 1
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Oe" = (
-/obj/machinery/vending/sovietsoda,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Og" = (
 /turf/simulated/floor/wood_old,
 /area/nadezhda/outside/forest/beast_cave_dark{
@@ -10620,8 +10762,19 @@
 	requires_power = 0
 	})
 "Oq" = (
-/obj/structure/closet/random_medsupply,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/industrial/fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Or" = (
+/obj/effect/damagedfloor/fire,
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10650,6 +10803,14 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Oz" = (
+/obj/structure/girder/displaced,
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "OA" = (
 /obj/effect/floor_decal/industrial/road{
 	dir = 1
@@ -10665,6 +10826,26 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"OC" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/obj/item/remains/mummy2,
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "OD" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/barricade,
@@ -10700,62 +10881,11 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ON" = (
-/turf/simulated/wall/iron,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "OO" = (
-/obj/effect/floor_decal/corner_oldtile,
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 8
-	},
-/obj/structure/bed/padded,
-/obj/item/bikehorn{
-	name = "Horn of Doom";
-	desc = "A loud bike horn. Favored by entertainers system-wide. Something feels off about it"
-	},
-/obj/effect/gibspawner/human,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"OR" = (
-/obj/structure/bed/chair/office/light{
-	dir = 8;
-	pixel_y = 8
-	},
-/obj/item/remains/mummy2{
-	pixel_y = 8
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/clothing/head/exceslior/excelsior_officer{
-	name = "officer cap";
-	desc = "A peaked cap with a red triangle insignia."
-	},
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/closet/secure_closet/freezer,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10850,6 +10980,29 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Pp" = (
+/obj/item/organ/internal/vital/heart,
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Pt" = (
+/obj/structure/bed/chair/office/light{
+	pixel_y = -4
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Pu" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -10889,11 +11042,11 @@
 	requires_power = 0
 	})
 "PA" = (
-/obj/effect/decal/cleanable/blood{
-	icon_state = "gibup1_flesh";
-	layer = 3
+/obj/structure/reagent_dispensers/fueltank{
+	name = "empty fuel tank";
+	volume = 0
 	},
-/turf/simulated/floor/industrial/grey_slates_fixed,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10978,20 +11131,14 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "PS" = (
-/obj/structure/window/reinforced{
-	dir = 1
+/obj/item/oddity/common/teddy,
+/obj/item/paper/card/flower{
+	info = "Why did you leave me here?"
 	},
-/obj/effect/overlay/water{
-	layer = 3
+/obj/item/remains/mummy2{
+	pixel_x = -10
 	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
-/obj/machinery/porta_turret/One_star{
-	name = "WhiteGuard turret"
-	},
-/obj/structure/low_wall,
-/turf/simulated/floor/beach/water/flooded,
+/turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11036,11 +11183,37 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Qe" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	layer = 4;
+	pixel_y = 7
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Qf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Qg" = (
+/obj/effect/floor_decal/industrial_plant/border_sides,
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Qh" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -11063,6 +11236,25 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Qn" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Qo" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/overlay/water/top,
@@ -11145,21 +11337,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"QI" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "QJ" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
@@ -11176,23 +11353,9 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QM" = (
-/obj/effect/floor_decal/corner_steel_grid/diagonal,
-/obj/effect/floor_decal/corner_steel_grid/diagonal{
-	dir = 4
-	},
-/obj/structure/sign/warning/evac{
-	name = "Data Server";
-	icon = 'icons/obj/salvageable.dmi';
-	icon_state = "server1"
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/wall/r_wall,
+/obj/structure/low_wall,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11201,14 +11364,6 @@
 /obj/effect/decal/mecha_wreckage/ripley/deathripley,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"QR" = (
-/obj/structure/curtain/medical,
-/obj/random/traps/low_chance,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "QU" = (
 /obj/structure/sign/warning/biohazard,
 /turf/simulated/wall/r_wall,
@@ -11229,26 +11384,7 @@
 	requires_power = 0
 	})
 "QX" = (
-/obj/effect/floor_decal/corner_oldtile,
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 8
-	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"QY" = (
-/obj/structure/low_wall,
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11288,23 +11424,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Rg" = (
-/obj/structure/low_wall,
-/obj/machinery/door/blast/shutters/glass{
-	name = "Window"
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
+/obj/structure/boulder,
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11314,12 +11435,6 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Ri" = (
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Rl" = (
 /obj/item/paper{
 	info = "Nathan, listen, the electrical section’s sealed. The systems are still failing, cooling’s on the brink, and the reactor’s starting to destabilize. I’ve set up automatics to handle the power distribution, so Alpha and the rest should stay online for now, but the containment’s slipping. It’s spreading through the conduits, blocking everything. If the main core destabilizes, it's not just this sector that’ll go dark.Wilson, Grant, and the supervisor—they didn’t make it. The proxies hit them while we were working on the backups. It happened too fast—no chance to react. They’re still out there, close to the control room. We’re running out of time.I’ve done what I can, but you need to seal the reactor. The automatics might hold things together for a while, but we can’t rely on that. Lock it down before the whole site collapses. We’re past protocols now.";
@@ -11327,6 +11442,20 @@
 	icon_state = "paper_neo_words_crumpled_bloodied"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Rm" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/mob/living/simple_animal/hostile/creature/tissue,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11348,12 +11477,56 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Rq" = (
+/obj/structure/table/bench/steel,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Rr" = (
+/obj/machinery/vending/organfridge_aberrant/alt,
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Rs" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 9
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Ru" = (
 /obj/random/flora/jungle_tree,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Rv" = (
+/obj/structure/sign/department/morgue,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "RE" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -11366,6 +11539,15 @@
 "RF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"RH" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/damagedfloor/fire,
+/obj/item/remains/ribcage,
+/turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11396,6 +11578,22 @@
 /obj/random/gun_shotgun,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"RM" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "RN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
@@ -11412,9 +11610,42 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"RQ" = (
-/obj/structure/table/bench/steel,
-/turf/simulated/floor/industrial/grey_slates_fixed,
+"RP" = (
+/obj/item/contraband/poster/placed/generic/obey,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"RR" = (
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"RS" = (
+/obj/machinery/light/small{
+	dir = 2;
+	pixel_y = 0;
+	light_color = #8B0000
+	},
+/turf/simulated/floor/asteroid/dirt/flood,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"RT" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11426,6 +11657,20 @@
 "RW" = (
 /obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"RX" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/structure/table/steel,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11452,10 +11697,9 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Sb" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
+"Sa" = (
+/obj/item/caution/cone,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11532,25 +11776,6 @@
 /obj/random/mob/nightmare,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Ss" = (
-/obj/effect/floor_decal/corner_oldtile,
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner_oldtile{
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "St" = (
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11591,6 +11816,20 @@
 /mob/living/simple_animal/hostile/sargoyle,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"SD" = (
+/obj/structure/girder/displaced,
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "SG" = (
 /obj/structure/flora/rock/variant1,
 /obj/random/scrap/dense_weighted,
@@ -11625,7 +11864,11 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "SM" = (
-/turf/simulated/floor/industrial/blue_slates,
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11636,16 +11879,22 @@
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"SP" = (
-/obj/structure/closet/crate/trashcart,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+"SR" = (
+/obj/structure/table/reinforced,
+/turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"SR" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/industrial/checker_large,
+"SS" = (
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/wall/iron,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11657,13 +11906,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"SX" = (
-/obj/item/organ/internal/vital/heart,
-/turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "SZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock1,
@@ -11690,12 +11932,9 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Tn" = (
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
-/turf/simulated/mineral/random/rogue,
+"Tl" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11720,16 +11959,6 @@
 	},
 /obj/item/gun/launcher/syringe/rapid,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Tw" = (
-/obj/machinery/door/unpowered/simple/wood{
-	color = "#9a977b"
-	},
-/obj/structure/barricade,
-/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11795,14 +12024,23 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"TM" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/damagedfloor/fire,
+/obj/item/oddity/common/broken_key,
+/obj/random/oddity_guns{
+	desc = "An odd, unstable rift";
+	color = "#FF0000"
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "TO" = (
-/obj/effect/floor_decal/floordetail/edgedrain{
-	dir = 8
+/obj/structure/sign/warning/hazard_biohazard{
+	pixel_x = -30
 	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	dir = 8
-	},
-/obj/random/gun_fancy/alawys_spawn,
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -11874,6 +12112,19 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Ud" = (
+/obj/effect/floor_decal/floordetail/edgedrain{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 8
+	},
+/obj/random/gun_fancy/alawys_spawn,
+/turf/simulated/floor/industrial/grey_slates_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Ue" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
@@ -11888,7 +12139,8 @@
 	requires_power = 0
 	})
 "Ug" = (
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11897,26 +12149,30 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Ui" = (
-/obj/structure/table/steel,
-/obj/item/tray,
-/turf/simulated/floor/industrial/blue_slates,
+"Uj" = (
+/obj/effect/floor_decal/corner_steel_grid/diagonal,
+/obj/effect/floor_decal/corner_steel_grid/diagonal{
+	dir = 4
+	},
+/obj/structure/snowfall{
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Um" = (
-/obj/structure/flora/small/rock5,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Un" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/obj/item/remains/mummy1,
-/turf/simulated/floor/beach/water/flooded,
+"Ul" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11944,15 +12200,13 @@
 	requires_power = 0
 	})
 "Ut" = (
-/obj/structure/low_wall,
-/obj/structure/railing/grey{
-	dir = 4
+/obj/structure/table/woodentable,
+/obj/item/paper{
+	info = "Research Log:Author: Professor Victor KallusDate: 2652.0X.XXSubject: "Renders" - Specimen Capture and Re-engineeringSeveral specimens of the biological entities termed "renders" have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's—it's all coming apart, the entire sector. We thought we had control-";
+	layer = 4;
+	icon_state = "paper_neo_words_crumpled_bloodied"
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/grille,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11977,17 +12231,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Uz" = (
-/obj/structure/low_wall,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	dir = 1;
-	icon_state = "grey_railing0"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "UC" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/beach/water/swamp,
@@ -11996,6 +12239,19 @@
 /obj/random/mob/croaker/low_chance,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"UE" = (
+/obj/structure/boulder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "UG" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water/top,
@@ -12016,12 +12272,17 @@
 /obj/structure/invislightsmall,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"UJ" = (
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "UK" = (
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
-/turf/simulated/floor/industrial/fixed,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12040,9 +12301,6 @@
 /obj/structure/scrap/science/large,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"UO" = (
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "UQ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka2,
@@ -12060,6 +12318,12 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"UU" = (
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12137,6 +12401,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Vm" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Vo" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 1
@@ -12174,6 +12445,25 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Vv" = (
+/obj/effect/overlay/water{
+	color = "#61DE2A"
+	},
+/obj/effect/overlay/water/top{
+	color = "#61DE2A"
+	},
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/turf/simulated/floor/beach/water/swamp{
+	color = "#61DE2A";
+	name = "Radioactive Waste"
+	},
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Vw" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -12237,6 +12527,13 @@
 	},
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"VG" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/asteroid/dirt/flood,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "VI" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -12262,8 +12559,8 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "VL" = (
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/industrial/blue_slates,
+/obj/structure/table/bench/steel,
+/turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12381,43 +12678,10 @@
 /obj/item/beehive_assembly,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Wp" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	pixel_y = 3
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Ws" = (
-/obj/item/contraband/poster/placed/generic/obey,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Wu" = (
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Wv" = (
-/obj/structure/sign/warning/secure_area/small{
-	pixel_x = 32
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "Ww" = (
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/asteroid/dirt,
@@ -12448,28 +12712,6 @@
 /obj/item/remains/xeno,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"WB" = (
-/obj/structure/bed/chair/office/light{
-	pixel_y = -4
-	},
-/obj/item/remains/mummy2,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/clothing/head/exceslior/excelsior_officer{
-	name = "officer cap";
-	desc = "A peaked cap with a red triangle insignia.";
-	pixel_y = 10
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "WD" = (
 /obj/structure/flora/stump/small,
 /turf/simulated/floor/beach/sand,
@@ -12485,10 +12727,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"WI" = (
-/obj/effect/floor_decal/industrial_plant/border_sides,
-/obj/machinery/door/blast/regular,
-/turf/simulated/floor/plating/under,
+"WJ" = (
+/obj/structure/sign/warning/hazard_biohazard,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12503,13 +12744,6 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"WM" = (
-/obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "WO" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushb2,
@@ -12530,28 +12764,33 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"WW" = (
-/obj/structure/boulder,
-/turf/simulated/floor/industrial/fixed,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "WX" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Xh" = (
-/obj/structure/girder,
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
+"Xa" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/damagedfloor/fire,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Xb" = (
+/obj/structure/closet,
+/obj/item/clothing/head/bio_hood/virology,
+/obj/item/clothing/suit/bio_suit/virology,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Xc" = (
+/obj/structure/table/rack/shelf{
+	pixel_y = 3
 	},
-/turf/simulated/floor/industrial,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12568,8 +12807,19 @@
 "Xo" = (
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Xs" = (
-/turf/simulated/floor/tiled/steel/danger,
+"Xq" = (
+/obj/structure/inflatable/wall,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Xr" = (
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
+	},
+/turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12602,27 +12852,14 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Xw" = (
-/obj/structure/sign/warning/radioactive/small,
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 4;
-	icon_state = "railing0"
-	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
+	color = #61DE2A;
+	name = "dust";
+	light_color = #61DE2A;
+	light_range = 1;
+	desc = "Thick dust fills the air"
 	},
-/turf/simulated/wall/uranium{
-	name = "Depleted Fuel Rod";
-	desc = "A huge chunk of uranium melded together"
-	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12631,6 +12868,23 @@
 /obj/random/material_ore,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Xy" = (
+/obj/structure/window/reinforced,
+/obj/effect/overlay/water{
+	layer = 3
+	},
+/obj/effect/overlay/water/top{
+	layer = 3
+	},
+/obj/machinery/porta_turret/One_star{
+	name = "WhiteGuard turret"
+	},
+/obj/structure/low_wall,
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Xz" = (
 /obj/structure/sign/departmentold/chemistry/small,
 /turf/simulated/wall/r_wall,
@@ -12675,13 +12929,6 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"XJ" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "XK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer{
@@ -12702,15 +12949,6 @@
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"XN" = (
-/obj/structure/flora/ausbushes/stalkybush,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "XO" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/invislightsmall,
@@ -12742,14 +12980,13 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"XU" = (
-/turf/simulated/floor/industrial/cafe_large,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "XV" = (
-/turf/simulated/floor/asteroid/dirt/flood,
+/obj/structure/showcase/television,
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 0
+	},
+/turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12780,36 +13017,8 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Yd" = (
-/obj/machinery/light/small{
-	dir = 2;
-	pixel_y = 0;
-	light_color = #8B0000
-	},
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Yf" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/effect/damagedfloor/fire,
-/obj/effect/decal/cleanable/ash,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"Yg" = (
-/obj/structure/flora/small/grassa1,
-/obj/structure/invislightsmall,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Yi" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	pixel_y = 9
-	},
+"Ye" = (
+/obj/item/remains/mummy1,
 /obj/structure/snowfall{
 	color = #61DE2A;
 	name = "dust";
@@ -12822,13 +13031,11 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
-"Yj" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
+"Yg" = (
+/obj/structure/flora/small/grassa1,
+/obj/structure/invislightsmall,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Yk" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/big/bush2,
@@ -12849,10 +13056,7 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Yo" = (
-/obj/structure/multiz/stairs{
-	dir = 1
-	},
-/turf/simulated/floor/wood/wild3,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12932,21 +13136,6 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"YM" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
 "YN" = (
 /obj/structure/sign/warning/secure_area,
 /turf/simulated/wall/r_wall,
@@ -12955,26 +13144,24 @@
 	requires_power = 0
 	})
 "YO" = (
-/obj/random/traps/low_chance,
-/obj/structure/curtain/medical,
-/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/obj/structure/showcase/horrific_experiment_cryo{
+	icon_state = "cellold0"
+	},
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
 	})
 "YQ" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/clothing/head/exceslior/excelsior_officer{
-	name = "officer cap";
-	desc = "A peaked cap with a red triangle insignia."
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/table/bench/steel,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"YR" = (
+/obj/effect/floor_decal/industrial/warningdust,
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12998,26 +13185,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"YX" = (
-/obj/structure/low_wall,
-/obj/structure/grille/broken,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"YZ" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13073,6 +13240,12 @@
 	name = "Alpha-09";
 	requires_power = 0
 	})
+"Zj" = (
+/turf/simulated/floor/industrial/concrete_bricks_fixed,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "Zk" = (
 /obj/machinery/door/window/holowindoor{
 	dir = 2
@@ -13101,6 +13274,26 @@
 /obj/structure/railing/grey,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"Zr" = (
+/obj/effect/floor_decal/corner_oldtile,
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile{
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	dir = 4;
+	icon_state = "grey_railing0"
+	},
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13136,6 +13329,19 @@
 /mob/living/simple_animal/hostile/tengstalker,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Zy" = (
+/obj/structure/boulder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
 "ZA" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/radiation,
@@ -13162,28 +13368,6 @@
 	light_color = #8B0000
 	},
 /turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"ZD" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 2
-	},
-/obj/machinery/computer{
-	stat = 1;
-	dir = 1;
-	pixel_y = -5
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13230,40 +13414,11 @@
 	},
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"ZJ" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"ZK" = (
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/item/shreddedp,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark{
-	name = "Alpha-09";
-	requires_power = 0
-	})
-"ZM" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1;
-	pixel_y = 7
-	},
-/obj/structure/snowfall{
-	color = #61DE2A;
-	name = "dust";
-	light_color = #61DE2A;
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+"ZL" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/damagedfloor/fire,
+/obj/item/remains,
+/turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13279,7 +13434,23 @@
 	requires_power = 0
 	})
 "ZO" = (
-/turf/simulated/floor/industrial/fixed,
+/obj/structure/low_wall,
+/obj/machinery/door/blast/shutters/glass{
+	name = "Window"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13293,12 +13464,11 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"ZR" = (
-/obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_x = -21
-	},
-/turf/simulated/floor/industrial/blue_slates,
+"ZT" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13311,6 +13481,13 @@
 "ZV" = (
 /obj/item/bananapeel,
 /turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/beast_cave_dark{
+	name = "Alpha-09";
+	requires_power = 0
+	})
+"ZX" = (
+/mob/living/carbon/superior_animal/roach/tazntz,
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -13899,15 +14076,15 @@ qF
 qF
 qF
 qF
-qn
+JG
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qF
 qF
 qF
@@ -13916,14 +14093,14 @@ Eq
 qF
 qF
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qF
 tn
 "}
@@ -14099,33 +14276,33 @@ qM
 qM
 cp
 wx
-qn
+JG
 qF
-qn
+JG
 qF
-qn
-Ri
+JG
+Yo
 RW
 Eq
 RW
 RW
-qn
-Ri
+JG
+Yo
 Eq
 Eq
 qU
 qU
 Eq
 Eq
-Oe
+Eu
 Eq
-Ri
+Yo
 Hm
 LO
 LO
 LO
 LO
-qn
+JG
 qF
 tn
 "}
@@ -14292,18 +14469,18 @@ qF
 qF
 qF
 qF
-qn
+JG
 qM
 wx
 cp
 cp
 cp
-Um
+DY
 wx
 wx
 cp
 qF
-qn
+JG
 qF
 qF
 Eq
@@ -14324,10 +14501,10 @@ qU
 OF
 qJ
 za
-XU
+xV
 yR
 LO
-qn
+JG
 qF
 tn
 "}
@@ -14496,20 +14673,20 @@ qF
 qF
 Gl
 cp
-Um
+DY
 wx
 cp
-Yj
+Gh
 wx
 wx
 Ae
 cp
 cp
-qn
+JG
 qF
 qF
 Eq
-Ri
+Yo
 qU
 qU
 qU
@@ -14526,10 +14703,10 @@ qU
 Rl
 qJ
 za
-XU
+xV
 DB
 MX
-qn
+JG
 qF
 tn
 "}
@@ -14707,15 +14884,15 @@ cp
 cp
 tC
 st
-qn
+JG
 qF
 qF
 qF
 Eq
-Ri
+Yo
 RW
 RW
-qn
+JG
 Eq
 qF
 zG
@@ -14728,10 +14905,10 @@ MR
 qU
 qJ
 za
-XU
-XU
+xV
+xV
 LO
-qn
+JG
 qF
 tn
 "}
@@ -14905,35 +15082,35 @@ qF
 qF
 wx
 cp
-Um
+DY
 qM
 Mm
 Fc
-qn
+JG
 qF
 qF
 qF
 qF
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
 qF
 qF
 qF
-qn
+JG
 GH
-qn
-qn
+JG
+JG
 tT
 tT
-qn
-qn
+JG
+JG
 LO
 LO
 LO
 LO
-qn
+JG
 qF
 tn
 "}
@@ -15112,30 +15289,30 @@ cp
 qM
 Gi
 YN
-qn
-qn
+JG
+JG
 qF
 qF
 qF
 qF
 qF
-qn
-qn
+JG
+JG
 qF
 qF
 qF
-qn
-qn
+JG
+JG
 IP
 tT
 tT
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qF
 tn
 "}
@@ -15316,13 +15493,13 @@ Pz
 sE
 td
 Ek
-WW
+Rg
 xX
 qF
 qF
-WW
+Rg
 Gf
-qn
+JG
 qF
 qF
 qF
@@ -15335,7 +15512,7 @@ ZC
 FJ
 qF
 qF
-qn
+JG
 qF
 qF
 qF
@@ -15520,12 +15697,12 @@ rq
 Ek
 xE
 xE
-WW
-WW
+Rg
+Rg
 KX
 Ib
-qn
-qn
+JG
+JG
 qF
 Eq
 YW
@@ -15537,7 +15714,7 @@ tO
 cw
 JB
 Eq
-qn
+JG
 qF
 qF
 qF
@@ -15713,33 +15890,33 @@ ZH
 ZH
 ZH
 cp
-Yj
+Gh
 cp
 wx
 wx
 rN
 rq
 rC
-ZO
-ZO
-ZO
-ZO
-ZO
+QX
+QX
+QX
+QX
+QX
 LL
-qn
-qn
+JG
+JG
 GW
 tO
 tO
 Vl
-qn
-qn
+JG
+JG
 Ow
-qn
+JG
 Vl
 tO
 FJ
-qn
+JG
 qF
 qF
 qF
@@ -15915,7 +16092,7 @@ cp
 ZH
 ZH
 Jb
-Yj
+Gh
 IU
 sn
 sn
@@ -15938,10 +16115,10 @@ Lg
 KE
 RF
 AG
-qn
+JG
 RO
 Eq
-qn
+JG
 tB
 qF
 qF
@@ -16111,7 +16288,7 @@ qF
 qF
 XS
 qM
-Yj
+Gh
 wx
 wx
 ZH
@@ -16124,12 +16301,12 @@ sn
 rN
 rq
 tE
-ZO
-ZO
-ZO
-ZO
-ZO
-ZO
+QX
+QX
+QX
+QX
+QX
+QX
 bi
 tO
 tO
@@ -16140,7 +16317,7 @@ Ad
 DV
 RF
 HC
-qn
+JG
 YK
 Vy
 tB
@@ -16318,7 +16495,7 @@ cp
 tz
 qM
 ZH
-Um
+DY
 cp
 sn
 sn
@@ -16326,12 +16503,12 @@ sn
 rN
 rq
 tE
-ZO
-KZ
+QX
+Fa
 Bj
 Bj
-ZO
-ZO
+QX
+QX
 bi
 Eq
 CA
@@ -16510,11 +16687,11 @@ dS
 dS
 qF
 qF
-qn
+JG
 qM
 qM
 cp
-Yj
+Gh
 qM
 qM
 tz
@@ -16544,7 +16721,7 @@ Ad
 XK
 Sc
 HC
-qn
+JG
 tO
 Ew
 tB
@@ -16715,9 +16892,9 @@ qF
 qM
 qP
 qM
-Yj
-Yj
-Yj
+Gh
+Gh
+Gh
 qM
 qM
 tz
@@ -16730,13 +16907,13 @@ cp
 sE
 rq
 tE
-ZO
+QX
 Bj
 Bj
 Bj
-ZO
+QX
 yu
-qn
+JG
 qF
 qF
 Eq
@@ -16746,7 +16923,7 @@ AG
 Lg
 KO
 AG
-qn
+JG
 CA
 Vz
 Vy
@@ -16916,7 +17093,7 @@ qF
 qF
 cp
 cp
-Yj
+Gh
 sN
 sN
 qM
@@ -16932,21 +17109,21 @@ Ae
 sE
 sQ
 rC
-ZO
-ZO
-BF
-KZ
+QX
+QX
+yF
+Fa
 KX
 Ib
-qn
+JG
 qF
 qF
 Eq
 US
 rY
 qV
-qn
-qn
+JG
+JG
 qV
 yB
 tO
@@ -17135,12 +17312,12 @@ sE
 sK
 rC
 FV
-ZO
-ZO
+QX
+QX
 FV
-ZO
+QX
 Vw
-qn
+JG
 qF
 qF
 Eq
@@ -17329,20 +17506,20 @@ cp
 qF
 qF
 qF
-qn
+JG
 Xu
 qM
 Sn
 YN
-qn
-qn
-qn
-Rg
-Rg
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+ZO
+ZO
+JG
+JG
+JG
+JG
 qF
 qF
 qF
@@ -17535,27 +17712,27 @@ cp
 wx
 Mm
 Fc
-qn
+JG
 qF
-qn
+JG
 VQ
-Rg
-Rg
-qn
-qn
-qn
-qn
-qn
-qn
+ZO
+ZO
+JG
+JG
+JG
+JG
+JG
+JG
 qF
 qF
-qn
+JG
 tT
 tT
 tT
 KP
-qn
-qn
+JG
+JG
 qF
 qF
 qF
@@ -17737,28 +17914,28 @@ wx
 wx
 wx
 qF
-qn
+JG
 qF
-qn
+JG
 Vk
 yf
 yf
 Vk
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qU
 Uc
 qU
-qn
-xR
-Hi
-Hi
+JG
+YO
+JP
+JP
 eT
 qF
 qF
@@ -17939,30 +18116,30 @@ qF
 qF
 qF
 qF
-qn
+JG
 qF
-qn
+JG
 NB
 Cu
 Uo
 PD
-qn
-qn
+JG
+JG
 SR
 vT
 xj
 vT
 SR
-qn
+JG
 qU
 Uc
 qU
-qn
+JG
 wY
-Hi
-Hi
-Hi
-wP
+JP
+JP
+JP
+ix
 eT
 qF
 qF
@@ -18141,31 +18318,31 @@ qF
 qF
 qF
 qF
-qn
+JG
 qF
-qn
+JG
 Qu
 RI
 Bd
 Qu
-qn
-qn
+JG
+JG
 Uo
 Uo
 Uo
 Uo
 Uo
-qn
+JG
 qU
 Uc
 qU
-qn
-xR
-Hi
-Hi
-Hi
-Hi
-Hi
+JG
+YO
+JP
+JP
+JP
+JP
+JP
 eT
 qF
 "}
@@ -18343,32 +18520,32 @@ qF
 qF
 qF
 qF
-qn
+JG
 qF
-qn
+JG
 Op
 Uo
 Uo
 NV
-qn
-qn
+JG
+JG
 Kq
 Uo
 Uo
 Uo
 Qb
-qn
+JG
 tT
 Ia
 tT
-qn
+JG
 wY
-Hi
-Hi
-Hi
-Hi
-Hi
-Hi
+JP
+JP
+JP
+JP
+JP
+JP
 qF
 "}
 (26,1,1) = {"
@@ -18545,32 +18722,32 @@ qF
 qF
 qF
 qF
-qn
+JG
 qF
-qn
+JG
 Sq
 Uo
 Uo
 ZA
-qn
-qn
+JG
+JG
 EY
 Uo
 Uo
 SR
 SR
-qn
+JG
 qU
 Uc
 qU
-qn
-xR
-Hi
-Hi
-Hi
-zj
-Hi
-Hi
+JG
+YO
+JP
+JP
+JP
+sT
+JP
+JP
 qF
 "}
 (27,1,1) = {"
@@ -18749,30 +18926,30 @@ qF
 qF
 qF
 qF
-qn
-qn
+JG
+JG
 GR
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
 Am
-qn
-qn
-qn
+JG
+JG
+JG
 FI
 Uc
 sW
-qn
-qn
-qn
+JG
+JG
+JG
 Xz
-aH
-qn
-qn
-qn
+Lu
+JG
+JG
+JG
 qF
 "}
 (28,1,1) = {"
@@ -18951,7 +19128,7 @@ wx
 qM
 qF
 qF
-qn
+JG
 qU
 qU
 qU
@@ -19151,7 +19328,7 @@ qF
 qF
 tz
 cp
-Yj
+Gh
 qF
 qF
 qO
@@ -19372,7 +19549,7 @@ qU
 Uc
 qU
 qU
-Oe
+Eu
 qU
 qU
 TJ
@@ -19560,27 +19737,27 @@ sq
 qF
 qF
 qF
-qn
+JG
 Es
-qn
+JG
 qF
 qF
 qF
-qn
+JG
 Es
-qn
-qn
+JG
+JG
 FI
 Uc
 sW
-qn
-qn
+JG
+JG
 Xz
-aH
-aH
-qn
-qn
-qn
+Lu
+Lu
+JG
+JG
+JG
 qF
 "}
 (32,1,1) = {"
@@ -19762,27 +19939,27 @@ sq
 qF
 qF
 qF
-qn
+JG
 tk
-qn
+JG
 qF
 qF
 qF
-qn
+JG
 tk
-qn
-qn
+JG
+JG
 qU
 Uc
 qU
-qn
+JG
 Uf
-Hi
-Hi
-Hi
-Hi
-Hi
-qn
+JP
+JP
+JP
+JP
+JP
+JG
 qF
 "}
 (33,1,1) = {"
@@ -19963,28 +20140,28 @@ aa
 sq
 qF
 qF
-qn
-qn
+JG
+JG
 tk
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
 tk
-qn
+JG
 PJ
 qU
 Uc
 qU
-qn
+JG
 yW
 Ih
-Hi
+JP
 AK
-Hi
-Hi
-qn
+JP
+JP
+JG
 qF
 "}
 (34,1,1) = {"
@@ -20163,7 +20340,7 @@ dS
 aa
 aa
 Vp
-Yj
+Gh
 qF
 Ra
 AN
@@ -20174,19 +20351,19 @@ Hz
 Hz
 Hz
 Zq
-qn
+JG
 qU
 Le
 GD
 qU
-qn
+JG
 xF
-Hi
+JP
 sF
 sF
 qZ
 yW
-qn
+JG
 qF
 "}
 (35,1,1) = {"
@@ -20367,28 +20544,28 @@ aa
 qF
 sN
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 tk
-qn
+JG
 qU
 Uc
 qU
 PJ
-qn
+JG
 Sw
 Ih
 Px
 Px
-Hi
+JP
 xF
-qn
+JG
 qF
 "}
 (36,1,1) = {"
@@ -20576,21 +20753,21 @@ HI
 tQ
 VP
 qF
-qn
+JG
 QJ
-qn
+JG
 qU
 Uc
 qU
-qn
-qn
+JG
+JG
 TP
-Hi
+JP
 Yb
-Hi
+JP
 qZ
 Sw
-qn
+JG
 qF
 "}
 (37,1,1) = {"
@@ -20778,13 +20955,13 @@ PO
 cp
 VU
 qF
-qn
+JG
 yQ
-qn
+JG
 AC
 Uc
 PM
-qn
+JG
 uf
 tM
 Ih
@@ -20792,7 +20969,7 @@ AK
 qZ
 QV
 VB
-qn
+JG
 qF
 "}
 (38,1,1) = {"
@@ -20977,24 +21154,24 @@ cp
 cp
 qF
 DZ
-qn
+JG
 Zi
-qn
-qn
+JG
+JG
 Ax
-qn
+JG
 qU
 Uc
 qU
-qn
+JG
 AP
-Hi
-Hi
-Hi
+JP
+JP
+JP
 Zk
 Vo
 xp
-qn
+JG
 qF
 "}
 (39,1,1) = {"
@@ -21178,25 +21355,25 @@ qF
 qF
 wx
 qF
-qn
-qn
+JG
+JG
 QJ
-qn
-qn
+JG
+JG
 Ax
-qn
+JG
 DR
 Uc
 DR
-qn
+JG
 wY
 yJ
 qG
-Hi
+JP
 qZ
 Vo
 xp
-qn
+JG
 qF
 "}
 (40,1,1) = {"
@@ -21380,25 +21557,25 @@ qF
 tb
 ya
 qF
-qn
+JG
 Qz
 wi
 Hz
 Hz
 vV
-qn
+JG
 qU
 Uc
 qU
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
 Jy
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
 qF
 "}
 (41,1,1) = {"
@@ -21582,17 +21759,17 @@ qF
 wx
 qF
 qF
-qn
+JG
 Ax
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
 qU
 Uc
 PM
-qn
+JG
 ti
 UH
 ti
@@ -21600,7 +21777,7 @@ ti
 UH
 ti
 ti
-qn
+JG
 qF
 "}
 (42,1,1) = {"
@@ -21784,13 +21961,13 @@ qF
 cp
 cp
 qF
-qn
+JG
 yQ
-qn
-DM
-Sb
-DM
-qn
+JG
+yC
+UK
+yC
+JG
 qU
 Uc
 qU
@@ -21802,7 +21979,7 @@ ti
 ti
 ti
 ti
-qn
+JG
 qF
 "}
 (43,1,1) = {"
@@ -21986,16 +22163,16 @@ qF
 cp
 qR
 qF
-qn
+JG
 yQ
-qn
-DM
-Bu
+JG
+yC
 bX
-qn
+Mq
+JG
 AC
 Wy
-qQ
+Ug
 ip
 ti
 ti
@@ -22004,7 +22181,7 @@ ti
 ti
 rz
 ti
-qn
+JG
 qF
 "}
 (44,1,1) = {"
@@ -22188,13 +22365,13 @@ zn
 qF
 qF
 qF
-qn
+JG
 yQ
-qn
+JG
 qM
 IN
 cp
-CB
+KV
 qO
 Ap
 qU
@@ -22206,7 +22383,7 @@ ti
 VD
 BQ
 ti
-qn
+JG
 qF
 "}
 (45,1,1) = {"
@@ -22390,25 +22567,25 @@ qM
 qF
 yU
 cp
-qn
+JG
 yQ
-qn
-Sb
-Bu
+JG
+UK
+bX
 IN
-qn
+JG
 qU
-qQ
+Ug
 PM
-qn
+JG
 Gb
 SK
-Hi
-Hi
-Hi
-Hi
+JP
+JP
+JP
+JP
 Sg
-qn
+JG
 qF
 "}
 (46,1,1) = {"
@@ -22592,25 +22769,25 @@ KY
 qF
 Fp
 rP
-qn
+JG
 XG
-qn
+JG
 IN
-Bu
 bX
-qn
-Wv
-qQ
-vP
-qn
+Mq
+JG
+BY
+Ug
+HA
+JG
 Gb
-Hi
-Hi
-Hi
-Hi
-Hi
+JP
+JP
+JP
+JP
+JP
 Sg
-qn
+JG
 qF
 "}
 (47,1,1) = {"
@@ -22794,25 +22971,25 @@ KY
 qF
 Ij
 yU
-qn
+JG
 cp
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
 Jm
-qn
-qn
+JG
+JG
 Gb
 MC
 TV
-Hi
-Hi
+JP
+JP
 MC
 Sg
-qn
+JG
 qF
 "}
 (48,1,1) = {"
@@ -23002,19 +23179,19 @@ tP
 qF
 qF
 qF
-qn
+JG
 qI
 Aw
-to
-qn
-qn
-qn
+xt
+JG
+JG
+JG
 Bz
 tT
 Bz
 Il
-qn
-qn
+JG
+JG
 qF
 "}
 (49,1,1) = {"
@@ -23204,11 +23381,11 @@ xT
 tY
 Ce
 qF
-qn
+JG
 qI
 Aw
-to
-qn
+xt
+JG
 sY
 sY
 wk
@@ -23216,7 +23393,7 @@ fA
 wk
 sY
 sY
-qn
+JG
 qF
 "}
 (50,1,1) = {"
@@ -23406,11 +23583,11 @@ qM
 uc
 qM
 qF
-qn
+JG
 Jf
 Aw
 bW
-qn
+JG
 sY
 VI
 rw
@@ -23418,7 +23595,7 @@ rw
 rw
 OX
 sY
-qn
+JG
 qF
 "}
 (51,1,1) = {"
@@ -23608,11 +23785,11 @@ cp
 tY
 tY
 qF
-qn
+JG
 Jf
 Aw
 bW
-qn
+JG
 sY
 co
 OX
@@ -23620,7 +23797,7 @@ JF
 rw
 OX
 sY
-qn
+JG
 qF
 "}
 (52,1,1) = {"
@@ -23810,11 +23987,11 @@ tY
 cp
 kx
 qF
-qn
+JG
 qI
 Aw
-to
-qn
+xt
+JG
 sY
 Tv
 VI
@@ -23822,7 +23999,7 @@ OX
 RY
 VI
 sY
-qn
+JG
 qF
 "}
 (53,1,1) = {"
@@ -24012,11 +24189,11 @@ CX
 cp
 qF
 qF
-qn
-yE
+JG
+Xy
 Aw
-PS
-qn
+wC
+JG
 sY
 sY
 sY
@@ -24024,7 +24201,7 @@ sY
 sY
 sY
 sY
-qn
+JG
 qF
 "}
 (54,1,1) = {"
@@ -24214,11 +24391,11 @@ qF
 qF
 qF
 qF
-qn
+JG
 sZ
 aY
 sZ
-qn
+JG
 qF
 qF
 qF
@@ -24406,21 +24583,21 @@ qF
 qF
 qF
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qU
-qQ
+Ug
 qU
-qn
+JG
 qF
 qF
 qF
@@ -24600,36 +24777,36 @@ tq
 qM
 qF
 qF
-yX
+MS
 rj
-yX
-yX
+MS
+MS
 qF
 qF
 qF
 qF
-qn
+JG
 DI
 rf
 rf
 rf
-qn
+JG
 Og
 Og
 Og
-KA
-qn
+zo
+JG
 qU
-qQ
+Ug
 qU
-qn
-qn
-qn
+JG
+JG
+JG
 qF
 qF
 qF
-qn
-qn
+JG
+JG
 qF
 qF
 "}
@@ -24803,26 +24980,26 @@ qM
 qF
 qF
 rp
-yX
-yX
+MS
+MS
 rj
 qF
 tH
 qF
 qF
-qn
+JG
 AO
 IT
 rf
-zR
+LK
 Dk
 Og
 NO
 Og
 Og
-qn
+JG
 qU
-qQ
+Ug
 qU
 qU
 qU
@@ -24831,7 +25008,7 @@ TJ
 UY
 TJ
 qU
-qn
+JG
 qF
 qF
 "}
@@ -25004,36 +25181,36 @@ qM
 qD
 qF
 qF
-yX
+MS
 GO
-yX
+MS
 qM
 qM
 qM
 sN
 qF
-qn
+JG
 Lv
 rf
 rf
 rf
-qn
+JG
 zf
-gY
-xg
+Ut
+xu
 Og
-qn
+JG
 qU
-qQ
-qQ
-qQ
-qQ
-qQ
-qQ
-qQ
-qQ
+Ug
+Ug
+Ug
+Ug
+Ug
+Ug
+Ug
+Ug
 qU
-qn
+JG
 qF
 qF
 "}
@@ -25208,23 +25385,23 @@ qF
 rG
 tY
 rp
-yX
+MS
 qF
 qF
 qF
 qM
 qF
-qn
+JG
 AO
 IT
 rf
 rf
-qn
+JG
 GE
 DC
 JC
 Og
-qn
+JG
 qU
 qU
 qU
@@ -25233,9 +25410,9 @@ qU
 qU
 qU
 qU
-qQ
-DL
-qn
+Ug
+Bl
+JG
 qF
 qF
 "}
@@ -25407,37 +25584,37 @@ so
 qM
 qF
 sc
-yX
+MS
 aC
 bh
-yX
+MS
 rj
 qF
 tz
 qM
 qF
-qn
-Ku
+JG
+Eb
 rf
 rf
 rf
-qn
-tR
+JG
+yY
 GE
 GE
 Og
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qU
-qQ
+Ug
 qU
-qn
+JG
 qF
 qF
 "}
@@ -25609,7 +25786,7 @@ qD
 qF
 qF
 qF
-yX
+MS
 tY
 sx
 rj
@@ -25618,28 +25795,28 @@ qF
 qF
 tz
 qF
-qn
+JG
 AO
 IT
 rf
 rf
-qn
-qn
-Rg
-Rg
-qn
+JG
+JG
+ZO
+ZO
+JG
 QU
-RQ
-RQ
-qn
-Ui
-gE
-ZR
-qn
-Bc
-qQ
-Oe
-qn
+VL
+VL
+JG
+CG
+Rr
+Is
+JG
+YQ
+Ug
+Eu
+JG
 qF
 qF
 "}
@@ -25811,16 +25988,16 @@ qD
 qF
 qF
 qF
-yX
+MS
 RZ
-yX
+MS
 qF
 qF
 qF
 qF
 ri
 qF
-qn
+JG
 DI
 rf
 rf
@@ -25834,14 +26011,14 @@ OA
 rf
 rf
 Jo
-SM
-SM
-SM
-qn
-Bc
-qQ
+tr
+tr
+tr
+JG
+YQ
+Ug
 qU
-qn
+JG
 qF
 qF
 "}
@@ -26022,7 +26199,7 @@ qF
 tz
 qM
 qF
-qn
+JG
 rf
 rf
 rf
@@ -26036,14 +26213,14 @@ OA
 rf
 rf
 Jo
-SM
+tr
 KG
-SM
-qn
+tr
+JG
 qU
-qQ
+Ug
 qU
-qn
+JG
 qF
 qF
 "}
@@ -26216,36 +26393,36 @@ qM
 cp
 qF
 qF
-yX
-yX
+MS
+MS
 rj
 tH
 tH
 tH
 qF
 qF
-qn
-qn
-ID
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+NR
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 QU
 rf
 rf
-qn
-SM
-SM
-SM
-qn
+JG
+tr
+tr
+tr
+JG
 qU
-qQ
+Ug
 qU
-qn
+JG
 qF
 qF
 "}
@@ -26418,7 +26595,7 @@ qM
 qM
 rj
 rj
-yX
+MS
 ry
 qF
 Qh
@@ -26426,28 +26603,28 @@ qF
 qF
 qF
 qF
-qn
-SM
-SM
-qn
-LR
+JG
 tr
 tr
-tr
-LR
-qn
-qn
-Eb
-Eb
-qn
-qn
-qn
-qn
+JG
+IO
+Rq
+Rq
+Rq
+IO
+JG
+JG
+Ul
+Ul
+JG
+JG
+JG
+JG
 UV
-qU
-qQ
-qU
-qn
+HK
+Ug
+UJ
+JG
 qF
 qF
 "}
@@ -26620,36 +26797,36 @@ qM
 qM
 rj
 qF
-yX
+MS
 qF
 qF
 qF
 qF
-qn
-qn
-qn
-qn
-SM
-SM
-SM
-CK
-YM
+JG
+JG
+JG
+JG
+tr
+tr
+tr
+Bo
+Cb
 tK
-QI
-YM
-qn
-qn
+CF
+Cb
+JG
+JG
 rf
 rf
 rf
 sR
 rf
-Cm
+TO
 ip
-qQ
-qQ
-qQ
-qn
+Ug
+NW
+uQ
+JG
 qF
 qF
 "}
@@ -26822,36 +26999,36 @@ qM
 cp
 qF
 qF
-yX
-yX
+MS
+MS
 qF
 qF
 qF
-qn
-BH
+JG
+wN
 rf
-qn
-SM
-SM
-SM
+JG
+tr
+tr
+tr
 CC
 CC
 qX
 qX
 qX
 qX
-qn
+JG
 rf
 rf
-Io
+Hl
 sR
 rf
 rf
 ip
-qQ
-qQ
-qQ
-qn
+Ug
+Ng
+Ug
+JG
 qF
 qF
 "}
@@ -27024,17 +27201,17 @@ qM
 cp
 qF
 qF
-yX
-yX
+MS
+MS
 rS
 qF
 qF
-qn
-SX
+JG
+Pp
 rf
-Tw
-CY
-VL
+ID
+zb
+sb
 rL
 zP
 zP
@@ -27042,18 +27219,18 @@ qX
 qX
 qX
 qX
-qn
+JG
 rf
-Io
-Io
+Hl
+Hl
 sR
 rf
 rf
 ip
-qQ
-qQ
-qQ
-qn
+Ug
+RT
+IX
+JG
 qF
 qF
 "}
@@ -27231,12 +27408,12 @@ sM
 tz
 qF
 qF
-qn
-TO
+JG
+Ud
 Gq
-qn
-SM
-SM
+JG
+tr
+tr
 rL
 qX
 qX
@@ -27244,18 +27421,18 @@ qX
 qX
 qX
 qX
-qn
-rf
-Io
-qn
-qn
-qn
 JG
+rf
+Hl
+JG
+JG
+JG
+WJ
 UV
 qU
-qQ
+RT
 qU
-qn
+JG
 qF
 qF
 "}
@@ -27433,12 +27610,12 @@ sM
 qH
 qF
 qF
-qn
+JG
 rt
 rt
-qn
-LT
-SM
+JG
+yO
+tr
 rL
 qX
 qX
@@ -27446,18 +27623,18 @@ qX
 qX
 qX
 qX
-qn
-Io
-IX
-qn
-qn
-qn
-qn
-qn
+JG
+Hl
+wF
+JG
+JG
+JG
+JG
+JG
 qU
-qQ
+RT
 qU
-qn
+JG
 qF
 qF
 "}
@@ -27635,11 +27812,11 @@ tz
 tH
 qF
 qF
-qn
-qn
-qn
-zA
-rJ
+JG
+JG
+JG
+xR
+yo
 ro
 rL
 qX
@@ -27648,18 +27825,18 @@ qX
 qX
 qX
 qX
-qn
-IX
-Io
-qn
-uQ
-wt
+JG
+wF
+Hl
+JG
+RX
+Rm
 tS
-qn
+JG
 qU
 qQ
 qU
-qn
+JG
 qF
 qF
 "}
@@ -27837,12 +28014,12 @@ qF
 tH
 tH
 qF
-qn
+JG
+Aa
 vN
-Ff
-qn
-LT
-SM
+JG
+yO
+tr
 rL
 qX
 qX
@@ -27850,18 +28027,18 @@ qX
 qX
 qX
 qX
-qn
-Io
-Io
-vL
-zl
+JG
+Hl
+Hl
+yk
+BR
 tS
-Av
-qn
+SD
+JG
 qU
 qQ
 qU
-qn
+JG
 qF
 qF
 "}
@@ -28039,12 +28216,12 @@ qF
 qF
 sN
 qF
-qn
-KM
-Iq
-qn
-SM
-SM
+JG
+BN
+Ln
+JG
+tr
+tr
 rL
 qX
 qX
@@ -28052,18 +28229,18 @@ qX
 qX
 qX
 qX
-qn
-Io
-IX
-vL
+JG
+Hl
+wF
+yk
 tS
-wg
+Gw
 tS
-qn
+JG
 qU
-qQ
+RT
 qU
-qn
+JG
 qF
 qF
 "}
@@ -28241,12 +28418,12 @@ tF
 qM
 qM
 qF
-qn
-PA
+JG
+Mj
 rf
-qh
+wv
 wD
-SM
+tr
 rL
 Rn
 Rn
@@ -28254,18 +28431,18 @@ qX
 qX
 qX
 qX
-qn
-IX
-Io
-qn
-Bl
-zl
-wt
-qn
+JG
+wF
+Hl
+JG
+Oz
+BR
+Rm
+JG
 TJ
 Ik
 TJ
-qn
+JG
 qF
 qF
 "}
@@ -28443,31 +28620,31 @@ qM
 qM
 qF
 qF
-qn
+JG
 rf
 rf
-qn
-SM
-SM
-SM
+JG
+tr
+tr
+tr
 CC
 CC
 qX
 qX
 qX
 qX
-qn
-MY
-IX
-qn
-qn
-qn
-qn
-qn
+JG
+Iu
+wF
+JG
+JG
+JG
+JG
+JG
 qD
 qD
 qD
-qn
+JG
 qF
 qF
 "}
@@ -28645,31 +28822,31 @@ qF
 qF
 qF
 qM
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 HH
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qF
-qF
-qF
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+qD
+qD
+qD
+JG
 qF
 qF
 "}
@@ -28848,18 +29025,18 @@ Ly
 qM
 qM
 KY
-Fr
-Fr
-Fr
-qn
-qn
-qn
-Fr
+xl
+xl
+xl
+JG
+JG
+JG
+xl
 ER
 Wx
-qn
+JG
 yQ
-qn
+JG
 qF
 qF
 qF
@@ -28867,11 +29044,11 @@ qF
 qF
 qF
 qF
-qF
-qF
-qF
-qF
-qF
+qD
+qD
+qD
+qD
+qD
 qF
 qF
 "}
@@ -29046,34 +29223,34 @@ qF
 qF
 qF
 qF
-qn
+JG
 qM
 qM
-qn
-qn
-qn
-Fr
-Fr
-Fr
-qn
-Fr
-qn
+JG
+JG
+JG
+xl
+xl
+xl
+JG
+xl
+JG
 TI
-qn
+JG
 yQ
-qn
+JG
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qF
-qF
+JG
+JG
+JG
+JG
+JG
+JG
 qD
-qF
-qF
+qD
+qD
+qD
+qD
 qF
 qF
 "}
@@ -29253,29 +29430,29 @@ qM
 qF
 qF
 qF
-qn
-qn
-qn
+JG
+JG
+JG
+xl
+xl
 Fr
-Fr
-Nk
-qn
-qn
-qn
-Fr
-qn
+JG
+JG
+JG
+xl
+JG
 qF
-qn
+JG
 Yl
 rx
 Hw
 vH
 NG
 RJ
-Tn
+Xr
 RJ
-Tn
-qF
+Xr
+qD
 qF
 qF
 "}
@@ -29457,27 +29634,27 @@ tz
 qF
 qF
 qF
-qn
-qn
-qn
-Fr
-Fr
-Fr
-Fr
-Fr
-qn
+JG
+JG
+JG
+xl
+xl
+xl
+xl
+xl
+JG
 qF
-qn
+JG
 On
-yv
-kF
 Dy
-UK
-Nn
+kF
+Or
+SM
+wa
 KL
-UK
+SM
 RJ
-qF
+qD
 qF
 qF
 "}
@@ -29661,25 +29838,25 @@ qF
 qF
 qF
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 qF
-qn
+JG
 OZ
 BS
-Dy
-Nn
+Or
+wa
 Ze
-AZ
-UK
-Nn
+Vv
+SM
+wa
 NG
-qn
+JG
 qF
 qF
 "}
@@ -29871,17 +30048,17 @@ qF
 qF
 qF
 qF
-qn
+JG
 OZ
-UK
-UK
-UK
-UK
-UK
-UK
-UK
+SM
+SM
+SM
+SM
+SM
+SM
+SM
 NG
-qn
+JG
 qF
 qF
 "}
@@ -30067,23 +30244,23 @@ qF
 tz
 qF
 Ly
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 Ze
-UK
-Xw
-UK
+SM
+MA
+SM
 Ze
-UK
+SM
 NG
-qn
+JG
 qF
 qF
 "}
@@ -30267,25 +30444,25 @@ qF
 qF
 qM
 tz
-qn
-Fr
-qn
-qn
-QY
-QY
+JG
+xl
+JG
+JG
+QM
+QM
 Nz
-Oc
-Oc
-qn
-qn
+Oq
+Oq
+JG
+JG
 NG
-UK
-UK
-FQ
+SM
+SM
+wc
 zK
-AU
+ZX
 NG
-qn
+JG
 qF
 qF
 "}
@@ -30470,24 +30647,24 @@ qF
 qM
 qM
 tz
-Fr
-QY
-QY
-QY
-qn
-qn
-Oc
-Oc
+xl
+QM
+QM
+QM
+JG
+JG
+Oq
+Oq
 ZN
 ZN
-UK
+SM
 KL
 Ze
 KL
-UK
-UK
+SM
+SM
 NG
-qn
+JG
 qF
 qF
 "}
@@ -30673,15 +30850,15 @@ qF
 qF
 qF
 tN
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 KL
 qF
 qF
@@ -30689,7 +30866,7 @@ qF
 KL
 NG
 TT
-qn
+JG
 qF
 qF
 "}
@@ -30889,9 +31066,9 @@ qF
 qF
 qF
 qF
-MV
+vw
 qF
-qn
+JG
 rH
 rH
 "}
@@ -31280,11 +31457,11 @@ rK
 rK
 rK
 rH
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
 qF
 qF
 qF
@@ -31482,17 +31659,17 @@ rK
 rK
 rK
 rH
-qn
-xI
-ET
-xI
-qn
+JG
+Ea
+XV
+Ea
+JG
 qF
-qn
+JG
 sY
 sY
 sY
-qn
+JG
 qF
 Pc
 cp
@@ -31684,11 +31861,11 @@ rK
 rK
 rK
 rH
-qn
-Lu
-HV
-Lu
-qn
+JG
+tR
+sX
+tR
+JG
 qF
 sY
 tO
@@ -31886,15 +32063,15 @@ rU
 rK
 rK
 rH
-qn
-NL
-Lu
-Lu
-qn
+JG
+Ci
+tR
+tR
+JG
 qF
 sY
 tO
-OO
+vJ
 tO
 sY
 qF
@@ -32088,11 +32265,11 @@ rU
 rK
 rK
 rH
-Ws
-Dg
-Lu
-Lu
-Ws
+RP
+GS
+tR
+tR
+RP
 qF
 sY
 tO
@@ -32290,22 +32467,22 @@ rU
 rK
 rK
 rH
-qn
-qn
-rF
-qn
-qn
-qS
-qS
-qS
-WI
-qS
-qS
-qS
-qS
-Mo
-qS
-qS
+JG
+JG
+Cm
+JG
+JG
+yc
+yc
+yc
+Qg
+yc
+yc
+yc
+yc
+Xq
+yc
+yc
 rH
 rH
 "}
@@ -32493,21 +32670,21 @@ rK
 rK
 rH
 qD
-NH
+Zy
+tp
+tp
 JP
-JP
-Hi
 eT
 qD
-Iu
-Hi
-Hi
-Hi
-Yo
-Xs
-wo
-im
-BW
+Xc
+JP
+JP
+JP
+xB
+rF
+Sa
+Bf
+AX
 rH
 rH
 "}
@@ -32696,20 +32873,20 @@ rK
 rH
 qD
 eT
-Ll
-Hi
-Hi
+JZ
+JP
+JP
 eT
 qD
-Iu
-Hi
-Hi
-Hi
-Yo
-Xs
-im
-im
-BW
+Xc
+JP
+JP
+JP
+xB
+rF
+Bf
+Bf
+AX
 rH
 rH
 "}
@@ -32897,21 +33074,21 @@ rK
 rK
 rH
 qD
-NY
-YZ
-JP
-JP
+UE
+Kk
+tp
+tp
 eT
 qD
-Iu
-Hi
-Hi
-Hi
-Yo
-Xs
-im
-im
-BW
+Xc
+JP
+JP
+JP
+xB
+rF
+Bf
+Bf
+AX
 rH
 rH
 "}
@@ -33099,21 +33276,21 @@ rK
 rK
 rH
 qF
-qn
-qn
-qn
-WI
-qS
-qn
-qS
-qS
-qS
-qS
-qS
-qS
-qS
-qS
-qS
+JG
+JG
+JG
+Qg
+yc
+JG
+yc
+yc
+yc
+yc
+yc
+yc
+yc
+yc
+yc
 rH
 rH
 "}
@@ -33302,11 +33479,11 @@ rK
 rH
 qF
 qF
-qn
-QX
-qC
-Ss
-qn
+JG
+rD
+Kd
+Qn
+JG
 qF
 qF
 qF
@@ -33504,20 +33681,20 @@ rK
 rH
 qF
 qF
-qn
-QX
-qC
-Ss
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+rD
+Kd
+Qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 rH
 rH
 "}
@@ -33706,20 +33883,20 @@ rK
 rH
 qF
 qF
-qn
-QX
-qC
-Ss
-qn
-qn
-Ug
-Jh
-Ug
-Ug
-SP
-JZ
-Ug
-qn
+JG
+rD
+Kd
+Qn
+JG
+Xb
+Zj
+Zj
+Zj
+YR
+Vm
+Vm
+Vm
+JG
 rH
 rH
 "}
@@ -33908,20 +34085,20 @@ rK
 rH
 qF
 qF
-qn
-qn
-WI
-qn
-qn
-qn
-Jh
-qn
-Mc
-Ug
-Ug
-Ug
-SP
-qn
+JG
+JG
+Qg
+JG
+JG
+PA
+Zj
+Zj
+Zj
+YR
+Vm
+Vm
+Vm
+JG
 rH
 rH
 "}
@@ -34108,22 +34285,22 @@ rU
 rK
 rK
 rH
-qn
-qn
-qn
-xd
-Ug
-xd
-qn
-qn
-CV
-qn
-Ug
-JZ
-Ug
-Ug
-Ug
-qn
+JG
+JG
+JG
+Rv
+Zj
+Rv
+JG
+JG
+JS
+JS
+Zj
+YR
+Vm
+Vm
+Vm
+JG
 rH
 rH
 "}
@@ -34310,22 +34487,22 @@ EE
 rK
 rK
 rH
-qn
-Ug
-Mt
-qn
-Ug
-Jh
-Ug
-Ug
-Ug
-qn
-qn
-qn
-SP
-Ug
-Mc
-qn
+JG
+Zj
+tu
+JG
+Zj
+Zj
+Zj
+Zj
+Zj
+Zj
+Zj
+Fy
+HE
+HE
+HE
+JG
 rH
 rH
 "}
@@ -34512,22 +34689,22 @@ EE
 rK
 rK
 rH
-qn
-YO
-qn
-qn
-qn
-qn
-Mc
-qn
-qn
-qn
-Ug
-Jh
-Ug
-Ug
-Ug
-qn
+JG
+vU
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+Zj
+Zj
+Zj
+Zj
+JG
 rH
 rH
 "}
@@ -34714,22 +34891,22 @@ EE
 rK
 rH
 rH
+JG
+Zj
+aB
+aB
+aB
+Zj
+bN
 qn
-Ug
-FK
-FK
-FK
-qn
-qn
-qn
-Ch
-CV
-Ug
-qn
-Ug
-Ug
-Ug
-qn
+JG
+Zr
+JG
+JG
+Zj
+Zj
+Zj
+JG
 rH
 rH
 "}
@@ -34915,23 +35092,23 @@ EE
 IL
 rK
 rH
-GT
+ON
+JG
 qn
-Mc
-Ug
-Ug
-Ug
-qn
-Ug
-qn
-qn
-qn
-Ug
-qn
-CV
-qn
-Ug
-qn
+Zj
+Zj
+Zj
+Zj
+Zj
+Zj
+Kw
+im
+Kw
+Zj
+Zj
+Zj
+Zj
+JG
 rH
 rH
 "}
@@ -35117,23 +35294,23 @@ Nt
 EE
 rK
 rH
-GT
-Ug
-Ug
-Ug
-Mc
-Ug
-YO
-Ug
-Ug
-Ug
-YO
-Ug
+ON
+Zj
+Zj
+Zj
 qn
-Ug
-qn
-Ug
-qn
+Zj
+Zj
+Zj
+Zj
+JG
+zl
+JG
+JG
+xQ
+JG
+JG
+JG
 rH
 rH
 "}
@@ -35319,23 +35496,23 @@ Nt
 rK
 rK
 rH
-GT
-qn
-qn
-Lc
+ON
+JG
+JG
+qL
 BS
-qn
-qn
-qn
-qn
-qn
-qn
-Ug
-qn
-Jh
-qn
-Ug
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+OO
+JP
+JP
+ME
+JG
 rH
 rH
 "}
@@ -35522,22 +35699,22 @@ rK
 rK
 rH
 rH
-qn
-qn
-sf
-qn
-qn
-qn
-Ug
-Ug
-Ug
-Jh
-Ug
-qn
-Ug
-qn
-Oq
-qn
+JG
+JG
+Kc
+JG
+JG
+qF
+qF
+qF
+qF
+qF
+JG
+OO
+JP
+JP
+ME
+JG
 rH
 rH
 "}
@@ -35722,24 +35899,24 @@ xz
 Nt
 rK
 rH
-GT
-GT
-qn
-Ei
-vs
-Yf
-qn
-qn
-tG
-qn
-QR
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+ON
+ON
+JG
+ZL
+Xa
+rT
+JG
+qF
+qF
+qF
+qF
+qF
+JG
+JG
+JG
+JG
+JG
+JG
 rH
 rH
 "}
@@ -35924,24 +36101,24 @@ Nt
 Nt
 rK
 rH
-GT
-Uz
-HH
-Yf
-ix
-Dw
-qn
-qn
-qn
-qn
-qT
-qn
-qF
-qF
-qF
-qF
-qF
-qF
+ON
+Cp
+Hi
+rT
+TM
+RH
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 rH
 rH
 "}
@@ -36126,24 +36303,24 @@ Nt
 Nt
 rK
 rH
-GT
-UO
-XJ
-XV
-Un
-Sb
-WM
-qn
-XJ
-XV
-Sb
-XN
-XV
-XV
-XV
-WM
-qn
-qn
+ON
+DG
+JG
+JG
+JG
+JG
+JG
+JG
+Tl
+UU
+UK
+lV
+UU
+UU
+UU
+Cs
+VG
+JG
 rH
 rH
 "}
@@ -36328,24 +36505,24 @@ rK
 rK
 rK
 rH
-qn
-Sb
-XV
-cb
-XV
-XV
-Yd
-qn
-Sb
-XV
-WM
-XV
-Un
-wj
-XV
-XV
-XV
-qn
+JG
+UK
+UU
+ZT
+UU
+UU
+RS
+JG
+UK
+UU
+Cs
+UU
+zR
+Al
+UU
+UU
+UU
+JG
 rH
 rH
 "}
@@ -36530,24 +36707,24 @@ rK
 rK
 rH
 rH
-qn
-Un
-XV
-XV
-XV
-XJ
-Cb
-qn
-qn
-qn
-Sb
-HE
-XV
-XV
-XV
-Sb
-Sb
-qn
+JG
+zR
+UU
+UU
+UU
+Tl
+Ms
+JG
+JG
+JG
+UK
+Kr
+UU
+UU
+UU
+UK
+UK
+JG
 rH
 rH
 "}
@@ -36732,24 +36909,24 @@ rK
 rK
 rH
 rH
-qn
-WM
-Nw
-Sb
-XV
-Sb
-cb
-YX
-Sb
-Sb
-XV
-ZJ
-XV
-XV
-XV
-Sb
-Un
-qn
+JG
+Cs
+Gx
+UK
+UU
+UK
+ZT
+Jg
+UK
+UK
+UU
+VG
+UU
+UU
+UU
+UK
+zR
+JG
 rH
 rH
 "}
@@ -36934,24 +37111,24 @@ rK
 qD
 qF
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-Un
-Sb
-XV
-XN
-XV
-ZJ
-XV
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+zR
+UK
+UU
+lV
+UU
+VG
+UU
+JG
 rH
 rH
 "}
@@ -37136,24 +37313,24 @@ rK
 qD
 qF
 qF
-qn
-Gk
+JG
+PS
 Hz
-Ig
-Hz
-Hz
+Fg
 Hz
 Hz
-Ut
-Sb
-XN
-Sb
-WM
-XV
-XV
-Cb
-Sb
-qn
+Hz
+Hz
+xi
+UK
+lV
+UK
+Cs
+UU
+UU
+Ms
+UK
+JG
 rH
 rH
 "}
@@ -37338,24 +37515,24 @@ rK
 qD
 qF
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-Sb
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+UK
+JG
 rH
 rH
 "}
@@ -37555,10 +37732,10 @@ qF
 qF
 qF
 qF
-qn
-EH
-qn
-GT
+JG
+Hi
+JG
+ON
 rH
 "}
 (121,1,1) = {"
@@ -37740,27 +37917,27 @@ rK
 rK
 rK
 qD
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
 QJ
-qn
-GT
+JG
+ON
 rH
 "}
 (122,1,1) = {"
@@ -37942,27 +38119,27 @@ rK
 rK
 rK
 qD
-qn
-qn
+JG
+JG
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+Hi
+JG
 ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-QJ
-qn
-GT
 rH
 "}
 (123,1,1) = {"
@@ -38144,27 +38321,27 @@ rK
 rK
 rK
 qD
-qn
-qn
+JG
+JG
+aX
+Xw
+Dz
+KI
+qC
+qC
+Xw
+Nj
+LH
+Uj
+Fu
+Nj
+LH
+qC
+FW
+Xw
+Et
+aX
 ON
-MS
-zp
-Kt
-QM
-QM
-MS
-Xh
-ZK
-QM
-Az
-Xh
-ZK
-QM
-LS
-MS
-xN
-ON
-GT
 rH
 "}
 (124,1,1) = {"
@@ -38346,27 +38523,27 @@ rK
 rK
 rK
 qD
-qn
-qn
+JG
+JG
+aX
+Xw
+LH
+Pt
+wb
+zr
+Rs
+zr
+qS
+zr
+OC
+HJ
+Xw
+qC
+Xw
+Xw
+Ye
+aX
 ON
-MS
-ZK
-Br
-EB
-bK
-Yi
-bK
-ZM
-bK
-Au
-Od
-MS
-QM
-QM
-QM
-zo
-ON
-GT
 rH
 "}
 (125,1,1) = {"
@@ -38548,27 +38725,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+Nj
+Xw
+wf
+wb
+zr
+Qe
+Xw
+Xw
+Xw
+Xw
+Dz
+Xw
+qC
+FW
+Xw
+Xw
+aX
 ON
-Xh
-MS
-Em
-EB
-bK
-wI
-MS
-MS
-MS
-MS
-zp
-MS
-QM
-LS
-MS
-MS
-ON
-GT
 rH
 "}
 (126,1,1) = {"
@@ -38750,27 +38927,27 @@ rK
 rK
 rK
 qF
-qn
-qn
-ON
-yp
-MS
-Br
-EB
-ZD
-ZM
+JG
+JG
+aX
+wK
+Xw
+Pt
+wb
 bK
-IA
-bK
-IA
-MS
-MS
-QM
-QM
-MS
-MS
+qS
+zr
+RM
+zr
+RM
+Xw
+Xw
+qC
+qC
+Xw
+Xw
+aX
 ON
-GT
 rH
 "}
 (127,1,1) = {"
@@ -38952,27 +39129,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+wK
+Xw
+Xw
+Dz
+Xw
+Xw
+qC
+Xw
+qC
+Xw
+KI
+Xw
+Xw
+Xw
+Xw
+qC
+aX
 ON
-yp
-MS
-MS
-zp
-MS
-MS
-QM
-MS
-QM
-MS
-Kt
-MS
-MS
-MS
-MS
-QM
-ON
-GT
 rH
 "}
 (128,1,1) = {"
@@ -39154,27 +39331,27 @@ rK
 rK
 rK
 qF
-qn
-qn
-ON
-yp
-MS
-MS
-MS
-MS
-MS
-MS
-MS
-bK
-OR
-QM
-MS
-MS
-QM
-MS
-MS
-Mu
-yL
+JG
+JG
+aX
+wK
+Xw
+Xw
+Xw
+Xw
+Xw
+Xw
+Xw
+zr
+wn
+qC
+Xw
+Xw
+qC
+Xw
+Xw
+RR
+Ma
 rH
 "}
 (129,1,1) = {"
@@ -39356,27 +39533,27 @@ rK
 rK
 rK
 qF
-qn
-qn
-ON
-yp
-MS
-MS
-MS
-ZK
-MS
-Kt
-MS
-MS
-MS
-bK
-Yi
-YQ
-QM
-MS
-MS
-Mu
-yL
+JG
+JG
+aX
+wK
+Xw
+Xw
+Xw
+LH
+Xw
+KI
+Xw
+Xw
+Xw
+zr
+Rs
+Nv
+qC
+Xw
+Xw
+RR
+Ma
 rH
 "}
 (130,1,1) = {"
@@ -39558,27 +39735,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+wK
+Xw
+Bc
+wb
+zr
+qS
+zr
+Eo
+Pt
+wb
+zr
+Xw
+Xw
+qC
+Dz
+qC
+aX
 ON
-yp
-MS
-WB
-EB
-bK
-ZM
-bK
-Wp
-Br
-EB
-bK
-MS
-MS
-QM
-zp
-QM
-ON
-GT
 rH
 "}
 (131,1,1) = {"
@@ -39760,27 +39937,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+Nj
+Dz
+Xw
+Xw
+qC
+Xw
+Xw
+Xw
+Bc
+wb
+zr
+Cg
+LH
+qC
+qC
+FW
+aX
 ON
-Xh
-zp
-MS
-MS
-QM
-MS
-MS
-MS
-WB
-EB
-bK
-Nc
-ZK
-QM
-QM
-LS
-ON
-GT
 rH
 "}
 (132,1,1) = {"
@@ -39962,27 +40139,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+Xw
+Xw
+CJ
+wb
+zr
+aH
+zr
+Xw
+zr
+Xw
+Xw
+Dz
+Xw
+Xw
+Xw
+Xw
+aX
 ON
-MS
-MS
-Hl
-EB
-bK
-KI
-bK
-MS
-bK
-MS
-MS
-zp
-MS
-MS
-MS
-QM
-ON
-GT
 rH
 "}
 (133,1,1) = {"
@@ -40164,27 +40341,27 @@ rK
 rK
 rK
 qF
-qn
-qn
+JG
+JG
+aX
+Xw
+Xw
+Xw
+wt
+Nj
+Xw
+qC
+Xw
+zr
+Cg
+LH
+Xw
+Xw
+Uj
+Xw
+Xw
+aX
 ON
-MS
-MS
-MS
-tl
-Xh
-MS
-QM
-MS
-bK
-Nc
-ZK
-MS
-MS
-QM
-MS
-MS
-ON
-GT
 rH
 "}
 (134,1,1) = {"
@@ -40366,27 +40543,27 @@ rK
 rK
 rK
 qF
-qn
-qn
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-ON
-EH
-ON
-ON
-ON
+JG
+JG
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+Hi
+aX
+aX
+aX
+SS
 aX
 ON
-GT
 rH
 "}
 (135,1,1) = {"
@@ -40568,27 +40745,27 @@ rK
 rK
 rK
 qF
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-qn
-GT
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+JG
+ON
 rH
 "}
 (136,1,1) = {"
@@ -49654,28 +49831,28 @@ qF
 qF
 qF
 qF
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
-zY
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
 qF
 qF
 rH
