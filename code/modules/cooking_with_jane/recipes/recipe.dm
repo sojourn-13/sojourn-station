@@ -266,6 +266,21 @@
 		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
 	)
 
+
+/datum/cooking_with_jane/recipe/creamcheesebread
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/sliceable/creamcheesebread
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
+	)
+
 /datum/cooking_with_jane/recipe/porkchops
 	cooking_container = GRILL
 	product_type = /obj/item/reagent_containers/food/snacks/porkchops
@@ -289,6 +304,35 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3, remain_percent=0.5 ,base=8, prod_desc="The pork was layered with BBQ sauce"),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_GRILL, J_MED, 30 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/tonkatsu
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/tonkatsu
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "cornoil", 2),
+		list(CWJ_ADD_REAGENT, "egg", 3),
+		list(CWJ_ADD_PRODUCE, "sodiumchloride", 1),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/pork, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "flour", 5),
+		list(CWJ_USE_STOVE, J_MED, 40 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/katsudon
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/katsudon
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledrice, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "soysauce", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tonkatsu, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "egg", 3),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1)
 	)
 
 /datum/cooking_with_jane/recipe/roastchicken
@@ -902,7 +946,7 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_PRODUCE, "white-beet", reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "whitebeet", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "potato", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cabbage", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE),

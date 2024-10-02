@@ -411,7 +411,7 @@ var/global/list/paramslist_cache = list()
 
 //Soj changes
 //bee foods
-var/list/bee_food_list = list("harebell", "sunflowers", "thaadra", "telriis", "surik", "vale", "potato", "poppies")
+var/list/bee_food_list = list("harebell", "sunflowers", "thaadra", "telriis", "surik", "vale", "potato", "poppy")
 
 //Used to track repeat odditie weapon spawns, as the name suggests. Currently helps reduce repeats
 GLOBAL_LIST_EMPTY(reapeat_odditie_weapon_spawn)
