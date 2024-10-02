@@ -12,6 +12,7 @@
 	change_floor_to_path = /turf/simulated/floor/rock/manmade/concrete
 	icon_state = "concrete_spawner"
 
+//Maints tile fixed flooring
 /obj/effect/flooring_type_spawner/concrete_small_fixed
 	name = "concrete small fixed spawner"
 	change_floor_to_path = /turf/simulated/floor/industrial/fixed
@@ -107,6 +108,23 @@
 	change_floor_to_path = /turf/simulated/floor/industrial/cafe_large_fixed
 	icon_state = "concrete_spawner"
 
+//Wooden walls
+/obj/effect/flooring_type_spawner/wood_wall
+	name = "plank wood wall"
+	change_floor_to_path = /turf/simulated/wall/wood
+	icon_state = "plank_spawner"
+
+/obj/effect/flooring_type_spawner/wood_wall_old
+	name = "aged plank wood wall"
+	change_floor_to_path = /turf/simulated/wall/wood_old
+	icon_state = "old_plank_spawner"
+
+/obj/effect/flooring_type_spawner/wood_wall_barrel
+	name = "fancy wood wall"
+	change_floor_to_path = /turf/simulated/wall/wood_barrel
+	icon_state = "wood_barrel_spawner"
+
+//Mining wall Spawners (Used for SLAB)
 /obj/effect/flooring_type_spawner/mining_wall_oreful
 	name = "mineral spawner - always give ores"
 	change_floor_to_path = /turf/simulated/mineral/random
