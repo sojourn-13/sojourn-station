@@ -421,6 +421,9 @@
 				wearing_2 -= C
 				qdel(C)
 
+		if(stop_loop)
+			continue
+		// third layer of clothing
 		for(var/obj/item/underwear/U in H.worn_underwear)
 			if(!(U.required_free_body_parts & bodypart))
 				continue
