@@ -83,7 +83,7 @@
 			var/chat_tag = create_text_tag(chattag, chattagtext, target)
 
 			if(holder && !holder.fakekey && (holder.rights & R_ADMIN) && config.allow_admin_ooccolor && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins
-				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + chat_tag + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM></font></span> <span class='message'>[msg]</span></span>")
+				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + chat_tag + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM></span> <span class='message'>[msg]</span></font></span>")
 			else
 				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + chat_tag + " <EM>[display_name]:</EM></span> <span class='message'>[msg]</span></span>")
 
