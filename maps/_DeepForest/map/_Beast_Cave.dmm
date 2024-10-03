@@ -799,12 +799,11 @@
 /obj/effect/floor_decal/industrial/warningred{
 	icon = 'icons/effects/blood.dmi';
 	icon_state = "mgibbl2";
-	color = #880808
+	color = "#880808"
 	},
 /obj/item/remains,
 /obj/item/tool/wrench,
 /obj/item/clothing/head/hardhat,
-/obj/item/paper,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/nadezhda/outside/forest/beast_cave_light)
 "dh" = (
@@ -5380,23 +5379,12 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "sW" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 2
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0;
+	light_color = "#8B0000"
 	},
-/obj/structure/snowfall{
-	name = "dust";
-	light_color = "#8B0000";
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/structure/snowfall{
-	name = "dust";
-	light_color = "#8B0000";
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+/turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8296,8 +8284,9 @@
 	requires_power = 0
 	})
 "ET" = (
+/obj/structure/window/reinforced,
 /obj/machinery/light/small{
-	dir = 8;
+	dir = 4;
 	pixel_y = 0;
 	light_color = "#8B0000"
 	},
@@ -8521,13 +8510,8 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "FI" = (
-/obj/structure/catwalk,
-/obj/machinery/light/small{
-	dir = 1;
-	pixel_y = 0;
-	light_color = "#8B0000"
-	},
-/turf/simulated/floor/beach/water/flooded,
+/obj/machinery/light/small,
+/turf/open/pool,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9042,12 +9026,13 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "HC" = (
+/obj/structure/catwalk,
 /obj/machinery/light/small{
-	dir = 4;
+	dir = 1;
 	pixel_y = 0;
 	light_color = "#8B0000"
 	},
-/turf/simulated/floor/industrial/grey_slates,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10305,13 +10290,12 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "MC" = (
-/obj/structure/snowfall{
-	name = "dust";
-	light_color = "#8B0000";
-	light_range = 1;
-	desc = "Thick dust fills the air"
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 0;
+	light_color = "#8B0000"
 	},
-/turf/simulated/mineral/random/rogue,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11101,8 +11085,13 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "PW" = (
-/obj/machinery/light/small,
-/turf/open/pool,
+/obj/structure/snowfall{
+	name = "dust";
+	light_color = "#8B0000";
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -11338,13 +11327,23 @@
 	requires_power = 0
 	})
 "QY" = (
-/obj/structure/window/reinforced,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0;
-	light_color = "#8B0000"
+/obj/machinery/computer{
+	stat = 1;
+	dir = 2
 	},
-/turf/simulated/floor/industrial/grey_slates,
+/obj/structure/snowfall{
+	name = "dust";
+	light_color = "#8B0000";
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/structure/snowfall{
+	name = "dust";
+	light_color = "#8B0000";
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12682,7 +12681,7 @@
 	pixel_y = 0;
 	light_color = "#8B0000"
 	},
-/turf/simulated/floor/industrial/checker_large,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -16103,7 +16102,7 @@ KE
 KO
 AG
 Ow
-FI
+HC
 cw
 XW
 tB
@@ -16911,7 +16910,7 @@ Lg
 KO
 Jv
 Ow
-FI
+HC
 Vz
 Vy
 tB
@@ -18719,7 +18718,7 @@ ZA
 XW
 XW
 EY
-Wn
+sW
 Uo
 SR
 SR
@@ -19944,7 +19943,7 @@ Uf
 JP
 JP
 JP
-ET
+MC
 JP
 XW
 qF
@@ -24373,10 +24372,10 @@ XW
 XW
 Ph
 XW
-HC
+Wn
 Fz
 Cb
-QY
+ET
 Cb
 XW
 sZ
@@ -27212,7 +27211,7 @@ rf
 rf
 sR
 JP
-HC
+Wn
 ip
 LJ
 bN
@@ -27407,7 +27406,7 @@ qX
 qX
 qX
 qX
-PW
+FI
 XW
 JP
 rf
@@ -28215,7 +28214,7 @@ qX
 qX
 qX
 qX
-PW
+FI
 XW
 rf
 Cs
@@ -38925,7 +38924,7 @@ Ds
 VU
 Hs
 Gk
-sW
+QY
 Gk
 qn
 qn
@@ -40331,7 +40330,7 @@ qF
 qF
 qF
 qF
-MC
+PW
 Ry
 qn
 QX
