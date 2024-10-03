@@ -187,10 +187,14 @@
 			door_interaction(door_on_my_tile)
 	else
 		//slow vanishing after node death
-		health -= 10
+		health -= 20 //Faster die off
 		alpha = 255 * health/max_health
 		check_health()
+		find_new_master()
 
+/obj/effect/plant/hivemind/proc/find_new_master()
+	if(hive_mind_ai)
+		master_node = pick(hive_mind_ai.hives)
 
 /obj/effect/plant/hivemind/is_mature()
 	return TRUE
@@ -458,8 +462,14 @@
 //emp is effective too
 //it causes electricity failure, so our wireweeds just blowing up inside, what makes them fragile
 /obj/effect/plant/hivemind/emp_act(severity)
-	if(severity)
-		die_off()
+	if(GLOB.hive_data_float["hivemind_emp_mult"] > 0)
+		if(severity && prob(100 * GLOB.hive_data_float["hivemind_emp_mult"]))//If emp mult is 0.5 it makes it a coin flip
+			die_off()
+		health -= 40 * GLOB.hive_data_float["hivemind_emp_mult"]
+		check_health()
+	else
+		health = 5 * -GLOB.hive_data_float["hivemind_emp_mult"] //Small healing if negitive
+		check_health()
 
 
 //Some acid and there's no problem

@@ -300,11 +300,11 @@
 /obj/machinery/hivemind_machine/emp_act(severity)
 	switch(severity)
 		if(1)
-			take_damage(30)
-			stun(10)
+			take_damage(30 * GLOB.hive_data_float["hivemind_emp_mult"])
+			stun(10 * GLOB.hive_data_float["hivemind_emp_mult"])
 		if(2)
-			take_damage(10)
-			stun(5)
+			take_damage(10 * GLOB.hive_data_float["hivemind_emp_mult"])
+			stun(5 * GLOB.hive_data_float["hivemind_emp_mult"])
 	..()
 
 

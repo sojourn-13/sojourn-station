@@ -15,7 +15,9 @@ GLOBAL_LIST_INIT(hive_data_float, list(
 	"maximum_controlled_areas"		= 0, // Stop expansion when controlling certain number of areas, 0 to disable
 	"maximum_existing_mobs"			= 50, // Should be true in "hive_data_bool" to take effect, 0 means no hive mob spawn (except champions)
 	"gibbing_warning_timer"			= 0, //How many seconds of warning should be given before a humanoid body is gibbed by hivemind wires. 0 means it doesn't at all
-	"core_oddity_drop_chance"		= 50,)) // prob() of hive node leaving hive-themed oddity on death
+	"core_oddity_drop_chance"		= 50, // prob() of hive node leaving hive-themed oddity on death
+	"hivemind_emp_mult"				= 1, //Mult for emp damage, [negitive numbers heal] [0 disables] and [past 1 increases damage]
+	))
 
 GLOBAL_LIST_INIT(hive_names, list("Von Neumann", "Lazarus", "Abattoir", "Auto-Surgeon", "NanoTrasen",
 				"NanoNurse", "Vivisector", "Ex Costa", "Apostasy", "Gnosis", "Balaam", "Ophite",
@@ -87,6 +89,9 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br><a href='?src=\ref[src];spawn_hive=1'>\[SPAWN\]</a>"
 	data += "<br><a href='?src=\ref[src];kill_hive=1'>\[PURGE\]</a>"
 	data += "<br><a href='?src=\ref[src];really_kill_hive=1'>\[HARDCORE PURGE\]</a>"
+	data += "<br><br>EMP mult Info: 1 is default, 0 disables. Past 1 has emps deal bounce damage, negitive numbers heals on emp."
+	data += "<br>Hivemind EMP Mult: [GLOB.hive_data_float["hivemind_emp_mult"]] \
+	<a href='?src=\ref[src];change_emp_mult=1'>\[SET\]</a>"
 
 	if(GLOB.hive_data_bool["maximum_existing_mobs"])
 		data += "<br>Controlled mob limit: [GLOB.hive_data_float["maximum_existing_mobs"]] \
@@ -148,6 +153,10 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	if(href_list["area_list_interact"])
 		area_list_interact()
+
+	if(href_list["change_emp_mult"])
+		var/new_emp_mult = input(usr, "How many points to give (Negative numbers subtract)", "Hivemind Pity Fund") as null|num
+		GLOB.hive_data_float["hivemind_emp_mult"] = new_emp_mult
 
 	if(href_list["give_points"])
 		var/cap = input(usr, "How many points to give (Negative numbers subtract)", "Hivemind Pity Fund") as null|num
