@@ -5379,8 +5379,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "sW" = (
+/obj/structure/window/reinforced,
 /obj/machinery/light/small{
-	dir = 8;
+	dir = 4;
 	pixel_y = 0;
 	light_color = "#8B0000"
 	},
@@ -5513,10 +5514,6 @@
 "tp" = (
 /obj/effect/floor_decal/industrial_plant,
 /mob/living/carbon/superior_animal/roach/tazntz,
-/obj/structure/snowfall{
-	name = "radioactive dust";
-	color = "#2CFA1F"
-	},
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
@@ -6325,9 +6322,12 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vT" = (
-/obj/effect/floor_decal/industrial_plant,
-/mob/living/carbon/superior_animal/roach/tazntz,
-/turf/simulated/floor/industrial/fixed,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0;
+	light_color = "#8B0000"
+	},
+/turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -6895,10 +6895,8 @@
 	})
 "yE" = (
 /obj/structure/table/woodentable,
-/obj/item/paper{
-	info = "Subject: Renders - Specimen Capture and Re-engineering. Several specimens of the biological entities termed renders have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's-it's all coming apart, the entire sector. We thought we had control-";
-	layer = 4;
-	icon_state = "paper_neo_words_crumpled_bloodied"
+/obj/item/oddity/common/paper_omega{
+	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. It has a logo of three red triangles on it"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/beast_cave_dark{
@@ -7187,11 +7185,6 @@
 	pixel_y = -4
 	},
 /obj/item/remains/mummy2,
-/obj/item/paper{
-	info = "Research Log:Author: Professor Victor KallusDate: 2652.0X.XXSubject: "Renders" - Specimen Capture and Re-engineeringSeveral specimens of the biological entities termed "renders" have been captured and contained for study. Initial tests on their regenerative abilities and resilience have yielded significant data. Tissue samples show rapid adaptation, and further analysis suggested potential for medical and strategic applications. Control over these entities was maintained with specialized containment cells.Log Update:The alarms are blaring. Something has gone wrong—biomass compromised the containment systems. Cells failed. I don’t know how, but the renders broke free. They’re not in the facility, but we’ve lost them.The security systems failed to engage. I’ve never seen a breach like this before. It's—it's all coming apart, the entire sector. We thought we had control-";
-	layer = 4;
-	icon_state = "paper_neo_words_crumpled_bloodied"
-	},
 /obj/item/clothing/head/exceslior/excelsior_officer{
 	name = "officer cap";
 	desc = "A peaked cap with a red triangle insignia.";
@@ -8284,8 +8277,13 @@
 	requires_power = 0
 	})
 "ET" = (
-/obj/machinery/light/small,
-/turf/open/pool,
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_y = 0;
+	light_color = "#8B0000"
+	},
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -8505,23 +8503,8 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "FI" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 2
-	},
-/obj/structure/snowfall{
-	name = "dust";
-	light_color = "#8B0000";
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/obj/structure/snowfall{
-	name = "dust";
-	light_color = "#8B0000";
-	light_range = 1;
-	desc = "Thick dust fills the air"
-	},
-/turf/simulated/floor/industrial,
+/obj/machinery/light/small,
+/turf/open/pool,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -9035,13 +9018,13 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "HC" = (
-/obj/structure/window/reinforced,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0;
-	light_color = "#8B0000"
+/obj/effect/floor_decal/industrial_plant,
+/mob/living/carbon/superior_animal/roach/tazntz,
+/obj/structure/snowfall{
+	name = "radioactive dust";
+	color = "#2CFA1F"
 	},
-/turf/simulated/floor/industrial/grey_slates,
+/turf/simulated/floor/industrial/fixed,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -10299,13 +10282,12 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "MC" = (
-/obj/structure/catwalk,
 /obj/machinery/light/small{
-	dir = 1;
+	dir = 8;
 	pixel_y = 0;
 	light_color = "#8B0000"
 	},
-/turf/simulated/floor/beach/water/flooded,
+/turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -12675,12 +12657,23 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Wn" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0;
-	light_color = "#8B0000"
+/obj/machinery/computer{
+	stat = 1;
+	dir = 2
 	},
-/turf/simulated/floor/industrial/checker_large,
+/obj/structure/snowfall{
+	name = "dust";
+	light_color = "#8B0000";
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/obj/structure/snowfall{
+	name = "dust";
+	light_color = "#8B0000";
+	light_range = 1;
+	desc = "Thick dust fills the air"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark{
 	name = "Alpha-09";
 	requires_power = 0
@@ -16101,7 +16094,7 @@ KE
 KO
 AG
 Ow
-MC
+ET
 cw
 XW
 tB
@@ -16909,7 +16902,7 @@ Lg
 KO
 Jv
 Ow
-MC
+ET
 Vz
 Vy
 tB
@@ -18717,7 +18710,7 @@ ZA
 XW
 XW
 EY
-Wn
+vT
 Uo
 SR
 SR
@@ -19942,7 +19935,7 @@ Uf
 JP
 JP
 JP
-sW
+MC
 JP
 XW
 qF
@@ -24374,7 +24367,7 @@ XW
 PW
 Fz
 Cb
-HC
+sW
 Cb
 XW
 sZ
@@ -27405,7 +27398,7 @@ qX
 qX
 qX
 qX
-ET
+FI
 XW
 JP
 rf
@@ -28213,7 +28206,7 @@ qX
 qX
 qX
 qX
-ET
+FI
 XW
 rf
 Cs
@@ -29635,7 +29628,7 @@ Dy
 kF
 yB
 UK
-tp
+HC
 KL
 UK
 RJ
@@ -29835,7 +29828,7 @@ XW
 OZ
 BS
 yB
-vT
+tp
 Ze
 ZH
 cb
@@ -38923,7 +38916,7 @@ Ds
 VU
 Hs
 Gk
-FI
+Wn
 Gk
 qn
 qn
