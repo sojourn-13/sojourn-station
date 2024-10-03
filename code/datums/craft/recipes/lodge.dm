@@ -349,7 +349,7 @@
 	)
 
 /datum/craft_recipe/lodge/hunter_rig
-	name = "Loge \"Apex\" control module"
+	name = "Lodge \"Apex\" control module"
 	result = /obj/item/rig/combat/hunter
 	icon_state = "clothing"
 	steps = list(
