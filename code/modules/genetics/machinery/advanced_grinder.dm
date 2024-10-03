@@ -54,7 +54,7 @@ list(
 
 /datum/design/research/circuit/advanced_grinder
 	name = "Blue-Ink Advanced Grinder"
-	desc = "Invented by a soteria scientist to make their lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
+	desc = "Invented by a Soteria scientist to make their lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
 	build_path = /obj/item/circuitboard/advanced_grinder
 	category = CAT_MEDI
 
