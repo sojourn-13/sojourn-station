@@ -5,7 +5,7 @@
 	icon_state = "cloak_mini"
 
 /obj/item/mini_hand_cloak_field/attack_self(mob/user as mob)
-	if(user.alpha != 32 || invisibility != INVISIBILITY_LEVEL_TWO)
+	if(user.alpha != 32 || user.invisibility != INVISIBILITY_LEVEL_TWO)
 		user.invisibility = INVISIBILITY_LEVEL_TWO
 		user.alpha = 32
 	else
