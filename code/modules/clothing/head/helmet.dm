@@ -778,7 +778,7 @@
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
 	brightness_on = 4
-	armor_list = list(melee =7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee =10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)

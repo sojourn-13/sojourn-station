@@ -67,7 +67,7 @@
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = MAP_FACTION
-	total_positions = 4
+	total_positions = 6
 	spawn_positions = 4
 	supervisors = "the Prime"
 	difficulty = "Easy to Medium."
