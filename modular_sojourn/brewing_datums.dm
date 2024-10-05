@@ -416,6 +416,18 @@
 	brewed_amount = 1
 	price_tag_setter = 1500
 
+//Psionic based drink
+/datum/brewing_product/witch_brew
+	reagent_to_brew = "witch_brew"
+	display_name = "Witches Brew"
+	//mint is wool of bat, reishi is toe of frog, herbell is Tongue of dog, lastly blueberries are meant to be eye of newt
+	needed_crops = list("mint" = 5, "reishi" = 10, "harebell" = 5, "blueberries" = 25)
+	needed_chems = list("sugarrush" = 60, "fringeweaver" = 60)
+	brew_timer = 5 MINUTES
+	brewed_amount = 1 //Every 5u is 1 psionic point so this gives you 6 points
+	price_tag_setter = 1000 //Fast and easy also not useful for anyone without psionics
+
+
 //Church exclusive brews
 /datum/brewing_product/ntcahors
 	reagent_to_brew = "ntcahors"
