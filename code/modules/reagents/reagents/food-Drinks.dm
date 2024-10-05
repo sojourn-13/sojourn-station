@@ -352,9 +352,9 @@
 	scannable = TRUE
 	common = TRUE
 
-//	Reasoning: Table salt is usually iodized. Iodine saturates glands. \
-	Glands are often getting screwed over by isotopes of iodine if exposed to radiation. \
-	Yes its a preventatitve method IRL but this is gamyfictaion.
+//	Reasoning: Table salt is usually iodized. Iodine saturates glands. 
+//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation. 
+//	Yes its a preventatitve method IRL but this is gamyfictaion.
 
 /datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
