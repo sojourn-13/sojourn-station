@@ -12,12 +12,16 @@ GLOBAL_LIST_INIT(hive_data_bool, list(
 	"slime_pop_lock"				= TRUE))
 
 GLOBAL_LIST_INIT(hive_data_float, list(
-	"maximum_controlled_areas"		= 0, // Stop expansion when controlling certain number of areas, 0 to disable
+	"maximum_controlled_areas"		= 0,  // Stop expansion when controlling certain number of areas, 0 to disable
 	"maximum_existing_mobs"			= 50, // Should be true in "hive_data_bool" to take effect, 0 means no hive mob spawn (except champions)
-	"gibbing_warning_timer"			= 0, //How many seconds of warning should be given before a humanoid body is gibbed by hivemind wires. 0 means it doesn't at all
+	"gibbing_warning_timer"			= 0,  // How many seconds of warning should be given before a humanoid body is gibbed by hivemind wires. 0 means it doesn't at all
 	"core_oddity_drop_chance"		= 50, // prob() of hive node leaving hive-themed oddity on death
-	"hivemind_emp_mult"				= 1, //Mult for emp damage, [negitive numbers heal] [0 disables] and [past 1 increases damage]
-	"hivemind_cover_spawn_odds"		= 20 //basically every tile will try and spawn one of this after a grow
+	"hivemind_emp_mult"				= 1,  // Mult for emp damage, [negitive numbers heal] [0 disables] and [past 1 increases damage]
+	"hivemind_cover_spawn_odds"		= 20, // Basically every tile will try and spawn one of this after a grow
+	"hivemind_mob_spawn_odds"		= 4,  // Basically every tile will try and spawn one of this after a grow
+	"hivemind_machine_spawn_odds"	= 6   // Basically every tile will try and spawn one of this after a grow
+
+
 	))
 
 GLOBAL_LIST_INIT(hive_names, list("Von Neumann", "Lazarus", "Abattoir", "Auto-Surgeon", "NanoTrasen",
@@ -81,8 +85,6 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 		data += "<br>Give Hivemind Points: \
 		<a href='?src=\ref[src];give_points=1'>\[Give\]</a>"
-
-
 	else
 		data += "<br>Hivemind is not active. Yet."
 		data += "<br>Name: [_name] <a href='?src=\ref[src];set_name=1'>\[SET\]</a>"
@@ -107,18 +109,27 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 		data += "<br>Area limit disabled."
 	data += "<a href='?src=\ref[src];set_area_limit=1'>\[SET\]</a>"
 
-
 	if(hive_mind_ai)
 		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/[hive_mind_ai.evo_level]%  \
 		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+
+		data += "<br>Mob Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_mob_spawn_odds"]]+[hive_mind_ai.evo_level]%  \
+		<a href='?src=\ref[src]mob_odds=1'>\[SET\]</a>"
+
+		data += "<br>Machine Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_machine_spawn_odds"]]-[hive_mind_ai.evo_level]%  \
+		<a href='?src=\ref[src];machine_odds=1'>\[SET\]</a>"
 	else
 		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/1%  \
 		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
 
+		data += "<br>Mob Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_mob_spawn_odds"]]+1%  \
+		<a href='?src=\ref[src]mob_odds=1'>\[SET\]</a>"
+
+		data += "<br>Machine Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_machine_spawn_odds"]]-1%  \
+		<a href='?src=\ref[src];machine_odds=1'>\[SET\]</a>"
 
 	data += "<br>Core oddity drop chance: [GLOB.hive_data_float["core_oddity_drop_chance"]] \
 	<a href='?src=\ref[src];rig_gacha=1'>\[SET\]</a>"
-
 
 	data += "<br>How Long before Gibbing Humans? (0 is disabled): [GLOB.hive_data_float["gibbing_warning_timer"]] \
 	<a href='?src=\ref[src];set_gibbing_warning_timer=1'>\[SET\]</a>"
@@ -192,6 +203,15 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	if(href_list["cover_odds"])
 		var/cover_me = input(usr, "Percentage probability of hive wire spawning a cover machine", "Hivemind Cover Spam") as null|num
 		GLOB.hive_data_float["hivemind_cover_spawn_odds"] = CLAMP(cover_me ? cover_me : 0, 0, 500)
+
+	if(href_list["mob_odds"])
+		var/cover_me = input(usr, "Percentage probability of hive wire spawning a random hivemind mob", "Hivemind Mob Spam") as null|num
+		GLOB.hive_data_float["hivemind_mob_spawn_odds"] = CLAMP(cover_me ? cover_me : 0, 0, 500)
+
+	if(href_list["machine_odds"])
+		var/cover_me = input(usr, "Percentage probability of hive wire spawning a hivemind machine", "Hivemind Machine Spam") as null|num
+		GLOB.hive_data_float["hivemind_machine_spawn_odds"] = CLAMP(cover_me ? cover_me : 0, 0, 500)
+
 
 	if(href_list["set_gibbing_warning_timer"])
 		var/timer = input(usr, "Time in seconds before human bodies are destroyed on wires, 0 to disable", "Time in Seconds") as null|num
