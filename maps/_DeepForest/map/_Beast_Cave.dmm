@@ -84,6 +84,10 @@
 /obj/structure/flora/rock,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"av" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "aw" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water,
@@ -237,16 +241,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bd" = (
-/obj/machinery/telecomms/relay{
-	name = "Broken LUMAR Relay Antenna";
-	icon_state = "relay_off";
-	desc = "Broken remains of a relay"
-	},
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/lattice,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "be" = (
 /obj/effect/decal/cleanable/dirt,
@@ -288,13 +285,15 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bl" = (
-/obj/structure/flora/ausbushes/leafybush,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	icon_state = "os-machine";
+	dir = 1
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "bm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -302,14 +301,6 @@
 "bn" = (
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_light)
-"bo" = (
-/obj/item/remains/unathi,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_light)
-"bp" = (
-/obj/structure/salvageable/computer_os,
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "bq" = (
 /obj/structure/flora/rock/variant2,
 /obj/effect/decal/cleanable/cobweb,
@@ -337,22 +328,17 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "bu" = (
-/obj/item/remains/ribcage,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"bv" = (
-/turf/simulated/mineral/planet{
-	icon_state = "rock2"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"bw" = (
 /obj/structure/railing/grey{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "data1"
-	},
-/turf/simulated/wall/r_wall,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/boulder,
+/obj/structure/invislight,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_light)
+"bv" = (
+/obj/structure/bed/chair/office/light,
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "bx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -376,6 +362,11 @@
 /obj/item/organ_module/active/simple/armblade/energy_blade,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"bB" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "bC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -708,6 +699,7 @@
 /obj/structure/boulder,
 /obj/structure/boulder,
 /obj/structure/flora/small/lavarock1,
+/obj/structure/barricade,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "cL" = (
@@ -1862,6 +1854,13 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"gY" = (
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall27";
+	tag = "icon-escpodwall27"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "gZ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/big/bush3,
@@ -1991,6 +1990,14 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"hw" = (
+/obj/structure/girder{
+	desc = "The support structure of an antenna.";
+	name = "Radio Antenna Pillar";
+	health = 99999
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "hx" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -2100,8 +2107,8 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "hP" = (
-/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter,
-/turf/simulated/floor/asteroid/shale,
+/obj/structure/flora/small/snow/rock4,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "hQ" = (
 /obj/structure/flora/ausbushes/palebush,
@@ -2282,11 +2289,11 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ix" = (
-/obj/structure/ameridian_crystal,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/salvageable/computer_os{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "iy" = (
 /obj/structure/shuttle/engine/platform,
 /obj/structure/shuttle/engine/propulsion{
@@ -2319,6 +2326,13 @@
 /mob/living/simple_animal/chicken,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
+"iD" = (
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair."
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "iE" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt,
@@ -4094,7 +4108,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "oO" = (
-/turf/unsimulated/mineral/cold,
+/turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "oP" = (
 /obj/structure/flora/small/bushb2,
@@ -4162,10 +4176,11 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pb" = (
-/obj/structure/flora/big/rocks1,
-/obj/random/mob/vox/low_chance,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/salvageable/computer_os{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "pc" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4174,6 +4189,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "pd" = (
 /obj/item/tool/weldingtool/advanced,
+/obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pe" = (
@@ -4264,11 +4280,8 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pt" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall28";
-	tag = "icon-escpodwall28"
-	},
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pu" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4373,10 +4386,6 @@
 /mob/living/simple_animal/hostile/dino,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"pP" = (
-/obj/structure/flora/small/grassa2,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "pQ" = (
 /obj/random/traps/low_chance,
 /obj/effect/overlay/water/top,
@@ -4481,19 +4490,17 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "qj" = (
-/obj/item/trash/material/metal{
-	icon_state = "metal2"
+/obj/item/contraband/poster/placed/eris/techno{
+	desc = "MARC Insignia";
+	name = "MARC"
 	},
-/turf/simulated/floor/fixed/shale/dark,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qk" = (
-/obj/structure/flora/tree/jungle/variant1,
-/turf/simulated/floor/beach/sand/desert,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ql" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/obj/structure/lattice,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qm" = (
@@ -4512,15 +4519,10 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "qo" = (
-/obj/effect/floor_decal/corner/white/border{
-	dir = 1
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 6
 	},
-/obj/structure/railing{
-	tag = "icon-railing0 (NORTH)";
-	icon_state = "railing0";
-	dir = 1
-	},
-/turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qp" = (
 /obj/structure/flora/big/bush2,
@@ -4528,41 +4530,30 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qq" = (
-/obj/structure/bed/chair/office/light,
-/obj/item/remains/mummy2,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"qr" = (
-/obj/structure/lattice,
-/obj/item/trash/material/metal{
-	icon_state = "metal1"
-	},
-/turf/simulated/floor/asteroid/shale,
+/obj/structure/flora/small/snow/boulder1,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
-"qs" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server0"
-	},
+"qr" = (
+/obj/effect/decal/cleanable/dirt/snow,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"qt" = (
-/obj/item/contraband/poster/placed/eris/techno{
-	desc = "MARC Insignia";
-	name = "MARC"
+"qs" = (
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall10";
+	tag = "icon-escpodwall10"
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
+"qt" = (
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qu" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid/shale,
+/obj/machinery/light,
+/obj/item/roller,
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qv" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -4571,12 +4562,14 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "qw" = (
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 6
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall20";
+	tag = "icon-escpodwall20"
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "qx" = (
-/turf/simulated/floor/snow,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qy" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4612,6 +4605,10 @@
 "qD" = (
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"qE" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_light)
 "qF" = (
 /obj/item/tool/wrench/big_wrench,
 /obj/structure/snowfall{
@@ -4739,17 +4736,18 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"ra" = (
-/obj/structure/flora/big/rocks1,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "rb" = (
 /obj/item/trash/tray,
 /obj/random/scrap/moderate_weighted,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"rc" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall19";
+	tag = "icon-escpodwall19"
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "rd" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/sand,
@@ -4911,22 +4909,17 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "rD" = (
-/obj/effect/decal/warning_stripes,
-/obj/structure/table{
-	name = "Probe Core slot"
+/obj/structure/railing/grey,
+/obj/structure/salvageable/data_os{
+	icon_state = "computer0"
 	},
-/obj/item/oddity/ls/puzzlebox,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "rE" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"rF" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "rG" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -4986,11 +4979,10 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "rT" = (
-/obj/effect/floor_decal/industrial/outputgate{
-	name = "Machinery"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "rU" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5020,6 +5012,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"sb" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "sc" = (
 /obj/structure/bed/roller,
 /obj/item/remains,
@@ -5052,10 +5056,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"sk" = (
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "sl" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5241,15 +5241,16 @@
 /obj/structure/flora/rock,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"sT" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall22";
+	tag = "icon-escpodwall22"
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "sU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"sV" = (
-/obj/effect/floor_decal/corner/white/border,
-/obj/structure/railing,
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "sW" = (
 /obj/structure/window/reinforced,
 /obj/machinery/light/small{
@@ -5384,6 +5385,18 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"tv" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "tw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/low_chance,
@@ -5437,14 +5450,20 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "tG" = (
+/obj/machinery/telecomms/relay{
+	name = "Broken LUMAR Relay Antenna";
+	icon_state = "relay_off";
+	desc = "Broken remains of a relay"
+	},
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/obj/structure/railing/grey,
 /obj/structure/railing/grey{
-	dir = 8
+	dir = 1
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server0"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "tH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -5492,8 +5511,12 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "tR" = (
-/obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/obj/item/remains/human,
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "tS" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -5565,29 +5588,22 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "ug" = (
-/obj/machinery/light{
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
+"uh" = (
+/obj/item/caution/cone,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"uh" = (
-/obj/item/coin/gold{
-	name = "token";
-	desc = "Ten Reseasrch Credits"
-	},
-/turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/outside/forest/beast_cave_light)
 "ui" = (
-/turf/simulated/floor/beach/water/coastwatercorner{
-	dir = 4
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/ground,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -5599,43 +5615,33 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "ul" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall18";
-	tag = "icon-escpodwall18"
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 10
 	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "um" = (
-/obj/structure/girder,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/item/remains/xeno,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "un" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "computer0"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "uo" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_light)
 "up" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/boulder,
-/obj/structure/invislight,
-/turf/simulated/floor/rock,
+/obj/effect/floor_decal/industrial/road/straight1,
+/turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "uq" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/girder,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "ur" = (
 /obj/structure/table/standard,
 /obj/random/junkfood/rotten/low_chance,
@@ -5820,15 +5826,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
-"uQ" = (
-/obj/structure/lattice,
-/obj/machinery/telecomms/relay{
-	name = "Broken LUMAR Relay Antenna";
-	icon_state = "relay_off";
-	desc = "Broken remains of a relay"
-	},
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "uR" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/bottles,
@@ -5855,8 +5852,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uV" = (
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/floor/snow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "uW" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/gloves/insulated,
@@ -5932,10 +5929,9 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vj" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/remains/unathi,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "vk" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -5986,6 +5982,11 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
+"vs" = (
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 6
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "vt" = (
 /obj/item/seeds/shandseed,
 /obj/item/seeds/shandseed,
@@ -5995,14 +5996,9 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
-"vu" = (
-/turf/simulated/floor/beach/water/coastwatercorner{
-	dir = 8
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "vv" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/unsimulated/mineral,
+/obj/structure/flora/tree/jungle/variant1,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vw" = (
 /obj/machinery/light/small,
@@ -6036,18 +6032,10 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vB" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/railing/grey{
+	dir = 1
 	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
+/obj/structure/flora/pottedplant/thinbush,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "vC" = (
@@ -6091,11 +6079,14 @@
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "vI" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/structure/railing/grey{
-	dir = 8
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
 	},
-/turf/simulated/wall/r_wall,
+/mob/living/simple_animal/hostile/creature/tissue,
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "vJ" = (
 /obj/item/trash/material/metal{
@@ -6108,6 +6099,18 @@
 /turf/simulated/mineral/planet{
 	icon_state = "rock2"
 	},
+/area/nadezhda/outside/forest/beast_cave_light)
+"vL" = (
+/obj/machinery/telecomms/relay{
+	name = "Broken LUMAR Relay Antenna";
+	icon_state = "relay_off";
+	desc = "Broken remains of a relay"
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vM" = (
 /obj/structure/closet/crate,
@@ -6127,28 +6130,46 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "vO" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall29";
-	tag = "icon-escpodwall29"
+/obj/structure/flora/pottedplant/dead,
+/obj/machinery/light{
+	dir = 4
 	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"vQ" = (
+"vP" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"vQ" = (
+/obj/item/trash/material/metal{
+	icon_state = "metal2"
+	},
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "vR" = (
 /obj/random/flora/jungle_tree,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vS" = (
-/obj/structure/girder,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/turf/simulated/floor/beach/water/coastwatercorner{
+	dir = 8
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "vT" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob,
 /turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"vU" = (
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair."
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "vV" = (
 /obj/structure/low_wall,
@@ -6167,12 +6188,6 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"vX" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall19";
-	tag = "icon-escpodwall19"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "vY" = (
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/asteroid/dirt,
@@ -6183,9 +6198,12 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wa" = (
-/obj/item/remains/ribcage,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/table/steel_reinforced,
+/obj/item/roller{
+	pixel_y = 10
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "wc" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -6205,7 +6223,15 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "we" = (
-/obj/structure/flora/rock/variant2,
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/tree/jungle_small/variant3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"wf" = (
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall18";
+	tag = "icon-escpodwall18"
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wg" = (
@@ -6227,10 +6253,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"wj" = (
-/obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "wk" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -6242,25 +6264,11 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"wm" = (
-/obj/machinery/light{
-	dir = 8
+"wo" = (
+/obj/effect/floor_decal/industrial/outputgate{
+	name = "Machinery"
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"wn" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 8;
-	desc = "A one meter section of cables";
-	name = "Power Cables"
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wp" = (
 /obj/structure/boulder,
@@ -6289,10 +6297,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"ws" = (
-/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "wt" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -6302,9 +6306,10 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ww" = (
-/obj/random/cluster/tengolo,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/bed/chair/office/light,
+/obj/item/remains/mummy2,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "wx" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/rock,
@@ -6320,20 +6325,6 @@
 /obj/item/stack/material/glass/random,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"wB" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 8;
-	desc = "A one meter section of cables";
-	name = "Power Cables"
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "wC" = (
 /obj/structure/curtain/open/bed{
 	name = "tarnished curtain"
@@ -6350,11 +6341,8 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "wE" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "wF" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -6371,10 +6359,8 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wI" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall21";
-	tag = "icon-escpodwall21"
-	},
+/obj/structure/flora/small/snow/boulder2,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wJ" = (
 /obj/machinery/computer{
@@ -6434,20 +6420,19 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wR" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/table/woodentable,
+/obj/item/phone{
+	desc = "An old rotary dial phone. You can swear you can hear static coming from it..."
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "wS" = (
 /obj/random/oddity_guns,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"wT" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall4";
-	tag = "icon-escpodwall4"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "wU" = (
 /mob/living/simple_animal/hostile/plant/alt,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -6484,6 +6469,20 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"wZ" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 8;
+	desc = "A one meter section of cables";
+	name = "Power Cables"
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "xa" = (
 /turf/simulated/floor/beach/water/coastwater{
 	dir = 4
@@ -6502,14 +6501,17 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"xd" = (
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "xe" = (
 /obj/structure/flora/small/trailrockb4,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "xf" = (
-/turf/simulated/floor/beach/water/coastwatercorner{
-	dir = 1
-	},
+/mob/living/simple_animal/hostile/carp/pike,
+/turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xg" = (
 /obj/structure/sign/warning/secure_area/small{
@@ -6517,14 +6519,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"xh" = (
-/obj/item/remains/human,
-/obj/structure/flora/big/bush2{
-	pixel_x = -13;
-	pixel_y = -30
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "xi" = (
 /obj/structure/table/rack/shelf,
 /obj/random/cloth/belt,
@@ -6570,6 +6564,9 @@
 /obj/effect/damagedfloor/fire,
 /obj/item/remains,
 /turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"xs" = (
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "xu" = (
 /obj/structure/snowfall{
@@ -6678,15 +6675,9 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "xK" = (
-/obj/machinery/door/blast/regular{
-	name = "LOCKDOWN"
-	},
-/obj/machinery/door/airlock/glass{
-	name = "Command Centre";
-	welded = 1
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/ameridian_crystal,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "xL" = (
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock/dark,
@@ -6706,19 +6697,28 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"xO" = (
+/obj/item/remains/tajaran,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/asteroid/dirt/ground,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "xP" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "data0"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "xQ" = (
 /mob/living/simple_animal/hostile/plant,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"xR" = (
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "xS" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -6740,10 +6740,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"xV" = (
-/obj/item/tool/weldingtool/advanced,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "xW" = (
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -6769,19 +6765,13 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "yb" = (
-/obj/structure/disposalpipe/broken{
-	dir = 8
+/obj/structure/flora/small/lavarock3,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
+"yc" = (
+/turf/simulated/mineral/planet{
+	icon_state = "rock2"
 	},
-/obj/structure/disposalpipe/broken{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "yd" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
@@ -6823,27 +6813,15 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"yj" = (
-/obj/structure/catwalk{
-	icon_state = "catwalk-broken"
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "yk" = (
-/obj/structure/flora/big/bush1,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
-"yl" = (
-/mob/living/simple_animal/hostile/carp/greatwhite,
-/turf/simulated/floor/beach/water/shallow,
+/obj/random/cluster/golem/low_chance,
+/turf/simulated/floor/icewater,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ym" = (
-/obj/structure/flora/big/bush3,
-/obj/structure/boulder,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/bed/roller,
+/obj/item/remains,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "yn" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/computer{
@@ -6853,9 +6831,10 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "yo" = (
-/obj/structure/girder,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "yp" = (
 /obj/item/caution/cone,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -6870,25 +6849,17 @@
 	name = "Radioactive Waste"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"yr" = (
-/obj/structure/girder{
-	desc = "The support structure of an antenna.";
-	name = "Radio Antenna Pillar";
-	health = 99999
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "ys" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yt" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 9
+/obj/structure/bed/chair{
+	dir = 4
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "yu" = (
 /obj/machinery/light/small,
 /obj/structure/window/reinforced{
@@ -6898,26 +6869,28 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "yv" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall6";
-	opacity = 0
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
-"yw" = (
-/obj/structure/salvageable/computer_os{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"yw" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "yx" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yy" = (
-/obj/structure/flora/small/grassa2,
-/obj/structure/flora/small/grassa2,
-/turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall6";
+	opacity = 0
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "yz" = (
 /obj/structure/table/reinforced,
 /obj/item/tool/minihoe,
@@ -6935,6 +6908,19 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"yC" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
+"yD" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/item/reagent_containers/food/snacks/meat{
+	icon_state = "rottenmeat"
+	},
+/obj/random/cluster/tengolo,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "yE" = (
 /obj/structure/table/woodentable,
 /obj/item/oddity/common/paper_omega{
@@ -6988,20 +6974,18 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"yL" = (
-/obj/structure/catwalk,
-/obj/machinery/light,
-/obj/structure/largecrate/animal/corgi,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"yN" = (
-/obj/structure/lattice,
-/obj/machinery/telecomms/relay{
-	name = "LUMAR Relay Antenna"
-	},
+"yM" = (
 /obj/structure/catwalk,
 /obj/structure/lattice,
 /turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
+"yN" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yO" = (
 /obj/effect/decal/cleanable/rubble,
@@ -7052,14 +7036,6 @@
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"yX" = (
-/turf/simulated/floor/asteroid/dirt{
-	icon_state = "dust"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
-"yY" = (
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "yZ" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/lizard,
@@ -7070,12 +7046,6 @@
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"zb" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 8
-	},
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/structures/low_chance,
@@ -7110,19 +7080,14 @@
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"zj" = (
-/obj/structure/railing/grey,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zk" = (
 /obj/structure/flora/small/trailrockb5,
 /mob/living/simple_animal/hostile/sargoyle,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zl" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/cloth/hazmatsuit/low_chance,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/ameridian_crystal,
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "zm" = (
 /obj/effect/overlay/water/top,
@@ -7143,13 +7108,9 @@
 	},
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"zq" = (
-/mob/living/simple_animal/hostile/carp/pike,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zr" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/simulated/floor/rock,
+/obj/structure/flora/small/snow/rock2,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "zs" = (
 /turf/simulated/wall/wood_old,
@@ -7241,12 +7202,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"zJ" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zK" = (
 /obj/random/material_resources,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -7283,15 +7238,6 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"zR" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall10";
-	tag = "icon-escpodwall10"
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zT" = (
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -7332,24 +7278,10 @@
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"zY" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "zZ" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall24";
-	opacity = 0
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Aa" = (
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/bed/chair/shuttle,
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ab" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7373,45 +7305,39 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Af" = (
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	dir = 1
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ag" = (
 /mob/living/simple_animal/hostile/snake,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ah" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ai" = (
-/obj/item/trash/material/metal,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/ground,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Aj" = (
-/obj/structure/railing/grey,
-/obj/structure/salvageable/data_os{
-	icon_state = "computer0"
+/turf/simulated/floor/icewater,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Al" = (
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/structure/railing/grey{
+	dir = 8
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ak" = (
-/obj/structure/bed/chair/office/light,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/remains/mummy2,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Al" = (
-/mob/living/simple_animal/hostile/carp,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Am" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Surveillance"
@@ -7419,8 +7345,9 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "An" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/rock,
+/obj/effect/floor_decal/corner/white/border,
+/obj/structure/railing,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ao" = (
 /obj/structure/flora/big/bush2,
@@ -7438,10 +7365,12 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Aq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/railing/grey,
+/obj/structure/salvageable/data_os{
+	icon_state = "data1"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ar" = (
 /obj/structure/shuttle/engine/platform,
 /obj/structure/shuttle/engine/propulsion{
@@ -7458,21 +7387,21 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "At" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	dir = 1
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall9";
+	tag = "icon-escpodwall9"
 	},
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Au" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/mining/drill{
+	anchored = 1
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Av" = (
-/obj/structure/girder/displaced,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Aw" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -7591,17 +7520,14 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "AQ" = (
-/obj/structure/railing/grey,
-/obj/structure/salvageable/data_os{
-	icon_state = "server0"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "AR" = (
-/mob/living/simple_animal/hostile/carp,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/tool/weldingtool/advanced,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "AS" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -7614,10 +7540,11 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "AT" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass,
+/obj/item/coin/gold{
+	name = "token";
+	desc = "Ten Reseasrch Credits"
+	},
+/turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "AU" = (
 /obj/effect/overlay/water,
@@ -7640,18 +7567,31 @@
 /obj/random/gun_fancy/alawys_spawn,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"AZ" = (
-/obj/structure/boulder,
-/turf/simulated/floor/beach/water/coastwatercorner{
+"AX" = (
+/obj/structure/bed/chair/office/light,
+/obj/machinery/light{
 	dir = 8
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/remains/mummy2,
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"AZ" = (
+/obj/structure/flora/big/bush2,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ba" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
 /obj/random/spider_trap/low_chance,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Bb" = (
+/mob/living/carbon/superior_animal/ameridian_golem/runtling,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Bc" = (
 /obj/structure/railing,
 /turf/simulated/floor/wood/wild4,
@@ -7678,12 +7618,7 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Bj" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Bl" = (
+"Bi" = (
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/structure/railing/grey{
@@ -7694,19 +7629,24 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Bj" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Bl" = (
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall28";
+	tag = "icon-escpodwall28"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Bm" = (
 /obj/structure/flora/small/trailrocka2,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bn" = (
 /turf/simulated/wall/iron,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Bo" = (
-/obj/structure/flora/pottedplant/dead,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Bp" = (
 /obj/structure/bed/chair/office/dark{
@@ -7741,12 +7681,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Bx" = (
-/obj/structure/lattice,
-/obj/item/trash/material/metal{
-	icon_state = "circuit2"
+/obj/effect/floor_decal/industrial_plant,
+/obj/item/reagent_containers/food/snacks/meat{
+	icon_state = "rottenmeat"
 	},
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "By" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/unsimulated/wall/jungle,
@@ -7789,10 +7729,10 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "BE" = (
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 9
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/caution/cone,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "BG" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
@@ -7815,9 +7755,9 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "BI" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "BJ" = (
 /obj/machinery/door/airlock/hatch{
 	locked = 1
@@ -7873,6 +7813,10 @@
 /obj/item/storage/hcases/med/has_items_spawn,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"BR" = (
+/mob/living/simple_animal/hostile/carp/shark,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "BS" = (
 /obj/structure/sign/warning/hot_exhaust/small,
 /turf/simulated/wall/r_wall,
@@ -7891,20 +7835,29 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
-"BW" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 10
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "BX" = (
 /obj/structure/flora/small/trailrockb3,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"BY" = (
+/obj/structure/disposalpipe/broken{
+	dir = 8
+	},
+/obj/structure/disposalpipe/broken{
+	dir = 4
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "BZ" = (
-/obj/structure/barricade,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/item/trash/material/metal,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ca" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/mineral/random/rogue,
@@ -7923,12 +7876,11 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Cd" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/catwalk{
-	icon_state = "catwalk-broken"
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall20";
+	tag = "icon-escpodwall20"
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ce" = (
 /obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
 /obj/item/stack/ore/glass,
@@ -7945,12 +7897,19 @@
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Cg" = (
-/obj/structure/ameridian_crystal,
-/turf/simulated/floor/asteroid/shale,
+/obj/structure/boulder,
+/obj/structure/invislight,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ch" = (
 /obj/structure/largecrate,
 /turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Ci" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/invislight,
+/obj/random/cluster/tengolo,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Cj" = (
 /obj/structure/flora/small/grassa5,
@@ -7989,14 +7948,12 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Cq" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/inputgate{
-	name = "Machinery"
-	},
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/floor_decal/industrial_plant,
+/obj/random/firstaid,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Cr" = (
 /obj/structure/flora/big/bush2,
@@ -8025,13 +7982,8 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Cv" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
-/turf/simulated/wall/r_wall,
+/obj/structure/bed/chair/shuttle,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Cw" = (
 /obj/structure/flora/big/bush2,
@@ -8057,8 +8009,10 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "CB" = (
-/obj/structure/flora/small/lavarock2,
-/turf/simulated/floor/beach/sand/desert,
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall17";
+	tag = "icon-escpodwall17"
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "CC" = (
 /obj/structure/multiz/stairs/enter,
@@ -8074,26 +8028,31 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"CF" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "CH" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "CI" = (
-/obj/structure/railing/grey,
-/obj/structure/salvageable/data_os{
-	icon_state = "data1"
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
 	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/railing{
+	tag = "icon-railing0 (NORTH)";
+	icon_state = "railing0";
+	dir = 1
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "CJ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"CK" = (
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "CL" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -8154,10 +8113,13 @@
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "CU" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
+"CV" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "CW" = (
 /obj/structure/reagent_dispensers/fueltank{
@@ -8170,12 +8132,6 @@
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"CY" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall20";
-	tag = "icon-escpodwall20"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "CZ" = (
 /obj/effect/overlay/water/top,
 /obj/structure/flora/small/bushb2,
@@ -8200,18 +8156,22 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Dc" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/floor/asteroid/dirt/ground,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Dd" = (
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"De" = (
+/obj/structure/flora/small/rock2,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Df" = (
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Dg" = (
+/mob/living/simple_animal/hostile/carp,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Dh" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -8223,10 +8183,13 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Dj" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Dk" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
@@ -8240,22 +8203,24 @@
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Dm" = (
-/obj/structure/flora/tree/dead,
-/turf/simulated/floor/snow,
+/turf/simulated/floor/beach/water/coastwatercorner{
+	dir = 4
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Dn" = (
-/obj/effect/floor_decal/corner_techfloor_grid,
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Dp" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Dq" = (
-/mob/living/carbon/superior_animal/ameridian_golem,
-/turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Dr" = (
 /obj/structure/scrap/food,
@@ -8283,15 +8248,23 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Du" = (
+/obj/structure/flora/small/grassa2,
+/obj/structure/flora/small/grassa2,
+/turf/unsimulated/mineral,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Dv" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Dw" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall11";
+	tag = "icon-escpodwall11"
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Dx" = (
 /obj/structure/flora/small/lavarock2,
@@ -8358,6 +8331,10 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"DG" = (
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "DI" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/syringe,
@@ -8389,24 +8366,27 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
+"DM" = (
+/obj/structure/lattice,
+/obj/machinery/telecomms/relay{
+	name = "Broken LUMAR Relay Antenna";
+	icon_state = "relay_off";
+	desc = "Broken remains of a relay"
+	},
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "DN" = (
 /obj/random/gun_shotgun/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "DO" = (
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/flora/tree/dead,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "DP" = (
-/obj/effect/floor_decal/corner/white/border{
-	dir = 4
-	},
-/obj/structure/cryofeed{
-	dir = 2;
-	tag = "icon-cryo_rear (EAST)";
-	name = "Data Feed"
-	},
-/turf/simulated/floor/greengrid,
+/obj/structure/railing/grey,
+/obj/structure/flora/small/bushb3,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "DQ" = (
 /obj/structure/sign/levels/stairsdown,
@@ -8420,12 +8400,14 @@
 /obj/item/tool/weldingtool/advanced,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"DU" = (
-/obj/structure/salvageable/computer_os{
-	dir = 4
+"DT" = (
+/obj/effect/decal/warning_stripes,
+/obj/structure/table{
+	name = "Probe Core slot"
 	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/item/oddity/ls/puzzlebox,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/outside/forest/beast_cave_light)
 "DV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light{
@@ -8461,12 +8443,6 @@
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ea" = (
-/obj/item/remains/xeno,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/rock/seafloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Eb" = (
 /obj/structure/curtain/open/shower,
 /obj/machinery/shower{
@@ -8507,6 +8483,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Ei" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ej" = (
 /obj/effect/overlay/water,
 /obj/random/flora/small_jungle_tree,
@@ -8547,6 +8527,19 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Eo" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/telecomms/relay{
+	name = "Broken LUMAR Relay Antenna";
+	icon_state = "relay_off";
+	desc = "Broken remains of a relay"
+	},
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ep" = (
 /obj/item/honey_frame/filled,
 /turf/simulated/floor/rock,
@@ -8572,23 +8565,17 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Et" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/small/bushb2,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Eu" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/structure/invislight,
-/obj/random/cluster/tengolo,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ev" = (
-/obj/effect/floor_decal/industrial/road/straight3,
+/obj/structure/plushie/carp{
+	dir = 4
+	},
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ew" = (
@@ -8626,6 +8613,13 @@
 /obj/structure/inflatable/door,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"EB" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "EC" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/industrial,
@@ -8641,11 +8635,6 @@
 "EF" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/outside/forest/beast_cave_light)
-"EG" = (
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 5
-	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "EH" = (
 /obj/effect/floor_decal/industrial/warningdust,
@@ -8673,17 +8662,20 @@
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_light)
 "EL" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/structure/flora/big/bush2{
-	pixel_x = -13;
-	pixel_y = -30
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/effect/floor_decal/industrial/road/curve2,
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/outside/forest/beast_cave_light)
 "EM" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"EN" = (
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "EO" = (
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
 /obj/item/clothing/head/helmet/faceshield/altyn/maska,
@@ -8730,8 +8722,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "EV" = (
-/obj/item/remains/deer,
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/big/bush2,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "EW" = (
 /obj/structure/flora/pottedplant/shoot,
@@ -8797,11 +8789,10 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ff" = (
-/turf/simulated/shuttle/wall/escpod{
-	dir = 4;
-	icon_state = "escpodwall14"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Fh" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/rock/dark,
@@ -8828,14 +8819,16 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Fl" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"Fm" = (
-/obj/random/cluster/golem/low_chance,
-/turf/simulated/floor/icewater,
+/turf/simulated/floor/beach/water/coastwatercorner{
+	dir = 1
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fm" = (
+/obj/structure/catwalk,
+/obj/machinery/light,
+/obj/structure/largecrate/animal/corgi,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Fn" = (
 /obj/random/rig_module,
 /turf/simulated/floor/plating/under,
@@ -8866,10 +8859,6 @@
 /obj/structure/low_wall,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Fs" = (
-/obj/structure/barricade,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Ft" = (
 /mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/swamp,
@@ -8896,6 +8885,12 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fy" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/flora/big/bush2,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Fz" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/psych{
@@ -8918,28 +8913,24 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FB" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall26";
-	tag = "icon-escpodwall26"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/tree/jungle_small/variant3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "FC" = (
-/obj/structure/catwalk,
-/obj/structure/largecrate/animal/corgi,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"FD" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/structure/railing/grey{
-	dir = 8
+/obj/item/clothing/accessory/medal/gold{
+	name = "Exceptional Research medal";
+	desc = "A prestigious golden medal awarded for accomplishments in the field of gesnetics."
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "data0"
+/obj/effect/damagedfloor/fire{
+	icon_state = "damaged3"
 	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/damagedfloor/fire{
+	icon_state = "damaged2"
+	},
+/turf/simulated/floor/asteroid/dirt{
+	icon_state = "dust"
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "FE" = (
 /obj/effect/overlay/water,
 /obj/structure/flora/big/bush2{
@@ -8983,9 +8974,10 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "FK" = (
-/obj/structure/ameridian_crystal,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/flora/big/bush1,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "FL" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/xeno,
@@ -9003,15 +8995,20 @@
 /obj/item/stack/material/glass/random,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"FO" = (
+/obj/structure/ameridian_crystal,
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
+"FP" = (
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair."
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
+/obj/structure/flora/big/rocks1,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "FR" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
@@ -9036,10 +9033,6 @@
 	dir = 4;
 	pixel_y = 8
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"FW" = (
-/obj/item/caution/cone,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "FX" = (
@@ -9073,13 +9066,17 @@
 /obj/item/stack/material/wood,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Gd" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/drill{
-	anchored = 1
+"Ge" = (
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	icon_state = "os-machine"
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Gf" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -9127,6 +9124,12 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Gn" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 9
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "Go" = (
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial,
@@ -9180,14 +9183,15 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Gx" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Gy" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Gz" = (
+/obj/structure/flora/tree/jungle_small/variant5,
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "GA" = (
 /mob/living/simple_animal/hostile/bear/mukwah,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -9217,6 +9221,15 @@
 "GE" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"GF" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "GG" = (
 /obj/effect/spider/stickyweb,
 /obj/random/firstaid/low_chance,
@@ -9226,13 +9239,14 @@
 /obj/structure/fireaxecabinet,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"GI" = (
+/obj/structure/flora/big/rocks1,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "GJ" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_light)
-"GK" = (
-/obj/structure/flora/small/snow/boulder2,
-/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "GM" = (
 /obj/random/science,
@@ -9273,12 +9287,6 @@
 	},
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"GT" = (
-/obj/structure/salvageable/computer_os{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "GU" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -9306,12 +9314,8 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "GX" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall11";
-	tag = "icon-escpodwall11"
-	},
+/obj/structure/flora/small/snow/rock1,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "GY" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -9349,16 +9353,12 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Hf" = (
-/obj/random/cluster/tengolo,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/item/remains/ribcage,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Hg" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Hh" = (
-/obj/structure/flora/small/lavarock3,
-/turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Hi" = (
 /obj/machinery/computer{
@@ -9413,13 +9413,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Hq" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
-	icon_state = "rottenmeat"
-	},
-/obj/random/cluster/tengolo,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/small/bushb2,
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Hr" = (
 /obj/item/ammo_magazine/rifle_75/lethal,
 /obj/item/gun_upgrade/trigger/dangerzone,
@@ -9434,23 +9431,26 @@
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Ht" = (
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Hu" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central1{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Hv" = (
-/obj/structure/flora/small/lavarock1,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Hw" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/sign/warning/hot_exhaust/small,
 /turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Hx" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Hy" = (
 /obj/structure/scrap/food/large,
@@ -9491,6 +9491,15 @@
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"HD" = (
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"HE" = (
+/obj/structure/flora/big/bush3,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_light)
 "HF" = (
 /obj/structure/catwalk{
 	icon_state = "catwalk0-0"
@@ -9519,8 +9528,22 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "HJ" = (
-/obj/effect/floor_decal/industrial/road/curve1,
-/turf/simulated/floor/rock/manmade/asphalt,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/invislight,
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"HK" = (
+/obj/structure/flora/small/rock1{
+	name = "Destroyed Headstone";
+	desc = Mossypiecesofaheadstone.OneofthepieceshasaletterH...
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "HL" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
@@ -9537,12 +9560,27 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "HM" = (
-/turf/simulated/floor/icewater,
+/obj/structure/lattice,
+/obj/machinery/telecomms/relay{
+	name = "LUMAR Relay Antenna"
+	},
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "HN" = (
-/obj/item/remains/deer,
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"HO" = (
+/obj/machinery/door/airlock/glass_security{
+	id_tag = "shuttle_hatch_bolts";
+	name = "Shuttle Hatch";
+	req_one_access = list(1,19,80)
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "HP" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/overlay/water/top,
@@ -9560,12 +9598,22 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "HR" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall27";
-	tag = "icon-escpodwall27"
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	dir = 1
 	},
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"HS" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "HT" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central1{
 	dir = 1
@@ -9585,28 +9633,19 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"HW" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 5
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "HX" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall5";
-	opacity = 0
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
-"HY" = (
-/obj/machinery/door/airlock/glass{
-	name = "Command Centre";
-	welded = 1
+/obj/structure/bed/chair/office/light{
+	dir = 8
 	},
-/obj/machinery/door/blast/regular{
-	name = "LOCKDOWN"
+/obj/item/remains,
+/obj/item/clothing/head/hardhat{
+	anchored = 1
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "HZ" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -9642,10 +9681,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Ie" = (
-/obj/structure/bed/chair/shuttle,
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/cloth/hazmatsuit/low_chance,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "If" = (
 /obj/item/remains/mummy2,
@@ -9729,6 +9767,10 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Is" = (
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/outside/forest/beast_cave_light)
 "It" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /obj/structure/snowfall{
@@ -9739,6 +9781,12 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Iu" = (
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 4
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "Iv" = (
 /obj/structure/flora/small/trailrockb4,
 /turf/simulated/floor/rock/grey,
@@ -9785,8 +9833,9 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "IH" = (
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "II" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light{
@@ -9814,19 +9863,23 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "IM" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/simulated/floor/rock/manmade/asphalt,
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall23";
+	opacity = 0
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "IN" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "IO" = (
-/obj/structure/railing/grey{
-	dir = 1
+/obj/structure/lattice,
+/obj/machinery/telecomms/relay{
+	name = "LUMAR Relay Antenna"
 	},
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IP" = (
 /obj/structure/sign/warning/high_voltage/small,
@@ -9855,16 +9908,11 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "IV" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 1
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/inputgate{
-	name = "Machinery"
-	},
-/obj/structure/boulder,
-/obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IW" = (
 /obj/machinery/biogenerator,
@@ -9884,11 +9932,6 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Ja" = (
-/obj/structure/flora/ausbushes/leafybush,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Jb" = (
 /obj/structure/flora/small/rock1,
@@ -9928,12 +9971,25 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ji" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall22";
-	tag = "icon-escpodwall22"
+"Jh" = (
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 1
 	},
+/obj/effect/floor_decal/industrial/inputgate{
+	name = "Machinery"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Ji" = (
+/obj/structure/bed/chair/office/light,
+/obj/structure/bed/chair/office/light,
+/obj/item/remains/mummy2,
+/obj/item/device/radio/headset{
+	icon_state = "bs_bowman_headset"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Jj" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/table/rack/shelf,
@@ -9960,9 +10016,16 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Jn" = (
-/obj/structure/flora/big/bush2,
-/obj/structure/flora/tree/jungle_small/variant3,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	dir = 1
+	},
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Jo" = (
 /obj/structure/curtain/open/privacy{
@@ -9977,20 +10040,19 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Jq" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/thinbush,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/random/cluster/tengolo,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Jr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Js" = (
-/obj/structure/flora/big/bush1,
-/turf/simulated/floor/asteroid/grass,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Jt" = (
 /obj/effect/floor_decal/industrial/warningdust,
@@ -10058,13 +10120,6 @@
 /obj/item/stack/material/glass/random,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"JE" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
 "JF" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -10103,9 +10158,21 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JJ" = (
-/obj/structure/bed/chair/shuttle,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	icon_state = "os-machine"
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"JK" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall5";
+	opacity = 0
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "JL" = (
 /mob/living/simple_animal/hostile/snake{
@@ -10115,19 +10182,8 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "JM" = (
-/obj/machinery/telecomms/relay{
-	name = "Broken LUMAR Relay Antenna";
-	icon_state = "relay_off";
-	desc = "Broken remains of a relay"
-	},
-/obj/structure/catwalk{
-	icon_state = "catwalk-broken"
-	},
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/jungle/variant1,
+/turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "JN" = (
 /obj/structure/flora/small/rock5,
@@ -10185,8 +10241,10 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "JW" = (
-/obj/structure/flora/big/rocks1,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "JX" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -10209,27 +10267,25 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Kc" = (
-/mob/living/carbon/superior_animal/ameridian_golem/runtling,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Ke" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 6
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Kf" = (
 /obj/structure/catwalk,
 /obj/machinery/light,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Kg" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall24";
+	opacity = 0
+	},
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Kh" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Ki" = (
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -10244,11 +10300,7 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Kk" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/roller{
-	pixel_y = 10
-	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Kl" = (
 /obj/random/traps/low_chance,
@@ -10285,7 +10337,12 @@
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Kr" = (
-/turf/simulated/floor/fixed/shale/rock,
+/obj/structure/girder/displaced,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Ks" = (
+/obj/structure/ameridian_crystal,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Kv" = (
 /obj/structure/flora/small/grassa2,
@@ -10296,24 +10353,23 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Kw" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/small/bushb3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Kx" = (
 /obj/structure/bed/chair/sofa/brown/left,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ky" = (
+/obj/structure/bed/chair/shuttle,
+/obj/effect/floor_decal/industrial_plant,
+/obj/random/cloth/hazmatsuit/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Kz" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/floor_decal/industrial/road/straight3,
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KA" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -10325,9 +10381,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "KB" = (
-/obj/item/remains/tajaran,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/small/lavarock3,
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KC" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/swamp,
@@ -10368,6 +10424,12 @@
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"KK" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KL" = (
 /obj/structure/boulder,
 /obj/structure/snowfall{
@@ -10381,6 +10443,11 @@
 /obj/random/cluster/golem,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"KN" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
@@ -10408,12 +10475,16 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "KT" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/structure/sign/neon/phone,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
+"KU" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/item/trash/material/metal{
+	icon_state = "circuit3"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "KV" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/item/stack/material/glass/random,
@@ -10458,14 +10529,19 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Ld" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 4
+"Lc" = (
+/obj/structure/railing/grey,
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
 	},
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Ld" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk7-3"
+	},
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Le" = (
 /obj/structure/low_wall,
 /obj/structure/grille,
@@ -10507,24 +10583,14 @@
 /obj/item/spider_shadow_trap/burrowing,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ll" = (
-/obj/structure/flora/big/bush2,
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Lm" = (
-/obj/structure/flora/small/snow/rock2,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/flora/big/bush2,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Lo" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Lp" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall20";
-	tag = "icon-escpodwall20"
-	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Lq" = (
 /obj/effect/overlay/water/top,
@@ -10535,10 +10601,6 @@
 	},
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Lr" = (
-/obj/structure/flora/rock/variant2,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ls" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -10570,6 +10632,11 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Lw" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Lx" = (
 /obj/random/mob/nightmare,
 /turf/simulated/floor/rock,
@@ -10586,9 +10653,16 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "LA" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/bed/chair/shuttle{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"LB" = (
+/obj/structure/girder,
+/obj/structure/sign/neon/exit,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "LC" = (
 /obj/random/rig_module/rare/low_chance,
 /turf/simulated/floor/rock,
@@ -10606,14 +10680,16 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "LH" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/item/remains,
-/turf/simulated/floor/beach/sand,
+/obj/effect/floor_decal/corner_techfloor_grid,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "LI" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "LJ" = (
 /obj/structure/catwalk,
 /obj/item/storage/hcases/engi/has_items_spawn,
@@ -10634,48 +10710,38 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "LM" = (
-/obj/structure/plushie/carp{
-	dir = 4
-	},
-/turf/simulated/floor/rock/manmade/asphalt,
+/obj/effect/floor_decal/industrial_plant,
+/obj/random/cloth/hazmatsuit/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "LN" = (
-/obj/structure/catwalk,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/railing/grey,
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
 	},
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "LO" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/scrap/guns,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "LP" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"LQ" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair."
-	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/lattice,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "LR" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "LS" = (
-/obj/structure/flora/tree/jungle/variant1,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall6";
+	opacity = 0
+	},
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "LT" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -10683,40 +10749,10 @@
 "LU" = (
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"LV" = (
-/obj/effect/floor_decal/corner/white/border{
-	dir = 8
-	},
-/obj/structure/railing{
-	tag = "icon-railing0 (WEST)";
-	icon_state = "railing0";
-	dir = 8
-	},
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
-"LW" = (
-/obj/structure/bed/chair/shuttle,
-/obj/item/remains,
-/obj/item/clothing/head/hardhat/blue,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"LX" = (
-/obj/machinery/door/airlock/glass_security{
-	id_tag = "shuttle_hatch_bolts";
-	name = "Shuttle Hatch";
-	req_one_access = list(1,19,80)
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "LY" = (
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"LZ" = (
-/obj/structure/girder,
-/obj/structure/sign/neon/exit,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ma" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey{
@@ -10734,14 +10770,10 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Mc" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+"Md" = (
+/obj/structure/flora/pottedplant/shoot,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Me" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -10770,6 +10802,12 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Mj" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Mk" = (
 /turf/simulated/floor/beach/water/coastwatercorner,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -10784,25 +10822,23 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Mn" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	icon_state = "os-machine";
-	dir = 1
-	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Mo" = (
-/obj/structure/flora/small/snow/boulder1,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Mp" = (
-/obj/structure/boulder,
-/turf/simulated/floor/beach/water/coastwater{
+/obj/structure/railing/grey{
 	dir = 4
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Mp" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Mq" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -10822,21 +10858,6 @@
 	name = "Radioactive Waste"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Mt" = (
-/obj/item/clothing/accessory/medal/gold{
-	name = "Exceptional Research medal";
-	desc = "A prestigious golden medal awarded for accomplishments in the field of gesnetics."
-	},
-/obj/effect/damagedfloor/fire{
-	icon_state = "damaged3"
-	},
-/obj/effect/damagedfloor/fire{
-	icon_state = "damaged2"
-	},
-/turf/simulated/floor/asteroid/dirt{
-	icon_state = "dust"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Mu" = (
 /obj/structure/boulder,
 /turf/simulated/floor/industrial,
@@ -10853,8 +10874,10 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Mx" = (
-/obj/effect/floor_decal/industrial/road/straight1,
-/turf/simulated/floor/rock/manmade/asphalt,
+/obj/structure/flora/tree/jungle_small/variant2,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "My" = (
 /obj/effect/overlay/water/top{
@@ -10922,12 +10945,19 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "MH" = (
-/obj/structure/flora/big/bush2,
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 8
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall4";
+	tag = "icon-escpodwall4"
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
+"MI" = (
+/obj/item/remains/tajaran,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"MJ" = (
+/obj/random/cluster/tengolo,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "MK" = (
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/beach/water/swamp,
@@ -10938,9 +10968,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "MM" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "MN" = (
 /obj/effect/decal/cleanable/rubble,
@@ -10965,6 +10993,17 @@
 	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"MQ" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4
+	},
+/obj/structure/cryofeed{
+	dir = 2;
+	tag = "icon-cryo_rear (EAST)";
+	name = "Data Feed"
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "MR" = (
 /obj/item/tool/hammer/deadblow,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -10989,9 +11028,35 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"MV" = (
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/inputgate{
+	name = "Machinery"
+	},
+/obj/structure/boulder,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
+"MW" = (
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "computer0"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "MX" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"MY" = (
+/mob/living/carbon/superior_animal/ameridian_golem,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "MZ" = (
 /obj/item/stack/material/glass/random,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -11032,10 +11097,6 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ng" = (
-/obj/structure/ameridian_crystal,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Nh" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -14
@@ -11054,16 +11115,18 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Nj" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
+/obj/structure/railing/grey,
+/obj/structure/boulder,
 /obj/structure/invislight,
-/obj/structure/flora/big/bush2{
-	pixel_x = -13;
-	pixel_y = -30
-	},
 /turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/area/nadezhda/outside/forest/beast_cave_light)
+"Nk" = (
+/obj/structure/lattice,
+/obj/item/trash/material/metal{
+	icon_state = "circuit2"
+	},
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Nl" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -11071,31 +11134,26 @@
 /obj/item/organ_module/active/simple/armblade,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Nn" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/item/trash/material/metal{
-	icon_state = "circuit3"
+"Nm" = (
+/obj/structure/bed/chair/office/light,
+/obj/machinery/light{
+	dir = 8
 	},
+/obj/item/remains/mummy2,
 /turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"Nq" = (
-/obj/structure/flora/small/bushb2,
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Nr" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/telecomms/relay{
-	name = "Broken LUMAR Relay Antenna";
-	icon_state = "relay_off";
-	desc = "Broken remains of a relay"
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"No" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall19";
+	tag = "icon-escpodwall19"
 	},
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 1
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Np" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall22";
+	tag = "icon-escpodwall22"
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ns" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -11105,19 +11163,16 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Nu" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/salvageable/computer_os{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Nv" = (
 /obj/structure/sign/warning/caution/small2{
 	pixel_x = 32
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Nw" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Nx" = (
 /obj/machinery/beehive,
@@ -11141,6 +11196,10 @@
 /obj/item/pen/multi,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"NC" = (
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "ND" = (
 /obj/structure/light_stick,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -11152,12 +11211,6 @@
 	name = "tree jumping viper"
 	},
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"NF" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall17";
-	tag = "icon-escpodwall17"
-	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "NG" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -11173,14 +11226,18 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "NH" = (
-/obj/structure/railing/grey,
-/obj/structure/flora/small/bushb3,
+/obj/effect/floor_decal/industrial/outputgate{
+	name = "Machinery"
+	},
+/obj/structure/flora/small/grassa4,
+/obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "NI" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/structure/sign/warning/secure_area/small,
-/turf/simulated/wall/r_wall,
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall17";
+	tag = "icon-escpodwall17"
+	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "NJ" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -11215,6 +11272,20 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"NR" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 8;
+	desc = "A one meter section of cables";
+	name = "Power Cables"
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "NS" = (
 /obj/effect/floor_decal/industrial/road,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -11264,9 +11335,17 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Of" = (
-/obj/structure/flora/tree/jungle/variant1,
-/turf/unsimulated/wall/jungle,
+"Od" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwatercorner{
+	dir = 4
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
+"Oe" = (
+/obj/structure/lattice,
+/obj/machinery/power/solar,
+/obj/machinery/power/solar,
+/turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Og" = (
 /turf/simulated/floor/wood_old,
@@ -11316,11 +11395,6 @@
 /obj/random/ammo/shotgun/low_chance,
 /obj/random/ammo/shotgun/low_chance,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Oq" = (
-/obj/structure/flora/big/bush1,
-/obj/structure/flora/big/rocks1,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Os" = (
 /obj/structure/curtain/medical,
@@ -11388,11 +11462,13 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "OD" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwatercorner{
-	dir = 4
+/obj/item/caution/cone,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "OE" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/machinery/light{
@@ -11426,12 +11502,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
-"OL" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 4
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "OM" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water,
@@ -11464,11 +11534,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/outside/forest/swamp_hut)
 "OR" = (
-/obj/structure/bed/chair/shuttle{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial_plant/steel_warning,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "OS" = (
 /obj/item/honey_frame/filled,
@@ -11510,15 +11577,17 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Pa" = (
-/obj/structure/flora/small/rock1{
-	name = "Destroyed Headstone";
-	desc = Mossypiecesofaheadstone.OneofthepieceshasaletterH...
+/obj/structure/flora/ausbushes/leafybush,
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 4
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Pb" = (
-/obj/machinery/power/solar,
-/turf/simulated/floor/fixed/shale/dark,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 9
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Pc" = (
 /obj/structure/barricade,
@@ -11642,25 +11711,28 @@
 /turf/simulated/floor/wood_old,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Py" = (
-/obj/structure/flora/small/snow/rock4,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Pz" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "PA" = (
-/obj/structure/lattice,
-/obj/machinery/power/solar,
-/obj/machinery/power/solar,
-/turf/simulated/floor/fixed/shale/dark,
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/coastwatercorner{
+	dir = 8
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "PB" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "PC" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "PD" = (
@@ -11703,10 +11775,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"PK" = (
-/mob/living/carbon/superior_animal/ameridian_golem/runtling,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "PL" = (
 /obj/item/device/lighting/glowstick/flare,
 /turf/simulated/floor/rock/manmade/concrete,
@@ -11753,13 +11821,6 @@
 /obj/item/reagent_containers/hypospray/autoinjector/drugs,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"PS" = (
-/obj/structure/railing/grey,
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "PT" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/beach/water/swamp,
@@ -11783,6 +11844,7 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "PY" = (
+/obj/effect/floor_decal/industrial/road/curve1,
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "PZ" = (
@@ -11809,9 +11871,9 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qe" = (
-/obj/effect/floor_decal/industrial/road/curve2,
-/turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Qf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
@@ -11838,15 +11900,11 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Qk" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Ql" = (
-/obj/structure/boulder,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Qm" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
@@ -11889,13 +11947,18 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Qv" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Qw" = (
+/obj/structure/flora/tree/jungle/variant5,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Qx" = (
+/obj/structure/flora/big/bush2,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Qy" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/rock/manmade/asphalt,
@@ -11926,6 +11989,10 @@
 	},
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"QD" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "QE" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt,
@@ -11935,23 +12002,21 @@
 /turf/simulated/floor/rock/manmade/concrete,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QG" = (
-/turf/simulated/floor/beach/water/shallow,
+/obj/machinery/light,
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QH" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QI" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	icon_state = "os-machine"
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/mob/living/carbon/superior_animal/ameridian_golem,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "QJ" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
@@ -11965,8 +12030,13 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QL" = (
+/obj/structure/flora/big/bush1,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QM" = (
 /obj/effect/decal/cleanable/blood{
@@ -11978,15 +12048,21 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"QO" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+"QN" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/railing{
+	tag = "icon-railing0 (WEST)";
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/outside/forest/beast_cave_light)
+"QO" = (
+/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "QP" = (
 /obj/effect/decal/mecha_wreckage/ripley/deathripley,
 /turf/simulated/floor/rock,
@@ -12100,7 +12176,10 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Re" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/floor/asteroid/dirt,
+/obj/item/reagent_containers/food/snacks/meat{
+	icon_state = "rottenmeat"
+	},
+/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Rf" = (
 /obj/structure/flora/small/rock5,
@@ -12130,14 +12209,22 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Ri" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Rj" = (
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server0"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Rk" = (
+/obj/structure/catwalk{
+	icon_state = "catwalk-broken"
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Rl" = (
 /obj/item/paper{
 	info = "Nathan, listen, the electrical section’s sealed. The systems are still failing, cooling’s on the brink, and the reactor’s starting to destabilize. I’ve set up automatics to handle the power distribution, so Alpha and the rest should stay online for now, but the containment’s slipping. It’s spreading through the conduits, blocking everything. If the main core destabilizes, it's not just this sector that’ll go dark.Wilson, Grant, and the supervisor—they didn’t make it. The proxies hit them while we were working on the backups. It happened too fast—no chance to react. They’re still out there, close to the control room. We’re running out of time.I’ve done what I can, but you need to seal the reactor. The automatics might hold things together for a while, but we can’t rely on that. Lock it down before the whole site collapses. We’re past protocols now.";
@@ -12146,6 +12233,14 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Rm" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Rn" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -12173,13 +12268,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Rv" = (
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/obj/effect/decal/cleanable/dirt/snow,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Rw" = (
 /obj/structure/low_wall,
 /obj/structure/grille,
@@ -12207,41 +12295,49 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Rz" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
-"RA" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall9";
-	tag = "icon-escpodwall9"
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair."
 	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "RB" = (
 /turf/simulated/wall/marble/dark,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"RE" = (
-/obj/structure/flora/small/rock2,
-/turf/simulated/floor/beach/sand/desert,
+"RC" = (
+/obj/structure/barricade,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"RD" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"RE" = (
+/obj/machinery/door/airlock/glass{
+	name = "Command Centre";
+	welded = 1
+	},
+/obj/machinery/door/blast/regular{
+	name = "LOCKDOWN"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "RF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "RG" = (
-/obj/random/cluster/tengolo,
+/obj/item/trash/material/metal{
+	icon_state = "metal3"
+	},
+/obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"RH" = (
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_light)
 "RI" = (
 /obj/machinery/door/window{
 	dir = 4
@@ -12257,11 +12353,21 @@
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"RK" = (
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/beast_cave_light)
 "RL" = (
 /obj/item/remains/mouse,
 /obj/random/gun_shotgun,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"RM" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "RN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
@@ -12288,12 +12394,14 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "RT" = (
-/obj/item/caution/cone,
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
+/obj/machinery/door/blast/regular{
+	name = "LOCKDOWN"
 	},
-/turf/simulated/floor/plating/under,
+/obj/machinery/door/airlock/glass{
+	name = "Command Centre";
+	welded = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "RU" = (
 /obj/structure/closet/body_bag,
@@ -12307,11 +12415,6 @@
 /obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"RX" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/random/mob/vox/low_chance,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "RY" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -12329,13 +12432,18 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Sa" = (
-/obj/structure/flora/small/snow/rock1,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Sb" = (
-/obj/structure/bed/roller,
-/obj/item/remains,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/structure/sign/warning/secure_area/small,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Sc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12348,9 +12456,14 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Se" = (
-/obj/structure/flora/rock/variant2,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "data1"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Sf" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -12365,11 +12478,10 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Sh" = (
-/obj/item/remains/tajaran,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/asteroid/dirt/ground,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/tree/jungle_small/variant2,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Sj" = (
 /obj/item/remains,
 /obj/item/clothing/head/welding/ghetto,
@@ -12384,6 +12496,13 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Sm" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/mining/drill{
+	anchored = 1
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Sn" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -12397,9 +12516,11 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Sp" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Sq" = (
 /obj/structure/table/rack/shelf,
 /obj/random/ammo_fancy,
@@ -12414,11 +12535,13 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ss" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 10
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	icon_state = "os-machine"
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "St" = (
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -12429,10 +12552,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Sv" = (
-/obj/structure/flora/small/rock5,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Sw" = (
 /obj/structure/table/steel,
 /obj/structure/window/reinforced{
@@ -12442,6 +12561,10 @@
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Sx" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Sy" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/decal/cleanable/dirt,
@@ -12457,9 +12580,12 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "SA" = (
-/obj/item/remains/tajaran,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/bed/chair/shuttle{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "SB" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -12480,19 +12606,21 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SD" = (
-/obj/structure/bed/chair/office/light,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/structure/railing/grey{
+	dir = 8
 	},
-/turf/simulated/floor/industrial,
+/obj/structure/salvageable/data_os{
+	icon_state = "data0"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "SE" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/shale,
+/obj/structure/flora/tree/jungle/variant1,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "SG" = (
 /obj/structure/flora/rock/variant1,
@@ -12506,15 +12634,9 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SI" = (
-/obj/structure/table/woodentable,
-/obj/item/phone{
-	desc = "An old rotary dial phone. You can swear you can hear static coming from it..."
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/flora/small/lavarock2,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "SJ" = (
 /obj/item/ammo_magazine/ammobox/rifle_75,
 /obj/item/gun_upgrade/scope/killer,
@@ -12540,15 +12662,6 @@
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"SO" = (
-/obj/structure/flora/big/bush1,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "SP" = (
 /obj/structure/bed/psych,
 /turf/simulated/floor/wood/wild5,
@@ -12568,6 +12681,24 @@
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"SS" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"ST" = (
+/turf/simulated/floor/fixed/shale/rock,
+/area/nadezhda/outside/forest/beast_cave_light)
 "SU" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -12597,11 +12728,10 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SY" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/remains/unathi,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "SZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock1,
@@ -12621,23 +12751,15 @@
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Te" = (
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Tf" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	icon_state = "os-machine"
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 5
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Tg" = (
-/obj/item/roller{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ti" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12653,10 +12775,6 @@
 /obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Tl" = (
-/obj/structure/flora/small/lavarock3,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Tm" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -12668,15 +12786,6 @@
 /obj/structure/table/steel,
 /obj/item/storage/pill_bottle/prosurgeon,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"Tn" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	dir = 1
-	},
-/obj/structure/railing/grey,
-/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "To" = (
 /obj/effect/floor_decal/industrial/warningdust{
@@ -12696,17 +12805,23 @@
 /obj/random/rig/always_spawn,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Tr" = (
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ts" = (
 /obj/random/traps/low_chance,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Tu" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
+/obj/structure/shuttle_part/escpod{
+	icon_state = "escpodwall13";
+	tag = "icon-escpodwall13"
 	},
-/turf/simulated/floor/asteroid/shale,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Tv" = (
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -12734,27 +12849,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Tz" = (
-/obj/machinery/light,
-/obj/item/roller,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
-"TA" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair."
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"TB" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "TC" = (
-/mob/living/carbon/superior_animal/ameridian_golem,
-/turf/simulated/floor/asteroid/shale,
+/obj/machinery/mining/drill{
+	anchored = 1
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TD" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -12777,8 +12876,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TG" = (
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/remains,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/beast_cave_light)
 "TH" = (
 /obj/structure/flora/small/bushb2,
 /obj/random/flora/small_jungle_tree,
@@ -12809,19 +12910,6 @@
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"TL" = (
-/obj/structure/railing/grey,
-/obj/structure/boulder,
-/obj/structure/invislight,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/forest/beast_cave_light)
-"TM" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
-	icon_state = "rottenmeat"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "TN" = (
 /obj/machinery/computer{
 	stat = 1;
@@ -12842,14 +12930,11 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "TO" = (
-/obj/structure/bed/chair/office/light,
-/obj/structure/bed/chair/office/light,
-/obj/item/remains/mummy2,
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 4
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "TP" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -12868,9 +12953,10 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TS" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/random/mob/vox/low_chance,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TT" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -12895,18 +12981,6 @@
 	desc = "Thick dust fills the air"
 	},
 /obj/item/storage/deferred/toolmods,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
-"TX" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	dir = 1
-	},
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 8
-	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "TY" = (
@@ -12983,25 +13057,17 @@
 /obj/structure/sign/warning/hazard_extremeheat,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ul" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	icon_state = "os-machine";
-	dir = 1
-	},
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Um" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/random/material_resources/low_chance,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Un" = (
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 5
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "Uo" = (
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
@@ -13012,11 +13078,6 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Uq" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Ur" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -13076,6 +13137,16 @@
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Uz" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "UA" = (
 /obj/structure/window/reinforced,
 /obj/effect/overlay/water{
@@ -13111,6 +13182,10 @@
 /obj/random/mob/croaker/low_chance,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"UE" = (
+/obj/random/cluster/tengolo,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "UF" = (
 /obj/structure/girder/displaced,
 /obj/effect/floor_decal/industrial_plant,
@@ -13159,6 +13234,14 @@
 /obj/structure/scrap/science/large,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"UO" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/mining/brace{
+	anchored = 1;
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "UP" = (
 /obj/random/junk,
 /turf/simulated/floor/beach/water/jungle,
@@ -13179,11 +13262,14 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "UT" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall3";
-	tag = "icon-escpodwall3"
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/constructable_frame/machine_frame,
+/obj/item/trash/material/metal{
+	icon_state = "circuit2"
 	},
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/item/cell/small/greyson,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "UU" = (
 /obj/structure/table/steel,
 /obj/item/tray,
@@ -13263,15 +13349,6 @@
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Vj" = (
-/obj/structure/lattice,
-/obj/machinery/telecomms/relay{
-	name = "LUMAR Relay Antenna"
-	},
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Vk" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -13297,11 +13374,9 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Vn" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall17";
-	tag = "icon-escpodwall17"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/mob/living/simple_animal/hostile/carp/greatwhite,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Vo" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 1
@@ -13316,6 +13391,12 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Vq" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Vr" = (
 /obj/machinery/shower{
 	dir = 8;
@@ -13338,12 +13419,11 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Vv" = (
-/obj/effect/floor_decal/industrial/outputgate{
-	name = "Machinery"
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 8
 	},
-/obj/structure/flora/small/grassa4,
-/obj/structure/flora/big/bush3,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Vw" = (
 /obj/structure/girder{
@@ -13368,9 +13448,18 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "VA" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/salvageable/computer_os{
+	name = "Broken Computer";
+	desc = "It's control panel is broken beyond repair.";
+	icon_state = "os-machine";
+	dir = 1
+	},
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "VB" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -13492,18 +13581,17 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "VN" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/effect/decal/cleanable/dirt/snow,
+/obj/structure/sign/neon/phone,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "VO" = (
-/obj/machinery/door/airlock/glass{
-	name = "Command Centre";
-	welded = 1
+/turf/simulated/shuttle/wall/escpod{
+	dir = 4;
+	icon_state = "escpodwall14"
 	},
-/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "VP" = (
 /turf/simulated/wall/r_wall,
@@ -13541,22 +13629,20 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "VW" = (
-/obj/machinery/light,
-/obj/structure/catwalk{
-	icon_state = "catwalk-broken"
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 4
 	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/shale,
+/turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "VX" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "VY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "VZ" = (
 /obj/effect/spider/stickyweb,
 /obj/random/gun_cheap/low_chance,
@@ -13574,22 +13660,6 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Wd" = (
-/obj/structure/flora/tree/jungle/variant5,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"We" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Wf" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -13640,18 +13710,22 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Wp" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall22";
-	tag = "icon-escpodwall22"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+"Wr" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ws" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/random/material_resources,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Wt" = (
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall3";
+	tag = "icon-escpodwall3"
+	},
+/area/nadezhda/outside/forest/beast_cave_light)
 "Wu" = (
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -13686,10 +13760,12 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "WA" = (
-/obj/item/caution/cone,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/item/roller{
+	pixel_y = 10
+	},
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "WB" = (
 /obj/structure/bed/chair/office/light{
 	pixel_y = -4
@@ -13719,10 +13795,6 @@
 /obj/structure/flora/stump/small,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"WF" = (
-/obj/structure/flora/pottedplant/shoot,
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "WG" = (
 /obj/effect/decal/cleanable/rubble,
 /mob/living/simple_animal/hostile/sargoyle,
@@ -13734,14 +13806,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"WI" = (
-/obj/structure/salvageable/computer_os{
-	name = "Broken Computer";
-	desc = "It's control panel is broken beyond repair.";
-	icon_state = "os-machine"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "WJ" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -13762,18 +13826,14 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "WM" = (
-/obj/structure/bed/chair/office/light,
-/turf/simulated/floor/industrial,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "WN" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/machinery/constructable_frame/machine_frame,
-/obj/item/trash/material/metal{
-	icon_state = "circuit2"
-	},
-/obj/item/cell/small/greyson,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_light)
 "WO" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushb2,
@@ -13781,11 +13841,10 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "WP" = (
-/obj/structure/bed/chair/shuttle{
+/turf/simulated/floor/beach/water/coastwater{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "WQ" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/wall/wood_old,
@@ -13794,15 +13853,28 @@
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"WS" = (
+/obj/item/remains/unathi,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "WT" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"WU" = (
+/obj/machinery/door/airlock/glass{
+	name = "Command Centre";
+	welded = 1
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "WW" = (
-/obj/structure/flora/small/bushb2,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall26";
+	tag = "icon-escpodwall26"
+	},
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "WX" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -13814,7 +13886,12 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Xa" = (
-/obj/structure/flora/small/bushb3,
+/obj/item/remains/deer,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Xb" = (
+/obj/structure/flora/big/rocks1,
+/obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Xc" = (
@@ -13822,11 +13899,10 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Xd" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall19";
-	tag = "icon-escpodwall19"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/catwalk,
+/obj/structure/largecrate/animal/corgi,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Xe" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/structure/railing,
@@ -13835,10 +13911,13 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Xf" = (
-/obj/item/remains/unathi,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Xg" = (
 /mob/living/carbon/superior_animal/roach/tazntz,
 /mob/living/carbon/superior_animal/roach/tazntz,
@@ -13850,6 +13929,10 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Xi" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Xk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13875,20 +13958,27 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Xp" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall16";
+	tag = "icon-escpodwall16"
+	},
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"Xq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/barricade,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Xr" = (
+/obj/structure/bed/chair/office/light,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Xq" = (
-/obj/structure/flora/tree/jungle_small/variant3,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"Xr" = (
-/turf/simulated/floor/beach/water/coastwater{
-	dir = 8
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Xs" = (
 /mob/living/simple_animal/hostile/plant,
 /turf/simulated/floor/wood/wild4,
@@ -13919,6 +14009,10 @@
 /obj/random/material_ore,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Xy" = (
+/obj/machinery/power/solar,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Xz" = (
 /obj/structure/sign/departmentold/chemistry/small,
 /turf/simulated/wall/r_wall,
@@ -14024,10 +14118,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"XT" = (
-/mob/living/simple_animal/hostile/carp/shark,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "XU" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /mob/living/simple_animal/frog,
@@ -14048,17 +14138,14 @@
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "XY" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/mining/drill{
-	anchored = 1
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall21";
+	tag = "icon-escpodwall21"
 	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "XZ" = (
-/obj/structure/invislight,
-/obj/structure/boulder,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Ya" = (
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock/grey,
@@ -14073,6 +14160,18 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Yd" = (
+/obj/structure/flora/big/bush1,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Ye" = (
+/obj/structure/lattice,
+/obj/item/trash/material/metal{
+	icon_state = "metal1"
+	},
+/turf/simulated/floor/asteroid/shale,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Yf" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/oddity/common/paper_crumpled,
@@ -14095,20 +14194,18 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Yi" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall23";
-	opacity = 0
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Yj" = (
-/obj/structure/flora/small/bushb2,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/beach/sand/desert,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/salvageable/data_os{
+	icon_state = "server1"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Yk" = (
-/obj/structure/boulder,
-/turf/simulated/floor/rock,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Yl" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -14132,20 +14229,15 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Yp" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Yq" = (
-/obj/structure/catwalk{
-	icon_state = "catwalk7-3"
-	},
-/turf/simulated/floor/beach/water/shallow,
+/obj/structure/girder,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Yr" = (
 /obj/structure/sign/warning/radioactive/small,
@@ -14170,6 +14262,10 @@
 	desc = "A huge chunk of uranium melded together"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ys" = (
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Yt" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/junk/nondense,
@@ -14194,11 +14290,11 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Yw" = (
-/obj/machinery/mining/drill{
-	anchored = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/bed/chair/shuttle,
+/obj/item/remains,
+/obj/item/clothing/head/hardhat/blue,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Yx" = (
 /obj/machinery/papershredder,
 /obj/structure/snowfall{
@@ -14216,11 +14312,13 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Yz" = (
-/obj/item/trash/material/metal{
-	icon_state = "metal3"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/mob/living/carbon/superior_animal/ameridian_golem/runtling,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
+"YA" = (
+/obj/structure/flora/small/grassa2,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "YB" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/rock/grey,
@@ -14233,15 +14331,6 @@
 /obj/structure/flora/big/rocks1,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
-"YE" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall13";
-	tag = "icon-escpodwall13"
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "YF" = (
 /obj/structure/flora/small/trailrockb5,
@@ -14310,10 +14399,19 @@
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"YR" = (
+/obj/item/remains/tajaran,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "YS" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"YT" = (
+/obj/structure/flora/big/bush1,
+/obj/structure/flora/big/rocks1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "YU" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -9
@@ -14325,10 +14423,8 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "YV" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall6";
-	opacity = 0
-	},
+/obj/structure/flora/big/rocks1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "YW" = (
 /turf/simulated/floor/industrial/black_large_slates,
@@ -14346,6 +14442,10 @@
 /obj/structure/bed/chair/sofa/brown/right,
 /obj/item/bedsheet,
 /turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Za" = (
+/obj/structure/salvageable/computer_os,
+/turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Zb" = (
 /obj/item/remains/mouse,
@@ -14373,25 +14473,14 @@
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Zf" = (
-/obj/structure/bed/chair/office/light,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/remains/mummy2,
-/obj/item/device/radio/headset{
-	icon_state = "bs_bowman_headset"
-	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "Zg" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/rock/seafloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/turf/unsimulated/mineral/cold,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Zh" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/simulated/floor/beach/sand/desert,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/beach/water/coastwater{
+	dir = 10
+	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Zi" = (
 /obj/structure/low_wall,
@@ -14403,11 +14492,11 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Zj" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 1
-	},
-/turf/simulated/floor/greengrid,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/boulder,
+/obj/structure/barricade,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Zk" = (
 /obj/machinery/door/window/holowindoor{
 	dir = 2
@@ -14469,10 +14558,6 @@
 	desc = "A huge chunk of uranium melded together"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Zt" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Zu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
@@ -14490,38 +14575,30 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Zw" = (
-/obj/structure/catwalk{
-	icon_state = "catwalk0-0"
-	},
-/obj/structure/bed/chair/office/light{
-	dir = 8
-	},
-/obj/item/remains,
-/obj/item/clothing/head/hardhat{
-	anchored = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Zx" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall16";
-	tag = "icon-escpodwall16"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/boulder,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Zy" = (
-/obj/item/remains/unathi,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"Zz" = (
-/obj/structure/table/steel_reinforced,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/shuttle/wall/escpod{
+	icon_state = "escpodwall29";
+	tag = "icon-escpodwall29"
+	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "ZA" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"ZB" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "ZC" = (
 /obj/machinery/light/small{
@@ -14530,9 +14607,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "ZD" = (
-/obj/structure/flora/tree/jungle_small/variant5,
-/obj/structure/flora/big/bush3,
-/turf/simulated/floor/asteroid/grass,
+/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter,
+/turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ZE" = (
 /obj/effect/decal/cleanable/rubble,
@@ -14634,16 +14710,14 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "ZS" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/item/reagent_containers/food/snacks/meat{
-	icon_state = "rottenmeat"
+/turf/simulated/floor/asteroid/dirt{
+	icon_state = "dust"
 	},
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/area/nadezhda/outside/forest/beast_cave_light)
 "ZT" = (
-/obj/structure/lattice,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/beach/sand,
+/obj/structure/flora/small/bushb2,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ZU" = (
 /obj/effect/overlay/water/top,
@@ -14660,16 +14734,12 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ZX" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/firstaid,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ZY" = (
 /obj/structure/girder/displaced,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb5,
@@ -14971,44 +15041,44 @@ dS
 dS
 Dz
 Dz
-Cv
-bw
-xP
-Cv
-qs
-Cv
-Cv
-Cv
+Mn
+Se
+Dn
+Mn
+Mp
+Mn
+Mn
+Mn
 Dz
-yr
-um
-um
+hw
+Eu
+Eu
 Dz
 Dz
 Dz
 aa
 aa
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
 dS
 dS
 dS
@@ -15140,12 +15210,12 @@ rH
 rH
 rH
 rH
-tR
+AZ
 sl
 sl
 sl
-VA
-ag
+Lm
+Sx
 Df
 AV
 rH
@@ -15172,45 +15242,45 @@ dS
 dS
 dS
 Dz
-PS
-Zf
-TX
-LQ
-Ak
-TX
-Tf
-wm
+LN
+AX
+HR
+vU
+Nm
+HR
+Ge
+Ki
 Ug
 Dz
-WF
-CU
-CU
-CU
+Md
+yt
+yt
+yt
 Dz
 Dz
 aa
 aa
-oO
-oO
-Dm
-Ng
-qx
-qx
-GK
-oO
-oO
-Cg
-yY
-TC
-Kc
-CK
-PA
-Pb
-CK
-CK
-oO
-oO
-oO
+Zg
+Zg
+DO
+Ks
+uV
+uV
+wI
+Zg
+Zg
+zl
+qt
+QI
+Bb
+wE
+Oe
+Xy
+wE
+wE
+Zg
+Zg
+Zg
 dS
 dS
 dS
@@ -15348,7 +15418,7 @@ vF
 sd
 Ig
 DS
-Zg
+Vq
 cs
 AV
 rH
@@ -15374,45 +15444,45 @@ dS
 dS
 dS
 Dz
-CI
+Aq
 Ug
-Mn
-TA
+bl
+iD
 Ug
-Mn
-TA
-Xp
+bl
+iD
+Qk
 Ug
-yo
-zY
+Yq
+Js
 Ug
 HF
 Ug
 Dz
 Dz
 aa
-oO
-oO
-Py
-HM
-Fm
-Sa
-qx
-Ng
-oO
-CK
-Ht
-yY
-yY
-Kr
-yY
-ix
-CK
-ws
-CK
-CK
-oO
-oO
+Zg
+Zg
+hP
+Aj
+yk
+GX
+uV
+Ks
+Zg
+wE
+QO
+qt
+qt
+ST
+qt
+FO
+wE
+un
+wE
+wE
+Zg
+Zg
 dS
 dS
 dS
@@ -15539,7 +15609,7 @@ VP
 VP
 sm
 sm
-VY
+rT
 VP
 VP
 vJ
@@ -15547,12 +15617,12 @@ wP
 wP
 eC
 sd
-ww
+MJ
 Bf
-Zg
+xP
 zx
 zx
-AV
+Ai
 AV
 AV
 rH
@@ -15576,45 +15646,45 @@ dS
 dS
 dS
 Dz
-Aj
-WM
-Mn
-WI
-TO
-Tn
-TA
-Kh
+rD
+bv
+bl
+Ss
+Ji
+Af
+iD
+Sa
 Ug
-VO
+WU
 Ug
-WA
-VN
-FW
-um
+BE
+Ht
+uh
+Eu
 Dz
 aa
-oO
-Ng
-qx
-HM
-HM
-HM
-qx
-qx
-Fs
-yY
-Kr
-yY
-yY
-Tu
-SE
-wB
-yj
-Ai
-CK
-CK
-CK
-oO
+Zg
+Ks
+uV
+Aj
+Aj
+Aj
+uV
+uV
+wE
+qt
+ST
+qt
+qt
+ug
+yM
+NR
+Rk
+BZ
+wE
+wE
+wE
+Zg
 dS
 dS
 dS
@@ -15751,11 +15821,11 @@ SX
 sd
 Cz
 ag
-Ea
+um
 cs
 zx
 zx
-AV
+Ai
 rH
 rH
 rH
@@ -15778,45 +15848,45 @@ dS
 dS
 dS
 Dz
-AQ
+Lc
 Ug
-Tn
-WI
-SD
-Tn
-WI
-We
-Kh
-VO
+Af
+Ss
+Xr
+Af
+Ss
+tv
+Sa
+WU
 Ug
 Ug
-yb
+BY
 HF
 Dz
 Dz
 aa
-oO
-qx
-Mo
-HM
-HM
-HM
-qx
-oO
-oO
-yY
-yY
-yY
-Tu
-yN
-ud
+Zg
+uV
+qq
+Aj
+Aj
+Aj
+uV
+Zg
+Zg
 qt
+qt
+qt
+ug
+IO
 ud
-uQ
-Bx
-Dq
-CK
-oO
+qj
+ud
+DM
+Nk
+MY
+wE
+Zg
 dS
 dS
 dS
@@ -15935,14 +16005,14 @@ fm
 YI
 WY
 Ui
-yL
+Fm
 VP
 QT
 VP
 EC
 DY
 Jj
-TM
+Bx
 Jj
 DY
 VP
@@ -15954,9 +16024,9 @@ wP
 sd
 vF
 Df
-AV
-Dc
-AV
+Ai
+ui
+Ai
 AV
 AV
 rH
@@ -15980,45 +16050,45 @@ dS
 dS
 dS
 Dz
-Aj
-qq
-At
-FQ
-QO
-Ul
-QI
-Et
-Kh
+rD
+ww
+Jn
+Rz
+ZB
+VA
+JJ
+vI
+Sa
 Dz
-zY
+Js
 Ug
-RT
+OD
 Ug
 Dz
 Dz
 aa
-oO
-Dm
-HM
-HM
-HM
-Dm
-qx
-oO
-CK
-CK
-yY
-yY
-SE
+Zg
+DO
+Aj
+Aj
+Aj
+DO
+uV
+Zg
+wE
+wE
+qt
+qt
+yM
 ud
-Dn
-DP
-zJ
+LH
+MQ
+VW
 ud
-TB
-CK
-CK
-oO
+KN
+wE
+wE
+Zg
 dS
 dS
 dS
@@ -16142,23 +16212,23 @@ wK
 EC
 wK
 EC
-Hq
+yD
 Oc
 Oc
 Oc
-TM
+Bx
 VP
 OE
 EC
-WN
+UT
 Gw
-Nj
+HJ
 sd
 vF
 vF
 Df
 AV
-Sh
+xO
 AV
 rK
 rH
@@ -16182,45 +16252,45 @@ dS
 dS
 dS
 Dz
-AQ
+Lc
 Ug
-Kh
-Kh
-Et
+Sa
+Sa
+vI
+SS
+ZB
+ZB
+Sa
+Yq
+JW
+Ug
 vB
-QO
-QO
-Kh
-yo
-wE
 Ug
-Jq
-Ug
-um
+Eu
 Dz
 aa
-oO
-oO
-HM
-HM
-Lm
-qx
-qx
-oO
-FK
-PK
-yY
-yY
-VW
+Zg
+Zg
+Aj
+Aj
+zr
+uV
+uV
+Zg
+xK
+Yz
 qt
-sV
-rD
-qo
 qt
-LN
-CK
-CK
-oO
+QG
+qj
+An
+DT
+CI
+qj
+Xf
+wE
+wE
+Zg
 dS
 dS
 dS
@@ -16355,8 +16425,8 @@ FR
 Vm
 NX
 MU
-EV
-xV
+Xa
+AR
 ag
 Df
 Df
@@ -16384,45 +16454,45 @@ dS
 dS
 dS
 MX
-PS
-Bo
+LN
+vO
 Ug
-Kh
-ug
-Kh
-QO
-ug
+Sa
+sb
+Sa
+ZB
+sb
 Ug
 Dz
-HY
-HY
-LZ
-Nw
+RE
+RE
+LB
+Ei
 Dz
 Dz
 aa
 aa
-oO
-qx
-qx
-qx
-qx
-Ng
-oO
-oO
-CK
-CK
-hP
-qr
+Zg
+uV
+uV
+uV
+uV
+Ks
+Zg
+Zg
+wE
+wE
+ZD
+Ye
 ud
-zb
-LV
-Zj
+KK
+QN
+TS
 ud
-TB
-CK
-CK
-oO
+KN
+wE
+wE
+Zg
 dS
 dS
 dS
@@ -16545,11 +16615,11 @@ DW
 wK
 EC
 wK
-TM
+Bx
 yg
 xv
 Br
-ZS
+Re
 yg
 NL
 OE
@@ -16559,7 +16629,7 @@ NX
 Lj
 sd
 sd
-KB
+YR
 ag
 Ig
 ag
@@ -16582,49 +16652,49 @@ dS
 dS
 dS
 dS
-TS
+bB
 et
 qK
 MX
 Dz
-Kw
-tG
-un
-Bl
-Kw
-SI
-Bl
-FD
-Kz
-Yq
-Yq
-BI
-vI
-BI
-BI
+Yj
+Rj
+MW
+Bi
+Yj
+wR
+Bi
+SD
+Py
+Ld
+Ld
+qr
+Al
+qr
+qr
 aa
 aa
-oO
-oO
-oO
-XZ
-XZ
-oO
-oO
-oO
-CK
-yY
-yY
-zj
-yN
-ud
+Zg
+Zg
+Zg
+uV
+uV
+Zg
+Zg
+Zg
+wE
 qt
+qt
+Tr
+IO
 ud
-Vj
-qu
-CK
-oO
-oO
+qj
+ud
+HM
+GF
+wE
+Zg
+Zg
 dS
 dS
 dS
@@ -16742,28 +16812,28 @@ rK
 fm
 Ve
 zA
-FC
+Xd
 Kf
 VP
 Kj
 VP
 Jj
 CH
-Fl
+Ah
 xv
 ZW
 Vt
 VP
 EC
-Nn
+KU
 VP
 VP
 wP
 sd
-Zy
+vj
 ag
 Vx
-rX
+Qv
 ag
 rK
 xB
@@ -16784,48 +16854,48 @@ dS
 dS
 dS
 Sk
-LA
-LA
-LA
-yy
+BI
+BI
+BI
+Du
 MX
 Dz
 Dz
 Dz
-BI
-BI
-KT
-Kz
-Kz
-Kz
+qr
+qr
+VN
+Py
+Py
+Py
 Na
 Na
-BI
+qr
 Dz
-BI
-BI
+qr
+qr
 aa
 aa
 aa
 aa
 aa
-bn
-bn
-bn
-aa
-oO
-oO
 Cg
-yY
-TC
-JE
-TB
-wn
-TB
-qu
-qj
-oO
-oO
+Cg
+bn
+aa
+Zg
+Zg
+zl
+qt
+QI
+Yp
+KN
+wZ
+KN
+GF
+vQ
+Zg
+Zg
 dS
 hk
 xZ
@@ -16953,7 +17023,7 @@ XJ
 XJ
 xv
 to
-EL
+Dj
 VP
 VP
 UX
@@ -16961,12 +17031,12 @@ VP
 VP
 eC
 sd
-Av
-vF
-vF
-rX
 ZY
-RG
+vF
+vF
+Qv
+Kr
+Jq
 rK
 xB
 rH
@@ -16985,30 +17055,30 @@ dS
 dS
 dS
 dS
-QL
-Qk
-LA
-LA
-pP
-MX
-MX
-bv
-bv
-Dz
+Yk
+Mx
 BI
-Kz
-Rv
-Kz
-NI
-xK
-xK
+BI
+YA
+MX
+MX
+yc
+yc
+Dz
+qr
+Py
+xR
+Py
+Sb
+RT
+RT
 sL
-Lr
-uV
-uV
+VY
+xs
+xs
 QB
 QB
-zr
+FP
 aa
 aa
 bn
@@ -17016,17 +17086,17 @@ bn
 bn
 aa
 aa
-oO
-oO
-oO
-oO
-CK
-Pb
-sk
-CK
-CK
-Pb
-oO
+Zg
+Zg
+Zg
+Zg
+wE
+Xy
+KT
+wE
+wE
+Xy
+Zg
 dS
 dS
 Qp
@@ -17154,7 +17224,7 @@ rH
 XJ
 UJ
 qi
-Eu
+Ci
 ts
 gE
 gE
@@ -17166,7 +17236,7 @@ sd
 vF
 vF
 rU
-rX
+Qv
 vF
 vF
 Nt
@@ -17187,48 +17257,48 @@ dS
 dS
 dS
 dS
-Pa
-Mt
-yX
+HK
+FC
+ZS
 et
 et
 et
 qK
-bd
+vL
 uo
 et
-JM
+tG
 et
 et
 qK
 et
+jc
+jc
 et
 et
 et
 et
-et
-et
-LA
-LA
-An
-RH
-ym
-TL
+BI
+BI
+qE
 IV
-up
-Yk
+HE
+Nj
+MV
+bu
+qk
 aa
 aa
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
-oO
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
 dS
 iw
 cC
@@ -17357,20 +17427,20 @@ rH
 Ca
 wF
 sd
-LP
-Re
+HS
+QD
 sd
 sd
-xh
+tR
 sd
 Oz
 sd
 Uj
 Nt
-rX
+Qv
 sl
 vF
-Yz
+RG
 Nt
 xB
 rH
@@ -17393,34 +17463,34 @@ et
 et
 et
 io
-LA
-LA
-LA
-Zt
-Cd
+BI
+BI
+BI
+Xi
+EB
 Sk
 uo
-LA
-LA
-LA
+BI
+BI
+BI
 et
 et
-we
+Te
 et
 io
 et
-QL
-Qk
-LA
-LA
-Yw
+Yk
+Mx
+BI
+BI
+TC
 QB
-NH
-Cq
-IO
+DP
+Jh
+LI
 QB
 QB
-zr
+FP
 aa
 aa
 aa
@@ -17559,8 +17629,8 @@ rH
 rH
 Ca
 xv
-Re
-Re
+QD
+QD
 sd
 sd
 sd
@@ -17570,8 +17640,8 @@ rU
 rU
 Ol
 zo
-ZY
-ZY
+Kr
+Kr
 pd
 Nt
 xB
@@ -17591,44 +17661,44 @@ dS
 dS
 dS
 et
-LA
+BI
 uj
 uj
-QL
-Qk
-LA
-LA
+Yk
+Mx
+BI
+BI
 Pl
-yk
+Yd
 YD
-Nr
-Qk
-LA
-RX
-AT
-vj
+Eo
+Mx
+BI
+Kh
+RM
+CU
 et
 et
-LA
+BI
 et
-LA
-LA
-LA
+BI
+BI
+BI
 et
-Aa
-ZD
+EN
+Gz
 VP
 Gp
 VP
-Xq
+FB
 et
 et
-vv
+RK
 dS
 dS
-Rz
+ZX
 dS
-Rz
+ZX
 dS
 dS
 dS
@@ -17760,20 +17830,20 @@ rH
 rH
 rH
 rK
-Fl
-xv
+Fy
+HN
 Nt
 Nt
 Nt
 Nt
 Nt
 Nt
-Hf
+UE
 Nt
 Nt
 Nt
-rX
-Yz
+Qv
+RG
 Nt
 Nt
 xB
@@ -17792,12 +17862,12 @@ dS
 dS
 dS
 dS
-LA
-Xd
-Vn
-Ff
-Js
-JW
+BI
+No
+NI
+VO
+FK
+YV
 uj
 Sk
 Sk
@@ -17810,21 +17880,21 @@ et
 et
 et
 qK
-vj
-Dw
-QL
-Qk
-LA
-LA
-LA
+CU
+Sh
+Yk
+Mx
+BI
+BI
+BI
 et
 VP
-vS
-GT
-vS
+uq
+pb
+uq
 VP
 eJ
-bl
+Pa
 et
 et
 qK
@@ -17965,7 +18035,7 @@ rK
 rK
 rK
 rH
-VX
+Qx
 rU
 rU
 wC
@@ -17973,11 +18043,11 @@ wC
 wC
 wC
 Nt
-Xf
+SY
 rU
 Nt
 Nt
-HN
+Qe
 Nt
 xB
 rH
@@ -17994,41 +18064,41 @@ dS
 dS
 dS
 dS
-LA
-Lp
-DU
-Rj
-uq
-Js
+BI
+Cd
+Nu
+Kk
+CV
+FK
 et
 et
 qW
 et
-LA
-LA
+BI
+BI
 uj
-SY
+Mj
 et
-LA
-LA
-LA
-Ah
-LA
-QL
-LA
-LA
-SO
-LA
-LA
-VP
-bp
-Zw
+BI
+BI
+BI
 yw
+BI
+Yk
+BI
+BI
+QL
+BI
+BI
+VP
+Za
+HX
+ix
 VP
 eJ
-XY
-LA
-LA
+Sm
+BI
+BI
 et
 fa
 et
@@ -18196,44 +18266,44 @@ dS
 dS
 dS
 dS
+yo
+YT
 LA
-Oq
-WP
 gg
-ra
+FQ
 mS
 et
-LA
-LA
-QL
-Qk
-LA
+BI
+BI
+Yk
+Mx
+BI
 uj
 Sk
-QL
-Qk
-LA
-LA
-vj
-LA
-LA
+Yk
+Mx
+BI
+BI
+CU
+BI
+BI
 qK
-LA
-Gd
+BI
+Au
 et
-LA
+BI
 VP
-vS
-TG
-vS
+uq
+yv
+uq
 VP
-PY
-Mc
-LA
-LA
+MM
+yN
+BI
+BI
 et
 et
-Wd
+Qw
 et
 et
 dS
@@ -18379,7 +18449,7 @@ Qd
 Qd
 sl
 rX
-SA
+MI
 Nt
 Nt
 Nt
@@ -18398,13 +18468,13 @@ dS
 dS
 dS
 dS
-LA
-uV
-Rj
-Rj
+yo
+xs
+Kk
+Kk
 gg
 Dl
-LA
+BI
 uj
 Sk
 et
@@ -18417,24 +18487,24 @@ et
 et
 qK
 Wj
-LA
+BI
 qK
-LA
-LA
-Qv
-LA
+BI
+BI
+UO
+BI
 et
 VP
 VP
 DW
 VP
 VP
-PY
+MM
 et
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
 et
 et
 qK
@@ -18583,7 +18653,7 @@ sl
 rX
 rX
 rU
-VX
+DG
 Nt
 ag
 ag
@@ -18600,44 +18670,44 @@ dS
 dS
 dS
 dS
-LA
-Jn
-IH
-bu
-IH
+yo
+we
+XZ
+Hf
+XZ
 mU
-et
-LA
+jc
+BI
 ey
 io
-LA
-LA
-LA
-Yp
+BI
+BI
+BI
+Uz
 et
-LA
-LA
-LA
+BI
+BI
+BI
 et
-LA
+BI
 et
-LA
-LA
-LA
-LS
+BI
+BI
+BI
+SE
 et
-rT
+wo
 VP
 BJ
 VP
-Vv
-PY
-PY
-PY
-PY
-PY
-PY
-uh
+NH
+MM
+MM
+MM
+MM
+MM
+MM
+AT
 fa
 qK
 dS
@@ -18802,44 +18872,44 @@ dS
 dS
 dS
 dS
-et
-zZ
-wj
-Sb
-Zz
-YV
-vj
-vj
-et
-QL
-Qk
-LA
-LA
-ey
-QL
-Qk
-LA
-LA
-qK
-LA
-LA
-qK
-LA
-LA
-et
-et
-Xa
+jc
+Kg
+Cv
+ym
+WM
+LS
 Sp
-vQ
+CU
+et
+Yk
+Mx
+BI
+BI
+ey
+Yk
+Mx
+BI
+BI
+qK
+BI
+BI
+qK
+BI
+BI
+et
+et
+Kw
+EV
+vP
 VP
 eK
-Mx
-PY
-PY
-PY
-PY
-Mx
-Mx
+up
+MM
+MM
+MM
+MM
+up
+up
 ey
 io
 dS
@@ -19004,19 +19074,19 @@ dS
 dS
 dS
 dS
-Uq
-Wp
-LW
-Rj
+RD
+Np
+Yw
 Kk
+wa
 Dl
-LA
-LA
+BI
+BI
 et
 ey
 qW
 uj
-MM
+VX
 et
 et
 et
@@ -19024,24 +19094,24 @@ qK
 Wj
 et
 et
-QL
-LA
-LA
-LA
-Ja
+Yk
+BI
+BI
+BI
+Ie
 et
 et
-PY
+MM
 jc
-HJ
 PY
-PY
-PY
-PY
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
+MM
+MM
+MM
+MM
 et
 qK
 dS
@@ -19206,22 +19276,22 @@ dS
 dS
 dS
 dS
-LA
-FB
-vO
-Rj
-LI
-JW
-LA
+BI
+WW
+Zy
+Kk
+HD
+GI
+BI
 Sk
 Sk
-MM
+VX
 Sk
 Sk
-MM
+VX
 et
-LA
-RX
+BI
+Kh
 et
 et
 et
@@ -19229,22 +19299,22 @@ qK
 dS
 qK
 et
-LA
-LA
+BI
+BI
 et
 et
-PY
-PY
-Ev
-PY
-PY
+MM
+MM
+Kz
+MM
+MM
 et
-PY
-PY
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
+MM
+MM
 dS
 dS
 dS
@@ -19408,26 +19478,26 @@ dS
 dS
 dS
 dS
-LA
-HR
-Zx
-LX
-uV
-uV
-LA
+BI
+gY
+Xp
+HO
+Hx
+xs
+BI
 ey
-pb
+Xb
 et
 et
 et
 qK
-QL
-Qk
+Yk
+Mx
 et
 et
-LA
-LA
-LA
+BI
+BI
+BI
 dS
 et
 qK
@@ -19435,18 +19505,18 @@ et
 qW
 et
 et
-PY
-PY
-Ev
-PY
+MM
+MM
+Kz
+MM
 et
 et
 Ha
-PY
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
+MM
 dS
 dS
 dS
@@ -19598,7 +19668,7 @@ aa
 iJ
 af
 af
-wa
+CF
 iJ
 kW
 iJ
@@ -19610,15 +19680,15 @@ dS
 dS
 dS
 dS
-LA
-pt
-ul
+BI
+Bl
+wf
+jc
 et
 et
 et
-et
-MM
-Yp
+VX
+Uz
 et
 et
 et
@@ -19626,10 +19696,10 @@ et
 qK
 et
 et
-QL
-Qk
-LA
-LA
+Yk
+Mx
+BI
+BI
 dS
 et
 et
@@ -19637,18 +19707,18 @@ et
 et
 eD
 io
-PY
-IM
-PY
-PY
+MM
+Is
+MM
+MM
 et
 et
 et
 qW
-PY
-Mx
-Mx
-Mx
+MM
+up
+up
+up
 dS
 dS
 xZ
@@ -19801,7 +19871,7 @@ af
 nI
 af
 af
-bo
+WS
 iW
 af
 dS
@@ -19821,16 +19891,16 @@ dS
 dS
 dS
 et
-QL
+Yk
 et
-LA
-LA
-LA
-LA
-QL
-Qk
-LA
-LA
+BI
+BI
+BI
+BI
+Yk
+Mx
+BI
+BI
 Wj
 dS
 qK
@@ -19840,17 +19910,17 @@ et
 Ha
 et
 et
-PY
-Ev
-PY
-PY
-LA
+MM
+Kz
+MM
+MM
+BI
 et
 et
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
 aa
 dS
 rI
@@ -20024,13 +20094,13 @@ dS
 dS
 dS
 et
-QL
-Qk
-LA
-LA
-Qk
-LA
-LA
+Yk
+Mx
+BI
+BI
+Mx
+BI
+BI
 dS
 dS
 dS
@@ -20042,17 +20112,17 @@ et
 et
 et
 qW
-PY
-Ev
-PY
-PY
-LA
-PY
-PY
-PY
-PY
-PY
-PY
+MM
+Kz
+MM
+MM
+BI
+MM
+MM
+MM
+MM
+MM
+MM
 aa
 dS
 dS
@@ -20239,22 +20309,22 @@ dS
 dS
 qK
 et
-Af
-RE
+oO
+De
 et
 et
 et
-PY
-PY
-PY
-PY
-LA
-PY
-PY
-PY
-PY
-PY
-PY
+MM
+MM
+MM
+MM
+BI
+MM
+MM
+MM
+MM
+MM
+MM
 aa
 dS
 xZ
@@ -20436,27 +20506,27 @@ dS
 dS
 dS
 dS
-Sv
-Af
+av
+oO
 dS
-RE
-qk
-Af
-Af
-Af
+De
+JM
+oO
+oO
+oO
 et
-PY
-PY
-Ev
-PY
-PY
-Af
-PY
-PY
-PY
-Mx
-Mx
-Af
+MM
+MM
+Kz
+MM
+MM
+oO
+MM
+MM
+MM
+up
+up
+oO
 aa
 dS
 LY
@@ -20636,29 +20706,29 @@ dS
 dS
 aa
 aa
-Af
-Af
-Af
-Af
+oO
+oO
+oO
+oO
 OV
-Af
-CB
-Af
-Af
-Af
-Tl
-PY
-PY
-Ev
-PY
-Af
-Af
-Af
-PY
-PY
-PY
-Af
-Ql
+oO
+SI
+oO
+oO
+oO
+yb
+MM
+MM
+Kz
+MM
+oO
+oO
+oO
+MM
+MM
+MM
+oO
+Zx
 aa
 dS
 rI
@@ -20837,29 +20907,29 @@ dS
 dS
 aa
 aa
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Se
-Af
-Af
-Af
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+OR
+oO
+oO
+oO
 Qy
-PY
-PY
-PY
-RE
-Af
-Af
-Af
-PY
-PY
-Ql
+MM
+MM
+MM
+De
+oO
+oO
+oO
+MM
+MM
+Zx
 vK
 aa
 dS
@@ -21039,28 +21109,28 @@ dS
 dS
 dS
 aa
-Af
-Af
-qk
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
+oO
+oO
+JM
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
 Qy
-Ev
-Af
-Af
-Af
-PY
-PY
-PY
-PY
+Kz
+oO
+oO
+oO
+MM
+MM
+MM
+MM
 OK
 vK
 aa
@@ -21242,28 +21312,28 @@ af
 rI
 dS
 aa
-Se
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-PY
-Qe
-PY
-Af
-CB
-PY
-PY
-PY
-Mx
-Ql
+OR
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+MM
+EL
+MM
+oO
+SI
+MM
+MM
+MM
+up
+Zx
 vK
 aa
 dS
@@ -21444,28 +21514,28 @@ af
 gB
 dS
 aa
-Af
-Af
-Af
-Af
-Sv
-Af
-Af
-Af
-Af
-Hv
-Af
-Af
-PY
-LM
-PY
-PY
-PY
-PY
-Af
-RE
-Af
-Ql
+oO
+oO
+oO
+oO
+av
+oO
+oO
+oO
+oO
+NC
+oO
+oO
+MM
+Ev
+MM
+MM
+MM
+MM
+oO
+De
+oO
+Zx
 vK
 aa
 dS
@@ -21646,28 +21716,28 @@ on
 Gv
 gy
 aa
-Af
-Af
-Af
-Af
-Af
-Af
-qk
-Af
-Af
-Af
-Af
-qk
-Af
-PY
-PY
-Hh
-Af
-Af
-qk
-Af
-Af
-Ql
+oO
+oO
+oO
+oO
+oO
+oO
+JM
+oO
+oO
+oO
+oO
+JM
+oO
+MM
+MM
+KB
+oO
+oO
+JM
+oO
+oO
+Zx
 vK
 aa
 dS
@@ -21848,28 +21918,28 @@ Xt
 KS
 gy
 aa
-Af
-Af
-Af
-Af
+oO
+oO
+oO
+oO
 Mk
-OL
-vu
-Af
-Af
-Af
-Af
+TO
+vS
+oO
+oO
+oO
+oO
 Mk
 xa
 xa
-OL
-vu
-Af
-Af
-Af
-CB
-Af
-Ql
+TO
+vS
+oO
+oO
+oO
+SI
+oO
+Zx
 vK
 aa
 dS
@@ -22050,29 +22120,29 @@ oo
 AM
 af
 aa
-Af
+oO
 Mk
 xa
 xa
-Ke
-QG
-EG
-vu
-Af
-Af
+qo
+ql
+Un
+vS
+oO
+oO
 Mk
-qw
-QG
-QG
-QG
-EG
-vu
-Af
-Af
-Af
-Af
+vs
+ql
+ql
+ql
+Un
+vS
+oO
+oO
+oO
+oO
 Mk
-AZ
+PA
 vK
 aa
 dS
@@ -22253,29 +22323,29 @@ jp
 jF
 rI
 aa
-qw
-QG
-QG
-QG
-QG
-QG
-HW
+vs
+ql
+ql
+ql
+ql
+ql
+Tf
 xa
 xa
-Ke
-QG
-Al
-QG
-QG
-QG
-EG
+qo
+ql
+Wr
+ql
+ql
+ql
+Un
 xa
 xa
-OL
+TO
 xa
-qw
-HW
-Mp
+vs
+Tf
+Iu
 aa
 dS
 dS
@@ -22455,28 +22525,28 @@ jk
 nv
 dS
 aa
-QG
-QG
-QG
-QG
-QG
-XT
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+ql
+ql
+ql
+ql
+ql
+BR
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 aa
 dS
@@ -22657,28 +22727,28 @@ jk
 kk
 rI
 aa
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 aa
 aa
@@ -22859,30 +22929,30 @@ gy
 zu
 dS
 aa
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-yl
-QG
-QG
-QG
-QG
-QG
-zq
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+Vn
+ql
+ql
+ql
+ql
+ql
+xf
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 aa
 aa
@@ -22975,12 +23045,12 @@ rU
 bY
 ct
 bD
-bY
+Zj
 bD
 bF
 bF
-bF
-bF
+eg
+eg
 bF
 bF
 bR
@@ -23062,31 +23132,31 @@ gN
 Pi
 dS
 aa
-Gx
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+IH
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 dS
 dS
@@ -23267,28 +23337,28 @@ dS
 aa
 aa
 aa
-rF
-QG
-rF
-rF
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+qx
+ql
+qx
+qx
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 dS
 pA
@@ -23473,24 +23543,24 @@ aa
 aa
 dS
 aa
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 dS
 pB
@@ -23581,16 +23651,16 @@ ag
 ct
 sv
 cK
-bY
+Zj
 ct
 bF
 bR
+eg
+eg
 bF
 bF
 bF
-bF
-bF
-bR
+Xq
 sv
 sv
 bF
@@ -23676,23 +23746,23 @@ dS
 dS
 aa
 Lb
-QG
-AR
-QG
-QG
-QG
-QG
-Al
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
+ql
+Dg
+ql
+ql
+ql
+ql
+Wr
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 aa
 dS
 cC
@@ -23880,21 +23950,21 @@ dS
 aa
 aa
 aa
-Ss
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-QG
-yt
+Zh
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+Gn
 aa
 dS
 QZ
@@ -24082,21 +24152,21 @@ dS
 dS
 dS
 dS
-xf
-BW
-QG
-QG
-QG
-QG
-BE
-Xr
-MH
-Xr
-Xr
-Xr
+Fl
+ul
+ql
+ql
+ql
+ql
+Pb
+WP
+Vv
+WP
+WP
+WP
 qv
-Xr
-ui
+WP
+Dm
 aa
 dS
 QZ
@@ -24282,22 +24352,22 @@ dS
 dS
 dS
 dS
-Zh
-Af
-Af
-xf
-Xr
-Xr
-Xr
-Xr
-OD
-Of
+xd
+oO
+oO
+Fl
+WP
+WP
+WP
+WP
+Od
+vv
 hk
-Af
+oO
 qp
-Af
-Af
-Af
+oO
+oO
+oO
 qy
 aa
 dS
@@ -24484,23 +24554,23 @@ dS
 dS
 dS
 dS
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-Af
-WW
-Af
-Af
-Af
-Af
-WW
-Af
-Af
-Af
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+oO
+Et
+oO
+oO
+oO
+oO
+Et
+oO
+oO
+oO
 dS
 dS
 ZP
@@ -24520,7 +24590,7 @@ Pd
 pU
 pR
 cC
-pZ
+cC
 cC
 cC
 qc
@@ -24686,20 +24756,20 @@ dS
 dS
 dS
 dS
-Af
+oO
 dS
-Of
+vv
 dS
-Af
-WW
-WW
-WW
-Af
-Yj
-Af
+oO
+Et
+Et
+Et
+oO
+ZT
+oO
 eJ
-Af
-Nq
+oO
+Hq
 et
 et
 es
@@ -24892,11 +24962,11 @@ dS
 dS
 dS
 dS
-PC
+pt
 et
 et
 et
-Rz
+ZX
 iw
 oP
 oP
@@ -24926,7 +24996,7 @@ cC
 cC
 cC
 cC
-pZ
+cC
 cC
 cC
 cC
@@ -25098,8 +25168,8 @@ et
 eJ
 oY
 oX
-Ll
-Ri
+Lw
+PC
 eJ
 iw
 iw
@@ -25127,7 +25197,7 @@ cC
 cC
 XU
 cC
-pZ
+cC
 cC
 cC
 pB
@@ -25734,7 +25804,7 @@ cC
 cC
 cC
 cC
-cC
+Qi
 cC
 cC
 cC
@@ -26340,7 +26410,7 @@ cD
 cC
 cC
 cC
-Qi
+cC
 cC
 cC
 cC
@@ -36114,7 +36184,7 @@ rH
 rH
 rH
 rH
-BZ
+RC
 YQ
 rK
 rK
@@ -36720,7 +36790,7 @@ rH
 rH
 rH
 YQ
-Aq
+AQ
 rK
 rK
 rH
@@ -41373,7 +41443,7 @@ cC
 cC
 cC
 cC
-LH
+TG
 cC
 cC
 cD
@@ -42383,9 +42453,9 @@ cC
 WK
 cC
 cC
-vX
-NF
-ZT
+rc
+CB
+bd
 aG
 cC
 cH
@@ -42585,10 +42655,10 @@ cC
 WK
 cC
 WK
-CY
-Ld
+qw
+Rm
 su
-ZT
+bd
 cC
 cC
 cD
@@ -42787,11 +42857,11 @@ WX
 WX
 WX
 WX
-wI
-OR
-zl
+XY
+SA
+LM
 su
-UT
+Wt
 cC
 cC
 cC
@@ -42989,11 +43059,11 @@ WX
 WX
 WX
 WX
-Ji
-ZX
-DO
-Tz
-wT
+sT
+Cq
+Ys
+qu
+MH
 cH
 cH
 cN
@@ -43191,11 +43261,11 @@ WX
 WX
 WX
 WX
-Yi
-JJ
-DO
-DO
-HX
+IM
+zZ
+Ys
+Ys
+JK
 cN
 cC
 cH
@@ -43393,11 +43463,11 @@ WX
 WX
 WX
 cI
-Dj
-Ie
-DO
-Nu
-yv
+Ff
+Ky
+Ys
+yC
+yy
 cC
 cH
 cC
@@ -43595,10 +43665,10 @@ WX
 bV
 WX
 WK
-ql
-Dj
-Tg
-Nu
+LP
+Ff
+WA
+yC
 cN
 WX
 cC
@@ -43798,9 +43868,9 @@ WX
 WX
 WX
 WX
-ql
-DO
-zl
+LP
+Ys
+LM
 cH
 WX
 WX
@@ -44001,9 +44071,9 @@ WX
 WX
 WK
 WX
-wR
-GX
-RA
+WN
+Dw
+At
 WX
 WX
 WX
@@ -44204,8 +44274,8 @@ WK
 WK
 WK
 WX
-YE
-zR
+Tu
+qs
 WX
 WX
 WX
