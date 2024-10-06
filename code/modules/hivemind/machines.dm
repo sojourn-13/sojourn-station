@@ -258,6 +258,8 @@
 
 /obj/machinery/hivemind_machine/bullet_act(obj/item/projectile/Proj)
 	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/goo))
+			return PROJECTILE_FORCE_MISS
 		take_damage(Proj.get_structure_damage())
 	if(istype(Proj, /obj/item/projectile/ion))
 		Proj.on_hit(loc)
@@ -792,8 +794,21 @@
 	flick("[icon_state]-anim", src)
 
 
+//Simple Wall
+//helps block bullets
+/obj/machinery/hivemind_machine/cover
+	name = "cover"
+	desc = "A complex weaving of wires and metal rods."
+	max_health = 450
+	evo_level_required = 0
+	spawn_weight = 0 //We get spawned when wires run rampet
+	icon_state = "coverted_cover"
 
-
+/obj/machinery/hivemind_machine/cover/Initialize()
+	. = ..()
+	if(hive_mind_ai?.evo_level)//If this is the first hivemind wire then we accually runtime
+		max_health /= hive_mind_ai.evo_level
+		health /= hive_mind_ai.evo_level
 
 #undef REGENERATION_SPEED
 #undef TURRET_PRIORITY_TARGET

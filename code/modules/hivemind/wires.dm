@@ -54,8 +54,21 @@
 		if(prob(30))
 			die_off()
 	else
-		if(prob(5)) //5% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
+		if(prob(4 + hive_mind_ai.evo_level)) //5->10ish% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
 			new /obj/random/structures/hivemind_mob(src.loc)
+		var/already_build = FALSE
+		for(var/obj/machinery/hivemind_machine/HM in loc.contents)
+			if(HM)
+				already_build = TRUE
+				break
+		if(!already_build)
+			if(prob(6 - hive_mind_ai.evo_level)) //5->0% per spred tile to spawn a machine, this makes hivemins in open areas more deadly and helps starting hivemind be a bit more beefy
+				new /obj/random/structures/hivemind_machine(src.loc)
+			if(hive_mind_ai.evo_level && GLOB.hive_data_float["hivemind_cover_spawn_odds"])
+				var/cover_odds = GLOB.hive_data_float["hivemind_cover_spawn_odds"] / hive_mind_ai.evo_level
+				cover_odds = round(cover_odds)
+				if(prob(cover_odds))
+					new /obj/machinery/hivemind_machine/cover(src.loc)
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
