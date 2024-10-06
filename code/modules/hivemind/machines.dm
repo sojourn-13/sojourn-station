@@ -96,6 +96,7 @@
 	if(istype(victim, /obj/machinery))
 		var/obj/machinery/target = victim
 		target.stat |= BROKEN
+		target.density = FALSE //So we dont shoot are victum
 		if(istype(victim, /obj/machinery/power/apc)) //APCs would be deleted
 			assimilated_machinery = null
 			qdel(victim)
@@ -106,6 +107,7 @@
 		assimilated_machinery.alpha 		= 	initial(assimilated_machinery.alpha)
 		assimilated_machinery.mouse_opacity = 	initial(assimilated_machinery.mouse_opacity)
 		assimilated_machinery.anchored 		= 	initial(assimilated_machinery.anchored)
+		assimilated_machinery.density 		= 	initial(assimilated_machinery.density)
 		if(istype(assimilated_machinery, /obj/machinery))
 			var/obj/machinery/consumed = assimilated_machinery
 			consumed.stat &= ~BROKEN
