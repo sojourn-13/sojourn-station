@@ -107,8 +107,14 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 		data += "<br>Area limit disabled."
 	data += "<a href='?src=\ref[src];set_area_limit=1'>\[SET\]</a>"
 
-	data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/[hive_mind_ai.evo_level]%  \
-	<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+
+	if(hive_mind_ai)
+		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/[hive_mind_ai.evo_level]%  \
+		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+	else
+		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/1%  \
+		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+
 
 	data += "<br>Core oddity drop chance: [GLOB.hive_data_float["core_oddity_drop_chance"]] \
 	<a href='?src=\ref[src];rig_gacha=1'>\[SET\]</a>"
