@@ -55332,12 +55332,12 @@
 /area/nadezhda/engineering/engine_room)
 "kyO" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/teapot,
 /obj/item/reagent_containers/food/drinks/mug/teacup,
 /obj/item/reagent_containers/food/drinks/mug/teacup,
 /obj/structure/sign/plaque/cleanplaque{
 	pixel_y = -30
 	},
+/obj/item/reagent_containers/food/drinks/teapot/psych,
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "kyP" = (
@@ -90297,7 +90297,6 @@
 /obj/structure/table/woodentable,
 /obj/item/clipboard,
 /obj/item/device/lighting/toggleable/lamp/green,
-/obj/item/toy/plushie/mouse,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "reT" = (
@@ -104901,10 +104900,12 @@
 /area/nadezhda/medical/chemistry)
 "tSl" = (
 /obj/structure/closet/cabinet,
-/obj/random/booze,
-/obj/random/booze,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "tSm" = (
