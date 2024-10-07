@@ -10756,6 +10756,11 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"gOt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/chemical_dispenser/industrial,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/prepper/lima)
 "gOG" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -60412,7 +60417,7 @@ amZ
 ott
 hqL
 idB
-kuS
+gOt
 wWq
 qKo
 idB
