@@ -11139,6 +11139,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"ciN" = (
+/obj/structure/sign/faction/neotheology_cross{
+	pixel_x = 32
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "ciP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing,
@@ -25039,6 +25045,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"eNK" = (
+/obj/machinery/power/wall_obelisk/silver{
+	pixel_x = 33;
+	pixel_y = -11
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "eNN" = (
 /obj/item/haircomb,
 /obj/item/haircomb,
@@ -30354,6 +30367,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"fOj" = (
+/obj/structure/flora/small/rock3,
+/obj/machinery/power/wall_obelisk/silver{
+	pixel_x = -32;
+	pixel_y = -10
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "fOl" = (
 /obj/structure/ore_box,
 /obj/effect/decal/cleanable/dirt,
@@ -96651,6 +96672,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
+"soU" = (
+/obj/structure/sign/faction/neotheology_cross{
+	pixel_x = -32
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "soV" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger{
@@ -234578,11 +234605,11 @@ sOP
 mvt
 sOP
 pFV
-pFV
+ciN
 dKl
 kQP
 dKl
-pFV
+eNK
 vtx
 bXS
 bXS
@@ -236194,11 +236221,11 @@ mBw
 pwk
 wEa
 pFV
-hcX
+fOj
 lwk
 xTf
 lwk
-pFV
+soU
 pFV
 fLu
 pfy
