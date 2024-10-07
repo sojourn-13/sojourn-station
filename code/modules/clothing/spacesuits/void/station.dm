@@ -71,6 +71,7 @@
 		/obj/item/rcd
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering
+	price_tag = 250
 
 /obj/item/clothing/suit/space/void/engineering/equipped
 	boots = /obj/item/clothing/shoes/magboots
@@ -188,6 +189,7 @@
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+	price_tag = 250
 
 //CEO Rig
 /obj/item/clothing/head/helmet/space/void/goldilocks
@@ -272,6 +274,7 @@
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/medical
+	price_tag = 225
 
 /obj/item/clothing/suit/space/void/medical/equipped
 	boots = /obj/item/clothing/shoes/magboots
@@ -316,6 +319,7 @@
 	)
 	siemens_coefficient = 0.7
 	helmet = /obj/item/clothing/head/helmet/space/void/security
+	price_tag = 325
 
 /obj/item/clothing/suit/space/void/security/equipped
 	boots = /obj/item/clothing/shoes/magboots
