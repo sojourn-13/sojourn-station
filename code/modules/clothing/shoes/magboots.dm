@@ -19,6 +19,7 @@
 	)
 	siemens_coefficient = 0 // DAMN BOI
 	//This armor only applies to legs
+	price_tag = 125
 
 /obj/item/clothing/shoes/magboots/proc/set_slowdown()
 	var/obj/item/clothing/shoes/shoes = overslot_contents
@@ -66,3 +67,4 @@
 	mag_slow = 2
 	icon_base = "mercboots"
 	action_button_name = "Toggle Magboots"
+	price_tag = 275

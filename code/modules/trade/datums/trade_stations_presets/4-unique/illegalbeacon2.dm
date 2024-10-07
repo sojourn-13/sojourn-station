@@ -26,7 +26,8 @@
 			/obj/item/noslipmodule,
 			/obj/item/storage/box/syndie_kit/imp_compress,
 			/obj/item/grenade/empgrenade,
-			/obj/item/storage/backpack/military = good_data("MOLLE pack", list(3, 8), 1000)
+			/obj/item/storage/backpack/military = good_data("MOLLE pack", list(3, 8), 1000),
+			/obj/item/clothing/shoes/magboots/merc
 		),
 		"Weapons" = list(
 			/obj/item/melee/energy/sword,
