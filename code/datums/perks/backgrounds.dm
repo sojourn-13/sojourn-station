@@ -65,6 +65,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	options["Kriosan"] = LANGUAGE_KRIOSAN
 	options["Akula"] = LANGUAGE_AKULA
 	options["Narad Pidgin"] = LANGUAGE_MERP
+	options["Crinos"] = LANGUAGE_SABLEKYNE
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)

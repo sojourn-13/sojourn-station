@@ -201,22 +201,39 @@
 	space_chance = 5
 	syllables = list("Punainen", "Koira", "Tuolla", "Rikas", "syvä", "kivääri", "ulkomaalainen", "ihmisen", "sammakko", "taivaaseen", "Koti", "tilaa",  "sinä", "vastustamaton", "heimo", "klaani",  "kotitalous", "raha", "iso", "pieni", "sairaus", "ruokaa", "alkoholia", "kana", "asevelvollisuus", "alus", "joki", "saari", "ase", "veitsi", "juusto", "pää", "häntää", "taistelevat", "halaamalla", "ystävät", "ystävyys", "kansainyhteisö", "liitto", "aurinko", "missä", "mitä", "kun", "Miten", "siksi", "laulu", "kalastaa", "hämärä", "epäilyttävä", "luottamus", "kusipää", "paskiainen", "ääliö", "munata", "*!*")
 
-//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld. 
+//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld.
 /datum/language/weh
 	name = LANGUAGE_WEH
 	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
 	speech_verb = list("says", "hisses")
 	ask_verb = list("inquires")
 	exclaim_verb = list("bellows")
-	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
+	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper
 	key = "u"
 	has_written_form = TRUE
 	partial_understanding = list(
-		LANGUAGE_COMMON = 20, 
-		LANGUAGE_YASSARI = 10, 
-		LANGUAGE_EURO = 10, 
-		LANGUAGE_JANA = 10 
+		LANGUAGE_COMMON = 20,
+		LANGUAGE_YASSARI = 10,
+		LANGUAGE_EURO = 10,
+		LANGUAGE_JANA = 10
 	)
 	shorthand = "CRV"
 	space_chance = 50
 	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")
+
+/datum/language/mrow
+
+	name = LANGUAGE_SABLEKYNE
+	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, a flowing language consisting of rolling r's, chrips, and other assorted sounds."
+	speech_verb = list("chatters")
+	ask_verb = list("mrowls")
+	exclaim_verb = list("yelps")
+	flags = NO_SPEAK
+	colour = "crinos"
+	key = "s"
+	space_chance = 50
+	has_written_form = TRUE
+	shorthand = "CR"
+	syllables = list("mrr", "rrp", "rhhh", "lrrit", "krrk", "prrp", "prm", "kha", "rzp", "mah", "zhak", "trrl", "trrp", "trr", "myh", "mhh", "dryh", "dah", "bh", "rhu", "mro", "pch", "chrr", "eyh", "nii", "nrr",
+	"chrrp", "chah", "rzz", "kruh", "lz", "lah", "liu", "ruh", "msh", "rshh", "shah", "hyr", "kruh", "syohr", "shrr", "seh", "mrem", "mrea", "cht", "chhr", "hch", "nha", "nrr", "nre", "nymrh", "dhh", "dzh", "drch", "chhhp", "chhym",
+	"hakk", "krh", "rhm", "arrto", "rrho", "qehi", "srrhi", "assih", "wehi", "yohr", "zayak", "rrik")
