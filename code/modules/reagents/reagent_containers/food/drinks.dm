@@ -321,6 +321,17 @@
 	volume = 120
 	center_of_mass = list("x"=17, "y"=7)
 
+/obj/item/reagent_containers/food/drinks/teapot/psych
+	name = "teapot"
+	desc = "An elegant and mysterious ornate teapot. One wonders what must be in it."
+	icon_state = "teapot"
+	item_state = "teapot"
+	matter = list(MATERIAL_STEEL = 1)
+	amount_per_transfer_from_this = 10
+	volume = 120
+	center_of_mass = list("x"=17, "y"=7)
+	preloaded_reagents = list("tea" = 80, "psi_juice" = 40)
+
 /obj/item/reagent_containers/food/drinks/pitcher
 	name = "insulated pitcher"
 	desc = "A stainless steel insulated pitcher."
