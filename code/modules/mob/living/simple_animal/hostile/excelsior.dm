@@ -38,6 +38,18 @@
 
 	needs_environment = FALSE
 
+/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/emp_act(severity)
+	if(health <= death_threshold)
+		return
+
+	stance = HOSTILE_STANCE_IDLE
+	target_mob = null
+	SSmove_manager.stop_looping(src)
+	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+	sparks.set_up(3, 3, loc)
+	sparks.start()
+	visible_message(SPAN_DANGER("\The [src] locks up!"))
+
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/death(gibbed, var/list/force_grant)
 	if(health <= death_threshold)
 		visible_message("<b>[src]</b> blows apart in an explosion!")
