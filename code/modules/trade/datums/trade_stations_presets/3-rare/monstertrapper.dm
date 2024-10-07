@@ -44,8 +44,8 @@
 	hidden_inventory = list(
 		"High-End Roach Product" = list(
 			/obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900),
-			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000)
+			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900)
+//			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000) Kaiseraurum doesn't exist here, you just get an empty bottle
 		),
 		"Just Spiders" = list(
 			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(2, 3)),
@@ -58,5 +58,5 @@
 		/obj/item/mine = offer_data("landmine", 1200, 3),
 		/obj/item/beartrap = offer_data("mechanical trap", 600, 5),
 		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10),
-		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 800, 2)
+		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 1200, 2)
 	)
