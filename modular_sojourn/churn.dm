@@ -42,7 +42,7 @@
 	to_chat(user, "<span class='info'>[message]</span>")
 
 /obj/structure/churn/proc/churn(mob/user)
-	if(salt_needed<reagents.get_reagent_amount("sodiumchloride") && milk_requirement<reagents.get_reagent_amount("milk"))
+	if(salt_needed<=reagents.get_reagent_amount("sodiumchloride") && milk_requirement<=reagents.get_reagent_amount("milk"))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("The churn unable to churn do to lacking milk or salt!"))
 	return FALSE
