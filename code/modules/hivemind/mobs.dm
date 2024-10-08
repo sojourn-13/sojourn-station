@@ -158,11 +158,11 @@
 	switch(severity)
 		if(1)
 			if(malfunction_chance < 15)
-				malfunction_chance = 15
+				malfunction_chance = 15 * GLOB.hive_data_float["hivemind_emp_mult"]
 		if(2)
 			if(malfunction_chance < 25)
-				malfunction_chance = 25
-	adjustFireLoss(rand(20,80)*severity)
+				malfunction_chance = 25 * GLOB.hive_data_float["hivemind_emp_mult"]
+	adjustFireLoss((rand(20,80)*severity * GLOB.hive_data_float["hivemind_emp_mult"]))
 
 /mob/living/simple_animal/hostile/hivemind/death()
 	GLOB.hivemind_mobs[real_name]--

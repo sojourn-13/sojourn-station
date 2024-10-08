@@ -3496,6 +3496,7 @@
 #include "modular_sojourn\churn.dm"
 #include "modular_sojourn\client_colour.dm"
 #include "modular_sojourn\fencer.dm"
+#include "modular_sojourn\hand_stealth.dm"
 #include "modular_sojourn\lamp.dm"
 #include "modular_sojourn\pixelshift.dm"
 #include "modular_sojourn\power_puncher.dm"
