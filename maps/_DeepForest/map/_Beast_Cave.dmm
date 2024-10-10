@@ -5826,11 +5826,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
-"uQ" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "uR" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/bottles,
@@ -6233,10 +6228,6 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/asteroid/dirt/ground,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"wf" = (
-/mob/living/simple_animal/hostile/hell_pig,
-/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wg" = (
 /obj/machinery/vending/organfridge_aberrant/alt,
@@ -7622,6 +7613,10 @@
 /obj/random/gun_fancy/alawys_spawn,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"AX" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "AY" = (
 /obj/item/remains/ribcage,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -8407,6 +8402,11 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"DH" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "DI" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/syringe,
@@ -9072,7 +9072,7 @@
 	name = "Probe Core slot"
 	},
 /obj/item/paper/carbon{
-	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1> <h2>Date: --------/--------/2643 Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2> <p>From: Sakaba Corp. HQ - Rep. Liang ----------</p> <p>[TRANSFER UPDATE]This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at ---------- Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge ---------- effective immediately. His role will focus on the ---------- and critical oversight of the outpost’s ---------- ongoing projects.</p><br><br><p>Hawthorne, previously assigned to ---------- ----------, brings over two decades of experience with Sakaba Corp, specializing in ---------- operations and containment. His leadership will ---------- operational stability. [EFFECTIVE DATE]: --------/--------/2643 [REPLACING]: ---------- ---------- [PREVIOUS POSITION]: ---------- ---------- ---------- [PRIMARY OBJECTIVE]: ---------- ---------- research, and ensuring all ---------- containment protocols are strictly followed. We anticipate ---------- productivity under his leadership. Transition briefings will begin ---------- upon arrival. New security measures are to be implemented ---------- in conjunction with ---------- ---------- ----------. Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival. Sakaba Corporation Headquarters Rep. Liang ----------</p><br><br><p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
+	info = "Congratulations on the Alpha Site anniversary from Sakaba Corporation Headquarters. This message is issued by Representative Kenji Nakamura.";
 	name = "SKB-HQ-FAX"
 	},
 /turf/simulated/floor/tiled/white/monofloor,
@@ -9519,6 +9519,11 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Hv" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Hw" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/sign/warning/hot_exhaust/small,
@@ -9850,10 +9855,6 @@
 /obj/structure/table/woodentable,
 /obj/item/oddity/common/blueprint,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"Ix" = (
-/obj/item/remains/ribcage,
-/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Iy" = (
 /obj/item/device/lighting/glowstick/undark,
@@ -10755,11 +10756,6 @@
 /obj/random/rig_module/rare/low_chance,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"LD" = (
-/obj/structure/catwalk,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "LE" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -10836,6 +10832,11 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"LS" = (
+/obj/structure/catwalk,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "LT" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11219,11 +11220,6 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ng" = (
-/obj/structure/catwalk,
-/obj/item/remains/tajaran,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Nh" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -14
@@ -12643,11 +12639,6 @@
 	tag = "icon-escpodwall26"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"RT" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains/deer,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "RU" = (
 /obj/structure/closet/body_bag,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -12842,6 +12833,11 @@
 /obj/structure/lattice,
 /turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
+"SE" = (
+/obj/structure/catwalk,
+/obj/item/remains/tajaran,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "SF" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -13912,6 +13908,10 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"VW" = (
+/mob/living/simple_animal/hostile/hell_pig,
+/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "VX" = (
 /obj/structure/lattice,
@@ -16197,7 +16197,7 @@ rH
 rH
 rK
 fm
-uQ
+Hv
 Dt
 VH
 VP
@@ -16401,7 +16401,7 @@ rK
 fm
 YI
 WY
-Ng
+SE
 ym
 VP
 QT
@@ -16600,7 +16600,7 @@ rH
 rH
 rK
 fm
-RT
+DH
 BP
 zA
 Ui
@@ -16803,7 +16803,7 @@ rH
 rK
 CJ
 Nt
-wf
+VW
 wP
 Ui
 DW
@@ -17005,9 +17005,9 @@ rH
 rK
 fm
 Ve
-Ix
+AX
 WY
-LD
+LS
 DW
 Bu
 EC
@@ -17611,7 +17611,7 @@ rH
 rH
 rK
 CJ
-uQ
+Hv
 Dt
 Qr
 VP
