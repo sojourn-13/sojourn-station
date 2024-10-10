@@ -4754,11 +4754,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"ra" = (
-/obj/structure/catwalk,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "rb" = (
 /obj/item/trash/tray,
 /obj/random/scrap/moderate_weighted,
@@ -5831,6 +5826,11 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
+"uQ" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "uR" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/bottles,
@@ -6233,6 +6233,10 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/asteroid/dirt/ground,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"wf" = (
+/mob/living/simple_animal/hostile/hell_pig,
+/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wg" = (
 /obj/machinery/vending/organfridge_aberrant/alt,
@@ -6984,10 +6988,6 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"yL" = (
-/mob/living/simple_animal/hostile/hell_pig,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "yN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/invislight,
@@ -7677,11 +7677,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Bk" = (
-/obj/structure/catwalk,
-/obj/item/remains/tajaran,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Bl" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -9068,6 +9063,7 @@
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 8
 	},
+/obj/random/oddity_guns,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FP" = (
@@ -9076,10 +9072,9 @@
 	name = "Probe Core slot"
 	},
 /obj/item/paper/carbon{
-	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1> <h2>Date: --------/--------/2643 Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2> <p>From: Sakaba Corp. HQ - Rep. Liang ----------</p> <p>[TRANSFER UPDATE] This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at ---------- Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge ---------- effective immediately. His role will focus on the ---------- and critical oversight of the outpost’s ---------- ongoing projects.</p><br><br><p>Hawthorne, previously assigned to ---------- ----------, brings over two decades of experience with Sakaba Corp, specializing in ---------- operations and containment. His leadership will ---------- operational stability. [EFFECTIVE DATE]: --------/--------/2643 [REPLACING]: ---------- ---------- [PREVIOUS POSITION]: ---------- ---------- ---------- [PRIMARY OBJECTIVE]: ---------- ---------- research, and ensuring all ---------- containment protocols are strictly followed. We anticipate ---------- productivity under his leadership. Transition briefings will begin ---------- upon arrival. New security measures are to be implemented ---------- in conjunction with ---------- ---------- ----------. Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival. Sakaba Corporation Headquarters Rep. Liang ----------</p><br><br><p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
+	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1> <h2>Date: --------/--------/2643 Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2> <p>From: Sakaba Corp. HQ - Rep. Liang ----------</p> <p>[TRANSFER UPDATE]This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at ---------- Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge ---------- effective immediately. His role will focus on the ---------- and critical oversight of the outpost’s ---------- ongoing projects.</p><br><br><p>Hawthorne, previously assigned to ---------- ----------, brings over two decades of experience with Sakaba Corp, specializing in ---------- operations and containment. His leadership will ---------- operational stability. [EFFECTIVE DATE]: --------/--------/2643 [REPLACING]: ---------- ---------- [PREVIOUS POSITION]: ---------- ---------- ---------- [PRIMARY OBJECTIVE]: ---------- ---------- research, and ensuring all ---------- containment protocols are strictly followed. We anticipate ---------- productivity under his leadership. Transition briefings will begin ---------- upon arrival. New security measures are to be implemented ---------- in conjunction with ---------- ---------- ----------. Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival. Sakaba Corporation Headquarters Rep. Liang ----------</p><br><br><p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
 	name = "SKB-HQ-FAX"
 	},
-/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
@@ -10760,6 +10755,11 @@
 /obj/random/rig_module/rare/low_chance,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"LD" = (
+/obj/structure/catwalk,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "LE" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -10886,11 +10886,6 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Mc" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains/deer,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Md" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/big/rocks1,
@@ -11224,6 +11219,11 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ng" = (
+/obj/structure/catwalk,
+/obj/item/remains/tajaran,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Nh" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -14
@@ -11621,11 +11621,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"OC" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "OD" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -12648,6 +12643,11 @@
 	tag = "icon-escpodwall26"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"RT" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "RU" = (
 /obj/structure/closet/body_bag,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -16197,7 +16197,7 @@ rH
 rH
 rK
 fm
-OC
+uQ
 Dt
 VH
 VP
@@ -16401,7 +16401,7 @@ rK
 fm
 YI
 WY
-Bk
+Ng
 ym
 VP
 QT
@@ -16600,7 +16600,7 @@ rH
 rH
 rK
 fm
-Mc
+RT
 BP
 zA
 Ui
@@ -16803,7 +16803,7 @@ rH
 rK
 CJ
 Nt
-yL
+wf
 wP
 Ui
 DW
@@ -17007,7 +17007,7 @@ fm
 Ve
 Ix
 WY
-ra
+LD
 DW
 Bu
 EC
@@ -17611,7 +17611,7 @@ rH
 rH
 rK
 CJ
-OC
+uQ
 Dt
 Qr
 VP
