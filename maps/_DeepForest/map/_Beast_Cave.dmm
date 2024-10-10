@@ -6712,6 +6712,10 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"xN" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "xO" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/fixed/shale/dark,
@@ -7365,6 +7369,11 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ah" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ai" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -7613,10 +7622,6 @@
 /obj/random/gun_fancy/alawys_spawn,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"AX" = (
-/obj/item/remains/ribcage,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "AY" = (
 /obj/item/remains/ribcage,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -7667,6 +7672,10 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Bi" = (
+/mob/living/simple_animal/hostile/hell_pig,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Bj" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -8013,6 +8022,11 @@
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Cq" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Cr" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
@@ -8401,11 +8415,6 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"DH" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains/deer,
-/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "DI" = (
 /obj/structure/table/standard,
@@ -9063,7 +9072,6 @@
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 8
 	},
-/obj/random/oddity_guns,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FP" = (
@@ -9075,6 +9083,7 @@
 	info = "Congratulations on the Alpha Site anniversary from Sakaba Corporation Headquarters. This message is issued by Representative Kenji Nakamura.";
 	name = "SKB-HQ-FAX"
 	},
+/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
@@ -9519,11 +9528,6 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Hv" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Hw" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/sign/warning/hot_exhaust/small,
@@ -10832,11 +10836,6 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"LS" = (
-/obj/structure/catwalk,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "LT" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11268,6 +11267,11 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"No" = (
+/obj/structure/catwalk,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Np" = (
 /obj/effect/spider/cocoon,
 /mob/living/carbon/superior_animal/vox/wasp,
@@ -12833,11 +12837,6 @@
 /obj/structure/lattice,
 /turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
-"SE" = (
-/obj/structure/catwalk,
-/obj/item/remains/tajaran,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "SF" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -12892,6 +12891,11 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"SO" = (
+/obj/structure/catwalk,
+/obj/item/remains/tajaran,
+/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SP" = (
 /obj/structure/bed/psych,
@@ -13908,10 +13912,6 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_dark)
-"VW" = (
-/mob/living/simple_animal/hostile/hell_pig,
-/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "VX" = (
 /obj/structure/lattice,
@@ -16197,7 +16197,7 @@ rH
 rH
 rK
 fm
-Hv
+Ah
 Dt
 VH
 VP
@@ -16401,7 +16401,7 @@ rK
 fm
 YI
 WY
-SE
+SO
 ym
 VP
 QT
@@ -16600,7 +16600,7 @@ rH
 rH
 rK
 fm
-DH
+Cq
 BP
 zA
 Ui
@@ -16803,7 +16803,7 @@ rH
 rK
 CJ
 Nt
-VW
+Bi
 wP
 Ui
 DW
@@ -17005,9 +17005,9 @@ rH
 rK
 fm
 Ve
-AX
+xN
 WY
-LS
+No
 DW
 Bu
 EC
@@ -17611,7 +17611,7 @@ rH
 rH
 rK
 CJ
-Hv
+Ah
 Dt
 Qr
 VP
