@@ -212,6 +212,7 @@
 	icon_state = "railing0";
 	dir = 8
 	},
+/obj/random/oddity_guns,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "aV" = (
@@ -5462,6 +5463,10 @@
 /obj/structure/light_stick,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"tG" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "tH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -7668,10 +7673,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Bk" = (
-/mob/living/simple_animal/hostile/hell_pig,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Bl" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -7722,7 +7723,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bu" = (
-/obj/effect/decal/cleanable/rubble,
+/obj/structure/catwalk,
 /obj/item/remains,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -8848,6 +8849,10 @@
 /obj/random/mecha/damaged,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ff" = (
+/mob/living/simple_animal/hostile/hell_pig,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Fg" = (
 /turf/simulated/floor/beach/water/coastwatercorner{
 	dir = 4
@@ -8952,11 +8957,6 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Fy" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/remains/deer,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Fz" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/psych{
@@ -8982,11 +8982,6 @@
 /mob/living/simple_animal/hostile/carp/shark,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
-"FC" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/machinery/door/blast/regular,
-/turf/simulated/floor/industrial,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "FD" = (
 /obj/structure/catwalk,
 /obj/structure/largecrate/animal/corgi,
@@ -9076,10 +9071,9 @@
 	name = "Probe Core slot"
 	},
 /obj/item/paper/carbon{
-	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1><h2>Date: ||||||/||||||/2643Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2><p>From: Sakaba Corp. HQ - Rep. Liang ||||||||||||||||||</p><p>\[TRANSFER UPDATE]This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at |||||||||||||||||||| Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge |||||||||||||||| effective immediately. His role will focus on the |||||||||||||||||| and critical oversight of the outpost’s |||||||| ongoing projects.\"</p><br><br><p>Hawthorne, previously assigned to ||||||||||||||||||||||||||||||, brings over two decades of experience with Sakaba Corp, specializing in |||||||||||||||||||| operations and containment. His leadership will |||||||||||| operational stability.[EFFECTIVE DATE]: ||||||/||||||/2643[REPLACING]: ||||||||||| |||||||||||[PREVIOUS POSITION]:  ||||||||||| ||||||||||| |||||||||||[PRIMARY OBJECTIVE]:  ||||||||||| |||||||||||, research, and ensuring all  ||||||||||| |||||| containment protocols are strictly followed.We anticipate  ||||||||||| ||||||||| productivity under his leadership. Transition briefings will begin  ||||||||||| ||||||||||| upon arrival. New security measures are to be implemented  ||||||||||| ||||||||||| in conjunction with  ||||||||||| ||||||||| |||||||.Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival.Sakaba Corporation HeadquartersRep. Liang  |||||||||||</p><br><br> <p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
+	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1><h2>Date: ||||||/||||||/2643 Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2><p>From: Sakaba Corp. HQ - Rep. Liang ||||||||||||||||||</p><p>\[TRANSFER UPDATE]This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at |||||||||||||||||||| Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge |||||||||||||||| effective immediately. His role will focus on the |||||||||||||||||| and critical oversight of the outpost’s |||||||| ongoing projects.\"</p><br><br><p>Hawthorne, previously assigned to ||||||||||||||||||||||||||||||, brings over two decades of experience with Sakaba Corp, specializing in |||||||||||||||||||| operations and containment. His leadership will |||||||||||| operational stability.[EFFECTIVE DATE]: ||||||/||||||/2643[REPLACING]: ||||||||||| |||||||||||[PREVIOUS POSITION]:  ||||||||||| ||||||||||| |||||||||||[PRIMARY OBJECTIVE]:  ||||||||||| |||||||||||, research, and ensuring all  ||||||||||| |||||| containment protocols are strictly followed.We anticipate  ||||||||||| ||||||||| productivity under his leadership. Transition briefings will begin  ||||||||||| ||||||||||| upon arrival. New security measures are to be implemented  ||||||||||| ||||||||||| in conjunction with  ||||||||||| ||||||||| |||||||.Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival.Sakaba Corporation HeadquartersRep. Liang  |||||||||||</p><br><br> <p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
 	name = "SKB-HQ-FAX"
 	},
-/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
@@ -9518,6 +9512,11 @@
 /obj/item/stack/material/cloth/random,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ht" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Hu" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central1{
 	dir = 8
@@ -10062,10 +10061,6 @@
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Jn" = (
-/obj/item/remains/ribcage,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Jo" = (
 /obj/structure/curtain/open/privacy{
 	name = "medical curtain"
@@ -10321,6 +10316,11 @@
 	tag = "icon-escpodwall17"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Kd" = (
+/obj/structure/catwalk,
+/obj/item/remains/tajaran,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Kf" = (
 /obj/structure/catwalk,
 /obj/machinery/light,
@@ -11219,11 +11219,6 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Ng" = (
-/obj/structure/catwalk,
-/obj/item/remains,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Nh" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -14
@@ -12736,11 +12731,6 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Sm" = (
-/obj/structure/catwalk,
-/obj/item/remains/tajaran,
-/turf/simulated/floor/rock/grey,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Sn" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -12818,6 +12808,11 @@
 	},
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"SA" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "SB" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -13301,6 +13296,11 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ub" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Uc" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -16197,7 +16197,7 @@ rH
 rH
 rK
 fm
-Bu
+Ub
 Dt
 VH
 VP
@@ -16401,7 +16401,7 @@ rK
 fm
 YI
 WY
-Sm
+Kd
 ym
 VP
 QT
@@ -16600,12 +16600,12 @@ rH
 rH
 rK
 fm
-Fy
+Ht
 BP
 zA
 Ui
 DW
-FC
+SA
 EC
 wK
 EC
@@ -16803,11 +16803,11 @@ rH
 rK
 CJ
 Nt
-Bk
+Ff
 wP
 Ui
 DW
-FC
+SA
 EC
 wK
 Ef
@@ -17005,11 +17005,11 @@ rH
 rK
 fm
 Ve
-Jn
+tG
 WY
-Ng
+Bu
 DW
-FC
+SA
 EC
 wK
 OR
@@ -17611,7 +17611,7 @@ rH
 rH
 rK
 CJ
-Bu
+Ub
 Dt
 Qr
 VP
