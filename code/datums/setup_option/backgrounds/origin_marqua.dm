@@ -1,8 +1,7 @@
 /datum/category_item/setup_option/background/ethnicity/marquaintelligensia
-	name = "Intelligensia"
-	desc = "The intelligensia of the mar'qua are the formally trained and 'think-tank' of mar'qua society, making up most of their scientists in the fields of biology and mathematics. \
-			As someone who has left the higher folds of the intelligensia you are one of skilled rapport but a life of easy living has made you quite physically weak. \
-			You lack of physically capability also makes you ineligible for the colony security forces or as a prospector (except salvager), further locking you into your role as an intellectual."
+	name = "Observer"
+	desc = "Your studies have been done at a distance, collecting information through watching other skill professions work their labors. \
+	Due to this, you lack physical ability to pass basic training for most outdoor roles that would require it."
 
 	restricted_to_species = list(FORM_MARQUA)
 
@@ -20,37 +19,32 @@
 
 
 /datum/category_item/setup_option/background/ethnicity/marquamenial
-	name = "Menial"
-	desc = "Unfortunately for many mar'qua they are born as the gaaran-geraa, often called the menial castes. Your existence, much like your family and friends, was one of toil. \
-			Menials are trained from early childhood to be pragmatic above all else and enjoy the simple toil of their work. Appearance and taste is secondary to function, always. \
-			As a menial you lack the higher training of most mar'qua but a life of labor has made you toughened to the rigors of life, the sole benefit of low born status."
+	name = "Practical"
+	desc = "Your studies have been from your own labor, leading you to be more physically able than many others of your kind."
 
 	restricted_to_species = list(FORM_MARQUA)
 
 	stat_modifiers = list(
-		STAT_ROB = 2,
-		STAT_TGH = 5,
-		STAT_VIG = 0,
-		STAT_BIO = 2,
-		STAT_MEC = 0,
-		STAT_COG = 1
+		STAT_ROB = -2,
+		STAT_TGH = -2,
+		STAT_VIG = -2,
+		STAT_BIO = 5,
+		STAT_MEC = 5,
+		STAT_COG = 5
 	)
 
 
 /datum/category_item/setup_option/background/ethnicity/marquamartial
 	name = "Martial"
-	desc = "Also known as the quoqa-geraa, the martial caste of the mar'qua spends their entire lives training to defend the mar'qua empire. \
-			The martial caste is strong, decisive, and extremely focused on the here and now of a situation to ensure the best choices are made. \
-			While the martial caste is intelligent, after all they are still mar'qua, they lack the formal education even a menial is afforded, but a life of disciplined training has \
-			improved their physical ability quite well."
+	desc = "Your studies and training were done for physical confrontations, learning ways to better aim, adjust armor, and similar techniques for combat."
 
 	restricted_to_species = list(FORM_MARQUA)
 
 	stat_modifiers = list(
-		STAT_ROB = 4,
-		STAT_TGH = 8,
-		STAT_VIG = 12,
-		STAT_BIO = -4,
-		STAT_MEC = -10,
-		STAT_COG = -10
+		STAT_ROB = 8,
+		STAT_TGH = 12,
+		STAT_VIG = 16,
+		STAT_BIO = -7,
+		STAT_MEC = -12,
+		STAT_COG = -12
 	)
