@@ -6169,7 +6169,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/random/oddity_guns,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "vX" = (
@@ -7669,6 +7668,10 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Bk" = (
+/mob/living/simple_animal/hostile/hell_pig,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Bl" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -7719,7 +7722,8 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bu" = (
-/obj/item/tool/pickaxe,
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bv" = (
@@ -8002,13 +8006,11 @@
 	dir = 8
 	},
 /obj/item/remains/mummy2,
-/obj/item/clothing/suit/armor/flakvest/full,
-/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored{
-	armor_list = list("melee" = 7, "bullet" = 7, "energy" = 7, "bomb" = 20, "bio" = 0,ddddddddddd "rad" = 0)
-	},
-/obj/item/clothing/mask/balaclava,
 /obj/item/clothing/shoes/jackboots/duty,
 /obj/item/clothing/under/rank/fatigues/grey,
+/obj/item/clothing/mask/balaclava,
+/obj/item/clothing/suit/armor/flakvest/full,
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Cr" = (
@@ -8950,6 +8952,11 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Fy" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/remains/deer,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Fz" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/psych{
@@ -8975,6 +8982,11 @@
 /mob/living/simple_animal/hostile/carp/shark,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
+"FC" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/industrial,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "FD" = (
 /obj/structure/catwalk,
 /obj/structure/largecrate/animal/corgi,
@@ -9246,9 +9258,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Gx" = (
-/obj/item/clothing/under/rank/fatigues/camo/solfed{
-	desc = "A camo utility uniform, bearing worn patches of the Solar armed fodrces.."
-	},
+/obj/item/clothing/under/rank/fatigues/camo/solfed,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Gy" = (
@@ -10052,6 +10062,10 @@
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Jn" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Jo" = (
 /obj/structure/curtain/open/privacy{
 	name = "medical curtain"
@@ -11205,6 +11219,11 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ng" = (
+/obj/structure/catwalk,
+/obj/item/remains,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Nh" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -14
@@ -12142,6 +12161,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qr" = (
 /obj/structure/shuttle/engine/platform,
+/obj/random/oddity_guns,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qs" = (
@@ -12715,6 +12735,11 @@
 "Sl" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Sm" = (
+/obj/structure/catwalk,
+/obj/item/remains/tajaran,
+/turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Sn" = (
 /obj/structure/window/reinforced{
@@ -16172,7 +16197,7 @@ rH
 rH
 rK
 fm
-Ve
+Bu
 Dt
 VH
 VP
@@ -16376,7 +16401,7 @@ rK
 fm
 YI
 WY
-Ui
+Sm
 ym
 VP
 QT
@@ -16575,12 +16600,12 @@ rH
 rH
 rK
 fm
-Ve
+Fy
 BP
 zA
 Ui
 DW
-wK
+FC
 EC
 wK
 EC
@@ -16773,16 +16798,16 @@ rU
 rU
 rU
 rK
-rK
-rK
+rH
+rH
 rK
 CJ
-Bu
 Nt
+Bk
 wP
 Ui
 DW
-wK
+FC
 EC
 wK
 Ef
@@ -16980,11 +17005,11 @@ rH
 rK
 fm
 Ve
-Nt
+Jn
 WY
-Ui
+Ng
 DW
-wK
+FC
 EC
 wK
 OR
@@ -17586,7 +17611,7 @@ rH
 rH
 rK
 CJ
-Ve
+Bu
 Dt
 Qr
 VP
