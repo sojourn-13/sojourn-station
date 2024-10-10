@@ -230,7 +230,7 @@
 	exclaim_verb = list("yelps")
 	flags = NO_SPEAK
 	colour = "crinos"
-	key = "s"
+	key = "5"
 	space_chance = 50
 	has_written_form = TRUE
 	shorthand = "CR"
