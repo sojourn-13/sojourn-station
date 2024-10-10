@@ -270,6 +270,12 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
 	requires_power = TRUE
 
+/area/nadezhda/dungeon/outside/prepper/alpha
+	name = "Site Alpha-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
 /area/nadezhda/dungeon/outside/prepper/delta/turret_powered_tile
 	name = "Site DELTA-09"
 	icon_state = "erisred"
