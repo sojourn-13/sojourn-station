@@ -17,7 +17,9 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	init_recoil = LMG_RECOIL(0.6)
+	init_recoil = LMG_RECOIL(0.9) //More recoil then others do to being an old design base (+ it has better AD and damage then other 10x24)
+	damage_multiplier = 1.1
+	penetration_multiplier = 1.1
 	serial_type = "Sol Fed"
 
 	wield_delay = 1.0 SECOND
