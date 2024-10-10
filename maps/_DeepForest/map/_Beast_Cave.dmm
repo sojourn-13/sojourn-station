@@ -371,6 +371,12 @@
 /obj/item/organ_module/active/simple/armblade/energy_blade,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"bB" = (
+/obj/structure/flora/small/bushb2,
+/obj/structure/grille,
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "bC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -4668,6 +4674,11 @@
 /obj/structure/flora/tree/jungle_small/variant2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"qL" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/tree/jungle_small/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "qM" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -6081,6 +6092,18 @@
 	icon_state = "rock2"
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
+"vL" = (
+/obj/structure/flora/big/bush2{
+	pixel_x = 12;
+	pixel_y = -16
+	},
+/obj/structure/flora/big/bush2{
+	pixel_x = -23;
+	pixel_y = -25
+	},
+/obj/structure/sign/warning/secure_area/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_light)
 "vM" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/food/snacks/openable/mre,
@@ -6251,6 +6274,10 @@
 /obj/effect/decal/cleanable/dirt/snow,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"wo" = (
+/obj/structure/sign/warning/high_voltage/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_light)
 "wp" = (
 /obj/structure/boulder,
 /obj/structure/snowfall{
@@ -6448,17 +6475,11 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wY" = (
-/obj/structure/closet,
-/obj/item/clothing/head/bio_hood/virology,
-/obj/item/clothing/suit/bio_suit/virology,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/grille,
+/obj/structure/low_wall,
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "wZ" = (
 /obj/structure/flora/small/snow/rock2,
 /turf/simulated/floor/snow,
@@ -6528,8 +6549,11 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "xn" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/big/bush2{
+	pixel_x = 12;
+	pixel_y = -16
+	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xo" = (
@@ -6809,6 +6833,13 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"yj" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/grille,
+/obj/structure/low_wall,
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "yl" = (
 /obj/structure/shuttle_part/escpod{
 	icon_state = "escpodwall27";
@@ -7335,6 +7366,16 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ai" = (
+/obj/random/scrap/dense_weighted,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Aj" = (
 /obj/machinery/computer{
 	stat = 1;
@@ -7389,6 +7430,14 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"At" = (
+/obj/structure/low_wall,
+/obj/structure/grille,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Au" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -7953,6 +8002,13 @@
 	dir = 8
 	},
 /obj/item/remains/mummy2,
+/obj/item/clothing/suit/armor/flakvest/full,
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored{
+	armor_list = list("melee" = 7, "bullet" = 7, "energy" = 7, "bomb" = 20, "bio" = 0,ddddddddddd "rad" = 0)
+	},
+/obj/item/clothing/mask/balaclava,
+/obj/item/clothing/shoes/jackboots/duty,
+/obj/item/clothing/under/rank/fatigues/grey,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Cr" = (
@@ -8174,6 +8230,10 @@
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"De" = (
+/obj/item/storage/belt/security/tactical/solfed,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Df" = (
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -8216,11 +8276,13 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Dp" = (
-/obj/structure/flora/ausbushes/reedbush,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
+"Do" = (
+/obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Dp" = (
+/obj/random/cluster/golem/low_chance,
+/turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Dq" = (
 /obj/structure/bed/chair/office/light,
@@ -8369,6 +8431,11 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
+"DM" = (
+/obj/structure/grille,
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "DN" = (
 /obj/random/gun_shotgun/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -8996,7 +9063,11 @@
 /obj/structure/table{
 	name = "Probe Core slot"
 	},
-/obj/item/oddity/ls/puzzlebox,
+/obj/item/paper/carbon{
+	info = "<h1>Sakaba Corporation Headquarters - Internal Communication Report</h1><h2>Date: ||||||/||||||/2643Subject: New Facility Director Transfer - Gamma-22, Amethyn Sector</h2><p>From: Sakaba Corp. HQ - Rep. Liang ||||||||||||||||||</p><p>\[TRANSFER UPDATE]This communication confirms the transfer of Richard Hawthorne to the position of Facility Director at |||||||||||||||||||| Gamma-22, located in the Amethyn sector. Director Hawthorne will take charge |||||||||||||||| effective immediately. His role will focus on the |||||||||||||||||| and critical oversight of the outpost’s |||||||| ongoing projects.\"</p><br><br><p>Hawthorne, previously assigned to ||||||||||||||||||||||||||||||, brings over two decades of experience with Sakaba Corp, specializing in |||||||||||||||||||| operations and containment. His leadership will |||||||||||| operational stability.[EFFECTIVE DATE]: ||||||/||||||/2643[REPLACING]: ||||||||||| |||||||||||[PREVIOUS POSITION]:  ||||||||||| ||||||||||| |||||||||||[PRIMARY OBJECTIVE]:  ||||||||||| |||||||||||, research, and ensuring all  ||||||||||| |||||| containment protocols are strictly followed.We anticipate  ||||||||||| ||||||||| productivity under his leadership. Transition briefings will begin  ||||||||||| ||||||||||| upon arrival. New security measures are to be implemented  ||||||||||| ||||||||||| in conjunction with  ||||||||||| ||||||||| |||||||.Staff are advised to prepare for immediate restructuring upon Hawthorne’s arrival.Sakaba Corporation HeadquartersRep. Liang  |||||||||||</p><br><br> <p>[NOTICE]: This document is classified. Unauthorized dissemination will result in disciplinary action.</p>";
+	name = "SKB-HQ-FAX"
+	},
+/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
@@ -9174,10 +9245,21 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Gx" = (
+/obj/item/clothing/under/rank/fatigues/camo/solfed{
+	desc = "A camo utility uniform, bearing worn patches of the Solar armed fodrces.."
+	},
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Gy" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Gz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "GA" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -9481,11 +9563,8 @@
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "HE" = (
-/obj/item/coin/gold{
-	name = "token";
-	desc = "Ten Reseasrch Credits"
-	},
-/turf/simulated/floor/rock/manmade/asphalt,
+/obj/structure/flora/big/rocks1,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "HF" = (
 /obj/structure/catwalk{
@@ -9800,7 +9879,7 @@
 	desc = "MARC Insignia";
 	name = "MARC"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/iron,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IF" = (
 /mob/living/carbon/superior_animal/ameridian_golem,
@@ -10361,12 +10440,6 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "KA" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -10415,6 +10488,14 @@
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"KK" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/grille,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "KL" = (
 /obj/structure/boulder,
 /obj/structure/snowfall{
@@ -10748,6 +10829,28 @@
 "LU" = (
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"LV" = (
+/obj/random/scrap/dense_weighted,
+/obj/item/storage/freezer/medical/contains_teratomas,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/dungeon/outside/prepper/alpha)
+"LW" = (
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
+"LX" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "LY" = (
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
@@ -10768,6 +10871,11 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Md" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/big/rocks1,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Me" = (
 /obj/structure/table/reinforced,
@@ -11118,6 +11226,15 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Nj" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/big/bush2{
+	pixel_x = 17;
+	pixel_y = -9
+	},
+/obj/structure/sign/warning/high_voltage/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Nk" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -11167,6 +11284,13 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Nw" = (
+/obj/item/coin/gold{
+	name = "token";
+	desc = "Ten Research Credits"
+	},
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Nx" = (
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/wall/jungle,
@@ -11227,6 +11351,13 @@
 /obj/structure/flora/tree/jungle_small/variant3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"NI" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/clothing/head/rank/solfedrecon,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "NJ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/small/busha1,
@@ -11244,6 +11375,13 @@
 "NM" = (
 /obj/effect/shuttle_landmark/rocinante_swamp,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_light)
+"NN" = (
+/obj/structure/grille,
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "NO" = (
 /obj/structure/bed/chair{
@@ -11632,6 +11770,10 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Pj" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Pk" = (
 /obj/structure/boulder,
 /obj/random/spider_trap_burrowing,
@@ -11784,7 +11926,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/simulated/floor/industrial/concrete_bricks,
+/turf/space,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "PH" = (
 /obj/effect/decal/cleanable/dirt/snow,
@@ -12310,6 +12452,13 @@
 	},
 /turf/open/pool,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ro" = (
+/obj/structure/flora/big/bush2{
+	pixel_x = -14;
+	pixel_y = -33
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Rp" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -14072,6 +14221,20 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Xi" = (
+/obj/structure/flora/big/bush2{
+	pixel_x = -23;
+	pixel_y = -25
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Xj" = (
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Xk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -14418,6 +14581,14 @@
 	desc = "A huge chunk of uranium melded together"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ys" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/big/bush2{
+	pixel_x = -14;
+	pixel_y = -31
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Yt" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/junk/nondense,
@@ -14895,6 +15066,18 @@
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"ZS" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "ZT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -14914,6 +15097,18 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"ZX" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/big/bush2{
+	pixel_x = 12;
+	pixel_y = -16
+	},
+/obj/structure/flora/big/bush2{
+	pixel_x = -13;
+	pixel_y = -30
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "ZY" = (
 /obj/structure/girder/displaced,
 /turf/unsimulated/wall/jungle,
@@ -15631,8 +15826,8 @@ Bm
 BE
 Ug
 LA
-Pa
-Ug
+NI
+De
 HF
 Ug
 Dz
@@ -15833,7 +16028,7 @@ Bm
 Hy
 Ug
 HR
-Ug
+Gx
 Nc
 Vh
 xK
@@ -15848,7 +16043,7 @@ zw
 zw
 Hf
 Hf
-um
+Hf
 LG
 CY
 LG
@@ -16049,8 +16244,8 @@ zw
 zw
 zw
 Hf
-RE
-RE
+Hf
+LG
 LG
 LG
 LG
@@ -16650,7 +16845,7 @@ Dz
 aa
 aa
 RE
-Hf
+Dp
 Hf
 Hf
 Hf
@@ -18883,8 +19078,8 @@ Af
 Af
 Af
 Af
+Nw
 Af
-HE
 fa
 qK
 dS
@@ -25325,7 +25520,7 @@ af
 jk
 op
 jk
-Mv
+mD
 dS
 dS
 dS
@@ -25334,7 +25529,7 @@ dS
 dS
 dS
 dS
-dS
+et
 et
 fC
 et
@@ -25523,11 +25718,11 @@ zD
 bt
 ci
 kG
-bt
+Md
 om
-kj
-iW
-gm
+Gz
+Mv
+af
 dS
 dS
 dS
@@ -25535,8 +25730,8 @@ dS
 dS
 dS
 dS
-dS
-dS
+et
+et
 et
 oL
 eJ
@@ -25725,20 +25920,20 @@ mE
 jk
 iV
 jk
-gm
-gm
-gy
-gy
+af
+Oy
+Oy
+Oy
 gB
+hk
 dS
 dS
 dS
 dS
 dS
 dS
-dS
-dS
-dS
+et
+et
 et
 fC
 fu
@@ -25926,21 +26121,21 @@ jk
 jR
 af
 af
-iK
+af
+Oy
+Oy
+Oy
+Oy
 gy
 xn
-xn
-Dp
-xn
-xn
+LX
 dS
 dS
+iw
 dS
 dS
-dS
-dS
-dS
-dS
+iw
+et
 et
 fC
 et
@@ -25981,7 +26176,7 @@ cC
 cC
 cC
 cC
-Qi
+cC
 cC
 cC
 cC
@@ -26128,20 +26323,20 @@ zD
 jk
 af
 jk
-xn
-xn
-Dp
-ZP
-ZP
-vk
-ZP
-et
-et
-et
-et
-et
-et
-et
+Oy
+Oy
+Oy
+Oy
+gy
+HE
+af
+Xj
+At
+qL
+Pj
+iw
+iw
+iw
 et
 et
 fu
@@ -26329,20 +26524,20 @@ xS
 zD
 zD
 jF
+af
 iK
+Oy
+Oy
+Oy
+LW
 xn
-ZP
-ZP
-ZP
-ZP
-OY
-ZP
+Xi
+yj
+At
 et
 et
 et
-et
-et
-et
+iw
 et
 et
 et
@@ -26385,7 +26580,7 @@ cC
 cC
 cC
 cC
-cC
+Qi
 cC
 cC
 cC
@@ -26531,17 +26726,17 @@ Ns
 nu
 mq
 jm
-iK
-xn
-vk
-ZP
-ZP
-ZP
-ZP
-OB
-et
-et
-et
+HE
+Oy
+Oy
+gm
+Do
+af
+Pj
+Pj
+wY
+At
+Pj
 et
 et
 et
@@ -26734,15 +26929,15 @@ jk
 jk
 jk
 jk
-Dp
-OY
-ZP
-ZP
 Oy
-Oy
-Oy
+bn
+iW
+Ys
+ZX
 et
-et
+Pj
+yj
+At
 et
 et
 et
@@ -26936,15 +27131,15 @@ nv
 af
 jn
 gy
-xn
-ZP
-vk
-ZP
-OB
+bn
+aa
+bn
+af
 et
 et
-et
-iw
+Cv
+wY
+At
 et
 et
 et
@@ -27138,15 +27333,15 @@ af
 bt
 af
 NZ
-UD
+bn
+aa
 bn
 bn
 bn
-Oy
-et
-iw
-iw
-et
+bn
+bn
+wo
+ud
 et
 et
 et
@@ -27340,15 +27535,15 @@ jk
 kj
 af
 bn
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 bn
-bn
-bn
-bn
-bn
-bn
-bn
-et
-et
 et
 es
 et
@@ -27540,7 +27735,7 @@ iW
 iV
 jk
 iz
-bI
+bt
 bn
 bn
 bn
@@ -27549,7 +27744,7 @@ bn
 bn
 bn
 bn
-et
+bn
 iw
 eJ
 et
@@ -27743,12 +27938,12 @@ mD
 af
 DX
 Gv
+af
+aa
 bn
-bn
-bn
-bn
-bn
-bn
+aa
+aa
+aa
 bn
 eJ
 iw
@@ -27945,10 +28140,10 @@ af
 cX
 WT
 xW
-bn
-bn
-hl
-bn
+gy
+af
+Nj
+Ro
 bn
 bn
 fu
@@ -28148,9 +28343,9 @@ iU
 xS
 xW
 gy
-et
-iw
-et
+af
+bB
+KK
 et
 et
 eJ
@@ -28350,9 +28545,9 @@ jF
 nG
 zD
 GJ
-eJ
-et
-et
+af
+DM
+NN
 fC
 iw
 et
@@ -28552,9 +28747,9 @@ kj
 nH
 xW
 Ox
-fC
-et
-eJ
+gy
+DM
+KK
 fu
 et
 et
@@ -28754,9 +28949,9 @@ af
 xW
 xW
 QH
-gy
-dS
-dS
+gN
+vL
+ud
 fu
 iw
 et
@@ -33076,13 +33271,13 @@ Df
 Df
 rK
 rK
-Df
+EO
 Vs
 wB
 Xr
 OT
-Df
 Ki
+Df
 rK
 rH
 MX
@@ -33478,13 +33673,13 @@ Df
 Df
 Df
 Df
-Df
+EE
 rK
 Df
 Df
 Df
 Df
-Df
+EO
 zl
 rK
 rK
@@ -33494,12 +33689,12 @@ MX
 Dz
 rg
 rg
-PG
+LV
 Dz
 Qg
-wY
 Qg
-wY
+Qg
+Qg
 Dz
 vG
 Tw
@@ -33680,7 +33875,7 @@ Df
 Df
 EO
 Df
-Df
+EE
 EE
 Df
 Df
@@ -33694,14 +33889,14 @@ rH
 MX
 MX
 Dz
-PG
-rg
+LV
+Ai
 PG
 Dz
 MG
-MG
+Tw
 KA
-MG
+Tw
 EH
 Tw
 Tw
@@ -33882,10 +34077,10 @@ Df
 Df
 Iq
 EO
-Df
+rK
+rK
 EE
-EE
-Df
+EO
 Df
 wM
 Df
@@ -33896,14 +34091,14 @@ rH
 MX
 MX
 Dz
-rg
-PG
+Ai
+LV
 rg
 Dz
 CW
 MG
-MG
-MG
+Tw
+Tw
 Jt
 Tw
 Tw
@@ -34084,21 +34279,21 @@ Df
 wM
 wM
 Df
-Df
-Df
+rK
+rK
 EE
 Df
 Df
 wM
 wM
-Df
+EO
 rK
 rK
 Dz
 Dz
 Dz
 Dz
-TJ
+ZS
 qC
 TJ
 Dz
@@ -34284,12 +34479,12 @@ Df
 Df
 wM
 wM
+rK
 Df
-Df
-Df
-Df
+rK
+rK
 EE
-Df
+EO
 zl
 Df
 wM
@@ -34486,7 +34681,7 @@ Df
 Df
 wM
 Df
-Df
+rK
 Df
 rK
 rK
@@ -34687,8 +34882,8 @@ QP
 QP
 Df
 Df
-Df
-Df
+rK
+rK
 Df
 rK
 rK
@@ -34887,12 +35082,12 @@ Df
 rK
 rK
 rK
+Df
+rK
 rK
 Df
 Df
-Df
-Df
-Df
+rK
 rK
 rK
 rK
@@ -35080,7 +35275,7 @@ rK
 rK
 rK
 QP
-Df
+zl
 Df
 EO
 rK
@@ -35090,11 +35285,11 @@ rK
 rK
 QP
 Df
+rK
 Df
 Df
-Df
-EO
-Df
+rK
+rK
 Df
 rK
 rK
@@ -35294,8 +35489,8 @@ EE
 Df
 Df
 Df
-Df
-EO
+rK
+rK
 Df
 Df
 Df
@@ -36099,7 +36294,7 @@ Df
 Df
 Df
 Df
-Df
+zl
 Df
 Df
 Df
@@ -36498,7 +36693,7 @@ EO
 Df
 EE
 Df
-Df
+zl
 Df
 Df
 Df
@@ -36704,7 +36899,7 @@ Df
 Df
 wM
 wM
-Df
+zl
 Df
 rK
 rK
