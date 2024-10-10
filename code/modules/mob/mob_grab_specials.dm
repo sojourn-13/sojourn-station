@@ -267,7 +267,9 @@
 	qdel(src)
 	target.update_lying_buckled_and_verb_status()
 
-	if(!istype(get_step(attacker, fireman_dir), /turf/simulated/wall))
+	var/turf/tile = get_step(attacker, fireman_dir)
+
+	if(!istype(tile, /turf/simulated/wall) && !turf_contains_dense_objects(tile))
 		target.forceMove(get_step(target, fireman_dir))
 
 	target.damage_through_armor(damage, HALLOSS, BP_CHEST, ARMOR_MELEE)
