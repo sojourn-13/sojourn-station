@@ -254,7 +254,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bd" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "be" = (
@@ -294,6 +294,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock/variant1,
 /obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"bl" = (
+/obj/structure/scrap/food,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bm" = (
@@ -2292,6 +2296,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"ix" = (
+/obj/structure/flora/small/lavarock2,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "iy" = (
 /obj/structure/shuttle/engine/platform,
 /obj/structure/shuttle/engine/propulsion{
@@ -2586,7 +2594,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jz" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jA" = (
@@ -2701,7 +2709,7 @@
 "jU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jV" = (
@@ -3033,7 +3041,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "le" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "lf" = (
@@ -3369,7 +3377,7 @@
 "mk" = (
 /obj/structure/flora/small/lavarock1,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ml" = (
@@ -4545,6 +4553,7 @@
 /obj/item/reagent_containers/food/snacks/meat{
 	icon_state = "rottenmeat"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "qr" = (
@@ -4754,6 +4763,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"ra" = (
+/obj/structure/scrap/food,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "rb" = (
 /obj/item/trash/tray,
 /obj/random/scrap/moderate_weighted,
@@ -5271,6 +5284,11 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"sV" = (
+/obj/structure/barricade,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "sW" = (
 /obj/structure/window/reinforced,
 /obj/machinery/light/small{
@@ -5410,6 +5428,10 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"tv" = (
+/obj/structure/scrap/food,
+/turf/simulated/floor/asteroid/grass/dry,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "tw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/low_chance,
@@ -5473,7 +5495,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "tJ" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "tK" = (
@@ -5826,6 +5848,10 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
+"uQ" = (
+/obj/random/pouch/hardcase,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "uR" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/bottles,
@@ -6229,6 +6255,10 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/asteroid/dirt/ground,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"wf" = (
+/mob/living/carbon/superior_animal/vox/armord,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "wg" = (
 /obj/machinery/vending/organfridge_aberrant/alt,
 /turf/simulated/floor/industrial/blue_slates,
@@ -6501,6 +6531,15 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"xd" = (
+/obj/random/rubber_ammo,
+/obj/random/rubber_ammo,
+/obj/random/rubber_ammo,
+/obj/random/rubber_ammo,
+/obj/random/gun_cheap,
+/obj/random/gun_cheap,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "xe" = (
 /obj/structure/flora/small/trailrockb4,
 /turf/simulated/floor/rock,
@@ -6569,6 +6608,10 @@
 /obj/item/remains,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"xr" = (
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "xt" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -6843,6 +6886,11 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"yk" = (
+/mob/living/carbon/superior_animal/vox/wasp,
+/obj/random/pouch/low_chance,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "yl" = (
 /obj/structure/shuttle_part/escpod{
 	icon_state = "escpodwall27";
@@ -6909,6 +6957,14 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"yv" = (
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"yw" = (
+/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
+/turf/simulated/floor/snow,
+/area/nadezhda/outside/forest/beast_cave_light)
 "yx" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -6930,6 +6986,10 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"yD" = (
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "yE" = (
 /obj/structure/table/woodentable,
 /obj/item/oddity/common/paper_omega{
@@ -6983,15 +7043,23 @@
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"yL" = (
+/obj/random/science,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"yM" = (
+/obj/effect/spider/stickyweb,
+/obj/random/pouch/low_chance,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "yN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yO" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/invislight,
-/turf/simulated/floor/rock/grey,
+/obj/random/science,
+/turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "yP" = (
 /obj/random/scrap/dense_weighted,
@@ -7047,6 +7115,11 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"yY" = (
+/mob/living/carbon/superior_animal/vox/wasp,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "yZ" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/lizard,
@@ -7181,7 +7254,6 @@
 "zA" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/invislight,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zB" = (
@@ -7331,7 +7403,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "zZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Aa" = (
@@ -7408,6 +7480,10 @@
 	},
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"An" = (
+/obj/structure/scrap/cloth/large,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ao" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
@@ -7711,9 +7787,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Br" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/floor/rock/grey,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bs" = (
 /obj/structure/flora/stump/small,
@@ -7903,7 +7977,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "BW" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "BX" = (
@@ -8200,6 +8274,11 @@
 	tag = "icon-escpodwall22"
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
+"CV" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/invislight,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "CW" = (
 /obj/structure/reagent_dispensers/fueltank{
 	name = "empty fuel tank";
@@ -8332,9 +8411,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Dt" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/invislight,
-/turf/simulated/floor/rock,
+/obj/effect/spider/cocoon,
+/mob/living/carbon/superior_animal/vox/armord,
+/turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Dv" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
@@ -8553,6 +8632,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Ei" = (
+/obj/structure/scrap/cloth,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ej" = (
 /obj/effect/overlay/water,
 /obj/random/flora/small_jungle_tree,
@@ -8862,6 +8945,11 @@
 /obj/random/mecha/damaged,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ff" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/scrap/cloth,
+/turf/simulated/floor/asteroid/grass/dry,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Fg" = (
 /turf/simulated/floor/beach/water/coastwatercorner{
 	dir = 4
@@ -8991,6 +9079,10 @@
 /mob/living/simple_animal/hostile/carp/shark,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
+"FC" = (
+/obj/structure/scrap/science/large,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "FD" = (
 /obj/structure/catwalk,
 /obj/structure/largecrate/animal/corgi,
@@ -9088,7 +9180,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "FQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "FR" = (
@@ -9116,6 +9208,10 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"FW" = (
+/mob/living/carbon/superior_animal/vox/wasp,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "FX" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -9155,6 +9251,11 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ge" = (
+/obj/random/mob/mukwah,
+/obj/structure/scrap/cloth,
+/turf/simulated/floor/asteroid/grass/dry,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Gf" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -9307,6 +9408,11 @@
 "GE" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"GF" = (
+/mob/living/carbon/superior_animal/vox/wasp,
+/obj/random/pouch/low_chance,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "GG" = (
 /obj/effect/spider/stickyweb,
 /obj/random/firstaid/low_chance,
@@ -9322,7 +9428,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "GL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "GM" = (
@@ -9954,7 +10060,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IR" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/obj/random/mob/mukwah,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "IT" = (
@@ -10039,6 +10145,10 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ji" = (
+/obj/structure/scrap/cloth,
+/turf/simulated/floor/asteroid/grass/dry,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Jj" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/table/rack/shelf,
@@ -10318,6 +10428,10 @@
 	tag = "icon-escpodwall17"
 	},
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ke" = (
+/obj/structure/scrap/science,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Kf" = (
 /obj/structure/catwalk,
 /obj/machinery/light,
@@ -10520,6 +10634,10 @@
 /obj/random/cluster/golem,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"KN" = (
+/obj/structure/scrap/food,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
@@ -10554,7 +10672,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "KU" = (
-/mob/living/simple_animal/hostile/nightmare/dream_daemon,
+/obj/random/mob/nightmare,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "KV" = (
@@ -10725,6 +10843,10 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Lw" = (
+/obj/random/powercell/large_safe_lonestar,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Lx" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/coastwater{
@@ -10831,6 +10953,11 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
+"LS" = (
+/obj/random/pouch/low_chance,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "LT" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -10922,7 +11049,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "Mj" = (
 /obj/item/remains,
-/obj/item/clothing/head/rice_hat,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Mk" = (
@@ -11154,6 +11280,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"MV" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "MW" = (
 /obj/item/remains/unathi,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -11335,6 +11465,10 @@
 /obj/item/pen/multi,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"NC" = (
+/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
+/turf/simulated/floor/fixed/shale/dark,
+/area/nadezhda/outside/forest/beast_cave_light)
 "ND" = (
 /obj/structure/light_stick,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -11347,6 +11481,11 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
+"NF" = (
+/obj/structure/catwalk,
+/obj/random/oddity_guns,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "NG" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/table/rack/shelf,
@@ -12156,7 +12295,6 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qr" = (
 /obj/structure/shuttle/engine/platform,
-/obj/random/oddity_guns,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qs" = (
@@ -12539,6 +12677,10 @@
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"RA" = (
+/obj/structure/scrap/cloth,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "RB" = (
 /turf/simulated/wall/marble/dark,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -12730,6 +12872,11 @@
 "Sl" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"Sm" = (
+/mob/living/carbon/superior_animal/vox/wasp,
+/obj/structure/scrap/science,
+/turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Sn" = (
 /obj/structure/window/reinforced{
@@ -13296,6 +13443,10 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Ub" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Uc" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -13623,8 +13774,9 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Vf" = (
-/turf/simulated/mineral,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Vg" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/seafloor,
@@ -13682,6 +13834,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"Vq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/scrap/food,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Vr" = (
 /obj/machinery/shower{
 	dir = 8;
@@ -14188,8 +14345,8 @@
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "WV" = (
-/mob/living/simple_animal/hostile/nightmare,
-/turf/simulated/floor/rock,
+/obj/random/pouch/low_chance,
+/turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "WX" = (
 /obj/effect/overlay/water,
@@ -14198,9 +14355,13 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "WY" = (
 /obj/structure/railing,
-/obj/structure/invislight,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"WZ" = (
+/obj/effect/spider/stickyweb,
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/prepper/alpha)
 "Xb" = (
 /obj/structure/flora/pottedplant/dead,
 /obj/machinery/light{
@@ -14758,6 +14919,11 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"YT" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "YU" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -9
@@ -15115,6 +15281,7 @@
 "ZW" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
+/obj/structure/invislight,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ZX" = (
@@ -15711,8 +15878,8 @@ MX
 MX
 Db
 qM
-sI
-sI
+BD
+BD
 MX
 MX
 MX
@@ -15789,7 +15956,7 @@ rH
 rH
 Di
 aK
-Dt
+aK
 iy
 VP
 rH
@@ -15991,7 +16158,7 @@ rH
 rH
 rH
 aK
-Dt
+aK
 iy
 VP
 rH
@@ -16193,7 +16360,7 @@ rH
 rK
 fm
 Ah
-Dt
+aK
 VH
 VP
 VP
@@ -16681,7 +16848,7 @@ Tf
 IE
 vX
 um
-um
+NC
 RE
 dS
 dS
@@ -16799,8 +16966,8 @@ rK
 CJ
 Nt
 Bi
-wP
-Ui
+Nt
+NF
 DW
 Bu
 EC
@@ -16867,7 +17034,7 @@ aa
 RE
 Dp
 Hf
-Hf
+yw
 Hf
 MT
 RE
@@ -17009,10 +17176,10 @@ EC
 wK
 OR
 yg
-xv
-Br
+UJ
+qi
 qq
-yg
+CV
 NL
 OE
 EC
@@ -17212,7 +17379,7 @@ VP
 Jj
 CH
 sb
-xv
+UJ
 ZW
 Vt
 VP
@@ -17319,7 +17486,7 @@ dS
 MX
 MX
 MX
-sI
+BD
 sI
 Wb
 wx
@@ -17405,7 +17572,7 @@ rH
 rK
 Di
 aK
-Dt
+aK
 Ar
 VP
 VP
@@ -17482,7 +17649,7 @@ RE
 RE
 RE
 RE
-um
+NC
 zr
 QD
 um
@@ -17607,7 +17774,7 @@ rH
 rK
 CJ
 Ah
-Dt
+aK
 Qr
 VP
 rH
@@ -17809,7 +17976,7 @@ rH
 rK
 Di
 aK
-yO
+Ve
 iy
 VP
 rH
@@ -18011,7 +18178,7 @@ rH
 rH
 tx
 CJ
-yO
+Ve
 Nt
 rH
 rH
@@ -18530,7 +18697,7 @@ dS
 dS
 MX
 MX
-qM
+IN
 qP
 qM
 ZO
@@ -19253,7 +19420,7 @@ xB
 YQ
 xB
 rH
-aa
+rH
 dS
 dS
 dS
@@ -19342,14 +19509,14 @@ sI
 sI
 MX
 qM
-qM
+IN
 MX
 MX
 MX
 MX
 MX
 MX
-sI
+BD
 wx
 Mm
 Fc
@@ -19455,7 +19622,7 @@ xB
 ag
 ag
 xB
-aa
+rH
 dS
 dS
 dS
@@ -19544,7 +19711,7 @@ sI
 MX
 MX
 MX
-sI
+BD
 MX
 MX
 MX
@@ -19639,25 +19806,25 @@ dS
 dS
 dS
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Vf
-aa
-aa
-aa
-aa
-aa
+rH
+rH
+rH
+rH
+rH
+rH
+rH
+rH
+xB
+rH
+rH
+rH
+rH
+rH
 rH
 xB
 YQ
 xB
-aa
+rH
 dS
 dS
 dS
@@ -19857,7 +20024,7 @@ aa
 aa
 rH
 xB
-YQ
+sV
 xB
 aa
 dS
@@ -20059,7 +20226,7 @@ iJ
 aa
 iJ
 af
-af
+MV
 AQ
 iJ
 kW
@@ -20352,7 +20519,7 @@ wx
 MX
 MX
 MX
-sI
+BD
 qM
 qM
 MX
@@ -20552,7 +20719,7 @@ MX
 qM
 qM
 MX
-sI
+BD
 qM
 MX
 MX
@@ -20560,8 +20727,8 @@ qM
 Wb
 MX
 MX
-qM
-qM
+IN
+IN
 sI
 MX
 MX
@@ -28034,7 +28201,7 @@ qM
 sI
 MX
 MX
-Ed
+Ub
 Ed
 rj
 tH
@@ -31674,7 +31841,7 @@ qM
 MX
 MX
 MX
-qM
+IN
 qM
 Wb
 Wb
@@ -32017,18 +32184,18 @@ rK
 rK
 rK
 rK
-rU
-rU
-rU
+Ei
+Ei
+Ei
 Co
-Co
-BW
-Co
+Ji
+Ge
+Ji
 Co
 rU
 rK
-Co
-Co
+Ji
+Ji
 Co
 rU
 rU
@@ -32073,17 +32240,17 @@ dS
 MX
 Li
 MX
-qM
+IN
 Wb
 MX
 MX
 MX
 MX
 MX
-Wb
+WZ
 MX
 MX
-qM
+IN
 Wb
 Dz
 Fr
@@ -32219,18 +32386,18 @@ rK
 rK
 rK
 rK
-rU
-rU
-rU
+Ei
+Ei
+Ei
 Co
-Co
-Co
-Co
+Ji
+Ji
+Ji
 rU
 rU
 rK
-Co
-Co
+Ji
+Ji
 rU
 rU
 rU
@@ -32416,8 +32583,8 @@ rK
 rK
 rK
 zQ
-Co
-rU
+tv
+Ei
 rK
 rK
 fo
@@ -32426,8 +32593,8 @@ rU
 rK
 rK
 BW
-Co
-Co
+Ji
+Ji
 rU
 rK
 rK
@@ -32439,7 +32606,7 @@ rU
 rU
 rK
 rK
-rU
+Ei
 rK
 rK
 rK
@@ -32616,10 +32783,10 @@ rK
 rK
 rK
 rK
-Co
-Co
+tv
+Ji
 GL
-HJ
+Ff
 rK
 rK
 fo
@@ -32641,8 +32808,8 @@ rU
 rU
 rU
 rU
-Co
-rU
+Ji
+Ei
 rK
 rK
 rK
@@ -32817,8 +32984,8 @@ rK
 rK
 rK
 rK
-Co
-Co
+tv
+Ji
 GL
 Co
 HJ
@@ -32843,8 +33010,8 @@ rU
 rU
 rU
 Co
-Co
-BW
+Ji
+Ge
 rK
 rK
 rK
@@ -33019,8 +33186,8 @@ rK
 rK
 rK
 rK
-Co
-HJ
+tv
+Ff
 HJ
 HJ
 BW
@@ -33045,8 +33212,8 @@ rU
 rU
 rU
 Co
-Co
-rU
+Ji
+Ei
 rK
 rK
 fo
@@ -33265,7 +33432,7 @@ rK
 rK
 rK
 rK
-rU
+An
 cu
 rK
 rK
@@ -33465,11 +33632,11 @@ rU
 rK
 rK
 rK
+An
+An
 rU
-rU
-rU
-rU
-rU
+An
+Ei
 rK
 rK
 rK
@@ -33480,7 +33647,7 @@ rK
 rK
 EO
 zl
-Df
+yO
 Df
 wM
 Df
@@ -33490,7 +33657,7 @@ Cg
 EO
 Df
 Df
-Df
+wf
 rK
 Df
 Pt
@@ -33625,7 +33792,7 @@ rK
 rK
 rK
 rK
-rU
+KN
 fo
 rK
 rK
@@ -33646,8 +33813,8 @@ sd
 sd
 sd
 Nt
-rU
-rU
+KN
+KN
 rU
 rU
 zQ
@@ -33671,7 +33838,7 @@ rU
 rU
 Dw
 rU
-rU
+Ei
 rK
 rK
 rK
@@ -33692,13 +33859,13 @@ Df
 Df
 Df
 Df
-Df
+yD
 EE
 rK
 Df
 JM
 Df
-Df
+yO
 EO
 zl
 rK
@@ -33827,8 +33994,8 @@ rK
 rK
 rK
 rK
-rU
-rU
+KN
+KN
 fo
 fo
 Nt
@@ -33847,10 +34014,10 @@ jz
 sd
 sd
 sd
-Nt
-Nt
-rU
-rU
+ra
+ra
+KN
+KN
 rU
 zQ
 rK
@@ -33873,7 +34040,7 @@ KU
 Dw
 Dw
 Dw
-rU
+Ei
 rK
 rK
 rK
@@ -33884,20 +34051,20 @@ rK
 Df
 Df
 Df
-wM
+yk
 wM
 Df
 wM
 EE
 Df
+yO
 Df
-Df
-Df
+WV
 EO
 Df
 EE
 EE
-Df
+yO
 Df
 wM
 wM
@@ -34029,8 +34196,8 @@ rK
 rK
 rK
 zQ
-rM
-rU
+Vq
+KN
 Ok
 Ok
 Nt
@@ -34049,10 +34216,10 @@ rU
 rU
 rU
 rU
-sd
-rU
-Nt
-rU
+bl
+KN
+ra
+KN
 rU
 rU
 rU
@@ -34069,7 +34236,7 @@ rX
 vs
 rK
 rK
-rU
+KN
 rU
 rU
 Dw
@@ -34083,7 +34250,7 @@ rH
 rK
 rK
 Df
-Df
+yO
 Df
 wM
 wM
@@ -34096,7 +34263,7 @@ Df
 Df
 Df
 Iq
-EO
+Dt
 rK
 rK
 EE
@@ -34251,10 +34418,10 @@ Ac
 Eo
 rU
 sd
-sd
-sd
-Nt
-rU
+bl
+bl
+ra
+KN
 rU
 rU
 rU
@@ -34271,7 +34438,7 @@ rU
 rK
 rK
 rK
-rU
+KN
 rU
 rU
 rU
@@ -34289,7 +34456,7 @@ Df
 Df
 Df
 Df
-Df
+yD
 Df
 EE
 Df
@@ -34303,7 +34470,7 @@ rK
 rK
 EE
 Df
-Df
+WV
 wM
 wM
 EO
@@ -34454,8 +34621,8 @@ rU
 Eo
 rU
 sd
-sd
-sd
+bl
+bl
 rU
 rU
 rU
@@ -34472,8 +34639,8 @@ rU
 rK
 rK
 rK
-rU
-rU
+KN
+KN
 rU
 rU
 rU
@@ -34488,15 +34655,15 @@ rK
 rK
 rK
 Df
-Df
+WV
 Df
 Df
 EE
 EE
 EE
 Df
-Df
-Df
+yO
+yD
 Df
 wM
 rK
@@ -34675,7 +34842,7 @@ rK
 rK
 rK
 rK
-rU
+KN
 rU
 rU
 rU
@@ -34698,7 +34865,7 @@ Df
 Df
 Df
 Df
-Df
+WV
 Df
 Df
 rK
@@ -34710,7 +34877,7 @@ Df
 zl
 zl
 Df
-Df
+yO
 rK
 rH
 Dz
@@ -34911,7 +35078,7 @@ rK
 EE
 Df
 zl
-Df
+WV
 Df
 rK
 rH
@@ -35085,7 +35252,7 @@ fo
 rK
 rU
 rU
-rU
+KN
 rK
 rH
 rH
@@ -35279,15 +35446,15 @@ rK
 rU
 rU
 rU
-WV
+KU
 rU
 rU
 rU
 rU
 rK
 rK
-rU
-rU
+KN
+KN
 rK
 rH
 rK
@@ -35314,9 +35481,9 @@ Df
 rK
 rK
 rK
+wf
 Df
-Df
-Df
+wf
 rK
 rH
 Dz
@@ -35475,15 +35642,15 @@ rK
 rU
 rU
 rU
-WV
+KU
 rU
 rK
 rK
 rU
 rU
 rU
-rU
-rU
+Ei
+KN
 rU
 rU
 fo
@@ -35517,7 +35684,7 @@ Df
 Df
 Df
 Df
-Df
+yD
 QP
 rK
 rH
@@ -35684,8 +35851,8 @@ rK
 rK
 rU
 rU
-rU
-rU
+KN
+Ei
 rU
 rU
 rU
@@ -35712,12 +35879,12 @@ EE
 Df
 Df
 Df
+yO
 Df
 Df
 Df
 Df
-Df
-Df
+WV
 wM
 Df
 QP
@@ -35879,7 +36046,7 @@ fo
 rU
 rU
 rU
-rU
+KN
 rU
 rU
 rU
@@ -35892,7 +36059,7 @@ rU
 rU
 rU
 rU
-rU
+An
 rK
 rK
 rH
@@ -36082,7 +36249,7 @@ fo
 rU
 rU
 rU
-rU
+KN
 rU
 rU
 rU
@@ -36093,8 +36260,8 @@ rU
 rU
 rU
 rU
-rU
-rU
+An
+An
 rK
 rH
 rH
@@ -36114,7 +36281,7 @@ Df
 Df
 Df
 Df
-Df
+WV
 Df
 EE
 EE
@@ -36292,7 +36459,7 @@ rK
 rU
 rU
 rU
-rU
+Ei
 rU
 rK
 rK
@@ -36305,7 +36472,7 @@ Df
 Df
 wM
 Df
-Df
+WV
 Df
 Df
 EE
@@ -36479,7 +36646,7 @@ sd
 sd
 dr
 rK
-IR
+rU
 fo
 rK
 rK
@@ -36487,13 +36654,13 @@ rK
 fo
 rU
 rU
-WV
-rU
+KU
+Ei
 rK
 rK
 rU
 rU
-WV
+KU
 rU
 rK
 rK
@@ -36505,7 +36672,7 @@ rK
 Df
 Df
 Df
-Df
+yO
 Df
 Df
 Df
@@ -36513,7 +36680,7 @@ EE
 wM
 wM
 Df
-Df
+yD
 Df
 Df
 wM
@@ -36527,7 +36694,7 @@ rK
 Df
 EE
 Df
-Df
+yO
 Df
 rK
 Dz
@@ -36656,7 +36823,7 @@ rK
 rK
 rK
 rU
-rU
+KN
 rK
 rK
 rK
@@ -36688,9 +36855,9 @@ fo
 rK
 rK
 rK
-rU
-rU
-rU
+Ei
+Ei
+Ei
 rK
 rU
 rU
@@ -36704,7 +36871,7 @@ rH
 rH
 rK
 Df
-Df
+WV
 Df
 Df
 Df
@@ -36716,8 +36883,8 @@ Df
 zl
 Df
 Df
-Df
-Df
+yO
+yD
 Df
 wM
 rK
@@ -36858,7 +37025,7 @@ rK
 rK
 rK
 rU
-rU
+KN
 fo
 rK
 rK
@@ -36872,8 +37039,8 @@ Nt
 Nt
 rU
 Nt
-Nt
-rU
+RA
+Ei
 rU
 rU
 rU
@@ -36909,7 +37076,7 @@ Df
 Df
 wM
 wM
-Df
+WV
 EO
 Df
 EE
@@ -37061,33 +37228,33 @@ rK
 rK
 rU
 rU
-rU
+KN
 fo
 fo
 fo
 rU
 rU
-rU
-rU
-rU
+KN
+KN
+KN
 fo
 rU
 rU
-rU
-rU
-rU
-rU
+Ei
+Ei
+Ei
+Ei
 rU
 rU
 fo
 rK
 rK
 rU
-rU
+IR
 rU
 rU
 Co
-BW
+Co
 rK
 rK
 rK
@@ -37104,19 +37271,19 @@ rH
 rK
 Hq
 Kk
-Df
+xd
 rK
 rK
 EO
 Df
 wM
-Df
+yD
 Df
 Df
 EE
 EE
 Df
-Df
+yO
 Df
 wM
 wM
@@ -37131,7 +37298,7 @@ rK
 rK
 rK
 rK
-Df
+yO
 Df
 Df
 Df
@@ -37264,20 +37431,20 @@ rK
 rU
 rU
 rU
+KN
+KN
 rU
 rU
 rU
-rU
-rU
-rU
+KN
 fo
 rK
 rK
 fo
 rU
-rU
-rU
-rU
+Ei
+Ei
+Ei
 rU
 rK
 rK
@@ -37304,13 +37471,13 @@ rU
 rK
 rK
 Kk
-Df
+WV
 Df
 Et
 rK
 rK
 Df
-Df
+yO
 Df
 Df
 Df
@@ -37323,8 +37490,8 @@ Df
 wM
 Df
 Df
+yM
 EE
-EE
 Df
 Df
 Df
@@ -37335,7 +37502,7 @@ rK
 Df
 Df
 Df
-Df
+WV
 rK
 rK
 Dz
@@ -37471,15 +37638,15 @@ rU
 rU
 rU
 rU
-rU
+KN
 rK
 rK
 rK
 rK
 rU
-rU
-rU
-rU
+Ei
+Ei
+Ei
 rK
 rK
 fo
@@ -37500,7 +37667,7 @@ Df
 Lh
 Lh
 Df
-Df
+WV
 Df
 Df
 Lh
@@ -37528,7 +37695,7 @@ EE
 EE
 Df
 Df
-Df
+yD
 Df
 Df
 EE
@@ -37673,6 +37840,7 @@ rU
 rU
 rU
 rU
+KN
 rU
 rU
 rU
@@ -37680,8 +37848,7 @@ rU
 rU
 rU
 rU
-rU
-rU
+Ei
 rK
 fo
 rU
@@ -37709,7 +37876,7 @@ Df
 Lh
 rK
 rK
-Df
+WV
 xf
 Df
 rK
@@ -37733,7 +37900,7 @@ Df
 QP
 QP
 Df
-EE
+yM
 Df
 Df
 Df
@@ -37869,8 +38036,8 @@ rK
 rK
 rK
 rK
-rU
-rU
+KN
+KN
 rU
 rU
 rU
@@ -37899,9 +38066,9 @@ rH
 rK
 rK
 tI
-Df
-Df
-Df
+Br
+Br
+Br
 Df
 Df
 QP
@@ -38072,7 +38239,7 @@ rH
 rK
 rK
 rK
-rU
+KN
 dr
 Rm
 Rm
@@ -38101,15 +38268,15 @@ rK
 rK
 rK
 tI
-Df
-Df
-wM
-wM
-Df
+Br
+Br
+GF
+FW
+Br
 QP
 Df
 Df
-Df
+yO
 Df
 Df
 Df
@@ -38301,16 +38468,16 @@ rK
 rH
 rK
 rK
-Df
-Df
-Df
-wM
-wM
-Df
-Df
+EE
+Br
+Br
+yY
+yY
+Vf
+Br
 QP
 Df
-Df
+WV
 Df
 wM
 wM
@@ -38324,7 +38491,7 @@ rK
 rK
 rK
 Df
-Df
+yO
 Df
 zl
 wM
@@ -38502,14 +38669,14 @@ rK
 rK
 rH
 rK
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-QP
+EE
+EE
+Br
+Br
+yL
+Vf
+Vf
+yv
 QP
 Df
 Df
@@ -38524,7 +38691,7 @@ rK
 rK
 rK
 rK
-Df
+yD
 Df
 Df
 Df
@@ -38532,7 +38699,7 @@ Df
 Df
 wM
 Df
-Df
+yD
 Df
 Df
 Df
@@ -38704,14 +38871,14 @@ rK
 rK
 rH
 rK
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-QP
+EE
+EE
+WV
+Br
+Br
+Br
+Br
+yv
 Df
 Df
 wM
@@ -38733,7 +38900,7 @@ wM
 wM
 Df
 Df
-Df
+WV
 Df
 Df
 Df
@@ -38743,7 +38910,7 @@ rK
 rK
 rK
 Df
-Df
+yO
 Df
 Df
 Df
@@ -38907,13 +39074,13 @@ rH
 rH
 rK
 rK
-Df
+EE
 Df
 Df
 EG
-Df
-Df
-Df
+Br
+Br
+Br
 Df
 Df
 Df
@@ -38947,7 +39114,7 @@ EE
 EE
 Df
 Df
-Df
+yD
 Df
 rK
 rK
@@ -39338,7 +39505,7 @@ rK
 EE
 EE
 Df
-Df
+yO
 Df
 EE
 EE
@@ -39348,7 +39515,7 @@ Df
 Df
 Df
 wM
-Df
+WV
 EE
 Df
 Df
@@ -39531,11 +39698,11 @@ Df
 Df
 Df
 Df
-Df
-Df
 rK
 rK
-Df
+rK
+rK
+yO
 Df
 Df
 EE
@@ -39545,7 +39712,7 @@ Df
 EE
 Df
 Df
-Df
+WV
 Df
 Df
 Df
@@ -39728,7 +39895,7 @@ Rv
 tI
 Df
 Df
-Df
+WV
 Df
 Df
 Df
@@ -39749,7 +39916,7 @@ rK
 QP
 Df
 Df
-Df
+yO
 Df
 Df
 wM
@@ -39934,7 +40101,7 @@ Df
 EG
 Df
 Df
-Df
+WV
 Lh
 rK
 rK
@@ -39951,7 +40118,7 @@ rK
 rK
 QP
 Df
-Df
+yD
 Df
 Df
 Df
@@ -40156,7 +40323,7 @@ Df
 Df
 wM
 Df
-Df
+WV
 Df
 Df
 rK
@@ -40328,7 +40495,7 @@ rK
 Df
 Df
 Df
-Df
+WV
 Df
 Df
 Df
@@ -40349,7 +40516,7 @@ Df
 rK
 EE
 EE
-Df
+yO
 rK
 rK
 rK
@@ -40539,7 +40706,7 @@ wM
 Df
 Df
 Df
-Df
+yO
 Df
 rK
 rK
@@ -40746,7 +40913,7 @@ rK
 rK
 rK
 rK
-Df
+rK
 EE
 EE
 Df
@@ -40758,7 +40925,7 @@ rK
 rK
 rK
 rK
-Df
+yD
 Df
 Df
 wM
@@ -40946,14 +41113,14 @@ Df
 rK
 rK
 rK
-Df
-Df
+rK
+rK
 rK
 EE
 Df
 EE
 EE
-Df
+WV
 Df
 Df
 QP
@@ -41167,7 +41334,7 @@ EE
 EE
 EE
 EE
-Df
+WV
 Df
 Df
 rK
@@ -41355,7 +41522,7 @@ Df
 rK
 EE
 Df
-Df
+WV
 Df
 EE
 Df
@@ -41742,37 +41909,37 @@ rK
 rK
 rK
 rK
+uQ
 Df
 Df
+WV
+Br
+Df
+Br
+Br
+Br
 Df
 Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-EE
-Df
+yO
 Df
 Df
 Df
 EE
+Df
+Df
+Df
+yD
 EE
 EE
+EE
+Df
+Df
+yD
 Df
 Df
 Df
 Df
-Df
-Df
-Df
-Df
+yO
 Df
 Df
 Df
@@ -41944,15 +42111,15 @@ rK
 rK
 rK
 rK
+uQ
 Df
 Df
 Df
-Df
-Df
-Df
-Df
-Df
-Df
+Br
+Br
+Br
+Br
+xr
 Df
 Df
 Df
@@ -41961,17 +42128,17 @@ Df
 Df
 EE
 Df
-Df
+yO
 Df
 Df
 EE
 EE
 Df
 Df
+Br
+Br
 Df
-Df
-Df
-Df
+WV
 Df
 Df
 Df
@@ -42147,32 +42314,32 @@ rK
 Df
 Df
 Df
+yD
 Df
-Df
-wM
-Df
-Df
-Df
-zL
-Df
-Df
-Df
+FW
+Br
+Vf
+Vf
+ix
 Df
 Df
 Df
-Df
-EE
+WV
 Df
 Df
 Df
 EE
+Df
+Df
+Df
+EE
 EE
 Df
 Df
-Df
-Df
-Df
-Df
+Br
+LS
+Vf
+Br
 Df
 Df
 Df
@@ -42347,16 +42514,16 @@ rK
 rK
 rK
 Df
-Df
+yO
 Df
 Df
 wM
-wM
-Df
-Df
-Df
-Df
-Df
+FW
+Br
+Vf
+Vf
+Br
+Br
 Df
 Df
 Df
@@ -42371,10 +42538,10 @@ EE
 Df
 Df
 Df
-Df
-Df
-Df
-Df
+Br
+Vf
+Vf
+Br
 Df
 Df
 Df
@@ -42547,18 +42714,18 @@ rK
 rK
 rK
 rK
-Df
-Df
-Df
-Df
-wM
-wM
-Df
-Df
+WV
 Df
 Df
 Df
 wM
+wM
+Br
+Br
+Vf
+Vf
+Br
+FW
 Df
 Df
 Df
@@ -42571,12 +42738,12 @@ EB
 EE
 Df
 Df
-Df
-Df
-Df
-Df
-Df
-wM
+WV
+Br
+Vf
+Vf
+Vf
+FW
 Df
 EE
 EE
@@ -42749,17 +42916,17 @@ rK
 rK
 rK
 rK
+WV
 Df
 Df
 Df
 Df
 Df
-Df
-Df
-Df
-Df
-Df
-wM
+Br
+Br
+Br
+Br
+FW
 wM
 Df
 Df
@@ -42773,11 +42940,11 @@ EE
 EE
 Df
 Df
-Df
-Df
-Df
-Df
-wM
+yD
+yO
+Br
+Br
+FW
 wM
 EE
 EE
@@ -42785,7 +42952,7 @@ Df
 Df
 Df
 EO
-Df
+FC
 rK
 rK
 rH
@@ -42951,17 +43118,17 @@ rK
 rK
 rK
 rK
+WV
 Df
-Df
-Df
+WV
 Df
 Df
 rK
 Df
-Df
-wM
-wM
-Df
+Br
+FW
+FW
+Br
 Df
 Df
 Df
@@ -42987,7 +43154,7 @@ EO
 Df
 EO
 EO
-Df
+FC
 rK
 rK
 rH
@@ -43155,8 +43322,8 @@ rK
 rK
 rK
 rK
-Df
-Df
+WV
+WV
 rK
 rK
 Df
@@ -43170,8 +43337,8 @@ rK
 rK
 rK
 rK
-Df
-Df
+rK
+rK
 Df
 Df
 Df
@@ -43188,8 +43355,8 @@ EO
 Df
 Df
 Np
-wM
-Df
+Sm
+FC
 rK
 rK
 rH
@@ -43367,16 +43534,16 @@ Df
 Df
 Df
 Df
-Df
+yD
 EE
 EE
+rK
+rK
 Df
 Df
 Df
 Df
-Df
-Df
-Df
+yO
 Df
 EE
 Df
@@ -43390,8 +43557,8 @@ Df
 Df
 wM
 wM
-Df
-Df
+Ke
+FC
 rK
 rK
 rH
@@ -43560,40 +43727,40 @@ rK
 rK
 rK
 rK
+yr
+Df
+yD
+rK
+rK
+Df
+WV
+Df
+Df
+EE
+EE
+Df
+Df
+Df
+Df
+WV
+Df
+Df
+Df
+Df
+EE
+EE
+Df
 Df
 Df
 Df
 rK
+yO
+Df
+Df
+Df
+Ke
+Ke
 rK
-Df
-Df
-Df
-Df
-EE
-EE
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-Df
-EE
-EE
-Df
-Df
-Df
-Df
-rK
-Df
-Df
-Df
-Df
-Df
-Df
-EO
 rK
 rK
 rH
@@ -43789,13 +43956,13 @@ rK
 rK
 rK
 rK
-Df
-Df
+yO
+yO
 EO
 EO
-Df
-EO
-EO
+FC
+rK
+rK
 rK
 rK
 rH
@@ -43968,7 +44135,7 @@ Df
 Df
 JJ
 yr
-Df
+Lw
 rK
 QP
 QP
@@ -49130,7 +49297,7 @@ gq
 hd
 fO
 hq
-hq
+YT
 hG
 xc
 hV
