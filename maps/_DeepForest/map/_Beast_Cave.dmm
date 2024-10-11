@@ -7914,6 +7914,10 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"BZ" = (
+/mob/living/simple_animal/hostile/render/wasprender,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "Ca" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/mineral/random/rogue,
@@ -10523,10 +10527,6 @@
 /obj/random/cluster/golem,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"KN" = (
-/mob/living/simple_animal/hostile/render/wasprender,
-/turf/simulated/floor/rock/seafloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
@@ -33289,7 +33289,7 @@ rK
 rK
 Df
 Df
-Df
+wM
 Df
 rK
 rK
@@ -33491,7 +33491,7 @@ EO
 zl
 Df
 Df
-Df
+wM
 Df
 EE
 Df
@@ -33694,7 +33694,7 @@ Df
 Df
 Df
 Df
-Df
+wM
 EE
 Df
 Df
@@ -33705,7 +33705,7 @@ Df
 EE
 rK
 Df
-KN
+BZ
 Df
 Df
 EO
@@ -33896,7 +33896,7 @@ Df
 wM
 wM
 Df
-Df
+wM
 EE
 Df
 Df
@@ -34115,7 +34115,7 @@ wM
 Df
 Df
 rK
-rK
+rH
 rH
 MX
 MX
@@ -34295,8 +34295,8 @@ rK
 rK
 rK
 Df
-wM
-wM
+Df
+Df
 Df
 Df
 Df
@@ -34317,7 +34317,7 @@ wM
 wM
 EO
 rK
-rK
+rH
 Dz
 Dz
 Dz
@@ -34506,7 +34506,7 @@ EE
 Df
 Df
 Df
-wM
+Df
 wM
 rK
 Df
@@ -34519,7 +34519,7 @@ Df
 wM
 Df
 rK
-rK
+rH
 Dz
 HI
 Yf
@@ -34708,7 +34708,7 @@ Df
 Df
 Df
 Df
-wM
+Df
 Df
 rK
 Df
@@ -34721,7 +34721,7 @@ zl
 Df
 Df
 rK
-rK
+rH
 Dz
 Dz
 Os
@@ -35910,7 +35910,7 @@ rK
 Df
 Df
 Df
-Df
+wM
 Df
 Df
 rK
@@ -36112,8 +36112,8 @@ rK
 Df
 Df
 Df
-Df
-Df
+wM
+wM
 Df
 EE
 EE
@@ -36321,7 +36321,7 @@ EE
 Df
 Df
 Df
-Df
+wM
 Df
 zl
 Df
@@ -36513,22 +36513,22 @@ rH
 rK
 Df
 Df
-wM
+Df
 Df
 Df
 Df
 Df
 EE
+wM
+wM
 Df
 Df
 Df
 Df
-Df
-Df
-Df
-Df
-Df
-Df
+wM
+wM
+wM
+wM
 rK
 rK
 rK
@@ -36715,7 +36715,7 @@ rK
 Df
 Df
 Df
-wM
+Df
 Df
 Df
 EO
@@ -36728,7 +36728,7 @@ Df
 Df
 Df
 Df
-Df
+wM
 rK
 rK
 rK
@@ -36926,8 +36926,8 @@ EE
 Df
 Df
 Df
-wM
-wM
+Df
+Df
 zl
 Df
 rK
@@ -37545,7 +37545,7 @@ EE
 EE
 Df
 Df
-Df
+wM
 Df
 rK
 rH
@@ -37746,7 +37746,7 @@ EE
 Df
 Df
 Df
-Df
+wM
 Df
 Df
 rK
@@ -38147,8 +38147,8 @@ rK
 rK
 Df
 Df
-Df
-Df
+wM
+wM
 Df
 Df
 rK
@@ -39356,7 +39356,7 @@ Df
 Df
 Df
 Df
-Df
+wM
 Df
 EE
 Df
@@ -39558,8 +39558,8 @@ Df
 Df
 Df
 Df
-Df
-Df
+wM
+wM
 EE
 EE
 Df
@@ -39761,8 +39761,8 @@ Df
 Df
 Df
 Df
-Df
-Df
+wM
+wM
 EE
 EE
 rK
