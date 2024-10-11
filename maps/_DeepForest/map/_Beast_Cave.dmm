@@ -7914,10 +7914,6 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"BZ" = (
-/mob/living/simple_animal/hostile/render/wasprender,
-/turf/simulated/floor/rock/seafloor,
-/area/nadezhda/outside/forest/beast_cave_dark)
 "Ca" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/mineral/random/rogue,
@@ -9937,8 +9933,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "IL" = (
 /obj/item/remains/xeno,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "IM" = (
@@ -10222,8 +10216,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "JM" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
+/mob/living/simple_animal/hostile/render/wasprender,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JN" = (
@@ -10680,8 +10673,6 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Lp" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -16020,7 +16011,7 @@ eC
 sd
 LI
 Bf
-JM
+Df
 zx
 zx
 AA
@@ -33705,7 +33696,7 @@ Df
 EE
 rK
 Df
-BZ
+JM
 Df
 Df
 EO
