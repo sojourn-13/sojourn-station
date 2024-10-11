@@ -145,7 +145,11 @@
 			shield.can_block_proj = TRUE
 			shield.base_block_chance += 10
 			shield.adjustShieldDurability(-10, user)
-		usr.put_in_active_hand(shield)
+		if(usr.put_in_active_hand(shield))
+			return
+		STOP_PROCESSING(SSobj, shield)
+		qdel(shield)
+
 
 /mob/living/carbon/human/proc/psionic_shield_layered()
 	set category = "Psionic powers"
@@ -162,7 +166,10 @@
 			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-		usr.put_in_active_hand(shield)
+		if(usr.put_in_active_hand(shield))
+			return
+		STOP_PROCESSING(SSobj, shield)
+		qdel(shield)
 
 
 /mob/living/carbon/human/proc/telekinetic_fist()
