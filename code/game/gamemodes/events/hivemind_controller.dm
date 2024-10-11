@@ -92,7 +92,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br><a href='?src=\ref[src];spawn_hive=1'>\[SPAWN\]</a>"
 	data += "<br><a href='?src=\ref[src];kill_hive=1'>\[PURGE\]</a>"
 	data += "<br><a href='?src=\ref[src];really_kill_hive=1'>\[HARDCORE PURGE\]</a>"
-	data += "<br><br>EMP mult Info: 1 is default, 0 disables. Past 1 has emps deal bounce damage, negitive numbers heals on emp."
+	data += "<br><br>EMP mult Info: 1 is default, 0 disables. Past 1 has emps deal bonus damage, negative numbers heals on emp."
 	data += "<br>Hivemind EMP Mult: [GLOB.hive_data_float["hivemind_emp_mult"]] \
 	<a href='?src=\ref[src];change_emp_mult=1'>\[SET\]</a>"
 
