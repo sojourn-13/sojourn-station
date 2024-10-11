@@ -10523,6 +10523,10 @@
 /obj/random/cluster/golem,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
+"KN" = (
+/mob/living/simple_animal/hostile/render/wasprender,
+/turf/simulated/floor/rock/seafloor,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
@@ -33701,7 +33705,7 @@ Df
 EE
 rK
 Df
-Df
+KN
 Df
 Df
 EO
