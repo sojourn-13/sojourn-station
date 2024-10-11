@@ -45,9 +45,9 @@
 
 	description = "The Prime serves as the head of the local branch of the Church of the Absolute. <br>\
 	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
-	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength, and convert those seeking salvation.<br>\
-	While you are no trained psychologist, you can provide support and guidance to all - in both bright and dark times.<br>\
-	Additional duty may require holding funerals for the truly lost, or host parties and group praying.<br>\
+	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength and convert those seeking salvation.<br>\
+	While you are no trained psychologist, you can provide support and guidance to all - in times bright or dark.<br>\
+	Additional duties may see you hosting sermons for the faithful, organizing charity events like giving out food or performing last rites for those forever lost.<br>\
 	The Crusader protocol may also be enacted under your command when facing a Hivemind threat. Use this boost, and your ritual book, to defeat evil."
 
 	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
@@ -67,7 +67,7 @@
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = MAP_FACTION
-	total_positions = 4
+	total_positions = 6
 	spawn_positions = 4
 	supervisors = "the Prime"
 	difficulty = "Easy to Medium."
@@ -96,7 +96,7 @@
 
 	description = "The Vector serves the Prime, and more generally the church, as a disciple of the Faith.<br>\
 	The sacred duties of operating the bioreactor and managing biomass for the church machines are your main priority.<br>\
-	You should also work to present the Faith in a positive light to all colonists. The Vector may issue you with further duties."
+	You should also work to represent the Faith in a positive light to all colonists. The prime may issue you further duties and orders."
 
 	duties = "Operate the bioreactor and manage biomass for the church machines.<br>\
 		Maintain areas owned by the church, keeping the facilities functional and in good order.<br>\

@@ -96,6 +96,6 @@
 		)
 	)
 	offer_types = list(
-		/obj/item/tool/minihoe = offer_data_mods("modified minihoe (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
-		/obj/item/tool/hatchet = offer_data_mods("modified hatchet (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3)
+		/obj/item/tool/minihoe = offer_data_mods("modified minihoe (2 upgrades)", 800, 2, OFFER_MODDED_TOOL, 2),
+		/obj/item/tool/hatchet = offer_data_mods("modified hatchet (3 upgrades)", 1000, 2, OFFER_MODDED_TOOL, 3)
 	)

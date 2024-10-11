@@ -3192,7 +3192,7 @@
 /area/shuttle/skipjack_area)
 "jf" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scanner/belvoix_scanner,
+/obj/item/device/scanner/gene_debug_scanner,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "jg" = (

@@ -4,8 +4,8 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
@@ -27,8 +27,8 @@
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
 	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
 
-	duties = "Run the bar - provide a safe haven for food, drinks, and entertainment.<br>\
-		Seek extra sources of income from the venue - perhaps run deals or trade secrets.<br>\
+	duties = "Run the bar - provide a safe haven for food, drinks and entertainment.<br>\
+		Seek extra sources of income for the venue - perhaps run deals or trade secrets.<br>\
 		Potentially take over cooking duties if a Chef is not present."
 
 /obj/landmark/join/start/clubmanager
@@ -42,8 +42,8 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
@@ -62,7 +62,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
-	You will typically work closely with a Bartender while cooking, cleaning, serving, and perhaps entertaining.<br>\
+	You will typically work closely with a Bartender while cooking, cleaning, serving and perhaps entertaining.<br>\
 	You are paid mainly through fulfilling requests for food. The successful Chef takes initiative by asking for customer orders."
 
 	duties = "Provide enough meals to feed the colony. Aim for a variety of interesting and tasty dishes.<br>\
@@ -101,10 +101,10 @@
 
 	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
+	description = "The Gardener toils in hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
-	Remember that your goods come at a price, and more exotic crops can command a higher price."
+	Remember that your goods come with a cost and more exotic crops can command a higher price."
 
 	duties = "Grow food. Ensure a good supply of raw vegetables and core grains - rice and wheat.<br>\
 		Raise animals for eggs, meat and recreation.<br>\
@@ -195,7 +195,7 @@
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
 		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
-		Restock Newscasters to at lest 15 prints.<br>\
+		Restock Newscasters to at least 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
 /obj/landmark/join/start/janitor

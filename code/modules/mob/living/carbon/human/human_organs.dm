@@ -99,7 +99,7 @@
 	// standing is poor
 	if(stance_damage >= 8 || (stance_damage >= 4 && prob(5)))
 		if(!(lying || resting))
-			if(species && !(species.flags & NO_PAIN))
+			if(!((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
 				emote("painscream")
 			custom_emote(1, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
@@ -136,14 +136,24 @@
 		if(E.mob_can_unequip(src))
 			if(E.is_broken() || E.is_nerve_struck() || E.limb_efficiency <= 50)
 
+				if(istype(E, /obj/item/stack/medical))
+					emote("me", 1, "clenches harder onto [E.name]!")
+					return
+
 				drop_from_inventory(E)
 
 				if(E.limb_efficiency <= 50)
 					emote("me", 1, "drops what they were holding in their [E.name], [pick("unable to grasp it", "unable to feel it", "too weak to hold it")]!")
 				else
-					emote("me", 1, "[(species.flags & NO_PAIN) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
+					emote("me", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
 
 			else if(E.is_malfunctioning())
+				//many things are welders and holding onto them even with harmed lims means you have a no-drop-risk weapon. So they are excluded - Trilby
+				if(istype(E, /obj/item/stack/cable_coil) || istype(E, /obj/item/stack/nanopaste))
+					emote("me", 1, "clenches harder onto [E.name]!")
+					return
+
+
 				drop_from_inventory(E)
 				emote("pain", 1, "drops what they were holding, their [E.name] malfunctioning!")
 

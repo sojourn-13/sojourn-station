@@ -778,7 +778,7 @@
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
 	brightness_on = 4
-	armor_list = list(melee =7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee =10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)
@@ -1660,8 +1660,8 @@
 	name = "altyn helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
-	armor_up = list(melee = 2, bullet = 3, energy = 2, bomb = 35, bio = 0, rad = 0)
-	armor_list = list(melee = 5, bullet = 4, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor_up = list(melee = 3, bullet = 5, energy = 2, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 7, bullet = 9, energy = 0, bomb = 10, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 

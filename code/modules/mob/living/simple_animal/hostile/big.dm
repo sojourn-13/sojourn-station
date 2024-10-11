@@ -85,6 +85,18 @@
 	melee_damage_upper = 45
 	color = "#8B0000"
 
+/mob/living/simple_animal/hostile/render/wasprender
+	name = "Wasp Queen"
+	desc = "A testament to the mutating properties of Amethyn, this wasp-render hybrid is truly the queen of the hive."
+	icon = 'icons/mob/deathclaw.dmi'
+	icon_state = "beeclaw"
+	icon_dead = "beeclaw_dead"
+	maxHealth = 800
+	health = 800
+	faction = "vox_tribe" //Same as wasps
+	melee_damage_lower = 40
+	melee_damage_upper = 45
+
 /mob/living/simple_animal/hostile/render/chunks
 	name = "Chunks"
 	desc = "An absolute unit of a primal render. Somehow maintains his speed despite being severely malformed and ugly as sin."

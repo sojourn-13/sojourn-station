@@ -1,6 +1,8 @@
 GLOBAL_LIST_INIT(hive_data_bool, list(
 	"maximum_existing_mobs"			= FALSE, // Exact number set separately
 	"spread_trough_burrows"			= FALSE,
+	"spread_maints_burrows"			= FALSE,
+
 	"spread_on_lower_z_level"		= TRUE, // Spread via wires "falling down" from higher z-level
 	"teleport_core_when_damaged"	= FALSE,
 	"allow_tyrant_spawn"			= TRUE,
@@ -54,6 +56,8 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "</td></tr></table>"
 	usr << browse(data, "window=hive_area;size=600x600")
 
+/datum/hivemind_panel/proc/give_hivemind_points(cap)
+	hive_mind_ai.evo_points += cap
 
 /datum/hivemind_panel/proc/main_interact()
 	var/data = "<center><font size='3'><b>HIVEMIND PANEL v0.2</b></font></center>"
@@ -64,10 +68,18 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 		data += "<br>Evolution points: [hive_mind_ai.evo_points]"
 		data += "<br>Evolution level: [hive_mind_ai.evo_level]"
 		data += "<br>Nodes count: [hive_mind_ai.hives.len]"
+		if(hive_mind_ai.hives.len)
+			for(var/obj/machinery/hivemind_machine/node/hmn in hive_mind_ai.hives)
+				data += "<br>Nodes Locations: [hmn.name]: Jump-to [admin_jump_link(hmn, hmn)]"
 		data += "<br>Areas count: [GLOB.hivemind_areas.len] \
 		<a href='?src=\ref[src];area_list_interact=1'>\[DETAILS\]</a>"
 		data += "<br>Mobs count: [GLOB.hivemind_mobs.len] \
 		<a href='?src=\ref[src];mob_list_interact=1'>\[DETAILS\]</a>"
+
+		data += "<br>Give Hivemind Points: \
+		<a href='?src=\ref[src];give_points=1'>\[Give\]</a>"
+
+
 	else
 		data += "<br>Hivemind is not active. Yet."
 		data += "<br>Name: [_name] <a href='?src=\ref[src];set_name=1'>\[SET\]</a>"
@@ -95,10 +107,14 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>How Long before Gibbing Humans? (0 is disabled): [GLOB.hive_data_float["gibbing_warning_timer"]] \
 	<a href='?src=\ref[src];set_gibbing_warning_timer=1'>\[SET\]</a>"
 
-	data += "<br>Spread trough burrows: [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
+	data += "<br><br>(Note: If enabled spread through burrows is also enabled)\
+	<br>Spread through maints burrows: [GLOB.hive_data_bool["spread_maints_burrows"] ? "Enabled" : "Disabled"]\
+	<a href='?src=\ref[src];toggle_maint_burrow=1'>\[TOGGLE\]</a>"
+
+	data += "<br>Spread through normal burrows (I.E borrows in hallways and departments.): [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_burrow=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Spread on z level below: [GLOB.hive_data_bool["spread_on_lower_z_level"] ? "Enabled" : "Disabled"] \
+	data += "<br><br>Spread on z level below: [GLOB.hive_data_bool["spread_on_lower_z_level"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_gravity_spread=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Teleport core when damaged: [GLOB.hive_data_bool["teleport_core_when_damaged"] ? "Enabled" : "Disabled"] \
@@ -132,6 +148,11 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	if(href_list["area_list_interact"])
 		area_list_interact()
+
+	if(href_list["give_points"])
+		var/cap = input(usr, "How many points to give (Negative numbers subtract)", "Hivemind Pity Fund") as null|num
+		if(hive_mind_ai)
+			give_hivemind_points(cap)
 
 	if(href_list["toggle_mob_limit"])
 		GLOB.hive_data_bool["maximum_existing_mobs"] = !GLOB.hive_data_bool["maximum_existing_mobs"]
@@ -195,6 +216,9 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	if(href_list["toggle_burrow"])
 		GLOB.hive_data_bool["spread_trough_burrows"] = !GLOB.hive_data_bool["spread_trough_burrows"]
+
+	if(href_list["toggle_maint_burrow"])
+		GLOB.hive_data_bool["spread_maints_burrows"] = !GLOB.hive_data_bool["spread_maints_burrows"]
 
 	if(href_list["toggle_gravity_spread"])
 		GLOB.hive_data_bool["spread_on_lower_z_level"] = !GLOB.hive_data_bool["spread_on_lower_z_level"]

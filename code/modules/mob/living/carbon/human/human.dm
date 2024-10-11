@@ -1511,7 +1511,7 @@ var/list/rank_prefix = list(\
 		if(!istype(check_organ))
 			return 0
 		return check_organ.organ_can_feel_pain() */ //TODO: This also doesn't work on Eris :))
-	return !(species.flags & NO_PAIN)
+	return !((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 
 /mob/living/carbon/human/proc/check_self_for_injuries()
 	if(stat)
@@ -1707,3 +1707,16 @@ var/list/rank_prefix = list(\
 
 
 #undef SLIME_TRANSPARENCY
+
+//Typically works to set yourself on the top of same layers
+/mob/living/carbon/human/verb/move_to_top()
+	set name = "Move Self To Top"
+	set desc = "Try to move yourself on the tile to be ontop of everything."
+	set category = "IC"
+
+	if(!istype(loc, /turf) || usr.stat || usr.restrained() )
+		return
+
+	var/turf/T = loc
+	loc = null
+	loc = T

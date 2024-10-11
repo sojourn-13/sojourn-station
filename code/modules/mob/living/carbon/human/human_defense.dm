@@ -86,7 +86,7 @@ uniquic_armor_act
 					emote("pain", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
 					var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-					emote("painscream", 1, "[(species && species.flags & NO_PAIN) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
+					emote("painscream", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -427,6 +427,7 @@ uniquic_armor_act
 			return
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		/// Get hit with glass shards , your fibers are on them now, or with a rod idk.
 		O.add_fibers(src)

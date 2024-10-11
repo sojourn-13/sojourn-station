@@ -722,7 +722,7 @@ No more of that.
 					"corn",
 					"eggplant",
 					"chili",
-					"mushrooms",
+					"chanterelle",
 					"wheat",
 					"potato",
 					"rice")]

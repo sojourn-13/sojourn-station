@@ -53,14 +53,22 @@
 	msg = emoji_parse(msg)
 
 	var/ooc_style = "everyone"
+	var/chattag = "ooc"
+	var/chattagtext = "OOC:"
 	if(holder && !holder.fakekey)
 		ooc_style = "elevated"
+		chattag = "ooc-staff"
+		chattagtext = "OOC‡:"
 		if(holder.rights & R_MOD)
 			ooc_style = "moderator"
+			chattag = "ooc-mod"
+			chattagtext = "OOC·"
 		if(holder.rights & R_DEBUG)
 			ooc_style = "developer"
 		if(holder.rights & R_ADMIN)
 			ooc_style = "admin"
+			chattag = "ooc-admin"
+			chattagtext = "OOC*"
 
 	for(var/client/target in clients)
 		if(target.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_SHOW)
@@ -71,10 +79,13 @@
 						display_name = "[holder.fakekey]/([src.key])"
 					else
 						display_name = holder.fakekey
+
+			var/chat_tag = create_text_tag(chattag, chattagtext, target)
+
 			if(holder && !holder.fakekey && (holder.rights & R_ADMIN) && config.allow_admin_ooccolor && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins
-				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM> <span class='message'>[msg]</span></font></span></span>")
+				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + chat_tag + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM></span> <span class='message'>[msg]</span></font></span>")
 			else
-				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></span>")
+				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + chat_tag + " <EM>[display_name]:</EM></span> <span class='message'>[msg]</span></span>")
 
 /client/verb/looc_wrapper()
 	set name = "LOOC verb"

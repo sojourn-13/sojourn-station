@@ -63,7 +63,7 @@
 					H.custom_pain(painMes)
 				else if (iscarbon(M))
 					var/mob/living/carbon/C = M
-					if (!(C.species && (C.species.flags & NO_PAIN)))
+					if (!((C.species.flags & NO_PAIN) || (PAIN_LESS in C.mutations)))
 						to_chat(M, SPAN_DANGER("[painMes]"))
 
 			gain_nutrition(rand(20,25))

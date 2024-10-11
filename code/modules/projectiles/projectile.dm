@@ -385,6 +385,9 @@
 	if(faction_iff == target_mob.faction)
 		return FALSE
 
+	if(testing)
+		return TRUE
+
 	//roll to-hit
 	miss_modifier = 0
 	var/hit_zone = check_zone(def_zone)

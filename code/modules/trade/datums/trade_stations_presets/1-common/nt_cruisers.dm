@@ -35,7 +35,7 @@
 			/obj/item/clothing/accessory/holster/waist,
 			/obj/item/clothing/accessory/holster/hip
 		),
-		"Agro Supply" = list(
+		"Livestock" = list(
 			/obj/structure/largecrate/animal/corgi,
 			/obj/structure/largecrate/animal/cow,
 			/obj/structure/largecrate/animal/goat,

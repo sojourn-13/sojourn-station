@@ -24,7 +24,6 @@
 	preloaded_reagents = list("acetone" = 9,"aluminum"= 3, "tungsten" = 5)
 	var/colour = "black"	//what colour the ink is!
 
-
 /obj/item/pen/blue
 	desc = "It's a normal blue ink pen."
 	icon_state = "pen_blue"
@@ -35,13 +34,23 @@
 	icon_state = "pen_red"
 	colour = "red"
 
+/obj/item/pen/green
+	desc = "It's a normal blue ink pen."
+	icon_state = "pen_green"
+	colour = "green"
+
+/obj/item/pen/cyan
+	desc = "It's a normal red ink pen."
+	icon_state = "pen_cyan"
+	colour = "cyan"
+
 /obj/item/pen/multi
 	desc = "It's a pen with multiple colors of ink!"
 	var/selectedColor = 1
-	var/colors = list("black","blue","red")
+	var/colors = list("black","blue","red","green","cyan")
 
 /obj/item/pen/multi/attack_self(mob/user)
-	if(++selectedColor > 3)
+	if(++selectedColor > 5)
 		selectedColor = 1
 
 	colour = colors[selectedColor]
@@ -57,7 +66,6 @@
 	desc = "It's an invisble pen marker."
 	icon_state = "pen"
 	colour = "white"
-
 
 /obj/item/pen/attack(mob/M as mob, mob/user as mob)
 	if(!ismob(M))
@@ -106,7 +114,6 @@
 /obj/item/pen/reagent/sleepy/New()
 	..()
 	reagents.add_reagent("chloralhydrate", 22)	//Used to be 100 sleep toxin//30 Chloral seems to be fatal, reducing it to 22./N
-
 
 /*
  * Parapens
@@ -193,9 +200,9 @@
 	var/colourName = "red" //for updateIcon purposes
 	var/grindable = TRUE //normal crayons are grindable, rainbow and mime aren't
 
-	New()
-		name = "[colourName] crayon"
-		if(grindable)
-			create_reagents(20)
-			reagents.add_reagent("crayon_dust_[colourName]", 20)
-		..()
+/obj/item/pen/crayon/New()
+	name = "[colourName] crayon"
+	if(grindable)
+		create_reagents(20)
+		reagents.add_reagent("crayon_dust_[colourName]", 20)
+	..()

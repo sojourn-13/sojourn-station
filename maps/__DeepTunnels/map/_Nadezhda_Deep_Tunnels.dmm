@@ -6105,6 +6105,10 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisoltwo)
 "pC" = (
@@ -6209,12 +6213,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "pO" = (
-/obj/machinery/atmospherics/binary/pump,
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -26
+	pixel_x = -22
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "pP" = (
 /obj/machinery/atmospherics/binary/pump,
@@ -6573,6 +6576,10 @@
 "qI" = (
 /obj/structure/bed/chair{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolone)
@@ -8068,6 +8075,10 @@
 /area/nadezhda/rnd/mixing)
 "uW" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "uX" = (
@@ -8372,6 +8383,10 @@
 "BD" = (
 /obj/structure/window/reinforced{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
@@ -16499,7 +16514,7 @@ jH
 no
 lu
 kL
-lj
+jH
 jH
 jH
 jH
@@ -16508,7 +16523,7 @@ jH
 jH
 jH
 jH
-jH
+lj
 jH
 HP
 jH
@@ -18923,7 +18938,7 @@ jA
 jA
 nQ
 px
-pO
+pP
 qf
 kM
 kM
@@ -21556,7 +21571,7 @@ UO
 tK
 YV
 oD
-oD
+pO
 SI
 mn
 mn

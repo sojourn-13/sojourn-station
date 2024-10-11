@@ -196,7 +196,7 @@
 		if("eject_guy")
 			eject_occupant(usr)
 			. = TRUE
-	
+
 	if(.)
 		add_fingerprint(usr)
 		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
@@ -290,7 +290,7 @@
 
 			OCCUPANT.take_organ_damage(0, burndamage)
 			OCCUPANT.apply_effect(50, IRRADIATE)
-			if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
+			if (!((OCCUPANT.species.flags & NO_PAIN) || (PAIN_LESS in OCCUPANT.mutations)))
 				OCCUPANT.emote("painscream")
 
 	//End of the cycle

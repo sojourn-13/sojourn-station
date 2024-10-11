@@ -1,6 +1,6 @@
 /datum/trade_station/station_zarya
 	name_pool = list(
-		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
+		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction goods, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
 	uid = "techno_basic"
 	tree_x = 0.18
@@ -15,7 +15,7 @@
 	recommendation_threshold = 1500
 	stations_recommended = list("techno_adv")
 	inventory = list(
-		"Vozduh" = list(
+		"Vozdukh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
 			/obj/machinery/portable_atmospherics/canister/nitrogen,
 			/obj/machinery/portable_atmospherics/canister/oxygen,
@@ -39,7 +39,7 @@
 			/obj/machinery/atmospherics/binary/circulator,
 			/obj/item/clothing/gloves/insulated
 		),
-		"Vsyakoe" = list(
+		"Vsyakoye" = list(
 			/obj/structure/reagent_dispensers/watertank,
 			/obj/item/storage/briefcase/inflatable/empty,
 			/obj/item/inflatable/door,
@@ -72,7 +72,7 @@
 		),
 		"Plokhiye Idei" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300),
+			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300),
 			/obj/machinery/power/emitter,
 			/obj/machinery/field_generator,
 			/obj/machinery/shieldwallgen,

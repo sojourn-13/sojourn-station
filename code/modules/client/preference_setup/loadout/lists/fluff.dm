@@ -190,3 +190,23 @@
 		"base_icon_state" = "runed_sheath",
 		"base_item_state" = "runed_sheath"
 	)
+
+// Chef_Doggo
+/datum/gear/fluff/chef_doggo_telescopic_baton
+	ckey_whitelist = list("chefdoggo")
+	display_name = "Gold Leaf Telescopic Baton Kit"
+	path = /obj/item/fluff_conversion_kit/chef_doggo_telescopic_baton
+
+// Chef_Doggo
+/obj/item/fluff_conversion_kit/chef_doggo_telescopic_baton
+	name = "Patterned Serape Conversion Kit"
+	target_type = /obj/item/melee/telebaton
+	name_change = "Gilded Telebaton"
+	icon_change = 'icons/fluff/fluff_items.dmi'
+	icon_state_change = "rat_telebaton"
+	vars_change = list(
+		"desc" = "A relatively standard telebaton with gold leafing on the tip and on parts of the metal creating a striped look, the handle is dyed a golden yellow.",
+		"icon_override" = 'icons/fluff/fluff_items.dmi',
+		"item_state" = "rat_telebaton_0",
+		"baton_base" = "rat_telebaton"
+	)

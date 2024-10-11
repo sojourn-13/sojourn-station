@@ -227,7 +227,6 @@
 		icon_state = "[initial(icon_state)][amount]"
 	..()
 
-
 /obj/item/stack/medical/bruise_pack/psionic
 	name = "Mindspindle"
 	singular_name = "Mindstring"

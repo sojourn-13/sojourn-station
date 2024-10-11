@@ -5,7 +5,7 @@
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"
-	description = "Inaprovaline is a weak yet broad synaptic stimulant and cardiostimulant. Commonly used to stabilize patients in critical condition."
+	description = "Inaprovaline is a weak yet broad synaptic stimulant and cardiostimulant. Commonly used to stabilize patients in critical condition. Very weak painkiller. Stabilizes Breathing. Weak Blood Clotting. Weak oxygen deprivation healing."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#00BFFF"
@@ -25,7 +25,7 @@
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
 	id = "bicaridine"
-	description = "Bicaridine is an analgesic medication and can be used to treat blunt trauma."
+	description = "Bicaridine treats trauma at a moderate rate. Will lessen external bleeding. Less affective in Cht'mant."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -142,7 +142,7 @@
 /datum/reagent/medicine/kelotane
 	name = "Kelotane"
 	id = "kelotane"
-	description = "Kelotane is a drug used to treat burns."
+	description = "Kelotane is a drug used to treat burns. Does not work on Cht'mant, use Seligitillin instead."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FFA800"
@@ -161,7 +161,7 @@
 /datum/reagent/medicine/dermaline
 	name = "Dermaline"
 	id = "dermaline"
-	description = "Dermaline is the next step in burn medication. Works twice as well as Kelotane and enables the body to restore even the direst heat-damaged tissue."
+	description = "Dermaline is the next step in burn medication. Works twice as well as Kelotane and enables the body to restore even the direst heat-damaged tissue. Prevents infection. Has a low overdose threshold. Can be combined with Kelotane in equal parts (commonly known as KeloDerm) to reduce danger of overdose, their effects stacking."
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -196,7 +196,7 @@
 /datum/reagent/medicine/dylovene
 	name = "Dylovene"
 	id = "anti_toxin"
-	description = "Dylovene is a broad-spectrum antitoxin."
+	description = "Dylovene is a broad-spectrum antitoxin. Heals toxin damage, shortens the duration of drug-related hallucinations and sleepiness, and removes Pararein, Carpotoxin, Blattedin and Toxin from the blood."
 	taste_description = "a roll of gauze"
 	reagent_state = LIQUID
 	color = "#00A000"
@@ -252,7 +252,7 @@
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
 	id = "carthatoline"
-	description = "Carthatoline is a strong evacuant used to treat severe poisoning. As well as a mild nerve system relaxant."
+	description = "Carthatoline is a strong evacuant used to treat severe poisoning. As well as a mild nerve system relaxant. Treats toxin damage at an accelerated rate, while healing damage to the liver."
 	reagent_state = LIQUID
 	color = "#225722"
 	scannable = TRUE
@@ -307,7 +307,7 @@
 /datum/reagent/medicine/dexalin
 	name = "Dexalin"
 	id = "dexalin"
-	description = "Dexalin is used in the treatment of oxygen deprivation."
+	description = "Heals oxygen deprivation damage slowly while removing Lexorin from bloodstream. Does nothing for Cht'mant, use Diplopterum instead."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0080FF"
@@ -327,7 +327,7 @@
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
-	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as muscle repair. It is highly effective."
+	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as muscle repair. Heals oxygen deprivation faster than Dexalin. Removes Lexorin from the bloodstream. Also slowly and slightly heals muscles inside the body."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0040FF"
@@ -393,7 +393,7 @@
 /datum/reagent/medicine/tricordrazine
 	name = "Tricordrazine"
 	id = "tricordrazine"
-	description = "Tricordrazine is a highly potent stimulant, originally derived from Cordrazine. Can be used to treat a wide range of injuries."
+	description = "Tricordrazine is a highly potent stimulant, originally derived from Cordrazine. Can be used to treat a wide range of injuries. Heals brute, burn, toxin and oxygen damage, albeit slowly. Clots minor wounds from bleeding. Can be combined with other medications for faster treatment. Overdose causes massive toxin and brain damage until death. Does not work on Cht'mant, use Blattedin instead."
 	taste_description = "grossness"
 	reagent_state = LIQUID
 	color = "#8040FF"
@@ -432,7 +432,7 @@
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
 	id = "cryoxadone"
-	description = "A chemical mixture that heals every single type of superficial injury, toxins, and suffocation. Its main limitation is that the target's body temperature must be under 170K for it to metabolize correctly."
+	description = "A chemical mixture that heals every single type of superficial injury, toxins, and suffocation. Its main limitation is that the target's body temperature must be under 170K for it to metabolize correctly. Used in beakers inside cryogenic cells. Also treats genetic (cellular) damage. Does not work if ingested."
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#8080FF"
@@ -481,7 +481,7 @@
 /datum/reagent/medicine/nanitefluid
 	name = "Nanobot Fluid"
 	id = "nanofluid"
-	description = "A plasma solution of tiny nanobots programmed to repair robotic organs and prosthetics. Due to the nature of the small magnetic fields used to guide the nanites, it must be used in temperatures below 170K."
+	description = "A plasma solution of tiny nanobots programmed to repair robotic organs and prosthetics. Due to the nature of the small magnetic fields used to guide the nanites, it must be used in temperatures below 170K. Does not work to repair FBP's, as they do not have a bloodstream. Also works on dead bodies."
 	taste_description = "a chaff grenade"
 	reagent_state = LIQUID
 	color = "#c2c2d6"
@@ -550,7 +550,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/tramadol
 	name = "Tramadol"
 	id = "tramadol"
-	description = "A simple, yet effective painkiller."
+	description = "Medium painkiller. Generally all around useful for mild to semi-severe damage. Stronger than Paracetamol, weaker than Oxycodone. Overdose causes hallucinations, slurring, and slowdown, and eventually stuns you if you're not tough enough."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#CB68FC"
@@ -573,7 +573,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/oxycodone
 	name = "Oxycodone"
 	id = "oxycodone"
-	description = "An effective and very addictive painkiller."
+	description = "Most powerful painkiller. Useful when you run out of anesthetics and need to keep a patient out of pain during surgery, or if near fatally hurt. Makes the user feel druggy. Overdosing causes hallucinations, drugginess, slurring, and slowed movement, it also stuns them if they are not tough enough."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#800080"
@@ -692,7 +692,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/spaceacillin/holy
 	name = "Holycilin"
 	id = "holycilin"
-	description = "A chemical of unknown origin, believed to be derived from cahors and spaceacillin that functions identical to the latter."
+	description = "A theta-lactam antibiotic. Slows progression of diseases. Treats infections as long as 1 unit or more are present on the body. Also treats Toxin damage"
 	taste_description = "sweetness"
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
@@ -705,7 +705,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
 	id = "synaptizine"
-	description = "Synaptizine is used to treat various diseases."
+	description = "Treats hallucinations, paralysis and purges Mindbreaker Toxin off the bloodstream. Functions as a stimulant, counteracting stuns and acting as a mild painkiller. Moderately toxic. Recommended dosage at under 5 units and paired with Dylovene. Metabolizes very slowly. Overdose does nothing."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#99CCFF"
@@ -748,7 +748,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
 	id = "imidazoline"
-	description = "Helps naturally regenerate and restore eye tissue."
+	description = "Treats damage to the eyes, removing blindness and/or blurring. Does not cure blindness from genetic mutations."
 	taste_description = "dull toxin"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
@@ -778,7 +778,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/peridaxon
 	name = "Peridaxon"
 	id = "peridaxon"
-	description = "Used to encourage recovery of internal organs and nervous systems. Medicate cautiously."
+	description = "Treats damage to organs, healing them. Does not treat brain damage nor heal bones. Will not work for Cht'mant, use Fuhrerole instead."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#561EC3"
@@ -863,7 +863,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/ryetalyn
 	name = "Ryetalyn"
 	id = "ryetalyn"
-	description = "Ryetalyn can cure all genetic abnormalities via a catalytic process."
+	description = "Ryetalyn can cure all genetic abnormalities via a catalytic process. Just injecting one unit is enough to eliminate all mutations and disabilities permanently, including beneficial ones. Works on dead people, allowing them to unhusk them if they have died from excessive burns."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#004000"
@@ -895,7 +895,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/negative_ling
 	name = "Negative Paragenetic Marker"
 	id = "negativeling"
-	description = "A marker compound that turns positive when put in contact with morphogenic mutant blood."
+	description = "A chemical that, when heated to 700K and combined in equal parts with a blood sample, will react to form Positive Paragenetic Marker if the blood comes from a Carrion."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#022000"
@@ -903,7 +903,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"
 	id = "positiveling"
-	description = "This marker compound has come in contact with morphogenic mutant blood."
+	description = "The result of heating up Negative Paragenetic Marker in the prescence of Carrion blood. If you manage to obtain this, report the person to Marshals immediately (and discretely)."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#910000"
@@ -912,7 +912,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/ethylredoxrazine
 	name = "Ethylredoxrazine"
 	id = "ethylredoxrazine"
-	description = "A powerful oxidizer that reacts with ethanol and overstimulation."
+	description = "Purges alcohol from the stomach per unit ingested. Also treats confusion, dizziness, sleepiness, and stuttering to sober up drunkards."
 	reagent_state = SOLID
 	color = "#605048"
 	overdose = REAGENTS_OVERDOSE
@@ -947,7 +947,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/arithrazine
 	name = "Arithrazine"
 	id = "arithrazine"
-	description = "Arithrazine is an unstable medication used for the most extreme cases of radiation poisoning."
+	description = "Removes radiation from patient's body more quickly and efficiently than Hyronalin. Has a chance to cause minor brute damage to patient while processing. Treats toxin damage. Does not treat genetic damage. In most cases, should be administered with Dylovene."
 	affects_dead = TRUE
 	reagent_state = LIQUID
 	color = "#008000"
@@ -982,7 +982,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/sterilizine
 	name = "Sterilizine"
 	id = "sterilizine"
-	description = "Sterilizes wounds in preparation for surgery and thoroughly removes blood."
+	description = "Kills germs and cleans up bloodstains more effectively than space cleaner. Useful in surgery to prevent or reduce infection levels, specially when treating septic infections"
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
@@ -1028,7 +1028,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/methylphenidate
 	name = "Methylphenidate"
 	id = "methylphenidate"
-	description = "Improves the ability to concentrate."
+	description = "Aids with concentration and focus. General anti-anxiety medicine for ADHD and other mental ailments. Some studies hint towards a placebo effect instead of a pharmaceutical one."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#BF80BF"
@@ -1048,7 +1048,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/citalopram
 	name = "Citalopram"
 	id = "citalopram"
-	description = "Stabilizes the mind a little."
+	description = "Mild antidepressant. Helps stabilize the mind. Some studies hint towards a placebo effect instead of a pharmaceutical one."
 	taste_description = "bitterness"
 	sanity_gain = 2
 	reagent_state = LIQUID
@@ -1111,7 +1111,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/rezadone
 	name = "Rezadone"
 	id = "rezadone"
-	description = "A powder with almost magical properties, this substance can effectively treat genetic damage in humanoids, though excessive consumption has side effects."
+	description = "A powder with almost magical properties, this substance can effectively treat genetic damage in humanoids, though excessive consumption (higher than 3 units) has side effects like facial disfigurement."
 	taste_description = "sickness"
 	reagent_state = SOLID
 	color = "#669900"
@@ -1154,7 +1154,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Puts the user in a great amount of pain and repairs broken bones. Medicate in critical conditions only."
+	description = "Puts the user in a great amount of pain and repairs broken bones. Medicate in critical conditions only. It does not set bones in place. Overdosing causes fatal cellular damage."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
@@ -1189,7 +1189,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/noexcutite
 	name = "Noexcutite"
 	id = "noexcutite"
-	description = "A thick, syrupy liquid that has a lethargic effect. Used to cure cases of jitteriness and overstimulation."
+	description = "Stops convulsions and jittering. If overdosed, will cause paralysis."
 	taste_description = "numbing coldness"
 	reagent_state = LIQUID
 	color = "#bc018a"
@@ -1206,7 +1206,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "A strange chemical that allows a patient to regrow organic limbs. Requires the use of cryogenics and is slow-acting. The process is extremely painful and may damage the body if dosed incorrectly."
+	description = "A strange chemical that allows a patient to regrow organic limbs. Requires the use of cryogenics (below 170K) and is slow-acting. The process is extremely painful and may damage the body if dosed incorrectly. Use five units at a time inside a beaker, and wait until the brute damage gets healed before ejecting the patient from the pod to check status of limbs by examining them. Overdose is extremely lethal, causing fatal cellular damage. Works on the dead as well, it will regrow even their heads, but for some reason they won't have eyes."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
@@ -1272,7 +1272,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/polystem
 	name = "Polystem"
 	id = "polystem"
-	description = "Polystem boosts natural body regeneration."
+	description = "Heals both brute and burn damage, albeit slowly. Minor blood clotting."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -1322,7 +1322,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/purger
 	name = "Purger"
 	id = "purger"
-	description = "Temporary purges all addictions and treats chemical poisoning in large doses."
+	description = "Temporarily suppresses the craving effects of addictions, allowing the patient to recover from addictions easier. Also slightly heals both Kidneys inside the body. Does not remove the effects of withdrawal."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#d4cf3b"
@@ -1341,7 +1341,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/addictol
 	name = "Addictol"
 	id = "addictol"
-	description = "Purges all addictions and greatly aids in treating chemical poisoning."
+	description = "Purges all addictions and greatly aids in treating chemical poisoning. After administering a dose greater than 10 units (As in when the drug is fully processed by the body), will permanently treat the patient's addictions, until they get addicted again."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0179e7"
@@ -1369,7 +1369,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/aminazine
 	name = "Aminazine"
 	id = "aminazine"
-	description = "Medication designed to suppress withdrawal effects for some time."
+	description = "Medication designed to suppress withdrawal effects for some time. Does not eliminate the cravings."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#88336f"

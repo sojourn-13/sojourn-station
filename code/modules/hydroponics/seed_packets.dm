@@ -146,7 +146,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "corn"
 
 /obj/item/seeds/poppyseed
-	seed_type = "poppies"
+	seed_type = "poppy"
 
 /obj/item/seeds/potatoseed
 	seed_type = "potato"
@@ -179,7 +179,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "libertycap"
 
 /obj/item/seeds/chantermycelium
-	seed_type = "mushrooms"
+	seed_type = "chanterelle"
 
 /obj/item/seeds/towermycelium
 	seed_type = "towercap"

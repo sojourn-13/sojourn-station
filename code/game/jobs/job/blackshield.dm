@@ -46,7 +46,7 @@
 							 /datum/computer_file/program/reports)
 
 	description = "The Blackshield Commander serves as the commander of the local regiment of the Blackshield.<br>\
-	Contracted to protect and serve the colony, your faction serves as a voluntary first (and hopefully last) line of defense.<br>\
+	Contracted to protect and serve the colony your faction serves as the voluntary first (and hopefully last) line of defense.<br>\
 	Your goal is to keep everyone living on the colony as safe as possible and to eliminate any threats to safety.<br>\
 	The Warrant Officer is your ally and you should work closely with them, they handle the upholding of the law."
 
@@ -78,7 +78,7 @@
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/serg
 
@@ -100,16 +100,16 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Sergeant is the second-in-command of the Blackshield and the de-facto commanding officer if the Blackshield commander isn't around or injured. <br>\
-	Your role is mainly keeping order among the Blackshield troopers and corpsman and ensuring they do not act like a pack of thugs.<br>\
+	description = "The Sergeant is the second-in-command of the Blackshield and the de-facto commanding officer if the Blackshield Commander isn't around or incapacitated. <br>\
+	Your role is mainly keeping order among the Blackshield troopers and corpsmen and ensuring they do not act like a pack of thugs.<br>\
 	You will often be maintaining discipline and order within the ranks and fulfilling orders from the Blackshield commander.<br>\
-	You will also the secondary squad leader during conflicts, often times leading troopers independent of the Blackshield commander, but usually under his explicit orders.<br>\
+	You will also be the secondary squad leader during conflicts, often times leading troopers independent of the Blackshield commander, but usually under his explicit orders.<br>\
 	In quieter times, you serve as a form of military police and drill instructor. Take the initiative to offer a variety of training drills, especially to junior operatives and report behavior that should have a member of security removed from their post.<br>\
 	Remember that any Blackshield Commander duties may be delegated to you if they wish, and will automatically be given if they are not present."
 
-	duties = "Manage good ethics among security, including the blackshield and marshals with a record of everything responsibly and recorded.<br>\
-	Give training and instruction to troopers. Run drills and ensure they are prepared for firing lines, kill zones, and breach tactics.<br>\
-	Follow the orders of the Blackshield Commander and in his absence keep security in line."
+	duties = "Manage good ethics among security, including the blackshield and marshals, with a record of everything responsibly and on the records.<br>\
+	Train and instruct your troopers; Run drills and ensure they are prepared for firing lines, kill zones and breach tactics.<br>\
+	Follow the orders of the Blackshield Commander and in their absence keep security in line."
 
 /obj/landmark/join/start/serg
 	name = "Sergeant"
@@ -127,7 +127,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Combat Medic")
+	alt_titles = list("Combat Medic", "Field Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -156,15 +156,15 @@
 							 /datum/computer_file/program/camera_monitor)
 
 	description = "The Corpsman is a highly trained medical specialist within the Blackshield - a mixture of combatant and doctor.<br>\
-	Your first duty is that of a field medic. Serve on the back line of any combat situations, treating the wounded and evacuating the critical.<br>\
+	Your first duty is that of a field medic. Serve on the back line of any combat situations, treating the wounded and evacuating the critical patients.<br>\
 	Your second duty is to treat any prisoners and suspects in custody. Wounds from escape and suicide attempts will test your surgical skills.<br>\
 	Your third duty, when faced with strange crimes, is to serve as a scientific analyst - scanning traces and conducting autopsies.<br>\
-	Remember that although you can be armed, the combat is better left to your colleagues. Focus on the tasks only you can do."
+	Remember that although you are armed, the combat is better left to your colleagues. Focus on the tasks only you can do."
 
 	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
-	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
+	Treat any prisoners and suspects and thoroughly monitor their health.<br>\
 	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies.<br>\
-	<b>While you are sufficiently medically trained, you are not a replacement doctor for Soteria Medical. You are a more personal combat medic under Blackshield and Marshals jurisdiction.</b>"
+	<b>While you are sufficiently medically trained, you are not a replacement doctor for Soteria Medical. You are the personal combat medic under Blackshield and Marshal jurisdiction.</b>"
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
@@ -209,16 +209,16 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Trooper forms the base of the Blackshield, the front line against pirates, terrorists, and xenos.<br>\
+	description = "The Trooper forms the base of the Blackshield. The front line against pirates, terrorists and xenos.<br>\
 	You are the closest thing to a professional soldier the colony has. Employ your talents to bring an end to threats and conflict situations.<br>\
-	Tactics and teamwork are vital. You are paid to follow orders, not to think. Remember your focus on external threats - leave otherwise to Marshals.<br>\
-	When there are no standing orders, your ongoing task is to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
+	Tactics and teamwork are vital. You are paid to follow orders, not to think. Remember your focus on external threats - leave internal issues to Marshals.<br>\
+	When there are no standing orders, your perpetual task is to patrol and be on the lookout for threats or problems. Render aid to Marshals when asked. <br>\
 	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
 
-	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
-		Deal with external threats to the colony such as pirates, hostile xenos, and anything that endangers colonists.<br>\
+	duties = "Patrol the colony, provide a security presence and look out for trouble.<br>\
+		Deal with external threats to the colony such as pirates, hostile xenos and anything that endangers colonists.<br>\
 		Exterminate monsters, giant vermin and hostile machines.<br>\
-		Follow orders from the chain of command.<br>\
+		Follow orders from your chain of command.<br>\
 		Obey the law. You are not above it."
 
 /obj/landmark/join/start/trooper
@@ -262,16 +262,16 @@
 
 	description = "The Trooper forms the base of the Blackshield, the front line against pirates, terrorists, and xenos.<br>\
 	You are learning to become a Trooper and help protect the colony. Employ your talents to bring an end to threats and conflict situations.<br>\
-	Tactics and teamwork are vital, make sure to learn some. You are paid to follow and learn orders, not to question. Remember your focus is on external threats - leave otherwise to Marshals.<br>\
-	When there are no standing orders, your ongoing task is to learn the contraband laws and Blackshield SOP and to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
+	Tactics and teamwork are vital, make sure to learn some. You are paid to follow and learn orders, not to question. Remember your focus is on external threats - leave internal issues to Marshals.<br>\
+	When there are no standing orders, your perpetual task is to learn the contraband laws and Blackshield SOP, to patrol and be on the lookout for threats or problems. Render aid to Marshals when asked <br>\
 	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
 
-	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
-		Deal with external threats to the colony such as pirates, hostile xenos, and anything that endangers colonists.<br>\
+	duties = "Patrol the colony, provide a security presence and look out for trouble.<br>\
+		Deal with external threats to the colony such as pirates, hostile xenos and anything that endangers colonists.<br>\
 		Exterminate monsters, giant vermin and hostile machines.<br>\
-		Follow orders from the chain of command.<br>\
+		Follow orders from your chain of command.<br>\
 		Obey the law. You are not above it.<br>\
-		Learn everything you need to know to be a real Trooper"
+		Learn everything you need to know to be a proper Trooper"
 
 /obj/landmark/join/start/cadet
 	name = "Blackshield Cadet"

@@ -117,6 +117,7 @@
 #define CLOAKING             12
 #define SHOCK_LESS           13
 #define VAMPIRE              14
+#define PAIN_LESS            15
 
 
 //Thresholds for mutagenic Destabilization

@@ -293,7 +293,7 @@ Proc for attack log creation, because really why not
 	)
 
 	for(var/obj/item/clothing/C in src)
-		if(l_hand == C || r_hand == C)
+		if(l_hand == C || r_hand == C || slot_l_store == C || slot_r_store == C || slot_s_store == C)
 			continue
 		if(C.body_parts_covered & bodyparts[bodypart])
 			return TRUE

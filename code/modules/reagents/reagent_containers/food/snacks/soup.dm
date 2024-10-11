@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/meatballsoup
 	name = "meatball soup"
-	desc = "You've got balls kid, BALLS!"
+	desc = "A heavy soup with meat and vegetables."
 	icon_state = "meatballsoup"
 	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -13,7 +13,7 @@
 
 /obj/item/reagent_containers/food/snacks/slimesoup
 	name = "slime soup"
-	desc = "If no water is available, you may substitute tears."
+	desc = "A soup that consists of mostly slime and water."
 	icon_state = "rorosoup" //nonexistant?
 	taste_tag = list(BLAND_FOOD)
 	filling_color = "#C4DBA0"
@@ -22,8 +22,8 @@
 	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/reagent_containers/food/snacks/bloodsoup
-	name = "tomato soup"
-	desc = "Smells like copper."
+	name = "vampire soup"
+	desc = "A soup sourced from blood."
 	taste_tag = list(UMAMI_FOOD)
 	icon_state = "tomatosoup"
 	filling_color = "#FF0000"
@@ -47,7 +47,7 @@
 
 /obj/item/reagent_containers/food/snacks/vegetablesoup
 	name = "vegetable soup"
-	desc = "A true vegan meal" //TODO
+	desc = "A soup of vegetables."
 	icon_state = "vegetablesoup"
 	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -62,7 +62,7 @@
 
 /obj/item/reagent_containers/food/snacks/nettlesoup
 	name = "nettle soup"
-	desc = "To think, the gardener would've beat you to death with one of these."
+	desc = "A soup made with nettle and vegetables."
 	icon_state = "nettlesoup"
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -77,7 +77,7 @@
 
 /obj/item/reagent_containers/food/snacks/mysterysoup
 	name = "mystery soup"
-	desc = "The mystery is, why aren't you eating it?"
+	desc = "A soup made by using random seasonings."
 	icon_state = "mysterysoup"
 	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -137,7 +137,7 @@
 
 /obj/item/reagent_containers/food/snacks/wishsoup
 	name = "wish soup"
-	desc = "I wish this was soup."
+	desc = "Boiled water with a dash of salt."
 	icon_state = "wishsoup"
 	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -157,7 +157,7 @@
 
 /obj/item/reagent_containers/food/snacks/hotchili
 	name = "hot chili"
-	desc = "A five alarm Texan Chili!"
+	desc = "A soup made with chili and other spicy seasoning."
 	icon_state = "hotchili"
 	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -172,7 +172,7 @@
 
 /obj/item/reagent_containers/food/snacks/coldchili
 	name = "cold chili"
-	desc = "This slush is barely a liquid!"
+	desc = "A soup made of ice chili tends to stay cold."
 	icon_state = "coldchili"
 	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	filling_color = "#2B00FF"
@@ -187,7 +187,7 @@
 
 /obj/item/reagent_containers/food/snacks/bearchili
 	name = "bear meat chili"
-	desc = "A chili so manly you'll end up growing hair on your chest and wrestling Renders with your bare hands."
+	desc = "A chili mixed with stewed bear meat."
 	icon_state = "bearchili"
 	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	nutriment_desc = list("manliest meat" = 10, "hot chili peppers" = 3)
@@ -198,7 +198,7 @@
 
 /obj/item/reagent_containers/food/snacks/tomatosoup
 	name = "tomato soup"
-	desc = "Drinking this feels like being a vampire! A tomato vampire..."
+	desc = "A simple soup made from tomato."
 	icon_state = "tomatosoup"
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -213,13 +213,13 @@
 
 /obj/item/reagent_containers/food/snacks/stew
 	name = "stew"
-	desc = "A nice and warm stew. Healthy and strong."
+	desc = "A simple and warm stew."
 	icon_state = "stew"
 	taste_tag = list(MEAT_FOOD, UMAMI_FOOD)
 	filling_color = "#9E673A"
 	bitesize = 10
 	center_of_mass = list("x"=16, "y"=5)
-	nutriment_desc = list("tomato" = 2, "potato" = 2, "carrot" = 2, "mushroom" = 2) // I said no eggplant!!!
+	nutriment_desc = list("tomato" = 2, "potato" = 2, "carrot" = 2, "mushroom" = 2)
 	nutriment_amt = 6
 	preloaded_reagents = list("protein" = 4, "tomatojuice" = 5, "imidazoline" = 5, "water" = 5)
 	cooked = TRUE
@@ -227,7 +227,7 @@
 
 /obj/item/reagent_containers/food/snacks/milosoup
 	name = "milo soup"
-	desc = "The universes best soup! Yum!!!"
+	desc = "A salty and soup made with soybeans."
 	icon_state = "milosoup"
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -241,7 +241,7 @@
 
 /obj/item/reagent_containers/food/snacks/mushroomsoup
 	name = "chantrelle soup"
-	desc = "A delicious and hearty mushroom soup."
+	desc = "A hearty mushroom soup."
 	icon_state = "mushroomsoup"
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -255,7 +255,7 @@
 
 /obj/item/reagent_containers/food/snacks/beetsoup
 	name = "beet soup"
-	desc = "Wait, how do you spell it again..?"
+	desc = "A soup made from beets and other vegetables, has many different spellings."
 	icon_state = "beetsoup"
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
@@ -266,6 +266,7 @@
 	nutriment_amt = 8
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
+
 /obj/item/reagent_containers/food/snacks/beetsoup/Initialize(mapload)
 	. = ..()
 	name = pick(list("borsch","bortsch","borstch","borsh","borshch","borscht"))

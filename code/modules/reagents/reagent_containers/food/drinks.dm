@@ -132,7 +132,7 @@
 
 /obj/item/reagent_containers/food/drinks/milk
 	name = "milk carton"
-	desc = "It's milk. White and nutritious goodness!"
+	desc = "A carton of milk."
 	icon_state = "milk"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -140,7 +140,7 @@
 
 /obj/item/reagent_containers/food/drinks/soymilk
 	name = "soy milk carton"
-	desc = "It's soy milk. White and nutritious goodness!"
+	desc = "A carton of soy milk."
 	icon_state = "soymilk"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -148,7 +148,7 @@
 
 /obj/item/reagent_containers/food/drinks/milk/small
 	name = "small milk carton"
-	desc = "It's milk. White and nutritious goodness!"
+	desc = "A smaller carton of milk"
 	icon_state = "mini-milk"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -156,7 +156,7 @@
 
 /obj/item/reagent_containers/food/drinks/soymilk/small
 	name = "small soy milk carton"
-	desc = "It's soy milk. White and nutritious goodness!"
+	desc = "A smaller carton of soy milk."
 	icon_state = "mini-soymilk"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -164,7 +164,7 @@
 
 /obj/item/reagent_containers/food/drinks/cocamilk/small
 	name = "small chocolate milk carton"
-	desc = "It's chocolate milk. Brown and sweet goodness!"
+	desc = "A small carton of chocolate milk. Brown and sweet goodness!"
 	icon_state = "mini-milkcoca"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -172,7 +172,7 @@
 
 /obj/item/reagent_containers/food/drinks/redmilk/small
 	name = "small strawberry milk carton"
-	desc = "It's strawberry milk. Red and sweet goodness!"
+	desc = "A small carton of strawberry milk. Red and sweet goodness!"
 	icon_state = "mini-milkred"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
@@ -180,7 +180,7 @@
 
 /obj/item/reagent_containers/food/drinks/coffee
 	name = "Robust Coffee"
-	desc = "A cup of hot coffee. Sourced from the leading supplier."
+	desc = "A cup of hot coffee."
 	icon_state = "coffee"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "cup"
@@ -194,7 +194,7 @@
 
 /obj/item/reagent_containers/food/drinks/os_coffee
 	name = "Hot Black Water"
-	desc = "A bottle of likely coffee..."
+	desc = "A bottle of coffee."
 	icon_state = "oscoffee"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "oscup"
@@ -202,7 +202,7 @@
 
 /obj/item/reagent_containers/food/drinks/ice
 	name = "Northern Freeze"
-	desc = "A frosty cup of ice. Do not chew."
+	desc = "A frosty cup of ice."
 	icon_state = "cup"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "cup"
@@ -211,7 +211,7 @@
 
 /obj/item/reagent_containers/food/drinks/h_chocolate
 	name = "Dutch Hot Coco"
-	desc = "A cup of delicious hot chocolate. Tastes somewhat exotic."
+	desc = "A cup of hot chocolate."
 	icon_state = "hot_coco"
 	item_state = "coffee"
 	center_of_mass = list("x"=15, "y"=13)
@@ -321,9 +321,20 @@
 	volume = 120
 	center_of_mass = list("x"=17, "y"=7)
 
+/obj/item/reagent_containers/food/drinks/teapot/psych
+	name = "teapot"
+	desc = "An elegant and mysterious ornate teapot. One wonders what must be in it."
+	icon_state = "teapot"
+	item_state = "teapot"
+	matter = list(MATERIAL_STEEL = 1)
+	amount_per_transfer_from_this = 10
+	volume = 120
+	center_of_mass = list("x"=17, "y"=7)
+	preloaded_reagents = list("tea" = 80, "psi_juice" = 40)
+
 /obj/item/reagent_containers/food/drinks/pitcher
 	name = "insulated pitcher"
-	desc = "A stainless steel insulated pitcher. Everyone's best friend in the morning."
+	desc = "A stainless steel insulated pitcher."
 	icon_state = "pitcher"
 	volume = 120
 	amount_per_transfer_from_this = 10
@@ -379,7 +390,7 @@
 
 /obj/item/reagent_containers/food/drinks/flask/vacuumflask
 	name = "vacuum flask"
-	desc = "Keeping your drinks at the perfect temperature since 1892."
+	desc = "A flask for keeping drinks either cold or hot for longer."
 	icon_state = "vacuumflask"
 	volume = 60
 	center_of_mass = list("x"=15, "y"=4)
@@ -453,7 +464,6 @@
 	name = "\improper soteria mug"
 	desc = "A mug with a Soteria Institute logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
-
 
 /obj/item/reagent_containers/food/drinks/mug/gold
 	name = "gold mug"

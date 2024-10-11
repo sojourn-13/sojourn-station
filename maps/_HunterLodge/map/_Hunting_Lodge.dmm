@@ -3814,6 +3814,11 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ma" = (
+/obj/structure/table/marble,
+/obj/structure/reagent_dispensers/meadkeg,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Mj" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4600,13 +4605,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "XK" = (
-/obj/structure/reagent_dispensers/meadkeg,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/structure/churn,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "XL" = (
@@ -8145,7 +8150,7 @@ UY
 To
 bq
 bq
-jv
+Ma
 jj
 ur
 Rz

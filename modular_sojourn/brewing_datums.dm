@@ -17,11 +17,12 @@
 	var/alt_brew_item_amount = 1			//If it prodces an item (See Cheese)
 
 	var/info_helper							//Simple string to give folks an extra line of info.
+	var/holy = FALSE						//Allows folks that are implanted with a working crusiform to produce these
 
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
 	display_name = "Beer"
-	needed_crops = list("wheat" = 40, "poppies" = 5)
+	needed_crops = list("wheat" = 40, "poppy" = 5)
 	needed_chems = list("water" = 60)
 
 	price_tag_setter = 1750
@@ -34,7 +35,7 @@
 	display_name = "Sleepy Beer"
 	prerequisite = "beer"
 	brewed_amount = 2 //its beer2
-	needed_crops = list("wheat" = 10, "poppies" = 5)
+	needed_crops = list("wheat" = 10, "poppy" = 5)
 	needed_chems = list("water" = 60, "chloralhydrate" = 5)
 
 	price_tag_setter = 2250
@@ -45,7 +46,7 @@
 	display_name = "Melon Liquor"
 
 	brewed_amount = 2
-	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2000
@@ -56,7 +57,7 @@
 	display_name = "Blue Curacao"
 
 	brewed_amount = 2
-	needed_crops = list("orange" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("orange" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2100
@@ -135,7 +136,7 @@
 	reagent_to_brew = "nanatsunoumi"
 	display_name = "Nanatsunoumi"
 	prerequisite = "deadrum"
-	needed_crops = list("rice" = 30, "towercap" = 15, "poppies" = 5)
+	needed_crops = list("rice" = 30, "towercap" = 15, "poppy" = 5)
 	needed_chems = list("water" = 80)
 
 	price_tag_setter = 8000
@@ -215,7 +216,7 @@
 /datum/brewing_product/ale
 	reagent_to_brew = "ale"
 	display_name = "Ale"
-	needed_crops = list("wheat" = 60, "towercap" = 5, "poppies" = 5)
+	needed_crops = list("wheat" = 60, "towercap" = 5, "poppy" = 5)
 	needed_chems = list("water" = 120, "honey" = 5)
 
 	price_tag_setter = 2000
@@ -406,21 +407,6 @@
 	brewed_amount = 1
 	price_tag_setter = 7500
 
-//The graveyard of uncoded yet coded wines, may their sprites rest not well in the stomic of those that drank it.
-
-/* Coded out for lore reasons - Lore head hates fun >:T
-/datum/brewing_product/ntcahors
-	reagent_to_brew = "ntcahors"
-	display_name = "#Blessed Wine"
-	prerequisite = "wine" // (string, so that we can make multiple recipes for the 'same' drink if needed)
-	brewed_amount = 1
-	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
-	needed_chems = list("carbon" = 120, "holywater" = 120)
-
-	price_tag_setter = 6000
-	brew_timer = 3600 //1 hour
-
-//Coded out do to not sure how to accually make this, and the copoilet quarries are able to help me
 /datum/brewing_product/fernet
 	reagent_to_brew = "fernet"
 	display_name = "Fernet"
@@ -430,5 +416,39 @@
 	brewed_amount = 1
 	price_tag_setter = 1500
 
+//Psionic based drink
+/datum/brewing_product/witch_brew
+	reagent_to_brew = "witch_brew"
+	display_name = "Witches Brew"
+	//mint is wool of bat, reishi is toe of frog, herbell is Tongue of dog, lastly blueberries are meant to be eye of newt
+	needed_crops = list("mint" = 5, "reishi" = 10, "harebell" = 5, "blueberries" = 25)
+	needed_chems = list("sugarrush" = 60, "fringeweaver" = 60)
+	brew_timer = 5 MINUTES
+	brewed_amount = 1 //Every 5u is 1 psionic point so this gives you 6 points
+	price_tag_setter = 1000 //Fast and easy also not useful for anyone without psionics
 
-*/
+
+//Church exclusive brews
+/datum/brewing_product/ntcahors
+	reagent_to_brew = "ntcahors"
+	display_name = "Absolutism Cahors Wine"
+	prerequisite = "holywater"
+	brewed_amount = 6
+	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
+	needed_chems = list("carbon" = 120, "holywater" = 120)
+
+	price_tag_setter = 16000
+	brew_timer = 1 HOUR
+	holy = TRUE
+
+/datum/brewing_product/holywater
+	reagent_to_brew = "holywater"
+	display_name = "Blessed Water"
+	brewed_amount = 12
+	needed_crops = list("mint" = 20, "towercap" = 30, "harebell" = 25)
+	needed_chems = list("carbon" = 120, "water" = 120)
+
+	price_tag_setter = 1000
+	brew_timer = 5 MINUTES
+	holy = TRUE
+	info_helper = "Further brewing can be done when finished."

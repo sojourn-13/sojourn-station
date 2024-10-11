@@ -16,7 +16,7 @@
 	offer_limit = 30
 	inventory = list(
 		"Burgers" = list(
-			/obj/item/reagent_containers/food/snacks/bigbiteburger = custom_good_name("Big RBurger"),
+			/obj/item/reagent_containers/food/snacks/bigbiteburger/cargo = custom_good_name("Big RBurger"),
 			/obj/item/reagent_containers/food/snacks/jellyburger/cherry = custom_good_name("JellyCherry RBurger"),
 			/obj/item/reagent_containers/food/snacks/tofuburger = custom_good_name("Tofu RBurger")
 		),
@@ -52,11 +52,11 @@
 	offer_types = list(
 		/obj/item/reagent_containers/food/snacks/meat = offer_data("meat", 100, 10),
 		/obj/item/reagent_containers/food/snacks/meat/corgi = offer_data("corgi meat", 1000, 2),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat = offer_data("roach meat", 300, 0),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche = offer_data("seuche roach meat", 400, 0),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk = offer_data("kraftwerk roach meat", 600, 0),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager = offer_data("seuche roach meat", 350, 0),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer = offer_data("fuhrer roach meat", 450, 5), //Caps it
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat = offer_data("roach meat", 200, 0),
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche = offer_data("seuche roach meat", 250, 0),
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk = offer_data("kraftwerk roach meat", 450, 0),
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager = offer_data("jager roach meat", 250, 0),
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer = offer_data("fuhrer roach meat", 350, 5), //Caps it
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser = offer_data("kaiser roach meat", 2000, 2)
 	)
 

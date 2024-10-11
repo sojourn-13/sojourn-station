@@ -560,6 +560,7 @@
 	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_divisor = ARMOR_PEN_MASSIVE // Sharp edge
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	effective_faction = list("deathclaw") // Called like this for a reason
 	damage_mult = 2
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
@@ -638,6 +639,136 @@
 	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 500
+
+/obj/item/tool/cannibal_scythe
+	name = "\"Cannibal Strike\" scythe"
+	desc = "A heavy grotesque handmade scythe made from parts of the most terrible creatures living on Amethyn. A real hunter's weapon that requires serious skills to handle itself.\
+	 What are you waiting for, hunter? The Matriarch is calling for a great hunt!"
+	icon = 'icons/obj/cannibal_scythe.dmi'
+	icon_state = "cannibal"
+	item_state = "cannibal"
+	wielded_icon = "_doble"
+	hitsound = 'sound/weapons/flamesword.ogg'
+	toggleable = TRUE
+	sharp = TRUE
+	edge = TRUE
+	slot_flags = SLOT_BACK
+	max_upgrades = 3
+	degradation = 0.3 //high quality hunting weapon.
+	tool_qualities = list(QUALITY_CUTTING = 40,  QUALITY_SAWING = 35)
+	force = WEAPON_FORCE_LETHAL + 20
+	switched_on_forcemult = 0.7
+	no_swing = TRUE
+	throwforce = WEAPON_FORCE_LETHAL
+	armor_divisor = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list(TECH_COMBAT = 5)
+	attack_verb = list("chopped", "sliced", "cut", "reaped", "lacerated", "slashed")
+	price_tag = 4000 //megafauna parts.
+	use_power_cost = 0
+	toggleable = TRUE
+	suitable_cell = /obj/item/cell/large/potato
+	double_tact_required = TRUE
+	var/coin_tracker = 0 //Number not false
+	var/tracker
+	var/last_launch
+	item_icons = list(
+		slot_back_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_s_store_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_l_hand_str = 'icons/obj/cannibal_scythe.dmi',
+		slot_r_hand_str = 'icons/obj/cannibal_scythe.dmi'
+		)
+	item_state_slots = list(
+		slot_l_hand_str = "lefthand",
+		slot_r_hand_str = "righthand",
+		slot_back_str   = "back",
+		slot_s_store_str= "onsuit"
+		)
+
+/obj/item/tool/cannibal_scythe/pre_attack(atom/a, mob/user, var/params)
+	if(!wielded)
+		return TRUE
+	..()
+
+/obj/item/tool/cannibal_scythe/afterattack(mob/living/M, mob/living/user, target_zone)
+	if(!wielded)
+		to_chat(user, SPAN_DANGER("\The [src.name] is too heavy to swing with one hand!"))
+		return FALSE
+
+/obj/item/tool/cannibal_scythe/MouseDrop(over_object)
+	if(suitable_cell)
+		to_chat(usr, SPAN_WARNING("You study the shaft of the scythe, but you find absolutely nothing unusual!"))
+
+/obj/item/tool/cannibal_scythe/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
+	clickdelay_offset = 2
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/speedy_dashing = H.momentum_speed
+		if(speedy_dashing > 0)
+			//Unlike dusk sabor we dont punish folks for not always being speedy
+			clickdelay_offset = -speedy_dashing
+			//Normally momentum can get upto like 3-4
+			armor_divisor += (speedy_dashing * 3)
+			force += (speedy_dashing * 3)
+			if(tracker == target.name && give_coin)
+				coin_tracker += 1
+				to_chat(user, SPAN_DANGER("You are gaining momentum for the next hit!"))
+			else
+				if(ismob(target))
+					tracker = target.name
+					coin_tracker = 0
+			//Do we have gained coins?
+			if(coin_tracker)
+				//If we do add are coins as pure damage and then 1/10th of an AD
+				armor_divisor += (coin_tracker * 0.1)
+				force += coin_tracker
+
+	.=..()
+	refresh_upgrades()
+
+/obj/item/tool/cannibal_scythe/turn_on(mob/user)
+	item_state = "cannibal"
+	icon_state = "cannibal"
+	to_chat(user, SPAN_NOTICE("You take a mobile stand, ready to take off at any moment or make a wide swing with your body!"))
+	playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
+	no_swing = FALSE
+	..()
+
+/obj/item/tool/cannibal_scythe/turn_off(mob/user)
+	no_swing = TRUE
+	to_chat(user, SPAN_NOTICE("You're taking up a defensive stance, preparing to fight something serious! Your every stroke is full of precision!"))
+	playsound(loc, 'sound/weapons/scabbard.ogg', 50, 1)
+	..()
+
+/obj/item/tool/cannibal_scythe/refresh_upgrades()
+	..()
+	if(switched_on)
+		no_swing = FALSE
+
+/obj/item/tool/cannibal_scythe/afterattack(atom/target, mob/user, proximity_flag, params)
+	if(!switched_on || world.time < last_launch + 3 SECONDS)
+		return
+	var/cost = 0 * get_dist(target, user)
+	if(user.check_gravity())
+		cost *= (user.mob_size/10)
+
+	if(cell?.checked_use(cost))
+		if(!wielded)
+			var/drop_prob = 80
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				drop_prob *= H.stats.getMult(STAT_ROB, STAT_LEVEL_EXPERT)
+			if(prob(drop_prob))
+				to_chat(user, SPAN_WARNING("\The [src] launches from your grasp!"))
+				user.drop_item(src)
+				playsound(src, 'sound/misc/sandjump.ogg', 50, 0, 0)
+				throw_at(target, get_dist(target, user), 1, user)
+				last_launch = world.time
+				return
+		last_launch = world.time
+		to_chat(usr, SPAN_WARNING("You takes off from his place, making a sharp dodge in the style of a leap hunter!"))
+		playsound(src, 'sound/misc/sandjump.ogg', 50, 0, 0)
+		user.throw_at(target, get_dist(target, user), 1, user)
 
 /obj/item/tool/gauntlet
 	name = "render gauntlet"

@@ -1,15 +1,4 @@
 
-
-/datum/recipe/dumplings
-	fruit = list("cabbage" = 1) // A recipe that ACTUALLY uses cabbage.
-	reagents = list("soysauce" = 5, "sodiumchloride" = 1, "blackpepper" = 1, "cornoil" = 1) // No sesame oil, corn will have to do.
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawbacon,
-		/obj/item/reagent_containers/food/snacks/rawbacon, // Substitute for minced pork.
-		/obj/item/reagent_containers/food/snacks/doughslice,
-	)
-	result = /obj/item/reagent_containers/food/snacks/dumplings
-
 /datum/recipe/humanburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/human,
@@ -303,12 +292,6 @@
 	items = list(/obj/item/reagent_containers/food/snacks/meat/syntiflesh)
 	result = /obj/item/reagent_containers/food/snacks/meatsteak
 
-/datum/recipe/tonkatsu
-	reagents = list("sodiumchloride" = 1, "flour" = 5, "egg" = 3, "cornoil" = 2)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/pork,
-	)
-	result = /obj/item/reagent_containers/food/snacks/tonkatsu
 
 /datum/recipe/spacylibertyduff
 	reagents = list("water" = 5, "vodka" = 5, "psilocybin" = 5)
@@ -335,42 +318,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/bigbiteburger
 
-/datum/recipe/enchiladas
-	fruit = list("chili" = 2, "corn" = 1)
-	items = list(/obj/item/reagent_containers/food/snacks/cutlet)
-	result = /obj/item/reagent_containers/food/snacks/enchiladas
-
-/datum/recipe/creamcheesebread
-	items = list(
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/creamcheesebread
-
-/datum/recipe/monkeysdelight
-	fruit = list("banana" = 1)
-	reagents = list("sodiumchloride" = 1, "blackpepper" = 1, "flour" = 10)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/monkeycube
-	)
-	result = /obj/item/reagent_containers/food/snacks/monkeysdelight
-
-/datum/recipe/fishandchips
-	items = list(
-		/obj/item/reagent_containers/food/snacks/fries,
-		/obj/item/reagent_containers/food/snacks/fishfingers,
-	)
-	result = /obj/item/reagent_containers/food/snacks/fishandchips
-
-/datum/recipe/katsudon
-	reagents = list("egg" = 3, "soysauce" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/boiledrice,
-		/obj/item/reagent_containers/food/snacks/tonkatsu,
-		)
-	result = /obj/item/reagent_containers/food/snacks/katsudon
 
 /datum/recipe/superbiteburger
 	fruit = list("tomato" = 1)
@@ -399,44 +346,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/jellyburger/cherry
 
-/datum/recipe/sausage
-	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawmeatball,
-		/obj/item/reagent_containers/food/snacks/rawbacon,
-	)
-	result = /obj/item/reagent_containers/food/snacks/sausage
-
-/datum/recipe/fishfingers
-	reagents = list("flour" = 5, "egg" = 3, "cornoil" = 2)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/carp,
-	)
-	result = /obj/item/reagent_containers/food/snacks/fishfingers
-
-/datum/recipe/tofurkey
-	items = list(
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/stuffing,
-	)
-	result = /obj/item/reagent_containers/food/snacks/tofurkey
-
-/datum/recipe/honey_bun
-	reagents = list("sugar" = 3, "honey" = 5, "cream" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/butterslice,
-	)
-	result = /obj/item/reagent_containers/food/snacks/honeybuns
-
-/datum/recipe/honey_pudding
-	reagents = list("sugar" = 3, "honey" = 15, "cream" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/chocolatebar,
-	)
-	result = /obj/item/reagent_containers/food/snacks/honeypudding
-
 //////////////////////////////////////////
 // bs12 food port stuff
 //////////////////////////////////////////
@@ -446,69 +355,3 @@
 	result = /obj/item/reagent_containers/food/snacks/mint
 
 //Roach cubes
-
-/datum/recipe/cube/
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 15, "egg" = 3)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach
-
-/datum/recipe/cube/fuhrer
-	fruit = list("potato" = 2)
-	reagents = list("protein" = 25, "fuhrerole" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
-	)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/fuhrer
-
-/datum/recipe/cube/jager
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "blattedin" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/jager
-
-/datum/recipe/cube/kraftwerk
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "gewaltine" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk
-
-/datum/recipe/cube/elektromagnetisch
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "iron" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/elektromagnetisch
-
-/datum/recipe/cube/glowing
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, MATERIAL_URANIUM = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing)
-	result = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
-
-/datum/recipe/cube/roachling
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 5, "seligitillin" = 1)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/roachling
-
-/datum/recipe/cube/seuche
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "diplopterum" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/seuche
-
-/datum/recipe/cube/panzer
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 20, "starkellin" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
-	)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/panzer
-
-/datum/recipe/cube/gestrahlte
-	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "toxin" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
-	result = /obj/item/reagent_containers/food/snacks/cube/roach/grestrahlte

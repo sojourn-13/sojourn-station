@@ -300,7 +300,7 @@
 /datum/reagent/toxin/zombiepowder
 	name = "Zombie Powder"
 	id = "zombiepowder"
-	description = "A strong neurotoxin that puts the subject into a death-like state."
+	description = "A strong neurotoxin that puts the subject into a death-like state. Will fool most medical tests. Very weakly toxic but de-oxygenates the body the longer it's present, potentially causing long-term damage if left too long."
 	taste_description = "death"
 	reagent_state = SOLID
 	color = "#669900"
@@ -353,7 +353,7 @@
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
 	id = "plantbgone"
-	description = "A harmful toxic mixture to kill plant life."
+	description = "Polytrinic acid is an extremely corrosive chemical substance. Can be used to destroy objects."
 	taste_mult = 1
 	reagent_state = LIQUID
 	color = "#49002E"
@@ -419,7 +419,7 @@
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"
 	id = "mutagen"
-	description = "Might cause unpredictable mutations."
+	description = "Causes random, uncontrolled mutations with a chance to mildly irradiate the victim and dealing mild toxin damage."
 	taste_description = "slime"
 	taste_mult = 0.9
 	reagent_state = LIQUID
@@ -490,7 +490,7 @@
 /datum/reagent/medicine/soporific
 	name = "Soporific"
 	id = "stoxin"
-	description = "An effective hypnotic used to treat insomnia. As well as nerve system overstimulation."
+	description = "An effective hypnotic used to treat insomnia. As well as nerve system overstimulation. Not toxic. Combine with a small amount of Chloral Hydrate for increased effect."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#009CA8"
@@ -520,7 +520,7 @@
 /datum/reagent/medicine/chloralhydrate
 	name = "Chloral Hydrate"
 	id = "chloralhydrate"
-	description = "A powerful sedative and affective nerve relaxant."
+	description = "A powerful sedative that will quickly knock out an individual. Will cause toxic build-up if left in the system for too long."
 	taste_description = "bitterness"
 	reagent_state = SOLID
 	color = "#000067"
@@ -832,7 +832,7 @@
 	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & (NO_PAIN)))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 
 		M.apply_effect(agony_amount, HALLOSS, 0)

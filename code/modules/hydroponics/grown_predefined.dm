@@ -41,7 +41,7 @@
 	seedtype = "wheat"
 
 /obj/plant_spawner/poppy
-	seedtype = "poppies"
+	seedtype = "poppy"
 
 /obj/plant_spawner/sunflower
 	seedtype = "sunflowers"

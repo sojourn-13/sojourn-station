@@ -664,7 +664,8 @@ BLIND     // can't see anything
 		/obj/item/flame/pyrokinetic_spark,
 		/obj/item/tool/psionic_omnitool,
 		/obj/item/shield/riot/crusader/psionic,
-		/obj/item/gun/kinetic_blaster
+		/obj/item/gun/kinetic_blaster,
+		/obj/item/tool/cannibal_scythe
 		)
 	equip_delay = 1 SECONDS
 

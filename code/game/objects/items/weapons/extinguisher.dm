@@ -1,6 +1,6 @@
 /obj/item/extinguisher
 	name = "fire extinguisher"
-	desc = "A traditional red fire extinguisher, its rated for A and B, unless it was refilled with just water..."
+	desc = "A traditional red fire extinguisher, it's rated for A and B, unless it was refilled with just water..."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fire_extinguisher0"
 	item_state = "fire_extinguisher"
@@ -18,15 +18,28 @@
 	var/spray_particles = 3
 	var/spray_amount = 9	//units of liquid per particle
 	var/max_water = 300
-	var/last_use = 1.0
+	var/last_use = 1
+	var/delay_per_use = 20
 	var/safety = 1
 	var/sprite_name = "fire_extinguisher"
 	var/list/overlaylist = list("fire_extinguisherO1","fire_extinguisherO2","fire_extinguisherO3","fire_extinguisherO4","fire_extinguisherO5","fire_extinguisherO6")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 
+/obj/item/extinguisher/advanced
+	name = "specialized fire extinguisher"
+	desc = "A specialized fire extinguisher, quicker and holds more reagents than any other. It's rated for A and B, unless it was refilled with just water.."
+	delay_per_use = 10
+	max_water = 900
+	sprite_name = "FEgold"
+	overlaylist = list()
+	extra_bulk = 2
+
+/obj/item/extinguisher/advanced/robotic
+	desc = "A specialized fire extinguisher, quicker and holds more reagents than any other. Well inside a recharger this will slowly refill with A and B class extinguisher."
+
 /obj/item/extinguisher/mini
 	name = "fire extinguisher"
-	desc = "A light and compact fiberglass-framed model fire extinguisher, its rated for A and B, unless it was refilled with just water..."
+	desc = "A light and compact fiberglass-framed model fire extinguisher, it's rated for A and B, unless it was refilled with just water..."
 	icon_state = "miniFE0"
 	item_state = "miniFE"
 	hitsound = null	//it is much lighter, after all.
@@ -45,7 +58,6 @@
 		overlays += temp
 	create_reagents(max_water)
 	reagents.add_reagent("abwater", max_water)
-
 
 /obj/item/extinguisher/attack_self(mob/user as mob)
 	safety = !safety
@@ -94,7 +106,7 @@
 			to_chat(usr, SPAN_NOTICE("\The [src] is empty."))
 			return
 
-		if (world.time < src.last_use + 20)
+		if (world.time < last_use + delay_per_use)
 			return
 
 		src.last_use = world.time

@@ -57,6 +57,7 @@
 	add_language(LANGUAGE_MERP)
 	add_language(LANGUAGE_BLORP)
 	add_language(LANGUAGE_WEH)
+	add_language(LANGUAGE_SABLEKYNE)
 	init_id()
 	init_subsystems()
 

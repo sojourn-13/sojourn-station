@@ -16,6 +16,8 @@
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_parts = null
+
 	var/fake_name
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
@@ -32,6 +34,10 @@
 /obj/item/gun/projectile/revolver/artwork_revolver/proc/ensure_updates()
 	if(caliber == CAL_PISTOL)
 		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_9MM)// if we get 9mm then we should take 9mm upgrades
+
+	if(caliber == CAL_PISTOL)
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)// if we get 12mm then we should take 12mm upgrades
+
 
 	if(recoil)
 		recoil = recoil.modifyAllRatings(1+rand(-2,2)/10)
