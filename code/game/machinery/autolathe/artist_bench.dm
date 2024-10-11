@@ -320,8 +320,14 @@
 
 	var/obj/artwork = choose_full_art(ins_used, user)
 	var/datum/design/art
-	if(isobj(artwork))
+	if (isobj(artwork))
 		art = new()
+		var/setname = sanitizeSafe(input(user,"Name your creation. Keep empty for a random name.","Set Name",""), MAX_NAME_LEN)
+		if (setname)
+			artwork.name = setname
+		var/setdesc = sanitizeSafe(input(user,"Describe your creation. Keep empty for a random description.","Set Description",""), MAX_DESC_LEN)
+		if (setdesc)
+			artwork.desc = setdesc
 		randomize_materialas(artwork)
 		art.build_path = artwork.type
 		art.AssembleDesignInfo(artwork)
