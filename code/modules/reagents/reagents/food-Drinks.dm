@@ -193,7 +193,9 @@
 /datum/reagent/organic/nutriment/bbqsauce
 	name = "Barbecue sauce"
 	id = "bbqsauce"
-	description = "Slather it on pork or chicken to greatly enhance its flavor. Or to whatever food you like, to make it taste better. You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
+	description = "Slather it on pork or chicken to greatly enhance its flavor. \
+	Or to whatever food you like, to make it taste better. \
+	You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
 	color = "#731008" // Ketchup's old color, to distinguish between the two.
 	taste_description = "barbecue sauce"
 	reagent_state = LIQUID
@@ -350,7 +352,11 @@
 	scannable = TRUE
 	common = TRUE
 
-/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier) //reasoning: Table salt is usually iodized. Iodine saturates glands. Glands are often getting screwed over by isotopes of iodine if exposed to radiation. Yes its a preventatitve method IRL but this is gamyfictaion.
+//	Reasoning: Table salt is usually iodized. Iodine saturates glands. 
+//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation. 
+//	Yes its a preventatitve method IRL but this is gamyfictaion.
+
+/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.radiation = max(M.radiation - (0.3 * effect_multiplier), 0) //10 times less effective than Hyronalin
 
@@ -1192,7 +1198,8 @@
 /datum/reagent/drink/coffee/atomicoffee // CDDA reference - Seb
 	name = "Atomic coffee"
 	id = "atomicoffee"
-	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
+	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. \
+	The perfect drink for those that wish to stay awake for days."
 	taste_description = "liquid tar"
 	taste_tag = list(TASTE_BITTER)
 	color =  "#393815" // rgb: 57, 56, 21
@@ -3480,3 +3487,30 @@
 	glass_icon_state = "friendlyfire"
 	glass_name = "Friendly Fire"
 	glass_desc = "Watch your back when you take a swig."
+
+//Psionic drink
+/datum/reagent/ethanol/witch_brew
+	name = "Witches Brew"
+	id = "witch_brew"
+	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	taste_description = "wool of bat and eye of newt"
+	taste_tag = list(TASTE_BUBBLY)
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 30
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "witch_brew"
+	glass_name = "Witches Brew"
+	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+
+/datum/reagent/ethanol/witch_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(BP_PSION)
+	var/effective_dose = dose
+	if(effective_dose >= 5 && H.random_organ_by_process(BP_PSION)) //We require 5 or more
+		if(C.psi_points >= C.max_psi_points)
+			return
+		C.psi_points += 1
+		dose -= 5
+
+
