@@ -8304,6 +8304,10 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"BZ" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ca" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/mineral/random/rogue,
@@ -8808,7 +8812,7 @@
 	dir = 8
 	},
 /obj/item/remains/mummy2,
-/obj/item/organ_module/active/hud/night_bio,
+/obj/item/organ_module/active/hud/thermal,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -9690,6 +9694,11 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
+"Gj" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/fernybush,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Gk" = (
 /obj/random/rig_module/low_chance,
 /obj/random/rig_module/low_chance,
@@ -13431,6 +13440,11 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"RO" = (
+/obj/random/flora/jungle_tree,
+/obj/structure/flora/small/bushb2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "RP" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/dirt,
@@ -16071,7 +16085,7 @@
 "ZT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ZU" = (
 /obj/effect/overlay/water/top,
@@ -20237,10 +20251,10 @@ dS
 dS
 dS
 dS
+io
 et
-et
-et
-et
+dS
+dS
 et
 et
 ug
@@ -20440,10 +20454,10 @@ dS
 dS
 dS
 ZT
-et
-et
-et
-et
+dS
+dS
+dS
+dS
 et
 AT
 AT
@@ -20641,11 +20655,11 @@ dS
 dS
 dS
 dS
-AT
-et
-et
-et
-fu
+Wj
+dS
+dS
+dS
+hk
 qW
 AT
 Sk
@@ -20843,11 +20857,11 @@ dS
 dS
 dS
 dS
-AT
-et
-et
-et
-et
+Wj
+dS
+dS
+dS
+dS
 et
 AT
 ey
@@ -21045,12 +21059,12 @@ dS
 dS
 dS
 dS
-AT
-et
-et
-et
-et
-et
+Wj
+dS
+dS
+dS
+dS
+dS
 et
 qr
 LQ
@@ -26321,7 +26335,7 @@ dS
 dS
 dS
 dS
-dS
+hk
 dS
 dS
 dS
@@ -26521,12 +26535,12 @@ dS
 dS
 dS
 dS
-dS
-et
-et
+hk
+iw
+iw
 fC
-et
-et
+iw
+iw
 oP
 oR
 et
@@ -26722,10 +26736,10 @@ dS
 dS
 dS
 dS
-dS
-et
-et
-et
+hk
+iw
+iw
+iw
 oL
 eJ
 eJ
@@ -26925,8 +26939,8 @@ dS
 dS
 dS
 dS
-et
-et
+iw
+iw
 et
 fC
 fu
@@ -27126,10 +27140,10 @@ dS
 dS
 iw
 dS
-dS
+hk
 iw
-et
-et
+fu
+iw
 fC
 et
 iw
@@ -27487,7 +27501,7 @@ gy
 lJ
 iq
 dS
-et
+dS
 et
 et
 et
@@ -27529,7 +27543,7 @@ yj
 At
 et
 et
-et
+iw
 iw
 et
 et
@@ -27689,7 +27703,7 @@ gy
 gB
 dS
 dS
-et
+dS
 kk
 wh
 Mh
@@ -27733,7 +27747,7 @@ Pj
 et
 et
 et
-et
+iw
 et
 et
 et
@@ -27891,7 +27905,7 @@ gB
 dS
 dS
 dS
-et
+dS
 ja
 iE
 jG
@@ -27933,8 +27947,8 @@ yj
 At
 et
 et
-et
-et
+iw
+fu
 et
 fC
 et
@@ -28093,7 +28107,7 @@ gy
 gy
 dS
 dS
-et
+dS
 ja
 bt
 jG
@@ -28133,13 +28147,13 @@ et
 Cv
 wY
 At
+iw
+iw
 et
 et
 et
 et
-et
-et
-et
+fu
 fC
 et
 jH
@@ -28295,7 +28309,7 @@ gy
 gS
 dS
 dS
-et
+dS
 qN
 iE
 bt
@@ -28338,13 +28352,13 @@ ud
 et
 et
 et
-et
+iw
 es
 fC
 et
 iw
 oM
-jH
+iw
 et
 fu
 eJ
@@ -28497,7 +28511,7 @@ gy
 gB
 dS
 dS
-et
+dS
 ja
 Ju
 jG
@@ -28538,7 +28552,7 @@ aa
 aa
 bn
 et
-es
+RO
 et
 et
 iw
@@ -28546,7 +28560,7 @@ fC
 et
 et
 et
-jH
+iw
 et
 et
 oU
@@ -28699,7 +28713,7 @@ gB
 dS
 dS
 dS
-et
+dS
 ja
 iE
 jG
@@ -28901,7 +28915,7 @@ gA
 gD
 dS
 dS
-et
+dS
 ja
 ja
 jr
@@ -28948,7 +28962,7 @@ et
 fu
 fC
 et
-et
+fu
 oM
 eJ
 et
@@ -29103,7 +29117,7 @@ gO
 dS
 dS
 dS
-et
+dS
 ja
 bt
 jG
@@ -29305,7 +29319,7 @@ gy
 dS
 dS
 dS
-et
+dS
 ja
 ja
 jG
@@ -29507,7 +29521,7 @@ gy
 dS
 dS
 dS
-et
+dS
 bt
 iE
 bt
@@ -29709,7 +29723,7 @@ gD
 hW
 dS
 dS
-et
+dS
 ja
 bt
 jG
@@ -29911,7 +29925,7 @@ gy
 gy
 dS
 dS
-et
+dS
 ja
 jb
 jG
@@ -30113,7 +30127,7 @@ gB
 dS
 dS
 dS
-et
+dS
 ja
 ja
 jG
@@ -30315,7 +30329,7 @@ gB
 dS
 dS
 dS
-et
+dS
 bt
 Zr
 jG
@@ -30517,7 +30531,7 @@ gy
 gS
 dS
 dS
-et
+dS
 ja
 ja
 in
@@ -30719,7 +30733,7 @@ gB
 dS
 dS
 dS
-et
+dS
 bt
 iE
 jI
@@ -35336,7 +35350,7 @@ rH
 rH
 rH
 dS
-dS
+iq
 dS
 es
 ex
@@ -35537,7 +35551,7 @@ rK
 rH
 rH
 rH
-dS
+BZ
 ej
 KC
 et
@@ -35739,7 +35753,7 @@ rK
 rH
 rH
 dS
-dS
+iq
 ek
 ej
 xW
@@ -35759,7 +35773,7 @@ dS
 dS
 dS
 dS
-dS
+Gj
 dS
 dS
 es
@@ -35940,7 +35954,7 @@ rK
 rH
 rH
 rH
-dS
+iq
 eh
 ej
 ej
@@ -36160,7 +36174,7 @@ ei
 dS
 dS
 dS
-dS
+iq
 et
 et
 gU
@@ -36345,7 +36359,7 @@ rK
 rK
 rH
 dS
-dS
+BZ
 ej
 en
 ej
@@ -36547,7 +36561,7 @@ rK
 rH
 rH
 aa
-dS
+BZ
 ei
 ek
 ek
@@ -36563,7 +36577,7 @@ en
 ek
 dS
 dS
-dS
+Gj
 et
 eK
 et
@@ -36749,7 +36763,7 @@ rH
 rH
 rH
 aa
-dS
+iq
 ej
 eh
 ej
@@ -36765,7 +36779,7 @@ eh
 ei
 dS
 dS
-dS
+iq
 et
 et
 Ey
