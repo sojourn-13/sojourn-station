@@ -2113,12 +2113,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"hP" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall19";
-	tag = "icon-escpodwall19"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "hQ" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -4114,12 +4108,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
-"oO" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/obj/structure/lattice,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "oP" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -4517,11 +4505,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"ql" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
 "qm" = (
 /obj/effect/spider/stickyweb,
 /obj/random/oddity_guns,
@@ -4564,12 +4547,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "qs" = (
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
-"qt" = (
-/obj/structure/bed/chair/shuttle,
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/cloth/hazmatsuit/low_chance,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qu" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -4774,11 +4751,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"rc" = (
-/obj/structure/bed/chair/shuttle,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "rd" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/sand,
@@ -4944,12 +4916,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"rF" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall20";
-	tag = "icon-escpodwall20"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "rG" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -6217,12 +6183,6 @@
 	},
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"wb" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall17";
-	tag = "icon-escpodwall17"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "wc" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -6750,12 +6710,6 @@
 "xO" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
-"xP" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall6";
-	opacity = 0
-	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "xQ" = (
 /obj/structure/invislight,
@@ -7382,13 +7336,6 @@
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"zY" = (
-/obj/structure/bed/chair/shuttle{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial_plant/steel_warning,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "zZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/mob/mukwah,
@@ -7444,14 +7391,6 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Aj" = (
-/obj/machinery/computer{
-	stat = 1;
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Ak" = (
 /obj/structure/catwalk,
 /obj/structure/lattice,
@@ -7745,10 +7684,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Bl" = (
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Bm" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -8256,12 +8191,6 @@
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"CU" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall22";
-	tag = "icon-escpodwall22"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "CV" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/invislight,
@@ -8314,7 +8243,7 @@
 /turf/simulated/floor/industrial/grey_slates_fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "De" = (
-/obj/item/storage/belt/security/tactical/solfed,
+/obj/item/storage/belt/security/tactical,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Df" = (
@@ -8796,25 +8725,10 @@
 /obj/structure/invislightsmall,
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_light)
-"EL" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall9";
-	tag = "icon-escpodwall9"
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "EM" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"EN" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall23";
-	opacity = 0
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "EO" = (
 /obj/effect/spider/cocoon,
 /turf/simulated/floor/rock/seafloor,
@@ -9024,12 +8938,6 @@
 /obj/item/computer_hardware/hard_drive/portable/design/surgery,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Fv" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall4";
-	tag = "icon-escpodwall4"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Fw" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /mob/living/simple_animal/hostile/snake{
@@ -9363,14 +9271,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/beast_cave_light)
-"GA" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall11";
-	tag = "icon-escpodwall11"
-	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "GB" = (
 /obj/structure/showcase/horrific_experiment_cryo{
@@ -10655,11 +10555,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_light)
-"KT" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
 "KU" = (
 /obj/random/mob/nightmare,
@@ -12094,15 +11989,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"PK" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall13";
-	tag = "icon-escpodwall13"
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "PL" = (
 /obj/item/device/lighting/glowstick/flare,
 /turf/simulated/floor/rock/manmade/concrete,
@@ -12370,20 +12256,9 @@
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/nadezhda/outside/forest/beast_cave_light)
-"QG" = (
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/beast_cave_light)
 "QH" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/outside/forest/beast_cave_light)
-"QI" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall21";
-	tag = "icon-escpodwall21"
-	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "QJ" = (
 /obj/structure/low_wall,
@@ -12774,14 +12649,6 @@
 /obj/structure/closet/body_bag,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"RV" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/firstaid,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "RW" = (
 /obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -13509,11 +13376,6 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Uq" = (
-/obj/structure/lattice,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Ur" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -13856,12 +13718,6 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Vv" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall3";
-	tag = "icon-escpodwall3"
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "Vw" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -14132,11 +13988,6 @@
 /obj/random/spider_trap,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Wm" = (
-/obj/effect/floor_decal/industrial_plant,
-/obj/random/cloth/hazmatsuit/low_chance,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Wn" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -14522,13 +14373,6 @@
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"XH" = (
-/obj/item/roller{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "XI" = (
 /obj/structure/largecrate,
 /obj/structure/flora/big/bush2,
@@ -14716,15 +14560,6 @@
 /obj/structure/sign/neon/phone,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Yq" = (
-/obj/structure/shuttle_part/escpod{
-	icon_state = "escpodwall10";
-	tag = "icon-escpodwall10"
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Yr" = (
 /obj/structure/sign/warning/radioactive/small,
 /obj/structure/railing,
@@ -14920,12 +14755,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"YV" = (
-/turf/simulated/shuttle/wall/escpod{
-	icon_state = "escpodwall5";
-	opacity = 0
-	},
-/area/nadezhda/outside/forest/beast_cave_light)
 "YW" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -15091,12 +14920,6 @@
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"Zy" = (
-/obj/machinery/light,
-/obj/item/roller,
-/obj/effect/floor_decal/industrial_plant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Zz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/mining/drill{
@@ -42183,9 +42006,9 @@ cC
 cC
 cC
 cC
+cH
 cC
-cR
-cR
+cC
 cH
 cC
 cC
@@ -42386,7 +42209,7 @@ cC
 cC
 cC
 cC
-cR
+cC
 dQ
 cN
 cC
@@ -42584,7 +42407,7 @@ cH
 cC
 cC
 cC
-cC
+cH
 cC
 cC
 cC
@@ -42781,17 +42604,17 @@ WK
 cC
 cN
 cC
-WK
 cC
-cR
 cN
 cC
-WK
-WK
+cN
 cC
 cC
+cR
+cC
+cN
 cD
-cC
+cH
 cC
 cC
 cH
@@ -42980,28 +42803,28 @@ WK
 WK
 WK
 WK
+cH
 cC
 cC
 cC
 cC
-WK
-WK
+cR
 cC
 cC
 cC
-WK
-WK
-WK
+cC
+cC
+cC
 cC
 cB
-cC
+cH
 WK
 cC
 cC
-hP
-wb
-Uq
-aG
+cD
+cR
+cD
+cH
 cC
 cH
 cC
@@ -43190,21 +43013,21 @@ WK
 WK
 WK
 WK
-cC
+cH
 cC
 cN
-WK
-WK
-cC
 cC
 WK
 cC
+cH
 WK
-rF
-Aj
-su
-Uq
+cH
 cC
+cC
+cC
+cC
+cC
+cR
 cC
 cD
 cR
@@ -43393,6 +43216,7 @@ WX
 WX
 WX
 WX
+cN
 WX
 WX
 WX
@@ -43400,13 +43224,12 @@ WX
 WX
 WX
 WX
-WX
-WX
-QI
-zY
-Wm
-su
-Vv
+cH
+cC
+cN
+cH
+cC
+cC
 cC
 cC
 cC
@@ -43604,11 +43427,11 @@ WX
 WX
 WX
 WX
-CU
-RV
-Bl
-Zy
-Fv
+WX
+WX
+cC
+cH
+cN
 cH
 cH
 cN
@@ -43806,11 +43629,11 @@ WX
 WX
 WX
 WX
-EN
-rc
-Bl
-Bl
-YV
+WX
+WX
+WX
+WX
+WX
 cN
 cC
 cH
@@ -44007,13 +43830,13 @@ WX
 WX
 WX
 WX
-cI
-QG
-qt
-Bl
-KT
-xP
-cC
+WX
+WX
+WX
+WX
+WX
+WX
+WX
 cH
 cC
 cD
@@ -44209,15 +44032,15 @@ WX
 WX
 bV
 WX
-WK
-oO
-QG
-XH
-KT
-cN
 WX
-cC
-cC
+WX
+WX
+WX
+bV
+WX
+WX
+WX
+WX
 cC
 cC
 cH
@@ -44413,20 +44236,20 @@ WX
 WX
 WX
 WX
-oO
-Bl
-Wm
-cH
 WX
 WX
-cD
+WX
+WX
+WX
+WX
+WX
+WX
+WX
+WX
 cC
-cC
-cC
-cC
-cC
-cC
-cC
+WX
+WX
+WX
 cC
 cC
 cC
@@ -44614,16 +44437,16 @@ WX
 WX
 WX
 WX
-WK
-WX
-ql
-GA
-EL
 WX
 WX
 WX
-cC
-cC
+WX
+WX
+WX
+WX
+WX
+WX
+WX
 WX
 WX
 WX
@@ -44815,17 +44638,17 @@ WX
 WX
 WX
 WX
-WK
-WK
-WK
-WX
-PK
-Yq
 WX
 WX
 WX
 WX
-cC
+WX
+WX
+WX
+WX
+WX
+WX
+WX
 WX
 WX
 WX
