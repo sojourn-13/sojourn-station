@@ -9,6 +9,7 @@
 	self_recharge = TRUE
 	projectile_type = /obj/item/projectile/beam/tesla/shotgun // thats right. Its a shotgun cog.
 	allow_greyson_mods = FALSE
+	max_upgrades = 0
 
 /obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
 	force = initial(force)
@@ -30,6 +31,7 @@
 	item_state_slots = null
 	icon_contained = FALSE
 	self_recharge = TRUE
+	max_upgrades = 0
 
 /obj/item/gun/energy/xray/xenoarch/refresh_upgrades()
 	force = initial(force)
@@ -51,6 +53,7 @@
 	item_state_slots = null
 	icon_contained = FALSE
 	allow_greyson_mods = FALSE
+	max_upgrades = 0
 
 /obj/item/gun/energy/captain/xenoarch/refresh_upgrades()
 	force = initial(force)
@@ -71,6 +74,7 @@
 	name = "Fossilised Gun"
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	max_shells = 12
+	max_upgrades = 0
 
 /obj/item/gun/projectile/revolver/xenoarch/refresh_upgrades()
 	force = initial(force)
@@ -92,6 +96,7 @@
 	max_shells = 4
 	damage_multiplier = 1.2
 	saw_off = FALSE
+	max_upgrades = 0
 
 /obj/item/gun/projectile/revolver/sixshot/xenoarch/refresh_upgrades()
 	force = initial(force)
@@ -111,6 +116,7 @@
 	name = "Fossilized Gun"
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	damage_multiplier = 1.5
+	max_upgrades = 0
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
 	force = initial(force)
