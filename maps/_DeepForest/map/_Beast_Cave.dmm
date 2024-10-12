@@ -122,7 +122,9 @@
 "aC" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "aD" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/dirt,
@@ -143,13 +145,17 @@
 /obj/machinery/door/airlock/glass,
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "aI" = (
 /obj/effect/floor_decal/industrial/arrows/white{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "aJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/remains/mouse,
@@ -227,14 +233,18 @@
 /obj/structure/table/steel,
 /obj/item/storage/fancy/vials,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "aY" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "aZ" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/rock,
@@ -279,12 +289,16 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bi" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock2,
@@ -344,7 +358,9 @@
 	icon_state = "computer0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bv" = (
 /obj/structure/flora/rock/variant2,
 /obj/structure/invislight,
@@ -451,12 +467,16 @@
 "bM" = (
 /obj/item/storage/hcases/ammo/excel/has_items_spawn,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bN" = (
 /obj/structure/catwalk,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bO" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -510,11 +530,15 @@
 	layer = 3
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bX" = (
 /obj/structure/scrap_cube,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "bY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -536,7 +560,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "cc" = (
 /obj/item/tool/spear,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -605,7 +631,9 @@
 /obj/item/organ_module/active/simple/surgical,
 /obj/item/organ_module/active/hud/med,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "cp" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -644,7 +672,9 @@
 "cw" = (
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "cx" = (
 /obj/structure/flora/small/rock5,
 /obj/effect/decal/cleanable/rubble,
@@ -1299,7 +1329,9 @@
 "eT" = (
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "eU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/grass,
@@ -1464,7 +1496,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "fB" = (
 /obj/structure/flora/small/grassa5,
 /turf/simulated/floor/asteroid/grass,
@@ -1754,7 +1788,9 @@
 /obj/random/junkfood/rotten,
 /obj/random/cluster/roaches,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "gA" = (
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -1875,7 +1911,9 @@
 	dir = 8
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "gZ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/big/bush3,
@@ -2243,7 +2281,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "in" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/bushb2,
@@ -2257,7 +2297,9 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "iq" = (
 /obj/structure/flora/big/bush1,
 /turf/unsimulated/wall/jungle,
@@ -2568,7 +2610,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "jv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/low_chance,
@@ -2862,7 +2906,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ky" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -2902,7 +2948,9 @@
 /obj/effect/damagedfloor/fire,
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "kG" = (
 /obj/random/techpart/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -3291,7 +3339,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "lW" = (
 /obj/structure/bed/chair/custom/wood{
 	dir = 4
@@ -4179,7 +4229,9 @@
 	icon_state = "server0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "pc" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4452,7 +4504,9 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qc" = (
 /mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/sand,
@@ -4486,7 +4540,9 @@
 "qh" = (
 /obj/item/tool/wrench/big_wrench,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qi" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -4570,7 +4626,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qx" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/shallow,
@@ -4587,7 +4645,9 @@
 "qA" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qB" = (
 /obj/structure/flora/big/rocks1,
 /obj/structure/flora/big/bush1,
@@ -4608,7 +4668,9 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "qD" = (
 /turf/simulated/mineral/random/rogue,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qF" = (
 /obj/item/tool/wrench/big_wrench,
 /obj/structure/snowfall{
@@ -4630,12 +4692,16 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qH" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/light_stick,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qI" = (
 /obj/structure/window/reinforced,
 /obj/effect/overlay/water{
@@ -4645,7 +4711,9 @@
 	layer = 3
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qJ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/glass/bottle/petrel,
@@ -4668,7 +4736,9 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "qM" = (
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qN" = (
 /obj/structure/flora/big/bush3,
 /obj/effect/decal/cleanable/dirt,
@@ -4679,20 +4749,28 @@
 /obj/structure/catwalk,
 /obj/random/cluster/termite_no_despawn,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qP" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qQ" = (
 /obj/item/stack/material/steel/random,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qR" = (
 /obj/structure/low_wall,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qS" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -4708,7 +4786,9 @@
 	},
 /obj/structure/low_wall,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qT" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp,
@@ -4717,30 +4797,40 @@
 "qU" = (
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qV" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Surveillance";
 	welded = 1
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qW" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qX" = (
 /turf/open/pool,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qY" = (
 /obj/structure/barricade,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "qZ" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ra" = (
 /obj/structure/scrap/food,
 /turf/simulated/floor/rock/grey,
@@ -4750,19 +4840,27 @@
 /obj/random/scrap/moderate_weighted,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rd" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "re" = (
 /obj/structure/sign/warning/hazard_danger,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rf" = (
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rg" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -4777,26 +4875,36 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ri" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rj" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rk" = (
 /obj/structure/barricade,
 /obj/structure/inflatable,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rl" = (
 /obj/random/scrap/moderate_weighted,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rm" = (
 /obj/item/trash/sosjerky,
 /obj/random/scrap/sparse_weighted,
@@ -4804,24 +4912,34 @@
 	alpha = 95
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rn" = (
 /obj/random/lathe_disk/smg,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ro" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rp" = (
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rr" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "mfloor3"
@@ -4844,7 +4962,9 @@
 /obj/structure/curtain/open/shower,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ru" = (
 /obj/structure/sink/puddle{
 	color = "66ff00";
@@ -4853,11 +4973,15 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rv" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rw" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -4866,22 +4990,29 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rx" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/damagedfloor/fire,
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ry" = (
 /obj/structure/light_stick,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rz" = (
 /obj/item/clothing/suit/bio_suit/virology,
-/mob/living/simple_animal/hostile/hivebot/range,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rA" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/effect/floor_decal/industrial/outputgate,
@@ -4893,7 +5024,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rB" = (
 /obj/item/storage/hcases/engi/has_items_spawn,
 /obj/structure/snowfall{
@@ -4910,16 +5043,22 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rE" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rG" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rH" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -4940,7 +5079,9 @@
 "rL" = (
 /obj/structure/railing/grey,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock,
@@ -4948,7 +5089,9 @@
 "rN" = (
 /obj/effect/floor_decal/industrial/warningdust,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rO" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -4960,7 +5103,9 @@
 	},
 /obj/structure/sink/puddle,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rQ" = (
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
@@ -4973,7 +5118,9 @@
 /obj/structure/boulder,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rT" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -4997,7 +5144,9 @@
 /obj/structure/catwalk,
 /obj/structure/girder,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "rZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
@@ -5018,7 +5167,9 @@
 /obj/item/tool/scalpel,
 /obj/item/device/radio,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sd" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5042,7 +5193,9 @@
 "si" = (
 /obj/structure/light_stick/red,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5057,7 +5210,9 @@
 	icon_state = "computer0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sl" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -5067,15 +5222,21 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "sn" = (
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "so" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sp" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sq" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -5084,7 +5245,9 @@
 /obj/structure/low_wall,
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sr" = (
 /obj/structure/flora/small/lavarock1,
 /obj/effect/decal/cleanable/dirt,
@@ -5106,7 +5269,9 @@
 	name = "Connector"
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "su" = (
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -5117,11 +5282,15 @@
 "sw" = (
 /obj/item/remains,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sx" = (
 /obj/item/clothing/head/bio_hood/virology,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sy" = (
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/asteroid/dirt,
@@ -5129,7 +5298,9 @@
 "sz" = (
 /obj/structure/scrap/food,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sA" = (
 /obj/structure/flora/big/rocks2,
 /turf/simulated/floor/asteroid/dirt,
@@ -5146,19 +5317,33 @@
 	name = "WARNING:"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sD" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sE" = (
 /obj/effect/floor_decal/industrial/warningdust,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sF" = (
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_idle";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sG" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
 /obj/effect/floor_decal/corner_steel_grid/diagonal{
@@ -5184,10 +5369,18 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sI" = (
-/turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/catwalk{
+	icon_state = "catwalk0-0"
+	},
+/mob/living/simple_animal/hostile/render/malformed,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock1,
@@ -5203,41 +5396,63 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sL" = (
 /obj/structure/sign/warning/secure_area/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sM" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sN" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sO" = (
 /obj/structure/boulder,
 /obj/structure/catwalk{
 	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sP" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/structure/invislight,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sQ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sR" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock,
@@ -5264,28 +5479,40 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sY" = (
 /turf/simulated/wall/cloth,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "sZ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ta" = (
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tb" = (
 /obj/structure/scrap/guns,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tc" = (
 /obj/structure/boulder,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "td" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/effect/floor_decal/industrial/outputgate,
@@ -5297,7 +5524,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "te" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock1,
@@ -5327,11 +5556,15 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tj" = (
 /obj/structure/scrap/guns,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tk" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
@@ -5340,7 +5573,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -5348,7 +5583,9 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "tn" = (
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "to" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/rock,
@@ -5357,10 +5594,14 @@
 /obj/effect/floor_decal/industrial_plant,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tq" = (
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tr" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -5369,7 +5610,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ts" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/invislight,
@@ -5378,7 +5621,9 @@
 "tt" = (
 /obj/structure/scrap/food,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tu" = (
 /obj/effect/floor_decal/industrial_plant/border_sides{
 	dir = 8
@@ -5407,46 +5652,60 @@
 /obj/machinery/door/blast/regular,
 /obj/structure/boulder,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tz" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tA" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/lathe_disk/pistol/low_chance,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tB" = (
 /turf/simulated/mineral,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tC" = (
-/obj/structure/sink/puddle{
-	color = "66ff00";
-	desc = "An odd puddle"
-	},
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tD" = (
 /obj/effect/floor_decal/corner/white/border,
 /turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tE" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tF" = (
 /obj/structure/light_stick,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tI" = (
 /obj/random/scrap,
 /turf/simulated/floor/rock/seafloor,
@@ -5462,36 +5721,50 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tL" = (
 /obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tM" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
 	layer = 4
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tN" = (
 /obj/structure/boulder,
 /obj/structure/low_wall,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tO" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microscope,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tQ" = (
 /obj/random/scrap/beacon,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tR" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/beach/sand/desert,
@@ -5506,18 +5779,24 @@
 	},
 /obj/item/storage/freezer/medical/contains_teratomas,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tT" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tU" = (
 /obj/map_data/beast_cave,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/undergroundmob,
@@ -5535,7 +5814,9 @@
 "tY" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "tZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
@@ -5544,13 +5825,17 @@
 "ua" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ub" = (
 /turf/unsimulated/mineral/transition,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "uc" = (
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ud" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -5564,7 +5849,9 @@
 	dir = 2
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ug" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -5584,7 +5871,9 @@
 	icon_state = "server0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -5870,7 +6159,9 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vb" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/beach/water/swamp,
@@ -5996,7 +6287,9 @@
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vx" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water/top,
@@ -6032,7 +6325,9 @@
 "vD" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vE" = (
 /obj/machinery/computer{
 	stat = 1;
@@ -6063,7 +6358,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vJ" = (
 /obj/item/trash/material/metal{
 	icon_state = "metal2"
@@ -6104,7 +6401,9 @@
 	icon_state = "shower"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -6132,7 +6431,9 @@
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vU" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/water/coastwater{
@@ -6146,7 +6447,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "vW" = (
 /obj/structure/disposalpipe/broken,
 /obj/structure/disposalpipe/broken{
@@ -6182,7 +6485,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wc" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -6194,7 +6499,9 @@
 /obj/machinery/optable,
 /obj/item/storage/firstaid/surgery/combat,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock2,
@@ -6214,7 +6521,9 @@
 "wg" = (
 /obj/machinery/vending/organfridge_aberrant/alt,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
@@ -6229,18 +6538,24 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wk" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wl" = (
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wm" = (
 /obj/structure/lattice,
 /obj/item/trash/material/metal{
@@ -6254,7 +6569,9 @@
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wo" = (
 /obj/structure/sign/warning/high_voltage/small,
 /turf/simulated/wall/r_wall,
@@ -6305,7 +6622,9 @@
 "wx" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wy" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/damagedfloor/fire,
@@ -6337,7 +6656,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wE" = (
 /obj/structure/flora/tree/jungle/variant1,
 /turf/simulated/floor/beach/sand/desert,
@@ -6385,7 +6706,9 @@
 "wL" = (
 /obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wM" = (
 /mob/living/carbon/superior_animal/vox/wasp,
 /turf/simulated/floor/rock/seafloor,
@@ -6426,7 +6749,9 @@
 	},
 /obj/structure/railing/grey,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "wS" = (
 /obj/random/oddity_guns,
 /turf/simulated/floor/asteroid/dirt,
@@ -6501,7 +6826,9 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xh" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/random/scrap/dense_weighted,
@@ -6518,7 +6845,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xk" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/damagedfloor/fire,
@@ -6533,7 +6862,9 @@
 "xm" = (
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xn" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2{
@@ -6549,7 +6880,9 @@
 "xp" = (
 /obj/machinery/chemical_dispenser,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xq" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/damagedfloor/fire,
@@ -6629,12 +6962,16 @@
 "xE" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xF" = (
 /obj/structure/table/steel,
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xG" = (
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -6658,7 +6995,9 @@
 	},
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xJ" = (
 /obj/structure/bed/chair/office/light{
 	pixel_y = -4
@@ -6683,7 +7022,9 @@
 "xK" = (
 /obj/item/caution/cone,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xL" = (
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock/dark,
@@ -6733,7 +7074,9 @@
 /obj/item/organ_module/muscle,
 /obj/item/remains/mummy2,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xU" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/overlay/water,
@@ -6753,7 +7096,9 @@
 "xX" = (
 /obj/structure/boulder,
 /turf/simulated/mineral/random/rogue,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "xY" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/junk/nondense,
@@ -6770,7 +7115,9 @@
 	},
 /obj/structure/scrap/guns,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yb" = (
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
 /obj/item/clothing/head/helmet/faceshield/altyn/maska,
@@ -6790,7 +7137,9 @@
 /obj/structure/salvageable/os/power,
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ye" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/cocoon,
@@ -6806,7 +7155,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yg" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/plating/under,
@@ -6866,7 +7217,9 @@
 "yp" = (
 /obj/item/caution/cone,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yq" = (
 /obj/structure/snowfall{
 	name = "radioactive dust";
@@ -6876,7 +7229,9 @@
 	color = "#61DE2A";
 	name = "Radioactive Waste"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yr" = (
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/rock/seafloor,
@@ -6898,7 +7253,9 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yv" = (
 /obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -6915,7 +7272,9 @@
 /obj/structure/table/reinforced,
 /obj/item/tool/minihoe,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yA" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/beach/water/swamp,
@@ -6927,7 +7286,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yD" = (
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/rock/seafloor,
@@ -6938,7 +7299,9 @@
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. It has a logo of three red triangles on it"
 	},
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yF" = (
 /obj/effect/overlay/water{
 	color = "#61DE2A"
@@ -6950,7 +7313,9 @@
 	color = "#61DE2A";
 	name = "Radioactive Waste"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yG" = (
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/beach/water/jungle,
@@ -6967,7 +7332,9 @@
 	color = "#61DE2A";
 	name = "Radioactive Waste"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yI" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -11
@@ -6979,7 +7346,9 @@
 /obj/structure/table/steel,
 /obj/item/storage/hcases/med/has_items_spawn,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yK" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka5,
@@ -7014,11 +7383,15 @@
 	},
 /obj/structure/railing/grey,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yR" = (
 /obj/random/rig_module/rare/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yS" = (
 /obj/structure/flora/small/trailrockb3,
 /turf/simulated/floor/rock,
@@ -7034,7 +7407,9 @@
 	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yV" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -7046,7 +7421,9 @@
 	},
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yX" = (
 /obj/machinery/door/airlock/glass{
 	name = "Command Centre";
@@ -7056,7 +7433,9 @@
 	name = "LOCKDOWN"
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "yY" = (
 /mob/living/carbon/superior_animal/vox/wasp,
 /obj/structure/invislight,
@@ -7071,7 +7450,9 @@
 "za" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zb" = (
 /obj/structure/boulder,
 /obj/structure/invislight,
@@ -7098,7 +7479,9 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -7113,9 +7496,10 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "zi" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zk" = (
 /obj/structure/flora/small/trailrockb5,
 /mob/living/simple_animal/hostile/sargoyle,
@@ -7133,7 +7517,9 @@
 "zn" = (
 /obj/item/device/lighting/glowstick/undark,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zo" = (
 /obj/item/clothing/glasses/welding,
 /turf/simulated/floor/asteroid/grass,
@@ -7192,7 +7578,9 @@
 /obj/item/remains/mummy2,
 /obj/item/remains/mummy2,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zA" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/rubble,
@@ -7204,7 +7592,9 @@
 	icon_state = "mgibbl4"
 	},
 /turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zC" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /obj/machinery/door/blast/regular,
@@ -7220,12 +7610,16 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zF" = (
 /turf/simulated/wall/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zG" = (
 /obj/structure/boulder,
 /obj/structure/window/reinforced,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zH" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/overlay/water/top,
@@ -7281,7 +7675,9 @@
 	dir = 8
 	},
 /turf/open/pool,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zQ" = (
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/rock,
@@ -7297,7 +7693,9 @@
 "zT" = (
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zU" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -7335,7 +7733,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "zZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/mob/mukwah,
@@ -7364,11 +7764,15 @@
 /obj/random/lathe_disk/laser_gun,
 /obj/random/lathe_disk/ion_gun,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ae" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Af" = (
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -7406,7 +7810,9 @@
 	name = "Surveillance"
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "An" = (
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/rock,
@@ -7462,7 +7868,9 @@
 "Aw" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ax" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey{
@@ -7471,7 +7879,9 @@
 /obj/structure/railing/grey,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ay" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -7503,7 +7913,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AD" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/unsimulated/wall/jungle,
@@ -7512,17 +7924,23 @@
 /obj/effect/spider/stickyweb,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AF" = (
 /obj/structure/table/bench/steel,
 /obj/item/oddity/common/towel,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder/displaced,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -7545,7 +7963,9 @@
 /obj/item/reagent_containers/glass/beaker/vial,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AL" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/beach/water/swamp,
@@ -7567,16 +7987,22 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AO" = (
 /obj/structure/salvageable/deepmaints_cryopod,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AP" = (
 /obj/structure/table/steel,
 /obj/machinery/microscope,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AQ" = (
 /obj/item/remains/ribcage,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -7599,7 +8025,9 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
@@ -7624,7 +8052,9 @@
 	},
 /obj/random/gun_fancy/alawys_spawn,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "AY" = (
 /obj/item/remains/ribcage,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -7652,7 +8082,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Be" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/coastwater{
@@ -7683,14 +8115,18 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Bm" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
 	desc = "It's control panel is broken beyond repair."
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Bn" = (
 /turf/simulated/wall/iron,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -7704,7 +8140,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Bq" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/beach/water/jungle,
@@ -7733,14 +8171,17 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bv" = (
-/mob/living/simple_animal/hostile/hivebot,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Bw" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Bx" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/mob/vox/low_chance,
@@ -7762,7 +8203,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "BA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer{
@@ -7770,7 +8213,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "BB" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/xeno,
@@ -7786,13 +8231,17 @@
 "BD" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "BE" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "BG" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
@@ -7876,7 +8325,9 @@
 /obj/item/storage/hcases/med/has_items_spawn,
 /obj/item/storage/hcases/med/has_items_spawn,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "BR" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/beach/sand,
@@ -7927,7 +8378,9 @@
 	name = "tarnished curtain"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Cc" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/coastwater{
@@ -7944,7 +8397,9 @@
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Cf" = (
 /obj/random/mob/croaker/low_chance,
 /obj/structure/invislightsmall,
@@ -8018,7 +8473,9 @@
 /obj/item/clothing/suit/armor/flakvest/full,
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Cq" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/remains/deer,
@@ -8030,14 +8487,15 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Cs" = (
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
+/obj/structure/low_wall,
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 1
 	},
-/turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ct" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -8049,7 +8507,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Cv" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/tree/jungle_small/variant2,
@@ -8069,7 +8529,9 @@
 /obj/item/reagent_containers/glass/bucket,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Cz" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/asteroid/dirt,
@@ -8077,17 +8539,23 @@
 "CA" = (
 /obj/random/cluster/termite_no_despawn,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CB" = (
 /obj/structure/catwalk{
 	icon_state = "catwalk7-3"
 	},
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CC" = (
 /obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/pool,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CD" = (
 /obj/structure/flora/big/rocks1,
 /turf/unsimulated/wall/jungle,
@@ -8135,7 +8603,9 @@
 "CL" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CM" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /mob/living/simple_animal/hostile/snake,
@@ -8168,7 +8638,9 @@
 /obj/structure/catwalk,
 /obj/item/caution/cone,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CS" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
@@ -8190,7 +8662,9 @@
 	},
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CV" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/invislight,
@@ -8206,7 +8680,9 @@
 "CX" = (
 /obj/structure/scrap/cloth/large,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "CY" = (
 /turf/simulated/floor/fixed/shale/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -8233,7 +8709,9 @@
 "Db" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dc" = (
 /obj/item/honey_frame/filled,
 /turf/simulated/floor/asteroid/grass,
@@ -8241,11 +8719,15 @@
 "Dd" = (
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "De" = (
 /obj/item/storage/belt/security/tactical,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Df" = (
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -8273,7 +8755,9 @@
 	color = "#9a977b"
 	},
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dl" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall4";
@@ -8293,9 +8777,17 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Dp" = (
-/obj/random/cluster/golem/low_chance,
-/turf/simulated/floor/snow,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/structure/low_wall,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dq" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -8305,11 +8797,15 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dr" = (
 /obj/structure/scrap/food,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ds" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -8336,7 +8832,9 @@
 /obj/effect/floor_decal/industrial_plant/border_sides,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dw" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -8350,7 +8848,9 @@
 "Dy" = (
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Dz" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -8372,15 +8872,19 @@
 "DB" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DC" = (
 /obj/structure/bed/chair/comfy/purp{
 	dir = 8
 	},
 /obj/item/remains/mummy2,
-/obj/item/organ_module/active/hud/night,
+/obj/item/organ_module/active/hud/night_bio,
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DD" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/asteroid/dirt,
@@ -8419,7 +8923,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DJ" = (
 /obj/item/clothing/shoes/workboots{
 	pixel_y = -10
@@ -8429,7 +8935,9 @@
 	},
 /obj/random/rig_module/rare,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DK" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -8459,11 +8967,15 @@
 "DQ" = (
 /obj/structure/sign/levels/stairsdown,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DR" = (
 /obj/structure/girder,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DS" = (
 /obj/item/tool/weldingtool/advanced,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -8475,7 +8987,9 @@
 	pixel_x = -8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "DW" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -8517,21 +9031,27 @@
 	},
 /obj/random/gun_parts/high_end,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ec" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ed" = (
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ee" = (
 /obj/structure/table/bench/steel,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ef" = (
 /obj/effect/floor_decal/industrial_plant/border_sides{
 	dir = 8
@@ -8544,7 +9064,9 @@
 	pixel_x = -21
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Eh" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/water/jungle,
@@ -8565,7 +9087,9 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "El" = (
 /obj/effect/decal/cleanable/rubble,
 /mob/living/simple_animal/hostile/scarybat{
@@ -8604,7 +9128,9 @@
 "Eq" = (
 /obj/structure/boulder,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Er" = (
 /obj/structure/bed/psych,
 /turf/simulated/floor/wood/wild4,
@@ -8620,7 +9146,9 @@
 /obj/structure/railing/grey,
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Et" = (
 /obj/item/reagent_containers/syringe/antitoxin,
 /turf/simulated/floor/rock/seafloor,
@@ -8638,7 +9166,9 @@
 	icon_state = "server1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ew" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
@@ -8673,7 +9203,9 @@
 "EA" = (
 /obj/structure/inflatable/door,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "EB" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -8741,7 +9273,9 @@
 	icon_state = "server1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "EQ" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/rock,
@@ -8753,7 +9287,9 @@
 	},
 /obj/structure/grille,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ES" = (
 /obj/structure/railing/grey{
 	dir = 4;
@@ -8764,7 +9300,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ET" = (
 /obj/structure/catwalk,
 /obj/machinery/light/small{
@@ -8773,7 +9311,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "EU" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -8795,13 +9335,17 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "EX" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/structure/scrap/guns,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "EY" = (
 /obj/structure/snowfall{
 	name = "dust";
@@ -8829,7 +9373,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fb" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -8839,7 +9385,9 @@
 	},
 /obj/structure/low_wall,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fd" = (
 /obj/random/scrap/sparse_even/low_chance,
 /turf/simulated/floor/beach/water/jungle,
@@ -8898,7 +9446,9 @@
 "Fn" = (
 /obj/random/rig_module,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fo" = (
 /obj/effect/floor_decal/industrial/warningdust/corner{
 	dir = 8
@@ -8914,7 +9464,9 @@
 	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fq" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -8924,11 +9476,14 @@
 "Fr" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fs" = (
-/obj/random/cluster/golem/low_chance,
-/turf/simulated/floor/icewater,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ft" = (
 /mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/swamp,
@@ -8937,7 +9492,9 @@
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/computer_hardware/hard_drive/portable/design/surgery,
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Fw" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /mob/living/simple_animal/hostile/snake{
@@ -8961,7 +9518,9 @@
 	name = "tarnished curtain"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "FA" = (
 /obj/effect/overlay/water/top{
 	pixel_y = -22
@@ -9015,7 +9574,9 @@
 "FI" = (
 /obj/machinery/light/small,
 /turf/open/pool,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "FJ" = (
 /obj/item/shreddedp,
 /obj/structure/snowfall{
@@ -9104,7 +9665,9 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "FW" = (
 /mob/living/carbon/superior_animal/vox/wasp,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -9135,11 +9698,15 @@
 /obj/structure/railing/grey,
 /obj/structure/girder,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gc" = (
 /obj/item/stack/material/wood,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gd" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -9147,7 +9714,9 @@
 	icon_state = "os-machine"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ge" = (
 /obj/random/mob/mukwah,
 /obj/structure/scrap/cloth,
@@ -9162,7 +9731,9 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gg" = (
 /obj/machinery/space_heater,
 /obj/item/paper{
@@ -9170,12 +9741,21 @@
 	icon_state = "paper_neo_words_crumpled_bloodied"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gh" = (
 /obj/item/reagent_containers/glass/beaker/vial,
-/mob/living/simple_animal/hostile/hivebot,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gi" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -9184,17 +9764,23 @@
 	name = "Connector"
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gk" = (
 /obj/random/rig_module/low_chance,
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gl" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gm" = (
 /obj/structure/flora/rock/variant1,
 /obj/structure/scrap/food/large,
@@ -9209,7 +9795,9 @@
 "Go" = (
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gp" = (
 /obj/structure/low_wall/onestar{
 	name = "Edge of the Pit"
@@ -9226,7 +9814,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gr" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushb2,
@@ -9243,7 +9833,9 @@
 /obj/effect/spider/stickyweb,
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gu" = (
 /mob/living/simple_animal/hostile/scarybat{
 	faction = "sargoyle"
@@ -9262,7 +9854,9 @@
 "Gx" = (
 /obj/item/clothing/under/rank/fatigues/camo/solfed,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Gy" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/beach/sand,
@@ -9277,7 +9871,9 @@
 	icon_state = "cellold0"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GC" = (
 /obj/structure/catwalk,
 /obj/machinery/light/small{
@@ -9286,7 +9882,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GD" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey{
@@ -9296,7 +9894,9 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "GE" = (
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GF" = (
 /mob/living/carbon/superior_animal/vox/wasp,
 /obj/random/pouch/low_chance,
@@ -9310,7 +9910,9 @@
 "GH" = (
 /obj/structure/fireaxecabinet,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GJ" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -9333,7 +9935,9 @@
 "GO" = (
 /obj/machinery/microwave/burnbarrel,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GP" = (
 /obj/structure/flora/small/lavarock3,
 /obj/random/junk/nondense,
@@ -9358,7 +9962,9 @@
 	name = "Surveillance"
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GS" = (
 /obj/structure/flora/small/snow/rock1,
 /turf/simulated/floor/snow,
@@ -9384,7 +9990,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/mineral/random/rogue,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GW" = (
 /obj/item/remains/mummy1,
 /obj/structure/snowfall{
@@ -9405,7 +10013,9 @@
 "GY" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "GZ" = (
 /obj/structure/invislightsmall,
 /obj/structure/invislight,
@@ -9487,7 +10097,9 @@
 "Hm" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Hn" = (
 /obj/random/scrap/sparse_even/low_chance,
 /turf/simulated/floor/beach/water/swamp,
@@ -9495,7 +10107,9 @@
 "Ho" = (
 /obj/structure/girder,
 /turf/simulated/floor/rock/alt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Hp" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/asteroid/dirt,
@@ -9527,7 +10141,9 @@
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/sign/warning/hot_exhaust/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Hy" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -9536,7 +10152,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Hz" = (
 /obj/structure/bed/chair/office/light{
 	pixel_y = -4
@@ -9557,7 +10175,9 @@
 	},
 /obj/item/tool/hatchet,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HB" = (
 /obj/structure/flora/small/trailrocka2,
 /turf/simulated/floor/rock/seafloor,
@@ -9570,7 +10190,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HE" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -9580,7 +10202,9 @@
 	icon_state = "catwalk0-0"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HG" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -9588,7 +10212,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HH" = (
 /obj/structure/low_wall,
 /obj/structure/grille,
@@ -9597,7 +10223,9 @@
 	},
 /obj/item/reagent_containers/syringe/drugs_recreational,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HI" = (
 /obj/machinery/reagentgrinder/industrial,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -9661,7 +10289,9 @@
 	welded = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "HS" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -9720,7 +10350,9 @@
 	name = "WhiteGuard turret"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ic" = (
 /obj/structure/low_wall,
 /obj/structure/grille/broken,
@@ -9731,7 +10363,9 @@
 /obj/structure/boulder,
 /obj/item/tool/screwdriver/combi_driver,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ie" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
@@ -9742,7 +10376,9 @@
 /obj/item/organ_module/active/simple/armshield,
 /obj/item/organ_module/armor,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ig" = (
 /obj/item/clothing/head/welding,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -9752,7 +10388,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ii" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water/top,
@@ -9766,7 +10404,9 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ik" = (
 /obj/structure/catwalk,
 /obj/structure/boulder,
@@ -9778,7 +10418,9 @@
 	},
 /obj/structure/wire_splicing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Il" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -9787,7 +10429,9 @@
 	color = "#750008"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Im" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water,
@@ -9806,11 +10450,15 @@
 /obj/structure/table/steel,
 /obj/random/lathe_disk/advanced,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ip" = (
-/mob/living/simple_animal/hostile/hivebot,
-/turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/sign/warning/hot_exhaust/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Iq" = (
 /mob/living/carbon/superior_animal/vox/wasp,
 /obj/effect/spider/cocoon,
@@ -9823,13 +10471,17 @@
 	},
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Is" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "It" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /obj/structure/snowfall{
@@ -9858,7 +10510,9 @@
 "Iy" = (
 /obj/item/device/lighting/glowstick/undark,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Iz" = (
 /obj/structure/flora/small/grassa1,
 /mob/living/simple_animal/hostile/snake,
@@ -9867,7 +10521,9 @@
 "IA" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -9875,14 +10531,18 @@
 "IC" = (
 /obj/structure/sign/warning/biohazard,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ID" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
 	},
 /obj/item/beartrap/armed,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IE" = (
 /obj/item/contraband/poster/placed/eris/techno{
 	desc = "MARC Insignia";
@@ -9911,7 +10571,9 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IJ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sunnybush,
@@ -9937,11 +10599,15 @@
 "IN" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IP" = (
 /obj/structure/sign/warning/high_voltage/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IQ" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack,
@@ -9959,11 +10625,15 @@
 	icon_state = "base"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IU" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IV" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/asteroid/shale,
@@ -9971,16 +10641,22 @@
 "IW" = (
 /obj/machinery/biogenerator,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IX" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IY" = (
 /obj/structure/low_wall,
 /obj/random/booze/low_chance,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "IZ" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/overlay/water/top,
@@ -9995,7 +10671,9 @@
 "Jb" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jc" = (
 /obj/effect/floor_decal/industrial/road/straight3,
 /turf/simulated/floor/rock/manmade/asphalt,
@@ -10023,7 +10701,9 @@
 	layer = 3
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jg" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
@@ -10063,14 +10743,18 @@
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jo" = (
 /obj/structure/curtain/open/privacy{
 	name = "medical curtain"
 	},
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/industrial/navy_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jp" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka5,
@@ -10084,7 +10768,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Js" = (
 /obj/effect/decal/mecha_wreckage/ripley,
 /turf/simulated/floor/rock/seafloor,
@@ -10107,7 +10793,9 @@
 /obj/item/stack/material/steel/random,
 /obj/item/stack/material/steel/random,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jw" = (
 /obj/structure/flora/small/lavarock3,
 /obj/effect/decal/cleanable/rubble,
@@ -10125,11 +10813,15 @@
 	desc = "Work for a better future with Sakaba Corporation"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Jz" = (
 /obj/structure/scrap/guns/large,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JA" = (
 /mob/living/simple_animal/hostile/snake{
 	layer = 3.8;
@@ -10142,12 +10834,16 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JC" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/freezer/medical/contains_teratomas,
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JD" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/effect/overlay/water,
@@ -10179,11 +10875,15 @@
 /obj/item/tool_upgrade/productivity/diamond_blade,
 /obj/item/tool/saw/circular/medical,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JG" = (
 /obj/structure/sign/warning/hazard_biohazard,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JH" = (
 /obj/structure/flora/ausbushes/brflowers,
 /mob/living/simple_animal/hostile/snake{
@@ -10231,9 +10931,14 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JP" = (
-/mob/living/simple_animal/hostile/hivebot/range,
-/turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/obj/structure/low_wall,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JQ" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
@@ -10242,22 +10947,29 @@
 	},
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JR" = (
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JS" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
 	},
 /obj/structure/barricade,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JT" = (
-/mob/living/simple_animal/hostile/hivebot/range,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JU" = (
 /obj/structure/shuttle_part/escpod{
 	icon_state = "escpodwall28";
@@ -10290,7 +11002,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "JX" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/beach/water/swamp,
@@ -10305,7 +11019,9 @@
 /obj/structure/table/woodentable,
 /obj/item/toy/desk/newtoncradle,
 /turf/simulated/floor/carpet/bcarpet,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ka" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water/top,
@@ -10335,7 +11051,9 @@
 	icon_state = "server0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Kh" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall29";
@@ -10381,10 +11099,14 @@
 /obj/item/reagent_containers/syringe/ld50_syringe/choral,
 /obj/item/reagent_containers/syringe/ld50_syringe/choral,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ko" = (
 /turf/simulated/floor/asteroid/dirt/dark/plough,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Kp" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -10449,7 +11171,9 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Kz" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/sand/desert,
@@ -10471,7 +11195,9 @@
 /obj/structure/boulder,
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer{
@@ -10480,16 +11206,22 @@
 	pixel_x = -4
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KF" = (
 /obj/structure/girder,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KG" = (
 /obj/machinery/optable,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
@@ -10498,7 +11230,9 @@
 "KI" = (
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KJ" = (
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock,
@@ -10518,12 +11252,16 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KM" = (
 /obj/structure/flora/small/rock5,
 /obj/random/cluster/golem,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KN" = (
 /obj/structure/scrap/food,
 /turf/simulated/floor/rock,
@@ -10533,11 +11271,15 @@
 /obj/structure/table/steel,
 /obj/random/lathe_disk/ammo,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KP" = (
 /obj/structure/sign/levels/section1,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KQ" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water,
@@ -10549,7 +11291,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KS" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -10579,7 +11323,9 @@
 "KX" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "KY" = (
 /obj/machinery/computer{
 	stat = 1;
@@ -10597,7 +11343,9 @@
 /obj/structure/girder,
 /obj/structure/sign/neon/exit,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "La" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -10614,7 +11362,9 @@
 	health = 99999
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ld" = (
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -10638,7 +11388,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lh" = (
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/rock/seafloor,
@@ -10647,7 +11399,9 @@
 /obj/item/organ/internal/bone/r_arm,
 /obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lj" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -10658,7 +11412,9 @@
 "Lk" = (
 /obj/item/spider_shadow_trap/burrowing,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ll" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
@@ -10674,7 +11430,9 @@
 "Lo" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lp" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock/seafloor,
@@ -10700,7 +11458,9 @@
 "Ls" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lt" = (
 /obj/effect/spider/stickyweb,
 /obj/random/spider_trap/low_chance,
@@ -10727,7 +11487,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lw" = (
 /obj/random/powercell/large_safe_lonestar,
 /turf/simulated/floor/rock/seafloor,
@@ -10742,7 +11504,9 @@
 /obj/structure/low_wall,
 /obj/structure/boulder,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Lz" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -10752,7 +11516,9 @@
 "LA" = (
 /obj/structure/girder,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LB" = (
 /obj/structure/flora/big/bush2,
 /obj/random/scrap/dense_weighted,
@@ -10781,21 +11547,27 @@
 /obj/structure/catwalk,
 /obj/item/storage/hcases/engi/has_items_spawn,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LK" = (
 /obj/item/organ/internal/vital/heart,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LL" = (
 /obj/machinery/light/small,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LM" = (
 /obj/machinery/light{
 	dir = 4
@@ -10807,7 +11579,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LN" = (
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/snow,
@@ -10816,7 +11590,9 @@
 /obj/effect/spider/stickyweb,
 /obj/structure/scrap/guns,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "LP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/mining/drill{
@@ -10906,7 +11682,9 @@
 /obj/item/clothing/gloves/botanic_leather,
 /obj/item/storage/pouch/tubular/vial,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mf" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall6";
@@ -10945,11 +11723,15 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/syndicate,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mm" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mn" = (
 /obj/structure/flora/big/bush2,
 /obj/random/scrap/dense_weighted,
@@ -10988,7 +11770,9 @@
 	color = "#61DE2A";
 	name = "Radioactive Waste"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mt" = (
 /obj/item/clothing/head/hardhat,
 /obj/item/remains,
@@ -10997,7 +11781,9 @@
 "Mu" = (
 /obj/structure/boulder,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mv" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11008,7 +11794,9 @@
 /obj/structure/boulder,
 /obj/random/rig/damaged/always_spawn,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Mx" = (
 /obj/effect/floor_decal/industrial/road/straight1,
 /turf/simulated/floor/rock/manmade/asphalt,
@@ -11044,8 +11832,16 @@
 	light_color = "#8B0000"
 	},
 /obj/structure/boulder,
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MD" = (
 /obj/structure/closet/secure_closet/freezer,
 /obj/item/storage/freezer/medical/contains_teratomas,
@@ -11100,7 +11896,9 @@
 	icon_state = "bs_bowman_headset"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MJ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -11128,7 +11926,9 @@
 /obj/structure/low_wall,
 /obj/random/booze,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MP" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -11140,11 +11940,15 @@
 	layer = 3
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MR" = (
 /obj/item/tool/hammer/deadblow,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MS" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -11153,7 +11957,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "MT" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/snow,
@@ -11199,7 +12005,9 @@
 	icon_state = "catwalk11-12"
 	},
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Nb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -11210,7 +12018,9 @@
 /obj/item/caution/cone,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Nd" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/wood/wild5,
@@ -11218,7 +12028,9 @@
 "Ne" = (
 /obj/item/storage/hcases/med/has_items_spawn,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Nf" = (
 /obj/item/shreddedp,
 /obj/structure/snowfall{
@@ -11276,7 +12088,9 @@
 	icon_state = "server1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "No" = (
 /obj/structure/catwalk,
 /obj/item/remains,
@@ -11290,12 +12104,16 @@
 "Nq" = (
 /obj/structure/flora/pottedplant/shoot,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Nr" = (
 /obj/structure/bed/chair/office/light,
 /obj/item/remains/mummy2,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ns" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -11312,7 +12130,9 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Nw" = (
 /obj/item/coin/gold{
 	name = "token";
@@ -11334,7 +12154,9 @@
 /obj/structure/low_wall,
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NA" = (
 /obj/structure/lattice,
 /obj/machinery/telecomms/relay{
@@ -11349,7 +12171,9 @@
 /obj/item/paper_bin,
 /obj/item/pen/multi,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NC" = (
 /mob/living/carbon/superior_animal/ameridian_golem/behemoth,
 /turf/simulated/floor/fixed/shale/dark,
@@ -11383,7 +12207,9 @@
 /obj/item/tool_upgrade/augment/fuel_tank,
 /obj/item/tool_upgrade/productivity/antistaining,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NH" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle_small/variant3,
@@ -11395,7 +12221,9 @@
 	},
 /obj/item/clothing/head/rank/solfedrecon,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NJ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/small/busha1,
@@ -11426,11 +12254,15 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NP" = (
 /obj/structure/scrap_cube,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NQ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/airlock/hatch,
@@ -11443,7 +12275,9 @@
 "NS" = (
 /obj/effect/floor_decal/industrial/road,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/remains/mouse,
@@ -11460,7 +12294,9 @@
 /obj/structure/table/rack/shelf,
 /obj/item/tool/baton/mini,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NW" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -11470,7 +12306,9 @@
 	},
 /obj/structure/railing/grey,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "NX" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -11488,7 +12326,9 @@
 /obj/structure/flora/small/rock1,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ob" = (
 /obj/structure/flora/big/bush2,
 /mob/living/simple_animal/hostile/samak,
@@ -11524,7 +12364,9 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Og" = (
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Oh" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -11534,7 +12376,9 @@
 "Oi" = (
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ok" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/grey,
@@ -11558,7 +12402,9 @@
 /obj/item/remains,
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Oo" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/decal/cleanable/dirt,
@@ -11570,7 +12416,9 @@
 /obj/random/ammo/shotgun/low_chance,
 /obj/random/ammo/shotgun/low_chance,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Or" = (
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/beach/sand/desert,
@@ -11583,7 +12431,9 @@
 /obj/structure/boulder,
 /obj/item/rig_module/vision/nvg,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ou" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
@@ -11612,7 +12462,9 @@
 	name = "Window"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ox" = (
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/beach/water/swamp,
@@ -11633,7 +12485,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "OB" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water,
@@ -11657,7 +12511,9 @@
 /obj/item/stack/material/wood,
 /obj/item/device/lighting/glowstick/undark,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "OG" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11692,7 +12548,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/ameridian_crystal,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "OO" = (
 /obj/structure/snowfall{
 	name = "dust";
@@ -11753,7 +12611,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "OY" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water,
@@ -11763,13 +12623,17 @@
 "OZ" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pa" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pb" = (
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/dirt,
@@ -11777,7 +12641,9 @@
 "Pc" = (
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pd" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/decal/cleanable/dirt,
@@ -11786,11 +12652,15 @@
 "Pe" = (
 /obj/machinery/chemical_dispenser/industrial,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pf" = (
 /obj/structure/sign/departmentold/botany/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pg" = (
 /obj/structure/flora/small/rock5,
 /obj/random/junk/nondense,
@@ -11803,7 +12673,9 @@
 	},
 /obj/machinery/seed_storage,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pi" = (
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/beach/water/swamp,
@@ -11870,7 +12742,9 @@
 	},
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pt" = (
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /turf/simulated/floor/rock/seafloor,
@@ -11886,7 +12760,9 @@
 "Pv" = (
 /obj/effect/spider/stickyweb,
 /turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pw" = (
 /obj/structure/table/bench/steel,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -11896,7 +12772,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Px" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -11906,17 +12784,23 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/wood_old,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Py" = (
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Pz" = (
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PA" = (
 /obj/structure/salvageable/computer_os{
 	dir = 4
@@ -11937,12 +12821,16 @@
 	icon_state = "bs_bowman_headset"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PD" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio/phone,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cluster/roaches,
@@ -11976,7 +12864,9 @@
 	icon_state = "data1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/invislight,
@@ -11988,7 +12878,9 @@
 	name = "WhiteGuard turret"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PL" = (
 /obj/item/device/lighting/glowstick/flare,
 /turf/simulated/floor/rock/manmade/concrete,
@@ -12000,7 +12892,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PN" = (
 /obj/structure/flora/small/trailrocka5,
 /obj/random/material_ore,
@@ -12016,7 +12910,9 @@
 	},
 /obj/item/storage/freezer/medical/contains_teratomas,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PP" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water/top,
@@ -12040,7 +12936,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PT" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/beach/water/swamp,
@@ -12062,7 +12960,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "PX" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /turf/unsimulated/mineral,
@@ -12089,7 +12989,9 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qc" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/beach/sand/desert,
@@ -12106,7 +13008,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
@@ -12122,7 +13026,9 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qi" = (
 /obj/effect/shuttle_landmark/swamp_caves,
 /turf/simulated/floor/beach/sand,
@@ -12153,7 +13059,9 @@
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/structure/sign/warning/secure_area/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qo" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/overlay/water/top,
@@ -12189,7 +13097,9 @@
 /obj/random/gun_shotgun,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qv" = (
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
@@ -12201,7 +13111,9 @@
 	icon_state = "data0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Qw" = (
 /mob/living/carbon/superior_animal/ameridian_golem/runtling,
 /turf/simulated/floor/asteroid/shale,
@@ -12228,7 +13140,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QA" = (
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
@@ -12251,7 +13165,9 @@
 "QE" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QF" = (
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/rock/manmade/concrete,
@@ -12290,7 +13206,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QN" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -12329,11 +13247,15 @@
 /obj/item/gun/projectile/shotgun/doublebarrel/axe,
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QS" = (
 /obj/random/cluster/termite_no_despawn,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QT" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/structure/table/rack/shelf,
@@ -12347,7 +13269,9 @@
 "QU" = (
 /obj/structure/sign/department/gene,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QV" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -12359,7 +13283,9 @@
 /obj/item/storage/hcases/med/has_items_spawn,
 /obj/item/reagent_containers/dropper/industrial,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QW" = (
 /obj/structure/sign/warning/caution/small,
 /turf/simulated/wall/r_wall,
@@ -12370,7 +13296,9 @@
 	},
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QY" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey{
@@ -12379,7 +13307,9 @@
 /obj/structure/railing/grey,
 /obj/random/booze/low_chance,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "QZ" = (
 /obj/effect/overlay/water,
 /obj/random/flora/jungle_tree,
@@ -12399,7 +13329,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rb" = (
 /obj/structure/boulder,
 /turf/simulated/floor/beach/water/coastwatercorner{
@@ -12419,7 +13351,9 @@
 /obj/item/remains,
 /obj/item/organ_module/active/simple/armblade/telescopic_baton,
 /turf/simulated/floor/rock/alt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rf" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/dirt,
@@ -12442,7 +13376,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rh" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /mob/living/simple_animal/hostile/snake,
@@ -12459,7 +13395,9 @@
 	icon_state = "paper_neo_words_crumpled_bloodied"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rm" = (
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
@@ -12469,7 +13407,9 @@
 	dir = 4
 	},
 /turf/open/pool,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ro" = (
 /obj/structure/flora/big/bush2{
 	pixel_x = -14;
@@ -12487,11 +13427,15 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Rq" = (
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rr" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rs" = (
 /obj/item/ammo_magazine/rifle_75,
 /obj/item/remains/human,
@@ -12529,7 +13473,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/random/cluster/golem,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ry" = (
 /obj/structure/table/marble,
 /obj/machinery/microwave{
@@ -12537,7 +13483,9 @@
 	icon_state = "mw-br"
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Rz" = (
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/tiled/white/techfloor,
@@ -12558,7 +13506,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RD" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/machinery/mining/brace{
@@ -12574,7 +13524,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RG" = (
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -12589,13 +13541,17 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RI" = (
 /obj/machinery/door/window{
 	dir = 4
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RJ" = (
 /obj/structure/boulder,
 /obj/effect/floor_decal/industrial_plant,
@@ -12604,7 +13560,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RL" = (
 /obj/item/remains/mouse,
 /obj/random/gun_shotgun,
@@ -12620,13 +13578,12 @@
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"RO" = (
-/turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "RP" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RQ" = (
 /obj/effect/floor_decal/industrial_plant/border_sides{
 	dir = 4
@@ -12652,7 +13609,9 @@
 "RW" = (
 /obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RX" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 8
@@ -12670,11 +13629,15 @@
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. It has a logo of three red trsssiangles on it"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "RZ" = (
 /obj/structure/inflatable/door,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sa" = (
 /obj/item/honey_frame/frameless,
 /turf/simulated/floor/rock,
@@ -12687,7 +13650,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/hcases/ammo/excel/has_items_spawn,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sd" = (
 /obj/structure/flora/big/rocks2,
 /obj/structure/flora/small/lavarock1,
@@ -12711,7 +13676,9 @@
 	},
 /obj/structure/girder,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sh" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/unsimulated/wall/jungle,
@@ -12741,7 +13708,9 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "So" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
@@ -12760,7 +13729,9 @@
 /obj/item/storage/hcases/ammo/excel/has_items_spawn,
 /obj/item/storage/hcases/ammo/excel/has_items_spawn,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sr" = (
 /obj/machinery/door/blast/regular{
 	name = "LOCKDOWN"
@@ -12770,7 +13741,9 @@
 	welded = 1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ss" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/beach/sand,
@@ -12788,7 +13761,9 @@
 "Sv" = (
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sw" = (
 /obj/structure/table/steel,
 /obj/structure/window/reinforced{
@@ -12797,7 +13772,9 @@
 	},
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Sy" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/decal/cleanable/dirt,
@@ -12846,7 +13823,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SG" = (
 /obj/structure/flora/rock/variant1,
 /obj/random/scrap/dense_weighted,
@@ -12866,7 +13845,9 @@
 	icon_state = "data1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SJ" = (
 /obj/random/rig/damaged/always_spawn,
 /turf/simulated/floor/rock/seafloor,
@@ -12874,7 +13855,9 @@
 "SK" = (
 /obj/item/flamethrower,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SL" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/decal/cleanable/dirt,
@@ -12884,7 +13867,9 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/structure/railing,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -12909,12 +13894,16 @@
 	layer = 2
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SR" = (
 /obj/structure/table/reinforced,
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "SS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -13010,16 +13999,19 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Tj" = (
-/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter,
-/turf/simulated/floor/fixed/shale/dark,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/unsimulated/mineral,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tk" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/structure/railing,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tm" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -13031,7 +14023,9 @@
 /obj/structure/table/steel,
 /obj/item/storage/pill_bottle/prosurgeon,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tn" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall16";
@@ -13044,7 +14038,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tp" = (
 /obj/structure/railing/grey,
 /obj/effect/overlay/water,
@@ -13055,7 +14051,9 @@
 /obj/structure/table/reinforced,
 /obj/random/rig/always_spawn,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tr" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt,
@@ -13091,7 +14089,9 @@
 	},
 /obj/item/gun/launcher/syringe/rapid,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tw" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -13107,16 +14107,25 @@
 	icon_state = "catwalk3-0"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Tz" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TA" = (
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
-/turf/simulated/floor/asteroid/shale,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/floor_decal/border/techfloor/orange{
+	icon = 'icons/mob/blob.dmi';
+	icon_state = "blob_damaged2";
+	name = "biomass";
+	color = "#750008"
+	},
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TB" = (
 /obj/structure/salvageable/computer_os{
 	name = "Broken Computer";
@@ -13128,7 +14137,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TD" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/reedbush,
@@ -13162,7 +14173,9 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/structure/closet/crate/voidwolf/voidwolfdrugs,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TJ" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 8
@@ -13182,11 +14195,15 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TL" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TM" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/random/mob/vox/low_chance,
@@ -13217,14 +14234,18 @@
 	},
 /obj/structure/flora/pottedplant/thinbush,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TP" = (
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 0
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TQ" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/ribcage,
@@ -13246,12 +14267,16 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TT" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TU" = (
 /obj/item/trash/material/metal{
 	icon_state = "metal2"
@@ -13267,7 +14292,9 @@
 	},
 /obj/item/clothing/head/bio_hood/virology,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "TW" = (
 /obj/structure/snowfall{
 	name = "dust";
@@ -13299,11 +14326,15 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ub" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Uc" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -13336,10 +14367,14 @@
 "Uf" = (
 /obj/structure/flora/pottedplant/drooping,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ug" = (
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Uh" = (
 /obj/structure/girder,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -13369,7 +14404,9 @@
 "Uo" = (
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Up" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -13399,7 +14436,9 @@
 	},
 /obj/item/storage/deferred/toolmod,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ut" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/random/scrap/dense_weighted,
@@ -13434,7 +14473,9 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Uz" = (
 /turf/simulated/shuttle/wall/escpod{
 	dir = 4;
@@ -13454,7 +14495,9 @@
 	},
 /obj/structure/low_wall,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UB" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
@@ -13480,7 +14523,9 @@
 /obj/structure/girder/displaced,
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UG" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water/top,
@@ -13493,7 +14538,9 @@
 	pixel_y = 15
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UI" = (
 /obj/structure/invislightsmall,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -13509,7 +14556,9 @@
 	color = "#2CFA1F"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UL" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -13547,18 +14596,24 @@
 "US" = (
 /obj/machinery/optable,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UU" = (
 /obj/structure/table/steel,
 /obj/item/tray,
 /obj/item/storage/pill_bottle/prosurgeon,
 /obj/item/storage/freezer/medical/contains_teratomas,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UV" = (
 /obj/structure/sign/department/sci,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UW" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -13578,7 +14633,9 @@
 /obj/structure/boulder,
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "UZ" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -13597,7 +14654,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vc" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -13639,7 +14698,9 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vi" = (
 /obj/effect/decal/mecha_wreckage/ripley/deathripley,
 /turf/simulated/floor/rock/seafloor,
@@ -13649,7 +14710,9 @@
 	name = "Connector"
 	},
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vl" = (
 /obj/effect/floor_decal/industrial/warningdust,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -13680,12 +14743,16 @@
 /obj/item/storage/hcases/med/has_items_spawn,
 /obj/item/reagent_containers/dropper/industrial,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vp" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/scrap/food,
@@ -13703,7 +14770,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vs" = (
 /obj/item/ammo_magazine/rifle_75/lethal,
 /obj/item/gun_upgrade/trigger/dangerzone,
@@ -13726,7 +14795,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vx" = (
 /obj/item/trash/material/metal{
 	icon_state = "metal4"
@@ -13736,10 +14807,14 @@
 "Vy" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/alt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Vz" = (
 /turf/simulated/floor/rock/alt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VB" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -13747,7 +14822,9 @@
 /obj/structure/table/steel,
 /obj/item/storage/hcases/med/has_items_spawn,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VC" = (
 /obj/structure/snowfall{
 	name = "dust";
@@ -13767,7 +14844,9 @@
 /obj/item/autopsy_scanner,
 /obj/item/tool/scalpel,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VE" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -13801,7 +14880,9 @@
 	light_color = "#8B0000"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VH" = (
 /obj/structure/shuttle/engine/platform,
 /obj/structure/shuttle/engine/propulsion{
@@ -13822,7 +14903,9 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VJ" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -13872,7 +14955,9 @@
 "VQ" = (
 /obj/structure/sign/warning/nosmoking/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "VR" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/beach/sand/desert,
@@ -13941,7 +15026,9 @@
 "Wb" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Wc" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/rock,
@@ -14035,7 +15122,9 @@
 	},
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ww" = (
 /obj/structure/flora/small/trailrocka5,
 /turf/simulated/floor/asteroid/dirt,
@@ -14047,11 +15136,15 @@
 	},
 /obj/item/storage/deferred/crate/alcohol,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Wy" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Wz" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
@@ -14127,7 +15220,9 @@
 	},
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "WK" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -14144,7 +15239,9 @@
 	icon_state = "data1"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "WN" = (
 /turf/simulated/floor/wood_old,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -14202,14 +15299,18 @@
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xb" = (
 /obj/structure/flora/pottedplant/dead,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xc" = (
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -14227,7 +15328,9 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/vials,
 /turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xf" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/beach/sand/desert,
@@ -14236,7 +15339,9 @@
 /mob/living/carbon/superior_animal/roach/tazntz,
 /mob/living/carbon/superior_animal/roach/tazntz,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xh" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -14277,7 +15382,9 @@
 /obj/random/junkfood/rotten,
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xo" = (
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -14304,7 +15411,9 @@
 	desc = "An odd puddle"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Xv" = (
 /mob/living/simple_animal/hostile/sargoyle,
 /turf/simulated/floor/rock,
@@ -14327,7 +15436,9 @@
 "Xz" = (
 /obj/structure/sign/departmentold/chemistry/small,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XA" = (
 /obj/structure/flora/small/bushb2,
 /obj/random/flora/small_jungle_tree,
@@ -14372,7 +15483,9 @@
 /obj/structure/railing/grey,
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XI" = (
 /obj/structure/largecrate,
 /obj/structure/flora/big/bush2,
@@ -14385,7 +15498,9 @@
 "XK" = (
 /obj/structure/sign/security/showers,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XL" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/mining/brace{
@@ -14402,13 +15517,17 @@
 	icon_state = "data0"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XN" = (
 /obj/structure/catwalk,
 /obj/item/organ_module/active/hud/welder,
 /obj/item/remains/mummy2,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XO" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/invislightsmall,
@@ -14436,7 +15555,9 @@
 "XS" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "XT" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/grass,
@@ -14478,7 +15599,9 @@
 	icon_state = "vomit_4"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yc" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild4,
@@ -14495,7 +15618,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ye" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/big/rocks1,
@@ -14522,7 +15647,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yj" = (
 /obj/structure/railing/grey,
 /obj/structure/flora/small/bushb3,
@@ -14531,12 +15658,16 @@
 "Yk" = (
 /obj/effect/decal/cleanable/dirt/snow,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yl" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ym" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/damagedfloor/fire,
@@ -14552,14 +15683,18 @@
 "Yo" = (
 /obj/item/reagent_containers/syringe,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yp" = (
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/effect/decal/cleanable/dirt/snow,
 /obj/structure/sign/neon/phone,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yr" = (
 /obj/structure/sign/warning/radioactive/small,
 /obj/structure/railing,
@@ -14582,7 +15717,9 @@
 	name = "Depleted Fuel Rod";
 	desc = "A huge chunk of uranium melded together"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ys" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2{
@@ -14613,7 +15750,9 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Yw" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/boulder,
@@ -14695,7 +15834,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YK" = (
 /obj/structure/closet/body_bag,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -14712,12 +15853,16 @@
 "YN" = (
 /obj/structure/sign/warning/secure_area,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YO" = (
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YP" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 4
@@ -14727,7 +15872,9 @@
 	},
 /obj/item/extinguisher,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YQ" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -14757,16 +15904,22 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "YW" = (
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YX" = (
 /obj/item/storage/hcases/engi/has_items_spawn,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YY" = (
 /obj/structure/low_wall,
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "YZ" = (
 /obj/structure/bed/chair/sofa/brown/right,
 /obj/item/bedsheet,
@@ -14788,7 +15941,9 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/structure/inflatable/door,
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Ze" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/structure/snowfall{
@@ -14797,7 +15952,9 @@
 	},
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial/fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zf" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -14825,7 +15982,9 @@
 	},
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zj" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/flora/big/bush2,
@@ -14837,7 +15996,9 @@
 	dir = 2
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zl" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/jungle,
@@ -14863,13 +16024,17 @@
 	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/floor/industrial/grey_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zq" = (
 /obj/structure/low_wall,
 /obj/structure/railing/grey,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zr" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -14892,7 +16057,9 @@
 	name = "Depleted Fuel Rod";
 	desc = "A huge chunk of uranium melded together"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
@@ -14919,7 +16086,9 @@
 	},
 /mob/living/simple_animal/hostile/creature/tissue,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "Zz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/mining/drill{
@@ -14932,7 +16101,9 @@
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /turf/simulated/floor/industrial/checker_large,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZB" = (
 /obj/structure/disposalpipe/broken{
 	dir = 8
@@ -14947,13 +16118,17 @@
 	color = "#750008"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZC" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZD" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /turf/simulated/floor/rock/manmade/asphalt,
@@ -14972,7 +16147,9 @@
 "ZG" = (
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZH" = (
 /obj/effect/overlay/water{
 	color = "#61DE2A"
@@ -14985,7 +16162,9 @@
 	color = "#61DE2A";
 	name = "Radioactive Waste"
 	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZI" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -15004,7 +16183,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/grey_slates_fixed,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZK" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
 /obj/effect/floor_decal/corner_steel_grid/diagonal{
@@ -15038,11 +16219,15 @@
 /obj/machinery/door/airlock/glass,
 /obj/structure/barricade,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZO" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZP" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -15060,7 +16245,9 @@
 	},
 /obj/structure/salvageable/os/power,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZS" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 8
@@ -15086,7 +16273,9 @@
 "ZV" = (
 /obj/item/storage/hcases/engi/has_items_spawn,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/dungeon/outside/prepper/alpha{
+	requires_power = 0
+	})
 "ZW" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -15407,8 +16596,8 @@ dS
 dS
 dS
 dS
-Dz
-Dz
+Fs
+Fs
 Ev
 SI
 XM
@@ -15417,13 +16606,13 @@ Kg
 Ev
 Ev
 Ev
-Dz
+Fs
 Lc
 Sv
 Sv
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 aa
 aa
 RE
@@ -15474,49 +16663,49 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (3,1,1) = {"
@@ -15609,7 +16798,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 Nn
 PC
 TB
@@ -15619,13 +16808,13 @@ TB
 SF
 Is
 Ug
-Dz
+Fs
 Nq
 KR
 KR
 KR
-Dz
-Dz
+Fs
+Fs
 aa
 aa
 RE
@@ -15676,49 +16865,49 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 Db
 qM
 BD
 BD
-MX
-MX
-MX
-MX
-Dz
-MX
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Fs
+Tj
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Tj
+Tj
+Tj
 Id
 Eq
-MX
-MX
-MX
-Dz
-Dz
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (4,1,1) = {"
@@ -15811,7 +17000,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 WM
 Ug
 NW
@@ -15824,86 +17013,86 @@ Ug
 LA
 NI
 De
-HF
+sI
 Ug
-Dz
-Dz
+Fs
+Fs
 aa
 RE
 RE
 WF
 zw
-Fs
+zw
 GS
 Hf
 MT
 RE
 um
-TA
+LG
 LG
 LG
 CY
 LG
 ul
 um
+um
+um
+um
+RE
+RE
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 Tj
-um
-um
-RE
-RE
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 Gt
 qM
-Xu
 qM
 qM
-sI
+qM
+tC
 wx
-Dz
-MX
-Dz
-MX
-Dz
+Fs
+Tj
+Fs
+Tj
+Fs
 Fn
 RW
 Ot
 RW
 RW
-Dz
+Fs
 YX
 Eq
 zG
@@ -15914,13 +17103,13 @@ Eq
 YW
 Eq
 YX
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (5,1,1) = {"
@@ -16013,7 +17202,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 bu
 TL
 NW
@@ -16029,7 +17218,7 @@ Nc
 Vh
 xK
 Sv
-Dz
+Fs
 aa
 RE
 MT
@@ -16080,26 +17269,26 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
 qM
 wx
-sI
-sI
-sI
+tC
+tC
+tC
 KM
 wx
 wx
-sI
-MX
-Dz
-MX
-MX
+tC
+Tj
+Fs
+Tj
+Tj
 Eq
 Gk
 CA
@@ -16116,13 +17305,13 @@ YW
 YW
 YW
 Gc
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (6,1,1) = {"
@@ -16215,7 +17404,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 pb
 Ug
 wR
@@ -16230,8 +17419,8 @@ Ug
 Ug
 ZB
 HF
-Dz
-Dz
+Fs
+Fs
 aa
 RE
 Hf
@@ -16282,26 +17471,26 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 Gl
-sI
+tC
 RP
 wx
-sI
+tC
 ON
 wx
 wx
 Ae
-sI
-sI
-Dz
-MX
-MX
+tC
+tC
+Fs
+Tj
+Tj
 Eq
 Fn
 zT
@@ -16318,13 +17507,13 @@ YW
 OF
 YW
 Rl
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (7,1,1) = {"
@@ -16417,7 +17606,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 bu
 Nr
 RH
@@ -16427,13 +17616,13 @@ Yd
 wa
 Zx
 Hy
-Dz
+Fs
 Pa
 Ug
 Ky
 Ug
-Dz
-Dz
+Fs
+Fs
 aa
 RE
 LN
@@ -16484,10 +17673,10 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 wx
 wx
 wx
@@ -16497,19 +17686,19 @@ wx
 AE
 wx
 wx
-sI
-sI
+tC
+tC
 tC
 st
-Dz
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
 Eq
 Fn
 RW
 RW
-Dz
+Fs
 Eq
 qD
 zG
@@ -16520,13 +17709,13 @@ Eq
 YW
 MR
 ZV
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (8,1,1) = {"
@@ -16619,7 +17808,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 pb
 Ug
 Hy
@@ -16635,7 +17824,7 @@ Ug
 TO
 Ug
 Sv
-Dz
+Fs
 aa
 RE
 RE
@@ -16686,49 +17875,49 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 Pv
 wx
 qM
-sI
+tC
 Lo
-MX
-MX
-MX
+Tj
+Tj
+Tj
 wx
-sI
+tC
 RP
 qM
 Mm
 Fc
-Dz
-MX
-MX
-MX
-MX
-Dz
-Dz
-Dz
-Dz
+Fs
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
+Fs
 qD
 qD
 qD
-Dz
+Fs
 GH
-Dz
-Dz
+Fs
+Fs
 tT
 tT
-Dz
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tn
 "}
 (9,1,1) = {"
@@ -16821,7 +18010,7 @@ dS
 dS
 dS
 dS
-Dz
+Fs
 Nn
 Xb
 Ug
@@ -16831,17 +18020,17 @@ Hy
 Vb
 LM
 Ug
-Dz
+Fs
 yX
 yX
 KZ
 Rr
-Dz
-Dz
+Fs
+Fs
 aa
 aa
 RE
-Dp
+Hf
 Hf
 yw
 Hf
@@ -16888,49 +18077,49 @@ dS
 dS
 dS
 dS
-MX
-MX
+Tj
+Tj
 wx
 wx
-Xu
+qM
 Hm
 qP
-MX
-MX
+Tj
+Tj
 Zs
-MX
+Tj
 XS
 wx
 Wb
-sI
+tC
 qM
 Gi
 YN
-Dz
-Dz
+Fs
+Fs
 qD
 qD
 qD
 qD
 qD
-Dz
-Dz
+Fs
+Fs
 qD
 qD
 qD
-Dz
-Dz
+Fs
+Fs
 IP
 tT
 tT
-Dz
-Dz
-Dz
-Dz
-Dz
-MX
-MX
-MX
+Fs
+Fs
+Fs
+Fs
+Fs
+Tj
+Tj
+Tj
 tn
 "}
 (10,1,1) = {"
@@ -17023,8 +18212,8 @@ dS
 TM
 et
 Eu
-Dz
-Dz
+Fs
+Fs
 EP
 ui
 sk
@@ -17090,22 +18279,22 @@ dS
 dS
 dS
 dS
-MX
-MX
+Tj
+Tj
 wx
-sI
+tC
 qM
-sI
-MX
-MX
+tC
+Tj
+Tj
 Zs
 yH
-MX
-Xu
+Tj
+qM
 qM
 tz
 wx
-sI
+tC
 Pz
 sE
 td
@@ -17116,7 +18305,7 @@ qD
 qD
 Mu
 Gf
-Dz
+Fs
 qD
 YW
 YW
@@ -17129,10 +18318,10 @@ ZC
 YW
 YW
 YW
-Dz
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
 tn
 "}
 (11,1,1) = {"
@@ -17227,9 +18416,9 @@ AT
 yN
 uq
 aa
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Yk
 Yk
 Yp
@@ -17239,7 +18428,7 @@ Py
 Na
 Na
 Yk
-Dz
+Fs
 Yk
 Yk
 aa
@@ -17292,23 +18481,23 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 BD
-sI
+tC
 Wb
 wx
-MX
-MX
+Tj
+Tj
 yF
 yF
 qM
-sI
-sI
+tC
+tC
 wx
 wx
-sI
+tC
 rN
 rq
 Ek
@@ -17318,8 +18507,8 @@ Mu
 Mu
 KX
 Ib
-Dz
-Dz
+Fs
+Fs
 YW
 YW
 YW
@@ -17331,10 +18520,10 @@ tO
 YW
 YW
 YW
-Dz
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
 tn
 "}
 (12,1,1) = {"
@@ -17432,7 +18621,7 @@ aa
 aa
 vK
 vK
-Dz
+Fs
 Yk
 Py
 wn
@@ -17494,21 +18683,21 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 wx
 wx
 Wb
 qP
-sI
+tC
 Wb
 yF
 yF
 Ms
-sI
+tC
 ZO
-sI
+tC
 wx
 wx
 rN
@@ -17520,8 +18709,8 @@ Ug
 Ug
 Ug
 LL
-Dz
-Dz
+Fs
+Fs
 YW
 CA
 YW
@@ -17533,10 +18722,10 @@ Ow
 rY
 CA
 cw
-Dz
+Fs
 qD
-MX
-MX
+Tj
+Tj
 tn
 "}
 (13,1,1) = {"
@@ -17696,16 +18885,16 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 sp
-sI
+tC
 sD
 qM
 Wb
-sI
+tC
 yF
 yF
 Jb
@@ -17735,11 +18924,11 @@ AG
 Ow
 ET
 cw
-Dz
+Fs
 tB
 qD
-MX
-MX
+Tj
+Tj
 "}
 (14,1,1) = {"
 rH
@@ -17898,11 +19087,11 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
 XS
 qM
 ZO
@@ -17941,7 +19130,7 @@ tB
 Ho
 tB
 Ho
-MX
+Tj
 "}
 (15,1,1) = {"
 rH
@@ -18100,20 +19289,20 @@ el
 dS
 dS
 dS
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 ZG
-sI
-sI
 tC
-sI
+tC
+tC
+tC
 Wb
 qM
 yF
 RP
-sI
+tC
 sn
 Oi
 sn
@@ -18143,7 +19332,7 @@ tB
 Vy
 tB
 Vy
-MX
+Tj
 "}
 (16,1,1) = {"
 rH
@@ -18302,12 +19491,12 @@ iw
 xZ
 dS
 dS
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 qM
 qM
-sI
+tC
 ZO
 qM
 qM
@@ -18345,7 +19534,7 @@ tB
 Ho
 Vy
 Rd
-MX
+Tj
 "}
 (17,1,1) = {"
 rH
@@ -18504,8 +19693,8 @@ Vu
 rI
 dS
 dS
-MX
-MX
+Tj
+Tj
 IN
 qP
 qM
@@ -18519,8 +19708,8 @@ Oa
 qM
 qM
 qM
-sI
-sI
+tC
+tC
 sE
 rq
 tE
@@ -18530,7 +19719,7 @@ Bj
 Bj
 Ug
 yu
-Dz
+Fs
 qD
 qD
 cw
@@ -18547,7 +19736,7 @@ Vy
 tB
 tB
 Ho
-MX
+Tj
 "}
 (18,1,1) = {"
 rH
@@ -18706,13 +19895,13 @@ cC
 Ao
 dS
 dS
-MX
-MX
-sI
-sI
+Tj
+Tj
+tC
+tC
 Rx
-sN
-sN
+zi
+zi
 qM
 qM
 qM
@@ -18720,8 +19909,8 @@ qM
 wx
 sp
 qM
-sN
-sI
+zi
+tC
 Ae
 sE
 sQ
@@ -18732,7 +19921,7 @@ IA
 CL
 KX
 Ib
-Dz
+Fs
 qD
 qD
 cw
@@ -18748,8 +19937,8 @@ YW
 DQ
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (19,1,1) = {"
 rH
@@ -18908,23 +20097,23 @@ cC
 cC
 dS
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
 Hm
-sI
-sI
+tC
+tC
 tC
 qM
 sD
 sL
-MX
-MX
+Tj
+Tj
 XS
 qM
-sI
-sI
+tC
+tC
 sE
 sK
 rC
@@ -18934,7 +20123,7 @@ Ug
 FV
 Ug
 Vw
-Dz
+Fs
 qD
 qD
 cw
@@ -18950,8 +20139,8 @@ cw
 qD
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (20,1,1) = {"
 rH
@@ -19110,33 +20299,33 @@ cC
 jm
 rI
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
 qM
 qM
-sI
-sI
-sI
-sI
-MX
-MX
-MX
-Dz
-Xu
+tC
+tC
+tC
+tC
+Tj
+Tj
+Tj
+Fs
+qM
 qM
 Sn
 YN
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Rg
 Rg
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
 qD
 qD
 qD
@@ -19152,8 +20341,8 @@ qD
 qD
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (21,1,1) = {"
 rH
@@ -19312,50 +20501,50 @@ cC
 af
 el
 dS
-MX
-MX
-sI
-sI
-MX
+Tj
+Tj
+tC
+tC
+Tj
 qM
 IN
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 BD
 wx
 Mm
 Fc
-Dz
-MX
-Dz
+Fs
+Tj
+Fs
 VQ
 Rg
 Rg
-Dz
-Dz
+Fs
+Fs
 qD
 qD
 qD
 qD
 qD
 qD
-Dz
+Fs
 tT
 tT
 tT
 KP
-Dz
-Dz
+Fs
+Fs
 qD
 qD
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (22,1,1) = {"
 rH
@@ -19514,42 +20703,42 @@ cC
 jk
 Mv
 dS
-MX
-sI
-sI
-MX
-MX
-MX
+Tj
+tC
+tC
+Tj
+Tj
+Tj
 BD
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 wx
 wx
 wx
-MX
-Dz
-MX
-Dz
+Tj
+Fs
+Tj
+Fs
 Vk
 yf
 yf
 Vk
-Dz
+Fs
 qD
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 GB
 Ne
 Ne
@@ -19557,7 +20746,7 @@ eT
 qD
 qD
 qD
-MX
+Tj
 "}
 (23,1,1) = {"
 rH
@@ -19716,50 +20905,50 @@ cC
 cC
 iW
 dS
-MX
+Tj
 za
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Tj
+Fs
 NB
 Cu
 Rq
 PD
-Dz
+Fs
 qD
-Dz
+Fs
 SR
 xj
 xj
 SR
-Dz
+Fs
 AC
 Wy
 PM
-Dz
+Fs
 aX
-sF
-sF
-sF
+Bv
+Bv
+Bv
 US
 eT
 qD
-MX
+Tj
 "}
 (24,1,1) = {"
 rH
@@ -19918,50 +21107,50 @@ cD
 cC
 cC
 el
-MX
+Tj
 qM
 qM
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Tj
+Fs
 Qu
 RI
 Bd
 Qu
-Dz
+Fs
 qD
-Dz
+Fs
 Uo
 Uo
 Uo
 Uo
-Dz
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 GB
-sF
-sF
+Bv
+Bv
 QS
-sF
-sF
+Bv
+Bv
 eT
-MX
+Tj
 "}
 (25,1,1) = {"
 rH
@@ -20120,50 +21309,50 @@ cC
 cC
 Hg
 dS
-MX
-MX
+Tj
+Tj
 Wb
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Tj
+Fs
 Op
 Rq
 Rq
 NV
-Dz
+Fs
 qD
-Dz
+Fs
 Ry
 Uo
 gz
 Qb
-Dz
+Fs
 tT
 tT
 tT
-Dz
+Fs
 aX
-sF
-sF
-sF
-sF
-sF
+Bv
+Bv
+Bv
+Bv
+Bv
 Ne
-MX
+Tj
 "}
 (26,1,1) = {"
 rH
@@ -20322,50 +21511,50 @@ Mv
 cC
 gJ
 dS
-MX
-MX
+Tj
+Tj
 wx
-MX
-MX
-MX
+Tj
+Tj
+Tj
 BD
 qM
 qM
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Tj
+Fs
 Sq
 Rq
 Rq
 ZA
-Dz
+Fs
 qD
-Dz
+Fs
 vT
 Xn
 WJ
 SR
-Dz
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 GB
 Ne
-sF
-sF
+Bv
+Bv
 Yh
 Ne
 Ne
-MX
+Tj
 "}
 (27,1,1) = {"
 rH
@@ -20524,50 +21713,50 @@ gm
 gy
 Mv
 dS
-MX
+Tj
 qM
 qM
-MX
+Tj
 BD
 qM
-MX
-MX
+Tj
+Tj
 qM
 Wb
-MX
-MX
+Tj
+Tj
 IN
 IN
-sI
-MX
-MX
-MX
-MX
-Dz
-Dz
+tC
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
 GR
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 Am
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 DR
 Wy
 DR
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Xz
 ua
-Dz
-Dz
-Dz
-MX
+Fs
+Fs
+Fs
+Tj
 "}
 (28,1,1) = {"
 rH
@@ -20726,32 +21915,32 @@ gy
 gy
 gJ
 el
-MX
-MX
+Tj
+Tj
 qM
 qM
 qM
-sI
-MX
+tC
+Tj
 qM
 qM
 Wb
 Wb
-MX
+Tj
 qM
 qM
 wx
 wx
 qM
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 YW
 YW
 YW
-MX
-MX
-MX
+Tj
+Tj
+Tj
 cw
 YW
 YW
@@ -20768,8 +21957,8 @@ YW
 cw
 cw
 qD
-MX
-MX
+Tj
+Tj
 "}
 (29,1,1) = {"
 rH
@@ -20928,32 +22117,32 @@ gy
 iN
 Gv
 dS
-MX
-MX
-MX
-MX
-MX
-sI
+Tj
+Tj
+Tj
+Tj
+Tj
+tC
 Lk
 qM
-MX
-MX
+Tj
+Tj
 Wb
-sI
-sI
-MX
-MX
+tC
+tC
+Tj
+Tj
 Wb
-sI
+tC
 ZO
-MX
-MX
+Tj
+Tj
 Wy
 Wy
 Wy
 Wy
-MX
-MX
+Tj
+Tj
 sO
 Wy
 Wy
@@ -20970,8 +22159,8 @@ Wy
 sO
 sO
 qD
-MX
-MX
+Tj
+Tj
 "}
 (30,1,1) = {"
 rH
@@ -21130,34 +22319,34 @@ gy
 gy
 Cw
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-sI
-sN
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+tC
+zi
 va
-MX
-MX
-MX
+Tj
+Tj
+Tj
 YW
 YW
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 cw
 cw
 YW
@@ -21172,8 +22361,8 @@ cw
 cw
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (31,1,1) = {"
 rH
@@ -21347,35 +22536,35 @@ tn
 tn
 tn
 tn
-MX
-MX
-MX
+Tj
+Tj
+Tj
 sq
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Fs
 Es
-Dz
-MX
-MX
-MX
-Dz
+Fs
+Tj
+Tj
+Tj
+Fs
 Es
-Dz
-Dz
+Fs
+Fs
 DR
 Wy
 DR
-Dz
-Dz
+Fs
+Fs
 Xz
 aH
 aH
-Dz
-Dz
-Dz
-MX
+Fs
+Fs
+Fs
+Tj
 "}
 (32,1,1) = {"
 rH
@@ -21551,33 +22740,33 @@ dS
 dS
 dS
 aa
-MX
+Tj
 sq
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Fs
 tk
-Dz
-MX
-MX
-MX
-Dz
+Fs
+Tj
+Tj
+Tj
+Fs
 tk
-Dz
-Dz
+Fs
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 Uf
-sF
+Bv
 eT
 eT
 MC
 sF
-Dz
-MX
+Fs
+Tj
 "}
 (33,1,1) = {"
 rH
@@ -21753,33 +22942,33 @@ QZ
 dS
 dS
 aa
-MX
+Tj
 sq
-MX
-MX
-Dz
-Dz
+Tj
+Tj
+Fs
+Fs
 tk
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
 tk
-Dz
+Fs
 PJ
 YW
 Wy
 YW
-Dz
+Fs
 yW
 Ih
-sF
+Bv
 Gh
-sF
-sF
-Dz
-MX
+Uy
+TA
+Fs
+Tj
 "}
 (34,1,1) = {"
 rH
@@ -21955,33 +23144,33 @@ xW
 QZ
 dS
 aa
-MX
+Tj
 Vp
 ZO
-MX
+Tj
 Ra
 AN
 wi
 YJ
-Ma
-Ma
-Ma
-Ma
+Dp
+Dp
+Dp
+Dp
 Zq
-Dz
+Fs
 YW
 Wy
 Wy
 YW
-Dz
+Fs
 xF
-sF
 Bv
-sF
-qZ
+Bv
+Bv
+sN
 yW
-Dz
-MX
+Fs
+Tj
 "}
 (35,1,1) = {"
 rH
@@ -22157,33 +23346,33 @@ Pn
 dS
 dS
 dS
-MX
-MX
-sN
-MX
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Tj
+Tj
+zi
+Tj
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 tk
-Dz
+Fs
 YW
 Wy
 YW
 PJ
-Dz
+Fs
 Sw
 Ih
-sF
-JP
-sF
+Bv
+Bv
+Bv
 xF
-Dz
-MX
+Fs
+Tj
 "}
 (36,1,1) = {"
 rH
@@ -22359,33 +23548,33 @@ ZP
 ZP
 ZP
 dS
-MX
-MX
+Tj
+Tj
 Wb
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 tQ
 tQ
 tQ
-MX
-Dz
-QJ
-Dz
+Tj
+Fs
+Cs
+Fs
 YW
 Wy
 YW
-Dz
-Dz
+Fs
+Fs
 TP
-JP
+Bv
 Yb
-sF
+Bv
 qZ
 Sw
-Dz
-MX
+Fs
+Tj
 "}
 (37,1,1) = {"
 rH
@@ -22561,33 +23750,33 @@ wH
 FA
 pD
 dS
-MX
-MX
+Tj
+Tj
 qM
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 tb
 tQ
 tb
-MX
-Dz
+Tj
+Fs
 yQ
-Dz
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 uf
 tM
 Ih
-Gh
+wL
 qZ
 QV
 VB
-Dz
-MX
+Fs
+Tj
 "}
 (38,1,1) = {"
 rH
@@ -22763,33 +23952,33 @@ wH
 vh
 ZP
 dS
-MX
-MX
+Tj
+Tj
 qM
 qY
-sI
+tC
 tb
-MX
+Tj
 tQ
-Dz
+Fs
 Zi
-Dz
-Dz
+Fs
+Fs
 Ax
-Dz
+Fs
 YW
 Wy
 YW
-Dz
+Fs
 AP
-sF
-sF
-sF
+Bv
+Bv
+Bv
 Zk
 QX
 Pe
-Dz
-MX
+Fs
+Tj
 "}
 (39,1,1) = {"
 rH
@@ -22965,33 +24154,33 @@ wH
 Oy
 Oy
 dS
-MX
-MX
+Tj
+Tj
 qM
-MX
-MX
+Tj
+Tj
 LO
-MX
-Dz
-Dz
-QJ
-Dz
-Dz
+Tj
+Fs
+Fs
+Cs
+Fs
+Fs
 Ax
-Dz
+Fs
 DR
 Wy
 DR
-Dz
+Fs
 aX
 yJ
 qG
-sF
+Bv
 qZ
 Vo
 xp
-Dz
-MX
+Fs
+Tj
 "}
 (40,1,1) = {"
 rH
@@ -23167,33 +24356,33 @@ pR
 KC
 Ct
 dS
-MX
-MX
+Tj
+Tj
 Pc
-MX
+Tj
 tb
 ya
-MX
-Dz
+Tj
+Fs
 Qz
 wi
-Ma
-GD
+Dp
+JP
 vV
-Dz
+Fs
 YW
 Wy
 YW
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
 Jy
-Dz
-Dz
-Dz
-Dz
-MX
+Fs
+Fs
+Fs
+Fs
+Tj
 "}
 (41,1,1) = {"
 rH
@@ -23370,32 +24559,32 @@ pR
 Ct
 dS
 tn
-MX
+Tj
 Pc
-MX
+Tj
 LO
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 Ax
-Dz
-Dz
+Fs
+Fs
 JQ
-Dz
-Dz
+Fs
+Fs
 YW
 Wy
 PM
-Dz
-RO
+Fs
+JT
 UH
-RO
-RO
+JT
+JT
 UH
-RO
-RO
-Dz
-MX
+JT
+JT
+Fs
+Tj
 "}
 (42,1,1) = {"
 rH
@@ -23572,32 +24761,32 @@ pR
 pR
 dS
 tn
-MX
+Tj
 wx
-MX
+Tj
 tb
 Jz
-MX
-Dz
+Tj
+Fs
 yQ
-Dz
+Fs
 BD
 EX
 BD
-Dz
+Fs
 YW
 Wy
 YW
 ip
-RO
-Ip
-RO
-RO
-Ip
-RO
-RO
-Dz
-MX
+JT
+JT
+JT
+JT
+JT
+JT
+JT
+Fs
+Tj
 "}
 (43,1,1) = {"
 rH
@@ -23774,32 +24963,32 @@ cD
 pR
 dS
 dS
-MX
-sI
-MX
-MX
-MX
-MX
-Dz
+Tj
+tC
+Tj
+Tj
+Tj
+Tj
+Fs
 yQ
-Dz
+Fs
 BD
 NP
 bX
-Dz
+Fs
 AC
 Wy
 Wy
 ip
-RO
-RO
-RO
 JT
-RO
+JT
+JT
+JT
+JT
 rz
-RO
-Dz
-MX
+JT
+Fs
+Tj
 "}
 (44,1,1) = {"
 rH
@@ -23976,32 +25165,32 @@ cD
 cC
 cC
 dS
-MX
+Tj
 wx
-MX
-Dz
-Dz
-Dz
-Dz
+Tj
+Fs
+Fs
+Fs
+Fs
 yQ
-Dz
+Fs
 tj
 IN
 tb
-Dz
+Fs
 YW
 Wy
 YW
 Bw
-RO
+JT
 Kn
 ES
-RO
+JT
 VD
 BQ
-RO
-Dz
-MX
+JT
+Fs
+Tj
 "}
 (45,1,1) = {"
 rH
@@ -24178,32 +25367,32 @@ pB
 pK
 qg
 dS
-MX
+Tj
 wx
-MX
-Dz
+Tj
+Fs
 ZJ
 ZJ
-Dz
+Fs
 yQ
-Dz
+Fs
 EX
 NP
 IN
-Dz
+Fs
 YW
 Wy
 PM
-Dz
+Fs
 Gb
 SK
-sF
+Bv
 If
-sF
-sF
+Bv
+Bv
 Sg
-Dz
-MX
+Fs
+Tj
 "}
 (46,1,1) = {"
 rH
@@ -24380,32 +25569,32 @@ cC
 cC
 rs
 dS
-MX
+Tj
 QE
-MX
-Dz
+Tj
+Fs
 Fp
 rP
-Dz
+Fs
 XG
-Dz
+Fs
 IN
 NP
 bX
-Dz
+Fs
 xg
 Wy
 Nv
-Dz
+Fs
 Gb
-sF
 Bv
-sF
-JP
-sF
+Bv
+Bv
+Bv
+Bv
 Sg
-Dz
-MX
+Fs
+Tj
 "}
 (47,1,1) = {"
 rH
@@ -24582,32 +25771,32 @@ cC
 pN
 aa
 aa
-MX
+Tj
 QE
-MX
-Dz
+Tj
+Fs
 Ij
 yU
-Dz
+Fs
 xm
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 Jm
-Dz
-Dz
+Fs
+Fs
 Gb
-Fk
+TA
 TV
-sF
-sF
-Fk
+Bv
+Bv
+TA
 Sg
-Dz
-MX
+Fs
+Tj
 "}
 (48,1,1) = {"
 rH
@@ -24783,33 +25972,33 @@ aa
 aa
 aa
 aa
-MX
-MX
+Tj
+Tj
 qM
-MX
-Dz
-Dz
+Tj
+Fs
+Fs
 Dd
-Dz
-sF
+Fs
+Bv
 tP
 Tk
 Ce
 Ko
-Dz
+Fs
 qI
 Aw
 MP
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Bz
 tT
 Bz
 Il
-Dz
-Dz
-MX
+Fs
+Fs
+Tj
 "}
 (49,1,1) = {"
 rH
@@ -24972,37 +26161,37 @@ eK
 et
 dS
 aa
-MX
-MX
-MX
-sI
-sI
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+tC
+tC
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 si
-sI
-MX
-Dz
+tC
+Tj
+Fs
 Me
-sF
-sF
-sF
+Bv
+Bv
+Bv
 xT
 Xe
 Ko
 vw
-Dz
+Fs
 qI
 Aw
 MP
-Dz
+Fs
 sY
 sY
 wk
@@ -25010,8 +26199,8 @@ fA
 wk
 sY
 sY
-Dz
-MX
+Fs
+Tj
 "}
 (50,1,1) = {"
 rH
@@ -25174,37 +26363,37 @@ et
 qW
 dS
 aa
-MX
-MX
-sI
+Tj
+Tj
+tC
 qM
-sI
-MX
-MX
-MX
-MX
+tC
+Tj
+Tj
+Tj
+Tj
 ru
 za
 Xu
-MX
-MX
+Tj
+Tj
 qM
 wx
-MX
-Dz
+Tj
+Fs
 yz
 Cy
 zz
 Gg
-sF
+Bv
 uc
 Ko
 IX
-Dz
+Fs
 Jf
 Aw
 bW
-Dz
+Fs
 sY
 VI
 rw
@@ -25212,8 +26401,8 @@ rw
 rw
 OX
 sY
-Dz
-MX
+Fs
+Tj
 "}
 (51,1,1) = {"
 rH
@@ -25376,37 +26565,37 @@ qW
 et
 dS
 aa
-MX
+Tj
 qA
 qM
 qM
 qM
-sI
-MX
-MX
-sI
-sI
+tC
+Tj
+Tj
+tC
+tC
 qM
 qM
-MX
+Tj
 Wb
 qM
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 HA
-sF
-sF
+Bv
+Bv
 Bp
-sF
+Bv
 SM
 Ce
 Ko
-Dz
+Fs
 Jf
 Dv
 bW
-Dz
+Fs
 sY
 co
 OX
@@ -25414,8 +26603,8 @@ JF
 rw
 OX
 sY
-Dz
-MX
+Fs
+Tj
 "}
 (52,1,1) = {"
 rH
@@ -25578,37 +26767,37 @@ et
 et
 sh
 dS
-MX
+Tj
 qM
 qM
 qM
 qM
-sI
-MX
-MX
+tC
+Tj
+Tj
 wx
 qM
 qM
 qM
 wx
 Wb
-MX
-MX
-MX
-Dz
-sF
+Tj
+Tj
+Tj
+Fs
+Bv
 AK
-sF
-sF
+Bv
+Bv
 qh
 Wv
 kx
 kx
-Dz
+Fs
 qI
 Aw
 MP
-Dz
+Fs
 sY
 Tv
 VI
@@ -25616,8 +26805,8 @@ OX
 RY
 VI
 sY
-Dz
-MX
+Fs
+Tj
 "}
 (53,1,1) = {"
 rH
@@ -25779,38 +26968,38 @@ et
 et
 qK
 qz
-MX
-MX
+Tj
+Tj
 rd
 tq
 qM
 qM
 qD
-MX
-MX
-MX
+Tj
+Tj
+Tj
 si
-sI
+tC
 qM
-MX
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
 tY
-sF
+Bv
 IW
 YO
-sF
+Bv
 wL
-sF
-sF
-Dz
+Bv
+Bv
+Fs
 UA
 Aw
 qS
-Dz
+Fs
 sY
 sY
 sY
@@ -25818,8 +27007,8 @@ sY
 sY
 sY
 sY
-Dz
-MX
+Fs
+Tj
 "}
 (54,1,1) = {"
 rH
@@ -25981,47 +27170,47 @@ et
 Ha
 cC
 WX
-MX
+Tj
 rE
 tq
 tq
 tq
 so
 qD
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 rk
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
 Ph
-Dz
+Fs
 PW
 Fz
 Cb
 sW
 Cb
-Dz
+Fs
 sZ
 aY
 sZ
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 "}
 (55,1,1) = {"
 rH
@@ -26183,47 +27372,47 @@ et
 cC
 WX
 WX
-MX
+Tj
 rE
 rE
 rE
 tq
 qM
 qD
-MX
-MX
-MX
+Tj
+Tj
+Tj
 sC
 rk
 re
-MX
-MX
-MX
-MX
-Dz
-Dz
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
 Pf
 ua
 Pf
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 YW
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 qD
 qD
 qD
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 "}
 (56,1,1) = {"
 rH
@@ -26392,40 +27581,40 @@ rE
 tq
 tq
 qM
-MX
-MX
+Tj
+Tj
 DB
 rj
 Ed
 CX
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Fs
 KF
-sF
-sF
-sF
-Dz
+Bv
+Bv
+Bv
+Fs
 Og
 MS
 MS
 EW
-Dz
+Fs
 YW
 Wy
 YW
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 qD
 qD
 qD
-Dz
-Dz
-MX
-MX
+Fs
+Fs
+Tj
+Tj
 "}
 (57,1,1) = {"
 rH
@@ -26594,27 +27783,27 @@ rE
 tq
 tq
 qM
-MX
-MX
+Tj
+Tj
 rp
 Ed
 Ed
 rj
-MX
+Tj
 tH
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 AO
 IT
-sF
+Bv
 Yo
 Dk
 Og
 NO
 Px
 MS
-Dz
+Fs
 YW
 Wy
 YW
@@ -26625,9 +27814,9 @@ cw
 UY
 cw
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (58,1,1) = {"
 rH
@@ -26796,27 +27985,27 @@ rE
 tq
 qM
 qD
-MX
-MX
+Tj
+Tj
 Dr
 GO
 Ed
 qM
 qM
 qM
-sN
-MX
-Dz
+zi
+Tj
+Fs
 Lv
-sF
-sF
-Fk
-Dz
+Bv
+Bv
+TA
+Fs
 zf
 yE
 JC
 MS
-Dz
+Fs
 YW
 bN
 Wy
@@ -26827,9 +28016,9 @@ Wy
 Wy
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (59,1,1) = {"
 rH
@@ -26997,28 +28186,28 @@ rE
 tq
 qM
 qM
-MX
-MX
+Tj
+Tj
 rG
 zF
 rp
 Ed
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
-MX
-Dz
+Tj
+Fs
 AO
 IT
-Fk
-Fk
-Dz
+TA
+TA
+Fs
 GE
 DC
 JZ
 Og
-Dz
+Fs
 YW
 YW
 YW
@@ -27029,9 +28218,9 @@ YW
 rf
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (60,1,1) = {"
 rH
@@ -27195,45 +28384,45 @@ cC
 WX
 rE
 rE
-MX
+Tj
 so
 so
-MX
-MX
+Tj
+Tj
 sc
 Ed
 aC
 bh
 Ed
 zX
-MX
+Tj
 tz
 qM
-MX
-Dz
+Tj
+Fs
 DI
-sF
-Fk
-Fk
-Dz
+Bv
+TA
+TA
+Fs
 Fu
 GE
 GE
 Og
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 YW
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (61,1,1) = {"
 rH
@@ -27396,46 +28585,46 @@ dS
 qK
 cC
 rE
-MX
-MX
+Tj
+Tj
 qD
 qD
-MX
-MX
-MX
+Tj
+Tj
+Tj
 Ed
 zF
 sx
 rj
 im
-MX
-MX
+Tj
+Tj
 Wb
-MX
-Dz
+Tj
+Fs
 AO
 IT
-sF
-Fk
-Dz
-Dz
+Bv
+TA
+Fs
+Fs
 Rg
 Rg
-Dz
+Fs
 IC
 JR
 JR
-Dz
+Fs
 UU
 wg
 Eg
-Dz
+Fs
 qU
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (62,1,1) = {"
 rH
@@ -27598,46 +28787,46 @@ iq
 CD
 et
 tq
-MX
-MX
+Tj
+Tj
 qD
 qD
-MX
-MX
-MX
-DB
+Tj
+Tj
+Tj
+Ed
 RZ
 Ed
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 ri
-MX
-Dz
+Tj
+Fs
 KF
-sF
-sF
-sF
+Bv
+Bv
+Bv
 NS
 EA
 Gq
 Gq
 Zd
 OA
-sF
-sF
+Bv
+Bv
 Jo
 uc
 uc
 uc
-Dz
+Fs
 qU
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (63,1,1) = {"
 rH
@@ -27800,46 +28989,46 @@ dS
 et
 qK
 tn
-MX
+Tj
 tB
 so
 so
-sI
-sI
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+tC
+tC
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 Wb
 qM
-MX
-Dz
-sF
-sF
-sF
-sF
+Tj
+Fs
+Bv
+Bv
+Bv
+Bv
 NS
 EA
 Vr
 Vr
 Zd
 OA
-sF
-sF
+Bv
+Bv
 Jo
 uc
 KG
 uc
-Dz
+Fs
 YW
 Wy
 Xg
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (64,1,1) = {"
 rH
@@ -28002,46 +29191,46 @@ et
 qK
 et
 tn
-MX
-qM
-za
+Tj
 qM
 qM
-sI
-MX
-MX
+qM
+qM
+tC
+Tj
+Tj
 Ub
 Ed
 rj
 tH
 tH
 tH
-MX
-MX
-Dz
-Dz
+Tj
+Tj
+Fs
+Fs
 zB
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 QU
-sF
-sF
-Dz
+Bv
+Bv
+Fs
 uc
 uc
 uc
-Dz
+Fs
 YW
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (65,1,1) = {"
 rH
@@ -28203,8 +29392,8 @@ et
 qW
 qW
 dS
-MX
-MX
+Tj
+Tj
 tB
 qM
 qM
@@ -28214,36 +29403,36 @@ rj
 rj
 Ed
 ry
-MX
+Tj
 Qh
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Fs
 uc
 uc
-Dz
+Fs
 tr
 Pw
 Pw
 Pw
 tr
-Dz
-Dz
+Fs
+Fs
 Zp
 Zp
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
 UV
 yp
 LJ
 wl
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (66,1,1) = {"
 rH
@@ -28406,23 +29595,23 @@ et
 et
 GQ
 aa
-MX
+Tj
 tB
 tB
 qM
-za
+qM
 qM
 rj
-MX
+Tj
 Ed
-MX
-MX
-MX
-MX
-Dz
-Dz
-Dz
-Dz
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
+Fs
 uc
 uc
 uc
@@ -28431,21 +29620,21 @@ ju
 JB
 Ua
 ju
-Dz
-Dz
-sF
-sF
-sF
+Fs
+Fs
+Bv
+Bv
+Bv
 sR
-sF
+Bv
 VG
 ip
 XN
 zn
 qQ
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (67,1,1) = {"
 rH
@@ -28609,22 +29798,22 @@ ey
 GQ
 ud
 ud
-MX
-MX
+Tj
+Tj
 qM
 qM
-sI
-MX
-MX
+tC
+Tj
+Tj
 Ed
 Ed
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Fs
 SQ
-sF
-Dz
+Bv
+Fs
 uc
 uc
 uc
@@ -28634,20 +29823,20 @@ qX
 qX
 qX
 qX
-Dz
-sF
-sF
-Fk
+Fs
+Bv
+Bv
+TA
 sR
-sF
+Bv
 xm
 ip
 Wy
 qQ
 LJ
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (68,1,1) = {"
 rH
@@ -28811,21 +30000,21 @@ bn
 GN
 su
 aa
-MX
-MX
+Tj
+Tj
 qM
 qM
-sI
-MX
-MX
+tC
+Tj
+Tj
 Ed
 Ed
 rS
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 LK
-sF
+Bv
 JS
 aI
 KI
@@ -28836,20 +30025,20 @@ qX
 qX
 qX
 qX
-Dz
-sF
-Fk
-Fk
+Fs
+Bv
+TA
+TA
 sR
-sF
+Bv
 PW
 ip
 Wy
 Wy
 CR
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (69,1,1) = {"
 rH
@@ -29013,22 +30202,22 @@ bn
 GN
 Sj
 aa
-MX
-MX
+Tj
+Tj
 tt
 sz
-sI
-MX
-MX
+tC
+Tj
+Tj
 rh
 sM
 Wb
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 AW
 Gq
-Dz
+Fs
 uc
 uc
 rL
@@ -29038,20 +30227,20 @@ qX
 qX
 qX
 FI
-Dz
-sF
-Fk
-Dz
-Dz
-Dz
+Fs
+Bv
+TA
+Fs
+Fs
+Fs
 JG
 UV
 rf
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (70,1,1) = {"
 rH
@@ -29215,22 +30404,22 @@ vK
 GN
 su
 aa
-MX
+Tj
 tD
 tB
 tt
 tt
-MX
-MX
+Tj
+Tj
 tc
 sM
 qH
-MX
-MX
-Dz
+Tj
+Tj
+Fs
 rt
 rt
-Dz
+Fs
 Ee
 uc
 rL
@@ -29240,20 +30429,20 @@ qX
 qX
 qX
 qX
-Dz
-Fk
-Cs
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+TA
+sF
+Fs
+Fs
+Fs
+Fs
+Fs
 YW
 bN
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (71,1,1) = {"
 rH
@@ -29417,21 +30606,21 @@ OG
 ud
 ud
 ud
-MX
-MX
-MX
+Tj
+Tj
+Tj
 tB
 tB
-MX
+Tj
 so
-za
+qM
 Wb
 tH
-MX
-MX
-Dz
-Dz
-Dz
+Tj
+Tj
+Fs
+Fs
+Fs
 XK
 AF
 ro
@@ -29442,20 +30631,20 @@ qX
 qX
 qX
 qX
-Dz
-Cs
-Fk
-Dz
+Fs
+sF
+TA
+Fs
 Tm
 AS
 PO
-Dz
+Fs
 YW
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (72,1,1) = {"
 rH
@@ -29618,23 +30807,23 @@ gy
 gm
 ud
 aa
-MX
-MX
+Tj
+Tj
 tD
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tH
 tH
-MX
-Dz
+Tj
+Fs
 vN
 Eb
-Dz
+Fs
 Ee
 uc
 rL
@@ -29644,20 +30833,20 @@ qX
 qX
 qX
 qX
-Dz
-Fk
-Fk
+Fs
+TA
+TA
 ti
 Fa
 PO
 Yv
-Dz
+Fs
 YW
 Wy
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (73,1,1) = {"
 rH
@@ -29820,23 +31009,23 @@ Oy
 Oy
 vK
 aa
-MX
-MX
+Tj
+Tj
 qM
 qM
 qM
 qM
 so
-MX
-MX
-MX
-MX
-sN
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+zi
+Tj
+Fs
 YP
 lV
-Dz
+Fs
 uc
 uc
 rL
@@ -29846,20 +31035,20 @@ qX
 qX
 qX
 FI
-Dz
-Fk
-Cs
+Fs
+TA
+sF
 ti
 PO
 wc
 PO
-Dz
+Fs
 YW
 bN
 YW
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (74,1,1) = {"
 rH
@@ -30022,22 +31211,22 @@ ZP
 ZP
 Oy
 dS
-MX
+Tj
 so
-sN
+zi
 qM
 tA
 zi
 rm
-MX
+Tj
 Wb
 tF
 qM
 qM
-MX
-Dz
+Tj
+Fs
 QM
-sF
+Bv
 ID
 wD
 uc
@@ -30048,20 +31237,20 @@ qX
 qX
 qX
 qX
-Dz
-Cs
-Fk
-Dz
+Fs
+sF
+TA
+Fs
 UF
 tS
 AS
-Dz
+Fs
 cw
 Ik
 cw
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (75,1,1) = {"
 rH
@@ -30224,23 +31413,23 @@ ZP
 ZP
 ZP
 dS
-MX
+Tj
 tA
 sw
-za
-sN
+qM
+zi
 tL
 rb
 rl
-sN
+zi
 qM
 qM
-MX
-MX
-Dz
-sF
-sF
-Dz
+Tj
+Tj
+Fs
+Bv
+Bv
+Fs
 uc
 uc
 uc
@@ -30250,20 +31439,20 @@ qX
 qX
 qX
 qX
-Dz
+Fs
 Uy
-Cs
-Dz
-Dz
-Dz
-Dz
-Dz
+sF
+Fs
+Fs
+Fs
+Fs
+Fs
 qD
 qD
 qD
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (76,1,1) = {"
 rH
@@ -30426,46 +31615,46 @@ ZP
 ZP
 ZP
 dS
-MX
-sN
+Tj
+zi
 qM
 qM
 tF
 qM
-MX
+Tj
 ta
 so
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 HH
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 qD
 qD
 qD
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (77,1,1) = {"
 rH
@@ -30628,16 +31817,16 @@ ZP
 ZP
 ZP
 dS
-MX
+Tj
 qM
-sN
+zi
 qM
 rn
 qM
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
 Ly
 qM
 qM
@@ -30645,29 +31834,29 @@ QE
 Fr
 IY
 Fr
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Fr
 ER
 Wx
-Dz
+Fs
 yQ
-Dz
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Fs
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 qD
 qD
 qD
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (78,1,1) = {"
 rH
@@ -30830,46 +32019,46 @@ ZP
 ZP
 ZP
 dS
-MX
+Tj
 so
 so
 qM
 zi
 so
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Fs
 qM
 qM
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Fr
 Fr
 Fr
-Dz
+Fs
 IY
-Dz
+Fs
 TI
-Dz
+Fs
 QY
-Dz
-MX
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Tj
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 qD
 qD
 qD
 qD
 qD
-MX
-MX
+Tj
+Tj
 "}
 (79,1,1) = {"
 rH
@@ -31032,34 +32221,34 @@ ZP
 ZP
 ZP
 dS
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
 so
 so
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
 qM
-MX
-MX
-MX
-Dz
-Dz
-Dz
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
 IY
 Fr
 YY
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
 Fr
-Dz
-MX
-Dz
+Fs
+Tj
+Fs
 Yl
 rx
 Hw
@@ -31070,8 +32259,8 @@ GV
 RJ
 GV
 qD
-MX
-MX
+Tj
+Tj
 "}
 (80,1,1) = {"
 rH
@@ -31234,34 +32423,34 @@ ZP
 ZP
 ZP
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 qM
 Wb
 Wb
 qM
-MX
+Tj
 tz
-MX
-MX
-MX
-Dz
-Dz
-Dz
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
 MO
 Fr
 Fr
 IY
 Fr
-Dz
-MX
-Dz
+Fs
+Tj
+Fs
 On
 Dy
 kF
@@ -31272,8 +32461,8 @@ KL
 UK
 RJ
 qD
-MX
-MX
+Tj
+Tj
 "}
 (81,1,1) = {"
 rH
@@ -31437,35 +32626,35 @@ ZP
 ZP
 dS
 tn
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 Wb
 Wb
-MX
-MX
-MX
+Tj
+Tj
+Tj
 qM
-MX
-MX
-MX
-MX
-MX
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Tj
+Fs
 OZ
-BS
+Ip
 yB
 tp
 yd
@@ -31473,9 +32662,9 @@ yF
 cb
 Ps
 TK
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (82,1,1) = {"
 rH
@@ -31642,14 +32831,14 @@ dS
 dS
 dS
 dS
-MX
+Tj
 qM
 qM
 qM
 qM
-MX
-MX
-MX
+Tj
+Tj
+Tj
 IN
 qM
 Wb
@@ -31657,15 +32846,15 @@ Wb
 qM
 qM
 qM
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-Dz
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Fs
 OZ
 UK
 UK
@@ -31675,9 +32864,9 @@ UK
 UK
 UK
 TK
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (83,1,1) = {"
 rH
@@ -31844,10 +33033,10 @@ dS
 dS
 dS
 dS
-MX
+Tj
 za
-MX
-MX
+Tj
+Tj
 qM
 Wb
 qM
@@ -31855,21 +33044,21 @@ qM
 Wb
 Wb
 Wb
-MX
-MX
-MX
+Tj
+Tj
+Tj
 Wb
-MX
+Tj
 Ly
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 Ze
 UK
 Yr
@@ -31877,9 +33066,9 @@ cb
 Ze
 UK
 TK
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (84,1,1) = {"
 rH
@@ -32046,32 +33235,32 @@ dS
 dS
 dS
 dS
-MX
+Tj
 Li
-MX
+Tj
 IN
 Wb
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
 WZ
-MX
-MX
+Tj
+Tj
 IN
 Wb
-Dz
+Fs
 Fr
-Dz
-Dz
+Fs
+Fs
 qR
 qR
 Nz
 GY
 GY
-Dz
-Dz
+Fs
+Fs
 TK
 UK
 UK
@@ -32079,9 +33268,9 @@ xI
 yq
 Go
 TK
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (85,1,1) = {"
 rH
@@ -32248,19 +33437,19 @@ dS
 dS
 dS
 dS
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 za
 qM
 Wb
@@ -32268,8 +33457,8 @@ Fr
 qR
 qR
 qR
-Dz
-Dz
+Fs
+Fs
 NG
 GY
 ZN
@@ -32281,9 +33470,9 @@ KL
 UK
 UK
 TK
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (86,1,1) = {"
 rH
@@ -32451,41 +33640,41 @@ dS
 dS
 dS
 tn
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
-MX
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
+Tj
 tN
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
-Dz
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
 KL
-MX
-MX
-MX
+Tj
+Tj
+Tj
 KL
 TK
 TT
-Dz
-MX
-MX
+Fs
+Tj
+Tj
 "}
 (87,1,1) = {"
 rH
