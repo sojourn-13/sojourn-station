@@ -55,8 +55,9 @@
 	reagent_immune = TRUE
 	toxin_immune = TRUE
 
-	var/poison_per_bite = 0
-	var/poison_type = "mindmelter"
+	poison_per_bite = 0
+	poison_type = "mindmelter"
+
 	var/last_noise = -30000
 	var/chameleon_skill = 10
 	var/phaser = TRUE

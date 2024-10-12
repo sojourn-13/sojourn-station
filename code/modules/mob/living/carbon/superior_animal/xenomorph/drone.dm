@@ -57,8 +57,8 @@ var/datum/xenomorph/xenomorph_ai
 	min_breath_poison_type = 0
 	default_pixel_x = -14
 
-	var/poison_per_bite = 0
-	var/poison_type = "xenotoxin"
+	poison_per_bite = 0
+	poison_type = "xenotoxin"
 	pass_flags = PASSTABLE
 	faction = "xenomorph"
 

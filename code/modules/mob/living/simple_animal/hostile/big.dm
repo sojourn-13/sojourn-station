@@ -96,6 +96,8 @@
 	faction = "vox_tribe" //Same as wasps
 	melee_damage_lower = 40
 	melee_damage_upper = 45
+	poison_per_bite = 6
+	poison_type = "wasp_toxin"
 
 /mob/living/simple_animal/hostile/render/chunks
 	name = "Chunks"
