@@ -347,8 +347,9 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "bv" = (
 /obj/structure/flora/rock/variant2,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "bw" = (
 /obj/item/honey_frame/frameless,
 /turf/simulated/floor/asteroid/grass,
@@ -5298,11 +5299,6 @@
 	},
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"sX" = (
-/turf/simulated/mineral/planet{
-	icon_state = "rock2"
-	},
-/area/nadezhda/dungeon/outside/prepper/alpha)
 "sY" = (
 /turf/simulated/wall/cloth,
 /area/nadezhda/dungeon/outside/prepper/alpha)
@@ -5379,10 +5375,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"tl" = (
-/mob/living/simple_animal/hostile/plant/alt,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/beast_cave_light)
 "tm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -5663,7 +5655,7 @@
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/grassa2,
 /turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "ur" = (
 /obj/structure/table/standard,
 /obj/random/junkfood/rotten/low_chance,
@@ -6479,10 +6471,6 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"wU" = (
-/mob/living/simple_animal/hostile/plant/alt,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_light)
 "wV" = (
 /obj/effect/spider/stickyweb,
 /obj/random/gun_shotgun/low_chance,
@@ -6770,8 +6758,8 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "xQ" = (
-/mob/living/simple_animal/hostile/plant,
-/turf/simulated/floor/asteroid/dirt/mud,
+/obj/structure/invislight,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xR" = (
 /obj/structure/flora/small/snow/boulder2,
@@ -8460,8 +8448,8 @@
 /obj/structure/bed/chair/comfy/purp{
 	dir = 8
 	},
-/obj/item/organ_module/active/hud/night_bio,
 /obj/item/remains/mummy2,
+/obj/item/organ_module/active/hud/night,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "DD" = (
@@ -8709,7 +8697,8 @@
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Eu" = (
-/obj/random/scrap/dense_weighted,
+/obj/structure/flora/tree/jungle_small/variant2,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ev" = (
@@ -10143,8 +10132,9 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Jh" = (
 /obj/random/scrap/dense_weighted,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ji" = (
 /obj/structure/scrap/cloth,
 /turf/simulated/floor/asteroid/grass/dry,
@@ -12079,7 +12069,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/turf/space,
+/turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "PH" = (
 /obj/effect/decal/cleanable/dirt/snow,
@@ -14103,7 +14093,7 @@
 "We" = (
 /obj/structure/flora/small/grassa2,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_light)
 "Wf" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -14451,10 +14441,6 @@
 /obj/item/tool/sword/saber/cutlass,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Xs" = (
-/mob/living/simple_animal/hostile/plant,
-/turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Xt" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/decal/cleanable/dirt,
@@ -17012,7 +16998,7 @@ dS
 dS
 dS
 dS
-MX
+Dz
 Nn
 Xb
 Ug
@@ -17213,8 +17199,8 @@ dS
 dS
 TM
 et
-qK
-MX
+Eu
+Dz
 Dz
 EP
 ui
@@ -17415,9 +17401,9 @@ dS
 Sk
 AT
 AT
-AT
+yN
 uq
-MX
+aa
 Dz
 Dz
 Dz
@@ -17619,10 +17605,10 @@ Qk
 AT
 AT
 We
-MX
-MX
-sX
-sX
+aa
+aa
+vK
+vK
 Dz
 Yk
 Py
@@ -17635,7 +17621,7 @@ sL
 bv
 Jh
 Jh
-QB
+xQ
 QB
 AI
 aa
@@ -17820,21 +17806,21 @@ Ku
 Kt
 UO
 et
+Jh
+jc
 Eu
-et
-qK
 Wr
 Mr
-et
+jc
 Oe
-et
-et
-qK
-et
 jc
 jc
 Eu
-et
+jc
+jc
+jc
+Jh
+jc
 et
 et
 AT
@@ -24449,7 +24435,7 @@ xW
 xW
 dS
 zs
-xQ
+gy
 gy
 Hl
 yA
@@ -26868,12 +26854,12 @@ eh
 Bc
 XV
 CO
-tl
+CO
 dS
 eh
 xW
 Hl
-xQ
+gy
 Xc
 zs
 yA
@@ -27063,7 +27049,7 @@ ej
 ej
 ej
 zs
-Xs
+dx
 dx
 dx
 Xl
@@ -27076,7 +27062,7 @@ eq
 xW
 it
 gy
-wU
+gy
 dS
 gP
 gP
@@ -27469,7 +27455,7 @@ ej
 dS
 Zl
 zp
-Xs
+dx
 Xl
 dx
 zs
