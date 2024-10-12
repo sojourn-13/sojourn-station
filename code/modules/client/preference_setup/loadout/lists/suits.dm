@@ -218,3 +218,8 @@
 /datum/gear/suit/boxer_jacket
 	display_name = "boxer jacket"
 	path = /obj/item/clothing/suit/storage/boxer_jacket
+
+/datum/gear/suit/greyson
+	display_name = "greyson overwear selection"
+	path = /obj/item/clothing/suit/greatcoat/os
+	flags = GEAR_HAS_TYPE_SELECTION

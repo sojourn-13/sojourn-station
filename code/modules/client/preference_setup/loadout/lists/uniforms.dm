@@ -251,3 +251,9 @@
 /datum/gear/uniform/sports
 	display_name = "white tank top"
 	path = /obj/item/clothing/under/sports
+
+/datum/gear/uniform/greyson
+	display_name = "greyson uniform selection"
+	path = /obj/item/clothing/under/os_jumpsuit
+	flags = GEAR_HAS_TYPE_SELECTION
+

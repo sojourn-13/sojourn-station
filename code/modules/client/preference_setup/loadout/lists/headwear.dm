@@ -179,3 +179,8 @@
 	display_name = "Naval Surgeon Tricorne"
 	path = /obj/item/clothing/head/costume/livesey
 
+/datum/gear/head/greyson
+	display_name = "greyson hat selection"
+	path = /obj/item/clothing/head/os_cap
+	flags = GEAR_HAS_TYPE_SELECTION
+
