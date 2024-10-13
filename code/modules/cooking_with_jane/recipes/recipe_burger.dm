@@ -31,7 +31,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
