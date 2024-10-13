@@ -217,12 +217,12 @@
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
+		STAT_ROB = 35,
 		STAT_TGH = 25,
-		STAT_VIG = 25,
+		STAT_VIG = 35,
 		STAT_BIO = 0,
 		STAT_MEC = 5,
-		STAT_COG = 20
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/ethnicity/church_religion
