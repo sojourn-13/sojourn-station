@@ -168,6 +168,7 @@ Advanced Voidsuit: Guild Master
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
@@ -187,8 +188,8 @@ Advanced Voidsuit: Guild Master
 Technomancer RIG
 ***************************************/
 /obj/item/rig/techno
-	name = "technomancer suit control module"
-	suit_type = "technomancer RIG suit"
+	name = "Artificers suit control module"
+	suit_type = "Artificers RIG suit"
 	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
 	icon_state = "techno_rig"
 	armor_list = list(
@@ -222,6 +223,7 @@ Technomancer RIG
 /obj/item/rig/techno/equipped
 	initial_modules = list(
 		/obj/item/rig_module/storage/large,
+		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
 		)
