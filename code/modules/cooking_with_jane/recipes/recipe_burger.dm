@@ -13,7 +13,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
 
@@ -57,14 +57,14 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 3),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatsteak)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/porkchops)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tonkatsu)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5)
@@ -76,7 +76,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatsteak)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/porkchops)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tonkatsu)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -95,7 +95,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -114,7 +114,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fishfingers)
 	)
 
@@ -132,7 +132,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -151,7 +151,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tonkatsu)
 	)
 
@@ -169,7 +169,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu)
 	)
 
@@ -218,6 +218,6 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1)
-		CWJ_END_EXCLUSIVE_OPTIONS
+		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat)
 	)
