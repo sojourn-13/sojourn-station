@@ -9,7 +9,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
 
@@ -23,7 +23,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -38,7 +38,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fishfingers)
 	)
 
@@ -52,7 +52,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -67,7 +67,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tonkatsu)
 	)
 
@@ -81,7 +81,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu)
 	)
 
@@ -94,7 +94,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "silicon", 1, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "silicon", 1),
 		list(CWJ_ADD_ITEM, /obj/item/robot_parts/head)
 	)
 
@@ -106,7 +106,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/xenoburger
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", qmod=0.2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "silicon", 1, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat)
 	)
