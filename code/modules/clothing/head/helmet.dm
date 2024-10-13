@@ -258,7 +258,7 @@
 		return 1
 
 /obj/item/clothing/head/helmet/hazcap
-	name = "CBRN Helmet"
+	name = "cbrn Helmet"
 	desc = "A field modified safety helmet used by Solarian Chemical Corps troops as a quick fix to a comfortable headpiece to wear over bulky chemical hoods."
 	icon_state = "Haz_cap"
 	item_state_slots = list(
