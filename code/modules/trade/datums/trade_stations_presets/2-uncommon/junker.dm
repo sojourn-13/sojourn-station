@@ -79,6 +79,7 @@
 */
 	// TODO: Better offers
 	offer_types = list(
+		/obj/item/tool/shovel/combat/turbo = offer_data("Artificer Power Crovel", 1750, 2),
 		/datum/reagent/ethanol/changelingsting = offer_data("Changeling Sting bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 2500, 1),
