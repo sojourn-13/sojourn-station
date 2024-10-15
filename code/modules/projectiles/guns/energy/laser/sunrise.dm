@@ -21,7 +21,7 @@
 	init_recoil = CARBINE_RECOIL(0.1)
 	damage_multiplier = 0.75
 	penetration_multiplier = 1
-	max_upgrades = 0 //we're good enough as is.
+	max_upgrades = 1 //You can have 1 as a treat
 	price_tag = 1500
 	charge_cost = 20
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
