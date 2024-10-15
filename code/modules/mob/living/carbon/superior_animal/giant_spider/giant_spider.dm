@@ -50,8 +50,8 @@
 	fleshcolor = "#1E536E"
 	bloodcolor = "#1E536E"
 
-	var/poison_per_bite = 2
-	var/poison_type = "pararein"
+	poison_per_bite = 2
+	poison_type = "pararein"
 	faction = "spiders"
 
 	price_tag = 250 //in case you sell these???

@@ -1,11 +1,3 @@
-/mob/living/carbon/superior_animal/xenomorph/UnarmedAttack(atom/A, proximity)
-	. = ..()
-
-	if(isliving(A))
-		var/mob/living/L = A
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent(poison_type, poison_per_bite)
-
 /mob/living/carbon/superior_animal/xenomorph/warrior/bull/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A

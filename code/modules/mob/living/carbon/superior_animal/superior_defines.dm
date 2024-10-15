@@ -309,3 +309,7 @@
 	 * final offset of the projectile. Make sure to sync with initial_firing_offset.
 	**/
 	var/current_firing_offset = 2
+
+	/// Used to dictate if the critter is poisonous or not
+	var/poison_per_bite = 0
+	var/poison_type
