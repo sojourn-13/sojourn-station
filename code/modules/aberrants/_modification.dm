@@ -107,8 +107,9 @@
 
 	if(istype(I, /obj/item/organ))
 		var/obj/item/organ/O = I
-		var/failed = TRUE
+		var/failed = FALSE
 		if(resticted_to_nature)
+			failed = TRUE
 			switch(resticted_to_nature)
 				if("ORGANIC")
 					if(BP_IS_ORGANIC(O))
@@ -130,7 +131,6 @@
 						failed = FALSE
 
 		if(resticted_from_nature)
-			failed = FALSE
 			switch(resticted_from_nature)
 				if("ORGANIC")
 					if(!BP_IS_ORGANIC(O))
