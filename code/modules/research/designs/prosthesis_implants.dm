@@ -197,7 +197,7 @@ the lims and such to pull out the internal bits for other people if needed
 
 //increases movement buildup (used for diving + some melee weapons)
 /datum/design/research/item/mechfab/modules/momentum_speed_adder
-	name = "Momentum Spring Relay Leg Agument"
+	name = "Momentum Spring Relay Leg Augment"
 	build_path = /obj/item/organ_module/momentum_speed_adder
 
 //Implants

@@ -158,7 +158,7 @@
 
 /obj/item/modification/organ/internal/electromechanical/wire_weaves
 	name = "wire weaving"
-	desc = "Complex mesh that wires weave into to help make them more sturdy."
+	desc = "Complex mesh that interweaves wires to help make them more sturdy."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "wire_weavers"
 	matter = list(MATERIAL_PLASTIC = 3)
@@ -202,7 +202,7 @@
 
 /obj/item/modification/organ/internal/electromechanical/microbattery_case
 	name = "Microbattery Case"
-	desc = "Plasteel case with steel rods to give extra support to a microbattery allowing it to take more damage before shutting off.."
+	desc = "Plasteel case with steel rods to give extra support to a microbattery allowing it to take more damage before shutting down.“
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "case"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)

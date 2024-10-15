@@ -168,7 +168,7 @@
 
 /datum/technology/exotic_weaponry
 	name = "Experimental Weaponry"
-	desc = "Remote temperature controling weapon, implants and advanced shields."
+	desc = "Remote temperature controlling weapon, implants and advanced shields."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.7

@@ -1,6 +1,6 @@
 /obj/item/organ_module/punch_helper
 	name = "Punch Helper Melee Brace" //PHMB
-	desc = "A design that grafts itself ontop of bone on a persons hand increasing the force of physical punches and nothing more."
+	desc = "A design that grafts itself on top of the bone in a person’s hand increasing the force of physical punches."
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	//Dont want these to be free
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 2,  MATERIAL_DIAMOND = 1)
