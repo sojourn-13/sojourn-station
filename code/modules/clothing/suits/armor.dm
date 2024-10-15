@@ -1094,7 +1094,6 @@
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
-	slowdown = 0.1
 	armor_list = list(
 		melee =8,
 		bullet = 8,
