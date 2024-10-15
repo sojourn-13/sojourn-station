@@ -356,7 +356,7 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber
 	name = "ammunition packet (7.62mm Rifle rubber)"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
+	desc = "A box of 7.62mm rifle ammunition. 30ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "rifle_r"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
@@ -387,6 +387,7 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	name = "ammunition packet (7.62mm Rifle laser)"
+	desc = "A box of 7.62mm rifle ammunition. 90ct, laser core rounds. You can see caliber information on the label."
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
@@ -448,7 +449,7 @@
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
 	name = "ammunition box (12mm rubber)"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming impact rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
+	desc = "A box of riot supression 12mm pistol ammunition. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
@@ -543,7 +544,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
 	name = "ammunition packet (8.6mm rubber)"
 	icon_state = "hrifle_r"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
@@ -573,7 +574,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	name = "ammunition packet (8.6mm laser)"
 	icon_state = "hrifle_si"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 60ct, subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 60
