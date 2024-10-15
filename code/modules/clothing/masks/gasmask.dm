@@ -292,6 +292,13 @@
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/chemhood
+	name = "chemical corps hood"
+	desc = "A military gas mask fitted with a chemical resistant hood."
+	icon_state = "gas_chem"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 80)
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/guild_rebreather
 	name = "artificer's rebreather"
 	desc = "An industrial gas mask bearing the colors of the artificer's guild."

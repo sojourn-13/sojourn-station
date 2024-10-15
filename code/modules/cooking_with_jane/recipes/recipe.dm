@@ -1308,7 +1308,7 @@
 
 /datum/cooking_with_jane/recipe/dumplings
 	cooking_container = PAN
-	product_type = /obj/item/reagent_containers/food/snacks/meatpie
+	product_type = /obj/item/reagent_containers/food/snacks/dumplings
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawbacon),

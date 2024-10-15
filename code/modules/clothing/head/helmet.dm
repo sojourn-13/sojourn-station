@@ -257,6 +257,58 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/hazcap
+	name = "cbrn Helmet"
+	desc = "A field modified safety helmet used by Solarian Chemical Corps troops as a quick fix to a comfortable headpiece to wear over bulky chemical hoods."
+	icon_state = "Haz_cap"
+	item_state_slots = list(
+		slot_l_hand_str = "Haz_cap",
+		slot_r_hand_str = "Haz_cap",
+		)
+	item_flags = THICKMATERIAL
+	body_parts_covered = HEAD | EARS
+	armor_list = list(
+		melee = 8,
+		bullet = 8,
+		energy = 8,
+		bomb = 25,
+		bio = 0,
+		rad = 75
+	)
+	flags_inv = HIDEEARS
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = HEAD
+	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.7
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 500
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
+
+/obj/item/clothing/head/helmet/hazcap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "Haz_cap"
+	options["Tan"] = "Haz_cap_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /*
  * Factions
