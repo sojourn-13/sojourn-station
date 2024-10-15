@@ -444,6 +444,13 @@
 	nutriment_req = initial(nutriment_req)
 	oxygen_req = initial(oxygen_req)
 	SEND_SIGNAL(src, COMSIG_IWOUND_FLAGS_REMOVE)
+	//If we shove lets say robotics into a flesh arm it should be 50% less affective for organ efficiency
+	if(parent)
+		if(istype(parent, /obj/item/organ))
+			var/obj/item/organ/O = parent
+			if(nature != O.nature)
+				for(var/efficiency in organ_efficiency)
+					organ_efficiency[efficiency] *= 0.5 //50% less affective
 
 /obj/item/organ/internal/proc/apply_modifiers()
 	SEND_SIGNAL(src, COMSIG_IWOUND_EFFECTS)
