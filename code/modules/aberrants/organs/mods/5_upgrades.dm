@@ -202,7 +202,7 @@
 
 /obj/item/modification/organ/internal/electromechanical/microbattery_case
 	name = "Microbattery Case"
-	desc = "Plasteel case with steel rods to give extra support to a microbattery allowing it to take more damage before shutting down.“
+	desc = "Plasteel case with steel rods to give extra support to a microbattery allowing it to take more damage before shutting down."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "case"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)
