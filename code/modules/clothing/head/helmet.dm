@@ -1486,10 +1486,10 @@
 
 /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/update_icon()
 	if(hud in src)
-		icon_state = "bulletproof_ironhammer"
+		icon_state = "bulletproof_ironhammer_nv"
 		set_light(0, 0)
 	else
-		icon_state = "bulletproof_ironhammer_on"
+		icon_state = "bulletproof_ironhammer_nv_on"
 		set_light(1, 1, COLOR_LIGHTING_GREEN_MACHINERY)
 	update_wear_icon()
 	..()
@@ -1497,7 +1497,7 @@
 //Thermal
 /obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal
 	name = "marshal thermo-nightvision helmet"
-	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
+	desc = "A bulletproof security helmet with mandibles that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt thermal imaging HUD."
 	icon_state = "bulletproof_ironhammer_thermal"
 	body_parts_covered = HEAD|EARS
