@@ -315,7 +315,7 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "cornoil", 2),
 		list(CWJ_ADD_REAGENT, "egg", 3),
-		list(CWJ_ADD_PRODUCE, "sodiumchloride", 1),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/pork, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "flour", 5),
 		list(CWJ_USE_STOVE, J_MED, 40 SECONDS)
