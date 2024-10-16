@@ -3068,14 +3068,6 @@
 "bZw" = (
 /turf/simulated/wall/wood,
 /area/asteroid/rogue)
-"bZB" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/vent{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/lima)
 "bZE" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -7592,14 +7584,6 @@
 /obj/item/storage/box/cups,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
-"eMG" = (
-/mob/living/simple_animal/hostile/creature/tissue,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/prepper/lima)
 "eMO" = (
 /obj/random/turret,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -8406,17 +8390,6 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
-"fmz" = (
-/mob/living/simple_animal/hostile/creature/tissue,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_damaged2";
-	name = "biomass";
-	color = "#750008"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/lima)
 "fmI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/traps/low_chance,
@@ -10783,6 +10756,11 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"gOt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/chemical_dispenser/industrial,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/prepper/lima)
 "gOG" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -13808,7 +13786,6 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
 	dir = 8
@@ -14066,16 +14043,6 @@
 /obj/structure/kitchenspike,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
-"iJb" = (
-/mob/living/simple_animal/hostile/creature/tissue,
-/obj/effect/floor_decal/border/techfloor/orange{
-	icon = 'icons/mob/blob.dmi';
-	icon_state = "blob_idle";
-	name = "biomass";
-	color = "#750008"
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/prepper/lima)
 "iJo" = (
 /obj/item/stack/medical/splint,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -22835,6 +22802,7 @@
 /obj/random/credits,
 /obj/item/clothing/gloves/dusters/gold,
 /obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov,
+/obj/item/clothing/suit/armor/vest/full,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "onM" = (
@@ -23224,11 +23192,6 @@
 /obj/random/mob/render/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
-"oxL" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature/tissue,
-/turf/simulated/floor/greengrid,
-/area/nadezhda/dungeon/outside/prepper/lima)
 "oxY" = (
 /obj/structure/table/rack/shelf,
 /obj/random/gun_cheap,
@@ -33243,13 +33206,8 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/prepper/lima)
-"uGK" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
-/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "uGO" = (
 /obj/structure/closet/wardrobe/misc/prison,
@@ -58806,7 +58764,7 @@ hqL
 xVI
 lGG
 tnM
-bZB
+iwf
 ssT
 iwf
 iZq
@@ -59018,7 +58976,7 @@ fLq
 sjs
 qFL
 kpS
-fmz
+fQx
 bWn
 mjJ
 qre
@@ -59429,7 +59387,7 @@ idB
 uVr
 jOT
 hqL
-jIZ
+hqL
 idB
 coU
 coU
@@ -60459,7 +60417,7 @@ amZ
 ott
 hqL
 idB
-kuS
+gOt
 wWq
 qKo
 idB
@@ -60472,7 +60430,7 @@ wxd
 eli
 fuI
 idB
-jIZ
+hqL
 hqL
 hqL
 idB
@@ -61925,7 +61883,7 @@ idB
 vLc
 hqL
 hqL
-jIZ
+hqL
 vLc
 vLc
 amZ
@@ -61935,7 +61893,7 @@ wwD
 qSd
 qSd
 idB
-eMG
+llm
 hqL
 hqL
 idB
@@ -62349,13 +62307,13 @@ hqL
 vLc
 idB
 llm
-jIZ
+hqL
 hqL
 hqL
 hqL
 tye
 hqL
-jIZ
+hqL
 idB
 coU
 qbU
@@ -62755,13 +62713,13 @@ qbU
 coU
 idB
 hqL
-jIZ
 hqL
 hqL
 hqL
 hqL
 hqL
-jIZ
+hqL
+hqL
 hqL
 hqL
 jIZ
@@ -62978,7 +62936,7 @@ idB
 fuI
 fuI
 hqL
-jIZ
+hqL
 jrd
 hqL
 hqL
@@ -67772,7 +67730,7 @@ idB
 idB
 hpw
 jCD
-eTv
+hpw
 idB
 sZr
 oGU
@@ -68397,7 +68355,7 @@ qGy
 tjA
 idB
 nDu
-eTv
+hpw
 jCD
 hpw
 idB
@@ -69653,7 +69611,7 @@ idB
 bsT
 ttt
 jCD
-eTv
+hpw
 idB
 idB
 hym
@@ -70274,7 +70232,7 @@ idB
 alx
 ndO
 ndO
-oxL
+sHM
 idB
 sZr
 idB
@@ -70487,7 +70445,7 @@ mgx
 idB
 sZr
 idB
-eTv
+hpw
 jCD
 hpw
 mEc
@@ -70705,7 +70663,7 @@ rPC
 rPC
 rPC
 rPC
-qvG
+rPC
 rPC
 avl
 lwU
@@ -70922,9 +70880,9 @@ wKx
 idB
 sZr
 oGU
-iJb
+eKF
 fVR
-vLF
+fVR
 oGU
 sZr
 coU
@@ -72370,7 +72328,7 @@ cDl
 euN
 hpw
 jCD
-eTv
+hpw
 idB
 sZr
 idB
@@ -74056,7 +74014,7 @@ wpC
 idB
 idB
 fVR
-pxG
+tPd
 dhf
 dhf
 nnY
@@ -74264,8 +74222,8 @@ jrn
 bxA
 idB
 idB
-uGK
-dig
+fVR
+tPd
 aNE
 dhf
 dhf
@@ -74685,8 +74643,8 @@ idB
 tPd
 nMo
 hXT
-pxG
-pxG
+tPd
+tPd
 pxG
 oXa
 nep
@@ -75316,7 +75274,7 @@ qBA
 hyC
 arg
 tPd
-dig
+tPd
 tPd
 sKE
 dig
@@ -75525,7 +75483,7 @@ bBW
 bBW
 idB
 xoy
-dig
+tPd
 tPd
 tPd
 tPd
@@ -76123,9 +76081,9 @@ coU
 idB
 vjl
 uFg
-eRA
 kGL
-eRA
+kGL
+kGL
 rUd
 idB
 coU
