@@ -374,6 +374,7 @@
 		our_man.wear_mask,
 		our_man.w_uniform,
 	)
+	var/factor = 0.3 // just chosen so that a labcoat barely protects against sulphuric acid, but not hydrochloric acid
 	remove_self(volume)
 	for(var/bodypart in bodyparts)
 		var/stop_loop = FALSE
@@ -385,9 +386,8 @@
 			if(C.unacidable || C.armor.bio > 99)
 				stop_loop = TRUE
 				continue
-			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
-			if(melting_requirement > units_per_bodypart)
-				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+			var/melting_requirement = (C.armor.bio / 100) * factor * meltdose 
+			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
 				var/obj/item/clothing/shoes = C
@@ -409,9 +409,8 @@
 			if(C.unacidable || C.armor.bio > 99)
 				stop_loop = TRUE
 				continue
-			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
-			if(melting_requirement > units_per_bodypart)
-				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+			var/melting_requirement = (C.armor.bio / 100) * factor * meltdose 
+			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)				
 				stop_loop = TRUE
 			else
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
@@ -423,7 +422,7 @@
 
 		if(stop_loop)
 			continue
-		// third layer of clothing
+		// third layer of clothing, no bio protection
 		for(var/obj/item/underwear/U in H.worn_underwear)
 			if(!(U.required_free_body_parts & bodypart))
 				continue
