@@ -398,6 +398,14 @@
 						A.on_removed()
 						C.accessories -= A
 						C.update_wear_icon()
+				
+				if (istype(C, var/object/item/clothing/suit/storage))
+					our_man.unEquip(our_man.l_store)
+					our_man.unEquip(our_man.r_store)
+
+				if (istype(C, var/object/item/clothing/suit/gorka))
+					our_man.unEquip(our_man.l_store)
+					our_man.unEquip(our_man.r_store)
 
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
