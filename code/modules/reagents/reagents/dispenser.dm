@@ -394,6 +394,11 @@
 				if (shoes && shoes.holding)
 					shoes.holding.forceMove(get_turf(M))
 					shoes.holding = NULL
+				for(obj/item/clothing/accessory/A in C.accessories)
+						A.on_removed()
+						C.accessories -= A
+						C.update_wear_icon()
+
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
@@ -413,6 +418,10 @@
 			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)				
 				stop_loop = TRUE
 			else
+				for(obj/item/clothing/accessory/A in C.accessories)
+						A.on_removed()
+						C.accessories -= A
+						C.update_wear_icon()
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
