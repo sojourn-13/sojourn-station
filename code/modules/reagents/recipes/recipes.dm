@@ -186,7 +186,7 @@
 	required_reagents = list("bicaridine" = 1, "tramadol" = 1, "carbon" = 1)
 	result_amount = 1
 	catalysts = list("water" = 15)
-	inhibitors = list("bicaridine" = 1)
+	inhibitors = list("paracetamol" = 1)
 	byproducts = list("sodiumchloride" = 0.1)
 
 /datum/chemical_reaction/vermicetol
