@@ -352,8 +352,8 @@
 	scannable = TRUE
 	common = TRUE
 
-//	Reasoning: Table salt is usually iodized. Iodine saturates glands. 
-//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation. 
+//	Reasoning: Table salt is usually iodized. Iodine saturates glands.
+//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation.
 //	Yes its a preventatitve method IRL but this is gamyfictaion.
 
 /datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -1544,6 +1544,19 @@
 	glass_icon_state = "iceglass"
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."
+
+/datum/reagent/drink/strawberry_explosive_blast
+	name = "Strawberry Explosive Blast"
+	id = "strawberry_explosive_blast"
+	description = "Sweetened drink with a strawberry flavor and a blast from the past."
+	taste_description = "strawberry soda"
+	taste_tag = list(TASTE_SWEET, TASTE_BUBBLY)
+	color = "#C83F49"
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "strawberryblast"
+	glass_name = "strawberry explosive blast soda"
+	glass_desc = "Looks like a delicious drink!"
 
 /* Alcohol */
 
