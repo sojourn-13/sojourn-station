@@ -60,7 +60,7 @@
 /datum/reagent/medicine/somnadine
 	name = "Somnadine"
 	id = "somnadine"
-	description = "Somnadine is a complex blunt trauma gel that is applied to the skin. The patient has to be asleep for it to be working. It will quickly and effectively clear up cuts and other skin level damage, with a minimal risk of overdose"
+	description = "Somnadine is a complex blunt trauma gel that is applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up cuts and other skin level damage, with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -179,7 +179,7 @@
 /datum/reagent/medicine/dermahypnodol
 	name = "Dermahypnodol"
 	id = "dermahypnodol"
-	description = "Dermahypnodol is a complex anti-burn gel that gets applied to the skin. It only works if the patient is asleep. It gets applied to the skin and will quickly and effectively clear up burns with a minmal risk for overdose"
+	description = "Dermahypnodol is a complex anti-burn gel that gets applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up burns with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
