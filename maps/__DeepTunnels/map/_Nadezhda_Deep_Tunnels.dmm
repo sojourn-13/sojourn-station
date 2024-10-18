@@ -7984,6 +7984,7 @@
 "uJ" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio/beacon/explosion_watcher,
+/obj/item/paper/toxin_index,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/mixing)
 "uK" = (
@@ -8408,6 +8409,53 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
+/obj/structure/closet/crate,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/alien,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/clown,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/target/syndicate,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/material/glass/plasmaglass/random,
+/obj/item/stack/material/glass/plasmaglass/random,
+/obj/item/stack/material/glass/plasmaglass/random,
+/obj/item/stack/material/glass/plasmaglass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "BR" = (
@@ -9191,6 +9239,9 @@
 	name = "Toxins mass driver"
 	},
 /obj/effect/floor_decal/industrial/warningred/full,
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "Uf" = (
@@ -9346,6 +9397,9 @@
 /obj/machinery/button/remote/blast_door{
 	id = "Toxins_Pad";
 	name = "Launch-pad door-control"
+	},
+/obj/structure/noticeboard/research{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
