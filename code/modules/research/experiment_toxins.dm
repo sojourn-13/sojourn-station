@@ -111,7 +111,6 @@
 	for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
 		if(RD.id == 1) // only core gets the science
 			var missed
-			autosay("Notice: target_wealth_achived [target_wealth_achived] [asset_wealth(TRUE)].", name ,"Science")
 
 			if(target_wealth_achived)
 				missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less, this is a range of 11.
