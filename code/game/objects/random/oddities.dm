@@ -160,7 +160,7 @@
 				//Armor
 				/obj/item/clothing/suit/crimsoncross_regaloutfit = 0.1, //Little rarer then even soap
 				//Misc - things that are not a "gun" but still good for this
-				/obj/item/oddity/nt/seal = 1,
+				/obj/item/oddity/nt/seal = 0.5,
 				/obj/item/soap/bluespase = 0.5,
 				/obj/item/oddity/rare/moon_fragment = 0.2))
 

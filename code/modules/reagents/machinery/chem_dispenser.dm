@@ -14,6 +14,7 @@
 	use_power = NO_POWER_USE // Handles power use in Process()
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/chemical_dispenser
+	var/base_state = "dispenser" // For update_icon() purposes, the base state's name where suffixes will be applied to
 	var/fancy_hack = FALSE
 	var/ui_title = "Chem Dispenser 5000"
 	var/obj/item/cell/medium/cell
@@ -39,6 +40,16 @@
 
 	var/list/hacked_reagents = list("mindbreaker", "cleaner") //USEFUL stuff
 	var/obj/item/reagent_containers/beaker = null
+
+/obj/machinery/chemical_dispenser/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = base_state+"_off"
+	else
+		icon_state = base_state
+
+	if(beaker)
+		add_overlay(image(icon, base_state+"_loaded"))
 
 /obj/machinery/chemical_dispenser/RefreshParts()
 	cell = locate() in component_parts
@@ -289,7 +300,7 @@
 	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
 	layer = OBJ_LAYER
 	ui_title = "Soda Dispens-o-matic"
-	var/icon_on = "soda_dispenser"
+	base_state = "soda_dispenser"
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
@@ -327,16 +338,6 @@
 		hackedcheck = FALSE
 		return
 
-/obj/machinery/chemical_dispenser/soda/update_icon()
-	cut_overlays()
-	if(stat & (BROKEN|NOPOWER))
-		icon_state = icon_on+"_off"
-	else
-		icon_state = icon_on
-
-	if(beaker)
-		add_overlay(image(icon, icon_on+"_loaded"))
-
 /obj/machinery/chemical_dispenser/coffee_master
 	icon_state = "coffee_master"
 	name = "coffee master"
@@ -347,6 +348,7 @@
 	accept_beaker = FALSE
 	density = FALSE
 	simple_machinery = TRUE
+	base_state = "coffee_master"
 	level0 = list(
 		"coffee","cream","tea","greentea","sugar","hot_coco","espresso","milk")
 	hacked_reagents = list("ice")
@@ -372,6 +374,7 @@
 	accept_beaker = FALSE
 	density = FALSE
 	simple_machinery = TRUE
+	base_state = "booze_dispenser"
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	level0 = list(
 		"lemon_lime","sugar","orangejuice","limejuice",
