@@ -125,6 +125,7 @@
 /mob/living/carbon/human/add_momentum(direction)
 	if(momentum_dir == direction)
 		momentum_speed++
+		momentum_speed += momentum_speed_adder
 	else if(momentum_dir == reverse_dir[direction])
 		momentum_speed = 0
 		momentum_dir = direction

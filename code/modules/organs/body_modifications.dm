@@ -273,7 +273,7 @@ var/global/list/modifications_types = list(
 */
 
 /datum/body_modification/organ/robotize_organ
-	name = "Robotic organ"
+	name = "Robotic organ (Counts as Assisted)"
 	short_name = "P: prosthesis"
 	id = "robotize_organ"
 	desc = "Robotic organ."
@@ -282,7 +282,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/organ/robotize_organ/create_organ(var/mob/living/carbon/holder, O, color)
 	var/obj/item/organ/I = ..(holder,O,color)
-	I.nature = MODIFICATION_SILICON
+	I.nature = MODIFICATION_ASSISTED
 	if(istype(I, /obj/item/organ/internal/eyes))
 		var/obj/item/organ/internal/eyes/E = I
 		E.robo_color = iscolor(color) ? color : "#FFFFFF"
