@@ -142,10 +142,10 @@
 	icon_state = "frame_omni"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_DIAMOND = 3)
 	result = /obj/item/gun/projectile/automatic/omnirifle
-	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun, /obj/item/part/gun/barrel/hrifle)
 
 /obj/item/gun/projectile/automatic/omnirifle/hustler
 	name = "\"Hustler\" breacher shotgun"
@@ -164,7 +164,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 15, MATERIAL_DIAMOND = 10)
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/omni = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/shotgun = 1)
 	price_tag = 2000
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.3 //better than the saigini but no full auto
