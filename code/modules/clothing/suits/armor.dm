@@ -1102,7 +1102,6 @@
 		bio = 0,
 		rad = 0
 	)
-	body_parts_covered = UPPER_TORSO //we get the same armor as a regular marshal vest with limited coverage.
 
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
