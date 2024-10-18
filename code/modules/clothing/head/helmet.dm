@@ -1426,8 +1426,8 @@
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt nightvision HUD."
 	icon_state = "bulletproof_ironhammer"
-	body_parts_covered = HEAD|FACE|EARS
-	flags_inv = HIDEEARS
+	body_parts_covered = HEAD|EARS
+	flags_inv = NONE
 	action_button_name = "Toggle Night Vision"
 	var/obj/item/clothing/glasses/powered/nightvision_helmet/hud
 	var/last_toggle = 0
@@ -1500,8 +1500,8 @@
 	desc = "A bulletproof security helmet with mandibles that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt thermal imaging HUD."
 	icon_state = "bulletproof_ironhammer_thermal"
-	body_parts_covered = HEAD|EARS
-	flags_inv = NONE
+	body_parts_covered = HEAD|FACE|EARS
+	flags_inv = HIDEEARS
 	action_button_name = "Toggle Thermal Night Vision HUD"
 	var/last_toggle = 0
 	var/toggle_delay = 2 SECONDS
