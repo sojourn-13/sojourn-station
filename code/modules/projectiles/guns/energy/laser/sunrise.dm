@@ -21,7 +21,7 @@
 	init_recoil = CARBINE_RECOIL(0.1)
 	damage_multiplier = 0.7
 	penetration_multiplier = 1
-	max_upgrades = 1 //You can have 1 as a treat
+	max_upgrades = 2 //You can have 2 as a treat since no upgrade port.
 	price_tag = 1500
 	charge_cost = 20
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
@@ -31,7 +31,7 @@
 		)
 	serial_type = "NM"
 
-	//Blacklisted so you can't make the gun take more than 1 attachment.
+	//Blacklisted so you can't make the gun take more than 2 attachments.
 	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
 /obj/item/gun/energy/sunrise/update_icon()
