@@ -3,7 +3,7 @@
 /obj/item/device/radio/beacon/explosion_watcher
 	name = "Kinetic Energy Scanner"
 	desc = "Scans the level of kinetic energy from explosions. \
-	This beacon, is in fact bomb proof and to use it properly you must use the bomb within 10 tiles of this scanner."
+	This beacon is, in fact, bombproof and to use it properly you must use the bomb within 10 tiles of this scanner."
 
 	channels = list("Science" = 1)
 	var/targetBoom
