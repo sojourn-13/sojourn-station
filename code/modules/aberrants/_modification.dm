@@ -36,6 +36,10 @@
 	var/list/blacklisted_types = list()		// The mod can not be applied to an item of these types
 	var/exclusive_type						// Use if children of a mod path should be checked
 
+	//Both use strings, current strings are "ORGANIC" "ROBOTIC" "SLIME" "PROSTHETIC" "LIFELIKE" "ASSISTED"
+	var/resticted_to_nature = null			// Used if you want to have a mod only work on an EXACT nature (i.e only robots)
+	var/resticted_from_nature = null		// Used if you want to have a mod only to **NOT** work on an EXACT nature (i.e only robots)
+
 	var/examine_msg = null	// Examine message for the mod, not the item it is attached to
 
 	// Stat-gated details
@@ -73,6 +77,7 @@
 	if(istype(A, /obj/item))
 		return check_item(A, user)
 
+
 	return FALSE
 
 /datum/component/modification/proc/check_item(obj/item/I, mob/living/user)
@@ -99,6 +104,55 @@
 				if(user)
 					to_chat(user, SPAN_WARNING("\The [parent] can not be attached to \the [I]!"))
 				return FALSE
+
+	if(istype(I, /obj/item/organ))
+		var/obj/item/organ/O = I
+		var/failed = FALSE
+		if(resticted_to_nature)
+			failed = TRUE
+			switch(resticted_to_nature)
+				if("ORGANIC")
+					if(BP_IS_ORGANIC(O))
+						failed = FALSE
+				if("ROBOTIC")
+					if(BP_IS_ROBOTIC(O))
+						failed = FALSE
+				if("SLIME")
+					if(BP_IS_SLIME(O))
+						failed = FALSE
+				if("PROSTHETIC")
+					if(BP_IS_PROSTHETIC(O))
+						failed = FALSE
+				if("LIFELIKE")
+					if(BP_IS_LIFELIKE(O))
+						failed = FALSE
+				if("ASSISTED")
+					if(BP_IS_ASSISTED(O))
+						failed = FALSE
+
+		if(resticted_from_nature)
+			switch(resticted_from_nature)
+				if("ORGANIC")
+					if(!BP_IS_ORGANIC(O))
+						failed = TRUE
+				if("ROBOTIC")
+					if(!BP_IS_ROBOTIC(O))
+						failed = TRUE
+				if("SLIME")
+					if(!BP_IS_SLIME(O))
+						failed = TRUE
+				if("PROSTHETIC")
+					if(!BP_IS_PROSTHETIC(O))
+						failed = TRUE
+				if("LIFELIKE")
+					if(!BP_IS_LIFELIKE(O))
+						failed = TRUE
+				if("ASSISTED")
+					if(!BP_IS_ASSISTED(O))
+						failed = TRUE
+		if(failed)
+			to_chat(user, SPAN_WARNING("A modification of this type is not allowed on this classification of organ!"))
+			return FALSE
 
 	return TRUE
 
