@@ -38,6 +38,8 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
+		if(prob(10))
+			new /obj/item/gun_upgrade/mechanism/greyson_master_catalyst(src.loc)
 		..()
 
 
