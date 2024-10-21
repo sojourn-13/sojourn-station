@@ -8,6 +8,7 @@
 	chance_old_mobs = 50
 
 /obj/structure/closet/random_miscellaneous/populate_contents()
+	..()
 	new /obj/random/contraband/low_chance(src)
 	new /obj/random/contraband/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
@@ -36,6 +37,7 @@
 	chance_old_mobs = 25
 
 /obj/structure/closet/random_tech/populate_contents()
+	..()
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
@@ -59,6 +61,7 @@
 	chance_old_mobs = 25
 
 /obj/structure/closet/random_tech/populate_contents()
+	..()
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
@@ -88,6 +91,7 @@
 	chance_old_mobs = 75
 
 /obj/structure/closet/random_milsupply/populate_contents()
+	..()
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
@@ -124,6 +128,7 @@
 	chance_old_mobs = 15
 
 /obj/structure/closet/random_medsupply/populate_contents()
+	..()
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
@@ -147,6 +152,7 @@
 	chance_old_mobs = 75
 
 /obj/structure/closet/secure_closet/rare_loot/populate_contents()
+	..()
 	new /obj/random/pack/rare(src)
 	new /obj/random/pack/rare(src)
 	new /obj/random/pack/rare(src)
@@ -176,6 +182,7 @@
 	chance_old_mobs = 95
 
 /obj/structure/closet/random_hostilemobs/populate_contents()
+	..()
 	new /obj/random/pack/rare(src) //To reward players for fighting this bullshit
 	new /obj/random/pack/rare(src)
 	new /obj/random/gun_parts/low(src)
@@ -197,6 +204,7 @@
 	has_mobs_to_spawn = TRUE //These always have roaches
 
 /obj/structure/closet/random_hostilemobs/beacon/populate_contents()
+	..()
 	new /obj/random/pack/rare(src) //To reward players for fighting this bullshit
 	new /obj/random/pack/rare(src)
 	new /obj/random/gun_parts/low(src)

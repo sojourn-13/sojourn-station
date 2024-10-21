@@ -14,6 +14,7 @@
 	icon_state = "emerg"
 
 /obj/structure/closet/wall_mounted/emcloset/populate_contents()
+	..()
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/tank/emergency_oxygen(src)
@@ -30,6 +31,7 @@
 	icon_state = "hydrant"
 
 /obj/structure/closet/wall_mounted/firecloset/populate_contents()
+	..()
 	new /obj/item/inflatable/door(src)
 	new /obj/item/inflatable/door(src)
 	new /obj/item/stack/medical/ointment(src)

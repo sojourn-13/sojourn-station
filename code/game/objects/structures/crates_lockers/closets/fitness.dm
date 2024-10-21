@@ -4,6 +4,7 @@
 	icon_door = "mixed"
 
 /obj/structure/closet/athletic_mixed/populate_contents()
+	..()
 	new /obj/item/clothing/under/shorts/athleticgrey(src)
 	new /obj/item/clothing/under/shorts/athleticblack(src)
 	new /obj/item/clothing/under/shorts(src)
@@ -27,6 +28,7 @@
 	desc = "It's a storage unit for gloves for use in the boxing ring."
 
 /obj/structure/closet/boxinggloves/populate_contents()
+	..()
 	new /obj/item/clothing/gloves/boxing/blue(src)
 	new /obj/item/clothing/gloves/boxing/green(src)
 	new /obj/item/clothing/gloves/boxing/yellow(src)
@@ -37,6 +39,7 @@
 	desc = "IT'S A STORAGE UNIT FOR FIGHTER MASKS OLE!"
 
 /obj/structure/closet/masks/populate_contents()
+	..()
 	new /obj/item/clothing/mask/costume/job/luchador(src)
 	new /obj/item/clothing/mask/costume/job/luchador/rudos(src)
 	new /obj/item/clothing/mask/costume/job/luchador/tecnicos(src)
@@ -47,6 +50,7 @@
 	icon_door = "red"
 
 /obj/structure/closet/lasertag/red/populate_contents()
+	..()
 	new /obj/item/gun/energy/lasertag/red(src)
 	new /obj/item/gun/energy/lasertag/red(src)
 	new /obj/item/gun/energy/lasertag/red(src)
@@ -78,6 +82,7 @@
 	icon_door = "blue"
 
 /obj/structure/closet/lasertag/blue/populate_contents()
+	..()
 	new /obj/item/gun/energy/lasertag/blue(src)
 	new /obj/item/gun/energy/lasertag/blue(src)
 	new /obj/item/gun/energy/lasertag/blue(src)
@@ -109,6 +114,7 @@
 	icon_door = "green"
 
 /obj/structure/closet/lasertag/green/populate_contents()
+	..()
 	new /obj/item/gun/energy/lasertag/green(src)
 	new /obj/item/gun/energy/lasertag/green(src)
 	new /obj/item/gun/energy/lasertag/green(src)
@@ -140,6 +146,7 @@
 	icon_door = "yellow"
 
 /obj/structure/closet/lasertag/yellow/populate_contents()
+	..()
 	new /obj/item/gun/energy/lasertag/yellow(src)
 	new /obj/item/gun/energy/lasertag/yellow(src)
 	new /obj/item/gun/energy/lasertag/yellow(src)

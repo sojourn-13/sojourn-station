@@ -7,7 +7,7 @@
 	access_occupy = list(access_mining)
 
 /obj/structure/closet/secure_closet/personal/miner/populate_contents()
-
+	..()
 	new /obj/item/storage/backpack/industrial(src)
 	new /obj/item/storage/backpack/satchel/industrial(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)

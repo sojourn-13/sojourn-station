@@ -6,6 +6,7 @@
 
 
 /obj/structure/closet/secure_closet/bar/populate_contents()
+	..()
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)

@@ -15,6 +15,7 @@
 	icon_door = "black"
 
 /obj/structure/closet/gmcloset/populate_contents()
+	..()
 	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/device/radio/headset/headset_service(src)
@@ -37,6 +38,7 @@
 	icon_door = "black"
 
 /obj/structure/closet/chefcloset/populate_contents()
+	..()
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/rank/bartender(src)
@@ -62,6 +64,7 @@
 	icon_door = "mixed"
 
 /obj/structure/closet/jcloset/populate_contents()
+	..()
 	if(prob(50))
 		new /obj/item/storage/backpack/sport/purple(src)
 	else
@@ -94,6 +97,7 @@
 	icon_state = "custodian"
 
 /obj/structure/closet/custodial/populate_contents()
+	..()
 	new /obj/item/storage/belt/utility/neotheology(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/gun/matter/launcher/nt_sprayer(src)
@@ -118,6 +122,7 @@
 	icon_state = "acolyte"
 
 /obj/structure/closet/acolyte/populate_contents()
+	..()
 	if(prob(25))
 		new /obj/item/storage/backpack/neotheology(src)
 	else if(prob(25))

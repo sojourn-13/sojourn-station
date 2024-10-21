@@ -18,6 +18,7 @@
 	icon_state = "emergency"
 
 /obj/structure/closet/emcloset/populate_contents()
+	..()
 	switch(pickweight(list("small" = 55, "aid" = 25, "tank" = 10, "both" = 10)))
 		if ("small")
 			new /obj/item/tank/emergency_oxygen(src)
@@ -49,6 +50,7 @@
 			new /obj/item/clothing/head/helmet/space/emergency(src)
 
 /obj/structure/closet/emcloset/legacy/populate_contents()
+	..()
 	new /obj/item/tank/oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
 
@@ -61,6 +63,7 @@
 	icon_state = "fire"
 
 /obj/structure/closet/firecloset/populate_contents()
+	..()
 	new /obj/item/clothing/suit/fire(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/tank/oxygen/red(src)
@@ -79,6 +82,7 @@
 	icon_door = "eng_tool"
 
 /obj/structure/closet/toolcloset/populate_contents()
+	..()
 	if(prob(40))
 		new /obj/item/clothing/suit/storage/hazardvest(src)
 	if(prob(70))
@@ -133,6 +137,7 @@
 	icon_door = "eng_rad"
 
 /obj/structure/closet/radiation/populate_contents()
+	..()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
 	new /obj/item/clothing/suit/radiation(src)
@@ -147,12 +152,14 @@
 	icon_state = "bomb"
 
 /obj/structure/closet/bombcloset/populate_contents()
+	..()
 	new /obj/item/clothing/suit/space/bomb(src)
 	new /obj/item/clothing/under/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/head/helmet/space/bomb(src)
 
 /obj/structure/closet/bombcloset/security/populate_contents()
+	..()
 	new /obj/item/clothing/suit/space/bomb(src)
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/shoes/color/brown(src)

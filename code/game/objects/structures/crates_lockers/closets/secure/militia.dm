@@ -4,6 +4,7 @@
 	icon_state = "mc"
 
 /obj/structure/closet/secure_closet/reinforced/commander/populate_contents()
+	..()
 	new /obj/item/gunbox/commanding_officer(src) // Secondary on their personal hardcase, primary on the locker.
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/tool/disciplinary_action(src)
@@ -38,6 +39,7 @@
 	icon_state = "armorer"
 
 /obj/structure/closet/secure_closet/armorer/populate_contents()
+	..()
 	new /obj/item/voucher/blackshield/sargprimary(src)
 	new /obj/item/voucher/blackshield/secondary(src)
 	new /obj/item/voucher/blackshield/armor(src)
@@ -75,6 +77,7 @@
 	icon_state = "corpsman"
 
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
+	..()
 	new /obj/item/voucher/blackshield/corpsprimary(src)
 	new /obj/item/voucher/blackshield/secondary(src)
 	new /obj/item/voucher/blackshield/armorcorpsman(src)
@@ -119,6 +122,7 @@
 	icon_state = "trooper"
 
 /obj/structure/closet/secure_closet/personal/trooper/populate_contents()
+	..()
 	new /obj/item/voucher/blackshield/primary(src)
 	new /obj/item/voucher/blackshield/secondary(src)
 	new /obj/item/voucher/blackshield/armor(src)
@@ -156,7 +160,8 @@
 	req_access = list(access_brig)
 	icon_state = "trooper"
 
-/obj/structure/closet/secure_closet/militia/armor/populate_contents() //6 Helmets / 6 Carriers
+/obj/structure/closet/secure_closet/militia/armor/populate_contents()
+	..() //6 Helmets / 6 Carriers
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia/full(src)

@@ -5,6 +5,7 @@
 	icon_state = "science"
 
 /obj/structure/closet/secure_closet/personal/scientist/populate_contents()
+	..()
 	if(prob(50))
 		new /obj/item/storage/backpack/purple/scientist(src)
 	else
@@ -26,6 +27,7 @@
 	icon_state = "rd"
 
 /obj/structure/closet/secure_closet/reinforced/RD/populate_contents()
+	..()
 	new /obj/item/storage/backpack/satchel/leather/withwallet(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
