@@ -119,7 +119,7 @@
 			else
 				to_chat(user, "It is full.")
 		else
-			to_chat(user, "Its hard to tell how full [src] is.")
+			to_chat(user, "It's hard to tell how full [src] is.")
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0 || wall_mounted)) return 1
