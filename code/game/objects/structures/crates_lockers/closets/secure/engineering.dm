@@ -4,7 +4,9 @@
 	icon_state = "ce"
 
 /obj/structure/closet/secure_closet/reinforced/engineering_chief/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/industrial(src)
 	else
@@ -49,7 +51,9 @@
 	icon_door = "eng_elec"
 
 /obj/structure/closet/secure_closet/engineering_electrical/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/storage/toolbox/electrical(src)
@@ -71,7 +75,9 @@
 	icon_door = "eng_weld"
 
 /obj/structure/closet/secure_closet/engineering_welding/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/head/welding(src)
 	new /obj/item/clothing/head/welding(src)
 	new /obj/item/clothing/head/welding(src)
@@ -95,7 +101,9 @@
 	icon_door = "eng_secure"
 
 /obj/structure/closet/secure_closet/personal/engineering_personal/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/industrial(src)
 	else

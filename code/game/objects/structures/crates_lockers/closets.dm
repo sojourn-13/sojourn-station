@@ -362,9 +362,9 @@
 				health -= 50
 
 /obj/structure/closet/proc/populate_contents()
-	if(populated_contents)
-		return
 	populated_contents = TRUE
+	if(populated_contents)
+		return FALSE
 
 /obj/structure/closet/proc/damage(var/damage)
 	health -= damage

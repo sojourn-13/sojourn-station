@@ -8,6 +8,9 @@
 	icon_state = "lootcloset"
 
 /obj/structure/closet/onestar/tier1/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 	new /obj/random/contraband/low_chance(src)
 	new /obj/random/contraband/low_chance(src)
@@ -36,6 +39,9 @@
 	icon_state = "lootcloset1"
 
 /obj/structure/closet/onestar/tier2/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 	new /obj/random/contraband/low_chance(src)
 	new /obj/random/contraband/low_chance(src)
@@ -66,6 +72,9 @@
 	icon_state = "lootcloset2"
 
 /obj/structure/closet/onestar/tier3/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 	new /obj/random/contraband/low_chance(src)
 	new /obj/random/contraband/low_chance(src)
@@ -107,6 +116,9 @@
 // Empty
 /obj/structure/closet/onestar/tier1/normal/empty
 /obj/structure/closet/onestar/tier1/normal/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 2
@@ -118,6 +130,9 @@
 // Empty
 /obj/structure/closet/onestar/tier2/normal/empty
 /obj/structure/closet/onestar/tier2/normal/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 3
@@ -129,6 +144,9 @@
 // Empty
 /obj/structure/closet/onestar/tier3/normal/empty
 /obj/structure/closet/onestar/tier3/normal/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 
@@ -140,17 +158,23 @@
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/special/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
-	..()
+
 
 // Empty
 /obj/structure/closet/onestar/tier1/special/empty
 /obj/structure/closet/onestar/tier1/special/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 2
@@ -160,6 +184,9 @@
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/special/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
@@ -167,11 +194,14 @@
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/frames(src)
-	..()
+
 
 // Empty
 /obj/structure/closet/onestar/tier2/special/empty
 /obj/structure/closet/onestar/tier2/special/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 3
@@ -181,7 +211,9 @@
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/special/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
@@ -190,10 +222,12 @@
 	new /obj/random/gun_parts/frames(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier3/special/empty
 /obj/structure/closet/onestar/tier3/special/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 ////Mineral
@@ -204,7 +238,9 @@
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/mineral/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
@@ -212,10 +248,12 @@
 	new /obj/random/gun_parts/frames(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier1/mineral/empty
 /obj/structure/closet/onestar/tier1/mineral/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 2
@@ -225,7 +263,9 @@
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/mineral/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
@@ -233,10 +273,12 @@
 	new /obj/random/gun_parts/frames(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier2/mineral/empty
 /obj/structure/closet/onestar/tier2/mineral/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 3
@@ -246,7 +288,9 @@
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/mineral/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
@@ -254,10 +298,12 @@
 	new /obj/random/gun_parts/frames(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier3/mineral/empty
 /obj/structure/closet/onestar/tier3/mineral/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 ////Medical
@@ -268,7 +314,9 @@
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/medical/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
@@ -276,10 +324,12 @@
 	new /obj/random/gun_parts/frames(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier1/medical/empty
 /obj/structure/closet/onestar/tier1/medical/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 2
@@ -289,16 +339,20 @@
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/medical/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier2/medical/empty
 /obj/structure/closet/onestar/tier2/medical/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()
 
 //Tier 3
@@ -308,15 +362,19 @@
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/medical/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/frames(src)
 	..()
-
 // Empty
 /obj/structure/closet/onestar/tier3/medical/empty
 /obj/structure/closet/onestar/tier3/medical/empty/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	..()

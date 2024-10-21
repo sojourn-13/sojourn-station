@@ -7,7 +7,9 @@
 	req_access = list(access_kitchen)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/condiment/flour(src)
 	new /obj/item/reagent_containers/food/condiment/sugar(src)
@@ -24,7 +26,9 @@
 	icon_state = "frig"
 
 /obj/structure/closet/secure_closet/freezer/meat/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/meat/monkey(src)
 
@@ -33,7 +37,9 @@
 	icon_state = "freezer"
 
 /obj/structure/closet/secure_closet/freezer/blood/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/blood/OMinus(src)
 
@@ -42,7 +48,9 @@
 	icon_state = "frig"
 
 /obj/structure/closet/secure_closet/freezer/fridge/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/food/drinks/milk(src)
 	for(var/i in 1 to 3)
@@ -57,7 +65,9 @@
 	req_access = list(access_heads_vault)
 
 /obj/structure/closet/secure_closet/freezer/money/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 3)
 		new /obj/item/spacecash/bundle/c1000(src)
 	for(var/i in 1 to 3)
@@ -71,7 +81,9 @@
 	icon_state = "advanced_freezer"
 
 /obj/structure/closet/secure_closet/freezer/mini/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/cans/monster(src)
 	for(var/i in 1 to 3)
@@ -97,7 +109,9 @@
 	icon_state = "simpledf"
 
 /obj/structure/closet/secure_closet/freezer/icebox/populate_contents()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/cans/baton_rent_a_cop(src)
 	for(var/i in 1 to 3)
