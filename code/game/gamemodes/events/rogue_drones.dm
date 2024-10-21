@@ -63,7 +63,7 @@
 	//Pick a list of spawn locatioons
 	var/list/spawn_locations = pickweight_mult(viable_turfs, drones_to_spawn)
 
-	log_and_message_admins("Spawning [drones_to_spawn]")
+	log_and_message_admins("Spawning [drones_to_spawn] drones!")
 	for(var/turf/T in spawn_locations)
 		var/mob/living/simple_animal/hostile/retaliate/malf_drone/D = new /mob/living/simple_animal/hostile/retaliate/malf_drone(T)
 		drones_list.Add(D)
