@@ -23,7 +23,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_WOOD = 8)
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 8, TECH_ENGINEERING = 8) //With how hard it is to make? High value.
-	fire_delay = 20
+	fire_delay = 18
 	charge_cost = 150
 	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1 //already quite a bit lethal and dangerous with the burn damage and 'close range spray'.
