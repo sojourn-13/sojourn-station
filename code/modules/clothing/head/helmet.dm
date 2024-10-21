@@ -230,7 +230,7 @@
 /obj/item/clothing/head/helmet/ballistic
 	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
-	icon_state = "helmet_mil"
+	icon_state = "helmet_black"
 	armor_list = list(melee = 7, bullet = 10, energy = 5, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/verb/toggle_style()
@@ -243,7 +243,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Baseline"] = "helmet_mil_alt"
+	options["Baseline"] = "helmet_black"
 	options["Green"] = "helmet_green"
 	options["Tan"] = "helmet_tan"
 
@@ -319,7 +319,7 @@
 	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			This one bears the IFF stripes of the Blackshield."
-	icon_state = "helmet_mil_alt"
+	icon_state = "helmet_mil"
 
 /obj/item/clothing/head/helmet/ballistic/militia/toggle_style()
 	set name = "Adjust Style"
@@ -331,10 +331,14 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "helmet_mil_alt"
-	options["Desert Combat"] = "helmet_tan_mil"
+	options["Default Blackshield Combat"] = "helmet_mil"
+	options["Default Blackshield Combat - Anthromorphic"] = "helmet_mil_anthro"
+	options["Desert Blackshield Combat"] = "helmet_tan_mil"
+	options["Desert Blackshield Combat - Anthromorphic"] = "helmet_tan_mil_anthro"
 	options["Woodlands Blackshield Combat"] = "helmet_green_mil"
-	options["Anthromorphic Blackshield Helmet"] = "helmet_mil_anthro"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "helmet_green_mil_anthro"
+	options["Urban Blackshield Combat"] = "helmet_white_mil"
+	options["Urban Blackshield Combat - Anthromorphic"] = "helmet_white_mil_anthro"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -344,7 +348,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /obj/item/clothing/head/helmet/ballistic/militia/sergeant
 	name = "sergeant's ballistic gorget"
@@ -406,13 +410,19 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Standard fullhelm"] = ""
-	options["Tan fullhelm"] = "_tan"
-	options["Green fullhelm"] = "_green"
-	options["Grey hooded fullhelm"] = "_gp"
-	options["Green hooeded fullhelm"] = "_grp"
-	options["Tan hooded fullhelm"] = "_tp"
-	options["Camo hooded fullhelm"] = "_cp"
+	options["Default Blackshield Combat"] = ""
+	options["Default Blackshield Combat - Anthromorphic"] = "_anthro"
+	options["Desert Blackshield Combat"] = "_tan"
+	options["Desert Blackshield Combat - Anthromorphic"] = "_tan_anthro"
+	options["Woodlands Blackshield Combat"] = "_green"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "_green_anthro"
+	options["Urban Blackshield Combat"] = "_white"
+	options["Urban Blackshield Combat - Anthromorphic"] = "_white_anthro"
+	options["Default Blackshield Combat - Hooded"] = "_gp"
+	options["Desert Blackshield Combat - Hooded"] = "_tp"
+	options["Woodlands Blackshield Combat - Hooded"] = "_grp"
+	options["Camo Blackshield Combat - Hooded"] = "_cp"
+	options["Urban Camo Combat - Hooded"] = "_wp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -422,6 +432,24 @@
 		item_state = base
 		item_state_slots = null
 		to_chat(M, "You adjust to the [choice].")
+
+		var/list/anthro = list(
+			"_anthro",
+			"_tan_anthro",
+			"_green_anthro",
+			"_white_anthro"
+		)
+		if (options[choice] in anthro)
+			if (src.name == "blackshield full helm")
+				light_overlay = "bsfullhelm_anthro_light"
+			else
+				light_overlay = "corpsmanfullhelm_anthro_light"
+		else
+			if (src.name == "blackshield full helm")
+				light_overlay = "bsfullhelm_light"
+			else
+				light_overlay = "corpsmanfullhelm_light"
+
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -460,13 +488,19 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Standard fullhelm"] = ""
-	options["Tan fullhelm"] = "_tan"
-	options["Green fullhelm"] = "_green"
-	options["Grey hooded fullhelm"] = "_gp"
-	options["Green hooeded fullhelm"] = "_grp"
-	options["Tan hooded fullhelm"] = "_tp"
-	options["Camo hooded fullhelm"] = "_cp"
+	options["Default Blackshield Combat"] = ""
+	options["Default Blackshield Combat - Anthromorphic"] = "_anthro"
+	options["Desert Blackshield Combat"] = "_tan"
+	options["Desert Blackshield Combat - Anthromorphic"] = "_tan_anthro"
+	options["Woodlands Blackshield Combat"] = "_green"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "_green_anthro"
+	options["Urban Blackshield Combat"] = "_white"
+	options["Urban Blackshield Combat - Anthromorphic"] = "_white_anthro"
+	options["Default Blackshield Combat - Hooded"] = "_gp"
+	options["Desert Blackshield Combat - Hooded"] = "_tp"
+	options["Woodlands Blackshield Combat - Hooded"] = "_grp"
+	options["Camo Blackshield Combat - Hooded"] = "_cp"
+	options["Urban Camo Combat - Hooded"] = "_wp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -476,6 +510,18 @@
 		item_state = base
 		item_state_slots = null
 		to_chat(M, "You adjust to the [choice].")
+
+		var/list/anthro = list(
+			"_anthro",
+			"_tan_anthro",
+			"_green_anthro",
+			"_white_anthro"
+		)
+		if (options[choice] in anthro)
+			light_overlay = "bsfullhelm_anthro_light"
+		else
+			light_overlay = "bsfullhelm_light"
+
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -1810,9 +1856,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["maska dark camo"] = "maska_bs"
-	options["maska forest camo"] = "maska_bs_green"
-	options["maska red rock camo"] = "maska_bs_tan"
+	options["Default Blackshield Combat"] = "maska_bs"
+	options["Woodlands Blackshield Combat"] = "maska_bs_green"
+	options["Desert Blackshield Combat"] = "maska_bs_tan"
+	options["Urban Blackshield Combat"] = "maska_bs_white"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

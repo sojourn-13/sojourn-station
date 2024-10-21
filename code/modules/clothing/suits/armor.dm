@@ -894,8 +894,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil"
+	options["Default Blackshield Combat"] = "flakvest_mil"
 	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -928,8 +930,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil_fullbody"
+	options["Default Blackshield Combat"] = "flakvest_mil_fullbody"
 	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil_fullbody"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -950,6 +954,32 @@
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
 	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Blackshield Combat"] = "flakvest_mil"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
 
 /obj/item/clothing/suit/armor/flakvest/commander/full
 	name = "advanced full body flak vest" //
@@ -980,9 +1010,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Black"] = "commander_mil_fullbody"
-	options["Woodland Green"] = "commander_green_fullbody"
-	options["Desert Tan"] = "commander_tan_fullbody"
+	options["Default Blackshield Combat"] = "commander_mil_fullbody"
+	options["Woodlands Blackshield Combat"] = "commander_green_fullbody"
+	options["Desert Blackshield Combat"] = "commander_tan_fullbody"
+	options["Urban Blackshield Combat"] = "commander_white_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -993,7 +1024,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /*
  * Heavy Armor Types
@@ -1263,9 +1294,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_mil"
-	options["Desert Combat"] = "platecarrier_tan_mil"
+	options["Default Blackshield Combat"] = "platecarrier_mil"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_mil"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
+	options["Urban Blackshield Combat"] = "platecarrier_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1297,9 +1329,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_mil_fullbody"
-	options["Desert Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Default Blackshield Combat"] = "platecarrier_mil_fullbody"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_mil_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
+	options["Urban Blackshield Combat"] = "platecarrier_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1329,9 +1362,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_corpsman"
-	options["Desert Combat"] = "platecarrier_tan_corpsman"
+	options["Default Blackshield Combat"] = "platecarrier_corpsman"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_corpsman"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman"
+	options["Urban Blackshield Combat"] = "platecarrier_white_corpsman"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1363,9 +1397,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_corpsman_fullbody"
-	options["Desert Combat"] = "platecarrier_tan_corpsman_fullbody"
+	options["Blackshield Blackshield Combat"] = "platecarrier_corpsman_fullbody"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_corpsman_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman_fullbody"
+	options["Urban Blackshield Combat"] = "platecarrier_white_corpsman_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1529,11 +1564,12 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "commander_mil"
-	options["Desert Combat"] = "commander_tan"
-	options["Woodlands Combat"] = "commander_green"
-	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
-	options["BC Greatcoat"] = "mc_coat"
+	options["Default Blackshield Combat"] = "commander_mil"
+	options["Desert Blackshield Combat"] = "commander_tan"
+	options["Woodlands Blackshield Combat"] = "commander_green"
+	options["Urban Blackshield Combat"] = "commander_white"
+	options["Cloaked BlackshieldGreatcoat"] = "mc_coat_cloak"
+	options["Blackshield Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1544,7 +1580,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
 	name = "blackshield armored overcoat"
