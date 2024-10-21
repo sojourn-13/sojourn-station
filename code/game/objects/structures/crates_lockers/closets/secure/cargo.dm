@@ -5,6 +5,9 @@
 	icon_state = "cargo"
 
 /obj/structure/closet/secure_closet/personal/cargotech/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/cargotech(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
@@ -75,6 +78,9 @@
 	icon_state = "qm"
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/cargotech(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
@@ -117,6 +123,9 @@
 	armor_cache = pickweight(list("BASIC_A" = 16, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 4))
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -349,6 +358,9 @@
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -571,6 +583,9 @@
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	gain_rng()
 
 	new /obj/item/device/radio/headset/heads/foreman(src)
@@ -697,6 +712,9 @@
 	icon_state = "fence"
 
 /obj/structure/closet/secure_closet/reinforced/foreman/fence/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
 	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 	new /obj/item/gun/projectile/automatic/vector(src)
@@ -718,6 +736,9 @@
 	icon_state = "cargo"
 
 /obj/structure/closet/secure_closet/personal/artist/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/suit/artist(src)
 	new /obj/item/clothing/under/rank/artist(src)
 	new /obj/item/clothing/suit/artist(src)
@@ -733,6 +754,9 @@
 /obj/structure/closet/wardrobe/color/pink/artist
 
 /obj/structure/closet/wardrobe/color/pink/artist/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	//new/obj/item/clothing/under/mime(src)
 	new/obj/item/clothing/shoes/color/black(src)
 	new/obj/item/clothing/gloves/color/white(src)

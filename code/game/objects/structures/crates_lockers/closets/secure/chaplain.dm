@@ -4,6 +4,9 @@
 	icon_state = "head_preacher"
 
 /obj/structure/closet/secure_closet/reinforced/preacher/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(25))
 		new /obj/item/storage/backpack/neotheology(src)
 	else if(prob(25))

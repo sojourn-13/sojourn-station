@@ -3,6 +3,9 @@
 	icon_state = "syndicate"
 
 /obj/structure/closet/malf/suits/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/tank/jetpack/void(src)
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/clothing/suit/space/void(src)

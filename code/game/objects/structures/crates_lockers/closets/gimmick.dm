@@ -15,6 +15,9 @@
 	icon_state = "syndicate"
 
 /obj/structure/closet/gimmick/russian/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/clothing/head/ushanka(src)
@@ -34,12 +37,17 @@
 	anchored = 1
 
 /obj/structure/closet/thunderdome/New()
-	..()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 
 /obj/structure/closet/thunderdome/tdred
 	name = "red-team Thunderdome closet"
 
 /obj/structure/closet/thunderdome/tdred/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/suit/armor/heavy/red(src)
 	new /obj/item/clothing/suit/armor/heavy/red(src)
 	new /obj/item/clothing/suit/armor/heavy/red(src)
@@ -64,6 +72,9 @@
 	icon_state = "syndicate"
 
 /obj/structure/closet/thunderdome/tdgreen/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/suit/armor/heavy/green(src)
 	new /obj/item/clothing/suit/armor/heavy/green(src)
 	new /obj/item/clothing/suit/armor/heavy/green(src)

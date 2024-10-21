@@ -5,6 +5,9 @@
 	icon_state = "hydro"
 
 /obj/structure/closet/secure_closet/personal/hydroponics/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(25))
 		new /obj/item/storage/backpack/botanist(src)
 	else if(prob(25))
@@ -39,6 +42,9 @@
 	icon_state = "botanist"
 
 /obj/structure/closet/secure_closet/personal/agrolyte/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/suit/rank/botanist(src)
 	new /obj/item/storage/belt/utility/neotheology(src)
 	new /obj/item/storage/bag/produce(src)
