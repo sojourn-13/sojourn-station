@@ -122,10 +122,10 @@
 /datum/gear/factionblackshield/shoulderboardselection/New()
 	..()
 	var/shoulderboards = list(
-		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper
-		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman
-		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant
-		"commander shoulderboards"		=	/obj/item/clothing/accessory/ranks/commander
+		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper,
+		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman,
+		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant,
+		"commander shoulderboards"		=	/obj/item/clothing/accessory/ranks/commander,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(shoulderboards)
 
