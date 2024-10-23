@@ -379,7 +379,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/divisor
 	name = "Divisor's Guardsmen Armor"
-	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine. The inner layer has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design."
+	desc = "The armor of the armed forces of the now extinct military of New Byzantine. The inner layer has plates of biomatter-infused steel and chainmail, together with shoulder protection that reaches up to protect the neck and affix it  to the helmet of the same design. Now Divisors give it a new purpose."
 	icon_state = "divisor_guardsmen_armor"
 
 /obj/item/clothing/suit/armor/vest/path/divisor/verb/toggle_style()
