@@ -201,7 +201,7 @@
 
 /obj/item/clothing/suit/storage/chaplain/coat
 	name = "preacher coat"
-	desc = "A snugly fitting, lightly armoured brown coat."
+	desc = "The Prime's vestments come in many different forms, all of them regal and richly adorned."
 	icon_state = "church_coat"
 	item_state = "church_coat"
 

@@ -637,7 +637,7 @@
 //Church
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
-	desc = "Don't want anything getting in your eyes."
+	desc = "Design frequently used by hydroponicists and floral caretakers of New Byzantine. Protection is paramount when working with dangerous plants."
 	icon_state = "botanist"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -674,7 +674,7 @@
 
 /obj/item/clothing/head/helmet/acolyte
 	name = "vector hood"
-	desc = "Even the most devout deserve head protection."
+	desc = "Helmet for every faithful of the Absolute. Even the most devout need protection."
 	icon_state = "acolyte"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -725,7 +725,7 @@
 
 /obj/item/clothing/head/helmet/path/divisor
 	name = "Divisor Plate Greathelm"
-	desc = "An great helm with large red wings with latin engravings that lets it know the user is an enlightened Vector with it's vibrant colours."
+	desc = "A greathelm with latin engravings that let everyone know the user is an enlightened Divisor, sworn protector and soldier."
 	icon_state = "divisor_plate_greathelm"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -783,7 +783,7 @@
 
 /obj/item/clothing/head/helmet/path/lemniscate
 	name = "Lemniscate Hat"
-	desc = "The incredibly wide hat of Lemniscates only ensures it's fanciness- at it is the biggest among the other hats there is, this design follows the need to prevent sunburns while staying well suited on the head. There is the presence of inner layer of chain-mail and an slim, yet sturdy bowl-like amount of steel protecting the skull, hidden under the layers of smooth silk."
+	desc = "The incredibly wide hat of Lemniscates exudes radiance as it is the biggest amongst hats there is. The design ensures a comfortable fit along with the prevention of sunburn. Hidden beneath the smooth silk of the hat is a layer of chainmail."
 	icon_state = "lemniscate_hat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -813,7 +813,7 @@
 
 /obj/item/clothing/head/helmet/path/monomial
 	name = "Monomial Kabuto"
-	desc = "An old helmet piece with minor plates overlapping and keeping the skull of it's user completely secure from damage. It allows attacks to glance down and spread the impact across the entire helmet instead of only one point, providing the capacity of survival of whoever keeps it on it's head."
+	desc = "An archaic helmet design with small overlapping plates, keeping the skull of its user mostly safe from damage. It disperses the impact of an attack across the entire helmet instead of only one point, adding to the survival of the wearer."
 	icon_state = "monomial_kabuto"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -842,7 +842,7 @@
 
 /obj/item/clothing/head/helmet/path/factorial
 	name = "Factorial Powerhood"
-	desc = "An indespensable headwear of any combat behicle operator, well used by the mechanics who served under the banner of the New Byzantine and even to this day, it's design is used for pilots."
+	desc = "An indespensable headwear of any combat vehicle operator, mostly used by the mechanics and factorials who served under the banner of New Byzantine. Even to this day the design is used by absolutist pilots."
 	icon_state = "factorial_powerhood"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -871,7 +871,7 @@
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
-	desc = "The rosaria protects. Deus Vult."
+	desc = "The rosaria protects. The Absolute wills it!"
 	icon_state = "rosaria_helm"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -906,7 +906,7 @@
 
 /obj/item/clothing/head/helmet/prime
 	name = "prime hood"
-	desc = "A visored helmet with a cloth hood covering it."
+	desc = "A visored helmet with a cloth hood covering it. The craftsmanship and decorations are only fit for a Prime of the Absolute"
 	icon_state = "prime"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -940,7 +940,7 @@
 		if(choice == "prime saint")
 			flags_inv = HIDEEARS
 		else
-			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()

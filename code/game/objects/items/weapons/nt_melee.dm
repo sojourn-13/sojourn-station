@@ -62,7 +62,7 @@
 	name = "halberd"
 	desc = "This weapon of ancient design appears to be a spear-axe hybrid. \
 	It saw a lot of use back in the Dark Ages back on Earth - in more recent times, sablekyne hunters use a similar weapon \
-	on their homeworlds, the weapons practical use taking down huge and heavily armored wildlife lead to the church adopting its own design."
+	on their homeworlds, the weapon's practical use in taking down huge and heavily armored wildlife lead to the church adopting its own design."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
@@ -79,7 +79,7 @@
 
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
-	desc = "A saintly looking scourge, extreme punishment in handheld form. Can be extended to hurt more. \
+	desc = "A saintly looking whip sword, extreme punishment in handheld form. Can be extended to inflict even more pain. \
 	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_scourge"
 	item_state = "nt_scourge"
@@ -137,8 +137,8 @@
 
 /obj/item/tool/sword/nt/spear
 	name = "spear"
-	desc = "A saint looking short spear, designed for use with a shield or as a throwing weapon. \
-	The spear-tip usually breaks after being thrown at a target, but it can be hammered into shape again."
+	desc = "A saintly looking short spear to be used with a shield. It's even deadlier when thrown. \
+	The tip usually breaks after being thrown at a target. Can be hammered into shape again."
 	icon_state = "nt_spear"
 	item_state = "nt_spear"
 	wielded_icon = "nt_spear_wielded"
@@ -239,7 +239,7 @@
 	icon_state = "nt_warhammer"
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
-	force = WEAPON_FORCE_BRUTAL - 3 //Naturally weaker do to knockbacking are targets (can stun lock)
+	force = WEAPON_FORCE_BRUTAL - 3 //Naturally weaker due to knocking back targets (can stun lock)
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
@@ -261,7 +261,7 @@
 
 /obj/item/tool/sword/nt/power
 	name = "\"Vexilar\" forceblade"
-	desc = "A hefty greatsword with golden wiring embedded into its handle and blade, designed to channel the power of a cruciform to project an ultra-sharp energy blade. \
+	desc = "A sleek and heavy bastard-sword with golden wiring embedded into its handle and blade, designed to channel the power of a cruciform to project an ultra-sharp energy blade. \
 	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_force"
 	item_state = "nt_force"
@@ -317,10 +317,10 @@
 		return heat
 
 /obj/item/shield/riot/nt
-	name = "shield"
-	desc = "A saintly looking shield, let the God protect you. \
+	name = "NT Greatshield"
+	desc = "A saintly looking shield, let the Absolute protect you. \
 	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division. \
-	Has several leather straps on the back to hold melee weapons."
+	Has several leather straps on the inside to hold melee weapons."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
@@ -392,7 +392,7 @@
 
 /obj/item/shield/buckler/nt
 	name = "NT Parma"
-	desc = "A round shield with a golden trim. Has several biomatter-leather straps on the back to hold melee weapons."
+	desc = "A round shield with a golden trim. Has several biomatter-leather straps on the inside to hold melee weapons."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_buckler" //by CeUvi we thx thy
 	item_state = "nt_buckler"
@@ -407,7 +407,7 @@
 	var/max_w_class = ITEM_SIZE_HUGE
 	var/list/can_hold = list(
 		/obj/item/tool/sword/nt/shortsword,
-		/obj/item/tool/sword/nt/spear, //Romans would have these with their shield to ware down their foe
+		/obj/item/tool/sword/nt/spear, //Romans would have these with their shield to wear down their foe // Storing your spears and throwing them like a pilum is viable with this
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/knife/neotritual,
 		/obj/item/book/ritual/cruciform,
@@ -459,13 +459,16 @@
 	force = WEAPON_FORCE_LETHAL
 	armor_divisor = ARMOR_PEN_HALF
 	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_GOLD = 3)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	effective_faction = list("psi_monster", "hive") // The Vexilar Forceblade has this quality and since crusaders are usually only called against a hivemind, the sword should reflect that
+	damage_mult = 1.2 //20% damage buff when purging the ABOMINATION
 	price_tag = 10000
 
 //Throwables
 
 /obj/item/stack/thrown/nt
 	name = "Faithful Throwing knife"
-	desc = "A saintly-looking sword forged to do God\'s distant work."
+	desc = "A saintly-looking knife delivering the Absolute's word over distance."
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
 	force = WEAPON_FORCE_DANGEROUS
