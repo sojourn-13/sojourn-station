@@ -1616,9 +1616,9 @@
 /datum/reagent/ethanol/Kvass
 	name = "Kvass"
 	id = "Kvass"
-	description = "A traditonal, and very popular russian drink. Made on the colony."
+	description = "A traditonal, and very popular slavic drink. Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
-	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET)
+	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET, TASTE_UMAMI)
 	color = "#9F3400d0"
 	strength = 60
 	adj_temp = -5
@@ -1626,7 +1626,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "Kvass_Glass"
 	glass_name = "Kvass"
-	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
+	glass_desc = "A traditonal slavic drink. This version of Kvass is darker, and a bit bolder than normal."
 
 /datum/reagent/ethanol/bluecuracao
 	name = "Blue Curacao"
@@ -2150,7 +2150,7 @@
 	id = "bilk"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	taste_description = "desperation and lactate"
-	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER)
+	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER,TASTE_UMAMI)
 	color = "#895C4C"
 	strength = 40
 	nutriment_factor = 2
@@ -2181,7 +2181,7 @@
 	id = "bloodymary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Tastes like liquid murder"
 	taste_description = "tomatoes with a hint of lime"
-	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING)
+	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING, TASTE_UMAMI)
 	color = "#660000d0"
 	strength = 15
 
@@ -2225,7 +2225,7 @@
 	id = "changelingsting"
 	description = "You take a tiny sip and feel a burning sensation..."
 	taste_description = "your brain coming out your nose"
-	taste_tag = list(TASTE_STRONG,TASTE_SOUR)
+	taste_tag = list(TASTE_STRONG,TASTE_SOUR,TASTE_UMAMI)
 	color = "#2E6671"
 	strength = 5
 
