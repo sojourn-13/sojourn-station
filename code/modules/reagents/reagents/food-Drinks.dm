@@ -2150,7 +2150,7 @@
 	id = "bilk"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	taste_description = "desperation and lactate"
-	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER)
+	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER,TASTE_UMAMI)
 	color = "#895C4C"
 	strength = 40
 	nutriment_factor = 2
@@ -2225,7 +2225,7 @@
 	id = "changelingsting"
 	description = "You take a tiny sip and feel a burning sensation..."
 	taste_description = "your brain coming out your nose"
-	taste_tag = list(TASTE_STRONG,TASTE_SOUR)
+	taste_tag = list(TASTE_STRONG,TASTE_SOUR,TASTE_UMAMI)
 	color = "#2E6671"
 	strength = 5
 
