@@ -118,7 +118,7 @@
 		LANGUAGE_COMMON = 10
 	)
 	shorthand = "KO"
-	syllables = list(("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
+	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
 					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
  					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
  					 "alt", "verfallen", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
@@ -135,7 +135,8 @@
 					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloß", "eben", "mal", "gar", "ruhig", "eigentlich", \
 					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermaßen", \
 					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermaßen", "freilich", \
-					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich")
+					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Hund", "Katze", "Rüde", "Pleite", "Schreckschraube", "Klammer", "Fuß", \ 
+					 "braver", "Teufel", "Platz“, "bleib", "gib laut", "Hunde", "sitz", "stopp")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
