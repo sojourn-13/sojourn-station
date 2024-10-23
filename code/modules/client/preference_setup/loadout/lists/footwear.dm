@@ -115,5 +115,5 @@
 	path = /obj/item/clothing/shoes/winter
 
 /datum/gear/shoes/blacksilk_boots
-	display_name ="Absolutist Blackshield boots"
+	display_name ="Absolutist Blacksilk boots"
 	path = /obj/item/clothing/shoes/church_blacksilk_boots
