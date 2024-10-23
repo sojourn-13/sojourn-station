@@ -585,7 +585,7 @@
 
 /obj/item/clothing/suit/armor/vest/prime
 	name = "prime armor"
-	desc = "The Armor of a Prime, adorned with different markings and decorations only fit for the most devout."
+	desc = "The armor of a Prime, adorned with different markings and decorations only fit for the most devout."
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
