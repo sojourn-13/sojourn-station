@@ -46,6 +46,7 @@
 	var/has_mobs_to_spawn = FALSE
 	var/chance_old_mobs = 20
 	var/mobs_to_spawn = /obj/random/cluster/roaches
+	var/populated_contents = FALSE
 
 /obj/structure/closet/can_prevent_fall()
 	return TRUE
@@ -53,7 +54,6 @@
 /obj/structure/closet/Initialize(mapload)
 	..()
 
-	populate_contents()
 	update_icon()
 	hack_require = rand(6,8)
 
@@ -95,6 +95,7 @@
 			storage_capacity = content_size + 5
 
 /obj/structure/closet/Destroy()
+	populate_contents()
 	dump_contents()
 	. = ..()
 
@@ -106,16 +107,19 @@
 		for(var/obj/item/I in src.contents)
 			if(!I.anchored)
 				content_size += CEILING(I.w_class * 0.5, 1)
-		if(!content_size)
-			to_chat(user, "It is empty.")
-		else if(storage_capacity > content_size*4)
-			to_chat(user, "It is barely filled.")
-		else if(storage_capacity > content_size*2)
-			to_chat(user, "It is less than half full.")
-		else if(storage_capacity > content_size)
-			to_chat(user, "There is still some free space.")
+		if(populated_contents)
+			if(!content_size)
+				to_chat(user, "It is empty.")
+			else if(storage_capacity > content_size*4)
+				to_chat(user, "It is barely filled.")
+			else if(storage_capacity > content_size*2)
+				to_chat(user, "It is less than half full.")
+			else if(storage_capacity > content_size)
+				to_chat(user, "There is still some free space.")
+			else
+				to_chat(user, "It is full.")
 		else
-			to_chat(user, "It is full.")
+			to_chat(user, "It's hard to tell how full [src] is.")
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0 || wall_mounted)) return 1
@@ -203,6 +207,8 @@
 /obj/structure/closet/proc/open(mob/living/user)
 	if(opened || !can_open(user))
 		return FALSE
+
+	populate_contents()
 
 	if(rigged && (locate(/obj/item/device/radio/electropack) in src) && istype(user))
 		if(user.electrocute_act(20, src))
@@ -336,6 +342,7 @@
 
 // this should probably use dump_contents()
 /obj/structure/closet/ex_act(severity)
+	populate_contents()
 	switch(severity)
 		if(1)
 			for(var/atom/movable/A as mob|obj in src)//pulls everything out of the locker and hits it with an explosion
@@ -355,10 +362,13 @@
 				health -= 50
 
 /obj/structure/closet/proc/populate_contents()
-	return
+	populated_contents = TRUE
+	if(populated_contents)
+		return FALSE
 
 /obj/structure/closet/proc/damage(var/damage)
 	health -= damage
+	populate_contents()
 	if(health <= 0)
 		qdel(src)
 
@@ -563,6 +573,7 @@
 // tk grab then use on self
 /obj/structure/closet/attack_self_tk(mob/user as mob)
 	src.add_fingerprint(user)
+	populate_contents()
 	if(!src.toggle())
 		to_chat(usr, SPAN_NOTICE("It won't budge!"))
 
@@ -571,6 +582,7 @@
 		locked = FALSE
 		broken = TRUE
 		update_icon()
+		populate_contents()
 		playsound(src.loc, "sparks", 60, 1)
 		to_chat(user, SPAN_NOTICE("You unlock \the [src]."))
 		return TRUE
@@ -586,6 +598,7 @@
 			playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		broken = TRUE
 	update_icon()
+	populate_contents()
 	..()
 
 /obj/structure/closet/verb/verb_toggleopen()
@@ -705,6 +718,7 @@
 /obj/structure/closet/proc/break_open()
 	welded = 0
 	update_icon()
+	populate_contents()
 	//Do this to prevent contents from being opened into nullspace (read: bluespace)
 	if(istype(loc, /obj/structure/bigDelivery))
 		var/obj/structure/bigDelivery/BD = loc

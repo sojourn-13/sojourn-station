@@ -526,9 +526,6 @@
 /obj/effect/overlay/water{
 	layer = 3
 	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -3106,6 +3103,8 @@
 "li" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "lj" = (
@@ -4693,9 +4692,6 @@
 /obj/effect/overlay/water{
 	layer = 3
 	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -4763,9 +4759,6 @@
 	dir = 1
 	},
 /obj/effect/overlay/water{
-	layer = 3
-	},
-/obj/effect/overlay/water/top{
 	layer = 3
 	},
 /obj/machinery/porta_turret/One_star{
@@ -6205,6 +6198,7 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
 /mob/living/simple_animal/hostile/frog,
+/obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vr" = (
@@ -7032,11 +7026,10 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xV" = (
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/rock,
+/obj/random/flora/jungle_tree,
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xW" = (
 /turf/simulated/floor/beach/water/swamp,
@@ -7276,13 +7269,6 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
-"yI" = (
-/obj/effect/overlay/water/top{
-	pixel_y = -11
-	},
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "yJ" = (
 /obj/structure/table/steel,
 /obj/item/storage/hcases/med/has_items_spawn,
@@ -8205,13 +8191,6 @@
 /obj/item/organ/internal/scaffold/aberrant/teratoma/random/rare,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"BI" = (
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "BJ" = (
 /obj/machinery/door/airlock/hatch{
 	locked = 1
@@ -9448,16 +9427,6 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
-"FA" = (
-/obj/effect/overlay/water/top{
-	pixel_y = -22
-	},
-/obj/effect/overlay/water/top{
-	pixel_y = -13
-	},
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "FB" = (
 /mob/living/simple_animal/hostile/carp/shark,
 /turf/simulated/floor/beach/water/shallow,
@@ -10618,9 +10587,6 @@
 /obj/effect/overlay/water{
 	layer = 3
 	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -11483,11 +11449,10 @@
 	requires_power = 0
 	})
 "LP" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/mining/drill{
-	anchored = 1
-	},
-/turf/simulated/floor/asteroid/grass,
+/mob/living/simple_animal/frog,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "LQ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -11588,11 +11553,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Mi" = (
-/obj/structure/flora/big/bush2,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Mj" = (
 /obj/item/remains,
 /turf/simulated/floor/asteroid/grass,
@@ -11683,16 +11643,6 @@
 "Mx" = (
 /obj/effect/floor_decal/industrial/road/straight1,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/outside/forest/beast_cave_light)
-"My" = (
-/obj/effect/overlay/water/top{
-	pixel_y = -10
-	},
-/obj/effect/overlay/water/top{
-	pixel_y = -18
-	},
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Mz" = (
 /obj/effect/overlay/water/top,
@@ -11814,9 +11764,6 @@
 /obj/effect/overlay/water{
 	layer = 3
 	},
-/obj/effect/overlay/water/top{
-	layer = 3
-	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -11860,14 +11807,6 @@
 "MX" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/alpha)
-"MY" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "MZ" = (
 /obj/item/stack/material/glass/random,
 /obj/effect/floor_decal/border/techfloor/orange{
@@ -11920,17 +11859,10 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Nh" = (
-/obj/effect/overlay/water/top{
-	pixel_y = -14
-	},
-/obj/effect/overlay/water/top{
-	pixel_y = -22
-	},
-/obj/effect/overlay/water/top{
-	pixel_y = -6
-	},
+/obj/random/flora/jungle_tree,
+/obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
+/turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ni" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -12022,6 +11954,8 @@
 /obj/random/flora/jungle_tree{
 	pixel_x = -49
 	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Nz" = (
@@ -12582,10 +12516,6 @@
 /mob/living/simple_animal/fennec,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
-"Pn" = (
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Pp" = (
 /obj/item/oddity/common/old_radio,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -12916,6 +12846,7 @@
 "Qm" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Qn" = (
@@ -13050,15 +12981,6 @@
 "QK" = (
 /obj/structure/bonfire/permanent,
 /turf/simulated/floor/asteroid/dirt/burned,
-/area/nadezhda/outside/forest/beast_cave_light)
-"QL" = (
-/obj/structure/flora/big/bush1,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "QM" = (
 /obj/effect/decal/cleanable/blood{
@@ -13368,14 +13290,6 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
-"RD" = (
-/obj/structure/flora/ausbushes/leafybush,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "RE" = (
 /turf/unsimulated/mineral/cold,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -13820,10 +13734,6 @@
 /obj/random/cluster/roaches,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"Tb" = (
-/obj/effect/overlay/water,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "Tc" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock/grey,
@@ -13910,9 +13820,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ts" = (
-/obj/random/traps/low_chance,
+/obj/random/flora/small_jungle_tree,
+/obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/swamp,
+/turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Tt" = (
 /obj/item/remains/unathi,
@@ -14330,9 +14241,6 @@
 "UA" = (
 /obj/structure/window/reinforced,
 /obj/effect/overlay/water{
-	layer = 3
-	},
-/obj/effect/overlay/water/top{
 	layer = 3
 	},
 /obj/machinery/porta_turret/One_star{
@@ -15021,12 +14929,6 @@
 /obj/structure/flora/stump/small,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"WE" = (
-/obj/machinery/mining/drill{
-	anchored = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "WF" = (
 /obj/structure/flora/small/snow/rock4,
 /turf/simulated/floor/snow,
@@ -15333,14 +15235,6 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
-"XL" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/mining/brace{
-	anchored = 1;
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "XM" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -15725,13 +15619,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "YU" = (
-/obj/effect/overlay/water/top{
-	pixel_y = -9
-	},
-/obj/effect/overlay/water/top{
-	pixel_y = -21
-	},
+/obj/effect/overlay/water,
+/obj/random/flora/jungle_tree,
 /obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "YW" = (
@@ -15915,13 +15806,6 @@
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
-"Zz" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/mining/drill{
-	anchored = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "ZA" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/radiation,
@@ -18660,7 +18544,7 @@ et
 AT
 AT
 Mo
-xV
+QB
 Yw
 Iu
 QN
@@ -18862,7 +18746,7 @@ Wj
 Qk
 AT
 AT
-WE
+et
 QB
 Yj
 MH
@@ -19064,7 +18948,7 @@ AT
 AT
 AT
 et
-BI
+et
 pt
 VP
 Gp
@@ -19273,7 +19157,7 @@ PA
 Uh
 VP
 eJ
-RD
+fa
 et
 et
 qK
@@ -19466,7 +19350,7 @@ AT
 Wj
 AT
 AT
-QL
+AT
 AT
 AT
 VP
@@ -19475,7 +19359,7 @@ FK
 uh
 VP
 eJ
-LP
+eJ
 AT
 AT
 et
@@ -19668,7 +19552,7 @@ AT
 AT
 qK
 AT
-Zz
+AT
 et
 AT
 VP
@@ -19677,7 +19561,7 @@ Nu
 Uh
 VP
 Af
-XL
+eJ
 AT
 AT
 et
@@ -19870,7 +19754,7 @@ AT
 qK
 AT
 AT
-MY
+AT
 AT
 et
 VP
@@ -22742,23 +22626,23 @@ Ru
 gy
 gy
 Mv
-xW
-xW
+Oy
+Oy
 dS
-pC
-pC
-pC
-pC
-ej
+Ru
+Ru
+Ru
+Ru
+ZP
 pD
 Qm
 vq
-Pn
+PU
 QC
-Pn
-ej
+PU
+PU
 dS
-pC
+xV
 xW
 QZ
 dS
@@ -22938,28 +22822,28 @@ Ox
 QA
 Ct
 QA
-Pn
-ej
-ej
-pC
-pC
-rI
-Ox
-Ox
-dS
-ej
-ej
-ej
-en
-ej
-Uw
-QA
-QA
-QA
 PU
-yI
-Pn
-Pn
+ZP
+ZP
+Ru
+Ru
+rI
+Nh
+Nh
+dS
+ZP
+ZP
+ZP
+LP
+ZP
+Uw
+Qj
+Qj
+Qj
+PU
+PU
+PU
+PU
 gy
 gy
 xW
@@ -23140,19 +23024,19 @@ xW
 Qj
 Qj
 vp
-Pn
-Pn
-ej
-ej
-ej
+PU
+PU
+ZP
+ZP
+ZP
 Ny
-Ts
+ZF
 gm
 Qj
 PU
 PU
 PV
-Pn
+PU
 PU
 Qj
 CE
@@ -23164,7 +23048,7 @@ PU
 PU
 Qj
 UC
-Pn
+PU
 dS
 dS
 dS
@@ -23344,8 +23228,8 @@ Qj
 IZ
 PU
 UG
-My
-Nh
+PU
+PU
 PU
 PU
 Qj
@@ -23365,8 +23249,8 @@ PU
 PU
 Ka
 Ka
-Tb
 ZP
+FX
 ZP
 ZP
 dS
@@ -23567,10 +23451,10 @@ PU
 PU
 PU
 Ka
-Tb
-wH
-FA
-pD
+ZP
+Oy
+PU
+YU
 dS
 Ug
 Ug
@@ -23769,8 +23653,8 @@ Sz
 PU
 ZP
 xU
-wH
-wH
+Oy
+Oy
 vh
 ZP
 dS
@@ -23971,8 +23855,8 @@ Oy
 Oy
 Oy
 Oy
-wH
-wH
+Oy
+Oy
 Oy
 Oy
 dS
@@ -24175,7 +24059,7 @@ Pd
 DX
 pR
 pR
-KC
+CE
 Ct
 dS
 Ug
@@ -24482,8 +24366,8 @@ ZP
 ZP
 PU
 Wi
-Pn
-ei
+PU
+Ts
 dS
 dS
 dS
@@ -24685,8 +24569,8 @@ OY
 ZP
 ZP
 vk
-eh
-ej
+OY
+ZP
 li
 dS
 dS
@@ -24884,12 +24768,12 @@ Cn
 ZP
 VK
 VK
-Mi
+YH
 wX
-Mi
-ei
-ej
-ej
+YH
+Ts
+ZP
+ZP
 dS
 dS
 dS
@@ -29390,7 +29274,7 @@ vR
 gy
 cD
 gy
-QA
+Qj
 PU
 PU
 PU
@@ -29589,10 +29473,10 @@ et
 dS
 dS
 dS
-QA
-QA
-QA
-QA
+Qj
+Qj
+Qj
+Qj
 Ka
 Ka
 Ka
@@ -29791,11 +29675,11 @@ pa
 dS
 dS
 dS
-Ox
-xW
-xW
-pC
-PU
+Nh
+Oy
+Oy
+dS
+pD
 PU
 PU
 PU
@@ -29996,8 +29880,8 @@ dS
 dS
 dS
 dS
-pC
-PU
+dS
+pD
 PU
 PU
 PU
@@ -30198,11 +30082,11 @@ dS
 dS
 dS
 dS
-pC
 dS
-ej
-ej
-YU
+dS
+dS
+dS
+dS
 pD
 gy
 gm
@@ -30810,7 +30694,7 @@ aa
 aa
 aa
 aa
-ZP
+aa
 ZP
 ZP
 ZP
@@ -31012,8 +30896,8 @@ aa
 aa
 aa
 aa
-ZP
-ZP
+aa
+aa
 ZP
 ZP
 ZP
@@ -31214,8 +31098,8 @@ aa
 aa
 aa
 aa
-ZP
-ZP
+aa
+aa
 ZP
 ZP
 ZP
@@ -31233,7 +31117,7 @@ ZP
 ZP
 ZP
 ZP
-ZP
+dS
 dS
 Ug
 tA
@@ -31416,9 +31300,9 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
+aa
+aa
+aa
 ZP
 ZP
 ZP
@@ -31435,7 +31319,7 @@ ZP
 ZP
 ZP
 ZP
-ZP
+dS
 dS
 Ug
 zi
@@ -31618,9 +31502,9 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
+aa
+aa
+aa
 ZP
 ZP
 ZP
@@ -31637,7 +31521,7 @@ ZP
 ZP
 ZP
 ZP
-ZP
+dS
 dS
 Ug
 Xu
@@ -31820,10 +31704,10 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
-ZP
+aa
+aa
+aa
+aa
 ZP
 ZP
 Tp
@@ -31838,8 +31722,8 @@ ZP
 ZP
 ZP
 ZP
-ZP
-ZP
+dS
+dS
 dS
 Ug
 qM
@@ -32022,10 +31906,10 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
-ZP
+aa
+aa
+aa
+dS
 ZP
 ZP
 Tp
@@ -32039,9 +31923,9 @@ ZP
 ZP
 ZP
 ZP
-ZP
-ZP
-ZP
+dS
+dS
+uk
 dS
 Ug
 Ug
@@ -32224,11 +32108,11 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
-ZP
-ZP
+aa
+aa
+aa
+dS
+dS
 ZP
 Tp
 ND
@@ -32237,13 +32121,13 @@ Hu
 Cl
 ND
 qd
-ZP
-ZP
-ZP
-ZP
-ZP
-ZP
-ZP
+dS
+dS
+dS
+dS
+dS
+uk
+dS
 dS
 Ug
 Ug
@@ -32426,12 +32310,12 @@ aa
 aa
 aa
 aa
-ZP
-ZP
-ZP
-ZP
-ZP
-ZP
+aa
+aa
+aa
+uk
+dS
+dS
 ZP
 FZ
 FZ
@@ -32439,13 +32323,13 @@ FZ
 FZ
 FZ
 ZP
-ZP
-ZP
-ZP
-ZP
-ZP
-ZP
-ZP
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 tn
 Ug
@@ -32630,6 +32514,9 @@ aa
 aa
 aa
 aa
+aa
+uk
+uk
 dS
 dS
 dS
@@ -32638,16 +32525,13 @@ dS
 dS
 dS
 dS
+uk
+uk
+uk
+uk
+uk
 dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+uk
 dS
 dS
 dS
@@ -32835,6 +32719,7 @@ rK
 sl
 dS
 dS
+uk
 dS
 dS
 dS
@@ -32847,8 +32732,7 @@ dS
 dS
 dS
 dS
-dS
-dS
+uk
 dS
 dS
 dS
