@@ -117,7 +117,8 @@
 
 /datum/gear/factionblackshield/shoulderboardselection
 	display_name = "shoulderboard selection"
-	path = /obj/item/clothing/accessory/ranks/blank
+	description = "A selection of Blackshield shoulderboards.
+	path = /obj/item/clothing/accessory/ranks
 
 /datum/gear/factionblackshield/shoulderboardselection/New()
 	..()
