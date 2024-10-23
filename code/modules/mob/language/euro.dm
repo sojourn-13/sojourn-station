@@ -31,5 +31,4 @@
 					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloß", "eben", "mal", "gar", "ruhig", "eigentlich", \
 					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermaßen", \
 					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermaßen", "freilich", \
-					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Hund", "Katze", "Rüde", "Pleite", "Schreckschraube", "Klammer", "Fuß" \
-					 "Teufel", "Platz", "bleib", "gib laut", "Hunde", "sitz", "stopp" )
+					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Hund", "Katze", "Rüde", "Pleite", "Schreckschraube", "Klammer", "Fuß")
