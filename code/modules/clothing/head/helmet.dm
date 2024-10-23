@@ -783,7 +783,7 @@
 
 /obj/item/clothing/head/helmet/path/lemniscate
 	name = "Lemniscate Hat"
-	desc = "The incredibly wide hat of Lemniscates exude radiance as it is the biggest amongst hats there is. The design ensures a comfortable fit along with the prevention of sunburn. Hidden beneath the smooth silk of the hat is a layer of chainmail."
+	desc = "The incredibly wide hat of Lemniscates exudes radiance as it is the biggest amongst hats there is. The design ensures a comfortable fit along with the prevention of sunburn. Hidden beneath the smooth silk of the hat is a layer of chainmail."
 	icon_state = "lemniscate_hat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
