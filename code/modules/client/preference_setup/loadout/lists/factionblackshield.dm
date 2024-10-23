@@ -122,7 +122,7 @@
 /datum/gear/factionblackshield/shoulderboardselection/New()
 	..()
 	var/shoulderboards = list(
-		"blank shoulderboards"			=	/obj/item/clothing/accessory/ranks/blank
+		"blank shoulderboards"			=	/obj/item/clothing/accessory/ranks/blank,
 		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper,
 		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman,
 		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant,
