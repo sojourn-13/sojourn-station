@@ -119,19 +119,23 @@
 	)
 	shorthand = "KO"
 	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
-					 "und", "ja", "nein", "vielleicht", "ob", "Hund", "Hundt", "katse", "Rüde", "Pleite", "Schreckschraube", "Klammer", "fahren","Raumschiff", \
+					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
  					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
- 					 "fuß", "braver", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
- 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "suche", "Auge", "Hand", "Bein", "Kopf", \
- 					 "Flucht", "teufel", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "platz",  \
- 					 "Bleib", "gib laut", "hunden", "sitz", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
+ 					 "alt", "verfallen", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
+ 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "Suche", "Auge", "Hand", "Bein", "Kopf", \
+ 					 "Flucht", "Wahrheit", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "Sand",  \
+ 					 "Computer", "mikro", "Planet", "Universum", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
  					 "Kaiser", "bekaempfen", "Tastatur", "Augenlicht", "verwerfen", "analysieren", "verschieben", \
  					 "Flammen", "Feuer", "Batterie", "laser", "Unwetter", "Abflug", "behandeln", "Roboter", "Regierung", \
-					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Stopp", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
+					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Radio", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
  					 "Gas", "Schaltung", "umstuerzen", "Umsturz", "Wissenschaft", "erforschen", "Forschung", "Psychologe", "Schmerz", \
  					 "Schmerzen", "gebrochen", "brechen", "alle", "Musik", "also", "Interesse", "Pruegel", "Alkohol", "Getraenk", \
- 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "ueberhaupt", "weil", "denn", "deshalb", "mir", "dir", \
- 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Hier", "Fisch", "Ziege")
+ 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "Radio", "ueberhaupt", "weil", "deshalb", "mir", "dir", \
+ 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Granate", "Katze", "Hund", "Fisch", "Ziege", "aber", "dennoch", "weshalb", "deshalb", \
+					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloß", "eben", "mal", "gar", "ruhig", "eigentlich", \
+					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermaßen", \
+					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermaßen", "freilich", \
+					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Katze", "Rüde", "Pleite", "Schreckschraube", "Klammer", "Fuß")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
