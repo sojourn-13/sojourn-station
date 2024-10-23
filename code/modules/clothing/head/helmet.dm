@@ -813,7 +813,7 @@
 
 /obj/item/clothing/head/helmet/path/monomial
 	name = "Monomial Kabuto"
-	desc = "An archaic helmet design with minor overlapping plates, keeping the skull of it's user mostly safe from damage. It disperses the impact of an attack across the entire helmet instead of only one point, adding to the survival of the wearer."
+	desc = "An archaic helmet design with small overlapping plates, keeping the skull of its user mostly safe from damage. It disperses the impact of an attack across the entire helmet instead of only one point, adding to the survival of the wearer."
 	icon_state = "monomial_kabuto"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
