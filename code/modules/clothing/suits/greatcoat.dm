@@ -60,7 +60,7 @@
 
 /obj/item/clothing/suit/greatcoat/absolutecoat
 	name = "absolutist greatcoat"
-	desc = "A comfortable, decorated coat for the Absolutist faith and its supporters. Not as armored but just as ostentatious"
+	desc = "A comfortable, decorated coat for the absolutists and their supporters. Not as armored but just as ostentatious"
 	icon_state = "absolutecoat"
 	item_state = "absolutecoat"
 	blood_overlay_type = "coat"
