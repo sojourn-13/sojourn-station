@@ -117,11 +117,12 @@
 
 /datum/gear/factionblackshield/shoulderboardselection
 	display_name = "shoulderboard selection"
-	path = /obj/item/clothing/accessory/ranks
+	path = /obj/item/clothing/accessory/ranks/blank
 
 /datum/gear/factionblackshield/shoulderboardselection/New()
 	..()
 	var/shoulderboards = list(
+		"blank shoulderboards"			=	/obj/item/clothing/accessory/ranks/blank
 		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper,
 		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman,
 		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant,
