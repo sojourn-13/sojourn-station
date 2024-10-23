@@ -405,6 +405,11 @@
 		icon_state ="warmonger"
 		body_parts = list(BP_HEAD)
 
+	punk_head
+		name = "FBP-Cerberus head"
+		icon_state ="punk"
+		body_parts = list(BP_HEAD)
+
 	bishop_alt_optics
 		name = "FBP-Bishop Alt. Optics (IPC)"
 		icon_state = "bishop_alt_optics"
