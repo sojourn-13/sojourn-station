@@ -435,7 +435,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/lemniscate
 	name = "Lemniscate Garbs"
-	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of a pourpoint with inner chainmail and golden ridges and lines that only reinforces it's fanciness value."
+	desc = "The well suited lemniscate garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of a pourpoint with inner chainmail and golden ridges and lines that only reinforces it's fanciness value."
 	icon_state = "lemniscate_garbs"
 
 /obj/item/clothing/suit/armor/vest/path/lemniscate/verb/toggle_style()
