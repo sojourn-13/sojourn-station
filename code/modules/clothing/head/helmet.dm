@@ -940,7 +940,7 @@
 		if(choice == "prime saint")
 			flags_inv = HIDEEARS
 		else
-			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|
+			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
