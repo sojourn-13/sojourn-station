@@ -136,7 +136,7 @@
 					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermaßen", \
 					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermaßen", "freilich", \
 					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Hund", "Katze", "Rüde", "Pleite", "Schreckschraube", "Klammer", "Fuß" \
-					 "braver", "Teufel", "Platz", "bleib", "gib laut", "Hunde", "sitz", "stopp")
+					 "Teufel", "Platz", "bleib", "gib laut", "Hunde", "sitz", "stopp")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
