@@ -113,8 +113,14 @@
 // Parameters: 2 (C - Item this object was clicked with, user - Mob which clicked this object)
 // Description: If we are clicked with crowbar or wielded fire axe, try to manually open the door.
 // This only works on broken doors or doors without power. Also allows repair with Plasteel.
-/obj/machinery/door/blast/attackby(obj/item/I, mob/user)
+/obj/machinery/door/blast/attackby(obj/item/I, mob/living/user)
 	src.add_fingerprint(user)
+
+	//Harm intent overrides other actions
+	if(density && user.a_intent == I_HURT)
+		hit(user, I)
+		return
+
 	if(QUALITY_PRYING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_VERY_EASY,  required_stat = STAT_ROB))
 			if(((stat & NOPOWER) || (stat & BROKEN)) && !( src.operating ))
