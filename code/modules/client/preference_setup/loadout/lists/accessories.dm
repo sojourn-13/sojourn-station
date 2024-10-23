@@ -137,10 +137,10 @@
 /datum/gear/accessory/blackshieldpatch/New()
 	..()
 	var/patches = list(
-		"blackshield patch"		=	/obj/item/clothing/accessory/patches/blackshield,
-		"blackshield blank patch"	=	/obj/item/clothing/accessory/patches/blackshield_blank,
+		"blackshield patch"				=	/obj/item/clothing/accessory/patches/blackshield,
+		"blackshield blank patch"		=	/obj/item/clothing/accessory/patches/blackshield_blank,
 		"blackshield volunteer patch"	=	/obj/item/clothing/accessory/patches/blackshield_volunteer,
-		"blackshield trooper patch"	=	/obj/item/clothing/accessory/patches/blackshield_trooper,
+		"blackshield trooper patch"		=	/obj/item/clothing/accessory/patches/blackshield_trooper,
 		"blackshield corpsman patch"	=	/obj/item/clothing/accessory/patches/blackshield_corpsman,
 		"blackshield sergeant patch"	=	/obj/item/clothing/accessory/patches/blackshield_sergeant,
 		"blackshield commander patch"	=	/obj/item/clothing/accessory/patches/blackshield_commander,
