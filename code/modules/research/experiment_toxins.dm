@@ -12,13 +12,14 @@
 	var/target_wealth = 0 //Used for how much stuff is worth around.
 	var/over_value_punishment = 1.5
 
-/obj/item/device/radio/beacon/explosion_watcher/examine()
+/obj/item/device/radio/beacon/explosion_watcher/examine(mob/user)
 	..()
 	to_chat(usr, "EXPECTED EXPLOSION - [targetBoom]")
 	to_chat(usr, "Points Left - [stored_points]")
 	to_chat(usr, "Required Asset Value - [target_wealth] to [target_wealth*over_value_punishment]")
 	to_chat(usr, "Assets in view worth - [asset_wealth(give_value=TRUE)]")
-	return
+	if(iscarbon(user))
+		to_chat(usr, "Randomize List Simple For Reaching Target Wealth - [rlsfrtw()]")
 
 /obj/item/device/radio/beacon/explosion_watcher/ex_act(severity)
 	return
@@ -27,11 +28,72 @@
 	. = ..()
 	GLOB.explosion_watcher_list += src
 	targetBoom = rand(10,35)
-	target_wealth = rand(100, 200)
+	target_wealth = rand(80, 120)
 
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
 	return ..()
+
+/obj/item/device/radio/beacon/explosion_watcher/proc/rlsfrtw()
+	var/return_orders = "\n"
+	if(asset_wealth())
+		return_orders = "Current Area Matches Wealth Requirements"
+	else
+		var/shopping_list = 0
+		var/picked_picker
+		//Someone more smart then me should make this into a list
+		var/closets = 0
+		var/railings = 0
+		var/tables = 0
+		var/grilles = 0
+		var/bookcases = 0
+		var/chairstables = 0
+		var/lowwalls = 0
+		var/windows = 0
+		var/barricades = 0
+
+		while(shopping_list < target_wealth)
+			picked_picker = pick("Closets","Railings","Tables","Grilles","Bookcases","ChairsTables","LowWalls","Windows", "Barricades")
+			switch(picked_picker)
+				if("Closets")
+					closets += 1
+					shopping_list += 10
+				if("Railings")
+					railings += 1
+					shopping_list += 2
+				if("Tables")
+					tables += 1
+					shopping_list += 5
+				if("Grilles")
+					grilles += 1
+					shopping_list += 10
+				if("Bookcases")
+					bookcases += 1
+					shopping_list += 15
+				if("ChairsTables")
+					chairstables += 1
+					shopping_list += 2
+				if("LowWalls")
+					lowwalls += 1
+					shopping_list += 5
+				if("Windows")
+					windows += 1
+					shopping_list += 2
+				if("Barricades")
+					barricades += 1
+					shopping_list += 3
+
+		return_orders += "Closets:[closets].\n"
+		return_orders += "Railings:[railings].\n"
+		return_orders += "Tables:[tables].\n"
+		return_orders += "Grilles:[grilles].\n"
+		return_orders += "Bookcases:[bookcases].\n"
+		return_orders += "Chairs and Tables:[chairstables].\n"
+		return_orders += "Low Walls:[lowwalls].\n"
+		return_orders += "Windows (basic glass):[windows].\n"
+		return_orders += "Barricades:[barricades].\n"
+
+	return return_orders
 
 /obj/item/device/radio/beacon/explosion_watcher/proc/asset_wealth(give_value = FALSE)
 	var/gathered_value = 0
@@ -132,12 +194,12 @@
 			autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
 	targetBoom = rand(10,35)
 	if(target_wealth == initial(target_wealth))
-		target_wealth = rand(100, 200)
+		target_wealth = rand(80, 120)
 
 	else
 		if(calculated_research_points)
-			var/wealth_mult = initial(calculated_research_points)/(calculated_research_points + 1)
-			target_wealth = target_wealth = rand(125, 150) * wealth_mult
+			var/wealth_mult = initial(stored_points)/(calculated_research_points + 1)
+			target_wealth = target_wealth = rand(80, 120) * wealth_mult
 			target_wealth = round(target_wealth)
 	autosay("Next expected power level is [targetBoom]; Asset Value Range: [target_wealth] to [target_wealth*over_value_punishment].", name ,"Science")
 
