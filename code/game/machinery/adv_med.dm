@@ -331,6 +331,10 @@
 						total_burn_damage += severity
 					else
 						total_brute_and_misc_damage += severity
+				if(istype(I, /obj/item/organ/internal/appendix))
+					var/obj/item/organ/internal/appendix/A = I
+					if(A.inflamed)
+						internal_wounds += "appendicitis"
 
 			// Format internal wounds
 			var/internal_wounds_details
