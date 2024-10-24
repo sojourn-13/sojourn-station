@@ -113,3 +113,7 @@
 /datum/gear/shoes/winterboots
 	display_name = "winter boots"
 	path = /obj/item/clothing/shoes/winter
+
+/datum/gear/shoes/blacksilk_boots
+	display_name ="Absolutist Blacksilk boots"
+	path = /obj/item/clothing/shoes/church_blacksilk_boots
