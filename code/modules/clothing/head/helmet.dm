@@ -932,12 +932,25 @@
 	options["prime royal doctor"] = "prime_alt3"
 	options["prime saint"] = "prime_saint"
 	options["prime paladin"] = "prime_paladin"
+	options["prime laurel"] = "laurel_g"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		if(choice == "prime saint")
+			flags_inv = HIDEEARS
+		else
+			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+		if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		if(choice == "prime laurel")
 			flags_inv = HIDEEARS
 		else
 			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
