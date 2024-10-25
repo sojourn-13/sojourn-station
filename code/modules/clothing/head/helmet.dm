@@ -931,7 +931,7 @@
 	options["prime royal claric"] = "prime_alt2"
 	options["prime royal doctor"] = "prime_alt3"
 	options["prime saint"] = "prime_saint"
-	options["prime saint alt"] = "laurel_g"
+	options["prime laurel"] = "laurel_g"
 	options["prime paladin"] = "prime_paladin"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -950,7 +950,7 @@
 
 		if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		if(choice == "prime saint alt")
+		if(choice == "prime laurel")
 			flags_inv = HIDEEARS
 		else
 			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
