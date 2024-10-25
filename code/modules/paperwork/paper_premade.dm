@@ -45,6 +45,8 @@
 	info = {"Index Contents:<ol> \
 	<li> Shooting Targets: 5.\
 	<li> Machine Frames: 15 (17 If frame has wires or a circuitboard).\
+	<li> Modular Computer Consoles: 18.\
+	<li> Non-Modular Consoles: 17.\
 	<li> Any Flora (Not produce/trays): 2.\
 	<li> Compressed Cubes: 7.\
 	<li> Salvageable Machines: 60.\

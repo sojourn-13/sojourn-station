@@ -269,6 +269,8 @@
 	<li> Any Flora (Not produce/trays): 2.\
 	<li> Compressed Cubes: 7.\
 	<li> Salvageable Machines: 60.\
+	<li> Modular Computer Consoles: 18.\
+	<li> Non-Modular Consoles: 17.\
 	<li> Filingcabinets: 30.\
 	<li> Metal Grilles: 2.\
 	<li> Barricades: 3.\

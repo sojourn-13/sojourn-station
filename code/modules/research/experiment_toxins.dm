@@ -38,60 +38,64 @@
 	var/return_orders = "\n"
 	if(asset_wealth())
 		return_orders = "Current Area Matches Wealth Requirements"
-	else
-		var/shopping_list = 0
-		var/picked_picker
-		//Someone more smart then me should make this into a list
-		var/closets = 0
-		var/railings = 0
-		var/tables = 0
-		var/grilles = 0
-		var/bookcases = 0
-		var/chairstables = 0
-		var/lowwalls = 0
-		var/windows = 0
-		var/barricades = 0
+		return return_orders
+	if(asset_wealth(give_value=TRUE) > (target_wealth * over_value_punishment))
+		return_orders = "Current Area Matches Has To Much Wealth. Please remove some structures!"
+		return return_orders
 
-		while(shopping_list < target_wealth)
-			picked_picker = pick("Closets","Railings","Tables","Grilles","Bookcases","ChairsTables","LowWalls","Windows", "Barricades")
-			switch(picked_picker)
-				if("Closets")
-					closets += 1
-					shopping_list += 10
-				if("Railings")
-					railings += 1
-					shopping_list += 2
-				if("Tables")
-					tables += 1
-					shopping_list += 5
-				if("Grilles")
-					grilles += 1
-					shopping_list += 10
-				if("Bookcases")
-					bookcases += 1
-					shopping_list += 15
-				if("ChairsTables")
-					chairstables += 1
-					shopping_list += 2
-				if("LowWalls")
-					lowwalls += 1
-					shopping_list += 5
-				if("Windows")
-					windows += 1
-					shopping_list += 2
-				if("Barricades")
-					barricades += 1
-					shopping_list += 3
+	var/shopping_list = 0
+	var/picked_picker
+	//Someone more smart then me should make this into a list
+	var/closets = 0
+	var/railings = 0
+	var/tables = 0
+	var/grilles = 0
+	var/bookcases = 0
+	var/chairstables = 0
+	var/lowwalls = 0
+	var/windows = 0
+	var/barricades = 0
 
-		return_orders += "Closets:[closets].\n"
-		return_orders += "Railings:[railings].\n"
-		return_orders += "Tables:[tables].\n"
-		return_orders += "Grilles:[grilles].\n"
-		return_orders += "Bookcases:[bookcases].\n"
-		return_orders += "Chairs and Tables:[chairstables].\n"
-		return_orders += "Low Walls:[lowwalls].\n"
-		return_orders += "Windows (basic glass):[windows].\n"
-		return_orders += "Barricades:[barricades].\n"
+	while(shopping_list < target_wealth)
+		picked_picker = pick("Closets","Railings","Tables","Grilles","Bookcases","ChairsTables","LowWalls","Windows", "Barricades")
+		switch(picked_picker)
+			if("Closets")
+				closets += 1
+				shopping_list += 10
+			if("Railings")
+				railings += 1
+				shopping_list += 2
+			if("Tables")
+				tables += 1
+				shopping_list += 5
+			if("Grilles")
+				grilles += 1
+				shopping_list += 10
+			if("Bookcases")
+				bookcases += 1
+				shopping_list += 15
+			if("ChairsTables")
+				chairstables += 1
+				shopping_list += 2
+			if("LowWalls")
+				lowwalls += 1
+				shopping_list += 5
+			if("Windows")
+				windows += 1
+				shopping_list += 2
+			if("Barricades")
+				barricades += 1
+				shopping_list += 3
+
+	return_orders += "Closets:[closets].\n"
+	return_orders += "Railings:[railings].\n"
+	return_orders += "Tables:[tables].\n"
+	return_orders += "Grilles:[grilles].\n"
+	return_orders += "Bookcases:[bookcases].\n"
+	return_orders += "Chairs and Tables:[chairstables].\n"
+	return_orders += "Low Walls:[lowwalls].\n"
+	return_orders += "Windows (basic glass):[windows].\n"
+	return_orders += "Barricades:[barricades].\n"
 
 	return return_orders
 
@@ -152,6 +156,14 @@
 			gathered_value += 15
 			if(CF.state > 1)
 				gathered_value += 2
+
+	for(var/obj/item/modular_computer/console/PC in oview(8))
+		if(PC)
+			gathered_value += 18
+
+	for(var/obj/machinery/computer/C in oview(8))
+		if(C)
+			gathered_value += 17
 
 	for(var/turf/simulated/floor/F in oview(8))
 		if(F.health != F.maxHealth)
