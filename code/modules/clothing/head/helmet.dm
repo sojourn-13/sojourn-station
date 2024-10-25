@@ -948,7 +948,7 @@
 		usr.update_action_buttons()
 		return 1
 
-		if(src && choice && !M.incapacitated() && Adjacent(M))
+	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		if(choice == "prime laurel")
 			flags_inv = HIDEEARS
