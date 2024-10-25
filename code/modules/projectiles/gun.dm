@@ -618,6 +618,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
 				user.drop_item()
+			currently_firing = FALSE	//Add this here or else people who have clumsy will permanently break guns and prevent them from firing if they fuck up with it.
 		else
 			handle_click_empty(user)
 		return FALSE
