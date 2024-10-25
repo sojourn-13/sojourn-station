@@ -508,6 +508,16 @@
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
 
+/obj/item/storage/box/costume/roman
+	name = "roman outfit box"
+	desc = "A box containing the full set of roman live action roleplaying gear."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/roman/populate_contents()
+	new /obj/item/clothing/under/costume/history/centurion(src)
+	new /obj/item/clothing/shoes/costume/history/centurion(src)
+	new /obj/item/toy/weapon/sword(src)
+
 /obj/item/storage/box/costume/rando
 	name = "warlord costume box"
 	desc = "A box containing a large costume for a post-apocalyptic warlord."

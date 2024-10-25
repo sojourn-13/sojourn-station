@@ -42,6 +42,7 @@
 					/obj/item/storage/box/costume/plaguedoctor = 2,
 					/obj/item/storage/box/costume/rando = 2,
 					/obj/item/storage/box/costume/randoarmy = 5, // For your own personal army
+					/obj/item/storage/box/costume/roman = 2,
 					/obj/item/storage/box/costume/owl = 2,
 					/obj/item/storage/box/costume/rando = 2,
 					/obj/item/storage/box/costume/santa = 2,
