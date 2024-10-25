@@ -67,6 +67,12 @@ var/global/list/limb_icon_cache = list()
 	if(!appearance_test.special_update)
 		for(var/obj/item/organ/internal/eyes/I in internal_organs)
 			part_key += I.get_cache_key()
+
+	// EQUINOX EDIT START - integrates bodymarkings into the icon caching system
+	for(var/M in markings)
+		part_key += "[M][markings[M]["color"]]"
+	// EQUINOX EDIT END /////
+
 	return part_key
 
 /obj/item/organ/external/head/sync_colour_to_human(var/mob/living/carbon/human/human)
@@ -115,6 +121,8 @@ var/global/list/limb_icon_cache = list()
 
 /obj/item/organ/external/update_icon(regenerate = 0)
 	var/gender = "_m"
+
+	overlays.Cut()	// Equinox edit - Clears out existing bodymarkings
 
 	if(!appearance_test.get_species_sprite)
 		icon = 'icons/mob/human_races/r_human.dmi'
@@ -166,6 +174,31 @@ var/global/list/limb_icon_cache = list()
 			else
 				mob_icon.Blend(rgb(-skin_tone,  -skin_tone,  -skin_tone), ICON_SUBTRACT)
 
+	// EQUINOX EDIT START - furry - apply bodymarkings
+	for(var/M in markings)
+		var/datum/sprite_accessory/marking/mark_style = markings[M]["datum"]
+		var/icon/mark_s
+		var/icon/mark_splice	//temporary var to facilitate splicing together feet sprites into leg sprites where relevant
+
+		mark_s = new/icon("icon" = mark_style.icon, "icon_state" = "[mark_style.icon_state]-[organ_tag]")
+
+	// Horrible hackjob to botch together hands and feet into their parent limbs where relevant
+		if(organ_tag == BP_L_LEG && (BP_L_FOOT in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-l_foot")
+		else if(organ_tag == BP_R_LEG && (BP_R_FOOT in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-r_foot")
+		else if(organ_tag == BP_L_ARM && (BP_L_HAND in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-l_hand")
+		else if(organ_tag == BP_R_ARM && (BP_R_HAND in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-r_hand")
+
+		if(mark_splice && mark_s)
+			mark_s.Blend(mark_splice, ICON_OVERLAY)
+
+		mark_s.Blend(markings[M]["color"], mark_style.blend)
+		add_overlay(mark_s) //So when it's not on your body, it has icons
+		mob_icon.Blend(mark_s, ICON_OVERLAY) //So when it's on your body, it has icons
+	// EQUINOX EDIT END
 
 	dir = EAST
 	icon = mob_icon
