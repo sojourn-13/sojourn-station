@@ -938,7 +938,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		if(choice == "prime saint" || "prime laurel")
+		if(choice == "prime saint" || choice ==  "prime laurel")
 			flags_inv = HIDEEARS
 		else
 			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
