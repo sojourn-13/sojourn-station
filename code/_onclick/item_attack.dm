@@ -289,11 +289,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 					force = force * 0.9 //10% less damage each step forwards
 					armor_divisor -= 0.1 //Lower AD a little, per tile
 				else
-					message_admins("No Perk")
+					//message_admins("No Perk")
 					force = force * 0.8 //20% less damage each step forwards
 					armor_divisor -= 0.2 //Lower AD a little, per tile
 			else
-				message_admins("Not carbon")
+				//message_admins("Not carbon")
 				force = force * 0.8 //20% less damage each step forwards
 				armor_divisor -= 0.2 //Lower AD a little, per tile
 
