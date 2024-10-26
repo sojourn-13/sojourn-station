@@ -4,7 +4,7 @@
 
 /obj/machinery/power/puncher
 	name = "P.O.W"
-	desc = "An odd power generator designed to effectively turn any kinetic force it back into power at an increased rate due to trickery with its complex internals."
+	desc = "An odd power generator designed to effectively turn any kinetic force it takes back into power at an increased rate due to trickery with its complex internals."
 
 	circuit = /obj/item/circuitboard/puncher
 
@@ -96,7 +96,7 @@
 			take_damage(bomb_scale_six, BRUTE)
 	return
 
-/obj/machinery/power/puncher/attack_generic(mob/user, damage)
+/obj/machinery/power/puncher/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
@@ -112,8 +112,8 @@
 			take_damage(dmg, dmg_type)
 		if(P.agony)
 			take_damage(P.agony, HALLOSS)
-		if(P.armor_penetration)
-			take_damage(P.armor_penetration, HALLOSS)
+		if(P.armor_divisor)
+			take_damage(P.armor_divisor * 10, HALLOSS)
 
 /obj/machinery/power/puncher/Destroy()
 	return ..()
@@ -142,11 +142,11 @@
 			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 				if(anchored)
-					to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+					to_chat(user, SPAN_NOTICE("You unsecure \the [src] from the floor!"))
 					anchored = FALSE
 				else
 					if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
-					to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+					to_chat(user, SPAN_NOTICE("You secure \the [src] to the floor!"))
 					anchored = TRUE
 
 				if(anchored)

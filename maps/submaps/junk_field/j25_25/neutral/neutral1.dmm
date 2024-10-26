@@ -178,18 +178,6 @@
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
-"aN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/random/scrap/dense_weighted,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
 "aO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -261,9 +249,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "aV" = (
@@ -276,9 +261,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "aX" = (
@@ -290,9 +272,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/template_noop)
@@ -416,7 +395,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bu" = (
@@ -476,7 +454,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bD" = (
@@ -506,7 +483,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bN" = (
@@ -1118,7 +1094,7 @@ XK
 at
 aG
 aP
-aN
+bg
 ad
 ba
 aI
@@ -1199,7 +1175,7 @@ ab
 ag
 aG
 aP
-aN
+bg
 at
 be
 at

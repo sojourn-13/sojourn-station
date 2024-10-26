@@ -36,3 +36,4 @@
 	name = "exalt stomach"
 	desc = "A bottomless pit for holding only the most refined of foods.\
 	Likely worth more on the black market."
+

@@ -42,15 +42,14 @@
 	var/greyson_moding = FALSE
 
 /datum/component/item_upgrade/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
+	RegisterSignal(parent, COMSIG_IATTACK, PROC_REF(attempt_install))
+	RegisterSignal(parent, COMSIG_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_REMOVE, PROC_REF(uninstall))
 
 /datum/component/item_upgrade/proc/attempt_install(atom/A, var/mob/living/user, params)
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
-
 	if(isrobot(A))
 		return check_robot(A, user)
 
@@ -89,11 +88,15 @@
 	var/list/robotools = list()
 	for(var/obj/item/tool/robotool in R.module.modules)
 		robotools.Add(robotool)
+	for(var/obj/item/gun/robogun in R.module.modules)
+		robotools.Add(robogun)
 	if(robotools.len)
-		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
-		if(chosen_tool == "Cancel")
+		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") as null|anything in robotools + "Cancel"
+		if(!chosen_tool == "Cancel")
 			return FALSE
-		return can_apply(chosen_tool,user)
+		if(can_apply(chosen_tool,user))
+			apply(chosen_tool, user)
+		return FALSE
 	if(user)
 		to_chat(user, SPAN_WARNING("[R] has no modifiable tools."))
 	return FALSE
@@ -102,7 +105,7 @@
 	if(!tool_upgrades.len)
 		to_chat(user, SPAN_WARNING("\The [parent] can not be attached to a tool."))
 		return FALSE
-	if(T.item_upgrades.len >= T.max_upgrades)
+	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("This tool can't fit anymore modifications!"))
 		return FALSE
@@ -146,7 +149,7 @@
 		return FALSE
 
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		if(SANCTIFIED in T.aspects)
+		if(T.sanctified == TRUE)
 			if(user)
 				to_chat(user, SPAN_WARNING("This tool already sanctified!"))
 			return FALSE
@@ -174,7 +177,7 @@
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_rig(var/obj/item/rig/R, var/mob/living/user)
-	if(R.item_upgrades.len >= R.max_upgrades)
+	if(LAZYLEN(R.item_upgrades) >= R.max_upgrades)
 		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
 		return FALSE
 
@@ -192,7 +195,7 @@
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
-	if(T.item_upgrades.len >= T.max_upgrades)
+	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
 		return FALSE
 
@@ -215,7 +218,7 @@
 			to_chat(user, SPAN_WARNING("\The [parent] can not be applied to guns!"))
 		return FALSE //Can't be applied to a weapon
 
-	if(G.item_upgrades.len >= G.max_upgrades)
+	if(LAZYLEN(G.item_upgrades) >= G.max_upgrades)
 		if(user)
 			to_chat(user, SPAN_WARNING("This weapon can't fit anymore modifications!"))
 		return FALSE
@@ -254,9 +257,9 @@
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
 	I.forceMove(A)
-	A.item_upgrades.Add(I)
-	RegisterSignal(A, COMSIG_APPVAL, .proc/apply_values)
-	RegisterSignal(A, COMSIG_ADDVAL, .proc/add_values)
+	LAZYADD(A.item_upgrades, I)
+	RegisterSignal(A, COMSIG_APPVAL, PROC_REF(apply_values))
+	RegisterSignal(A, COMSIG_ADDVAL, PROC_REF(add_values))
 	A.AddComponent(/datum/component/upgrade_removal)
 	A.refresh_upgrades()
 	return TRUE
@@ -266,7 +269,7 @@
 	if(unique_removal)
 		var/obj/item/gun/G = I
 		G.gun_tags.Remove(unique_removal_type)
-	I.item_upgrades -= P
+	LAZYREMOVE(I.item_upgrades, P)
 	if(destroy_on_removal)
 		UnregisterSignal(I, COMSIG_ADDVAL)
 		UnregisterSignal(I, COMSIG_APPVAL)
@@ -309,7 +312,7 @@
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_armor_rig(var/obj/item/rig/R)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
@@ -322,7 +325,7 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes |= prefix
+	LAZYOR(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/remove_values_armor_rig(var/obj/item/rig/R)
@@ -336,12 +339,12 @@
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes -= prefix
+	LAZYREMOVE(R.name_prefixes, prefix)
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		T.aspects += list(SANCTIFIED)
+		T.sanctified = TRUE
 	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
 		T.allow_greyson_mods = tool_upgrades[UPGRADE_ALLOW_GREYON_MODS]
 	if(tool_upgrades[UPGRADE_PRECISION])
@@ -391,17 +394,21 @@
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
 	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.prefixes |= prefix
+	LAZYOR(T.name_prefixes, prefix)
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
 		G.allow_greyson_mods = weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
@@ -514,7 +521,7 @@
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
 
-	G.prefixes |= prefix
+	LAZYOR(G.name_prefixes, prefix)
 
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
@@ -533,7 +540,7 @@
 
 /datum/component/item_upgrade/proc/on_examine(var/mob/user)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		to_chat(user, SPAN_NOTICE("Does additional burn damage to mutants."))
+		to_chat(user, SPAN_NOTICE("Blesses tool for use by Absolutists")) //We don't have any damage bonus from sanctified weapons. Might be added in the future, but for now don't mislead players.
 	if(tool_upgrades[UPGRADE_PRECISION] > 0)
 		to_chat(user, SPAN_NOTICE("Enhances precision by [tool_upgrades[UPGRADE_PRECISION]]"))
 	else if (tool_upgrades[UPGRADE_PRECISION] < 0)
@@ -588,6 +595,10 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
 
+		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+			to_chat(user, SPAN_NOTICE("Increases projectile damage multiplier by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
+
+
 		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
 			if(amount > 0)
@@ -601,6 +612,13 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_BASE]
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
@@ -765,14 +783,14 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 
 /datum/component/upgrade_removal/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_uninstall)
+	RegisterSignal(parent, COMSIG_ATTACKBY, PROC_REF(attempt_uninstall))
 
 /datum/component/upgrade_removal/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ATTACKBY)
 
 /datum/component/upgrade_removal/proc/attempt_uninstall(var/obj/item/C, var/mob/living/user)
 	if(!isitem(C))
-		return 0
+		return FALSE
 
 	var/obj/item/upgrade_loc = parent
 
@@ -783,28 +801,28 @@
 
 	if(istype(upgrade_loc, /obj/item/clothing))
 		//to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!")) so we dont spawm for suit changing
-		return 1
+		return FALSE
 
 	ASSERT(istype(upgrade_loc))
 	//Removing upgrades from a tool. Very difficult, but passing the check only gets you the perfect result
 	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
 	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
-	if(upgrade_loc.item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
+	if(LAZYLEN(upgrade_loc.item_upgrades) && C.has_quality(QUALITY_SCREW_DRIVING))
 		var/list/possibles = upgrade_loc.item_upgrades.Copy()
 		possibles += "Cancel"
 		var/obj/item/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if (toremove == "Cancel")
-			return 1
+			return TRUE
 		if(!toremove.can_remove)
 			to_chat(user, SPAN_DANGER("You cannot remove [toremove] once it's been installed!"))
-			return 0
+			return FALSE
 		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
 		if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_MEC))
 			//If you pass the check, then you manage to remove the upgrade intact
 			to_chat(user, SPAN_NOTICE("You successfully remove \the [toremove] while leaving it intact."))
 			LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
 			upgrade_loc.refresh_upgrades()
-			return 1
+			return TRUE
 		else
 			//You failed the check, lets see what happens
 			if(IU.breakable == FALSE)
@@ -818,14 +836,14 @@
 				QDEL_NULL(toremove)
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()
-				return 1
+				return TRUE
 			else if(T && T.degradation) //Because robot tools are unbreakable
 				//otherwise, damage the host tool a bit, and give you another try
 				to_chat(user, SPAN_DANGER("You only managed to damage \the [upgrade_loc], but you can retry."))
 				T.adjustToolHealth(-(5 * T.degradation), user) // inflicting 4 times use damage
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()
-				return 1
+				return TRUE
 	return 0
 
 

@@ -12,6 +12,9 @@
 /obj/item/ammo_casing/pistol_35/prespawned
 	amount = 15
 
+/obj/item/ammo_casing/pistol_35/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -19,7 +22,10 @@
 	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
-/obj/item/ammo_casing/pistol_35/hv/spent
+/obj/item/ammo_casing/pistol_35/spent/hv
+	shell_color = "hv"
+	icon_state = "pistol_c_hv"
+	spent_icon = "pistol_c_hv-spent"
 	projectile_type = null
 
 /obj/item/ammo_casing/pistol_35/practice
@@ -54,6 +60,10 @@
 	desc = "A 9mm hollow-point bullet casing."
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
+
+/obj/item/ammo_casing/pistol_35/spent/lethal
+	projectile_type = null
+	shell_color = "l"
 
 /obj/item/ammo_casing/pistol_35/scrap
 	desc = "An old 9mm bullet casing."
@@ -375,7 +385,7 @@
 	caliber = CAL_FLARE
 	icon_state = "old-shell"
 	spent_icon = "old-shell-spent"
-	projectile_type = /obj/item/projectile/bullet/flare/choas
+	projectile_type = /obj/item/projectile/bullet/flare/chaos
 	matter = list(MATERIAL_PLASTIC = 1)
 	matter_reagents = list("phosphorus" = 3)
 	maxamount = 1
@@ -679,7 +689,7 @@
 
 /obj/item/ammo_casing/shotgun/laser/prespawned
 	amount = 5
-
+/*
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
@@ -692,7 +702,7 @@
 
 /obj/item/ammo_casing/shotgun/payload/prespawned
 	amount = 5
-
+*/
 /obj/item/ammo_casing/shotgun/plasma
 	name = "plasma shell"
 	desc = "A 20mm plasma shell."
@@ -788,7 +798,7 @@
 	name = "PG-7EMP grenade"
 	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
-
+/*
 /obj/item/ammo_casing/a75
 	name = "microjet casing"
 	desc = "A 19mm gyrojet rocket."
@@ -797,7 +807,7 @@
 
 /obj/item/ammo_casing/a75/spent
 	projectile_type = null
-
+*/
 /obj/item/ammo_casing/cap
 	name = "cap"
 	desc = "A cap for children toys."
@@ -805,25 +815,26 @@
 	color = "#FF0000"
 	projectile_type = /obj/item/projectile/bullet/cap
 
-/obj/item/ammo_casing/beam
+/obj/item/ammo_casing/laser_223
 	name = "laser casing"
-	desc = "A laser casing thats cal is .223."
+	desc = "A .223 pulse charged laser cavity."
 	caliber = CAL_SCI
-	projectile_type = /obj/item/projectile/beam/weak
+	projectile_type = /obj/item/projectile/beam/laser_223
 
 /obj/item/ammo_casing/beam/spent
 	projectile_type = null
+/*
+/obj/item/ammo_casing/laser_223/ap
+	desc = "A .223 pulse charged laser cavity. This type possess an integrated sensor array that adjusts the focal point to the targets location, allowing for better penetration for the cost of firepower due to the occupied space."
+	projectile_type = /obj/item/projectile/beam/laser_223/ap
 
-/obj/item/ammo_casing/beam/ap
-	desc = "A piercing laser casing. Meant for penetration of armor thats cal is .223."
-	projectile_type = /obj/item/projectile/beam/weak/ap
-
-/obj/item/ammo_casing/beam/lethal
-	desc = "A dence laser casing. Compact laser that is easily blocked by armor thats cal is .223."
-	projectile_type = /obj/item/projectile/beam/weak/lethal
-
+/obj/item/ammo_casing/laser_223/lethal
+	desc = "A .223 pulse charged laser cavity. This type uses a wide witdh lense to cause less overpenetration and cause more damage in exchange of being more susceptible to armor. Its cal is 5.56mm."
+	projectile_type = /obj/item/projectile/beam/laser_223/lethal
+*/
 /obj/item/ammo_casing/beam/ap/spent
 	projectile_type = null
+	desc = "A spent .223 pulse charged laser cavity. Its metal case is molten and shows an array of discolaretion"
 
 //// Grenade Shells ////
 
@@ -927,7 +938,7 @@
 	w_class = ITEM_SIZE_SMALL
 	caliber = CAL_ARROW
 	force = WEAPON_FORCE_NORMAL
-	armor_penetration = ARMOR_PEN_GRAZING
+	armor_divisor = ARMOR_PEN_GRAZING
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
 	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
 	maxamount = 3
@@ -958,7 +969,7 @@
 	name = "broadhead arrow"
 	icon_state = "arrow-broad"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = 0
+	armor_divisor = 1
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, capable of causing severe damage to unarmored targets, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
@@ -966,7 +977,7 @@
 	name = "serrated arrow"
 	icon_state = "arrow-serrated"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = 0
+	armor_divisor = 1
 	desc = "A good-quality handmade aerodinamic arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, letting it stick in wounds easily, penetrating thick hide and armor alike at fast speeds."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 

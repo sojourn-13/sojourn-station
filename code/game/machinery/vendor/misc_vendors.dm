@@ -20,6 +20,11 @@
 				/obj/item/storage/fancy/cigarettes/fortressred = 7,
 				/obj/item/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/storage/fancy/cigar = 2,
+				/obj/item/storage/chewables/tobacco/bad = 7,
+				/obj/item/storage/chewables/tobacco/deli = 7,
+				/obj/item/storage/chewables/tobacco/fine = 7,
+				/obj/item/storage/chewables/tobacco/dyn = 7,
+				/obj/item/storage/chewables/tobacco/nico = 7,
 				/obj/item/clothing/mask/vape = 5,
 				/obj/item/clothing/mask/smokable/pipe = 2,
 				/obj/item/clothing/mask/smokable/pipe/cobpipe = 2,
@@ -87,6 +92,11 @@
 				/obj/item/flame/lighter/zippo/brass = 55,
 				/obj/item/flame/lighter/zippo/absolutism = 50,
 				/obj/item/storage/fancy/cigar = 250,
+				/obj/item/storage/chewables/tobacco/bad = 50,
+				/obj/item/storage/chewables/tobacco/deli = 75,
+				/obj/item/storage/chewables/tobacco/fine = 100,
+				/obj/item/storage/chewables/tobacco/dyn = 65,
+				/obj/item/storage/chewables/tobacco/nico = 75,
 				/obj/item/clothing/mask/vape = 150,
 				/obj/item/clothing/mask/smokable/pipe = 75,
 				/obj/item/clothing/mask/smokable/pipe/cobpipe = 25,
@@ -111,10 +121,6 @@
 					/obj/item/paper/fortune = 30)
 	prices = list(
 					/obj/item/paper/fortune = 25)
-
-/obj/machinery/vending/fortune/postvend_effect()
-	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
-	return
 
 /obj/machinery/vending/gamers
 	name = "Game Emporium"
@@ -146,7 +152,7 @@
 					/obj/item/device/binoculars = 12,
 					/obj/item/board = 7,
 					/obj/item/deck/tarot = 4,
-					/obj/item/deck = 10,
+					/obj/item/deck/cards = 10,
 					/obj/item/pack/cardemon = 50,
 					/obj/item/pack/spaceball = 44,
 					/obj/item/deck/cah = 7,
@@ -154,6 +160,8 @@
 					/obj/item/scale = 12,
 					/obj/item/bone_counter = 12,
 					/obj/item/pack_card_carp = 90,
+					/obj/item/pack_card_carp/flyers_booster_pack = 15,
+					/obj/item/pack_card_carp/rare_booster_pack = 5,
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
 					/obj/item/cardholder/ratbox = 20,
@@ -193,6 +201,8 @@
 					/obj/item/scale = 65,
 					/obj/item/bone_counter = 85,
 					/obj/item/pack_card_carp = 35,
+					/obj/item/pack_card_carp/flyers_booster_pack = 75,
+					/obj/item/pack_card_carp/rare_booster_pack = 100,
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
 					/obj/item/cardholder/ratbox = 30,
@@ -323,3 +333,26 @@
 		/obj/item/reagent_containers/syringe/stim/bouncer = 3,
 		/obj/item/reagent_containers/syringe/stim/violence = 3
 		)
+
+
+/obj/machinery/vending/neko
+	name = "Neko vending machine"
+	desc = "A machine filled with every neko related items you can imagine."
+	icon_state = "neko"
+	product_slogans = "Supporting nekos since 1984!"
+	product_ads = "For all cat-boys and cat-girls!;release your inner tiger!"
+	products = list(/obj/item/storage/box/costume/nekomaid = 3,
+					/obj/item/clothing/head/costume/animal/kitty = 10,
+					/obj/item/toy/plushie/cat = 10,
+					/obj/item/toy/plushie/kitten = 5,
+					/obj/item/paper/card/cat = 10 )
+	prices = list(/obj/item/storage/box/costume/nekomaid = 200,
+					/obj/item/clothing/head/costume/animal/kitty =20,
+					/obj/item/toy/plushie/cat = 10,
+					/obj/item/toy/plushie/kitten = 10,
+					/obj/item/paper/card/cat = 10,
+					/mob/living/simple_animal/cat/kitten = 500 )
+	contraband = list(/mob/living/simple_animal/cat/kitten = 1)
+	idle_power_usage = 50
+	auto_price = FALSE
+	always_open = TRUE

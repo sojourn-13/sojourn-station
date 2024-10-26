@@ -84,7 +84,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 3)
-	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	can_dual = TRUE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
@@ -106,6 +106,7 @@
 	price_tag = 650
 	icon_state = "solmarine"
 	item_state = "solmarine"
+	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	shotgun_haver = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -156,7 +157,7 @@
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
-	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
-	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless)
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless, /obj/item/gun/projectile/automatic/mercu)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/srifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/clrifle)

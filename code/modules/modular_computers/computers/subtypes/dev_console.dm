@@ -3,6 +3,7 @@
 	desc = "A stationary computer."
 	icon = 'icons/obj/modular_console.dmi'
 	icon_state = "console"
+	icon_state_unpowered = "console"
 	icon_state_menu = "menu"
 	hardware_flag = PROGRAM_CONSOLE
 	anchored = TRUE
@@ -20,6 +21,14 @@
 /obj/item/modular_computer/console/CouldUseTopic(var/mob/user)
 	..()
 	if(istype(user, /mob/living/carbon))
+		if(prob(50))
+			playsound(src, "keyboard", 40)
+		else
+			playsound(src, "keystroke", 40)
+
+/obj/item/modular_computer/console/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(iscarbon(usr))
 		if(prob(50))
 			playsound(src, "keyboard", 40)
 		else

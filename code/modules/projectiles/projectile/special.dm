@@ -37,7 +37,7 @@
 	name = "high explosive rocket"
 	icon_state = "rocket"
 	damage_types = list(BRUTE = 70)
-	armor_penetration = 100
+	armor_divisor = 10
 	check_armour = ARMOR_BULLET
 	recoil = 75
 
@@ -67,7 +67,7 @@
 	name = "EMP rocket"
 	icon_state = "rocket_e"
 	damage_types = list(BRUTE = 10, BURN = 30)
-	armor_penetration = 100
+	armor_divisor = 10
 	check_armour = ARMOR_BULLET
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
@@ -140,7 +140,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	hitscan = TRUE
+	hitscan = FALSE
 
 /obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if (!testing)
@@ -265,6 +265,21 @@
 			M.confused += rand(5,8)
 			M.sanity_damage = 8
 
+/obj/item/projectile/IRKdebilitate //Marking for future use
+	name = "debilitator bolt"
+	damage_types = list(BRUTE = 12) //Intended to be brute
+	agony = 20
+	icon_state = "declone"
+	armor_divisor = 10
+	recoil = 2
+
+/obj/item/projectile/IRKdebilitate/on_impact(atom/target)
+	if(ishuman(target))
+		if (!testing)
+			var/mob/living/carbon/human/M = target
+			M.confused += rand(1,2)
+			M.sanity_damage = 3 //Somehow these bolts mess with your head, must be some really weird scifi bullshit
+
 /obj/item/projectile/chameleon
 	name = "bullet"
 	icon_state = "bullet"
@@ -272,6 +287,7 @@
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	ignition_source = FALSE
 
 
 /obj/item/projectile/flamer_lob
@@ -298,7 +314,7 @@
 	icon_state = "flare"
 	damage_types = list(BURN = 12) //Legit deadlyest gun that you get in mass
 	kill_count = 12
-	armor_penetration = 0
+	armor_divisor = 1
 	step_delay = 3
 	eyeblur = 2 // bright light slightly blurs your vision
 	luminosity_range = 5
@@ -348,15 +364,30 @@
 /obj/item/projectile/bullet/flare/green
 	luminosity_color = PIPE_COLOR_GREEN //Bit better then normal green
 
-/obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
+/obj/item/projectile/bullet/flare/chaos //MEWHEHEHE, can be any colour
 	chaos = TRUE
+
+//Used for bluecross only atm
+/obj/item/projectile/bullet/flare/yellow
+	luminosity_color = COLOR_WHEAT //softer on the eyes
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
+/obj/item/projectile/bullet/flare/white
+	luminosity_color = COLOR_SILVER //Not perfect white to help with rounding out shadows
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
 
 // Special projectile that one-shot ameridian-related stuff
 /obj/item/projectile/sonic_bolt
 	name = "sonic bolt"
 	icon_state = "energy2"
 	damage_types = list(BRUTE = 10)
-	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
+	armor_divisor = 3 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
@@ -374,7 +405,7 @@
 	damage_types = list(BRUTE = 0)
 	kill_count = 10
 	step_delay = 0.2
-	muzzle_type = /obj/effect/projectile/line/muzzle
+	muzzle_type = null
 	tracer_type = /obj/effect/projectile/line/tracer
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers
@@ -390,7 +421,7 @@
 /obj/item/projectile/tether/tail
 	name = "tail lash"
 	damage_types = list(BRUTE = 13)
-	armor_penetration = 35
+	armor_divisor = 2
 	nodamage = FALSE
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
@@ -471,7 +502,7 @@
 /obj/item/projectile/bullet/os_trurret_gauss
 	name = "ferrous slug"
 	damage_types = list(BRUTE = 15)
-	armor_penetration = 25
+	armor_divisor = 2
 	penetrating = 2
 	recoil = 30
 	step_delay = 0.4
@@ -493,7 +524,7 @@
 	name = "plasma discharge bolt"
 	icon_state = "ice_1"
 	damage_types = list(BURN = 47)
-	armor_penetration = 50
+	armor_divisor = 2.5
 	check_armour = ARMOR_ENERGY
 	recoil = 8
 

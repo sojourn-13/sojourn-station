@@ -10,7 +10,7 @@ jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Run Linters
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     concurrency:
       group: run_linters-${{ github.ref }}
       cancel-in-progress: true
@@ -42,7 +42,8 @@ jobs:
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_grep.sh
           bash tools/ci/check_misc.sh
-          tools/bootstrap/python tools/validate_dme.py <sojourn-station.dme
+          tools/bootstrap/python tools/ticked_file_enforcement/ticked_file_enforcement.py < tools/ticked_file_enforcement/schemas/sojourn_dme.json
+          tools/bootstrap/python tools/ticked_file_enforcement/ticked_file_enforcement.py < tools/ticked_file_enforcement/schemas/unit_tests.json
           tools/build/build --ci lint tgui-test
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
@@ -56,7 +57,7 @@ jobs:
   compile_all_maps:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Compile Maps
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     concurrency:
       group: compile_all_maps-${{ github.ref }}
       cancel-in-progress: true
@@ -76,7 +77,7 @@ jobs:
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     services:
       mysql:
         image: mysql:latest
@@ -104,7 +105,7 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl1.1:i386
+          sudo apt install zlib1g-dev:i386
           bash tools/ci/install_rust_g.sh
       - name: Compile Tests
         run: |
@@ -127,7 +128,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]') && always()"
     needs: [run_all_tests]
     name: Compare Screenshot Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       # If we ever add more artifacts, this is going to break, but it'll be obvious.

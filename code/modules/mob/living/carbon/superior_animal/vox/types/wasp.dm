@@ -27,7 +27,7 @@
 
 	has_special_parts = FALSE
 
-	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
+	armor = list(melee = 2, bullet = 3, energy = 1, bomb = 20, bio = 20, rad = 0)
 
 	get_stat_modifier = TRUE
 
@@ -55,7 +55,7 @@
 	reload_message = "perpares fling a sting!"
 	range_telegraph = "starts to push out its stinger, orienting it towards "
 	bones_amount = 0
-	inherent_mutations = list(MUTATION_BLOOD_BANK)
+	inherent_mutations = list(MUTATION_BLOOD_BANK, MUTATION_SEASONED_MIND, MUTATION_SHOCK_LESS)
 	var/poison_per_bite = 3
 	var/poison_type = "wasp_toxin"
 

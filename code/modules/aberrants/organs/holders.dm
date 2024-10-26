@@ -25,7 +25,7 @@
 
 /obj/item/organ/internal/scaffold/New()
 	..()
-	RegisterSignal(src, COMSIG_ABERRANT_COOLDOWN, .proc/start_cooldown)
+	RegisterSignal(src, COMSIG_ABERRANT_COOLDOWN, PROC_REF(start_cooldown))
 	if(use_generated_icon)
 		organ_type = "-[rand(1,6)]"
 	update_icon()
@@ -33,10 +33,9 @@
 /obj/item/organ/internal/scaffold/Destroy()
 	..()
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
-	if(LAZYLEN(item_upgrades))
-		for(var/datum/mod in item_upgrades)
-			SEND_SIGNAL(mod, COMSIG_REMOVE, src)
-			qdel(mod)
+	for(var/datum/mod in item_upgrades)
+		SEND_SIGNAL(mod, COMSIG_REMOVE, src)
+		qdel(mod)
 	return ..()
 
 /obj/item/organ/internal/scaffold/Process()
@@ -100,7 +99,7 @@
 		icon_state = initial(icon_state)
 
 /obj/item/organ/internal/scaffold/proc/update_color()
-	if(!use_generated_color || !item_upgrades.len)
+	if(!use_generated_color || !LAZYLEN(item_upgrades))
 		color = ruined ? ruined_color : color
 		generated_color = null
 		return
@@ -114,7 +113,7 @@
 	else
 		name = ruined ? ruined_name : name
 
-	for(var/prefix in prefixes)
+	for(var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 
 /obj/item/organ/internal/scaffold/proc/try_ruin()
@@ -195,7 +194,7 @@
 
 /obj/item/organ/internal/scaffold/proc/start_cooldown()
 	on_cooldown = TRUE
-	addtimer(CALLBACK(src, .proc/end_cooldown), aberrant_cooldown_time, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(end_cooldown)), aberrant_cooldown_time, TIMER_STOPPABLE)
 
 /obj/item/organ/internal/scaffold/proc/end_cooldown()
 	on_cooldown = FALSE
@@ -204,7 +203,7 @@
 	name = initial(name)
 	color = initial(color)
 	max_upgrades = max_upgrades ? initial(max_upgrades) : 0		// If no max upgrades, it must be a ruined teratoma. So, leave it at 0.
-	prefixes = list()
+	LAZYNULL(name_prefixes)
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
 	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2

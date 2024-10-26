@@ -15,6 +15,7 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
+	faction_iff = "excelsior"
 	health = 300
 	maxHealth = 300
 	auto_repair = 1
@@ -155,7 +156,7 @@
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
 	name = "artificer turret"
 	desc = "A fully automated battery powered self-repairing anti-wildlife turret platform built by the Artificer's Guild. It features a three round burst fire automatic and an integrated \
-	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.62mm rounds and holds up to 180."
+	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.62mm rounds and holds up to 180. Capable of IFF."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
@@ -167,6 +168,7 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 180
 	var/obj/item/cell/large/cell = null
+	friendly_to_colony = 1 //Artificers perfection.
 	health = 150
 	auto_repair = 1
 	shot_delay = 3
@@ -270,7 +272,7 @@
 					"<span class='notice'>You begin [anchored ? "un" : ""]securing the turret.</span>" \
 				)
 
-			if(do_after(user, 50, src))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				//This code handles moving the turret around. After all, it's a portable turret!
 				if(!anchored)
 					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
@@ -358,6 +360,9 @@
 
 	if(L.faction == "neutral")
 		return TURRET_NOT_TARGET
+
+	if(is_excelsior(L))
+		return TURRET_PRIORITY_TARGET
 
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET

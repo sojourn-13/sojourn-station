@@ -10,15 +10,13 @@
 		new /datum/wire_description(CAMERA_WIRE_ALARM, "Alarm")
 	)
 
-/datum/wires/camera/GetInteractWindow(mob/living/user)
-
-	. = ..(user)
+/datum/wires/camera/get_status(mob/living/user)
 	var/obj/machinery/camera/C = holder
-	. += "<br>\n[(C.view_range == initial(C.view_range) ? "The focus light is on." : "The focus light is off.")]"
-	. += "<br>\n[(C.can_use() ? "The power link light is on." : "The power link light is off.")]"
-	. += "<br>\n[(C.light_disabled ? "The camera light is off." : "The camera light is on.")]"
-	. += "<br>\n[(C.alarm_on ? "The alarm light is on." : "The alarm light is off.")]"
-	return .
+	. = ..()
+	. += "The focus light is [(C.view_range == initial(C.view_range)) ? "on" : "off"]."
+	. += "The power link light is [C.can_use() ? "on" : "off"]."
+	. += "The camera light is [C.light_disabled ? "off" : "on"]."
+	. += "The alarm light is [C.alarm_on ? "on" : "off"]."
 
 /datum/wires/camera/CanUse(var/mob/living/L)
 	var/obj/machinery/camera/C = holder

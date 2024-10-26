@@ -1,6 +1,6 @@
 /datum/trade_station/asterstradecapital
 	name_pool = list(
-		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices!.\ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
+		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices! \ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
 	)
 	forced_overmap_zone = list(
 		list(24, 26),
@@ -52,6 +52,13 @@
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam
+		),
+		"Mining Gear" = list(
+			/obj/item/tool/karl,
+			/obj/item/tool/pickaxe,
+			/obj/item/tool/pickaxe/excavation,
+			/obj/item/storage/bag/ore,
+			/obj/structure/ore_box
 		),
 		"Toys" = list(
 			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50), 5),

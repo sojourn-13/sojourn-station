@@ -39,7 +39,7 @@
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/sa
-	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/sa/tac)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
@@ -112,6 +112,33 @@
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
+/obj/item/gun/projectile/automatic/ak47/akl
+	name = "\"Legkiy-Kalashnikov\" laser"
+	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
+	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade."
+	icon = 'icons/obj/guns/projectile/akl.dmi'
+	icon_state = "AKL"
+	item_state = "AKL"
+	excelsior = FALSE
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
+	price_tag = 1500
+	init_recoil = RIFLE_RECOIL(0.4)
+	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
+	saw_off = FALSE
+	caliber = CAL_SCI
+	mag_well = MAG_WELL_LSRIFLE
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	init_firemodes = list(
+		FULL_AUTO_300,
+		BURST_5_ROUND,
+		SEMI_AUTO_NODELAY
+		)
+	serial_type = "SI"
+	gun_parts = null
+
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
@@ -127,7 +154,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/ak47/sa/sawn
 	serial_type = "SA"
-	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/ak47/sa/sawn
 	name = "sawn-off \"Kalashnikov\" rifle"
@@ -148,7 +175,7 @@
 	serial_type = "SA"
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
-	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac
 	name = "Breacher \"Kalashnikov\" rifle"
@@ -160,6 +187,7 @@
 	item_state = "AK"
 	price_tag = 1250
 	init_recoil = RIFLE_RECOIL(0.8)
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 15)
 	saw_off = FALSE
 	serial_type = "SA"
 	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
@@ -239,7 +267,7 @@
 	price_tag = 500
 	serial_type = "INDEX"
 	serial_shown = FALSE
-	gun_parts = list(/obj/item/part/gun/frame/kalash = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle/steel = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+	gun_parts = list(/obj/item/part/gun/frame/kalash = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle/steel = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
 
 /obj/item/gun/projectile/automatic/ak47/makeshift/update_icon()
 	..()
@@ -247,13 +275,12 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
+	cut_overlays()
+
 	if(ammo_magazine)
 		add_overlay("_mag[ammo_magazine.max_ammo]")
-	else
-		cut_overlays()
-		return
 
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+	if(!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
 	icon_state = iconstring
@@ -265,7 +292,7 @@
 	icon_state = "frame_kalash"
 	matter = list(MATERIAL_STEEL = 10)
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47/makeshift)
-	gripvars = list(/obj/item/part/gun/grip/black)
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle/steel
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)	//6.5mm or 7.62mm.
 	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.

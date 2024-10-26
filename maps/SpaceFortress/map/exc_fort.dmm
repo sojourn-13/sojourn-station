@@ -54,7 +54,6 @@
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary,
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary,
-/obj/item/ammo_magazine/ammobox/shotgun/payload,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "bH" = (

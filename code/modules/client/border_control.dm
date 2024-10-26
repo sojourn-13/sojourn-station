@@ -59,7 +59,7 @@ proc/BC_WhitelistKey(var/key)
 		if(!LAZYISIN(whitelistedCkeys,key))
 			LAZYINITLIST(whitelistedCkeys)
 
-			ADD_SORTED(whitelistedCkeys, key, /proc/cmp_text_asc)
+			ADD_SORTED(whitelistedCkeys, key, GLOBAL_PROC_REF(cmp_text_asc))
 			BC_SaveWhitelist()
 			return 1
 		else // Already in

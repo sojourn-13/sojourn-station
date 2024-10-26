@@ -76,11 +76,12 @@
 	)
 
 	offer_types = list(
-		/obj/item/mech_ammo_box/scattershot = offer_data("LBX AC 10 ammunition box", 350, 5),
-		/obj/item/mech_ammo_box/ultracannon = offer_data("Ultra AC 2 ammunition box", 350, 5),
+		/obj/item/mech_ammo_box/scattershot = offer_data("50mm HEAD ammunition box", 350, 5),
+		/obj/item/mech_ammo_box/ultracannon = offer_data("30mm HEAD ammunition box", 350, 5),
 		/obj/item/tool_upgrade/reinforcement/plating = offer_data("reinforced plating", 120, 2),
 		/obj/item/gun_upgrade/mechanism/overdrive = offer_data("overdrive chip", 175, 2),
-		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 575, 3)
+		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 700, 3),
+		/obj/item/cell/large/greyson = offer_data("GP_SI \"Posi-cell 16000L\"", 1250, 2)
 	)
 
 /obj/mecha/working/hoverpod/cargo_imported

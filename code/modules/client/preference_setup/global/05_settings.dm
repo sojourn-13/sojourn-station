@@ -105,6 +105,18 @@
 
 	return ..()
 
+
+// get_preference_value but it never errors
+/client/proc/try_get_preference_value(var/preference)
+	if(prefs)
+		var/datum/client_preference/cp = get_client_preference(preference)
+		if(cp)
+			return prefs.preference_values[cp.key]
+		else
+			return null
+	else
+		return null
+
 /client/proc/get_preference_value(var/preference)
 	if(prefs)
 		var/datum/client_preference/cp = get_client_preference(preference)

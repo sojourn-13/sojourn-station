@@ -112,6 +112,7 @@
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
+	var/move_and_attack = FALSE
 	universal_understand = TRUE //QoL to admins controling mobs
 	var/do_gibs = TRUE //Do we gib?
 	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner
@@ -183,6 +184,13 @@
 
 	melee_damage_lower = 0
 	melee_damage_upper = 10
+
+	//Type of damage, atm only brute
+	var/melee_damage_type = BRUTE
+	//If are melee attacks are sharp, used for delimming
+	var/melee_sharp = FALSE
+	//Used for what type of armor were fighting against
+	var/attacking_armor_type = ARMOR_MELEE
 
 	/// Determines if the mob will target whoever attacked them in the absence of an existing target. Ignores view range.
 	var/react_to_attack = TRUE

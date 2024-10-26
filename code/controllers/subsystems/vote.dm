@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(vote)
-	name = "Voting"
+	name = "Vote"
 	wait = 1 SECONDS
 	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(vote)
 		return
 	var/data = "<html><meta charset=\"UTF-8\"><head><title>Voting Panel</title></head><body>"
 
-	var/admin = check_rights(R_ADMIN, FALSE, C)
+	var/admin = check_rights(R_ADMIN|R_MOD|R_FUN, FALSE, C)
 
 	voters |= C
 
@@ -187,7 +187,7 @@ SUBSYSTEM_DEF(vote)
 	if(href_list["close"])
 		if(usr && usr.client)
 			voters.Remove(usr.client)
-			usr.client << browse(null,"window=vote")
+			usr.client << browse(null,"window=Vote")
 			return
 
 	usr.vote()

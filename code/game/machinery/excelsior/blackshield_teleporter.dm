@@ -44,7 +44,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
 		/obj/item/ammo_magazine/rifle_75 = 35,
 		/obj/item/ammo_magazine/speed_loader_shotgun = 35,
-		/obj/item/ammo_magazine/rifle_75_linked_box/empty = 65, // Empty linked mag for balance, making the Heroic actually useable if ordered.
+		/obj/item/ammo_magazine/rifle_75_linked_box/empty = 65, // Empty linked mag for balance, making the Heroic actually usable if ordered.
 		/obj/item/ammo_magazine/heavy_rifle_408 = 50,
 		/obj/item/ammo_magazine/sbaw = 50,
 		/obj/item/ammo_magazine/ammobox/pistol_35 = 75,
@@ -64,10 +64,11 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/duty = 325,
 		/obj/item/gun/projectile/automatic/sts/rifle = 400,
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 375,
-		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 300,
+		/obj/item/gun/projectile/automatic/buckler = 300,
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
 		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
+		/obj/item/gun/energy/lasercore/militia = 600, //very good, very expensive.
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor

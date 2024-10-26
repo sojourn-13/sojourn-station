@@ -50,8 +50,8 @@ GLOBAL_LIST_EMPTY(atmos_machinery) //All things atmos
 //Jobs and economy
 GLOBAL_LIST_EMPTY(joblist)					//list of all jobstypes, minus borg and AI
 GLOBAL_LIST_EMPTY(all_departments)			//List of all department datums
-var/global/list/department_IDs = list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING,
- DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_LSS, DEPARTMENT_CHURCH, DEPARTMENT_CIVILIAN, DEPARTMENT_PROSPECTOR)
+var/global/list/department_IDs = list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING, DEPARTMENT_SCIENCE,
+DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD, DEPARTMENT_LSS, DEPARTMENT_CHURCH, DEPARTMENT_CIVILIAN, DEPARTMENT_PROSPECTOR)
 GLOBAL_LIST_EMPTY(global_corporations)
 
 
@@ -134,7 +134,8 @@ var/global/list/organ_tag_to_name = list(
 	groin = "groin",l_leg = "left leg",
 	chest2= "back", heart = "heart",
 	lungs  = "lungs", liver = "liver",
-	"left kidney" = "left kidney", "right kidney" = "right kidney",
+	"left kidney" = "left kidney",
+	"right kidney" = "right kidney",
 	stomach = "stomach", brain = "brain",
 	back  = "back"
 	)
@@ -386,8 +387,8 @@ var/global/list/severity_to_string = list("[EVENT_LEVEL_MUNDANE]" = "Mundane", "
 */
 var/global/list/paramslist_cache = list()
 
-#define cached_key_number_decode(key_number_data) cached_params_decode(key_number_data, /proc/key_number_decode)
-#define cached_number_list_decode(number_list_data) cached_params_decode(number_list_data, /proc/number_list_decode)
+#define cached_key_number_decode(key_number_data) cached_params_decode(key_number_data, GLOBAL_PROC_REF(key_number_decode))
+#define cached_number_list_decode(number_list_data) cached_params_decode(number_list_data, GLOBAL_PROC_REF(number_list_decode))
 
 /proc/cached_params_decode(var/params_data, var/decode_proc)
 	. = paramslist_cache[params_data]
@@ -408,6 +409,9 @@ var/global/list/paramslist_cache = list()
 	return L
 
 
-
-// bee foods
+//Soj changes
+//bee foods
 var/list/bee_food_list = list("harebell", "sunflowers", "thaadra", "telriis", "surik", "vale", "potato", "poppies")
+
+//Used to track repeat odditie weapon spawns, as the name suggests. Currently helps reduce repeats
+GLOBAL_LIST_EMPTY(reapeat_odditie_weapon_spawn)

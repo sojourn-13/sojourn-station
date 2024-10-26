@@ -127,14 +127,26 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/judiciary,
 		/datum/design/autolathe/gun_frame/colt,
 		/datum/design/autolathe/gun_frame/amnesty,
-		/datum/design/autolathe/gun_frame/freedom,
 		/datum/design/autolathe/gun_frame/judge,
-		/datum/design/autolathe/gun_frame/bastard,
-		/datum/design/autolathe/gun_frame/mamba,
+		/datum/design/autolathe/gun_frame/freedom,
 		/datum/design/autolathe/gun_frame/specop,
-		/datum/design/autolathe/gun_frame/dp,
+		/datum/design/autolathe/gun_frame/mamba,
 		/datum/design/autolathe/gun_frame/opshot,
 		/datum/design/autolathe/gun_frame/wind,
-		/datum/design/autolathe/gun_frame/takeshi,
-		/datum/design/autolathe/gun_frame/omni
+		/datum/design/autolathe/gun_frame/takeshi //No more Omni and DP, both are BS guns like smhing my Smh on my SMH
+	)
+//Rearranged into Pistol > Revolver > SMG > Carbine > Shotgun > Rifle > MG for better clarity
+
+/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal/surplus
+	disk_name = "NM - \"Ironing Surplus with Hammers\" gun frames"
+//This right here if you ever readd old marshal / ironhammer guns put it right here there that there, also into the actual vendor outside.
+	designs = list(
+		/datum/design/autolathe/gun_frame/glock,
+		/datum/design/autolathe/gun_frame/ladon,
+		/datum/design/autolathe/gun_frame/grease,
+		/datum/design/autolathe/gun_frame/canine,
+		/datum/design/autolathe/gun_frame/grizzly,
+		/datum/design/autolathe/gun_frame/gladstone,
+		/datum/design/autolathe/gun_frame/bastard,
+		/datum/design/autolathe/gun_frame/dp
 	)

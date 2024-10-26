@@ -27,7 +27,7 @@
 
 /obj/item/gun/energy/peacekeeper/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 

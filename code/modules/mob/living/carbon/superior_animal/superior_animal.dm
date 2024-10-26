@@ -11,7 +11,7 @@
 	full_reload_message  = "[reload_message]"
 	reload_message = "[name] [full_reload_message]"
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
@@ -41,7 +41,11 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
-	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
+	if(move_and_attack)
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(movement_tech))
+
+
+	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
@@ -344,7 +348,6 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		if (stat != DEAD)
 			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
-		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
@@ -468,7 +471,8 @@
 
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+					if(!QDELETED(src))
+						addtimer(CALLBACK(src, PROC_REF(OpenFire), targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)
@@ -506,11 +510,14 @@
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
 	if (critcheck)
-		if (istype(src, /mob/living/carbon/human))
-			if(health > HEALTH_THRESHOLD_CRIT) //only matters for humans
+		if (ishuman(src))
+			var/mob/living/carbon/human/H = src
+			if(H.health > HEALTH_THRESHOLD_CRIT) //only matters for humans
 				return TRUE
-			else
-				return FALSE
+			if(!H.resting && stat == CONSCIOUS)
+				return TRUE
+
+			return FALSE
 	if(health > 0)
 		return TRUE
 	return FALSE
@@ -586,7 +593,7 @@
 			if (can_burrow && bad_environment)
 				evacuate()
 			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
+			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0

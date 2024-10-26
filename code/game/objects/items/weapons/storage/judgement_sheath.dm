@@ -10,6 +10,8 @@
 	)
 
 	force = 15
+	base_icon_state = "sheath_judgement"
+	base_item_state = "sheath_judgement"
 
 	var/tmp/next_rift = 0
 	var/RiftCooldown = 5 MINUTES
@@ -78,6 +80,8 @@
 /obj/item/storage/sheath/judgement/exultor
 	icon_state = "exultor_sheath"
 	item_state = "exultor_sheath"
+	base_icon_state = "exultor_sheath"
+	base_item_state = "exultor_sheath"
 
 /obj/item/storage/sheath/judgement/exultor/filled/New()
 	update_icon()

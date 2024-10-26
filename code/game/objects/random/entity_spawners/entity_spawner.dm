@@ -278,7 +278,7 @@
 /obj/entity_spawner/proc/deactivate(duration = 0, emped = FALSE)
 	active = FALSE
 	if (duration != 0)
-		addtimer((CALLBACK(src, .proc/reactivate, emped)), duration)
+		addtimer((CALLBACK(src, PROC_REF(reactivate), emped)), duration)
 	if (emped)
 		stat |= EMPED
 	return TRUE

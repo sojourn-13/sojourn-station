@@ -14,7 +14,8 @@
 
 	return wtime + (time_offset + wusage) * world.tick_lag
 
-var/roundstart_hour = 0
+var/roundstart_hour = servertime2nums(1) //The hour in GMT that the server started. This will be adjusted for timezone by all time2text procs
+var/true_roundstart_hour = roundstart_hour + world.timezone //For use in any day/night calculations, this is the roundstart hour as it will actually appear
 var/station_date = ""
 var/next_station_date_change = 1 DAYS
 
@@ -24,7 +25,6 @@ var/next_station_date_change = 1 DAYS
 #define station_time_in_ticks (roundstart_hour HOURS + roundduration2text_in_ticks)
 
 /proc/stationtime2text()
-	if(!roundstart_hour) roundstart_hour = pick(2, 7, 12, 17)
 	return time2text(station_time_in_ticks, "hh:mm")
 
 /proc/stationdate2text()
@@ -44,8 +44,45 @@ var/next_station_date_change = 1 DAYS
 
 //Returns the world time in english
 /proc/worldtime2text(time = world.time, timeshift = 1)
-	if(!roundstart_hour) roundstart_hour = rand(0, 23)
 	return timeshift ? time2text(time+(roundstart_hour HOURS), "hh:mm") : time2text(time, "hh:mm")
+
+/proc/time2nums(T, precision = 2, floorit = FALSE) //T = time in deciseconds. Proc returns T in time form without a colon
+	if(T > 864000) //Times greater than 1 day get reduced to a time less than 24 hours
+		T %= 864000
+	var/sec = round(T/10) //Gives us the time in seconds rather than deciseconds.
+	var/midhours
+	var/midminutes
+	var/midseconds
+	var/output
+	switch(precision) //Precision is how many places we calculate. 1 returns hh, 2 returns hhmm, 3 returns hhmmss. Default is 2
+		if(1)
+			midhours = sec/3600 //Number of seconds in an hour
+			if(floorit) //Do we always round down?
+				output = round(midhours)
+			else //Or do we round to nearest?
+				output = round(midhours, 1)
+		if(2)
+			midhours = round(sec/3600) //Number of whole hours within our seconds
+			midminutes = (sec%3600)/60 //Number of minutes in the remainder
+			if(floorit)
+				output = midhours*100+round(midminutes)
+			else
+				output = midhours*100+round(midminutes, 1)
+		if(3)
+			midhours = round(sec/3600) //Number of whole hours within our seconds
+			midminutes = round((sec%3600)/60) //Number of whole minutes within our remaining seconds
+			midseconds = (sec%60)
+			output = midhours*1000+midminutes*100+midseconds //No need to option the rounding here, seconds are floored in line 1
+		else //Someone specified a precision outside the bounds? That's a paddlin
+			log_and_message_admins("time2nums was called by an idiot who gave it invalid precision. Yell at them in #code-dev.")
+			output = 0
+	return output
+
+/proc/servertime2nums(precision = 2) //Should return the UTC time, precision as above
+	return time2nums(world.timeofday, precision)
+
+/proc/getroundstarthour()
+	return true_roundstart_hour
 
 /proc/worldtime2hours()
 	if (!roundstart_hour)
@@ -86,7 +123,7 @@ var/round_start_time = 0
 		return last_roundduration2text
 
 	var/mills = roundduration2text_in_ticks // 1/10 of a second, not real milliseconds but whatever
-	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for refrence.. or something
+	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for reference.. or something
 	var/mins = round((mills % 36000) / 600)
 	var/hours = round(mills / 36000)
 
@@ -102,7 +139,7 @@ var/round_start_time = 0
 		return "00:00"
 	if(last_rounddurationcountdown2text && world.time < last_rounddurationcountdown2text_update)
 		return last_rounddurationcountdown2text
-	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for refrence.. or something
+	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for reference.. or something
 	if(delay && !endtime)
 		endtime = delay + 1 MINUTE
 	if(!endtime)
@@ -149,22 +186,3 @@ var/global/rollovercheck_last_timeofday = 0
 	if(counter)
 		response += "[counter][ticks?".[ticks]" : ""] Second[counter>1 ? "s" : ""]"
 	return response
-
-//Increases delay as the server gets more overloaded,
-//as sleeps aren't cheap and sleeping only to wake up and sleep again is wasteful
-#define DELTA_CALC max(((max(world.tick_usage, world.cpu) / 100) * max(Master.sleep_delta,1)), 1)
-#define UNTIL(X) while(!X) stoplag()
-
-/proc/stoplag()
-	if (!Master || !(Master.current_runlevel & RUNLEVELS_DEFAULT))
-		sleep(world.tick_lag)
-		return 1
-	. = 0
-	var/i = 1
-	do
-		. += round(i*DELTA_CALC)
-		sleep(i*world.tick_lag*DELTA_CALC)
-		i *= 2
-	while (world.tick_usage > min(TICK_LIMIT_TO_RUN, Master.current_ticklimit))
-
-#undef DELTA_CALC

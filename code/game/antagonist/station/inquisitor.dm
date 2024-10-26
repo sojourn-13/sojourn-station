@@ -44,9 +44,18 @@
 	if (is_preacher(owner.current))
 		was_priest = TRUE
 
-	C.make_inquisitor()
+	C.make_crusader()
 	return TRUE
 
+/datum/antagonist/inquisitor/remove_antagonist() //Only use this on people whose cruciforms are active
+	var/obj/item/implant/core_implant/cruciform/C = owner.current.get_core_implant(/obj/item/implant/core_implant/cruciform)
+
+	if(!C)
+		return
+	else
+		C.remove_crusader()
+
+	.=..()
 
 /datum/antagonist/inquisitor/greet()
 	if(!owner || !owner.current)
@@ -69,7 +78,7 @@
 	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat. \
 	Do as befitting of the church and aid the colony in whatever way you can.")
 
-	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel. The bounty ritual can be used to request items from central church command.")
+	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel.")
 
 
 	show_objectives()

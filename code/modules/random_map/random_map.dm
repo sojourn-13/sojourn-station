@@ -31,7 +31,8 @@ var/global/list/map_count = list()
 	// Test to see if rand_seed() can be used reliably.
 	var/priority_process
 
-/datum/random_map/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce)
+/datum/random_map/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce)
+	
 	// Store this for debugging.
 	if(!map_count[descriptor])
 		map_count[descriptor] = 1
@@ -53,7 +54,7 @@ var/global/list/map_count = list()
 
 	var/start_time = world.timeofday
 	if(!do_not_announce) admin_notice(SPAN_DANGER("Generating [name]."), R_DEBUG)
-	sleep(-1)
+	CHECK_TICK
 
 	// Testing needed to see how reliable this is (asynchronous calls, called during worldgen), DM ref is not optimistic
 	if(seed)
@@ -107,8 +108,7 @@ var/global/list/map_count = list()
 	to_chat(user, "[dat]+------+</code>")
 
 /datum/random_map/proc/set_map_size()
-	map = list()
-	map.len = limit_x * limit_y
+	map = new (limit_x * limit_y)
 
 /datum/random_map/proc/seed_map()
 	for(var/x = 1, x <= limit_x, x++)
@@ -154,7 +154,8 @@ var/global/list/map_count = list()
 
 	for(var/x = 1, x <= limit_x, x++)
 		for(var/y = 1, y <= limit_y, y++)
-			if(!priority_process) sleep(-1)
+			if(!priority_process)
+				CHECK_TICK
 			apply_to_turf(x,y)
 			CHECK_TICK
 

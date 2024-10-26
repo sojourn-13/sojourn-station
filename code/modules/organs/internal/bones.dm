@@ -17,7 +17,7 @@
 /obj/item/organ/internal/bone/die()
 	return
 
-/obj/item/organ/internal/bone/take_damage(silent = FALSE)
+/obj/item/organ/internal/bone/take_damage(silent = FALSE, sharp = FALSE, edge = FALSE)
 	if(damage > (min_broken_damage * ORGAN_HEALTH_MULTIPLIER) && !(status & ORGAN_BROKEN))
 		fracture()
 	. = ..()
@@ -33,6 +33,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 	// Determine possible wounds based on nature and damage type
 	var/is_robotic = BP_IS_ROBOTIC(src)
 	var/is_organic = BP_IS_ORGANIC(src) || BP_IS_ASSISTED(src)
+	var/is_slime = BP_IS_SLIME(src)
 
 	switch(damage_type)
 		if(BRUTE)
@@ -42,21 +43,29 @@ obj/item/organ/internal/bone/add_initial_transforms()
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/bone_sharp))
 					if(is_robotic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/sharp))
+					if(is_slime)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/sharp))
 				else
 					if(is_organic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/bone_blunt))
 					if(is_robotic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/blunt))
+					if(is_slime)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/blunt))
 			else
 				if(is_organic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/bone_edge))
 				if(is_robotic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/edge))
+				if(is_slime)
+					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/edge))
 		if(BURN)
 			if(is_organic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/burn))
 			if(is_robotic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/emp_burn))
+			if(is_slime)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/burn))
 
 	return possible_wounds
 

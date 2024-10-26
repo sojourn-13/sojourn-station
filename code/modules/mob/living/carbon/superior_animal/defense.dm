@@ -4,13 +4,14 @@
 	var/actual_leather_amount = max(0,(leather_amount/2))
 	var/actual_bones_amount = max(0,(bones_amount/2))
 
-	if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
-		actual_leather_amount = max(0,(leather_amount))
-		actual_meat_amount = max(1,(meat_amount))
-		actual_bones_amount = max(0,(bones_amount))
-		if(has_special_parts)
-			for(var/animal_part in special_parts)
-				new animal_part(get_turf(src))
+	if(ishuman(user))
+		if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
+			actual_leather_amount = max(0,(leather_amount))
+			actual_meat_amount = max(1,(meat_amount))
+			actual_bones_amount = max(0,(bones_amount))
+			if(has_special_parts)
+				for(var/animal_part in special_parts)
+					new animal_part(get_turf(src))
 
 	if(actual_leather_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_leather_amount;i++)
@@ -30,20 +31,24 @@
 				var/obj/item/non_meat = new meat_type(get_turf(src))
 				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
-			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
+			if(user != src)
+				user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			blood_effect.basecolor = bloodcolor
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			if(user.stats.getPerk(PERK_BUTCHER))
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
-				var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
-				blood_effect.basecolor = bloodcolor
-				blood_effect.update_icon()
+			if(ishuman(user))
+				if(user.stats.getPerk(PERK_BUTCHER))
+					if(user != src)
+						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+					var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+					blood_effect.basecolor = bloodcolor
+					blood_effect.update_icon()
 				qdel(src)
 			else
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
+				if(user != src)
+					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
 				gib()
 
 /mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
@@ -199,7 +204,7 @@
 			silent = FALSE
 			return TRUE
 
-		if(paralysis && paralysis > 0)
+		if(paralysis)
 			handle_paralysed()
 			blinded = TRUE
 			stat = UNCONSCIOUS
@@ -211,11 +216,8 @@
 			sleeping = max(sleeping-1, 0)
 			blinded = TRUE
 			stat = UNCONSCIOUS
-		else if(resting)
-			if(halloss > 0)
-				adjustHalLoss(-3)
 
-		else
+		if(!sleeping && !paralysis)
 			stat = CONSCIOUS
 			if(halloss > 0)
 				adjustHalLoss(-1)
@@ -347,7 +349,7 @@
 	//	loc.assume_air(breath) //by default, exhale
 
 /* this is now handled upwards in living_defense
-/mob/living/carbon/superior_animal/handle_fire(flammable_gas, turf/location)
+/mob/living/carbon/superior_animal/handle_fire()
 	if(never_stimulate_air)
 		if (fire_stacks > 0)
 			ExtinguishMob() //We dont simulate air thus we dont simulate fire
@@ -391,20 +393,25 @@
 /mob/living/carbon/superior_animal/proc/pick_armor()
 	return
 
-/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message)
+/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage || !istype(user))
 		return
 
-	var/penetration = 0
+	var/penetration = 1
 	if(istype(user, /mob/living))
 		var/mob/living/L = user
-		penetration = L.armor_penetration
+		penetration = L.armor_divisor
 
-	damage_through_armor(damage, BRUTE, attack_flag=ARMOR_MELEE, armour_pen=penetration)
+	damage_through_armor(damage, BRUTE, attack_flag=ARMOR_MELEE, armor_divisor=penetration)
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
 	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))
 	user.do_attack_animation(src)
 	spawn(1) updatehealth()
 	return TRUE
+
+/mob/living/carbon/superior_animal/getarmor(def_zone, type)
+	//log_and_message_admins("LOG 1.5: def_zone [def_zone] | type [type] | armor(type) [armor[type]].")
+	return armor[type]
+

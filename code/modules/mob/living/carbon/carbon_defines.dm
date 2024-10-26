@@ -5,8 +5,6 @@
 	var/species_aan = ""
 	var/species_color_key = "#000000"
 	var/species_name = "Carbon Lifeform"
-	var/list/datum/disease2/disease/virus2 = list()
-	var/list/antibodies = list()
 
 	var/life_tick = 0      // The amount of life ticks that have processed on this mob.
 	var/analgesic = 0 // when this is set, the mob isn't affected by shock or pain
@@ -20,6 +18,7 @@
 
 	//Values from all base organs should add up to this
 	var/total_blood_req = 40
+	var/effective_blood_volume = 1 //affected by OP_HEART efficency
 	var/total_oxygen_req = 50
 	var/total_nutriment_req = DEFAULT_HUNGER_FACTOR
 
@@ -28,6 +27,9 @@
 	var/datum/reagents/metabolism/touching = null
 	var/datum/metabolism_effects/metabolism_effects = null
 	var/losebreath = 0 //if we failed to breathe last tick
+
+	var/always_blood = FALSE //Do we always process reagents as though we have blood?
+	var/always_ingest = FALSE //Do we always process reagents as though we have a stomach?
 
 	var/coughedtime = null
 	var/lastpuke = 0
@@ -43,4 +45,3 @@
 
 	var/movement_hunger_factors = 1
 	//TODO: move to brain
-

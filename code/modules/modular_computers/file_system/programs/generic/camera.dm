@@ -11,7 +11,7 @@
 			return access_mailsorting // Cargo office - all cargo staff should have access here.
 		if(NETWORK_ROBOTS)
 			return access_robotics
-		if(NETWORK_PRISON, NETWORK_GATE)
+		if(NETWORK_PRISON, NETWORK_GATE, NETWORK_CEV_ERIS)
 			return access_security
 		if(NETWORK_PROP)
 			return access_eva
@@ -35,7 +35,7 @@
 	nanomodule_path = /datum/nano_module/camera_monitor
 	program_icon_state = "cameras"
 	program_key_state = "generic_key"
-	program_menu_icon = "search"
+	program_menu_icon = "video"
 	extended_desc = "This program allows remote access to the camera system. Some camera networks may have additional access requirements."
 	size = 12
 	available_on_ntnet = 1

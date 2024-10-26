@@ -236,8 +236,8 @@
 /obj/item/reagent_containers/pill/floorpill/self_feed_message(var/mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow \the [src]."))
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
+	if(isliving(user))
+		var/mob/living/H = user
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/dr_floor, "DR_FLOOR", skill_gained = 1, learner = H)
 
 /obj/item/reagent_containers/pill/floorpill/wallet
@@ -282,7 +282,6 @@
 					list("sacid" = 15) = 1,\
 					list("hclacid" = 15) = 1,\
 					list("impedrezene" = 15, "dexalinp" = 35) = 1,\
-					list("virusfood" = 15) = 1,\
 					list("leporazine" = 15) = 1,\
 					list("anti_toxin" = 15, "zombiepowder" = 10) = 0.5,\
 					list("chemweapon1" = 15, "zombiepowder" = 10) = 0.1,\

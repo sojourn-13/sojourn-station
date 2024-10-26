@@ -207,6 +207,8 @@
 	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
 	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
+	new /obj/item/clothing/accessory/armband(src)
+	new /obj/item/clothing/accessory/armband(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"
@@ -217,8 +219,8 @@
 	new /obj/item/clothing/under/rank/trooper/gorka(src)
 	new /obj/item/clothing/under/rank/trooper/cadet(src)
 	new /obj/item/clothing/under/rank/trooper/cadet(src)
-	new /obj/item/clothing/under/rank/fatigues/green(src)
-	new /obj/item/clothing/under/rank/fatigues/green(src)
+	new /obj/item/clothing/under/rank/fatigues(src)
+	new /obj/item/clothing/under/rank/fatigues(src)
 	new /obj/item/clothing/under/rank/fatigues/grey(src)
 	new /obj/item/clothing/under/rank/fatigues/grey(src)
 	new /obj/item/clothing/under/rank/fatigues/navy(src)
@@ -233,6 +235,8 @@
 	new /obj/item/clothing/under/rank/fatigues/kav/green(src)
 	new /obj/item/clothing/under/rank/fatigues/kav/tan(src)
 	new /obj/item/clothing/under/rank/fatigues/kav/tan(src)
+	new /obj/item/clothing/under/rank/fatigues/kav/jungle(src)
+	new /obj/item/clothing/under/rank/fatigues/kav/jungle(src)
 
 /obj/structure/closet/wardrobe/militia/accessory
 	name = "blackshield accessory wardrobe"
@@ -272,6 +276,11 @@
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/corpsman(src)
+	new /obj/item/clothing/accessory/armband/corpsman(src)
 
 /obj/structure/closet/wardrobe/job/science_white
 	name = "science wardrobe"

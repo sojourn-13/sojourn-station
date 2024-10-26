@@ -60,16 +60,16 @@
 			needs_to_be_deweeded = FALSE
 			remove_dead_weeds = TRUE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 2, learner = H)
 			return
 		if(istype(I, /obj/item/tool/minihoe))
 			to_chat(user, "<span class='info'>You remove the invasive plants.</span>")
 			needs_to_be_deweeded = FALSE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(remove_dead_weeds)
@@ -77,8 +77,8 @@
 			to_chat(user, "<span class='info'>The weeds are no more.</span>")
 			remove_dead_weeds = FALSE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(needs_to_be_pest_b_goned)
@@ -87,8 +87,8 @@
 			needs_to_be_pest_b_goned = FALSE
 			remove_dead_pets = TRUE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(remove_dead_pets)
@@ -96,8 +96,8 @@
 			to_chat(user, "<span class='info'>The dead pests are no more.</span>")
 			remove_dead_pets = FALSE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(needs_to_be_watered)
@@ -105,8 +105,8 @@
 			to_chat(user, "<span class='info'>The water rejuvenates the plants.</span>")
 			needs_to_be_watered = FALSE
 			sanity_damage -= 0.004
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
+			if(isliving(user))
+				var/mob/living/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 3, learner = H)
 			return
 
@@ -912,7 +912,13 @@
 	layer = ABOVE_MOB_LAYER
 	anchored = 1
 
-/obj/structure/flora/small/big/attackby(obj/item/I, mob/user)
+
+
+/obj/structure/flora/big/bush1
+	icon = 'icons/obj/flora/largejungleflora.dmi'
+	icon_state = "bush1"
+
+/obj/structure/flora/big/bush1/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
 		return
@@ -931,17 +937,51 @@
 			return
 		return
 
-/obj/structure/flora/big/bush1
-	icon = 'icons/obj/flora/largejungleflora.dmi'
-	icon_state = "bush1"
-
 /obj/structure/flora/big/bush2
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush2"
 
+/obj/structure/flora/big/bush2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/big/bush3
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush3"
+
+/obj/structure/flora/big/bush3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/big/rocks1
 	name = "rock pile"
@@ -1099,3 +1139,65 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_ICON
+
+obj/structure/flora/small/snow/rock1
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock1"
+
+/obj/structure/flora/small/snow/rock2
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock2"
+
+/obj/structure/flora/small/snow/rock3
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock3"
+
+/obj/structure/flora/small/snow/rock4
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock4"
+
+/obj/structure/flora/small/snow/rock5
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock5"
+
+/obj/structure/flora/small/snow/rock6
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock6"
+
+/obj/structure/flora/small/snow/rock7
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock7"
+
+/obj/structure/flora/small/snow/rock8
+	name = "rocks"
+	desc = "Rocks with snow atop."
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowrock8"
+
+/obj/structure/flora/small/snow/boulder1
+	name = "boulder"
+	desc = "A large rock with a flat top where ice and snow has built up."
+	density = TRUE
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowboulder1"
+
+/obj/structure/flora/small/snow/boulder2
+	name = "boulder"
+	desc = "A large rock with snow and ice on the top."
+	density = TRUE
+	icon = 'icons/obj/flora/snowrocks.dmi'
+	icon_state = "snowboulder2"

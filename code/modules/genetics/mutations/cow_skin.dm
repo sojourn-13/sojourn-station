@@ -9,8 +9,8 @@
 
 /datum/genetics/mutation/cow_skin/onMobImplant()
 	..()
-	container.holder.brute_mod_perk -= 0.1
+	container.holder.brute_mod_perk *= 0.75
 
 /datum/genetics/mutation/cow_skin/onMobRemove()
 	..()
-	container.holder.brute_mod_perk += 0.1
+	container.holder.brute_mod_perk /= 0.75

@@ -4,11 +4,11 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
 	anchored = 0
-	sanity_damage = 1
+	sanity_damage = 0.5
 
 /obj/item/remains/human
 	desc = "They look like human remains. Some poor soul expired here, a million miles from home."
-	sanity_damage = 5
+	sanity_damage = 2.5
 
 /obj/item/remains/xeno
 	desc = "They look like the remains of something... alien. They have a strange aura about them."

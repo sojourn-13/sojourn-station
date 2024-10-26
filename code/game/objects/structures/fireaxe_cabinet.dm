@@ -12,10 +12,10 @@
 	var/obj/item/tool/fireaxe/fireaxe
 	req_one_access = list(access_heads, access_engine)
 
-/obj/structure/fireaxecabinet/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/structure/fireaxecabinet/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	attack_animation(user)
 	playsound(user, 'sound/effects/Glasshit.ogg', 50, 1)
-	visible_message(SPAN_DANGER("[user] [attack_verb] \the [src]!"))
+	visible_message(SPAN_DANGER("[user] [attack_message] \the [src]!"))
 	if(damage_threshold > damage)
 		to_chat(user, SPAN_DANGER("Your strike is deflected by the reinforced glass!"))
 		return

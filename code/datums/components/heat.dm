@@ -11,13 +11,13 @@
 
 /datum/component/heat/Initialize(clickTypeToVent = COMSIG_CLICK_CTRL, parentIsGun, _heatThresholdSpecial, _overheatThreshold, _heatPerFire, _coolPerTick, _ventCooldown)
 	if(parentIsGun && istype(parent, /obj/item/gun))
-		RegisterSignal(parent, COMSIG_GUN_POST_FIRE, .proc/tickHeat)
+		RegisterSignal(parent, COMSIG_GUN_POST_FIRE, PROC_REF(tickHeat))
 	else if(istype(parent, /obj/item) && ! parentIsGun)
-		RegisterSignal(parent, COMSIG_IATTACK, .proc/tickHeat)
+		RegisterSignal(parent, COMSIG_IATTACK, PROC_REF(tickHeat))
 	else
 		return COMPONENT_INCOMPATIBLE
 
-	RegisterSignal(parent, clickTypeToVent, .proc/ventHeat)
+	RegisterSignal(parent, clickTypeToVent, PROC_REF(ventHeat))
 	heatThresholdSpecial = _heatThresholdSpecial
 	overheatThreshold = _overheatThreshold
 	heatPerFire = _heatPerFire

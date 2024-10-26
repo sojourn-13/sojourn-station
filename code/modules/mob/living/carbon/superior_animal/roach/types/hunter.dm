@@ -4,8 +4,8 @@
 	icon_state = "jager"
 
 	turns_per_move = 3
-	maxHealth = 30
-	health = 30
+	maxHealth = 30 * ROACH_HEALTH_MOD
+	health = 30 * ROACH_HEALTH_MOD
 	move_to_delay = 3.5
 
 	blattedin_revives_left = 2
@@ -16,4 +16,4 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/jager
 	meat_amount = 3
-	armor_penetration = 15
+	armor_divisor = 1.1

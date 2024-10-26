@@ -417,7 +417,7 @@
 			return
 
 		if(QUALITY_SAWING, QUALITY_BOLT_TURNING)
-			if(opened)
+			if(opened && user.a_intent != I_HELP)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					visible_message(
 						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
@@ -643,13 +643,13 @@
 				add_overlay("[icon_lock]_off")
 				add_overlay(icon_sparking)
 
-/obj/structure/closet/attack_generic(var/mob/user, var/damage, var/attack_message = "destroys", var/wallbreaker)
+/obj/structure/closet/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(damage)
 		damage(damage)
 		attack_animation(user)
 		visible_message(SPAN_DANGER("[user] [attack_message] the [src]!"))
 		return 1
-	if(!damage || !wallbreaker)
+	if(!damage)
 		return
 	attack_animation(user)
 	visible_message(SPAN_DANGER("[user] [attack_message] the [src]!"))
@@ -725,6 +725,6 @@
 	name = "[pick("locked", "sealed", "card reader", "access required", "eletronic")] [name]"
 	desc += "\n "
 	desc += " The access panel looks old. It's unlikely anyone can open this without hacking or brute force."
-	hack_require = rand(1,2) //Easyer to hack older locks
+	hack_require = rand(1,2) //Easier to hack older locks
 	locked = TRUE
 	secure = TRUE

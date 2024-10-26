@@ -15,7 +15,6 @@
 
 /obj/machinery/slime_compresser/update_icon()
 	return //Were boring and have no alt icons
-
 /obj/machinery/slime_compresser/affect_grab(var/mob/user, var/mob/target, var/state)
 	if(state < GRAB_NECK)
 		to_chat(user, SPAN_DANGER("You need a better grip to do that!"))
@@ -50,7 +49,9 @@
 		user.visible_message(SPAN_DANGER("\The [user] stuffs \the [victim] into the compresser!"))
 		playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 		flick("compressering", src)
-		new victim.coretype(user.loc)
+		var/number_of_cores
+		for(number_of_cores=0, number_of_cores <victim.cores, number_of_cores++)
+			new victim.coretype(user.loc)
 		qdel(victim)
 
 //Dye vat and its various procs and checks

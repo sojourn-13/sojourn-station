@@ -46,7 +46,11 @@
 
 //Int multiplier
 #define GUN_UPGRADE_DAMAGE_MULT "damage_mult"
+#define GUN_UPGRADE_DAMAGE_BASE "damage_base"
+
 #define GUN_UPGRADE_PEN_MULT "penetration_mult"
+#define GUN_UPGRADE_PEN_BASE "penetration_base"
+
 #define GUN_UPGRADE_PIERC_MULT "pierce_mult"
 #define GUN_UPGRADE_FIRE_DELAY_MULT "fire_delay_mult"
 #define GUN_UPGRADE_MOVE_DELAY_MULT "move_delay_mult"
@@ -128,7 +132,7 @@
 					/obj/item/cell/small/moebius/nuclear = 1,\
 					/obj/item/cell/medium/moebius/hyper = 1,\
 					/obj/random/rig/always_spawn = 1.5,\
-					/obj/item/material/butterfly/frenchman = 0.1,/*insainly rare do to being a bad item*/\
+					/obj/item/material/butterfly/frenchman = 0.1,/*insanely rare do to being a bad item*/\
 					/obj/random/rig/damaged/always_spawn = 1.5,\
 					/obj/random/pouch/hardcase = 4,\
 					/obj/random/voidsuit = 4,\

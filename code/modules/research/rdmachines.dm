@@ -42,6 +42,8 @@
 	build_type = PROTOLATHE
 	storage_capacity = 120
 
+	code_dex = "PROTOLATHE"
+
 
 /obj/machinery/autolathe/rnd/imprinter
 	name = "circuit imprinter"
@@ -53,6 +55,7 @@
 	storage_capacity = 60
 	speed = 3
 
+	code_dex = "IMPRINTER"
 
 // Versions with some materials already loaded, to be used on map spawn
 /obj/machinery/autolathe/rnd/protolathe/loaded

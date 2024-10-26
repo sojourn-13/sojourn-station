@@ -46,7 +46,7 @@
 	return effective_efficiency ? effective_efficiency : 1
 
 /mob/living/carbon/human/proc/eye_process()
-	var/eye_efficiency = get_organ_efficiency(OP_EYES)
+	var/eye_efficiency = get_organ_efficiency(OP_EYES) * (1 + chem_effects[CE_EYEHEAL]) //Highest this goes is 2
 
 	if(eye_efficiency < BRUISED_2_EFFICIENCY)
 		eye_blurry = 1
@@ -55,9 +55,9 @@
 	//update_client_colour()
 
 /mob/living/carbon/human/proc/kidney_process()
-	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS)
+	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS) * (1 + chem_effects[CE_PURGER])
 	var/obj/item/organ/internal/kidney = random_organ_by_process(OP_KIDNEYS)
-	var/chem_toxicity = chem_effects[CE_ANTITOX] + chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
+	var/chem_toxicity = chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_KIDNEY_TOX_RATIO + chem_toxicity
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
@@ -97,7 +97,7 @@
 
 	// Blood loss or liver damage make you lose nutriments
 	var/blood_volume = get_blood_volume()
-	if(blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || (liver_efficiency < BRUISED_2_EFFICIENCY))
+	if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || (liver_efficiency < BRUISED_2_EFFICIENCY))
 		if(nutrition >= 300)
 			adjustNutrition(-10)
 		else if(nutrition >= 200)
@@ -122,7 +122,7 @@
 	if(life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
 		pulse = PULSE_NORM
 
-		if(round(vessel.get_reagent_amount("blood")) <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
+		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
 			pulse  = PULSE_THREADY	//not enough :(
 
 		if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
@@ -132,15 +132,15 @@
 
 /mob/living/carbon/human/proc/handle_heart_blood()
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
-	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED] - 0.2 * chem_effects[CE_BLOODCLOT]
-	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	var/blood_volume = round((blood_volume_raw/species.blood_volume)*100) // Percentage.
+	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
+	var/blood_volume = get_blood_volume() // Percentage.
 
 	// Damaged heart virtually reduces the blood volume, as the blood isn't being pumped properly anymore.
 	if(heart_efficiency <= 100)	//flat scaling up to 100
-		blood_volume *= (heart_efficiency / 100) + blood_oxygenation
+		effective_blood_volume = (heart_efficiency / 100) + blood_oxygenation
 	else	//half scaling at over 100
-		blood_volume *= 1 + ((heart_efficiency - 100) / 200) + blood_oxygenation
+		effective_blood_volume = 1 + ((heart_efficiency - 100) / 200) + blood_oxygenation
+	blood_volume *= effective_blood_volume
 
 	//Effects of bloodloss
 	var/blood_safe = total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER
@@ -216,7 +216,11 @@
 
 /mob/living/carbon/human/proc/stomach_process()
 	var/stomach_efficiency = get_organ_efficiency(OP_STOMACH)
-	max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100)
+	//max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100) - This messes with genetics, and a few perks/affects.
+	//If we have for some reason negitive max_nutrition, set to 0 as not to ruin maths in human_movement.dm
+	if(-1 >= max_nutrition)
+		max_nutrition = 0
+
 	if(nutrition > 0 && stat != 2)
 		if(stomach_efficiency <= 0)
 			nutrition = 0

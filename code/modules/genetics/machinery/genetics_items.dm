@@ -1,9 +1,9 @@
 /*
-=================The Belvoix scanner=================
+=================The Soteria scanner=================
 This is a bugtesting item, please forgive the memes.
 */
-/obj/item/device/scanner/belvoix_scanner
-	name = "Belvoix Scanner"
+/obj/item/device/scanner/soteria_scanner
+	name = "Soteria Scanner"
 	desc = "A worryingly small device for extracting, analyzing and modifying genetic information. Never saw production in Soteria, as it was deemed too humane and convenient for regular use."
 	icon_state = "spectrometer"
 	item_state = "analyzer"
@@ -11,14 +11,14 @@ This is a bugtesting item, please forgive the memes.
 	charge_per_use = 0
 	var/datum/genetics/genetics_holder/held_mutations
 
-/obj/item/device/scanner/belvoix_scanner/is_valid_scan_target(atom/target)
+/obj/item/device/scanner/soteria_scanner/is_valid_scan_target(atom/target)
 	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/food/snacks/meat))
 		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
 		return FALSE
 	return TRUE
 
 
-/obj/item/device/scanner/belvoix_scanner/scan(atom/target, mob/user)
+/obj/item/device/scanner/soteria_scanner/scan(atom/target, mob/user)
 	if(user.a_intent == I_HELP)
 		if(target != src)
 			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
@@ -30,14 +30,14 @@ This is a bugtesting item, please forgive the memes.
 		else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
 			var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
 			held_mutations.initializeFromMeat(meat_target)
-		scan_title = "Belvoix Scanner - [target]"
-		scan_data = belvoix_scan(held_mutations)
+		scan_title = "Soteria Scanner - [target]"
+		scan_data = soteria_scan(held_mutations)
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
 		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))
 		held_mutations.inject_mutations(target)
 
-/proc/belvoix_scan(var/datum/genetics/genetics_holder/held_mutations)
+/proc/soteria_scan(var/datum/genetics/genetics_holder/held_mutations)
 	if(held_mutations.mutation_pool.len == 0)
 		return SPAN_WARNING("No genetic info found.</span>")
 	else
@@ -46,7 +46,7 @@ This is a bugtesting item, please forgive the memes.
 			dat += "[mutagen.name]([mutagen.active == TRUE ? "Active" : "Inactive"]): [mutagen.desc]"
 		return jointext(dat, "<br>")
 
-/obj/item/device/scanner/belvoix_scanner/verb/scramble()
+/obj/item/device/scanner/soteria_scanner/verb/scramble()
 	set category = "Object"
 	set name = "Scramble Activated Genes"
 	set src in view(1)
@@ -62,17 +62,17 @@ This is a bugtesting item, please forgive the memes.
 
 	held_mutations.randomizeActivations()
 
-	scan_data = belvoix_scan(held_mutations)
+	scan_data = soteria_scan(held_mutations)
 	usr.show_message(scan_data)
 
-/obj/item/device/scanner/belvoix_scanner/verb/makeSlide()
+/obj/item/device/scanner/soteria_scanner/verb/makeSlide()
 	set category = "Object"
 	set name = "Print Sample Plate"
 	set src in view(1)
 	var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(held_mutations)
 	usr.put_in_hands(new_sample)
 
-/obj/item/device/scanner/belvoix_scanner/verb/irradiateMutation()
+/obj/item/device/scanner/soteria_scanner/verb/irradiateMutation()
 	set category = "Object"
 	set name = "Irradiate Gene"
 	set src in view(1)
@@ -85,7 +85,7 @@ This is a bugtesting item, please forgive the memes.
 		held_mutations.irradiate(option_list[choice])
 	to_chat(usr, SPAN_NOTICE("\The [src] did not have a mutation to work with. Aborting."))
 
-/obj/item/device/scanner/belvoix_scanner/verb/combineMutation()
+/obj/item/device/scanner/soteria_scanner/verb/combineMutation()
 	set category = "Object"
 	set name = "Combine Genes"
 	set src in view(1)
@@ -134,7 +134,7 @@ This is a bugtesting item, please forgive the memes.
 
 /*
 ================="Petite" Mutagenic Scanner=================
-A more player-friendly version of the Belvoix scanner, reports basic information that can tell someone what tf is up with a person's genes.
+A more player-friendly version of the Soteria scanner, reports basic information that can tell someone what tf is up with a person's genes.
 
 */
 /obj/item/device/scanner/petite_scanner
@@ -431,7 +431,7 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 			for(var/loot_item in loot)
 				if(ispath(loot_item, /obj))
 					var/obj/instanced_item = new loot_item()
-					instanced_item.loc = src.loc
+					instanced_item.loc = get_turf(src)
 			qdel(src)
 		else
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
@@ -475,7 +475,7 @@ Circuit boards for different Genetics Machines.
 */
 
 /obj/item/circuitboard/genetics/cloner
-	build_name = "Belvoix Xenofauna Cloning Vat"
+	build_name = "Soteria Xenofauna Cloning Vat"
 	build_path = /obj/machinery/genetics/cloner
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 6)
@@ -496,7 +496,7 @@ Circuit boards for different Genetics Machines.
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
 
 /obj/item/circuitboard/genetics/gene_analyzer
-	build_name = "Belvoix Genetic Analyzer"
+	build_name = "Soteria Genetic Analyzer"
 	build_path = /obj/machinery/genetics/gene_analyzer
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
@@ -611,6 +611,8 @@ Neglects to mention where to find its pieces.
 		"Flesh sacs can be achieved through irradiated human DNA- if you're a bad person.",
 		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
 		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
+		"Bank to Bank, River to River, Ocean to Ocean, weaved together to make a Temple.",
+		"Eye's of a cat, belly of a beast and a bank of blood will make a most regal sickness.",
 		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
 	desc = "Xenogenetics fact of the day: [blurb]"
 

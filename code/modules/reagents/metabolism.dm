@@ -147,7 +147,7 @@
 			var/mob/living/carbon/human/H = src
 			var/blood_volume = H.vessel.get_reagent_amount("blood")
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
-			if(blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+			if(blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 				return
 		parent.drip_blood(10) //This is quite a bit but your also suffering a lot
 

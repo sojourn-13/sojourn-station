@@ -16,6 +16,7 @@
 	reagent_flags = OPENCONTAINER
 	unacidable = 1 //glass doesn't dissolve in acid
 	matter = list(MATERIAL_GLASS = 1)
+	var/display_label = TRUE // to show or not to show label on the sprite
 	var/label_icon_state = null
 	var/lid_icon_state = null
 
@@ -35,7 +36,6 @@
 		/mob/living/bot/medbot,
 		/obj/item/storage/secure/safe,
 		/obj/structure/medical_stand,
-		/obj/machinery/disease2/incubator,
 		/obj/machinery/disposal,
 		/mob/living/simple_animal/cow,
 		/mob/living/simple_animal/hostile/retaliate/goat,
@@ -51,6 +51,9 @@
 /obj/item/reagent_containers/glass/Initialize()
 	. = ..()
 	base_name = name
+	//For when beakers are pre-labled.
+	update_name_label()
+	update_icon()
 
 /obj/item/reagent_containers/glass/proc/has_lid()
 	return !is_open_container()

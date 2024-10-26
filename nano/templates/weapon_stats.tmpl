@@ -23,19 +23,10 @@
 
 		{{if data.penetration_multiplier != 1}}
 			<div class="itemLabel">
-				Projectile AP multiplier:
+				Projectile Armor Divisor:
 			</div>
 			<div class="itemContent">
-				{{:data.penetration_multiplier}}x
-			</div>
-		{{/if}}
-
-		{{if data.proj_agony_multiplier != 1}}
-			<div class="itemLabel">
-				Projectile Agony multiplier:
-			</div>
-			<div class="itemContent">
-				{{:data.proj_agony_multiplier}}x
+				{{:data.penetration_multiplier}}
 			</div>
 		{{/if}}
 
@@ -43,7 +34,7 @@
 			Fire delay:
 		</div>
 			<div class="itemContent">
-				{{:data.fire_delay}} ms
+				{{:data.fire_delay < data.minimum_fire_delay ? data.minimum_fire_delay : data.fire_delay}} ms
 			</div>
 
 		{{if data.burst > 1}}
@@ -68,7 +59,7 @@
 						{{:value.name}}
 					</div>
 					<div class="itemContent">
-						{{:helper.displayBar(value.value, 0, data.total_recoil, value.value <= 0.5 ? 'good' : value.value <= 1.5 ? 'average' : 'bad', value.value + ' degrees')}}
+						{{:helper.displayBar(value.name == "Movement Penalty" ? value.value / 10 : value.value, 0, data.total_recoil, (value.name == "Movement Penalty" ? value.value / 10 : value.value) <= 0.5 ? 'good' : (value.name == "Movement Penalty" ? value.value / 10 : value.value) <= 1.5 ? 'average' : 'bad', (value.name == "Movement Penalty" ? value.value / 10 : value.value) + ' degrees')}}
 					</div>
 				{{/for}}
 				<br>
@@ -89,7 +80,7 @@
 			Armor penetration:
 		</div>
 			<div class="itemContent">
-				{{:helper.displayBar(data.armor_penetration, 0, 100, '', data.armor_penetration + '%')}}
+				{{:helper.displayBar(data.armor_divisor, 0, 100, '', data.armor_divisor + '%')}}
 			</div>
 
 		{{if data.caliber}}
@@ -149,17 +140,10 @@
 				</div>
 
 			<div class="itemLabel">
-				PvP damage:
+				Overall damage:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_damage}}
-				</div>
-
-			<div class="itemLabel">
-				Estimated  PvE Damage:
-			</div>
-				<div class="itemContent">
-					{{:data.projectile_damage_pve}}
 				</div>
 
 			<div class="itemLabel">
@@ -170,10 +154,31 @@
 				</div>
 
 			<div class="itemLabel">
-				Overall Pain:
+				Wound scale:
 			</div>
 				<div class="itemContent">
-					{{:data.projectile_pain}}
+					{{:data.projectile_WOUND}}
+				</div>
+
+			<div class="itemLabel">
+				Unarmoured Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.unarmoured_damage}}
+				</div>
+
+			<div class="itemLabel">
+				Armoured (10) Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.armoured_damage_10}}
+				</div>
+
+			<div class="itemLabel">
+				Armoured (15) Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.armoured_damage_15}}
 				</div>
 
 			<div class="itemLabel">
@@ -211,6 +216,7 @@
 									Name:{{:value.projectile_name}}<br>
 									Overall damage: {{:value.projectile_damage}}<br>
 									Overall AP: {{:value.projectile_AP}}<br>
+									Wound scale: {{:value.projectile_WOUND}}<br>
 								</div>
 						{{/if}}
 						{{if value.burst}}
@@ -227,7 +233,7 @@
 							Fire delay:
 							</div>
 								<div class="itemContent">
-									{{:value.fire_delay}} ms
+									{{:value.fire_delay < value.minimum_fire_delay ? value.minimum_fire_delay : value.fire_delay}} ms
 								</div>
 						{{/if}}
 						{{if value.move_delay}}
@@ -247,8 +253,6 @@
 
 <div class="item">
 	<h3>Attachments:</h3>
-	Supports up to {{:data.upgrades_max}} attachments.
-
 	{{if data.attachments}}
 		<div class="statusDisplay" style="overflow: auto;">
 			<table style="width:100%;  overflow-wrap: break-all;">

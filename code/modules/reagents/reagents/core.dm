@@ -1,5 +1,5 @@
 /datum/reagent/organic/blood
-	data = new/list("donor" = null, "viruses" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = list(), "carrion" = null)
+	data = new/list("donor" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "carrion" = null)
 	name = "Blood"
 	id = "blood"
 	reagent_state = LIQUID
@@ -21,24 +21,37 @@
 	return
 
 /datum/reagent/organic/blood/get_data() // Just in case you have a reagent that handles data differently.
-	var/T = data.Copy()
-	if(T["virus2"])
-		var/list/V = T["virus2"]
-		T["virus2"] = V.Copy()
-	return T
+	return data.Copy()
 
 /datum/reagent/organic/blood/touch_turf(turf/simulated/T)
 	if(!istype(T) || volume < 3)
 		return TRUE
-	if(!data["donor"] || istype(data["donor"], /mob/living/carbon/human))
+	var/datum/weakref/D = data["donor"]
+	if(!istype(D))
 		blood_splatter(T, src, 1)
-	else if(istype(data["donor"], /mob/living/carbon/alien))
+		return
+	
+	var/mob/living/something = D.resolve()
+	if(istype(something, /mob/living/carbon/human))
+		blood_splatter(T, src, 1)
+	else if(istype(something, /mob/living/carbon/alien))
 		var/obj/effect/decal/cleanable/blood/B = blood_splatter(T, src, 1)
 		if(B)
 			B.blood_DNA["UNKNOWN DNA STRUCTURE"] = "X*"
 	return TRUE
 
 /datum/reagent/organic/blood/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+
+	if(VAMPIRE in M.mutations)
+		M.adjustNutrition(20) // For hunger
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onNonAlcohol(src, effect_multiplier)
+			H.sanity.onAlcohol(src, effect_multiplier)
+			apply_sanity_effect(M, effect_multiplier)
+			LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+
+		return //No other badness
 
 	var/effective_dose = dose
 	if(issmall(M)) effective_dose *= 2
@@ -47,42 +60,10 @@
 		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 	if(effective_dose > 15)
 		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
-	if(data && data["virus2"])
-		var/list/vlist = data["virus2"]
-		if(vlist.len)
-			for(var/ID in vlist)
-				var/datum/disease2/disease/V = vlist[ID]
-				if(V.spreadtype == "Contact")
-					infect_virus2(M, V.getcopy())
-
-/datum/reagent/organic/blood/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	if(data && data["virus2"])
-		var/list/vlist = data["virus2"]
-		if(vlist.len)
-			for(var/ID in vlist)
-				var/datum/disease2/disease/V = vlist[ID]
-				if(V.spreadtype == "Contact")
-					infect_virus2(M, V.getcopy())
-	if(data && data["antibodies"])
-		M.antibodies |= data["antibodies"]
 
 /datum/reagent/organic/blood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.inject_blood(src, volume)
 	remove_self(volume)
-
-// pure concentrated antibodies
-/datum/reagent/organic/antibodies
-	data = list("antibodies"=list())
-	name = "Antibodies"
-	taste_description = "slime"
-	id = "antibodies"
-	reagent_state = LIQUID
-	color = "#0050F0"
-
-/datum/reagent/organic/antibodies/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(src.data)
-		M.antibodies |= src.data["antibodies"]
-	..()
 
 #define WATER_LATENT_HEAT 19000 // How much heat is removed when applied to a hot turf, in J/unit (19000 makes 120 u of water roughly equivalent to 4L)
 /datum/reagent/water
@@ -107,8 +88,14 @@
 		M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 		M.add_chemical_effect(CE_ANTITOX, 0.3 * effect_multiplier)
 		M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
 	if(!ishuman(M))
 		M.adjustHalLoss(-0.5)
+
+/datum/reagent/water/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/extinguisher
 	name = "Extinguisher"
@@ -137,6 +124,17 @@
 	T.color = "white"
 	return TRUE
 
+/datum/reagent/water/extinguisher/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/extinguisher/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/extinguisher/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/holywater
 	name = "Holy Water"
@@ -145,6 +143,8 @@
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 	var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(!I && !I.wearer) //Do we have a core implant?
 		return
@@ -152,6 +152,14 @@
 		return
 	M.heal_organ_damage(0, 0.2 * effect_multiplier, 0, 3 * effect_multiplier)
 	..()
+
+/datum/reagent/water/holywater/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/holywater/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/holywater/touch_turf(turf/T)
 	..()
@@ -206,6 +214,8 @@
 		*/
 
 /datum/reagent/water/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 	if(isslime(M))
 		var/mob/living/carbon/slime/S = M
 		S.adjustToxLoss(20 * effect_multiplier) // Babies have 150 health, adults have 200; So, 10 units and 13.5

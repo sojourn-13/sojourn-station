@@ -63,7 +63,6 @@
 				/obj/item/extinguisher = 5,
 				/obj/item/device/t_scanner = 2,
 				/obj/item/device/scanner/price = 2,
-				/obj/item/device/antibody_scanner = 1,
 				/obj/item/device/destTagger = 1,
 				/obj/item/device/scanner/plant = 1,
 				/obj/item/autopsy_scanner = 1,

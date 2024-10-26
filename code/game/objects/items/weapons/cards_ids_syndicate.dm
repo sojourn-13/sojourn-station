@@ -250,6 +250,13 @@
 	registered_name = "LSS Auditor"
 	assignment = "LSS Auditor"
 
+/obj/item/card/id/syndicate/ert/church_ert
+	name = "Inquisitor ID card"
+	desc = "An ID card made for Inquisitors of the Church of Absolute"
+	registered_name = "Inquisitor"
+	assignment = "Inquisitor"
+	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors)
+
 /obj/item/card/id/syndicate/ert/medical_ert
 	name = "Medical ID card"
 	desc = "An ID straight from the SI Medical Divisions."
@@ -282,3 +289,12 @@
 		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
 		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits
 	) //same as foreman, ofc.
+
+//Event and similar IDs.
+/obj/item/card/id/syndicate/solfed
+	name = "SF Armed Forces ID card"
+	icon_state = "tags"
+	desc = "A set of identifyiing tags for a member of the Solarian Armed Forces. This particular set is de-personalized and contains minimal personal information."
+	registered_name = "MSgt Joker"
+	assignment = "Solarian Armed Forces"
+

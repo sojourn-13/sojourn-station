@@ -4,6 +4,8 @@
  */
 
 @use '../base.scss';
+@use '../colors.scss';
+@use 'sass:color';
 
 .NtosWindow__header {
   position: absolute;
@@ -13,6 +15,12 @@
   height: 2em;
   line-height: 1.928em;
   background-color: rgba(0, 0, 0, 0.5);
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.3), 
+    rgba(0, 0, 0, 0.3)
+  ), url('../assets/ntos_header_pattern.png') 0 5% repeat;
+  border-bottom: 2px solid color.scale(colors.$grey, $lightness: -15%);
   font-family: Consolas, monospace;
   font-size: base.em(14px);
   user-select: none;

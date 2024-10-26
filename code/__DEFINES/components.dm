@@ -55,6 +55,8 @@
 #define COMSIG_PARENT_QDELETING "parent_qdeleting"			  // just before a datum's Destroy() is called: (force), at this point none of the other components chose to interrupt qdel and Destroy will be called
 #define COMSIG_PARENT_QDELETED "parent_qdeleted"				//after a datum's Destroy() is called: (force, qdel_hint), at this point none of the other components chose to interrupt qdel and Destroy has been called
 
+#define COMSIG_QDELETING_NEW "parent_qdeleting_new"
+
 #define COMSIG_SHUTTLE_SUPPLY "shuttle_supply"  //form sell()
 #define COMSIG_TRADE_BEACON "trade_beacon"
 
@@ -66,6 +68,10 @@
 
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
+
+// /client signals
+/// from base of client/Click(): (atom/target, atom/location, control, params, mob/user)
+#define COMSIG_CLIENT_CLICK "atom_client_click"
 
 // /atom signals
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)
@@ -82,6 +88,7 @@
 
 // /turf signals
 #define COMSIG_TURF_LEVELUPDATE "turf_levelupdate" //levelupdate()
+#define COMSIG_TURF_CHANGE "turf_change"
 
 // /atom/movable signals
 #define COMSIG_MOVABLE_MOVED "movable_moved"					//from base of atom/movable/Moved(): (/atom, origin_loc, new_loc)
@@ -90,6 +97,8 @@
 // /mob signals
 #define COMSIG_MOB_LIFE  "mob_life"							 //from mob/Life()
 #define COMSIG_MOB_LOGIN "mob_login"							//from mob/Login()
+///from base of /mob/Logout(): ()
+#define COMSIG_MOB_LOGOUT "mob_logout"
 #define COMSIG_MOB_DEATH "mob_death"							//from mob/death()
 
 #define COMSIG_TRACE_IMPACT "trace_impact" //Soj edit
@@ -183,6 +192,10 @@
 #define COMSIG_ABERRANT_OUTPUT "aberrant_output"
 #define COMSIG_ABERRANT_SECONDARY "aberrant_secondary"
 #define COMSIG_ABERRANT_COOLDOWN "aberrant_cooldown"
+
+// Note that this is only defined for actions because this could be a good bit expensive otherwise
+/// From base of /atom/movable/screen/movable/action_button/MouseWheel(src, delta_x, delta_y, location, control, params)
+#define COMSIG_ACTION_SCROLLED "action_scrolled"
 
 /*******Component Specific Signals*******/
 //Janitor

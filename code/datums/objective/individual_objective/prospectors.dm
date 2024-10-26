@@ -23,7 +23,7 @@
 		valied_areas += A
 	target = pick(valied_areas)
 	desc = "Ensure that [target] does not have cumulative price of items inside it that is higher than [price_target][CREDITS]. Either pay someone or strip it clean of everything valuable yourself."
-	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, PROC_REF(task_completed))
 
 /datum/individual_objective/stripping_prospector/task_completed()
 	units_completed = 0
@@ -45,7 +45,7 @@
 /datum/individual_objective/oddity_prospector/assign()
 	..()
 	desc = "Acquire at least [units_requested] oddities at the same time to be on you."
-	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, PROC_REF(task_completed))
 
 /datum/individual_objective/oddity_prospector/task_completed(obj/item/W)
 	units_completed = 0
@@ -66,7 +66,7 @@
 /datum/individual_objective/only_thing_they_fear/assign()
 	..()
 	desc = "Slay or observe the slaying of 40 hostiles (Roaches, Spiders, ect)."
-	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, PROC_REF(task_completed))
 
 /datum/individual_objective/only_thing_they_fear/task_completed(mob/mob_death)
 	..(1)
@@ -89,7 +89,7 @@
 	..()
 	target = pick_candidates()
 	desc = "Get your hands on a [target.name]. You've an eye for quality and want only the best."
-	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, PROC_REF(task_completed))
 
 /datum/individual_objective/collection_prospector/task_completed(obj/item/W)
 	if(W.type == target.type)

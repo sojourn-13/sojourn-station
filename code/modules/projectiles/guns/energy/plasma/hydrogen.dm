@@ -22,7 +22,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	w_class = ITEM_SIZE_BULKY
 	init_recoil = CARBINE_RECOIL(0.1)
 	twohanded = FALSE
-	can_dual = TRUE
+	can_dual = FALSE
+	slot_flags = SLOT_BELT|SLOT_BACK
 	max_upgrades = 3
 	fire_delay = 10
 	fire_sound = 'sound/weapons/energy/hydrogen.ogg'
@@ -53,8 +54,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/New()
 	..()
 	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  vent_level,  overheat,  heat_per_shot, 0.01, vent_level_timer)
-	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)
-	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
+	RegisterSignal(src, COMSIG_HEAT_VENT, PROC_REF(ventEvent))
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, PROC_REF(handleoverheat))
 	update_icon()
 	START_PROCESSING(SSobj, src)
 
@@ -181,7 +182,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
 	playsound(loc, 'sound/weapons/energy/hydrogen_warning.ogg', 80)
 	flick("[icon_state]_crit", src)
-	addtimer(CALLBACK(src , .proc/doVentsplosion), 3 SECONDS)
+	addtimer(CALLBACK(src , PROC_REF(doVentsplosion)), 3 SECONDS)
 	var/mob/living/L = loc
 	if(istype(L))
 		to_chat(L, SPAN_DANGER("[src] is going to explode!"))

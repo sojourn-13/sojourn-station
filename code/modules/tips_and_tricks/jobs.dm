@@ -282,7 +282,7 @@
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
     tipText = "Есть много машин, которые можно модернизировать, используйте на них RPED, чтобы узнать, какие детали он содержит, и обновите их более совершенными, чтобы повысить их эффективность."
 
-/tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
+/tipsAndTricks/jobs/upgrade_chemdispensers_sleeper
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
     tipText = "Дозаторы химикатов обладают большей химической емкостью, чем выше емкость их ячеек. Омега (средние) клетки лучше всего подходят для них, не тратьте на них атомные клетки!"
 
@@ -336,7 +336,7 @@
 
 /tipsAndTricks/jobs/cleaning_carbine
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "Очищающий карабин, как следует из названия, стреляет очищающими гранулами, которые при попадании на что-либо образуют небольшое количество скользкой пены, которая очищает. Это можно использовать как в обороне, так и для длительного скольжения, чтобы уйти от более крупных врагов, и для обычной уборки станции, если поблизости нет уборщика."
+    tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if there's no janitor around."
 
 /tipsAndTricks/jobs/hunter_meds
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)

@@ -29,7 +29,7 @@
 
 	var/chained = 0//Adminbus chain-grab
 
-/obj/singularity/New(loc, var/starting_energy = 50, var/temp = 0)
+/obj/singularity/New(loc, var/starting_energy = 12, var/temp = 0)
 	//CARN: admin-alert for chuckle-fuckery.
 	admin_investigate_setup()
 	energy = starting_energy
@@ -137,7 +137,7 @@
 			dissipate_strength = 1
 			cut_overlays()
 			if(chained)
-				copy_overlays("chain_s1", TRUE)
+				add_overlay("chain_s1", TRUE)
 			visible_message(SPAN_NOTICE("The singularity has shrunk to a rather pitiful size."))
 		if (STAGE_TWO) //1 to 3 does not check for the turfs if you put the gens right next to a 1x1 then its going to eat them.
 			name = "gravitational singularity"
@@ -154,7 +154,7 @@
 			dissipate_strength = 5
 			cut_overlays()
 			if(chained)
-				copy_overlays("chain_s3", TRUE)
+				add_overlay("chain_s3", TRUE)
 			if(growing)
 				visible_message(SPAN_NOTICE("The singularity noticeably grows in size."))
 			else
@@ -175,7 +175,7 @@
 				dissipate_strength = 20
 				cut_overlays()
 				if(chained)
-					copy_overlays("chain_s5", TRUE)
+					add_overlay("chain_s5", TRUE)
 				if(growing)
 					visible_message(SPAN_NOTICE("The singularity expands to a reasonable size."))
 				else
@@ -196,7 +196,7 @@
 				dissipate_strength = 10
 				cut_overlays()
 				if(chained)
-					copy_overlays("chain_s7", TRUE)
+					add_overlay("chain_s7", TRUE)
 				if(growing)
 					visible_message(SPAN_WARNING("The singularity expands to a dangerous size."))
 				else
@@ -214,7 +214,7 @@
 			dissipate = 0 //It cant go smaller due to e loss.
 			cut_overlays()
 			if(chained)
-				copy_overlays("chain_s9", TRUE)
+				add_overlay("chain_s9", TRUE)
 			if(growing)
 				visible_message(SPAN_DANGER("<font size='2'>The singularity has grown out of control!</font>"))
 			else
@@ -232,7 +232,7 @@
 			dissipate = 0 //It cant go smaller due to e loss
 			event_chance = 25 //Events will fire off more often.
 			if(chained)
-				copy_overlays("chain_s9", TRUE)
+				add_overlay("chain_s9", TRUE)
 			visible_message("<span class='sinister'><font size='3'>You witness the creation of a destructive force that cannot possibly be stopped by human hands.</font></span>")
 
 	if (current_size == allowed_size)

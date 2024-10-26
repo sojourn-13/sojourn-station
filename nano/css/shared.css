@@ -1035,6 +1035,13 @@ img.sciTechTreeIconToolTip {
 .icon-greysonarmor { background-position: -320px -160px; }
 .icon-roomba_kit { background-position: -320px -224px; }
 
+.icon-psi_uniform { background-position: -352px -96px; }
+.icon-psi_glasses { background-position: -352px -128px; }
+.icon-psi_earring { background-position: -352px -160px; }
+.icon-psi_pouch { background-position: -352px -192px; }
+
+
+
 .sciMenuButton {
     width: 300px;
     float: left;

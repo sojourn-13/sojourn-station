@@ -90,6 +90,7 @@
 			return
 
 	make_antagonist_faction(wearer.mind, antag_id, F, check = FALSE)
+	target.friendly_to_colony = FALSE
 
 
 /obj/item/implant/excelsior/on_uninstall()
@@ -99,6 +100,7 @@
 	for(var/datum/antagonist/A in wearer.mind.antagonist)
 		if(A.id == antag_id)
 			A.remove_antagonist()
+	wearer.friendly_to_colony = TRUE
 
 	//if(prob(66))
 	//	wearer.adjustBrainLoss(200)

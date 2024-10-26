@@ -227,6 +227,33 @@
 	faction = "neutral"
 	colony_friend = TRUE
 
+/mob/living/simple_animal/hostile/viscerator/psionic
+	name = "psionic swarm"
+	desc = "A cloud of bluish swirling energies flow through the air"
+	icon_state = "psionicswarm"
+	pass_flags = PASSTABLE | PASSGRILLE
+	faction = "neutral"
+	colony_friend = TRUE
+	attack_sound = 'sound/weapons/lightstab.ogg'
+	var/time_alive = 0
+
+/mob/living/simple_animal/hostile/viscerator/psionic/New()
+	..()
+	set_light(l_range = 2, l_power = 1, l_color = "#8A2BE2")
+
+/mob/living/simple_animal/hostile/viscerator/psionic/Life()
+	..()
+	if(time_alive >= 30)
+		phase_out()
+	else
+		time_alive += 1
+
+/mob/living/simple_animal/hostile/viscerator/psionic/proc/phase_out()
+		visible_message("The [src.name] fades to a speck before disappearing in a glint.")
+		playsound(src.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		qdel(src)
+		return
+
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"
 	desc = "A vat grown elite mercenary with bionic enhancements and high quality armor. You feel like you're about to have a bad time."
@@ -244,6 +271,7 @@
 	stop_automated_movement_when_pulled = 0
 	maxHealth = 350
 	health = 350
+	armor = list(melee = 11, bullet = 12, energy = 7, bomb = 0, bio = 100, rad = 50)
 	vision_range = 16
 	harm_intent_damage = 5
 	melee_damage_lower = 10
@@ -285,6 +313,7 @@
 	melee_damage_upper = 35
 	maxHealth = 450 //Boosted because melee given armor/shield
 	health = 450
+	armor = list(melee = 16, bullet = 10, energy = 7, bomb = 0, bio = 100, rad = 50)
 	icon_state = "syndicate_stormtrooper_sword"
 	drop_items = list(/obj/item/melee/energy/sword/red, /obj/item/shield/buckler/energy)
 	attacktext = "slashed"
@@ -310,6 +339,9 @@
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4
 	rapid = 0
+	armor = list(melee = 16, bullet = 12, energy = 5, bomb = 0, bio = 100, rad = 50)
+	health = 450
+	maxHealth = 450
 	icon_state = "syndicate_stormtrooper_shotgun"
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun

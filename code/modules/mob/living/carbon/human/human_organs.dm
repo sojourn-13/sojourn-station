@@ -85,9 +85,14 @@
 	// One cane fully mitigates a broken leg.
 	// Two canes are needed for a lost leg. If you are missing both legs, canes aren't gonna help you.
 	if(stance_damage > 0 && stance_damage < 8)
-		if (l_hand && istype(l_hand, /obj/item/cane))
+		var/iscan = FALSE
+		if(istype(l_hand, /obj/item/cane) || istype(r_hand, /obj/item/cane))
+			iscan = TRUE
+		if(istype(l_hand, /obj/item/gun/projectile/cane_pistol_bluecross) || istype(r_hand, /obj/item/gun/projectile/cane_pistol_bluecross))
+			iscan = TRUE
+		if (l_hand && iscan)
 			stance_damage -= 3
-		if (r_hand && istype(r_hand, /obj/item/cane))
+		if (r_hand && iscan)
 			stance_damage -= 3
 		stance_damage = max(stance_damage, 0)
 
@@ -180,6 +185,17 @@
 		return pick(organ_list_by_process(organ_process))
 	return FALSE
 //ADD "return FALSE" to random_organ_by_process
+
+/mob/living/carbon/human/proc/first_organ_by_process(organ_process)
+	if(organ_list_by_process(organ_process).len)
+		return organ_list_by_process(organ_process)[1]
+	return FALSE
+
+/mob/living/carbon/human/proc/first_organ_by_type(type)
+	for(var/organ in internal_organs)
+		if(istype(organ, type))
+			return organ
+	return null
 
 // basically has_limb()
 /mob/living/carbon/human/has_appendage(var/appendage_check)	//returns TRUE if found, type of organ modification if limb is robotic, FALSE if not found

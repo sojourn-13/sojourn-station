@@ -14,8 +14,7 @@
 	automated. It's a wonder it hasn't been raided, but then again it has guns that could level a planet on it. Plus, it hardly offers things of real value...")
 	inventory = list(
 		"Fuzhuang" = list(
-			/obj/item/clothing/head/helmet/space/os,
-			/obj/item/clothing/suit/space/os,
+			/obj/item/clothing/suit/space/void/os,
 			/obj/item/clothing/suit/greatcoat/os,
 			/obj/item/clothing/head/os_cap,
 			/obj/item/clothing/under/os_jumpsuit

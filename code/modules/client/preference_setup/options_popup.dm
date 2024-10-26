@@ -94,29 +94,20 @@
 				dat += "[initial(J.title)]<br>" //enjoy your byond magic
 			dat += "<br>"
 
-	if(selected_option.perks.len)
-		dat += "Perks:<br>"
-		for(var/perk in selected_option.perks)
-			var/datum/perk/P = perk
-			if(initial(P.icon))
-				dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='[SSassets.transport.get_asset_url(sanitizeFileName("[P].png"))]'/>"
-			dat += " [initial(P.name)]<br>"
-		dat += "<br>"
+		if(selected_option.perks.len)
+			dat += "Perks:<br>"
+			for(var/perk in selected_option.perks)
+				var/datum/perk/P = perk
+				if(initial(P.icon_state))
+					dat += "<span style='vertical-align: middle; transform: scale(0.6)' class='perks32x32 [initial(P.icon_state)]'></span>"
+				dat += " [initial(P.name)]<br>"
+			dat += "<br>"
+
 		if(selected_option.allowed_jobs.len)
 			dat += "Special jobs:<br>"
 			for(var/job in selected_option.allowed_jobs)
 				var/datum/job/J = job
 				dat += "[initial(J.title)]<br>"
-			dat += "<br>"
-
-		if(selected_option.perks.len)
-			dat += "Perks:<br>"
-			for(var/perk in selected_option.perks)
-				var/datum/perk/P = perk
-				if(initial(P.icon))
-					preference_mob() << browse_rsc(icon(initial(P.icon),initial(P.icon_state)), "perk_[initial(P.name)].png")
-					dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='perk_[initial(P.name)].png'/>"
-				dat += "[initial(P.name)]<br>"
 			dat += "<br>"
 
 		if(!selected_option.allow_modifications)
@@ -131,14 +122,16 @@
 
 	dat += "</td></tr></table>"
 
-	var/client/C = pref.client
+	var/datum/browser/popup = new(preference_mob(), name, get_title(), 640, 480, src)
 
+	var/datum/asset/spritesheet_batched/perkasset = get_asset_datum(/datum/asset/spritesheet_batched/perks)
+
+	var/client/C = pref.client
 	if (C)
-		var/datum/asset/simple/perkasset = get_asset_datum(/datum/asset/simple/perks)
-		if (perkasset.send(C))
+		if(perkasset.send(C))
 			C.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
-	var/datum/browser/popup = new(preference_mob(), name, get_title(), 640, 480, src)
+	popup.add_stylesheet(perkasset)
 	popup.set_content(dat)
 	//popup.open() does not move the window to top if the window is already open so close it first
 	if(move_to_top)

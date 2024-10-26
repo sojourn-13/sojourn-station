@@ -41,8 +41,8 @@
 
 /datum/reagent/nanites/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	eat_blood(M)
-	if(M.get_blood_volume() < M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER)
-		var/removed = consumed_amount() * (M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER - M.get_blood_volume() / 100)
+	if(M.get_blood_volume() * M.effective_blood_volume < M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER)
+		var/removed = consumed_amount() * (M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER - M.get_blood_volume() / 100 * M.effective_blood_volume)
 		removed = min(volume,removed)
 		var/datum/reagents/metabolism/met = M.get_metabolism_handler(CHEM_BLOOD)
 		met.remove_reagent(id, removed)
@@ -139,19 +139,17 @@
 	description = "Microscopic construction robots programmed to heal organic and synthetic cells. Useless for internal damage"
 
 /datum/reagent/nanites/nanosymbiotes/will_occur(mob/living/carbon/M, alien, var/location)
-	if(..() && (M.getBruteLoss() || M.getFireLoss() || M.getToxLoss() || M.getCloneLoss() || M.getBrainLoss()))
+	if(..() && (M.getBruteLoss() || M.getFireLoss() || M.getOxyLoss()))
 		return TRUE
 
 /datum/reagent/nanites/nanosymbiotes/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
-		M.heal_organ_damage(1 * effect_multiplier, 1 * effect_multiplier, 3 * effect_multiplier, 3 * effect_multiplier)
-		M.add_chemical_effect(CE_TOXIN, -((1 + (M.chem_effects[CE_TOXIN] * 0.03)) * effect_multiplier))
+		M.add_chemical_effect(CE_ONCOCIDAL, 1)
 		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.03)) * effect_multiplier)
+		M.adjustFireLoss(-(1 + (M.getFireLoss() * 0.03)) * effect_multiplier)
+		M.adjustBruteLoss(-(1 + (M.getBruteLoss() * 0.03)) * effect_multiplier)
 	if(!M.species.reagent_tag == IS_CHTMANT) //If we are a Chtmant we dont heal are toxloss from nanites
 		M.add_chemical_effect(CE_TOXIN, -((1 + (M.chem_effects[CE_TOXIN] * 0.03)) * effect_multiplier))
-
-
-/*Oxyrush - Removes oxygen damage from the target*/
 
 /datum/reagent/nanites/oxyrush
 	name = "Oxyrush"
@@ -177,39 +175,18 @@
 /datum/reagent/nanites/trauma_control_system/will_occur(mob/living/carbon/M, alien, var/location)
 	if(..() && ishuman(M))
 		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/organ in H.internal_organs) //Occulus Edit
-			if(organ.damage > 0 && !BP_IS_ROBOTIC(organ)) //Occulus Edit
-				return TRUE // SYZYGY Edit
+		for(var/obj/item/organ/organ in H.organs) //Grab the organ holding the implant.
+			if(organ.status & ORGAN_WOUNDED && !BP_IS_ROBOTIC(organ))
+				return TRUE
 
 /datum/reagent/nanites/trauma_control_system/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(..() && ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/organ in H.internal_organs) //Occulus EDIT - Grab Internal Organs
-			if((organ.damage > 0) && !BP_IS_ROBOTIC(organ)) //Occulus Edit
-				organ.heal_damage(((0.2 + organ.damage * 0.03) * effect_multiplier), FALSE) //Occulus Edit
-
-/*Implantoids - Repairs synthetic organ damage*/
-
-/datum/reagent/nanites/implant_medics
-	name = "Implantoids"
-	id = "implant nanites"
-	description = "Microscopic construction robots programmed to repair prosthetics."
-
-/datum/reagent/nanites/implant_medics/will_occur(mob/living/carbon/M, alien, var/location)//Occulus Edit Start
-	if(..() && ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/organ in H.internal_organs) //Check Internal Organs
-			if(organ.damage > 0 && BP_IS_ROBOTIC(organ))
-				return TRUE//Occulus Edit
-
-/datum/reagent/nanites/implant_medics/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(..() && ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/organ in H.internal_organs) //The location of internal organs changed
-			if((organ.damage > 0) && BP_IS_ROBOTIC(organ))
-				organ.heal_damage(((0.2 + organ.damage * 0.03) * effect_multiplier), FALSE)
-
-/*Purgers - Purges nanites from the bloodstream, except themselves*/
+	if(..())
+		M.add_chemical_effect(CE_ONCOCIDAL, 1)
+		M.add_chemical_effect(CE_BLOODCLOT, 1)
+		M.add_chemical_effect(CE_ANTITOX, 2)
+		M.add_chemical_effect(CE_STABLE, 1)
+		M.add_chemical_effect(CE_BRAINHEAL, 1)
+		M.add_chemical_effect(CE_EYEHEAL, 1)
 
 /datum/reagent/nanites/purgers
 	name = "Purgers"

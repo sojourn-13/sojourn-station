@@ -21,6 +21,7 @@ $violet: #6435c9 !default;
 $purple: #a333c8 !default;
 $pink: #e03997 !default;
 $brown: #a5673f !default;
+$dark-grey: #3d3d3d !default;
 $grey: #767676 !default;
 $light-grey: #aaa !default;
 
@@ -58,6 +59,7 @@ $_gen_map: (
   'purple': $purple,
   'pink': $pink,
   'brown': $brown,
+  'dark-grey': $dark-grey,
   'grey': $grey,
   'light-grey': $light-grey,
   'good': $good,

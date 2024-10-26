@@ -32,10 +32,6 @@
 	//Ones located outside of maint are much less likely to be picked for migration
 	var/maintenance = FALSE
 
-	//If true, this burrow is located near NT obelisk.
-	//those are much less likely to be picked for migration due cool NT magic
-	var/obelisk_around = null
-
 
 	//Vars for migration
 	var/processing = FALSE
@@ -135,6 +131,13 @@
 	else
 		populated_burrows -= src
 		unpopulated_burrows |= src
+
+/obj/structure/burrow/proc/obelisk_around()
+	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
+	if(obelisk && obelisk.active)
+		return TRUE
+	else
+		return FALSE
 
 
 /*
@@ -584,7 +587,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false welding, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
@@ -597,13 +600,13 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false hammering, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
 	//Soj Edit
-	if(ishuman(user) && dug_out && success)
-		var/mob/living/carbon/human/H = user
+	if(iscarbon(user) && dug_out && success)
+		var/mob/living/carbon/H = user
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_sealer, "PROPER_SEALER", skill_gained = 1, learner = H)
 
 /obj/structure/burrow/proc/false_removal()
@@ -671,18 +674,18 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		addtimer(CALLBACK(src, .proc/force_enter_burrow, L), 8)
+		addtimer(CALLBACK(src, PROC_REF(force_enter_burrow), L), 8)
 
 /obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
 	L.forceMove(src)
 
 //Mobs that are summoned will walk up and attack this burrow
 //This will suck them in
-/obj/structure/burrow/attack_generic(mob/living/L)
-	if (is_valid(L))
-		enter_burrow(L)
-	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
-		var/mob/living/carbon/superior_animal/SA = L
+/obj/structure/burrow/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if (is_valid(user))
+		enter_burrow(user)
+	if (issuperioranimal(user))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = user
 		SA.target_mob = null
 
 
@@ -705,7 +708,13 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if(locate(/obj/effect/plant) in loc)
 			return
 
-		if(!hive_mind_ai || !hive_mind_ai.hives.len || maintenance || !GLOB.hive_data_bool["spread_trough_burrows"])
+		if(!hive_mind_ai || !hive_mind_ai.hives.len)
+			return
+
+		if(!GLOB.hive_data_bool["spread_trough_burrows"] && !GLOB.hive_data_bool["spread_maints_burrows"])
+			return
+
+		if(maintenance && !GLOB.hive_data_bool["spread_maints_burrows"])
 			return
 
 		var/area/A = get_area(src)

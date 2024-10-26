@@ -246,8 +246,8 @@
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
-	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING, QUALITY_SHOVELING, QUALITY_DIGGING)
-	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_PRYING)
+	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING, QUALITY_HAMMERING)
 	I.prefix = "diamond-edged"
 
 /obj/item/tool_upgrade/productivity/oxyjet
@@ -290,7 +290,7 @@
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 1.5,
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PEN_BASE = 0.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.8,
 		GUN_UPGRADE_MUZZLEFLASH = 1.5,
@@ -341,8 +341,8 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_PEN_MULT = 1.25,
-	GUN_UPGRADE_CHARGECOST = 1.35
+	GUN_UPGRADE_PEN_BASE = 0.3,
+	GUN_UPGRADE_CHARGECOST = 1.2
 	)
 	I.prefix = "boosted"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -506,7 +506,7 @@
 		UPGRADE_DEGRADATION_MULT = 1.15,
 		UPGRADE_BULK = 1)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.1, // Think of the guild's heavy barrel as a direct upgrade of this, as it's part of its recipe.
+		GUN_UPGRADE_DAMAGE_BASE = 0.2, // Think of the guild's heavy barrel as a direct upgrade of this, as it's part of its recipe.
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_STEPDELAY_MULT = 1.1,
 		GUN_UPGRADE_RECOIL = 1.2,
@@ -564,7 +564,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 0.5,
 		UPGRADE_BULK = 0.5,
-		GUN_UPGRADE_PEN_MULT = 0.7
+		GUN_UPGRADE_PEN_BASE = -0.1
 	)
 	I.gun_loc_tag = GUN_GRIP
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING ,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_BONE_GRAFTING)
@@ -726,7 +726,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_FORCE_MULT = 1.25,
 	UPGRADE_PRECISION = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5
@@ -783,7 +783,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_FORCE_MULT = 1.3,
 	UPGRADE_PRECISION = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5
@@ -878,8 +878,8 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_ALLOW_GREYON_MODS = TRUE,
 	GUN_UPGRADE_RECOIL = 0.8,
-	GUN_UPGRADE_DAMAGE_MULT = 1.1,
-	GUN_UPGRADE_PEN_MULT = 1.2,
+	GUN_UPGRADE_DAMAGE_BASE = 0.2,
+	GUN_UPGRADE_PEN_MULT = 1.1,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 	GUN_UPGRADE_MOVE_DELAY_MULT = 0.8,
 	GUN_UPGRADE_MUZZLEFLASH = 0.8,
@@ -992,25 +992,25 @@
 	..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"
+	price_tag += rand(100, 3000)
 
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_DEGRADATION_MULT = rand(-1,3),
-	UPGRADE_WORKSPEED = rand(-1,3),
+	UPGRADE_DEGRADATION_MULT = rand(-2.1,1.5),
+	UPGRADE_WORKSPEED = rand(-1.1,3.5),
 	UPGRADE_PRECISION = rand(-3,15),
 	UPGRADE_FORCE_MOD = rand(-2,5),
-	UPGRADE_BULK = rand(-1,1),
-	price_tag += rand(100, 3000)
+	UPGRADE_BULK = rand(-1,1)
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = rand(-0.4,0.2),
-	GUN_UPGRADE_DAMAGE_MULT = rand(-0.2,0.4),
-	GUN_UPGRADE_PEN_MULT = rand(-0.2,0.4),
-	GUN_UPGRADE_FIRE_DELAY_MULT = rand(-0.4,0.2),
-	GUN_UPGRADE_MOVE_DELAY_MULT = rand(-0.4,0.2),
-	GUN_UPGRADE_MUZZLEFLASH = rand(-0.4,0.2),
-	GUN_UPGRADE_CHARGECOST = rand(-0.4,0.2),
-	GUN_UPGRADE_OVERCHARGE_MAX = rand(-0.4,0.2),
-	GUN_UPGRADE_OVERCHARGE_RATE = rand(-0.4,0.2)
+	GUN_UPGRADE_RECOIL = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_DAMAGE_MULT = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_PEN_MULT = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_FIRE_DELAY_MULT = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_MOVE_DELAY_MULT = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_MUZZLEFLASH = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_CHARGECOST = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_OVERCHARGE_MAX = pick(1.2,1.1,0,0.9,0.8),
+	GUN_UPGRADE_OVERCHARGE_RATE = pick(1.2,1.1,0,0.9,0.8)
 	)
 	I.prefix = "artistic"

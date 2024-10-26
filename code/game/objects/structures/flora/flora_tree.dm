@@ -23,7 +23,7 @@
 	underlays += shadow_overlay_grabber
 	if(prob(5))
 		infested = TRUE
-		desc = "An unsettling feeling comes from this tree. Webs criss-cross the branches."
+		desc = "An unsettling feeling comes from this tree. Buzzing can be heard."
 
 	//This code is only added to the compiler when 'JANEDEBUG' is defined. We can use it this way this for bugtesting.
 	#ifdef JANEDEBUG
@@ -34,7 +34,6 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	name = "Tree stump"
 	desc = "Once a tall tree, now a small stub in the groumd, without a voice..."
-	anchored = FALSE
 	density = FALSE
 	icon_state = "tree_stump"
 	pixel_x = -50
@@ -80,7 +79,7 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_SAWING)
 		to_chat(user, SPAN_NOTICE("You start to cut the tree, felling it."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_ROB)) //it's....a tree, you're not just cutting it down but breaking it into useable segments. it's body based, not mec.
+		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_ROB)) //it's....a tree, you're not just cutting it down but breaking it into usable segments. it's body based, not mec.
 			playsound(loc, 'sound/items/tree_fall.ogg', 80, 1)
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new /obj/plant_spawner/towercaps(get_turf(src))
@@ -89,10 +88,13 @@
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new stump_type(get_turf(src))
 			if(infested)
-				visible_message(SPAN_DANGER("A pack of spiders erupt from the Tree's bark, burrowing out to attack!"))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
-				new /mob/living/carbon/superior_animal/giant_spider/hunter/viper(get_turf(src))
+				visible_message(SPAN_DANGER("Wasps stay behind to protect escaping bees!"))
+				new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+				new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+				new /obj/item/honey_frame/frameless(get_turf(src))
+				if(prob(30))
+					new /mob/living/carbon/superior_animal/vox/wasp(get_turf(src))
+					new /obj/item/honey_frame/frameless(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return
@@ -245,3 +247,47 @@
 	density = FALSE
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_ICON
+
+/obj/structure/flora/tree/snow
+	icon = 'icons/obj/flora/snowtree.dmi'
+	modular_shadow = FALSE
+
+/obj/structure/flora/tree/snow/snow
+	name = "tree"
+	desc = "A tall tree with a bed of snow over its branches."
+	shadow_overlay = "shadow_overlay1"
+	icon_state = "tree1"
+	pixel_x = -32
+	pixel_y = 5
+
+/obj/structure/flora/tree/snow/two
+	name = "tree"
+	desc = "A thick trunk of a frozen and dead tree."
+	shadow_overlay = "shadow_overlay2"
+	icon_state = "tree2"
+	pixel_x = -25
+	pixel_y = 5
+
+/obj/structure/flora/tree/snow/three
+	name = "pine tree"
+	desc = "A tall green needley tree with layers of snow."
+	shadow_overlay = "shadow_overlay3"
+	icon_state = "tree3"
+	pixel_x = -32
+	pixel_y = 5
+
+/obj/structure/flora/tree/snow/four
+	name = "pine tree"
+	desc = "A short green needley tree with layers of snow."
+	shadow_overlay = "shadow_overlay4"
+	icon_state = "tree4"
+	pixel_x = -35
+	pixel_y = 5
+
+/obj/structure/flora/tree/snow/five
+	name = "pine tree"
+	desc = "A tall green needley tree with a singular blanket of snow."
+	shadow_overlay = "shadow_overlay5"
+	icon_state = "tree5"
+	pixel_x = -32
+	pixel_y = 5

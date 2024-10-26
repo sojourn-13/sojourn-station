@@ -15,6 +15,10 @@
 	path = /obj/item/clothing/suit/costume/kinky/alyson
 	cost = 2 // Pay the horni tax.
 
+/datum/gear/suit/orsicoat
+	display_name = "Red Winter Cape"
+	path = /obj/item/clothing/suit/orsicoat
+
 /datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
@@ -102,6 +106,11 @@
 	display_name = "daring gown"
 	path = /obj/item/clothing/suit/gownrisque
 	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/religious_robe
+	display_name = "religious robe"
+	path = /obj/item/clothing/suit/storage/omni_robes
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"

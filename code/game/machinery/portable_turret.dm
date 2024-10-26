@@ -34,6 +34,8 @@
 	var/obj/item/gun/energy/installation = /obj/item/gun/energy/gun	//the weapon that's installed. Store as path to initialize a new gun on creation.
 	var/projectile = null	//holder for bullettype
 	var/eprojectile = null	//holder for the shot when emagged
+	var/friendly_to_colony = FALSE //is our turret smart enough to bypass allies?
+	var/faction_iff = ""	//Are we the baddies?
 	var/reqpower = 500		//holder for power needed
 	var/iconholder = null	//holder for the icon_state. 1 for orange sprite, null for blue.
 	var/egun = null			//holder to handle certain guns switching bullettypes
@@ -74,6 +76,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
+	faction_iff = "greyson"
 	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/crescent
@@ -105,7 +108,7 @@
 
 /obj/machinery/porta_turret/New()
 	..()
-	req_access.Cut()
+	LAZYNULL(req_access)
 	req_one_access = list(access_security, access_heads, access_occupy)
 
 	//Sets up a spark system
@@ -118,7 +121,7 @@
 
 /obj/machinery/porta_turret/crescent/New()
 	..()
-	req_one_access.Cut()
+	LAZYNULL(req_one_access)
 	req_access = list(access_cent_specops)
 
 /obj/machinery/porta_turret/Destroy()
@@ -405,7 +408,7 @@ var/list/turret_icons
 							SPAN_DANGER("[user] tripped the security protocol on the [src]! Run!"),
 							SPAN_DANGER("You trip the security protocol! Run!")
 						)
-						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
+						addtimer(CALLBACK(src, PROC_REF(reset_hackfail)), 30 SECOND)
 					else
 						to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
 					return TRUE //No whacking the turret with tools on help intent
@@ -429,7 +432,7 @@ var/list/turret_icons
 					if(TOOL_USE_SUCCESS)
 						to_chat(user, SPAN_NOTICE("You disconnect the turret's security protocol override!"))
 						overridden = 1
-						req_one_access.Cut()
+						LAZYNULL(req_one_access)
 						req_one_access = list(access_occupy)
 					if(TOOL_USE_FAIL)
 						user.visible_message(
@@ -438,7 +441,7 @@ var/list/turret_icons
 						)
 						enabled = 1
 						hackfail = 1
-						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
+						addtimer(CALLBACK(src, PROC_REF(reset_hackfail)), 30 SECOND)
 			return TRUE //No whacking the turret with tools on help intent
 
 	if (!(I.flags & NOBLUDGEON) && I.force && !(stat & BROKEN))
@@ -492,6 +495,12 @@ var/list/turret_icons
 		spark_system.start()
 	if(health <= 0)
 		die()	//the death process :(
+
+/obj/machinery/porta_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
 
 /obj/machinery/porta_turret/bullet_act(obj/item/projectile/Proj)
 	var/damage = Proj.get_structure_damage()
@@ -787,6 +796,9 @@ var/list/turret_icons
 	//Turrets aim for the center of mass by default.
 	//If the target is grabbing someone then the turret smartly aims for extremities
 	var/def_zone = get_exposed_defense_zone(target)
+	if(friendly_to_colony) //Reserved for more premium turrets
+		A.friendly_to_colony = TRUE
+	A.faction_iff = faction_iff
 	//Shooting Code:
 	A.launch(target, def_zone)
 

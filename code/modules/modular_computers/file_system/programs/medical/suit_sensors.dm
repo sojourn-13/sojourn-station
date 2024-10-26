@@ -5,7 +5,7 @@
 	ui_header = "crew_green.gif"
 	program_icon_state = "crew"
 	program_key_state = "med_key"
-	program_menu_icon = "heart"
+	program_menu_icon = "heartbeat"
 	extended_desc = "This program connects to life signs monitoring system to provide basic information on crew health."
 	required_access = access_medical_suits
 	requires_ntnet = 1
@@ -98,7 +98,7 @@
 	var/list/crewmembers = list()
 	for(var/z_level in GLOB.maps_data.station_levels)
 		crewmembers += crew_repository.health_data(z_level)
-	crewmembers = sortNames(crewmembers)
+	crewmembers = sortTim(crewmembers, GLOBAL_PROC_REF(cmp_name_in_list_asc))
 	//now lets get problematic crewmembers in separate list so they could be shown first
 	var/list/crewmembers_problematic = list()
 	var/list/crewmembers_goodbois = list()

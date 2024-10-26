@@ -20,7 +20,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 4, MATERIAL_GLASS = 10, MATERIAL_URANIUM = 2)
 	init_recoil = CARBINE_RECOIL(0.1)
 	damage_multiplier = 0.75
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	max_upgrades = 0 //we're good enough as is.
 	price_tag = 1500
 	charge_cost = 20
@@ -33,7 +33,7 @@
 
 /obj/item/gun/energy/sunrise/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -55,13 +55,13 @@
 		itemstring += "_mag"
 
 	if(istype(cell, /obj/item/cell/medium/moebius/nuclear))
-		overlays += image(icon, "nuke_cell")
+		add_overlay(image(icon, "nuke_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/moebius))
-		overlays += image(icon, "moeb_cell")
+		add_overlay(image(icon, "moeb_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/excelsior))
-		overlays += image(icon, "excel_cell")
+		add_overlay(image(icon, "excel_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium))
-		overlays += image(icon, "guild_cell")
+		add_overlay(image(icon, "guild_cell"))

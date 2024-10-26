@@ -10,6 +10,7 @@
 	safety = FALSE
 	twohanded = FALSE
 	caliber = CAL_GRENADE
+	fire_delay = 15
 	handle_casings = EJECT_CASINGS
 	serial_type = "H&S"
 

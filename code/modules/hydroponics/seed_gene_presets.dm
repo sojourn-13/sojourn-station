@@ -408,3 +408,13 @@
 	disk_name = "plant gene disk - non-sprayer"
 	trait_info = "non-sprayer"
 	preset_values = list(TRAIT_CHEM_SPRAYER = 0)
+
+/obj/item/computer_hardware/hard_drive/portable/plantgene/special/chem_producer
+	disk_name = "plant gene disk - chem producer"
+	trait_info = "chemical sprayer"
+	preset_values = list(TRAIT_CHEM_PRODUCTION = 1)
+
+/obj/item/computer_hardware/hard_drive/portable/plantgene/special/no_chem_producer
+	disk_name = "plant gene disk - non-chem producer"
+	trait_info = "non-sprayer"
+	preset_values = list(TRAIT_CHEM_PRODUCTION = 0)

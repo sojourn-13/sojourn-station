@@ -7,7 +7,7 @@
 		slot_l_hand_str = "syndicate-helm-black-red",
 		slot_r_hand_str = "syndicate-helm-black-red",
 		)
-	armor_list = list(melee = 65, bullet = 55, energy = 45, bomb = 30, bio = 100, rad = 60)
+	armor_list = list(melee = 16, bullet = 13, energy = 11, bomb = 30, bio = 100, rad = 60)
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.6

@@ -976,7 +976,7 @@ FIRE ALARM
 	. = ..()
 	if (.)
 		return
-	return nano_ui_interact(user)
+	return ui_interact(user)
 
 /obj/machinery/firealarm/bullet_act(var/obj/item/projectile/Proj)
 	if (!(Proj.testing))
@@ -1108,22 +1108,50 @@ FIRE ALARM
 	spawn(rand(0,15))
 		update_icon()
 
-/obj/machinery/firealarm/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.outside_state)
-	var/data[0]
-	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
-
-	data["seclevel"] = security_state.current_security_level.name
-	data["time"] = round(src.time)
-	data["timing"] = timing
-	var/area/A = get_area(src)
-	data["active"] = A.fire
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+/obj/machinery/firealarm/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "fire_alarm.tmpl", "Fire Alarm", 240, 330, state = state)
-		ui.set_initial_data(data)
+		ui = new(user, src, "FireAlarm", name)
 		ui.open()
-		ui.set_auto_update(1)
+
+/obj/machinery/firealarm/ui_data(mob/user)
+	var/list/data = list()
+
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+	data["seclevel"] = security_state.current_security_level.name
+
+	data["time"] = round(time)
+	data["timing"] = !!timing
+
+	var/area/A = get_area(src)
+	data["active"] = !!A.fire
+
+	return data
+
+/obj/machinery/firealarm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("alarm_toggle")
+			var/area/A = get_area(src)
+			if(A.fire)
+				reset()
+			else
+				alarm()
+			. = TRUE
+		
+		if("timer_set")
+			time = max(0, params["time"])
+			. = TRUE
+
+		if("timer_toggle")
+			timing = !timing
+			. = TRUE
+
+	if(.)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
 
 /obj/machinery/firealarm/CanUseTopic(user)
 	if(wiresexposed)
@@ -1132,28 +1160,6 @@ FIRE ALARM
 	if (buildstage != 2)
 		return STATUS_CLOSE
 	return ..()
-
-/obj/machinery/firealarm/Topic(href, href_list)
-	if(..())
-		return 1
-
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
-	if (href_list["status"] == "reset")
-		src.reset()
-		return TOPIC_REFRESH
-	else if (href_list["status"] == "alarm")
-		src.alarm()
-		return TOPIC_REFRESH
-	if (href_list["timer"] == "set")
-		time = max(0, input(usr, "Enter time delay", "Fire Alarm Timer", time) as num)
-	else if (href_list["timer"] == "start")
-		src.timing = 1
-		return TOPIC_REFRESH
-	else if (href_list["timer"] == "stop")
-		src.timing = 0
-		return TOPIC_REFRESH
-
-	return
 
 /obj/machinery/firealarm/proc/reset()
 	if (!( src.working ))

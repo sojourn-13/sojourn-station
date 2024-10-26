@@ -16,7 +16,7 @@
 	candidate_turfs -= events_by_turf
 //	if(!candidate_turfs.len)
 //		world << "candidate_tufs list gets empty after removing events_by_turf"
-	candidate_turfs = where(candidate_turfs, /proc/can_not_locate, /obj/effect/overmap)
+	candidate_turfs = where(candidate_turfs, GLOBAL_PROC_REF(can_not_locate), /obj/effect/overmap)
 //	if(!candidate_turfs.len)
 //		world << "candidate_tufs list gets empty after where()"
 

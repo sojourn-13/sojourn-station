@@ -13,10 +13,12 @@ var/list/bitflags = list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
 // Normal
 #define FIRE_PRIORITY_DELAYED_VERBS 950
 #define FIRE_PRIORITY_TIMER			700
-#define SS_PRIORITY_OVERLAYS		500
+#define FIRE_PRIORITY_CHAT			400
+#define FIRE_PRIORITY_STATPANEL		390
 #define SS_PRIORITY_TICKER			300	// Gameticker processing.
 #define SS_PRIORITY_MOVEMENT_LOOPS	175  // Only so high in an attempt to make movement loops not stutter as much. Fairly arbitrary.
 #define FIRE_PRIORITY_TGUI 			110
+#define FIRE_PRIORITY_ASSETS		105
 #define SS_PRIORITY_MOB				100	// Mob Life().
 #define SS_PRIORITY_CHAT			100  // Chat subsystem.
 #define SS_PRIORITY_MACHINERY		100	// Machinery + powernet ticks.
@@ -30,7 +32,7 @@ var/list/bitflags = list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
 #define SS_PRIORITY_AIRFLOW			15	// Object movement from ZAS airflow.
 #define SS_PRIORITY_INACTIVITY		10	// Idle kicking.
 #define SS_PRIORITY_SUPPLY			10	// Supply point accumulation.
-#define SS_PRIORITY_PING			10	// Client ping.
+#define FIRE_PRIORITY_PING			10	// Client ping.
 #define SS_PRIORITY_TICKETS			10
 
 // SS_BACKGROUND

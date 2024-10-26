@@ -159,21 +159,16 @@ SUBSYSTEM_DEF(job)
 
 				if(age < job.minimum_character_age) // Nope.
 					continue
-
-				switch(age)
-					if(job.minimum_character_age to (job.minimum_character_age+10))
-						weightedCandidates[V] = 3 // Still a bit young.
-					if((job.minimum_character_age+10) to (job.ideal_character_age-10))
-						weightedCandidates[V] = 6 // Better.
-					if((job.ideal_character_age-10) to (job.ideal_character_age+10))
-						weightedCandidates[V] = 10 // Great.
-					if((job.ideal_character_age+10) to (job.ideal_character_age+20))
-						weightedCandidates[V] = 6 // Still good.
-					if((job.ideal_character_age+20) to INFINITY)
-						weightedCandidates[V] = 3 // Geezer.
-					else
-						// If there's ABSOLUTELY NOBODY ELSE
-						if(candidates.len == 1) weightedCandidates[V] = 1
+				else if(age <= (job.minimum_character_age + 10))
+					weightedCandidates[V] = 3 // Still a bit young.
+				else if(age <= (job.ideal_character_age - 10))
+					weightedCandidates[V] = 6 // Better.
+				else if(age <= (job.ideal_character_age + 10))
+					weightedCandidates[V] = 10 // Great.
+				else if(age <= (job.ideal_character_age + 20))
+					weightedCandidates[V] = 6 // Still good.
+				else
+					weightedCandidates[V] = 3 // Geezer.
 
 
 			var/mob/new_player/candidate = pickweight(weightedCandidates)
@@ -415,6 +410,18 @@ SUBSYSTEM_DEF(job)
 					make_antagonist(H.mind, ROLE_INQUISITOR)
 
 		//Occulus Edit, Right here! Custom skills.
+
+		//Caps before stats
+		H.stats.set_Stat_cap(STAT_BIO, H.client.prefs.BIO_CAP)
+		H.stats.set_Stat_cap(STAT_COG, H.client.prefs.COG_CAP)
+		H.stats.set_Stat_cap(STAT_MEC, H.client.prefs.MEC_CAP)
+		H.stats.set_Stat_cap(STAT_ROB, H.client.prefs.ROB_CAP)
+		H.stats.set_Stat_cap(STAT_TGH, H.client.prefs.TGH_CAP)
+		H.stats.set_Stat_cap(STAT_VIG, H.client.prefs.VIG_CAP)
+		H.stats.set_Stat_cap(STAT_VIV, H.client.prefs.VIV_CAP)
+		H.stats.set_Stat_cap(STAT_ANA, H.client.prefs.ANA_CAP)
+
+		//Stats get added here after cap so we dont have silly over-filling
 		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
 		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
 		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)
@@ -424,6 +431,7 @@ SUBSYSTEM_DEF(job)
 		H.stats.changeStat(STAT_VIV, H.client.prefs.VIVMOD)
 		H.stats.changeStat(STAT_ANA, H.client.prefs.ANAMOD)
 		H.give_health_via_stats()
+		H.metabolism_effects.calculate_nsa() //update NSA incase we have any viv round start
 		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)

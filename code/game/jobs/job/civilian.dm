@@ -4,9 +4,9 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
@@ -27,9 +27,9 @@
 	Работая с шеф-поваром и садовником, вы принимаете важные решения. Ведите свой бизнес хорошо -  стремитесь максимизировать прибыль.<br>\
 	Хотя чаевые являются хорошим источником дохода, ваша деловая хватка в сфере разлива пьянящих зелий будет определять ваше процветание здесь."
 
-	duties = "Управляя баром - создайте для колонистов комфортные условия для отдыха, перекуса или запоя.br>\
-		Ваши руки развязаны - заключайте тайные сделки, продавайте алкоголь по завышенной цене или же гоните фирменный самого<br>\
-		Также можете взять на себя ответственность за массовое пищевое отравление или всеобщий голод если шеф отсутствует."
+	duties = "Run the bar - provide a safe haven for food, drinks and entertainment.<br>\
+		Seek extra sources of income for the venue - perhaps run deals or trade secrets.<br>\
+		Potentially take over cooking duties if a Chef is not present."
 
 /obj/landmark/join/start/clubmanager
 	name = "Bartender"
@@ -42,9 +42,9 @@
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
@@ -61,9 +61,9 @@
 	perks = list(PERK_MARKET_PROF, /datum/perk/bartender, /datum/perk/foodappraise)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
-	description = "Шеф-повар работает на кухне, следя за тем, чтобы колония оставалась сытой и энергичной.<br>\
-	Как правило, вы будете тесно сотрудничать с барменом во время приготовления пищи, уборки, сервировки и, возможно, развлечений.<br>\
-	Вам платят в основном за выполнение запросов на еду. Успешный шеф-повар проявляет инициативу, запрашивая заказы у клиентов."
+	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
+	You will typically work closely with a Bartender while cooking, cleaning, serving and perhaps entertaining.<br>\
+	You are paid mainly through fulfilling requests for food. The successful Chef takes initiative by asking for customer orders."
 
 	duties = "Pобеспечьте достаточное количество еды, чтобы накормить колонию. Стремитесь к разнообразию интересных и вкусных блюд.<br>\
 		Убедитесь, что ваши клиенты хорошо накормлены и им понравилась еда.<br>\
@@ -83,7 +83,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
@@ -101,10 +101,10 @@
 
 	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "Садовник занимается гидропоникой - использует семена, инструменты и удобрения для выращивания обильных урожаев.<br>\
-	Более талантливые садоводы могут заняться скотоводством. В ваших загонах содержится несколько кур и корова. Более экзотические животные могут быть приобретены в качестве импортного груза.<br>\
-	Вы являетесь опытным специалистом по уничтожению флоры - используйте лопаты и топоры или ищите более современное оборудование, такое как огнеметы и бензопилы. Устройте резню в среде хлорофила.<br>\
-	Помните, что ваши товары имеют свою цену, и более экзотические культуры могут стоить дороже."
+	description = "The Gardener toils in hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
+	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
+	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
+	Remember that your goods come with a cost and more exotic crops can command a higher price."
 
 	duties = "Выращивайте пищу. Обеспечьте хороший запас сырых овощей и основных злаков - риса и пшеницы.<br>\
 		Разводите животных для получения яиц, мяса и эмоциональной разгрузки (другие расы не являются животными).<br>\
@@ -124,7 +124,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -147,10 +147,10 @@
 							 /datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports)
 
-	description = "артист выступает здесь в качестве универсального исполнителя, развлекающего колонию.<br>\
-	Вы можете обнаружить, что ваши коллеги отвлекаются на скучные обязанности или бессмысленные препирательства, поэтому усердно работайте, чтобы привить им настоящую культуру.<br>\
-	Генеральный директор платит вам ужасно низкую плату, так что используйте свой ум, чтобы обеспечить себя - возможно, попросите свою аудиторию о пожертвованиях.r>\
-	Кроме того, вы не получаете желаний, как другие члены колонии, вместо этого вы проводите свое время за своим рабочим столом, создавая дорогие произведения искусства, которые стоит продать."
+	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
+	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
+	The SOM pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
+	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
 
 	duties = "Обеспечьте (Безопасное для семейного просмотра) развлечение для экипажа с помощью ваших разнообразных талантов.<br>\
 		Создавайте и продавайте ценные произведения искусства в своей мастерской художника.<br>\
@@ -169,7 +169,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")
@@ -193,10 +193,10 @@
 	В ваши обязанности также входит незначительное техническое обслуживание. Почините светильники, исправьте сломанные торговые автоматы, замените напольную плитку - облегчите бремя гильдии.<br>\
 	Несмотря на то, что ваш статус плачевен, ваши знания в области технического обслуживания могут привести вас к некоторому ценному спасению вашего авторитета."
 
-	duties = "Уберайте кровь, грязь, щебень и беспорядок. Не убирайте места преступлений!<br>\
-		Проводите мелкий ремонт и техническое обслуживание, когда адепты гильдии заняты.<br>\
-		Пополните запасы газет как минимум на 15 печатных изданий.<br>\
-		Расставляйте ловушки в норах и делайте все возможное, чтобы справиться с проблемой тараканов и пауков."
+	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
+		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
+		Restock Newscasters to at least 15 prints.<br>\
+		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
 /obj/landmark/join/start/janitor
 	name = "Janitor"

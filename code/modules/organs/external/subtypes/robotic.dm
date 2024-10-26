@@ -5,7 +5,7 @@
 	nerve_struck = -1 // no nerves here
 	cannot_break = 1
 	nature = MODIFICATION_SILICON
-	armor_list = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 20, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2) // Multiplied by w_class
 	var/min_malfunction_damage = 20 // Any more damage than that and you start getting nasty random malfunctions
 

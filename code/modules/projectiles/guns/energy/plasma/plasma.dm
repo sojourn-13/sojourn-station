@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5, MATERIAL_URANIUM = 3)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
@@ -50,7 +50,7 @@
 	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 7)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 5)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
@@ -74,7 +74,7 @@
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_POCKET|SLOT_HOLSTER
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10)
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
 	price_tag = 250
@@ -142,8 +142,25 @@
 
 /obj/item/gun/energy/plasma/super_heavy/attackby(obj/item/W, mob/user)
 
-	if(istype(W, /obj/item/tool)) // Is it a tool?
-		var/obj/item/tool/T = W // To use tool-only checks
+	if(istype(W, /obj/item/reagent_containers)) // Is it something that hold chems ?
+		// Do we already have one inside?
+		if(container)
+			to_chat(user, "The [src.name] already got a beaker.")
+			return
+		else
+			var/obj/item/reagent_containers/C = W
+			// Remove the container from the user and put it in the gun
+			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
+			C.forceMove(src) // Moving the container into the gun.
+			container = C // Assiging a reference variable
+			to_chat(user, "You add the [W.name] to the [src].")
+			return
+	..()
+	return
+
+/obj/item/gun/energy/plasma/super_heavy/wrench_intraction(obj/item/I, mob/user)
+	if(istype(I, /obj/item/tool)) // Is it a tool?
+		var/obj/item/tool/T = I // To use tool-only checks
 		if(QUALITY_BOLT_TURNING in T.tool_qualities) // Can we turn bolts with the tool?
 			if(container) // Do we have something to remove?
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
@@ -152,23 +169,6 @@
 					container = null // We no longer have a container.
 					return
 			to_chat(user, "[src.name] doesn't have a container.")
-
-	if(istype(W, /obj/item/reagent_containers)) // Is it something that hold chems ?
-
-		// Do we already have one inside?
-		if(container)
-			to_chat(user, "The [src.name] already got a beaker.")
-			return
-		else
-			var/obj/item/reagent_containers/C = W
-
-			// Remove the container from the user and put it in the gun
-			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
-			C.forceMove(src) // Moving the container into the gun.
-			container = C // Assiging a reference variable
-			to_chat(user, "You add the [W.name] to the [src].")
-			return
-	..()
 	return
 
 /obj/item/gun/energy/plasma/super_heavy/handle_post_fire(mob/user)

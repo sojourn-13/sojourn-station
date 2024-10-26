@@ -1,6 +1,6 @@
 /datum/gear/accessory
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
+	display_name = "drop straps"
+	path = /obj/item/clothing/accessory/dropstraps
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
 	cost = 0
@@ -14,10 +14,6 @@
 	display_name = "colorable sash"
 	path = /obj/item/clothing/accessory/sash/color
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/dropstraps
-	display_name = "drop straps"
-	path = /obj/item/clothing/accessory/dropstraps
 
 /datum/gear/accessory/legbrace
 	display_name = "leg brace"
@@ -127,6 +123,11 @@
 	display_name = "colorable waistcoat selection"
 	path = /obj/item/clothing/accessory/waistcoat/color
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/colorablestraps
+	display_name = "colorable drop straps"
+	path = /obj/item/clothing/accessory/dropstraps
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"

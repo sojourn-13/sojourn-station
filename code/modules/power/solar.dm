@@ -15,18 +15,27 @@
 	var/id = 0
 	health = 10
 	var/obscured = 0 //When we draw are line to the sun, are we blocked by something?
+	var/has_upgraded_range = FALSE //Have we been upgraded?
+	var/obscured_range = 20 //When we draw a line to the sun, how far should the line travel?
 	var/sunfrac = 0 //This is used for maths on how much power were getting, based on were the sun is vs pannel angel
 	var/adir = SOUTH // actual dir
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
 
+/obj/machinery/power/solar/enhanced
+	has_upgraded_range = TRUE
+	obscured_range = 3
+
 /obj/machinery/power/solar/examine(mob/user)
 	..()
 	if(glass_power >= 1) //Basiclly lets make sure
-		to_chat(user, "<span class='info'>The pannel reads that its glass power is at : [glass_power]</span>")
+		to_chat(user, "<span class='info'>The panel reads that its glass power is at : [glass_power] </span>")
 	else
-		to_chat(user, "<span class='info'>The pannel's glass is damage or dirty and generationg : [glass_power] well normal rating is 1x or more!</span>")
+		to_chat(user, "<span class='info'>The panel's glass is damaged or dirty and generating : [glass_power] while a normal rating is 1x or more!</span>")
+
+	if(has_upgraded_range)
+		to_chat(user, "<span class='info'>The glass has been treated with silver.</span>")
 
 /obj/machinery/power/solar/drain_power()
 	return -1
@@ -82,12 +91,27 @@
 			user.visible_message(SPAN_NOTICE("[user] takes the glass off the solar panel."))
 			qdel(src)
 		return
+	else if (istype(I, /obj/item/stack/material) && (I.get_material_name() == MATERIAL_SILVER))
+		if(has_upgraded_range)
+			to_chat(user, SPAN_WARNING("This panel has already been upgraded!"))
+			return
+
+		var/obj/item/stack/material/S = I
+		if(S.use(1))
+			user.visible_message(SPAN_NOTICE("[user] coats the glass with silver."))
+			obscured_range = 3
+			has_upgraded_range = TRUE
+
+		else
+			to_chat(user, SPAN_WARNING("You don't have enough silver!"))
+
+		return
+
 	else if (I)
 		src.add_fingerprint(user)
 		src.health -= I.force
 		src.healthCheck()
 	..()
-
 
 /obj/machinery/power/solar/healthCheck()
 	if (src.health <= 0)
@@ -187,7 +211,7 @@
 	var/ay = y
 	var/turf/T = null
 
-	for(var/i = 1 to 20)		// 20 steps is enough
+	for(var/i = 1 to obscured_range)		// 20 steps by default
 		ax += SSsun.dx	// do step
 		ay += SSsun.dy
 
@@ -263,9 +287,7 @@
 			return
 
 	if(anchored && isturf(loc))
-		log_debug("1")
 		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == MATERIAL_GLASS || I.get_material_name() == MATERIAL_RGLASS || I.get_material_name() == MATERIAL_PLASMAGLASS || I.get_material_name() == MATERIAL_RPLASMAGLASS))
-			log_debug("2")
 			var/obj/item/stack/material/S = I
 			if(S.use(2))
 				glass_type = I.type
@@ -394,7 +416,6 @@
 		ui_interact(user) //routed to TGUI
 /*
 /obj/machinery/power/solar_control/interact(mob/user)
-
 	var/t = "<B><span class='highlight'>Generated power</span></B> : [round(lastgen)] W<BR>"
 	t += "<B><span class='highlight'>Star Orientation</span></B>: [SSsun.angle]&deg ([angle2text(SSsun.angle)])<BR>"
 	t += "<B><span class='highlight'>Array Orientation</span></B>: [rate_control(src,"cdir","[cdir]&deg",1,15)] ([angle2text(cdir)])<BR>"
@@ -406,21 +427,15 @@
 			t += "<A href='?src=\ref[src];track=0'>Off</A> <span class='linkOn'>Timed</span> <A href='?src=\ref[src];track=2'>Auto</A><BR>"
 		if(2)
 			t += "<A href='?src=\ref[src];track=0'>Off</A> <A href='?src=\ref[src];track=1'>Timed</A> <span class='linkOn'>Auto</span><BR>"
-
 	t += "Tracking Rate: [rate_control(src,"tdir","[trackrate] deg/h ([trackrate<0 ? "CCW" : "CW"])",1,30,180)]</div><BR>"
-
 	t += "<B><span class='highlight'>Connected devices:</span></B><div class='statusDisplay'>"
-
 	t += "<A href='?src=\ref[src];search_connected=1'>Search for devices</A><BR>"
 	t += "Solar panels : [connected_panels.len] connected<BR>"
 	t += "Solar tracker : [connected_tracker ? "<span class='good'>Found</span>" : "<span class='bad'>Not found</span>"]</div><BR>"
-
 	t += "<A href='?src=\ref[src];close=1'>Close</A>"
-
 	var/datum/browser/popup = new(user, "solar", name)
 	popup.set_content(t)
 	popup.open()
-
 	return
 */
 /obj/machinery/power/solar_control/attackby(obj/item/I, mob/user)
@@ -480,7 +495,6 @@
 		usr << browse(null, "window=solcon")
 		usr.unset_machine()
 		return 0
-
 	if(href_list["rate control"])
 		if(href_list["cdir"])
 			src.cdir = dd_range(0,359,(360+src.cdir+text2num(href_list["cdir"]))%360)
@@ -492,7 +506,6 @@
 		if(href_list["tdir"])
 			src.trackrate = dd_range(-7200,7200,src.trackrate+text2num(href_list["tdir"]))
 			if(src.trackrate) nexttime = world.time + 36000/abs(trackrate)
-
 	if(href_list["track"])
 		track = text2num(href_list["track"])
 		if(track == 2)
@@ -503,13 +516,11 @@
 			src.targetdir = src.cdir
 			if(src.trackrate) nexttime = world.time + 36000/abs(trackrate)
 			set_panels(targetdir)
-
 	if(href_list["search_connected"])
 		src.search_for_connected()
 		if(connected_tracker && track == 2)
 			connected_tracker.set_angle(SSsun.angle)
 		src.set_panels(cdir)
-
 	interact(usr)
 	return 1
 */
@@ -631,19 +642,15 @@
 	if(.)
 		return
 	if(action == "azimuth")
-		var/adjust = text2num(params["adjust"])
 		var/value = text2num(params["value"])
-		if(adjust)
-			value = cdir + adjust
 		if(value != null)
-			set_panels(value)
+			cdir = dd_range(0, 359, value)
+			targetdir = cdir
+			set_panels(cdir)
 			return TRUE
 		return FALSE
 	if(action == "azimuth_rate")
-		var/adjust = text2num(params["adjust"])
 		var/value = text2num(params["value"])
-		if(adjust)
-			value = trackrate + adjust
 		if(value != null)
 			trackrate = round(clamp(value, -2 * SSsun.rate, 2 * SSsun.rate), 0.01)
 			return TRUE

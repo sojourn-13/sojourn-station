@@ -42,7 +42,7 @@
 	exclaim_verb = list("chants")
 	colour = "cult"
 	key = "c"
-	flags = RESTRICTED
+	flags = RESTRICTED | NO_TRANSLATE
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
 	syllables = list("phlegethor","kadishtu","nahlizet","naf'lthagn","fhtagn","jatkaa","mgar","balaq", "karazet", "exim’ha", \
@@ -91,21 +91,16 @@
 	speech_verb = list("squawks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("screeches")
-	colour = "cult"
+	colour = "opifex"
 	key = "f"
-	flags = RESTRICTED
+	flags = RESTRICTED | NO_TRANSLATE
 	partial_understanding = list(
 		LANGUAGE_YASSARI = 20
 	)
-	space_chance = 100
+	space_chance = 60
 	has_written_form = TRUE
-	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
-		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
-		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "fel", "d'amar det", \
-		"yu'gular", "faras", "desdae", "havas", "mithum", "javara", "umathar", "uf'kal", "thenar", "rash'tla", \
-		"sektath", "mal'zua", "zasan", "therium", "viortia", "kla'atu", "barada", "nikt'o", "fwe'sh", "mah", "erl", "nyag", "r'ya", \
-		"gal'h'rfikk", "harfrandid", "mud'gib", "fuu", "ma'jin", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
-		"d'rekkathnor", "khari'd", "gual'te", "nikka", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
+	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya","chi","cha","kah", \
+	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	shorthand = "N/A"
 
 //Kriosan racial language. Lore: German creolization due to Sol-Gov occupation; therefor intelligibility with German.
@@ -117,7 +112,6 @@
 	exclaim_verb = list("barks", "yips")
 	colour = "kriosan"
 	key = "k"
-	flags = RESTRICTED
 	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
 	partial_understanding = list(
 		LANGUAGE_EURO = 75,
@@ -148,7 +142,6 @@
 	exclaim_verb = list("roars")
 	colour = "akula"
 	key = "a"
-	flags = RESTRICTED
 	has_written_form = FALSE //Lore reason - Warrior culture, likely did not adapt much of a writing system since it was unneeded. Literacy / Acedmia done in foreign tongues.
 	partial_understanding = list(
 		LANGUAGE_JANA = 10,
@@ -166,9 +159,9 @@
 	speech_verb = list("warbles")
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
+	flags = RESTRICTED
 	colour = "marqua"
 	key = "q"
-	flags = RESTRICTED
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_JANA = 20,
@@ -190,7 +183,6 @@
 	key = "p"
 	has_written_form = FALSE //Hiveminds don't get a written language.
 
-
 //Naramad language. full credit to Yanniert for all of the details herein contained.
 /datum/language/merp
 	name = LANGUAGE_MERP
@@ -198,7 +190,6 @@
 	speech_verb = list("says", "clicks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("croaks")
-	flags = RESTRICTED
 	colour = "rough"
 	key = "n"
 	has_written_form = TRUE
@@ -209,3 +200,23 @@
 	shorthand = "NP"
 	space_chance = 5
 	syllables = list("Punainen", "Koira", "Tuolla", "Rikas", "syvä", "kivääri", "ulkomaalainen", "ihmisen", "sammakko", "taivaaseen", "Koti", "tilaa",  "sinä", "vastustamaton", "heimo", "klaani",  "kotitalous", "raha", "iso", "pieni", "sairaus", "ruokaa", "alkoholia", "kana", "asevelvollisuus", "alus", "joki", "saari", "ase", "veitsi", "juusto", "pää", "häntää", "taistelevat", "halaamalla", "ystävät", "ystävyys", "kansainyhteisö", "liitto", "aurinko", "missä", "mitä", "kun", "Miten", "siksi", "laulu", "kalastaa", "hämärä", "epäilyttävä", "luottamus", "kusipää", "paskiainen", "ääliö", "munata", "*!*")
+
+//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld. 
+/datum/language/weh
+	name = LANGUAGE_WEH
+	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
+	speech_verb = list("says", "hisses")
+	ask_verb = list("inquires")
+	exclaim_verb = list("bellows")
+	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
+	key = "u"
+	has_written_form = TRUE
+	partial_understanding = list(
+		LANGUAGE_COMMON = 20, 
+		LANGUAGE_YASSARI = 10, 
+		LANGUAGE_EURO = 10, 
+		LANGUAGE_JANA = 10 
+	)
+	shorthand = "CRV"
+	space_chance = 50
+	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")

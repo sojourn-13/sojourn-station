@@ -1,13 +1,13 @@
-/obj/item/rig/attackby(obj/item/I, mob/user)
+/obj/item/rig/proc/can_maintenance()
+	return !is_worn()
 
+/obj/item/rig/attackby(obj/item/I, mob/user)
 	if(!isliving(user))
 		return
 
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
-
-
 
 	// Lock or unlock the access panel.
 	if(I.GetIdCard())
@@ -20,7 +20,7 @@
 			to_chat(user, SPAN_DANGER("The lock clicks uselessly."))
 			return
 
-		if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
+		if(!LAZYLEN(req_access) && !LAZYLEN(req_one_access))
 			locked = 0
 			to_chat(user, SPAN_DANGER("\The [src] doesn't seem to have a locking mechanism."))
 			return
@@ -37,10 +37,6 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if (is_worn())
-				to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
-				return 1
-
 			if(open)
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					var/list/current_mounts = list()
@@ -58,15 +54,22 @@
 								to_chat(user, "[src]'s power cell cannot be removed")
 								return TRUE
 							if(cell)
-								to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
-								for(var/obj/item/rig_module/module in installed_modules)
-									module.deactivate()
-								user.put_in_hands(cell)
-								cell = null
+								to_chat(user, "You start removing \the [cell].")
+								if(do_after(usr,seal_delay*4/3,src))//4 for each piece. Taking one a third of its total time to get off.
+									to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
+									for(var/obj/item/rig_module/module in installed_modules)
+										module.deactivate()
+									user.put_in_hands(cell)
+									cell = null
+								else
+									to_chat(user, "You need to stand still to detatch \the [cell].")
 							else
 								to_chat(user, "There is nothing loaded in that mount.")
 
 						if("system module")
+							if(!can_maintenance())
+								to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
+								return 1
 							var/list/possible_removals = list()
 							for(var/obj/item/rig_module/module in installed_modules)
 								if(module.permanent)
@@ -127,11 +130,6 @@
 				if(!air_supply)
 					to_chat(user, "There is not tank to remove.")
 					return
-
-				if (is_worn())
-					to_chat(user, "You can't remove an installed tank while the hardsuit is being worn.")
-					return 1
-
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					user.put_in_hands(air_supply)
 					to_chat(user, "You detach and remove \the [air_supply].")
@@ -144,16 +142,23 @@
 		if(QUALITY_WELDING)
 			//Cutting through the cover lock. This allows access to the wires inside so you can disable access requirements
 			//Ridiculously difficult to do, hijacking a rig will take a long time if you don't have good mechanical training
-			if(locked == 1)
+			if(locked == 1 && user.a_intent == I_HURT)
 				to_chat(user, SPAN_NOTICE("You start cutting through the access panel's cover lock. This is a delicate task."))
 				if(I.use_tool(user, src, WORKTIME_EXTREMELY_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
 					locked = -1 //Broken, it can never be locked again
 					to_chat(user, SPAN_NOTICE("Success! The tension in the panel loosens with a dull click"))
 					playsound(src.loc, 'sound/weapons/guns/interact/pistol_magin.ogg', 75, 1)
 				return
-			else
+			else if (user.a_intent == I_HURT)
 				to_chat(user, "\The [src] access panel is not locked, there's no need to cut it.")
 				//No return here, incase they're trying to repair
+			if (ablative_max <= ablative_armor)
+				to_chat(user, SPAN_WARNING("There is no damage on \the [src]'s armor layers to repair."))
+
+			else if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_HARD, required_stat = STAT_MEC, instant_finish_tier = INFINITY)) // no instant repairs
+				ablative_armor = min(ablative_armor + 2, ablative_max)
+				to_chat(user, SPAN_NOTICE("You repair the damage on the [src]'s armor layers."))
+				return
 
 		if(ABORT_CHECK)
 			return
@@ -199,7 +204,7 @@
 	..()
 
 
-/obj/item/rig/attack_hand(var/mob/user)
+/obj/item/rig/attack_hand(mob/user)
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
@@ -213,7 +218,7 @@
 
 
 //For those pesky items which incur effects on the rigsuit, an altclick will force them to go in if possible
-/obj/item/rig/AltClick(var/mob/user)
+/obj/item/rig/AltClick(mob/user)
 	if (storage && user.get_active_hand())
 		if (user == loc || Adjacent(user)) //Rig must be on or near you
 			storage.accepts_item(user.get_active_hand())
@@ -226,12 +231,12 @@
 		return TRUE
 	return ..()
 
-/obj/item/rig/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/rig/emag_act(remaining_charges, mob/user)
 	if(!subverted)
-		req_access.Cut()
-		req_one_access.Cut()
+		LAZYNULL(req_access)
+		LAZYNULL(req_one_access)
 		if (locked != -1)
 			locked = 0
 		subverted = 1
 		to_chat(user, SPAN_DANGER("You short out the access protocol for the suit."))
-		return 1
+		return TRUE

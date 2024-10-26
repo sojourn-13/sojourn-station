@@ -9,11 +9,11 @@
 @use '../colors.scss' with (
   $primary: #397439,
   $fg-map-keys: (),
-  $bg-map-keys: (),
+  $bg-map-keys: ()
 );
 @use '../base.scss' with (
   $color-bg: #550202,
-  $color-bg-grad-spread: 6%,
+  $color-bg-grad-spread: 6%
 );
 
 .theme-syndicate {
@@ -63,5 +63,11 @@
 
   .Layout__content {
     background-image: url('../../assets/bg-syndicate.svg');
+  }
+  // NTOS header bar
+  .NtosWindow__header {
+    background:
+      linear-gradient(rgba(157, 8, 8, 0.5), rgba(157, 8, 8, 0.5)),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
   }
 }

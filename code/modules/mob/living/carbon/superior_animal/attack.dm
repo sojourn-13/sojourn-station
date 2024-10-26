@@ -9,7 +9,9 @@
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
-	if(moved) damage *= move_attack_mult
+	if(moved)
+		damage *= move_attack_mult
+
 //Here we handle blocking chance against superior mobs, yeah.
 	if(isliving(A))
 		var/mob/living/L = A
@@ -17,7 +19,8 @@
 			var/mob/living/carbon/human/target_human = L
 			if(target_human.check_shields(damage, null, src, null, attacktext))
 				return 0
-	. = A.attack_generic(src, damage, attacktext, environment_smash)
+
+	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
 	if(.)
 		if (attack_sound && loc && prob(attack_sound_chance))
@@ -80,7 +83,7 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, PROC_REF(Shoot), target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src, trace = trace_arg)
@@ -105,15 +108,17 @@
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
 	if(rounds_left <= 0 && mags_left >= 1) //If were out of ammo and can reload
-		mags_left -= 1
-		rounds_left = initial(rounds_left)
-		visible_message(reload_message)
-		if(mag_drop)
-			new mag_type(get_turf(src))
-		return
+		mob_reload()
 	if(rounds_left <= 0 && mags_left <= 0) //If were out of ammo and can't reload
 		ranged = FALSE
 		rapid = FALSE
+
+/mob/living/carbon/superior_animal/proc/mob_reload()
+	mags_left -= 1
+	rounds_left = initial(rounds_left)
+	visible_message(reload_message)
+	if(mag_drop)
+		new mag_type(get_turf(src))
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
 	if(weakened)
@@ -156,7 +161,7 @@
 					if (possible_target)
 						if (possible_target == target)
 							continue //we made the concious choice to attack them
-						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
+						else if (!(prob(do_friendly_fire_chance)) && !friendly_to_colony && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends))))
 							do_we_shoot = FALSE
 							break
 
@@ -169,6 +174,9 @@
 
 		if (do_we_shoot)
 			var/offset_temp = right_before_firing()
+			A.original_firer = src
+			if(friendly_to_colony)
+				A.friendly_to_colony = TRUE
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
 			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)

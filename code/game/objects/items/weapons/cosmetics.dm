@@ -76,6 +76,7 @@
 	name = "purple comb"
 	desc = "A pristine purple comb made from flexible plastic."
 	w_class = ITEM_SIZE_TINY
+	attack_verb = list("combed", "brushes")
 	slot_flags = SLOT_EARS
 	icon = 'icons/obj/items.dmi'
 	icon_state = "purplecomb"

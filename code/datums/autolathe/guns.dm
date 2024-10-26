@@ -49,7 +49,7 @@
 /// 10mm M A G N U M
 
 /datum/design/autolathe/gun/ladon
-	name = "SA HG 10mm \"Lamia\""
+	name = "SA HG 10mm \"Ladon\"" //This is infact a LADON not a LAMIA not even a goddamn NAGA platform
 	build_path = /obj/item/gun/projectile/ladon
 
 /datum/design/autolathe/gun/ladon_hs
@@ -69,7 +69,7 @@
 	build_path = /obj/item/gun/projectile/mk58/wood
 
 /datum/design/autolathe/gun/lemant
-	name = "NT 10/20mm \"Pilgrim\""
+	name = "OT 10/20mm \"Pilgrim\""
 	build_path = /obj/item/gun/projectile/revolver/lemant
 
 /datum/design/autolathe/gun/ten
@@ -457,27 +457,27 @@
 	build_path = /obj/item/gun/energy/firestorm
 
 /datum/design/autolathe/gun/energy_crossbow
-	name = "OT EC \"Nemesis\""
+	name = "NT EC \"Nemesis\""
 	build_path = /obj/item/gun/energy/crossbow
 
 /datum/design/autolathe/gun/large_energy_crossbow
-	name = "OT EC \"Themis\""
+	name = "NT EC \"Themis\""
 	build_path = /obj/item/gun/energy/crossbow/largecrossbow
 
 /datum/design/autolathe/gun/laser
-	name = "OT LG \"Lightfall\""
+	name = "NT LG \"Lightfall\""
 	build_path = /obj/item/gun/energy/laser
 
 /datum/design/autolathe/gun/ionrifle
-	name = "OT IR \"Halicon\""
+	name = "NT IR \"Halicon\""
 	build_path = /obj/item/gun/energy/ionrifle
 
 /datum/design/autolathe/gun/pulse
-	name = "OT PR \"Dominion\""
+	name = "NT PR \"Dominion\""
 	build_path = /obj/item/gun/energy/plasma
 
 /datum/design/autolathe/gun/pulse_destroyer
-	name = "OT PR \"Purger\""
+	name = "NT PR \"Purger\""
 	build_path = /obj/item/gun/energy/plasma/destroyer
 
 /datum/design/autolathe/gun/pulse_cassad

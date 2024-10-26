@@ -56,7 +56,16 @@
 #define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
+//Blood Increasers
 #define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
+#define MUTATION_BLOOD_RIVER /datum/genetics/mutation/blood_river
+#define MUTATION_BLOOD_LAKE /datum/genetics/mutation/blood_lake
+#define MUTATION_BLOOD_SEA /datum/genetics/mutation/blood_sea
+#define MUTATION_BLOOD_TEMPLE /datum/genetics/mutation/blood_temple
+#define MUTATION_VAMPIRE /datum/genetics/mutation/vampire
+
+#define MUTATION_SEASONED_MIND /datum/genetics/mutation/seasoned_mind
+#define MUTATION_SHOCK_LESS /datum/genetics/mutation/shock_less
 #define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
 #define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
 #define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
@@ -105,7 +114,9 @@
 //refer to code\__DEFINES\dna.dm for the other states in this list.
 //I use these instead of directly checking the mutations datum in some cases because it is quicker.
 #define ROACH_BLOOD          11
-#define CLOAKING          	 12
+#define CLOAKING             12
+#define SHOCK_LESS           13
+#define VAMPIRE              14
 
 
 //Thresholds for mutagenic Destabilization

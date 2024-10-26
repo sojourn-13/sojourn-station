@@ -253,7 +253,7 @@
 /var/const/access_merchant = 41
 /datum/access/merchant
 	id = access_merchant
-	desc = "Chief Executive Officer"
+	desc = "Surface Operations Manager"
 	region = ACCESS_REGION_SUPPLY
 
 /var/const/access_network = 42
@@ -463,6 +463,12 @@
 /datum/access/foreman
 	id = access_foreman
 	desc = "Foreman's Quarters"
+	region = ACCESS_REGION_PROSPECTOR
+
+/var/const/access_fence = 111
+/datum/access/fence
+	id = access_fence
+	desc = "Fences access" //maybe they'll get a closet for an office one day.
 	region = ACCESS_REGION_PROSPECTOR
 
 /**************

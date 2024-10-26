@@ -62,5 +62,5 @@
 		/obj/item/stack/telecrystal = offer_data("telecrystal x50", 100000, 1),
 		/obj/item/device/radio/uplink = offer_data("Radio Uplink", 10000, 1),
 		/obj/item/card/emag = offer_data("Cryptographic Sequencer", 5000, 1),
-		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1200, 3)
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Optimized NV Goggles", 1200, 3)
 	)

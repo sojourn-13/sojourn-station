@@ -10,6 +10,12 @@
 	path = /obj/item/storage/belt/utility
 	cost = 2
 
+
+/datum/gear/belt/sheath
+	display_name = "sheath for cheap blades"
+	path = /obj/item/storage/sheath/non_church/general
+	cost = 1
+
 /datum/gear/belt/toolbelt
 	display_name = "handmade tool belt"
 	path = /obj/item/storage/belt/utility/handmade

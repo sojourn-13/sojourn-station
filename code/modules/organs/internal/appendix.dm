@@ -28,7 +28,7 @@
 		if(inflamed > 200)
 			if(prob(3))
 				take_damage(10, BRUTE)
-				owner.emote("me",1,"winces painfully.")
+				owner.custom_emote("me",1,"winces painfully.")
 				owner.adjustHalLoss(1)
 		if(inflamed > 400)
 			if(prob(1))

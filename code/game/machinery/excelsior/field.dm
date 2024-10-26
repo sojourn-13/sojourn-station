@@ -6,7 +6,7 @@
 	stun_chance = 3
 	shield_type = /obj/machinery/shieldwall/excelsior
 	circuit = /obj/item/circuitboard/excelsiorshieldwallgen
-	req_access = list()
+	req_access = null
 
 /obj/machinery/shieldwallgen/excelsior/attack_hand(mob/user as mob)
 	..()

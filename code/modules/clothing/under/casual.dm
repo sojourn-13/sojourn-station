@@ -166,8 +166,8 @@
 /obj/item/clothing/under/top/haltertop
 	name = "black halterneck top"
 	desc = "A black halterneck top and jean shorts"
-	icon_state = " haltertop"
-	item_state = " haltertop"
+	icon_state = "haltertop"
+	item_state = "haltertop"
 
 /obj/item/clothing/under/top/outfitfrontier
 	name = "frontier outfit"

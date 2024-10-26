@@ -36,9 +36,11 @@
 	var/crumpled = FALSE
 	var/datum/language/language = LANGUAGE_COMMON // Language the paper was written in. Editable by users up until something's actually written
 
-	var/const/deffont = "Verdana"
-	var/const/signfont = "Times New Roman"
-	var/const/crayonfont = "Comic Sans MS"
+	var/crayon_pen = FALSE
+
+	var/deffont = "Verdana"
+	var/signfont = "Times New Roman"
+	var/crayonfont = "Comic Sans MS"
 
 /obj/item/paper/ui_host(mob/user)
 	if(istype(loc, /obj/structure/noticeboard))
@@ -372,6 +374,7 @@
 
 	if (iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+		crayon_pen = TRUE
 	else
 		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
 
@@ -472,9 +475,6 @@
 		usr << browse("<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
 
 		update_icon()
-
-
-
 
 /obj/item/paper/attackby(obj/item/P as obj, mob/user as mob)
 	..()
@@ -656,3 +656,64 @@
 	icon_state = "paper_neo_crumpled_bloodied"
 
 #undef MAX_FIELDS
+
+/obj/item/paper/verb/crayon_change_deffont()
+	set name = "Change Cryon Font Type"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Comic Sans MS (Default)"] = "Comic Sans MS"
+	options["Candara"] = "Candara"
+	options["Impact"] = "Impact"
+	options["cursive"] = "cursive"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		crayonfont = options[choice]
+		to_chat(M, "You adjusted your crayon style into [choice] mode.")
+		return 1
+
+/obj/item/paper/verb/change_sign_font()
+	set name = "Change Signing Fount Type"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Times New Roman (Default)"] = "Times New Roman"
+	options["fantasy"] = "fantasy"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		signfont = options[choice]
+		to_chat(M, "You adjusted your pen style into [choice] mode.")
+		return 1
+
+/obj/item/paper/verb/change_deffont()
+	set name = "Change Fount Type"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Verdana (Default)"] = "Verdana"
+	options["Segoe Script"] = "Segoe Script"
+	options["cursive"] = "cursive"
+	options["monospace"] = "monospace"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		deffont = options[choice]
+		to_chat(M, "You adjusted your pen style into [choice] mode.")
+		return 1

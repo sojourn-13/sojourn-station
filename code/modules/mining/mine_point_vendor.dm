@@ -20,6 +20,7 @@
 		new /datum/data/mining_equipment("GPS Device",											/obj/item/device/gps/mining,										100),
 		new /datum/data/mining_equipment("Fuel Canister",										/obj/item/weldpack/canister,										250),
 		new /datum/data/mining_equipment("Ore Sonar Device",									/obj/item/device/ore_sonar,											500),
+		new /datum/data/mining_equipment("Aether Mining Drone ",								/mob/living/carbon/superior_animal/robot/mining/aether,				1200),
 		new /datum/data/mining_equipment("500 Point Transfer Card",								/obj/item/card/mining_point_card,									500),
 		new /datum/data/mining_equipment("1000 Point Transfer Card",							/obj/item/card/mining_point_card/onethou,							1000),
 		new /datum/data/mining_equipment("2000 Point Transfer Card",							/obj/item/card/mining_point_card/twothou,							2000),

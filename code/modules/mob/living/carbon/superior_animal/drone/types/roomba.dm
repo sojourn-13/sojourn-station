@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/handmade/roomba
 	name = "Custom-Made Roomba Drone"
-	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly. Capable of IFF."
 	faction = "neutral"
 	icon_state = "roomba"
 	melee_damage_lower = 10
@@ -9,7 +9,6 @@
 	maxHealth = 100
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	can_buckle = TRUE
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = TRUE
 	density = FALSE
@@ -17,10 +16,10 @@
 
 	// Default armor values so that we can reference them.
 	var/default_armor = list(
-		melee = 15,
-		bullet = 15,
-		energy = 15,
-		bomb = 15,
+		melee = 3,
+		bullet = 3,
+		energy = 3,
+		bomb = 3,
 		bio = 100, // It is a robot, shouldn't be affected by viruses or pain
 		agony = 100
 	)
@@ -296,10 +295,10 @@
 		death() // Kill the roomba which will in turn trigger the bomb.
 
 /mob/living/carbon/superior_animal/handmade/roomba/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(panel_open)
-		overlays += image(icon, "roomba_panel")
+		add_overlay(image(icon, "roomba_panel"))
 	if(armored)
-		overlays += image(icon, "roomba_plating")
+		add_overlay(image(icon, "roomba_plating"))
 	if(weaponry)
-		overlays += image(icon, "roomba_gun")
+		add_overlay(image(icon, "roomba_gun"))

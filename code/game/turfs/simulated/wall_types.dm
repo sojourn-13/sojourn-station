@@ -230,6 +230,9 @@
 /turf/simulated/wall/wood/New(var/newloc)
 	..(newloc,MATERIAL_WOOD)
 
+/turf/simulated/wall/cloth/New(var/newloc)
+	..(newloc,MATERIAL_CLOTH)
+
 
 /turf/simulated/wall/marble/New(var/newloc)
 	..(newloc,MATERIAL_MARBLE)

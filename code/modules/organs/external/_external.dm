@@ -39,6 +39,7 @@
 	var/skin_tone			// Skin tone.
 	var/skin_col			// skin colour
 	var/hair_col
+	var/nonsolid			//snowflake code for slimes to apply alpha.
 
 	// Wound and structural data.
 	var/wound_update_accuracy = 3		// how often wounds should be updated, a higher number means less often Occulus Edit: only update wounds every 3 ticks (potential lag reduction)
@@ -67,7 +68,7 @@
 	var/cannot_break		// Impossible to fracture.
 	var/joint = "joint"		// Descriptive string used in dislocation.
 	var/amputation_point	// Descriptive string used in amputation.
-	var/nerve_struck = 0		// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
+	var/nerve_struck = 0	// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
 	var/encased				// Needs to be opened with a saw to access certain organs.
 	var/cavity_name = "cavity"				// Name of body part's cavity, displayed during cavity implant surgery
 	var/max_volume = ITEM_SIZE_SMALL	// Max w_class of cavity implanted items
@@ -213,18 +214,20 @@
 	if(generation_flags & ORGAN_HAS_BLOOD_VESSELS)
 		make_blood_vessels()
 
-/obj/item/organ/external/proc/make_bones()
-    if(default_bone_type)
-        var/obj/item/organ/internal/bone/bone
-        if(nature == MODIFICATION_SUPERIOR)
-            bone = new default_bone_type
-        else if(nature < MODIFICATION_SILICON)
-            bone = new default_bone_type
-        else
-            var/mecha_bone = text2path("[default_bone_type]/robotic")
-            bone = new mecha_bone
+/obj/item/organ/external/proc/make_bones() //this was indented with spaces before now. Why?
+	if(default_bone_type)
+		var/obj/item/organ/internal/bone/bone
+		if(nature == MODIFICATION_SUPERIOR)
+			bone = new default_bone_type
+		else if(nature < MODIFICATION_SILICON)
+			bone = new default_bone_type
+		else if(nature == MODIFICATION_SLIME)
+			bone = new default_bone_type
+		else
+			var/mecha_bone = text2path("[default_bone_type]/robotic")
+			bone = new mecha_bone
 
-        bone?.replaced(src)
+		bone?.replaced(src)
 
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
@@ -233,7 +236,6 @@
 			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
 		else
 			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
-
 	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else
@@ -281,25 +283,18 @@
 			var/obj/item/organ/external/organ = owner?.HUDneed["right arm bionics"]
 			organ?.update_icon()
 
-/obj/item/organ/external/proc/activate_module()
-	set name = "Activate module"
-	set category = "Cybernetics" //changed this to be in line with excelsior's cyber implants and such
-	set src in usr
-
-	if(module)
-		module.activate(owner, src)
-
 /obj/item/organ/external/emp_act(severity)
+	var/rand_modifier = rand(1,3)
 	if(!BP_IS_ROBOTIC(src))
 		return
 
 	switch (severity)
 		if (1)
-			take_damage(20, BURN)
+			take_damage(8 * rand_modifier, BURN)
 		if (2)
-			take_damage(10, BURN)
+			take_damage(6 * rand_modifier, BURN)
 		if (3)
-			take_damage(5, BURN)
+			take_damage(4 * rand_modifier, BURN)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
@@ -823,7 +818,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
-		owner.verbs += /mob/proc/yank_out_object
+		add_verb(owner, /mob/proc/yank_out_object)
 
 	owner.embedded_flag = 1
 	W.on_embed(owner)

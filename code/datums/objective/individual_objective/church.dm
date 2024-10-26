@@ -17,7 +17,7 @@
 	..()
 	target = pick_faction_item(mind_holder, strict_type = /obj)
 	desc = "\The [target] is clearly against doctrine. It must be destroyed by the Joyeuse."
-	RegisterSignal(mind_holder, SWORD_OF_TRUTH_OF_DESTRUCTION, .proc/task_completed)
+	RegisterSignal(mind_holder, SWORD_OF_TRUTH_OF_DESTRUCTION, PROC_REF(task_completed))
 
 /datum/individual_objective/bad_technology/task_completed(obj/item/I)
 	if(target.type == I.type)
@@ -53,7 +53,7 @@
 		valid_targets += H
 	target = pick(valid_targets)
 	desc = "[target] has the potential to be a great beliver but their path has gone astray, maybe they can be saved."
-	RegisterSignal(target, COMSIG_HUMAN_INSTALL_IMPLANT, .proc/task_completed)
+	RegisterSignal(target, COMSIG_HUMAN_INSTALL_IMPLANT, PROC_REF(task_completed))
 
 /datum/individual_objective/convert/task_completed(mob/living/carbon/human/H, obj/item/implant)
 	if(H == target && istype(implant, /obj/item/implant/core_implant/cruciform))
@@ -91,7 +91,7 @@
 	target = pick(valid_targets)
 	desc = "[target] may need spiritual guidance, using [ritual_name] will give peace of mind to you and hopefully them."
 	ritual = GLOB.all_rituals[ritual_name]
-	RegisterSignal(mind_holder, COMSIG_RITUAL, .proc/task_completed)
+	RegisterSignal(mind_holder, COMSIG_RITUAL, PROC_REF(task_completed))
 
 /datum/individual_objective/spread/task_completed(datum/ritual/cruciform/R, mob/M)
 	if(R.type == ritual.type && M == target)
@@ -112,7 +112,7 @@
 	..()
 	target_area = random_ship_area()
 	desc = "\the [target_area] may be the target of infestation by maligned forces, it should be blessed and cleansed."
-	RegisterSignal(target_area, COMSIG_AREA_SANCTIFY, .proc/task_completed)
+	RegisterSignal(target_area, COMSIG_AREA_SANCTIFY, PROC_REF(task_completed))
 
 /datum/individual_objective/sanctify/task_completed()
 	completed()

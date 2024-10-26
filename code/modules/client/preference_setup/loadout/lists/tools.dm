@@ -60,6 +60,12 @@
 	cost = 1
 
 //------------
+/datum/gear/tools/omnitranslator_handheld
+	display_name = "Handheld Omnitranslator"
+	path = /obj/item/device/universal_translator
+	cost = 1
+
+//------------
 
 
 /datum/gear/tools/powercellsmall

@@ -191,7 +191,7 @@
 			dt = clamp(detonation_time.data, 1, 12)*10
 		else
 			dt = 15
-		addtimer(CALLBACK(attached_grenade, /obj/item/grenade.proc/activate), dt)
+		addtimer(CALLBACK(attached_grenade, TYPE_PROC_REF(/obj/item/grenade, activate)), dt)
 		var/atom/holder = loc
 		var/atom/A = get_object()
 		A.investigate_log("activated grenade with [src].", INVESTIGATE_CIRCUIT)
@@ -445,9 +445,9 @@
 					set_pin_data(IC_OUTPUT, 1, TRUE)
 					pulling = to_pull
 					acting_object.visible_message("\The [acting_object] starts pulling \the [to_pull] around.")
-					GLOB.moved_event.register(to_pull, src, .proc/check_pull) //Whenever the target moves, make sure we can still pull it!
-					GLOB.destroyed_event.register(to_pull, src, .proc/stop_pulling) //Stop pulling if it gets destroyed
-					GLOB.moved_event.register(acting_object, src, .proc/pull) //Make sure we actually pull it.
+					GLOB.moved_event.register(to_pull, src, PROC_REF(check_pull)) //Whenever the target moves, make sure we can still pull it!
+					GLOB.destroyed_event.register(to_pull, src, PROC_REF(stop_pulling)) //Stop pulling if it gets destroyed
+					GLOB.moved_event.register(acting_object, src, PROC_REF(pull)) //Make sure we actually pull it.
 					var/atom/A = get_object()
 					A.investigate_log("started pulling [pulling] with [src].", INVESTIGATE_CIRCUIT)
 			push_data()

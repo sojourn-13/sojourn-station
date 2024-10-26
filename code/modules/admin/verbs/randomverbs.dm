@@ -2,7 +2,7 @@
 	set category = null
 	set name = "Drop Everything"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	var/confirm = alert(src, "Make [M] drop everything?", "Message", "Yes", "No")
@@ -19,12 +19,12 @@
 ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 //send an message to somebody as a 'voice in their head'
 /client/proc/cmd_admin_subtle_message(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Subtle Message"
 
 	if(!ismob(M))	return
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	var/msg = sanitize(input("Message:", text("Subtle PM to [M.key]")) as text)
@@ -43,7 +43,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
 //sends text to all players with no padding
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Global Narrate"
 
 	if (!holder)
@@ -62,11 +62,11 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
 ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 //send text directly to a player with no padding. Useful for narratives and fluff-text
 /client/proc/cmd_admin_direct_narrate(var/mob/M)	// Targetted narrate -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Direct Narrate"
 
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	if(!M)
@@ -86,10 +86,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 
 
 /client/proc/cmd_admin_godmode(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Godmode"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	M.status_flags ^= GODMODE
 	to_chat(usr, "\blue Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]")
@@ -150,10 +150,10 @@ proc/cmd_admin_mute(mob/M as mob, mute_type, automute = 0)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_add_random_ai_law, R_FUN, FALSE)
 /client/proc/cmd_admin_add_random_ai_law()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Add Random AI Law"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm != "Yes") return
@@ -200,11 +200,11 @@ Ccomp's first proc.
 ADMIN_VERB_ADD(/client/proc/allow_character_respawn, R_ADMIN, FALSE)
 // Allows a ghost to respawn
 /client/proc/allow_character_respawn()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Allow player to respawn"
 	set desc = "Let's the player bypass the 30 minute wait to respawn or allow them to re-enter their corpse."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/list/ghosts= get_ghosts(1,1)
 
 	var/target = input("Please, select a ghost!", "COME BACK TO LIFE!", null, null) as null|anything in ghosts
@@ -250,12 +250,12 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 	set desc = "Toggles antagHUD usage for observers"
 
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/action=""
 	if(config.antag_hud_allowed)
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						//Remove the verb from non-admin ghosts
-				g.verbs -= /mob/observer/ghost/verb/toggle_antagHUD
+				remove_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
@@ -266,7 +266,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
-				g.verbs += /mob/observer/ghost/verb/toggle_antagHUD
+				add_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 			to_chat(g, "\blue <B>The Administrator has enabled AntagHUD </B>"	) // Notify all observers they can now use AntagHUD
 		config.antag_hud_allowed = 1
 		action = "enabled"
@@ -283,7 +283,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_restrictions, R_ADMIN, FALSE)
 	set name = "Toggle antagHUD Restrictions"
 	set desc = "Restricts players that have used antagHUD from being able to join this round."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/action=""
 	if(config.antag_hud_restricted)
 		for(var/mob/observer/ghost/g in get_ghosts())
@@ -307,11 +307,11 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_restrictions, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 /client/proc/spawn_character()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Spawn Character"
 	set desc = "(Re)Spawn a client's loaded character."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	//I frontload all the questions so we don't have a half-done process while you're reading.
@@ -476,11 +476,11 @@ contractors and the like can also be revived with the previous role mostly intac
 /N */
 ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 /client/proc/respawn_character()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Respawn Character"
 	set desc = "Respawn a person that has been gibbed/dusted/killed. They must be a ghost for this to work and preferably should not have a body to go back into."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = ckey(input(src, "Please specify which key will be respawned.", "Key", ""))
 	if(!input)
@@ -584,10 +584,10 @@ ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 /client/proc/cmd_admin_add_freeform_ai_law()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Add Custom AI law"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = sanitize(input(usr, "Please enter anything you want the AI to do. Anything. Serious.", "What?", "") as text|null)
 	if(!input)
@@ -613,10 +613,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Rejuvenate"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	if(!mob)
 		return
@@ -630,10 +630,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
 /client/proc/cmd_admin_create_centcom_report()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Create Command Report"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = sanitize(input(usr, "Please enter anything you want. Anything. Serious.", "What?", "") as message|null, extra = 0)
 	var/customname = sanitizeSafe(input(usr, "Pick a title for the report.", "Title") as text|null)
@@ -663,7 +663,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_delete, R_ADMIN|R_SERVER|R_DEBUG, FALSE)
 	set name = "Delete"
 
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	if (alert(src, "Are you sure you want to delete:\n[O]\nat ([O.x], [O.y], [O.z])?", "Confirmation", "Yes", "No") == "Yes")
@@ -678,14 +678,14 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 	set name = "List free slots"
 
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	for(var/datum/job/job in SSjob.occupations)
 		to_chat(src, "[job.title]: [job.total_positions]")
 
 
 /client/proc/cmd_admin_explosion(atom/O as obj|mob|turf in range(world.view))
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Explosion"
 
 	if(!check_rights(R_DEBUG|R_FUN))	return
@@ -713,7 +713,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 		return
 
 /client/proc/cmd_admin_emp(atom/O as obj|mob|turf in range(world.view))
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "EM Pulse"
 
 	if(!check_rights(R_DEBUG|R_FUN))	return
@@ -735,7 +735,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 		return
 
 /client/proc/cmd_admin_gib(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Gib"
 
 	if(!check_rights(R_ADMIN|R_FUN))	return
@@ -758,7 +758,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 ADMIN_VERB_ADD(/client/proc/cmd_admin_gib_self, R_FUN, FALSE)
 /client/proc/cmd_admin_gib_self()
 	set name = "Gibself"
-	set category = "Fun"
+	set category = "Admin.Events"
 
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
@@ -773,9 +773,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_gib_self, R_FUN, FALSE)
 /*
 /client/proc/cmd_manual_ban()
 	set name = "Manual Ban"
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	if(!authenticated || !holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/mob/M = null
 	switch(alert("How would you like to ban someone today?", "Manual Ban", "Key List", "Enter Manually", "Cancel"))
@@ -835,7 +835,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_gib_self, R_FUN, FALSE)
 ADMIN_VERB_ADD(/client/proc/cmd_admin_check_contents, R_ADMIN, FALSE)
 //displays the contents of an instance
 /client/proc/cmd_admin_check_contents(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Check Contents"
 
 	var/list/L = M.get_contents()
@@ -848,7 +848,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_check_contents, R_ADMIN, FALSE)
 	set category = "Debug"
 	set name = "Stabilize Atmos."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 // DEFERRED
@@ -877,7 +877,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_check_contents, R_ADMIN, FALSE)
 ADMIN_VERB_ADD(/client/proc/toggle_view_range, R_ADMIN, FALSE)
 //changes how far we can see
 /client/proc/toggle_view_range()
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Change View Range"
 	set desc = "switches between 1x and custom views"
 
@@ -887,6 +887,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_view_range, R_ADMIN, FALSE)
 		view = world.view
 	if(mob)
 		mob.parallax.update()
+	apply_clickcatcher()
 	log_admin("[key_name(usr)] changed their view range to [view].")
 	//message_admins("\blue [key_name_admin(usr)] changed their view range to [view].", 1)	//why? removed by order of XSI
 
@@ -949,7 +950,7 @@ ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
 	message_admins("[key_name_admin(usr)] has [evacuation_controller.deny ? "denied" : "allowed"] the shuttle to be called.")
 
 /client/proc/cmd_admin_attack_log(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Special"
 	set name = "Attack Log"
 
 	to_chat(usr, text("\red <b>Attack Log for []</b>", mob))
@@ -959,7 +960,7 @@ ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/everyone_random, R_FUN, FALSE)
 /client/proc/everyone_random()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Everyone Random"
 	set desc = "Make everyone have a random appearance. You can only use this before rounds!"
 
@@ -1010,7 +1011,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_random_events, R_SERVER, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
 /client/proc/spawn_mob_template()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Spawn mob template"
 
 	set desc = "Spawns a pre-saved mob template"

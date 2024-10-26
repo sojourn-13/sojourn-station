@@ -35,7 +35,7 @@
 		return
 
 	if(max_length)
-		input = copytext(input, 1, max_length)
+		input = copytext_char(input, 1, max_length)
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ", "\t"=" "))
@@ -60,7 +60,7 @@
 /proc/sanitizeFileName(var/input)
 	input = replace_characters(input, list(" "="_", "\\" = "_", "\""="'", "/" = "_", ":" = "_", "*" = "_", "?" = "_", "|" = "_", "<" = "_", ">" = "_", "#" = "_"))
 	if(findtext(input,"_") == 1)
-		input = copytext(input, 2)
+		input = copytext_char(input, 2)
 	return input
 //Run sanitize(), but remove <, >, " first to prevent displaying them as &gt; &lt; &34; in some places, after html_encode().
 //Best used for sanitize object names, window titles.
@@ -70,7 +70,7 @@
 	return sanitize(replace_characters(input, list(">"=" ", "<"=" ", "\""="'","&lt;" = " ","&gt;" = " ")), max_length, encode, trim, extra)
 
 //Filters out undesirable characters from names
-/proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = 0)
+/proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = TRUE)//Soj/Liberty edit, allows to use numbers in names
 	if(!input || length(input) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 
@@ -126,7 +126,7 @@
 	if(number_of_alphanumeric < 2)	return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
 
 	if(last_char_group == 1)
-		output = copytext(output, 1, length(output))	//removes the last character (in this case a space)
+		output = copytext_char(output, 1, length(output))	//removes the last character (in this case a space)
 
 	for(var/bad_name in list("space", "floor", "wall", "r-wall", "monkey", "unknown", "inactive ai", "plating"))	//prevents these common metagamey names
 		if(cmptext(output, bad_name))	return	//(not case sensitive)
@@ -216,7 +216,7 @@
 
 /proc/replace_characters(var/t, var/list/repl_chars)
 	for(var/char in repl_chars)
-		t = replacetext(t, char, repl_chars[char])
+		t = replacetext_char(t, char, repl_chars[char])
 	return t
 
 //Adds 'u' number of zeros ahead of the text 't'
@@ -250,14 +250,14 @@
 /proc/trim_left(text)
 	for (var/i = 1 to length(text))
 		if (text2ascii(text, i) > 32)
-			return copytext(text, i)
+			return copytext_char(text, i)
 	return ""
 
 //Returns a string with reserved characters and spaces after the last letter removed
 /proc/trim_right(text)
 	for (var/i = length(text), i > 0, i--)
 		if (text2ascii(text, i) > 32)
-			return copytext(text, 1, i + 1)
+			return copytext_char(text, 1, i + 1)
 	return ""
 
 //Returns a string with reserved characters and spaces before the first word and after the last word removed.
@@ -273,9 +273,28 @@
 /proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as text|null
 	if(no_trim)
-		return copytext(html_encode(name), 1, max_length)
+		return copytext_char(html_encode(name), 1, max_length)
 	else
 		return trim(html_encode(name), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
+
+/**
+ * Used to get a properly sanitized input in a larger box. Works very similarly to stripped_input.
+ *
+ * Arguments
+ ** user - Target of the input prompt.
+ ** message - The text inside of the prompt.
+ ** title - The window title of the prompt.
+ ** max_length - If you intend to impose a length limit - default is 1024.
+ ** no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.
+*/
+/proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+	var/user_input = input(user, message, title, default) as message|null
+	if(isnull(user_input)) // User pressed cancel
+		return
+	if(no_trim)
+		return copytext(html_encode(user_input), 1, max_length)
+	else
+		return trim(html_encode(user_input), max_length)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
@@ -289,14 +308,14 @@
 		closetag = findtext(input, ">")
 		if(closetag && opentag)
 			if(closetag < opentag)
-				input = copytext(input, (closetag + 1))
+				input = copytext_char(input, (closetag + 1))
 			else
-				input = copytext(input, 1, opentag) + copytext(input, (closetag + 1))
+				input = copytext_char(input, 1, opentag) + copytext_char(input, (closetag + 1))
 		else if(closetag || opentag)
 			if(opentag)
-				input = copytext(input, 1, opentag)
+				input = copytext_char(input, 1, opentag)
 			else
-				input = copytext(input, (closetag + 1))
+				input = copytext_char(input, (closetag + 1))
 		else
 			break
 
@@ -322,9 +341,9 @@
 //(no way to know what it was supposed to be)
 		if(a != b)
 			if(a == replace) //if A is the replacement char
-				newtext = copytext(newtext, 1, newtext_it) + b + copytext(newtext, newtext_it + length(newtext[newtext_it]))
+				newtext = copytext_char(newtext, 1, newtext_it) + b + copytext_char(newtext, newtext_it + length(newtext[newtext_it]))
 			else if(b == replace) //if B is the replacement char
-				newtext = copytext(newtext, 1, newtext_it) + a + copytext(newtext, newtext_it + length(newtext[newtext_it]))
+				newtext = copytext_char(newtext, 1, newtext_it) + a + copytext_char(newtext, newtext_it + length(newtext[newtext_it]))
 			else //The lists disagree, Uh-oh!
 				return 0
 		text_it += length(a)
@@ -369,7 +388,7 @@ proc/TextPreview(var/string, var/len=40)
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	return html_encode(copytext(html_decode(text), first, last))
+	return html_encode(copytext_char(html_decode(text), first, last))
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources
@@ -562,9 +581,9 @@ proc/TextPreview(var/string, var/len=40)
 	if(!next_space)	//trailing bs
 		return string
 
-	var/base = next_backslash == 1 ? "" : copytext(string, 1, next_backslash)
-	var/macro = lowertext(copytext(string, next_backslash + 1, next_space))
-	var/rest = next_backslash > leng ? "" : copytext(string, next_space + 1)
+	var/base = next_backslash == 1 ? "" : copytext_char(string, 1, next_backslash)
+	var/macro = lowertext(copytext_char(string, next_backslash + 1, next_space))
+	var/rest = next_backslash > leng ? "" : copytext_char(string, next_space + 1)
 
 	//See http://www.byond.com/docs/ref/info.html#/DM/text/macros
 	switch(macro)
@@ -608,3 +627,21 @@ proc/TextPreview(var/string, var/len=40)
 	. = ""
 	for(var/i=1, i<=times, i++)
 		. += string
+
+
+/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
+/proc/sanitize_css_class_name(name)
+	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
+	return replacetext(name, regex, "")
+
+/proc/symbols_to_unicode(text)
+	for(var/key in GLOB.symbols_unicode_keys)
+		text = replacetext(text, key, GLOB.symbols_unicode_keys[key])
+	return text
+
+/proc/color_macro_to_html(text)
+	text = replacetext(text,"\red","<span class='red'>")
+	text = replacetext(text,"\blue","<span class='blue'>")
+	text = replacetext(text,"\green","<span class='green'>")
+	return text
+

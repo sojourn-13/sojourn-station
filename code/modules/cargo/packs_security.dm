@@ -483,7 +483,7 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Red Armor Crate"
 	group = "Xanorath Syndicate"
-
+/*
 //Sold for actual value, given its explosive, very powerful, and difficult to get ammo for. -Kaz
 /datum/supply_pack/voidwolfemporer
 	name = "Void Wolf Emporer Crate"
@@ -494,3 +494,4 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Emporer Crate"
 	group = "Xanorath Syndicate"
+*/

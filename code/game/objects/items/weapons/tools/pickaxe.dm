@@ -4,7 +4,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_EXTREME // It's a pickaxe. It's destined to poke holes in things, even armor.
+	armor_divisor = ARMOR_PEN_EXTREME // It's a pickaxe. It's destined to poke holes in things, even armor.
 	throwforce = WEAPON_FORCE_NORMAL
 	worksound = WORKSOUND_PICKAXE
 	icon_state = "pickaxe"
@@ -185,3 +185,16 @@
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 3)
 	price_tag = 70
+
+/obj/item/tool/pickaxe/borgonly
+	name = "Cyborg Mining Tool"
+	desc = "A dedicated mining tool. Essentially just a hunk of plasteel backed up by a small canister of inexpensive nanites that keep it from falling apart or dulling. \
+	Due to the reinforcement it's very heavy which makes it great at pacifying natives, but not so much at precise excavation. There is little space for tool mods due to it's dedicated nature."
+	force = WEAPON_FORCE_DANGEROUS * 1.5
+	tool_qualities = list(QUALITY_PRYING = 20)
+	toggleable = TRUE
+	workspeed = 0.75 // way faster than it appears. Normal pickaxe qualities make mining cyborgs with default skillset go lightning fast.
+	max_upgrades = 2
+	degradation = 0
+	switched_off_qualities = list(QUALITY_EXCAVATION = 5, QUALITY_PRYING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 25, QUALITY_PRYING = 20)

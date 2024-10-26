@@ -39,9 +39,15 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/reinforced/medical
 	back = /obj/item/storage/backpack/satchel/medical
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1, \
-							/obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1, /obj/item/bodybag/cryobag = 2, \
-							/obj/item/storage/firstaid/blackshield/large = 1, /obj/item/storage/firstaid/surgery/si = 1, /obj/item/roller/compact  = 1, /obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
+	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1,
+							/obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1,
+							/obj/item/gun_upgrade/trigger/dnalock = 1,
+							/obj/item/gun_upgrade/muzzle/silencer = 1,
+							/obj/item/bodybag/cryobag = 2,
+							/obj/item/storage/firstaid/blackshield/large = 1,
+							/obj/item/storage/firstaid/surgery/si = 1,
+							/obj/item/roller/compact  = 1,
+							/obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/medical_ert
 
@@ -58,7 +64,11 @@
 	belt = /obj/item/storage/belt/security/tactical/marshalert
 	head = /obj/item/clothing/head/soft/sarge2soft
 	back = /obj/item/storage/backpack/security
-	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3, /obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1 )
+	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3,
+							/obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2,
+							/obj/item/ammo_casing/grenade/flash = 2,
+							/obj/item/ammo_casing/grenade/blast = 2,
+							/obj/item/modular_computer/tablet/lease/preset/command = 1 )
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/aa/marshal_ert
 
@@ -106,11 +116,9 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/guild_ert
 
 /decl/hierarchy/outfit/lss_ert
-	name = "Auditor"
-	l_ear = /obj/item/device/radio/headset/headset_com
-	head = /obj/item/clothing/head/helmet/technomancersuit //Looks good enuff and has good armor I guess
+	name = "Internal Affairs Agent"
+	l_ear = /obj/item/device/radio/headset/heads/merchant
 	uniform = /obj/item/clothing/under/suit_jacket/executive
-	suit = /obj/item/clothing/suit/storage/cargovest
 	r_pocket = /obj/item/device/t_scanner/advanced
 	pda_type = /obj/item/modular_computer/pda/heads
 	glasses = /obj/item/clothing/glasses/sunglasses/big
@@ -124,6 +132,25 @@
 							/obj/item/modular_computer/tablet/lease/preset/command = 1)
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/aa/auditor_ert
+
+/decl/hierarchy/outfit/church_ert
+	name = "Inquisitor"
+	l_ear = /obj/item/device/radio/headset/heads/preacher
+	id_slot = slot_wear_id
+	id_type = /obj/item/card/id/syndicate/ert/church_ert
+	uniform = /obj/item/clothing/under/rank/preacher
+	suit = /obj/item/clothing/suit/storage/chaplain/coat
+	suit_store = /obj/item/gun/energy/plasma //Dominion plasma rifle
+	head = /obj/item/clothing/head/preacher
+	shoes = /obj/item/clothing/shoes/reinforced
+	belt = /obj/item/storage/belt/security/neotheology
+	gloves = /obj/item/clothing/gloves/thick
+	back = /obj/item/storage/backpack/satchel/neotheology
+	backpack_contents = list(/obj/item/book/ritual/cruciform/priest = 1,
+							/obj/item/gun/energy/taser = 1, //Counselor stun gun
+							/obj/item/cell/medium/neotheology/plasma = 4
+
+	)
 
 /decl/hierarchy/outfit/sri_ert
 	name = "Ethics Committee investigator"
@@ -175,3 +202,90 @@
 	/obj/item/device/radio = 1, /obj/item/tool_upgrade/productivity/ergonomic_grip = 1, /obj/item/tool_upgrade/refinement/laserguide = 1, /obj/item/clothing/accessory/holster/leg = 1, \
 	/obj/item/tool/knife/boot = 1, /obj/item/reagent_containers/food/snacks/openable/mre = 1, /obj/item/clothing/mask/gas = 1)
 	l_pocket = /obj/item/storage/pouch/ammo
+
+//Solfed shit. Use sparingly.
+
+
+/decl/hierarchy/outfit/solfed_survivor
+	name = "Solarian Reconnoiterer"
+	l_ear  = /obj/item/device/radio/headset/headset_blackshield/bowman/solfed
+	r_ear = /obj/item/storage/fancy/cigarettes/frozen
+	head = /obj/item/clothing/head/rank/solfedrecon
+	mask = /obj/item/clothing/mask/gas/old
+	uniform = /obj/item/clothing/under/rank/fatigues/camo/solfed
+	suit_store = /obj/item/gun/projectile/automatic/omnirifle/scoped
+	l_pocket = /obj/item/storage/pouch/ammo
+	r_pocket = /obj/item/clothing/accessory/passcard/passport_sol
+	gloves = /obj/item/clothing/gloves/thick/swat
+	glasses = /obj/item/clothing/glasses/ballistic
+	shoes = /obj/item/clothing/shoes/swat
+	belt = /obj/item/storage/belt/security/tactical/solfed
+	back = /obj/item/storage/backpack/military
+
+	backpack_contents = list(/obj/item/rig/combat/solfed/equipped = 1,
+	/obj/item/ammo_magazine/heavy_rifle_408/hv = 5,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 1,
+	/obj/item/storage/firstaid/combat = 1,
+	/obj/item/storage/firstaid/ifak =1,
+	/obj/item/gun/projectile/lamia/socom = 1,
+	/obj/item/clothing/accessory/holster/leg = 1
+	)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/solfed
+
+
+/decl/hierarchy/outfit/solfed_survivor_medic
+	name = "Solarian Combat Medic"
+	l_ear  = /obj/item/device/radio/headset/headset_blackshield/bowman/solfed
+	r_ear = /obj/item/storage/fancy/cigarettes/frozen
+	head = /obj/item/clothing/head/rank/solfedmed
+	mask = /obj/item/clothing/mask/gas/old
+	uniform = /obj/item/clothing/under/rank/fatigues/camo/solfed
+	suit = /obj/item/clothing/suit/armor/platecarrier/solfed/corpsman
+	suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
+	l_pocket = /obj/item/storage/pouch/ammo
+	r_pocket = /obj/item/clothing/accessory/passcard/passport_sol
+	gloves = /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
+	glasses = /obj/item/clothing/glasses/ballistic/med
+	shoes = /obj/item/clothing/shoes/swat
+	belt = /obj/item/storage/belt/security/tactical/solfed
+	back = /obj/item/storage/backpack/duffelbag
+
+	backpack_contents = list(/obj/item/ammo_magazine/heavy_rifle_408/hv = 5,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 1,
+	/obj/item/storage/firstaid/combat = 1,
+	/obj/item/storage/pouch/large_generic/advmedic = 2,
+	/obj/item/storage/firstaid/adv = 1,
+	/obj/item/tool/medmultitool = 1,
+	/obj/item/gun/projectile/ladon = 1,
+	/obj/item/ammo_magazine/magnum_40/hv = 3,
+	/obj/item/clothing/accessory/holster/leg = 1
+	)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/solfed
+
+/decl/hierarchy/outfit/solfed_survivor_aux
+	name = "Solarian Auxilliary"
+	l_ear  = /obj/item/device/radio/headset/headset_blackshield/bowman/solfed
+	r_ear = /obj/item/storage/fancy/cigarettes/frozen
+	head = /obj/item/clothing/head/rank/solfedrecon
+	mask = /obj/item/clothing/mask/gas/old
+	uniform = /obj/item/clothing/under/rank/fatigues/camo/solfed
+	suit = /obj/item/clothing/suit/armor/platecarrier/solfed
+	suit_store = /obj/item/gun/projectile/automatic/omnirifle
+	l_pocket = /obj/item/storage/pouch/ammo
+	r_pocket = /obj/item/clothing/accessory/passcard/passport_sol
+	gloves = /obj/item/clothing/gloves/thick/swat
+	glasses = /obj/item/clothing/glasses/ballistic
+	shoes = /obj/item/clothing/shoes/swat
+	belt = /obj/item/storage/belt/security/tactical/solfed
+	back = /obj/item/storage/backpack/military
+
+	backpack_contents = list(/obj/item/ammo_magazine/heavy_rifle_408/hv = 5,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 1,
+	/obj/item/storage/firstaid/ifak =1,
+	/obj/item/gun/projectile/lamia = 1,
+	/obj/item/clothing/accessory/holster/leg = 1
+	)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/solfed
