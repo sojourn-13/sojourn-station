@@ -21,14 +21,15 @@
 	init_recoil = RIFLE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/sawn/true
 
 
 	init_firemodes = list(
-		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
+		FULL_AUTO_300,
 		)
 
 
@@ -67,6 +68,7 @@
 	saw_off = FALSE
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/automatic/sts/sawn/true // The one we should get
 
@@ -222,7 +224,7 @@
 	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
-	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/sts, /obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)
