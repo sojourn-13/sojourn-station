@@ -313,3 +313,6 @@
 	/// Used to dictate if the critter is poisonous or not
 	var/poison_per_bite = 0
 	var/poison_type
+
+	var/list/zone_hit_rates = list(BP_HEAD = 10, BP_CHEST = 50, BP_GROIN = 35, BP_R_ARM = 30, BP_L_ARM = 30, BP_R_LEG = 20, BP_L_LEG = 20)
+
