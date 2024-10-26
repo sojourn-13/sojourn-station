@@ -68,6 +68,7 @@
 	saw_off = FALSE
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/automatic/sts/sawn/true // The one we should get
 
@@ -224,6 +225,6 @@
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
 	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
+	resultvars = list(/obj/item/gun/projectile/automatic/sts, /obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)
