@@ -111,6 +111,7 @@
 		/datum/design/autolathe/sword/nt_warhammer,
 		/datum/design/autolathe/sword/nt_flanged,
 		/datum/design/autolathe/sword/nt_power,
+		/datum/design/autolathe/nt/sword/nt_verutum,
 		/datum/design/autolathe/nt/shield/nt_buckler,
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,
