@@ -492,18 +492,19 @@
 	singular_name = "verutum"
 	plural_name = "veruta"
 	wielded_icon = "nt_verutum_wielded"
-	force = 20
-
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_BRUTAL
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
-	throwforce = WEAPON_FORCE_LETHAL
 	armor_divisor = ARMOR_PEN_DEEP
-	throw_speed = 3
+	throw_speed = 2
 	price_tag = 150
+	no_swing = TRUE // Small javelin
 	allow_spin = FALSE
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 5) // Easy to mass-produce and arm the faithful
-	//style_damage = 30 - todo port this maybe?
+	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTEEL = 5)
 
-/obj/item/stack/thrown/nt/verutum/launchAt()
-	embed_mult = 600
+/obj/item/stack/thrown/nt/verutum/launchAt(atom/target, mob/living/carbon/C)
+	var/ROB_throwing_damage = max(C.stats.getStat(STAT_ROB), 1)
+	throwforce = WEAPON_FORCE_BRUTAL / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
 	..()
+
