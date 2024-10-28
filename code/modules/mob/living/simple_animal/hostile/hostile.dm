@@ -37,6 +37,8 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/poison_per_bite = 0 //To handle poisonous bigguns
 	var/poison_type
 
+	var/list/zone_hit_rates = list(BP_HEAD = 10, BP_CHEST = 50, BP_GROIN = 35, BP_R_ARM = 30, BP_L_ARM = 30, BP_R_LEG = 20, BP_L_LEG = 20)
+
 /mob/living/simple_animal/hostile/Destroy()
 	target_mob = null
 
@@ -301,8 +303,9 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/obj/item/projectile/A = new projectiletype(src.loc)
 	playsound(user, projectilesound, 100, 1)
 	if(!A)	return
-	var/def_zone = get_exposed_defense_zone(target)
+	var/def_zone = pickweight(zone_hit_rates)
 	A.original_firer = src
+	A.predetermed = def_zone
 	A.launch(target, def_zone)
 
 /mob/living/simple_animal/hostile/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
