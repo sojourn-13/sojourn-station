@@ -115,6 +115,22 @@
 	path = /obj/item/clothing/head/rank/fatigue/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/factionblackshield/shoulderboardselection
+	display_name = "shoulderboard selection"
+	description = "A selection of Blackshield shoulderboards."
+	path = /obj/item/clothing/accessory/ranks
+
+/datum/gear/factionblackshield/shoulderboardselection/New()
+	..()
+	var/shoulderboards = list(
+		"blank shoulderboards"			=	/obj/item/clothing/accessory/ranks/blank,
+		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper,
+		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman,
+		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant,
+		"commander shoulderboards"		=	/obj/item/clothing/accessory/ranks/commander,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(shoulderboards)
+
 /datum/gear/factionblackshield/blackshieldbackpack
 	display_name = "green blackshield backpack"
 	path = /obj/item/storage/backpack/militia/green
