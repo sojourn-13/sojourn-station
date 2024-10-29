@@ -2,7 +2,7 @@
 
 /obj/item/gun_upgrade/trigger/faulty
 	name = "Faulty Trigger"
-	desc = "Weirdly sticky, and none of your fingers seem to fit to it comfortably. This causes more recoil and increases delay between shots as you try to compensate for it."
+	desc = "Oddly sticky and grimy, none of your fingers seem to fit. Reduces rate of fire and increases recoil since you have to fiddle around to use it."
 	icon_state = "Cop_Block"
 	price_tag = 0
 
@@ -22,7 +22,7 @@
 
 /obj/item/gun_upgrade/barrel/faulty
 	name = "Warped Barrel"
-	desc = "Extreme heat has warped this barrel off-target. This decreases the impact force of bullets fired through it and makes it more difficult to correctly aim the weapon it's attached to."
+	desc = "Extreme heat has warped this barrel beyond a usable point. It is almost impossible to hit something properly with this and the reduced velocity of the bullet decreases it's impact force. Good luck with that."
 	icon_state = "Forged_barrel"
 	price_tag = 0
 
@@ -43,7 +43,7 @@
 
 /obj/item/gun_upgrade/muzzle/faulty
 	name = "Failed Makeshift Silencer"
-	desc = "Inspired by cheesy action movies, somebody has left trash on the end of this weapon. This causes the attached weapon to suffer from weaker armor penetration."
+	desc = "Whoever got inspired by cheesy action movies fashioned an old can into a silencer. Just like real silencers, this doesnt have the supposed effect. It actually reduces the impact bullets will have on the target."
 	icon_state = "silencer"
 	price_tag = 0
 
@@ -63,7 +63,7 @@
 
 /obj/item/gun_upgrade/mechanism/faulty
 	name = "Unknown Clockwork Mechanism"
-	desc = "It's really not clear what this modification actually does. It appears to effect the attached weapon's recoil, but if it actually helps or hinders the weapon is unclear."
+	desc = "It's really not clear what this modification actually does. It appears to affect the recoil of the weapon it is attached to, but if it actually helps or hinders the weapon is unclear."
 	icon_state = "Clockblock"
 	price_tag = 0
 
@@ -82,7 +82,7 @@
 
 /obj/item/gun_upgrade/scope/faulty
 	name = "Misaligned sights"
-	desc = "Some bad knocks have changed the angling on the sights of this weapon. This causes the attached weapon to suffer from decreased accuracy."
+	desc = "This weapon has been improperly used as a melee weapon, misaligning the sights. Aiming with this is untenable."
 	icon_state = "Watchman"
 	price_tag = 0
 
@@ -100,8 +100,8 @@
 	I.prefix = "scoped"
 
 /obj/item/gun_upgrade/mechanism/faulty_trapped
-	name = "Jammed loader"
-	desc = "The mechanism that loads bullets into the chamber has jammed, one would be lucky the gun didn't explode if this was shot."
+	name = "Jammed loading-mechanism"
+	desc = "The loading spring is worn down or rusted so heavily that it doesnt feed bullets properly and jams the gun."
 	icon_state = "Reverse_loader"
 
 /obj/item/gun_upgrade/mechanism/faulty_trapped/New()
@@ -123,7 +123,7 @@
 
 /obj/item/gun_upgrade/trigger/conductive_trigger
 	name = "Conductive Trigger"
-	desc = "When shooting a lot the trigger warms up form a charge back, luckly its non-harmful."
+	desc = "This trigger heats up during sustained firing. Who installed this?"
 	icon_state = "Cop_Block"
 	price_tag = 0
 
@@ -143,8 +143,8 @@
 
 //Same as warped barrel
 /obj/item/gun_upgrade/barrel/rubber_coiled_barrel
-	name = "Rubber Coil"
-	desc = "Someone wrapped cable coil all around the inside. Really messes with output power"
+	name = "Rubber Coiled Barrel"
+	desc = "Why would someone fit the inside of a barrel with rubber cable? It reduces output power!"
 	icon_state = "Forged_barrel"
 	price_tag = 0
 
@@ -165,8 +165,8 @@
 
 //More power + less pen
 /obj/item/gun_upgrade/muzzle/rusted
-	name = "Rusted Copper Muzzel"
-	desc = "A copper muzzel that has been water damaged. This causes the attached weapon to suffer from weaker armor penetration and increases power draw."
+	name = "Rusted Copper Muzzle"
+	desc = "This copper muzzle is rusted from water exposure. This causes the weapon it is attached to to suffer weaker armor penetration and increased power drain."
 	icon_state = "silencer"
 	price_tag = 0
 
@@ -187,7 +187,7 @@
 //Massively increases charge costs
 /obj/item/gun_upgrade/mechanism/outdated
 	name = "Outdated Charge Port Mechanism"
-	desc = "An outdated old copper based charge port that makes any almost hold half as much charge."
+	desc = "An outdated copper based charge port that massively increases power drain."
 	icon_state = "Clockblock"
 	price_tag = 0
 
@@ -206,8 +206,8 @@
 
 //Egun verson of the rigged loader
 /obj/item/gun_upgrade/mechanism/bad_brackets
-	name = "Acid Corroided Brackets"
-	desc = "Everything that makes sure the laser goes the right way was damaged by cell acid making it likely to discharge backwards at a luckly reduced rate."
+	name = "Corroded Brackets"
+	desc = "Cell Acid leaked and corroded the coils for stabilizing energy projectiles. Has a tendency to discharge the gun in the wrong direction and damage the user."
 	icon_state = "Reverse_loader"
 
 /obj/item/gun_upgrade/mechanism/bad_brackets/New()

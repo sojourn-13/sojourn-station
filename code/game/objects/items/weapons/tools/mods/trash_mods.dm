@@ -1,7 +1,7 @@
 
 /obj/item/tool_upgrade/stickers
 	name = "Aged Stickers"
-	desc = "A collection of old stickers laminated that have only collected dust and oil making it harder to hold."
+	desc = "A collection of old stickers worn down by time and full of dirt and grime make the tool harder to hold properly."
 	icon_state = "artmod_1"
 	price_tag = 0
 
@@ -21,8 +21,8 @@
 	I.removal_difficulty *= rand(5, 15)/10
 
 /obj/item/tool_upgrade/loudener
-	name = "Horn Fittings"
-	desc = "For malius reasons horns have been added; leading to making the tool much louder."
+	name = "Fitted Horns"
+	desc = "For some malicious reason somenone added horns, making the tool louder. Who would do such a thing?"
 	icon_state = "dampener"
 	price_tag = 0
 
@@ -42,8 +42,8 @@
 	I.removal_difficulty *= rand(5, 15)/10
 
 /obj/item/tool_upgrade/moldy_paint
-	name = "Mold Paint"
-	desc = "Once rich red, now a sickly green. At lest now you can slowly peal off the paint..."
+	name = "Moldy Paint"
+	desc = "Once a deep red, now a sickly yellow-green. At least now you can slowly peel off the paint..."
 	icon_state = "paint_red"
 	price_tag = 0
 
@@ -62,7 +62,7 @@
 
 /obj/item/tool_upgrade/cracked_fuel
 	name = "Cracked Fuel Tank"
-	desc = "Secondary fuel tank that has a massive crack in it leading to fuel leaking if you topped it off."
+	desc = "The massive crack in the fuel tank prevents you from filling it up properly. You should exchange this."
 	icon_state = "canister"
 	price_tag = 0
 
@@ -84,7 +84,7 @@
 
 /obj/item/tool_upgrade/broken_plasma_injector
 	name = "Burnt Plasma Injector"
-	desc = "Once set on fire, these things only slow you down."
+	desc = "This injector is burnt from sustained wear and tear, reducing its efficiency."
 	icon_state = "injector"
 	price_tag = 0
 
@@ -104,8 +104,8 @@
 	I.removal_difficulty *= rand(5, 15)/10
 
 /obj/item/tool_upgrade/faulty_heatsink
-	name = "wrongly installed heatsink"
-	desc = "This heatsink was added to the tool, completely wrong making it take more power and more space well also damaging the tools health even more."
+	name = "faulty heatsink"
+	desc = "This heatsink was falsely installed. It damages the tool with every use and due to the installation more power is used. It is also clunky and doesnt fit properly. Whoever jury-rigged this didnt know what they were doing."
 	icon_state = "heatsink"
 	price_tag = 0
 
@@ -126,8 +126,8 @@
 	I.removal_difficulty *= rand(5, 15)/10
 
 /obj/item/tool_upgrade/not_magnetic
-	name = "demagnetic bit"
-	desc = "Someone welded this magnetic bit, completely destorying its magnetic field. It's not even helping as a weapon."
+	name = "demagnetized bit"
+	desc = "Someone welded this on with too much heat and destroyed the the bit in the process. This is useless."
 	icon_state = "magnetic"
 	price_tag = 0
 
@@ -148,8 +148,8 @@
 
 //Comic gold right here. Funniest thing you ever seen!
 /obj/item/tool_upgrade/fungi
-	name = "cyphelloid barrel"
-	desc = "A normally fine mod left to house a mushroom, sticky and slimey."
+	name = "overgrown barrel"
+	desc = "A formerly fine gun barrel, now sticky and slimy, left to house a cyphelloid fungi growth. At least you hope it is."
 	icon_state = "ported_barrel"
 	price_tag = 0
 
