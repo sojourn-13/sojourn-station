@@ -1,9 +1,9 @@
 /datum/genetics/mutation/miner_sight
 	name = "Miner Sight"
 	key = "MUTATION_MINER_SIGHT"
-	desc = "The holder is able to mine out ore vains and burrows with much more easy."
+	desc = "The holder is able to mine more ore veins and close burrows with ease."
 	var/mutation = MINING
-	gain_text = "When looking at burrows and ore vains its hard to ignore the glints that sparkle now."
+	gain_text = "When looking at burrows and ore veins its hard to ignore the glints that now seem to shimmer."
 	instability = 25
 
 /datum/genetics/mutation/miner_sight/onMobImplant()

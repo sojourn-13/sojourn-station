@@ -2,7 +2,7 @@
 /datum/genetics/mutation/punch
 	name = "Heavy Hands"
 	key = "MUTATION_PUNCH"
-	desc = "Increases the force you swing your hands."
+	desc = "Increases the force you can put in your bare-handed blows."
 	gain_text = "Your hands feel like heavy liquid is pooling inside them..."
 	instability = 10
 
