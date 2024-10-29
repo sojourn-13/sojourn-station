@@ -603,6 +603,11 @@ Neglects to mention where to find its pieces.
 		"The Hyperion mutation can enhance cloned organs, like the Blood Vessels.",
 		"The Hyperion mutation can enhance cloned organs, like the Nerves.",
 		"The Hyperion mutation can enhance cloned organs, like the Muscles.",
+		"Hell Divers are just really hungery and leathery opossom if you don't think about it!",
+		"The Flesh sacs with proteen milk can lead to heavyer hands.",
+		"Baldness and coughing when combind can lead to protective coating for genes.",
+		"DNA Mending and Epilepsy can make another layer of DNA protection.",
+		"DNA Mending and Ervousness can make another layer of DNA protection.",
 		"Mixed with a cloking mutation, the Hyperion mutation can be combined to cause phasing.",
 		"A greater cloaking mutation can be irradiated to cause phasing.",
 		"The DNA of a golden roach can be combined with an imbecile mutation to make a mutagen that enforces docility.",
@@ -613,6 +618,7 @@ Neglects to mention where to find its pieces.
 		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
 		"Bank to Bank, River to River, Ocean to Ocean, weaved together to make a Temple.",
 		"Eye's of a cat, belly of a beast and a bank of blood will make a most regal sickness.",
+		"Mix Unstable foot, Eye's of a cat and drawfism to make something any miner would love.",
 		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
 	desc = "Xenogenetics fact of the day: [blurb]"
 

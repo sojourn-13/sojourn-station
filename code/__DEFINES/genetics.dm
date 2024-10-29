@@ -56,6 +56,7 @@
 #define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
+#define MUTATION_PUNCH /datum/genetics/mutation/punch
 //Blood Increasers
 #define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
 #define MUTATION_BLOOD_RIVER /datum/genetics/mutation/blood_river
@@ -63,6 +64,10 @@
 #define MUTATION_BLOOD_SEA /datum/genetics/mutation/blood_sea
 #define MUTATION_BLOOD_TEMPLE /datum/genetics/mutation/blood_temple
 #define MUTATION_VAMPIRE /datum/genetics/mutation/vampire
+//Genes that directly decrease instability
+#define MUTATION_GENE_MENDING /datum/genetics/mutation/gene_mending
+#define MUTATION_GENE_MENDING_H /datum/genetics/mutation/gene_mending_h
+#define MUTATION_GENE_MENDING_R /datum/genetics/mutation/gene_mending_r
 
 #define MUTATION_SEASONED_MIND /datum/genetics/mutation/seasoned_mind
 #define MUTATION_SHOCK_LESS /datum/genetics/mutation/shock_less
@@ -76,6 +81,7 @@
 #define MUTATION_NO_BREATHE /datum/genetics/mutation/disability/nobreathe
 #define MUTATION_HULK /datum/genetics/mutation/disability/hulk
 #define MUTATION_FRIENDLY /datum/genetics/mutation/friendly
+#define MUTATION_MINER_SIGHT /datum/genetics/mutation/miner_sight
 //^^^ All mutations!
 
 
@@ -118,6 +124,7 @@
 #define SHOCK_LESS           13
 #define VAMPIRE              14
 #define PAIN_LESS            15
+#define MINING               16
 
 
 //Thresholds for mutagenic Destabilization
