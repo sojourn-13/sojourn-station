@@ -127,7 +127,7 @@
 
 /obj/item/tool_upgrade/not_magnetic
 	name = "demagnetized bit"
-	desc = "Someone welded this on with too much heat and destroyed the the bit in the process. This is useless."
+	desc = "Someone welded this on with too much heat and destroyed the bit in the process. This is useless."
 	icon_state = "magnetic"
 	price_tag = 0
 
