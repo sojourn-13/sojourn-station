@@ -1008,5 +1008,12 @@
 	item_state = "wcorp"
 	var/harm_charge = 0
 	var/squeaking = 0
+	var/drain = 0
+
+/obj/item/clothing/shoes/crimsoncross_warp/examine(mob/user)
+	..()
+	if(ishuman(user))
+		if(user.stats.getPerk(PERK_NO_OBFUSCATION))
+			to_chat(user, SPAN_WARNING("The shoes have a charge rating of [harm_charge], last boost of speed value was [squeaking]. Last charge drop from running was [drain]."))
 
 //Tools and tool mods (these are for things not intended for fighting but for actual tools)

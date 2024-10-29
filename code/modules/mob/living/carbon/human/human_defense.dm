@@ -596,6 +596,7 @@ uniquic_armor_act
 			if(CW.harm_charge >= 400)
 				fear += 1
 			CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
+			CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
 			return CW.squeaking
 	//We at this moment only have one outfit that we check and its by path for now.
 	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
