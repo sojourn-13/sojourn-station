@@ -606,7 +606,7 @@ Neglects to mention where to find its pieces.
 		"Hell Divers are just a really hungry and leathery opossum if you don't think too much about it!",
 		"The flesh sacs with protein milk can lead to heavier hands.",
 		"Baldness and coughing when combined can lead to protective coating for genes.",
-		"DNA Mending and Epilepsy can creater another layer of DNA protection.",
+		"DNA Mending and Epilepsy can create another layer of DNA protection.",
 		"DNA Mending and Nervousness can create another layer of DNA protection.",
 		"Mixed with a cloaking mutation, the Hyperion mutation can be combined to cause phasing.",
 		"A greater cloaking mutation can be irradiated to cause phasing.",
