@@ -1003,7 +1003,7 @@
 /obj/item/clothing/shoes/crimsoncross_warp
 	name = "\"Warp\" Running shoes"
 	desc = "An anomalous clothing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
-	A pare of shoes that the more the ware gets hurt the more charge it builds up, when running, automatically spend charge to gain a speed boost. Walking does use give charge."
+	A pair of shoes that the more the wearer gets hurt the more charge it builds up. When running, they automatically spend charge to gain a speed boost. Walking doesn't use charge."
 	icon_state = "wcorp"
 	item_state = "wcorp"
 	var/harm_charge = 0
@@ -1014,6 +1014,6 @@
 	..()
 	if(ishuman(user))
 		if(user.stats.getPerk(PERK_NO_OBFUSCATION))
-			to_chat(user, SPAN_WARNING("The shoes have a charge rating of [harm_charge], last boost of speed value was [squeaking]. Last charge drop from running was [drain]."))
+			to_chat(user, SPAN_WARNING("The shoes have a charge rating of [harm_charge], last speedboost value was [squeaking]. Last charge use from running was [drain]."))
 
 //Tools and tool mods (these are for things not intended for fighting but for actual tools)
