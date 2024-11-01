@@ -1033,7 +1033,7 @@
 	armor_divisor = 0.6
 	wounding_mult = WOUNDING_SMALL //lotta relatively smaller pellets.
 	pellets = 4
-	range_step = 1
+	range_step = 2	//Range step of 1 includes base-tile..
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9

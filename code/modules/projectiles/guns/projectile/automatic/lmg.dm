@@ -202,7 +202,7 @@
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
 	penetration_multiplier = 1
 	init_recoil = HMG_RECOIL(0.6) // Better slap a bipod on this one! Impossible to fire steady if not braced.
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced.
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced. Added scope since it's an HMG, it would benifit form it.
 	serial_type = "NM"
 
 	init_firemodes = list(
