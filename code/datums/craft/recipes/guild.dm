@@ -309,7 +309,7 @@
 	result = /obj/item/gun/energy/laser/railgun/gauss
 	icon_state = "gun"
 	steps = list(
-		list(CRAFT_MATERIAL, 40, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60),
 		list(CRAFT_MATERIAL, 8, MATERIAL_GOLD, "time" = 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_SILVER, "time" = 20),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 20),
