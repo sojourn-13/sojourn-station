@@ -34,6 +34,9 @@
 
 /obj/item/borg/upgrade/reset/action(mob/living/silicon/robot/R)
 	if(..()) return FALSE
+
+	R.has_wreck_sprite = FALSE
+
 	R.uneq_all()
 	R.modtype = initial(R.modtype)
 
@@ -49,6 +52,10 @@
 	R.old_x = 0
 	R.default_pixel_x = 0
 	R.stats.removeAllPerks() //We dont want to stack perks on perks so we remove them all, sads
+	R.allow_resting = FALSE    // Fluff action for borgs with resting icons
+	R.actively_resting = FALSE // Are we currently resting?
+	R.tall_sprites = null
+	R.updateicon()
 	qdel(src)
 	return TRUE
 
@@ -117,6 +124,9 @@
 	R.death_notified = FALSE
 	R.vtech_added_speed = 0
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT)
+	for(var/obj/screen/health/cyborg/CHUD in R.HUDprocess)
+		if(CHUD)
+			CHUD.overlays.Cut()
 	qdel(src)
 	return TRUE
 
