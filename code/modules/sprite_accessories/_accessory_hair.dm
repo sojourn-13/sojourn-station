@@ -648,7 +648,7 @@
 	name = "Rows Bun"
 	icon_state = "rows3"
 
-/datum/sprite_accessory/hair/sergeant
+/datum/sprite_accessory/hair/sargeant
 	name = "Flat Top"
 	icon_state = "sargeant"
 
