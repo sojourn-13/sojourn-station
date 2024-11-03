@@ -8,7 +8,7 @@
 		"You connect the [used_atom] to the [holder]" //What we see in are own chat
 	)
 	holder.add_overlay(used_atom.icon_state+"+o") //Magic letter o in sprites to make them all different. Used for icons.
-	qdel(used_atom) //We ALWAYS delete the mech lim/part used. No way to get this back.
+	qdel(used_atom) //We ALWAYS delete the mech limb/part used. No way to get this back.
 	return 1
 
 /datum/construction/mecha/action(atom/used_atom,mob/user as mob)
@@ -142,7 +142,7 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "example0" //Make sure these are correct with icons. They are picky about it
 		const_holder.density = 1 //This is so we cant pick up or walk onto a contrustion for a mech
-		const_holder.desc = "A chassis or case for a example mech." //Used to tell what lims/spare parts are needed, could be anything really.
+		const_holder.desc = "A chassis or case for a example mech." //Used to tell what limbs/spare parts are needed, could be anything really.
 
 		spawn()
 			qdel(src) //Delets are mech contrution part rig thing that we used to slap on head/arms/legs

@@ -484,7 +484,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				plusing_intraction(I, user)
 				return
 
-			//This is litterly just a stop gap so you dont accidently decon your weapon.
+			//This is litteraly just a stop gap so you dont accidently decon your weapon.
 			if(QUALITY_SCREW_DRIVING)
 				..()
 				return

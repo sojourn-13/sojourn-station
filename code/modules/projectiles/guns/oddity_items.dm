@@ -692,7 +692,7 @@
 			able_to_use = TRUE
 		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/stump))
 			able_to_use = TRUE
-		//Robo *lim* bypasses needing only 1 arm, but having 2 robo lims cancle one another out
+		//Robo *lim* bypasses needing only 1 arm, but having 2 robo limbs cancle one another out
 		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/robotic))
 			robo_lim += 1
 		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/robotic))
