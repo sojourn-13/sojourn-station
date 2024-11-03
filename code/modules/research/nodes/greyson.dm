@@ -224,7 +224,7 @@
 
 /datum/technology/GP_robotics
 	name = "Greyson Positronic Positronics"
-	desc = "GP Robotic lims."
+	desc = "GP Robotic limbs."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.8 //top right
