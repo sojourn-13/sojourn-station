@@ -64,7 +64,7 @@
 
 /*Robotic Internals ====================================
 TODO: Get this all sorted out, atm people will have to print of
-the lims and such to pull out the internal bits for other people if needed
+the limbs and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/robotic_internals
 	category = "Medical"
 
