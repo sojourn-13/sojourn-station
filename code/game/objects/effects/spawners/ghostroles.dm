@@ -114,7 +114,7 @@
 	outfit = /decl/hierarchy/outfit/si_medical_ert
 	ghost_role_perks = list(PERK_MEDICAL_EXPERT, PERK_ADVANCED_MEDICAL, PERK_SI_SCI, PERK_CHEMIST, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are a Medical Emergency Personnel."
-	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
 	assignedrole = "Medical Emergency Personnel"
 	title = "Medical Emergency Personnel"
 	stat_modifiers = list(
@@ -177,7 +177,7 @@
 	outfit = /decl/hierarchy/outfit/engi_ert
 	ghost_role_perks = list(PERK_INSPIRATION, PERK_HANDYMAN, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are Engineering Emergency Personnel."
-	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
 	assignedrole = "Guild Emergency Personnel"
 	title = "Guild Emergency Personnel"
 	stat_modifiers = list(
