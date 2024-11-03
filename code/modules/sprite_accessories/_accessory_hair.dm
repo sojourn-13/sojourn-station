@@ -650,7 +650,7 @@
 
 /datum/sprite_accessory/hair/sergeant
 	name = "Flat Top"
-	icon_state = "sergeant"
+	icon_state = "sargeant"
 
 /datum/sprite_accessory/hair/scully
 	name = "Scully"
