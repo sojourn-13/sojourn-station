@@ -150,7 +150,7 @@
 /datum/task_master/task/tool_breaker
 	name = "Tool Consumer"
 	key = "TOOL_BREAKER"
-	desc = "Sometimes things just break. At lest its a good learning experience..."
+	desc = "Sometimes things just break. At least its a good learning experience..."
 	gain_text = "Oops."
 	level_thresholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
 
