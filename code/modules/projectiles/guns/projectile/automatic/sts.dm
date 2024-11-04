@@ -100,7 +100,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "short-barreled \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -146,7 +146,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -164,7 +164,7 @@
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
 	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
-	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
+	The lightweight polymer, skeletal stock and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
 	icon_state = "stspara"
@@ -196,7 +196,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn
 	name = "short-barreled Blackshield \"STS PARA\" rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still able to function."
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts35.dmi'
 	icon_state = "stspara"
 	item_state = "stspara"
@@ -220,7 +220,7 @@
 
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
-	desc = "An STS rifle frame. Cheap, effective, and replaceable."
+	desc = "An STS rifle frame. Cheap, effective, replaceable."
 	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
