@@ -4,8 +4,8 @@
 	icon_state = "excubitor"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting those who threaten the Absolute's floak. \
-	The Excubitor is a Halberd of Church design with a experimental plasma weapon built into the halberd itself that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel."
+	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting those who threaten the Absolute's flock. \
+	The Excubitor is a halberd of Church design with an experimental plasma weapon built into the halberd itself that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel."
 	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
