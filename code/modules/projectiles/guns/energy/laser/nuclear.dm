@@ -2,8 +2,7 @@
 	name = "\"EBR-IV\" Nuclear Particle Rifle"
 	desc = "A prototype of a 'self-sustaining experimental breeder rifle' powering itself via a built-in nuclear reactor, able to project either high powered tazer shots or deadly particle beams at the will of it's user. \
 	The user of this gun waives, releases and discharges the Soteria Institute from any and all liability, including but not \
-	limited to, liability arising from the negligence or fault of the entities or persons using this gun, for death, disability, personal injury, \ 
-	property damage, property theft, or actions of any kind which may hereafter occur."
+	limited to, liability arising from the negligence or fault of the entities or persons using this gun, for death, disability, personal injury, property damage, property theft, or actions of any kind which may hereafter occur."
 	icon = 'icons/obj/guns/energy/nucgun.dmi'
 	icon_state = "nucgun"
 	item_charge_meter = TRUE
