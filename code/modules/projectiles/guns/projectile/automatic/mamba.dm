@@ -67,7 +67,7 @@
 	name = "\"Copperhead\" battle rifle"
 	desc = "The \"Copperhead\" rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine. \
 	Chambered in 7.62mm and sporting a carry handle the Copperhead is intended both as a squad support weapon and as a battle rifle \ 
-	sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
+	sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses.""
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
