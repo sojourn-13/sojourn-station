@@ -45,7 +45,7 @@
 
 /obj/item/part/gun/frame/bulldog
 	name = "K9-series frame"
-	desc = "A K9-series frame. Predecesor to the Wind-series, remains largely popular with low budget security firms. Can be assembled into a Bulldog or older Z7 Model."
+	desc = "A K9-series frame. A predecessor to the Wind-series, it remains largely popular with low budget security firms. Can be assembled into a Bulldog or older Z7 Model."
 	icon_state = "frame_bull"
 	result = /obj/item/gun/projectile/automatic/bulldog
 	resultvars = list(/obj/item/gun/projectile/automatic/bulldog, /obj/item/gun/projectile/automatic/pitbull)
@@ -55,7 +55,7 @@
 
 /obj/item/gun/projectile/automatic/bulldog/rds
 	name = "\"Bulldog Red\" carbine"
-	desc = "A common carry gun manufactured by Seinemetall Defense GmbH for security and police far and wide. Compact and reliable. Uses 6.5mm Carbine rounds. This one comes with red dot sight."
+	desc = "A common carry gun manufactured by Seinemetall Defense GmbH for security and police far and wide. Compact and reliable. Uses 6.5mm Carbine rounds. This one comes with a red dot sight."
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
