@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/texan
 	name = "\"Texan\" SMG"
-	desc = "The Texan is a reliable assault weapon, mass-produced by SD GmbH for raiding parities in tight ship hall, with a moderate effectiveness against soft body armor. Uses 9mm rounds."
+	desc = "The Texan is a reliable assault weapon, mass-produced by SD GmbH for raiding parities in tight hallways, with a moderate effectiveness against soft body armor. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/texan.dmi'
 	icon_state = "texan"
 	item_state = "texan"

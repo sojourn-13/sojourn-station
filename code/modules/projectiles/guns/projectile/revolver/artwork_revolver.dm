@@ -61,7 +61,7 @@
 
 /obj/item/gun/projectile/revolver/artwork_revolver/spin_cylinder()
 	set name = "Spin revolver"
-	set desc = "Fun when you're bored out of your skull. Or if you want to change your revolvers appearence."
+	set desc = "Fun when you're bored out of your skull. Or if you want to change your revolvers appearance."
 	set category = "Object"
 
 	chamber_offset = 0

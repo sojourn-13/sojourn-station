@@ -75,7 +75,7 @@
 	name = "sawn down \"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in 6.5mm, possibly having taken different rounds at some point. \
-		 Someone butchered this thing beyond recognition! At least it fits in a holster."
+		 It is butchered beyond recognition! At least it fits in a holster..."
 	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
 	icon_state = "solmarine"
 	item_state = "solmarine"
@@ -117,7 +117,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 	name = "\"Saturnian\" carbine"
 	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old stock this one was always intented to be a 6.5mm."
+		 Unlike other old Sol models, this one was always intented to be a 6.5mm."
 	icon = 'icons/obj/guns/projectile/martian.dmi'
 	icon_state = "service"
 	item_state = "service"
@@ -153,7 +153,7 @@
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"
-	desc = "A Solmarine carbine frame. For those who want to LARP 600 years in the past."
+	desc = "A Solmarine carbine frame. For those who want to be re-enactors of soldiers from 600 years ago."
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
