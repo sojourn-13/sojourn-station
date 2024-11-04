@@ -283,8 +283,8 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 /datum/perk/map_maker
 	name = "Map Maker"
-	desc = "When holding a paper, and a box of crayons (must have at lest 1 crayon) you can from time to time make a complex map of the area around you in a 20 range. \
-	This map will show humans, non-humans as well. With constant work you should be able to increase your range of map scouting."
+	desc = "When holding paper and a box of crayons (must have at least 1 crayon) you can from time to time create a complex map of the area around you in a 20 range.  \
+	This map will show humanoids and non-humanoids. With constant work you should be able to increase your range of map making."
 	icon_state = "map"
 
 	active = FALSE
@@ -319,15 +319,15 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 			can_map = TRUE
 
 	if(!can_map)
-		to_chat(usr, SPAN_NOTICE("Your missing something to make a map with, ensure you have paper and the *full* box of crayons in both hands!"))
+		to_chat(usr, SPAN_NOTICE("You are missing something to make a map with. Ensure you have paper and the *full* box of crayons in both hands!"))
 		return FALSE
 
 
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("To soon to make another map, got to let the sences return."))
+		to_chat(usr, SPAN_NOTICE("It is too early to make another map, you have to wait a bit until you can accurately depict your surroundings again."))
 		return FALSE
 	cooldown_time = world.time + 5 MINUTES
-	user.visible_message("<b><font color='red'>[user] taps the ground and draws something on some paper!</font><b>", "<b><font color='red'>You tap the ground, as you map from scratch.</font><b>", "<b><font color='red'>You hear something scribbling!</font><b>")
+	user.visible_message("<b><font color='red'>[user] taps the ground and draws on some paper!</font><b>", "<b><font color='red'>You tap the ground, as you create a map from scratch</font><b>", "<b><font color='red'>You hear something scribbling!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	qdel(P)
 

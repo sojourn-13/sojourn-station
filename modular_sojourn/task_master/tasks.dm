@@ -229,7 +229,7 @@
 	name = "Map Crafting"
 	key = "MAP_CRAFTING"
 	desc = "The way of map making is complex, but with constant work you can do a better job."
-	gain_text = "Little bit better then last time..."
+	gain_text = "Little bit better than last time..."
 	level_thresholds = 1 //1 -> 1.5 -> 2.25 -> 3.75 ect ect
 	alt_scaling_number = 1.5
 	unlocked = FALSE
