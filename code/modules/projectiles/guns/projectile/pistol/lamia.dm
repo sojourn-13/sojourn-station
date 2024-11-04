@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/lamia
 	name = "\"Lamia\" heavy pistol"
-	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland & Sullivan for civilian and law enforcement use. Uses 12mm."
+	desc = "The \"Lamia\", a massive handgun based on the M6 series, repurposed by Holland & Sullivan for civilian and law enforcement use. Uses 12mm."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
