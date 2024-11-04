@@ -4,7 +4,7 @@
 	icon_state = "cog"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past this was the service rifle of low-rank police forces. Billions of copies of this gun were made. They are ubiquitous."
 	fire_sound = 'sound/weapons/energy/Laser.ogg' // Leaving the OG sound as it's not only iconic but also fitting for an old gun
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
@@ -27,7 +27,7 @@
 
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" police laser carbine"
-	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past this was the service rifle of low-rank police forces. Billions of copies of this gun were made. They are ubiquitous. \
 	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
 	icon = 'icons/obj/guns/energy/cog_alt.dmi' // Using their proper sprite now
 	w_class = ITEM_SIZE_BULKY
@@ -44,8 +44,8 @@
 
 /obj/item/gun/energy/cog/sprocket
 	name = "Soteria \"Sprocket\" laser carbine"
-	desc = "Originally a Greyson Positronic design, tinkered by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
-			making it lightweight and easy to operate by non-trained personnel. The main disabler laser can neutralize the rowdiest patients at the cost of heavy cell usage."
+	desc = "Originally a Greyson Positronic design, tinkered with by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
+			making it lightweight and easy to operate by untrained personnel. The main disabler laser can neutralize the rowdiest patients at the cost of heavy cell usage."
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
 	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
@@ -106,7 +106,7 @@
 /obj/item/gun/energy/cog/sawn
 	name = " \"Pinion\" laser pistol"
 	icon = 'icons/obj/guns/energy/obrez_retro.dmi'
-	desc = "Nicknamed the 'Coglet', The \"Pinion\" laser pistol is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made, but by excluding the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
+	desc = "Nicknamed the 'Coglet', The \"Pinion\" laser pistol is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made. By removing the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
 	icon_state = "shorty"
 	item_state = "shorty"
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
