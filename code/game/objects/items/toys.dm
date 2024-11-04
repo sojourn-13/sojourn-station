@@ -734,7 +734,7 @@
 
 /obj/item/toy/figure/character/bobblehead/acolyte
 	name = "acolyte figurine"
-	desc = "Church of Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
+	desc = "Church of the Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
 	icon_state = "acolyte"
 	toysay = "\"Brotherhood.\""
 
