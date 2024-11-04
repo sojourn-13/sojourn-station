@@ -25,7 +25,7 @@
 
 /obj/item/gun/energy/plasma/auretian
 	name = "\"Auretian\" energy pistol"
-	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It has the advantage of using laser and plasma firing methods, \
+	desc = "\"Soteria\" brand energy pistol for personal overprotection. It has the advantage of using laser and plasma firing methods, \
 	with the former firing rapid weaker shots able to pass through glass or grilles and the latter firing slower but higher damage armor penetrating shots."
 	icon = 'icons/obj/guns/energy/brigador.dmi'
 	icon_state = "brigador"
