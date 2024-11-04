@@ -231,7 +231,7 @@
 
 /obj/item/reagent_containers/spray/vvd40
 	name = "VVD-40"
-	desc = "A relic of ancient times, rumoured to fix anything duct tape can't. While it can restore most things visual appearence, rarely will it fix broken or damaged parts."
+	desc = "A relic of ancient times, rumoured to fix anything duct tape can't. While it can restore most things visual appearance, rarely will it fix broken or damaged parts."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "rejuvenating_agent_spray"
 	volume = 100
