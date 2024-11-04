@@ -189,7 +189,7 @@
 /obj/item/device/kit/paint/ripley/clark
 	name = "\"Clark\" APLU customization kit"
 	new_name = "\"Clark\" APLU"
-	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence."
+	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearance."
 	new_icon = "clarke"
 
 /obj/item/device/kit/paint/ripley/clark_orange
