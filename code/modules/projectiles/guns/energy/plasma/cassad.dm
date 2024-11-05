@@ -28,7 +28,7 @@
 
 /obj/item/gun/energy/pulse/cassad/marqua
 	name = "\"Railroad\" Pulse Carbine"
-	desc = "A Mar'quaian long smooth-alloyed carbine, loading M-cells. Pulses energy release along its lengthy rails, forming a burning arc before releasing it forth towards its target. Often with deadly accuracy."
+	desc = "A Mar'quaian long smooth-alloyed carbine, loading M-cells. Channels the energy along its lengthy rails, forming a burning arc before releasing it forth towards its target. Often with deadly accuracy."
 	icon = 'icons/obj/guns/plasma/marqua.dmi'
 	icon_state = "skrell_carbine"
 	item_state = "skrell_carbine"
