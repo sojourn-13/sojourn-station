@@ -35,7 +35,7 @@
 /obj/item/gun/energy/lasercannon/rnd
 	name = "\"Solaris\" laser cannon"
 	desc = "A outdated and abandoned design for an energy weapon, revamped by Soteria Institute. The las-medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. \
-		The incredible technology packed inside lets it stand on it's own as one of the markets best laser cannons for turrets and raw firepower! "
+		The incredible technology packed inside lets it stand on it's own as one of the market‘s best laser cannons for turrets and raw firepower! "
 	icon = 'icons/obj/guns/energy/si_lascannon.dmi'
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
