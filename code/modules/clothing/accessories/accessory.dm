@@ -1294,7 +1294,7 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
+	desc = "This is an token given by the Church of the Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
 Anyone wearing it can open public church doors. You should do your best to keep it out of the hands of the non-faithful, lest it be abused."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"

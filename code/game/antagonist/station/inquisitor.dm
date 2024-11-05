@@ -69,7 +69,7 @@
 	// Basic intro text.
 	to_chat(player, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
 
-	to_chat(player, "Crusader is a special protocol within the Church of Absolute.<br>\
+	to_chat(player, "Crusader is a special protocol within the Church of the Absolute.<br>\
 	You're cruciform has activated its crusader protocol upon detecting the presence of an active hivemind. You are to do \
 	everything in your power to destroy all traces of the hivemind and any infected machines or organics.<br>\
 	<br>\
