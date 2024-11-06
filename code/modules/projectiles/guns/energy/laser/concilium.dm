@@ -1,8 +1,9 @@
 /obj/item/gun/energy/concillium
 	name = "\"Concillium\" las-machinegun"
 	desc = "Produced by the New Testament, made to pin down enemies with rapid shots.\
-	The low per-shot damage and poor accuracy of this gun is made up for by its rapid rate of fire and large energy capacity, \
-	allowing the user to sustain long periods of fire, forcing enemies to seek cover or be torn apart by a rain of laserfire. Takes large power cells"
+	The low per-shot damage and poor accuracy of the gun is made up for by its rapid rate of fire and large energy capacity, \
+	allowing the user to sustain long periods of fire, forcing enemies to seek cover or be torn apart by a rain of laserfire. Takes large power cells. \
+	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
 	icon = 'icons/obj/guns/energy/concilium.dmi'
 	icon_state = "concilium"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -28,7 +29,7 @@
 		FULL_AUTO_300,
 		list(mode_name="short bursts", mode_desc="Fire 5 shots in succession", burst=5,    burst_delay=4, move_delay=6,  icon="burst"),
 		list(mode_name="long bursts", mode_desc="Fire 8 shots in succession",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire", mode_desc="Fire 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
+		list(mode_name="suppressing fire", mode_desc="Fire 16 shots back to back to keep targets behind cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	twohanded = TRUE

@@ -2,7 +2,7 @@
 	name = "\"Sunrise\" laser SMG"
 	desc = "The \"Sunrise\" laser SMG is a Nadezhda Marshal's special in terms of its creation.\
 	This once dated SMG design has been completely stripped down and shoved full of hardware from a Firestorm and Discolaser.\
-	However parts themselves appear to have been modified to allow for the beams to keep much of their power through high-focused lenses!\
+	However the parts themselves are modified to allow for the beams to keep much of their power through high-focused lenses!\
 	Etched into the guns receiver on the left side is a script \"M\" letter."
 	icon = 'icons/obj/guns/energy/sunrise.dmi'
 	icon_state = "sunrise"
