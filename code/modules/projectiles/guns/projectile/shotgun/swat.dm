@@ -13,6 +13,7 @@
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet due to underbarrel.
 	price_tag = 1500
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.3

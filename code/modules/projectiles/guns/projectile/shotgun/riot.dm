@@ -100,6 +100,8 @@
 	if(wielded)
 		itemstring += "_doble"
 
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)

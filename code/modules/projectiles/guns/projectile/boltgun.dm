@@ -80,6 +80,9 @@
 		iconstring += "_s"
 		itemstring += "_s"
 
+	if (bayonet)	//Used not for base Mosin, but any sub-types that end up able to take bayonets.
+		add_overlay("bayonet")
+
 	icon_state = iconstring
 	set_item_state(itemstring)
 

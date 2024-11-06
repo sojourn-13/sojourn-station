@@ -94,26 +94,6 @@
 
 	shotgun_haver = FALSE
 
-/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
-	name = "sawn down \"Saturnian\" carbine"
-	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old stocks this one was always intented to be a 6.5mm.\
-		 Someone butchered this thing beyond recognition! At least it fits in a holster now."
-	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
-	matter = list(MATERIAL_IRON = 10, MATERIAL_PLASTIC = 8)
-	init_recoil = CARBINE_RECOIL(1.2)
-	damage_multiplier = 0.8
-	price_tag = 650
-	icon_state = "solmarine"
-	item_state = "solmarine"
-	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
-	shotgun_haver = FALSE
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
-		)
-
-
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 	name = "\"Saturnian\" carbine"
 	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
@@ -123,6 +103,7 @@
 	item_state = "service"
 	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
 	shotgun_haver = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE, GUN_KNIFE)	//No shotgun, so it can take a bayonet.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
 	serial_type = "Sol Fed"
@@ -144,12 +125,34 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if (bayonet)
+		add_overlay("bayonet")
+
 	icon_state = iconstring
 	set_item_state(itemstring)
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
+	name = "sawn down \"Saturnian\" carbine"
+	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+		 Unlike other old stocks this one was always intented to be a 6.5mm.\
+		 Someone butchered this thing beyond recognition! At least it fits in a holster now."
+	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
+	matter = list(MATERIAL_IRON = 10, MATERIAL_PLASTIC = 8)
+	init_recoil = CARBINE_RECOIL(1.2)
+	damage_multiplier = 0.8
+	price_tag = 650
+	icon_state = "solmarine"
+	item_state = "solmarine"
+	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
+	shotgun_haver = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"

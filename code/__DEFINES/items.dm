@@ -73,6 +73,8 @@
 #define GUN_UPGRADE_DAMAGE_CLONE "clone_damage"
 #define GUN_UPGRADE_DAMAGE_HALLOSS "hallucination_damage"
 #define GUN_UPGRADE_DAMAGE_RADIATION "radiation_damage"
+#define GUN_UPGRADE_MELEEDAMAGE "melee_damage"
+#define GUN_UPGRADE_MELEEPENETRATION "melee_penetration"
 
 #define GUN_UPGRADE_OFFSET "offset" //Constant offset, in degrees
 #define GUN_UPGRADE_ZOOM "zoom"
@@ -90,6 +92,7 @@
 #define GUN_UPGRADE_AUTOEJECT "autoeject"
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"
 #define GUN_UPGRADE_THERMAL "thermal scope"
+#define GUN_UPGRADE_BAYONET "bayonet"
 #define GUN_UPGRADE_DNALOCK "biocoded"
 #define GUN_UPGRADE_FOREGRIP "foregrip"
 #define GUN_UPGRADE_BIPOD "bipod"
