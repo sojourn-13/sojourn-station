@@ -148,7 +148,7 @@
 					emote("me", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
 
 			else if(E.is_malfunctioning())
-				//many things are welders and holding onto them even with harmed lims means you have a no-drop-risk weapon. So they are excluded - Trilby
+				//many things are welders and holding onto them even with harmed limbs means you have a no-drop-risk weapon. So they are excluded - Trilby
 				if(istype(E, /obj/item/stack/cable_coil) || istype(E, /obj/item/stack/nanopaste))
 					emote("me", 1, "clenches harder onto [E.name]!")
 					return

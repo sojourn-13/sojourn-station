@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/lever
 	name = "\"Armstrong\" repeating rifle"
-	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
+	desc = "Weapon for hunting and on the endless open plains. Perfect on horseback!"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"
@@ -23,7 +23,7 @@
 
 /obj/item/part/gun/frame/armstrong
 	name = "Armstrong frame"
-	desc = "A Armstrong lever rifle. If death is our destination this will surely bring it."
+	desc = "An Armstrong lever rifle frame. If death is our destination this will surely bring it."
 	icon_state = "frame_armstrong"
 	result = /obj/item/gun/projectile/boltgun/lever
 	resultvars = list(/obj/item/gun/projectile/boltgun/lever, /obj/item/gun/projectile/boltgun/lever/custer)

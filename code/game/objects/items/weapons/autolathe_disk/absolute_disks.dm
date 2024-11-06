@@ -11,7 +11,7 @@
 	license = -1
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility
-	disk_name = "Church of Absolute Bioprinter Utilities Factory"
+	disk_name = "Church of the Absolute Bioprinter Utilities Factory"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
 	license = -1
@@ -60,7 +60,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public
-	disk_name = "Church of Absolute Bioprinter Products and Utilities"
+	disk_name = "Church of the Absolute Bioprinter Products and Utilities"
 	desc = "This disk is made by the Church and distributed at a nominal cost to anyone who wishes to use a bioprinter for basic needs."
 	license = 20
 	designs = list(

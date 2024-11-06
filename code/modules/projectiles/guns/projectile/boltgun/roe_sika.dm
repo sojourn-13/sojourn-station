@@ -22,7 +22,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down 6.5mm bolt action rifle. Rifle was fine."
+	desc = "A crudely mangled and sawn-down 6.5mm bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

@@ -1,7 +1,7 @@
 /obj/item/gun/energy/peacekeeper
 	name = "\"Peacekeeper\" energy shotgun"
 	desc = "The \"Peacekeeper\" enegry shotgun is a Marshal made weapon, specializing in blasting high-powered electrodes from its cell's charge.\
-	Despite appearing to be made in a hurry the gun is incredibly versitile."
+	Despite appearing to be made in a hurry the gun is incredibly versatile."
 	icon = 'icons/obj/guns/energy/peacekeeper.dmi'
 	icon_state = "peacekeeper"
 	item_state = "peacekeeper"

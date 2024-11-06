@@ -1153,8 +1153,9 @@
 	icon_state = module_sprites[icontype]
 	updateicon()
 
-	if(alert(client,"Do you like this icon?",null, "No","Yes") == "No") // We lose the USR reference because this is called from a spawned proc, so we have to use client.
-		return choose_icon()
+	if(modtype != "Default")
+		if(alert(client,"Do you like this icon?",null, "No","Yes") == "No") // We lose the USR reference because this is called from a spawned proc, so we have to use client.
+			return choose_icon()
 
 	icon_selected = 1 //MEW
 	post_icon_giving()

@@ -95,7 +95,7 @@
 
 /obj/item/gun/projectile/automatic/sbaw/admin
 	name = "\"Gloryhammer\" payload rifle"
-	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
+	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you wield this Thunder Striking Wizard Thrasher."
 	icon = 'icons/obj/guns/projectile/sbaw.dmi'
 	icon_state = "sbaw"
 	penetration_multiplier = 1.5

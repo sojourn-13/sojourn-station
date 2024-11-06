@@ -132,7 +132,7 @@
 //This should be in its own file...
 /obj/item/gun/projectile/automatic/lmg/tk
 	name = "\"Takeshi\" suppression machinegun"
-	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death. \
+	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a well oiled machine of war and death. \
 			Takes 6.5mm linked boxes as well as normal carbine magazines."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
@@ -148,7 +148,7 @@
 
 /obj/item/part/gun/frame/tk
 	name = "Takeshi frame"
-	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
+	desc = "A Takeshi LMG frame. A well-oiled machine of war and death."
 	icon_state = "frame_mg"
 	result = /obj/item/gun/projectile/automatic/lmg/tk
 	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk, /obj/item/gun/projectile/automatic/lmg/heroic)
@@ -191,7 +191,7 @@
 	name = " \"Heroic\" General Purpose Machinegun"
 	desc = "The \"Heroic\" General Purpose Machinegun was created by Nadezhda Marshals in response to Blackshield's lack of suppressing fire armaments. \
 			Inspired by Seinemetall's Takeshi LMG, this GPMG features decent recoil control for its bore, and the bizarre capability of being silenced. \
-			Chambered in 7.62x39mm and meant for emplaced defense, its high rate of fire can mow down wave after wave of armored hostiles with sheer brutality."
+			Chambered in 7.62x39mm and meant for entrenched defense, its high rate of fire can mow down wave after wave of armored hostiles with sheer brutality."
 	icon = 'icons/obj/guns/projectile/heroic.dmi'
 	icon_base = "heroic" // Sprites by Albert7076
 	icon_state = "heroic"
@@ -202,7 +202,7 @@
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
 	penetration_multiplier = 1
 	init_recoil = HMG_RECOIL(0.6) // Better slap a bipod on this one! Impossible to fire steady if not braced.
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced.
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced. Added scope since it's an HMG, it would benifit form it.
 	serial_type = "NM"
 
 	init_firemodes = list(

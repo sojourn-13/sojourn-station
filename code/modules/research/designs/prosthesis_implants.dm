@@ -64,7 +64,7 @@
 
 /*Robotic Internals ====================================
 TODO: Get this all sorted out, atm people will have to print of
-the lims and such to pull out the internal bits for other people if needed
+the limbs and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/robotic_internals
 	category = "Medical"
 
@@ -167,7 +167,7 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Cortex Support Cyberware"
 	build_path = /obj/item/organ_module/sanity_on_a_buget
 
-//litterly a small arm pouch
+//litteraly a small arm pouch
 /datum/design/research/item/mechfab/modules/arm_pouch
 	name = "Embedded Pouch"
 	build_path = /obj/item/organ_module/active/simple/small_pouch

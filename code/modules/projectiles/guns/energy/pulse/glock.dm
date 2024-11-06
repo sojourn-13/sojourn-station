@@ -2,7 +2,7 @@
 	name = "\"Galaxy\" plasma pistol"
 	desc = "The \"Galaxy\" plasma pistol is an odd sight, to say the least.. \
 	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various energy weapons being crammed into its exterior. \
-	If you can get past its crude appearence, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
+	If you can get past its crude appearance, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
 	and flexibility in firemodes; sporting a plasma setting, a laser setting and an emergency ion setting! \
 	On the bottom of the grip appears to have a covered access port, a scipt \"M\" letter etched over the cover."
 	icon = 'icons/obj/guns/energy/plasglock.dmi'

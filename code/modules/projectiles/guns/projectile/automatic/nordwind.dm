@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.62mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units and private security. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"

@@ -487,7 +487,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				plusing_intraction(I, user)
 				return
 
-			//This is litterly just a stop gap so you dont accidently decon your weapon.
+			//This is litteraly just a stop gap so you dont accidently decon your weapon.
 			if(QUALITY_SCREW_DRIVING)
 				..()
 				return
@@ -621,6 +621,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
 				user.drop_item()
+			currently_firing = FALSE	//Add this here or else people who have clumsy will permanently break guns and prevent them from firing if they fuck up with it.
 		else
 			handle_click_empty(user)
 		return FALSE

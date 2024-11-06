@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/trouble_shooter
 	name = "GP \"Trouble Shooter\" rifle"
 	desc = "With many issues being raised from rogue robots and people alike, the Greyson Positronic answer was a gun to shoot though several layers of armor \
-	Its material cost lead to it being mainly used in-house rather than in mass production. With the ablity to have a Master Unmaker integrated into it."
+	Its material cost lead to it being mainly used in-house rather than in mass production. It can have a Master Unmaker integrated into it."
 	icon = 'icons/obj/guns/projectile/type_21.dmi'
 	icon_state = "type_21" //Sprite by Valo#3611
 	item_state = "type_21"

@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/judge
 	name = "\"Judge\" heavy revolver"
-	desc = "A specially made revolver procued by Nadezhda Marshal's gunsmiths to solve the problem of ever-heavier armors being used in criminal actions. \
+	desc = "A specially made revolver produced by Nadezhda Marshal's gunsmiths to solve the problem of ever-heavier armors being used in criminal actions. \
 	This revolver specifically is chambered in 7.62, packing quite a punch for a revolver even in spite of its short barrel."
 	icon = 'icons/obj/guns/projectile/judge.dmi'
 	icon_state = "judge"

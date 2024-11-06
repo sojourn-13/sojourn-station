@@ -15,15 +15,15 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	item_charge_meter = TRUE
 	desc = "An energy shotgun that proves the oldest truth that the tallest buildings and most grand achievements are built by digging a deep foundation to set it upon. \
 	It fires a super heated blast of concentrated laser pellets in a similar fashion to the Reductor, but loses stopping power rapidly over a distance, so it is most effective at point blank range. \
-	Unlike the Reductor or Myrmidon, the secondary firing mode uses a chemical blend to fire flare rounds, offering some utility. When overclock, the battery is turned into a rocket propelled grenade, \
-	use with caution. This design was originally blue-printed by the Soteria before cooperation with the Guild allowed for it to see regular use in the hands of an experienced guild adept."
+	Unlike the Reductor or Myrmidon, the secondary firing mode uses a chemical blend to fire flare rounds, offering some utility. When overclocked, the battery is turned into a rocket propelled grenade. \
+	Use with caution! This design was originally blue-printed by the Soteria Institute before cooperation with the Artificer Guild allowed regulated usage by experienced Artificers."
 	fire_sound = 'sound/weapons/energy/emitter2.ogg'
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/energy
 	can_dual = FALSE
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_WOOD = 8)
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 8, TECH_ENGINEERING = 8) //With how hard it is to make? High value.
-	fire_delay = 20
+	fire_delay = 18
 	charge_cost = 150
 	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1 //already quite a bit lethal and dangerous with the burn damage and 'close range spray'.
