@@ -91,6 +91,7 @@
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
