@@ -115,6 +115,7 @@
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
 	..()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 

@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 

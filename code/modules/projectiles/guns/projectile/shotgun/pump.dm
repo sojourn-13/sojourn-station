@@ -44,6 +44,7 @@
 //Snowflake update-icon code for bayonets.
 /obj/item/gun/projectile/shotgun/pump/update_icon()
 	..()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 
 	if (bayonet)

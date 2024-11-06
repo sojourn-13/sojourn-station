@@ -64,7 +64,7 @@
 
 /obj/item/gun/projectile/boltgun/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
