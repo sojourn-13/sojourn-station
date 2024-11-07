@@ -181,6 +181,9 @@
 		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
 		return FALSE
 
+	if(!required_qualities.len)
+		return FALSE
+
 	if(required_qualities.len)
 		var/qmatch = FALSE
 		for (var/q in required_qualities)
@@ -197,6 +200,9 @@
 /datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
 	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
+		return FALSE
+
+	if(!required_qualities.len)
 		return FALSE
 
 	if(required_qualities.len)
