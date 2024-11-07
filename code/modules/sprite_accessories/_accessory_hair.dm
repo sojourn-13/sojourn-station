@@ -256,6 +256,10 @@
 	name = "Dreadlocks"
 	icon_state = "dreads"
 
+/datum/sprite_accessory/hair/dreadlocksalt
+	name = "Dreadlocks 2"
+	icon_state = "dreadsalt"
+
 /datum/sprite_accessory/hair/drillruru
 	name = "Drillruru"
 	icon_state = "drillruru"
