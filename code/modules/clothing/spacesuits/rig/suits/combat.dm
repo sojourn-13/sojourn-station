@@ -59,7 +59,7 @@
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	light_overlay = "sec_light"
 	camera_networks = list(NETWORK_SECURITY)
-//blacksheild
+//blackshield
 /obj/item/rig/combat/blackshield
 	name = "Blackshield Ops control module"
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
