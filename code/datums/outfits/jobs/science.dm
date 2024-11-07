@@ -32,6 +32,7 @@
 	name = OUTFIT_JOB_NAME("Soteria - Roboticist")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
+	belt = /obj/item/storage/belt/utility/roboticist
 	pda_slot = slot_r_store
 	id_type = /obj/item/card/id/dkgrey
 	pda_type = /obj/item/modular_computer/pda/science/roboticist

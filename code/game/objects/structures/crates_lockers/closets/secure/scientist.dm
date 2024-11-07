@@ -43,7 +43,6 @@
 	new /obj/item/tank/air(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/storage/belt/sci(src)
-	new /obj/item/storage/belt/utility/roboticist(src)
 	new /obj/item/device/robotanalyzer(src)
 	new /obj/item/hydrogen_fuel_cell(src)
 
