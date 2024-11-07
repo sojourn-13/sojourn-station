@@ -89170,6 +89170,7 @@
 /obj/machinery/camera/network/research{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/personal/robo,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "qSs" = (
@@ -119009,6 +119010,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/closet/secure_closet/personal/robo,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "wtS" = (
