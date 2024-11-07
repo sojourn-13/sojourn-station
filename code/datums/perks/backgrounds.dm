@@ -364,7 +364,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 				if(ishuman(M))
 					mineralmapss.DrawBox(rgb(57,255,20),M.x,M.y,M.x, M.y)
 				else
-					mineralmapss.DrawBox(rgb(0,255,255),M.x,M.y,M.x, M.y)
+					mineralmapss.DrawBox(rgb(129,2,3),M.x,M.y,M.x, M.y)
 
 			for(var/obj/machinery/porta_turret/PT in TA.contents)
 				mineralmapss.DrawBox(rgb(255,165,0),PT.x,PT.y,PT.x, PT.y)
@@ -397,7 +397,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	G.name = "Area Map"
 	G.info = "[icon2html(mineralmapss,world)] <br> Legend:<br>"
 	G.info += "<font color='#39FF14'>People</font> Neon Green<br>"
-	G.info += "<font color='#00FFFF'>Life (Not-Plants)</font> Cyan<br>"
+	G.info += "<font color='#810203'>Life (Not-Plants)</font> Brick Red<br>"
 	G.info += "<font color='#878484'>R-Wall</font> Shadow Gray<br>"
 	G.info += "<font color='#BDBAA2'>Flooring</font> Clay Gray<br>"
 	G.info += "<font color='#60460F'>Mineral Wall</font> Mud Brown<br>"
