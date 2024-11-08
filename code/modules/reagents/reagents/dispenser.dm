@@ -390,10 +390,10 @@
 			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
-				var/obj/item/clothing/shoes = C
-				if (shoes && shoes.holding)
-					shoes.holding.forceMove(get_turf(M))
-					shoes.holding = NULL
+				var/obj/item/clothing/shoes/S = C
+				if (S && S.holding)
+					S.holding.forceMove(get_turf(M))
+					S.holding = NULL
 				for(obj/item/clothing/accessory/A in C.accessories)
 						A.on_removed()
 						C.accessories -= A
@@ -440,7 +440,7 @@
 		if(stop_loop)
 			continue
 		// third layer of clothing, no bio protection
-		for(var/obj/item/underwear/U in H.worn_underwear)
+		for(var/obj/item/underwear/U in our_man.worn_underwear)
 			if(!(U.required_free_body_parts & bodypart))
 				continue
 			our_man.worn_underwear -= U
