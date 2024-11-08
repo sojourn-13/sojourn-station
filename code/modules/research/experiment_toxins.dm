@@ -210,7 +210,7 @@
 
 	else
 		if(calculated_research_points)
-			var/wealth_mult = initial(stored_points)/(calculated_research_points + 1)
+			var/wealth_mult = initial(stored_points)/(stored_points + 1)
 			target_wealth = rand(80, 120) * wealth_mult
 			target_wealth = round(target_wealth)
 	autosay("Next expected power level is [targetBoom]; Asset Value Range: [target_wealth] to [target_wealth*over_value_punishment].", name ,"Science")
