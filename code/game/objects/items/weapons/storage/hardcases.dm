@@ -515,7 +515,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
+		options["Python - precision rifle"] = list(/obj/item/gun/projectile/automatic/mamba/python,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/beanbag, /obj/item/ammo_magazine/ammobox/c10x24_small, /obj/item/storage/pouch/tubular)
 		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball, /obj/item/storage/pouch/ammo)
 		options["Gleam - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)

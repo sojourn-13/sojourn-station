@@ -329,6 +329,10 @@
 	name = "NM 7.62x39mm \"Copperhead\" rifle"
 	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead
 
+/datum/design/autolathe/gun/viper
+	name = "NM 7.62x39mm \"Viper\" DMR"
+	build_path = /obj/item/gun/projectile/automatic/mamba/viper
+
 /datum/design/autolathe/gun/python
 	name = "NM 7.62x39mm \"Python\" heavy sniper"
 	build_path = /obj/item/gun/projectile/automatic/mamba/python

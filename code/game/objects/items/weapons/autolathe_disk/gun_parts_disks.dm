@@ -32,14 +32,14 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 	)
 
 // Marshal-specific disk, used by Marshals for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
-// For mass-production, Guild should be used. Only thing this disk has that Guild does not is heavy rifle barrles, AMR barrels, rubber grips, and machinegun mechanisms.
+// Infinate given gun parts are mass-printed by Guild, orderable by LS, and can be taken from broken down guns. Guild can mass-produce better, but only Marshals can print high-end.
 /obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal
 	disk_name = "NM - \"Gunsmiths United\" firearm parts"
 	icon_state = "marshal"
 
-	license = 20
+	license = -1
 	designs = list(
-		/datum/design/autolathe/part/grip/wood = 0,
+		/datum/design/autolathe/part/grip/wood,
 		/datum/design/autolathe/part/grip/plastic,
 		/datum/design/autolathe/part/grip/serb,
 		/datum/design/autolathe/part/grip/rubber,
@@ -51,12 +51,12 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/mechanism/machinegun = 1,
 		/datum/design/autolathe/part/barrel/pistol,
 		/datum/design/autolathe/part/barrel/magnum,
-		/datum/design/autolathe/part/barrel/kurtz = 1,
-		/datum/design/autolathe/part/barrel/carbine = 1,
-		/datum/design/autolathe/part/barrel/rifle = 1,
-		/datum/design/autolathe/part/barrel/heavy = 1,
+		/datum/design/autolathe/part/barrel/kurtz,
+		/datum/design/autolathe/part/barrel/carbine,
+		/datum/design/autolathe/part/barrel/rifle,
+		/datum/design/autolathe/part/barrel/heavy,
 		/datum/design/autolathe/part/barrel/shotgun,
-		/datum/design/autolathe/part/barrel/amr = 5,
+		/datum/design/autolathe/part/barrel/amr,
 	)
 
 // Bootleg-gun production stuff. Found in loot-piles, can be bought by LSS for a slightly inflated price.
@@ -133,7 +133,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/mamba,
 		/datum/design/autolathe/gun_frame/opshot,
 		/datum/design/autolathe/gun_frame/wind,
-		/datum/design/autolathe/gun_frame/takeshi //No more Omni and DP, both are BS guns like smhing my Smh on my SMH
+		/datum/design/autolathe/gun_frame/takeshi
 	)
 //Rearranged into Pistol > Revolver > SMG > Carbine > Shotgun > Rifle > MG for better clarity
 
