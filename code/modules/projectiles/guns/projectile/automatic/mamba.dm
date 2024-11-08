@@ -116,7 +116,7 @@
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_600,
+		FULL_AUTO_300,
 		list(mode_name="fire 40mm grenade", mode_desc="Shoot the built in underbarrel grenade launcher",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
