@@ -98,7 +98,7 @@
 
 //Ranger kits
 /obj/item/storage/box/m_kit/custer
-	name = "Custer lever actio kit"
+	name = "Custer lever action kit"
 	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
 	populate_contents()
