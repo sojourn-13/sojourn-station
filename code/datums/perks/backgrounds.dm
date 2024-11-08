@@ -283,7 +283,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 /datum/perk/map_maker
 	name = "Map Maker"
-	desc = "When holding paper and a box of crayons (must have at least 1 crayon) you can from time to time create a complex map of the area around you in a 20 range.  \
+	desc = "When holding paper and a box of crayons (must have at least 1 crayon) or a multy colour pen you can from time to time create a complex map of the area around you in a 20 range.  \
 	This map will show humanoids and non-humanoids. With constant work you should be able to increase your range of map making."
 	icon_state = "map"
 
@@ -309,6 +309,12 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		C = II
 		if(C.contents)
 			crayon_check = TRUE
+
+	if(istype(I, /obj/item/pen/multi))
+		crayon_check = TRUE
+
+	if(istype(II, /obj/item/pen/multi))
+		crayon_check = TRUE
 
 	if(crayon_check)
 		if(istype(I, /obj/item/paper))
