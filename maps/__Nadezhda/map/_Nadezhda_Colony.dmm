@@ -117595,7 +117595,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security)
 "whD" = (
-/obj/structure/closet/wardrobe/job/robotics_black,
+/obj/structure/closet/secure_closet/personal/robo,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/lab)
 "whE" = (
@@ -143972,7 +143972,7 @@ nQC
 nQC
 cdP
 reC
-reC
+whD
 whD
 rLm
 rfd

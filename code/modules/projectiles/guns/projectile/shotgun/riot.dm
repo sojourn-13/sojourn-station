@@ -96,6 +96,7 @@
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -105,6 +106,8 @@
 	if(wielded)
 		itemstring += "_doble"
 
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)

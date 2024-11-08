@@ -68,7 +68,7 @@
 
 		"Antiveshchestvo" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300)
+			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300)
 		),
 		"Plokhiye Idei" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),

@@ -36,8 +36,6 @@
 	pda_slot = slot_r_store
 	id_type = /obj/item/card/id/dkgrey
 	pda_type = /obj/item/modular_computer/pda/science/roboticist
-	backpack_contents = list(/obj/item/hydrogen_fuel_cell = 1)
-	l_pocket = /obj/item/device/robotanalyzer
 
 /decl/hierarchy/outfit/job/science/roboticist/New()
 	..()

@@ -15,6 +15,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.2)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet due to underbarrel.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	serial_type = "Absolute"

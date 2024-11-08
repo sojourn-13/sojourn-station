@@ -22,7 +22,7 @@
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT, GUN_KNIFE)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
@@ -33,7 +33,7 @@
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -52,6 +52,9 @@
 	if (silenced)
 		iconstring += "_s"
 		itemstring += "_s"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
