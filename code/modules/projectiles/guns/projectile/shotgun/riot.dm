@@ -25,7 +25,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_200_NOLOSS,		//Less capacity + no external loader mags so, you get slower fire than Siaga/Pug but no damage reduction.
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "SD GmbH"
