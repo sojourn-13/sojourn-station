@@ -111,6 +111,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
 	price_tag = 1200
 	damage_multiplier = 1.2			//Same as AK
 	penetration_multiplier = 1.1	//Higher than AK
@@ -189,7 +190,7 @@
 	extra_damage_mult_scoped = 0.4	//1.6 total; STRONG due to chambered in 8.6mm. ~42 damage base.
 	init_recoil = RIFLE_RECOIL(0.8)	//More recoil than Longarm, because it slaps harder.
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
 	folding_stock = FALSE
 	init_firemodes = list(
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=10, icon="semi"
