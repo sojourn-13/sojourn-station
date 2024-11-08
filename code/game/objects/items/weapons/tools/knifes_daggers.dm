@@ -38,7 +38,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_BAYONET = TRUE,
-		GUN_UPGRADE_MELEEDAMAGE = 5,
+		GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE = 10,
 		GUN_UPGRADE_MELEEPENETRATION = ARMOR_PEN_MODERATE,
 		GUN_UPGRADE_OFFSET = 4
 		)

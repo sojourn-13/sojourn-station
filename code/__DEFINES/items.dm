@@ -75,6 +75,7 @@
 #define GUN_UPGRADE_DAMAGE_RADIATION "radiation_damage"
 #define GUN_UPGRADE_MELEEDAMAGE "melee_damage"
 #define GUN_UPGRADE_MELEEPENETRATION "melee_penetration"
+#define GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE "melee_damage_additive"
 
 #define GUN_UPGRADE_OFFSET "offset" //Constant offset, in degrees
 #define GUN_UPGRADE_ZOOM "zoom"

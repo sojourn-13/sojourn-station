@@ -483,8 +483,8 @@
 		G.attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 		G.sharp = TRUE
 		G.bayonet = weapon_upgrades[GUN_UPGRADE_BAYONET]
-	if(weapon_upgrades[GUN_UPGRADE_MELEEDAMAGE])
-		G.force += weapon_upgrades[GUN_UPGRADE_MELEEDAMAGE]
+	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE])
+		G.force += weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE]
 	if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
 		G.armor_divisor += weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]
 
