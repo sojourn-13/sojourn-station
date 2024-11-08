@@ -19,7 +19,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.1)
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE, GUN_KNIFE)	//Can add bayonet
 	serial_type = "SA"
 	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 	saw_off = TRUE
@@ -35,7 +35,7 @@
 
 /obj/item/gun/projectile/automatic/sts/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -44,6 +44,9 @@
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -138,6 +141,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)	//No bayonet for you.
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
 	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
 	init_firemodes = list(

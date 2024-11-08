@@ -15,6 +15,7 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_KNIFE) //Tape-on bayonet sprite; doing this to replace axe shotgun which looks bad.. I regret it.
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' //Actual double barrel sound
@@ -52,6 +53,9 @@
 
 	if (bolt_open)
 		iconstring += "_open"
+
+	if (bayonet)
+		iconstring += "_b"
 
 	icon_state = iconstring
 

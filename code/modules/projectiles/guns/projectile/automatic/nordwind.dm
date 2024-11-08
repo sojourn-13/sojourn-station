@@ -55,7 +55,7 @@
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_KNIFE)	//Able to take a bayonet to stay competative.
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 700
 	zoom_factors = list(0.6)
@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -86,6 +86,9 @@
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -104,6 +107,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL) //Boo-womp, no more bayonet.
 	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	price_tag = 450
 	zoom_factors = list()

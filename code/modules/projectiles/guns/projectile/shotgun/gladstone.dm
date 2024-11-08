@@ -15,6 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 850
 	init_recoil = RIFLE_RECOIL(1.2)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet for you.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	serial_type = "H&S"
