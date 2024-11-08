@@ -196,7 +196,7 @@
 	wield_delay_factor = 0.5 // 50 vig to insta wield , heavy class sniper rifle
 
 	//Can't be crafted rn, needs change made to ability to take gun barrel etc. So - you can break it down, but not create new ones.
-	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
+	gun_parts = list(/obj/item/stack/material/plasteel = 5, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
 /obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()
