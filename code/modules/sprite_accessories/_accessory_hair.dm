@@ -324,6 +324,14 @@
 	name = "Glossy"
 	icon_state = "glossy"
 
+/datum/sprite_accessory/hair/gloomy
+	name = "Gloomy"
+	icon_state = "hair_gloomy"
+
+/datum/sprite_accessory/hair/gloomylong
+	name = "Gloomy Long"
+	icon_state = "hair_gloomylong"
+
 /datum/sprite_accessory/hair/gumshoe
 	name = "Gumshoe"
 	icon_state = "gumshoe"
