@@ -43007,6 +43007,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/foyer)
+"ifO" = (
+/obj/machinery/conveyor/east{
+	id = "pile ripper belt";
+	operating = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/engineering/engine_waste)
 "ifQ" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -44184,7 +44191,7 @@
 /obj/machinery/conveyor/south{
 	id = "trash"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "irR" = (
 /turf/simulated/shuttle/wall/science{
@@ -58628,7 +58635,6 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/rack,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/absolutism/bioreactor)
 "lij" = (
@@ -60973,7 +60979,7 @@
 /obj/machinery/conveyor/south{
 	id = "trash"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "lHU" = (
 /obj/effect/floor_decal/industrial/warningwhite/full,
@@ -74280,6 +74286,9 @@
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
 /obj/structure/railing,
+/obj/machinery/conveyor_switch{
+	id = "pile ripper belt"
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
 "odM" = (
@@ -80116,7 +80125,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "pic" = (
 /obj/structure/plasticflaps,
@@ -100964,6 +100973,11 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "tgo" = (
 /obj/effect/floor_decal/industrial/box/red,
+/obj/machinery/recycler,
+/obj/machinery/conveyor/east{
+	id = "disposals grinder";
+	operating = 1
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/engineering/engine_waste)
 "tgt" = (
@@ -103878,7 +103892,7 @@
 	output_side = 4;
 	refuse_output_side = 2
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "tIG" = (
 /obj/structure/flora/small/trailrockb2,
@@ -105806,7 +105820,7 @@
 /obj/machinery/disposal/deliveryChute{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "uar" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -111304,7 +111318,7 @@
 /obj/machinery/conveyor/south{
 	id = "trash"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "uZT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -111519,11 +111533,8 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/rnd/xenobiology)
 "vcf" = (
-/obj/machinery/conveyor/south{
-	id = "trash"
-	},
 /obj/structure/plasticflaps,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "vch" = (
 /turf/unsimulated/mask,
@@ -197739,7 +197750,7 @@ sOw
 sVn
 hgO
 odF
-jYT
+ifO
 mQR
 cXt
 tip
@@ -200520,7 +200531,7 @@ uFd
 jZv
 sKG
 ebW
-ebW
+iCw
 gPC
 vqw
 tRJ
