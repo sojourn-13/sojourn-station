@@ -358,6 +358,8 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		if(istype(T, /turf/simulated/floor))
 			var/turf/simulated/floor/TA = T
 			mineralmapss.DrawBox(rgb(255,248,220),TA.x,TA.y,TA.x, TA.y)
+			for(var/obj/structure/catwalk/CW in TA.contents)
+				mineralmapss.DrawBox(rgb(186,142,35),CW.x,CW.y,CW.x, CW.y)
 			for(var/obj/structure/window/WD in TA.contents)
 				mineralmapss.DrawBox(rgb(175,227,255),WD.x,WD.y,WD.x, WD.y)
 			for(var/obj/structure/scrap/DS in TA.contents)
@@ -392,6 +394,9 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		if(istype(T, /turf/space) || istype(T, /turf/simulated/open))
 			var/turf/TA = T
 			mineralmapss.DrawBox(rgb(0,0,0),TA.x,TA.y,TA.x, TA.y)
+			for(var/obj/structure/catwalk/CW in TA.contents)
+				mineralmapss.DrawBox(rgb(186,142,35),CW.x,CW.y,CW.x, CW.y)
+
 			continue
 		if(istype(T, /turf/simulated/mineral))
 			var/turf/simulated/mineral/MW = T
@@ -412,6 +417,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	G.info += "<font color='#B76E79'>Scrap/Lootables/Salvage</font> Rose Gold<br>"
 	G.info += "<font color='#FF0000'>Trap</font> Hostile Spotted Red<br>"
 	G.info += "<font color='#000000'>Open Space</font> Burnt Mess Black<br>"
+	G.info += "<font color='#BA8E23'>CatWalks</found> Bee Yellow<br>"
 	G.update_icon()
 
 	return ..()
