@@ -1054,6 +1054,7 @@
 	.=..()
 	refresh_upgrades()
 
+	//So this is a bit missleading, reach attacks do *not* chain themselfs so you must range one attack folks
 	if(coin_tracker >= 5 && coin_tracker <= 10)
 		extended_reach = TRUE
 		icon_state = "cheap_rapier_form_one"
