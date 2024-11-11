@@ -38,7 +38,7 @@ uniquic_armor_act
 		//Shrapnel
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
-			if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+			if(prob((20 + max(P.damage_types[BRUTE] - (armor * 4), -10) * P.embed_mult)))
 				if(!P.shrapnel_type)
 					var/obj/item/material/shard/shrapnel/SP = new()
 					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
