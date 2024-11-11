@@ -240,13 +240,13 @@
 	C.activate()
 	C.make_inquisitor()
 
-/obj/effect/mob_spawn/human/sri_ert
+/obj/effect/mob_spawn/human/si_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SI Ethics committee."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
-	outfit = /decl/hierarchy/outfit/sri_ert
+	outfit = /decl/hierarchy/outfit/si_ert
 	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
 	short_desc = "You are a member of the Soteria Ethics Committee."
 	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \

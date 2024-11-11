@@ -708,7 +708,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ert/medical
 	name = "medical imprinter hard case"
-	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the SRI medical division."
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the SI medical division."
 	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
 
 /obj/item/storage/hcases/ert/medical/populate_contents()
