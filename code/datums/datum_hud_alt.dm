@@ -56,7 +56,7 @@
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "background" = "back16"),
 
 	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",               "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
-	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "EAST+1,BOTTOM+8:15")
+	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "EAST+1,BOTTOM+9:15")
 	)
 
 	slot_data = list (
@@ -99,7 +99,7 @@
 		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame1-1"),
 		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame3-3"),
 		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame0-4"),
-		list("loc" = "EAST+1,BOTTOM+9:8", "icon_state" = "frame3-1")
+		list("loc" = "EAST+1,BOTTOM+10:8", "icon_state" = "frame3-1")
 		)
 		//list("loc" = "2,3", "icon_state" = "block",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 
