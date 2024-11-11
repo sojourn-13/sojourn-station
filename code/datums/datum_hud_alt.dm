@@ -24,16 +24,16 @@
 	PLEASE DON'T REPEAT MY MISTAKES, I'VE WASTED HOURS OF MY LIFE ON THIS - Kegdo 2022*/
 	HUDneed = list(
 //status
-	"nutrition"          = list("type" = /obj/screen/nutrition,         "loc" = "EAST+1:1,BOTTOM+4:25",   "background" = "back17"),
-	"neural system accumulation" = list("type" = /obj/screen/nsa,       "loc" = "EAST+1:1,BOTTOM+5:6",    "background" = "back17"),
-	"body temperature"   = list("type" = /obj/screen/bodytemp,          "loc" = "EAST+1:1,BOTTOM+5:19",   "background" = "back17"),
-	"health"             = list("type" = /obj/screen/health,            "loc" = "EAST+1,BOTTOM+6",        "background" = "back1"),
-	"sanity"             = list("type" = /obj/screen/sanity,            "loc" = "EAST+1,BOTTOM+7",        "background" = "back1"),
-	"oxygen"             = list("type" = /obj/screen/oxygen,            "loc" = "EAST+1:1,BOTTOM+8",      "background" = "back18"),
-	"fire"               = list("type" = /obj/screen/fire,              "loc" = "EAST+1:16,BOTTOM+8",     "background" = "back18"),
-	"pressure"           = list("type" = /obj/screen/pressure,          "loc" = "EAST+1:1,BOTTOM+8:15",   "background" = "back18"),
-	"toxin"              = list("type" = /obj/screen/toxin,             "loc" = "EAST+1:16,BOTTOM+8:15",  "background" = "back18"),
-	"internal"           = list("type" = /obj/screen/internal,          "loc" = "EAST+1,BOTTOM+9:-2",     "background" = "back15"),
+	"nutrition"          = list("type" = /obj/screen/nutrition,         "loc" = "EAST+1,4.6",             "background" = "back17"),
+	"neural system accumulation" = list("type" = /obj/screen/nsa,       "loc" = "EAST+1,5",               "background" = "back17"),
+	"body temperature"   = list("type" = /obj/screen/bodytemp,          "loc" = "EAST+1,5.4",             "background" = "back17"),
+	"health"             = list("type" = /obj/screen/health,            "loc" = "EAST+1,5.8",             "background" = "back1"),
+	"sanity"             = list("type" = /obj/screen/sanity,            "loc" = "EAST+1,6.8",             "background" = "back1"),
+	"oxygen"             = list("type" = /obj/screen/oxygen,            "loc" = "EAST+1:1,7.8",           "background" = "back18"),
+	"fire"               = list("type" = /obj/screen/fire,              "loc" = "16.46:1,7.8",            "background" = "back18"),
+	"pressure"           = list("type" = /obj/screen/pressure,          "loc" = "16:1,8.27",              "background" = "back18"),
+	"toxin"              = list("type" = /obj/screen/toxin,             "loc" = "16.46:1,8.27",           "background" = "back18"),
+	"internal"           = list("type" = /obj/screen/internal,          "loc" = "16,8.75",                "background" = "back15"),
 //corner buttons
 	//"jump"               = list("type" = /obj/screen/jump,              "loc" = "EAST+1,BOTTOM+1:-6", "minloc" = "RIGHT,3:-6",   "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"look up"            = list("type" = /obj/screen/look_up,           "loc" = "16,2.83",            "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
@@ -56,7 +56,7 @@
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "background" = "back16"),
 
 	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",               "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
-	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "EAST+1,BOTTOM+9:15")
+	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "16,9.25")
 	)
 
 	slot_data = list (
@@ -80,26 +80,26 @@
 		)
 
 	HUDfrippery = list(
-		list("loc" = "1,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "1,0", "icon_state" = "frame3-4", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "1,1", "icon_state" = "frame2-2",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "1,2", "icon_state" = "frame2-3",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "1,3", "icon_state" = "frame2-1",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "1,1", "icon_state" = "frame1-3", "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "1,2", "icon_state" = "frame1-7",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "1,3", "icon_state" = "frame1-5",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "5,1", "icon_state" = "frame1-2",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "5,2", "icon_state" = "frame1-6",  "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "5,3", "icon_state" = "frame1-4", "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,0", "icon_state" = "frame0-3",    "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "1,0", "icon_state" = "frame3-4",    "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "1,1", "icon_state" = "frame2-2",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,2", "icon_state" = "frame2-3",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,3", "icon_state" = "frame2-1",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,1", "icon_state" = "frame1-3",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,2", "icon_state" = "frame1-7",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "1,3", "icon_state" = "frame1-5",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "5,1", "icon_state" = "frame1-2",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "5,2", "icon_state" = "frame1-6",    "hideflag" = TOGGLE_INVENTORY_FLAG),
+		list("loc" = "5,3", "icon_state" = "frame1-4",    "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "8,1:13", "icon_state" = "frame1-8", "hideflag" = TOGGLE_BOTTOM_FLAG),
 		list("loc" = "9,1:13", "icon_state" = "frame1-1", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame3-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame0-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame1-1"),
-		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame3-3"),
-		list("loc" = "EAST+1,BOTTOM+3:25", "icon_state" = "frame0-4"),
-		list("loc" = "EAST+1,BOTTOM+10:8", "icon_state" = "frame3-1")
+		list("loc" = "12,0", "icon_state" = "frame3-2",   "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "12,0", "icon_state" = "frame0-2",   "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "12,0", "icon_state" = "frame0-3",   "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "EAST+1,3.6", "icon_state" = "frame1-1"),
+		list("loc" = "EAST+1,3.6", "icon_state" = "frame3-3"),
+		list("loc" = "EAST+1,3.6", "icon_state" = "frame0-4"),
+		list("loc" = "16,10", "icon_state" = "frame3-1")
 		)
 		//list("loc" = "2,3", "icon_state" = "block",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 
