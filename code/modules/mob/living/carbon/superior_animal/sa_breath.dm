@@ -62,10 +62,14 @@
 				damage = 0
 			var/heat_protected = damage * heat_protection
 			damage = damage - heat_protected
-
-
-
 		adjustFireLoss(damage)
+
+	//Pasma in the air is bad
+	if(!contaminant_immunity)
+		if(environment.gas["plasma"] > 25)
+			damage = environment.gas["plasma"] * 0.1 //This can get to crazy high damage
+			adjustToxLoss(damage)
+
 
 	if(damage)
 		bad_environment = TRUE
