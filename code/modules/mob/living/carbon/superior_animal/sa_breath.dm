@@ -41,7 +41,14 @@
 
 	if(environment.temperature < min_bodytemperature)
 		damage = min_bodytemperature - environment.temperature
-//		message_admins("i did run and delt [damage]")
+//		message_admins("i did cold run and delt [damage]")
+
+		if(cold_protection)
+			if(cold_protection >= 1)
+				damage = 0
+			var/cold_protected = damage * cold_protection
+			damage = damage - cold_protected
+
 		adjustFireLoss(damage)
 
 //	message_admins("environment.temperature [environment.temperature] > [max_bodytemperature] max_bodytemperature")
@@ -50,6 +57,14 @@
 	if(environment.temperature > max_bodytemperature)
 		damage = environment.temperature - max_bodytemperature
 //		message_admins("i did run hot and delt [damage]")
+		if(heat_protection)
+			if(heat_protection >= 1)
+				damage = 0
+			var/heat_protected = damage * heat_protection
+			damage = damage - heat_protected
+
+
+
 		adjustFireLoss(damage)
 
 	if(damage)
@@ -58,3 +73,11 @@
 		bad_environment = FALSE
 
 	return
+
+
+
+
+
+
+
+
