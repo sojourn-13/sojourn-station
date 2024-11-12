@@ -14,9 +14,10 @@
 		damage = min_breath_required_type - environment.gas[breath_required_type]
 		adjustOxyLoss(damage)
 
-	if(environment.gas[breath_poison_type] > min_breath_poison_type)
-		damage = environment.gas[breath_poison_type] * (min_breath_poison_type + 1)
-		adjustOxyLoss(damage)
+	if(!contaminant_immunity)
+		if(environment.gas[breath_poison_type] > min_breath_poison_type)
+			damage = environment.gas[breath_poison_type] * (min_breath_poison_type + 1)
+			adjustOxyLoss(damage)
 
 	if(damage)
 		bad_environment = TRUE
