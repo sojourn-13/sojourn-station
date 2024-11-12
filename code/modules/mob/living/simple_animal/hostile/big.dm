@@ -4,7 +4,7 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "snake"
 	icon_dead = "snake-dead"
-	faction = "snake"
+	faction = "pond"
 	maxHealth = 100
 	health = 100
 	melee_damage_lower = 10
