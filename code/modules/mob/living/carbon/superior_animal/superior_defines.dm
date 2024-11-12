@@ -149,7 +149,7 @@
 	var/reagent_immune = FALSE
 	//var/never_stimulate_air = FALSE  moved to \code\modules\mob\living\living_defines.dm
 
-	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, and disables "breath_poison_type"
+	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
 	var/heat_protection = 0
 	var/breath_required_type = "oxygen" //0 to disable, oxyloss if absent in sufficient quantity

@@ -10,11 +10,12 @@
 // massively reduces code to a be bare minium
 /mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/environment as anything)
 	var/damage = 0
-	if(environment.gas[breath_required_type] < min_breath_required_type)
-		damage = min_breath_required_type - environment.gas[breath_required_type]
-		adjustOxyLoss(damage)
+	if(breath_required_type)
+		if(environment.gas[breath_required_type] < min_breath_required_type)
+			damage = min_breath_required_type - environment.gas[breath_required_type]
+			adjustOxyLoss(damage)
 
-	if(!contaminant_immunity)
+	if(breath_poison_type)
 		if(environment.gas[breath_poison_type] > min_breath_poison_type)
 			damage = environment.gas[breath_poison_type] * (min_breath_poison_type + 1)
 			adjustOxyLoss(damage)
