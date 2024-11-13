@@ -280,3 +280,145 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		H.sanity.view_damage_threshold += 15
 		H.sanity.change_max_level(-50)
 	..()
+
+/datum/perk/map_maker
+	name = "Map Maker"
+	desc = "When holding paper and a box of crayons (must have at least 1 crayon) or a multi-colour pen you can from time to time create a complex map of the area around you in a 20 range.  \
+	This map will show humanoids and non-humanoids. With constant work you should be able to increase your range of map making."
+	icon_state = "map"
+
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/map_maker/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	var/obj/I = user.get_active_hand()
+	var/obj/II = user.get_inactive_hand()
+	var/can_map = FALSE
+	var/crayon_check = FALSE
+	var/obj/item/storage/fancy/crayons/C
+	var/obj/item/paper/P
+	if(istype(I, /obj/item/storage/fancy/crayons))
+		C = I
+		if(C.contents)
+			crayon_check = TRUE
+
+	if(istype(II, /obj/item/storage/fancy/crayons))
+		C = II
+		if(C.contents)
+			crayon_check = TRUE
+
+	if(istype(I, /obj/item/pen/multi))
+		crayon_check = TRUE
+
+	if(istype(II, /obj/item/pen/multi))
+		crayon_check = TRUE
+
+	if(crayon_check)
+		if(istype(I, /obj/item/paper))
+			P = I
+			can_map = TRUE
+		if(istype(II, /obj/item/paper))
+			P = II
+			can_map = TRUE
+
+	if(!can_map)
+		to_chat(usr, SPAN_NOTICE("You are missing something to make a map with. Ensure you have paper and the *full* box of crayons in both hands!"))
+		return FALSE
+
+
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("It is too early to make another map, you have to wait a bit until you can accurately depict your surroundings again."))
+		return FALSE
+	cooldown_time = world.time + 5 MINUTES
+	user.visible_message("<b><font color='red'>[user] taps the ground and draws on some paper!</font><b>", "<b><font color='red'>You tap the ground, as you create a map from scratch</font><b>", "<b><font color='red'>You hear something scribbling!</font><b>")
+	log_and_message_admins("used their [src] perk.")
+	qdel(P)
+
+	var/range = 20
+	if(isliving(user))
+		var/mob/living/L = user
+		var/tasklevel = L.learnt_tasks.get_task_mastery_level("MAP_CRAFTING")
+		range += tasklevel
+		L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/map_crafting, "MAP_CRAFTING", skill_gained = 1, learner = L)
+
+	var/icon/mineralmapss = new("icons/480x480.dmi","black")
+	mineralmapss.Scale(world.maxx-TRANSITIONEDGE,world.maxy-TRANSITIONEDGE)
+	for(var/turf/T in trange(range,user))
+		if(T.x >= world.maxx-TRANSITIONEDGE || T.x <= TRANSITIONEDGE)	continue
+		if(T.y >= world.maxy-TRANSITIONEDGE || T.y <= TRANSITIONEDGE)	continue
+
+		if(istype(T, /turf/simulated/wall))
+			var/turf/simulated/wall/TA = T
+			mineralmapss.DrawBox(rgb(135,132,132),TA.x,TA.y,TA.x, TA.y)
+			if(istype(T, /turf/simulated/wall/r_wall))
+				mineralmapss.DrawBox(rgb(104, 105, 104),TA.x,TA.y,TA.x, TA.y)
+		if(istype(T, /turf/simulated/floor))
+			var/turf/simulated/floor/TA = T
+			mineralmapss.DrawBox(rgb(255,248,220),TA.x,TA.y,TA.x, TA.y)
+			for(var/obj/structure/catwalk/CW in TA.contents)
+				mineralmapss.DrawBox(rgb(186,142,35),CW.x,CW.y,CW.x, CW.y)
+			for(var/obj/structure/window/WD in TA.contents)
+				mineralmapss.DrawBox(rgb(175,227,255),WD.x,WD.y,WD.x, WD.y)
+			for(var/obj/structure/scrap/DS in TA.contents)
+				mineralmapss.DrawBox(rgb(183,110,121),DS.x,DS.y,DS.x, DS.y)
+			for(var/obj/structure/salvageable/PS in TA.contents)
+				mineralmapss.DrawBox(rgb(183,110,121),PS.x,PS.y,PS.x, PS.y)
+			for(var/obj/structure/closet/MS in TA.contents)
+				mineralmapss.DrawBox(rgb(183,110,121),MS.x,MS.y,MS.x, MS.y)
+			for(var/mob/M in TA.contents)
+				if(ishuman(M))
+					mineralmapss.DrawBox(rgb(57,255,20),M.x,M.y,M.x, M.y)
+				else
+					mineralmapss.DrawBox(rgb(129,2,3),M.x,M.y,M.x, M.y)
+
+			for(var/obj/machinery/porta_turret/PT in TA.contents)
+				mineralmapss.DrawBox(rgb(255,165,0),PT.x,PT.y,PT.x, PT.y)
+			for(var/obj/machinery/power/os_turret/OS in TA.contents)
+				mineralmapss.DrawBox(rgb(255,165,0),OS.x,OS.y,OS.x, OS.y)
+			for(var/obj/item/spider_shadow_trap/SST in TA.contents)
+				mineralmapss.DrawBox(rgb(0,255,255),SST.x,SST.y,SST.x, SST.y)
+
+			for(var/obj/item/beartrap/RT in TA.contents)
+				mineralmapss.DrawBox(rgb(255,0,0),RT.x,RT.y,RT.x, RT.y)
+			for(var/obj/item/emp_mine/RT in TA.contents)
+				mineralmapss.DrawBox(rgb(255,0,0),RT.x,RT.y,RT.x, RT.y)
+			for(var/obj/item/mine/RT in TA.contents)
+				mineralmapss.DrawBox(rgb(255,0,0),RT.x,RT.y,RT.x, RT.y)
+			for(var/obj/structure/wire_splicing/RT in TA.contents)
+				mineralmapss.DrawBox(rgb(255,0,0),RT.x,RT.y,RT.x, RT.y)
+
+			continue
+		if(istype(T, /turf/space) || istype(T, /turf/simulated/open))
+			var/turf/TA = T
+			mineralmapss.DrawBox(rgb(0,0,0),TA.x,TA.y,TA.x, TA.y)
+			for(var/obj/structure/catwalk/CW in TA.contents)
+				mineralmapss.DrawBox(rgb(186,142,35),CW.x,CW.y,CW.x, CW.y)
+
+			continue
+		if(istype(T, /turf/simulated/mineral))
+			var/turf/simulated/mineral/MW = T
+			mineralmapss.DrawBox(rgb(96, 70, 15),MW.x,MW.y,MW.x, MW.y)
+
+	mineralmapss.Scale((world.maxx-TRANSITIONEDGE )* 6,(world.maxy-TRANSITIONEDGE) * 6)
+	sleep(0)
+	var/obj/item/paper/G = new(user.loc)
+	G.name = "Area Map"
+	G.info = "[icon2html(mineralmapss,world)] <br> Legend:<br>"
+	G.info += "<font color='#39FF14'>People</font> Neon Green<br>"
+	G.info += "<font color='#810203'>Life (Not-Plants)</font> Brick Red<br>"
+	G.info += "<font color='#878484'>R-Wall</font> Shadow Gray<br>"
+	G.info += "<font color='#BDBAA2'>Flooring</font> Clay Gray<br>"
+	G.info += "<font color='#60460F'>Mineral Wall</font> Mud Brown<br>"
+	G.info += "<font color='#FFA500'>Turret</font> Dusk Sun Yellow<br>"
+	G.info += "<font color='#AFE3ff'>Glass-Windows</font> Coal Blue<br>"
+	G.info += "<font color='#B76E79'>Scrap/Lootables/Salvage</font> Rose Gold<br>"
+	G.info += "<font color='#FF0000'>Trap</font> Hostile Spotted Red<br>"
+	G.info += "<font color='#000000'>Open Space</font> Burnt Mess Black<br>"
+	G.info += "<font color='#BA8E23'>CatWalks</found> Bee Yellow<br>"
+	G.update_icon()
+
+	return ..()
+

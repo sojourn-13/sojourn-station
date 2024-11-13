@@ -276,3 +276,15 @@
 		STAT_COG = -10,
 		STAT_VIV = -30
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/map_maker
+	name = "Map Making"
+	desc = "Your enhanced perception allows you to visualize the terrain around you, marking down walls, foes, and loot nearby."
+	perks = list(PERK_MAP_MAKER)
+
+	//Weak perk if you already know the map, also takes resources to use
+	stat_modifiers = list(
+		STAT_BIO = -5,
+		STAT_COG = 10,
+	)
+
