@@ -1019,7 +1019,7 @@
 //Complex cheap weapon arts
 /obj/item/tool/cheap/rapier
 	name = "cheap cinq rapier"
-	desc = "A mass-produced copy of a cinq rapier by Lonestar. Is unable to be used for parrying but has some technics."
+	desc = "A mass-produced copy of a cinq rapier by Lonestar. Is unable to be used for parrying but has some techniques."
 	icon_state = "cheap_rapier"
 	item_state = "katana"
 	force = WEAPON_FORCE_NORMAL
