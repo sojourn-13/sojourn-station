@@ -92,33 +92,33 @@
 //======================================================================
 //Termite Combinations
 /datum/genetics/mutation_recipe/irradiation/termite
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite)
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite_no_despawn)
 
 /datum/genetics/mutation_recipe/irradiation/termite/get_result()
 	var/list/random_termite = pick(
-		list("type" = /mob/living/carbon/superior_animal/termite, "name" = "Pekhota termite"),
-		list("type" = /mob/living/carbon/superior_animal/termite/iron, "name" = "Pomoshchnik termite"),
-		list("type" = /mob/living/carbon/superior_animal/termite/silver, "name" = "Pushka termite"),
-		list("type" = /mob/living/carbon/superior_animal/termite/uranium, "name" = "Smertnik termite"),
-		list("type" = /mob/living/carbon/superior_animal/termite/plasma, "name" = "Kop'ye termite"))
+		list("type" = /mob/living/carbon/superior_animal/termite_no_despawn, "name" = "Pekhota termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite_no_despawn/iron, "name" = "Pomoshchnik termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite_no_despawn/silver, "name" = "Pushka termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite_no_despawn/uranium, "name" = "Smertnik termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite_no_despawn/plasma, "name" = "Kop'ye termite"))
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(random_termite["type"], random_termite["name"])
 	return new_mutation
 //=======================
 //Queen
 /datum/genetics/mutation_recipe/combination/queen_termite
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite/silver)
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite_no_despawn/silver)
 	required_mutations = list(MUTATION_GIGANTISM)
 
 /datum/genetics/mutation_recipe/combination/queen_termite/get_result()
-	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite/diamond, "Koroleva termite")
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite_no_despawn/diamond, "Koroleva termite")
 //=======================
 //King
 /datum/genetics/mutation_recipe/combination/king_termite
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite/plasma)
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite_no_despawn/plasma)
 	required_mutations = list(MUTATION_GIGANTISM)
 
 /datum/genetics/mutation_recipe/combination/king_termite/get_result()
-	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite/osmium, "Korol termite")
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite_no_despawn/osmium, "Korol termite")
 
 //======================================================================
 //Increase Cow.
@@ -332,6 +332,15 @@
 
 /datum/genetics/mutation_recipe/combination/mouse/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/opossum, "opossom")
+
+//======================================================================
+//possom to helldiver
+/datum/genetics/mutation_recipe/combination/opossum
+	required_on_clone_types = list(/mob/living/simple_animal/opossum)
+	required_mutations = list(MUTATION_BOTTOMLESS_BELLY, MUTATION_COW_SKIN)
+
+/datum/genetics/mutation_recipe/combination/opossum/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/helldiver, "hell diver")
 
 //======================================================================
 //cat and panther

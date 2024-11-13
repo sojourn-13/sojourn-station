@@ -177,6 +177,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 	poison_type = "aranecolmin" //Shockingly this is more deadly then normal as it makes metaball faster
+	inherent_mutations = list(MUTATION_PUNCH)
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing
 	name = "trapdoor spider"
