@@ -21,11 +21,12 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
 	damage_multiplier = 1.2
-	init_recoil = RIFLE_RECOIL(1.3)
+	init_recoil = RIFLE_RECOIL(1)	//Less than a Siaga, but has less ammo capacity.
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
 	init_firemodes = list(
-		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
+		FULL_AUTO_200_NOLOSS,		//Less capacity + no external loader mags so, you get slower fire than Siaga/Pug but no damage reduction.
+		SEMI_AUTO_NODELAY
 		)
 	serial_type = "SD GmbH"
 
@@ -68,12 +69,16 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1000
-	damage_multiplier = 0.8
+	damage_multiplier = 0.8		//You get the damage back by unfolding the stock.
 	penetration_multiplier = 1
 	zoom_factors = list(0.2)
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold our stocks
 	can_dual = FALSE
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY		//No full auto for you.
+		)
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
