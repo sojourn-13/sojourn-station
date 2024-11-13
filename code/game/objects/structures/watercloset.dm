@@ -506,7 +506,7 @@
 		return
 
 	if(istype(O, /obj/item/reagent_containers/cooking_with_jane))
-		to_chat(user, SPAN_WARNING("The [O] dosnt seem to like water directly from the tap. Use a beaker or other proxy to add reagents."))
+		to_chat(user, SPAN_WARNING("The [O] doesn‘t seem to accept water directly from the tap. Use a beaker or other proxy to add reagents."))
 		return
 
 	var/obj/item/reagent_containers/RG = O
