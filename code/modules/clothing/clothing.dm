@@ -183,6 +183,7 @@
 	minloc = "7,2:13"
 	name = "Clothing information"
 	icon_state = "info"
+	ErisOptimized_minloc = "16,10.3"
 
 /obj/item/clothing/refresh_upgrades()
 	var/obj/item/clothing/referencecarmor = new type()

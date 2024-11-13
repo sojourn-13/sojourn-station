@@ -146,6 +146,7 @@
 	icon_state = "actionA"
 	screen_loc = "8,1:13"
 	var/minloc = "7,2:13"
+	var/ErisOptimized_minloc
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 
@@ -162,6 +163,8 @@
 	if(M.client && M.get_active_hand() == owner)
 		if(M.client.prefs.UI_compact_style)
 			screen_loc = minloc
+			if(M.defaultHUD == "ErisOptimized" && ErisOptimized_minloc)
+				screen_loc = ErisOptimized_minloc
 		else
 			screen_loc = initial(screen_loc)
 

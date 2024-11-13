@@ -3,7 +3,7 @@
 	icon = 'icons/mob/screen/ErisStyleHolo.dmi'
 	//Xbags, Ybags for space_orient_objs
 	//Others for slot_orient_objs
-	MinStyleFlag = FALSE //We *are* the optimized verson
+	MinStyleFlag = TRUE //We *are* the optimized verson
 	StorageData = list(
 		"Xspace" = 4.5*32, //in pixels
 		"Yspace" = 1.5*32, //in pixels
@@ -55,26 +55,26 @@
 	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "7:19,1",             "background" = "back16"),
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "background" = "back16"),
 
-	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",               "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",               "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1", "minloc" = "16,15"),
 	"action palette"      = list("type" = /obj/screen/action_palette,    "loc" = "16,9.25")
 	)
 
 	slot_data = list (
-		"Uniform" =         list("loc" = "2,1",   "state" = "center",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Suit" =            list("loc" = "3,1",   "state" = "equip",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Mask" =            list("loc" = "3,2",   "state" = "mask",     "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Gloves" =          list("loc" = "4,1",   "state" = "gloves",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Glasses" =         list("loc" = "2,2",   "state" = "glasses",  "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Left Ear" =        list("loc" = "4,2",   "state" = "ears0",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Right Ear" =       list("loc" = "4,3",   "state" = "ears1",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Hat" =             list("loc" = "3,3",   "state" = "hair",     "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1"),
-		"Shoes" =           list("loc" = "3,0",   "state" = "shoes",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Uniform" =         list("loc" = "2,1",   "state" = "center",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "1,0"),
+		"Suit" =            list("loc" = "3,1",   "state" = "equip",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "3,0"),
+		"Mask" =            list("loc" = "3,2",   "state" = "mask",     "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "12,0"),
+		"Gloves" =          list("loc" = "4,1",   "state" = "gloves",   "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "16,12"),
+		"Glasses" =         list("loc" = "2,2",   "state" = "glasses",  "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "16,11"),
+		"Left Ear" =        list("loc" = "4,2",   "state" = "ears0",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "16,14"),
+		"Right Ear" =       list("loc" = "4,3",   "state" = "ears1",    "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "16,3.6"),
+		"Hat" =             list("loc" = "3,3",   "state" = "hair",     "hideflag" = TOGGLE_INVENTORY_FLAG, "background" = "back1", "minloc" = "16,13"),
+		"Shoes" =           list("loc" = "3,0",   "state" = "shoes",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1", "minloc" = "2,0"),
 		"Suit Storage" =    list("loc" = "4,0",   "state" = "suit-belt","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
-		"Back" =            list("loc" = "5,0",   "state" = "back",     "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Back" =            list("loc" = "5,0",   "state" = "back",     "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1", "minloc" = "6,0"),
 		"ID" =              list("loc" = "11,0",  "state" = "id",       "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
 		"Left Pocket" =     list("loc" = "10,0",  "state" = "pocket_l", "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
 		"Right Pocket" =    list("loc" = "7,0",   "state" = "pocket_r", "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
-		"Belt" =            list("loc" = "6,0",   "state" = "belt",     "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Belt" =            list("loc" = "6,0",   "state" = "belt",     "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1", "minloc" = "5,0"),
 		"Left Hand" =       list("loc" = "9,0",   "state" = "hand-l",   "hideflag" = TOGGLE_BOTTOM_FLAG,    "type" = /obj/screen/inventory/hand, "background" = "back1"),
 		"Right Hand" =      list("loc" = "8,0",   "state" = "hand-r",   "hideflag" = TOGGLE_BOTTOM_FLAG,    "type" = /obj/screen/inventory/hand, "background" = "back1")
 		)
@@ -106,3 +106,7 @@
 
 /datum/hud/human/optimized/New()
 	..()
+
+/datum/interface/ghost_Eris/optimized
+	mobtype = /mob/observer/ghost
+	styleName = "ErisOptimized"
