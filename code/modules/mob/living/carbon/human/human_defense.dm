@@ -566,15 +566,38 @@ uniquic_armor_act
 
 	return perm
 
-
 //soj edit
 //This atm only has 1 armor in it thus its coding is trash and snowflake
+//user
 /mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
-	//message_admins("unique_armor_check([user.name]) EF [EF]")
-	//Optimiation based on only 1 suit being this check, no point in asking for 99.99% of the time past this by types
-	if(!wear_suit)
-		//message_admins("No suit found")
-		return EF
+	//message_admins("unique_armor_check(A [A] user [user]) EF [EF]")
+	if(istype(shoes, /obj/item/clothing/shoes/crimsoncross_warp))
+		//message_admins("SHOES FOUND!!!!")
+		var/obj/item/clothing/shoes/crimsoncross_warp/CW = shoes
+		CW.harm_charge += EF
+		if(0<CW.harm_charge && !EF)
+			CW.squeaking = CW.harm_charge * 0.002 //ENDLESS growth after all
+			var/fear = sanity.level
+			if(fear > 0)
+				fear = fear / sanity.max_level
+				if(fear != 1)
+					fear += 1
+				//So that sanity
+				//message_admins("fear1 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear2 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear3 [fear]")
+			//Mile stones for increase penitles for speed reduction
+			if(CW.harm_charge >= 1200)
+				fear += 3
+			if(CW.harm_charge >= 800)
+				fear += 2
+			if(CW.harm_charge >= 400)
+				fear += 1
+			CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
+			CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
+			return CW.squeaking
 	//We at this moment only have one outfit that we check and its by path for now.
 	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
 		//message_admins("Suit found")

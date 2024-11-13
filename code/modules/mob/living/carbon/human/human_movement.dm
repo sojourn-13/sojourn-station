@@ -12,6 +12,8 @@
 		tally -= chem_effects[CE_SPEEDBOOST]
 	if(CE_SLOWDOWN in chem_effects)
 		tally += chem_effects[CE_SLOWDOWN]
+	if(MOVING_QUICKLY(src))
+		tally -= unique_armor_check(src, src, 0)
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)
@@ -80,7 +82,6 @@
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 
 	return tally
-
 
 /mob/living/carbon/human/allow_spacemove()
 	//Can we act?
