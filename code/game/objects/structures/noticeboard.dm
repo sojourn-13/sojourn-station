@@ -282,7 +282,7 @@
 	<li> Windows: Normal 2. Reinforced 3. Plasma 5 .Reinforced Plasma 10\
 	<li> Reagent Dispensers (Such as: Watercoolers, Welder Fuel Tanks, Beer Kegs): 25.\
 	<li> Lockers and Closets: 10.\
-	<li> Damaged Floors: -2 (Reduces Value)</ol> "
+	<li> Damaged Floors: N/A</ol>"
 	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P
