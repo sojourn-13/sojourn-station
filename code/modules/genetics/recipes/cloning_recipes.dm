@@ -1,3 +1,4 @@
+//A-Z required
 //======================================================================
 //Roach Combinations
 /datum/genetics/mutation_recipe/irradiation/roach

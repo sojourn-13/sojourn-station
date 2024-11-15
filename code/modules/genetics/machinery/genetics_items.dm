@@ -617,8 +617,8 @@ Neglects to mention where to find its pieces.
 		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
 		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
 		"Bank to Bank, River to River, Ocean to Ocean, weaved together to make a Temple.",
-		"Eye's of a cat, belly of a beast and a bank of blood will make a most regal sickness.",
 		"Mix Unstable foot, Eye's of a cat and dwarfism to create something any miner would love.",
+		"Belly of a beast, a bank of blood, and eye's of a cat will make a most regal sickness.",
 		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
 	desc = "Xenogenetics fact of the day: [blurb]"
 
