@@ -92,6 +92,10 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
+"ck" = (
+/obj/random/rig/damaged,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "cu" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt,
@@ -141,8 +145,9 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "eq" = (
-/turf/simulated/mineral/random/rogue,
-/area/nadezhda/outside/forest/river_forest_light)
+/obj/structure/computerframe,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "eu" = (
 /obj/structure/boulder,
 /obj/structure/boulder,
@@ -192,6 +197,11 @@
 "fx" = (
 /turf/simulated/mineral,
 /area/nadezhda/outside/forest/river_forest_nightmare)
+"fz" = (
+/obj/item/stack/material/refined_scrap/random,
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "fI" = (
 /mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock/alt,
@@ -245,6 +255,12 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_dark)
+"hE" = (
+/obj/item/stack/rods/random,
+/obj/item/stack/material/refined_scrap/random,
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "hF" = (
 /obj/structure/table/woodentable,
 /obj/item/trash/plate,
@@ -253,6 +269,11 @@
 "hG" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/river_forest_nightmare)
+"hQ" = (
+/obj/random/mob/undergroundmob,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_nightmare)
 "hS" = (
 /obj/random/cluster/xenomorphs/lower_chance,
@@ -270,6 +291,11 @@
 /obj/item/stack/ore,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/river_forest_lake)
+"iA" = (
+/obj/item/stack/rods/random,
+/obj/random/booze,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "iB" = (
 /mob/living/simple_animal/hostile/carp/baby,
 /turf/simulated/floor/beach/water/shallow,
@@ -329,6 +355,10 @@
 "kr" = (
 /turf/simulated/mineral,
 /area/nadezhda/outside/forest/river_forest_light)
+"kD" = (
+/obj/item/stack/rods/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "kE" = (
 /obj/item/device/synthesized_instrument/guitar,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -563,6 +593,10 @@
 /obj/item/clothing/mask/costume/halloween/goblin,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
+"oo" = (
+/obj/item/oddity/common/old_pda,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "ox" = (
 /obj/random/mob/mukwah,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -985,6 +1019,11 @@
 "tB" = (
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/river_forest_light)
+"tG" = (
+/mob/living/simple_animal/hostile/carp/pike,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "tI" = (
 /obj/item/stack/ore,
 /turf/simulated/floor/rock/dark,
@@ -1132,6 +1171,10 @@
 /obj/item/reagent_containers/food/snacks/applepie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"vG" = (
+/obj/random/closet_maintloot,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "vH" = (
 /obj/item/stack/material/plasteel,
 /turf/simulated/floor/rock,
@@ -1140,6 +1183,10 @@
 /obj/item/reagent_containers/food/snacks/amanita_pie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"vQ" = (
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "vS" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/seeds/angelmycelium,
@@ -1284,6 +1331,11 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
+"yc" = (
+/obj/item/stack/rods/random,
+/obj/item/stack/material/refined_scrap/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "yf" = (
 /obj/item/stack/ore/diamond,
 /turf/simulated/floor/rock/grey,
@@ -1520,6 +1572,10 @@
 /obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
+"AT" = (
+/obj/random/toolbox,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "AV" = (
 /obj/item/trash/candy/proteinbar,
 /obj/random/junk/cigbutt,
@@ -1551,6 +1607,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
+"Br" = (
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Bs" = (
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/wood/wild4,
@@ -1753,6 +1813,10 @@
 /obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
+"DZ" = (
+/obj/item/oddity/common/old_id,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Ec" = (
 /obj/item/remains/deer,
 /turf/simulated/floor/rock/alt,
@@ -1802,6 +1866,10 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
+"EB" = (
+/obj/item/trash/material/metal,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "EC" = (
 /obj/item/stack/ore/strangerock,
 /turf/simulated/floor/rock/grey,
@@ -1822,6 +1890,10 @@
 /obj/item/arrow,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
+"EQ" = (
+/obj/item/stack/material/plastic/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "EV" = (
 /mob/living/simple_animal/hostile/carp/greatwhite,
 /turf/simulated/floor/beach/water/jungle,
@@ -1843,6 +1915,10 @@
 /obj/item/stack/material/bone,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"Fi" = (
+/obj/random/rig/damaged/low_chance,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Fk" = (
 /obj/random/mob/xenomorphs,
 /turf/simulated/floor/asteroid/dirt,
@@ -1908,6 +1984,10 @@
 	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_cabin)
+"FW" = (
+/obj/random/pouch/hardcase_scrap/low_chance,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "FY" = (
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -1981,6 +2061,10 @@
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/grass/colonialjungle1,
 /area/nadezhda/outside/forest/river_forest_light)
+"GY" = (
+/obj/item/reagent_containers/glass/beaker/vial/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Ha" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -2031,6 +2115,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
+"HY" = (
+/obj/machinery/constructable_frame/machine_frame,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "HZ" = (
 /turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest/river_forest_cabin)
@@ -2351,6 +2439,10 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
+"MJ" = (
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/carp_lair)
 "ML" = (
 /obj/random/junk/cigbutt,
 /obj/item/stack/material/wood/random,
@@ -2383,6 +2475,11 @@
 /mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
+"Nd" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/item/reagent_containers/glass/beaker/vial/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Ne" = (
 /obj/item/stack/ore,
 /turf/simulated/floor/rock,
@@ -2550,6 +2647,11 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_nightmare)
+"PZ" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/river_forest_nightmare)
 "Qc" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/alt,
@@ -2577,6 +2679,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_nightmare)
+"Qy" = (
+/obj/item/oddity/common/old_knife,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "QB" = (
 /obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -2589,6 +2695,10 @@
 /obj/random/common_oddities,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
+"Rb" = (
+/obj/item/reagent_containers/glass/plastic_jug,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Rc" = (
 /obj/item/oddity/common/old_knife,
 /turf/simulated/floor/rock/grey,
@@ -2625,6 +2735,10 @@
 /obj/item/remains,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"RY" = (
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Sa" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -2671,6 +2785,10 @@
 /obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"SL" = (
+/obj/random/booze,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "SP" = (
 /obj/item/oddity/common/paper_omega,
 /turf/simulated/floor/rock,
@@ -2723,6 +2841,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_nightmare)
+"TE" = (
+/obj/item/stack/material/refined_scrap/random,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "TG" = (
 /obj/machinery/power/port_gen/pacman/camp,
 /turf/simulated/floor/rock/alt,
@@ -2899,6 +3021,10 @@
 /obj/item/stack/ore/strangerock,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_dark)
+"VF" = (
+/obj/random/tool,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "VI" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
@@ -2920,6 +3046,11 @@
 /obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/nadezhda/outside/forest/river_forest_light)
+"Wb" = (
+/obj/item/reagent_containers/glass/beaker/vial/random,
+/obj/random/booze,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/carp_lair)
 "Wc" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/stack/material/bone,
@@ -11080,10 +11211,10 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
-eC
+YV
+YV
+Il
+Il
 eC
 eC
 eC
@@ -11282,17 +11413,17 @@ eC
 eC
 eC
 eC
+YV
+PU
+Il
+hQ
 eC
 eC
 eC
 eC
-eC
-eC
-eC
-eC
-eC
-eC
-eC
+YV
+Il
+Il
 eC
 eC
 eC
@@ -11484,17 +11615,17 @@ eC
 eC
 fx
 fx
+YV
 fx
 fx
-fx
 eC
 eC
 eC
 eC
 eC
-eC
-eC
-eC
+hQ
+YV
+Il
 eC
 eC
 eC
@@ -11685,7 +11816,7 @@ eC
 eC
 eC
 fx
-PU
+YV
 Il
 YV
 fx
@@ -11694,9 +11825,9 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
+Il
+PU
+Il
 eC
 eC
 eC
@@ -11887,18 +12018,18 @@ eC
 fx
 fx
 fx
-PU
-Il
 YV
-qn
+PZ
+YV
+Il
 fx
 fx
 fx
 eC
 eC
 eC
-eC
-eC
+YV
+YV
 eC
 eC
 eC
@@ -12090,17 +12221,17 @@ YV
 YV
 Il
 YV
+PZ
+PU
 Il
+PU
+PU
+fx
+fx
+fx
+fx
+fx
 YV
-Il
-PU
-PU
-fx
-fx
-fx
-fx
-fx
-fx
 fx
 eC
 eC
@@ -12290,18 +12421,18 @@ aD
 fx
 DE
 YV
-YV
+py
 fx
 fx
-YV
+PU
 Il
 YV
 Il
-YV
+py
 fx
 fx
 fx
-Il
+qn
 YV
 YV
 eC
@@ -12499,12 +12630,12 @@ fx
 fx
 PU
 Il
-py
-Il
+PU
+PZ
 fx
 PU
 PU
-qn
+Il
 Il
 eC
 eC
@@ -12699,13 +12830,13 @@ eC
 eC
 eC
 fx
-fx
+YV
 YV
 Il
 YV
-Il
-Il
-YV
+PZ
+qn
+PU
 YV
 PU
 eC
@@ -12901,14 +13032,14 @@ eC
 eC
 eC
 eC
-fx
+YV
 fx
 fx
 Il
 YV
 YV
 Il
-PU
+YV
 fx
 eC
 eC
@@ -13102,15 +13233,15 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
-fx
-fx
+Il
 YV
-py
-YV
+eC
 fx
+fx
+PU
+YV
+YV
+YV
 fx
 eC
 eC
@@ -13304,15 +13435,15 @@ eC
 eC
 eC
 eC
+Il
+PU
+PU
 eC
-eC
-eC
-eC
 fx
 fx
 fx
 fx
-fx
+YV
 eC
 eC
 eC
@@ -13506,16 +13637,16 @@ eC
 eC
 eC
 eC
+Il
+hQ
+YV
 eC
 eC
 eC
 eC
 eC
-eC
-eC
-eC
-eC
-eC
+Il
+YV
 eC
 eC
 "}
@@ -13715,9 +13846,9 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
+YV
+Il
+YV
 eC
 eC
 "}
@@ -13916,10 +14047,10 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
-eC
+YV
+Il
+Il
+YV
 eC
 eC
 "}
@@ -14117,10 +14248,10 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
-eC
+Il
+Il
+YV
+YV
 eC
 eC
 eC
@@ -14318,9 +14449,9 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
+YV
+Il
+PU
 eC
 eC
 eC
@@ -14520,9 +14651,9 @@ eC
 eC
 eC
 eC
-eC
-eC
-eC
+YV
+Il
+YV
 eC
 eC
 eC
@@ -14723,8 +14854,8 @@ eC
 eC
 eC
 eC
-eC
-eC
+YV
+py
 eC
 eC
 eC
@@ -35280,9 +35411,9 @@ BN
 BN
 BN
 Mb
-yg
-yg
-yg
+Mb
+Mb
+Mb
 WM
 Pv
 kI
@@ -35491,7 +35622,7 @@ kI
 Pv
 WM
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -35683,7 +35814,7 @@ Mb
 Mb
 Mb
 Mb
-Mb
+yg
 yg
 WM
 WM
@@ -35693,7 +35824,7 @@ Pv
 kI
 kI
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -35885,7 +36016,7 @@ Mb
 Mb
 Mb
 Mb
-Mb
+yg
 WM
 WM
 Qp
@@ -35895,7 +36026,7 @@ kI
 kI
 WM
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -36087,7 +36218,7 @@ Mb
 Mb
 Mb
 Mb
-Mb
+yg
 WM
 Pv
 Pv
@@ -36097,7 +36228,7 @@ Pv
 kI
 kI
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -36289,7 +36420,7 @@ Mb
 Mb
 Mb
 Mb
-Mb
+yg
 WM
 WM
 Pv
@@ -36299,7 +36430,7 @@ kI
 kI
 WM
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -36491,7 +36622,7 @@ Mb
 Mb
 Mb
 Mb
-Mb
+yg
 yg
 WM
 WM
@@ -36501,7 +36632,7 @@ kI
 Pv
 kI
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -36703,7 +36834,7 @@ HP
 kI
 kI
 WM
-Mb
+yg
 Mb
 Mb
 Mb
@@ -36728,7 +36859,7 @@ Mb
 BN
 BN
 Mf
-xd
+DF
 xd
 xd
 ZZ
@@ -36896,16 +37027,16 @@ Mb
 Mb
 Mb
 Mb
-yg
-yg
-yg
-yg
-WM
-WM
-WM
-WM
-WM
 Mb
+yg
+yg
+yg
+WM
+WM
+WM
+WM
+WM
+yg
 Mb
 Mb
 Mb
@@ -36933,7 +37064,7 @@ BN
 ZZ
 xd
 xd
-xd
+DF
 ZZ
 ti
 ti
@@ -37100,14 +37231,14 @@ Mb
 Mb
 Mb
 Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
 Mb
 Mb
 Mb
@@ -37946,9 +38077,9 @@ BN
 BN
 BN
 La
+RY
 Lg
-Lg
-Lg
+RY
 oS
 vj
 vj
@@ -38155,7 +38286,7 @@ Lg
 vj
 vj
 vj
-Lg
+RY
 vj
 Lg
 Pa
@@ -38354,9 +38485,9 @@ BN
 La
 Lg
 Lg
+RY
 Lg
-Lg
-Lg
+RY
 Lg
 Lg
 fT
@@ -38560,7 +38691,7 @@ Lg
 fT
 Lg
 Lg
-Lg
+RY
 Lg
 Lg
 Lg
@@ -38759,13 +38890,13 @@ BN
 oe
 vj
 vj
-vj
+MJ
 Lg
+FW
 Lg
+EB
 Lg
-Lg
-Lg
-Lg
+TE
 BN
 Mb
 "}
@@ -38922,7 +39053,7 @@ yg
 yg
 yg
 yg
-Mb
+yg
 Mb
 Mb
 Mb
@@ -38963,12 +39094,12 @@ vj
 vj
 Pa
 fT
+TE
 Lg
+tG
+FW
 Lg
-Fs
-Lg
-Lg
-BN
+Wz
 Mb
 "}
 (178,1,1) = {"
@@ -39124,7 +39255,7 @@ yg
 yg
 yg
 yg
-Mb
+yg
 Mb
 Mb
 Mb
@@ -39163,14 +39294,14 @@ BN
 vj
 vj
 vj
+EB
 Lg
 Lg
+Qy
 Lg
+SL
 Lg
-Lg
-Lg
-Lg
-BN
+Wz
 Mb
 "}
 (179,1,1) = {"
@@ -39326,7 +39457,7 @@ yG
 yg
 yg
 yg
-Mb
+yg
 Mb
 Mb
 Mb
@@ -39366,13 +39497,13 @@ vj
 vj
 YG
 Lg
+Br
 Lg
+kD
+RY
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+JV
+Wz
 Mb
 "}
 (180,1,1) = {"
@@ -39528,7 +39659,7 @@ yG
 yG
 yg
 yg
-Mb
+yg
 Mb
 Mb
 Mb
@@ -39569,12 +39700,12 @@ vj
 vj
 Lg
 Lg
+JV
 Lg
 Lg
 Lg
-Lg
-Lg
-BN
+JV
+Wz
 Mb
 "}
 (181,1,1) = {"
@@ -39730,7 +39861,7 @@ Sf
 yG
 yG
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -39771,12 +39902,12 @@ vj
 Lg
 fT
 Lg
+JV
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+EQ
+vG
+JV
+Wz
 Mb
 "}
 (182,1,1) = {"
@@ -39932,7 +40063,7 @@ Zr
 rD
 oy
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -39971,14 +40102,14 @@ BN
 vj
 vj
 vj
+SL
+FW
+Lg
+VF
 Lg
 Lg
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+Wz
 Mb
 "}
 (183,1,1) = {"
@@ -40134,7 +40265,7 @@ Dc
 Zr
 Zr
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -40175,12 +40306,12 @@ jA
 Lg
 Lg
 Lg
+AT
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+kD
+Br
+GY
+Wz
 Mb
 "}
 (184,1,1) = {"
@@ -40336,7 +40467,7 @@ bF
 yG
 yG
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -40374,15 +40505,15 @@ Mb
 BN
 vj
 Lg
+kD
+RY
 Lg
 Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-BN
+Rb
+RY
+EQ
+kD
+vQ
 Mb
 "}
 (185,1,1) = {"
@@ -40538,7 +40669,7 @@ Dc
 yG
 yG
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -40579,12 +40710,12 @@ Lg
 Lg
 Lg
 Lg
+EQ
 Lg
 Lg
+TE
 Lg
-Lg
-Lg
-BN
+HY
 Mb
 "}
 (186,1,1) = {"
@@ -40740,7 +40871,7 @@ qk
 qk
 yG
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -40778,15 +40909,15 @@ Mb
 BN
 vj
 Lg
-fT
+Nd
+Lg
+RY
+TE
+Lg
+HY
 Lg
 Lg
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
 Mb
 "}
 (187,1,1) = {"
@@ -40942,7 +41073,7 @@ Dc
 qk
 qk
 yG
-Mb
+yg
 Mb
 Mb
 Mb
@@ -40981,14 +41112,14 @@ BN
 vj
 Fs
 Lg
+EQ
 Lg
 Lg
+JV
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+EQ
+RY
+kD
 Mb
 "}
 (188,1,1) = {"
@@ -41144,8 +41275,8 @@ Dc
 Dc
 qk
 yG
-Mb
-Mb
+yg
+yg
 Mb
 Mb
 Mb
@@ -41184,13 +41315,13 @@ vj
 fT
 Lg
 Lg
+VF
+FW
 Lg
+FW
+EB
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+FW
 Mb
 "}
 (189,1,1) = {"
@@ -41346,8 +41477,8 @@ bF
 Dc
 Dc
 yG
-Mb
-Mb
+yg
+yg
 Mb
 Mb
 Mb
@@ -41384,15 +41515,15 @@ BN
 vj
 Lg
 Lg
+RY
 Lg
 Lg
 Lg
+RY
+SL
+JV
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+VF
 Mb
 "}
 (190,1,1) = {"
@@ -41548,8 +41679,8 @@ oy
 bF
 Dc
 yG
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -41587,14 +41718,14 @@ Lg
 Lg
 Lg
 Lg
+kD
+EQ
+oo
+ck
 Lg
+JV
 Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-BN
+Br
 Mb
 "}
 (191,1,1) = {"
@@ -41750,8 +41881,8 @@ jI
 jI
 jI
 jI
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -41789,14 +41920,14 @@ Lg
 Lg
 Lg
 Lg
+JV
+JV
 Lg
+vG
 Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-BN
+AT
+kD
+RY
 Mb
 "}
 (192,1,1) = {"
@@ -41952,8 +42083,8 @@ jI
 dp
 jI
 jI
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -41990,15 +42121,15 @@ Lg
 Lg
 Lg
 Lg
+FW
+Lg
+JV
 Lg
 Lg
+EQ
+RY
 Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-BN
+Fi
 Mb
 "}
 (193,1,1) = {"
@@ -42154,8 +42285,8 @@ oy
 Zr
 jI
 jI
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -42196,11 +42327,11 @@ Lg
 Lg
 Lg
 Lg
+VF
 Lg
 Lg
-Lg
-Lg
-BN
+JV
+EQ
 Mb
 "}
 (194,1,1) = {"
@@ -42356,8 +42487,8 @@ bF
 bF
 qk
 qk
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -42396,13 +42527,13 @@ fT
 vj
 YG
 Lg
+EB
+kD
 Lg
-Lg
-Lg
-Lg
-Lg
-Lg
-BN
+FW
+Wb
+JV
+Br
 Mb
 "}
 (195,1,1) = {"
@@ -42558,8 +42689,8 @@ yG
 bF
 Dc
 Dc
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -42599,12 +42730,12 @@ vj
 vj
 Lg
 fT
+RY
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+JV
+DZ
+JV
+yc
 Mb
 "}
 (196,1,1) = {"
@@ -42760,8 +42891,8 @@ fv
 bF
 Zr
 Zr
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -42801,12 +42932,12 @@ BN
 vj
 Lg
 Lg
+SL
 Lg
-Lg
-Lg
-Lg
-Lg
-BN
+JV
+EQ
+fz
+RY
 Mb
 "}
 (197,1,1) = {"
@@ -42962,8 +43093,8 @@ qk
 Dc
 jI
 jI
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -43001,14 +43132,14 @@ Mb
 BN
 BN
 vj
-Lg
-Lg
+eq
+TE
 Lg
 nL
-Lg
-Lg
-Lg
-BN
+GY
+Rb
+AT
+iA
 Mb
 "}
 (198,1,1) = {"
@@ -43164,8 +43295,8 @@ qk
 qk
 yG
 yG
-eq
-Mb
+yG
+yg
 Mb
 Mb
 Mb
@@ -43206,11 +43337,11 @@ vj
 vj
 jA
 vj
-vj
+MJ
 YG
-Lg
-Lg
-BN
+RY
+eq
+hE
 Mb
 "}
 (199,1,1) = {"
@@ -43351,23 +43482,23 @@ Mb
 Mb
 Mb
 Mb
-Mb
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-eq
-Mb
+yg
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yG
+yg
 Mb
 Mb
 Mb
@@ -43410,9 +43541,9 @@ BN
 BN
 BN
 BN
-BN
-BN
-BN
+Br
+yc
+RY
 Mb
 "}
 (200,1,1) = {"
@@ -43552,24 +43683,24 @@ Mb
 Mb
 Mb
 Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
-Mb
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
+yg
 Mb
 Mb
 Mb
