@@ -19,7 +19,7 @@
 	//Any failed attempt to collapse it will reduce the health, making future attempts easier
 	health = 100
 
-	var/isSealed = TRUE	// borrow spawns as cracks and becomes a hole when critters emerge
+	var/isSealed = TRUE	// burrow spawns as cracks and becomes a hole when critters emerge
 
 	var/isRevealed = FALSE // when burrow is revealed it prevents interactions with turf and is not hiden anymore
 
@@ -94,7 +94,7 @@
 	if(prob(3) && T.z == 2) //Bottom floor of maints only
 		deepmaint_entry_point = TRUE
 
-	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
+	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints burrow
 		desc = "There appears to be an entrance here, covered by rubble and dirt. Collapsing it would take some serious tools and time."
 
 //Lets remove ourselves from the global list and cleanup any held references
@@ -533,8 +533,15 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	//We record the time to prevent exploits of starting and quickly cancelling
 	var/start = world.time
 	var/target_time = WORKTIME_FAST+ 2*health
+	var/health_mod = 0.66
 
-	if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(MINING in H.mutations)
+			target_time *= 0.5
+			health_mod = 0.33
+
+	if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * health_mod, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
 		//On success, the hole is destroyed!
 		new /obj/random/scrap/sparse_weighted(get_turf(user))
 		user.visible_message("[user] collapses [src] with \the [I] and dumps trash which was in the way.", "You collapse [src] with \the [I] and dump trash which was in the way.")
@@ -565,7 +572,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	health -= (I.get_tool_quality(QUALITY_DIGGING)*time_mult)
 
 
-//Seal up cracks in a borrow.
+//Seal up cracks in a burrow.
 /obj/structure/burrow/proc/crack_removal(obj/item/I, mob/user)
 	//Safty check
 	if(!isRevealed)
@@ -587,7 +594,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false welding, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
@@ -600,13 +607,13 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			if(recieving && !prob(33))
 				//false hammering, critters will create new cracks
 				invisibility = 101
-				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(false_removal)), rand(3,10)SECONDS)
 			else
 				qdel(src)
 
 	//Soj Edit
-	if(ishuman(user) && dug_out && success)
-		var/mob/living/carbon/human/H = user
+	if(iscarbon(user) && dug_out && success)
+		var/mob/living/carbon/H = user
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_sealer, "PROPER_SEALER", skill_gained = 1, learner = H)
 
 /obj/structure/burrow/proc/false_removal()
@@ -674,18 +681,18 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		addtimer(CALLBACK(src, .proc/force_enter_burrow, L), 8)
+		addtimer(CALLBACK(src, PROC_REF(force_enter_burrow), L), 8)
 
 /obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
 	L.forceMove(src)
 
 //Mobs that are summoned will walk up and attack this burrow
 //This will suck them in
-/obj/structure/burrow/attack_generic(mob/living/L)
-	if (is_valid(L))
-		enter_burrow(L)
-	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
-		var/mob/living/carbon/superior_animal/SA = L
+/obj/structure/burrow/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if (is_valid(user))
+		enter_burrow(user)
+	if (issuperioranimal(user))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = user
 		SA.target_mob = null
 
 
@@ -708,7 +715,13 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if(locate(/obj/effect/plant) in loc)
 			return
 
-		if(!hive_mind_ai || !hive_mind_ai.hives.len || maintenance || !GLOB.hive_data_bool["spread_trough_burrows"])
+		if(!hive_mind_ai || !hive_mind_ai.hives.len)
+			return
+
+		if(!GLOB.hive_data_bool["spread_trough_burrows"] && !GLOB.hive_data_bool["spread_maints_burrows"])
+			return
+
+		if(maintenance && !GLOB.hive_data_bool["spread_maints_burrows"])
 			return
 
 		var/area/A = get_area(src)

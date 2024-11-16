@@ -102,7 +102,7 @@
 	category = "Consumer"
 	time = 200
 	related_stats = list(STAT_MEC)
-	icon_state = "device"
+	icon_state = "electronic"
 
 
 /datum/craft_recipe/consumer/toaster
@@ -114,4 +114,13 @@
 		list(QUALITY_BOLT_TURNING, 35, "time" =  200),
 		list(QUALITY_SCREW_DRIVING, 35, "time" = 170),
 		list(QUALITY_PRYING, 35, "time" = 170)
+	)
+
+/datum/craft_recipe/consumer/bottling_kit
+	name = "bottling kit"
+	result = /obj/item/bottle_kit
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
+		list(/obj/item/circuitboard/autolathe, 1)
 	)

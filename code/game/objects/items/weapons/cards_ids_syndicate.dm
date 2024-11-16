@@ -252,7 +252,7 @@
 
 /obj/item/card/id/syndicate/ert/church_ert
 	name = "Inquisitor ID card"
-	desc = "An ID card made for Inquisitors of the Church of Absolute"
+	desc = "An ID card made for Inquisitors of the Church of the Absolute"
 	registered_name = "Inquisitor"
 	assignment = "Inquisitor"
 	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors)
@@ -268,13 +268,13 @@
 		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
 
 /obj/item/card/id/syndicate/ert/research_ert
-	name = "SRI ID card"
+	name = "SI ID card"
 	desc = "An ID straight from the SI Ethics Committee. Wait, they have an ethics commitee?"
 	registered_name = "Ethics Commitee Agent"
 	assignment = "Ethics Commitee Agent"
 	access = list(
-		access_rd, access_heads, access_tox, access_genetics, access_morgue,
-		access_tox_storage, access_teleporter, access_sec_doors,
+		access_rd, access_heads, access_tox, access_genetics, access_morgue, access_cmo,
+		access_tox_storage, access_teleporter, access_sec_doors, access_paramedic,
 		access_moebius, access_medical_equip, access_chemistry, access_virology, access_surgery, access_psychiatrist,
 		access_robotics, access_xenobiology, access_ai_upload, access_tech_storage, access_eva, access_external_airlocks, access_medical_suits,
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment

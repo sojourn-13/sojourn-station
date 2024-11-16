@@ -57,9 +57,9 @@
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(pipes_cleanness <= 90)
-		overlays += "[icon_state]-dirty_[get_dirtiness_level()]"
+		add_overlay("[icon_state]-dirty_[get_dirtiness_level()]")
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/Process()
@@ -144,10 +144,10 @@
 
 
 /obj/structure/biomatter_tank/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(canister && platform.pipes_opened)
 		var/image/pipe_overlay = image(icon = 'icons/obj/machines/bioreactor.dmi', icon_state = "port-pipe", pixel_y = -9)
-		overlays += pipe_overlay
+		add_overlay(pipe_overlay)
 
 
 /obj/structure/biomatter_tank/attack_hand(mob/user)

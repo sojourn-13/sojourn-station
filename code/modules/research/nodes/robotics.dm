@@ -198,7 +198,6 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/jetpack,
-							/datum/design/research/item/mecha/ai_holder,
 							/datum/design/research/item/mecha/wormhole_gen,
 							/datum/design/research/item/mecha/rcd,
 							/datum/design/research/item/mecha/gravcatapult,
@@ -300,7 +299,6 @@
 	cost = 375
 
 	unlocks_designs = list(
-							/datum/design/research/item/posibrain,
 							/datum/design/research/item/mmi_radio,
 							/datum/design/research/item/intellicard,
 							/datum/design/research/item/paicard,
@@ -377,6 +375,8 @@
 						/datum/design/research/item/robot_upgrade/rcd,
 						/datum/design/research/item/robot_upgrade/arc_welder,
 						/datum/design/research/item/mechfab/robot/component/armour,
+						/datum/design/research/item/mechfab/robot/component/armour/mkii,
+						/datum/design/research/item/mechfab/robot/component/armour/mkv,
 						/datum/design/research/circuit/repair_station
 						)
 

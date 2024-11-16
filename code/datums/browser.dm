@@ -17,7 +17,7 @@
 
 /datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
 	user = nuser
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/user_deleted)
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(user_deleted))
 	window_id = nwindow_id
 	if (ntitle)
 		title = format_text(ntitle)
@@ -46,8 +46,11 @@
 	// do nothing
 
 /datum/browser/proc/add_stylesheet(name, file)
-	if (istype(name, /datum/asset/spritesheet))
+	if(istype(name, /datum/asset/spritesheet))
 		var/datum/asset/spritesheet/sheet = name
+		stylesheets["spritesheet_[sheet.name].css"] = "data/spritesheets/[sheet.name]"
+	else if(istype(name, /datum/asset/spritesheet_batched))
+		var/datum/asset/spritesheet_batched/sheet = name
 		stylesheets["spritesheet_[sheet.name].css"] = "data/spritesheets/[sheet.name]"
 	else
 		var/asset_name = "[name].css"
@@ -120,6 +123,12 @@
 	user << browse(get_content(), "window=[window_id];[window_size][window_options]")
 	if (use_onclose)
 		setup_onclose()
+
+/datum/browser/proc/update(force_open = FALSE, use_onclose = TRUE)
+	if(force_open)
+		open(use_onclose)
+	else
+		send_output(user, get_content(), "[window_id].browser")
 
 /datum/browser/proc/setup_onclose()
 	set waitfor = 0 //winexists sleeps, so we don't need to.

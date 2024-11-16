@@ -3,6 +3,7 @@
 	path = /obj/item/clothing/head/ushanka
 	slot = slot_head
 	sort_category = "Hats and Headwear"
+	cost = 0
 
 /datum/gear/head/bandana
 	display_name = "bandana head selection"
@@ -76,6 +77,7 @@
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
 	path = /obj/item/clothing/head/hardhat/
+	cost = 1
 
 /datum/gear/head/hardhat/New()
 	..()
@@ -132,9 +134,15 @@
 	path = /obj/item/clothing/head/tiara
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/head/omni_hood
+	display_name = "religious hood"
+	path = /obj/item/clothing/head/religion_hood_color
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/head/kinhelm
 	display_name = "kin voidhelm"
 	path = /obj/item/clothing/head/voidhelm
+	cost = 1
 
 /datum/gear/head/headdress
 	display_name = "headdress, customized"
@@ -147,7 +155,8 @@
 
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker/rugby helmet"
-	path = /obj/item/clothing/head/armor/helmet/tanker
+	path = /obj/item/clothing/head/helmet/tanker
+	cost = 1
 
 /datum/gear/head/ribbon
 	display_name = "hair ribbon selection"

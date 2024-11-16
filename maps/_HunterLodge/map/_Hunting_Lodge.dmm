@@ -677,9 +677,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dx" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dz" = (
@@ -742,7 +739,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dP" = (
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -850,9 +847,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eo" = (
-/obj/machinery/vending/hydroseeds{
-	slogan_delay = 700
-	},
+/obj/machinery/vending/hydroseeds/lodge,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "er" = (
@@ -1151,7 +1146,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fX" = (
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1166,7 +1161,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gc" = (
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -1578,7 +1573,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "iB" = (
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
@@ -2074,7 +2069,8 @@
 	skill_check = -30
 	},
 /obj/structure/cable/yellow{
-	dir = 1
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2976,7 +2972,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zY" = (
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/structure/cable,
 /obj/structure/cable{
 	d1 = 1;
@@ -3818,6 +3814,11 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ma" = (
+/obj/structure/table/marble,
+/obj/structure/reagent_dispensers/meadkeg,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Mj" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4604,13 +4605,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "XK" = (
-/obj/structure/reagent_dispensers/meadkeg,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/structure/churn,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "XL" = (
@@ -8149,7 +8150,7 @@ UY
 To
 bq
 bq
-jv
+Ma
 jj
 ur
 Rz

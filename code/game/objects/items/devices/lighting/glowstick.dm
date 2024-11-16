@@ -76,7 +76,7 @@
 	action_button_name = null
 	brightness_on = 6 //Same as a flare
 	light_power = 4
-	//So were accully viable for what we want to do, and that is light up a large area
+	//So were actually viable for what we want to do, and that is light up a large area
 	max_fuel = 4000
 
 /obj/item/device/lighting/glowstick/red

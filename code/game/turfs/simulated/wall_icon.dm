@@ -69,15 +69,18 @@
 	reinf_material = newrmaterial
 	update_material()
 
+GLOBAL_VAR_INIT(ALL_WALL_STATES, null)
+
 /turf/simulated/wall/update_icon()
 	if(!icon_base)
 		return
+	if(!GLOB.ALL_WALL_STATES)
+		GLOB.ALL_WALL_STATES = json_decode(rustg_dmi_icon_states("icons/turf/wall_masks.dmi"))
 
 	cut_overlays()
 	var/image/I
 	for(var/i = 1 to 4)
 		I = image('icons/turf/wall_masks.dmi', "[icon_base][wall_connections[i]]", dir = GLOB.cardinal[i])
-
 		I.color = base_color
 		add_overlay(I)
 
@@ -87,7 +90,7 @@
 			I.color = reinf_color
 			add_overlay(I)
 		else
-			if("[icon_base_reinf]0" in icon_states('icons/turf/wall_masks.dmi'))
+			if("[icon_base_reinf]0" in GLOB.ALL_WALL_STATES)
 				// Directional icon
 				for(var/i = 1 to 4)
 					I = image('icons/turf/wall_masks.dmi', "[icon_base_reinf][wall_connections[i]]", dir = 1<<(i-1))

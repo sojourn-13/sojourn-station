@@ -1,11 +1,10 @@
 /obj/item/gun/projectile/automatic/duty
 	name = "\"Duty\" carbine"
-	desc = "The Duty is a carbine designed by Marshall and Blackshield gunsmiths \
-	to suplement the ancient pattern boltguns as a standard issue rifle of Blackshield. \
-	Having the stopping power of the Kardashev-Mosin but with a faster fire rate and less recoil. \
-	The design took a lot of old world designs yet modernized it with the new caliber of 6.5mm \
-	and a light polymer body balanced with heavy steel and plasteel. \
-	A full production rifle, it also has melee capabilities with its bayonet \
+	desc = "The Duty is a carbine designed by Marshal and Blackshield gunsmiths \
+	to supplement the ancient pattern boltguns as a standard issue rifle of Blackshield, \
+	having the stopping power of the Kardashev-Mosin but with a faster rate of fire and less recoil. \
+	The carbine is modernized with a 6,5mm caliber and a light polymer body balanced with heavy steel and plasteel. \
+	A mass-produced rifle, it has a bayonet for melee engagements \
 	and it can be reloaded with a stripper clip due to the adapter guide installed on the receiver. \
 	Overall a solid battle rifle for a Blackshield trooper."
 	icon = 'icons/obj/guns/projectile/duty.dmi'
@@ -29,7 +28,7 @@
 		FULL_AUTO_200
 		)
 	serial_type = "NM"
-	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()
@@ -49,3 +48,13 @@
 
 //SNOWFLAKE CODE
 //TODO make all projectile guns work like this with a flag
+
+/obj/item/part/gun/frame/discountnordwind
+	name = "Blackshield rifle frame"
+	desc = "A blackshield branded rifle frame used for their more 'modern' firearms. Can be assembled into a Duty or a Watchtower"
+	icon_state = "frame_serbrifle"
+	result = /obj/item/gun/projectile/automatic/duty
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/duty, /obj/item/gun/projectile/automatic/nordwind/watchtower)

@@ -8,7 +8,7 @@
 
 /obj/machinery/biomatter_solidifier
 	name = "biomatter solidifier"
-	desc = "A Church of Absolute machine that converts liquid biomatter into the solid."
+	desc = "A Church of the Absolute machine that converts liquid biomatter into the solid."
 	icon = 'icons/obj/machines/simple_nt_machines.dmi'
 	icon_state = "solidifier"
 	density = TRUE
@@ -27,15 +27,15 @@
 	. = ..()
 	create_reagents(BIOMATTER_PER_SHEET*BIOMATTER_SHEETS_PER_TIME*3)
 	anchored = bolt
-	overlays += image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir)
+	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
 /obj/machinery/biomatter_solidifier/update_icon()
 	if(active)
 		icon_state = initial(icon_state) + "_on"
 	else
 		icon_state = initial(icon_state)
-	overlays = list()
-	overlays += image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir)
+	cut_overlays()
+	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
 /obj/machinery/biomatter_solidifier/Process()
 	if(active)

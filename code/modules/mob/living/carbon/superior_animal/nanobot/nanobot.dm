@@ -15,7 +15,7 @@
 	see_in_dark = 10
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned
@@ -69,7 +69,6 @@
 	var/treatment_oxy = "dexalinp"
 	var/treatment_fire = "dermaline"
 	var/treatment_tox = "carthatoline"
-	var/treatment_virus = "spaceacillin"
 	never_stimulate_air = TRUE
 
 /mob/living/carbon/superior_animal/nanobot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
@@ -128,8 +127,8 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/nanobot/update_icon()
-	overlays.Cut()
-	overlays += image(icon, "[icon_state]_lights")
+	cut_overlays()
+	add_overlay(image(icon, "[icon_state]_lights"))
 
 
 // For repairing damage to the bot.
@@ -148,11 +147,23 @@
 										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
 										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
 										)
+					//Robotics get an extra hard 50 heal ontop of rng
 					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-						health += 50
-					else
-						health += (rand(30, 50))
-					return
+						adjustBruteLoss(-50)
+						adjustOxyLoss(-50)
+						adjustToxLoss(-50)
+						adjustFireLoss(-50)
+						adjustCloneLoss(-50)
+						adjustBrainLoss(-50)
+						adjustHalLoss(-50)
+
+					adjustBruteLoss(-rand(50, 30))
+					adjustOxyLoss(-rand(50, 30))
+					adjustToxLoss(-rand(50, 30))
+					adjustFireLoss(-rand(50, 30))
+					adjustCloneLoss(-rand(50, 30))
+					adjustBrainLoss(-rand(50, 30))
+					adjustHalLoss(-rand(50, 30))
 				return
 			to_chat(user, "[src] doesn't need repairs.")
 			return

@@ -662,7 +662,7 @@
 /*Guild*/
 
 /obj/item/toy/figure/character/guild/qm
-	name = "CEO action figure"
+	name = "SOM action figure"
 	desc = "The money-minded manager of all cargo affairs. Lonestar 1/3."
 	icon_state = "qm"
 	toysay = "Charge for every drink and meal! Charge them even for breathing!"
@@ -734,7 +734,7 @@
 
 /obj/item/toy/figure/character/bobblehead/acolyte
 	name = "acolyte figurine"
-	desc = "Church of Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
+	desc = "Church of the Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
 	icon_state = "acolyte"
 	toysay = "\"Brotherhood.\""
 

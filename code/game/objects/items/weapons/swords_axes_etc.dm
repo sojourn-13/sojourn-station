@@ -16,7 +16,7 @@
 	hitsound = 'sound/effects/woodhit.ogg'
 	slot_flags = SLOT_BELT
 	damtype = BRUTE
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
@@ -24,12 +24,12 @@
 	if(user.a_intent == I_HELP)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
-		armor_penetration = ARMOR_PEN_MODERATE
+		armor_divisor = ARMOR_PEN_MODERATE
 
 	if(user.a_intent == I_DISARM)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
-		armor_penetration = ARMOR_PEN_SHALLOW
+		armor_divisor = ARMOR_PEN_SHALLOW
 
 	if(user.a_intent == I_HURT)
 		damtype = BRUTE
@@ -60,19 +60,25 @@
 	w_class = ITEM_SIZE_SMALL
 	force = 3
 	var/on = 0
+	var/baton_base = "telebaton"
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
+/obj/item/melee/telebaton/refresh_upgrades()
+	..()
+	if(baton_base == "rat_telebaton")
+		name = "Gilded Telebaton"
 
 /obj/item/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
+	icon_state = "[baton_base]_[on]"
+	item_state = "[baton_base]_[on]"
 	if(on)
 		user.visible_message(
 			SPAN_WARNING("With a flick of their wrist, [user] extends their telescopic baton."),
 			SPAN_WARNING("You extend the baton."),
 			"You hear an ominous click."
 		)
-		icon_state = "telebaton_1"
-		item_state = "telebaton_1"
+
 		update_wear_icon()
 		w_class = ITEM_SIZE_NORMAL
 		force = WEAPON_FORCE_PAINFUL//quite robust
@@ -84,8 +90,6 @@
 			SPAN_NOTICE("You collapse the baton."),
 			"You hear a click."
 		)
-		icon_state = "telebaton_0"
-		item_state = "telebaton_0"
 		update_wear_icon()
 		w_class = ITEM_SIZE_SMALL
 		force = 3//not so robust now
@@ -111,12 +115,12 @@
 		if(user.a_intent == I_HELP)
 			damtype = HALLOSS
 			force = WEAPON_FORCE_PAINFUL
-			armor_penetration = ARMOR_PEN_MODERATE
+			armor_divisor = ARMOR_PEN_MODERATE
 
 		if(user.a_intent == I_DISARM)
 			damtype = HALLOSS
 			force = 18 //3 more then help but not as good as a wooden classic
-			armor_penetration = ARMOR_PEN_SHALLOW
+			armor_divisor = ARMOR_PEN_SHALLOW
 
 		if(user.a_intent == I_HURT)
 			damtype = BRUTE

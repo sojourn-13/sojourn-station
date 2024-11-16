@@ -24,6 +24,37 @@ var/const/WIRE_BEACON_RX = 256	// beacon ping recv
 		var/obj/machinery/bot/mulebot/M = holder
 		M.interact(user)
 
+/datum/wires/mulebot/proc/GetInteractWindow(mob/living/user)
+	var/user_skill
+	var/html = "<div class='block'>"
+	html += "<h3>Exposed Wires</h3>"
+	html += "<table[table_options]>"
+
+	if(!user)
+		user = usr
+
+	if(istype(user))
+		user_skill = user.stats.getStat(STAT_MEC)
+
+	for(var/colour in wires)
+		html += "<tr>"
+		var/datum/wire_description/wd = get_description(GetIndex(colour))
+		if(wd)
+			if(user.stats && user.stats.getPerk(PERK_HANDYMAN) || user_skill && (wd.skill_level <= user_skill))
+				html += "<td[row_options1]><font color='[colour]'>[wd.description]</font></td>"
+			else
+				html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
+		else
+			html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
+		html += "<td[row_options2]>"
+		html += "<A href='?src=\ref[src];action=1;cut=[colour]'>[IsColourCut(colour) ? "Mend" :  "Cut"]</A>"
+		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse</A>"
+		html += " <A href='?src=\ref[src];action=1;attach=[colour]'>[IsAttached(colour) ? "Detach" : "Attach"] Signaller</A>"
+	html += "</table>"
+	html += "</div>"
+
+	return html
+
 /datum/wires/mulebot/UpdatePulsed(var/index)
 	switch(index)
 		if(WIRE_POWER1, WIRE_POWER2)

@@ -154,7 +154,7 @@
 	usedx = assembly.loc.x
 	usedy = assembly.loc.y
 	playsound(src, 'sound/items/Ratchet.ogg',50,1)
-	addtimer(CALLBACK(src, .proc/drill), 50)
+	addtimer(CALLBACK(src, PROC_REF(drill)), 50)
 
 
 /obj/item/integrated_circuit/mining/mining_drill/proc/drill()

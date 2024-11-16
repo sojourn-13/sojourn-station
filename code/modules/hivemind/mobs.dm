@@ -45,6 +45,7 @@
 
 /mob/living/simple_animal/hostile/hivemind/New()
 	. = ..()
+	real_name = name
 	if(!(real_name in GLOB.hivemind_mobs))
 		GLOB.hivemind_mobs.Add(real_name)
 	GLOB.hivemind_mobs[real_name]++
@@ -80,7 +81,7 @@
 	anim_shake(src)
 	if(prob(30))
 		say(pick("Running diagnostics.", "Organ damaged. Aquire replacement.", "Seek new organic components.", "New muscles needed."))
-	addtimer(CALLBACK(src, .proc/malfunction_result), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(malfunction_result)), 2 SECONDS)
 
 
 //It's second proc, result of our malfunction
@@ -157,11 +158,11 @@
 	switch(severity)
 		if(1)
 			if(malfunction_chance < 15)
-				malfunction_chance = 15
+				malfunction_chance = 15 * GLOB.hive_data_float["hivemind_emp_mult"]
 		if(2)
 			if(malfunction_chance < 25)
-				malfunction_chance = 25
-	adjustFireLoss(rand(20,80)*severity)
+				malfunction_chance = 25 * GLOB.hive_data_float["hivemind_emp_mult"]
+	adjustFireLoss((rand(20,80)*severity * GLOB.hive_data_float["hivemind_emp_mult"]))
 
 /mob/living/simple_animal/hostile/hivemind/death()
 	GLOB.hivemind_mobs[real_name]--
@@ -413,7 +414,7 @@
 	if(rapid == FALSE)
 		rapid = TRUE
 		visible_message(SPAN_DANGER("<b>[name]</b> begins to shake violenty, sparks spurting out from its chassis!"), 1)
-		addtimer(CALLBACK(src, .proc/overheat), 10 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(overheat)), 10 SECONDS)
 		return
 
 
@@ -827,7 +828,7 @@
 	if(!Adjacent(targetted_mob))
 		return
 
-	if(world.time > special_ability_cooldown && !passenger)
+	if(world.time > special_ability_cooldown && !passenger && !ismecha(targetted_mob.loc) && !ismecha(targetted_mob))
 		special_ability(targetted_mob)
 
 	..()
@@ -847,7 +848,7 @@
 	target.canmove = FALSE
 	to_chat(target, SPAN_DANGER("Wires snare your limbs and pull you inside the maneater! You feel yourself bound with a thousand steel tendrils!"))
 	playsound(src, 'sound/effects/blobattack.ogg', 70, 1)
-	addtimer(CALLBACK(src, .proc/release_passenger), 40 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(release_passenger)), 40 SECONDS)
 
 
 
@@ -899,7 +900,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	if(GLOB.hive_data_bool["gibbing_dead"])
+	if(GLOB.hive_data_bool["gibbing_warning_timer"])
 		qdel(passenger)
 	else
 		release_passenger(TRUE) //HAS to be true or we do an endless loop!
@@ -1044,7 +1045,7 @@
 	animate(src, pixel_x=init_px + 16*pick(-1, 1), time=5)
 	animate(pixel_x=init_px, time=6, easing=SINE_EASING)
 	animate(filters[1], size = 5, time = 5, flags = ANIMATION_PARALLEL)
-	addtimer(CALLBACK(src, .proc/phase_jump, new_place), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(phase_jump), new_place), 0.5 SECONDS)
 
 
 //second part - is jump to target
@@ -1079,7 +1080,7 @@
 		if(reflection.is_can_jump_on(new_position))
 			spawn(1) //ugh, i know, i know, it's bad. Animation
 				reflection.forceMove(new_position)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, reflection), 60 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), reflection), 60 SECONDS)
 	loc = get_step(spawn_point, possible_directions[1]) //there must left last direction
 	special_ability_cooldown = world.time + ability_cooldown
 	playsound(spawn_point, 'sound/effects/cascade.ogg', 100, 1)

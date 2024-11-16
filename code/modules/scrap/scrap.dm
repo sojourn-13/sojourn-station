@@ -171,7 +171,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 						H.UpdateDamageIcon()
 					H.reagents.add_reagent("toxin", pick(prob(50);0,prob(50);5,prob(10);10,prob(1);25))
 					H.updatehealth()
-					if(!(H.species.flags & NO_PAIN))
+					if(!((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations)))
 						H.Weaken(3)
 					return
 				check -= picked
@@ -252,7 +252,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		to_chat(user, "<span class='danger'>Ouch! You cut yourself while picking through \the [src].</span>")
 		BP.take_damage(5, BRUTE, TRUE, TRUE, "Sharp debris")
 		victim.reagents.add_reagent("toxin", pick(prob(50);0,prob(50);5,prob(10);10,prob(1);25))
-		if(victim.species.flags & NO_PAIN) // So we still take damage, but actually dig through.
+		if((victim.species.flags & NO_PAIN) || (PAIN_LESS in victim.mutations)) // So we still take damage, but actually dig through.
 			return FALSE
 		return TRUE
 	return FALSE
@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	playsound(src, "rummage", 50, 1)
 	.=..()
 
-/obj/structure/scrap/attack_generic(mob/user)
+/obj/structure/scrap/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if (isliving(user) && loot)
 		loot.open(user)
 	.=..()
@@ -310,25 +310,26 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	qdel(src)
 
 /obj/structure/scrap/attackby(obj/item/W, mob/living/carbon/human/user)
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
-	var/tool_type = W.get_tool_type(user, usable_qualities, src)
-	switch(tool_type)
-		if(QUALITY_SHOVELING)
-			if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
-				user.do_attack_animation(src)
-				if(user.stats.getPerk(PERK_JUNKBORN))
-					rare_item = TRUE
-				else
-					rare_item = FALSE
-				dig_out_lump(user.loc, 0)
-				shuffle_loot()
-				clear_if_empty()
-		if(QUALITY_HAMMERING)
-			if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
-				make_cube()
+	if(user.a_intent != I_HURT)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+		var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
+		var/tool_type = W.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+			if(QUALITY_SHOVELING)
+				if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
+					user.do_attack_animation(src)
+					if(user.stats.getPerk(PERK_JUNKBORN))
+						rare_item = TRUE
+					else
+						rare_item = FALSE
+					dig_out_lump(user.loc, 0)
+					shuffle_loot()
+					clear_if_empty()
+			if(QUALITY_HAMMERING)
+				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
+					make_cube()
 
 /obj/structure/scrap/large
 	name = "large scrap pile"

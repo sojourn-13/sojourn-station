@@ -24,6 +24,19 @@
 	build_path = /obj/item/modification/organ/internal/electromechanical/bone_braces
 	name = "Bone Braces"
 
+//FPB round start organ health increasers.
+/datum/design/research/item/mechfab/prosthesis/wire_weaves
+	build_path = /obj/item/modification/organ/internal/electromechanical/wire_weaves
+	name = "Weaving Wire Mesh"
+
+/datum/design/research/item/mechfab/prosthesis/steel_bands
+	build_path = /obj/item/modification/organ/internal/electromechanical/steel_bands
+	name = "Steel Bands"
+
+/datum/design/research/item/mechfab/prosthesis/microbattery_case
+	build_path = /obj/item/modification/organ/internal/electromechanical/microbattery_case
+	name = "Microbattery Case"
+
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius
 	category = CAT_PROSTHESIS
@@ -51,7 +64,7 @@
 
 /*Robotic Internals ====================================
 TODO: Get this all sorted out, atm people will have to print of
-the lims and such to pull out the internal bits for other people if needed
+the limbs and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/robotic_internals
 	category = "Medical"
 
@@ -95,6 +108,10 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/armor
 	name = "Sub-Dermal Body Armor"
 	build_path = /obj/item/organ_module/armor
+
+/datum/design/research/item/mechfab/modules/ablativearmor
+	name = "Sub-Dermal Ablative Armor"
+	build_path = /obj/item/organ_module/armor/ablative
 
 /datum/design/research/item/mechfab/modules/armblade
 	name = "Embedded Arm Blade"
@@ -140,11 +157,58 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Farming Multitool"
 	build_path = /obj/item/organ_module/active/multitool/farmer
 
+//increases max sanity
+/datum/design/research/item/mechfab/modules/sanity_mind_helper
+	name = "S.M.H Enhancer" //Sanity Mental Hider
+	build_path = /obj/item/organ_module/sanity_mind_helper
+
+//Helps regen sanity faster passively
+/datum/design/research/item/mechfab/modules/sanity_on_a_buget
+	name = "Cortex Support Cyberware"
+	build_path = /obj/item/organ_module/sanity_on_a_buget
+
+//litteraly a small arm pouch
+/datum/design/research/item/mechfab/modules/arm_pouch
+	name = "Embedded Pouch"
+	build_path = /obj/item/organ_module/active/simple/small_pouch
+
+//increases nsa
+/datum/design/research/item/mechfab/modules/viv_bank
+	name = "NSA Banker"
+	build_path = /obj/item/organ_module/viv_bank
+
+//increases how much you can store hunger
+//TODO: better explain to the player that this is accually 2 implants in one!
+//The little bit of lore is that the two creaters had a friendly compition on what would be better, storing more foor, or using less
+//In the end a they were able to merge them into one, best of both worlds
+/datum/design/research/item/mechfab/modules/snack_system
+	name = "S.N.A.C.K System" //Storage Nutrience: Advanced Cal Keeper
+	build_path = /obj/item/organ_module/snack_system
+
+//increases how much you can store blood
+/datum/design/research/item/mechfab/modules/sanguin_stash
+	name = "Sanguin-Stash"
+	build_path = /obj/item/organ_module/sanguin_stash
+
+//increases punch damage for humans
+/datum/design/research/item/mechfab/modules/punch_helper
+	name = "Punch Helper Melee Brace"
+	build_path = /obj/item/organ_module/punch_helper
+
+//increases movement buildup (used for diving + some melee weapons)
+/datum/design/research/item/mechfab/modules/momentum_speed_adder
+	name = "Momentum Spring Relay Leg Augment"
+	build_path = /obj/item/organ_module/momentum_speed_adder
+
 //Implants
 /datum/design/research/item/implant
 	build_type = PROTOLATHE | MECHFAB
 	name_category = "implantable biocircuit"
 	category = CAT_PROSTHESIS
+
+/datum/design/research/item/implant/pad
+	name = "Implant Pad"
+	build_path = /obj/item/implantpad
 
 /datum/design/research/item/implant/chemical
 	name = "Chemical Implant"
@@ -157,6 +221,11 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/implant/alarm
 	name = "Death Alarm Implant"
 	build_path = /obj/item/implantcase/death_alarm
+
+/datum/design/research/item/implant/track
+	name = "Tracking Implant"
+	build_path = /obj/item/implantcase/tracking
+
 
 /datum/design/research/item/mechfab/modules/hud
 

@@ -107,7 +107,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/ano_scanner,
 							/datum/design/research/item/beacon_locator,
-							/datum/design/research/item/gps
+							/datum/design/research/item/gps,
+							/datum/design/research/item/omnitranslator_handheld,
+							/datum/design/research/item/omnitranslator_earpiece
 							)
 
 /datum/technology/bluespace_shield

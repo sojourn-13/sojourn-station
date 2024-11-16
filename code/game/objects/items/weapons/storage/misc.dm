@@ -80,3 +80,89 @@
 		new /obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
 	else
 		new /obj/item/reagent_containers/food/snacks/openable/candy/dalococh
+
+/obj/item/storage/chewables/tobacco/bad
+	name = "can of Rredouane Cuts chewing tobacco"
+	desc = "A cheap, widely used replacement for cigarettes finding popularity as an alternative to smoking amongst Solarian military personnel."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "chew_bad"
+	item_state = "Fpacket"
+	w_class = ITEM_SIZE_TINY
+	throwforce = WEAPON_FORCE_HARMLESS
+	slot_flags = SLOT_BELT
+	storage_slots = 6
+	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
+	reagent_flags = REFILLABLE | NO_REACT
+
+/obj/item/storage/chewables/tobacco/bad/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/bad(src)
+
+
+/obj/item/storage/chewables/tobacco/deli
+	name = "tin of Mendell Smooth chewing tobacco"
+	desc = "Packaged and shipped straight from District 8, popularised by the city-slickers of Vega De Rosa."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "chew_deli"
+	item_state = "Lpacket"
+	w_class = ITEM_SIZE_TINY
+	throwforce = WEAPON_FORCE_HARMLESS
+	slot_flags = SLOT_BELT
+	storage_slots = 6
+	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
+	reagent_flags = REFILLABLE | NO_REACT
+
+/obj/item/storage/chewables/tobacco/deli/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/deli(src)
+
+/obj/item/storage/chewables/tobacco/fine
+	name = "tin of Taba-Kamu chewing tobacco"
+	desc = "Said to be cultivated by employees of Nojusuru Foods in secret, the strand has been released for the public to enjoy."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "chew_fine"
+	item_state = "Dpacket"
+	w_class = ITEM_SIZE_TINY
+	throwforce = WEAPON_FORCE_HARMLESS
+	slot_flags = SLOT_BELT
+	storage_slots = 6
+	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
+	reagent_flags = REFILLABLE | NO_REACT
+
+/obj/item/storage/chewables/tobacco/fine/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/fine(src)
+
+/obj/item/storage/chewables/tobacco/nico
+	name = "box of Nico-Tine gum"
+	desc = "A Sol-approved brand of nicotine gum. Cut out the middleman for your addiction fix."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "chew_nico"
+	item_state = "Epacket"
+	w_class = ITEM_SIZE_TINY
+	throwforce = WEAPON_FORCE_HARMLESS
+	slot_flags = SLOT_BELT
+	storage_slots = 6
+	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
+	reagent_flags = REFILLABLE | NO_REACT
+
+/obj/item/storage/chewables/tobacco/nico/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/nico(src)
+
+/obj/item/storage/chewables/tobacco/dyn
+	name = "tin of Dyn nicotine pouches"
+	desc = "A cheaper and dubiously safer alternative to chewing tobacco alternatives."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "chew_dyn"
+	item_state = "Ppacket"
+	w_class = ITEM_SIZE_TINY
+	throwforce = WEAPON_FORCE_HARMLESS
+	slot_flags = SLOT_BELT
+	storage_slots = 6
+	can_hold = list(/obj/item/clothing/mask/chewable/tobacco)
+	reagent_flags = REFILLABLE | NO_REACT
+
+/obj/item/storage/chewables/tobacco/dyn/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/mask/chewable/tobacco/dyn(src)

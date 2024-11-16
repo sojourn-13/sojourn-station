@@ -1,8 +1,9 @@
-import { useBackend, useLocalState } from '../backend';
-import { Box, Section, Stack, Tabs, Tooltip } from '../components';
-import { Window } from '../layouts';
-import { capitalize } from 'common/string';
-import { classes } from 'common/react';
+import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { capitalize } from 'tgui-core/string';
 
 enum TABS {
   stats,
@@ -35,12 +36,14 @@ const perk = (perk: PerkData) => {
       <Tooltip position="bottom" content={desc}>
         <Stack position="relative" fill>
           <Stack.Item
-            className={classes(['Stats__box--icon', 'Stats__content'])}>
+            className={classes(['Stats__box--icon', 'Stats__content'])}
+          >
             <Box className={classes(['perks32x32', icon])} />
           </Stack.Item>
           <Stack.Item
             grow
-            className={classes(['Stats__box--text', 'Stats__content'])}>
+            className={classes(['Stats__box--text', 'Stats__content'])}
+          >
             {capitalize(name)}
           </Stack.Item>
         </Stack>
@@ -49,8 +52,8 @@ const perk = (perk: PerkData) => {
   );
 };
 
-const PerksTab = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+const PerksTab = (props) => {
+  const { data } = useBackend<StatsData>();
   const { perks } = data;
 
   return (
@@ -68,12 +71,14 @@ const stat = (stat: StatData) => {
       <Stack fill>
         <Stack.Item
           grow={2}
-          className={classes(['Stats__box--skill', 'Stats__content'])}>
+          className={classes(['Stats__box--skill', 'Stats__content'])}
+        >
           {capitalize(name)}
         </Stack.Item>
         <Stack.Item
           grow={1}
-          className={classes(['Stats__box--text', 'Stats__content'])}>
+          className={classes(['Stats__box--text', 'Stats__content'])}
+        >
           {value}
         </Stack.Item>
       </Stack>
@@ -81,8 +86,8 @@ const stat = (stat: StatData) => {
   );
 };
 
-const StatsTab = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+const StatsTab = (props) => {
+  const { data } = useBackend<StatsData>();
   const { stats } = data;
 
   return (
@@ -92,31 +97,29 @@ const StatsTab = (props: any, context: any) => {
   );
 };
 
-export const Stats = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+export const Stats = (props) => {
+  const { data } = useBackend<StatsData>();
   const { name, hasPerks } = data;
 
-  const [currentTab, setCurrentTab] = useLocalState(
-    context,
-    'stats_tab',
-    TABS.stats
-  );
+  const [currentTab, setCurrentTab] = useState(TABS.stats);
 
   return (
-    <Window width={285} height={320} title={`${name}'s Stats`}>
-      <Window.Content style={{ 'background-image': 'none' }}>
+    <Window width={320} height={320} title={`${name}'s Stats`}>
+      <Window.Content style={{ backgroundImage: 'none' }}>
         <Stack fill vertical>
           {(hasPerks && (
             <Stack.Item>
               <Tabs fluid>
                 <Tabs.Tab
                   selected={currentTab === TABS.stats}
-                  onClick={() => setCurrentTab(TABS.stats)}>
+                  onClick={() => setCurrentTab(TABS.stats)}
+                >
                   Stats
                 </Tabs.Tab>
                 <Tabs.Tab
                   selected={currentTab === TABS.perks}
-                  onClick={() => setCurrentTab(TABS.perks)}>
+                  onClick={() => setCurrentTab(TABS.perks)}
+                >
                   Perks
                 </Tabs.Tab>
               </Tabs>

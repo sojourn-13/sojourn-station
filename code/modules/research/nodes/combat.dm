@@ -168,7 +168,7 @@
 
 /datum/technology/exotic_weaponry
 	name = "Experimental Weaponry"
-	desc = "Remote temperature controling weapon."
+	desc = "Remote temperature controlling weapon, implants and advanced shields."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.7
@@ -183,7 +183,9 @@
 							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
 							/datum/design/research/item/ammo/shotgun_laser,
-							/datum/design/research/item/weapon/bastion
+							/datum/design/research/item/weapon/bastion,
+							/datum/design/research/item/mechfab/modules/punch_helper,
+							/datum/design/research/item/mechfab/modules/momentum_speed_adder
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -221,6 +223,10 @@
 							/datum/design/research/item/weapon/c20r,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
+							/datum/design/research/item/ammo/laser/box,
+							//datum/design/research/item/ammo/laser/box/ap,
+							//datum/design/research/item/ammo/laser/box/lethal,
+							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
@@ -266,6 +272,8 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
+							/datum/design/research/item/ammo/laser_mag,
+							/datum/design/research/item/weapon/laser_ak,
 							/datum/design/research/item/weapon/centauri
 							)
 
@@ -301,7 +309,8 @@
 	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
 							 /datum/design/research/item/clothing/soteriaarmorhead,
 							 /datum/design/research/item/clothing/rig_cheap,
-							 /datum/design/research/item/clothing/tinfoil)
+							 /datum/design/research/item/clothing/tinfoil,
+							 /datum/design/research/item/clothing/armor_soterialabcoat)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"

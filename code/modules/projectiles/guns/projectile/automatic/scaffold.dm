@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/scaffold
 	name = "Greyson Positronic \"Scaffold\" caseless rifle"
-	desc = "A old and lost gun design of a caseless rifle by Greyson Positronic, its high fire rate stopping power and more make it the perfect frame for war. \
-	Its'caliber is 10mm and shockingly can be fitted with a silencer, has room for a scope and the ablity for a Master Unmaker to be integrated into it."
+	desc = "A old and lost gun design of a caseless rifle by Greyson Positronic, its high rate of fire, stopping power and more make it the perfect tool of war. \
+	Its caliber is 10mm and, shockingly, it can be fitted with a silencer, has room for a scope and the ablity for a Master Unmaker to be integrated into it."
 	icon = 'icons/obj/guns/projectile/scaffold.dmi'
 	icon_state = "scaffold"
 	item_state = "scaffold"
@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.5 //simular to 257
-	penetration_multiplier = 3
+	penetration_multiplier = 2
 	init_recoil = LMG_RECOIL(0.6)
 	serial_type = "GP"
 

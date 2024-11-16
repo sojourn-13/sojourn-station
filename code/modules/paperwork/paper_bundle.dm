@@ -213,7 +213,7 @@
 /obj/item/paper_bundle/update_icon()
 	var/obj/item/paper/P = pages[1]
 	icon_state = P.icon_state
-	copy_overlays(P.get_overlays(), TRUE)
+	copy_overlays(P, TRUE)
 	underlays = 0
 	var/i = 0
 	var/photo

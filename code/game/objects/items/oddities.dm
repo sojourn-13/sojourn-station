@@ -237,6 +237,27 @@
 		STAT_MEC = 3
 	)
 
+/obj/item/oddity/common/instructional_bio
+	name = "first-aid book"
+	desc = "Instructional manual for Soteria personnel giving basic knowledge of CPR and how to deal with Unruly patients"
+	icon_state = "instructional_bio"
+	prob_perk = 5 //Grounded and talked about, instructional manual for Lifeline techs
+	oddity_stats = list(
+		STAT_BIO = 6,
+		STAT_ROB = 4,
+	)
+
+/obj/item/oddity/common/instructional_cog_python
+	name = "old coding book"
+	desc = "A guide giving instructions on how to write computer code, This one seems to be covered in tears with the initials L.T. under the book's cover."
+	icon_state = "instructional_cog_python"
+	prob_perk = 15 //references
+	oddity_stats = list(
+		STAT_TGH = 4,
+		STAT_COG = 6
+	)
+
+
 /obj/item/oddity/common/old_money
 	name = "old money"
 	desc = "It's not like the organization that issued this exists anymore."
@@ -288,6 +309,16 @@
 		STAT_ROB = 7,
 		STAT_TGH = 7,
 		STAT_VIG = 7
+	)
+
+/obj/item/oddity/common/tattoo
+	name = "tattoo kit"
+	desc = "An odd box containing various tools used in the process of creating tattoos. You have a feeling this set of tools was well taken care of and cherished, but do to age they are rendered unusable."
+	icon_state = "tattoo_kit"
+	prob_perk = 7 //ponder and devote yourself to the craft like the artist before you.
+	oddity_stats = list(
+		STAT_COG = 8,
+		STAT_TGH = 8
 	)
 
 /obj/item/oddity/common/old_knife
@@ -408,7 +439,7 @@
 
 /obj/item/oddity/common/mirror/doodle
 	prob_perk = 0
-	perk = PERK_NO_OBSUCATION
+	perk = PERK_NO_OBFUSCATION
 	kill_stats = TRUE
 	min_stats = 16
 	oddity_stats = list(
@@ -481,7 +512,36 @@
 		STAT_ROB = 12
 	)
 	price_tag = 2000 //Its a good tie for a collector
-	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+	perk = PERK_SURE_STEP //Insanely rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+
+/obj/item/oddity/rare/moon_fragment
+	name = "Fragment of Moon"
+	desc = "A glowing, white, glass like shard of the Amethyn Moon."
+	icon_state = "moon_fragment"
+	min_stats = 16
+	//Its 1 then done so we give quite a bit
+	oddity_stats = list(
+		STAT_COG = 18,
+		STAT_VIG = 18
+	)
+	price_tag = 2500 //Bluecross spawn
+	prob_perk = 0
+	kill_stats = TRUE
+	perk = PERK_SKILL_CAP_EXPANDING
+
+/obj/item/oddity/rare/drawing_of_sun
+	name = "Drawing of a Unknown Sun"
+	desc = "A drawing of a type of sun no one has ever seen before done in crayon."
+	icon_state = "crayon_sun"
+	min_stats = 3
+	oddity_stats = list(
+		STAT_COG = 1,
+		STAT_VIG = 2
+	)
+	price_tag = 5
+	perk = PERK_SKILL_CAP_ADDITION
+	prob_perk = 0
+	kill_stats = TRUE
 
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen
@@ -528,12 +588,11 @@
 /obj/item/oddity/broken_necklace/examine(user, distance)
 	. = ..()
 	var/area/my_area = get_area(src)
-	switch(my_area.bluespace_entropy)
-		if(0 to my_area.bluespace_hazard_threshold*0.3)
-			to_chat(user, SPAN_NOTICE("This feels cold to the touch."))
+	if(my_area.bluespace_entropy < (my_area.bluespace_hazard_threshold * 0.75))
+		to_chat(user, SPAN_NOTICE("This feels cold to the touch."))
 
-		if(my_area.bluespace_hazard_threshold*0.7 to INFINITY)
-			to_chat(user, SPAN_NOTICE("This feels warm to the touch."))
+	else
+		to_chat(user, SPAN_NOTICE("This feels warm to the touch."))
 
 	if(GLOB.bluespace_entropy > GLOB.bluespace_hazard_threshold*0.7)
 		to_chat(user, SPAN_NOTICE("Has it always shone so brightly?"))
@@ -632,7 +691,7 @@
 
 /obj/item/oddity/nt/seal
 	name = "Cartographer's Seal"
-	desc = "A badge carrying the seal of the cartographer of the Church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	desc = "A badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
 	icon_state = "nt_seal"
 	oddity_stats = list(
 		STAT_TGH = 12,
@@ -849,7 +908,7 @@
 	slot_flags = SLOT_BELT
 	sharp = TRUE
 	edge = TRUE
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 
 	oddity_stats = list(
 		STAT_ROB = 7

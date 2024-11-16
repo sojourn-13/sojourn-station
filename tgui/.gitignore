@@ -14,12 +14,9 @@ package-lock.json
 
 ## Build artifacts
 /public/.tmp/**/*
-/public/**/*
-!/public/*.html
-!/public/tgui-polyfill.min.js
+
 # Eris: server cant compile tgui
-!/public/*.bundle.js
-!/public/*.bundle.css
+# /public/**/*
 /coverage
 
 ## Previously ignored locations that are kept to avoid confusing git

@@ -13,7 +13,7 @@
 
 	mob_size = MOB_LARGE
 	viewRange = 8
-	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
 	cant_gib = TRUE
@@ -31,7 +31,6 @@
 	overkill_dust = 0
 	contaminant_immunity = TRUE
 	never_stimulate_air = TRUE
-	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2
 	turns_per_move = 6
@@ -56,8 +55,9 @@
 	reagent_immune = TRUE
 	toxin_immune = TRUE
 
-	var/poison_per_bite = 0
-	var/poison_type = "mindmelter"
+	poison_per_bite = 0
+	poison_type = "mindmelter"
+
 	var/last_noise = -30000
 	var/chameleon_skill = 10
 	var/phaser = TRUE
@@ -98,8 +98,10 @@
 	var/is_leaching = FALSE
 	var/steal_odds = 0
 	var/stat_to_steal = STAT_VIV
-	var/steal_amount = 1
+	var/steal_amount = -1 //Possitive amounts give stats, and lower the health of the leacher
 	var/mob/living/Victim = null
+
+	var/can_leave = FALSE
 
 
 /mob/living/carbon/superior_animal/psi_monster/New()
@@ -111,7 +113,7 @@
 
 	objectsInView = new
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = size_pixel_offset_x
 	pixel_y = 0
 
@@ -223,6 +225,14 @@
 		new catalyst_drop(src.loc)
 	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
 	qdel(src)
+
+/obj/effect/decal/cleanable/psi_ash/ponderous
+	name = "strange ashes of ponderous"
+	catalyst_drop = /obj/random/psi_catalyst/ponderous
+
+/obj/effect/decal/cleanable/psi_ash/flesh_behemoth
+	name = "strange ashes of flesh behemoth"
+	catalyst_drop = /obj/random/psi_catalyst/flesh_behemoth
 
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"

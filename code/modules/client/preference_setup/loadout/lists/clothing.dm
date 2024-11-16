@@ -3,13 +3,13 @@
 	path = /obj/item/clothing/mask/surgical
 	slot = slot_wear_mask
 	sort_category = "Clothing Pieces"
-	cost = 1
+	cost = 0
 
 /datum/gear/clothing/kriosan
 	display_name = "kriosan sterile mask"
 	path = /obj/item/clothing/mask/surgical/kriosan
 	slot = slot_wear_mask
-	cost = 1
+	cost = 0
 
 /datum/gear/clothing/bandana
 	display_name = "bandana mask selection"

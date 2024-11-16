@@ -11,7 +11,7 @@
 	lose_text = "Your sudden flash of brilliance fades away..."
 	icon_state = "inspiration_active" // https://game-icons.net/1x1/lorc/enlightenment.html
 
-/datum/perk/active_inspiration/assign(mob/living/carbon/human/H)
+/datum/perk/active_inspiration/assign(mob/living/L)
 	..()
 	holder.stats.addTempStat(STAT_COG, 5, INFINITY, "Exotic Inspiration")
 	holder.stats.addTempStat(STAT_MEC, 10, INFINITY, "Exotic Inspiration")
@@ -25,31 +25,39 @@
 	name = "Artist"
 	desc = "You have a lot of expertise in making works of art. You gain more insight from all sources but can only increase \
 			your stats by creating works of art."
+	icon_state = "paintbrush"
 	var/old_max_insight = INFINITY
 	var/old_max_resting = INFINITY
 	var/old_insight_rest_gain_multiplier = 1
 
-/datum/perk/job/artist/assign(mob/living/carbon/human/H)
+/datum/perk/job/artist/assign(mob/living/L)
 	..()
-	old_max_insight = holder.sanity.max_insight
-	old_max_resting = holder.sanity.max_resting
-	old_insight_rest_gain_multiplier = holder.sanity.insight_rest_gain_multiplier
-	holder.sanity.max_insight = 100
-	holder.sanity.insight_gain_multiplier *= 1.5
-	holder.sanity.max_resting = 1
-	holder.sanity.insight_rest_gain_multiplier = 0
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		old_max_insight = H.sanity.max_insight
+		old_max_resting = H.sanity.max_resting
+		old_insight_rest_gain_multiplier = H.sanity.insight_rest_gain_multiplier
+		H.sanity.max_insight = 100
+		H.sanity.insight_gain_multiplier *= 2 //We need to gain more faster for are job
+		H.sanity.max_resting = 1
+		H.sanity.insight_rest_gain_multiplier = 0
+		H.sanity.level_change_cap *= 5 // Artists use this stuff for their work, so we need them to be able get larger amounts
 
 /datum/perk/job/artist/remove()
-	holder.sanity.max_insight += old_max_insight - 100
-	holder.sanity.insight_gain_multiplier /= 1.5
-	holder.sanity.max_resting += old_max_resting - 1
-	holder.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.max_insight += old_max_insight - 100
+		H.sanity.insight_gain_multiplier /= 2
+		H.sanity.max_resting += old_max_resting - 1
+		H.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
+		H.sanity.level_change_cap *= 0.2
 	..()
 
 /datum/perk/timeismoney
 	name = "Hyperzine Injections"
-	desc = "A standard issue injector hidden away that is designed for Chief Executive Officers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
+	desc = "A standard issue injector hidden away that is designed for Surface Operations Managers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
+	icon_state = "adrenalineburst_tim"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -69,31 +77,36 @@
 /datum/perk/medicalexpertise
 	name = "Medical Expertise"
 	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right amount of them."
+	icon_state = "medicalexpertise"
 
 /datum/perk/solborn
 	name = "Sol Born"
 	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
 	addicted slightly easier."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "solborn" // https://game-icons.net/1x1/lorc/overdose.html
 
-/datum/perk/solborn/assign(mob/living/carbon/human/H)
+/datum/perk/solborn/assign(mob/living/L)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 1.2
-	holder.metabolism_effects.nsa_bonus -= 15
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1.2
+		H.metabolism_effects.nsa_bonus -= 15
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/solborn/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_bonus += 15
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus += 15
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/klutz
 	name = "Klutz"
 	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "klutz"
 
-/datum/perk/klutz/assign(mob/living/carbon/human/H)
+/datum/perk/klutz/assign(mob/living/L)
 	..()
 	holder.mutations.Add(CLUMSY)
 
@@ -104,17 +117,20 @@
 /datum/perk/sanityboost
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
+	icon_state = "truefaith"
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
-	icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
 
-/datum/perk/active_sanityboost/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.sanity.sanity_passive_gain_multiplier *= 1.5
+
+/datum/perk/active_sanityboost/assign(mob/living/L)
+	if(..() && ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.sanity_passive_gain_multiplier *= 1.5
 
 /datum/perk/active_sanityboost/remove()
-	if(holder)
-		holder.sanity.sanity_passive_gain_multiplier /= 1.5
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.sanity_passive_gain_multiplier /= 1.5
 	..()
 
 /datum/perk/unfinished_delivery
@@ -125,6 +141,7 @@
 /datum/perk/community_of_saints
 	name = "Community of the Saints"
 	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
+	icon_state = "communityofthesaints"
 
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
@@ -136,18 +153,21 @@
 	name = "Periodic Table"
 	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
 			You get quarter more NSA than a normal person. You can also see all reagents in beakers."
+	icon_state = "periodictable"
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
-/datum/perk/chemist/assign(mob/living/carbon/human/H)
+/datum/perk/chemist/assign(mob/living/L)
 	..()
-	if(holder)
-		holder.metabolism_effects.nsa_mult += 0.25
-		holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_mult += 0.25
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/chemist/chemist/remove()
-	if(holder)
-		holder.metabolism_effects.nsa_mult -= 0.25
-		holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_mult -= 0.25
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/alchemist
@@ -156,23 +176,25 @@
 			Your NSA also has been slightly improved due to self experimentation. You can also see all reagents in beakers."
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
-/datum/perk/alchemist/assign(mob/living/carbon/human/H)
+/datum/perk/alchemist/assign(mob/living/L)
 	..()
-	if(holder)
-		holder.metabolism_effects.nsa_mult += 0.05
-		holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_mult += 0.05
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/alchemist/remove()
-	if(holder)
-		holder.metabolism_effects.nsa_mult -= 0.05
-		holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_mult -= 0.05
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/scribe
 	name = "Scribe"
 	desc = "Your ability to turn experiences into words knows no bounds. Paper at this point is hardly able to hold the power of your writing."
 
-/datum/perk/scribe/assign(mob/living/carbon/human/H)
+/datum/perk/scribe/assign(mob/living/L)
 	..()
 	if(holder)
 		holder.sdisabilities|=BLIND
@@ -188,7 +210,7 @@
 	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
 	lose_text = "Your eyes sting but you don't see the pain anymore."
 
-/datum/perk/cooldown/reveal/assign(mob/living/carbon/human/H)
+/datum/perk/cooldown/reveal/assign(mob/living/L)
 	..()
 	if(holder)
 		//give thermal vision
@@ -197,11 +219,13 @@
 /datum/perk/bartender
 	name = "Bar Menu"
 	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
+	icon_state = "barmenu"
 	perk_shared_ability = PERK_SHARED_SEE_COMMON_REAGENTS
 
 /datum/perk/chem_contraband
 	name = "Illegal Substance Training"
 	desc = "For reasons either fair or foul, you know how to easily identify certain kinds of illegal chemical contraband."
+	icon_state = "illegalsubstancetraining"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/nightcrawler
@@ -212,7 +236,7 @@
 	var/obj/screen/lightOverlay = null
 	icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
 
-/datum/perk/nightcrawler/assign(mob/living/carbon/human/H)
+/datum/perk/nightcrawler/assign(mob/living/L)
 	..()
 	init_sight = holder.additional_darksight
 	init_flash = holder.flash_mod
@@ -235,7 +259,7 @@
 	desc = "Being deadly, easy. Silent? Even easier now. You generate less noise than others."
 	icon_state = "footsteps" // https://game-icons.net
 
-/datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
+/datum/perk/quiet_as_mouse/assign(mob/living/L)
 	..()
 	holder.noise_coeff -= 0.75
 
@@ -253,7 +277,7 @@
 	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around."
 	icon_state = "muscular" // https://game-icons.net
 
-/datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
+/datum/perk/ass_of_concrete/assign(mob/living/L)
 	..()
 	holder.mob_bump_flag = HEAVY
 
@@ -269,28 +293,31 @@
 /datum/perk/rezsickness
 	name = "Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
+	icon_state = "revivalsickness"
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
 
-/datum/perk/rezsickness/assign(mob/living/carbon/human/H)
+/datum/perk/rezsickness/assign(mob/living/L)
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.10
-	holder.burn_mod_perk += 0.10
-	holder.oxy_mod_perk += 0.10
-	holder.toxin_mod_perk += 0.10
+	holder.brute_mod_perk *= 1.10
+	holder.burn_mod_perk *= 1.10
+	holder.oxy_mod_perk *= 1.10
+	holder.toxin_mod_perk *= 1.10
 	holder.stats.changeStat(STAT_ROB, -10)
 	holder.stats.changeStat(STAT_TGH, -10)
 	holder.stats.changeStat(STAT_VIG, -10)
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 0.5, learner = H)
+	if(isliving(holder))
+		var/mob/living/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 0.5, learner = H)
 
 /datum/perk/rezsickness/remove()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.10
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.10
+	holder.brute_mod_perk /= 1.10
+	holder.burn_mod_perk /= 1.10
+	holder.oxy_mod_perk /= 1.10
+	holder.toxin_mod_perk /= 1.10
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)
 	holder.stats.changeStat(STAT_VIG, 10)
@@ -300,22 +327,23 @@
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
 	desc = "You've recently died and have been brought back to life. Your body cannot handle this traumatic experience very well, to the point where you struggle to complete even basic tasks. You better rest in a bed until it subsides before going back to work."
+	icon_state = "severerevivalsickness"
 
-/datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
+/datum/perk/rezsickness/severe/assign(mob/living/L)
 	..()
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.15
-	holder.oxy_mod_perk += 0.15
-	holder.toxin_mod_perk += 0.15
+	holder.brute_mod_perk *= 1.15
+	holder.burn_mod_perk *= 1.15
+	holder.oxy_mod_perk *= 1.15
+	holder.toxin_mod_perk *= 1.15
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.15
-	holder.oxy_mod_perk -= 0.15
-	holder.toxin_mod_perk -= 0.15
+	holder.brute_mod_perk /= 1.15
+	holder.burn_mod_perk /= 1.15
+	holder.oxy_mod_perk /= 1.15
+	holder.toxin_mod_perk /= 1.15
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
@@ -324,13 +352,14 @@
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
 	desc = "You've recently died and have been brought back to life. Your frail constitution can barely handle the process, leaving you utterly physically and mentally wrecked. You better stay in bed for now and rest, or you risk dying even easier than before."
+	icon_state = "fatalrevivalsickness"
 
-/datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
+/datum/perk/rezsickness/severe/fatal/assign(mob/living/L)
 	..()
-	holder.brute_mod_perk += 0.25
-	holder.burn_mod_perk += 0.25
-	holder.oxy_mod_perk += 0.25
-	holder.toxin_mod_perk += 0.25
+	holder.brute_mod_perk *= 1.25
+	holder.burn_mod_perk *= 1.25
+	holder.oxy_mod_perk *= 1.25
+	holder.toxin_mod_perk *= 1.25
 	holder.stats.changeStat(STAT_ROB, -20)
 	holder.stats.changeStat(STAT_TGH, -20)
 	holder.stats.changeStat(STAT_VIG, -20)
@@ -339,10 +368,10 @@
 	holder.stats.changeStat(STAT_BIO, -20)
 
 /datum/perk/rezsickness/severe/fatal/remove()
-	holder.brute_mod_perk -= 0.25
-	holder.burn_mod_perk -= 0.25
-	holder.oxy_mod_perk -= 0.25
-	holder.toxin_mod_perk -= 0.25
+	holder.brute_mod_perk /= 1.25
+	holder.burn_mod_perk /= 1.25
+	holder.oxy_mod_perk /= 1.25
+	holder.toxin_mod_perk /= 1.25
 	holder.stats.changeStat(STAT_ROB, 20)
 	holder.stats.changeStat(STAT_TGH, 20)
 	holder.stats.changeStat(STAT_VIG, 20)
@@ -367,20 +396,21 @@
 	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
 	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
 	var/initial_time
+	icon_state = "slime_rez"
 
-/datum/perk/racial/slime_rez_sickness/assign(mob/living/carbon/human/H)
+/datum/perk/racial/slime_rez_sickness/assign(mob/living/L)
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.3
-	holder.burn_mod_perk += 0.3
+	holder.brute_mod_perk *= 1.3
+	holder.burn_mod_perk *= 1.3
 	holder.stats.changeStat(STAT_ROB, 30)
 	holder.stats.changeStat(STAT_TGH, -30)
 	holder.stats.changeStat(STAT_VIG, -30)
 
 /datum/perk/racial/slime_rez_sickness/remove()
-	holder.brute_mod_perk -= 0.3
-	holder.burn_mod_perk -= 0.3
+	holder.brute_mod_perk /= 1.3
+	holder.burn_mod_perk /= 1.3
 	holder.stats.changeStat(STAT_ROB, -30)
 	holder.stats.changeStat(STAT_TGH, 30)
 	holder.stats.changeStat(STAT_VIG, 30)
@@ -399,8 +429,9 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+	icon_state = "handyman"
 
-/datum/perk/handyman/assign(mob/living/carbon/human/H)
+/datum/perk/handyman/assign(mob/living/L)
 	..()
 
 
@@ -410,26 +441,31 @@
 /datum/perk/stalker
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
+	icon_state = "anomalyhunter"
 
 /datum/perk/market_prof
 	name = "Market Professional"
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
+	icon_state = "marketprofessional"
 
 //Medical perks - relates to surgery and all.
 
 /datum/perk/surgical_master
 	name = "Surgery Training"
 	desc = "While you may not know the more advanced medical procedures, your mandatory training on surgery for implantation purposes allows you to perform basic surgical procedures with ease."
+	icon_state = "surgerytraining"
 
 /datum/perk/advanced_medical
 	name = "Advanced Surgical Techniques"
 	desc = "Your surgical training and experience have tempered your special techniques for treating patients, enabling you to make more effective and efficient use of your resources when reconstituting their bodies."
+	icon_state = "advancedsurgicaltechniques"
 
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
+	icon_state = "roboticsexpert"
 
-/datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
+/datum/perk/robotics_expert/assign(mob/living/L)
 	..()
 
 /datum/perk/robotics_expert/remove()
@@ -438,21 +474,24 @@
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
 	desc = "Through intense and repetitive training with bolt-action and lever-action rifles, you will always chamber a new round instantly after firing."
+	icon_state = "boltactionrifletraining"
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
 	desc = "You have been granted a multitude of specially crafted electronic 'keys' for opening most airlocks around the colony, and the knowledge on how to use them has been solely been passed on to you. Don't get discouraged, you will eventually find the right one..."
+	icon_state = "keysmith"
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
 	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
+	icon_state = "blackshieldconditioning"
 
-/datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
+/datum/perk/job/blackshield_conditioning/assign(mob/living/L)
 	..()
 	holder.mob_bomb_defense += 20
 	holder.falls_mod -= 0.4
 
-/datum/perk/blackshield_conditioning/remove()
+/datum/perk/job/blackshield_conditioning/remove()
 	holder.mob_bomb_defense -= 20
 	holder.falls_mod += 0.4
 	..()
@@ -460,28 +499,31 @@
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
 	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of too much NSA and addictions much better than others."
+	icon_state = "roughandtumble"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
-/datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
+/datum/perk/job/prospector_conditioning/assign(mob/living/L)
 	..()
-	if(holder)
-		holder.metabolism_effects.addiction_chance_multiplier = 0.1
-		holder.metabolism_effects.nsa_bonus += 25
-		holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 0.1
+		H.metabolism_effects.nsa_bonus += 25
+		H.metabolism_effects.calculate_nsa()
 
-/datum/perk/prospector_conditioning/remove()
-	if(holder)
-		holder.metabolism_effects.addiction_chance_multiplier = 1
-		holder.metabolism_effects.nsa_bonus -= 25
-		holder.metabolism_effects.calculate_nsa()
+/datum/perk/job/prospector_conditioning/remove()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus -= 25
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
+	icon_state = "masterbutcher"
 
-
-/datum/perk/job/butcher/assign(mob/living/carbon/human/H)
+/datum/perk/job/butcher/assign(mob/living/L)
 	..()
 
 /datum/perk/job/butcher/remove()
@@ -492,10 +534,12 @@
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
 	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to perform surgical steps a lot more easily, to the point of rivaling real surgeons."
+	icon_state = "naturalist"
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
 	name = "SI Science Training"
+	icon_state = "sitraining"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/neat
@@ -505,19 +549,22 @@
 			You can regain sanity by cleaning."
 	icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
 
-/datum/perk/neat/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.sanity.view_damage_threshold += 20
+/datum/perk/neat/assign(mob/living/L)
+	if(..() && ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.view_damage_threshold += 20
 
 /datum/perk/neat/remove()
-	if(holder)
-		holder.sanity.view_damage_threshold -= 20
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.view_damage_threshold -= 20
 	..()
 
 /datum/perk/channeling
 	name = "Channeling"
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
+	icon_state = "channeling"
 
 
 /datum/perk/codespeak
@@ -557,21 +604,21 @@
 		/mob/living/carbon/human/proc/codespeak_run_local
 		)
 
-/datum/perk/codespeak/assign(mob/living/carbon/human/H)
+/datum/perk/codespeak/assign(mob/living/L)
 	..()
 	if(holder)
-		holder.verbs += codespeak_procs
-
+		add_verb(holder, codespeak_procs)
 
 /datum/perk/codespeak/remove()
 	if(holder)
-		holder.verbs -= codespeak_procs
+		remove_verb(holder, codespeak_procs)
 	..()
 
 /datum/perk/gunsmith
 	name = "Gunsmith Master"
 	desc = "You are a professional gunsmith, your knowledge allows to not only repair firearms but expertly craft them. \
 			This includes the machines required to do so, including the bullet fabricator."
+	icon_state = "gunsmith"
 
 //Chef's special perk
 
@@ -580,6 +627,8 @@
 	desc = "Your own special, secret touch in seasoning has anomalous properties that can enhance most food products."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "spice"
+
 /datum/perk/foodappraise/activate()
 	var/mob/living/carbon/human/user = usr
 	var/obj/item/reagent_containers/food/snacks/F = user.get_active_hand()
@@ -626,15 +675,16 @@
 
 /datum/perk/true_name
 	name = "Rename Self"
-	desc = "No one knows you thus your name is what ever you need or want to be."
+	desc = "Nobody knows you, thus your name is whatever you need or want to be."
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
+	icon_state = "true_name"
 
 /datum/perk/true_name/activate()
 	..()
 	if(anti_cheat)
-		to_chat(holder, "You can only keep up so many personallitys.")
+		to_chat(holder, "You can only keep up so many personalities.")
 		return FALSE
 	anti_cheat = TRUE
 	var/mob/M = usr

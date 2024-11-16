@@ -118,13 +118,16 @@
 	name = "elbrus4kk laptop"
 	desc = "A portable clamshell computer made by \"Institute of Computer Engineering\" company. This one is advertized as tougher than other models on the market."
 	icon_state = "elbrus4kk"
+	icon_state_unpowered = "elbrus4kk"
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
 	name = "xenoware laptop"
 	desc = "A portable clamshell computer made by \"Xenoware\". You will feel like a real hacker with those lights."
 	icon_state = "xenoware"
+	icon_state_unpowered = "xenoware"
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
 	name = "golden laptop"
 	desc = "A portable clamshell computer with \"Kitaro Scientific\" label on the back."
 	icon_state = "golden"
+	icon_state_unpowered = "golden"

@@ -72,6 +72,7 @@
 
 	loaded_character = S
 	log_and_message_admins("[key_name(usr)] has loaded a character.")
+	categoriesChanged = "All"	//Forces the character editor to refresh everything, preventing characters from getting their body markings (visually) mixed up
 
 	return 1
 

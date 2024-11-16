@@ -41,7 +41,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"
-	desc = "A crudly mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine."
+	desc = "A crudely mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
@@ -64,7 +64,7 @@
 
 /obj/item/gun/projectile/boltgun/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -79,6 +79,9 @@
 	if (silenced)
 		iconstring += "_s"
 		itemstring += "_s"
+
+	if (bayonet)	//Used not for base Mosin, but any sub-types that end up able to take bayonets.
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)

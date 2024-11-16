@@ -3,8 +3,8 @@
 	desc = "An AI controlled autonomous power loading unit equipped with a diamond tipped drill."
 	icon_state = "greyson_ripley"
 	attacktext = "drilled"
-	health = 250
-	maxHealth = 250
+	health = 250 * GREYSONROBUST_HEALTH_MOD
+	maxHealth = 250 * GREYSONROBUST_HEALTH_MOD
 	melee_damage_lower = 40
 	melee_damage_upper = 45
 	attack_sound = 'sound/mecha/mechdrill.ogg'
@@ -109,12 +109,12 @@
 	attacktext = "titan-punched"
 	turns_per_move = 8
 	move_to_delay = 1
-	health = 400
-	maxHealth = 400
+	health = 400 * GREYSONROBUST_HEALTH_MOD
+	maxHealth = 400 * GREYSONROBUST_HEALTH_MOD
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon/Initialize(mapload)
 

@@ -120,32 +120,21 @@
 
 /mob/living/simple_animal/borer/proc/update_abilities(force_host=FALSE)
 	// Remove all abilities
-	verbs -= abilities_standalone
-	verbs -= abilities_in_host
-	host?.verbs -= abilities_in_control
-
-	// Borer gets host abilities before actually getting inside the host
-	// Workaround for a BYOND bug: http://www.byond.com/forum/post/1833666
-	/*if(force_host)
-		if(ishuman(host))
-			verbs += abilities_in_host
-			return
-		for(var/ability in abilities_in_host)
-			if(istype(ability, /mob/living/carbon/human))
-				continue
-			verbs += ability
-		return*/
+	remove_verb(src, abilities_standalone)
+	remove_verb(src, abilities_in_host)
+	if(host)
+		remove_verb(host, abilities_in_control)
 
 	// Re-grant some of the abilities, depending on the situation
 	if(!host)
-		verbs += abilities_standalone
+		add_verb(src, abilities_standalone)
 	else if(!controlling)
 		if(ishuman(host))
-			verbs += abilities_in_host
+			add_verb(src, abilities_in_host)
 			Stat()
 			return
 	else
-		host.verbs += abilities_in_control
+		add_verb(host, abilities_in_control)
 	Stat()
 
 // If borer is controlling a host directly, send messages to host instead of borer
@@ -197,21 +186,13 @@
 	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
 
-/mob/living/simple_animal/borer/Stat()
+/mob/living/simple_animal/borer/get_status_tab_items()
 	. = ..()
-	statpanel("Status")
-
-	if(evacuation_controller)
-		var/eta_status = evacuation_controller.get_status_panel_eta()
-		if(eta_status)
-			stat(null, eta_status)
-
-	if (client?.statpanel == "Status")
-		stat("Evolution Level", borer_level)
-		stat("Chemicals", host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]")
-		if(host)
-			stat("Host health", host.stat == DEAD ? "Deceased" : host.health)
-			stat("Host brain damage", host.getBrainLoss())
+	. += "Evolution Level: [borer_level]"
+	. += "Chemicals: [host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]"]"
+	if(host)
+		. += "Host health: [host.stat == DEAD ? "Deceased" : host.health]"
+		. += "Host brain damage: [host.getBrainLoss()]"
 
 /mob/living/simple_animal/borer/proc/detatch()
 

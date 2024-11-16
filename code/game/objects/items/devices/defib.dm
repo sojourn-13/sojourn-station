@@ -638,6 +638,7 @@
 	icon_state = "defibpaddles0"
 	item_state = "defibpaddles0"
 	cooldowntime = (3 SECONDS)
+	advanced_pads = TRUE
 
 /obj/item/shockpaddles/robot/check_charge(var/charge_amt)
 	if(isrobot(src.loc))

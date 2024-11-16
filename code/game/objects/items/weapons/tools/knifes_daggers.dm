@@ -13,7 +13,8 @@
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
+	clickdelay_offset = FAST_WEAPON_COOLDOWN //small, but quicker to use.
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
@@ -22,6 +23,7 @@
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	var/backstab_damage = 10
+	var/can_remove = TRUE 	//For bayonet gunmod usage.
 
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS
@@ -29,6 +31,20 @@
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
 	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
 	alt_mode_lossrate = 0.7
+
+//Handles attaching bayonets to guns capable of taking them. Think of bayonet lugs.
+/obj/item/tool/knife/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_BAYONET = TRUE,
+		GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE = 10,
+		GUN_UPGRADE_MELEEPENETRATION = ARMOR_PEN_MODERATE,
+		GUN_UPGRADE_OFFSET = 4
+		)
+	I.gun_loc_tag = GUN_UNDERBARREL
+	I.req_gun_tags = list(GUN_KNIFE)
+	I.prefix = "bayonetted"
 
 /obj/item/tool/knife/resolve_attackby(atom/target, mob/user)
 	. = ..()
@@ -73,7 +89,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 1)
 	force = WEAPON_FORCE_DANGEROUS // Serrated teeth
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	price_tag = 35
 
@@ -85,7 +101,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS
 	backstab_damage = 8
-	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
+	armor_divisor = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
 
 /obj/item/tool/knife/ritual
@@ -94,7 +110,7 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	max_upgrades = 3
 	backstab_damage = 14
 	price_tag = 7
@@ -106,7 +122,7 @@
 	icon_state = "render_awakened"
 	hitsound = 'sound/weapons/renderslash.ogg'
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	max_upgrades = 2
 	hitsound = 'sound/weapons/renderslash.ogg'
 	backstab_damage = 8 // Not so much for stabbing as it is for cutting.
@@ -121,7 +137,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS+2
 	backstab_damage = 8
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
@@ -157,11 +173,14 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS // Serrated combat knife
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	max_upgrades = 3
 	embed_mult = 0.6
 	price_tag = 38
+
+/obj/item/tool/knife/tacknife/robo //used by sec bot
+	embed_mult = 0
 
 /obj/item/tool/knife/dagger
 	name = "dagger"
@@ -172,7 +191,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = 13
 	backstab_damage = 15
-	armor_penetration = ARMOR_PEN_HALF
+	armor_divisor = ARMOR_PEN_HALF
 	throwforce = WEAPON_FORCE_ROBUST
 	price_tag = 21
 
@@ -183,7 +202,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"
 	item_state = "skinning"
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 50)
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 2, MATERIAL_DIAMOND = 3) // 5 plasteel + 2 wood, then +3 plasteel +3 diamond from whetstone.
 	price_tag = 500 // Takes diamond to make and very rare.
@@ -209,7 +228,7 @@
 	price_tag = 50 // Fancy expensive heirloom.... it is not exactly meant to be upgradable nor sold but the value that it holds is somehow more symbolic than material.
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_GRAZING
+	armor_divisor = ARMOR_PEN_GRAZING
 	tool_qualities = list(QUALITY_CUTTING = 35) //Can't be upgraded. Round start knife. Damage is bad not really good to selling either. Only fair give a good status to cutting things.
 	backstab_damage = 9
 

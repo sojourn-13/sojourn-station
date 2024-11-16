@@ -1,23 +1,34 @@
 /mob/proc/say()
 	return
 
+// Do nothing, only available for humans
+/mob/verb/whisper_wrapper()
+	set name = "Whisper verb"
+	set category = "IC"
+
+// Do nothing, only available for humans
 /mob/verb/whisper()
 	set name = "Whisper"
 	set category = "IC"
-
+	set hidden = TRUE
 
 /mob/verb/say_wrapper()
 	set name = "Say verb"
 	set category = "IC"
 
-	set_typing_indicator(TRUE)
-	hud_typing = TRUE
+	if(client?.get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(client, null, "command=[client.tgui_say_create_open_command(SAY_CHANNEL)]")
+		return
+
+	client?.start_thinking()
+	// set_typing_indicator(TRUE)
+	// hud_typing = TRUE
 	var/message = input("", "say (text)") as text|null
-	hud_typing = FALSE
-	set_typing_indicator(FALSE)
+	// hud_typing = FALSE
+	// set_typing_indicator(FALSE)
+	client?.stop_thinking()
 	if(message)
 		say_verb(message)
-
 
 /mob/verb/say_verb(message as text)
 	set name = "Say"
@@ -25,7 +36,6 @@
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
 		return
-	set_typing_indicator(FALSE)
 	usr.say(message)
 
 
@@ -33,11 +43,13 @@
 	set name = "Me verb"
 	set category = "IC"
 
-	set_typing_indicator(TRUE)
-	hud_typing = TRUE
-	var/message = input("", "me (text)") as text|null
-	hud_typing = FALSE
-	set_typing_indicator(FALSE)
+	if(client?.get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(client, null, "command=[client.tgui_say_create_open_command(ME_CHANNEL)]")
+		return
+
+	client?.start_thinking()
+	var/message = input("", "me (text)") as message|null
+	client?.stop_thinking()
 	if(message)
 		me_verb(message)
 
@@ -52,33 +64,11 @@
 
 	message = sanitize(message)
 
-	set_typing_indicator(FALSE)
 	if(use_me)
 		usr.emote("me", usr.emote_type, message)
 	else
 		usr.emote(message)
 
-/*
-/mob/verb/subtle_wrapper()
-	set name = "Subtle verb"
-	set category = "IC"
-
-	var/message = input("", "subtle (text)") as text|null
-	if(message)
-		subtle_verb(message)
-
-/mob/verb/subtle_verb(message as text)
-	set name = "Subtle"
-	set hidden = TRUE
-
-	if(say_disabled)
-		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled"))
-
-	if(use_subtle)
-		usr.emote("subtle", usr.emote_type, message)
-	else
-		usr.emote(message)
-*/
 /mob/proc/say_dead(message)
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
@@ -195,3 +185,22 @@
 			return L
 
 	return null
+
+//Not Antighost but its more sneaky around folks
+
+/mob/verb/subtle_wrapper()
+	set name = "Subtle verb"
+	set category = "IC"
+	var/message = input("", "subtle (text)") as text|null
+	if(message)
+		subtle_verb(message)
+
+/mob/verb/subtle_verb(message as text)
+	set name = "Subtle"
+	set hidden = TRUE
+	if(say_disabled)
+		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled"))
+	if(use_subtle)
+		usr.emote("subtle", usr.emote_type, message)
+	else
+		usr.emote(message)

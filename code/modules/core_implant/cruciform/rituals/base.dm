@@ -52,7 +52,7 @@
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		addtimer(CALLBACK(M, /obj/item/book/ritual/cruciform/proc/glowient), 6000)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/obj/item/book/ritual/cruciform, glowient)), 6000)
 		set_personal_cooldown(H)
 		return TRUE
 	else
@@ -150,7 +150,7 @@
 		fail("You feel stupid.",user,C,targets)
 		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 
-	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically.", "Sending a message") as text|null
+	var/text = input(user, "What message will you send to the target? The message will be recieved by their cruciform and heard in their mind.", "Sending a message") as text|null
 	if (!text)
 		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
@@ -158,6 +158,10 @@
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
+	for(var/mob/observer/ghost/G in world)
+		if(G.get_preference_value(/datum/client_preference/ghost_ears_plus) == GLOB.PREF_YES)
+			G.show_message("<i>Cruciform Sending message from <b>[user]</b> to <b>[H]</b>: [text]</i>")
+
 	return TRUE
 
 

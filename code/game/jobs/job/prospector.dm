@@ -29,8 +29,8 @@
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_VIG = 30,
-		STAT_MEC = 10,
-		STAT_BIO = 10
+		STAT_MEC = 20,
+		STAT_BIO = 15
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -93,8 +93,8 @@
 	description = "The Fence is a master of the prospector arsenal. Somewhere between gunsmith and trader, your job is to mete out the finds to buyers, and to \
 	make the rusted piles of junk at the bottom of the trash cart presentable enough for sale. \
 	You are a veteran prospector or salvager, one of Hogg's long timers, and you know your stuff. You're expected to help wrangle the newbies and to back up the Foremans word  \
-	Alongside this, you've got final say over the store from which you vend your (ill)-gotten gains. Remember, you're a veteran at this. \
-	You should be a reasonable voice amongst the hard headed field workers - Hogg wants a profit, not a dispute with the pigs."
+	Alongside this, you've got final say over the store from which you vend your (ill-)gotten gains. Remember, you're a veteran at this. \
+	You should be a reasonable voice amongst the hot headed field workers - Hogg wants a profit, not a dispute with the pigs."
 
 	duties = "Help your fellows prepare and procure everything they need for runs. \
 			Keep the funds flowing. Everything is for sale if the price is right, more funds means better equipment, better equipment means safer runs. \
@@ -119,7 +119,7 @@
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Sawbones", "Rookie Salvager")
-	alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
+	//alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round-start.
 	wage = WAGE_LABOUR_HAZARD
@@ -141,7 +141,7 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-	perks = list(PERK_JUNKBORN, PERK_STALKER)
+	perks = list(PERK_JUNKBORN, PERK_STALKER, PERK_MEDICAL_EXPERT)
 
 	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
 	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\

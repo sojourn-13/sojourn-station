@@ -68,7 +68,7 @@
 	for(var/r in known_rituals)
 		if(ispath(r,/datum/ritual/mind))
 			var/datum/ritual/mind/m = r
-			wearer.verbs |= initial(m.activator_verb)
+			add_verb(wearer, initial(m.activator_verb))
 
 /obj/item/implant/core_implant/proc/remove_ritual_verbs()
 	if(!wearer || !active)
@@ -77,7 +77,7 @@
 	for(var/r in known_rituals)
 		if(ispath(r,/datum/ritual/mind))
 			var/datum/ritual/mind/m = r
-			wearer.verbs.Remove(initial(m.activator_verb))
+			remove_verb(wearer, initial(m.activator_verb))
 
 /obj/item/implant/core_implant/malfunction()
 	hard_eject()
@@ -119,7 +119,7 @@
 
 	if(wearer != H)
 		if(H.get_core_implant() && !group_ritual_leader)
-			addtimer(CALLBACK(src, .proc/hear_other, H, message), 0) // let H's own implant hear first
+			addtimer(CALLBACK(src, PROC_REF(hear_other), H, message), 0) // let H's own implant hear first
 	else
 		for(var/RT in known_rituals)
 			var/datum/ritual/R = GLOB.all_rituals[RT]
@@ -127,7 +127,7 @@
 			if(R.ignore_stuttering)
 				ture_message = message_pre_problems
 			if(R.compare(ture_message))
-				if(R.power > src.power)
+				if(R.power > src.power && !(power >= max_power))
 					to_chat(H, SPAN_DANGER("Not enough energy for the [R.name]."))
 					return
 				if(!R.is_allowed(src))
@@ -147,7 +147,7 @@
 
 
 /obj/item/implant/core_implant/proc/use_power(var/value)
-	power = max(0, power - value)
+	power -= value
 
 /obj/item/implant/core_implant/proc/restore_power(var/value)
 	power = min(max_power, power + value)

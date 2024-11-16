@@ -49,7 +49,7 @@
 /// 10mm M A G N U M
 
 /datum/design/autolathe/gun/ladon
-	name = "SA HG 10mm \"Lamia\""
+	name = "SA HG 10mm \"Ladon\"" //This is infact a LADON not a LAMIA not even a goddamn NAGA platform
 	build_path = /obj/item/gun/projectile/ladon
 
 /datum/design/autolathe/gun/ladon_hs
@@ -328,6 +328,10 @@
 /datum/design/autolathe/gun/copperhead
 	name = "NM 7.62x39mm \"Copperhead\" rifle"
 	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead
+
+/datum/design/autolathe/gun/viper
+	name = "NM 7.62x39mm \"Viper\" DMR"
+	build_path = /obj/item/gun/projectile/automatic/mamba/viper
 
 /datum/design/autolathe/gun/python
 	name = "NM 7.62x39mm \"Python\" heavy sniper"

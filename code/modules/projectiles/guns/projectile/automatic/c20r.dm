@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/c20r
 	name = "bullpup SMG"
-	desc = "The C-20r is a lightweight and rapid-firing SMG, for when you REALLY need someone dead. Fires either 9mm or 10mm depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
+	desc = "The C20r is a lightweight and rapid-firing SMG for when you REALLY need someone dead. Fires either 9mm or 10mm depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
 	icon = 'icons/obj/guns/projectile/cr20.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"
@@ -40,6 +40,7 @@
 	name = "C20r frame"
 	desc = "A C20r SMG frame. The syndicate's bread and butter. Curiously, it has two sets of threads for a barrel in differing sizes."
 	icon_state = "frame_syndi"
+	nra = FALSE
 	result = /obj/item/gun/projectile/automatic/c20r
 	resultvars = list(/obj/item/gun/projectile/automatic/c20r)
 	gripvars = list(/obj/item/part/gun/grip/black)
@@ -79,7 +80,6 @@
 	name = "C20m frame"
 	desc = "A C20m SMG frame. The syndicate's bread and butter, reverse-engineered. Curiously, it has two sets of threads for a barrel in differing sizes."
 	icon_state = "frame_sci"
-	nra = FALSE
 	result = /obj/item/gun/projectile/automatic/c20r/sci
 	resultvars = list(/obj/item/gun/projectile/automatic/c20r/sci)
 	gripvars = list(/obj/item/part/gun/grip/black)

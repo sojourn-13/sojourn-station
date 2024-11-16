@@ -390,7 +390,7 @@
 /area/outpost/abandoned_fortress)
 "kS" = (
 /obj/structure/table/marble,
-/obj/item/stalker_hand_annomlie/hand,
+/obj/item/stalker_hand_anomaly/hand,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "kU" = (
@@ -566,7 +566,7 @@
 /area/outpost/abandoned_fortress)
 "pf" = (
 /obj/structure/table/marble,
-/obj/item/stalker_hand_annomlie/camo_shard,
+/obj/item/stalker_hand_anomaly/camo_shard,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "pj" = (
@@ -1385,7 +1385,7 @@
 /area/outpost/abandoned_fortress)
 "Ot" = (
 /obj/structure/table/marble,
-/obj/item/stalker_hand_annomlie/star,
+/obj/item/stalker_hand_anomaly/star,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "OT" = (
@@ -1411,7 +1411,7 @@
 /area/outpost/abandoned_fortress)
 "PA" = (
 /obj/structure/table/marble,
-/obj/item/stalker_hand_annomlie/dice,
+/obj/item/stalker_hand_anomaly/dice,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "PE" = (
@@ -1553,7 +1553,7 @@
 /area/outpost/abandoned_fortress)
 "TD" = (
 /obj/structure/table/marble,
-/obj/item/stalker_hand_annomlie/pillar,
+/obj/item/stalker_hand_anomaly/pillar,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "TK" = (

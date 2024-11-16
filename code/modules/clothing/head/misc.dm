@@ -20,12 +20,12 @@
 /obj/item/clothing/head/laurel/silver
 	name = "silver Laurel wreath"
 	icon_state = "laurel_s"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed  silver."
+	desc = "A round silver wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/laurel/gold
 	name = "golden Laurel wreath"
 	icon_state = "laurel_g"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed of gold."
+	desc = "A round gold wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -120,6 +120,51 @@
 	name = "hair magnets"
 	icon_state = "magnetpin"
 	desc = "A small metal hair pin with a magnet attached. Popular among the tiny demographic of fashionable robots."
+
+/obj/item/clothing/head/flowercrown
+	name = "poppy crown"
+	icon_state = "poppy_crown"
+	desc = "A flower crown made out of a string of bright red poppies."
+
+/obj/item/clothing/head/flowercrown/sunflower
+	name = "sunflower crown"
+	icon_state = "sunflower_crown"
+	desc = "A bright flower crown made out sunflowers that is sure to brighten up anyone's day!"
+
+/obj/item/clothing/head/flowercrown/lily
+	name = "lily crown"
+	icon_state = "lily_crown"
+	desc = "A leafy flower crown with a cluster of large white lilies at at the front."
+
+/obj/item/clothing/head/flowercrown/rainbow
+	name = "rainbow flower crown"
+	icon_state = "rainbow_bunch_crown_1"
+	desc = "A flower crown made out of the flowers of the rainbow bunch plant."
+
+/obj/item/clothing/head/flowercrown/rainbow/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["rainbow flower crown red, yellow and white"] = "rainbow_bunch_crown_1"
+	options["rainbow flower crown blue, yellow, green and white"] = "rainbow_bunch_crown_2"
+	options["rainbow flower crown red, blue, purple and pink"] = "rainbow_bunch_crown_3"
+	options["rainbow flower crown yellow, green and white"] = "rainbow_bunch_crown_4"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*Hair Ribbons*/
 
@@ -315,20 +360,20 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
 
-/obj/item/clothing/head/numerical_hat
-	name = "numerical hat"
+/obj/item/clothing/head/leather_hat
+	name = "leather hat"
 	icon_state = "field_numerical_hat"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to purple or purple to red"
+	desc = "A hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
-		melee = 10,
+		melee = 2,
 		bullet = 0,
-		energy = 10,
+		energy = 2,
 		bomb = 5,
 		bio = 100,
 		rad = 0
 	)
 
-/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+/obj/item/clothing/head/leather_hat/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -384,7 +429,7 @@ obj/item/clothing/head/ribbon/red
 	name = "jingasa"
 	desc = "A sturdy metal cap designed to protect the head from weather and falling objects."
 	icon_state = "jingasa"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/head/headband
 	name = "headband"
@@ -456,7 +501,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	name = "kin voidhelm"
 	desc = "An old, battered voidhelmet. Its original source unknown and its seals long since worn out - still, it makes for a decent helmet, if nothing else is available."
 	icon_state = "kin_voidhelm"
-	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
 	item_flags = THICKMATERIAL
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
@@ -495,9 +540,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	siemens_coefficient = 1
 	price_tag = 600
 	armor_list = list(
-		melee = 20,
-		bullet = 15,
-		energy = 10,
+		melee = 5,
+		bullet = 3,
+		energy = 2,
 		bomb = 0,
 		bio = 20,
 		rad = 25
@@ -509,7 +554,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "os_cap"
 	item_state = "os_cap"
 	armor_list = list(
-		melee = 5,
+		melee = 1,
 		bullet = 0,
 		energy = 0,
 		bomb = 0,
@@ -525,7 +570,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 5,
+		energy = 1,
 		bomb = 0,
 		bio = 5,
 		rad = 5
@@ -560,7 +605,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "ragged_hood"
 	item_state = "ragged_hood"
 	flags_inv = HIDEEARS|BLOCKHAIR
-	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 1, bullet = 0, energy = 2, bomb = 0, bio = 5, rad = 5)
 
 // hoods for the tacticool ponchos.
 
@@ -605,3 +650,41 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "tacponhood_color"
 	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/religion_hood_color
+	name = "religious hood"
+	desc = "A religious hood that can be colored."
+	icon_state = "general_hood"
+	item_state = "general_hood"
+
+
+/obj/item/clothing/head/hev
+
+	name = "Hazardous Enviroment Protection suit helmet"
+	desc = "A hood that comes with the hazardous protection suit."
+	icon_state = "rad"
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "hardhat_light"
+	armor_list = list(
+		melee = 16,
+		bullet = 15,
+		energy = 13,
+		bomb = 75,
+		bio = 100,
+		rad = 100
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	siemens_coefficient = 0.4
+	w_class = ITEM_SIZE_NORMAL
+	item_flags = STOPPRESSUREDAMAGE //hardhat has it? So this gets it to.
+	heat_protection = HEAD
+	cold_protection = HEAD
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
+	price_tag = 1000

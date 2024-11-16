@@ -6,11 +6,11 @@
 	instability = 20
 
 /datum/genetics/mutation/phasing/onMobImplant()
-	container.holder.verbs += /mob/living/carbon/human/proc/phaze_trough
+	add_verb(container.holder, /mob/living/carbon/human/proc/phaze_trough)
 
 
 /datum/genetics/mutation/phasing/onMobRemove()
-	container.holder.verbs -= /mob/living/carbon/human/proc/phaze_trough
+	remove_verb(container.holder, /mob/living/carbon/human/proc/phaze_trough)
 
 
 /mob/living/carbon/human/proc/phaze_trough()

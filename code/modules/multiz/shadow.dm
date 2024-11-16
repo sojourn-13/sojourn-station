@@ -44,7 +44,7 @@
 	icon = M.icon
 	icon_state = M.icon_state
 	color = M.color
-	copy_overlays(M.get_overlays(), TRUE)
+	copy_overlays(M, TRUE)
 	copy_transformations_from(M)
 	dir = M.dir
 	if(shadow)

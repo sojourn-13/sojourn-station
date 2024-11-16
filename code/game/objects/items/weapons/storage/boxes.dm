@@ -52,13 +52,13 @@
 		spill()
 		qdel(src)
 
-/obj/item/storage/box/attack_generic(var/mob/user)
+/obj/item/storage/box/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	if (istype(user, /mob/living))
 		var/mob/living/L = user
-		var/damage = L.mob_size ? L.mob_size : MOB_MINISCULE
+		var/size_damage = L.mob_size ? L.mob_size : MOB_MINISCULE
 
-		if (!damage || damage <= 0)
+		if (!size_damage || size_damage <= 0)
 			return
 
 		user.do_attack_animation(src)

@@ -9,7 +9,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define SANITY_VIEW_DAMAGE_MOD (0.4 * GLOB.GLOBAL_SANITY_MOD)
 
 // Damage received from unpleasant stuff in view
-#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX) * (1 - (dist)/15))
+#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * max((1.2 - (vig) / STAT_LEVEL_MAX), 0.05) * (1 - (dist)/15))
 
 // Damage received from body damage
 #define SANITY_DAMAGE_HURT(damage, vig) (min((damage) / 5 * SANITY_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX), 60))
@@ -54,7 +54,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_invulnerability = 0
 	var/level
 	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
-	var/level_change = 0
+	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
+	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
+	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
 	var/insight
 	var/max_insight = INFINITY
@@ -95,8 +97,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	owner = H
 	level = max_level
 	insight = rand(0, 30)
-	RegisterSignal(owner, COMSIG_MOB_LIFE, .proc/onLife)
-	RegisterSignal(owner, COMSIG_HUMAN_SAY, .proc/onSay)
+	RegisterSignal(owner, COMSIG_MOB_LIFE, PROC_REF(onLife))
+	RegisterSignal(owner, COMSIG_HUMAN_SAY, PROC_REF(onSay))
 
 /datum/sanity/Destroy()
 	UnregisterSignal(owner, COMSIG_MOB_LIFE)
@@ -110,6 +112,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(value > 0)
 		new_value = max(0, value * insight_gain_multiplier * GLOB.GLOBAL_INSIGHT_MOD)
 	insight = min(insight + new_value, max_insight)
+
+/datum/sanity/proc/remove_insight(value)
+	insight = max(0, insight - value)
 
 /datum/sanity/proc/give_resting(value)
 	resting = min(resting + value, max_resting)
@@ -131,6 +136,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(owner.stat == DEAD || owner.life_tick % life_tick_modifier || owner.in_stasis || (owner.species.lower_sanity_process && !owner.client))
 		return
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION, TRUE)
 		return
 	var/affect = SANITY_PASSIVE_GAIN * sanity_passive_gain_multiplier
 	if(owner.stat) //If we're unconscious
@@ -153,18 +159,22 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 /datum/sanity/proc/handle_view()
 	. = 0
-	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION)
+	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION, TRUE)
 	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
-		if(A.sanity_damage) //If this thing is not nice to behold
-			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
-
 		if(owner.stats.getPerk(PERK_IDEALIST) && ishuman(A)) //Moralists react negatively to people in distress
 			var/mob/living/carbon/human/H = A
 			if(H.sanity.level < 30 || H.health < 50)
 				. += SANITY_DAMAGE_VIEW(0.1, vig, get_dist(owner, A))
+
+		var/mob/M = A
+		if(ismob(M) && M?.faction == owner.faction)
+			continue
+
+		if(A.sanity_damage) //If this thing is not nice to behold
+			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
 
 
 /datum/sanity/proc/handle_area()
@@ -187,6 +197,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
+	//If we are above are cap set to the cap
+	if(level_change > level_change_cap)
+		level_change = level_change_cap
+	//If we are below are minium, simply set it to minium
+	if(level_change < level_change_min)
+		level_change = level_change_min
+
 	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)
@@ -209,15 +226,15 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		spook_time = world.time + rand(1 MINUTES, 8 MINUTES) - (40 - level) * 1 SECONDS //Each missing sanity point below 40 decreases cooldown by a second
 
 		var/static/list/effects_40 = list(
-			.proc/effect_emote = 25,
-			.proc/effect_quote = 50
+			PROC_REF(effect_emote) = 25,
+			PROC_REF(effect_quote) = 50
 		)
 		var/static/list/effects_30 = effects_40 + list(
-			.proc/effect_sound = 1,
-			.proc/effect_quote = 25,
+			PROC_REF(effect_sound) = 1,
+			PROC_REF(effect_quote) = 25,
 		)
 		var/static/list/effects_20 = effects_30 + list(
-			.proc/effect_hallucination = 30
+			PROC_REF(effect_hallucination) = 30
 		)
 
 		call(src, pickweight(level < 30 ? level < 20 ? effects_20 : effects_30 : effects_40))()
@@ -342,7 +359,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					resting_times = 1
 				for(var/stat in L)
 					var/stat_up = L[stat] * 2 * resting_times
-					if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+					if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 						stat_up = 0
 						to_chat(owner, SPAN_NOTICE("You feel that you can't grow anymore better for today in [stat] with oddities"))
 					else
@@ -353,7 +370,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
-				if(I.kill_stats)
+				if(I.self_destroy)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
 
 				resting = 0
@@ -380,7 +397,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 3)
 
 			for(var/stat in stat_change)
-				if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+				if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 					to_chat(owner, SPAN_NOTICE("You can not increase [stat] anymore with simple resting."))
 				else
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_change[stat]]"))
@@ -485,8 +502,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 	if(smoking_allowed && !smoking_no)
 		changeLevel(1) //1+ for smoking in the correct area
-		if(ishuman(owner))
-			var/mob/living/carbon/human/H = owner
+		if(isliving(owner))
+			var/mob/living/H = owner
 			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_area_smoker, "PROPER_AREA_SMOKER", skill_gained = 0.1, learner = H)
 
 	changeLevel(smoking_change)

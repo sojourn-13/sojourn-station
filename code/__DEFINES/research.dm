@@ -30,6 +30,7 @@
 #define RESEARCH_ROBOTICS      /datum/tech/robotics
 #define RESEARCH_GREYSON       /datum/tech/greyson
 #define RESEARCH_ILLEGAL       /datum/tech/illegal
+#define RESEARCH_PSI           /datum/tech/psi
 
 
 // Design categories

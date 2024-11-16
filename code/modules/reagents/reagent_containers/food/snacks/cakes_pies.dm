@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/sliceable/applecake
 	name = "apple cake"
-	desc = "A cake centred with Apple"
+	desc = "A cake centred with apple."
 	icon_state = "applecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/applecakeslice
@@ -13,7 +13,7 @@
 
 /obj/item/reagent_containers/food/snacks/applecakeslice
 	name = "apple cake slice"
-	desc = "A slice of heavenly cake."
+	desc = "A slice of apple cake."
 	icon_state = "applecakeslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -26,7 +26,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/birthdaycake
 	name = "birthday cake"
-	desc = "Happy Birthday to you..."
+	desc = "A cake noting the date of birth, typically the candle is not eaten."
 	icon_state = "birthdaycake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/birthdaycakeslice
@@ -41,7 +41,7 @@
 
 /obj/item/reagent_containers/food/snacks/birthdaycakeslice
 	name = "birthday cake slice"
-	desc = "A slice of your birthday."
+	desc = "A slice of birthday cake."
 	icon_state = "birthdaycakeslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -53,7 +53,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/carrotcake
 	name = "carrot cake"
-	desc = "A favorite dessert of a certain wascally wabbit. Not a lie."
+	desc = "A cake made with carrots."
 	icon_state = "carrotcake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/carrotcakeslice
@@ -68,7 +68,7 @@
 
 /obj/item/reagent_containers/food/snacks/carrotcakeslice
 	name = "carrot cake slice"
-	desc = "Carrotty slice of Carrot Cake, carrots are good for your eyes! Also not a lie."
+	desc = "Carrotty slice of carrot cake."
 	icon_state = "carrotcake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -98,7 +98,7 @@
 
 /obj/item/reagent_containers/food/snacks/braincakeslice
 	name = "brain cake slice"
-	desc = "Lemme tell you something about prions. THEY'RE DELICIOUS."
+	desc = "A slice of squishy cake-thing" //Lemme tell you something about prions. THEY'RE DELICIOUS
 	icon_state = "braincakeslice"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -110,7 +110,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/cheesecake
 	name = "cheese cake"
-	desc = "DANGEROUSLY cheesy."
+	desc = "A heavy cake made with cheese."
 	icon_state = "cheesecake"
 	taste_tag = list(CHEESE_FOOD, SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesecakeslice
@@ -125,7 +125,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesecakeslice
 	name = "cheese cake slice"
-	desc = "Slice of pure cheestisfaction"
+	desc = "A slice of cheese cake."
 	icon_state = "cheesecake_slice"
 	taste_tag = list(CHEESE_FOOD, SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -138,7 +138,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/plaincake
 	name = "vanilla cake"
-	desc = "A plain cake, not a lie."
+	desc = "A plain cake."
 	icon_state = "plaincake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/plaincakeslice
@@ -151,7 +151,7 @@
 
 /obj/item/reagent_containers/food/snacks/plaincakeslice
 	name = "vanilla cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	desc = "A slice of cake."
 	icon_state = "plaincake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -177,7 +177,7 @@
 
 /obj/item/reagent_containers/food/snacks/orangecakeslice
 	name = "orange cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	desc = "A slice of orange cake."
 	icon_state = "orangecake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -203,7 +203,7 @@
 
 /obj/item/reagent_containers/food/snacks/limecakeslice
 	name = "lime cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	desc = "A slice of lime cake."
 	icon_state = "limecake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -229,7 +229,7 @@
 
 /obj/item/reagent_containers/food/snacks/lemoncakeslice
 	name = "lemon cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	desc = "A slice of lemon cake."
 	icon_state = "lemoncake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -242,7 +242,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/chocolatecake
 	name = "chocolate cake"
-	desc = "A cake with added chocolate"
+	desc = "A cake with added chocolate."
 	icon_state = "chocolatecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD, COCO_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/chocolatecakeslice
@@ -255,7 +255,7 @@
 
 /obj/item/reagent_containers/food/snacks/chocolatecakeslice
 	name = "chocolate cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	desc = "A slice of chocolate cake."
 	icon_state = "chocolatecake_slice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD, COCO_FOOD)
 	trash = /obj/item/trash/plate
@@ -281,7 +281,7 @@
 
 /obj/item/reagent_containers/food/snacks/brownieslice
 	name = "brownie slice"
-	desc = "A delicious and buttery chocolate brownie, pairs perfect with icecream!"
+	desc = "A buttery chocolate brownie."
 	icon_state = "brownieslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD, COCO_FOOD)
 	filling_color = "#362008"
@@ -296,7 +296,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pumpkinpie
 	name = "pumpkin pie"
-	desc = "A delicious treat for the autumn months."
+	desc = "A seasonal treat for the autumn months."
 	icon_state = "pumpkinpie"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/pumpkinpieslice
@@ -309,7 +309,7 @@
 
 /obj/item/reagent_containers/food/snacks/pumpkinpieslice
 	name = "pumpkin pie slice"
-	desc = "A slice of pumpkin pie, with whipped cream on top. Perfection."
+	desc = "A slice of pumpkin pie, with whipped cream on top."
 	icon_state = "pumpkinpieslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -323,7 +323,7 @@
 
 /obj/item/reagent_containers/food/snacks/pie
 	name = "banana cream pie"
-	desc = "Just like back home, on clown planet! HONK!"
+	desc = "A banana cream pie ready for an afternoon snack or to be used as a prop for an act."
 	icon_state = "pie"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
@@ -347,7 +347,7 @@
 
 /obj/item/reagent_containers/food/snacks/berryclafoutis
 	name = "berry clafoutis"
-	desc = "No black birds, this is a good sign."
+	desc = "A pie made with berries."
 	icon_state = "berryclafoutis"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	bitesize = 3
@@ -361,7 +361,7 @@
 
 /obj/item/reagent_containers/food/snacks/applepie
 	name = "apple pie"
-	desc = "A pie containing sweet sweet love... or apple."
+	desc = "A pie containing apple."
 	icon_state = "applepie"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#E0EDC5"
@@ -374,7 +374,7 @@
 
 /obj/item/reagent_containers/food/snacks/cherrypie
 	name = "cherry pie"
-	desc = "Taste so good, make a grown man cry."
+	desc = "A pie containing cherries."
 	icon_state = "cherrypie"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#FF525A"
@@ -389,7 +389,7 @@
 	name = "meat pie"
 	icon_state = "meatpie"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
-	desc = "An old barber recipe, very delicious!"
+	desc = "A pie stuffed with meats rather than fruits or vegetables."
 	trash = /obj/item/trash/plate
 	filling_color = "#948051"
 	bitesize = 2
@@ -402,7 +402,7 @@
 	name = "tofu-pie"
 	icon_state = "meatpie"
 	taste_tag = list(BLAND_FOOD, FLOURY_FOOD)
-	desc = "A delicious tofu pie."
+	desc = "A tofu pie."
 	trash = /obj/item/trash/plate
 	filling_color = "#FFFEE0"
 	bitesize = 2
@@ -414,7 +414,7 @@
 
 /obj/item/reagent_containers/food/snacks/amanita_pie
 	name = "amanita pie"
-	desc = "Sweet and tasty poison pie."
+	desc = "A pie made with amanita fungi."
 	icon_state = "amanita_pie"
 	taste_tag = list(UMAMI_FOOD, FLOURY_FOOD)
 	filling_color = "#FFCCCC"
@@ -428,7 +428,7 @@
 
 /obj/item/reagent_containers/food/snacks/plump_pie
 	name = "plump pie"
-	desc = "I bet you love stuff made out of plump helmets!"
+	desc = "A heavy pie made with plump helmets mushrooms"
 	icon_state = "plump_pie"
 	taste_tag = list(UMAMI_FOOD, FLOURY_FOOD)
 	filling_color = "#B8279B"
@@ -451,7 +451,7 @@
 	name = "xeno-pie"
 	icon_state = "xenomeatpie"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
-	desc = "A delicious meatpie. Probably heretical."
+	desc = "A meatpie, using exotic xenomorph meat."
 	trash = /obj/item/trash/plate
 	filling_color = "#43DE18"
 	bitesize = 2

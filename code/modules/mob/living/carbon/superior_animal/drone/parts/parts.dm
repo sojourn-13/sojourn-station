@@ -51,9 +51,9 @@
 
 	// The total armor it will give to the roomba.
 	var/list/armor_stat = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
+		melee = 6,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100, // It's a robot, no pain or diseases for you buddy.
 		agony = 100
@@ -65,9 +65,9 @@
 	icon_state = "roomba_armor_heavy"
 	health_bonus = 200
 	armor_stat = list(
-		melee = 50,
-		bullet = 50,
-		energy = 50,
+		melee = 12,
+		bullet = 12,
+		energy = 12,
 		bomb = 50,
 		bio = 100,
 		agony = 100

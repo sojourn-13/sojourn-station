@@ -355,22 +355,13 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 				a_intent = intent_numeric((intent_numeric(a_intent)+1) % 4)
 			if("left")
 				a_intent = intent_numeric((intent_numeric(a_intent)+3) % 4)
-//		if(hud_used && hud_used.action_intent)
-//			hud_used.action_intent.icon_state = "intent_[a_intent]"
 
 	else if(isrobot(src))
-		switch(input)
-			if(I_HELP)
-				a_intent = I_HELP
-			if(I_HURT)
-				a_intent = I_HURT
-			if("right","left")
-				a_intent = intent_numeric(intent_numeric(a_intent) - 3)
-/*		if(hud_used && hud_used.action_intent)
-			if(a_intent == I_HURT)
-				hud_used.action_intent.icon_state = I_HURT
-			else
-				hud_used.action_intent.icon_state = I_HELP*/
+		if(a_intent == I_HELP)
+			a_intent = I_HURT
+		else
+			a_intent = I_HELP
+
 	if (HUDneed.Find("intent"))
 		var/obj/screen/intent/I = HUDneed["intent"]
 		I.update_icon()
@@ -581,7 +572,7 @@ proc/is_blind(A)
 		return P
 
 /mob/observer/ghost/get_multitool()
-	return can_admin_interact() && ..(ghost_multitool)
+	return isAdminGhostAI(src) && ..(ghost_multitool)
 
 /mob/living/carbon/human/get_multitool()
 	return ..(get_active_hand())
@@ -668,9 +659,9 @@ proc/is_blind(A)
 		prob_evade += base_prob_evade
 	if(!stats)
 		return prob_evade
-	prob_evade += base_prob_evade * (stats.getStat(STAT_VIG)/STAT_LEVEL_GODLIKE - weight_coeff())
+	prob_evade += base_prob_evade * (stats.getStat(STAT_VIG)/STAT_LEVEL_MASTER - weight_coeff())
 	if(stats.getPerk(PERK_SURE_STEP))
-		prob_evade += base_prob_evade*30/STAT_LEVEL_GODLIKE
+		prob_evade += base_prob_evade*30/STAT_LEVEL_MASTER
 	//if(stats.getPerk(PERK_RAT))
 	//	prob_evade += base_prob_evade/1.5
 	return prob_evade
@@ -685,6 +676,94 @@ proc/is_blind(A)
 /mob/proc/weight_coeff()
 	return get_max_w_class()/(ITEM_SIZE_TITANIC)
 
+// Steps used to modify wounding multiplier. Should be used alongside edge/sharp when determining final damage of BRUTE-type attacks.
+/proc/step_wounding(var/wounding, var/is_increase = FALSE) // Usually mobs are the ones attacking (no), so this should be okay here? If it gets lucky a macro would be slightly faster
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_TINY
+			if(WOUNDING_TINY)
+				return WOUNDING_SMALL
+			if(WOUNDING_SMALL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_EXTREME
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_DEVESTATING
+	else
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_TINY
+			if(WOUNDING_NORMAL)
+				return WOUNDING_SMALL
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_NORMAL
+			if(WOUNDING_WIDE)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_EXTREME)
+				return WOUNDING_WIDE
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_EXTREME
+
+/proc/step_wounding_double(var/wounding, var/is_increase = FALSE)
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_SMALL
+			if(WOUNDING_TINY)
+				return WOUNDING_NORMAL
+			if(WOUNDING_SMALL)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+	else
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_TINY
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_SMALL
+			if(WOUNDING_WIDE)
+				return WOUNDING_NORMAL
+			if(WOUNDING_EXTREME)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_WIDE
+
+// Determine wounding level. If var/wounding is provided, the attack should come from a projectile. This isn't the case yet, as we default to var/wounding = 1 until melee rework.
+/proc/wound_check(var/injurytype, var/wounding, var/edge, var/sharp)
+	if(sharp && (!edge)) // impaling/piercing, 2x damage, affected by injurytype
+		switch(injurytype)
+			if(INJURY_TYPE_HOMOGENOUS)
+				return wounding ? step_wounding_double(wounding) : 1
+			if(INJURY_TYPE_UNLIVING)
+				return wounding ? step_wounding(wounding) : 1.5
+			else
+				return wounding ? wounding : 2
+	if(sharp && edge) // cutting, 1.5x damage
+		return wounding ? wounding : 1.5
+	return wounding ? wounding : 1 // crushing, 1x damage
 
 //Soj edit
 /mob/proc/get_health()
@@ -713,7 +792,7 @@ proc/is_blind(A)
 		if (temporary_walk)
 			var/current_time = world.time
 			Ref.walk_to_initial_time = current_time
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), timer)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(walk_to_wrapper_timer), Ref, 0, current_time), timer)
 	walk_to(Ref, Trg, Min, Lag, Speed)
 	return TRUE
 
@@ -722,3 +801,23 @@ proc/is_blind(A)
 	if (initial != Ref.walk_to_initial_time) //so multiple movements dont interrupt eachother
 		return FALSE
 	walk_to(Ref, Trg)
+
+///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
+/proc/isAdminObserver(mob/user)
+	if(!user) //Are they a mob? Auto interface updates call this with a null src
+		return
+	if(!user.client) // Do they have a client?
+		return
+	if(!isobserver(user)) // Are they a ghost?
+		return
+	if(!check_rights_for(user.client, R_ADMIN)) // Are they allowed?
+		return
+	return TRUE
+
+///Is the passed in mob an admin ghost WITH AI INTERACT enabled
+/proc/isAdminGhostAI(mob/user)
+	if(!isAdminObserver(user))
+		return
+	if(!user.client.AI_Interact) // Do they have it enabled?
+		return
+	return TRUE

@@ -89,6 +89,9 @@
 	receiver.afterattack(target, owner.mob, FALSE)
 
 /datum/click_handler/fullauto/MouseDown(object, location, control, params)
+	if(QDELETED(receiver))
+		Destroy()
+		return FALSE
 	if(!isturf(owner.mob.loc)) // This stops from firing full auto weapons inside closets or in /obj/effect/dummy/chameleon chameleon projector
 		return FALSE
 	if(time_since_last_init > world.time)
@@ -109,7 +112,7 @@
 
 /datum/click_handler/fullauto/proc/shooting_loop()
 
-	if(!owner || !owner.mob || owner.mob.resting)
+	if(!owner || !owner.mob || owner.mob.resting || !receiver)
 		return FALSE
 
 	if(target)

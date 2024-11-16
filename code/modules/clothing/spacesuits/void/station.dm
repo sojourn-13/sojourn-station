@@ -16,8 +16,8 @@
 		slot_r_hand_str = "eng_helm",
 		)
 	armor_list = list(
-		melee = 35,
-		bullet = 30,
+		melee = 8,
+		bullet = 7,
 		energy =30,
 		bomb = 40,
 		bio = 100,
@@ -56,9 +56,9 @@
 	icon_state = "technosuit_void"
 	item_state = "technosuit_void"
 	armor_list = list(
-		melee = 35,
-		bullet = 30,
-		energy = 30,
+		melee = 8,
+		bullet = 7,
+		energy = 7,
 		bomb = 40,
 		bio = 100,
 		rad = 100
@@ -71,6 +71,7 @@
 		/obj/item/rcd
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering
+	price_tag = 250
 
 /obj/item/clothing/suit/space/void/engineering/equipped
 	boots = /obj/item/clothing/shoes/magboots
@@ -89,9 +90,9 @@
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 6,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 0
@@ -131,9 +132,9 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
+		melee = 7,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 0
@@ -164,9 +165,9 @@
 		slot_r_hand_str = "mining_helm",
 		)
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -180,14 +181,15 @@
 	icon_state = "miner_suit"
 	slowdown = 0.35
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+	price_tag = 250
 
 //CEO Rig
 /obj/item/clothing/head/helmet/space/void/goldilocks
@@ -202,9 +204,9 @@
 		slot_r_hand_str = "goldilocks_helm",
 		)
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -219,9 +221,9 @@
 	icon_state = "goldilocks_suit"
 	slowdown = 0
 	armor_list = list(
-		melee = 50,
-		bullet = 25,
-		energy = 25,
+		melee = 12,
+		bullet = 6,
+		energy = 6,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -242,9 +244,9 @@
 		slot_r_hand_str = "medical_helm",
 		)
 	armor_list = list(
-		melee = 20, // It's a literal glass cube
-		bullet = 10,
-		energy = 35,
+		melee = 5, // It's a literal glass cube
+		bullet = 2,
+		energy = 8,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -264,14 +266,15 @@
 		/obj/item/roller
 	)
 	armor_list = list(
-		melee = 35,
-		bullet = 10,
-		energy = 35,
+		melee = 8,
+		bullet = 2,
+		energy = 8,
 		bomb = 25,
 		bio = 100,
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/medical
+	price_tag = 225
 
 /obj/item/clothing/suit/space/void/medical/equipped
 	boots = /obj/item/clothing/shoes/magboots
@@ -289,9 +292,9 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -307,15 +310,16 @@
 	item_state = "ihvoidsuit"
 	slowdown = 1
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
 	)
 	siemens_coefficient = 0.7
 	helmet = /obj/item/clothing/head/helmet/space/void/security
+	price_tag = 325
 
 /obj/item/clothing/suit/space/void/security/equipped
 	boots = /obj/item/clothing/shoes/magboots
@@ -337,9 +341,9 @@
 		)
 
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -355,9 +359,9 @@
 	item_state = "odst"
 	slowdown = 1
 	armor_list = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 12,
+		bullet = 10,
+		energy = 10,
 		bomb = 40,
 		bio = 100,
 		rad = 75
@@ -453,9 +457,9 @@
 		slot_r_hand_str = "atmos_helm",
 		)
 	armor_list = list(
-		melee = 30,
-		bullet = 10,
-		energy = 10,
+		melee = 7,
+		bullet = 2,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -470,9 +474,9 @@
 	name = "atmos voidsuit"
 	item_state = "atmos_voidsuit"
 	armor_list = list(
-		melee = 30,
-		bullet = 10,
-		energy = 10,
+		melee = 7,
+		bullet = 2,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -502,9 +506,9 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 40,
-		bullet = 65,
-		energy = 50,
+		melee = 10,
+		bullet = 16,
+		energy = 12,
 		bomb = 70,
 		bio = 75,
 		rad = 50
@@ -542,22 +546,51 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/head/space/void/assault/void_wolf
+/obj/item/clothing/head/space/void/assault_wolf //moving away from being a child of assault armor. Makes issues with its parant handing off its adjust style verb
 	name = "reaver assault helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
-
-/obj/item/clothing/head/space/void/assault/void_wolf/New()
+	action_button_name = "Toggle Headlamp"
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
 
-/obj/item/clothing/suit/space/void/assault/void_wolf
+	item_state_slots = list(
+		slot_l_hand_str = "assaulthelm",
+		slot_r_hand_str = "assaulthelm",
+		)
+	obscuration = MEDIUM_OBSCURATION
+
+	armor_list = list(
+		melee = 10,
+		bullet = 65,
+		energy = 50,
+		bomb = 70,
+		bio = 75,
+		rad = 50
+	)
+	siemens_coefficient = 0.4
+	light_overlay = "helmet_light_dual"
+
+/obj/item/clothing/suit/space/void/assault_wolf
 	name = "reaver assault armor"
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
 	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
 	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
-	helmet = /obj/item/clothing/head/space/void/assault/void_wolf
+	armor_list = list(
+		melee = 12,
+		bullet = 18,
+		energy = 15,
+		bomb = 80,
+		bio = 100,
+		rad = 50
+	)
+	siemens_coefficient = 0.4
+	slowdown = 0.6
+	helmet = /obj/item/clothing/head/space/void/assault_wolf
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
@@ -566,9 +599,9 @@
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
 	armor_list = list(
-		melee = 50,
-		bullet = 75,
-		energy = 60,
+		melee = 12,
+		bullet = 18,
+		energy = 15,
 		bomb = 80,
 		bio = 100,
 		rad = 50
@@ -598,9 +631,9 @@
 		)
 
 	armor_list = list(
-		melee = 25,
-		bullet = 30,
-		energy = 40,
+		melee = 6,
+		bullet = 7,
+		energy = 10,
 		bomb = 35,
 		bio = 100,
 		rad = 90
@@ -616,9 +649,9 @@
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
 	armor_list = list(
-		melee = 35,
-		bullet = 35,
-		energy = 55,
+		melee = 8,
+		bullet = 8,
+		energy = 13,
 		bomb = 40,
 		bio = 100,
 		rad = 90
@@ -656,9 +689,9 @@
 	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
 	icon_state = "marquahelm"
 	armor_list = list(
-		melee = 25,
-		bullet = 40,
-		energy = 40,
+		melee = 6,
+		bullet = 10,
+		energy = 10,
 		bomb = 20,
 		bio = 100,
 		rad = 75
@@ -677,9 +710,9 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(
-		melee = 25,
-		bullet = 40,
-		energy = 40,
+		melee = 6,
+		bullet = 10,
+		energy = 10,
 		bomb = 20,
 		bio = 100,
 		rad = 75

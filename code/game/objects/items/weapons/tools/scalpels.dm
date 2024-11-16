@@ -4,7 +4,7 @@
 	icon_state = "scalpel_t3"
 	flags = CONDUCT
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	sharp = TRUE
 	edge = TRUE
 	w_class = ITEM_SIZE_TINY
@@ -37,7 +37,7 @@
 	icon_state = "scalpel_t5"
 	damtype = BURN
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)
 	tool_qualities = list(QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 60, QUALITY_CAUTERIZING = 20)
 	degradation = 0.11
@@ -52,6 +52,8 @@
 
 /obj/item/tool/scalpel/laser/si/robo
 	cell = /obj/item/cell/small/moebius/nuclear
+	force = WEAPON_FORCE_NORMAL
+	embed_mult = 0
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
 /obj/item/tool/knife/shiv

@@ -46,7 +46,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "n" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/obj/random/mob/roomba,
 /turf/simulated/floor/wood,
 /area/crawler)
 "p" = (

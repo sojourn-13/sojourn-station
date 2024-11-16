@@ -11,7 +11,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_MELEE_ARMOR = 20
+	UPGRADE_MELEE_ARMOR = 5
 	)
 	I.prefix = "reinforced"
 	I.required_qualities = list(QUALITY_ARMOR)
@@ -27,7 +27,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_BALLISTIC_ARMOR = 20
+	UPGRADE_BALLISTIC_ARMOR = 5
 	)
 	I.prefix = "kevlar-plated"
 	I.required_qualities = list(QUALITY_ARMOR)
@@ -43,7 +43,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_ENERGY_ARMOR = 20
+	UPGRADE_ENERGY_ARMOR = 5
 	)
 	I.prefix = "ablative-plated"
 	I.required_qualities = list(QUALITY_ARMOR)
@@ -59,7 +59,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_BOMB_ARMOR = 40
+	UPGRADE_BOMB_ARMOR = 10
 	)
 	I.prefix = "bomb-proofed"
 	I.required_qualities = list(QUALITY_ARMOR)

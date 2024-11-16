@@ -210,7 +210,7 @@
 		return FALSE
 
 	// The var/climbers API is implemented here.
-	if (LAZYLEN(dest.climbers) && (src in dest.climbers))
+	if(src in dest.climbers)
 		return FALSE
 
 	// True otherwise.

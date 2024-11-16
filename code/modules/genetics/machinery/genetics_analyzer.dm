@@ -8,7 +8,7 @@
 #define MENU_ANALYZE_RESULT 8
 /*
 =========================================================================================================================================
-Belvoix Genetic Analyzer
+Soteria Genetic Analyzer
 
 This is the workhorse of the department. Every other machine in the department is built to eventually allow genetic sample plates to be
 loaded into this device for analysis. Without this machine, players are left in the dark about which mutations are being produced, and
@@ -17,7 +17,7 @@ cannot isolate or combine desired genes.
 
 */
 /obj/machinery/genetics/gene_analyzer
-	name = "Belvoix Genetic Analyzer"
+	name = "Soteria Genetic Analyzer"
 	desc = "An extremely complex device made to analyze the patterns in DNA and apply them to other creatures."
 	density = TRUE
 	anchored = TRUE

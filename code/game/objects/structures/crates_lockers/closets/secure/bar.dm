@@ -6,6 +6,9 @@
 
 
 /obj/structure/closet/secure_closet/bar/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/small/beer(src)

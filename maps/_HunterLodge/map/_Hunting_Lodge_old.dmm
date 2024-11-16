@@ -296,7 +296,7 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /mob/living/simple_animal/crab/Coffee{
-	desc = "It's Graves twin, the other pet! Despite his rather evil appearence he is utterly harmless. Best friends with Tea the Frog as well.";
+	desc = "It's Graves twin, the other pet! Despite his rather evil appearance he is utterly harmless. Best friends with Tea the Frog as well.";
 	name = "Grave's Other Twin";
 	real_name = "Coffee"
 	},

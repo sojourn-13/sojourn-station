@@ -397,7 +397,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 	reagent_flags = REFILLABLE | NO_REACT
 	var/open = FALSE
 
-/obj/item/storage/fancy/cigar/can_interact(mob/user)
+/obj/item/storage/fancy/cigar/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))

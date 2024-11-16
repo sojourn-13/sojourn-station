@@ -72,6 +72,11 @@
 			usr.unset_machine()
 
 	return TRUE
+
+// Called with minimalized = 1 when switching to minimal mode, with = 0 switching back
+/obj/screen/proc/update_minimalized(minimalized)
+	return
+
 //--------------------------------------------------close---------------------------------------------------------
 
 /obj/screen/close
@@ -141,6 +146,7 @@
 	icon_state = "actionA"
 	screen_loc = "8,1:13"
 	var/minloc = "7,2:13"
+	var/ErisOptimized_minloc
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 
@@ -150,13 +156,15 @@
 
 /obj/screen/item_action/top_bar/update_icon()
 	..()
-	if(!ismob(owner.loc))
+	if(!owner || !ismob(owner.loc))
 		return
 
 	var/mob/living/M = owner.loc
 	if(M.client && M.get_active_hand() == owner)
 		if(M.client.prefs.UI_compact_style)
 			screen_loc = minloc
+			if(M.defaultHUD == "ErisOptimized" && ErisOptimized_minloc)
+				screen_loc = ErisOptimized_minloc
 		else
 			screen_loc = initial(screen_loc)
 
@@ -370,7 +378,10 @@
 			add_overlay( ovrls["health0"])
 		else
 			var/mob/living/carbon/parentmobC = parentmob	// same parent mob but in correct type for accessing to species
-			switch(100 - ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock))
+			var/pain_affect = ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock)
+			if(PAIN_LESS in parentmobC.mutations)
+				pain_affect = 0
+			switch(100 - pain_affect)
 				if(100 to INFINITY)		add_overlay( ovrls["health0"])
 				if(80 to 100)			add_overlay( ovrls["health1"])
 				if(60 to 80)			add_overlay( ovrls["health2"])
@@ -493,7 +504,7 @@
 	if(!istype(C) || C.stat == DEAD)
 		return
 	cut_overlays()
-	switch(C.metabolism_effects.get_nsa())
+	switch(C.metabolism_effects.get_nsa() * 100/C.metabolism_effects.calculate_nsa(TRUE))
 		if(200 to INFINITY)
 			add_overlay( ovrls["nsa10"])
 		if(-INFINITY to 20)
@@ -959,11 +970,6 @@ obj/screen/fire/DEADelize()
 	screen_loc = "15,2"
 
 /obj/screen/HUDthrow/New()
-	/*if(usr)
-		//parentmob = usr
-		//usr.verbs += /obj/screen/HUDthrow/verb/toggle_throw_mode()
-		if(usr.client)
-			usr.client.screen += src*/
 	..()
 	update_icon()
 
@@ -978,6 +984,32 @@ obj/screen/fire/DEADelize()
 	else
 		icon_state = "act_throw_off"
 //-----------------------throw END------------------------------
+
+//-----------------------block------------------------------
+/obj/screen/block
+	name = "block"
+	icon_state = "block_off"
+	screen_loc = "15:-16,3"
+	layer = HUD_LAYER
+	plane = HUD_PLANE
+
+/obj/screen/block/New()
+	..()
+	update_icon()
+
+/obj/screen/block/Click()
+	if(usr.client)
+		usr.client.blocking()
+		update_icon()
+
+/obj/screen/block/update_icon()
+	if(ishuman(parentmob))//always true, but just in case
+		var/mob/living/carbon/human/H = parentmob
+		if(H.blocking)
+			icon_state = "block_on"
+		else
+			icon_state = "block_off"
+//-----------------------block END------------------------------
 
 //-----------------------drop------------------------------
 /obj/screen/drop
@@ -1103,7 +1135,7 @@ obj/screen/fire/DEADelize()
 	var/mob/living/carbon/human/H = parentmob
 	if(istype(H))
 		var/obj/item/organ/external/E = H.organs_by_name[target_organ]
-		E?.module?.activate(H, E)
+		E?.module?.trigger(H, E)
 //-----------------------bionics (implant)------------------------------
 /obj/screen/implant_bionics
 	name = "implant bionics"

@@ -12,9 +12,6 @@
 	passivePerk = FALSE
 	var/anti_cheat= FALSE
 
-/datum/perk/forceful_rejection/assign(mob/living/carbon/human/H)
-	..()
-
 /datum/perk/forceful_rejection/remove()
 	holder.stats.changeStat(STAT_VIV, -15)
 	if(ishuman(usr))
@@ -53,4 +50,46 @@
 
 	return ..()
 
+
+///////////////////
+//Bluecross Perks//
+///////////////////
+
+/datum/perk/skill_cap_expanding
+	name = "Celestial Gift"
+	desc = "The normal limit of the mind has been exspanded by 50%"
+	gain_text = "It came in a dream."
+	lose_text = "It was but a nightmare."
+	icon_state = "celestial"
+	var/statis_amount = 0
+
+/datum/perk/skill_cap_expanding/assign(mob/living/L)
+	..()
+	for(var/stat in ALL_STATS)
+		var/gather_increase = holder.stats.grab_Stat_cap(stat)
+		gather_increase *= 0.5
+		statis_amount = gather_increase
+		holder.stats.add_Stat_cap(stat, gather_increase)
+
+/datum/perk/skill_cap_expanding/remove()
+	for(var/stat in ALL_STATS)
+		holder.stats.add_Stat_cap(stat, -statis_amount)
+	..()
+
+/datum/perk/skill_cap_addition
+	name = "Cosmic Gazing"
+	desc = "The normal limit of the mind has been exspanded by 30"
+	gain_text = "Looking into the stars is starting to becoming productive!"
+	lose_text = "The void above is the same as below."
+	icon_state = "void_eye"
+
+/datum/perk/skill_cap_addition/assign(mob/living/L)
+	..()
+	for(var/stat in ALL_STATS)
+		holder.stats.add_Stat_cap(stat, 30)
+
+/datum/perk/skill_cap_addition/remove()
+	for(var/stat in ALL_STATS)
+		holder.stats.add_Stat_cap(stat, -30)
+	..()
 

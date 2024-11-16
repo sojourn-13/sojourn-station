@@ -101,6 +101,7 @@
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
+	reagent_tag = IS_TAJ
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
@@ -409,6 +410,7 @@
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
 	permitted_wings = list("Harpy Wings",
+		"Harpy Wings Two Tone",
 		"Fantail Wings",
 		"Feathered Wings, Small",
 		"Feathered Wings, Medium",
@@ -515,6 +517,7 @@
 	name_plural = "Cindarites"
 	default_form = FORM_CINDAR
 	obligate_form = TRUE
+	reagent_tag = IS_CINDARITE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
 	num_alternate_languages = 2
 	blurb = "no"
@@ -705,11 +708,11 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -756,11 +759,11 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no"
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -812,12 +815,11 @@
 	max_age = 110
 	siemens_coefficient = 2
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
-	slowdown = 0.3
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -877,10 +879,10 @@
 	max_age = 110
 	siemens_coefficient = 0
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -939,10 +941,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -1000,10 +1002,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -1062,10 +1064,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 3
@@ -1117,7 +1119,6 @@
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
-	virus_immune = TRUE
 	always_blood = TRUE
 	always_ingest = TRUE
 	breath_type = null
@@ -1126,6 +1127,7 @@
 	spawn_flags = CAN_JOIN
 	min_age = 18
 	max_age = 200
+	injury_type =  INJURY_TYPE_HOMOGENOUS
 	taste_sensitivity = TASTE_SENSITIVE
 
 	nutrition_mod = 150 //Important for some perks

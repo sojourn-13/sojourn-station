@@ -19,7 +19,7 @@ GLOBAL_DATUM_INIT(moved_event, /decl/observ/moved, new)
 
 	// Listen to the parent if possible.
 	if(. && istype(mover.loc, expected_type))
-		register(mover.loc, mover, /atom/movable/proc/recursive_move)
+		register(mover.loc, mover, TYPE_PROC_REF(/atom/movable, recursive_move))
 
 /********************
 * Movement Handling *
@@ -32,11 +32,11 @@ GLOBAL_DATUM_INIT(moved_event, /decl/observ/moved, new)
 /atom/movable/Entered(var/atom/movable/am, atom/old_loc)
 	. = ..()
 	if(GLOB.moved_event.has_listeners(am))
-		GLOB.moved_event.register(src, am, /atom/movable/proc/recursive_move)
+		GLOB.moved_event.register(src, am, PROC_REF(recursive_move))
 
 /atom/movable/Exited(var/atom/movable/am, atom/old_loc)
 	. = ..()
-	GLOB.moved_event.unregister(src, am, /atom/movable/proc/recursive_move)
+	GLOB.moved_event.unregister(src, am, PROC_REF(recursive_move))
 
 // Entered() typically lifts the moved event, but in the case of null-space we'll have to handle it.
 /atom/movable/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)

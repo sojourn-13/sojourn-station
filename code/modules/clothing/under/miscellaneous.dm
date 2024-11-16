@@ -771,9 +771,9 @@
 	item_state = "johnny"
 	price_tag = 60
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -786,9 +786,9 @@
 	item_state = "raider"
 	price_tag = 60
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -800,9 +800,9 @@
 	item_state = "tribalm"
 	price_tag = 50
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -835,7 +835,7 @@
 	name = "Ashigaru"
 	desc = "A lightly armored apron designed as a homage to jana foot soldiers."
 	icon_state = "ashigaru"
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 
 /*Swimsuit*/
 

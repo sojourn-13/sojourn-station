@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.62mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units and private security. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"
@@ -55,7 +55,7 @@
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_KNIFE)	//Able to take a bayonet to stay competative.
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 700
 	zoom_factors = list(0.6)
@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -86,6 +86,9 @@
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -104,6 +107,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL) //Boo-womp, no more bayonet.
 	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	price_tag = 450
 	zoom_factors = list()
@@ -142,7 +146,7 @@
 	zoom_factors = list(0.8)
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
-	penetration_multiplier = 1.0
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.1)
 	see_invisible_gun = -1
 	auto_eject = FALSE
@@ -150,5 +154,4 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "NM"
-
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)

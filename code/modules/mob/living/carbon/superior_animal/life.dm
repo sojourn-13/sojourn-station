@@ -93,7 +93,6 @@
 		return FALSE
 	if(reagents)
 		chem_effects.Cut()
-		analgesic = 0
 
 		//If a mob dosnt have one of these then something is wrong with that mob!
 		touching.metabolize()
@@ -102,26 +101,26 @@
 
 		metabolism_effects.process()
 
-		if(CE_PAINKILLER in chem_effects)
-			analgesic = chem_effects[CE_PAINKILLER]
-
 	if(status_flags & GODMODE)
 		return FALSE
 
-	if(light_dam)
-		var/light_amount = 0
-		if(isturf(loc))
-			var/turf/T = loc
-			light_amount = round((T.get_lumcount()*10)-5)
-
-		if(light_amount > light_dam) //if there's enough light, start dying
-			take_overall_damage(1,1)
-		else //heal in the dark
-			heal_overall_damage(1,1)
-
-	// nutrition decrease
 	if(stat != DEAD)
-		if (hunger_factor && (nutrition > 0))
+		return FALSE
+
+	else
+		if(light_dam)
+			var/light_amount = 0
+			if(isturf(loc))
+				var/turf/T = loc
+				light_amount = round((T.get_lumcount()*10)-5)
+
+			if(light_amount > light_dam) //if there's enough light, start dying
+				take_overall_damage(1,1)
+			else //heal in the dark
+				heal_overall_damage(1,1)
+
+		// nutrition decrease
+		if(hunger_factor && nutrition > 0)
 			nutrition = max (0, nutrition - hunger_factor)
 
-	updatehealth()
+		updatehealth()

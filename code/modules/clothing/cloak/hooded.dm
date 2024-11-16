@@ -128,7 +128,7 @@
 	desc = "A heavy premier's jacket designed for cold environments. Hidden armor plating is sewn into it."
 	icon_state = "coatcaptain"
 	item_state_slots = list(slot_r_hand_str = "coatcaptain", slot_l_hand_str = "coatcaptain")
-	armor_list = list(melee = 20, bullet = 15, energy = 10, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 3, energy = 2, bomb = 15, bio = 0, rad = 0)
 	//hoodtype = /obj/item/clothing/head/hood/winter/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/security
@@ -136,7 +136,7 @@
 	desc = "A heavy security jacket designed for cold environments. Armor plating has been sewn into it."
 	icon_state = "coatsecurity"
 	item_state_slots = list(slot_r_hand_str = "coatsecurity", slot_l_hand_str = "coatsecurity")
-	armor_list = list(melee = 25, bullet = 20, energy = 15, bomb = 20, bio = 0, rad = 0)
+	armor_list = list(melee = 6, bullet = 5, energy = 3, bomb = 20, bio = 0, rad = 0)
 	//hoodtype = /obj/item/clothing/head/hood/winter/security
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -189,7 +189,7 @@
 	desc = "A heavy mining jacket designed for cold environments. The leather is quite tough and provides a small amount of protection."
 	icon_state = "coatminer"
 	item_state_slots = list(slot_r_hand_str = "coatminer", slot_l_hand_str = "coatminer")
-	armor_list = list(melee = 10, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	//hoodtype = /obj/item/clothing/head/hood/winter/cargo/miner
 
 /obj/item/clothing/suit/hooded/costume/techpriest
@@ -204,7 +204,7 @@
 	desc = "For larping as the other techno cult. This time with armor, the metal platings provided decent protection, roughly on par with a hand made vest."
 	icon_state = "explorator"
 	item_state = "explorator"
-	armor_list = list(melee = 30, bullet = 20, energy = 15, bomb = 10, bio = 15, rad = 5)
+	armor_list = list(melee = 7, bullet = 5, energy = 3, bomb = 10, bio = 15, rad = 5)
 	hoodtype = /obj/item/clothing/head/hood/techpriest
 
 /obj/item/clothing/suit/hooded/absolutecloak

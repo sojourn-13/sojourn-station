@@ -42,7 +42,7 @@
 
 /obj/item/device/von_krabin
 	name = "Von-Krabin Stimulator"
-	desc = "A strange anomalous item given to the research directors of Soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
+	desc = "A strange anomalous item given to the research directors of Soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of the absolute uses to enhance the abilities of others."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "von-krabin"
 	item_state = "von-krabin"
@@ -173,7 +173,7 @@
 
 		if(blood_amount)
 			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
+			blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
 			blood_amount = 0
 			visible_message(SPAN_NOTICE("[src] drop [blood_pack]."))
 		else
@@ -722,7 +722,7 @@ No more of that.
 					"corn",
 					"eggplant",
 					"chili",
-					"mushrooms",
+					"chanterelle",
 					"wheat",
 					"potato",
 					"rice")]

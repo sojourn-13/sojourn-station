@@ -230,6 +230,9 @@
 /turf/simulated/wall/wood/New(var/newloc)
 	..(newloc,MATERIAL_WOOD)
 
+/turf/simulated/wall/cloth/New(var/newloc)
+	..(newloc,MATERIAL_CLOTH)
+
 
 /turf/simulated/wall/marble/New(var/newloc)
 	..(newloc,MATERIAL_MARBLE)
@@ -241,14 +244,20 @@
 /turf/simulated/wall/wood
 	icon_state = "wood"
 	icon_base_override = "wood"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/wood_old
 	icon_state = "oldwood"
 	icon_base_override = "oldwood"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/wood_barrel
 	icon_state = "woodenwall"
 	icon_base_override = "woodenwall"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/wood_barrel/New(var/newloc)
 	..(newloc, MATERIAL_WOOD)

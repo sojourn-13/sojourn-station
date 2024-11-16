@@ -40,6 +40,8 @@
 	var/datum/admins/holder = null
 	var/datum/admins/deadmin_holder = null
 	var/buildmode		= 0
+	///Used for admin AI interaction
+	var/AI_Interact = FALSE
 
 	///Contains the last message sent by this client - used to protect against copy-paste spamming.
 	var/last_message = ""
@@ -61,6 +63,18 @@
 	var/area			= null
 
 	var/adminhelped = 0
+
+	/// Disables default BYOND verb panel in favor of Stat Panel™
+	show_verb_panel = FALSE
+	/// our current tab
+	var/stat_tab
+	/// list of all tabs
+	var/list/panel_tabs = list()
+	/// Loot panel for the client
+	var/datum/lootpanel/loot_panel
+
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE
 
 		///////////////
 		//SOUND STUFF//
@@ -110,8 +124,6 @@
 	var/connection_realtime //world.realtime they connected
 	var/connection_timeofday //world.timeofday they connected
 
-	var/datum/chatOutput/chatOutput
-
 	// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
 	var/list/sent_assets = list()
 	/// List of all completed blocking send jobs awaiting acknowledgement by send_asset
@@ -119,3 +131,5 @@
 	/// Last asset send job id.
 	var/last_asset_job = 0
 	var/last_completed_asset_job = 0
+
+	var/obj/screen/click_catcher/void

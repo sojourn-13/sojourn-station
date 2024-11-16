@@ -124,7 +124,7 @@
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "clown wig and mask"
-	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask. This one contains hologram tech that allows it to change its appearence."
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask. This one contains hologram tech that allows it to change its appearance."
 	icon_state = "clown"
 	item_state = "clown_hat"
 	muffle_voice = FALSE
@@ -195,7 +195,7 @@
 
 /obj/item/clothing/mask/gas/germanmask
 	name = "church gas mask"
-	desc = "A close-fitting tactical mask that can be connected to an air supply. Best for when you need to get out of here. This one bears a small tau cross, noting it as a church branded design."
+	desc = "A close-fitting tactical mask that can be connected to an air supply. This one bears a small tau cross, denoting it as a church branded design."
 	icon_state = "germangasmask"
 	siemens_coefficient = 0.7
 	price_tag = 50
@@ -292,6 +292,13 @@
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/chemhood
+	name = "chemical corps hood"
+	desc = "A military gas mask fitted with a chemical resistant hood."
+	icon_state = "gas_chem"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 80)
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/guild_rebreather
 	name = "artificer's rebreather"
 	desc = "An industrial gas mask bearing the colors of the artificer's guild."
@@ -338,7 +345,7 @@
 	desc = "A newly advanced gas synthesizer is used commonly by opifex to filter oxygen from their lungs, being able to feed and eat any moment they wish with their beak exposed. They'll slowly die without wearing this, as will any other race that uses this device."
 	icon_state = "gas_mask_free_beak"
 	item_state = "gas_mask_free_beak"
-	armor_list = list(melee = 2, bullet = 2, energy = 7, bomb = 5, bio = 0, rad = 15)
+	armor_list = list(melee = 0, bullet = 0, energy = 1, bomb = 5, bio = 0, rad = 15)
 	var/list/filtered_gases = list("plasma", "sleeping_agent", "oxygen")
 	var/gas_filter_strength = 1			//For gas mask filters
 	item_flags = AIRTIGHT

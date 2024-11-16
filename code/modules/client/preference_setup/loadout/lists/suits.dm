@@ -107,6 +107,11 @@
 	path = /obj/item/clothing/suit/gownrisque
 	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/religious_robe
+	display_name = "religious robe"
+	path = /obj/item/clothing/suit/storage/omni_robes
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat

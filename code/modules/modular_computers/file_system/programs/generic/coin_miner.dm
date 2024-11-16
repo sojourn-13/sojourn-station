@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/program/coin_miner
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "coins"
 	extended_desc = "A endlessly compressed file that when processed turns into valueable credit on the non-solfed market. The bigger the file, the more its worth."
 	size = 1
 	available_on_ntnet = TRUE

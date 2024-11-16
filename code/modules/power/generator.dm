@@ -174,63 +174,64 @@
 	if(stat & (BROKEN|NOPOWER) || !anchored) return
 	if(!circ1 || !circ2) //Just incase the middle part of the TEG was not wrenched last.
 		reconnect()
+	ui_interact(user)
 	nano_ui_interact(user)
 
-/obj/machinery/power/generator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	// this is the data which will be sent to the ui
-	var/vertical = 0
-	if (dir == NORTH || dir == SOUTH)
-		vertical = 1
+/obj/machinery/power/generator/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ThermoelectricGenerator", name)
+		ui.open()
 
-	var/data[0]
-	data["totalOutput"] = effective_gen/1000
-	data["maxTotalOutput"] = max_power/1000
-	data["thermalOutput"] = last_thermal_gen/1000
-	data["circConnected"] = 0
+/obj/machinery/power/generator/ui_data(mob/user)
+	var/list/data = list()
+
+	var/vertical = FALSE
+	if(dir in list(NORTH, SOUTH))
+		vertical = TRUE
+
+	data["totalOutput"] = effective_gen
+	data["maxTotalOutput"] = max_power
+	data["thermalOutput"] = last_thermal_gen
+
+	if(circ1 && circ2)
+		data["circConnected"] = TRUE
+	else
+		data["circConnected"] = FALSE
 
 	if(circ1)
 		//The one on the left (or top)
-		data["primaryDir"] = vertical ? "top" : "left"
-		data["primaryOutput"] = last_circ1_gen/1000
-		data["primaryFlowCapacity"] = circ1.volume_capacity_used*100
-		data["primaryInletPressure"] = circ1.air1.return_pressure()
-		data["primaryInletTemperature"] = circ1.air1.temperature
-		data["primaryOutletPressure"] = circ1.air2.return_pressure()
-		data["primaryOutletTemperature"] = circ1.air2.temperature
+		data["primary"] = list(
+			"dir" = vertical ? "top" : "left",
+			"output" = last_circ1_gen,
+			"flowCapacity" = circ1.volume_capacity_used * 100,
+			"inletPressure" = circ1.air1.return_pressure(),
+			"inletTemperature" = circ1.air1.temperature,
+			"outletPressure" = circ1.air2.return_pressure(),
+			"outletTemperature" = circ1.air2.temperature
+		)
+	else
+		data["primary"] = null
 
 	if(circ2)
 		//Now for the one on the right (or bottom)
-		data["secondaryDir"] = vertical ? "bottom" : "right"
-		data["secondaryOutput"] = last_circ2_gen/1000
-		data["secondaryFlowCapacity"] = circ2.volume_capacity_used*100
-		data["secondaryInletPressure"] = circ2.air1.return_pressure()
-		data["secondaryInletTemperature"] = circ2.air1.temperature
-		data["secondaryOutletPressure"] = circ2.air2.return_pressure()
-		data["secondaryOutletTemperature"] = circ2.air2.temperature
-
-	if(circ1 && circ2)
-		data["circConnected"] = 1
+		data["secondary"] = list(
+			"dir" = vertical ? "bottom" : "right",
+			"output" = last_circ2_gen,
+			"flowCapacity" = circ2.volume_capacity_used * 100,
+			"inletPressure" = circ2.air1.return_pressure(),
+			"inletTemperature" = circ2.air1.temperature,
+			"outletPressure" = circ2.air2.return_pressure(),
+			"outletTemperature" = circ2.air2.temperature
+		)
 	else
-		data["circConnected"] = 0
+		data["secondary"] = null
 
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-        // for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "generator.tmpl", "Thermoelectric Generator", 450, 550)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/power/generator/power_change()
 	..()
 	update_icon()
-
 
 /obj/machinery/power/generator/verb/rotate_clock()
 	set category = "Object"

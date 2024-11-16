@@ -23,7 +23,7 @@
 		to_chat(usr, "Your module is not installed in a hardsuit.")
 		return
 
-	module.holder.nano_ui_interact(usr, nano_state = GLOB.contained_state)
+	module.holder.ui_interact(usr, custom_state = GLOB.contained_state)
 
 /obj/item/rig_module/ai_container
 
@@ -58,12 +58,12 @@
 		else
 			integrated_ai.get_rig_stats = FALSE
 
-/mob/living/Stat()
-	. = ..()
-	if(. && get_rig_stats)
-		var/obj/item/rig/rig = get_rig()
-		if(rig)
-			SetupStat(rig)
+// /mob/living/Stat()
+// 	. = ..()
+// 	if(. && get_rig_stats)
+// 		var/obj/item/rig/rig = get_rig()
+// 		if(rig)
+// 			SetupStat(rig)
 
 /obj/item/rig_module/ai_container/proc/update_verb_holder()
 	if(!verb_holder)
@@ -146,7 +146,7 @@
 	if(!target)
 		if(ai_card)
 			if(istype(ai_card,/obj/item/device/aicard))
-				ai_card.nano_ui_interact(H, state =GLOB.deep_inventory_state)
+				ai_card.nano_ui_interact(H, state = GLOB.deep_inventory_state)
 			else
 				eject_ai(H)
 		update_verb_holder()
@@ -435,8 +435,8 @@
 		drain_complete(H)
 		return
 
-	// Attempts to drain up to 40kW, determines this value from remaining cell capacity to ensure we don't drain too much..
-	var/to_drain = min(40000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
+	// Attempts to drain up to 100kW, determines this value from remaining cell capacity to ensure we don't drain too much..
+	var/to_drain = min(100000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
 	var/target_drained = interfaced_with.drain_power(0,0,to_drain)
 	if(target_drained <= 0)
 		to_chat(H, "<span class = 'danger'>Your power sink flashes a red light; there is no power left in [interfaced_with].</span>")

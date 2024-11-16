@@ -68,6 +68,7 @@
 /obj/effect/mob_spawn/human/exl_civ/special(mob/living/H)
 	var/obj/item/implant/excelsior/E = new /obj/item/implant/excelsior(H)
 	E.install(H, BP_HEAD, H)
+	H.faction = "excelsior"
 
 /obj/effect/mob_spawn/human/exl_civ/armored
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
@@ -113,7 +114,7 @@
 	outfit = /decl/hierarchy/outfit/si_medical_ert
 	ghost_role_perks = list(PERK_MEDICAL_EXPERT, PERK_ADVANCED_MEDICAL, PERK_SI_SCI, PERK_CHEMIST, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are a Medical Emergency Personnel."
-	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
 	assignedrole = "Medical Emergency Personnel"
 	title = "Medical Emergency Personnel"
 	stat_modifiers = list(
@@ -176,7 +177,7 @@
 	outfit = /decl/hierarchy/outfit/engi_ert
 	ghost_role_perks = list(PERK_INSPIRATION, PERK_HANDYMAN, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are Engineering Emergency Personnel."
-	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
 	assignedrole = "Guild Emergency Personnel"
 	title = "Guild Emergency Personnel"
 	stat_modifiers = list(
@@ -190,17 +191,16 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Lonestar IA Agent."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/lss_ert
-	ghost_role_perks = list(PERK_SI_SCI, PERK_CHEMIST, PERK_SURE_STEP, PERK_TRUE_NAME)
-	short_desc = "You are an Auditor."
-	flavour_text = "The upper colony has done something thats not upto code, whether it be LSS, SI or any other department your job is to look into any matter that HC tells you about. \
-	You're not a cop, you're not medical personal you're here to correct some papers not criminals."
-	assignedrole = "Guild Emergency Personnel"
-	title = "Guild Emergency Personnel"
+	ghost_role_perks = list(PERK_NO_OBFUSCATION, PERK_MARKET_PROF, PERK_TRUE_NAME)
+	short_desc = "You are an Internal Affairs Agent."
+	flavour_text = "Lonestar's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
+	assignedrole = "Lonestar Internal Affairs Agent"
+	title = "Lonestar Internal Affairs Agent"
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,
@@ -240,13 +240,13 @@
 	C.activate()
 	C.make_inquisitor()
 
-/obj/effect/mob_spawn/human/sri_ert
+/obj/effect/mob_spawn/human/si_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SI Ethics committee."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
-	outfit = /decl/hierarchy/outfit/sri_ert
+	outfit = /decl/hierarchy/outfit/si_ert
 	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
 	short_desc = "You are a member of the Soteria Ethics Committee."
 	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \

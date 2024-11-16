@@ -93,7 +93,6 @@
 
 
 /mob/living/carbon/human/adjustBruteLoss(var/amount)
-	amount = amount*species.brute_mod*src.brute_mod_perk
 	if(amount > 0)
 		take_overall_damage(amount, 0)
 	else
@@ -101,7 +100,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/adjustFireLoss(var/amount)
-	amount = amount*species.burn_mod*src.burn_mod_perk
 	if(amount > 0)
 		take_overall_damage(0, amount)
 	else
@@ -109,7 +107,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustBruteLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.brute_mod*src.brute_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -122,7 +119,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustFireLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.burn_mod*src.burn_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -207,6 +203,13 @@
 /mob/living/carbon/human/setToxLoss()
 	return
 
+/mob/living/carbon/human/adjustHalLoss(amount)
+	if(species.flags & NO_PAIN)
+		return FALSE    //lmao pain
+	if(PAIN_LESS in mutations)
+		return FALSE    //lmao pain
+	..()
+
 ////////////////////////////////////////////
 
 //Returns a list of damaged organs
@@ -256,9 +259,8 @@ In most cases it makes more sense to use apply_damage() instead! And make sure t
 
 
 //Heal MANY external organs, in random order
-/mob/living/carbon/human/heal_overall_damage(var/brute, var/burn)
+/mob/living/carbon/human/heal_overall_damage(var/brute, var/burn, var/robo_repair = 0)
 	var/list/obj/item/organ/external/parts = get_damaged_organs(brute,burn)
-
 	var/update = 0
 	while(parts.len && (brute>0 || burn>0) )
 		var/obj/item/organ/external/picked = pick(parts)
@@ -266,7 +268,7 @@ In most cases it makes more sense to use apply_damage() instead! And make sure t
 		var/brute_was = picked.brute_dam
 		var/burn_was = picked.burn_dam
 
-		update |= picked.heal_damage(brute,burn)
+		update |= picked.heal_damage(brute,burn,robo_repair)
 
 		brute -= (brute_was-picked.brute_dam)
 		burn -= (burn_was-picked.burn_dam)
@@ -348,14 +350,14 @@ This function restores all organs.
 	//Handle other types of damage
 
 	if(damagetype != BRUTE && damagetype != BURN)
-		if(damagetype == HALLOSS && !(species && (species.flags & NO_PAIN)))
+		if(damagetype == HALLOSS && !((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
 			if(!stat && (damage > 25 && prob(20)) || (damage > 50 && prob(60)))
 				emote("painscream")
 
 		if(damagetype == PSY)
 			sanity.onPsyDamage(damage)
 			var/obj/item/organ/brain = random_organ_by_process(BP_BRAIN)
-			brain.take_damage(damage, PSY, (armor_penetration * 0.1), wounding_multiplier)
+			brain.take_damage(damage, PSY, (armor_divisor * 0.1), wounding_multiplier)
 			return TRUE
 
 		if(damagetype == TOX && stats.getPerk(PERK_BLOOD_OF_LEAD))
@@ -364,12 +366,12 @@ This function restores all organs.
 		. = ..(damage, damagetype, def_zone)
 	else	//Handle BRUTE and BURN damage
 		handle_suit_punctures(damagetype, damage, def_zone)
-
-		switch(damagetype)
-			if(BRUTE)
-				damage = damage*species.brute_mod
-			if(BURN)
-				damage = damage*species.burn_mod
+		//We're moving these calculations to organ/external/take_damage for ease of maintenance.
+		// switch(damagetype)
+		// 	if(BRUTE)
+		// 		damage = (damage*species.brute_mod)*src.brute_mod_perk
+		// 	if(BURN)
+		// 		damage = (damage*species.burn_mod)*src.burn_mod_perk
 
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))
@@ -382,7 +384,7 @@ This function restores all organs.
 		return FALSE
 
 	damageoverlaytemp = 20
-	if(organ.take_damage(damage, damagetype, (armor_penetration * 0.1), wounding_multiplier, sharp, edge, used_weapon))
+	if(organ.take_damage(damage, damagetype, armor_divisor, wounding_multiplier, sharp, edge, used_weapon))
 		UpdateDamageIcon()
 
 	sanity.onDamage(damage)

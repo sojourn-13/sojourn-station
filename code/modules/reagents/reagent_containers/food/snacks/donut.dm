@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/donut
 	name = "donut"
-	desc = "Goes great with Robust Coffee."
+	desc = "A simple pastry of bread and sugar."
 	icon_state = "donut1"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#D9C386"
@@ -10,7 +10,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/normal
 	name = "donut"
-	desc = "Goes great with Robust Coffee."
+	desc = "A simple pastry of bread and sugar."
 	icon_state = "donut1"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	bitesize = 3
@@ -28,7 +28,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/chaos
 	name = "chaos donut"
-	desc = "Like life, it never quite tastes the same."
+	desc = "A donut that was made using random additives."
 	icon_state = "donut1"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED11E6"
@@ -70,7 +70,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/jelly
 	name = "jelly donut"
-	desc = "You jelly?"
+	desc = "A donut with a jelly filling."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
@@ -90,7 +90,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/slimejelly
 	name = "jelly donut"
-	desc = "You jelly?"
+	desc = "A donut with a jelly filling."
 	icon_state = "jdonut1"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED1169"
@@ -110,7 +110,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/cherryjelly
 	name = "jelly donut"
-	desc = "You jelly?"
+	desc = "A donut with a jelly filling."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
@@ -131,7 +131,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff
 	name = "Masterpiece Donut"
-	desc = "The taste you will never forget."
+	desc = "A donut made to boost whoever eats it mood and work productivity."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED1169"
 	bitesize = 5
@@ -157,7 +157,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/mec
 	name = "Yellow Masterpiece Donut"
-	desc = "The sour citrus flavor you will never forget. A choice sweet of mechanics."
+	desc = "A sour citrus flavored donut. A choice for mechanics."
 	icon_state = "donut_mec"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	overlay_state = "donut_mec_c"
@@ -166,7 +166,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/cog
 	name = "Purple Masterpiece Donut"
-	desc = "The too-sweet artificial grape taste you will never forget. An intellectual's favorite."
+	desc = "A overly-sweet artificial grape taste. An intellectual's choice."
 	icon_state = "donut_cog"
 	overlay_state = "donut_cog_c"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -175,7 +175,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/bio
 	name = "Green Masterpiece Donut"
-	desc = "The fresh spearmint flavor you will never forget. Perfect for an immaculate doctor."
+	desc = "A fresh spearmint flavor. Perfect for a doctor."
 	icon_state = "donut_bio"
 	overlay_state = "donut_bio_c"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -184,7 +184,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob
 	name = "Brown Masterpiece Donut"
-	desc = "A near-chocolate taste you will never forget. A robust flavor for the strong."
+	desc = "A near-chocolate tasting donut. Leaves a robust after taste."
 	icon_state = "donut_rob"
 	overlay_state = "donut_rob_c"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -193,7 +193,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh
 	name = "Cream Masterpiece Donut"
-	desc = "The classic donut flavor you will never forget. Specially panders to tough people."
+	desc = "The classic donut. Specially panders to tough people."
 	icon_state = "donut_tgh"
 	overlay_state = "donut_tgh_c"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -201,7 +201,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/vig
 	name = "Blue Masterpiece Donut"
-	desc = "A tart blueberry taste you will never forget. A go-to choice for the vigilant watchman."
+	desc = "A tart blueberry taste. A go-to choice for the vigilant."
 	icon_state = "donut_vig"
 	overlay_state = "donut_vig_c"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)

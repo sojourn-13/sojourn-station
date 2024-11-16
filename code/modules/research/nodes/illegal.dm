@@ -180,3 +180,18 @@
 	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/medical/combat_defibs)
+
+/datum/technology/arm_pouch
+	name = "Embedded Pouch"
+	desc = "A hidden pouch able to stow away small items, unable to be picked up on scanners."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.5
+	y = 0.2
+	icon = "scalpelmanager"
+
+	required_technologies = list(/datum/technology/combat_defibs)
+	required_tech_levels = list(RESEARCH_BIOTECH = 15, RESEARCH_ILLEGAL = 4, RESEARCH_COMBAT = 8)
+	cost = 3500
+
+	unlocks_designs = list(/datum/design/research/item/mechfab/modules/arm_pouch)

@@ -1,3 +1,5 @@
+//FPBs do not level up so we juice the stats at round start so they are comparable to folks that do mid-round
+
 /datum/category_item/setup_option/background/ethnicity/sot_synth_medical
 	name = "Medical Positronic"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
@@ -6,15 +8,16 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/medical)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 30,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_BIO = 65,
+		STAT_MEC = 10,
+		STAT_COG = 25
 	)
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
@@ -26,15 +29,16 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/engineering)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 5,
+		STAT_TGH = 15,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 15,
-		STAT_COG = 10
+		STAT_MEC = 45,
+		STAT_COG = 30
 	)
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_combat
@@ -46,12 +50,13 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
+	racial_implants_l = (/obj/item/organ_module/active/simple/lasercannon_lasercannon)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 5,
-		STAT_VIG = 20,
+		STAT_ROB = 40,
+		STAT_TGH = 35,
+		STAT_VIG = 35,
 		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = -5
@@ -66,15 +71,16 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/engineering)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_TGH = 10,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 30,
-		STAT_COG = 0
+		STAT_MEC = 80,
+		STAT_COG = 10
 	)
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
@@ -86,15 +92,16 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	//restricted_jobs = list(/datum/job/outsider)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/engineering)
+	restricted_jobs = list(/datum/job/outsider) //You are colony designed, makes no sense outsiders could have it
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 0,
-		STAT_VIG = 5,
+		STAT_ROB = 40,
+		STAT_TGH = 15,
+		STAT_VIG = 10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 20
+		STAT_COG = 35
 	)
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
@@ -106,19 +113,16 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/miner)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 	//restricted_jobs = list(/datum/job/outsider)
 
-//Idea for this is that you were made with being a miner, thus giving you everything you need as one
-//The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
-//-0Loss Stats +15Gained Stat
-
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 0,
+		STAT_ROB = 45,
+		STAT_TGH = 15,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 15,
-		STAT_COG = 5
+		STAT_MEC = 25,
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_security
@@ -129,12 +133,13 @@
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
+	racial_implants_l = (/obj/item/organ_module/active/simple/armblade/baton)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 5,
-		STAT_VIG = 20,
+		STAT_ROB = 40,
+		STAT_TGH = 20,
+		STAT_VIG = 40,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -152,9 +157,9 @@
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 10,
-		STAT_VIG = 5,
+		STAT_ROB = 40,
+		STAT_TGH = 50,
+		STAT_VIG = 10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -168,12 +173,13 @@
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
+	racial_implants_l = (/obj/item/organ_module/active/simple/ammo_pouch)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 30,
+		STAT_ROB = 20,
+		STAT_TGH = 20,
+		STAT_VIG = 60,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -187,15 +193,16 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/farmer)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 30,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_VIG = 15,
+		STAT_BIO = 35,
+		STAT_MEC = 10,
+		STAT_COG = 35
 	)
 
 /datum/category_item/setup_option/background/ethnicity/church_combat
@@ -206,15 +213,15 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/longsword)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 	//restricted_jobs = list(/datum/job/outsider)
 
-	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 10,
-		STAT_VIG = 25,
+		STAT_ROB = 35,
+		STAT_TGH = 25,
+		STAT_VIG = 35,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
+		STAT_MEC = 5,
 		STAT_COG = 0
 	)
 
@@ -230,12 +237,12 @@
 	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
+		STAT_ROB = 20,
 		STAT_TGH = 0,
-		STAT_VIG = 10,
-		STAT_BIO = 5, //Given 10 bio racially.
-		STAT_MEC = 10,
-		STAT_COG = 15
+		STAT_VIG = 20,
+		STAT_BIO = 15,
+		STAT_MEC = 20,
+		STAT_COG = 25
 	)
 
 // FBP's lack a base racial bonus, what you see here is all they get.
@@ -247,14 +254,15 @@
 	purpose and often considered generic. It does equally well in all areas, making it suited for a variety of tasks."
 
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
-		STAT_TGH = 0,
+		STAT_TGH = 15,
 		STAT_VIG = 15,
 		STAT_BIO = 20,
 		STAT_MEC = 20,
-		STAT_COG = 20
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_fighter
@@ -266,13 +274,14 @@
 	aim of FBP's who did not let death stop them from duty."
 
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 
 	stat_modifiers = list(
-		STAT_ROB = 32, // No inbuilt weapons.
-		STAT_TGH = 10,
-		STAT_VIG = 32,
+		STAT_ROB = 35,
+		STAT_TGH = 15,
+		STAT_VIG = 35,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
+		STAT_MEC = 15,
 		STAT_COG = 0
 	)
 
@@ -285,11 +294,12 @@
 	tend to be on the wealthy side, as cognitive enhancers do not come cheap, but you get what you pay for and it shows in performance."
 
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/lighting)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_VIG = 15,
 		STAT_BIO = 25,
 		STAT_MEC = 25,
 		STAT_COG = 35 // Good on paper, but since you cannot be a psion, at best it helps with hacking and disarming landmines.

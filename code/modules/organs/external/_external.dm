@@ -68,7 +68,7 @@
 	var/cannot_break		// Impossible to fracture.
 	var/joint = "joint"		// Descriptive string used in dislocation.
 	var/amputation_point	// Descriptive string used in amputation.
-	var/nerve_struck = 0		// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
+	var/nerve_struck = 0	// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
 	var/encased				// Needs to be opened with a saw to access certain organs.
 	var/cavity_name = "cavity"				// Name of body part's cavity, displayed during cavity implant surgery
 	var/max_volume = ITEM_SIZE_SMALL	// Max w_class of cavity implanted items
@@ -85,6 +85,8 @@
 
 	// Generation behavior
 	var/generation_flags = ORGAN_HAS_BONES | ORGAN_HAS_BLOOD_VESSELS | ORGAN_HAS_MUSCLES | ORGAN_HAS_NERVES
+
+	var/list/markings = list() //EQUINOX EDIT - List of body markings for use in update_icon under organ_icon.dm (per-limb markings)
 
 /obj/item/organ/external/New(mob/living/carbon/human/holder, datum/organ_description/OD)
 	if(OD)
@@ -283,25 +285,18 @@
 			var/obj/item/organ/external/organ = owner?.HUDneed["right arm bionics"]
 			organ?.update_icon()
 
-/obj/item/organ/external/proc/activate_module()
-	set name = "Activate module"
-	set category = "Cybernetics" //changed this to be in line with excelsior's cyber implants and such
-	set src in usr
-
-	if(module)
-		module.activate(owner, src)
-
 /obj/item/organ/external/emp_act(severity)
+	var/rand_modifier = rand(1,3)
 	if(!BP_IS_ROBOTIC(src))
 		return
 
 	switch (severity)
 		if (1)
-			take_damage(20, BURN)
+			take_damage(8 * rand_modifier, BURN)
 		if (2)
-			take_damage(10, BURN)
+			take_damage(6 * rand_modifier, BURN)
 		if (3)
-			take_damage(5, BURN)
+			take_damage(4 * rand_modifier, BURN)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
@@ -825,7 +820,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
-		owner.verbs += /mob/proc/yank_out_object
+		add_verb(owner, /mob/proc/yank_out_object)
 
 	owner.embedded_flag = 1
 	W.on_embed(owner)

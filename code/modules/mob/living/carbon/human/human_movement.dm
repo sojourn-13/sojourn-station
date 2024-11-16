@@ -12,6 +12,8 @@
 		tally -= chem_effects[CE_SPEEDBOOST]
 	if(CE_SLOWDOWN in chem_effects)
 		tally += chem_effects[CE_SLOWDOWN]
+	if(MOVING_QUICKLY(src))
+		tally -= unique_armor_check(src, src, 0)
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)
@@ -20,10 +22,14 @@
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.4
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
-		tally -= 0.3
+		var/datum/perk/nanite_power/nanite_muscle/P = stats.getPerk(PERK_NANITE_MUSCLE)
+		if(!P.emped)
+			tally -= 0.3
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
+		tally += 0.5
+	if(blocking)
 		tally += 1
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -77,7 +83,6 @@
 
 	return tally
 
-
 /mob/living/carbon/human/allow_spacemove()
 	//Can we act?
 	if(restrained())	return 0
@@ -121,6 +126,7 @@
 /mob/living/carbon/human/add_momentum(direction)
 	if(momentum_dir == direction)
 		momentum_speed++
+		momentum_speed += momentum_speed_adder
 	else if(momentum_dir == reverse_dir[direction])
 		momentum_speed = 0
 		momentum_dir = direction
@@ -132,7 +138,7 @@
 
 /mob/living/carbon/human/proc/update_momentum()
 	if(momentum_speed)
-		momentum_reduction_timer = addtimer(CALLBACK(src, .proc/calc_momentum), 1 SECONDS, TIMER_STOPPABLE)
+		momentum_reduction_timer = addtimer(CALLBACK(src, PROC_REF(calc_momentum)), 1 SECONDS, TIMER_STOPPABLE)
 	else
 		momentum_speed = 0
 		deltimer(momentum_reduction_timer)

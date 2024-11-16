@@ -312,7 +312,8 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		///obj/item/reagent_containers/cooking_with_jane/cooking_container //currently not working with cooking with jane. Primary issue being grippers trying to put themselfs into cooking containers rather then picking them up.
+		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
+		/obj/item/spatula
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells
@@ -324,6 +325,8 @@
 		/obj/item/ammo_casing,
 		/obj/item/ammo_kit,
 		/obj/item/ammo_magazine,
+		/obj/item/cell,
+		/obj/item/part/gun,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/mech_ammo_box

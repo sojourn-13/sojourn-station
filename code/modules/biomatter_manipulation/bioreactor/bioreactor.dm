@@ -158,3 +158,5 @@
 	icon_state = "solution"
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	anchored = TRUE
+

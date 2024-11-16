@@ -12,8 +12,7 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	var/wrapped = FALSE
 	var/monkey_type = "Monkey"
-	 //Well this looks like a pill but better, but its required do to roach cubes do to how many reagents get added to the cube on microwaving
-	volume = 200
+	volume = 500
 	preloaded_reagents = list("protein" = 10)
 
 /obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user as mob)
@@ -89,7 +88,7 @@
 	preloaded_reagents = list("protein" = 10)
 	grow_into = /mob/living/carbon/superior_animal/roach
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-
+	volume = 500
 
 /obj/item/reagent_containers/food/snacks/cube/roach/on_reagent_change()
 	if(reagents.has_reagent("blood"))

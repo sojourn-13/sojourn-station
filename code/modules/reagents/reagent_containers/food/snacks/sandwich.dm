@@ -117,7 +117,7 @@
 
 /obj/item/reagent_containers/food/snacks/sandwich
 	name = "sandwich"
-	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
+	desc = "A simple sandwich of meat, cheese, bread, and several leaves of lettuce."
 	icon_state = "sandwich"
 	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#D9BE29"
@@ -131,7 +131,7 @@
 
 /obj/item/reagent_containers/food/snacks/toastedsandwich
 	name = "toasted sandwich"
-	desc = "Your classic sandwich, grilled with butter to amp up its deliciousness factor tenfold."
+	desc = "Your classic sandwich, grilled with butter."
 	icon_state = "toastedsandwich"
 	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#D9BE29"
@@ -145,7 +145,7 @@
 
 /obj/item/reagent_containers/food/snacks/toasted_guild_sandwich
 	name = "deluxe toasted sandwich"
-	desc = "A perfectly toasted sandwich with all the works."
+	desc = "A toasted sandwich with all the works."
 	icon_state = "toastedsandwich"
 	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#D9BE29"
@@ -159,13 +159,12 @@
 
 /obj/item/reagent_containers/food/snacks/toastedsandwich/holy
 	name = "precept sandwich"
-	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk, making it an immensely empowering meal. \
-	Side effects include enhanced toughness, robustness, movement speed, and twitching."
-	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10, "hyperzine" = 10)
+	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk."
+	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10)
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
-	desc = "Goes great with Tomato soup!"
+	desc = "A lightly grilled cheese sandwich"
 	icon_state = "toastedsandwich"
 	taste_tag = list(CHEESE_FOOD)
 	filling_color = "#D9BE29"
@@ -187,7 +186,7 @@
 
 /obj/item/reagent_containers/food/snacks/twobread
 	name = "two bread"
-	desc = "It is very bitter and winy."
+	desc = "Slices of bread dipped in wine."
 	icon_state = "twobread"
 	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#DBCC9A"
@@ -200,7 +199,7 @@
 
 /obj/item/reagent_containers/food/snacks/jellysandwich
 	name = "jelly sandwich"
-	desc = "You wish you had some peanut butter to go with this..."
+	desc = "A sandwich that uses jelly over meats or vegetable."
 	icon_state = "jellysandwich"
 	taste_tag = list(FLOURY_FOOD, SWEET_FOOD)
 	trash = /obj/item/trash/plate
@@ -219,7 +218,7 @@
 
 /obj/item/reagent_containers/food/snacks/cubancarp
 	name = "cuban carp"
-	desc = "A sandwich that burns your tongue and then leaves it numb!"
+	desc = "A spicy sandwich that has been toasted."
 	icon_state = "cubancarp"
 	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	trash = /obj/item/trash/plate

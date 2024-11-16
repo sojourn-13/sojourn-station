@@ -50,10 +50,14 @@
 	if (health <= 0)
 		//Leftover damage will carry over to whatever tile replaces this one
 		var/leftover = abs(health)
+		//Small sanity to prevent -inf, also prevents recusively destorying tiles that (note that if floor tiles ever get less then 100 HP)
+		//leftover = clamp(leftover, 0, 10 * maxHealth) //Uncomment this if damage amounts are so ridiculous that they cause insanely long loops.
+		if(leftover >= INFINITY) leftover = 0
 		make_plating() //Destroy us and make the plating underneath
 		spawn()
 			//We'll spawn off a new stack in order to damage the next layer, incase it turns into a different turf object
-			damage_floor_at(x,y,z,leftover, damage_type, ignore_resistance)
+			if (locate(x,y,z) != src) //To ensure that the tile doesn't damage itself and start an infinite loop.
+				damage_floor_at(x,y,z,leftover, damage_type, ignore_resistance)
 		return
 
 

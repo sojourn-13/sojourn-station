@@ -40,7 +40,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_robotize(var/mob/living/M)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Robot"
 
 	if(ishuman(M))
@@ -51,7 +51,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_animalize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Simple Animal"
 
 	if(!M)
@@ -68,7 +68,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/makepAI(var/turf/T)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
 
@@ -95,7 +95,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_slimeize(var/mob/living/M)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make slime"
 
 	if(ishuman(M))
@@ -110,7 +110,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 
 /*
 /client/proc/cmd_admin_monkeyize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Monkey"
 
 	if(!ticker)
@@ -125,7 +125,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_changelinginize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Changeling"
 
 	if(!ticker)
@@ -160,7 +160,7 @@ ADMIN_VERB_ADD(/client/proc/Debug2, R_DEBUG, FALSE)
 */
 /*
 /client/proc/make_cultist(var/mob/M in SSmobs.mob_list) // -- TLE, modified by Urist
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Make Cultist"
 	set desc = "Makes target a cultist"
 	if(!cultwords["travel"])
@@ -266,7 +266,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 
 // Render stats list for round-end statistics.
-/proc/render_stats(list/stats, user, sort = /proc/cmp_generic_stat_item_time)
+/proc/render_stats(list/stats, user, sort = GLOBAL_PROC_REF(cmp_generic_stat_item_time))
 	sortTim(stats, sort, TRUE)
 
 	var/list/lines = list()
@@ -330,7 +330,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 
 /client/proc/cmd_admin_areatest()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test areas"
 
 	var/list/areas_all = list()
@@ -420,7 +420,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_dress, R_FUN, FALSE)
 /client/proc/cmd_admin_dress()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Select equipment"
 
 	var/mob/living/carbon/human/M = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
@@ -437,7 +437,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress, R_FUN, FALSE)
 //Preserving the old one for now, so the dress lists in it can be converted into real outfits
 ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 /client/proc/cmd_admin_dress_old()
-	set category = "Fun"
+	set category = "Admin.Events"
 	set name = "Select equipment OLD"
 
 	var/mob/living/carbon/human/M = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
@@ -933,3 +933,38 @@ ADMIN_VERB_ADD(/client/proc/delete_npcs, R_DEBUG, FALSE)
 		qdel(L)
 		total++
 	to_chat(world, "Deleted [total] mobs")
+
+ADMIN_VERB_ADD(/client/proc/cmd_regenerate_asset_cache, R_DEBUG, FALSE)
+/client/proc/cmd_regenerate_asset_cache()
+	set category = "Debug"
+	set name = "Regenerate Asset Cache"
+	set desc = "Clears the asset cache and regenerates it immediately."
+	if(!config?.cache_assets)
+		to_chat(usr, "<span class='warning'>Asset caching is disabled in the config!</span>")
+		return
+	var/regenerated = 0
+	for(var/datum/asset/A as() in subtypesof(/datum/asset))
+		if(!initial(A.cross_round_cachable))
+			continue
+		if(A == initial(A._abstract))
+			continue
+		var/datum/asset/asset_datum = GLOB.asset_datums[A]
+		asset_datum.regenerate()
+		regenerated++
+	to_chat(usr, "<span class='notice'>Regenerated [regenerated] asset\s.</span>")
+
+ADMIN_VERB_ADD(/client/proc/cmd_clear_smart_asset_cache, R_DEBUG, FALSE)
+/client/proc/cmd_clear_smart_asset_cache()
+	set category = "Debug"
+	set name = "Clear Smart Asset Cache"
+	set desc = "Clears the smart asset cache."
+	if(!config.smart_cache_assets)
+		to_chat(usr, "<span class='warning'>Smart asset caching is disabled in the config!</span>")
+		return
+	var/cleared = 0
+	for(var/datum/asset/spritesheet_batched/A as() in subtypesof(/datum/asset/spritesheet_batched))
+		if(A == initial(A._abstract))
+			continue
+		fdel("[ASSET_CROSS_ROUND_SMART_CACHE_DIRECTORY]/spritesheet_cache.[initial(A.name)].json")
+		cleared++
+	to_chat(usr, "<span class='notice'>Cleared [cleared] asset\s.</span>")

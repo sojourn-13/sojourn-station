@@ -96,7 +96,10 @@
 #define PERK_PROSPECTOR_CONDITIONING /datum/perk/job/prospector_conditioning
 #define PERK_BLACKSHIELD_CONDITIONING /datum/perk/job/blackshield_conditioning
 #define PERK_BARTENDER /datum/perk/bartender
-#define PERK_NO_OBSUCATION /datum/perk/no_obsucation //isekai perk?
+#define PERK_NO_OBFUSCATION /datum/perk/no_obfuscation //isekai perk?
+#define PERK_BLOOD_LUST /datum/perk/blood_lust
+#define PERK_NATURAL_STYLE /datum/perk/natural_style
+#define PERK_MAP_MAKER /datum/perk/map_maker
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
@@ -175,11 +178,11 @@
 
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
-#define PERK_NANITE_REGEN /datum/perk/nanite_regen
-#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
-#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
-#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
-#define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
+#define PERK_NANITE_REGEN /datum/perk/nanite_power/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_power/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_power/nanite_armor
+#define PERK_NANITE_AMMO /datum/perk/nanite_power/nanite_ammo
+#define PERK_NANITE_METAL_EATER /datum/perk/nanite_power/nanite_metal_drinker
 
 // Crayon Mage Perks
 #define PERK_ALCHEMY /datum/perk/alchemist
@@ -192,14 +195,15 @@
 #define PERK_CHEMNEUTRAL /datum/perk/chemical_neutralizer
 
 // Nanite Chem Perks.
-#define PERK_NANITE_CHEM /datum/perk/nanite_chem
-#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_chem/implantoids
-#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_chem/trauma_control_system
-#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_chem/control_booster_utility
-#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_chem/control_booster_combat
-#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
-#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
-#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
+#define PERK_NANITE_CHEM /datum/perk/nanite_power/nanite_chem
+#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_power/nanite_chem/implantoids
+#define PERK_NANITE_SYMBIOTES /datum/perk/nanite_power/nanite_chem/symbiotes
+#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_power/nanite_chem/trauma_control_system
+#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_power/nanite_chem/control_booster_utility
+#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_power/nanite_chem/control_booster_combat
+#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_power/nanite_chem/purgers
+#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_power/nanite_chem/oxyrush
+#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_power/nanite_chem/nantidotes
 
 
 //Wage Perks
@@ -231,6 +235,9 @@
 
 //Task Perks
 #define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
+//Bluecross perks
+#define PERK_SKILL_CAP_ADDITION /datum/perk/skill_cap_addition
+#define PERK_SKILL_CAP_EXPANDING /datum/perk/skill_cap_expanding
 
 //////////////////
 //Cooldown perks//
@@ -239,3 +246,5 @@
 //Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
+//Anti-art
+#define PERK_ARTIST_NO /datum/perk/cooldown/artist_no

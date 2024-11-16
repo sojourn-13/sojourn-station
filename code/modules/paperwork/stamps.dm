@@ -67,7 +67,7 @@
 	stamp_flags = STAMP_GENERIC
 
 /obj/item/stamp/qm
-	name = "chief executive officer's stamp"
+	name = "surface operations manager's stamp"
 	icon_state = "stamp-qm"
 
 /obj/item/stamp/fr

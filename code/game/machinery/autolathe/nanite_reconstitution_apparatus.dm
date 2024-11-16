@@ -302,7 +302,7 @@
 				loaded_item = I
 				to_chat(user, SPAN_NOTICE("You add \the [I] to \the [src]."))
 				flick("d_analyzer_la", src)
-				addtimer(CALLBACK(src, .proc/reset_busy), 1 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(reset_busy)), 1 SECONDS)
 				user.set_machine(src)
 				nano_ui_interact(user)
 		else

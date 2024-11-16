@@ -267,7 +267,9 @@
 	qdel(src)
 	target.update_lying_buckled_and_verb_status()
 
-	if(!istype(get_step(attacker, fireman_dir), /turf/simulated/wall))
+	var/turf/tile = get_step(attacker, fireman_dir)
+
+	if(!istype(tile, /turf/simulated/wall) && !turf_contains_dense_objects(tile))
 		target.forceMove(get_step(target, fireman_dir))
 
 	target.damage_through_armor(damage, HALLOSS, BP_CHEST, ARMOR_MELEE)
@@ -292,6 +294,8 @@
 		if(istype(T, /turf/simulated/wall))
 			free_space = FALSE
 		if(!T.CanPass(attacker, T))
+			free_space = FALSE
+		if(!T.Enter(target))
 			free_space = FALSE
 	if(!free_space)
 		to_chat(attacker, SPAN_WARNING("There is not enough space around you to do this."))
@@ -318,7 +322,7 @@
 		sleep(1)
 
 	target.throw_at(get_edge_target_turf(target, dir), 7, 2)//this is very fast, and very painful for any obstacle involved
-	target.damage_through_armor(damage, HALLOSS, attack_flag = ARMOR_MELEE)
+	target.damage_through_armor(damage, HALLOSS, armor_divisor = 2)
 //	attacker.regen_slickness(0.4)
 
 	//admin messaging

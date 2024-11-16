@@ -3,7 +3,7 @@
 	filedesc = "NTNet Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
-	program_menu_icon = "comment"
+	program_menu_icon = "comment-alt"
 	extended_desc = "This program allows communication over NTNRC network"
 	size = 8
 	requires_ntnet = 1

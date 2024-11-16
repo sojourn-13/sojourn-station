@@ -12,7 +12,7 @@
 	dna.b_type = RANDOM_BLOOD_TYPE
 	sync_organ_dna()
 	var/datum/dna/gene/G = new /datum/dna/gene/basic/monkey
-	active_genes |= G.type
+	LAZYOR(active_genes, G.type)
 	update_icon = 1
 
 /mob/living/carbon/human/dummy/mannequin

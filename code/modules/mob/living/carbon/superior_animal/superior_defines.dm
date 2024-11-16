@@ -112,6 +112,7 @@
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
+	var/move_and_attack = FALSE
 	universal_understand = TRUE //QoL to admins controling mobs
 	var/do_gibs = TRUE //Do we gib?
 	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner
@@ -183,6 +184,13 @@
 
 	melee_damage_lower = 0
 	melee_damage_upper = 10
+
+	//Type of damage, atm only brute
+	var/melee_damage_type = BRUTE
+	//If are melee attacks are sharp, used for delimming
+	var/melee_sharp = FALSE
+	//Used for what type of armor were fighting against
+	var/attacking_armor_type = ARMOR_MELEE
 
 	/// Determines if the mob will target whoever attacked them in the absence of an existing target. Ignores view range.
 	var/react_to_attack = TRUE
@@ -301,3 +309,10 @@
 	 * final offset of the projectile. Make sure to sync with initial_firing_offset.
 	**/
 	var/current_firing_offset = 2
+
+	/// Used to dictate if the critter is poisonous or not
+	var/poison_per_bite = 0
+	var/poison_type
+
+	var/list/zone_hit_rates = list(BP_HEAD = 10, BP_CHEST = 50, BP_GROIN = 35, BP_R_ARM = 30, BP_L_ARM = 30, BP_R_LEG = 20, BP_L_LEG = 20)
+

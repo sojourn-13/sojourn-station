@@ -28,8 +28,7 @@
 	var/gibbed_anim = "gibbed-h"
 
 	var/mob_size	= MOB_MEDIUM
-	var/virus_immune
-	var/blood_volume = 560
+	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
 	var/always_blood = FALSE 						 // Can we process reagents without blood?
 	var/always_ingest = FALSE 		                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
@@ -60,6 +59,7 @@
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
+	var/injury_type =  INJURY_TYPE_LIVING    // From _DEFINES/weapons.dm
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
@@ -243,13 +243,13 @@
 /datum/species/proc/remove_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			H.verbs -= verb_path
+			remove_verb(H, verb_path)
 	return
 
 /datum/species/proc/add_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			H.verbs |= verb_path
+			add_verb(H, verb_path)
 	return
 
 /datum/species/proc/handle_post_spawn(var/mob/living/carbon/human/H) //Handles anything not already covered by basic species assignment.
@@ -315,7 +315,7 @@
 	if(!H.druggy)
 		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? darksight : min(darksight + H.equipment_darkness_modifier, darksight)
 		H.see_in_dark += H.equipment_darkness_modifier
-		H.see_in_dark += H.additional_darksight //Done like this for sake of easyer to read
+		H.see_in_dark += H.additional_darksight //Done like this for sake of easier to read
 
 		if(H.see_in_dark <= 0)
 			H.see_in_dark = 1
@@ -366,7 +366,7 @@
 				continue
 			if(!(get_bodytype() in S.species_allowed))
 				continue
-			ADD_SORTED(facial_hair_style_by_gender, facialhairstyle, /proc/cmp_text_asc)
+			ADD_SORTED(facial_hair_style_by_gender, facialhairstyle, GLOBAL_PROC_REF(cmp_text_asc))
 			facial_hair_style_by_gender[facialhairstyle] = S
 
 	return facial_hair_style_by_gender
@@ -380,7 +380,7 @@
 			var/datum/sprite_accessory/S = GLOB.hair_styles_list[hairstyle]
 			if(!(get_bodytype() in S.species_allowed))
 				continue
-			ADD_SORTED(L, hairstyle, /proc/cmp_text_asc)
+			ADD_SORTED(L, hairstyle, GLOBAL_PROC_REF(cmp_text_asc))
 			L[hairstyle] = S
 	return L
 
@@ -425,3 +425,7 @@
 		H.add_language(LANGUAGE_MERP)
 	if(H.species.reagent_tag == IS_SLIME)
 		H.add_language(LANGUAGE_BLORP)
+	if(H.species.reagent_tag == IS_CINDARITE)
+		H.add_language(LANGUAGE_WEH)
+	if(H.species.reagent_tag == IS_TAJ)
+		H.add_language(LANGUAGE_SABLEKYNE)

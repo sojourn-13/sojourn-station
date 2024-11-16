@@ -65,6 +65,44 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
+// Flower Crowns
+
+/datum/craft_recipe/clothing/poppycrown
+	name = "Poppy Crown"
+	result = /obj/item/clothing/head/flowercrown
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/stack/cable_coil, 15, time = 15),
+		list(/obj/item/clothing/head/hairflower, 3, time = 30)
+	)
+
+/datum/craft_recipe/clothing/sunflowerflowercrown
+	name = "Sunflower Crown"
+	result = /obj/item/clothing/head/flowercrown/sunflower
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/stack/cable_coil, 15, time = 15),
+		list(/obj/item/clothing/head/hairflower/yellow, 3, time = 30)
+	)
+
+/datum/craft_recipe/clothing/lilyflowercrown
+	name = "Lily Crown"
+	result = /obj/item/clothing/head/flowercrown/lily
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/stack/cable_coil, 15, time = 15),
+		list(/obj/item/clothing/head/pin/clover, 3, time = 30)
+	)
+
+/datum/craft_recipe/clothing/rainbowflowercrown
+	name = "Rainbow Crown"
+	result = /obj/item/clothing/head/flowercrown/rainbow
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/stack/cable_coil, 15, time = 15),
+		list(/obj/item/clothing/head/hairflower/violet, 3, time = 30)
+	)
+
 // Butcher some clothes into rags to make some cloak
 /datum/craft_recipe/clothing/cloak
 	name = "ragged cloak"

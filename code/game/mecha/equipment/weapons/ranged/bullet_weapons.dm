@@ -20,39 +20,38 @@
 	fire_volume = 100
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/get_equip_info()
-		return "[..()]\[[src.projectiles]\]"
+	return "[..()]\[[projectiles]\]"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/examine(mob/user)
-	..()
+	. = ..()
 	to_chat(user, "<span class='info'>Ammo left: [projectiles]</span>")
 	to_chat(user, "<span class='info'>Ammo type: [ammo_type]</span>")
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/attackby(obj/item/I, mob/user)
-	..()
-	if (istype(I, /obj/item/mech_ammo_box))
+	. = ..()
+	if(istype(I, /obj/item/mech_ammo_box))
 		var/obj/item/mech_ammo_box/FMJ = I //Full metal jecket
-		while(1)
-			if(ammo_type != src.ammo_type)
-				to_chat(user, SPAN_WARNING("Wrong ammo type!"))
-				return 0
-			if(FMJ.ammo_amount_left <= 0)
-				to_chat(user, SPAN_WARNING("The box is out of ammo."))
-				return 0
-			if(src.max_ammo <= src.projectiles)
-				to_chat(user, SPAN_WARNING("The [src] is full."))
-				return 0
-			FMJ.ammo_amount_left -= FMJ.amount_per_click
-			src.projectiles += FMJ.amount_per_click
-			return 1
+		if(FMJ.ammo_type != ammo_type)
+			to_chat(user, SPAN_WARNING("Wrong ammo type!"))
+			return 0
+		if(FMJ.ammo_amount_left <= 0)
+			to_chat(user, SPAN_WARNING("[FMJ] is out of ammo."))
+			return 0
+		if(projectiles >= max_ammo)
+			to_chat(user, SPAN_WARNING("[src] is full."))
+			return 0
+		FMJ.ammo_amount_left -= FMJ.amount_per_click
+		projectiles += FMJ.amount_per_click
+		return 1
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/New() //Freshly made ones are not loaded
-	..()
+	. = ..()
 	if(loaded)
 		return
 	projectiles = 0
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/Initialize() //On load we give random ammo
-	..()
+	. = ..()
 	if(loaded)
 		return
 	projectiles = clamp(-1, rand(0,max_ammo), max_ammo+1)

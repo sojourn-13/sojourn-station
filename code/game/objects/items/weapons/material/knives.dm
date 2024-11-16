@@ -4,6 +4,7 @@
 	icon_state = "butterflyknife"
 	item_state = null
 	hitsound = null
+	clickdelay_offset = FAST_WEAPON_COOLDOWN
 	var/active = 0
 	var/backstab_damage = 10
 	w_class = ITEM_SIZE_SMALL
@@ -56,7 +57,7 @@
 		icon_state = initial(icon_state)
 		w_class = initial(w_class)
 		tool_qualities = list()
-		attack_verb = initial(attack_verb)
+		attack_verb = list("patted", "tapped")
 
 /obj/item/material/butterfly/switchblade
 	name = "switchblade"

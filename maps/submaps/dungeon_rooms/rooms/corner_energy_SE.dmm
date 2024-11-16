@@ -5,7 +5,7 @@
 "b" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "c" = (
@@ -38,7 +38,7 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "j" = (
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "k" = (
@@ -58,7 +58,7 @@
 	dir = 4
 	},
 /obj/structure/lattice,
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "r" = (

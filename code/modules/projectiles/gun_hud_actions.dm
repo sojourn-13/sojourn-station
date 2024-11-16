@@ -6,6 +6,7 @@
 /obj/screen/item_action/top_bar/gun/safety
 	name = "safety"
 	icon_state = "safety1"
+	ErisOptimized_minloc = "8,1.35"
 
 /obj/screen/item_action/top_bar/gun/safety/update_icon()
 	..()
@@ -16,6 +17,7 @@
 /obj/screen/item_action/top_bar/gun/fire_mode
 	name = "fire mode"
 	icon_state = "mode_semi"
+	ErisOptimized_minloc = "8,1.35"
 
 /obj/screen/item_action/top_bar/gun/fire_mode/update_icon()
 	..()
@@ -30,6 +32,7 @@
 	icon_state = "scope0"
 	screen_loc = "9,1:13"
 	minloc = "8,2:13"
+	ErisOptimized_minloc = "9,1.35"
 
 /obj/screen/item_action/top_bar/gun/scope/update_icon()
 	..()
@@ -43,6 +46,7 @@
 	minloc = null
 	name = "Weapon Info"
 	icon_state = "info"
+	ErisOptimized_minloc = "16.5,10.3"
 
 /obj/item/gun/ui_action_click(mob/living/user, action_name)
 	switch(action_name)
@@ -53,14 +57,4 @@
 		if("safety")
 			toggle_safety(user)
 		if("Weapon Info")
-			nano_ui_interact(user)
-
-/obj/item/gun/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = nano_ui_data(user)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "weapon_stats.tmpl", name, 800, 600, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+			ui_interact(user)

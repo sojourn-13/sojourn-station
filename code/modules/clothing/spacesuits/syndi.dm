@@ -5,9 +5,9 @@
 	item_state = "syndicate"
 	desc = "A crimson helmet sporting clean lines and durable plating. Engineered to look menacing."
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee =7,
+		bullet = 7,
+		energy = 7,
 		bomb = 25,
 		bio = 100,
 		rad = 25
@@ -22,9 +22,9 @@
 	w_class = ITEM_SIZE_NORMAL
 	slowdown = 1
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee =7,
+		bullet = 7,
+		energy = 7,
 		bomb = 25,
 		bio = 100,
 		rad = 25

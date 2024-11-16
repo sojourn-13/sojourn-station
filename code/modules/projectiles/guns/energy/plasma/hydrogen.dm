@@ -13,8 +13,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 /obj/item/gun/hydrogen
 	name = "\improper \"Venatori\" hydrogen-plasma gun"
-	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brainchild of Soteria Director Nakharan Mkne, meant to compete with and exceed capabilities of Absolutist \
-	own plasma weapon designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapon's extreme heat generation over heating without being \
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brainchild of Soteria Director Nakharan Mkne, meant to compete with and exceed the capabilities of Absolutist \
+	plasma weapon designs. It succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapon's extreme heat generation without being \
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
@@ -54,8 +54,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/New()
 	..()
 	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  vent_level,  overheat,  heat_per_shot, 0.01, vent_level_timer)
-	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)
-	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
+	RegisterSignal(src, COMSIG_HEAT_VENT, PROC_REF(ventEvent))
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, PROC_REF(handleoverheat))
 	update_icon()
 	START_PROCESSING(SSobj, src)
 
@@ -182,7 +182,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
 	playsound(loc, 'sound/weapons/energy/hydrogen_warning.ogg', 80)
 	flick("[icon_state]_crit", src)
-	addtimer(CALLBACK(src , .proc/doVentsplosion), 3 SECONDS)
+	addtimer(CALLBACK(src , PROC_REF(doVentsplosion)), 3 SECONDS)
 	var/mob/living/L = loc
 	if(istype(L))
 		to_chat(L, SPAN_DANGER("[src] is going to explode!"))

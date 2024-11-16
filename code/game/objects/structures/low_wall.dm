@@ -82,7 +82,7 @@
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
-/obj/structure/low_wall/LateInitialize(list/args)
+/obj/structure/low_wall/LateInitialize(mapload)
 	// One low wall per turf.
 	for(var/obj/structure/low_wall/T in loc)
 		if(T != src)
@@ -90,11 +90,10 @@
 			qdel(T)
 			return
 
-	//if(args)
-	//	update_connections(0)
-	//else
-	//
-	update_connections(1)
+	if(mapload)
+		update_connections(FALSE)
+	else
+		update_connections(TRUE)
 	update_icon()
 
 
@@ -490,7 +489,7 @@
 		plant.update_neighbors()
 
 
-/obj/structure/low_wall/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/structure/low_wall/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)

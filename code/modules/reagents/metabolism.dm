@@ -100,9 +100,10 @@
 	var/nsa_target = get_nsa_target()
 	if(nsa_target != nsa_current)
 		nsa_current = nsa_target > nsa_current \
-		            ? min(nsa_current + nsa_target / 30, nsa_target) \
-		            : max(nsa_current - 6.66, nsa_target)
+		            ? min(nsa_current + max(nsa_target / 30, 1), nsa_target) \
+		            : max(nsa_current - max(6.66, (-nsa_current / 10)), nsa_target)
 		nsa_changed()
+
 	if(get_nsa() > nsa_threshold)
 		nsa_breached_effect()
 
@@ -147,7 +148,7 @@
 			var/mob/living/carbon/human/H = src
 			var/blood_volume = H.vessel.get_reagent_amount("blood")
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
-			if(blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+			if(blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 				return
 		parent.drip_blood(10) //This is quite a bit but your also suffering a lot
 

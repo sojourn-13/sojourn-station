@@ -3,6 +3,7 @@
 	desc = "A deceptively well armored space helmet. Ancient design, but advanced manufacturing."
 	icon_state = "cosmo"
 	item_state = "cosmo"
+	psi_blocking = 10
 
 	//The excelsior armors cost small amounts of rare materials that they can teleport in.
 	//This means they can either build up materials over time, or make it go faster by scavenging rare mats
@@ -16,9 +17,9 @@
 	)
 
 	armor_list = list(
-		melee = 45, // Excel Not made for Close range combat, Melee armor reflects this
-		bullet = 55,
-		energy = 70,
+		melee = 11, // Excel Not made for Close range combat, Melee armor reflects this
+		bullet = 13,
+		energy = 17,
 		bomb = 80,
 		bio = 90,
 		rad = 25
@@ -40,9 +41,9 @@
 	//Decent all around, but less ballistic resistance
 	stiffness = MEDIUM_STIFFNESS
 	armor_list = list(
-		melee = 45, // Excel Not made for Close range combat, Melee armor reflects this
-		bullet = 55,
-		energy = 70,
+		melee = 11, // Excel Not made for Close range combat, Melee armor reflects this
+		bullet = 13,
+		energy = 17,
 		bomb = 80,
 		bio = 90,
 		rad = 25
@@ -59,13 +60,13 @@
 
 
 /obj/item/clothing/suit/space/void/excelsior/progenitor //non excelsior branded and slightly lower armor, but less slowdown. A decent suit of armor, BUT you still look like a commie so be careful!
-	name = "Cosmonaught armor"
+	name = "Cosmonaut armor"
 	desc = "An ancient space suit design. Provides good protection, especially against energy discharges. This one appears to be an older, less advanced model that is notably free of techno-communist corruption."
 	slowdown = 0.6 //slightly less slowdown, slightly less armor.
 	armor_list = list(
-		melee = 40,
-		bullet = 50,
-		energy = 60,
+		melee = 10,
+		bullet = 12,
+		energy = 15,
 		bomb = 70,
 		bio = 90,
 		rad = 25
@@ -80,7 +81,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/excelsior/progenitor
 
 /obj/item/clothing/head/helmet/space/void/excelsior/progenitor
-	name = "Cosmonaught helmet"
+	name = "Cosmonaut helmet"
 	desc = "A deceptively well armored space helmet. An ancient design and the likely progenitor to the Excelsior brand."
 	matter = list(
 		MATERIAL_PLASTIC = 10,
@@ -91,9 +92,9 @@
 	)
 
 	armor_list = list(
-		melee = 40,
-		bullet = 50,
-		energy = 60,
+		melee = 10,
+		bullet = 12,
+		energy = 15,
 		bomb = 70,
 		bio = 90,
 		rad = 25

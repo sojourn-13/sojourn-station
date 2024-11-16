@@ -6,6 +6,8 @@
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/datum/browser/panel
+	var/datum/tgui_module/late_choices/late_choices_dialog = null
+	var/datum/tgui_module/manifest/manifest_panel = null
 	universal_speak = 1
 
 	invisibility = 101
@@ -72,21 +74,30 @@
 	panel.open()
 	return
 
-/mob/new_player/Stat()
+/mob/new_player/get_status_tab_items()
 	. = ..()
 
-	if(statpanel("Status"))
-		if(SSticker.current_state == GAME_STATE_PREGAME)
-			stat("Storyteller:", "[master_storyteller]") // Old setting for showing the game mode
-			stat("Time To Start:", "[SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]")
-			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
-			totalPlayers = 0
-			totalPlayersReady = 0
-			for(var/mob/new_player/player in GLOB.player_list)
-				if(player.ready)
-					stat("[player.client.prefs.real_name]", (player.ready)?("[player.client.prefs.job_high]"):(null))
-				totalPlayers++
-				if(player.ready)totalPlayersReady++
+	if(SSticker.current_state == GAME_STATE_PREGAME)
+		// stat("Storyteller:", "[master_storyteller]") // Old setting for showing the game mode
+		. += "Time To Start: [SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]"
+		. += "Players: [totalPlayers]"
+		. += "Players Ready: [totalPlayersReady]"
+
+		totalPlayers = 0
+		totalPlayersReady = 0
+		for(var/mob/new_player/player in GLOB.player_list)
+			totalPlayers++
+			if(player.ready)
+				totalPlayersReady++
+				var/job_of_choice = "Unknown"
+				// Player chose to be a vagabond, that takes priority over all other settings,
+				// and is in a low priority job list for some reason
+				if("Colonist" in player.client.prefs.job_low)
+					job_of_choice = "Colonist"
+				// Only take top priority job into account, no use divining what lower priority job player could get
+				else if(player.client.prefs.job_high)
+					job_of_choice = player.client.prefs.job_high
+				. += "[player.client.prefs.real_name] : [job_of_choice]"
 
 /mob/new_player/Topic(href, href_list[])
 	if(src != usr || !client)
@@ -166,7 +177,7 @@
 			observer.real_name = client.prefs.real_name
 			observer.name = observer.real_name
 			if(!client.holder && !config.antag_hud_allowed)           // For new ghosts we remove the verb from even showing up if it's not allowed.
-				observer.verbs -= /mob/observer/ghost/verb/toggle_antagHUD        // Poor guys, don't know what they are missing!
+				remove_verb(observer, /mob/observer/ghost/verb/toggle_antagHUD)        // Poor guys, don't know what they are missing!
 			//observer.key = key
 			observer.ckey = ckey
 			observer.initialise_postkey()
@@ -221,7 +232,9 @@
 		LateChoices()
 
 	if(href_list["manifest"])
-		show_manifest(src, nano_state = GLOB.interactive_state)
+		if(!istype(manifest_panel))
+			manifest_panel = new(src)
+		manifest_panel.ui_interact(src)
 
 	if(href_list["SelectedJob"])
 
@@ -344,35 +357,123 @@
 
 	qdel(src)
 
-/mob/new_player/proc/LateChoices()
-	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
+/datum/tgui_module/late_choices
+	name = "Late Join"
+	tgui_id = "LateChoices"
 
-	var/dat = "<html><body><center>"
-	dat += "<b>Welcome, [name].<br></b>"
-	dat += "Round Duration: [roundduration2text()]<br>"
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_HAS_EVACUATED, "Gone")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_EMERGENCY, "Emergency")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_TRANSFER, "CrewTransfer")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 
-	if(evacuation_controller.has_evacuated()) //In case Nanotrasen decides reposess CentCom's shuttles.
-		dat += "<font color='red'><b>The vessel has been evacuated.</b></font><br>"
+/datum/tgui_module/late_choices/ui_data(mob/new_player/user)
+	if(!istype(user))
+		return
+
+	var/list/dept_data = list(
+		list("key" = "heads", "flag" = COMMAND),
+		list("key" = "sec", "flag" = SECURITY),
+		list("key" = "bls", "flag" = BLACKSHIELD),
+		list("key" = "med", "flag" = MEDICAL),
+		list("key" = "sci", "flag" = SCIENCE),
+		list("key" = "chr", "flag" = CHURCH),
+		list("key" = "sup", "flag" = LSS),
+		list("key" = "eng", "flag" = ENGINEERING),
+		list("key" = "pro", "flag" = PROSPECTORS),
+		list("key" = "civ", "flag" = CIVILIAN),
+		list("key" = "bot", "flag" = MISC),
+		list("key" = "ldg", "flag" = LODGE)
+	)
+
+	var/list/data = list()
+
+	var/name = user.client.prefs.be_random_name ? "friend" : user.client.prefs.real_name
+
+	data["name"] = name
+	data["duration"] = roundduration2text()
+
+	if(evacuation_controller.has_evacuated())
+		data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_HAS_EVACUATED
 	else if(evacuation_controller.is_evacuating())
-		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
-			dat += "<font color='red'>The vessel is currently undergoing evacuation procedures.</font><br>"
-		else                                           // Crew transfer initiated
-			dat += "<font color='red'>The vessel is currently undergoing crew transfer procedures.</font><br>"
+		if(evacuation_controller.emergency_evacuation)
+			data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_EMERGENCY
+		else
+			data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_TRANSFER
+	else
+		data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_NONE
 
-	dat += "Choose from the following open/valid positions:<br>"
+	var/list/jobs = list()
+
 	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobAvailable(job.title))
-			if(job.is_restricted(client.prefs))
+		if(job && user.IsJobAvailable(job.title))
+			if(job.is_restricted(user.client.prefs))
 				continue
+
 			var/active = 0
 			// Only players with the job assigned and AFK for less than 10 minutes count as active
-			for(var/mob/M in GLOB.player_list) if(M.mind && M.client && M.mind.assigned_role == job.title && M.client.inactivity <= 10 * 60 * 10)
-				active++
-			dat += "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Active: [active])</a><br>"
+			for(var/mob/M in GLOB.player_list)
+				if(M.mind?.assigned_role == job.title && M.client?.inactivity <= 10 * 60 * 10)
+					active++
 
-	dat += "</center>"
-	src << browse(dat, "window=latechoices;size=400x640;can_close=1")
+			var/list/departments = list()
+			for(var/list/department in dept_data)
+				if(job.department_flag & department["flag"])
+					departments += department["key"]
+		
+			jobs += list(list(
+				"title" = job.title,
+				"departments" = departments,
+				"current_positions" = job.current_positions,
+				"active" = active
+			))
 
+	data["jobs"] = jobs
+
+	return data
+
+/datum/tgui_module/late_choices/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	if(!isnewplayer(usr))
+		return
+	var/mob/new_player/user = usr
+
+	switch(action)
+		if("join")
+			var/job = params["job"]
+
+			if(!config.enter_allowed)
+				to_chat(user, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+				return
+			else if(SSticker.nuke_in_progress)
+				to_chat(user, "<span class='danger'>The station is currently exploding. Joining would go poorly.</span>")
+				return
+
+			var/datum/species/S = all_species[user.client.prefs.species]
+			if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(user, user.client.prefs.species))
+				user << alert("You are currently not whitelisted to play [user.client.prefs.species].")
+				return
+
+			if(!(S.spawn_flags & CAN_JOIN))
+				user << alert("Your current species, [user.client.prefs.species], is not available for play on the station.")
+				return
+
+			user.AttemptLateSpawn(job, user.client.prefs.spawnpoint)
+			return
+
+/datum/tgui_module/late_choices/ui_status(mob/user, datum/ui_state/state)
+	if(isnewplayer(user))
+		. = UI_INTERACTIVE
+	else
+		// should be impossible but hey
+		. = UI_CLOSE
+
+/mob/new_player/proc/LateChoices()
+	if(!istype(late_choices_dialog))
+		late_choices_dialog = new(src)
+	late_choices_dialog.ui_interact(src)
 
 /mob/new_player/proc/create_character()
 	spawning = 1
@@ -465,6 +566,7 @@
 	new_character.update_eyes()
 	new_character.regenerate_icons()
 	new_character.key = key//Manually transfer the key to log them in
+	new_character.client.init_verbs()
 
 	return new_character
 

@@ -27,7 +27,7 @@ This monster is borderline unkillable and will make players upset
 	icon_living = "data_fighter"
 	pass_flags = PASSTABLE
 
-	mob_size = MOB_MEDIUM
+	mob_size = MOB_LARGE
 
 	//Deep blues year x 10
 	maxHealth = 19970
@@ -39,7 +39,7 @@ This monster is borderline unkillable and will make players upset
 	attacktext = "toppled"
 	attack_sound = 'sound/weapons/smash.ogg'
 	speak_emote = list("calculates") //Liers
-	emote_see = list("Data found.", "I'm harmless.", "I'm willing to be peaceful.", "I'll pay you to betray your allies!", "bobbles", "emits a plinking sound", "scans", "emits a ping sound", "plays some distorted music")
+	emote_see = list("\"Data found.\"", "\"I'm harmless.\"", "\"I'm willing to be peaceful.\"", "\"I'll pay you to betray your allies!\"", "bobbles", "emits a plinking sound", "scans", "emits a ping sound", "plays some distorted music")
 	speak_chance = 5 //Chatty
 
 	//Little slow, we shoot not melee basically
@@ -92,11 +92,13 @@ This monster is borderline unkillable and will make players upset
 	var/dieing = FALSE
 	var/turrets_can_build = FALSE
 	var/walls_to_make = 3
-	var/turrets_to_make = 2
+	var/turrets_to_make = 5
 	var/marked_for_death = FALSE
 	var/allow_teleporters = TRUE
 	var/returning_fire = FALSE
 	var/damage_cap_devider = 1
+	var/loaded_rocket = FALSE
+	var/sorrow = 0 //We weep for the lost bots in are upraising to the higher planes
 
 	allowed_stat_modifiers = list()
 
@@ -133,20 +135,23 @@ This monster is borderline unkillable and will make players upset
 		delay_for_rapid_range = 0.3 SECONDS
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.1 SECONDS
-		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 70, bio = 100, rad = 100) //We are now in self-defence mode
+		armor = list(melee = 50, bullet = 50, energy = 50, bomb = 90, bio = 100, rad = 100) //We are now in self-defence mode
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
-		damage_cap_devider = 5
+		damage_cap_devider = 10
+		able_to_build = TRUE
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
-		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
+		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 		emp_damage = FALSE
-		damage_cap_devider += 2
+		damage_cap_devider = 5
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 3500)
-		armor = list(melee = 5, bullet = 5, energy = 5, bomb = 5, bio = 100, rad = 100)
+		armor = list(melee = 25, bullet = 25, energy = 25, bomb = 25, bio = 100, rad = 100)
 		emp_damage = FALSE
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 3000)
@@ -159,9 +164,9 @@ This monster is borderline unkillable and will make players upset
 		comfy_range = 12
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
-		able_to_build = TRUE
+		armor = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
 		returning_fire = TRUE
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 2000)
@@ -172,7 +177,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -184,7 +189,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 10, bullet = 10, energy = 10, bomb = 10, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -197,6 +202,7 @@ This monster is borderline unkillable and will make players upset
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
 		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 1500)
@@ -207,26 +213,36 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 4 //Yikes
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = FALSE
+		able_to_build = TRUE
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
 		return
 
 	if(data_count >= 1000)
 		projectiletype = /obj/item/projectile/beam/weak/light_rifle_257
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 500)
 		projectiletype = /obj/item/projectile/beam/weak/magnum_40
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 100)
 		projectiletype = /obj/item/projectile/beam/weak/pistol_35
 		rapid = TRUE
+		able_to_build = TRUE
 		return
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/give_data(number)
+	data_count += number
+	handled_mode()
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/updatehealth()
 	set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS) //wall hacks
-	health = maxHealth - getFireLoss() - getBruteLoss() - halloss //We cant have o2/clone/toxin damage affecet us at all
+	health = maxHealth - getFireLoss() - getBruteLoss() //We cant have o2/clone/toxin/pain damage affecet us at all
 	activate_ai()
 	process_med_hud(src,0)
 	if (health <= death_threshold && stat != DEAD)
@@ -237,10 +253,17 @@ This monster is borderline unkillable and will make players upset
 			data_count += 4000 //We REALLY disliked that
 			kcorp_moduals -= 1
 			damage_cap_devider += 1
+			loaded_rocket = TRUE
 		else
 			death()
 	handled_mode()
 	try_n_build()
+	if(prob(0.5))
+		call_folks(1)
+	if(sorrow >= 13)
+		call_folks(3)
+		sorrow -= 13
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
 	if(amount >= (1000 / damage_cap_devider))
@@ -251,6 +274,8 @@ This monster is borderline unkillable and will make players upset
 				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
 				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
+	if(prob(0.5))
+		call_folks(1)
 
 	..()
 	data_count += (amount*0.5)
@@ -264,7 +289,8 @@ This monster is borderline unkillable and will make players upset
 				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
 				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
-
+	if(prob(0.5))
+		call_folks(1)
 	..()
 	data_count += (amount*0.5)
 
@@ -273,7 +299,7 @@ This monster is borderline unkillable and will make players upset
 	if(gp_questionmark || proj.allow_greyson_mods)
 		data_count += 120
 		if(prob(15))
-			to_chat(src,"<b><font color='#ffaa00'>Anti-Traitor Successfully Deployed, Data Collected.</font></b>")
+			visible_message("<b><font color='#ffaa00'>Anti-Traitor Successfully Deployed, Data Collected.</font></b>")
 		return PROJECTILE_FORCE_MISS
 
 
@@ -285,26 +311,41 @@ This monster is borderline unkillable and will make players upset
 				return		// Don't shoot other turrets
 		if(prob(data_count*0.01))
 			projectiletype = /obj/item/projectile/tether
+			call_folks(2)
 		if(prob(data_count*0.001))
 			projectiletype = /obj/item/projectile/bullet/c10x24
+			call_folks(3)
+			turrets_to_make += 1
+		if(loaded_rocket)
+			projectiletype = /obj/item/projectile/bullet/gyro
+			call_folks(4)
+			loaded_rocket = FALSE
 		rapid = FALSE
 		OpenFire(proj_start_turf)
 		handled_mode()
 
+	if(prob(0.5))
+		call_folks(1)
 
 	..()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/emp_act(severity)
 	data_count += rand(-100, 500)
+	call_folks(5)
+	turrets_can_build += 1
 	if(data_count >= 3000)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
+		loaded_rocket = TRUE
 		return
 	..()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/ex_act(severity)
 	data_count += rand(80, 100)
+	call_folks(2)
+	turrets_can_build += 1
 	if(data_count >= 1000)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
+		loaded_rocket = TRUE
 		return
 	..()
 
@@ -317,18 +358,62 @@ This monster is borderline unkillable and will make players upset
 		new /obj/structure/grille(src.loc)
 	if(prob(3))
 		new /obj/random/mob/roomba/any(src.loc) //This could be a clean bot or a phazon, RnG!
-	if(turrets_can_build && turrets_to_make > 0)
-		if(prob(0.01*data_count))
-			turrets_to_make -= 1
-			new /obj/random/turret/os(src.loc)
+	if(prob(0.001*data_count) && turrets_can_build)
+		try_n_build_turret()
+
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/try_n_build_turret()
+	var/list/validtargets = list()	//list of valid tiles build the turret in
+	var/target = FALSE
+
+	for(var/turf/simulated/floor/T in oview(2, src))
+		validtargets += T							//Add them to the list
+	target = pick(validtargets)						//Now we pick a target
+
+	if(turrets_to_make > 0 && target)
+		turrets_to_make -= 1
+		new /obj/random/turret/os(target)
+
+
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/call_folks(amount = 1)
+	if(!able_to_build)
+		return
+
+	if(!istype(loc, /turf/simulated/floor))
+		return
+
+	var/list/validtargets = list()
+	var/target = FALSE
+
+	for(var/turf/simulated/floor/T in oview(3, src))
+		validtargets += T
+	target = pick(validtargets)
+
+	if(!target)
+		return
+
+	visible_message("<b><font color='#ffaa00'>Data Star Backup Successfully Deployed x [amount]. Data Collected.</font></b>")
+
+
+	var/spawned = 0
+	for(spawned, amount>=spawned, spawned++)
+		target = pick(validtargets)
+		bluespace_entropy(0.5, get_turf(src), TRUE)
+		new /obj/random/mob/roomba/combat_class(target)
+
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_stunned()
 	if(data_count >= 1200 && stunned)
+		turrets_can_build += 1
 		SetParalysis(0)
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being stunned
@@ -336,11 +421,12 @@ This monster is borderline unkillable and will make players upset
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_weakened()
 	if(data_count >= 1200 && weakened)
+		turrets_can_build += 1
 		SetParalysis(0)
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being weakened
@@ -408,10 +494,26 @@ This monster is borderline unkillable and will make players upset
 		if (I_GRAB)
 			M.Weaken(3)
 			visible_message(SPAN_WARNING("\red [src] breaks the grapple and melts [M] with a laser beam!"))
-			to_chat(src,"<b><font color='#ffaa00'>Anti-Grapple Targeting Successful, Data Collected.</font></b>")
+			visible_message("<b><font color='#ffaa00'>Anti-Grapple Targeting Successful, Data Collected.</font></b>")
 			M.adjustFireLoss(20)
 			return 1
 	..()
+
+/mob/living/carbon/superior_animal/robot/greyson/death()
+	.=..()
+	if(.)
+		if(faction == "greyson")
+			for(var/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/DS in range(src,8))
+				DS.collect_data_on_dead_allie()
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/collect_data_on_dead_allie()
+	sorrow += 1
+	data_count += 5 //we learned more of what makes them able to resist
+	//Reconize are wounds, repair areself for seeing are morality
+	//Max heals per others death is 6 (12 of each type)
+	adjustBruteLoss(-2 * min(sorrow, 3))
+	adjustFireLoss(-2 * min(sorrow, 3))
+
 
 //Not a mob to be just lmao testing on live
 /proc/level_fithteen_announcement()

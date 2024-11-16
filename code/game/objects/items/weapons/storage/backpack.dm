@@ -187,31 +187,11 @@
 	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
 	icon_state = "backpack_mil"
 
-/obj/item/storage/backpack/militia/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Blackshield Colours"] = "backpack_mil"
-	options["Woodlands Blackshield Colours"] = "backpack_milgreen"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
+/obj/item/storage/backpack/militia/green
+	icon_state = "backpack_milgreen"
 
 /obj/item/storage/backpack/corpsman
-	name = "Corpsman backpack"
+	name = "corpsman backpack"
 	desc = "A robust military backpack with medical liverly."
 	icon_state = "backpack_corps"
 
@@ -305,8 +285,13 @@
 //Faction-specific backsports
 /obj/item/storage/backpack/sport/ironhammer
 	name = "operator's sport backpack"
-	desc = "Done in a complementing shade for Ironhammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	desc = "Done in a complementing shade for Nadezhda security. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
 	icon_state = "backsport_ironhammer"
+
+/obj/item/storage/backpack/sport/militia
+	name = "blackshield sport backpack"
+	desc = "Done in a complementing shade for Nadezhda militia. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	icon_state = "backsport_militia"
 
 /obj/item/storage/backpack/sport/neotheology
 	name = "cruciform sport backpack"
@@ -398,6 +383,11 @@
 	name = "operator's satchel"
 	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
 	icon_state = "satchel_ironhammer"
+
+/obj/item/storage/backpack/satchel/militia
+	name = "blackshield satchel"
+	desc = "Done in a complementing shade for Nadezhda militia, for the itinerant military contractor."
+	icon_state = "satchel_militia"
 
 /obj/item/storage/backpack/satchel/neotheology
 	name = "cruciform satchel"

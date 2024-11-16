@@ -59,7 +59,7 @@
 
 /obj/machinery/optable/altar/proc/cooldown(var/T)
 	request_cooldown = TRUE
-	addtimer(CALLBACK(src, .proc/cooled_off), T)
+	addtimer(CALLBACK(src, PROC_REF(cooled_off)), T)
 
 /obj/machinery/optable/altar/proc/cooled_off()
 	request_cooldown = FALSE

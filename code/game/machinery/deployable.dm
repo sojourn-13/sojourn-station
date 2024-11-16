@@ -73,7 +73,7 @@ for reference:
 	maxHealth = material.integrity
 	health = maxHealth
 
-/obj/structure/barricade/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/structure/barricade/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
@@ -215,7 +215,7 @@ for reference:
 	var/locked = 0
 //	req_access = list(access_maint_tunnels)
 
-/obj/machinery/deployable/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/machinery/deployable/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
@@ -339,8 +339,8 @@ for reference:
 /obj/machinery/deployable/barrier/emag_act(remaining_charges, mob/user)
 	if(emagged == FALSE)
 		emagged = TRUE
-		req_access.Cut()
-		req_one_access.Cut()
+		LAZYNULL(req_access)
+		LAZYNULL(req_one_access)
 		to_chat(user, "You break the ID authentication lock on \the [src].")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(2, 1, src)

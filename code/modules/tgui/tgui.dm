@@ -56,7 +56,7 @@
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y)
 	log_tgui(user,
-		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/tgui_fancy)]",
+		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES]",
 		src_object = src_object)
 	src.user = user
 	src.src_object = src_object
@@ -97,7 +97,7 @@
 	if(!window.is_ready())
 		window.initialize(
 			strict_mode = TRUE,
-			fancy = user.client.get_preference_value(/datum/client_preference/tgui_fancy),
+			fancy = user.client.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES,
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
 			))
@@ -107,6 +107,8 @@
 		/datum/asset/simple/namespaced/fontawesome))
 	flush_queue |= window.send_asset(get_asset_datum(
 		/datum/asset/simple/namespaced/tgfont))
+	flush_queue |= window.send_asset(get_asset_datum(
+		/datum/asset/json/icon_ref_map))
 	for(var/datum/asset/asset in src_object.ui_assets(user))
 		flush_queue |= window.send_asset(asset)
 	if (flush_queue)
@@ -203,7 +205,7 @@
 		return
 	if(!COOLDOWN_FINISHED(src, refresh_cooldown))
 		refreshing = TRUE
-		addtimer(CALLBACK(src, .proc/send_full_update, custom_data, force), COOLDOWN_TIMELEFT(src, refresh_cooldown), TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(send_full_update), custom_data, force), COOLDOWN_TIMELEFT(src, refresh_cooldown), TIMER_UNIQUE)
 		return
 	refreshing = FALSE
 	var/should_update_data = force || status >= UI_UPDATE
@@ -229,6 +231,57 @@
 		custom_data,
 		with_data = should_update_data))
 
+GLOBAL_VAR_CONST(PREF_TGUITHEME_DEFAULT, "Default")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_ABDUCTOR, "Abductor")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_CARDTABLE, "Cardtable")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_HACKERMAN, "Hackerman")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_MALFUNCTION, "Malfunction")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_NEUTRAL, "Neutral")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_PAPER, "Paper")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_RETRO, "Retro")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_SPOOKYCONSOLE, "Spooky Console")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_SYNDICATE, "Syndicate")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_WIZARD, "Wizard")
+
+GLOBAL_LIST_INIT(TGUI_THEMES, list(
+	GLOB.PREF_TGUITHEME_DEFAULT,
+	GLOB.PREF_TGUITHEME_ABDUCTOR,
+	GLOB.PREF_TGUITHEME_CARDTABLE,
+	GLOB.PREF_TGUITHEME_HACKERMAN,
+	GLOB.PREF_TGUITHEME_MALFUNCTION,
+	GLOB.PREF_TGUITHEME_NEUTRAL,
+	GLOB.PREF_TGUITHEME_PAPER,
+	GLOB.PREF_TGUITHEME_RETRO,
+	GLOB.PREF_TGUITHEME_SPOOKYCONSOLE,
+	GLOB.PREF_TGUITHEME_SYNDICATE,
+	GLOB.PREF_TGUITHEME_WIZARD,
+))
+
+/proc/get_theme_by_pref(pref)
+	switch(pref)
+		if(GLOB.PREF_TGUITHEME_DEFAULT)
+			return null
+		if(GLOB.PREF_TGUITHEME_ABDUCTOR)
+			return "abductor"
+		if(GLOB.PREF_TGUITHEME_CARDTABLE)
+			return "cardtable"
+		if(GLOB.PREF_TGUITHEME_HACKERMAN)
+			return "hackerman"
+		if(GLOB.PREF_TGUITHEME_MALFUNCTION)
+			return "malfunction"
+		if(GLOB.PREF_TGUITHEME_NEUTRAL)
+			return "neutral"
+		if(GLOB.PREF_TGUITHEME_PAPER)
+			return "paper"
+		if(GLOB.PREF_TGUITHEME_RETRO)
+			return "retro"
+		if(GLOB.PREF_TGUITHEME_SPOOKYCONSOLE)
+			return "spookyconsole"
+		if(GLOB.PREF_TGUITHEME_SYNDICATE)
+			return "syndicate"
+		if(GLOB.PREF_TGUITHEME_WIZARD)
+			return "wizard"
+
 /**
  * private
  *
@@ -246,8 +299,11 @@
 		"window" = list(
 			"key" = window_key,
 			"size" = window_size,
-			"fancy" = user.client.get_preference_value(/datum/client_preference/tgui_fancy),
-			"locked" = user.client.get_preference_value(/datum/client_preference/tgui_lock),
+			"fancy" = user.client.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES,
+			"locked" = user.client.get_preference_value(/datum/client_preference/tgui_lock) == GLOB.PREF_YES,
+			// for bad PCs
+			"toaster" = user.client.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES,
+			"default_theme" = get_theme_by_pref(user.client.prefs.TGUI_theme)
 		),
 		"client" = list(
 			"ckey" = user.client.ckey,
@@ -325,7 +381,7 @@
 			window = window,
 			src_object = src_object)
 		process_status()
-		DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/on_act_message, act_type, payload, state))
+		DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(on_act_message), act_type, payload, state))
 		return FALSE
 	switch(type)
 		if("ready")

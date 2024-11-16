@@ -4,6 +4,9 @@
 	icon_state = "cap"
 
 /obj/structure/closet/secure_closet/reinforced/captains/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/backpack/captain(src)
 	new /obj/item/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/under/rank/captain(src)
@@ -28,6 +31,9 @@
 	icon_state = "hop"
 
 /obj/structure/closet/secure_closet/reinforced/hop/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/under/rank/first_officer(src)
 	new /obj/item/clothing/head/rank/first_officer(src)
@@ -48,6 +54,9 @@
 	icon_state = "hos"
 
 /obj/structure/closet/secure_closet/reinforced/hos/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
@@ -82,6 +91,9 @@
 	icon_state = "warden"
 
 /obj/structure/closet/secure_closet/warden/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/device/bullet_scanner(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/device/holowarrant(src)
@@ -89,6 +101,7 @@
 	new /obj/item/clothing/head/rank/warden/beret(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal/surplus(src)
 	new /obj/item/device/radio/headset/headset_sec/bowman(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
@@ -119,6 +132,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/personal/security/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/backpack/ironhammer(src)
 	if(prob(50))
 		new /obj/item/storage/backpack/ironhammer(src)
@@ -150,6 +166,9 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/personal/detective/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/inspector(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
@@ -179,6 +198,9 @@
 	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/injection/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/reagent_containers/syringe/ld50_syringe/choral(src)
 	new /obj/item/reagent_containers/syringe/ld50_syringe/choral(src)
 
@@ -190,6 +212,9 @@
 	var/id
 
 /obj/structure/closet/secure_closet/brig/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/shoes/orange(src)
 
@@ -199,6 +224,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/courtroom/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/paper/court(src)
 	new /obj/item/paper/court(src)
@@ -214,6 +242,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/armory_explosive/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/box/blast_grenade_shells(src)
 	new /obj/item/storage/box/blast_grenade_shells(src)
 	new /obj/item/storage/box/blast_grenade_shells(src)
@@ -227,6 +258,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/armory_ltl_emp/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/box/baton_rounds(src)
 	new /obj/item/storage/box/baton_rounds(src)
 	new /obj/item/storage/box/anti_photons(src)
@@ -240,6 +274,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/armory_ltl_shotgun/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/ammo_magazine/ammobox/shotgun/beanbags(src)
 	new /obj/item/ammo_magazine/ammobox/shotgun/beanbags(src)
 	new /obj/item/ammo_magazine/ammobox/shotgun/flashshells(src)
@@ -252,4 +289,7 @@
 	icon_state = "weaponcrate"
 
 /obj/structure/closet/crate/secure/weapon/amr/populate_contents()
-	new /obj/item/storage/box/syndie_kit/antimaterial_rifle(src)
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	new /obj/item/storage/box/syndie_kit/antimateriel_rifle(src)

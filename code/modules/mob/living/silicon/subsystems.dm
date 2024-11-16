@@ -3,10 +3,11 @@
 	var/list/silicon_subsystems = list(
 		/datum/nano_module/alarm_monitor/all,
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client,
+		/datum/tgui_module/email_client/silicon,
 		/datum/nano_module/crew_monitor,
-		/datum/nano_module/chem_catalog,
-		/datum/nano_module/drink_catalog
+		/datum/tgui_module/catalog/chemistry/silicon,
+		/datum/tgui_module/catalog/drinks/silicon,
+		/datum/tgui_module/catalog/cooking/silicon,
 	)
 
 /mob/living/silicon/ai/New()
@@ -15,12 +16,16 @@
 		var/datum/nano_module/NM = subtype
 		if(initial(NM.available_to_ai))
 			silicon_subsystems += NM
+	for(var/subtype in subtypesof(/datum/tgui_module))
+		var/datum/tgui_module/TM = subtype
+		if(initial(TM.available_to_ai))
+			silicon_subsystems += TM
 	..()
 
 /mob/living/silicon/robot/syndicate
 	silicon_subsystems = list(
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client
+		/datum/tgui_module/email_client/silicon,
 	)
 
 /mob/living/silicon/Destroy()
@@ -69,29 +74,44 @@
 /mob/living/silicon/verb/show_crew_sensors()
 	set name = "Show Crew Sensors"
 	set desc = "Track crew gps beacons"
+	set category = "Silicon Commands"
 
 	open_subsystem(/datum/nano_module/crew_monitor)
 
 /mob/living/silicon/verb/show_email()
 	set name = "Show Emails"
 	set desc = "Open email subsystem"
+	set category = "Silicon Commands"
 
-	open_subsystem(/datum/nano_module/email_client)
+	open_subsystem(/datum/tgui_module/email_client/silicon)
 
 /mob/living/silicon/verb/show_alerts()
 	set name = "Show Alerts"
 	set desc = "Open alerts monitor system"
+	set category = "Silicon Commands"
+
 	open_subsystem(/datum/nano_module/alarm_monitor/all)
 
 /mob/living/silicon/verb/show_chemicals_mixes()
 	set name = "Show Chem Catalog"
 	set desc = "Open the Chem Catalog"
-	open_subsystem(/datum/nano_module/chem_catalog)
+	set category = "Silicon Commands"
+
+	open_subsystem(/datum/tgui_module/catalog/chemistry/silicon)
 
 /mob/living/silicon/verb/show_drink_mixes()
 	set name = "Show Drink Catalog"
 	set desc = "Open Neon Cocktails for all your mixing needs."
-	open_subsystem(/datum/nano_module/drink_catalog)
+	set category = "Silicon Commands"
+
+	open_subsystem(/datum/tgui_module/catalog/drinks/silicon)
+
+/mob/living/silicon/verb/show_cook_catalog()
+	set name = "Show VIKA Catalog"
+	set desc = "Open Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant."
+	set category = "Silicon Commands"
+
+	open_subsystem(/datum/tgui_module/catalog/cooking/silicon)
 
 /mob/living/silicon/verb/activate_subsystem()
 	set name = "Subsystems"
@@ -104,17 +124,17 @@
 	if(istype(SSS))
 		SSS.Click()
 
-/mob/living/silicon/Stat()
-	. = ..()
-	if(!.)
-		return
-	if(!silicon_subsystems.len)
-		return
-	if(!statpanel("Subsystems"))
-		return
-	for(var/subsystem_type in silicon_subsystems)
-		var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
-		stat(SSS)
+// /mob/living/silicon/Stat()
+// 	. = ..()
+// 	if(!.)
+// 		return
+// 	if(!silicon_subsystems.len)
+// 		return
+// 	if(!statpanel("Subsystems"))
+// 		return
+// 	for(var/subsystem_type in silicon_subsystems)
+// 		var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
+// 		stat(SSS)
 
 /mob/living/silicon/proc/get_subsystem_from_path(subsystem_type)
 	var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
@@ -143,8 +163,12 @@
 	subsystem = null
 	. = ..()
 
-/stat_silicon_subsystem/Click(var/mob/given = usr)
-	if (istype(given))
-		subsystem.nano_ui_interact(given, state = ui_state)
-	else
-		subsystem.nano_ui_interact(usr, state = ui_state)
+/stat_silicon_subsystem/Click(mob/user)
+	if(!istype(user))
+		user = usr
+
+	if(istype(subsystem, /datum/nano_module))
+		subsystem.nano_ui_interact(user, state = ui_state)
+	else if(istype(subsystem, /datum/tgui_module))
+		subsystem.ui_interact(user)
+

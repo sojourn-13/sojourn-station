@@ -135,6 +135,17 @@ var/list/name_to_material
 	// Wallrot crumble message.
 	var/rotting_touch_message = "crumbles under your touch"
 
+/material/ui_data(mob/user)
+	var/list/data = list()
+
+	data["name"] = name
+
+	var/class_name = sanitize_css_class_name("[stack_type]")
+	var/datum/asset/spritesheet_batched/materials/sprite = get_asset_datum(/datum/asset/spritesheet_batched/materials)
+	data["icon"] = sprite.icon_class_name(class_name)
+
+	return data
+
 // Placeholders for light tiles and rglass.
 /material/proc/build_rod_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
 	if(!rod_product)
@@ -681,7 +692,6 @@ var/list/name_to_material
 	name = MATERIAL_SILK
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	stack_type = /obj/item/stack/material/silk
-	composite_material = list(MATERIAL_BIOMATTER = 1) //So we have a vaule to more then one faction
 	door_icon_base = "wood"
 	ignition_point = T0C+232
 	melting_point = T0C+300

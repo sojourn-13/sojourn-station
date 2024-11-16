@@ -16,9 +16,25 @@
 	var/no_attack_log = 0			//If it's an item we don't want to log attack_logs with, set this to 1
 	pass_flags = PASSTABLE
 
+	//The cool stuff for melee
+	var/screen_shake = FALSE 		//If a weapon can shake the victim's camera on hit.
+	var/forced_broad_strike = FALSE //If a weapon is forced to always perform broad strikes.
+	//Mostly used for spears when wielded, but can be placed on any item
+	//Any value above 1 adds extra tiles it checks for reach
+	//Also used in holsters and sheaths, code for handing is in item_attack.dm with "fancy_ranged_melee_attack"
+	var/extended_reach = FALSE
+	var/ready = FALSE					//All weapons that are ITEM_SIZE_BULKY or bigger have double tact, meaning you have to click twice.
+	var/no_double_tact = FALSE			//for when you,  for some inconceivable reason, want a huge item to not have double tact
+	var/double_tact_required = FALSE	//for when you,  you want smaller then huge items to have double tact - note no_double_tact removes this affect
+
+	var/no_swing = FALSE            //for when you do not want an item to swing-attack
+	var/push_attack = FALSE			//Hammers and spears can push the victim away on hit when you aim groin.
+	//Why are we using vars instead of defines or anything else?
+	//Because we need them to be shown in the tool info UI.
+
 	var/obj/item/master = null
-	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
-	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	var/list/origin_tech = null   //Used by R&D to determine what research bonuses it grants.
+	var/list/attack_verb = null //Used in attackby() to say how something was attacked "[x] has been [LAZYPICK(z.attack_verb) || "attacked"] by [y] with [z]"
 
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
@@ -51,11 +67,11 @@
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
-	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
+	var/list/armor_list = null //A list version of the armor datum, for initialization.
 	var/datum/armor/armor// Ref to the armor datum
 
-	var/list/allowed = list() //suit storage stuff.
-	var/list/blacklisted_allowed = list()//suit storage stuff.
+	var/list/allowed = null //suit storage stuff.
+	var/list/blacklisted_allowed = null //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
@@ -66,12 +82,12 @@
 
 	//** These specify item/icon overrides for _slots_
 
-	var/list/item_state_slots = list() //overrides the default item_state for particular slots.
+	var/list/item_state_slots = null //overrides the default item_state for particular slots.
 
 	// Used to specify the icon file to be used when the item is worn. If not set the default icon for that slot will be used.
 	// If icon_override or sprite_sheets are set they will take precendence over this, assuming they apply to the slot in question.
 	// Only slot_l_hand/slot_r_hand are implemented at the moment. Others to be implemented as needed.
-	var/tmp/list/item_icons = list()
+	var/tmp/list/item_icons = null
 
 	// HUD action buttons. Only used by guns atm.
 	var/list/hud_actions
@@ -81,22 +97,21 @@
 	var/embed_mult = 1 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 
-	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
 
-	var/list/item_upgrades = list()
+	var/list/item_upgrades = null
 
 	/// Any upgrades in here will be applied on initialize().
-	var/list/initialized_upgrades = list()
+	var/list/initialized_upgrades = null
 
 	var/max_upgrades = 3
 	var/allow_greyson_mods = FALSE
-	prefixes = list()
-	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
+	name_prefixes = null
+	var/list/blacklist_upgrades = null //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
 
-	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/list/effective_faction = null // Which faction the item is effective against.
 	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
 	//Stolen things form tool qualities
 	var/eye_hazard = FALSE
@@ -115,7 +130,7 @@
 
 	var/has_alt_mode = FALSE
 	var/alt_mode_damagetype = HALLOSS
-	var/alt_mode_verbs = list("wack", "bash", "thump")
+	var/list/alt_mode_verbs = list("wack", "bash", "thump")
 	var/alt_mode_active = FALSE
 	var/alt_mode_toggle = ""
 	var/alt_mode_lossrate = 0.5
@@ -234,9 +249,28 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.stats.getPerk(PERK_MARKET_PROF))
-			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
-		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
-			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
+			message += "\n<blue>Export value: [get_item_cost() * SStrade.get_export_price_multiplier(src)][CREDITS]"
+
+			var/offer_message = "\nThis item is requested at: "
+			var/has_offers = FALSE
+			for(var/datum/trade_station/TS in SStrade.discovered_stations)
+				for(var/path in TS.special_offers)
+					if(istype(src, path))
+						has_offers = TRUE
+						var/list/offer_content = TS.special_offers[path]
+						var/offer_price = offer_content["price"]
+						var/offer_amount = offer_content["amount"]
+						if(offer_amount)
+							offer_message += "[TS.name] ([round(offer_price / offer_amount, 1)][CREDITS] each, [offer_amount] requested), "
+						else
+							offer_message += "[TS.name] (offer fulfilled, awaiting new contract), "
+
+			if(has_offers)
+				offer_message = copytext(offer_message, 1, LAZYLEN(offer_message) - 1)
+				message += SPAN_NOTICE(offer_message)
+
+			if(surplus_tag)
+				message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
 
 	return ..(user, distance, "", message)
 
@@ -531,6 +565,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		//if(usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 		usr.client.view = viewsize
+		usr.client.apply_clickcatcher()
 		zoom = 1
 
 		var/tilesize = 32
@@ -556,6 +591,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		H.using_scope = src
 	else
 		usr.client.view = world.view
+		usr.client.apply_clickcatcher()
 		//if(!usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()
 		zoom = 0
@@ -652,14 +688,16 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/refresh_upgrades()
 	damtype = initial(damtype)
 	force = initial(force)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
-	prefixes = list()
+	extended_reach = initial(extended_reach)
+	no_swing = initial(no_swing)
+	LAZYNULL(name_prefixes)
 
 	extra_bulk = initial(extra_bulk)
 	flags = initial(flags)
@@ -667,12 +705,24 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	//Now lets have each upgrade reapply its modifications
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
-	for (var/prefix in prefixes)
+	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
 	SSnano.update_uis(src)
 
 	if(alt_mode_active)
 		alt_mode_activeate_two()
+
+	if(isliving(loc) && extended_reach)
+		var/mob/living/location_of_item = loc
+		if(location_of_item.stats.getPerk(PERK_NATURAL_STYLE))
+			extended_reach += 1
+
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
 
 	return
 
@@ -700,7 +750,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/alt_mode_activeate_two()
 	damtype = alt_mode_damagetype
 	force = force *= alt_mode_lossrate
-	armor_penetration = armor_penetration *= alt_mode_lossrate
-	attack_verb = alt_mode_verbs
+	armor_divisor= armor_divisor *= alt_mode_lossrate
+	attack_verb = LAZYCOPY(alt_mode_verbs)
 	sharp = alt_mode_sharp
 	flags |= NOBLOODY

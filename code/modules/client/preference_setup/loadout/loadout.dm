@@ -60,15 +60,25 @@ var/list/gear_datums = list()
 	var/mob/preference_mob = preference_mob()
 	for(var/gear_name in gear_datums)
 		var/datum/gear/G = gear_datums[gear_name]
-		var/okay = 1
+		var/okay = TRUE
 		if(G.whitelisted && preference_mob)
-			okay = 0
+			okay = FALSE
 			// TODO: enable after baymed
 			/*for(var/species in G.whitelisted)
 				if(is_species_whitelisted(preference_mob, species))
 					okay = 1
 					break
 					*/
+		// This has to return TRUE if there is no preference_mob or client
+		// because they don't exist when we're sanitizing the gear during pref load
+		// so it'll make it impossible to save the slot
+		if(preference_mob && preference_mob.client)
+			if(G.ckey_whitelist)
+				if(!islist(G.ckey_whitelist))
+					WARNING("[G.type] has a ckey_whitelist that is not a list!")
+					okay = FALSE
+				else if(!(preference_mob.ckey in G.ckey_whitelist))
+					okay = FALSE
 		if(!okay)
 			continue
 		if(max_cost && G.cost > max_cost)
@@ -309,6 +319,8 @@ var/list/gear_datums = list()
 	var/flags              //Special tweaks in new
 	var/category
 	var/list/gear_tweaks = list() //List of datums which will alter the item after it has been spawned.
+	// Player locking
+	var/list/ckey_whitelist = null
 
 /datum/gear/New()
 	if(FLAGS_EQUALS(flags, GEAR_HAS_TYPE_SELECTION|GEAR_HAS_SUBTYPE_SELECTION))

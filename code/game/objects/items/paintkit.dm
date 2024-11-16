@@ -189,25 +189,25 @@
 /obj/item/device/kit/paint/ripley/clark
 	name = "\"Clark\" APLU customization kit"
 	new_name = "\"Clark\" APLU"
-	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence."
+	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearance."
 	new_icon = "clarke"
 
 /obj/item/device/kit/paint/ripley/clark_orange
 	name = "\"Clarkstruction\" APLU customization kit"
 	new_name = "\"Clarkstruction\" APLU"
-	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence. This one has an orange construction paint job."
+	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearance. This one has an orange construction paint job."
 	new_icon = "orangey"
 
 /obj/item/device/kit/paint/ripley/clark_veteran
 	name = "\"Veteran\" APLU customization kit"
 	new_name = "\"Veteran\" APLU"
-	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence. A fake metal spider head and aged paint job gives this one the look of a veteran spider crusher."
+	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearance. A fake metal spider head and aged paint job gives this one the look of a veteran spider crusher."
 	new_icon = "veteranclarke"
 
 /obj/item/device/kit/paint/ripley/clark_spider
 	name = "\"Spider\" APLU customization kit"
 	new_name = "\"Spider\" APLU"
-	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence. Someones idea of a good joke, but the metal spider head barely resembles a real giant spider."
+	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearance. Someones idea of a good joke, but the metal spider head barely resembles a real giant spider."
 	new_icon = "spiderclarke"
 
 //Ivan kits.
@@ -216,6 +216,13 @@
 	new_name = "Ivan \"Rust\""
 	new_desc = "An old Ivan exosuit, rusted after spending Absolute-knows how long in a pile of trash."
 	new_icon = "ivan-rust"
+	allowed_types = list("ivan")
+
+/obj/item/device/kit/paint/utility_ivan
+	name = "\"Utility\" Ivan customization kit"
+	new_name = "APLU \"Ivan\" Utility Vehicle"
+	new_desc = "The Ivan, while worse in almost every way when compared to the much more used Ripley, has at least the advantage of being simple and cheap to make. This one seems to be painted in high-visibility paint."
+	new_icon = "ivan-utility"
 	allowed_types = list("ivan")
 
 //Odysseus kits.

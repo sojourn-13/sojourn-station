@@ -23,7 +23,7 @@
 	. = ..()
 	AddRadSource(src, 2, 4) // Values taken from the process proc below
 	set_light(1.5 ,1, "#00FF7F")
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 120 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 120 SECONDS)
 
 /obj/effect/decal/cleanable/greenglow/Process()
 	. = ..()
@@ -199,7 +199,6 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "vomit_1"
 	random_icon_states = list("vomit_1", "vomit_2", "vomit_3", "vomit_4")
-	var/list/viruses = list()
 	sanity_damage = 0.5
 
 	Destroy()

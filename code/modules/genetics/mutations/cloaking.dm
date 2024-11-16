@@ -44,12 +44,12 @@
 
 
 /datum/genetics/mutation/greater_cloaking/onMobImplant()
-	container.holder.verbs += /mob/living/proc/mutation_greater_cloaking
+	add_verb(container.holder, /mob/living/proc/mutation_greater_cloaking)
 	last_used = world.time - activate_cooldown // Use this instantly the first time
 	initializeProcessing()
 
 /datum/genetics/mutation/greater_cloaking/onMobRemove()
-	container.holder.verbs -= /mob/living/proc/mutation_greater_cloaking
+	remove_verb(container.holder, /mob/living/proc/mutation_greater_cloaking)
 	haltProcessing()
 	container.holder.invisibility = INVISIBILITY_NONE
 	container.holder.alpha = 255
@@ -91,7 +91,7 @@
 	//Get the gas mutation if it exists (delete the verb if it doesn't)
 	var/datum/genetics/mutation/greater_cloaking/cloak_mutation = src.unnatural_mutations.getMutation("MUTATION_GREATER_CLOAKING", TRUE)
 	if(!cloak_mutation)
-		src.verbs -= /mob/living/proc/mutation_greater_cloaking
+		remove_verb(src, /mob/living/proc/mutation_greater_cloaking)
 		return
 	
 	if(world.time <= cloak_mutation.last_used + cloak_mutation.activate_cooldown)

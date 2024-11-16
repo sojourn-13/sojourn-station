@@ -55,7 +55,7 @@
 	if(!recoil)
 		deltimer(recoil_reduction_timer)
 	else
-		recoil_reduction_timer = addtimer(CALLBACK(src, .proc/calc_recoil), 0.1 SECONDS, TIMER_STOPPABLE)
+		recoil_reduction_timer = addtimer(CALLBACK(src, PROC_REF(calc_recoil)), 0.1 SECONDS, TIMER_STOPPABLE)
 
 /mob/living/proc/update_cursor(obj/item/gun/G)
 	if(get_preference_value(/datum/client_preference/gun_cursor) != GLOB.PREF_YES || !(istype(get_active_hand(), /obj/item/gun) || recoil > 0))

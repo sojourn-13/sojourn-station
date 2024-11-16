@@ -274,7 +274,7 @@
 		//create report
 		var/obj/item/paper/geo_info/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
-		P.copy_overlays(list("paper_stamped"), TRUE)
+		P.add_overlay(list("paper_stamped"), TRUE)
 
 		//work out data
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"
@@ -316,6 +316,16 @@
 				anom_found = 1
 				data += " - Hyperspectral imaging reveals exotic energy wavelength detected with ID: [G.artifact_id]<br>"
 				data += " - Fourier transform analysis on anomalous energy absorption indicates energy source located inside emission radius of [G.artifact_distance]m<br>"
+
+			if(G.relic_method != null)
+				switch(G.relic_method)
+					if(0)
+						data += " - Packed Sand Around Geo: Use Welder to extract Geo<br>"
+					if(1)
+						data += " - Light Cobble Around Geo: Dig cobble to extract Geo<br>"
+					if(2)
+						data += " - Hard Rocks Around Geo: Carefully Excavate to extract Geo<br>"
+
 
 		if(!anom_found)
 			data += " - No anomalous data<br>"

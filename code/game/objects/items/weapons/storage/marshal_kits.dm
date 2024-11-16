@@ -92,17 +92,32 @@
 		new /obj/item/ammo_magazine/rifle_75/rubber(src)
 		new /obj/item/ammo_magazine/rifle_75(src)
 		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_casing/grenade(src)	//One flash, one baton shell for actual use on the copperhead.
+		new /obj/item/ammo_casing/grenade/flash(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 //Ranger kits
 /obj/item/storage/box/m_kit/custer
-	name = "Custer Kit"
+	name = "Custer lever action kit"
 	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/lever/custer(src)
-		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small(src)
-		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src) //Still a full packet this way
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/m_kit/viper
+	name = "Viper marksman rifle kit"
+	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.62 with a recoil compensating stock. Perfect for marksmen."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/mamba/viper(src)
+		new /obj/item/ammo_magazine/rifle_75/rubber(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/specop
 	name = "Spec-Op Caseless SMG Kit"
@@ -113,6 +128,7 @@
 		new /obj/item/ammo_magazine/smg_10x24(src)
 		new /obj/item/ammo_magazine/smg_10x24(src)
 		new /obj/item/ammo_magazine/smg_10x24(src)
+		new /obj/item/storage/pouch/ammo(src) //MOs get this too
 
 /obj/item/storage/box/m_kit/peacekeeper
 	name = "Peacekeeper ESG Kit"
@@ -121,6 +137,7 @@
 	populate_contents()
 		new /obj/item/gun/energy/peacekeeper(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/storage/pouch/tubular(src) //MOs get this too
 
 // Secondary kits
 /obj/item/storage/box/m_kit/taser
@@ -144,6 +161,18 @@
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
+/obj/item/storage/box/m_kit/mistral
+	name = "Mistral Secondary Kit" //WO gets a mateba and with how rest of the weapons are set up, makes sense
+	desc = "The standard Marshal box kit containing a Mistral revolver. A 10mm Magnum revolver used primarily by old timers due to it's reliability and meaty punch.\
+	'Do I Feel Lucky?' Well, Do Ya... PUNK?"
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/mistral(src) //BS has 2 revolvers meanwhile cops get none ? (Outside of rangers)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
+
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
 	desc = "The standard Marshal box kit containing a Judicary 9mm pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
@@ -158,7 +187,7 @@
 
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
-	name = "Deckards Secondary Kit"
+	name = "Deckard Secondary Kit"
 	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six 12mm rounds."
 
 	populate_contents()
@@ -185,7 +214,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)
-		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+		new /obj/item/ammo_magazine/speed_loader_rifle_75(src) //Still a full box
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Warrant Officer secondaries (from voucher)

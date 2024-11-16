@@ -41,17 +41,17 @@
 	I.weapon_upgrades = list(
 		UPGRADE_BULK = 2,
 		GUN_UPGRADE_STEPDELAY_MULT = 2,
-		GUN_UPGRADE_DAMAGE_MULT = 0.5,
+		GUN_UPGRADE_DAMAGE_MULT = 0.3,
 		GUN_UPGRADE_PEN_MULT = 0.5,
 		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
-		GUN_UPGRADE_OFFSET = 21,
-		GUN_UPGRADE_RECOIL = 2.5,
+		GUN_UPGRADE_OFFSET = 25,
+		GUN_UPGRADE_RECOIL = 5,
+		GUN_UPGRADE_DAMAGE_HALLOSS = 20,
 		GUN_UPGRADE_PAIN_MULT = 2
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.prefix = "LTL"
-
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged
@@ -103,7 +103,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PEN_MULT = 1.1,
 		GUN_UPGRADE_PIERC_MULT = 1, // Adds 1 to the gun's penetrating value
 		GUN_UPGRADE_STEPDELAY_MULT = 0.8,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
@@ -124,7 +124,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.75,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_OFFSET = 5,
 		GUN_UPGRADE_RECOIL = 1.3,
@@ -148,7 +148,7 @@
 		GUN_UPGRADE_HONK = TRUE,
 		GUN_UPGRADE_RECOIL = 1.2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
-		GUN_UPGRADE_PEN_MULT = 0.8,
+		GUN_UPGRADE_PEN_MULT = 0.9,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MUZZLEFLASH = 1.2,
@@ -318,7 +318,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
-		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
+		GUN_UPGRADE_PEN_MULT = 1.1, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
 		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
@@ -343,7 +343,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
-		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
+		GUN_UPGRADE_PEN_MULT = 1.5, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
 		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
 		GUN_UPGRADE_RECOIL = 0.75, //25% less recoil (dosnt help as much without stacking it with other mods)
@@ -474,7 +474,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_DAMAGE_MULT = 2,
+	GUN_UPGRADE_DAMAGE_BASE = 1,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -492,7 +492,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_MULT = 0.90,
+	GUN_UPGRADE_DAMAGE_MULT = 0.9,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.25)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -646,7 +646,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_BRUTE = 5,
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PEN_BASE = 0.2,
+		GUN_UPGRADE_PEN_MULT = 1.1,
 		GUN_UPGRADE_PIERC_MULT = 1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_RECOIL = 1.2,
@@ -795,120 +796,3 @@
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
 	I.prefix = "bipodal"
-
-//Trash mods, for putting on old guns
-
-/obj/item/gun_upgrade/trigger/faulty
-	name = "Faulty Trigger"
-	desc = "Weirdly sticky, and none of your fingers seem to fit to it comfortably. This causes more recoil and increases delay between shots as you try to compensate for it."
-	icon_state = "Cop_Block"
-	price_tag = 0
-
-/obj/item/gun_upgrade/trigger/faulty/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = rand(12,30)/10,
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18)/10
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_TRIGGER
-	I.prefix = "feather trigger"
-
-/obj/item/gun_upgrade/barrel/faulty
-	name = "Warped Barrel"
-	desc = "Extreme heat has warped this barrel off-target. This decreases the impact force of bullets fired through it and makes it more difficult to correctly aim the weapon it's attached to."
-	icon_state = "Forged_barrel"
-	price_tag = 0
-
-/obj/item/gun_upgrade/barrel/faulty/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_OFFSET = rand(5,15),
-		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
-		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_BARREL
-	I.prefix = "fluted barrel" // In line with forged barrel
-
-/obj/item/gun_upgrade/muzzle/faulty
-	name = "Failed Makeshift Silencer"
-	desc = "Inspired by cheesy action movies, somebody has left trash on the end of this weapon. This causes the attached weapon to suffer from weaker armor penetration."
-	icon_state = "silencer"
-	price_tag = 0
-
-/obj/item/gun_upgrade/muzzle/faulty/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
-		GUN_UPGRADE_STEPDELAY_MULT = rand(12,18)/10,
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_MUZZLE
-	I.prefix = "silenced"
-
-/obj/item/gun_upgrade/mechanism/faulty
-	name = "Unknown Clockwork Mechanism"
-	desc = "It's really not clear what this modification actually does. It appears to effect the attached weapon's recoil, but if it actually helps or hinders the weapon is unclear."
-	icon_state = "Clockblock"
-	price_tag = 0
-
-/obj/item/gun_upgrade/mechanism/faulty/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = rand(5, 50)/10,
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "ticking"
-
-/obj/item/gun_upgrade/scope/faulty
-	name = "Misaligned sights"
-	desc = "Some bad knocks have changed the angling on the sights of this weapon. This causes the attached weapon to suffer from decreased accuracy."
-	icon_state = "Watchman"
-	price_tag = 0
-
-/obj/item/gun_upgrade/scope/faulty/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_OFFSET = rand(3,6),
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_SCOPE
-	I.prefix = "scoped"
-
-/obj/item/gun_upgrade/mechanism/faulty_trapped
-	name = "Jammed loader"
-	desc = "The mechanism that loads bullets into the chamber has jammed, one would be lucky the gun didn't explode if this was shot."
-	icon_state = "Reverse_loader"
-
-/obj/item/gun_upgrade/mechanism/faulty_trapped/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_RIGGED = TRUE
-	)
-	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10, 14)/10
-	I.removal_difficulty *= rand(5, 15)/10
-	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "trigger feathered"
-
-#define TRASH_GUNMODS list(/obj/item/gun_upgrade/trigger/faulty, /obj/item/gun_upgrade/barrel/faulty, \
-		/obj/item/gun_upgrade/muzzle/faulty, /obj/item/gun_upgrade/mechanism/faulty, \
-		/obj/item/gun_upgrade/scope/faulty, /obj/item/gun_upgrade/mechanism/faulty_trapped)

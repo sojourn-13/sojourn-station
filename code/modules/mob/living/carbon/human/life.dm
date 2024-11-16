@@ -321,13 +321,6 @@
 		return
 	..()
 
-/mob/living/carbon/human/handle_post_breath(datum/gas_mixture/breath)
-	..()
-	//spread some viruses while we are at it
-	if(breath && virus2.len > 0 && prob(10))
-		for(var/mob/living/carbon/M in view(1,src))
-			src.spread_disease_to(M)
-
 
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=BREATH_VOLUME)
 	if(internal)
@@ -627,16 +620,14 @@
 		fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 		if(status_flags & GODMODE)	return 1	//godmode
 		var/burn_dam = 0
-		switch(bodytemperature)
-			if(species.heat_level_1 to species.heat_level_2)
-				burn_dam = HEAT_DAMAGE_LEVEL_1
-				frost -= HEAT_DAMAGE_LEVEL_1
-			if(species.heat_level_2 to species.heat_level_3)
-				burn_dam = HEAT_DAMAGE_LEVEL_2
-				frost -= HEAT_DAMAGE_LEVEL_2
-			if(species.heat_level_3 to INFINITY)
-				burn_dam = HEAT_DAMAGE_LEVEL_3
-				frost -= HEAT_DAMAGE_LEVEL_3
+		// heat_level_3 is the highest number and HEAT_GAS_DAMAGE_LEVEL_3 implies the highest damage
+		if(bodytemperature > species.heat_level_3)
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_3
+		else if(bodytemperature > species.heat_level_2)
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_2
+		else
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_1
+
 		take_overall_damage(burn=burn_dam, used_weapon = "High Body Temperature")
 		fire_alert = max(fire_alert, FIRE_ALERT_HOT)
 
@@ -645,26 +636,15 @@
 		if(status_flags & GODMODE)	return 1	//godmode
 
 		if(!istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))
-			switch(bodytemperature)
-				if(-INFINITY to species.cold_level_3)
-					frost += COLD_DAMAGE_LEVEL_1
-				if(species.cold_level_3 to species.cold_level_2)
-					frost += COLD_DAMAGE_LEVEL_2
-				if(species.cold_level_2 to species.cold_level_1)
-					frost += COLD_DAMAGE_LEVEL_3
-			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
-		else
 			var/burn_dam = 0
-			switch(bodytemperature)
-				if(species.cold_level_1 to species.cold_level_2)
-					burn_dam = COLD_DAMAGE_LEVEL_1
-					frost += COLD_DAMAGE_LEVEL_1
-				if(species.cold_level_2 to species.cold_level_3)
-					burn_dam = COLD_DAMAGE_LEVEL_2
-					frost += COLD_DAMAGE_LEVEL_2
-				if(species.cold_level_3 to -(INFINITY))
-					burn_dam = COLD_DAMAGE_LEVEL_3
-					frost += COLD_DAMAGE_LEVEL_3
+			// cold_level_1 is the highest number and COLD_GAS_DAMAGE_LEVEL_1 implies the least severe damage
+			if(bodytemperature < species.cold_level_3)
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_3
+			else if(bodytemperature < species.cold_level_2)
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_2
+			else
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_1
+
 			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
 			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 
@@ -823,23 +803,17 @@
 		var/total_plasmaloss = 0
 		for(var/obj/item/I in src)
 			if(I.contaminated)
-				total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
+				if(isarmor(I) && I.is_worn())
+					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
+				else
+					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * min(1,(100 - getarmor(null,ARMOR_BIO)))
 		if(!(status_flags & GODMODE) && prob(10))
 			bloodstr.add_reagent("plasma", total_plasmaloss)
 
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 
-	if(stats.getPerk(PERK_NANITE_REGEN)) // Do they have the nanite regen perk?
-		var/datum/perk/nanite_regen/P = stats.getPerk(PERK_NANITE_REGEN) // Add a reference to the perk for us to use.
-		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
-			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
-
-	if(stats.getPerk(PERK_SLIMEBODY))// Very lazy but whatever. To Do - make both of these into one thing and maybe make it a bit more modular.
-		var/datum/perk/racial/slime_metabolism/S = stats.getPerk(PERK_SLIMEBODY)
-		if(S && S.regen_rate  && nutrition > 300) //We lose regen when we are below half max nutrition.
-			heal_overall_damage(S.regen_rate, S.regen_rate, S.regen_rate)
-
+	//TODO, make a light damage component or something to handle this instead
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
 		if(isturf(loc))
@@ -915,19 +889,20 @@
 			stat = UNCONSCIOUS
 			adjustHalLoss(-3)
 
-		if(paralysis)
-			AdjustParalysis(-1)
+			if(paralysis)
+				AdjustParalysis(-1)
 
-		else if(sleeping)
-			speech_problem_flag = 1
-			handle_dreams()
-			if (mind)
-				//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
-				if(client || sleeping > 3)
-					AdjustSleeping(-1)
-			if( prob(2) && health)
-				spawn(0)
-					emote("snore")
+			if(sleeping)
+				speech_problem_flag = 1
+				handle_dreams()
+				if (mind)
+					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
+					if(client || sleeping > 3)
+						AdjustSleeping(-1)
+						sanity.changeLevel(5)
+				if(prob(2) && health)
+					spawn(0)
+						emote("snore")
 		//CONSCIOUS
 		else
 			stat = CONSCIOUS
@@ -1049,6 +1024,7 @@
 		if(stat == DEAD)
 			holder.icon_state = "hudhealth-100" 	// X_X
 		else
+			holder.cut_overlays()
 			var/organ_health
 			var/organ_damage
 			var/limb_health
@@ -1059,6 +1035,22 @@
 				organ_damage += E.severity_internal_wounds
 				limb_health += E.max_damage
 				limb_damage += max(E.brute_dam, E.burn_dam)
+				if(E.status & ORGAN_BROKEN)
+					holder.add_overlay("hud_broken_bone")
+				if(E.status & ORGAN_BLEEDING)
+					holder.add_overlay("hud_bleeding")
+				if(E.status & ORGAN_INFECTED)
+					holder.add_overlay("hud_infection")
+				if(E.status & ORGAN_WOUNDED)
+					holder.add_overlay("hud_generic_wound")
+
+
+
+			if(vessel)
+				var/blood_volume = vessel.get_reagent_amount("blood")
+				var/blood_percent =  round((blood_volume / species.blood_volume)*100)
+				if(blood_percent * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+					holder.add_overlay("hud_low_blood")
 
 			var/crit_health = (health / maxHealth) * 100
 			var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100
@@ -1078,19 +1070,11 @@
 		hud_list[LIFE_HUD] = holder
 
 	if (BITTEST(hud_updateflag, STATUS_HUD))
-		var/foundVirus = 0
-		for (var/ID in virus2)
-			if (ID in virusDB)
-				foundVirus = 1
-				break
-
 		var/image/holder = hud_list[STATUS_HUD]
 		if(stat == DEAD)
 			holder.icon_state = "huddead"
 		else if(status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
-		else if(foundVirus)
-			holder.icon_state = "hudill"
 		else if(has_brain_worms())
 			var/mob/living/simple_animal/borer/B = has_brain_worms()
 			if(B.controlling)
@@ -1107,8 +1091,6 @@
 			holder2.icon_state = "hudxeno"
 		else if(has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
-		else if(virus2.len)
-			holder2.icon_state = "hudill"
 		else
 			holder2.icon_state = "hudhealthy"
 
@@ -1188,7 +1170,7 @@
 	return slurring
 
 /mob/living/carbon/human/handle_stunned()
-	if(species.flags & NO_PAIN)
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		stunned = 0
 		return 0
 	if(..())

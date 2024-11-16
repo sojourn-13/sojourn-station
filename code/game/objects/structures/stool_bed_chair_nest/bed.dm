@@ -271,7 +271,7 @@
 	STOP_PROCESSING(SSobj,src)
 
 /obj/structure/bed/roller/update_icon()
-	overlays.Cut() // Necessary for IV drip overlays
+	cut_overlays() // Necessary for IV drip overlays
 	if(density)
 		icon_state = "up"
 	else
@@ -281,12 +281,12 @@
 		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25) // Rounding down to prevent invisibility at odd percentages.
 		var/image/filling = image(icon, "iv_filling[percentage]")
 		filling.color = beaker.reagents.get_color()
-		iv.overlays += filling
+		iv.add_overlay(filling)
 		if(percentage < 25)
-			iv.overlays += image(icon, "light_low")
+			iv.add_overlay(image(icon, "light_low"))
 		if(density)
 			iv.pixel_y = 6
-		overlays += iv
+		add_overlay(iv)
 
 /obj/structure/bed/roller/attackby(obj/item/I as obj, mob/user as mob)
 	if(istool(I) || istype(I, /obj/item/stack) || I.has_quality(QUALITY_WIRE_CUTTING) || istype(I, /obj/item/bedsheet)) // Rework into Eris tool qualities, preventing padding, bedsheeting and accidentally destroying it. - Seb
@@ -369,7 +369,7 @@
 	item_form_type = /obj/item/roller/compact	//The folded-up object path.
 
 /obj/structure/bed/roller/compact/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(density)
 		icon_state = "adv_up"
 	else
@@ -379,12 +379,12 @@
 		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25)
 		var/image/filling = image(icon, "iv_filling[percentage]")
 		filling.color = beaker.reagents.get_color()
-		iv.overlays += filling
+		iv.add_overlay(filling)
 		if(percentage < 25)
-			iv.overlays += image(icon, "light_low")
+			iv.add_overlay(image(icon, "light_low"))
 		if(density)
 			iv.pixel_y = 6
-		overlays += iv
+		add_overlay(iv)
 
 /obj/structure/bed/roller/compact/post_buckle_mob(mob/living/M as mob)
 	. = ..()

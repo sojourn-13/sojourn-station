@@ -14,7 +14,7 @@ mob/var/next_pain_time = 0
 mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0)
 	if(stat >= UNCONSCIOUS)
 		return
-	if(species && (species.flags & NO_PAIN))
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		return
 	if(analgesic > 40)
 		return
@@ -57,7 +57,7 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 mob/living/carbon/human/proc/custom_pain(message, flash_strength)
 	if(stat >= UNCONSCIOUS)
 		return
-	if(species.flags & NO_PAIN)
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		return
 
 	if(analgesic >= 75)
@@ -80,7 +80,7 @@ mob/living/carbon/human/proc/custom_pain(message, flash_strength)
 mob/living/carbon/human/proc/handle_pain()
 	// not when sleeping
 
-	if(species.flags & NO_PAIN) return
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) return
 
 	if(stat >= DEAD)
 		return
@@ -92,7 +92,7 @@ mob/living/carbon/human/proc/handle_pain()
 		if(E.status&ORGAN_DEAD || BP_IS_ROBOTIC(E))
 			continue
 		var/dam = E.get_damage()
-		dam *= (get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100)
+		dam *= (min(get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100, 1.5))
 		// make the choice of the organ depend on damage,
 		// but also sometimes use one of the less damaged ones
 		if(dam > maxdam && (maxdam == 0 || prob(70)) )

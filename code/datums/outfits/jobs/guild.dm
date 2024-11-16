@@ -3,7 +3,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/cargo
 
 /decl/hierarchy/outfit/job/cargo/merchant
-	name = OUTFIT_JOB_NAME("Lonestar - CEO")
+	name = OUTFIT_JOB_NAME("Lonestar - SOM")
 	uniform = /obj/item/clothing/under/rank/cargoclerk
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses

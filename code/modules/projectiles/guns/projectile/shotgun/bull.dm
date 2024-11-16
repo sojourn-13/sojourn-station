@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/shotgun/bull
 	name = "\"Bull\" shotgun"
-	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering, this gun is often regarded as one of the worst firearms ever produced. \
-			Due to shorter than usual barrels, damages are somewhat lower and recoil suffers as a result. The ability to fire both barrels at once seems more of a gimmick than a feature. \
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. An engineering nightmare, this gun is often regarded as one of the worst firearms ever produced. \
+			Due to shorter than usual barrels, damage is somewhat lower and recoil is increased. The ability to fire both barrels at once seems more of a gimmick than a feature. \
 			A number of scratches marr the finish by the ejection ports."
 	icon = 'icons/obj/guns/projectile/PeaceWalker.dmi'
 	icon_state = "PeaceWalker"
@@ -38,7 +38,7 @@
 
 /obj/item/part/gun/frame/bull
 	name = "Bull frame"
-	desc = "A Bull shotgun frame. Double-barrel and pump action, through a miracle of engineering."
+	desc = "A Bull shotgun frame. Double-barrel and pump action, a marvel of engineering."
 	icon_state = "frame_bull"
 	result = /obj/item/gun/projectile/shotgun/bull
 	resultvars = list(/obj/item/gun/projectile/shotgun/bull)
@@ -48,8 +48,8 @@
 
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"
-	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \
-			 a proper stock affixed and even the poorly machined lower given a bit of TLC. A work of true artifice."
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. An engineering nightmare turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \
+			 a proper stock affixed and even the poorly machined bits replaced and given a bit of TLC. A work of true artificer skill."
 	icon = 'icons/obj/guns/projectile/bigpeacewalker.dmi'
 	icon_state = "bigpeacewalker"
 	item_state = "PW"

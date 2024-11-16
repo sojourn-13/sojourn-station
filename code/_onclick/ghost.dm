@@ -1,10 +1,14 @@
-/client/var/inquisitive_ghost = 1
+/client/var/inquisitive_ghost = FALSE
 /mob/observer/ghost/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"
 	set desc = "Sets whether your ghost examines everything on click by default"
 	set category = "Ghost"
-	if(!client) return
+
+	if(!client)
+		return
+
 	client.inquisitive_ghost = !client.inquisitive_ghost
+
 	if(client.inquisitive_ghost)
 		to_chat(src, SPAN_NOTICE("You will now examine everything you click on."))
 	else
@@ -28,25 +32,32 @@
 		forceMove(get_turf(A))
 
 /mob/observer/ghost/ClickOn(var/atom/A, var/params)
-	var/list/pa = params2list(params)
-	if(pa.Find("shift") && pa.Find("ctrl") && check_rights(R_ADMIN)) // Admin click shortcuts
+	var/list/modifiers = params2list(params)
+	if(modifiers["shift"] && modifiers["ctrl"] && check_rights(R_ADMIN)) // Admin click shortcuts
 		client.debug_variables(A)
 		return
+	
 
 	if(client.buildmode)
 		build_click(src, client.buildmode, params, A)
 		return
 	if(!can_click()) return
 	setClickCooldown(4)
+	if(modifiers["shift"])
+		A.GhostShiftClick(src)
+		return
 	// You are responsible for checking config.ghost_interaction when you override this function
 	// Not all of them require checking, see below
 	A.attack_ghost(src)
 
+/atom/proc/GhostShiftClick(mob/observer/ghost/user)
+	if(user.client)
+		user.examinate(src)
+	return FALSE
+
 // Oh by the way this didn't work with old click code which is why clicking shit didn't spam you
 /atom/proc/attack_ghost(mob/observer/ghost/user as mob)
-	if(user.client)
-		if(check_rights_for(user.client, R_ADMIN)) // Are they allowed?
-			attack_ai(user)
+	if(user?.client?.inquisitive_ghost)
 		user.examinate(src)
 	return FALSE
 

@@ -317,7 +317,7 @@
 	desc = "A black cloak with dark-blue lining."
 
 /obj/item/clothing/accessory/job/cape/gm
-	name = "executive officer's cloak"
+	name = "surface manager's cloak"
 	icon_state = "gmcloak"
 	desc = "A brown cloak with yellow lining."
 
@@ -372,8 +372,8 @@
 	usual flare of the church."
 	icon_state = "half_nt"
 
-/obj/item/clothing/accessory/halfcape/ceo
-	name = "CEOs holo-mantle"
+/obj/item/clothing/accessory/halfcape/som
+	name = "SOMs holo-mantle"
 	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
 	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"
@@ -426,6 +426,11 @@
 	icon_state = "heavychurchcloakred"
 	desc = "A thick, luxurious cloak with red trim."
 
+/obj/item/clothing/accessory/job/cape/church/white
+	name = "white Absolutists greatcloak"
+	icon_state = "heavychurchcloakwhite"
+	desc = "A thick, luxurious white cloak with golden trim."
+
 /obj/item/clothing/accessory/job/cape/church/small
 	name = "black Absolutist cloak"
 	icon_state = "churchcloakblack"
@@ -465,6 +470,11 @@
 	name = "camo Blackshield cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
+
+/obj/item/clothing/accessory/job/cape/blackshield/whitecamo
+	name = "white camo Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in an urban tactical camo pattern."
+	icon_state = "blackshieldcloak_whitecamo"
 
 /obj/item/clothing/accessory/cape/sergeant_cape
 	name = "Sergeants mantle"
@@ -791,6 +801,12 @@
 	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
 	icon_state = "denton"
 	item_state = "denton"
+
+/obj/item/clothing/accessory/duster/marshal
+	name = "marshal raincloak"
+	desc = "For those officers who consider themselves to be some kind of a superstar."
+	icon_state = "marshal_patrol"
+	item_state = "marshal_patrol"
 
 /*BS Coats*/
 
@@ -1278,7 +1294,7 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
+	desc = "This is an token given by the Church of the Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
 Anyone wearing it can open public church doors. You should do your best to keep it out of the hands of the non-faithful, lest it be abused."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"
