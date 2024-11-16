@@ -249,6 +249,7 @@
 			continue
 		if(armor_list)
 			piece.armor = armor
+		piece.name = "[suit_type] [initial(piece.name)]"
 
 		if(canremove)
 			piece.item_flags &= ~(STOPPRESSUREDAMAGE|AIRTIGHT)
