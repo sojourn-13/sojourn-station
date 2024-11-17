@@ -205,7 +205,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		return
 
 	if(embryo)
-		addLog("Error, Please vacate the dead embryo from the chamber~!")
+		addLog("Error, Please vacate the nonviable embryo from the chamber~!")
 		return
 
 	container = find_container()
