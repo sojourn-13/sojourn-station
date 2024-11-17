@@ -9598,10 +9598,9 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bSK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/small/rock3,
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/outside/inside_colony)
+/obj/structure/plasticflaps,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/absolutism/bioreactor)
 "bSP" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
@@ -18331,6 +18330,15 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "panic_room_blastshutters";
+	layer = 2.6;
+	name = "Panic Room Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/command/panic_room)
 "dBe" = (
@@ -26104,9 +26112,8 @@
 /area/nadezhda/crew_quarters)
 "eXt" = (
 /obj/structure/catwalk,
-/obj/machinery/door/airlock/command{
-	name = "Command Passageway";
-	req_access = list(61)
+/obj/machinery/door/airlock/maintenance_command{
+	req_access = list(19)
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/tactical_blackshield)
@@ -31702,15 +31709,14 @@
 /turf/simulated/floor/wood/wild4,
 /area/colony)
 "gcm" = (
-/obj/machinery/door/airlock/command{
-	name = "Command Passageway";
-	req_access = list(61)
-	},
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance_command{
+	req_access = list(19)
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
@@ -38286,15 +38292,6 @@
 	},
 /area/nadezhda/command/tcommsat/computer)
 "hoE" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id = "maint_hatch_telecomm";
-	layer = 2.6;
-	name = "Blast Doors";
-	opacity = 0
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -38309,11 +38306,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
+/obj/structure/catwalk,
+/obj/machinery/door/airlock/maintenance_command{
 	req_access = list(19)
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
 "hoH" = (
@@ -80985,6 +80981,15 @@
 	req_access = list(19)
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "panic_room_blastshutters";
+	layer = 2.6;
+	name = "Panic Room Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
 "pqZ" = (
@@ -89146,6 +89151,15 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial_plant/steel_stayclear,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "panic_room_blastshutters";
+	layer = 2.6;
+	name = "Panic Room Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/command/panic_room)
 "qSa" = (
@@ -90622,6 +90636,15 @@
 	},
 /obj/machinery/door/airlock/maintenance_common{
 	req_access = list(19)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "panic_room_blastshutters";
+	layer = 2.6;
+	name = "Panic Room Lockdown";
+	opacity = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
@@ -94068,6 +94091,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
+/obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/security/hut_cell1)
 "rQd" = (
@@ -95620,6 +95644,14 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
+"seb" = (
+/obj/structure/sink/kitchen{
+	name = "utility sink";
+	dir = 8;
+	pixel_x = 20
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/security/hut_cell1)
 "seg" = (
 /obj/machinery/button/remote/blast_door{
 	dir = 8;
@@ -105591,7 +105623,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/steel/orangecorner,
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/surface/section1)
 "tYt" = (
 /obj/effect/floor_decal/industrial/road/warning3,
@@ -116575,10 +116607,8 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vWS" = (
-/obj/structure/sink/kitchen{
-	name = "utility sink";
-	pixel_y = 28
-	},
+/obj/structure/toilet,
+/obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/security/hut_cell1)
 "vWY" = (
@@ -124214,9 +124244,9 @@
 /area/nadezhda/command/meeting_room)
 "xuY" = (
 /obj/structure/catwalk,
-/obj/machinery/door/airlock/command{
-	name = "Telecommunications";
-	req_access = list(61)
+/obj/machinery/door/airlock/glass_command{
+	name = "Bridge";
+	req_access = list(19)
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
@@ -200531,7 +200561,7 @@ uFd
 jZv
 sKG
 ebW
-iCw
+bSK
 gPC
 vqw
 tRJ
@@ -225523,7 +225553,7 @@ fqh
 pYW
 djy
 rQb
-fyd
+seb
 lfc
 kpX
 jaI
@@ -233654,7 +233684,7 @@ kvx
 kvx
 vXi
 svB
-bSK
+sOP
 mvt
 sOP
 rIK
