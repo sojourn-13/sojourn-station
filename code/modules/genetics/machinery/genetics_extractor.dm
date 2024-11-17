@@ -6,7 +6,7 @@
 */
 /obj/machinery/genetics/pulper
 	name = "Xenofauna Genetics Pulper"
-	desc = "A morosely clinical device that takes raw meat (or whole bodies), destroys it on a cellular level, and organizes as much genetic information as it can into sample plates. It's been partially lobotomised. Thank god."
+	desc = "A morosely clinical device that takes raw meat (or whole bodies), destroys it on a cellular level, and organizes as much genetic information as it can into sample plates. It's been partially lobotomised by a rather unnerved CRO. Thank god."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "processor"
 	var/gib_time = 40 // Time from starting until sample plates appear.
