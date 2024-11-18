@@ -937,12 +937,13 @@
 /datum/ritual/cruciform/factorial/nodrop_magnet
 	name = "Hand of Magnetism"
 	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
-	desc = "Try to make whatever you are holding become no longer droppable. Only works with Church based items. \
-	If used on an item that already cant be dropped, will become droppable.\
-	Does not work with firearms or cells." //To op to have a no drop on command gun sadly.
+	desc = "Try to make whatever you are holding no longer droppable. \
+	Only works with church-based items. \
+	If used on an item that already can't be dropped, it will become droppable. \
+	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
 	power = 15
 	cooldown = FALSE
-	success_message = "Whatever item you are holding feels impossable to let go."
+	success_message = "Whatever item that you are holding feels impossible to let go."
 
 /datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/O = user.get_active_hand()
@@ -984,14 +985,13 @@
 				break
 
 		if(O.canremove)
-			success_message = "You destory the magnetic field binding [O.name] to you."
+			success_message = "You destroy the magnetic field binding [O.name] to you."
 		else
-			success_message = "[O.name] you are holding feels impossable to let go."
+			success_message = "[O.name] that you are holding feels impossible to let go."
 
 	if(!success && O)
 		fail("[O.name] is unable to be magnetized.", user, C)
 	if(!O)
 		fail("Nothing in hand to magnetize.", user, C)
-
 
 	return success
