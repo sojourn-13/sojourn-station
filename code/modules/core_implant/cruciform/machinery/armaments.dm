@@ -214,6 +214,12 @@
 	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/purger/plus
 
+/datum/armament/item/disk/shepherd
+	name = "Disk - Shepherd"
+	cost = 40
+	min_cost = 25
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/shepherd/plus
+
 /datum/armament/item/disk/dominion
 	name = "Disk - Dominion"
 	cost = 80

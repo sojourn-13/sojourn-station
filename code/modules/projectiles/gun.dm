@@ -241,7 +241,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(serial_type && serial_shown)
 		to_chat(user, SPAN_WARNING("There is a serial number on this gun, it reads [serial_type]."))
 
-/obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
+/obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE,mag_sprite = "")
 	var/wield_state = null
 	if(wielded_item_state)
 		wield_state = wielded_item_state
@@ -249,8 +249,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		hands = back = onsuit = TRUE
 	if(hands)//Ok this is a bit hacky. But basically if the gun is weilded, we want to use the wielded icon state over the other one.
 		if(wield_state && wielded)//Because most of the time the "normal" icon state is held in one hand. This could be expanded to be less hacky in the future.
-			item_state_slots[slot_l_hand_str] = "lefthand"  + wield_state
-			item_state_slots[slot_r_hand_str] = "righthand" + wield_state
+			item_state_slots[slot_l_hand_str] = "lefthand"  + wield_state +mag_sprite
+			item_state_slots[slot_r_hand_str] = "righthand" + wield_state +mag_sprite
 		else
 			item_state_slots[slot_l_hand_str] = "lefthand"  + state
 			item_state_slots[slot_r_hand_str] = "righthand" + state
