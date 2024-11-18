@@ -933,3 +933,65 @@
 		return FALSE
 	anti_cheat = FALSE
 	return TRUE
+
+/datum/ritual/cruciform/factorial/nodrop_magnet
+	name = "Hand of Magnetism"
+	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
+	desc = "Try to make whatever you are holding become no longer droppable. Only works with Church based items. \
+	If used on an item that already cant be dropped, will become droppable.\
+	Does not work with firearms or cells." //To op to have a no drop on command gun sadly.
+	power = 15
+	cooldown = FALSE
+	success_message = "Whatever item you are holding feels impossable to let go."
+
+/datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/obj/item/O = user.get_active_hand()
+	var/success = FALSE
+	if(O)
+		var/list/can_magnet = list(/obj/item/tool/sword/nt,
+			/obj/item/tool/knife/neotritual,
+			/obj/item/shield/riot/crusader,
+			/obj/item/shield/buckler/nt,
+			/obj/item/shield/riot/nt,
+			/obj/item/tool/factorial_omni,
+			/obj/item/tool/spear/halberd,
+			/obj/item/tool/knife/dagger/nt,
+			/obj/item/tool/sword/crusader,
+			/obj/item/storage/firstaid/nt,
+			/obj/item/stack/medical/bruise_pack/advanced/nt,
+			/obj/item/stack/medical/ointment/advanced/nt)
+
+		for(var/checking_magnet in can_magnet)
+			//Ensuring these are not implanted items
+			if(istype(O,/obj/item/tool/sword/nt) || istype(O,/obj/item/tool/knife/neotritual))
+				var/not_implanted = TRUE
+				for(var/obj/item/organ/external/arm in user.organs)
+					for(var/obj/item/organ_module/active/simple/OM in arm.contents)
+						if(OM.holding == O)
+							not_implanted = FALSE
+				if(not_implanted)
+					O.canremove = !O.canremove
+					success = TRUE
+					break
+				else
+					//Prevents teleportation implants.
+					fail("[O.name] is apart of an implant, making this pointless.", user, C)
+					break
+
+			if(istype(O, checking_magnet))
+				O.canremove = !O.canremove
+				success = TRUE
+				break
+
+		if(O.canremove)
+			success_message = "You destory the magnetic field binding [O.name] to you."
+		else
+			success_message = "[O.name] you are holding feels impossable to let go."
+
+	if(!success && O)
+		fail("[O.name] is unable to be magnetized.", user, C)
+	if(!O)
+		fail("Nothing in hand to magnetize.", user, C)
+
+
+	return success
