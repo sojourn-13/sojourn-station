@@ -943,7 +943,7 @@
 	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
 	power = 15
 	cooldown = FALSE
-	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute.“
+	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute."
 
 /datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/O = user.get_active_hand()
