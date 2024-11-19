@@ -176,36 +176,6 @@
 
 	return safepick(possible_locations) //return one at random
 
-// Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
-
-/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
-	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
-	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
-	if(!breath_required) // 15 KPA Minimum
-		return FALSE
-	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
-	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
-
-/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
-	var/pressure = environment.return_pressure()
-	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
-	if(enviro_damage) // its like this to avoid extra processing further below without using goto
-		bodytemperature += (bodytemperature - environment.temperature) * (environment.total_moles / MOLES_CELLSTANDARD) * (bodytemperature < min_bodytemperature ? 1 - heat_protection : -1 + cold_protection)
-		adjustFireLoss(bodytemperature < min_bodytemperature ? 0 : 15)
-		adjustBruteLoss((pressure < min_air_pressure  || pressure > max_air_pressure) ? 0 : 6)
-		bad_environment = TRUE
-		return FALSE
-	bad_environment = FALSE
-	if (!contaminant_immunity)
-		for(var/g in environment.gas)
-			if(gas_data.flags[g] & XGM_GAS_CONTAMINANT && environment.gas[g] > gas_data.overlay_limit[g] + 1)
-				pl_effects()
-				break
-
-	if (overkill_dust && (getFireLoss() >= maxHealth*2))
-		dust()
-		return FALSE
-
 // branchless isincapacited check made for roaches.
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
@@ -585,14 +555,10 @@
 		if (!AI_inactive)
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_breath(breath)
-			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
-			if (can_burrow && bad_environment)
-				evacuate()
-			//Fire handling , not passing the whole list because thats unefficient.
+		if(!never_stimulate_air && stat != DEAD)//Dead things dont breath
+			sa_handle_breath()
+		//Fire handling , not passing the whole list because thats unefficient.
+		if(on_fire)
 			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
