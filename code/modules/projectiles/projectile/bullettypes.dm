@@ -786,12 +786,14 @@
 /obj/item/projectile/bullet/mech_autocannon //Autocannon
 	name = "gigantic round"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 60)
+	damage_types = list(BRUTE = 50)
 	armor_divisor = 5 //Tally ho
 	wounding_mult = WOUNDING_DEVESTATING //You don't want to get hit by a tank round presumably - Lamasmaster
 	penetrating = 2 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
 	affective_damage_range = 7
 	affective_ap_range = 7 //Heavy blarge caliber meaning bit less range
@@ -800,12 +802,14 @@
 /obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
 	name = "humongous round"
 	icon_state = "bullet_kurtz"
-	damage_types = list(BRUTE = 36)
+	damage_types = list(BRUTE = 30)
 	armor_divisor = 3 //This fires 2 in a row so keep that in mind / It is technically armor defeating but for sake of it being the niche kill hordes gun alongside HMG it will stay this way - Lamasmaster
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 3 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
 	affective_damage_range = 10
 	affective_ap_range = 10 //Heavy blarge caliber but not as much as regular
