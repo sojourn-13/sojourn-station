@@ -123,11 +123,12 @@
 	name = "Bobcurl"
 	icon_state = "bobcurl"
 
-/*
+/*		Needs a bit more sprite rework
+
 /datum/sprite_accessory/hair/bob_long
 	name = "Long bob"
 	icon_state = "bob_long"
-*/
+*/ 
 
 /datum/sprite_accessory/hair/bowl1
 	name = "Bowl"
@@ -229,9 +230,12 @@
 	name = "Crewcut"
 	icon_state = "crewcut"
 
+/* needs blackscaling
+
 /datum/sprite_accessory/hair/courtly
 	name = "Courtly"
 	icon_state = "courtly"
+*/
 
 /datum/sprite_accessory/hair/crono
 	name = "Chrono"
