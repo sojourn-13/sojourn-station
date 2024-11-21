@@ -473,7 +473,7 @@
 	icon_state = "vlong"
 
 /datum/sprite_accessory/hair/longeralt1
-	name = "long alternative"
+	name = "Long Alternative"
 	icon_state = "vlong_alt"
 
 /datum/sprite_accessory/hair/longeralt2
@@ -600,13 +600,13 @@
 	name = "Parted"
 	icon_state = "parted"
 
-/datum/sprite_accessory/hair/pigtails
-	name = "Pigtails"
-	icon_state = "pigtails"
-
 /datum/sprite_accessory/hair/pigtails2
 	name = "Pigtails 2"
 	icon_state = "pigtails2"
+
+/datum/sprite_accessory/hair/pigtails3
+	name = "Pigtails 3"
+	icon_state = "pigtails3"
 
 /datum/sprite_accessory/hair/pixie
 	name = "Pixie"
