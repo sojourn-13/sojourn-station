@@ -123,9 +123,11 @@
 	name = "Bobcurl"
 	icon_state = "bobcurl"
 
-//datum/sprite_accessory/hair/bob_long
+*/
+/datum/sprite_accessory/hair/bob_long
 	name = "Long bob"
 	icon_state = "bob_long"
+*/
 
 /datum/sprite_accessory/hair/bowl1
 	name = "Bowl"
