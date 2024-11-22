@@ -43,8 +43,11 @@
 
 		//log_debug("bruise_pack 2, holy_healer = [holy_healer], holy_healing = [holy_healing]")
 		if(affecting.open == 0)
-			if(affecting.is_bandaged())
+			if(affecting.is_bandaged() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been bandaged."))
+				return 1
+			if(!affecting.wounds.len)
+				to_chat(user, SPAN_WARNING("[M]'s [affecting.name] dosn't have wounds."))
 				return 1
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts treating [M]'s [affecting.name]."),
@@ -62,17 +65,13 @@
 			for (var/datum/wound/W in affecting.wounds)
 				if(W.internal)
 					continue
-				if(W.bandaged)
+				if(W.bandaged && (!always_useful && W.damage <= 0))
 					continue
 				if(used == amount)
 					break
 				if(!do_mob(user, M, W.damage/5))
 					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
 					break
-				if(W.internal)
-					continue
-				if(W.bandaged)
-					continue
 				if(used == amount)
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
@@ -277,3 +276,29 @@
 		return psionic_things
 	else
 		return FALSE
+
+
+/obj/item/stack/medical/bruise_pack/greyson
+	name = "Greyson Advanced Treatment Pack" //G(P)ATP
+	singular_name = "Greyson Advanced Treatment Pack"
+	desc = "A packet of nanites with small fibers and ethanol that patches up bruises and tissue damage. \
+	Do to GP programing these nanites packets are able to be used on already sealed or healed wounds as long as as they are able to detect damage. \
+	Works on robotic lims."
+	icon_state = "medigel_big_brute"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	origin_tech = list(TECH_BIO = 8)
+	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	preloaded_reagents = list("uncap nanites" = 4, "ethanol" = 8, "carbon" = 2, "glue" = 26) //Has a lot of stuff
+	fancy_icon = TRUE
+	amount = 5
+	max_amount = 5
+	use_timer = 60 //These are compelx things
+	always_useful = TRUE
+	extra_bulk = 2
+
+
+
+
+
+
+

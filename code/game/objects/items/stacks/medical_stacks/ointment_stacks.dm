@@ -43,8 +43,8 @@
 			if(holy_healing)
 				healed_by_faith += heal_burn
 
-		if(affecting.open == 0)
-			if(affecting.is_salved())
+		if(affecting.open == 0 || always_useful)
+			if(affecting.is_salved() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been salved."))
 				return TRUE
 			user.visible_message(
@@ -183,3 +183,21 @@
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
+
+/obj/item/stack/medical/ointment/greyson
+	name = "Greyson Advanced Burn-Treatment Pack" //G(P)ABTP
+	singular_name = "Greyson Advanced Burn-Treatment Pack"
+	desc = "A packet of nanites with silicon and ethanol that quickly patches up burns. \
+	Do to GP programing these nanites packets are able to be used on already sealed or healed wounds as long as as they are able to detect damage. \
+	Works on robotic lims."
+	icon_state = "medigel_big_brute"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	origin_tech = list(TECH_BIO = 8)
+	heal_burn = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	preloaded_reagents = list("uncap nanites" = 4, "ethanol" = 8, "silicon" = 2, "glue" = 26) //Has a lot of stuff
+	fancy_icon = TRUE
+	amount = 5
+	max_amount = 5
+	use_timer = 60 //These are compelx things
+	always_useful = TRUE
+	extra_bulk = 2
