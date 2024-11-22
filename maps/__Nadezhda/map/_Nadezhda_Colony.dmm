@@ -13213,6 +13213,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
 "cDg" = (
@@ -33826,14 +33827,6 @@
 /obj/machinery/repair_station,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
-"gut" = (
-/obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/turf/simulated/floor/beach/water/jungledeep{
-	desc = "Filthy, stinking bilge water.";
-	name = "murky water"
-	},
-/area/nadezhda/maintenance/undergroundfloor1north)
 "guA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -34521,6 +34514,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/open,
 /area/nadezhda/command/hallway)
 "gAZ" = (
@@ -44527,6 +44523,14 @@
 	temperature = 80
 	},
 /area/nadezhda/command/tcommsat/computer)
+"iuH" = (
+/obj/random/junk/low_chance,
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/nadezhda/maintenance/undergroundfloor1north)
 "iuK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -48056,11 +48060,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"jfD" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/random/junk/low_chance,
-/turf/simulated/floor/rock,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "jfJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -51983,10 +51982,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"jSo" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "jSt" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
@@ -52971,13 +52966,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/server)
-"kcC" = (
-/mob/living/carbon/human/skeleton{
-	bruteloss = 200;
-	faction = "stalker"
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "kcK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -53960,13 +53948,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
-"kmj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/command/hallway)
 "kmm" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/random/flora/jungle_tree,
@@ -54444,6 +54425,16 @@
 	icon_state = "9,4"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"kqC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	id = "bridge_c_room";
+	name = "remote shutter control";
+	pixel_y = -32
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/command/hallway)
 "kqD" = (
 /obj/machinery/light{
 	dir = 8
@@ -54599,6 +54590,11 @@
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"ksF" = (
+/obj/structure/barricade,
+/obj/machinery/door/airlock/maintenance_common,
+/turf/simulated/floor/rock,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "ksJ" = (
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
@@ -75685,18 +75681,6 @@
 "oqZ" = (
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/east)
-"ord" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/grille,
-/obj/random/junk/low_chance,
-/turf/simulated/floor/beach/water/jungledeep{
-	desc = "Filthy, stinking bilge water.";
-	name = "murky water"
-	},
-/area/nadezhda/maintenance/undergroundfloor1north)
 "ore" = (
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
@@ -79676,6 +79660,10 @@
 /obj/structure/flora/big/bush3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"pdT" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/rock,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "pdU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 1
@@ -84737,6 +84725,13 @@
 /obj/random/ammo/shotgun/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/scave)
+"qax" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/command/hallway)
 "qaz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -91253,14 +91248,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"rmU" = (
-/obj/random/junk/low_chance,
-/obj/structure/boulder,
-/turf/simulated/floor/beach/water/jungledeep{
-	desc = "Filthy, stinking bilge water.";
-	name = "murky water"
-	},
-/area/nadezhda/maintenance/undergroundfloor1north)
 "rmX" = (
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
@@ -92143,10 +92130,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/hallways)
-"rwT" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/rock,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "rwU" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/wild1,
@@ -97963,6 +97946,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/recharge_station,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "sAf" = (
@@ -107687,14 +107673,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
-"urz" = (
-/obj/structure/grille/broken,
-/obj/structure/boulder,
-/turf/simulated/floor/beach/water/jungledeep{
-	desc = "Filthy, stinking bilge water.";
-	name = "murky water"
-	},
-/area/nadezhda/maintenance/undergroundfloor1north)
 "urD" = (
 /obj/item/contraband/poster/placed/generic/walk{
 	pixel_y = -32
@@ -109592,15 +109570,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "uLG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/remote/blast_door{
-	id = "bridge_c_room";
-	name = "remote shutter control";
-	pixel_y = -32
+/obj/random/junk/low_chance,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
 	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/command/hallway)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "uLI" = (
 /obj/structure/railing{
 	dir = 4
@@ -110169,6 +110145,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/crew_quarters/arcade)
+"uQc" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/rock,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "uQf" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -121735,6 +121716,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/fancy_slates,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"wVA" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "wVB" = (
 /turf/unsimulated/mineral/transition,
 /area/nadezhda/outside/forest)
@@ -127929,6 +127914,14 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/surfaceeast)
+"yeO" = (
+/obj/structure/grille/broken,
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/nadezhda/maintenance/undergroundfloor1north)
 "yeQ" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -128312,6 +128305,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"yjQ" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/grille,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/nadezhda/maintenance/undergroundfloor1north)
 "yjR" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -146547,7 +146552,7 @@ arU
 arU
 arU
 nhz
-kcC
+xuK
 kXs
 arU
 xhA
@@ -149355,7 +149360,7 @@ gaS
 lTx
 gSV
 lTx
-jSo
+wVA
 qqQ
 rqc
 rqc
@@ -150373,7 +150378,7 @@ arU
 arU
 lTx
 xuK
-jfD
+uQc
 kXs
 lTx
 arU
@@ -150780,7 +150785,7 @@ arU
 arU
 arU
 kXs
-jfD
+uQc
 xuK
 arU
 arU
@@ -151375,7 +151380,7 @@ xuK
 rqc
 wLF
 kfm
-gut
+uLG
 ilN
 xuK
 xuK
@@ -151578,7 +151583,7 @@ xuK
 kfm
 wGg
 fgl
-ord
+yjQ
 aED
 fgl
 arU
@@ -151790,7 +151795,7 @@ kXs
 jYt
 fgl
 kSD
-jfD
+uQc
 arU
 arU
 arU
@@ -151987,7 +151992,7 @@ kfm
 xuK
 gaS
 kXs
-jfD
+uQc
 xuK
 xuK
 gaS
@@ -152186,7 +152191,7 @@ nAJ
 nAJ
 rqc
 wLF
-rwT
+pdT
 fgl
 kXs
 tDq
@@ -152202,7 +152207,7 @@ arU
 arU
 uyF
 uyF
-gaS
+ksF
 uyF
 uyF
 uyF
@@ -153198,7 +153203,7 @@ arU
 arU
 rqc
 rqc
-rwT
+pdT
 fgl
 arU
 arU
@@ -153805,11 +153810,11 @@ sfW
 qqQ
 kfm
 tde
-urz
+yeO
 wLF
 hns
 tde
-rmU
+iuH
 hbs
 arU
 hbs
@@ -189564,7 +189569,7 @@ xvE
 kpN
 bkg
 pHN
-uLG
+kqC
 vsb
 oON
 fsX
@@ -190168,7 +190173,7 @@ wCx
 skX
 uLl
 uLl
-kmj
+qax
 uLl
 pHC
 tFI
