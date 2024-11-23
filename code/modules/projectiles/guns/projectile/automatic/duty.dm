@@ -2,11 +2,11 @@
 	name = "\"Duty\" carbine"
 	desc = "The Duty is a carbine designed by Marshal and Blackshield gunsmiths \
 	to supplement the ancient pattern boltguns as a standard issue rifle of Blackshield, \
-	housing a faster rate of fire and more recoil controle over other Blackshield weapons. \
+	boasting a faster rate of fire and more recoil control over other Blackshield weapons. \
 	The carbine is modernized with a 6,5mm caliber and a light polymer body balanced with heavy steel and plasteel. \
 	A mass-produced rifle, it has a bayonet for melee engagements \
 	and it can be reloaded with a stripper clip due to the adapter guide installed on the receiver. \
-	The Duty also has a specialized role in taking down groups of low armored personal well still being solid battle rifle for a Blackshield trooper."
+	The Duty has a specialized role in taking down groups of lightly armored personnel while still being a solid battle rifle for a Blackshield trooper."
 	icon = 'icons/obj/guns/projectile/duty.dmi'
 	icon_state = "duty"
 	item_state = "duty"
