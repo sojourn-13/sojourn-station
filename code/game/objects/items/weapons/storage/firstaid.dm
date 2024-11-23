@@ -47,8 +47,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
-	new /obj/item/stack/medical/bruise_pack/soteria(src)
-	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
