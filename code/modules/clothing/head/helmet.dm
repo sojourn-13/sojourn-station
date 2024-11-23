@@ -928,8 +928,6 @@
 	var/list/options = list()
 	options["prime dark"] = "prime"
 	options["prime royal"] = "prime_alt"
-	options["prime royal claric"] = "prime_alt2"
-	options["prime royal doctor"] = "prime_alt3"
 	options["prime saint"] = "prime_saint"
 	options["prime paladin"] = "prime_paladin"
 	options["prime laurel"] = "laurel_g"

@@ -296,7 +296,7 @@
 	simple_machinery = TRUE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice", "berryjuice","grapesoda","watermelonjuice")
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice", "berryjuice","grapesoda","watermelonjuice","strawberryjuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "triplecitrus")

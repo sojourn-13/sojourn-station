@@ -13,9 +13,7 @@
 		bullet = 0,
 		bomb = 0,
 		bio = 50,
-		bomb = 0,
-		bio = 0,
-		rad = 0
+		bomb = 0
 	)
 
 /obj/item/clothing/suit/storage/toggle/labcoat/poofy
@@ -56,8 +54,6 @@
 		bullet = 0,
 		bomb = 0,
 		bio = 75,
-		bomb = 0,
-		bio = 0,
 		rad = 0
 	)
 
@@ -90,8 +86,6 @@
 		bullet = 0,
 		bomb = 0,
 		bio = 50,
-		bomb = 0,
-		bio = 0,
 		rad = 0
 	)
 

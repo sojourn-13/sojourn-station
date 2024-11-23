@@ -1276,8 +1276,9 @@
 
 /obj/screen/item_action/top_bar/tool_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
-	screen_loc = "8,1:13"
+	screen_loc = "7.95,1.4"
 	minloc = "7,2:13"
+	ErisOptimized_minloc = "16,10.3"
 	name = "Tool information"
 	icon_state = "info"
 

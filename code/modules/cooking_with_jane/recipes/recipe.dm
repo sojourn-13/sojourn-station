@@ -1514,7 +1514,7 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "water", 5),
 		list(CWJ_ADD_REAGENT, "flour", 5),
