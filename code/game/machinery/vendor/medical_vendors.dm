@@ -46,6 +46,7 @@
 		/obj/item/stack/medical/ointment = 4,
 		/obj/item/stack/medical/ointment/soteria = 4,
 		/obj/item/stack/medical/splint = 10,
+		/obj/item/storage/firstaid/regular/si = 2,
 
 		/obj/item/reagent_containers/hypospray/autoinjector = 4,
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 4,
@@ -72,12 +73,13 @@
 
 		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
-		/obj/item/stack/medical/bruise_pack/soteria = 700,
+		/obj/item/stack/medical/bruise_pack/soteria = 250,
 		/obj/item/stack/medical/ointment/handmade  = 25,
 		/obj/item/stack/medical/ointment = 35,
-		/obj/item/stack/medical/ointment/soteria = 700,
+		/obj/item/stack/medical/ointment/soteria = 250,
 		/obj/item/stack/medical/splint/improvised = 5,
 		/obj/item/stack/medical/splint = 10,
+		/obj/item/storage/firstaid/regular/si = 750,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 75,
