@@ -949,8 +949,7 @@
 	var/obj/item/O = user.get_active_hand()
 	var/success = FALSE
 	if(O)
-		var/list/can_magnet = list(/obj/item/tool/sword/nt,
-			/obj/item/tool/knife/neotritual,
+		var/list/can_magnet = list(
 			/obj/item/shield/riot/crusader,
 			/obj/item/shield/buckler/nt,
 			/obj/item/shield/riot/nt,
@@ -962,28 +961,15 @@
 			/obj/item/stack/medical/bruise_pack/advanced/nt,
 			/obj/item/stack/medical/ointment/advanced/nt)
 
-		for(var/checking_magnet in can_magnet)
-			//Ensuring these are not implanted items
-			if(istype(O,/obj/item/tool/sword/nt) || istype(O,/obj/item/tool/knife/neotritual))
-				var/not_implanted = TRUE
-				for(var/obj/item/organ/external/arm in user.organs)
-					for(var/obj/item/organ_module/active/simple/OM in arm.contents)
-						if(OM.holding == O)
-							not_implanted = FALSE
-				if(not_implanted)
-					O.canremove = !O.canremove
-					success = TRUE
-					break
-				else
-					//Prevents teleportation implants.
-					fail("[O.name] is part of an implant, making this pointless.", user, C)
-					break
+		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
+		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant
 
-			if(istype(O, checking_magnet))
+		for(var/list_item in can_magnet)
+			//message_admins("list_item = [list_item] O.type = [O.type]")
+			if(list_item == O.type)
 				O.canremove = !O.canremove
 				success = TRUE
 				break
-
 		if(O.canremove)
 			success_message = "You destroy the magnetic field binding [O.name] to you."
 		else
