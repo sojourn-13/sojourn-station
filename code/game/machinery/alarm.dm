@@ -31,7 +31,7 @@
 
 	var/datum/wires/alarm/wires
 
-	var/mode = AALARM_MODE_OFF
+	var/mode = AALARM_MODE_SCRUBBING //turns the scrubbers on again by default
 	var/screen = AALARM_SCREEN_MAIN
 	var/area_uid
 	var/area/alarm_area
@@ -1141,7 +1141,7 @@ FIRE ALARM
 			else
 				alarm()
 			. = TRUE
-		
+
 		if("timer_set")
 			time = max(0, params["time"])
 			. = TRUE
