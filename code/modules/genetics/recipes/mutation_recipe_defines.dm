@@ -9,8 +9,11 @@
 * Values in the list have a format of:
 * mutation_recipe_list.[compare_string] = list(/datum/genetics/mutation_recipe/recipe_path)
 *
+* Note that the genes are auto sorted A-Z based on name.
+* Combining uses A-Z naming so make sure they are in the correct order!
+*
 * recipe_path- The type path of a given recipe.
-* compare_string- 
+* compare_string-
 * 	A concatinated list of mutation keys (created through list2params if there are multiple).
 *	If the recipe is an Irradiation type, the compare_string is prepended with an 'I~'
 *	If the recipe is an Combination type, the compare_string is prepended with an 'C~'
@@ -35,7 +38,7 @@
 			error("initialize_mutation_recipes(): Mutation recipe [example_recipe.type] created incorrectly- unexpected recipe type.")
 
 		var/ingredient_mutations = example_recipe.required_mutations
-		
+
 		//We sort the list so that the compare string will be uniform for any given set of ingredients.
 		if (example_recipe.required_mutations)
 			if(istype(ingredient_mutations, /list))
@@ -45,7 +48,7 @@
 					compare_string = compare_string + "G~" + "[key]"
 			else
 				compare_string = compare_string + "G~" + ingredient_mutations
-		
+
 		//Add an 'M~' as a count for each clone mutation recipe required, so we don't have to compare carelessly.
 		if(example_recipe.required_on_clone_types)
 			var/ingredient_mobs = example_recipe.required_on_clone_types
@@ -69,11 +72,11 @@
 */
 /datum/genetics/mutation_recipe
 	var/result_path = null //type path of the resulting Mutation
-	
+
 	var/required_mutations //String -or- list of KEYS for a given mutation. "Copy Mob" mutations should NOT be included in this list, and use required_copy_mob_types
-	
+
 	var/list/required_on_clone_types = null //Path -or- list of paths for comparing with incoming clone type mutations.
-	
+
 	var/recipe_type //Type of a given recipe, so we can differentiate between irradiation and clone type mutations.
 
 	var/priority = 1 //Let's face it, we can make overlap by mistake. If two mutation recipes exist for a compare string, the valid recipe with the highest priority will win out.

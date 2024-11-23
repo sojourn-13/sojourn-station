@@ -265,7 +265,7 @@
 		if(prob(5))
 			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3 * (dose * 0.1)) //every 10u is 3 antitox, starts out slow but rapidly grows
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)

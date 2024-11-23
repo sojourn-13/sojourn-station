@@ -12,6 +12,7 @@
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = SINGLE_CASING|SPEEDLOADER
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_KNIFE) //Unlike base shotguns, can take a bayonet. Why? Because trench shotgun funni.
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = HOLD_CASINGS
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
@@ -39,6 +40,17 @@
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
+
+//Snowflake update-icon code for bayonets.
+/obj/item/gun/projectile/shotgun/pump/update_icon()
+	..()
+	cut_overlays()
+	var/iconstring = initial(icon_state)
+
+	if (bayonet)
+		add_overlay("bayonet")
+
+	icon_state = iconstring
 
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
@@ -80,6 +92,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
 	init_recoil = RIFLE_RECOIL(1.2)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet like Grizzly.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
 	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
@@ -102,6 +115,7 @@
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet like Grizzly.
 	gun_parts = list(/obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.2 // 20 vig

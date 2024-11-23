@@ -9,7 +9,7 @@
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	offer_limit = 1
-	base_income = 1600
+	base_income = 1200
 	wealth = 0
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3000
@@ -17,9 +17,9 @@
 	recommendations_needed = 1
 	inventory = list(
 		"Scientific Surplus" = list(
-			/obj/item/storage/deferred/slime = custom_good_amount_range(list(1, 3)),
-			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(1, 3)),
-			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 2)),
+			/obj/item/storage/deferred/slime = custom_good_amount_range(list(0, 1)),
+			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(2, 5)),
+			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 1)),
 			/obj/item/storage/part_replacer/mini,
 			/obj/item/device/geiger
 		),

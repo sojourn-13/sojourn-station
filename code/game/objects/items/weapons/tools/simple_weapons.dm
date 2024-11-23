@@ -1008,9 +1008,61 @@
 		)
 	alt_mode_toggle = "switches their stance to strike at targets with the shaft"
 	alt_mode_lossrate = 0.4
+	extended_reach = TRUE
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"
 	desc = "A saber of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
 	icon_state = "cheap_saber"
 	item_state = "cutlass"
+
+//Complex cheap weapon arts
+/obj/item/tool/cheap/rapier
+	name = "cheap cinq rapier"
+	desc = "A mass-produced copy of a cinq rapier by Lonestar. Is unable to be used for parrying but has some techniques."
+	icon_state = "cheap_rapier"
+	item_state = "katana"
+	force = WEAPON_FORCE_NORMAL
+	armor_divisor = ARMOR_PEN_EXTREME
+	clickdelay_offset = -2 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
+	var/coin_tracker = 0 //Used to track hits used in fancy modes
+	alt_mode_toggle = "switches their stance to strike without stabbing"
+	alt_mode_lossrate = 0.4
+
+/obj/item/tool/cheap/rapier/resolve_attackby(atom/target, mob/user)
+	clickdelay_offset = -2 //Resets
+
+	if(coin_tracker >= 10)
+		force += 5
+		icon_state = "cheap_rapier_form_two"
+	if(coin_tracker >= 20)
+		if(prob(coin_tracker))
+			force += 3 //20% more base damage rounded up
+		clickdelay_offset = -3 //slightly faster attacking
+
+	if(coin_tracker >= 25)
+		coin_tracker = 0
+		clickdelay_offset = -8 //Refund that click
+		icon_state = "cheap_rapier"
+
+
+	if(ismob(target))
+		var/mob/living/M = target
+		if(M.stat != DEAD)
+			coin_tracker += 1
+
+	.=..()
+	refresh_upgrades()
+
+	//So this is a bit missleading, reach attacks do *not* chain themselfs so you must range one attack folks
+	if(coin_tracker >= 5 && coin_tracker <= 10)
+		extended_reach = TRUE
+		icon_state = "cheap_rapier_form_one"
+
+
+/obj/item/tool/cheap/rapier/dropped()
+	coin_tracker = 0
+	refresh_upgrades()
+	update_icon()
+	icon_state = "cheap_rapier"
+	..()

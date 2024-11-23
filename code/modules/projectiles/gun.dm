@@ -110,6 +110,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/silenced = FALSE
 	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
 
+	//For bayonet icon handling
+	var/bayonet = FALSE
+
 	var/icon_contained = TRUE
 	var/static/list/item_icons_cache = list()
 	var/wielded_item_state = null

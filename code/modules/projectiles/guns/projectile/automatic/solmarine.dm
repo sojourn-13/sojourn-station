@@ -94,6 +94,48 @@
 
 	shotgun_haver = FALSE
 
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
+	name = "\"Saturnian\" carbine"
+	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+		 Unlike other old Sol models, this one was always intented to be a 6.5mm."
+	icon = 'icons/obj/guns/projectile/martian.dmi'
+	icon_state = "service"
+	item_state = "service"
+	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
+	shotgun_haver = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE, GUN_KNIFE)	//No shotgun, so it can take a bayonet.
+	saw_off = TRUE
+	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
+	serial_type = "Sol Fed"
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
+
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
+	..()
+	cut_overlays()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/Initialize()
+	. = ..()
+	update_icon()
+
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
 	name = "sawn down \"Saturnian\" carbine"
 	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
@@ -112,44 +154,6 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
-
-
-/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
-	name = "\"Saturnian\" carbine"
-	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old Sol models, this one was always intented to be a 6.5mm."
-	icon = 'icons/obj/guns/projectile/martian.dmi'
-	icon_state = "service"
-	item_state = "service"
-	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
-	shotgun_haver = FALSE
-	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
-	serial_type = "Sol Fed"
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
-		)
-	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
-
-/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
-	..()
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-		itemstring += "_mag"
-
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/Initialize()
-	. = ..()
-	update_icon()
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"

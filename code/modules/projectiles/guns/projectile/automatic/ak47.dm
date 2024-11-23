@@ -283,6 +283,9 @@
 	if(!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if (bayonet)
+		add_overlay("bayonet")
+
 	icon_state = iconstring
 	set_item_state(itemstring)
 
