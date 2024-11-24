@@ -26,6 +26,7 @@
 	max_upgrades = 5
 
 	hitsound = "swing_hit"
+	wieldsound = 'sound/weapons/guns/interact/gun_wield.ogg'
 
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
@@ -110,7 +111,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
-	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/fire_sound_silenced = 'sound/weapons/guns/fire/automatic_silenced.ogg' //Firing sound used when silenced
 
 	//For bayonet icon handling
 	var/bayonet = FALSE

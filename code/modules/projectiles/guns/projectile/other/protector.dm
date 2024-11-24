@@ -12,7 +12,7 @@
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 2)
 	handle_casings = EJECT_CASINGS
 	price_tag = 5500
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	fire_sound_text = "a metallic thunk"
 	init_recoil = HANDGUN_RECOIL(2)

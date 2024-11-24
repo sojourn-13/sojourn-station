@@ -6,7 +6,7 @@
 	icon_state = "gyropistol"
 	item_state = "pistol"
 	caliber = CAL_70
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 6)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
