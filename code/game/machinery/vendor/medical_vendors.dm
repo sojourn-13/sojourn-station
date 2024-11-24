@@ -104,7 +104,7 @@
 		/obj/item/stack/medical/ointment = 6,
 		/obj/item/stack/medical/ointment/soteria = 4,
 		/obj/item/stack/medical/ointment/advanced = 2,
-		/obj/item/storage/firstaid/regular/si,
+		/obj/item/storage/firstaid/regular/si = 2,
 
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
 		/obj/item/stack/nanopaste = 4,
