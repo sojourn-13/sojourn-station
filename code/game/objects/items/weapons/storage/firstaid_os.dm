@@ -1,6 +1,6 @@
 /obj/item/storage/firstaid/greyson
 	name = "Greyson Field Abrasion Medical Kit"
-	desc = "A Greyson Smart Kit that reject anything other then Greyson Advanced Treatment Pack. \
+	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Treatment Packs. \
 	Alt+click to open and close."
 	icon_state = "medigel_case_brute_preview"
 	var/real_item_state = "medigel_case_brute"
@@ -49,7 +49,7 @@
 	set src in view(1)
 
 	if(isghost(usr))
-		to_chat(usr, SPAN_NOTICE("The lid dosnt move even at your suggestion."))
+		to_chat(usr, SPAN_NOTICE("The lid doesn’t open, no matter what you do."))
 		return
 
 	if(can_interact(usr) == 1)	//can't use right click verbs inside bags so only need to check for ablity
@@ -99,7 +99,7 @@
 
 /obj/item/storage/firstaid/greyson/burn
 	name = "Greyson Field Abrasion Medical Kit"
-	desc = "A Greyson Smart Kit that reject anything other then Greyson Advanced Burn-Treatment Pack. \
+	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Burn-Treatment Packs. \
 	Alt+click to open and close."
 	icon_state = "medigel_case_burn_preview"
 	can_hold = list(

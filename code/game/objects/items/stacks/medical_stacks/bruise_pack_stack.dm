@@ -281,9 +281,9 @@
 /obj/item/stack/medical/bruise_pack/greyson
 	name = "Greyson Advanced Treatment Pack" //G(P)ATP
 	singular_name = "Greyson Advanced Treatment Pack"
-	desc = "A packet of nanites with small fibers and ethanol that patches up bruises and tissue damage. \
-	Do to GP programing these nanites packets are able to be used on already sealed or healed wounds as long as as they are able to detect damage. \
-	Works on robotic lims."
+	desc = "A packet of nanites with small fibres and ethanol that treats bruises and tissue damage. \
+	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
+	Works on robotic limbs."
 	icon_state = "medigel_big_brute"
 	icon = 'icons/obj/stack/medical_big.dmi'
 	origin_tech = list(TECH_BIO = 8)
