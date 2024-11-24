@@ -396,7 +396,7 @@
 /mob/living/carbon/can_feel_pain(var/check_organ)
 	if(isSynthetic())
 		return 0
-	return !(species.flags & NO_PAIN)
+	return !((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 
 /mob/living/carbon/proc/need_breathe()
 	return TRUE

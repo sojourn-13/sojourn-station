@@ -81,12 +81,18 @@ ty ilu - bear
 /area/nadezhda/outside/forest/river_forest_lake
 	narrate = "These plains are also home to a myriad of rivers dotting its landscape, becoming the dumpster of its previous temporary inhabitants, all converging in a giant lake full of ferocious space fish masquerading as tempting aquatic morsels. If you see the white whale, you best aim for its crooked brow with the nearby harpoons from previous attempts to its life."
 
+/area/nadezhda/outside/forest/carp_lair
+	narrate = "There is the tang of ozone in the air in the places where carp gather, rich silt aiding in the growth of Amethyn's mutated poppies along the banks, lending these deadly pools a strange beauty."
+
 /area/nadezhda/outside/forest/river_forest_cabin
 	narrate = "Abandoned signs of civilization attempting to settle peaceful turistic spots amidst the jungle. The local beasts have proved them this is no place for a tranquil vacation..."
 
 /area/nadezhda/outside/forest/river_forest_dark
 	narrate = "Humid caves, primordially known for being the most primal of habitations for sentient and feral beast alike, also dot the landscape of these plains. You are not the first person to venture inside looking for either safety or resources, and you won't likely be the last... \
 			   If you aim to claim these for your own, know that you will eventually have to deal with the same kind of interloper that you once were upon them."
+
+/area/nadezhda/outside/forest/river_forest_nightmare
+	narrate = "A nearly lightless place smelling of decay, the forest canopy is overgrown and tangled, strangling out both sunlight and hope.  Tengolo and mukwah avoid this place, so why does it sound like someone is whispering within the dark ahead?"
 
 /area/nadezhda/outside/forest/river_forest_underground
 	narrate = "Terrifying roars of mutated bears contest the ear piercing shrieks and gurgles of spine-chilling xenomorphs, eerily echoing throughout these caverns. Dare you venture upon their turf war to claim the spoils within for your own...?"

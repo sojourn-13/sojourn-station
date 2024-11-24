@@ -78,6 +78,6 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 3, base=1),
-		list(CWJ_ADD_PRODUCE, "poppies", reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppy", reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_LO, 20 SECONDS)
 	)

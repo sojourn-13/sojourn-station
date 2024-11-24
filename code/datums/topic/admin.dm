@@ -1136,8 +1136,7 @@
 	var/datum/faction/faction = GLOB.factions_list[input["faction"]]
 	var/obj/machinery/photocopier/faxmachine/fax = locate(input["originfax"])
 
-	//todo: sanitize
-	var/msg = input(source.owner, "Please enter a message to reply to [key_name(sender)] via secure connection. NOTE: BBCode does not work, but HTML tags do! Use <br> for line breaks.", "Outgoing message from [faction.name]", "") as message|null
+	var/msg =  sanitize(input(source.owner, "Enter a reply to [key_name(sender)]:", "Outgoing message from [faction.name]", null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
 	if(!msg)
 		return
 
@@ -1145,6 +1144,9 @@
 
 	// Create the reply message
 	var/obj/item/paper/P = new /obj/item/paper( null ) //hopefully the null loc won't cause trouble for us
+	var/obj/item/i = usr.get_active_hand()
+	msg = replacetext(msg, "\n", "<BR>")
+	msg = P.parsepencode(msg, i, usr) // Encode everything from pencode to html
 	P.name = "[customname]"
 	P.info = msg
 	P.update_icon()

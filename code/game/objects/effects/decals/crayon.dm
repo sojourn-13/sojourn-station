@@ -5,7 +5,7 @@
 	layer = TURF_DECAL_LAYER
 	anchored = TRUE
 	random_rotation = 0
-	sanity_damage = 4
+	sanity_damage = 0.04
 	var/is_rune = FALSE
 	var/obj/item/pen/crayon/follow_crayon
 
@@ -19,6 +19,7 @@
 	desc = "A fine mist comes off this rune"
 	alpha = 150
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 
 /obj/effect/decal/cleanable/crayon/mist/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/projectile/beam))
@@ -31,6 +32,7 @@
 	desc = "The air shimmers about this rune."
 	alpha = 150
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 
 /obj/effect/decal/cleanable/crayon/shimmer/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/projectile) && !istype(mover, /obj/item/projectile/beam))
@@ -43,6 +45,7 @@
 	desc = "The air shimmers about this rune."
 	alpha = 50
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 	var/playmate = 0
 	var/draw = 1
 
@@ -146,8 +149,9 @@
 			if(follow_crayon)
 				var/old_desc = "[follow_crayon.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
-				desc = "A rune drawn in empowered crayon wax."
 				follow_crayon = null
+				desc = "A rune drawn in empowered crayon wax."
+				sanity_damage = 4
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
 			for(var/obj/item/flame/candle/mage_candle in oview(3))

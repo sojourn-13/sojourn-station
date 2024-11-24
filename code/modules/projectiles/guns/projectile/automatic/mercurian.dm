@@ -1,26 +1,25 @@
 /obj/item/gun/projectile/automatic/mercu
-	name = "Mercurian Anti-Atmos Rifle"
+	name = "\"Mercurian\" anti-atmos rifle"
 	desc = "An attempt to bring an old design to a more modern era, the classic Sol Fed design but revamped for a contemporary cartridge and a custom big bore rifle intended to breach through tough windows on shuttle craft, station exteriors, or faceshields before laying down a hail of 10x24. Any growing pirate or marine's dream for EVA and boarding operations."
 	icon = 'icons/obj/guns/projectile/mercurian.dmi'
 	icon_state = "mercu"
 	item_state = "mercu"
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 12, TECH_MATERIAL = 10)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	auto_eject = FALSE
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM = 20)
 	price_tag = 1750
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
+	init_recoil = LMG_RECOIL(0.9) //More recoil then others do to being an old design base (+ it has better AD and damage then other 10x24)
 	damage_multiplier = 1.1
-	penetration_multiplier = 1.2
-	init_recoil = LMG_RECOIL(0.6)
+	penetration_multiplier = 1.1
 	serial_type = "Sol Fed"
 
 	wield_delay = 1.0 SECOND
@@ -31,7 +30,6 @@
 	allow_greyson_mods = FALSE
 
 	init_firemodes = list(
-		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 			list(mode_name="fire underbarrel", mode_desc="Shoot the underbarrel rifle",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
@@ -80,7 +78,7 @@
 		to_chat(user, "\The [borerifle] is empty.")
 
 /obj/item/gun/projectile/automatic/underslung/borerifle
-	name = "Underslung large bore rifle"
+	name = "underslung large bore rifle"
 	desc = "Not much more than a tube and a firing mechanism, this large bore rifle is designed to be fitted to another gun."
 	fire_sound = 'sound/weapons/guns/fire/sniper.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'

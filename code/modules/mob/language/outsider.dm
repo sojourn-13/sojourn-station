@@ -119,19 +119,23 @@
 	)
 	shorthand = "KO"
 	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
-					 "und", "ja", "nein", "vielleicht", "ob", "Hund", "Hundt", "katse", "Rüde", "Pleite", "Schreckschraube", "Klammer", "fahren","Raumschiff", \
+					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
  					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
- 					 "fuß", "braver", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
- 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "suche", "Auge", "Hand", "Bein", "Kopf", \
- 					 "Flucht", "teufel", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "platz",  \
- 					 "Bleib", "gib laut", "hunden", "sitz", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
+ 					 "alt", "verfallen", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
+ 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "Suche", "Auge", "Hand", "Bein", "Kopf", \
+ 					 "Flucht", "Wahrheit", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "Sand",  \
+ 					 "Computer", "mikro", "Planet", "Universum", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
  					 "Kaiser", "bekaempfen", "Tastatur", "Augenlicht", "verwerfen", "analysieren", "verschieben", \
  					 "Flammen", "Feuer", "Batterie", "laser", "Unwetter", "Abflug", "behandeln", "Roboter", "Regierung", \
-					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Stopp", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
+					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Radio", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
  					 "Gas", "Schaltung", "umstuerzen", "Umsturz", "Wissenschaft", "erforschen", "Forschung", "Psychologe", "Schmerz", \
  					 "Schmerzen", "gebrochen", "brechen", "alle", "Musik", "also", "Interesse", "Pruegel", "Alkohol", "Getraenk", \
- 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "ueberhaupt", "weil", "denn", "deshalb", "mir", "dir", \
- 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Hier", "Fisch", "Ziege")
+ 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "Radio", "ueberhaupt", "weil", "deshalb", "mir", "dir", \
+ 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Granate", "Katze", "Hund", "Fisch", "Ziege", "aber", "dennoch", "weshalb", "deshalb", \
+					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloss", "eben", "mal", "gar", "ruhig", "eigentlich", \
+					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermassen", \
+					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermassen", "freilich", \
+					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Katze", "Ruede", "Pleite", "Schreckschraube", "Klammer", "Fuss")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
@@ -201,22 +205,39 @@
 	space_chance = 5
 	syllables = list("Punainen", "Koira", "Tuolla", "Rikas", "syvä", "kivääri", "ulkomaalainen", "ihmisen", "sammakko", "taivaaseen", "Koti", "tilaa",  "sinä", "vastustamaton", "heimo", "klaani",  "kotitalous", "raha", "iso", "pieni", "sairaus", "ruokaa", "alkoholia", "kana", "asevelvollisuus", "alus", "joki", "saari", "ase", "veitsi", "juusto", "pää", "häntää", "taistelevat", "halaamalla", "ystävät", "ystävyys", "kansainyhteisö", "liitto", "aurinko", "missä", "mitä", "kun", "Miten", "siksi", "laulu", "kalastaa", "hämärä", "epäilyttävä", "luottamus", "kusipää", "paskiainen", "ääliö", "munata", "*!*")
 
-//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld. 
+//Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld.
 /datum/language/weh
 	name = LANGUAGE_WEH
 	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
 	speech_verb = list("says", "hisses")
 	ask_verb = list("inquires")
 	exclaim_verb = list("bellows")
-	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
+	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper
 	key = "u"
 	has_written_form = TRUE
 	partial_understanding = list(
-		LANGUAGE_COMMON = 20, 
-		LANGUAGE_YASSARI = 10, 
-		LANGUAGE_EURO = 10, 
-		LANGUAGE_JANA = 10 
+		LANGUAGE_COMMON = 20,
+		LANGUAGE_YASSARI = 10,
+		LANGUAGE_EURO = 10,
+		LANGUAGE_JANA = 10
 	)
 	shorthand = "CRV"
 	space_chance = 50
 	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")
+
+/datum/language/mrow
+
+	name = LANGUAGE_SABLEKYNE
+	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, a flowing language consisting of rolling r's, chrips, and other assorted sounds."
+	speech_verb = list("chatters")
+	ask_verb = list("mrowls")
+	exclaim_verb = list("yelps")
+	flags = NO_SPEAK
+	colour = "crinos"
+	key = "5"
+	space_chance = 50
+	has_written_form = TRUE
+	shorthand = "CR"
+	syllables = list("mrr", "rrp", "rhhh", "lrrit", "krrk", "prrp", "prm", "kha", "rzp", "mah", "zhak", "trrl", "trrp", "trr", "myh", "mhh", "dryh", "dah", "bh", "rhu", "mro", "pch", "chrr", "eyh", "nii", "nrr",
+	"chrrp", "chah", "rzz", "kruh", "lz", "lah", "liu", "ruh", "msh", "rshh", "shah", "hyr", "kruh", "syohr", "shrr", "seh", "mrem", "mrea", "cht", "chhr", "hch", "nha", "nrr", "nre", "nymrh", "dhh", "dzh", "drch", "chhhp", "chhym",
+	"hakk", "krh", "rhm", "arrto", "rrho", "qehi", "srrhi", "assih", "wehi", "yohr", "zayak", "rrik")

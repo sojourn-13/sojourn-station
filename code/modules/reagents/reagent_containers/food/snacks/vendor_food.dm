@@ -18,7 +18,7 @@
 	name = "chocolate bar"
 	desc = "Such sweet, fattening food."
 	icon_state = "chocolatebar"
-	taste_tag = list(SWEET_FOOD)
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	filling_color = "#7D5F46"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=15)

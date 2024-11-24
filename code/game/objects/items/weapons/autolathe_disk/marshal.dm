@@ -55,7 +55,7 @@
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
-		//sniper
+		//sniper - Left here for now till Python can be made off a Mamba frame.
 		/datum/design/autolathe/gun/python = 5,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
@@ -254,6 +254,24 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/viper
+	disk_name = "NM - 7.62mm Viper DMR"
+	icon_state = "marshal"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/viper = 6,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
+	)
+
+// 8.6 Rifles
 /obj/item/computer_hardware/hard_drive/portable/design/guns/python
 	disk_name = "NM - 7.62mm Python Heavy Rifle"
 	icon_state = "marshal"

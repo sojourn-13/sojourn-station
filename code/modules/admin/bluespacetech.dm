@@ -15,7 +15,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_MOD|R_DEBUG, TRUE)
 	set desc = "Spawns a Bluespace Tech to debug stuff"
 
 
-	if(!check_rights(R_ADMIN|R_DEBUG))
+	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
 		return
 
 	var/T = get_turf(usr)

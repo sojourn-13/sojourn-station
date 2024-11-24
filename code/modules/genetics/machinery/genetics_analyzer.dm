@@ -78,7 +78,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 	if(default_deconstruction(I, user))
 		return
@@ -103,7 +103,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attack_hand(mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 	if(..())
 		return TRUE

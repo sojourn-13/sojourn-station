@@ -52,7 +52,7 @@
 	options["Aquatic Welding"] = "norah_briggs_1"
 	options["Rustic Welding"] = "yuki_matsuda_1"
 	options["Flame Welding"] = "alice_mccrea_1"
-	options["Technomancer Welding"] = "engiewelding"
+	options["Artificer Welding"] = "engiewelding"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -137,7 +137,7 @@
 		)
 
 /obj/item/clothing/head/welding/technomancer
-	name = "technomancer welding helmet"
+	name = "artificer welding helmet"
 	desc = "A welding helmet painted in artificer guild colors."
 	icon_state = "engiewelding"
 	item_state_slots = list(

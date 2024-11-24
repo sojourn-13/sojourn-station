@@ -1,7 +1,7 @@
 /obj/item/gun/energy/peacekeeper
 	name = "\"Peacekeeper\" energy shotgun"
 	desc = "The \"Peacekeeper\" enegry shotgun is a Marshal made weapon, specializing in blasting high-powered electrodes from its cell's charge.\
-	Despite appearing to be made in a hurry the gun is incredibly versitile."
+	Despite appearing to be made in a hurry the gun is incredibly versatile."
 	icon = 'icons/obj/guns/energy/peacekeeper.dmi'
 	icon_state = "peacekeeper"
 	item_state = "peacekeeper"
@@ -13,15 +13,17 @@
 	cell_type = /obj/item/cell/medium
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_SILVER = 4)
-	fire_delay = 15
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1.2)	//More recoil than abdicator, but it fires faster so..
 	damage_multiplier = 1
-	penetration_multiplier = 0.7
+	penetration_multiplier = 1
+
+	proj_step_multiplier = 0.7	//Akin to abdicator, bit slower, but only because I fear if higher taser will be STRONG. Should be 30%.
+
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', charge_cost = 200, icon="stun"),
-		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', fire_delay = 10, charge_cost = 150, icon="stun"),
+		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', fire_delay = 15, charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
 

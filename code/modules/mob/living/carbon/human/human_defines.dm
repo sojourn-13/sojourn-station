@@ -120,7 +120,8 @@
 	var/language_blackout = 0
 	var/suppress_communication = 0
 
-	var/momentum_speed = 0 // The amount of run-up
+	var/momentum_speed = 0 // The amount of run-
+	var/momentum_speed_adder = 0 // Directly adds to momentum speed per addition
 	var/momentum_dir = 0 // Direction of run-up
 	var/momentum_reduction_timer
 

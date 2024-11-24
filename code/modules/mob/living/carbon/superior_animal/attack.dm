@@ -132,7 +132,9 @@
 	if(!A)
 		return
 
-	var/def_zone = get_exposed_defense_zone(target)
+	var/def_zone = pickweight(zone_hit_rates)
+
+	//message_admins("pre-fire def_zone = [def_zone]")
 
 	var/datum/penetration_holder/trace_penetration
 
@@ -177,6 +179,7 @@
 			A.original_firer = src
 			if(friendly_to_colony)
 				A.friendly_to_colony = TRUE
+			A.predetermed = def_zone
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
 			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)

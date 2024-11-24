@@ -109,7 +109,7 @@
 			/obj/item/part/gun/barrel/pistol,
 			/obj/item/part/gun/barrel/magnum
 		),
-		"Miscellanous" = list(
+		"Miscellaneous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
 			/obj/item/storage/photo_album,
@@ -162,7 +162,7 @@
 			/obj/structure/synthesized_instrument/synthesizer/piano = good_data("Piano", list(-4, 2), 1200),
 			/obj/item/media/boombox = good_data("NT Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
 		),
-		"Nicknacks & Bobbles" = list(
+		"Trinkets & Baubles" = list(
 			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/pamphlet = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/rod_figure = custom_good_amount_range(list(3, 6)),

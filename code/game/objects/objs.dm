@@ -268,3 +268,7 @@
 /obj/proc/multiply_pve_damage(newmult)
 
 /obj/proc/add_fire_stacks(newmult)
+
+//Proj for thrown items
+/obj/proc/post_thrown_hit(mob)
+	return

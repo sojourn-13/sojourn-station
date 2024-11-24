@@ -91,7 +91,7 @@
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/church
-	name = "Church of Absolute - Augstine Browne"
+	name = "Church of the Absolute - Augstine Browne"
 
 	fax_alert = "CHURCH FAX"
 	fax_response = "Church Decree"

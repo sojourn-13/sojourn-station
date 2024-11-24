@@ -328,7 +328,7 @@
 
 /obj/item/clothing/suit/armor/vest/acolyte
 	name = "vector armor"
-	desc = "Worn, heavy, steadfast in the name of God."
+	desc = "Worn, heavy, steadfast in the name of the Absolute."
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -370,7 +370,7 @@
 
 /obj/item/clothing/suit/armor/vest/path //No path ?
 	name = "vinculum cassock"
-	desc = "A heavy Cassock meant for the Vectors that possess no vows. This sturdy armor is made entirely out of biomatter and have no metal inner layer, but at the same time this sturdy armor is the thickest of any other armor made out of cloth, even thicker than a gambeson. But this armor is often used for rituals more than it is using for fighting, keeping the defensive properties only for emergencies."
+	desc = "A heavy Cassock meant for the Vectors that possess no vows. This garb has no armor plating but the sturdy fabric offers more protection than a gambeson. Usually worn for ceremonial purposes, it can save a life in an emergency."
 	icon_state = "vinculum_cassock"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -379,7 +379,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/divisor
 	name = "Divisor's Guardsmen Armor"
-	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design."
+	desc = "The armor of the armed forces of the now extinct military of New Byzantine. The inner layer has plates of biomatter-infused steel and chainmail, together with shoulder protection that reaches up to protect the neck and affix it  to the helmet of the same design. Now Divisors give it a new purpose."
 	icon_state = "divisor_guardsmen_armor"
 
 /obj/item/clothing/suit/armor/vest/path/divisor/verb/toggle_style()
@@ -407,7 +407,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/tessallate
 	name = "Tessellate Riding Habit"
-	desc = "The Tessellate Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user."
+	desc = "The Tessellate Habit is an mixture of a well protective, efficient gambeson with inner chainmail that ensures the protection of it's user."
 	icon_state = "tessellate_riding_habit"
 
 /obj/item/clothing/suit/armor/vest/path/tessallate/verb/toggle_style()
@@ -435,7 +435,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/lemniscate
 	name = "Lemniscate Garbs"
-	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value."
+	desc = "The well suited lemniscate garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of a pourpoint with inner chainmail and golden ridges and lines that only reinforces it's fanciness value."
 	icon_state = "lemniscate_garbs"
 
 /obj/item/clothing/suit/armor/vest/path/lemniscate/verb/toggle_style()
@@ -463,7 +463,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/monomial
 	name = "Monomial Kasaya"
-	desc = "An old design of armor, often repainted, pieced together with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly."
+	desc = "An archaic armor design, often repainted, pieced together with small plates overlapping on the shoulders, waist and legs, with a large plate protecting the chest and belly."
 	icon_state = "monomial_kasaya"
 
 /obj/item/clothing/suit/armor/vest/path/monomial/verb/toggle_style()
@@ -491,7 +491,7 @@
 
 /obj/item/clothing/suit/armor/vest/path/factorial
 	name = "Factorial powergarb"
-	desc = "A Factorial's best protection well working their duties on the colony and back in its day on New Byzantine, tends to have different attachments for a more personalized garb."
+	desc = "A Factorial's best protection while doing their duty on the colony and back then on New Byzantine. Tends to have different attachments for a more personalized garb."
 	icon_state = "factorial_powergarb"
 
 /obj/item/clothing/suit/armor/vest/path/factorial/verb/toggle_style()
@@ -585,7 +585,7 @@
 
 /obj/item/clothing/suit/armor/vest/prime
 	name = "prime armor"
-	desc = "Trust in god, but keep your armor on."
+	desc = "The armor of a Prime, adorned with different markings and decorations only fit for the most devout."
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -894,8 +894,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil"
+	options["Default Blackshield Combat"] = "flakvest_mil"
 	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -928,8 +930,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil_fullbody"
+	options["Default Blackshield Combat"] = "flakvest_mil_fullbody"
 	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil_fullbody"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -950,6 +954,32 @@
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
 	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Blackshield Combat"] = "flakvest_mil"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
+	options["Urban Blackshield Combat"] = "flakvest_white_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
 
 /obj/item/clothing/suit/armor/flakvest/commander/full
 	name = "advanced full body flak vest" //
@@ -980,9 +1010,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Black"] = "commander_mil_fullbody"
-	options["Woodland Green"] = "commander_green_fullbody"
-	options["Desert Tan"] = "commander_tan_fullbody"
+	options["Default Blackshield Combat"] = "commander_mil_fullbody"
+	options["Woodlands Blackshield Combat"] = "commander_green_fullbody"
+	options["Desert Blackshield Combat"] = "commander_tan_fullbody"
+	options["Urban Blackshield Combat"] = "commander_white_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -993,7 +1024,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /*
  * Heavy Armor Types
@@ -1094,7 +1125,6 @@
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
-	slowdown = 0.1
 	armor_list = list(
 		melee =8,
 		bullet = 8,
@@ -1102,7 +1132,7 @@
 		bomb = 10,
 		bio = 0,
 		rad = 0
-	) //we get the same armor as a regular marshal vest, but a bit of slowdown and limited coverage.
+	)
 
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
@@ -1264,9 +1294,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_mil"
-	options["Desert Combat"] = "platecarrier_tan_mil"
+	options["Default Blackshield Combat"] = "platecarrier_mil"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_mil"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
+	options["Urban Blackshield Combat"] = "platecarrier_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1298,9 +1329,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_mil_fullbody"
-	options["Desert Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Default Blackshield Combat"] = "platecarrier_mil_fullbody"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_mil_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
+	options["Urban Blackshield Combat"] = "platecarrier_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1330,9 +1362,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_corpsman"
-	options["Desert Combat"] = "platecarrier_tan_corpsman"
+	options["Default Blackshield Combat"] = "platecarrier_corpsman"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_corpsman"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman"
+	options["Urban Blackshield Combat"] = "platecarrier_white_corpsman"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1364,9 +1397,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "platecarrier_corpsman_fullbody"
-	options["Desert Combat"] = "platecarrier_tan_corpsman_fullbody"
+	options["Blackshield Blackshield Combat"] = "platecarrier_corpsman_fullbody"
+	options["Desert Blackshield Combat"] = "platecarrier_tan_corpsman_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman_fullbody"
+	options["Urban Blackshield Combat"] = "platecarrier_white_corpsman_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1530,11 +1564,12 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "commander_mil"
-	options["Desert Combat"] = "commander_tan"
-	options["Woodlands Combat"] = "commander_green"
-	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
-	options["BC Greatcoat"] = "mc_coat"
+	options["Default Blackshield Combat"] = "commander_mil"
+	options["Desert Blackshield Combat"] = "commander_tan"
+	options["Woodlands Blackshield Combat"] = "commander_green"
+	options["Urban Blackshield Combat"] = "commander_white"
+	options["Cloaked BlackshieldGreatcoat"] = "mc_coat_cloak"
+	options["Blackshield Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1545,7 +1580,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
 	name = "blackshield armored overcoat"

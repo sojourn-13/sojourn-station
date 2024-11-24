@@ -248,7 +248,7 @@
 			list(name="Loader Tube (20mm Empty)", cost = 250, path=/obj/item/ammo_magazine/speed_loader_shotgun/empty),
 			list(name="SBAW Magazine (20mm Sabot Slug)", cost=600, path=/obj/item/ammo_magazine/sbaw),
 			list(name="SBAW Magazine (20mm Buckshot)", cost=600, path=/obj/item/ammo_magazine/sbaw/pellet),
-			list(name="SBAW Magazine (20mm Beanbag)", cost=5000, path=/obj/item/ammo_magazine/sbaw/beanbag),
+			list(name="SBAW Magazine (20mm Beanbag)", cost=500, path=/obj/item/ammo_magazine/sbaw/beanbag),
 			//list(name="SBAW Magazine (20mm HEFI)", cost=2600, path=/obj/item/ammo_magazine/sbaw/he),
 			list(name="SBAW Magazine (20mm Empty)", cost=400, path=/obj/item/ammo_magazine/sbaw/empty),
 			list(name="Ammo Drum (20mm Sabot slug)", cost=850, path=/obj/item/ammo_magazine/m12),

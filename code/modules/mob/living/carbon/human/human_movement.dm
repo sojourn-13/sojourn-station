@@ -12,6 +12,8 @@
 		tally -= chem_effects[CE_SPEEDBOOST]
 	if(CE_SLOWDOWN in chem_effects)
 		tally += chem_effects[CE_SLOWDOWN]
+	if(MOVING_QUICKLY(src))
+		tally -= unique_armor_check(src, src, 0)
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)
@@ -81,7 +83,6 @@
 
 	return tally
 
-
 /mob/living/carbon/human/allow_spacemove()
 	//Can we act?
 	if(restrained())	return 0
@@ -125,6 +126,7 @@
 /mob/living/carbon/human/add_momentum(direction)
 	if(momentum_dir == direction)
 		momentum_speed++
+		momentum_speed += momentum_speed_adder
 	else if(momentum_dir == reverse_dir[direction])
 		momentum_speed = 0
 		momentum_dir = direction

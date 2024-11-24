@@ -933,3 +933,51 @@
 		return FALSE
 	anti_cheat = FALSE
 	return TRUE
+
+/datum/ritual/cruciform/factorial/nodrop_magnet
+	name = "Hand of Magnetism"
+	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
+	desc = "Harness the Physics of the Absolute. Items sanctified by the Church you are holding are no longer droppable. \
+	Only works with church-based items. \
+	If used on an item that already can't be dropped, it will become droppable. \
+	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
+	power = 15
+	cooldown = FALSE
+	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute."
+
+/datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/obj/item/O = user.get_active_hand()
+	var/success = FALSE
+	if(O)
+		var/list/can_magnet = list(
+			/obj/item/shield/riot/crusader,
+			/obj/item/shield/buckler/nt,
+			/obj/item/shield/riot/nt,
+			/obj/item/tool/factorial_omni,
+			/obj/item/tool/spear/halberd,
+			/obj/item/tool/knife/dagger/nt,
+			/obj/item/tool/sword/crusader,
+			/obj/item/storage/firstaid/nt,
+			/obj/item/stack/medical/bruise_pack/advanced/nt,
+			/obj/item/stack/medical/ointment/advanced/nt)
+
+		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
+		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant
+
+		for(var/list_item in can_magnet)
+			//message_admins("list_item = [list_item] O.type = [O.type]")
+			if(list_item == O.type)
+				O.canremove = !O.canremove
+				success = TRUE
+				break
+		if(O.canremove)
+			success_message = "You destroy the magnetic field binding [O.name] to you."
+		else
+			success_message = "[O.name] that you are holding feels impossible to let go."
+
+	if(!success && O)
+		fail("[O.name] is unable to be magnetized.", user, C)
+	if(!O)
+		fail("Nothing in hand to magnetize.", user, C)
+
+	return success

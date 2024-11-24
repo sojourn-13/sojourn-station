@@ -152,6 +152,26 @@
 	name = "comfy chair, teal"
 	result = /obj/structure/bed/chair/comfy/teal
 
+/datum/craft_recipe/furniture/sofa
+	name = "sofa middle"
+	result = /obj/structure/bed/chair/sofa
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
+	)
+
+/datum/craft_recipe/furniture/sofa/left
+	name = "sofa left"
+	result = /obj/structure/bed/chair/sofa/left
+
+/datum/craft_recipe/furniture/sofa/right
+	name = "sofa right"
+	result = /obj/structure/bed/chair/sofa/right
+
+/datum/craft_recipe/furniture/sofa/corner
+	name = "sofa corner"
+	result = /obj/structure/bed/chair/sofa/corner
+
+
 /datum/craft_recipe/furniture/stool
 	name = "stool"
 	result = /obj/item/stool

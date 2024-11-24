@@ -68,7 +68,7 @@
 
 /datum/technology/GP_window
 	name = "Greyson Positronic Glass-Widow Infuser"
-	desc = "The GP Glass Widow Infuser design and manufacturing."
+	desc = "The GP Glass Widow Infuser design and portable self charging combat shields."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.3 //Bottom left
@@ -79,23 +79,23 @@
 								 /datum/technology/exotic_gunmods)
 	required_tech_levels = list(RESEARCH_COMBAT = 10)
 	cost = 11250
-	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
+	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow,
+			/datum/design/research/item/greyson/combat_shield)
 
-/datum/technology/GP_unmaker
-	name = "Greyson Positronic Tyrant Destroyers"
-	desc = "The rare and highly valueable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
-	tech_type = RESEARCH_GREYSON
+//datum/technology/GP_unmaker
+//	name = "Greyson Positronic Tyrant Destroyers"
+//	desc = "The rare and highly valueable GP Master Unmaker Infuser gun mod."
+//	tech_type = RESEARCH_GREYSON
 
-	x = 0.5 //Bottom middle
-	y = 0.3
-	icon = "mastermind"
+//	x = 0.5 //Bottom middle
+//	y = 0.3
+//	icon = "mastermind"
 
-	required_technologies = list(/datum/technology/GP_window)
-	required_tech_levels = list(RESEARCH_COMBAT = 13)
-	cost = 37500
+//	required_technologies = list(/datum/technology/GP_window)
+//	required_tech_levels = list(RESEARCH_COMBAT = 13)
+//	cost = 37500
 
-	unlocks_designs = list(/datum/design/research/item/greyson/unmaker,
-			       /datum/design/research/item/greyson/combat_shield)
+//	unlocks_designs = list(/datum/design/research/item/greyson/unmaker)
 
 /datum/technology/GP_cells
 	name = "Greyson Positronic Cells"
@@ -224,7 +224,7 @@
 
 /datum/technology/GP_robotics
 	name = "Greyson Positronic Positronics"
-	desc = "GP Robotic lims."
+	desc = "GP Robotic limbs."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.8 //top right

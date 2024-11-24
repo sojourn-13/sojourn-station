@@ -19,22 +19,23 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.1)
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE, GUN_KNIFE)	//Can add bayonet
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/sawn/true
 
 
 	init_firemodes = list(
-		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
+		FULL_AUTO_300,
 		)
 
 
 /obj/item/gun/projectile/automatic/sts/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -43,6 +44,9 @@
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -67,6 +71,7 @@
 	saw_off = FALSE
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/automatic/sts/sawn/true // The one we should get
 
@@ -98,7 +103,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "short-barreled \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -136,6 +141,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)	//No bayonet for you.
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
 	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
 	init_firemodes = list(
@@ -144,7 +150,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -162,7 +168,7 @@
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
 	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
-	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
+	The lightweight polymer, skeletal stock and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
 	icon_state = "stspara"
@@ -194,7 +200,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn
 	name = "short-barreled Blackshield \"STS PARA\" rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still able to function."
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts35.dmi'
 	icon_state = "stspara"
 	item_state = "stspara"
@@ -218,11 +224,11 @@
 
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
-	desc = "An STS rifle frame. Cheap, effective, and replaceable."
+	desc = "An STS rifle frame. Cheap, effective, replaceable."
 	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
-	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/sts, /obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)

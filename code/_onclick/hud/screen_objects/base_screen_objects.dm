@@ -146,6 +146,7 @@
 	icon_state = "actionA"
 	screen_loc = "8,1:13"
 	var/minloc = "7,2:13"
+	var/ErisOptimized_minloc
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 
@@ -162,6 +163,8 @@
 	if(M.client && M.get_active_hand() == owner)
 		if(M.client.prefs.UI_compact_style)
 			screen_loc = minloc
+			if(M.defaultHUD == "ErisOptimized" && ErisOptimized_minloc)
+				screen_loc = ErisOptimized_minloc
 		else
 			screen_loc = initial(screen_loc)
 
@@ -375,7 +378,10 @@
 			add_overlay( ovrls["health0"])
 		else
 			var/mob/living/carbon/parentmobC = parentmob	// same parent mob but in correct type for accessing to species
-			switch(100 - ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock))
+			var/pain_affect = ((parentmobC.species.flags & NO_PAIN) ? 0 : parentmob.traumatic_shock)
+			if(PAIN_LESS in parentmobC.mutations)
+				pain_affect = 0
+			switch(100 - pain_affect)
 				if(100 to INFINITY)		add_overlay( ovrls["health0"])
 				if(80 to 100)			add_overlay( ovrls["health1"])
 				if(60 to 80)			add_overlay( ovrls["health2"])

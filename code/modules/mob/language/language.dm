@@ -215,7 +215,12 @@
 
 // Can we speak this language, as opposed to just understanding it?
 /mob/proc/can_speak(datum/language/speaking)
-	return (universal_speak || (speaking && speaking.flags & INNATE) || (speaking in src.languages))
+	var/mob/living/carbon/C = src
+	if (speaking.flags & NO_SPEAK) // Languages that can be understood and spoken only by specific species.
+		if (speaking.name == LANGUAGE_SABLEKYNE)
+			if (!(C.species.reagent_tag == IS_TAJ || C.species.reagent_tag == IS_SYNTHETIC))
+				return null
+	return (universal_speak || (speaking && speaking.flags & INNATE) || (speaking in C.languages))
 
 /mob/proc/get_language_prefix()
 	return get_prefix_key(/decl/prefix/language)

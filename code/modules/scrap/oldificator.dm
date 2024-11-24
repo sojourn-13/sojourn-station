@@ -59,25 +59,25 @@
 
 /obj/item/tool/make_old()
 	.=..()
-	if (.)
-		adjustToolHealth(-(rand(20, 60) * degradation))
-		precision -= rand(0,10)
-		workspeed = workspeed*(rand(5,10)/10) //50% less speed max
-		degradation += rand(0,4)
-		health = rand(10, max_health)
-
-/obj/item/tool/make_young()
-	if(!oldified)
-		return
-	workspeed = initial(workspeed)
-	precision = initial(precision)
-	degradation = initial(degradation)
-	refresh_upgrades() //So we dont null upgrades
-	..()
+	if(.)
+		var/list/trash_mods = TRASH_TOOLMODS
+		while(trash_mods.len)
+			var/trash_mod_path = pick_n_take(trash_mods)
+			var/obj/item/trash_mod = new trash_mod_path
+			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+				break
+			QDEL_NULL(trash_mod)
+	health = rand(10, max_health)
+	refresh_upgrades() //So we dont null upgrades.
 
 /obj/item/gun/make_old()
 	. = ..()
-	if(. && prob(60))
+	refresh_upgrades() //So we dont null upgrades.
+
+//Two rolls for bad mods!
+/obj/item/gun/projectile/make_old()
+	. = ..()
+	if(.)
 		var/list/trash_mods = TRASH_GUNMODS
 		while(trash_mods.len)
 			var/trash_mod_path = pick_n_take(trash_mods)
@@ -85,36 +85,18 @@
 			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
 				break
 			QDEL_NULL(trash_mod)
-	else
-		fire_delay += rand(0,3)
-		init_recoil = OLDIFED_RECOIL(pick(1.5, 1.8, 2, 2.3, 2.6, 3.2, 3.3, 4))
-		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
-		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 	refresh_upgrades() //So we dont null upgrades.
-
-/obj/item/gun/make_young()
-	if(!oldified)
-		return
-	fire_delay = initial(fire_delay)
-	damage_multiplier = initial(damage_multiplier)
-	penetration_multiplier = initial(penetration_multiplier)
-	refresh_upgrades() //So we dont null upgrades
-	..()
 
 /obj/item/gun/energy/make_old()
 	. = ..()
-	charge_cost+= rand(0,250)
-	overcharge_max-= rand(0,5) //This is infact a number you want to go up
-	overcharge_rate-= rand(0,5)
-
-/obj/item/gun/energy/make_young()
-	if(!oldified)
-		return
-	charge_cost = initial(charge_cost)
-	overcharge_max = initial(overcharge_max)
-	overcharge_rate = initial(overcharge_rate)
-	refresh_upgrades() //So we dont null upgrades. Do it again...
-	..()
+	if(.)
+		var/list/trash_mods = TRASH_GUNMODS_ENERGY
+		while(trash_mods.len)
+			var/trash_mod_path = pick_n_take(trash_mods)
+			var/obj/item/trash_mod = new trash_mod_path
+			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+				break
+	refresh_upgrades() //So we dont null upgrades.
 
 /obj/item/storage/make_old()
 	.=..()

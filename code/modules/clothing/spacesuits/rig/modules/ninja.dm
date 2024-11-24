@@ -74,6 +74,7 @@
 	playsound(get_turf(H), 'sound/effects/stealthoff.ogg', 75, 1)
 
 
+
 /obj/item/rig_module/teleporter
 
 	name = "teleportation module"
@@ -98,28 +99,35 @@
 	if(!M || !T)
 		return
 
+
 	holder.spark_system.start()
 	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 	anim(T,M,'icons/mob/mob.dmi',,"phasein",,M.dir)
+
+	new /obj/item/bluespace_dust(T)
 
 /obj/item/rig_module/teleporter/proc/phase_out(var/mob/M,var/turf/T)
 
 	if(!M || !T)
 		return
 
-	playsound(T, "sparks", 50, 1)
-	anim(T,M,'icons/mob/mob.dmi',,"phaseout",,M.dir)
+	if (do_after(M, 10, src))
+		visible_message(SPAN_WARNING("\the [src] begins to spool up!"))
+		playsound(T, "sparks", 50, 1)
+		anim(T,M,'icons/mob/mob.dmi',,"phaseout",,M.dir)
+
+		new /obj/item/bluespace_dust(T)
 
 /obj/item/rig_module/teleporter/engage(atom/target, notify_ai)
 
-	if(!..()) return 0
+	if(!..()) return FALSE
 
 	var/mob/living/carbon/human/H = holder.wearer
 
 	if(!istype(H.loc, /turf))
 		to_chat(H, SPAN_WARNING("You cannot teleport out of your current location."))
-		return 0
+		return FALSE
 
 	var/turf/T
 	var/misalignment = round((realign_time - world.time)/90)
@@ -141,19 +149,19 @@
 
 	if(!T || T.density)
 		to_chat(H, SPAN_WARNING("You cannot teleport into solid walls."))
-		return 0
+		return FALSE
 
 	if(isAdminLevel(T.z))
 		to_chat(H, SPAN_WARNING("You cannot use your teleporter on this Z-level."))
-		return 0
+		return FALSE
 
 	if(T.contains_dense_objects())
 		to_chat(H, SPAN_WARNING("You cannot teleport to a location with solid objects."))
-		return 0
+		return FALSE
 
 	if(T.z != H.z || get_dist(T, get_turf(H)) > world.view)
 		to_chat(H, SPAN_WARNING("You cannot teleport to such a distant object."))
-		return 0
+		return FALSE
 
 	phase_out(H,get_turf(H))
 	H.forceMove(T)
@@ -166,7 +174,7 @@
 			phase_in(G.affecting,get_turf(G.affecting))
 
 	realign_time = max(world.time, realign_time) + 30
-	return 1
+	return TRUE
 
 /obj/item/rig_module/fabricator/energy_net
 

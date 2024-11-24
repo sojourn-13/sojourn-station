@@ -191,7 +191,7 @@
 
 /obj/item/clothing/suit/space/void/crusader
 	name = "crusader 'Deus Vult' power armor"
-	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
+	desc = "The church of the absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
 	icon_state = "inqarmor"
 	item_state = "inqarmor"
 	slowdown = 0

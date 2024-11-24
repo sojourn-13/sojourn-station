@@ -152,7 +152,6 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/voice_name = "unidentifiable voice"
 
 	var/faction = "neutral" //Used for checking whether hostile simple animals will attack you, possibly more stuff later
-	var/captured = 0 //Functionally, should give the same effect as being buckled into a chair when true.
 
 	var/blinded = null
 	var/ear_deaf = null		//Carbon

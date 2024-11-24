@@ -345,6 +345,7 @@
 		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, O.armor_divisor, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O))
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		if(ismob(O.thrower))
 			var/mob/M = O.thrower

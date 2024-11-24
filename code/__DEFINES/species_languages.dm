@@ -45,6 +45,7 @@
 #define LANGUAGE_MERP "Narad Pidgin"
 #define LANGUAGE_BLORP "Aulvae Sonet"
 #define LANGUAGE_WEH "Cindarite Voc"
+#define LANGUAGE_SABLEKYNE "Crinos"
 
 // Special / Antag langauges.
 #define LANGUAGE_MONKEY "Chimpanzee"
@@ -57,13 +58,14 @@
 #define LANGUAGE_BLITZ "Blitzshell Communique"
 
 // Language flags.
-#define WHITELISTED  1   // Language is available if the speaker is whitelisted.
-#define RESTRICTED   2   // Language can only be acquired by spawning or an admin.
-#define NONVERBAL    4   // Language has a significant non-verbal component. Speech is garbled without line-of-sight.
-#define SIGNLANG     8   // Language is completely non-verbal. Speech is displayed through emotes for those who can understand.
-#define HIVEMIND     16  // Broadcast to all mobs with this language.
-#define NONGLOBAL    32  // Do not add to general languages list.
-#define INNATE       64  // All mobs can be assumed to speak and understand this language. (audible emotes)
-#define NO_TALK_MSG  128 // Do not show the "\The [speaker] talks into \the [radio]" message
-#define NO_STUTTER   256 // No stuttering, slurring, or other speech problems
-#define NO_TRANSLATE 512 // Prevents translation with omni translators
+#define WHITELISTED  1    // Language is available if the speaker is whitelisted.
+#define RESTRICTED   2    // Language can only be acquired by spawning or an admin.
+#define NONVERBAL    4    // Language has a significant non-verbal component. Speech is garbled without line-of-sight.
+#define SIGNLANG     8    // Language is completely non-verbal. Speech is displayed through emotes for those who can understand.
+#define HIVEMIND     16   // Broadcast to all mobs with this language.
+#define NONGLOBAL    32   // Do not add to general languages list.
+#define INNATE       64   // All mobs can be assumed to speak and understand this language. (audible emotes)
+#define NO_SPEAK     128  // Language can be understood, but not spoken.
+#define NO_TALK_MSG  256  // Do not show the "\The [speaker] talks into \the [radio]" message
+#define NO_STUTTER   512  // No stuttering, slurring, or other speech problems
+#define NO_TRANSLATE 1024 // Prevents translation with omni translators

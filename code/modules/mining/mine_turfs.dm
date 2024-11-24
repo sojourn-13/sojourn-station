@@ -28,15 +28,20 @@
 		return
 	var/list/usable_qualities = list(QUALITY_EXCAVATION)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	var/mining_eyes = 0
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(MINING in H.mutations)
+			mining_eyes = 20
 	if(tool_type==QUALITY_EXCAVATION)
 		to_chat(user, SPAN_NOTICE("You try to break out a rock geode or two."))
-		if(I.use_tool(user, src, WORKTIME_DELAYED, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+		if(I.use_tool(user, src, WORKTIME_DELAYED-mining_eyes, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
 			new /obj/random/material_ore_small(get_turf(src))
-			if(prob(50))
+			if(prob(50+mining_eyes))
 				new /obj/random/material_ore_small(get_turf(src))
-			if(prob(25))
+			if(prob(25+mining_eyes))
 				new /obj/random/material_ore_small(get_turf(src))
-			if(prob(5))
+			if(prob(5+mining_eyes))
 				new /obj/random/material_ore_small(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
 			return
@@ -285,6 +290,8 @@
 					if(isliving(user))
 						var/mob/living/digger = user
 						var/task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
+						if(MINING in user.mutations)
+							mineral_result += 3
 						if(task_level)
 							mineral_result += task_level
 
@@ -531,6 +538,9 @@
 		task_level = digger.learnt_tasks.get_task_mastery_level("SLAB_CLEARER")
 		if(!task_level)
 			task_level = 0
+
+		if(MINING in user.mutations)
+			task_level += 3
 
 
 	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)

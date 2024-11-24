@@ -230,7 +230,7 @@
 /obj/item/clothing/head/helmet/ballistic
 	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
-	icon_state = "helmet_mil"
+	icon_state = "helmet_black"
 	armor_list = list(melee = 7, bullet = 10, energy = 5, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/verb/toggle_style()
@@ -243,9 +243,61 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Baseline"] = "helmet_mil_alt"
+	options["Baseline"] = "helmet_black"
 	options["Green"] = "helmet_green"
 	options["Tan"] = "helmet_tan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/hazcap
+	name = "cbrn Helmet"
+	desc = "A field modified safety helmet used by Solarian Chemical Corps troops as a quick fix to a comfortable headpiece to wear over bulky chemical hoods."
+	icon_state = "Haz_cap"
+	item_state_slots = list(
+		slot_l_hand_str = "Haz_cap",
+		slot_r_hand_str = "Haz_cap",
+		)
+	item_flags = THICKMATERIAL
+	body_parts_covered = HEAD | EARS
+	armor_list = list(
+		melee = 8,
+		bullet = 8,
+		energy = 8,
+		bomb = 25,
+		bio = 0,
+		rad = 75
+	)
+	flags_inv = HIDEEARS
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = HEAD
+	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.7
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 500
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
+
+/obj/item/clothing/head/helmet/hazcap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "Haz_cap"
+	options["Tan"] = "Haz_cap_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -267,7 +319,7 @@
 	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			This one bears the IFF stripes of the Blackshield."
-	icon_state = "helmet_mil_alt"
+	icon_state = "helmet_mil"
 
 /obj/item/clothing/head/helmet/ballistic/militia/toggle_style()
 	set name = "Adjust Style"
@@ -279,10 +331,14 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Blackshield Colours"] = "helmet_mil_alt"
-	options["Desert Combat"] = "helmet_tan_mil"
+	options["Default Blackshield Combat"] = "helmet_mil"
+	options["Default Blackshield Combat - Anthromorphic"] = "helmet_mil_anthro"
+	options["Desert Blackshield Combat"] = "helmet_tan_mil"
+	options["Desert Blackshield Combat - Anthromorphic"] = "helmet_tan_mil_anthro"
 	options["Woodlands Blackshield Combat"] = "helmet_green_mil"
-	options["Anthromorphic Blackshield Helmet"] = "helmet_mil_anthro"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "helmet_green_mil_anthro"
+	options["Urban Blackshield Combat"] = "helmet_white_mil"
+	options["Urban Blackshield Combat - Anthromorphic"] = "helmet_white_mil_anthro"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -292,7 +348,7 @@
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
-		return 1
+		return TRUE
 
 /obj/item/clothing/head/helmet/ballistic/militia/sergeant
 	name = "sergeant's ballistic gorget"
@@ -354,13 +410,19 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Standard fullhelm"] = ""
-	options["Tan fullhelm"] = "_tan"
-	options["Green fullhelm"] = "_green"
-	options["Grey hooded fullhelm"] = "_gp"
-	options["Green hooeded fullhelm"] = "_grp"
-	options["Tan hooded fullhelm"] = "_tp"
-	options["Camo hooded fullhelm"] = "_cp"
+	options["Default Blackshield Combat"] = ""
+	options["Default Blackshield Combat - Anthromorphic"] = "_anthro"
+	options["Desert Blackshield Combat"] = "_tan"
+	options["Desert Blackshield Combat - Anthromorphic"] = "_tan_anthro"
+	options["Woodlands Blackshield Combat"] = "_green"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "_green_anthro"
+	options["Urban Blackshield Combat"] = "_white"
+	options["Urban Blackshield Combat - Anthromorphic"] = "_white_anthro"
+	options["Default Blackshield Combat - Hooded"] = "_gp"
+	options["Desert Blackshield Combat - Hooded"] = "_tp"
+	options["Woodlands Blackshield Combat - Hooded"] = "_grp"
+	options["Camo Blackshield Combat - Hooded"] = "_cp"
+	options["Urban Camo Combat - Hooded"] = "_wp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -370,6 +432,24 @@
 		item_state = base
 		item_state_slots = null
 		to_chat(M, "You adjust to the [choice].")
+
+		var/list/anthro = list(
+			"_anthro",
+			"_tan_anthro",
+			"_green_anthro",
+			"_white_anthro"
+		)
+		if (options[choice] in anthro)
+			if (src.name == "blackshield full helm")
+				light_overlay = "bsfullhelm_anthro_light"
+			else
+				light_overlay = "corpsmanfullhelm_anthro_light"
+		else
+			if (src.name == "blackshield full helm")
+				light_overlay = "bsfullhelm_light"
+			else
+				light_overlay = "corpsmanfullhelm_light"
+
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -408,13 +488,19 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Standard fullhelm"] = ""
-	options["Tan fullhelm"] = "_tan"
-	options["Green fullhelm"] = "_green"
-	options["Grey hooded fullhelm"] = "_gp"
-	options["Green hooeded fullhelm"] = "_grp"
-	options["Tan hooded fullhelm"] = "_tp"
-	options["Camo hooded fullhelm"] = "_cp"
+	options["Default Blackshield Combat"] = ""
+	options["Default Blackshield Combat - Anthromorphic"] = "_anthro"
+	options["Desert Blackshield Combat"] = "_tan"
+	options["Desert Blackshield Combat - Anthromorphic"] = "_tan_anthro"
+	options["Woodlands Blackshield Combat"] = "_green"
+	options["Woodlands Blackshield Combat - Anthromorphic"] = "_green_anthro"
+	options["Urban Blackshield Combat"] = "_white"
+	options["Urban Blackshield Combat - Anthromorphic"] = "_white_anthro"
+	options["Default Blackshield Combat - Hooded"] = "_gp"
+	options["Desert Blackshield Combat - Hooded"] = "_tp"
+	options["Woodlands Blackshield Combat - Hooded"] = "_grp"
+	options["Camo Blackshield Combat - Hooded"] = "_cp"
+	options["Urban Camo Combat - Hooded"] = "_wp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -424,6 +510,18 @@
 		item_state = base
 		item_state_slots = null
 		to_chat(M, "You adjust to the [choice].")
+
+		var/list/anthro = list(
+			"_anthro",
+			"_tan_anthro",
+			"_green_anthro",
+			"_white_anthro"
+		)
+		if (options[choice] in anthro)
+			light_overlay = "bsfullhelm_anthro_light"
+		else
+			light_overlay = "bsfullhelm_light"
+
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -539,7 +637,7 @@
 //Church
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
-	desc = "Don't want anything getting in your eyes."
+	desc = "Design frequently used by hydroponicists and floral caretakers of New Byzantine. Protection is paramount when working with dangerous plants."
 	icon_state = "botanist"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -576,7 +674,7 @@
 
 /obj/item/clothing/head/helmet/acolyte
 	name = "vector hood"
-	desc = "Even the most devout deserve head protection."
+	desc = "Helmet for every faithful of the Absolute. Even the most devout need protection."
 	icon_state = "acolyte"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -627,7 +725,7 @@
 
 /obj/item/clothing/head/helmet/path/divisor
 	name = "Divisor Plate Greathelm"
-	desc = "An great helm with large red wings with latin engravings that lets it know the user is an enlightened Vector with it's vibrant colours."
+	desc = "A greathelm with latin engravings that let everyone know the user is an enlightened Divisor, sworn protector and soldier."
 	icon_state = "divisor_plate_greathelm"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -685,7 +783,7 @@
 
 /obj/item/clothing/head/helmet/path/lemniscate
 	name = "Lemniscate Hat"
-	desc = "The incredibly wide hat of Lemniscates only ensures it's fanciness- at it is the biggest among the other hats there is, this design follows the need to prevent sunburns while staying well suited on the head. There is the presence of inner layer of chain-mail and an slim, yet sturdy bowl-like amount of steel protecting the skull, hidden under the layers of smooth silk."
+	desc = "The incredibly wide hat of Lemniscates exudes radiance as it is the biggest amongst hats there is. The design ensures a comfortable fit along with the prevention of sunburn. Hidden beneath the smooth silk of the hat is a layer of chainmail."
 	icon_state = "lemniscate_hat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -715,7 +813,7 @@
 
 /obj/item/clothing/head/helmet/path/monomial
 	name = "Monomial Kabuto"
-	desc = "An old helmet piece with minor plates overlapping and keeping the skull of it's user completely secure from damage. It allows attacks to glance down and spread the impact across the entire helmet instead of only one point, providing the capacity of survival of whoever keeps it on it's head."
+	desc = "An archaic helmet design with small overlapping plates, keeping the skull of its user mostly safe from damage. It disperses the impact of an attack across the entire helmet instead of only one point, adding to the survival of the wearer."
 	icon_state = "monomial_kabuto"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -744,7 +842,7 @@
 
 /obj/item/clothing/head/helmet/path/factorial
 	name = "Factorial Powerhood"
-	desc = "An indespensable headwear of any combat behicle operator, well used by the mechanics who served under the banner of the New Byzantine and even to this day, it's design is used for pilots."
+	desc = "An indespensable headwear of any combat vehicle operator, mostly used by the mechanics and factorials who served under the banner of New Byzantine. Even to this day the design is used by absolutist pilots."
 	icon_state = "factorial_powerhood"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
@@ -773,12 +871,12 @@
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
-	desc = "The rosaria protects. Deus Vult."
+	desc = "The rosaria protects. The Absolute wills it!"
 	icon_state = "rosaria_helm"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
 	brightness_on = 4
-	armor_list = list(melee =7, bullet = 7, energy = 7, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee =10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)
@@ -808,7 +906,7 @@
 
 /obj/item/clothing/head/helmet/prime
 	name = "prime hood"
-	desc = "A visored helmet with a cloth hood covering it."
+	desc = "A visored helmet with a cloth hood covering it. The craftsmanship and decorations are only fit for a Prime of the Absolute"
 	icon_state = "prime"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -830,19 +928,18 @@
 	var/list/options = list()
 	options["prime dark"] = "prime"
 	options["prime royal"] = "prime_alt"
-	options["prime royal claric"] = "prime_alt2"
-	options["prime royal doctor"] = "prime_alt3"
 	options["prime saint"] = "prime_saint"
 	options["prime paladin"] = "prime_paladin"
+	options["prime laurel"] = "laurel_g"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		if(choice == "prime saint")
+		if(choice == "prime saint" || choice ==  "prime laurel")
 			flags_inv = HIDEEARS
 		else
-			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -1374,8 +1471,8 @@
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt nightvision HUD."
 	icon_state = "bulletproof_ironhammer"
-	body_parts_covered = HEAD|FACE|EARS
-	flags_inv = HIDEEARS
+	body_parts_covered = HEAD|EARS
+	flags_inv = NONE
 	action_button_name = "Toggle Night Vision"
 	var/obj/item/clothing/glasses/powered/nightvision_helmet/hud
 	var/last_toggle = 0
@@ -1434,10 +1531,10 @@
 
 /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/update_icon()
 	if(hud in src)
-		icon_state = "bulletproof_ironhammer"
+		icon_state = "bulletproof_ironhammer_nv"
 		set_light(0, 0)
 	else
-		icon_state = "bulletproof_ironhammer_on"
+		icon_state = "bulletproof_ironhammer_nv_on"
 		set_light(1, 1, COLOR_LIGHTING_GREEN_MACHINERY)
 	update_wear_icon()
 	..()
@@ -1445,11 +1542,11 @@
 //Thermal
 /obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal
 	name = "marshal thermo-nightvision helmet"
-	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
+	desc = "A bulletproof security helmet with mandibles that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt thermal imaging HUD."
 	icon_state = "bulletproof_ironhammer_thermal"
-	body_parts_covered = HEAD|EARS
-	flags_inv = NONE
+	body_parts_covered = HEAD|FACE|EARS
+	flags_inv = HIDEEARS
 	action_button_name = "Toggle Thermal Night Vision HUD"
 	var/last_toggle = 0
 	var/toggle_delay = 2 SECONDS
@@ -1660,8 +1757,8 @@
 	name = "altyn helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
-	armor_up = list(melee = 2, bullet = 3, energy = 2, bomb = 35, bio = 0, rad = 0)
-	armor_list = list(melee = 5, bullet = 4, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor_up = list(melee = 3, bullet = 5, energy = 2, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 7, bullet = 9, energy = 0, bomb = 10, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
@@ -1758,9 +1855,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["maska dark camo"] = "maska_bs"
-	options["maska forest camo"] = "maska_bs_green"
-	options["maska red rock camo"] = "maska_bs_tan"
+	options["Default Blackshield Combat"] = "maska_bs"
+	options["Woodlands Blackshield Combat"] = "maska_bs_green"
+	options["Desert Blackshield Combat"] = "maska_bs_tan"
+	options["Urban Blackshield Combat"] = "maska_bs_white"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

@@ -110,6 +110,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/silenced = FALSE
 	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
 
+	//For bayonet icon handling
+	var/bayonet = FALSE
+
 	var/icon_contained = TRUE
 	var/static/list/item_icons_cache = list()
 	var/wielded_item_state = null
@@ -259,6 +262,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 
 /obj/item/gun/update_icon()
+	cut_overlays()
+
 	if(wielded_item_state)
 		if(icon_contained)//If it has it own icon file then we want to pull from that.
 			if(wielded)
@@ -484,7 +489,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				plusing_intraction(I, user)
 				return
 
-			//This is litterly just a stop gap so you dont accidently decon your weapon.
+			//This is litteraly just a stop gap so you dont accidently decon your weapon.
 			if(QUALITY_SCREW_DRIVING)
 				..()
 				return
@@ -618,6 +623,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
 				user.drop_item()
+			currently_firing = FALSE	//Add this here or else people who have clumsy will permanently break guns and prevent them from firing if they fuck up with it.
 		else
 			handle_click_empty(user)
 		return FALSE

@@ -807,7 +807,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#C0C0C0")
 
 /datum/seed/flower/poppy
-	name = "poppies"
+	name = "poppy"
 	seed_name = "poppy"
 	display_name = "poppies"
 	chems = list("space_drugs" = list(1,20), "monocaridine" = list(1,10))
