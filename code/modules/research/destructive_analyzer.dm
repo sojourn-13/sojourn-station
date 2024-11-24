@@ -29,6 +29,8 @@ Note: Must be placed within 3 tiles of the R&D Console
 	for(var/obj/item/stock_parts/S in src)
 		T += S.rating
 	decon_mod = T * 0.1
+	if(decon_mod > 1)
+		decon_mod = 1
 
 /obj/machinery/r_n_d/destructive_analyzer/update_icon()
 	if(panel_open)
