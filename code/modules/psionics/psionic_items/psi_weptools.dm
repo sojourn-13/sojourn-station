@@ -62,6 +62,7 @@
 	matter = list()
 	tool_qualities = list(QUALITY_LASER_CUTTING = 42, QUALITY_SAWING = 23, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 22, QUALITY_BONE_SETTING = 19) //It's a surgical chainsaw
 	max_fuel = 123
+	spawn_full = FALSE
 
 /obj/item/tool/saw/chain/cult/deepmaints
 	name = "mindripper"
@@ -72,6 +73,7 @@
 	damtype = BURN
 	tool_qualities = list(QUALITY_LASER_CUTTING = 50, QUALITY_SAWING = 45, QUALITY_CLAMPING = 10, QUALITY_CAUTERIZING = 10, QUALITY_RETRACTING = 25, QUALITY_BONE_SETTING = 20) //It's a surgical chainsaw
 	max_fuel = 246
+	spawn_full = FALSE
 
 /obj/item/tool/sword/machete/cult
 	name = "scorch sword"
@@ -120,6 +122,7 @@
 	matter = list()
 	switched_on_qualities = list(QUALITY_HAMMERING = 13, QUALITY_SHOVELING = 13, QUALITY_DIGGING = 13)
 	switched_off_qualities = list(QUALITY_HAMMERING = 3, QUALITY_SHOVELING = 3, QUALITY_DIGGING = 3)
+	spawn_full = FALSE
 
 /obj/item/tool/power_fist/cult/deepmaints
 	name = "mind repeater"
@@ -127,6 +130,7 @@
 	damtype = BURN
 	switched_on_qualities = list(QUALITY_HAMMERING = 15, QUALITY_SHOVELING = 15, QUALITY_DIGGING = 15)
 	switched_off_qualities = list(QUALITY_HAMMERING = 5, QUALITY_SHOVELING = 5, QUALITY_DIGGING = 5)
+	spawn_full = FALSE
 
 /obj/item/tool/power_fist/cult/deepmaints/attack()
 	..()
@@ -277,6 +281,7 @@
 	workspeed = 1.2
 	max_upgrades = 4
 	suitable_cell = /obj/item/cell/medium
+	spawn_full = FALSE
 
 /obj/item/tool/multitool/advanced/cult/deepmaints
 	name = "multi-mind"
@@ -289,6 +294,7 @@
 	use_power_cost = 0.25
 	workspeed = 1.3
 	max_upgrades = 4
+	spawn_full = FALSE
 
 /obj/item/tool/shovel/power/cult
 	name = "pit delver"
@@ -299,11 +305,13 @@
 	origin_tech = list()
 	price_tag = 0
 	tool_qualities = list(QUALITY_SHOVELING = 53, QUALITY_DIGGING = 42, QUALITY_EXCAVATION = 34, QUALITY_HAMMERING = 6)
+	spawn_full = FALSE
 
 /obj/item/tool/shovel/power/cult/deepmaints
 	name = "hollow labour"
 	desc = "A tool made from lackadaisical thoughts while doing manual laboring tasks, such as digging and plowing earth."
 	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 50, QUALITY_EXCAVATION = 70, QUALITY_HAMMERING = 10)
+	spawn_full = FALSE
 
 /obj/item/tool/screwdriver/combi_driver/cult
 	name = "rotary spanner"
@@ -313,12 +321,14 @@
 	origin_tech = list()
 	price_tag = 0
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 36, QUALITY_RETRACTING = 22)
+	spawn_full = FALSE
 
 /obj/item/tool/screwdriver/combi_driver/cult/deepmaints
 	name = "mind-driver"
 	desc = "A screwdriver and wrench combo willed into reality from the thoughts of an engineering mind wishing for a tool that could make them able to turn even the most rusted and stripped screw or loosen the tightest, rustiest bolt."
 	icon_state = "psi_driver"
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 70, QUALITY_BOLT_TURNING = 70, QUALITY_DRILLING = 60, QUALITY_RETRACTING = 25)
+	spawn_full = FALSE
 
 /obj/item/tool/weldingtool/advanced/cult
 	name = "thought scorcher"
@@ -331,6 +341,7 @@
 	matter = list()
 	origin_tech = list()
 	price_tag = 0
+	spawn_full = FALSE
 
 /obj/item/tool/weldingtool/advanced/cult/deepmaints
 	name = "mind candle"
@@ -339,6 +350,7 @@
 	max_fuel = 80
 	sparks_on_use = FALSE
 	eye_hazard = FALSE
+	spawn_full = FALSE
 
 /obj/item/tool/shovel/combat/cult
 	name = "cognitive pry-cutter"
