@@ -262,6 +262,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 
 /obj/item/gun/update_icon()
+	cut_overlays()
+
 	if(wielded_item_state)
 		if(icon_contained)//If it has it own icon file then we want to pull from that.
 			if(wielded)
