@@ -82,8 +82,9 @@
 /obj/item/tool/spear/polehammer
 	name = "polehammer"
 	desc = "This weapon of ancient design appears to be a spear-hammer hybrid. \
-	A close relative to the halberd with focus on penetrating armor more easily.\
-	This polehammer is the Church's adaption to ever stronger power shells and thicker furs from mutations on Amethyn.\ It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
+	A close relative to the halberd with focus on penetrating armor more easily. \
+	This polehammer is the Church's adaption to ever stronger power shells and thicker furs from mutations on Amethyn. \
+	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_polehammer"
 	item_state = "nt_polehammer"
