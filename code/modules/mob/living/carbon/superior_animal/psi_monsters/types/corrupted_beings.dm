@@ -22,11 +22,11 @@
 	special_parts = list(/obj/item/animal_part/chimera_fang)
 
 
-	armor_divisor = 2 //Sharp bones
+	armor_penetration = 25 //Sharp bones
 
 
 	//Good stats baseline in case admins dont edit these
-	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 17)
+	armor = list(melee = 45, bullet = 15, energy = 45, bomb = 10, bio = 100, rad = 100, agony = 70)
 
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower
@@ -54,7 +54,7 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-	armor_divisor = 1.25
+	armor_penetration = 15
 
 	color = "#49D6F2"
 
@@ -63,7 +63,7 @@
 	can_leave = TRUE //freedom
 
 	//Same armor that they are warning
-	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
 
 /*
 Note about the deepmaints_bound!
@@ -103,7 +103,7 @@ They are soully made and reflavoured to be for PVE.
 	move_to_delay = 1
 	attacktext = "rends apart"
 
-	armor_divisor = 2.5
+	armor_penetration = 35
 
 	color = null
 
@@ -122,7 +122,7 @@ They are soully made and reflavoured to be for PVE.
 	//Scale armor ref from CDDA
 	//Dragons are weak to melee - source: Dnd
 	//Ive never seen a wizard NOT nuke a dragon with fire ball
-	armor = list(melee = 10, bullet = 17, energy = 23, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 30, energy = 95, bomb = 40, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
 	var/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/shooter = src //We're the shooter.
@@ -200,7 +200,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints)
 
-	armor_divisor = 1.25
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound
 	name = "Wild Daskveyian Wall Breaker"
@@ -236,7 +236,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
-	armor_divisor = 1
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound
 	name = "Wild Daskveyian Plasma Caster"
@@ -273,7 +273,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/beam
 
-	armor_divisor = 1
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound
 	name = "Wild Daskveyian Las-Gunner"
@@ -314,7 +314,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/bullet/pistol_35/scrap
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 
-	armor_divisor = 1
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/Initialize(mapload)
 	. = ..()
@@ -361,7 +361,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/bullet/rifle_75/scrap
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
-	armor_divisor = 1
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/Initialize(mapload)
 	. = ..()
@@ -394,8 +394,8 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_divisor = 1
-	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
+	armor_penetration = 1
+	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
 	var/knockdown_odds = 30
 
 // BUMP!
@@ -435,8 +435,8 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_divisor = 1.5
-	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
+	armor_penetration = 30
+	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound
 	name = "Wild Daskveyian Halberdier"
@@ -463,7 +463,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_divisor = 1
+	armor_penetration = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound
@@ -491,7 +491,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_divisor = 1
+	armor_penetration = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1
@@ -540,7 +540,7 @@ They are soully made and reflavoured to be for PVE.
 
 	drop_items = list()
 
-	armor_divisor = 1
+	armor_penetration = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1

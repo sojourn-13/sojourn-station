@@ -4,13 +4,13 @@ var/global/list/sparring_attack_cache = list()
 /datum/unarmed_attack
 	var/attack_verb = list("attack")	// Empty hand hurt intent verb.
 	var/attack_noun = list("fist")
-	var/damage = 0						// Extra empty hand attack damage.
+	var/damage = 0						// Extra empty hand attack damage.code/modules/mob/living/carbon/human/species/species_attack.dm
 	var/attack_sound = "punch"
 	var/miss_sound = 'sound/weapons/punchmiss.ogg'
 	var/shredding = 0 // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
 	var/sharp = 0
 	var/edge = 0
-	var/armor_divisor = 1
+	var/armor_penetration = 1
 
 	var/deal_halloss
 	var/sparring_variant_type = /datum/unarmed_attack/light_strike

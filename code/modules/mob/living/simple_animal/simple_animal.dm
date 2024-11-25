@@ -415,7 +415,7 @@
 			dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			return damage_through_armor(damage, def_zone, attack_flag = Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
+			return damage_through_armor(damage, def_zone, attack_flag = Proj.check_armour, armor_pen = Proj.armor_penetration, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
@@ -503,7 +503,6 @@
 		O.attack(src, user, user.targeted_organ)
 
 /mob/living/simple_animal/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
-
 	if(effective_force <= resistance)
 		to_chat(user, SPAN_DANGER("This weapon is ineffective, it does no damage."))
 		return 2

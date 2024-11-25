@@ -52,7 +52,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
 	toggleable = TRUE
-	armor_divisor = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	degradation = 0.7
 	use_power_cost = 2
 	suitable_cell = /obj/item/cell/medium
@@ -87,7 +87,7 @@
 	item_state = "onehammer"
 	wielded_icon = "onehammer_on"
 	switched_on_forcemult = 2.6 // 39 total
-	armor_divisor = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
 	price_tag = 860
@@ -109,7 +109,7 @@
 	wielded_icon = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
 	slot_flags = SLOT_BELT|SLOT_BACK
-	armor_divisor = ARMOR_PEN_EXTREME
+	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_LETHAL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
 	throw_speed = 1
@@ -128,7 +128,7 @@
 	icon_state = "homewrecker"
 	item_state = "homewrecker0"
 	wielded_icon = "homewrecker1"
-	armor_divisor = ARMOR_PEN_EXTREME
+	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_ROBUST
@@ -152,7 +152,7 @@
 	item_state = "iron_hammer"
 	wielded_icon = "iron_hammer_wielded"
 	w_class = ITEM_SIZE_HUGE
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_LETHAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING
@@ -169,7 +169,7 @@
 	item_state = "excelsior_hammer"
 	wielded_icon = "excelsior_hammer_wielded"
 	w_class = ITEM_SIZE_HUGE
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	slot_flags = SLOT_BELT
 	force = WEAPON_FORCE_BRUTAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING + 2
@@ -186,7 +186,7 @@
 	matter = list(MATERIAL_STEEL = 10)
 	price_tag = 30
 
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	force = WEAPON_FORCE_DANGEROUS
 
 	tool_qualities = list(QUALITY_HAMMERING = 20)
@@ -214,7 +214,7 @@
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 	matter = list(MATERIAL_STEEL = 3)
 	max_upgrades = 3
-	armor_divisor = ARMOR_PEN_GRAZING
+	armor_penetration = ARMOR_PEN_GRAZING
 	force = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_HUGE
 
@@ -235,7 +235,7 @@
 	item_state = "chargehammer0"
 	w_class = ITEM_SIZE_HUGE
 	switched_on_forcemult = 2.2
-	armor_divisor = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)

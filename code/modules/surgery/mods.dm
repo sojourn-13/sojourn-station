@@ -37,7 +37,7 @@
 		SPAN_WARNING("[user]'s hand slips, damaging [organ.get_surgery_name()] with \the [mod]!"),
 		SPAN_WARNING("Your hand slips, damaging [organ.get_surgery_name()] with \the [mod]!")
 	)
-	organ.take_damage(rand(24, 32), BRUTE, edge = TRUE)
+	organ.take_damage(rand(24, 32), BRUTE) //Equinox edit. Removed ", edge = TRUE" due to bad keyword argument error. Stopgap, gets an urgent PR working quicker.
 
 /datum/surgery_step/remove_mod
 	required_tool_quality = QUALITY_LASER_CUTTING

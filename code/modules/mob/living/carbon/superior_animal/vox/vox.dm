@@ -24,12 +24,12 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
-	armor = list(melee = 2, bullet = 1, energy = 0, bomb = 20, bio = 20, rad = 0)
+	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
 
 	get_stat_modifier = TRUE
 
 	melee_sharp = TRUE //Claws
-	armor_divisor = 1.25
+	armor_penetration = 1.25
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/low = 15,

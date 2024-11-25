@@ -97,6 +97,8 @@
 	var/embed_mult = 1 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 
+	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation, unknown if it is currently used, TODO : check it ???
+
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
 
@@ -688,7 +690,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/refresh_upgrades()
 	damtype = initial(damtype)
 	force = initial(force)
-	armor_divisor = initial(armor_divisor)
+	armor_penetration = initial(armor_penetration)
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
@@ -750,7 +752,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/alt_mode_activeate_two()
 	damtype = alt_mode_damagetype
 	force = force *= alt_mode_lossrate
-	armor_divisor= armor_divisor *= alt_mode_lossrate
+	armor_penetration= armor_penetration *= alt_mode_lossrate
 	attack_verb = LAZYCOPY(alt_mode_verbs)
 	sharp = alt_mode_sharp
 	flags |= NOBLOODY

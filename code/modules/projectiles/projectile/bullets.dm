@@ -70,26 +70,26 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	var/chance = 0
 	if(istype(A, /turf/simulated/wall)) // TODO: refactor this from functional into OOP
 		var/turf/simulated/wall/W = A
-		chance = round(penetrating/2 * armor_divisor * 2 / W.material.integrity * 180)
+		chance = round(penetrating/2 * armor_penetration / 4  * 2 / W.material.integrity * 180)
 	else if(istype(A, /obj/item/shield))
 		var/obj/item/shield/S = A
-		chance = round(armor_divisor * 2 / S.durability * 180)
+		chance = round(armor_penetration / 4  * 2 / S.durability * 180)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		chance = round(penetrating/2 * armor_divisor * 2 / D.maxHealth * 180)
+		chance = round(penetrating/2 * armor_penetration / 4  * 2 / D.maxHealth * 180)
 		if(D.glass) chance *= 2
 	else if(istype(A, /obj/structure/girder))
 		chance = 100
 	else if(istype(A, /obj/structure/low_wall))
-		chance = round(penetrating/2 * armor_divisor * 2 / 150 * 180) // hardcoded, value is same as steel wall, will have to be changed once low walls have integrity
+		chance = round(penetrating/2 * armor_penetration / 4  * 2 / 150 * 180) // hardcoded, value is same as steel wall, will have to be changed once low walls have integrity
 	else if(istype(A, /obj/structure/table))
 		var/obj/structure/table/T = A
-		chance = round(penetrating/2 * armor_divisor * 2 / T.maxHealth * 180)
+		chance = round(penetrating/2 * armor_penetration / 4  * 2 / T.maxHealth * 180)
 	else if(istype(A, /obj/structure/barricade))
 		var/obj/structure/barricade/B = A
-		chance = round(penetrating/2 * armor_divisor * 2 / B.material.integrity * 180)
+		chance = round(penetrating/2 * armor_penetration / 4  * 2 / B.material.integrity * 180)
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
-		chance = armor_divisor * penetrating/2
+		chance = armor_penetration / 4  * penetrating/2
 
 	if(prob(chance) || (A in holder.force_penetration_on))
 		if(A.opacity || istype(A, /obj/item/shield))

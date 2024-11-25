@@ -4,7 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 70)
-	armor_divisor = 2.25
+	armor_penetration = 40
 	check_armour = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
@@ -38,15 +38,15 @@
 // Overcharged Shots
 /obj/item/projectile/hydrogen/max
 	damage_types = list(BURN = 90)
-	armor_divisor = 2.75
+	armor_penetration = 60
 	recoil = 40
 
 /obj/item/projectile/hydrogen/pistol/max
 	damage_types = list(BURN = 80)
-	armor_divisor = 2.5
+	armor_penetration = 60
 	recoil = 20
 
 /obj/item/projectile/hydrogen/cannon/max
 	damage_types = list(BURN = 100)
-	armor_divisor = 3
+	armor_penetration = 60
 	recoil = 60

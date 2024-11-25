@@ -19,7 +19,7 @@
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
-	armor_divisor = 1
+	armor_penetration = 15
 
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
@@ -37,7 +37,7 @@
 	healing_factor = 10
 	attacktext = "rammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.2
+	armor_penetration = 20
 	leach_on_odds = 30
 	can_leach = TRUE
 	steal_odds = 15
@@ -63,7 +63,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.5
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher
 	name = "cerebral crusher"
@@ -82,7 +82,7 @@
 	healing_factor = 10
 	attacktext = "slammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.3
+	armor_penetration = 30
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly
 	name = "crimson jelly"
@@ -104,9 +104,9 @@
 	real_mutator = TRUE
 	lethal_to_captive = TRUE //We kill are captives
 	knockdown_odds = 15
-	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_divisor = 2.3
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -119,7 +119,7 @@
 	health = 1250 * PSIMOB_HEALTH_MOD
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_divisor = 4
+	armor_penetration = 70
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
 /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron

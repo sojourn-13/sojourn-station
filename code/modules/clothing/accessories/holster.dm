@@ -463,7 +463,7 @@ Sword holsters
 				I.no_swing = TRUE
 				I.embed_mult = 0
 				I.force *= damage_mult
-				I.armor_divisor -= ad_loss
+				I.armor_penetration -= ad_loss
 				//This is a uniquic attack proc that has smaller checks, this is to
 				I.fancy_ranged_melee_attack(A, user)
 				I.refresh_upgrades()

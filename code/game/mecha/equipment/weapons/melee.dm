@@ -17,7 +17,7 @@
 	sharp = TRUE
 	edge = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 20) // It's a literal mech sized blade
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay
@@ -41,7 +41,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20) //Same as E-cutlasses
 	origin_tech = list(TECH_MAGNET = 5, TECH_POWER = 6, TECH_COMBAT = 3) //Same as E-cutlasses
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1) //WAY LESS then normal E-cutlasses do to the only being 5 more damage
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay

@@ -20,7 +20,7 @@
 
 /obj/item/clothing/head/hood/winter/security
 	name = "security winter hood"
-	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 20, energy = 15, bomb = 20, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/medical
 	name = "medical winter hood"
@@ -45,7 +45,7 @@
 
 /obj/item/clothing/head/hood/winter/cargo/miner
 	name = "mining winter hood"
-	armor_list = list(melee = 10, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
 */
 // Explorer gear
 /obj/item/clothing/head/hood/explorer

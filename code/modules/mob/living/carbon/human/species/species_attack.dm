@@ -53,7 +53,7 @@
 	attack_verb = list("stabbed", "jabbed", "shanked")
 	attack_noun = list("stab", "jab", "shank")
 	damage = 2
-	armor_divisor = 1.2
+	armor_penetration = 10
 
 /datum/unarmed_attack/horns
 	deal_halloss = 9

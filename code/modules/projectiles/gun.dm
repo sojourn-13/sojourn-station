@@ -545,9 +545,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		projectile.multiply_projectile_damage(damage_multiplier)
 
 		if(extra_proj_penmult)
-			projectile.add_projectile_penetration(penetration_multiplier)
+			projectile.multiply_projectile_penetration(extra_proj_penmult)
 
-		projectile.add_projectile_penetration(penetration_multiplier)
+		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02) // VIG STAT ADDS TO PENETRATION !!!
 
 		if(extra_proj_wallbangmult)
 			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
@@ -1209,7 +1209,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/melee_stats = list()
 
 	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
-	melee_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
+	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_penetration, "max" = 100, "unit" = "%"))
 
 	stats["Physical Details"] = melee_stats
 
@@ -1278,7 +1278,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	data += list(list("name" = "Projectile Type", "type" = "String", "value" = P.name))
 	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
-	data += list(list("name" = "Armor Divisor", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
+	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_penetration * penetration_multiplier))
 	data += list(list("name" = "Overall Pain", "type" = "String", "value" = (P.get_pain_damage()) * proj_agony_multiplier))
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
@@ -1291,11 +1291,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_AP"] = P.armor_divisor + penetration_multiplier
+	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_WOUND"] = P.wounding_mult
-	data["unarmoured_damage"] = min(0, ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult)
-	data["armoured_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
-	data["armoured_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
+	data["projectile_pain"] = P.get_pain_damage() * proj_agony_multiplier // not sure if this multriplier is needed here, TODO : check later
+	//data["unarmoured_damage"] = min(0, ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult)
+	//data["armoured_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
+	//data["armoured_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data
@@ -1327,7 +1328,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	vision_flags = initial(vision_flags)
 	see_invisible_gun = initial(see_invisible_gun)
 	force = initial(force)
-	armor_divisor = initial(armor_divisor)
+	armor_penetration = initial(armor_penetration)
 	sharp = initial(sharp)
 	attack_verb = list("struck", "hit", "bashed")
 	auto_eject = initial(auto_eject) //SoJ edit

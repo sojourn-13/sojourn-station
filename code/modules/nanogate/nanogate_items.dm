@@ -5,9 +5,9 @@
 	icon_state = "nanite_rig"
 	suit_type = "nanite"
 	armor_list = list(
-		melee = 7,
-		bullet = 7,
-		energy = 7,
+		melee = 35,
+		bullet = 35,
+		energy = 35,
 		bomb = 25,
 		bio = 100,
 		rad = 100

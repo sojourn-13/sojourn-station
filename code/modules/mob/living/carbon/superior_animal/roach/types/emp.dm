@@ -10,7 +10,7 @@
 	deathmessage = "pulses violently as it dies!"
 	melee_damage_lower = 12
 	melee_damage_upper = 15 //Rare
-	armor_divisor = 4
+	armor_penetration = 50
 
 	mob_size = MOB_MEDIUM
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch

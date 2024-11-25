@@ -14,7 +14,7 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
 
-	armor = list(melee = 8, bullet = 1, energy = 1, bomb = 5, bio = 20, rad = 100, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 5, bio = 20, rad = 100, agony = 0)
 
 	contaminant_immunity = TRUE
 	toxin_immune = TRUE
@@ -22,7 +22,7 @@
 	knockdown_odds = 3 //Well we still can knockdown we dont tend to over other affects
 	melee_damage_lower = 5
 	melee_damage_upper = 7 //Weaker than hunter
-	armor_divisor = 1
+	armor_penetration = 5
 
 /mob/living/carbon/superior_animal/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

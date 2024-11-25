@@ -14,7 +14,7 @@
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
-	armor_list = list(melee = 3, bullet = 0, energy = 2, bomb = 0, bio = 25, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.6
 	can_hold_knife = TRUE
 
@@ -27,7 +27,7 @@
 	name = "duty jackboots"
 	desc = "A pair of standard-issue police steel-toed boots. For when you really need to remind the criminals what the law is."
 	icon_state = "duty"
-	armor_list = list(melee = 3, bullet = 2, energy = 2, bomb = 0, bio = 25, rad = 0)
+	armor_list = list(melee = 15, bullet = 10, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.8
 	can_hold_knife = TRUE
 
@@ -69,7 +69,7 @@
 	desc = "A pair of metallic boots designed for industrial environments."
 	icon_state = "reinforced"
 	item_state = "reinforced"
-	armor_list = list(melee = 3, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
@@ -83,7 +83,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor_list = list(melee = 2, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 0) //Worse than jackboots and reinforced boots due to granting shock immunity to legs
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0) //Worse than jackboots and reinforced boots due to granting shock immunity to legs
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
@@ -133,7 +133,7 @@
 	icon_state = "hunterboots"
 	item_state = "hunterboots"
 	force = WEAPON_FORCE_HARMLESS
-	armor_list = list(melee = 5, bullet = 1, energy = 2, bomb = 5, bio = 25, rad = 5)
+	armor_list = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
 	siemens_coefficient = 0.6
 	price_tag = 200
 	can_hold_knife = 1

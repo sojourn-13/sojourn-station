@@ -318,7 +318,7 @@
 		sleep(1)
 
 	target.throw_at(get_edge_target_turf(target, dir), 7, 2)//this is very fast, and very painful for any obstacle involved
-	target.damage_through_armor(damage, HALLOSS, armor_divisor = 2)
+	target.damage_through_armor(damage, HALLOSS, attack_flag = ARMOR_MELEE)
 //	attacker.regen_slickness(0.4)
 
 	//admin messaging

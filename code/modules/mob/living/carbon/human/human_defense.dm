@@ -68,7 +68,7 @@ uniquic_armor_act
 			step(src, pick(cardinal - hit_dirs))
 			visible_message(SPAN_WARNING("[src] stumbles around."))
 
-/mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
+/mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/armor_pen, var/damage_already_applied)
 
 	var/obj/item/organ/external/affected = get_organ(check_zone(def_zone))
 
@@ -263,18 +263,15 @@ uniquic_armor_act
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
 
-	visible_message("<span class='danger'>[src] has been [LAZYPICK(I.attack_verb) || "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
+	visible_message("<span class='danger'>|[I.name]|[src]|[user]| has been [LAZYPICK(I.attack_verb) || "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
 
 	var/EF = unique_armor_check(I, user, effective_force)
 	if(EF)
 		effective_force = EF
-
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.stop_blocking()
-
 	standard_weapon_hit_effects(I, user, effective_force, hit_zone)
-
 	return TRUE
 
 /mob/living/carbon/human/standard_weapon_hit_effects(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
@@ -372,8 +369,10 @@ uniquic_armor_act
 					adjustOxyLoss(10)
 					adjustHalLoss(5)
 
-
-	return TRUE
+	if (damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, I.armor_penetration, used_weapon = I, sharp = is_sharp(I), edge = has_edge(I), post_pen_mult = I.post_penetration_dammult))
+		return TRUE
+	else
+		return FALSE
 
 /mob/living/carbon/human/proc/attack_joint(var/obj/item/organ/external/organ, var/obj/item/W)
 	if(!organ || (organ.nerve_struck == 2) || (organ.nerve_struck == -1))
@@ -618,7 +617,7 @@ uniquic_armor_act
 					if(en_passant)
 					//	message_admins("unique_armor_check en_passant ranged")
 					//	message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_divisor *= 0.5
+						Proj.armor_penetration *= 0.5
 						Proj.check_armour = ARMOR_MELEE //Foolishness
 						Proj.fire_stacks = 0   //No witches here
 						Proj.wounding_mult = 1 //Foolishness!
@@ -635,7 +634,7 @@ uniquic_armor_act
 					else
 					//	message_admins("unique_armor_check en_passant ranged")
 					//	message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_divisor *= 2
+						Proj.armor_penetration *= 2
 						if(Proj.damage_types[BRUTE])
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
 							Proj.damage_types[BRUTE] *= 1.5

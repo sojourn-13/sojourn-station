@@ -16,10 +16,10 @@
 
 	// Default armor values so that we can reference them.
 	var/default_armor = list(
-		melee = 3,
-		bullet = 3,
-		energy = 3,
-		bomb = 3,
+		melee = 15,
+		bullet = 15,
+		energy = 15,
+		bomb = 15,
 		bio = 100, // It is a robot, shouldn't be affected by viruses or pain
 		agony = 100
 	)

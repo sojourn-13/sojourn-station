@@ -15,7 +15,7 @@
 */
 	price_tag = 1500
 	flash_resistances = 15 //We are the light
-	armor_divisor = 10 //We teleport past the armor
+	armor_penetration = 100 //We teleport past the armor
 
 	//spawn_blacklisted = TRUE
 	var/change_tele_to_mob = 25

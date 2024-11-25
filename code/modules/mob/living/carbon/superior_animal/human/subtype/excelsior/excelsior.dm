@@ -9,7 +9,7 @@
 	maxHealth = 100 * EXCELSIOR_HEALTH_MOD
 	health = 100 * EXCELSIOR_HEALTH_MOD
 
-	armor = list(melee = 13, bullet = 13, energy = 17, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
+	armor = list(melee = 55, bullet = 55, energy = 70, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
 	//range/ammo stuff
 	ranged = 1
@@ -115,7 +115,7 @@
 
 	melee_damage_lower = 33
 	melee_damage_upper = 40
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 
 	ranged = 0
 	rapid = 0

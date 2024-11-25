@@ -13,7 +13,7 @@
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_DANGEROUS
-	armor_divisor = ARMOR_PEN_SHALLOW
+	armor_penetration = ARMOR_PEN_SHALLOW
 	clickdelay_offset = FAST_WEAPON_COOLDOWN //small, but quicker to use.
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
@@ -74,7 +74,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 1)
 	force = WEAPON_FORCE_DANGEROUS // Serrated teeth
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	price_tag = 35
 
@@ -86,7 +86,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS
 	backstab_damage = 8
-	armor_divisor = ARMOR_PEN_EXTREME //Should be countered be embedding
+	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
 
 /obj/item/tool/knife/ritual
@@ -95,7 +95,7 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	max_upgrades = 3
 	backstab_damage = 14
 	price_tag = 7
@@ -107,7 +107,7 @@
 	icon_state = "render_awakened"
 	hitsound = 'sound/weapons/renderslash.ogg'
 	force = WEAPON_FORCE_DANGEROUS
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	max_upgrades = 2
 	hitsound = 'sound/weapons/renderslash.ogg'
 	backstab_damage = 8 // Not so much for stabbing as it is for cutting.
@@ -122,7 +122,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS+2
 	backstab_damage = 8
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
@@ -158,7 +158,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS // Serrated combat knife
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	max_upgrades = 3
 	embed_mult = 0.6
@@ -176,7 +176,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = 13
 	backstab_damage = 15
-	armor_divisor = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_HALF
 	throwforce = WEAPON_FORCE_ROBUST
 	price_tag = 21
 
@@ -187,7 +187,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"
 	item_state = "skinning"
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 50)
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 2, MATERIAL_DIAMOND = 3) // 5 plasteel + 2 wood, then +3 plasteel +3 diamond from whetstone.
 	price_tag = 500 // Takes diamond to make and very rare.
@@ -213,7 +213,7 @@
 	price_tag = 50 // Fancy expensive heirloom.... it is not exactly meant to be upgradable nor sold but the value that it holds is somehow more symbolic than material.
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_ROBUST
-	armor_divisor = ARMOR_PEN_GRAZING
+	armor_penetration = ARMOR_PEN_GRAZING
 	tool_qualities = list(QUALITY_CUTTING = 35) //Can't be upgraded. Round start knife. Damage is bad not really good to selling either. Only fair give a good status to cutting things.
 	backstab_damage = 9
 

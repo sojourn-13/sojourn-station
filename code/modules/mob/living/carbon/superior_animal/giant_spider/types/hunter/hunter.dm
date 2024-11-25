@@ -18,7 +18,7 @@
 	name = "cloaker spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
-	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
@@ -51,7 +51,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
-	armor_divisor = 3
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
@@ -70,7 +70,7 @@
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
-	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
@@ -204,10 +204,10 @@
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
-	armor = list(melee = 6, bullet = 6, energy = 2, bomb = 25, bio = 10, rad = 25, agony = 0)
-	armor_divisor = 2
+	armor = list(melee = 25, bullet = 10, energy = 5, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor_penetration = 25
 
-	get_stat_modifier = TRUE //Were not getting armor //Yes we are.
+	get_stat_modifier = TRUE
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 4 //So its more worth killing these
@@ -238,7 +238,7 @@
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
-	armor_divisor = 3
+	armor_penetration = 30
 
 	get_stat_modifier = FALSE //Were not getting armor
 

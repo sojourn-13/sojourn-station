@@ -37,7 +37,7 @@
 	name = "high explosive rocket"
 	icon_state = "rocket"
 	damage_types = list(BRUTE = 70)
-	armor_divisor = 10
+	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 	recoil = 75
 
@@ -67,7 +67,7 @@
 	name = "EMP rocket"
 	icon_state = "rocket_e"
 	damage_types = list(BRUTE = 10, BURN = 30)
-	armor_divisor = 10
+	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
@@ -270,7 +270,7 @@
 	damage_types = list(BRUTE = 12) //Intended to be brute
 	agony = 20
 	icon_state = "declone"
-	armor_divisor = 10
+	armor_penetration = 10
 	recoil = 2
 
 /obj/item/projectile/IRKdebilitate/on_impact(atom/target)
@@ -314,7 +314,7 @@
 	icon_state = "flare"
 	damage_types = list(BURN = 12) //Legit deadlyest gun that you get in mass
 	kill_count = 12
-	armor_divisor = 1
+	armor_penetration = 1
 	step_delay = 3
 	eyeblur = 2 // bright light slightly blurs your vision
 	luminosity_range = 5
@@ -387,7 +387,7 @@
 	name = "sonic bolt"
 	icon_state = "energy2"
 	damage_types = list(BRUTE = 10)
-	armor_divisor = 3 // It is a sound-wave liquifing organs I guess
+	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
@@ -421,7 +421,7 @@
 /obj/item/projectile/tether/tail
 	name = "tail lash"
 	damage_types = list(BRUTE = 13)
-	armor_divisor = 2
+	armor_penetration = 35
 	nodamage = FALSE
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
@@ -502,7 +502,7 @@
 /obj/item/projectile/bullet/os_trurret_gauss
 	name = "ferrous slug"
 	damage_types = list(BRUTE = 15)
-	armor_divisor = 2
+	armor_penetration = 25
 	penetrating = 2
 	recoil = 30
 	step_delay = 0.4
@@ -524,7 +524,7 @@
 	name = "plasma discharge bolt"
 	icon_state = "ice_1"
 	damage_types = list(BURN = 47)
-	armor_divisor = 2.5
+	armor_penetration = 50
 	check_armour = ARMOR_ENERGY
 	recoil = 8
 

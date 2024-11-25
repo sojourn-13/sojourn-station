@@ -24,7 +24,7 @@
 
 /obj/item/projectile/bullet/pellet/fragment/rubber
 	damage_types = list(BRUTE = 1, HALLOSS = 25)// 70 x 25 = 1750 pain, if all hit, rather then 32 x 150
-	//ricochet_mod = 3 // :3c
+	ricochet_mod = 3 // :3c comon rubbers need their bounce
 	can_ricochet = TRUE
 	embed = FALSE
 	sharp = FALSE

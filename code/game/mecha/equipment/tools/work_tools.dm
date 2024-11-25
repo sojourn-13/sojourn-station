@@ -19,7 +19,7 @@
 	energy_drain = 10
 	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 30) // This is a literal industrial clamp
 	force = 20
-	armor_divisor = ARMOR_PEN_SHALLOW
+	armor_penetration = ARMOR_PEN_SHALLOW
 	var/obj/mecha/cargo_holder
 	var/can_load_living = FALSE
 
@@ -83,7 +83,7 @@
 	name = "\improper KILL CLAMP"
 	energy_drain = 0
 	force = 90 //Lmao, the mech sword deals 60
-	armor_divisor = ARMOR_PEN_EXTREME //This thing is hilarious, I'm just adding to it
+	armor_penetration = ARMOR_PEN_EXTREME //This thing is hilarious, I'm just adding to it
 	can_load_living = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/tool/extinguisher

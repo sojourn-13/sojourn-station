@@ -97,7 +97,7 @@ List of powers in this page :
 	set category = "Nanogate Powers.Robot"
 	set name = "Upgrade Nanobot - Armor (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobots armor to better reduce and mitigate incoming damage."
-	var/armor_boost = list(melee = 15, bullet = 15, energy = 3, bomb = 75, bio = 100, rad = 100) // How much armor does the nanobot get?
+	var/armor_boost = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 100) // How much armor does the nanobot get?
 
 	var/obj/item/organ/internal/nanogate/organ = first_organ_by_type(/obj/item/organ/internal/nanogate)
 	if(!organ)

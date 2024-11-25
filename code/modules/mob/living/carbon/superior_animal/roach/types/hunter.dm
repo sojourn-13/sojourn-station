@@ -16,4 +16,4 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/jager
 	meat_amount = 3
-	armor_divisor = 1.1
+	armor_penetration = 15

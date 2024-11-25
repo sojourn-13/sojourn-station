@@ -25,9 +25,9 @@
 
 	// These values are passed on to all component pieces.
 	armor = list(
-		melee = 7,
-		bullet = 5,
-		energy = 5,
+		melee = 30,
+		bullet = 20,
+		energy = 20,
 		bomb = 25,
 		bio = 100,
 		rad = 50
@@ -779,11 +779,11 @@
 	for(var/damage_type in P.damage_types)
 		if(damage_type in list(BRUTE, BURN)) // Ablative armor affects both brute and burn damage
 			var/damage = P.damage_types[damage_type]
-			P.damage_types[damage_type] -= ablative_stack / armor_divisor
+			P.damage_types[damage_type] -= ablative_stack * (100 - armor_penetration) / 100
 
 			ablative_stack = max(ablative_stack - damage, 0)
 		else if(damage_type == HALLOSS)
-			P.damage_types[damage_type] -= ablative_stack / armor_divisor
+			P.damage_types[damage_type] -= ablative_stack * (100 - armor_penetration) / 100
 
 		if(P.damage_types[damage_type] <= 0)
 			P.damage_types -= damage_type

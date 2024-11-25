@@ -12,9 +12,9 @@
 	siemens_coefficient = 1 // Non-conductive
 	matter = list(MATERIAL_BONE = 5, MATERIAL_BIOMATTER = 2)
 	armor_list = list(
-		melee = 2,
-		bullet = 5,
-		energy = 1,
+		melee = 40,
+		bullet = 20,
+		energy = 5,
 		bomb = 5,
 		bio = 100,
 		rad = 100

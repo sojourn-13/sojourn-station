@@ -17,7 +17,7 @@
 	chameleon_skill = 1
 	speak_chance = 2
 	attacktext = "clawed"
-	armor_divisor = 1.2
+	armor_penetration = 20
 
 /mob/living/carbon/superior_animal/psi_monster/thought_melter
 	name = "thought melter"
@@ -33,7 +33,7 @@
 	speak_chance = 10
 	poison_per_bite = 1
 	attacktext = "caressed"
-	armor_divisor = 1.5
+	armor_penetration = 30
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot
 	name = "pus maggot"
@@ -45,7 +45,7 @@
 	health = 110 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	armor_divisor = 1.2
+	armor_penetration = 20
 	emote_see = list("drools acid onto the floor.", "wriggles in glee!", "rolls over!")
 	var/burn_attack_text = "The pus maggot vomits up some acidic pus all over!"
 	var/burn_attack_sound = 'sound/effects/splat.ogg'

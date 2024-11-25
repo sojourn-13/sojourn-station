@@ -32,7 +32,7 @@
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	needs_environment = FALSE
-	armor = list(melee = 3, bullet = 1, energy = 5, bomb = 25, bio = 100, rad = 25)
+	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
 	cant_gib = TRUE
 	sanity_damage = 1
 
@@ -147,7 +147,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
-	armor = list(melee = 3, bullet = 2, energy = 5, bomb = 25, bio = 0, rad = 25)
+	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 25, bio = 0, rad = 25)
 
 
 	health = 450 * REPUBLICON_HEALTH_MOD

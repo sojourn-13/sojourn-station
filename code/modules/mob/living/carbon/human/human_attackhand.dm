@@ -316,7 +316,7 @@
 	var/penetration = 1
 	if(istype(user, /mob/living))
 		var/mob/living/L = user
-		penetration = L.armor_divisor
+		penetration = L.armor_penetration
 
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
@@ -331,7 +331,7 @@
 
 	var/dam_zone = pick(organs_by_name)
 	var/obj/item/organ/external/affecting = get_organ(ran_zone(dam_zone))
-	var/dam = damage_through_armor(damage = damage, damagetype = damagetype, def_zone = affecting, attack_flag = ARMOR_MELEE, armor_divisor = penetration, sharp = sharp, edge = sharp)
+	var/dam = damage_through_armor(damage = damage, damagetype = damagetype, def_zone = affecting, attack_flag = ARMOR_MELEE, armor_pen = penetration, sharp = sharp, edge = sharp)
 
 	// ran_zone might pick a zone that we don't actually have an organ in
 	if(dam > 0 && affecting)

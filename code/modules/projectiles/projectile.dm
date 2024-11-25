@@ -61,7 +61,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
-//	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
+	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -153,7 +153,7 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i]
+		val += damage_types[i] * post_penetration_dammult
 	return val
 
 /obj/item/projectile/proc/is_halloss()
@@ -175,8 +175,8 @@
 	if(HALLOSS in damage_types)
 		damage_types[HALLOSS] *= newmult
 
-/obj/item/projectile/add_projectile_penetration(newmult)
-	armor_divisor = initial(armor_divisor) + newmult
+/obj/item/projectile/multiply_projectile_penetration(newmult)
+	armor_penetration = initial(armor_penetration) * newmult
 
 /obj/item/projectile/multiply_pierce_penetration(newmult)
 	penetrating = initial(penetrating) + newmult
@@ -230,15 +230,18 @@
 	if(!embed || damage_types[BRUTE] <= 0)
 		return FALSE
 	return TRUE
-/*
-/obj/item/projectile/proc/get_structure_damage()
-	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
-*/
+
+///obj/item/projectile/proc/get_structure_damage()
+//	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
+
 /obj/item/projectile/proc/get_structure_damage(var/injury_type)
 	if(!injury_type) // Assume homogenous
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(INJURY_TYPE_HOMOGENOUS, wounding_mult, edge, sharp) * 2
 	else
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(injury_type, wounding_mult, edge, sharp) * 2
+
+/obj/item/projectile/proc/get_ricochet_modifier()
+	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
@@ -285,11 +288,11 @@
 			for (var/entry in livingfirer.projectile_damage_increment)
 				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
 
-		if (livingfirer.projectile_armor_divisor_mult != 1)
-			add_projectile_penetration(livingfirer.projectile_armor_divisor_mult)
+		if (livingfirer.projectile_armor_penetration_mult != 1)
+			multiply_projectile_penetration(livingfirer.projectile_armor_penetration_mult)
 
-		if (livingfirer.projectile_armor_divisor_adjustment)
-			armor_divisor *= livingfirer.projectile_armor_divisor_adjustment
+		if (livingfirer.projectile_armor_penetration_adjustment)
+			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
 
 		if (livingfirer.projectile_speed_mult != 1)
 			multiply_projectile_step_delay(livingfirer.projectile_speed_mult)
@@ -898,7 +901,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_divisor = max(0, armor_divisor - ap_drop_off)
+				armor_penetration = max(0, armor_penetration - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -967,7 +970,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_divisor = max(0, armor_divisor - ap_drop_off)
+				armor_penetration = max(0, armor_penetration - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -1112,7 +1115,7 @@
 			P.activate(P.lifetime)
 
 /obj/item/projectile/proc/block_damage(var/amount, atom/A)
-	amount /= armor_divisor
+	amount /= armor_penetration
 	var/dmg_total = 0
 	var/dmg_remaining = 0
 	for(var/dmg_type in damage_types)
@@ -1121,9 +1124,8 @@
 			dmg_total += dmg
 		if(dmg && amount)
 			var/dmg_armor_difference = dmg - amount
-			var/is_difference_positive = dmg_armor_difference > 0
-			amount = is_difference_positive ? 0 : -dmg_armor_difference
-			dmg = is_difference_positive ? dmg_armor_difference : 0
+			amount = dmg_armor_difference ? 0 : -dmg_armor_difference
+			dmg = dmg_armor_difference ? dmg_armor_difference : 0
 			if(!(dmg_type == HALLOSS))
 				dmg_remaining += dmg
 		if(dmg > 0)

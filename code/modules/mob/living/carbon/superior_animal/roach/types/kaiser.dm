@@ -19,7 +19,7 @@ Has ability of every roach.
 
 	var/datum/reagents/gas_sac
 
-	armor = list(melee = 10, bullet = 8, energy = 6, bomb = 50, bio = 20, rad = 100, agony = 0)
+	armor = list(melee = 40, bullet = 35, energy = 25, bomb = 50, bio = 20, rad = 100, agony = 0)
 
 	knockdown_odds = 10
 	melee_damage_lower = 20
@@ -30,7 +30,7 @@ Has ability of every roach.
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
 	flash_resistances = 9.9 // were not fully flash proof but almost...
-	armor_divisor = 4
+	armor_penetration = 75
 
 	var/distress_call_stage = 3
 

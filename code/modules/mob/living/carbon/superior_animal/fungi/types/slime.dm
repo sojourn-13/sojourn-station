@@ -14,9 +14,9 @@
 	melee_damage_upper = 45
 	viewRange = 3
 	armor = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 50,
+		bullet = 20,
+		energy = 20,
 		bomb = 10,
 		bio = 10,
 		rad = 10,

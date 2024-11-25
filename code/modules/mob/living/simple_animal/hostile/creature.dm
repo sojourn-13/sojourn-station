@@ -131,7 +131,7 @@
 	has_special_parts = TRUE
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)
 	special_parts = list(/obj/item/animal_part/sarg_horn, /obj/item/animal_part/sarg_horn)
-	armor = list(melee = 1, bullet = 2, energy = 0, bomb = 25, bio = 0, rad = 25)
+	armor = list(melee = 5, bullet = 10, energy = 0, bomb = 25, bio = 0, rad = 25)
 
 /*
 #define MOOK_ATTACK_NEUTRAL 0

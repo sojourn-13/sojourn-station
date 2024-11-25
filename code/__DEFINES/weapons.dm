@@ -12,14 +12,13 @@
 #define WEAPON_FORCE_GODLIKE		88 // currently only used by the energy axe, which can only be obtained via admin verbs
 
 //Armor Penetration: Ignores a certain amount of armor for the purposes of inflicting damage.
-#define ARMOR_PEN_GRAZING			1.2
-#define ARMOR_PEN_SHALLOW			1.4
-#define ARMOR_PEN_MODERATE			1.6
-#define ARMOR_PEN_DEEP				1.8
-#define ARMOR_PEN_HALF				2
-#define ARMOR_PEN_EXTREME			2.5
-#define ARMOR_PEN_MASSIVE			3
-#define ARMOR_PEN_MAX				10
+#define ARMOR_PEN_GRAZING			5
+#define ARMOR_PEN_SHALLOW			10
+#define ARMOR_PEN_MODERATE			15
+#define ARMOR_PEN_DEEP				20
+#define ARMOR_PEN_EXTREME			25
+#define ARMOR_PEN_MASSIVE			30
+#define ARMOR_PEN_HALF				50
 
 //Wounding Multiplier: Increases damage taken, applied after armor.
 #define WOUNDING_HARMLESS			0.25
@@ -84,10 +83,10 @@ Fire delay 15 = 40 rounds per minute
 */
 
 //Quick defines for fire modes
-#define FULL_AUTO_150		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto")
-#define FULL_AUTO_200		list(mode_name = "full auto",    mode_desc = "200 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto")
-#define FULL_AUTO_300		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto")
-#define FULL_AUTO_600		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1  , icon="fuller")
+#define FULL_AUTO_150		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_200		list(mode_name = "full auto",    mode_desc = "200 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_300		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_600		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1  , icon="fuller", damage_mult_add = -0.2)
 
 #define FULL_AUTO_150_NOLOSS		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto")
 #define FULL_AUTO_200_NOLOSS		list(mode_name = "full auto",    mode_desc = "200 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto")

@@ -14,7 +14,7 @@
 	maxHealth = 25 * CARP_HEALTH_MOD
 	health = 25
 
-	armor = list(melee = 1, bullet = 2, energy = 12, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+	armor = list(melee = 5, bullet = 10, energy = 50, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
 
 	harm_intent_damage = 8
@@ -108,7 +108,7 @@
 						 /obj/item/animal_part/carp_fang,
 						 /obj/item/animal_part/carp_fang) //HOLY GRAIL
 
-	armor = list(melee = 6, bullet = 2, energy = 16, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+	armor = list(melee = 25, bullet = 10, energy = 65, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
 
 /mob/living/simple_animal/hostile/carp/allow_spacemove()

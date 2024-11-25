@@ -13,7 +13,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut")
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	tool_qualities = list(QUALITY_CUTTING = 20)
 
 /obj/item/organ_module/active/simple/proc/get_scanner_name()
@@ -97,7 +97,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 30)
@@ -123,7 +123,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
-	armor_divisor = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 30)

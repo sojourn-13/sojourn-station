@@ -12,7 +12,7 @@
 	energy_drain = 10
 	price_tag = 150
 	force = 30
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_DEEP
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	tool_qualities = list(QUALITY_DIGGING = 60)
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)

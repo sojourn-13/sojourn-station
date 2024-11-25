@@ -35,9 +35,9 @@
 	desc = "A heavy, powerful rig used by construction crews and mining corporations. The soft plating can protect the wearer from unexpected hazards, but is not reliable in prolonged combat."
 	icon_state = "engineering_rig"
 	armor_list = list(
-		melee = 10,
-		bullet = 7,
-		energy = 2,
+		melee = 40,
+		bullet = 30,
+		energy = 10,
 		bomb = 25,
 		bio = 100,
 		rad = 100
@@ -84,9 +84,9 @@
 	desc = "A light RIG for performing minute repairs and maintenance on low-pressure environments."
 	icon_state = "eva_rig"
 	armor_list = list(
-		melee = 5,
-		bullet = 2,
-		energy = 2,
+		melee = 20,
+		bullet = 10,
+		energy = 10,
 		bomb = 10,
 		bio = 100,
 		rad = 100
@@ -129,9 +129,9 @@ Advanced Voidsuit: Guild Master
 	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 40,
+		bullet = 40,
+		energy = 40,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -192,9 +192,9 @@ Technomancer RIG
 	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
 	icon_state = "techno_rig"
 	armor_list = list(
-		melee = 7,
-		bullet = 7,
-		energy = 7,
+		melee = 30,
+		bullet = 30,
+		energy = 30,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -245,9 +245,9 @@ Technomancer RIG
 	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it."
 	icon_state = "science_rig"
 	armor_list = list(
-		melee = 7,
-		bullet = 5,
-		energy = 10,
+		melee = 30,
+		bullet = 20,
+		energy = 40,
 		bomb = 90,
 		bio = 100,
 		rad = 100
@@ -299,9 +299,9 @@ Technomancer RIG
 	This advanced verson is made with speed in mind as well better armor plates at the cost of power."
 	icon_state = "science_ami_rig"
 	armor_list = list(
-		melee = 8,
-		bullet = 7,
-		energy = 10,
+		melee = 35,
+		bullet = 30,
+		energy = 40,
 		bomb = 90,
 		bio = 100,
 		rad = 100
@@ -351,9 +351,9 @@ Technomancer RIG
 	desc = "A relatively lightweight and ceramic RIG suit designed for medical rescue in hazardous locations."
 	icon_state = "medical_rig"
 	armor_list = list(
-		melee = 5,
-		bullet = 2,
-		energy = 2,
+		melee = 20,
+		bullet = 10,
+		energy = 10,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -391,10 +391,10 @@ Technomancer RIG
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
 	icon_state = "response_team"
 	armor_list = list(
-		melee = 15,
-		bullet = 4,
-		energy = 2,
-		bomb = 7,
+		melee = 60,
+		bullet = 15,
+		energy = 10,
+		bomb = 30,
 		bio = 100,
 		rad = 100
 	)
@@ -462,9 +462,9 @@ Technomancer RIG
 	desc = "A security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 40,
+		bullet = 40,
+		energy = 40,
 		bomb = 90,
 		bio = 100,
 		rad = 100
@@ -496,9 +496,9 @@ Technomancer RIG
 	icon_state = "security_rig"
 	suit_type = "stewards hardsuit"
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 40,
+		bullet = 40,
+		energy = 40,
 		bomb = 90,
 		bio = 100,
 		rad = 100
@@ -534,9 +534,9 @@ Technomancer RIG
 	desc = "A light RIG for performing minute repairs and maintenance in atypical atmospheres."
 	icon_state = "sea_rig"
 	armor_list = list(
-		melee = 6,
-		bullet = 7,
-		energy = 5,
+		melee = 25,
+		bullet = 30,
+		energy = 20,
 		bomb = 10,
 		bio = 100,
 		rad = 100

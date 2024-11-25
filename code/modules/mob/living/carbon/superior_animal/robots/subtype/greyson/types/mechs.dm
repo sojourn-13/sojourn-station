@@ -114,7 +114,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
-	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon/Initialize(mapload)
 
