@@ -13134,7 +13134,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Rd" = (
 /obj/item/remains,
-/obj/item/organ_module/active/simple/armblade/telescopic_baton,
+/obj/item/remains,
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -14740,9 +14740,9 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /obj/item/remains/mummy1,
-/obj/item/organ_module/active/simple/armblade/baton,
+/obj/item/remains,
 /turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/prepper/alpha)
+/area/nadezhda/outside/forest/beast_cave_dark)
 "VV" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
