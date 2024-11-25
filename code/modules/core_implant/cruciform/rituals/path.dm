@@ -959,7 +959,7 @@
 			/obj/item/tool/sword/crusader,
 			/obj/item/storage/firstaid/nt,
 			/obj/item/stack/medical/bruise_pack/advanced/nt,
-			/obj/item/stack/medical/ointment/advanced/nt)
+			/obj/item/stack/medical/ointment/advanced/nt,)
 
 		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
 		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant

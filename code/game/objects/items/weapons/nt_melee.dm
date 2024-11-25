@@ -79,6 +79,25 @@
 	price_tag = 600
 	matter = list(MATERIAL_BIOMATTER = 60, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
+/obj/item/tool/spear/polehammer
+	name = "polehammer"
+	desc = "This weapon of ancient design appears to be a spear-hammer hybrid. \
+	A close relitive to the halberd thats main aim is to bash through any armor.\
+	Church adopting its the design to aid with growing numbers of strong shells and furs from mutations on the planet."
+	icon = 'icons/obj/nt_melee.dmi'
+	icon_state = "nt_polehammer"
+	item_state = "nt_polehammer"
+	wielded_icon = "nt_polehammer"
+	force = WEAPON_FORCE_NORMAL
+	armor_divisor = ARMOR_PEN_MAX
+	max_upgrades = 3
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	extended_reach = TRUE
+	forced_broad_strike = TRUE
+	price_tag = 600
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 6, MATERIAL_WOOD = 12, MATERIAL_PLASTEEL = 4)
+
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
 	desc = "A saintly looking whip sword, extreme punishment in handheld form. Can be extended to inflict even more pain. \
