@@ -60,7 +60,7 @@
 		list(mode_name="Red Flare", projectile_type=/obj/item/projectile/bullet/flare, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20 , icon="grenade"),
 		list(mode_name="Green Flare", projectile_type=/obj/item/projectile/bullet/flare/green, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20 , icon="grenade"),
 		list(mode_name="Blue Flare", projectile_type=/obj/item/projectile/bullet/flare/blue, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade"),
-		list(mode_name="Random Flare", projectile_type=/obj/item/projectile/bullet/flare/choas, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade")
+		list(mode_name="Random Flare", projectile_type=/obj/item/projectile/bullet/flare/chaos, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade")
 		)
 
 /obj/item/gun/energy/borg/pistol

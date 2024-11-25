@@ -3035,7 +3035,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "agO" = (
-/obj/item/storage/box/syndie_kit/antimaterial_rifle{
+/obj/item/storage/box/syndie_kit/antimateriel_rifle{
 	name = "SA AMR kit"
 	},
 /obj/machinery/door/window/westleft,

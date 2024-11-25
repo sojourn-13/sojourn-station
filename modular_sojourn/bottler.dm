@@ -1,6 +1,6 @@
 /obj/item/bottle_kit
-	name = "Bottling Kit"
-	desc = "A box that holds glasses fabricators, lables, caps and quarks ready for home brewing and bottling."
+	name = "bottling kit"
+	desc = "A box that holds glasses fabricators, labels, caps and quarks ready for home brewing and bottling."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "bottler_box"
 	w_class = ITEM_SIZE_NORMAL
@@ -10,7 +10,7 @@
 
 /obj/item/bottle_kit/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>Current Glass Bottle Printing Type: [fake_glass_name].</span>")
+	to_chat(user, "<span class='info'>Current glass bottle printing type: [fake_glass_name].</span>")
 
 
 /obj/item/bottle_kit/attack_self(mob/user as mob)

@@ -112993,7 +112993,7 @@
 	name = "AMR crate";
 	req_access = list(3)
 	},
-/obj/item/storage/box/syndie_kit/antimaterial_rifle{
+/obj/item/storage/box/syndie_kit/antimateriel_rifle{
 	name = "SA AMR kit"
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,

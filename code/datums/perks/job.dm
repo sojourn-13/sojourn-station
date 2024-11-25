@@ -673,7 +673,7 @@
 
 /datum/perk/true_name
 	name = "Rename Self"
-	desc = "No one knows you thus your name is what ever you need or want to be."
+	desc = "Nobody knows you, thus your name is whatever you need or want to be."
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -682,7 +682,7 @@
 /datum/perk/true_name/activate()
 	..()
 	if(anti_cheat)
-		to_chat(holder, "You can only keep up so many personallitys.")
+		to_chat(holder, "You can only keep up so many personalities.")
 		return FALSE
 	anti_cheat = TRUE
 	var/mob/M = usr

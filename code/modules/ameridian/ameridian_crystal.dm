@@ -20,12 +20,12 @@
 	var/randomized_colour = TRUE	// If we on spawn have different colours
 
 	var/self_improvement = TRUE		// Weather or not we are able to grow leading to more shards when mined
-	var/fast_improvement = 320		// Minium amount of time it takes for a growing crystal to grow
-	var/slow_improvement = 680		// Maxium amount of time it takes for a growing crystal to grow
+	var/fast_improvement = 320		// Minimum amount of time it takes for a growing crystal to grow
+	var/slow_improvement = 680		// Maximum amount of time it takes for a growing crystal to grow
 	var/grower_helper = FALSE		// Used by spires to have shards it proces grow
 
-	var/spread_speed_slow = 100		// Minium amount of time it takes for a grown crystal to spread
-	var/spread_speed_high = 280		// Maxium amount of time it takes for a grown crystal to spread
+	var/spread_speed_slow = 100		// Minimum amount of time it takes for a grown crystal to spread
+	var/spread_speed_high = 280		// Maximum amount of time it takes for a grown crystal to spread
 
 	var/rads_producter = FALSE		// A simple check to make sure that we dont stack these in case thats a issue
 	var/rad_range = 3				// Radius that the crystal irradiate
@@ -160,7 +160,7 @@
 		var/turf/T = pick(turf_list)
 		var/crystal
 
-		crystal = /obj/structure/ameridian_crystal // We spread are basic type
+		crystal = /obj/structure/ameridian_crystal // We spread our basic type
 
 		if(grower_helper)
 			crystal = /obj/structure/ameridian_crystal/spreading

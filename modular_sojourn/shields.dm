@@ -47,7 +47,7 @@
 
 /obj/structure/shield_deployed
 	name = "Bastion Barrier"
-	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights. Guns can be braced on it."
+	desc = "A deployed Bastion shield, ready to be used as a combat barrier for gunfights. Guns can be braced on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "barrier"
 	density = TRUE
@@ -214,13 +214,13 @@
 	if(!CanMouseDrop(over_object))	return
 	if(!(ishuman(usr) || isrobot(usr)))	return
 	if(reinforced)
-		to_chat(usr, SPAN_NOTICE("\The [src] needs collapsed first!"))
+		to_chat(usr, SPAN_NOTICE("\The [src] needs to be collapsed first!"))
 		return
 	if(health < maxHealth)
-		to_chat(usr, SPAN_NOTICE("\The [src] is damaged and needs repaired first!"))
+		to_chat(usr, SPAN_NOTICE("\The [src] is damaged and needs to be repaired first!"))
 		return
 	if(get_dir(loc, usr) == dir)
-		to_chat(usr, SPAN_NOTICE("You cant pick it up from this side!"))
+		to_chat(usr, SPAN_NOTICE("You can't pick up \the [src] from this side!"))
 		return
 
 	collapse()

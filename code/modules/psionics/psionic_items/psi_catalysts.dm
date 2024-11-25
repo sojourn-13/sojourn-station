@@ -179,11 +179,11 @@
 	name = "psionic catalyst: Reorganize"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	Sometimes you need a to store your treaser for easyer hoarding."
+	Sometimes you need a to store your treaser for easier hoarding."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress
 
 /obj/item/device/psionic_catalyst/summan_trash_pile
-	name = "psionic catalyst: Scrap Togather"
+	name = "psionic catalyst: Scrap Together"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	One persons trash is anothers treaser, lets dig for some!"
@@ -196,12 +196,12 @@
 	A healthy body doesn't bleed..."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
 
-/obj/item/device/psionic_catalyst/purefie
-	name = "psionic catalyst: Psionic Purefie"
+/obj/item/device/psionic_catalyst/purify
+	name = "psionic catalyst: Psionic Purify"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	A healthy body doesn't have junk in it's systems..."
-	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purefie
+	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purify
 
 /obj/item/device/psionic_catalyst/temp_regulate
 	name = "psionic catalyst: Psionic Temperature Regulate"
@@ -273,7 +273,7 @@
 	return pickweight(list(
 				/obj/random/psi_catalyst = 20,
 				/obj/item/device/psionic_catalyst/needle_n_thread = 10,
-				/obj/item/device/psionic_catalyst/purefie = 10,
+				/obj/item/device/psionic_catalyst/purify = 10,
 				/obj/item/device/psionic_catalyst/temp_regulate = 10))
 
 

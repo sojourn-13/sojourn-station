@@ -29,7 +29,7 @@
 	var/allow_loop = TRUE      //Used for starting a looping process of regenning poings
 
 	//code/modules/psionics/psion.dm to see these vars in use.
-	//Minium timer for when a psionic point is generated
+	//Minimum timer for when a psionic point is generated
 	var/min_timer = 1 MINUTES
 	//Used for increasing psionic points though outside sources, resets on regen
 	var/psi_max_bonus = 0

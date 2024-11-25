@@ -4,7 +4,7 @@
 	icon = 'icons/obj/voucher.dmi'
 	icon_state = "voucher"
 	w_class = ITEM_SIZE_TINY
-	var/stamped = FALSE //used by the voucher vender to be an anti-cheat
+	var/stamped = FALSE //used by the voucher vendor to be an anti-cheat
 
 // Blackshield
 /obj/item/voucher/blackshield
