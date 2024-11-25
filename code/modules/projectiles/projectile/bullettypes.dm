@@ -753,17 +753,19 @@
 
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = FALSE
+	sharp = FALSE //Flak is for exploding near target rather than penetrating
 
 	affective_damage_range = 8
-	affective_ap_range = 9 //Anti-Air
+	affective_ap_range = 8 //Anti-Air
 	recoil = 2
 
 /obj/item/projectile/bullet/pellet/mech_flak/military //Scatter-Shot Autocannon
+	damage_types = list(BRUTE = 22)
 	range_step = 8		//projectile will lose a fragment each time it travels this distance.
 	base_spread = 90	//lower means the pellets spread more across body parts.
 	spread_step = 1	//higher means the pellets spread more across body parts with distance
 	pellets = 8
+	wounding_mult = WOUNDING_SERIOUS //Faster moving
 	affective_damage_range = 11
 	affective_ap_range = 11  //Anti-Air
 
@@ -772,38 +774,42 @@
 	icon_state = "bullet_heavy"
 	damage_types = list(BRUTE = 21)
 	wounding_mult = WOUNDING_SERIOUS
-	armor_divisor = 1.25 //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
+	armor_divisor = ARMOR_PEN_MODERATE //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
 	penetrating = 1
 
 	can_ricochet = TRUE
 
 	affective_damage_range = 6
 	affective_ap_range = 6 //Blarge rifle caliber
-	recoil = 8
+	recoil = 4 //It's mounted into a mech as well as the deviation already screws it over pretty badly - Lamasmaster
 
 /obj/item/projectile/bullet/mech_autocannon //Autocannon
 	name = "gigantic round"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 56)
-	armor_divisor = 4 //Tally ho
-	wounding_mult = WOUNDING_EXTREME
-	penetrating = 3 //tank sized round
+	damage_types = list(BRUTE = 50)
+	armor_divisor = 5 //Tally ho
+	wounding_mult = WOUNDING_DEVESTATING //You don't want to get hit by a tank round presumably - Lamasmaster
+	penetrating = 2 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
-	affective_damage_range = 8
-	affective_ap_range = 8 //Heavy blarge caliber meaning bit less range
-	recoil = 2
+	affective_damage_range = 7
+	affective_ap_range = 7 //Heavy blarge caliber meaning bit less range
+	recoil = 1
 
 /obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
 	name = "humongous round"
 	icon_state = "bullet_kurtz"
-	damage_types = list(BRUTE = 26)
-	armor_divisor = 3 //This fires 2 in a row so keep that in mind
-	wounding_mult = WOUNDING_SERIOUS
+	damage_types = list(BRUTE = 30)
+	armor_divisor = 3 //This fires 2 in a row so keep that in mind / It is technically armor defeating but for sake of it being the niche kill hordes gun alongside HMG it will stay this way - Lamasmaster
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 3 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
 	affective_damage_range = 10
 	affective_ap_range = 10 //Heavy blarge caliber but not as much as regular
