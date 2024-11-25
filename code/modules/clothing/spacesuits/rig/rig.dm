@@ -249,6 +249,7 @@
 			continue
 		if(armor_list)
 			piece.armor = armor
+		piece.name = "[suit_type] [initial(piece.name)]"
 
 		if(canremove)
 			piece.item_flags &= ~(STOPPRESSUREDAMAGE|AIRTIGHT)
@@ -687,9 +688,8 @@
 	if(!check_slot.armor_list || check_slot == wearer.shoes || check_slot == wearer.gloves)
 		return TRUE
 	for(var/i in check_slot.armor_list)
-		var/a = check_slot.armor_list[i]
-		for(a in armor)
-			if(check_slot.armor_list[i] > 2)
+		for(var/a in armor)
+			if(check_slot.armor_list[i] > 2 && i == a)
 				return FALSE
 	if(check_slot.armor_list[ARMOR_BIO] > 75) //Let the nerds keep the labcoat drip
 		return FALSE

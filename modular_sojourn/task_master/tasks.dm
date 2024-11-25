@@ -150,7 +150,7 @@
 /datum/task_master/task/tool_breaker
 	name = "Tool Consumer"
 	key = "TOOL_BREAKER"
-	desc = "Sometimes things just break. At lest its a good learning experience..."
+	desc = "Sometimes things just break. At least its a good learning experience..."
 	gain_text = "Oops."
 	level_thresholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
 
@@ -224,3 +224,12 @@
 	//We skip over level 1 do to some check stuff with how sheaths work
 	if(level == 1)
 		level = 2
+
+/datum/task_master/task/map_crafting
+	name = "Map Crafting"
+	key = "MAP_CRAFTING"
+	desc = "The way of map making is complex, but with constant work you can do a better job."
+	gain_text = "Little bit better than last time..."
+	level_thresholds = 1 //1 -> 1.5 -> 2.25 -> 3.75 ect ect
+	alt_scaling_number = 1.5
+	unlocked = FALSE

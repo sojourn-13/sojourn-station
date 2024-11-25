@@ -169,7 +169,7 @@
 			/obj/item/reagent_containers/food/snacks/jellyburger/slime = good_data("Slime Jelly Burger", list(-100, -50), 130),
 			/obj/item/reagent_containers/food/snacks/jellyburger/cherry = good_data("Cherry Jelly Burger", list(-100, -50), 120)
 		),
-		"Speghetti" = list(
+		"Spaghetti" = list(
 			/obj/item/reagent_containers/food/snacks/boiledspagetti= good_data("Boiled Noodles", list(-100, -50), 20),
 			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Raw Speghetti", list(-100, -50), 23),
 			/obj/item/reagent_containers/food/snacks/pastatomato = good_data("Spaghetti Pasta", list(-100, -50), 30),

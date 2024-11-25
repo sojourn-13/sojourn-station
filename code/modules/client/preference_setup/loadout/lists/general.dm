@@ -80,6 +80,11 @@
 	path = /obj/item/implanter
 	cost = 0
 
+/datum/gear/implantcase
+	display_name = "implant case"
+	path = /obj/item/implantcase
+	cost = 0
+
 /datum/gear/implant_tracking
 	display_name = "implant (tracking)"
 	path = /obj/item/implant/tracking

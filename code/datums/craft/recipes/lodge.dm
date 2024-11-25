@@ -52,6 +52,61 @@
 		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
+/datum/craft_recipe/lodge/throwing_knife/bone_needle
+	name = "throwing bone needles"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(QUALITY_SAWING, 20, "time" = 5),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_CUTTING, 50, "time" = 1)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison
+	name = "poisoned throwing bone needle"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/amanitajelly, 1, "time" = 1),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison_spider_alt
+	name = "poisoned throwing bone needle (Spider Alt)"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/meat/spider, 1, "time" = 5),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/bone_needle/poison_spider_alt
+	name = "poisoned throwing bone needle (Roach Alt)"
+	result = /obj/item/stack/thrown/throwing_knife/bone_needle/poison/full
+	steps = list(
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing, 1, "time" = 1),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/throwing_knife/hunter
+	name = "throwing hunting knife"
+	result = /obj/item/stack/thrown/throwing_knife/hunter
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 1), //Takes a second
+		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 1, "time" = 5),
+		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_CUTTING, 30, "time" = 1),
+		list(/obj/item/tool_upgrade/augment/spikes, 1),
+		list(QUALITY_WELDING, 30, "time" = 60)
+	)
+
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque
@@ -127,6 +182,30 @@
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
 		list(/obj/item/tool_upgrade/augment/spikes, 1),
+		list(QUALITY_WELDING, 30, "time" = 10)
+	)
+
+/datum/craft_recipe/lodge/cannibal_scythe
+	name = "\"Cannibal Strike\" scythe"
+	result = /obj/item/tool/cannibal_scythe
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD, "time" = 20),
+		list(QUALITY_SAWING, 20, "time" = 40),
+		list(/obj/item/animal_part/cannibal_tooth, 1, "time" = 20),
+		list(/obj/item/tool_upgrade/productivity/whetstone, 1, "time" = 30),
+		list(QUALITY_WELDING, 30, "time" = 10),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/animal_part/stalker_spur, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 15, MATERIAL_LEATHER, "time" = 60),
+		list(/obj/item/animal_part/tangu_horn, 2, "time" = 20),
+		list(CRAFT_MATERIAL, 30, MATERIAL_BONE, "time" = 60),
+		list(/obj/item/animal_part/stalker_chitin, 1, "time" = 20),
+		list(QUALITY_SAWING, 20, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 60),
+		list(/obj/item/oddity, 1, "time" = 10),
 		list(QUALITY_WELDING, 30, "time" = 10)
 	)
 
@@ -267,6 +346,37 @@
 		list(QUALITY_CUTTING, 15, "time" = 50),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 15, 30)
+	)
+
+/datum/craft_recipe/lodge/hunter_rig
+	name = "Lodge \"Apex\" control module"
+	result = /obj/item/rig/combat/hunter
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/rig, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 15, "time" = 50),
+		list(QUALITY_WIRE_CUTTING, 15, 30),
+		list(/obj/item/clothing/suit/armor/hunter, 1, "time" = 20),
+		list(QUALITY_WELDING, 20, "time" = 90),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
+		list(QUALITY_WELDING, 20, "time" = 90),
+		list(/obj/item/oddity, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 15, "time" = 50),
+		list(CRAFT_MATERIAL, 45, MATERIAL_BONE, "time" = 10),
+		list(CRAFT_MATERIAL, 20, MATERIAL_LEATHER, "time" = 60),
+		list(/obj/item/animal_part/stalker_chitin, 2, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 15, "time" = 50),
+		list(/obj/item/animal_part/stalker_spur, 2, "time" = 20),
+		list(QUALITY_CUTTING, 50, "time" = 10),
+		list(QUALITY_WELDING, 20, "time" = 90),
+		list(/obj/item/animal_part/render_claw, 2, "time" = 20),
+		list(QUALITY_SAWING, 10, "time" = 40),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMA),
+		list(QUALITY_WELDING, 20, "time" = 90)
 	)
 
 /datum/craft_recipe/lodge/hunter_boots

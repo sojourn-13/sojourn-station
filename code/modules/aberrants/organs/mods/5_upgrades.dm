@@ -155,3 +155,69 @@
 
 	M.organ_efficiency_mod = list(OP_BONE = 0.33)
 	..()
+
+/obj/item/modification/organ/internal/electromechanical/wire_weaves
+	name = "wire weaving"
+	desc = "Complex mesh that interweaves wires to help make them more sturdy."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "wire_weavers"
+	matter = list(MATERIAL_PLASTIC = 3)
+	price_tag = 12 //4 credits per sheet! Whata deal!
+
+/obj/item/modification/organ/internal/electromechanical/wire_weaves/update_icon()
+	return
+
+/obj/item/modification/organ/internal/electromechanical/wire_weaves/New()
+	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
+
+	M.apply_to_types = list(/obj/item/organ/internal/nerve)
+	M.examine_msg = "Can be attached to nerves. Only works on Silicon type."
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "woven"
+	M.resticted_to_nature = "ROBOTIC"
+	M.max_damage_mod = 4
+	..()
+
+/obj/item/modification/organ/internal/electromechanical/steel_bands
+	name = "steel bands"
+	desc = "A set of steel bands that wrap around mechanical muscles to keep them from fraying."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bands"
+	matter = list(MATERIAL_STEEL = 3)
+	price_tag = 12 //4 credits per sheet! Whata deal!
+
+/obj/item/modification/organ/internal/electromechanical/steel_bands/update_icon()
+	return
+
+/obj/item/modification/organ/internal/electromechanical/steel_bands/New()
+	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
+
+	M.apply_to_types = list(/obj/item/organ/internal/muscle)
+	M.examine_msg = "Can be attached to muscle. Only works on Silicon type."
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "bundled"
+	M.resticted_to_nature = "ROBOTIC"
+	M.max_damage_mod = 4
+	..()
+
+/obj/item/modification/organ/internal/electromechanical/microbattery_case
+	name = "Microbattery Case"
+	desc = "Plasteel case with steel rods to give extra support to a microbattery allowing it to take more damage before shutting down."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "case"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)
+	price_tag = 12 //4 credits per sheet! Whata deal!
+
+/obj/item/modification/organ/internal/electromechanical/microbattery_case/update_icon()
+	return
+
+/obj/item/modification/organ/internal/electromechanical/microbattery_case/New()
+	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
+
+	M.apply_to_types = list(/obj/item/organ/internal/cell)
+	M.examine_msg = "Can be attached to microbatteries. Only works on Silicon type." //Duh
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "caged"
+	M.resticted_to_nature = "ROBOTIC"
+	M.max_damage_mod = 12 //Basically we want a larger health pool for this
+	..()

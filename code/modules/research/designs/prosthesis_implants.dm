@@ -24,6 +24,19 @@
 	build_path = /obj/item/modification/organ/internal/electromechanical/bone_braces
 	name = "Bone Braces"
 
+//FPB round start organ health increasers.
+/datum/design/research/item/mechfab/prosthesis/wire_weaves
+	build_path = /obj/item/modification/organ/internal/electromechanical/wire_weaves
+	name = "Weaving Wire Mesh"
+
+/datum/design/research/item/mechfab/prosthesis/steel_bands
+	build_path = /obj/item/modification/organ/internal/electromechanical/steel_bands
+	name = "Steel Bands"
+
+/datum/design/research/item/mechfab/prosthesis/microbattery_case
+	build_path = /obj/item/modification/organ/internal/electromechanical/microbattery_case
+	name = "Microbattery Case"
+
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius
 	category = CAT_PROSTHESIS
@@ -51,7 +64,7 @@
 
 /*Robotic Internals ====================================
 TODO: Get this all sorted out, atm people will have to print of
-the lims and such to pull out the internal bits for other people if needed
+the limbs and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/robotic_internals
 	category = "Medical"
 
@@ -154,7 +167,7 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Cortex Support Cyberware"
 	build_path = /obj/item/organ_module/sanity_on_a_buget
 
-//litterly a small arm pouch
+//litteraly a small arm pouch
 /datum/design/research/item/mechfab/modules/arm_pouch
 	name = "Embedded Pouch"
 	build_path = /obj/item/organ_module/active/simple/small_pouch
@@ -176,6 +189,16 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/sanguin_stash
 	name = "Sanguin-Stash"
 	build_path = /obj/item/organ_module/sanguin_stash
+
+//increases punch damage for humans
+/datum/design/research/item/mechfab/modules/punch_helper
+	name = "Punch Helper Melee Brace"
+	build_path = /obj/item/organ_module/punch_helper
+
+//increases movement buildup (used for diving + some melee weapons)
+/datum/design/research/item/mechfab/modules/momentum_speed_adder
+	name = "Momentum Spring Relay Leg Augment"
+	build_path = /obj/item/organ_module/momentum_speed_adder
 
 //Implants
 /datum/design/research/item/implant

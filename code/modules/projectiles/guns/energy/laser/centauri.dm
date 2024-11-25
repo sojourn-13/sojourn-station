@@ -1,8 +1,8 @@
 /obj/item/gun/energy/centauri
 	name = "SI PDW \"Centauri\""
 	desc = "\"Soteria\" brand laser sub-machine gun with a great firerate. \
-	With a built in red dotted scope and plasma cooling build into the barrel makes recoil and sight not an issue. \
-	Unlike other more scrapped together laser sub-machine guns this one is built to not over-heat itself with added delays in firing."
+	With a built in red dot scope and plasma-cooled barrel, recoil and sighting up is no factor. \
+	Unlike other, more scrapped together laser sub-machine guns, this one is built to prevent overheating with added delays in firing."
 	icon = 'icons/obj/guns/energy/centauri.dmi'
 	icon_state = "centauri"
 	item_state = "centauri"

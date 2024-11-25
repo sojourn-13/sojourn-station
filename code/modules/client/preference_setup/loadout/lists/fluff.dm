@@ -191,13 +191,13 @@
 		"base_item_state" = "runed_sheath"
 	)
 
-// SLRaptor
+// Chef_Doggo
 /datum/gear/fluff/chef_doggo_telescopic_baton
-	ckey_whitelist = list("chef_doggo")
+	ckey_whitelist = list("chefdoggo")
 	display_name = "Gold Leaf Telescopic Baton Kit"
 	path = /obj/item/fluff_conversion_kit/chef_doggo_telescopic_baton
 
-// SLRaptor
+// Chef_Doggo
 /obj/item/fluff_conversion_kit/chef_doggo_telescopic_baton
 	name = "Patterned Serape Conversion Kit"
 	target_type = /obj/item/melee/telebaton

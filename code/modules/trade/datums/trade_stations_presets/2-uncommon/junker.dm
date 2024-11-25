@@ -9,8 +9,8 @@
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	base_income = 3200
-	wealth = -48000		// REALLY good gear so were in det
-	hidden_inv_threshold = 32000
+	wealth = -48000		// REALLY good gear so were in debt
+	hidden_inv_threshold = 8000
 	inventory = list(
 		"Spare Parts" = list(
 			/obj/item/stock_parts/capacitor/adv = custom_good_amount_range(list(1, 3)),
@@ -37,7 +37,7 @@
 	)
 
 	hidden_inventory = list(
-		"\"Treaser\"" = list(
+		"\"Treasure\"" = list(
 			/obj/structure/salvageable/bliss = custom_good_amount_range(list(-1, 2)),
 			/obj/item/noslipmodule = custom_good_amount_range(list(-1, 2)),
 			/obj/item/reagent_containers/food/snacks/candy_drop_red = custom_good_amount_range(list(-1, 2)),
@@ -79,6 +79,7 @@
 */
 	// TODO: Better offers
 	offer_types = list(
+		/obj/item/tool/shovel/combat/turbo = offer_data("Artificer Power Crovel", 1750, 2),
 		/datum/reagent/ethanol/changelingsting = offer_data("Changeling Sting bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 2500, 1),

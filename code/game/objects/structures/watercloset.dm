@@ -505,6 +505,10 @@
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
 
+	if(istype(O, /obj/item/reagent_containers/cooking_with_jane))
+		to_chat(user, SPAN_WARNING("The [O] doesn‘t seem to accept water directly from the tap. Use a beaker or other proxy to add reagents."))
+		return
+
 	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_refillable())
 		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)

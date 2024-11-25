@@ -1277,7 +1277,7 @@ There are 9 wires.
 
 /mob/living/carbon/airlock_crush(crush_damage)
 	. = ..()
-	if (!(species && (species.flags & NO_PAIN)))
+	if(!((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
 		emote("painscream")
 
 /mob/living/silicon/robot/airlock_crush(crush_damage)

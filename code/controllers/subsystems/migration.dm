@@ -68,6 +68,9 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		if (locate(/obj/structure/burrow) in F)
 			continue
 
+		//No deleting pipes just to spawn a burrow in
+		if(!turf_clear(F))
+			continue
 
 		//No airlocks
 		if (locate(/obj/machinery/door) in F)

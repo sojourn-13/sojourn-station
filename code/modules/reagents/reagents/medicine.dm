@@ -60,7 +60,7 @@
 /datum/reagent/medicine/somnadine
 	name = "Somnadine"
 	id = "somnadine"
-	description = "Somnadine a complex treat blunt trauma gel that when a person is asleep and applied to skin will quickly and affectively clear up cuts and other skin level damage, with a out a big risk to OD"
+	description = "Somnadine is a complex blunt trauma gel that is applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up cuts and other skin level damage, with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -179,7 +179,7 @@
 /datum/reagent/medicine/dermahypnodol
 	name = "Dermahypnodol"
 	id = "dermahypnodol"
-	description = "Dermahypnodol a complex anti-burn gel that when a person is asleep and applied to skin will quickly and affectively clear up burns with a out a big risk to OD"
+	description = "Dermahypnodol is a complex anti-burn gel that gets applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up burns with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -265,7 +265,7 @@
 		if(prob(5))
 			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3 * (dose * 0.1)) //every 10u is 3 antitox, starts out slow but rapidly grows
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)

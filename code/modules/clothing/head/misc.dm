@@ -20,12 +20,12 @@
 /obj/item/clothing/head/laurel/silver
 	name = "silver Laurel wreath"
 	icon_state = "laurel_s"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed  silver."
+	desc = "A round silver wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/laurel/gold
 	name = "golden Laurel wreath"
 	icon_state = "laurel_g"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed of gold."
+	desc = "A round gold wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -363,7 +363,7 @@ obj/item/clothing/head/ribbon/red
 /obj/item/clothing/head/leather_hat
 	name = "leather hat"
 	icon_state = "field_numerical_hat"
-	desc = "A tall hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
+	desc = "A hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
 		melee = 2,
 		bullet = 0,

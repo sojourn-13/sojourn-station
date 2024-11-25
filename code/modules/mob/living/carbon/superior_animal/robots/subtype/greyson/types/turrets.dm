@@ -50,6 +50,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/headhunter = 1
 	)
 
 	contaminant_immunity = TRUE

@@ -1,6 +1,6 @@
 /obj/item/gun/energy/tesla_gun
 	name = "Tesla Gun"
-	desc = "A gun that shoot lighting at people. Nobody is quite sure who originally made this or why. Deadly and fun! Tesla would be horrified."
+	desc = "A gun that shoots lighting at people. Nobody is quite sure who originally made this or why. Deadly and fun! Tesla would be horrified."
 	icon = 'icons/obj/guns/energy/cog.dmi'
 	icon_state = "cog"
 	item_charge_meter = FALSE

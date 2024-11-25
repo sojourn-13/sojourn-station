@@ -1233,7 +1233,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/toggleguests, R_ADMIN, FALSE)
 		return //Extra sanity check to make sure only observers are shoved into things
 
 	//Same as assume-direct-control perm requirements.
-	if (!check_rights(R_ADMIN|R_DEBUG,0))
+	if (!check_rights(R_ADMIN|R_MOD|R_DEBUG,0))
 		return 0
 	if (!frommob.ckey)
 		return 0

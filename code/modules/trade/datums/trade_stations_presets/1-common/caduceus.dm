@@ -1,6 +1,6 @@
 /datum/trade_station/caduceus
 	name_pool = list(
-		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the mean time.\"."
+		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the meantime.\"."
 	)
 	icon_states = list("moe_frigate", "ship")
 	tree_x = 0.26
@@ -69,7 +69,7 @@
 			/obj/item/clothing/suit/bio_suit/cmo = good_data("CMO Biohazard Suit", list(3, 4), 800),
 			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
 		),
-		"Misc" = list(
+		"Miscellaneous" = list(
 			/obj/structure/reagent_dispensers/coolanttank,
 			/obj/item/clothing/mask/breath/medical,
 			/obj/item/clothing/mask/surgical,
@@ -122,6 +122,7 @@
 		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 250, 3),
 		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 250, 3),
 		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 250, 3),
+		/obj/item/reagent_containers/food/snacks/meat/spider = offer_data("spider meat", 250, 5),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)
 		)

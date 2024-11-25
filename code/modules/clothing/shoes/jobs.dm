@@ -117,7 +117,7 @@
 
 /obj/item/clothing/shoes/hermes_shoes
 	name = "Hermes Boots"
-	desc = "Boots used by the faithful to spread the word of God more affectively with bulky items by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
+	desc = "Boots used by the faithful to spread the word of the Absolute more effectively by having hidden small wheels under the heel. Sadly not all that good at protecting your feet as other more robust boots."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2)
 	icon_state = "hermes"

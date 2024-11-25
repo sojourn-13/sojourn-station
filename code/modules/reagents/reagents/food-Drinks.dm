@@ -193,7 +193,9 @@
 /datum/reagent/organic/nutriment/bbqsauce
 	name = "Barbecue sauce"
 	id = "bbqsauce"
-	description = "Slather it on pork or chicken to greatly enhance its flavor. Or to whatever food you like, to make it taste better. You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
+	description = "Slather it on pork or chicken to greatly enhance its flavor. \
+	Or to whatever food you like, to make it taste better. \
+	You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
 	color = "#731008" // Ketchup's old color, to distinguish between the two.
 	taste_description = "barbecue sauce"
 	reagent_state = LIQUID
@@ -350,7 +352,11 @@
 	scannable = TRUE
 	common = TRUE
 
-/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier) //reasoning: Table salt is usually iodized. Iodine saturates glands. Glands are often getting screwed over by isotopes of iodine if exposed to radiation. Yes its a preventatitve method IRL but this is gamyfictaion.
+//	Reasoning: Table salt is usually iodized. Iodine saturates glands.
+//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation.
+//	Yes its a preventatitve method IRL but this is gamyfictaion.
+
+/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.radiation = max(M.radiation - (0.3 * effect_multiplier), 0) //10 times less effective than Hyronalin
 
@@ -418,7 +424,7 @@
 		var/mob/living/carbon/human/H = M
 		if(H.frost > 0)
 			H.frost -= 1
-		if(H.species && (H.species.flags & (NO_PAIN)))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose < agony_dose)
 		if(prob(5) || dose == metabolism) //dose == metabolism is a very hacky way of forcing the message the first time this procs
@@ -457,7 +463,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		protection = list(H.head, H.glasses, H.wear_mask)
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			no_pain = 1 //TODO: living-level can_feel_pain() proc
 		if(H.frost > 0)
 			H.frost -= 2
@@ -499,7 +505,7 @@
 /datum/reagent/organic/capsaicin/condensed/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose == metabolism)
 		to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
@@ -1192,7 +1198,8 @@
 /datum/reagent/drink/coffee/atomicoffee // CDDA reference - Seb
 	name = "Atomic coffee"
 	id = "atomicoffee"
-	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
+	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. \
+	The perfect drink for those that wish to stay awake for days."
 	taste_description = "liquid tar"
 	taste_tag = list(TASTE_BITTER)
 	color =  "#393815" // rgb: 57, 56, 21
@@ -1538,6 +1545,19 @@
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."
 
+/datum/reagent/drink/strawberry_explosive_blast
+	name = "Strawberry Explosive Blast"
+	id = "strawberry_explosive_blast"
+	description = "Sweetened drink with a strawberry flavor and a blast from the past."
+	taste_description = "strawberry soda"
+	taste_tag = list(TASTE_SWEET, TASTE_BUBBLY)
+	color = "#C83F49"
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "strawberryblast"
+	glass_name = "strawberry explosive blast soda"
+	glass_desc = "Looks like a delicious drink!"
+
 /* Alcohol */
 
 // Basic
@@ -1596,9 +1616,9 @@
 /datum/reagent/ethanol/Kvass
 	name = "Kvass"
 	id = "Kvass"
-	description = "A traditonal, and very popular russian drink. Made on the colony."
+	description = "A traditonal, and very popular slavic drink. Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
-	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET)
+	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET, TASTE_UMAMI)
 	color = "#9F3400d0"
 	strength = 60
 	adj_temp = -5
@@ -1606,7 +1626,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "Kvass_Glass"
 	glass_name = "Kvass"
-	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
+	glass_desc = "A traditonal slavic drink. This version of Kvass is darker, and a bit bolder than normal."
 
 /datum/reagent/ethanol/bluecuracao
 	name = "Blue Curacao"
@@ -2130,7 +2150,7 @@
 	id = "bilk"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	taste_description = "desperation and lactate"
-	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER)
+	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER,TASTE_UMAMI)
 	color = "#895C4C"
 	strength = 40
 	nutriment_factor = 2
@@ -2161,7 +2181,7 @@
 	id = "bloodymary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Tastes like liquid murder"
 	taste_description = "tomatoes with a hint of lime"
-	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING)
+	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING, TASTE_UMAMI)
 	color = "#660000d0"
 	strength = 15
 
@@ -2205,7 +2225,7 @@
 	id = "changelingsting"
 	description = "You take a tiny sip and feel a burning sensation..."
 	taste_description = "your brain coming out your nose"
-	taste_tag = list(TASTE_STRONG,TASTE_SOUR)
+	taste_tag = list(TASTE_STRONG,TASTE_SOUR,TASTE_UMAMI)
 	color = "#2E6671"
 	strength = 5
 
@@ -3480,3 +3500,30 @@
 	glass_icon_state = "friendlyfire"
 	glass_name = "Friendly Fire"
 	glass_desc = "Watch your back when you take a swig."
+
+//Psionic drink
+/datum/reagent/ethanol/witch_brew
+	name = "Witches Brew"
+	id = "witch_brew"
+	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	taste_description = "wool of bat and eye of newt"
+	taste_tag = list(TASTE_BUBBLY)
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 30
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "witch_brew"
+	glass_name = "Witches Brew"
+	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+
+/datum/reagent/ethanol/witch_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(BP_PSION)
+	var/effective_dose = dose
+	if(effective_dose >= 5 && H.random_organ_by_process(BP_PSION)) //We require 5 or more
+		if(C.psi_points >= C.max_psi_points)
+			return
+		C.psi_points += 1
+		dose -= 5
+
+

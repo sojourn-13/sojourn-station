@@ -1,3 +1,4 @@
+//A-Z required
 /datum/genetics/mutation_recipe/combination/b_heart
 	required_mutations = list(MUTATION_HEART, MUTATION_HYPERION)
 	result_path = MUTATION_B_HEART

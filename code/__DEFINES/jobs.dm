@@ -27,7 +27,7 @@
 #define DEPARTMENT_BLACKSHIELD "Security: Blackshield Militia"
 #define DEPARTMENT_LSS "Lonestar Employment Sector"
 #define DEPARTMENT_CIVILIAN	"Contractors"
-#define DEPARTMENT_CHURCH	"Church of Absolute"
+#define DEPARTMENT_CHURCH	"Church of the Absolute"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
 #define DEPARTMENT_LODGE "Lodge"
 #define DEPARTMENT_INDEPENDENT "Independant"

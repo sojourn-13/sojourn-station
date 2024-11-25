@@ -39,7 +39,7 @@
 	name = "Graves"
 	real_name = "Graves"
 	icon_state = "evilcrab"
-	desc = "It's Graves, the other pet! Despite his rather evil appearence he is utterly harmless. Best friends with Tea the Frog."
+	desc = "It's Graves, the other pet! Despite his rather evil appearance he is utterly harmless. Best friends with Tea the Frog."
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"

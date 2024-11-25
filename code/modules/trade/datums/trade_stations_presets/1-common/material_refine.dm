@@ -2,7 +2,7 @@
 	start_discovered = TRUE
 	spawn_always = TRUE
 	name_pool = list(
-		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices as well!\""
+		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at affordable prices as well!\""
 	)
 	icon_states = list("htu_frigate", "ship")
 	uid = "materials"
@@ -76,5 +76,6 @@
 		/obj/item/stack/ore/osmium = offer_data("full stack of raw platinum", 3600, 1),
 		/obj/item/stack/ore/hydrogen = offer_data("full stack of raw hydrogen", 5040, 1),
 		/obj/item/stack/ore/uranium = offer_data("full stack of pitchblende", 3600, 1),
-		/obj/item/stack/ore/plasma = offer_data("full stack of plasma crystals", 1800, 1)
+		/obj/item/stack/ore/plasma = offer_data("full stack of plasma crystals", 1800, 1),
+		/obj/item/reagent_containers/food/snacks/meat/termitemeat = offer_data("termite meat", 125, 10)
 	)

@@ -206,7 +206,7 @@
 
 /datum/chemical_reaction/strawberryicecream
 	result = null
-	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
+	required_reagents = list("icecreambase" = 10, "strawberryjuice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 	mix_message = "The solution freezes into icecream!"
@@ -787,7 +787,7 @@
 
 /datum/chemical_reaction/strawberrymilk
 	result = "strawberrymilk"
-	required_reagents = list("berryjuice" = 1, "milk" = 1)
+	required_reagents = list("strawberryjuice" = 1, "milk" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/drinks/fernetcola
@@ -896,6 +896,11 @@
 /datum/chemical_reaction/drinks/friendlyfire
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/strawberry_explosive_blast
+	result = "strawberry_explosive_blast"
+	required_reagents = list("strawberryjuice" = 2, "cola" = 1)
 	result_amount = 3
 
 

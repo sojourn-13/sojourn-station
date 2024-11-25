@@ -641,7 +641,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza
 
 /datum/recipe/mushroompizza
-	fruit = list("mushroom" = 5, "tomato" = 1)
+	fruit = list("plumphelmet" = 5, "tomato" = 1)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
 		/obj/item/reagent_containers/food/snacks/cheesewedge
@@ -837,7 +837,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/rofflewaffles
 
 /datum/recipe/stew
-	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "mushroom" = 1) // No eggplant! Terrible!
+	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "plumphelmet" = 1) // No eggplant! Terrible!
 	reagents = list("water" = 10)
 	items = list(/obj/item/reagent_containers/food/snacks/meat)
 	result = /obj/item/reagent_containers/food/snacks/stew
@@ -1084,12 +1084,12 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 
 /datum/recipe/mushroomsoup
-	fruit = list("mushroom" = 1)
+	fruit = list("plumphelmet" = 1)
 	reagents = list("milk" = 5, "cream" = 5, "sodiumchloride" = 1, "blackpepper" = 1)
 	result = /obj/item/reagent_containers/food/snacks/mushroomsoup
 
 /datum/recipe/chawanmushi
-	fruit = list("mushroom" = 1)
+	fruit = list("plumphelmet" = 1)
 	reagents = list("water" = 5, "soysauce" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/egg,

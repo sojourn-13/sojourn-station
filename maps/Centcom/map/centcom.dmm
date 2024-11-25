@@ -3192,7 +3192,7 @@
 /area/shuttle/skipjack_area)
 "jf" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scanner/soteria_scanner,
+/obj/item/device/scanner/gene_debug_scanner,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "jg" = (
@@ -7590,15 +7590,12 @@
 /area/centcom/evac)
 "II" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/omnirifle/scoped,
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = 8
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy{
+	pixel_y = 5
 	},
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = -4
-	},
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = 4
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy{
+	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)

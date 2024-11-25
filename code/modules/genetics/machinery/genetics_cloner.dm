@@ -35,7 +35,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 */
 
 /obj/machinery/genetics/cloner
-	name = "Soteria Xenofauna Cloning Vat"
+	name = "Blue-Ink Xenofauna Cloning Vat"
 	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures far and beyond regular fauna. Requires a steady supply of protein to function."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"
@@ -205,7 +205,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		return
 
 	if(embryo)
-		addLog("Error, Please vacate the dead embryo from the chamber~!")
+		addLog("Error, Please vacate the nonviable embryo from the chamber~!")
 		return
 
 	container = find_container()
@@ -373,12 +373,12 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
 						else
-							addLog("Protein not available~, The Embryo has starved to death.")
+							addLog("Protein not available~, The Embryo has starved.")
 							stop() //The clone is dead.
 					else if(clone_ready)
 						visible_message(SPAN_DANGER("The creature inside the cloning vat begins to stir..."))
 				else
-					addLog("Protein container not found~, The Embryo has starved to death.")
+					addLog("Protein container not found~, The Embryo has starved.")
 					stop()
 			else
 				breakout()
@@ -461,7 +461,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 /obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 180))
-		to_chat(usr, SPAN_WARNING("The console looks a bit to complex for you to handle without trainning."))
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, you were pressing some weird buttons so I locked you out~ Maybe have a scientist help~?\""))
 		return
 
 	if(default_deconstruction(I, user))

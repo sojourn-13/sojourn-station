@@ -4,8 +4,8 @@
 	icon_state = "excubitor"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting those who threaten the Absolute's floak. \
-	The Excubitor is a Halberd of Church design with a experimental plasma weapon built into the halberd itself that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel."
+	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting those who threaten the Absolute's flock. \
+	The Excubitor is a halberd of Church design with an experimental plasma weapon built into the halberd itself that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel."
 	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
@@ -18,7 +18,7 @@
 	charge_cost = 60 // 10 shots out of a 600M
 	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 1500
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET)
 	init_firemodes = list(
 		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="grenade", mode_desc="fires a frag biomatter-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/nt, charge_cost=30000, icon="grenade"),

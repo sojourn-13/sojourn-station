@@ -635,26 +635,31 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(prefs)
 		prefs.ShowChoices(usr)
 
+
+//Small note! If you ever set your character UI it will error
 /client/proc/create_UI(var/mob_type)
 	destroy_UI()
 	if(!mob_type)
 		mob_type = mob.type
 	if(!UI)
-		var/success = FALSE
+		//var/success = FALSE
 		for(var/S in GLOB.ui_styles[mob_type])
 			var/datum/interface/style = S
 			if(initial(style.styleName) == prefs.UI_style)
 				UI = new style(src)
-				success = TRUE
+				//success = TRUE
 				break
-		if(!success)
-			log_debug("Could not find style \"[prefs.UI_style]\" for [mob_type].")
+		//if(!success)
+			//log_debug("Could not find style \"[prefs.UI_style]\" for [mob_type].")
 
 	if(UI)
 		UI.show()
 
 /client/proc/destroy_UI()
 	if(UI)
+		for(var/i in screen)
+			if(UI._elements.Find(i))
+				screen.Remove(i)
 		qdel(UI)
 		UI = null
 

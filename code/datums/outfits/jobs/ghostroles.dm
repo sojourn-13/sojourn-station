@@ -152,7 +152,7 @@
 
 	)
 
-/decl/hierarchy/outfit/sri_ert
+/decl/hierarchy/outfit/si_ert
 	name = "Ethics Committee investigator"
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	mask = /obj/item/clothing/mask/gas

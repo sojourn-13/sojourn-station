@@ -41,6 +41,8 @@
 	damage_multiplier = 1
 	init_recoil = HANDGUN_RECOIL(1.2)
 	serial_type = "H&S"
+	gun_parts = list(/obj/item/part/gun/frame/ladon = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
+
 
 /obj/item/gun/projectile/ladon/sa
 	name = "\"Sigia\" magnum pistol"
@@ -50,13 +52,15 @@
 	damage_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1.1)
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/ladon = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
+
 
 /obj/item/part/gun/frame/ladon
 	name = "Ladon frame"
 	desc = "A Ladon pistol frame. Useful if you want to bring out your inner mall-cop."
 	icon_state = "frame_1911"
 	result = /obj/item/gun/projectile/ladon
-	gripvars = list(/obj/item/part/gun/grip/black)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list( /obj/item/part/gun/barrel/magnum)
-	resultvars = list(/obj/item/gun/projectile/ladon)
+	resultvars = list(/obj/item/gun/projectile/ladon, /obj/item/gun/projectile/ladon/hs, /obj/item/gun/projectile/ladon/sa)

@@ -1,6 +1,6 @@
 /datum/trade_station/mechas
-	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell are exosuit parts. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
-		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
+	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell rare exosuit parts. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
+		\"Hey, dudes, it seems you want some mechas? We currently got surplus and spare parts.\"")
 	icon_states = list("htu_frigate", "ship")
 	tree_x = 0.78
 	tree_y = 0.8
@@ -36,7 +36,7 @@
 			/obj/item/circuitboard/mecha/main,
 			/obj/item/circuitboard/mecha/peripherals
 		),
-		"Exosuit Auxillery Parts" = list(
+		"Exosuit Auxilliary Parts" = list(
 			/obj/item/rig_module/vision/medhud,
 			/obj/item/tool_upgrade/reinforcement/heatsink,
 			/obj/item/tool_upgrade/augment/cell_mount,

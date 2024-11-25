@@ -85,7 +85,7 @@
 			/obj/item/gun_upgrade/mechanism/reverse_loader,
 			/obj/item/gun_upgrade/trigger/dangerzone
 		),
-		"Xanorath Smugged Gear" = list(
+		"Xanorath Smuggled Gear" = list(
 			/obj/item/clothing/suit/space/void/merc/xanorath,
 			/obj/item/melee/energy/sword/pirate,
 //			/obj/item/gun/projectile/gyropistol = good_data("Novichok", list(0, 2), 28000), //holster sized 'i win' gun, keep this expensive and rare.
