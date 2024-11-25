@@ -88,7 +88,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	racial_implants_l = (/obj/item/organ_module/active/multitool/engineering)
+	racial_implants_l = (/obj/item/organ_module/active/multitool)
 	restricted_jobs = list(/datum/job/outsider) //You are colony designed, makes no sense outsiders could have it
 
 	stat_modifiers = list(
