@@ -96,6 +96,7 @@
 	extended_reach = TRUE
 	forced_broad_strike = TRUE
 	price_tag = 600
+	tool_qualities = list(QUALITY_HAMMERING = 15) //Able to help make baracades and hammer out cracks.
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 6, MATERIAL_WOOD = 12, MATERIAL_PLASTEEL = 4)
 
 /obj/item/tool/sword/nt/scourge
