@@ -101,7 +101,7 @@
 
 /obj/item/device/radio/beacon/explosion_watcher/proc/asset_wealth(give_value = FALSE)
 	var/gathered_value = 0
-	for(var/obj/structure/S in oview(src,8))
+	for(var/obj/structure/S in oview(8))
 		if(istype(S, /obj/structure/closet))
 			gathered_value += 10
 
