@@ -23,6 +23,9 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/sawn
 	serial_type = "Sol Fed"
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.3 // 30 vig for insta wield
+
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
@@ -93,6 +96,8 @@
 		)
 
 	shotgun_haver = FALSE
+	wield_delay = 0.1 SECOND
+	wield_delay_factor = 0.1 // 10 vig for insta wield
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 	name = "\"Saturnian\" carbine"
@@ -112,6 +117,8 @@
 		BURST_3_ROUND
 		)
 	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig for insta wield
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
 	..()
@@ -154,6 +161,9 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	wield_delay = 0.1 SECOND
+	wield_delay_factor = 0.01 // 1 vig for insta wield
+
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"

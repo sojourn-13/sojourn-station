@@ -259,6 +259,8 @@
 /obj/proc/add_projectile_penetration(newmult)
 	armor_divisor = initial(armor_divisor) + newmult
 
+/obj/proc/wound_mult_adder(newmult)
+
 /obj/proc/multiply_pierce_penetration(newmult)
 
 /obj/proc/multiply_projectile_step_delay(newmult)
