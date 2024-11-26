@@ -139,7 +139,11 @@ var/list/gunshot_sound = list('sound/weapons/Gunshot.ogg',
 	'sound/weapons/guns/fire/m41_shoot.ogg',
 	'sound/weapons/guns/fire/revolver_fire.ogg',
 	'sound/weapons/guns/fire/sfrifle_fire.ogg',
+	'sound/weapons/guns/fire/shotgun_fire.ogg',
 	'sound/weapons/guns/fire/shotgunp_fire.ogg',
+	'sound/weapons/guns/fire/riot_fire.ogg',
+	'sound/weapons/guns/fire/state_fire.ogg',
+	'sound/weapons/guns/fire/saiga_fire.ogg',
 	'sound/weapons/guns/fire/smg_fire.ogg',
 	'sound/weapons/guns/fire/sniper_fire.ogg'
 )
@@ -181,6 +185,7 @@ var/list/gun_interact_sound = list(
 	'sound/weapons/guns/interact/sfrifle_magin.ogg',
 	'sound/weapons/guns/interact/sfrifle_magout.ogg',
 	'sound/weapons/guns/interact/shotgun_insert.ogg',
+	'sound/weapons/guns/interact/state_insert.ogg',
 	'sound/weapons/guns/interact/smg_cock.ogg',
 	'sound/weapons/guns/interact/smg_magin.ogg',
 	'sound/weapons/guns/interact/smg_magout.ogg'
