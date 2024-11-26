@@ -28747,11 +28747,11 @@
 /area/nadezhda/outside/inside_colony)
 "fDx" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+/obj/item/gun/projectile/shotgun/riot/opshot,
+/obj/item/gun/projectile/shotgun/riot/opshot{
 	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+/obj/item/gun/projectile/shotgun/riot/opshot{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -39214,7 +39214,7 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armoryshop)
 "hBW" = (
@@ -53626,10 +53626,10 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/guild)
 "krt" = (
-/obj/item/gun/projectile/shotgun/bull{
+/obj/item/gun/projectile/shotgun/pump/bull{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},

@@ -133,8 +133,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/vision_flags = 0
 	var/see_invisible_gun = -1
 
-	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
-
 	var/folding_stock = FALSE //Can we fold are stock?
 	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
 	var/currently_firing = FALSE

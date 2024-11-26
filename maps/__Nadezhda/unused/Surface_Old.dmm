@@ -107,7 +107,7 @@
 /obj/item/gun/projectile/shotgun/pump{
 	pixel_y = 4
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)

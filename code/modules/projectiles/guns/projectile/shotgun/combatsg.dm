@@ -5,17 +5,14 @@
 	icon = 'icons/obj/guns/projectile/cshotgun.dmi'
 	icon_state = "cshotgun"
 	item_state = "cshotgun"
-	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6 //less ammo and regular recoil
-	ammo_type = /obj/item/ammo_casing/shotgun
-	fire_sound = 'sound/weapons/guns/fire/regulator.ogg'
+	fire_sound = 'sound/weapons/guns/fire/regulator_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
 	damage_multiplier = 1.2
 	penetration_multiplier = 1
-	init_recoil = RIFLE_RECOIL(1.2)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //No bayonet due to underbarrel.
+	init_recoil = RIFLE_RECOIL(1.2)//No bayonet due to underbarrel.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	serial_type = "Absolute"
