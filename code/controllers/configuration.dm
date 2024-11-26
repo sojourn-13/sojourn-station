@@ -232,6 +232,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/webhook_url
 	var/webhook_key
 
+	var/message_announce_new_game = "A new round has begun!"	// SOJOURN: discord bot configuration
+	var/message_announce_round_end = "The round is almost over! Get ready for the next one."	// SOJOURN: discord bot configuration
+
 	var/profiler_permission = R_DEBUG | R_SERVER
 
 	var/allow_ic_printing = TRUE
