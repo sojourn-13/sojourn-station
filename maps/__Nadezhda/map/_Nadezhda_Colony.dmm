@@ -6425,7 +6425,7 @@
 	light_color = "#0892d0"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "bnd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8206,7 +8206,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "bDQ" = (
 /obj/structure/cable/yellow{
@@ -21770,7 +21770,7 @@
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "egN" = (
 /obj/structure/bed/chair/comfy/brown,
@@ -22350,7 +22350,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 28
 	},
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "enk" = (
 /obj/structure/closet/secure_closet/personal/trooper,
@@ -78982,9 +78982,6 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"oWx" = (
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/command/hallway)
 "oWy" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -105280,10 +105277,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/pros/prep)
-"tUU" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/command/hallway)
 "tUY" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/machinery/light{
@@ -115354,7 +115347,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "vMT" = (
 /obj/structure/flora/ausbushes/reedbush{
@@ -116042,7 +116035,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "vTr" = (
 /obj/random/furniture/pottedplant,
@@ -189808,7 +189801,7 @@ pWq
 uLl
 vsb
 enj
-tUU
+jJU
 lLN
 lLN
 eSL
@@ -190009,8 +190002,8 @@ nCA
 sdh
 pHC
 tFI
-oWx
-tUU
+glE
+jJU
 iyn
 iyn
 jJU
@@ -190211,8 +190204,8 @@ qax
 uLl
 pHC
 tFI
-tUU
-tUU
+jJU
+jJU
 pew
 yfY
 jJU
@@ -190414,7 +190407,7 @@ vsb
 vsb
 vsb
 egM
-tUU
+jJU
 ieQ
 bms
 jJU
@@ -190615,8 +190608,8 @@ tux
 mEB
 bzw
 vsb
-tUU
-tUU
+jJU
+jJU
 lLN
 lLN
 aNQ
@@ -190817,8 +190810,8 @@ tIj
 tIj
 tux
 ykf
-tUU
-tUU
+jJU
+jJU
 vsb
 vsb
 jJU
@@ -191020,7 +191013,7 @@ tIj
 gda
 ygY
 bDJ
-tUU
+jJU
 rrz
 lrb
 eSL
@@ -191423,8 +191416,8 @@ mHU
 mHU
 kxt
 ykf
-tUU
-tUU
+jJU
+jJU
 uSe
 uSe
 jJU
@@ -191626,9 +191619,9 @@ xUt
 crW
 vsb
 bnb
-tUU
-tUU
-tUU
+jJU
+jJU
+jJU
 jJU
 fJF
 jJU
