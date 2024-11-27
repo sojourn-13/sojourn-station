@@ -25,7 +25,7 @@
 	switch(act)
 		if ("airguitar")
 			if (!src.restrained())
-				message = "is strumming the air and headbanging like a safari chimp."
+				message = "молотит по воздуху словно по струнам гитары и крутит головой словно бешеная обезьяна"
 				m_type = 1
 
 	//Machine-only emotes
@@ -44,35 +44,35 @@
 			if(!M)
 				param = null
 
-			var/display_msg = "beeps"
+			var/display_msg = "пищит"
 			var/use_sound = 'sound/machines/twobeep.ogg'
 			if(act == "buzz")
-				display_msg = "buzzes"
+				display_msg = "жужжит"
 				cloud_emote = "cloud-malfunction"
 				use_sound = 'sound/machines/buzz-sigh.ogg'
 			else if(act == "ping")
-				display_msg = "pings"
+				display_msg = "звенит"
 				use_sound = 'sound/machines/ping.ogg'
 			else if(act == "yes" || act == "ye")
-				display_msg = "emits an affirmative blip"
+				display_msg = "издает утвердительный сигнал"
 				use_sound = 'sound/machines/synth_yes.ogg'
 			else if(act == "no")
-				display_msg = "emits a negative blip"
+				display_msg = "издает отрицательный сигнал"
 				use_sound = 'sound/machines/synth_no.ogg'
 			else if(act == "rcough")
-				display_msg = "emits a robotic cough"
+				display_msg = "издает электронный кашель"
 				if(get_sex() == FEMALE)
 					use_sound = pick('sound/effects/mob_effects/f_machine_cougha.ogg','sound/effects/mob_effects/f_machine_coughb.ogg')
 				else
 					use_sound = pick('sound/effects/mob_effects/m_machine_cougha.ogg','sound/effects/mob_effects/m_machine_coughb.ogg', 'sound/effects/mob_effects/m_machine_coughc.ogg')
 			else if(act == "rsneeze")
-				display_msg = "emits a robotic sneeze"
+				display_msg = "издает электронный чих"
 				if(get_sex() == FEMALE)
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
 			else if(act == "slowclap")
-				display_msg = "activates their slow-clap processor" // Good, that's still working.
+				display_msg = "активирует процессор медленных аплодисментов" // Good, that's still working.
 				use_sound = 'sound/misc/slowclap.ogg'
 
 			if (param)
@@ -85,11 +85,11 @@
 	//machine only end
 
 		if ("blink")
-			message = "blinks slowly."
+			message = "медленно моргает"
 			m_type = 1
 
 		if ("blink_r")
-			message = "blinks twice in rapid succession."
+			message = "быстро проморгался"
 			m_type = 1
 
 		if ("bow")
@@ -104,9 +104,9 @@
 					param = null
 
 				if (param)
-					message = "bows to [param]."
+					message = "поклонился в сторону [param]"
 				else
-					message = "bows."
+					message = "поклонился"
 			m_type = 1
 
 		if ("custom")
@@ -162,10 +162,10 @@
 		if("pain")
 			if(!message)
 				if(miming)
-					message = "appears to be in pain!"
+					message = "похоже пребывает в болевом шоке"
 					m_type = 1 // Can't we get defines for these?
 				else
-					message = "twists in pain."
+					message = "корчится от боли"
 					m_type = 1
 
 			cloud_emote = "cloud-pain"
@@ -173,7 +173,7 @@
 		if("medic")
 			if(!message)
 				if(miming)
-					message = "calls out for a medic!"
+					message = "зовет медика!"
 					m_type = 1 // Can't we get defines for these?
 
 			cloud_emote = "cloud-medic"
@@ -192,28 +192,28 @@
 					param = null
 
 				if (param)
-					message = "salutes [param]."
+					message = "исполняет воинское приветствие в сторону [param]."
 				else
-					message = "salutes."
+					message = "исполняет воинское приветствие."
 			m_type = 1
 */
 
 		if ("choke")
 			cloud_emote = "cloud-gasp"
 			if(miming)
-				message = "clutches [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] throat desperately!"
+				message = "хватается за [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горло в отчаянии"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "chokes!"
+					message = "задыхается"
 					m_type = 2
 				else
-					message = "makes a strong noise."
+					message = "издает громкий звук"
 					m_type = 2
 
 		if ("clap")
 			if (!src.restrained())
-				message = "claps."
+				message = "аплодирует"
 				m_type = 2
 				switch(pick("1", "2"))
 					if("1")
@@ -225,7 +225,7 @@
 
 		if ("slowclap")
 			if (!src.restrained())
-				message = "sarcastically slow claps."
+				message = "саркастически медленно аплодирует"
 				m_type = 2
 				playsound(loc, 'sound/misc/slowclap.ogg', 80)
 				if(miming)
@@ -233,33 +233,33 @@
 
 		if ("flap")
 			if (!src.restrained())
-				message = "flaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] wings."
+				message = "взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] крыльями"
 				m_type = 2
 				if(miming)
 					m_type = 1
 
 		if ("aflap")
 			if (!src.restrained())
-				message = "flaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] wings ANGRILY!"
+				message = "агрессивно взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] крыльями"
 				m_type = 2
 				if(miming)
 					m_type = 1
 
 		if ("drool")
-			message = "drools."
+			message = "пускает слюну"
 			m_type = 1
 
 		if ("eyebrow")
-			message = "raises an eyebrow."
+			message = "поднимает бровь"
 			m_type = 1
 
 		if ("chuckle")
 			if(miming)
-				message = "appears to chuckle."
+				message = "кажется, усмехается"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "chuckles."
+					message = "усмехается"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -274,19 +274,19 @@
 							if("2")
 								playsound(src, 'sound/effects/mob_effects/m_chuckle2.ogg', 70)
 				else
-					message = "chuckles muffledly."
+					message = "приглушенно усмехается"
 					m_type = 2
 
 		if ("twitch")
-			message = "twitches violently."
+			message = "дергается"
 			m_type = 1
 
 		if ("twitch_s")
-			message = "twitches."
+			message = "сильно дергается"
 			m_type = 1
 
 		if ("faint")
-			message = "faints."
+			message = "падает в обморок"
 			if(src.sleeping)
 				return //Can't faint while asleep
 			src.sleeping += 10 //Short-short nap
@@ -294,11 +294,11 @@
 
 		if ("cough")
 			if(miming)
-				message = "takes [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] curled up fist to their mouth, mimicking a cough!"
+				message = "имитирует кашель поднося [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] сжатый кулак ко рту!"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "coughs!"
+					message = "кашляет"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -315,16 +315,16 @@
 							if("3")
 								playsound(src, 'sound/effects/mob_effects/m_coughc.ogg', 70)
 				else
-					message = "makes a strong noise."
+					message = "издает громкий звук"
 					m_type = 2
 
 		if ("throat")
 			if(miming)
-				message = "takes a curled up fist to their mouth, clearing [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] throat."
+				message = "подносит кулак к  [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горлу, видимо покашливая"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "awkwardly clears [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] throat."
+					message = "в неловкости прочищает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горло"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -339,32 +339,32 @@
 							if("2")
 								playsound(src, 'sound/effects/mob_effects/throat_m2.ogg', 70)
 				else
-					message = "makes a strong noise."
+					message = "издает громкий звук"
 					m_type = 2
 
 		if ("frown")
-			message = "frowns."
+			message = "хмурится"
 			m_type = 1
 
 		if ("nod")
-			message = "nods."
+			message = "кивает"
 			m_type = 1
 
 		if ("blush")
-			message = "blushes."
+			message = "краснеет"
 			m_type = 1
 
 		if ("wave")
-			message = "waves."
+			message = "машет рукой"
 			m_type = 1
 
 		if ("gasp")
 			if(miming)
-				message = "appears to be gasping!"
+				message = "похоже задыхается"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "gasps!"
+					message = "задыхается"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2", "3"))
@@ -383,24 +383,24 @@
 							if("3")
 								playsound(loc, 'sound/effects/mob_effects/gasp_m3.ogg', 80, 1)
 				else
-					message = "makes a noise."
+					message = "издает звук"
 					m_type = 2
 			cloud_emote = "cloud-gasp"
 
 		if ("deathgasp")
 			if(stats.getPerk(PERK_TERRIBLE_FATE))
-				message = "their inert body emits a strange sensation and a cold invades your body. Their screams before dying recount in your mind."
+				message = "их неподвижное тело вызывают странное ощущение, холод проникает в ваше тело. Их крики эхом звучат у вас в голове"
 			else
 				message = "[form.death_message]"
 			m_type = 1
 
 		if ("giggle")
 			if(miming)
-				message = "giggles silently!"
+				message = "беззвучно хихикает"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "giggles."
+					message = "хихикает"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -415,7 +415,7 @@
 							if("2")
 								playsound(src, 'sound/effects/mob_effects/m_giggle2.ogg', 50)
 				else
-					message = "makes a noise."
+					message = "издает звук"
 					m_type = 2
 
 		if ("glare")
@@ -429,9 +429,9 @@
 				param = null
 
 			if (param)
-				message = "glares at [param]."
+				message = "сверепо пялится на [param]"
 			else
-				message = "glares."
+				message = "сверепо пялится"
 
 		if ("stare")
 			var/M = null
@@ -444,9 +444,9 @@
 				param = null
 
 			if (param)
-				message = "stares at [param]."
+				message = "пялится на [param]"
 			else
-				message = "stares."
+				message = "пялится"
 
 		if ("look")
 			var/M = null
@@ -460,50 +460,50 @@
 				param = null
 
 			if (param)
-				message = "looks at [param]."
+				message = "смотрит на [param]"
 			else
-				message = "looks."
+				message = "смотрит"
 			m_type = 1
 
 		if ("grin")
-			message = "grins."
+			message = "оскаливается"
 			m_type = 1
 
 		if ("cry")
 			if(miming)
-				message = "cries."
+				message = "плачет"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "cries."
+					message = "плачет"
 					m_type = 2
 				else
-					message = "makes a weak, whimpering noise. [identifying_gender == "male" ? "He" : identifying_gender == "female" ? "She" : "They"] [get_gender() == NEUTER ? "frown" : "frowns"]."
+					message = "издает слабое хныкание [identifying_gender == "male" ? "Он" : identifying_gender == "female" ? "Она" : "Они"] [get_gender() == NEUTER ? "frown" : "frowns"]"
 					m_type = 2
 
 		if ("sigh")
 			if(miming)
-				message = "sighs."
+				message = "вздыхает"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "sighs."
+					message = "вздыхает"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sigh.ogg', 70)
 				else
-					message = "makes a weak noise."
+					message = "издает слабый звук"
 					m_type = 2
 
 		if ("laugh")
 			if(miming)
-				message = "acts out a laugh."
+				message = "изображает смех"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "laughs."
+					message = "смеется"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2", "3"))
@@ -522,44 +522,44 @@
 							if("3")
 								playsound(src, 'sound/voice/m_laugh3.ogg', 20)
 				else
-					message = "makes a noise."
+					message = "издает звук"
 					m_type = 2
 
 		if ("mumble")
-			message = "mumbles..."
+			message = "бормочет"
 			m_type = 2
 			if(miming)
 				m_type = 1
 
 		if ("grumble")
 			if(miming)
-				message = "grumbles."
+				message = "ворчит"
 				m_type = 1
 			if (!muzzled)
-				message = "grumbles!"
+				message = "ворчит"
 				m_type = 2
 			else
-				message = "makes a noise."
+				message = "издает звук"
 				m_type = 2
 
 		if ("groan")
 			if(miming)
-				message = "appears to groan!"
+				message = "похоже стонет от боли"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "groans!"
+					message = "стонет от боли"
 					m_type = 2
 				else
-					message = "makes a loud noise."
+					message = "издает громкий звук"
 					m_type = 2
 
 		if ("moan")
 			if(miming)
-				message = "appears to moan!"
+				message = "кажется стонет"
 				m_type = 1
 			else
-				message = "moans!"
+				message = "стонет"
 				m_type = 2
 				if(get_sex() == FEMALE)
 					switch(pick("1", "2", "3"))
@@ -587,10 +587,10 @@
 				param = null
 			else
 				if(miming)
-					message = "takes a drag from a cigarette and blows \"[M]\" out in smoke."
+					message = "затягивает сигаретой и выпускает в сторону \"[M]\" облако дыма"
 					m_type = 1
 				else
-					message = "says, \"[M], please. He had a family.\" [src.name] takes a drag from a cigarette and blows his name out in smoke."
+					message = "говорит, \"[M], пожалуйста. У него была семья.\" [src.name] затягивается сигаретой и выдыхает клубок дыма с его именем"
 					m_type = 2
 
 		if ("point")
@@ -603,26 +603,26 @@
 							break
 
 				if (!M)
-					message = "points."
+					message = "указывает пальцем"
 				else
 					pointed(M)
 
 				if (M)
-					message = "points to [M]."
+					message = "указывает на [M]"
 				else
 			m_type = 1
 
 		if ("raise")
 			if (!src.restrained())
-				message = "raises a hand to speak."
+				message = "поднимает руку, пытаясь привлечь внимание"
 			m_type = 1
 
 		if("shake")
-			message = "shakes [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] head."
+			message = "трясет [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] головой"
 			m_type = 1
 
 		if ("shrug")
-			message = "shrugs."
+			message = "пожимает плечами"
 			m_type = 1
 
 		if ("signal")
@@ -630,68 +630,68 @@
 				var/t1 = round(text2num(param))
 				if (isnum(t1))
 					if (t1 <= 5 && (!src.r_hand || !src.l_hand))
-						message = "raises [t1] finger\s."
+						message = "raises [t1] finger\s"
 					else if (t1 <= 10 && (!src.r_hand && !src.l_hand))
-						message = "raises [t1] finger\s."
+						message = "raises [t1] finger\s"
 			m_type = 1
 
 		if ("smile")
-			message = "smiles."
+			message = "улыбается"
 			m_type = 1
 
 		if ("shiver")
-			message = "shivers."
+			message = "дрожит"
 			m_type = 2
 			if(miming)
 				m_type = 1
 
 		if ("pale")
-			message = "goes pale for a second."
+			message = "на секунду бледнеет"
 			m_type = 1
 
 		if ("tremble")
-			message = "trembles in fear!"
+			message = "содрагается в страхе"
 			m_type = 1
 
 		if ("sneeze")
 			if (miming)
-				message = "sneezes."
+				message = "беззвучно чихает"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "sneezes."
+					message = "чихает"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70)
 				else
-					message = "makes a strange noise."
+					message = "издает громкий звук"
 					m_type = 2
 
 		if ("sniff")
 			if(miming)
-				message = "sniffs."
+				message = "беззвучно нюхает"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "sniffs."
+					message = "нюхает"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						playsound(loc, 'sound/effects/mob_effects/f_sniff.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sniff.ogg', 70)
 				else
-					message = "makes a strange noise."
+					message = "издает странный звук"
 					m_type = 2
 
 		if ("snore")
 			if (miming)
-				message = "sleeps soundly."
+				message = "беззучно храпит"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "snores."
+					message = "храпит"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						playsound(loc, 'sound/effects/mob_effects/f_snore.ogg', 70)
@@ -699,39 +699,39 @@
 						playsound(loc, 'sound/effects/mob_effects/m_snore.ogg', 70)
 
 				else
-					message = "makes a noise."
+					message = "издает шум"
 					m_type = 2
 		if ("snort")
 			if (miming)
-				message = "exhales through [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] nostrils."
+				message = "видимо фыркает через [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] ноздри"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "snorts!"
+					message = "фыркает"
 					m_type = 2
 				else
-					message = "attempts to exhale."
+					message = "пытается фыркнуть"
 					m_type = 2
 
 		if ("whimper")
 			if (miming)
-				message = "appears hurt."
+				message = "кажется хнычет"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "whimpers."
+					message = "хнычет"
 					m_type = 2
 				else
-					message = "makes a weak noise."
+					message = "издает слабый звук"
 					m_type = 2
 
 		if ("wink")
-			message = "winks."
+			message = "подмигивает"
 			m_type = 1
 
 		if ("yawn")
 			if (!muzzled)
-				message = "yawns."
+				message = "зевает"
 				if(get_sex() == FEMALE)
 					m_type = 2
 					playsound(loc, 'sound/effects/mob_effects/yawn_f.ogg', 70)
@@ -743,7 +743,7 @@
 
 		if ("collapse")
 			Paralyse(2)
-			message = "collapses!"
+			message = "падает"
 			m_type = 2
 			if(miming)
 				m_type = 1
@@ -761,9 +761,9 @@
 					M = null
 
 				if (M)
-					message = "hugs [M]."
+					message = "обнимает [M]"
 				else
-					message = "opens [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] arms wide, expecting a hug!" // NIKO! MY COUSIN! I CAN'T BELIEVE YOU'RE HERE!
+					message = "широко раскрывает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] руки, в ожидании объятий" // NIKO! MY COUSIN! I CAN'T BELIEVE YOU'RE HERE!
 
 		if ("handshake")
 			m_type = 1
@@ -779,9 +779,9 @@
 
 				if (M)
 					if (M.canmove && !M.r_hand && !M.restrained())
-						message = "shakes hands with [M]."
+						message = "пожимает руку [M]"
 					else
-						message = "holds out [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] hand to [M] to shake."
+						message = "протягивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] руку в сторону [M] для рукопожатия"
 
 		if("dap")
 			m_type = 1
@@ -793,17 +793,17 @@
 							M = A
 							break
 				if (M)
-					message = "gives daps to [M]."
+					message = "даёт пятюню [M]"
 				else
-					message = "sadly can't find anybody to give daps to, and daps [identifying_gender == "male" ? "himself" : identifying_gender == "female" ? "herself" : "themselves"]. Shameful."
+					message = "вздыхая с сожалением, не может найти того кому можно дать пятюню, и отвешивает её [identifying_gender == "male" ? "самому себе" : identifying_gender == "female" ? "самой себе" : "самим себе"]. Печально"
 
 		if ("scream")
 			if (miming)
-				message = "acts out a scream!"
+				message = "изображает крик"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "screams!"
+					message = "кричит"
 					m_type = 2
 					if(prob(1))
 						playsound(loc, 'sound/voice/wilhelm_scream.ogg', 80, 1)
@@ -824,18 +824,18 @@
 							if("3")
 								playsound(loc, 'sound/voice/malescream_4.ogg', 80, 1)
 				else
-					message = "makes a very loud noise."
+					message = "издает очень громкий звук"
 					m_type = 2
 			cloud_emote = "cloud-scream"
 
 		if("painscream")
 			cloud_emote = "cloud-pain"
 			if (miming)
-				message = "acts out a squirming scream!"
+				message = "изображает пронзительный крик в боли"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='danger'>screams in agony!</span>"
+					message = "<span class='danger'>кричит в агонии</span>"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -850,14 +850,14 @@
 							if("2")
 								playsound(loc, 'sound/voice/malescream_5.ogg', 80, 1)
 				else
-					message = "<span class='danger'>makes a very loud noise, squirming around!</span>"
+					message = "<span class='danger'>издает очень громкий звук, извиваясь во все стороны</span>"
 					m_type = 2
 
 
 		if ("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
 			if (!muzzled)
 				cloud_emote = "cloud-scream"
-				message = "releases a heroic roar, inspiring everyone around [identifying_gender == "male" ? "him" : identifying_gender == "female" ? "her" : "themselves"]! URA!"
+				message = "издает героический рёв, поднимая боевой дух всем рядом с [identifying_gender == "male" ? "ним" : identifying_gender == "female" ? "ней" : "ними"]! УРА-А"
 				if(get_sex() == FEMALE)
 					m_type = 2
 					playsound(loc, 'sound/voice/f_warcry.ogg', 80, 30)
@@ -865,38 +865,38 @@
 					m_type = 2
 					playsound(loc, 'sound/voice/ura.ogg', 80, 1)
 				if(miming)
-					message = "acts out a battlecry!"
+					message = "изображает боевой клич"
 					m_type = 1
 
 		if("crack")
 			if(!restrained())
-				message = "cracks [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] knuckles."
+				message = "разминает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] кулаки."
 				playsound(src, 'sound/voice/knuckles.ogg', 50, 1,)
 				m_type = 1
 
 		if("meow", "meows")
 			if(miming)
-				message = "acts out a soft mrowl."
+				message = "беззучно мяукает"
 				m_type = 1
 			else
 				if(!muzzled)
-					message = "meows!"
+					message = "мяукает"
 					m_type = 2
 					playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 
 		if("squeak","squeaks")
 			if(miming)
-				message = "acts out a soft squeak."
+				message = "изображает пищание"
 				m_type = 1
 			else
 				if(!muzzled)
-					message = "squeaks!"
+					message = "пищит"
 					m_type = 2
 					playsound(loc, 'sound/effects/mouse_squeak.ogg', 50, 1)
 
 		if("vomit")
 			if(isSynthetic())
-				to_chat(src, "<span class='warning'>You are unable to vomit.</span>")
+				to_chat(src, "<span class='warning'>You are unable to vomit.</span>")//Нужно ли переводить предупреждения?
 				return
 			vomit()
 			return
@@ -905,7 +905,7 @@
 			cloud_emote = "cloud-music"
 			m_type = 2
 			if(!muzzled)
-				message = "whistles a tune."
+				message = "насвистывает мелодию"
 				switch(pick("1", "2", "3"))
 					if("1")
 						playsound(loc, 'sound/misc/longwhistle.ogg', 25, 1, -3)
@@ -914,14 +914,14 @@
 					if("3")
 						playsound(loc, 'sound/misc/weasel.ogg', 50, 1,)
 			else
-				message = "makes a light spitting noise, a poor attempt at a whistle."
+				message = "издает шипящий звук в явной попытке свистнуть"
 		if("qwhistle")
 			cloud_emote = "cloud-music"
 			if(!muzzled)
-				message = "whistles in astonishment."
+				message = "насвистывает в удивлении."
 				playsound(loc, 'sound/misc/shortwhistle.ogg', 50, 1)
 			else
-				message = "makes a light spitting noise, a poor attempt at a whistle."
+				message = "издает шипящий звук в явной попытке свистнуть"
 
 		if("awhistle")
 			cloud_emote = "cloud-music"
@@ -934,23 +934,23 @@
 							M = A
 							break
 				if(M)
-					message = "whistles to get [M]'s attention!"
+					message = "свистит, чтоб привлечь внимание [M]"
 					playsound(loc, 'sound/misc/whistle_attention.ogg', 50, 1) // Hey! Taxi!
 				else
-					message = "whistles to get some attention!"
+					message = "свистит, чтоб привлечь внимание к себе"
 					playsound(loc, 'sound/misc/whistle_attention.ogg', 50, 1)
 			else
 				m_type = 1
-				message = "makes some noise to draw attention to [identifying_gender == "male" ? "himself" : identifying_gender == "female" ? "herself" : "themselves"]!"
+				message = "издает шипящий звук в попытке того, чтоб на  [identifying_gender == "male" ? "него" : identifying_gender == "female" ? "неё" : "них"] обратили внимание"
 
 		if("zartan")
 			cloud_emote = "cloud-music"
 			if(!muzzled)
-				message = "whistles a jolly good tune."
+				message = "насвистывает веселую мелодию"
 				playsound(loc, 'sound/misc/zartan.ogg', 50, 1)
 			else
 				m_type = 1
-				message = "mumbles a jolly good melody."
+				message = "бормочет мотив веселой мелодии"
 
 		if("mwah")
 			cloud_emote = "cloud-love"
@@ -963,19 +963,19 @@
 							M = A
 							break
 				if(M)
-					message = "blows a kiss for [M]!"
+					message = "отправляет воздушный поцелуй для [M]"
 					playsound(loc, 'sound/misc/kiss.ogg', 80, 1)
 				else
-					message = "blows a kiss!"
+					message = "отправляет воздушный поцелуй"
 					playsound(loc, 'sound/misc/kiss.ogg', 80, 1)
 			else
 				m_type = 1
-				message = "seems to pucker [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "hers" : "their"] lips for a kiss!"
+				message = "похоже поджимает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] губы для поцелуя"
 
 		if("snap", "snaps")
 			m_type = 2
 			if(!restrained())
-				message = "snaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] fingers."
+				message = "щелкает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] пальцами"
 				switch(pick("1", "2"))
 					if("1")
 						playsound(loc, 'sound/effects/fingersnap.ogg', 50, 1, -3)
@@ -992,14 +992,14 @@
 							M = A
 							break
 				if(M)
-					message = "<span class='danger'>slaps [M] across the face. Ouch!</span>"
+					message = "<span class='danger'>отвешивает [M] пощёчину. Ауч</span>"
 					playsound(loc, 'sound/effects/spank.ogg', 50, 1)
 					if(ishuman(M)) //Snowflakey!
 						var/mob/living/carbon/human/H = M
 						if(istype(H.wear_mask,/obj/item/clothing/mask/smokable))
 							H.drop_from_inventory(H.wear_mask)
 				else
-					message = "slaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] cheeks to focus!"
+					message = "шлепает [identifying_gender == "male" ? "самого себя" : identifying_gender == "female" ? "саму себя" : "самих себя"] по лицу, чтоб привести себя в чувство!"
 					playsound(loc, 'sound/effects/facepalm.ogg', 80, 1)
 
 		if("aslap", "aslaps")
@@ -1012,202 +1012,202 @@
 							M = A
 							break
 				if(M)
-					message = "<span class='danger'>slaps [M]'s butt!</span>"
+					message = "<span class='danger'>шлепает [M] по заднице</span>"
 					playsound(loc, 'sound/effects/spank.ogg', 50, 1)
 				else
-					message = "<span style='color:pink'>playfully spanks [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] own butt~</span>" // Saucy
+					message = "<span style='color:pink'>игриво шлепает [identifying_gender == "male" ? "самого себя" : identifying_gender == "female" ? "саму себя" : "самих себя"] по заднице~</span>" // Saucy
 					playsound(loc, 'sound/effects/facepalm.ogg', 80, 1)
 
 		if("facepalm", "facepalms")
 			m_type = 1
 			if(!restrained())
-				message = "facepalms in shame."
+				message = "шлепает себя ладонью по лицу в испанском стыду"
 				playsound(loc, 'sound/effects/facepalm.ogg', 80, 1)
 
 		if ("awoo")
 			m_type = 2
 			if(!muzzled)
-				message = "awoo's cutely!"
+				message = "воет"
 				playsound(loc, 'sound/voice/awoo.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("nya")
 			m_type = 2
 			if(!muzzled)
-				message = "lets out a nyah~"
+				message = "някает~"
 				playsound(loc, 'sound/voice/nya.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("peep")
 			m_type = 2
 			if(!muzzled)
-				message = "peeps like a bird."
+				message = "чирикает как птичка"
 				playsound(loc, 'sound/voice/peep.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if("chirp")
 			m_type = 2
 			if(!muzzled)
-				message = "chirps!"
+				message = "щебечет"
 				playsound(src.loc, 'sound/misc/nymphchirp.ogg', 50, 0)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("weh")
 			m_type = 2
 			if(!muzzled)
-				message = "weh's. Weh!"
+				message = "выдыхает странный звук из своего рта. Weh!"
 				playsound(loc, 'sound/voice/weh.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("merp")
 			m_type = 2
 			if(!muzzled)
-				message = "merps."
+				message = "издает странный звук из своего рта. Merp!"
 				playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("trill")
 			m_type = 2
 			cloud_emote = "cloud-love"
 			if(!muzzled)
-				message = "trills softly."
+				message = "издает тихую трель"
 				playsound(loc, 'sound/voice/trill.ogg', 50, 1, -1) // Copyright CC BY-NC 3.0 Arnaud Coutancier (freesound.org) for the source audio.
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("geck")
 			m_type = 2
 			cloud_emote = "cloud-scream" //of course
 			if(!muzzled)
-				message = "geckers obnoxiously!"
+				message = "пищит как фенек"
 				playsound(loc, 'sound/voice/geck.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("squish")
 			m_type = 2
 			if(!muzzled)
-				message = "squishes."
+				message = "хлюпает"
 				playsound(loc, 'sound/voice/slime_squish.ogg', 50, 1, -1)  //Credit to DrMinky (freesound.org) for the sound.
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("bark")
 			m_type = 2
 			cloud_emote = "cloud-scream"
 			if(!muzzled)
-				message = "barks!"
+				message = "гавкает"
 				playsound(loc, 'sound/voice/bark2.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("hiss")
 			m_type = 2
 			cloud_emote = "cloud-scream"
 			if(!muzzled)
-				message = "hisses!"
+				message = "шипит"
 				playsound(loc, 'sound/voice/hiss.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("squeak")
 			m_type = 2
 			if(!muzzled)
-				message = "lets out a squeak."
+				message = "издает писк"
 				playsound(loc, 'sound/effects/mouse_squeak.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("purr")
 			m_type = 2
 			cloud_emote = "cloud-love"
 			if(!muzzled)
-				message = "purrs softly."
+				message = "тихонько мурчит"
 				playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("ycackle")
 			m_type = 2
 			cloud_emote = "cloud-scream"
 			if(!muzzled)
-				message = "cackles like a hyena!"
+				message = "хохочет как гиена"
 				playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("shriek")
 			m_type = 2
 			cloud_emote = "cloud-scream"
 			if(!muzzled)
-				message = "<span class='danger'>SHRIEKS!</span>"
+				message = "<span class='danger'>пронзительно визжит!</span>"
 				playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("bellow")
 			m_type = 2
 			if(!muzzled)
-				message = "bellows!"
+				message = "сверепо ревёт"
 				playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("squeal")
 			m_type = 2
 			if(!muzzled)
-				message = "squeals."
+				message = "издает писк"
 				playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("moo")
 			m_type = 2
 			if(!muzzled)
-				message = "moos."
+				message = "мычит"
 				playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //credit to minecraft for the sound effect!
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("bleat")
 			m_type = 2
 			if(!muzzled)
-				message = "bleats."
+				message = "блеет"
 				playsound(loc, 'sound/voice/bleat.ogg', 50, 1, -1) //credit to bigsoundbank for the effect.
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("warble")
 			m_type = 2
 			if(!muzzled)
-				message = "warbles."
+				message = "издает радостную трель"
 				playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("lwarble")
 			m_type = 2
 			if(!muzzled)
-				message = "warbles."
+				message = "издает низкую трель"
 				playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("croon")
 			m_type = 2
 			if(!muzzled)
 				switch(pick("1", "2"))
 					if("1")
-						message = "croons."
+						message = "протяжно квакает"
 						playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
 					if("2")
-						message = "croons."
+						message = "издает протяжное квакание"
 						playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("croak")
 			m_type = 2
 			if(!muzzled)
-				message = "croaks."
+				message = "хрипло квакает"
 				playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("chitter")
 			m_type = 2
 			if(!muzzled)
-				message = "chitters."
+				message = "чирикает словно насекомое"
 				switch(pick("1", "2"))
 					if("1")
 						playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
 					if("2")
 						playsound(loc, 'sound/voice/chitter2.ogg', 90, 1, -1)
 			else
-				message = "makes a strange noise."
+				message = "издает странный звук"
 		if ("help")
 			to_chat(src, "aslap-(none)/mob, awhistle-(none)/mob, awoo, bark, bellow, bleat, blink, blink_r, blush, bow-(none)/mob, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, \
 					facepalm, frown, gasp, geck, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
