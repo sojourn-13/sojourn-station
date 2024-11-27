@@ -7301,7 +7301,6 @@
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
-/obj/item/gun/projectile/shotgun/bull,
 /obj/random/gun_cheap,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armoryshop)
@@ -19343,10 +19342,6 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "ebC" = (
-/obj/item/gun/projectile/shotgun/bull{
-	pixel_y = 8
-	},
-/obj/item/gun/projectile/shotgun/bull,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},
@@ -41852,6 +41847,19 @@
 "iDp" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"iDw" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom/department/medbay{
+	pixel_x = 24;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper)
 "iDx" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -89414,12 +89422,12 @@
 /area/nadezhda/command/prime)
 "sqP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/buff_autoshotgun{
-	pixel_y = 9;
-	pixel_x = -4
+/obj/item/gun/projectile/shotgun/buffalo,
+/obj/item/gun/projectile/shotgun/buffalo{
+	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/buff_autoshotgun{
-	pixel_x = -4
+/obj/item/gun/projectile/shotgun/buffalo{
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -98733,15 +98741,15 @@
 "uhJ" = (
 /obj/machinery/camera/network/security,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
-	pixel_y = -8
-	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
-	pixel_y = 8
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 24
+	},
+/obj/item/gun/projectile/shotgun/riot/opshot,
+/obj/item/gun/projectile/shotgun/riot/opshot{
+	pixel_y = 8
+	},
+/obj/item/gun/projectile/shotgun/riot/opshot{
+	pixel_y = -8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
@@ -108192,10 +108200,6 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/medbay{
-	dir = 8
-	},
-/obj/item/device/radio/intercom/department/medbay{
-	pixel_x = 24;
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -175423,7 +175427,7 @@ ckU
 ajq
 rTv
 amY
-bKC
+iDw
 sxJ
 eXk
 aeH
