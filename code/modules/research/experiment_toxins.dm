@@ -101,7 +101,7 @@
 
 /obj/item/device/radio/beacon/explosion_watcher/proc/asset_wealth(give_value = FALSE)
 	var/gathered_value = 0
-	for(var/obj/structure/S in oview(8))
+	for(var/obj/structure/S in orange(8, src))
 		if(istype(S, /obj/structure/closet))
 			gathered_value += 10
 
@@ -147,25 +147,25 @@
 		if(istype(S, /obj/structure/reagent_dispensers))
 			gathered_value += 25 //Rare-ish
 
-	for(var/obj/item/target/T in oview(8))
+	for(var/obj/item/target/T in orange(8, src))
 		if(T)
 			gathered_value += 5 //Targets are worth 5 as you can buy and stack like 400 in a single tile!
 
-	for(var/obj/machinery/constructable_frame/machine_frame/CF in oview(8))
+	for(var/obj/machinery/constructable_frame/machine_frame/CF in orange(8, src))
 		if(CF)
 			gathered_value += 15
 			if(CF.state > 1)
 				gathered_value += 2
 
-	for(var/obj/item/modular_computer/console/PC in oview(8))
+	for(var/obj/item/modular_computer/console/PC in orange(8, src))
 		if(PC)
 			gathered_value += 18
 
-	for(var/obj/machinery/computer/C in oview(8))
+	for(var/obj/machinery/computer/C in orange(8, src))
 		if(C)
 			gathered_value += 17
 /*
-	for(var/turf/simulated/floor/F in oview(8))
+	for(var/turf/simulated/floor/F in orange(8, src))
 		if(F.health != F.maxHealth)
 			gathered_value -= 2 // Repair the floors you smucks!
 */
