@@ -158,7 +158,7 @@ var/list/gunshot_sound = list('sound/weapons/Gunshot.ogg',
 )*/
 
 var/list/gun_interact_sound = list(
-	'sound/weapons/guns/interact/gun_wield.ogg'
+	'sound/weapons/guns/interact/gun_wield.ogg',
 	'sound/weapons/guns/interact/batrifle_cock.ogg',
 	'sound/weapons/guns/interact/batrifle_magin.ogg',
 	'sound/weapons/guns/interact/batrifle_magout.ogg',
