@@ -7805,7 +7805,7 @@
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/random/gun_cheap,
 /obj/random/cloth/armor,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -21057,10 +21057,10 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "ebC" = (
-/obj/item/gun/projectile/shotgun/bull{
+/obj/item/gun/projectile/shotgun/pump/bull{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},
@@ -48845,11 +48845,11 @@
 "jmq" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+/obj/item/gun/projectile/shotgun/riot/opshot,
+/obj/item/gun/projectile/shotgun/riot/opshot{
 	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+/obj/item/gun/projectile/shotgun/riot/opshot{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -96954,10 +96954,10 @@
 /area/nadezhda/command/prime)
 "sqP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/buff_autoshotgun{
+/obj/item/gun/projectile/shotgun/buffalo{
 	pixel_x = -4
 	},
-/obj/item/gun/projectile/automatic/buff_autoshotgun{
+/obj/item/gun/projectile/shotgun/buffalo{
 	pixel_x = -4;
 	pixel_y = 9
 	},

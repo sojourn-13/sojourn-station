@@ -361,9 +361,9 @@
 
 /datum/craft_recipe/guild/guild_bull
 	name = "bison double barrel shotgun"
-	result = /obj/item/gun/projectile/shotgun/bull/bison
+	result = /obj/item/gun/projectile/shotgun/pump/bull/bison
 	steps = list(
-		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
+		list(/obj/item/gun/projectile/shotgun/pump/bull, 1, "time" = 80),
 		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_DRILLING, 60, "time" = 90),

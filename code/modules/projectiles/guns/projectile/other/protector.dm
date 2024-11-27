@@ -53,7 +53,7 @@
 
 //revolves the magazine, allowing players to choose between multiple grenade types
 /obj/item/gun/projectile/grenade/proc/pump(mob/user as mob)
-	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(user, 'sound/weapons/guns/interact/shotgun_pump.ogg', 60, 1)
 
 	var/obj/item/ammo_casing/next
 	if(loaded.len)

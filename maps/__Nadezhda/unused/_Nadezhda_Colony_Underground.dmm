@@ -3068,7 +3068,7 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "agR" = (
@@ -36345,13 +36345,13 @@
 /area/nadezhda/rnd/xenobiology)
 "gDo" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
+/obj/item/gun/projectile/shotgun/riot{
 	pixel_y = -3
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
+/obj/item/gun/projectile/shotgun/riot{
 	pixel_y = 3
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
+/obj/item/gun/projectile/shotgun/riot{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -55056,10 +55056,10 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "sNV" = (
-/obj/item/gun/projectile/shotgun/bull{
+/obj/item/gun/projectile/shotgun/pump/bull{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},
