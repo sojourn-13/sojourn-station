@@ -7301,6 +7301,7 @@
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
+/obj/random/dungeon_gun_energy,
 /obj/random/gun_cheap,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armoryshop)
@@ -19342,6 +19343,8 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "ebC" = (
+/obj/random/dungeon_gun_energy,
+/obj/random/dungeon_gun_energy,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},
@@ -98750,6 +98753,11 @@
 	},
 /obj/item/gun/projectile/shotgun/riot/opshot{
 	pixel_y = -8
+/obj/structure/table/rack,
+/obj/structure/table/rack,
+/obj/structure/table/rack,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
