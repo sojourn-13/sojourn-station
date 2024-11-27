@@ -372,6 +372,10 @@
 	name = "H&S 8.6x70mm \"Custer\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
+/datum/design/autolathe/gun/shepherd
+	name = "OT MR 8.6x70mm \"Shepherd\""
+	build_path = /obj/item/gun/projectile/automatic/shepherd
+
 // 10mm rifles
 
 /datum/design/autolathe/gun/lever

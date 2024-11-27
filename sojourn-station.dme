@@ -2970,6 +2970,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\ppsh.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\pulse_rifle.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\scaffold.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\shepherd.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\slaught_o_matic.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\solmarine.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\specop.dm"
