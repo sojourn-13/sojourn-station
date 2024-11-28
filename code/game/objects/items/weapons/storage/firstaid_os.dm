@@ -102,7 +102,7 @@
 	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Burn-Treatment Packs. \
 	Alt+click to open and close."
 	icon_state = "medigel_case_burn_preview"
-	real_item_state = "medigel_case_burn_preview"
+	real_item_state = "medigel_case_burn"
 	can_hold = list(
 		/obj/item/stack/medical/ointment/greyson
 		)
