@@ -1099,12 +1099,6 @@
 	name = "Residential District Maintenance"
 	})
 "alU" = (
-/obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
-	name = "Medbay";
-	req_access = newlist();
-	req_one_access = list(5,45)
-	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -1124,6 +1118,11 @@
 	name = "Medbay";
 	opacity = 0;
 	density = 0
+	},
+/obj/machinery/door/airlock/glass_medical{
+	id_tag = "medbay exit";
+	name = "Medbay";
+	req_one_access = list(6)
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/medical/reception)
@@ -1553,12 +1552,6 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/inside_colony)
 "aqU" = (
-/obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
-	name = "Medbay";
-	req_access = newlist();
-	req_one_access = list(5,45)
-	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -1584,6 +1577,11 @@
 	name = "Medbay";
 	opacity = 0;
 	density = 0
+	},
+/obj/machinery/door/airlock/glass_medical{
+	id_tag = "medbay exit";
+	name = "Medbay";
+	req_one_access = list(6)
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/medical/reception)
@@ -16568,10 +16566,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "dyy" = (
-/obj/machinery/door/airlock/medical{
-	name = "Operating Theatre";
-	req_access = list(45)
-	},
 /obj/machinery/holosign/surgery{
 	id = "surgery"
 	},
@@ -16589,6 +16583,10 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/medical{
+	name = "Operating Theatre";
+	req_one_access = list(45,64)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/surgery)
 "dyB" = (
@@ -36368,14 +36366,14 @@
 	name = "Science Expedition prep"
 	})
 "hAG" = (
-/obj/machinery/door/airlock/medical{
-	name = "Operating Theatre";
-	req_access = list(45)
-	},
 /obj/machinery/holosign/surgery{
 	id = "surgery"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/medical{
+	name = "Operating Theatre";
+	req_one_access = list(45,64)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/surgery)
 "hAT" = (
@@ -37120,14 +37118,14 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/medical{
-	name = "Organ Laboratory";
-	req_access = list(45)
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Organ Laboratory";
+	req_one_access = list(45,64)
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/organ_lab)
