@@ -1,4 +1,4 @@
-//Alphabetical order of civilian jobs.
+f//Alphabetical order of civilian jobs.
 
 /obj/item/clothing/under/rank/assistant
 	desc = "A standard-issue black and orange colonist uniform."
@@ -143,6 +143,7 @@
 	var/list/options = list()
 	options["Acolyte"] = "acolyte"
 	options["Acolyte Basic"] = "acolyte_basic"
+	options["Acolyte Robe"] = "churchgrobe"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
