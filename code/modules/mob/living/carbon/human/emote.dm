@@ -179,7 +179,7 @@
 			cloud_emote = "cloud-medic"
 
 // Commenting out to prevent encouraging MilRP.
-/*
+
 		if ("salute")
 			if (!src.buckled)
 				var/M = null
@@ -196,7 +196,7 @@
 				else
 					message = "исполняет воинское приветствие."
 			m_type = 1
-*/
+
 
 		if ("choke")
 			cloud_emote = "cloud-gasp"
@@ -246,7 +246,7 @@
 					m_type = 1
 
 		if ("drool")
-			message = "пускает слюну"
+			message = "несет чепуху"
 			m_type = 1
 
 		if ("eyebrow")
@@ -503,7 +503,7 @@
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "смеется"
+					message = "смеётся"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2", "3"))

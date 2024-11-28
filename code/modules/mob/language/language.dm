@@ -182,7 +182,7 @@
 		if("?")
 			return pick(ask_verb)
 		if("@")
-			return "reports"
+			return "докладывает"
 	return pick(speech_verb)
 
 /datum/language/proc/can_speak_special(var/mob/speaker)

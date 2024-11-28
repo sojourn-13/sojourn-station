@@ -189,7 +189,7 @@
 		else if(ending == "?")
 			verb="спрашивает"
 		else if(ending=="@")
-			verb="reports"
+			verb="докладывает"
 
 	return verb
 

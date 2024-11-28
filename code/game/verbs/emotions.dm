@@ -223,3 +223,13 @@
 	set name = "Медик"
 	set category = "Emote"
 	emote("medic")
+
+// /mob/living/verb/nya()
+// 	set name = "Nya"
+// 	set category = "Emote"
+// 	emote("laugh")
+
+// /mob/living/verb/auiguitar()
+// 	set name = "Воображаемая гитара"
+// 	set category = "Emote"
+// 	emote("airguita")

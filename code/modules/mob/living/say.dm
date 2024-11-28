@@ -108,7 +108,7 @@ var/list/channel_to_radio_key = new
 	else if(ending=="?")
 		return "спрашивает" //INF, WAS return "asks"
 	else if(ending=="@")
-		verb="reports"
+		verb="докладывает"
 	return verb
 
 // returns message
