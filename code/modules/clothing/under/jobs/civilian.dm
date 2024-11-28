@@ -1,4 +1,4 @@
-f//Alphabetical order of civilian jobs.
+//Alphabetical order of civilian jobs.
 
 /obj/item/clothing/under/rank/assistant
 	desc = "A standard-issue black and orange colonist uniform."
