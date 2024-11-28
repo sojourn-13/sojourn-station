@@ -14740,6 +14740,7 @@
 	name = "Medbay Reception";
 	opacity = 0
 	},
+/obj/item/paper/medprice,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/reception)
 "dfz" = (
@@ -21860,10 +21861,6 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
-"eAp" = (
-/obj/machinery/genetics/cloner,
-/turf/simulated/mineral,
-/area/colony)
 "eAs" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "1,9"
@@ -31632,6 +31629,7 @@
 /obj/structure/noticeboard/medical{
 	pixel_y = 32
 	},
+/obj/item/paper/medprice,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "gzc" = (
@@ -91756,6 +91754,7 @@
 	pixel_x = -10
 	},
 /obj/item/storage/box/masks,
+/obj/item/paper/medprice,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "sQg" = (
@@ -106021,7 +106020,8 @@
 /obj/machinery/smelter/cargo_t2_parts{
 	name = "primary smelter";
 	output_side = 4;
-	refuse_output_side = 1
+	refuse_output_side = 1;
+	input_side = 2
 	},
 /obj/structure/sign/warning/moving_parts{
 	pixel_x = -32
@@ -129947,7 +129947,7 @@ hoa
 cZb
 cZb
 cZb
-eAp
+cZb
 cZb
 cZb
 abl
