@@ -287,3 +287,33 @@
 /obj/item/paper/cro_pistol
 	name = "Classia Pistol"
 	info = {"This weapon is highly volatile and extremely dangerous if fired too many times to quickly, be sure to allow it to vent properly lest it over heats. This weapon is also explosive, so be aware of contraband laws and potential damage to the colony. A screwdriver is required to remove the hydrogen tanks, do be careful even then, lest you scorch your hand."}
+
+/obj/item/paper/medprice
+	name = "Payment for Treatment"
+	info = {"<b><large><center>Payment for Treatment</b>
+<BR>While the Biolab’s primary purpose isn’t to turn a profit, supplies still have associated costs. The Soteria Institute REQUIRES all personnel in the Medical division to charge for products and treatment according to the chart below, with a handful of exceptions. Personnel from the Marshals and from Blackshield are not to be charged if their injuries are a result of their work protecting the colony (though they may be charged for treatment rendered as a result of, for example, criminal behavior on their part). All colonists who are injured combating a colony-wide threat, such as the Class Seven Biohazard, the Class Eight Biomechanical Infestation, or some external threat, are guaranteed the same free treatment as Blackshield and Marshal colonists.
+
+<BR>If a Biolab Overseer is available during a given shift, they may change the following prices as they see fit, or waive them entirely. Moreover, payment for medical treatment may be reasonably delayed for up to two hours based on the availability of doctors or other Biolab staff to handle processing invoices, or if the patient has insufficient funds to pay. This deferred payment may be overruled at any time by a CBO, who may then require payment as immediately as is reasonable. Payment may NOT be deferred in any way for visitors, outsiders, or other non-colonists.
+
+<BR>All patients should be informed before treatment that treatment will incur a cost, such as with a public notice in the Biolab lobby, or by individually informing each patient.
+
+<BR>Soteria personnel are guaranteed free treatment as part of their employment contract while they are on duty, though frivolous overuse of medical supplies or personnel time may warrant a reprimand.
+
+<BR>The following is the price chart for Medical treatment and services, not including elective procedures, which will be covered later. Unless otherwise noted, these charges are to be allocated according to whether or not the indicated service happened at all, not on a per-unit or per-instance format.
+<list>
+Sleeper Usage: 40 credits
+Cryopod Usage: 60 credits
+Blood Transfusion: 25 credits/bag
+Unbranded Gauze or Ointment: 5 credits/body part
+Advanced Kits: 10 credits/body part
+Soteria Branded Gauze or Ointment: 25 credits/body part
+Chemicals and Medication: 20-40cr for every 30u (rounded up if below) of unique medicine administered
+Defibrillation: 75 credits
+</list>
+<BR>Surgery should be charged at a rate of 80 credits per body part operated on, such as arms, legs, head, chest, and so on. This cost includes any necessary organs printed for replacement.
+
+<BR>Revival procedures, that is, any usage of Medical supplies performed in the process of resuscitating a dead person, should be charged either a flat 350 credits, or the cost of all procedures performed in the course of resuscitation, whichever is <b>cheaper</b>. This includes any and all surgeries, organ replacements, superficial repair (ATK/ABK/gauze/ointment), cryopod usage, sleeper usage, or any other potential procedures needed for revival.
+
+<BR>Emergency procedures, which are procedures performed in an attempt to save a patient in critical condition, but who has not yet died, are charged only for sleeper usage, cryopod usage, surgery, and blood transfusions.
+
+<BR>Payment for Medical treatment may be rendered either as credits, or as other tangible or intangible bargains -- assistance, supplies, and so on. Non-monetary payment should be duly recorded in the notes section of any invoices which are written. Monetary payments may be deferred, but cannot be waived except by a CBO, in accordance with the guidelines described at the beginning of the section."}
