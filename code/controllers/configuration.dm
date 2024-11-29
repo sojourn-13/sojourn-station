@@ -232,6 +232,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/webhook_url
 	var/webhook_key
+	var/message_announce_new_game = "A new round has begun!"
+	var/message_announce_round_end = "The round is almost over! Get ready for the next one."
 
 	var/profiler_permission = R_DEBUG | R_SERVER
 
@@ -806,6 +808,17 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+
+		//	SOJOURN: discord bot configuration: START
+		else if(type == "discord")
+			switch(name)
+				if("message_announce_new_game")
+					config.message_announce_new_game = value
+				if("message_announce_round_end")
+					config.message_announce_round_end = value
+				else
+					log_misc("Unknown setting in configuration: '[name]'")
+		//	SOJOURN: discord bot configuration: END
 	fps = round(fps)
 	if(fps <= 0)
 		fps = initial(fps)
