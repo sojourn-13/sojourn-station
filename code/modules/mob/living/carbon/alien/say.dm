@@ -12,13 +12,13 @@
 	if(stat == 2)
 		return say_dead(message)
 
-	if(copytext(message,1,2) == "*")
-		return emote(copytext(message,2))
+	if(copytext_char(message,1,2) == "*")
+		return emote(copytext_char(message,2))
 
 	var/datum/language/speaking = parse_language(message)
 
 	if(speaking)
-		message = copytext(message, 2+length(speaking.key))
+		message = copytext_char(message, 2+length(speaking.key))
 
 	message = trim(message)
 

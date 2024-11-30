@@ -4,11 +4,11 @@
 	message = capitalize(trim_left(message))
 	var/verb = say_quote(message)
 
-	if(copytext(message,1,2) == get_prefix_key(/decl/prefix/custom_emote))
-		return emote(copytext(message,2))
+	if(copytext_char(message,1,2) == get_prefix_key(/decl/prefix/custom_emote))
+		return emote(copytext_char(message,2))
 
 	if(stat)
-		var/last_symbol = copytext(message, length(message))
+		var/last_symbol = copytext_char(message, length(message))
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
@@ -22,7 +22,7 @@
 	return ..(message, null, verb)
 
 /mob/living/carbon/slime/say_quote(var/text)
-	var/ending = copytext(text, length(text))
+	var/ending = copytext_char(text, length(text))
 
 	if (ending == "?")
 		return "asks";

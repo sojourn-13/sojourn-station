@@ -33,7 +33,7 @@
 	var/list/punctuation = list("!","?",".","~",">") // The carat is a necessary fix for emotes ending with </span>
 
 	///Last character in the message
-	var/last_character = copytext(message,length_char(message))
+	var/last_character = copytext_char(message,length_char(message))
 	if(!(last_character in punctuation))
 		message += "."
 	return message

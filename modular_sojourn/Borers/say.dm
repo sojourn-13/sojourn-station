@@ -6,7 +6,7 @@
 	if(!message)
 		return
 
-	var/last_symbol = copytext(message, length(message))
+	var/last_symbol = copytext_char(message, length(message))
 	if (stat == 2)
 		return say_dead(message)
 	else if(last_symbol=="@")
@@ -24,12 +24,12 @@
 		if (src.client.handle_spam_prevention(message,MUTE_IC))
 			return
 
-	if (copytext(message, 1, 2) == "*")
-		return emote(copytext(message, 2))
+	if (copytext_char(message, 1, 2) == "*")
+		return emote(copytext_char(message, 2))
 
 	var/datum/language/L = parse_language(message)
 	if(L && L.flags & HIVEMIND)
-		L.broadcast(src,trim(copytext(message,3)),src.truename)
+		L.broadcast(src,trim(copytext_char(message,3)),src.truename)
 		return
 
 	var/list/warm_bodies = list()

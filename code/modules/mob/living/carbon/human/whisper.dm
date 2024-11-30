@@ -46,7 +46,7 @@
 	//parse the language code and consume it
 	var/datum/language/speaking = parse_language(message)
 	if (speaking)
-		message = copytext(message,2+length(speaking.key))
+		message = copytext_char(message,2+length(speaking.key))
 
 	whisper_say(message, speaking, alt_name)
 
@@ -108,7 +108,7 @@
 				voice_sub = changer.voice
 
 	if(voice_sub == "Unknown")
-		if(copytext(message, 1, 2) != "*")
+		if(copytext_char(message, 1, 2) != "*")
 			var/list/temp_message = splittext(message, " ")
 			var/list/pick_list = list()
 			for(var/i = 1, i <= temp_message.len, i++)

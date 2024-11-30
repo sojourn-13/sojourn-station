@@ -164,7 +164,7 @@ var/list/channel_to_radio_key = new
 	if(!speaking)
 		speaking = parse_language(message)
 	if(speaking)
-		message = copytext(message, 2 + length(speaking.key))
+		message = copytext_char(message, 2 + length(speaking.key))
 	else
 		speaking = get_default_language()
 
@@ -330,8 +330,8 @@ mob/proc/format_say_message(var/message = null)
 	var/replacedLocation = 0
 	if(location)
 		var/findLength = length(toFind)
-		var/head = copytext(message, 1, location)
-		var/tail = copytext(message, location + findLength)
+		var/head = copytext_char(message, 1, location)
+		var/tail = copytext_char(message, location + findLength)
 		message = head + replaceWith + tail
 		replacedLocation = length(head) + length(replaceWith)
 	return list(message, replacedLocation)
@@ -340,8 +340,8 @@ mob/proc/format_say_message(var/message = null)
 	var/location = findtextEx(message, toFind)
 	var/findLength = length(toFind)
 	while(location > 0)
-		var/head = copytext(message, 1, location)
-		var/tail = copytext(message, location + findLength)
+		var/head = copytext_char(message, 1, location)
+		var/tail = copytext_char(message, location + findLength)
 		message = head + replaceWith + tail
 		location = findtextEx(message, toFind, length(head) + length(replaceWith) + 1)
 	return message
@@ -479,9 +479,9 @@ mob/proc/format_say_message(var/message = null)
 		var/R = rand(1, messages.len)
 		var/heardword = messages[R]
 		if(copytext_char(heardword, 1, 1) in punctuation)
-			heardword = copytext(heardword, 2)
-		if(copytext(heardword, -1) in punctuation)
-			heardword = copytext(heardword, 1, length(heardword))
+			heardword = copytext_char(heardword, 2)
+		if(copytext_char(heardword, -1) in punctuation)
+			heardword = copytext_char(heardword, 1, length(heardword))
 		heard = "<span class = 'game_say'>...You hear something about...[heardword]</span>"
 
 	else

@@ -201,11 +201,11 @@
 		if ("choke")
 			cloud_emote = "cloud-gasp"
 			if(miming)
-				message = "хватается за [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горло в отчаянии"
+				message = "хватается за [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её": "её" ] горло в отчаянии"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "задыхается"
+					message = "[identifying_gender == "male" ? "Подавился" : identifying_gender == "female" ? "Подавилась" : "Подавилась"]"
 					m_type = 2
 				else
 					message = "издает громкий звук"
@@ -233,14 +233,14 @@
 
 		if ("flap")
 			if (!src.restrained())
-				message = "взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] крыльями"
+				message = "взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "её"] крыльями"
 				m_type = 2
 				if(miming)
 					m_type = 1
 
 		if ("aflap")
 			if (!src.restrained())
-				message = "агрессивно взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] крыльями"
+				message = "агрессивно взмахивает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "её"] крыльями"
 				m_type = 2
 				if(miming)
 					m_type = 1
@@ -294,7 +294,7 @@
 
 		if ("cough")
 			if(miming)
-				message = "имитирует кашель поднося [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] сжатый кулак ко рту!"
+				message = "имитирует кашель поднося [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "её"] сжатый кулак ко рту!"
 				m_type = 1
 			else
 				if (!muzzled)
@@ -320,11 +320,11 @@
 
 		if ("throat")
 			if(miming)
-				message = "подносит кулак к  [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горлу, видимо покашливая"
+				message = "подносит кулак к  [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "её"] горлу, видимо покашливая"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "в неловкости прочищает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "их"] горло"
+					message = "в неловкости прочищает [identifying_gender == "male" ? "его" : identifying_gender == "female" ? "её" : "её"] горло"
 					m_type = 2
 					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
@@ -478,7 +478,7 @@
 					message = "плачет"
 					m_type = 2
 				else
-					message = "издает слабое хныкание [identifying_gender == "male" ? "Он" : identifying_gender == "female" ? "Она" : "Они"] [get_gender() == NEUTER ? "frown" : "frowns"]"
+					message = "издает слабое хныкание [identifying_gender == "male" ? "Он" : identifying_gender == "female" ? "Она" : "Она"] [get_gender() == NEUTER ? "frown" : "frowns"]"
 					m_type = 2
 
 		if ("sigh")
@@ -1021,7 +1021,7 @@
 		if("facepalm", "facepalms")
 			m_type = 1
 			if(!restrained())
-				message = "шлепает себя ладонью по лицу в испанском стыду"
+				message = "шлепает себя ладонью по лицу"
 				playsound(loc, 'sound/effects/facepalm.ogg', 80, 1)
 
 		if ("awoo")
@@ -1213,7 +1213,9 @@
 					facepalm, frown, gasp, geck, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
 					raise, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, squish, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, squeak, squeal, throat, tremble, trill, twitch, twitch_s, urah, vomit, weh, whimper, wink, yawn,\
 					ycackle, zartan. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
-
+		if("closeeay") //coffe edit
+			message = "закатывает глаза"
+			m_type = 1
 		else
 			to_chat(src, "\blue Unusable emote '[act]'. Say *help for a list.")
 

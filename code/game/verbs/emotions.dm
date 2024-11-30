@@ -233,3 +233,8 @@
 // 	set name = "Воображаемая гитара"
 // 	set category = "Emote"
 // 	emote("airguita")
+
+/mob/living/verb/closetoeay()
+	set name = "Закатить глаза"
+	set category = "Emote"
+	emote("closeeay")
