@@ -233,7 +233,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/webhook_url
 	var/webhook_key
 	var/message_announce_new_game = "A new round has begun!"
-	var/message_announce_round_end = "The round is almost over! Get ready for the next one."
+	var/message_announce_round_end = "The round is almost over! Get ready for the next one.
 
 	var/profiler_permission = R_DEBUG | R_SERVER
 
