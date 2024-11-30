@@ -466,11 +466,11 @@
 
 /obj/item/gun/projectile/pickup(mob/user)
 	..()
-	playsound(src,'sound/weapons/guns/interact/smg_cock.ogg',20,4)
+	playsound(src,'sound/weapons/guns/interact/gun_pickup.ogg',20,4)
 
 /obj/item/gun/projectile/dropped(mob/user)
 	..()
-	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)
+	playsound(src,'sound/weapons/guns/interact/gun_drop.ogg',20,4)
 
 //Lib sideloading port
 /obj/item/gun/projectile/proc/side_loading(mob/user)

@@ -7,7 +7,10 @@
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
-	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine_fire.ogg'
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
@@ -73,7 +76,7 @@
 	icon_state = "viper"
 	item_state = "viper"
 	icon = 'icons/obj/guns/projectile/viper.dmi'
-	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
+	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
@@ -104,7 +107,7 @@
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
-	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
+	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE

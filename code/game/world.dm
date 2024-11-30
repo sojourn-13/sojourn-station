@@ -269,7 +269,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	config.load("config/config.txt")
 	config.load("config/game_options.txt", "game_options")
 	config.loadsql("config/dbconfig.txt")
-	config.load("config/discord.txt", "discord") //	SOJOURN: discord bot configuration
+	config.load("config/discord.txt", "discord") // SOJOURN: discord bot configuration
 
 /hook/startup/proc/loadMods()
 	world.load_mods()

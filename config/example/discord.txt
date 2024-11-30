@@ -3,7 +3,7 @@
 
 ## Welcome message sent at the start of a new round.
 ## Example of a notification message: "A new round has begun!"
-MESSAGE_ANNOUNCE_NEW_GAME Round A new round has begun!
+MESSAGE_ANNOUNCE_NEW_GAME A new round has begun!
 
 ## Message sent at the end of a round.
 ## Example of a role notification message: "<@&859887924223672360> The round is almost over! Get ready for the next one."
