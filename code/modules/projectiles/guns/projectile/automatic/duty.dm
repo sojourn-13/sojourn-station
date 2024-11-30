@@ -20,7 +20,7 @@
 	wound_mult_addition = 0.4
 	damage_multiplier = 1
 	init_recoil = CARBINE_RECOIL(1.0)
-	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine_fire.ogg'
 	force = WEAPON_FORCE_ROBUST
 	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
 	init_firemodes = list(

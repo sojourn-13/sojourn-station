@@ -18,7 +18,7 @@
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_WOOD = 15, MATERIAL_STEEL = 20)
 	price_tag = 1600
-	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
+	unload_sound 	= 'sound/weapons/guns/interact/pan_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/dp_fire.ogg'

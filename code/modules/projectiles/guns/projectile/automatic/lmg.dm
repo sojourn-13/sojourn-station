@@ -26,6 +26,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/mg_silenced.ogg'
 	init_recoil = HMG_RECOIL(1)
 	slowdown_hold = 1
 	init_firemodes = list(
@@ -165,7 +166,6 @@
 	icon_state = "heroic"
 	item_state = "heroic"
 	fire_sound = 'sound/weapons/guns/fire/heroic_fire.ogg'
-	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_mg.ogg' // Yay snowflake silenced sound!
 	caliber = CAL_RIFLE
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
 	penetration_multiplier = 1
