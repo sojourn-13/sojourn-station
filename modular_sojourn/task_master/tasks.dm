@@ -127,7 +127,7 @@
 /datum/task_master/task/dr_floor
 	name = "Dr. Floor"
 	key = "DR_FLOOR"
-	desc = "Either do to drug withdraw, or hope, its hard to denie that this helps build up resistance."
+	desc = "Either due to drug withdraw, or hope, its hard to deny that this helps build up resistance."
 	gain_text = "Self prescription..."
 	level_thresholds = 5 //Tons of wallet/floor pills
 
@@ -206,8 +206,8 @@
 /datum/task_master/task/slab_clearer
 	name = "Mining Skill"
 	key = "SLAB_CLEARER"
-	desc = "Do to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
-	gain_text = "A fully cleared slab allows insight into maxizing mineral gains."
+	desc = "Due to being able to fully restock a mining slab you can visualize better the most mineral-effective ways to break rocks and dig."
+	gain_text = "A fully cleared slab allows insight into maximizing mineral gains."
 	level_thresholds = 1 // 1->2->3
 	unlocked = TRUE
 
