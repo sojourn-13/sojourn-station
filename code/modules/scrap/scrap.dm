@@ -388,6 +388,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/junkfood = 5,
 		/obj/random/booze,
 		/obj/random/soft_drink,
+		/obj/random/drinking_glasses = 0.5,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
