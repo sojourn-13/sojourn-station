@@ -88,7 +88,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	racial_implants_l = (/obj/item/organ_module/active/multitool)
+	racial_implants_l = (/obj/item/organ_module/active/multitool/engineering)
 	restricted_jobs = list(/datum/job/outsider) //You are colony designed, makes no sense outsiders could have it
 
 	stat_modifiers = list(
@@ -110,10 +110,6 @@
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/miner)
 	//restricted_jobs = list(/datum/job/outsider)
-
-//Idea for this is that you were made with being a miner, thus giving you everything you need as one
-//The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
-//-0Loss Stats +35Gained Stat
 
 	stat_modifiers = list(
 		STAT_ROB = 45,
