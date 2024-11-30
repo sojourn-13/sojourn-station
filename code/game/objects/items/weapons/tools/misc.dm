@@ -275,7 +275,7 @@
 		return
 
 /obj/item/tool/tessellate_omni
-    name = "blessed touch"
+    name = "mending touch"
     desc = "Through the compassionate prayer, a Tessellate can ply and mend broken flesh, albeit not quite as effectively as actual tools."
     icon_state = "fact_omni"
     force = WEAPON_FORCE_DANGEROUS
