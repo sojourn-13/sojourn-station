@@ -96,6 +96,7 @@ SUBSYSTEM_DEF(tickets)
 /datum/controller/subsystem/tickets/proc/newHelpRequest(client/C, text)
 	var/ticketNum // Holder for the ticket number
 	var/datum/ticket/T
+	var/category
 	// Get the open ticket assigned to the client and add a response. If no open tickets then make a new one
 	if((T = checkForOpenTicket(C)))
 		ticketNum = T.ticketNum
@@ -105,13 +106,15 @@ SUBSYSTEM_DEF(tickets)
 		var/url_message = makeUrlMessage(C, text, ticketNum)
 		log_admin(url_message)
 		message_admins(url_message, mod_send_message = TRUE)
+		category = "Ticket: #[ticketNum] New message from [key_name(C)]"
+		send2adminchat(category, text)
 	else
 		newTicket(C, text, text)
 		// Play adminhelp sound to all admins who have not disabled it in preferences
 		for(var/client/X in admins)
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 				sound_to(X, 'sound/effects/adminhelp.ogg')
-		var/category = "New Ticket: #[(getTicketCounter() - 1)] from [key_name(C)]"
+		category = "New Ticket: #[(getTicketCounter() - 1)] from [key_name(C)]"
 		send2adminchat(category, text)
 
 /**
