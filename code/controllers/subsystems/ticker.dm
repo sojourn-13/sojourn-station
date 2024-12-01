@@ -50,6 +50,7 @@ SUBSYSTEM_DEF(ticker)
 	var/automatic_restart_allowed = TRUE
 
 	var/list/round_start_events
+	var/list/args
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
 	if(!syndicate_code_phrase)
@@ -226,6 +227,8 @@ SUBSYSTEM_DEF(ticker)
 		return FALSE
 
 	GLOB.storyteller.announce()
+	args = list("storyteller" = GLOB.storyteller.name)
+	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game)), config.channel_announce_new_game)
 
 	setup_economy()
 	newscaster_announcements = pick(newscaster_standard_feeds)
@@ -277,13 +280,16 @@ SUBSYSTEM_DEF(ticker)
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
 
-	var/admins_number = 0
-	for(var/client/C)
-		if(C.holder)
-			admins_number++
-	if(admins_number == 0)
+	//var/admins_number = 0
+	//for(var/client/C)
+	//	if(C.holder)
+	//		admins_number++
+	//if(admins_number == 0)
+	var/list/adm = get_admin_counts()
+	var/list/allmins = adm["present"]
+	if(!allmins.len)
 		send2adminirc("Round has started with no admins online.")
-
+		send2adminchat("Server", "Round [game_id ? "#[game_id]" : ""] has started[allmins.len ? "." : " with no active admins online!"]")
 	return TRUE
 
 //These callbacks will fire after roundstart key transfer
@@ -503,6 +509,10 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_chat(world, "<br><br><br><H1>A round has ended!</H1>")
+	args = list("game_id" = game_id)
+	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end)), config.channel_announce_end_game)
+	send2adminchat("Server", "Round just ended.")
+
 	for(var/mob/Player in GLOB.player_list)
 		if(Player.mind && !isnewplayer(Player))
 			if(Player.stat != DEAD)
