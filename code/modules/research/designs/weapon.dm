@@ -171,6 +171,10 @@
 	name = "Hydrogen Torch"
 	build_path = /obj/item/tool/plasma_torch
 
+/datum/design/research/item/weapon/hydrogen_sword
+	name "Hydrogen Sword"
+	build_path = /obj/item/tool/hydrogen_sword
+
 /datum/design/research/item/weapon/hydrogrenade
 	name = "Hydrogen Grenade"
 	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."

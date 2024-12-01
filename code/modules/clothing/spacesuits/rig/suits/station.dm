@@ -344,6 +344,15 @@ Technomancer RIG
 /obj/item/clothing/head/helmet/space/rig/advhazmat
 	camera_networks = list(NETWORK_RESEARCH)
 
+/obj/item/rig/advhazmat/equipped
+	req_access = list(access_rd)
+	drain = 10
+	initial_modules = list(
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/device/anomaly_scanner,
+		)
+
 /***************************************
 	Medical
 ****************************************/
