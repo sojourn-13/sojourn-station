@@ -55,7 +55,7 @@
 
 	usr << browse(output,"window=radioreport")
 
-
+ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)
 /client/proc/reload_admins()
 	set name = "Reload Admins"
 	set category = "Debug"
