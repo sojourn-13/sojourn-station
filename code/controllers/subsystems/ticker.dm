@@ -230,7 +230,8 @@ SUBSYSTEM_DEF(ticker)
 	message_args = list(
 		"storyteller" = GLOB.storyteller?.name,
 		"welcome" = GLOB.storyteller?.welcome,
-		"game_id" = game_id
+		"game_id" = game_id,
+		"newline" = "\n"
 	)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game, message_args)), config.channel_announce_new_game)
 
@@ -513,7 +514,10 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_chat(world, "<br><br><br><H1>A round has ended!</H1>")
-	message_args = list("game_id" = game_id)
+	message_args = list(
+		"game_id" = game_id,
+		"newline" = "\n"
+	)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end, message_args)), config.channel_announce_end_game)
 	send2adminchat("Server", "Round just ended.")
 
