@@ -229,7 +229,8 @@ SUBSYSTEM_DEF(ticker)
 	GLOB.storyteller.announce()
 	message_args = list(
 		"storyteller" = GLOB.storyteller?.name,
-		"welcome" = GLOB.storyteller?.welcome
+		"welcome" = GLOB.storyteller?.welcome,
+		"game_id" = game_id
 	)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game, message_args)), config.channel_announce_new_game)
 
