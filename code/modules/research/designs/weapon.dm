@@ -172,7 +172,7 @@
 	build_path = /obj/item/tool/plasma_torch
 
 /datum/design/research/item/weapon/hydrogen_sword
-	name "Hydrogen Sword"
+	name = "Hydrogen Sword"
 	build_path = /obj/item/tool/hydrogen_sword
 
 /datum/design/research/item/weapon/hydrogrenade
