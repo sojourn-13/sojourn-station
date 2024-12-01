@@ -227,7 +227,7 @@ SUBSYSTEM_DEF(ticker)
 		return FALSE
 
 	GLOB.storyteller.announce()
-	args = list("storyteller" = GLOB.storyteller.name)
+	args = list("storyteller" = GLOB.storyteller?.name)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game)), config.channel_announce_new_game)
 
 	setup_economy()
