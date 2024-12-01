@@ -50,7 +50,7 @@ SUBSYSTEM_DEF(ticker)
 	var/automatic_restart_allowed = TRUE
 
 	var/list/round_start_events
-	var/list/args
+	var/list/message_args
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
 	if(!syndicate_code_phrase)
@@ -227,7 +227,7 @@ SUBSYSTEM_DEF(ticker)
 		return FALSE
 
 	GLOB.storyteller.announce()
-	args = list("storyteller" = GLOB.storyteller?.name)
+	message_args = list("storyteller" = GLOB.storyteller?.name)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game)), config.channel_announce_new_game)
 
 	setup_economy()
@@ -509,7 +509,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_chat(world, "<br><br><br><H1>A round has ended!</H1>")
-	args = list("game_id" = game_id)
+	message_args = list("game_id" = game_id)
 	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end)), config.channel_announce_end_game)
 	send2adminchat("Server", "Round just ended.")
 
