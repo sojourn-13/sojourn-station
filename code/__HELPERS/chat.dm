@@ -81,3 +81,9 @@ it will be sent to all connected chats.
 
 /// Handles text formatting for item use hints in examine text
 // #define EXAMINE_HINT(text) ("<b>" + text + "</b>")
+
+/proc/format_message_named(var/template, var/list/args)
+	for(var/placeholder in args)
+		var/replacement = "[args[placeholder]]"
+		template = replacetext(template, "{" + placeholder + "}", replacement)
+	return template
