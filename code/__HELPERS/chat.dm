@@ -83,7 +83,7 @@ it will be sent to all connected chats.
 // #define EXAMINE_HINT(text) ("<b>" + text + "</b>")
 
 /proc/format_message_named(var/template, var/list/args)
-    for(var/placeholder in args)
-        var/replacement = "[args[placeholder]]"
-        template = replacetext(template, "{" + placeholder + "}", replacement)
-    return template
+	for(var/placeholder in args)
+		var/replacement = "[args[placeholder]]"
+		template = replacetext(template, "{" + placeholder + "}", replacement)
+	return template

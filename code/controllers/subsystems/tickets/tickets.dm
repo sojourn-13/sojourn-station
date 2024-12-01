@@ -111,7 +111,7 @@ SUBSYSTEM_DEF(tickets)
 		for(var/client/X in admins)
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 				sound_to(X, 'sound/effects/adminhelp.ogg')
-		var/category = "New Ticket: [key_name(C)]"
+		var/category = "New Ticket: #[(getTicketCounter() - 1)] from [key_name(C)]"
 		send2adminchat(category, text)
 
 /**

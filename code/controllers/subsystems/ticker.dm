@@ -36,10 +36,10 @@ SUBSYSTEM_DEF(ticker)
 
 	var/round_end_announced = 0 // Spam Prevention. Announce round end only once.
 
-	var/ship_was_nuked = 0              // See nuclearbomb.dm and malfunction.dm.
-	var/ship_nuke_code = "NO CODE"       // Heads will get parts of this code.
+	var/ship_was_nuked = 0			  // See nuclearbomb.dm and malfunction.dm.
+	var/ship_nuke_code = "NO CODE"	   // Heads will get parts of this code.
 	var/ship_nuke_code_rotation_part = 1 // What part of code next Head will get.
-	var/nuke_in_progress = 0           	// Sit back and relax
+	var/nuke_in_progress = 0		   	// Sit back and relax
 
 	var/newscaster_announcements = null
 
@@ -228,7 +228,7 @@ SUBSYSTEM_DEF(ticker)
 
 	GLOB.storyteller.announce()
 	message_args = list("storyteller" = GLOB.storyteller?.name)
-	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game)), config.channel_announce_new_game)
+	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game, message_args)), config.channel_announce_new_game)
 
 	setup_economy()
 	newscaster_announcements = pick(newscaster_standard_feeds)
@@ -510,7 +510,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_chat(world, "<br><br><br><H1>A round has ended!</H1>")
 	message_args = list("game_id" = game_id)
-	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end)), config.channel_announce_end_game)
+	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end, message_args)), config.channel_announce_end_game)
 	send2adminchat("Server", "Round just ended.")
 
 	for(var/mob/Player in GLOB.player_list)
