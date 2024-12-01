@@ -49,3 +49,18 @@
 	// SSmentor_tickets.newHelpRequest(src, mentormsg) // Mhelp (for mentors if they ever get implemented)
 
 	return
+
+/proc/tgsadminwho()
+	var/list/message = list("Admins: ")
+	var/list/admin_keys = list()
+	for(var/adm in admins)
+		var/client/C = adm
+		admin_keys += "[C][C.holder.fakekey ? "(Stealth)" : ""][C.is_afk() ? "(AFK)" : ""]"
+
+	for(var/admin in admin_keys)
+		if(LAZYLEN(message) > 1)
+			message += ", [admin]"
+		else
+			message += "[admin]"
+
+	return jointext(message, "")
