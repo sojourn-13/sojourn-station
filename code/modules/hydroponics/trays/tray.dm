@@ -652,7 +652,7 @@
 	else if (istype(I, /obj/item/hydro_tray_plant_bag_nutrient))
 		var/obj/item/hydro_tray_plant_bag_nutrient/htpbn = I
 		user.remove_from_mob(htpbn)
-		nutrientlevel_max += htpbn.max_nutrient_give
+		nutrilevel_max += htpbn.max_nutrient_give
 
 		to_chat(user, "You add [htpbn] to [src].")
 		qdel(htpbn)
