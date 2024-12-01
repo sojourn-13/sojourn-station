@@ -137,7 +137,7 @@
 	)
 
 /datum/craft_recipe/consumer/hydro_tray_plant_bag_water
-	name = "Woodchip Plant Bag"
+	name = "Woodchips Bag"
 	result = /obj/item/hydro_tray_plant_bag_water
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
@@ -145,7 +145,7 @@
 	)
 
 /datum/craft_recipe/consumer/hydro_tray_plant_bag_nutrient
-	name = "MealWorm Plant Bag"
+	name = "Mealworms Bag"
 	result = /obj/item/hydro_tray_plant_bag_nutrient
 	steps = list(
 		list(/obj/item/stack/ore, 2),
