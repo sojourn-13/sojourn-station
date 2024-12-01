@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "sword"
 	item_state = "hydrogen"
-	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7) // Currently it is a unique, CRO-only item.
+	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 0.8, MATERIAL_OSMIUM = 0.8, MATERIAL_TRITIUM = 0.8)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
