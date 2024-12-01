@@ -108,7 +108,8 @@ var/game_id
 	load_mods()
 	//end-emergency fix
 
-	TgsNew()
+	// First possible sleep()
+	InitTgs()
 
 	generate_body_modification_lists()
 
@@ -134,6 +135,11 @@ var/game_id
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ToRban_autoupdate)))
 
 	call_restart_webhook()
+
+/// Initializes TGS and loads the returned revising info into GLOB.revdata
+/world/proc/InitTgs()
+	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
+	GLOB.revdata.load_tgs_info()
 
 /world/proc/HandleTestRun()
 	//trigger things to run the whole process
