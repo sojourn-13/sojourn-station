@@ -29,6 +29,7 @@
 
 /obj/item/tool/hydrogen_sword/New()
 	..()
+	fuel_cell = new(src)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/hydrogen_sword/Initialize(mapload = TRUE)
