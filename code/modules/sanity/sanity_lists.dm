@@ -175,22 +175,22 @@
 			sanity_quotes_20 += "[i] is the number."
 	return pick(sanity_quotes_20)
 
- /datum/sanity/proc/pick_emote_20()
-  var/static/list/emotes = list(
-        "подпрыгивает вверх-вниз",
-        "вертит головой в стороны",
-        "вздрагивает"
-    )
-    return pick(emotes)
+/datum/sanity/proc/pick_emote_20()
+	var/static/list/emotes = list(
+		"подпрыгивает вверх-вниз.",
+		"вертит головой в стороны.",
+		"здрагивает."
+	)
+	return pick(emotes)
 
 /datum/sanity/proc/pick_emote_40()
-    var/static/list/emotes = list(
-        "пристально смотрит вдаль",
-        "морщит лоб",
-        "вздрагивает на мгновение",
-        "скрещивает руки на груди"
-    )
-    return pick(emotes) 
+	var/static/list/emotes = list(
+		"ристально смотрит вдаль.",
+		"морщит лоб",
+		"вздрагивает на мгновение.",
+		"скрещивает руки на груди."
+	)
+	return pick(emotes)
 
 datum/sanity/proc/pick_sound()
 	var/static/list/sanity_sounds_without_text = list(
