@@ -1,7 +1,7 @@
 // Hydrogen Grenade, explode when hitting something, even if thrown.
 /obj/item/hydrogen_grenade
 	name = "hydrogen grenade"
-	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."
+	desc = "A case that can support a hydrogen fuel cell. It has a flimsy safe guard that barely prevents it from exploding from the weakest impact."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "grenade"
 	item_state = "grenade"
