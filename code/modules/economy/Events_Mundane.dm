@@ -1,4 +1,4 @@
-
+//перевести SAVELL
 /datum/event/mundane_news
 	endWhen = 10
 

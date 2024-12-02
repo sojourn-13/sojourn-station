@@ -43,10 +43,10 @@ disabled
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("Meteors have been detected on collision course with the colony. ETA 3 minutes until impact. Colonist are advised to seek shelter, be advised, objects coming from orbit may penetrate the ground and hit lower colony levels.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
+			command_announcement.Announce("Обнаружены метеоры, идущие на столкновение с колонией. Время прибытия - 3 минуты до столкновения. Колонистам рекомендуется искать укрытие. Имейте в виду, объекты, летящие с орбиты, могут пробить землю и поразить нижние уровни колонии.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
 
 		else
-			command_announcement.Announce("Meteors have been detected on collision course with the colony. ETA 3 minutes until impact. Colonist are advised to seek shelter, be advised, objects coming from orbit may penetrate the ground and hit lower colony levels.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
+			command_announcement.Announce("Обнаружены метеоры, идущие на столкновение с колонией. Время прибытия - 3 минуты до столкновения. Колонистам рекомендуется искать укрытие. Имейте в виду, объекты, летящие с орбиты, могут пробить землю и поразить нижние уровни колонии.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
 
 /datum/event/meteor_wave/tick()
 	if(activeFor >= next_meteor)
@@ -86,7 +86,7 @@ disabled
 	. = ..()
 
 /datum/event/meteor_wave/overmap/announce()
-	command_announcement.Announce("Alert: Meteors are about to hit the colony. Brace for impact", "Asteroid Alert", new_sound = 'sound/AI/meteors.ogg')
+	command_announcement.Announce("Тревога: на колонию вот-вот обрушатся метеоры. Приготовьтесь к удару", "Asteroid Alert", new_sound = 'sound/AI/meteors.ogg')
 
 
 /*

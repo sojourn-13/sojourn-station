@@ -234,7 +234,7 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 	//Occasional chance to play the same generic announcement as spiders and carp
 	//Just to screw with the metagamers even more
 	if (prob(8))
-		command_announcement.Announce("Unidentified lifesigns detected infesting the colony. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", new_sound = 'sound/AI/aliens.ogg')
+		command_announcement.Announce("Обнаружены неопознанные живые существа, заражающие колонию. Оградите все внешние доступы, включая воздуховоды и вентиляцию.", "Lifesign Alert", new_sound = 'sound/AI/aliens.ogg')
 	else
 		var/list/areanames = list()
 		for (var/b in chosen_burrows)
@@ -246,8 +246,8 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 		if (areanames.len)
 			switch(severity)
 				if (EVENT_LEVEL_MUNDANE)
-					command_announcement.Announce("Bioscans indicate that [chosen_mob] [chosen_verb] [english_list(areanames)]. Clear them out before this starts to affect productivity.", event_name, new_sound = 'sound/AI/vermin.ogg')
+					command_announcement.Announce("Биосканирование показывает, что [chosen_mob] [chosen_verb] [english_list(areanames)]. Уберите их, пока это не начало влиять на производительность..", event_name, new_sound = 'sound/AI/vermin.ogg')
 				if (EVENT_LEVEL_MODERATE)
-					command_announcement.Announce("Bioscans indicate that [chosen_mob] [chosen_verb] [english_list(areanames)]. Security are advised to approach with caution.", event_name, new_sound = 'sound/AI/vermin.ogg')
+					command_announcement.Announce("Биосканирование показывает, что [chosen_mob] [chosen_verb] [english_list(areanames)]. Охране рекомендуется подходить с осторожностью.", event_name, new_sound = 'sound/AI/vermin.ogg')
 				if (EVENT_LEVEL_MAJOR)
-					command_announcement.Announce("Colony Wide Alert: Bioscans indicate that [chosen_mob] [chosen_verb] [english_list(areanames)]. Crew are advised to evacuate those areas immediately.", event_name, new_sound = 'sound/AI/vermin.ogg')
+					command_announcement.Announce("Colony Wide Alert: Биосканирование показывает, что [chosen_mob] [chosen_verb] [english_list(areanames)]. Экипажам рекомендуется немедленно эвакуироваться из этих районов.", event_name, new_sound = 'sound/AI/vermin.ogg')

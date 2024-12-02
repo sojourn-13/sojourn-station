@@ -7,7 +7,7 @@
 	If conveniently placed,they may also offer new, rapid transit routes around the ship
 
 Disabled do to being a bit to unfun to deal with
-
+*/
 /datum/storyevent/wormholes
 	id = "wormholes"
 	name = "wormholes"
@@ -16,7 +16,7 @@ Disabled do to being a bit to unfun to deal with
 	event_type = /datum/event/wormholes
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 	tags = list(TAG_POSITIVE, TAG_COMMUNAL)
-*/
+
 ////////////////////////////////////////////////////////
 /datum/event/wormholes
 	//The duration ranges from fairly long, to basically forever
@@ -44,7 +44,7 @@ Disabled do to being a bit to unfun to deal with
 		wormhole_tiles.Add(T)
 
 /datum/event/wormholes/announce()
-	command_announcement.Announce("Space-time anomalies detected on the colony. There is no additional data.", "Anomaly Alert", new_sound = 'sound/AI/spanomalies.ogg')
+	command_announcement.Announce("На колонии обнаружены пространственно-временные аномалии. Дополнительных данных нет.", "Anomaly Alert", new_sound = 'sound/AI/spanomalies.ogg')
 
 
 /datum/event/wormholes/start()

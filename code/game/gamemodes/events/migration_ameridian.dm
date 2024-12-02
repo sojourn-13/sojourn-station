@@ -52,14 +52,14 @@
 	var/announcement = ""
 	if(!deep_forests)
 		if(severity == EVENT_LEVEL_MAJOR)
-			announcement = "Massive growth of Ameridian has been detected past the colony perimeter, please stand-by."
+			announcement = "За периметром колонии обнаружен массивный рост америдиан, пожалуйста, будьте готовы."
 		else
-			announcement = "Ameridian [spawned_ameridian.len == 1 ? "growth has" : "growths have"] been detected the deep forest."
+			announcement = "Америдиан [spawned_ameridian.len == 1 ? "growth has" : "growths have"] были обнаружены в лесу."
 	else
 		if(severity == EVENT_LEVEL_MAJOR)
-			announcement = "Massive growth of Ameridian has been detected in the deep forest."
+			announcement = "В глубине леса обнаружен активный рост америдиана."
 		else
-			announcement = "Ameridian [spawned_ameridian.len == 1 ? "growth has" : "growths have"] been detected the deep forest."
+			announcement = "Америдиан [spawned_ameridian.len == 1 ? "growth has" : "growths have"] были обнаружены в лесу."
 
 	command_announcement.Announce(announcement, "Lifesign Alert")
 

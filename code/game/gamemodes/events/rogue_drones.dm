@@ -52,11 +52,11 @@
 /datum/event/rogue_drone/announce()
 	var/msg
 	if(prob(33))
-		msg = "Lost combat drones have been reported somewhere outside the colony walls, if any are sighted approach with caution."
+		msg = "Поступило сообщение о потерянных боевых дронах за стенами колонии, если вы их увидите, приближайтесь с осторожностью."
 	else if(prob(50))
-		msg = "Contact has been lost with an automated combat drone performing a scouting mission outside colony borders. If any are sighted in the area, approach with caution."
+		msg = "Потерян контакт с автоматическим боевым дроном, выполняющим разведывательную миссию за пределами границ колонии. Если вы заметите их в этом районе, приближайтесь с осторожностью."
 	else
-		msg = "Unidentified hackers have targetted a combat drone performing a scouting mission outside colony borders. If any are sighted in the area, approach with caution."
+		msg = "Неизвестные хакеры атаковали боевой дрон, выполнявший разведывательную миссию за границами колонии. Если в этом районе будут обнаружены такие дроны, подходите с осторожностью.."
 	command_announcement.Announce(msg, "Rogue drone alert")
 
 /datum/event/rogue_drone/start()
@@ -87,6 +87,6 @@
 		num_recovered++
 
 	if(num_recovered > drones_list.len * 0.75)
-		command_announcement.Announce("Soteria drone control reports the malfunctioning wing has been recovered safely.", "Rogue drone alert")
+		command_announcement.Announce("Управление беспилотника Сотерии сообщает, что неисправное крыло было благополучно восстановлено.", "Rogue drone alert")
 	else
 		command_announcement.Announce("Soteria drone control registers disappointment at the loss of the drones, but the survivors have been recovered.", "Rogue drone alert")

@@ -17,9 +17,9 @@
 		kill()
 
 /datum/event/money_hacker/announce()
-	var/message = "A brute force hack has been detected (in progress since [stationtime2text()]). The target of the attack is: Financial account #[affected_account.account_number], \
-	without intervention this attack will succeed in approximately 10 minutes. Required intervention: temporary suspension of affected accounts until the attack has ceased. \
-	Notifications will be sent as updates occur.<br>"
+	var/message = "Обнаружен взлом методом грубой силы. ( целью атаки является [stationtime2text()]).Целью атаки является: Финансовый счет #[affected_account.account_number], \
+	Без вмешательства эта атака завершится примерно через 10 минут. Требуемое вмешательство: временная приостановка работы затронутых учетных записей до прекращения атаки. \
+	Уведомления будут рассылаться по мере обновления.<br>"
 	var/my_department = "[station_name()] firewall subroutines"
 
 	for(var/obj/machinery/message_server/MS in world)
@@ -37,7 +37,7 @@
 	var/message
 	if(affected_account && !affected_account)
 		//hacker wins
-		message = "The hack attempt has succeeded."
+		message = "Попытка взлома удалась."
 
 		//subtract the money
 		var/lost = affected_account.money * 0.8 + (rand(2,4) - 2) / 10
@@ -45,8 +45,8 @@
 
 		//create a taunting log entry
 		var/datum/transaction/T = new
-		T.target_name = pick("","yo brotha from anotha motha","el Presidente","chieF smackDowN")
-		T.purpose = pick("Ne$ ---ount fu%ds init*&lisat@*n","PAY BACK YOUR MUM","Funds withdrawal","pWnAgE","l33t hax","liberationez")
+		T.target_name = pick("","йо братан из анота мота","el Presidente","chieF smackDowN")
+		T.purpose = pick("Ne$ ---ount fu%ds init*&lisat@*n","ВЕРНИСЬ К МАМЕ","Funds withdrawal","pWnAgE","l33t hax","liberationez")
 		T.amount = pick("","([rand(0,99999)])","alla money","9001$","HOLLA HOLLA GET DOLLA","([lost])")
 		var/date1 = "31 December, 1999"
 		var/date2 = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [rand(1000,3000)]"
@@ -54,13 +54,13 @@
 		var/time1 = rand(0, 99999999)
 		var/time2 = "[round(time1 / 36000)+12]:[(time1 / 600 % 60) < 10 ? add_zero(time1 / 600 % 60, 1) : time1 / 600 % 60]"
 		T.time = pick("", stationtime2text(), time2)
-		T.source_terminal = pick("","[pick("Biesel","New Gibson")] GalaxyNet Terminal #[rand(111,999)]","your mums place","naderpzhda high CommanD")
+		T.source_terminal = pick("","[pick("Biesel","New Gibson")] GalaxyNet Terminal #[rand(111,999)]","место твоей мамы","Надерпжда высокий комманД")
 
 		T.apply_to(affected_account)
 
 	else
 		//crew wins
-		message = "The attack has ceased, the affected accounts can now be brought online."
+		message = "Атака прекратилась, пострадавшие аккаунты теперь можно вывести в сеть."
 
 	var/my_department = "[station_name()] firewall subroutines"
 

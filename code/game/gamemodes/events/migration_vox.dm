@@ -52,12 +52,12 @@
 	var/announcement = ""
 	if(!deep_forests)
 		if(severity == EVENT_LEVEL_MAJOR)
-			announcement = "Massive migration of avian biological entities has been detected past the colony perimeter, please stand-by."
+			announcement = "За периметром колонии обнаружена массовая миграция птичьих биологических существ, пожалуйста, будьте готовы."
 		else
 			announcement = "Avian biological [spawned_vox.len == 1 ? "entity has" : "entities have"] been detected near coloy walls, please stand-by."
 	else
 		if(severity == EVENT_LEVEL_MAJOR)
-			announcement = "Massive migration of avian biological entities has been detected in the deep forest."
+			announcement = "В лесу обнаружена массовая миграция пернатых биологических объектов."
 		else
 			announcement = "Avian biological [spawned_vox.len == 1 ? "entity has" : "entities have"] been detected the deep forest."
 

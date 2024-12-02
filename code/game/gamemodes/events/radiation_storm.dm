@@ -2,7 +2,7 @@
 	Radiation storm is a really severe event that forces everyone to flee into maintenance or a similar
 	shielded area. Anyone caught outside a shielded area will recieve lethal doses of radiation,
 	and will die without medical attention
-
+*/
 disabled
 
 /datum/storyevent/radiation_storm
@@ -14,7 +14,7 @@ disabled
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 
 	tags = list(TAG_SCARY, TAG_COMMUNAL)
-*/
+
 
 
 /datum/event/radiation_storm
@@ -30,7 +30,7 @@ disabled
 	//ic_name = "radiation"
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("High levels of radiation detected in a nearby anomalous storm. Radiation will begin flooding the vents soon, all colonist are suggested to move to the more secure maintenance areas.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
+	command_announcement.Announce("Высокий уровень радиации обнаружен в ближайшей аномальной буре. Радиация скоро начнет заливать вентиляционные отверстия, всем колонистам предлагается переместиться в более безопасные зоны обслуживания.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
 
 /datum/event/radiation_storm/start()
 	make_maint_all_access()
@@ -38,7 +38,7 @@ disabled
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("The rad-storm blow out has begun outside colony walls. Please remain in a sheltered area until the storm has passed.", "Anomaly Alert")
+		command_announcement.Announce("За стенами колонии начался выброс радиационного излучения. Пожалуйста, оставайтесь в укрытии, пока буря не пройдет.", "Anomaly Alert")
 		radiate()
 		for(var/datum/weather/rad_storm/R in SSweather.processing)
 			R.start()
@@ -53,7 +53,7 @@ disabled
 	else if(activeFor == leaveBelt)
 		for(var/datum/weather/rad_storm/R in SSweather.processing)
 			R.wind_down()
-		command_announcement.Announce("The rad-storm blow out has passed and all remaining radiation has been filtered out by the colony scrubbers. Please report to medbay if you experience any unusual symptoms.", "Anomaly Alert")
+		command_announcement.Announce("Радиационная буря прошла, и вся оставшаяся радиация была отфильтрована колониальными вентами. Пожалуйста, сообщите в медблок, если у вас появятся какие-либо необычные симптомы.", "Anomaly Alert")
 
 /datum/event/radiation_storm/proc/radiate()
 	for(var/mob/living/carbon/C in GLOB.living_mob_list)
