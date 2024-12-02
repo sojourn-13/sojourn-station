@@ -51,9 +51,9 @@
 	if(!fuel_cell || active)
 		return
 	active = TRUE
-	force = active_force
-	throwforce = active_throwforce
-	armor_divisor = active_ap
+	force += active_force
+	throwforce += active_throwforce
+	armor_divisor += active_ap
 	sharp = TRUE
 	edge = TRUE
 	w_class = active_w_class
@@ -67,12 +67,7 @@
 		return
 	playsound(src, 'sound/weapons/saberoff.ogg', 50, 1)
 	active = FALSE
-	force = initial(force)
-	throwforce = initial(throwforce)
-	armor_divisor = initial(armor_divisor)
-	sharp = initial(sharp)
-	edge = initial(edge)
-	w_class = initial(w_class)
+	refresh_upgrades()
 	tool_qualities = initial(tool_qualities)
 	update_icon()
 
