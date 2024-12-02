@@ -47,9 +47,10 @@
 	else
 		to_chat(user, SPAN_NOTICE("[src] doesn't have a fuel cell inserted."))
 
-/obj/item/tool/hydrogen_sword/proc/activate(playsound = TRUE)
-	if(!fuel_cell || active)
-		return
+/obj/item/tool/hydrogen_sword/proc/activate(playsound = TRUE, force_update = FALSE)
+	if(!force_update)
+		if(!fuel_cell || active)
+			return
 	active = TRUE
 	force += active_force
 	throwforce += active_throwforce
@@ -132,4 +133,5 @@
 /obj/item/tool/hydrogen_sword/refresh_upgrades()
 	..()
 	if(active)
-		activate(FALSE) //So we dont null are on state
+		activate(FALSE, TRUE) //So we dont null are on state
+		SStgui.update_uis(src)
