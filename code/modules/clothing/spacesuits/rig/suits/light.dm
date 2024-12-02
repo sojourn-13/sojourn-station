@@ -76,7 +76,7 @@
 
 /obj/item/rig/light/ultra_light/janitor
 	name = "SI 'Cleaner Spacer' control module"
-	desc = "An ultra light, unarmoured rig suit. Commissioned for cleaners and janitors do to its enhanced speed and helping with protecting against biohazards."
+	desc = "An ultra light, unarmoured rig suit. Commissioned for cleaners and janitors due to its enhanced speed and helping with protecting against biohazards."
 	icon_state = "hacker_rig"
 	suit_type = "SI 'Cleaner"
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light/ultra_light/janitor
