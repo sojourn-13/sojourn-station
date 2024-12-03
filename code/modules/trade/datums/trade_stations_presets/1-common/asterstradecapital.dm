@@ -37,6 +37,15 @@
 			/obj/item/device/geiger,
 			/obj/item/device/toner
 		),
+		"Storage Utilities" = list(
+			/obj/item/storage/hcases/ammo,
+			/obj/item/storage/hcases/parts,
+			/obj/item/storage/hcases/med,
+			/obj/item/storage/hcases/engi,
+			/obj/item/storage/bag/produce,
+			/obj/item/storage/bag/sheetsnatcher,
+			/obj/item/storage/bag/chemistry
+		),
 		"Lonestar Cells" = list(
 			/obj/item/cell/small,
 			/obj/item/cell/small/high,
@@ -82,7 +91,9 @@
 			/obj/item/toy/figure/character/bobblehead/red_soldier,
 			/obj/item/toy/figure/character/bobblehead/metacat,
 			/obj/item/toy/figure/character/bobblehead/shitcurity,
-			/obj/item/toy/figure/character/bobblehead/metro_patrolman
+			/obj/item/toy/figure/character/bobblehead/metro_patrolman,
+			/obj/item/gun/projectile/revolver/capgun,
+			/obj/item/storage/box/blanks
 		),
 		"Holland and Sullivan Sidearms & Ammunition" = list(
 			/obj/item/clothing/accessory/holster,

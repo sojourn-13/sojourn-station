@@ -11,6 +11,7 @@
 	matter = list(MATERIAL_STEEL = 20)
 	var/sticker = null
 	var/closed = TRUE
+	price_tag = 120
 
 /obj/item/storage/hcases/Destroy()
 
