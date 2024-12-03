@@ -213,7 +213,7 @@
 	matter = list(MATERIAL_BIOMATTER = 60)
 
 /obj/item/reagent_containers/food/snacks/bigbiteburger/cargo
-	desc = "A large stack of parrties and toppings. It has big \"R\" stamped on it's bun."
+	desc = "A large stack of patties and toppings. It has big \"R\" stamped on it's bun."
 
 /obj/item/reagent_containers/food/snacks/superbiteburger
 	name = "super bite burger"

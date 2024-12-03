@@ -57,7 +57,7 @@
 
 	hidden_inventory = list(
 		"Sverkhmateriya" = list(
-			/obj/machinery/power/supermatter
+			/obj/machinery/power/supermatter = good_data("supermatter", list(1, 2), 8500) //The 'unsolicited supermatter shipment' play has gone on long enough. It's time we end it. -Wilson
 		),
 
 		"Bystroye Stroitel'stvo" = list(

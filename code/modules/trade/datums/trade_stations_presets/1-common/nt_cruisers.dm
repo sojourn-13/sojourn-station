@@ -88,6 +88,12 @@
 			/obj/item/gun/projectile/revolver/lemant,
 			/obj/item/gun/projectile/shotgun/pump/combat,
 			/obj/item/gun/projectile/grenade
+		),
+		"Clothing" = list(
+			/obj/item/clothing/under/color/black = good_data("Black Jumpsuit", list(4, 4), 80),
+			/obj/item/clothing/head/beanie/black = good_data("Black Beanie", list(4, 4), 40),
+			/obj/item/clothing/gloves/thick = good_data("Black Gloves", list(4, 4), 40),
+			/obj/item/clothing/shoes/color/black = good_data("Black Shoes", list(4, 4), 40)
 		)
 	)
 
