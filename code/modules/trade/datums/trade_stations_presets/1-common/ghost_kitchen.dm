@@ -19,7 +19,7 @@
 		"Office Supplies" = list(
 			/obj/item/pen = good_data("Pen", list(5, 20), 25),
 			/obj/item/pen/multi = good_data("Multi Color", list(5, 20), 75),
-			/obj/item/paper_bin = good_data("Multi Color", list(5, 20), 100),
+			/obj/item/paper_bin = good_data("Paper Bin", list(5, 20), 100),
 			/obj/item/device/lighting/toggleable/lamp = good_data("Desk Lamp", list(5, 20), 100),
 			/obj/item/storage/briefcase = good_data("Briefcase", list(5, 20), 500), //Rather pricy, but it's to dissuade using them for storage reasons. It's a FASHION statement, sweaty! -Wilson
 			/obj/item/storage/secure/briefcase = good_data("Secure Briefcase", list(5, 20), 550),
