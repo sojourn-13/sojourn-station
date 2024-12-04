@@ -106,7 +106,7 @@
 
 	if(ishuman(forwards_refence))
 		var/mob/living/carbon/human/forward_human = forwards_refence
-		forward_human.vessel.maximum_volume  += 10 //Increases maxium blood do to your shock/recovering body panicing or something like that
+		forward_human.vessel.maximum_volume  += 10 //Increases maxium blood  due to your shock/recovering body panicing or something like that
 
 //Gym buff
 /datum/task_master/task/gym_goer
@@ -160,8 +160,8 @@
 /datum/task_master/task/proper_area_smoker
 	name = "Smoking Area"
 	key = "PROPER_AREA_SMOKER"
-	desc = "Do to smoking in the proper area helps make you feel more connected to the community."
-	gain_text = "Smoking in a proper area is rather soothing."
+	desc = "Smoking in the proper area is very considerate of you."
+	gain_text = "Smoking in a proper area is rather considerate."
 	level_thresholds = 10
 
 /datum/task_master/task/proper_area_smoker/activate_affect()
@@ -216,12 +216,12 @@
 	key = "SHEATH_ARTS"
 	desc = "Quickly unsheathing and attacking. With training it should be possible to get a bit more range."
 	gain_text = "With endless training it should be possible...."
-	level_thresholds = 10 // 10->100->1k-> 10k (This is do to the first 2 levels being useless)
+	level_thresholds = 10 // 10->100->1k-> 10k (This is  due to the first 2 levels being useless)
 	alt_scaling_number = 10
 	unlocked = FALSE
 
 /datum/task_master/task/sheath_arts/activate_affect()
-	//We skip over level 1 do to some check stuff with how sheaths work
+	//We skip over level 1  due to some check stuff with how sheaths work
 	if(level == 1)
 		level = 2
 
