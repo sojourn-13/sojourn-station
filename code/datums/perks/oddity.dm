@@ -52,7 +52,7 @@
 	initial_time = world.time
 	if(isliving(holder))
 		var/mob/living/H = holder
-		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/pours, "POURS", skill_gained = 1, learner = H)
 
 /datum/perk/oddity/toxic_revenger/on_process()
 	if(!..())
@@ -129,7 +129,7 @@
 	holder.falls_mod += 0.2
 	if(isliving(holder))
 		var/mob/living/H = holder
-		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/pours, "POURS", skill_gained = 1, learner = H)
 
 
 /datum/perk/oddity/thin_skin/remove()
