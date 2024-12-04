@@ -138,7 +138,7 @@
 /datum/task_master/task/proper_sealer
 	name = "Proper Sealer"
 	key = "PROPER_SEALER"
-	desc = "Closing burrows with manual labour does more than giving you callous hands - it makes you more knowledgeable with tools."
+	desc = "Closing burrows with manual labour does more than giving you calloused hands - it makes you more knowledgeable with tools."
 	gain_text = "Making the colony a safer place sure is fulfilling work."
 	level_thresholds = 5 //Theirs so many borrows...
 
