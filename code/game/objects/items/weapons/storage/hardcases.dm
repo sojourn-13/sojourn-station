@@ -79,7 +79,7 @@
 	set src in view(1)
 
 	if(isghost(usr))
-		to_chat(usr, SPAN_NOTICE("The lid dosnt move even at your suggestion."))
+		to_chat(usr, SPAN_NOTICE("The lid doesn't move even at your suggestion."))
 		return
 
 	if(can_interact(usr) == 1)	//can't use right click verbs inside bags so only need to check for ablity
