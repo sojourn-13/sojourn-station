@@ -171,7 +171,7 @@
 
 //Taking bad perks should not be all bad!
 /datum/task_master/task/pours
-	name = "When it rains,"
+	name = "When it rains..."
 	key = "POURS"
 	desc = "Just bad luck with getting the right items..."
 	gain_text = "Unlucky day huh..."
