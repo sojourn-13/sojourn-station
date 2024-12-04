@@ -11,17 +11,17 @@
 //*********************************//
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.4
 	step_delay = 0.65
 	can_ricochet = TRUE
-	wounding_mult = WOUNDING_TINY
+	wounding_mult = WOUNDING_SMALL
 	affective_damage_range = 4
 	affective_ap_range = 4
 	recoil = 5
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 1.2
 	step_delay = 0.5
 	affective_damage_range = 5
@@ -41,7 +41,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 0.2
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
@@ -118,7 +118,7 @@
 				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/scrap
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 14)
 	armor_divisor = 0.25
 	affective_damage_range = 1
 	affective_ap_range = 1
@@ -141,9 +141,9 @@
 
 /obj/item/projectile/bullet/magnum_40
 	icon_state = "bullet_magnum"
-	damage_types = list(BRUTE = 24)
+	damage_types = list(BRUTE = 28)
 	armor_divisor = 0.5
-	wounding_mult = WOUNDING_SMALL
+	wounding_mult = WOUNDING_NORMAL
 	can_ricochet = TRUE
 	step_delay = 0.4
 
@@ -161,7 +161,7 @@
 	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 22)
 	armor_divisor = 1.3
 	penetrating = 1
 	step_delay = 0.25
@@ -173,7 +173,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 22)
 	armor_divisor = 0.25
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
@@ -238,7 +238,7 @@
 				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/scrap
-	damage_types = list(BRUTE = 11)
+	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
 	affective_damage_range = 3
 	affective_ap_range = 3
@@ -259,9 +259,9 @@
 /// 12mm Heavy Pistol ///
 /obj/item/projectile/bullet/kurtz_50
 	icon_state = "bullet_krutz"
-	damage_types = list(BRUTE = 27)
+	damage_types = list(BRUTE = 36)
 	armor_divisor = 0.6
-	wounding_mult = WOUNDING_NORMAL
+	wounding_mult = WOUNDING_WIDE
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
@@ -314,7 +314,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 21)
+	damage_types = list(BRUTE = 27)
 	armor_divisor = 0.3
 	wounding_mult = WOUNDING_EXTREME
 	penetrating = 0
@@ -324,7 +324,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 21)
+	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.4
 	penetrating = 2
 	can_ricochet = FALSE
