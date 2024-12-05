@@ -8,7 +8,7 @@ disabled
 /datum/storyevent/radiation_storm
 	id = "radiation_storm"
 	name = "radiation_storm"
-
+	weight = 10
 
 	event_type = /datum/event/radiation_storm
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
@@ -31,6 +31,7 @@ disabled
 
 /datum/event/radiation_storm/announce()
 	command_announcement.Announce("Высокий уровень радиации обнаружен в ближайшей аномальной буре. Радиация скоро начнет заливать вентиляционные отверстия, всем колонистам предлагается переместиться в более безопасные зоны обслуживания.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
+	announcetoradiationstorm()
 
 /datum/event/radiation_storm/start()
 	make_maint_all_access()
@@ -72,10 +73,11 @@ disabled
 				H.apply_effect((rand(20,60)),IRRADIATE)
 				if (prob(max(0, 100 - H.getarmor(null, ARMOR_RAD))))
 					if (prob(75))
-						randmutb(H) // Applies bad mutation
+						randmutb(H)
+						domutcheck(H,null,MUTCHK_FORCED) // Applies bad mutation
 					else
 						randmutg(H) // Applies good mutation
-					domutcheck(H,null,MUTCHK_FORCED)
+						domutcheck(H,null,MUTCHK_FORCED)
 
 /datum/event/radiation_storm/end()
 	revoke_maint_all_access()
