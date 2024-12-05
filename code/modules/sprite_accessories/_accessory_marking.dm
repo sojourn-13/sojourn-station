@@ -203,7 +203,7 @@
 		name = "Corvid Belly"
 		icon_state = "corvidbelly"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_GROIN,BP_TORSO,BP_HEAD,BP_L_LEG,BP_R_LEG)
 
 	cow_body
 		name = "Cow Markings"

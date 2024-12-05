@@ -14,8 +14,10 @@
 	var/base_name = "tray"
 
 	// Plant maintenance vars.
-	var/waterlevel = 100       // Water (max 100)
-	var/nutrilevel = 10        // Nutrient (max 10)
+	var/waterlevel = 100       // Water
+	var/waterlevel_max = 100   // Water Cap
+	var/nutrilevel = 10        // Nutrient
+	var/nutrilevel_max = 10    // Nutrient Cap
 	var/pestlevel = 0          // Pests (max 10)
 	var/weedlevel = 0          // Weeds (max 10)
 
@@ -415,8 +417,8 @@
 		dead = 0
 
 	mutation_level = max(0,min(mutation_level,100))
-	nutrilevel =     max(0,min(nutrilevel,10))
-	waterlevel =     max(0,min(waterlevel,100))
+	nutrilevel =     max(0,min(nutrilevel,nutrilevel_max))
+	waterlevel =     max(0,min(waterlevel,waterlevel_max))
 	pestlevel =      max(0,min(pestlevel,10))
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
@@ -638,6 +640,24 @@
 		qdel(I)
 		check_health()
 
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_water))
+		var/obj/item/hydro_tray_plant_bag_water/htpbw = I
+		user.remove_from_mob(htpbw)
+		waterlevel_max += htpbw.max_water_give
+
+		to_chat(user, "You add [htpbw] to [src].")
+		qdel(htpbw)
+		check_health()
+
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_nutrient))
+		var/obj/item/hydro_tray_plant_bag_nutrient/htpbn = I
+		user.remove_from_mob(htpbn)
+		nutrilevel_max += htpbn.max_nutrient_give
+
+		to_chat(user, "You add [htpbn] to [src].")
+		qdel(htpbn)
+		check_health()
+
 	else if(I.force && seed)
 		if(user.a_intent == I_HURT)
 			if(!dead)
@@ -682,6 +702,8 @@
 
 	if(!seed)
 		to_chat(usr, "[src] is empty.")
+		to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+		to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 		return
 
 	to_chat(usr, SPAN_NOTICE("[seed.display_name] are growing here."))
@@ -689,8 +711,8 @@
 	if(!Adjacent(usr))
 		return
 
-	to_chat(usr, "Water: [round(waterlevel,0.1)]/100")
-	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/10")
+	to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 
 	if(weedlevel >= 5)
 		to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")

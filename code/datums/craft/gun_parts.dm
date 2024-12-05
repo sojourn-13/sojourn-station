@@ -220,15 +220,15 @@
 		log_debug("legal_barrel refence == [legal_barrel]")
 
 		if(legal_grip != frame_to_grip) // ATF check
-			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper grip for the componence's"))
+			to_chat(user, SPAN_WARNING("\the [src] doesn't have a proper grip for the components!"))
 			illegal = TRUE
 
 		if(legal_mechanism != frame_to_mechanism)
-			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
+			to_chat(user, SPAN_WARNING("\the [src] doesn't have a proper mechanism for the components!"))
 			illegal = TRUE
 
 		if(legal_barrel != frame_to_barrel)
-			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper barrel for the componence's!"))
+			to_chat(user, SPAN_WARNING("\the [src] doesn't have a proper barrel for the components!"))
 			illegal = TRUE
 
 		log_debug("Check Legal Marker 2")
