@@ -65,7 +65,7 @@ ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)
 		return
 
 	message_admins("[usr] manually reloaded admins")
-	loadAdmins()
+	reloadAdmins()
 
 /* We....don't have mentors, disabling till further notice
 ADMIN_VERB_ADD(/client/proc/reload_mentors, R_SERVER, FALSE)

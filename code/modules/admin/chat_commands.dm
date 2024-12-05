@@ -12,7 +12,7 @@
 
 /datum/tgs_chat_command/reload_admins/proc/ReloadAsync()
 	set waitfor = FALSE
-	loadAdmins()
+	reloadAdmins()
 
 /datum/tgs_chat_command/adminwho
 	name = "adminwho"
