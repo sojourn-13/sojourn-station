@@ -1143,6 +1143,7 @@
 #include "code\game\objects\items\stacks\telecrystal.dm"
 #include "code\game\objects\items\stacks\throwing.dm"
 #include "code\game\objects\items\stacks\medical_stacks\bruise_pack_stack.dm"
+#include "code\game\objects\items\stacks\medical_stacks\greyson_inhailers.dm"
 #include "code\game\objects\items\stacks\medical_stacks\ichor.dm"
 #include "code\game\objects\items\stacks\medical_stacks\medical.dm"
 #include "code\game\objects\items\stacks\medical_stacks\nanopaste.dm"
