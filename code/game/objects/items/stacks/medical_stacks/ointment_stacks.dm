@@ -47,6 +47,15 @@
 			if(affecting.is_salved() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been salved."))
 				return TRUE
+			if(prevent_wasting)
+				var/stop = TRUE
+				if(affecting.burn_dam && heal_burn)
+					stop = FALSE
+				if(affecting.brute_dam && heal_brute)
+					stop = FALSE
+				if(stop)
+					to_chat(user, SPAN_WARNING("The wounds on [affecting.name] cant be healed more with [src]."))
+					return TRUE
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts salving wounds on [M]'s [affecting.name]."),
 				SPAN_NOTICE("You start salving the wounds on [M]'s [affecting.name].")
@@ -188,7 +197,7 @@
 	name = "Greyson Advanced Burn-Treatment Pack" //G(P)ABTP
 	singular_name = "Greyson Advanced Burn-Treatment Pack"
 	desc = "A packet of nanites with silicon and ethanol that quickly treats burns. \
-Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
+	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
 	Works on robotic limbs."
 	icon_state = "medigel_big_brute"
 	icon = 'icons/obj/stack/medical_big.dmi'
@@ -201,3 +210,4 @@ Due to GP-programming these nanites are able to be used on already sealed or hea
 	use_timer = 60 //These are compelx things
 	always_useful = TRUE
 	extra_bulk = 2
+	prevent_wasting = TRUE

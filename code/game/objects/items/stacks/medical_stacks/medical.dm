@@ -27,6 +27,7 @@
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 	var/always_useful = FALSE
 	var/use_timer = 30
+	var/prevent_wasting = FALSE
 
 /obj/item/stack/medical/proc/try_to_save_use(mob/living/user)
 	if(ishuman(user))
@@ -230,4 +231,3 @@
 /obj/item/stack/medical/Initialize()
 	. = ..()
 	update_icon()
-

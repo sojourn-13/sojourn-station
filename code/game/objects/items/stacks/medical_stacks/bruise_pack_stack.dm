@@ -45,10 +45,23 @@
 		if(affecting.open == 0)
 			if(affecting.is_bandaged() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been bandaged."))
-				return 1
+				return TRUE
 			if(!affecting.wounds.len)
 				to_chat(user, SPAN_WARNING("[M]'s [affecting.name] dosn't have wounds."))
-				return 1
+				return TRUE
+
+			if(prevent_wasting)
+				var/stop = TRUE
+				if(affecting.burn_dam && heal_burn)
+					stop = FALSE
+				if(affecting.brute_dam && heal_brute)
+					stop = FALSE
+				if(affecting.status & ORGAN_BLEEDING)
+					stop = FALSE
+				if(stop)
+					to_chat(user, SPAN_WARNING("The wounds on [affecting.name] cant be healed more with [src]."))
+					return TRUE
+
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts treating [M]'s [affecting.name]."),
 				SPAN_NOTICE("You start treating [M]'s [affecting.name].")
@@ -65,14 +78,25 @@
 			for (var/datum/wound/W in affecting.wounds)
 				if(W.internal)
 					continue
-				if(W.bandaged && (!always_useful && W.damage <= 0))
+
+				//prevents stack wounds from eating through gear well not getting healed
+				if(prevent_wasting)
+					var/needs_healing = FALSE
+					if(affecting.burn_dam && heal_burn)
+						needs_healing = TRUE
+					if(affecting.brute_dam && heal_brute)
+						needs_healing = TRUE
+					if(affecting.status & ORGAN_BLEEDING)
+						needs_healing = TRUE
+					if(!needs_healing)
+						continue
+
+				if(W.bandaged && !always_useful)
 					continue
-				if(used == amount)
+				if(used == amount || !amount)
 					break
-				if(!do_mob(user, M, W.damage/5))
+				if(!do_mob(user, M, (W.damage + 1)/5))
 					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
-					break
-				if(used == amount)
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
 					user.visible_message(
@@ -295,6 +319,7 @@
 	use_timer = 60 //These are compelx things
 	always_useful = TRUE
 	extra_bulk = 2
+	prevent_wasting = TRUE
 
 
 
