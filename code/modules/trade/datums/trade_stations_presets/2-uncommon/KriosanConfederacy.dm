@@ -11,7 +11,7 @@
 	base_income = 1600
 	wealth = 0
 	markup = COMMON_GOODS
-	hidden_inv_threshold = 32000
+	hidden_inv_threshold = 3000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
 	inventory = list(

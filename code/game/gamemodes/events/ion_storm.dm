@@ -3,17 +3,17 @@
 	Ion storm adds new laws to AI and cyborg players. It is pretty darned fun
 */
 // Were not a AI-heavy sever and thus disabled this
-/*
-/datum/storyevent/ionstorm
-	id = "ionstorm"
-	name = "ion storm"
 
+// /datum/storyevent/ionstorm
+// 	id = "ionstorm"
+// 	name = "ion storm"
+// 	weight = 10
 
-	event_type = /datum/event/ionstorm
-	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
+// 	event_type = /datum/event/ionstorm
+// 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 
-	tags = list(TAG_SCARY, TAG_COMMUNAL)
-*/
+// 	tags = list(TAG_SCARY, TAG_COMMUNAL)
+
 /////////////////////
 
 

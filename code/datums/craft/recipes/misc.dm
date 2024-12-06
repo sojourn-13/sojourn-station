@@ -124,3 +124,31 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(/obj/item/circuitboard/autolathe, 1)
 	)
+
+/datum/craft_recipe/consumer/cement_bag
+	name = "Quick-Cement Bag"
+	result = /obj/item/cement_bag
+	steps = list(
+		list(/obj/item/stack/ore/glass, 2),
+		list(/obj/item/stack/rods, 2),
+		list(/obj/item/stack/ore, 3),
+		list(QUALITY_HAMMERING, 1, 12),
+		list(QUALITY_SHOVELING, 1, 15)
+	)
+
+/datum/craft_recipe/consumer/hydro_tray_plant_bag_water
+	name = "Woodchips Bag"
+	result = /obj/item/hydro_tray_plant_bag_water
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(QUALITY_CUTTING, 10, 10)
+	)
+
+/datum/craft_recipe/consumer/hydro_tray_plant_bag_nutrient
+	name = "Mealworms Bag"
+	result = /obj/item/hydro_tray_plant_bag_nutrient
+	steps = list(
+		list(/obj/item/stack/ore, 2),
+		list(/obj/item/reagent_containers/food/snacks/meat, 2), // 10u oil per meat
+		list(QUALITY_CUTTING, 10, 10)
+	)

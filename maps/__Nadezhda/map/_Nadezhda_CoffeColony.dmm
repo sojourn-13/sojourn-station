@@ -99370,6 +99370,8 @@
 "tOT" = (
 /obj/structure/table/standard,
 /obj/item/oddity/bath,
+/obj/item/oddity/rare/golden_cup,
+/obj/item/reagent_containers/food/drinks/golden_cup,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/foreman)
 "tOX" = (
