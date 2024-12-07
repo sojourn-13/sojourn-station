@@ -1234,7 +1234,7 @@
 	name = "heavy pistol magazine (12mm LASER)"
 	desc = "A 7 round magazine marked for 12mm. This one is intended for SI LASER ammunition."
 	icon_state = "kurtz_lsr"
-	ammo_type =
+	ammo_type = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
 
 /obj/item/ammo_magazine/kurtz_50/laser/empty
 	desc = "A 7 round magazine marked for 12mm. This one is not pre-filled, and is intended for SI LASER ammunition."
