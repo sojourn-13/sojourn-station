@@ -1271,7 +1271,7 @@
 
 /obj/item/ammo_magazine/rifle_223
 	name = "short carbine magazine"
-	desc = "A 20 round magazine marked for 5.56mm. "
+	desc = "A 20 round magazine marked for 5.56mm. This one is intended for SI LASER ammunition."
 	icon_state = "lsrifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_LSRIFLE
