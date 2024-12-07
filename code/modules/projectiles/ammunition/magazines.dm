@@ -45,7 +45,7 @@
 
 /obj/item/ammo_magazine/pistol_35/rubber/pepperball
 	name = "standard magazine (9mm pepperball)"
-	icon_state = "pistol_l"
+	icon_state = "pistol_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/pistol_35/lethal
@@ -90,12 +90,12 @@
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber/pepperball
 	name = "standard auto drum (pepperball)"
-	icon_state = "ldrum_l"
+	icon_state = "ldrum_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo
 	name = "standard auto drum (sleeper)"
-	icon_state = "ldrum_r"
+	icon_state = "ldrum_spo"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
@@ -149,7 +149,7 @@
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball
 	name = "highcap magazine (9mm pepperball)"
-	icon_state = "hpistol_l"
+	icon_state = "hpistol_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/lethal
@@ -203,7 +203,7 @@
 
 /obj/item/ammo_magazine/smg_35/rubber/pepperball
 	name = "smg magazine (9mm pepperball)"
-	icon_state = "smg_l"
+	icon_state = "smg_pb"
 	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
@@ -248,7 +248,7 @@
 
 /obj/item/ammo_magazine/magnum_40/rubber/pepperball
 	name = "magazine(10mm Magnum pepperball)"
-	icon_state = "magnum_l"
+	icon_state = "magnum_pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/magnum_40/lethal
@@ -297,7 +297,7 @@
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball
 	name = "smg magazine (10mm Magnum pepperball)"
-	icon_state = "smg_magnum_l"
+	icon_state = "smg_magnum_pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/smg_magnum_40/lethal
@@ -346,7 +346,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball
 	name = "carbine magazine (pepperball)"
-	icon_state = "lrifle_long_l"
+	icon_state = "lrifle_long_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257/lethal
@@ -398,7 +398,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_short/rubber/pepperball
 	name = "short carbine magazine (pepperball)"
-	icon_state = "lrifle_short_l"
+	icon_state = "lrifle_short_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257_short/lethal
@@ -443,7 +443,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_drum/rubber/pepperball
 	name = "carbine drum magazine (pepperball)"
-	icon_state = "lrifle_drum_pep"
+	icon_state = "lrifle_drum_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257_drum/lethal
@@ -833,7 +833,7 @@
 
 /obj/item/ammo_magazine/kurtz_50/rubber/pepperball
 	name = "heavy pistol magazine (pepperball)"
-	icon_state = "kurtz_l"
+	icon_state = "kurtz_pb"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
 
 /obj/item/ammo_magazine/kurtz_50/practice
@@ -851,7 +851,7 @@
 	icon_state = "kurtz_l"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
-///////// SPEEDLOADERS ///////////
+///////// 1S ///////////
 
 //////// 9mm SPEEDLOADERS //////////
 
@@ -1195,13 +1195,83 @@
 /*
 /obj/item/ammo_magazine/sbaw/he
 	name = "20mm SBAW magazine (HEFI)"
-	icon_state = "sbaw_he"
+	icon_state = "sbaw_incend"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
 */
 // SCI ammo
+/obj/item/ammo_magazine/pistol_35/laser
+	name = "standard magazine (9mm LASER)"
+	desc = "A 10 round magazine marked for 9mm standard. This one is intended for SI LASER ammunition."
+	icon_state = "pistol_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/pistol_35/laser/empty
+	desc = "A 10 round magazine marked for 9mm standard. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/smg_35/laser
+	name = "smg magazine (9mm LASER)"
+	desc = "A 32 round magazine marked for 9mm smg. This one is intended for SI LASER ammunition."
+	icon_state = "smg_lsr"
+	ammo_color = ""
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/smg_35/laser/empty
+	desc = "A 32 round magazine marked for 9mm smg. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/magnum_40/laser
+	name = "magazine (10mm Magnum LASER)"
+	desc = "A 10 round magazine marked for 10mm Magnum. This one is intended for SI LASER ammunition."
+	icon_state = "magnum_lsr"
+	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+
+/obj/item/ammo_magazine/magnum_40/laser/empty
+	desc = "A 10 round magazine marked for 10mm Magnum. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/kurtz_50/laser
+	name = "heavy pistol magazine (12mm LASER)"
+	desc = "A 7 round magazine marked for 12mm. This one is intended for SI LASER ammunition."
+	icon_state = "kurtz_lsr"
+	ammo_type =
+
+/obj/item/ammo_magazine/kurtz_50/laser/empty
+	desc = "A 7 round magazine marked for 12mm. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/light_rifle_257/laser
+	name = "carbine magazine (6.5mm LASER)"
+	desc = "A 30 round magazine marked for 6.5mm Carbine. This one is intended for SI LASER ammunition."
+	icon_state = "lrifle_long_lsr"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
+
+/obj/item/ammo_magazine/light_rifle_257/laser/empty
+	desc = "A 30 round magazine marked for 6.5mm Carbine. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/rifle_75/laser
+	name = "rifle magazine (7.62mm LASER)"
+	desc = "A 20 round magazine marked for 7.62mm Rifle. This one is intended for SI LASER ammunition."
+	icon_state = "rifle_lsr"
+	ammo_type = /obj/item/ammo_casing/rifle_75/laser
+
+/obj/item/ammo_magazine/rifle_75/laser/empty
+	desc = "A 20 round magazine marked for 7.62mm Rifle. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/heavy_rifle_408/laser
+	name = "heavy rifle magazine (8.6mm LASER)"
+	icon_state = "hrifle_lsr"
+	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle. This one is intended for SI LASER ammunition."
+
+/obj/item/ammo_magazine/heavy_rifle_408/laser/empty
+	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle. This one is not pre-filled, and is intended for SI LASER ammunition."
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/rifle_223
 	name = "short carbine magazine"
-	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
+	desc = "A 20 round magazine marked for 5.56mm. "
 	icon_state = "lsrifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_LSRIFLE
@@ -1212,4 +1282,6 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_223/empty
+	name = "short carbine magazine (5.56mm LASER)"
+	desc = "A 20 round magazine marked for 5.56mm Carbine laser ammunition. This one is not pre-filled, and is intended for SI LASER ammunition."
 	initial_ammo = 0
