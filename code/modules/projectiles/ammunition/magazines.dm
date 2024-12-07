@@ -123,6 +123,13 @@
 	icon_state = "ldrum"
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/highcap_pistol_35/drum/laser
+	name = "standard drum magazine (9mm laser)"
+	icon_state = "ldrum_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/highcap_pistol_35/drum/laser/empty
+	initial_ammo = 0
 
 /////////////HighCap/////////////
 /obj/item/ammo_magazine/highcap_pistol_35
@@ -166,6 +173,14 @@
 	name = "highcap magazine (9mm hollow-point)"
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+
+/obj/item/ammo_magazine/highcap_pistol_35/laser/empty
+	name = "highcap magazine (9mm laser)"
+	icon_state = "hpistol_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/highcap_pistol_35/laser/empty
+	initial_ammo = 0
 
 /////////////SMG/////////////
 
