@@ -76,10 +76,12 @@
 
 /obj/item/rig/light/ultra_light/janitor
 	name = "SI 'Cleaner Spacer' control module"
-	desc = "An ultra light, unarmoured rig suit. Commissioned for cleaners and janitors due to its enhanced speed and helping with protecting against biohazards."
+	desc = "An ultra light, unarmoured rig suit. Commissioned for cleaners and janitors due to its enhanced speed and helping with protecting against biohazards. \
+	Not as fast as the base Spacer Rig due to supportive magboots having galoshes helping janitors not slip."
 	icon_state = "hacker_rig"
 	suit_type = "SI 'Cleaner"
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light/ultra_light/janitor
+	slowdown = -0.1  //The cost of a no slip flag
 
 /obj/item/clothing/shoes/magboots/rig/light/ultra_light/janitor
 	item_flags = COVER_PREVENT_MANIPULATION | NOSLIP
