@@ -7,7 +7,7 @@
 	agony = 15 //Rubbers deal way less to us!
 	)
 
-	armor_divisor_increment = 1.5
+	armor_divisor_increment = 0.5
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -23,7 +23,7 @@
 	)
 
 	flash_resistances_increment = 2
-	armor_divisor_increment = 1.15
+	armor_divisor_increment = 0.15
 
 	stattags = DEFENSE_STATTAG
 
