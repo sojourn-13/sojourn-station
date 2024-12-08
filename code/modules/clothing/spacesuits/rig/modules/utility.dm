@@ -647,11 +647,11 @@
 	price_tag = 250
 
 /obj/item/rig_module/device/paperfiller
-	name = "newspaper stocker module"
+	name = "newspaper restocking module"
 	desc = "A compressed stack of newspaper and claw to refill newscasters."
 	icon_state = "scanner"
-	interface_name = "newspaper stocker module"
-	interface_desc = "Used on newscasters to add more paper for printing."
+	interface_name = "newspaper restocking module"
+	interface_desc = "Used on newscasters to replenish printing paper."
 	engage_string = "Start Refilling"
 	selectable = 1
 	device_type = /obj/item/newspaper_stack //faster and more uses

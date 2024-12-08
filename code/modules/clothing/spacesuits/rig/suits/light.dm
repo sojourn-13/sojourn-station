@@ -75,7 +75,7 @@
 	camera_networks = list(NETWORK_RESEARCH)
 
 /obj/item/rig/light/ultra_light/janitor
-	name = "SI 'Cleaner Spacer' control module"
+	name = "SI 'Clean Spacer' control module"
 	desc = "An ultra light, unarmoured rig suit. Commissioned for cleaners and janitors due to its enhanced speed and helping with protecting against biohazards. \
 	Not as fast as the base Spacer Rig due to supportive magboots having galoshes helping janitors not slip."
 	icon_state = "hacker_rig"
