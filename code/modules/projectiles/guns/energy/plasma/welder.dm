@@ -21,10 +21,15 @@
 	var/passive_cost = 0.03 // Passive cost
 
 	var/obj/item/gun/hydrogen/plasma_torch/gun = null // Hold the gun the welder turns into.
+	var/spawn_flask = TRUE
+
+/obj/item/tool/plasma_torch/no_starting_fuel
+	spawn_flask = FALSE
 
 /obj/item/tool/plasma_torch/Initialize(mapload = TRUE)
 	..()
-	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
+	if(spawn_flask)
+		flask = new /obj/item/hydrogen_fuel_cell(src)
 	update_icon()
 
 /obj/item/tool/plasma_torch/New()

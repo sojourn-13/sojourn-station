@@ -89,7 +89,7 @@
 	set category = "Object"
 
 	if(!welder) // Safety check if there isn't a welder.
-		welder = new /obj/item/tool/plasma_torch(src)
+		welder = new /obj/item/tool/plasma_torch/no_starting_fuel(src) //So we dont spawn a second flask
 		welder.gun = src
 	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
 		welder.flask = flask // Link the flask to the welder
