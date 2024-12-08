@@ -174,7 +174,7 @@
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
-/obj/item/ammo_magazine/highcap_pistol_35/laser/empty
+/obj/item/ammo_magazine/highcap_pistol_35/laser
 	name = "highcap magazine (9mm laser)"
 	icon_state = "hpistol_lsr"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
