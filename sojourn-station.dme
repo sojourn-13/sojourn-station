@@ -115,6 +115,7 @@
 #include "code\__HELPERS\atom_movables.dm"
 #include "code\__HELPERS\atoms.dm"
 #include "code\__HELPERS\bluespace_entropy.dm"
+#include "code\__HELPERS\chat.dm"
 #include "code\__HELPERS\delays.dm"
 #include "code\__HELPERS\files.dm"
 #include "code\__HELPERS\filters_effects.dm"
@@ -1594,6 +1595,7 @@
 #include "code\modules\admin\admin_verbs.dm"
 #include "code\modules\admin\banjob.dm"
 #include "code\modules\admin\bluespacetech.dm"
+#include "code\modules\admin\chat_commands.dm"
 #include "code\modules\admin\create_mob.dm"
 #include "code\modules\admin\create_object.dm"
 #include "code\modules\admin\create_turf.dm"
@@ -3536,5 +3538,7 @@
 #include "modular_sojourn\task_master\task_helpers.dm"
 #include "modular_sojourn\task_master\tasks.dm"
 #include "tgs_dmapi\tgs.dm"
+#include "tgs_dmapi\code\tgs_event_handler.dm"
+#include "tgs_dmapi\code\world.dm"
 #include "tgs_dmapi\tgs\includes.dm"
 // END_INCLUDE

@@ -234,6 +234,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/message_announce_new_game = "A new round has begun!"	// SOJOURN: discord bot configuration
 	var/message_announce_round_end = "The round is almost over! Get ready for the next one."	// SOJOURN: discord bot configuration
+	var/channel_announce_new_game	// SOJOURN: discord bot configuration
+	var/channel_announce_end_game	// SOJOURN: discord bot configuration
 
 	var/profiler_permission = R_DEBUG | R_SERVER
 
@@ -816,6 +818,10 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 					config.message_announce_new_game = value
 				if("message_announce_round_end")
 					config.message_announce_round_end = value
+				if("channel_announce_new_game")
+					config.channel_announce_new_game = value
+				if("channel_announce_end_game")
+					config.channel_announce_end_game = value
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
 		//	SOJOURN: discord bot configuration: END
