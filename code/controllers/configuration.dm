@@ -237,7 +237,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/channel_announce_new_game
 	var/channel_announce_end_game
 
-
 	var/profiler_permission = R_DEBUG | R_SERVER
 
 	var/allow_ic_printing = TRUE

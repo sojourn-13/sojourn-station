@@ -50,6 +50,7 @@
 	s["host"] = host ? host : null
 	s["revision"] = GLOB.revdata.commit
 	s["revision_date"] = GLOB.revdata.date
+
 	// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 	s["players"] = 0
 	s["shiptime"] = stationtime2text()
@@ -130,7 +131,6 @@
 		positions[k] = list2params(positions[k]) // converts positions["heads"] = list("Bob"="Captain", "Bill"="CMO") into positions["heads"] = "Bob=Captain&Bill=CMO"
 
 	return positions
-
 
 /datum/world_topic/info
 	keyword = "info"

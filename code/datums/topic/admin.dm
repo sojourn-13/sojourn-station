@@ -379,6 +379,8 @@
 	body += source.formatJobGroup(M, "Command Positions", "ccccff", "commanddept", command_positions)
 	//Security (Red)
 	body += source.formatJobGroup(M, "Security Positions", "ffddf0", "securitydept", security_positions)
+	//Bkack shield
+	body += source.formatJobGroup(M, "BlackShield Positions", "0033ff", "blackshielddept", blackshield_positions)
 	//Engineering (Yellow)
 	body += source.formatJobGroup(M, "Engineering Positions", "d5c88f", "engineeringdept", engineering_positions)
 	//Medical (White)
@@ -441,6 +443,11 @@
 				joblist += temp.title
 		if("securitydept")
 			for(var/jobPos in security_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("blackshielddept")
+			for(var/jobPos in blackshield_positions)
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title

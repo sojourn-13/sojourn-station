@@ -5578,6 +5578,11 @@
 /obj/item/book/ritual/cruciform/priest,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
+"pB" = (
+/obj/machinery/computer/rdconsole/unlicensed,
+/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "pC" = (
 /obj/structure/railing{
 	dir = 4
@@ -5949,6 +5954,10 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
+"tb" = (
+/obj/machinery/autolathe/mechfab/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "ti" = (
 /obj/machinery/light{
 	dir = 1
@@ -5994,6 +6003,12 @@
 	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
+"ts" = (
+/obj/item/device/scanner/health,
+/obj/item/storage/firstaid/surgery/si,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
 "tt" = (
 /obj/structure/table/standard,
@@ -6163,6 +6178,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
+/area/centcom/evac)
+"uP" = (
+/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "uS" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
@@ -6905,6 +6925,10 @@
 /obj/structure/grille,
 /turf/space,
 /area/space)
+"CD" = (
+/obj/machinery/autolathe/rnd/protolathe/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "CM" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Guild Prep"
@@ -8156,6 +8180,10 @@
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/centcom/evac)
+"Or" = (
+/obj/machinery/autolathe/rnd/imprinter/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "Ot" = (
 /obj/effect/step_trigger/thrower{
 	affect_ghosts = 1;
@@ -8227,6 +8255,10 @@
 /obj/item/clothing/mask/gas/wolf,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/centcom/merc_base)
+"OQ" = (
+/obj/machinery/r_n_d/destructive_analyzer,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "OU" = (
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/centcom/merc_base)
@@ -8371,6 +8403,10 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
+"PM" = (
+/obj/item/research,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "PN" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/cryopod{
@@ -26088,10 +26124,10 @@ KR
 KR
 KR
 KR
-qH
-qH
-qH
-ab
+Or
+aD
+uP
+KR
 ho
 Es
 aD
@@ -26289,11 +26325,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-ab
+KR
+CD
+aD
+uP
+KR
 ho
 ho
 ho
@@ -26491,11 +26527,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-ab
+KR
+pB
+aD
+uP
+KR
 KR
 KR
 KR
@@ -26693,11 +26729,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+OQ
+PM
+ts
+KR
 qH
 qH
 qH
@@ -26895,11 +26931,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+tb
+aD
+Ua
+KR
 qH
 qH
 qH
@@ -27097,11 +27133,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+KR
+KR
+KR
+KR
 qH
 qH
 qH

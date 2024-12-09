@@ -154,9 +154,9 @@
 			if(!names.len)
 				names += holder.real_name
 			var/add = prob(20) ? ", [pick(names)]" : ""
-			var/list/phrases = list("[prob(50) ? "Hey, " : ""][pick(names)]!","[prob(50) ? "Hey, " : ""][pick(names)]?","Get out[add]!","Go away[add].","What are you doing[add]?","Where's your ID[add]?")
+			var/list/phrases = list("[prob(50) ? "Привет, " : ""][pick(names)]!","[prob(50) ? "Привет, " : ""][pick(names)]?","Убирайся[add]!","ё[add].","Что ты делаешь[add]?","Где твоя карточка[add]?")
 			if(holder.hallucination_power > 50)
-				phrases += list("What did you come here for[add]?","Don't touch me[add].","You're not getting out of here[add].", "You are a failure, [pick(names)].","Why are you alive, [pick(names)]?","Put on some clothes[add].","Take off your clothes[add].")
+				phrases += list("Зачем ты тут[add]?","Не трогай меня[add].","Ты не выберешся отсюда[add].", "Ты неудачник, [pick(names)].","Почему ты ещё живешь, [pick(names)]?","Одевайся[add].","Сними свою одежду[add].")
 			message = pick(phrases)
 			to_chat(holder,"<span class='game say'><span class='name'>[talker.name]</span> [holder.say_quote(message)], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
 		else
@@ -171,7 +171,7 @@
 
 //Spiderling skitters
 /datum/hallucination/skitter/start()
-	to_chat(holder,SPAN_NOTICE("The spiderling skitters[pick(" away"," around","")]."))
+	to_chat(holder,SPAN_NOTICE("Паучок ускакал[pick(" прочь"," вокруг","")]."))
 
 //Spiders in your body
 /datum/hallucination/spiderbabies
@@ -181,7 +181,7 @@
 	if(istype(holder,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = holder
 		var/obj/O = pick(H.organs)
-		to_chat(H,SPAN_WARNING("You feel something [pick("moving","squirming","skittering")] inside of your [O.name]!"))
+		to_chat(H,SPAN_WARNING("Вы чувствуете, как что-то [pick("шевелится","корчится","скачет")] внутри [O.name]!"))
 
 //Seeing stuff
 /datum/hallucination/mirage
@@ -246,7 +246,7 @@
 	duration = 20 MINUTES
 
 /datum/hallucination/telepahy/start()
-	to_chat(holder,"<span class = 'notice'>You expand your mind outwards.</span>")
+	to_chat(holder,"<span class = 'notice'>Вы расширяете свое сознание.</span>")
 	add_verb(holder, /mob/living/carbon/human/proc/fakeremotesay)
 
 /datum/hallucination/telepahy/end()
@@ -262,22 +262,22 @@
 		return
 
 	if(stat)
-		to_chat(usr, "<span class = 'warning'>You're not in any state to use your powers right now!'</span>")
+		to_chat(usr, "<span class = 'warning'>Вы сейчас не в том состоянии, чтобы использовать свои силы!'</span>")
 		return
 
 	if(chem_effects[CE_MIND] > 0)
-		to_chat(usr, "<span class = 'warning'>Chemicals in your blood prevent you from using your power!'</span>")
+		to_chat(usr, "<span class = 'warning'>Химические вещества в крови мешают вам использовать свою силу!'</span>")
 
 	var/list/creatures = list()
 	for(var/mob/living/carbon/C in SSmobs.mob_list)
 		creatures += C
 	creatures -= usr
-	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
+	var/mob/target = input("На кого вы хотите спроецировать свои мысли ?") as null|anything in creatures
 	if (isnull(target))
 		return
 
-	var/msg = sanitize(input(usr, "What do you wish to transmit"))
-	show_message("<span class = 'notice'>You project your mind into [target.name]: \"[msg]\"</span>")
+	var/msg = sanitize(input(usr, "Что вы хотите передать"))
+	show_message("<span class = 'notice'>Вы проецируете свой разум на [target.name]: \"[msg]\"</span>")
 	if(!stat && prob(20))
 		say(msg)
 

@@ -1,4 +1,4 @@
-/// Reload admins tgs chat command. I
+/// Reload admins tgs chat command.
 /datum/tgs_chat_command/reload_admins
 	name = "reload_admins"
 	help_text = "Forces the server to reload admins."
@@ -12,7 +12,7 @@
 
 /datum/tgs_chat_command/reload_admins/proc/ReloadAsync()
 	set waitfor = FALSE
-	loadAdmins()
+	reloadAdmins()
 
 /datum/tgs_chat_command/adminwho
 	name = "adminwho"
