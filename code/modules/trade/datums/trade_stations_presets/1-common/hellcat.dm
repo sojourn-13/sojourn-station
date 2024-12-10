@@ -64,7 +64,8 @@
 			/obj/item/clothing/suit/storage/vest,
 			/obj/item/clothing/head/helmet/tanker,
 			/obj/item/clothing/suit/armor/bulletproof,
-			/obj/item/clothing/suit/armor/laserproof
+			/obj/item/clothing/suit/armor/laserproof,
+			/obj/item/clothing/gloves/thick/swat
 		)
 	)
 	hidden_inventory = list(

@@ -32,7 +32,7 @@
 
 /obj/item/clothing/gloves/insulated/guild
 	name = "Artificers insulated gloves"
-	desc = "A pare of insulated gloves woven into a thicker fire restant pare."
+	desc = "A pair of insulated gloves woven into a thicker fire resistant pair."
 	icon_state = "guild_yellow"
 	item_state = "guild_yellow"
 	armor_list = list(melee = 5, bullet = 3, energy = 3, bomb = 10, bio = 100, rad = 100)

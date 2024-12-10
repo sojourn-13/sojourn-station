@@ -67,4 +67,12 @@
 	mag_slow = 2
 	icon_base = "mercboots"
 	action_button_name = "Toggle Magboots"
+	armor_list = list(
+		melee = 8,
+		bullet = 5,
+		energy = 6,
+		bomb = 75,
+		bio = 100,
+		rad = 75
+	)
 	price_tag = 275
