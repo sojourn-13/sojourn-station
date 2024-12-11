@@ -28,7 +28,7 @@
 	melee_damage_lower_increment = 2
 	melee_damage_upper_increment = 2
 	maxHealth_increment = 5
-	armor_divisor_increment = 1.25
+	armor_divisor_increment = 0.5
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
