@@ -253,7 +253,7 @@
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
 	stunforce = 0
-	agonyforce = 20 //No
+	agonyforce = 30
 	hitcost = 125
 	attack_verb = list("poked")
 	slime_killer = TRUE
