@@ -6,19 +6,45 @@
 	This beacon is, in fact, bombproof and to use it properly you must use the bomb within 10 tiles of this scanner."
 
 	channels = list("Science" = 1)
+
+	//Used for are current limit of points, depleted per successful mini game
+	var/stored_points = 250000
+
+/*
+| Bomb Target mini game
+*/
+	//Simpley what we want are bomb power to be.
 	var/targetBoom
-	var/stored_points = 250000 //This is how many points we hve stored, we use them up when successfull
-	//6.1 perfect bombs
+
+	//How many points we give for successfully doing Bomb Target mini game
+	var/power_points = 30000
+
+	//How far off we can be: this is a range of miss_range(under) + miss_range(over) + 1 (perfect)
+	var/miss_range = 4
+
+	//How many points we subtract per power off targetBoom
+	var/miss_point_subtractor = 2500
+
+/*
+| Building mini game
+*/
+	//Used for building requirements.
 	var/target_wealth = 0 //Used for how much stuff is worth around.
+
+	//Gives us are range for building requirements
+	//if your over 150% then you do not get rewarded the points
 	var/over_value_punishment = 1.5
+
+	//Reward for matching target building requirements.
+	var/wealth_target_reward = 15000
 
 /obj/item/device/radio/beacon/explosion_watcher/examine(mob/user)
 	..()
-	to_chat(usr, "EXPECTED EXPLOSION - [targetBoom]")
+	to_chat(usr, "Power Level expectation - [targetBoom]")
 	to_chat(usr, "Points Left - [stored_points]")
 	to_chat(usr, "Required Asset Value - [target_wealth] to [target_wealth*over_value_punishment]")
-	to_chat(usr, "Assets in view worth - [asset_wealth(give_value=TRUE)]")
-	if(iscarbon(user))
+	to_chat(usr, "Assets in view worth - [asset_wealth(give_value=TRUE)]. Note this is assuming that the bomb power is 16 or higher")
+	if(iscarbon(user)) //Anti lag from ghost spam examining
 		to_chat(usr, "Randomize List Simple For Reaching Target Wealth - [rlsfrtw()]")
 
 /obj/item/device/radio/beacon/explosion_watcher/ex_act(severity)
@@ -33,6 +59,67 @@
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
 	return ..()
+
+/obj/item/device/radio/beacon/explosion_watcher/proc/react_explosion(turf/epicenter, power)
+	power = round(power)
+
+	autosay("Detected explosion with power level [power].", name ,"Science")
+
+	//Feedback if you set items on the edge and cant reach it
+	if(power && power < 16)
+		autosay("Notice: Power level of test is below 16, Watchers Assets view range descressed to [power/2] rounded.", name ,"Science")
+
+
+	var/calculated_research_points = 0
+	var/target_wealth_achived = asset_wealth(FALSE, sight = power)
+	for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
+		if(RD.id == 1) // only core gets the science
+			var/missed
+
+			if(target_wealth_achived)
+				autosay("Notice: Explosion environment correctly fielded. Rewarding [wealth_target_reward] extra points.", name ,"Science")
+				calculated_research_points += wealth_target_reward
+
+			// each step away from the target will result in 8,000 points less, this is a range of 11.
+			missed = abs(power-targetBoom)
+			// If it's too far, no points at all, otherwise, penalty
+			var/boom_points = missed > miss_range ? 0 : power_points - missed*miss_point_subtractor
+
+			if(boom_points)
+				autosay("Notice: Power Level within expectation. Rewarding [boom_points] extra points.", name ,"Science")
+
+
+			calculated_research_points = clamp(calculated_research_points + boom_points, 0, stored_points)
+
+			stored_points -= calculated_research_points
+			RD.files.adjust_research_points(calculated_research_points)
+
+		if(calculated_research_points)
+			autosay("Total Rewards: [calculated_research_points] Research Points.", name ,"Science")
+
+	targetBoom = rand(10,35)
+	if(target_wealth == initial(target_wealth))
+		target_wealth = rand(80, 120)
+	else
+		if(calculated_research_points)
+			var/wealth_mult = initial(stored_points)/(stored_points + 1)
+			if(wealth_mult > 3) //Slower scaling
+				wealth_mult *= 0.5
+			target_wealth = rand(80, 120) * wealth_mult
+			target_wealth = round(target_wealth)
+	//Each mini game gets its own yapping
+	autosay("Next expected Power Level is [targetBoom]. Asset Value Range: [target_wealth] to [target_wealth*over_value_punishment].", name ,"Science")
+	autosay("Next expected Asset Value Range: [target_wealth] to [target_wealth*over_value_punishment].", name ,"Science")
+
+	//No more points. Let people know this.
+	if(stored_points <= 0)
+		autosay("No Additional Data Points Able To Gather.", name ,"Science")
+
+/*
+
+Everything for building
+
+*/
 
 /obj/item/device/radio/beacon/explosion_watcher/proc/rlsfrtw()
 	var/return_orders = "\n"
@@ -99,9 +186,17 @@
 
 	return return_orders
 
-/obj/item/device/radio/beacon/explosion_watcher/proc/asset_wealth(give_value = FALSE)
+/obj/item/device/radio/beacon/explosion_watcher/proc/asset_wealth(give_value = FALSE, sight = 16)
 	var/gathered_value = 0
-	for(var/obj/structure/S in orange(8, src))
+	//Anit cheat, so people are not doing 1 power bombs and never destorying anything
+	if(sight <= 16)
+		sight *= 0.5
+		sight = round(sight)
+
+	if(sight > 16)
+		sight = 8
+
+	for(var/obj/structure/S in orange(sight, src))
 		if(istype(S, /obj/structure/closet))
 			gathered_value += 10
 
@@ -147,24 +242,26 @@
 		if(istype(S, /obj/structure/reagent_dispensers))
 			gathered_value += 25 //Rare-ish
 
-	for(var/obj/item/target/T in orange(8, src))
+	for(var/obj/item/target/T in orange(sight, src))
 		if(T)
 			gathered_value += 5 //Targets are worth 5 as you can buy and stack like 400 in a single tile!
 
-	for(var/obj/machinery/constructable_frame/machine_frame/CF in orange(8, src))
+	for(var/obj/machinery/constructable_frame/machine_frame/CF in orange(sight, src))
 		if(CF)
 			gathered_value += 15
 			if(CF.state > 1)
 				gathered_value += 2
 
-	for(var/obj/item/modular_computer/console/PC in orange(8, src))
+	for(var/obj/item/modular_computer/console/PC in orange(sight, src))
 		if(PC)
 			gathered_value += 18
 
-	for(var/obj/machinery/computer/C in orange(8, src))
+	for(var/obj/machinery/computer/C in orange(sight, src))
 		if(C)
 			gathered_value += 17
 /*
+ Disabled as anti-frustation, people didnt understand what "damaged floors" meant.
+ + weldering every floor is lame and unfun
 	for(var/turf/simulated/floor/F in orange(8, src))
 		if(F.health != F.maxHealth)
 			gathered_value -= 2 // Repair the floors you smucks!
@@ -177,44 +274,3 @@
 	if(gathered_value < target_wealth)
 		return FALSE
 	return TRUE
-
-/obj/item/device/radio/beacon/explosion_watcher/proc/react_explosion(turf/epicenter, power)
-	power = round(power)
-	var/calculated_research_points = -1
-	var/target_wealth_achived = asset_wealth()
-	for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
-		if(RD.id == 1) // only core gets the science
-			var missed
-
-			if(target_wealth_achived)
-				missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less, this is a range of 11.
-				if(stored_points >= 40000)
-					calculated_research_points = max(0,40000 - missed)
-				else
-					calculated_research_points = max(0,stored_points - missed)
-				stored_points -= calculated_research_points
-				RD.files.adjust_research_points(calculated_research_points)
-			else
-				autosay("Notice: Explosion environment not correctly fielded. No Points generated.", name ,"Science")
-
-	if(target_wealth_achived)
-		if(calculated_research_points > 0 && stored_points)
-			autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] Research Points", name ,"Science")
-		if(0 >= stored_points)
-			autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. No Additional Data Points Able To Gather", name ,"Science")
-		if(0 >= calculated_research_points)
-			autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
-	targetBoom = rand(10,35)
-	if(target_wealth == initial(target_wealth))
-		target_wealth = rand(80, 120)
-
-	else
-		if(calculated_research_points)
-			var/wealth_mult = initial(stored_points)/(stored_points + 1)
-			if(wealth_mult > 3) //Slower scaling
-				wealth_mult *= 0.5
-			target_wealth = rand(80, 120) * wealth_mult
-			target_wealth = round(target_wealth)
-	autosay("Next expected power level is [targetBoom]; Asset Value Range: [target_wealth] to [target_wealth*over_value_punishment].", name ,"Science")
-
-

@@ -282,7 +282,8 @@
 	<li> Windows: Normal 2. Reinforced 3. Plasma 5 .Reinforced Plasma 10\
 	<li> Reagent Dispensers (Such as: Watercoolers, Welder Fuel Tanks, Beer Kegs): 25.\
 	<li> Lockers and Closets: 10.\
-	<li> Damaged Floors: N/A</ol>"
+	<li> Damaged Floors: N/A</ol><br>\
+	NOTE: The Watcher sees a max range of 8 tiles around it. If you use a bomb that has less then 16 Power it will match how far it scans to the round(Power/2) of the bomb used."
 	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P

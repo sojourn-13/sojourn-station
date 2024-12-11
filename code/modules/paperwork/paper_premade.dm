@@ -61,7 +61,8 @@
 	<li> Windows: Normal 2. Reinforced 3. Plasma 5 .Reinforced Plasma 10\
 	<li> Reagent Dispensers (Such as: Watercoolers, Welder Fuel Tanks, Beer Kegs): 25.\
 	<li> Lockers and Closets: 10.\
-	<li> Damaged Floors: N/A</ol> "}
+	<li> Damaged Floors: N/A</ol>\
+	NOTE: The Watcher sees a max range of 8 tiles around it. If you use a bomb that has less then 16 Power it will match how far it scans to the round(Power/2) of the bomb used."}
 
 /obj/item/paper/courtroom
 	name = "A Crash Course in Legal SOP on the colony."
