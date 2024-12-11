@@ -9,6 +9,15 @@
 
 	//Used for are current limit of points, depleted per successful mini game
 	var/stored_points = 250000
+/*
+| Bomb Power mini game
+*/
+
+	//Base points given no matter what if you have a bomb that has power above 0
+	var/pitty = 500
+
+	//How many extra points given based on how big the bomb is. Bomb Cap at this time is 40.
+	var/points_per_power = 375
 
 /*
 | Bomb Target mini game
@@ -61,16 +70,29 @@
 	return ..()
 
 /obj/item/device/radio/beacon/explosion_watcher/proc/react_explosion(turf/epicenter, power)
+	var/calculated_research_points = 0
+
 	power = round(power)
 
 	autosay("Detected explosion with power level [power].", name ,"Science")
+
+	if(power > 1)
+		calculated_research_points += pitty + (points_per_power * power)
+
+	if(power == 1)
+		calculated_research_points += pitty
+
+	//Feedback so people that dont read the code and after 2+ bombs figure out the math.
+	if(calculated_research_points)
+		//Note that we are not "exta" points. This should tell the player that this is the base/pitty
+		autosay("Notice: Viable Explosion Recorded: Rewarding [calculated_research_points] points.", name ,"Science")
+
 
 	//Feedback if you set items on the edge and cant reach it
 	if(power && power < 16)
 		autosay("Notice: Power level of test is below 16, Watchers Assets view range descressed to [power/2] rounded.", name ,"Science")
 
 
-	var/calculated_research_points = 0
 	var/target_wealth_achived = asset_wealth(FALSE, sight = power)
 	for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
 		if(RD.id == 1) // only core gets the science
