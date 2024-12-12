@@ -158,11 +158,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_MED
+	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 5, bullet = 3, energy = 3, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = -1, energy = 3, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -184,11 +184,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_HIGH
+	melee_damage_lower = TERMITE_DMG_MED
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 8, bullet = 5, energy = 2, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 8, bullet = 1, energy = 2, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -217,7 +217,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 6, bullet = 3, energy = 2, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 6, bullet = -1, energy = 2, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/uranium
@@ -239,11 +239,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_MED
+	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 5, bullet = 3, energy = 6, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = -1, energy = 6, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
@@ -267,11 +267,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_HIGH
+	melee_damage_lower = TERMITE_DMG_MED
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 6, bullet = 4, energy = 5, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 6, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
@@ -304,7 +304,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	ranged = TRUE
 
 //Armor related variables
-	armor = list(melee = 12, bullet = 4, energy = 5, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 12, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
