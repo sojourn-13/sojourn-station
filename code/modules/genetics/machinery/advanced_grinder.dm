@@ -197,6 +197,7 @@ list(
 		P.name = "[get_reagent_name_by_id(id)] bottle"
 		P.pixel_x = rand(-7, 7)
 		P.pixel_y = rand(-7, 7)
+		P.matter = list()
 		//P.icon_state = pick(BOTTLE_SPRITES)
 		P.toggle_lid()
 

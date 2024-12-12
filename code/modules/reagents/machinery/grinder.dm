@@ -357,6 +357,7 @@
 	if(P.icon_state == "tincture")
 		P.filling_states = "3;5;10;15;20;25;27;30;35;40;45;50;55;60"
 		P.label_icon_state = "label_tincture"
+	P.matter = list()
 	P.toggle_lid()
 
 /obj/machinery/reagentgrinder/industrial/proc/grind()
