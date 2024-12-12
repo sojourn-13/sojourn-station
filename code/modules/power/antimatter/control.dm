@@ -290,9 +290,9 @@
 		if(stored_core_stability <= 25)
 			radio.autosay(alert_msg, "Antimatter Automated Announcement")
 
-/obj/machinery/power/am_control_unit/proc/toggle_announcement()
+/obj/machinery/power/am_control_unit/proc/toggle_announcement(mob/user)
 	announce_stability = !announce_stability
-	to_chat(usr, "announce_stability is now set to [announce_stability]")
+	to_chat(user, "Announce Stability is now set to [announce_stability == 1 ? "ON" : "OFF"]")
 
 /obj/machinery/power/am_control_unit/proc/reset_stored_core_stability_delay()
 	stored_core_stability_delay = FALSE
@@ -349,3 +349,15 @@
 // TODO : Allow users to turn off announce_stability. -R4d6
 /obj/machinery/power/am_control_unit/interact(mob/user)
 	ui_interact(user)
+
+//Idk how to do tgui and tryed for an hour and failed. Going with what works - Trilby
+/obj/machinery/power/am_control_unit/verb/shhh(mob/user)
+	set name = "Stability Announcement Toggle"
+	set category = "Object"
+	set src in view(1)
+
+	if(isghost(user))
+		to_chat(usr, SPAN_NOTICE("Ghosts sadly cant let or stop the blaring alarm."))
+		return
+
+	toggle_announcement(user)
