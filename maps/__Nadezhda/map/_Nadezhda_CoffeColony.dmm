@@ -114077,19 +114077,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1)
-"wvM" = (
-/obj/item/material/shard,
-=======
->>>>>>> d8bad930dbc40d6eba534a0c42e4b70a9f3f7c21
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
 	d1 = 1;
