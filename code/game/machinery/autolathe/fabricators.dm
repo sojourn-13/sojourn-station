@@ -40,7 +40,7 @@
 			list(name="High Capacity Magazine (9mm Rubber)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/rubber),
 			list(name="High Capacity Magazine (9mm Pepperball)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball),
 			list(name="High Capacity Magazine (9mm Practice)", cost=20, path=/obj/item/ammo_magazine/highcap_pistol_35/practice),
-			list(name="High Capacity Magazine (9mm Empty Laser)", cost=20, path=/obj/item/ammo_magazine/highcap_pistol_35/practice),
+			list(name="High Capacity Magazine (9mm Empty Laser)", cost=20, path=/obj/item/ammo_magazine/highcap_pistol_35/laser/empty),
 		"9mm SMG",
 			list(name="SMG Magazine (9mm)", cost=180, path= /obj/item/ammo_magazine/smg_35),
 			list(name="SMG Magazine (9mm High Velocity)", cost=250, path= /obj/item/ammo_magazine/smg_35/hv),
