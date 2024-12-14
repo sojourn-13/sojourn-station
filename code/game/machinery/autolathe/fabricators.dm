@@ -91,7 +91,6 @@
 			list(name="SMG Magazine (10mm Magnum Pepperball)", cost=400, path= /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball),
 			list(name="SMG Magazine (10mm Magnum Practice)", cost=300, path= /obj/item/ammo_magazine/smg_magnum_40/practice),
 			list(name="SMG Magazine (10mm Magnum Empty)", cost=240, path= /obj/item/ammo_magazine/smg_magnum_40/empty),
-			list(name="SMG Magazine (10mm Magnum Empty)", cost=240, path= /obj/item/ammo_magazine/smg_magnum_40/laser/empty),
 		"10mm Ammo Boxes",
 			list(name="Packet (10mm Magnum)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40),
 			list(name="Packet (10mm Magnum High Velocity)", cost=460, path=/obj/item/ammo_magazine/ammobox/magnum_40/hv),
