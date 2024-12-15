@@ -128,7 +128,7 @@ uniquic_armor_act
 			var/obj/item/I = get_active_hand()
 			if(istype(I))
 				if(I.force)
-					var/math_var = clamp(0, (I.force * 0.2) + (I.w_class * 0.5), 10)
+					var/math_var = clamp(0, (I.force * 0.05) + (I.w_class * 0.5), 10)
 					total += math_var
 					item_punishment = clamp(0, math_var, 8)
 

@@ -207,7 +207,7 @@
 
 /mob/living/proc/damageablative(var/def_zone, var/damage)
 	if(mob_ablative_armor)
-		mob_ablative_armor = floor(mob_ablative_armor - damage / ablative_retaining)
+		mob_ablative_armor = round(mob_ablative_armor - damage / ablative_retaining)
 	if(mob_ablative_armor < 0)
 		mob_ablative_armor = 0
 	return FALSE
