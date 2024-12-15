@@ -411,7 +411,7 @@
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 19)
 	armor_divisor = 0.5
-	wounding_mult = WOUNDING_SERIOUS
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -512,7 +512,7 @@
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 21)
 	armor_divisor = 0.65
-	wounding_mult = WOUNDING_WIDE
+	wounding_mult = WOUNDING_EXTREME
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
