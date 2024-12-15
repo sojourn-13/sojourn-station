@@ -30,6 +30,7 @@
 							entry += " - <font color='black'><b>DEAD</b></font>"
 			else
 				entry += " - <font color='gray'>In Lobby</font>"
+
 			if(is_limited_antag(C.mob))
 				entry += " - <b><font color='red'>Limited Antagonist</font></b>"
 

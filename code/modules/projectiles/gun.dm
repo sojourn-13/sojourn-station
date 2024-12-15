@@ -1184,6 +1184,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		weapon_stats += list(list("name" = "Projectile Damage Multiplier", "type" = "AnimatedNumber", "value" = damage_multiplier, "unit" = "x"))
 	if(pierce_multiplier != 0)
 		weapon_stats += list(list("name" = "Projectile Wall Penetration", "type" = "AnimatedNumber", "value" = pierce_multiplier, "unit" = " walls"))
+	if(wound_mult_addition != 0)
+		weapon_stats += list(list("name" = "Projectile Post-Armor Damage Mult Addition", "type" = "AnimatedNumber", "value" = wound_mult_addition, "unit" = "+"))
 	if(penetration_multiplier != 1)
 		weapon_stats += list(list("name" = "Projectile AP Multiplier", "type" = "AnimatedNumber", "value" = penetration_multiplier, "unit" = "x"))
 	if(proj_agony_multiplier != 1)
