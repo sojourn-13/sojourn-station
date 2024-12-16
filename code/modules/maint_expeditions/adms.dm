@@ -122,7 +122,7 @@
 
 // Proc to add more points in the data disk.
 /obj/machinery/exploration/adms/proc/give_points(var/amount)
-	inserted_disk_file.size += amount * harvest_speed * difficulty// The point given by the file is determined by the size of the file.
+	inserted_disk_file.size += amount * harvest_speed // The point given by the file is determined by the size of the file.
 	inserted_disk.recalculate_size() // Update the disk so that it know if if the file's too big.
 
 /obj/machinery/exploration/adms/proc/spawn_monsters(var/number, var/tag = "Random")
