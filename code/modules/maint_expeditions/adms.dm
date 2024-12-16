@@ -6,7 +6,9 @@
 
 /obj/machinery/exploration/adms
 	name = "\improper Anomalous Data Measurement System"
-	desc = "A large piece of equipment for gathering data from anomalous regions. It has an habit of angering the local population pest."
+	desc = "A large piece of equipment for gathering data from anomalous regions. \
+	It has an habit of angering the local population pest. \
+	Has a slider that sets from 0 to 5, depending on the setting more habitents angered but more points are generated."
 	icon_state = "adms"
 
 	circuit = /obj/item/circuitboard/adms
@@ -21,6 +23,7 @@
 	emagged = FALSE
 	var/list/monster_list = list("Roaches", "Spiders")
 	var/ping_sound = 'sound/ambience/sonar2.ogg'
+	var/difficulty = 0 //0-5
 
 /obj/machinery/exploration/adms/examine(mob/user)
 	. = ..()
@@ -28,6 +31,9 @@
 		to_chat(user, SPAN_NOTICE("It has a disk inserted."))
 	else
 		to_chat(user, SPAN_NOTICE("The disk drive is empty!"))
+
+	to_chat(user, SPAN_NOTICE("The slider is set to [difficulty]"))
+
 
 /obj/machinery/exploration/adms/emag_act(mob/user)
 	if(!emagged)
@@ -69,34 +75,40 @@
 		playsound(src.loc, ping_sound, 60, 1, 8, 8)
 		soundcooldown = initial(soundcooldown)
 
-
 	var/area = get_area(src)
+	var/difficulty_point_adder = 0
+	var/mob_odds_mult = 1
+	if(difficulty)
+		difficulty_point_adder = difficulty * 0.2 //20% more points per level
+		mob_odds_mult = difficulty
+
+
 	if(istype(area, /area/deepmaint))
-		give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
-		if(prob(3))
+		give_points(1.2 + difficulty_point_adder) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
+		if(prob(3 * mob_odds_mult))
 			spawn_monsters(4) //Full Furher retinue
 
-	else if(istype(area, /area/mine/unexplored))
-		give_points(0.4) //100 points per tick per tier of laser
-		if(prob(2))
+	else if(istype(area, /area/mine))
+		give_points(0.4 + difficulty_point_adder) //100 points per tick per tier of laser
+		if(prob(2 * mob_odds_mult))
 			spawn_monsters(2) //Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
 
 	else if(istype(area, /area/awaymission))
-		give_points(0.8) //200 points per tick per tier of laser
-		if(prob(1))
+		give_points(0.8 + difficulty_point_adder) //200 points per tick per tier of laser
+		if(prob(1 * mob_odds_mult))
 			spawn_monsters(2)
 
 	else if(istype(area, /area/nadezhda/rnd))
 		give_points(0.1) //Anti-Cheese
-		if(prob(10))
+		if(prob(10 * mob_odds_mult))
 			spawn_monsters(5)
 			spawn_monsters(1) //Some infighting
 			spawn_monsters(1) //Some infighting
 
 	else
-		give_points(0.2)
-		if(prob(10))
-			src.spawn_monsters(1)//On the station is just calls groups of roaches!
+		give_points(0.2 + difficulty_point_adder)
+		if(prob(10 * mob_odds_mult))
+			spawn_monsters(1)//On the station is just calls groups of roaches!
 
 /obj/machinery/exploration/adms/Destroy()
 	for(var/obj/A in contents)
@@ -105,12 +117,12 @@
 			component_parts -= A
 		if(A in contents)
 			component_parts -= A
-	spawn(5)
+	spawn(1)
 		..()
 
 // Proc to add more points in the data disk.
 /obj/machinery/exploration/adms/proc/give_points(var/amount)
-	inserted_disk_file.size += amount * harvest_speed // The point given by the file is determined by the size of the file.
+	inserted_disk_file.size += amount * harvest_speed * difficulty// The point given by the file is determined by the size of the file.
 	inserted_disk.recalculate_size() // Update the disk so that it know if if the file's too big.
 
 /obj/machinery/exploration/adms/proc/spawn_monsters(var/number, var/tag = "Random")
@@ -125,6 +137,7 @@
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 80, 1, 8, 8)
 	sleep(9)
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
+	number += difficulty
 	if(emagged)
 		new /mob/living/carbon/superior_animal/roach/kaiser(src.loc)
 		visible_message(SPAN_DANGER("[src] get destroyed as a Kaiser emerge from underneath it!"))
@@ -176,8 +189,9 @@
 	var/area = get_area(src)
 	if(istype(area, /area/deepmaint))
 		monster_list.Add("Xenomorph")
-	if(istype(area, /area/mine/unexplored))
+	if(istype(area, /area/mine))
 		monster_list.Add("Underground")
+		monster_list.Add("Termite")
 
 /obj/machinery/exploration/adms/proc/system_error(var/error)
 	if(error)
@@ -308,12 +322,40 @@
 	else
 		to_chat(usr, SPAN_NOTICE("No disk is inside."))
 
+
+/obj/machinery/exploration/adms/verb/set_difficulty()
+	set name = "Set Difficulty"
+	set category = "Object"
+	set src in view(1)
+
+	if(isliving(usr))
+		set_new_difficulty(usr)
+
 /obj/machinery/exploration/adms/update_icon()
 	if(active)
 		icon_state = "adms-on"
 	else
 		icon_state = "adms"
 	return
+
+/obj/machinery/exploration/adms/proc/set_new_difficulty(mob/user)
+	var/choice = input(user, "How far do you set the slider?") as null|anything in list("Notch Zero", "Notch One","Notch Two","Notch Three","Notch Four","Notch Five" )
+	switch(choice)
+		if("Notch Zero")
+			difficulty = 0
+		if("Notch One")
+			difficulty = 1
+		if("Notch Two")
+			difficulty = 2
+		if("Notch Three")
+			difficulty = 3
+		if("Notch Four")
+			difficulty = 4
+		if("Notch Five")
+			difficulty = 5
+
+	to_chat(usr, SPAN_NOTICE("The slider is now set to [difficulty]."))
+
 
 /datum/design/research/circuit/adms
 	name = "Anomalous Data Measurement System"
