@@ -1,8 +1,8 @@
 /obj/item/greyson_inhaler
 	name = "GP Tissue-Treatment Inhaler"
-	desc = "A strange unreloadable inhaler that auto ejects spent cases of gasses and nanites, used to quickly disperse and heal. \
+	desc = "A strange one-use inhaler that auto ejects the spent case of gasses and nanites. Used to quickly disperse nanites and treat damaged tissue. \
 	Works even on robotic limbs and FBPs. \
-	This one heals tissue trauma, but does not inherently stop bleeding."
+	While treating brute trauma, it does not inherently stop bleeding."
 	icon_state = "inhaler_brute_preview"
 	icon = 'icons/obj/stack/medical_big.dmi'
 	preloaded_reagents = list("uncap nanites" = 12, "ethanol" = 8, "arectine" = 10, "luminol" = 30 , "sagent" = 1) //Has a lot of stuff
@@ -16,9 +16,9 @@
 
 /obj/item/greyson_inhaler/burn
 	name = "GP Burn-Treatment Inhaler"
-	desc = "A strange unreloadable inhaler that auto ejects spent cases of gasses and nanites, used to quickly disperse and heal. \
+	desc = "A strange one-use inhaler that auto ejects the spent case of gasses and nanites. Used to quickly disperse nanites and treat burnt tissue. \
 	Works even on robotic limbs and FBPs. \
-	This one heals burns, but does not salve wounds."
+	While treating burn damage, it does not salve the wound."
 	icon_state = "inhaler_burn_preview"
 	heal_type = "burn"
 
@@ -49,8 +49,8 @@
 			update_icon()
 			if(target == user)
 				user.visible_message(
-					SPAN_NOTICE("[user] quickly inhails [src]."),
-					SPAN_NOTICE("You quickly use [src] taking in the plume of nanites.")
+					SPAN_NOTICE("[user] quickly inhales [src]."),
+					SPAN_NOTICE("You quickly use [src], inhaling the plume of nanites.")
 				)
 			else
 				user.visible_message(
