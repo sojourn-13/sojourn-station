@@ -301,7 +301,7 @@
 /obj/item/gripper/service //Used to handle food, drinks, and seeds.
 	name = "service gripper"
 	icon_state = "gripper"
-	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, and seeds."
+	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, ores, and seeds."
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
@@ -319,7 +319,8 @@
 		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
 		/obj/item/spatula,
 		/obj/item/hydro_tray_plant_bag_water,
-		/obj/item/hydro_tray_plant_bag_nutrient
+		/obj/item/hydro_tray_plant_bag_nutrient,
+		/obj/item/stack/ore //So they can craft some items
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells
