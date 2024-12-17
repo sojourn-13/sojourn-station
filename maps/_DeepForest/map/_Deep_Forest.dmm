@@ -28,7 +28,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "aca" = (
 /obj/structure/curtain/open,
 /obj/random/junk/nondense,
@@ -169,7 +171,9 @@
 "ajc" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ajf" = (
 /obj/structure/sink{
 	dir = 8;
@@ -328,14 +332,15 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "arg" = (
+/obj/structure/low_wall,
+/obj/machinery/door/blast/regular{
+	use_power = 0;
+	id = "radshutt"
+	},
 /obj/machinery/door/blast/shutters/glass{
 	name = "Radiation shielding"
 	},
-/obj/structure/low_wall,
 /obj/structure/grille,
-/obj/machinery/door/blast/regular{
-	name = "ANTI-FLOOD LOCKDOWN"
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "aro" = (
@@ -384,7 +389,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "asH" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/ammo_magazine/maxim_75,
@@ -417,7 +424,9 @@
 "auu" = (
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "auI" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/white/panels,
@@ -454,7 +463,9 @@
 	})
 "avx" = (
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "avB" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -1557,7 +1568,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "bpe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/slime,
@@ -1568,6 +1581,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"bps" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "bpt" = (
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/wood/wild5,
@@ -1663,13 +1685,12 @@
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
 "btF" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/invislight,
+/turf/simulated/floor/rock/manmade/asphalt,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "btG" = (
 /obj/structure/table/rack/shelf,
 /obj/random/gun_energy_cheap,
@@ -1703,7 +1724,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "bvg" = (
 /obj/structure/cryofeed{
 	dir = 4;
@@ -1735,7 +1758,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "bwt" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
@@ -2139,7 +2164,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "bNV" = (
 /obj/structure/flora/small/busha1,
 /obj/random/spider_trap_burrowing/low_chance,
@@ -2527,7 +2554,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cbV" = (
 /obj/random/scrap/dense_weighted,
 /obj/random/scrap/dense_weighted,
@@ -2764,6 +2793,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"clT" = (
+/obj/machinery/porta_turret/One_star{
+	name = "TORAJI turret"
+	},
+/obj/effect/floor_decal/industrial/box,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cmA" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt,
@@ -3275,7 +3313,9 @@
 /obj/effect/overlay/water/top,
 /obj/machinery/door/airlock/maintenance_engineering,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cBl" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushb3,
@@ -3316,8 +3356,11 @@
 	dir = 4;
 	pixel_x = -4
 	},
+/obj/item/device/binoculars,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cCV" = (
 /obj/structure/multiz/ladder/up,
 /obj/structure/invislightsmall,
@@ -3356,6 +3399,12 @@
 "cEw" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"cEx" = (
+/obj/effect/floor_decal/industrial/inputgate,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cEB" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3403,7 +3452,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cFK" = (
 /obj/machinery/computer{
 	stat = 1;
@@ -3518,7 +3569,9 @@
 "cJQ" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cJX" = (
 /obj/item/paper{
 	info = "<h1>Date: 2652-11-25 From: Outpost LIMA-09 Author: Dr. Helena Carter, Chief Communications Officer Subject: Loss of Contact with Administrative Sector DELTA-01 To: Chief Factor James Mitchell</h1>We have lost all contact with DELTA-01 as of 2652-11-23. Our situation is desperate. Odd creatures are swarming the radioactive material holding area;<p> <b> we lost two workers, torn apart by the infestation. Defensive measures are barely holding. Immediate reinforcements are needed to prevent total collapse. Dr. Helena Carter, Chief Communications Officer, Outpost LIMA-09</p>";
@@ -3706,6 +3759,14 @@
 /obj/random/ammo_lowcost/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/meadow)
+"cPN" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/heavy/riot,
+/obj/item/clothing/suit/armor/heavy/riot,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cPP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3810,13 +3871,17 @@
 	},
 /obj/structure/low_wall,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cUk" = (
 /obj/structure/flora/big/bush3{
 	pixel_y = -18
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cUn" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3842,6 +3907,19 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"cUY" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/machinery/computer{
+	stat = 1
+	},
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "cVe" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/closet_wardrobe/low_chance,
@@ -3985,7 +4063,9 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dae" = (
 /obj/random/mob/nightmare,
 /turf/simulated/floor/wood/wild5,
@@ -4476,6 +4556,15 @@
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"dtH" = (
+/obj/structure/bed/chair/office/light{
+	dir = 8;
+	pixel_y = 8
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dtW" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/tank/anesthetic,
@@ -4507,8 +4596,11 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "dvi" = (
+/obj/effect/floor_decal/industrial_plant,
 /turf/simulated/wall/iron,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dvn" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -4703,7 +4795,9 @@
 	icon_state = "railing0"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dAz" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall12";
@@ -4772,7 +4866,9 @@
 /obj/structure/catwalk,
 /obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dCs" = (
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -5119,7 +5215,9 @@
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dPM" = (
 /obj/effect/decal/cleanable/cobweb2{
 	icon_state = "spiderling";
@@ -5183,7 +5281,9 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "dRn" = (
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/meadow)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dRt" = (
 /obj/item/ammo_casing/heavy_rifle_408/spent,
 /obj/effect/damagedfloor,
@@ -5191,6 +5291,15 @@
 /area/nadezhda/dungeon/outside/smuggler_zone{
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
+"dRu" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1;
+	pixel_y = 4
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
 	})
 "dRE" = (
 /obj/structure/table/onestar,
@@ -5314,7 +5423,9 @@
 /obj/machinery/power/smes/batteryrack,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "dYY" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall17";
@@ -5500,7 +5611,9 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ehI" = (
 /obj/structure/urinal{
 	pixel_y = 30
@@ -5755,7 +5868,9 @@
 "epQ" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eqk" = (
 /obj/random/structures,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -5961,7 +6076,9 @@
 	icon_state = "catwalk-broken"
 	},
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "evU" = (
 /obj/machinery/light{
 	dir = 4;
@@ -6008,8 +6125,12 @@
 /obj/effect/floor_decal/industrial/warningdust/corner{
 	dir = 1
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/obj/machinery/porta_turret_construct,
+/obj/effect/floor_decal/industrial/box,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "exn" = (
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/grass,
@@ -6112,6 +6233,15 @@
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"eDQ" = (
+/obj/structure/table/rack,
+/obj/item/grenade/frag/white_phosphorous,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eEo" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -6448,6 +6578,18 @@
 /obj/structure/largecrate/animal/piano,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper/delta)
+"eRg" = (
+/obj/structure/disposalpipe/broken{
+	dir = 4;
+	pixel_y = -1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eRo" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -6467,7 +6609,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eRA" = (
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -6574,15 +6718,20 @@
 "eWh" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/zoo)
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eWk" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/machinery/atmospherics/pipe/vent{
 	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "eWV" = (
 /obj/item/ammo_casing/shotgun/spent,
 /turf/simulated/floor/asteroid/grass,
@@ -6686,7 +6835,9 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fak" = (
 /obj/structure/table/rack/shelf,
 /obj/random/ammo,
@@ -6984,7 +7135,9 @@
 	desc = "It sparks"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fkt" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/plating/under,
@@ -7035,7 +7188,9 @@
 /obj/structure/bookcase/metal,
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fmc" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
@@ -7056,11 +7211,15 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fmI" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fnm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7092,7 +7251,9 @@
 "foM" = (
 /obj/effect/floor_decal/industrial/warningdust,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "foZ" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/random/mob/prepper_boss_lowchance,
@@ -7705,8 +7866,10 @@
 	},
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fOy" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -7852,8 +8015,10 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "fUM" = (
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "fUP" = (
 /obj/structure/closet/random_hostilemobs,
 /turf/simulated/floor/tiled/dark,
@@ -8492,6 +8657,12 @@
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"grN" = (
+/obj/structure/light_stick/red,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "grR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8896,6 +9067,15 @@
 /obj/random/junkfood,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"gDU" = (
+/obj/machinery/computer{
+	stat = 1
+	},
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "gDZ" = (
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/industrial/danger{
@@ -8995,6 +9175,14 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"gGP" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Surveillance"
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "gHa" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
@@ -9230,7 +9418,9 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "gQI" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/mob/vox,
@@ -9623,6 +9813,11 @@
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"hdb" = (
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hdf" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/grass,
@@ -9856,7 +10051,9 @@
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/structure/invislight,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hmm" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
@@ -10001,7 +10198,9 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hqo" = (
 /obj/structure/sign/warning/secure_area/small,
 /turf/simulated/wall/r_wall,
@@ -10022,7 +10221,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hqs" = (
 /obj/structure/railing/grey{
 	dir = 8;
@@ -10388,7 +10589,9 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hFQ" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -10624,6 +10827,15 @@
 /obj/structure/salvageable/machine,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"hOw" = (
+/obj/structure/table/rack,
+/obj/item/melee/telebaton,
+/obj/item/tool/baton/robot,
+/obj/item/melee/classic_baton,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hPm" = (
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/plating/under,
@@ -10675,8 +10887,10 @@
 	},
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hQJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/plate,
@@ -10825,7 +11039,9 @@
 	dir = 1
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "hUc" = (
 /obj/structure/flora/small/grassb5,
 /turf/simulated/floor/asteroid/grass,
@@ -11034,7 +11250,9 @@
 "icu" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "icz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/tool/scythe,
@@ -11091,7 +11309,9 @@
 "idZ" = (
 /obj/effect/floor_decal/industrial/warningdust/corner,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iec" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
@@ -11118,6 +11338,12 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
 /area/asteroid/rogue)
+"ifB" = (
+/obj/effect/floor_decal/industrial/warningdust,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ifM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
@@ -11185,7 +11411,7 @@
 "ihW" = (
 /obj/structure/table/woodentable,
 /obj/item/paper/card/flower{
-	info = "Petals softly fall, <b> Monsters howl beyond the wall— <b>My end is near."
+	info = "They never meant for us to be saved."
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
@@ -11259,7 +11485,9 @@
 	pixel_y = 9
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ikF" = (
 /obj/item/trash/semki,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -11369,6 +11597,17 @@
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"ipz" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/drinks/mug/red{
+	desc = "A red and black mug, a small etching can be seen on the bottom of the cup - "TORAJI IND."";
+	name = "old mug";
+	base_name = "old mug"
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ipX" = (
 /obj/item/trash/candy/proteinbar,
 /obj/effect/damagedfloor,
@@ -11680,6 +11919,12 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"izY" = (
+/obj/structure/inflatable/wall,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iAc" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/trash/cigbutt/ishimura,
@@ -11701,6 +11946,22 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"iAO" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/light_stick{
+	pixel_x = 15
+	},
+/obj/structure/girder,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iAT" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife/butch,
@@ -11841,8 +12102,11 @@
 "iFg" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iFs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel_reinforced,
@@ -12264,13 +12528,21 @@
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/outside/meadow)
+"iXA" = (
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iXG" = (
 /obj/machinery/computer{
 	stat = 1;
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "iXR" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/dirt,
@@ -12332,6 +12604,14 @@
 /obj/random/tool_upgrade/rare/low_chance,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"jao" = (
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jap" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush1,
@@ -12480,7 +12760,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jeH" = (
 /obj/machinery/light/floor{
 	dir = 4;
@@ -12586,6 +12868,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"jik" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jim" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central5{
 	dir = 1
@@ -12868,7 +13157,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jra" = (
 /obj/structure/table/onestar,
 /obj/random/lathe_disk/advanced,
@@ -12909,6 +13200,17 @@
 /obj/random/cluster/spiders,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"jse" = (
+/obj/structure/table/steel,
+/obj/item/clipboard,
+/obj/item/paper/crumpled/neo{
+	info = "Urgent:Headquarters representatives are arriving today. Make sure the facility is in acceptable condition before their arrival. Under no circumstances are agents or operatives tied to Sakaba Corporation to be seen anywhere near the perimeter. Lock down entrances, check credentials twice, and monitor all external feeds.Do not let them get close"
+	},
+/obj/item/pen/multi,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jsO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/closet_maintloot,
@@ -12936,12 +13238,30 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"jvp" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/light_stick{
+	pixel_x = -15
+	},
+/obj/structure/girder,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jvB" = (
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "jvH" = (
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jvV" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/plating/under,
@@ -12971,7 +13291,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jxV" = (
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -13009,7 +13331,9 @@
 "jBM" = (
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jCe" = (
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/asteroid/dirt,
@@ -13163,7 +13487,9 @@
 "jIL" = (
 /obj/structure/flora/small/grassb4,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jIZ" = (
 /mob/living/simple_animal/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
@@ -13188,7 +13514,9 @@
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/floordetail,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jJt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -13324,7 +13652,9 @@
 	})
 "jOk" = (
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jOo" = (
 /obj/structure/cable{
 	d2 = 8;
@@ -13513,7 +13843,9 @@
 "jWY" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jXa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
@@ -13561,8 +13893,11 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/industrial/road/straight3,
+/obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/outside/meadow)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "jYy" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral/planet,
@@ -13761,7 +14096,9 @@
 "kfs" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kfx" = (
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/industrial/danger,
@@ -14038,7 +14375,9 @@
 "kpT" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kqd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/contraband,
@@ -14303,7 +14642,9 @@
 /area/asteroid/rogue)
 "kAK" = (
 /turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kBn" = (
 /obj/item/ammo_magazine/light_rifle_257/empty,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -14345,7 +14686,9 @@
 	icon_state = "pdoor0-old"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kCR" = (
 /obj/structure/salvageable/os/power,
 /obj/structure/cable{
@@ -14483,7 +14826,9 @@
 /obj/effect/overlay/water,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kIG" = (
 /obj/structure/closet/crate/serbcrate,
 /obj/item/ammo_magazine/light_rifle_257,
@@ -14547,8 +14892,10 @@
 /obj/effect/floor_decal/industrial/warningdust/corner{
 	dir = 4
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kKT" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -14828,7 +15175,9 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "kVE" = (
 /turf/simulated/mineral/planet,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "kVF" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/grassb4,
@@ -15512,7 +15861,9 @@
 /obj/structure/table/steel,
 /obj/item/tool/multitool,
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "lwU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15638,6 +15989,12 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"lDf" = (
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "lDq" = (
 /obj/structure/flora/small/grassb3,
 /turf/simulated/floor/asteroid/grass,
@@ -16307,7 +16664,9 @@
 "maC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "maI" = (
 /obj/random/traps/low_chance,
 /obj/machinery/door/airlock/highsecurity{
@@ -16556,6 +16915,12 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"mlT" = (
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mmk" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/small/busha2,
@@ -16570,7 +16935,9 @@
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mmZ" = (
 /obj/machinery/light,
 /obj/structure/curtain/medical,
@@ -16881,6 +17248,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"mzH" = (
+/obj/structure/table/marble,
+/obj/machinery/microwave,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mAd" = (
 /obj/structure/table/standard,
 /obj/random/surgery_tool/low_chance,
@@ -17062,7 +17436,9 @@
 	icon_state = "pdoor0-old"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mEX" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/structure/flora/small/bushb1,
@@ -17273,6 +17649,12 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"mLi" = (
+/obj/effect/floor_decal/industrial/outputgate,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mLl" = (
 /obj/structure/low_wall,
 /obj/structure/grille,
@@ -17280,13 +17662,17 @@
 	name = "Window"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mLs" = (
 /obj/structure/table/steel,
 /obj/item/clipboard,
 /obj/item/clothing/head/hardhat,
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "mLx" = (
 /obj/structure/catwalk,
 /obj/item/stash_spawner,
@@ -17895,6 +18281,12 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"ngr" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ngF" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall36";
@@ -17915,8 +18307,13 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "nhc" = (
 /obj/effect/floor_decal/industrial/outputgate,
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nhk" = (
 /obj/structure/salvageable/data_os{
 	icon_state = "data0"
@@ -17973,6 +18370,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"njG" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/railing,
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nkc" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -18161,10 +18566,7 @@
 	icon_state = "catwalk0-0"
 	},
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/machinery/door/blast/regular{
-	use_power = 0;
-	id = "radshutt"
-	},
+/obj/machinery/door/blast/regular,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "nos" = (
@@ -18180,6 +18582,14 @@
 /obj/item/oddity/common/old_money,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"npt" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "npL" = (
 /obj/structure/girder{
 	name = "Connector"
@@ -18238,7 +18648,9 @@
 /obj/structure/invislight,
 /obj/structure/sign/warning/high_voltage/small,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nqW" = (
 /obj/machinery/door/airlock/external{
 	name = "Elevator Door"
@@ -18398,7 +18810,9 @@
 	icon_state = "blackbox"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nwp" = (
 /obj/structure/sign/levels/stairsup,
 /turf/simulated/wall/r_wall,
@@ -18485,7 +18899,9 @@
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/industrial/warningdust,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nAK" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb3,
@@ -18591,13 +19007,17 @@
 "nDF" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nEs" = (
 /obj/effect/floor_decal/industrial/warningdust/corner{
 	dir = 8
 	},
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nFb" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -18640,7 +19060,9 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals9,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nHf" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
 /turf/simulated/floor/tiled/dark/danger,
@@ -18681,6 +19103,12 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/dungeon/outside/prepper/delta)
+"nHL" = (
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nHN" = (
 /obj/structure/table/rack/shelf,
 /obj/random/cloth/gloves,
@@ -18831,6 +19259,17 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"nPW" = (
+/obj/structure/disposalpipe/broken{
+	dir = 4;
+	pixel_y = -1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nQk" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -18898,6 +19337,16 @@
 /obj/structure/invislight,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"nSz" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial/inputgate,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nSI" = (
 /obj/structure/closet/crate/solar,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -18976,7 +19425,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nVZ" = (
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/tiled/dark,
@@ -19045,7 +19496,9 @@
 "nZb" = (
 /obj/effect/floor_decal/industrial/road/straight3,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "nZj" = (
 /obj/structure/sign/warning/nosmoking/largeburnt,
 /turf/simulated/wall/r_wall,
@@ -19082,7 +19535,9 @@
 /obj/structure/sign/warning/high_voltage/small,
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "obf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/multiz/ladder/up,
@@ -19108,6 +19563,11 @@
 /obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"odb" = (
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "odw" = (
 /obj/structure/flora/small/busha1,
 /obj/random/traps,
@@ -19423,7 +19883,9 @@
 "omH" = (
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "omW" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild5,
@@ -19703,7 +20165,9 @@
 /obj/machinery/power/smes/buildable,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ovU" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/busha1,
@@ -20035,7 +20499,9 @@
 "oIm" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "oIt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -20072,7 +20538,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "oJz" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -20444,7 +20912,9 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "oYt" = (
 /obj/structure/curtain/medical,
 /obj/effect/decal/cleanable/dirt,
@@ -21329,7 +21799,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "pFS" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/tool/advanced,
@@ -21554,8 +22026,10 @@
 /obj/structure/catwalk,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "pMx" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 1
@@ -21714,8 +22188,16 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "pQw" = (
 /obj/structure/lift/button{
 	icon_state = "button_fire";
@@ -22214,7 +22696,9 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "qki" = (
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qkl" = (
 /obj/effect/floor_decal/industrial/inputgate,
 /obj/structure/railing/grey{
@@ -22784,7 +23268,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qEB" = (
 /obj/structure/catwalk,
 /mob/living/simple_animal/hostile/creature/tissue,
@@ -22876,7 +23362,9 @@
 "qHh" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qHj" = (
 /obj/structure/closet/crate/serbcrate,
 /obj/random/powercell/medium_safe,
@@ -23020,7 +23508,9 @@
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/floordetail,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qOs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -23047,7 +23537,9 @@
 /obj/structure/railing,
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qOH" = (
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
@@ -23121,7 +23613,9 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qQF" = (
 /obj/structure/railing{
 	dir = 1
@@ -23328,8 +23822,14 @@
 	dir = 8;
 	pixel_y = 8
 	},
+/obj/item/clothing/head/helmet/ballistic{
+	pixel_x = 8;
+	pixel_y = 13
+	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "qYk" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark,
@@ -23341,12 +23841,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qYn" = (
-/obj/effect/floor_decal/industrial/stand_clear/white{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/road/straight2{
-	pixel_x = 12
-	},
+/obj/effect/floor_decal/industrial/road/warning3,
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/meadow)
 "qYN" = (
@@ -23442,8 +23937,10 @@
 "rbW" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/wall/uranium,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "rcc" = (
 /obj/machinery/light/floor,
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
@@ -23868,6 +24365,16 @@
 /obj/random/closet/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"rto" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "rtr" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/asteroid/dirt,
@@ -24092,6 +24599,12 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
+"rAG" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "rAI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/closet_maintloot/low_chance,
@@ -24508,6 +25021,16 @@
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/delta)
+"rQF" = (
+/obj/structure/railing/grey{
+	dir = 1;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/girder,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "rQJ" = (
 /obj/random/powercell,
 /turf/simulated/floor/tiled/dark,
@@ -24859,13 +25382,18 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "sep" = (
 /obj/structure/railing,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/flooded,
-/area/nadezhda/dungeon/outside/zoo)
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "seN" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/vig,
@@ -24956,7 +25484,9 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "shd" = (
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "shv" = (
 /obj/structure/table/onestar,
 /obj/random/pack/tech_loot/onestar,
@@ -25077,6 +25607,14 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"skP" = (
+/obj/structure/salvageable/machine_os{
+	icon_state = "computer3"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass{
@@ -25659,8 +26197,15 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
 "sFk" = (
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/effect/floor_decal/industrial_plant,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "sFo" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 4
@@ -25994,6 +26539,16 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"sTN" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 4;
+	pixel_x = -4
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "sTW" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
@@ -26120,8 +26675,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "taM" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "taP" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/panels,
@@ -26170,6 +26730,16 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"tcp" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 4
+	},
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tcN" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -26706,7 +27276,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "txh" = (
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
@@ -26830,7 +27402,9 @@
 	},
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tAr" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -27112,6 +27686,12 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"tKu" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tKz" = (
 /obj/structure/table/onestar,
 /obj/random/tool/advanced/onestar/low_chance,
@@ -27171,7 +27751,9 @@
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tMv" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -27272,14 +27854,18 @@
 	icon_state = "pdoor1-old"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tQZ" = (
 /obj/structure/catwalk,
 /obj/machinery/telecomms/relay{
 	name = "LUMAR Relay Antenna"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "tRa" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/syringe/drugs_recreational,
@@ -27856,7 +28442,9 @@
 	icon_state = "catwalk12-0"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "umJ" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,7"
@@ -27879,7 +28467,9 @@
 /obj/structure/boulder,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "unH" = (
 /obj/structure/table/steel,
 /obj/item/tool/knife,
@@ -27902,6 +28492,13 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"uoa" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "uoj" = (
 /obj/effect/gibspawner/human,
 /obj/item/remains/ribcage,
@@ -28052,6 +28649,22 @@
 "uuG" = (
 /turf/simulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"uvr" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/mob/living/simple_animal/hostile/snake{
+	color = "#f7140c";
+	desc = "There is something eerily familiar about it. A shape glimpsed in the corner of your vision. A silhouette etched into the fog of an old dream.";
+	faction = "neutral";
+	health = 250;
+	maxHealth = 250;
+	name = "crimson viper"
+	},
+/obj/item/oddity/common/book_log,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "uvE" = (
 /obj/random/junk,
 /obj/random/traps/low_chance,
@@ -28267,6 +28880,17 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
+"uDJ" = (
+/obj/structure/disposalpipe/broken{
+	dir = 4;
+	pixel_y = -1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "uDS" = (
 /obj/structure/scrap_cube,
 /obj/effect/decal/cleanable/filth,
@@ -28496,7 +29120,9 @@
 	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "uNt" = (
 /obj/structure/flora/small/busha3,
 /obj/random/traps,
@@ -28886,6 +29512,14 @@
 	name = "Train Hull"
 	},
 /area/nadezhda/dungeon/outside/prepper/delta)
+"vcx" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vcR" = (
 /mob/living/simple_animal/hostile/hivebot/range,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -29111,7 +29745,9 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vkQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
@@ -29240,7 +29876,9 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "vpr" = (
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vpI" = (
 /obj/structure/table/gamblingtable,
 /turf/simulated/floor/wood/wild4,
@@ -29394,8 +30032,10 @@
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 1
 	},
-/turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vyC" = (
 /obj/random/pack/junk_machine,
 /turf/simulated/floor/tiled/steel/danger,
@@ -29458,7 +30098,9 @@
 	},
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vAC" = (
 /obj/structure/bed/chair/custom/onestar,
 /turf/simulated/floor/tiled/derelict,
@@ -29548,7 +30190,9 @@
 	desc = "A sign labelling the engineering department"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vDg" = (
 /obj/structure/bed/chair/sofa/black{
 	dir = 4
@@ -29659,7 +30303,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vGA" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/burned,
@@ -29892,12 +30538,10 @@
 	name = "Abandoned Bunker"
 	})
 "vPD" = (
-/obj/structure/salvageable/computer_os{
-	dir = 4;
-	pixel_x = -5
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/dungeon/outside/prepper/lima)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "vPR" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -30418,7 +31062,9 @@
 "wjL" = (
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wkd" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -30448,7 +31094,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wlb" = (
 /obj/structure/flora/small/bushb2,
 /obj/random/traps/low_chance,
@@ -30544,7 +31192,9 @@
 "wpR" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wqh" = (
 /obj/random/mecha/damaged,
 /turf/simulated/floor/tiled/white/techfloor,
@@ -30676,7 +31326,9 @@
 	pixel_x = 12
 	},
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wvh" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -30902,6 +31554,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"wEf" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wEn" = (
 /obj/structure/sign/warning/nosmoking/small,
 /turf/simulated/wall/r_wall,
@@ -30966,6 +31624,16 @@
 /obj/structure/sign/department/morgue,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"wHr" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wHQ" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/ammo_lowcost,
@@ -31203,7 +31871,9 @@
 	pixel_y = -18
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wQF" = (
 /obj/random/mecha_equipment/low_chance,
 /turf/simulated/floor/tiled/dark,
@@ -31368,7 +32038,9 @@
 	pixel_y = -5
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wXI" = (
 /obj/effect/floor_decal/corner_kafel/beige,
 /obj/effect/floor_decal/corner_kafel/beige{
@@ -31449,6 +32121,18 @@
 /obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"wZw" = (
+/obj/structure/table/rack,
+/obj/item/clothing/head/helmet/faceshield/riot{
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/faceshield/riot{
+	pixel_y = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "wZy" = (
 /obj/structure/multiz/ladder,
 /obj/effect/step_trigger/prepper_to_vbunker_1_A,
@@ -31735,8 +32419,11 @@
 "xjR" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
+/obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/asphalt,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xjW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/material_resources,
@@ -31748,6 +32435,12 @@
 /obj/item/stack/cable_coil/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"xkk" = (
+/obj/effect/floor_decal/industrial_plant/border,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xkq" = (
 /obj/item/stack/material/wood/random,
 /obj/effect/decal/cleanable/dirt,
@@ -31912,6 +32605,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"xpZ" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xqi" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -31953,13 +32654,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "xrn" = (
-/obj/structure/table/reinforced,
-/obj/item/modular_computer/telescreen{
-	bsod = 1;
-	stat = 1
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/dungeon/outside/prepper/lima)
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xrp" = (
 /obj/effect/floor_decal/corner_kafel/beige,
 /obj/effect/floor_decal/corner_kafel/beige{
@@ -32435,7 +33133,9 @@
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/structure/invislight,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xKm" = (
 /obj/item/stack/cable_coil/random,
 /obj/machinery/light/small{
@@ -32482,6 +33182,16 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"xLH" = (
+/obj/machinery/computer{
+	stat = 1;
+	dir = 8
+	},
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xLR" = (
 /obj/structure/table/standard,
 /obj/structure/window/basic{
@@ -32559,6 +33269,12 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"xOG" = (
+/obj/machinery/vending/sovietsoda,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "xOU" = (
 /obj/structure/flora/small/bushc1,
 /turf/simulated/mineral/planet,
@@ -32905,7 +33621,9 @@
 /obj/machinery/power/smes/buildable,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /turf/simulated/floor/industrial,
-/area/nadezhda/dungeon/outside/zoo)
+/area/nadezhda/dungeon/outside/zoo{
+	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
+	})
 "ycU" = (
 /obj/structure/table/onestar,
 /obj/item/folder,
@@ -61896,7 +62614,7 @@ mfI
 fVR
 eiq
 giQ
-iEl
+fVR
 fVR
 fVR
 rWO
@@ -62315,7 +63033,7 @@ fVR
 fVR
 fVR
 fVR
-wOZ
+fVR
 fVR
 fVR
 fVR
@@ -62527,7 +63245,7 @@ itD
 fph
 giQ
 rMO
-iEl
+fVR
 oGU
 oGU
 coU
@@ -63134,7 +63852,7 @@ fph
 fVR
 giQ
 fVR
-iEl
+fVR
 fVR
 fVR
 fVR
@@ -69202,7 +69920,7 @@ nMo
 hXT
 tPd
 tPd
-pxG
+tPd
 oXa
 nep
 dhf
@@ -69416,7 +70134,7 @@ tPd
 dhf
 dhf
 tPd
-dig
+tPd
 oGU
 coU
 coU
@@ -69618,8 +70336,8 @@ idB
 heS
 xWW
 mnB
-vPD
-xrn
+bBW
+hyC
 arg
 tPd
 dhf
@@ -69834,7 +70552,7 @@ tPd
 tPd
 tPd
 sKE
-dig
+tPd
 fVR
 coU
 coU
@@ -70461,7 +71179,7 @@ jYE
 tPd
 tPd
 tPd
-dig
+fVR
 nMo
 coU
 coU
@@ -70668,7 +71386,7 @@ dID
 idB
 idB
 ghn
-dig
+tPd
 tPd
 tPd
 tPd
@@ -71086,7 +71804,7 @@ mbx
 idB
 oGU
 tPd
-dig
+tPd
 xoy
 oGU
 oGU
@@ -107734,6 +108452,7 @@ rHY
 qxe
 hRL
 hRL
+fps
 hRL
 hRL
 hRL
@@ -107743,8 +108462,7 @@ hRL
 hRL
 hRL
 hRL
-hRL
-hRL
+fps
 hRL
 hRL
 hRL
@@ -108179,33 +108897,33 @@ rFd
 cbD
 oqk
 gbQ
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 coa
 rHY
 tml
@@ -108388,33 +109106,33 @@ xOU
 oUs
 hRL
 gbQ
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 tml
@@ -108597,33 +109315,33 @@ xOU
 hRL
 nXw
 uhh
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 tml
@@ -108806,33 +109524,33 @@ hpi
 hRL
 xOU
 gbQ
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -109015,33 +109733,33 @@ wPw
 nXw
 qxe
 gbQ
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -109224,33 +109942,33 @@ hRL
 hRL
 xOU
 gbQ
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -109433,33 +110151,33 @@ hRL
 hRL
 rFd
 gbQ
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -109642,33 +110360,33 @@ afB
 naj
 rFd
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -109851,33 +110569,33 @@ hRL
 sAP
 rFd
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -110060,33 +110778,33 @@ eZo
 eZo
 naj
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -110269,33 +110987,33 @@ gva
 naj
 naj
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 gbQ
@@ -110478,33 +111196,33 @@ naj
 naj
 naj
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
 coa
 rHY
 rHY
@@ -110687,45 +111405,45 @@ naj
 naj
 naj
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 naj
 hRL
 hRL
@@ -110896,45 +111614,45 @@ nqw
 nqw
 nqw
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 naj
 naj
 hRL
@@ -111066,11 +111784,11 @@ vNk
 "}
 (174,1,2) = {"
 nxY
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
 kAK
 kVE
 kVE
@@ -111105,45 +111823,45 @@ nqw
 nqw
 nqw
 rHY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 naj
 hRL
@@ -111275,84 +111993,84 @@ vNk
 "}
 (175,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+wjL
+ngr
+wjL
+vPD
 kAK
 kVE
 kVE
 kVE
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 oaF
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
 nqH
-coa
-coa
-coa
-coa
-coa
-hRb
-qxe
-wwu
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+kVE
+xjR
 jYl
-wwu
-hRb
-coa
+xjR
+vPD
+vPD
 kAK
 kAK
-coa
-coa
-coa
-coa
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 hRL
@@ -111484,84 +112202,84 @@ vNk
 "}
 (176,1,2) = {"
 nxY
-coa
+vPD
 taM
+uvr
 taM
-taM
-coa
+vPD
 kAK
 kVE
 kVE
 ajc
 ajc
-coa
+vPD
 jqD
 kfs
 jqD
 hTZ
 xKl
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
 hlF
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 txa
 iFg
 xjR
-cJQ
+btF
 fmI
 unD
 kVE
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -111693,22 +112411,22 @@ vNk
 "}
 (177,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+wjL
+ngr
+wjL
+vPD
 kAK
-coa
+vPD
 ajc
 wpR
 wpR
-coa
+vPD
 hqr
 pFJ
 bNM
 pQv
-btF
+qQw
 hFr
 qQw
 hFr
@@ -111718,7 +112436,7 @@ ehu
 dYN
 eRo
 eRo
-coa
+vPD
 cUk
 jIL
 cJQ
@@ -111728,49 +112446,49 @@ jOk
 wPX
 kVE
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -111902,13 +112620,13 @@ vNk
 "}
 (178,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+vPD
+vPD
+izY
+vPD
 kAK
-coa
+vPD
 cZG
 vkt
 bpd
@@ -111927,8 +112645,8 @@ avx
 wXx
 cbT
 cbT
-coa
-coa
+vPD
+vPD
 jOk
 jvH
 nZb
@@ -111937,49 +112655,49 @@ oIm
 kpT
 kAK
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -112111,13 +112829,13 @@ vNk
 "}
 (179,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+odb
+odb
+odb
+vPD
 kAK
-coa
+vPD
 tMr
 ikD
 shd
@@ -112136,59 +112854,59 @@ avx
 dYN
 eRo
 eRo
-coa
-coa
+vPD
+vPD
 cUj
 wuT
 nVX
 wuT
 cUj
-coa
+vPD
 kAK
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 ctf
 hRL
@@ -112320,17 +113038,17 @@ vNk
 "}
 (180,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+odb
+vPD
+vPD
+vPD
 kAK
-coa
+vPD
 iXG
 shd
 shd
-coa
+vPD
 dAl
 avx
 dAl
@@ -112345,59 +113063,59 @@ maC
 wXx
 cbT
 cbT
-coa
-coa
-coa
+vPD
+vPD
+vPD
 kCP
 mEV
 kCP
-coa
-coa
-coa
+vPD
+vPD
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -112529,17 +113247,17 @@ vNk
 "}
 (181,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+odb
+odb
+odb
+vPD
 kAK
-coa
+vPD
 mLs
 shd
 lwK
-coa
+vPD
 fko
 qHh
 fko
@@ -112554,7 +113272,7 @@ eZQ
 dYN
 eRo
 eRo
-coa
+vPD
 nhc
 jBM
 evT
@@ -112562,51 +113280,51 @@ jeF
 epQ
 vpr
 nhc
-coa
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -112738,32 +113456,32 @@ vNk
 "}
 (182,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+vPD
+vPD
+odb
+vPD
 kAK
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
 dBJ
 bvb
 dBJ
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
 jJr
 jJr
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
 nhc
 vpr
 vpr
@@ -112771,51 +113489,51 @@ qki
 vpr
 vpr
 nhc
-coa
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -112947,32 +113665,32 @@ vNk
 "}
 (183,1,2) = {"
 nxY
-coa
-taM
-taM
-taM
-coa
+vPD
+odb
+odb
+odb
+vPD
 kAK
 kAK
 kAK
 kAK
 kAK
-coa
+vPD
 tQZ
 nwo
 tQZ
-coa
+vPD
 kAK
 kAK
-coa
+vPD
 qOA
 icu
 icu
 tAp
-coa
+vPD
 kAK
 kAK
-coa
+vPD
 nhc
 jBM
 epQ
@@ -112980,51 +113698,51 @@ qki
 vpr
 uMY
 nhc
-coa
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 boc
@@ -113156,32 +113874,32 @@ vNk
 "}
 (184,1,2) = {"
 nxY
-coa
-coa
+vPD
+vPD
 dvi
-coa
-coa
+vPD
+vPD
 kAK
 kAK
 kAK
 kAK
 kAK
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
 kAK
 kAK
-coa
+vPD
 qOA
 icu
 icu
 tAp
-coa
+vPD
 kAK
 kAK
-coa
+vPD
 nhc
 jBM
 epQ
@@ -113189,51 +113907,51 @@ nHb
 evT
 uMY
 nhc
-coa
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -113365,84 +114083,84 @@ vNk
 "}
 (185,1,2) = {"
 nxY
-coa
+vPD
 mmY
 flU
 mmY
-coa
+vPD
 kAK
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 qOA
 icu
 icu
 tAp
-coa
+vPD
 kAK
 kAK
-coa
-coa
-coa
+vPD
+vPD
+vPD
 tQI
 tQI
 tQI
-coa
-coa
-coa
+vPD
+vPD
+vPD
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 khg
@@ -113574,84 +114292,84 @@ vNk
 "}
 (186,1,2) = {"
 nxY
-coa
+vPD
 wjL
 cFE
 oYe
-coa
+vPD
 kAK
-coa
-coa
+vPD
+vPD
+cEx
+mLi
 sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-coa
+vcx
+avx
+ajc
+fmI
+fmI
+xOG
+vPD
+vPD
 jJr
 jJr
-coa
-coa
-coa
+vPD
+vPD
+vPD
 kAK
 kAK
 kAK
-coa
-fUM
+vPD
+avx
 umG
-fUM
-coa
-sFk
+avx
+vPD
 kAK
 kAK
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+kAK
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -113783,84 +114501,84 @@ vNk
 "}
 (187,1,2) = {"
 nxY
-coa
+vPD
 dOM
 kIp
 gQu
-coa
+vPD
 kAK
-coa
-coa
+vPD
+vPD
+cEx
+mLi
 sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+fmI
+ajc
+kVE
+kVE
+fmI
+avx
+ifB
+rQF
+hdb
+hdb
+hdb
 idZ
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
 vCT
 kKS
 umG
-fUM
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+avx
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -113992,28 +114710,28 @@ vNk
 "}
 (188,1,2) = {"
 nxY
-coa
-coa
+vPD
+vPD
 nDF
 cAr
-coa
-coa
-coa
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+vPD
+vPD
+skP
+xpZ
+xpZ
+lDf
+fmI
+kVE
+kVE
+ajc
+avx
+avx
+ifB
+iAO
+hdb
+hdb
+hdb
 aaS
 qOl
 fmf
@@ -114024,52 +114742,52 @@ vyy
 umG
 fUM
 sek
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -114201,28 +114919,28 @@ vNk
 "}
 (189,1,2) = {"
 nxY
-coa
-coa
+vPD
+vPD
 sep
 pMg
 pMg
 fOr
-eWh
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+rbW
+grN
+cEx
+mLi
+cUY
+fmI
+ajc
+fmI
+fmI
+avx
+avx
+fUM
+hdb
+hdb
+hdb
+hdb
 foM
 qOl
 fmf
@@ -114233,52 +114951,52 @@ vyy
 umG
 fUM
 sek
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 hRL
 hRL
@@ -114410,28 +115128,28 @@ vNk
 "}
 (190,1,2) = {"
 nxY
-coa
-eWh
-eWh
+vPD
+rbW
+rbW
 hQI
 hQI
 eWh
-eWh
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+njG
+xkk
+nSz
+mLi
+cUY
+vcx
+avx
+ajc
+kVE
+ajc
+avx
+ifB
+jvp
+hdb
+hdb
+hdb
 aaS
 qOl
 fmf
@@ -114442,52 +115160,52 @@ vyy
 umG
 fUM
 sek
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 rHY
 afB
 boc
@@ -114619,74 +115337,45 @@ vNk
 "}
 (191,1,2) = {"
 nxY
-coa
-eWh
+vPD
+rbW
 eWh
 rbW
 rbW
-eWh
-eWh
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+rbW
+njG
+xkk
+xpZ
+xpZ
+lDf
+vcx
+ajc
+kVE
+kVE
+kVE
+avx
+ifB
+rQF
+hdb
+tKu
+tKu
 nEs
-coa
-coa
-coa
-coa
+vPD
+vPD
+vPD
+vPD
 vCT
 exl
 umG
-fUM
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+clT
+vPD
+vPD
+vPD
+vPD
+dRn
+dRn
+dRn
+vPD
 dRn
 dRn
 dRn
@@ -114696,7 +115385,36 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 boc
@@ -114828,74 +115546,45 @@ vNk
 "}
 (192,1,2) = {"
 nxY
-coa
-eWh
-eWh
+vPD
 rbW
 rbW
-eWh
-eWh
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+rbW
+rbW
+rbW
+njG
+xkk
+nSz
+mLi
+cUY
+ajc
+kVE
+kVE
+kVE
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 mLl
 mLl
 mLl
-coa
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+eDQ
+wZw
+vPD
+dRn
+dRn
+dRn
+vPD
 dRn
 dRn
 dRn
@@ -114905,7 +115594,36 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 hRL
@@ -115037,74 +115755,45 @@ vNk
 "}
 (193,1,2) = {"
 nxY
-coa
+vPD
+rbW
+rbW
+rbW
 eWh
-eWh
-eWh
-eWh
-eWh
-eWh
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+rbW
+njG
+xkk
+nSz
+mLi
+cUY
+vcx
+ajc
+ajc
+vPD
+iXA
+iXA
+vPD
+avx
+wEf
+tcp
+avx
+mlT
+gDU
+dRu
+avx
+avx
+vPD
+sTN
+sTN
 cCq
-cCq
-cCq
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+xrn
+xrn
+vPD
+dRn
+dRn
+dRn
+vPD
 dRn
 dRn
 dRn
@@ -115114,7 +115803,36 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 hRL
@@ -115246,74 +115964,41 @@ vNk
 "}
 (194,1,2) = {"
 nxY
-coa
-coa
+vPD
+vPD
+eWh
+rbW
+rbW
 eWh
 eWh
-eWh
-eWh
-eWh
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+grN
+xpZ
+xpZ
+lDf
+vcx
+avx
+avx
+vPD
+iXA
+iXA
+vPD
+avx
+wEf
+dtH
+avx
+avx
+npt
+wEf
+avx
+avx
+vPD
 avx
 qYd
 avx
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+xrn
+xrn
+vPD
 dRn
 dRn
 dRn
@@ -115323,7 +116008,40 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 afB
 hRL
@@ -115455,74 +116173,41 @@ vNk
 "}
 (195,1,2) = {"
 nxY
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+vPD
+vPD
+uoa
+nPW
+eRg
+vPD
+vPD
+vPD
+cEx
+mLi
 sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vcx
+avx
+fmI
+fmI
+jOk
+iXA
+gGP
+avx
+avx
+avx
+avx
+avx
+avx
+avx
+avx
+avx
+gGP
 avx
 avx
 jWY
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+nHL
+xrn
+xrn
+vPD
 dRn
 dRn
 dRn
@@ -115532,7 +116217,40 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 hRL
@@ -115664,74 +116382,41 @@ vNk
 "}
 (196,1,2) = {"
 nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-coa
-coa
+kAK
+vPD
+uDJ
+rto
+bps
+vPD
+kAK
+vPD
+cEx
+mLi
 sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+fmI
+fmI
+ajc
+fmI
+fmI
+jOk
+vPD
+avx
+avx
+avx
+jao
+jse
+avx
+avx
+avx
+avx
+vPD
 asy
 jWY
 omH
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+hOw
+cPN
+vPD
 dRn
 dRn
 dRn
@@ -115741,7 +116426,40 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 hRL
 hRL
@@ -115873,74 +116591,45 @@ vNk
 "}
 (197,1,2) = {"
 nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-coa
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-coa
+kAK
+vPD
+wHr
+wHr
+rto
+vPD
+kAK
+vPD
+vPD
+vPD
+fmI
+ajc
+kVE
+kVE
+kVE
+jik
+jik
+vPD
+avx
+avx
+avx
+xLH
+wEf
+avx
+mzH
+ipz
+rAG
+vPD
 kVE
 omH
 kVE
-coa
-coa
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
-sFk
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 dRn
 dRn
 dRn
@@ -115950,7 +116639,36 @@ dRn
 dRn
 dRn
 dRn
-hRb
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+dRn
+vPD
 nqw
 nqw
 hRL
@@ -116082,84 +116800,84 @@ vNk
 "}
 (198,1,2) = {"
 nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-nxY
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
+kAK
+vPD
 kAK
 kAK
 kAK
-coa
+vPD
+kAK
+vPD
+vPD
+vPD
+vPD
+vPD
+kVE
+kVE
+kVE
+kVE
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+kAK
+kAK
+kAK
+vPD
 kAK
 kAK
 kAK
 kAK
 kAK
 kAK
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-coa
-hRb
-hRb
-hRb
-hRb
-hRb
-hRb
-hRb
-hRb
-hRb
-hRb
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
+vPD
 nqw
 nqw
 nqw
