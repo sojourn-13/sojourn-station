@@ -29,9 +29,9 @@
 			if(seed == field.seed || seed.get_trait(TRAIT_COMPANION_PLANT))
 				is_companion = TRUE
 
-			if(companions && !is_companion) //Dont need to go through the list if your already getting a boost from same seed/trait
-				for(var/list_of_companions in companions)
-					if(seed_name  == list_of_companions || seed_name  == "modifed [list_of_companions]" || seed_name  == "mutant [list_of_companions]")
+			if(seed.companions && !is_companion) //Dont need to go through the list if your already getting a boost from same seed/trait
+				for(var/list_of_companions in seed.companions)
+					if(seed.seed_name  == list_of_companions || seed.seed_name  == "modifed [list_of_companions]" || seed.seed_name  == "mutant [list_of_companions]")
 						is_companion = TRUE
 						break
 

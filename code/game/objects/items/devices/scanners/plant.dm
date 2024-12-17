@@ -237,7 +237,7 @@
 
 
 	if(grown_seed.companions)
-		for(var/friends in companions)
+		for(var/friends in grown_seed.companions)
 			dat += "<br>This plant has benefits when growing next to [friends]."
 
 
