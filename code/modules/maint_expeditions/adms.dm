@@ -7,8 +7,8 @@
 /obj/machinery/exploration/adms
 	name = "\improper Anomalous Data Measurement System"
 	desc = "A large piece of equipment for gathering data from anomalous regions. \
-	It has an habit of angering the local population pest. \
-	Has a slider that sets from 0 to 5, depending on the setting more habitents angered but more points are generated."
+	It has a habit of angering the local pest population. \
+	Has a slider that sets from 0 to 5, depending on the setting more inhabitants are angered and thus more points generated."
 	icon_state = "adms"
 
 	circuit = /obj/item/circuitboard/adms
