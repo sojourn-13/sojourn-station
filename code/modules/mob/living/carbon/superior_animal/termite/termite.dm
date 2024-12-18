@@ -62,6 +62,10 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	cant_gib = TRUE
 
+	//Rather then good armor will have some ablative to take a bullet or two but
+	mob_ablative_armor = 12
+	ablative_retaining = ABLATION_SOFT
+
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
 	if(parent)
@@ -162,7 +166,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 5, bullet = -1, energy = 3, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 1, bullet = -1, energy = 0, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 5
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -188,7 +193,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 8, bullet = 1, energy = 2, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 1, bullet = 1, energy = 0, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 8
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -217,7 +223,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 6, bullet = -1, energy = 2, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 1, bullet = -1, energy = 0, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 8
 
 //Loot related variables
 	ore = /obj/item/stack/ore/uranium
@@ -243,7 +250,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 5, bullet = -1, energy = 6, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 1, bullet = -1, energy = 3, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 5
 
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
@@ -271,7 +279,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 6, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 2, bullet = 0, energy = 1, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 8
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
@@ -304,7 +313,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	ranged = TRUE
 
 //Armor related variables
-	armor = list(melee = 12, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 3, bullet = 0, energy = 1, bomb = 50, bio = 100, rad = 0)
+	mob_ablative_armor = 12
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium

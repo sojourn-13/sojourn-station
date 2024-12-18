@@ -15,7 +15,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	status_flags = CANPUSH // Cannot be stun, weakened or paralyzed
 
-	armor = list(melee = 7, bullet = 0, energy = 8, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 3, bullet = 0, energy = 4, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 	do_gibs = FALSE
 
@@ -54,6 +54,11 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10
 	)
+
+	//Golems in general to make shotguns more affective for them use ablative armor
+	mob_ablative_armor = 8
+	ablative_retaining = ABLATION_SOFT
+
 
 /mob/living/carbon/superior_animal/ameridian_golem/add_initial_transforms()
 	. = ..()
