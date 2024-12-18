@@ -25,10 +25,10 @@
 
 /obj/item/device/scanner/health/greyson
 	name = "Greyson health analyzer"
-	desc = "A hand-held advanced health scanner with a medical nano AI built in. \
-	With aid of the nano AI most users are capable of using this device. \
-	Nano AI is also capable of identifying every logged chemical known to GP. \
-	Uses medium cells and is slightly more bulky then a normal health scanner."
+	desc = "An advanced hand-held scanner with a medical nano AI built in. \
+	With the aid of the nano AI most users are capable of using this device for medical purposes, \
+	being capable of identifying every logged chemical known to GP. \
+	Uses medium cells and is slightly bulkier than a normal health scanner."
 	icon_state = "gp_health"
 	item_state = "analyzer"
 	flicker = "gp_health2"
