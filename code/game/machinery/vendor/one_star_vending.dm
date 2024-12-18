@@ -69,6 +69,7 @@
 
 
 	products = list(
+		/obj/item/device/scanner/health/greyson = 2,
 		/obj/item/greyson_inhaler = 6,
 		/obj/item/greyson_inhaler/burn = 6,
 		/obj/item/storage/firstaid/greyson = 2,
@@ -80,6 +81,7 @@
 		)
 
 	prices = list(
+		/obj/item/device/scanner/health/greyson = 250,
 		/obj/item/greyson_inhaler = 150,
 		/obj/item/greyson_inhaler/burn = 150,
 		/obj/item/storage/firstaid/greyson = 200,
