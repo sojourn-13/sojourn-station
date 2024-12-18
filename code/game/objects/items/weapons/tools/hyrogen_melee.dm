@@ -132,6 +132,7 @@
 
 /obj/item/tool/hydrogen_sword/refresh_upgrades()
 	..()
+	w_class = initial(w_class)
 	if(active)
 		activate(FALSE, TRUE) //So we dont null are on state
 		SStgui.update_uis(src)
