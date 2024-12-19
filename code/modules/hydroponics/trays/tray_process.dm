@@ -1,4 +1,5 @@
 /obj/machinery/portable_atmospherics/hydroponics/Process()
+	var/mono_crop_booster = 0
 
 	if (frozen == 1) // If the tray is frozen, it won't do anything.
 		return
@@ -7,6 +8,46 @@
 	for(var/obj/effect/effect/smoke/chem/smoke in view(1, src))
 		if(smoke.reagents.total_volume)
 			smoke.reagents.trans_to_obj(src, 5, copy = 1)
+
+	//stacking hydro trays or soil piles is harmful
+	for(var/obj/machinery/portable_atmospherics/hydroponics/over_crowarding in view(0, src))
+		if(over_crowarding != src && seed)
+			weedlevel += 0.1
+			pestlevel += 0.1
+			health -= 3
+			mono_crop_booster -= 1
+
+	if(seed)
+		//monocrop boosting
+		for(var/obj/machinery/portable_atmospherics/hydroponics/field in oview(1, src))
+			if(field == src || field.dead || !seed)
+				continue
+
+			var/is_companion = FALSE
+
+			//Silly complication do to lists
+			if(seed == field.seed || seed.get_trait(TRAIT_COMPANION_PLANT))
+				is_companion = TRUE
+
+			if(seed.companions && !is_companion) //Dont need to go through the list if your already getting a boost from same seed/trait
+				for(var/list_of_companions in seed.companions)
+					if(seed.seed_name  == list_of_companions || seed.seed_name  == "modifed [list_of_companions]" || seed.seed_name  == "mutant [list_of_companions]")
+						is_companion = TRUE
+						break
+
+			if(!is_companion)
+				continue
+
+			health += 0.01
+			mono_crop_booster += 1
+			//companions
+			if(pestlevel > 0 && prob(1+mono_crop_booster))
+				pestlevel -= 0.02
+			if(2 < yield_mod)
+				yield_mod += 0.01
+			if(100 < potency_mod)
+				potency_mod += 0.01
+
 
 	//Do this even if we're not ready for a plant cycle.
 	process_reagents()
@@ -39,7 +80,8 @@
 		return
 
 	// Advance plant age.
-	if(prob(30*seed.get_trait(TRAIT_BOOSTED_GROWTH))) age += 1 * HYDRO_SPEED_MULTIPLIER
+	if(prob((30+mono_crop_booster)*seed.get_trait(TRAIT_BOOSTED_GROWTH)))
+		age += 1 * HYDRO_SPEED_MULTIPLIER
 
 	//Highly mutable plants have a chance of mutating every tick.
 	if(seed.get_trait(TRAIT_IMMUTABLE) == -1)

@@ -126,29 +126,29 @@
 	)
 
 /datum/craft_recipe/consumer/cement_bag
-	name = "Quick-Cement Bag"
+	name = "Bag: Quick-Cement"
 	result = /obj/item/cement_bag
 	steps = list(
-		list(/obj/item/stack/ore/glass, 2),
-		list(/obj/item/stack/rods, 2),
-		list(/obj/item/stack/ore, 3),
+		list(/obj/item/stack/ore/glass, 2, "time" = 2),
+		list(/obj/item/stack/rods, 1, "time" = 2),
+		list(/obj/item/stack/ore, 1, "time" = 2),
 		list(QUALITY_HAMMERING, 1, 12),
 		list(QUALITY_SHOVELING, 1, 15)
 	)
 
 /datum/craft_recipe/consumer/hydro_tray_plant_bag_water
-	name = "Woodchips Bag"
+	name = "Bag: Woodchips"
 	result = /obj/item/hydro_tray_plant_bag_water
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
-		list(QUALITY_CUTTING, 10, 10)
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 15),
+		list(QUALITY_CUTTING, 5, 5)
 	)
 
 /datum/craft_recipe/consumer/hydro_tray_plant_bag_nutrient
-	name = "Mealworms Bag"
+	name = "Bag: Mealworms"
 	result = /obj/item/hydro_tray_plant_bag_nutrient
 	steps = list(
-		list(/obj/item/stack/ore, 2),
-		list(/obj/item/reagent_containers/food/snacks/meat, 2), // 10u oil per meat
+		list(/obj/item/stack/ore, 2, "time" = 15),
+		list(/obj/item/reagent_containers/food/snacks/meat, 2, "time" = 2),
 		list(QUALITY_CUTTING, 10, 10)
 	)

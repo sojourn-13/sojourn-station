@@ -410,7 +410,7 @@
 /datum/brewing_product/fernet
 	reagent_to_brew = "fernet"
 	display_name = "Fernet"
-	needed_crops = list("mint" = 20, "thaadra" = 20, "harebell" = 5)
+	needed_crops = list("mint" = 20, "thaadra" = 20, "harebells" = 5)
 	needed_chems = list("water" = 60)
 	brew_timer = 15 MINUTES
 	brewed_amount = 1

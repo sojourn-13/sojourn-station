@@ -75,7 +75,8 @@
 		"adminordrazine" =  1,
 		"eznutrient" =      1,
 		"robustharvest" =   1,
-		"left4zed" =        1
+		"left4zed" =        1,
+		"protein" =         5
 		)
 	var/global/list/weedkiller_reagents = list(
 		"hydrazine" =      -4,
@@ -89,6 +90,10 @@
 		)
 	var/global/list/pestkiller_reagents = list(
 		"sugar" =           2,
+		"protein" =         3,
+		"toxin" =          -1,
+		"beer" =           -0.5,
+		"ethanol" =        -1,
 		"diethylamine" =   -2,
 		"adminordrazine" = -5
 		)
@@ -103,9 +108,11 @@
 		"sodawater" =       1,
 		)
 
-	// Beneficial reagents also have values for modifying yield_mod and mut_mod (in that order).
+	// Beneficial reagents also have values for modifying:
+	// health | yield_mod | mut_mod - in this order
 	var/global/list/beneficial_reagents = list(
 		"beer" =           list( -0.05, 0,   0  ),
+		"ethanol" =        list( -0.25, 0,   0  ),
 		"hydrazine" =      list( -2,    0,   0  ),
 		"phosphorus" =     list( -0.75, 0,   0  ),
 		"sodawater" =      list(  0.1,  0,   0  ),
@@ -117,6 +124,7 @@
 		"ammonia" =        list(  0.5,  0,   0  ),
 		"diethylamine" =   list(  1,    0,   0  ),
 		"nutriment" =      list(  0.5,  0.1, 0  ),
+		"carbon" =         list(  0.1,  0.01,0  ),
 		"radium" =         list( -1.5,  0,   0.2),
 		"adminordrazine" = list(  1,    1,   1  ),
 		"robustharvest" =  list(  0,    0.2, 0  ),
@@ -131,7 +139,8 @@
 		)
 
 	var/global/list/potency_reagents = list(
-		"diethylamine" =    1
+		"diethylamine" =    1,
+		"carbon" =          0.01
 	)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
@@ -271,11 +280,14 @@
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
 
+/*
 	//Fast growing crops dont get hit by the first harvest being elder
 	if(age >= 70)
 		post_moder_yield_mod -= (age * 0.005)
 	if(age >= 120 && user) //Losing yield slowly now
 		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+*/
+
 	post_moder_yield_mod = round(post_moder_yield_mod)
 	yield_mod = post_moder_yield_mod
 //	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
@@ -326,7 +338,7 @@
 
 	//Remove the seed if something is already planted.
 	if(seed) seed = null
-	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","chanterelle","plumphelmet","towercap","harebells","weeds"))]
+	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","chanterelle","plumphelmet","towercap","harebells","weeds","grass","wheat"))]
 	if(!seed) return //Weed does not exist, someone fucked up.
 
 	dead = 0
@@ -717,7 +729,7 @@
 	if(weedlevel >= 5)
 		to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")
 	if(pestlevel >= 5)
-		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
+		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny harmful pests</span>!")
 
 	if(dead)
 		to_chat(usr, SPAN_DANGER("The plant is dead."))
