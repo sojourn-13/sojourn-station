@@ -203,9 +203,13 @@
 	return FALSE
 
 /mob/living/proc/getarmorablative(var/def_zone, var/type)
-	return FALSE
+	return mob_ablative_armor
 
 /mob/living/proc/damageablative(var/def_zone, var/damage)
+	if(mob_ablative_armor)
+		mob_ablative_armor = round(mob_ablative_armor - damage / ablative_retaining)
+	if(mob_ablative_armor < 0)
+		mob_ablative_armor = 0
 	return FALSE
 
 /mob/living/proc/hit_impact(damage, dir)
