@@ -30,7 +30,9 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/stack/tile, //Repair floors yay
-		/obj/item/oddity/blackbox_nanoforge
+		/obj/item/oddity/blackbox_nanoforge,
+		/obj/item/cement_bag,
+		/obj/item/stack/ore //So they can craft cement bags
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
@@ -264,7 +266,9 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/device/integrated_electronics,
-		/obj/item/integrated_circuit
+		/obj/item/integrated_circuit,
+		/obj/item/hydro_tray_plant_bag_water,
+		/obj/item/hydro_tray_plant_bag_nutrient
 		)
 
 /obj/item/gripper/chemistry //A gripper designed for chemistry and medical, to allow borgs to work efficiently in the lab
@@ -297,7 +301,7 @@
 /obj/item/gripper/service //Used to handle food, drinks, and seeds.
 	name = "service gripper"
 	icon_state = "gripper"
-	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, and seeds."
+	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, ores, and seeds."
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
@@ -313,7 +317,10 @@
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
 		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
-		/obj/item/spatula
+		/obj/item/spatula,
+		/obj/item/hydro_tray_plant_bag_water,
+		/obj/item/hydro_tray_plant_bag_nutrient,
+		/obj/item/stack/ore //So they can craft some items
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells
