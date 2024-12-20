@@ -54,6 +54,8 @@
 	safety = FALSE
 	twohanded = TRUE
 	load_method = SINGLE_CASING
+	caliber = CAL_CROSSBOW
+	handle_casings = HOLD_CASINGS
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/rod_bolt
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
@@ -65,6 +67,8 @@
 	var/draw_time = 10							// How long it takes to increase the draw on the bow by one "tension"
 	serial_type = null //it's a handmade crossbow who's putting serials on it
 	var/superheat_cost = 250
+
+	wrench_intraction = TRUE
 
 /obj/item/gun/projectile/crossbow/consume_next_projectile(mob/user)
 	if(tension <= 0)
@@ -146,12 +150,6 @@
 		else
 			to_chat(user, SPAN_NOTICE("[src] already has a cell installed."))
 
-	else if(I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src))
-		if(cell)
-			eject_item(cell, user)
-			cell = null
-		else
-			to_chat(user, SPAN_NOTICE("[src] doesn't have a cell installed."))
 	else if(chambered)
 		user.visible_message("[user] relaxes the tension on [src]'s string and removes [chambered].","You relax the tension on [src]'s string and remove [chambered].")
 		new /obj/item/stack/rods(get_turf(src))
@@ -161,6 +159,16 @@
 
 	else
 		..()
+
+/obj/item/gun/projectile/crossbow/wrench_intraction(obj/item/I, mob/user)
+	if(I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src))
+		if(cell)
+			eject_item(cell, user)
+			cell = null
+		else
+			to_chat(user, SPAN_NOTICE("[src] doesn't have a cell installed."))
+	return
+
 
 /obj/item/gun/projectile/crossbow/proc/superheat_rod(var/mob/user)
 	if(!user || !cell || !chambered)
@@ -194,6 +202,7 @@
 	icon_state = "rxb"
 	fire_sound = 'sound/weapons/rail.ogg' // Basically a downgraded myrmidon.
 	slot_flags = null
+	caliber = CAL_RXBOW
 	draw_time = 7.5
 	superheat_cost = 150 //guild design, more efficient or something
 	var/stored_matter = 0

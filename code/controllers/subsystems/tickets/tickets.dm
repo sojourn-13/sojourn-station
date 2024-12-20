@@ -56,8 +56,9 @@ SUBSYSTEM_DEF(tickets)
 		log_admin("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>")
 		message_admins("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>", mod_send_message = TRUE)
 
-/datum/controller/subsystem/tickets/stat_entry()
-	..("Tickets: [LAZYLEN(allTickets)]")
+/datum/controller/subsystem/tickets/stat_entry(msg)
+	msg += "Tickets: [LAZYLEN(allTickets)]"
+	return ..()
 
 /datum/controller/subsystem/tickets/proc/checkStaleness()
 	var/stales = list()
@@ -95,6 +96,7 @@ SUBSYSTEM_DEF(tickets)
 /datum/controller/subsystem/tickets/proc/newHelpRequest(client/C, text)
 	var/ticketNum // Holder for the ticket number
 	var/datum/ticket/T
+	var/category	//	SOJOURN: discord bot configuration: category for TGS message
 	// Get the open ticket assigned to the client and add a response. If no open tickets then make a new one
 	if((T = checkForOpenTicket(C)))
 		ticketNum = T.ticketNum
@@ -104,12 +106,20 @@ SUBSYSTEM_DEF(tickets)
 		var/url_message = makeUrlMessage(C, text, ticketNum)
 		log_admin(url_message)
 		message_admins(url_message, mod_send_message = TRUE)
+		//	SOJOURN: discord bot configuration: START
+		category = "Ticket: #[ticketNum] New message from [key_name(C)]"
+		send2adminchat(category, text)
+		//	SOJOURN: discord bot configuration: END
 	else
 		newTicket(C, text, text)
 		// Play adminhelp sound to all admins who have not disabled it in preferences
 		for(var/client/X in admins)
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 				sound_to(X, 'sound/effects/adminhelp.ogg')
+		//	SOJOURN: discord bot configuration: START
+		category = "New Ticket: #[(getTicketCounter() - 1)] from [key_name(C)]"
+		send2adminchat(category, text)
+		//	SOJOURN: discord bot configuration: END
 
 /**
  * Will add the URLs usable by staff to the message and return it
@@ -142,8 +152,8 @@ SUBSYSTEM_DEF(tickets)
 	var/datum/ticket/T = new(url_title, title, passedContent, new_ticket_num)
 	allTickets += T
 	T.client_ckey = C.ckey
-	if (C.mob.loc.name) //sanity check - some locs, such as title screen, have no name or position
-		T.locationSent = C.mob.loc.name
+	if (C.mob.loc?.name) //sanity check - some locs, such as title screen, have no name or position
+		T.locationSent = C.mob.loc?.name
 	T.mobControlled = C.mob
 
 	//Inform the user that they have opened a ticket
@@ -236,7 +246,7 @@ SUBSYSTEM_DEF(tickets)
 	for(var/key in response_phrases)	//build a new list based on the short descriptive keys of the master list so we can send this as the input instead of the full paragraphs to the admin choosing which autoresponse
 		sorted_responses += key
 
-	var/message_key = input("Select an autoresponse. This will mark the ticket as resolved.", "Autoresponse") as null|anything in sortTim(sorted_responses, /proc/cmp_text_asc) //use sortTim and cmp_text_asc to sort alphabetically
+	var/message_key = input("Select an autoresponse. This will mark the ticket as resolved.", "Autoresponse") as null|anything in sortTim(sorted_responses, GLOBAL_PROC_REF(cmp_text_asc)) //use sortTim and cmp_text_asc to sort alphabetically
 	var/client/ticket_owner = get_client_by_ckey(T.client_ckey)
 	switch(message_key)
 		if(null) //they cancelled
@@ -387,9 +397,6 @@ UI STUFF
 */
 
 /datum/controller/subsystem/tickets/proc/returnUI(tab = TICKET_OPEN)
-	set name = "Open Ticket Interface"
-	set category = "Tickets"
-
 //dat
 	var/trStyle = "border-top:2px solid; border-bottom:2px solid; padding-top: 5px; padding-bottom: 5px;"
 	var/tdStyleleft = "border-top:2px solid; border-bottom:2px solid; width:150px; text-align:center;"

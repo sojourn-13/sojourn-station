@@ -188,7 +188,7 @@
 			else
 				recipe_string += ", or \a [pointer.current_recipe.name]"
 		if(user)
-			if(alert(user, "If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
+			if(alert(user, "If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Finish the meal?",,"Yes","No") == "No")
 				//Cull finished recipe items
 				for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
 					active_recipe_pointers.Remove(pointer)
@@ -205,10 +205,13 @@
 		if(user)
 			if(completed_list.len > 1)
 				completion_lockout = TRUE
-				var/choice = input(user, "There's two things you complete at this juncture!", "Choose One:") in completed_list
+				var/choice = input(user, "There's multiple things you can complete at this juncture!", "Choose One:") in completed_list
 				completion_lockout = FALSE
 				if(choice)
 					chosen_pointer = completed_list[choice]
+		#ifdef CWJ_DEBUG
+		log_debug("/recipe_tracker/proc/process_item: Chosen Pointer: [chosen_pointer]")
+		#endif
 
 	//Call a proc that follows one of the steps in question, so we have all the nice to_chat calls.
 	var/datum/cooking_with_jane/recipe_step/sample_step = valid_steps[1]
@@ -220,6 +223,7 @@
 	if(chosen_pointer)
 		chosen_pointer.current_recipe.create_product(chosen_pointer)
 		return CWJ_COMPLETE
+
 	populate_step_flags()
 
 	if(has_traversed)
@@ -283,6 +287,7 @@
 
 //Points to a specific step in a recipe while considering the optional paths that recipe can take.
 /datum/cooking_with_jane/recipe_pointer
+	var/name
 	var/datum/cooking_with_jane/recipe/current_recipe //The recipe being followed here.
 	var/datum/cooking_with_jane/recipe_step/current_step //The current step in the recipe we are following.
 
@@ -317,6 +322,8 @@
 	#ifdef CWJ_DEBUG
 		steps_taken["[current_step.unique_id]"]="Started with a [start_type]"
 	#endif
+
+	name = current_recipe.name
 
 //A list returning the next possible steps in a given recipe
 /datum/cooking_with_jane/recipe_pointer/proc/get_possible_steps()

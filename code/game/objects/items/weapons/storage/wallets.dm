@@ -12,6 +12,7 @@
 	can_hold = list(
 		/obj/item/spacecash,
 		/obj/item/card,
+		/obj/item/stack/os_cash,
 		/obj/item/clothing/mask/smokable/cigarette/,
 		/obj/item/device/lighting/toggleable/flashlight/pen,
 		/obj/item/seeds,
@@ -33,6 +34,7 @@
 		/obj/item/genetics/sample,
 		/obj/item/genetics/mut_injector,
 		/obj/item/stamp,
+		/obj/item/device/text_to_speech,
 		// All these anomalies should be small in size enough to be able to fit inside a wallet.
 		/obj/item/oddity/common/old_id, // ID's fit
 		/obj/item/oddity/common/lighter, // Zippos fit

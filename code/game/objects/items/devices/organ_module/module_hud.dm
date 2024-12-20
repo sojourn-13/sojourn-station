@@ -22,7 +22,7 @@
 			SPAN_NOTICE("You extend your [holding.name] from [E].")
 		)
 
-/obj/item/organ_module/active/hud/proc/retract(mob/living/carbon/human/H, obj/item/organ/external/E)
+/obj/item/organ_module/active/hud/proc/retract(obj/item/organ/external/E)
 	if(holding.loc == src)
 		return
 
@@ -35,22 +35,17 @@
 		)
 	holding.forceMove(src)
 
-/obj/item/organ_module/active/hud/activate(mob/living/carbon/human/H, obj/item/organ/external/E)
-	if(!can_activate(H, E))
+/obj/item/organ_module/active/hud/trigger(mob/living/carbon/human/H, obj/item/organ/external/E)
+	if(!can_trigger(H, E))
 		return
 
 	if(holding.loc == src) //item not in hands
 		deploy(H, E)
 	else //retract item
-		retract(H, E)
+		retract(E)
 
-/obj/item/organ_module/active/hud/deactivate(mob/living/carbon/human/H, obj/item/organ/external/E)
-	retract(H, E)
-	if(istype(holding, /obj/item/clothing/glasses/powered) && (holding.active))
-		holding.toggle(H)
-
-/obj/item/organ_module/active/hud/organ_removed(var/obj/item/organ/external/E, var/mob/living/carbon/human/H)
-	retract(H, E)
-	if(istype(holding, /obj/item/clothing/glasses/powered) && (holding.active))
-		holding.toggle(H)
+/obj/item/organ_module/active/hud/onRemove(var/obj/item/organ/external/E)
+	retract(E)
+	if(istype(holding, /obj/item/clothing/glasses/powered) && (holding.active) && E.owner)
+		holding.toggle(E.owner)
 	..()

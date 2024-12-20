@@ -24,11 +24,11 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	perks = list(PERK_SOMELLIER)
 
 	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
-You are trusted with control of the colony primary accounts, and are also able to control access within the colony.<br>\
-Your primary objective is to oversee council decisions, change access levels, and act as both lawyer and consultant in various decisions.<br>\
-You are not the supreme leader of the colony and your word is only an advisement. The only person you can give legal orders to is the Steward.<br>\
+You are trusted with control of the colony primary accounts and are also able to control access within and to the colony.<br>\
+Your primary objective is to oversee council decisions, change access levels and act as both lawyer and consultant in various decisions.<br>\
+You are not the supreme leader of the colony and your word is only advisory in nature. The only person you can give legal orders to is the Steward.<br>\
 The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
-Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs."
+Treat your command officers with respect and listen to their council. Try not to micromanage their departments or interfere in their affairs."
 
 	duties = "Work between the varying interests of council members to achieve colony stability.<br>\
 	Offer advise and counsel when approached, particularly during important decisions.<br>\
@@ -86,13 +86,13 @@ Treat your command officers with respect, and listen to their council. Try not t
 	minimum_character_age = 25
 
 	health_modifier = 5
-	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
-	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
-	However, you are an adviser as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
+	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow them wherever they go.<br>\
+	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even with your own life if necessary.<br>\
+	However, you are an adviser as well as a bodyguard. Discreetly inform them of mistakes. Make sure they follow the law and remain popular.<br>\
 	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
-	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
+	Do not embarass them, and especially do not harm their relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, adviser, and confidant to the Premier.<br>\
+	duties = "Act as a bodyguard, adviser and confidant to the Premier.<br>\
 	Remain conscious of any potential threats to the safety of the Premier.<br>\
 	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."

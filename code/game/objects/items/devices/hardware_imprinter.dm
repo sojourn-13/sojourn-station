@@ -17,7 +17,7 @@
 	if(spent)//Is it already used up or not
 		return
 
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC)//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC || user.random_organ_by_process(BP_PSION))//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
 		return//Also no synths to prevent memes
 
 	if(!istype(user) || user.incapacitated() || user.get_active_hand() != src)//Checks for sanity
@@ -54,9 +54,9 @@
 		to_chat(user, SPAN_WARNING("[src] beeps, notifying you that it's spent!"))
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC) //Reason we check for the perk we are printing too is that you don't waste one for nothing
-		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))//No synths
-		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC || user.random_organ_by_process(BP_PSION)) //Reason we check for the perk we are printing too is that you don't waste one for nothing
+		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))//No synths or psions
+		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5) //Why did I make this get checked twice who will honestly ever know not like it matters this runs once and never again.
 		return ..()
 	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated())
 		to_chat(user, SPAN_WARNING("[src] beeps, being unable to operate on you under current conditions!"))
@@ -67,7 +67,7 @@
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()//Beeps and messages to actually let player know that they need to do something to continue
 
-	INVOKE_ASYNC(src, .proc/imprint, user)
+	INVOKE_ASYNC(src, PROC_REF(imprint), user)
 
 /obj/item/device/hardware_imprinter/examine(mob/user)
 	. = ..()
@@ -92,3 +92,114 @@
 	perk_imprinting = PERK_CHEMNEUTRAL
 	perk_imprinting_forbidden = PERK_ADDICT//Not a way to cure your addiction sorry bud
 	has_nsa_downside = FALSE //dosnt have the nsa limits as it affects nsa directly
+
+//ERT + Agent stuff.
+
+/obj/item/device/hardware_imprinter/spaceasshole
+	name = "Brawnee nano-augment implanter"
+	desc = "An installer for an augment used by a wide variety of military and paramilitary forces. Strands of nanite-augmented pseudo-ligament are weaved between the users muscles, paired with a neuro-reactive interface that allows nearly instant response to losses in balance make the users astoundingly difficult to push around or over."
+	perk_imprinting = PERK_ASS_OF_CONCRETE
+	perk_imprinting_forbidden = PERK_ASS_OF_CONCRETE
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+
+/obj/item/device/hardware_imprinter/codlang
+	name = "EZ-Codlang imprinter"
+	desc = "An installer for an augment used by a wide variety of police forces. Often shunned by instruction officers, this implant provides the user a suite of learning and assistance tools that allow for on-the-fly use of a pre-programmed code system with real time user feedback. Claims to cut time-to-learn from months to days."
+	perk_imprinting = PERK_CODESPEAK
+	perk_imprinting_forbidden = PERK_CODESPEAK
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/contraband
+	name = "EZ-Chemtraband imprinter"
+	desc = "An installer for an augment used by a wide variety of police forces. Often shunned by instruction officers, this implant provides the user a suite of learning and assistance tools that allow for on-the-fly use of a chemical database tailored to narco task forces via on-the-fly instruction and real time user feedback."
+	perk_imprinting = PERK_CHEM_CONTRABAND
+	perk_imprinting_forbidden = PERK_CHEM_CONTRABAND
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/boltraining
+	name = "EZ-Rifleman imprinter"
+	desc = "An installer for an augment used by a wide variety of paramilitary forces. Well beloved by colonies in the eras prior to the harrowing for the ease with which it could prepare an entire rag tag militia for battle, this sub-conscious assistic implant helps guide the users movement allowing for outstanding handling of bolt and lever style weapons."
+	perk_imprinting = PERK_BOLT_REFLECT
+	perk_imprinting_forbidden = PERK_BOLT_REFLECT
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/conditioning
+	name = "Sub-Dermal plating implanter"
+	desc = "An installer for an augment used by mercenaries and military alike. Relatively simple by modern standards, this implant forms a single nanite 'hub' within the lymphatic system from which nanomachines flow in a constant stream, making minor but constant reinforcements to ligament, tendons, and bone"
+	perk_imprinting = PERK_BLACKSHIELD_CONDITIONING
+	perk_imprinting_forbidden = PERK_BLACKSHIELD_CONDITIONING
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/surestep
+	name = "Scav-step imprinter"
+	desc = "An installer for an augment by and for pirates, looters and anyone else who might want to spend an extended time picking around blown out ruins. Mental assistics coupled with ligament reinforcements in the ankle aid in keeping ones footing on uncertain terrain. "
+	perk_imprinting = PERK_SURE_STEP
+	perk_imprinting_forbidden = PERK_SURE_STEP
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/medexpert
+	name = "EZ-Surgeon imprinter"
+	desc = "An installer for an augment popular amongst wealthy and overworked ER docs. Kinesthetic assistics pair with a sub-ai program designed to provide real time feedback to surgeons in the operating theater, correcting for errors and preventing incidents."
+	perk_imprinting = PERK_MEDICAL_EXPERT
+	perk_imprinting_forbidden = PERK_MEDICAL_EXPERT
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/medadept
+	name = "EZ-Doc imprinter"
+	desc = "An installer for an augment used primarily first year med students. A relatively simple sub-ai program designed to assist in providing basic medical guidence and assistance in the operation of more common medical devices."
+	perk_imprinting = PERK_ADVANCED_MEDICAL
+	perk_imprinting_forbidden = PERK_ADVANCED_MEDICAL
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/chemist
+	name = "EZ-Chem imprinter"
+	desc = "An installer for an augment well loved by both black-market drug rings and aspiring chemists. A veritable encyclopedia of many of the most common devices found in any self respecting chemists lab. "
+	perk_imprinting = PERK_CHEMIST
+	perk_imprinting_forbidden = PERK_CHEMIST
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/science
+	name = "EZ-Science imprinter"
+	desc = "An installer for an augment typically favored by students of the hard-sciences. A sub-ai program with a direct neural link, while it may not endow its user with any particular intelligence it can at the last guide them in using the most common hardware in any modern research facility. "
+	perk_imprinting = PERK_SI_SCI
+	perk_imprinting_forbidden = PERK_SI_SCI
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/exotic
+	name = "CHO-pwr installer"
+	desc = "An installer for an augment that frankly, should not be allowed to exist. An artificers guild design, this ethanol powered co-processor assists the user in the broad majority of mechanical tasks facing an engineer on a day to day basis."
+	perk_imprinting = PERK_INSPIRATION
+	perk_imprinting_forbidden = PERK_INSPIRATION
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE
+
+/obj/item/device/hardware_imprinter/handy
+	name = "EZ-Arti imprinter "
+	desc = "An installer for an augment guarded jealously by the Artificers guild. Whereas many adepts rely on more traditional means of learning the guilds various craft this imprinter exists to stamp the information almost directly into ones mind, as a nice side effect it also assists in more efficient disassembly of machines. "
+	perk_imprinting = PERK_HANDYMAN
+	perk_imprinting_forbidden = PERK_HANDYMAN
+	has_health_downside = FALSE
+	has_blood_downside = FALSE
+	has_nsa_downside = FALSE

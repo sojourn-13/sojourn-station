@@ -24,7 +24,7 @@
 			SPAN_NOTICE("You extend your [holding.name] from [E].")
 		)
 
-/obj/item/organ_module/active/simple/proc/retract(mob/living/carbon/human/H, obj/item/organ/external/E)
+/obj/item/organ_module/active/simple/proc/retract(obj/item/organ/external/E)
 	if(holding == null)
 		var/mob/M = holding.loc
 		to_chat(M, SPAN_WARNING("There are nothing to retract"))
@@ -43,19 +43,16 @@
 	holding.forceMove(src)
 
 
-/obj/item/organ_module/active/simple/activate(mob/living/carbon/human/H, obj/item/organ/external/E)
-	if(!can_activate(H, E))
+/obj/item/organ_module/active/simple/trigger(mob/living/carbon/human/H, obj/item/organ/external/E)
+	if(!can_trigger(H, E))
 		return
 
 	if(holding.loc == src) //item not in hands
 		deploy(H, E)
 	else //retract item
-		retract(H, E)
+		retract(E)
 
-/obj/item/organ_module/active/simple/deactivate(mob/living/carbon/human/H, obj/item/organ/external/E)
-	retract(H, E)
-
-/obj/item/organ_module/active/simple/organ_removed(var/obj/item/organ/external/E, var/mob/living/carbon/human/H)
-	retract(H, E)
+/obj/item/organ_module/active/simple/onRemove(var/obj/item/organ/external/E)
+	retract(E)
 	..()
 

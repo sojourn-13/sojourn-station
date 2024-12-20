@@ -7,12 +7,11 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	fire_sound_text = "a metallic thunk"
 	price_tag = 1200
 	serial_type = "SD GmbH"
-
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , heavy stuff
 	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1)
@@ -22,10 +21,10 @@
 	if(ratio < 0.33 && ratio != 0)
 		ratio = 0.33
 	ratio = round(ratio, 0.33) * 100
-	overlays += "grenademag_[ratio]"
+	add_overlay("grenademag_[ratio]")
 
 /obj/item/gun/projectile/grenade/lenar/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	update_charge()
 
 

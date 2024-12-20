@@ -13,6 +13,8 @@
 	var/installed_by_default = TRUE
 	var/robot_trait = null // a cyborg trait to add when this is installed
 	var/powered_trait = FALSE // does this module need to be powered for its trait to be active ?
+	var/brute_mult = 1 // allows components to become resistant to a form of damage. If brute and burn are both 0 then they can't be broken.
+	var/burn_mult = 1
 
 // The actual device object that has to be installed for this.
 /datum/robot_component/var/external_type = null
@@ -94,21 +96,30 @@
 // Protects the cyborg from damage. Usually first module to be hit
 // No power usage
 /datum/robot_component/armour
-	name = "armour plating"
+	name = "mark I armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour
 	max_damage = 80
 
-/datum/robot_component/armour/level_2
-	name = "advanced armour plating"
+/datum/robot_component/armour/energy
+	name = "mark II energy armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
 	max_damage = 120
 	installed_by_default = FALSE
+	burn_mult = 0.5
 
-/datum/robot_component/armour/level_3
-	name = "combat armour plating"
-	external_type = /obj/item/robot_parts/robot_component/armour/mkv
-	max_damage = 160
+/datum/robot_component/armour/melee
+	name = "mark III reinforced armour plating"
+	external_type = /obj/item/robot_parts/robot_component/armour/mkiii
+	max_damage = 120
 	installed_by_default = FALSE
+	brute_mult = 0.5
+
+/datum/robot_component/armour/extra
+	name = "mark V extra armour plating"
+	external_type = /obj/item/robot_parts/robot_component/armour/mkv
+	max_damage = 160 //33% more hp then other plates but no resistances.
+	installed_by_default = FALSE
+
 
 // JETPACK
 // Allows the cyborg to move in space
@@ -290,6 +301,9 @@
 	matter = list(MATERIAL_STEEL = 5)
 	var/brute = 0
 	var/burn = 0
+	var/brute_mult = 1 // used to apply resistances when inserting parts into borgs
+	var/burn_mult = 1
+	var/internal_damage = 30 // used to apply alternative hp amounts to components on install
 	var/icon_state_broken = "broken"
 
 /obj/item/robot_parts/robot_component/binary_communication_device
@@ -305,21 +319,36 @@
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
-	name = "armour plating"
-	desc = "A robot part, metal plates to be able to take dents and burns so more sensitive component inside dont."
+	name = "Mark I armour plating"
+	desc = "A robot part, basic metal plates to be able to take dents and burns so more sensitive component inside dont."
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
+	internal_damage = 80
 
 /obj/item/robot_parts/robot_component/armour/mkii
-	name = "Mark II armour plating"
+	name = "Mark II energy armour plating"
+	desc = "A robot part, metal plates designed to resist burns better then other plates. Protects other sensitive components."
 	icon_state = "armormk2"
 	icon_state_broken = "armormk2_broken"
+	internal_damage = 120
 	matter = list(MATERIAL_STEEL = 25)
+	burn_mult = 0.5
+
+/obj/item/robot_parts/robot_component/armour/mkiii
+	name = "Mark III reinforced armour plating"
+	desc = "A robot part, metal plates designed to resist a beating better then other plates. Protects other sensitive components."
+	icon_state = "armormk2"
+	icon_state_broken = "armormk2_broken"
+	internal_damage = 120
+	matter = list(MATERIAL_STEEL = 25)
+	brute_mult = 0.5
 
 /obj/item/robot_parts/robot_component/armour/mkv
-	name = "Mark V armour plating"
+	name = "Mark V extra armour plating"
+	desc = "A robot part, whats better then a few metal plates? MORE metal plates! Protects other sensitive components."
 	icon_state = "armormk5"
 	icon_state_broken = "armormk5_broken"
+	internal_damage = 160
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
 /obj/item/robot_parts/robot_component/camera

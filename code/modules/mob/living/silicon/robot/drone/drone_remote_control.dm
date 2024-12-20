@@ -23,7 +23,7 @@
 /mob/living/silicon/robot/drone/proc/assume_control(var/mob/living/silicon/ai/user)
 	user.controlling_drone = src
 	controlling_ai = user
-	verbs += /mob/living/silicon/robot/drone/proc/release_ai_control_verb
+	add_verb(src, /mob/living/silicon/robot/drone/proc/release_ai_control_verb)
 	local_transmit = FALSE
 	languages = controlling_ai.languages.Copy()
 
@@ -105,7 +105,7 @@
 	silicon_radio = drone_silicon_radio
 	drone_silicon_radio = null
 
-	verbs -= /mob/living/silicon/robot/drone/proc/release_ai_control_verb
+	remove_verb(src, /mob/living/silicon/robot/drone/proc/release_ai_control_verb)
 	full_law_reset()
 	updatename()
 	death()

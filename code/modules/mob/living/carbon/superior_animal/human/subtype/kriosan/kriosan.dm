@@ -9,7 +9,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 12, bullet = 12, energy = 11, bomb = 50, bio = 100, rad = 100)
 
     //range/ammo stuff
 	ranged = 1
@@ -28,6 +28,7 @@
 
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	melee_sharp = TRUE //claws
 	breath_required_type = 0 // Doesn't need to breath for event atmosphere purposes.
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure for event atmosphere purposes.
@@ -53,7 +54,7 @@
 	icon_state = "kriosan_troop_riot"
 	icon_dead = "kriosan_troop_riot_dead"
 
-	armor = list(melee = 60, bullet = 70, energy = 50, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 15, bullet = 17, energy = 12, bomb = 40, bio = 100, rad = 100)
 
 	//range/ammo stuff
 	rapid = 1
@@ -77,7 +78,7 @@
 	icon_state = "kriosan_troop_chaingun"
 	icon_dead = "kriosan_troop_chaingun_dead"
 
-	armor = list(melee = 70, bullet = 55, energy = 40, bomb = 70, bio = 100, rad = 100)
+	armor = list(melee = 17, bullet = 13, energy = 10, bomb = 70, bio = 100, rad = 100)
 
 
 	rapid = 1

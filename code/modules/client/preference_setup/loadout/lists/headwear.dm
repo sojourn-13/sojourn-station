@@ -3,6 +3,7 @@
 	path = /obj/item/clothing/head/ushanka
 	slot = slot_head
 	sort_category = "Hats and Headwear"
+	cost = 0
 
 /datum/gear/head/bandana
 	display_name = "bandana head selection"
@@ -60,6 +61,10 @@
 	path = /obj/item/clothing/head/cowboy
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/headscarf
+	display_name = "headscarf"
+	path = /obj/item/clothing/head/headscarf
+
 /datum/gear/head/fedora
 	display_name = "fedora selection"
 	path = /obj/item/clothing/head/fedora
@@ -72,6 +77,7 @@
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
 	path = /obj/item/clothing/head/hardhat/
+	cost = 1
 
 /datum/gear/head/hardhat/New()
 	..()
@@ -104,13 +110,53 @@
 	display_name = "rice hat"
 	path = /obj/item/clothing/head/rice_hat
 
+/datum/gear/head/jingasa
+	display_name = "jingasa"
+	path = /obj/item/clothing/head/jingasa
+
+/datum/gear/head/headband
+	display_name = "headband, customized"
+	path = /obj/item/clothing/head/headband
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/head/strawhat
+	display_name = "strawhat selection"
+	path = /obj/item/clothing/head/headband
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/sunhat
+	display_name = "sunhat selection"
+	path = /obj/item/clothing/head/sunhat
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/tiara
+	display_name = "tiara, customized"
+	path = /obj/item/clothing/head/tiara
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/head/omni_hood
+	display_name = "religious hood"
+	path = /obj/item/clothing/head/religion_hood_color
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/head/kinhelm
+	display_name = "kin voidhelm"
+	path = /obj/item/clothing/head/voidhelm
+	cost = 1
+
+/datum/gear/head/headdress
+	display_name = "headdress, customized"
+	path = /obj/item/clothing/head/headdress
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/head/ranger
 	display_name = "ranger hat"
 	path = /obj/item/clothing/head/ranger
 
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker/rugby helmet"
-	path = /obj/item/clothing/head/armor/helmet/tanker
+	path = /obj/item/clothing/head/helmet/tanker
+	cost = 1
 
 /datum/gear/head/ribbon
 	display_name = "hair ribbon selection"

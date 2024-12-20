@@ -6,12 +6,12 @@
 	tree_x = 0.18
 	tree_y = 0.7
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list()
 	recommendations_needed = 1
 	inventory = list(
@@ -60,10 +60,10 @@
 	offer_types = list(
 		/obj/item/oddity/techno = offer_data("unknown technological part", 1600, 2),
 		/obj/item/tool/crowbar/onestar = offer_data("greyson crowbar", 1500, 3),
-		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 1500, 3),
+		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 2500, 3),  // Takes diamond to print
 		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1500, 3),
 		/obj/item/tool/screwdriver/combi_driver/onestar = offer_data("greyson combi driver", 2000, 3),
 		/obj/item/tool/weldingtool/onestar  = offer_data("greyson welding tool", 2000, 3),
-		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 5000, 1),
+		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 1500, 1),
 		/obj/item/organ/external/robotic/one_star = offer_data("greyson external prosthetic", 2700, 4)			// base price: 900
 	)

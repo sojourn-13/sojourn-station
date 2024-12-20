@@ -5,6 +5,7 @@
 SUBSYSTEM_DEF(economy)
 	name = "Economy"
 	init_order = INIT_ORDER_LATELOAD
+	runlevels =  RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
 	wait = 300 //Ticks once per 30 seconds
 	var/payday_interval = 1 HOURS

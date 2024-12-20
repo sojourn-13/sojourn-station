@@ -24,10 +24,6 @@
 	icon_state = "junk-red-low"
 	spawn_nothing_percentage = 70
 
-
-
-
-
 /obj/random/scrap/dense_weighted
 	name = "Random dense weighted trash"
 
@@ -49,10 +45,6 @@
 	icon_state = "junk-red-low"
 	spawn_nothing_percentage = 70
 
-
-
-
-
 /obj/random/scrap/sparse_even
 	name = "Random sparse even trash"
 
@@ -71,10 +63,6 @@
 	name = "low chance random trash"
 	icon_state = "junk-red-low"
 	spawn_nothing_percentage = 70
-
-
-
-
 
 /obj/random/scrap/sparse_weighted
 	name = "Random sparse weighted trash"
@@ -96,9 +84,6 @@
 	icon_state = "junk-red-low"
 	spawn_nothing_percentage = 70
 
-
-
-
 /obj/random/scrap/moderate_weighted
 	name = "Random moderate weighted trash"
 
@@ -113,9 +98,6 @@
 	icon_state = "junk-red-low"
 	spawn_nothing_percentage = 70
 
-
-
-
 /obj/random/scrap/beacon/sparse_weighted
 	name = "Random sparse weighted beacon trash"
 
@@ -129,7 +111,6 @@
 						/obj/structure/scrap/guns = 3
 					))
 
-
 /obj/random/scrap/beacon/moderate_weighted
 	name = "Random moderate weighted beacon trash"
 
@@ -138,7 +119,6 @@
 						/obj/random/scrap/beacon/sparse_weighted = 9,
 						/obj/random/scrap/beacon/dense_weighted = 1,
 					))
-
 
 /obj/random/scrap/beacon/dense_weighted
 	name = "Random dense weighted beacon trash"

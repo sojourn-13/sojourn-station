@@ -5,9 +5,10 @@
 	icon_state = "greyson_mech"
 	initial_icon = "greyson_mech"
 	step_in = 3
+	normal_step_energy_drain = 3
 	step_energy_drain = 3
 	dir_in = 1 //Facing North.
-	health = 1000
+	health = 1500
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
 	max_temperature = 60000
@@ -21,8 +22,8 @@
 	pixel_x = -16 // Make the mech centered
 	pixel_y = -16
 
-/obj/mecha/combat/greyson/New()
-	..()
+/obj/mecha/combat/greyson/Initialize()
+	. = ..()
 	name += " [rand(0, 9)][rand(0, 9)][rand(0, 9)][rand(0, 9)]" // Random numbers for the name
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon/loaded(src)
 	ME.attach(src)

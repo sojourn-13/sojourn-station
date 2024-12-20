@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
-	armor_penetration = 5
+	armor_divisor = 1
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	//Controller that spawns the termites
 	var/datum/termite_controller/controller
 
-	get_stat_modifier = TRUE
+	get_stat_modifier = FALSE
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
@@ -158,11 +158,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_MED
+	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = -1, energy = 3, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -184,11 +184,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_HIGH
+	melee_damage_lower = TERMITE_DMG_MED
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 8, bullet = 1, energy = 2, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -217,7 +217,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	melee_damage_upper = TERMITE_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 6, bullet = -1, energy = 2, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/uranium
@@ -239,11 +239,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_MED
+	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 30, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = -1, energy = 6, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
@@ -255,7 +255,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
-	armor_penetration = 35
+	armor_divisor = 1.5
+	get_stat_modifier =  TRUE
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -266,11 +267,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	turns_per_move = 5
 
 //Damage related variables
-	melee_damage_lower = TERMITE_DMG_HIGH
+	melee_damage_lower = TERMITE_DMG_MED
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 25, bullet = 40, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 6, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
@@ -285,7 +286,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
-	armor_penetration = 35
+	get_stat_modifier =  TRUE
+	armor_divisor = 1.5
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -302,7 +304,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	ranged = TRUE
 
 //Armor related variables
-	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 12, bullet = 0, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium

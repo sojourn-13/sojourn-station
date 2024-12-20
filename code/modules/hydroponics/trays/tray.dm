@@ -14,8 +14,10 @@
 	var/base_name = "tray"
 
 	// Plant maintenance vars.
-	var/waterlevel = 100       // Water (max 100)
-	var/nutrilevel = 10        // Nutrient (max 10)
+	var/waterlevel = 100       // Water
+	var/waterlevel_max = 100   // Water Cap
+	var/nutrilevel = 10        // Nutrient
+	var/nutrilevel_max = 10    // Nutrient Cap
 	var/pestlevel = 0          // Pests (max 10)
 	var/weedlevel = 0          // Weeds (max 10)
 
@@ -26,7 +28,8 @@
 	var/sampled = 0            // Have we taken a sample?
 
 	// Harvest/mutation mods.
-	var/yield_mod = 0          // Modifier to yield
+	var/yield_mod = 0          // Modifier to yield, post harvest
+	var/potency_mod = 0        // Modifier to potency, post harvest
 	var/mutation_mod = 0       // Modifier to mutation chance
 	var/toxins = 0             // Toxicity in the tray?
 	var/mutation_level = 0     // When it hits 100, the plant mutates.
@@ -220,10 +223,10 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
-				else
-					seed.set_trait(TRAIT_POTENCY, 100)
+				if((seed.get_trait(TRAIT_POTENCY) + potency_mod) < 100)
+					potency_mod = min(100, potency_mod + potency_reagents[R.id] * reagent_total)
+				//else  - If are plant is over 100 potency then adding a chemical that would *raise it* shouldnt lower it
+				//	seed.set_trait(TRAIT_POTENCY, 100)
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])
@@ -263,16 +266,31 @@
 		seed.harvest(user,yield_mod)
 	else
 */
+	var/post_moder_yield_mod = yield_mod
+
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		post_moder_yield_mod  *= 0.5
+
+	//Fast growing crops dont get hit by the first harvest being elder
+	if(age >= 70)
+		post_moder_yield_mod -= (age * 0.005)
+	if(age >= 120 && user) //Losing yield slowly now
+		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+	post_moder_yield_mod = round(post_moder_yield_mod)
+	yield_mod = post_moder_yield_mod
+//	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
+
 	if(user)
-		seed.harvest(user,yield_mod)
+		seed.harvest(user,yield_mod,potency_mod)
 	else
-		seed.selfharvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod,potency_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
 
 	if(!seed.get_trait(TRAIT_HARVEST_REPEAT))
 		yield_mod = 0
+		potency_mod = 0
 		seed = null
 		dead = 0
 		age = 0
@@ -295,6 +313,7 @@
 	sampled = 0
 	age = 0
 	yield_mod = 0
+	potency_mod = 0
 	mutation_mod = 0
 
 	to_chat(user, "You remove the dead plant.")
@@ -307,7 +326,7 @@
 
 	//Remove the seed if something is already planted.
 	if(seed) seed = null
-	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","mushrooms","plumphelmet","towercap","harebells","weeds"))]
+	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","chanterelle","plumphelmet","towercap","harebells","weeds"))]
 	if(!seed) return //Weed does not exist, someone fucked up.
 
 	dead = 0
@@ -398,8 +417,8 @@
 		dead = 0
 
 	mutation_level = max(0,min(mutation_level,100))
-	nutrilevel =     max(0,min(nutrilevel,10))
-	waterlevel =     max(0,min(waterlevel,100))
+	nutrilevel =     max(0,min(nutrilevel,nutrilevel_max))
+	waterlevel =     max(0,min(waterlevel,waterlevel_max))
 	pestlevel =      max(0,min(pestlevel,10))
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
@@ -449,9 +468,6 @@
 
 	return
 
-
-
-
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING, QUALITY_PULSING), src)
@@ -484,7 +500,7 @@
 				to_chat(user, SPAN_NOTICE("You have already sampled from this plant."))
 				if(user.a_intent == I_HURT)
 					to_chat(user, SPAN_NOTICE("You start killing it for one last sample."))
-					seed.harvest(user,yield_mod,1)
+					seed.harvest(user,yield_mod,potency_mod,1)
 					dead = 1
 					update_icon()
 				return
@@ -493,9 +509,9 @@
 				to_chat(user, SPAN_WARNING("The plant is dead."))
 				return
 
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
-				seed.harvest(user,yield_mod,1)
+				seed.harvest(user,yield_mod, potency_mod,1)
 				health -= (rand(3,5)*10)
 				sampled += 1 //no RnG not anymore
 
@@ -624,15 +640,46 @@
 		qdel(I)
 		check_health()
 
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_water))
+		var/obj/item/hydro_tray_plant_bag_water/htpbw = I
+		user.remove_from_mob(htpbw)
+		waterlevel_max += htpbw.max_water_give
+
+		to_chat(user, "You add [htpbw] to [src].")
+		qdel(htpbw)
+		check_health()
+
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_nutrient))
+		var/obj/item/hydro_tray_plant_bag_nutrient/htpbn = I
+		user.remove_from_mob(htpbn)
+		nutrilevel_max += htpbn.max_nutrient_give
+
+		to_chat(user, "You add [htpbn] to [src].")
+		qdel(htpbn)
+		check_health()
+
 	else if(I.force && seed)
+		if(user.a_intent == I_HURT)
+			if(!dead)
+				health = -100 //So even if we have bees around or other healing chems inside we still die
+				user.visible_message(SPAN_DANGER("\The [seed.display_name] has been hacked, and uprooted by [user] with \the [I]!"))
+				check_health()
+				harvest(user)
+				return
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been whacked by [user] with \the [I]!"))
 		if(!dead)
 			health -= I.force
 			check_health()
 	return
 
 /obj/machinery/portable_atmospherics/hydroponics/attack_tk(mob/user as mob)
+	if(blue_ink_tk_blocker)
+		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
+		return
+
+	//if forwhatever reason we allow teleportation trays
+
 	if(dead)
 		remove_dead(user)
 	else if(harvest)
@@ -655,6 +702,8 @@
 
 	if(!seed)
 		to_chat(usr, "[src] is empty.")
+		to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+		to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 		return
 
 	to_chat(usr, SPAN_NOTICE("[seed.display_name] are growing here."))
@@ -662,8 +711,8 @@
 	if(!Adjacent(usr))
 		return
 
-	to_chat(usr, "Water: [round(waterlevel,0.1)]/100")
-	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/10")
+	to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 
 	if(weedlevel >= 5)
 		to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")

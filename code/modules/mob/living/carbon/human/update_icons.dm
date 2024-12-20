@@ -137,7 +137,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define L_HAND_LAYER			29
 #define R_HAND_LAYER			30
 #define FIRE_LAYER				31		//If you're on fire
-#define TOTAL_LAYERS			31
+#define BLOCKING_LAYER		    32
+#define TOTAL_LAYERS			32
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -166,8 +167,6 @@ Please contact me on #coderbus IRC. ~Carn x
 )
 	else
 		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
-
-	COMPILE_OVERLAYS(src)
 
 	. = ..()
 
@@ -259,6 +258,19 @@ var/global/list/wings_icon_cache = list()
 	if(stand_icon)
 		qdel(stand_icon)
 
+	//EQUINOX EDIT START - Copies bodymarkings to relevant limbs. Placed here rather than copy_to during new character creation as losing a limb then regrowing it would make you permanently lose the markings on it.
+	for(var/N in organs_by_name)
+		var/obj/item/organ/external/O = organs_by_name[N]
+		O.markings.Cut()
+	for(var/M in body_markings)
+		var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_list[M]
+		var/mark_color = "[body_markings[M]]"
+		for(var/BP in mark_datum.body_parts)
+			var/obj/item/organ/external/O = organs_by_name[BP]
+			if(O)
+				O.markings[M] = list("color" = mark_color, "datum" = mark_datum)
+	//EQUINOX EDIT END
+
 	if(!appearance_test.build_body)
 		stand_icon = new('icons/mob/human.dmi', "human_[(gender == MALE) ? "m" : "f"]")
 		appearance_test.Log("Sprite generation is disabled.")
@@ -337,7 +349,7 @@ var/global/list/wings_icon_cache = list()
 		stand_icon.Blend(base_icon,ICON_OVERLAY)
 
 	//ears, wings and tail
-	update_marking(0)
+	//update_marking(0)	Equinox edit - Switching body markings to per-limb system
 	update_ears(0)
 	update_tail(0)
 	update_wings(0)
@@ -390,6 +402,9 @@ var/global/list/wings_icon_cache = list()
 				facial_s.Blend(facial_color, ICON_ADD)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
+
 
 	if(h_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
 		var/icon/grad_s = null
@@ -406,8 +421,11 @@ var/global/list/wings_icon_cache = list()
 					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
 
 	overlays_standing[HAIR_LAYER]	= image(face_standing)
+
 
 	if(update_icons)   update_icons()
 
@@ -488,6 +506,7 @@ var/global/list/wings_icon_cache = list()
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
 				valid_body_parts += part
+			CHECK_TICK
 		var/icon/specific_marking_icon
 		var/cache_key = "[markname]-[valid_body_parts.Join("_")]"
 		var/advanced_cache_key = "B*[cache_key]*[body_markings[markname]]*[real_marking.blend]" //The *B is there to prevent collisions.
@@ -510,6 +529,7 @@ var/global/list/wings_icon_cache = list()
 			marking_icon.Blend(specific_marking_icon, ICON_OVERLAY)
 		else //WARNING: THIS WILL BREAK IF WE EVER USE INCONSISTENT MARKING SIZES
 			marking_icon = specific_marking_icon
+		CHECK_TICK
 	return image(marking_icon)
 
 //Insert Furry Bits
@@ -522,8 +542,11 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
+
 	var/image/ears_image = get_ears_image()
 	if(ears_image)
+		var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
+		ears_image.alpha = head?.nonsolid ? 180 : 255
 		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
 		if(update_icons) update_icons()
 
@@ -558,10 +581,12 @@ var/global/list/wings_icon_cache = list()
 		return
 	*/
 	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
 	var/image/tail_image = get_tail_image()
 	if(tail_image)
 		overlays_standing[active_tail_layer] = tail_image
+		tail_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 /*	var/species_tail = species.get_tail(src) // Species tail icon_state prefix.
@@ -601,9 +626,12 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
+
 	var/image/wings_image = get_wings_image()
 	if(wings_image)
 		overlays_standing[CUSTOM_WINGS_LAYER] = wings_image
+		wings_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 mob/living/carbon/human/proc/get_wings_image()
@@ -1362,6 +1390,13 @@ mob/living/carbon/human/proc/get_wings_image()
 		overlays_standing[FIRE_LAYER] = image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing", "layer"=FIRE_LAYER)
 
 	if(update_icons)   update_icons()
+
+/mob/living/carbon/human/proc/update_block_overlay(var/update_icons=1)
+	overlays_standing[BLOCKING_LAYER] = null
+	if(blocking)
+		overlays_standing[BLOCKING_LAYER] = image("icon"='icons/mob/misc_overlays.dmi', "icon_state"="block", "layer"=BLOCKING_LAYER)
+
+	update_icons()
 
 /mob/living/carbon/human/proc/update_surgery(var/update_icons=1)
 	overlays_standing[SURGERY_LAYER] = null

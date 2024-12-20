@@ -16,6 +16,15 @@
 	recommendation_threshold = 300
 	stations_recommended = list("mcronalds", "botany") //Alt way to get to it
 	inventory = list(
+		"Office Supplies" = list(
+			/obj/item/pen = good_data("Pen", list(5, 20), 25),
+			/obj/item/pen/multi = good_data("Multi Color", list(5, 20), 75),
+			/obj/item/paper_bin = good_data("Paper Bin", list(5, 20), 100),
+			/obj/item/device/lighting/toggleable/lamp = good_data("Desk Lamp", list(5, 20), 100),
+			/obj/item/storage/briefcase = good_data("Briefcase", list(5, 20), 500), //Rather pricy, but it's to dissuade using them for storage reasons. It's a FASHION statement, sweaty! -Wilson
+			/obj/item/storage/secure/briefcase = good_data("Secure Briefcase", list(5, 20), 550),
+			/obj/item/toy/desk/dippingbird/branded = good_data("Spector Dipping Bird Model", list(5, 20), 75)
+		),
 		"Non-Meals" = list(
 			/obj/item/reagent_containers/food/snacks/rawcutlet = good_data("Raw Cutlet", list(-100, -50), 5),
 			/obj/item/reagent_containers/food/snacks/cutlet = good_data("Cooked Cutlet", list(-100, -50), 7),
@@ -169,7 +178,7 @@
 			/obj/item/reagent_containers/food/snacks/jellyburger/slime = good_data("Slime Jelly Burger", list(-100, -50), 130),
 			/obj/item/reagent_containers/food/snacks/jellyburger/cherry = good_data("Cherry Jelly Burger", list(-100, -50), 120)
 		),
-		"Speghetti" = list(
+		"Spaghetti" = list(
 			/obj/item/reagent_containers/food/snacks/boiledspagetti= good_data("Boiled Noodles", list(-100, -50), 20),
 			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Raw Speghetti", list(-100, -50), 23),
 			/obj/item/reagent_containers/food/snacks/pastatomato = good_data("Spaghetti Pasta", list(-100, -50), 30),
@@ -236,7 +245,7 @@
 			/obj/item/reagent_containers/food/snacks/donut = good_data("Donut", list(-100, -50), 100),
 			/obj/item/reagent_containers/food/snacks/donut/jelly = good_data("Jelly Donut", list(-100, -50), 120),
 			/obj/item/reagent_containers/food/snacks/donut/slimejelly = good_data("Slime Jelly Donut", list(-100, -50), 130),
-			/obj/item/reagent_containers/food/snacks/donut/chaos= good_data("Choas Donut", list(-100, -50), 400),
+			/obj/item/reagent_containers/food/snacks/donut/chaos= good_data("Chaos Donut", list(-100, -50), 400),
 			/obj/item/reagent_containers/food/snacks/donut/cherryjelly = good_data("Cherry Jelly Donut", list(-100, -50), 120),
 			/obj/item/reagent_containers/food/snacks/donut/stat_buff = good_data("Masterpiece Donut", list(-100, -50), 100),
 			/obj/item/reagent_containers/food/snacks/xemeatpie = good_data("Xeno Pie", list(-100, -50), 150)

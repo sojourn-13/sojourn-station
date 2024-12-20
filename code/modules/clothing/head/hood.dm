@@ -20,7 +20,7 @@
 
 /obj/item/clothing/head/hood/winter/security
 	name = "security winter hood"
-	armor_list = list(melee = 25, bullet = 20, energy = 15, bomb = 20, bio = 0, rad = 0)
+	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/medical
 	name = "medical winter hood"
@@ -55,7 +55,7 @@
 	flags = THICKMATERIAL
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.9
-	armor_list = list(melee = 20, bullet = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 35, bio = 75, rad = 35)
 
 // Costumes
 /obj/item/clothing/head/hood/carp_hood

@@ -7,15 +7,24 @@
 	var/next_beep_at = 0
 	var/locked = 0
 	var/minimal_holiness = CLEARANCE_COMMON // Compared with security_clearance on cruciform
+	var/allow_rosary = FALSE
 	var/open_sound_powered = 'sound/machines/airlock_open.ogg'
 	var/open_sound_unpowered = 'sound/machines/airlock_creaking.ogg'
 	var/obj/item/wedged_item
+
 
 /obj/machinery/door/holy/preacher
 	name = "church portcullis"
 	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one requires higher ranking in the church to open."
 	icon = 'icons/obj/doors/Door_holy_preacher.dmi'
 	minimal_holiness = CLEARANCE_CLERGY
+
+/obj/machinery/door/holy/public
+	name = "church public door"
+	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one will open to anyone with an active cruciform or fractals."
+	icon = 'icons/obj/doors/Door_holy_public.dmi'
+	minimal_holiness = CLEARANCE_NONE
+	allow_rosary = TRUE
 
 /obj/item/clothing/accessory/cross // It belongs here
 	name = "tau cross necklace"
@@ -28,7 +37,7 @@
 
 /obj/item/clothing/accessory/magatama
 	name = "magatama necklace"
-	desc = "A large jade stone with a hole in it, showing some signs of wear. Church legends say it was the personal possession of the first matyred Monomial, and alledge that its touch can calm even the most disquieted soul."
+	desc = "A large jade stone with a hole in it, showing some signs of wear. Church legends say it was the personal possession of the first matyred Monomial, and claim that its touch can calm even the most disquieted soul."
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "magatama"
 	item_state = "magatama"
@@ -76,6 +85,21 @@
 					break
 			if(bingo)
 				return TRUE
+
+		if(allow_rosary)
+			if(istype(H.get_active_hand(), /obj/item/clothing/accessory/necklace/fractalrosary))
+				return TRUE
+
+			if(istype(H.wear_mask, /obj/item/clothing/accessory/necklace/fractalrosary))
+				return TRUE
+
+			if(istype(C))
+				for(var/obj/item/I in C.accessories)
+					if(istype(I, /obj/item/clothing/accessory/necklace/fractalrosary))
+						bingo = TRUE
+						break
+				if(bingo)
+					return TRUE
 
 	return FALSE
 
@@ -277,7 +301,7 @@
 		for(var/atom/movable/AM in turf)
 			if(AM.blocks_airlock())
 				if(tryingToLock)
-					addtimer(CALLBACK(src, .proc/close), 30 SECONDS)
+					addtimer(CALLBACK(src, PROC_REF(close)), 30 SECONDS)
 				if(world.time > next_beep_at)
 					playsound(loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
 					next_beep_at = world.time + SecondsToTicks(10)

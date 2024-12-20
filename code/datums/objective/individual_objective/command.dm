@@ -24,7 +24,7 @@
 	desc = "There is a mark made on your old star chart. You do not remember why you did it but your curiosity wont let you sleep.  \
 			Move [linked] to coordinates [x], [y] for [unit2time(units_requested)]."
 	timer = world.time
-	RegisterSignal(linked, COMSIG_SHIP_STILL, .proc/task_completed)
+	RegisterSignal(linked, COMSIG_SHIP_STILL, PROC_REF(task_completed))
 
 /datum/individual_objective/beyond/task_completed(nx, ny, is_still)
 	if(!is_still || x != nx || y != ny)
@@ -43,7 +43,7 @@
 */
 
 /datum/individual_objective/bluecross
-	name = "Mantal Pice"
+	name = "Mental Piece"
 	req_department = list(DEPARTMENT_COMMAND)
 	var/obj/item/target
 
@@ -54,5 +54,5 @@
 /datum/individual_objective/bluecross/assign()
 	..()
 	target = pick_bluecross_candidates()
-	desc = "Sometimes having a tricket is just nice. Acquire a [target.name] if possable..."
-	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)
+	desc = "Sometimes having a trinket is just nice. Acquire a [target.name] if possable..."
+	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, PROC_REF(task_completed))

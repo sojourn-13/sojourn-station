@@ -5,19 +5,19 @@
 	tree_y = 0.6
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = RARE_GOODS
 	base_income = 800
 	wealth = 0
 	recommendations_needed = 1
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3500
 	regain_stock = FALSE
 	name_pool = list("Dayinji" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
 	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
 	inventory = list(
 		"Sheji pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(30, 50), 900),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(30, 50), 1200)
+			/obj/item/clothing/suit/space/void/greyson = good_data("GP 'Zhengdou' hardsuit", list(5, 5), 25000),
+			/obj/item/tank/onestar_regenerator = good_data("OS Type - 13 'Tiantipenquan'", list(5,10), 2000)
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),

@@ -1,7 +1,7 @@
 /obj/item/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
-	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
-	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	desc = "This conversion of the \"Texan\" enables it to shoot lasers. Unlike other laser weapons, here the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy and the chain-reaction only allows burst fire. A viable choice for those who have a lot of cells and too few bullets. \
 	Sometimes jokingly called the \"Disco Vazer\"."
 	icon = 'icons/obj/guns/energy/lasersmg-1.dmi'
 	icon_state = "lasersmg"
@@ -33,8 +33,8 @@
 /*
 /obj/item/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""
-	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
-	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	desc = "This conversion of the \"MAC\" enables it to shoot lasers. Unlike other laser weapons, here the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy, and the chain-reaction only allows burst fire. A viable choice for those who have a lot of cells and too few bullets \
 	Sometimes jokingly called the \"Disco Vazer\"."
 */
 
@@ -55,17 +55,17 @@
 
 
 /obj/item/gun/energy/lasersmg/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	..()
 	if(istype(cell, /obj/item/cell/medium/moebius/nuclear))
-		overlays += image(icon, "nuke_cell")
+		add_overlay(image(icon, "nuke_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/moebius))
-		overlays += image(icon, "moeb_cell")
+		add_overlay(image(icon, "moeb_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium/excelsior))
-		overlays += image(icon, "excel_cell")
+		add_overlay(image(icon, "excel_cell"))
 
 	else if(istype(cell, /obj/item/cell/medium))
-		overlays += image(icon, "guild_cell")
+		add_overlay(image(icon, "guild_cell"))
 

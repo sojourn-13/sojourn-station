@@ -114,7 +114,7 @@ var/list/mob_hat_cache = list()
 	//Stats must be initialised before creating the module
 	if(!module) module = new module_type(src)
 
-	verbs += /mob/living/proc/hide
+	add_verb(src, /mob/living/proc/hide)
 	remove_language(LANGUAGE_ROBOT)
 	add_language(LANGUAGE_ROBOT, 0)
 	add_language(LANGUAGE_DRONE, 1)
@@ -131,7 +131,7 @@ var/list/mob_hat_cache = list()
 		var/datum/robot_component/C = components[V]
 		C.max_damage = 10
 
-	verbs -= /mob/living/silicon/robot/verb/Namepick
+	remove_verb(src, /mob/living/silicon/robot/verb/Namepick)
 	//choose_overlay()
 	updateicon()
 
@@ -166,15 +166,15 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/updateicon()
 
-	overlays.Cut()
+	cut_overlays()
 	if(stat == CONSCIOUS && eyecolor)
-		overlays += "eyes-drone[eyecolor]"
+		add_overlay("eyes-drone[eyecolor]")
 
 	if(armguard)
-		overlays += "model-[armguard]"
+		add_overlay("model-[armguard]")
 
 	if(hat) // Let the drones wear hats.
-		overlays |= get_hat_icon(hat, hat_x_offset, hat_y_offset)
+		add_overlay(get_hat_icon(hat, hat_x_offset, hat_y_offset))
 
 /mob/living/silicon/robot/drone/choose_icon()
 	return
@@ -374,6 +374,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/construction/welcome_drone()
 	to_chat(src, "<b>You are a construction drone, an autonomous engineering and fabrication system.</b>.")
 	to_chat(src, "You are assigned to a Sol Central construction project. The name is irrelevant. Your task is to complete construction and subsystem integration as soon as possible.")
+	to_chat(src, "You generally should not leave the construction site unless absolutely required for the completion of the Sol Central construction project.")
 	to_chat(src, "Use <b>:d</b> to talk to other drones and <b>say</b> to speak silently to your nearby fellows.")
 	to_chat(src, "<b>You do not follow orders from anyone; not the AI, not humans, and not other synthetics.</b>.")
 
@@ -386,9 +387,9 @@ var/list/mob_hat_cache = list()
 	name = real_name
 
 /mob/living/silicon/robot/drone/construction/updateicon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat == CONSCIOUS)
-		overlays += "eyes-[module_sprites[icontype]]"
+		add_overlay("eyes-[module_sprites[icontype]]")
 
 /proc/too_many_active_drones()
 	var/drones = 0
@@ -434,5 +435,5 @@ var/list/mob_hat_cache = list()
 		armguard = ""
 		return
 
-	verbs -= /mob/living/silicon/robot/drone/verb/choose_armguard
+	remove_verb(src, /mob/living/silicon/robot/drone/verb/choose_armguard)
 	to_chat(src, "Your armguard has been set.")

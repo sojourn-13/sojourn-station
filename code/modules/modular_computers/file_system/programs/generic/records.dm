@@ -4,6 +4,7 @@
 	extended_desc = "This program allows access to the crew's various records."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "notes-medical"
 	size = 14
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
@@ -67,6 +68,8 @@
 	if(!F.verify_access_edit(get_record_access(user)))
 		to_chat(user, "<span class='notice'>\The [nano_host()] flashes an \"Access Denied\" warning.</span>")
 		return
+	if(user.ckey)
+		log_and_message_admins("Records Edit: Editor = \"[user.real_name]\" Ckey \"[user.ckey]\" Record holder Name: \"[R.get_name()]\"", location = user.loc)
 	F.ask_value(user)
 
 /datum/nano_module/records/Topic(href, href_list)

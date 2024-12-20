@@ -30,14 +30,13 @@
 	path = /obj/item/clothing/under/cheongsam
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/ashigaru
+	display_name = "ashigaru"
+	path = /obj/item/clothing/under/ashigaru
+
 /datum/gear/uniform/dress
 	display_name = "dress selection"
-	path = /obj/item/clothing/under/plaid
-	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/uniform/casualdress
-	display_name = "casual dress selection"
-	path = /obj/item/clothing/under/dress/casual
+	path = /obj/item/clothing/under/dress/
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/gorkajumpsuit
@@ -100,6 +99,10 @@
 	display_name = "sexy maid dress"
 	path = /obj/item/clothing/under/sexymaid
 
+/datum/gear/uniform/proper_maid
+	display_name = "proper maid dress"
+	path = /obj/item/clothing/under/costume/propermaid
+
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
 	path = /obj/item/clothing/under/modular
@@ -135,6 +138,11 @@
 	path = /obj/item/clothing/under/swimsuit
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/swimsuitrisque
+	display_name = "daring swimsuit"
+	path = /obj/item/clothing/under/swimsuit_c
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/uniform/texansuit
 	display_name = "ivory texan suit"
 	path = /obj/item/clothing/under/top/dimmadome
@@ -148,7 +156,7 @@
     display_name = "leisure suits"
     path = /obj/item/clothing/under/leisure
 
-/datum/gear/uniform/leisure/New()
+/datum/gear/uniform/leisure/New() //Don't do this. Use GEAR_HAS_TYPE_SELECTION unless the items you want selectable don't share the same valid parent.
 	..()
 	var/leisure = list(
 		"Brown Jacket"			=	/obj/item/clothing/under/leisure,
@@ -161,7 +169,7 @@
     display_name = "stylish suits"
     path = /obj/item/clothing/under/white
 
-/datum/gear/uniform/stylish_suits/New()
+/datum/gear/uniform/stylish_suits/New() //Like so.
 	..()
 	var/stylish = list(
 		"Ivory Suit"				=	/obj/item/clothing/under/white,
@@ -171,21 +179,6 @@
 		"Charcoal Suit"				=	/obj/item/clothing/under/black,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(stylish)
-
-/datum/gear/uniform/dress
-    display_name = "dresses"
-    path = /obj/item/clothing/under/dress
-
-/datum/gear/uniform/dress/New()
-	..()
-	var/dress = list(
-		"Gray Dress"			=	/obj/item/clothing/under/dress,
-		"Blue Dress"			=	/obj/item/clothing/under/dress/blue,
-		"Red Dress"				=	/obj/item/clothing/under/dress/red,
-		"White Dress" 			=	/obj/item/clothing/under/dress/white,
-		"Black Dress" 			=	/obj/item/clothing/under/dress/black
-	)
-	gear_tweaks += new /datum/gear_tweak/path(dress)
 
 /datum/gear/uniform/cyber
 	display_name = "augmented jumpsuit"

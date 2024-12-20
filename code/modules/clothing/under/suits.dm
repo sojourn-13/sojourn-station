@@ -224,6 +224,12 @@
 
 /*Modular Suits*/
 
+/obj/item/clothing/under/modular
+	name = "suit"
+	desc = "You probably should not be seeing this."
+	icon_state = "blacksuitbuttoned"
+	item_state = "blacksuitbuttoned"
+
 /obj/item/clothing/under/modular/black
 	name = "black suit"
 	desc = "A pair of black suit leggings complemented by a buttoned white shirt."
@@ -446,3 +452,8 @@
 	icon_state = "hakama_bb"
 	item_state = "hakama_bb"
 
+/obj/item/clothing/under/modular/skylight_uniform
+	name = "starlight suit"
+	desc = "A neatly pressed fancy white shirt and sky blue tie with charcoal black pants. Common clothing worn by those of now known as Skylight Services, once a group with malicious dealings and business practices, now partially reformed under new management of Lonestar."
+	icon_state = "skylight_uniform"
+	item_state = "skylight_uniform"

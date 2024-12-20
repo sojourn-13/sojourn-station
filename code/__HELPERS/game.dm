@@ -576,16 +576,45 @@
 	if (L.len)
 		return pick(L)
 
-//Tells everyone thats living and is a SSmobs to wake up their AI when aplicable
-/proc/activate_mobs_in_range(atom/caller , distance)
+//Tells everyone thats living to awaken, if in range.
+//If you run this proc a lot use care_about_sightline = TRUE as an optimization
+/proc/activate_mobs_in_range(atom/caller , distance, care_about_sightline = TRUE)
 	var/turf/starting_point = get_turf(caller)
 	if(!starting_point)
 		return FALSE
-	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
-		if(potential_attacker == caller)
+	if(!care_about_sightline)
+		for(var/mob/living/potential_attacker in orange(distance, starting_point))
+			if(potential_attacker == caller)
+				continue
+			if(potential_attacker.stat == DEAD)
+				continue
+			potential_attacker.try_activate_ai()
+	else
+		for(var/mob/living/potential_attacker in ohearers(distance, starting_point))
+			if(potential_attacker == caller)
+				continue
+			if(potential_attacker.stat == DEAD)
+				continue
+			potential_attacker.try_activate_ai()
+
+///Get active players who are playing in the round
+/proc/get_active_player_count(alive_check = FALSE, afk_check = FALSE, human_check = FALSE)
+	var/active_players = 0
+	for(var/i = 1; i <= GLOB.player_list.len; i++)
+		var/mob/player_mob = GLOB.player_list[i]
+		if(!player_mob?.client)
 			continue
-		if(potential_attacker.stat == DEAD)
+		if(alive_check && player_mob.stat)
 			continue
-		if(!(get_dist(starting_point, potential_attacker) <= distance))
+		else if(afk_check && player_mob.client.is_afk())
 			continue
-		potential_attacker.try_activate_ai()
+		else if(human_check && !ishuman(player_mob))
+			continue
+		else if(isnewplayer(player_mob)) // exclude people in the lobby
+			continue
+		else if(isobserver(player_mob)) // Ghosts are fine if they were playing once (didn't start as observers)
+			var/mob/observer/ghost/ghost_player = player_mob
+			if(ghost_player.started_as_observer) // Exclude people who started as observers
+				continue
+		active_players++
+	return active_players

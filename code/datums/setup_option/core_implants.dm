@@ -3,20 +3,15 @@
 	desc = "The implant given to every disciple of the Absolute. This one is a standard Vinculum design, having the base-line of a normal cruciform."
 	implant_type = /obj/item/implant/core_implant/cruciform
 	restricted_jobs = list(
-		/datum/job/merchant,
-		/datum/job/swo,
-		/datum/job/foreman,
 		/datum/job/rd,
 		/datum/job/cmo,
-		/datum/job/chief_engineer,
-		/datum/job/smc,
 		/datum/job/outsider,
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
 		)
 	allowed_depts = CHURCH
 	allow_modifications = TRUE
-	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR, FORM_CHURCHSYNTH)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR, FORM_CHURCHSYNTH, FORM_UNBRANDED, FORM_FBP)
 
 /datum/category_item/setup_option/core_implant/psionic_tumor
 	name = "Psionic Organ"
@@ -24,7 +19,8 @@
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body."
 	implant_organ_type = "psionic tumor"
 	restricted_jobs = list(
-		/datum/job/outsider //Psions are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
@@ -38,6 +34,7 @@
 	restricted_jobs = list(
 		/datum/job/doctor,
 		/datum/job/recovery_team,
+		/datum/job/medstudent,
 		/datum/job/premier,
 		/datum/job/pg,
 		/datum/job/chaplain,
@@ -50,7 +47,7 @@
 		/datum/job/ai
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
-	restricted_depts = SECURITY | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /datum/category_item/setup_option/core_implant/nanogate
@@ -58,7 +55,8 @@
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
 	implant_organ_type = "nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
@@ -83,7 +81,7 @@
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
-	restricted_depts = SECURITY | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
 
 /datum/category_item/setup_option/core_implant/opifex_nanogate
 	name = "Opifex Nanogate"
@@ -91,7 +89,6 @@
 	particular design is an opifex original and one of the best that can be found in the galaxy."
 	implant_organ_type = "opifex nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider, // Nanogates are only available to colonist or allies.
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
 		)

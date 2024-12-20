@@ -1,10 +1,9 @@
 /obj/item/projectile/bullet/batonround
 	name = "baton round"
 	icon_state = "grenade"
-	damage_types = list(BRUTE = 20)
-	agony = 100
+	damage_types = list(BRUTE = 20, HALLOSS = 100)
 	check_armour = ARMOR_MELEE
-	armor_penetration = 10
+	armor_divisor = 1
 	embed = TRUE			//literally imagine being hit by this.
 	can_ricochet = TRUE		//It's rubber
 	sharp = FALSE
@@ -14,7 +13,7 @@
 	name = "grenade shell"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
-	armor_penetration = 0
+	armor_divisor = 1
 	embed = TRUE
 	sharp = FALSE
 	check_armour = ARMOR_BULLET
@@ -109,7 +108,7 @@
 		for(var/mob/living/carbon/M in hear(7, get_turf(src)))
 			flashbang_bang(get_turf(src), M)
 
-		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+		for(var/obj/effect/blob/B in hear(8,get_turf(src)))	   		//Blob damage here
 			var/damage = round(30/(get_dist(B,get_turf(src))+1))
 			B.take_damage(damage)
 			B.update_icon()

@@ -171,7 +171,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 						H.UpdateDamageIcon()
 					H.reagents.add_reagent("toxin", pick(prob(50);0,prob(50);5,prob(10);10,prob(1);25))
 					H.updatehealth()
-					if(!(H.species.flags & NO_PAIN))
+					if(!((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations)))
 						H.Weaken(3)
 					return
 				check -= picked
@@ -242,7 +242,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		var/mob/living/carbon/human/victim = user
 		if(victim.species.flags & NO_MINOR_CUT)
 			return FALSE
-		if(victim.gloves && prob(95))
+		if(victim.gloves)
 			return FALSE
 		var/obj/item/organ/external/BP = victim.get_organ(victim.hand ? BP_L_ARM : BP_R_ARM)
 		if(!BP)
@@ -250,9 +250,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		if(BP_IS_ROBOTIC(BP))
 			return FALSE
 		to_chat(user, "<span class='danger'>Ouch! You cut yourself while picking through \the [src].</span>")
-		BP.take_damage(5, null, TRUE, TRUE, "Sharp debris")
+		BP.take_damage(5, BRUTE, TRUE, TRUE, "Sharp debris")
 		victim.reagents.add_reagent("toxin", pick(prob(50);0,prob(50);5,prob(10);10,prob(1);25))
-		if(victim.species.flags & NO_PAIN) // So we still take damage, but actually dig through.
+		if((victim.species.flags & NO_PAIN) || (PAIN_LESS in victim.mutations)) // So we still take damage, but actually dig through.
 			return FALSE
 		return TRUE
 	return FALSE
@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	playsound(src, "rummage", 50, 1)
 	.=..()
 
-/obj/structure/scrap/attack_generic(mob/user)
+/obj/structure/scrap/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if (isliving(user) && loot)
 		loot.open(user)
 	.=..()
@@ -305,30 +305,31 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		O = new O(get_turf(src))
 		visible_message("<span class='notice'><span style='color:orange'>\A rare [O.name] is found beneath the [src]!</span>")
 	else if(rare_item && prob(50))
-		new /obj/item/stack/sheet/refined_scrap/random(src.loc)
+		new /obj/item/stack/material/refined_scrap/random(src.loc)
 		visible_message("<span class='notice'><span style='color:orange'>A pile of refined scrap is found beneath the [src]!</span>")
 	qdel(src)
 
 /obj/structure/scrap/attackby(obj/item/W, mob/living/carbon/human/user)
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
-	var/tool_type = W.get_tool_type(user, usable_qualities, src)
-	switch(tool_type)
-		if(QUALITY_SHOVELING)
-			if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
-				user.do_attack_animation(src)
-				if(user.stats.getPerk(PERK_JUNKBORN))
-					rare_item = TRUE
-				else
-					rare_item = FALSE
-				dig_out_lump(user.loc, 0)
-				shuffle_loot()
-				clear_if_empty()
-		if(QUALITY_HAMMERING)
-			if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
-				user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
-				make_cube()
+	if(user.a_intent != I_HURT)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+		var/list/usable_qualities = list(QUALITY_SHOVELING, QUALITY_HAMMERING)
+		var/tool_type = W.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+			if(QUALITY_SHOVELING)
+				if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
+					user.do_attack_animation(src)
+					if(user.stats.getPerk(PERK_JUNKBORN))
+						rare_item = TRUE
+					else
+						rare_item = FALSE
+					dig_out_lump(user.loc, 0)
+					shuffle_loot()
+					clear_if_empty()
+			if(QUALITY_HAMMERING)
+				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
+					user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
+					make_cube()
 
 /obj/structure/scrap/large
 	name = "large scrap pile"
@@ -354,7 +355,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/pack/prosthesis/low_chance = 0.05
 	)
 
 /obj/structure/scrap/vehicle
@@ -373,7 +375,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material_ore,
 		/obj/random/pack/rare = 0.3,
 		/obj/random/tool_upgrade = 1,
-		/obj/random/mecha_equipment = 2
+		/obj/random/mecha_equipment = 2,
+		/obj/random/pack/prosthesis/low_chance = 0.05
 	)
 
 /obj/structure/scrap/food
@@ -383,8 +386,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	parts_icon = 'icons/obj/structures/scrap/food_trash.dmi'
 	loot_list = list(
 		/obj/random/junkfood = 5,
-		/obj/random/junkfood,
 		/obj/random/booze,
+		/obj/random/soft_drink,
+		/obj/random/drinking_glasses = 0.5,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
@@ -395,19 +399,20 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "armaments refuse pile"
 	desc = "A pile of military supply refuse. Who thought it was a clever idea to throw that out?"
 	parts_icon = 'icons/obj/structures/scrap/guns_trash.dmi'
-	loot_min = 7
-	loot_max = 10
+	loot_min = 9
+	loot_max = 13
 	loot_list = list(
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/material/shard,
-		/obj/item/stack/material/steel/random,
+		/obj/item/material/shard = 0.2,
+		/obj/item/stack/material/steel/random = 0.4,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3,
-		/obj/random/gun_parts/frames = 1,
-		/obj/random/gun_parts = 2
+		/obj/random/gun_parts/frames = 2,
+		/obj/random/gun_parts = 1,
+		/obj/random/pouch/hardcase_ammo = 0.3 //Can spawn some really good ammo.
 	)
 
 /obj/structure/scrap/science
@@ -431,12 +436,15 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "cloth pile"
 	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
-	loot_list = list(/obj/random/pack/cloth,
-		/obj/random/pack/rare = 0.2,
-		/obj/random/gun_parts/frames = 0.2,
-		/obj/random/gun_parts = 0.5,
+	loot_list = list(/obj/random/pack/cloth = 4,
+		/obj/random/cigarettes = 0.5,
+		/obj/random/pack/rare = 0.1,
+		/obj/random/gun_parts/frames = 0.1,
+		/obj/random/gun_parts = 0.3,
 		/obj/item/storage/wallet = 0.2,
-		/obj/item/storage/wallet/random = 0.1)
+		/obj/item/storage/wallet/random = 0.1,
+		/obj/random/pack/prosthesis/low_chance = 0.2,
+		/obj/random/pouch/hardcase = 0.2)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
@@ -451,7 +459,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/cigarettes = 0.3,
 		/obj/random/material_ore,
 		/obj/item/material/shard,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/pack/prosthesis/low_chance = 0.05,
+		/obj/random/pouch/hardcase = 0.8 //Can be quite good
 	)
 
 /obj/structure/scrap/poor/large

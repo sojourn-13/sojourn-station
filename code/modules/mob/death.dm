@@ -20,7 +20,7 @@
 		animation.icon = 'icons/mob/mob.dmi'
 		animation.master = src
 		flick(anim, animation)
-		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+		addtimer(CALLBACK(src, PROC_REF(check_delete), animation), 15)
 	else
 		qdel(src)
 
@@ -56,7 +56,7 @@
 		animation.icon = iconfile
 		animation.master = src
 		flick(anim, animation)
-		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+		addtimer(CALLBACK(src, PROC_REF(check_delete), animation), 15)
 	else
 		qdel(src)
 
@@ -66,7 +66,7 @@
 
 	SSmove_manager.stop_looping(src)
 
-	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
+	activate_mobs_in_range(src, 5, TRUE) //Its quite clear to everyone close by when something dies
 	facing_dir = null
 
 	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.

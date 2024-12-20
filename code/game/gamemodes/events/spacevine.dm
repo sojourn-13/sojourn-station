@@ -4,6 +4,7 @@
 
 	It's not really dangerous, it doesn't eat you like the blob, so it has a lower cost
 */
+
 /datum/storyevent/spacevine
 	id = "spacevine"
 	name = "rampant flora"
@@ -13,6 +14,11 @@
 	event_pools = list(EVENT_LEVEL_MAJOR = POOL_THRESHOLD_MAJOR*0.6)
 
 	tags = list(TAG_DESTRUCTIVE, TAG_NEGATIVE, TAG_COMBAT)
+
+	//Disables it but still allows admins to call it
+	ocurrences = 1
+	ocurrences_max = 1
+
 
 /var/global/spacevines_spawned = 0
 

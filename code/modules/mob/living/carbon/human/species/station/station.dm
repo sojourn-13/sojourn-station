@@ -52,6 +52,7 @@
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
 	hunger_factor = 1.1
+	nutrition_mod = 100
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -80,13 +81,13 @@
 	)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART        = /obj/item/organ/internal/heart/huge/exalt,
-		OP_LUNGS        = /obj/item/organ/internal/lungs/long/exalt,
+		OP_HEART        = /obj/item/organ/internal/vital/heart/huge/exalt,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs/long/exalt,
 		OP_STOMACH      = /obj/item/organ/internal/stomach/improved/exalt,
 		OP_LIVER        = /obj/item/organ/internal/liver/big/exalt,
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/exalt,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/exalt,
-		BP_BRAIN        = /obj/item/organ/internal/brain,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX     = /obj/item/organ/internal/appendix,
 		OP_EYES         = /obj/item/organ/internal/eyes
 	)
@@ -100,6 +101,7 @@
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
+	reagent_tag = IS_TAJ
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
@@ -212,13 +214,13 @@
 	)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART        = /obj/item/organ/internal/heart,
-		OP_LUNGS        = /obj/item/organ/internal/lungs,
+		OP_HEART        = /obj/item/organ/internal/vital/heart,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs,
 		OP_STOMACH      = /obj/item/organ/internal/stomach,
 		OP_LIVER        = /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
-		BP_BRAIN        = /obj/item/organ/internal/brain,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX     = /obj/item/organ/internal/appendix,
 		OP_EYES         = /obj/item/organ/internal/eyes/marqua
 	)
@@ -408,6 +410,7 @@
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
 	permitted_wings = list("Harpy Wings",
+		"Harpy Wings Two Tone",
 		"Fantail Wings",
 		"Feathered Wings, Small",
 		"Feathered Wings, Medium",
@@ -514,6 +517,7 @@
 	name_plural = "Cindarites"
 	default_form = FORM_CINDAR
 	obligate_form = TRUE
+	reagent_tag = IS_CINDARITE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
 	num_alternate_languages = 2
 	blurb = "no"
@@ -558,13 +562,13 @@
 		)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart,
-		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_HEART =    /obj/item/organ/internal/vital/heart,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
 		OP_STOMACH =  /obj/item/organ/internal/stomach,
 		OP_LIVER =    /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/cindarite,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/cindarite,
-		BP_BRAIN =    /obj/item/organ/internal/brain,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX = /obj/item/organ/internal/appendix,
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
@@ -617,11 +621,11 @@
 	light_color = "#93eb9e"
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
-		OP_LUNGS =    /obj/item/organ/internal/lungs/plant,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs/plant,
 		OP_LIVER =    /obj/item/organ/internal/liver/plant,
-		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/plant,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/plant,
 		OP_EYES =     /obj/item/organ/internal/eyes/plant
@@ -669,11 +673,11 @@
 	light_color = "#49754f"
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
-		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
 		OP_EYES =     /obj/item/organ/internal/eyes,
-		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
 		OP_LIVER =    /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
@@ -704,11 +708,11 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -725,7 +729,8 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -754,11 +759,11 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no"
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -775,8 +780,9 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
+		BP_BRAIN = /obj/item/organ/internal/vital/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic
 		)
 
 	heat_discomfort_strings = list(
@@ -809,12 +815,11 @@
 	max_age = 110
 	siemens_coefficient = 2
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
-	slowdown = 0.3
 	radiation_mod = 0
 	total_health = 75
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -834,7 +839,8 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -873,10 +879,10 @@
 	max_age = 110
 	siemens_coefficient = 0
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -897,7 +903,8 @@
 
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -934,10 +941,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -957,7 +964,8 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -994,10 +1002,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	total_health = 75
@@ -1018,7 +1026,8 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1055,10 +1064,10 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
-	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	darksight = 3
@@ -1078,7 +1087,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1100,37 +1109,56 @@
 	spawn_flags = IS_RESTRICTED
 
 /datum/species/slime
-	name = "Slime"
-	name_plural = "slimes"
+	name = SPECIES_SLIME
+	name_plural = "Aulvae"
 
 	default_form = FORM_SLIME
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
-	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
-	virus_immune = TRUE
+	always_blood = TRUE
+	always_ingest = TRUE
 	breath_type = null
 	poison_type = null
 	hunger_factor = 2
-	spawn_flags = IS_RESTRICTED
+	spawn_flags = CAN_JOIN
+	min_age = 18
+	max_age = 200
+	injury_type =  INJURY_TYPE_HOMOGENOUS
+	taste_sensitivity = TASTE_SENSITIVE
 
-	burn_mod = 1.15
-	brute_mod = 1.15
-	toxins_mod = -1 // This is dumb. I hope it works. -R4d6
+	nutrition_mod = 150 //Important for some perks
+
+	burn_mod = 1.2
+	brute_mod = 1.2
+	toxins_mod = 1 // fuck toxins_mod, we use a perk for this
 	oxy_mod = 0
 
+	cold_discomfort_level = 283
+	heat_discomfort_level = 313
+
+	cold_level_1 = 258 //Default 270
+	cold_level_2 = 243 //Default 230
+	cold_level_3 = 228  //Default 200
+
+	heat_level_1 = 333 //Default 330
+	heat_level_2 = 353 //Default 380
+	heat_level_3 = 372 //Default 460
+
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/brain/slime
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime,
+		OP_STOMACH = /obj/item/organ/internal/stomach/slime
 		)
 
 	breath_type = null
 	poison_type = null
 
 	bump_flag = SLIME
-	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
-	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	swap_flags = MONKEY|SLIME
+	push_flags = MONKEY|SLIME
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/slime,
@@ -1142,10 +1170,13 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/slime
 	)
 
-	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
+	perks = list(PERK_SLIMEMETH, PERK_SLIMEBRAIN, PERK_SLIMEBUFF, PERK_LIMB_REGEN, PERK_SLIMEBODY)
 
+/datum/species/slime/get_bodytype()
+	return "Aulvae"
+/*
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
 		if(H)
 			H.gib()
-
+*/

@@ -161,7 +161,7 @@ Frequency:
 		to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 		return
 	var/turf/current_location = get_turf(user)//What turf is the user on?
-	if(!current_location||current_location.z>=7)//If turf was not found or they're on z >7 which does not currently exist.
+	if(!current_location||current_location.z>=25)//If turf was not found or they're on z >25 which does not currently exist.
 		to_chat(user, SPAN_NOTICE("\The [src] is malfunctioning!"))
 		return
 	var/list/L = list()
@@ -256,14 +256,15 @@ Frequency:
 	icon_state = "telespear"
 	item_state = "telespear"
 	slot_flags = SLOT_BACK
-	var/entropy_value = 1
 	price_tag = 350
-
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
 	item_state_slots = list(
 		slot_back_str = "telespear_back"
 		)
+	extended_reach = TRUE
+	push_attack = TRUE
+	var/entropy_value = 1 //for bluespace entropy
 
 /obj/item/tele_spear/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 65, 1)

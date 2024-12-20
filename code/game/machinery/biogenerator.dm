@@ -41,9 +41,9 @@
 			list(name="Phosmet", cost=75, path=/obj/item/plantspray/pests/old/phosmet),
 		"Leather",
 			list(name="Cloth Sheet", cost=50, path=/obj/item/stack/material/cloth),
-			list(name="Cloth Sheet x5", cost=310, path=/obj/item/storage/box/clothbulk),
+			list(name="Cloth Sheet x5", cost=250, path=/obj/item/stack/material/cloth/biogen),
 			list(name="Leather Sheet", cost=800, path=/obj/item/stack/material/leather),//exspensive to make sure that hunters always have a better deal
-			list(name="Leather Sheet x5", cost=4060, path=/obj/item/storage/box/leatherbulk),//5 times the cost +60 for the 'cardboard' used for the box.
+			list(name="Leather Sheet x5", cost=4000, path=/obj/item/stack/material/leather/biogen),//Where we're going, we dont need to have boxes for our leather!
 			list(name="Wallet", cost=100, path=/obj/item/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
 			list(name="Utility belt", cost=300, path=/obj/item/storage/belt/utility),
@@ -122,6 +122,7 @@
 	else if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
 	else if(istype(I, /obj/item/storage/bag/produce))
+		var/obj/item/storage/bag/produce/produce_bag = I
 		var/i = 0
 		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
 			i++
@@ -136,6 +137,7 @@
 					break
 			if(i < 10)
 				to_chat(user, SPAN_NOTICE("You empty \the [I] into \the [src]."))
+		produce_bag.refresh_all()
 
 
 	else if(!istype(I, /obj/item/reagent_containers/food/snacks/grown))

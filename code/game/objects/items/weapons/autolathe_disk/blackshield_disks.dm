@@ -6,24 +6,28 @@
 	license = 20
 
 	designs = list(
-		/datum/design/autolathe/gun/ladon = 2,
+		/datum/design/autolathe/gun/ladon,
 		//SMGs
+		/datum/design/autolathe/gun/ppv = 3,
 		/datum/design/autolathe/gun/triage = 3,
 		//rifles
+		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 4,
 		/datum/design/autolathe/gun/rds_omnicarbine = 5,
+		//shotguns
+		/datum/design/autolathe/gun/bounty_lever = 3,
+		/datum/design/autolathe/gun/hustler = 5,
 		//machinegun
-		/datum/design/autolathe/gun/heroic = 5,
+		/datum/design/autolathe/gun/heroic = 6,
 		//grenade launcher
 		/datum/design/autolathe/gun/grenade_launcher_china_lake = 4,
-		//Flaregun
-		/datum/design/autolathe/gun/flare_gun,
+		//Frames
+		/datum/design/autolathe/gun_frame/discountnordwind,
+		/datum/design/autolathe/gun_frame/omni = 2,
+		/datum/design/autolathe/gun_frame/dp = 4,
 		//Misc
 		/datum/design/autolathe/device/landmine = 0,
-		/datum/design/autolathe/sec/riot = 2,
-		/datum/design/autolathe/sec/bastion = 1,
-		/datum/design/autolathe/sec/buckler,
 		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
@@ -164,6 +168,20 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
+	name = "NM - 7.62mm \"Watchtower\""
+	disk_name = ""
+	icon_state = "blackshield"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/watchtower = 3,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_rubber,
+		/datum/design/autolathe/ammo/rifle_practice = 0,
+		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp

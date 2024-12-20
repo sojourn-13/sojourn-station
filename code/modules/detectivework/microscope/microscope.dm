@@ -38,7 +38,7 @@
 
 	to_chat(user, SPAN_NOTICE("Printing findings now..."))
 	var/obj/item/paper/report = new(get_turf(src))
-	report.copy_overlays(list("paper_stamped"), TRUE)
+	report.add_overlay(list("paper_stamped"), TRUE)
 	report_num++
 
 	if(istype(sample, /obj/item/forensics/swab))

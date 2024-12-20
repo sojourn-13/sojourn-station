@@ -1,12 +1,12 @@
 /datum/world_topic
 	var/keyword
 	var/log = TRUE
-	var/key_valid
+	var/key_invalid
 	var/require_comms_key = FALSE
 
 /datum/world_topic/proc/TryRun(list/input)
-	key_valid = !config || config.comms_password != input["key"]
-	if(require_comms_key && !key_valid)
+	key_invalid = !config || !istext(config.comms_password) || config.comms_password == "" || config.comms_password != input["key"]
+	if(require_comms_key && key_invalid)
 		return "Bad Key"
 	input -= "key"
 	. = Run(input)
@@ -36,7 +36,7 @@
 	log = FALSE
 
 /datum/world_topic/status/Run(list/input)
-	if(!key_valid) //If we have a key, then it's safe to trust that this isn't a malicious packet. Also prevents the extra info from leaking
+	if(!key_invalid) //If we have a key, then it's safe to trust that this isn't a malicious packet. Also prevents the extra info from leaking
 		if(GLOB.topic_status_lastcache <= world.time)
 			return GLOB.topic_status_cache
 		GLOB.topic_status_lastcache = world.time + 5
@@ -48,6 +48,8 @@
 	s["vote"] = config.allow_vote_mode
 	s["ai"] = config.allow_ai
 	s["host"] = host ? host : null
+	s["revision"] = GLOB.revdata.commit
+	s["revision_date"] = GLOB.revdata.date
 
 	// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 	s["players"] = 0
@@ -84,7 +86,7 @@
 		s["players"] = n
 		s["admins"] = admins
 
-	if(!key_valid)
+	if(!key_invalid)
 		GLOB.topic_status_cache = .
 	return s
 
@@ -104,6 +106,7 @@
 			"civ" = civilian_positions,
 			"chr" = church_positions,
 			"pro" = prospector_positions,
+			"ldg" = lodge_positions,
 			"bot" = nonhuman_positions
 		)
 
@@ -128,16 +131,6 @@
 		positions[k] = list2params(positions[k]) // converts positions["heads"] = list("Bob"="Captain", "Bill"="CMO") into positions["heads"] = "Bob=Captain&Bill=CMO"
 
 	return positions
-
-
-/datum/world_topic/revision
-	keyword = "revision"
-
-/datum/world_topic/revision/Run(list/input)
-	if(revdata.revision)
-		return list(branch = revdata.branch, date = revdata.date, revision = revdata.revision)
-	else
-		return "unknown"
 
 /datum/world_topic/info
 	keyword = "info"

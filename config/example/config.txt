@@ -41,7 +41,7 @@ JOBS_HAVE_MINIMAL_ACCESS
 ## log OOC channel
 LOG_OOC
 
-## log client Say 
+## log client Say
 LOG_SAY
 
 ## log admin actions
@@ -93,7 +93,7 @@ SQL_ENABLED
 
 
 ## probablities for game modes chosen in "secret" and "random" modes
-## 
+##
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
 PROBABILITY EXTENDED 1
@@ -212,7 +212,7 @@ GITHUBURL https://github.com/Endless-Horizon/CEV-Eris
 ##Remove the # mark infront of this to forbid admins from posssessing the singularity.
 #FORBID_SINGULO_POSSESSION
 
-## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM. 
+## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM.
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
 #POPUP_ADMIN_PM
 
@@ -317,7 +317,7 @@ JOIN_UNASSIGNED
 ## Clients will be unable to connect unless their build is equal to or higher than this (a number, e.g. 1000)
 #MINIMUM_BYOND_BUILD
 
-## Time in minutes before empty server will restart	
+## Time in minutes before empty server will restart
 EMPTY_SERVER_RESTART_TIME 30
 
 ## If the server only accepts whitelisted connections
@@ -331,7 +331,7 @@ BORDER_CONTROL 0
 ##EMOJIS
 
 ## MOB AI SLEEPING ###
-## Uncomment this out if you want to disable mob AI sleeping 
+## Uncomment this out if you want to disable mob AI sleeping
 #ENABLE_MOB_SLEEP
 
 WEBHOOK_URL http://localhost:44303/webhook/en
@@ -371,3 +371,21 @@ IPR_MINIMUM_AGE 5
 # Enable/disable 'panic bunker' (prevents new players from joining if they've never been seen before in the DB)
 #PANIC_BUNKER
 
+# Disable stat obfuscation. (Gives all humans NO_OBFUSCATION perk)
+#BYPASS_OBFUSCATION
+
+########################
+# Asset Caching Config #
+########################
+## Assets can opt-in to caching their results into `data/spritesheets/legacy_cache`.
+## This is useful, as preferences assets take upwards of 30 seconds (without sleeps) to collect.
+## The cache can be manually cleared via the "Regenerate Asset Cache" verb.
+## This is on in development now, because it is only used by a few select spritesheets.
+CACHE_ASSETS
+
+## Enables 'smart' asset caching, for assets that support it.
+## This is a type of asset cache that automatically invalidates itself based on inputs to the asset generation.
+## It lowers the generation cost and is safe to enable on development and production.
+## This cache is only cleared by the game or manually, but it shouldn't affect the results.
+## This setting is independent of `CACHE_ASSETS`, they do not affect each other whatsoever.
+SMART_CACHE_ASSETS

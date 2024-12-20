@@ -18,10 +18,10 @@ var/list/department_radio_keys = list(
 	"p" = "AI Private",
 	"t" = "Church",
 	"k" = "Prospector",
-	"1" = "Plasmatag B",
-	"2" = "Plasmatag R",
-	"3" = "Plasmatag Y",
-	"4" = "Plasmatag G"
+	"a" = "Plasmatag B",
+	"o" = "Plasmatag R",
+	"q" = "Plasmatag Y",
+	"z" = "Plasmatag G"
 )
 
 
@@ -63,7 +63,9 @@ var/list/channel_to_radio_key = new
 	return default_language
 
 /mob/living/proc/is_muzzled()
-	return 0
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/handle_speech_problems(var/message, var/verb)
 	var/list/returns[3]
@@ -357,7 +359,7 @@ mob/proc/format_say_message(var/message = null)
 	for(var/client/C in show_to)
 		C.images += I
 	animate(I, transform = 0, alpha = 255, time = 5, easing = ELASTIC_EASING)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_speechbubble, I), duration-5)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_speechbubble), I), duration-5)
 
 /proc/fade_speechbubble(image/I)
 	animate(I, alpha = 0, time = 5, easing = EASE_IN)

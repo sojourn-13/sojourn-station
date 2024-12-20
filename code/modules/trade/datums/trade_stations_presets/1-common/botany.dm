@@ -90,10 +90,12 @@
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/carnivorous = custom_good_name("plant gene disk: carnivorous"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/noncarnivorous = custom_good_name("plant gene disk: non-carnivorous"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/parasitic = custom_good_name("plant gene disk: parasitic"),
-			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/nonparasitic = custom_good_name("plant gene disk: non-parasitic")
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/nonparasitic = custom_good_name("plant gene disk: non-parasitic"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/special/chem_producer = custom_good_name("plant gene disk: chem producer"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/special/no_chem_producer = custom_good_name("plant gene disk: non-chem producer")
 		)
 	)
 	offer_types = list(
-		/obj/item/tool/minihoe = offer_data_mods("modified minihoe (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
-		/obj/item/tool/hatchet = offer_data_mods("modified hatchet (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3)
+		/obj/item/tool/minihoe = offer_data_mods("modified minihoe (2 upgrades)", 800, 2, OFFER_MODDED_TOOL, 2),
+		/obj/item/tool/hatchet = offer_data_mods("modified hatchet (3 upgrades)", 1000, 2, OFFER_MODDED_TOOL, 3)
 	)

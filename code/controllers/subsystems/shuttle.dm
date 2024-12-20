@@ -50,8 +50,9 @@ SUBSYSTEM_DEF(shuttle)
 	if(initial(shuttle.category) != shuttle_type)
 		shuttle = new shuttle()
 
-/datum/controller/subsystem/shuttle/stat_entry()
-	..("S:[shuttles.len], L:[registered_shuttle_landmarks.len]")
+/datum/controller/subsystem/shuttle/stat_entry(msg)
+	msg += "S:[shuttles.len], L:[registered_shuttle_landmarks.len]"
+	return ..()
 
 
 /datum/controller/subsystem/shuttle/proc/get_shuttle(var/needle)

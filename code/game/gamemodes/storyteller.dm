@@ -76,28 +76,17 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	if(debug_mode || SSticker.start_immediately)
 		return TRUE
 
-	var/engineer = FALSE
-	var/command = FALSE
+	var/single_person = FALSE
 	for(var/mob/new_player/player in GLOB.player_list)
 		if(player.ready && player.mind)
-			if(player.mind.assigned_role in list(JOBS_COMMAND))
-				command = TRUE
-			if(player.mind.assigned_role in list(JOBS_ENGINEERING))
-				engineer = TRUE
-			if(command && engineer)
-				return TRUE
+			single_person = TRUE
+			return TRUE
 
-	var/tcol = "red"
-	if(GLOB.player_list.len <= 10)
-		tcol = "black"
+	var/tcol = "#ffaa00"
 
-	if(announce)
-		if(!engineer && !command)
-			to_chat(world, "<b><font color='[tcol]'>A Council Member and Guild Member are required to start the round.</font></b>")
-		else if(!engineer)
-			to_chat(world, "<b><font color='[tcol]'>A Guild Member is required to start the round.</font></b>")
-		else if(!command)
-			to_chat(world, "<b><font color='[tcol]'>A Council Member is required to start the round.</font></b>")
+	if(!single_person)
+		to_chat(world, "<b><font color='[tcol]'>A single ready player is required to start the round.</font></b>")
+		return FALSE
 
 	if(GLOB.player_list.len <= 15) //15 players is low pop do to lurkers
 		to_chat(world, "<i>But there's less than 16 players, so this requirement will be ignored.</i>")
@@ -320,7 +309,7 @@ The actual fire event proc is located in storyteller_meta*/
 		delay = 1 //Basically no delay on these to reduce bugginess
 	else
 		delay = rand(1, event_schedule_delay)
-	var/handle = addtimer(CALLBACK(GLOBAL_PROC, .proc/fire_event, C, event_type), delay, TIMER_STOPPABLE)
+	var/handle = addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fire_event), C, event_type), delay, TIMER_STOPPABLE)
 	scheduled_events.Add(list(C), type, handle)
 
 

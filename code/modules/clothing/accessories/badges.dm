@@ -50,8 +50,15 @@
 	desc = "This glowing blue badge marks the holder as a member of security."
 	icon_state = "holobadge"
 	item_state = "holobadge"
-	badge_string = "Security"
+	badge_string = "Marshals"
 	var/emagged //Emagging removes Sec check.
+
+/obj/item/clothing/accessory/badge/holo/tag
+	name = "marshal holotag"
+	desc = "This pair of glowing plates is meant to be attached to armor or clothing and marks the wearer as a member of security."
+	icon_state = "holotag"
+	item_state = "holotag"
+	badge_string = "Marshals"
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"
@@ -115,8 +122,8 @@
 	New()
 		new /obj/item/clothing/accessory/badge/holo(src)
 		new /obj/item/clothing/accessory/badge/holo(src)
-		new /obj/item/clothing/accessory/badge/holo(src)
-		new /obj/item/clothing/accessory/badge/holo(src)
+		new /obj/item/clothing/accessory/badge/holo/tag(src)
+		new /obj/item/clothing/accessory/badge/holo/tag(src)
 		new /obj/item/clothing/accessory/badge/holo/cord(src)
 		new /obj/item/clothing/accessory/badge/holo/cord(src)
 		..()
@@ -144,8 +151,13 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/badge/marshal
-	name = "commando's badge"
+	name = "Marshal Agent's badge"
 	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
-	icon_state = "marshalbadge"
+	icon_state = "agentbadge"
 	badge_string = "Special Agent"
 
+/obj/item/clothing/accessory/badge/militiaagent
+	name = "blackshield specialist's badge"
+	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
+	icon_state = "agentbadge"
+	badge_string = "Specialist"

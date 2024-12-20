@@ -5,6 +5,7 @@
 
 /area/colony
 	base_turf = /turf/simulated/floor/asteroid
+	prevent_ship_area = TRUE
 
 /area/colony/exposedsun
 	ship_area = FALSE
@@ -126,9 +127,17 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/surface_maints_1
+/area/nadezhda/maintenance/surfacenorth
 	name = "Surface North Maintenance"
 	icon_state = "erisyellow"
+
+/area/nadezhda/maintenance/surfaceeast
+	name = "Surface East Maintenance"
+	icon_state = "erisgreen"
+
+/area/nadezhda/maintenance/surfacesec
+	name = "Surface Security Maintenance"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
@@ -149,9 +158,10 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = FALSE
+	is_maintenance = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
+	ship_area = FALSE
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
@@ -235,6 +245,42 @@
 
 /area/nadezhda/dungeon/outside/prepper/vault/entryway
 
+
+/area/nadezhda/dungeon/outside/prepper/lima
+	name = "Site LIMA-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/lima/turret_powered_tile
+	name = "Site LIMA-09"
+	icon_state = "erisred"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/lima/outside
+	name = "Site LIMA-09"
+	icon_state = "erisgreen"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	dynamic_lighting = FALSE
+
+/area/nadezhda/dungeon/outside/prepper/delta
+	name = "Site DELTA-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/alpha
+	name = "Site Alpha-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
+/area/nadezhda/dungeon/outside/prepper/delta/turret_powered_tile
+	name = "Site DELTA-09"
+	icon_state = "erisred"
+	requires_power = FALSE
+
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
@@ -263,6 +309,7 @@
 	flags = null
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
+	prevent_ship_area = TRUE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"
@@ -302,10 +349,12 @@
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest
 	name = "Forest"
 	icon_state = "forest"
+	is_maintenance = TRUE
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
@@ -315,6 +364,11 @@
 
 /area/nadezhda/outside/forest/beast_cave_dark
 	name = "Swamp Caves"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/river_forest_nightmare
+	name = "Hunting plains dark forest"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
@@ -337,6 +391,10 @@
 	name = "Hunting Plains River"
 	icon_state = "hammerblue"
 
+/area/nadezhda/outside/forest/carp_lair
+	name = "Carp Lair"
+	icon_state = "hammerblue"
+
 /area/nadezhda/outside/forest/river_forest_cabin
 	name = "Hunting Plains Cabin"
 	icon_state = "erisgreen"
@@ -356,11 +414,13 @@
 /area/nadezhda/outside/forest/hunting_lodge
 	name = "Hunting Lodge"
 	icon_state = "forest"
+	is_maintenance = FALSE
 	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/forest/hunting_lodge_dark
 	name = "Hunting Lodge"
 	icon_state = "erisblue"
+	is_maintenance = FALSE
 	dynamic_lighting = TRUE
 	is_dungeon_lootable = FALSE
 
@@ -388,13 +448,36 @@
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
+/area/nadezhda/outside/inside_colony/east
+	name = "Colony Meadow - East"
 
+/area/nadezhda/outside/inside_colony/west
+	name = "Colony Meadow - West"
 /area/nadezhda/outside/mountainsolars
 	name = "Mountain Solars"
 	icon_state = "meadow"
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	is_dungeon_lootable = FALSE
+
+/area/nadezhda/outside/kepler //Off-world location
+	name = "barren planet"
+	icon_state = "erisblue"
+	area_light_color = COLOR_LIGHTING_BLUE_DARK
+	forced_ambience = list('sound/ambience/windamb1.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
+
+/area/nadezhda/outside/kepler/red //Off-world location, meant for areas near and inside huts
+	name = "barren planet - indoors"
+	area_light_color = COLOR_LIGHTING_RED_DARK
+	forced_ambience = list('sound/ambience/windamb2.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
@@ -526,10 +609,14 @@
 
 /area/nadezhda/command
 	name = "\improper Command"
-	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
+	area_light_color = COLOR_PALE_BLUE_GRAY
 
 /area/nadezhda/command/bridge
 	name = "\improper Control Room"
+	icon_state = "bridge"
+
+/area/nadezhda/command/hallway
+	name = "\improper Command Hallway"
 	icon_state = "bridge"
 
 /area/nadezhda/command/meeting_room
@@ -537,6 +624,7 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+	area_light_color = COLOR_COMMAND_BLUE
 
 /area/nadezhda/command/armory
 	name = "\improper Command Center Armory"
@@ -563,6 +651,7 @@
 
 /area/nadezhda/command/captain/quarters
 	name = "\improper Command - Premier's Quarters"
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/fo
 	name = "\improper Command - Steward's Quarters"
@@ -576,6 +665,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cro/quarters
 	name = "\improper Research - CRO's Quarters"
@@ -588,6 +678,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/gmaster/quarters
 	name = "\improper Engineering - Guild Master's Quarters"
@@ -600,6 +691,7 @@
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cbo/quarters
 	name = "\improper Medbay - CBO's Quarters"
@@ -647,10 +739,11 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/merchant
-	name = "\improper Lonestar - CEO's Office"
+	name = "\improper Lonestar - Manager's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/teleporter
 	name = "\improper Teleporter"
@@ -696,6 +789,10 @@
 	name = "Medbay Toilet"
 	icon_state = "nadezhdayellow"
 
+/area/nadezhda/crew_quarters/arcade
+	name = "Arcade"
+	icon_state = "nadezhdayellow"
+
 /area/nadezhda/crew_quarters/dorm1
 	name = "\improper Dormitories"
 	icon_state = "Sleep"
@@ -732,13 +829,13 @@
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/crew_quarters/sleep/cryo
-	name = "\improper Upper Cryogenic Storage"
+	name = "\improper Colony Cryosleep Storage"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/crew_quarters/sleep/cryo2
-	name = "\improper Lower Cryogenic Storage"
+	name = "\improper Lower Colony Elevator Lobby"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
@@ -867,8 +964,8 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 	sound_env = LARGE_ENCLOSED
 
-/area/nadezhda/absolutism/storage
-	name = "\improper Church Storage"
+/area/nadezhda/absolutism/hallways
+	name = "\improper Church Hallways"
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
@@ -883,7 +980,7 @@
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
 /area/nadezhda/absolutism/vectorrooms
-	name = "\improper Church Vector Commons"
+	name = "\improper Church Commons"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
@@ -1207,7 +1304,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "surgery"
 
 /area/nadezhda/medical/cryo
-	name = "\improper Cryogenics"
+	name = "\improper Soteria Cryogenics Bay"
 	icon_state = "cryo"
 
 /area/nadezhda/medical/exam_room
@@ -1336,6 +1433,12 @@ area/nadezhda/medical/medbaymeeting
 	dynamic_lighting = FALSE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
+/area/nadezhda/security/maingate/east
+	name = "\improper Security - Eastern Perimeter"
+
+/area/nadezhda/security/maingate/west
+	name = "\improper Security - Western Perimeter"
+
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"
 	icon_state = "checkpoint1"
@@ -1366,6 +1469,10 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/vacantoffice2
 	name = "\improper Vacant Office"
+	icon_state = "security"
+
+/area/nadezhda/security/secrecroom
+	name = "Security - Recreation Room"
 	icon_state = "security"
 
 /area/nadezhda/security/inspectors_office
@@ -1474,6 +1581,12 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/mining_outside_doc
 	name = "\improper Cargo Mining Area"
 	icon_state = "mining"
+	ship_area = FALSE
+
+/area/nadezhda/quartermaster/mining_dreg
+	name = "Slate Mining Pad MEH A" //Mining Excation Head
+	icon_state = "erisblue"
+	ship_area = FALSE
 
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"

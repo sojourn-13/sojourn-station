@@ -50,7 +50,7 @@
 	cost = 0
 
 /datum/gear/xenowear/opifexnotmask
-	display_name = "opifex gas synthetizer"
+	display_name = "opifex gas synthesizer"
 	path = /obj/item/clothing/mask/opifex_no_mask
 	slot = slot_wear_mask
 	sort_category = "Xenowear"
@@ -81,14 +81,14 @@
 	path = /obj/item/clothing/accessory/kricape
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/kriosansuit
 	display_name = "kriosan fatigues"
 	path = /obj/item/clothing/under/kriosansuit
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/cossackcoat
 	display_name = "jaeger coat selection"
@@ -97,6 +97,13 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 	cost = 1
+
+/datum/gear/factionsecurity/armoredcossackcoat
+	display_name = "jaeger hussar coat"
+	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
+	slot = slot_wear_suit
+	cost = 2
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
@@ -179,9 +186,25 @@
 	sort_category = "Xenowear"
 	cost = 1
 
+/datum/gear/xenowear/footwear
+	display_name = "barefoot footwear / (No sprite on mob) / (Change the name and desc)"
+	path = /obj/item/clothing/shoes/claws_hoofs_paws
+	slot = slot_shoes
+	sort_category = "Xenowear"
+	cost = 0
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/xenowear
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	cost = 1
+
+/datum/gear/xenowear/bugsocks
+    display_name = "insect socks"
+    path = /obj/item/clothing/shoes/bugsocks
+    slot = slot_shoes
+    sort_category = "Xenowear"
+    cost = 0
+    flags = GEAR_HAS_COLOR_SELECTION

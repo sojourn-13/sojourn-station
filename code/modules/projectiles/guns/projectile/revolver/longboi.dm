@@ -1,6 +1,7 @@
 /obj/item/gun/projectile/revolver/longboi
 	name = "\"Long\" revolver"
-	desc = "A novelty revolver made by the Lonestar with a stupidly long barrel favored by those with less sense than style, its extended barrel gives it incredible recoil control but loses stopping power and penetration. Uses 12mm."
+	desc = "A novelty revolver made by the Lonestar with an incredously long barrel favored by those with more sense and style, its extended barrel gives it incredible recoil control but inexplicably reduces stopping power and penetration. \
+	Uses 12mm."
 	icon = 'icons/obj/guns/projectile/Long_Revolver.dmi'
 	icon_state = "longRevolver"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
@@ -8,7 +9,7 @@
 	caliber = CAL_50
 	slot_flags = SLOT_BACK|SLOT_BELT	//Can't fit a holster due to length
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
-	max_shells = 6
+	max_shells = 5
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1250 //It's a novelty item.
 	damage_multiplier = 0.9

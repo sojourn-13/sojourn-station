@@ -4,10 +4,10 @@
 	var/rare_val = 0.7              // Threshold for rare metal, set in new as percentage of cell_range.
 	var/chunk_size = 4              // Size each cell represents on map
 
-/datum/random_map/noise/ore/New()
+/datum/random_map/noise/ore/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce)
 	rare_val = cell_range * rare_val
 	deep_val = cell_range * deep_val
-	..()
+	..(seed, tx, ty, tz, (tlx / chunk_size), (tly / chunk_size), do_not_apply, do_not_announce)
 
 /datum/random_map/noise/ore/check_map_sanity()
 
@@ -46,15 +46,19 @@
 			var/turf/simulated/T = locate(tx+j, ty+i, origin_z)
 			if(!istype(T) || !T.has_resources)
 				continue
-			if(!priority_process) sleep(-1)
+			if(!priority_process)
+				CHECK_TICK
 			T.resources = list()
 			T.resources[MATERIAL_GLASS] = rand(7,12)
 			T.resources[MATERIAL_PLASTIC] = rand(7,12)
 
 			T.seismic_activity = rand(SEISMIC_MIN, SEISMIC_MAX)
 
-			var/current_cell = map[get_map_cell(x,y)]
-			if(current_cell < rare_val)      // Surface metals.
+			// TRANSLATE_AND_VERIFY_COORD sets tmp_cell
+			var/tmp_cell
+			TRANSLATE_AND_VERIFY_COORD(x, y)
+
+			if(tmp_cell < rare_val)      // Surface metals.
 				T.resources[MATERIAL_IRON] =     rand(RESOURCE_HIGH_MIN, RESOURCE_HIGH_MAX)
 				T.resources[MATERIAL_GOLD] =     rand(RESOURCE_LOW_MIN,  RESOURCE_LOW_MAX)
 				T.resources[MATERIAL_SILVER] =   rand(RESOURCE_LOW_MIN,  RESOURCE_LOW_MAX)
@@ -63,7 +67,7 @@
 				T.resources[MATERIAL_PLASMA] =   0
 				T.resources[MATERIAL_OSMIUM] =   0
 				T.resources[MATERIAL_TRITIUM] = 0
-			else if(current_cell < deep_val) // Rare metals.
+			else if(tmp_cell < deep_val) // Rare metals.
 				T.resources[MATERIAL_GOLD] =     rand(RESOURCE_MID_MIN,  RESOURCE_MID_MAX)
 				T.resources[MATERIAL_SILVER] =   rand(RESOURCE_MID_MIN,  RESOURCE_MID_MAX)
 				T.resources[MATERIAL_URANIUM] =  rand(RESOURCE_MID_MIN,  RESOURCE_MID_MAX)
@@ -82,7 +86,6 @@
 				T.resources[MATERIAL_GOLD] =     0
 				T.resources[MATERIAL_SILVER] =   0
 			CHECK_TICK
-	return
 
 /datum/random_map/noise/ore/get_map_char(var/value)
 	if(value < rare_val)

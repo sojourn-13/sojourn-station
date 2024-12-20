@@ -10,9 +10,11 @@
 	var/edge = 0		// whether this object is more likely to dismember
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
 	var/damtype = BRUTE
-	var/armor_penetration = 0
+	var/armor_divisor = 1
 	var/corporation = null
 	var/heat = 0
+	//soj edit
+	var/clickdelay_offset = 0
 
 /obj/proc/is_hot()
 	return heat
@@ -138,6 +140,7 @@
 			in_use = 0
 
 /obj/attack_ghost(mob/user)
+	ui_interact(user)
 	nano_ui_interact(user)
 	..()
 
@@ -253,8 +256,10 @@
 	throwforce = initial(throwforce) * newmult
 
 //Same for AP
-/obj/proc/multiply_projectile_penetration(newmult)
-	armor_penetration = initial(armor_penetration) * newmult
+/obj/proc/add_projectile_penetration(newmult)
+	armor_divisor = initial(armor_divisor) + newmult
+
+/obj/proc/wound_mult_adder(newmult)
 
 /obj/proc/multiply_pierce_penetration(newmult)
 
@@ -265,3 +270,7 @@
 /obj/proc/multiply_pve_damage(newmult)
 
 /obj/proc/add_fire_stacks(newmult)
+
+//Proj for thrown items
+/obj/proc/post_thrown_hit(mob)
+	return

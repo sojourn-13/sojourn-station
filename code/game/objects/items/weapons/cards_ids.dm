@@ -109,7 +109,6 @@ var/const/NO_EMAG_ACT = -50
 	var/fingerprint_hash = "\[UNSET\]"
 	var/sex = "\[UNSET\]"
 	var/icon/front
-	var/icon/side
 
 	//alt titles are handled a bit weirdly in order to unobtrusively integrate into existing ID system
 	var/assignment = null	//can be alt title or the actual job
@@ -142,21 +141,35 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/proc/prevent_tracking()
 	return 0
 
+/obj/item/card/id/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "IDCard", name)
+		ui.open()
+
+/obj/item/card/id/ui_data(mob/user)
+	var/list/data = list()
+
+	data["registered_name"] = registered_name
+	data["sex"] = sex
+	data["age"] = age
+	data["assignment"] = assignment
+	data["fingerprint_hash"] = fingerprint_hash
+	data["blood_type"] = blood_type
+	data["dna_hash"] = dna_hash
+
+	return data
+
 /obj/item/card/id/proc/show(mob/user as mob)
-	if(front && side)
+	if(front)
 		user << browse_rsc(front, "front.png")
-		user << browse_rsc(side, "side.png")
-	var/datum/browser/popup = new(user, "idcard", name, 600, 250)
-	popup.set_content(dat())
-	popup.open()
-	return
+	ui_interact(user)
 
 /obj/item/card/id/proc/update_name()
 	name = "[src.registered_name]'s ID Card ([src.assignment])"
 
 /obj/item/card/id/proc/set_id_photo(var/mob/M)
 	front = getFlatIcon(M, SOUTH)
-	side = getFlatIcon(M, WEST)
 
 /mob/proc/set_id_info(var/obj/item/card/id/id_card)
 	id_card.age = 0
@@ -173,20 +186,6 @@ var/const/NO_EMAG_ACT = -50
 /mob/living/carbon/human/set_id_info(var/obj/item/card/id/id_card)
 	..()
 	id_card.age = age
-
-/obj/item/card/id/proc/dat()
-	var/dat = ("<table><tr><td>")
-	dat += text("Name: []</A><BR>", registered_name)
-	dat += text("Sex: []</A><BR>\n", sex)
-	dat += text("Age: []</A><BR>\n", age)
-	dat += text("Rank: []</A><BR>\n", assignment)
-	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
-	dat += text("Blood Type: []<BR>\n", blood_type)
-	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
-	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
-	dat += "</tr></table>"
-	return dat
 
 /obj/item/card/id/attack_self(mob/user as mob)
 	user.visible_message("\The [user] shows you: \icon[src] [src.name]. The assignment on the card: [src.assignment]",\
@@ -208,37 +207,6 @@ var/const/NO_EMAG_ACT = -50
 	assignment = "Syndicate Overlord"
 	access = list(access_syndicate, access_external_airlocks)
 	group = "centcom"
-
-/obj/item/card/id/medical_command
-	name = "Medical ID card"
-	desc = "An ID straight from the SI Medical Divisions."
-	registered_name = "Medical ERT"
-	assignment = "SI Medical ERT"
-	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
-		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
-		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
-
-/obj/item/card/id/guild_command
-	name = "Guild AA ID card"
-	desc = "An ID card with all access as the guild uses several backdoors and emergency access commands to bypass most access requirements."
-	registered_name = "Guild ERT"
-	assignment = "Guild ERT"
-
-/obj/item/card/id/guild_command/New()
-	access = get_all_station_access()
-	..()
-
-/obj/item/card/id/lss_command
-	name = "LSS Auditor ID card"
-	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
-	registered_name = "LSS Auditor"
-	assignment = "LSS Auditor"
-
-/obj/item/card/id/lss_command/New()
-	access = get_all_station_access()
-	..()
-
 
 /obj/item/card/id/captains_spare
 	name = "premier's spare ID"
@@ -346,18 +314,6 @@ var/const/NO_EMAG_ACT = -50
 	group = "secblue"
 	icon_state = "id_hos"
 
-/obj/item/card/id/secert
-	name = "Marshal ID card"
-	desc = "An ID straight from the Nadezhda Marshals"
-	registered_name = "Marshal Agent"
-	assignment = "Marshal Agent"
-	icon_state = "id_hos_all-access"
-	group = "golden"
-
-/obj/item/card/id/secert/New()
-	access = get_all_station_access()
-	..()
-
 /obj/item/card/id/hop
 	icon_state = "id_hop"
 
@@ -407,6 +363,10 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/lodge
 	icon_state = "id_lodge"
 	desc = "A bird skull hanging from a leather thong, carved by the hunting lodge and given to members to display name and rank. A small chip inside allows it to be used like any other access badge, encoded with the users biometrics."
+
+/obj/item/card/id/visitor
+	icon_state = "guest"
+	desc = "An official guest pass issued by the Nadehzda colony. This one bears the mark of Nadezhda customs and has no listed expiry date."
 
 //Keys
 /obj/item/keys

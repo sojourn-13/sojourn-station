@@ -1,4 +1,3 @@
-
 /*
 	apply_damage(a,b,c)
 	args
@@ -8,27 +7,23 @@
 	Returns
 	standard 0 if fail
 */
-/mob/living/proc/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, armor_divisor = 1, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, used_weapon = null)
+/mob/living/proc/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, armor_divisor = 1, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, used_weapon = null) // After melee rebalance set wounding_multiplier to 0 to activate melee wounding level determination
 	activate_ai()
 	switch(damagetype)
-
 		if(BRUTE)
-			adjustBruteLoss(damage)
-
+			wounding_multiplier = wound_check(injury_type, wounding_multiplier, edge, sharp)
+			adjustBruteLoss(damage * wounding_multiplier)
 		if(BURN)
-			if(COLD_RESISTANCE in mutations)
-				damage = 0
-			adjustFireLoss(damage)
-
+//			if(COLD_RESISTANCE in mutations)
+//				damage = 0
+			wounding_multiplier = wound_check(injury_type, wounding_multiplier, edge, sharp) // Why not?
+			adjustFireLoss(damage * wounding_multiplier)
 		if(TOX)
 			adjustToxLoss(damage)
-
 		if(OXY)
 			adjustOxyLoss(damage)
-
 		if(CLONE)
 			adjustCloneLoss(damage)
-
 		if(HALLOSS)
 			adjustHalLoss(damage)
 
@@ -71,6 +66,9 @@
 		if(IRRADIATE)
 			var/rad_protection = check_protection ? getarmor(null, ARMOR_RAD) / 100 : 0
 			radiation += max((1 - rad_protection) * effect, 0)//Rads auto check armor
+			if(ishuman(src))
+				var/mob/living/carbon/human/H = src
+				radiation *= H.species.radiation_mod
 		if(STUTTER)
 			if(status_flags & CANSTUN) // stun is usually associated with stutter
 				stuttering = max(stuttering,(effect))
@@ -141,9 +139,5 @@
 	if (damage > 0)
 		take_overall_damage(damage)
 		playsound(src, pick(punch_sound), 100, 1, 10)
-		if(ishuman(src))
-			if(!src.stats.getPerk(PERK_PARKOUR))
-				src.Weaken(4)
-		else
-			src.Weaken(4)
+		Weaken(4)
 		updatehealth()

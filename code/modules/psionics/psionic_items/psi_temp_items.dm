@@ -14,6 +14,7 @@
 	slot_flags = null
 	flags = CONDUCT
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 25, QUALITY_BOLT_TURNING = 25, QUALITY_DRILLING = 25, QUALITY_WELDING = 25, QUALITY_CAUTERIZING = 25, QUALITY_PRYING = 25, QUALITY_DIGGING = 25, QUALITY_PULSING = 25, QUALITY_WIRE_CUTTING = 25, QUALITY_HAMMERING = 25, QUALITY_SHOVELING = 25, QUALITY_EXCAVATION = 25, QUALITY_CLAMPING = 25, QUALITY_RETRACTING = 25, QUALITY_SAWING = 25, QUALITY_BONE_SETTING = 25, QUALITY_CUTTING = 25, QUALITY_BONE_GRAFTING = 25)
+	no_double_tact = TRUE
 	degradation = 0 // Can't degrade
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
@@ -43,6 +44,7 @@
 	var/burntime = 120
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = null
+	tool_qualities = list(QUALITY_WELDING = 0)
 	attack_verb = list("burnt", "singed")
 	lit = 1
 	var/mob/living/carbon/holder
@@ -131,7 +133,7 @@
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
-		armor_penetration = ARMOR_PEN_HALF
+		armor_divisor = ARMOR_PEN_HALF
 
 	var/throwdir = get_dir(user,target)
 	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
@@ -161,6 +163,7 @@
 	origin_tech = list()
 	matter = list()
 	degradation = 0 // Can't degrade
+	embed_mult = 0 //Shouldn't embed, it's not real.
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
@@ -188,7 +191,7 @@
 
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
-		armor_penetration = ARMOR_PEN_HALF
+		armor_divisor = ARMOR_PEN_HALF
 
 	..()
 	force = initial(force) // Reset the damage just in case
@@ -203,7 +206,7 @@
 
 /obj/item/shield/riot/crusader/psionic
 	name = "psychic combat shield"
-	desc = "A shield projected by the mind of a psion, it's speed and skill depend on the toughness of the psionic that created it. Useful for blocking energy beams, bullets, and melee attacks. \
+	desc = "A shield projected by the mind of a psion, it's speed and skill depend on the toughness of the psionic that created it. Useful for blocking melee attacks. \
 	A simple thought can deploy or shrink the shield at will."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psishield1"
@@ -216,9 +219,11 @@
 	max_durability = 80 //Can be made on mass and is meant to to be a light weak shield
 	durability = 80
 	slowdown_time = 0 //Were crappy and mass made by the mind
-	armor_list = list(melee = 15, bullet = 15, energy = 35, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 3, bullet = 3, energy = 2, bomb = 15, bio = 0, rad = 0)
 	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
+	//Got to do a little more effort to make this block proj (min cost of 2 points)
+	can_block_proj = FALSE
 
 /obj/item/shield/riot/crusader/psionic/New(var/loc, var/mob/living/carbon/Maker)
 	..()
@@ -232,6 +237,15 @@
 		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
+
+/obj/item/shield/riot/crusader/psionic/layered
+	name = "layered psychic combat shield"
+	desc = "Unlike the idea of a shield this one is made of many thin layers allowing it to block projectiles and attacks easier \
+	Due to this process of layering it can not be enhanced or modified without destroying itself."
+	max_durability = 120
+	durability = 120
+	base_block_chance = 50
+	armor_list = list(melee = 1, bullet = 5, energy = 2, bomb = 25, bio = 0, rad = 0)
 
 // Psionic gun.
 /obj/item/gun/kinetic_blaster
@@ -275,7 +289,7 @@
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
 			force = /obj/item/projectile/kinetic_blast/brutal
-			armor_penetration = ARMOR_PEN_HALF
+			armor_divisor = ARMOR_PEN_HALF
 
 		projectile_type = force
 
@@ -346,7 +360,7 @@
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
 			force = /obj/item/projectile/kinetic_blast_electro/brutal
-			armor_penetration = ARMOR_PEN_HALF
+			armor_divisor = ARMOR_PEN_HALF
 
 		projectile_type = force
 

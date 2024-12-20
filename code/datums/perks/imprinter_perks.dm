@@ -21,7 +21,7 @@ Chemical Neutralizer - Reduces addiction chance all the way down to 0.1 and incr
 	gain_text = "Your head feels lighter as if huge burden was carried away."
 	lose_text = "Your head starts feeling like a boulder again."
 
-/datum/perk/cognitive_enhancer/assign(mob/living/carbon/human/H)
+/datum/perk/cognitive_enhancer/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_COG, 30)
 
@@ -35,14 +35,18 @@ Chemical Neutralizer - Reduces addiction chance all the way down to 0.1 and incr
 	gain_text = "You feel unnatural calmness."
 	lose_text = "Your start to crave after things again."
 
-/datum/perk/chemical_neutralizer/assign(mob/living/carbon/human/H)
+/datum/perk/chemical_neutralizer/assign(mob/living/L)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 0.1
-	holder.metabolism_effects.nsa_bonus += 10
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 0.1
+		H.metabolism_effects.nsa_bonus += 10
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/chemical_neutralizer/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_bonus -= 10
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus -= 10
+		H.metabolism_effects.calculate_nsa()
 	..()

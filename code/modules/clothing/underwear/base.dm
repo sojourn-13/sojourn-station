@@ -60,7 +60,7 @@
 		return
 	if(user != H)
 		visible_message("<span class='danger'>\The [user] is trying to remove \the [H]'s [name]!</span>")
-		if(!do_after(user, HUMAN_STRIP_DELAY, H, progress = 0))
+		if(!do_after(user, HUMAN_STRIP_DELAY, H, progress = 1))
 			return FALSE
 	. = RemoveUnderwear(user, H)
 	if(. && user != H)
@@ -72,7 +72,7 @@
 		return
 	if(user != H)
 		user.visible_message("<span class='warning'>\The [user] has begun putting on \a [src] on \the [H].</span>", "<span class='notice'>You begin putting on \the [src] on \the [H].</span>")
-		if(!do_after(user, HUMAN_STRIP_DELAY, H, progress = FALSE))
+		if(!do_after(user, HUMAN_STRIP_DELAY, H, progress = 1))
 			return FALSE
 	. = EquipUnderwear(user, H)
 	if(. && user != H)
@@ -98,6 +98,12 @@
 
 	return TRUE
 
+/obj/item/underwear/attackby(var/obj/item/I, var/mob/U)
+	if(istype(I, /obj/item/flame/lighter))
+		burnclothing(I, U)
+	else
+		return ..()
+
 /obj/item/underwear/proc/RemoveUnderwear(var/mob/user, var/mob/living/carbon/human/H)
 	if(!CanRemoveUnderwear(user, H))
 		return FALSE
@@ -109,12 +115,38 @@
 
 	return TRUE
 
-/obj/item/underwear/verb/RemoveSocks()
-	set name = "Remove Underwear"
-	set category = "Object"
-	set src in usr
+/obj/item/underwear/proc/burnclothing(obj/item/flame/P, mob/user)
+	var/class = "warning"
 
-	RemoveUnderwear(usr, usr)
+	if(P.lit && !user.restrained())
+		if(istype(P, /obj/item/flame/lighter/zippo))
+			class = "rose"
+
+		user.visible_message("<span class='[class]'>[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!</span>", \
+		"<span class='[class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
+
+		spawn(20)
+			if(get_dist(src, user) < 2 && user.get_active_hand() == P && P.lit)
+				user.visible_message("<span class='[class]'>[user] burns right through \the [src], turning it to ash. It settles on the floor in a heap.</span>", \
+				"<span class='[class]'>You burn right through \the [src], turning it to ash. It settles on the floor in a heap.</span>")
+
+				if(user.get_inactive_hand() == src)
+					user.drop_from_inventory(src)
+
+				new /obj/effect/decal/cleanable/ash(src.loc)
+				qdel(src)
+
+			else
+				to_chat(user, "\red You must hold \the [P] steady to burn \the [src].")
+
+/mob/living/carbon/human/verb/RemoveUnderwear()
+	set name = "Remove Underwear"
+	set category = "IC"
+	set src = usr
+
+	var/obj/item/underwear/U = tgui_input_list(usr, "Select underwear to remove", "Remove Underwear", worn_underwear)
+	if(istype(U))
+		U.RemoveUnderwear(usr, src)
 
 /obj/item/underwear/socks
 	required_free_body_parts = LEGS

@@ -1,6 +1,6 @@
 /datum/trade_station/asterstradecapital
 	name_pool = list(
-		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices!.\ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
+		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices! \ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
 	)
 	forced_overmap_zone = list(
 		list(24, 26),
@@ -15,7 +15,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold  = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("casino", "kriosanconfederacy")
 	inventory  = list(
 		"Tools and Equipment" = list(
@@ -37,6 +37,15 @@
 			/obj/item/device/geiger,
 			/obj/item/device/toner
 		),
+		"Storage Utilities" = list(
+			/obj/item/storage/hcases/ammo,
+			/obj/item/storage/hcases/parts,
+			/obj/item/storage/hcases/med,
+			/obj/item/storage/hcases/engi,
+			/obj/item/storage/bag/produce,
+			/obj/item/storage/bag/sheetsnatcher,
+			/obj/item/storage/bag/chemistry
+		),
 		"Lonestar Cells" = list(
 			/obj/item/cell/small,
 			/obj/item/cell/small/high,
@@ -52,6 +61,13 @@
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam
+		),
+		"Mining Gear" = list(
+			/obj/item/tool/karl,
+			/obj/item/tool/pickaxe,
+			/obj/item/tool/pickaxe/excavation,
+			/obj/item/storage/bag/ore,
+			/obj/structure/ore_box
 		),
 		"Toys" = list(
 			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50), 5),
@@ -75,7 +91,9 @@
 			/obj/item/toy/figure/character/bobblehead/red_soldier,
 			/obj/item/toy/figure/character/bobblehead/metacat,
 			/obj/item/toy/figure/character/bobblehead/shitcurity,
-			/obj/item/toy/figure/character/bobblehead/metro_patrolman
+			/obj/item/toy/figure/character/bobblehead/metro_patrolman,
+			/obj/item/gun/projectile/revolver/capgun,
+			/obj/item/storage/box/blanks
 		),
 		"Holland and Sullivan Sidearms & Ammunition" = list(
 			/obj/item/clothing/accessory/holster,
@@ -102,7 +120,7 @@
 			/obj/item/part/gun/barrel/pistol,
 			/obj/item/part/gun/barrel/magnum
 		),
-		"Miscellanous" = list(
+		"Miscellaneous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
 			/obj/item/storage/photo_album,
@@ -155,7 +173,7 @@
 			/obj/structure/synthesized_instrument/synthesizer/piano = good_data("Piano", list(-4, 2), 1200),
 			/obj/item/media/boombox = good_data("NT Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
 		),
-		"Nicknacks & Bobbles" = list(
+		"Trinkets & Baubles" = list(
 			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/pamphlet = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/rod_figure = custom_good_amount_range(list(3, 6)),

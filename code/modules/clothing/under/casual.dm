@@ -166,8 +166,8 @@
 /obj/item/clothing/under/top/haltertop
 	name = "black halterneck top"
 	desc = "A black halterneck top and jean shorts"
-	icon_state = " haltertop"
-	item_state = " haltertop"
+	icon_state = "haltertop"
+	item_state = "haltertop"
 
 /obj/item/clothing/under/top/outfitfrontier
 	name = "frontier outfit"
@@ -353,6 +353,11 @@
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
 
+/obj/item/clothing/under/turtleneck/syndicate
+	name = "syndicate turtleneck"
+	desc = "A stylish and practical grey turtleneck matched with a pair of combat cargopants. Well beloved by the Xanoranth syndicate who are more than happy to sell them to their many friends and allies."
+	icon_state = "syndsuit"
+
 //Role:premier-turtlenecks
 
 /obj/item/clothing/under/turtleneck/premier
@@ -520,3 +525,9 @@
 	desc = "Sweat stains not included."
 	icon_state = "sports"
 	item_state = "sports"
+
+/obj/item/clothing/under/rank/ntedress
+	name = "Absolutist evening dress"
+	desc = "A white and gold evening gown, produced and often worn by Abolutists"
+	icon_state = "eveningdress_nt"
+	item_state = "eveningdress_nt"

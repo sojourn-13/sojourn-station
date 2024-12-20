@@ -41,8 +41,8 @@
 
 	log_and_message_admins("Active Blob combative players number is [active_players].")
 	if(GLOB.hive_data_bool["pop_lock"])
-		if(active_players <= 7)
-			log_and_message_admins("Blob failed to spawn as their was less then 7 active players exspected to combat the blob.")
+		if(active_players <= 4)
+			log_and_message_admins("Blob failed to spawn as their was less then 4 active players exspected to combat the blob.")
 			kill()
 			return
 

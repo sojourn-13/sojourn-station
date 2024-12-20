@@ -73,13 +73,13 @@
 		to_chat(user, "<span class='notice'>\The [src]s crystal slot is empty.")
 
 /obj/machinery/telesci_relay/update_icon()
-	cut_overlays()
+	cut_overlays()	
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(checkCrystal())
-		overlays += "relay-powered"
+		add_overlay("relay-powered")
 	if(inUse)
-		overlays += "relay-calculating"
+		add_overlay("relay-calculating")
 
 /obj/machinery/telesci_relay/proc/getCrystalIntegrityPercent()
 	var/percent = stored_crystal.integrity/stored_crystal.max_integrity
@@ -118,13 +118,13 @@
 	bluespace_entropy(2, get_turf(src), TRUE)
 	cut_overlays()
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(burntOut)
-		overlays += "relay-fried"
-		addtimer(CALLBACK(src, /atom/proc/update_icon), 4)
+		add_overlay("relay-fried")
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 4)
 	else
-		overlays += "relay-calculating"
-		addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
+		add_overlay("relay-calculating")
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 5)
 
 /obj/machinery/telesci_relay/proc/checkCrystal() //Like pingCrystal(), but without risking damage.
 	if(!stored_crystal)
@@ -139,7 +139,7 @@
 	if(prob(30)) //30% chance to just straight up explode.
 		src.visible_message(SPAN_DANGER("\The [src] begins to vibrate, its crystal glowing brightly!"))
 		do_sparks(6, FALSE, get_turf(src))
-		addtimer(CALLBACK(src, /obj/machinery/telesci_relay/proc/explode), 1 SECOND)
+		addtimer(CALLBACK(src, PROC_REF(explode)), 1 SECOND)
 
 /obj/machinery/telesci_relay/proc/explode()
 	var/turf/T = get_turf(src)

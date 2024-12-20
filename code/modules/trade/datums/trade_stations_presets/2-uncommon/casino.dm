@@ -5,11 +5,11 @@
 	uid = "casino"
 	tree_x = 0.62
 	tree_y = 0.8
-	markup = 20				// High markup, low base price to prevent export abuse
+	markup = 10				// High markup, low base price to prevent export abuse
 	base_income = 0
 	wealth = 0
 	hidden_inv_threshold = 1000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("illegal1", "greyson")
 	recommendations_needed = 1
 	inventory = list(

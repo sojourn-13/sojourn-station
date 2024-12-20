@@ -59,8 +59,15 @@
 
 	if(!tracker && (contents.len || reagents.total_volume != 0))
 		to_chat(user, "The [src] is full. Empty its contents first.")
-	else
-		process_item(used_item, user)
+		return
+	if(istype(used_item, /obj/item/gripper))
+		var/obj/item/gripper/gripper = used_item
+		if(!gripper.wrapped)
+			return
+		else
+			process_item(gripper.wrapped, user)
+
+	process_item(used_item, user)
 
 	return TRUE
 
@@ -109,6 +116,7 @@
 		if(lower_quality_on_fail)
 			for (var/obj/item/contained in contents)
 				contained?:food_quality -= lower_quality_on_fail
+			return
 		else
 			tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
@@ -149,13 +157,24 @@
 		tracker = null
 	return return_value
 
-//TODO: Handle the contents of the container being ruined via burning.
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_burning()
+	clear()
+	new /obj/item/reagent_containers/food/snacks/badrecipe(src)
+	update_icon()
 	return
 
-//TODO: Handle the contents of the container lighting on actual fire.
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_ignition()
-	return FALSE
+//Deletes contents of container.
+//Used when food is burned, before replacing it with a burned mess
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear()
+	QDEL_LIST(contents)
+	contents=list()
+	reagents.clear_reagents()
+	if(tracker)
+		qdel(tracker)
+		tracker = null
+	clear_cooking_data()
+	update_icon()
+
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/verb/empty()
 	set src in view(1)
@@ -208,21 +227,11 @@
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/AltClick(var/mob/user)
 	do_empty(user)
 
-//Deletes contents of container.
-//Used when food is burned, before replacing it with a burned mess
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear()
-	QDEL_LIST(contents)
-	contents=list()
-	reagents.clear_reagents()
-	if(tracker)
-		qdel(tracker)
-		tracker = null
-	clear_cooking_data()
-
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/clear_cooking_data()
 	stove_data = list("High"=0 , "Medium" = 0, "Low"=0)
 	grill_data = list("High"=0 , "Medium" = 0, "Low"=0)
+	oven_data = list("High"=0 , "Medium" = 0, "Low"=0)
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/label(var/number, var/CT = null)
 	//This returns something like "Fryer basket 1 - empty"

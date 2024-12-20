@@ -289,7 +289,7 @@
 						P.base_icon_state = base_state
 						P.set_dir(dir)
 						P.pipe_dir = pipe_dir
-						P.updateicon()
+						P.update_icon()
 
 						//Needs some special treatment ;)
 						if(pipe_type in list(PIPE_TYPE_JUNC_SORT, PIPE_TYPE_JUNC_SORT_FLIP))
@@ -302,7 +302,6 @@
 					else if(pipe_type == PIPE_TYPE_BIN) // Disposal bin
 						var/obj/machinery/disposal/P = new /obj/machinery/disposal(src.loc)
 						src.transfer_fingerprints_to(P)
-						P.mode = 0 // start with pump off
 
 					else if(pipe_type == PIPE_TYPE_OUTLET) // Disposal outlet
 

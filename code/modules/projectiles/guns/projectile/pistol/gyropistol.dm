@@ -1,3 +1,4 @@
+/* Leaving this for postereity, but handheld rapidfire explosives have just been cancer for the whole time we had them. regular players ignore them, powergamers abuse them let em die. - CDB
 /obj/item/gun/projectile/gyropistol
 	name = "SA GP \"Novichok\""
 	desc = "A bulky pistol designed to fire 19mm self-propelled explosive rockets. Commonly referred to as the 'man-opener' by Void Wolves."
@@ -5,7 +6,7 @@
 	icon_state = "gyropistol"
 	item_state = "pistol"
 	caliber = CAL_70
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 6)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
@@ -39,3 +40,4 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
+*/

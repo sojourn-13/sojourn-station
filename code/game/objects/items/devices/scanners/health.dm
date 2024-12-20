@@ -107,7 +107,7 @@
 		. += SPAN_WARNING("Warning: Blood Level ERROR: --% --cl.</span> <span class='notice'>Type: ERROR")
 		. += span("highlight", "Subject's pulse: <font color='red'>-- bpm.</font>")
 		return
-	
+
 	var/mob/living/carbon/human/H = M
 
 	var/fake_oxy = max(rand(1, 40), M.getOxyLoss(), (300 - (M.getFireLoss() + M.getBruteLoss())))
@@ -181,13 +181,14 @@
 				else
 					internal_wound_severity = null
 
-				dat += text("<span class='highlight'>     [][]:  [] - [] - [] [] []</span>",
+				dat += text("<span class='highlight'>     [][]: [] -  [] - [] - [] [] []</span>",
 				capitalize(org.name),
 				(BP_IS_ROBOTIC(org)) ? "(Cybernetic)" : "",
 				"<font color='red'>[brute_health ? brute_health : "0"] / [org.max_damage]</font>",
 				"<font color='#FFA500'>[burn_health ? burn_health : "0"] / [org.max_damage]</font>",
 				(org.status & ORGAN_BLEEDING) ? "<font color='red'>\[Bleeding\]</font>" : "",
 				(org.status & ORGAN_BROKEN && !(org.status & ORGAN_SPLINTED)) ? "<font color='red'>\[Broken\]</font>" : "",
+				(org.status & ORGAN_INFECTED) ? "<font color='green'>\[Infected\]</font>" : "",
 				internal_wound_severity ? "<font color='red'>\[[internal_wound_severity] Organ Wounds\]</font>" : "")
 		else
 			dat += span("highlight", "Limbs are OK.")
@@ -224,11 +225,6 @@
 					++unknown
 			if(unknown)
 				dat += SPAN_WARNING("Non-medical reagent[(unknown > 1)?"s":""] found in subject's stomach.")
-		if(C.virus2.len)
-			for (var/ID in C.virus2)
-				if (ID in virusDB)
-					var/datum/data/record/V = virusDB[ID]
-					dat += SPAN_WARNING("Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]")
 	if (M.getCloneLoss())
 		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
@@ -244,10 +240,12 @@
 		var/blood_volume = H.vessel.get_reagent_amount("blood")
 		var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 		var/blood_type = H.dna.b_type
-		if((blood_percent <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
+		if((blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
 			dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
-		else if(blood_percent <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+		else if(blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 			dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
+		else if(blood_percent > 100)
+			dat += span("highlight", "<font color='#14d70aff'>Blood Level Healthy: [blood_percent]% [blood_volume]cl. Type: [blood_type]</font>")
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"

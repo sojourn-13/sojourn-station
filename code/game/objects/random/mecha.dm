@@ -50,8 +50,7 @@
 	spawn_nothing_percentage = 80
 
 /obj/random/mecha_equipment/item_to_spawn()
-	return pickweight(list(/obj/item/mecha_parts/mecha_equipment/tool/ai_holder,
-		/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
+	return pickweight(list(/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
 		/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
 		/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
 		/obj/item/mecha_parts/mecha_equipment/thruster = 2,
@@ -69,7 +68,7 @@
 		/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
 		/obj/item/mecha_parts/mecha_equipment/generator,
 		/obj/item/mecha_parts/mecha_equipment/generator/nuclear,
-		/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp,
+		/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/safety_clamp,
 		/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 		/obj/item/mecha_parts/mecha_equipment/thruster,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,

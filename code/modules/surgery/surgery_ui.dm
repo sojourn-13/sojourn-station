@@ -85,8 +85,8 @@
 			organ_data["damage"] = organ.damage
 			organ_data["max_damage"] = organ.max_damage
 			organ_data["wound_count"] = LAZYLEN(organ.GetComponents(/datum/component/internal_wound))
-			if(istype(organ, /obj/item/organ/internal/brain))
-				var/obj/item/organ/internal/brain/B = organ
+			if(istype(organ, /obj/item/organ/internal/vital/brain))
+				var/obj/item/organ/internal/vital/brain/B = organ
 				organ_data["brain_health"] = B.health
 				organ_data["brain_health_max"] = initial(B.health)
 			organ_data["status"] = organ.get_status_data()
@@ -189,7 +189,7 @@
 			return TRUE
 
 		if("remove_shrapnel")
-			//soj edits to be insainly easyer for corpsmen
+			//soj edits to be insanely easier for corpsmen
 			if(istype(usr, /mob/living))
 				var/mob/living/user = usr
 				var/target_stat = BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO

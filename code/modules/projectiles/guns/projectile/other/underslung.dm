@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/underslung
 	name = "underslung grenade launcher"
 	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg' // M203 reload sound, without the cocking.
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
@@ -10,6 +10,7 @@
 	safety = FALSE
 	twohanded = FALSE
 	caliber = CAL_GRENADE
+	fire_delay = 15
 	handle_casings = EJECT_CASINGS
 	serial_type = "H&S"
 

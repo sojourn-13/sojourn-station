@@ -48,7 +48,7 @@
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
 	desc = "An authoritative green uniform with gold flair denoting the rank of Premier."
 	name = "premier's uniform"
-	icon_state = "captain"
+	icon_state = "captain"  //Sprites from Eris
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/captain/verb/toggle_style()
@@ -62,6 +62,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["premier's uniform"] = "captain"
+	options["premier's old uniform"] = "captain-old"
 	options["premier's formal uniform"] = "captain_formal"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -142,6 +143,7 @@
 	var/list/options = list()
 	options["Acolyte"] = "acolyte"
 	options["Acolyte Basic"] = "acolyte_basic"
+	options["Acolyte Robe"] = "churchgrobe"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -193,7 +195,7 @@
 /obj/item/clothing/under/rank/church/toga
 	desc = "Smells like laurel wreath."
 	name = "church toga"
-	icon_state = "numerical_garbs_red"
+	icon_state = "churchtoga"
 
 /obj/item/clothing/under/rank/church/toga/toggle_style()
 	set name = "Adjust Style"
@@ -205,7 +207,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red"] = "numerical_garbs_red"
+	options["Red"] = "churchtoga"
 	options["Red Pauldronless"] = "churchtoga_alt"
 	options["Black"] = "churchtoga_black"
 	options["Black Pauldronless"] = "churchtoga_blackalt"
@@ -299,7 +301,7 @@
 	desc = "A jury rugged set of baggy pants with leather reinforcement paddings and other fibers, as comfortable as clothes can get when made by whatever you scavenged off the land."
 	icon_state = "tactical_rags"
 	item_state = "tactical_rags"
-	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 5)
+	armor_list = list(melee = 1, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 5)
 
 /obj/item/clothing/under/rank/lonestar_gorka
 	name = "lonestar gorka jumpsuit"

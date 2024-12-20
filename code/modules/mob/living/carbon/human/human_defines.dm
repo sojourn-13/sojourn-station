@@ -81,7 +81,9 @@
 	var/hand_blood_color
 
 	var/gunshot_residue
-	var/pulling_punches // Are you trying not to hurt your opponent?
+	var/holding_back // Are you trying not to hurt your opponent?
+	var/blocking = FALSE //ready to block melee attacks?
+	var/dodging = TRUE // are you dodging those shots?
 
 	mob_bump_flag = HUMAN
 	mob_push_flags = ~HEAVY
@@ -118,9 +120,18 @@
 	var/language_blackout = 0
 	var/suppress_communication = 0
 
-	var/momentum_speed = 0 // The amount of run-up
+	var/momentum_speed = 0 // The amount of run-
+	var/momentum_speed_adder = 0 // Directly adds to momentum speed per addition
 	var/momentum_dir = 0 // Direction of run-up
 	var/momentum_reduction_timer
 
 
 	var/added_movedelay = 0 //Used for humans only
+
+	//Lib edits
+	var/frost = 0
+	var/frost_emote
+	var/frost_emote_cooldown = 49
+	var/frost_warnings
+	var/frost_warnings_cooldown = 49
+	var/max_frost = 1200 //were out of 1.2k so are values are a bit inflated

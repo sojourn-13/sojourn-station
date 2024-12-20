@@ -19,7 +19,7 @@
 	serial_type = "H&S"
 
 	wield_delay = 0 SECOND //god it's bad
-	gun_parts = list(/obj/item/part/gun/frame/havelock = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/pistol = 1)
+	gun_parts = list(/obj/item/part/gun/frame/havelock = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/pistol/steel = 1)
 
 /obj/item/part/gun/frame/havelock
 	name = "Havelock frame"
@@ -29,7 +29,8 @@
 	resultvars = list(/obj/item/gun/projectile/revolver/detective)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
-	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel, /obj/item/part/gun/barrel/pistol)
+	nra = FALSE //Hacklack is a cheap revolver thus can take both steel barrels and normal pistol ones, but *not* higher calibers
 
 /obj/item/gun/projectile/revolver/detective/update_icon()
 	..()

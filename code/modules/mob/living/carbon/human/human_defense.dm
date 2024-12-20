@@ -4,7 +4,7 @@ Contains most of the procs that are called when a mob is attacked by something
 bullet_act
 ex_act
 meteor_act
-
+uniquic_armor_act
 */
 
 /mob/living/carbon/human/bullet_act(var/obj/item/projectile/P, var/def_zone)
@@ -12,6 +12,8 @@ meteor_act
 	def_zone = check_zone(def_zone)
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
+
+	unique_armor_check(P, null, null)
 
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
@@ -36,7 +38,7 @@ meteor_act
 		//Shrapnel
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
-			if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+			if(prob((10 + max(P.damage_types[BRUTE] - (armor * (3 - P.wounding_mult)), -10) * P.embed_mult))) //Good/high armor can fully protect against sharpnal
 				if(!P.shrapnel_type)
 					var/obj/item/material/shard/shrapnel/SP = new()
 					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
@@ -48,7 +50,7 @@ meteor_act
 					var/obj/item/newshrap = new P.shrapnel_type(organ)
 					organ.embed(newshrap)
 
-/mob/living/carbon/human/hit_impact(damage, dir)
+/mob/living/carbon/human/hit_impact(damage, dir, hit_zone)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))
 		return
 	if(damage < stats.getStat(STAT_TGH))
@@ -61,43 +63,10 @@ meteor_act
 	var/r_dir = reverse_dir[dir]
 	var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
 
-	var/stumbled = FALSE
-
-	if(prob(60 - stats.getStat(STAT_TGH)))
-		stumbled = TRUE
-		step(src, pick(cardinal - hit_dirs))
-
-	for(var/atom/movable/A in oview(1))
-		if(!A.Adjacent(src) || prob(50 + stats.getStat(STAT_TGH)))
-			continue
-
-		if(istype(A, /obj/structure/table))
-			var/obj/structure/table/T = A
-			if (!T.can_touch(src) || T.flipped != 0 || !T.flip(get_cardinal_dir(src, T)))
-				continue
-			if(T.climbable)
-				T.structure_shaken()
-			playsound(T,'sound/machines/Table_Fall.ogg',100,1)
-
-		else if(istype(A, /obj/machinery/door))
-			var/obj/machinery/door/D = A
-			D.Bumped(src)
-
-		else if(istype(A, /obj/machinery/button))
-			A.attack_hand(src)
-
-		else if(istype(A, /obj/item) || prob(33))
-			if(A.anchored)
-				continue
-			step(A, pick(cardinal))
-
-		else
-			continue
-		stumbled = TRUE
-
-	if(stumbled)
-		visible_message(SPAN_WARNING("[src] stumbles around."))
-
+	if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
+		if(prob(60 - stats.getStat(STAT_TGH)))
+			step(src, pick(cardinal - hit_dirs))
+			visible_message(SPAN_WARNING("[src] stumbles around."))
 
 /mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
 
@@ -117,7 +86,7 @@ meteor_act
 					emote("pain", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
 					var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-					emote("painscream", 1, "[(species && species.flags & NO_PAIN) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
+					emote("painscream", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -142,6 +111,24 @@ meteor_act
 				armorval += getarmor_organ(organ, type) * weight
 				total += weight
 	return (armorval/max(total, 1))
+
+/mob/living/carbon/human/getarmorablative(var/def_zone, var/type)
+
+	var/obj/item/rig/R = get_equipped_item(slot_back)
+	if(istype(R))
+		if(R.ablative_armor && (type in list(ARMOR_MELEE, ARMOR_BULLET, ARMOR_ENERGY, ARMOR_BOMB)))
+			return R.ablative_armor
+	return FALSE
+
+//Returns true if the ablative armor successfully took damage
+/mob/living/carbon/human/damageablative(var/def_zone, var/damage_taken)
+
+	var/obj/item/rig/R = get_equipped_item(slot_back)
+	if(istype(R))
+		if(R.ablative_armor)
+			R.ablative_armor = max(R.ablative_armor - damage_taken / R.ablation, 0)
+			return TRUE
+	return FALSE
 
 //this proc returns the Siemens coefficient of electrical resistivity for a particular external organ.
 /mob/living/carbon/human/proc/get_siemens_coefficient_organ(obj/item/organ/external/def_zone)
@@ -197,6 +184,11 @@ meteor_act
 		if(!shield) continue
 		. = shield.handle_shield(src, damage, damage_source, attacker, def_zone, attack_text)
 		if(.) return
+
+	if(istype(damage_source, /obj/item/projectile))
+		var/obj/item/rig/R = back
+		if(R)
+			R.block_bullet(src, damage_source, def_zone)
 	return 0
 
 /mob/living/carbon/human/proc/has_shield()
@@ -204,6 +196,43 @@ meteor_act
 		if(!shield) continue
 		return shield
 	return FALSE
+
+/mob/living/carbon/human/proc/handle_blocking(var/damage)
+	var/stat_affect = 0.3 //lowered to 0.2 if we are blocking with an item
+	var/item_size_affect = 0 //the bigger the thing you hold is, the more damage you can block
+	var/toughness = max(1, stats.getStat(STAT_TGH))
+	//passive blocking with shields is handled differently(code is above this proc)
+	if(get_active_hand())//are we blocking with an item?
+		var/obj/item/I = get_active_hand()
+		if(istype(I))
+			item_size_affect = I.w_class * 5
+			stat_affect = 0.2
+	damage -= (toughness * stat_affect + item_size_affect)
+	return max(0, damage)
+
+/mob/living/carbon/human/proc/grab_redirect_attack(var/mob/living/carbon/human/attacker, var/obj/item/grab/G, var/obj/item/I)
+	var/mob/living/carbon/human/grabbed = G.affecting
+	visible_message(SPAN_DANGER("[src] redirects the blow at [grabbed]!"), SPAN_DANGER("You redirect the blow at [grabbed]!"))
+	//check what we are being hit with, a hand(I is null), or an item?
+	//quickly turn blocking off and on to prevent looping(since we are attacking again)
+	blocking = FALSE
+	if(istype(I, /obj/item))
+		grabbed.attackby(I, attacker)
+	else
+		grabbed.attack_hand(attacker)//and now it's not our problems
+	blocking = TRUE
+	//change our block state depending on grab level
+	if(G.state >= GRAB_NECK)
+		return //block remains active
+	else if(G.state >= GRAB_AGGRESSIVE)
+		stop_blocking()
+		return //block is turned off
+	else
+		stop_blocking()
+		drop_from_inventory(G)
+		G.loc = null
+		qdel(G)
+		return //block is turned off, grab is GONE
 
 /mob/living/carbon/human/resolve_item_attack(obj/item/I, mob/living/user, var/target_zone)
 	if(check_attack_throat(I, user))
@@ -233,7 +262,16 @@ meteor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+
+	visible_message("<span class='danger'>[src] has been [LAZYPICK(I.attack_verb) || "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
+
+	var/EF = unique_armor_check(I, user, effective_force)
+	if(EF)
+		effective_force = EF
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.stop_blocking()
 
 	standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
@@ -244,59 +282,96 @@ meteor_act
 	if(!affecting)
 		return FALSE
 
-	// Handle striking to cripple.
-	if(user.a_intent == I_DISARM)
-		effective_force /= 2 //half the effective force
-		if(!..(I, user, effective_force, hit_zone))
+	if(blocking)
+		if(istype(get_active_hand(), /obj/item/grab))//we are blocking with a human shield! We redirect the attack. You know, because grab doesn't exist as an item.
+			var/obj/item/grab/G = get_active_hand()
+			grab_redirect_attack(G, I)
 			return FALSE
+		else
+			stop_blocking()
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Blocked attack of [user.name] ([user.ckey])</font>")
+			user.attack_log += text("\[[time_stamp()]\] <font color='orange'>Attack has been blocked by [src.name] ([src.ckey])</font>")
+			visible_message(SPAN_WARNING("[src] blocks the blow!"), SPAN_WARNING("You block the blow!"))
+			effective_force = handle_blocking(effective_force)
+			if(effective_force == 0)
+				visible_message(SPAN_DANGER("The attack has been completely negated!"))
+				return FALSE
 
-		attack_joint(affecting, I) //but can dislocate(strike nerve) joints
+	//If not blocked, handle broad strike attacks
+	if(((I.sharp && I.edge && user.a_intent == I_DISARM) || I.forced_broad_strike) && (!istype(I, /obj/item/tool/sword/nt/spear) || !istype(I, /obj/item/tele_spear) || !istype(I, /obj/item/tool/spear)))
+		var/list/L[] = BP_ALL_LIMBS
+		effective_force /= 3
+		L.Remove(hit_zone)
+		for(var/i in 1 to 2)
+			var/temp_zone = pick(L)
+			L.Remove(temp_zone)
+			..(I, user, effective_force, temp_zone)
+
+	//Push attacks
+	if(hit_zone == BP_GROIN && I.push_attack && user.a_intent == I_DISARM)
+		step_glide(src, get_dir(user, src), DELAY2GLIDESIZE(0.4 SECONDS))
+		visible_message(SPAN_WARNING("[src] is pushed away by the attack!"))
 	else if(!..())
 		return FALSE
-
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(hit_appends)	//forcesay checks stat already
-
 		//Apply blood
 		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)) && src.species?.reagent_tag != IS_SYNTHETIC)
 			I.add_blood(src)
+		//Apply screenshake
+		if(I.screen_shake && prob(70))
+			shake_camera(src, 0.5, 1)
+		//All this is copypasta'd from projectile code. Basically there's a cool splat animation when someone gets hit by something.
+		var/splatter_dir = dir
+		var/turf/target_location = get_turf(src)
+		splatter_dir = get_dir(user, target_location)
+		target_location = get_step(target_location, splatter_dir)
+		var/blood_color = "#C80000"
+		blood_color = src.species.blood_color
+		new /obj/effect/overlay/temp/dir_setting/bloodsplatter(src.loc, splatter_dir, blood_color)
+		target_location.add_blood(src)
 
-		if(prob(33 + I.sharp * 10) && src.species?.reagent_tag != IS_SYNTHETIC)
-			var/turf/location = loc
-			if(istype(location, /turf/simulated) && I.damtype == BRUTE)
-				location.add_blood(src)
-				drip_blood(3)
-			else
-				spawn emote("me", 1, "coughs up blood!")
-				drip_blood(5)
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
-				if(get_dist(H, src) <= 1) //people with TK won't get smeared with blood
-					H.bloody_body(src)
-					H.bloody_hands(src)
+		//Intervention attacks
+		if(prob(max(5, min(30, 30 - stats.getStat(STAT_TGH)/2.5)))) //This is hell. 30% is default chance, 5% is minimum which is met at 80 TGH.
+			//See if we have any guns that might go off,
+			for(var/obj/item/gun/W in get_both_hands())
+				if(W && prob(40))
+					visible_message(SPAN_DANGER("[src]'s [W] goes off during the struggle!"))
+					W.Fire(target_location, src)
+					return TRUE
+			//else do other types of intervention attacks
+			var/intervention_type = pick("out of breath", "bloodstains")
+			switch(intervention_type)
+				if("bloodstains")
+					var/turf/location = loc
+					if(istype(location, /turf/simulated))
+						location.add_blood(src)
+					if(ishuman(user))
+						var/mob/living/carbon/human/H = user
+						if(get_dist(H, src) <= 1) //people with TK won't get smeared with blood
+							H.bloody_body(src)
+							H.bloody_hands(src)
 
-			switch(hit_zone)
-				if(BP_HEAD)
-					if(wear_mask)
-						wear_mask.add_blood(src)
-						update_inv_wear_mask(0)
-					if(head)
-						head.add_blood(src)
-						update_inv_head(0)
-					if(glasses && prob(33))
-						glasses.add_blood(src)
-						update_inv_glasses(0)
-				if(BP_CHEST)
-					bloody_body(src)
-			//All this is copypasta'd from projectile code. Basically there's a cool splat animation when someone gets hit by something.
-			var/splatter_dir = dir
-			var/turf/target_loca = get_turf(src)
-			splatter_dir = get_dir(user, target_loca)
-			target_loca = get_step(target_loca, splatter_dir)
-			var/blood_color = "#C80000"
-			blood_color = src.form.blood_color
-			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(src.loc, splatter_dir, blood_color)
-			target_loca.add_blood(src)
+						if(prob(40))
+							if(wear_mask)
+								wear_mask.add_blood(src)
+								update_inv_wear_mask(0)
+							if(head)
+								head.add_blood(src)
+								update_inv_head(0)
+							if(glasses)
+								glasses.add_blood(src)
+								update_inv_glasses(0)
+						else
+							bloody_body(src)
+					visible_message(SPAN_WARNING("Blood stains [src]'s clothes!"), SPAN_DANGER("Blood seeps through your clothes and your heart skips a beat!"))
+					sanity.changeLevel(-5)
+
+				if("out of breath")
+					visible_message(SPAN_WARNING("[src] gasps in pain!"), SPAN_DANGER("Pain jolts through your nerves!"))
+					adjustOxyLoss(10)
+					adjustHalLoss(5)
+
 
 	return TRUE
 
@@ -352,6 +427,7 @@ meteor_act
 			return
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		/// Get hit with glass shards , your fibers are on them now, or with a rod idk.
 		O.add_fibers(src)
@@ -489,3 +565,184 @@ meteor_act
 		perm += perm_by_part[part]
 
 	return perm
+
+//soj edit
+//This atm only has 1 armor in it thus its coding is trash and snowflake
+//user
+/mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
+	//message_admins("unique_armor_check(A [A] user [user]) EF [EF]")
+	if(istype(shoes, /obj/item/clothing/shoes/crimsoncross_warp))
+		//message_admins("SHOES FOUND!!!!")
+		var/obj/item/clothing/shoes/crimsoncross_warp/CW = shoes
+		CW.harm_charge += EF
+		if(0<CW.harm_charge && !EF)
+			CW.squeaking = CW.harm_charge * 0.002 //ENDLESS growth after all
+			var/fear = sanity.level
+			if(fear > 0)
+				fear = fear / sanity.max_level
+				if(fear != 1)
+					fear += 1
+				//So that sanity
+				//message_admins("fear1 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear2 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear3 [fear]")
+			//Mile stones for increase penitles for speed reduction
+			if(CW.harm_charge >= 1200)
+				fear += 3
+			if(CW.harm_charge >= 800)
+				fear += 2
+			if(CW.harm_charge >= 400)
+				fear += 1
+			CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
+			CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
+			return CW.squeaking
+	//We at this moment only have one outfit that we check and its by path for now.
+	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
+		//message_admins("Suit found")
+		//We hate you synth, please die!
+		if(has_synthetics())
+			//message_admins("Synth found, plz directly die!")
+			return EF //Foolishness
+		var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
+		//message_admins("bluecross_regaloutfit (Pass)")
+		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
+		var/list/mobs_we_hitless = list(
+			/mob/living/carbon/superior_animal/robot,
+			/mob/living/simple_animal/hostile/hivebot,
+			/obj/machinery/porta_turret,
+			/obj/machinery/power/os_turret,
+			/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant,
+			/mob/living/simple_animal/hostile/megafauna/one_star,
+			/mob/living/simple_animal/hostile/republicon,
+			/mob/living/carbon/superior_animal/sentinal_seeker,
+			/mob/living/carbon/superior_animal/roach/elektromagnetisch, //beep boop
+			/mob/living/carbon/superior_animal/roach/nanite,
+			/mob/living/simple_animal/hostile/naniteswarm,
+			/mob/living/simple_animal/hostile/commanded/nanomachine,
+			/mob/living/simple_animal/hostile/viscerator,
+			/mob/living/silicon,
+			/mob/living/simple_animal/hostile/hivemind,
+			/mob/living/simple_animal/hostile/retaliate/malf_drone
+			)
+		if(A)
+			if(istype(A, /obj/item/projectile))
+				//message_admins("bluecross_regaloutfit proj pass")
+				var/obj/item/projectile/Proj = A
+				if(Proj.original_firer)
+					//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
+					for(var/MWH in mobs_we_hitless)
+						//message_admins("[MWH] vs [Proj.original_firer]")
+						if(istype(Proj.original_firer, MWH))
+							//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
+							en_passant = TRUE
+							break
+					if(ishuman(Proj.original_firer))
+						var/mob/living/carbon/human/H = Proj.original_firer
+						if(H.has_synthetics())
+							//message_admins("bluecross_regaloutfit Proj Pass")
+							en_passant = TRUE
+					if(en_passant)
+						//message_admins("unique_armor_check en_passant ranged")
+						//message_admins("prj ranged [Proj.penetrating]")
+						Proj.armor_divisor *= 0.5
+						Proj.check_armour = ARMOR_MELEE //Foolishness
+						Proj.fire_stacks = 0   //No witches here
+						Proj.wounding_mult = 1 //Foolishness!
+						if(Proj.damage_types[BRUTE])
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							Proj.damage_types[BRUTE] *= 0.15
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+						if(Proj.damage_types[BURN])
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
+							Proj.damage_types[BURN] *= 0.15
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+						//message_admins("prj ranged [Proj.penetrating]")
+
+					else
+						//message_admins("unique_armor_check en_passant ranged")
+						//message_admins("prj ranged [Proj.penetrating]")
+						Proj.armor_divisor *= 2
+						if(Proj.damage_types[BRUTE])
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							Proj.damage_types[BRUTE] *= 1.5
+							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+						if(Proj.damage_types[BURN])
+							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+							Proj.damage_types[BURN] *= 2
+						//message_admins("prj ranged [Proj.penetrating]")
+
+				return EF
+		if(EF)
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(H.has_synthetics())
+					EF *= 0.25
+				else
+					EF *= 3 //Viva!!
+				return EF
+			if(user)
+				for(var/MWH in mobs_we_hitless)
+					//message_admins("[MWH] vs [mobs_we_hitless]")
+					if(istype(user, MWH))
+						//message_admins("bluecross_regaloutfit Proj Melee - [mobs_we_hitless] !!!!!!")
+						en_passant = TRUE
+						break
+
+			if(en_passant)
+				EF *= 0.15
+			else
+				EF *= 3 //Viva!!
+
+			return EF
+
+
+/mob/living/carbon/human/proc/has_synthetics()
+	var/sytnthetics = FALSE
+
+	if(species.reagent_tag == IS_SYNTHETIC)
+		sytnthetics = TRUE
+		return sytnthetics
+
+	for(var/obj/item/organ/O in organs)
+		if(istype(O, /obj/item/organ/external))
+			var/obj/item/organ/external/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+			for(var/obj/item/organ_module/OM in R.contents)
+				if(istype(OM, /obj/item/organ/internal))
+					if(OM.is_organic_module == FALSE)
+						sytnthetics = TRUE
+						break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/organ/O in internal_organs)
+		if(istype(O, /obj/item/organ/internal))
+			var/obj/item/organ/internal/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/implant/O in contents)
+		if(istype(O, /obj/item/implant))
+			var/obj/item/implant/I = O
+			if(I.implanted)
+				sytnthetics = TRUE
+				break
+
+	for(var/obj/item/implant/core_implant/O in contents)
+		if(istype(O,/obj/item/implant/core_implant))
+			var/obj/item/implant/core_implant/CI = O
+			if(CI.active)
+				sytnthetics = TRUE
+				break
+
+
+	return sytnthetics

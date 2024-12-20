@@ -17,9 +17,9 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_rifle.ogg' // More cohesive sound, still loud for its caliber
+	fire_sound_silenced = 'sound/weapons/guns/fire/rifle_silenced.ogg' // More cohesive sound, still loud for its caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
 	var/bolt_open = 0
@@ -31,6 +31,8 @@
 	var/bolt_training = TRUE
 	eject_animatio = TRUE //we infact have bullet animations
 	allow_racking = FALSE
+	perk_plusone_eligible = TRUE //Lib sideload port - this and the one below.
+	alt_plus_one_loading = TRUE
 	serial_type = "Hunter Inc"
 
 	wield_delay = 0.3 SECOND
@@ -39,7 +41,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"
-	desc = "A crudly mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine."
+	desc = "A crudely mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
@@ -56,13 +58,13 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 	bolt_training = FALSE //Training didnt cover obrez
-	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
 /obj/item/gun/projectile/boltgun/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -77,6 +79,9 @@
 	if (silenced)
 		iconstring += "_s"
 		itemstring += "_s"
+
+	if (bayonet)	//Used not for base Mosin, but any sub-types that end up able to take bayonets.
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -130,6 +135,7 @@
 					print_string = "You work the bolt open, ejecting [B]!"
 					B.forceMove(get_turf(src))
 					loaded -= B
+		side_loading(user)
 
 		to_chat(user, SPAN_NOTICE(print_string))
 	else

@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/zatvor.dmi'
 	icon_state = "zatvor"
 	item_state = "zatvor"
-	fire_sound = 'sound/weapons/guns/fire/ak.ogg' // It's still an AK
+	fire_sound = 'sound/weapons/guns/fire/ak_fire.ogg' // It's still an AK
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_RIFLE

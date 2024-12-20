@@ -42,9 +42,6 @@
 	if(src.occupant)
 		to_chat(usr, SPAN_WARNING("The scanner is already occupied!"))
 		return
-	if(usr.abiotic())
-		to_chat(usr, SPAN_WARNING("The subject cannot have abiotic items on."))
-		return
 	set_occupant(usr)
 	src.add_fingerprint(usr)
 	return
@@ -80,9 +77,6 @@
 	if(target.buckled)
 		to_chat(user, SPAN_NOTICE("Unbuckle the subject before attempting to move them."))
 		return
-	if(target.abiotic())
-		to_chat(user, SPAN_NOTICE("Subject cannot have abiotic items on."))
-		return
 	set_occupant(target)
 	src.add_fingerprint(user)
 	return TRUE
@@ -92,9 +86,6 @@
 		return
 	if (src.occupant)
 		to_chat(user, SPAN_WARNING("The scanner is already occupied!"))
-		return
-	if (target.abiotic())
-		to_chat(user, SPAN_WARNING("Subject cannot have abiotic items on."))
 		return
 	if (target.buckled)
 		to_chat(user, SPAN_NOTICE("Unbuckle the subject before attempting to move them."))
@@ -153,6 +144,13 @@
 		/obj/item/implant/core_implant/cruciform,
 		/obj/item/implant/excelsior
 	)
+	var/known_cybernetics = list(
+		/obj/item/organ_module/active/simple/wolverine,
+		/obj/item/organ_module/active/simple/armblade/energy_blade,
+		/obj/item/organ_module/active/simple/armblade/bs_tomahawk,
+		/obj/item/organ_module/active/simple/armblade/longsword,
+		/obj/item/organ_module/active/simple/armblade/ritual
+	)
 	var/delete
 	var/temphtml
 	name = "body scanner console"
@@ -181,7 +179,7 @@
 	if(!ishuman(connected.occupant))
 		to_chat(user, SPAN_WARNING("This device can only scan compatible lifeforms."))
 		return
-	if(!usr.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT) && !usr.stat_check(STAT_COG, 50)) //Are we missing the perk AND to low on bio? Needs bio 25 so cog 50 to bypass
+	if(!usr.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_EXPERT) && !usr.stat_check(STAT_COG, 50)) //Are we missing the perk AND to low on bio? Needs bio 25 so cog 50 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -232,7 +230,6 @@
 		"stationtime" = stationtime2text(),
 		"stat" = H.stat,
 		"health" = round(H.health / H.maxHealth * 100),
-		"virus_present" = H.virus2.len,
 		"bruteloss" = H.getBruteLoss(),
 		"fireloss" = H.getFireLoss(),
 		"oxyloss" = H.getOxyLoss(),
@@ -272,8 +269,6 @@
 		else
 			aux = "Dead"
 	dat += text("[]\t-Critical Health %: [] ([])</font><br>", ("<font color='[occ["health"] > 80 ? "blue" : "red"]'>"), occ["health"], aux)
-	if (occ["virus_present"])
-		dat += "<font color='red'>Viral pathogen detected in blood stream.</font><br>"
 	dat += text("[]\t-Brute Damage: []</font><br>", ("<font color='[occ["bruteloss"] < 60  ? "blue" : "red"]'>"), occ["bruteloss"])
 	dat += text("[]\t-Burn Severity: []</font><br>", ("<font color='[occ["fireloss"] < 60  ? "blue" : "red"]'>"), occ["fireloss"])
 	dat += text("[]\t-Respiratory Damage %: []</font><br><br>", ("<font color='[occ["oxyloss"] < 60  ? "blue" : "red"]'>"), occ["oxyloss"])
@@ -336,6 +331,10 @@
 						total_burn_damage += severity
 					else
 						total_brute_and_misc_damage += severity
+				if(istype(I, /obj/item/organ/internal/appendix))
+					var/obj/item/organ/internal/appendix/A = I
+					if(A.inflamed)
+						internal_wounds += "appendicitis"
 
 			// Format internal wounds
 			var/internal_wounds_details
@@ -367,14 +366,28 @@
 				if(is_type_in_list(I,known_implants))
 					var/obj/item/implant/device = I
 					other_wounds += "[device.get_scanner_name()] implanted"
-				else if(istype(I, /obj/item/material/shard/shrapnel))
+					continue
+				if(is_type_in_list(I,known_cybernetics))
+					var/obj/item/organ_module/active/simple/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
+					continue
+				if(istype(I, /obj/item/implant/generic))
+					var/obj/item/implant/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
+					continue
+				if(istype(I, /obj/item/material/shard/shrapnel))
 					other_wounds += "Embedded shrapnel"
-				else if(istype(I, /obj/item/implant))
+					continue
+				if(istype(I, /obj/item/implant))
 					var/obj/item/implant/device = I
 					if(!device.scanner_hidden)
 						unknown_body = TRUE
-				else
-					unknown_body = TRUE
+				//Secondary fancy check for truely hidden organ modules
+				if(istype(I, /obj/item/organ_module))
+					var/obj/item/organ_module/OM = I
+					if(OM.completely_hide_from_scanners)
+						continue
+				unknown_body = TRUE
 			if(unknown_body)
 				other_wounds += "Unknown body present"
 		if (e.is_stump() || e.burn_dam || e.brute_dam || other_wounds.len)

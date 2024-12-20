@@ -5,17 +5,19 @@
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
 	armor_list = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 6,
+		bullet = 5,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
+	seal_delay = 20
 	emp_protection = 10
 	slowdown = 0
 	obscuration = 0
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
+	price_tag = 1000
 	offline_slowdown = 0
 	offline_vision_restriction = 0
 	drain = 2
@@ -41,15 +43,17 @@
 	name = "SI 'Proto-Spacer' control module"
 	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
 	icon_state = "hacker_rig"
-	suit_type = "light suit"
+	suit_type = "SI 'Spacer"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		energy = 0,
 		bomb = 25,
 		bio = 100,
 		rad = 45
 	)
+	airtight = 0
+	seal_delay = 5
 	slowdown = -0.2 //We speed up the user at cost of horrable armor
 	emp_protection = 0
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10) //Costly!
@@ -60,42 +64,45 @@
 	glove_type = /obj/item/clothing/gloves/rig/light/ultra_light
 
 /obj/item/clothing/suit/space/rig/light/ultra_light
-	name = "SI 'Spacer' suit"
 
 /obj/item/clothing/gloves/rig/light/ultra_light
-	name = "SI 'Spacer' gloves"
 
 /obj/item/clothing/shoes/magboots/rig/light/ultra_light
-	name = "SI 'Spacer' shoes"
-
 /obj/item/clothing/head/helmet/space/rig/light/ultra_light
-	name = "SI 'Spacer' hood"
+	name = "HUD"
+	body_parts_covered = EYES|EARS
 	flags_inv = 0
+	camera_networks = list(NETWORK_RESEARCH)
 
 /obj/item/rig/light/hacker/steward
 	name = "SI 'Retainer' control module"
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
+	suit_type = "SI 'retainer"
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
+		melee = 7,
+		bullet = 6,
+		energy = 7,
 		bomb = 30,
 		bio = 100,
-		rad = 30
+		rad = 80
 	)
 	emp_protection = 20
+	ablative_armor = ABLATION_STANDARD //high quality armor
+	ablative_max = 6 //but not a lot of it.
 	seal_delay = 5
+	airtight = 0
 	icon_state = "hacker_rig"
 	req_access = list(access_hop)
+	price_tag = 2000
 
 	initial_modules = list(
 		/obj/item/rig_module/mounted/taser,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/vision/medhud,
 		/obj/item/rig_module/device/healthscanner,
-		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 
 
@@ -105,6 +112,14 @@
 	suit_type = "cyber"
 	desc = "An advanced powered armour suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
 	icon_state = "hacker_rig"
+	armor_list = list(
+		melee = 6,
+		bullet = 5,
+		energy = 5,
+		bomb = 25,
+		bio = 100,
+		rad = 80
+	)
 
 	req_access = list(access_syndicate)
 
@@ -116,18 +131,10 @@
 	glove_type = /obj/item/clothing/gloves/lightrig/hacker
 	boot_type = /obj/item/clothing/shoes/lightrig/hacker
 
-	initial_modules = list(
-		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/datajack,
-		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/voice,
-		/obj/item/rig_module/vision,
-		)
-
 //The cybersuit is not space-proof. It does however, have good siemens_coefficient values
 /obj/item/clothing/head/lightrig/hacker
 	name = "HUD"
+	body_parts_covered = EYES|EARS
 	siemens_coefficient = 0.4
 	flags = 0
 
@@ -143,21 +150,36 @@
 	overslot = 1
 	siemens_coefficient = 0
 
+
+
+/obj/item/rig/light/hacker/equipped
+
+	initial_modules = list(
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/power_sink,
+		/obj/item/rig_module/datajack,
+		/obj/item/rig_module/electrowarfare_suite,
+		/obj/item/rig_module/voice,
+		/obj/item/rig_module/vision,
+		)
+
 /obj/item/rig/light/ninja
 	name = "ominous suit control module"
 	suit_type = "ominous"
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
+		melee = 7,
+		bullet = 7,
 		energy = 20,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
+	seal_delay = 15
 	emp_protection = 40 //change this to 30 if too high.
 	slowdown = 0
+	price_tag = 1000 //rare but ultimately not much to write home about other than its modules.
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ninja
 	glove_type = /obj/item/clothing/gloves/rig/light/ninja
@@ -171,7 +193,7 @@
 		/obj/item/rig_module/vision,
 		/obj/item/rig_module/voice,
 		/obj/item/rig_module/fabricator/energy_net,
-		/obj/item/rig_module/modular_injector,
+		/obj/item/rig_module/modular_injector/combat/preloaded,
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,

@@ -99,9 +99,14 @@
 			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
-				RM.add_reagent(initial(output.id), amount_to_add)
-				triggered = TRUE
+				var/reagent_amount = RM.get_reagent_amount(initial(output.id))
+				if(reagent_amount < initial(output.overdose) || !initial(output.overdose))
+					var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
+					if(!initial(output.overdose) && reagent_amount < 50) //Some reagents have no overdose
+						RM.add_reagent(initial(output.id), clamp(50 / 10 * amount_to_add,0, 50 - reagent_amount))
+					else //add a tenth of our overdose up until 90%
+						RM.add_reagent(initial(output.id), clamp(initial(output.overdose) / 10 * amount_to_add,0, initial(output.overdose) * 0.9 - reagent_amount))
+					triggered = TRUE
 
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
@@ -293,7 +298,6 @@
 	var/active_blood_req_mod = 0
 	var/active_nutriment_req_mod = 0
 	var/active_oxygen_req_mod = 0
-	var/list/active_owner_verb_adds = list()
 
 	// Internal
 	// Keeps track of original values since we can't use initial() (vars aren't defined by default)
@@ -302,7 +306,6 @@
 	var/old_blood_req_mod = 0
 	var/old_nutriment_req_mod = 0
 	var/old_oxygen_req_mod = 0
-	var/list/old_owner_verb_adds = list()
 
 /datum/component/modification/organ/output/activate_organ_functions/get_function_info()
 	var/description = "<span style='color:blue'>Functional information (output):</span> conditional organ functions"
@@ -331,12 +334,10 @@
 		old_blood_req_mod = blood_req_mod
 		old_nutriment_req_mod = nutriment_req_mod
 		old_oxygen_req_mod = oxygen_req_mod
-		old_owner_verb_adds = owner_verb_adds
 		active_organ_efficiency_mod |= old_organ_efficiency_mod
 		active_blood_req_mod += old_blood_req_mod
 		active_nutriment_req_mod += old_nutriment_req_mod
 		active_oxygen_req_mod += old_oxygen_req_mod
-		active_owner_verb_adds |= old_owner_verb_adds
 		are_values_stored = TRUE
 
 	if(LAZYLEN(input))
@@ -350,7 +351,6 @@
 				blood_req_mod = active_blood_req_mod * organ_multiplier * input_multiplier
 				nutriment_req_mod = active_nutriment_req_mod * organ_multiplier * input_multiplier
 				oxygen_req_mod = active_oxygen_req_mod * organ_multiplier * input_multiplier
-				owner_verb_adds = active_owner_verb_adds.Copy()
 
 				if(LAZYLEN(active_organ_efficiency_mod))
 					for(var/process in active_organ_efficiency_mod)
@@ -367,7 +367,6 @@
 	blood_req_mod = old_blood_req_mod
 	nutriment_req_mod = old_nutriment_req_mod
 	oxygen_req_mod = old_oxygen_req_mod
-	owner_verb_adds = old_owner_verb_adds
 
 	if(LAZYLEN(active_organ_efficiency_mod) && !LAZYLEN(organ_efficiency_mod))
 		for(var/process in active_organ_efficiency_mod)

@@ -7,12 +7,12 @@
 	tree_y = 0.8
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = WHOLESALE_GOODS
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("junker")
 	recommendations_needed = 1
 	inventory = list(
@@ -32,27 +32,27 @@
 			/obj/structure/salvageable/implant_container = custom_good_amount_range(list(3, 5)),
 			/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2))
 		),
-		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))
+		"Refined Scrap" = list(/obj/item/stack/material/refined_scrap = custom_good_amount_range(list(50, 75))
 		)
 	)
 	hidden_inventory = list(
 		"Premium Trash" = list(
-			/obj/structure/scrap = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/medical = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/medical/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/vehicle = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/vehicle/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/food = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/food/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/guns = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/guns/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/science = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/science/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/cloth = custom_good_amount_range(list(2,5)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
-			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/poor = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/poor/large = custom_good_amount_range(list(2,5))
+			/obj/structure/scrap = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/medical = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/medical/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/vehicle = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/vehicle/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/food = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/food/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/guns = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/guns/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/science = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/science/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/cloth = custom_good_amount_range(list(1,2)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
+			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/poor = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/poor/large = custom_good_amount_range(list(1,2))
 		)
 	)
 	// TODO: offers
@@ -103,5 +103,5 @@
 /obj/item/scrap_lump
 	price_tag = 3
 
-/obj/item/stack/sheet/refined_scrap
+/obj/item/stack/material/refined_scrap
 	price_tag = 30 //Proffit!

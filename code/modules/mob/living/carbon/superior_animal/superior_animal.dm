@@ -11,7 +11,7 @@
 	full_reload_message  = "[reload_message]"
 	reload_message = "[name] [full_reload_message]"
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
@@ -41,7 +41,11 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
-	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
+	if(move_and_attack)
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(movement_tech))
+
+
+	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
@@ -171,36 +175,6 @@
 				continue
 
 	return safepick(possible_locations) //return one at random
-
-// Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
-
-/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
-	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
-	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
-	if(!breath_required) // 15 KPA Minimum
-		return FALSE
-	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
-	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
-
-/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
-	var/pressure = environment.return_pressure()
-	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
-	if(enviro_damage) // its like this to avoid extra processing further below without using goto
-		bodytemperature += (bodytemperature - environment.temperature) * (environment.total_moles / MOLES_CELLSTANDARD) * (bodytemperature < min_bodytemperature ? 1 - heat_protection : -1 + cold_protection)
-		adjustFireLoss(bodytemperature < min_bodytemperature ? 0 : 15)
-		adjustBruteLoss((pressure < min_air_pressure  || pressure > max_air_pressure) ? 0 : 6)
-		bad_environment = TRUE
-		return FALSE
-	bad_environment = FALSE
-	if (!contaminant_immunity)
-		for(var/g in environment.gas)
-			if(gas_data.flags[g] & XGM_GAS_CONTAMINANT && environment.gas[g] > gas_data.overlay_limit[g] + 1)
-				pl_effects()
-				break
-
-	if (overkill_dust && (getFireLoss() >= maxHealth*2))
-		dust()
-		return FALSE
 
 // branchless isincapacited check made for roaches.
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
@@ -344,7 +318,6 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		if (stat != DEAD)
 			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
-		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
@@ -468,7 +441,8 @@
 
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+					if(!QDELETED(src))
+						addtimer(CALLBACK(src, PROC_REF(OpenFire), targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)
@@ -506,11 +480,14 @@
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
 	if (critcheck)
-		if (istype(src, /mob/living/carbon/human))
-			if(health > HEALTH_THRESHOLD_CRIT) //only matters for humans
+		if (ishuman(src))
+			var/mob/living/carbon/human/H = src
+			if(H.health > HEALTH_THRESHOLD_CRIT) //only matters for humans
 				return TRUE
-			else
-				return FALSE
+			if(!H.resting && stat == CONSCIOUS)
+				return TRUE
+
+			return FALSE
 	if(health > 0)
 		return TRUE
 	return FALSE
@@ -578,15 +555,11 @@
 		if (!AI_inactive)
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_breath(breath)
-			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
-			if (can_burrow && bad_environment)
-				evacuate()
-			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
+		if(!never_stimulate_air && stat != DEAD)//Dead things dont breath
+			sa_handle_breath()
+		//Fire handling , not passing the whole list because thats unefficient.
+		if(on_fire)
+			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
@@ -732,3 +705,17 @@
 	if(istype(mover, /obj/item/projectile))
 		return stat ? TRUE : FALSE
 	. = ..()
+
+/mob/living/carbon/superior_animal/UnarmedAttack(atom/A, proximity)
+	. = ..()
+	if(!.)
+		return
+
+	if(poison_per_bite > 0)
+
+		if(isliving(A))
+			var/mob/living/L = A
+			if(istype(L) && L.reagents)
+				var/zone_armor =  L.getarmor(targeted_organ, ARMOR_MELEE)
+				var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
+				L.reagents.add_reagent(poison_type, poison_injected)

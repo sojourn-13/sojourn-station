@@ -15,6 +15,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/gmcloset/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/device/radio/headset/headset_service(src)
@@ -37,6 +40,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/chefcloset/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/rank/bartender(src)
@@ -62,6 +68,9 @@
 	icon_door = "mixed"
 
 /obj/structure/closet/jcloset/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/sport/purple(src)
 	else
@@ -81,10 +90,12 @@
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/mop(src)
 	new /obj/item/soap/deluxe(src)
-	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
+	new /obj/item/storage/pouch/small_generic/purple(src) // These pouches never get used! Why not give them to are jani boys?
 	new /obj/item/newspaper_stack(src)
 	new /obj/item/holyvacuum(src)
 	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
+	new /obj/item/tool/pickaxe(src) //helps with burrows! decent enough for minor pest control as well
+	new /obj/item/tool/hammer(src) //cracks! To go along side that pickaxe
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
@@ -92,6 +103,9 @@
 	icon_state = "custodian"
 
 /obj/structure/closet/custodial/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/belt/utility/neotheology(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/gun/matter/launcher/nt_sprayer(src)
@@ -116,6 +130,9 @@
 	icon_state = "acolyte"
 
 /obj/structure/closet/acolyte/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(25))
 		new /obj/item/storage/backpack/neotheology(src)
 	else if(prob(25))
@@ -127,6 +144,7 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
+	new /obj/item/gunbox/church(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/dagger/nt(src)

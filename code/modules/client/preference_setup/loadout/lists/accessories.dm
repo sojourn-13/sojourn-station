@@ -1,6 +1,6 @@
 /datum/gear/accessory
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
+	display_name = "drop straps"
+	path = /obj/item/clothing/accessory/dropstraps
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
 	cost = 0
@@ -14,10 +14,6 @@
 	display_name = "colorable sash"
 	path = /obj/item/clothing/accessory/sash/color
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/dropstraps
-	display_name = "drop straps"
-	path = /obj/item/clothing/accessory/dropstraps
 
 /datum/gear/accessory/legbrace
 	display_name = "leg brace"
@@ -54,6 +50,11 @@
 /datum/gear/accessory/scarf
 	display_name = "scarf selection"
 	path = /obj/item/clothing/accessory/scarf/
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/shemaghbase
+	display_name = "shemagh"
+	path = /obj/item/clothing/accessory/shemagh
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/shemagh
@@ -123,9 +124,28 @@
 	path = /obj/item/clothing/accessory/waistcoat/color
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/accessory/colorablestraps
+	display_name = "colorable drop straps"
+	path = /obj/item/clothing/accessory/dropstraps
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/accessory/blackshieldpatch
-	display_name = "blackshield arm patch"
-	path = /obj/item/clothing/accessory/patches/blackshield
+	display_name = "blackshield patch selection"
+	description = "A selection of Blackshield patches."
+	path = /obj/item/clothing/accessory/patches
+
+/datum/gear/accessory/blackshieldpatch/New()
+	..()
+	var/patches = list(
+		"blackshield patch"				=	/obj/item/clothing/accessory/patches/blackshield,
+		"blackshield blank patch"		=	/obj/item/clothing/accessory/patches/blackshield_blank,
+		"blackshield volunteer patch"	=	/obj/item/clothing/accessory/patches/blackshield_volunteer,
+		"blackshield trooper patch"		=	/obj/item/clothing/accessory/patches/blackshield_trooper,
+		"blackshield corpsman patch"	=	/obj/item/clothing/accessory/patches/blackshield_corpsman,
+		"blackshield sergeant patch"	=	/obj/item/clothing/accessory/patches/blackshield_sergeant,
+		"blackshield commander patch"	=	/obj/item/clothing/accessory/patches/blackshield_commander,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(patches)
 
 /datum/gear/accessory/pilotharness
 	display_name = "pilot harness"

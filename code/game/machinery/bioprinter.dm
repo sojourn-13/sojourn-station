@@ -18,9 +18,10 @@
 	var/max_matter = 300
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/list/products = list(
-		OP_HEART =  		list(/obj/item/organ/internal/heart,  50),
-		OP_LUNGS =  		list(/obj/item/organ/internal/lungs,  40),
-		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
+		OP_HEART =  		list(/obj/item/organ/internal/vital/heart,  50),
+		OP_LUNGS =  		list(/obj/item/organ/internal/vital/lungs,  40),
+		OP_KIDNEY_LEFT = 	list(/obj/item/organ/internal/kidney/left, 20),
+		OP_KIDNEY_RIGHT = 	list(/obj/item/organ/internal/kidney/right, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
 		OP_BLOOD_VESSEL =  	list(/obj/item/organ/internal/blood_vessel,  10),
@@ -48,8 +49,8 @@
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200
 	products = list(
-		OP_HEART =   		list(/obj/item/organ/internal/heart,  50),
-		OP_LUNGS =   		list(/obj/item/organ/internal/lungs,  40),
+		OP_HEART =   		list(/obj/item/organ/internal/vital/heart,  50),
+		OP_LUNGS =   		list(/obj/item/organ/internal/vital/lungs,  40),
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
 		OP_EYES =   		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
@@ -74,11 +75,15 @@
 
 		if(loaded_dna)
 			visible_message("<span class='notice'>The printer injects the stored DNA into the biomass.</span>.")
-			O.transplant_data = list()
-			var/mob/living/carbon/C = loaded_dna["donor"]
-			O.transplant_data["species"] =    C.species.name
-			O.transplant_data["blood_type"] = loaded_dna["blood_type"]
-			O.transplant_data["blood_DNA"] =  loaded_dna["blood_DNA"]
+			O.transplant_data = list(
+				"blood_type" = loaded_dna["blood_type"],
+				"blood_DNA" = loaded_dna["blood_DNA"],
+			)
+			var/datum/weakref/ref = loaded_dna["donor"]
+			if(istype(ref))
+				var/mob/living/carbon/C = ref.resolve()
+				if(istype(C))
+					O.transplant_data["species"] =    C.species.name
 
 		visible_message("<span class='info'>The bioprinter spits out a new organ.</span>")
 
@@ -124,8 +129,8 @@
 		stored_matter = 200
 
 	products = list(
-		OP_HEART =  		list(/obj/item/organ/internal/heart/prosthetic,  50),
-		OP_LUNGS =  		list(/obj/item/organ/internal/lungs/prosthetic,  40),
+		OP_HEART =  		list(/obj/item/organ/internal/vital/heart/prosthetic,  50),
+		OP_LUNGS =  		list(/obj/item/organ/internal/vital/lungs/prosthetic,  40),
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney/prosthetic, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes/prosthetic,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver/prosthetic,  50),

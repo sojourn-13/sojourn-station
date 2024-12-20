@@ -25,7 +25,7 @@
 	var/list/options = list()
 	options["GM jumpsuit"] = "chiefengineer"
 	options["GM jumpskirt"] = "artificer_jumpskirt_master"
-	options["GM High Visiablity Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
+	options["GM High Visiblity Jumpsuit"] = "GM uniform" // Sprites by Ezoken/Dromkii
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -67,11 +67,10 @@
 	options["Adept Jumpsuit Padded"] = "artificer_armored_jumpsuit"
 	options["Adept Jumpskirt"] = "artificer_apprentice_skirt"
 	options["Adept Jumpskirt Padded"] = "artificer_jumpskirt_adept"
-
-	options["High Visiablity Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Two Piece"] = "adept_alt" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Rolled sleeves"] = "adept_alt_rolled" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Shirt down"] = "adept_alt_pants" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Two Piece"] = "adept_alt" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Rolled sleeves"] = "adept_alt_rolled" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Shirt down"] = "adept_alt_pants" // Sprites by Ezoken/Dromkii
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -97,10 +96,10 @@
 	icon_state = "engineadv"
 	item_state = "engineadv"
 	armor_list = list(
-		melee = 20, //if they are not waring any armor over this then we give *something*
-		bullet = 20,
-		energy = 25,
-		bomb = 40,
+		melee = 5, //if they are not waring any armor over this then we give *something*
+		bullet = 5,
+		energy = 6,
+		bomb = 10,
 		bio = 50,
 		rad = 100 //Rad proof
 	)
@@ -111,9 +110,9 @@
 	icon_state = "chiefengineeradv"
 	item_state = "chiefengineeradv"
 	armor_list = list(
-		melee = 30, //if they are not waring any armor over this then we give *something*
-		bullet = 30,
-		energy = 45,
+		melee = 7, //if they are not waring any armor over this then we give *something*
+		bullet = 7,
+		energy = 11,
 		bomb = 80,
 		bio = 70,
 		rad = 100 //Rad proof

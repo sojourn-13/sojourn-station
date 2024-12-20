@@ -3,7 +3,7 @@
 //////////////////////////////
 //
 
-/obj/item/clothing/suit/space/occulLtist //In line with the syndicate spacesuit except not able to be taken off. Maybe give it some other bonuses too?
+/obj/item/clothing/suit/space/occulLtist
 	name = "psion void cloak"
 	icon_state = "armor"
 	item_state = "armor"
@@ -12,13 +12,14 @@
 	desc = "This cloak is made of thin and airy fabric. Putting it on, you feel an unusual, strange lightness, as if its weight lightens your burden. It seems to you that just by touching this material, you become faster."
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_OCLOTHING
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
-	slowdown = -0.375 //3,75% speed up!
+	slowdown = -0.09 //with all three pieces figures out to 1.36 speed bonus, which is fairly high but also this shit is rare.
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
+		melee =7,
+		bullet = 6,
+		energy = 7,
 		bomb = 25,
 		bio = 100,
 		rad = 30
@@ -55,14 +56,12 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	desc = "This is a hard hood made of dark fabric material. It is decorated with bronze slabs and has a strange ribbed texture. The crystal on its front part pulsates unusually as soon as the object is on the psion's head. A haze of hidden knowledge covers your face from unnecessary glances."
 	slot_flags = SLOT_HEAD
-	flags_inv = BLOCKHAIR|BLOCKHEADHAIR|FLEXIBLEMATERIAL
-	item_flags = BLOCKHAIR|BLOCKHEADHAIR|FLEXIBLEMATERIAL
 	matter = list()
-	slowdown = -0.375 //3,75% speed up!
+	slowdown = -0.09
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
+		melee =7,
+		bullet = 6,
+		energy = 7,
 		bomb = 25,
 		bio = 100,
 		rad = 30
@@ -77,7 +76,7 @@
 	var/pointremoved = 0 //Did we take you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
-	light_overlay = "helmet_light" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
+	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
 										  //Currently it's located in the icons/obj/light_overlays folder, proc is at /obj/item/clothing/head/on_update_icon(mob/user) -Sigma
 
 /obj/item/clothing/head/helmet/space/occultLhood/dropped()
@@ -103,14 +102,14 @@
 	item_state = "gloves"
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
+	slowdown = -0.09
 	slot_flags = SLOT_GLOVES
-	item_flags = THICKMATERIAL
-	siemens_coefficient = 1 //Insulated!
+	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
+		melee =7,
+		bullet = 6,
+		energy = 7,
 		bomb = 25,
 		bio = 100,
 		rad = 30
@@ -148,12 +147,12 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	slot_flags = SLOT_FEET
 	matter = list()
-	slowdown = -0.375 //3,75% speed up!
+	slowdown = -1.09 //1.36% speed up with all parts! No! Wrong! Humans are +1 slowdown by default so that you are slower without shoes, this is why shoes have -1 slowdown. Needs to have -1 slowdown as BASE
 	can_hold_knife = 1
 	armor_list = list(
-		melee = 25,
-		bullet = 15,
-		energy = 20,
+		melee = 6,
+		bullet = 3,
+		energy = 5,
 		bomb = 15,
 		bio = 100,
 		rad = 30

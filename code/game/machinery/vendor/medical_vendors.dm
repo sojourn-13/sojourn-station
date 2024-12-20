@@ -104,6 +104,7 @@
 		/obj/item/stack/medical/ointment = 6,
 		/obj/item/stack/medical/ointment/soteria = 4,
 		/obj/item/stack/medical/ointment/advanced = 2,
+		/obj/item/storage/firstaid/regular/si = 2,
 
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
 		/obj/item/stack/nanopaste = 4,
@@ -120,6 +121,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
 		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
 		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 4,
 
 		/obj/item/implantcase/death_alarm = 4,
 		/obj/item/implanter = 4,
@@ -139,12 +141,13 @@
 		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
 		/obj/item/stack/medical/bruise_pack/advanced = 100,
-		/obj/item/stack/medical/bruise_pack/soteria = 700,
+		/obj/item/stack/medical/bruise_pack/soteria = 250,
 		/obj/item/stack/medical/ointment/handmade  = 25,
 		/obj/item/stack/medical/ointment = 35,
 		/obj/item/stack/medical/ointment/advanced = 100,
-		/obj/item/stack/medical/ointment/soteria = 700,
+		/obj/item/stack/medical/ointment/soteria = 250,
 		/obj/item/stack/medical/splint/improvised = 5,
+		/obj/item/storage/firstaid/regular/si = 700,
 		/obj/item/stack/medical/splint = 10,
 		/obj/item/stack/nanopaste = 300,
 
@@ -160,6 +163,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 250,
 		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 200,
 		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 500,
+		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 400,
 
 		/obj/item/implantcase/death_alarm = 25,
 		/obj/item/implanter = 25,

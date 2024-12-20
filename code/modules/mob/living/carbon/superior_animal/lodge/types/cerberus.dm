@@ -2,7 +2,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
-	reproduction after being fed various mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
+	reproduction after being plump helmet mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
 	obsessed with food but gladly lets itself get pulled along. Special training allows for them to follow anyone who states 'Cerberus Follow', while 'Cerberus Stop' will make them halt."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "pigrat"
@@ -32,7 +32,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
-		if(G.seed && G.seed.kitchen_tag == "mushroom")
+		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
 				user.drop_item()
@@ -84,7 +84,7 @@
 	health = 400
 	melee_damage_lower = 40
 	melee_damage_upper = 45
-	armor = list(melee = 30, bullet = 30, energy = 20, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 7, bullet = 7, energy = 5, bomb = 5, bio = 10, rad = 25)
 
 /mob/living/carbon/superior_animal/lodge/cerberus/chimera/sun
 	name = "Solis"
@@ -96,7 +96,7 @@
 	health = 500
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 10, bio = 15, rad = 25)
+	armor = list(melee = 10, bullet = 10, energy = 7, bomb = 10, bio = 15, rad = 25)
 
 //Baby cerberus
 //Grows into a cerberus or chimera. Credit to BigBimmer#2319 for the sprite.

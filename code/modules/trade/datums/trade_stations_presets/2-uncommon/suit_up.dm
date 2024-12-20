@@ -34,10 +34,14 @@
 			/obj/item/clothing/suit/space/void/engineering = custom_good_amount_range(list(-5, 3)),
 			/obj/item/clothing/suit/space/void/medical = custom_good_amount_range(list(-5, 3)),
 			/obj/item/clothing/suit/space/void/security = custom_good_amount_range(list(-5, 1)),
-			/obj/item/clothing/suit/space/void/SCAF = custom_good_amount_range(list(-5, 1))
+			/obj/item/clothing/suit/space/void/SCAF = custom_good_amount_range(list(-5, 1)),
+			/obj/item/clothing/shoes/magboots = custom_good_amount_range(list(5, 5)),
+			/obj/item/tank/oxygen = custom_good_amount_range(list(5, 5)),
+			/obj/item/tank/emergency_oxygen/double = custom_good_amount_range(list(5, 5))
 		),
 		"RIGs" =  list(
 			/obj/item/rig/eva = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/sea = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/medical = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/light = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/hazmat = custom_good_amount_range(list(1, 5)),
@@ -71,7 +75,11 @@
 			/obj/item/rig_module/vision/sechud,
 			/obj/item/rig_module/vision/medhud,
 			/obj/item/rig_module/vision/thermal,
-			/obj/item/rig_module/storage
+			/obj/item/rig_module/storage,
+			/obj/item/rig_module/storage/engi,
+			/obj/item/rig_module/storage/med,
+			/obj/item/rig_module/storage/combat,
+			/obj/item/rig_module/storage/large
 		)
 	)
 

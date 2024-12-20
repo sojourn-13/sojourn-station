@@ -26,9 +26,11 @@ Note: Must be placed within 3 tiles of the R&D Console
 
 /obj/machinery/r_n_d/destructive_analyzer/RefreshParts()
 	var/T = 0
-	for(var/obj/item/stock_parts/S in src)
+	for(var/obj/item/stock_parts/S in component_parts)
 		T += S.rating
 	decon_mod = T * 0.1
+	if(decon_mod > 1)
+		decon_mod = 1
 
 /obj/machinery/r_n_d/destructive_analyzer/update_icon()
 	if(panel_open)
@@ -93,7 +95,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 			loaded_item = I
 			to_chat(user, SPAN_NOTICE("You add \the [I] to \the [src]."))
 			flick("d_analyzer_la", src)
-			addtimer(CALLBACK(src, .proc/reset_busy), 1 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(reset_busy)), 1 SECONDS)
 			return TRUE
 	return
 
@@ -113,7 +115,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 
 	busy = TRUE
 	flick("d_analyzer_process", src)
-	addtimer(CALLBACK(src, .proc/finish_deconstructing), 2.4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(finish_deconstructing)), 2.4 SECONDS)
 	return TRUE
 
 /obj/machinery/r_n_d/destructive_analyzer/proc/finish_deconstructing()

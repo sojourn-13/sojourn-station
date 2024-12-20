@@ -7,33 +7,37 @@
 	icon_state = "ironhammer"
 	license = 20
 	designs = list(
-		/datum/design/autolathe/sec/secflashlight,
 		/datum/design/research/item/flash,
+		/datum/design/autolathe/sec/secflashlight,
+		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/handcuffs,
 		/datum/design/autolathe/sec/zipties = 0,
 		/datum/design/autolathe/sec/electropack,
-		/datum/design/autolathe/misc/taperecorder,
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/sec/silencer,
-		/datum/design/autolathe/sec/acog,
-		/datum/design/autolathe/sec/gun_case,
-		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/hailer,
 		/datum/design/research/item/medical/autopsy_scanner,
+		/datum/design/autolathe/misc/taperecorder,
+		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/sec/acog,
 		/datum/design/autolathe/gun/cop_mod = 0,
-		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
 		/datum/design/autolathe/sec/auto_eject_mod,
 		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
+		/datum/design/research/item/omnitranslator_handheld,
 		/datum/design/autolathe/gun/bipod_mod = 2,
 		/datum/design/autolathe/gun/flare_gun = 3,
-		/datum/design/autolathe/sec/riot = 10,
-		/datum/design/autolathe/sec/buckler = 5,
 		/datum/design/autolathe/ammo/flare_shell,
 		/datum/design/autolathe/ammo/flare_shell_g,
 		/datum/design/autolathe/ammo/flare_shell_b,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
+		/datum/design/autolathe/sec/buckler = 5,
+		/datum/design/autolathe/sec/riot = 10,
+		/datum/design/autolathe/sec/gun_case,
 		/datum/design/autolathe/container/ammocan_ih,
+		/datum/design/autolathe/container/ammocan_serb, //Moved from actual ammo disks
+		/datum/design/autolathe/clothing/bmask = 10,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos
@@ -45,11 +49,13 @@
 	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
+		//pistol
+		/datum/design/autolathe/gun/glock = 1,
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
-		//sniper
+		//sniper - Left here for now till Python can be made off a Mamba frame.
 		/datum/design/autolathe/gun/python = 5,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
@@ -248,6 +254,24 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/viper
+	disk_name = "NM - 7.62mm Viper DMR"
+	icon_state = "marshal"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/viper = 6,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
+	)
+
+// 8.6 Rifles
 /obj/item/computer_hardware/hard_drive/portable/design/guns/python
 	disk_name = "NM - 7.62mm Python Heavy Rifle"
 	icon_state = "marshal"

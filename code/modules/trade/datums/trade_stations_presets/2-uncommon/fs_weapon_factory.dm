@@ -1,7 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	spawn_always = TRUE
-	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
+	markup = COMMON_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
 	tree_x = 0.82
 	tree_y = 0.7
@@ -9,22 +9,24 @@
 	base_income = 0
 	wealth = 0
 //	secret_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
-		"Projectiles" = list(
+		"Ballistic Weapons" = list(
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/rifle,
+			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
-			/obj/item/gun/projectile/shotgun/bull,
+			/obj/item/gun/projectile/shotgun/pump/gladstone,
+			/obj/item/gun/projectile/shotgun/pump/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),
 		),
 		"Ammunition" = list(
 			/obj/item/ammo_magazine/c10x24 = custom_good_amount_range(list(1, 10)),
-			/obj/item/ammo_magazine/a75 = custom_good_amount_range(list(1, 10)),
+			//obj/item/ammo_magazine/a75 = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/heavy_rifle_408_drum = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
@@ -38,7 +40,7 @@
 			/obj/item/ammo_magazine/ammobox/magnum_40,
 			/obj/item/ammo_magazine/ammobox/pistol_35
 		),
-		"Energy" = list(
+		"Energy Weapons" = list(
 			/obj/item/gun/energy/gun,
 			/obj/item/gun/energy/gun/martin
 		),
@@ -92,5 +94,5 @@
 		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 2),
 		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 4),
 		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5),
-		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1000, 1)
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Optimized NV Goggles", 1000, 1)
 	)

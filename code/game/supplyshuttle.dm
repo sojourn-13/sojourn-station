@@ -46,7 +46,7 @@ var/list/mechtoys = list(
 	if(health <= 0)
 		qdel(src)
 
-/obj/structure/plasticflaps/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes", var/wallbreaker)//Occulus Edit
+/obj/structure/plasticflaps/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(damage)
 		damage(damage)
 		attack_animation(user)

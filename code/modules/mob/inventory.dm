@@ -81,6 +81,10 @@
 	var/obj/item/I = get_active_hand()
 	unEquip(I, Target, MOVED_DROP)
 
+/mob/proc/drop_offhand(var/atom/Target)
+	var/obj/item/I = get_inactive_hand()
+	unEquip(I, Target, MOVED_DROP)
+
 /mob/proc/is_holding(var/obj/item/W)
 	return is_holding_in_active_hand(W) || is_holding_in_inactive_hand(W)
 
@@ -147,9 +151,9 @@
 /mob/proc/unEquip(obj/item/I, var/atom/Target = null, force = 0) //Force overrides NODROP for things like wizarditis and admin undress.
 	if(!canUnEquip(I))
 		return
-	//Removed until we have features that need them, so these aren't being rapid-fired needlessly. - Hex
-	//LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, I)
-	//LEGACY_SEND_SIGNAL(I, COMSIG_CLOTH_DROPPED, src)
+	if(I)
+		LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, I)
+		LEGACY_SEND_SIGNAL(I, COMSIG_CLOTH_DROPPED, src)
 	return drop_from_inventory(I,Target)
 
 //Attemps to remove an object on a mob.

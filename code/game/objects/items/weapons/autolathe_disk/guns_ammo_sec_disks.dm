@@ -19,14 +19,13 @@
 		/datum/design/autolathe/ammo/slkurtz_rubber,
 		//smg mags
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber,
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/rifle_short_rubber,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		//shells
-		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_speedloader_beanbag = 2,//Neither blanks or illumination are LTL
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
@@ -40,6 +39,7 @@
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/kurtz,
 		/datum/design/autolathe/ammo/kurtz_lethal,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol,
@@ -51,22 +51,23 @@
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
+		/datum/design/autolathe/ammo/smg_magnum_40,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal, //Marshals got weapons for this, probably shouldn't be tied up only to 2 disks
 		/datum/design/autolathe/ammo/mag_10x24, // The specific model of the Spec Ops.
 		// rifles
-		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short,
 		/datum/design/autolathe/ammo/lrifle_short_lethal,
-		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/rifle_short,
-		/datum/design/autolathe/ammo/rifle_lethal,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_lethal,
 		//shells
-		/datum/design/autolathe/ammo/shotgun_pellet,
-		/datum/design/autolathe/ammo/shotgun,
-		/datum/design/autolathe/container/ammocan_serb,
-	)
+		/datum/design/autolathe/ammo/shotgun_speedloader_buckshot = 2,
+		/datum/design/autolathe/ammo/shotgun_speedloader_slug = 2, //These are the mags
+	)//Ammo Can is on misc disk where it should be it has nothing to do with magazines
 
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms
 	disk_name = "SA Handgun Ammunition"
@@ -75,21 +76,20 @@
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/pistol_ammobox,
-		/datum/design/autolathe/ammo/pistol_ammobox/large,
-		/datum/design/autolathe/ammo/pistol_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox_lethal,
+		/datum/design/autolathe/ammo/pistol_ammobox/large,
+		/datum/design/autolathe/ammo/pistol_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox,
-		/datum/design/autolathe/ammo/magnum_ammobox/large,
-		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal,
+		/datum/design/autolathe/ammo/magnum_ammobox/large,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber,
 		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
-		/datum/design/autolathe/container/ammocan_serb,
-	)
+		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+	) // Ammo can on misc disk
 
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle
 	disk_name = "SA Rifle Ammunition"
@@ -97,26 +97,26 @@
 
 	license = 20
 	designs = list(
-		/datum/design/autolathe/ammo/rifle_ammobox_small,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal,
-		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/box_10x24_small = 2, // Small version moved here for Ranger ease of access, double the cost as the spec ops disk as it has double the points
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox_small,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal,
+		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small,
-		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/box_10x24_small = 2, // Small version moved here for Ranger ease of access, double the cost as the spec ops disk as it has double the points
-		/datum/design/autolathe/ammo/shotgun_box = 5, //35 x 4 (140 shells while a full disk of 5 x 20 = 100)
-		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
-		/datum/design/autolathe/container/ammocan_serb,
-	)
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 2,
+		/datum/design/autolathe/ammo/shotgun_box = 2, //reduced from 5 to 2 so anyone actually makes this ever
+		/datum/design/autolathe/ammo/shotgun_blanks = 0, //Practice rounds exist but not the design for some reason ?
+	) // Ammo can on misc disk
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo
@@ -125,29 +125,28 @@
 	license = 20
 
 	designs = list(
-		/datum/design/autolathe/ammo/shotgun_speedloader_empty= 0,
-		/datum/design/autolathe/ammo/sbaw_empty = 0,
-		/datum/design/autolathe/ammo/m12empty = 0,
-		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
-		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
-		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
-		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
-		/datum/design/autolathe/ammo/maxim_empty = 0,
+		/datum/design/autolathe/ammo/smg_magnum_40_empty,
 		/datum/design/autolathe/ammo/c10x24 = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
-		/datum/design/autolathe/ammo/rifle_ammobox,
-		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/shotgun_box = 3, //35 x 6 (210 shells well a full disk of 5 x 20 = 100)
-		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
 		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
-		/datum/design/autolathe/ammo/box_antim = 5,
-		/datum/design/autolathe/container/ammocan_serb = 0,
 		/datum/design/autolathe/ammo/lrifle_drum = 2,
 		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_drum = 2,
 		/datum/design/autolathe/ammo/rifle_drum_empty = 1,
-		)
+		/datum/design/autolathe/ammo/maxim_empty = 0,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox,
+		/datum/design/autolathe/ammo/shotgun_speedloader_empty = 0,
+		/datum/design/autolathe/ammo/sbaw_empty = 0,
+		/datum/design/autolathe/ammo/m12empty = 0,
+		/datum/design/autolathe/ammo/shotgun_box = 2,
+		/datum/design/autolathe/ammo/box_antim = 5,
+		) //Ammo cans on misc disk
 
 // G U N S (minus excelsior and research)
 // Pack is used when there is more than one gun on the disk
@@ -243,6 +242,32 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/ladon = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon
+	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ladon_hs = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/sa
+	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
+	icon_state = "sa"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ladon_sa = 3,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum,
@@ -407,8 +432,20 @@
 		/datum/design/autolathe/ammo/sbaw_slug,
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/sbaw_beanbag,
-		/datum/design/autolathe/ammo/sbaw_payload = 3,
+		//datum/design/autolathe/ammo/sbaw_payload = 3,
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone
+	disk_name = "H&S - 20mm Gladstone Shotgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/gladstone = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/state
@@ -464,6 +501,43 @@
 	)
 
 // 6.5mm carbines
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
+	disk_name = "SolFed  - 6.5mm Pitbull Carbine"
+	icon_state = "solfed"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/pitbull = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog
+	disk_name = "Seinemetall Defense GmbH - 6.5mm Bulldog Carbine"
+	icon_state = "frozenstar"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/bulldog = 6,
+		/datum/design/autolathe/gun/bulldog_rds = 7,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
 	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"

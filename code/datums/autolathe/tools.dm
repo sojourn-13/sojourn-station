@@ -112,6 +112,10 @@
 	name = "Seinemetall Defense \"Ironhammer\" Breaching Hammer"
 	build_path = /obj/item/tool/hammer/ironhammer
 
+/datum/design/autolathe/tool/excelsior_hammer
+	name = "Excelsior \"Chain-Braker\" siege hammer"
+	build_path = /obj/item/tool/hammer/excelsior_hammer
+
 /datum/design/autolathe/tool/big_wrench
 	name = "big wrench"
 	build_path = /obj/item/tool/wrench/big_wrench

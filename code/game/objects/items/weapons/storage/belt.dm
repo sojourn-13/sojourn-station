@@ -183,6 +183,7 @@
 		/obj/item/soap,
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
@@ -237,6 +238,29 @@
 
 /obj/item/storage/belt/medical/opifex/full/populate_contents()
 	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
+	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/opifex(src)
+	new /obj/item/storage/pill_bottle/opifex(src)
+	//Opifex medical gets SI oint/bruise packs cuz they pre-order it on opi-fedex
+	//Downside is that they cant be split do to how naming and descs are rewrote
+	new /obj/item/stack/medical/ointment/soteria{splittable=FALSE;name="opifex optimized ointments";singular_name="opifex optimized ointment";desc="Used to treat those nasty burns. Its formula massively improved by including toxin-purging sterilizing nanites."}(src)
+	new /obj/item/stack/medical/bruise_pack/soteria{splittable=FALSE;name="opifex optimized gauze";singular_name="opifex optimized gauze";desc="A sterile gauze to wrap around bloody stumps. Do to nanites these sterilize wounds as ointment would."}(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/bodybag/cryobag(src)
+	new /obj/item/extinguisher/mini(src)
+
+/obj/item/storage/belt/medical/opifex/medical/solfed
+	name = "black medical webbing"
+	desc = "A black webbing, highly customized and lovingly worn. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 16
+
+/obj/item/storage/belt/medical/opifex/medical/solfed/populate_contents()
+	new /obj/item/device/scanner/health(src)
 	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
 	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
@@ -247,7 +271,6 @@
 	new /obj/item/storage/pill_bottle/dexalin_plus(src)
 	new /obj/item/storage/pill_bottle/antitox(src)
 	new /obj/item/bodybag/cryobag(src)
-	new /obj/item/extinguisher/mini(src)
 
 /obj/item/storage/belt/medical
 	name = "medical belt"
@@ -412,10 +435,10 @@
 /obj/item/storage/belt/security/tactical/marshalert/populate_contents()
 	new /obj/item/tool/shovel/combat(src)
 	new /obj/item/gun/energy/gun/martin(src)
-	new /obj/item/cell/small(src)
-	new /obj/item/cell/small(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/cell/medium/high(src)
+	new /obj/item/cell/medium/hyper(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/device/taperecorder(src)
@@ -426,6 +449,45 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/grenade/frag/stinger(src)
+
+/obj/item/storage/belt/security/tactical/shieldert
+
+/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/grenade/flashbang(src) //we're so past caring about contraband.
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+
+/obj/item/storage/belt/security/tactical/solfed
+
+/obj/item/storage/belt/security/tactical/solfed/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/medium/moebius/nuclear(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/device/binoculars(src)
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
@@ -456,6 +518,7 @@
 		/obj/item/gun/energy/crossbow,
 		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,

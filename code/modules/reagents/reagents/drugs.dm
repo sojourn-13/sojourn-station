@@ -1,5 +1,6 @@
 /* Drugs */
 /datum/reagent/drug
+
 	reagent_type = "Drug"
 	scannable = TRUE
 
@@ -103,7 +104,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -125,7 +132,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -156,7 +169,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(C))
 				return
@@ -316,7 +329,8 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 //Anything above 0 will have 100% odds when smoking
+	addiction_chance = 1 //Anything above 0 will have 100% odds when smoking
+	sanity_gain = 0.8
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -324,16 +338,21 @@
 	M.add_chemical_effect(CE_PULSE, 1) //If you inject it into your blood
 	M.add_chemical_effect(CE_PAINKILLER, 5)
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
-		M.add_chemical_effect(CE_ANTITOX, 5)
-		M.heal_organ_damage(0.1, 0.1)
-		M.add_chemical_effect(CE_ONCOCIDAL, 0.5)	// STALKER reference
+		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
+		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+		M.add_chemical_effect(CE_ONCOCIDAL, 0.5)	// STALKER reference	// STALKER reference
 
 /datum/reagent/drug/nicotine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_PAINKILLER, 5)
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 5)
-		M.heal_organ_damage(0.1, 0.1)
+		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+
+/datum/reagent/drug/nicotine/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
@@ -351,7 +370,8 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 // Note: NEVER make nicotine actually addictive. EVER.
+	addiction_chance = 1 // Note: NEVER make nicotine actually addictive. EVER. //Why? It's based.
+	sanity_gain = 0.8
 	nerve_system_accumulations = 15
 
 /datum/reagent/drug/nicotineplus/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // If you inject fine nicotine
@@ -369,6 +389,11 @@
 		M.add_chemical_effect(CE_ANTITOX, 10)
 		M.heal_organ_damage(0.2, 0.2)
 
+/datum/reagent/drug/nicotineplus/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
+
 /datum/reagent/drug/nicotineplus/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
 	M.add_chemical_effect(CE_PULSE, 2)
@@ -380,11 +405,11 @@
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"
 	id = "hyperzine"
-	description = "Hyperzine is a highly effective, long lasting, muscle stimulant, but drains the body. Also promotes muscle regrowth. Will worsen injuries."
+	description = "Hyperzine is a highly effective, long lasting, muscle stimulant, but drains the body. Also promotes muscle regrowth. Will worsen injuries. Side effects include twitching, nervousness and addiction. Can cause minor heart damage due to high BPM."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
-	metabolism = REM * 0.2
+	metabolism = REM * 0.5
 	overdose = REAGENTS_OVERDOSE * 0.66
 	withdrawal_threshold = 10
 	nerve_system_accumulations = 55
@@ -393,9 +418,10 @@
 /datum/reagent/drug/hyperzine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(5))
 		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT, 60 SECONDS)
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -416,10 +442,80 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
 
+/datum/reagent/drug/hyperzine/slime_meth
+	name = "volatile speed"
+	id = "slime_speed"
+	description = "Comparable to high-dose amphetamines cut with nano muscle-stimulators. This chemical would melt through just about any organic that dared touch it, unless of course their anatomy was already highly acidic."
+	taste_description = "caustic rust"
+	scannable = FALSE
+	metabolism = REM * 2.5 //burn through fast, we process chems kinda slow so this makes it more reasonable.
+
+/datum/reagent/drug/hyperzine/slime_meth/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		if(prob(5))
+			M.custom_emote(2, "[pick("vibrates", "sways", "crackles with electricity")]")
+		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) //nyoom
+		M.stats.addTempStat(STAT_VIG, -45, 1 MINUTES, "speed jitters")
+		M.stats.addTempStat(STAT_BIO, -45, 1 MINUTES, "speed jitters")
+		M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+		withdrawal_threshold = 100
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_MUSCLE)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+
+/datum/reagent/drug/nanoblood
+	name = "Nanoblood"
+	id = "nanoblood"
+	description =  "A highly dangerous and highly advanced Erythropoiesis-stimulant. Typically reserved for high-end paramedic services or military hospitals - any instance where the \
+	low LD-50 and difficulty of synthesis can be considered acceptable in the face of its rapid effectiveness even in low doses. Must be stored at temperatures not significantly higher\
+	than the human body."
+	taste_description = "copper and batteries"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+
+/datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
+
+/datum/reagent/drug/nanoblood/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11) //hypertension
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.adjustCloneLoss(6) //rapidly growing cancer, it was nice knowing you friend.
+
+
+/datum/reagent/drug/nanobad
+	name = "Ruined Nanoblood"
+	id = "nanobad"
+	taste_description = "rotting copper"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+	description = "A highly dangerous and highly advanced Erythropoiesis-stimulant that has been improperly stored. Generally identifiable by an off-color, if it has not been kept in incorrect\
+	 conditions for too long it will likely still work albeit notably less potently, though side effects are highly likely."
+
+/datum/reagent/drug/nanobad/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
+	M.add_side_effect("Headache", 6)
+	M.adjustCloneLoss(2) //less rapid cancer, still not good perhaps?
+
 /datum/reagent/drug/sanguinum
 	name = "Sanguinum"
 	id = "sanguinum"
-	description = "Forces bone marrow to produce more blood than usual. Have irritating side effects"
+	description = "Forces bone marrow to produce more blood than usual. Side effects include blood coughing."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#e06270"

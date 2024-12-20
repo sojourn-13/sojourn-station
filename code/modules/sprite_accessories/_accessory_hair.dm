@@ -27,12 +27,17 @@
 		FORM_CHURCHSYNTH,
 		FORM_NASHEF,
 		FORM_MYCUS,
+		FORM_SLIME,
 		FORM_UNBRANDED
 		)
 
 /datum/sprite_accessory/hair/bald
 	name = "Bald"
 	icon_state = "bald"
+
+/datum/sprite_accessory/hair/acolyte
+	name = "Acolyte"
+	icon_state = "acolyte"
 
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
@@ -118,6 +123,13 @@
 	name = "Bobcurl"
 	icon_state = "bobcurl"
 
+/*		Needs a bit more sprite rework
+
+/datum/sprite_accessory/hair/bob_long
+	name = "Long bob"
+	icon_state = "bob_long"
+*/ 
+
 /datum/sprite_accessory/hair/bowl1
 	name = "Bowl"
 	icon_state = "bowlcut1"
@@ -125,6 +137,18 @@
 /datum/sprite_accessory/hair/bowl2
 	name = "Bowl 2"
 	icon_state = "bowlcut2"
+
+/datum/sprite_accessory/hair/bonnie
+	name = "Bonnie"
+	icon_state = "bonnie"
+
+/datum/sprite_accessory/hair/bonnieshort
+	name = "Bonnie Short"
+	icon_state = "bonnie_short"
+
+/datum/sprite_accessory/hair/bonnielong
+	name = "Bonnie Long"
+	icon_state = "bonnie_long"
 
 /datum/sprite_accessory/hair/bookish
 	name = "Bookish"
@@ -145,6 +169,10 @@
 /datum/sprite_accessory/hair/busness4
 	name = "Business 4"
 	icon_state = "business4"
+
+/datum/sprite_accessory/hair/busness5
+	name = "Business 5"
+	icon_state = "business5"
 
 /datum/sprite_accessory/hair/bun
 	name = "Bun"
@@ -202,6 +230,13 @@
 	name = "Crewcut"
 	icon_state = "crewcut"
 
+/* needs blackscaling
+
+/datum/sprite_accessory/hair/courtly
+	name = "Courtly"
+	icon_state = "courtly"
+*/
+
 /datum/sprite_accessory/hair/crono
 	name = "Chrono"
 	icon_state = "toriyama"
@@ -222,6 +257,14 @@
 	name = "Dandy Pompadour"
 	icon_state = "dandypompadour"
 
+/datum/sprite_accessory/hair/daisy
+	name = "Daisy"
+	icon_state = "daisy"
+
+/datum/sprite_accessory/hair/depresso
+	name = "Depresso"
+	icon_state = "depresso"
+
 /datum/sprite_accessory/hair/devillock
 	name = "Devil Lock"
 	icon_state = "devilock"
@@ -234,6 +277,10 @@
 /datum/sprite_accessory/hair/dreadlocks
 	name = "Dreadlocks"
 	icon_state = "dreads"
+
+/datum/sprite_accessory/hair/dreadlocksalt
+	name = "Dreadlocks 2"
+	icon_state = "dreadsalt"
 
 /datum/sprite_accessory/hair/drillruru
 	name = "Drillruru"
@@ -298,6 +345,14 @@
 /datum/sprite_accessory/hair/glossy
 	name = "Glossy"
 	icon_state = "glossy"
+
+/datum/sprite_accessory/hair/gloomy
+	name = "Gloomy"
+	icon_state = "hair_gloomy"
+
+/datum/sprite_accessory/hair/gloomylong
+	name = "Gloomy Long"
+	icon_state = "hair_gloomylong"
 
 /datum/sprite_accessory/hair/gumshoe
 	name = "Gumshoe"
@@ -387,6 +442,18 @@
 	name = "Keanu"
 	icon_state = "keanu"
 
+/datum/sprite_accessory/hair/kobenir
+	name = "Kobeni Right"
+	icon_state = "kobeni_r"
+
+/datum/sprite_accessory/hair/kobenil
+	name = "Kobeni Left"
+	icon_state = "kobeni_l"
+
+/datum/sprite_accessory/hair/kobenishort
+	name = "Kobeni Short"
+	icon_state = "kobeni_short"
+
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi"
 	icon_state = "kusanagi"
@@ -399,6 +466,10 @@
 	name = "Ladylike 2"
 	icon_state = "ladylike2"
 
+/datum/sprite_accessory/hair/librarian
+	name = "Librarian Doo"
+	icon_state = "librarian"
+
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
 	icon_state = "emolong"
@@ -406,6 +477,10 @@
 /datum/sprite_accessory/hair/longer
 	name = "Long"
 	icon_state = "vlong"
+
+/datum/sprite_accessory/hair/longeralt1
+	name = "Long Alternative"
+	icon_state = "vlong_alt"
 
 /datum/sprite_accessory/hair/longeralt2
 	name = "Long 2"
@@ -531,6 +606,14 @@
 	name = "Parted"
 	icon_state = "parted"
 
+/datum/sprite_accessory/hair/pigtails2
+	name = "Pigtails 2"
+	icon_state = "pigtails2"
+
+/datum/sprite_accessory/hair/pigtails3
+	name = "Pigtails 3"
+	icon_state = "pigtails3"
+
 /datum/sprite_accessory/hair/pixie
 	name = "Pixie"
 	icon_state = "pixie"
@@ -567,6 +650,10 @@
 	name = "Ponytail 7"
 	icon_state = "ponytail7"
 
+/datum/sprite_accessory/hair/ponytail8
+	name = "Ponytail 8"
+	icon_state = "ponytail8"
+
 /datum/sprite_accessory/hair/poofy
 	name = "Poofy"
 	icon_state = "poofy"
@@ -587,9 +674,17 @@
 	name = "Ramona"
 	icon_state = "ramona"
 
+/datum/sprite_accessory/hair/recruit
+	name = "Recruit"
+	icon_state = "recruit"
+
 /datum/sprite_accessory/hair/reversemohawk
 	name = "Reverse Mohawk"
 	icon_state = "reversemohawk"
+
+/datum/sprite_accessory/hair/rockstar
+	name = "Rockstar"
+	icon_state = "rockstar"
 
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
@@ -622,6 +717,10 @@
 /datum/sprite_accessory/hair/sharppony
 	name = "Sharp Ponytail"
 	icon_state = "sharp_ponytail"
+
+/datum/sprite_accessory/hair/sharppony2
+	name = "Sharp Ponytail Alt"
+	icon_state = "sharptail"
 
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Shaved Mohawk"
@@ -707,6 +806,10 @@
 	name = "One Shoulder"
 	icon_state = "oneshoulder"
 
+/datum/sprite_accessory/hair/tartar
+	name = "Tartar"
+	icon_state = "tartar"
+
 /datum/sprite_accessory/hair/thinning
 	name = "Thinning"
 	icon_state = "thinning"
@@ -739,6 +842,10 @@
 	name = "Tribal Braid"
 	icon_state = "tribalbraid"
 
+/datum/sprite_accessory/hair/tribun
+	name = "Tri Bun"
+	icon_state = "tribun"
+
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"
 	icon_state = "toriyama2"
@@ -762,6 +869,10 @@
 /datum/sprite_accessory/hair/vivi
 	name = "Vivi"
 	icon_state = "vivi"
+
+/datum/sprite_accessory/hair/viking
+	name = "Viking"
+	icon_state = "viking"
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"

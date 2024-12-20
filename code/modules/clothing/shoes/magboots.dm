@@ -10,15 +10,16 @@
 	var/icon_base = "magboots"
 	action_button_name = "Toggle Magboots"
 	armor_list = list(
-		melee = 20,
-		bullet = 10,
-		energy = 20,
+		melee = 5,
+		bullet = 2,
+		energy = 5,
 		bomb = 25,
 		bio = 100,
 		rad = 90
 	)
 	siemens_coefficient = 0 // DAMN BOI
 	//This armor only applies to legs
+	price_tag = 125
 
 /obj/item/clothing/shoes/magboots/proc/set_slowdown()
 	var/obj/item/clothing/shoes/shoes = overslot_contents
@@ -66,3 +67,12 @@
 	mag_slow = 2
 	icon_base = "mercboots"
 	action_button_name = "Toggle Magboots"
+	armor_list = list(
+		melee = 8,
+		bullet = 5,
+		energy = 6,
+		bomb = 75,
+		bio = 100,
+		rad = 75
+	)
+	price_tag = 275

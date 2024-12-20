@@ -40,7 +40,9 @@
 	var/leather_amount = 1 //The amount of leather sheets dropped.
 	var/bones_amount = 1 //The amount of bone sheets dropped.
 	var/has_special_parts = FALSE //var for checking during the butcher process.
+	var/has_rare_parts = FALSE //For when we want a chance for the mob to drop a different set on a coinflip.
 	var/list/special_parts = list()//Any special body parts.
+	var/list/rare_parts = list() //Rare body parts we want. Offered as an alternate for some critters. Will only drop special OR rare parts, but not both.
 
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
@@ -135,7 +137,7 @@
 	seek_move_delay = (1 / seek_speed) / (world.tick_lag / 10)//number of ticks between moves
 	turns_since_scan = rand(min_scan_interval, max_scan_interval)//Randomise this at the start so animals don't sync up
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 
 	if(mob_size)
 		nutrition_step = mob_size * 0.03 * metabolic_factor
@@ -407,15 +409,13 @@
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
 		var/dmult = 1
-		if(LAZYLEN(Proj.effective_faction))
-			if(faction in Proj.effective_faction)
-				dmult += Proj.damage_mult
-		if(LAZYLEN(Proj.supereffective_types))
-			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
-				dmult += Proj.supereffective_mult
+		if(faction in Proj.effective_faction)
+			dmult += Proj.damage_mult
+		if(is_type_in_list(src, Proj.supereffective_types, TRUE))
+			dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
+			return damage_through_armor(damage, def_zone, attack_flag = Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
@@ -524,11 +524,11 @@
 
 	return tally
 
-/mob/living/simple_animal/Stat()
+/mob/living/simple_animal/get_status_tab_items()
 	. = ..()
 
-	if(statpanel("Status") && show_stat_health)
-		stat(null, "Health: [round((health / maxHealth) * 100)]%")
+	if(show_stat_health)
+		. += "Health: [round((health / maxHealth) * 100)]%"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
 	SSmove_manager.stop_looping(src)
@@ -583,20 +583,24 @@
 /mob/living/simple_animal/proc/harvest(mob/user)
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
-	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(0,(leather_amount/2))
-		if(actual_leather_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_leather_amount;i++)
-				new /obj/item/stack/material/leather(get_turf(src))
+	if(ishuman(user))
+		if(user.stats.getPerk(PERK_BUTCHER))
+			var/actual_leather_amount = max(0,(leather_amount/2))
+			if(actual_leather_amount > 0 && (stat == DEAD))
+				for(var/i=0;i<actual_leather_amount;i++)
+					new /obj/item/stack/material/leather(get_turf(src))
 
-		var/actual_bones_amount = max(0,(bones_amount/2))
-		if(actual_bones_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_bones_amount;i++)
-				new /obj/item/stack/material/bone(get_turf(src))
+			var/actual_bones_amount = max(0,(bones_amount/2))
+			if(actual_bones_amount > 0 && (stat == DEAD))
+				for(var/i=0;i<actual_bones_amount;i++)
+					new /obj/item/stack/material/bone(get_turf(src))
 
-		if(has_special_parts)
-			for(var/animal_part in special_parts)
-				new animal_part(get_turf(src))
+			if(has_special_parts && has_rare_parts && prob(50))
+				for(var/animal_part in rare_parts)
+					new animal_part(get_turf(src))
+			else
+				for(var/animal_part in special_parts)
+					new animal_part(get_turf(src))
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
@@ -608,13 +612,16 @@
 				var/obj/item/non_meat = new meat_type(get_turf(src))
 				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
-			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
+			if(user != src)
+				user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
-			if(user.stats.getPerk(PERK_BUTCHER))
-				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
-				new blood_from_harvest(get_turf(src))
+			if(ishuman(user))
+				if(user.stats.getPerk(PERK_BUTCHER))
+					if(user != src)
+						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+					new blood_from_harvest(get_turf(src))
 				qdel(src)
 			else
 				gib()
@@ -811,3 +818,7 @@
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
+
+/mob/living/simple_animal/getarmor(def_zone, type)
+	//log_and_message_admins("LOG 1.5: def_zone [def_zone] | type [type] | armor(type) [armor[type]].")
+	return armor[type]

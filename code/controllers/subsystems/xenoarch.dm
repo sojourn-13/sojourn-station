@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(xenoarch)
 	var/list/map_data_list = list()
 
 /datum/controller/subsystem/xenoarch/Initialize(start_timeofday)
+	set background = 1
 	//fill list of map data so we can use it to determine digsite types
 	for(var/obj/map_data/MD in world)
 		if (MD.digsites)
@@ -89,5 +90,7 @@ SUBSYSTEM_DEF(xenoarch)
 	while(artifacts_spawnturf_temp.len > 0)
 		var/turf/simulated/mineral/artifact_turf = pop(artifacts_spawnturf_temp)
 		artifact_turf.artifact_find = new()
+
+	//log_and_message_admins("Xenoarch subsystem as finished creating digsites and anomalies!") Used to test for when it actually finished due to background setting.
 
 	return ..()

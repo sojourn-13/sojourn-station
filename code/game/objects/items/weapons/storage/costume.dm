@@ -278,7 +278,7 @@
 /obj/item/storage/box/costume/nekomaid/populate_contents()
 	new /obj/item/clothing/head/costume/animal/kitty(src)
 	new /obj/item/clothing/head/costume/animal/rabbitears(src)
-	new /obj/item/clothing/under/plaid/maid(src)
+	new /obj/item/clothing/under/dress/maid(src)
 
 /obj/item/storage/box/costume/nurse
 	name = "nurse costume kit"
@@ -507,6 +507,16 @@
 	new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
+
+/obj/item/storage/box/costume/roman
+	name = "roman outfit box"
+	desc = "A box containing the full set of roman live action roleplaying gear."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/roman/populate_contents()
+	new /obj/item/clothing/under/costume/history/centurion(src)
+	new /obj/item/clothing/shoes/costume/history/centurion(src)
+	new /obj/item/toy/weapon/sword(src)
 
 /obj/item/storage/box/costume/rando
 	name = "warlord costume box"

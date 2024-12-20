@@ -175,7 +175,7 @@
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
 				/obj/item/clothing/under/pj = 5,
-				/obj/item/clothing/under/plaid/properblue = 5,
+				/obj/item/clothing/under/dress/properblue = 5,
 				/obj/item/clothing/under/suit_jacket/red = 5,
 				/obj/item/clothing/under/suit_jacket = 5,
 				/obj/item/clothing/under/turtleneck = 5,
@@ -282,15 +282,10 @@
 				/obj/item/clothing/head/welding = 5,
 				/obj/item/clothing/head/ranger = 3,
 				/obj/item/clothing/head/inhaler = 1,
-				/obj/random/cloth/bikehelms = 1))
+				/obj/item/clothing/head/helmet/biker = 1))
 
 /obj/random/cloth/head/low_chance
 	name = "low chance random head"
-	icon_state = "armor-grey-low"
-	spawn_nothing_percentage = 60
-
-/obj/random/cloth/bikehelms/low_chance
-	name = "low chance random biker helmet"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
@@ -503,5 +498,31 @@
 				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
-				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8))
+				/obj/item/clothing/suit/space/void/os = 6,
+				/obj/item/clothing/suit/space/void/greyson = 1))
+
+/obj/random/cloth/assault/reaver
+	name = "low chance Reaver Assault Armor"
+	desc = "Low chance reaver assault armor spawn. Intended for use on Reavers."
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 97 //about a 1/3 chance on a normal round of obtaining this
+
+/obj/random/cloth/assault/reaver/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/suit/space/void/assault_wolf))
+
+/obj/random/cloth/bells
+	name = "random bell collar"
+	desc = "This is a random bell collar."
+	icon_state = "armor-grey"
+
+/obj/random/cloth/bells/item_to_spawn()
+	return pickweight(list(
+				/obj/item/clothing/accessory/choker/gold_bell_small_goth = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_goth = 1,
+				/obj/item/clothing/accessory/choker/silver_bell_goth = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small_goth = 1,
+				/obj/item/clothing/accessory/choker/gold_bell = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_small = 3,
+				/obj/item/clothing/accessory/choker/silver_bell = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small = 3
+				))

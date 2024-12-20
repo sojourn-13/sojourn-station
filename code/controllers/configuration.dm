@@ -93,6 +93,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/debugparanoid = 0
 	var/borderControl = 0
 
+	var/bypassObfuscation = 0
 
 	var/language
 	var/serverurl
@@ -231,9 +232,17 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/webhook_url
 	var/webhook_key
 
+	var/message_announce_new_game = "A new round has begun!"	// SOJOURN: discord bot configuration
+	var/message_announce_round_end = "The round is almost over! Get ready for the next one."	// SOJOURN: discord bot configuration
+	var/channel_announce_new_game	// SOJOURN: discord bot configuration
+	var/channel_announce_end_game	// SOJOURN: discord bot configuration
+
 	var/profiler_permission = R_DEBUG | R_SERVER
 
 	var/allow_ic_printing = TRUE
+
+	var/cache_assets = FALSE
+	var/smart_cache_assets = FALSE
 
 /datum/configuration/New()
 	fill_storyevents_list()
@@ -309,6 +318,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("border_control")
 					config.borderControl = text2num(value)
+
+				if ("bypass_obfuscation")
+					config.bypassObfuscation = 1
 
 				if ("log_admin")
 					config.log_admin = 1
@@ -763,6 +775,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("webhook_url")
 					config.webhook_url = value
+
+				if("cache_assets")
+					config.cache_assets = TRUE
+				if("smart_cache_assets")
+					config.smart_cache_assets = TRUE
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
 
@@ -793,6 +810,21 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+
+		//	SOJOURN: discord bot configuration: START
+		else if(type == "discord")
+			switch(name)
+				if("message_announce_new_game")
+					config.message_announce_new_game = value
+				if("message_announce_round_end")
+					config.message_announce_round_end = value
+				if("channel_announce_new_game")
+					config.channel_announce_new_game = value
+				if("channel_announce_end_game")
+					config.channel_announce_end_game = value
+				else
+					log_misc("Unknown setting in configuration: '[name]'")
+		//	SOJOURN: discord bot configuration: END
 	fps = round(fps)
 	if(fps <= 0)
 		fps = initial(fps)

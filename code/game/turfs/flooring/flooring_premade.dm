@@ -443,38 +443,52 @@
 	icon_state = "derelict1"
 	initial_flooring = /decl/flooring/tiling/derelict/white_red_edges
 
+/turf/simulated/floor/tiled/derelict/airless
+	oxygen = 0
+	nitrogen = 0
+
 /turf/simulated/floor/tiled/derelict/white_red_edges
 	name = "floor"
 	icon_state = "derelict1"
 	initial_flooring = /decl/flooring/tiling/derelict/white_red_edges
+
+/turf/simulated/floor/tiled/derelict/white_red_edges/airless
+	oxygen = 0
+	nitrogen = 0
 
 /turf/simulated/floor/tiled/derelict/white_small_edges
 	name = "floor"
 	icon_state = "derelict2"
 	initial_flooring = /decl/flooring/tiling/derelict/white_small_edges
 
+/turf/simulated/floor/tiled/derelict/white_small_edges/airless
+	oxygen = 0
+	nitrogen = 0
+
 /turf/simulated/floor/tiled/derelict/red_white_edges
 	name = "floor"
 	icon_state = "derelict3"
 	initial_flooring = /decl/flooring/tiling/derelict/red_white_edges
+
+/turf/simulated/floor/tiled/derelict/red_white_edges/airless
+	oxygen = 0
+	nitrogen = 0
 
 /turf/simulated/floor/tiled/derelict/white_big_edges
 	name = "floor"
 	icon_state = "derelict4"
 	initial_flooring = /decl/flooring/tiling/derelict/white_big_edges
 
+/turf/simulated/floor/tiled/derelict/white_big_edges/airless
+	oxygen = 0
+	nitrogen = 0
 
 // Placeholders
 /turf/simulated/floor/airless/lava
 /turf/simulated/floor/light
 
-/turf/simulated/floor/snow
-	name = "snow"
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "snow"
 
 /turf/simulated/floor/beach/coastline
-/turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling
 
 /*Beach/Water*/
@@ -684,6 +698,26 @@
 	icon_state = "mud_light"
 	initial_flooring = /decl/flooring/dirt/mud/light
 
+/*Snow and Icewater*/
+
+/turf/simulated/floor/snow
+	name = "snow"
+	icon = 'icons/turf/flooring/snows.dmi'
+	icon_state = "snow0"
+	temperature = 253.15
+	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
+	nitrogen = MOLES_N2STANDARD *1.14
+	initial_flooring = /decl/flooring/snow
+
+/turf/simulated/floor/icewater
+	name = "icewater"
+	icon = 'icons/turf/flooring/icewater.dmi'
+	icon_state = "ice_water0"
+	temperature = 253.15
+	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
+	nitrogen = MOLES_N2STANDARD *1.14
+	initial_flooring = /decl/flooring/icewater
+
 /*Rock*/
 
 /turf/simulated/floor/rock
@@ -747,6 +781,17 @@
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 
+/*Shale - ALL SPRITE CREDITS GO TO CM-SS13!*/
+
+/turf/simulated/floor/asteroid/shale
+	name = "coarse shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale0"
+	initial_flooring = /decl/flooring/shale
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850
+
 /*POOL - new pool tile and the splash code to go with it*/
 /turf/simulated/floor/pool
 	name = "poolwater"
@@ -769,3 +814,189 @@
 		for(var/mob/living/carbon/human/H in src)
 			if(!H.wear_mask && (H.stat == CONSCIOUS))
 				H.emote("cough")
+
+//industeral
+
+/turf/simulated/floor/industrial
+	name = "concrate slab"
+	icon = 'icons/turf/flooring/tiles_industeral.dmi'
+	icon_state = "concrete_small"
+	initial_flooring = /decl/flooring/industrial/concrete_small
+
+/turf/simulated/floor/industrial/concrete_bricks
+	name = "concrate bricks"
+	icon_state = "concrete_bricks"
+	initial_flooring = /decl/flooring/industrial/concrete_bricks
+
+/turf/simulated/floor/industrial/bricks
+	name = "bricks"
+	icon_state = "brick"
+	initial_flooring = /decl/flooring/industrial/bricks
+
+/turf/simulated/floor/industrial/ornate
+	name = "ornate"
+	icon_state = "ornate"
+	initial_flooring = /decl/flooring/industrial/ornate
+
+/turf/simulated/floor/industrial/sierra
+	name = "ornate"
+	icon_state = "sierra"
+	initial_flooring = /decl/flooring/industrial/sierra
+
+/turf/simulated/floor/industrial/ceramic
+	name = "ceramic"
+	icon_state = "ceramic"
+	initial_flooring = /decl/flooring/industrial/ceramic
+
+/turf/simulated/floor/industrial/grey_slates_long
+	name = "grey slates"
+	icon_state = "grey_long"
+	initial_flooring = /decl/flooring/industrial/grey_slates_long
+
+/turf/simulated/floor/industrial/blue_slates_long
+	name = "blue slates"
+	icon_state = "blue_long"
+	initial_flooring = /decl/flooring/industrial/blue_slates_long
+
+/turf/simulated/floor/industrial/grey_slates
+	name = "grey slates"
+	icon_state = "grey"
+	initial_flooring = /decl/flooring/industrial/grey_slates
+
+/turf/simulated/floor/industrial/blue_slates
+	name = "blue slates"
+	icon_state = "blue"
+	initial_flooring = /decl/flooring/industrial/blue_slates
+
+/turf/simulated/floor/industrial/navy_slates
+	name = "navy slates"
+	icon_state = "navy"
+	initial_flooring = /decl/flooring/industrial/navy_slates
+
+/turf/simulated/floor/industrial/fancy_slates
+	name = "disk slates"
+	icon_state = "fancy"
+	initial_flooring = /decl/flooring/industrial/fancy_slates
+
+/turf/simulated/floor/industrial/navy_large_slates
+	name = "large navy slates"
+	icon_state = "navy_large"
+	initial_flooring = /decl/flooring/industrial/navy_large_slates
+
+/turf/simulated/floor/industrial/black_large_slates
+	name = "large black slates"
+	icon_state = "black_large"
+	initial_flooring = /decl/flooring/industrial/black_large_slates
+
+/turf/simulated/floor/industrial/green_large_slates
+	name = "large green slates"
+	icon_state = "green_large"
+	initial_flooring = /decl/flooring/industrial/green_large_slates
+
+/turf/simulated/floor/industrial/white_large_slates
+	name = "large white slates"
+	icon_state = "white_large"
+	initial_flooring = /decl/flooring/industrial/white_large_slates
+
+/turf/simulated/floor/industrial/checker_large
+	name = "large white and black slates"
+	icon_state = "checker_large"
+	initial_flooring = /decl/flooring/industrial/checker_large
+
+/turf/simulated/floor/industrial/cafe_large
+	name = "large white and red slates"
+	icon_state = "cafe_large"
+	initial_flooring = /decl/flooring/industrial/cafe_large
+
+// industrial fixed
+
+/turf/simulated/floor/industrial/fixed
+	name = "concrate slab"
+	icon = 'icons/turf/flooring/tiles_industeral.dmi'
+	icon_state = "concrete_small"
+	initial_flooring = /decl/flooring/industrial/concrete_small_fixed
+
+/turf/simulated/floor/industrial/concrete_bricks_fixed
+	name = "concrate bricks"
+	icon_state = "concrete_bricks"
+	initial_flooring = /decl/flooring/industrial/concrete_bricks_fixed
+
+/turf/simulated/floor/industrial/bricks_fixed
+	name = "bricks"
+	icon_state = "brick"
+	initial_flooring = /decl/flooring/industrial/bricks_fixed
+
+/turf/simulated/floor/industrial/ornate_fixed
+	name = "ornate"
+	icon_state = "ornate"
+	initial_flooring = /decl/flooring/industrial/ornate_fixed
+
+/turf/simulated/floor/industrial/sierra_fixed
+	name = "ornate"
+	icon_state = "sierra"
+	initial_flooring = /decl/flooring/industrial/sierra_fixed
+
+/turf/simulated/floor/industrial/ceramic_fixed
+	name = "ceramic"
+	icon_state = "ceramic"
+	initial_flooring = /decl/flooring/industrial/ceramic_fixed
+
+/turf/simulated/floor/industrial/grey_slates_long_fixed
+	name = "grey slates"
+	icon_state = "grey_long"
+	initial_flooring = /decl/flooring/industrial/grey_slates_long_fixed
+
+/turf/simulated/floor/industrial/blue_slates_long_fixed
+	name = "blue slates"
+	icon_state = "blue_long"
+	initial_flooring = /decl/flooring/industrial/blue_slates_long_fixed
+
+/turf/simulated/floor/industrial/grey_slates_fixed
+	name = "grey slates"
+	icon_state = "grey"
+	initial_flooring = /decl/flooring/industrial/grey_slates_fixed
+
+/turf/simulated/floor/industrial/blue_slates_fixed
+	name = "blue slates"
+	icon_state = "blue"
+	initial_flooring = /decl/flooring/industrial/blue_slates_fixed
+
+/turf/simulated/floor/industrial/navy_slates_fixed
+	name = "navy slates"
+	icon_state = "navy"
+	initial_flooring = /decl/flooring/industrial/navy_slates_fixed
+
+/turf/simulated/floor/industrial/fancy_slates_fixed
+	name = "disk slates"
+	icon_state = "fancy"
+	initial_flooring = /decl/flooring/industrial/fancy_slates_fixed
+
+/turf/simulated/floor/industrial/navy_large_slates_fixed
+	name = "large navy slates"
+	icon_state = "navy_large_fixed"
+	initial_flooring = /decl/flooring/industrial/navy_large_slates_fixed
+
+/turf/simulated/floor/industrial/black_large_slates_fixed
+	name = "large black slates"
+	icon_state = "black_large_fixed"
+	initial_flooring = /decl/flooring/industrial/black_large_slates_fixed
+
+/turf/simulated/floor/industrial/green_large_slates_fixed
+	name = "large green slates"
+	icon_state = "green_large_fixed"
+	initial_flooring = /decl/flooring/industrial/green_large_slates_fixed
+
+/turf/simulated/floor/industrial/white_large_slates_fixed
+	name = "large white slates"
+	icon_state = "white_large_fixed"
+	initial_flooring = /decl/flooring/industrial/white_large_slates_fixed
+
+/turf/simulated/floor/industrial/checker_large_fixed
+	name = "large white and black slates"
+	icon_state = "checker_large_fixed"
+	initial_flooring = /decl/flooring/industrial/checker_large_fixed
+
+/turf/simulated/floor/industrial/cafe_large_fixed
+	name = "large white and red slates"
+	icon_state = "cafe_large_fixed"
+	initial_flooring = /decl/flooring/industrial/cafe_large_fixed

@@ -23,10 +23,12 @@
 	check_armour = ARMOR_BOMB
 
 /obj/item/projectile/bullet/pellet/fragment/rubber
-	damage_types = list(BRUTE = 1)
-	agony = 25 // 70 x 25 = 1750 pain, if all hit, rather then 32 x 150
+	damage_types = list(BRUTE = 1, HALLOSS = 25)// 70 x 25 = 1750 pain, if all hit, rather then 32 x 150
+	//ricochet_mod = 3 // :3c
+	can_ricochet = TRUE
 	embed = FALSE
 	sharp = FALSE
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/pellet/fragment/ember
 	name = "phosphorous ember"
@@ -40,7 +42,8 @@
 	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/pellet/fragment/ember/on_hit(atom/target)
-	var/datum/effect/effect/system/smoke_spread/white_phosphorous/S = new /datum/effect/effect/system/smoke_spread/white_phosphorous
-	S.set_up(1, 0, get_turf(src))
-	S.start()
-	return TRUE
+	if (!testing)
+		var/datum/effect/effect/system/smoke_spread/white_phosphorous/S = new /datum/effect/effect/system/smoke_spread/white_phosphorous
+		S.set_up(1, 0, get_turf(src))
+		S.start()
+		return TRUE

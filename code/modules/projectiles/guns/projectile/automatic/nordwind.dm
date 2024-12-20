@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.62mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units and private security. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"
@@ -14,7 +14,7 @@
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 1)
 	price_tag = 2000
-	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
+	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -36,8 +36,9 @@
 
 /obj/item/part/gun/frame/nord
 	name = "Wind-series frame"
-	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber!"
+	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber! Includes several advanced mechanisms not often seen in lower-end weapons"
 	icon_state = "frame_wind"
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_DIAMOND = 2)
 	result = /obj/item/gun/projectile/automatic/nordwind
 	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
@@ -54,7 +55,7 @@
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_KNIFE)	//Able to take a bayonet to stay competative.
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 700
 	zoom_factors = list(0.6)
@@ -76,7 +77,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
-
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -85,6 +86,9 @@
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
+
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -103,6 +107,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL) //Boo-womp, no more bayonet.
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	price_tag = 450
 	zoom_factors = list()
 	init_recoil = SMG_RECOIL(2.3)
@@ -122,3 +128,30 @@
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
 	resultvars = list(/obj/item/gun/projectile/automatic/nordwind/strelki, /obj/item/gun/projectile/automatic/duty)
+
+
+/obj/item/gun/projectile/automatic/nordwind/watchtower
+	name = "\"Watchtower\" DMR"
+	desc = "A designated marksman rifle designed in cooperation between the marshals and the blackshield, made with lightweight materials and simple, easy to maintain components. \
+	A favorite of troopers who prefer to friendly fire rather than to be friendly fired."
+	icon = 'icons/obj/guns/projectile/watchtower.dmi'
+	icon_state = "watchtower"
+	item_state = "watchtower"
+	slot_flags = SLOT_BACK
+	load_method = SINGLE_CASING|MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
+	price_tag = 800
+	zoom_factors = list(0.8)
+	damage_multiplier = 1 //Little bit better Strelki
+	extra_damage_mult_scoped = 0.3
+	penetration_multiplier = 1
+	init_recoil = RIFLE_RECOIL(1.1)
+	see_invisible_gun = -1
+	auto_eject = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)

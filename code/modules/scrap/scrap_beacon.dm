@@ -17,11 +17,20 @@
 /obj/structure/scrap_beacon/attack_hand(mob/user)
 	.=..()
 	if((last_summon + summon_cooldown) >= world.time)
-		to_chat(user, "<span class='notice'>[name] not charged yet.</span>")
+		var/time_left = ((last_summon + summon_cooldown) - world.time)
+		to_chat(user, "<span class='notice'>[name] not charged yet, [time2text(time_left,"mm:ss")] remaining.</span>")
 		return
 	last_summon = world.time
 	if(!active)
 		start_scrap_summon()
+
+/obj/structure/scrap_beacon/examine(mob/user)
+	. = ..()
+	if((last_summon + summon_cooldown) >= world.time)
+		var/time_left = ((last_summon + summon_cooldown) - world.time)
+		to_chat(user, "<span class='notice'>[name] not charged yet, [time2text(time_left,"mm:ss")] remaining.</span>")
+	return
+
 
 /obj/structure/scrap_beacon/proc/start_scrap_summon()
 	set waitfor = FALSE
@@ -30,7 +39,7 @@
 	icon_state = "beacon1"
 	visible_message("<span class='notice'><b><font size='3px'><font color='red'>An alarm blares as the scrap beacon turns on and begins pulling debris from space!</font></b></span>")
 	playsound(src.loc, "sound/misc/bloblarm.ogg", 100, 1)
-	addtimer(CALLBACK(src, .proc/scrap_summon), 8)
+	addtimer(CALLBACK(src, PROC_REF(scrap_summon)), 8)
 
 
 /obj/structure/scrap_beacon/proc/scrap_summon()

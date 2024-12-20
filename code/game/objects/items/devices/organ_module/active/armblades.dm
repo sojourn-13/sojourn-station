@@ -5,12 +5,19 @@
 	icon_state = "armblade"
 	item_state = null
 	worksound = WORKSOUND_HARD_SLASH
-	force = WEAPON_FORCE_DANGEROUS
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_BRUTAL
+	sharp = TRUE
+	edge = TRUE
+	clickdelay_offset = FAST_WEAPON_COOLDOWN
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut")
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	tool_qualities = list(QUALITY_CUTTING = 20)
+
+/obj/item/organ_module/active/simple/proc/get_scanner_name()
+	return name
 
 /obj/item/organ_module/active/simple/armblade
 	name = "embedded armblade"
@@ -27,6 +34,7 @@
 	icon_state = "wolverine"
 	name = "claws"
 	desc = "A set of claws deployed from the tips of your fingers. Great for cutting people into ribbons."
+	clickdelay_offset = 0 //No bonus speed.
 
 /obj/item/organ_module/active/simple/wolverine
 	name = "embedded claws"
@@ -42,8 +50,26 @@
 	verb_name = "Deploy energyblade"
 	icon_state = "energyblade"
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
-	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
+	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3)
 	holding_type = /obj/item/melee/energy/blade/organ_module
+
+/obj/item/organ_module/active/simple/armblade/baton
+	name = "Embedded baton"
+	desc = "A baton designed to be inserted into an arm. Good for LTL CQC."
+	verb_name = "Deploy Baton"
+	icon_state = "armblade"
+	matter = list(MATERIAL_STEEL = 16, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/tool/baton
+
+/obj/item/organ_module/active/simple/armblade/telescopic_baton
+	name = "Embedded telescopic baton"
+	desc = "A telescopic baton designed to be inserted into an arm. Good for CQC."
+	verb_name = "Deploy Baton"
+	icon_state = "armblade"
+	matter = list(MATERIAL_STEEL = 16, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 1)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/melee/telebaton
 
 /obj/item/organ_module/active/simple/armblade/bs_tomahawk
 	name = "Embedded Blackshield Tomahawk"
@@ -61,7 +87,7 @@
 	icon_state = "nt_longsword"
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/tool/sword/nt/longsword
+	holding_type = /obj/item/tool/sword/nt/longsword/implant
 
 /obj/item/organ_module/active/simple/armblade/ritual
 	name = "Embedded Knife"
@@ -70,7 +96,7 @@
 	icon_state = "neot-knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/tool/knife/neotritual
+	holding_type = /obj/item/tool/knife/neotritual/implant
 
 /obj/item/organ_module/active/simple/armblade/energy_blade/deploy(mob/living/carbon/human/H, obj/item/organ/external/E)
 	..()
@@ -89,7 +115,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 30)
@@ -115,7 +141,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 30)

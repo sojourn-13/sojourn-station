@@ -12,6 +12,8 @@
 		tally -= chem_effects[CE_SPEEDBOOST]
 	if(CE_SLOWDOWN in chem_effects)
 		tally += chem_effects[CE_SLOWDOWN]
+	if(MOVING_QUICKLY(src))
+		tally -= unique_armor_check(src, src, 0)
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)
@@ -20,10 +22,14 @@
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.4
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
-		tally -= 0.3
+		var/datum/perk/nanite_power/nanite_muscle/P = stats.getPerk(PERK_NANITE_MUSCLE)
+		if(!P.emped)
+			tally -= 0.3
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
+		tally += 0.5
+	if(blocking)
 		tally += 1
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -33,12 +39,17 @@
 			var/obj/item/cruciform_upgrade/speed_of_the_chosen/sotc = upgrade
 			tally -= sotc.speed_increase
 
-	var/health_deficiency = (maxHealth - health)
-	var/hunger_deficiency = (MOB_BASE_MAX_HUNGER - nutrition)
-	if((hunger_deficiency >= 200) && species.reagent_tag != IS_SYNTHETIC)
-		tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
-	if(health_deficiency >= 40)
-		tally += (health_deficiency / 25)
+	//If we are not a synth then we have some movement delays thanks to hunger
+	if(species.reagent_tag != IS_SYNTHETIC)
+		var/health_deficiency = (maxHealth - health)
+		var/hunger_deficiency = (max_nutrition - nutrition)
+		var/hunger_half = max_nutrition * 0.5			//50% of max nutrition
+		var/hunger_one_tenth = max_nutrition * 0.1		//10% of max nutrition
+
+		if(hunger_deficiency >= hunger_half)
+			tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
+		if(health_deficiency >= hunger_one_tenth)
+			tally += (health_deficiency / 25)
 
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		//Not porting bay's silly organ checking code here
@@ -48,6 +59,8 @@
 			tally += wear_suit.slowdown
 		if(shoes)
 			tally += shoes.slowdown
+		if(back && !src.stats.getPerk(PERK_SECOND_SKIN))
+			tally += back.slowdown
 
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
 	//Soj edit - Are painkillers dont just magically make us faster
@@ -69,7 +82,6 @@
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 
 	return tally
-
 
 /mob/living/carbon/human/allow_spacemove()
 	//Can we act?
@@ -114,6 +126,7 @@
 /mob/living/carbon/human/add_momentum(direction)
 	if(momentum_dir == direction)
 		momentum_speed++
+		momentum_speed += momentum_speed_adder
 	else if(momentum_dir == reverse_dir[direction])
 		momentum_speed = 0
 		momentum_dir = direction
@@ -125,7 +138,7 @@
 
 /mob/living/carbon/human/proc/update_momentum()
 	if(momentum_speed)
-		momentum_reduction_timer = addtimer(CALLBACK(src, .proc/calc_momentum), 1 SECONDS, TIMER_STOPPABLE)
+		momentum_reduction_timer = addtimer(CALLBACK(src, PROC_REF(calc_momentum)), 1 SECONDS, TIMER_STOPPABLE)
 	else
 		momentum_speed = 0
 		deltimer(momentum_reduction_timer)

@@ -14,26 +14,18 @@
 	name = "Laurel wreath"
 	icon_state = "laurel"
 	desc = "A round wreath made of connected branches and leaves of the bay laurel."
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 100, //drip
-		rad = 0
-	)
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 
 /obj/item/clothing/head/laurel/silver
 	name = "silver Laurel wreath"
 	icon_state = "laurel_s"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed  silver."
+	desc = "A round silver wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/laurel/gold
 	name = "golden Laurel wreath"
 	icon_state = "laurel_g"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed of gold."
+	desc = "A round gold wreath made of connected branches and leaves of the bay laurel."
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -128,6 +120,51 @@
 	name = "hair magnets"
 	icon_state = "magnetpin"
 	desc = "A small metal hair pin with a magnet attached. Popular among the tiny demographic of fashionable robots."
+
+/obj/item/clothing/head/flowercrown
+	name = "poppy crown"
+	icon_state = "poppy_crown"
+	desc = "A flower crown made out of a string of bright red poppies."
+
+/obj/item/clothing/head/flowercrown/sunflower
+	name = "sunflower crown"
+	icon_state = "sunflower_crown"
+	desc = "A bright flower crown made out sunflowers that is sure to brighten up anyone's day!"
+
+/obj/item/clothing/head/flowercrown/lily
+	name = "lily crown"
+	icon_state = "lily_crown"
+	desc = "A leafy flower crown with a cluster of large white lilies at at the front."
+
+/obj/item/clothing/head/flowercrown/rainbow
+	name = "rainbow flower crown"
+	icon_state = "rainbow_bunch_crown_1"
+	desc = "A flower crown made out of the flowers of the rainbow bunch plant."
+
+/obj/item/clothing/head/flowercrown/rainbow/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["rainbow flower crown red, yellow and white"] = "rainbow_bunch_crown_1"
+	options["rainbow flower crown blue, yellow, green and white"] = "rainbow_bunch_crown_2"
+	options["rainbow flower crown red, blue, purple and pink"] = "rainbow_bunch_crown_3"
+	options["rainbow flower crown yellow, green and white"] = "rainbow_bunch_crown_4"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*Hair Ribbons*/
 
@@ -323,20 +360,20 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
 
-/obj/item/clothing/head/numerical_hat
-	name = "numerical hat"
-	icon_state = "numerical_hat"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+/obj/item/clothing/head/leather_hat
+	name = "leather hat"
+	icon_state = "field_numerical_hat"
+	desc = "A hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
-		melee = 10,
+		melee = 2,
 		bullet = 0,
-		energy = 10,
+		energy = 2,
 		bomb = 5,
 		bio = 100,
 		rad = 0
 	)
 
-/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+/obj/item/clothing/head/leather_hat/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -346,8 +383,8 @@ obj/item/clothing/head/ribbon/red
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Hat"] = "numerical_hat"
-	options["Gray Hat"] = "numerical_hatgrey"
+	options["Red Hat"] = "field_numerical_hat"
+	options["Purple Hat"] = "field_numerical_hat_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -388,6 +425,98 @@ obj/item/clothing/head/ribbon/red
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
 
+/obj/item/clothing/head/jingasa
+	name = "jingasa"
+	desc = "A sturdy metal cap designed to protect the head from weather and falling objects."
+	icon_state = "jingasa"
+	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/head/headband
+	name = "headband"
+	desc = "A simple cloth headband intended to help keep ones hair neat and orderly."
+	icon_state = "headband_colorless"
+
+/obj/item/clothing/head/strawhat
+	name = "straw hat"
+	desc = "A plain old straw hat for keeping the sun out of ones eyes. A red band is all that keeps this old thing in one piece."
+	icon_state = "small_strawhat"
+
+/obj/item/clothing/head/strawhat/big
+	name = "wide straw hat"
+	desc = "A great big straw hat. Its size and durable make will keep ones eyes safe for a thousand sunny days."
+	icon_state = "large_strawhat"
+
+/obj/item/clothing/head/sunhat
+	name = "yellow sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat"
+
+/obj/item/clothing/head/sunhat/white
+	name = "white sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat_white"
+
+/obj/item/clothing/head/sunhat/shade
+	name = "shadehat"
+	desc = "A wide brimmed shadecap. A bit witchy, but it'll do the job."
+	icon_state = "shadehat"
+
+/obj/item/clothing/head/sunhat/blackshade
+	name = "black shadehat"
+	desc = "A wide brimmed shadecap. A bit gothic, but it'll do the job."
+	icon_state = "shadehat_black"
+
+obj/item/clothing/head/sunhat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["lopsided"] = "_lopsided"
+	var/choice = input(M,"What do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust your hat to a [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/tiara
+	name = "tiara"
+	desc = "A simple, metal tiara."
+	icon_state = "tiara"
+
+/obj/item/clothing/head/voidhelm
+	name = "kin voidhelm"
+	desc = "An old, battered voidhelmet. Its original source unknown and its seals long since worn out - still, it makes for a decent helmet, if nothing else is available."
+	icon_state = "kin_voidhelm"
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/headdress
+	name = "headdress"
+	desc = "A simple, ornamental headdress."
+	icon_state = "headress"
+
+/obj/item/clothing/head/headscarf
+	name = "headscarf"
+	desc = "A patterned bolt of synth-cloth tied here and there that sits comfortably around the head. Excellent for keeping sand from your face - if you weren't in a temperate forest, that is."
+	icon_state = "zhan_scarf"
+
 /obj/item/clothing/head/exceslior/excelsior_officer
 	name = "excelsior officer cap"
 	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
@@ -411,9 +540,9 @@ obj/item/clothing/head/ribbon/red
 	siemens_coefficient = 1
 	price_tag = 600
 	armor_list = list(
-		melee = 20,
-		bullet = 15,
-		energy = 10,
+		melee = 5,
+		bullet = 3,
+		energy = 2,
 		bomb = 0,
 		bio = 20,
 		rad = 25
@@ -425,12 +554,26 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "os_cap"
 	item_state = "os_cap"
 	armor_list = list(
-		melee = 5,
+		melee = 1,
 		bullet = 0,
 		energy = 0,
 		bomb = 0,
 		bio = 20,
 		rad = 25
+	)
+
+/obj/item/clothing/head/os_cap/nova
+	name = "Greyson Star Trader Cap"
+	desc = "A flat brim cap made for the colony office workers to keep out light out of their heads, weirdly enough it smells like if you just buyed it out of the vendor, it smells like cinnamon."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 1,
+		bomb = 0,
+		bio = 5,
+		rad = 5
 	)
 
 /*
@@ -462,7 +605,7 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "ragged_hood"
 	item_state = "ragged_hood"
 	flags_inv = HIDEEARS|BLOCKHAIR
-	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 1, bullet = 0, energy = 2, bomb = 0, bio = 5, rad = 5)
 
 // hoods for the tacticool ponchos.
 
@@ -507,3 +650,41 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "tacponhood_color"
 	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/religion_hood_color
+	name = "religious hood"
+	desc = "A religious hood that can be colored."
+	icon_state = "general_hood"
+	item_state = "general_hood"
+
+
+/obj/item/clothing/head/hev
+
+	name = "Hazardous Enviroment Protection suit helmet"
+	desc = "A hood that comes with the hazardous protection suit."
+	icon_state = "rad"
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "hardhat_light"
+	armor_list = list(
+		melee = 16,
+		bullet = 15,
+		energy = 13,
+		bomb = 75,
+		bio = 100,
+		rad = 100
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	siemens_coefficient = 0.4
+	w_class = ITEM_SIZE_NORMAL
+	item_flags = STOPPRESSUREDAMAGE //hardhat has it? So this gets it to.
+	heat_protection = HEAD
+	cold_protection = HEAD
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	unacidable = TRUE
+	price_tag = 1000

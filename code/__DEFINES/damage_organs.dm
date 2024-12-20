@@ -56,12 +56,13 @@
 #define ORGAN_PROP_PROSTHETIC	BITFLAG(0) // The organ is prosthetic. Changes numerous behaviors, search BP_IS_PROSTHETIC for checks.
 #define ORGAN_PROP_CRYSTAL		BITFLAG(1) // The organ does not suffer laser damage, but shatters on droplimb.
 
-#define MODIFICATION_ORGANIC 0	// Organic
+#define MODIFICATION_ORGANIC  0	// Organic
 #define MODIFICATION_ASSISTED 1 // Like pacemakers, not robotic
-#define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
+#define MODIFICATION_SILICON  2	// Fully robotic, no organic parts
 #define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
-#define MODIFICATION_REMOVED 4	// Removed completly
+#define MODIFICATION_REMOVED  4	// Removed completly
 #define MODIFICATION_SUPERIOR 5 //Better than good, a cut above.
+#define MODIFICATION_SLIME    6 //goo people
 
 // Organ flag defines.
 #define ORGAN_FLAG_CAN_AMPUTATE		BITFLAG(0) // The organ can be amputated.
@@ -126,10 +127,22 @@
 #define DROPLIMB_EDGE_BURN 3
 
 // INTERNAL ORGANS
-#define IORGAN_STANDARD_HEALTH 12
-#define IORGAN_SMALL_HEALTH 8
+#define IORGAN_VITAL_HEALTH 12 // Heart
+#define IORGAN_VITAL_BRUISE 6
+#define IORGAN_VITAL_BREAK 8
+#define IORGAN_STANDARD_HEALTH 8
+#define IORGAN_STANDARD_BRUISE 3
+#define IORGAN_STANDARD_BREAK 5
+#define IORGAN_SMALL_HEALTH 6
+#define IORGAN_SMALL_BRUISE 2
+#define IORGAN_SMALL_BREAK 4
+#define IORGAN_TINY_HEALTH 4
+#define IORGAN_TINY_BRUISE 1
+#define IORGAN_TINY_BREAK 2
 #define IORGAN_SKELETAL_HEALTH 14
-#define IORGAN_MAX_HEALTH 14
+#define IORGAN_SKELETAL_BRUISE 4
+#define IORGAN_SKELETAL_BREAK 6
+#define IORGAN_MAX_HEALTH 14 // Brain
 
 #define IORGAN_KIDNEY_TOX_RATIO 0.25
 #define IORGAN_LIVER_TOX_RATIO 0.75
@@ -155,6 +168,11 @@
 #define IWOUND_3_MINUTES 90
 #define IWOUND_4_MINUTES 120
 #define IWOUND_5_MINUTES 150
+#define IWOUND_6_MINUTES 180
+#define IWOUND_8_MINUTES 240
+#define IWOUND_10_MINUTES 300
+#define IWOUND_12_MINUTES 360
+
 
 // Organ generation
 #define ORGAN_HAS_BONES			(1<<0)

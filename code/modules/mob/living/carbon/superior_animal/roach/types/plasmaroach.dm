@@ -6,8 +6,8 @@
 
 	meat_amount = 2
 	turns_per_move = 10 //fast boy
-	maxHealth = 15
-	health = 15
+	maxHealth = 15 * ROACH_HEALTH_MOD
+	health = 15 * ROACH_HEALTH_MOD
 
 	contaminant_immunity = TRUE
 
@@ -17,5 +17,5 @@
 
 /mob/living/carbon/superior_animal/roach/plasmaroach/UnarmedAttack(atom/A, proximity)
 	. = ..()
-	gib()
 	explosion(loc, 0,1,2) //slightly weaker radius than a plasma spider, still hurts like a bitch
+	gib()

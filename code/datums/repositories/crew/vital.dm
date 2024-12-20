@@ -5,7 +5,7 @@
 	crew_data["pulse_span"] = "neutral"
 
 	if(!H.isSynthetic() && H.should_have_process(OP_HEART))
-		var/obj/item/organ/internal/heart/O = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/O = H.random_organ_by_process(OP_HEART)
 		if(O && BP_IS_ORGANIC(O)) // Don't make medical freak out over prosthetic hearts
 			crew_data["true_pulse"] = H.pulse()
 			crew_data["pulse"] = H.get_pulse(1)
@@ -36,7 +36,7 @@
 		crew_data["suffocation"] = round(H.getOxyLoss())
 		crew_data["burns"] = round(H.getFireLoss())
 		crew_data["trauma"] = round(H.getBruteLoss())
-		crew_data["poisoning"] = round(H.getToxLoss())
+		crew_data["poisoning"] = round(H.chem_effects[CE_TOXIN])
 
 		if(H.getOxyLoss() >= 10)
 			crew_data["alert"] = TRUE
@@ -44,7 +44,7 @@
 			crew_data["alert"] = TRUE
 		if(H.getFireLoss() >= 50)
 			crew_data["alert"] = TRUE
-		if(H.getToxLoss() >= 50)
+		if(H.chem_effects[CE_TOXIN] >= 5)
 			crew_data["alert"] = TRUE
 
 	crew_data["bodytemp"] = H.bodytemperature - T0C

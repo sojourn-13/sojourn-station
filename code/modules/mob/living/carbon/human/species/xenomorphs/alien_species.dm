@@ -37,8 +37,8 @@
 	vision_flags = SEE_SELF|SEE_MOBS
 
 	has_organ = list(
-		BP_HEART =  /obj/item/organ/internal/heart,
-		BP_BRAIN =  /obj/item/organ/internal/brain/xeno,
+		BP_HEART =  /obj/item/organ/internal/vital/heart,
+		BP_BRAIN =  /obj/item/organ/internal/vital/brain/xeno,
 		BP_PLASMA = /obj/item/organ/internal/xenos/plasmavessel,
 		BP_HIVE =   /obj/item/organ/internal/xenos/hivenode,
 	)
@@ -136,8 +136,8 @@
 	default_form = /datum/species_form/alien/drone
 
 	has_organ = list(
-		BP_HEART =  /obj/item/organ/internal/heart,
-		BP_BRAIN =  /obj/item/organ/internal/brain/xeno,
+		BP_HEART =  /obj/item/organ/internal/vital/heart,
+		BP_BRAIN =  /obj/item/organ/internal/vital/brain/xeno,
 		BP_PLASMA = /obj/item/organ/internal/xenos/plasmavessel/drone,
 		O_ACID =   /obj/item/organ/internal/xenos/acidgland/drone,
 		BP_HIVE =   /obj/item/organ/internal/xenos/hivenode,
@@ -166,8 +166,8 @@
 	default_form = /datum/species_form/alien/hunter
 
 	has_organ = list(
-		BP_HEART =  /obj/item/organ/internal/heart,
-		BP_BRAIN =  /obj/item/organ/internal/brain/xeno,
+		BP_HEART =  /obj/item/organ/internal/vital/heart,
+		BP_BRAIN =  /obj/item/organ/internal/vital/brain/xeno,
 		BP_PLASMA = /obj/item/organ/internal/xenos/plasmavessel/hunter,
 		BP_HIVE =   /obj/item/organ/internal/xenos/hivenode,
 	)
@@ -190,8 +190,8 @@
 	default_form = /datum/species_form/alien/sentinel
 
 	has_organ = list(
-		BP_HEART =  /obj/item/organ/internal/heart,
-		BP_BRAIN =  /obj/item/organ/internal/brain/xeno,
+		BP_HEART =  /obj/item/organ/internal/vital/heart,
+		BP_BRAIN =  /obj/item/organ/internal/vital/brain/xeno,
 		BP_PLASMA = /obj/item/organ/internal/xenos/plasmavessel/sentinel,
 		O_ACID =   /obj/item/organ/internal/xenos/acidgland,
 		BP_HIVE =   /obj/item/organ/internal/xenos/hivenode,
@@ -215,8 +215,8 @@
 	default_form = /datum/species_form/alien/queen
 
 	has_organ = list(
-		BP_HEART =  /obj/item/organ/internal/heart,
-		BP_BRAIN =  /obj/item/organ/internal/brain/xeno,
+		BP_HEART =  /obj/item/organ/internal/vital/heart,
+		BP_BRAIN =  /obj/item/organ/internal/vital/brain/xeno,
 		O_EGG =    /obj/item/organ/internal/xenos/eggsac,
 		BP_PLASMA = /obj/item/organ/internal/xenos/plasmavessel/queen,
 		O_ACID =   /obj/item/organ/internal/xenos/acidgland,

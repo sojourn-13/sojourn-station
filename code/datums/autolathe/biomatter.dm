@@ -48,10 +48,10 @@
 /datum/design/bioprinter/botanic_leather
 	name = "Botanical gloves"
 	build_path = /obj/item/clothing/gloves/botanic_leather
-	materials = list(MATERIAL_BIOMATTER = 15)
+	materials = list(MATERIAL_BIOMATTER = 10)
 
 /datum/design/bioprinter/leather
-	materials = list(MATERIAL_BIOMATTER = 20)
+	materials = list(MATERIAL_BIOMATTER = 15)
 
 /datum/design/bioprinter/leather/satchel
 	name = "Leather Satchel"
@@ -98,7 +98,7 @@
 	build_path = /obj/item/clothing/accessory/holster/leg
 
 /datum/design/bioprinter/belt
-	materials = list(MATERIAL_BIOMATTER = 20)
+	materials = list(MATERIAL_BIOMATTER = 10)
 
 /datum/design/bioprinter/belt/utility
 	name = "Utility belt"
@@ -127,7 +127,13 @@
 /datum/design/bioprinter/belt/misc/champion
 	name = "Champion belt"
 	build_path = /obj/item/storage/belt/champion
-	materials = list(MATERIAL_BIOMATTER = 50)
+	materials = list(MATERIAL_BIOMATTER = 25)
+
+// This separates regular clothes designs from NT clothes designs //
+/datum/design/bioprinter/nt_clothes/armor_kit
+	name = "Armor Bundle"
+	build_path = /obj/item/gunbox/church
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
@@ -173,6 +179,10 @@
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church
 
+/datum/design/bioprinter/nt_clothes/rosary
+	name = "Fractal Rosary"
+	build_path = /obj/item/clothing/accessory/necklace/fractalrosary
+
 /datum/design/bioprinter/nt_clothes/hermes_shoes
 	name = "Hermes Boots"
 	build_path = /obj/item/clothing/shoes/hermes_shoes
@@ -183,7 +193,7 @@
 
 /datum/design/bioprinter/nt_clothes/knight_rig
 	name = "Knight Hardsuit Module"
-	materials = list(MATERIAL_BIOMATTER = 100, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASTEEL = 100)
+	materials = list(MATERIAL_BIOMATTER = 70, MATERIAL_GOLD = 7, MATERIAL_SILVER = 7, MATERIAL_PLASTEEL = 70)
 	build_path = /obj/item/rig/combat/knight
 
 //[MELEE]
@@ -203,6 +213,10 @@
 	name = "NT Halberd"
 	build_path = /obj/item/tool/spear/halberd
 
+/datum/design/autolathe/sword/nt_polehammer
+	name = "NT Polehammer"
+	build_path = /obj/item/tool/spear/polehammer
+
 /datum/design/autolathe/sword/nt_spear
 	name = "NT Spear"
 	build_path = /obj/item/tool/sword/nt/spear
@@ -220,7 +234,7 @@
 	build_path = /obj/item/shield/buckler/nt
 
 /datum/design/autolathe/nt/sword/nt_verutum
-	name = "OT Javelin"
+	name = "NT Javelin"
 	build_path = /obj/item/stack/thrown/nt/verutum
 
 /datum/design/autolathe/tool_upgrade/sanctifier
@@ -439,29 +453,29 @@
 /datum/design/bioprinter/nt_cells/large
 	name = "NT \"Spark 13000L\""
 	build_path = /obj/item/cell/large/neotheology
-	materials = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 30)
+	materials = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 15)
 
 /datum/design/bioprinter/nt_cells/large/plasma
 	name = "NT \"Radiance 20000L\""
 	build_path = /obj/item/cell/large/neotheology/plasma
-	materials = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 15, MATERIAL_PLASMA = 3)
+	materials = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 15, MATERIAL_PLASMA = 1)
 
 /datum/design/bioprinter/nt_cells/medium
 	name = "NT \"Spark 1000M\""
 	build_path = /obj/item/cell/medium/neotheology/
-	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 20)
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10)
 
 /datum/design/bioprinter/nt_cells/medium/plasma
 	name = "NT \"Radiance 1500M\""
 	build_path = /obj/item/cell/medium/neotheology/plasma
-	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 2)
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 0.6) //This is to keep things in 5s or
 
 /datum/design/bioprinter/nt_cells/small
 	name = "NT \"Spark 300S\""
 	build_path = /obj/item/cell/small/neotheology/
-	materials = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 10)
+	materials = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 5)
 
 /datum/design/bioprinter/nt_cells/small/plasma
 	name = "NT \"Radiance 500S\""
 	build_path = /obj/item/cell/small/neotheology/plasma
-	materials = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 5, MATERIAL_PLASMA = 1)
+	materials = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 5, MATERIAL_PLASMA = 0.2)

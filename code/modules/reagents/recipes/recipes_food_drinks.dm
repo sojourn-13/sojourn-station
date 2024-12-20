@@ -23,11 +23,6 @@
 	required_reagents = list("eznutrient" = 1, "sugar" = 3, "carbon" = 3)
 	result_amount = 7
 
-/datum/chemical_reaction/virus_food
-	result = "virusfood"
-	required_reagents = list("water" = 1, "milk" = 1)
-	result_amount = 5
-
 /* Food */
 
 /datum/chemical_reaction/tofu
@@ -43,6 +38,7 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/tofu(location)
 
+/* Deprecated form of making chocolate_bar via chemical mix - Chocolate bar is now made in a Pot, recipe in VIRK
 /datum/chemical_reaction/chocolate_bar
 	result = null
 	required_reagents = list("soymilk" = 2, "coco" = 2, "sugar" = 2)
@@ -66,6 +62,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+*/
 
 /datum/chemical_reaction/icecreambase
 	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
@@ -123,6 +120,7 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel(location)
 
+/* Deprecated form of making meatball via chemical mix - Meatball is made in prep bowl, VIRK recipe
 /datum/chemical_reaction/meatball
 	result = null
 	required_reagents = list("protein" = 3, "flour" = 5)
@@ -134,6 +132,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/rawmeatball(location)
+*/
 
 /datum/chemical_reaction/dough
 	result = null
@@ -207,7 +206,7 @@
 
 /datum/chemical_reaction/strawberryicecream
 	result = null
-	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
+	required_reagents = list("icecreambase" = 10, "strawberryjuice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 	mix_message = "The solution freezes into icecream!"
@@ -788,7 +787,7 @@
 
 /datum/chemical_reaction/strawberrymilk
 	result = "strawberrymilk"
-	required_reagents = list("berryjuice" = 1, "milk" = 1)
+	required_reagents = list("strawberryjuice" = 1, "milk" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/drinks/fernetcola
@@ -897,6 +896,11 @@
 /datum/chemical_reaction/drinks/friendlyfire
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/strawberry_explosive_blast
+	result = "strawberry_explosive_blast"
+	required_reagents = list("strawberryjuice" = 2, "cola" = 1)
 	result_amount = 3
 
 

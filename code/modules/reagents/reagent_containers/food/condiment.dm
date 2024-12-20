@@ -13,7 +13,7 @@
 	reagent_flags = OPENCONTAINER
 	possible_transfer_amounts = list(1,5,10)
 	center_of_mass = list("x"=16, "y"=6)
-	volume = 50
+	volume = 60
 
 	attackby(var/obj/item/W as obj, var/mob/user as mob)
 		return

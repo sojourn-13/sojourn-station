@@ -28,6 +28,7 @@
 	var/permanent                       // If set, the module can't be removed.
 	var/disruptive = 1                  // Can disrupt by other effects.
 	var/activates_on_touch              // If set, unarmed attacks will call engage() on the target.
+	var/module_bulk = 0                // Exactly what it sounds like. How much slowdown the rig gains from the module.
 
 	var/active                          // Basic module status
 	var/disruptable                     // Will deactivate if some other powers are used.
@@ -69,9 +70,9 @@
 	switch(damage)
 		if(0)
 			to_chat(usr, "It is undamaged.")
-		if(1)
-			to_chat(usr, "It is badly damaged.")
 		if(2)
+			to_chat(usr, "It is badly damaged.")
+		if(4)
 			to_chat(usr, "It is almost completely destroyed.")
 
 /obj/item/rig_module/attackby(obj/item/W as obj, mob/user as mob)
@@ -99,7 +100,7 @@
 			if(0)
 				to_chat(user, "There is no damage to mend.")
 				return
-			if(2)
+			if(3)
 				to_chat(user, "There is no damage that you are capable of mending with such crude tools.")
 				return
 
@@ -158,10 +159,16 @@
 //Called before the module is removed from a suit
 //Return FALSE to deny the removal
 /obj/item/rig_module/proc/can_uninstall(var/obj/item/rig/rig, var/mob/user, var/feedback = FALSE)
+	if(module_bulk > 0)
+		holder.slowdown -=(module_bulk / 2)
+		holder.stiffness -=(module_bulk * 2)
 	return TRUE
 
 // Called after the module is installed into a suit. The holder var is already set to the new suit
 /obj/item/rig_module/proc/installed(var/mob/living/user)
+	if(module_bulk > 0)
+		holder.slowdown +=(module_bulk / 2)
+		holder.stiffness +=(module_bulk * 2)
 	return
 
 // Called after the module is removed from a suit.
@@ -176,7 +183,7 @@
 //Proc for one-use abilities like teleport.
 /obj/item/rig_module/proc/engage()
 
-	if(damage >= 2)
+	if(damage >= 4)
 		to_chat(usr, SPAN_WARNING("The [interface_name] is damaged beyond use!"))
 		return 0
 
@@ -254,24 +261,6 @@
 // Checks if an item is usable with this module and handles it if it is
 /obj/item/rig_module/proc/accepts_item(var/obj/item/input_device)
 	return 0
-
-/mob/living/carbon/human/Stat()
-	. = ..()
-
-	if(. && istype(back,/obj/item/rig))
-		var/obj/item/rig/R = back
-		SetupStat(R)
-
-/mob/proc/SetupStat(var/obj/item/rig/R)
-	if(R && !R.canremove && R.installed_modules.len && statpanel("Hardsuit Modules"))
-		var/cell_status = R.cell ? "[R.cell.charge]/[R.cell.maxcharge]" : "ERROR"
-		stat("Suit charge", cell_status)
-		for(var/obj/item/rig_module/module in R.installed_modules)
-		{
-			for(var/stat_rig_module/SRM in module.stat_modules)
-				if(SRM.CanUse())
-					stat(SRM.module.interface_name,SRM)
-		}
 
 /stat_rig_module
 	parent_type = /atom/movable

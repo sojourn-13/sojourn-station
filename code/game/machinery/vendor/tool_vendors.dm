@@ -228,8 +228,27 @@
 					 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 3,
 					 /obj/item/computer_hardware/hard_drive/portable/advanced/coin = 300,
 					 /obj/item/circuitboard/autolathe = 3,
-					 /obj/item/circuitboard/vending = 10)
-	contraband = list(/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
+					 /obj/item/circuitboard/vending = 10,
+					 /obj/item/stack/material/plastic/five = 4,
+					 /obj/item/stack/material/plastic/ten = 6,
+					 /obj/item/stack/material/steel/five = 4,
+					 /obj/item/stack/material/steel/ten = 6,
+					 /obj/item/stack/material/glass/five = 4,
+					 /obj/item/stack/material/glass/ten = 6,
+					 /obj/item/stack/material/wood/five = 4,
+					 /obj/item/stack/material/wood/ten = 6,
+					 /obj/item/stack/material/cardboard/five = 4,
+					 /obj/item/stack/material/cardboard/ten = 6
+					 )
+	contraband = list(/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3,
+						/obj/item/stack/material/iron/five = 4,
+						/obj/item/stack/material/iron/ten = 10,
+						/obj/item/stack/material/sandstone/five = 4,
+						/obj/item/stack/material/sandstone/ten = 10,
+						/obj/item/stack/material/marble/five = 4,
+						/obj/item/stack/material/marble/ten = 10,
+						/obj/item/stack/material/cloth/five = 4,
+						/obj/item/stack/material/cloth/ten = 10)
 	prices = list(/obj/item/computer_hardware/hard_drive/portable = 50,
 				 /obj/item/storage/box/data_disk/basic = 100,
 				 /obj/item/computer_hardware/hard_drive/portable/design/misc = 200,
@@ -250,7 +269,25 @@
 				 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 300,
 				 /obj/item/circuitboard/autolathe = 350,
 				 /obj/item/circuitboard/vending = 200,
-				 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 400)
+				 /obj/item/stack/material/plastic/five = 150,
+				 /obj/item/stack/material/plastic/ten = 300,
+				 /obj/item/stack/material/steel/five = 150,
+				 /obj/item/stack/material/steel/ten = 300,
+				 /obj/item/stack/material/glass/five = 150,
+				 /obj/item/stack/material/glass/ten = 300,
+				 /obj/item/stack/material/wood/five = 150,
+				 /obj/item/stack/material/wood/ten = 300,
+				 /obj/item/stack/material/cardboard/five = 150,
+				 /obj/item/stack/material/cardboard/ten = 300,
+				 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 400,
+				 /obj/item/stack/material/iron/five = 150,
+				 /obj/item/stack/material/iron/ten = 300,
+				 /obj/item/stack/material/sandstone/five = 150,
+				 /obj/item/stack/material/sandstone/ten = 300,
+				 /obj/item/stack/material/marble/five = 150,
+				 /obj/item/stack/material/marble/ten = 300,
+				 /obj/item/stack/material/cloth/five = 150,
+				 /obj/item/stack/material/cloth/ten = 300)
 
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
@@ -315,6 +352,7 @@
 					/obj/item/device/kit/paint/ripley/clark_veteran = 3,
 					//Ivan
 					/obj/item/device/kit/paint/rust_ivan = 3,
+					/obj/item/device/kit/paint/utility_ivan = 3,
 					//Ody
 					/obj/item/device/kit/paint/odysseus = 3,
 					/obj/item/device/kit/paint/odysseus/blue_racer = 3,

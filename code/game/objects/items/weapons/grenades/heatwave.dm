@@ -9,7 +9,7 @@
 	var/flash_range = 10
 	var/heat_damage = 40
 	var/fire_stacks = TRUE
-	var/penetration = 0
+	var/penetration = 1
 
 
 /obj/item/grenade/heatwave/prime()
@@ -36,4 +36,4 @@
 	weak_range = 4
 	heat_damage = 50
 	penetration = 25
-	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASMA = 5)
+	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_PLASMA = 3)

@@ -11,9 +11,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -28,9 +28,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -44,9 +44,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 5,
-		bullet = 5,
-		energy = 5,
+		melee = 1,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -61,9 +61,9 @@
 	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 5,
+		melee = 2,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -98,16 +98,16 @@
 
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
-	name = "executive officer coat"
+	name = "surface manager coat"
 	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor_list = list(
-		melee = 20,
-		bullet = 10,
-		energy = 5,
+		melee = 5,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "chief executive officer's jacket"
-	desc = "A well tailored and rich jacket for the Chief Executive Officer."
+	name = "surface operations manager's jacket"
+	desc = "A well tailored and rich jacket for the Surface Operations Manager."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -150,8 +150,8 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -168,11 +168,11 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
-	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 2)
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 2,
 		bomb = 30,
 		bio = 100,
 		rad = 100
@@ -185,9 +185,9 @@
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
-		melee = 15,
-		bullet = 10,
-		energy = 5,
+		melee = 3,
+		bullet = 2,
+		energy = 1,
 		bomb = 0,
 		bio = 100,
 		rad = 75
@@ -201,9 +201,35 @@
 
 /obj/item/clothing/suit/storage/chaplain/coat
 	name = "preacher coat"
-	desc = "A snugly fitting, lightly armoured brown coat."
+	desc = "The Prime's vestments come in many different forms, all of them regal and richly adorned."
 	icon_state = "church_coat"
 	item_state = "church_coat"
+
+/obj/item/clothing/suit/storage/chaplain/coat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Primes coat"] = "church_coat"
+	options["Primes vestments"] = "nt_minister"//credit to Près de l'oiseau on Eris for all of these!
+	options["Primes dark vestmentts"] = "nt_minister_dark"
+	options["Primes robes"] = "nt_robe_down"
+	options["Primes mantled robes"] = "nt_robe"
+	options["Primes habit"] = "nt_habit"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Chef
 /obj/item/clothing/suit/rank/chef
@@ -231,7 +257,7 @@
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee =7, bullet = 6, energy = 6, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/insp_trench/verb/toggle_style()
@@ -304,7 +330,7 @@
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 50
 	armor_list = list(
-		melee = 10,
+		melee = 2,
 		bullet = 0,
 		energy = 0,
 		bomb = 0,

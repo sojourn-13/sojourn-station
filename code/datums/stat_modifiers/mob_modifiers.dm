@@ -21,9 +21,9 @@
 	var/inherent_projectile_increment_adjustment
 
 	/// Any projectiles fired by the holder will have their armor penetration increased by this much, added after the mult
-	var/projectile_armor_penetration_adjustment
+	var/projectile_armor_divisor_adjustment
 	/// Any projectiles fired by the holder will have their armor penetration multiplied by this much, added first
-	var/projectile_armor_penetration_mult_increment
+	var/projectile_armor_divisor_mult_increment
 
 	/// Inverted, lower = higher speed
 	var/projectile_speed_increment_adjustment
@@ -66,10 +66,10 @@
 			for (var/entry in projectile_damage_mult)
 				livingholder.projectile_damage_mult[entry] = ZERO_OR_MORE((livingholder.projectile_damage_mult[entry] - projectile_damage_mult[entry]))
 
-		if (projectile_armor_penetration_adjustment)
-			livingholder.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingholder.projectile_armor_penetration_adjustment - projectile_armor_penetration_adjustment))
-		if (projectile_armor_penetration_mult_increment)
-			livingholder.projectile_armor_penetration_mult = ZERO_OR_MORE((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult_increment))
+		if (projectile_armor_divisor_adjustment)
+			livingholder.projectile_armor_divisor_adjustment = ZERO_OR_MORE((livingholder.projectile_armor_divisor_adjustment - projectile_armor_divisor_adjustment))
+		if (projectile_armor_divisor_mult_increment)
+			livingholder.projectile_armor_divisor_mult = ZERO_OR_MORE((livingholder.projectile_armor_divisor_mult - projectile_armor_divisor_mult_increment))
 
 		if (projectile_speed_increment_adjustment)
 			livingholder.projectile_speed_increment = ZERO_OR_MORE((livingholder.projectile_speed_increment - projectile_speed_increment_adjustment))
@@ -110,10 +110,10 @@
 			for (var/entry in projectile_damage_mult)
 				livingtarget.projectile_damage_mult[entry] = ZERO_OR_MORE((livingtarget.projectile_damage_mult[entry] + projectile_damage_mult[entry]))
 
-		if (projectile_armor_penetration_adjustment)
-			livingtarget.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_adjustment + projectile_armor_penetration_adjustment))
-		if (projectile_armor_penetration_mult_increment)
-			livingtarget.projectile_armor_penetration_mult = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult_increment))
+		if (projectile_armor_divisor_adjustment)
+			livingtarget.projectile_armor_divisor_adjustment = ZERO_OR_MORE((livingtarget.projectile_armor_divisor_adjustment + projectile_armor_divisor_adjustment))
+		if (projectile_armor_divisor_mult_increment)
+			livingtarget.projectile_armor_divisor_mult = ZERO_OR_MORE((livingtarget.projectile_armor_divisor_mult + projectile_armor_divisor_mult_increment))
 
 		if (projectile_speed_increment_adjustment)
 			livingtarget.projectile_speed_increment = ZERO_OR_MORE((livingtarget.projectile_speed_increment + projectile_speed_increment_adjustment))

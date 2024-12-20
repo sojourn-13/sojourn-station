@@ -10,6 +10,12 @@
 	path = /obj/item/storage/belt/utility
 	cost = 2
 
+
+/datum/gear/belt/sheath
+	display_name = "sheath for cheap blades"
+	path = /obj/item/storage/sheath/non_church/general
+	cost = 1
+
 /datum/gear/belt/toolbelt
 	display_name = "handmade tool belt"
 	path = /obj/item/storage/belt/utility/handmade
@@ -29,11 +35,17 @@
 
 
 /datum/gear/belt/medbelt
-	display_name = "Medical belt, Selection EMT / Doctor"
+	display_name = "Medical belt Selection"
 	path = /obj/item/storage/belt/medical
 	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Lifeline Technician")
 	cost = 1
-	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/belt/medbelt/New()
+	..()
+	var/belts = list(
+		"Medical Belt"				=	/obj/item/storage/belt/medical,
+		"EMT Belt"			=	/obj/item/storage/belt/medical/emt,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(belts)
 
 

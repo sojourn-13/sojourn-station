@@ -59,13 +59,14 @@
 		else if(inhibited && owner.psi_blocking <= 0)
 			owner.show_message("\blue Your psionic power has been freed from its captivity!")
 			inhibited = FALSE
+		if(0 > owner.psi_blocking)
+			owner.psi_blocking = 0 //Insainity check!
 
 		//Removes any implants that are metal, including death alarms
 		remove_synthetics()
 
 		//Now we do are math to under are point cap and regen
-		var/psi_max_bonus = 0
-		var/cognitive_potential = 1
+		psi_max_bonus = 0 + psi_max_other_sources
 
 		if(!owner.stats.getPerk(PERK_PSION))
 			owner.stats.addPerk(PERK_PSION)
@@ -76,18 +77,66 @@
 		if(owner.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
 			psi_max_bonus += 5
 
+		psi_max_bonus += psionic_equipment_check("psi_max_bonus")
+
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.2), 0, 5))
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 0, (cognitive_potential_max+psionic_equipment_check("cognitive_potential_max_bonus"))), 0.1)
 
+		var/regen_points_timer = (5 MINUTES - cognitive_potential MINUTES)
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
-			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES) * 0.5)
-		else
-			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES))
+			regen_points_timer *= 0.5
+
+		regen_points_timer -= (psionic_equipment_check("psi_regen_helpers") SECONDS)
+
+		regen_points_timer -= cognitive_potential MINUTES
+
+		if(min_timer > regen_points_timer)
+			regen_points_timer = min_timer
+
+		addtimer(CALLBACK(src, PROC_REF(regen_points)), regen_points_timer)
 
 		if(psi_points < max_psi_points)
 			psi_points += 1
+
+		if(owner.psi_blocking < 0) //resets psiblock to zero so people can't somehow farm it into the negatives.
+			owner.psi_blocking = 0
+
+//The major types are:
+//"psi_max_bonus"
+//"psi_regen_helpers" - This is in seconds!
+//"cognitive_potential_max_bonus" - caps at 4
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_equipment_check(type)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		var/bonus_return = 0
+		switch(type)
+			if("psi_max_bonus")
+				//Waring 4 ear rings does stack in this case
+				if(istype(H.l_ear, /obj/item/clothing/ears/psionic_ear_rings))
+					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.l_ear
+					bonus_return += PESR.storage_addition
+				if(istype(H.r_ear, /obj/item/clothing/ears/psionic_ear_rings))
+					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.r_ear
+					bonus_return += PESR.storage_addition
+
+				return bonus_return
+
+			if("psi_regen_helpers")
+				if(istype(H.glasses, /obj/item/clothing/glasses/psionic_lens))
+					var/obj/item/clothing/glasses/psionic_lens/PL = H.glasses
+					bonus_return += PL.psionic_seconds
+
+				return bonus_return
+
+			if("cognitive_potential_max_bonus")
+				if(istype(H.w_uniform , /obj/item/clothing/under/psionic_cloths))
+					var/obj/item/clothing/under/psionic_cloths/PC = H.w_uniform
+					bonus_return += PC.cognitive_potential
+				return bonus_return
+
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
@@ -146,7 +195,7 @@
 
 // This proc removes all implanters other then non-metal ones.
 /obj/item/organ/internal/psionic_tumor/proc/remove_implanted(metal_implant)
-	if(istype(metal_implant, /obj/item/implant))
+	if(istype(metal_implant, /obj/item/implant) && !istype(metal_implant, /obj/item/implant/generic))
 		var/obj/item/implant/R = metal_implant
 		if(R.implanted)
 			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
@@ -158,23 +207,53 @@
 				H.update_implants()
 
 
-// This proc handles paying for your powers and checks if you attempt to use your power while you are dead or unconcious. Placed here so it doesn't need to be in every power function.
+// This proc handles paying for your powers and checks if you attempt to use your power while you are dead or unconcious. Placed here so it doesn't need to be in every power function. Dead/unconscious checks are here so you can't somehow spend power points while unconscious
 /obj/item/organ/internal/psionic_tumor/proc/pay_power_cost(var/psi_cost)
 	if(disabled == 1)
 		to_chat(src, "Your connection is cut to your psionic essence, something is wrong!.")
 		return FALSE
 	if(owner.stat == DEAD)
 		to_chat(src, "You are dead.")
-		return
+		return FALSE
 	if(owner.stat == UNCONSCIOUS)
 		to_chat(src, "You cannot use your psionic powers while unconscious.")
-		return
+		return FALSE
 	if(psi_points < psi_cost)
 		to_chat(usr,"You lack the psionic essence to do this.")
 		return FALSE
 	else
 		psi_points -= psi_cost
-		if(owner.psi_blocking >= 10)
-			to_chat(usr,"Your mind struggles to break the confines of its prison, but cannot escape.")
-			return FALSE
 		return TRUE
+
+//This proc handles checking whether a power can be used for reasons other than cost. It is called after pay cost
+/obj/item/organ/internal/psionic_tumor/proc/check_possibility(targeted = FALSE, var/mob/living/carbon/human/target, require_target_active = FALSE)
+	if(!GLOB.deepmaints_data_bool["active_psionics"])
+		to_chat(usr,"Your mind struggles to tap into any psionic ablities!")
+		return
+
+	if(owner.psi_blocking >= 10)
+		owner.stun_effect_act(0, owner.psi_blocking * 5, BP_HEAD)
+		owner.weakened = owner.psi_blocking
+		to_chat(usr,"Your mind struggles to break the confines of its prison, but cannot escape.")
+		return FALSE
+	if(targeted) //This should be used only for directly targeted effects, like telepathy, healing, or sleep, not on anything telekinetic.
+		if(!target)
+			usr.show_message(SPAN_NOTICE("You reach out with your mind, but there's nobody in front of you."))
+		if(target.psi_blocking >= 10) //If we try to affect someone with psi blocking, it hurts!
+			owner.stun_effect_act(0, target.psi_blocking * 5, BP_HEAD)
+			owner.weakened = target.psi_blocking
+			usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+			return FALSE
+		if(target.species?.reagent_tag == IS_SYNTHETIC) //Can't affect synths
+			usr.show_message(SPAN_NOTICE("You feel no mind to touch within this person!"))
+			return FALSE
+		if(target.stat == DEAD) //Can't affect the dead
+			usr.show_message(SPAN_NOTICE("The mind within this person is dead and unable to be affected."))
+			return FALSE
+		if(target.get_core_implant(/obj/item/implant/core_implant/cruciform)) //Can't affect the baptized
+			usr.show_message(SPAN_NOTICE("You feel something greater than your own mind pressing back, resisting your power."))
+			return FALSE
+		if(require_target_active && target.stat == UNCONSCIOUS) //Some powers like telepathy can't affect the sleeping
+			usr.show_message(SPAN_NOTICE("You feel the mind you are attempting to reach is slumbering."))
+			return FALSE
+	return TRUE

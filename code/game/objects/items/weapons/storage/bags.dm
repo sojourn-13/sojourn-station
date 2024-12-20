@@ -191,6 +191,13 @@
 		/obj/item/reagent_containers/food/snacks/chickenbreast)
 
 
+/obj/item/storage/bag/produce/big
+	name = "big produce bag"
+	desc = "It takes a long bag to hold long fruit!"
+	icon_state = "plantbag_long"
+	max_storage_space = 200
+	w_class = ITEM_SIZE_BULKY // Outta keep it from being more space efficient than a normal plant bag.
+
 // -----------------------------
 //          Xenobio bag
 // -----------------------------

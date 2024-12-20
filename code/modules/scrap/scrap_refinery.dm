@@ -112,7 +112,7 @@
 	if(!istype(I, /obj/item/scrap_lump))
 		chance_mod = chance_to_recycle
 	if(prob(chance_to_recycle - chance_mod)) //changes it so that only lumps of scrap can be used to make refined scrap.
-		new /obj/item/stack/sheet/refined_scrap(loc)
+		new /obj/item/stack/material/refined_scrap(loc)
 	qdel(I)
 
 /obj/machinery/recycler/proc/stop(mob/living/L)

@@ -66,6 +66,18 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/storage/plant_bag/big
+	name = "big plant bag"
+	result = /obj/item/storage/bag/produce/big
+	steps = list(
+		list(/obj/item/storage/bag/produce, 1, "time" = 20),
+		list(QUALITY_CUTTING, 15, 50),
+		list(/obj/item/storage/bag/produce, 1, "time" = 20),
+		list(QUALITY_CUTTING, 15, 50),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+	related_stats = list(STAT_COG)
+
 /datum/craft_recipe/storage/chem_bag
 	name = "chemistry bag"
 	result = /obj/item/storage/bag/chemistry
@@ -290,4 +302,24 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
 		list(QUALITY_WELDING, 10, 20)
+	)
+
+//Techinally it stores produce
+/datum/craft_recipe/storage/fermentation_keg
+	name = "fermentation keg"
+	result = /obj/structure/fermentation_keg
+	related_stats = list(STAT_MEC)
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(/obj/item/stack/rods, 2)
+	)
+//Techinally it stores reagents....
+/datum/craft_recipe/storage/churn
+	name = "churn"
+	result = /obj/structure/churn
+	related_stats = list(STAT_MEC)
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 12, MATERIAL_WOOD)
 	)

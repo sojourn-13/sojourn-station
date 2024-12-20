@@ -6,12 +6,12 @@
 	tree_x = 0.62
 	tree_y = 0.5
 	spawn_always = TRUE
-	markup = RARE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
 	recommendations_needed = 3
 	inventory = list(
@@ -50,6 +50,9 @@
 			/obj/item/gun/energy/crossbow = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/suit/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/head/helmet/space/syndicate = custom_good_amount_range(list(1, 1)),
+			/obj/item/clothing/suit/armor/vest/breach1 = custom_good_amount_range(list(2, 3)),
+			/obj/item/clothing/mask/gas/chemhood = custom_good_amount_range(list(2, 3)),
+			/obj/item/clothing/head/helmet/hazcap = custom_good_amount_range(list(2, 3)),
 			/obj/item/clothing/glasses/powered/night = custom_good_amount_range(list(1, 1))
 		),
 		"Syndicate Gun Mods" = list(
@@ -67,8 +70,9 @@
 	offer_types = list(
 		/obj/item/organ/internal/kidney = offer_data("kidney", 800, 2),
 		/obj/item/organ/internal/liver/big = offer_data("big liver", 1200, 1),
-		/obj/item/organ/internal/heart/huge = offer_data("six-chambered heart", 2000, 1),
-		/obj/item/organ/internal/lungs/long = offer_data("long lungs", 1650, 1),
+		/obj/item/organ/internal/vital/heart/huge = offer_data("six-chambered heart", 2000, 1),
+		/obj/item/organ/internal/vital/lungs/long = offer_data("long lungs", 1650, 1),
 		/obj/item/organ/internal/nerve/sensitive_nerve  = offer_data("sensitive nerve", 2650, 1),
-		/obj/item/organ/internal/blood_vessel/extensive   = offer_data("extensive blood vessels", 2650, 1)
+		/obj/item/organ/internal/blood_vessel/extensive   = offer_data("extensive blood vessels", 2650, 1),
+		/obj/item/cell/medium/greyson = offer_data("GP-SI \"Posi-cell 1600M\"", 725, 3)
 	)

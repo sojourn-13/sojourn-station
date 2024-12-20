@@ -9,6 +9,9 @@
 	oxygen_req = 2.5
 	nutriment_req = 2
 	price_tag = 500
+	max_damage = IORGAN_SMALL_HEALTH
+	min_bruised_damage = IORGAN_SMALL_BRUISE
+	min_broken_damage = IORGAN_SMALL_BREAK
 	w_class =  ITEM_SIZE_TINY
 
 /obj/item/organ/internal/kidney/left

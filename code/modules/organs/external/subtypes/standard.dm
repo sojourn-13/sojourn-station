@@ -19,13 +19,13 @@
 			owner.update_hair()
 	..()
 
-/obj/item/organ/external/head/take_damage(amount, damage_type, armor_divisor = 1, wounding_multiplier = 1, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
+/obj/item/organ/external/head/take_damage(amount, damage_type, armor_divisor = max(1, armor_divisor), wounding_multiplier = 1, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
 	. = ..()
 	if(. && !disfigured)
-		if(amount > 40)
+		if(amount > 25)
 			if(damage_type == BRUTE && prob(50))
 				disfigure("brute")
-		else
+		else if(amount > 15) //If you take 15 damage in the head you get melty
 			if (damage_type == BURN)
 				disfigure("burn")
 

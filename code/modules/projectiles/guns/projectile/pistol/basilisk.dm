@@ -14,7 +14,7 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.6)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound		= 'sound/weapons/guns/fire/deagle_fire.ogg' // Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
@@ -24,7 +24,7 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
-	gun_parts = list(/obj/item/part/gun/frame/basilisk = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+	gun_parts = list(/obj/item/part/gun/frame/basilisk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
 
 /obj/item/part/gun/frame/basilisk
 	name = "Basilisk frame"
@@ -32,7 +32,7 @@
 	icon_state = "frame_deagle"
 	result = /obj/item/gun/projectile/basilisk
 	resultvars = list(/obj/item/gun/projectile/basilisk)
-	gripvars = list(/obj/item/part/gun/grip/wood)
+	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
 

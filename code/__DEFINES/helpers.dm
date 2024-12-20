@@ -3,3 +3,5 @@
 
 /// subtypesof(), typesof() without the parent path
 #define subtypesof(typepath) ( typesof(typepath) - typepath )
+
+#define text_ref(datum) ref(datum)

@@ -63,6 +63,7 @@
 
 /obj/item/ammo_magazine/ammobox/pistol_35/rubber
 	name = "ammunition packet (9mm rubber)"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets. "
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
@@ -82,6 +83,8 @@
 	name = "ammunition packet (9mm laser)"
 	icon_state = "pistol_si"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 90
 
 /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
 	name = "ammunition packet (9mm Caustic)"
@@ -106,7 +109,7 @@
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
 	name = "ammunition box (9mm rubber)"
-	desc = "A large box of police grade 9mm rubber rounds."
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets."
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 	icon_state = "pistol_large_rubber"
 
@@ -142,6 +145,7 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/ammobox/magnum_40/rubber
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	name = "ammunition packet (10mm Magnum rubber)"
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
@@ -162,6 +166,8 @@
 	name = "ammunition packet (10mm Magnum Laser)"
 	icon_state = "magnum_si"
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 70
 
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	name = "ammunition packet (10mm Magnum Caustic)"
@@ -186,6 +192,7 @@
 
 /obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
 	name = "ammunition box (10mm Magnum rubber)"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "magboxrubber"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
@@ -218,6 +225,7 @@
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/rubber
 	name = "ammunition box (6.5mm Carbine rubber)"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "box_lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
@@ -257,6 +265,7 @@
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber
 	name = "ammunition packet (6.5mm Carbine rubber)"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
@@ -280,6 +289,8 @@
 	name = "ammunition packet (6.5mm Carbine laser)"
 	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 120
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
 	name = "ammunition packet (old 6.5mm Carbine)"
@@ -314,7 +325,7 @@
 /obj/item/ammo_magazine/ammobox/rifle_75/rubber
 	name = "ammunition box (7.62mm Rifle rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75/practice
@@ -330,7 +341,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
-	name = "ammunition box (7.62mm Rifle High-Velocity)"
+	name = "ammunition box (7.62mm Rifle APDS)"
 	icon_state = "boxhrifle-hv"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
@@ -345,6 +356,7 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber
 	name = "ammunition packet (7.62mm Rifle rubber)"
+	desc = "A box of 7.62mm rifle ammunition. 30ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "rifle_r"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
@@ -354,7 +366,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.62mm Rifle high-velocity)"
+	name = "ammunition packet (7.62mm Rifle APDS)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
@@ -375,8 +387,11 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	name = "ammunition packet (7.62mm Rifle laser)"
+	desc = "A box of 7.62mm rifle ammunition. 90ct, laser core rounds. You can see caliber information on the label."
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 90
 
 
 ////snowflake 10x24////
@@ -399,6 +414,29 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
+// .223 laser
+
+/obj/item/ammo_magazine/ammobox/laser_223/box
+	name = "ammunition box (5.56mm L)"
+	icon_state = "box223-laser"
+	desc = "A large box of 5.56mm laser round."
+	matter = list(MATERIAL_PLASTIC = 1)
+	caliber = CAL_SCI
+	ammo_type = /obj/item/ammo_casing/laser_223
+	max_ammo = 200
+/*
+/obj/item/ammo_magazine/ammobox/laser_223/box/ap
+	name = "ammunition box (5.56mm PL)"
+	icon_state = "box223-ap-laser"
+	ammo_type = /obj/item/ammo_casing/laser_223/ap
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/laser_223/box/lethal
+	name = "ammunition box (5.56mm DL)"
+	icon_state = "box223-lethal-laser"
+	ammo_type = /obj/item/ammo_casing/laser_223/lethal
+	max_ammo = 200
+*/
 //// 12mm heavy pistol
 
 /obj/item/ammo_magazine/ammobox/kurtz_50
@@ -411,6 +449,7 @@
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
 	name = "ammunition box (12mm rubber)"
+	desc = "A box of riot supression 12mm pistol ammunition. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
@@ -440,6 +479,8 @@
 	name = "ammunition box (12mm laser)"
 	icon_state = "box50-si"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 50
 
 //// 14.5×114mm ////
 
@@ -472,22 +513,22 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old 14.5mm Anti Materiel)"
+	name = "ammunition box (old 14.5mm Anti-Materiel)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
 
 //// 17.7mm rolled shot ////
 
-///obj/item/ammo_magazine/ammobox/ball
-//	name = "ammunition box (17.7mm rolled shot)"
-//	icon_state = "antim"
-//	desc = "A box of 17.7mm rolled shot."
-//	matter = list(MATERIAL_STEEL = 5)
-//	w_class = ITEM_SIZE_BULKY
-//	caliber = CAL_BALL
-//	ammo_type = /obj/item/ammo_casing/ball
-//	max_ammo = 30
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (17.7mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 17.7mm rolled shot."
+	matter = list(MATERIAL_STEEL = 5)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
 
 //// 8.6mm Heavy Rifle ////
 
@@ -495,7 +536,7 @@
 	name = "ammunition packet (8.6mm ball)"
 	icon_state = "hrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_CARDBOARD = 1)
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 40
@@ -503,7 +544,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
 	name = "ammunition packet (8.6mm rubber)"
 	icon_state = "hrifle_r"
-	desc = "A box of 8.6x70mm heavy rifle ammunition."
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
@@ -533,8 +574,10 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	name = "ammunition packet (8.6mm laser)"
 	icon_state = "hrifle_si"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 60ct, subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 60
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
 	name = "ammunition packet (old 8.6mm Rifle)"
@@ -579,7 +622,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
 	name = "ammunition box (8.6mm rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming traumatic rounds."
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber/update_icon()
@@ -665,7 +708,7 @@
 	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_NORMAL //so we dont magiclly shrink
 	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 35
+	max_ammo = 40 //Down to 40 from 50 from original 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/update_icon()
 	var/iconstring = initial(icon_state)
@@ -707,6 +750,14 @@
 	icon_state = "buckshot"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
+/obj/item/ammo_magazine/ammobox/shotgun/biomatter
+	name = "ammunition packet (20mm Biomatter Slug)"
+	icon_state = "caustic"
+	desc = "A luxurious wooden box with a bevelled lid, filled to the brim with acrid-smelling paper cartridges, intended for use in a 20mm shotgun. \
+			The lid is kept on with a fine silken ribbon tied around the top. The ammunition inside is 20mm caustic sabot, \
+			an armour-piercing delivery system for painful acids designed to debilitate your target."
+	ammo_type = /obj/item/ammo_casing/shotgun/biomatter
+
 //used in mapping only cases
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"
@@ -725,12 +776,12 @@
 	name = "ammunition packet (20mm Stun Shells)"
 	icon_state = "stunslug"
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
-
+/*
 /obj/item/ammo_magazine/ammobox/shotgun/payload
 	name = "ammunition packet (20mm Explosive Shells)"
 	icon_state = "explosive"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
-
+*/
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 	name = "ammunition packet (20mm Incendiary)"
 	icon_state = "incendiary"
@@ -750,4 +801,3 @@
 	name = "old ammunition packet (20mm Slug)"
 	icon_state = "shot_ss"
 	ammo_type = /obj/item/ammo_casing/shotgun/scrap
-

@@ -26,11 +26,6 @@
 /mob/living/carbon/proc/get_blood_data()
 	var/data = list()
 	data["donor"] = WEAKREF(src)
-	if (!data["virus2"])
-		data["virus2"] = list()
-	data["virus2"] |= virus_copylist(virus2)
-	data["viruses"] = null
-	data["antibodies"] = antibodies
 	data["blood_DNA"] = dna.unique_enzymes
 	data["blood_type"] = dna.b_type
 	data["species"] = species.name
@@ -48,8 +43,6 @@
 	if (!QDELETED(src))
 		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
 			if(B.id == "blood")
-				B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-								"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
 				B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
@@ -131,12 +124,6 @@
 /mob/living/carbon/proc/inject_blood(var/datum/reagent/organic/blood/injected, var/amount)
 	if (!injected || !istype(injected))
 		return
-	var/list/sniffles = virus_copylist(injected.data["virus2"])
-	for(var/ID in sniffles)
-		var/datum/disease2/disease/sniffle = sniffles[ID]
-		infect_virus2(src,sniffle,1)
-	if (injected.data["antibodies"] && prob(5))
-		antibodies |= injected.data["antibodies"]
 	var/list/chems = list()
 	chems = params2list(injected.data["trace_chem"])
 	for(var/C in chems)
@@ -155,7 +142,7 @@
 
 	if (!injected || !our)
 		return
-	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && (!bloodstr.has_reagent("nosfernium")))
+	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && !(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations)))
 		reagents.add_reagent("toxin",amount * 0.5)
 		reagents.update_total()
 	else
@@ -167,9 +154,11 @@
 /mob/living/carbon/proc/get_blood()
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
-		if(res.data["donor"] != src) //If it's not theirs, then we look for theirs
+		var/datum/weakref/ref = res.data["donor"]
+		if(istype(ref) && ref.resolve() != src)
 			for(var/datum/reagent/organic/blood/D in vessel.reagent_list)
-				if(D.data["donor"] == src)
+				ref = D.data["donor"]
+				if(ref.resolve() == src)
 					return D
 	return res
 
@@ -242,10 +231,6 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 		else
 			B.blood_DNA[source.data["blood_DNA"]] = "O+"
 
-	// Update virus information.
-	if(source.data["virus2"])
-		B.virus2 = virus_copylist(source.data["virus2"])
-
 	B.fluorescent  = 0
 	B.invisibility = 0
 	return B
@@ -296,7 +281,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
 	var/robo_check = TRUE	//check if all hearts are robotic
 	var/open_check = FALSE  //check if any heart is open
-	for(var/obj/item/organ/internal/heart/heart in organ_list_by_process(OP_HEART))
+	for(var/obj/item/organ/internal/vital/heart/heart in organ_list_by_process(OP_HEART))
 		if(!(BP_IS_ROBOTIC(heart)))
 			robo_check = FALSE
 		if(heart.open)
@@ -322,9 +307,11 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	return min(blood_volume, 100)
 
 /mob/living/carbon/human/proc/regenerate_blood(var/amount)
-	amount *= (species.blood_volume / SPECIES_BLOOD_DEFAULT)
+	amount *= (vessel.maximum_volume / species.blood_volume)
 	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	amount = max(0,min(amount, species.blood_volume - blood_volume_raw))
+	amount = clamp(amount,0,vessel.maximum_volume - blood_volume_raw)
+	if(VAMPIRE in mutations)
+		amount *= 1.50 //25% more //trilby, how is that 25% -DimasW
 	if(amount)
 		vessel.add_reagent("blood", amount, get_blood_data())
 	return amount

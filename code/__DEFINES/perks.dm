@@ -40,11 +40,13 @@
 #define PERK_SURVIVOR /datum/perk/oddity/survivor
 #define PERK_INSPIRING /datum/perk/oddity/inspiring
 #define PERK_HOLY_LIGHT /datum/perk/nt_oddity/holy_light
+#define PERK_SIDE_LOADING /datum/perk/oddity/side_loading
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_SANITYBOOST /datum/perk/sanityboost
+#define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
 #define PERK_CHANNELING /datum/perk/channeling
 #define PERK_IDEALIST /datum/perk/idealist
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
@@ -66,8 +68,6 @@
 #define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
-#define PERK_ALCHEMY /datum/perk/alchemist
-#define PERK_SCRIBE /datum/perk/scribe
 #define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
@@ -96,11 +96,15 @@
 #define PERK_PROSPECTOR_CONDITIONING /datum/perk/job/prospector_conditioning
 #define PERK_BLACKSHIELD_CONDITIONING /datum/perk/job/blackshield_conditioning
 #define PERK_BARTENDER /datum/perk/bartender
-
+#define PERK_NO_OBFUSCATION /datum/perk/no_obfuscation //isekai perk?
+#define PERK_BLOOD_LUST /datum/perk/blood_lust
+#define PERK_NATURAL_STYLE /datum/perk/natural_style
+#define PERK_MAP_MAKER /datum/perk/map_maker
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
 #define PERK_REZ_SICKNESS_FATAL /datum/perk/rezsickness/severe/fatal
+
 //////////////
 //Race Perks//
 //////////////
@@ -151,11 +155,17 @@
 //Folken
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
 #define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
-//Slime
-#define PERK_LIMB_REGEN /datum/perk/limb_regen
-#define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
-#define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
-#define PERK_SPEED /datum/perk/speed_boost
+//Slimes
+#define PERK_LIMB_REGEN /datum/perk/racial/limb_regen
+#define PERK_SLIMEBODY /datum/perk/racial/slime_metabolism
+#define PERK_SLIMEREZ /datum/perk/racial/slime_rez_sickness
+#define PERK_SLIMEMETH /datum/perk/racial/speed_boost
+#define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
+#define PERK_SLIMEBUFF /datum/perk/racial/slime_stat_boost/physical
+
+//////////////
+//Core Perks//
+//////////////
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
@@ -168,11 +178,16 @@
 
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
-#define PERK_NANITE_REGEN /datum/perk/nanite_regen
-#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
-#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
-#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
-#define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
+#define PERK_NANITE_REGEN /datum/perk/nanite_power/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_power/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_power/nanite_armor
+#define PERK_NANITE_AMMO /datum/perk/nanite_power/nanite_ammo
+#define PERK_NANITE_METAL_EATER /datum/perk/nanite_power/nanite_metal_drinker
+
+// Crayon Mage Perks
+#define PERK_ALCHEMY /datum/perk/alchemist
+#define PERK_SCRIBE /datum/perk/scribe
+#define PERK_REVEAL /datum/perk/cooldown/reveal
 
 // Imprinter Perks
 #define PERK_SMARTLINK /datum/perk/smartlink
@@ -180,14 +195,15 @@
 #define PERK_CHEMNEUTRAL /datum/perk/chemical_neutralizer
 
 // Nanite Chem Perks.
-#define PERK_NANITE_CHEM /datum/perk/nanite_chem
-#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_chem/implantoids
-#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_chem/trauma_control_system
-#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_chem/control_booster_utility
-#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_chem/control_booster_combat
-#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
-#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
-#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
+#define PERK_NANITE_CHEM /datum/perk/nanite_power/nanite_chem
+#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_power/nanite_chem/implantoids
+#define PERK_NANITE_SYMBIOTES /datum/perk/nanite_power/nanite_chem/symbiotes
+#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_power/nanite_chem/trauma_control_system
+#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_power/nanite_chem/control_booster_utility
+#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_power/nanite_chem/control_booster_combat
+#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_power/nanite_chem/purgers
+#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_power/nanite_chem/oxyrush
+#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_power/nanite_chem/nantidotes
 
 
 //Wage Perks
@@ -210,13 +226,25 @@
 							   PERK_SHARP_MIND, \
 							   PERK_STRANGTH, \
 							   PERK_IRON_WILL, \
-							   PERK_SNACKIVORE)
+							   PERK_SNACKIVORE, \
+							   PERK_SIDE_LOADING )
 
 //Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
 #define PERK_NJOY /datum/perk/njoy
 
+//Task Perks
+#define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
+//Bluecross perks
+#define PERK_SKILL_CAP_ADDITION /datum/perk/skill_cap_addition
+#define PERK_SKILL_CAP_EXPANDING /datum/perk/skill_cap_expanding
 
-//cooldown perks
+//////////////////
+//Cooldown perks//
+//////////////////
+
+//Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
+//Anti-art
+#define PERK_ARTIST_NO /datum/perk/cooldown/artist_no

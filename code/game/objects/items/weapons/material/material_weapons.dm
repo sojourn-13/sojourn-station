@@ -20,6 +20,21 @@
 	var/drops_debris = 1
 	var/furniture_icon  //icon states for non-material colorable overlay, i.e. handles
 
+	max_upgrades = 0 //Its upgrade is its materal type.
+
+/obj/item/material/refresh_upgrades()
+	name = "[material.display_name] [initial(name)]"
+
+	update_force()
+	if(wielded)
+		if(force_wielded_multiplier)
+			force = force * force_wielded_multiplier
+		else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
+			force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+		name = "[name] (Wielded)"
+	return
+
+
 /obj/item/material/New(var/newloc, var/material_key)
 	..(newloc)
 	if(!material_key)

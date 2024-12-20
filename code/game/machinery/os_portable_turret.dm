@@ -9,6 +9,7 @@
 	icon = 'icons/obj/machines/one_star/machines.dmi'
 	icon_state = "os_gauss" // sprite by Infrared Baron
 	circuit = /obj/item/circuitboard/os_turret
+	var/faction_iff = "greyson"
 	idle_power_usage = 30
 	active_power_usage = 2500
 	density = TRUE
@@ -16,7 +17,7 @@
 
 	// Targeting
 	var/should_target_players = TRUE			// TRUE targets players, FALSE targets superior animals (roaches, golems, and spiders)
-	var/firing_range = 8								// Starts firing just out of player sight
+	var/firing_range = 7						// 15x15 atm, so we dont no-scope off screen target
 	var/returning_fire = FALSE					// Will attempt to fire at the nearest target when attacked and no one is in range
 	var/last_target								//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
@@ -42,7 +43,6 @@
 /obj/machinery/power/os_turret/laser
 	icon_state = "os_laser"
 	circuit = /obj/item/circuitboard/os_turret/laser
-	firing_range = 10
 	projectile = /obj/item/projectile/beam/os_turret
 	number_of_shots = 3
 	time_between_shots = 0.3 SECONDS
@@ -52,7 +52,8 @@
 /obj/machinery/power/os_turret/Initialize()
 	. = ..()
 	update_icon()
-
+	RefreshParts()
+	firing_range = world.view
 	if(!cooldown_time)
 		cooldown_time = time_between_shots * number_of_shots
 
@@ -143,13 +144,10 @@
 	if(!check_trajectory(L, src))	//check if we have true line of sight
 		return TURRET_NOT_TARGET
 
-	if(should_target_players && ishuman(L))
-		return TURRET_PRIORITY_TARGET
+	if(!should_target_players && ishuman(L))
+		return TURRET_NOT_TARGET
 
-	if(should_target_players && issilicon(L)) //We shoot non GP robots
-		return TURRET_SECONDARY_TARGET
-
-	if(!should_target_players && !ishuman(L))
+	if(!should_target_players && issilicon(L)) //We shoot non GP robots
 		return TURRET_NOT_TARGET
 
 	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
@@ -183,7 +181,7 @@
 /obj/machinery/power/os_turret/emp_act()
 	..()
 	stat |= EMPED
-	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE)
+	emp_timer_id = addtimer(CALLBACK(src, PROC_REF(emp_off)), emp_cooldown, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/machinery/power/os_turret/bullet_act(obj/item/projectile/proj)
 	var/damage = proj.get_structure_damage()
@@ -204,6 +202,12 @@
 			if(istype(obj, /obj/machinery/power/os_turret))
 				return		// Don't shoot other turrets
 		try_shoot(proj_start_turf)
+
+/obj/machinery/power/os_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
 
 /obj/machinery/power/os_turret/attackby(obj/item/I, mob/user)
 	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
@@ -249,11 +253,11 @@
 
 /obj/machinery/power/os_turret/RefreshParts()
 	var/obj/item/circuitboard/os_turret/C = circuit
-	should_target_players = !C.target_superior_mobs
+	should_target_players = C.should_target_players
 
 /obj/machinery/power/os_turret/on_deconstruction()
 	var/obj/item/circuitboard/os_turret/C = circuit
-	C.target_superior_mobs = TRUE
+	C.should_target_players = FALSE
 
 /obj/machinery/power/os_turret/proc/take_damage(amount)
 	health = max(health - amount, 0)
@@ -294,21 +298,25 @@
 		var/timer = time_between_shots
 		shoot(target, def_zone)
 		for(var/i in 1 to to_shoot)
-			shot_timer_ids += addtimer(CALLBACK(src, .proc/shoot, target, def_zone), timer, TIMER_STOPPABLE)
+			shot_timer_ids += addtimer(CALLBACK(src, PROC_REF(shoot), target, def_zone), timer, TIMER_STOPPABLE)
 			timer += time_between_shots
 
 	if(cooldown_time && !returning_fire)
 		on_cooldown = TRUE
-		cooldown_timer_id = addtimer(CALLBACK(src, .proc/cooldown), cooldown_time, TIMER_STOPPABLE)
+		cooldown_timer_id = addtimer(CALLBACK(src, PROC_REF(cooldown)), cooldown_time, TIMER_STOPPABLE)
 
 	if(returning_fire)
 		returning_fire = FALSE
 
 /obj/machinery/power/os_turret/proc/shoot(atom/target, def_zone)
-	if(QDELETED(target))
+	if(QDELETED(target) || stat & BROKEN)
 		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
+	P.original_firer = src
+	P.faction_iff = faction_iff
+	if(!should_target_players)
+		P.friendly_to_colony = TRUE
 	P.launch(target, def_zone)
 	playsound(src, shot_sound, 60, 1)
 

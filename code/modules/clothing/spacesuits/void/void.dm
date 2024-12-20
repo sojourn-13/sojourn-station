@@ -6,9 +6,9 @@
 
 	heat_protection = HEAD
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 7,
+		bullet = 5,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -21,12 +21,12 @@
 	name = "voidsuit"
 	icon_state = "void"
 	item_state = "void"
-	desc = "A high-tech dark red space suit."
+	desc = "A high-tech dark red space suit." //not that high tech apparently. This is legacy stuff so should be avoided being messed with too
 	slowdown = 1
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 7,
+		bullet = 5,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -42,10 +42,6 @@
 	var/obj/item/clothing/shoes/magboots/boots = null // Deployable boots, if any.
 	var/obj/item/clothing/head/helmet/helmet = /obj/item/clothing/head/helmet/space/void   // Deployable helmet, if any.
 	var/obj/item/tank/tank = null              // Deployable tank, if any.
-
-	valid_accessory_slots = list()
-	restricted_accessory_slots = list()
-
 
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))
@@ -284,4 +280,4 @@
 			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
 
-	..()
+	.=..()

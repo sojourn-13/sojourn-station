@@ -14,6 +14,15 @@
 	maxHealth = 800
 	break_stuff_probability = 100
 	stop_automated_movement = 1
+	armor = list(
+		melee = 7,
+		bullet = 7,
+		energy = 4,
+		bomb = 10,
+		bio = 100, //robot
+		rad = 100, //ROBOT
+		agony = 100 ///robot
+	)
 
 	aggro_vision_range = 16 //No more cheesing
 	vision_range = 40 //No more cheesing

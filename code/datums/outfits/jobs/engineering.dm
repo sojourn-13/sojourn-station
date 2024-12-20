@@ -33,6 +33,9 @@
 	id_type = /obj/item/card/id/engie
 	pda_type = /obj/item/modular_computer/pda/engineering
 
+/decl/hierarchy/outfit/job/engineering/engineer/apprentice
+	name = OUTFIT_JOB_NAME("Artificer - Guild Adept Apprentice")
+
 /decl/hierarchy/outfit/job/engineering/engineer/void
 	name = OUTFIT_JOB_NAME("Artificer - Adept Voidsuit")
 	mask = /obj/item/clothing/mask/breath

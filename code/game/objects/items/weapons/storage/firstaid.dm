@@ -34,6 +34,25 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
 
+/obj/item/storage/firstaid/regular/si
+	name = "soteria branded first-aid kit"
+	desc = "A soteria-branded emergency medical kit for those serious boo-boos. Contains more advanced and more expensive gauze and salves."
+	icon_state = "purplefirstaid"
+	item_state = "firstaid-purplefirstaid"
+
+/obj/item/storage/firstaid/regular/si/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/regular/si/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/device/scanner/health(src)
+
+
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
@@ -130,6 +149,23 @@
 	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/device/scanner/health(src)
+
+/obj/item/storage/firstaid/radiation
+	name = "radiation first-aid kit"
+	desc = "It's a basic first aid kit for handling radiation exposure."
+	icon_state = "radfirstaid"
+
+/obj/item/storage/firstaid/radiation/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/radiation/populate_contents()
+	if (empty) return
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/device/scanner/health(src)
 
 /obj/item/storage/firstaid/combat
@@ -231,6 +267,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/tape_roll/fiber/medical,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/storage/pill_bottle,
@@ -244,6 +281,7 @@
 	new /obj/item/tool/hemostat/adv(src)
 	new /obj/item/tool/retractor/adv(src)
 	new /obj/item/tool/bonesetter/adv(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/saw/circular/medical(src)
 	new /obj/item/tool/surgicaldrill/adv(src)
@@ -269,6 +307,7 @@
 	new /obj/item/tool/hemostat/adv/si(src)
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/bonesetter/adv/si(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
 	new /obj/item/tool/saw/circular/medical/si(src)
@@ -350,7 +389,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/reagent_containers/pill/bicaridine(src)
+	new /obj/item/stack/medical/splint(src)
 
 	return
 
@@ -734,6 +773,27 @@
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 
+/obj/item/storage/pill_bottle/opifex
+	name = "bottle of mixed supplements"
+	icon_state = "pill_rainbow"
+	desc = "A mixed bottle of pills."
+
+
+/obj/item/storage/pill_bottle/opifex/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/bloodregen(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/prosurgeon(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/bicaridine(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/tramadol(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/dermaline(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/dexalin_plus(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/antitox(src)
 
 /obj/item/storage/pill_bottle/njoy
 	name = "bottle of mixed Njoy pills"

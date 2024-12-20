@@ -1,19 +1,16 @@
-/obj/item/gun/projectile/shotgun/bull
+/obj/item/gun/projectile/shotgun/pump/bull
 	name = "\"Bull\" shotgun"
-	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering, this gun is often regarded as one of the worst firearms ever produced. \
-			Due to shorter than usual barrels, damages are somewhat lower and recoil suffers as a result. The ability to fire both barrels at once seems more of a gimmick than a feature. \
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. An engineering nightmare, this gun is often regarded as one of the worst firearms ever produced. \
+			Due to shorter than usual barrels, damage is somewhat lower and recoil is increased. The ability to fire both barrels at once seems more of a gimmick than a feature. \
 			A number of scratches marr the finish by the ejection ports."
 	icon = 'icons/obj/guns/projectile/PeaceWalker.dmi'
 	icon_state = "PeaceWalker"
 	item_state = "PW"
-	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = HOLD_CASINGS
 	max_shells = 7
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	var/reload = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
@@ -23,7 +20,6 @@
 	init_recoil = RIFLE_RECOIL(1.8)
 	burst_delay = null
 	fire_delay = null
-	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' // It's a double barrel, gets a double barrel sound
 	move_delay = null
 	init_firemodes = list(
@@ -38,18 +34,18 @@
 
 /obj/item/part/gun/frame/bull
 	name = "Bull frame"
-	desc = "A Bull shotgun frame. Double-barrel and pump action, through a miracle of engineering."
+	desc = "A Bull shotgun frame. Double-barrel and pump action, a marvel of engineering."
 	icon_state = "frame_bull"
-	result = /obj/item/gun/projectile/shotgun/bull
-	resultvars = list(/obj/item/gun/projectile/shotgun/bull)
+	result = /obj/item/gun/projectile/shotgun/pump/bull
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump/bull)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
-/obj/item/gun/projectile/shotgun/bull/bison
+/obj/item/gun/projectile/shotgun/pump/bull/bison
 	name = "\"Bison\" shotgun"
-	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \
-			 a proper stock affixed and even the poorly machined lower given a bit of TLC. A work of true artifice."
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. An engineering nightmare turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \
+			 a proper stock affixed and even the poorly machined bits replaced and given a bit of TLC. A work of true artificer skill."
 	icon = 'icons/obj/guns/projectile/bigpeacewalker.dmi'
 	icon_state = "bigpeacewalker"
 	item_state = "PW"
@@ -62,29 +58,12 @@
 	init_recoil = RIFLE_RECOIL(1.6)
 	serial_type = "AG"
 
-
-/obj/item/gun/projectile/shotgun/bull/proc/pump(mob/M as mob)
-	var/turf/newloc = get_turf(src)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
-	if(chambered)
-		if(!chambered.BB)
-			chambered.forceMove(newloc) //Eject casing
-			chambered = null
-	if(!chambered)
-		if(loaded.len)
-			var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
-			loaded -= AC //Remove casing from loaded list.
-			chambered = AC
-			if(chambered.BB != null)
-				reload = 0
-	update_icon()
-
-/obj/item/gun/projectile/shotgun/bull/consume_next_projectile()
+/obj/item/gun/projectile/shotgun/pump/bull/consume_next_projectile()
 	if (chambered)
 		return chambered.BB
 	return null
 
-/obj/item/gun/projectile/shotgun/bull/handle_post_fire()
+/obj/item/gun/projectile/shotgun/pump/bull/handle_post_fire()
 	..()
 	var/turf/newloc = get_turf(src)
 	if(chambered)
@@ -97,7 +76,7 @@
 				chambered = AC
 	reload = 1
 
-/obj/item/gun/projectile/shotgun/bull/unload_ammo(user, allow_dump)
+/obj/item/gun/projectile/shotgun/pump/bull/unload_ammo(user, allow_dump)
 	var/turf/newloc = get_turf(src)
 	if(chambered)
 		chambered.forceMove(newloc) //Eject casing
@@ -105,7 +84,7 @@
 		reload = 1
 	..(user, allow_dump=1)
 
-/obj/item/gun/projectile/shotgun/bull/attack_self(mob/user as mob)
+/obj/item/gun/projectile/shotgun/pump/bull/attack_self(mob/user as mob)
 	if(reload)
 		if(wielded)
 			pump(user)
@@ -118,7 +97,7 @@
 		else
 			unload_ammo(user)
 
-/obj/item/gun/projectile/shotgun/bull/bison/attack_self(mob/user as mob)
+/obj/item/gun/projectile/shotgun/pump/bull/bison/attack_self(mob/user as mob)
 	if(reload)
 		if(world.time >= recentpumpmsg + 10)
 			pump(user)
@@ -131,13 +110,13 @@
 			unload_ammo(user)
 
 
-/obj/item/gun/projectile/shotgun/bull/proc/update_charge()
+/obj/item/gun/projectile/shotgun/pump/bull/proc/update_charge()
 	var/ratio = get_ammo() / (max_shells + 1)//1 in the chamber
 	ratio = round(ratio, 0.25) * 100
 	add_overlay("[ratio]_PW")
 
 
-/obj/item/gun/projectile/shotgun/bull/update_icon()
+/obj/item/gun/projectile/shotgun/pump/bull/update_icon()
 	..()
 	cut_overlays()
 	update_charge()

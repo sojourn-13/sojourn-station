@@ -3,6 +3,7 @@
 	desc = "An old-school predecesor to common PDA, bulky and cumbersome. While nowhere near as popular as it's successor it still remains in use by scavengers and less fortunate men for it's durability and superior flashlight."
 	icon = 'icons/obj/modular_wristbound.dmi'
 	icon_state = "wristbound"
+	icon_state_unpowered = "wristbound"
 	w_class = ITEM_SIZE_SMALL
 	screen_light_strength = 1.8 //A lot brighter than normal PDA
 	screen_light_range = 2
@@ -21,6 +22,7 @@
 	var/hard_drive_type = /obj/item/computer_hardware/hard_drive/small
 	var/processor_unit_type = /obj/item/computer_hardware/processor_unit/small
 	var/network_card_type = /obj/item/computer_hardware/network_card
+	var/gunshot_residue // fucking motherfuck.
 
 /obj/item/modular_computer/wrist/Initialize()
 	. = ..()

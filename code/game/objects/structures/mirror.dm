@@ -62,7 +62,7 @@
 		visible_message(SPAN_WARNING("[user] hits [src] with [I]!"))
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 70, 1)
 
-/obj/structure/mirror/attack_generic(var/mob/user, var/damage)
+/obj/structure/mirror/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	attack_animation(user)
 	if(shattered)
 		playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)

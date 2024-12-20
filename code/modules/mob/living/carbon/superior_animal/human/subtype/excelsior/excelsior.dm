@@ -6,17 +6,17 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * EXCELSIOR_HEALTH_MOD
+	health = 100 * EXCELSIOR_HEALTH_MOD
 
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 90) //Legitmently their armor
+	armor = list(melee = 13, bullet = 13, energy = 17, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
 	//range/ammo stuff
 	ranged = 1
 	rapid = 1
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -45,7 +45,7 @@
 	min_bodytemperature = 0
 
 //Drops
-	meat_amount = 4
+	meat_amount = 1
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
@@ -65,16 +65,16 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
-	mags_left = 1 //1+1
+	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
@@ -84,7 +84,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/vintorez)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
@@ -93,7 +93,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/magnum_40/hv
+	projectiletype = /obj/item/projectile/bullet/magnum_40
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
@@ -107,3 +107,65 @@
 	drop_death_loot()
 	qdel(src)
 	return
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield
+	icon_state = "excel_hammer_shield"
+	maxHealth = 150 * EXCELSIOR_HEALTH_MOD //More hp do to shield
+	health = 150 * EXCELSIOR_HEALTH_MOD
+
+	melee_damage_lower = 33
+	melee_damage_upper = 40
+	armor_divisor = ARMOR_PEN_DEEP
+
+	ranged = 0
+	rapid = 0
+	//Baseline armor + a littlebit of armor from the shield they hold
+	armor = list(melee = 16, bullet = 15, energy = 18, bomb = 85, bio = 100, rad = 25)
+	//Atm snowflake code for these 2 mobs to not bloat the parrent anymore
+	var/block_chance = 50
+	var/give_cooldown_odds = 60
+	var/give_cooldown_amount = DEFAULT_ATTACK_COOLDOWN
+	var/stunning = FALSE
+
+	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/hammer/excelsior_hammer)
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton
+	icon_state = "excel_batton_shield"
+	give_cooldown_odds = 80
+	give_cooldown_amount = 12 //DEFAULT_ATTACK_COOLDOWN is 8 so this is 50% longer
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	stunning = TRUE
+
+	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/baton/excelbaton)
+
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/UnarmedAttack(atom/A, proximity)
+	. = ..()
+	if(!.)
+		return
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(prob(give_cooldown_odds))
+			L.visible_message(SPAN_DANGER("\the [src] stunts \the [L]!"))
+			L.setClickCooldown(give_cooldown_amount) //Dont melee these guys!
+		if(stunning)
+			L.visible_message(SPAN_DANGER("\the [src] zaps \the [L]!"))
+			L.damage_through_armor(rand(melee_damage_lower,melee_damage_upper), HALLOSS, BP_CHEST, ARMOR_MELEE, used_weapon = src)
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(prob(block_chance))
+		visible_message("\red \b [src] blocks the [O]!")
+		return
+	..()
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/bullet_act(var/obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(block_chance))
+		..()
+	else if (!(Proj.testing))
+		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
+	return TRUE
+

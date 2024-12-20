@@ -7,13 +7,7 @@
 	reagents = bloodstr
 	..()
 
-/mob/living/carbon/Life()
-	. = ..()
-
-	handle_viruses()
-
 /mob/living/carbon/Destroy()
-
 	bloodstr.parent = null //these exist due to a GC failure linked to these vars
 	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
 
@@ -335,14 +329,12 @@
 		to_chat(usr, "\red You are already sleeping")
 		return
 	if(alert(src,"You sure you want to sleep for a while?","Sleep","Yes","No") == "Yes")
-		usr.sleeping = 20 //Short nap
+		usr.sleeping = 60 //Short nap
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
 	if(now_pushing || !yes)
 		return
 	..()
-	if(iscarbon(AM) && prob(10))
-		src.spread_disease_to(AM, "Contact")
 
 /mob/living/carbon/cannot_use_vents()
 	return
@@ -404,7 +396,7 @@
 /mob/living/carbon/can_feel_pain(var/check_organ)
 	if(isSynthetic())
 		return 0
-	return !(species.flags & NO_PAIN)
+	return !((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 
 /mob/living/carbon/proc/need_breathe()
 	return TRUE

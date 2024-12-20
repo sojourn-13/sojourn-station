@@ -293,7 +293,7 @@ Proc for attack log creation, because really why not
 	)
 
 	for(var/obj/item/clothing/C in src)
-		if(l_hand == C || r_hand == C)
+		if(l_hand == C || r_hand == C || slot_l_store == C || slot_r_store == C || slot_s_store == C)
 			continue
 		if(C.body_parts_covered & bodyparts[bodypart])
 			return TRUE
@@ -317,7 +317,7 @@ Proc for attack log creation, because really why not
 	if(!isliving(L))
 		return FALSE
 	var/obj/item/implant/core_implant/cruciform/C = L.get_core_implant(/obj/item/implant/core_implant/cruciform)
-	if(C && C.get_module(CRUCIFORM_PRIEST) && C.get_module(CRUCIFORM_REDLIGHT))
+	if(C && C.get_module(CRUCIFORM_CLERGY) && C.get_module(CRUCIFORM_PRIME))
 		return TRUE
 	return FALSE
 

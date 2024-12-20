@@ -5,7 +5,7 @@
 	circuit = /obj/item/circuitboard/ameridianshieldwallgen
 	locked = FALSE // We do not start locked
 	power_draw = 15000 // 15 kW
-	req_access = list()
+	req_access = null
 
 /obj/machinery/shieldwallgen/ameridian/New()
 	..()

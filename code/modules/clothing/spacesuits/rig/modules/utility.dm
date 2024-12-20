@@ -9,8 +9,9 @@
  * /obj/item/rig_module/maneuvering_jets
  * /obj/item/rig_module/foam_sprayer
  * /obj/item/rig_module/device/broadcaster
- * /obj/item/rig_module/chem_dispenser
- * /obj/item/rig_module/chem_dispenser/injector
+ * /obj/item/rig_module/modular_injector
+ * /obj/item/rig_module/modular_injector/injector
+ * /obj/item/rig_module/modular_injector/medical
  * /obj/item/rig_module/voice
  * /obj/item/rig_module/device/paperdispenser
  * /obj/item/rig_module/device/pen
@@ -115,7 +116,6 @@
 		device.afterattack(target,holder.wearer,1)
 	return 1
 
-
 /obj/item/rig_module/modular_injector
 	name = "mounted modular dispenser"
 	desc = "A specialized system for injecting chemicals."
@@ -133,10 +133,13 @@
 	var/list/beakers = list()
 	var/max_beakers = 5
 	var/injection_amount = 5
+	//""max"" injection is for quick-selections, if you use a wrench directly on the modular injector you can set it to *any number you want*
 	var/max_injection_amount = 20
 	var/empties = 0
 	var/initial_beakers = null
 	/// ^ Used for initializing with beakers , the format used is list(beaker_type, beaker_reagent_id, beaker_reagent_amount)
+	var/vial_only = FALSE //Used for when a modular injector can only be given the path of "vial" beakers - balance against buckets/large beakers/BS beakers
+	var/injection_to_others_delay = 10
 
 	charges = list()
 
@@ -180,6 +183,12 @@
 /obj/item/rig_module/modular_injector/accepts_item(obj/item/reagent_containers/item, mob/living/user, userless = FALSE)
 	if(!istype(item))
 		return FALSE
+
+	if(vial_only)
+		if(!istype(item, /obj/item/reagent_containers/glass/beaker/vial))
+			to_chat(user, "\The [src] only allows vials to be added!")
+			return FALSE
+
 	if(beakers.len == max_beakers)
 		to_chat(user, "\The [src] has all its beaker slots filled, remove one of them!")
 		return FALSE
@@ -210,12 +219,20 @@
 			user.visible_message("[user] removes \the [sel_ref.name] from \the [src]")
 			if(!user.put_in_active_hand(sel_ref))
 				sel_ref.loc = get_turf(src)
+	//Unlike fast change this lets you adjust to any number you want! (oh no)
 	if(W.get_tool_quality(QUALITY_BOLT_TURNING))
-		var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+		var/amount = input(user, "Choose reagent injection amount", null) as null|num
 		if(amount != null)
 			injection_amount = amount
 			to_chat(user, "You set the injection amount to [amount] on \the [src]")
 			user.visible_message("[user] tweaks the injection amount on \the [src]")
+
+/obj/item/rig_module/modular_injector/proc/quick_change(mob/user)
+	var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+	if(amount != null)
+		injection_amount = amount
+		to_chat(user, "You set the injection amount to [amount] on \the [src]")
+		user.visible_message("[user] tweaks the injection amount on \the [src]")
 
 /obj/item/rig_module/modular_injector/engage(atom/target)
 
@@ -244,7 +261,23 @@
 		target_mob = H
 
 	if(target_mob != H)
+		target_mob.visible_message(SPAN_DANGER("[H]'s hardsuit starts to deploy a needle trying to inject [target_mob]!"))
+
+		target_mob.attack_log += "\[[time_stamp()]\]<font color='red'> TRYED [H.name] ([H.ckey]) with [target_mob] (AMOUNT: [injection_amount])</font>"
+		H.attack_log += "\[[time_stamp()]\]<font color='orange'> TRYED to inject [target_mob.name] ([target_mob.ckey]) with [name] (AMOUNT: [injection_amount])</font>"
+		msg_admin_attack("[key_name(H)] TRYED [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
+		for(var/datum/reagent/R in beaker.reagents.reagent_list)
+			target_mob.attack_log += "Beaker Contents: [R.id]"
+			msg_admin_attack("[key_name(H)]'s Beaker Contents: [R.id]" )
+		if(!do_after(H, injection_to_others_delay, target_mob))
+			return FALSE
 		to_chat(H, SPAN_DANGER("You inject [target_mob] with [injection_amount] unit\s of [beaker.name]."))
+
+		target_mob.attack_log += "\[[time_stamp()]\]<font color='red'> HAS [H.name] ([H.ckey]) with [target_mob] (AMOUNT: [injection_amount])</font>"
+		H.attack_log += "\[[time_stamp()]\]<font color='orange'> HAS to inject [target_mob.name] ([target_mob.ckey]) with [name] (AMOUNT: [injection_amount])</font>"
+		msg_admin_attack("[key_name(H)] HAS [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
+
+
 	to_chat(target_mob, "<span class='danger'>You feel a rush in your veins as [injection_amount] unit\s of chemicals are injected in your bloodstream.</span>")
 	// Update display
 	beaker.reagents.trans_to_mob(target_mob, injection_amount, CHEM_BLOOD)
@@ -257,189 +290,44 @@
 	price_tag = 7250
 	max_injection_amount = 30
 	max_beakers = 6
-	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/large, "hyperzine", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
-	)
+	injection_to_others_delay = 1
 	interface_name = "integrated chemical combat dispenser"
 	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
+
+/obj/item/rig_module/modular_injector/combat/preloaded
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_hyperzine,     "hyperzine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tramadol,      "tramadol", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_nutriment,     "nutriment", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tricordrazine, "tricordrazine", 60)
+	)
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
 	desc = "A specialized system for injecting chemicals in patients."
 	price_tag = 3750
-	max_injection_amount = 60
-	max_beakers = 6
+	max_injection_amount = 5 //3 was for 10 injections on max turns, now its 5 for 6 injects max. Evens out I suppose
+	injection_amount = 1
+	max_beakers = 8 //We have limitations in injection amount, time and *maxium* storage, this is a fair trade.
 	usable = 0
 	selectable = 1
 	disruptive = 1
-	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "dexalinp",60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol",60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "kelotane",60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "anti_toxin", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)
-	)
+	vial_only = TRUE
+	injection_to_others_delay = 7 //Not nerely as long as you would think
 	interface_name = "integrated chemical injector"
 	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
-/*
-/obj/item/rig_module/chem_dispenser
-	name = "mounted chemical dispenser"
-	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	icon_state = "injector"
-	usable = 1
-	selectable = 0
-	toggleable = 0
-	disruptive = 0
 
-	price_tag = 2250
+/obj/item/rig_module/modular_injector/medical/preloaded
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline, "inaprovaline",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp,     "dexalinp",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_tramadol,     "tramadol",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_bicaridine,   "bicaridine", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_kelotane,     "kelotane",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin,   "anti_toxin", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin, "spaceacillin", 15)
+	)
 
-	engage_string = "Inject"
-
-	interface_name = "integrated chemical dispenser"
-	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream."
-
-	charges = list(
-		list("tricordrazine", "tricordrazine", 0, 80),
-		list("tramadol",      "tramadol",      0, 80),
-		list("dexalin plus",  "dexalinp",      0, 80),
-		list("antibiotics",   "spaceacillin",  0, 80),
-		list("antitoxins",    "anti_toxin",    0, 80),
-		list("nutrients",     "glucose",     0, 80),
-		list("hyronalin",     "hyronalin",     0, 80),
-		list("radium",        "radium",        0, 80)
-		)
-
-	var/max_reagent_volume = 80 //Used when refilling.
-
-/obj/item/rig_module/chem_dispenser/ninja
-	name = "compact chem dispenser"
-	desc = "A normal chemical dispenser but much smaller and tighter."
-	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream. This variant is made to be extremely light and flexible."
-
-	price_tag = 1500//Its trash
-
-	//just over a syringe worth of each. Want more? Go refill. Gives the ninja another reason to have to show their face.
-	charges = list(
-		list("tricordrazine", "tricordrazine", 0, 20),
-		list("tramadol",      "tramadol",      0, 20),
-		list("dexalin plus",  "dexalinp",      0, 20),
-		list("antibiotics",   "spaceacillin",  0, 20),
-		list("antitoxins",    "anti_toxin",    0, 20),
-		list("nutrients",     "glucose",     0, 80),
-		list("hyronalin",     "hyronalin",     0, 20),
-		list("radium",        "radium",        0, 20)
-		)
-
-/obj/item/rig_module/chem_dispenser/accepts_item(var/obj/item/input_item, var/mob/living/user)
-
-	if(!input_item.is_drainable())
-		return 0
-
-	if(!input_item.reagents || !input_item.reagents.total_volume)
-		to_chat(user, "\The [input_item] is empty.")
-		return 0
-
-	// Magical chemical filtration system, do not question it.
-	var/total_transferred = 0
-	for(var/datum/reagent/R in input_item.reagents.reagent_list)
-		for(var/chargetype in charges)
-			var/datum/rig_charge/charge = charges[chargetype]
-			if(charge.display_name == R.id)
-
-				var/chems_to_transfer = R.volume
-
-				if((charge.charges + chems_to_transfer) > max_reagent_volume)
-					chems_to_transfer = max_reagent_volume - charge.charges
-
-				charge.charges += chems_to_transfer
-				input_item.reagents.remove_reagent(R.id, chems_to_transfer)
-				total_transferred += chems_to_transfer
-
-				break
-
-	if(total_transferred)
-		to_chat(user, "<font color='blue'>You transfer [total_transferred] units into the suit reservoir.</font>")
-	else
-		to_chat(user, SPAN_DANGER("None of the reagents seem suitable."))
-	return 1
-
-/obj/item/rig_module/chem_dispenser/engage(atom/target)
-
-	if(!..())
-		return 0
-
-	var/mob/living/carbon/human/H = holder.wearer
-
-	if(!charge_selected)
-		to_chat(H, SPAN_DANGER("You have not selected a chemical type."))
-		return 0
-
-	var/datum/rig_charge/charge = charges[charge_selected]
-
-	if(!charge)
-		return 0
-
-	var/chems_to_use = 5
-	if(charge.charges <= 0)
-		to_chat(H, SPAN_DANGER("Insufficient chems!"))
-		return 0
-	else if(charge.charges < chems_to_use)
-		chems_to_use = charge.charges
-
-	var/mob/living/carbon/target_mob
-	if(target)
-		if(iscarbon(target))
-			target_mob = target
-		else
-			return 0
-	else
-		target_mob = H
-
-	if(target_mob != H)
-		to_chat(H, SPAN_DANGER("You inject [target_mob] with [chems_to_use] unit\s of [charge.display_name]."))
-	to_chat(target_mob, "<span class='danger'>You feel a rushing in your veins as [chems_to_use] unit\s of [charge.display_name] [chems_to_use == 1 ? "is" : "are"] injected.</span>")
-	target_mob.reagents.add_reagent(charge.display_name, chems_to_use)
-
-	charge.charges -= chems_to_use
-	if(charge.charges < 0) charge.charges = 0
-
-	return 1
-
-/obj/item/rig_module/chem_dispenser/combat
-
-	name = "combat chemical injector"
-	desc = "A complex web of tubing and needles suitable for hardsuit use."
-
-	price_tag = 3500
-
-	charges = list(
-		list("synaptizine",   "synaptizine",   0, 30),
-		list("hyperzine",     "hyperzine",     0, 30),
-		list("oxycodone",     "oxycodone",     0, 30),
-		list("nutrients",     "glucose",     0, 80),
-		)
-
-	interface_name = "combat chem dispenser"
-	interface_desc = "Dispenses loaded chemicals directly into the bloodstream."
-
-
-/obj/item/rig_module/chem_dispenser/injector
-	name = "mounted chemical injector"
-	desc = "A complex web of tubing and a large needle suitable for hardsuit use."
-	usable = 0
-	selectable = 1
-	disruptive = 1
-
-	price_tag = 3000
-
-	interface_name = "mounted chem injector"
-	interface_desc = "Dispenses loaded chemicals via an arm-mounted injector."
-*/
 /obj/item/rig_module/voice
 
 	name = "hardsuit voice synthesiser"
@@ -604,6 +492,7 @@
 	autodoc_processor.set_patient(holder.wearer)
 	nano_ui_interact(usr)
 	return 1
+
 /obj/item/rig_module/autodoc/Topic(href, href_list)
 	return autodoc_processor.Topic(href, href_list)
 
@@ -624,8 +513,10 @@
 
 /obj/item/rig_module/autodoc/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/nano_topic_state/state = GLOB.deep_inventory_state)
 	autodoc_processor.nano_ui_interact(user, ui_key, ui, force_open, state = GLOB.deep_inventory_state)
+
 /obj/item/rig_module/autodoc/activate()
 	return
+
 /obj/item/rig_module/autodoc/deactivate()
 	return
 
@@ -697,10 +588,6 @@
 	price_tag = 1600 //can't be obtained outside of purchasing, so higher price is a detriment
 	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held, /obj/item/rig_module/cargo_clamp)
 
-
-
-
-
 /obj/item/rig_module/grappler
 	name = "hardsuit grappler"
 	desc = "A ten-meter tether connected to a heavy winch and grappling hook. Can pull things towards you, can pull you towards things."
@@ -719,7 +606,6 @@
 /obj/item/rig_module/grappler/Initialize()
 	..()
 	launcher = new /obj/item/gun/energy/grappler(src)
-
 
 /obj/item/rig_module/grappler/engage(atom/target)
 	if(!..())

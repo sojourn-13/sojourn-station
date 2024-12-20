@@ -126,13 +126,9 @@
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/I = H.random_organ_by_process(BP_BRAIN)
-			if(!I) // No brain organ, so the borer moves in and replaces it permanently.
-				replace_brain()
-			else
-				// If they're in normally, implant removal can get them out.
-				var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
-				head.implants += src
+			// If they're in normally, implant removal can get them out.
+			var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+			head.implants += src //Removed the brain eating/replacing proc reference.
 
 /*
 /mob/living/simple_animal/borer/verb/devour_brain()
@@ -158,7 +154,7 @@
 
 	to_chat(src, "<span class = 'danger'>It only takes a few moments to render the dead host brain down into a nutrient-rich slurry...</span>")
 	replace_brain()
-*/
+
 
 // BRAIN WORM ZOMBIES AAAAH.
 /mob/living/simple_animal/borer/proc/replace_brain()
@@ -174,14 +170,14 @@
 	H.add_language(LANGUAGE_CORTICAL)
 
 	// Remove the usual "host control" abilities
-	H.verbs -= abilities_in_control
+	remove_verb(H, abilities_in_control)
 
-	H.verbs |= /mob/living/carbon/human/proc/commune
+	add_verb(H, /mob/living/carbon/human/proc/commune)
 
-	H.verbs |= /mob/living/carbon/human/proc/psychic_whisper
-	H.verbs |= /mob/living/carbon/human/proc/tackle
-	H.verbs |= /mob/living/carbon/proc/spawn_larvae
-	H.verbs |= /mob/living/carbon/proc/talk_host
+	add_verb(H, /mob/living/carbon/human/proc/psychic_whisper)
+	add_verb(H, /mob/living/carbon/human/proc/tackle)
+	add_verb(H, /mob/living/carbon/proc/spawn_larvae)
+	add_verb(H, /mob/living/carbon/proc/talk_host)
 
 	if(H.client)
 		H.daemonize()
@@ -207,7 +203,7 @@
 		H.computer_id = s2h_id
 
 	if(!H.lastKnownIP)
-		H.lastKnownIP = s2h_ip
+		H.lastKnownIP = s2h_ip*/
 
 /mob/living/simple_animal/borer/proc/secrete_chemicals()
 	set category = "Abilities"
@@ -357,12 +353,12 @@
 
 			controlling = TRUE
 
-			host.verbs -= list(
+			remove_verb(host, list(
 			/mob/living/simple_animal/verb/toggle_AI,
 			/mob/living/simple_animal/hostile/verb/break_around,
 			/mob/living/carbon/superior_animal/verb/toggle_AI,
 			/mob/living/carbon/superior_animal/verb/break_around,
-			)
+			))
 
 			update_abilities()
 
@@ -398,9 +394,8 @@
 	host.SetStunned(10)
 	host.SetWeakened(10)
 	host.SetParalysis(10)
-	if(H == host)
-		H.restore_blood()
-		H.fixblood()
+	host.restore_blood()
+	host.fixblood()
 	host.update_lying_buckled_and_verb_status()
 	chemicals -= 500
 
@@ -448,8 +443,8 @@
 			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
-		H.adjustBrainLoss(copied_amount * 4)
-		H?.sanity.onPsyDamage(copied_amount * 4)
+		host.adjustBrainLoss(copied_amount * 4)
+		host?.sanity.onPsyDamage(copied_amount * 4)
 
 		host.make_dizzy(copied_amount * 4)
 		host.confused = max(host.confused, copied_amount * 4)
@@ -496,7 +491,7 @@
 
 		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
 		host.adjustBrainLoss(copied_amount * 2)
-		H?.sanity.onPsyDamage(copied_amount * 2)
+		host?.sanity.onPsyDamage(copied_amount * 2)
 
 		host.make_dizzy(copied_amount * 2)
 		host.confused = max(host.confused, copied_amount * 2)
@@ -693,7 +688,6 @@
 		"stationtime" = stationtime2text(),
 		"stat" = H.stat,
 		"health" = round(H.health/H.maxHealth)*100,
-		"virus_present" = H.virus2.len,
 		"bruteloss" = H.getBruteLoss(),
 		"fireloss" = H.getFireLoss(),
 		"oxyloss" = H.getOxyLoss(),
@@ -732,8 +726,6 @@
 		else
 			aux = "Dead"
 	dat += text("[]\tHealth %: [] ([])</font><br>", ("<font color='[occ["health"] > 50 ? "blue" : "red"]>"), occ["health"], aux)
-	if (occ["virus_present"])
-		dat += "<font color='red'>Viral pathogen detected in blood stream.</font><br>"
 	dat += text("[]\t-Brute Damage %: []</font><br>", ("<font color='[occ["bruteloss"] < 60  ? "blue" : "red"]'>"), occ["bruteloss"])
 	dat += text("[]\t-Respiratory Damage %: []</font><br>", ("<font color='[occ["oxyloss"] < 60  ? "blue" : "red"]'>"), occ["oxyloss"])
 	dat += text("[]\t-Toxin Content %: []</font><br>", ("<font color='[occ["toxloss"] < 60  ? "blue" : "red"]'>"), occ["toxloss"])

@@ -11,6 +11,7 @@
 	matter = list(MATERIAL_STEEL = 20)
 	var/sticker = null
 	var/closed = TRUE
+	price_tag = 120
 
 /obj/item/storage/hcases/Destroy()
 
@@ -20,20 +21,25 @@
 	..()
 	return QDEL_HINT_QUEUE //just to be safe
 
-/obj/item/storage/hcases/can_interact(mob/user)
+/obj/item/storage/hcases/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
 		return 2
 	return 0
 
-/obj/item/storage/hcases/verb/apply_sticker(mob/user)
+/obj/item/storage/hcases/verb/apply_sticker()
 	set name = "Apply Sticker"
 	set category = "Object"
-	set src in usr
+	set src in view(1)
+
+	if(isghost(usr))
+		to_chat(usr, SPAN_NOTICE("The stickers can't sence ghosts artistic design."))
+		return
 
 	if(!isliving(loc))
 		return
+
 //	sticker(user)
 
 ///obj/item/storage/hcases/proc/sticker(mob/user)
@@ -44,7 +50,7 @@
 	options["Red"] = "[sticker_name]_sticker_r"
 	options["Green"] = "[sticker_name]_sticker_g"
 	options["Purple"] = "[sticker_name]_sticker_p"
-	options["IH Blue"] = "[sticker_name]_sticker_ih"
+	options["Darker Blue"] = "[sticker_name]_sticker_ih"
 
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -67,15 +73,19 @@
 
 	. = ..()
 
-/obj/item/storage/hcases/verb/quick_open_close(mob/user)
+/obj/item/storage/hcases/verb/quick_open_close()
 	set name = "Close Lid"
 	set category = "Object"
-	set src in oview(1)
+	set src in view(1)
 
-	if(can_interact(user) == 1)	//can't use right click verbs inside bags so only need to check for ablity
+	if(isghost(usr))
+		to_chat(usr, SPAN_NOTICE("The lid doesn't move even at your suggestion."))
 		return
 
-	open_close(user)
+	if(can_interact(usr) == 1)	//can't use right click verbs inside bags so only need to check for ablity
+		return
+
+	open_close(usr)
 
 /obj/item/storage/hcases/AltClick(mob/user)
 
@@ -117,7 +127,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap"
 	sticker_name = "scrap"
 	desc = "A lacquer coated hardcase that can hold a lot of various things. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 /obj/item/storage/hcases/scrap/job_artist
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -143,10 +152,12 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo
 	name = "ammo hard case"
-	desc = "A generic ammo can. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
+	desc = "A generic ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
+	storage_slots = 14 //336 rounds of 12mm. Really annoying big ammo box! More or less.
+	max_w_class = ITEM_SIZE_SMALL //no drum mags or big boxes etc.
 
 	can_hold = list(
 		/obj/item/ammo_magazine,
@@ -167,7 +178,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
-	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
+	desc = "An ammo can for Marshals. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/ih/wo
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -213,11 +224,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/serb
 	icon_state = "ammo_case_serb"
-	desc = "A generic ammo holding can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A generic ammo holding can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/blackmarket
 	icon_state = "ammo_case_blackmarket"
-	desc = "A shady looking ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A shady looking ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/blackmarket/co
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -264,15 +275,14 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/excel
 	icon_state = "ammo_case_excel"
-	desc = "The peoples ammo can! Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "The peoples ammo can! Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/scrap
 	icon_state = "ammo_case_scrap"
-	desc = "A lacquer coated ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+	desc = "A lacquer coated ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/scrap/outsider
-	desc = "A harcase containing what little you could scavenge for your own survival. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A harcase containing what little you could scavenge for your own survival. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()
@@ -313,13 +323,14 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A hard case that can hold electronic parts. Alt+click to open and close."
 	icon_state = "hcase_parts"
 	matter = list(MATERIAL_STEEL = 20)
-	max_w_class = ITEM_SIZE_NORMAL
-
+	max_w_class = ITEM_SIZE_SMALL //no large cells thanks
+	storage_slots = 20
 	can_hold = list(
 		/obj/item/computer_hardware,
 		/obj/item/stock_parts,
 		/obj/item/device,
 		/obj/item/cell,
+		/obj/item/stack/nanopaste,
 		/obj/item/stack/cable_coil,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
@@ -328,7 +339,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
-		/obj/item/weldpack,
 		/obj/item/circuitboard,
 		/obj/item/part/gun
 		)
@@ -337,17 +347,17 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap_parts"
 	sticker_name = "scrap"
 	desc = "A lacquer coated hard case that can hold weapon, armor, machine, and electronic parts. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 //////////////////////////////////////////Medical//////////////////////////////////////////
 
 /obj/item/storage/hcases/med
 	name = "medical hard case"
-	desc = "A hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
+	desc = "A hardcase with medical markings that can hold a lot of medical supplies and surgical tools. Alt+click to open and close."
 	icon_state = "hcase_medi"
 	matter = list(MATERIAL_STEEL = 20)
 
 	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_SMALL_STORAGE * 2
 
 	can_hold = list(
 		/obj/item/device/scanner/health,
@@ -359,20 +369,28 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/reagent_containers/syringe,
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
+		/obj/item/stack/nanopaste,
 		/obj/item/clothing/mask/surgical,
 		/obj/item/clothing/head/surgery,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/ammo_casing/flare,
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/cautery,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/medmultitool,
+		/obj/item/tool/tape_roll
 		)
 
 /obj/item/storage/hcases/med/scrap
 	icon_state = "scrap_medi"
 	sticker_name = "scrap"
-	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies and surgical tools. Alt+click to open and close."
 
 /obj/item/storage/hcases/med/medical_job
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -434,11 +452,10 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
 	new /obj/item/gearbox/traumatizedteam(src)
+	new /obj/item/gunbox/traumatizedteam_sidearm(src)
 	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
-	new /obj/item/cell/medium/moebius/high(src) // Keeping the cell as a "second mag" for the Abnegate
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/gun/energy/sst/preloaded(src) // They're now nonlethal and justifies getting an upgrade from science as nobody will ever want a downgrade.
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
@@ -449,6 +466,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "hcase_engi"
 	matter = list(MATERIAL_STEEL = 20)
 	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
 		/obj/item/cell,
 		/obj/item/circuitboard,
@@ -456,6 +474,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/clothing/head/welding,
 		/obj/item/weldpack,
 		/obj/item/material,
+		/obj/item/stack/nanopaste,
 		/obj/item/tool,
 		/obj/item/device,
 		/obj/item/stack/cable_coil,
@@ -480,7 +499,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap_engi"
 	sticker_name = "scrap"
 	desc = "An old lacquer coated hardcase with engineering markings that can hold a variety of different tools and materials. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 
 ////////////////////////////////////////////Rando 'gear kits'./////////////////////////////////////
@@ -498,8 +516,41 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Mamba - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba,/obj/item/ammo_magazine/light_rifle_257,/obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball)
-		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Python - precision rifle"] = list(/obj/item/gun/projectile/automatic/mamba/python,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
+		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/beanbag, /obj/item/ammo_magazine/ammobox/c10x24_small, /obj/item/storage/pouch/tubular)
+		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball, /obj/item/storage/pouch/ammo)
+		options["Gleam - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
+		options["Second Secondary"] = list(/obj/item/voucher/marshal/wosecondary)
+
+		var/choice = input(user,"What type of equipment?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+
+/obj/item/gunbox/commanding_officer
+	name = "\improper CO equipment kit"
+	desc = "A secure box containing the CO primary weapon."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case"
+
+/obj/item/gunbox/commanding_officer/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/storage/pouch/ammo)
+		options["\"Hustler\" - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/storage/pouch/ammo)
+		options["\"Gleam\" - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
+		options["Second Secondary"] = list(/obj/item/voucher/blackshield/COsecondary)
+
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
@@ -551,6 +602,32 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
+		var/choice = input(user,"Which gun will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+/obj/item/gunbox/traumatizedteam_sidearm
+	name = "Lifeline Technician's sidearm guncase"
+	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "medbriefcase"
+
+/obj/item/gunbox/traumatizedteam_sidearm/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["SST \"Abnegate\" handgun"] = list(/obj/item/gun/energy/sst/preloaded)
+		options["\"Hera\" stun revolver"] = list(/obj/item/gun/energy/stunrevolver/sci/preloaded)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
@@ -587,3 +664,65 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		else
 			stamped = FALSE
 
+// ERT / Agent kits. These mostly hold imprinters to grant stats / perks that said operative should have without having to manually tweak.
+//Agents already start with the stats perks if spawned via _ert spawners however these are maintained for convenience if making agents via spawn_character + select_outfit.
+
+/obj/item/storage/hcases/ert
+	name = "imprinter hard case" // 2 stats +50 3 stats +25.
+	desc = "A hardcase containing a number of advanced mental imprinters."
+	can_hold = list(/obj/item/device/mental_imprinter/agent)
+
+/obj/item/storage/hcases/ert/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+
+/obj/item/storage/hcases/ert/marshal
+	name = "marshals imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Marshals."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/smartlink(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/codlang(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/blackshield
+	name = "blackshield imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Blackshield Militia."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/boltraining(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/conditioning(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/medical
+	name = "medical imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the SI medical division."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/medical/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/medexpert(src)
+	new /obj/item/device/hardware_imprinter/medadept(src)
+	new /obj/item/device/hardware_imprinter/chemist(src)
+	new /obj/item/device/hardware_imprinter/science(src)

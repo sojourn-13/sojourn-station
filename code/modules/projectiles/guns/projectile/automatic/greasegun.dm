@@ -19,7 +19,7 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_firemodes = list(
-		FULL_AUTO_300_NOLOSS,
+		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "Sol Fed"
@@ -48,7 +48,7 @@
 	desc = "A Grease Gun SMG frame. Cheap? Yes, but also effective."
 	icon_state = "frame_grease"
 	result = /obj/item/gun/projectile/automatic/greasegun
-	gripvars = list(/obj/item/part/gun/grip/black)
-	resultvars = list(/obj/item/gun/projectile/automatic/greasegun)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	resultvars = list(/obj/item/gun/projectile/automatic/greasegun, /obj/item/gun/projectile/automatic/texan)

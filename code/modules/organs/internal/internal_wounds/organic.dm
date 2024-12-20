@@ -84,7 +84,7 @@
 /datum/component/internal_wound/organic/burn
 	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_STABLE = 1)	// Inaprov will only keep it from killing you
+	treatments_chem = list(CE_STABLE = 1, CE_DEBRIDEMENT = 1)	// Inaprov will only keep it from killing you
 	scar = /datum/component/internal_wound/organic/necrosis_start
 	severity = 0
 	severity_max = 5
@@ -109,6 +109,7 @@
 
 /datum/component/internal_wound/organic/necrosis_start
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)
+	treatments_chem = list(CE_DEBRIDEMENT = 0.5)
 	severity = 0
 	severity_max = 1
 	next_wound = /datum/component/internal_wound/organic/necrosis
@@ -118,7 +119,7 @@
 
 /datum/component/internal_wound/organic/necrosis
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_STABLE = 1)	// Inaprov will only keep it from killing you
+	treatments_chem = list(CE_STABLE = 1, CE_DEBRIDEMENT = 1)	// Inaprov will only keep it from killing you
 	scar = /datum/component/internal_wound/organic/necrosis_start
 	severity = 0
 	severity_max = 3
@@ -173,6 +174,10 @@
 /datum/component/internal_wound/organic/heavy_poisoning/chem
 	name = "chemical poisoning"
 
+/datum/component/internal_wound/organic/heavy_poisoning/plasma
+	name = "plasma toxicity"
+	treatments_chem = list(CE_ANTITOX = 3) //Carthatoline. This is caused by plasma, you NEED anti-toxin for this.
+
 // Clone/radiation
 /datum/component/internal_wound/organic/radiation
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)
@@ -222,9 +227,10 @@
 // Infection 2.0. This will spread to other organs in your body if untreated. Progresses until death.
 /datum/component/internal_wound/organic/infection
 	treatments_chem = list(CE_ANTIBIOTIC = 5)
-	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS|IWOUND_PROGRESS_DEATH|IWOUND_SPREAD
+	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS |IWOUND_SPREAD
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
+	progression_threshold = IWOUND_8_MINUTES
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED
@@ -236,7 +242,7 @@
 	name = "scar tissue"
 	treatments_item = list()	// No way to treat without an autodoc
 	treatments_tool = list()
-	treatments_chem = list()
+	treatments_chem = list(CE_DEBRIDEMENT = 3) //requires a  high overdose of debridement agent
 	characteristic_flag = IWOUND_CAN_DAMAGE
 	severity = 2
 	severity_max = 2

@@ -44,9 +44,10 @@
 
 	reload_message = "picks up a rock!"
 
-	armor = list(melee = 40, bullet = 30, energy = 10, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 8, bullet = 5, energy = 0, bomb = 50, bio = 0, rad = 0)
 
 	ranged = FALSE
+	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/vox/hider
 	name = "Inuwa kisa"
@@ -61,8 +62,8 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 35 //Glass cannon
-	health = 35
+	maxHealth = 35 * VOXBIRD_HEALTH_MOD //Glass cannon
+	health = 35 * VOXBIRD_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/vox/hider/UnarmedAttack()
 	. = ..()
@@ -91,8 +92,9 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 90
-	health = 90
+	maxHealth = 90 * VOXBIRD_HEALTH_MOD
+	health = 90 * VOXBIRD_HEALTH_MOD
+	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/vox/weak
 	name = "Yaro mafarauci"
@@ -106,8 +108,8 @@
 
 	knock_over_odds = 15
 
-	maxHealth = 35
-	health = 35
+	maxHealth = 35 * VOXBIRD_HEALTH_MOD
+	health = 35 * VOXBIRD_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/vox/rage
 	name = "Jan barazana"
@@ -120,6 +122,7 @@
 	melee_damage_upper = 35
 
 	knock_over_odds = 25
+	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/vox/scout
 	name = "karfe kafafu"
@@ -133,7 +136,7 @@
 
 	knock_over_odds = 30
 
-	armor = list(melee = 50, bullet = 40,  bomb = 60, bio = 0, rad = 0)
+	armor = list(melee = 10, bullet = 8, energy = 2, bomb = 60, bio = 0, rad = 0)
 	ranged = FALSE
 
 	can_burrow = TRUE

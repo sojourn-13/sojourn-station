@@ -79,6 +79,13 @@ I said no!
 	)
 	result = /obj/item/reagent_containers/food/snacks/dumplings
 
+/datum/recipe/frenchtoast
+	reagents = list("egg" = 3, "milk" = 5)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/breadslice
+	)
+	result = /obj/item/reagent_containers/food/snacks/frenchtoast
+
 /datum/recipe/humanburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/human,
@@ -103,7 +110,7 @@ I said no!
 /datum/recipe/brainburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bun,
-		/obj/item/organ/internal/brain
+		/obj/item/organ/internal/vital/brain
 	)
 	result = /obj/item/reagent_containers/food/snacks/brainburger
 
@@ -634,7 +641,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza
 
 /datum/recipe/mushroompizza
-	fruit = list("mushroom" = 5, "tomato" = 1)
+	fruit = list("plumphelmet" = 5, "tomato" = 1)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
 		/obj/item/reagent_containers/food/snacks/cheesewedge
@@ -830,7 +837,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/rofflewaffles
 
 /datum/recipe/stew
-	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "mushroom" = 1) // No eggplant! Terrible!
+	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "plumphelmet" = 1) // No eggplant! Terrible!
 	reagents = list("water" = 10)
 	items = list(/obj/item/reagent_containers/food/snacks/meat)
 	result = /obj/item/reagent_containers/food/snacks/stew
@@ -1077,12 +1084,12 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 
 /datum/recipe/mushroomsoup
-	fruit = list("mushroom" = 1)
+	fruit = list("plumphelmet" = 1)
 	reagents = list("milk" = 5, "cream" = 5, "sodiumchloride" = 1, "blackpepper" = 1)
 	result = /obj/item/reagent_containers/food/snacks/mushroomsoup
 
 /datum/recipe/chawanmushi
-	fruit = list("mushroom" = 1)
+	fruit = list("plumphelmet" = 1)
 	reagents = list("water" = 5, "soysauce" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/egg,
@@ -1154,13 +1161,6 @@ I said no!
 		/obj/item/reagent_containers/food/snacks/chocolatebar,
 	)
 	result = /obj/item/reagent_containers/food/snacks/honeypudding
-
-// Fuck Science!
-/datum/recipe/ruinedvirusdish
-	items = list(
-		/obj/item/virusdish
-	)
-	result = /obj/item/ruinedvirusdish
 
 //////////////////////////////////////////
 // bs12 food port stuff
@@ -1261,7 +1261,7 @@ I said no!
 
 /datum/recipe/cake/brain
 	items = list(
-		/obj/item/organ/internal/brain,
+		/obj/item/organ/internal/vital/brain,
 		/obj/item/reagent_containers/food/snacks/sliceable/butterstick,
 		)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/braincake

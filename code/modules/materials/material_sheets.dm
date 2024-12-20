@@ -123,16 +123,40 @@
 /obj/item/stack/material/iron/full
 	amount = 120
 
+/obj/item/stack/material/iron/five
+	name = "five iron bars"
+	amount = 5
+
+/obj/item/stack/material/iron/ten
+	name = "ten iron bars"
+	amount = 10
+
 /obj/item/stack/material/sandstone
 	name = "sandstone brick"
 	icon_state = "sheet-sandstone"
 	default_type = MATERIAL_SANDSTONE
 	price_tag = 1
 
+/obj/item/stack/material/sandstone/five
+	name = "five sandstone brick"
+	amount = 5
+
+/obj/item/stack/material/sandstone/ten
+	name = "ten sandstone brick"
+	amount = 10
+
 /obj/item/stack/material/marble
 	name = "marble brick"
 	icon_state = "sheet-marble"
 	default_type = MATERIAL_MARBLE
+
+/obj/item/stack/material/marble/five
+	name = "five marble brick"
+	amount = 5
+
+/obj/item/stack/material/marble/ten
+	name = "ten marble brick"
+	amount = 10
 
 /obj/item/stack/material/diamond
 	name = "diamond"
@@ -192,6 +216,14 @@
 	default_type = MATERIAL_PLASTIC
 	price_tag = 2
 	novariants = FALSE
+
+/obj/item/stack/material/plastic/five
+	name = "five plastic sheets"
+	amount = 5
+
+/obj/item/stack/material/plastic/ten
+	name = "ten plastic sheets"
+	amount = 10
 
 /obj/item/stack/material/plastic/full
 	amount = 120
@@ -282,6 +314,14 @@
 	price_tag = 2
 	novariants = FALSE
 
+/obj/item/stack/material/steel/five
+	name = "five steel sheets"
+	amount = 5
+
+/obj/item/stack/material/steel/ten
+	name = "ten steel sheets"
+	amount = 10
+
 //A stack which starts with the max amount
 /obj/item/stack/material/steel/full
 	amount = 120
@@ -308,8 +348,17 @@
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"
+	icon = 'icons/obj/stack/material.dmi'
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
+
+/obj/item/stack/material/wood/five
+	name = "five wood plank"
+	amount = 5
+
+/obj/item/stack/material/wood/ten
+	name = "ten wood plank"
+	amount = 10
 
 /obj/item/stack/material/wood/full
 	amount = 120
@@ -324,12 +373,23 @@
 	default_type = MATERIAL_CLOTH
 	price_tag = 1
 
+/obj/item/stack/material/cloth/five
+	name = "five cloth sheets"
+	amount = 5
+
+/obj/item/stack/material/cloth/ten
+	name = "ten cloth sheets"
+	amount = 10
+
 /obj/item/stack/material/cloth/random
 	rand_min = 3
 	rand_max = 7
 
 /obj/item/stack/material/cloth/soteria
 	amount = 4
+
+/obj/item/stack/material/cloth/biogen
+	amount = 5
 
 /obj/item/stack/material/silk
 	name = "silk"
@@ -342,6 +402,15 @@
 	icon_state = "sheet-card"
 	default_type = MATERIAL_CARDBOARD
 	price_tag = 3
+
+/obj/item/stack/material/cardboard/five
+	name = "five cardboard sheets"
+	amount = 5
+
+/obj/item/stack/material/cardboard/ten
+	name = "ten cardboard sheets"
+	amount = 10
+
 
 /obj/item/stack/material/cardboard/full
 	amount = 120
@@ -357,6 +426,9 @@
 	default_type = MATERIAL_LEATHER
 	price_tag = 10
 
+/obj/item/stack/material/leather/biogen
+	amount = 5
+
 /obj/item/stack/material/bone
 	name = "bones"
 	desc = "A collection of random bones and bits."
@@ -370,6 +442,14 @@
 	default_type = MATERIAL_GLASS
 	price_tag = 2
 	novariants = FALSE
+
+/obj/item/stack/material/glass/five
+	name = "five glass sheets"
+	amount = 5
+
+/obj/item/stack/material/glass/ten
+	name = "ten glass sheets"
+	amount = 10
 
 /obj/item/stack/material/glass/full
 	amount = 120
@@ -417,7 +497,7 @@
 	default_type = MATERIAL_BIOMATTER
 	price_tag = 1 //to keep biomatter in the player economy as the church and science use it.
 	novariants = FALSE
-	var/biomatter_in_sheet = 1
+	var/biomatter_in_sheet = BIOMATTER_PER_SHEET // defined in solidifier.dm
 
 /obj/item/stack/material/biomatter/random
 	rand_min = 5

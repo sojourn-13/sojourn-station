@@ -29,7 +29,7 @@
 
 #define ADMINISTRATIVE 2
 #define CLOTHING 3
-#define SECURITY 4
+#define ECO_SECURITY 4
 #define SPECIAL_SECURITY 5
 
 #define FOOD 6

@@ -31,7 +31,7 @@
 	build_path = /obj/item/gun_upgrade/muzzle/silencer
 
 /datum/design/autolathe/sec/acog
-	name = "acog scope"
+	name = "AGOG scope"
 	build_path = /obj/item/gun_upgrade/scope/acog
 	materials = list(MATERIAL_GLASS = 4, MATERIAL_STEEL = 2) // Double materials, prevents obtaining more than used.
 
@@ -68,6 +68,10 @@
 /datum/design/autolathe/sec/buckler
 	name = "tactical shield"
 	build_path = /obj/item/shield/buckler
+
+/datum/design/autolathe/sec/excelsior_shield
+	name = "excelsior buckler"
+	build_path = /obj/item/shield/buckler/excelsior
 
 /datum/design/autolathe/sec/bastion
 	name = "bastion shield"

@@ -52,8 +52,6 @@
 	At runtime, each variant will seek the base variant. If the base variant it is given has its own variant
 */
 
-	var/virus_immune = FALSE
-
 	var/icon_fallback = FORM_HUMAN //Set this to fall back on another spritesheet if this one doesn't have the icon_state needed. Use form defines, it'll pull from the global list.
 	var/backpack_icon = 		'icons/inventory/back/mob.dmi'
 	var/uniform_icon = 			'icons/inventory/uniform/mob.dmi'
