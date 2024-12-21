@@ -33921,7 +33921,7 @@
 "wXh" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /mob/living/simple_animal/hostile/creature/tissue{
-	icon = 'icons/mob/mobs-domestic.dmi';
+	icon = "icons/mob/mobs-domestic.dmi";
 	icon_state = "snail";
 	pixel_y = 13;
 	name = "snail";
