@@ -209,6 +209,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	//message badmins that a fax has arrived
 	var/datum/faction/dept = GLOB.admin_factions_list[destination]
 	message_admins(sender, dept.fax_alert, rcvdcopy, destination, dept.darkcolor)
+	send_fax_embed_discord(sender, rcvdcopy, "[destination] (Admin Fax)")
 
 	sendcooldown = 1800
 	sleep(50)

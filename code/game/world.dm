@@ -230,7 +230,16 @@ var/world_topic_spam_protect_time = world.timeofday
 		if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 			C << link("byond://[config.server]")
 
-	//world.TgsTargetedChatBroadcast(new /datum/tgs_message_content(text = config.message_announce_round_end))
+	//	SOJOURN: discord bot configuration: START
+	var/list/message_args
+	message_args = list(
+		"game_id" = game_id,
+		"newline" = "\n"
+	)
+	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end, message_args)), config.channel_announce_end_game)
+	send2adminchat("Server", "Round just ended.")
+	to_chat(world, "<span class='boldannounce'>Сообщение отправлено...</span>")
+	//	SOJOURN: discord bot configuration: END
 	TgsReboot()
 
 	#ifdef UNIT_TESTS

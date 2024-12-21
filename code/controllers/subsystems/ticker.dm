@@ -520,14 +520,6 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_chat(world, "<br><br><br><H1>A round has ended!</H1>")
-	//	SOJOURN: discord bot configuration: START
-	message_args = list(
-		"game_id" = game_id,
-		"newline" = "\n"
-	)
-	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end, message_args)), config.channel_announce_end_game)
-	send2adminchat("Server", "Round just ended.")
-	//	SOJOURN: discord bot configuration: END
 
 	for(var/mob/Player in GLOB.player_list)
 		if(Player.mind && !isnewplayer(Player))
