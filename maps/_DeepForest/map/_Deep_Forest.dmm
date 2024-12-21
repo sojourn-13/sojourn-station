@@ -12849,15 +12849,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"iMI" = (
-/obj/effect/overlay/water{
-	color = "#6B7A0D"
-	},
-/obj/effect/overlay/water/top{
-	color = "#6B7A0D"
-	},
-/turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/dungeon/outside/zoo)
 "iNh" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
@@ -21808,10 +21799,6 @@
 	},
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
-	},
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 15;
-	pixel_x = s
 	},
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/dungeon/outside/zoo)
@@ -110759,7 +110746,7 @@ kpd
 bRd
 fmr
 afT
-iMI
+pgg
 gKn
 uzj
 vPD
@@ -110966,8 +110953,8 @@ gbQ
 xta
 sTJ
 sTJ
-iMI
-iMI
+pgg
+pgg
 fmr
 sTJ
 pEx
@@ -111176,7 +111163,7 @@ vPD
 sTJ
 rIY
 fjE
-iMI
+pgg
 afT
 sTJ
 kpd
@@ -111386,7 +111373,7 @@ sTJ
 eAX
 rIY
 fmr
-iMI
+pgg
 sTJ
 sTJ
 vPD
@@ -111594,7 +111581,7 @@ vUq
 xpM
 sTJ
 pgg
-iMI
+pgg
 sTJ
 sgX
 sTJ
@@ -111806,7 +111793,7 @@ sTJ
 nCM
 pEx
 pgg
-iMI
+pgg
 vPD
 ehj
 tXq
@@ -112015,7 +112002,7 @@ dMP
 rIY
 hrB
 van
-iMI
+pgg
 vPD
 ehj
 tXq
@@ -116630,7 +116617,7 @@ vzy
 fHn
 sTJ
 sTJ
-iMI
+pgg
 sTJ
 sTJ
 sTJ
@@ -116838,9 +116825,9 @@ kmf
 vPD
 fHn
 uzj
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
 sTJ
 elE
 vPD
@@ -117047,10 +117034,10 @@ kmf
 cfq
 rIY
 rIY
-iMI
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
+pgg
 rIY
 iaQ
 guN
@@ -117257,9 +117244,9 @@ vPD
 bfH
 sTJ
 tuX
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
 sTJ
 fMk
 vPD
@@ -117467,7 +117454,7 @@ xlg
 sTJ
 sTJ
 sTJ
-iMI
+pgg
 oYe
 sTJ
 coa
