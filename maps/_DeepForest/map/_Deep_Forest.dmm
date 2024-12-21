@@ -2926,14 +2926,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"clT" = (
-/obj/effect/floor_decal/industrial/box,
-/obj/machinery/porta_turret/One_star{
-	name = "WhiteGuard turret"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
 "cmA" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt,
@@ -4016,17 +4008,6 @@
 /obj/item/clothing/shoes/ablasive/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"cUj" = (
-/obj/structure/low_wall,
-/obj/machinery/porta_turret/One_star{
-	name = "WhiteGuard turret"
-	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
 "cUk" = (
 /obj/structure/flora/big/bush3{
 	pixel_y = -18
@@ -6360,13 +6341,11 @@
 /obj/effect/floor_decal/industrial/warningdust/corner{
 	dir = 1
 	},
-/obj/machinery/porta_turret_construct,
-/obj/effect/floor_decal/industrial/box,
 /obj/machinery/light{
 	dir = 1;
 	light_color = "#0892d0"
 	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
+/turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "exn" = (
 /obj/structure/barricade,
@@ -7396,14 +7375,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
-"fko" = (
-/obj/structure/catwalk,
-/obj/structure/table/rack{
-	name = "induction coil";
-	desc = "It sparks"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
 "fkt" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/plating/under,
@@ -12831,15 +12802,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"iMI" = (
-/obj/effect/overlay/water{
-	color = "#6B7A0D"
-	},
-/obj/effect/overlay/water/top{
-	color = "#6B7A0D"
-	},
-/turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/dungeon/outside/zoo)
 "iNh" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
@@ -19444,6 +19406,14 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"nwo" = (
+/obj/structure/catwalk,
+/obj/structure/table/rack{
+	name = "induction coil";
+	desc = "It sparks"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo)
 "nwp" = (
 /obj/structure/sign/levels/stairsup,
 /turf/simulated/wall/r_wall,
@@ -21767,6 +21737,15 @@
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"pgg" = (
+/obj/effect/overlay/water{
+	color = "#6B7A0D"
+	},
+/obj/effect/overlay/water/top{
+	color = "#6B7A0D"
+	},
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo)
 "pgs" = (
 /turf/simulated/floor/icewater,
 /area/nadezhda/dungeon/outside/zoo)
@@ -110684,7 +110663,7 @@ kpd
 bRd
 fmr
 afT
-iMI
+pgg
 gKn
 uzj
 vPD
@@ -110891,8 +110870,8 @@ gbQ
 xta
 sTJ
 sTJ
-iMI
-iMI
+pgg
+pgg
 fmr
 sTJ
 pEx
@@ -111101,7 +111080,7 @@ vPD
 sTJ
 rIY
 fjE
-iMI
+pgg
 afT
 sTJ
 kpd
@@ -111311,7 +111290,7 @@ sTJ
 eAX
 rIY
 fmr
-iMI
+pgg
 sTJ
 sTJ
 vPD
@@ -111518,8 +111497,8 @@ rHY
 vUq
 xpM
 sTJ
-iMI
-iMI
+pgg
+pgg
 sTJ
 sgX
 sTJ
@@ -111730,8 +111709,8 @@ sTJ
 sTJ
 nCM
 pEx
-iMI
-iMI
+pgg
+pgg
 vPD
 ehj
 tXq
@@ -111940,7 +111919,7 @@ dMP
 rIY
 hrB
 van
-iMI
+pgg
 vPD
 ehj
 tXq
@@ -114011,11 +113990,11 @@ eRo
 eRo
 vPD
 vPD
-cUj
+iuV
 wuT
 nVX
 wuT
-cUj
+iuV
 vPD
 coa
 coa
@@ -114413,9 +114392,9 @@ mLs
 shd
 lwK
 vPD
-fko
+nwo
 qHh
-fko
+nwo
 wku
 cMv
 wcn
@@ -114831,9 +114810,9 @@ coa
 coa
 coa
 vPD
-fko
-fko
-fko
+nwo
+nwo
+nwo
 vPD
 coa
 coa
@@ -116522,7 +116501,7 @@ vPD
 fsB
 exl
 umG
-clT
+ivb
 awL
 vPD
 vPD
@@ -116555,7 +116534,7 @@ vzy
 fHn
 sTJ
 sTJ
-iMI
+pgg
 sTJ
 sTJ
 sTJ
@@ -116763,9 +116742,9 @@ kmf
 vPD
 fHn
 uzj
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
 sTJ
 elE
 vPD
@@ -116972,10 +116951,10 @@ kmf
 cfq
 rIY
 rIY
-iMI
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
+pgg
 rIY
 iaQ
 guN
@@ -117182,9 +117161,9 @@ vPD
 bfH
 sTJ
 tuX
-iMI
-iMI
-iMI
+pgg
+pgg
+pgg
 sTJ
 fMk
 vPD
@@ -117392,7 +117371,7 @@ xlg
 sTJ
 sTJ
 sTJ
-iMI
+pgg
 oYe
 sTJ
 coa
