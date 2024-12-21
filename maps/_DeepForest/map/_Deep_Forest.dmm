@@ -12389,9 +12389,9 @@
 "ipz" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/drinks/mug/red{
-	desc = "A red and black mug, a small etching can be seen on the bottom of the cup - "TORAJIIND."";
+	desc = "A red and black mug, a small etching can be seen on the bottom of the cup - "Sakaba Corp."";
 	name = "old mug";
-	base_name = "old mug"
+	base_name = null
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo{
