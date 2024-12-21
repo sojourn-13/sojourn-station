@@ -31146,12 +31146,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "uYz" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
+/obj/structure/girder,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo{
 	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
