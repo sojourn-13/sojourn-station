@@ -591,18 +591,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper)
-"ayJ" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/obj/structure/statue{
-	pixel_x = -16
-	},
-/obj/structure/statue/candles{
-	pixel_x = -15
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
 "ayV" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/decal/cleanable/dirt,
@@ -4792,7 +4780,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "dvi" = (
 /obj/effect/floor_decal/industrial_plant,
-/turf/simulated/wall/iron,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/zoo)
 "dvn" = (
 /obj/structure/low_wall,
@@ -5417,6 +5405,7 @@
 "dOM" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/table/steel,
+/obj/item/tool/wrench/big_wrench,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo)
 "dPM" = (
@@ -8423,11 +8412,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
-"fWs" = (
-/obj/structure/low_wall,
-/obj/structure/boulder,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/nadezhda/dungeon/outside/zoo)
 "fWH" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/traps/low_chance,
@@ -12436,10 +12420,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"izY" = (
-/obj/structure/inflatable/wall,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/nadezhda/dungeon/outside/zoo)
 "iAc" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/trash/cigbutt/ishimura,
@@ -12849,6 +12829,15 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"iMI" = (
+/obj/effect/overlay/water{
+	color = "#6B7A0D"
+	},
+/obj/effect/overlay/water/top{
+	color = "#6B7A0D"
+	},
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/dungeon/outside/zoo)
 "iNh" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
@@ -18927,10 +18916,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"ngr" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
 "ngF" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall36";
@@ -20238,10 +20223,6 @@
 /obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
-"odb" = (
-/obj/structure/low_wall,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/nadezhda/dungeon/outside/zoo)
 "odr" = (
 /obj/machinery/vending/medical,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -21793,15 +21774,6 @@
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"pgg" = (
-/obj/effect/overlay/water{
-	color = "#6B7A0D"
-	},
-/obj/effect/overlay/water/top{
-	color = "#6B7A0D"
-	},
-/turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/dungeon/outside/zoo)
 "pgs" = (
 /turf/simulated/floor/icewater,
 /area/nadezhda/dungeon/outside/zoo)
@@ -27571,12 +27543,6 @@
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"taM" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
 "taP" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/panels,
@@ -29608,20 +29574,6 @@
 "uuG" = (
 /turf/simulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"uvr" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/mob/living/simple_animal/hostile/snake{
-	color = "#f7140c";
-	desc = "There is something eerily familiar about it. A shape glimpsed in the corner of your vision. A silhouette etched into the fog of an old dream.";
-	faction = "neutral";
-	health = 250;
-	maxHealth = 250;
-	name = "crimson viper"
-	},
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/oddity/common/book_log,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/dungeon/outside/zoo)
 "uvE" = (
 /obj/random/junk,
 /obj/random/traps/low_chance,
@@ -110746,7 +110698,7 @@ kpd
 bRd
 fmr
 afT
-pgg
+iMI
 gKn
 uzj
 vPD
@@ -110953,8 +110905,8 @@ gbQ
 xta
 sTJ
 sTJ
-pgg
-pgg
+iMI
+iMI
 fmr
 sTJ
 pEx
@@ -111163,7 +111115,7 @@ vPD
 sTJ
 rIY
 fjE
-pgg
+iMI
 afT
 sTJ
 kpd
@@ -111373,7 +111325,7 @@ sTJ
 eAX
 rIY
 fmr
-pgg
+iMI
 sTJ
 sTJ
 vPD
@@ -111580,8 +111532,8 @@ rHY
 vUq
 xpM
 sTJ
-pgg
-pgg
+iMI
+iMI
 sTJ
 sgX
 sTJ
@@ -111792,8 +111744,8 @@ sTJ
 sTJ
 nCM
 pEx
-pgg
-pgg
+iMI
+iMI
 vPD
 ehj
 tXq
@@ -112002,7 +111954,7 @@ dMP
 rIY
 hrB
 van
-pgg
+iMI
 vPD
 ehj
 tXq
@@ -113001,12 +112953,12 @@ vNk
 "}
 (174,1,2) = {"
 nxY
-vPD
-vPD
-vPD
-vPD
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 kVE
 kVE
 coa
@@ -113210,12 +113162,12 @@ vNk
 "}
 (175,1,2) = {"
 nxY
-vPD
-wjL
-ngr
-wjL
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 kVE
 kVE
 kVE
@@ -113419,12 +113371,12 @@ vNk
 "}
 (176,1,2) = {"
 nxY
-vPD
-ayJ
-uvr
-taM
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 kVE
 kVE
 ajc
@@ -113628,12 +113580,12 @@ vNk
 "}
 (177,1,2) = {"
 nxY
-vPD
-wjL
-ngr
-wjL
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 ajc
 wpR
@@ -113837,12 +113789,12 @@ vNk
 "}
 (178,1,2) = {"
 nxY
-vPD
-vPD
-vPD
-izY
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 cZG
 vkt
@@ -114046,12 +113998,12 @@ vNk
 "}
 (179,1,2) = {"
 nxY
-vPD
-odb
-odb
-odb
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 tMr
 ikD
@@ -114255,12 +114207,12 @@ vNk
 "}
 (180,1,2) = {"
 nxY
-vPD
-odb
-vPD
-vPD
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 iXG
 shd
@@ -114464,12 +114416,12 @@ vNk
 "}
 (181,1,2) = {"
 nxY
-vPD
-odb
-odb
-odb
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 mLs
 shd
@@ -114673,12 +114625,12 @@ vNk
 "}
 (182,1,2) = {"
 nxY
-vPD
-vPD
-vPD
-odb
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 vPD
 vPD
 vPD
@@ -114882,12 +114834,12 @@ vNk
 "}
 (183,1,2) = {"
 nxY
-coa
-fWs
-odb
-odb
-vPD
-coa
+nxY
+nxY
+nxY
+nxY
+nxY
+nxY
 coa
 coa
 coa
@@ -116617,7 +116569,7 @@ vzy
 fHn
 sTJ
 sTJ
-pgg
+iMI
 sTJ
 sTJ
 sTJ
@@ -116825,9 +116777,9 @@ kmf
 vPD
 fHn
 uzj
-pgg
-pgg
-pgg
+iMI
+iMI
+iMI
 sTJ
 elE
 vPD
@@ -117034,10 +116986,10 @@ kmf
 cfq
 rIY
 rIY
-pgg
-pgg
-pgg
-pgg
+iMI
+iMI
+iMI
+iMI
 rIY
 iaQ
 guN
@@ -117244,9 +117196,9 @@ vPD
 bfH
 sTJ
 tuX
-pgg
-pgg
-pgg
+iMI
+iMI
+iMI
 sTJ
 fMk
 vPD
@@ -117454,7 +117406,7 @@ xlg
 sTJ
 sTJ
 sTJ
-pgg
+iMI
 oYe
 sTJ
 coa
