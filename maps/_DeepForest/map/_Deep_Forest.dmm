@@ -2270,10 +2270,11 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/structure/table/rack{
+	name = "induction coil";
+	desc = "It sparks"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "bNV" = (
@@ -10644,10 +10645,11 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/structure/table/rack{
+	name = "induction coil";
+	desc = "It sparks"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "hqs" = (
@@ -13674,10 +13676,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "jqD" = (
-/obj/structure/salvageable/data_os{
-	icon_state = "server1"
-	},
 /obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "jra" = (
@@ -19444,13 +19444,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"nwo" = (
-/obj/structure/catwalk,
-/obj/machinery/telecomms/relay{
-	icon_state = "blackbox"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
 "nwp" = (
 /obj/structure/sign/levels/stairsup,
 /turf/simulated/wall/r_wall,
@@ -28763,13 +28756,6 @@
 	},
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/dungeon/outside/zoo)
-"tQZ" = (
-/obj/structure/catwalk,
-/obj/machinery/telecomms/relay{
-	name = "LUMAR Relay Antenna"
-	},
-/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo)
 "tRa" = (
 /obj/structure/table/marble,
@@ -114845,9 +114831,9 @@ coa
 coa
 coa
 vPD
-tQZ
-nwo
-tQZ
+fko
+fko
+fko
 vPD
 coa
 coa
