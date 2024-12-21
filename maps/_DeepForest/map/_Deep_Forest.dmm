@@ -1285,8 +1285,9 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aZd" = (
-/obj/skeleton,
-/turf/simulated/floor/industrial/grey_slates_long,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/zoo{
 	narrate = "Feral growls and soft, curious squeaks echo through the desolate halls, the only signs of life in this decaying facility. Its walls, once pristine and purposeful, now crumble under the weight of forgotten time. The animals remain, thriving in absence, while the hands that built this place have long vanished. There is something unsettlingly familiar about it, as if you have seen this before, though where or when escapes you. Colloquially known as The Zoo, it feels less like a sanctuary and more like a memory, one that refuses to be forgotten."
 	})
@@ -15607,15 +15608,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/lima)
-"kCP" = (
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/floor_decal/industrial_plant/steel_warning,
-/obj/item/scrap_lump,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/meadow)
 "kCR" = (
 /obj/structure/salvageable/os/power,
 /obj/structure/cable{
@@ -24425,6 +24417,15 @@
 /obj/random/pack/junk_machine,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"qvT" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/item/scrap_lump,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/meadow)
 "qwh" = (
 /obj/structure/salvageable/data_os{
 	icon_state = "computer0"
@@ -111912,7 +111913,7 @@ nqw
 qxe
 qxe
 xBx
-kCP
+qvT
 psh
 epz
 epz
@@ -116984,7 +116985,7 @@ aDp
 kAK
 kAK
 vPD
-aZd
+kDd
 kmf
 kmf
 kmf
@@ -118001,7 +118002,7 @@ jWY
 avx
 avx
 avx
-sek
+aZd
 hln
 tVg
 tVg
@@ -118210,7 +118211,7 @@ xrn
 xrn
 xrn
 xrn
-sek
+aZd
 erm
 tVg
 tVg
@@ -118419,7 +118420,7 @@ avx
 avx
 avx
 avx
-sek
+aZd
 dqa
 tVg
 tVg
