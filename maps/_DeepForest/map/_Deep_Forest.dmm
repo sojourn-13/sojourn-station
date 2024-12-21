@@ -2926,6 +2926,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"clT" = (
+/obj/machinery/light,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "cmA" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt,
@@ -4008,6 +4012,13 @@
 /obj/item/clothing/shoes/ablasive/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"cUj" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/zoo)
 "cUk" = (
 /obj/structure/flora/big/bush3{
 	pixel_y = -18
@@ -7375,6 +7386,14 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"fko" = (
+/obj/structure/catwalk,
+/obj/structure/table/rack{
+	name = "induction coil";
+	desc = "It sparks"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo)
 "fkt" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/plating/under,
@@ -8083,7 +8102,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/zoo)
 "fMr" = (
-/mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/zoo)
 "fMT" = (
@@ -12207,17 +12225,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
-"iuV" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
-"ivb" = (
-/obj/machinery/light,
-/turf/simulated/floor/industrial/white_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "ivd" = (
 /obj/effect/floor_decal/border/techfloor/hole{
 	dir = 8
@@ -14133,9 +14140,6 @@
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
-"jOk" = (
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
 "jOo" = (
 /obj/structure/cable{
 	d2 = 8;
@@ -19407,12 +19411,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "nwo" = (
-/obj/structure/catwalk,
-/obj/structure/table/rack{
-	name = "induction coil";
-	desc = "It sparks"
-	},
-/turf/simulated/floor/plating/under,
+/obj/random/mob/render,
+/turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "nwp" = (
 /obj/structure/sign/levels/stairsup,
@@ -28735,6 +28735,10 @@
 	},
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/zoo)
+"tQZ" = (
+/obj/random/mob/render/low_chance,
+/turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "tRa" = (
 /obj/structure/table/marble,
@@ -110261,7 +110265,7 @@ dwt
 dwt
 vPD
 nRu
-jOk
+fMr
 gSq
 kVE
 ydC
@@ -110470,8 +110474,8 @@ hVo
 dwt
 vPD
 gig
-jOk
-jOk
+fMr
+fMr
 fdL
 ydC
 ydC
@@ -110680,8 +110684,8 @@ hVo
 vPD
 gig
 gig
-jOk
-jOk
+fMr
+fMr
 ydC
 ydC
 prE
@@ -110890,7 +110894,7 @@ vPD
 xOO
 gig
 ybr
-jOk
+fMr
 gSq
 kVE
 ydC
@@ -111099,8 +111103,8 @@ vPD
 xOO
 xOO
 xOO
-jOk
-jOk
+fMr
+fMr
 gSq
 fdL
 coa
@@ -111309,9 +111313,9 @@ wQl
 gig
 gig
 xOO
-jOk
-jOk
-jOk
+fMr
+fMr
+fMr
 coa
 rHY
 gbQ
@@ -113181,7 +113185,7 @@ kVE
 kVE
 kVE
 ajc
-jOk
+fMr
 avx
 avx
 wEf
@@ -113391,7 +113395,7 @@ kVE
 kVE
 kVE
 aNw
-jOk
+fMr
 avx
 avx
 gRX
@@ -113576,7 +113580,7 @@ jIL
 cJQ
 cJQ
 cJQ
-jOk
+fMr
 wPX
 kVE
 coa
@@ -113599,7 +113603,7 @@ kVE
 ajc
 ajc
 fmI
-jOk
+fMr
 fmI
 avx
 avx
@@ -113781,7 +113785,7 @@ cbT
 cbT
 vPD
 vPD
-jOk
+fMr
 jvH
 nZb
 jvH
@@ -113806,8 +113810,8 @@ ajc
 ajc
 ajc
 avx
-jOk
-jOk
+fMr
+fMr
 avx
 avx
 avx
@@ -113825,7 +113829,7 @@ coa
 coa
 kVE
 coa
-jOk
+fMr
 krA
 oVB
 xoi
@@ -113990,11 +113994,11 @@ eRo
 eRo
 vPD
 vPD
-iuV
+cUj
 wuT
 nVX
 wuT
-iuV
+cUj
 vPD
 coa
 coa
@@ -114034,8 +114038,8 @@ coa
 kVE
 iJW
 gjw
-jOk
-jOk
+fMr
+fMr
 uNi
 fmI
 kVE
@@ -114242,7 +114246,7 @@ vPD
 coa
 kVE
 gjw
-uNi
+tQZ
 uNi
 uNi
 uNi
@@ -114392,9 +114396,9 @@ mLs
 shd
 lwK
 vPD
-nwo
+fko
 qHh
-nwo
+fko
 wku
 cMv
 wcn
@@ -114660,12 +114664,12 @@ vPD
 coa
 fmI
 uNi
+tQZ
 uNi
 uNi
 uNi
 uNi
-uNi
-jOk
+fMr
 kVE
 coa
 rHY
@@ -114810,9 +114814,9 @@ coa
 coa
 coa
 vPD
-nwo
-nwo
-nwo
+fko
+fko
+fko
 vPD
 coa
 coa
@@ -114867,13 +114871,13 @@ gfU
 hVo
 vPD
 coa
-jOk
+fMr
 fMr
 uNi
 uNi
 uNi
 uNi
-uNi
+nwo
 fmI
 kVE
 coa
@@ -115055,7 +115059,7 @@ vPD
 avx
 avx
 ajc
-jOk
+fMr
 avx
 avx
 vPD
@@ -115078,7 +115082,7 @@ vPD
 coa
 ajc
 fmI
-jOk
+fMr
 uNi
 uNi
 uNi
@@ -115288,11 +115292,11 @@ coa
 kVE
 ajc
 fmI
-jOk
-jOk
-jOk
-jOk
-jOk
+fMr
+fMr
+fMr
+fMr
+fMr
 fmI
 kVE
 rHY
@@ -115475,7 +115479,7 @@ vRR
 vPD
 hfg
 avx
-ivb
+clT
 vPD
 kUw
 kUw
@@ -115497,11 +115501,11 @@ coa
 coa
 kVE
 fmI
-iuV
-jOk
-jOk
-iuV
-jOk
+cUj
+fMr
+fMr
+cUj
+fMr
 kVE
 coa
 rHY
@@ -115880,7 +115884,7 @@ avx
 avx
 qki
 avx
-ivb
+clT
 vPD
 vPD
 cgn
@@ -115893,7 +115897,7 @@ wEf
 vPD
 avx
 avx
-jOk
+fMr
 vPD
 tCG
 tCG
@@ -116501,7 +116505,7 @@ vPD
 fsB
 exl
 umG
-ivb
+clT
 awL
 vPD
 vPD
@@ -117128,7 +117132,7 @@ avx
 vPD
 avx
 qYd
-ivb
+clT
 vPD
 wss
 xrn
@@ -117168,7 +117172,7 @@ sTJ
 fMk
 vPD
 vPD
-jOk
+fMr
 fmI
 avx
 avx
@@ -117322,7 +117326,7 @@ vcx
 avx
 fmI
 fmI
-jOk
+fMr
 iXA
 rfq
 avx
@@ -117532,7 +117536,7 @@ fmI
 ajc
 fmI
 fmI
-jOk
+fMr
 vPD
 avx
 avx
