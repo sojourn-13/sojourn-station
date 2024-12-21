@@ -2139,6 +2139,7 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
+/obj/random/pack/tech_loot,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "bJt" = (
@@ -4012,13 +4013,6 @@
 /obj/item/clothing/shoes/ablasive/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"cUj" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/dungeon/outside/zoo)
 "cUk" = (
 /obj/structure/flora/big/bush3{
 	pixel_y = -18
@@ -8102,6 +8096,8 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/zoo)
 "fMr" = (
+/obj/structure/boulder,
+/obj/random/closet,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/zoo)
 "fMT" = (
@@ -12225,6 +12221,13 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"iuV" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/zoo)
 "ivd" = (
 /obj/effect/floor_decal/border/techfloor/hole{
 	dir = 8
@@ -14140,6 +14143,9 @@
 	name = "Abandoned Outpost";
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
+"jOk" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/zoo)
 "jOo" = (
 /obj/structure/cable{
 	d2 = 8;
@@ -19410,10 +19416,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"nwo" = (
-/obj/random/mob/render,
-/turf/simulated/floor/asteroid/grass/dry,
-/area/nadezhda/dungeon/outside/zoo)
 "nwp" = (
 /obj/structure/sign/levels/stairsup,
 /turf/simulated/wall/r_wall,
@@ -20811,8 +20813,8 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/power/smes/buildable,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/zoo)
 "ovU" = (
@@ -28737,7 +28739,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/zoo)
 "tQZ" = (
-/obj/random/mob/render/low_chance,
+/obj/random/mob/render,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "tRa" = (
@@ -29543,6 +29545,10 @@
 "uuG" = (
 /turf/simulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"uvr" = (
+/obj/random/mob/render/low_chance,
+/turf/simulated/floor/asteroid/grass/dry,
+/area/nadezhda/dungeon/outside/zoo)
 "uvE" = (
 /obj/random/junk,
 /obj/random/traps/low_chance,
@@ -34746,8 +34752,8 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/buildable,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/zoo)
 "ycU" = (
@@ -110265,7 +110271,7 @@ dwt
 dwt
 vPD
 nRu
-fMr
+jOk
 gSq
 kVE
 ydC
@@ -110474,8 +110480,8 @@ hVo
 dwt
 vPD
 gig
-fMr
-fMr
+jOk
+jOk
 fdL
 ydC
 ydC
@@ -110684,8 +110690,8 @@ hVo
 vPD
 gig
 gig
-fMr
-fMr
+jOk
+jOk
 ydC
 ydC
 prE
@@ -110894,7 +110900,7 @@ vPD
 xOO
 gig
 ybr
-fMr
+jOk
 gSq
 kVE
 ydC
@@ -111103,8 +111109,8 @@ vPD
 xOO
 xOO
 xOO
-fMr
-fMr
+jOk
+jOk
 gSq
 fdL
 coa
@@ -111313,9 +111319,9 @@ wQl
 gig
 gig
 xOO
-fMr
-fMr
-fMr
+jOk
+jOk
+jOk
 coa
 rHY
 gbQ
@@ -113185,7 +113191,7 @@ kVE
 kVE
 kVE
 ajc
-fMr
+jOk
 avx
 avx
 wEf
@@ -113395,7 +113401,7 @@ kVE
 kVE
 kVE
 aNw
-fMr
+jOk
 avx
 avx
 gRX
@@ -113556,7 +113562,7 @@ nxY
 nxY
 nxY
 vPD
-ajc
+fMr
 wpR
 hNV
 vPD
@@ -113580,7 +113586,7 @@ jIL
 cJQ
 cJQ
 cJQ
-fMr
+jOk
 wPX
 kVE
 coa
@@ -113603,7 +113609,7 @@ kVE
 ajc
 ajc
 fmI
-fMr
+jOk
 fmI
 avx
 avx
@@ -113785,7 +113791,7 @@ cbT
 cbT
 vPD
 vPD
-fMr
+jOk
 jvH
 nZb
 jvH
@@ -113810,8 +113816,8 @@ ajc
 ajc
 ajc
 avx
-fMr
-fMr
+jOk
+jOk
 avx
 avx
 avx
@@ -113829,7 +113835,7 @@ coa
 coa
 kVE
 coa
-fMr
+jOk
 krA
 oVB
 xoi
@@ -113994,11 +114000,11 @@ eRo
 eRo
 vPD
 vPD
-cUj
+iuV
 wuT
 nVX
 wuT
-cUj
+iuV
 vPD
 coa
 coa
@@ -114038,8 +114044,8 @@ coa
 kVE
 iJW
 gjw
-fMr
-fMr
+jOk
+jOk
 uNi
 fmI
 kVE
@@ -114246,7 +114252,7 @@ vPD
 coa
 kVE
 gjw
-tQZ
+uvr
 uNi
 uNi
 uNi
@@ -114664,12 +114670,12 @@ vPD
 coa
 fmI
 uNi
-tQZ
+uvr
 uNi
 uNi
 uNi
 uNi
-fMr
+jOk
 kVE
 coa
 rHY
@@ -114871,13 +114877,13 @@ gfU
 hVo
 vPD
 coa
-fMr
-fMr
+jOk
+jOk
 uNi
 uNi
 uNi
 uNi
-nwo
+tQZ
 fmI
 kVE
 coa
@@ -115059,7 +115065,7 @@ vPD
 avx
 avx
 ajc
-fMr
+jOk
 avx
 avx
 vPD
@@ -115082,11 +115088,11 @@ vPD
 coa
 ajc
 fmI
-fMr
+jOk
 uNi
 uNi
 uNi
-fMr
+jOk
 fmI
 ajc
 kVE
@@ -115292,11 +115298,11 @@ coa
 kVE
 ajc
 fmI
-fMr
-fMr
-fMr
-fMr
-fMr
+jOk
+jOk
+jOk
+jOk
+jOk
 fmI
 kVE
 rHY
@@ -115501,11 +115507,11 @@ coa
 coa
 kVE
 fmI
-cUj
-fMr
-fMr
-cUj
-fMr
+iuV
+jOk
+jOk
+iuV
+jOk
 kVE
 coa
 rHY
@@ -115897,7 +115903,7 @@ wEf
 vPD
 avx
 avx
-fMr
+jOk
 vPD
 tCG
 tCG
@@ -117172,7 +117178,7 @@ sTJ
 fMk
 vPD
 vPD
-fMr
+jOk
 fmI
 avx
 avx
@@ -117326,7 +117332,7 @@ vcx
 avx
 fmI
 fmI
-fMr
+jOk
 iXA
 rfq
 avx
@@ -117536,7 +117542,7 @@ fmI
 ajc
 fmI
 fmI
-fMr
+jOk
 vPD
 avx
 avx
