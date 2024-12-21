@@ -15607,6 +15607,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/lima)
+"kCP" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/industrial_plant/steel_warning,
+/obj/item/scrap_lump,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/meadow)
 "kCR" = (
 /obj/structure/salvageable/os/power,
 /obj/structure/cable{
@@ -24416,15 +24425,6 @@
 /obj/random/pack/junk_machine,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"qvT" = (
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/floor_decal/industrial_plant/steel_warning,
-/obj/item/scrap_lump,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/meadow)
 "qwh" = (
 /obj/structure/salvageable/data_os{
 	icon_state = "computer0"
@@ -28388,7 +28388,7 @@
 "tit" = (
 /obj/structure/sign/warning/lethal_turrets{
 	desc = "SECURE INSTALLATION. TRESPASSERS WILL BE SHOT.";
-	name = "WARNING"
+	name = "\improper WARNING"
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/meadow)
@@ -111912,7 +111912,7 @@ nqw
 qxe
 qxe
 xBx
-qvT
+kCP
 psh
 epz
 epz
