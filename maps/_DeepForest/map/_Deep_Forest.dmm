@@ -33924,7 +33924,8 @@
 	move_to_delay = 15;
 	desc = "You have a bad feeling about this";
 	melee_damage_upper = 250;
-	melee_damage_lower = 150
+	melee_damage_lower = 150;
+	color = null
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo{
