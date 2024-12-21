@@ -14061,9 +14061,6 @@
 "jse" = (
 /obj/structure/table/steel,
 /obj/item/clipboard,
-/obj/item/paper/crumpled/neo{
-	info = "Urgent:Headquarters representatives are arriving today. Make sure the facility is in acceptable condition before their arrival. Under no circumstances are agents or operatives tied to Sakaba Corporation to be seen anywhere near the perimeter. Lock down entrances, check credentials twice, and monitor all external feeds.Do not let them get close"
-	},
 /obj/item/pen/multi,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo{
