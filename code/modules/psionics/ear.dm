@@ -128,7 +128,7 @@
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
-		if("Pillar Tree")
+		if("Pillar Three")
 			if(!slot_three)
 				to_chat(user, "You add [PC]'resonance into the Third Pillar.")
 			else
