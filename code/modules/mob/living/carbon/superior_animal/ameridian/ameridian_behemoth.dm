@@ -8,9 +8,12 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	move_to_delay = 5
-	armor = list(melee = 15, bullet = 9, energy = 15, bomb = 40, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 7, bullet = 3, energy = 7, bomb = 40, bio = 100, rad = 100) //We want to be gunned down, not lasered
 	drop_amount = 3
 	size_factor = 1.25 // 25% bigger
+
+	mob_ablative_armor = 10
+	ablative_retaining = ABLATION_STANDARD
 
 /mob/living/carbon/superior_animal/ameridian_golem/behemoth/attack_hand(mob/living/carbon/M as mob)
 	if(M.a_intent == I_GRAB || M.a_intent == I_DISARM)
