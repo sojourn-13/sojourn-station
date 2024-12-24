@@ -32,26 +32,27 @@
 
 /datum/seed
 	//Tracking.
-	var/uid                        // Unique identifier.
-	var/name                       // Index for global list.
-	var/seed_name                  // Plant name for seed packet.
-	var/seed_noun = "seeds"        // Descriptor for packet.
-	var/display_name               // Prettier name.
-	var/roundstart                 // If set, seed will not display variety number.
-	var/mysterious                 // Only used for the random seed packets.
-	var/can_self_harvest = 0       // Mostly used for living mobs.
-	var/growth_stages = 0          // Number of stages the plant passes through before it is mature.
-	var/list/materials					// List used to determine material values for recycling in autolathe
-	var/list/origin_tech 	= list()	// List used to determine research values for recyling in deconstructive analyzer
-	var/list/traits = list()       // Initialized in New()
-	var/list/mutants               // Possible predefined mutant varieties, if any.
-	var/list/greatMutants				  // Possible floral gun mutations
-	var/list/evolutions		=list()       // Possible floral evolutions
-	var/list/chems                 // Chemicals that plant produces in products/injects into victim.
-	var/list/consume_gasses        // The plant will absorb these gasses during its life.
-	var/list/exude_gasses          // The plant will exude these gasses during its life.
-	var/kitchen_tag                // Used by the reagent grinder.
-	var/trash_type                 // Garbage item produced when eaten.
+	var/uid                         // Unique identifier.
+	var/name                        // Index for global list.
+	var/seed_name                   // Plant name for seed packet.
+	var/seed_noun = "seeds"         // Descriptor for packet.
+	var/display_name                // Prettier name.
+	var/roundstart                  // If set, seed will not display variety number.
+	var/mysterious                  // Only used for the random seed packets.
+	var/can_self_harvest = 0        // Mostly used for living mobs.
+	var/growth_stages = 0           // Number of stages the plant passes through before it is mature.
+	var/list/materials              // List used to determine material values for recycling in autolathe
+	var/list/origin_tech    =list() // List used to determine research values for recyling in deconstructive analyzer
+	var/list/traits = list()        // Initialized in New()
+	var/list/mutants                // Possible predefined mutant varieties, if any.
+	var/list/greatMutants           // Possible floral gun mutations
+	var/list/evolutions		=list() // Possible floral evolutions
+	var/list/chems                  // Chemicals that plant produces in products/injects into victim.
+	var/list/consume_gasses         // The plant will absorb these gasses during its life.
+	var/list/exude_gasses           // The plant will exude these gasses during its life.
+	var/list/companions     =list() // What plants this one gets boosts *This is for the plant itself not affecting others*
+	var/kitchen_tag                 // Used by the reagent grinder.
+	var/trash_type                  // Garbage item produced when eaten.
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
 	var/has_mob_product
 	var/force_layer
@@ -78,7 +79,7 @@
 	set_trait(TRAIT_PLANT_ICON,           0)            // Icon to use for the plant growing in the tray.
 	set_trait(TRAIT_PRODUCT_COLOUR,       0)            // Colour to apply to product icon.
 	set_trait(TRAIT_BIOLUM_COLOUR,        0)            // The colour of the plant's radiance.
-	set_trait(TRAIT_CHEM_SPRAYER,         0)			// The ability to spray its chemicals on movement.
+	set_trait(TRAIT_CHEM_SPRAYER,         0)            // The ability to spray its chemicals on movement.
 	set_trait(TRAIT_POTENCY,              1)            // General purpose plant strength value.
 	set_trait(TRAIT_REQUIRES_NUTRIENTS,   1)            // The plant can starve.
 	set_trait(TRAIT_REQUIRES_WATER,       1)            // The plant can become dehydrated.
@@ -521,6 +522,8 @@
 		set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
 	if(prob(1))
 		set_trait(TRAIT_CHEM_PRODUCTION,1)
+	if(prob(10))
+		set_trait(TRAIT_COMPANION_PLANT,1)
 
 	set_trait(TRAIT_ENDURANCE,rand(60,100))
 	set_trait(TRAIT_YIELD,rand(3,15))
@@ -709,7 +712,7 @@
 		if(GENE_PIGMENT)
 			traits_to_copy = list(TRAIT_PLANT_COLOUR,TRAIT_PRODUCT_COLOUR,TRAIT_BIOLUM_COLOUR)
 		if(GENE_STRUCTURE)
-			traits_to_copy = list(TRAIT_PLANT_ICON,TRAIT_PRODUCT_ICON,TRAIT_HARVEST_REPEAT)
+			traits_to_copy = list(TRAIT_PLANT_ICON,TRAIT_PRODUCT_ICON,TRAIT_HARVEST_REPEAT, TRAIT_COMPANION_PLANT)
 		if(GENE_FRUIT)
 			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
 		if(GENE_SPECIAL)

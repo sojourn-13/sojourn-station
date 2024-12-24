@@ -429,6 +429,12 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		if ((P.get_trait(TRAIT_JUICY)) && !("TRAIT_JUICY" in scanned_fruittraits))
 			scanned_fruittraits += "TRAIT_JUICY"
 			scanneddata += 1
+		if ((P.get_trait(TRAIT_CHEM_PRODUCTION)) && !("CHEM_PRODUCTION" in scanned_fruittraits))
+			scanned_fruittraits += "CHEM_PRODUCTION"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_COMPANION_PLANT)) && !("COMPANION_PLANT" in scanned_fruittraits))
+			scanned_fruittraits += "COMPANION_PLANT"
+			scanneddata += 1
 		if ((P.get_trait(TRAIT_EXPLOSIVE)) && !("TRAIT_EXPLOSIVE" in scanned_fruittraits))
 			scanned_fruittraits += "TRAIT_EXPLOSIVE"
 			scanneddata += 1
