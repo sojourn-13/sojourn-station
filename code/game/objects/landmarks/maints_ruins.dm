@@ -65,7 +65,7 @@ GLOBAL_LIST_EMPTY(chosen_station_templates)
 	unique = TRUE
 
 /obj/effect/landmark/stationroom/maint/threexthree
-	template_names = list()
+	template_names = list("Maint MiniHydro" = 5, "Maint Posters" = 5, "Maint Guntinerk" = 5, "Maint Kcoin" = 1, "Maint Meat" = 1, "Maint Barrels" = 1, "Maint Floor Repair Shop" = 1)
 
 /obj/effect/landmark/stationroom/maint/threexfive
 	template_names = list()
