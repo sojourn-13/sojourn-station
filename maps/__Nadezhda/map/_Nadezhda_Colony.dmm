@@ -52290,10 +52290,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
-"jVP" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/steel/brown_platform,
-/area/nadezhda/maintenance/undergroundfloor2east)
 "jVR" = (
 /obj/structure/toilet,
 /obj/machinery/light/small{
@@ -203370,9 +203366,9 @@ mrN
 mrN
 wgL
 wEB
-eDd
-jVP
+wEB
 fXg
+eDd
 wEB
 xJF
 wkn
