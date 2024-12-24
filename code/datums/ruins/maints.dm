@@ -18,29 +18,32 @@
 	id = "OldStorage"
 	suffix = "3x3_OldStorage.dmm"
 	name = "Maint OldStorage"
-
-/datum/map_template/ruin/station/maint/threexthree/oldstorage1
-	id = "OldStorage1"
-	suffix = "3x3_OldStorage1.dmm"
-	name = "Maint OldStorage1"
-
-/datum/map_template/ruin/station/maint/threexthree/oldstorage2
-	id = "OldStorage2"
-	suffix = "3x3_OldStorage2.dmm"
-	name = "Maint OldStorage2"
-
-/datum/map_template/ruin/station/maint/threexthree/oldstorage3
-	id = "OldStorage3"
-	suffix = "3x3_OldStorage3.dmm"
-	name = "Maint OldStorage3"
-
-/datum/map_template/ruin/station/maint/threexthree/oldstorage4
-	id = "OldStorage4"
-	suffix = "3x3_OldStorage4.dmm"
-	name = "Maint OldStorage4"
-
-/datum/map_template/ruin/station/maint/threexthree/oldstorage5
-	id = "OldStorage5"
-	suffix = "3x3_OldStorage5.dmm"
-	name = "Maint OldStorage5"
 */
+
+///Base for the 4x4 rooms.
+/datum/map_template/ruin/station/maint/fourxfour
+	prefix = "maps/MaintsRuins/4x4/"
+
+/datum/map_template/ruin/station/maint/fourxfour/oldstorage
+	id = "OldStorage"
+	prefix = "maps/MaintsRuins/4x4/"
+	suffix = "4x4_mixed_storage.dmm"
+	name = "Maint MixedStorage"
+
+/datum/map_template/ruin/station/maint/fourxfour/trashdump
+	id = "Trashdump"
+	prefix = "maps/MaintsRuins/4x4/"
+	suffix = "4x4_trash_dump.dmm"
+	name = "Maint Trashdump"
+
+/datum/map_template/ruin/station/maint/fourxfour/mini_bar
+	id = "MiniBar"
+	prefix = "maps/MaintsRuins/4x4/"
+	suffix = "4x4_mini_bar.dmm"
+	name = "Maint Mini Bar"
+
+/datum/map_template/ruin/station/maint/fourxfour/guntinker
+	id = "Guntinker"
+	prefix = "maps/MaintsRuins/4x4/"
+	suffix = "4x4_guntinker.dmm"
+	name = "Maint Guntinker"

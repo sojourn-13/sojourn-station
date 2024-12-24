@@ -70,6 +70,9 @@ GLOBAL_LIST_EMPTY(chosen_station_templates)
 /obj/effect/landmark/stationroom/maint/threexfive
 	template_names = list()
 
+/obj/effect/landmark/stationroom/maint/fourfour
+	template_names = list("Maint MixedStorage" = 5, "Maint Trashdump" = 3, "Maint Mini Bar" = 1, "Maint Guntinker" = 1)
+
 /obj/effect/landmark/stationroom/maint/fivexthree
 	template_names = list()
 
