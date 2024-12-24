@@ -55,17 +55,18 @@
 
 	usr << browse(output,"window=radioreport")
 
-/* Broken, crashes the server when used.
+
 ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)
 /client/proc/reload_admins()
 	set name = "Reload Admins"
 	set category = "Debug"
 
-	if(!check_rights(R_SERVER))	return
+	if(!check_rights(R_SERVER))
+		return
 
 	message_admins("[usr] manually reloaded admins")
-	load_admins()
-*/
+	reloadAdmins()
+
 /* We....don't have mentors, disabling till further notice
 ADMIN_VERB_ADD(/client/proc/reload_mentors, R_SERVER, FALSE)
 /client/proc/reload_mentors()

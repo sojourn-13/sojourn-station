@@ -29,9 +29,9 @@
 				/obj/item/reagent_containers/food/snacks/openable/spacetwinkie = 3,
 				/obj/item/reagent_containers/food/drinks/dry_ramen = 2,
 				/obj/item/reagent_containers/food/snacks/hotdog = 1,
-				/obj/item/reagent_containers/food/snacks/openable/liquidfood = 2,
 				/obj/item/reagent_containers/food/snacks/pie = 1,
-				/obj/item/reagent_containers/food/snacks/sandwich = 1))
+				/obj/item/reagent_containers/food/snacks/sandwich = 1,
+				/obj/random/rations/crayon = 0.1))
 
 /obj/random/junkfood/low_chance
 	name = "low chance junkfood"

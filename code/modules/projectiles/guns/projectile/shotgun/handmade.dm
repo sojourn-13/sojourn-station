@@ -6,14 +6,9 @@
 	icon_state = "abeinator"
 	item_state = "abeinator"
 	max_shells = 1
-	caliber = CAL_SHOTGUN
-	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = HOLD_CASINGS
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	flags = CONDUCT
 	can_dual = TRUE
-	ammo_type = /obj/item/ammo_casing/shotgun
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	w_class = ITEM_SIZE_NORMAL

@@ -139,8 +139,10 @@
 
 /obj/random/lathe_disk/rifle_heavy/item_to_spawn()
 	return pickweight(list(
+				/obj/item/computer_hardware/hard_drive/portable/design/nt/shepherd,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni = 4))
+
 
 
 /obj/random/lathe_disk/pistol

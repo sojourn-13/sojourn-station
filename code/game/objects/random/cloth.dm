@@ -282,15 +282,10 @@
 				/obj/item/clothing/head/welding = 5,
 				/obj/item/clothing/head/ranger = 3,
 				/obj/item/clothing/head/inhaler = 1,
-				/obj/random/cloth/bikehelms = 1))
+				/obj/item/clothing/head/helmet/biker = 1))
 
 /obj/random/cloth/head/low_chance
 	name = "low chance random head"
-	icon_state = "armor-grey-low"
-	spawn_nothing_percentage = 60
-
-/obj/random/cloth/bikehelms/low_chance
-	name = "low chance random biker helmet"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 

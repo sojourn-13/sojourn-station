@@ -240,7 +240,7 @@
 				/obj/item/gun/projectile/shotgun/pump = 1,\
 				/obj/item/gun/projectile/shotgun/pump/sawn = 2,\
 				/obj/item/gun/projectile/shotgun/pump/obrez = 2,\
-				/obj/item/gun/projectile/shotgun/bull = 0.3,\
+				/obj/item/gun/projectile/shotgun/pump/bull = 0.3,\
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 2,\
 				/obj/item/gun/projectile/shotgun/pump/combat/sawn = 1,\
 				/obj/item/gun/projectile/shotgun/pump/gladstone/sawn = 1,\
@@ -275,7 +275,7 @@
 				/obj/random/gun_parts/frames/better_spawns = 2,
 
 				/obj/item/gun/projectile/automatic/pulse_rifle = 2,
-				/obj/item/gun/projectile/automatic/sbaw = 0.7, // Too good, needs to be rare.
+				/obj/item/gun/projectile/shotgun/sbaw = 0.7, // Too good, needs to be rare.
 				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/gun/projectile/automatic/dp = 2,

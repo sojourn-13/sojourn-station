@@ -3,7 +3,7 @@
 	desc = "A device that speaks an inputted message. Given to crew which can not speak properly or at all."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "ttsdevice"
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	var/named
 
 /obj/item/device/text_to_speech/attack_self(mob/user as mob)

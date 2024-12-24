@@ -167,7 +167,7 @@
 
 // remove all chemicals (other then blood)
 /mob/living/carbon/human/psionic_tumor/proc/purify()
-	set category = "Psionic Purify"
+	set category = "Psionic powers"
 	set name = "Meditative Focus (1)"
 	set desc = "Expend a psi points of your psi essence clear out any chemical in your body, helpful or not."
 	var/psi_point_cost = 1

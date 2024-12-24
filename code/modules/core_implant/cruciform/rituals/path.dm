@@ -161,6 +161,33 @@
 
 	return TRUE
 
+/datum/ritual/cruciform/tessellate/omnitool
+	name = "Touch of the Bleeding-Heart"
+	phrase = "Exaudi clamorem meum, et amplius noli pati." //"Hear my cry, and suffer no more."
+	desc = "Channels the power of your cruciform into an incorporeal omnitool."
+	power = 40
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	cooldown_category = "omnitool_litany"
+	success_message = "Your hand glows with holy light, and you feel more in tune with the workings of flesh."
+
+/datum/ritual/cruciform/tessellate/omnitool/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/stat_bio = 25
+	var/stat_cog = 25
+	var/obj/item/tool/tessellate_omni/tool = new /obj/item/tool/tessellate_omni(src, user)
+	if (user.stats.getStat(STAT_BIO) > 32)
+		stat_bio = user.stats.getStat(STAT_BIO) * 0.8
+		if (user.stats.getStat(STAT_BIO) > 62)
+			stat_bio = 50
+	if (user.stats.getStat(STAT_COG) > 32)
+		stat_cog = user.stats.getStat(STAT_COG) * 0.8
+		if (user.stats.getStat(STAT_COG) > 62)
+			stat_cog = 50
+	tool.tool_qualities = list(QUALITY_CLAMPING = stat_bio, QUALITY_CAUTERIZING = stat_bio, QUALITY_RETRACTING = stat_bio, QUALITY_DRILLING = stat_cog, QUALITY_SAWING = stat_cog, QUALITY_BONE_SETTING = stat_bio, QUALITY_CUTTING = stat_cog, QUALITY_BONE_GRAFTING = stat_bio)
+	usr.put_in_active_hand(tool)
+	set_personal_cooldown(user)
+	return TRUE
+
 //////////////////////////////////////////////////
 /////////         LEMNISCATE             /////////
 //////////////////////////////////////////////////
@@ -959,7 +986,7 @@
 			/obj/item/tool/sword/crusader,
 			/obj/item/storage/firstaid/nt,
 			/obj/item/stack/medical/bruise_pack/advanced/nt,
-			/obj/item/stack/medical/ointment/advanced/nt)
+			/obj/item/stack/medical/ointment/advanced/nt,)
 
 		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
 		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant

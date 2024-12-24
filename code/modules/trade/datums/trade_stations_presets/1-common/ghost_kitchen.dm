@@ -16,6 +16,15 @@
 	recommendation_threshold = 300
 	stations_recommended = list("mcronalds", "botany") //Alt way to get to it
 	inventory = list(
+		"Office Supplies" = list(
+			/obj/item/pen = good_data("Pen", list(5, 20), 25),
+			/obj/item/pen/multi = good_data("Multi Color", list(5, 20), 75),
+			/obj/item/paper_bin = good_data("Paper Bin", list(5, 20), 100),
+			/obj/item/device/lighting/toggleable/lamp = good_data("Desk Lamp", list(5, 20), 100),
+			/obj/item/storage/briefcase = good_data("Briefcase", list(5, 20), 500), //Rather pricy, but it's to dissuade using them for storage reasons. It's a FASHION statement, sweaty! -Wilson
+			/obj/item/storage/secure/briefcase = good_data("Secure Briefcase", list(5, 20), 550),
+			/obj/item/toy/desk/dippingbird/branded = good_data("Spector Dipping Bird Model", list(5, 20), 75)
+		),
 		"Non-Meals" = list(
 			/obj/item/reagent_containers/food/snacks/rawcutlet = good_data("Raw Cutlet", list(-100, -50), 5),
 			/obj/item/reagent_containers/food/snacks/cutlet = good_data("Cooked Cutlet", list(-100, -50), 7),

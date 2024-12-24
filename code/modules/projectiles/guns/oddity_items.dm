@@ -34,11 +34,8 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	The replication of a prized legendary royal shotgun wielded by a king that was once prophesized to have used it for their own undoing."
 	icon_state = "shotgun"
-	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = CYCLE_CASINGS
-	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2

@@ -213,6 +213,10 @@
 	name = "NT Halberd"
 	build_path = /obj/item/tool/spear/halberd
 
+/datum/design/autolathe/sword/nt_polehammer
+	name = "NT Polehammer"
+	build_path = /obj/item/tool/spear/polehammer
+
 /datum/design/autolathe/sword/nt_spear
 	name = "NT Spear"
 	build_path = /obj/item/tool/sword/nt/spear

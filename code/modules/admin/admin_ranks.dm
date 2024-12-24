@@ -102,7 +102,10 @@ var/list/admin_ranks = list() //list of all ranks with associated rights
 	admins.Cut()
 
 
-/hook/startup/proc/loadAdmins()
+/hook/startup/proc/LoadAdmins()
+	reloadAdmins()
+
+/proc/reloadAdmins()
 	clear_admin_datums()
 
 	if(config.admin_legacy_system)

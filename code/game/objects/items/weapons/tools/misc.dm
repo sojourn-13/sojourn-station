@@ -273,3 +273,34 @@
 		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
+
+/obj/item/tool/tessellate_omni
+    name = "mending touch"
+    desc = "Through the compassionate prayer, a Tessellate can ply and mend broken flesh, albeit not quite as effectively as actual tools."
+    icon_state = "fact_omni"
+    force = WEAPON_FORCE_DANGEROUS
+    worksound = WORKSOUND_DRIVER_TOOL
+    w_class = ITEM_SIZE_HUGE
+    slot_flags = null
+    sanctified = TRUE //Isn't affected by the general Absolutist speed penalty, still has its slow workspseed
+    flags = CONDUCT
+    tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_CAUTERIZING = 30, QUALITY_RETRACTING = 30, QUALITY_DRILLING = 30, QUALITY_SAWING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CUTTING = 30, QUALITY_BONE_GRAFTING = 30)
+    no_double_tact = TRUE
+    degradation = 0
+    workspeed = 0.8
+    max_upgrades = 0 // Can't upgrade it
+    price_tag = 0
+    var/mob/living/carbon/holder // The one that summoned the tool
+
+/obj/item/tool/tessellate_omni/New(var/loc, var/mob/living/carbon/Maker)
+    ..()
+    holder = Maker
+    START_PROCESSING(SSobj, src)
+
+/obj/item/tool/tessellate_omni/Process()
+    ..()
+    if(loc != holder) // We're no longer in the owner's hand.
+        visible_message("The [src.name] fades into nothingness.")
+        STOP_PROCESSING(SSobj, src)
+        qdel(src)
+        return

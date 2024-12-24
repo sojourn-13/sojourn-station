@@ -17,9 +17,9 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_rifle.ogg' // More cohesive sound, still loud for its caliber
+	fire_sound_silenced = 'sound/weapons/guns/fire/rifle_silenced.ogg' // More cohesive sound, still loud for its caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
 	var/bolt_open = 0

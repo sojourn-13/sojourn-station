@@ -185,9 +185,9 @@
 		verb = speaking.get_spoken_verb(ending)
 	else
 		if(ending == "!")
-			verb=pick("exclaims", "shouts", "yells")
+			verb=pick("exclaims", "shouts", "yells", "proclaims", "hollers")
 		else if(ending == "?")
-			verb="asks"
+			verb=pick("asks", "inquires", "enquires", "queries")
 		else if(ending=="@")
 			verb="reports"
 

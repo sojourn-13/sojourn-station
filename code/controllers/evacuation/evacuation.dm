@@ -130,6 +130,7 @@ var/datum/evacuation_controller/evacuation_controller
 		priority_announcement.Announce(replacetext(replacetext(GLOB.maps_data.shuttle_docked_message, "%dock_name%", "[dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
 	if(config.announce_shuttle_dock_to_irc)
 		send2mainirc("The shuttle has docked with the station. It will depart in approximately [estimated_time] minute\s.")
+		send2adminchat("Server", "The Emergency Shuttle has docked with the station. It will depart in approximately [estimated_time] minute\s.") //	SOJOURN: discord bot configuration
 
 /datum/evacuation_controller/proc/launch_evacuation()
 

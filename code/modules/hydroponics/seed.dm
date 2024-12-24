@@ -771,7 +771,7 @@
 			total_yield = force_amount
 
 		if(total_yield <= 0)
-			to_chat(user, SPAN_NOTICE("You fail to harvest anything do to a bad yield!"))
+			to_chat(user, SPAN_NOTICE("You fail to harvest anything due to a bad yield!"))
 			return
 
 		for(var/i = 0;i<total_yield;i++)

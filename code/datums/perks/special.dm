@@ -3,8 +3,8 @@
 /////////////////
 
 /datum/perk/forceful_rejection
-	name = "Forecful Rejection"
-	desc = "At the cost of a lot of your mental health, and willpower, remove a perk of your choice!"
+	name = "Forceful Rejection"
+	desc = "At the cost of a lot of your mental health and willpower, remove a perk of your choice!"
 	gain_text = "This reality is unfair and cruel! I should just forget about it..."
 	lose_text = "It takes a lot of effort to reject reality."
 	icon_state = "reject_reality"
