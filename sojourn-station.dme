@@ -529,6 +529,7 @@
 #include "code\datums\repositories\crew\tracking.dm"
 #include "code\datums\repositories\crew\vital.dm"
 #include "code\datums\repositories\crew\~defines.dm"
+#include "code\datums\ruins\hallway.dm"
 #include "code\datums\ruins\maints.dm"
 #include "code\datums\setup_option\background.dm"
 #include "code\datums\setup_option\core_implant.dm"

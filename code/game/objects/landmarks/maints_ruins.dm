@@ -84,3 +84,11 @@ GLOBAL_LIST_EMPTY(chosen_station_templates)
 
 /obj/effect/landmark/stationroom/maint/tenxten
 	template_names = list()
+
+//Localted in ruins/hallway.dm
+/obj/effect/landmark/stationroom/maint/right_side_vacant_office
+	template_names = list()
+
+//Located in ruins/hallway.dm
+/obj/effect/landmark/stationroom/maint/left_side_vacant_office
+	template_names = list("Vacant Clearedout" = 5, "Vacant Tabled" = 2, "Vacant Framed" = 2, "Vacant Bookcased" = 2, "Vacant Trashed" = 2, "Vacant Housing" = 2)
