@@ -16,7 +16,7 @@
 
 /datum/map_template/ruin/station/maint/left_side_vacant_office/framed
 	id = "Framed"
-	suffix = "fabled.dmm"
+	suffix = "framed.dmm"
 	name = "Vacant Framed"
 
 /datum/map_template/ruin/station/maint/left_side_vacant_office/bookcased
