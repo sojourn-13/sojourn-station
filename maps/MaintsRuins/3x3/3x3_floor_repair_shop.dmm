@@ -1,0 +1,77 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/table/marble,
+/obj/item/stack/ore/glass{
+	amount = 60
+	},
+/obj/item/stack/ore{
+	amount = 120
+	},
+/obj/item/stack/ore/glass{
+	amount = 60
+	},
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"q" = (
+/obj/structure/reagent_dispensers/watertank/derelict,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"u" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/random/pouch/hardcase,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"v" = (
+/obj/structure/table/rack/shelf,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/cement_bag,
+/obj/item/clothing/gloves/color/brown,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/head/hardhat/yellow,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"H" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/hammer,
+/obj/item/tool/crowbar,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"O" = (
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"U" = (
+/obj/structure/table/rack/shelf,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/industrial/bricks_fixed,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+q
+a
+O
+"}
+(2,1,1) = {"
+u
+O
+O
+"}
+(3,1,1) = {"
+v
+U
+H
+"}
