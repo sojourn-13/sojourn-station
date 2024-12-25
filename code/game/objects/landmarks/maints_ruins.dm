@@ -91,4 +91,4 @@ GLOBAL_LIST_EMPTY(chosen_station_templates)
 
 //Located in ruins/hallway.dm
 /obj/effect/landmark/stationroom/maint/left_side_vacant_office
-	template_names = list("Vacant Clearedout" = 5, "Vacant Tabled" = 2, "Vacant Framed" = 2, "Vacant Bookcased" = 2, "Vacant Trashed" = 2, "Vacant Housing" = 2)
+	template_names = list("Vacant Clearedout" = 5, "Vacant Tabled" = 2, "Vacant Framed" = 2, "Vacant Bookcased" = 2, "Vacant Trashed" = 2, "Vacant Housing" = 1)
