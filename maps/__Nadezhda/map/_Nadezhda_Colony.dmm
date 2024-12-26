@@ -28145,6 +28145,9 @@
 /obj/item/modular_computer/console/preset/trade{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_y = 30
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
 "fpj" = (
@@ -57376,14 +57379,12 @@
 /turf/simulated/wall,
 /area/colony)
 "kUJ" = (
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 32
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/celler{
+	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/crew_quarters/hydroponics)
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "kUL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -111758,6 +111759,9 @@
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
+/obj/structure/celler{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "veX" = (
@@ -190440,7 +190444,7 @@ xmy
 fpe
 kjI
 mFN
-kUJ
+mFN
 riD
 rss
 cuH
@@ -191644,7 +191648,7 @@ bbM
 tSY
 tNQ
 bCN
-uEj
+kUJ
 spn
 gmt
 dnw

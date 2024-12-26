@@ -3508,6 +3508,7 @@
 #include "modular_sojourn\brewing.dm"
 #include "modular_sojourn\brewing_datums.dm"
 #include "modular_sojourn\cement_bag.dm"
+#include "modular_sojourn\chef_food_celler.dm"
 #include "modular_sojourn\churn.dm"
 #include "modular_sojourn\client_colour.dm"
 #include "modular_sojourn\fencer.dm"
