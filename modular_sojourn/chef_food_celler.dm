@@ -1,7 +1,7 @@
 
 /obj/structure/celler
-	name = "Celler"
-	desc = "A pully that leads down into a warehouse for food and drink. Has a smart scanner to make sure no non-requested food or drink is sent below."
+	name = "Cellar"
+	desc = "A pulley-system that leads down into a warehouse for food and drink. Has a smart scanner to make sure no non-requested food or drink is sent below."
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "ecase_door"
 	density = FALSE
@@ -183,14 +183,14 @@
 		to_chat(user, "<span class='info'>Swipe ID card to access a box of spare Drinking Glasses.</span>")
 
 	if(!reroll_cooldown)
-		to_chat(user, "<span class='info'>Use a denie stamp to reroll the current Client's unresonable requests.</span>")
+		to_chat(user, "<span class='info'>Use a deny stamp to reroll the current Client's unresonable requests.</span>")
 
 
 /obj/structure/celler/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/reagent_containers/food/snacks) && requested_food)
 		var/obj/item/reagent_containers/food/snacks/SNACK = I
 		if(SNACK.bitecount > 0 || SNACK.oldified)
-			to_chat(user, "<span class='info'>The micro-AI beeps red, no shoving in rotton or bitten food.</span>")
+			to_chat(user, "<span class='info'>The micro-AI beeps red, no shoving in rotten or bitten food.</span>")
 			return
 		if(initial(SNACK.name) == requested_food.name)
 			celler_request_food_completed(SNACK, user)
@@ -210,7 +210,7 @@
 		cooldown_timer_glasses *= 2 //Dobles in wait time every use. 30->60->120->ect
 		return
 	if(istype(I, /obj/item/stamp/denied) && !reroll_on_cooldown)
-		to_chat(user, "<span class='info'>You hold up the [I] mico-AI's scanner making it flash red a few times before printing out a set of new order.</span>")
+		to_chat(user, "<span class='info'>You hold up the [I] mico-AI's scanner making it flash red a few times before printing out a set of new orders.</span>")
 		reroll_drink()
 		reroll_on_cooldown = TRUE
 		addtimer(CALLBACK(src, PROC_REF(cooldown_clearer)), reroll_cooldown)
@@ -239,7 +239,7 @@
 	reroll_food()
 
 /obj/structure/celler/proc/celler_request_food_completed(obj/item/reagent_containers/food/snacks/I, mob/user)
-	to_chat(user, "<span class='info'>The Celler slowly produces some credits as you hand in the dish.</span>")
+	to_chat(user, "<span class='info'>The Cellar slowly produces some credits as you hand in the dish.</span>")
 	qdel(I)
 	var/price = I.get_item_cost()
 	if(I.appraised)
@@ -271,7 +271,7 @@
 		requested_food = pick(allowed_foods)
 
 	if(user)
-		to_chat(user, "<span class='info'>The Celler's mico-AI prints out a new request for [requested_food].</span>")
+		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [requested_food].</span>")
 
 //Everything to do with drinks!
 /obj/structure/celler/proc/cooldown_clearer_glasses()
@@ -288,7 +288,7 @@
 	reroll_drink()
 
 /obj/structure/celler/proc/celler_request_drink_completed(obj/I, mob/user, units)
-	to_chat(user, "<span class='info'>The Celler slowly produces some credits as you hand in the drink.</span>")
+	to_chat(user, "<span class='info'>The Cellar slowly dispenses some credits as you hand in the drink.</span>")
 	qdel(I)
 	var/wealth = round(requested_drink.price_per_unit * 60 * 2 + (units / 2)) //If you give more then what is requested then get rewarded.
 	spawn_money(wealth, user.loc, user)
@@ -303,7 +303,7 @@
 		requested_drink = pick(allowed_drinks)
 
 	if(user)
-		to_chat(user, "<span class='info'>The Celler's mico-AI prints out a new request for [get_reagent_name_by_id(requested_drink)].</span>")
+		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [get_reagent_name_by_id(requested_drink)].</span>")
 
 
 
