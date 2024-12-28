@@ -145,10 +145,10 @@ uniquic_armor_act
 			//When we are closer to death.
 			total -= (health_deficiency * 0.018)
 
-	if(stats.getPerk(PERK_RESILIANCE))
+	if(stats.getPerk(PERK_RESILIENCE))
 		total += 3 //smoll universal armor boost
 
-	if(stats.getPerk(PERK_TANK_RESILIANCE))
+	if(stats.getPerk(PERK_TANK_RESILIENCE))
 		var/slown_down = movement_delay()
 		if(slown_down > 0)
 			total += slown_down * 0.5 //Anti-Scaling as you can get a lot of slowdown fast

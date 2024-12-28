@@ -299,7 +299,7 @@
 	When first gainned ablative armor is given, \
 	when getting Res Sickness, additional ablative armor is given. \
 	When blocking, also gain additional ablative armor based on how much health percent is missing."
-	gain_text = "Mounting wounds just mean evade more."
+	gain_text = "Mounting damage just means you should evade more."
 	lose_text = "Wounds once more make taking steps harder."
 	icon_state = "overbreath"
 
@@ -315,17 +315,17 @@
 	..()
 
 //Both of these do different stuff
-/datum/perk/oddity/resiliance
-	name = "Resiliance"
+/datum/perk/oddity/resilience
+	name = "Resilience"
 	desc = "Do to being a higher grade, your body has become more armored."
-	gain_text = "Small cuts and burns seem impossable to get."
+	gain_text = "Small cuts and burns seem impossible to get."
 	lose_text = "Paper cuts are harmful once more."
 	icon_state = "resiliance"
 
-/datum/perk/oddity/tank_resiliance
-	name = "Tank Resiliance"
-	desc = "The slower you are the more easy it is to block, and steel yourself when taking damage."
-	gain_text = "Slow and steady to last through for longer."
+/datum/perk/oddity/tank_resilience
+	name = "Tank Resilience"
+	desc = "The slower you are the easier it is to block and brace yourself for incoming damage."
+	gain_text = "Slow and steady wins the race."
 	lose_text = "Speed is king."
 	icon_state = "tank_resiliance"
 

@@ -51,7 +51,7 @@
 
 		if(hunger_deficiency >= hunger_half)
 			tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
-		//If your hurt then slow down!
+		//If you‘re hurt you will be slowed down
 		if(health_deficiency >= hunger_one_tenth)
 			if(stats.getPerk(PERK_OVERBREATH))
 				//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
