@@ -300,6 +300,7 @@
 
 /datum/perk/rezsickness/assign(mob/living/L)
 	..()
+
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
 	holder.brute_mod_perk *= 1.10
@@ -312,6 +313,10 @@
 	if(isliving(holder))
 		var/mob/living/H = holder
 		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/pours, "POURS", skill_gained = 0.5, learner = H)
+		if(ishuman(H))
+			var/mob/living/carbon/human/M = H
+			if(M.stats.getPerk(PERK_OVERBREATH))
+				M.mob_ablative_armor += 5
 
 /datum/perk/rezsickness/remove()
 	holder.brute_mod_perk /= 1.10
@@ -321,7 +326,6 @@
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)
 	holder.stats.changeStat(STAT_VIG, 10)
-
 	..()
 
 /datum/perk/rezsickness/severe
@@ -338,6 +342,10 @@
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
+	if(ishuman(L))
+		var/mob/living/carbon/human/M = L
+		if(M.stats.getPerk(PERK_OVERBREATH))
+			M.mob_ablative_armor += 5
 
 /datum/perk/rezsickness/severe/remove()
 	holder.brute_mod_perk /= 1.15
@@ -366,6 +374,10 @@
 	holder.stats.changeStat(STAT_COG, -20)
 	holder.stats.changeStat(STAT_MEC, -20)
 	holder.stats.changeStat(STAT_BIO, -20)
+	if(ishuman(L))
+		var/mob/living/carbon/human/M = L
+		if(M.stats.getPerk(PERK_OVERBREATH))
+			M.mob_ablative_armor += 10
 
 /datum/perk/rezsickness/severe/fatal/remove()
 	holder.brute_mod_perk /= 1.25
