@@ -269,6 +269,16 @@
 	trait_info = "single harvest"
 	preset_values = list(TRAIT_HARVEST_REPEAT = 0)
 
+/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/companion
+	disk_name = "plant gene disk - companion plant"
+	trait_info = "companion plaint"
+	preset_values = list(TRAIT_COMPANION_PLANT = 1)
+
+/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/loner
+	disk_name = "plant gene disk - loner plant"
+	trait_info = "loner plant"
+	preset_values = list(TRAIT_COMPANION_PLANT = 0)
+
 // OUTPUT
 /obj/item/computer_hardware/hard_drive/portable/plantgene/output
 	preset_genetype = GENE_OUTPUT
