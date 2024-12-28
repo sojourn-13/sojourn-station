@@ -298,7 +298,7 @@
 	desc = "When closer to death every step is more poised. \
 	When first gainned ablative armor is given, \
 	when getting Res Sickness, additional ablative armor is given. \
-	When blocking, also gain additional ablative armor based on how much health percent is missing."
+	When blocking you gain additional ablative armor based on how much health is missing."
 	gain_text = "Mounting damage just means you should evade more."
 	lose_text = "Wounds once more make taking steps harder."
 	icon_state = "overbreath"
