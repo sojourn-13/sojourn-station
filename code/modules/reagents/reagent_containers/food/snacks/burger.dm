@@ -24,6 +24,11 @@
 	center_of_mass = list("x"=16, "y"=11)
 	preloaded_reagents = list("protein" = 6)
 	matter = list(MATERIAL_BIOMATTER = 16)
+	item_attacking = /obj/item/reagent_containers/food/snacks/cheesewedge
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/cheeseburger
+	item_attacking_message = "You make a cheeseburger."
 
 /obj/item/reagent_containers/food/snacks/cheeseburger
 	name = "cheeseburger"
@@ -50,6 +55,11 @@
 	preloaded_reagents = list("protein" = 3)
 	matter = list(MATERIAL_BIOMATTER = 13)
 	cooked = TRUE
+	item_attacking = /obj/item/reagent_containers/food/snacks/cheesewedge
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/cheeseburger
+	item_attacking_message = "You make a cheeseburger."
 
 /obj/item/reagent_containers/food/snacks/fishburger
 	name = "fillet-o-carp sandwich"

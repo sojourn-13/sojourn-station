@@ -5544,7 +5544,6 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "RH" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/grown/potato,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "RK" = (
@@ -6580,7 +6579,6 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "ZS" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/grown/potato,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
