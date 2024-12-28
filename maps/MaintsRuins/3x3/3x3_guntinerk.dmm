@@ -1,0 +1,63 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/table/woodentable,
+/obj/random/gun_parts/low,
+/obj/random/ammo,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"b" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"c" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/wood{
+	dir = 4;
+	tag = "icon-wooden_chair (EAST)"
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"j" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/item/tool/hammer,
+/obj/item/tool/screwdriver,
+/obj/item/tool/wirecutters/pliers,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"w" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/obj/random/structures,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"x" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/random/gun_parts/low,
+/obj/random/ammo,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"y" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+b
+y
+b
+"}
+(2,1,1) = {"
+j
+c
+w
+"}
+(3,1,1) = {"
+a
+x
+a
+"}

@@ -1,0 +1,59 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/reagent_dispensers/fueltank/derelict,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"t" = (
+/obj/item/tool/crowbar/improvised,
+/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"E" = (
+/obj/structure/reagent_dispensers/watertank/derelict,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"F" = (
+/obj/structure/scrap/poor/large,
+/obj/item/tool/wirecutters/improvised,
+/obj/item/tool/saw/improvised,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"M" = (
+/obj/structure/fermentation_keg,
+/obj/item/bottle_kit,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"Q" = (
+/obj/structure/scrap/poor/large,
+/obj/item/tool/shovel/improvised,
+/obj/item/tool/wrench/improvised,
+/obj/item/storage/makeshift_grinder,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"S" = (
+/obj/structure/scrap/poor/large,
+/obj/item/tool/weldingtool/improvised,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"Y" = (
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+F
+M
+Y
+"}
+(2,1,1) = {"
+E
+t
+Y
+"}
+(3,1,1) = {"
+a
+Q
+S
+"}

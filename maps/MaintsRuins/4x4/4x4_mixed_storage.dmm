@@ -1,0 +1,61 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/random/scrap/sparse_even/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"m" = (
+/obj/random/closet_maintloot/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"n" = (
+/obj/machinery/light/small,
+/obj/random/scrap/sparse_even/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"y" = (
+/obj/random/junk/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"D" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"O" = (
+/obj/random/closet_tech/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"U" = (
+/obj/random/structures/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/grey_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+
+(1,1,1) = {"
+U
+D
+D
+a
+"}
+(2,1,1) = {"
+U
+D
+D
+n
+"}
+(3,1,1) = {"
+y
+D
+D
+m
+"}
+(4,1,1) = {"
+a
+D
+D
+O
+"}
