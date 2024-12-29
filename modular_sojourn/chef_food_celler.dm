@@ -177,7 +177,7 @@
 		to_chat(user, "<span class='info'>Client is requesting [requested_food.name], appraised and of higher food quality.</span>")
 
 	if(requested_drink)
-		to_chat(user, "<span class='info'>Client is a glass of [requested_drink.name] (30+u Drinking Glass).</span>")
+		to_chat(user, "<span class='info'>Client is requesting a glass of [requested_drink.name] (30+u Drinking Glass).</span>")
 
 	if(!drinking_glass_cooldown)
 		to_chat(user, "<span class='info'>Swipe ID card to access a box of spare Drinking Glasses.</span>")
