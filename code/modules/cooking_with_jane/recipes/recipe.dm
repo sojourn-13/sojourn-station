@@ -20,7 +20,7 @@
 		CWJ_BEGIN_OPTION_CHAIN,
 		//base - the lowest amount of quality following this step can award.
 		//reagent_skip - Exclude the added item's reagents from being included the product
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE, add_price = 3),
 
 		//Melt the butter into the pan by cooking it on a stove set to Low for 10 seconds
 		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS),
@@ -34,24 +34,24 @@
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		//Add some mushrooms to give it some zest. Only one kind is allowed!
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE, add_price = 3),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 
 		//Beat that meat to increase its quality
-		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15),
+		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15, add_price = 1),
 
 		//You can add up to 3 units of honey to increase the quality. Any more will negatively impact it.
 		//base- for CWJ_ADD_REAGENT, the amount that this step will award if followed perfectly.
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 3),
 
 		//You can add capaicin or wine, but not both
 		//prod_desc- A description appended to the resulting product.
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The steak was Spiced with chili powder."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "wine", 5, remain_percent=0.1 ,base=6, prod_desc="The steak was sauteed in wine"),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The steak was Spiced with chili powder.", add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "wine", 5, remain_percent=0.1 ,base=6, prod_desc="The steak was sauteed in wine", add_price = 3),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 
 		//Cook on a stove, at medium temperature, for 30 seconds
@@ -88,9 +88,9 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawmeatball),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawbacon),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 1),
 		list(CWJ_USE_GRILL, J_MED, 10 SECONDS)
 	)
 
@@ -101,8 +101,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "egg", 3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cinnamonpowder", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cinnamonpowder", 1, add_price = 1.5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 1, add_price = 0.5),
 		list(CWJ_USE_STOVE, J_HI, 10 SECONDS)
 	)
 
@@ -112,7 +112,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawsticks),
 		list(CWJ_ADD_REAGENT, "cornoil", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 1),
 		list(CWJ_USE_STOVE, J_HI, 10 SECONDS)
 	)
 
@@ -133,22 +133,22 @@
 
 	step_builder = list(
 		CWJ_BEGIN_OPTION_CHAIN,
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
-		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS, add_price = 2),
 		CWJ_END_OPTION_CHAIN,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chickenbreast, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE, add_price = 3),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 3),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The chicken was Spiced with chili powder."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "lemonjuice", 5, remain_percent=0.1 ,base=3, prod_desc="The chicken was sauteed in lemon juice"),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The chicken was Spiced with chili powder.", add_price = 3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "lemonjuice", 5, remain_percent=0.1 ,base=3, prod_desc="The chicken was sauteed in lemon juice", add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_STOVE, J_MED, 30 SECONDS)
 	)
@@ -204,7 +204,7 @@
 		list(CWJ_ADD_REAGENT, "flour", 5),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_USE_STOVE, J_HI, 10 SECONDS),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chili"),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chili", add_price = 2),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1)
 	)
 
@@ -218,7 +218,7 @@
 		list(CWJ_ADD_PRODUCE, "potato", 2),
 		list(CWJ_ADD_REAGENT, "milk", 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, base=10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 1),
 		list(CWJ_USE_TOOL, QUALITY_HAMMERING, 15)
 	)
 
@@ -230,8 +230,8 @@
 
 	step_builder = list(
 		list(CWJ_ADD_PRODUCE, "potato", 1),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -292,16 +292,16 @@
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE, add_price = 3),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The pork was Spiced with chili powder."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "pineapplejuice", 5, remain_percent=0.1, base=5, prod_desc="The pork was rosted in pineapple juice."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 5, remain_percent=0.1 ,base=3, prod_desc="The pork was glazed with honey"),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3, remain_percent=0.5 ,base=8, prod_desc="The pork was layered with BBQ sauce"),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The pork was Spiced with chili powder.", add_price = 3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "pineapplejuice", 5, remain_percent=0.1, base=5, prod_desc="The pork was rosted in pineapple juice.", add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 5, remain_percent=0.1 ,base=3, prod_desc="The pork was glazed with honey", add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3, remain_percent=0.5 ,base=8, prod_desc="The pork was layered with BBQ sauce", add_price = 8),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_GRILL, J_MED, 30 SECONDS)
 	)
@@ -350,13 +350,13 @@
 	product_type = /obj/item/reagent_containers/food/snacks/friedegg
 	step_builder = list(
 		CWJ_BEGIN_OPTION_CHAIN,
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
-		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE, add_price = 8),
+		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS, add_price = 1),
 		CWJ_END_OPTION_CHAIN,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -367,7 +367,7 @@
 		list(CWJ_ADD_PRODUCE, "corn", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "cornoil", 2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -376,7 +376,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/cookie
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 2, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "sugar", 5),
@@ -400,13 +400,13 @@
 	product_type = /obj/item/reagent_containers/food/snacks/eggplantparm
 	step_builder = list(
 		list(CWJ_ADD_PRODUCE, "eggplant", reagent_skip=TRUE),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=3, reagent_skip=TRUE),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=3, reagent_skip=TRUE, add_price = 4),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE, add_price = 1),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_USE_STOVE, J_HI, 30 SECONDS)
@@ -418,7 +418,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_REAGENT, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
 
@@ -450,8 +450,8 @@
 		list(CWJ_ADD_PRODUCE, "cabbage", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cooked cutlet."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 0.75),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 0.25),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 
@@ -464,8 +464,8 @@
 		list(CWJ_ADD_PRODUCE, "cabbage", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cooked cutlet."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 0.75),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 0.25),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 
@@ -562,9 +562,9 @@
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/soydope, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/soydope, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "carrot", reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "carrot", reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_HI, 20 SECONDS)
 	)
 
@@ -574,7 +574,7 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_REAGENT, "rice", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_HI, 20 SECONDS)
 	)
 
@@ -583,7 +583,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/boiledslimecore
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/slime_extract, qmod=0.5),
 		list(CWJ_USE_STOVE, J_HI, 20 SECONDS)
 	)
@@ -593,7 +593,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/ricepudding
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "milk", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 10),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 10, add_price = 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledrice, qmod=0.5)
 	)
 
@@ -603,8 +603,8 @@
 	recipe_guide = "Put dough in an oven, bake for 30 seconds on medium."
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=1),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, min=5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, min=5, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5, add_price = 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -616,7 +616,7 @@
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.6),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.6),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, min=5),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, min=5, add_price = 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -625,7 +625,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/cracker
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, add_price = 3),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_LO, 20 SECONDS)
 	)
@@ -656,9 +656,9 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "cornoil", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawbacon, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1, add_price = 3),
 		list(CWJ_USE_STOVE, J_LO, 20 SECONDS)
 	)
 
@@ -669,9 +669,9 @@
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "cornoil", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1, add_price = 3),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/friedegg, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -684,9 +684,9 @@
 		list(CWJ_ADD_REAGENT, "egg", 3),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 6),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledegg, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
@@ -698,11 +698,11 @@
 		list(CWJ_ADD_REAGENT, "cornoil", 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
@@ -714,8 +714,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "sugar", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "flour", 5),
 		list(CWJ_USE_STOVE, J_LO, 20 SECONDS)
@@ -728,8 +728,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "sugar", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "flour", 5),
 		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
@@ -743,11 +743,11 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/waffles, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "psilocybin", 5),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "pwine", 5, base=6, remain_percent=0.1, prod_desc="The fancy wine soaks up into the fluffy waffles."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "space_drugs", 5, base=6, remain_percent=0.5, prod_desc="The space drugs soak into the waffles."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "lean", 5, base=6, remain_percent=0.5, prod_desc="Normally not for breakfast."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "mindbreaker", 5, base=6, remain_percent=0.1, prod_desc="Not for waking up to."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "psi_juice", 5, base=6, prod_desc="For when you wake up feeling droggy still."),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "pwine", 5, base=6, remain_percent=0.1, prod_desc="The fancy wine soaks up into the fluffy waffles.", add_price = 30),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "space_drugs", 5, base=6, remain_percent=0.5, prod_desc="The space drugs soak into the waffles.", add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "lean", 5, base=6, remain_percent=0.5, prod_desc="Normally not for breakfast.", add_price = 90),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "mindbreaker", 5, base=6, remain_percent=0.1, prod_desc="Not for waking up to.", add_price = 45),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "psi_juice", 5, base=6, prod_desc="For when you wake up feeling droggy still.", add_price = 150),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_REAGENT, "sugar", 5),
 		list(CWJ_USE_OVEN, J_LO, 10 SECONDS)
@@ -760,7 +760,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/spagetti
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 1, base=1, add_price = 1),
 		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1)
 	)
 
@@ -769,7 +769,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/boiledspagetti
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/spagetti, qmod=0.5),
 		list(CWJ_USE_STOVE, J_MED, 30 SECONDS)
 	)
@@ -779,7 +779,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/pastatomato
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledspagetti, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.4, reagent_skip=TRUE),
@@ -791,11 +791,11 @@
 	product_type = /obj/item/reagent_containers/food/snacks/meatballspagetti
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledspagetti, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", qmod=0.4, reagent_skip=TRUE, add_price = 2),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -804,13 +804,13 @@
 	product_type = /obj/item/reagent_containers/food/snacks/spesslaw
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/boiledspagetti, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5, exclude_reagents=list("blattedin")),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", qmod=0.4, reagent_skip=TRUE, add_price = 2),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -821,12 +821,12 @@
 	product_type = /obj/item/reagent_containers/food/snacks/tomatosoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 5, base=3, prod_desc="The soup turns a lighter red and thickens with the cream."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 5 ,base=5, prod_desc="The thickens as the honey mixes in."),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 5, base=3, prod_desc="The soup turns a lighter red and thickens with the cream.", add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 5 ,base=5, prod_desc="The thickens as the honey mixes in.", add_price = 20),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
 	)
@@ -836,11 +836,11 @@
 	product_type = /obj/item/reagent_containers/food/snacks/meatballsoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "carrot", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "potato", reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, add_price = 3),
 		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
 	)
 
@@ -849,7 +849,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/vegetablesoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "carrot", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "potato", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "eggplant", reagent_skip=TRUE),
@@ -862,7 +862,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/nettlesoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "potato", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "nettle", reagent_skip=TRUE),
 		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
@@ -873,7 +873,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/wishsoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 40),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -882,7 +882,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/hotchili
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "chili", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
@@ -894,7 +894,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/coldchili
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "icechili", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
@@ -906,7 +906,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/bearchili
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "chili", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "tomato", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/bearmeat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
@@ -918,7 +918,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/stew
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "carrot", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "potato", reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "chanterelle", reagent_skip=TRUE),
@@ -932,7 +932,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/milosoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/soydope, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/soydope, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
@@ -945,13 +945,13 @@
 	product_type = /obj/item/reagent_containers/food/snacks/beetsoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_PRODUCE, "whitebeet", reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "potato", reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "potato", reagent_skip=TRUE, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "cabbage", reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 5, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cream", 5, base=1, add_price = 3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 2),
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
 
@@ -960,7 +960,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/mushroomsoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_REAGENT, "cream", 5),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
@@ -968,9 +968,9 @@
 		list(CWJ_ADD_PRODUCE, "chanterelle", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE, add_price = 3),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE, add_price = 4),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
@@ -980,7 +980,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/mysterysoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/badrecipe, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5),
@@ -994,7 +994,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/bloodsoup
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "blood", 30),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
 
@@ -1004,7 +1004,7 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_REAGENT, "slimejelly", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
 
@@ -1014,7 +1014,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 5, add_price = 3),
 		list(CWJ_USE_STOVE, J_LO, 20 SECONDS)
 	)
 
@@ -1025,7 +1025,7 @@
 		list(CWJ_ADD_PRODUCE, "apple", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "water", 5),
 		list(CWJ_ADD_REAGENT, "sugar", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 3),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -1048,8 +1048,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/cutlet
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawcutlet, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 2),
 		list(CWJ_USE_GRILL, J_LO, 20 SECONDS)
 	)
 
@@ -1058,7 +1058,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/rawmeatball
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawcutlet),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice),
 	)
 
@@ -1068,7 +1068,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawmeatball, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "cornoil", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_USE_STOVE, J_LO, 20 SECONDS)
 	)
 
@@ -1077,8 +1077,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/patty
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty_raw, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 2),
 		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
 	)
 
@@ -1229,10 +1229,10 @@
 		list(CWJ_ADD_PRODUCE, "cabbage", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "carrot", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "apple", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=10, reagent_skip=TRUE),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 1),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=10, reagent_skip=TRUE, add_price = 5),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE)
 	)
 
@@ -1241,10 +1241,10 @@
 	product_type = /obj/item/reagent_containers/food/snacks/aesirsalad
 	step_builder = list(
 		list(CWJ_ADD_PRODUCE, "ambrosiadeus", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=10, reagent_skip=TRUE),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 1),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=10, reagent_skip=TRUE, add_price = 5),
 		list(CWJ_ADD_PRODUCE, "goldapple", qmod=0.2, reagent_skip=TRUE)
 	)
 
@@ -1255,10 +1255,10 @@
 		list(CWJ_ADD_PRODUCE, "ambrosia", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "ambrosia", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "ambrosia", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=5, reagent_skip=TRUE),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 1),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/stuffing, base=5, reagent_skip=TRUE, add_price = 51),
 		list(CWJ_ADD_PRODUCE, "potato", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball, qmod=0.5)
 	)
@@ -1272,7 +1272,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/bread, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		list(CWJ_ADD_REAGENT, "water", 5)
 	)
@@ -1284,7 +1284,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/monkeycube),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		list(CWJ_ADD_REAGENT, "flour", 10),
 		list(CWJ_ADD_PRODUCE, "banana", qmod=0.2, reagent_skip=TRUE)
@@ -1297,11 +1297,11 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fries),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "vinegar", 1, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "vinegar", 1, base=1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, base=1, add_price = 6),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fishfingers)
 	)
@@ -1392,7 +1392,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1402,7 +1402,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1412,7 +1412,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1423,7 +1423,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "banana", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "sugar", 5, base=1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1435,7 +1435,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "cherry", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "sugar", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1447,7 +1447,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "berries", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "sugar", 10),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1458,7 +1458,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "amatoxin", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1469,7 +1469,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1480,7 +1480,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "pumpkin", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1491,7 +1491,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_PRODUCE, "apple", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
@@ -1547,8 +1547,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
 	)
@@ -1562,8 +1562,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
 	)
@@ -1574,8 +1574,8 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		//Mushroom pizza is uniquic in that it takes any mushroom rather then a required type
 		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
@@ -1592,8 +1592,8 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "eggplant", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cabbage", qmod=0.2, reagent_skip=TRUE),
@@ -1608,8 +1608,8 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "water", 5, add_price = 2),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 5, add_price = 3),
 		list(CWJ_ADD_PRODUCE, "tomato", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "pineapple", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)

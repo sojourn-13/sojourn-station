@@ -7,12 +7,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
 	)
@@ -25,19 +25,19 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
@@ -51,26 +51,26 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 3, add_price = 9),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3, add_price = 12),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, add_price = 6),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatsteak),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/porkchops),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
@@ -85,12 +85,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
@@ -104,12 +104,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fishfingers)
 	)
@@ -122,12 +122,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bacon, qmod=0.2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/patty)
@@ -141,12 +141,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chickensteak)
 	)
@@ -159,12 +159,12 @@
 
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu)
 	)
@@ -174,7 +174,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/roburger
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "silicon", 1),
 		list(CWJ_ADD_ITEM, /obj/item/robot_parts/head)
 	)
@@ -183,16 +183,16 @@
 	cooking_container = CUTTING_BOARD
 
 	replace_reagents = TRUE
-	
+
 	product_type = /obj/item/reagent_containers/food/snacks/xenoburger
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun, qmod=0.5),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat)
 	)
