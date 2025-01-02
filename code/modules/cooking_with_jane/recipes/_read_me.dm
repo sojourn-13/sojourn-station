@@ -92,6 +92,10 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Adds a custom description to the result of the recipe step. This will be read off on the item product.
 			Example: prod_desc="A Slice of Bread is in the sandwich."
 
+		add_price
+			Addes value to after the product is done, this is automatically devided by the how many items are made.
+			Example: add_price=5
+
 		exact
 			CWJ_ADD_ITEM or CWJ_USE_ITEM ONLY:
 			Determines if the steps require an exact type path, or if a child will satisfy the requirements.
