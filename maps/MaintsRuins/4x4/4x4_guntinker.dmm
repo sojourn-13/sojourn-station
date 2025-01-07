@@ -1,0 +1,150 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/random/rubber_ammo,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"b" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/random/ammo/low_chance,
+/obj/random/gun_parts/frames,
+/obj/random/gun_handmade,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"d" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/random/ammo/low_chance,
+/obj/random/gun_parts/frames,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"h" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/obj/random/material/low_chance,
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"w" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/toolbox,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"x" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/tool_upgrade/low_chance,
+/obj/random/gun_handmade/willspawn,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"A" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/random/tool_upgrade/rare/low_chance,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"C" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/traps/low_chance,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"D" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/ammo_kit,
+/obj/random/lowkeyrandom,
+/obj/random/gun_parts,
+/obj/random/dungeon_ammo/really_low_chance,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"E" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/material/low_chance,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"I" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/random/boxes/low_chance,
+/obj/random/gun_parts,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"J" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"T" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/ammo_kit,
+/obj/random/lowkeyrandom,
+/obj/random/gun_parts/frames,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"W" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/random/rubber_ammo,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/gun_handmade/willspawn,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"Y" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light,
+/obj/random/material/low_chance,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"Z" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2west)
+
+(1,1,1) = {"
+Z
+C
+J
+x
+"}
+(2,1,1) = {"
+D
+E
+Y
+d
+"}
+(3,1,1) = {"
+b
+h
+w
+a
+"}
+(4,1,1) = {"
+I
+A
+W
+T
+"}

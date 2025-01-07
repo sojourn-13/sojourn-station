@@ -174,6 +174,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/python_path = "" //Path to the python executable.  Defaults to "python" on windows and "/usr/bin/env python2" on unix
 	var/use_lib_nudge = 0 //Use the C library nudge instead of the python nudge.
 	var/use_overmap = 0
+	var/generate_maint_ruins = 0
 
 	// Event settings
 	var/expected_round_length	= 3 * 60 * 60 * 10 // 3 hours
@@ -244,6 +245,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/cache_assets = FALSE
 	var/smart_cache_assets = FALSE
+	var/directory = "config"
 
 /datum/configuration/New()
 	fill_storyevents_list()
@@ -682,6 +684,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("use_overmap")
 					config.use_overmap = 1
+
+				if("generate_maints_ruins") //Soj add
+					config.generate_maint_ruins = 1
 
 				if("expected_round_length")
 					config.expected_round_length = MinutesToTicks(text2num(value))
