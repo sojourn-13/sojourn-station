@@ -293,7 +293,7 @@
 
 /obj/random/psi_catalyst/ponderous/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 5,
+				/obj/random/psi_catalyst = 15,
 				/obj/item/device/psionic_catalyst/summan_trash_pile = 15,
 				/obj/item/device/psionic_catalyst/trash_pile_compress = 15,
 				/obj/item/device/psionic_catalyst/trash_pile_exploid = 15))
@@ -304,7 +304,7 @@
 
 /obj/random/psi_catalyst/flesh_behemoth/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 5,
+				/obj/random/psi_catalyst = 15,
 				/obj/item/device/psionic_catalyst/needle_n_thread = 15,
 				/obj/item/device/psionic_catalyst/purify = 15,
 				/obj/item/device/psionic_catalyst/temp_regulate = 15))
