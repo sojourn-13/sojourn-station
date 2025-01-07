@@ -25,7 +25,6 @@
 	var/list/nutriment_desc = list("food" = 1)
 	center_of_mass = list("x"=16, "y"=16)
 	w_class = ITEM_SIZE_SMALL
-	var/food_quality = 1
 	var/cooking_description_modifier
 	var/sanity_gain = 0.2 //Per bite
 	var/cooked = FALSE

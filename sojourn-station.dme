@@ -1922,6 +1922,7 @@
 #include "code\modules\cooking_with_jane\recipes\cubes.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_burger.dm"
+#include "code\modules\cooking_with_jane\recipes\recipe_burger_roach.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_donuts.dm"
 #include "code\modules\cooking_with_jane\recipes\recipe_dough.dm"
 #include "code\modules\cooking_with_jane\step_types\add_item.dm"

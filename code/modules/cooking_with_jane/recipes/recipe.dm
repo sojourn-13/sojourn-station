@@ -391,7 +391,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "sugar", 5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/chocolatebar, add_price = 10, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 10 SECONDS)
 	)
 
@@ -1382,6 +1382,55 @@
 		list(CWJ_ADD_PRODUCE, "corn"),
 		list(CWJ_ADD_PRODUCE, "chili"),
 		list(CWJ_ADD_PRODUCE, "chili")
+	)
+
+/datum/cooking_with_jane/recipe/monkeykabob
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/monkeykabob
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/stack/rods),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 5),
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
+		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/tofukabob
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/tofukabob
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/stack/rods),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 5),
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu),
+		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/human_kabob
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/human/kabob
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/stack/rods),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/human),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1, add_price = 5),
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, add_price = 4),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/human),
+		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
 	)
 
 //Pies

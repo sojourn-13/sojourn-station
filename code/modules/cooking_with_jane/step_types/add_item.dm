@@ -66,6 +66,15 @@
 	#endif
 	var/obj/item/container = tracker.holder_ref.resolve()
 	if(container)
+		if(istype(added_item, /obj/item/stack))
+			var/obj/item/stack/S = added_item
+			if(S.use(1))
+				var/obj/item/stack/stack_used = new S.type(get_turf(src))
+				stack_used.amount = 1
+				stack_used.forceMove(container)
+				return CWJ_SUCCESS
+			else
+				return CWJ_CHECK_INVALID
 		if(usr.canUnEquip(added_item))
 			usr.unEquip(added_item, container)
 		else
