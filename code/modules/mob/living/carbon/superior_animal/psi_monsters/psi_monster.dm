@@ -229,10 +229,14 @@
 /obj/effect/decal/cleanable/psi_ash/ponderous
 	name = "strange ashes of ponderous"
 	catalyst_drop = /obj/random/psi_catalyst/ponderous
+	psion_chance = 35
+	normie_chance = 15
 
 /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
 	name = "strange ashes of flesh behemoth"
 	catalyst_drop = /obj/random/psi_catalyst/flesh_behemoth
+	psion_chance = 45
+	normie_chance = 20
 
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"
