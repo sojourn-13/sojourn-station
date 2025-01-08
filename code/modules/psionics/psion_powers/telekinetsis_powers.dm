@@ -8,7 +8,7 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-		to_chat(user, "Your mastery over psionics allows you to recover a psi point.")
+		to_chat(user, "Your mastery over psionics allows you to fully bypass the casting cost.")
 		psi_point_cost = 0
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
