@@ -15,7 +15,7 @@
 	price_tag = 30
 	var/elastic
 	var/dispenser = 0
-	var/breakouttime = 1200 //Deciseconds = 120s = 2 minutes
+	var/breakouttime = 1800 //Deciseconds = 180s = 3 minutes
 	var/cuff_sound = 'sound/weapons/handcuffs.ogg'
 	var/cuff_type = "handcuffs"
 
@@ -124,19 +124,27 @@ var/last_chew = 0
 	last_chew = world.time
 
 
+/obj/item/handcuffs/advanced
+	name = "hand gauntlets"
+	desc = "Use this to keep prisoners in line. This gauntlet verson is much harder to break out as well as able to wrap around a RIG's gauntlet."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "handcuff_advanced"
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTEEL = 5)
+	breakouttime = 6000 //Deciseconds = 600 = 6 minutes
+	elastic = 1 //advanced
+
 /obj/item/handcuffs/fuzzy
 	name = "fuzzy cuffs"
 	icon_state = "fuzzycuff"
 	breakouttime = 200
 	desc = "Use this to keep... 'prisoners' in line."
 
-
 /obj/item/handcuffs/zipties
 	name = "zip ties"
 	desc = "Plastic, disposable zipties that can be used to restrain someone."
 	icon_state = "cuff"
 	matter = list(MATERIAL_PLASTIC = 2)
-	breakouttime = 700 //Deciseconds = 70s, this is higher than usual ss13 because breakout time is subtracted by 1 second for every robustness stat
+	breakouttime = 1200 //Deciseconds = 120s, this is higher than usual ss13 because breakout time is subtracted by robustness stat
 	cuff_sound = 'sound/weapons/cablecuff.ogg'
 	cuff_type = "zip ties"
 	elastic = 1
@@ -145,7 +153,7 @@ var/last_chew = 0
 	name = "cable restraints"
 	desc = "Looks like some cables tied together. Could be used to tie something up."
 	icon_state = "cuff"
-	breakouttime = 300 //Deciseconds = 30s
+	breakouttime = 800 //Deciseconds = 80s
 	cuff_sound = 'sound/weapons/cablecuff.ogg'
 	cuff_type = "cable restraints"
 	elastic = 1
@@ -199,7 +207,7 @@ var/last_chew = 0
 	icon_state = "tape_cross"
 	item_state = null
 	icon = 'icons/obj/bureaucracy.dmi'
-	breakouttime = 200
+	breakouttime = 600
 	cuff_type = "duct tape"
 
 /obj/item/handcuffs/fake
