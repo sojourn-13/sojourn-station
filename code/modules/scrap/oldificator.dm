@@ -273,8 +273,6 @@
 			heat_protection = rand(0, round(heat_protection * 0.5))
 		if(prob(40))
 			cold_protection = rand(0, round(cold_protection * 0.5))
-		if(prob(20))
-			contaminate()
 		if(prob(15))
 			add_blood()
 		if(prob(60)) // I mean, the thing is ew gross.

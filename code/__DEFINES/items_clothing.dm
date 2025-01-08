@@ -66,7 +66,7 @@
 #define NOBLOODY           	0x8   	// Used for items if they don't want to get a blood overlay.
 // OPENCONTAINER is defined in Eris as a reagent_flag as opposed to a generic flag.
 // NOREACT will likely be the same.
-#define PLASMAGUARD        	0x10 	// Does not get contaminated by plasma.
+//#define VACANT			0x10 	// Free Real Estate, uncomment and use for whatever
 #define PROXMOVE           	0x20  	// Does this object require proximity checking in Enter()?
 #define SILENT				0x40 	// Sneaky shoes and silenced tools
 #define LOUD			    0x80 	// Loud as hell tools
