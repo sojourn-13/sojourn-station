@@ -4,7 +4,7 @@
 /mob/living/carbon/human/proc/psionic_weapon()
 	set category = "Psionic powers"
 	set name = "Psionic Weapon Construction (3)"
-	set desc = "Expend three psi points to shape an oddity into a range weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
+	set desc = "Expend three psi points to reshape an oddity into a ranged weapon. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 3
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -40,7 +40,7 @@
 /mob/living/carbon/human/proc/psionic_melee()
 	set category = "Psionic powers"
 	set name = "Psionic Melee Construction (3)"
-	set desc = "Expend three psi points to shape an oddity into a melee weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
+	set desc = "Spend three psi points to reshape an oddity into a melee weapon. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 3
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -79,7 +79,7 @@
 /mob/living/carbon/human/proc/psionic_tool()
 	set category = "Psionic powers"
 	set name = "Psionic Tool Creation (2)"
-	set desc = "Expend two psi points to shape an oddity into a tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
+	set desc = "Spend two psi points to reshape an oddity into a tool. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -118,7 +118,7 @@
 /mob/living/carbon/human/proc/psychoactive_manipulation()
 	set category = "Psionic powers"
 	set name = "Psychoactive Manipulation (2)"
-	set desc = "Expend two points of essence to psionically manipulate an oddity. Unlike other, more refined methods, this process is entirely random. The process could make the oddity or anomaly \
+	set desc = "Spend two psi points to alter an oddity or an anomaly in an unpredictable manner. The process could make the oddity or anomaly \
 	better or worse."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
@@ -126,7 +126,7 @@
 
 	var/obj/item/oddity/O = user.get_active_hand()
 	if(!istype(O, /obj/item/oddity))
-		to_chat(user, SPAN_NOTICE("You're not holding an oddity or proper anomaly!"))
+		to_chat(user, SPAN_NOTICE("You're not holding an oddity or a proper anomaly!"))
 		return FALSE
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
