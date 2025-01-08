@@ -4,7 +4,7 @@
 /mob/living/carbon/human/proc/nightmare_mind()
 	set category = "Psionic powers"
 	set name = "Nightmarish Mind (1)"
-	set desc = "Expend a single psi point to realign your mind to that of nightmare stalkers, causing them to not react to your presence, even when you attack them. May have unforseen consequences."
+	set desc = "Spend a single psi point to realign your mind to that of nightmare stalkers, causing them to not react to your presence, even when you attack them. May have unforseen consequences."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
