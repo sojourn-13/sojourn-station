@@ -30,6 +30,8 @@
 
 	melee_sharp = TRUE //Claws
 	armor_divisor = 1.25
+	fancy_attack_overlay = "claw_attack_flick"
+	fancy_attack_shading = "#FFFFFF"
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/low = 15,

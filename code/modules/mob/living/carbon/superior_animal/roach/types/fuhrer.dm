@@ -31,7 +31,7 @@
 	sanity_damage = 1
 
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
-
+	fancy_attack_shading = "#FFFFED"
 
 
 /mob/living/carbon/superior_animal/roach/fuhrer/bullet_act(var/obj/item/projectile/P)

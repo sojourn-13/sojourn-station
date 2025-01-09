@@ -187,6 +187,7 @@
 	poison_type = "stoxin"
 	maxHealth = 90 * SPIDER_HEALTH_MOD
 	health = 90 * SPIDER_HEALTH_MOD
+	fancy_attack_overlay = "spider_attack_flick" //Gets their own as these dont inject normally
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"

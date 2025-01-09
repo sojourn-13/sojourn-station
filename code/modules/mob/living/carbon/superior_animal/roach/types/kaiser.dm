@@ -55,6 +55,8 @@ Has ability of every roach.
 	fire_verb = "spits glowing bile"
 
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	fancy_attack_overlay = "kaiser_attack_flick"
+	fancy_attack_shading = "#7C919A"
 
 /mob/living/carbon/superior_animal/roach/kaiser/getTargets()
 	. = ..()
