@@ -57,6 +57,7 @@ Has ability of every roach.
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	fancy_attack_overlay = "kaiser_attack_flick"
 	fancy_attack_shading = "#7C919A"
+	//randomize_attack_effect_location = FALSE Accually quite cool
 
 /mob/living/carbon/superior_animal/roach/kaiser/getTargets()
 	. = ..()
