@@ -66,8 +66,6 @@ GLOBAL_LIST_EMPTY(event_listen_count)
 		var/decl/observ/event = entry
 		for(var/event_source in event.event_sources)
 			if(event.unregister(event_source, listener))
-				if(!istype(listener, /datum/sound_token/instrument)) //This ALWAYS fails and I cant figure it out, done to stop log spamming
-					//DEBUG: Destroyed - /datum/sound_token/instrument was deleted while still listening to [event_source] - event source is whatever instrument
-					log_debug("[event] - [listener] was deleted while still listening to [event_source].")
+				log_debug("[event] - [listener] was deleted while still listening to [event_source].")
 				if(!(--listener_count))
 					return
