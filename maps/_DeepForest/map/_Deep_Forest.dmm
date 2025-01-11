@@ -33376,7 +33376,9 @@
 	desc = "You have a bad feeling about this";
 	melee_damage_upper = 250;
 	melee_damage_lower = 150;
-	color = null
+	color = null;
+	maxHealth = 25000;
+	health = 25000
 	},
 /obj/random/pack/rare,
 /obj/random/pack/rare,
