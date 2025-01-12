@@ -71,7 +71,7 @@
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
-
+	fancy_attack_overlay = "spider_attack_flick"
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))

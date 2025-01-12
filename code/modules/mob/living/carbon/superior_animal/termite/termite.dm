@@ -65,6 +65,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	//Rather then good armor will have some ablative to take a bullet or two but
 	mob_ablative_armor = 12
 	ablative_retaining = ABLATION_SOFT
+	fancy_attack_overlay = "termite_attack_flick"
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
