@@ -4285,12 +4285,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "dbJ" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -5509,12 +5503,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "dQT" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/damagedfloor/fire,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
@@ -6748,12 +6736,6 @@
 	},
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eOq" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_idle";
@@ -8560,12 +8542,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "fYX" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "fZK" = (
@@ -11106,12 +11082,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "hFk" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
@@ -14830,15 +14800,6 @@
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"khV" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/dungeon/outside/prepper/delta)
 "kid" = (
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
@@ -20483,12 +20444,6 @@
 	name = "Abandoned Bunker"
 	})
 "ofM" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_idle";
@@ -23694,12 +23649,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "qkY" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -34354,12 +34303,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "xDj" = (
 /obj/effect/floor_decal/corner/lightgrey/border,
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
+/obj/machinery/door/blast/regular,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "xDv" = (
@@ -35058,16 +35002,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"ycL" = (
-/obj/structure/girder{
-	name = "broken machine";
-	desc = "A machine of unknown purpose, it looks like a tesla coil remotely...";
-	icon = 'icons/obj/machines/excelsior/field.dmi';
-	icon_state = "Shield_Gen"
-	},
-/obj/effect/damagedfloor/fire,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/delta)
 "ycO" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/small/busha1,
@@ -36451,7 +36385,7 @@ nLW
 dzS
 bJJ
 ydJ
-ycL
+bJJ
 mtY
 aMc
 cFh
@@ -36869,7 +36803,7 @@ ndh
 eoA
 wGM
 bJJ
-nLW
+uSj
 mtY
 rum
 cFh
@@ -37075,9 +37009,9 @@ swg
 qzG
 nLW
 nLW
-khV
+nLW
 lPX
-ycL
+bJJ
 nLW
 mtY
 kxi
