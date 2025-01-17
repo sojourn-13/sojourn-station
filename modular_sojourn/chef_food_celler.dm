@@ -79,15 +79,13 @@
 	/obj/item/reagent_containers/food/snacks/sosjerky,
 	/obj/item/reagent_containers/food/snacks/cheesiehonkers,
 	/obj/item/reagent_containers/food/snacks/dogtreats,
-	/obj/item/reagent_containers/food/snacks/openable/chips,
-	/obj/item/reagent_containers/food/snacks/openable/gamerchips,
-	/obj/item/reagent_containers/food/snacks/openable/syndicake,
-	/obj/item/reagent_containers/food/snacks/openable/no_raisin,
-	/obj/item/reagent_containers/food/snacks/openable/spacetwinkie,
-	/obj/item/reagent_containers/food/snacks/openable/liquidfood,
-	/obj/item/reagent_containers/food/snacks/openable/tastybread,
 	/obj/item/reagent_containers/food/snacks/donkpocket,
 	/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket,
+	/obj/item/reagent_containers/food/snacks/mre_paste,
+	/obj/item/reagent_containers/food/snacks/os_paste,
+	/obj/item/reagent_containers/food/snacks/canned_peaches,
+	/obj/item/reagent_containers/food/snacks/mre_cracker,
+	/obj/item/reagent_containers/food/snacks/monkeycube,
 	//tisanes
 	/obj/item/reagent_containers/food/snacks/helmet_tisane,
 	/obj/item/reagent_containers/food/snacks/mercy_tisane,
@@ -222,7 +220,8 @@
 		return
 	if(istype(I, /obj/item/stamp/denied) && !reroll_on_cooldown)
 		to_chat(user, "<span class='info'>You hold up the [I] mico-AI's scanner making it flash red a few times before printing out a set of new orders.</span>")
-		reroll_drink()
+		reroll_drink(user)
+		reroll_food(user)
 		reroll_on_cooldown = TRUE
 		addtimer(CALLBACK(src, PROC_REF(cooldown_clearer)), reroll_cooldown)
 		return
@@ -242,6 +241,7 @@
 	 - typesof(/obj/item/reagent_containers/food/snacks/meat) \
 	 - typesof(/obj/item/reagent_containers/food/snacks/donut) \
 	 - typesof(/obj/item/reagent_containers/food/snacks/grown) \
+	 - typesof(/obj/item/reagent_containers/food/snacks/cube) \
 	 - typesof(/obj/item/reagent_containers/food/snacks/egg))
 	for(var/FTA in food_to_add)
 		if(FTA)
@@ -303,7 +303,7 @@
 	qdel(I)
 	var/wealth = round(requested_drink.price_per_unit * 60 * 2 + (units / 2)) //If you give more then what is requested then get rewarded.
 	spawn_money(wealth, user.loc, user)
-	reroll_drink()
+	reroll_drink(user)
 
 /obj/structure/celler/proc/reroll_drink(mob/user)
 	var/old_requested_drink = requested_drink
