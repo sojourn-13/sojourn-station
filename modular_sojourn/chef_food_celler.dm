@@ -29,6 +29,7 @@
 	/obj/item/reagent_containers/food/snacks/dough,
 	/obj/item/reagent_containers/food/snacks/butterslice,
 	/obj/item/reagent_containers/food/snacks/watermelonslice,
+	/obj/item/reagent_containers/food/snacks/fruit_slice,
 	//Unresonable
 	/obj/item/reagent_containers/food/snacks/cheesewedge,
 	/obj/item/reagent_containers/food/snacks/chocolatepiece,
@@ -154,7 +155,9 @@
 	/datum/reagent/drink/watermelonjuice,
 	/datum/reagent/drink/pineapplejuice,
 	/datum/reagent/drink/blueberryjuice,
-	/datum/reagent/drink/strawberryjuice
+	/datum/reagent/drink/strawberryjuice,
+	/datum/reagent/ethanol/combat_brew,
+	/datum/reagent/ethanol/eye_lid
 	)
 	var/allowed_drinks = null
 	//Cooldowns
@@ -194,19 +197,27 @@
 			return
 		if(initial(SNACK.name) == requested_food.name)
 			celler_request_food_completed(SNACK, user)
+		else
+			to_chat(user, "<span class='info'>The micro-AI beeps red, not allowing a non-requested dish to be stored.</span>")
 		return
 	if(istype(I, /obj/item/reagent_containers/food/drinks/drinkingglass) && requested_drink)
 		var/obj/item/reagent_containers/food/drinks/drinkingglass/DG = I
+		var/drink_success = FALSE
 		for(var/datum/reagent/R in DG.reagents.reagent_list)
-			if(R.volume >= 30 && R == requested_drink.name)
+			to_chat(user, "<span class='info'>R.volume [R.volume] - R = [R] (R.name = [R.name]) RD = [requested_drink.name]</span>")
+
+			if(R.volume >= 30 && R.name == requested_drink.name)
 				celler_request_drink_completed(DG, user, R.volume)
+				drink_success = TRUE
 				break
+		if(!drink_success)
+			to_chat(user, "<span class='info'>The micro-AI beeps red, not allowing a non-requested drinks to be stored.</span>")
 		return
 	if(istype(I, /obj/item/card/id) && !drinking_glass_cooldown)
 		to_chat(user, "<span class='info'>You swipe the ID over the mico-AI's scanner leading to it dropping a box of drinking glasses at your feet.</span>")
 		new /obj/item/storage/box/drinkingglasses(user.loc)
 		drinking_glass_cooldown = TRUE
-		addtimer(CALLBACK(src, PROC_REF(celler_request_drink_completed)), cooldown_timer_glasses)
+		addtimer(CALLBACK(src, PROC_REF(cooldown_clearer_glasses)), cooldown_timer_glasses)
 		cooldown_timer_glasses *= 2 //Dobles in wait time every use. 30->60->120->ect
 		return
 	if(istype(I, /obj/item/stamp/denied) && !reroll_on_cooldown)
