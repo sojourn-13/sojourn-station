@@ -71269,21 +71269,27 @@
 	id = "psychcell3";
 	name = "Cell 3 Door Bolts";
 	pixel_y = -5;
-	specialfunctions = 4
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell2";
 	name = "Cell 2 Door Bolts";
 	pixel_x = 6;
 	pixel_y = 6;
-	specialfunctions = 4
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell1";
 	name = "Cell 1 Door Bolts";
 	pixel_x = -6;
 	pixel_y = 6;
-	specialfunctions = 4
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
