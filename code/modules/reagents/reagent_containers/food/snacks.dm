@@ -237,9 +237,10 @@
 			playsound(mob.loc,pick(mob.eat_sounds), rand(10,50), 1)
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
+				var/list/sanity_vars = get_sanity_gain(mob)
 				reagents.trans_to_mob(mob, amount_eaten, CHEM_INGEST)
 				if(istype(human))
-					human.sanity.onEat(src, amount_eaten)
+					human.sanity.onEat(src, sanity_vars[1], sanity_vars[2])
 				bitecount++
 				On_Consume(mob, user)
 			return 1
