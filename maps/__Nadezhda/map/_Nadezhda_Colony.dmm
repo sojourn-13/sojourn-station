@@ -71268,19 +71268,22 @@
 /obj/machinery/button/remote/airlock{
 	id = "psychcell3";
 	name = "Cell 3 Door Bolts";
-	pixel_y = -5
+	pixel_y = -5;
+	specialfunctions = 4
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell2";
 	name = "Cell 2 Door Bolts";
 	pixel_x = 6;
-	pixel_y = 6
+	pixel_y = 6;
+	specialfunctions = 4
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell1";
 	name = "Cell 1 Door Bolts";
 	pixel_x = -6;
-	pixel_y = 6
+	pixel_y = 6;
+	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
