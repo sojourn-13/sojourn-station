@@ -2499,9 +2499,6 @@
 /obj/item/ammo_magazine/rifle_75,
 /obj/item/ammo_magazine/rifle_75,
 /obj/item/ammo_magazine/rifle_75,
-/obj/machinery/light_switch{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "azl" = (
@@ -8456,13 +8453,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
-"bGn" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 32
-	},
-/turf/simulated/wall,
-/area/nadezhda/maintenance/undergroundfloor2west)
 "bGq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -71278,19 +71268,28 @@
 /obj/machinery/button/remote/airlock{
 	id = "psychcell3";
 	name = "Cell 3 Door Bolts";
-	pixel_y = -5
+	pixel_y = -5;
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell2";
 	name = "Cell 2 Door Bolts";
 	pixel_x = 6;
-	pixel_y = 6
+	pixel_y = 6;
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/machinery/button/remote/airlock{
 	id = "psychcell1";
 	name = "Cell 1 Door Bolts";
 	pixel_x = -6;
-	pixel_y = 6
+	pixel_y = 6;
+	specialfunctions = 4;
+	req_one_access = list(5,45);
+	req_access = newlist()
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
@@ -83753,6 +83752,9 @@
 /obj/item/ammo_magazine/smg_35,
 /obj/item/ammo_magazine/smg_35,
 /obj/random/pouch/low_chance,
+/obj/machinery/light_switch{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "pSz" = (
@@ -179263,7 +179265,7 @@ tvc
 tvc
 tvc
 tvc
-bGn
+tvc
 tvc
 tvc
 tvc
