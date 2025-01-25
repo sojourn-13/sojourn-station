@@ -970,6 +970,19 @@
 	nutriment_desc = list("fortune cookie" = 2)
 	nutriment_amt = 3
 
+//snowflake fortune code
+/obj/item/reagent_containers/food/snacks/fortunecookie/attackby(obj/item/W as obj, mob/user as mob)
+	..()
+	if(istype(W, /obj/item/paper))
+		if(!trash)
+			user.drop_from_inventory(W)
+			W.loc = src
+			trash = W
+			user.visible_message(SPAN_NOTICE("\The [user] slips a paper into \the [src]!"), SPAN_NOTICE("You slip a fortune into \the [src]!"))
+			return
+		if(trash)
+			to_chat(user, SPAN_NOTICE("This [src] already has a fortune."))
+
 /obj/item/reagent_containers/food/snacks/badrecipe
 	name = "burned mess"
 	desc = "A cooking mistake."

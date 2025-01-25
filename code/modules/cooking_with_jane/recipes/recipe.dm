@@ -266,6 +266,43 @@
 		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
 	)
 
+/datum/cooking_with_jane/recipe/xenomeatbread
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/sliceable/xenomeatbread
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/xenomeat, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/tofubread
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/sliceable/tofubread
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_USE_OVEN, J_MED, 40 SECONDS)
+	)
 
 /datum/cooking_with_jane/recipe/creamcheesebread
 	cooking_container = OVEN
@@ -753,6 +790,66 @@
 		list(CWJ_USE_OVEN, J_LO, 10 SECONDS)
 	)
 
+/datum/cooking_with_jane/recipe/soylenviridians
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/soylenviridians
+	step_builder = list(
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, add_price = 3),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/human, qmod=0.5),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1, add_price = 1),
+		list(CWJ_ADD_PRODUCE, "soybeans", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1, add_price = 1),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/human, qmod=0.5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
+		list(CWJ_ADD_REAGENT, "flour", 10),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
+		list(CWJ_USE_OVEN, J_LO, 10 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/soylentgreen
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/soylentgreen
+	step_builder = list(
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, add_price = 3),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
+		list(CWJ_ADD_PRODUCE, "soybeans", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
+		list(CWJ_ADD_REAGENT, "flour", 10),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
+		list(CWJ_USE_OVEN, J_LO, 10 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/waffles
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/waffles
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "sugar", 10),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "flour", 5),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
+		list(CWJ_USE_OVEN, J_LO, 10 SECONDS)
+	)
+
+//I think this is meant to be raw?
+/datum/cooking_with_jane/recipe/cubancarp
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/cubancarp
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
+		list(CWJ_ADD_PRODUCE, "chili", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat/carp, qmod=0.5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 1, base=1, add_price = 1),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1)
+	)
+
+
 //pasta
 
 /datum/cooking_with_jane/recipe/raw_speggie
@@ -1005,6 +1102,28 @@
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_REAGENT, "slimejelly", 5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
+		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/spacylibertyduff
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/spacylibertyduff
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_REAGENT, "vodka", 5),
+		list(CWJ_ADD_REAGENT, "psilocybin", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1, add_price = 5),
+		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/amanitajelly
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/amanitajelly
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_REAGENT, "vodka", 5),
+		list(CWJ_ADD_REAGENT, "amatoxin", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1, add_price = 5),
 		list(CWJ_USE_STOVE, J_MED, 20 SECONDS)
 	)
 
@@ -1351,13 +1470,25 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/stuffing)
 	)
 
+/datum/cooking_with_jane/recipe/donkpocket
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/donkpocket
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5, min=5, add_price = 5),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5, min=5, add_price = 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, add_price = 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, add_price = 1),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meatball),
+	)
+
 /datum/cooking_with_jane/recipe/honeybuns
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/honeybuns
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1, add_price = 1),
 		list(CWJ_ADD_REAGENT, "sugar", 3),
 		list(CWJ_ADD_REAGENT, "honey", 5),
 		list(CWJ_ADD_REAGENT, "cream", 5),
@@ -1723,5 +1854,40 @@
 		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+//Candy
+/datum/cooking_with_jane/recipe/candy_corn
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/candy_corn
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_REAGENT, "sugar", 5),
+		list(CWJ_ADD_REAGENT, "cornoil", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/mint
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/mint
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_REAGENT, "sugar", 5),
+		list(CWJ_ADD_REAGENT, "frostoil", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/fortunecookie
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/fortunecookie
+	recipe_guide = "Fortune is added after baking. Use basic paper found in paper bins."
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 5),
+		list(CWJ_ADD_REAGENT, "sugar", 5),
+		list(CWJ_ADD_REAGENT, "flour", 5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
 		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
 	)
