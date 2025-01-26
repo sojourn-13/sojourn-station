@@ -5,10 +5,11 @@ on:
       - master
 jobs:
   triage:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: mschilde/auto-label-merge-conflicts@2e8fcc76c6430272ec8bb64fb74ec1592156aa6a
+      - uses: mschilde/auto-label-merge-conflicts@master
         with:
-          CONFLICT_LABEL_NAME: 'Merge Conflict'
+          CONFLICT_LABEL_NAME: "Merge Conflict"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WAIT_MS: 10000
+          MAX_RETRIES: 5
+          WAIT_MS: 5000
