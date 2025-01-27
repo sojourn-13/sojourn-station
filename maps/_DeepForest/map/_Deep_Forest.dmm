@@ -3240,10 +3240,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"ctf" = (
-/obj/structure/flora/small/rock1,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
 "cty" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -14787,10 +14783,6 @@
 /obj/random/rig,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
-"khg" = (
-/obj/structure/flora/small/rock3,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
 "khw" = (
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -33323,8 +33315,6 @@
 	move_speed = 1;
 	move_to_delay = 15;
 	desc = "You have a bad feeling about this";
-	melee_damage_upper = 250;
-	melee_damage_lower = 150;
 	color = null;
 	maxHealth = 25000;
 	health = 25000
@@ -113268,7 +113258,7 @@ kAK
 coa
 coa
 coa
-nqw
+coa
 naj
 hRL
 hRL
@@ -113477,8 +113467,8 @@ kVE
 kVE
 coa
 coa
+coa
 nqw
-hRL
 hRL
 hRL
 hRL
@@ -113686,8 +113676,8 @@ kVE
 kVE
 kAK
 coa
-rHY
-hRL
+coa
+nqw
 hRL
 bRy
 hRL
@@ -113895,8 +113885,8 @@ kVE
 kVE
 kVE
 coa
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -114104,8 +114094,8 @@ kVE
 kVE
 kVE
 ajc
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -114313,8 +114303,8 @@ kVE
 kVE
 ooN
 kVE
-rHY
-ctf
+coa
+nqw
 hRL
 afB
 hRL
@@ -114522,8 +114512,8 @@ uNi
 kVE
 kVE
 kVE
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -114731,8 +114721,8 @@ uNi
 uNi
 kVE
 kAK
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -114940,8 +114930,8 @@ uNi
 oVB
 kVE
 kAK
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -115149,9 +115139,9 @@ uNi
 kVE
 kAK
 coa
-rHY
+coa
+nqw
 hRL
-boc
 hRL
 hRL
 hRL
@@ -115358,8 +115348,8 @@ kVE
 kVE
 ajc
 uvr
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -115567,9 +115557,9 @@ kVE
 kVE
 kAK
 uvr
-rHY
+coa
+nqw
 hRL
-khg
 hRL
 pHN
 hRL
@@ -115776,8 +115766,8 @@ iuV
 kVE
 uvr
 coa
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -115985,8 +115975,8 @@ nwo
 pCv
 vPD
 vPD
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -116194,8 +116184,8 @@ wll
 ovV
 uvi
 vPD
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -116403,8 +116393,8 @@ ovV
 ovV
 ntz
 vPD
-rHY
-hRL
+coa
+nqw
 hRL
 hRL
 hRL
@@ -116612,9 +116602,9 @@ onA
 onA
 fhg
 vPD
-rHY
-afB
-boc
+coa
+nqw
+hRL
 hRL
 hRL
 pHN
@@ -116821,9 +116811,9 @@ vPD
 vPD
 vPD
 vPD
+coa
 nqw
-hRL
-boc
+nqw
 hRL
 hRL
 hRL
@@ -117030,10 +117020,10 @@ avx
 jWY
 ajc
 uvr
+coa
 nqw
-hRL
-hRL
-hRL
+nqw
+nqw
 hRL
 hRL
 hRL
@@ -117239,11 +117229,11 @@ avx
 kAK
 kAK
 uvr
+coa
+coa
 nqw
-hRL
-hRL
-hRL
-hRL
+nqw
+nqw
 hRL
 hRL
 hRL
@@ -117448,12 +117438,12 @@ jWY
 omH
 kAK
 uvr
+coa
+coa
 nqw
-afB
-hRL
-hRL
-hRL
-hRL
+nqw
+nqw
+nqw
 hRL
 hRL
 hRL
@@ -117657,13 +117647,13 @@ vPD
 vPD
 vPD
 vPD
+coa
+coa
 nqw
-hRL
-hRL
-hRL
-hRL
-hRL
-hRL
+nqw
+nqw
+nqw
+nqw
 hRL
 hRL
 qxe
@@ -117866,14 +117856,14 @@ coa
 coa
 coa
 coa
+coa
+coa
 nqw
-hRL
-hRL
-hRL
-hRL
-hRL
-hRL
-hRL
+nqw
+nqw
+nqw
+nqw
+nqw
 qxe
 qxe
 qxe
@@ -118075,13 +118065,13 @@ coa
 coa
 coa
 coa
+coa
+coa
 nqw
 nqw
-hRL
-qxe
 nqw
-hRL
-hRL
+nqw
+nqw
 rHY
 rHY
 rHY
@@ -118284,7 +118274,7 @@ coa
 coa
 coa
 coa
-nqw
+coa
 nqw
 nqw
 nqw
