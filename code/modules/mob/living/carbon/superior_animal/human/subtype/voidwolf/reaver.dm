@@ -24,6 +24,11 @@
 	armor_divisor = 3
 	armor = list(melee = 15, bullet = 13, energy = 12, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
+	fancy_attack_overlay = "voidwolf_gun_melee_flick"
+	fancy_attack_shading = "#2975A7" //Sapphire
+
+
+
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
@@ -144,6 +149,8 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	armor_divisor = 3
 	var/block_chance = 65
 	move_and_attack = TRUE
+	fancy_attack_overlay = "voidwolf_slash_flick"
+	fancy_attack_shading = "#9b111e" //Ruby
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
