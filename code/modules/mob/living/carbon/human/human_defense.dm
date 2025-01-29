@@ -135,6 +135,25 @@ uniquic_armor_act
 		if(stats.getStat(STAT_TGH) > 0)
 			total += clamp(0, round(stats.getStat(STAT_TGH)/(12 + item_punishment)), 10)
 
+	if(stats.getPerk(PERK_OVERBREATH))
+		var/health_deficiency = (maxHealth - health)
+		//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
+		if(health_deficiency > 0)
+			//Less scailing but still noticeable
+			total += (health_deficiency * 0.015)
+		else
+			//When we are closer to death.
+			total -= (health_deficiency * 0.018)
+
+	if(stats.getPerk(PERK_RESILIENCE))
+		total += 3 //smoll universal armor boost
+
+	if(stats.getPerk(PERK_TANK_RESILIENCE))
+		var/slown_down = movement_delay()
+		if(slown_down > 0)
+			total += slown_down * 0.5 //Anti-Scaling as you can get a lot of slowdown fast
+
+
 	return total
 
 //Returns true if the ablative armor successfully took damage
