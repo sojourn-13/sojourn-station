@@ -129,7 +129,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = null
 	listener_status = null
 
-	GLOB.destroyed_event.unregister(source, src, TYPE_PROC_REF(/datum, qdel_self))
+	GLOB.destroyed_event.unregister(source, src, /datum/proc/qdel_self)
 	QDEL_NULL(proxy_listener)
 	source = null
 
