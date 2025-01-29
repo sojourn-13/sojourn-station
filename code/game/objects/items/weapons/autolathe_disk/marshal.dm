@@ -11,6 +11,7 @@
 		/datum/design/autolathe/sec/secflashlight,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/handcuffs,
+		/datum/design/autolathe/sec/handcuffs_adv = 5,
 		/datum/design/autolathe/sec/zipties = 0,
 		/datum/design/autolathe/sec/electropack,
 		/datum/design/autolathe/tool/tacknife,
