@@ -25,7 +25,6 @@
 	var/list/nutriment_desc = list("food" = 1)
 	center_of_mass = list("x"=16, "y"=16)
 	w_class = ITEM_SIZE_SMALL
-	var/food_quality = 1
 	var/cooking_description_modifier
 	var/sanity_gain = 0.2 //Per bite
 	var/cooked = FALSE
@@ -34,6 +33,13 @@
 
 	var/junk_food = FALSE //if TRUE, sanity gain per nutriment will be zero
 	var/list/taste_tag = list()
+
+	//Item attacking: Rolling pin
+	var/item_attacking
+	var/item_attacker_delete = FALSE
+	var/delete_self = FALSE
+	var/item_given
+	var/item_attacking_message
 
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
@@ -231,9 +237,10 @@
 			playsound(mob.loc,pick(mob.eat_sounds), rand(10,50), 1)
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
+				var/list/sanity_vars = get_sanity_gain(mob)
 				reagents.trans_to_mob(mob, amount_eaten, CHEM_INGEST)
 				if(istype(human))
-					human.sanity.onEat(src, amount_eaten)
+					human.sanity.onEat(src, sanity_vars[1], sanity_vars[2])
 				bitecount++
 				On_Consume(mob, user)
 			return 1
@@ -333,6 +340,23 @@
 					slice?:food_quality = src.food_quality
 			qdel(src)
 			return
+
+	if(item_attacking && item_given)
+		if(istype(W, item_attacking))
+			var/food_quality_total = food_quality
+			var/obj/NS = new item_given (src.loc)
+			if(item_attacking_message)
+				to_chat(user, SPAN_NOTICE("[item_attacking_message]"))
+			if(istype(W, /obj/item/reagent_containers/food/snacks))
+				var/obj/item/reagent_containers/food/snacks/S = W
+				food_quality_total += S.food_quality
+			if(istype(NS, /obj/item/reagent_containers/food/snacks))
+				NS?:food_quality = food_quality_total
+			if(item_attacker_delete)
+				qdel(W)
+			if(delete_self)
+				qdel(src)
+		return
 
 /obj/item/reagent_containers/food/snacks/proc/is_sliceable()
 	return (slices_num && slice_path && slices_num > 0)
@@ -946,6 +970,19 @@
 	nutriment_desc = list("fortune cookie" = 2)
 	nutriment_amt = 3
 
+//snowflake fortune code
+/obj/item/reagent_containers/food/snacks/fortunecookie/attackby(obj/item/W as obj, mob/user as mob)
+	..()
+	if(istype(W, /obj/item/paper))
+		if(!trash)
+			user.drop_from_inventory(W)
+			W.loc = src
+			trash = W
+			user.visible_message(SPAN_NOTICE("\The [user] slips a paper into \the [src]!"), SPAN_NOTICE("You slip a fortune into \the [src]!"))
+			return
+		if(trash)
+			to_chat(user, SPAN_NOTICE("This [src] already has a fortune."))
+
 /obj/item/reagent_containers/food/snacks/badrecipe
 	name = "burned mess"
 	desc = "A cooking mistake."
@@ -1549,13 +1586,11 @@
 	nutriment_amt = 6
 	nutriment_desc = list("vanilla" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
-
-/obj/item/reagent_containers/food/snacks/icecream/attackby(obj/item/W as obj, mob/user as mob) // No way we're microwaving two cookies to make an ICECREAM sandwich. - Seb
-	if(istype(W,/obj/item/reagent_containers/food/snacks/brownieslice)) // Fits better than a cookie for the sandwich
-		new /obj/item/reagent_containers/food/snacks/icecreamsandwich(src)
-		to_chat(user, "You sandwich the icecream between the brownies.")
-		qdel(W)
-		qdel(src)
+	item_attacking = /obj/item/reagent_containers/food/snacks/brownieslice
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/icecreamsandwich
+	item_attacking_message = "You sandwich the icecream between the brownies."
 
 /obj/item/reagent_containers/food/snacks/chocoicecream
 	name = "chocolate icecream"
@@ -1578,13 +1613,11 @@
 	nutriment_amt = 8
 	nutriment_desc = list("strawberry" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
-
-/obj/item/reagent_containers/food/snacks/strawberryicecream/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/reagent_containers/food/snacks/cookie))
-		new /obj/item/reagent_containers/food/snacks/strawberrysandwich(src)
-		to_chat(user, "You sandwich the icecream between the cookies.")
-		qdel(W)
-		qdel(src)
+	item_attacking = /obj/item/reagent_containers/food/snacks/cookie
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/strawberrysandwich
+	item_attacking_message = "You sandwich the icecream between the cookies."
 
 /obj/item/reagent_containers/food/snacks/chocolatepiece
 	name = "chocolate piece"
@@ -1704,20 +1737,11 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 1)
 	matter = list(MATERIAL_BIOMATTER = 5)
-
-// Dough + rolling pin = flat dough
-/obj/item/reagent_containers/food/snacks/dough/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/material/kitchen/rollingpin))
-		new /obj/item/reagent_containers/food/snacks/sliceable/flatdough(src)
-		to_chat(user, "You flatten the dough.")
-		qdel(src)
-
-// Dough slice + rolling pin = flat dough slice
-/obj/item/reagent_containers/food/snacks/doughslice/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/material/kitchen/rollingpin))
-		new /obj/item/reagent_containers/food/snacks/flatdoughslice(src)
-		to_chat(user, "You flatten the dough slice.")
-		qdel(src)
+	item_attacking = /obj/item/material/kitchen/rollingpin
+	item_attacker_delete = FALSE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/sliceable/flatdough
+	item_attacking_message = "You flatten the dough."
 
 // slicable into 3xdoughslices
 /obj/item/reagent_containers/food/snacks/sliceable/flatdough
@@ -1745,6 +1769,12 @@
 	nutriment_desc = list("dough" = 1)
 	nutriment_amt = 1
 	matter = list(MATERIAL_BIOMATTER = 2)
+	item_attacking = /obj/item/material/kitchen/rollingpin
+	item_attacker_delete = FALSE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/flatdoughslice
+	item_attacking_message = "You flatten the dough slice."
+
 
 /obj/item/reagent_containers/food/snacks/flatdoughslice
 	name = "flat dough slice"
@@ -1759,6 +1789,11 @@
 	nutriment_desc = list("dough" = 1)
 	nutriment_amt = 1
 	matter = list(MATERIAL_BIOMATTER = 2)
+	item_attacking = /obj/item/reagent_containers/food/snacks/sausage
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/hotdog
+	item_attacking_message = "You make a hotdog."
 
 /obj/item/reagent_containers/food/snacks/bun
 	name = "bun"
@@ -1771,51 +1806,11 @@
 	nutriment_desc = list("bun" = 4)
 	nutriment_amt = 4
 	matter = list(MATERIAL_BIOMATTER = 5)
-
-/obj/item/reagent_containers/food/snacks/bun/attackby(obj/item/W as obj, mob/user as mob)
-	/*
-	// Bun + meatball = burger
-	if(istype(W,/obj/item/reagent_containers/food/snacks/meatball))
-		new /obj/item/reagent_containers/food/snacks/monkeyburger(src)
-		to_chat(user, "You make a burger.")
-		qdel(W)
-		qdel(src)
-	*/
-	// Bun + patty = hamburger
-	if(istype(W,/obj/item/reagent_containers/food/snacks/patty))
-		new /obj/item/reagent_containers/food/snacks/monkeyburger(src)
-		to_chat(user, "You make a burger.")
-		qdel(W)
-		qdel(src)
-
-	// Bun + sausage = hotdog
-	else if(istype(W,/obj/item/reagent_containers/food/snacks/sausage))
-		new /obj/item/reagent_containers/food/snacks/hotdog(src)
-		to_chat(user, "You make a hotdog.")
-		qdel(W)
-		qdel(src)
-
-// Burger + cheese wedge = cheeseburger
-/obj/item/reagent_containers/food/snacks/monkeyburger/attackby(obj/item/reagent_containers/food/snacks/cheesewedge/W as obj, mob/user as mob)
-	if(istype(W))// && !istype(src,/obj/item/reagent_containers/food/snacks/cheesewedge))
-		new /obj/item/reagent_containers/food/snacks/cheeseburger(src)
-		to_chat(user, "You make a cheeseburger.")
-		qdel(W)
-		qdel(src)
-		return
-	else
-		..()
-
-// Human Burger + cheese wedge = cheeseburger
-/obj/item/reagent_containers/food/snacks/human/burger/attackby(obj/item/reagent_containers/food/snacks/cheesewedge/W as obj, mob/user as mob)
-	if(istype(W))
-		new /obj/item/reagent_containers/food/snacks/cheeseburger(src)
-		to_chat(user, "You make a cheeseburger.")
-		qdel(W)
-		qdel(src)
-		return
-	else
-		..()
+	item_attacking = /obj/item/reagent_containers/food/snacks/patty
+	item_attacker_delete = TRUE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/monkeyburger
+	item_attacking_message = "You make a burger."
 
 /obj/item/reagent_containers/food/snacks/pancakes
 	name = "pancakes"
@@ -1884,12 +1879,11 @@
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 3)
 	matter = list(MATERIAL_BIOMATTER = 3)
-
-/obj/item/reagent_containers/food/snacks/rawcutlet/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/material/kitchen/rollingpin))
-		new /obj/item/reagent_containers/food/snacks/patty_raw(src)
-		to_chat(user, "You pound the meat into a patty.") // You can finally pound your own meat.
-		qdel(src)
+	item_attacking = /obj/item/material/kitchen/rollingpin
+	item_attacker_delete = FALSE
+	delete_self = TRUE
+	item_given = /obj/item/reagent_containers/food/snacks/patty_raw
+	item_attacking_message = "You pound the meat into a patty."
 
 /obj/item/reagent_containers/food/snacks/rawbacon
 	name = "raw bacon strip"
@@ -1964,16 +1958,6 @@
 	nutriment_desc = list("bread" = 3)
 	nutriment_amt = 3
 	matter = list(MATERIAL_BIOMATTER = 5)
-
-// potato + knife = raw sticks
-/obj/item/reagent_containers/food/snacks/grown/potato/attackby(obj/item/I, mob/user)
-	if(QUALITY_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
-			new /obj/item/reagent_containers/food/snacks/rawsticks(src)
-			to_chat(user, "You cut the potato.")
-			qdel(src)
-	else
-		..()
 
 /obj/item/reagent_containers/food/snacks/rawsticks
 	name = "raw potato sticks"
