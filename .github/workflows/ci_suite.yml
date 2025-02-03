@@ -15,14 +15,14 @@ jobs:
       group: run_linters-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore SpacemanDMM cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
       - name: Restore Yarn cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: tgui/.yarn/cache
           key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
@@ -62,9 +62,9 @@ jobs:
       group: compile_all_maps-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore BYOND cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
@@ -90,9 +90,9 @@ jobs:
       group: run_all_tests-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore BYOND cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
@@ -118,7 +118,7 @@ jobs:
           bash tools/ci/run_server.sh ${{ matrix.map }}
       - name: Upload screenshot tests
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test_artifacts_${{ matrix.map }}
           path: data/screenshots_new/
@@ -130,10 +130,12 @@ jobs:
     name: Compare Screenshot Tests
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - name: Setup directory
+        run: mkdir -p artifacts
       # If we ever add more artifacts, this is going to break, but it'll be obvious.
       - name: Download screenshot tests
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
       - name: ls -R
@@ -154,7 +156,7 @@ jobs:
           echo ${{ github.event.pull_request.number }} > artifacts/screenshot_comparisons/pull_request_number.txt
       - name: Upload bad screenshots
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bad-screenshots
           path: artifacts/screenshot_comparisons
@@ -167,9 +169,9 @@ jobs:
       group: test_windows-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Yarn cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: tgui/.yarn/cache
           key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
@@ -186,7 +188,7 @@ jobs:
           md deploy
           bash tools/deploy.sh ./deploy
       - name: Deploy artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deploy
           path: deploy
