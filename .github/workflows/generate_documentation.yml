@@ -30,8 +30,8 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
-          BRANCH: gh-pages
-          CLEAN: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SINGLE_COMMIT: true
-          FOLDER: dmdoc
+          branch: gh-pages
+          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          single-commit: true
+          folder: dmdoc
