@@ -11,6 +11,10 @@
 	recommendations_needed = 0
 	hidden_inv_threshold  = 1
 	recommendation_threshold = 0
+
+	icon_states = "marqua_dyson"
+
+
 	//Currently only has seen Sun Branch,
 	name_pool = list("Kar Thil Kor" = "Quite a uniquic planet. Many uniquic devolments have been made here, grand. I can trade newest disks from far and wide.")
 	inventory = list(
