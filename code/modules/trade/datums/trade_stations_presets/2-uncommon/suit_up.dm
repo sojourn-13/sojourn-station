@@ -2,6 +2,7 @@
 	name_pool = list(
 		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!': \"Suits, voidsuits and more for you, traveler!\""
 	)
+	icon_states = list("serb_frigate", "ship")
 	uid = "suit_up"
 	tree_x = 0.74
 	tree_y = 0.9

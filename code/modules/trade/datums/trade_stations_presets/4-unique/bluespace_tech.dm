@@ -7,6 +7,9 @@
 	markup = UNIQUE_GOODS
 	recommendations_needed = 1
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
+	icon_states = list("ring_active", "ring")
+
+
 	inventory = list(
 		"#$285@$532#$@" = list(
 			/obj/item/circuitboard/teleporter,

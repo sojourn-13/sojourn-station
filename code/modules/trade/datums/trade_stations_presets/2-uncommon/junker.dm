@@ -2,6 +2,7 @@
 	name_pool = list(
 		"JNK 'Garbaj'" = "Junk collector. We buy what other people won't.",
 	)
+	icon_states = list("mothership", "object")
 	uid = "junker"
 	tree_x = 0.1
 	tree_y = 0.7

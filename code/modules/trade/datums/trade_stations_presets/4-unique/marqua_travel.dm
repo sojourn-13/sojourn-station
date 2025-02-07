@@ -12,7 +12,7 @@
 	hidden_inv_threshold  = 1
 	recommendation_threshold = 0
 
-	icon_states = "marqua_dyson"
+	icon_states = list("marqua_dyson", "planet")
 
 
 	//Currently only has seen Sun Branch,

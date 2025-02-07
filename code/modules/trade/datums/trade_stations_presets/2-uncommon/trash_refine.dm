@@ -3,6 +3,7 @@
 		"ITR 'Lancer'" = "IRS Trash Railgun 'Lancer': \"Hoho, you want some Trash?\""
 	)
 	uid = "trash"
+	icon_states = list("planetcracker", "object")
 	tree_x = 0.1
 	tree_y = 0.8
 	start_discovered = FALSE
