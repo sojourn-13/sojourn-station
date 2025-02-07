@@ -190,7 +190,7 @@
 	name = "psionic catalyst: Layered Shield"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	If we put are mind to it, we can think of many shapes at the same time."
+	If we put our mind to it, we can think of many shapes at the same time."
 	stored_power = /mob/living/carbon/human/proc/psionic_shield_layered
 	resonances = "Protection"
 
