@@ -56,5 +56,5 @@
 
 //Sun Branch
 /datum/design/autolathe/clothing/firefly_glasses
-	name = "Firefly"
+	name = "\"Firefly\" Glasses"
 	build_path = /obj/item/clothing/glasses/firefly_glasses
