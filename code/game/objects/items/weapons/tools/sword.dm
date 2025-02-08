@@ -548,9 +548,15 @@
 		if(!glasses)
 			M.adjust_fire_stacks(-1)
 		force += M.fire_stacks
-		M.fireloss += min(M.fire_stacks, 20)
-		if(glasses)
-			M.fireloss += min(M.fire_stacks, 5)
+		if(!ishuman(M))
+			M.fireloss += min(M.fire_stacks, 20)
+			if(glasses)
+				M.fireloss += min(M.fire_stacks, 5)
+		else
+			//We cant heal fixed damage if we are a human
+			force += min(M.fire_stacks, 20)
+			if(glasses)
+				force += min(M.fire_stacks, 5)
 
 		M.updatehealth()
 
