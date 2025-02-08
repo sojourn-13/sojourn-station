@@ -46,15 +46,15 @@
 
 /obj/item/stack/os_cash/proc/split_cash(mob/user)
 	var/count = input(user, "How many coins do you want to take? (0 to [amount])", "Take Money") as num
-	count = round(CLAMP(count, 0, max_amount))
+	count = round(CLAMP(count, 0, amount))
 
-	if(!count)
-		return
-	else if(!Adjacent(user))
-		to_chat(user, SPAN_WARNING("You need to be in arm's reach for that!"))
+	if(count==0) return 0
+	else if (!Adjacent(usr))
+		to_chat(usr, SPAN_WARNING("You need to be in arm's reach for that!"))
 		return
 
 	amount -= count
+	update_icon()
 
 	if(!amount)
 		user.drop_from_inventory(src)
