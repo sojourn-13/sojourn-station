@@ -52,6 +52,8 @@ SUBSYSTEM_DEF(ticker)
 	var/list/round_start_events
 	var/list/message_args				//	args for message
 
+	var/automatic_restart_time_lobby_sound_cooldown = 0 //used for
+
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
 	if(!syndicate_code_phrase)
 		syndicate_code_phrase = generate_code_phrase()
@@ -123,6 +125,8 @@ SUBSYSTEM_DEF(ticker)
 				if(world.time >= config.automatic_restart_time_lobby)
 					to_chat(world, "<span class='danger'>Restarting world do to no active players willing to start game. Save characters if working on them.</span>")
 					log_admin("World has rebooted do to no active players willing to play the game.")
+					if(automatic_restart_time_lobby_sound_cooldown < world.time)
+						automatic_restart_time_lobby_sound_cooldown = world.time + 10
 					SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
 					spawn(60 SECONDS)
 						if(!(current_state == GAME_STATE_PREGAME))
