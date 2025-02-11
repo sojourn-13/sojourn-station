@@ -6251,7 +6251,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Surveillance"
 	},
-/turf/simulated/floor/industrial/white_large_slates,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "etS" = (
 /obj/structure/salvageable/implant_container_os,
@@ -6503,7 +6503,6 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eDQ" = (
 /obj/structure/table/rack,
-/obj/item/grenade/frag/white_phosphorous,
 /obj/item/shield/riot,
 /obj/item/shield/riot,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -14106,12 +14105,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "jJr" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
-	dir = 1
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
 	},
-/obj/machinery/door/blast/regular/open,
-/obj/effect/floor_decal/floordetail,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "jJt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -15014,7 +15011,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "kpU" = (
 /mob/living/simple_animal/penguin/baby,
-/turf/simulated/floor/icewater,
+/turf/simulated/floor/beach/water/ice,
 /area/nadezhda/dungeon/outside/zoo)
 "kqd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16328,8 +16325,10 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "lnj" = (
-/obj/machinery/vending/cola,
-/turf/simulated/floor/industrial/white_large_slates,
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "loc" = (
 /obj/machinery/door/blast/regular/open,
@@ -18295,8 +18294,10 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "mIQ" = (
-/obj/effect/gibspawner/human,
-/turf/simulated/floor/industrial/white_large_slates,
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "mIR" = (
 /obj/effect/step_trigger/surface_to_forest_2_A,
@@ -21902,9 +21903,6 @@
 /obj/item/honey_frame/frameless,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
-"pgs" = (
-/turf/simulated/floor/icewater,
-/area/nadezhda/dungeon/outside/zoo)
 "pgA" = (
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
@@ -24454,12 +24452,6 @@
 /obj/random/mob/roaches,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"qOl" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/machinery/door/blast/regular/open,
-/obj/effect/floor_decal/floordetail,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
 "qOs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -26621,12 +26613,6 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"skP" = (
-/obj/structure/salvageable/machine_os{
-	icon_state = "computer3"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/zoo)
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass{
@@ -33433,7 +33419,7 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/head/helmet/faceshield/riot{
-	pixel_y = 8
+	pixel_y = -3
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
@@ -113020,13 +113006,13 @@ ovV
 ntz
 vPD
 pQw
-avx
+xrn
 pQw
 odr
 taM
 rAG
-avx
-avx
+xrn
+xrn
 pQw
 sOm
 vPD
@@ -113234,8 +113220,8 @@ ajc
 ajc
 avx
 avx
-avx
-avx
+xrn
+xrn
 avx
 xoi
 vPD
@@ -113643,7 +113629,7 @@ ntz
 ntz
 vPD
 avx
-avx
+xrn
 pQw
 avx
 avx
@@ -113654,8 +113640,8 @@ uvr
 uvr
 aNw
 kVE
-avx
-avx
+xrn
+xrn
 ayJ
 ovV
 ovV
@@ -113852,9 +113838,9 @@ ovV
 ovV
 vPD
 dwt
-avx
-avx
-avx
+xrn
+xrn
+xrn
 ajc
 uvr
 uvr
@@ -113863,7 +113849,7 @@ ajc
 kAK
 kVE
 kAK
-avx
+xrn
 avx
 vPD
 aXn
@@ -114054,14 +114040,14 @@ coa
 vPD
 qjE
 qjE
-pgs
+qjE
 wSJ
 vyJ
 utv
 ovV
 vPD
 lxO
-avx
+xrn
 avx
 kAK
 ajc
@@ -114072,7 +114058,7 @@ kVE
 kVE
 avx
 avx
-avx
+xrn
 avx
 vPD
 gig
@@ -114270,18 +114256,18 @@ ovV
 ovV
 vPD
 pZv
-avx
+xrn
 ekN
 kAK
 kAK
 avx
 eZQ
 uOy
-uOy
+mIQ
 uOy
 ujN
 taM
-avx
+xrn
 avx
 vPD
 sdL
@@ -114479,10 +114465,10 @@ ovV
 ovV
 vPD
 avx
+xrn
 avx
 avx
-avx
-avx
+xrn
 taM
 pTX
 bwj
@@ -114687,11 +114673,11 @@ ovV
 ovV
 ovV
 ayJ
-avx
-avx
+xrn
+xrn
 ajc
-avx
-avx
+xrn
+xrn
 wEf
 vPD
 orA
@@ -114871,8 +114857,8 @@ vPD
 vPD
 vPD
 vPD
-jJr
-jJr
+bwj
+bwj
 vPD
 vPD
 vPD
@@ -114889,18 +114875,18 @@ vPD
 coa
 vPD
 fda
-pgs
+qjE
 hVo
 vPD
 ovV
 ovV
 ovV
 vPD
-hfg
+wss
 ajc
 uvr
 ajc
-avx
+xrn
 wEf
 vPD
 nOW
@@ -115097,7 +115083,7 @@ nhc
 vPD
 coa
 vPD
-pgs
+qjE
 kpU
 qjE
 wSJ
@@ -115105,11 +115091,11 @@ ovV
 ovV
 ovV
 vPD
-avx
+xrn
 uvr
 uvr
 avx
-avx
+xrn
 mEN
 vPD
 aqy
@@ -115306,19 +115292,19 @@ nhc
 vPD
 coa
 vPD
-pgs
 qjE
-pgs
+qjE
+qjE
 wSJ
 ovV
 ovV
 ovV
 vPD
-avx
+xrn
 avx
 ajc
 kVE
-avx
+xrn
 avx
 vPD
 aqy
@@ -115523,11 +115509,11 @@ kmf
 ovV
 ovV
 vPD
+xrn
 avx
 avx
 avx
-avx
-avx
+xrn
 avx
 vPD
 nOW
@@ -115707,8 +115693,8 @@ kAK
 xOG
 vPD
 vPD
-jJr
-jJr
+bwj
+bwj
 vPD
 vPD
 vPD
@@ -115732,11 +115718,11 @@ wTK
 npB
 cCx
 vPD
-lnj
+xrn
 vRR
 vPD
 hfg
-avx
+xrn
 clT
 vPD
 kUw
@@ -116113,7 +116099,7 @@ cAr
 vPD
 vPD
 vPD
-skP
+vPD
 xpZ
 xpZ
 lDf
@@ -116129,11 +116115,11 @@ hdb
 hdb
 hdb
 aaS
-qOl
+sek
 fmf
 qEz
 nAH
-qOl
+sek
 vyy
 umG
 fUM
@@ -116149,16 +116135,16 @@ cgn
 qqk
 nVd
 vPD
-avx
-avx
+xrn
+xrn
 ivb
 vPD
 avx
-avx
+xrn
 avx
 vPD
 tCG
-tCG
+jJr
 tCG
 vPD
 gQz
@@ -116338,11 +116324,11 @@ hdb
 hdb
 hdb
 foM
-qOl
+sek
 fmf
 nOW
 nAH
-qOl
+sek
 vyy
 umG
 fUM
@@ -116358,16 +116344,16 @@ fHP
 sTN
 bgD
 vPD
-avx
-avx
+xrn
+xrn
 ivb
 vPD
 avx
-avx
+xrn
 avx
 vPD
 avx
-avx
+xrn
 avx
 vPD
 ovV
@@ -116547,11 +116533,11 @@ hdb
 nHb
 hdb
 aaS
-qOl
+sek
 fmf
 eWk
 nAH
-qOl
+sek
 vyy
 umG
 fUM
@@ -116567,16 +116553,16 @@ avx
 lkL
 avx
 ayJ
+xrn
+xrn
+xrn
+vPD
 avx
-avx
+xrn
 avx
 vPD
 avx
-avx
-avx
-vPD
-avx
-avx
+xrn
 avx
 vPD
 fwZ
@@ -116778,14 +116764,14 @@ avx
 vPD
 rEs
 rEs
-avx
+xrn
 vPD
 avx
-avx
+xrn
 avx
 vPD
 hfg
-avx
+xrn
 clT
 vPD
 lwQ
@@ -116987,14 +116973,14 @@ qqk
 vPD
 gZf
 gZf
-npt
+lnj
 vPD
 avx
-avx
+xrn
 avx
 vPD
 avx
-avx
+xrn
 avx
 vPD
 fIr
@@ -117199,12 +117185,12 @@ mLl
 vPD
 vPD
 hfg
-avx
+xrn
 clT
 vPD
 avx
-avx
-avx
+xrn
+xrn
 gRX
 ovV
 ovV
@@ -117408,11 +117394,11 @@ tVg
 uWr
 sek
 avx
-avx
+xrn
 avx
 vPD
 avx
-avx
+xrn
 avx
 vPD
 fIr
@@ -117598,7 +117584,7 @@ avx
 avx
 gGP
 avx
-mIQ
+avx
 jWY
 nHL
 xrn
@@ -117616,8 +117602,8 @@ tVg
 tVg
 aPv
 sek
-avx
-avx
+xrn
+xrn
 avx
 vPD
 jWY
