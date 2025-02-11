@@ -14104,12 +14104,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
-"jJr" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "jJt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -16324,12 +16318,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"lnj" = (
-/obj/structure/table/steel,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "loc" = (
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/industrial/danger{
@@ -18293,12 +18281,6 @@
 /obj/machinery/light_construct,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
-"mIQ" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "mIR" = (
 /obj/effect/step_trigger/surface_to_forest_2_A,
 /turf/simulated/floor/asteroid/dirt,
@@ -21903,6 +21885,12 @@
 /obj/item/honey_frame/frameless,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
+"pgs" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "pgA" = (
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
@@ -24452,6 +24440,12 @@
 /obj/random/mob/roaches,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"qOl" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "qOs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -26613,6 +26607,12 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"skP" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass{
@@ -33294,7 +33294,7 @@
 "wXh" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /mob/living/simple_animal/hostile/creature/tissue{
-	icon = "icons/mob/mobs-domestic.dmi";
+	icon = 'icons/mob/mobs-domestic.dmi';
 	icon_state = "snail";
 	pixel_y = 13;
 	name = "snail";
@@ -114263,7 +114263,7 @@ kAK
 avx
 eZQ
 uOy
-mIQ
+skP
 uOy
 ujN
 taM
@@ -116144,7 +116144,7 @@ xrn
 avx
 vPD
 tCG
-jJr
+qOl
 tCG
 vPD
 gQz
@@ -116973,7 +116973,7 @@ qqk
 vPD
 gZf
 gZf
-lnj
+pgs
 vPD
 avx
 xrn
