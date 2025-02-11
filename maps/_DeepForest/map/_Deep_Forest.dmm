@@ -25637,13 +25637,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "rBZ" = (
-/obj/effect/overlay/water{
-	color = "#6B7A0D"
-	},
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
 	},
 /obj/item/disk/data/monkey,
+/obj/effect/overlay/water{
+	color = "#6B7A0D"
+	},
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/dungeon/outside/zoo)
 "rCa" = (
@@ -30583,7 +30583,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "uYz" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/structure/girder,
+/obj/machinery/field_generator,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo)
 "uYO" = (
@@ -117005,7 +117005,7 @@ vPD
 fHn
 uzj
 iMI
-iMI
+rbW
 rBZ
 sTJ
 elE
@@ -117214,7 +117214,7 @@ kzW
 rIY
 rIY
 iMI
-iMI
+rbW
 iMI
 iMI
 rIY
