@@ -14104,6 +14104,12 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"jJr" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "jJt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -24442,7 +24448,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qOl" = (
 /obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
@@ -26607,12 +26613,6 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"skP" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass{
@@ -112405,9 +112405,9 @@ gbQ
 gbQ
 gbQ
 naj
-naj
-naj
-naj
+cuP
+cuP
+fiZ
 hRL
 tMk
 hRL
@@ -112617,7 +112617,7 @@ nqw
 nqw
 naj
 naj
-naj
+fiZ
 hRL
 gfi
 rBW
@@ -112826,7 +112826,7 @@ coa
 coa
 coa
 coa
-naj
+cuP
 hRL
 hRL
 hRL
@@ -113036,7 +113036,7 @@ coa
 coa
 coa
 naj
-naj
+fiZ
 hRL
 mTX
 jjE
@@ -113245,11 +113245,11 @@ coa
 coa
 coa
 coa
-naj
+eZo
 hRL
 hRL
-naj
-naj
+fiZ
+eZo
 naj
 naj
 naj
@@ -113460,7 +113460,7 @@ hRL
 hRL
 hRL
 qxe
-naj
+eZo
 naj
 naj
 naj
@@ -113664,13 +113664,13 @@ kAK
 coa
 coa
 nqw
-hRL
+rBW
 bRy
 hRL
 hRL
 hRL
 hRL
-naj
+cuP
 naj
 naj
 naj
@@ -113877,7 +113877,7 @@ hRL
 hRL
 hRL
 hRL
-hRL
+rBW
 hRL
 rBW
 naj
@@ -114082,7 +114082,7 @@ kVE
 ajc
 coa
 nqw
-hRL
+eZo
 hRL
 hRL
 hRL
@@ -114263,7 +114263,7 @@ kAK
 avx
 eZQ
 uOy
-skP
+qOl
 uOy
 ujN
 taM
@@ -114291,7 +114291,7 @@ ooN
 kVE
 coa
 nqw
-hRL
+naj
 afB
 hRL
 hRL
@@ -114500,8 +114500,8 @@ kVE
 kVE
 coa
 nqw
-hRL
-hRL
+cuP
+iVK
 hRL
 hRL
 hRL
@@ -114709,13 +114709,13 @@ kVE
 kAK
 coa
 nqw
-hRL
+cuP
 hRL
 hRL
 pHN
 hRL
 hRL
-hRL
+rBW
 hRL
 afB
 hRL
@@ -114918,8 +114918,8 @@ kVE
 kAK
 coa
 nqw
-hRL
-hRL
+naj
+hKF
 hRL
 sze
 hRL
@@ -115127,8 +115127,8 @@ kAK
 coa
 coa
 nqw
-hRL
-hRL
+naj
+eZo
 hRL
 hRL
 hRL
@@ -115336,8 +115336,8 @@ ajc
 uvr
 coa
 nqw
-hRL
-hRL
+naj
+naj
 hRL
 hRL
 hRL
@@ -115545,8 +115545,8 @@ kAK
 uvr
 coa
 nqw
-hRL
-hRL
+naj
+cuP
 pHN
 hRL
 hRL
@@ -115754,8 +115754,8 @@ uvr
 coa
 coa
 nqw
-hRL
-hRL
+naj
+hKF
 hRL
 hRL
 hRL
@@ -115963,9 +115963,9 @@ vPD
 vPD
 coa
 nqw
-hRL
-hRL
-hRL
+naj
+cuP
+iVK
 hRL
 hRL
 iVK
@@ -116144,7 +116144,7 @@ xrn
 avx
 vPD
 tCG
-qOl
+jJr
 tCG
 vPD
 gQz
@@ -116172,8 +116172,8 @@ uvi
 vPD
 coa
 nqw
-hRL
-hRL
+naj
+eZo
 hRL
 hRL
 hRL
@@ -116381,8 +116381,8 @@ ntz
 vPD
 coa
 nqw
-hRL
-hRL
+naj
+cuP
 hRL
 hRL
 hRL
@@ -116590,8 +116590,8 @@ fhg
 vPD
 coa
 nqw
-hRL
-hRL
+naj
+qxe
 hRL
 pHN
 hRL
@@ -116601,7 +116601,7 @@ hRL
 hRL
 hRL
 hRL
-hRL
+qxe
 qxe
 qxe
 qxe
@@ -116800,8 +116800,8 @@ vPD
 coa
 nqw
 nqw
-hRL
-hRL
+qxe
+qxe
 hRL
 hRL
 hRL
@@ -116809,7 +116809,7 @@ hRL
 boc
 boc
 hRL
-hRL
+qxe
 tml
 tml
 tml
@@ -117010,14 +117010,14 @@ coa
 nqw
 nqw
 nqw
+qxe
+qxe
 hRL
 hRL
 hRL
 hRL
 hRL
-hRL
-hRL
-hRL
+qxe
 qxe
 tml
 tml
@@ -117220,12 +117220,12 @@ coa
 nqw
 nqw
 nqw
-hRL
-hRL
+qxe
+qxe
 hRL
 rgi
 hRL
-hRL
+qxe
 qxe
 qxe
 tml
@@ -117430,10 +117430,10 @@ nqw
 nqw
 nqw
 nqw
-hRL
-hRL
-hRL
-hRL
+qxe
+qxe
+qxe
+qxe
 qxe
 qxe
 qxe
@@ -117640,8 +117640,8 @@ nqw
 nqw
 nqw
 nqw
-hRL
-hRL
+qxe
+qxe
 qxe
 qxe
 qxe
