@@ -14104,6 +14104,12 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"jJr" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "jJt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -18279,12 +18285,6 @@
 /obj/machinery/light_construct,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
-"mIQ" = (
-/obj/structure/table/steel,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "mIR" = (
 /obj/effect/step_trigger/surface_to_forest_2_A,
 /turf/simulated/floor/asteroid/dirt,
@@ -24445,9 +24445,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qOl" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "qOs" = (
@@ -26611,6 +26609,16 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"skP" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/catwalk{
+	icon_state = "catwalk12-0"
+	},
+/obj/random/mob/prepper,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo)
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass{
@@ -29508,6 +29516,10 @@
 /obj/structure/closet/onestar/tier3/medical,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"umg" = (
+/obj/random/mob/prepper,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "umz" = (
 /mob/living/carbon/superior_animal/human/excelsior/excel_vintorez,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -33775,6 +33787,12 @@
 /obj/item/toy/plushie/fox/coffee,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"xlg" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "xlo" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -116131,7 +116149,7 @@ xrn
 avx
 vPD
 tCG
-qOl
+jJr
 tCG
 vPD
 gQz
@@ -116317,7 +116335,7 @@ nOW
 nAH
 sek
 vyy
-umG
+skP
 fUM
 sek
 xrn
@@ -116960,7 +116978,7 @@ qqk
 vPD
 gZf
 gZf
-mIQ
+xlg
 vPD
 avx
 xrn
@@ -117195,7 +117213,7 @@ guN
 guN
 guN
 avx
-avx
+umg
 avx
 avx
 avx
@@ -117366,7 +117384,7 @@ qYd
 clT
 vPD
 wss
-xrn
+qOl
 vPD
 jWY
 ajc
@@ -117566,7 +117584,7 @@ avx
 avx
 avx
 avx
-avx
+umg
 avx
 avx
 gGP
