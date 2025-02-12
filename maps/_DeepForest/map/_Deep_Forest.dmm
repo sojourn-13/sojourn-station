@@ -16318,12 +16318,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"lnj" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "loc" = (
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/industrial/danger{
@@ -18138,9 +18132,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	icon_state = "pdoor0-old"
-	},
+/obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/zoo)
 "mEX" = (
@@ -21897,6 +21889,12 @@
 /obj/item/honey_frame/frameless,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
+"pgs" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "pgA" = (
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
@@ -24446,6 +24444,12 @@
 /obj/random/mob/roaches,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"qOl" = (
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/dungeon/outside/zoo)
 "qOs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -33771,12 +33775,6 @@
 /obj/item/toy/plushie/fox/coffee,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
-"xlg" = (
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/nadezhda/dungeon/outside/zoo)
 "xlo" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -114252,7 +114250,7 @@ kAK
 avx
 eZQ
 uOy
-xlg
+pgs
 uOy
 ujN
 taM
@@ -116133,7 +116131,7 @@ xrn
 avx
 vPD
 tCG
-lnj
+qOl
 tCG
 vPD
 gQz
