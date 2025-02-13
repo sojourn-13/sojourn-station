@@ -1108,11 +1108,11 @@ img.sciTechTreeIconToolTip {
 .icon-frozen { background-position: 0px -64px; }
 .icon-volcanic { background-position: -32px -64px; }
 .icon-metallic { background-position: -64px -64px; }
-.icon-dyson { background-position: -256px -0px; }
-.icon-os_fortress { background-position: -96px -64px; }
-.icon-ring { background-position: -128px -64px; }
-.icon-ring_active { background-position: -160px -64px; }
-.icon-asteroid0 { background-position: -192px -64px; }
+.icon-dyson { background-position: -96 -64px; }
+.icon-os_fortress { background-position: -128px -64px; }
+.icon-ring { background-position: -160px -64px; }
+.icon-ring_active { background-position: -192px -64px; }
+.icon-asteroid0 { background-position: -224px -64px; }
 
 .icon-asteroid1 { background-position: 0px -96px; }
 .icon-asteroid2 { background-position: -32px -96px; }
@@ -1152,3 +1152,4 @@ img.sciTechTreeIconToolTip {
 
 .icon-planetcracker { background-position: 0px -224px; }
 .icon-unkn { background-position: -32px -224px; }
+.icon-marqua_dyson { background-position: -64px -224px; }

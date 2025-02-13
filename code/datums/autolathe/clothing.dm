@@ -54,3 +54,7 @@
 	name = "Ballistic Mask"
 	build_path = /obj/item/clothing/head/helmet/faceshield/bmask
 
+//Sun Branch
+/datum/design/autolathe/clothing/firefly_glasses
+	name = "\"Firefly\" Glasses"
+	build_path = /obj/item/clothing/glasses/firefly_glasses

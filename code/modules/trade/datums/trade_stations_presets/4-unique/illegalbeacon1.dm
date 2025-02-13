@@ -13,6 +13,7 @@
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
+	icon_states = list("oberth_cruiser", "object")
 	recommendations_needed = 3
 	inventory = list(
 		"Syndicate Gear" = list(

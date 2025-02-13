@@ -10,6 +10,7 @@
 	wealth = 0
 //	secret_inv_threshold = 2000
 	recommendation_threshold = 3000
+	icon_states = list("htu_capital", "object")
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(

@@ -6,6 +6,9 @@
 		list(24, 26),
 		list(30, 30)
 	)
+
+	icon_states = list("capital", "station")
+
 	uid = "asterstradecapital"
 	tree_x = 0.58
 	tree_y = 0.9

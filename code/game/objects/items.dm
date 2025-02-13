@@ -136,6 +136,8 @@
 	var/alt_mode_lossrate = 0.5
 	var/alt_mode_sharp = FALSE
 
+	var/swing_icon_mod = "" //Used for when you make a swing attack, some items may get fancy icons for it
+
 /obj/item/Initialize()
 
 	for (var/upgrade_typepath in initialized_upgrades)

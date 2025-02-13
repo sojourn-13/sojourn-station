@@ -3,6 +3,7 @@
 		"NSTB 'Introversion'" = "Nefarious-Space Trade Beacon 'Introversion'. The trade beacon is sending an automated message. \"Uplink established. Welcome, agent.\""
 	)
 	uid = "illegal2"
+	icon_states = list("oberth_destroyer", "object")
 	tree_x = 0.62
 	tree_y = 0.3
 	start_discovered = FALSE

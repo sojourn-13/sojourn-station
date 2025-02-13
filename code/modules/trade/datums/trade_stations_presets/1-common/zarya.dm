@@ -2,6 +2,7 @@
 	name_pool = list(
 		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction goods, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
+	icon_states = list("nt_destroyer", "ship")
 	uid = "techno_basic"
 	tree_x = 0.18
 	tree_y = 0.9
