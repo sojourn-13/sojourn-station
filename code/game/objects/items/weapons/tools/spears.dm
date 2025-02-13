@@ -20,7 +20,6 @@
 	price_tag = 50
 	//attack_distance = 2
 
-
 	force = WEAPON_FORCE_PAINFUL
 	throwforce = WEAPON_FORCE_DANGEROUS
 	armor_divisor = ARMOR_PEN_MODERATE
@@ -40,7 +39,6 @@
 	alt_mode_toggle = "switches their stance to strike at targets with the shaft"
 	alt_mode_lossrate = 0.4
 	no_swing = TRUE
-
 
 /obj/item/tool/spear/steel
 	name = "steel spear"
