@@ -58,7 +58,7 @@
 
 /datum/trade_station/proc/init_src(var/turf/station_loc = null, var/force_discovered = FALSE)
 	if(name)
-		CRASH("Some retard gived trade station a name before init_src, overriding name_pool. ([type])")
+		CRASH("Somebody gived trade station a name before init_src, overriding name_pool. ([type])")
 	for(var/datum/trade_station/S in SStrade.all_stations)
 		name_pool.Remove(S.name)
 		if(!length(name_pool))

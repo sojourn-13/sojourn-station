@@ -592,7 +592,7 @@
 	If the colony ever has any brown outs or black outs the third SMES unit in the biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
 /obj/item/paper/voidwolfwarning
-	name = "paper- 'Read this you vat grown retards!'"
+	name = "paper- 'Read this you vat grown brainlets!'"
 	info = "<h1>Good, you got a few fucking functional brain cells</h1><p>For those limp dicks who fucking forgot, ever since the colony killed the Hivemind Overminds, the space fortress got blown to kingdom come, \
 	forever, along with all of Preston's formerly caged face rippers and both of the Overminds with them. <b>The teleporter itself was also blown by them</b> to prevent anyone stupid enough (that's all of ya') from ever \
 	setting foot in that accursed place ever again. All our fucking loot is gone, along with those two fleshy-metallic freaks and the queen-looking bitch, so you at least better guard up our armory tight since that's all we got left. \

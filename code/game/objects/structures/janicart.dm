@@ -143,7 +143,7 @@
 	// These may be nulls, we let byond do the typechecking in this loop
 	for(var/obj/I in list(mybag, mybucket, mymop, myspray, myreplacer, C))
 		choices[I] = I.appearance
-	
+
 	var/chosen = show_radial_menu(user, src, choices, tooltips = TRUE)
 	if(!chosen)
 		return
@@ -311,7 +311,7 @@
 
 
 
-//old style retardo-cart
+//old style cart
 /obj/structure/bed/chair/janicart
 	name = "janicart"
 	icon = 'icons/obj/vehicles.dmi'

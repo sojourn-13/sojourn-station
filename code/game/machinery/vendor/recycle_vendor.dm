@@ -8,7 +8,7 @@
 	density = TRUE
 	use_power = IDLE_POWER_USE
 
-	// Can't use subtypeof(), since we have lots of retarded materials
+	// Can't use subtypeof(), since we have lots of eccentric materials
 	var/list/materials_supported = list(
 		MATERIAL_STEEL,
 		MATERIAL_GLASS,
