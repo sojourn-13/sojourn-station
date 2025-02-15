@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(ticker)
 					log_admin("World has rebooted do to no active players willing to play the game.")
 					if(automatic_restart_time_lobby_sound_cooldown < world.time)
 						automatic_restart_time_lobby_sound_cooldown = world.time + 10
-					SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
+						SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
 					spawn(60 SECONDS)
 						if(!(current_state == GAME_STATE_PREGAME))
 							world.Reboot()
