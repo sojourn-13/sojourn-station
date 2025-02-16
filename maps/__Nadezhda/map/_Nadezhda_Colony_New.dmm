@@ -3008,7 +3008,8 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
-/obj/item/stool,
+/obj/structure/table/standard,
+/obj/item/storage/toolbox/emergency,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/sleeper)
 "aEh" = (
@@ -10643,6 +10644,11 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos/storage)
+"chK" = (
+/obj/structure/table/standard,
+/obj/item/storage/toolbox/emergency,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/sleeper)
 "chL" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 4
@@ -139904,7 +139910,7 @@ mXu
 pAy
 mxv
 gDQ
-kaF
+chK
 nRn
 wzC
 hkK

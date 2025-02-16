@@ -66,7 +66,7 @@ const rank2icon = {
   'Soteria Nurse': 'user-nurse',
   'Soteria Emergency Physician': ['user-md', 'hospital'],
   'Soteria Surgeon': 'user-md',
-  'Soteria Lifeline Technician': 'ambulance',
+  'Soteria Paramedic': 'ambulance',
   'Soteria Psychiatrist': ['user-md', 'brain'],
   'Soteria Psychologist': ['user-md', 'brain'],
   'Soteria Empath': ['user-md', 'brain'],

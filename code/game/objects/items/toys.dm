@@ -604,7 +604,7 @@
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
-	name = "lifeline technician action figure"
+	name = "paramedic action figure"
 	desc = "They'll go anywhere to save a life. Soteria 5/8."
 	icon_state = "paramedic"
 	toysay = "Your sensors are off, where are you?!"

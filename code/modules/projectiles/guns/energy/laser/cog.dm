@@ -96,7 +96,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/gun/energy/cog/sprocket/preloaded // Preloaded version for the Lifeline Tech gear
+/obj/item/gun/energy/cog/sprocket/preloaded // Preloaded version for the medic gear
 
 /obj/item/gun/energy/cog/sprocket/preloaded/New()
 	cell = new /obj/item/cell/medium/moebius/high(src)

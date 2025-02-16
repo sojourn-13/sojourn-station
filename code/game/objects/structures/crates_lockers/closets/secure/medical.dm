@@ -118,7 +118,7 @@
 	new /obj/item/clothing/glasses/hud/health(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria Lifeline Technician locker"
+	name = "soteria Paramedic locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"
@@ -146,6 +146,8 @@
 	new /obj/item/storage/hcases/med(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "Soteria Biolab Overseer's locker"

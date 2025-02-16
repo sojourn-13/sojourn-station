@@ -241,7 +241,7 @@
 	name = "first-aid book"
 	desc = "Instructional manual for Soteria personnel giving basic knowledge of CPR and how to deal with Unruly patients"
 	icon_state = "instructional_bio"
-	prob_perk = 5 //Grounded and talked about, instructional manual for Lifeline techs
+	prob_perk = 5 //Grounded and talked about, instructional manual for paramedics
 	oddity_stats = list(
 		STAT_BIO = 6,
 		STAT_ROB = 4,

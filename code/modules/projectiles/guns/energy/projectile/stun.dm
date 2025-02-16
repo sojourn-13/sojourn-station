@@ -71,7 +71,7 @@
 	icon = 'icons/obj/guns/energy/si_stunrevolver.dmi'
 	serial_type = "SI"
 
-/obj/item/gun/energy/stunrevolver/sci/preloaded //For soteria lifeline techs
+/obj/item/gun/energy/stunrevolver/sci/preloaded //For soteria paramedics
 
 /obj/item/gun/energy/stunrevolver/sci/preloaded/New()
 	cell = new /obj/item/cell/small/moebius/high(src)

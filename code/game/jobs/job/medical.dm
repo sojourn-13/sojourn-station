@@ -159,7 +159,7 @@
 	join_tag = /datum/job/medstudent
 
 /datum/job/recovery_team
-	title = "Soteria Lifeline Technician"
+	title = "Soteria Paramedic"
 	flag = RECOVERYTEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
@@ -182,25 +182,23 @@
 	)
 
 	stat_modifiers = list(
-		STAT_TGH = 20,
-		STAT_ROB = 20,
-		STAT_VIG = 10,
-		STAT_BIO = 20
+		STAT_TGH = 10,
+		STAT_ROB = 10,
+		STAT_VIG = 20,
+		STAT_BIO = 30
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "Members of the recovery team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
-	Your primary role is that of an armed thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
-	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
-	Your third duty is to aid medical doctors and act as a paramedic in fixing patients and collecting patients, this can include retrieving chemicals, doing basic triage, and going out to recover injured patients.<br>\
-	You are fully licensed to enforce the will of the overseer and to protect the soteria, its staff, and your patients with your personal weapons and armor.<br>\
-	It's worth noting that you function heavily as a nurse when not acting as muscle and treatment of patients should be priority, in particular when assisting doctors."
+	description = "Paramedics are the medical responders for calls for help, especially outside of the medical bay.<br>\
+	Your primary role is to treat critically injured patients. Locating patients in the field, stabilizing and treating life threats, protecting them from any hazards, and recovering them to the medical bay for further treatment.<br>\
+	Your secondary responsibility is to defend your patients and the medical bay from any threats such as hostile wildlife. You will be expected to carry a weapon as part of this duty.<br>\
+	It's worth noting that you function heavily as a nurse when not in the and treatment of patients should be priority, in particular when assisting doctors."
 
-	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
+	duties = "Find, treat, protect, and recover wounded patients in the field, stabilize critically injured patients.<br>\
 		Aid medical doctors in any way you can.<br>\
-		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
+		Provide care for minor injuries when necessary.<br>\
 		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
 /obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later. || Update: Whoever did this, you never fucking fixed it. I hate you. - Rebel0

@@ -558,8 +558,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 			stamped = FALSE
 
 /obj/item/gearbox/traumatizedteam
-	name = "Lifeline Technician's equipment kit"
-	desc = "A secure box containing the heavy duty protective gear of the Soteria Lifeline Technicians."
+	name = "Paramedic's equipment kit"
+	desc = "A secure box containing the heavy duty protective gear of the Soteria paramedics."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
 
@@ -583,8 +583,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 			stamped = FALSE
 
 /obj/item/gunbox/traumatizedteam
-	name = "Lifeline Technician's self-defense guncase"
-	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	name = "Paramedic's self-defense guncase"
+	desc = "A secure box containing the weapon of choice for the Soteria Paramedic."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "medbriefcase"
 
@@ -594,7 +594,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
+		// Keeping this in case any other "sensible" option for a primary weapon for paramedics arrives, just add them as an option here.
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
@@ -610,8 +610,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 			stamped = FALSE
 
 /obj/item/gunbox/traumatizedteam_sidearm
-	name = "Lifeline Technician's sidearm guncase"
-	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	name = "Paramedic's sidearm guncase"
+	desc = "A secure box containing the weapon of choice for the Soteria Paramedic."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "medbriefcase"
 

@@ -135,8 +135,8 @@
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/paramedic
-	desc = "A jumpsuit made by soteria for their Lifeline Technicians. It's made with reinforced fiber to offer more protection for recovery operations."
-	name = "Soteria Lifeline Technician jumpsuit"
+	desc = "A jumpsuit made by soteria for their paramedics. It's made with reinforced fiber to offer more protection for recovery operations."
+	name = "Soteria Paramedic jumpsuit"
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
@@ -177,7 +177,7 @@
 
 /obj/item/clothing/under/rank/paramedic/bdu
 	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Medical. It is made with reinforced fibers and sterile materials."
-	name = "Soteria Lifeline Technician bdu"
+	name = "Soteria Paramedic bdu"
 	icon_state = "bdutt"
 	item_state = "bdutt"
 

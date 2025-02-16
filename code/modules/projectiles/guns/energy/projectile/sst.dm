@@ -1,7 +1,7 @@
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
 	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated 9mm bullets. \
-	Initially designed at the request of Lifeline Technicians for a proper way to sedate rowdy armored targets from a distance."
+	Initially designed at the request of paramedics for a proper way to sedate rowdy armored targets from a distance."
 	icon = 'icons/obj/guns/energy/abnegate.dmi'
 	icon_state = "abnegate"
 	item_state = "abnegate"
@@ -98,7 +98,7 @@
 /obj/item/gun/energy/sst/systemcost
 	name = "\"SST System Cost\" light machinegun"
 	desc = "\"Soteria Surface Tension\" brand light machinegun. The true answer to a horde of either monsters or rubberneckers in the medical bay. \
-	Able to fire soporific coated bullets at a high rate of fire, the System Cost is a trigger-happy Lifeline Tech's dream come true."
+	Able to fire soporific coated bullets at a high rate of fire, the System Cost is a trigger-happy trauma medic's dream come true."
 	icon = 'icons/obj/guns/energy/system_cost.dmi'
 	icon_state = "system_cost"
 	item_state = "system_cost"
