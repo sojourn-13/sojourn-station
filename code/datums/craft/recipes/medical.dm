@@ -7,7 +7,7 @@
 	result = /obj/item/stack/medical/bruise_pack/handmade
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, "time" = 15),
+		list(CRAFT_MATERIAL, 4, MATERIAL_CLOTH, "time" = 15),
 	)
 
 /datum/craft_recipe/medical/silkointment
