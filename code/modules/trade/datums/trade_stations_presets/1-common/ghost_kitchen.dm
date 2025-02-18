@@ -14,6 +14,7 @@
 	regain_stock = FALSE
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 300
+	icon_states = list("nt_cruiser", "object")
 	stations_recommended = list("mcronalds", "botany") //Alt way to get to it
 	inventory = list(
 		"Office Supplies" = list(

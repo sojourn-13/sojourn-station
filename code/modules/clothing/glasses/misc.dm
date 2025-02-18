@@ -334,3 +334,14 @@
 	icon_state = "ballistic"
 	item_state = "ballistic"
 	prescription = 1
+
+// Sun Branch
+//Even when not using them with Sun Branch weapons are a little helpful
+/obj/item/clothing/glasses/firefly_glasses
+	name = "\"Firefly\" glasses"
+	desc = "A pair of brassy rimmed plasma infused lens that the user better able synergize with Sun Branch weapons."
+	icon_state = "firefly_glasses"
+	item_state = "firefly_glasses"
+	flash_protection = FLASH_PROTECTION_MINOR //Helps you look at fire
+	matter = list(MATERIAL_PLASMA = 2, MATERIAL_GOLD = 1, MATERIAL_IRON = 1)
+	prescription = 1

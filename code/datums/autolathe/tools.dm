@@ -277,3 +277,16 @@
 /datum/design/autolathe/tool/rpd
 	name = "rapid piping device"
 	build_path = /obj/item/rpd
+
+//Sun Branch
+/datum/design/autolathe/tool/dawn
+	name = "\"Crack of Dawn\""
+	build_path = /obj/item/tool/sword/dawn
+
+/datum/design/autolathe/tool/midday
+	name = "\"Sunup\""
+	build_path = /obj/item/tool/sword/midday
+
+/datum/design/autolathe/tool/sun_set
+	name = "\"Sunset\""
+	build_path = /obj/item/tool/sword/sun_set
