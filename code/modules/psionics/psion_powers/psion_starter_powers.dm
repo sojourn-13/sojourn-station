@@ -5,8 +5,8 @@
 
 /mob/living/carbon/human/proc/psionic_telepathy()
 	set category = "Psionic powers"
-	set name = "Telepathic projection (1)"
-	set desc = "Expend a single point of your psi essence to send a message to someone. Cruciform users are shielded from this heresy and synthetics lack the flesh for it."
+	set name = "Telepathic Projection (1)"
+	set desc = "Spend a single psi point to send a telepathic message to someone, projecting your thoughts directly into their mind. Be wary, as not all are susceptible to telepathy."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -20,7 +20,7 @@
 		return
 
 	if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-		to_chat(user, "Your psionic attunement allows you to bypass fully using your essence.")
+		to_chat(user, "Your mastery over psionics allows you to fully bypass the casting cost.")
 		psi_point_cost = 0
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility(TRUE, target))
 		var/say = sanitize(input("What do you wish to say"))

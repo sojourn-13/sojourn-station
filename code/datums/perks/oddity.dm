@@ -292,6 +292,44 @@
 	holder.stats.changeStat(STAT_VIG, -5)
 	..()
 
+//IDK how to explain this in the desc on how it all works
+/datum/perk/oddity/overbreath
+	name = "Overbreath"
+	desc = "When closer to death every step is more poised. \
+	When first gainned ablative armor is given, \
+	when getting Res Sickness, additional ablative armor is given. \
+	When blocking you gain additional ablative armor based on how much health is missing."
+	gain_text = "Mounting damage just means you should evade more."
+	lose_text = "Wounds once more make taking steps harder."
+	icon_state = "overbreath"
+
+/datum/perk/oddity/overbreath/assign(mob/living/L)
+	..()
+	holder.mob_ablative_armor += 15
+
+/datum/perk/oddity/overbreath/remove()
+	if(holder.mob_ablative_armor >= 15)
+		holder.mob_ablative_armor -= 15
+	else
+		holder.mob_ablative_armor = 0
+	..()
+
+//Both of these do different stuff
+/datum/perk/oddity/resilience
+	name = "Resilience"
+	desc = "Do to being a higher grade, your body has become more armored."
+	gain_text = "Small cuts and burns seem impossible to get."
+	lose_text = "Paper cuts are harmful once more."
+	icon_state = "resiliance"
+
+/datum/perk/oddity/tank_resilience
+	name = "Tank Resilience"
+	desc = "The slower you are the easier it is to block and brace yourself for incoming damage."
+	gain_text = "Slow and steady wins the race."
+	lose_text = "Speed is king."
+	icon_state = "tank_resiliance"
+
+
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////

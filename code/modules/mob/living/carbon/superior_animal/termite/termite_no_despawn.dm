@@ -50,6 +50,7 @@
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
 	var/dropped_ore = FALSE
+	fancy_attack_overlay = "termite_attack_flick"
 
 // Mine a tile
 /mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(turf/simulated/mineral/M)

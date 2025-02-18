@@ -23,6 +23,16 @@
 	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
 	if(.)
+
+		if(fancy_attack_overlay)
+			var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(A), fancy_colour = fancy_attack_shading)
+			RS.dir = dir
+			if(randomize_attack_effect_location)
+				RS.pixel_x = rand(-6,6)
+				RS.pixel_y = rand(-6,8)
+			flick(fancy_attack_overlay, RS)
+			QDEL_IN(RS, 2 SECONDS)
+
 		if (attack_sound && loc && prob(attack_sound_chance))
 			playsound(loc, attack_sound, attack_sound_volume, 1)
 

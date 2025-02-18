@@ -72,6 +72,9 @@
 	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/shield/riot/damaged)
 	faction = "pirate"
 
+	fancy_attack_overlay = "voidwolf_slash_flick"
+	fancy_attack_shading = "#9b111e" //Ruby
+
 /mob/living/carbon/superior_animal/human/voidwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
 
@@ -108,6 +111,9 @@
 	armor_divisor = 1
 	melee_damage_type = BURN
 
+	fancy_attack_overlay = "voidwolf_fad_flick"
+	fancy_attack_shading = "#ffc87c" //Yellow Topaz" //Ruby
+
 /*Ranged Void Wolfs*/
 /mob/living/carbon/superior_animal/human/voidwolf/ranged
 	name = "Void Wolf Trooper"
@@ -132,6 +138,9 @@
 	mags_left = 1
 	melee_sharp = FALSE
 	armor_divisor = 1
+	fancy_attack_overlay = "voidwolf_gun_melee_flick"
+	fancy_attack_shading = "#2975A7" //Sapphire
+
 
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
 	..()

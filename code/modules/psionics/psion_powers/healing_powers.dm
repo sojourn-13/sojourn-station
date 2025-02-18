@@ -3,8 +3,8 @@
 
 /mob/living/carbon/human/proc/psionic_healing()
 	set category = "Psionic powers"
-	set name = "Psychosomatic healing (1)"
-	set desc = "Expend a single point of your psi essence to heal your body, the process however is extremely painful."
+	set name = "Psychosomatic Healing (1)"
+	set desc = "Spend a single psi point to heal your body, at the cost of terrible pain."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -26,7 +26,7 @@
 /mob/living/carbon/human/proc/pain_infliction()
 	set category = "Psionic powers"
 	set name = "Pain Infliction (2)"
-	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
+	set desc = "Spend two psi points to inflict pain upon whoever you're grabbing. Your victim has to be held tight for it to work."
 	var/psi_point_cost = 2 //Two Points. Yes spamable to pain somebody but considering what people can do with grabs for free this is relatively tame. Needs aggressive grab, people with deep psi pools usually invested into that and lack robustness
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -53,7 +53,7 @@
 /mob/living/carbon/human/proc/pain_transference()
     set category = "Psionic powers"
     set name = "Pain Transference (2)"
-    set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
+    set desc = "Spend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously, this is very painful to the psion."
     var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
     var/amount
     var/absorbed = 50
@@ -63,7 +63,7 @@
     var/mob/living/carbon/human/L = get_grabbed_mob(user)
     var/obj/item/grab/G = locate() in user
     if(!G || !istype(G))
-        usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
+        usr.show_message(SPAN_DANGER("You can't transfer pain if you are not grabbing anyone."))
         return
 
     if(G.state < GRAB_AGGRESSIVE)
@@ -86,7 +86,7 @@
 /mob/living/carbon/human/proc/psychosomatictransfer()
 	set category = "Psionic powers"
 	set name = "Psychosomatic Fullness (1)"
-	set desc = "Expend a single point of your psi essence to convince your stomach it's not actually that hungry, burning fat reserves to keep going strong. Taxing on the mind and causes minor burns."
+	set desc = "Spend a single psi point to convince your stomach it's not actually that hungry, burning fat reserves to keep on going. Taxing on the mind and causes minor burns."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -104,7 +104,7 @@
 /mob/living/carbon/human/proc/chosen_control()
 	set category = "Psionic powers"
 	set name = "Chosen Control (4)"
-	set desc = "Expend four psi points to clear all effects that impede one's control. Remove stuns, paralysis, pain, agony, restrainments, and clears the users body of all chemicals and addictions."
+	set desc = "Spend four psi points to clear all effects that would impede one's control. Removes stuns, paralysis, pain, agony, restraints, and clears the users body of all chemicals and addictions."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -140,7 +140,7 @@
 /mob/living/carbon/human/proc/meditative_focus()
 	set category = "Psionic powers"
 	set name = "Meditative Focus (2)"
-	set desc = "Expend two psi points of your psi essence to focus your mind and increase your sanity."
+	set desc = "Spend two psi points of your psi essence to focus your mind and increase your sanity."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -167,9 +167,9 @@
 
 // remove all chemicals (other then blood)
 /mob/living/carbon/human/psionic_tumor/proc/purify()
-	set category = "Psionic Purify"
-	set name = "Meditative Focus (1)"
-	set desc = "Expend a psi points of your psi essence clear out any chemical in your body, helpful or not."
+	set category = "Psionic powers"
+	set name = "Psionic Purify (1)"
+	set desc = "Spend a single psi point to clear out any chemicals in your body, helpful or not."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -190,7 +190,7 @@
 /mob/living/carbon/human/psionic_tumor/proc/temp_regulate()
 	set category = "Psionic powers"
 	set name = "Psionic Temperature Regulate (4)"
-	set desc = "Expend four psi points to eather heat or cool your body."
+	set desc = "Spend four psi points to set your body temperature into comfortable levels."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -201,5 +201,5 @@
 		playsound(user.loc,'sound/effects/telesci_ping.ogg', 25, 1)
 		user.visible_message(
 			"[user] curls into a ball then springs upwards.",
-			"You convence your body its not to cold, not to hot."
+			"You convince your body that the temperature's just fine. Not too hot, not too cold..."
 			)

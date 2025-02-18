@@ -31,7 +31,7 @@
 
 	var/auto_complete_enabled = FALSE //If the step can be completed without any further input.
 
-
+	var/add_price = 0
 
 /datum/cooking_with_jane/recipe_step/New(var/datum/cooking_with_jane/recipe/our_recipe)
 	parent_recipe = our_recipe

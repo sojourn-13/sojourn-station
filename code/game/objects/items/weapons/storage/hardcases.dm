@@ -184,7 +184,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/ih/wo/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/voucher/marshal/wosecondary(src) // They no longer spawn with an Amnesty, moved it to this selection of secondaries.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
@@ -195,7 +195,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/ih/spec_officer/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -206,7 +206,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
@@ -217,7 +217,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
@@ -234,7 +234,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/blackmarket/co/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/voucher/blackshield/COsecondary(src) // They don't spawn with a Lamia anymore, but come with their own secondary voucher.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
@@ -246,7 +246,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/blackmarket/serg/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -257,7 +257,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/blackmarket/medspec/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -267,7 +267,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/blackmarket/trooper/populate_contents()
-	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)

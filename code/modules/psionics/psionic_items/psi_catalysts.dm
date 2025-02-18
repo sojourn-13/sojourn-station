@@ -24,7 +24,7 @@
 
 /obj/item/device/psionic_catalyst/dull
 	name = "dull psionic catalyst"
-	desc = "Psionic catalysts, other worldly items not quite understood. This one for some reason has no echo or glow unlike most others."
+	desc = "Psionic catalysts, other worldly items not quite understood. This one for some reason has no echo or glow, unlike most others."
 	icon_state = "psi_catalyst_dull"
 	item_state = "psi_catalyst"
 	origin_tech = list(TECH_BIO = 2, TECH_MATERIAL = 1, TECH_PLASMA = 1)
@@ -174,7 +174,7 @@
 	name = "psionic catalyst: Void robe"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	Can we really afford to not be in are shell?"
+	Can we really afford to leave the comfort of our own shell?"
 	stored_power = /mob/living/carbon/human/proc/Light_psi_armor
 	resonances = "Protection"
 
@@ -190,7 +190,7 @@
 	name = "psionic catalyst: Layered Shield"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	If we put are mind to it, we can think of many shapes at the same time."
+	If we put our mind to it, we can think of many shapes at the same time."
 	stored_power = /mob/living/carbon/human/proc/psionic_shield_layered
 	resonances = "Protection"
 
@@ -198,7 +198,7 @@
 	name = "psionic catalyst: Discombobulate"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	Any pile of junk can be a good distraction heheh."
+	Any pile of junk can be a good distraction... heheh."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_exploid
 	resonances = "Warm"
 
@@ -206,7 +206,7 @@
 	name = "psionic catalyst: Reorganize"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	Sometimes you need a to store your treaser for easier hoarding."
+	Sometimes you need to compress your mind to fit more treasure inside. Just like trash."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress
 	resonances = "Suppression"
 
@@ -214,7 +214,7 @@
 	name = "psionic catalyst: Scrap Together"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	One persons trash is anothers treaser, lets dig for some!"
+	One man's trash is another man's obsession!"
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile
 	resonances = "Seeking"
 
@@ -222,7 +222,7 @@
 	name = "psionic catalyst: Psionic Suture"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body doesn't bleed..."
+	If it bleeds, it can die. Be better than it."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
 	resonances = "Healing"
 
@@ -230,7 +230,7 @@
 	name = "psionic catalyst: Psionic Purify"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body doesn't have junk in it's systems..."
+	A healthy body is a healthy mind."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/purify
 	resonances = "Healing"
 
@@ -238,7 +238,7 @@
 	name = "psionic catalyst: Psionic Temperature Regulate"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	A healthy body doesn't sweat or shiver..."
+	In knowing nothing, life is most delightful."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/temp_regulate
 	resonances = "Climate"
 
@@ -293,10 +293,10 @@
 
 /obj/random/psi_catalyst/ponderous/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 20,
-				/obj/item/device/psionic_catalyst/summan_trash_pile = 10,
-				/obj/item/device/psionic_catalyst/trash_pile_compress = 10,
-				/obj/item/device/psionic_catalyst/trash_pile_exploid = 10))
+				/obj/random/psi_catalyst = 15,
+				/obj/item/device/psionic_catalyst/summan_trash_pile = 15,
+				/obj/item/device/psionic_catalyst/trash_pile_compress = 15,
+				/obj/item/device/psionic_catalyst/trash_pile_exploid = 15))
 
 /obj/random/psi_catalyst/flesh_behemoth
 	name = "random flesh behemoth psi_catalyst"
@@ -304,10 +304,10 @@
 
 /obj/random/psi_catalyst/flesh_behemoth/item_to_spawn()
 	return pickweight(list(
-				/obj/random/psi_catalyst = 20,
-				/obj/item/device/psionic_catalyst/needle_n_thread = 10,
-				/obj/item/device/psionic_catalyst/purify = 10,
-				/obj/item/device/psionic_catalyst/temp_regulate = 10))
+				/obj/random/psi_catalyst = 15,
+				/obj/item/device/psionic_catalyst/needle_n_thread = 15,
+				/obj/item/device/psionic_catalyst/purify = 15,
+				/obj/item/device/psionic_catalyst/temp_regulate = 15))
 
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz

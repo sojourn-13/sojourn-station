@@ -4,7 +4,7 @@
 /mob/living/carbon/human/proc/rust()
 	set category = "Psionic powers"
 	set name = "Rust (1)"
-	set desc = "Expend a single psi point to wither an object, making it rust away and weaken."
+	set desc = "Spend a single psi point to wither an object, making it rust away and weaken."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
@@ -19,7 +19,7 @@
 /mob/living/carbon/human/proc/decay()
 	set category = "Psionic powers"
 	set name = "Decay (2)"
-	set desc = "Expend two psi points to wither and rust every object a person you are grabbing is holding or wearing, rendering each object worse and weaker."
+	set desc = "Spend two psi points to wither and rust every object a person you are grabbing is holding or wearing, rendering their equipment weaker."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)

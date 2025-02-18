@@ -1,7 +1,7 @@
 /obj/machinery/eternal_ascension_resonances
 	name = "EGO: E.A.R. T-01-92beta S-23"// EGO as in the ego, T as in Tech, S for Sanity
-	desc = "A grand work of SI's psionic advancements. Marble pillars that only can hold psionic catalysts, converting the power of many into one."
-	description_info = "Design and prototyped by a non psionic CRO, many personal touches are engraved in runes, fractal patterns and small engraving of a name starting with a stylized T."
+	desc = "A grand work of SI's psionic advancements. Marble Pillars that can only hold psionic catalysts, converting the power of many into one."
+	description_info = "Designed and prototyped by a non-psionic CRO, many personal touches are engraved in runes, fractal patterns and small engraving of a name starting with a stylized T."
 	icon = 'icons/obj/psionic/occmachinery.dmi'
 	icon_state = "ear"
 	density = TRUE
@@ -55,7 +55,7 @@
 			if("Sure")
 				if(!active)
 					active = TRUE
-					to_chat(user, "As you press down a marbel plate the Pillars plasma bulbs start to dance inside the glass casings.")
+					to_chat(user, "As you press down on the marble plate, the plasma bulbs start to dance inside the glass casings.")
 					icon_state = "ear_active"
 					addtimer(CALLBACK(src, .proc/repice_index), wave_time)
 			else
@@ -96,7 +96,7 @@
 
 /obj/machinery/eternal_ascension_resonances/proc/add_cube(obj/item/device/psionic_catalyst/PC, mob/user)
 	if(anti_cheat)
-		to_chat(user, "Your already thinking of the Pillar to add a catalyst!")
+		to_chat(user, "You're already thinking of the Pillar to insert a catalyst to!")
 		return
 
 	if(!PC.resonances)
@@ -105,34 +105,34 @@
 
 	anti_cheat = TRUE
 
-	var/choice = input(user, "What slot do you add the [PC] in?") as null|anything in list("Pillar One","Pillar Two","Pillar Three","Pillar Four")
+	var/choice = input(user, "What slot do you insert the [PC] in?") as null|anything in list("Pillar One","Pillar Two","Pillar Three","Pillar Four")
 
 	switch(choice)
 
 		if("Pillar One")
 			if(!slot_one)
-				to_chat(user, "You add [PC] into the First Pillar.")
+				to_chat(user, "You insert [PC]'s resonance into the First Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], First Pillar.")
+				to_chat(user, "You carefully override the First Pillar's resonance with the one from the [PC].")
 			slot_one = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
 		if("Pillar Two")
 			if(!slot_two)
-				to_chat(user, "You add [PC]'resonance into the Second Pillar.")
+				to_chat(user, "You insert [PC]'s resonance into the Second Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Second Pillar.")
+				to_chat(user, "You carefully override the Second Pillar's resonance with the one from the [PC].")
 
 			slot_two = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 			return
-		if("Pillar Tree")
+		if("Pillar Three")
 			if(!slot_three)
-				to_chat(user, "You add [PC]'resonance into the Third Pillar.")
+				to_chat(user, "You insert [PC]'s resonance into the Third Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Third Pillar.")
+				to_chat(user, "You carefully override the Third Pillar's resonance with the one from the [PC].")
 
 			slot_three = PC.resonances
 			PC.resonances = null
@@ -140,16 +140,16 @@
 			return
 		if("Pillar Four")
 			if(!slot_four)
-				to_chat(user, "You add [PC]'resonance into the Forth Pillar.")
+				to_chat(user, "You insert [PC]'s resonance into the Fourth Pillar.")
 			else
-				to_chat(user, "You carefully take out the override the resonance in [PC], Forth Pillar.")
+				to_chat(user, "You carefully override the Fourth Pillar's resonance with the one from the [PC].")
 
 			slot_four = PC.resonances
 			PC.resonances = null
 			anti_cheat = FALSE
 
 		else
-			to_chat(user, "You add [PC]'resonance into the none of the Pillars.")
+			to_chat(user, "You add [PC]'s resonance into the none of the Pillars.")
 			anti_cheat = FALSE
 			return
 
@@ -292,7 +292,7 @@
 
 /obj/structure/sign/ear
 	name = "EGO: E.A.R Music Sheet"
-	desc = "Contains helpful device on E.A.R recpies. Unless you're reading this placeholder text, at least."
+	desc = "Contains helpful advice on E.A.R recpies. Unless you're reading this placeholder text, at least."
 	icon = 'icons/obj/genetics/genetic_poster.dmi'
 	icon_state = "ear_poster"
 
@@ -312,4 +312,4 @@
 
 		desc = "Score Sheet of the Shift: [blurb]"
 	else
-		desc = "A helpful poster containing a resonance recipie already found in the SI Psionics Lab: Todays shift has no selected Score Sheet."
+		desc = "A helpful poster containing a resonance recipe already found in the SI Psionics Lab: Todays shift has no selected Score Sheet."

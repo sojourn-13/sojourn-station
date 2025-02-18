@@ -1,0 +1,56 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/salvageable/server,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"o" = (
+/obj/structure/salvageable/computer,
+/obj/item/computer_hardware/hard_drive/portable/advanced/coin,
+/turf/simulated/floor/industrial/blue_slates_long,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"B" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/obj/item/computer_hardware/hard_drive/portable,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"C" = (
+/obj/structure/salvageable/personal,
+/turf/simulated/floor/industrial/blue_slates_long,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"E" = (
+/obj/item/modular_computer/tablet/preset,
+/obj/structure/table/steel,
+/obj/structure/sign/warning/server_room/small{
+	pixel_x = 32
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/blue_slates_long,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"N" = (
+/obj/item/modular_computer/console/preset/civilian,
+/obj/item/computer_hardware/hard_drive/portable/advanced/coin,
+/turf/simulated/floor/industrial/blue_slates_long,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"V" = (
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+o
+V
+V
+"}
+(2,1,1) = {"
+C
+B
+a
+"}
+(3,1,1) = {"
+N
+E
+o
+"}
