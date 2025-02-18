@@ -2,6 +2,7 @@
 	name_pool = list(
 		"HTB 'Boris'" = "Hardsuit Trade Beacon 'Boris': \"Hello there, we are hardsuit salvagers. We will be around the system for some time and we have leftover stock. We can sell some off if you want them."
 	)
+	icon_states = list("serb_cruiser", "ship")
 	uid = "rigs"
 	tree_x = 0.74
 	tree_y = 0.7

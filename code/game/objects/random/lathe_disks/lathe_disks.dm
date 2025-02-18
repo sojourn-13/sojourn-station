@@ -29,7 +29,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/medical/advanced = 2,
 				/obj/random/lathe_disk/medical = 1,
 				/obj/random/lathe_disk/any_gun = 5,
-				/obj/random/lathe_disk/better_any_gun = 3))
+				/obj/random/lathe_disk/better_any_gun = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/sun_branch = 0.1))
 
 /obj/random/lathe_disk/advanced/low_chance
 	name = "low chance advanced lathe disk"
