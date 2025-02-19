@@ -58,6 +58,8 @@
 
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
+	fancy_attack_overlay = "spider_bite_flick"
+	fancy_attack_shading = "#CBC3E3"
 
 /mob/living/carbon/superior_animal/giant_spider/New(var/location, var/atom/parent)
 	get_light_and_color(parent)

@@ -36,6 +36,6 @@
 
 /obj/item/organ/internal/vital/lungs/long/exalt
 	name = "exalt lungs"
-	desc = "Augmented lungs for filtering out poor air, and the air of the poors.\
+	desc = "Augmented lungs for filtering out poor air, and the air of the poor.\
 	Likely worth more on the black market."
 	price_tag = 2250

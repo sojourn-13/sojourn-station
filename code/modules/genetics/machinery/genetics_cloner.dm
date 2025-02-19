@@ -205,7 +205,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		return
 
 	if(embryo)
-		addLog("Error, Please vacate the dead embryo from the chamber~!")
+		addLog("Error, Please vacate the nonviable embryo from the chamber~!")
 		return
 
 	container = find_container()
@@ -373,12 +373,12 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
 						else
-							addLog("Protein not available~, The Embryo has starved to death.")
+							addLog("Protein not available~, The Embryo has starved.")
 							stop() //The clone is dead.
 					else if(clone_ready)
 						visible_message(SPAN_DANGER("The creature inside the cloning vat begins to stir..."))
 				else
-					addLog("Protein container not found~, The Embryo has starved to death.")
+					addLog("Protein container not found~, The Embryo has starved.")
 					stop()
 			else
 				breakout()

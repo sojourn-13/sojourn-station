@@ -88,7 +88,6 @@
 				/obj/random/cloth/masks = 1,
 				/obj/random/cloth/under = 1,
 				/obj/random/cloth/head = 1,
-				/obj/random/cloth/bikehelms = 1,
 				/obj/random/cloth/gloves = 1,
 				/obj/random/cloth/glasses = 1,
 				/obj/random/cloth/shoes = 1,
@@ -136,6 +135,8 @@
 				/obj/random/gun_cheap = 1,
 				/obj/random/gun_parts/low = 1,
 				/obj/random/gun_parts/frames = 1,
+				/obj/random/soft_drink = 0.1,
+				/obj/random/drinking_glasses = 0.1,
 				//obj/item/clothing/accessory/badge/marshal = 0.1, //Antag item
 				/obj/item/stash_spawner = 12))
 

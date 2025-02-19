@@ -321,6 +321,8 @@ Food quality is calculated based on the steps taken.
 			if("qmod" in step_list)
 				if(!set_inherited_quality_modifier(step_list["qmod"]))
 					reason="qmod / inherited_quality_modifier declared on non add-item recipe step."
+			if("add_price" in step_list)
+				set_price_adders(step_list["add_price"])
 
 			if("remain_percent" in step_list)
 				if(step_list["remain_percent"] > 1 || step_list["remain_percent"] < 0)
@@ -483,6 +485,9 @@ Food quality is calculated based on the steps taken.
 		return TRUE
 	else
 		return FALSE
+
+/datum/cooking_with_jane/recipe/proc/set_price_adders(var/price_to_set)
+	last_created_step?:add_price = price_to_set
 
 //-----------------------------------------------------------------------------------
 //Setup for two options being exclusive to eachother.
@@ -727,6 +732,7 @@ Food quality is calculated based on the steps taken.
 				#endif
 				slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
 
+				new_item?:price_tag += round(pointer.tracked_price / product_count)
 				new_item?:food_quality = pointer.tracked_quality + reagent_quality
 				new_item?:cooking_description_modifier = cooking_description_modifier
 				//TODO: Consider making an item's base components show up in the reagents of the product.

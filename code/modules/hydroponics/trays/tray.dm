@@ -14,8 +14,10 @@
 	var/base_name = "tray"
 
 	// Plant maintenance vars.
-	var/waterlevel = 100       // Water (max 100)
-	var/nutrilevel = 10        // Nutrient (max 10)
+	var/waterlevel = 100       // Water
+	var/waterlevel_max = 100   // Water Cap
+	var/nutrilevel = 10        // Nutrient
+	var/nutrilevel_max = 10    // Nutrient Cap
 	var/pestlevel = 0          // Pests (max 10)
 	var/weedlevel = 0          // Weeds (max 10)
 
@@ -73,7 +75,8 @@
 		"adminordrazine" =  1,
 		"eznutrient" =      1,
 		"robustharvest" =   1,
-		"left4zed" =        1
+		"left4zed" =        1,
+		"protein" =         5
 		)
 	var/global/list/weedkiller_reagents = list(
 		"hydrazine" =      -4,
@@ -87,6 +90,10 @@
 		)
 	var/global/list/pestkiller_reagents = list(
 		"sugar" =           2,
+		"protein" =         3,
+		"toxin" =          -1,
+		"beer" =           -0.5,
+		"ethanol" =        -1,
 		"diethylamine" =   -2,
 		"adminordrazine" = -5
 		)
@@ -101,9 +108,11 @@
 		"sodawater" =       1,
 		)
 
-	// Beneficial reagents also have values for modifying yield_mod and mut_mod (in that order).
+	// Beneficial reagents also have values for modifying:
+	// health | yield_mod | mut_mod - in this order
 	var/global/list/beneficial_reagents = list(
 		"beer" =           list( -0.05, 0,   0  ),
+		"ethanol" =        list( -0.25, 0,   0  ),
 		"hydrazine" =      list( -2,    0,   0  ),
 		"phosphorus" =     list( -0.75, 0,   0  ),
 		"sodawater" =      list(  0.1,  0,   0  ),
@@ -115,6 +124,7 @@
 		"ammonia" =        list(  0.5,  0,   0  ),
 		"diethylamine" =   list(  1,    0,   0  ),
 		"nutriment" =      list(  0.5,  0.1, 0  ),
+		"carbon" =         list(  0.1,  0.01,0  ),
 		"radium" =         list( -1.5,  0,   0.2),
 		"adminordrazine" = list(  1,    1,   1  ),
 		"robustharvest" =  list(  0,    0.2, 0  ),
@@ -129,7 +139,8 @@
 		)
 
 	var/global/list/potency_reagents = list(
-		"diethylamine" =    1
+		"diethylamine" =    1,
+		"carbon" =          0.01
 	)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
@@ -269,11 +280,14 @@
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
 
+/*
 	//Fast growing crops dont get hit by the first harvest being elder
 	if(age >= 70)
 		post_moder_yield_mod -= (age * 0.005)
 	if(age >= 120 && user) //Losing yield slowly now
 		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+*/
+
 	post_moder_yield_mod = round(post_moder_yield_mod)
 	yield_mod = post_moder_yield_mod
 //	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
@@ -324,7 +338,7 @@
 
 	//Remove the seed if something is already planted.
 	if(seed) seed = null
-	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","chanterelle","plumphelmet","towercap","harebells","weeds"))]
+	seed = plant_controller.seeds[pick(list("reishi","nettles","amanita","chanterelle","plumphelmet","towercap","harebells","weeds","grass","wheat"))]
 	if(!seed) return //Weed does not exist, someone fucked up.
 
 	dead = 0
@@ -415,8 +429,8 @@
 		dead = 0
 
 	mutation_level = max(0,min(mutation_level,100))
-	nutrilevel =     max(0,min(nutrilevel,10))
-	waterlevel =     max(0,min(waterlevel,100))
+	nutrilevel =     max(0,min(nutrilevel,nutrilevel_max))
+	waterlevel =     max(0,min(waterlevel,waterlevel_max))
 	pestlevel =      max(0,min(pestlevel,10))
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
@@ -638,6 +652,24 @@
 		qdel(I)
 		check_health()
 
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_water))
+		var/obj/item/hydro_tray_plant_bag_water/htpbw = I
+		user.remove_from_mob(htpbw)
+		waterlevel_max += htpbw.max_water_give
+
+		to_chat(user, "You add [htpbw] to [src].")
+		qdel(htpbw)
+		check_health()
+
+	else if (istype(I, /obj/item/hydro_tray_plant_bag_nutrient))
+		var/obj/item/hydro_tray_plant_bag_nutrient/htpbn = I
+		user.remove_from_mob(htpbn)
+		nutrilevel_max += htpbn.max_nutrient_give
+
+		to_chat(user, "You add [htpbn] to [src].")
+		qdel(htpbn)
+		check_health()
+
 	else if(I.force && seed)
 		if(user.a_intent == I_HURT)
 			if(!dead)
@@ -682,6 +714,8 @@
 
 	if(!seed)
 		to_chat(usr, "[src] is empty.")
+		to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+		to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 		return
 
 	to_chat(usr, SPAN_NOTICE("[seed.display_name] are growing here."))
@@ -689,13 +723,13 @@
 	if(!Adjacent(usr))
 		return
 
-	to_chat(usr, "Water: [round(waterlevel,0.1)]/100")
-	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/10")
+	to_chat(usr, "Water: [round(waterlevel,0.1)]/[waterlevel_max]")
+	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/[nutrilevel_max]")
 
 	if(weedlevel >= 5)
 		to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")
 	if(pestlevel >= 5)
-		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
+		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny harmful pests</span>!")
 
 	if(dead)
 		to_chat(usr, SPAN_DANGER("The plant is dead."))

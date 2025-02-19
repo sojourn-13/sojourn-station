@@ -2,6 +2,7 @@
 	name_pool = list(
 		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!': \"Suits, voidsuits and more for you, traveler!\""
 	)
+	icon_states = list("serb_frigate", "ship")
 	uid = "suit_up"
 	tree_x = 0.74
 	tree_y = 0.9
@@ -35,7 +36,9 @@
 			/obj/item/clothing/suit/space/void/medical = custom_good_amount_range(list(-5, 3)),
 			/obj/item/clothing/suit/space/void/security = custom_good_amount_range(list(-5, 1)),
 			/obj/item/clothing/suit/space/void/SCAF = custom_good_amount_range(list(-5, 1)),
-			/obj/item/clothing/shoes/magboots = custom_good_amount_range(list(5, 5))
+			/obj/item/clothing/shoes/magboots = custom_good_amount_range(list(5, 5)),
+			/obj/item/tank/oxygen = custom_good_amount_range(list(5, 5)),
+			/obj/item/tank/emergency_oxygen/double = custom_good_amount_range(list(5, 5))
 		),
 		"RIGs" =  list(
 			/obj/item/rig/eva = custom_good_amount_range(list(1, 5)),

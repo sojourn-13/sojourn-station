@@ -46,10 +46,12 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	// Damage dealt when overheating
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
 	serial_type = "SI"
+	var/spawn_flask = FALSE
 
 /obj/item/gun/hydrogen/Initialize(mapload = TRUE)
 	..()
-	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
+	if(spawn_flask)
+		flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
 
 /obj/item/gun/hydrogen/New()
 	..()

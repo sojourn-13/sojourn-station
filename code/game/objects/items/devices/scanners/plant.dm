@@ -188,6 +188,9 @@
 		if(2)
 			dat += "<br>It is carnivorous and poses a significant threat to living things around it."
 
+	if(grown_seed.get_trait(TRAIT_COMPANION_PLANT))
+		dat += "<br>It will yields, production, and growth of other plants close to itself."
+
 	if(grown_seed.get_trait(TRAIT_PARASITE))
 		dat += "<br>It is capable of parisitizing and gaining sustenance from tray weeds."
 
@@ -231,6 +234,11 @@
 		dat += "<br>It will remove gas from the environment."
 
 	dat += "<br>Expected reagent production: [chem_exspection]x (i.e mult)."
+
+
+	if(grown_seed.companions)
+		for(var/friends in grown_seed.companions)
+			dat += "<br>This plant has benefits when growing next to [friends]."
 
 
 	return JOINTEXT(dat)

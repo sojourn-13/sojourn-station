@@ -294,6 +294,7 @@
 	var/datum/weakref/parent_ref
 
 	var/tracked_quality = 0 //The current level of quality within that recipe.
+	var/tracked_price = 0
 
 	var/list/steps_taken = list() //built over the course of following a recipe, tracks what has been done to the object. Format is unique_id:result
 
@@ -449,6 +450,9 @@
 
 	var/step_quality = active_step.calculate_quality(used_obj, tracker)
 	tracked_quality += step_quality
+
+	tracked_price += active_step.add_price
+
 	steps_taken["[id]"] = active_step.get_step_result_text(used_obj, step_quality)
 	if(!(active_step.flags & CWJ_IS_OPTIONAL))
 		current_step = active_step

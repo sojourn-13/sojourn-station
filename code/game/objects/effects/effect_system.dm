@@ -337,7 +337,7 @@ steam.start() -- spawns the effect
     name = "white phosphorous smoke"
 
 /obj/effect/effect/smoke/white_phosphorous/affect(mob/living/carbon/M)
-    M.fire_stacks += 5
+    M.adjust_fire_stacks(5)
     M.fire_act()
 
 /////////////////////////////////////////////

@@ -69,6 +69,22 @@
 			QDEL_NULL(trash_mod)
 	health = rand(10, max_health)
 	refresh_upgrades() //So we dont null upgrades.
+	if(prob(60) && cell)
+		QDEL_NULL(cell)
+	if(prob(60) && use_fuel_cost)
+		var/random = rand(0, max_fuel)
+		consume_fuel(random, forced = TRUE)
+		update_icon()
+
+/obj/item/device/scanner/make_old()
+	.=..()
+	if(prob(60))
+		QDEL_NULL(cell)
+
+/obj/item/device/t_scanner/make_old()
+	.=..()
+	if(prob(60))
+		QDEL_NULL(cell)
 
 /obj/item/gun/make_old()
 	. = ..()
@@ -257,8 +273,6 @@
 			heat_protection = rand(0, round(heat_protection * 0.5))
 		if(prob(40))
 			cold_protection = rand(0, round(cold_protection * 0.5))
-		if(prob(20))
-			contaminate()
 		if(prob(15))
 			add_blood()
 		if(prob(60)) // I mean, the thing is ew gross.

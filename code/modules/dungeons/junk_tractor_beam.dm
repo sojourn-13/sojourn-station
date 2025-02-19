@@ -17,10 +17,10 @@
 	var/asteroid_belt_status // if it has an asteroid belt
 	var/affinity // affinity of the junk field
 	var/list/affinities = list(
-		"Neutral" = 3,
-		"Greyson" = 4,
-		"Military" = 2,
-		"Void Wolf" = 4,
+		"Neutral" = 10,
+		"Greyson" = 3,
+		"Military" = 3,
+		"Void Wolf" = 3,
 		//"SpaceWrecks" = 0 caused runtimes and ci failures
 		) // available affinities
 
@@ -735,10 +735,7 @@
 		field_cancel()
 
 	if(href_list["release"])
-		// field_release()
-		playsound(loc, 'sound/machines/twobeep.ogg', 50, 1)
-		audible_message(SPAN_WARNING("The junk tractor beam console beeps: \'WARNING: Malfunction of the release system. \
-		                              The nearest maintenance vessel has been noticed. Estimated time until arrival: 2 years.\'"))
+		field_release()
 
 	if(href_list["pick"])
 		var/list/possible_fields = get_possible_fields()

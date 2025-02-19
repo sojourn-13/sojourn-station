@@ -1,0 +1,193 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"b" = (
+/obj/machinery/camera/network/colony_underground{
+	dir = 1
+	},
+/obj/structure/table/rack/shelf,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"c" = (
+/obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box/red,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"i" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"j" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"l" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"o" = (
+/obj/item/device/lighting/toggleable/lamp,
+/obj/structure/table/marble,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"p" = (
+/obj/structure/table/rack/shelf,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"t" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"x" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/structure/bed/padded,
+/obj/random/furniture/bedsheet,
+/obj/structure/curtain/red,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"y" = (
+/obj/machinery/button/remote/airlock{
+	id = "FS1";
+	name = "Door Bolt Control";
+	pixel_y = 24;
+	specialfunctions = 4
+	},
+/obj/structure/table/marble,
+/obj/item/tool/knife,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"A" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/toy/consumer/kit/toaster,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"B" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/glass/plastic_jug,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"C" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"D" = (
+/obj/machinery/atmospherics/unary/vent_pump,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"E" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/toy/consumer/kit/toaster,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"I" = (
+/obj/machinery/microwave,
+/obj/structure/table/marble,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"L" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"O" = (
+/obj/structure/dogbed,
+/obj/item/reagent_containers/food/snacks/dogtreats,
+/obj/item/toy/plushie,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"V" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+"X" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/crew_quarters/techshop)
+
+(1,1,1) = {"
+V
+l
+l
+l
+t
+c
+"}
+(2,1,1) = {"
+y
+a
+L
+E
+L
+b
+"}
+(3,1,1) = {"
+I
+L
+L
+A
+i
+p
+"}
+(4,1,1) = {"
+O
+D
+C
+A
+L
+j
+"}
+(5,1,1) = {"
+B
+o
+X
+L
+L
+x
+"}

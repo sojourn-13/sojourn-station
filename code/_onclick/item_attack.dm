@@ -131,14 +131,14 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	playsound(loc, 'sound/effects/swoosh.ogg', 50, 1, -1)
 	switch(holdinghand)
 		if(slot_l_hand)
-			flick("left_swing", S)
+			flick("left_swing[swing_icon_mod]", S)
 			var/dmg_modifier = 1
 			dmg_modifier = tileattack(user, L, modifier = 1)
 			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)
 			tileattack(user, R, modifier = dmg_modifier)
 			QDEL_IN(S, 2 SECONDS)
 		if(slot_r_hand)
-			flick("right_swing", S)
+			flick("right_swing[swing_icon_mod]", S)
 			var/dmg_modifier = 1
 			dmg_modifier = tileattack(user, R, modifier = 1)
 			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)

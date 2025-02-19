@@ -53,7 +53,9 @@
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/wall_hugger = custom_good_name("plant gene disk: wall growth"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/non_wall_hugger = custom_good_name("plant gene disk: no wall growth"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/repeat_harvest = custom_good_name("plant gene disk: repeatable harvest"),
-			/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/single_harvest = custom_good_name("plant gene disk: single harvest")
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/single_harvest = custom_good_name("plant gene disk: single harvest"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/companion = custom_good_name("plant gene disk: companion plant"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/structure/loner = custom_good_name("plant gene disk: loner plant")
 		),
 		"Output" = list(
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/output/power_producer = custom_good_name("plant gene disk: battery"),

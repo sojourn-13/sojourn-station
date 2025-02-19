@@ -186,6 +186,7 @@
 		/datum/design/autolathe/cell/small/excelsior,
 		/datum/design/autolathe/device/excelsiormine,				//security
 		/datum/design/autolathe/sec/beartrap,
+		/datum/design/autolathe/sec/handcuffs_adv,
 		/datum/design/autolathe/prosthesis/excelsior/l_arm,         //prostheses
 		/datum/design/autolathe/prosthesis/excelsior/r_arm,
 		/datum/design/autolathe/prosthesis/excelsior/l_leg,
@@ -246,6 +247,7 @@
 		/datum/design/autolathe/ammo/maxim, 						//maxim
 		/datum/design/autolathe/sec/silencer,						//misc
 		/datum/design/autolathe/sec/excelsior_shield,
+		/datum/design/autolathe/sec/handcuffs_adv,
 		/datum/design/autolathe/tool/excelsior_hammer,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/container/ammocan_excel

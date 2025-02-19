@@ -1,0 +1,61 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/watertank/derelict,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"m" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/marble,
+/obj/item/storage/bag/produce,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"n" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/spider_trap_burrowing/low_chance,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"u" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"N" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"T" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"U" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"V" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/hydroponics,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+m
+U
+n
+"}
+(2,1,1) = {"
+a
+T
+u
+"}
+(3,1,1) = {"
+V
+N
+V
+"}

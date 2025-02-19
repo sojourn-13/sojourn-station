@@ -66,10 +66,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 				continue
 			else if(L in friends)
 				continue
-			else if(L.target_dummy) //So we target these over normal lists
+			if(L.target_dummy) //So we target these over normal lists
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK
 					T = L
+					break
 			else
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK

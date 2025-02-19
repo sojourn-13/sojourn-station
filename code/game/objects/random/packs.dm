@@ -25,7 +25,8 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/cloth/shoes = 6,
 					/obj/random/cloth/backpack = 4,
 					/obj/random/cloth/belt = 4,
-					/obj/random/cloth/holster = 4
+					/obj/random/cloth/holster = 4,
+					/obj/random/cloth/bells = 0.1 //Rare do to being useless
 				))
 
 /obj/random/pack/cloth/low_chance
@@ -210,7 +211,6 @@ They generally give more random result and can provide more divercity in spawn.
 	name = "random deepmaint machine"
 	icon_state = "machine-orange"
 
-
 /obj/random/pack/deep_machine/item_to_spawn()
 	return pickweight(list(
 					/obj/random/structures = 28, //That one have MUCH MORE important objects for maints inside, that's why the number is hight
@@ -228,17 +228,20 @@ They generally give more random result and can provide more divercity in spawn.
 	icon_state = "machine-orange-low"
 	spawn_nothing_percentage = 70
 
-/obj/random/prothesis
+// prosthesis
+/obj/random/pack/prosthesis
 	name = "random prosthesis"
-	icon_state = "meds-green"
+	icon_state = "machine-orange"
 
-/obj/random/prothesis/one_star
-	name = "random one star prosthesis"
+/obj/random/pack/prosthesis/item_to_spawn()
+	return pickweight(list(
+					/obj/random/prothesis/junk_tech = 5,
+					/obj/random/prothesis/combat_prosthesis = 0.1, //Has real armor
+					/obj/random/prothesis/random_external_basic = 5
+				))
 
-/obj/random/prothesis/one_star/item_to_spawn()
-	return pick(list(
-	/obj/item/organ/external/robotic/one_star/l_arm,\
-	/obj/item/organ/external/robotic/one_star/r_arm,\
-	/obj/item/organ/external/robotic/one_star/l_leg,\
-	/obj/item/organ/external/robotic/one_star/r_leg
-	))
+/obj/random/pack/prosthesis/low_chance
+	name = "low chance prosthesis"
+	icon_state = "machine-orange-low"
+	spawn_nothing_percentage = 70
+

@@ -96,6 +96,7 @@ SUBSYSTEM_DEF(tickets)
 /datum/controller/subsystem/tickets/proc/newHelpRequest(client/C, text)
 	var/ticketNum // Holder for the ticket number
 	var/datum/ticket/T
+	var/category	//	SOJOURN: discord bot configuration: category for TGS message
 	// Get the open ticket assigned to the client and add a response. If no open tickets then make a new one
 	if((T = checkForOpenTicket(C)))
 		ticketNum = T.ticketNum
@@ -105,12 +106,20 @@ SUBSYSTEM_DEF(tickets)
 		var/url_message = makeUrlMessage(C, text, ticketNum)
 		log_admin(url_message)
 		message_admins(url_message, mod_send_message = TRUE)
+		//	SOJOURN: discord bot configuration: START
+		category = "Ticket: #[ticketNum] New message from [key_name(C)]"
+		send2adminchat(category, text)
+		//	SOJOURN: discord bot configuration: END
 	else
 		newTicket(C, text, text)
 		// Play adminhelp sound to all admins who have not disabled it in preferences
 		for(var/client/X in admins)
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 				sound_to(X, 'sound/effects/adminhelp.ogg')
+		//	SOJOURN: discord bot configuration: START
+		category = "New Ticket: #[(getTicketCounter() - 1)] from [key_name(C)]"
+		send2adminchat(category, text)
+		//	SOJOURN: discord bot configuration: END
 
 /**
  * Will add the URLs usable by staff to the message and return it
@@ -143,8 +152,8 @@ SUBSYSTEM_DEF(tickets)
 	var/datum/ticket/T = new(url_title, title, passedContent, new_ticket_num)
 	allTickets += T
 	T.client_ckey = C.ckey
-	if (C.mob.loc.name) //sanity check - some locs, such as title screen, have no name or position
-		T.locationSent = C.mob.loc.name
+	if (C.mob.loc?.name) //sanity check - some locs, such as title screen, have no name or position
+		T.locationSent = C.mob.loc?.name
 	T.mobControlled = C.mob
 
 	//Inform the user that they have opened a ticket

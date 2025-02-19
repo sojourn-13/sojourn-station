@@ -26,11 +26,14 @@
 	max_upgrades = 5
 
 	hitsound = "swing_hit"
+	wieldsound = 'sound/weapons/guns/interact/gun_wield.ogg'
 
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
+	var/wound_mult_addition = 0 //Directly adds the value to the projectiles wound scaling.
+
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
 	var/extra_damage_mult_scoped = 0 //Adds even more damage mulitplier, when scopped so snipers can sniper
@@ -108,7 +111,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
-	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/fire_sound_silenced = 'sound/weapons/guns/fire/automatic_silenced.ogg' //Firing sound used when silenced
 
 	//For bayonet icon handling
 	var/bayonet = FALSE
@@ -130,8 +133,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/darkness_view = 0
 	var/vision_flags = 0
 	var/see_invisible_gun = -1
-
-	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
 	var/folding_stock = FALSE //Can we fold are stock?
 	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
@@ -241,7 +242,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(serial_type && serial_shown)
 		to_chat(user, SPAN_WARNING("There is a serial number on this gun, it reads [serial_type]."))
 
-/obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
+/obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE,mag_sprite = "")
 	var/wield_state = null
 	if(wielded_item_state)
 		wield_state = wielded_item_state
@@ -249,8 +250,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		hands = back = onsuit = TRUE
 	if(hands)//Ok this is a bit hacky. But basically if the gun is weilded, we want to use the wielded icon state over the other one.
 		if(wield_state && wielded)//Because most of the time the "normal" icon state is held in one hand. This could be expanded to be less hacky in the future.
-			item_state_slots[slot_l_hand_str] = "lefthand"  + wield_state
-			item_state_slots[slot_r_hand_str] = "righthand" + wield_state
+			item_state_slots[slot_l_hand_str] = "lefthand"  + wield_state +mag_sprite
+			item_state_slots[slot_r_hand_str] = "righthand" + wield_state +mag_sprite
 		else
 			item_state_slots[slot_l_hand_str] = "lefthand"  + state
 			item_state_slots[slot_r_hand_str] = "righthand" + state
@@ -262,6 +263,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 
 /obj/item/gun/update_icon()
+	cut_overlays()
+
 	if(wielded_item_state)
 		if(icon_contained)//If it has it own icon file then we want to pull from that.
 			if(wielded)
@@ -554,6 +557,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(extra_proj_wallbangmult)
 			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
+
+		if(wound_mult_addition)
+			projectile.wound_mult_adder(wound_mult_addition)
 
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
@@ -1178,6 +1184,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		weapon_stats += list(list("name" = "Projectile Damage Multiplier", "type" = "AnimatedNumber", "value" = damage_multiplier, "unit" = "x"))
 	if(pierce_multiplier != 0)
 		weapon_stats += list(list("name" = "Projectile Wall Penetration", "type" = "AnimatedNumber", "value" = pierce_multiplier, "unit" = " walls"))
+	if(wound_mult_addition != 0)
+		weapon_stats += list(list("name" = "Projectile Post-Armor Damage Mult Addition", "type" = "AnimatedNumber", "value" = wound_mult_addition, "unit" = "+"))
 	if(penetration_multiplier != 1)
 		weapon_stats += list(list("name" = "Projectile AP Multiplier", "type" = "AnimatedNumber", "value" = penetration_multiplier, "unit" = "x"))
 	if(proj_agony_multiplier != 1)
@@ -1292,7 +1300,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
 	data += list(list("name" = "Armor Divisor", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
 	data += list(list("name" = "Overall Pain", "type" = "String", "value" = (P.get_pain_damage()) * proj_agony_multiplier))
-	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
+	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult + wound_mult_addition))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
 
 	return data
