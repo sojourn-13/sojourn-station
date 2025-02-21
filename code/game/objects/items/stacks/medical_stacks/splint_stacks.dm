@@ -19,6 +19,7 @@
 	icon_state = "improsplint"
 	amount = 1
 	max_amount = 1
+	matter = list(MATERIAL_WOOD = 2)
 
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
