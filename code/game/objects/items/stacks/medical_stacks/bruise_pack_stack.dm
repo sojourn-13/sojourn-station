@@ -191,6 +191,7 @@
 	desc = "Parts of cloth that can be wrapped around bloody stumps."
 	icon_state = "makeshiftbandaid" //Ezoken#5894 made the sprites
 	fancy_icon = TRUE
+	matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/stack/medical/bruise_pack/soteria
 	name = "Soteria medical gauze"
