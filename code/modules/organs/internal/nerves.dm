@@ -4,7 +4,7 @@
 	desc = "Looking at this makes you feel nervous."
 	organ_efficiency = list(OP_NERVE = 100)
 	price_tag = 100
-	max_damage = IORGAN_TINY_HEALTH
+	max_damage = IORGAN_SMALL_HEALTH
 	min_bruised_damage = IORGAN_TINY_BRUISE
 	min_broken_damage = IORGAN_TINY_BREAK
 	specific_organ_size = 1
