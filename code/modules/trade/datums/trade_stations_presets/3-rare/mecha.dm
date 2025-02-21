@@ -86,10 +86,10 @@
 	)
 
 /obj/mecha/working/hoverpod/cargo_imported
-	price_tag = 3000
+	price_tag = 6000
 
 /obj/mecha/working/ripley/cargo_imported
-	price_tag = 5500
+	price_tag = 10000
 
 /obj/mecha/working/ivan/cargo_imported
-	price_tag = 4000
+	price_tag = 7500
