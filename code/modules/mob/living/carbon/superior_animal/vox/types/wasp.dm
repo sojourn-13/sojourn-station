@@ -1,5 +1,5 @@
 /mob/living/carbon/superior_animal/vox/wasp
-	name = "Jungle wasp"
+	name = "Amethyn Wasp"
 	desc = " A mostly normal wasp save for its extensive growth due to alteration by the anomalous planet itself. Its stinger is sharp and filled with painful toxins."
 	icon_state = "masterbee"
 	icon = 'icons/mob/mobs-voxy.dmi'
