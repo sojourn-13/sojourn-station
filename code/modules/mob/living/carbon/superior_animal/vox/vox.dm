@@ -1,5 +1,6 @@
+//Bronze Bird - Bronze Bird
 /mob/living/carbon/superior_animal/vox
-	name = "Matasa sojoji"
+	name = "Bronzosko Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects."
 	icon_state = "vox_marsmud"
 	icon = 'icons/mob/mobs-voxy.dmi'

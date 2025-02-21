@@ -286,6 +286,11 @@
 	else
 		to_chat(user, SPAN_WARNING("\The [src] does not have any artifact powering it."))
 
+/obj/machinery/matter_nanoforge/on_deconstruction()
+	if(power_source)
+		power_source.forceMove(get_turf(src))
+	power_source = null
+
 /obj/machinery/matter_nanoforge/proc/eat(mob/living/user, obj/item/eating)
 	if(!check_user(user))
 		return FALSE

@@ -3,11 +3,19 @@
 	related_stats = list(STAT_COG)
 
 /datum/craft_recipe/medical/bandage
-	name = "bandages"
+	name = "bandages (cloth)"
 	result = /obj/item/stack/medical/bruise_pack/handmade
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, "time" = 15),
+		list(CRAFT_MATERIAL, 4, MATERIAL_CLOTH, "time" = 15),
+	)
+
+/datum/craft_recipe/medical/bandage_silk
+	name = "bandages (silk)"
+	result = /obj/item/stack/medical/bruise_pack/handmade
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILK, "time" = 15),
 	)
 
 /datum/craft_recipe/medical/silkointment
