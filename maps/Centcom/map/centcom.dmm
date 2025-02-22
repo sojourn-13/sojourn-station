@@ -5373,7 +5373,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "oD" = (
-/mob/living/simple_animal/hostile/bioshock,
+/mob/living/simple/hostile/bioshock,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
 "oE" = (
@@ -5745,7 +5745,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
 "rq" = (
-/mob/living/carbon/superior_animal/genetics/fratellis,
+/mob/living/carbon/superior/genetics/fratellis,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
 "rr" = (

@@ -50,8 +50,8 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		var/mob/living/carbon/superior_animal/S = get_grabbed_mob(user)
-		if(istype(S, /mob/living/carbon/superior_animal))
+		var/mob/living/carbon/superior/S = get_grabbed_mob(user)
+		if(istype(S, /mob/living/carbon/superior))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [S], a ripple of psionic energy blasting through the air as its forced to serve!"),
 					SPAN_DANGER("You place your hand upon [S], focusing your will and making this creature serve!")
@@ -60,8 +60,8 @@
 			S.colony_friend = TRUE
 			S.friendly_to_colony = TRUE
 			S.loseTarget()
-		var/mob/living/simple_animal/hostile/A = get_grabbed_mob(user)
-		if(istype(A, /mob/living/simple_animal/hostile))
+		var/mob/living/simple/hostile/A = get_grabbed_mob(user)
+		if(istype(A, /mob/living/simple/hostile))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [A], a ripple of psionic energy blasting through the air as its forced to serve!"),
 					SPAN_DANGER("You place your hand upon [A], focusing your will and making this creature serve!")
@@ -112,9 +112,9 @@
 			if(!M.stat && !isAI(M))
 				shake_camera(M, 3, 1)
 		playsound(user.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
-		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(user.loc)
-		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(user.loc)
-		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(user.loc)
+		new /mob/living/simple/hostile/nightmare/dream_daemon(user.loc)
+		new /mob/living/simple/hostile/nightmare/dream_daemon(user.loc)
+		new /mob/living/simple/hostile/nightmare/dream_daemon(user.loc)
 
 /mob/living/carbon/human/proc/psionic_swarm()
 	set category = "Psionic powers"
@@ -130,4 +130,4 @@
 			"You summon forth a psionic swarm around you!"
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-		new /mob/living/simple_animal/hostile/viscerator/psionic(user.loc)
+		new /mob/living/simple/hostile/viscerator/psionic(user.loc)

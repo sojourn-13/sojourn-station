@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/psi/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -17,7 +17,7 @@
 				Wrap(A)
 
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/psi/pus_maggot/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -29,7 +29,7 @@
 			L.visible_message(SPAN_DANGER(burn_attack_text))
 
 
-/mob/living/carbon/superior_animal/psi_monster/dreaming_king/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/psi/dreaming_king/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -38,7 +38,7 @@
 			shake_camera(L, 3, 1)
 
 
-/mob/living/carbon/superior_animal/psi_monster/proc/Wrap(var/mob/living/M) // This is a proc for the clicks
+/mob/living/carbon/superior/psi/proc/Wrap(var/mob/living/M) // This is a proc for the clicks
 	if (Victim == M || src == M)
 		Feedstop()
 		return
@@ -54,7 +54,7 @@
 
 	Feedon(M)
 
-/mob/living/carbon/superior_animal/psi_monster/proc/invalidFeedTarget(mob/living/carbon/human/M)
+/mob/living/carbon/superior/psi/proc/invalidFeedTarget(mob/living/carbon/human/M)
 	if (!M || !ishuman(M))
 		return "This subject is incomparable..."
 	if (!Adjacent(M))
@@ -63,7 +63,7 @@
 		return "This subject does not have an edible life energy..."
 	return 0
 
-/mob/living/carbon/superior_animal/psi_monster/proc/Feedon(mob/living/carbon/human/M)
+/mob/living/carbon/superior/psi/proc/Feedon(mob/living/carbon/human/M)
 	Victim = M
 	loc = M.loc
 	canmove = 0
@@ -115,14 +115,14 @@
 	Victim = null
 	is_leaching = FALSE
 
-/mob/living/carbon/superior_animal/psi_monster/proc/Feedstop()
+/mob/living/carbon/superior/psi/proc/Feedstop()
 	if(Victim)
 		if(Victim.client) Victim << "[src] has let go of you!"
 		Victim = null
 
 	is_leaching = FALSE
 
-/mob/living/carbon/superior_animal/psi_monster/proc/UpdateFeed(var/mob/M)
+/mob/living/carbon/superior/psi/proc/UpdateFeed(var/mob/M)
 	if(Victim)
 		if(Victim == M)
 			loc = M.loc // simple "attach to head" effect!
@@ -131,7 +131,7 @@
 //Fancy Chaos level attack upgrades
 
 //Memory: the shadow fella, when they attack teleport behind the person, regardless of whats in are way, (like walls n stuff)
-/mob/living/carbon/superior_animal/psi_monster/memory/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/memory/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(ismob(A))
@@ -145,7 +145,7 @@
 				forceMove(T)
 
 //thought and memory police! These two work together at chaos level 2 making them quite tricky
-/mob/living/carbon/superior_animal/psi_monster/thought_melter/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/thought_melter/UnarmedAttack(atom/A, proximity)
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
@@ -157,7 +157,7 @@
 						visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/memory_eater/UnarmedAttack(atom/A, proximity, repeat_attack = FALSE)
+/mob/living/carbon/superior/psi/memory_eater/UnarmedAttack(atom/A, proximity, repeat_attack = FALSE)
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
@@ -167,7 +167,7 @@
 	. = ..()
 
 //The masked horror!!!!
-/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/hovering_nightmare/UnarmedAttack(atom/A, proximity)
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
@@ -190,7 +190,7 @@
 //If we have a shield, then we deal direct damage to it, trying to kill the shield as fast as possable!
 //If we are wielding an item? Unwield it
 //If we dont have any of the above, but still hold an item, drop it (respects can drop)
-/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/cerebral_crusher/UnarmedAttack(atom/A, proximity)
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
@@ -230,7 +230,7 @@
 	. = ..()
 
 //To see full affects go to the ai.dm for psi_monsters
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/UnarmedAttack(atom/A, proximity)
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		dir = reverse_direction(H.dir) //face to face comferation (required for how we handle being attacked)

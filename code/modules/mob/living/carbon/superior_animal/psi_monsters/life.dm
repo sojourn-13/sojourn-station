@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/Life()
+/mob/living/carbon/superior/psi/Life()
 	. = ..()
 	var/turf/L = get_turf(src)
 	if(L && L.get_lumcount() < 0.8 && maxHealth > health) //So were not endlessly healing a full health mob
@@ -38,7 +38,7 @@
 			forceMove(target)							//Moves the caster
 
 
-/mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
+/mob/living/carbon/superior/psi/dreaming_king/Life()
 	. = ..()
 	//Used for teleports, we grab it here to not repeat same code
 	var/turf/simulated/floor/target
@@ -67,16 +67,16 @@
 		new /obj/effect/gibspawner/human(src.loc)
 		if(dreaming_king)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, wounded and screaming in rage as his court answers his call!</font><b>"))
-			new /mob/living/carbon/superior_animal/psi_monster/mind_gazer/viscount(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/duke(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/marshal(src.loc)
+			new /mob/living/carbon/superior/psi/mind_gazer/viscount(src.loc)
+			new /mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/duke(src.loc)
+			new /mob/living/carbon/superior/psi/cerebral_crusher/marshal(src.loc)
 		else if (hound_of_the_crown)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, wounded and screaming in rage as its pack flocks to its side!</font><b>"))
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
 		else
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, wounded and screaming in rage!</font><b>"))
 		playsound(src.loc, 'sound/hallucinations/hell_screech.ogg', 75, 1, 8, 8)
@@ -109,19 +109,19 @@
 		new /obj/effect/gibspawner/human(src.loc)
 		if(dreaming_king)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, heavily wounded and howling in agony as his court answers his call!</font><b>"))
-			new /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/jester(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror/steward(src.loc)
+			new /mob/living/carbon/superior/psi/flesh_behemoth/baron(src.loc)
+			new /mob/living/carbon/superior/psi/wasonce/crimson_jelly/jester(src.loc)
+			new /mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror/steward(src.loc)
 		else if (hound_of_the_crown)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, heavily wounded and howling in agony as its pack flocks to its side!</font><b>"))
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
-			new /mob/living/carbon/superior_animal/psi_monster/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
+			new /mob/living/carbon/superior/psi/licker/pack(src.loc)
 		else
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, wounded and screaming in rage!</font><b>"))
 		playsound(src.loc, 'sound/hallucinations/hell_screech.ogg', 75, 1, 8, 8)
@@ -130,8 +130,8 @@
 
 		second_teleport = TRUE
 
-/mob/living/carbon/superior_animal/psi_monster/handle_breath(datum/gas_mixture/breath) //we dont breath, were not even real
+/mob/living/carbon/superior/psi/handle_breath(datum/gas_mixture/breath) //we dont breath, were not even real
 	return
 
-/mob/living/carbon/superior_animal/psi_monster/handle_environment(var/datum/gas_mixture/environment) //were made up!
+/mob/living/carbon/superior/psi/handle_environment(var/datum/gas_mixture/environment) //were made up!
 	return

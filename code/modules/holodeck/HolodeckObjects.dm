@@ -373,7 +373,7 @@
 
 //Holocarp
 
-/mob/living/simple_animal/hostile/carp/holodeck
+/mob/living/simple/hostile/carp/holodeck
 	icon = 'icons/mob/AI.dmi'
 	icon_state = "holo4"
 	icon_dead = "holo4"
@@ -382,11 +382,11 @@
 	meat_amount = 0
 	meat_type = null
 
-/mob/living/simple_animal/hostile/carp/holodeck/New()
+/mob/living/simple/hostile/carp/holodeck/New()
 	..()
 	set_light(2) //hologram lighting
 
-/mob/living/simple_animal/hostile/carp/holodeck/proc/set_safety(var/safe)
+/mob/living/simple/hostile/carp/holodeck/proc/set_safety(var/safe)
 	if (safe)
 		faction = "neutral"
 		melee_damage_lower = 0
@@ -400,13 +400,13 @@
 		environment_smash = initial(environment_smash)
 		destroy_surroundings = initial(destroy_surroundings)
 
-/mob/living/simple_animal/hostile/carp/holodeck/gib()
+/mob/living/simple/hostile/carp/holodeck/gib()
 	derez() //holograms can't gib
 
-/mob/living/simple_animal/hostile/carp/holodeck/death()
+/mob/living/simple/hostile/carp/holodeck/death()
 	..()
 	derez()
 
-/mob/living/simple_animal/hostile/carp/holodeck/proc/derez()
+/mob/living/simple/hostile/carp/holodeck/proc/derez()
 	visible_message(SPAN_NOTICE("\The [src] fades away!"))
 	qdel(src)

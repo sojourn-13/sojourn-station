@@ -93,7 +93,7 @@
 "dd" = (
 /obj/item/tool/knife/butch,
 /obj/structure/kitchenspike,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "dn" = (
@@ -118,11 +118,11 @@
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "dJ" = (
-/mob/living/simple_animal/hostile/madminer/cultist,
+/mob/living/simple/hostile/madminer/cultist,
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/outpost/abandoned_fortress)
 "el" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "eq" = (
@@ -301,7 +301,7 @@
 /turf/simulated/floor/asteroid/grass/dry,
 /area/outpost/abandoned_fortress)
 "js" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "jv" = (
@@ -510,7 +510,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mS" = (
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /turf/simulated/floor/asteroid/dirt/flood/plough,
 /area/outpost/abandoned_fortress)
 "mT" = (
@@ -590,7 +590,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "pS" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "qa" = (
@@ -868,7 +868,7 @@
 "zs" = (
 /obj/item/tool/knife/butch,
 /obj/structure/kitchenspike,
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
@@ -930,7 +930,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Bl" = (
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/outpost/abandoned_fortress)
 "BC" = (
@@ -1199,7 +1199,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "IT" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /obj/plant_spawner/grass,
 /obj/plant_spawner/wheat,
 /turf/simulated/floor/asteroid/grass,
@@ -1694,7 +1694,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "XD" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /obj/plant_spawner/grass,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)

@@ -74,12 +74,12 @@
 	var/temp_meat_count = 0
 	var/temp_meat_type
 	if (isanimal(target))
-		var/mob/living/simple_animal/animal = target
+		var/mob/living/simple/animal = target
 		if(ispath(animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			temp_meat_count = animal.meat_amount
 			temp_meat_type = animal.meat_type
 	else if (issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/s_animal = target
+		var/mob/living/carbon/superior/s_animal = target
 		if(ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			temp_meat_count = s_animal.meat_amount
 			temp_meat_type = s_animal.meat_type

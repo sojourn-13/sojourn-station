@@ -1,4 +1,4 @@
-/mob/living/simple_animal/light_geist
+/mob/living/simple/light_geist
 	name = "Light Geist"
 	real_name = "Light Geist"
 	desc = "A strange floating creature that shimmers in the light."

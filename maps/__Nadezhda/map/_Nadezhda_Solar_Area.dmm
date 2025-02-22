@@ -482,7 +482,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cc" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "cd" = (
@@ -796,7 +796,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "df" = (
-/mob/living/simple_animal/snail,
+/mob/living/simple/snail,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "dg" = (
@@ -816,7 +816,7 @@
 "dj" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dk" = (
@@ -842,7 +842,7 @@
 "dp" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dq" = (
@@ -877,7 +877,7 @@
 "dx" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dy" = (

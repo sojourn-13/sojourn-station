@@ -1,5 +1,5 @@
 //Look Sir, free crabs!
-/mob/living/simple_animal/crab
+/mob/living/simple/crab
 	name = "crab"
 	desc = "A hard-shelled crustacean. Seems quite content to lounge around all the time."
 	icon_state = "crab"
@@ -23,7 +23,7 @@
 	colony_friend = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/crab/Life()
+/mob/living/simple/crab/Life()
 	..()
 	//CRAB movement
 	if(!ckey && !stat)
@@ -35,7 +35,7 @@
 	regenerate_icons()
 
 //COFFEE! SQUEEEEEEEEE!
-/mob/living/simple_animal/crab/Coffee
+/mob/living/simple/crab/Coffee
 	name = "Graves"
 	real_name = "Graves"
 	icon_state = "evilcrab"
@@ -47,7 +47,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/simple_animal/frog
+/mob/living/simple/frog
 	name = "frog"
 	desc = "Ribbit!"
 	icon_state = "tinyfrog"
@@ -66,7 +66,7 @@
 	colony_friend = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/hostile/ratking
+/mob/living/simple/hostile/ratking
 	name = "rat king"
 	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "rat_king"
@@ -83,7 +83,7 @@
 	melee_damage_lower = 15
 	meat_amount = 3
 
-/mob/living/simple_animal/frog/rare
+/mob/living/simple/frog/rare
 	name = "Tea"
 	desc = "It's quite colorful but you can't help but feel he is incredibly smug given the fact this fatass just sits in his own personal pond all day."
 	icon_state = "rare_frog"
@@ -101,7 +101,7 @@
 	friendly_to_colony = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/snail
+/mob/living/simple/snail
 	name = "snail"
 	desc = "Taking things slowly, one day at a time."
 	icon_state = "snail"

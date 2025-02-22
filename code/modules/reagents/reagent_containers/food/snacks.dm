@@ -247,7 +247,7 @@
 			return 1
 
 	else if (isanimal(mob))
-		var/mob/living/simple_animal/SA = mob
+		var/mob/living/simple/SA = mob
 		SA.scan_interval = SA.min_scan_interval//Feeding an animal will make it suddenly care about food
 
 		var/m_bitesize = bitesize * SA.bite_factor//Modified bitesize based on creature size
@@ -379,7 +379,7 @@
 	var/m_bitesize = bitesize
 
 	if (isanimal(user))
-		var/mob/living/simple_animal/SA = user
+		var/mob/living/simple/SA = user
 		m_bitesize = bitesize * SA.bite_factor//Modified bitesize based on creature size
 		amount_eaten = m_bitesize
 		if (!SA.can_eat())

@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye
+/datum/stat_modifier/mob/living/carbon/superior/deadeye
 
 	inherent_projectile_mult_increment = 1 //a little more dps, but more easily avoided
 	projectile_armor_divisor_mult_increment = 1.25
@@ -16,7 +16,7 @@
 	stattags = RANGED_STATTAG
 	zone_hit_rates_setter = list(BP_HEAD = 30, BP_CHEST = 10, BP_GROIN = 10, BP_R_ARM = 50, BP_L_ARM = 50, BP_R_LEG = 20, BP_L_LEG = 20)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed
+/datum/stat_modifier/mob/living/carbon/superior/slowaimed
 
 	delay_for_range_mult = 1.2
 	delay_for_rapid_range_mult = 1.2
@@ -30,7 +30,7 @@
 
 	stattags = RANGED_STATTAG
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger
+/datum/stat_modifier/mob/living/carbon/superior/triggerfinger
 
 	rapid_fire_shooting_amount_mult = 2 //pretty noticable damage increase
 	delay_for_rapid_range_mult = 0.5 //half the delay
@@ -47,7 +47,7 @@
 	zone_hit_rates_setter = list(BP_HEAD = 5, BP_CHEST = 80, BP_GROIN = 60, BP_R_ARM = 10, BP_L_ARM = 10, BP_R_LEG = 30, BP_L_LEG = 30)
 
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw
+/datum/stat_modifier/mob/living/carbon/superior/quickdraw
 
 	delayed_adjustment = -1 //instantly attacks if they see you by default
 
@@ -60,7 +60,7 @@
 
 
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw
+/datum/stat_modifier/mob/living/carbon/superior/slowdraw
 
 	delayed_adjustment = 1
 
@@ -70,7 +70,7 @@
 
 	stattags = RANGED_STATTAG
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/headhunter
+/datum/stat_modifier/mob/living/carbon/superior/headhunter
 	prefix = "Head Hunter"
 
 	description = "This one is trainned to aim for targets heads rather then center of mass."

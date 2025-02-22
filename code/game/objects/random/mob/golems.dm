@@ -4,10 +4,10 @@
 	alpha = 128
 
 /obj/random/mob/golem/item_to_spawn()
-	return pickweight(list(/mob/living/carbon/superior_animal/ameridian_golem = 24,
-				/mob/living/carbon/superior_animal/ameridian_golem/runtling = 32,
-				/mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter = 16,
-				/mob/living/carbon/superior_animal/ameridian_golem/behemoth = 1 //1 in 73 so should be rare...
+	return pickweight(list(/mob/living/carbon/superior/ameridian_golem = 24,
+				/mob/living/carbon/superior/ameridian_golem/runtling = 32,
+				/mob/living/carbon/superior/ameridian_golem/ameridian_shooter = 16,
+				/mob/living/carbon/superior/ameridian_golem/behemoth = 1 //1 in 73 so should be rare...
 				))
 
 /obj/random/mob/golem/low_chance

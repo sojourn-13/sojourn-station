@@ -19,14 +19,14 @@
 #define WURM_SPEED_HIGH 3
 /*
 // Normal types of wurms
-GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/carbon/superior_animal/wurm/iron,
-									/mob/living/carbon/superior_animal/wurm/silver))
+GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/carbon/superior/wurm/iron,
+									/mob/living/carbon/superior/wurm/silver))
 
 // Special types of wurms
-GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osmium,
-									/mob/living/carbon/superior_animal/wurm/diamond))
+GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior/wurm/osmium,
+									/mob/living/carbon/superior/wurm/diamond))
 */
-/mob/living/carbon/superior_animal/wurm
+/mob/living/carbon/superior/wurm
 	name = "wurm youngling"
 	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	//var/datum/wurm_controller/controller
 
 	range_telegraph = "starts to wobble at"
-/mob/living/carbon/superior_animal/wurm/New(loc, obj/machinery/mining/drill/drill) //datum/wurm_controller/parent
+/mob/living/carbon/superior/wurm/New(loc, obj/machinery/mining/drill/drill) //datum/wurm_controller/parent
 	..()
 	/*iif(parent)
 		controller = parent  // Link wurms with wurm controller
@@ -97,18 +97,18 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 				continue*/
 
 // Mine a tile
-/mob/living/carbon/superior_animal/wurm/proc/mine(turf/simulated/mineral/M)
+/mob/living/carbon/superior/wurm/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
-/mob/living/carbon/superior_animal/wurm/isValidAttackTarget(atom/O)
+/mob/living/carbon/superior/wurm/isValidAttackTarget(atom/O)
 	// wurms can actively try to attack the drill
 	//if(istype(O, /obj/machinery/mining/drill))
 	//	return TRUE
 	return ..()
 
-/mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of acidic ichor and gore that quickly melts into the ground!")
+/mob/living/carbon/superior/wurm/death(gibbed, deathmessage = "explodes in a shower of acidic ichor and gore that quickly melts into the ground!")
 
 	//if(controller) // Unlink from controller
 	//	controller.wurm -= src
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 //////////////////
 
 //Iron Wurm - ranged, low health
-/mob/living/carbon/superior_animal/wurm/iron
+/mob/living/carbon/superior/wurm/iron
 	name = "worker wurm"
 	desc = "A wurm that does odd-jobs around its colony. Jeez.. even wurms have assistants."
 	icon_state = "worm"
@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Silver Wurm - melee, slow, tanky, low damage
-/mob/living/carbon/superior_animal/wurm/silver
+/mob/living/carbon/superior/wurm/silver
 	name = "miner wurm"
 	desc = "A wurm that has been hardened by the very surface beneath your feet."
 	icon_state = "worm"
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Osmium Wurm - melee, fast, med-damage
-/mob/living/carbon/superior_animal/wurm/osmium
+/mob/living/carbon/superior/wurm/osmium
 	name = "warrior wurm"
 	desc = "A larger, scarier wurm for when trouble abrews."
 	icon_state = "worm"
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
-/mob/living/carbon/superior_animal/wurm/diamond
+/mob/living/carbon/superior/wurm/diamond
 	name = "wurm crusher"
 	desc = "A huge wurm that specializes in crushing rocks. And heads."
 	icon = 'icons/mob/64x64.dmi'
@@ -239,7 +239,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Wurm summon for genetics. Friendly to colony. Colony isn't friendly to it.
-/mob/living/carbon/superior_animal/wurm/guardian
+/mob/living/carbon/superior/wurm/guardian
 	name = "wurm guardian"
 	desc = "A huge wurm that has come to someone's aid."
 	icon = 'icons/mob/64x64.dmi'

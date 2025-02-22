@@ -616,7 +616,7 @@ obj/structure/salvageable/bliss/Initialize()
 /obj/structure/salvageable/deepmaints_cryopod/Initialize()
 	. = ..()
 	if(prob(80))
-		occupant = pick(subtypesof(/mob/living/simple_animal/hostile/hivemind))
+		occupant = pick(subtypesof(/mob/living/simple/hostile/hivemind))
 
 	if(prob(40))
 		on = TRUE

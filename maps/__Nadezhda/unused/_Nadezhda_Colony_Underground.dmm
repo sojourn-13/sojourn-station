@@ -373,13 +373,13 @@
 /area/nadezhda/command/swo/quarters)
 "aaX" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aaY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aaZ" = (
@@ -1183,7 +1183,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -3261,7 +3261,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -3532,7 +3532,7 @@
 	},
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -3899,7 +3899,7 @@
 "ait" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider,
+/mob/living/carbon/superior/spider,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aiu" = (
@@ -4374,11 +4374,11 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/robotics)
 "ajw" = (
-/mob/living/simple_animal/frog/rare,
+/mob/living/simple/frog/rare,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/hallway/side/f2section1)
 "ajx" = (
-/mob/living/simple_animal/crab/Coffee,
+/mob/living/simple/crab/Coffee,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/hallway/side/f2section1)
 "ajy" = (
@@ -4431,7 +4431,7 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/barricade,
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -4672,7 +4672,7 @@
 /obj/effect/floor_decal/industrial/arrows/white{
 	dir = 1
 	},
-/mob/living/simple_animal/lizard,
+/mob/living/simple/lizard,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
 "akj" = (
@@ -5176,7 +5176,7 @@
 "all" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "alm" = (
@@ -5267,7 +5267,7 @@
 /area/nadezhda/medical/sleeper)
 "alu" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "alv" = (
@@ -5357,7 +5357,7 @@
 /obj/structure/flora/small/trailrocka1,
 /obj/structure/flora/small/trailrocka4,
 /obj/random/mob/roaches/low_chance,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -5499,7 +5499,7 @@
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "alT" = (
@@ -7054,7 +7054,7 @@
 "apc" = (
 /obj/structure/bed/chair/sofa/brown/left,
 /obj/structure/disposalpipe/segment,
-/mob/living/simple_animal/parrot/Poly,
+/mob/living/simple/parrot/Poly,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
 "apd" = (
@@ -9171,7 +9171,7 @@
 "aso" = (
 /obj/machinery/light/small,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "asp" = (
@@ -10408,7 +10408,7 @@
 "atR" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "atS" = (
@@ -10711,7 +10711,7 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aup" = (
@@ -11489,7 +11489,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "avr" = (
@@ -11536,7 +11536,7 @@
 /obj/structure/catwalk,
 /obj/machinery/light/small,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "avu" = (
@@ -11850,7 +11850,7 @@
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "avZ" = (
@@ -11869,7 +11869,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
 /obj/structure/barricade,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -11948,7 +11948,7 @@
 "awg" = (
 /obj/item/spider_shadow_trap,
 /obj/effect/spider/spiderling/near_grown,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "awh" = (
@@ -12572,7 +12572,7 @@
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "axi" = (
@@ -12991,7 +12991,7 @@
 "ays" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/colony)
 "ayt" = (
@@ -13003,7 +13003,7 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ayu" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ayv" = (
@@ -13479,7 +13479,7 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "azP" = (
@@ -15473,7 +15473,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aFw" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aFx" = (
@@ -16593,7 +16593,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "aIP" = (
@@ -17612,7 +17612,7 @@
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -19181,7 +19181,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aQM" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aQN" = (
@@ -19849,7 +19849,7 @@
 "aSL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aSM" = (
@@ -21265,7 +21265,7 @@
 "aWJ" = (
 /obj/structure/salvageable/computer,
 /obj/random/structures,
-/mob/living/simple_animal/hostile/mimic,
+/mob/living/simple/hostile/mimic,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aWK" = (
@@ -21734,7 +21734,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aXY" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aXZ" = (
@@ -23012,7 +23012,7 @@
 /obj/structure/bed/chair/sofa/black/right{
 	dir = 8
 	},
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple/cat/fluff/Runtime,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "bbR" = (
@@ -23089,7 +23089,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple/corgi/Ian,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain)
 "bcc" = (
@@ -23714,7 +23714,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "bdD" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "bdE" = (
@@ -25443,7 +25443,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bis" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "bit" = (
@@ -27056,7 +27056,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bnm" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker,
+/mob/living/carbon/superior/spider/hunter/cloaker,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bnn" = (
@@ -30102,7 +30102,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "cwG" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "cwY" = (
@@ -32866,7 +32866,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -32962,7 +32962,7 @@
 "etN" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen,
+/mob/living/carbon/superior/spider/nurse/queen,
 /turf/simulated/floor/plating/under,
 /area/colony)
 "etY" = (
@@ -33486,7 +33486,7 @@
 /area/nadezhda/command/merchant)
 "eKz" = (
 /obj/structure/flora/small/trailrockb2,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "eKH" = (
@@ -36228,7 +36228,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gyX" = (
-/mob/living/simple_animal/corgi/fluff/Lisa,
+/mob/living/simple/corgi/fluff/Lisa,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/swo/quarters)
 "gzb" = (
@@ -37035,7 +37035,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gZY" = (
-/mob/living/simple_animal/soteria_roomba,
+/mob/living/simple/soteria_roomba,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "hav" = (
@@ -39459,7 +39459,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "iEk" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "iEu" = (
@@ -40061,7 +40061,7 @@
 /area/nadezhda/engineering/engine_room)
 "jfN" = (
 /obj/random/tool_upgrade/rare,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "jfV" = (
@@ -40580,7 +40580,7 @@
 /obj/structure/catwalk,
 /obj/random/scrap/dense_weighted,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/colony)
 "jwP" = (
@@ -42316,7 +42316,7 @@
 "kIT" = (
 /obj/structure/flora/small/trailrocka1,
 /obj/structure/flora/small/trailrocka4,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -46962,7 +46962,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "nBx" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "nBM" = (
@@ -46988,7 +46988,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "nCx" = (
-/mob/living/simple_animal/chicken{
+/mob/living/simple/chicken{
 	name = "Commander Clucky"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -51343,7 +51343,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qzj" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "qzk" = (
@@ -54955,7 +54955,7 @@
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "sLW" = (
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "sMk" = (
@@ -55480,7 +55480,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/mouse/brown/Tom,
+/mob/living/simple/mouse/brown/Tom,
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/security/prisoncells)
 "teD" = (
@@ -57312,7 +57312,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "umR" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "und" = (
@@ -58566,7 +58566,7 @@
 "vdQ" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/colony)
 "vdX" = (
@@ -60595,7 +60595,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
 "wvs" = (
-/mob/living/simple_animal/cow{
+/mob/living/simple/cow{
 	name = "Betsy"
 	},
 /turf/simulated/floor/asteroid/grass,

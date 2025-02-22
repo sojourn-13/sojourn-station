@@ -1,5 +1,5 @@
 //Silver Bird
-/mob/living/carbon/superior_animal/vox/posin_thrower
+/mob/living/carbon/superior/vox/posin_thrower
 	name = "Arginto Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one has spears coated in something..."
 	icon_state = "vox_silversynth"
@@ -18,7 +18,7 @@
 	fire_verb = "flings a makeshift spear"
 
 //Coal Bird
-/mob/living/carbon/superior_animal/vox/thrower_spear
+/mob/living/carbon/superior/vox/thrower_spear
 	name = "Kovlo Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one throws spears with deadly speed!"
 	icon_state = "vox_abyssal"
@@ -37,7 +37,7 @@
 	fire_verb = "flings a makeshift spear"
 
 //
-/mob/living/carbon/superior_animal/vox/armord
+/mob/living/carbon/superior/vox/armord
 	name = "Solarno Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one's chest looks rather tougher than the rest of them."
 	icon_state = "vox_solar"
@@ -53,7 +53,7 @@
 	armor_divisor = 1.25
 
 //Hidden Bird
-/mob/living/carbon/superior_animal/vox/hider
+/mob/living/carbon/superior/vox/hider
 	name = "Garavdo Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is harder to see as it stalks low to the ground, hiding in bushes or other shadows."
 	icon_state = "vox_ultraviolet"
@@ -69,20 +69,20 @@
 	maxHealth = 35 * VOXBIRD_HEALTH_MOD //Glass cannon
 	health = 35 * VOXBIRD_HEALTH_MOD
 
-/mob/living/carbon/superior_animal/vox/hider/UnarmedAttack()
+/mob/living/carbon/superior/vox/hider/UnarmedAttack()
 	. = ..()
 	alpha = 255
 
-/mob/living/carbon/superior_animal/vox/hider/findTarget()
+/mob/living/carbon/superior/vox/hider/findTarget()
 	. = ..()
 	alpha = 50
 
-/mob/living/carbon/superior_animal/vox/hider/death()
+/mob/living/carbon/superior/vox/hider/death()
 	. = ..()
 	alpha = 255
 
 //Feathery Bird
-/mob/living/carbon/superior_animal/vox/ashen
+/mob/living/carbon/superior/vox/ashen
 	name = "Ciriklo Pherdo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. It looks rather strong."
 	icon_state = "vox_pitchblack"
@@ -101,7 +101,7 @@
 	health = 90 * VOXBIRD_HEALTH_MOD
 	armor_divisor = 1.25
 
-/mob/living/carbon/superior_animal/vox/weak
+/mob/living/carbon/superior/vox/weak
 	name = "Slabo Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is young but still deadly."
 	icon_state = "vox_acid"
@@ -117,7 +117,7 @@
 	health = 35 * VOXBIRD_HEALTH_MOD
 
 //Rage Bird
-/mob/living/carbon/superior_animal/vox/rage
+/mob/living/carbon/superior/vox/rage
 	name = "Xoli Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. Their long arms pack a stronger than normal punch."
 	icon_state = "vox_infrared"
@@ -131,7 +131,7 @@
 	armor_divisor = 1.25
 
 //Looking Bird
-/mob/living/carbon/superior_animal/vox/scout
+/mob/living/carbon/superior/vox/scout
 	name = "Dikhindoj Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is caked with dirt and grime, with a shank in its hands and plates of crude scrap armor on its chest."
 	icon_state = "vox_brave"

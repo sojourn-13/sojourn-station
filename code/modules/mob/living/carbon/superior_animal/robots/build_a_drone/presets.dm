@@ -1,7 +1,7 @@
 // Build-a-drone presets, for when people want to spawn a specific type without manually messing with the build-a-drone creator.
 
 // Greyson/Onestar preset
-/mob/living/carbon/superior_animal/robot/custom_drone/greyson/New()
+/mob/living/carbon/superior/robot/custom_drone/greyson/New()
 	..()
 	name = "Greyson Drone"
 	faction = "greyson"

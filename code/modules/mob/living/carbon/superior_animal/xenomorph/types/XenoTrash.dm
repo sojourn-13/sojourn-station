@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/xenomorph/sentinel
+/mob/living/carbon/superior/xenomorph/sentinel
 	name = "sentinel"
 	desc = "A basic xenomorph sentinel, slightly tougher than a drone but not by much."
 	icon_state = "sentinal"
@@ -9,7 +9,7 @@
 	maxHealth = 40
 	health = 40
 
-/mob/living/carbon/superior_animal/xenomorph/hunter
+/mob/living/carbon/superior/xenomorph/hunter
 	name = "hunter"
 	desc = "A basic xenomorph hunter, slightly faster than a drone but not by much."
 	icon_state = "hunter"
@@ -20,7 +20,7 @@
 
 	turns_per_move = 18
 
-/mob/living/carbon/superior_animal/xenomorph/runner
+/mob/living/carbon/superior/xenomorph/runner
 	name = "runner"
 	desc = "A basic xenomorph runner, the weakest of all xenomorphs but quite fast."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -35,7 +35,7 @@
 	move_to_delay = 2
 	turns_per_move = 12
 
-/mob/living/carbon/superior_animal/xenomorph/runner/panther
+/mob/living/carbon/superior/xenomorph/runner/panther
 	name = "panther"
 	desc = "A basic xenomorph panther, the weakest of all xenomorphs but quite fast and with sharper claws than a runner."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -47,7 +47,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 
-/mob/living/carbon/superior_animal/xenomorph/spitter
+/mob/living/carbon/superior/xenomorph/spitter
 	name = "spitter"
 	desc = "A basic xenomorph spitter, has a habit of vomiting toxic gunk on those it manages to get within clawing distance."
 	icon_state = "spitter"

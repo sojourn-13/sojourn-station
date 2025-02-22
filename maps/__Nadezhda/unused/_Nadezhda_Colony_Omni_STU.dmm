@@ -1138,7 +1138,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
-/mob/living/simple_animal/corgi/fluff/Ian,
+/mob/living/simple/corgi/fluff/Ian,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain)
 "ajE" = (
@@ -1228,7 +1228,7 @@
 /area/nadezhda/outside/inside_colony)
 "akr" = (
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/opossum{
+/mob/living/simple/opossum{
 	desc = "The Nadezhda basketball team mascot. - Currently scavenging for rebounds";
 	name = "'Cross-em' Opossum"
 	},
@@ -1934,7 +1934,7 @@
 /obj/structure/catwalk,
 /obj/machinery/light/small,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "asS" = (
@@ -2423,7 +2423,7 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axQ" = (
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -5907,7 +5907,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "bhs" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bhA" = (
@@ -7240,7 +7240,7 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/quartermaster/miningdock)
 "bvg" = (
-/mob/living/simple_animal/crab/Coffee,
+/mob/living/simple/crab/Coffee,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/hallway/side/f2section1)
 "bvn" = (
@@ -7717,7 +7717,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/organ_lab)
 "bzT" = (
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "bzZ" = (
@@ -8143,7 +8143,7 @@
 	})
 "bFc" = (
 /obj/structure/bed/chair/sofa/black/right,
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple/cat/fluff/Runtime,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -9006,7 +9006,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bOe" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/redpanda,
+/mob/living/simple/redpanda,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/psych)
 "bOi" = (
@@ -9680,7 +9680,7 @@
 	})
 "bVv" = (
 /obj/structure/flora/ausbushes/fernybush,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/psych)
 "bVz" = (
@@ -10610,7 +10610,7 @@
 /obj/machinery/light/floor{
 	dir = 4
 	},
-/mob/living/simple_animal/lizard,
+/mob/living/simple/lizard,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/psych)
 "cfu" = (
@@ -10991,7 +10991,7 @@
 "cjp" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/psych)
 "cjv" = (
@@ -12102,7 +12102,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "cuU" = (
-/mob/living/simple_animal/corgi/E_N,
+/mob/living/simple/corgi/E_N,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
@@ -15773,7 +15773,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "dgH" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "dgJ" = (
@@ -15814,7 +15814,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "dhe" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "dhA" = (
@@ -17399,7 +17399,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/substation/section3)
 "dwh" = (
-/mob/living/simple_animal/pig{
+/mob/living/simple/pig{
 	desc = "This intelligent sow has strange, pointy ears.";
 	name = "Becka"
 	},
@@ -19680,7 +19680,7 @@
 /area/nadezhda/security/tactical)
 "dTe" = (
 /obj/structure/flora/small/busha3,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "dTt" = (
@@ -21606,7 +21606,7 @@
 	})
 "emy" = (
 /obj/structure/flora/small/trailrockb2,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "emE" = (
@@ -24120,7 +24120,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "eMC" = (
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
@@ -28000,7 +28000,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armoryshop)
 "fwC" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "fwD" = (
@@ -29646,7 +29646,7 @@
 /area/nadezhda/security/sechall)
 "fLR" = (
 /obj/structure/flora/small/busha1,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "fLY" = (
@@ -29895,7 +29895,7 @@
 /area/nadezhda/medical/sleeper)
 "fOx" = (
 /obj/random/scrap/dense_even,
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fOC" = (
@@ -29939,7 +29939,7 @@
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "fPd" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "fPf" = (
@@ -30390,7 +30390,7 @@
 /area/eris/crew_quarters/plasma_tag)
 "fTY" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "fUd" = (
@@ -30437,7 +30437,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fUv" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fUx" = (
@@ -30523,7 +30523,7 @@
 /obj/machinery/camera/network/research_outpost{
 	dir = 10
 	},
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied,
+/mob/living/carbon/superior/robot/gp/synth/allied,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "fVD" = (
@@ -30601,7 +30601,7 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "fWw" = (
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fWB" = (
@@ -31204,7 +31204,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "gcu" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gcA" = (
@@ -32170,7 +32170,7 @@
 /area/nadezhda/engineering/atmos)
 "gku" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -32976,7 +32976,7 @@
 /area/nadezhda/security/armory_blackshield)
 "grM" = (
 /obj/structure/railing,
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -35218,7 +35218,7 @@
 /obj/structure/catwalk,
 /obj/random/scrap/dense_weighted,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gNV" = (
@@ -36958,7 +36958,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "hfd" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "hfi" = (
@@ -37353,7 +37353,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "hjf" = (
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "hjp" = (
@@ -38285,7 +38285,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/security/tactical_blackshield)
 "hso" = (
-/mob/living/simple_animal/penguin{
+/mob/living/simple/penguin{
 	desc = "The Blackshield's finest corporal, the only Blackshield personnel to not have a friendly fired incident.";
 	name = "Corporal Collen"
 	},
@@ -38449,7 +38449,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos/storage)
 "hug" = (
@@ -40649,7 +40649,7 @@
 "hRO" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "hSa" = (
@@ -42100,7 +42100,7 @@
 "ihh" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/pond)
 "ihk" = (
@@ -42791,7 +42791,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "iqf" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "iqg" = (
@@ -46064,7 +46064,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/pros/foreman)
 "iVU" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild5,
@@ -49728,7 +49728,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "jFF" = (
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -51141,7 +51141,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos/storage)
 "jTZ" = (
@@ -52213,7 +52213,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kek" = (
 /obj/structure/bed/chair,
-/mob/living/carbon/superior_animal/roach/elektromagnetisch,
+/mob/living/carbon/superior/roach/elektromagnetisch,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ken" = (
@@ -53989,7 +53989,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical_blackshield)
 "kve" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -54313,7 +54313,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "kym" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kyt" = (
@@ -55641,7 +55641,7 @@
 "kLH" = (
 /obj/item/spider_shadow_trap,
 /obj/effect/spider/spiderling/near_grown,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kLK" = (
@@ -55831,7 +55831,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "kNz" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "kNG" = (
@@ -55898,7 +55898,7 @@
 /area/eris/crew_quarters/plasma_tag)
 "kNZ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "kOb" = (
@@ -56805,7 +56805,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kWx" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kWy" = (
@@ -56848,7 +56848,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
 "kWM" = (
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kXa" = (
@@ -57671,7 +57671,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "leB" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/lakeside)
 "leC" = (
@@ -57938,7 +57938,7 @@
 	name = "Science Expedition prep"
 	})
 "lhs" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -58545,7 +58545,7 @@
 "lnE" = (
 /obj/structure/salvageable/computer,
 /obj/random/structures,
-/mob/living/simple_animal/hostile/mimic,
+/mob/living/simple/hostile/mimic,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -58658,7 +58658,7 @@
 	name = "Science Expedition prep"
 	})
 "lok" = (
-/mob/living/simple_animal/pig/hog,
+/mob/living/simple/pig/hog,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "lol" = (
@@ -59657,7 +59657,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "lzc" = (
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -59791,7 +59791,7 @@
 /area/nadezhda/security/triage_blackshield)
 "lAe" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lAk" = (
@@ -60187,7 +60187,7 @@
 /obj/effect/floor_decal/industrial/arrows/white{
 	dir = 1
 	},
-/mob/living/simple_animal/lizard,
+/mob/living/simple/lizard,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
 "lDU" = (
@@ -61057,7 +61057,7 @@
 "lOl" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lOo" = (
@@ -61959,7 +61959,7 @@
 "lWX" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider,
+/mob/living/carbon/superior/spider,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "lXa" = (
@@ -64612,7 +64612,7 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "mwN" = (
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mwU" = (
@@ -65881,7 +65881,7 @@
 /obj/machinery/light_switch{
 	pixel_y = -28
 	},
-/mob/living/simple_animal/hostile/dino/tagilla,
+/mob/living/simple/hostile/dino/tagilla,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
 "mII" = (
@@ -67886,7 +67886,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ndA" = (
@@ -68185,7 +68185,7 @@
 	},
 /area/shuttle/surface_transport_lz)
 "ngu" = (
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "ngA" = (
@@ -68212,7 +68212,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "ngI" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ngM" = (
@@ -68371,12 +68371,12 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/absolutism/bioreactor)
 "nhX" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "nib" = (
 /obj/structure/dogbed,
-/mob/living/simple_animal/corgi/fluff/Lisa,
+/mob/living/simple/corgi/fluff/Lisa,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "nic" = (
@@ -68427,7 +68427,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "niS" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "niU" = (
@@ -69408,7 +69408,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "nsZ" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -70853,7 +70853,7 @@
 	},
 /area/nadezhda/rnd/docking)
 "nIt" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "nIu" = (
@@ -73523,7 +73523,7 @@
 /area/nadezhda/command/gmaster)
 "ohA" = (
 /obj/structure/bed/chair/sofa/brown/left,
-/mob/living/simple_animal/parrot/Poly,
+/mob/living/simple/parrot/Poly,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
 "ohC" = (
@@ -73605,7 +73605,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oiB" = (
 /obj/effect/floor_decal/spline/plain,
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -73808,7 +73808,7 @@
 /area/nadezhda/maintenance/guild)
 "oln" = (
 /obj/random/tool_upgrade/rare,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "olq" = (
@@ -74418,7 +74418,7 @@
 "oqE" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/pond)
 "oqI" = (
@@ -75490,7 +75490,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "oBc" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "oBe" = (
@@ -76566,7 +76566,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "oLE" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "oLL" = (
@@ -77013,7 +77013,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oQF" = (
-/mob/living/simple_animal/fennec/fennix,
+/mob/living/simple/fennec/fennix,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "oQR" = (
@@ -78404,7 +78404,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/engine_room)
 "pgM" = (
-/mob/living/simple_animal/mouse/irish{
+/mob/living/simple/mouse/irish{
 	desc = "Makes all of the rules."
 	},
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -79583,7 +79583,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -81107,7 +81107,7 @@
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "pIW" = (
@@ -82003,7 +82003,7 @@
 "pRs" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "pRv" = (
@@ -82298,7 +82298,7 @@
 /area/nadezhda/security/prisoncells)
 "pVb" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "pVe" = (
@@ -83916,7 +83916,7 @@
 "qmG" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qmH" = (
@@ -86419,7 +86419,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qLJ" = (
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "qLN" = (
@@ -86881,7 +86881,7 @@
 "qQL" = (
 /obj/machinery/light/small,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qQM" = (
@@ -86965,7 +86965,7 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "qRF" = (
-/mob/living/simple_animal/corgi/puppy,
+/mob/living/simple/corgi/puppy,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "qRJ" = (
@@ -88501,7 +88501,7 @@
 "rfw" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest)
 "rfx" = (
@@ -88715,7 +88715,7 @@
 "rib" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen,
+/mob/living/carbon/superior/spider/nurse/queen,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rie" = (
@@ -89218,7 +89218,7 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
 	},
@@ -89992,7 +89992,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ruK" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ruM" = (
@@ -90977,7 +90977,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rDA" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied,
+/mob/living/carbon/superior/robot/gp/synth/allied,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "rDB" = (
@@ -93821,7 +93821,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "sfD" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "sfG" = (
@@ -94456,7 +94456,7 @@
 "smb" = (
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "smh" = (
@@ -95716,7 +95716,7 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "szp" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "szv" = (
@@ -96367,7 +96367,7 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1east)
 "sIA" = (
-/mob/living/simple_animal/frog/rare,
+/mob/living/simple/frog/rare,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/hallway/side/f2section1)
 "sIB" = (
@@ -96699,7 +96699,7 @@
 "sMa" = (
 /obj/structure/salvageable/computer,
 /obj/random/structures,
-/mob/living/simple_animal/hostile/mimic,
+/mob/living/simple/hostile/mimic,
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "sMh" = (
@@ -99110,7 +99110,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
@@ -99754,7 +99754,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "trS" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "trV" = (
@@ -100002,7 +100002,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/vectorrooms)
 "tuK" = (
-/mob/living/simple_animal/hostile/bear,
+/mob/living/simple/hostile/bear,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "tuU" = (
@@ -102069,7 +102069,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/simple_animal/soteria_roomba,
+/mob/living/simple/soteria_roomba,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "tPt" = (
@@ -102692,7 +102692,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "tXk" = (
-/mob/living/carbon/superior_animal/roach/kaiser,
+/mob/living/carbon/superior/roach/kaiser,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -103282,7 +103282,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "ucn" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "uco" = (
@@ -106849,7 +106849,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/structure/catwalk,
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
@@ -106871,7 +106871,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/security/tactical_blackshield)
 "uLi" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "uLm" = (
@@ -108058,7 +108058,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos/storage)
 "uWQ" = (
-/mob/living/simple_animal/cow{
+/mob/living/simple/cow{
 	name = "Betsy"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -110442,7 +110442,7 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
+/mob/living/carbon/superior/spider/fortress/emperor,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vuW" = (
@@ -111565,7 +111565,7 @@
 /area/nadezhda/absolutism/chapel)
 "vFw" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/soteria_roomba{
+/mob/living/simple/soteria_roomba{
 	desc = "A pink roomba, here to clean the outpost";
 	name = "9k-Six"
 	},
@@ -112370,7 +112370,7 @@
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse,
+/mob/living/carbon/superior/spider/nurse/recluse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "vNv" = (
@@ -112714,7 +112714,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vQD" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "vQI" = (
@@ -113348,7 +113348,7 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "vWf" = (
-/mob/living/simple_animal/chicken{
+/mob/living/simple/chicken{
 	name = "Commander Clucky"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -115750,7 +115750,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "wsu" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "wsy" = (
@@ -116362,7 +116362,7 @@
 /area/nadezhda/medical/surgery)
 "wyx" = (
 /obj/structure/flora/small/bushc3,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "wyz" = (
@@ -116750,7 +116750,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "wBP" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "wBQ" = (
@@ -117559,7 +117559,7 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "wKo" = (
-/mob/living/carbon/superior_animal/roach/nanite,
+/mob/living/carbon/superior/roach/nanite,
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -117843,7 +117843,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "wNN" = (
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "wNV" = (
@@ -119821,7 +119821,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xjc" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xjo" = (
@@ -122848,7 +122848,7 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xMI" = (
@@ -123512,7 +123512,7 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xTG" = (
@@ -124597,7 +124597,7 @@
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "yew" = (

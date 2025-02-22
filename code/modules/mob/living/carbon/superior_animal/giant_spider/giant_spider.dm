@@ -1,5 +1,5 @@
 //basic spider mob, these generally guard nests
-/mob/living/carbon/superior_animal/giant_spider
+/mob/living/carbon/superior/spider
 	name = "guardian spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has deep red eyes."
 	icon = 'icons/mob/mobs-spider.dmi'
@@ -23,13 +23,13 @@
 	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 1, bio = 10, rad = 25)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous = 33,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/ = 17,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider = 50,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/spider = 33,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider = 50,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/venomous = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 16,
+		/datum/stat_modifier/mob/living/carbon/superior/lustrous = 33,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/ = 17,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/spider = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/young/spider = 33,
+		/datum/stat_modifier/mob/living/carbon/superior/old/spider = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/venomous = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish = 16,
 	)
 
 	move_to_delay = 4.5
@@ -61,11 +61,11 @@
 	fancy_attack_overlay = "spider_bite_flick"
 	fancy_attack_shading = "#CBC3E3"
 
-/mob/living/carbon/superior_animal/giant_spider/New(var/location, var/atom/parent)
+/mob/living/carbon/superior/spider/New(var/location, var/atom/parent)
 	get_light_and_color(parent)
 	..()
 
-/mob/living/carbon/superior_animal/giant_spider/isValidAttackTarget(var/atom/O)
+/mob/living/carbon/superior/spider/isValidAttackTarget(var/atom/O)
 	if (isliving(O))
 		var/mob/living/L = O
 		if(L.faction=="sproachder")

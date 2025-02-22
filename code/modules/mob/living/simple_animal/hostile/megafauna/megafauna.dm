@@ -1,5 +1,5 @@
 
-/mob/living/simple_animal/hostile/megafauna
+/mob/living/simple/hostile/megafauna
 	name = "boss of this gym"
 	desc = "Attack the weak point for massive damage."
 	health = 1000
@@ -28,7 +28,7 @@
 	needs_environment = FALSE
 
 //More complicated verson of movement and targeting fire
-/mob/living/simple_animal/hostile/megafauna/MoveToTarget()
+/mob/living/simple/hostile/megafauna/MoveToTarget()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	stop_automated_movement = TRUE
@@ -36,9 +36,9 @@
 		stance = HOSTILE_STANCE_IDLE
 	if(targetted_mob in ListTargets(10))
 		if(ranged)
-			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
+			var/mob/living/simple/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
-			if(istype(src, /mob/living/simple_animal/hostile/megafauna/one_star))
+			if(istype(src, /mob/living/simple/hostile/megafauna/one_star))
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
@@ -59,26 +59,26 @@
 	return FALSE
 
 
-/mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
+/mob/living/simple/hostile/megafauna/Initialize(mapload)
 	. = ..()
 	for(var/action_type in attack_action_types)
 		var/datum/action/innate/megafauna_attack/attack_action = new action_type()
 		attack_action.Grant(src)
 
-/mob/living/simple_animal/hostile/megafauna/proc/prevent_content_explosion()
+/mob/living/simple/hostile/megafauna/proc/prevent_content_explosion()
 	return TRUE
 
-/mob/living/simple_animal/hostile/megafauna/death(gibbed, var/list/force_grant)
+/mob/living/simple/hostile/megafauna/death(gibbed, var/list/force_grant)
 	..()
 	qdel(src)
 
-/mob/living/simple_animal/hostile/megafauna/gib()
+/mob/living/simple/hostile/megafauna/gib()
 	qdel(src)
 
-/mob/living/simple_animal/hostile/megafauna/dust(just_ash, drop_items, force)
+/mob/living/simple/hostile/megafauna/dust(just_ash, drop_items, force)
 	qdel(src)
 
-/mob/living/simple_animal/hostile/megafauna/AttackingTarget()
+/mob/living/simple/hostile/megafauna/AttackingTarget()
 	if(recovery_time >= world.time)
 		return
 	. = ..()
@@ -90,7 +90,7 @@
 		else
 			devour(L)
 
-/mob/living/simple_animal/hostile/megafauna/proc/devour(mob/living/L)
+/mob/living/simple/hostile/megafauna/proc/devour(mob/living/L)
 	if(!L)
 		return FALSE
 	visible_message(
@@ -101,7 +101,7 @@
 	L.gib()
 	return TRUE
 
-/mob/living/simple_animal/hostile/megafauna/ex_act(severity, target)
+/mob/living/simple/hostile/megafauna/ex_act(severity, target)
 	if(emp_proof)
 		return
 	switch (severity)
@@ -113,19 +113,19 @@
 		if(3)
 			adjustFireLoss(rand(50,100))
 
-/mob/living/simple_animal/hostile/megafauna/proc/SetRecoveryTime(buffer_time)
+/mob/living/simple/hostile/megafauna/proc/SetRecoveryTime(buffer_time)
 	recovery_time = world.time + buffer_time
 	ranged_cooldown = world.time + buffer_time
 
 /datum/action/innate/megafauna_attack
 	name = "Megafauna Attack"
 	button_icon_state = ""
-	var/mob/living/simple_animal/hostile/megafauna/M
+	var/mob/living/simple/hostile/megafauna/M
 	var/chosen_message
 	var/chosen_attack_num = 0
 
 /datum/action/innate/megafauna_attack/Grant(mob/living/L)
-	if(istype(L, /mob/living/simple_animal/hostile/megafauna))
+	if(istype(L, /mob/living/simple/hostile/megafauna))
 		M = L
 		return ..()
 	return FALSE
@@ -135,23 +135,23 @@
 	to_chat(M, chosen_message)
 
 
-/mob/living/simple_animal/hostile/megafauna/proc/select_spiral_attack()
+/mob/living/simple/hostile/megafauna/proc/select_spiral_attack()
 	if(health < maxHealth/3)
 		return double_spiral()
 	return spiral_shoot()
 
-/mob/living/simple_animal/hostile/megafauna/proc/double_spiral()
+/mob/living/simple/hostile/megafauna/proc/double_spiral()
 	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), FALSE)
 	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), TRUE)
 
-/mob/living/simple_animal/hostile/megafauna/proc/telegraph()
+/mob/living/simple/hostile/megafauna/proc/telegraph()
 	for(var/mob/M in range(10,src))
 		if(M.client)
 			shake_camera(M, 4, 3)
 	visible_message(SPAN_DANGER(pick("Prepare to die!", "JUSTICE", "Run!")))
 	sleep(rand(megafauna_min_cooldown, megafauna_max_cooldown))
 
-/mob/living/simple_animal/hostile/megafauna/proc/spiral_shoot(negative = pick(TRUE, FALSE), rounds = 20)
+/mob/living/simple/hostile/megafauna/proc/spiral_shoot(negative = pick(TRUE, FALSE), rounds = 20)
 	set waitfor = 0
 	var/turf/start_turf = get_step(src, pick(GLOB.alldirs))
 	var/incvar = negative ? -1 : 1
@@ -168,7 +168,7 @@
 		firedir = alldirs[dirpoint]
 		sleep(rand(1,3))
 
-/mob/living/simple_animal/hostile/megafauna/proc/shoot_projectile(turf/marker, var/dir)
+/mob/living/simple/hostile/megafauna/proc/shoot_projectile(turf/marker, var/dir)
 	if(!marker || marker == loc)
 		return
 	var/turf/startloc = get_turf(src)
@@ -178,7 +178,7 @@
 		P.original = target
 	P.launch(get_step(marker, dir))
 
-/mob/living/simple_animal/hostile/megafauna/proc/random_shots()
+/mob/living/simple/hostile/megafauna/proc/random_shots()
 	ranged_cooldown = world.time + 30
 	var/turf/U = get_turf(src)
 	for(var/T in RANGE_TURFS(12, U) - U)
@@ -186,7 +186,7 @@
 			sleep(rand(0,1))
 			shoot_projectile(T, pick(GLOB.alldirs))
 
-/mob/living/simple_animal/hostile/megafauna/proc/wave_shots()
+/mob/living/simple/hostile/megafauna/proc/wave_shots()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	ranged_cooldown = world.time + 30

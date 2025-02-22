@@ -126,7 +126,7 @@
 	sleep(9)
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	if(emagged)
-		new /mob/living/carbon/superior_animal/roach/kaiser(src.loc)
+		new /mob/living/carbon/superior/roach/kaiser(src.loc)
 		visible_message(SPAN_DANGER("[src] get destroyed as a Kaiser emerge from underneath it!"))
 		Destroy()
 		return

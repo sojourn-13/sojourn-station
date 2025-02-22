@@ -52,7 +52,7 @@
 		icon_state = "spike_[H.species.name]"
 		meat = 3
 	else if (isanimal(victim))
-		var/mob/living/simple_animal/animal = victim
+		var/mob/living/simple/animal = victim
 		if(!ispath(animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			return FALSE
 		if(animal.mob_size > MOB_MEDIUM)
@@ -62,7 +62,7 @@
 		icon_state = "spike_Monkey"
 		meat = animal.meat_amount
 	else if (issuperioranimal(victim))
-		var/mob/living/carbon/superior_animal/s_animal = victim
+		var/mob/living/carbon/superior/s_animal = victim
 		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			return FALSE
 		if(s_animal.mob_size > MOB_MEDIUM)
@@ -88,10 +88,10 @@
 
 	//Prevent infinite amounts of meat being generated
 	if (isanimal(occupant))
-		var/mob/living/simple_animal/animal = occupant
+		var/mob/living/simple/animal = occupant
 		animal.meat_amount = meat
 	else if (issuperioranimal(occupant))
-		var/mob/living/carbon/superior_animal/s_animal = occupant
+		var/mob/living/carbon/superior/s_animal = occupant
 		s_animal.meat_amount = meat
 
 	occupant.loc = get_turf(src)

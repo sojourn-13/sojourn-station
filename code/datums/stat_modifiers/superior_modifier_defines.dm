@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal
+/datum/stat_modifier/mob/living/carbon/superior
 
 	/// Assoc list. If the key is present in the target's armor list var, add the value of this key to their key. If it isnt present, set the value to this key's value.
 	var/armor_adjustment = list(
@@ -52,9 +52,9 @@
 	var/poison_per_bite_mult
 	var/poison_per_bite_zeroth = 0
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/remove(qdel_src = TRUE)
+/datum/stat_modifier/mob/living/carbon/superior/remove(qdel_src = TRUE)
 	if (issuperioranimal(holder))
-		var/mob/living/carbon/superior_animal/superior_holder = holder
+		var/mob/living/carbon/superior/superior_holder = holder
 
 		if (armor_adjustment)
 			for (var/key in armor_adjustment)
@@ -98,7 +98,7 @@
 			superior_holder.rapid = FALSE
 
 		if (issuperiorspider(superior_holder))
-			var/mob/living/carbon/superior_animal/giant_spider/spider_target = holder
+			var/mob/living/carbon/superior/spider/spider_target = holder
 
 			if (poison_per_bite_increment)
 				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite - poison_per_bite_increment)
@@ -125,10 +125,10 @@
 
 	return ..(qdel_src)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target, list/arguments, arguments_to_pass)
+/datum/stat_modifier/mob/living/carbon/superior/apply_to(atom/target, list/arguments, arguments_to_pass)
 
 	if (issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/superior_target = target
+		var/mob/living/carbon/superior/superior_target = target
 
 		if (armor_mult)
 			for (var/key in armor_mult)
@@ -190,7 +190,7 @@
 			superior_target.delay_for_rapid_range = ZERO_OR_MORE(superior_target.delay_for_rapid_range + delay_for_rapid_range_adjustment)
 
 		if (issuperiorspider(superior_target))
-			var/mob/living/carbon/superior_animal/giant_spider/spider_target = target
+			var/mob/living/carbon/superior/spider/spider_target = target
 
 			if (poison_per_bite_mult)
 				spider_target.poison_per_bite = ZERO_OR_MORE(SAFEMULT(spider_target.poison_per_bite, poison_per_bite_mult, poison_per_bite_zeroth))

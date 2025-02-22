@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/giant_spider/hunter/shocker
+/mob/living/carbon/superior/spider/hunter/shocker
 	name = "shock rock spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has yellowed metallic chitin that crackles with electricity."
 	icon_state = "spark"
@@ -15,7 +15,7 @@
 	var/cooldown_increment = 5
 	inherent_mutations = list(MUTATION_SHOCK_LESS)
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/shocker/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/spider/hunter/shocker/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if (cooldown <= world.time)

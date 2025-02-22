@@ -1404,7 +1404,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "hQ" = (
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -1557,7 +1557,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "iR" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
@@ -1655,7 +1655,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "jj" = (
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3924,7 +3924,7 @@
 "sS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "sT" = (
@@ -4372,7 +4372,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tX" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tY" = (
@@ -4899,7 +4899,7 @@
 "vF" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/circuitboard,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vG" = (
@@ -6185,13 +6185,13 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Bk" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Bl" = (
-/mob/living/simple_animal/hostile/hivebot{
+/mob/living/simple/hostile/hivebot{
 	health = 400
 	},
 /turf/simulated/floor/tiled/dark,
@@ -8920,7 +8920,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ZB" = (
-/mob/living/carbon/superior_animal/sentinal_seeker,
+/mob/living/carbon/superior/sentinal_seeker,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ZC" = (

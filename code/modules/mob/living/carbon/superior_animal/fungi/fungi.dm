@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/fungi
+/mob/living/carbon/superior/fungi
 	name = "strange fungi"
 	desc = "Is that a mushroom? Maybe it escaped from the Soteria labs? It certainly doesn't look like the usual walking mushrooms one would see in xenoflora."
 	faction = "neutral"
@@ -39,7 +39,7 @@
 	follow_message = "says, \"I follow friend.\""
 	stop_message ="says, \"I stop follow friend.\""
 
-/mob/living/carbon/superior_animal/fungi/New()
+/mob/living/carbon/superior/fungi/New()
 	..()
 	nutrition = 20 // Else they make a bottle as soon as they spawn.
 	switch(pick("red","blue","green","gray","purple","yellow","orange","aqua"))

@@ -4,7 +4,7 @@
 #define HIVE_FACTION 			"hive"
 #define MAX_NODES_AMOUNT 	10
 #define MIN_NODES_RANGE		15
-#define ishivemindmob(A) 	istype(A, /mob/living/simple_animal/hostile/hivemind)
+#define ishivemindmob(A) 	istype(A, /mob/living/simple/hostile/hivemind)
 
 var/datum/hivemind/hive_mind_ai
 

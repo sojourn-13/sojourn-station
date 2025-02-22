@@ -1,5 +1,5 @@
 // basetype, dont use
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor
+/datum/stat_modifier/mob/living/carbon/superior/armor
 
 	prefixes = list("Tier1" = "Armored", "Tier2" = "Very armored", "Tier3" = "Extremely armored",
 					"Tier-1" = "Unarmored", "Tier-2" = "Very unarmored", "Tier-3" = "Extremely unarmored"
@@ -18,7 +18,7 @@
 	force_default_prefix = FALSE
 
 // basetype, dont use
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult
 	armor_mult = list(
 		melee = 1,
 		bullet = 1,
@@ -32,7 +32,7 @@
 	invert_armor_mult_if_negative = TRUE
 
 /// Increases all armor by 1.2x
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/low
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/low
 	armor_mult = list(
 		melee = 1.2,
 		bullet = 1.2,
@@ -44,7 +44,7 @@
 	)
 
 /// Increases all armor by 1.5x
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/medium
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/medium
 	armor_mult = list(
 		melee = 1.5,
 		bullet = 1.5,
@@ -56,7 +56,7 @@
 	)
 
 /// Increases all armor by 1.8x
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/high
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/high
 	armor_mult = list(
 		melee = 1.8,
 		bullet = 1.8,
@@ -68,7 +68,7 @@
 	)
 
 /// Doubles all armor
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/high/double
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/high/double
 	armor_mult = list(
 		melee = 2,
 		bullet = 2,
@@ -79,7 +79,7 @@
 		agony = 2
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/triple
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/triple
 	armor_mult = list(
 		melee = 3,
 		bullet = 3,
@@ -90,7 +90,7 @@
 		agony = 3
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/low
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/positive/low
 	armor_adjustment = list(
 		melee = 2,
 		bullet = 2,
@@ -101,7 +101,7 @@
 		agony = 10
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/medium
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/positive/medium
 	armor_adjustment = list(
 		melee = 3,
 		bullet = 3,
@@ -112,7 +112,7 @@
 		agony = 20
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/high
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/positive/high
 	armor_adjustment = list(
 		melee = 4,
 		bullet = 4,
@@ -123,7 +123,7 @@
 		agony = 30
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/low
 	armor_mult = list(
 		melee = 0.8,
 		bullet = 0.8,
@@ -135,7 +135,7 @@
 	)
 
 /// Increases all armor by 1.5x
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/medium
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/medium
 	armor_mult = list(
 		melee = 0.5,
 		bullet = 0.5,
@@ -147,7 +147,7 @@
 	)
 
 /// Increases all armor by 1.8x
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/high
+/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/high
 	armor_mult = list(
 		melee = 0.2,
 		bullet = 0.2,
@@ -159,7 +159,7 @@
 	)
 
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/low
 	armor_adjustment = list(
 		melee = -2,
 		bullet = -2,
@@ -170,7 +170,7 @@
 		agony = -10
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/medium
 	armor_adjustment = list(
 		melee = -5,
 		bullet = -5,
@@ -181,7 +181,7 @@
 		agony = -20
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/high
+/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/high
 	armor_adjustment = list(
 		melee = -7,
 		bullet = -7,
@@ -192,12 +192,12 @@
 		agony = -30
 	)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/custom
+/datum/stat_modifier/mob/living/carbon/superior/armor/custom
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/before_apply(atom/target, list/arguments, arg_length)
+/datum/stat_modifier/mob/living/carbon/superior/armor/before_apply(atom/target, list/arguments, arg_length)
 
 	if (issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/superior_target = target
+		var/mob/living/carbon/superior/superior_target = target
 		var/list/current_armor = superior_target.armor.Copy()
 
 		if (arg_length)
@@ -213,10 +213,10 @@
 		return current_armor
 	return FALSE
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/armor/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
+/datum/stat_modifier/mob/living/carbon/superior/armor/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
 
 	if (issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/superior_target = target
+		var/mob/living/carbon/superior/superior_target = target
 
 		if (arguments_to_pass)
 			var/list/previous_armor = arguments_to_pass

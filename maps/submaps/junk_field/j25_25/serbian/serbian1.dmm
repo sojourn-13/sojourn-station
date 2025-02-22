@@ -1,42 +1,42 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "ab" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ac" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "ad" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "ae" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "af" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ag" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ah" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "ai" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "aj" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "aw" = (
@@ -70,7 +70,7 @@
 /turf/template_noop,
 /area/template_noop)
 "bu" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "by" = (
@@ -606,7 +606,7 @@
 /area/template_noop)
 "Po" = (
 /obj/structure/lattice,
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "Pp" = (

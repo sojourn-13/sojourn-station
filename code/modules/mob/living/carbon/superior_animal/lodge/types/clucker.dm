@@ -3,7 +3,7 @@ var/global/clucker_count = 0
 
 //clucker
 //Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter. Credit to scar#1579 for the sprite.
-/mob/living/carbon/superior_animal/lodge/clucker
+/mob/living/carbon/superior/lodge/clucker
 	name = "\improper clucker"
 	desc = "A clucker, the affectionately nick named chickens that escaped the colony and somehow survived in the wild before mutating. While mostly without feathers, a single blood engorged one \
 	hangs from the birds tail that produces a decent painkiller if treated properly. Prefers to eat poppies over the usual wheat regular chickens favor."
@@ -25,17 +25,17 @@ var/global/clucker_count = 0
 	special_parts = list(/obj/item/animal_part/clucker_feather)
 	colony_friend = TRUE
 
-/mob/living/carbon/superior_animal/lodge/clucker/New()
+/mob/living/carbon/superior/lodge/clucker/New()
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
 	clucker_count += 1
 
-/mob/living/carbon/superior_animal/lodge/clucker/death()
+/mob/living/carbon/superior/lodge/clucker/death()
 	..()
 	clucker_count -= 1
 
-/mob/living/carbon/superior_animal/lodge/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/carbon/superior/lodge/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "poppy")
@@ -51,7 +51,7 @@ var/global/clucker_count = 0
 	else
 		..()
 
-/mob/living/carbon/superior_animal/lodge/clucker/Life()
+/mob/living/carbon/superior/lodge/clucker/Life()
 	. =..()
 	if(!.)
 		return
@@ -71,7 +71,7 @@ var/global/clucker_count = 0
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
 			visible_message("[src] hatches with a quiet cracking sound.")
-			new /mob/living/carbon/superior_animal/lodge/chick_clucker(get_turf(src))
+			new /mob/living/carbon/superior/lodge/chick_clucker(get_turf(src))
 			STOP_PROCESSING(SSobj, src)
 			qdel(src)
 	else
@@ -79,7 +79,7 @@ var/global/clucker_count = 0
 
 //Baby Clucker
 //Looks nearly the same as a regular chick. Credit to scar#1579 for the sprite.
-/mob/living/carbon/superior_animal/lodge/chick_clucker
+/mob/living/carbon/superior/lodge/chick_clucker
 	name = "\improper clucker chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/mob/mobs-domestic.dmi'
@@ -94,17 +94,17 @@ var/global/clucker_count = 0
 	pass_flags = PASSTABLE
 	mob_size = MOB_MINISCULE
 
-/mob/living/carbon/superior_animal/lodge/chick_clucker/New()
+/mob/living/carbon/superior/lodge/chick_clucker/New()
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
 
-/mob/living/carbon/superior_animal/lodge/chick_clucker/Life()
+/mob/living/carbon/superior/lodge/chick_clucker/Life()
 	. =..()
 	if(!.)
 		return
 	if(!stat)
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
-			new /mob/living/carbon/superior_animal/lodge/clucker(src.loc)
+			new /mob/living/carbon/superior/lodge/clucker(src.loc)
 			qdel(src)

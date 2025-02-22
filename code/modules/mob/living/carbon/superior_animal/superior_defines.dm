@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal
+/mob/living/carbon/superior
 	name = "superior animal"
 	desc = "You should not see this."
 
@@ -40,7 +40,7 @@
 
 	/// Do we advance?
 	var/advance = TRUE
-	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]
+	/// Stored var of calculation ran within [/mob/living/carbon/superior/proc/advance_towards]
 	var/advance_steps = 0
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
 	var/advancement = 1

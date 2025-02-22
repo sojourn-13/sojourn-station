@@ -143,7 +143,7 @@
 		if(ismouse(target))
 			new /obj/item/remains/mouse(get_turf(target))
 			qdel(target)
-		else if(istype(target, /mob/living/simple_animal/lizard))
+		else if(istype(target, /mob/living/simple/lizard))
 			new /obj/item/remains/lizard(get_turf(target))
 			qdel(target)
 		return
@@ -803,8 +803,8 @@
 			//Handle spawning in living, mobile products.
 			if(isliving(product))
 				product.visible_message(SPAN_NOTICE("The pod disgorges [product]!"))
-				if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
-					var/mob/living/simple_animal/mushroom/mush = product
+				if(istype(product,/mob/living/simple/mushroom)) // Gross.
+					var/mob/living/simple/mushroom/mush = product
 					mush.seed = src
 
 /datum/seed/proc/selfharvest(turf/location,yield_mod,harvest_sample,force_amount)

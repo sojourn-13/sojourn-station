@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/church/rook
+/mob/living/carbon/superior/robot/church/rook
 	name = "Rook Golem"
 	desc = "The Rook, a golem made by the church and fashioned after the time honored game of chess by Brynn. The strongest of church golems, slow, lumbering, and packing the strength to go toe \
 	to toe with a primal render and win with ease. When the skill of pawns, the strength of knights, and the devastation of bishops fails, the Rook thunders forth."

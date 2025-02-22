@@ -148,7 +148,7 @@
 
 /datum/craft_recipe/robotic/mining_bot
 	name = "Aether Mining Bot"
-	result = /mob/living/carbon/superior_animal/robot/mining/aether
+	result = /mob/living/carbon/superior/robot/mining/aether
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
 		list(/obj/item/bot_part/roomba/roomba_treads, 2, "time" = 60),
@@ -162,7 +162,7 @@
 
 /datum/craft_recipe/robotic/chicken
 	name = "Chemical Housing Internal Combustion Kit"
-	result = /mob/living/simple_animal/metal_chicken
+	result = /mob/living/simple/metal_chicken
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 30),

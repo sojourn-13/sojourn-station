@@ -295,7 +295,7 @@
 "bc" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/crab/Coffee{
+/mob/living/simple/crab/Coffee{
 	desc = "It's Graves twin, the other pet! Despite his rather evil appearance he is utterly harmless. Best friends with Tea the Frog as well.";
 	name = "Grave's Other Twin";
 	real_name = "Coffee"
@@ -870,7 +870,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cx" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cy" = (
@@ -889,7 +889,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cB" = (
-/mob/living/simple_animal/schlorgo,
+/mob/living/simple/schlorgo,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cC" = (
@@ -928,7 +928,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cH" = (
-/mob/living/simple_animal/redpanda/fae,
+/mob/living/simple/redpanda/fae,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cI" = (
@@ -1074,7 +1074,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dj" = (
-/mob/living/carbon/superior_animal/lodge/tatonka,
+/mob/living/carbon/superior/lodge/tatonka,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dk" = (
@@ -1247,7 +1247,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dM" = (
-/mob/living/carbon/superior_animal/lodge/cerberus,
+/mob/living/carbon/superior/lodge/cerberus,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dN" = (
@@ -1303,7 +1303,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dU" = (
-/mob/living/carbon/superior_animal/lodge/chick_clucker,
+/mob/living/carbon/superior/lodge/chick_clucker,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dV" = (
@@ -1329,7 +1329,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dZ" = (
-/mob/living/carbon/superior_animal/lodge/clucker,
+/mob/living/carbon/superior/lodge/clucker,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ea" = (
@@ -1357,7 +1357,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ee" = (
-/mob/living/carbon/superior_animal/lodge/cerberus,
+/mob/living/carbon/superior/lodge/cerberus,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ef" = (
@@ -2483,15 +2483,15 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hC" = (
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hD" = (
-/mob/living/simple_animal/tindalos,
+/mob/living/simple/tindalos,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hE" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hF" = (
@@ -2499,7 +2499,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hG" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	desc = "This bird has a sense of smug superiority and missing eye.";
 	name = "Jea Junior"
 	},
@@ -2602,7 +2602,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hX" = (
-/mob/living/simple_animal/fennec/fennix,
+/mob/living/simple/fennec/fennix,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hY" = (

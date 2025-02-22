@@ -1,5 +1,5 @@
 /* Commented out due to a metric fuckton of runtimes -R4d6
-/mob/living/carbon/superior_animal/ambusher
+/mob/living/carbon/superior/ambusher
 	name = "Genetic Atrocity" //todo potentially add better sfx
 	desc = "An experiment taken too far. Its flesh stretches and distorts in ways you wish weren't possible. Spindly, mutated spider legs twist from its body, it appears to be in utter agony."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -33,10 +33,10 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-/mob/living/carbon/superior_animal/ambusher/New()
+/mob/living/carbon/superior/ambusher/New()
 	..()
 
-/mob/living/carbon/superior_animal/ambusher/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/ambusher/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(10))
@@ -48,7 +48,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/ambusher/Life()
+/mob/living/carbon/superior/ambusher/Life()
 	. = ..()
 	heal_overall_damage(0.1,0.1)
 	if (src.z >= 4)
@@ -57,35 +57,35 @@
 		return
 
 	if (health >= maxHealth)
-		new /mob/living/carbon/superior_animal/shadow(src.loc)
+		new /mob/living/carbon/superior/shadow(src.loc)
 		qdel(src)
 
-/mob/living/carbon/superior_animal/ambusher/death(gibbed, deathmessage = "emplodes into a shower of gore.")
+/mob/living/carbon/superior/ambusher/death(gibbed, deathmessage = "emplodes into a shower of gore.")
 	..()
 	new /obj/effect/gibspawner/generic(src.loc)
 	qdel(src)
 	return
 
-/mob/living/carbon/superior_animal/ambusher/injured
+/mob/living/carbon/superior/ambusher/injured
 	bruteloss = 30
 
-/mob/living/carbon/superior_animal/ambusher/injured/New()
+/mob/living/carbon/superior/ambusher/injured/New()
 	..()
 	src.Weaken(1)
 
-/mob/living/carbon/superior_animal/ambusher/handle_breath(datum/gas_mixture/breath) //we dont breath
+/mob/living/carbon/superior/ambusher/handle_breath(datum/gas_mixture/breath) //we dont breath
 	return
 
-/mob/living/carbon/superior_animal/ambusher/handle_environment(var/datum/gas_mixture/environment) //stronk
+/mob/living/carbon/superior/ambusher/handle_environment(var/datum/gas_mixture/environment) //stronk
 	return
 
-/mob/living/carbon/superior_animal/ambusher/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior/ambusher/handle_cheap_breath(datum/gas_mixture/breath as anything)
 	return
 
-/mob/living/carbon/superior_animal/ambusher/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior/ambusher/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
-/mob/living/carbon/superior_animal/shadow
+/mob/living/carbon/superior/shadow
 	name = "odd shadow"
 	desc = "You see an odd shadow, cast by something above you. A brown, pungent substance drips onto the ground. A quick glance and you're greeted with a malformed visage, chittering mindlessly to itself."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -102,30 +102,30 @@
 	faction = "roach"
 	density = 0
 
-/mob/living/carbon/superior_animal/shadow/handle_breath(datum/gas_mixture/breath) //we dont breath
+/mob/living/carbon/superior/shadow/handle_breath(datum/gas_mixture/breath) //we dont breath
 	return
 
-/mob/living/carbon/superior_animal/shadow/handle_environment(var/datum/gas_mixture/environment) //stronk
+/mob/living/carbon/superior/shadow/handle_environment(var/datum/gas_mixture/environment) //stronk
 	return
 
-/mob/living/carbon/superior_animal/shadow/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior/shadow/handle_cheap_breath(datum/gas_mixture/breath as anything)
 	return
 
-/mob/living/carbon/superior_animal/shadow/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior/shadow/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
 
-/mob/living/carbon/superior_animal/shadow/HasProximity(atom/movable/AM as mob|obj)
+/mob/living/carbon/superior/shadow/HasProximity(atom/movable/AM as mob|obj)
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		visible_message(SPAN_WARNING("\red The [src] drops from the ceiling, revealing a distorted form of flesh!"))
 		playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
 		H.Weaken(4)
-		new /mob/living/carbon/superior_animal/ambusher(src.loc)
+		new /mob/living/carbon/superior/ambusher(src.loc)
 		qdel(src)
 
-/mob/living/carbon/superior_animal/shadow/death()
-	new /mob/living/carbon/superior_animal/ambusher/injured(src.loc)
+/mob/living/carbon/superior/shadow/death()
+	new /mob/living/carbon/superior/ambusher/injured(src.loc)
 	visible_message(SPAN_WARNING("\red The [src] drops from the ceiling, disoriented and heavily injured!"))
 	qdel(src)
 */

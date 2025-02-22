@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/xenomorph/warrior/praetorian
+/mob/living/carbon/superior/xenomorph/warrior/praetorian
 	name = "praetorian"
 	desc = "The praetorian, the second most powerful and ruthless xenomorph ever birthed from the dark pit these monsters crawled from."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -15,19 +15,19 @@
 	armor = list(melee = 7, bullet = 8, energy = 1, bomb = 30, bio = 100, rad = 100)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
 	move_to_delay = 2
 	turns_per_move = 12
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen
+/mob/living/carbon/superior/xenomorph/warrior/shrike/praetorian/queen
 	name = "queen"
 	desc = "The xenomorph queen, the apex of the xenomorphs and the source of all infestations. A living avatar of millions of worlds left in ruin."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -49,10 +49,10 @@
 	move_to_delay = 1
 	turns_per_move = 12
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/slip(var/slipped_on)
+/mob/living/carbon/superior/xenomorph/warrior/shrike/praetorian/queen/slip(var/slipped_on)
 	return FALSE
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/xenomorph/warrior/shrike/praetorian/queen/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(30))
@@ -63,7 +63,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/xenomorph/warrior/shrike/praetorian/queen/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
 

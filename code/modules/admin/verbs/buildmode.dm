@@ -485,14 +485,14 @@
 					for (var/mob/living/held in holder.selected_mobs)
 						if (set_target)
 							if (issuperioranimal(held))
-								var/mob/living/carbon/superior_animal/superior_held = held
+								var/mob/living/carbon/superior/superior_held = held
 								superior_held.loseTarget(FALSE, TRUE)
 								superior_held.target_mob = WEAKREF(object)
-							else if (istype(held, /mob/living/simple_animal))
-								var/mob/living/simple_animal/simple_held = held
+							else if (istype(held, /mob/living/simple))
+								var/mob/living/simple/simple_held = held
 								simple_held.target_mob = WEAKREF(object)
-								if (istype(simple_held, /mob/living/simple_animal/hostile))
-									var/mob/living/simple_animal/hostile/hostile_held = simple_held
+								if (istype(simple_held, /mob/living/simple/hostile))
+									var/mob/living/simple/hostile/hostile_held = simple_held
 									hostile_held.stance = HOSTILE_STANCE_ATTACKING
 
 						if (move_to_target)

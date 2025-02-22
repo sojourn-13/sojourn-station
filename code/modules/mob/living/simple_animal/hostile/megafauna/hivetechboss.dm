@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant
+/mob/living/simple/hostile/megafauna/hivemind_tyrant
 	name = "Hivemind Tyrant"
 	desc = "Hivemind's will, manifested in flesh and metal."
 
@@ -30,7 +30,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/goo
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/emp_act(severity)
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/emp_act(severity)
 	..()
 	switch(severity)
 		if(1)
@@ -40,29 +40,29 @@
 		if(3)
 			adjustFireLoss(rand(125,250))
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/death()
 	..()
 	if(GLOB.hive_data_bool["tyrant_death_kills_hive"])
 		delhivetech()
 	SSmove_manager.stop_looping(src)
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/telenode()
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/proc/telenode()
 	var/list/atom/NODES = list()
 	for(var/obj/machinery/hivemind_machine/node/NODE in world)
 		NODES.Add(NODE.loc)
 	if(length(NODES) > 0)
 		forceMove(pick(NODES))
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/delhivetech()
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/proc/delhivetech()
 	var/othertyrant = 0
-	for(var/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/HT in world)
+	for(var/mob/living/simple/hostile/megafauna/hivemind_tyrant/HT in world)
 		if(HT != src)
 			othertyrant = 1
 	if(othertyrant == 0)
 		for(var/obj/machinery/hivemind_machine/NODE in world)
 			NODE.destruct()
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/Life()
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/Life()
 
 	. = ..()
 	if(!.)
@@ -83,7 +83,7 @@
 		health_marker_3 = !health_marker_3
 		telenode()
 
-/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/OpenFire()
+/mob/living/simple/hostile/megafauna/hivemind_tyrant/OpenFire()
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 120
 	SSmove_manager.stop_looping(src)

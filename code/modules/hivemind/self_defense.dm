@@ -103,7 +103,7 @@
 	if(!places_to_spawn.len)
 		places_to_spawn.Add(get_turf(master))
 
-	var/mob/living/simple_animal/hostile/hivemind/champion
+	var/mob/living/simple/hostile/hivemind/champion
 	var/list/champ_names = list()
 	var/champion_path
 	var/amount = 1
@@ -111,22 +111,22 @@
 	var/squad = pick("defiler", "twins", "zeus", "swarm", GLOB.hive_data_bool["allow_tyrant_spawn"] ? "tyrant" : "defiler")
 	switch(squad)
 		if("defiler")
-			champion_path = /mob/living/simple_animal/hostile/hivemind/mechiver
+			champion_path = /mob/living/simple/hostile/hivemind/mechiver
 			champ_names += "Defiler"
 		if("twins")
 			champ_names = list("Twin Alpha", "Twin Beta", "Twin Gamma")
 			amount = 3
-			champion_path = /mob/living/simple_animal/hostile/hivemind/himan
+			champion_path = /mob/living/simple/hostile/hivemind/himan
 		if("zeus")
 			champ_names = list("Zeus", "Thor")
-			champion_path = /mob/living/simple_animal/hostile/hivemind/hiborg
+			champion_path = /mob/living/simple/hostile/hivemind/hiborg
 			amount = 2
 		if("swarm")
 			champ_names = list("Swarmer Slicer", "Swarmer Destroyer", "Swarmer Annihilater", "Swarmer Stinger", "Swarmer Cutter", "Swarmer Dicer")
 			amount = 6
-			champion_path = /mob/living/simple_animal/hostile/hivemind/stinger
+			champion_path = /mob/living/simple/hostile/hivemind/stinger
 		if("tyrant")
-			champion_path = /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant
+			champion_path = /mob/living/simple/hostile/megafauna/hivemind_tyrant
 		//Death of the tyrant = death of the hive. Players wont have to chase a bunch of nodes all over the ship around.
 		//Although this would be a problem if the players go after a undefended node, said node spawns the tyrant, tyrant dies, entire hive dies.
 		//Would be better if we could apply the death effect of the tyrant to the spawned champions.

@@ -1,7 +1,7 @@
-/mob/living/carbon/superior_animal/fungi/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/carbon/superior/fungi/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 
-/mob/living/carbon/superior_animal/fungi/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/fungi/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/reagent_containers/snacks))
 
 		// Not overfeed the shroom

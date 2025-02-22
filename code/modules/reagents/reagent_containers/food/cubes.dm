@@ -86,7 +86,7 @@
 	filling_color = "#ADAC7F"
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
-	grow_into = /mob/living/carbon/superior_animal/roach
+	grow_into = /mob/living/carbon/superior/roach
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
 	volume = 500
 
@@ -105,7 +105,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/fuhrer
+	grow_into = /mob/living/carbon/superior/roach/fuhrer
 
 /obj/item/reagent_containers/snacks/cube/roach/jager
 	name = "Jager Cube"
@@ -118,7 +118,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/hunter
+	grow_into = /mob/living/carbon/superior/roach/hunter
 
 /obj/item/reagent_containers/snacks/cube/roach/kraftwerk
 	name = "Kraftwerk Cube"
@@ -131,7 +131,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/nanite
+	grow_into = /mob/living/carbon/superior/roach/nanite
 
 /obj/item/reagent_containers/snacks/cube/roach/roachling
 	name = "Roachling Cube"
@@ -144,7 +144,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/roachling
+	grow_into = /mob/living/carbon/superior/roach/roachling
 
 /obj/item/reagent_containers/snacks/cube/roach/seuche
 	name = "Seuche Cube"
@@ -157,7 +157,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/support
+	grow_into = /mob/living/carbon/superior/roach/support
 
 /obj/item/reagent_containers/snacks/cube/roach/panzer
 	name = "Panzer Cube"
@@ -170,7 +170,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/tank
+	grow_into = /mob/living/carbon/superior/roach/tank
 
 /obj/item/reagent_containers/snacks/cube/roach/elektromagnetisch
 	name = "Elektromagnetisch Cube"
@@ -183,7 +183,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/elektromagnetisch
+	grow_into = /mob/living/carbon/superior/roach/elektromagnetisch
 
 /obj/item/reagent_containers/snacks/cube/roach/glowing
 	name = "Gluhend Cube"
@@ -196,7 +196,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/glowing
+	grow_into = /mob/living/carbon/superior/roach/glowing
 
 /obj/item/reagent_containers/snacks/cube/roach/grestrahlte
 	name = "Grestrahlte Cube"
@@ -209,7 +209,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/toxic
+	grow_into = /mob/living/carbon/superior/roach/toxic
 
 /obj/item/reagent_containers/snacks/cube/roach/nitro
 	name = "Benzin Cube"
@@ -222,4 +222,4 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/nitro
+	grow_into = /mob/living/carbon/superior/roach/nitro

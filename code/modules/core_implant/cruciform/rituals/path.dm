@@ -576,7 +576,7 @@
 	var/traps
 	var/carrion
 	log_and_message_admins("performed empowered reveal litany")
-	for(var/mob/living/carbon/superior_animal/S in range(longrange, H))
+	for(var/mob/living/carbon/superior/S in range(longrange, H))
 		if (S.stat != DEAD)
 			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
 				was_triggered = TRUE
@@ -608,11 +608,11 @@
 						if(howfar <= closerange)
 							otherclose += 1
 
-	for (var/mob/living/simple_animal/hostile/S in range(longrange, H))
+	for (var/mob/living/simple/hostile/S in range(longrange, H))
 		if (S.stat != DEAD)
 			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
 				howfar = get_dist(H.loc, S.loc)
-				if(istype(S, /mob/living/simple_animal/spider_core) && howfar >= closerange) //Carrions get detected separately
+				if(istype(S, /mob/living/simple/spider_core) && howfar >= closerange) //Carrions get detected separately
 					was_triggered = TRUE
 					carrion = TRUE
 				else

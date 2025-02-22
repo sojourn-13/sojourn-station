@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/russian
+/mob/living/simple/hostile/russian
 	name = "russian"
 	desc = "For the Motherland!"
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -36,7 +36,7 @@
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
 
-/mob/living/simple_animal/hostile/russian/ranged
+/mob/living/simple/hostile/russian/ranged
 	icon_state = "russianranged"
 	drop_items = list(/obj/landmark/corpse/antagonist/russian/ranged, /obj/item/gun/projectile/revolver)
 	ranged = 1
@@ -45,7 +45,7 @@
 	casingtype = /obj/item/ammo_casing/magnum_40
 
 
-/mob/living/simple_animal/hostile/russian/death()
+/mob/living/simple/hostile/russian/death()
 	..()
 	drop_death_loot()
 	qdel(src)

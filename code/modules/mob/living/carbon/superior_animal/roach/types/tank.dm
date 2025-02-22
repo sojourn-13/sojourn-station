@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/tank
+/mob/living/carbon/superior/roach/tank
 	name = "Panzer Roach"
 	desc = "A monstrous, dog-sized cockroach. This one looks more robust than others."
 	icon_state = "panzer"
@@ -17,5 +17,5 @@
 	armor_divisor = 1.2
 
 // Panzers won't slip over on water or soap.
-/mob/living/carbon/superior_animal/roach/tank/slip(slipped_on,stun_duration=8)
+/mob/living/carbon/superior/roach/tank/slip(slipped_on,stun_duration=8)
 	return FALSE

@@ -177,11 +177,11 @@
 			new_meat.reagents.add_reagent("nutriment", 10)
 
 	if(issuperioranimal(L))
-		var/mob/living/carbon/superior_animal/SA = L
+		var/mob/living/carbon/superior/SA = L
 		SA.harvest(SA) //Self harvest
 		return
 	if(isanimal(L))
-		var/mob/living/simple_animal/SA = L
+		var/mob/living/simple/SA = L
 		SA.harvest(SA) //Self harvest
 		return
 	return

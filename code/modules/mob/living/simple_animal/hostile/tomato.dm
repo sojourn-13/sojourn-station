@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/tomato
+/mob/living/simple/hostile/tomato
 	name = "tomato"
 	desc = "It's a horrifyingly enormous beef tomato, and it's packing extra beef!"
 	icon = 'icons/mob/mobs-monster.dmi'

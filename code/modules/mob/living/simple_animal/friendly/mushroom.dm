@@ -1,4 +1,4 @@
-/mob/living/simple_animal/mushroom
+/mob/living/simple/mushroom
 	name = "walking mushroom"
 	desc = "It's a massive mushroom... with legs? Clearly a genetic abomination derived from science."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -20,11 +20,11 @@
 	var/min_explode_time = 1200
 	can_burrow = TRUE
 
-/mob/living/simple_animal/mushroom/New()
+/mob/living/simple/mushroom/New()
 	..()
 	harvest_time = world.time
 
-/mob/living/simple_animal/mushroom/verb/spawn_spores()
+/mob/living/simple/mushroom/verb/spawn_spores()
 
 	set name = "Explode"
 	set category = "Abilities"
@@ -45,13 +45,13 @@
 
 	spore_explode()
 
-/mob/living/simple_animal/mushroom/death()
+/mob/living/simple/mushroom/death()
 	if(prob(30))
 		spore_explode()
 		return
 	..()
 
-/mob/living/simple_animal/mushroom/proc/spore_explode()
+/mob/living/simple/mushroom/proc/spore_explode()
 	if(!seed)
 		return
 	if(world.time < harvest_time + min_explode_time)

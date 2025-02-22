@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/lodge
+/mob/living/carbon/superior/lodge
 	name = "Lodge Farming Animals"
 	desc = "Report to Kaz if you see this"
 	icon = 'icons/mob/mobs-domestic.dmi'

@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/marine
+/mob/living/carbon/superior/human/marine
 	name = "Sol-Fed Rifleman"
 	desc = "An average height man sporting Solar Federation Marine armor, a ground-pounding grunt and proud of it. Hoorah."
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -56,20 +56,20 @@
 
 	faction = "solfed" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
-/mob/living/carbon/superior_animal/human/marine/doTargetMessage()
+/mob/living/carbon/superior/human/marine/doTargetMessage()
 	. = ..()
 
 	visible_emote("grunts, \"[pick("In my sights!","Come get some!","Seperatist scumbags!", "Frontier Fucks!", "Hoorah!", "Put your hands up!")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/human/marine/death()
+/mob/living/carbon/superior/human/marine/death()
 	if(prob(50))
 		playsound(loc, 'sound/death_gasps/marine1.ogg', 80)
 	else
 		playsound(loc, 'sound/death_gasps/marine2.ogg', 80)
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/marine/shield
+/mob/living/carbon/superior/human/marine/shield
 	name = "Sol-Fed Commando"
 	desc = "A Solar Federation ship breacher and close quarters specialist. Sporting a riot shield and a burst-fire firearm appearing to be built into the arm of their armor!"
 	icon_state = "solfed_trooper_shield"
@@ -95,12 +95,12 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 
-/mob/living/carbon/superior_animal/human/marine/shield/doTargetMessage()
+/mob/living/carbon/superior/human/marine/shield/doTargetMessage()
 	. = ..()
 	visible_emote("grunts, \"[pick("Come get me!","A human shield only costs one life!","Hoorah, mother-fucker!", "Colonial dicks!", "Can't hit me!", "Level 3 plates, bitch!","BANG-BANG-BANG Mother-fucker!")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/human/marine/shotgun
+/mob/living/carbon/superior/human/marine/shotgun
 	name = "Sol-Fed Heavy Commando"
 	desc = "A Solar Federation ship breacher and close quarters specialist. This trooper appears to sport heavier armor and a breaching shotgun, a ground-pounders dream."
 	icon_state = "solfed_trooper_shotgun"
@@ -120,12 +120,12 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
-/mob/living/carbon/superior_animal/human/marine/shotgun/doTargetMessage()
+/mob/living/carbon/superior/human/marine/shotgun/doTargetMessage()
 	. = ..()
 	visible_emote("grunts, \"[pick("You WISH I use buckshot!","Time for some shotgun-surgery!","I got a slug with your name on it!", "Ker-chunk, baby!", "Hoorah!", "I ain't firin' blanks!", "Come get me, little man!")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/human/marine/specialist
+/mob/living/carbon/superior/human/marine/specialist
 	name = "Sol-Fed Combat Specialist"
 	desc = "A Solar Federation Marine equiped with a grenade launcher, perfect for both crowd control for military police or clearing defenses with explosives. Based on the grenades on his bandolier.. you don't think he's using tear gas."
 	icon_state = "solfed_trooper_specialist"
@@ -143,19 +143,19 @@
 	limited_ammo = FALSE
 	mag_drop = FALSE
 
-/mob/living/carbon/superior_animal/human/marine/specialist/doTargetMessage()
+/mob/living/carbon/superior/human/marine/specialist/doTargetMessage()
 	. = ..()
 	visible_emote("grunts, \"[pick("Frag out!","I've got a present for you!","Incoming!", "Danger close!", "Grenade out!", "Prepare for a closed-casket, asshole!", "Ain't gonna be much left of you!", "I love a fine red mist!")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/human/marine/specialist/death()
+/mob/living/carbon/superior/human/marine/specialist/death()
 	..()
 	if(prob(40))
 		gibs(loc, null, /obj/effect/gibspawner/human)
 		explosion(get_turf(src), 0, 0, 3)
 		qdel(src)
 
-/mob/living/carbon/superior_animal/human/marine/heavy
+/mob/living/carbon/superior/human/marine/heavy
 	name = "Sol-Fed Heavy Trooper"
 	desc = "A tall human male kitted with reinforced Solar Federastion Marine armor. In his hands is some sort of machine gun, being directly fed through a belt coming from his backpack."
 	icon_state = "solfed_trooper_heavy"
@@ -173,12 +173,12 @@
 	limited_ammo = FALSE
 	mag_drop = FALSE
 
-/mob/living/carbon/superior_animal/human/marine/heavy/doTargetMessage()
+/mob/living/carbon/superior/human/marine/heavy/doTargetMessage()
 	. = ..()
 	visible_emote("grunts, \"[pick("This machine kills commies!","Come get some!","Fuckin' blast em'!", "I got a round with your name on it!", "Just die already!", "Hah-haaa, you're fuckin' done!", "Make war, not love!")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/human/marine/sniper
+/mob/living/carbon/superior/human/marine/sniper
 	name = "Sol-Fed Sniper"
 	desc = "A shorter than average human male kitted with light scout armor and Solar Federation patches. His rifle appears to sport multiple customizations, including notches on its stock."
 	icon_state = "solfed_trooper_sniper"
@@ -197,7 +197,7 @@
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	projectilesound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 
-/mob/living/carbon/superior_animal/human/marine/sniper/doTargetMessage()
+/mob/living/carbon/superior/human/marine/sniper/doTargetMessage()
 	. = ..()
 	visible_emote("grunts, \"[pick("All lined up.","In my sights.","One shot, one kill.", "Bingo, target spotted.", "Hoo-fuckin'-rah.", "Get fucked, dickweed.")]")
 	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)

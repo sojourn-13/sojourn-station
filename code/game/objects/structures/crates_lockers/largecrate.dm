@@ -56,55 +56,55 @@
 
 /obj/structure/largecrate/animal/corgi
 	name = "corgi carrier"
-	held_type = /mob/living/simple_animal/corgi
+	held_type = /mob/living/simple/corgi
 
 /obj/structure/largecrate/animal/cow
 	name = "cow crate"
-	held_type = /mob/living/simple_animal/cow
+	held_type = /mob/living/simple/cow
 
 /obj/structure/largecrate/animal/pig
 	name = "pig crate"
-	held_type = /mob/living/simple_animal/pig
+	held_type = /mob/living/simple/pig
 
 /obj/structure/largecrate/animal/bear
 	name = "bear crate"
-	held_type = /mob/living/simple_animal/hostile/bear/brown
+	held_type = /mob/living/simple/hostile/bear/brown
 
 /obj/structure/largecrate/animal/p_bear
 	name = "polar bear crate"
-	held_type = /mob/living/simple_animal/hostile/bear/polar
+	held_type = /mob/living/simple/hostile/bear/polar
 
 /obj/structure/largecrate/animal/goat
 	name = "goat crate"
-	held_type = /mob/living/simple_animal/hostile/retaliate/goat
+	held_type = /mob/living/simple/hostile/retaliate/goat
 
 /obj/structure/largecrate/animal/cat
 	name = "cat carrier"
-	held_type = /mob/living/simple_animal/cat
+	held_type = /mob/living/simple/cat
 
 /obj/structure/largecrate/animal/cat/bones
-	held_type = /mob/living/simple_animal/cat/fluff/bones
+	held_type = /mob/living/simple/cat/fluff/bones
 
 /obj/structure/largecrate/animal/chick
 	name = "chicken crate"
 	held_count = 5
-	held_type = /mob/living/simple_animal/chick
+	held_type = /mob/living/simple/chick
 
 /obj/structure/largecrate/animal/giant_spider
 	name = "Giant Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider
+	held_type = /mob/living/carbon/superior/spider
 
 /obj/structure/largecrate/animal/nurse_spider
 	name = "Nurse Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider/nurse
+	held_type = /mob/living/carbon/superior/spider/nurse
 
 /obj/structure/largecrate/animal/hunter_spider
 	name = "Hunter Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider/hunter
+	held_type = /mob/living/carbon/superior/spider/hunter
 
 /obj/structure/largecrate/animal/welder_roach
 	name = "Benzin Roach crate"
-	held_type = /mob/living/carbon/superior_animal/roach/nitro
+	held_type = /mob/living/carbon/superior/roach/nitro
 
 /obj/structure/largecrate/animal/piano
 	held_type = /obj/structure/synthesized_instrument/synthesizer/piano

@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/proc/check_AI_act()
+/mob/living/carbon/superior/proc/check_AI_act()
 	if ((stat != CONSCIOUS) || !canmove || resting || lying || stasis || AI_inactive || client || grabbed_by_friend)
 		stance = HOSTILE_STANCE_IDLE
 		target_mob = null
@@ -11,7 +11,7 @@
 
 /*
 
-/mob/living/carbon/superior_animal/Life()
+/mob/living/carbon/superior/Life()
 	. = ..()
 
 	moved = FALSE
@@ -88,7 +88,7 @@
 
 */
 
-/mob/living/carbon/superior_animal/handle_chemicals_in_body()
+/mob/living/carbon/superior/handle_chemicals_in_body()
 	if(reagent_immune)
 		return FALSE
 	if(reagents)

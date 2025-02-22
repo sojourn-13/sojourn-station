@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/fungi/shroom
+/mob/living/carbon/superior/fungi/shroom
 	name = "Shroomling"
 	desc = "A shroomling, a companion produced by the mycus. It isn't that strong and requires alot of food, but feeding it produces various powerful chemical resins."
 	var/drop_threshold = 90 // Nutrition threshold upon which the shroom drop the med.
@@ -19,12 +19,12 @@
 									/obj/item/reagent_containers/glass/bottle/organic/meralyne = 1, // Meralyne, heal brute damage better than bicaridine
 									)
 
-/mob/living/carbon/superior_animal/fungi/shroom/New()
+/mob/living/carbon/superior/fungi/shroom/New()
 	var/picked_name = "[pick("Higgs","Igor","Hipp","Galen","Sina","Vesa","Rene","Edwa","Ig","Curie","Lister","Sigis","Koch","Osler")]"
 	name = "Shroomling [picked_name]"
 	..()
 
-/mob/living/carbon/superior_animal/fungi/shroom/Life()
+/mob/living/carbon/superior/fungi/shroom/Life()
 	..()
 
 	drop_timer++ // Increment the drop timer

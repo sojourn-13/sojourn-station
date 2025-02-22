@@ -430,7 +430,7 @@
 	dir = 4;
 	pixel_x = 28
 	},
-/mob/living/simple_animal/yithian{
+/mob/living/simple/yithian{
 	desc = "How'd he get in here?";
 	name = "Jorb"
 	},

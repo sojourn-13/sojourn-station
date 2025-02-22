@@ -1234,7 +1234,7 @@ There are 9 wires.
 /mob/living/blocks_airlock()
 	return TRUE
 
-/mob/living/simple_animal/blocks_airlock() //Airlocks crush cockroahes and mouses.
+/mob/living/simple/blocks_airlock() //Airlocks crush cockroahes and mouses.
 	return mob_size > MOB_SMALL
 
 /atom/movable/proc/airlock_crush(crush_damage)

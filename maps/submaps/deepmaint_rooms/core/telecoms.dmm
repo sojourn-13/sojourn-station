@@ -36,14 +36,14 @@
 "al" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "an" = (
 /obj/machinery/light/floor/built,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "ap" = (
@@ -93,7 +93,7 @@
 "aB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "aC" = (
@@ -279,7 +279,7 @@
 /obj/item/trash/material/metal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "bi" = (
@@ -372,7 +372,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/data_disk/basic,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "bx" = (
@@ -385,7 +385,7 @@
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "bz" = (
@@ -618,7 +618,7 @@
 /obj/item/trash/material/metal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "co" = (
@@ -671,13 +671,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/computer_hardware/card_slot,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
 "nc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
 "ns" = (
@@ -808,7 +808,7 @@
 "PN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "RN" = (

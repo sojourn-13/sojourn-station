@@ -197,7 +197,7 @@
 
 	// Some mobs have specific meat item types.
 	if(isanimal(src.occupant))
-		var/mob/living/simple_animal/critter = src.occupant
+		var/mob/living/simple/critter = src.occupant
 		if(critter.meat_amount)
 			slab_count = critter.meat_amount
 		if(critter.meat_type)
@@ -211,7 +211,7 @@
 			return
 
 	else if(issuperioranimal(occupant))
-		var/mob/living/carbon/superior_animal/s_animal = occupant
+		var/mob/living/carbon/superior/s_animal = occupant
 		slab_type = s_animal.meat_type
 		slab_count = s_animal.meat_amount
 		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat) || slab_count == 0)

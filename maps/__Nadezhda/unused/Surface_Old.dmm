@@ -9144,7 +9144,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/mouse/brown/Tom,
+/mob/living/simple/mouse/brown/Tom,
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/security/prisoncells)
 "auu" = (
@@ -12556,7 +12556,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
 "aBY" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "aBZ" = (
@@ -15966,7 +15966,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "aJZ" = (
-/mob/living/simple_animal/hostile/bear,
+/mob/living/simple/hostile/bear,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "aKa" = (
@@ -19791,18 +19791,18 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aUN" = (
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aUO" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/fnest)
 "aUP" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "aUQ" = (
-/mob/living/simple_animal/corgi/puppy,
+/mob/living/simple/corgi/puppy,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "aUR" = (
@@ -19862,7 +19862,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "aVd" = (
-/mob/living/simple_animal/fennec/fennix,
+/mob/living/simple/fennec/fennix,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "aVe" = (
@@ -20154,19 +20154,19 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "aWb" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "aWc" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "aWd" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -20190,7 +20190,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aWh" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "aWi" = (
@@ -20239,7 +20239,7 @@
 /area/nadezhda/dungeon/outside/farm)
 "aWl" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "aWm" = (
@@ -20297,7 +20297,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aWw" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "aWx" = (
@@ -20375,7 +20375,7 @@
 /area/nadezhda/outside/meadow)
 "aWM" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "aWN" = (
@@ -20550,7 +20550,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "aXu" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "aXv" = (
@@ -20575,7 +20575,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/farm)
 "aXA" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/beach/water/shallow,
@@ -20657,7 +20657,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/farm)
 "aXP" = (
-/mob/living/simple_animal/hostile/frog{
+/mob/living/simple/hostile/frog{
 	faction = "pond"
 	},
 /turf/simulated/floor/beach/water/shallow,
@@ -21052,7 +21052,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "aZe" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "aZf" = (
@@ -21115,7 +21115,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "aZo" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "aZp" = (
@@ -23760,7 +23760,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bhJ" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -23782,7 +23782,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhN" = (
-/mob/living/simple_animal/hostile/frog{
+/mob/living/simple/hostile/frog{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -23951,7 +23951,7 @@
 "biq" = (
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bir" = (
@@ -24000,7 +24000,7 @@
 /area/nadezhda/outside/forest)
 "biA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biB" = (
@@ -24089,7 +24089,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biR" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "biS" = (
@@ -25084,7 +25084,7 @@
 /area/nadezhda/absolutism/storage)
 "bmv" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "bmw" = (
@@ -25679,7 +25679,7 @@
 /area/nadezhda/outside/forest)
 "boq" = (
 /obj/structure/flora/small/busha1,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bor" = (
@@ -25826,7 +25826,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boS" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -26296,7 +26296,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bqy" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bqA" = (
@@ -26388,7 +26388,7 @@
 /area/nadezhda/hallway/surface/section1)
 "bqS" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/lakeside)
 "bqT" = (
@@ -26414,7 +26414,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bqX" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bqY" = (
@@ -26465,7 +26465,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/crematorium)
 "bri" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "brj" = (
@@ -27187,7 +27187,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section3)
 "btq" = (
-/mob/living/simple_animal/hostile/retaliate/croakerlord,
+/mob/living/simple/hostile/retaliate/croakerlord,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest)
 "btr" = (
@@ -27338,7 +27338,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section3)
 "btH" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest)
 "btI" = (
@@ -30509,7 +30509,7 @@
 /area/nadezhda/security/maingate)
 "bzW" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "bzX" = (
@@ -32351,7 +32351,7 @@
 /area/nadezhda/command/crematorium)
 "ihC" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "iiU" = (

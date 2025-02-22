@@ -1747,11 +1747,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jU" = (
-/mob/living/carbon/superior_animal/lodge/tatonka,
+/mob/living/carbon/superior/lodge/tatonka,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jV" = (
-/mob/living/carbon/superior_animal/lodge/cerberus,
+/mob/living/carbon/superior/lodge/cerberus,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jX" = (
@@ -2648,7 +2648,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wk" = (
-/mob/living/carbon/superior_animal/lodge/clucker,
+/mob/living/carbon/superior/lodge/clucker,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wo" = (
@@ -3337,7 +3337,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Eu" = (
-/mob/living/carbon/superior_animal/lodge/clucker,
+/mob/living/carbon/superior/lodge/clucker,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ev" = (
@@ -4385,7 +4385,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Up" = (
-/mob/living/carbon/superior_animal/lodge/cerberus,
+/mob/living/carbon/superior/lodge/cerberus,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Uv" = (

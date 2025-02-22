@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_TINY
 	health = 5
 	var/amount_grown = 0
-	var/spawn_type = /mob/living/carbon/superior_animal/roach/roachling
+	var/spawn_type = /mob/living/carbon/superior/roach/roachling
 	var/datum/genetics/genetics_holder/unnatural_mutations = new()
 
 /obj/item/roach_egg/afterattack(obj/O as obj, mob/user as mob, proximity)

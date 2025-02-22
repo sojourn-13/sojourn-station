@@ -1889,7 +1889,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/filth,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -2549,7 +2549,7 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/floor_decal/rust,
 /obj/random/lowkeyrandom/low_chance,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -3823,7 +3823,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/command/merchant)
 "aki" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/northcave)
 "akj" = (
@@ -7892,7 +7892,7 @@
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -7930,7 +7930,7 @@
 /obj/structure/railing,
 /obj/effect/floor_decal/spline/plain,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -11125,7 +11125,7 @@
 "aDm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple/cat/fluff/Runtime,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/cbo)
 "aDn" = (
@@ -13184,7 +13184,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/xenobiology)
 "aIh" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aIi" = (
@@ -13587,7 +13587,7 @@
 "aJd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/quartermaster/disposaldrop)
 "aJe" = (
@@ -17651,7 +17651,7 @@
 "aUe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUf" = (
@@ -17672,7 +17672,7 @@
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUi" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUj" = (
@@ -21217,7 +21217,7 @@
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "bdB" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "bdC" = (
@@ -24627,7 +24627,7 @@
 /area/nadezhda/command/fo)
 "blK" = (
 /obj/random/contraband/low_chance,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "blL" = (
@@ -25542,7 +25542,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -26646,7 +26646,7 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "brr" = (
 /obj/effect/damagedfloor/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -34434,11 +34434,11 @@
 /turf/simulated/open,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "bKv" = (
-/mob/living/simple_animal/frog/rare,
+/mob/living/simple/frog/rare,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/hallway/side/f2section1)
 "bKw" = (
-/mob/living/simple_animal/crab/Coffee,
+/mob/living/simple/crab/Coffee,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/hallway/side/f2section1)
 "bKx" = (
@@ -36159,7 +36159,7 @@
 /area/nadezhda/command/captain)
 "bOm" = (
 /obj/structure/disposalpipe/segment,
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple/corgi/Ian,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/captain)
 "bOn" = (
@@ -36307,7 +36307,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/mob/living/simple_animal/parrot/Poly,
+/mob/living/simple/parrot/Poly,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/command/gmaster)
 "bOE" = (
@@ -36631,7 +36631,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm4)
 "bPi" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "bPj" = (
@@ -43148,7 +43148,7 @@
 "ced" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/lizard,
+/mob/living/simple/lizard,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "cee" = (
@@ -52646,7 +52646,7 @@
 "czA" = (
 /obj/random/junkfood/low_chance,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mouse/white,
+/mob/living/simple/mouse/white,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "czB" = (
@@ -56223,7 +56223,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/barbackroom)
 "cIJ" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "cIK" = (
@@ -58077,7 +58077,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/foyer)
 "cNx" = (
-/mob/living/simple_animal/cow{
+/mob/living/simple/cow{
 	name = "Betsy"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -60731,7 +60731,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "cTQ" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "cTR" = (
@@ -68815,7 +68815,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "dmC" = (
-/mob/living/simple_animal/chicken{
+/mob/living/simple/chicken{
 	name = "Commander Clucky"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -71432,7 +71432,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "dsw" = (
@@ -78441,7 +78441,7 @@
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -80774,7 +80774,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "dOk" = (
@@ -81490,7 +81490,7 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (EAST)"
 	},
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "dPX" = (
