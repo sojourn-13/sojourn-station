@@ -505,7 +505,7 @@ Circuit boards for different Genetics Machines.
 		/obj/item/stock_parts/matter_bin = 4, //Affects Max Sample plates
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
+/obj/item/pc_part/drive/disk/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
 	desc = "A disc containing patented designs for the Xenogenetics lab. Contains additional licensed products from the lab's creator."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'
@@ -520,7 +520,7 @@ Circuit boards for different Genetics Machines.
 		/datum/design/autolathe/genetics/petite_scanner = 1
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public
+/obj/item/pc_part/drive/disk/design/genetics_kit_public
 	disk_name = "Genetics Studio Resupply Kit"
 	desc = "A disc containing quality-of-life designs for the Xenogenetics lab."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'

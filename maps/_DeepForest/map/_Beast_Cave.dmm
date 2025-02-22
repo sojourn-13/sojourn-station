@@ -9396,7 +9396,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "Fu" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/item/computer_hardware/hard_drive/portable/design/surgery,
+/obj/item/pc_part/drive/disk/design/surgery,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -14193,7 +14193,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Us" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/parttoolpack{
+/obj/item/pc_part/drive/disk/design/parttoolpack{
 	name = "Sakaba TM-908 Utility Modificationss"
 	},
 /obj/item/storage/deferred/toolmod,

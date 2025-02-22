@@ -2110,7 +2110,7 @@
 /obj/structure/table/reinforced,
 /obj/item/stack/rods/random,
 /obj/item/stack/cable_coil/random,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gy" = (

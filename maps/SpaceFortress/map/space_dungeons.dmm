@@ -2680,7 +2680,7 @@
 /area/outpost/abandoned_fortress/powered)
 "nH" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate1)
 "nJ" = (
@@ -7882,10 +7882,10 @@
 /area/outpost/abandoned_fortress/powered)
 "Oq" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/guns/lamia,
+/obj/item/pc_part/drive/disk/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/awaymission/spacebattle/syndicate1)
 "Or" = (
@@ -8927,7 +8927,7 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/golden,
 /area/awaymission/spacebattle/syndicate1)
 "Tu" = (
@@ -9773,7 +9773,7 @@
 "XD" = (
 /obj/structure/table/standard,
 /obj/item/wrapping_paper,
-/obj/item/computer_hardware/scanner/paper,
+/obj/item/pc_part/scanner/paper,
 /obj/structure/railing{
 	dir = 8
 	},

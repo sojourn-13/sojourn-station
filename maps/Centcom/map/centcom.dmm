@@ -1034,7 +1034,7 @@
 /area/shuttle/skipjack_area)
 "dv" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/reinforced,
 /area/shuttle/skipjack_area)
 "dw" = (
@@ -2119,10 +2119,10 @@
 /area/space)
 "gv" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/guns/lamia,
+/obj/item/pc_part/drive/disk/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)
 "gw" = (
@@ -2557,7 +2557,7 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)
 "hv" = (
@@ -2659,7 +2659,7 @@
 "hH" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/shuttle/mercshuttle_area)
 "hI" = (
@@ -3212,8 +3212,8 @@
 /area/shuttle/skipjack_area)
 "ji" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
-/obj/item/computer_hardware/hard_drive/portable/design/rped,
+/obj/item/pc_part/drive/disk/design/genetics_kit,
+/obj/item/pc_part/drive/disk/design/rped,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "jj" = (
@@ -4699,9 +4699,9 @@
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/industrial/hatch,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/robustcells,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/robustcells,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/shuttle/mercshuttle_area)
 "mL" = (
@@ -5580,7 +5580,7 @@
 /area/centcom/evac)
 "pB" = (
 /obj/machinery/computer/rdconsole/unlicensed,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "pC" = (
@@ -6180,7 +6180,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
 "uP" = (
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
@@ -6695,7 +6695,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/centcom/raider_base)
 "Bl" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods,
+/obj/item/pc_part/drive/disk/design/omg/basic_organ_mods,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -7069,7 +7069,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Ek" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/simple,
+/obj/item/pc_part/drive/disk/design/omg/simple,
 /obj/structure/table/glass,
 /obj/machinery/light{
 	dir = 8;
@@ -7419,7 +7419,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Hp" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs,
+/obj/item/pc_part/drive/disk/design/omg/diy_organs,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -7585,7 +7585,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Is" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic,
+/obj/item/pc_part/drive/disk/design/omg/alcoholic,
 /obj/structure/table/glass,
 /obj/machinery/light{
 	dir = 8;
@@ -7936,7 +7936,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "LZ" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/addict,
+/obj/item/pc_part/drive/disk/design/omg/addict,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -8043,8 +8043,8 @@
 /area/centcom/evac)
 "Nn" = (
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/cells/plus,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/caustic_rounds/plus,
+/obj/item/pc_part/drive/disk/design/nt/cells/plus,
+/obj/item/pc_part/drive/disk/design/nt/caustic_rounds/plus,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "Np" = (
@@ -8830,8 +8830,8 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/centcom/raider_base)
 "Tt" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma,
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare,
+/obj/item/pc_part/drive/disk/design/omg/teratoma,
+/obj/item/pc_part/drive/disk/design/omg/teratoma_rare,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -8920,21 +8920,21 @@
 /obj/item/cell/medium/high{
 	pixel_y = -4
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/concillium,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades,
+/obj/item/pc_part/drive/disk/design/nt/mk58,
+/obj/item/pc_part/drive/disk/design/nt/plasma_shells,
+/obj/item/pc_part/drive/disk/design/nt/counselor,
+/obj/item/pc_part/drive/disk/design/nt/nemesis,
+/obj/item/pc_part/drive/disk/design/nt/valkirye,
+/obj/item/pc_part/drive/disk/design/nt/themis,
+/obj/item/pc_part/drive/disk/design/nt/concillium,
+/obj/item/pc_part/drive/disk/design/nt/old_guns,
+/obj/item/pc_part/drive/disk/design/nt/new_guns,
+/obj/item/pc_part/drive/disk/design/nt/halicon,
+/obj/item/pc_part/drive/disk/design/nt/lightfall,
+/obj/item/pc_part/drive/disk/design/nt/regulator,
+/obj/item/pc_part/drive/disk/design/nt/dominion,
+/obj/item/pc_part/drive/disk/design/nt/purger,
+/obj/item/pc_part/drive/disk/design/nt/grenades,
 /obj/item/cell/large/high,
 /obj/item/cell/large/high,
 /obj/item/cell/large/high,

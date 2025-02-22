@@ -25,7 +25,7 @@
 		/obj/item/tank,
 		/obj/item/circuitboard,
 		/obj/item/device/assembly,//Primarily for making improved cameras, but opens many possibilities
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/tool_upgrade,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
@@ -233,7 +233,7 @@
 		/obj/item/spacecash,
 		/obj/item/coin,
 		/obj/item/device/toner,
-		/obj/item/computer_hardware/hard_drive/portable
+		/obj/item/pc_part/drive/disk
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -262,7 +262,7 @@
 		/obj/item/tool/minihoe,//Farmbots and xenoflora
 		/obj/item/seeds,
 		/obj/item/tank,
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/device/integrated_electronics,

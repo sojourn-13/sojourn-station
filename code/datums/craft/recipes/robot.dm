@@ -193,7 +193,7 @@
 		list(/obj/item/stock_parts/scanning_module/phasic, 1, "time" = 30),
 		list(/obj/item/robot_parts/robot_component/camera, 1, "time" = 30),
 		list(/obj/item/robot_parts/robot_component/diagnosis_unit, 1, "time" = 30),
-		list(/obj/item/computer_hardware/processor_unit/super, 1, "time" = 30),
+		list(/obj/item/pc_part/processor_unit/super, 1, "time" = 30),
 		list(/obj/item/stack/cable_coil, 10, "time" = 30),
 		list(QUALITY_WIRE_CUTTING, 20, "time" = 60),
 		list(CRAFT_MATERIAL, 60, MATERIAL_STEEL, "time" = 30),

@@ -209,7 +209,7 @@
 /obj/item/stack/ore/make_old()
 	return
 
-/obj/item/computer_hardware/hard_drive/portable/design/make_old()
+/obj/item/pc_part/drive/disk/design/make_old()
 	..()
 	if(license >= 1)
 		license = round(license / pick(1, 1, 1, 1.1, 1.1, 1.1, 1.1, 1.2, 1.3)) //This looses a lot when unlucky

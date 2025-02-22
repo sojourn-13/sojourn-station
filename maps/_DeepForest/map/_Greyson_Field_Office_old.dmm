@@ -581,14 +581,14 @@
 /obj/structure/table/onestar,
 /obj/item/clipboard,
 /obj/item/device/camera,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/nail_gun,
+/obj/item/pc_part/drive/disk/design/onestar/nail_gun,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "ct" = (
 /obj/structure/table/onestar,
 /obj/item/pen/blue,
 /obj/item/paper_bin,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/rivet,
+/obj/item/pc_part/drive/disk/design/onestar/rivet,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "cu" = (
@@ -656,17 +656,17 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "cG" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor,
+/obj/item/pc_part/drive/disk/design/onestar/cog,
+/obj/item/pc_part/drive/disk/design/onestar/armor,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "cH" = (
-/obj/item/computer_hardware/hard_drive/portable/design/onestar,
+/obj/item/pc_part/drive/disk/design/onestar,
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "cI" = (
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts,
+/obj/item/pc_part/drive/disk/design/onestar/stockparts,
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -3219,7 +3219,7 @@
 /obj/structure/table/onestar,
 /obj/item/clipboard,
 /obj/item/device/camera,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/scaffold,
+/obj/item/pc_part/drive/disk/design/onestar/scaffold,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "mc" = (
@@ -4883,7 +4883,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "rH" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
+/obj/item/pc_part/drive/disk/design/onestar/cog,
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -6518,7 +6518,7 @@
 /obj/structure/table/onestar,
 /obj/item/pen/blue,
 /obj/item/paper_bin,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/spring,
+/obj/item/pc_part/drive/disk/design/onestar/spring,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "YF" = (

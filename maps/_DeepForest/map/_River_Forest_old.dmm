@@ -763,7 +763,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "mo" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/surgery,
+/obj/item/pc_part/drive/disk/design/surgery,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "mr" = (

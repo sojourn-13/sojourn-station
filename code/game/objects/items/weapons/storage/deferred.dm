@@ -440,7 +440,7 @@
 	name = "research box"
 	desc = "A small collection of intellectual curiosities"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1
+		/obj/item/pc_part/drive/disk/research_points/rare = 1
 	)
 
 // Trapper
@@ -458,6 +458,6 @@
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
+		/obj/item/pc_part/drive/disk/design/guns/sa_kalashnikov = 1,
+		/obj/item/pc_part/drive/disk/design/guns/sa_pk = 1
 	)

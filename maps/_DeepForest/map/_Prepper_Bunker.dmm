@@ -334,8 +334,8 @@
 	},
 /obj/item/stack/medical/bruise_pack/handmade,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
@@ -6470,7 +6470,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Dr" = (
 /obj/random/junk/cigbutt,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Dw" = (
@@ -6567,7 +6567,7 @@
 /obj/structure/bed/double/padded,
 /obj/random/furniture/bedsheetdouble,
 /obj/random/junk,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "DU" = (
@@ -7746,8 +7746,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,

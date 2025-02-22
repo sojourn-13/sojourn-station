@@ -1394,10 +1394,10 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "EH" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,

@@ -166,7 +166,7 @@
 /obj/item/stack/cable_coil/blue,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/network_card/wired,
+/obj/item/pc_part/network_card/wired,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "aM" = (
@@ -242,7 +242,7 @@
 "ba" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/network_card/wired,
+/obj/item/pc_part/network_card/wired,
 /obj/structure/salvageable/server,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
@@ -425,7 +425,7 @@
 /obj/item/circuitboard/broken,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/network_card/advanced,
+/obj/item/pc_part/network_card/advanced,
 /obj/item/storage/box/data_disk/basic,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
@@ -494,7 +494,7 @@
 /obj/structure/salvageable/personal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/printer,
+/obj/item/pc_part/printer,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "bT" = (
@@ -563,7 +563,7 @@
 /obj/random/pack/tech_loot,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/network_card/advanced,
+/obj/item/pc_part/network_card/advanced,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "cf" = (
@@ -670,7 +670,7 @@
 "lq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/card_slot,
+/obj/item/pc_part/card_slot,
 /mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
@@ -745,7 +745,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/AIcore,
 /obj/item/device/aicard,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
 "CF" = (
@@ -773,7 +773,7 @@
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/computer_hardware/ai_slot,
+/obj/item/pc_part/ai_slot,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
 "HW" = (

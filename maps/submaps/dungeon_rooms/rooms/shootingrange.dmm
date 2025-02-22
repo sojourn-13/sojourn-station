@@ -67,7 +67,7 @@
 	},
 /obj/item/tool/crowbar/onestar,
 /obj/item/gun/energy/captain,
-/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
+/obj/item/pc_part/drive/disk/design/onestar/cog,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "t" = (

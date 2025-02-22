@@ -11304,8 +11304,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
@@ -14684,7 +14684,7 @@
 /obj/item/gun/projectile/shotgun/doublebarrel/flare,
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/china,
+/obj/item/pc_part/drive/disk/design/guns/china,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
 "kfd" = (
@@ -16088,7 +16088,7 @@
 /obj/item/stock_parts/micro_laser/excelsior,
 /obj/item/stock_parts/scanning_module/excelsior,
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
+/obj/item/pc_part/drive/disk/design/guns/ex_vintorez,
 /obj/item/book/manual/nonfiction/thescienceofright,
 /obj/random/gun_fancy/low_chance,
 /obj/random/gun_fancy/low_chance,
@@ -18849,7 +18849,7 @@
 /area/nadezhda/outside/one_star)
 "naT" = (
 /obj/random/junk/cigbutt,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "nbc" = (
@@ -19976,7 +19976,7 @@
 /obj/structure/bed/double/padded,
 /obj/random/furniture/bedsheetdouble,
 /obj/random/junk,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "nOF" = (
@@ -20651,7 +20651,7 @@
 /obj/random/credits,
 /obj/random/credits,
 /obj/item/clothing/gloves/dusters/gold,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov,
+/obj/item/pc_part/drive/disk/design/guns/tac_kalashnikov,
 /obj/item/clothing/suit/armor/vest/full,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -21138,8 +21138,8 @@
 "oCD" = (
 /obj/structure/safe,
 /obj/item/storage/box/frag,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/cassad,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sol,
+/obj/item/pc_part/drive/disk/design/guns/cassad,
+/obj/item/pc_part/drive/disk/design/guns/sol,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper)
 "oCX" = (
@@ -30216,8 +30216,8 @@
 	},
 /obj/item/stack/medical/bruise_pack/handmade,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
@@ -30941,7 +30941,7 @@
 /obj/structure/salvageable/console_os{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/onestar,
+/obj/item/pc_part/drive/disk/design/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "vme" = (

@@ -83,21 +83,21 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 			. = TRUE
 
 		if("PC_enable_component")
-			var/obj/item/computer_hardware/H = find_hardware_by_name(params["component"])
+			var/obj/item/pc_part/H = find_hardware_by_name(params["component"])
 			if(istype(H) && !H.enabled)
 				H.enabled = TRUE
 				H.enabled()
 			. = TRUE
 
 		if("PC_disable_component")
-			var/obj/item/computer_hardware/H = find_hardware_by_name(params["component"])
+			var/obj/item/pc_part/H = find_hardware_by_name(params["component"])
 			if(istype(H) && H.enabled)
 				H.enabled = FALSE
 				H.disabled()
 			. = TRUE
 
 		if("PC_toggle_component")
-			var/obj/item/computer_hardware/H = find_hardware_by_name(params["component"])
+			var/obj/item/pc_part/H = find_hardware_by_name(params["component"])
 			if(istype(H))
 				H.enabled = !H.enabled
 				if(H.enabled)
@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 		if("PC_killprogram")
 			var/prog_name = params["program"]
-			var/obj/item/computer_hardware/hard_drive/prog_disk = locate(params["disk"]) in src
+			var/obj/item/pc_part/drive/prog_disk = locate(params["disk"]) in src
 			if(!prog_disk)
 				return
 
@@ -132,7 +132,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 			. = TRUE
 
 		if("PC_runprogram")
-			var/obj/item/computer_hardware/hard_drive/prog_disk = locate(params["disk"]) in src
+			var/obj/item/pc_part/drive/prog_disk = locate(params["disk"]) in src
 			return run_program(params["program"], prog_disk)
 
 		if("PC_setautorun")
@@ -157,19 +157,19 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 		kill_program()
 		return 1
 	if(href_list["PC_enable_component"])
-		var/obj/item/computer_hardware/H = find_hardware_by_name(href_list["component"])
+		var/obj/item/pc_part/H = find_hardware_by_name(href_list["component"])
 		if(istype(H) && !H.enabled)
 			H.enabled = TRUE
 			H.enabled()
 		. = 1
 	if(href_list["PC_disable_component"])
-		var/obj/item/computer_hardware/H = find_hardware_by_name(href_list["component"])
+		var/obj/item/pc_part/H = find_hardware_by_name(href_list["component"])
 		if(istype(H) && H.enabled)
 			H.enabled = FALSE
 			H.disabled()
 		. = 1
 	if(href_list["PC_toggle_component"])
-		var/obj/item/computer_hardware/H = find_hardware_by_name(href_list["component"])
+		var/obj/item/pc_part/H = find_hardware_by_name(href_list["component"])
 		if(istype(H))
 			H.enabled = !H.enabled
 			if(H.enabled)
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 	if(href_list["PC_killprogram"])
 		var/prog_name = href_list["PC_killprogram"]
-		var/obj/item/computer_hardware/hard_drive/prog_disk = locate(href_list["disk"]) in src
+		var/obj/item/pc_part/drive/prog_disk = locate(href_list["disk"]) in src
 		if(!prog_disk)
 			return 1
 
@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 	// MUST STAY: Email client uses this in a chat link
 	if(href_list["PC_runprogram"])
-		var/obj/item/computer_hardware/hard_drive/prog_disk = locate(href_list["disk"]) in src
+		var/obj/item/pc_part/drive/prog_disk = locate(href_list["disk"]) in src
 		return run_program(href_list["PC_runprogram"], prog_disk)
 
 	if(href_list["PC_setautorun"])
@@ -218,7 +218,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 
 // Function used by NanoUI to obtain a list of programs for a given disk
-/obj/item/modular_computer/proc/get_program_data(obj/item/computer_hardware/hard_drive/disk)
+/obj/item/modular_computer/proc/get_program_data(obj/item/pc_part/drive/disk)
 	var/datum/computer_file/data/autorun = disk.find_file_by_name("AUTORUN")
 
 	var/list/disk_data = list(

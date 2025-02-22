@@ -726,7 +726,7 @@
 
 /obj/item/storage/box/data_disk/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/computer_hardware/hard_drive/portable(src)
+		new /obj/item/pc_part/drive/disk(src)
 
 /obj/item/storage/box/data_disk/basic
 	name = "basic data disk box"
@@ -734,7 +734,7 @@
 
 /obj/item/storage/box/data_disk/basic/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/computer_hardware/hard_drive/portable/basic(src)
+		new /obj/item/pc_part/drive/disk/basic(src)
 
 /obj/item/storage/box/data_disk/basic/empty/populate_contents()
 	return

@@ -950,11 +950,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "fl" = (
 /obj/structure/table/rack/shelf,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/janitor,
-/obj/item/computer_hardware/hard_drive/portable/basic,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/janitor,
+/obj/item/pc_part/drive/disk/basic,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/medical,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fr" = (
@@ -1056,11 +1056,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "fR" = (
 /obj/structure/table/rack/shelf,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/janitor,
-/obj/item/computer_hardware/hard_drive/portable/basic,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/janitor,
+/obj/item/pc_part/drive/disk/basic,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/medical,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;

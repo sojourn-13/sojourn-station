@@ -7755,21 +7755,21 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells{
+/obj/item/pc_part/drive/disk/design/nt_new_guns,
+/obj/item/pc_part/drive/disk/design/nt_old_guns,
+/obj/item/pc_part/drive/disk/design/guns/dominion,
+/obj/item/pc_part/drive/disk/design/guns/counselor,
+/obj/item/pc_part/drive/disk/design/guns/halicon,
+/obj/item/pc_part/drive/disk/design/guns/lightfall,
+/obj/item/pc_part/drive/disk/design/guns/nemesis,
+/obj/item/pc_part/drive/disk/design/guns/purger,
+/obj/item/pc_part/drive/disk/design/guns/regulator,
+/obj/item/pc_part/drive/disk/design/guns/themis,
+/obj/item/pc_part/drive/disk/design/guns/valkirye,
+/obj/item/pc_part/drive/disk/design/guns/mk58,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_plasma_shells{
 	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
 	license = 24
 	},
@@ -14307,7 +14307,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment,
+/obj/item/pc_part/drive/disk/design/nt_bioaugment,
 /obj/item/clothing/mask/gas/germanmask,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
@@ -19106,7 +19106,7 @@
 /obj/item/cell/small/high{
 	pixel_y = 8
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/pc_part/drive/disk/design/security,
 /obj/item/cell/small/high{
 	pixel_y = 8
 	},
@@ -20449,7 +20449,7 @@
 /area/nadezhda/absolutism/storage)
 "pGw" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter{
+/obj/item/pc_part/drive/disk/design/nt_bioprinter{
 	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -20460,7 +20460,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
+/obj/item/pc_part/drive/disk/design/nt_basic_arms{
 	pixel_x = -6
 	},
 /obj/effect/floor_decal/industrial/warningred{
@@ -20658,8 +20658,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
+/obj/item/pc_part/drive/disk/design/blackshield,
+/obj/item/pc_part/drive/disk/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "pOK" = (
@@ -22122,7 +22122,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "roj" = (
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/structure/catwalk,
 /obj/structure/table/steel,
 /obj/random/lathe_disk,

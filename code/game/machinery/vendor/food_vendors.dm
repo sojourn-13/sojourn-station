@@ -562,30 +562,30 @@
 	product_ads = "Seed for yourself!;Green!;OMG! Only Modified Genetically!"
 	icon_state = "seeds"
 	products = list(
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 2
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/potency_high = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/yield_high = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/production_high = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/maturation_fast = 2,
+		/obj/item/pc_part/drive/disk/plantgene/metabolism/no_nutrients_water = 2,
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/psilocybin = 2
 		)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 2,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 2
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/potency_max = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/yield_max = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/production_max = 2,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/maturation_faster = 2
 		)
 	prices = list(
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 500,
-		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 500
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/potency_high = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/yield_high = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/production_high = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/maturation_fast = 500,
+		/obj/item/pc_part/drive/disk/plantgene/metabolism/no_nutrients_water = 500,
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/psilocybin = 500,
+		/obj/item/pc_part/drive/disk/plantgene/biochemistry/potency_max = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/yield_max = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/production_max = 500,
+		/obj/item/pc_part/drive/disk/plantgene/vigour/maturation_faster = 500
 		)
 
 /obj/machinery/vending/plant_gene/Initialize()

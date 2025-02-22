@@ -63,6 +63,6 @@
 	Any excess in those containers will be consumed with the 60u asked for and will not count.
 	*/
 	offer_types = list(
-		/obj/item/computer_hardware/hard_drive/cluster = offer_data("name", 100, 5),
+		/obj/item/pc_part/drive/cluster = offer_data("name", 100, 5),
 		/datum/reagent/medicine/inaprovaline = offer_data("inaprovaline bottle (60u)", 150, 3)
 	)

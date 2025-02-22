@@ -2124,7 +2124,7 @@
 /area/nadezhda/engineering/atmos/surface)
 "aey" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield,
+/obj/item/pc_part/drive/disk/design/blackshield,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
 "aez" = (
@@ -2181,12 +2181,12 @@
 	name = "Security Barracks"
 	})
 "aeF" = (
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle,
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_smallarms,
+/obj/item/pc_part/drive/disk/design/guns/boltgun_sa,
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
@@ -7016,7 +7016,7 @@
 /area/nadezhda/absolutism/bioreactor)
 "apn" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter{
+/obj/item/pc_part/drive/disk/design/nt_bioprinter{
 	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -7027,7 +7027,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
+/obj/item/pc_part/drive/disk/design/nt_basic_arms{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -18023,7 +18023,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment,
+/obj/item/pc_part/drive/disk/design/nt_bioaugment,
 /obj/item/clothing/mask/gas/germanmask,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
@@ -19085,7 +19085,7 @@
 /area/nadezhda/outside/dcave)
 "aRP" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
+/obj/item/pc_part/drive/disk/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
 "aRQ" = (
@@ -22910,20 +22910,20 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_new_guns,
+/obj/item/pc_part/drive/disk/design/nt_old_guns,
+/obj/item/pc_part/drive/disk/design/guns/dominion,
+/obj/item/pc_part/drive/disk/design/guns/counselor,
+/obj/item/pc_part/drive/disk/design/guns/halicon,
+/obj/item/pc_part/drive/disk/design/guns/lightfall,
+/obj/item/pc_part/drive/disk/design/guns/nemesis,
+/obj/item/pc_part/drive/disk/design/guns/purger,
+/obj/item/pc_part/drive/disk/design/guns/regulator,
+/obj/item/pc_part/drive/disk/design/guns/themis,
+/obj/item/pc_part/drive/disk/design/guns/valkirye,
+/obj/item/pc_part/drive/disk/design/guns/mk58,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "beK" = (
@@ -30951,7 +30951,7 @@
 /obj/structure/table/reinforced,
 /obj/random/lathe_disk/low_chance,
 /obj/random/lathe_disk/advanced/low_chance,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/hallway/surface/section2)
 "bBk" = (

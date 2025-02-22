@@ -31,7 +31,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
+		/obj/item/pc_part/drive/disk/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
@@ -54,7 +54,7 @@
 
 /obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
-	var/obj/item/computer_hardware/hard_drive/portable/design/c = new typepath
+	var/obj/item/pc_part/drive/disk/design/c = new typepath
 	for(var/f in c.designs)
 		var/datum/design/design_object = new f
 		design_object.AssembleDesignInfo()

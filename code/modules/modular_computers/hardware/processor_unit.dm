@@ -1,7 +1,7 @@
 // CPU that allows the computer to run programs.
 // Better CPUs are obtainable via research and can run more programs on background.
 
-/obj/item/computer_hardware/processor_unit
+/obj/item/pc_part/processor_unit
 	name = "standard processor board"
 	desc = "A CPU board used in most computers. It can run up to three programs simultaneously."
 	icon_state = "cpuboard"
@@ -15,7 +15,7 @@
 
 	var/max_programs = 3
 
-/obj/item/computer_hardware/processor_unit/small
+/obj/item/pc_part/processor_unit/small
 	name = "standard microprocessor"
 	desc = "A miniaturised CPU used in most portable devices. It can run up to two programs simultaneously."
 	icon_state = "cpu"
@@ -25,7 +25,7 @@
 	max_programs = 2
 
 
-/obj/item/computer_hardware/processor_unit/adv
+/obj/item/pc_part/processor_unit/adv
 	name = "advanced processor board"
 	desc = "An advanced CPU board. It can run up to four programs simultaneously."
 	icon_state = "cpuboard_adv"
@@ -36,7 +36,7 @@
 	price_tag = 80
 	origin_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3)
 
-/obj/item/computer_hardware/processor_unit/adv/small
+/obj/item/pc_part/processor_unit/adv/small
 	name = "advanced microprocessor"
 	desc = "An advanced CPU for use in portable devices. It can run up to three programs simultaneously."
 	icon_state = "cpu_adv"
@@ -46,7 +46,7 @@
 	max_programs = 3
 
 
-/obj/item/computer_hardware/processor_unit/super
+/obj/item/pc_part/processor_unit/super
 	name = "photonic processor board"
 	desc = "A photonic CPU board prototype. It can run up to five programs simultaneously, but uses a lot of power."
 	icon_state = "cpuboard_super"
@@ -58,7 +58,7 @@
 	origin_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 4)
 	price_tag = 200
 
-/obj/item/computer_hardware/processor_unit/super/small
+/obj/item/pc_part/processor_unit/super/small
 	name = "photonic microprocessor"
 	desc = "A photonic CPU prototype for portable devices. It can run up to four programs simultaneously."
 	icon_state = "cpu_super"

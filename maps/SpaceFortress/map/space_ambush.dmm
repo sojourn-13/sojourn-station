@@ -1240,7 +1240,7 @@
 /area/nadezhda/outside/one_star)
 "yN" = (
 /obj/structure/salvageable/server_os,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
 "yZ" = (
@@ -1307,7 +1307,7 @@
 /area/nadezhda/outside/one_star)
 "zZ" = (
 /obj/structure/salvageable/implant_container_os,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
 "Al" = (
@@ -1363,7 +1363,7 @@
 /area/nadezhda/outside/one_star)
 "Bu" = (
 /obj/structure/salvageable/implant_container_os,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /obj/item/tool_upgrade/augment/randomizer,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
@@ -1705,7 +1705,7 @@
 /area/space)
 "HW" = (
 /obj/structure/salvageable/autolathe_os,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
 "HY" = (
@@ -2161,7 +2161,7 @@
 /area/nadezhda/outside/one_star)
 "QD" = (
 /obj/machinery/r_n_d/destructive_analyzer,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
 "QK" = (
@@ -2267,7 +2267,7 @@
 /area/nadezhda/outside/one_star)
 "SF" = (
 /obj/structure/salvageable/data_os,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points/rare,
 /turf/simulated/floor/tiled/derelict/airless,
 /area/nadezhda/outside/one_star)
 "SW" = (

@@ -31,8 +31,8 @@
 	. = ..()
 	if(!running)
 		return
-	var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
-	var/obj/item/computer_hardware/card_slot/RFID = computer.card_slot
+	var/obj/item/pc_part/processor_unit/CPU = computer.processor_unit
+	var/obj/item/pc_part/card_slot/RFID = computer.card_slot
 	if(!istype(CPU) || !CPU.check_functionality() || !istype(RFID) || !RFID.check_functionality())
 		message = "A fatal hardware error has been detected."
 		return
@@ -65,8 +65,8 @@
 	if(href_list["PRG_execute"])
 		if(running)
 			return 1
-		var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
-		var/obj/item/computer_hardware/card_slot/RFID = computer.card_slot
+		var/obj/item/pc_part/processor_unit/CPU = computer.processor_unit
+		var/obj/item/pc_part/card_slot/RFID = computer.card_slot
 		if(!istype(CPU) || !CPU.check_functionality() || !istype(RFID) || !RFID.check_functionality())
 			message = "A fatal hardware error has been detected."
 			return

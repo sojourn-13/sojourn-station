@@ -19,7 +19,7 @@
 	name_pool = list("Kar Thil Kor" = "Quite a uniquic planet. Many uniquic devolments have been made here, grand. I can trade newest disks from far and wide.")
 	inventory = list(
 		"Disks" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200)
+			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200)
 		)
 	)
 	hidden_inventory = list(

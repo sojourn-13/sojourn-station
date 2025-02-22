@@ -217,7 +217,7 @@
 	icon_state = "disktoaster" // Sprites by Jamini
 
 /obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/computer_hardware/hard_drive/portable))
+	if(istype(O,/obj/item/pc_part/drive/disk))
 		return 1
 	return 0
 

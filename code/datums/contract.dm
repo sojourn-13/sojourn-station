@@ -61,17 +61,17 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"broken Excelsior implant" = /obj/item/implantcase/excelsior/broken,
 		"Excelsior branded soap" = /obj/item/soap/commie,
 		"Excelsior voidsuit" =  /obj/item/clothing/suit/space/void/excelsior,
-		"design disk Means of Production" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
-		"design disk Means of Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-		"design disk Stocking Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/ex_parts,
-		"design disk Means of Power" = /obj/item/computer_hardware/hard_drive/portable/design/ex_cells,
-		"design disk 9mm Drozd SMG" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd,
-		"design disk Makarov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov,
-		"design disk Vintorez" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
-		"design disk Kardashev-Mosin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
-		"design disk Kalashnikov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak,
-		"design disk Reclaimer" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
-		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
+		"design disk Means of Production" = /obj/item/pc_part/drive/disk/design/excelsior,
+		"design disk Means of Revolution" = /obj/item/pc_part/drive/disk/design/excelsior_weapons,
+		"design disk Stocking Revolution" = /obj/item/pc_part/drive/disk/design/ex_parts,
+		"design disk Means of Power" = /obj/item/pc_part/drive/disk/design/ex_cells,
+		"design disk 9mm Drozd SMG" = /obj/item/pc_part/drive/disk/design/guns/ex_drozd,
+		"design disk Makarov" = /obj/item/pc_part/drive/disk/design/guns/ex_makarov,
+		"design disk Vintorez" = /obj/item/pc_part/drive/disk/design/guns/ex_vintorez,
+		"design disk Kardashev-Mosin" = /obj/item/pc_part/drive/disk/design/guns/ex_boltgun,
+		"design disk Kalashnikov" = /obj/item/pc_part/drive/disk/design/guns/ex_ak,
+		"design disk Reclaimer" = /obj/item/pc_part/drive/disk/design/guns/ex_reclaimer,
+		"design disk Shpagin" = /obj/item/pc_part/drive/disk/design/guns/ex_ppsh,
 
 	))
 
@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/item/file/check_contents(list/contents)
 	var/list/all_files = list()
-	for(var/obj/item/computer_hardware/hard_drive/H in contents)
+	for(var/obj/item/pc_part/drive/H in contents)
 		all_files += H.stored_files
 
 	return check_files(all_files)

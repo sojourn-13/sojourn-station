@@ -11,7 +11,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 */
 
 // Master-disk for example, full of 'lower-end' regular parts. Unused currently. Maybe consider putting on beacon or RARE loot rotation if gun parts are an issue.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/resale
+/obj/item/pc_part/drive/disk/design/gun_parts/resale
 	disk_name = "NM - \"Do it yourself!\" firearm parts"
 	icon_state = "marshal"
 
@@ -33,7 +33,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 
 // Marshal-specific disk, used by Marshals for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
 // Infinate given gun parts are mass-printed by Guild, orderable by LS, and can be taken from broken down guns. Guild can mass-produce better, but only Marshals can print high-end.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal
+/obj/item/pc_part/drive/disk/design/gun_parts/marshal
 	disk_name = "NM - \"Gunsmiths United\" firearm parts"
 	icon_state = "marshal"
 
@@ -61,7 +61,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 
 // Bootleg-gun production stuff. Found in loot-piles, can be bought by LSS for a slightly inflated price.
 // Relatively useless, but might be useful for Outsiders, Prospies, and anyone wanting really cheap guns instead of paying inflated prices just for a single normal gun.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/bootleg
+/obj/item/pc_part/drive/disk/design/gun_parts/bootleg
 	disk_name = "No License - \"Anarchist Dream\" gun parts"
 	icon_state = "black"
 
@@ -90,7 +90,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 // Guns here should keep in mind that you can produce these for retail and resale at LSS, as some are going to be orderable by Cargo. Return for investment and time, really.
 
 // Resale disk for LSS to make and sell guns. Maybe put into piles.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale
+/obj/item/pc_part/drive/disk/design/gun_frames/resale
 	disk_name = "Blackmarket - \"Make-Your-Own-Gun! For ages 9+!\" gun frames"
 	icon_state = "black"
 
@@ -105,7 +105,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 	)
 
 // Resale disk for LSS to make and sell guns. Higher-end frames, still have to get the parts themselves. Do NOT put this into piles.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale/high
+/obj/item/pc_part/drive/disk/design/gun_frames/resale/high
 	disk_name = "SA - \"Resale Distributors Pack\" gun frames"
 	icon_state = "frozenstar"
 
@@ -118,7 +118,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 	)
 
 // Marshal gun-frame print disk, allows the printing of what used to be on the Negotiator disk to the Spec and WO. Do NOT put this into piles.
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal
+/obj/item/pc_part/drive/disk/design/gun_frames/marshal
 	disk_name = "NM - \"Framework of Dreams\" gun frames"
 	icon_state = "marshal"
 
@@ -137,7 +137,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 	)
 //Rearranged into Pistol > Revolver > SMG > Carbine > Shotgun > Rifle > MG for better clarity
 
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal/surplus
+/obj/item/pc_part/drive/disk/design/gun_frames/marshal/surplus
 	disk_name = "NM - \"Ironing Surplus with Hammers\" gun frames"
 //This right here if you ever readd old marshal / ironhammer guns put it right here there that there, also into the actual vendor outside.
 	designs = list(

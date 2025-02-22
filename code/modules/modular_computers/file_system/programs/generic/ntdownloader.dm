@@ -136,7 +136,7 @@
 	data["disk_used"] = computer.hard_drive.used_capacity
 
 	// There's no way you could get here without a hard drive
-	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/pc_part/drive/HDD = computer.hard_drive
 	
 	var/list/datum/computer_file/program/installed_programs = list()
 	for(var/datum/computer_file/program/P in HDD.stored_files)

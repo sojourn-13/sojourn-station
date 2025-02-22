@@ -268,12 +268,12 @@
 					/obj/item/tool/knife/dagger/nt = 3,
 					/obj/item/tool/sword/nt/shortsword = 3,
 					/obj/item/gun/energy/ntpistol = 3,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 3)
+					/obj/item/pc_part/drive/disk/design/nt/lemant = 2,
+					/obj/item/pc_part/drive/disk/design/nt/mk58 = 2,
+					/obj/item/pc_part/drive/disk/design/nt/old_guns = 2,
+					/obj/item/pc_part/drive/disk/design/nt/new_guns = 2,
+					/obj/item/pc_part/drive/disk/design/nt/basic_arms/public = 2,
+					/obj/item/pc_part/drive/disk/design/nt/basic_utility/public = 3)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
@@ -310,12 +310,12 @@
 					/obj/item/tool/knife/dagger/nt = 50,
 					/obj/item/tool/sword/nt = 100,
 					/obj/item/gun/energy/ntpistol = 120,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 600,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 550,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 950,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 800,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 100,
+					/obj/item/pc_part/drive/disk/design/nt/lemant = 600,
+					/obj/item/pc_part/drive/disk/design/nt/mk58 = 550,
+					/obj/item/pc_part/drive/disk/design/nt/old_guns = 950,
+					/obj/item/pc_part/drive/disk/design/nt/new_guns = 800,
+					/obj/item/pc_part/drive/disk/design/nt/basic_arms/public = 100,
+					/obj/item/pc_part/drive/disk/design/nt/basic_utility/public = 100,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
 	//custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them - Turns out they just abuse it to get free stuff, and they just make a custom vendor if they want to sell

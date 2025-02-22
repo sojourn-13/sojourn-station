@@ -326,7 +326,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	max_w_class = ITEM_SIZE_SMALL //no large cells thanks
 	storage_slots = 20
 	can_hold = list(
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/stock_parts,
 		/obj/item/device,
 		/obj/item/cell,

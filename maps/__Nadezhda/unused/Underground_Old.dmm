@@ -35467,8 +35467,8 @@
 /area/nadezhda/command/fo)
 "bMM" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/fo)
@@ -36530,11 +36530,11 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/engineering,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/engineering,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/item/stack/material/steel/full,
 /obj/item/stack/material/glass{
 	amount = 120
@@ -55673,7 +55673,7 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
 "cHj" = (
@@ -59247,9 +59247,9 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
 "cQl" = (
@@ -70833,8 +70833,8 @@
 /obj/item/circuitboard/teleporter,
 /obj/item/device/aicard,
 /obj/structure/closet/secure_closet/reinforced/RD,
-/obj/item/computer_hardware/hard_drive/portable/design/rped/rd,
-/obj/item/computer_hardware/hard_drive/portable/design/computer/rd,
+/obj/item/pc_part/drive/disk/design/rped/rd,
+/obj/item/pc_part/drive/disk/design/computer/rd,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro/quarters)
 "drd" = (
@@ -71905,7 +71905,7 @@
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "dtF" = (
 /obj/structure/closet/secure_closet/reinforced/CMO,
-/obj/item/computer_hardware/hard_drive/portable/design/medical/cmo,
+/obj/item/pc_part/drive/disk/design/medical/cmo,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "dtG" = (
@@ -72166,7 +72166,7 @@
 	name = "plastic table frame"
 	},
 /obj/machinery/recharger,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/storage/primary)
 "duw" = (
@@ -75050,7 +75050,7 @@
 /area/nadezhda/quartermaster/office)
 "dAT" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "dAU" = (

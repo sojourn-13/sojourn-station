@@ -84,7 +84,7 @@
 			/obj/item/storage/box/rxglasses,
 			/obj/item/storage/box/bodybags,
 			/obj/machinery/suspension_gen,
-			/obj/item/computer_hardware/hard_drive/portable/design/medical = custom_good_amount_range(list(3, 6)),
+			/obj/item/pc_part/drive/disk/design/medical = custom_good_amount_range(list(3, 6)),
 			/obj/item/device/defib_kit,
 			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Nanites Vial", list(-2, 2), 1200),
 			/obj/item/reagent_containers/glass/beaker/vial/uncapnanites = good_data("Raw Uncapped Nanites Vial", list(-1, 1), 1500)

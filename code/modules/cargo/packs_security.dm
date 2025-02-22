@@ -236,8 +236,8 @@
 
 /datum/supply_pack/ammo_disks_1
 	name = "SA Always prepared Ammunition Disks Pack"
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-					/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle)
+	contains = list(/obj/item/pc_part/drive/disk/design/lethal_ammo,
+					/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle)
 	cost = 2200
 	crate_name = "Standard Ammunition Disks Crate"
 	group = "Enforcement"
@@ -270,7 +270,7 @@
 
 /datum/supply_pack/exotic_ammo_disk
 	name = "SA Exotic Ammunition Disk Pack"
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo)
+	contains = list(/obj/item/pc_part/drive/disk/design/exotic_ammo)
 
 	cost = 1500
 	crate_name = "Exotic Ammunition Disk Crate"

@@ -1588,8 +1588,8 @@
 /area/nadezhda/outside/forest)
 "apd" = (
 /obj/structure/safe,
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare,
-/obj/item/computer_hardware/hard_drive/portable/research_points,
+/obj/item/pc_part/drive/disk/research_points/rare,
+/obj/item/pc_part/drive/disk/research_points,
 /obj/item/oddity/secdocs,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -25195,11 +25195,11 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "eWl" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
+/obj/item/pc_part/drive/disk/design/blackshieldammo{
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield{
+/obj/item/pc_part/drive/disk/design/blackshield{
 	pixel_x = 8;
 	pixel_y = 1
 	},
@@ -25290,7 +25290,7 @@
 	},
 /obj/item/clothing/accessory/armband/cargo,
 /obj/item/clothing/accessory/armband/cargo,
-/obj/item/computer_hardware/hard_drive/portable/design/logistics,
+/obj/item/pc_part/drive/disk/design/logistics,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "eWZ" = (
@@ -31469,26 +31469,26 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells{
+/obj/item/pc_part/drive/disk/design/nt_new_guns,
+/obj/item/pc_part/drive/disk/design/nt_old_guns,
+/obj/item/pc_part/drive/disk/design/guns/dominion,
+/obj/item/pc_part/drive/disk/design/guns/counselor,
+/obj/item/pc_part/drive/disk/design/guns/halicon,
+/obj/item/pc_part/drive/disk/design/guns/lightfall,
+/obj/item/pc_part/drive/disk/design/guns/nemesis,
+/obj/item/pc_part/drive/disk/design/guns/purger,
+/obj/item/pc_part/drive/disk/design/guns/regulator,
+/obj/item/pc_part/drive/disk/design/guns/themis,
+/obj/item/pc_part/drive/disk/design/guns/valkirye,
+/obj/item/pc_part/drive/disk/design/guns/mk58,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_plasma_shells{
 	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
 	license = 24
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
+/obj/item/pc_part/drive/disk/design/guns/concillium,
+/obj/item/pc_part/drive/disk/design/guns/counselor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "geH" = (
@@ -32088,12 +32088,12 @@
 /area/nadezhda/absolutism/chapel)
 "gjp" = (
 /obj/effect/floor_decal/industrial/box/white,
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms,
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_smallarms,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle,
+/obj/item/pc_part/drive/disk/design/security,
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security)
 "gjM" = (
@@ -36012,7 +36012,7 @@
 /obj/item/genetics/mut_injector,
 /obj/item/genetics/mut_injector,
 /obj/item/genetics/mut_injector,
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public,
+/obj/item/pc_part/drive/disk/design/genetics_kit_public,
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
@@ -51342,7 +51342,7 @@
 /obj/item/storage/belt,
 /obj/item/clothing/head/welding,
 /obj/item/clothing/head/welding,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "jVD" = (
@@ -53356,7 +53356,7 @@
 /area/eris/crew_quarters/plasma_tag)
 "koC" = (
 /obj/structure/closet/secure_closet/reinforced/CMO,
-/obj/item/computer_hardware/hard_drive/portable/design/medical/cmo,
+/obj/item/pc_part/drive/disk/design/medical/cmo,
 /obj/machinery/newscaster{
 	dir = 4;
 	pixel_x = 30
@@ -54598,7 +54598,7 @@
 "kAN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/disposaldrop)
 "kAR" = (
@@ -62158,10 +62158,10 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "lZC" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter{
+/obj/item/pc_part/drive/disk/design/nt/bioprinter{
 	pixel_x = 7
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
+/obj/item/pc_part/drive/disk/design/nt_basic_arms{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -64542,7 +64542,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
+/obj/item/pc_part/drive/disk/design/genetics_kit,
 /obj/structure/noticeboard/research{
 	pixel_y = -32
 	},
@@ -71225,7 +71225,7 @@
 /area/nadezhda/outside/inside_colony)
 "nLY" = (
 /obj/machinery/autolathe/loaded,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
 "nMf" = (
@@ -78557,10 +78557,10 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/xenobiology)
 "pis" = (
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/item/stack/material/steel/full,
 /obj/item/stack/material/glass{
 	amount = 120
@@ -78970,8 +78970,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "png" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal,
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal,
+/obj/item/pc_part/drive/disk/design/gun_parts/marshal,
+/obj/item/pc_part/drive/disk/design/gun_frames/marshal,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -79248,8 +79248,8 @@
 /area/nadezhda/medical/psych)
 "ppP" = (
 /obj/structure/table/marble,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "ppR" = (
@@ -84187,7 +84187,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/cargo,
+/obj/item/pc_part/drive/disk/design/cargo,
 /obj/item/device/lighting/toggleable/lamp/green,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
@@ -89944,9 +89944,9 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/workshop)
 "rup" = (
@@ -96384,7 +96384,7 @@
 /area/nadezhda/engineering/workshop)
 "sII" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/engineering,
+/obj/item/pc_part/drive/disk/design/engineering,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/workshop)
 "sIO" = (
@@ -105196,8 +105196,8 @@
 /area/nadezhda/engineering/engine_room)
 "uwo" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -115030,7 +115030,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "wmt" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns,
+/obj/item/pc_part/drive/disk/design/security/marshal_guns,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "wmx" = (
@@ -124508,7 +124508,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "ydE" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security{
+/obj/item/pc_part/drive/disk/design/security{
 	pixel_x = 7
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -124863,7 +124863,7 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "yhU" = (
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/structure/table/steel,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,

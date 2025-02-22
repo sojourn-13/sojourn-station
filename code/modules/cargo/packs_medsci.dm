@@ -166,8 +166,8 @@
 
 /datum/supply_pack/research
 	name = "Research Data crate"
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/research_points,
-					/obj/item/computer_hardware/hard_drive/portable/research_points)
+	contains = list(/obj/item/pc_part/drive/disk/research_points,
+					/obj/item/pc_part/drive/disk/research_points)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Research data crate"
@@ -175,12 +175,12 @@
 	group = "Medical / Science"
 
 /datum/supply_pack/discs
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/design,
-					/obj/item/computer_hardware/hard_drive/portable/design,
-					/obj/item/computer_hardware/hard_drive/portable/design,
-					/obj/item/computer_hardware/hard_drive/portable/design,
-					/obj/item/computer_hardware/hard_drive/portable/design,
-					/obj/item/computer_hardware/hard_drive/portable/design)
+	contains = list(/obj/item/pc_part/drive/disk/design,
+					/obj/item/pc_part/drive/disk/design,
+					/obj/item/pc_part/drive/disk/design,
+					/obj/item/pc_part/drive/disk/design,
+					/obj/item/pc_part/drive/disk/design,
+					/obj/item/pc_part/drive/disk/design)
 	name = "Empty Design Disk Crate"
 	cost = 400
 	crate_name ="Empty disks crate"
