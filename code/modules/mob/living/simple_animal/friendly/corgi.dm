@@ -9,7 +9,7 @@
 	emote_see = list("shakes their head", "shivers")
 	speak_chance = 1
 	turns_per_move = 10
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/corgi
+	meat_type = /obj/item/reagent_containers/snacks/meat/corgi
 	meat_amount = 3
 	response_help  = "pets"
 	response_disarm = "bops"
@@ -117,7 +117,7 @@
 	visible_emote("stares at \the [thing] that [holder] has with sad puppy eyes.")
 	playsound(loc, 'sound/effects/creatures/ian_beg.ogg', 50, 1)
 
-/obj/item/reagent_containers/food/snacks/meat/corgi
+/obj/item/reagent_containers/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well you know..."
 

@@ -9,9 +9,9 @@
 	circuit = /obj/item/circuitboard/mining_equipment_vendor
 	var/obj/item/card/id/inserted_id
 	var/list/prize_list = list(
-		new /datum/data/mining_equipment("Ale",													/obj/item/reagent_containers/food/drinks/bottle/small/ale,			50),
-		new /datum/data/mining_equipment("Whiskey",												/obj/item/reagent_containers/food/drinks/bottle/whiskey,			125),
-		new /datum/data/mining_equipment("Absinthe",											/obj/item/reagent_containers/food/drinks/bottle/absinthe,			125),
+		new /datum/data/mining_equipment("Ale",													/obj/item/reagent_containers/drinks/bottle/small/ale,			50),
+		new /datum/data/mining_equipment("Whiskey",												/obj/item/reagent_containers/drinks/bottle/whiskey,			125),
+		new /datum/data/mining_equipment("Absinthe",											/obj/item/reagent_containers/drinks/bottle/absinthe,			125),
 		new /datum/data/mining_equipment("Random Booze",										/obj/random/booze,													125),
 		new /datum/data/mining_equipment("Cigar",												/obj/item/clothing/mask/smokable/cigarette/cigar/havana,			150),
 		new /datum/data/mining_equipment("Soap",												/obj/item/soap/nanotrasen,											200),

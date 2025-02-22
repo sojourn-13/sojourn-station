@@ -12,7 +12,7 @@ This is a bugtesting item, please forgive the memes.
 	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/device/scanner/gene_debug_scanner/is_valid_scan_target(atom/target)
-	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/food/snacks/meat))
+	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/snacks/meat))
 		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
 		return FALSE
 	return TRUE
@@ -27,8 +27,8 @@ This is a bugtesting item, please forgive the memes.
 		if(istype(target, /mob/living))
 			var/mob/living/living_target = target
 			held_mutations.initializeFromMob(living_target)
-		else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
-			var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
+		else if (istype(target, /obj/item/reagent_containers/snacks/meat))
+			var/obj/item/reagent_containers/snacks/meat/meat_target = target
 			held_mutations.initializeFromMeat(meat_target)
 		scan_title = "Blue-Ink Scanner - [target]"
 		scan_data = soteria_scan(held_mutations)
@@ -149,7 +149,7 @@ A more player-friendly version of the Blue-Ink scanner, reports basic informatio
 	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/device/scanner/petite_scanner/is_valid_scan_target(atom/target)
-	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/food/snacks/meat))
+	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/snacks/meat))
 		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
 		return FALSE
 	return TRUE
@@ -186,8 +186,8 @@ A more player-friendly version of the Blue-Ink scanner, reports basic informatio
 	if(istype(target, /mob/living))
 		var/mob/living/living_target = target
 		held_mutations = living_target.unnatural_mutations.Copy()
-	else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
-		var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
+	else if (istype(target, /obj/item/reagent_containers/snacks/meat))
+		var/obj/item/reagent_containers/snacks/meat/meat_target = target
 		held_mutations.initializeFromMeat(meat_target)
 	scan_title = "Mutagenic Data - [target]"
 	scan_data = petite_scan()

@@ -19,12 +19,12 @@
 	inventory = list(
 		"Roach Cubes and Eggs" = list(
 			/obj/item/storage/deferred/roacheggs,	// make egg box
-			/obj/item/reagent_containers/food/snacks/cube/roach/roachling = custom_good_amount_range(list(1, 2)),
-			/obj/item/reagent_containers/food/snacks/cube/roach = custom_good_amount_range(list(1, 2)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/jager = custom_good_amount_range(list(1, 2)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/seuche = custom_good_amount_range(list(1, 2)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/panzer = custom_good_amount_range(list(1, 2)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/grestrahlte = custom_good_amount_range(list(1, 2))
+			/obj/item/reagent_containers/snacks/cube/roach/roachling = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/jager = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/seuche = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/panzer = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/grestrahlte = custom_good_amount_range(list(1, 2))
 		),
 		"Roach Toxins" = list(
 			/obj/item/reagent_containers/glass/bottle/trade/blattedin = good_data("blattedin bottle", list(-1, 2), 600),
@@ -43,7 +43,7 @@
 	)
 	hidden_inventory = list(
 		"High-End Roach Product" = list(
-			/obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/kraftwerk = custom_good_amount_range(list(1, 2)),
 			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900)
 //			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000) Kaiseraurum doesn't exist here, you just get an empty bottle
 		),

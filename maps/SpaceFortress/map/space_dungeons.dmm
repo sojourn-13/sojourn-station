@@ -204,7 +204,7 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "bf" = (
-/obj/item/reagent_containers/food/snacks/egg/purple,
+/obj/item/reagent_containers/snacks/egg/purple,
 /mob/living/simple_animal/hostile/carp/shark,
 /turf/simulated/floor/rock,
 /area/space)
@@ -244,7 +244,7 @@
 /area/outpost/abandoned_fortress/powered)
 "br" = (
 /obj/machinery/cooking_with_jane/grill,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cwj/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "bt" = (
@@ -2286,7 +2286,7 @@
 "lR" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/awaymission/spacebattle/syndicate2)
 "lT" = (
@@ -5450,8 +5450,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Cd" = (
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/obj/item/reagent_containers/cwj/container/pot,
+/obj/item/reagent_containers/cwj/container/bowl,
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/cafe,
@@ -5553,10 +5553,10 @@
 "Cy" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/reinforced,
@@ -5848,11 +5848,11 @@
 /area/outpost/abandoned_fortress/powered)
 "DP" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/snacks/mint,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 3
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -5878,11 +5878,11 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = -3;
 	pixel_y = -1
 	},
@@ -6591,19 +6591,19 @@
 /area/awaymission/spacebattle/syndicate2)
 "HZ" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 5;
 	pixel_y = 17
 	},
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 15
 	},
@@ -7791,7 +7791,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "NS" = (
-/obj/item/reagent_containers/food/snacks/egg/purple,
+/obj/item/reagent_containers/snacks/egg/purple,
 /turf/simulated/floor/rock,
 /area/space)
 "NT" = (
@@ -7935,7 +7935,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/mug/moe,
+/obj/item/reagent_containers/drinks/mug/moe,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "OA" = (
@@ -8127,7 +8127,7 @@
 /area/outpost/abandoned_fortress/powered)
 "Pz" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cwj/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "PB" = (
@@ -8766,11 +8766,11 @@
 /area/outpost/abandoned_fortress/powered)
 "SH" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/cwj/container/pan,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -9668,11 +9668,11 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Xg" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 3;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/drinks/bottle/wine{
+/obj/item/reagent_containers/drinks/bottle/wine{
 	pixel_x = -1;
 	pixel_y = 8
 	},
@@ -9875,10 +9875,10 @@
 "Yd" = (
 /obj/structure/table/standard,
 /obj/item/packageWrap,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
 /turf/simulated/floor/tiled/cafe,

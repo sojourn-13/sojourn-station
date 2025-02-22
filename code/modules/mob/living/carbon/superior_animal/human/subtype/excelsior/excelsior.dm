@@ -46,7 +46,7 @@
 
 //Drops
 	meat_amount = 1
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 

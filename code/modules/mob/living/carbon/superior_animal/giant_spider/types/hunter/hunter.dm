@@ -10,7 +10,7 @@
 	melee_damage_upper = 20
 	poison_per_bite = 4
 	move_to_delay = 4.5
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
 
@@ -48,7 +48,7 @@
 	poison_per_bite = 2
 	poison_type = "plasma"
 	move_to_delay = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
 	armor_divisor = 3
@@ -205,7 +205,7 @@
 	poison_per_bite = 4
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/emperor
 	armor = list(melee = 6, bullet = 6, energy = 2, bomb = 25, bio = 10, rad = 25, agony = 0)
 	armor_divisor = 2
 
@@ -239,7 +239,7 @@
 	flash_resistances = 100 //Many large eyes, flashing one doesn't blind the others
 	poison_per_bite = 6
 	poison_type = "stoxin"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/reaper_spider
 	armor_divisor = 3
 
 	get_stat_modifier = FALSE //Were not getting armor

@@ -67,7 +67,7 @@
 
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/shield/riot/damaged)
 	faction = "pirate"

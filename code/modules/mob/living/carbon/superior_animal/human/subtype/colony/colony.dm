@@ -39,7 +39,7 @@
 
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	can_burrow = FALSE
 	colony_friend = TRUE

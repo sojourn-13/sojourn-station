@@ -227,7 +227,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(/obj/random/booze = 10,
 	/obj/random/booze/low_chance = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/vodka = 3)
+	/obj/item/reagent_containers/drinks/bottle/vodka = 3)
 
 //SERBIAN-YUNANI UNIFORM CRATES
 
@@ -283,7 +283,7 @@
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
-	/obj/item/reagent_containers/food/drinks/bottle/vodka = 1)
+	/obj/item/reagent_containers/drinks/bottle/vodka = 1)
 
 /obj/item/storage/deferred/crate/uniform_flak
 	name = "flak serbian uniform crate"
@@ -413,10 +413,10 @@
 		/obj/item/tool/knife/butch = 1,
 		/obj/item/material/kitchen/rollingpin = 1,
 		/obj/item/packageWrap = 1,
-		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
-		/obj/item/reagent_containers/food/condiment/peppermill = 1,
-		/obj/item/reagent_containers/food/condiment/cookingoil = 1,
-		/obj/item/reagent_containers/food/condiment/sugar = 1
+		/obj/item/reagent_containers/condiment/saltshaker = 1,
+		/obj/item/reagent_containers/condiment/peppermill = 1,
+		/obj/item/reagent_containers/condiment/cookingoil = 1,
+		/obj/item/reagent_containers/condiment/sugar = 1
 	)
 
 // MoeSci supply

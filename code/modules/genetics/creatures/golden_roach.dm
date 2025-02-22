@@ -47,7 +47,7 @@
 
 	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 5, rad = 0, agony = 0)
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 30 SECONDS //Takes less time
 	life_cycles_before_sleep = 800 //We need more time to eat

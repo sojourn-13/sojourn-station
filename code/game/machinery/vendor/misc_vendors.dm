@@ -310,15 +310,15 @@
 	products = list(
 		/obj/item/gym_ticket = 150,
 		/obj/item/tool/hammer/dumbbell = 10,
-		/obj/item/reagent_containers/food/drinks/cans/energy = 10,
-		/obj/item/reagent_containers/food/drinks/protein_shake = 10
+		/obj/item/reagent_containers/drinks/cans/energy = 10,
+		/obj/item/reagent_containers/drinks/protein_shake = 10
 		)
 
 	prices = list(
 		/obj/item/gym_ticket = 150, // Still half a hourly salary
 		/obj/item/tool/hammer/dumbbell = 120,
-		/obj/item/reagent_containers/food/drinks/protein_shake = 150, // Still a total ripoff, but it has mechanical use
-		/obj/item/reagent_containers/food/drinks/cans/energy = 75, // No longer overpriced colonist cola
+		/obj/item/reagent_containers/drinks/protein_shake = 150, // Still a total ripoff, but it has mechanical use
+		/obj/item/reagent_containers/drinks/cans/energy = 75, // No longer overpriced colonist cola
 		/obj/item/reagent_containers/syringe/paracetamol = 150,
 		/obj/item/reagent_containers/syringe/adrenaline = 450,
 		/obj/item/reagent_containers/syringe/stim/steady = 600,

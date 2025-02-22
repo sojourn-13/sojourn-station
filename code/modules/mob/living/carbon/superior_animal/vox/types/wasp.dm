@@ -15,7 +15,7 @@
 	emote_see = list("looks around for a target.")
 	attacktext = "stings"
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0

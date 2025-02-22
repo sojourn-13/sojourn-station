@@ -29,7 +29,7 @@
 								eatTargets += S
 
 						if(snacker)
-							for(var/obj/item/reagent_containers/food/snacks/food in view(src,3))
+							for(var/obj/item/reagent_containers/snacks/food in view(src,3))
 								if(istype(food.loc, /turf))
 									eatTargets += food
 
@@ -120,9 +120,9 @@
 										if(tasty.meat_amount >= 6)// ate a fuhrer or kaiser
 											var/mob/living/carbon/superior_animal/roach/roachling/bigboss = src
 											bigboss.big_boss = TRUE
-						else if(snacker && istype(eat_target, /obj/item/reagent_containers/food/snacks))
+						else if(snacker && istype(eat_target, /obj/item/reagent_containers/snacks))
 							src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target]."))
-							var/obj/item/reagent_containers/food/snacks/snack = eat_target
+							var/obj/item/reagent_containers/snacks/snack = eat_target
 							if(snack.trash)
 								if(ispath(snack.trash,/obj/item))
 									var/obj/item/TrashItem = new snack.trash()
@@ -137,7 +137,7 @@
 			if(LAYING_EGG)
 				if (world.timeofday >= busy_start_time + eating_time * 0.5) //Takes half as long to lay an egg then it is to eat a dead body
 					if (istype(src, /mob/living/carbon/superior_animal/roach/kaiser))// kaiser roaches now lay roachcubes
-						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/food/snacks/cube/roach))
+						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/snacks/cube/roach))
 						new roachcube(get_turf(src))
 					else
 						var/obj/item/roach_egg/egg

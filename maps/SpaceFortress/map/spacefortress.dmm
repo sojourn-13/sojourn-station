@@ -2328,7 +2328,7 @@
 /area/outpost/abandoned_fortress)
 "gU" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/drinks/shaker,
 /turf/simulated/floor/carpet/bcarpet,
 /area/outpost/abandoned_fortress)
 "gV" = (

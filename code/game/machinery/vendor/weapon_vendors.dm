@@ -226,7 +226,7 @@
 					/obj/item/tool/knife/tacknife = 4,
 					/obj/item/tool/baton/mini = 6)
 
-	contraband = list(/obj/item/reagent_containers/food/snacks/donut/normal = 12)
+	contraband = list(/obj/item/reagent_containers/snacks/donut/normal = 12)
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat
@@ -239,7 +239,7 @@
 	products = list(/obj/item/book/ritual/cruciform = 10,
 					/obj/item/storage/fancy/candle_box = 10,
 					/obj/item/storage/fancy/cigarettes/faith = 10,
-					/obj/item/reagent_containers/food/drinks/bottle/ntcahors = 20,
+					/obj/item/reagent_containers/drinks/bottle/ntcahors = 20,
 					/obj/item/tool_upgrade/augment/sanctifier = 5,
 					/obj/item/soap/church = 5,
 					/obj/item/storage/wallet = 5,
@@ -280,7 +280,7 @@
 	prices = list(/obj/item/book/ritual/cruciform = 5,
 					/obj/item/storage/fancy/candle_box = 30,
 					/obj/item/storage/fancy/cigarettes/faith = 65, //Some healing chems
-					/obj/item/reagent_containers/food/drinks/bottle/ntcahors = 100,
+					/obj/item/reagent_containers/drinks/bottle/ntcahors = 100,
 					/obj/item/tool_upgrade/augment/sanctifier = 80,
 					/obj/item/soap/church = 50,
 					/obj/item/storage/wallet = 15,
@@ -361,7 +361,7 @@
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
-					/obj/item/reagent_containers/food/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
+					/obj/item/reagent_containers/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
 					/obj/item/storage/deferred/crate/uniform_green = 4,
 					/obj/item/storage/deferred/crate/uniform_brown = 4,
 					/obj/item/storage/deferred/crate/uniform_black = 4,
@@ -373,7 +373,7 @@
 					/obj/item/ammo_magazine/speed_loader_rifle_75 = 20
 					)
 	prices = list(
-					/obj/item/reagent_containers/food/drinks/bottle/vodka = 5,
+					/obj/item/reagent_containers/drinks/bottle/vodka = 5,
 					/obj/item/storage/deferred/crate/uniform_green = 200,
 					/obj/item/storage/deferred/crate/uniform_brown = 200,
 					/obj/item/storage/deferred/crate/uniform_black = 200,

@@ -2,13 +2,13 @@
 	..()
 
 /mob/living/carbon/superior_animal/fungi/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/reagent_containers/food/snacks))
+	if(istype(W, /obj/item/reagent_containers/snacks))
 
 		// Not overfeed the shroom
 		if(nutrition >= max_nutrition * 0.9)
 			to_chat(user, "The [name] is stuffed full.")
 			return
-		var/obj/item/reagent_containers/food/snacks/S = W
+		var/obj/item/reagent_containers/snacks/S = W
 		for(var/datum/reagent/organic/nutriment/N in S.reagents.reagent_list)
 			src.adjustNutrition(N.nutriment_factor * N.volume)
 		user.visible_message(

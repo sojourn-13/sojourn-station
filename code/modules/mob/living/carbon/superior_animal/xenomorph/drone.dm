@@ -40,7 +40,7 @@ var/datum/xenomorph/xenomorph_ai
 	move_to_delay = 4
 	turns_per_move = 12
 	see_in_dark = 10
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/xenomeat
 	meat_amount = 3
 	leather_amount = 0
 	bones_amount = 0

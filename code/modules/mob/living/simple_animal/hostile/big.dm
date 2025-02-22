@@ -56,7 +56,7 @@
 	pixel_y = 0
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
 	meat_amount = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/snacks/meat/primal
 	can_burrow = FALSE
 	leather_amount = 16
 	bones_amount = 20
@@ -207,7 +207,7 @@
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 
 /mob/living/simple_animal/hostile/nightmare
 	name = "nightmare stalker"
@@ -354,7 +354,7 @@
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "tengolo_berserker"
 	wander = 1
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_type = /obj/item/reagent_containers/snacks/meat/pork
 	meat_amount = 8
 	leather_amount = 20
 	bones_amount = 10

@@ -28,7 +28,7 @@
 /turf/simulated/wall/r_wall,
 /area/template_noop)
 "ah" = (
-/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/obj/item/reagent_containers/drinks/cans/monster_blood,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ai" = (
@@ -90,8 +90,8 @@
 	pixel_y = 4
 	},
 /obj/random/booze/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster,
-/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/drinks/cans/monster,
+/obj/item/reagent_containers/drinks/cans/monster_no_sugar,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "at" = (
@@ -113,7 +113,7 @@
 "aw" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/deferred/rations,
-/obj/item/reagent_containers/food/drinks/cans/monster,
+/obj/item/reagent_containers/drinks/cans/monster,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ax" = (
@@ -130,9 +130,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = list(150)
 	},
-/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
-/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
-/obj/item/reagent_containers/food/drinks/cans/monster_jungel,
+/obj/item/reagent_containers/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/drinks/cans/monster_jungel,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "aA" = (
@@ -140,11 +140,11 @@
 	pixel_y = 28
 	},
 /obj/random/junkfood/rotten/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster_sol,
+/obj/item/reagent_containers/drinks/cans/monster_sol,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "aB" = (
-/obj/item/reagent_containers/food/drinks/cans/monster_blue,
+/obj/item/reagent_containers/drinks/cans/monster_blue,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "aC" = (
@@ -306,8 +306,8 @@
 /area/template_noop)
 "bf" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/drinks/cans/monster_blue,
-/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/obj/item/reagent_containers/drinks/cans/monster_blue,
+/obj/item/reagent_containers/drinks/cans/monster_blood,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "bg" = (
@@ -315,7 +315,7 @@
 /obj/random/junkfood/rotten,
 /obj/random/booze/low_chance,
 /obj/random/booze/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/obj/item/reagent_containers/drinks/cans/monster_blood,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "bh" = (
@@ -365,13 +365,13 @@
 "bp" = (
 /obj/random/junkfood/rotten/low_chance,
 /obj/random/mob/voidwolf,
-/obj/item/reagent_containers/food/drinks/cans/monster_church,
-/obj/item/reagent_containers/food/drinks/cans/monster_sol,
+/obj/item/reagent_containers/drinks/cans/monster_church,
+/obj/item/reagent_containers/drinks/cans/monster_sol,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "bq" = (
 /obj/random/junkfood/rotten,
-/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/obj/item/reagent_containers/drinks/cans/monster_blood,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "br" = (
@@ -393,7 +393,7 @@
 	pixel_y = 5
 	},
 /obj/random/junkfood/rotten/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster_jungel,
+/obj/item/reagent_containers/drinks/cans/monster_jungel,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "bu" = (
@@ -538,9 +538,9 @@
 /area/template_noop)
 "zO" = (
 /obj/random/junkfood/rotten/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster_orange,
-/obj/item/reagent_containers/food/drinks/cans/monster_red,
-/obj/item/reagent_containers/food/drinks/cans/monster_no_sugar,
+/obj/item/reagent_containers/drinks/cans/monster_orange,
+/obj/item/reagent_containers/drinks/cans/monster_red,
+/obj/item/reagent_containers/drinks/cans/monster_no_sugar,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "JU" = (
@@ -558,7 +558,7 @@
 /area/template_noop)
 "RM" = (
 /obj/random/junkfood/rotten/low_chance,
-/obj/item/reagent_containers/food/drinks/cans/monster_blood,
+/obj/item/reagent_containers/drinks/cans/monster_blood,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "SQ" = (

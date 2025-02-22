@@ -3,7 +3,7 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is blood red and pulsating with sacks of irratent gas."
 	icon_state = "pepper"
 	icon_living = "pepper"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/pepper
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/pepper
 	emote_see = list("chitters.","rubs its legs.","vibrates.","belches flames!")
 	var/datum/reagents/gas_sac //Stores gas. Can't use the default reagents since that is now bloodstream
 	/// How much we can hold in our gas sac.

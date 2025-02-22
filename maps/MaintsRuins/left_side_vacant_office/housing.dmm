@@ -121,7 +121,7 @@
 /area/nadezhda/crew_quarters/techshop)
 "O" = (
 /obj/structure/dogbed,
-/obj/item/reagent_containers/food/snacks/dogtreats,
+/obj/item/reagent_containers/snacks/dogtreats,
 /obj/item/toy/plushie,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/crew_quarters/techshop)

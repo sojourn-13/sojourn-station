@@ -656,7 +656,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "ns" = (
 /obj/structure/flora/small/trailrocka1,
-/obj/item/reagent_containers/food/snacks/monkeykabob,
+/obj/item/reagent_containers/snacks/monkeykabob,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/river_forest_light)
 "nt" = (
@@ -803,7 +803,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "pf" = (
 /obj/item/stack/ore,
-/obj/item/reagent_containers/food/snacks/amanita_pie,
+/obj/item/reagent_containers/snacks/amanita_pie,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "ph" = (
@@ -1028,7 +1028,7 @@
 /area/nadezhda/outside/forest/carp_lair)
 "rQ" = (
 /obj/item/stack/ore,
-/obj/item/reagent_containers/food/snacks/chocolatepiece,
+/obj/item/reagent_containers/snacks/chocolatepiece,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "rR" = (
@@ -1137,7 +1137,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "sZ" = (
-/obj/item/reagent_containers/food/snacks/chocolatepiece,
+/obj/item/reagent_containers/snacks/chocolatepiece,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "tb" = (
@@ -1198,7 +1198,7 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "tX" = (
-/obj/item/reagent_containers/food/snacks/applepie,
+/obj/item/reagent_containers/snacks/applepie,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "tZ" = (
@@ -1313,7 +1313,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/carp_lair)
 "vi" = (
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/item/arrow,
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -1356,7 +1356,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "vF" = (
 /obj/item/remains/deer,
-/obj/item/reagent_containers/food/snacks/applepie,
+/obj/item/reagent_containers/snacks/applepie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vG" = (
@@ -1368,7 +1368,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vM" = (
-/obj/item/reagent_containers/food/snacks/amanita_pie,
+/obj/item/reagent_containers/snacks/amanita_pie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vQ" = (
@@ -1443,7 +1443,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "wI" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/mug/teacup,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "wJ" = (
@@ -1654,14 +1654,14 @@
 "zv" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/openable/candy,
-/obj/item/reagent_containers/food/snacks/openable/candy,
-/obj/item/reagent_containers/food/snacks/openable/candy,
-/obj/item/reagent_containers/food/snacks/openable,
-/obj/item/reagent_containers/food/snacks/openable,
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable,
+/obj/item/reagent_containers/snacks/openable,
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can,
 /obj/item/storage/fancy/mre_cracker,
 /obj/item/storage/fancy/mre_cracker,
 /turf/simulated/floor/wood/wild4,
@@ -1708,7 +1708,7 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/river_forest_light)
 "zS" = (
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "zT" = (
@@ -1796,7 +1796,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "AX" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "AY" = (
@@ -1969,7 +1969,7 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "CM" = (
-/obj/item/reagent_containers/food/snacks/egg/green{
+/obj/item/reagent_containers/snacks/egg/green{
 	name = "snake egg"
 	},
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -2200,7 +2200,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Fw" = (
-/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -2366,7 +2366,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Hh" = (
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Hi" = (
@@ -2444,7 +2444,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "Id" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/item/clothing/mask/costume/halloween/demon,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -2462,7 +2462,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_nightmare)
 "Im" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Io" = (
@@ -2563,7 +2563,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/river_forest_lake)
 "Kh" = (
-/obj/item/reagent_containers/food/snacks/meat/bearmeat,
+/obj/item/reagent_containers/snacks/meat/bearmeat,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -2815,7 +2815,7 @@
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/river_forest_nightmare)
 "MX" = (
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "MY" = (
@@ -3011,7 +3011,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_cabin)
 "PL" = (
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -3103,7 +3103,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "Rf" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Rg" = (
@@ -3228,7 +3228,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "SY" = (
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -3602,7 +3602,7 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "XK" = (
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)

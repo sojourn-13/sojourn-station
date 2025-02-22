@@ -12,7 +12,7 @@
 	preloaded_reagents = list("mercury" = 15, "lithium" = 5, "plasticide" = 9)
 
 	var/global/list/valid_targets = list(
-		/obj/item/reagent_containers/food/snacks/grown,
+		/obj/item/reagent_containers/snacks/grown,
 		/obj/item/grown,
 		/obj/machinery/portable_atmospherics/hydroponics,
 		/obj/machinery/beehive,
@@ -56,9 +56,9 @@
 			dat += "The hive is smoked."
 		return jointext(dat, "<br>")
 
-	else if(istype(target,/obj/item/reagent_containers/food/snacks/grown))
+	else if(istype(target,/obj/item/reagent_containers/snacks/grown))
 
-		var/obj/item/reagent_containers/food/snacks/grown/G = target
+		var/obj/item/reagent_containers/snacks/grown/G = target
 		grown_seed = plant_controller.seeds[G.plantname]
 		loaded_seed = grown_seed
 		grown_reagents = G.reagents

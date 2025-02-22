@@ -109,7 +109,7 @@
 					/obj/item/clothing/gloves/thick/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/under/johnny,
-					/obj/item/reagent_containers/food/snacks/candy_drop_blue)
+					/obj/item/reagent_containers/snacks/candy_drop_blue)
 	cost = 1900
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "LS Time to Kick Ass Specialty Crate"
@@ -440,12 +440,12 @@
 					/obj/item/reagent_containers/pill/happy,
 					/obj/item/seeds/ambrosiadeusseed,
 					/obj/item/seeds/ambrosiavulgarisseed,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris)
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris)
 	cost = 600
 	containertype = /obj/structure/closet/crate/serbcrate
 	crate_name = "Void Wolf Recreations Crate"

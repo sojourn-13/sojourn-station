@@ -17,7 +17,7 @@
 	melee_damage_upper = 25 //but sharp claws
 	attacktext = "clawed"
 	list/attack_sound = 'sound/weapons/bladeslice.ogg'
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 2
 	leather_amount = 1 //very small little guys
 	bones_amount = 1

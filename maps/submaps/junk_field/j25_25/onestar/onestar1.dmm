@@ -321,11 +321,11 @@
 /area/template_noop)
 "xb" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = 5;
 	pixel_y = 2
 	},
@@ -464,7 +464,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "Kz" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "Lj" = (

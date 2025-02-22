@@ -25,7 +25,7 @@
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 	armor_divisor = 1.25
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/fuhrer
 	meat_amount = 6
 
 	sanity_damage = 1

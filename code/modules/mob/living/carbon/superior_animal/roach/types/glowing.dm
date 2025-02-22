@@ -12,7 +12,7 @@
 
 	flash_resistances = 10 //We are the light
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/glowing
 
 	armor = list(melee = 8, bullet = 1, energy = 1, bomb = 5, bio = 20, rad = 100, agony = 0)
 

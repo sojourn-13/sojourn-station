@@ -34,7 +34,7 @@
 
 	//Meat/harvest vars
 	var/meat_amount = 1
-	var/meat_type = /obj/item/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
+	var/meat_type = /obj/item/reagent_containers/snacks/meat //all mobs now can be butchered into meat
 	var/blood_from_harvest = /obj/effect/decal/cleanable/blood/splatter
 	//Lodge related products
 	var/leather_amount = 1 //The amount of leather sheets dropped.
@@ -604,8 +604,8 @@
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
-			if(ispath(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
-				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
+			if(ispath(src.meat_type, /obj/item/reagent_containers/snacks/meat))
+				var/obj/item/reagent_containers/snacks/meat/butchered_meat = new meat_type(get_turf(src))
 				butchered_meat.name = "[src.name] [butchered_meat.name]"
 				butchered_meat.initialize_genetics(src)
 			else
@@ -648,7 +648,7 @@
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
 				if (can_eat())
-					for(var/obj/item/reagent_containers/food/snacks/S in oview(src,7))
+					for(var/obj/item/reagent_containers/snacks/S in oview(src,7))
 						if(isturf(S.loc) || ishuman(S.loc))
 							movement_target = S
 							foodtarget = TRUE
@@ -656,12 +656,12 @@
 
 					//Look for food in people's hand
 					if (!movement_target && beg_for_food)
-						var/obj/item/reagent_containers/food/snacks/F = null
+						var/obj/item/reagent_containers/snacks/F = null
 						for(var/mob/living/carbon/human/H in oview(src,scan_range))
-							if(istype(H.l_hand, /obj/item/reagent_containers/food/snacks))
+							if(istype(H.l_hand, /obj/item/reagent_containers/snacks))
 								F = H.l_hand
 
-							if(istype(H.r_hand, /obj/item/reagent_containers/food/snacks))
+							if(istype(H.r_hand, /obj/item/reagent_containers/snacks))
 								F = H.r_hand
 
 							if (F)

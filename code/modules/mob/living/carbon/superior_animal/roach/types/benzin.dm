@@ -6,7 +6,7 @@
 	maxHealth = 25 * ROACH_HEALTH_MOD
 	health = 25 * ROACH_HEALTH_MOD
 	melee_damage_upper = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/nitro
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/nitro
 	meat_amount = 3
 	var/fuel_amount = 50
 	var/leaking = FALSE

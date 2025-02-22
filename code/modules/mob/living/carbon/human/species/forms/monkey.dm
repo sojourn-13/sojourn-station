@@ -15,6 +15,6 @@
 	tail = "chimptail"
 
 	eyes = "blank_eyes"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/monkey
+	meat_type = /obj/item/reagent_containers/snacks/meat/monkey
 
 	show_ssd = null

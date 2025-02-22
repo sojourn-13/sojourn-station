@@ -292,7 +292,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/medium/high(src)
 	new /obj/item/ammo_kit(src)
 	new /obj/item/storage/firstaid/outsider(src)
-	new /obj/item/reagent_containers/food/drinks/flask/lithium(src)
+	new /obj/item/reagent_containers/drinks/flask/lithium(src)
 
 
 //////////////////////////////////////////Cards//////////////////////////////////////////

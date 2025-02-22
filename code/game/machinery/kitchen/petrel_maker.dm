@@ -85,10 +85,10 @@
 		ping()
 		new /obj/item/stack/material/refined_scrap(loc)
 		return
-	if (istype(I, /obj/item/reagent_containers/food/snacks/sandwich))
+	if (istype(I, /obj/item/reagent_containers/snacks/sandwich))
 		qdel(I)
 		ping()
-		new /obj/item/reagent_containers/food/snacks/toasted_guild_sandwich(loc)
+		new /obj/item/reagent_containers/snacks/toasted_guild_sandwich(loc)
 		return
 
 /obj/machinery/petrel_maker/RefreshParts()

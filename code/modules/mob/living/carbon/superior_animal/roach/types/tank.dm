@@ -9,7 +9,7 @@
 	move_to_delay = 7
 	mob_size = MOB_MEDIUM
 	density = TRUE
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/panzer
 	knockdown_odds = 3
 	get_stat_modifier = TRUE //we're big boys, we get a little mod as a treat.
 

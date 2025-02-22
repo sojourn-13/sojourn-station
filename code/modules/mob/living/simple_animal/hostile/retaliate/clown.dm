@@ -115,7 +115,7 @@
 	health = 250
 	speed = -10
 	banana_time = 40
-	banana_type = /obj/item/reagent_containers/food/snacks/pie
+	banana_type = /obj/item/reagent_containers/snacks/pie
 
 /mob/living/simple_animal/hostile/retaliate/clown/honkling
 	name = "Honkling"

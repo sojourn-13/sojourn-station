@@ -28,7 +28,7 @@
 	colony_friend = FALSE
 	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_IMBECILE)
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/termitemeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/termitemeat
 	meat_amount = 3
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"

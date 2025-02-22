@@ -197,10 +197,10 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/snacks/openable/liquidfood(src)
 
 /obj/structure/closet/crate/bin
 	name = "large bin"
@@ -370,12 +370,12 @@
 	new /obj/item/reagent_containers/pill/happy(src)
 	new /obj/item/seeds/ambrosiadeusseed(src)
 	new /obj/item/seeds/ambrosiavulgarisseed(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
-	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiavulgaris(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiavulgaris(src)
+	new /obj/item/reagent_containers/snacks/grown/ambrosiavulgaris(src)
 
 
 /obj/structure/closet/crate/serbcrate_gray

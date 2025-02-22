@@ -454,7 +454,7 @@ This monster is borderline unkillable and will make players upset
 	s.set_up(3, 1, src)
 	s.start()
 	bluespace_entropy(1200, get_turf(src), TRUE) //Ye... It went far away
-	new /obj/item/reagent_containers/food/snacks/icecream(src.loc)
+	new /obj/item/reagent_containers/snacks/icecream(src.loc)
 	if(dieing <= 1)
 		allow_teleporters = TRUE
 		dieing += 1

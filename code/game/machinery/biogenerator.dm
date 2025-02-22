@@ -26,7 +26,7 @@
 			list(name="Salt, 30u", cost=30, reagent="sodiumchloride"), //Cost reduced to be in line with Sugar
 			list(name="Sugar, 30u", cost=30, reagent="sugar"),
 			list(name="Box of eggs", cost=3200, path=/obj/item/storage/fancy/egg_box), //lets not completely replace hens, but at a more reasonable price.
-			list(name="Slab of meat", cost=50, path=/obj/item/reagent_containers/food/snacks/meat),
+			list(name="Slab of meat", cost=50, path=/obj/item/reagent_containers/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
@@ -124,12 +124,12 @@
 	else if(istype(I, /obj/item/storage/bag/produce))
 		var/obj/item/storage/bag/produce/produce_bag = I
 		var/i = 0
-		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
+		for(var/obj/item/reagent_containers/snacks/grown/G in contents)
 			i++
 		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
 		else
-			for(var/obj/item/reagent_containers/food/snacks/grown/G in I.contents)
+			for(var/obj/item/reagent_containers/snacks/grown/G in I.contents)
 				G.loc = src
 				i++
 				if(i >= 10)
@@ -140,11 +140,11 @@
 		produce_bag.refresh_all()
 
 
-	else if(!istype(I, /obj/item/reagent_containers/food/snacks/grown))
+	else if(!istype(I, /obj/item/reagent_containers/snacks/grown))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
-		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
+		for(var/obj/item/reagent_containers/snacks/grown/G in contents)
 			i++
 		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
@@ -212,7 +212,7 @@
 		to_chat(usr, SPAN_NOTICE("The biogenerator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/reagent_containers/food/snacks/grown/I in contents)
+	for(var/obj/item/reagent_containers/snacks/grown/I in contents)
 		S += 5
 		if(I.reagents.get_reagent_amount("nutriment") < 0.1)
 			points += 1

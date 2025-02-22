@@ -423,7 +423,7 @@
 			to_chat(src, SPAN_WARNING("You can only tear flesh out of humanoids!"))
 			return
 
-	if(istype(food, /obj/item/organ) || istype(food, /obj/item/reagent_containers/food/snacks/meat))
+	if(istype(food, /obj/item/organ) || istype(food, /obj/item/reagent_containers/snacks/meat))
 		var/geneticpointgain = 0
 		var/chemgain = 0
 		var/taste_description = ""
@@ -462,7 +462,7 @@
 				chemgain = 5
 				taste_description = "limbs are satisfying."
 
-		else if(istype(food, /obj/item/reagent_containers/food/snacks/meat/human))
+		else if(istype(food, /obj/item/reagent_containers/snacks/meat/human))
 			geneticpointgain = 2
 			chemgain = 5
 			taste_description = "human meat is satisfying."

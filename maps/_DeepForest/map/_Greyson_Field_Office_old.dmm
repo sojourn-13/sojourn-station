@@ -802,14 +802,14 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "do" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "dp" = (
@@ -1285,17 +1285,17 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fi" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fk" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fl" = (
@@ -1304,7 +1304,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fm" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fn" = (
@@ -1337,7 +1337,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "ft" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fu" = (
@@ -1346,7 +1346,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fv" = (
 /obj/structure/low_wall/onestar,
-/obj/item/reagent_containers/food/snacks/nettlesoup,
+/obj/item/reagent_containers/snacks/nettlesoup,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "fw" = (
@@ -1406,7 +1406,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fG" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/pastatomato,
+/obj/item/reagent_containers/snacks/pastatomato,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fH" = (
@@ -1443,7 +1443,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fN" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/snacks/grown/potato,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "fO" = (
@@ -1454,7 +1454,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fP" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/snacks/grown/potato,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -1490,7 +1490,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "fV" = (
 /obj/structure/low_wall/onestar,
-/obj/item/reagent_containers/food/snacks/omelette,
+/obj/item/reagent_containers/snacks/omelette,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "fW" = (
@@ -1577,12 +1577,12 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "gn" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "go" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "gp" = (
@@ -1772,7 +1772,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "hb" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
 "hc" = (
@@ -1895,7 +1895,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "ht" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /obj/item/paper,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -2237,7 +2237,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "iw" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -3014,7 +3014,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "lq" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/teapot,
+/obj/item/reagent_containers/drinks/teapot,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "lr" = (
@@ -3260,13 +3260,13 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "mj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /obj/random/tool/advanced/onestar/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "mk" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -3303,13 +3303,13 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "mq" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "mr" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "ms" = (
@@ -3642,7 +3642,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "ny" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "nz" = (
@@ -3710,7 +3710,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "nL" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -4803,7 +4803,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "ru" = (
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -5905,7 +5905,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "uX" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/mug/black,
+/obj/item/reagent_containers/drinks/mug/black,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "uY" = (
@@ -5915,7 +5915,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "uZ" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "vl" = (
@@ -6229,7 +6229,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/one_star/fo_outside)
 "KK" = (
-/obj/item/reagent_containers/food/drinks/bottle/cognac,
+/obj/item/reagent_containers/drinks/bottle/cognac,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "Lw" = (

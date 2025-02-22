@@ -353,7 +353,7 @@
 			P.force_label = TRUE	// if this isn't the case we force a label on the sprite
 		P.toggle_lid()
 	else
-		var/obj/item/reagent_containers/food/condiment/P = new/obj/item/reagent_containers/food/condiment(loc)
+		var/obj/item/reagent_containers/condiment/P = new/obj/item/reagent_containers/condiment(loc)
 		reagents.trans_to_obj(P, 50)
 
 /obj/machinery/chem_master/proc/create_syrette()

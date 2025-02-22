@@ -97,8 +97,8 @@
 			/obj/item/reagent_containers/pill/happy,
 			/obj/item/seeds/ambrosiadeusseed,
 			/obj/item/seeds/ambrosiavulgarisseed,
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
+			/obj/item/reagent_containers/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
+			/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
 
 		)
 	)

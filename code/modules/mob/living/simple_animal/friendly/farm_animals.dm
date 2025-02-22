@@ -9,7 +9,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 4
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -109,7 +109,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 9
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -190,7 +190,7 @@
 	emote_see = list("pecks at the ground","flaps its tiny wings","cheeps")
 	speak_chance = 2
 	turns_per_move = 2
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 1
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -233,7 +233,7 @@ var/global/chicken_count = 0
 	emote_see = list("pecks at the ground","flaps its wings viciously")
 	speak_chance = 2
 	turns_per_move = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken
 	meat_amount = 4
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -266,8 +266,8 @@ var/global/chicken_count = 0
 	chicken_count -= 1
 
 /mob/living/simple_animal/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && eggsleft < 8)
 				user.visible_message("\blue [user] feeds [O] to [name]! She clucks happily.","\blue You feed [O] to [name]! She clucks happily.")
@@ -288,7 +288,7 @@ var/global/chicken_count = 0
 	if(!stat && prob(3) && eggsleft > 0)
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 		eggsleft--
-		var/obj/item/reagent_containers/food/snacks/egg/E = new(get_turf(src))
+		var/obj/item/reagent_containers/snacks/egg/E = new(get_turf(src))
 		E.food_quality = 20
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
@@ -296,8 +296,8 @@ var/global/chicken_count = 0
 			START_PROCESSING(SSobj, E)
 
 
-/obj/item/reagent_containers/food/snacks/egg/var/amount_grown = 0
-/obj/item/reagent_containers/food/snacks/egg/Process()
+/obj/item/reagent_containers/snacks/egg/var/amount_grown = 0
+/obj/item/reagent_containers/snacks/egg/Process()
 	if(isturf(loc))
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
@@ -318,7 +318,7 @@ var/global/chicken_count = 0
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_type = /obj/item/reagent_containers/snacks/meat/pork
 	meat_amount = 5
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -358,8 +358,8 @@ var/global/chicken_count = 0
 	icon_state = "pighog"
 
 /mob/living/simple_animal/pig/hog/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem hogs
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/snacks/grown)) //feedin' dem hogs
+		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && hogsleft < 4)
 				user.visible_message("\blue [user] feeds [O] to [name]! She snorts happily.","\blue You feed [O] to [name]! She snorts happily.")
@@ -392,7 +392,7 @@ var/global/chicken_count = 0
 	speak_emote = list("oinks","grunts softly")
 	emote_see = list("scratches at the ground.","gives a small snort.","hops back and forth.")
 	turns_per_move = 2
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_type = /obj/item/reagent_containers/snacks/meat/pork
 	meat_amount = 1
 	health = 30
 	var/amount_grown = 0
@@ -424,7 +424,7 @@ var/global/chicken_count = 0
 	emote_see = list("pecks at the ground","flaps its wings viciously")
 	speak_chance = 2
 	turns_per_move = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken
 	meat_amount = 0
 	leather_amount = 0
 	bones_amount = 0
@@ -474,8 +474,8 @@ var/global/chicken_count = 0
 			to_chat(user, "[src] doesn't need repairs.")
 			return
 
-	if(istype(O, /obj/item/reagent_containers/food)) //feedin' dem chickens
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers)) //feedin' dem chickens
+		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.reagents.total_volume >= reagents.maximum_volume - reagents.total_volume)
 			to_chat(user, "\blue [name] is completly full!")
 			return
@@ -520,7 +520,7 @@ var/global/chicken_count = 0
 			if("slimejelly")
 				egg_type = /obj/item/slime_extract/grey
 			if("milk")
-				egg_type = /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
+				egg_type = /obj/item/reagent_containers/snacks/cheesewheel
 			if("silicate")
 				egg_type = /obj/item/stack/material/glass
 			if("nicotine")
@@ -528,9 +528,9 @@ var/global/chicken_count = 0
 			if("pararein")
 				egg_type = /obj/effect/spider/spiderling
 			if("blattedin")
-				egg_type = /obj/item/reagent_containers/food/snacks/cube/roach
+				egg_type = /obj/item/reagent_containers/snacks/cube/roach
 			if("coco")
-				egg_type = /obj/item/reagent_containers/food/snacks/chocolatebar
+				egg_type = /obj/item/reagent_containers/snacks/chocolatebar
 			else // Empty bottle that then get filled with left-over chems
 				egg_type = /obj/item/reagent_containers/glass/bottle
 
@@ -538,7 +538,7 @@ var/global/chicken_count = 0
 		return FALSE
 
 	var/egg = new egg_type(get_turf(src))
-	if(!(istype(egg, /obj/item/reagent_containers/food/snacks/cube/roach) || istype(egg, /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel)) && istype(egg, /obj/item/reagent_containers))
+	if(!(istype(egg, /obj/item/reagent_containers/snacks/cube/roach) || istype(egg, /obj/item/reagent_containers/snacks/cheesewheel)) && istype(egg, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/RC = egg
 		RC.reagents.clear_reagents() // Remove all of the previous chem, just in case
 		RC.reagents.add_reagent(chem, chem_to_egg) // Add the reagent in quantity it is supposed to have.

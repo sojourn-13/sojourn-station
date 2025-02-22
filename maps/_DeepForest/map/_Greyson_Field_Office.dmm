@@ -879,7 +879,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "hb" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/pastatomato,
+/obj/item/reagent_containers/snacks/pastatomato,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "hc" = (
@@ -944,7 +944,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "hF" = (
 /obj/structure/low_wall/onestar,
-/obj/item/reagent_containers/food/snacks/omelette,
+/obj/item/reagent_containers/snacks/omelette,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "hH" = (
@@ -983,7 +983,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "hP" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "hS" = (
@@ -1021,7 +1021,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "ip" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "iq" = (
@@ -1082,7 +1082,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "iO" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/teapot,
+/obj/item/reagent_containers/drinks/teapot,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "iQ" = (
@@ -1480,7 +1480,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "mf" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
 "mi" = (
@@ -1852,14 +1852,14 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "px" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "pz" = (
@@ -2839,7 +2839,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "wk" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/mug/black,
+/obj/item/reagent_containers/drinks/mug/black,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "wn" = (
@@ -3418,7 +3418,7 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "Ay" = (
-/obj/item/reagent_containers/food/drinks/bottle/cognac,
+/obj/item/reagent_containers/drinks/bottle/cognac,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "AA" = (
@@ -3431,7 +3431,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "AD" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "AE" = (
@@ -3504,7 +3504,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "Bj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "Bl" = (
@@ -3744,7 +3744,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Dm" = (
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -3927,8 +3927,8 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "Ey" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "EB" = (
@@ -4158,7 +4158,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "GB" = (
 /obj/structure/low_wall/onestar,
-/obj/item/reagent_containers/food/snacks/nettlesoup,
+/obj/item/reagent_containers/snacks/nettlesoup,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "GD" = (
@@ -4375,7 +4375,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "IH" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "IJ" = (
@@ -4727,7 +4727,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "Lx" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
 "Ly" = (

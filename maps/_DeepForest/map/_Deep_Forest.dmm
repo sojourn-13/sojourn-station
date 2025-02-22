@@ -350,9 +350,9 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aqj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/teapot,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/teapot,
+/obj/item/reagent_containers/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/mug/teacup,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "aqy" = (
@@ -2084,8 +2084,8 @@
 /area/nadezhda/outside/meadow)
 "bFj" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
 "bFw" = (
@@ -3056,13 +3056,13 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "cpm" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "cpy" = (
@@ -5975,23 +5975,23 @@
 /area/nadezhda/dungeon/outside/zoo)
 "elJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -7927,7 +7927,7 @@
 /area/colony/exposedsun/pastgate)
 "fFS" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/drinks/coffee{
 	desc = "Old cup of coffee. Very cold.  ";
 	name = "Old Robust Coffee"
 	},
@@ -9168,26 +9168,26 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "gvJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -10061,7 +10061,7 @@
 	})
 "gWs" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "gWu" = (
@@ -12541,7 +12541,7 @@
 /obj/structure/table/marble,
 /obj/item/tool/knife/butch,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cwj/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "iBq" = (
@@ -15397,14 +15397,14 @@
 /area/nadezhda/dungeon/outside/prepper)
 "kGs" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/mug/red{
+/obj/item/reagent_containers/drinks/mug/red{
 	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/mug/metal{
+/obj/item/reagent_containers/drinks/mug/metal{
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre_cracker,
+/obj/item/reagent_containers/snacks/mre_cracker,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
@@ -16508,7 +16508,7 @@
 "luY" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cwj/container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "lvi" = (
@@ -17460,8 +17460,8 @@
 "mfT" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/obj/item/reagent_containers/cwj/container/pot,
+/obj/item/reagent_containers/cwj/container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "mfY" = (
@@ -17664,43 +17664,43 @@
 /area/nadezhda/outside/meadow)
 "moS" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -3;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 11;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 9;
 	pixel_y = -11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -9;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 5;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 1;
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 7;
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 11
 	},
@@ -18725,7 +18725,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "mXe" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "mXm" = (
@@ -19480,7 +19480,7 @@
 /area/nadezhda/outside/meadow)
 "nuB" = (
 /obj/effect/decal/cleanable/filth,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -19594,7 +19594,7 @@
 /area/nadezhda/outside/meadow)
 "nxx" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "nxJ" = (
@@ -22399,7 +22399,7 @@
 "pwy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/clownburger,
+/obj/item/reagent_containers/snacks/clownburger,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "pwT" = (
@@ -22451,8 +22451,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "pxI" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
 /obj/structure/table/marble,
 /obj/random/rations,
 /obj/random/rations,
@@ -26234,7 +26234,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "rYW" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/snacks/openable/syndicake,
+/obj/item/reagent_containers/snacks/openable/syndicake,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "rZf" = (
@@ -26286,7 +26286,7 @@
 "scg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26388,7 +26388,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "seN" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/vig,
+/obj/item/reagent_containers/snacks/donut/stat_buff/vig,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "seU" = (
@@ -26805,7 +26805,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "ssP" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -27444,26 +27444,26 @@
 /area/nadezhda/dungeon/outside/zoo)
 "sOp" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake,
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -28999,8 +28999,8 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tUY" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/random/junkfood/rotten/low_chance,
 /obj/random/junkfood/rotten/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -29312,13 +29312,13 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "ueX" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/safehouse)
 "ufe" = (
@@ -29807,14 +29807,14 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "uxT" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uxW" = (
@@ -31715,7 +31715,7 @@
 "vOX" = (
 /obj/random/oddity_guns,
 /obj/effect/gibspawner/human,
-/obj/item/reagent_containers/food/snacks/meat/human,
+/obj/item/reagent_containers/snacks/meat/human,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "vPe" = (
@@ -32667,9 +32667,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /obj/effect/decal/cleanable/dirt,
@@ -33756,9 +33756,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -34168,8 +34168,8 @@
 /area/nadezhda/outside/one_star)
 "xyY" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "xzf" = (
@@ -34908,8 +34908,8 @@
 /area/nadezhda/outside/meadow)
 "xZx" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "xZI" = (

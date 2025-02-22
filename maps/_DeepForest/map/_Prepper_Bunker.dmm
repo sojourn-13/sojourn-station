@@ -426,26 +426,26 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bC" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake,
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -504,23 +504,23 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -598,26 +598,26 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cb" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -743,43 +743,43 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cA" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -3;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 11;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 9;
 	pixel_y = -11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -9;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 5;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 1;
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 7;
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 11
 	},
@@ -1610,9 +1610,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /obj/effect/decal/cleanable/dirt,
@@ -1622,17 +1622,17 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "je" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/random/junkfood/rotten/low_chance,
 /obj/random/junkfood/rotten/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -1841,7 +1841,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kf" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kg" = (

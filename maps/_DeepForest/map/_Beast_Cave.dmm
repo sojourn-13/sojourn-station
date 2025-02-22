@@ -2928,7 +2928,7 @@
 "kC" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "kD" = (
@@ -3268,10 +3268,10 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "lK" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4581,7 +4581,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "qq" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /obj/structure/invislight,
@@ -5965,11 +5965,11 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "uH" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
@@ -6013,7 +6013,7 @@
 /obj/item/stack/material/leather,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /obj/item/stack/material/leather,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
@@ -6230,7 +6230,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "vw" = (
 /obj/machinery/light/small,
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
@@ -6335,11 +6335,11 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vM" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vN" = (
@@ -6371,7 +6371,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vT" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/rob,
+/obj/item/reagent_containers/snacks/donut/stat_buff/rob,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -7670,7 +7670,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Aa" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /obj/random/cluster/tengolo,
@@ -8313,7 +8313,7 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ce" = (
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
@@ -12381,7 +12381,7 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "OR" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /turf/simulated/floor/industrial,
@@ -12786,7 +12786,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qb" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh,
+/obj/item/reagent_containers/snacks/donut/stat_buff/tgh,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0

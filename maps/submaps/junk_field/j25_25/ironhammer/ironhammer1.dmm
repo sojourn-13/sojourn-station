@@ -340,7 +340,7 @@
 /obj/structure/table/standard,
 /obj/item/dice,
 /obj/item/dice,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+/obj/item/reagent_containers/drinks/bottle/small/beer{
 	pixel_x = -6;
 	pixel_y = 5
 	},
@@ -596,7 +596,7 @@
 /area/template_noop)
 "VJ" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "WH" = (

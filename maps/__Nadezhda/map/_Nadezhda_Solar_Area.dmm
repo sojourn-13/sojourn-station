@@ -1448,7 +1448,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "ox" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/item/reagent_containers/drinks/bottle/small/beer_two,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "oG" = (
@@ -1871,7 +1871,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "xg" = (
@@ -2815,7 +2815,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Rb" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/item/reagent_containers/drinks/bottle/small/beer_two,
 /obj/structure/flora/small/bushc3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)

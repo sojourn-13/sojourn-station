@@ -643,10 +643,10 @@
 
 /datum/perk/foodappraise/activate()
 	var/mob/living/carbon/human/user = usr
-	var/obj/item/reagent_containers/food/snacks/F = user.get_active_hand()
+	var/obj/item/reagent_containers/snacks/F = user.get_active_hand()
 	if(!istype(user))
 		return ..()
-	if(!istype(F, /obj/item/reagent_containers/food/snacks))
+	if(!istype(F, /obj/item/reagent_containers/snacks))
 		to_chat(usr, SPAN_NOTICE("You can only season food items!"))
 		return FALSE
 	if(F.appraised == 1)

@@ -775,7 +775,7 @@
 	//new/obj/item/clothing/mask/gas/mime(src)
 	new/obj/item/clothing/head/beret(src)
 	new/obj/item/pen/crayon/mime(src)
-	new/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing(src)
+	new/obj/item/reagent_containers/drinks/bottle/bottleofnothing(src)
 	new/obj/item/bikehorn(src)
 	new/obj/item/clothing/glasses/monocle(src)
 	new/obj/item/storage/fancy/crayons(src)

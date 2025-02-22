@@ -696,7 +696,7 @@
 
 	M.maxHealth -= 10
 	M.health -= 10
-	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
+	for(var/obj/item/reagent_containers/snacks/grown/G in oview(5))
 
 		if(!body_checks(M))
 			return

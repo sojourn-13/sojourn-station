@@ -26,7 +26,7 @@
 	health = 1200
 	pixel_x = -16
 
-	//meat_type = /obj/item/reagent_containers/food/snacks/meat
+	//meat_type = /obj/item/reagent_containers/snacks/meat
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 
 	var/list/potential_mutations = list(
@@ -50,7 +50,7 @@
 	var/list/stomach_contents = list()
 
 	var/digestion_progress = 0
-	var/obj/item/reagent_containers/food/snacks/digestion_target
+	var/obj/item/reagent_containers/snacks/digestion_target
 
 //Strictly speaking, we can and often do force_feed the Fratellis food in order to regenerate it.
 //However, this proc is set so we can override the Snack's attack script with our own feeding prompt.
@@ -159,11 +159,11 @@
 	if(!digestion_target && !self_cannibalism)
 		if(digestion_progress > 10) //Only check for this so often
 			digestion_progress = 0
-			for(var/obj/item/reagent_containers/food/snacks/target in stomach_contents)
+			for(var/obj/item/reagent_containers/snacks/target in stomach_contents)
 				digestion_target = target
 				stomach_contents.Remove(target)
-				if(istype(digestion_target, /obj/item/reagent_containers/food/snacks/meat) && !gnawing_state && (hunger > 500))
-					var/obj/item/reagent_containers/food/snacks/meat/ourMeat = digestion_target
+				if(istype(digestion_target, /obj/item/reagent_containers/snacks/meat) && !gnawing_state && (hunger > 500))
+					var/obj/item/reagent_containers/snacks/meat/ourMeat = digestion_target
 					if(ispath(ourMeat.source_mob, /mob/living/carbon/superior_animal/genetics/fratellis))
 						gnawing_state = 1
 				break
@@ -293,7 +293,7 @@
 					switch(success)
 						if(TOOL_USE_SUCCESS)
 							user.visible_message("[user] cuts a slab of meat from \the [src].", "You begin harvest a slab of meat from \the [src].")
-							var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new /obj/item/reagent_containers/food/snacks/meat(get_turf(src))
+							var/obj/item/reagent_containers/snacks/meat/butchered_meat = new /obj/item/reagent_containers/snacks/meat(get_turf(src))
 							butchered_meat.name = "[src.name] [butchered_meat.name]"
 							butchered_meat.initialize_genetics(src)
 							src.adjustBruteLoss(150)

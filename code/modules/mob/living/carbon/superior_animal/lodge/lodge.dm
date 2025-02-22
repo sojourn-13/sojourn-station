@@ -12,6 +12,6 @@
 	friendly_to_colony = TRUE
 	obey_friends = FALSE
 	follow_distance = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	target_dummy = TRUE

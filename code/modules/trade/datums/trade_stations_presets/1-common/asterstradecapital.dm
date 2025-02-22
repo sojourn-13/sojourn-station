@@ -199,7 +199,7 @@
 
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 30, 20),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
+		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
 		/datum/reagent/organic/nutriment/honey = offer_data("Honey bottle (60u)", 800, 1),
 		/obj/item/organ/external/robotic/one_star = offer_data("grayson external prosthetic", 1800, 4),
 		/obj/item/toy/consumer/product/toaster = offer_data("toolbox toaster", 250, 4)

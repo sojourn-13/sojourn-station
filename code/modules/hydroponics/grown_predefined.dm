@@ -1,7 +1,7 @@
-/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris
+/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris
 	plantname = "ambrosia"
 
-/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus
+/obj/item/reagent_containers/snacks/grown/ambrosiadeus
 	plantname = "ambrosiadeus"
 
 // Predefined types for placing on the map.

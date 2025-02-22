@@ -169,7 +169,7 @@
 			desc += " The label is unreadable."
 
 //Sealed survival food, always edible
-/obj/item/reagent_containers/food/snacks/openable/liquidfood/make_old()
+/obj/item/reagent_containers/snacks/openable/liquidfood/make_old()
 	return
 
 /obj/item/ammo_magazine/make_old()

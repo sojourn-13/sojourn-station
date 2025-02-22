@@ -253,7 +253,7 @@
 		/obj/item/circuitboard,
 		/obj/item/slime_extract,
 		/obj/item/reagent_containers/glass,
-		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/snacks/monkeycube,
 		/obj/item/reagent_containers/blood,
 		/obj/item/device/assembly,//For building bots and similar complex R&D devices
 		/obj/item/device/scanner/health,//For building medibots
@@ -292,8 +292,8 @@
 		/obj/item/modification/organ,
 		/obj/item/device/mmi,
 		/obj/item/tank,
-		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
-		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
+		/obj/item/reagent_containers/snacks/meat, //For grinding up roaches
+		/obj/item/reagent_containers/snacks/grown, //For grinding up herbs
 		/obj/item/genetics, //for doing genetics. Research borgs get this as well
 		/obj/item/stack/material/plasma
 		)
@@ -305,7 +305,8 @@
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
-		/obj/item/reagent_containers/food,
+		/obj/item/reagent_containers/drinks,
+		/obj/item/reagent_containers/condiment,
 		/obj/item/seeds,
 		/obj/item/grown,
 		/obj/item/trash,
@@ -316,7 +317,7 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
+		/obj/item/reagent_containers/cwj/container,
 		/obj/item/spatula,
 		/obj/item/hydro_tray_plant_bag_water,
 		/obj/item/hydro_tray_plant_bag_nutrient,

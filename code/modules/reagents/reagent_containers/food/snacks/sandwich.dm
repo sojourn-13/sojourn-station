@@ -1,19 +1,19 @@
-/obj/item/reagent_containers/food/snacks/breadslice/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/reagent_containers/snacks/breadslice/attackby(obj/item/W as obj, mob/user as mob)
 
-	if(istype(W,/obj/item/reagent_containers/food/snacks/butterslice))
-		new /obj/item/reagent_containers/food/snacks/butterbread(src)
+	if(istype(W,/obj/item/reagent_containers/snacks/butterslice))
+		new /obj/item/reagent_containers/snacks/butterbread(src)
 		to_chat(user, "You spread the butter on the toast.")
 		qdel(W)
 		qdel(src)
 
-	if(istype(W,/obj/item/material/shard) || istype(W,/obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/csandwich/S = new(get_turf(src))
+	if(istype(W,/obj/item/material/shard) || istype(W,/obj/item/reagent_containers/snacks))
+		var/obj/item/reagent_containers/snacks/csandwich/S = new(get_turf(src))
 		S.attackby(W,user)
 		qdel(src)
 
 	..()
 
-/obj/item/reagent_containers/food/snacks/csandwich
+/obj/item/reagent_containers/snacks/csandwich
 	name = "sandwich"
 	desc = "The best thing since sliced bread."
 	icon_state = "breadslice"
@@ -22,11 +22,11 @@
 
 	var/list/ingredients = list()
 
-/obj/item/reagent_containers/food/snacks/csandwich/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/reagent_containers/snacks/csandwich/attackby(obj/item/W as obj, mob/user as mob)
 
 	var/sandwich_limit = 4
 	for(var/obj/item/O in ingredients)
-		if(istype(O,/obj/item/reagent_containers/food/snacks/breadslice))
+		if(istype(O,/obj/item/reagent_containers/snacks/breadslice))
 			sandwich_limit += 4
 
 	if(src.contents.len > sandwich_limit)
@@ -37,7 +37,7 @@
 		user.drop_from_inventory(W, src)
 		update()
 		return
-	else if(istype(W,/obj/item/reagent_containers/food/snacks))
+	else if(istype(W,/obj/item/reagent_containers/snacks))
 		to_chat(user, SPAN_NOTICE("You layer [W] over \the [src]."))
 		var/obj/item/reagent_containers/F = W
 		F.reagents.trans_to_obj(src, F.reagents.total_volume)
@@ -47,13 +47,13 @@
 		return
 	..()
 
-/obj/item/reagent_containers/food/snacks/csandwich/proc/update()
+/obj/item/reagent_containers/snacks/csandwich/proc/update()
 	var/fullname = "" //We need to build this from the contents of the var.
 	var/i = 0
 
 	cut_overlays()
 
-	for(var/obj/item/reagent_containers/food/snacks/O in ingredients)
+	for(var/obj/item/reagent_containers/snacks/O in ingredients)
 
 		i++
 		if(i == 1)
@@ -78,17 +78,17 @@
 	if(length(name) > 80) name = "[pick(list("absurd","colossal","enormous","ridiculous"))] sandwich"
 	w_class = n_ceil(CLAMP((ingredients.len/2),2,4))
 
-/obj/item/reagent_containers/food/snacks/csandwich/Destroy()
+/obj/item/reagent_containers/snacks/csandwich/Destroy()
 	for(var/obj/item/O in ingredients)
 		qdel(O)
 	. = ..()
 
-/obj/item/reagent_containers/food/snacks/csandwich/examine(mob/user)
+/obj/item/reagent_containers/snacks/csandwich/examine(mob/user)
 	..(user)
 	var/obj/item/O = pick(contents)
 	to_chat(user, SPAN_NOTICE("You think you can see [O.name] in there."))
 
-/obj/item/reagent_containers/food/snacks/csandwich/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/snacks/csandwich/attack(mob/M as mob, mob/user as mob, def_zone)
 	var/obj/item/shard
 	for(var/obj/item/O in contents)
 		if(istype(O,/obj/item/material/shard))
@@ -106,7 +106,7 @@
 
 //None custom sandwiches
 
-/obj/item/reagent_containers/food/snacks/muffinegg
+/obj/item/reagent_containers/snacks/muffinegg
 	name = "muffin egg sandwich"
 	desc = "A muffin sandwich consisting of fried egg and nadezhdian bacon, a good breakfast takeaway choice."
 	icon_state = "muffinegg"
@@ -115,7 +115,7 @@
 	nutriment_desc = list("bacon" = 5, "runny fried egg" = 5, "muffin" = 2)
 	nutriment_amt = 6
 
-/obj/item/reagent_containers/food/snacks/sandwich
+/obj/item/reagent_containers/snacks/sandwich
 	name = "sandwich"
 	desc = "A simple sandwich of meat, cheese, bread, and several leaves of lettuce."
 	icon_state = "sandwich"
@@ -129,7 +129,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/toastedsandwich
+/obj/item/reagent_containers/snacks/toastedsandwich
 	name = "toasted sandwich"
 	desc = "Your classic sandwich, grilled with butter."
 	icon_state = "toastedsandwich"
@@ -143,7 +143,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 17)
 
-/obj/item/reagent_containers/food/snacks/toasted_guild_sandwich
+/obj/item/reagent_containers/snacks/toasted_guild_sandwich
 	name = "deluxe toasted sandwich"
 	desc = "A toasted sandwich with all the works."
 	icon_state = "toastedsandwich"
@@ -157,12 +157,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 23)
 
-/obj/item/reagent_containers/food/snacks/toastedsandwich/holy
+/obj/item/reagent_containers/snacks/toastedsandwich/holy
 	name = "precept sandwich"
 	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk."
 	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10)
 
-/obj/item/reagent_containers/food/snacks/grilledcheese
+/obj/item/reagent_containers/snacks/grilledcheese
 	name = "grilled cheese sandwich"
 	desc = "A lightly grilled cheese sandwich"
 	icon_state = "toastedsandwich"
@@ -175,7 +175,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20)
 
-/obj/item/reagent_containers/food/snacks/blt
+/obj/item/reagent_containers/snacks/blt
 	name = "BLT"
 	desc = "A classic sandwich composed of nothing more than bacon, lettuce and tomato."
 	icon_state = "blt"
@@ -184,7 +184,7 @@
 	nutriment_desc = list("toasted bread" = 3, "bacon" = 3, "tomato" = 2)
 	nutriment_amt = 3
 
-/obj/item/reagent_containers/food/snacks/twobread
+/obj/item/reagent_containers/snacks/twobread
 	name = "two bread"
 	desc = "Slices of bread dipped in wine."
 	icon_state = "twobread"
@@ -197,7 +197,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/jellysandwich
+/obj/item/reagent_containers/snacks/jellysandwich
 	name = "jelly sandwich"
 	desc = "A sandwich that uses jelly over meats or vegetable."
 	icon_state = "jellysandwich"
@@ -210,13 +210,13 @@
 	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 6)
 
-/obj/item/reagent_containers/food/snacks/jellysandwich/slime
+/obj/item/reagent_containers/snacks/jellysandwich/slime
 	preloaded_reagents = list("slimejelly" = 5)
 
-/obj/item/reagent_containers/food/snacks/jellysandwich/cherry
+/obj/item/reagent_containers/snacks/jellysandwich/cherry
 	preloaded_reagents = list("cherryjelly" = 5)
 
-/obj/item/reagent_containers/food/snacks/cubancarp
+/obj/item/reagent_containers/snacks/cubancarp
 	name = "cuban carp"
 	desc = "A spicy sandwich that has been toasted."
 	icon_state = "cubancarp"
@@ -231,7 +231,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 8)
 
-/obj/item/reagent_containers/food/snacks/icecreamsandwich
+/obj/item/reagent_containers/snacks/icecreamsandwich
 	name = "icecream sandwich"
 	desc = "A classic icecream sandwiched between two chocolate cookies, an essential dessert to have by the dozen."
 	icon_state = "icecreamsandwich"
@@ -241,7 +241,7 @@
 	nutriment_desc = list("icecream" = 10, "cookies" = 5, "perfection" = 15)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
-/obj/item/reagent_containers/food/snacks/strawberrysandwich
+/obj/item/reagent_containers/snacks/strawberrysandwich
 	name = "strawberry icecream sandwich"
 	desc = "A classic strawberry icecream sandwiched between two vanilla cookies, an essential treat to have by the dozen."
 	icon_state = "icecreamsandwich_sb"

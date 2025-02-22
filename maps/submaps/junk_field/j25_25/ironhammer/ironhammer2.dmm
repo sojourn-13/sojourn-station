@@ -545,7 +545,7 @@
 /turf/template_noop,
 /area/template_noop)
 "SV" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Th" = (
@@ -617,8 +617,8 @@
 /area/template_noop)
 "Yy" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/flask/detflask,
-/obj/item/reagent_containers/food/drinks/flask/detflask,
+/obj/item/reagent_containers/drinks/flask/detflask,
+/obj/item/reagent_containers/drinks/flask/detflask,
 /obj/random/lowkeyrandom,
 /turf/simulated/floor/carpet,
 /area/template_noop)

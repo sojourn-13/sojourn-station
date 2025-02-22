@@ -129,7 +129,7 @@
 		else if(istype(W,/obj/item/circuitboard/broken))
 			if(glass)
 				glass.add_charge(1000)
-		else if(istype(W,/obj/item/reagent_containers/food/snacks/grown))
+		else if(istype(W,/obj/item/reagent_containers/snacks/grown))
 			if(wood)
 				wood.add_charge(4000)
 		else if(istype(W,/obj/item/remains))

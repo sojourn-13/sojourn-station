@@ -42,7 +42,7 @@ Has ability of every roach.
 
 	blattedin_revives_left = 0
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
 	has_special_parts = TRUE
@@ -158,7 +158,7 @@ Has ability of every roach.
 	return FALSE
 
 //RIDING
-/mob/living/carbon/superior_animal/roach/kaiser/try_tame(mob/living/carbon/user, obj/item/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior_animal/roach/kaiser/try_tame(mob/living/carbon/user, obj/item/reagent_containers/snacks/grown/thefood)
 	if(!istype(thefood))
 		return FALSE
 	if(prob(40))

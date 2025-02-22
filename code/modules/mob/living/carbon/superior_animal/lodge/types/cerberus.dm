@@ -8,7 +8,7 @@
 	icon_state = "pigrat"
 	icon_living = "pigrat"
 	icon_dead = "pigrat_dead"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_type = /obj/item/reagent_containers/snacks/meat/pork
 	meat_amount = 3
 	leather_amount = 4 //The amount of leather sheets dropped.
 	bones_amount = 4 //The amount of bone sheets dropped.
@@ -30,8 +30,8 @@
 		START_PROCESSING(SSmobs, E)
 
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "plumphelmet")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
@@ -111,7 +111,7 @@
 	speak_emote = list("chitters!","chitter")
 	emote_see = list("scratches at the ground.","gives a small snuffle.","hops back and forth.")
 	turns_per_move = 2
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_type = /obj/item/reagent_containers/snacks/meat/pork
 	meat_amount = 1
 	health = 30
 	var/amount_grown = 0

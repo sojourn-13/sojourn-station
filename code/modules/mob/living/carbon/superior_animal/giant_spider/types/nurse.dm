@@ -16,7 +16,7 @@
 	poison_per_bite = 2
 	var/atom/cocoon_target
 	poison_type = "stoxin"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/nurse
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
@@ -38,7 +38,7 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	egg_inject_chance = 5 //Yes
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/midwife
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider
 	name = "cave spider"
@@ -52,7 +52,7 @@
 	poison_per_bite = 4
 	poison_type = "frostoil"
 	move_to_delay = 5 // Very slow
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/cave_spider
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
@@ -100,7 +100,7 @@
 	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/recluse
 	meat_amount = 2
 	egg_inject_chance = 15 //Defiently
 	move_to_delay = 5 // Very slow do to being 1 hit unfun
@@ -120,7 +120,7 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/queen
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/queen
 	meat_amount = 3
 	flash_resistances = 5 //For balance against are speedy fello
 	egg_inject_chance = 10 //Likely

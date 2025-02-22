@@ -471,7 +471,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			else
 				add_rest(taste_tag, 4 * multiplier/E.taste_tag.len)
 
-/datum/sanity/proc/onEat(obj/item/reagent_containers/food/snacks/snack, snack_sanity_gain, snack_sanity_message)
+/datum/sanity/proc/onEat(obj/item/reagent_containers/snacks/snack, snack_sanity_gain, snack_sanity_message)
 	if(world.time > eat_time_message && snack_sanity_message)
 		eat_time_message = world.time + EAT_COOLDOWN_MESSAGE
 		to_chat(owner, "[snack_sanity_message]")

@@ -83,7 +83,7 @@
 	attemptAddCopyMobMutation(source.type, source.name)
 
 //Initialize a genetics holder based on a slab of meat.
-/datum/genetics/genetics_holder/proc/initializeFromMeat(var/obj/item/reagent_containers/food/snacks/meat/gene_meat)
+/datum/genetics/genetics_holder/proc/initializeFromMeat(var/obj/item/reagent_containers/snacks/meat/gene_meat)
 	#ifdef JANEDEBUG
 	log_debug("func initializeFromMeat called. Meat: [gene_meat]")
 	#endif

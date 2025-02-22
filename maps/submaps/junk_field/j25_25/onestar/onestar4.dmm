@@ -189,8 +189,8 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "aQ" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "aR" = (
@@ -337,7 +337,7 @@
 /turf/template_noop,
 /area/template_noop)
 "bq" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "br" = (

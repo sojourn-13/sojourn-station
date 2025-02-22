@@ -62,7 +62,7 @@
 	churns_done = 0
 	reagents.remove_reagent("milk", milk_requirement, 1)
 	reagents.remove_reagent("sodiumchloride", salt_needed, 1)
-	new /obj/item/reagent_containers/food/snacks/sliceable/butterstick(src.loc)
+	new /obj/item/reagent_containers/snacks/butterstick(src.loc)
 
 //Remove and reset
 /obj/structure/churn/proc/clear_out()

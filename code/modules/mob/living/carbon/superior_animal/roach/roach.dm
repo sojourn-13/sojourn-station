@@ -24,7 +24,7 @@
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 9,
 	)
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	meat_amount = 2
 	leather_amount = 0
 	bones_amount = 0

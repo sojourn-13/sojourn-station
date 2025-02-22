@@ -33,7 +33,7 @@
 	pixel_x = -16
 	pixel_y = 0
 	meat_amount = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size = MOB_LARGE
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
