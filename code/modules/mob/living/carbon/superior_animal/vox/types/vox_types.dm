@@ -1,5 +1,5 @@
 /mob/living/carbon/superior_animal/vox/posin_thrower
-	name = "Mai jefa guba"
+	name = "Stúfurfugl Eiturefni"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one has spears coated in something..."
 	icon_state = "vox_silversynth"
 
@@ -17,7 +17,7 @@
 	fire_verb = "flings a makeshift spear"
 
 /mob/living/carbon/superior_animal/vox/thrower_spear
-	name = "Sararin samaniya"
+	name = "Stúfurfugl Bogamathur"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one throws spears with deadly speed!"
 	icon_state = "vox_abyssal"
 
@@ -35,7 +35,7 @@
 	fire_verb = "flings a makeshift spear"
 
 /mob/living/carbon/superior_animal/vox/armord
-	name = "Garkuwar bango"
+	name = "Stúfurfugl Brynvarinn"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one's chest looks rather tougher than the rest of them."
 	icon_state = "vox_solar"
 
@@ -50,7 +50,7 @@
 	armor_penetration = 25
 
 /mob/living/carbon/superior_animal/vox/hider
-	name = "Inuwa kisa"
+	name = "Stúfurfugl Draugur"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is harder to see as it stalks low to the ground, hiding in bushes or other shadows."
 	icon_state = "vox_ultraviolet"
 
@@ -78,7 +78,7 @@
 	alpha = 255
 
 /mob/living/carbon/superior_animal/vox/ashen
-	name = "Mai kisan toka"
+	name = "Stúfurfugl Sterkur"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. It looks rather strong."
 	icon_state = "vox_pitchblack"
 
@@ -97,7 +97,7 @@
 	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/vox/weak
-	name = "Yaro mafarauci"
+	name = "Stúfurfugl Ungur"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is young but still deadly."
 	icon_state = "vox_acid"
 
@@ -112,7 +112,7 @@
 	health = 35 * VOXBIRD_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/vox/rage
-	name = "Jan barazana"
+	name = "Stúfurfugl Vopnathir"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. Their long arms pack a stronger than normal punch."
 	icon_state = "vox_infrared"
 
@@ -125,7 +125,7 @@
 	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/vox/scout
-	name = "karfe kafafu"
+	name = "Stúfurfugl Skati"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is caked with dirt and grime, with a shank in its hands and plates of crude scrap armor on its chest."
 	icon_state = "vox_brave"
 
