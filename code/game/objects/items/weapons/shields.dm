@@ -96,7 +96,7 @@
 
 	//block as long as they are not directly behind us
 	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
-	if(istype(attacker, /mob/living/simple_animal/hostile) || istype(attacker, /mob/living/carbon/superior_animal/))
+	if(istype(attacker, /mob/living/simple/hostile) || istype(attacker, /mob/living/carbon/superior/))
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
 			if(defender.halloss >= 50)
@@ -106,11 +106,11 @@
 				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
 				if(damage_received <= 0)
 					damage_received = 1 //Alawys small amount of damage
-				if(istype(attacker, /mob/living/carbon/superior_animal/roach/))
+				if(istype(attacker, /mob/living/carbon/superior/roach/))
 					adjustShieldDurability(-(damage_received/6))
-				else if(istype(attacker, /mob/living/carbon/superior_animal/giant_spider/))
+				else if(istype(attacker, /mob/living/carbon/superior/spider/))
 					adjustShieldDurability(-(damage_received/2))
-				else if(istype(attacker, /mob/living/carbon/superior_animal/termite_no_despawn/))
+				else if(istype(attacker, /mob/living/carbon/superior/termite_colony/))
 					adjustShieldDurability(-(damage_received/2))
 				else
 					adjustShieldDurability(-damage_received)
@@ -187,7 +187,7 @@
 
 /obj/item/shield/resolve_attackby(atom/target, mob/user)
 	if(issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/SA = target
+		var/mob/living/carbon/superior/SA = target
 		SA.loseTarget(TRUE,TRUE)
 		SA.react_to_attack(SA,src,user)
 	..()

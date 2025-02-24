@@ -1,4 +1,4 @@
-/mob/living/simple_animal/spider_core
+/mob/living/simple/spider_core
 	name = "carrion"
 	desc = "A horrifying face on spider-like legs."
 	speak_emote = list("creaks")
@@ -28,18 +28,18 @@
 	density = 0 //This makes them a nightmare to kill, fun fun.
 	faction = "spiders"
 
-/mob/living/simple_animal/spider_core/New()
+/mob/living/simple/spider_core/New()
 	. = ..()
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
-	add_verb(src, /mob/living/simple_animal/spider_core/proc/generate_body)
+	add_verb(src, /mob/living/simple/spider_core/proc/generate_body)
 
-/mob/living/simple_animal/spider_core/death()
+/mob/living/simple/spider_core/death()
 	gibs(loc, null, /obj/effect/gibspawner/generic, "#666600", "#666600")
 	qdel(src)
 
 
-/mob/living/simple_animal/spider_core/proc/generate_body()
+/mob/living/simple/spider_core/proc/generate_body()
 	set name = "Build a Body"
 	set desc = "Build a new body for you to inhabit."
 	set category = "Abilities"

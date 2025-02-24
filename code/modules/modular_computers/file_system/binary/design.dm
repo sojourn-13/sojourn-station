@@ -47,7 +47,7 @@
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
+	var/obj/item/pc_part/drive/disk/disk = holder
 	if(!istype(disk) || disk.license < point_cost)
 		return FALSE
 
@@ -61,7 +61,7 @@
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
+	var/obj/item/pc_part/drive/disk/disk = holder
 	if(disk.license > 0)
 		disk.license -= point_cost
 	return TRUE

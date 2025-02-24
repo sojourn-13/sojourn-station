@@ -3680,7 +3680,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aiC" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied,
+/mob/living/carbon/superior/robot/gp/synth/allied,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aiD" = (
@@ -3691,7 +3691,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "aiE" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/soteria_roomba{
+/mob/living/simple/soteria_roomba{
 	desc = "A pink roomba, here to clean the outpost";
 	name = "9k-Six"
 	},
@@ -3710,7 +3710,7 @@
 /obj/machinery/camera/network/research_outpost{
 	dir = 10
 	},
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied,
+/mob/living/carbon/superior/robot/gp/synth/allied,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aiI" = (
@@ -4262,7 +4262,7 @@
 "aka" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/beach/water/shallow,
@@ -4270,7 +4270,7 @@
 "akb" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/frog{
+/mob/living/simple/hostile/frog{
 	faction = "pond"
 	},
 /turf/simulated/floor/beach/water/shallow,
@@ -4278,7 +4278,7 @@
 "akc" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest)
 "akd" = (
@@ -4918,7 +4918,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/crematorium)
 "alz" = (
-/mob/living/simple_animal/opossum/poppy,
+/mob/living/simple/opossum/poppy,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/pros/foreman)
 "alM" = (
@@ -6659,7 +6659,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
 "bPE" = (
-/mob/living/simple_animal/hostile/bear,
+/mob/living/simple/hostile/bear,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "bPR" = (
@@ -7365,7 +7365,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "cDs" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "cDx" = (
@@ -7671,7 +7671,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cOZ" = (
-/mob/living/simple_animal/penguin{
+/mob/living/simple/penguin{
 	desc = "The Blackshield's finest corporal, the only Blackshield personnel to not have a friendly fired incident.";
 	name = "Corporal Collen"
 	},
@@ -7755,21 +7755,21 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells{
+/obj/item/pc_part/drive/disk/design/nt_new_guns,
+/obj/item/pc_part/drive/disk/design/nt_old_guns,
+/obj/item/pc_part/drive/disk/design/guns/dominion,
+/obj/item/pc_part/drive/disk/design/guns/counselor,
+/obj/item/pc_part/drive/disk/design/guns/halicon,
+/obj/item/pc_part/drive/disk/design/guns/lightfall,
+/obj/item/pc_part/drive/disk/design/guns/nemesis,
+/obj/item/pc_part/drive/disk/design/guns/purger,
+/obj/item/pc_part/drive/disk/design/guns/regulator,
+/obj/item/pc_part/drive/disk/design/guns/themis,
+/obj/item/pc_part/drive/disk/design/guns/valkirye,
+/obj/item/pc_part/drive/disk/design/guns/mk58,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_grenades,
+/obj/item/pc_part/drive/disk/design/nt_plasma_shells{
 	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
 	license = 24
 	},
@@ -8321,7 +8321,7 @@
 /area/nadezhda/command/prime)
 "duU" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "dvl" = (
@@ -9453,7 +9453,7 @@
 /area/nadezhda/absolutism/storage)
 "eDn" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/lakeside)
 "eDE" = (
@@ -9575,7 +9575,7 @@
 "eLs" = (
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eLO" = (
@@ -11903,7 +11903,7 @@
 /area/nadezhda/outside/forest)
 "har" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "haB" = (
@@ -11949,7 +11949,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "hcw" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "hcU" = (
@@ -12754,7 +12754,7 @@
 	dir = 1;
 	pixel_y = 0
 	},
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -12956,7 +12956,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "hXC" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -13266,7 +13266,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "iiz" = (
-/mob/living/simple_animal/corgi/puppy,
+/mob/living/simple/corgi/puppy,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "iiA" = (
@@ -13900,7 +13900,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical_blackshield)
 "iID" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "iJw" = (
@@ -14129,7 +14129,7 @@
 /area/nadezhda/hallway/surface/section1)
 "iWg" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "iWS" = (
@@ -14307,7 +14307,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment,
+/obj/item/pc_part/drive/disk/design/nt_bioaugment,
 /obj/item/clothing/mask/gas/germanmask,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
@@ -14517,7 +14517,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "jsA" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "jtn" = (
@@ -15143,7 +15143,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "kdH" = (
-/mob/living/simple_animal/fennec/fennix,
+/mob/living/simple/fennec/fennix,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/fnest)
 "keu" = (
@@ -15714,7 +15714,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "kLj" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -16908,10 +16908,10 @@
 	dir = 1;
 	pixel_y = 0
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "lYQ" = (
@@ -17609,9 +17609,9 @@
 /obj/random/junkfood,
 /obj/random/junkfood,
 /obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
 "mMw" = (
@@ -17692,8 +17692,8 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat/corgi,
-/obj/item/reagent_containers/food/snacks/meat/bearmeat,
+/obj/item/reagent_containers/snacks/meat/corgi,
+/obj/item/reagent_containers/snacks/meat/bearmeat,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "mPI" = (
@@ -17747,7 +17747,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "mSd" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "mTe" = (
@@ -17823,7 +17823,7 @@
 /area/nadezhda/engineering/atmos/surface)
 "mZe" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "mZz" = (
@@ -17864,7 +17864,7 @@
 /area/nadezhda/outside/dcave)
 "nbh" = (
 /obj/structure/flora/small/bushc3,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "nca" = (
@@ -18629,7 +18629,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "nVX" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "nWc" = (
@@ -19106,7 +19106,7 @@
 /obj/item/cell/small/high{
 	pixel_y = 8
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/pc_part/drive/disk/design/security,
 /obj/item/cell/small/high{
 	pixel_y = 8
 	},
@@ -19322,7 +19322,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "oHg" = (
 /obj/structure/flora/small/busha3,
-/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/mob/living/simple/hostile/retaliate/malf_drone,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "oHG" = (
@@ -20449,7 +20449,7 @@
 /area/nadezhda/absolutism/storage)
 "pGw" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter{
+/obj/item/pc_part/drive/disk/design/nt_bioprinter{
 	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -20460,7 +20460,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
+/obj/item/pc_part/drive/disk/design/nt_basic_arms{
 	pixel_x = -6
 	},
 /obj/effect/floor_decal/industrial/warningred{
@@ -20578,7 +20578,7 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/meadow)
 "pKy" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pKJ" = (
@@ -20627,7 +20627,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
 "pME" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "pNg" = (
@@ -20658,8 +20658,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
+/obj/item/pc_part/drive/disk/design/blackshield,
+/obj/item/pc_part/drive/disk/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "pOK" = (
@@ -21526,7 +21526,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "qBv" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "qBR" = (
@@ -21863,7 +21863,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
 "qYf" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "qYJ" = (
@@ -22122,7 +22122,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "roj" = (
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/structure/catwalk,
 /obj/structure/table/steel,
 /obj/random/lathe_disk,
@@ -22148,7 +22148,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "rpr" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -23301,7 +23301,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "soq" = (
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -23551,9 +23551,9 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat/human,
-/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/human,
+/obj/item/reagent_containers/snacks/meat/roachmeat/panzer,
+/obj/item/reagent_containers/snacks/meat/carp,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "sFm" = (
@@ -25278,9 +25278,9 @@
 	dir = 1;
 	pixel_y = 0
 	},
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
@@ -26130,7 +26130,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "vik" = (
 /obj/structure/low_wall,
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -26186,7 +26186,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
 "vkD" = (
-/mob/living/simple_animal/hostile/frog{
+/mob/living/simple/hostile/frog{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -26306,7 +26306,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/lakeside)
 "vrJ" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "vsb" = (
@@ -27962,8 +27962,8 @@
 "wYh" = (
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat/bearmeat,
-/obj/item/reagent_containers/food/snacks/meat/spider,
+/obj/item/reagent_containers/snacks/meat/bearmeat,
+/obj/item/reagent_containers/snacks/meat/spider,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "wZe" = (
@@ -28025,7 +28025,7 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "xcO" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	faction = "pond"
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -28077,15 +28077,15 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/snacks/meat,
 /obj/item/material/kitchen/rollingpin,
 /obj/machinery/light_switch{
 	pixel_y = 30
@@ -28319,7 +28319,7 @@
 /area/nadezhda/pros/proelav)
 "xsh" = (
 /obj/structure/flora/small/busha1,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "xsI" = (

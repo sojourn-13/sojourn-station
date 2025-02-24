@@ -115,7 +115,7 @@
 
 // Checks if the organ is in a freezer, an MMI or a stasis bag - it will not be processed then
 /obj/item/organ/proc/is_in_stasis()
-	if(istype(loc, /obj/item/device/mmi) || istype(loc, /mob/living/simple_animal/spider_core))
+	if(istype(loc, /obj/item/device/mmi) || istype(loc, /mob/living/simple/spider_core))
 		return TRUE
 
 	var/list/stasis_types = list(

@@ -26,8 +26,8 @@
 
 	if(!product_name)
 		product_name = initial(tmp.name)
-		if(ispath(tmp, /obj/item/computer_hardware/hard_drive/portable))
-			var/obj/item/computer_hardware/hard_drive/portable/tmp_disk = tmp
+		if(ispath(tmp, /obj/item/pc_part/drive/disk))
+			var/obj/item/pc_part/drive/disk/tmp_disk = tmp
 			if(initial(tmp_disk.disk_name))
 				product_name = initial(tmp_disk.disk_name)
 

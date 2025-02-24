@@ -1,31 +1,31 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "ab" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "ac" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/asteroid,
 /area/template_noop)
 "ad" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "ae" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/roomba/boomba,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "af" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "ag" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/mob/living/carbon/superior/robot/gp/synth/epistol/heavy,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "am" = (
@@ -203,7 +203,7 @@
 /area/template_noop)
 "gh" = (
 /obj/structure/lattice,
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/template_noop,
 /area/template_noop)
 "gY" = (
@@ -218,7 +218,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "hY" = (
@@ -226,7 +226,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ic" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/template_noop)
 "if" = (
@@ -261,7 +261,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "la" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "lU" = (
@@ -275,7 +275,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "pA" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "pI" = (
@@ -302,11 +302,11 @@
 /obj/structure/sign/faction/derelict2{
 	pixel_y = -32
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "uB" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "uK" = (
@@ -321,11 +321,11 @@
 /area/template_noop)
 "xb" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = 5;
 	pixel_y = 2
 	},
@@ -335,7 +335,7 @@
 /obj/machinery/light_construct{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "zo" = (
@@ -407,7 +407,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/template_noop)
 "EK" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/template_noop,
 /area/template_noop)
 "EL" = (
@@ -429,7 +429,7 @@
 /obj/machinery/light_construct{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/template_noop)
 "Hn" = (
@@ -464,7 +464,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "Kz" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "Lj" = (
@@ -477,7 +477,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)
 "Lk" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "LL" = (
@@ -494,7 +494,7 @@
 /obj/machinery/light_construct{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/template_noop)
 "Mq" = (
@@ -506,7 +506,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "Ny" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba/plasma,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "NG" = (
@@ -552,7 +552,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)
 "Xb" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "Yp" = (
@@ -578,7 +578,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)
 "Zh" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "Zk" = (

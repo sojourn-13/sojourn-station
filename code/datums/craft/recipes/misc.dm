@@ -149,6 +149,6 @@
 	result = /obj/item/hydro_tray_plant_bag_nutrient
 	steps = list(
 		list(/obj/item/stack/ore, 2, "time" = 15),
-		list(/obj/item/reagent_containers/food/snacks/meat, 2, "time" = 2),
+		list(/obj/item/reagent_containers/snacks/meat, 2, "time" = 2),
 		list(QUALITY_CUTTING, 10, 10)
 	)

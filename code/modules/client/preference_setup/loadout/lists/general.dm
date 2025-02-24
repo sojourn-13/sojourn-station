@@ -44,7 +44,7 @@
 
 /datum/gear/flask
 	display_name = "flask"
-	path = /obj/item/reagent_containers/food/drinks/flask/barflask
+	path = /obj/item/reagent_containers/drinks/flask/barflask
 
 /datum/gear/h_book
 	display_name = "holy book"
@@ -52,7 +52,7 @@
 
 /datum/gear/mug
 	display_name = "mug selection"
-	path = /obj/item/reagent_containers/food/drinks/mug
+	path = /obj/item/reagent_containers/drinks/mug
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/psi_juice

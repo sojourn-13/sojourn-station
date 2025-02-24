@@ -52,8 +52,8 @@
 		icon_state = "spike_[H.species.name]"
 		meat = 3
 	else if (isanimal(victim))
-		var/mob/living/simple_animal/animal = victim
-		if(!ispath(animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+		var/mob/living/simple/animal = victim
+		if(!ispath(animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			return FALSE
 		if(animal.mob_size > MOB_MEDIUM)
 			to_chat(user, SPAN_WARNING("The [animal] will not fit!"))
@@ -62,8 +62,8 @@
 		icon_state = "spike_Monkey"
 		meat = animal.meat_amount
 	else if (issuperioranimal(victim))
-		var/mob/living/carbon/superior_animal/s_animal = victim
-		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+		var/mob/living/carbon/superior/s_animal = victim
+		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			return FALSE
 		if(s_animal.mob_size > MOB_MEDIUM)
 			to_chat(user, SPAN_WARNING("The [s_animal] will not fit!"))
@@ -88,10 +88,10 @@
 
 	//Prevent infinite amounts of meat being generated
 	if (isanimal(occupant))
-		var/mob/living/simple_animal/animal = occupant
+		var/mob/living/simple/animal = occupant
 		animal.meat_amount = meat
 	else if (issuperioranimal(occupant))
-		var/mob/living/carbon/superior_animal/s_animal = occupant
+		var/mob/living/carbon/superior/s_animal = occupant
 		s_animal.meat_amount = meat
 
 	occupant.loc = get_turf(src)
@@ -121,7 +121,7 @@
 			if(meat < 1)
 				to_chat(user, "There is no more meat on \the [victim_name].")
 				return
-			var/obj/item/reagent_containers/food/snacks/meat/new_meat = new meat_type(get_turf(src))
+			var/obj/item/reagent_containers/snacks/meat/new_meat = new meat_type(get_turf(src))
 			new_meat.name = "[occupant.name] [new_meat.name]"
 			new_meat.initialize_genetics(occupant)
 			if(meat > 1)

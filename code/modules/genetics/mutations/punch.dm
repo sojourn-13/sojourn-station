@@ -13,12 +13,12 @@
 		var/mob/living/carbon/human/human_holder = container.holder
 		human_holder.punch_damage_increase += 3
 	//Imagine the fun of this on colony allied monsters
-	if(istype(container.holder, /mob/living/simple_animal/hostile))
-		var/mob/living/simple_animal/hostile/HE = container.holder
+	if(istype(container.holder, /mob/living/simple/hostile))
+		var/mob/living/simple/hostile/HE = container.holder
 		HE.melee_damage_lower += 6
 		HE.melee_damage_upper += 6
 	if(issuperioranimal(container.holder))
-		var/mob/living/carbon/superior_animal/SA = container.holder
+		var/mob/living/carbon/superior/SA = container.holder
 		SA.melee_damage_lower += 6
 		SA.melee_damage_upper += 6
 
@@ -28,11 +28,11 @@
 	if(ishuman(container.holder))
 		var/mob/living/carbon/human/human_holder = container.holder
 		human_holder.punch_damage_increase -= 3
-	if(istype(container.holder, /mob/living/simple_animal/hostile))
-		var/mob/living/simple_animal/hostile/HE = container.holder
+	if(istype(container.holder, /mob/living/simple/hostile))
+		var/mob/living/simple/hostile/HE = container.holder
 		HE.melee_damage_lower -= 6
 		HE.melee_damage_upper -= 6
 	if(issuperioranimal(container.holder))
-		var/mob/living/carbon/superior_animal/SA = container.holder
+		var/mob/living/carbon/superior/SA = container.holder
 		SA.melee_damage_lower -= 6
 		SA.melee_damage_upper -= 6

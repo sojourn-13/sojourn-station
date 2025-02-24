@@ -1,2 +1,2 @@
-//mob/living/carbon/superior_animal/giant_spider/Life()
+//mob/living/carbon/superior/spider/Life()
 //	. = ..()

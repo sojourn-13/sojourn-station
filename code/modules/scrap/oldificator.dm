@@ -169,7 +169,7 @@
 			desc += " The label is unreadable."
 
 //Sealed survival food, always edible
-/obj/item/reagent_containers/food/snacks/openable/liquidfood/make_old()
+/obj/item/reagent_containers/snacks/openable/liquidfood/make_old()
 	return
 
 /obj/item/ammo_magazine/make_old()
@@ -209,7 +209,7 @@
 /obj/item/stack/ore/make_old()
 	return
 
-/obj/item/computer_hardware/hard_drive/portable/design/make_old()
+/obj/item/pc_part/drive/disk/design/make_old()
 	..()
 	if(license >= 1)
 		license = round(license / pick(1, 1, 1, 1.1, 1.1, 1.1, 1.1, 1.2, 1.3)) //This looses a lot when unlucky

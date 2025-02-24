@@ -31,7 +31,7 @@
 	result_path = MUTATION_SAC
 
 /datum/genetics/mutation_recipe/irradiation/flesh_sac_s_mob
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/human)
+	required_on_clone_types = list(/mob/living/carbon/superior/human)
 	result_path = MUTATION_SAC
 
 /datum/genetics/mutation_recipe/combination/flesh_sac_greater

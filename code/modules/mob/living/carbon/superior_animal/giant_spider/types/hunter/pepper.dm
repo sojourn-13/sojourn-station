@@ -1,9 +1,9 @@
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper
+/mob/living/carbon/superior/spider/hunter/pepper
 	name = "pepper spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is blood red and pulsating with sacks of irratent gas."
 	icon_state = "pepper"
 	icon_living = "pepper"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/pepper
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/pepper
 	emote_see = list("chitters.","rubs its legs.","vibrates.","belches flames!")
 	var/datum/reagents/gas_sac //Stores gas. Can't use the default reagents since that is now bloodstream
 	/// How much we can hold in our gas sac.
@@ -28,23 +28,23 @@
 	var/spray_lifespan = 10
 	inherent_mutations = list(MUTATION_SHOCK_LESS)
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/New()
+/mob/living/carbon/superior/spider/hunter/pepper/New()
 	.=..()
 	gas_sac = new /datum/reagents(spray_max, src)
 	gas_sac.add_reagent("condensedcapsaicinspider", (spray_max*0.5))
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/Destroy()
+/mob/living/carbon/superior/spider/hunter/pepper/Destroy()
 	gas_sac.my_atom = null
 	QDEL_NULL(gas_sac)
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/Life()
+/mob/living/carbon/superior/spider/hunter/pepper/Life()
 	. = ..()
 
 	gas_sac.add_reagent("condensedcapsaicinspider", 1)
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/handle_attacking_stance(atom/targetted_mob, already_destroying_surroundings)
+/mob/living/carbon/superior/spider/hunter/pepper/handle_attacking_stance(atom/targetted_mob, already_destroying_surroundings)
 	. = ..()
 
 	var/spray_range = (comfy_range - 2)
@@ -61,7 +61,7 @@
 							addtimer(CALLBACK(src, PROC_REF(sprayPepper), targetted_mob), delay)
 							cooldown = (world.time + cooldown_increment)
 
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/proc/sprayPepper(var/atom/targetted_mob)
+/mob/living/carbon/superior/spider/hunter/pepper/proc/sprayPepper(var/atom/targetted_mob)
 	visible_message(SPAN_WARNING("[src] [spray_message] [targetted_mob]!"))
 	playsound(loc, 'sound/effects/spray2.ogg', 50, 1)
 	var/obj/effect/effect/water/chempuff/D = new/obj/effect/effect/water/chempuff(get_turf(src))

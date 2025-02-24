@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/nanobot/Life()
+/mob/living/carbon/superior/nanobot/Life()
 	. = ..()
 
 	// What it does if it can repair itself

@@ -9,11 +9,11 @@
 		B.reagents.add_reagent(id, B.volume, null, TRUE)
 
 /obj/landmark/debug/all_containers/New()
-	for(var/type in typesof(/obj/item/reagent_containers) - typesof(/obj/item/reagent_containers/food))
+	for(var/type in typesof(/obj/item/reagent_containers) - typesof(/obj/item/reagent_containers))
 		new type(src.loc)
 
 /obj/landmark/debug/all_food/New()
-	for(var/type in typesof(/obj/item/reagent_containers/food))
+	for(var/type in typesof(/obj/item/reagent_containers))
 		new type(src.loc)
 
 /obj/landmark/debug/all_closets/New()

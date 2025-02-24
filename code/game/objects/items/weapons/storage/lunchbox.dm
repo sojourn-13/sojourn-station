@@ -14,7 +14,7 @@
 	attack_verb = "lunched"
 	price_tag = 5
 	can_hold = list(
-		/obj/item/reagent_containers/food,
+		/obj/item/reagent_containers,
 		/obj/item/material/kitchen/utensil,
 		/obj/item/tool/knife
 		)
@@ -42,9 +42,9 @@
 	desc = "Because even the faithful need to eat. Comes with a special blend of highly helpful food stuffs packaged and meant to be shared."
 
 /obj/item/storage/lunchbox/lemniscate/full/populate_contents()
-	new /obj/item/reagent_containers/food/snacks/poppypretzel/holy(src)
-	new /obj/item/reagent_containers/food/snacks/poppypretzel/holy(src)
-	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
-	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
-	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)
-	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)
+	new /obj/item/reagent_containers/snacks/poppypretzel/holy(src)
+	new /obj/item/reagent_containers/snacks/poppypretzel/holy(src)
+	new /obj/item/reagent_containers/snacks/toastedsandwich/holy(src)
+	new /obj/item/reagent_containers/snacks/toastedsandwich/holy(src)
+	new /obj/item/reagent_containers/drinks/cans/cahors/lemniscate(src)
+	new /obj/item/reagent_containers/drinks/cans/cahors/lemniscate(src)

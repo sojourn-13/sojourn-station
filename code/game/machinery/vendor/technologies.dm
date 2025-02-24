@@ -31,14 +31,14 @@
 	icon_state = "cart"
 	icon_deny = "cart-deny"
 	products = list(/obj/item/modular_computer/pda = 10,
-					/obj/item/computer_hardware/scanner/medical = 6,
-					/obj/item/computer_hardware/scanner/reagent = 6,
-					/obj/item/computer_hardware/scanner/atmos = 6,
-					/obj/item/computer_hardware/scanner/paper = 10,
-					/obj/item/computer_hardware/printer = 10,
-					/obj/item/computer_hardware/card_slot = 3,
-					/obj/item/computer_hardware/ai_slot = 4,
-					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 10)
+					/obj/item/pc_part/scanner/medical = 6,
+					/obj/item/pc_part/scanner/reagent = 6,
+					/obj/item/pc_part/scanner/atmos = 6,
+					/obj/item/pc_part/scanner/paper = 10,
+					/obj/item/pc_part/printer = 10,
+					/obj/item/pc_part/card_slot = 3,
+					/obj/item/pc_part/ai_slot = 4,
+					/obj/item/pc_part/drive/disk/adv/coin = 10)
 	auto_price = FALSE
 	give_discounts = FALSE
 	give_discount_points = FALSE

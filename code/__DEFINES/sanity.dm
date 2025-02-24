@@ -25,9 +25,9 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 
 //for food
 /proc/init_sanity_foods()
-	var/list/food_types = subtypesof(/obj/item/reagent_containers/food/snacks)
+	var/list/food_types = subtypesof(/obj/item/reagent_containers/snacks)
 	for(var/candidate in food_types)
-		var/obj/item/reagent_containers/food/snacks/food = candidate
+		var/obj/item/reagent_containers/snacks/food = candidate
 		if(initial(food.cooked))
 			GLOB.sanity_foods += candidate
 	return GLOB.sanity_foods.Copy()

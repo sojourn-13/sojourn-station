@@ -5,7 +5,7 @@
 	set name = "Release Control"
 	set desc = "Release control of your host's body."
 
-	var/mob/living/simple_animal/borer/B = has_brain_worms()
+	var/mob/living/simple/borer/B = has_brain_worms()
 
 	if(B && B.host_brain)
 		to_chat(src, "\red <B>You withdraw your probosci, releasing control of [B.host_brain]</B>")
@@ -27,7 +27,7 @@
 	set name = "Talk to captive host"
 	set desc = "Talk to your captive host."
 
-	var/mob/living/simple_animal/borer/B = has_brain_worms()
+	var/mob/living/simple/borer/B = has_brain_worms()
 	var/text = null
 
 	if(!B)
@@ -47,7 +47,7 @@
 	set name = "Reproduce"
 	set desc = "Spawn several young."
 
-	var/mob/living/simple_animal/borer/B = has_brain_worms()
+	var/mob/living/simple/borer/B = has_brain_worms()
 
 	if(!B)
 		return
@@ -61,7 +61,7 @@
 
 		new /obj/effect/decal/cleanable/vomit(get_turf(src))
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
-		new /mob/living/simple_animal/borer(get_turf(src))
+		new /mob/living/simple/borer(get_turf(src))
 
 	else
 		to_chat(src, "You do not have enough chemicals stored to reproduce.")

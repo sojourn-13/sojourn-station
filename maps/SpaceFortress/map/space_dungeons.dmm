@@ -12,7 +12,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/outpost/abandoned_fortress/powered)
 "ab" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate7)
 "ac" = (
@@ -187,7 +187,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "aZ" = (
-/mob/living/carbon/superior_animal/human/marine/sniper,
+/mob/living/carbon/superior/human/marine/sniper,
 /turf/simulated/floor/rock,
 /area/space)
 "ba" = (
@@ -204,8 +204,8 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "bf" = (
-/obj/item/reagent_containers/food/snacks/egg/purple,
-/mob/living/simple_animal/hostile/carp/shark,
+/obj/item/reagent_containers/snacks/egg/purple,
+/mob/living/simple/hostile/carp/shark,
 /turf/simulated/floor/rock,
 /area/space)
 "bg" = (
@@ -244,7 +244,7 @@
 /area/outpost/abandoned_fortress/powered)
 "br" = (
 /obj/machinery/cooking_with_jane/grill,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cwj/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "bt" = (
@@ -458,7 +458,7 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/outpost/abandoned_fortress/powered)
 "cp" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "cq" = (
@@ -471,7 +471,7 @@
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "ct" = (
@@ -534,7 +534,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "cH" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
 "cI" = (
@@ -698,7 +698,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "dv" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/rock,
 /area/space)
 "dw" = (
@@ -802,7 +802,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/space)
 "dW" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/space)
 "dX" = (
@@ -1003,7 +1003,7 @@
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/outpost/abandoned_fortress/powered)
 "eQ" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
 /area/space)
 "eS" = (
@@ -1015,7 +1015,7 @@
 /turf/simulated/floor/reinforced,
 /area/space)
 "eT" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
@@ -1270,17 +1270,17 @@
 /area/outpost/abandoned_fortress/powered)
 "gx" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /obj/machinery/light/floor,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
 "gy" = (
 /obj/machinery/light/small,
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate1)
 "gA" = (
-/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet,
+/mob/living/carbon/superior/human/voidwolf/elite/gyrojet,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "gC" = (
@@ -1367,7 +1367,7 @@
 /area/outpost/abandoned_fortress/powered)
 "gW" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 8
@@ -1425,11 +1425,11 @@
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
 "hq" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "hr" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
 "hw" = (
@@ -1619,7 +1619,7 @@
 /area/awaymission/spacebattle/syndicate7)
 "iC" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
 "iE" = (
@@ -1639,7 +1639,7 @@
 "iG" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
 "iK" = (
@@ -1678,7 +1678,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/outpost/abandoned_fortress/powered)
 "iR" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "iT" = (
@@ -1729,7 +1729,7 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/outpost/abandoned_fortress/powered)
 "jb" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/structure/flora/pottedplant/bush_buds_yellow,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
@@ -1831,7 +1831,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/small,
-/mob/living/carbon/superior_animal/human/xiang/ronin,
+/mob/living/carbon/superior/human/xiang/ronin,
 /turf/simulated/floor/tiled/dark/golden,
 /area/awaymission/spacebattle/syndicate1)
 "jD" = (
@@ -1858,7 +1858,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/awaymission/spacebattle/syndicate7)
 "jK" = (
-/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught,
+/mob/living/simple/hostile/megafauna/excelsior_cosmonaught,
 /turf/simulated/floor/tiled/dark/panels,
 /area/awaymission/spacebattle/syndicate7)
 "jM" = (
@@ -1937,7 +1937,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "kh" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/steel/panels,
 /area/outpost/abandoned_fortress/powered)
 "ki" = (
@@ -2286,7 +2286,7 @@
 "lR" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/awaymission/spacebattle/syndicate2)
 "lT" = (
@@ -2392,7 +2392,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/awaymission/spacebattle/syndicate7)
 "mB" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
@@ -2434,7 +2434,7 @@
 /area/outpost/abandoned_fortress/powered)
 "mL" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "mM" = (
@@ -2455,7 +2455,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "mP" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate2)
 "mQ" = (
@@ -2632,7 +2632,7 @@
 /turf/simulated/floor/hull,
 /area/space)
 "nv" = (
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate1)
 "nx" = (
@@ -2680,7 +2680,7 @@
 /area/outpost/abandoned_fortress/powered)
 "nH" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate1)
 "nJ" = (
@@ -2699,7 +2699,7 @@
 	},
 /area/awaymission/spacebattle/syndicate7)
 "nO" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "nP" = (
@@ -2806,7 +2806,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "ox" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "oy" = (
@@ -2814,7 +2814,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "oz" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "oA" = (
@@ -2867,7 +2867,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/space)
 "oM" = (
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/awaymission/spacebattle/syndicate1)
 "oP" = (
@@ -3166,7 +3166,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "qi" = (
-/mob/living/carbon/superior_animal/human/voidwolf/elite,
+/mob/living/carbon/superior/human/voidwolf/elite,
 /turf/simulated/floor/rock,
 /area/space)
 "qj" = (
@@ -3205,7 +3205,7 @@
 /obj/item/stool,
 /obj/item/ammo_casing/heavy_rifle_408/hv/spent,
 /obj/item/ammo_casing/pistol_35/hv/spent,
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "qs" = (
@@ -3357,11 +3357,11 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 24
 	},
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
 "rp" = (
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate1)
 "rq" = (
@@ -3383,7 +3383,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/spacebattle/syndicate7)
 "rt" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate2)
 "ru" = (
@@ -3397,7 +3397,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
 "rz" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
 "rD" = (
@@ -3511,7 +3511,7 @@
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/awaymission/spacebattle/syndicate7)
 "si" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/space)
 "sj" = (
@@ -3532,7 +3532,7 @@
 /area/outpost/abandoned_fortress/powered)
 "sn" = (
 /obj/effect/floor_decal/industrial/outline,
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
 "so" = (
@@ -3635,7 +3635,7 @@
 /area/outpost/abandoned_fortress/powered)
 "sO" = (
 /obj/item/ammo_casing/heavy_rifle_408/hv/spent,
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "sP" = (
@@ -3668,7 +3668,7 @@
 /turf/simulated/floor/rock,
 /area/space)
 "sU" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
@@ -3701,7 +3701,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/outpost/abandoned_fortress/powered)
 "sY" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "sZ" = (
@@ -3729,7 +3729,7 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
 "tf" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "tg" = (
@@ -3765,7 +3765,7 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/outpost/abandoned_fortress/powered)
 "to" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /turf/simulated/floor/rock,
 /area/space)
 "tp" = (
@@ -3776,7 +3776,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -3829,7 +3829,7 @@
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate7)
 "tE" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/awaymission/spacebattle/syndicate2)
 "tF" = (
@@ -3840,7 +3840,7 @@
 /area/outpost/abandoned_fortress/powered)
 "tG" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "tL" = (
@@ -4058,7 +4058,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
 "uH" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/space)
 "uI" = (
@@ -4073,7 +4073,7 @@
 /turf/space,
 /area/space)
 "uM" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "uP" = (
@@ -4156,7 +4156,7 @@
 /area/awaymission/spacebattle/syndicate7)
 "vb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate1)
 "vc" = (
@@ -4190,7 +4190,7 @@
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "vn" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate7)
 "vp" = (
@@ -4306,7 +4306,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate1)
 "vV" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/rock,
 /area/space)
 "vW" = (
@@ -4359,7 +4359,7 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
 "we" = (
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /obj/structure/catwalk,
 /obj/structure/bed/chair,
 /turf/simulated/floor/plating/under,
@@ -4378,7 +4378,7 @@
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate2)
 "wi" = (
-/mob/living/simple_animal/hostile/carp/greatwhite,
+/mob/living/simple/hostile/carp/greatwhite,
 /turf/simulated/floor/rock,
 /area/space)
 "wj" = (
@@ -4448,7 +4448,7 @@
 /turf/simulated/floor/plating/under,
 /area/space)
 "wD" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/shuttle/floor/mining,
 /area/outpost/abandoned_fortress/powered)
 "wG" = (
@@ -4459,7 +4459,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
@@ -4592,7 +4592,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "xi" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -4685,7 +4685,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "xH" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/steel/panels,
 /area/outpost/abandoned_fortress/powered)
 "xJ" = (
@@ -4722,7 +4722,7 @@
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
 "xQ" = (
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
@@ -4877,7 +4877,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/outpost/abandoned_fortress/powered)
 "yB" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/reinforced,
 /area/space)
 "yC" = (
@@ -4887,7 +4887,7 @@
 /area/awaymission/spacebattle/syndicate7)
 "yD" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/outpost/abandoned_fortress/powered)
 "yE" = (
@@ -4940,7 +4940,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "zd" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh,
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate7)
 "ze" = (
@@ -4949,7 +4949,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "zf" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -4973,7 +4973,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "zk" = (
@@ -5072,7 +5072,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "zE" = (
@@ -5105,7 +5105,7 @@
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "zO" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -5145,7 +5145,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "zU" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/wood,
 /area/outpost/abandoned_fortress/powered)
 "zV" = (
@@ -5179,7 +5179,7 @@
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "Ap" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/space)
 "Aq" = (
@@ -5290,7 +5290,7 @@
 /turf/space,
 /area/space)
 "AZ" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Ba" = (
@@ -5412,11 +5412,11 @@
 /turf/space,
 /area/outpost/abandoned_fortress/powered)
 "BP" = (
-/mob/living/simple_animal/hostile/carp/shark,
+/mob/living/simple/hostile/carp/shark,
 /turf/simulated/floor/rock,
 /area/space)
 "BQ" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
 "BR" = (
@@ -5424,7 +5424,7 @@
 /turf/simulated/shuttle/floor/mining,
 /area/outpost/abandoned_fortress/powered)
 "BS" = (
-/mob/living/carbon/superior_animal/human/marine/sniper,
+/mob/living/carbon/superior/human/marine/sniper,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
@@ -5446,12 +5446,12 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "BZ" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Cd" = (
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/obj/item/reagent_containers/cwj/container/pot,
+/obj/item/reagent_containers/cwj/container/bowl,
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/cafe,
@@ -5524,7 +5524,7 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
 "Cs" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/plating/under,
 /area/space)
 "Ct" = (
@@ -5553,10 +5553,10 @@
 "Cy" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/reinforced,
@@ -5848,11 +5848,11 @@
 /area/outpost/abandoned_fortress/powered)
 "DP" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/snacks/mint,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 3
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -5878,11 +5878,11 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = -3;
 	pixel_y = -1
 	},
@@ -5944,7 +5944,7 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
 "Er" = (
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /obj/structure/bed/chair{
 	dir = 8
 	},
@@ -5958,7 +5958,7 @@
 /area/space)
 "Eu" = (
 /obj/structure/table/bench/steel,
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Ev" = (
@@ -6032,7 +6032,7 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/outpost/abandoned_fortress/powered)
 "EX" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "EY" = (
@@ -6046,7 +6046,7 @@
 	},
 /area/outpost/abandoned_fortress/powered)
 "Fa" = (
-/mob/living/carbon/superior_animal/human/marine/sniper,
+/mob/living/carbon/superior/human/marine/sniper,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "Fb" = (
@@ -6062,7 +6062,7 @@
 /turf/simulated/wall/r_wall,
 /area/awaymission/spacebattle/syndicate7)
 "Fe" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Ff" = (
@@ -6111,7 +6111,7 @@
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "Fq" = (
-/mob/living/carbon/superior_animal/human/marine/specialist,
+/mob/living/carbon/superior/human/marine/specialist,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
 "Ft" = (
@@ -6224,15 +6224,15 @@
 	},
 /area/outpost/abandoned_fortress/powered)
 "FV" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/space,
 /area/space)
 "FW" = (
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "FX" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "FY" = (
@@ -6264,7 +6264,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 9
 	},
@@ -6290,7 +6290,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/awaymission/spacebattle/syndicate7)
 "Gi" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "Gk" = (
@@ -6392,7 +6392,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/awaymission/spacebattle/syndicate7)
 "GH" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate7)
 "GJ" = (
@@ -6528,7 +6528,7 @@
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "HI" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
@@ -6573,7 +6573,7 @@
 /turf/space,
 /area/space)
 "HU" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "HW" = (
@@ -6591,19 +6591,19 @@
 /area/awaymission/spacebattle/syndicate2)
 "HZ" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 5;
 	pixel_y = 17
 	},
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 15
 	},
@@ -6627,7 +6627,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Ie" = (
-/mob/living/carbon/superior_animal/human/marine/specialist,
+/mob/living/carbon/superior/human/marine/specialist,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
@@ -6807,7 +6807,7 @@
 "IT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "IU" = (
@@ -6847,7 +6847,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Jc" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/awaymission/spacebattle/syndicate7)
 "Jd" = (
@@ -6903,11 +6903,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Jq" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/space,
 /area/space)
 "Jr" = (
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -7011,12 +7011,12 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "JP" = (
-/mob/living/carbon/superior_animal/human/voidwolf/elite,
+/mob/living/carbon/superior/human/voidwolf/elite,
 /turf/simulated/floor/plating/under,
 /area/space)
 "JQ" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "JT" = (
@@ -7210,7 +7210,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "KG" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -7219,7 +7219,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "KH" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
@@ -7250,7 +7250,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/space)
 "KN" = (
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /obj/structure/catwalk,
 /obj/structure/bed/chair{
 	dir = 8
@@ -7280,7 +7280,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate2)
 "KV" = (
-/mob/living/carbon/superior_animal/human/marine/specialist,
+/mob/living/carbon/superior/human/marine/specialist,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "KZ" = (
@@ -7335,7 +7335,7 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "Lt" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez,
+/mob/living/carbon/superior/human/excelsior/excel_vintorez,
 /turf/simulated/floor/rock,
 /area/space)
 "Lu" = (
@@ -7352,7 +7352,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "Lw" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "Ly" = (
@@ -7360,7 +7360,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/space)
 "Lz" = (
-/mob/living/carbon/superior_animal/human/xiang/ronin,
+/mob/living/carbon/superior/human/xiang/ronin,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate1)
 "LD" = (
@@ -7371,7 +7371,7 @@
 /area/awaymission/spacebattle/syndicate7)
 "LF" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "LG" = (
@@ -7397,7 +7397,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
 "LK" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/space)
 "LL" = (
@@ -7637,7 +7637,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/awaymission/spacebattle/syndicate7)
 "Nc" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate2)
 "Nd" = (
@@ -7654,7 +7654,7 @@
 /area/awaymission/spacebattle/syndicate7)
 "Nf" = (
 /obj/item/ammo_casing/shotgun/spent,
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/outpost/abandoned_fortress/powered)
 "Ng" = (
@@ -7664,7 +7664,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate7)
 "Nl" = (
@@ -7791,7 +7791,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
 "NS" = (
-/obj/item/reagent_containers/food/snacks/egg/purple,
+/obj/item/reagent_containers/snacks/egg/purple,
 /turf/simulated/floor/rock,
 /area/space)
 "NT" = (
@@ -7851,7 +7851,7 @@
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/outpost/abandoned_fortress/powered)
 "Oi" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
 "Oj" = (
@@ -7882,10 +7882,10 @@
 /area/outpost/abandoned_fortress/powered)
 "Oq" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/guns/lamia,
+/obj/item/pc_part/drive/disk/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/awaymission/spacebattle/syndicate1)
 "Or" = (
@@ -7935,7 +7935,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/mug/moe,
+/obj/item/reagent_containers/drinks/mug/moe,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/outpost/abandoned_fortress/powered)
 "OA" = (
@@ -7965,7 +7965,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
 "OI" = (
-/mob/living/carbon/superior_animal/psi_monster/wasonce,
+/mob/living/carbon/superior/psi/wasonce,
 /obj/random/credits/c50,
 /turf/simulated/floor/reinforced,
 /area/outpost/abandoned_fortress/powered)
@@ -7979,7 +7979,7 @@
 /turf/simulated/floor/reinforced,
 /area/space)
 "OM" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate2)
 "OQ" = (
@@ -7987,7 +7987,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "OR" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh,
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/spacebattle/syndicate7)
 "OS" = (
@@ -8064,7 +8064,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/human/marine/shield,
+/mob/living/carbon/superior/human/marine/shield,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -8127,7 +8127,7 @@
 /area/outpost/abandoned_fortress/powered)
 "Pz" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cwj/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "PB" = (
@@ -8176,7 +8176,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "PI" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/plating/under,
 /area/space)
 "PN" = (
@@ -8372,7 +8372,7 @@
 /turf/simulated/floor/plating/under,
 /area/space)
 "QF" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/plating/under,
 /area/space)
 "QH" = (
@@ -8427,7 +8427,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "Ra" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Rb" = (
@@ -8441,7 +8441,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
 "Rc" = (
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/spacebattle/syndicate1)
 "Rd" = (
@@ -8476,7 +8476,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
 "Rl" = (
@@ -8566,7 +8566,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
 "RJ" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
 "RK" = (
@@ -8616,12 +8616,12 @@
 /area/awaymission/spacebattle/syndicate7)
 "RS" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/marine/specialist,
+/mob/living/carbon/superior/human/marine/specialist,
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "RT" = (
 /obj/item/stool,
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "RU" = (
@@ -8700,7 +8700,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "Sw" = (
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate7)
 "Sx" = (
@@ -8716,7 +8716,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
 "SA" = (
@@ -8766,11 +8766,11 @@
 /area/outpost/abandoned_fortress/powered)
 "SH" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/cwj/container/pan,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -8876,7 +8876,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
 "Tg" = (
@@ -8904,7 +8904,7 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/outpost/abandoned_fortress/powered)
 "Tl" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 4
 	},
@@ -8927,7 +8927,7 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/golden,
 /area/awaymission/spacebattle/syndicate1)
 "Tu" = (
@@ -8939,7 +8939,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/abandoned_fortress/powered)
 "Tv" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/mob/living/carbon/superior/human/voidwolf/ranged,
 /turf/simulated/floor/rock,
 /area/space)
 "Ty" = (
@@ -9188,7 +9188,7 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/outpost/abandoned_fortress/powered)
 "Uz" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/structure/bed/chair{
 	dir = 8
 	},
@@ -9277,7 +9277,7 @@
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate1)
 "Vb" = (
-/mob/living/carbon/superior_animal/human/marine/heavy,
+/mob/living/carbon/superior/human/marine/heavy,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Vc" = (
@@ -9312,7 +9312,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/spacebattle/syndicate7)
 "Vo" = (
-/mob/living/carbon/superior_animal/human/xiang/ronin,
+/mob/living/carbon/superior/human/xiang/ronin,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/awaymission/spacebattle/syndicate1)
 "Vp" = (
@@ -9402,7 +9402,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
@@ -9416,7 +9416,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "VT" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /obj/structure/lattice,
 /turf/space,
 /area/space)
@@ -9434,7 +9434,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate2)
 "VY" = (
-/mob/living/carbon/superior_animal/human/prisoner/melee,
+/mob/living/carbon/superior/human/prisoner/melee,
 /turf/simulated/shuttle/floor/mining,
 /area/outpost/abandoned_fortress/powered)
 "Wa" = (
@@ -9479,7 +9479,7 @@
 /turf/space,
 /area/space)
 "Wk" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/outpost/abandoned_fortress/powered)
 "Wl" = (
@@ -9668,11 +9668,11 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
 "Xg" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 3;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/drinks/bottle/wine{
+/obj/item/reagent_containers/drinks/bottle/wine{
 	pixel_x = -1;
 	pixel_y = 8
 	},
@@ -9773,7 +9773,7 @@
 "XD" = (
 /obj/structure/table/standard,
 /obj/item/wrapping_paper,
-/obj/item/computer_hardware/scanner/paper,
+/obj/item/pc_part/scanner/paper,
 /obj/structure/railing{
 	dir = 8
 	},
@@ -9809,7 +9809,7 @@
 /turf/simulated/wall/r_wall,
 /area/awaymission/spacebattle/syndicate7)
 "XM" = (
-/mob/living/carbon/superior_animal/human/marine/shotgun,
+/mob/living/carbon/superior/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "XO" = (
@@ -9830,7 +9830,7 @@
 /turf/simulated/floor/reinforced,
 /area/space)
 "XV" = (
-/mob/living/carbon/superior_animal/human/marine,
+/mob/living/carbon/superior/human/marine,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
@@ -9875,10 +9875,10 @@
 "Yd" = (
 /obj/structure/table/standard,
 /obj/item/packageWrap,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -10046,7 +10046,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
 "Zc" = (
-/mob/living/carbon/superior_animal/human/xiang,
+/mob/living/carbon/superior/human/xiang,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/space)
 "Zg" = (
@@ -10105,7 +10105,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Zt" = (
-/mob/living/carbon/superior_animal/human/prisoner,
+/mob/living/carbon/superior/human/prisoner,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "Zx" = (
@@ -10141,7 +10141,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
 "ZC" = (
-/mob/living/carbon/superior_animal/human/prisoner/elite,
+/mob/living/carbon/superior/human/prisoner/elite,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "ZD" = (

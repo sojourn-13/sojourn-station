@@ -1,2 +1,2 @@
-/mob/living/carbon/superior_animal/handmade/Life()
+/mob/living/carbon/superior/handmade/Life()
 	. = ..()

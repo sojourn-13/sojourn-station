@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/frog
+/mob/living/simple/hostile/frog
 	name = "giant frog"
 	desc = "An oversized carnivorous frog."
 	icon_state = "frog"

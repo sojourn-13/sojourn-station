@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/glowing
+/mob/living/carbon/superior/roach/glowing
 	name = "Gluhend Roach"
 	desc = "A huge dog-sized roach that been evolved to produce small amouts of uranium in its glad, becoming stronger and glowing sickly green."
 	icon_state = "glowingroach"
@@ -12,7 +12,7 @@
 
 	flash_resistances = 10 //We are the light
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/glowing
 
 	armor = list(melee = 8, bullet = 1, energy = 1, bomb = 5, bio = 20, rad = 100, agony = 0)
 
@@ -24,7 +24,7 @@
 	melee_damage_upper = 7 //Weaker than hunter
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))

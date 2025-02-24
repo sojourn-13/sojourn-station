@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/scarybat
+/mob/living/simple/hostile/scarybat
 	name = "bats"
 	desc = "A swarm of cute little blood sucking bats that looks pretty upset."
 	icon = 'icons/mob/mobs-domestic.dmi'
@@ -6,7 +6,7 @@
 	icon_gib = "bat_dead"
 	speak_chance = 0
 	turns_per_move = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -37,25 +37,25 @@
 	faction = "scarybat"
 	var/mob/living/owner
 
-/mob/living/simple_animal/hostile/scarybat/New(loc, mob/living/L as mob)
+/mob/living/simple/hostile/scarybat/New(loc, mob/living/L as mob)
 	..()
 	if(istype(L))
 		owner = L
 
-/mob/living/simple_animal/hostile/scarybat/allow_spacemove()
+/mob/living/simple/hostile/scarybat/allow_spacemove()
 	return ..()	//No drifting in space for space carp!	//original comments do not steal
 
-/mob/living/simple_animal/hostile/scarybat/FindTarget()
+/mob/living/simple/hostile/scarybat/FindTarget()
 	. = ..()
 	if(.)
 		emote("flutters towards [.]")
 
-/mob/living/simple_animal/hostile/scarybat/Found(var/atom/A)//This is here as a potential override to pick a specific target if available
+/mob/living/simple/hostile/scarybat/Found(var/atom/A)//This is here as a potential override to pick a specific target if available
 	if(istype(A) && A == owner)
 		return 0
 	return ..()
 
-/mob/living/simple_animal/hostile/scarybat/AttackingTarget()
+/mob/living/simple/hostile/scarybat/AttackingTarget()
 	. =..()
 	var/mob/living/L = .
 	if(istype(L))
@@ -63,6 +63,6 @@
 			L.Stun(1)
 			L.visible_message(SPAN_DANGER("\the [src] swarms all over \the [L]!"))
 
-/mob/living/simple_animal/hostile/scarybat/cult
+/mob/living/simple/hostile/scarybat/cult
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK, MUTATION_VAMPIRE)
 	supernatural = 1

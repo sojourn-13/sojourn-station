@@ -1,16 +1,17 @@
 /////////////////////////////////////////////////PIZZA////////////////////////////////////////
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza
+/obj/item/reagent_containers/snacks/pizza
 	slices_num = 6
 	filling_color = "#BAA14C"
 	matter = list(MATERIAL_BIOMATTER = 25)
+	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita
+/obj/item/reagent_containers/snacks/pizza/margherita
 	name = "margherita"
 	desc = "The golden standard of pizzas."
 	icon_state = "pizzamargherita"
 	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/margheritaslice
+	slice_path = /obj/item/reagent_containers/snacks/margheritaslice
 	slices_num = 6
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=11)
@@ -18,7 +19,7 @@
 	nutriment_amt = 35
 	preloaded_reagents = list("protein" = 5, "tomatojuice" = 6)
 
-/obj/item/reagent_containers/food/snacks/margheritaslice
+/obj/item/reagent_containers/snacks/margheritaslice
 	name = "margherita slice"
 	desc = "A slice of classic margherita pizza."
 	icon_state = "pizzamargheritaslice"
@@ -30,12 +31,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza
+/obj/item/reagent_containers/snacks/pizza/meatpizza
 	name = "meat pizza"
 	desc = "A pizza with meat toppings."
 	icon_state = "meatpizza"
 	taste_tag = list(FLOURY_FOOD, MEAT_FOOD, CHEESE_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/meatpizzaslice
+	slice_path = /obj/item/reagent_containers/snacks/meatpizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("pizza crust" = 10, "tomato" = 10, "cheese" = 15)
@@ -43,7 +44,7 @@
 	bitesize = 2
 	preloaded_reagents = list("protein" = 34, "tomatojuice" = 6)
 
-/obj/item/reagent_containers/food/snacks/meatpizzaslice
+/obj/item/reagent_containers/snacks/meatpizzaslice
 	name = "meat pizza slice"
 	desc = "A slice of meaty pizza."
 	icon_state = "meatpizzaslice"
@@ -55,12 +56,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza
+/obj/item/reagent_containers/snacks/pizza/mushroompizza
 	name = "mushroom pizza"
 	desc = "Pizza with a hefty topping of mushrooms."
 	icon_state = "mushroompizza"
 	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/mushroompizzaslice
+	slice_path = /obj/item/reagent_containers/snacks/mushroompizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("pizza crust" = 10, "tomato" = 10, "cheese" = 5, "mushroom" = 10)
@@ -68,7 +69,7 @@
 	bitesize = 2
 	preloaded_reagents = list("protein" = 5)
 
-/obj/item/reagent_containers/food/snacks/mushroompizzaslice
+/obj/item/reagent_containers/snacks/mushroompizzaslice
 	name = "mushroom pizza slice"
 	desc = "A slice of mushroom topped pizza."
 	icon_state = "mushroompizzaslice"
@@ -80,12 +81,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
+/obj/item/reagent_containers/snacks/pizza/vegetablepizza
 	name = "vegetable pizza"
 	desc = "A pizza made with vegetables to replace meat."
 	icon_state = "vegetablepizza"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/vegetablepizzaslice
+	slice_path = /obj/item/reagent_containers/snacks/vegetablepizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("pizza crust" = 10, "tomato" = 10, "cheese" = 5, "eggplant" = 5, "carrot" = 5, "corn" = 5)
@@ -93,7 +94,7 @@
 	bitesize = 2
 	preloaded_reagents = list("protein" = 5, "tomatojuice" = 6, "imidazoline" = 12)
 
-/obj/item/reagent_containers/food/snacks/vegetablepizzaslice
+/obj/item/reagent_containers/snacks/vegetablepizzaslice
 	name = "vegetable pizza slice"
 	desc = "A slice of vegetable pizza."
 	icon_state = "vegetablepizzaslice"
@@ -105,12 +106,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza
+/obj/item/reagent_containers/snacks/pizza/hawaiianpizza
 	name = "hawaiian pizza pizza"
 	desc = "A pizza with added cooked pineapple slices."
 	icon_state = "hawaiianpizza"
 	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/hawaiianpizzaslice
+	slice_path = /obj/item/reagent_containers/snacks/hawaiianpizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("pizza crust" = 10, "tomato" = 10, "cheese" = 5, "pineapple" = 5)
@@ -118,7 +119,7 @@
 	bitesize = 2
 	preloaded_reagents = list("protein" = 5, "tomatojuice" = 6)
 
-/obj/item/reagent_containers/food/snacks/hawaiianpizzaslice
+/obj/item/reagent_containers/snacks/hawaiianpizzaslice
 	name = "hawaiian pizza slice"
 	desc = "A slice of hawaiian pizza with bits of cooked pineapple atop it."
 	icon_state = "hawaiianpizzaslice"
@@ -138,7 +139,7 @@
 
 	var/open = 0 // Is the box open?
 	var/ismessy = 0 // Fancy mess on the lid
-	var/obj/item/reagent_containers/food/snacks/sliceable/pizza/pizza // Content pizza
+	var/obj/item/reagent_containers/snacks/pizza/pizza // Content pizza
 	var/list/boxes = list() // If the boxes are stacked, they come here
 	var/boxtag = ""
 
@@ -257,7 +258,7 @@
 
 		return
 
-	if( istype(I, /obj/item/reagent_containers/food/snacks/sliceable/pizza/) ) // Long ass fucking object name
+	if( istype(I, /obj/item/reagent_containers/snacks/pizza/) ) // Long ass fucking object name
 
 		if( src.open )
 			user.drop_from_inventory(I, src)
@@ -289,25 +290,25 @@
 
 /obj/item/pizzabox/margherita/Initialize(mapload)
 	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita(src)
+	pizza = new /obj/item/reagent_containers/snacks/pizza/margherita(src)
 	boxtag = "Margherita Deluxe"
 
 /obj/item/pizzabox/vegetable/Initialize(mapload)
 	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza(src)
+	pizza = new /obj/item/reagent_containers/snacks/pizza/vegetablepizza(src)
 	boxtag = "Gourmet Vegetable"
 
 /obj/item/pizzabox/mushroom/Initialize(mapload)
 	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza(src)
+	pizza = new /obj/item/reagent_containers/snacks/pizza/mushroompizza(src)
 	boxtag = "Mushroom Special"
 
 /obj/item/pizzabox/meat/Initialize(mapload)
 	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza(src)
+	pizza = new /obj/item/reagent_containers/snacks/pizza/meatpizza(src)
 	boxtag = "Meatlover's Supreme"
 
 /obj/item/pizzabox/hawaiianpizza/Initialize(mapload)
 	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza(src)
+	pizza = new /obj/item/reagent_containers/snacks/pizza/hawaiianpizza(src)
 	boxtag = "Controversial Pizza"

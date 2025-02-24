@@ -116,7 +116,7 @@
 			/obj/item/ammo_magazine/ammobox/pistol_35/rubber
 		),
 		"Solnishko 'Guns-from-Home' Parts" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
+			/obj/item/pc_part/drive/disk/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
 			/obj/item/part/gun/grip/wood,
 			/obj/item/part/gun/mechanism/pistol,
 			/obj/item/part/gun/mechanism/revolver,
@@ -199,7 +199,7 @@
 
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 30, 20),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
+		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
 		/datum/reagent/organic/nutriment/honey = offer_data("Honey bottle (60u)", 800, 1),
 		/obj/item/organ/external/robotic/one_star = offer_data("grayson external prosthetic", 1800, 4),
 		/obj/item/toy/consumer/product/toaster = offer_data("toolbox toaster", 250, 4)

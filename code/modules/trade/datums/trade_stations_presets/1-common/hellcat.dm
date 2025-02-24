@@ -70,7 +70,7 @@
 	)
 	hidden_inventory = list(
 		"Gun Resale Parts" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
+			/obj/item/pc_part/drive/disk/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
 			/obj/item/part/gun/grip/black,
 			/obj/item/part/gun/barrel/srifle,
 			/obj/item/part/gun/barrel/shotgun,
@@ -97,8 +97,8 @@
 			/obj/item/reagent_containers/pill/happy,
 			/obj/item/seeds/ambrosiadeusseed,
 			/obj/item/seeds/ambrosiavulgarisseed,
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
+			/obj/item/reagent_containers/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
+			/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
 
 		)
 	)

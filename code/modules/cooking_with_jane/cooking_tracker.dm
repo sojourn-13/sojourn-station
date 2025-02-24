@@ -11,7 +11,7 @@
 	var/list/completed_list = list()//List of recipes marked as complete.
 	var/recipe_started = FALSE 	//Tells if steps have been taken for this recipe
 
-/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/reagent_containers/cwj/container/container)
 
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/New")
@@ -34,7 +34,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/generate_pointers")
 	#endif
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = holder_ref.resolve()
+	var/obj/item/reagent_containers/cwj/container/container = holder_ref.resolve()
 
 	#ifdef CWJ_DEBUG
 	log_debug("Loading all references to [container] of type [container.type] using [container.appliancetype]")

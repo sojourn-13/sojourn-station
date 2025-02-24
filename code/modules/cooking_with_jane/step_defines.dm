@@ -50,7 +50,7 @@
 	tooltip_image = image('icons/emoji.dmi', icon_state="gear")
 
 //Calculate how well the recipe step was followed to the letter.
-/datum/cooking_with_jane/recipe_step/proc/calculate_quality(var/obj/added_item, var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_step/proc/calculate_quality(var/obj/added_item, var/obj/item/reagent_containers/cwj/container/container)
 	return 0
 
 //Check if the conditions of a recipe step was followed correctly.
@@ -97,7 +97,7 @@
 	else
 		return "skip"
 
-/datum/cooking_with_jane/recipe_step/proc/follow_step(var/obj/added_item, var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_step/proc/follow_step(var/obj/added_item, var/obj/item/reagent_containers/cwj/container/container)
 	return CWJ_SUCCESS
 
 //Special function to check if the step has been satisfied. Sometimed just following the step is enough, but not always.

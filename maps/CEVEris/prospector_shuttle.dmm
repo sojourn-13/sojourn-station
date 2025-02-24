@@ -1630,8 +1630,8 @@
 /area/space)
 "Be" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "7,3"
 	},
@@ -2752,8 +2752,8 @@
 /area/shuttle/rocinante_shuttle_area)
 "SL" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "7,3"
 	},

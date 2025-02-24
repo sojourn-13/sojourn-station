@@ -58,7 +58,7 @@
 /area/nadezhda/outside/meadow)
 "bA" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/pork,
+/obj/item/reagent_containers/snacks/meat/pork,
 /obj/item/tool/weldingtool/oil_burner,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -83,13 +83,13 @@
 /area/asteroid/rogue)
 "cO" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/cookingoil,
-/obj/item/reagent_containers/food/condiment/cookingoil,
+/obj/item/reagent_containers/condiment/cookingoil,
+/obj/item/reagent_containers/condiment/cookingoil,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "da" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "ds" = (
@@ -101,9 +101,9 @@
 /area/asteroid/rogue)
 "du" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "dx" = (
@@ -156,10 +156,10 @@
 /area/asteroid/rogue)
 "fl" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "fo" = (
@@ -226,7 +226,7 @@
 /area/nadezhda/outside/meadow)
 "iK" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
@@ -238,7 +238,7 @@
 "jo" = (
 /obj/structure/table/marble,
 /obj/item/paper,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/carpet/bcarpet,
 /area/asteroid/rogue)
 "jw" = (
@@ -265,10 +265,10 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "kX" = (
@@ -314,7 +314,7 @@
 /area/asteroid/rogue)
 "me" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/tossedsalad,
+/obj/item/reagent_containers/snacks/tossedsalad,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "mu" = (
@@ -343,7 +343,7 @@
 /area/asteroid/rogue)
 "nl" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/validsalad,
+/obj/item/reagent_containers/snacks/validsalad,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "nn" = (
@@ -352,7 +352,7 @@
 /area/asteroid/rogue)
 "nr" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "nA" = (
@@ -447,7 +447,7 @@
 /area/asteroid/rogue)
 "pi" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meatsteak,
+/obj/item/reagent_containers/snacks/meatsteak,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "pk" = (
@@ -470,11 +470,11 @@
 /area/asteroid/rogue)
 "qt" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "qG" = (
@@ -508,9 +508,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "sa" = (
@@ -528,7 +528,7 @@
 "sg" = (
 /obj/effect/decal/cleanable/crayon,
 /obj/effect/decal/cleanable/blood/gibs/core,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /turf/simulated/floor/rock/manmade/concrete,
@@ -613,8 +613,8 @@
 /area/asteroid/rogue)
 "vz" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "wf" = (
@@ -644,7 +644,7 @@
 /area/nadezhda/outside/meadow)
 "wY" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "xl" = (
@@ -753,14 +753,14 @@
 /area/nadezhda/outside/meadow)
 "Az" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/carpet/bcarpet,
 /area/asteroid/rogue)
 "Bf" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "BE" = (
@@ -795,10 +795,10 @@
 /area/asteroid/rogue)
 "Cw" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "CK" = (
@@ -824,10 +824,10 @@
 /area/nadezhda/outside/meadow)
 "Ei" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
+/obj/item/reagent_containers/snacks/bread,
+/obj/item/reagent_containers/snacks/bread,
+/obj/item/reagent_containers/snacks/bread,
+/obj/item/reagent_containers/snacks/bread,
 /obj/item/tool/knife,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -847,11 +847,11 @@
 /area/asteroid/rogue)
 "Ey" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "EF" = (
@@ -892,7 +892,7 @@
 /area/nadezhda/outside/meadow)
 "Ge" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /obj/item/trash/icecreambowl,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -913,7 +913,7 @@
 "GO" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife/ritual,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "GP" = (
@@ -939,8 +939,8 @@
 /area/nadezhda/outside/meadow)
 "Hb" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "Hm" = (
@@ -976,13 +976,13 @@
 /area/nadezhda/outside/meadow)
 "HW" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/bottle/wine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "Ih" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "Ij" = (
@@ -1001,7 +1001,7 @@
 /area/asteroid/rogue)
 "Jm" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "JL" = (
@@ -1063,7 +1063,7 @@
 /area/asteroid/rogue)
 "LC" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "LF" = (
@@ -1074,7 +1074,7 @@
 /area/asteroid/rogue)
 "LG" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/mug/gold,
+/obj/item/reagent_containers/drinks/mug/gold,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "LW" = (
@@ -1131,10 +1131,10 @@
 /area/asteroid/rogue)
 "NW" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "Oe" = (
@@ -1244,7 +1244,7 @@
 "QV" = (
 /obj/effect/decal/cleanable/crayon,
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /turf/simulated/floor/rock/manmade/concrete,
@@ -1266,7 +1266,7 @@
 /area/asteroid/rogue)
 "Sy" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /obj/item/trash/icecreambowl,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -1394,7 +1394,7 @@
 /area/nadezhda/outside/meadow)
 "VD" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/pork,
+/obj/item/reagent_containers/snacks/meat/pork,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "VE" = (
@@ -1417,7 +1417,7 @@
 /obj/item/soap/hunters,
 /obj/item/tool_upgrade/productivity/whetstone,
 /obj/item/tool_upgrade/productivity/whetstone,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "WE" = (
@@ -1486,13 +1486,13 @@
 /area/asteroid/rogue)
 "ZG" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "ZT" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "ZX" = (

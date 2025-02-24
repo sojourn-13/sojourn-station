@@ -99,7 +99,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "aw" = (
-/mob/living/simple_animal/hostile/carp/pike,
+/mob/living/simple/hostile/carp/pike,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "ax" = (
@@ -150,7 +150,7 @@
 /area/template_noop)
 "aI" = (
 /obj/random/junk/low_chance,
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "aJ" = (
@@ -308,7 +308,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "bf" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "bg" = (
@@ -333,7 +333,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bi" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bj" = (
@@ -460,7 +460,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bE" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "bG" = (

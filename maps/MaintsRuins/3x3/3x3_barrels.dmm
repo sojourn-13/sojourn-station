@@ -5,7 +5,7 @@
 /area/nadezhda/maintenance/undergroundfloor2east)
 "t" = (
 /obj/item/tool/crowbar/improvised,
-/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle,
+/obj/item/reagent_containers/drinks/bottle/small/brewing_bottle,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/maintenance/undergroundfloor2east)
 "E" = (

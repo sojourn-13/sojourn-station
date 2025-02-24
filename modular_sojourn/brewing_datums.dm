@@ -358,7 +358,7 @@
 	price_tag_setter = 1000
 
 	other_name = "Cheese Wheel"
-	alt_brew_item = /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
+	alt_brew_item = /obj/item/reagent_containers/snacks/cheesewheel
 	alt_brew_item_amount = 3
 	info_helper = "The bottles will produced Vinegar."
 
@@ -383,7 +383,7 @@
 	bottled_brew_amount = 5 //Just a little bit as a byproduct
 
 	other_name = "Dough"
-	alt_brew_item = /obj/item/reagent_containers/food/snacks/dough
+	alt_brew_item = /obj/item/reagent_containers/snacks/dough
 	alt_brew_item_amount = 6 //Mass production
 	info_helper = "The bottles produced are Ethanol."
 

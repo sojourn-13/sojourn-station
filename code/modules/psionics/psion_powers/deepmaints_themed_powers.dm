@@ -153,15 +153,15 @@
 						SPAN_DANGER("You place your hand upon [L], focusing your thoughts before you snuff out their life!")
 						)
 				L.adjustBrainLoss(60)
-		var/mob/living/carbon/superior_animal/S = get_grabbed_mob(user)
-		if(istype(S, /mob/living/carbon/superior_animal))
+		var/mob/living/carbon/superior/S = get_grabbed_mob(user)
+		if(istype(S, /mob/living/carbon/superior))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [S], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 					SPAN_DANGER("You place your hand upon [S], focusing your thoughts before you snuff out their life!")
 					)
 			S.gib()
-		var/mob/living/simple_animal/hostile/A = get_grabbed_mob(user)
-		if(istype(A, /mob/living/simple_animal/hostile))
+		var/mob/living/simple/hostile/A = get_grabbed_mob(user)
+		if(istype(A, /mob/living/simple/hostile))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [A], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 					SPAN_DANGER("You place your hand upon [A], focusing your thoughts before you snuff out their life!")

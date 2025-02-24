@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/shell_hound
+/mob/living/carbon/superior/shell_hound
 	name = "Shell hound"
 	desc = "A heavy plated hound, coated in bone armor, its exposed underbelly shows fleshy muscle, with no skin to cover it. \
 	Along its bone shell back are spines of mineral by the looks of it."
@@ -29,7 +29,7 @@
 	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 17)
 
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower
+/mob/living/carbon/superior/psi/daskvey_follower
 	name = "Daskveyian Swordsman"
 	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the lowest rank of souls receive their sword and begin training for the safey of their brothers and sisters."
 	icon_state = "psisolder_hm_sword"
@@ -71,7 +71,7 @@ These ones are meant to be only used for chaos level and not for events, or deep
 They are soully made and reflavoured to be for PVE.
 */
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/deepmaints_bound
 	name = "Wild Daskveyian Swordsman"
 	desc = "Once a basic footsoldier of the Hand of Daskvey. \
 	Donning the mask of the warrior, the lowest rank of souls receive their sword and begin training for only the safey of their brothers and sisters. \
@@ -81,7 +81,7 @@ They are soully made and reflavoured to be for PVE.
 	drop_items = list(/obj/item/tool/sword/cult/deepmaints, /obj/random/psi/always_spawn)
 	color = null
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey
 	name = "Daskvey"
 	desc = "A lumbering dragon as dark as the void of space itself, \
 	large sheets of leathery wings furl behind its back, \
@@ -124,8 +124,8 @@ They are soully made and reflavoured to be for PVE.
 	//Ive never seen a wizard NOT nuke a dragon with fire ball
 	armor = list(melee = 10, bullet = 17, energy = 23, bomb = 40, bio = 100, rad = 100)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
-	var/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/shooter = src //We're the shooter.
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
+	var/mob/living/carbon/superior/psi/daskvey_follower/daskvey/shooter = src //We're the shooter.
 	if(loaded_ammo == 1)
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
 		shooter.OpenFire(targetDD)
@@ -142,33 +142,33 @@ They are soully made and reflavoured to be for PVE.
 		return
 	shooter.OpenFire(targetDD)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/badbreathverb()
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/verb/badbreathverb()
 	set name = "Fire Breath"
 	set category = "Abilities"
 	src.badbreath()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/badbreath()
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/proc/badbreath()
 	visible_message(SPAN_WARNING("\red [src] has a firey look in its maw!"))
 	loaded_ammo = 2
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/tail_throwverb()
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/verb/tail_throwverb()
 	set name = "Tail Grapple Breath"
 	set category = "Abilities"
 	src.tail_throw()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/tail_throw()
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/proc/tail_throw()
 	visible_message(SPAN_WARNING("\red [src] flicks its tail and wings!"))
 	loaded_ammo = 3
 
 // Broken code that doesn't work with the Eris sanity system.
 /*
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/mind_of_cloathverb()
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/verb/mind_of_cloathverb()
 	set name = "Rune Chat"
 	set category = "Abilities"
 	src.mind_of_cloath()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/mind_of_cloath(mob/M)
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/proc/mind_of_cloath(mob/M)
 	visible_message(SPAN_WARNING("\red [src] pierces the minds, blanking them in arcane knowledge!"))
 	for(M in living_mobs_in_view(5, src))
 		if(ishuman(M))
@@ -176,14 +176,14 @@ They are soully made and reflavoured to be for PVE.
 			H.sanity.breakdown_fabric()
 */
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/Bump(var/atom/obstacle)
+/mob/living/carbon/superior/psi/daskvey_follower/daskvey/Bump(var/atom/obstacle)
 	.=..()
 	if(iscarbon(obstacle))
 		var/mob/living/carbon/J = obstacle
 		J.take_organ_damage(12)
 		J.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(3,6),30)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver
+/mob/living/carbon/superior/psi/daskvey_follower/cleaver
 	name = "Daskveyian Wall Breaker"
 	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
 	icon_state = "psisolder_hm_axe"
@@ -202,7 +202,7 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1.25
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/cleaver/deepmaints_bound
 	name = "Wild Daskveyian Wall Breaker"
 	desc = "Once a basic footsoldier of the Hand of Daskvey. \
 	Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. \
@@ -213,7 +213,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma
+/mob/living/carbon/superior/psi/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
 	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
 	icon_state = "psisolder_hm_plasma"
@@ -238,7 +238,7 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/plasma/deepmaints_bound
 	name = "Wild Daskveyian Plasma Caster"
 	desc = "Once a trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on most that obstruct them. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -247,7 +247,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/energy/plasma/cassad/cult/deepmaints, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser
+/mob/living/carbon/superior/psi/daskvey_follower/laser
 	name = "Daskveyian Las-Gunner"
 	desc = "Trained Gunner of the Hand of Daskvey, their hands blessed with a fine laser rifle to burn away that which would threaten them or their fellow followers."
 	icon_state = "psisolder_hm_laser"
@@ -275,7 +275,7 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/laser/deepmaints_bound
 	name = "Wild Daskveyian Las-Gunner"
 	desc = "Once a trained Gunner of the Hand of Daskvey, their hands clutching a fine laser rifle to burn away that which would threaten them or their fellow followers. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -284,7 +284,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/energy/laser/cult/deepmaints, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg
+/mob/living/carbon/superior/psi/daskvey_follower/smg
 	name = "Daskveyian Assaulter"
 	desc = "A basic Gunner of the Hand of Daskvey, fervent and ready to fight, their weapon sprays waves of lead to any that would harm those that they hold dear."
 	icon_state = "psisolder_hm_smg"
@@ -316,13 +316,13 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/Initialize(mapload)
+/mob/living/carbon/superior/psi/daskvey_follower/smg/Initialize(mapload)
 	. = ..()
 	//Proj Upgrade
 	if(GLOB.chaos_level >= 5)
 		projectiletype = /obj/item/projectile/bullet/pistol_35
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/smg/deepmaints_bound
 	name = "Wild Daskveyian Assaulter"
 	desc = "Once a mere Gunner of the Hand of Daskvey, still ready to fight, their weapon sprays waves of lead to any that would harm those that they held dear. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -331,7 +331,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle
+/mob/living/carbon/superior/psi/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
 	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, for no duty is more important to freedom than to take up arms for it."
 
@@ -363,13 +363,13 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/Initialize(mapload)
+/mob/living/carbon/superior/psi/daskvey_follower/rifle/Initialize(mapload)
 	. = ..()
 	//Proj Upgrade
 	if(GLOB.chaos_level >= 5)
 		projectiletype = /obj/item/projectile/bullet/rifle_75
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/rifle/deepmaints_bound
 	name = "Wild Daskveyian Rifleperson"
 	desc = "Once just a basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they lost the peace given to them, yearning freedom once more. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -378,7 +378,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield
+/mob/living/carbon/superior/psi/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unbending steel, for they are the wall that holds back any that seek to harm their kin."
 	icon_state = "psi_juggernaut_glass_Shield"
@@ -399,7 +399,7 @@ They are soully made and reflavoured to be for PVE.
 	var/knockdown_odds = 30
 
 // BUMP!
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/daskvey_follower/shield/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && prob(knockdown_odds))
@@ -410,7 +410,7 @@ They are soully made and reflavoured to be for PVE.
 				L.visible_message(SPAN_DANGER("\the [src] uses its shield to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/shield/deepmaints_bound
 	name = "Wild Daskveyian Juggernaut "
 	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it protected those in its shadow with unbending steel, for they were once the wall that held back any that seek to harm their kin. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -419,7 +419,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd
+/mob/living/carbon/superior/psi/daskvey_follower/halberd
 	name = "Daskveyian Halberdier"
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
 	icon_state = "psi_juggernaut_glass_halberd"
@@ -438,7 +438,7 @@ They are soully made and reflavoured to be for PVE.
 	armor_divisor = 1.5
 	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/halberd/deepmaints_bound
 	name = "Wild Daskveyian Halberdier"
 	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it used to protects those in its shadow with unwavering confidence, for they found what failure means. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -447,7 +447,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling
+/mob/living/carbon/superior/psi/daskvey_follower/weakling
 	name = "Daskveyian Uplifted"
 	desc = "A soul recently uplifted by the Hand of Daskvey, still lost and recovering from its pains, they find themselves lost in a trance of forgotten memories."
 	icon_state = "psion_h"
@@ -466,7 +466,7 @@ They are soully made and reflavoured to be for PVE.
 	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/weakling/deepmaints_bound
 	name = "Wild Daskveyian Uplifted"
 	desc = "Once A soul uplifted by the Hand of Daskvey, lost and suffering from it's pains, found often in a trance of forgotten memories. \
 	Do to the Kings influence and being rebound to the Deep Maintenance it acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -475,7 +475,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter
+/mob/living/carbon/superior/psi/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
 	desc = "A soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers."
 	icon_state = "psion_v"
@@ -503,7 +503,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/kinetic_blast_electro/dangerous
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter/handle_ammo_check()
+/mob/living/carbon/superior/psi/daskvey_follower/orb_shooter/handle_ammo_check()
 	if(prob(40))
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
 
@@ -515,7 +515,7 @@ They are soully made and reflavoured to be for PVE.
 
 	..()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/orb_shooter/deepmaints_bound
 	name = "Wild Daskveyian Cultist "
 	desc = "Once a soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
@@ -524,7 +524,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master
+/mob/living/carbon/superior/psi/daskvey_follower/orb_master
 	name = "Daskveyian Hand"
 	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. Their knowledge of psionics is of a scholarly level."
 	icon_state = "psion_v_master"
@@ -552,7 +552,7 @@ They are soully made and reflavoured to be for PVE.
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/kinetic_blast_pyro
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master/handle_ammo_check()
+/mob/living/carbon/superior/psi/daskvey_follower/orb_master/handle_ammo_check()
 	if(prob(40))
 		projectiletype = /obj/item/projectile/kinetic_blast_pyro
 
@@ -566,7 +566,7 @@ They are soully made and reflavoured to be for PVE.
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
 	..()
 
-/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master/deepmaints_bound
+/mob/living/carbon/superior/psi/daskvey_follower/orb_master/deepmaints_bound
 	name = "Wild Daskveyian Hand"
 	desc = "A fallen master of the mind, once reformed and guided true by the Hand of Daskvey. \
 	The members of the Hands form the parties of preach leaders, and assistants to the acolytes. \

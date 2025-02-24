@@ -2,7 +2,7 @@
 // To make a design unprotect use -1
 
 // Marshal
-/obj/item/computer_hardware/hard_drive/portable/design/security
+/obj/item/pc_part/drive/disk/design/security
 	disk_name = "Security Miscellaneous Pack"
 	icon_state = "ironhammer"
 	license = 20
@@ -41,11 +41,11 @@
 		/datum/design/autolathe/clothing/bmask = 10,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/security/hos
+/obj/item/pc_part/drive/disk/design/security/hos
 	disk_name = "Security Miscellaneous Factory"
 	license = -1
 
-/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns
+/obj/item/pc_part/drive/disk/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
 	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
@@ -75,7 +75,7 @@
 		/datum/design/autolathe/device/smartlink = 3,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
+/obj/item/pc_part/drive/disk/design/security/marshal_ammo
 	disk_name = "Marshal \"Shoot-out\" Pack"
 	icon_state = "marshal"
 	license = 30 //1:1 with blackshield guns
@@ -138,7 +138,7 @@
 
 // 10mm Magnum
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary
+/obj/item/pc_part/drive/disk/design/guns/judiciary
 	disk_name = "NM - 9mm Judiciary"
 	icon_state = "marshal"
 
@@ -151,7 +151,7 @@
 		/datum/design/autolathe/ammo/pistol_lethal =2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/liberty
+/obj/item/pc_part/drive/disk/design/guns/liberty
 	disk_name = "NM - 10mm Liberty"
 	icon_state = "marshal"
 
@@ -164,7 +164,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/freedom
+/obj/item/pc_part/drive/disk/design/guns/freedom
 	disk_name = "NM - 10mm Freedom SMG"
 	icon_state = "marshal"
 
@@ -179,7 +179,7 @@
 
 // 12mm Heavy Pistol
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/amnesty
+/obj/item/pc_part/drive/disk/design/guns/amnesty
 	disk_name = "NM - 12mm Amnesty Handgun"
 	icon_state = "marshal"
 
@@ -194,7 +194,7 @@
 
 // SHOTGUNS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/operator
+/obj/item/pc_part/drive/disk/design/guns/operator
 	disk_name = "NM - 20mm Operator Combat Shotgun"
 	icon_state = "marshal"
 
@@ -208,7 +208,7 @@
 
 // 6.5mm carbines
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard
+/obj/item/pc_part/drive/disk/design/guns/bastard
 	disk_name = "NM - 6.5mm \"Bastard\" Compact Machine Gun"
 	icon_state = "marshal"
 
@@ -219,7 +219,7 @@
 		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mamba
+/obj/item/pc_part/drive/disk/design/guns/mamba
 	disk_name = "NM - 6.5mm Mamba Carbine"
 	icon_state = "marshal"
 
@@ -238,7 +238,7 @@
 
 // 7.62mm Rifles
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead
+/obj/item/pc_part/drive/disk/design/guns/copperhead
 	disk_name = "NM - 7.62mm Copperhead Rifle"
 	icon_state = "marshal"
 
@@ -255,7 +255,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/viper
+/obj/item/pc_part/drive/disk/design/guns/viper
 	disk_name = "NM - 7.62mm Viper DMR"
 	icon_state = "marshal"
 
@@ -273,7 +273,7 @@
 	)
 
 // 8.6 Rifles
-/obj/item/computer_hardware/hard_drive/portable/design/guns/python
+/obj/item/pc_part/drive/disk/design/guns/python
 	disk_name = "NM - 7.62mm Python Heavy Rifle"
 	icon_state = "marshal"
 
@@ -292,7 +292,7 @@
 
 //10mm Guns
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/specop
+/obj/item/pc_part/drive/disk/design/guns/specop
 	disk_name = "NM - 10x24mm Caseless /'Spec-Op/' SMG"
 	icon_state = "marshal"
 
@@ -305,7 +305,7 @@
 
 // Laser
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise
+/obj/item/pc_part/drive/disk/design/guns/sunrise
 	disk_name = "NM - \"Sunrise\" Laser SMG"
 	icon_state = "marshal"
 

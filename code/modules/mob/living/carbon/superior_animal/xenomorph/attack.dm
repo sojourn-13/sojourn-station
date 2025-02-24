@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/xenomorph/warrior/bull/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/xenomorph/warrior/bull/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(15))
@@ -9,7 +9,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/bull/crusher/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/xenomorph/warrior/bull/crusher/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(30))
@@ -20,7 +20,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/xenomorph/spitter/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/xenomorph/spitter/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))

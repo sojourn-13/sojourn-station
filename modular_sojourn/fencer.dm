@@ -1,7 +1,7 @@
 //Debug experimental conspectable boss like mechanics
 //Sprite came to me in a dream, please do not replace it or remove. - Trilby
 
-/mob/living/carbon/superior_animal/robot/fencer
+/mob/living/carbon/superior/robot/fencer
 	name = "Blue Fencer"
 	desc = "Something that doesn't even match this world's aesthetic."
 	icon_state = "fencer" //Dream Sprite
@@ -26,7 +26,7 @@
 	var/coins = 0
 	var/death_hits = 0
 
-/mob/living/carbon/superior_animal/robot/fencer/death()
+/mob/living/carbon/superior/robot/fencer/death()
 	if(death_hits >= 3)
 		visible_message("<b><font color='#ffaa00'>\The [src] gives a small bow before leaving blinking out, leaving behind a different sword.</font></b>")
 		..()
@@ -37,7 +37,7 @@
 		flick("fencer_glare",src)
 
 //Retrieve whether or not are **single** pixel was clicked
-/mob/living/carbon/superior_animal/robot/fencer/proc/getInput(params)
+/mob/living/carbon/superior/robot/fencer/proc/getInput(params)
 	var/list/click_params = params2list(params)
 	var/input
 	var/icon_x = text2num(click_params["icon-x"])
@@ -53,7 +53,7 @@
 
 	return input
 
-/mob/living/carbon/superior_animal/robot/fencer/attackby(obj/item/used_item, mob/user, params)
+/mob/living/carbon/superior/robot/fencer/attackby(obj/item/used_item, mob/user, params)
 	var/center_selected = getInput(params)
 	log_debug("fencer center_selected [center_selected]. params: [params]")
 	if(center_selected)
@@ -70,13 +70,13 @@
 				UnarmedAttack(user, give_coins = FALSE)
 	return
 
-/mob/living/carbon/superior_animal/robot/fencer/bullet_act(obj/item/projectile/proj)
+/mob/living/carbon/superior/robot/fencer/bullet_act(obj/item/projectile/proj)
 	visible_message("<b><font color='#ffaa00'>\The [src] ducks and weaves past the [proj], giving a glare at such a cheap trick.</font></b>")
 	flick("fencer_glare",src)
 	return PROJECTILE_FORCE_MISS
 
 
-/mob/living/carbon/superior_animal/robot/fencer/UnarmedAttack(atom/A, proximity, give_coins = TRUE)
+/mob/living/carbon/superior/robot/fencer/UnarmedAttack(atom/A, proximity, give_coins = TRUE)
 	flick("fencer_atk",src)
 
 	if(coins > 5) //Congrats they just healed from that

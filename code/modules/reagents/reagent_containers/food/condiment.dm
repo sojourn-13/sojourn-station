@@ -5,7 +5,7 @@
 //	to mixed-drinks code. If you want an object that starts pre-loaded, you need to make it in addition to the other code.
 
 //Food items that aren't eaten normally and leave an empty container behind.
-/obj/item/reagent_containers/food/condiment
+/obj/item/reagent_containers/condiment
 	name = "condiment container"
 	desc = "Just your average condiment container."
 	icon = 'icons/obj/food.dmi'
@@ -33,7 +33,7 @@
 		if(standard_dispenser_refill(user, target))
 			return
 
-		if(istype(target, /obj/item/reagent_containers/food/snacks)) // These are not opencontainers but we can transfer to them
+		if(istype(target, /obj/item/reagent_containers/snacks)) // These are not opencontainers but we can transfer to them
 			if(!reagents || !reagents.total_volume)
 				to_chat(user, SPAN_NOTICE("There is no condiment left in \the [src]."))
 				return
@@ -131,19 +131,19 @@
 			center_of_mass = list("x"=16, "y"=6)
 			return
 
-/obj/item/reagent_containers/food/condiment/enzyme
+/obj/item/reagent_containers/condiment/enzyme
 	name = "universal enzyme"
 	desc = "Used in cooking various dishes."
 	icon_state = "enzyme"
 	preloaded_reagents = list("enzyme" = 50)
 
-/obj/item/reagent_containers/food/condiment/sugar
+/obj/item/reagent_containers/condiment/sugar
 	name = "Sugar shaker"
 	desc = "Tasty space sugar!"
 	icon_state = "sugarsmall"
 	preloaded_reagents = list("sugar" = 30)
 
-/obj/item/reagent_containers/food/condiment/cookingoil
+/obj/item/reagent_containers/condiment/cookingoil
 	name = "cooking oil bottle"
 	desc = "A bottle of corn oil, for all your deep frying needs."
 	icon_state = "oliveoil"
@@ -152,7 +152,7 @@
 	center_of_mass = list("x"=16, "y"=6)
 
 //Seperate from above since it's a small shaker rather than a large one.
-/obj/item/reagent_containers/food/condiment/saltshaker
+/obj/item/reagent_containers/condiment/saltshaker
 	name = "salt shaker"
 	desc = "Salt. From space oceans, presumably."
 	icon_state = "saltshakersmall"
@@ -161,7 +161,7 @@
 	volume = 20
 	preloaded_reagents = list("sodiumchloride" = 20)
 
-/obj/item/reagent_containers/food/condiment/peppermill
+/obj/item/reagent_containers/condiment/peppermill
 	name = "pepper mill"
 	desc = "Often used to flavor food or make people sneeze."
 	icon_state = "peppermillsmall"
@@ -170,7 +170,7 @@
 	volume = 20
 	preloaded_reagents = list("blackpepper" = 20)
 
-/obj/item/reagent_containers/food/condiment/flour
+/obj/item/reagent_containers/condiment/flour
 	name = "flour sack"
 	desc = "A big bag of flour. Good for baking!"
 	icon = 'icons/obj/food.dmi'
@@ -179,7 +179,7 @@
 	preloaded_reagents = list("flour" = 50)
 
 
-/obj/item/reagent_containers/food/condiment/pack
+/obj/item/reagent_containers/condiment/pack
 	name = "condiment pack"
 	desc = "A small plastic pack with condiments to put on your food."
 	icon_state = "condi_empty"
@@ -260,16 +260,16 @@
 			center_of_mass = list("x"=16, "y"=6)
 			return
 
-/obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, target_zone) //Can't feed these to people directly.
+/obj/item/reagent_containers/condiment/pack/attack(mob/M, mob/user, target_zone) //Can't feed these to people directly.
 	return
 
-/obj/item/reagent_containers/food/condiment/pack/afterattack(obj/target, mob/user , proximity)
+/obj/item/reagent_containers/condiment/pack/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!proximity)
 		return
 
 	//You can tear the bag open above food to put the condiments on it, obviously.
-	if(istype(target, /obj/item/reagent_containers/food/snacks))
+	if(istype(target, /obj/item/reagent_containers/snacks))
 		if(!reagents.total_volume)
 			to_chat(user, "<span class='warning'>You tear open [src], but there's nothing in it.</span>")
 			qdel(src)
@@ -284,42 +284,42 @@
 			qdel(src)
 
 //Ketchup
-/obj/item/reagent_containers/food/condiment/pack/ketchup
+/obj/item/reagent_containers/condiment/pack/ketchup
 	name = "ketchup pack"
 	preloaded_reagents = list("ketchup" = 10)
 
 //Milk
-/obj/item/reagent_containers/food/condiment/pack/milk
+/obj/item/reagent_containers/condiment/pack/milk
 	name = "milk pack"
 	preloaded_reagents = list("milk"= 10)
 
 //Sugar
-/obj/item/reagent_containers/food/condiment/pack/sugar
+/obj/item/reagent_containers/condiment/pack/sugar
 	name = "sugar pack"
 	preloaded_reagents = list("sugar" = 10)
 
 //Salt
-/obj/item/reagent_containers/food/condiment/pack/salt
+/obj/item/reagent_containers/condiment/pack/salt
 	name = "salt pack"
 	preloaded_reagents = list("sodiumchloride" = 10)
 
 //Pepper
-/obj/item/reagent_containers/food/condiment/pack/pepper
+/obj/item/reagent_containers/condiment/pack/pepper
 	name = "pepper pack"
 	preloaded_reagents = list("blackpepper" = 10)
 
 //Hot sauce
-/obj/item/reagent_containers/food/condiment/pack/hotsauce
+/obj/item/reagent_containers/condiment/pack/hotsauce
 	name = "hotsauce pack"
 	preloaded_reagents = list("capsaicin" = 10)
 
 // Barbecue sauce
-/obj/item/reagent_containers/food/condiment/pack/bbq
+/obj/item/reagent_containers/condiment/pack/bbq
 	name = "bbq sauce pack"
 	preloaded_reagents = list("bbqsauce" = 10)
 
 // Vinegar pack
-/obj/item/reagent_containers/food/condiment/pack/vinegar
+/obj/item/reagent_containers/condiment/pack/vinegar
 	name = "vinegar pack"
 	preloaded_reagents = list("vinegar" = 10)
 

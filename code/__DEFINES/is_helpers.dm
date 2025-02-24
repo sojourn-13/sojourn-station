@@ -35,32 +35,32 @@
 
 #define isslime(A) istype(A, /mob/living/carbon/slime)
 
-#define isroach(A) istype(A, /mob/living/carbon/superior_animal/roach)
+#define isroach(A) istype(A, /mob/living/carbon/superior/roach)
 
 #define isbrain(A) istype(A, /mob/living/carbon/brain)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
 //---------------------------------------------------
 
-#define isanimal(A) istype(A, /mob/living/simple_animal)
+#define isanimal(A) istype(A, /mob/living/simple)
 
-#define iscorgi(A) istype(A, /mob/living/simple_animal/corgi)
+#define iscorgi(A) istype(A, /mob/living/simple/corgi)
 
-#define iscatto(A) istype(A, /mob/living/simple_animal/cat)
+#define iscatto(A) istype(A, /mob/living/simple/cat)
 
-#define ismouse(A) istype(A, /mob/living/simple_animal/mouse)
+#define ismouse(A) istype(A, /mob/living/simple/mouse)
 
-#define issuperioranimal(A) istype(A, /mob/living/carbon/superior_animal)
+#define issuperioranimal(A) istype(A, /mob/living/carbon/superior)
 
-#define issuperiorhuman(A) istype(A, /mob/living/carbon/superior_animal/human)
+#define issuperiorhuman(A) istype(A, /mob/living/carbon/superior/human)
 
-#define issuperiortermite(A) istype(A, /mob/living/carbon/superior_animal/termite)
+#define issuperiortermite(A) istype(A, /mob/living/carbon/superior/termite)
 
-#define issuperiortermitenodespawn(A) istype(A, /mob/living/carbon/superior_animal/termite_no_despawn) //THIS SUCKS WHAT THE FUCK
+#define issuperiortermitenodespawn(A) istype(A, /mob/living/carbon/superior/termite_colony) //THIS SUCKS WHAT THE FUCK
 
-#define issuperiorspider(A) istype(A, /mob/living/carbon/superior_animal/giant_spider)
+#define issuperiorspider(A) istype(A, /mob/living/carbon/superior/spider)
 
-#define issuperiorroach(A) istype(A, /mob/living/carbon/superior_animal/roach)
+#define issuperiorroach(A) istype(A, /mob/living/carbon/superior/roach)
 
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------

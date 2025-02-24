@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(trade)
 		var/target_volume = 60										// Each good requested in a reagent offer is a 60u container (container type is irrelevant)
 
 		if(!ispath(offer_path, /datum/reagent))
-			if(istype(item, /obj/item/reagent_containers/food))		// Food check (needed because contents are populated using something other than preloaded_reagents)
+			if(istype(item, /obj/item/reagent_containers))		// Food check (needed because contents are populated using something other than preloaded_reagents)
 				return TRUE
 
 			if(istype(item, /obj/item/reagent_containers/blood))	// Blood pack check (needed because contents are populated using something other than preloaded_reagents)

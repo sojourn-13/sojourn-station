@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/ponderous
+/mob/living/carbon/superior/psi/ponderous
 	name = "ponderous"
 	desc = "The ponderous, believed to be a mutation of local wild life, it stalks towards its prey slowly, its touch quite malignant, more so to psions than anyone else. Due to its thick carapace, \
 	it can absorb absurd amounts of punishment."
@@ -16,7 +16,7 @@
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/ponderous
 	armor_divisor = 3
 
-/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare
+/mob/living/carbon/superior/psi/hovering_nightmare
 	name = "hovering nightmare"
 	desc = "The hovering nightmare is a flying creature resembling a misshapen skull. It is fast, remaining low to the ground and moving quickly through the use of psionics and will. Its bite is \
 	far worse than its bark."
@@ -36,7 +36,7 @@
 	stat_to_steal = STAT_COG
 	steal_amount = -3
 
-/mob/living/carbon/superior_animal/psi_monster/licker
+/mob/living/carbon/superior/psi/licker
 	name = "licker"
 	desc = "The licker, named for its long venom laced tongue. Some speculate that it was once an insect of some form, given its choice of venom, what is known is that while fast, it isn't that strong. \
 	Watch out for the fleshy pink thing it is to eager to touch you with."
@@ -54,7 +54,7 @@
 	attacktext = "tongued"
 	armor_divisor = 2
 
-/mob/living/carbon/superior_animal/psi_monster/memory
+/mob/living/carbon/superior/psi/memory
 	name = "memory"
 	desc = "We leave more than simply our mark where we die."
 	icon_state = "M3"
@@ -74,7 +74,7 @@
 	stat_to_steal = STAT_VIV
 	steal_amount = -1
 
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower
+/mob/living/carbon/superior/psi/flesh_tower
 	name = "flesh tower"
 	desc = "A billowing tower of flesh, oozing pus and acid. Thought to locate its targets psionically, though it seems incapable of seeing its own kind, often hitting and even killing them in its bid \
 	to end the lives of intruders in this realm. Something about this creature strikes you as familiar."
@@ -103,7 +103,7 @@
 	attacktext = "slapped"
 	range_telegraph = "lurks back, getting ready to lob acids at"
 
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower/Initialize(mapload)
+/mob/living/carbon/superior/psi/flesh_tower/Initialize(mapload)
 	. = ..()
 	//Proj Upgrade, its a bit random!
 	if(GLOB.chaos_level >= 2)

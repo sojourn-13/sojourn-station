@@ -17,18 +17,18 @@
 	icon_state = "donutbox"
 	var/startswith = 6
 	max_storage_space = 12 //The amount of starting donuts multiplied by the donut item size to keep only exact space requirement met.
-	can_hold = list(/obj/item/reagent_containers/food/snacks/donut)
+	can_hold = list(/obj/item/reagent_containers/snacks/donut)
 	foldable = /obj/item/stack/material/cardboard
 
 /obj/item/storage/box/donut/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/snacks/donut/normal(src)
+		new /obj/item/reagent_containers/snacks/donut/normal(src)
 	update_icon()
 
 /obj/item/storage/box/donut/update_icon()
 	cut_overlays()
 	var/i = 0
-	for(var/obj/item/reagent_containers/food/snacks/donut/D in contents)
+	for(var/obj/item/reagent_containers/snacks/donut/D in contents)
 		add_overlay(image('icons/obj/food.dmi', "[i][D.overlay_state]"))
 		i++
 
@@ -48,7 +48,7 @@
 	\"Instructions: Remove contents from packaging, open both MRE container and ration can, use them in-hand to activate thermal heater. \
 	Thermal insulation will keep them warm for over four hours. Nutrient paste and morale bar contains medicinal additives for field performance, DO NOT OVER-CONSUME.\""
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks,
+		/obj/item/reagent_containers/snacks,
 		/obj/item/storage/fancy/mre_cracker,
 		/obj/item/material/kitchen/utensil/spoon/mre
 	)
@@ -63,23 +63,23 @@
 
 /obj/item/storage/ration_pack/populate_contents()
 	if(prob(50))
-		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+		new /obj/item/reagent_containers/snacks/openable/mre(src)
 	else
-		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
-	new /obj/item/reagent_containers/food/snacks/openable/can(src)
+		new /obj/item/reagent_containers/snacks/openable/mre/alt(src)
+	new /obj/item/reagent_containers/snacks/openable/can(src)
 	new /obj/item/storage/fancy/mre_cracker(src)
-	new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+	new /obj/item/reagent_containers/snacks/openable/mre(src)
 	new /obj/item/material/kitchen/utensil/spoon/mre(src)
 	if(prob(50))
-		new /obj/item/reagent_containers/food/snacks/mre_paste(src)
+		new /obj/item/reagent_containers/snacks/mre_paste(src)
 	else
-		new /obj/item/reagent_containers/food/snacks/canned_peaches(src)
+		new /obj/item/reagent_containers/snacks/canned_peaches(src)
 	if(prob(33))
-		new /obj/item/reagent_containers/food/snacks/openable/candy
+		new /obj/item/reagent_containers/snacks/openable/candy
 	else if(prob(33))
-		new /obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
+		new /obj/item/reagent_containers/snacks/openable/candy/shokoladka
 	else
-		new /obj/item/reagent_containers/food/snacks/openable/candy/dalococh
+		new /obj/item/reagent_containers/snacks/openable/candy/dalococh
 
 /obj/item/storage/chewables/tobacco/bad
 	name = "can of Rredouane Cuts chewing tobacco"

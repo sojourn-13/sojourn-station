@@ -78,16 +78,16 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/food/New()
 	..()
 	contents = list(
-		/obj/item/reagent_containers/food/condiment/flour,
-		/obj/item/reagent_containers/food/condiment/flour,
-		/obj/item/reagent_containers/food/condiment/flour,
-		/obj/item/reagent_containers/food/drinks/milk,
-		/obj/item/reagent_containers/food/drinks/milk,
+		/obj/item/reagent_containers/condiment/flour,
+		/obj/item/reagent_containers/condiment/flour,
+		/obj/item/reagent_containers/condiment/flour,
+		/obj/item/reagent_containers/drinks/milk,
+		/obj/item/reagent_containers/drinks/milk,
 		/obj/item/storage/fancy/egg_box,
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/tofu,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/meat)
+		/obj/item/reagent_containers/snacks/tofu,
+		/obj/item/reagent_containers/snacks/tofu,
+		/obj/item/reagent_containers/snacks/meat,
+		/obj/item/reagent_containers/snacks/meat)
 
 /datum/supply_drop_loot/armour
 	name = "Armour"

@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/greyson/roomba
+/mob/living/carbon/superior/robot/gp/roomba
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon_state = "roomba"
@@ -6,20 +6,20 @@
 	pass_flags = PASSTABLE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/young/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/old/robotic = 5,
 		/datum/stat_modifier/health/mult/positive/low = 10,
 		/datum/stat_modifier/health/mult/positive/medium = 5,
 		/datum/stat_modifier/health/mult/negative/medium = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/ = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 6,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/robotic = 20,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive/ = 2,
+		/datum/stat_modifier/mob/living/carbon/superior/triggerfinger/robotic = 6,
+		/datum/stat_modifier/mob/living/carbon/superior/slowdraw = 6,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 	)
 
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer
+/mob/living/carbon/superior/robot/gp/roomba/slayer
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems to have a knife taped to it..?"
 	icon_state = "roomba_knife"
@@ -29,7 +29,7 @@
 	melee_damage_upper = 17
 	drop2 = /obj/item/tool/knife
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip
+/mob/living/carbon/superior/robot/gp/roomba/trip
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
 	icon_state = "roomba_batton"
@@ -41,7 +41,7 @@
 	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/melee/telebaton
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/robot/gp/roomba/trip/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
@@ -53,7 +53,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it and seems to have added armor..."
 	icon_state = "roomba_IH_batton"
@@ -63,7 +63,7 @@
 	melee_damage_lower = 7
 	melee_damage_upper = 12
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba
+/mob/living/carbon/superior/robot/gp/roomba/boomba
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. Is that a fucking anti-personel mine?!"
 	icon_state = "boomba"
@@ -75,14 +75,14 @@
 
 	get_stat_modifier = FALSE // n o .
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba/UnarmedAttack()
+/mob/living/carbon/superior/robot/gp/roomba/boomba/UnarmedAttack()
 	. = ..()
 	if(.) // If we succeeded in hitting.
 		visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
 		explosion(get_turf(loc), 0, 0, 2, 3)
 		death()
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. And this one has a gun."
 	icon_state = "roomba_lmg"
@@ -99,14 +99,14 @@
 	mags_left = 0
 	reload_message = "Beeps aggressively as it charges the gun!" //in case of addmins givng more then 1 load
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/New()
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba/New()
 	..()
 	if(prob(10))
 		drop2 = /obj/item/gun/energy/cog
 	if(prob(10))
 		cell_drop = /obj/item/cell/medium
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba/plasma
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a overclocked gun."
 	icon_state = "roomba_lmg"
@@ -117,7 +117,7 @@
 	rounds_left = 10 //takes more per shot!
 	projectiletype = /obj/item/projectile/plasma/light
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba/armored
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor."
 	icon_state = "roomba_IH_lmg"
@@ -126,7 +126,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical
+/mob/living/carbon/superior/robot/gp/roomba/chemical
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_drugs"
@@ -137,7 +137,7 @@
 	var/injection_per_hit = 2
 	var/injection_type = "toxin"
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/robot/gp/roomba/chemical/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -145,7 +145,7 @@
 		if(istype(L) && L.reagents)
 			L.reagents.add_reagent(injection_type, injection_per_hit)
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med
+/mob/living/carbon/superior/robot/gp/roomba/chemical/med
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"
@@ -156,7 +156,7 @@
 	injection_per_hit = 1
 	injection_type = "chloralhydrate"
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med/healer
+/mob/living/carbon/superior/robot/gp/roomba/chemical/med/healer
 	name = "Greyson Positronic RMB-MED unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"

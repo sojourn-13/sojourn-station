@@ -554,10 +554,10 @@
 	name = "random hivemob"
 
 /obj/random/mob/assembled/item_to_spawn() //list of spawnable mobs
-	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/stinger = 5,
-							/mob/living/simple_animal/hostile/hivemind/bomber = 4,
-							/mob/living/simple_animal/hostile/hivemind/lobber = 3,
-							/mob/living/simple_animal/hostile/hivemind/hiborg = 1))
+	return pickweight(list(/mob/living/simple/hostile/hivemind/stinger = 5,
+							/mob/living/simple/hostile/hivemind/bomber = 4,
+							/mob/living/simple/hostile/hivemind/lobber = 3,
+							/mob/living/simple/hostile/hivemind/hiborg = 1))
 
 /obj/machinery/hivemind_machine/mob_spawner/Initialize()
 	..()
@@ -593,7 +593,7 @@
 		total_mobs += GLOB.hivemind_mobs[i]
 	if(!GLOB.hive_data_bool["maximum_existing_mobs"] || GLOB.hive_data_float["maximum_existing_mobs"] > total_mobs)
 		var/obj/randomcatcher/CATCH = new /obj/randomcatcher(src)
-		var/mob/living/simple_animal/hostile/hivemind/spawned_mob = CATCH.get_item(mob_to_spawn)
+		var/mob/living/simple/hostile/hivemind/spawned_mob = CATCH.get_item(mob_to_spawn)
 		spawned_mob.loc = loc
 		spawned_creatures.Add(spawned_mob)
 		spawned_mob.master = src

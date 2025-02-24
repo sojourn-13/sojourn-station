@@ -28,7 +28,7 @@
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "al" = (
-/mob/living/simple_animal/crab{
+/mob/living/simple/crab{
 	name = "asteroid"
 	},
 /turf/simulated/floor/asteroid,
@@ -47,7 +47,7 @@
 /turf/simulated/floor/asteroid,
 /area/outpost/abandoned)
 "aq" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/asteroid,
 /area/outpost/abandoned)
 "as" = (
@@ -171,11 +171,11 @@
 /area/outpost/abandoned)
 "aO" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "aP" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
 "aQ" = (
@@ -253,7 +253,7 @@
 /area/outpost/abandoned)
 "be" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/asteroid,
 /area/outpost/abandoned)
 "bl" = (
@@ -262,7 +262,7 @@
 /area/outpost/abandoned)
 "br" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "bs" = (
@@ -323,7 +323,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "bK" = (
@@ -390,11 +390,11 @@
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "bX" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "bY" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "ca" = (

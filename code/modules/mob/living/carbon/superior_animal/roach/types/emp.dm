@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/elektromagnetisch
+/mob/living/carbon/superior/roach/elektromagnetisch
 	name = "Elektromagnetisch Roach"
 	desc = "A monstrous, dog-sized cockroach. This blue glowing one looks like its plusing with energy."
 	icon_state = "elektromagnetisch"
@@ -13,17 +13,17 @@
 	armor_divisor = 4
 
 	mob_size = MOB_MEDIUM
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/elektromagnetisch
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
 	inherent_mutations = list(MUTATION_EMP, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_ROACH_BLOOD)
 
-/mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/roach/elektromagnetisch/UnarmedAttack(atom/A, proximity)
 	. = ..()
 	if(prob(5))
 		empulse(loc, 0, 3)
 		playsound(loc, list('sound/weapons/guns/unknown_spacegun_burn.ogg', 'sound/weapons/guns/unknown_spacegun_melt.ogg', 'sound/weapons/guns/unknown_spacegun_incinerate.ogg', 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'), 50, 1)
 
-/mob/living/carbon/superior_animal/roach/elektromagnetisch/death(gibbed,message = deathmessage)
+/mob/living/carbon/superior/roach/elektromagnetisch/death(gibbed,message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)

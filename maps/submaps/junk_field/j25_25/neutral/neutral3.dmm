@@ -40,7 +40,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ar" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/tiled/dark/danger,
 /area/template_noop)
 "as" = (
@@ -56,7 +56,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/template_noop)
 "aB" = (
@@ -90,7 +90,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/template_noop)
 "aM" = (
-/mob/living/simple_animal/hostile/carp/pike,
+/mob/living/simple/hostile/carp/pike,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "aP" = (

@@ -90,9 +90,9 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "cv" = (
 /obj/structure/table/rack,
-/obj/item/reagent_containers/food/snacks/openable/chips,
-/obj/item/reagent_containers/food/snacks/openable/chips_alt,
-/obj/item/reagent_containers/food/snacks/openable/gamerchips,
+/obj/item/reagent_containers/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips_alt,
+/obj/item/reagent_containers/snacks/openable/gamerchips,
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/derelict,
 /area/outpost/abandoned_fortress/powered_lit)
@@ -225,7 +225,7 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "eL" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/coffee,
+/obj/item/reagent_containers/drinks/coffee,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "eZ" = (
@@ -452,7 +452,7 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "ju" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket,
+/obj/item/reagent_containers/snacks/donkpocket/sinpocket,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "jy" = (
@@ -1394,10 +1394,10 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "EH" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,
 /obj/random/lathe_disk/advanced/excelsior,
@@ -1776,7 +1776,7 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "OH" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/coffee,
+/obj/item/reagent_containers/drinks/coffee,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "OQ" = (

@@ -7,90 +7,90 @@
 	density = FALSE
 	anchored = TRUE
 
-	var/obj/item/reagent_containers/food/snacks/requested_food = null
+	var/obj/item/reagent_containers/snacks/requested_food = null
 	var/allowed_foods = null
 	var/list/denie_list_f = list(
 	//Raw
-	/obj/item/reagent_containers/food/snacks,
-	/obj/item/reagent_containers/food/snacks/rawcutlet,
-	/obj/item/reagent_containers/food/snacks/rawbacon,
-	/obj/item/reagent_containers/food/snacks/rawmeatball,
-	/obj/item/reagent_containers/food/snacks/patty_raw,
-	/obj/item/reagent_containers/food/snacks/organ,
-	/obj/item/reagent_containers/food/snacks/rawsticks,
-	/obj/item/reagent_containers/food/snacks/patty,
-	/obj/item/reagent_containers/food/snacks/chickenbreast,
-	/obj/item/reagent_containers/food/snacks/cutlet,
-	/obj/item/reagent_containers/food/snacks/bun,
-	/obj/item/reagent_containers/food/snacks/flatdoughslice,
-	/obj/item/reagent_containers/food/snacks/spagetti,
-	/obj/item/reagent_containers/food/snacks/doughslice,
-	/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
-	/obj/item/reagent_containers/food/snacks/dough,
-	/obj/item/reagent_containers/food/snacks/butterslice,
-	/obj/item/reagent_containers/food/snacks/watermelonslice,
-	/obj/item/reagent_containers/food/snacks/fruit_slice,
+	/obj/item/reagent_containers/snacks,
+	/obj/item/reagent_containers/snacks/rawcutlet,
+	/obj/item/reagent_containers/snacks/rawbacon,
+	/obj/item/reagent_containers/snacks/rawmeatball,
+	/obj/item/reagent_containers/snacks/patty_raw,
+	/obj/item/reagent_containers/snacks/organ,
+	/obj/item/reagent_containers/snacks/rawsticks,
+	/obj/item/reagent_containers/snacks/patty,
+	/obj/item/reagent_containers/snacks/chickenbreast,
+	/obj/item/reagent_containers/snacks/cutlet,
+	/obj/item/reagent_containers/snacks/bun,
+	/obj/item/reagent_containers/snacks/flatdoughslice,
+	/obj/item/reagent_containers/snacks/spagetti,
+	/obj/item/reagent_containers/snacks/doughslice,
+	/obj/item/reagent_containers/snacks/flatdough,
+	/obj/item/reagent_containers/snacks/dough,
+	/obj/item/reagent_containers/snacks/butterslice,
+	/obj/item/reagent_containers/snacks/watermelonslice,
+	/obj/item/reagent_containers/snacks/fruit_slice,
 	//Unresonable
-	/obj/item/reagent_containers/food/snacks/cheesewedge,
-	/obj/item/reagent_containers/food/snacks/chocolatepiece,
-	/obj/item/reagent_containers/food/snacks/chocolatepiece/white,
-	/obj/item/reagent_containers/food/snacks/boiledslimecore,
-	/obj/item/reagent_containers/food/snacks/mint,
-	/obj/item/reagent_containers/food/snacks/jelliedtoast,
-	/obj/item/reagent_containers/food/snacks/jelliedtoast/cherry,
-	/obj/item/reagent_containers/food/snacks/jelliedtoast/slime,
-	/obj/item/reagent_containers/food/snacks/rofflewaffles,
-	/obj/item/reagent_containers/food/snacks/poppypretzel/holy,
-	/obj/item/reagent_containers/food/snacks/badrecipe,
-	/obj/item/reagent_containers/food/snacks/tomatomeat,
-	/obj/item/reagent_containers/food/snacks/brainburger,
-	/obj/item/reagent_containers/food/snacks/monkeyburger,
-	/obj/item/reagent_containers/food/snacks/roburger,
-	/obj/item/reagent_containers/food/snacks/roburgerbig,
-	/obj/item/reagent_containers/food/snacks/clownburger,
-	/obj/item/reagent_containers/food/snacks/mimeburger,
-	/obj/item/reagent_containers/food/snacks/spellburger,
-	/obj/item/reagent_containers/food/snacks/jellyburger/slime,
-	/obj/item/reagent_containers/food/snacks/jellyburger/cherry,
-	/obj/item/reagent_containers/food/snacks/bigbiteburger/cargo,
-	/obj/item/reagent_containers/food/snacks/kaiserburger,
-	/obj/item/reagent_containers/food/snacks/sliceable/braincake,
-	/obj/item/reagent_containers/food/snacks/braincakeslice,
-	/obj/item/reagent_containers/food/snacks/meat/runtimes_dinner,
-	/obj/item/reagent_containers/food/snacks/csandwich,
-	/obj/item/reagent_containers/food/snacks/toasted_guild_sandwich,
-	/obj/item/reagent_containers/food/snacks/toastedsandwich/holy,
-	/obj/item/reagent_containers/food/snacks/jellysandwich,
-	/obj/item/reagent_containers/food/snacks/jellysandwich/slime,
-	/obj/item/reagent_containers/food/snacks/jellysandwich/cherry,
-	/obj/item/reagent_containers/food/snacks/slimesoup,
-	/obj/item/reagent_containers/food/snacks/clownstears,
+	/obj/item/reagent_containers/snacks/cheesewedge,
+	/obj/item/reagent_containers/snacks/chocolatepiece,
+	/obj/item/reagent_containers/snacks/chocolatepiece/white,
+	/obj/item/reagent_containers/snacks/boiledslimecore,
+	/obj/item/reagent_containers/snacks/mint,
+	/obj/item/reagent_containers/snacks/jelliedtoast,
+	/obj/item/reagent_containers/snacks/jelliedtoast/cherry,
+	/obj/item/reagent_containers/snacks/jelliedtoast/slime,
+	/obj/item/reagent_containers/snacks/rofflewaffles,
+	/obj/item/reagent_containers/snacks/poppypretzel/holy,
+	/obj/item/reagent_containers/snacks/badrecipe,
+	/obj/item/reagent_containers/snacks/tomatomeat,
+	/obj/item/reagent_containers/snacks/brainburger,
+	/obj/item/reagent_containers/snacks/monkeyburger,
+	/obj/item/reagent_containers/snacks/roburger,
+	/obj/item/reagent_containers/snacks/roburgerbig,
+	/obj/item/reagent_containers/snacks/clownburger,
+	/obj/item/reagent_containers/snacks/mimeburger,
+	/obj/item/reagent_containers/snacks/spellburger,
+	/obj/item/reagent_containers/snacks/jellyburger/slime,
+	/obj/item/reagent_containers/snacks/jellyburger/cherry,
+	/obj/item/reagent_containers/snacks/bigbiteburger/cargo,
+	/obj/item/reagent_containers/snacks/kaiserburger,
+	/obj/item/reagent_containers/snacks/braincake,
+	/obj/item/reagent_containers/snacks/braincakeslice,
+	/obj/item/reagent_containers/snacks/meat/runtimes_dinner,
+	/obj/item/reagent_containers/snacks/csandwich,
+	/obj/item/reagent_containers/snacks/toasted_guild_sandwich,
+	/obj/item/reagent_containers/snacks/toastedsandwich/holy,
+	/obj/item/reagent_containers/snacks/jellysandwich,
+	/obj/item/reagent_containers/snacks/jellysandwich/slime,
+	/obj/item/reagent_containers/snacks/jellysandwich/cherry,
+	/obj/item/reagent_containers/snacks/slimesoup,
+	/obj/item/reagent_containers/snacks/clownstears,
 	//Vender stuff
-	/obj/item/reagent_containers/food/snacks/candy,
-	/obj/item/reagent_containers/food/snacks/chocolatebar,
-	/obj/item/reagent_containers/food/snacks/candy/donor,
-	/obj/item/reagent_containers/food/snacks/candy/proteinbar,
-	/obj/item/reagent_containers/food/snacks/candy/pistachios_pack,
-	/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
-	/obj/item/reagent_containers/food/snacks/candy/energybar,
-	/obj/item/reagent_containers/food/snacks/candy_corn,
-	/obj/item/reagent_containers/food/snacks/candy_drop_blue,
-	/obj/item/reagent_containers/food/snacks/candy_drop_red,
-	/obj/item/reagent_containers/food/snacks/sosjerky,
-	/obj/item/reagent_containers/food/snacks/cheesiehonkers,
-	/obj/item/reagent_containers/food/snacks/dogtreats,
-	/obj/item/reagent_containers/food/snacks/donkpocket,
-	/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket,
-	/obj/item/reagent_containers/food/snacks/mre_paste,
-	/obj/item/reagent_containers/food/snacks/os_paste,
-	/obj/item/reagent_containers/food/snacks/canned_peaches,
-	/obj/item/reagent_containers/food/snacks/mre_cracker,
-	/obj/item/reagent_containers/food/snacks/monkeycube,
+	/obj/item/reagent_containers/snacks/candy,
+	/obj/item/reagent_containers/snacks/chocolatebar,
+	/obj/item/reagent_containers/snacks/candy/donor,
+	/obj/item/reagent_containers/snacks/candy/proteinbar,
+	/obj/item/reagent_containers/snacks/candy/pistachios_pack,
+	/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
+	/obj/item/reagent_containers/snacks/candy/energybar,
+	/obj/item/reagent_containers/snacks/candy_corn,
+	/obj/item/reagent_containers/snacks/candy_drop_blue,
+	/obj/item/reagent_containers/snacks/candy_drop_red,
+	/obj/item/reagent_containers/snacks/sosjerky,
+	/obj/item/reagent_containers/snacks/cheesiehonkers,
+	/obj/item/reagent_containers/snacks/dogtreats,
+	/obj/item/reagent_containers/snacks/donkpocket,
+	/obj/item/reagent_containers/snacks/donkpocket/sinpocket,
+	/obj/item/reagent_containers/snacks/mre_paste,
+	/obj/item/reagent_containers/snacks/os_paste,
+	/obj/item/reagent_containers/snacks/canned_peaches,
+	/obj/item/reagent_containers/snacks/mre_cracker,
+	/obj/item/reagent_containers/snacks/monkeycube,
 	//tisanes
-	/obj/item/reagent_containers/food/snacks/helmet_tisane,
-	/obj/item/reagent_containers/food/snacks/mercy_tisane,
-	/obj/item/reagent_containers/food/snacks/vale_tisane,
-	/obj/item/reagent_containers/food/snacks/poppy_tisane
+	/obj/item/reagent_containers/snacks/helmet_tisane,
+	/obj/item/reagent_containers/snacks/mercy_tisane,
+	/obj/item/reagent_containers/snacks/vale_tisane,
+	/obj/item/reagent_containers/snacks/poppy_tisane
 	)
 	//What we currently want as a drink
 	var/datum/reagent/requested_drink = null
@@ -188,8 +188,8 @@
 
 
 /obj/structure/celler/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/reagent_containers/food/snacks) && requested_food)
-		var/obj/item/reagent_containers/food/snacks/SNACK = I
+	if(istype(I, /obj/item/reagent_containers/snacks) && requested_food)
+		var/obj/item/reagent_containers/snacks/SNACK = I
 		if(SNACK.bitecount > 0 || SNACK.oldified)
 			to_chat(user, "<span class='info'>The micro-AI beeps red, no shoving in rotten or bitten food.</span>")
 			return
@@ -198,8 +198,8 @@
 		else
 			to_chat(user, "<span class='info'>The micro-AI beeps red, not allowing a non-requested dish to be stored.</span>")
 		return
-	if(istype(I, /obj/item/reagent_containers/food/drinks/drinkingglass) && requested_drink)
-		var/obj/item/reagent_containers/food/drinks/drinkingglass/DG = I
+	if(istype(I, /obj/item/reagent_containers/drinks/drinkingglass) && requested_drink)
+		var/obj/item/reagent_containers/drinks/drinkingglass/DG = I
 		var/drink_success = FALSE
 		for(var/datum/reagent/R in DG.reagents.reagent_list)
 			to_chat(user, "<span class='info'>R.volume [R.volume] - R = [R] (R.name = [R.name]) RD = [requested_drink.name]</span>")
@@ -234,22 +234,22 @@
 /obj/structure/celler/proc/handle_foods()
 	LAZYINITLIST(allowed_foods)
 
-	var/list/food_to_add = list(typesof(/obj/item/reagent_containers/food/snacks)\
+	var/list/food_to_add = list(typesof(/obj/item/reagent_containers/snacks)\
 	 - denie_list_f \
-	 - typesof(/obj/item/reagent_containers/food/snacks/openable) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/human) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/meat) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/donut) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/grown) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/cube) \
-	 - typesof(/obj/item/reagent_containers/food/snacks/egg))
+	 - typesof(/obj/item/reagent_containers/snacks/openable) \
+	 - typesof(/obj/item/reagent_containers/snacks/human) \
+	 - typesof(/obj/item/reagent_containers/snacks/meat) \
+	 - typesof(/obj/item/reagent_containers/snacks/donut) \
+	 - typesof(/obj/item/reagent_containers/snacks/grown) \
+	 - typesof(/obj/item/reagent_containers/snacks/cube) \
+	 - typesof(/obj/item/reagent_containers/snacks/egg))
 	for(var/FTA in food_to_add)
 		if(FTA)
 			LAZYADD(allowed_foods, FTA)
 
 	reroll_food()
 
-/obj/structure/celler/proc/celler_request_food_completed(obj/item/reagent_containers/food/snacks/I, mob/user)
+/obj/structure/celler/proc/celler_request_food_completed(obj/item/reagent_containers/snacks/I, mob/user)
 	to_chat(user, "<span class='info'>The Cellar slowly produces some credits as you hand in the dish.</span>")
 	qdel(I)
 	var/price = I.get_item_cost()

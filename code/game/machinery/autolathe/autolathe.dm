@@ -24,7 +24,7 @@
 	var/build_type = AUTOLATHE
 	var/code_dex = "AUTOLATHE" //Used in place of build_type
 
-	var/obj/item/computer_hardware/hard_drive/portable/disk
+	var/obj/item/pc_part/drive/disk/disk
 
 	var/list/stored_material = list()
 	var/obj/item/reagent_containers/glass/container
@@ -253,7 +253,7 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/pc_part/drive/disk))
 		insert_disk(user, I)
 
 	// Some item types are consumed by default
@@ -369,7 +369,7 @@
 			update_static_data(usr, ui)
 			. = TRUE
 
-/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
+/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/pc_part/drive/disk/inserted_disk)
 	if(!inserted_disk && istype(user))
 		inserted_disk = user.get_active_hand()
 
@@ -522,8 +522,8 @@
 		to_chat(user, SPAN_WARNING("\The [eating] can not be accepted due to being unprocessed."))
 		return FALSE
 
-	if(istype(eating, /obj/item/computer_hardware/hard_drive/portable))
-		var/obj/item/computer_hardware/hard_drive/portable/disk = eating
+	if(istype(eating, /obj/item/pc_part/drive/disk))
+		var/obj/item/pc_part/drive/disk/disk = eating
 		if(disk.license)
 			to_chat(user, SPAN_WARNING("\The [src] refuses to accept \the [eating] as it has non-null license."))
 			return FALSE

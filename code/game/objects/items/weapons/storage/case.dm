@@ -50,22 +50,22 @@
 	desc = "Contains specially cooked donuts for donut connoisseurs."
 	icon_state = "donutcase"
 	item_state = "donutcase"
-	can_hold = list(/obj/item/reagent_containers/food/snacks/donut/stat_buff)
+	can_hold = list(/obj/item/reagent_containers/snacks/donut/stat_buff)
 	max_storage_space = 12
 
 /obj/item/storage/case/donut/New()
 	..()
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/mec(src)
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/cog(src)
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/bio(src)
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh(src)
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob(src)
-	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/vig(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/mec(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/cog(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/bio(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/tgh(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/rob(src)
+	new /obj/item/reagent_containers/snacks/donut/stat_buff/vig(src)
 	update_icon()
 
 /obj/item/storage/case/donut/update_icon()
 	..()
 	if(opened)
 		cut_overlays()
-		for(var/obj/item/reagent_containers/food/snacks/donut/stat_buff/D in contents)
+		for(var/obj/item/reagent_containers/snacks/donut/stat_buff/D in contents)
 			add_overlay(image('icons/obj/food.dmi', "[D.overlay_state]"))

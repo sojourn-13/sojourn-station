@@ -1,5 +1,5 @@
 // Beefier variant of the golem
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth
+/mob/living/carbon/superior/ameridian_golem/behemoth
 	name = "ameridian behemoth"
 	desc = "A weird creature made of ameridian. It is bigger, stronger and pack a harder punch than its brethen."
 	icon_state = "golem_ameridian_purple"
@@ -15,7 +15,7 @@
 	mob_ablative_armor = 10
 	ablative_retaining = ABLATION_STANDARD
 
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/ameridian_golem/behemoth/attack_hand(mob/living/carbon/M as mob)
 	if(M.a_intent == I_GRAB || M.a_intent == I_DISARM)
 		visible_message(SPAN_WARNING("[src] punch [M] when \he stupidly try to grab it!"))
 		UnarmedAttack(M, 1)

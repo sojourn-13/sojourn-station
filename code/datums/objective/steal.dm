@@ -13,7 +13,7 @@
 		"the station blueprints" = /obj/item/blueprints,
 		"28 moles of plasma (full tank)" = /obj/item/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/snacks/meat/corgi,
 		"a Moebius expedition overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
 		"a exultant's jumpsuit" = /obj/item/clothing/under/rank/exultant,
 		"a Moebius biolab officer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,

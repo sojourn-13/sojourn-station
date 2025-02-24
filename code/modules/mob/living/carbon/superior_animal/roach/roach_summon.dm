@@ -21,7 +21,7 @@
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 2500
 	var/roach_type = "kampfer" // The type of roach to spawn.
-	var/mob/living/carbon/superior_animal/roach/roach // A reference to the roach this item summoned.
+	var/mob/living/carbon/superior/roach/roach // A reference to the roach this item summoned.
 	var/entropy_value = 3
 	var/used = FALSE //Are we used? Prevents an issue with mass spaming the item
 	var/entropy = FALSE //Do we make entropy on summan? Debug things shouldnt mess with the round
@@ -35,27 +35,27 @@
 		return
 	switch(roach_type)
 		if("kampfer")
-			roach = new /mob/living/carbon/superior_animal/roach(src)
+			roach = new /mob/living/carbon/superior/roach(src)
 		if("unbekannt")
-			roach = new /mob/living/carbon/superior_animal/roach/bluespace(src)
+			roach = new /mob/living/carbon/superior/roach/bluespace(src)
 		if("elektromagnetisch")
-			roach = new /mob/living/carbon/superior_animal/roach/elektromagnetisch(src)
+			roach = new /mob/living/carbon/superior/roach/elektromagnetisch(src)
 		if("fuhrer")
-			roach = new /mob/living/carbon/superior_animal/roach/fuhrer(src)
+			roach = new /mob/living/carbon/superior/roach/fuhrer(src)
 		if("gluhend")
-			roach = new /mob/living/carbon/superior_animal/roach/glowing(src)
+			roach = new /mob/living/carbon/superior/roach/glowing(src)
 		if("jager")
-			roach = new /mob/living/carbon/superior_animal/roach/hunter(src)
+			roach = new /mob/living/carbon/superior/roach/hunter(src)
 		if("kaiser")
-			roach = new /mob/living/carbon/superior_animal/roach/kaiser(src)
+			roach = new /mob/living/carbon/superior/roach/kaiser(src)
 		if("kraftwerk")
-			roach = new /mob/living/carbon/superior_animal/roach/nanite(src)
+			roach = new /mob/living/carbon/superior/roach/nanite(src)
 		if("seuche")
-			roach = new /mob/living/carbon/superior_animal/roach/support(src)
+			roach = new /mob/living/carbon/superior/roach/support(src)
 		if("panzer")
-			roach = new /mob/living/carbon/superior_animal/roach/tank(src)
+			roach = new /mob/living/carbon/superior/roach/tank(src)
 		if("gestrahlte")
-			roach = new /mob/living/carbon/superior_animal/roach/toxic(src)
+			roach = new /mob/living/carbon/superior/roach/toxic(src)
 
 	if(roach) // Checking to be sure we got something
 		// Making it a fren and ridable

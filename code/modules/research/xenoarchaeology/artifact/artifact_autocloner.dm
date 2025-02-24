@@ -23,23 +23,23 @@
 	//33% chance to spawn nasties
 	if(prob(33))
 		spawn_type = pick(\
-		/mob/living/simple_animal/hostile/tomato,\
-		/mob/living/simple_animal/hostile/render,\
-		/mob/living/simple_animal/hostile/jelly,\
-		/mob/living/simple_animal/hostile/creature\
+		/mob/living/simple/hostile/tomato,\
+		/mob/living/simple/hostile/render,\
+		/mob/living/simple/hostile/jelly,\
+		/mob/living/simple/hostile/creature\
 		)
 	else
 		spawn_type = pick(\
-		/mob/living/simple_animal/cat,\
-		/mob/living/simple_animal/corgi,\
-		/mob/living/simple_animal/corgi/puppy,\
-		/mob/living/simple_animal/chicken,\
-		/mob/living/simple_animal/cow,\
-		/mob/living/simple_animal/parrot,\
-		/mob/living/simple_animal/slime,\
-		/mob/living/simple_animal/crab,\
-		/mob/living/simple_animal/mouse,\
-		/mob/living/simple_animal/hostile/retaliate/goat\
+		/mob/living/simple/cat,\
+		/mob/living/simple/corgi,\
+		/mob/living/simple/corgi/puppy,\
+		/mob/living/simple/chicken,\
+		/mob/living/simple/cow,\
+		/mob/living/simple/parrot,\
+		/mob/living/simple/slime,\
+		/mob/living/simple/crab,\
+		/mob/living/simple/mouse,\
+		/mob/living/simple/hostile/retaliate/goat\
 		)
 
 //todo: how the hell is the asteroid permanently powered?

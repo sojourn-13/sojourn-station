@@ -165,8 +165,8 @@
 "noG" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre,
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/snacks/mre,
+/obj/item/reagent_containers/snacks/mre,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/plating/under,
 /area/mine/gulag_base)

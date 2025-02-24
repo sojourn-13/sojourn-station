@@ -40,7 +40,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3),
 		list(CRAFT_MATERIAL, 2, MATERIAL_BONE, "time" = 1), //Takes a second
-		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
+		list(/obj/item/reagent_containers/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
 /datum/craft_recipe/lodge/arrow_hunting/heavy
@@ -49,7 +49,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3),
 		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
-		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
+		list(/obj/item/reagent_containers/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
 /datum/craft_recipe/lodge/throwing_knife/bone_needle
@@ -68,7 +68,7 @@
 	steps = list(
 		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
-		list(/obj/item/reagent_containers/food/snacks/amanitajelly, 1, "time" = 1),
+		list(/obj/item/reagent_containers/snacks/amanitajelly, 1, "time" = 1),
 		list(QUALITY_HAMMERING, 30, "time" = 40)
 	)
 
@@ -78,7 +78,7 @@
 	steps = list(
 		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
-		list(/obj/item/reagent_containers/food/snacks/meat/spider, 1, "time" = 5),
+		list(/obj/item/reagent_containers/snacks/meat/spider, 1, "time" = 5),
 		list(QUALITY_HAMMERING, 30, "time" = 40)
 	)
 
@@ -88,7 +88,7 @@
 	steps = list(
 		list(/obj/item/stack/thrown/throwing_knife/bone_needle, 3, "time" = 5),
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
-		list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing, 1, "time" = 1),
+		list(/obj/item/reagent_containers/snacks/meat/roachmeat/glowing, 1, "time" = 1),
 		list(QUALITY_HAMMERING, 30, "time" = 40)
 	)
 
@@ -459,7 +459,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
 		list(/obj/item/animal_part/carp_fang, 1, "time" = 20),
-		list(/obj/item/reagent_containers/food/snacks/poppy_tisane, 1, "time" = 20),
+		list(/obj/item/reagent_containers/snacks/poppy_tisane, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
@@ -472,7 +472,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
-		list(/obj/item/reagent_containers/food/snacks/egg/clucker, 1, "time" = 20),
+		list(/obj/item/reagent_containers/snacks/egg/clucker, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 

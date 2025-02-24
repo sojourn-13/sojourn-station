@@ -1,8 +1,8 @@
-/obj/item/computer_hardware/hard_drive/portable/design/omg
+/obj/item/pc_part/drive/disk/design/omg
 	icon_state = "omg"
 	license = -1
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods
+/obj/item/pc_part/drive/disk/design/omg/basic_organ_mods
 	disk_name = "Oh My Guts! Starter Kit"
 	desc = "Data disk used to store autolathe designs. Mod your heart out!"
 	designs = list(
@@ -15,7 +15,7 @@
 		/datum/design/organ/organ_mod/silencer
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs
+/obj/item/pc_part/drive/disk/design/omg/diy_organs
 	disk_name = "Oh My Guts! DIY Organs"
 	designs = list(
 		/datum/design/organ/scaffold,
@@ -38,7 +38,7 @@
 		/datum/design/organ/teratoma/output/stat_boost
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma
+/obj/item/pc_part/drive/disk/design/omg/teratoma
 	disk_name = "Oh My Guts! Bespoke Teratomas"
 	license = 20
 	designs = list(
@@ -66,7 +66,7 @@
 		/datum/design/organ/teratoma/output/uncommon/stat_boost
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare
+/obj/item/pc_part/drive/disk/design/omg/teratoma_rare
 	disk_name = "Oh My Guts! Artisanal Teratomas"
 	license = 20
 	designs = list(
@@ -92,7 +92,7 @@
 		/datum/design/organ/teratoma/output/rare/stat_boost
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/simple
+/obj/item/pc_part/drive/disk/design/omg/simple
 	disk_name = "Oh My Guts! The Classics"
 	license = 10
 	designs = list(
@@ -103,7 +103,7 @@
 		/datum/design/organ/aberrant_organ/damage_response
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic
+/obj/item/pc_part/drive/disk/design/omg/alcoholic
 	disk_name = "Oh My Guts! Discount Organs"
 	license = 10
 	designs = list(
@@ -121,7 +121,7 @@
 		/datum/design/organ/aberrant_organ/classy/kidney = 2
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/omg/addict
+/obj/item/pc_part/drive/disk/design/omg/addict
 	disk_name = "Oh My Guts! Refurbished Organs"
 	license = 10
 	designs = list(

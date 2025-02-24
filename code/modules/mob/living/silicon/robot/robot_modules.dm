@@ -1063,7 +1063,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/robot_harvester(src)
 	src.modules += new /obj/item/material/kitchen/rollingpin(src)
-	src.modules += new /obj/item/reagent_containers/food/condiment/enzyme(src)
+	src.modules += new /obj/item/reagent_containers/condiment/enzyme(src)
 	src.modules += new /obj/item/flame/lighter/zippo(src)
 	src.modules += new /obj/item/soap(src) // a cheap bar of soap
 	src.modules += new /obj/item/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
@@ -1093,7 +1093,7 @@ var/global/list/robot_modules = list(
 
 	src.modules += new /obj/item/tray/robotray(src)
 	src.modules += new /obj/item/reagent_containers/borghypo/service(src)
-	src.emag += new /obj/item/reagent_containers/food/drinks/bottle/small/beer_two(src)
+	src.emag += new /obj/item/reagent_containers/drinks/bottle/small/beer_two(src)
 
 	//Seller and cleaner mix, so quite and knowing the deal!
 	R?.stats?.addPerk(PERK_QUIET_AS_MOUSE)
@@ -1104,10 +1104,10 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
-	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
+	var/obj/item/reagent_containers/condiment/enzyme/E = locate() in src.modules
 	E?.reagents?.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
-		var/obj/item/reagent_containers/food/drinks/bottle/small/beer_two/B = locate() in src.emag
+		var/obj/item/reagent_containers/drinks/bottle/small/beer_two/B = locate() in src.emag
 		B?.reagents?.add_reagent("beer2", 2 * amount)
 
 /obj/item/robot_module/miner

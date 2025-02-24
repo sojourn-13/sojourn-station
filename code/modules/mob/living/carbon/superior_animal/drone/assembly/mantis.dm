@@ -307,7 +307,7 @@
 			SPAN_NOTICE("[user] activates [created_name]! Beep boop."),
 			SPAN_NOTICE("You activate [created_name]! Beep boop.")
 		)
-		var/mob/living/carbon/superior_animal/handmade/mantis/R = new /mob/living/carbon/superior_animal/handmade/mantis(get_turf(src)) // Spawn the mantis drone.
+		var/mob/living/carbon/superior/handmade/mantis/R = new /mob/living/carbon/superior/handmade/mantis(get_turf(src)) // Spawn the mantis drone.
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name

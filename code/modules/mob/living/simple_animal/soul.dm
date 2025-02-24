@@ -1,4 +1,4 @@
-/mob/living/simple_animal/soul
+/mob/living/simple/soul
 	name = "mining drill head"
 	icon_state = "lightgeist"
 	item_state = "lightgeist"
@@ -35,25 +35,25 @@
 	melee_damage_upper = 0
 	alpha = 0
 
-/mob/living/simple_animal/soul/death()
+/mob/living/simple/soul/death()
 	..()
 	qdel(src)
 	return
 
-/mob/living/simple_animal/soul/MouseDrop(atom/over_object)
+/mob/living/simple/soul/MouseDrop(atom/over_object)
 	return
 
-/mob/living/simple_animal/soul/attack_hand(mob/living/carbon/human/M as mob)
+/mob/living/simple/soul/attack_hand(mob/living/carbon/human/M as mob)
 	return
 
-/mob/living/simple_animal/soul/bullet_act(var/obj/item/projectile/proj)
+/mob/living/simple/soul/bullet_act(var/obj/item/projectile/proj)
 	return PROJECTILE_FORCE_MISS
 
-/mob/living/simple_animal/soul/ex_act(severity)
+/mob/living/simple/soul/ex_act(severity)
 	return
 
-/mob/living/simple_animal/soul/singularity_act()
+/mob/living/simple/soul/singularity_act()
 	return
 
-/mob/living/simple_animal/soul/start_pulling(var/atom/movable/AM)
+/mob/living/simple/soul/start_pulling(var/atom/movable/AM)
 	return

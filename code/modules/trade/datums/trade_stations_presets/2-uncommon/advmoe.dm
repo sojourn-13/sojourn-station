@@ -39,8 +39,8 @@
 	)
 	hidden_inventory = list(
 		"Upgraded Organs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
-			/obj/item/computer_hardware/hard_drive/portable/research_points= good_data("research data disk", list(1, 2), 2000),
+			/obj/item/pc_part/drive/disk/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
+			/obj/item/pc_part/drive/disk/research_points= good_data("research data disk", list(1, 2), 2000),
 			/obj/item/organ_module/active/simple/armshield,
 			/obj/item/organ_module/active/simple/armsmg
 		),

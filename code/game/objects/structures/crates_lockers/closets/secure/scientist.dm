@@ -70,10 +70,10 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/rig/advhazmat/equipped(src)
 	//RD eclsuive disks
-	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/rped/rd(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/computer/rd(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit(src)
+	new /obj/item/pc_part/drive/disk/design/xenobio/rd(src)
+	new /obj/item/pc_part/drive/disk/design/rped/rd(src)
+	new /obj/item/pc_part/drive/disk/design/computer/rd(src)
+	new /obj/item/pc_part/drive/disk/design/genetics_kit(src)
 	//Storage
 	new /obj/item/storage/bag/xenobio(src)
 	new /obj/item/storage/belt/sci(src)

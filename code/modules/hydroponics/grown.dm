@@ -1,5 +1,5 @@
 //Grown foods.
-/obj/item/reagent_containers/food/snacks/grown
+/obj/item/reagent_containers/snacks/grown
 	name = "any grown plant"
 	matter = list(MATERIAL_BIOMATTER = 5)
 	icon = 'icons/obj/hydroponics_products.dmi'
@@ -13,7 +13,7 @@
 	var/potency = -1
 
 
-/obj/item/reagent_containers/food/snacks/grown/New(newloc,planttype,potency_plus)
+/obj/item/reagent_containers/snacks/grown/New(newloc,planttype,potency_plus)
 
 	..()
 	if(!dried_type)
@@ -84,10 +84,10 @@
 	if (seed.materials) matter = seed.materials.Copy()
 	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
-/obj/item/reagent_containers/food/snacks/grown/New()
+/obj/item/reagent_containers/snacks/grown/New()
 	..()
 
-/obj/item/reagent_containers/food/snacks/grown/proc/update_desc()
+/obj/item/reagent_containers/snacks/grown/proc/update_desc()
 
 	if(!seed)
 		return
@@ -156,7 +156,7 @@
 		plant_controller.product_descs["[seed.uid]"] = desc
 	desc += ". Delicious! Probably."
 
-/obj/item/reagent_containers/food/snacks/grown/update_icon()
+/obj/item/reagent_containers/snacks/grown/update_icon()
 	if(!seed || !plant_controller || !plant_controller.plant_icon_cache)
 		return
 	cut_overlays()
@@ -176,7 +176,7 @@
 		plant_controller.plant_icon_cache[icon_key] = plant_icon
 	add_overlay(plant_icon)
 
-/obj/item/reagent_containers/food/snacks/grown/Crossed(var/mob/living/M)
+/obj/item/reagent_containers/snacks/grown/Crossed(var/mob/living/M)
 	if(seed && seed.get_trait(TRAIT_JUICY) == 2)
 		if(istype(M))
 
@@ -198,11 +198,11 @@
 			if(src) qdel(src)
 			return
 
-/obj/item/reagent_containers/food/snacks/grown/throw_impact(atom/hit_atom)
+/obj/item/reagent_containers/snacks/grown/throw_impact(atom/hit_atom)
 	if(seed) seed.thrown_at(src,hit_atom)
 	..()
 
-/obj/item/reagent_containers/food/snacks/grown/attackby(var/obj/item/W, var/mob/user)
+/obj/item/reagent_containers/snacks/grown/attackby(var/obj/item/W, var/mob/user)
 
 	if(seed)
 		if(seed.get_trait(TRAIT_PRODUCES_POWER) && istype(W, /obj/item/stack/cable_coil))
@@ -243,17 +243,17 @@
 					return
 				else if(!isnull(seed.chems["potato"]))
 					to_chat(user, "You slice \the [src] into sticks.")
-					new /obj/item/reagent_containers/food/snacks/rawsticks(get_turf(src))
+					new /obj/item/reagent_containers/snacks/rawsticks(get_turf(src))
 					qdel(src)
 					return
 				else if(!isnull(seed.chems["carrotjuice"]))
 					to_chat(user, "You slice \the [src] into sticks.")
-					new /obj/item/reagent_containers/food/snacks/carrotfries(get_turf(src))
+					new /obj/item/reagent_containers/snacks/carrotfries(get_turf(src))
 					qdel(src)
 					return
 				else if(!isnull(seed.chems["soymilk"]))
 					to_chat(user, "You roughly chop up \the [src].")
-					new /obj/item/reagent_containers/food/snacks/soydope(get_turf(src))
+					new /obj/item/reagent_containers/snacks/soydope(get_turf(src))
 					qdel(src)
 					return
 				else if(seed.get_trait(TRAIT_FLESH_COLOUR))
@@ -261,13 +261,13 @@
 					var/slices = rand(3,5)
 					var/reagents_to_transfer = round(reagents.total_volume/slices)
 					for(var/i=0; i<=slices; i++)
-						var/obj/item/reagent_containers/food/snacks/fruit_slice/F = new(get_turf(src),seed)
+						var/obj/item/reagent_containers/snacks/fruit_slice/F = new(get_turf(src),seed)
 						if(reagents_to_transfer) reagents.trans_to_obj(F,reagents_to_transfer)
 					qdel(src)
 					return
 	..()
 
-/obj/item/reagent_containers/food/snacks/grown/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/reagent_containers/snacks/grown/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	. = ..()
 
 	if(seed && seed.get_trait(TRAIT_STINGS))
@@ -284,7 +284,7 @@
 				user.drop_from_inventory(src)
 			qdel(src)
 
-/obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user as mob)
+/obj/item/reagent_containers/snacks/grown/attack_self(mob/user as mob)
 
 	if(!seed)
 		return
@@ -323,7 +323,7 @@
 			new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(current_turf, seed)
 			qdel(src)
 
-/obj/item/reagent_containers/food/snacks/grown/pre_pickup(mob/user)
+/obj/item/reagent_containers/snacks/grown/pre_pickup(mob/user)
 	if(!seed)
 		return FALSE
 	if(seed.get_trait(TRAIT_STINGS))
@@ -337,7 +337,7 @@
 		seed.do_sting(H,src,pick(BP_R_ARM, BP_L_ARM))
 	return ..()
 
-/obj/item/reagent_containers/food/snacks/fruit_slice
+/obj/item/reagent_containers/snacks/fruit_slice
 	name = "fruit slice"
 	desc = "A slice of some tasty fruit."
 	icon = 'icons/obj/hydroponics_misc.dmi'
@@ -345,7 +345,7 @@
 
 var/list/fruit_icon_cache = list()
 
-/obj/item/reagent_containers/food/snacks/fruit_slice/New(var/newloc, var/datum/seed/S)
+/obj/item/reagent_containers/snacks/fruit_slice/New(var/newloc, var/datum/seed/S)
 	..(newloc)
 	// Need to go through and make a general image caching controller. Todo.
 	if(!istype(S))

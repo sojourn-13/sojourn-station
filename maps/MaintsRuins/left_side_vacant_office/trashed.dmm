@@ -24,7 +24,7 @@
 "e" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
-/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/drinks/cans/waterbottle,
 /obj/structure/cyberplant,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/crew_quarters/techshop)

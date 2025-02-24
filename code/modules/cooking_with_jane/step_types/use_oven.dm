@@ -29,7 +29,7 @@
 
 //Reagents are calculated prior to object creation
 /datum/cooking_with_jane/recipe_step/use_oven/calculate_quality(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
+	var/obj/item/reagent_containers/cwj/container/container = tracker.holder_ref.resolve()
 
 	var/obj/machinery/cooking_with_jane/oven/our_oven = used_item
 
@@ -51,7 +51,7 @@
 
 /datum/cooking_with_jane/recipe_step/use_oven/is_complete(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
+	var/obj/item/reagent_containers/cwj/container/container = tracker.holder_ref.resolve()
 
 	if(container.oven_data[heat] >= time)
 		#ifdef CWJ_DEBUG

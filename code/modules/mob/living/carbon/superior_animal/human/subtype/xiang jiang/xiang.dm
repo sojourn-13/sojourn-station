@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/xiang
+/mob/living/carbon/superior/human/xiang
 	name = "Xiang Peking Operator"
 	desc = "An average height man sporting a orange voidsuit and rebreather. On its shoulder says \"Penal Labor - Pluto Station\". \
 			He is wielding a surplus AK, appearing to be worn and its external componants mutilated."
@@ -55,13 +55,13 @@
 
 	faction = "syndie"	//Temp, don't know what to call this faction
 
-/mob/living/carbon/superior_animal/human/xiang/death()
+/mob/living/carbon/superior/human/xiang/death()
 	..()
 	playsound(loc, 'sound/death_gasps/xiang.ogg', 80)
 	new /obj/effect/decal/cleanable/blood/gibs(loc)
 	qdel(src)
 
-/mob/living/carbon/superior_animal/human/xiang/ronin
+/mob/living/carbon/superior/human/xiang/ronin
 	name = "Xiang Ronin Operator"
 	desc = "A surprisingly tall person within a heavily armored suit, sporting a large frame as if genetically engineered to be like a tank! \
 			Various characters are written across his armor, customized full of Jana writing and old-dead language symbols from Earth."

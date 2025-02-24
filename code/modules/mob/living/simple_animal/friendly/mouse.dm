@@ -1,4 +1,4 @@
-/mob/living/simple_animal/mouse
+/mob/living/simple/mouse
 	name = "rat"
 	real_name = "rat"
 	desc = "It's a small, disgusting rodent, often found being annoying, and aiding in the spread of disease."
@@ -43,7 +43,7 @@
 	can_pull_size = ITEM_SIZE_TINY
 	can_pull_mobs = MOB_PULL_NONE
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 1
 
 	can_burrow = TRUE
@@ -65,11 +65,11 @@
 	var/squeakcooldown = 0
 
 
-/mob/living/simple_animal/mouse/New()
+/mob/living/simple/mouse/New()
 	..()
 	nutrition = rand(max_nutrition*0.25, max_nutrition*0.75)
 
-/mob/living/simple_animal/mouse/Life()
+/mob/living/simple/mouse/Life()
 	if(..())
 
 		if(client)
@@ -88,7 +88,7 @@
 
 
 //Pixel offsetting as they scamper around
-/mob/living/simple_animal/mouse/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+/mob/living/simple/mouse/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	if((. = ..()))
 		if (prob(50))
 			var/new_pixelx = pixel_x
@@ -101,7 +101,7 @@
 			new_pixely = CLAMP(new_pixely, -4, 14)
 			animate(src, pixel_y = new_pixely, time = 1)
 
-/mob/living/simple_animal/mouse/Initialize()
+/mob/living/simple/mouse/Initialize()
 	. = ..()
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
@@ -129,21 +129,21 @@
 		holder_type = /obj/item/holder/mouse/irish
 
 
-/mob/living/simple_animal/mouse/speak_audio()
+/mob/living/simple/mouse/speak_audio()
 	squeak_soft(0)
 
-/mob/living/simple_animal/mouse/beg(var/atom/thing, var/atom/holder)
+/mob/living/simple/mouse/beg(var/atom/thing, var/atom/holder)
 	squeak_soft(0)
 	visible_emote("squeaks timidly, sniffs the air and gazes longingly up at \the [thing.name].",0)
 
-/mob/living/simple_animal/mouse/attack_hand(mob/living/carbon/human/M as mob)
+/mob/living/simple/mouse/attack_hand(mob/living/carbon/human/M as mob)
 	if (src.stat == DEAD)//If the mouse is dead, we don't pet it, we just pickup the corpse on click
 		get_scooped(M, usr)
 		return
 	else
 		..()
 
-/mob/living/simple_animal/mouse/proc/splat()
+/mob/living/simple/mouse/proc/splat()
 	src.health = 0
 	src.death()
 	src.icon_dead = "mouse_[body_color]_splat"
@@ -151,7 +151,7 @@
 
 //Plays a sound.
 //This is triggered when a mob steps on an NPC mouse, or manually by a playermouse
-/mob/living/simple_animal/mouse/proc/squeak(var/manual = 1)
+/mob/living/simple/mouse/proc/squeak(var/manual = 1)
 	if (stat == CONSCIOUS)
 		playsound(src, 'sound/effects/mousesqueek.ogg', 70, 1)
 		if (manual)
@@ -160,7 +160,7 @@
 
 //Plays a random selection of four sounds, at a low volume
 //This is triggered randomly periodically by any mouse, or manually
-/mob/living/simple_animal/mouse/proc/squeak_soft(var/manual = 1)
+/mob/living/simple/mouse/proc/squeak_soft(var/manual = 1)
 	if (stat != DEAD) //Soft squeaks are allowed while sleeping
 		var/list/new_squeaks = last_softsqueak ? soft_squeaks - last_softsqueak : soft_squeaks
 		var/sound = pick(new_squeaks)
@@ -174,7 +174,7 @@
 
 //Plays a loud sound
 //Triggered manually, when a mouse dies, or rarely when its stepped on
-/mob/living/simple_animal/mouse/proc/squeak_loud(var/manual = 0)
+/mob/living/simple/mouse/proc/squeak_loud(var/manual = 0)
 	if (stat == CONSCIOUS)
 
 		if (squeals > 0 || !manual)
@@ -186,7 +186,7 @@
 
 
 //Wrapper verbs for the squeak functions
-/mob/living/simple_animal/mouse/verb/squeak_loud_verb()
+/mob/living/simple/mouse/verb/squeak_loud_verb()
 	set name = "Squeal!"
 	set category = "Abilities"
 
@@ -196,7 +196,7 @@
 
 	squeak_loud(1)
 
-/mob/living/simple_animal/mouse/verb/squeak_soft_verb()
+/mob/living/simple/mouse/verb/squeak_soft_verb()
 	set name = "Soft Squeaking"
 	set category = "Abilities"
 
@@ -206,7 +206,7 @@
 
 	squeak_soft(1)
 
-/mob/living/simple_animal/mouse/verb/squeak_verb()
+/mob/living/simple/mouse/verb/squeak_verb()
 	set name = "Squeak"
 	set category = "Abilities"
 
@@ -217,7 +217,7 @@
 	squeak(1)
 
 
-/mob/living/simple_animal/mouse/Crossed(AM as mob|obj)
+/mob/living/simple/mouse/Crossed(AM as mob|obj)
 	if( ishuman(AM) )
 		if(!stat)
 			var/mob/M = AM
@@ -234,7 +234,7 @@
 
 	..()
 
-/mob/living/simple_animal/mouse/death()
+/mob/living/simple/mouse/death()
 	layer = MOB_LAYER
 	if(ckey || prob(35))
 		squeak_loud(0)//deathgasp
@@ -243,11 +243,11 @@
 
 	..()
 
-/mob/living/simple_animal/mouse/dust()
+/mob/living/simple/mouse/dust()
 	..(anim = "dust_[body_color]", remains = /obj/item/remains/mouse, iconfile = icon)
 
 //Mice can bite mobs, deals 1 damage, and stuns the mouse for a second
-/mob/living/simple_animal/mouse/AltClickOn(A)
+/mob/living/simple/mouse/AltClickOn(A)
 	if (!can_click()) //This has to be here because anything but normal leftclicks doesn't use a click cooldown. It would be easy to fix, but there may be unintended consequences
 		return
 	melee_damage_upper = melee_damage_lower //We set the damage to 1 so we can hurt things
@@ -261,48 +261,48 @@
  * Mouse types
  */
 
-/mob/living/simple_animal/mouse/white
+/mob/living/simple/mouse/white
 	body_color = "white"
 	icon_state = "mouse_white"
 	icon_rest = "mouse_white_sleep"
 	holder_type = /obj/item/holder/mouse/white
 
-/mob/living/simple_animal/mouse/gray
+/mob/living/simple/mouse/gray
 	body_color = "gray"
 	icon_state = "mouse_gray"
 	icon_rest = "mouse_gray_sleep"
 	holder_type = /obj/item/holder/mouse/gray
 
-/mob/living/simple_animal/mouse/brown
+/mob/living/simple/mouse/brown
 	body_color = "brown"
 	icon_state = "mouse_brown"
 	icon_rest = "mouse_brown_sleep"
 	holder_type = /obj/item/holder/mouse/brown
 
-/mob/living/simple_animal/mouse/hooded
+/mob/living/simple/mouse/hooded
 	body_color = "hooded"
 	icon_state = "mouse_hooded"
 	icon_rest = "mouse_hooded_sleep"
 	holder_type = /obj/item/holder/mouse/hooded
 
-/mob/living/simple_animal/mouse/irish
+/mob/living/simple/mouse/irish
 	body_color = "irish"
 	icon_state = "mouse_irish"
 	icon_rest = "mouse_irish_sleep"
 	holder_type = /obj/item/holder/mouse/irish
 
-/mob/living/simple_animal/mouse/brown/Tom
+/mob/living/simple/mouse/brown/Tom
 	name = "Tom"
 	real_name = "Tom"
 	desc = "Jerry the cat is not amused."
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/simple_animal/mouse/brown/Tom/Initialize()
+/mob/living/simple/mouse/brown/Tom/Initialize()
 	. = ..()
 	// Change my name back, don't want to be named Tom (666)
 	name = initial(name)
 	real_name = name
 
-/mob/living/simple_animal/mouse/cannot_use_vents()
+/mob/living/simple/mouse/cannot_use_vents()
 	return

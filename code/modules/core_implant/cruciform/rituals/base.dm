@@ -109,14 +109,14 @@
 	if(prob(5)) //Additional fail chance that hidded from user
 		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
 		return TRUE
-	for (var/mob/living/carbon/superior_animal/S in range(14, H))
+	for (var/mob/living/carbon/superior/S in range(14, H))
 		if (S.stat != DEAD)
 			to_chat(H, SPAN_WARNING("Adversaries are near. You can feel something nasty and hostile."))
 			was_triggired = TRUE
 			break
 
 	if (!was_triggired)
-		for (var/mob/living/simple_animal/hostile/S in range(14, H))
+		for (var/mob/living/simple/hostile/S in range(14, H))
 			if (S.stat != DEAD)
 				to_chat(H, SPAN_WARNING("Adversaries are near. You can feel something nasty and hostile."))
 				was_triggired = TRUE

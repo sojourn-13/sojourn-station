@@ -503,7 +503,7 @@
 	new /obj/item/clothing/shoes/leather/regal(src)
 	new /obj/item/clothing/suit/storage/suitjacket/livesey(src)
 	new /obj/item/clothing/head/costume/livesey(src)
-	new /obj/item/reagent_containers/food/drinks/bottle/rombuty(src) // The words "Rum"...
+	new /obj/item/reagent_containers/drinks/bottle/rombuty(src) // The words "Rum"...
 	new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
@@ -527,9 +527,9 @@
 	new /obj/item/clothing/under/pants/black/outlaw(src)
 	new /obj/item/clothing/suit/storage/rando(src)
 	new /obj/item/clothing/head/costume/halloween/rando(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
+	new /obj/item/reagent_containers/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/snacks/donkpocket(src) // Rando rations.
 
 /obj/item/storage/box/costume/randoarmy
 	name = "outlaw biker costume"

@@ -1,15 +1,15 @@
-/obj/item/computer_hardware/scanner/reagent
+/obj/item/pc_part/scanner/reagent
 	name = "reagent scanner module"
 	desc = "A reagent scanner module. It can scan and analyze various reagents."
 
-/obj/item/computer_hardware/scanner/reagent/can_use_scanner(mob/user, obj/target, proximity = TRUE)
+/obj/item/pc_part/scanner/reagent/can_use_scanner(mob/user, obj/target, proximity = TRUE)
 	if(!..(user, target, proximity))
 		return 0
 	if(!istype(target))
 		return 0
 	return 1
 
-/obj/item/computer_hardware/scanner/reagent/do_on_afterattack(mob/user, obj/target, proximity)
+/obj/item/pc_part/scanner/reagent/do_on_afterattack(mob/user, obj/target, proximity)
 	if(!can_use_scanner(user, target, proximity))
 		return
 	if (!scan_power_use())
