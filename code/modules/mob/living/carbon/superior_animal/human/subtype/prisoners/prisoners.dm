@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/prisoner
+/mob/living/carbon/superior/human/prisoner
 	name = "Escaped Convict Gunman"
 	desc = "An average height man sporting a orange voidsuit and rebreather. On its shoulder says \"Penal Labor - Pluto Station\". \
 			He is wielding a surplus AK, appearing to be worn and its external componants mutilated."
@@ -55,7 +55,7 @@
 
 	faction = "prisoner"
 
-/mob/living/carbon/superior_animal/human/prisoner/melee
+/mob/living/carbon/superior/human/prisoner/melee
 	name = "Escaped Convict Pyscho"
 	desc = "An average height man sporting a orange voidsuit and rebreather. On its shoulder says \"Penal Labor - Pluto Station\". \
 			He is wielding a knife and makeshift shield, pieces of scrap appear to be used to reinforce said shield and his armor."
@@ -77,7 +77,7 @@
 	attack_sound = 'sound/weapons/sharphit.ogg'
 	melee_sharp = TRUE //Eswords and welders
 
-/mob/living/carbon/superior_animal/human/prisoner/elite
+/mob/living/carbon/superior/human/prisoner/elite
 	name = "Escaped Convict Looter"
 	desc = "An average height man sporting a orange voidsuit and rebreather. On its shoulder says \"Penal Labor - Pluto Station\". \
 			He appears to have gotten his hands on a surplus shotgun; it even has Sol-Fed based gun numbers on it."

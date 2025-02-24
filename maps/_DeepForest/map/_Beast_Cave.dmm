@@ -94,7 +94,7 @@
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ax" = (
@@ -176,7 +176,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "aN" = (
-/mob/living/carbon/superior_animal/roach/kaiser,
+/mob/living/carbon/superior/roach/kaiser,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "aO" = (
@@ -337,7 +337,7 @@
 /obj/structure/invislight,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bs" = (
@@ -472,7 +472,7 @@
 	})
 "bN" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -772,7 +772,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "cQ" = (
 /obj/structure/flora/ausbushes/reedbush,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "cR" = (
@@ -883,7 +883,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "dj" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "dk" = (
@@ -1056,7 +1056,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "dT" = (
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "dU" = (
@@ -1173,7 +1173,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "en" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "eo" = (
@@ -1213,7 +1213,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ev" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ew" = (
@@ -1259,7 +1259,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "eF" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/brown,
+/mob/living/simple/hostile/bear/brown,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "eG" = (
@@ -1320,7 +1320,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "eS" = (
-/mob/living/simple_animal/hostile/samak,
+/mob/living/simple/hostile/samak,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "eT" = (
@@ -1350,7 +1350,7 @@
 "eY" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "eZ" = (
@@ -1368,7 +1368,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "fc" = (
 /obj/random/rig/damaged,
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "fd" = (
@@ -1411,7 +1411,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "fl" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/bear/brown,
+/mob/living/simple/hostile/bear/brown,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "fm" = (
@@ -1532,7 +1532,7 @@
 /obj/structure/flora/small/grassa2,
 /obj/structure/bed,
 /obj/item/trash/cigbutt,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "fJ" = (
@@ -1658,7 +1658,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ge" = (
@@ -1667,7 +1667,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gf" = (
@@ -1683,7 +1683,7 @@
 "gh" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gi" = (
@@ -1704,7 +1704,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "gk" = (
 /obj/structure/flora/small/grassa3,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gl" = (
@@ -1843,7 +1843,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gL" = (
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gM" = (
@@ -1865,7 +1865,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "gQ" = (
 /obj/structure/flora/small/busha1,
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gR" = (
@@ -1874,7 +1874,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gS" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gT" = (
@@ -2024,7 +2024,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/random/flora/small_jungle_tree,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -2054,7 +2054,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "hz" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/retaliate/croakerlord,
+/mob/living/simple/hostile/retaliate/croakerlord,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "hA" = (
@@ -2063,7 +2063,7 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "hB" = (
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "hC" = (
@@ -2089,7 +2089,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "hF" = (
 /obj/random/flora/small_jungle_tree,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -2212,7 +2212,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "ib" = (
 /obj/structure/flora/small/busha1,
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ic" = (
@@ -2355,7 +2355,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -2363,7 +2363,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "iC" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "iD" = (
@@ -2408,12 +2408,12 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "iL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "iM" = (
 /obj/structure/flora/ausbushes/palebush,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -2494,7 +2494,7 @@
 "jb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -2717,7 +2717,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mushroom,
+/mob/living/simple/mushroom,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jQ" = (
@@ -2739,7 +2739,7 @@
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jU" = (
@@ -2928,7 +2928,7 @@
 "kC" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "kD" = (
@@ -3188,7 +3188,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/knife,
-/mob/living/simple_animal/hostile/panther,
+/mob/living/simple/hostile/panther,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "ly" = (
@@ -3260,7 +3260,7 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "lJ" = (
 /obj/structure/flora/ausbushes/pointybush,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -3268,10 +3268,10 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "lK" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3354,7 +3354,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "lY" = (
 /obj/structure/flora/big/bush2,
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "lZ" = (
@@ -3814,7 +3814,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "nE" = (
-/mob/living/carbon/superior_animal/roach/fuhrer,
+/mob/living/carbon/superior/roach/fuhrer,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "nF" = (
@@ -3996,7 +3996,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ol" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider,
+/mob/living/carbon/superior/spider,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "om" = (
@@ -4099,12 +4099,12 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oD" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse/midwife,
+/mob/living/carbon/superior/spider/nurse/midwife,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oE" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/tarantula,
+/mob/living/carbon/superior/spider/fortress,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oF" = (
@@ -4121,7 +4121,7 @@
 "oH" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen,
+/mob/living/carbon/superior/spider/nurse/queen,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oI" = (
@@ -4139,7 +4139,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oK" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker,
+/mob/living/carbon/superior/spider/hunter/cloaker,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "oL" = (
@@ -4274,7 +4274,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pj" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
+/mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pk" = (
@@ -4308,7 +4308,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pp" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/hunter,
+/mob/living/carbon/superior/spider/hunter,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pq" = (
@@ -4326,7 +4326,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "ps" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/hunter/viper,
+/mob/living/carbon/superior/spider/hunter/viper,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pt" = (
@@ -4369,7 +4369,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pA" = (
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pB" = (
@@ -4407,13 +4407,13 @@
 "pI" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "pJ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/random/common_oddities/low_chance,
-/mob/living/simple_animal/hostile/dino,
+/mob/living/simple/hostile/dino,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pK" = (
@@ -4434,7 +4434,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "pO" = (
 /obj/structure/flora/big/bush2,
-/mob/living/simple_animal/hostile/dino,
+/mob/living/simple/hostile/dino,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pP" = (
@@ -4488,7 +4488,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pY" = (
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "pZ" = (
@@ -4507,7 +4507,7 @@
 	requires_power = 0
 	})
 "qc" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qd" = (
@@ -4581,7 +4581,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "qq" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /obj/structure/invislight,
@@ -4648,7 +4648,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "qD" = (
@@ -4836,7 +4836,7 @@
 	requires_power = 0
 	})
 "rf" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -5086,7 +5086,7 @@
 	requires_power = 0
 	})
 "rQ" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "rR" = (
@@ -5544,7 +5544,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "tp" = (
 /obj/effect/floor_decal/industrial_plant,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -5666,7 +5666,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -5893,7 +5893,7 @@
 "uw" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ux" = (
@@ -5903,7 +5903,7 @@
 "uy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/carbon/superior_animal/vox/weak,
+/mob/living/carbon/superior/vox/weak,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uz" = (
@@ -5938,7 +5938,7 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "uC" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/vox/weak,
+/mob/living/carbon/superior/vox/weak,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uD" = (
@@ -5965,11 +5965,11 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "uH" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
@@ -6013,7 +6013,7 @@
 /obj/item/stack/material/leather,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /obj/item/stack/material/leather,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
@@ -6116,7 +6116,7 @@
 "vc" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "vd" = (
@@ -6128,12 +6128,12 @@
 "ve" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "vf" = (
 /obj/effect/overlay/water,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vg" = (
@@ -6143,14 +6143,14 @@
 "vh" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vi" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vj" = (
@@ -6160,7 +6160,7 @@
 "vk" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vl" = (
@@ -6178,26 +6178,26 @@
 "vn" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vo" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vp" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vq" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -6218,7 +6218,7 @@
 /obj/item/seeds/mtearseed,
 /obj/item/seeds/mtearseed,
 /obj/structure/bed/padded,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "vu" = (
@@ -6230,7 +6230,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "vw" = (
 /obj/machinery/light/small,
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
@@ -6262,7 +6262,7 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vB" = (
-/mob/living/carbon/superior_animal/ameridian_golem/runtling,
+/mob/living/carbon/superior/ameridian_golem/runtling,
 /turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vC" = (
@@ -6335,11 +6335,11 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vM" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vN" = (
@@ -6371,7 +6371,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vT" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/rob,
+/obj/item/reagent_containers/snacks/donut/stat_buff/rob,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -6457,7 +6457,7 @@
 /turf/simulated/floor/asteroid/dirt/ground,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wf" = (
-/mob/living/carbon/superior_animal/vox/armord,
+/mob/living/carbon/superior/vox/armord,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wg" = (
@@ -6652,7 +6652,7 @@
 	requires_power = 0
 	})
 "wM" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wN" = (
@@ -6735,12 +6735,12 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "xb" = (
 /obj/structure/flora/ausbushes/fernybush,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "xc" = (
 /obj/structure/flora/small/grassa1,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -6802,7 +6802,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "xm" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -6881,7 +6881,7 @@
 "xA" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sunnybush,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -6935,7 +6935,7 @@
 	name = "radioactive dust";
 	color = "#2CFA1F"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -6968,7 +6968,7 @@
 	requires_power = 0
 	})
 "xL" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "xM" = (
@@ -7121,7 +7121,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yk" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -7195,7 +7195,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "yw" = (
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
+/mob/living/carbon/superior/ameridian_golem/behemoth,
 /turf/simulated/floor/snow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "yx" = (
@@ -7364,7 +7364,7 @@
 	requires_power = 0
 	})
 "yY" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -7429,7 +7429,7 @@
 	})
 "zk" = (
 /obj/structure/flora/small/trailrockb5,
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zl" = (
@@ -7588,7 +7588,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zN" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
+/mob/living/carbon/superior/spider/fortress/emperor,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "zO" = (
@@ -7670,7 +7670,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Aa" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /obj/random/cluster/tengolo,
@@ -7704,7 +7704,7 @@
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ag" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ah" = (
@@ -7881,14 +7881,14 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_light)
 "AJ" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "AK" = (
 /obj/item/reagent_containers/glass/beaker/vial,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -7950,7 +7950,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -8031,7 +8031,7 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Bi" = (
-/mob/living/simple_animal/hostile/hell_pig,
+/mob/living/simple/hostile/hell_pig,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Bj" = (
@@ -8313,7 +8313,7 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ce" = (
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
 /obj/item/stack/ore/glass,
@@ -8452,7 +8452,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Cy" = (
 /obj/item/reagent_containers/glass/bucket,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -8499,7 +8499,7 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "CG" = (
-/mob/living/simple_animal/hostile/carp/pike,
+/mob/living/simple/hostile/carp/pike,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "CH" = (
@@ -8533,7 +8533,7 @@
 	})
 "CM" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "CN" = (
@@ -8736,12 +8736,12 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Dt" = (
 /obj/effect/spider/cocoon,
-/mob/living/carbon/superior_animal/vox/armord,
+/mob/living/carbon/superior/vox/armord,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Dv" = (
 /obj/effect/floor_decal/industrial_plant/border_sides,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -8777,7 +8777,7 @@
 	dir = 8
 	},
 /obj/structure/railing/grey,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "DB" = (
@@ -8997,7 +8997,7 @@
 	})
 "El" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/scarybat{
+/mob/living/simple/hostile/scarybat{
 	faction = "sargoyle"
 	},
 /turf/simulated/floor/rock/dark,
@@ -9093,7 +9093,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ey" = (
 /obj/random/flora/jungle_tree,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ez" = (
@@ -9391,19 +9391,19 @@
 	requires_power = 0
 	})
 "Ft" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Fu" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/item/computer_hardware/hard_drive/portable/design/surgery,
+/obj/item/pc_part/drive/disk/design/surgery,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
 "Fw" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -9428,7 +9428,7 @@
 	requires_power = 0
 	})
 "FB" = (
-/mob/living/simple_animal/hostile/carp/shark,
+/mob/living/simple/hostile/carp/shark,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "FC" = (
@@ -9500,7 +9500,7 @@
 "FL" = (
 /obj/effect/spider/stickyweb,
 /obj/item/remains/xeno,
-/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
+/mob/living/carbon/superior/spider/fortress/emperor,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "FM" = (
@@ -9565,7 +9565,7 @@
 	requires_power = 0
 	})
 "FW" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "FX" = (
@@ -9587,7 +9587,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ga" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Gb" = (
@@ -9694,7 +9694,7 @@
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Go" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -9738,7 +9738,7 @@
 	requires_power = 0
 	})
 "Gu" = (
-/mob/living/simple_animal/hostile/scarybat{
+/mob/living/simple/hostile/scarybat{
 	faction = "sargoyle"
 	},
 /turf/simulated/floor/rock/grey,
@@ -9798,7 +9798,7 @@
 	requires_power = 0
 	})
 "GF" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -9907,7 +9907,7 @@
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "GX" = (
-/mob/living/simple_animal/hostile/carp/greatwhite,
+/mob/living/simple/hostile/carp/greatwhite,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "GY" = (
@@ -10084,7 +10084,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "HC" = (
 /obj/effect/floor_decal/industrial_plant,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /obj/structure/snowfall{
 	name = "radioactive dust";
 	color = "#2CFA1F"
@@ -10163,7 +10163,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "HO" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
@@ -10354,7 +10354,7 @@
 	requires_power = 0
 	})
 "Iq" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /obj/effect/spider/cocoon,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -10409,7 +10409,7 @@
 	})
 "Iz" = (
 /obj/structure/flora/small/grassa1,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IA" = (
@@ -10445,7 +10445,7 @@
 /turf/simulated/wall/iron,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IF" = (
-/mob/living/carbon/superior_animal/ameridian_golem,
+/mob/living/carbon/superior/ameridian_golem,
 /turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IG" = (
@@ -10668,7 +10668,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Ju" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -10710,7 +10710,7 @@
 	requires_power = 0
 	})
 "JA" = (
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -10773,7 +10773,7 @@
 	})
 "JH" = (
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -10796,14 +10796,14 @@
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
 "JL" = (
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "JM" = (
-/mob/living/simple_animal/hostile/render/wasprender,
+/mob/living/simple/hostile/render/wasprender,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "JN" = (
@@ -11006,7 +11006,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Kv" = (
 /obj/structure/flora/small/grassa2,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -11034,7 +11034,7 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "KA" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "KB" = (
@@ -11083,13 +11083,13 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "KI" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
 	})
 "KJ" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "KK" = (
@@ -11279,7 +11279,7 @@
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Ln" = (
-/mob/living/carbon/superior_animal/ameridian_golem,
+/mob/living/carbon/superior/ameridian_golem,
 /turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Lo" = (
@@ -11449,7 +11449,7 @@
 	requires_power = 0
 	})
 "LP" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
@@ -11904,7 +11904,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Np" = (
 /obj/effect/spider/cocoon,
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Nq" = (
@@ -11983,7 +11983,7 @@
 	requires_power = 0
 	})
 "NC" = (
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth,
+/mob/living/carbon/superior/ameridian_golem/behemoth,
 /turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ND" = (
@@ -11992,7 +11992,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "NE" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -12030,7 +12030,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "NK" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/beast_cave_light)
 "NL" = (
@@ -12138,7 +12138,7 @@
 	})
 "Ob" = (
 /obj/structure/flora/big/bush2,
-/mob/living/simple_animal/hostile/samak,
+/mob/living/simple/hostile/samak,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Oc" = (
@@ -12253,7 +12253,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/render/malformed,
+/mob/living/simple/hostile/render/malformed,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_idle";
@@ -12330,7 +12330,7 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "OI" = (
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "OJ" = (
@@ -12381,7 +12381,7 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "OR" = (
 /obj/effect/floor_decal/industrial_plant,
-/obj/item/reagent_containers/food/snacks/meat{
+/obj/item/reagent_containers/snacks/meat{
 	icon_state = "rottenmeat"
 	},
 /turf/simulated/floor/industrial,
@@ -12513,7 +12513,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Pm" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Pp" = (
@@ -12543,7 +12543,7 @@
 	name = "radioactive dust";
 	color = "#2CFA1F"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -12585,7 +12585,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/wood_old,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -12786,7 +12786,7 @@
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Qb" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh,
+/obj/item/reagent_containers/snacks/donut/stat_buff/tgh,
 /turf/simulated/floor/industrial/checker_large,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -12909,7 +12909,7 @@
 	requires_power = 0
 	})
 "Qw" = (
-/mob/living/carbon/superior_animal/ameridian_golem/runtling,
+/mob/living/carbon/superior/ameridian_golem/runtling,
 /turf/simulated/floor/asteroid/shale,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Qx" = (
@@ -13024,7 +13024,7 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "QR" = (
@@ -13166,7 +13166,7 @@
 	})
 "Rh" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Ri" = (
@@ -13478,7 +13478,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Sm" = (
-/mob/living/carbon/superior_animal/vox/wasp,
+/mob/living/carbon/superior/vox/wasp,
 /obj/structure/scrap/science,
 /turf/simulated/floor/rock/seafloor,
 /area/nadezhda/outside/forest/beast_cave_dark)
@@ -13585,7 +13585,7 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "SC" = (
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SD" = (
@@ -13614,7 +13614,7 @@
 "SH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/mushroom,
+/mob/living/simple/mushroom,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "SI" = (
@@ -13858,7 +13858,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Tx" = (
-/mob/living/simple_animal/hostile/scarybat{
+/mob/living/simple/hostile/scarybat{
 	faction = "sargoyle"
 	},
 /turf/simulated/floor/rock,
@@ -13919,7 +13919,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "TF" = (
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_animal/hostile/snake,
+/mob/living/simple/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "TG" = (
@@ -14193,7 +14193,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Us" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/parttoolpack{
+/obj/item/pc_part/drive/disk/design/parttoolpack{
 	name = "Sakaba TM-908 Utility Modificationss"
 	},
 /obj/item/storage/deferred/toolmod,
@@ -14233,7 +14233,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -14371,7 +14371,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -14394,7 +14394,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Va" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock,
@@ -14618,7 +14618,7 @@
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "VF" = (
 /obj/structure/flora/small/trailrocka5,
-/mob/living/simple_animal/hostile/scarybat{
+/mob/living/simple/hostile/scarybat{
 	faction = "sargoyle"
 	},
 /turf/simulated/floor/rock,
@@ -14654,7 +14654,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/fixed,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -14764,7 +14764,7 @@
 /turf/simulated/floor/fixed/shale/dark,
 /area/nadezhda/outside/forest/beast_cave_light)
 "VY" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/beast_cave_light)
 "VZ" = (
@@ -14773,7 +14773,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Wa" = (
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Wb" = (
@@ -14795,7 +14795,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Wg" = (
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -14818,7 +14818,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Wk" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock/grey,
@@ -14869,7 +14869,7 @@
 /obj/effect/floor_decal/industrial/warningwhite/corner{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -14935,7 +14935,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "WG" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "WH" = (
@@ -15080,8 +15080,8 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Xg" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0
@@ -15155,7 +15155,7 @@
 	requires_power = 0
 	})
 "Xv" = (
-/mob/living/simple_animal/hostile/sargoyle,
+/mob/living/simple/hostile/sargoyle,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Xw" = (
@@ -15266,7 +15266,7 @@
 "XQ" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -15290,7 +15290,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "XU" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "XV" = (
@@ -15731,7 +15731,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Zo" = (
-/mob/living/simple_animal/hostile/frog,
+/mob/living/simple/hostile/frog,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Zp" = (
@@ -15801,7 +15801,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial,
 /area/nadezhda/dungeon/outside/prepper/alpha{
 	requires_power = 0

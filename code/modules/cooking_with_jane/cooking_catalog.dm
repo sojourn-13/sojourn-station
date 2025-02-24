@@ -179,7 +179,7 @@
 			sprite_name = sanitize_css_class_name("[our_recipe.product_type]")
 			I = getFlatTypeIcon(our_recipe.product_type)
 		else if(our_recipe.reagent_id)
-			var/obj/item/reagent_containers/food/snacks/dollop/test_dollop = new(null, our_recipe.reagent_id, 1)
+			var/obj/item/reagent_containers/snacks/dollop/test_dollop = new(null, our_recipe.reagent_id, 1)
 
 			sprite_name = sanitize_css_class_name("[test_dollop.type][test_dollop.color]")
 			I = getFlatIcon(test_dollop)

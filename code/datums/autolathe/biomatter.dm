@@ -4,12 +4,12 @@
 
 /datum/design/bioprinter/meat
 	name = "Meat"
-	build_path = /obj/item/reagent_containers/food/snacks/meat
+	build_path = /obj/item/reagent_containers/snacks/meat
 	materials = list(MATERIAL_BIOMATTER = 5)
 
 /datum/design/bioprinter/milk
 	name = "Milk"
-	build_path = /obj/item/reagent_containers/food/drinks/milk
+	build_path = /obj/item/reagent_containers/drinks/milk
 
 /datum/design/bioprinter/soap
 	name = "Soap"

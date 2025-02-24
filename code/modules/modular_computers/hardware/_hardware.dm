@@ -1,4 +1,4 @@
-/obj/item/computer_hardware
+/obj/item/pc_part
 	name = "Hardware"
 	desc = "Unknown Hardware."
 	icon = 'icons/obj/modular_components.dmi'
@@ -16,7 +16,7 @@
 	var/malfunction_probability = 10// Chance of malfunction when the component is damaged
 	var/usage_flags = PROGRAM_ALL
 
-/obj/item/computer_hardware/attackby(obj/item/W, mob/living/user)
+/obj/item/pc_part/attackby(obj/item/W, mob/living/user)
 	// Multitool. Runs diagnostics
 	if(QUALITY_PULSING in W.tool_qualities)
 		if(W.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = STAT_COG))
@@ -47,22 +47,22 @@
 
 
 // Called on multitool click, prints diagnostic information to the user.
-/obj/item/computer_hardware/proc/diagnostics(mob/user)
+/obj/item/pc_part/proc/diagnostics(mob/user)
 	to_chat(user, "Hardware Integrity Test... (Corruption: [damage]/[max_damage]) [damage > damage_failure ? "FAIL" : damage > damage_malfunction ? "WARN" : "PASS"]")
 
-/obj/item/computer_hardware/Initialize()
+/obj/item/pc_part/Initialize()
 	. = ..()
 	w_class = hardware_size
 	if(istype(loc, /obj/item/modular_computer))
 		holder2 = loc
 
-/obj/item/computer_hardware/Destroy()
+/obj/item/pc_part/Destroy()
 	if(holder2)
 		holder2.uninstall_component(src)
 	return ..()
 
 // Handles damage checks
-/obj/item/computer_hardware/proc/check_functionality()
+/obj/item/pc_part/proc/check_functionality()
 	// Turned off
 	if(!enabled)
 		return FALSE
@@ -76,7 +76,7 @@
 	// Good to go.
 	return TRUE
 
-/obj/item/computer_hardware/examine(mob/user)
+/obj/item/pc_part/examine(mob/user)
 	. = ..()
 	if(damage > damage_failure)
 		to_chat(user, SPAN_WARNING("It seems to be severely damaged!"))
@@ -85,16 +85,16 @@
 	else if(damage)
 		to_chat(user, SPAN_NOTICE("It seems to be slightly damaged."))
 
-/obj/item/computer_hardware/drop_location()
+/obj/item/pc_part/drop_location()
 	return holder2 ? holder2.drop_location() : ..()
 
 // Damages the component. Contains necessary checks. Negative damage "heals" the component.
-/obj/item/computer_hardware/proc/take_damage(amount)
+/obj/item/pc_part/proc/take_damage(amount)
 	damage += round(amount) 					// We want nice rounded numbers here.
 	damage = between(0, damage, max_damage)		// Clamp the value.
 
 //Called when the component is installed or turned on
-/obj/item/computer_hardware/proc/enabled()
+/obj/item/pc_part/proc/enabled()
 
 //Called when the component is uninstalled or turned off
-/obj/item/computer_hardware/proc/disabled()
+/obj/item/pc_part/proc/disabled()

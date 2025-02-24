@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/greyson/custodian
+/mob/living/carbon/superior/robot/gp/custodian
 	name = "Greyson Positronic Custodial Drone"
 	desc = "Old and weathered Greyson Positronic drone. It seems to be malfunctioning and hostile."
 	icon = 'icons/mob/build_a_drone.dmi'
@@ -14,14 +14,14 @@
 	cleaning = TRUE //we do clean prase us!
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior/young/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/deadeye = 3,
+		/datum/stat_modifier/mob/living/carbon/superior/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 2,
+		/datum/stat_modifier/mob/living/carbon/superior/lambertian = 10,
 	)
 
 	light_range = 3
@@ -36,7 +36,7 @@
 	var/tool = "laser"
 	var/tooltype = "os"
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/New()
+/mob/living/carbon/superior/robot/gp/custodian/New()
 	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
@@ -50,7 +50,7 @@
 	if(prob(10))
 		cell_drop = /obj/item/cell/medium
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/update_icon()
+/mob/living/carbon/superior/robot/gp/custodian/update_icon()
 	. = ..()
 	cut_overlays()
 	var/image/shell_I = image(icon, src, "shell_[shell_type]")
@@ -64,7 +64,7 @@
 	add_overlay(tool_I)
 	add_overlay(radio_I)
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/death()
+/mob/living/carbon/superior/robot/gp/custodian/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
@@ -83,7 +83,7 @@
 	qdel(src)
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef
+/mob/living/carbon/superior/robot/gp/custodian/chef
 	name = "Greyson Positronic Service Drone"
 	desc = "Old and weathered Greyson Positronic drone. This one looks like it used to cook. It seems to be malfunctioning and hostile."
 	tool = "flamer"
@@ -96,20 +96,20 @@
 	range_telegraph = "lurks back, getting ready to splash flaming oil at"
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior/young/robotic = 15,
 		/datum/stat_modifier/health/mult/positive/low = 10,
 		/datum/stat_modifier/health/mult/negative/low = 10,
 		/datum/stat_modifier/health/mult/positive/medium = 5,
 		/datum/stat_modifier/health/mult/negative/medium = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/slowdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/lambertian = 10,
 	)
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
+/mob/living/carbon/superior/robot/gp/custodian/chef/New()
 	. = ..()
 	if(prob(5))
 		drop2 = /obj/item/oddity/common/old_radio
@@ -121,13 +121,13 @@
 		cell_drop = /obj/item/cell/medium
 
 /* - This made them have natural armor against lasers that stacked, not that good also they get full fire proof as they are a robot
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef/adjustFireLoss(var/amount)
+/mob/living/carbon/superior/robot/gp/custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	fireloss = min(max(fireloss + amount/2, 0),(maxHealth*2)) //Slightly resistant to fire, because it would blow apart otherwise
 */
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer
+/mob/living/carbon/superior/robot/gp/custodian/engineer
 	name = "Greyson Positronic Engineering Drone"
 	desc = "Old and weathered Greyson Positronic drone. This one has a laser welder. It seems to be malfunctioning and hostile."
 	tool = "laser"
@@ -141,14 +141,14 @@
 	cleaning = FALSE
 	range_telegraph = "turns it's laser welder to"
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer/emp_act(severity)
+/mob/living/carbon/superior/robot/gp/custodian/engineer/emp_act(severity)
 	..()
 	if(rapid)
 		rapid = FALSE
 	if(prob(95) && ranged)
 		ranged = FALSE
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer/New()
+/mob/living/carbon/superior/robot/gp/custodian/engineer/New()
 	. = ..()
 	if(prob(5))
 		drop2 = /obj/random/tool_upgrade/rare

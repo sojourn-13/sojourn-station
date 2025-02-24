@@ -226,7 +226,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/church/rook
+	build_path = /mob/living/carbon/superior/robot/church/rook
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
@@ -241,7 +241,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/mob/knight
 	name = "Knight Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/church/knight
+	build_path = /mob/living/carbon/superior/robot/church/knight
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/mob/pawn
 	name = "Pawn Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/church/pawm
+	build_path = /mob/living/carbon/superior/robot/church/pawm
 	materials = list(
 		/obj/item/stack/material/steel = 10,
 		/obj/item/stack/material/plastic = 5,
@@ -272,7 +272,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/mob/bishop
 	name = "Bishop Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/church/bishop
+	build_path = /mob/living/carbon/superior/robot/church/bishop
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 15,

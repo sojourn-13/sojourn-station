@@ -83,7 +83,7 @@
 		call(src,triggerproc)(M)
 		return
 
-	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+	if(istype(M, /mob/living/simple/hostile/poporavtomat))
 		visible_message(SPAN_NOTICE("[M] steps over the \the [src] but still triggeres its payload."))
 		triggered = 1
 		call(src,triggerproc)(M)
@@ -130,7 +130,7 @@
 	triggered = 1
 	playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
 	M.Weaken(3)
-	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
+	new /mob/living/carbon/superior/spider/fortress/emperor(src.loc)
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing
@@ -155,7 +155,7 @@
 	triggered = 1
 	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
 	M.Weaken(3)
-	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	new /mob/living/carbon/superior/spider/fortress/burrowing(src.loc)
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing/New()

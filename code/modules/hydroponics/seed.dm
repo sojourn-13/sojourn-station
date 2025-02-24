@@ -143,7 +143,7 @@
 		if(ismouse(target))
 			new /obj/item/remains/mouse(get_turf(target))
 			qdel(target)
-		else if(istype(target, /mob/living/simple_animal/lizard))
+		else if(istype(target, /mob/living/simple/lizard))
 			new /obj/item/remains/lizard(get_turf(target))
 			qdel(target)
 		return
@@ -782,12 +782,12 @@
 			if(has_mob_product)
 				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name,potency_mod)
+				product = new /obj/item/reagent_containers/snacks/grown(get_turf(user),name,potency_mod)
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!ismob(product))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-					if(istype(product,/obj/item/reagent_containers/food))
-						var/obj/item/reagent_containers/food/food = product
+					if(istype(product,/obj/item/reagent_containers))
+						var/obj/item/reagent_containers/snacks/food = product
 						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
 
 			if(mysterious)
@@ -803,14 +803,13 @@
 			//Handle spawning in living, mobile products.
 			if(isliving(product))
 				product.visible_message(SPAN_NOTICE("The pod disgorges [product]!"))
-				if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
-					var/mob/living/simple_animal/mushroom/mush = product
+				if(istype(product,/mob/living/simple/mushroom)) // Gross.
+					var/mob/living/simple/mushroom/mush = product
 					mush.seed = src
 
 /datum/seed/proc/selfharvest(turf/location,yield_mod,harvest_sample,force_amount)
 	if(!location)
 		return
-
 
 		//This may be a new line. Update the global if it is.
 	if(name == "new line" || !(name in plant_controller.seeds))
@@ -839,12 +838,12 @@
 			product = new has_mob_product(location,name)
 
 		else
-			product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(location),name)
+			product = new /obj/item/reagent_containers/snacks/grown(get_turf(location),name)
 		if(get_trait(TRAIT_PRODUCT_COLOUR))
 			if(!ismob(product))
 				product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-				if(istype(product,/obj/item/reagent_containers/food))
-					var/obj/item/reagent_containers/food/food = product
+				if(istype(product,/obj/item/reagent_containers))
+					var/obj/item/reagent_containers/snacks/food = product
 					food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
 		if(mysterious)
 			product.name += "?"

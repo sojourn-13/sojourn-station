@@ -1,11 +1,11 @@
-/mob/living/carbon/superior_animal/roach/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/roach/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		var/mob/living/carbon/human/H
 		if(ishuman(L))
 			H = L
 		if(H)
-			var/obj/item/reagent_containers/food/snacks/grown/howdoitameahorseinminecraft = H.get_active_hand()
+			var/obj/item/reagent_containers/snacks/grown/howdoitameahorseinminecraft = H.get_active_hand()
 			if(istype(howdoitameahorseinminecraft))
 				if(try_tame(H, howdoitameahorseinminecraft))
 					return FALSE //If they manage to tame the roach, stop the attack

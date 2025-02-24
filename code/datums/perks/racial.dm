@@ -606,7 +606,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/used = FALSE // Not deleting after use since the description is useful.
-	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
+	var/follower_type = /mob/living/carbon/superior/fungi/shroom
 
 /datum/perk/mushroom_follower/activate()
 	var/mob/living/carbon/human/user = usr
@@ -617,7 +617,7 @@
 		return FALSE
 	used = TRUE
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
-	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	var/mob/living/carbon/superior/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
 	mushroom.following = user
 	mushroom.last_followed = user
@@ -631,7 +631,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/used = FALSE // Not deleting after use since the description is useful.
-	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
+	var/follower_type = /mob/living/carbon/superior/fungi/slime
 
 /datum/perk/slime_follower/activate()
 	var/mob/living/carbon/human/user = usr
@@ -643,7 +643,7 @@
 		return FALSE
 	used = TRUE
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
-	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	var/mob/living/carbon/superior/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
 	mushroom.following = user
 	mushroom.last_followed = user

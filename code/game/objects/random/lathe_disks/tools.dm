@@ -4,10 +4,10 @@
 
 /obj/random/lathe_disk/tools/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/misc = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/adv_tools = 3,
+				/obj/item/pc_part/drive/disk/design/misc = 6,
+				/obj/item/pc_part/drive/disk/design/adv_tools = 3,
 				/obj/random/lathe_disk/medical = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/security = 5))
+				/obj/item/pc_part/drive/disk/design/security = 5))
 
 /obj/random/lathe_disk/tools/low_chance
 	name = "low chance advanced lathe disk"
@@ -21,10 +21,10 @@
 
 /obj/random/lathe_disk/medical/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/misc = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/medical = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/medical/advanced = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/surgery = 1))
+				/obj/item/pc_part/drive/disk/design/misc = 4,
+				/obj/item/pc_part/drive/disk/design/medical = 3,
+				/obj/item/pc_part/drive/disk/design/medical/advanced = 2,
+				/obj/item/pc_part/drive/disk/design/surgery = 1))
 
 /obj/random/lathe_disk/medical/low_chance
 	name = "low chance advanced lathe disk"

@@ -16,7 +16,7 @@
 
 	var/burn_damage = 4 // How much damage does it deal to the buckled mob? || APPLY TO EVERY BODYPART, MULTIPLY BY 7 TO GET THE REAL AMOUNT OF DAMAGE
 
-	var/obj/item/reagent_containers/food/snacks/meat/current_steak = null // The steak it is currently cooking
+	var/obj/item/reagent_containers/snacks/meat/current_steak = null // The steak it is currently cooking
 	var/cooking_time = 10 // The number of tick it take to cook the steak
 	var/time = 0 // Timer to cook the steam
 
@@ -51,7 +51,7 @@
 			else
 				return ..()
 
-	else if(istype(W, /obj/item/reagent_containers/food/snacks/meat) && grill == TRUE && !current_steak) // MEAT !
+	else if(istype(W, /obj/item/reagent_containers/snacks/meat) && grill == TRUE && !current_steak) // MEAT !
 		current_steak = W // Start cooking the steak
 		insert_item(W, user) // insert the steak inside the fire
 
@@ -128,7 +128,7 @@
 					qdel(current_steak) // Delete the steak
 					current_steak = null // Free up the variable for the next step
 					time = initial(time) // Reset the clock
-					new /obj/item/reagent_containers/food/snacks/meatsteak(src.loc) // Cooked Steak !
+					new /obj/item/reagent_containers/snacks/meatsteak(src.loc) // Cooked Steak !
 					visible_message(SPAN_NOTICE("The steak finish cooking.")) // Little message
 		else // We ran out of fuel.
 			extinguish() // The fire is no more.

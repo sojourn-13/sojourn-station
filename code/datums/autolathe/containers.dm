@@ -1,34 +1,34 @@
 /datum/design/autolathe/container/drinkingglass
 	name = "drinking glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass
 
 /datum/design/autolathe/container/drinkingglass_shot
 	name = "shot glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/shot
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass/shot
 
 /datum/design/autolathe/container/drinkingglass_pint
 	name = "pint glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/pint
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass/pint
 
 /datum/design/autolathe/container/drinkingglass_doble
 	name = "double glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/doble
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass/doble
 
 /datum/design/autolathe/container/drinkingglass_mug
 	name = "mug glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/mug
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass/mug
 
 /datum/design/autolathe/container/drinkingglass_wine
 	name = "wine glass"
-	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/wineglass
+	build_path = /obj/item/reagent_containers/drinks/drinkingglass/wineglass
 
 /datum/design/autolathe/container/carafe
 	name = "glass pitcher"
-	build_path = /obj/item/reagent_containers/food/drinks/carafe
+	build_path = /obj/item/reagent_containers/drinks/carafe
 
 /datum/design/autolathe/container/insulated_pitcher
 	name = "insulated pitcher"
-	build_path = /obj/item/reagent_containers/food/drinks/pitcher
+	build_path = /obj/item/reagent_containers/drinks/pitcher
 
 /datum/design/autolathe/container/bucket
 	name = "bucket"
@@ -48,7 +48,7 @@
 
 /datum/design/autolathe/container/jar
 	name = "jar"
-	build_path = /obj/item/reagent_containers/food/drinks/jar
+	build_path = /obj/item/reagent_containers/drinks/jar
 
 /datum/design/autolathe/container/syringe
 	name = "syringe"

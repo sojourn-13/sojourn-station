@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/tank
+/mob/living/carbon/superior/roach/tank
 	name = "Panzer Roach"
 	desc = "A monstrous, dog-sized cockroach. This one looks more robust than others."
 	icon_state = "panzer"
@@ -9,7 +9,7 @@
 	move_to_delay = 7
 	mob_size = MOB_MEDIUM
 	density = TRUE
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/panzer
 	knockdown_odds = 3
 	get_stat_modifier = TRUE //we're big boys, we get a little mod as a treat.
 
@@ -17,5 +17,5 @@
 	armor_divisor = 1.2
 
 // Panzers won't slip over on water or soap.
-/mob/living/carbon/superior_animal/roach/tank/slip(slipped_on,stun_duration=8)
+/mob/living/carbon/superior/roach/tank/slip(slipped_on,stun_duration=8)
 	return FALSE

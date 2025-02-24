@@ -1,4 +1,4 @@
-/obj/item/reagent_containers/food/snacks/donut
+/obj/item/reagent_containers/snacks/donut
 	name = "donut"
 	desc = "A simple pastry of bread and sugar."
 	icon_state = "donut1"
@@ -8,7 +8,7 @@
 	center_of_mass = list("x"=13, "y"=16)
 	nutriment_desc = list("sweetness" = 2, "donut" = 3)
 
-/obj/item/reagent_containers/food/snacks/donut/normal
+/obj/item/reagent_containers/snacks/donut/normal
 	name = "donut"
 	desc = "A simple pastry of bread and sugar."
 	icon_state = "donut1"
@@ -17,7 +17,7 @@
 	nutriment_amt = 1
 	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
 
-/obj/item/reagent_containers/food/snacks/donut/normal/Initialize(mapload)
+/obj/item/reagent_containers/snacks/donut/normal/Initialize(mapload)
 	. = ..()
 	if(prob(30))
 		icon_state = "donut2"
@@ -26,7 +26,7 @@
 		reagents.add_reagent("sprinkles", 2)
 		center_of_mass = list("x"=19, "y"=16)
 
-/obj/item/reagent_containers/food/snacks/donut/chaos
+/obj/item/reagent_containers/snacks/donut/chaos
 	name = "chaos donut"
 	desc = "A donut that was made using random additives."
 	icon_state = "donut1"
@@ -37,7 +37,7 @@
 	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 12)
 
-/obj/item/reagent_containers/food/snacks/donut/chaos/Initialize(mapload)
+/obj/item/reagent_containers/snacks/donut/chaos/Initialize(mapload)
 	. = ..()
 	var/chaosselect = pick(1,2,3,4,5,6,7,8,9,10)
 	switch(chaosselect)
@@ -68,7 +68,7 @@
 		reagents.add_reagent("sprinkles", 2)
 
 
-/obj/item/reagent_containers/food/snacks/donut/jelly
+/obj/item/reagent_containers/snacks/donut/jelly
 	name = "jelly donut"
 	desc = "A donut with a jelly filling."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -80,7 +80,7 @@
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 
-/obj/item/reagent_containers/food/snacks/donut/slimejelly/Initialize(mapload)
+/obj/item/reagent_containers/snacks/donut/slimejelly/Initialize(mapload)
 	. = ..()
 	if(prob(30))
 		icon_state = "jdonut2"
@@ -88,7 +88,7 @@
 		name = "Frosted Jelly Donut"
 		reagents.add_reagent("sprinkles", 2)
 
-/obj/item/reagent_containers/food/snacks/donut/slimejelly
+/obj/item/reagent_containers/snacks/donut/slimejelly
 	name = "jelly donut"
 	desc = "A donut with a jelly filling."
 	icon_state = "jdonut1"
@@ -100,7 +100,7 @@
 	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 
-/obj/item/reagent_containers/food/snacks/donut/slimejelly/Initialize(mapload)
+/obj/item/reagent_containers/snacks/donut/slimejelly/Initialize(mapload)
 	. = ..()
 	if(prob(30))
 		icon_state = "jdonut2"
@@ -108,7 +108,7 @@
 		name = "Frosted Jelly Donut"
 		reagents.add_reagent("sprinkles", 2)
 
-/obj/item/reagent_containers/food/snacks/donut/cherryjelly
+/obj/item/reagent_containers/snacks/donut/cherryjelly
 	name = "jelly donut"
 	desc = "A donut with a jelly filling."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -120,7 +120,7 @@
 	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 
-/obj/item/reagent_containers/food/snacks/donut/cherryjelly/Initialize(mapload)
+/obj/item/reagent_containers/snacks/donut/cherryjelly/Initialize(mapload)
 	. = ..()
 	if(prob(30))
 		icon_state = "jdonut2"
@@ -129,7 +129,7 @@
 		reagents.add_reagent("sprinkles", 2)
 
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff
+/obj/item/reagent_containers/snacks/donut/stat_buff
 	name = "Masterpiece Donut"
 	desc = "A donut made to boost whoever eats it mood and work productivity."
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
@@ -144,7 +144,7 @@
 	preloaded_reagents = list("sprinkles" = 2, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 10)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
+/obj/item/reagent_containers/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
 	..()
 	if(eater.stats)
 		for(var/stat in stats_buff)
@@ -155,7 +155,7 @@
 			eater.stats.addTempStat(stat, buff_power, buff_time, "donut")
 			to_chat(eater, SPAN_NOTICE("Your knowledge of [stat] is increased for a short period of time. Make use of it."))
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/mec
+/obj/item/reagent_containers/snacks/donut/stat_buff/mec
 	name = "Yellow Masterpiece Donut"
 	desc = "A sour citrus flavored donut. A choice for mechanics."
 	icon_state = "donut_mec"
@@ -164,7 +164,7 @@
 	stats_buff = list(STAT_MEC)
 	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1, "preservatives" = 2)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/cog
+/obj/item/reagent_containers/snacks/donut/stat_buff/cog
 	name = "Purple Masterpiece Donut"
 	desc = "A overly-sweet artificial grape taste. An intellectual's choice."
 	icon_state = "donut_cog"
@@ -173,7 +173,7 @@
 	stats_buff = list(STAT_COG)
 	preloaded_reagents = list("sprinkles" = 1, "grapejuice" = 1, "preservatives" = 2)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/bio
+/obj/item/reagent_containers/snacks/donut/stat_buff/bio
 	name = "Green Masterpiece Donut"
 	desc = "A fresh spearmint flavor. Perfect for a doctor."
 	icon_state = "donut_bio"
@@ -182,7 +182,7 @@
 	stats_buff = list(STAT_BIO)
 	preloaded_reagents = list("sprinkles" = 1, "mint" = 1, "preservatives" = 2)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/rob
+/obj/item/reagent_containers/snacks/donut/stat_buff/rob
 	name = "Brown Masterpiece Donut"
 	desc = "A near-chocolate tasting donut. Leaves a robust after taste."
 	icon_state = "donut_rob"
@@ -191,7 +191,7 @@
 	stats_buff = list(STAT_ROB)
 	preloaded_reagents = list("sprinkles" = 1, "coco" = 1, "preservatives" = 2)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh
+/obj/item/reagent_containers/snacks/donut/stat_buff/tgh
 	name = "Cream Masterpiece Donut"
 	desc = "The classic donut. Specially panders to tough people."
 	icon_state = "donut_tgh"
@@ -199,7 +199,7 @@
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_TGH)
 
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/vig
+/obj/item/reagent_containers/snacks/donut/stat_buff/vig
 	name = "Blue Masterpiece Donut"
 	desc = "A tart blueberry taste. A go-to choice for the vigilant."
 	icon_state = "donut_vig"

@@ -26,11 +26,11 @@
 		return TRUE
 	if(istype(O, /obj/item/storage/freezer))
 		return TRUE
-	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/omg))
+	if(istype(O, /obj/item/pc_part/drive/disk/design/omg))
 		return TRUE
-	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/medical))
+	if(istype(O, /obj/item/pc_part/drive/disk/design/medical))
 		return TRUE
-	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/surgery))
+	if(istype(O, /obj/item/pc_part/drive/disk/design/surgery))
 		return TRUE	
 	return FALSE
 
@@ -63,7 +63,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 6
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 1,
+		/obj/item/pc_part/drive/disk/design/omg/teratoma = 1,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 2,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 2,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 2
@@ -75,7 +75,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 200,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 0,
+		/obj/item/pc_part/drive/disk/design/omg/teratoma = 0,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 300,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 300
@@ -155,7 +155,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 6
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare = 1,
+		/obj/item/pc_part/drive/disk/design/omg/teratoma_rare = 1,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 2,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 2,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 2
@@ -167,7 +167,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 300,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 300,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 200,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare = 0,
+		/obj/item/pc_part/drive/disk/design/omg/teratoma_rare = 0,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 400,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 400
@@ -185,7 +185,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/touch = 3
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 1,
+		/obj/item/pc_part/drive/disk/design/omg/simple = 1,
 		/obj/item/organ/internal/scaffold/aberrant/gastric = 3,
 		/obj/item/organ/internal/scaffold/aberrant/damage_response = 3
 	)
@@ -194,7 +194,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood = 400,
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/ingest = 400,
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/touch = 400,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 0,
+		/obj/item/pc_part/drive/disk/design/omg/simple = 0,
 		/obj/item/organ/internal/scaffold/aberrant/gastric = 400,
 		/obj/item/organ/internal/scaffold/aberrant/damage_response = 400
 	)
@@ -217,7 +217,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney = 3
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic = 1,
+		/obj/item/pc_part/drive/disk/design/omg/alcoholic = 1,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater = 5,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic = 5,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy = 5
@@ -233,7 +233,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/stomach = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney = 750,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic = 0,
+		/obj/item/pc_part/drive/disk/design/omg/alcoholic = 0,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy = 500
@@ -257,7 +257,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle = 6
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/addict = 1,
+		/obj/item/pc_part/drive/disk/design/omg/addict = 1,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/mobster = 5,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/chemist = 5,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary = 5
@@ -273,7 +273,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/blood_vessel = 600,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/liver = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle = 500,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/addict = 0,
+		/obj/item/pc_part/drive/disk/design/omg/addict = 0,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/mobster = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/chemist = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary = 500

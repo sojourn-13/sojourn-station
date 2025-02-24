@@ -161,27 +161,27 @@
 	if(L.nutrition > 100)
 		if(ishuman(L))
 			var/slab_name = L.name
-			var/slab_type = /obj/item/reagent_containers/food/snacks/meat
+			var/slab_type = /obj/item/reagent_containers/snacks/meat
 
 			var/mob/living/carbon/human/H = L
 			slab_name = H.real_name
-			slab_type = /obj/item/reagent_containers/food/snacks/meat/human
+			slab_type = /obj/item/reagent_containers/snacks/meat/human
 			H.nutrition -= 100
 
 			if(H.isMonkey())
-				slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
+				slab_type = /obj/item/reagent_containers/snacks/meat/monkey
 
-			var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
+			var/obj/item/reagent_containers/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
 			new_meat.name = "[slab_name] [new_meat.name]"
 
 			new_meat.reagents.add_reagent("nutriment", 10)
 
 	if(issuperioranimal(L))
-		var/mob/living/carbon/superior_animal/SA = L
+		var/mob/living/carbon/superior/SA = L
 		SA.harvest(SA) //Self harvest
 		return
 	if(isanimal(L))
-		var/mob/living/simple_animal/SA = L
+		var/mob/living/simple/SA = L
 		SA.harvest(SA) //Self harvest
 		return
 	return

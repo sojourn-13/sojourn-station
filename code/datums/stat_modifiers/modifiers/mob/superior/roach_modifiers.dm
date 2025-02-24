@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified
+/datum/stat_modifier/mob/living/carbon/superior/biosilicified
 
 	armor_adjustment = list(
 	melee = 2,
@@ -15,7 +15,7 @@
 
 	description = "Networks of wafer-thin crystalline lattice span the surface of this one, both hardening itself towards blunt trauma and improving its own penetration abilities."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian
+/datum/stat_modifier/mob/living/carbon/superior/lambertian
 
 	armor_adjustment = list(
 	energy = 2,

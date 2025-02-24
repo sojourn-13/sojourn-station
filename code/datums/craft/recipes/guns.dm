@@ -234,7 +234,7 @@
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
 		list(/obj/item/stock_parts/subspace/crystal, 1),
-		list(/obj/item/computer_hardware/led, 1),
+		list(/obj/item/pc_part/led, 1),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(/obj/item/stock_parts/capacitor, 1, "time" = 5),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),

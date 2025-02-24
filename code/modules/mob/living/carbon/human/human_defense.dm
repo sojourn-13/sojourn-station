@@ -652,22 +652,22 @@ uniquic_armor_act
 		//message_admins("bluecross_regaloutfit (Pass)")
 		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
 		var/list/mobs_we_hitless = list(
-			/mob/living/carbon/superior_animal/robot,
-			/mob/living/simple_animal/hostile/hivebot,
+			/mob/living/carbon/superior/robot,
+			/mob/living/simple/hostile/hivebot,
 			/obj/machinery/porta_turret,
 			/obj/machinery/power/os_turret,
-			/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant,
-			/mob/living/simple_animal/hostile/megafauna/one_star,
-			/mob/living/simple_animal/hostile/republicon,
-			/mob/living/carbon/superior_animal/sentinal_seeker,
-			/mob/living/carbon/superior_animal/roach/elektromagnetisch, //beep boop
-			/mob/living/carbon/superior_animal/roach/nanite,
-			/mob/living/simple_animal/hostile/naniteswarm,
-			/mob/living/simple_animal/hostile/commanded/nanomachine,
-			/mob/living/simple_animal/hostile/viscerator,
+			/mob/living/simple/hostile/megafauna/hivemind_tyrant,
+			/mob/living/simple/hostile/megafauna/one_star,
+			/mob/living/simple/hostile/republicon,
+			/mob/living/carbon/superior/sentinal_seeker,
+			/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
+			/mob/living/carbon/superior/roach/nanite,
+			/mob/living/simple/hostile/naniteswarm,
+			/mob/living/simple/hostile/commanded/nanomachine,
+			/mob/living/simple/hostile/viscerator,
 			/mob/living/silicon,
-			/mob/living/simple_animal/hostile/hivemind,
-			/mob/living/simple_animal/hostile/retaliate/malf_drone
+			/mob/living/simple/hostile/hivemind,
+			/mob/living/simple/hostile/retaliate/malf_drone
 			)
 		if(A)
 			if(istype(A, /obj/item/projectile))

@@ -18,7 +18,7 @@ Will gain EMP/Bomb protection
 This monster is borderline unkillable and will make players upset
 
 */
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star
+/mob/living/carbon/superior/robot/gp/true_boss_data_star
 	name = "Data Star"
 	desc = "A clearly well built drone by Greyson, it sports a hologram eye that scans everything around. \
 	The unending feeling of dread builds up around this with its pure calculating killing gaze."
@@ -102,7 +102,7 @@ This monster is borderline unkillable and will make players upset
 
 	allowed_stat_modifiers = list()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/New()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/New()
 	//All my fault? I daresay its thanks to me!
 	if(!GLOB.data_star_data_bool["ALLOW_DATA_STAR_SPAWNING"] || GLOB.data_star_data_bool["DATA_STAR_SPAWNED"])
 		..()
@@ -118,14 +118,14 @@ This monster is borderline unkillable and will make players upset
 		..()
 		update_floating()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/update_sight()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/update_sight()
 	if(stat == DEAD || eyeobj)
 		update_dead_sight()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/update_floating()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/update_floating()
 	make_floating(1)
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/handled_mode()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/handled_mode()
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 	faction = "greyson"
@@ -235,12 +235,12 @@ This monster is borderline unkillable and will make players upset
 		return
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/give_data(number)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/give_data(number)
 	data_count += number
 	handled_mode()
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/updatehealth()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/updatehealth()
 	set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS) //wall hacks
 	health = maxHealth - getFireLoss() - getBruteLoss() //We cant have o2/clone/toxin/pain damage affecet us at all
 	activate_ai()
@@ -265,7 +265,7 @@ This monster is borderline unkillable and will make players upset
 		sorrow -= 13
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/adjustBruteLoss(amount)
 	if(amount >= (1000 / damage_cap_devider))
 		if(amount >= 1000)
 			to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
@@ -280,7 +280,7 @@ This monster is borderline unkillable and will make players upset
 	..()
 	data_count += (amount*0.5)
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustFireLoss(amount)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/adjustFireLoss(amount)
 	if(amount >= (1000 / damage_cap_devider))
 		if(amount >= 1000)
 			to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
@@ -294,7 +294,7 @@ This monster is borderline unkillable and will make players upset
 	..()
 	data_count += (amount*0.5)
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/bullet_act(obj/item/projectile/proj)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/bullet_act(obj/item/projectile/proj)
 	var/gp_questionmark = findtext(proj.serial_type_index_bullet, "GP")
 	if(gp_questionmark || proj.allow_greyson_mods)
 		data_count += 120
@@ -329,7 +329,7 @@ This monster is borderline unkillable and will make players upset
 
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/emp_act(severity)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/emp_act(severity)
 	data_count += rand(-100, 500)
 	call_folks(5)
 	turrets_can_build += 1
@@ -339,7 +339,7 @@ This monster is borderline unkillable and will make players upset
 		return
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/ex_act(severity)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/ex_act(severity)
 	data_count += rand(80, 100)
 	call_folks(2)
 	turrets_can_build += 1
@@ -349,7 +349,7 @@ This monster is borderline unkillable and will make players upset
 		return
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/try_n_build()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/try_n_build()
 	if(!able_to_build)
 		return
 	if(prob(1) && walls_to_make > 0)
@@ -363,7 +363,7 @@ This monster is borderline unkillable and will make players upset
 
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/try_n_build_turret()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/try_n_build_turret()
 	var/list/validtargets = list()	//list of valid tiles build the turret in
 	var/target = FALSE
 
@@ -378,7 +378,7 @@ This monster is borderline unkillable and will make players upset
 
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/call_folks(amount = 1)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/call_folks(amount = 1)
 	if(!able_to_build)
 		return
 
@@ -406,7 +406,7 @@ This monster is borderline unkillable and will make players upset
 
 	return
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_stunned()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/handle_stunned()
 	if(data_count >= 1200 && stunned)
 		turrets_can_build += 1
 		SetParalysis(0)
@@ -419,7 +419,7 @@ This monster is borderline unkillable and will make players upset
 		data_count += 50 //We REALLY dislike being stunned
 		..()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_weakened()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/handle_weakened()
 	if(data_count >= 1200 && weakened)
 		turrets_can_build += 1
 		SetParalysis(0)
@@ -432,11 +432,11 @@ This monster is borderline unkillable and will make players upset
 		data_count += 50 //We REALLY dislike being weakened
 		..()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/gib()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/gib()
 	return //Sorry cheater
 
 //Crayon magic cant cheese this boss
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/dust(anim = icon_dust, remains = dust_remains)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/dust(anim = icon_dust, remains = dust_remains)
 	if(marked_for_death)
 		allow_teleporters = TRUE
 		qdel(src)
@@ -447,14 +447,14 @@ This monster is borderline unkillable and will make players upset
 		qdel(src)
 	dieing += 1
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/death()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/death()
 	if(stat == DEAD)
 		return FALSE
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
 	bluespace_entropy(1200, get_turf(src), TRUE) //Ye... It went far away
-	new /obj/item/reagent_containers/food/snacks/icecream(src.loc)
+	new /obj/item/reagent_containers/snacks/icecream(src.loc)
 	if(dieing <= 1)
 		allow_teleporters = TRUE
 		dieing += 1
@@ -462,7 +462,7 @@ This monster is borderline unkillable and will make players upset
 		..()
 
 //I do hope you knew what you were getting into by spawning this fine fellow
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/Destroy()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/Destroy()
 	if(kcorp_moduals == 0 || marked_for_death)
 		..()
 		return
@@ -472,7 +472,7 @@ This monster is borderline unkillable and will make players upset
 	if(built_up_rage > 2)
 		to_chat(world, "<b><font color='#ffaa00'>Qdel shield successful, Data Collected.</font></b>")
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/forceMove(atom/destination, var/special_event, glide_size_override=0)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/forceMove(atom/destination, var/special_event, glide_size_override=0)
 	var/turf/currentTurf = src.loc
 	for(var/obj/structure/multiz/allow_move in currentTurf.contents)
 		if(istype(allow_move, /obj/structure/multiz))
@@ -489,7 +489,7 @@ This monster is borderline unkillable and will make players upset
 		to_chat(world, "<b><font color='#ffaa00'>Force Move shield successful, Data Collected.</font></b>")
 
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/attack_hand(mob/living/carbon/human/M as mob)
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/attack_hand(mob/living/carbon/human/M as mob)
 	switch(M.a_intent)
 		if (I_GRAB)
 			M.Weaken(3)
@@ -499,14 +499,14 @@ This monster is borderline unkillable and will make players upset
 			return 1
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/death()
+/mob/living/carbon/superior/robot/gp/death()
 	.=..()
 	if(.)
 		if(faction == "greyson")
-			for(var/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/DS in range(src,8))
+			for(var/mob/living/carbon/superior/robot/gp/true_boss_data_star/DS in range(src,8))
 				DS.collect_data_on_dead_allie()
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/collect_data_on_dead_allie()
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/proc/collect_data_on_dead_allie()
 	sorrow += 1
 	data_count += 5 //we learned more of what makes them able to resist
 	//Reconize are wounds, repair areself for seeing are morality

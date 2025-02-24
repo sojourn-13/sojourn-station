@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/doTargetMessage()
+/mob/living/carbon/superior/psi/doTargetMessage()
 	. = ..()
 
 	if(last_noise <= (world.time) && aggro_noise)
@@ -11,7 +11,7 @@
 		spawn(3) if(src) animate(src, alpha = 155, time = 2)
 		spawn(3) if(src) animate(src, alpha = 255, time = 2)
 
-/mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
+/mob/living/carbon/superior/psi/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		playsound(src.loc, list('sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg', 'sound/hallucinations/growl3.ogg'), 120, 1)
@@ -57,7 +57,7 @@
 	new respawn_mob_type(my_little_location)
 
 
-/mob/living/carbon/superior_animal/psi_monster/gib(var/anim = icon_gib, var/do_gibs = 1)
+/mob/living/carbon/superior/psi/gib(var/anim = icon_gib, var/do_gibs = 1)
 	if (!anim)
 		anim = 0
 
@@ -69,7 +69,7 @@
 
 //Chaos intraction
 //Another complx mob that has quite a few bells and whistles!
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/attackby(obj/item/I, mob/user)
+/mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/attackby(obj/item/I, mob/user)
 	..()
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(user))
@@ -86,7 +86,7 @@
 					//Ok now turn back to face are foe!
 					dir = reverse_direction(H.dir)
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/findTarget(prioritizeCurrent = FALSE)
+/mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/findTarget(prioritizeCurrent = FALSE)
 	. = ..()
 	if(GLOB.chaos_level >= 2)
 		var/atom/targetted_mob = (target_mob?.resolve())

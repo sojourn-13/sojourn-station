@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "ai" = (
@@ -45,7 +45,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "es" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "fj" = (
@@ -218,7 +218,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "zr" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "zs" = (
@@ -257,7 +257,7 @@
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "Eg" = (
@@ -301,7 +301,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "GL" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "GR" = (
@@ -333,7 +333,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "Iz" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "IO" = (
@@ -345,11 +345,11 @@
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "JP" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -373,12 +373,12 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "NH" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "NR" = (
 /obj/structure/bed/chair/office/dark,
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/burned_outpost)

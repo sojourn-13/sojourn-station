@@ -1,4 +1,4 @@
-/obj/item/reagent_containers/food/drinks/drinkingglass
+/obj/item/reagent_containers/drinks/drinkingglass
 	name = MATERIAL_GLASS
 	desc = "Your standard drinking glass."
 	icon_state = "glass"
@@ -9,34 +9,34 @@
 	unacidable = 1 //glass
 	var/morf_glass = TRUE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/shot
+/obj/item/reagent_containers/drinks/drinkingglass/shot
 	name = "shot"
 	desc = "Your standard drinking glass."
 	icon_state = "shot"
 	volume = 5
 	morf_glass = FALSE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/mug
+/obj/item/reagent_containers/drinks/drinkingglass/mug
 	name = "glass mug"
 	desc = "Your standard drinking glass."
 	icon_state = "glass_mug"
 	volume = 30
 	morf_glass = FALSE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/pint
+/obj/item/reagent_containers/drinks/drinkingglass/pint
 	name = "pint"
 	desc = "Your standard drinking glass."
 	icon_state = "pint"
 	volume = 40
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass
 	name = "wineglass"
 	desc = "Your standard drinking glass."
 	icon_state = "wineglass"
 	volume = 15
 	morf_glass = FALSE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/doble
+/obj/item/reagent_containers/drinks/drinkingglass/doble
 	name = "double"
 	desc = "Your non-standard drinking glass."
 	icon_state = "double"
@@ -44,7 +44,7 @@
 	morf_glass = FALSE
 
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/update_icon()
+/obj/item/reagent_containers/drinks/drinkingglass/update_icon()
 	name = initial(name)
 	desc = initial(desc)
 	icon_state = initial(icon_state)
@@ -80,8 +80,8 @@
 			add_overlay(filling)
 
 // for /obj/machinery/vending/sovietsoda
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda
+/obj/item/reagent_containers/drinks/drinkingglass/soda
 	preloaded_reagents = list("sodawater" = 50)
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/cola
+/obj/item/reagent_containers/drinks/drinkingglass/cola
 	preloaded_reagents = list("cola" = 50)

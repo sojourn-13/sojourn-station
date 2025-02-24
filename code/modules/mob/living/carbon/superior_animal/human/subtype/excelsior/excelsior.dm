@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/excelsior
+/mob/living/carbon/superior/human/excelsior
 	name = "Excelsior Slave"
 	desc = "An excelsior rank and file, often converted unwillingly, making them nothing more than cannon fodder as they fight against the implant controlling them. These ones are too far gone, \
 	worn down from years of abuse, death is the only mercy they can have."
@@ -46,24 +46,24 @@
 
 //Drops
 	meat_amount = 1
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
 	drop_items = list(/obj/item/gun/projectile/makarov)
 	faction = "excelsior"
 
-/mob/living/carbon/superior_animal/human/excelsior/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
+/mob/living/carbon/superior/human/excelsior/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
 
-/mob/living/carbon/superior_animal/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
+/mob/living/carbon/superior/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
 	return
 
-/mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior/human/excelsior/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
+/mob/living/carbon/superior/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
 	projectiletype = /obj/item/projectile/bullet/pistol_35
 	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
@@ -72,7 +72,7 @@
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
 	mags_left = 2 //2+1
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak
+/mob/living/carbon/superior/human/excelsior/excel_ak
 	icon_state = "excel_ak"
 	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
@@ -81,7 +81,7 @@
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 	mags_left = 2 //2+1
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez
+/mob/living/carbon/superior/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
 	projectiletype = /obj/item/projectile/bullet/rifle_75
@@ -91,7 +91,7 @@
 	mag_type = /obj/item/ammo_magazine/rifle_75_short/empty
 	mags_left = 2 //2+1
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd
+/mob/living/carbon/superior/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
 	projectiletype = /obj/item/projectile/bullet/magnum_40
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
@@ -100,7 +100,7 @@
 	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
 	mags_left = 2 //2+1
 
-/mob/living/carbon/superior_animal/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
+/mob/living/carbon/superior/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
@@ -108,7 +108,7 @@
 	qdel(src)
 	return
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield
 	icon_state = "excel_hammer_shield"
 	maxHealth = 150 * EXCELSIOR_HEALTH_MOD //More hp do to shield
 	health = 150 * EXCELSIOR_HEALTH_MOD
@@ -129,7 +129,7 @@
 
 	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/hammer/excelsior_hammer)
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton
 	icon_state = "excel_batton_shield"
 	give_cooldown_odds = 80
 	give_cooldown_amount = 12 //DEFAULT_ATTACK_COOLDOWN is 8 so this is 50% longer
@@ -140,7 +140,7 @@
 	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/baton/excelbaton)
 
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/UnarmedAttack(atom/A, proximity)
 	. = ..()
 	if(!.)
 		return
@@ -154,13 +154,13 @@
 			L.visible_message(SPAN_DANGER("\the [src] zaps \the [L]!"))
 			L.damage_through_armor(rand(melee_damage_lower,melee_damage_upper), HALLOSS, BP_CHEST, ARMOR_MELEE, used_weapon = src)
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(block_chance))
 		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
 
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)
 		return
 	if(prob(block_chance))

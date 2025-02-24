@@ -55,7 +55,7 @@
 	var/geneticpoints = 10
 	var/autoassign_groups = FALSE
 
-	var/mob/living/simple_animal/spider_core/associated_spider = null
+	var/mob/living/simple/spider_core/associated_spider = null
 
 	owner_verbs = list(
 		/mob/living/carbon/human/proc/carrion_transform,
@@ -252,7 +252,7 @@
 			CS.return_mind()
 
 		owner.faction = initial(owner.faction)
-		associated_spider = new /mob/living/simple_animal/spider_core(owner.loc)
+		associated_spider = new /mob/living/simple/spider_core(owner.loc)
 		owner.mind?.transfer_to(associated_spider)
 		..()
 		forceMove(associated_spider)
@@ -423,7 +423,7 @@
 			to_chat(src, SPAN_WARNING("You can only tear flesh out of humanoids!"))
 			return
 
-	if(istype(food, /obj/item/organ) || istype(food, /obj/item/reagent_containers/food/snacks/meat))
+	if(istype(food, /obj/item/organ) || istype(food, /obj/item/reagent_containers/snacks/meat))
 		var/geneticpointgain = 0
 		var/chemgain = 0
 		var/taste_description = ""
@@ -462,7 +462,7 @@
 				chemgain = 5
 				taste_description = "limbs are satisfying."
 
-		else if(istype(food, /obj/item/reagent_containers/food/snacks/meat/human))
+		else if(istype(food, /obj/item/reagent_containers/snacks/meat/human))
 			geneticpointgain = 2
 			chemgain = 5
 			taste_description = "human meat is satisfying."
@@ -510,9 +510,9 @@
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			for(var/i = 1, i <= 4 ,i++) //4 per burrow
 				var/obj/structure/burrow/origin = SSmigration.choose_burrow_target(null, TRUE, 100)
-				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-					/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
-					/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
+				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior/spider = 4,\
+					/mob/living/carbon/superior/spider/nurse = 2,\
+					/mob/living/carbon/superior/spider/hunter = 2))
 				new spider_to_spawn(B)
 				origin.migrate_to(B, 3 SECONDS, 0)
 		organ.last_call = world.time
@@ -648,9 +648,9 @@
 	..()
 
 /obj/structure/spider_nest/proc/spawn_spider()
-	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-		/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
-		/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
+	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior/spider = 4,\
+		/mob/living/carbon/superior/spider/nurse = 2,\
+		/mob/living/carbon/superior/spider/hunter = 2))
 	new spider_to_spawn(loc)
 	visible_message(SPAN_WARNING("A spider spews out of \The [src]"))
 	spider_spawns--

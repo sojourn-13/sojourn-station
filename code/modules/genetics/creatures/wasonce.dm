@@ -3,7 +3,7 @@ Boss of this maints.
 Has ability of every roach.
 */
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce
+/mob/living/carbon/superior/psi/wasonce
 	name = "Was Once"
 	desc = "A burbling mass of bones, flesh, and regret. Its strength is matched only by the maddened suffering it endures."
 	icon = 'icons/mob/genetics/wasonce.dmi'
@@ -75,7 +75,7 @@ Has ability of every roach.
 	var/lethal_to_captive = FALSE
 	var/real_mutator = TRUE
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/New(var/mob/living/victim)
+/mob/living/carbon/superior/psi/wasonce/New(var/mob/living/victim)
 	..()
 
 	injector = new(src)
@@ -104,7 +104,7 @@ Has ability of every roach.
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 
 // NOM
-/mob/living/carbon/superior_animal/psi_monster/wasonce/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/wasonce/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		var/mob/living/carbon/human/H
@@ -127,7 +127,7 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed, deathmessage = "shrieks in its death as it violently bursts into a shower of gibs!")
+/mob/living/carbon/superior/psi/wasonce/death(gibbed, deathmessage = "shrieks in its death as it violently bursts into a shower of gibs!")
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()
@@ -139,7 +139,7 @@ Has ability of every roach.
 	..()
 	qdel(src) //Delete you!
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
+/mob/living/carbon/superior/psi/wasonce/Life()
 
 	if(captives.len)
 		for(var/mob/living/carbon/human/captive in captives)
@@ -167,7 +167,7 @@ Has ability of every roach.
 			captive.adjustFireLoss(5)
 	..()
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/return_air_for_internal_lifeform()
+/mob/living/carbon/superior/psi/wasonce/return_air_for_internal_lifeform()
 	//assume that the cryo cell has some kind of breath mask or something that
 	//draws from the cryo tube's environment, instead of the cold internal air.
 	if(loc)
@@ -175,7 +175,7 @@ Has ability of every roach.
 	else
 		return null
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()
+/mob/living/carbon/superior/psi/wasonce/findTarget()
 	var/atom/best_target = null
 	var/distance_weighting = 0
 
@@ -190,7 +190,7 @@ Has ability of every roach.
 					best_target = O
 		return best_target
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/isValidAttackTarget(var/atom/O)
+/mob/living/carbon/superior/psi/wasonce/isValidAttackTarget(var/atom/O)
 	if (isliving(O))
 		var/mob/living/L = O
 		if((L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
@@ -212,5 +212,5 @@ Has ability of every roach.
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant) / 4
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/slip(var/slipped_on)
+/mob/living/carbon/superior/psi/wasonce/slip(var/slipped_on)
 	return FALSE

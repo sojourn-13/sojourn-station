@@ -1,4 +1,4 @@
-/mob/living/simple_animal/space_worm
+/mob/living/simple/space_worm
 	name = "space worm segment"
 	desc = "A part of a space worm."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -34,8 +34,8 @@
 
 	speed = -1
 
-	var/mob/living/simple_animal/space_worm/previous //next/previous segments, correspondingly
-	var/mob/living/simple_animal/space_worm/next     //head is the nextest segment
+	var/mob/living/simple/space_worm/previous //next/previous segments, correspondingly
+	var/mob/living/simple/space_worm/next     //head is the nextest segment
 
 	var/stomachProcessProbability = 50
 	var/digestionProbability = 20
@@ -44,7 +44,7 @@
 	var/atom/currentlyEating //what the worm is currently eating
 	var/eatingDuration = 0 //how long he's been eating it for
 
-/mob/living/simple_animal/space_worm/head
+/mob/living/simple/space_worm/head
 	name = "space worm head"
 	icon_state = "spacewormhead"
 	icon_dead = "spaceworm_dead"
@@ -58,17 +58,17 @@
 
 	animate_movement = SLIDE_STEPS
 
-/mob/living/simple_animal/space_worm/head/New(var/location, var/segments = 6)
+/mob/living/simple/space_worm/head/New(var/location, var/segments = 6)
 	. = ..()
 
-	var/mob/living/simple_animal/space_worm/current = src
+	var/mob/living/simple/space_worm/current = src
 
 	for(var/i = 1 to segments)
-		var/mob/living/simple_animal/space_worm/newSegment = new /mob/living/simple_animal/space_worm(loc)
+		var/mob/living/simple/space_worm/newSegment = new /mob/living/simple/space_worm(loc)
 		current.Attach(newSegment)
 		current = newSegment
 
-/mob/living/simple_animal/space_worm/head/update_icon()
+/mob/living/simple/space_worm/head/update_icon()
 	if(stat == CONSCIOUS || stat == UNCONSCIOUS)
 		icon_state = "spacewormhead[previous?1:0]"
 		if(previous)
@@ -76,7 +76,7 @@
 	else
 		icon_state = "spacewormheaddead"
 
-/mob/living/simple_animal/space_worm/Life()
+/mob/living/simple/space_worm/Life()
 	..()
 
 	if(next && !(next in view(src,1)))
@@ -95,19 +95,19 @@
 
 	return
 
-/mob/living/simple_animal/space_worm/Destroy() //if a chunk a destroyed, make a new worm out of the split halves
+/mob/living/simple/space_worm/Destroy() //if a chunk a destroyed, make a new worm out of the split halves
 	if(previous)
 		previous.Detach()
 	. = ..()
 
-/mob/living/simple_animal/space_worm/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+/mob/living/simple/space_worm/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	var/attachementNextPosition = loc
 	if(..())
 		if(previous)
 			previous.Move(attachementNextPosition, glide_size_override=glide_size_override)
 		update_icon()
 
-/mob/living/simple_animal/space_worm/Bump(atom/obstacle)
+/mob/living/simple/space_worm/Bump(atom/obstacle)
 	if(currentlyEating != obstacle)
 		currentlyEating = obstacle
 		eatingDuration = 0
@@ -120,7 +120,7 @@
 
 	return
 
-/mob/living/simple_animal/space_worm/update_icon() //only for the sake of consistency with the other update icon procs
+/mob/living/simple/space_worm/update_icon() //only for the sake of consistency with the other update icon procs
 	if(stat == CONSCIOUS || stat == UNCONSCIOUS)
 		if(previous) //midsection
 			icon_state = "spaceworm[get_dir(src,previous) | get_dir(src,next)]" //see 3 lines below
@@ -132,7 +132,7 @@
 
 	return
 
-/mob/living/simple_animal/space_worm/proc/AttemptToEat(var/atom/target)
+/mob/living/simple/space_worm/proc/AttemptToEat(var/atom/target)
 	if(istype(target,/turf/simulated/wall))
 		var/turf/simulated/wall/W = target
 		if((!W.reinf_material && eatingDuration >= 100) || eatingDuration >= 200) //need 20 ticks to eat an rwall, 10 for a regular one
@@ -146,7 +146,7 @@
 
 	return 0
 
-/mob/living/simple_animal/space_worm/proc/Attach(var/mob/living/simple_animal/space_worm/attachement)
+/mob/living/simple/space_worm/proc/Attach(var/mob/living/simple/space_worm/attachement)
 	if(!attachement)
 		return
 
@@ -155,9 +155,9 @@
 
 	return
 
-/mob/living/simple_animal/space_worm/proc/Detach(die = 0)
-	var/mob/living/simple_animal/space_worm/newHead = new /mob/living/simple_animal/space_worm/head(loc,0)
-	var/mob/living/simple_animal/space_worm/newHeadPrevious = previous
+/mob/living/simple/space_worm/proc/Detach(die = 0)
+	var/mob/living/simple/space_worm/newHead = new /mob/living/simple/space_worm/head(loc,0)
+	var/mob/living/simple/space_worm/newHeadPrevious = previous
 
 	previous = null //so that no extra heads are spawned
 
@@ -168,7 +168,7 @@
 
 	qdel(src)
 
-/mob/living/simple_animal/space_worm/proc/ProcessStomach()
+/mob/living/simple/space_worm/proc/ProcessStomach()
 	for(var/atom/movable/stomachContent in contents)
 		if(prob(digestionProbability))
 			if(istype(stomachContent,/obj/item/stack)) //converts to plasma, keeping the stack value

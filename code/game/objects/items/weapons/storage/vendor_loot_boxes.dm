@@ -9,9 +9,9 @@
 /obj/item/storage/box/vendor_lootbox/populate_contents()
 	if(prob(10)) //Small double chance to get a decent theme pack. First pack, colony survival pack.
 		if(prob(50))
-			new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+			new /obj/item/reagent_containers/snacks/openable/mre(src)
 		else
-			new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
+			new /obj/item/reagent_containers/snacks/openable/mre/alt(src)
 		new /obj/item/tool/knife/dagger(src)
 		new /obj/item/stack/medical/bruise_pack/advanced(src)
 		new /obj/item/stack/medical/ointment/advanced(src)
@@ -42,7 +42,7 @@
 	else if(prob(10)) //Time to kick ass!
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
-		new /obj/item/reagent_containers/food/snacks/candy_drop_red(src)
+		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	else
@@ -67,7 +67,7 @@
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
-		new /obj/item/reagent_containers/food/snacks/candy_drop_red(src)
+		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	else
@@ -92,7 +92,7 @@
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
-		new /obj/item/reagent_containers/food/snacks/candy_drop_red(src)
+		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	else

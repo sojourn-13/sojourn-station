@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/fungi/slime
+/mob/living/carbon/superior/fungi/slime
 	name = "Mold-Slime"
 	desc = "A mold-slime, produced by the mycus, these creatures are known for being immensely strong and incredibly durable, but short sighted and rather dimwitted. The bottom half is a slime-like core \
 	but the cap is a hardened plate equal to a steel shield in density."
@@ -23,7 +23,7 @@
 		agony = 10
 	)
 
-/mob/living/carbon/superior_animal/fungi/slime/New()
+/mob/living/carbon/superior/fungi/slime/New()
 	var/picked_name = "[pick("Obsidian","Rock","Iron","Shield","War","Thunk","Brick","Khan","Cutter","Knuck","Kor","Art","Moch","Krak")]"
 	name = "Mold-Slime [picked_name]"
 	..()

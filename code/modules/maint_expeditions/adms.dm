@@ -12,7 +12,7 @@
 	circuit = /obj/item/circuitboard/adms
 	var/soundcooldown = 2
 	var/active = FALSE
-	var/obj/item/computer_hardware/hard_drive/portable/inserted_disk //Any portable drive works. When inserted, the adms installs the research point program
+	var/obj/item/pc_part/drive/disk/inserted_disk //Any portable drive works. When inserted, the adms installs the research point program
 	var/datum/computer_file/binary/research_points/inserted_disk_file //A ref to the research_points program
 	var/obj/item/cell/large/cell
 	//Upgrades
@@ -126,7 +126,7 @@
 	sleep(9)
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	if(emagged)
-		new /mob/living/carbon/superior_animal/roach/kaiser(src.loc)
+		new /mob/living/carbon/superior/roach/kaiser(src.loc)
 		visible_message(SPAN_DANGER("[src] get destroyed as a Kaiser emerge from underneath it!"))
 		Destroy()
 		return
@@ -166,7 +166,7 @@
 				new /obj/random/cluster/termite_no_despawn_hoard(burstup)
 	return
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the adms, but it starts with an empty one!
+/obj/item/pc_part/drive/disk/research_points/adms //any research disk works in the adms, but it starts with an empty one!
 	min_points = 0
 	max_points = 0
 
@@ -224,7 +224,7 @@
 
 /obj/machinery/exploration/adms/attackby(obj/item/I, mob/user as mob)
 	..()
-	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))//if the item is a portable disk
+	if(istype(I, /obj/item/pc_part/drive/disk))//if the item is a portable disk
 		if(inserted_disk)//and we already have a portable disk
 			to_chat(user, "The adms already has a disk inserted.")//fail out
 		else

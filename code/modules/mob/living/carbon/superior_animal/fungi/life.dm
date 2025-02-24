@@ -1,2 +1,2 @@
-/mob/living/carbon/superior_animal/fungi/Life()
+/mob/living/carbon/superior/fungi/Life()
 	..()

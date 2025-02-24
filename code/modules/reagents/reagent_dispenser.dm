@@ -251,7 +251,7 @@
 	volume = 500
 	starting_reagent = "water"
 	var/cups = 20
-	var/cup_type = /obj/item/reagent_containers/food/drinks/sillycup
+	var/cup_type = /obj/item/reagent_containers/drinks/sillycup
 	sanity_damage = 0.1 //Talk around these RP!
 
 /obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)

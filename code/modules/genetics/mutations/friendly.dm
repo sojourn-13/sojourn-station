@@ -13,9 +13,9 @@
 
 /datum/genetics/mutation/friendly/onMobImplant()
 	..()
-	if(istype(container.holder, /mob/living/carbon/superior_animal))
+	if(istype(container.holder, /mob/living/carbon/superior))
 		isvalid = TRUE
-		var/mob/living/carbon/superior_animal/greater = container.holder
+		var/mob/living/carbon/superior/greater = container.holder
 
 		was_colony_friend = greater.colony_friend
 		greater.colony_friend = TRUE
@@ -35,9 +35,9 @@
 		for (var/mob/living/carbon/human/ally in range(10, get_turf(container.holder)))
 			greater.friends += ally
 
-	else if(istype(container.holder, /mob/living/simple_animal))
+	else if(istype(container.holder, /mob/living/simple))
 		isvalid = TRUE
-		var/mob/living/simple_animal/lesser = container.holder
+		var/mob/living/simple/lesser = container.holder
 
 		was_colony_friend = lesser.colony_friend
 		lesser.colony_friend = TRUE
@@ -48,8 +48,8 @@
 		old_faction = lesser.faction
 		lesser.faction = "neutral"
 
-		if(istype(container.holder, /mob/living/simple_animal/hostile))
-			var/mob/living/simple_animal/hostile/hostie = container.holder
+		if(istype(container.holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/hostie = container.holder
 
 			was_destroying_surroundings = hostie.destroy_surroundings
 			hostie.destroy_surroundings = FALSE
@@ -75,8 +75,8 @@
 	if(!isvalid)
 		return
 
-	if(istype(container.holder, /mob/living/carbon/superior_animal))
-		var/mob/living/carbon/superior_animal/greater = container.holder
+	if(istype(container.holder, /mob/living/carbon/superior))
+		var/mob/living/carbon/superior/greater = container.holder
 		greater.colony_friend = was_colony_friend
 		greater.friendly_to_colony = was_friendly_to_colony
 		greater.faction = old_faction
@@ -85,14 +85,14 @@
 		greater.environment_smash = was_smashing
 
 
-	else if(istype(container.holder, /mob/living/simple_animal))
-		var/mob/living/simple_animal/lesser = container.holder
+	else if(istype(container.holder, /mob/living/simple))
+		var/mob/living/simple/lesser = container.holder
 		lesser.colony_friend = was_colony_friend
 		lesser.friendly_to_colony = was_friendly_to_colony
 		lesser.faction = old_faction
 
-		if(istype(container.holder, /mob/living/simple_animal/hostile))
-			var/mob/living/simple_animal/hostile/hostie = container.holder
+		if(istype(container.holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/hostie = container.holder
 			hostie.destroy_surroundings = was_destroying_surroundings
 			hostie.environment_smash = was_smashing
 			hostie.can_burrow = was_burrowing

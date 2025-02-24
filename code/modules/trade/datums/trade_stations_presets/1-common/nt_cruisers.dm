@@ -18,8 +18,8 @@
 	stations_recommended = list("trapper")
 	inventory = list(
 		"Biomatter products" = list(
-			/obj/item/reagent_containers/food/snacks/meat,
-			/obj/item/reagent_containers/food/drinks/milk,
+			/obj/item/reagent_containers/snacks/meat,
+			/obj/item/reagent_containers/drinks/milk,
 			/obj/item/soap/church,
 			/obj/item/storage/pouch/small_generic,
 			/obj/item/storage/pouch/medium_generic,
@@ -125,8 +125,8 @@
 			/obj/item/cell/large/neotheology/plasma
 		),
 		"Wine" = list(
-			/obj/item/reagent_containers/food/drinks/cans/cahors/cargo,
-			/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
+			/obj/item/reagent_containers/drinks/cans/cahors/cargo,
+			/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo
 		),
 		"Seeds and Exodic Seeds" = list(
 			/obj/item/seeds/chiliseed,
@@ -155,20 +155,20 @@
 	offer_types = list(
 		/obj/item/clothing/suit/space/void/NTvoid = offer_data("angel voidsuit", 1250, 15),
 		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 10),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120),
-		/obj/item/reagent_containers/food/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
+		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120),
+		/obj/item/reagent_containers/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
 	)
 
-/obj/item/reagent_containers/food/drinks/cans/cahors/cargo
+/obj/item/reagent_containers/drinks/cans/cahors/cargo
 	price_tag = 600
 
-/obj/item/reagent_containers/food/drinks/cans/cahors/cargo/New()
+/obj/item/reagent_containers/drinks/cans/cahors/cargo/New()
 	..()
 	price_tag = 60
 
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
+/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo
 	price_tag = 1200
 
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo/New()
+/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo/New()
 	..()
 	price_tag = 100

@@ -192,7 +192,7 @@
 	display_name = "killer tomato plant"
 	mutants = null
 	can_self_harvest = 1
-	has_mob_product = /mob/living/simple_animal/hostile/tomato
+	has_mob_product = /mob/living/simple/hostile/tomato
 
 /datum/seed/tomato/killer/New()
 	..()
@@ -482,7 +482,7 @@
 	display_name = "walking mushrooms"
 	mutants = null
 	can_self_harvest = 1
-	has_mob_product = /mob/living/simple_animal/mushroom
+	has_mob_product = /mob/living/simple/mushroom
 
 /datum/seed/mushroom/plump/walking/New()
 	..()
@@ -948,7 +948,7 @@
 	name = "clownana"
 	seed_name = "clownana"
 	display_name = "Clownana tree"
-	has_mob_product = /mob/living/simple_animal/hostile/retaliate/clown/banana
+	has_mob_product = /mob/living/simple/hostile/retaliate/clown/banana
 	exude_gasses = list("sleeping_agent" = 8)
 
 /datum/seed/banana/clownana/New()

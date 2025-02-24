@@ -71,7 +71,7 @@
 /turf/template_noop,
 /area/template_noop)
 "as" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "at" = (
@@ -287,7 +287,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "aY" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "aZ" = (
@@ -362,7 +362,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bl" = (

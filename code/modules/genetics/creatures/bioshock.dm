@@ -1,6 +1,6 @@
 //Oh by glob
 //An Admin-only creature for acquiring and testing mutations.
-/mob/living/simple_animal/hostile/bioshock
+/mob/living/simple/hostile/bioshock
 	name = "Bioshock"
 	desc = "Has a ton of mutations in it!"
 	faction = "diyaab"
@@ -58,7 +58,7 @@
 		MUTATION_FRIENDLY)
 	clone_difficulty = CLONE_EASY
 
-/mob/living/simple_animal/hostile/bioshock/organs
+/mob/living/simple/hostile/bioshock/organs
 	name = "Organshock"
 	desc = "Has a ton of organs in it!"
 	inherent_mutations = list(
@@ -81,7 +81,7 @@
 		MUTATION_EYES,
 		MUTATION_SLIME_BONE)
 
-/mob/living/simple_animal/hostile/bioshock/disabled
+/mob/living/simple/hostile/bioshock/disabled
 	name = "disabledshock"
 	desc = "This poor little bastard."
 	inherent_mutations = list(

@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno
+/datum/stat_modifier/mob/living/carbon/superior/durable/xeno
 
 	armor_adjustment = list(
 	melee = 3,
@@ -12,7 +12,7 @@
 
 	description = "This one looks somewhat more sturdy than others. It'll likely be slightly more resistant to damage and pain."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno
+/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno
 
 	armor_adjustment = list(
 		melee = 2,
@@ -31,7 +31,7 @@
 
 	prefix = "Glistening"
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno
+/datum/stat_modifier/mob/living/carbon/superior/padded/xeno
 
 	armor_adjustment = list(
 		melee = 5,
@@ -48,7 +48,7 @@
 
 	description = "This one seems to be a bit thicker than others. It looks like your attacks will do somewhat less on it."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno
+/datum/stat_modifier/mob/living/carbon/superior/old/xeno
 
 	armor_adjustment = list(
 		melee = -3,
@@ -65,7 +65,7 @@
 
 	description = "This one seems older, stiffer, but seasoned. It's likely to be slower but harder to kill."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno
+/datum/stat_modifier/mob/living/carbon/superior/young/xeno
 
 	maxHealth_increment = 0
 

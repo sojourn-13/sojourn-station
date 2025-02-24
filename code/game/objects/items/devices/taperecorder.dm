@@ -11,9 +11,9 @@
 	var/recording = 0
 	var/playing = 0
 	var/playsleepseconds = 0
-	var/obj/item/computer_hardware/hard_drive/portable/mydrive
+	var/obj/item/pc_part/drive/disk/mydrive
 	var/datum/computer_file/data/audio/audio_file
-	var/starting_drive_type = /obj/item/computer_hardware/hard_drive/portable
+	var/starting_drive_type = /obj/item/pc_part/drive/disk
 	var/datum/wires/taperecorder/wires = null // Wires datum
 	var/open_panel = 0
 	flags = CONDUCT
@@ -39,7 +39,7 @@
 		to_chat(usr, "The wire panel is open.")
 
 /obj/item/device/taperecorder/attackby(obj/item/I, mob/user, params)
-	if(!mydrive && istype(I, /obj/item/computer_hardware/hard_drive/portable))
+	if(!mydrive && istype(I, /obj/item/pc_part/drive/disk))
 		if(insert_item(I, user))
 			mydrive = I
 			update_icon()

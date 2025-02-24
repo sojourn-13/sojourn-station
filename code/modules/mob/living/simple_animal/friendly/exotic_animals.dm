@@ -1,4 +1,4 @@
-/mob/living/simple_animal/redpanda
+/mob/living/simple/redpanda
 	name = "red panda"
 	desc = "It's a red panda. Beware of wah."
 	icon_state = "wah"
@@ -21,7 +21,7 @@
 	colony_friend = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/redpanda/fae
+/mob/living/simple/redpanda/fae
 	name = "fae panda"
 	desc = "A rather ominous subspecies of red panda. Still cute."
 	icon_state = "wah_fae"
@@ -32,12 +32,12 @@
 	melee_damage_upper = 10
 	colony_friend = TRUE
 
-/mob/living/simple_animal/penguin
+/mob/living/simple/penguin
 	name = "penguin"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird."
 	icon_state = "penguin"
 	icon_dead = "penguin_dead_blood"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken
 	meat_amount = 2
 	maxHealth = 20
 	health = 20
@@ -53,12 +53,12 @@
 	friendly_to_colony = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/penguin/baby
+/mob/living/simple/penguin/baby
 	name = "penguin chick"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This one is just a baby."
 	icon_state = "penguin_baby"
 	icon_dead = "penguin_baby_dead_blood"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken
 	meat_amount = 1 // Why would you? You monster.
 	maxHealth = 10
 	health = 10
@@ -67,12 +67,12 @@
 	melee_damage_upper = 5
 	sanity_damage = -2
 
-/mob/living/simple_animal/goose
+/mob/living/simple/goose
 	name = "goose"
 	desc = "A long-necked waterbird."
 	icon_state = "goose"
 	icon_dead = "goose_dead"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken
 	meat_amount = 2
 	maxHealth = 20
 	health = 20
@@ -88,7 +88,7 @@
 	faction = "pond"
 	colony_friend = TRUE
 
-/mob/living/simple_animal/lizard
+/mob/living/simple/lizard
 	name = "lizard"
 	desc = "A cute tiny lizard."
 	icon = 'icons/mob/mobs-domestic.dmi'
@@ -108,12 +108,12 @@
 	colony_friend = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/lizard/New()
+/mob/living/simple/lizard/New()
 	..()
 
 	nutrition = rand(max_nutrition*0.25, max_nutrition*0.75)
 
-/mob/living/simple_animal/fennec
+/mob/living/simple/fennec
 	name = "fennec"
 	desc = "It's a dusty big-eared sandfox! Adorable!"
 	icon_state = "fennec"
@@ -138,7 +138,7 @@
 	faction = "pond"
 	sanity_damage = -1
 
-/mob/living/simple_animal/fennec/fennix
+/mob/living/simple/fennec/fennix
 	name = "fennix"
 	desc = "A distant sandfox relative. Very warm."
 	icon_state = "fennix"

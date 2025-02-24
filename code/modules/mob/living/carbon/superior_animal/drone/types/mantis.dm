@@ -1,5 +1,5 @@
 // Less HP, less damage, but faster and can attack in an AoE and pin down mobs.
-/mob/living/carbon/superior_animal/handmade/mantis
+/mob/living/carbon/superior/handmade/mantis
 	name = "Custom-made Mantis Drone"
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon_state = "soteria_mantis_handmade"
@@ -13,7 +13,7 @@
 	exam_message = "This one bears mantis blades to pin down it's target."
 	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
 
-/mob/living/carbon/superior_animal/handmade/mantis/UnarmedAttack()
+/mob/living/carbon/superior/handmade/mantis/UnarmedAttack()
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
@@ -35,13 +35,13 @@
 	already_slashed = FALSE
 	return ..() //default attack
 
-/mob/living/carbon/superior_animal/handmade/mantis/proc/splash_slash()
+/mob/living/carbon/superior/handmade/mantis/proc/splash_slash()
 	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
 	for(var/atom/target in range(1, src))
 		if((target != src) && !(target in friends) && (isValidAttackTarget(target))) // Check if the target is valid and not the mantis or a friend
 			UnarmedAttack(target, 1)
 
-/mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()
+/mob/living/carbon/superior/handmade/mantis/proc/stun_with_claw()
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(isliving(targetted_mob))

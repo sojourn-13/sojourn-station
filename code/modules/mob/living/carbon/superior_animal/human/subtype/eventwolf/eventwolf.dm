@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/eventwolf
+/mob/living/carbon/superior/human/eventwolf
 	name = "Void Wolf Juggernaut"
 	desc = "A Void Wolf mercenary, heavily armoured with a large power-hammer."
 	melee_damage_lower = 60
@@ -18,19 +18,19 @@
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure
 
-/mob/living/carbon/superior_animal/human/eventwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
+/mob/living/carbon/superior/human/eventwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
 
-/mob/living/carbon/superior_animal/human/eventwolf/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
+/mob/living/carbon/superior/human/eventwolf/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
 	return
 
-/mob/living/carbon/superior_animal/human/eventwolf/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior/human/eventwolf/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
 
 
-/mob/living/carbon/superior_animal/human/eventwolf/explosive
+/mob/living/carbon/superior/human/eventwolf/explosive
 	name = "Void Wolf Bomber"
 	desc = "A Void Wolf with an explosive rig around it's chest..."
 	icon_state = "voidwolfsuicider"
@@ -43,7 +43,7 @@
 	armor = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 100, rad = 50)
 
 
-/mob/living/carbon/superior_animal/human/voidwolf/eventwolf/explosive/UnarmedAttack()
+/mob/living/carbon/superior/human/voidwolf/eventwolf/explosive/UnarmedAttack()
 	. = ..()
 	if(.) // If we succeeded in hitting.
 		visible_message(SPAN_DANGER("\The [src] charges in and detonates!"))

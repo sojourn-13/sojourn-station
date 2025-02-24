@@ -46,7 +46,7 @@
 		// will also allow anything using the holder item to be microwaved into
 		// impure carbon. ~Z
 		acceptable_items |= /obj/item/holder
-		acceptable_items |= /obj/item/reagent_containers/food/snacks/grown
+		acceptable_items |= /obj/item/reagent_containers/snacks/grown
 
 /*******************
 *   Item Adding
@@ -144,8 +144,8 @@
 				SPAN_NOTICE("You add \the [I] to \the [src]."))
 			return
 	else if(istype(I,/obj/item/reagent_containers/glass) || \
-	        istype(I,/obj/item/reagent_containers/food/drinks) || \
-	        istype(I,/obj/item/reagent_containers/food/condiment) \
+	        istype(I,/obj/item/reagent_containers/drinks) || \
+	        istype(I,/obj/item/reagent_containers/condiment) \
 		)
 		if(!I.reagents)
 			return 1
@@ -201,20 +201,20 @@
 		var/list/items_measures_p = new
 		for (var/obj/O in contents)
 			var/display_name = O.name
-			if(istype(O,/obj/item/reagent_containers/food/snacks/egg))
+			if(istype(O,/obj/item/reagent_containers/snacks/egg))
 				items_measures[display_name] = "egg"
 				items_measures_p[display_name] = "eggs"
-			if(istype(O,/obj/item/reagent_containers/food/snacks/tofu))
+			if(istype(O,/obj/item/reagent_containers/snacks/tofu))
 				items_measures[display_name] = "tofu chunk"
 				items_measures_p[display_name] = "tofu chunks"
-			if(istype(O,/obj/item/reagent_containers/food/snacks/meat)) //any meat
+			if(istype(O,/obj/item/reagent_containers/snacks/meat)) //any meat
 				items_measures[display_name] = "slab of meat"
 				items_measures_p[display_name] = "slabs of meat"
-			if(istype(O,/obj/item/reagent_containers/food/snacks/donkpocket))
+			if(istype(O,/obj/item/reagent_containers/snacks/donkpocket))
 				display_name = "Donk Pockets"
 				items_measures[display_name] = "donk pocket"
 				items_measures_p[display_name] = "donk pockets"
-			if(istype(O,/obj/item/reagent_containers/food/snacks/meat/carp))
+			if(istype(O,/obj/item/reagent_containers/snacks/meat/carp))
 				items_measures[display_name] = "fillet of meat"
 				items_measures_p[display_name] = "fillets of meat"
 			items_counts[display_name]++
@@ -322,7 +322,7 @@
 
 /obj/machinery/microwave/proc/has_extra_item()
 	for (var/obj/O in contents)
-		if(!istype(O,/obj/item/reagent_containers/food) && !istype(O, /obj/item/grown))
+		if(!istype(O,/obj/item/reagent_containers) && !istype(O, /obj/item/grown))
 			return 1
 	return 0
 
@@ -379,7 +379,7 @@
 	src.updateUsrDialog()
 
 /obj/machinery/microwave/proc/fail()
-	var/obj/item/reagent_containers/food/snacks/badrecipe/ffuu = new(src)
+	var/obj/item/reagent_containers/snacks/badrecipe/ffuu = new(src)
 	var/amount = 0
 	for (var/obj/O in contents-ffuu)
 		amount++

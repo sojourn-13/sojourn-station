@@ -3,16 +3,16 @@
 #define FOOD_MODE 4 // To give food.
 #define CONSOLE_MODE 8 // To act as a console
 
-/mob/living/carbon/superior_animal/nanobot/doTargetMessage()
+/mob/living/carbon/superior/nanobot/doTargetMessage()
 	. = ..()
 
 	visible_emote("lets out a buzz as it detects a target!")
 	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/nanobot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/carbon/superior/nanobot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 
-/mob/living/carbon/superior_animal/nanobot/UnarmedAttack(var/mob/living/carbon/human/H, var/proximity)
+/mob/living/carbon/superior/nanobot/UnarmedAttack(var/mob/living/carbon/human/H, var/proximity)
 	if(medbot) // Are we in healing mode?
 		if(H == patient && ishuman(H)) // Are we "attacking" our patient?
 			var/t = valid_healing_target(H)
@@ -33,7 +33,7 @@
 
 	..() // Hit them in the face
 
-/mob/living/carbon/superior_animal/nanobot/proc/valid_healing_target(var/mob/living/carbon/human/H)
+/mob/living/carbon/superior/nanobot/proc/valid_healing_target(var/mob/living/carbon/human/H)
 	if(H.stat == DEAD) // He's dead, Jim
 		return null
 
@@ -49,7 +49,7 @@
 	if((H.getToxLoss() >= heal_threshold) && (!H.reagents.has_reagent(treatment_tox)))
 		return treatment_tox
 
-/mob/living/carbon/superior_animal/nanobot/MouseDrop(atom/over_object)
+/mob/living/carbon/superior/nanobot/MouseDrop(atom/over_object)
 	if(holder_type && !anchored) // We need a defined holder type in order for picking up to work, and the bot need to not be anchored.
 		var/mob/living/carbon/H = over_object
 		if(!istype(H) || !Adjacent(H))
@@ -58,7 +58,7 @@
 		return
 	return ..()
 
-/mob/living/carbon/superior_animal/nanobot/interact(mob/user as mob)
+/mob/living/carbon/superior/nanobot/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!isAI(user))
 			user.unset_machine()
@@ -71,7 +71,7 @@
 	onclose(user, "Nanobot")
 	return
 
-/mob/living/carbon/superior_animal/nanobot/proc/handle_ui()
+/mob/living/carbon/superior/nanobot/proc/handle_ui()
 	var/dat = ""
 	dat += "<head><title>[name]</title></head>"
 	dat += "[name]<BR>"
@@ -99,7 +99,7 @@
 
 	return dat
 
-/mob/living/carbon/superior_animal/nanobot/Topic(href, href_list)
+/mob/living/carbon/superior/nanobot/Topic(href, href_list)
 	..()
 
 	if(href_list["close"])
@@ -169,7 +169,7 @@
 	updateDialog()
 	return
 
-/mob/living/carbon/superior_animal/nanobot/proc/creator_check(var/mob/M)
+/mob/living/carbon/superior/nanobot/proc/creator_check(var/mob/M)
 	if(usr in creator)
 		return TRUE
 	else

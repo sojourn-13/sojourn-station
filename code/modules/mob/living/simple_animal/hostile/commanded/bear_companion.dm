@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/commanded/bear
+/mob/living/simple/hostile/commanded/bear
 	name = "bear"
 	desc = "A large brown bear."
 	icon = 'icons/mob/mobs-bear.dmi'
@@ -21,12 +21,12 @@
 
 	known_commands = list("stay", "stop", "attack", "follow")
 
-/mob/living/simple_animal/hostile/commanded/bear/hit_with_weapon(obj/item/O, mob/living/user, var/effective_force, var/hit_zone)
+/mob/living/simple/hostile/commanded/bear/hit_with_weapon(obj/item/O, mob/living/user, var/effective_force, var/hit_zone)
 	. = ..()
 	if(!.)
 		src.emote("roars in rage!")
 
-/mob/living/simple_animal/hostile/commanded/bear/attack_hand(mob/living/carbon/human/M as mob)
+/mob/living/simple/hostile/commanded/bear/attack_hand(mob/living/carbon/human/M as mob)
 	..()
 	if(M.a_intent == I_HURT)
 		src.emote("roars in rage!")

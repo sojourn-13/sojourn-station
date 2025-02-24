@@ -43,7 +43,7 @@
 		return
 
 	//scream and summon
-	var/mob/living/carbon/superior_animal/wurm/guardian/S = new /mob/living/carbon/superior_animal/wurm/guardian
+	var/mob/living/carbon/superior/wurm/guardian/S = new /mob/living/carbon/superior/wurm/guardian
 	S.loc = get_turf(src)
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	summon_ready = FALSE

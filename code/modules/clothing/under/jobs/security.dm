@@ -168,7 +168,7 @@
 		slot_l_hand_str = "det_hat",
 		slot_r_hand_str = "det_hat",
 		)
-	allowed = list(/obj/item/reagent_containers/food/snacks/candy_corn, /obj/item/pen)
+	allowed = list(/obj/item/reagent_containers/snacks/candy_corn, /obj/item/pen)
 	armor_list = list(
 		melee = 2,
 		bullet = 0,

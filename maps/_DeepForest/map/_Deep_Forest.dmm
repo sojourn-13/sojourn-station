@@ -107,7 +107,7 @@
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
 	},
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/dungeon/outside/zoo)
 "age" = (
@@ -350,9 +350,9 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aqj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/teapot,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/teapot,
+/obj/item/reagent_containers/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/mug/teacup,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "aqy" = (
@@ -753,7 +753,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima/outside)
 "aDa" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "aDp" = (
@@ -875,7 +875,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "aIz" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/mob/living/carbon/superior/robot/gp/custodian,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "aIB" = (
@@ -1194,7 +1194,7 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "aWi" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -1442,7 +1442,7 @@
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "bge" = (
@@ -1947,7 +1947,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "bxV" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -1957,7 +1957,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "byk" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "byy" = (
@@ -2059,7 +2059,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "bEA" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/unsimulated/mineral,
 /area/colony)
 "bEE" = (
@@ -2084,8 +2084,8 @@
 /area/nadezhda/outside/meadow)
 "bFj" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
 "bFw" = (
@@ -2296,7 +2296,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "bNA" = (
-/mob/living/simple_animal/hostile/bear/brown,
+/mob/living/simple/hostile/bear/brown,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "bNM" = (
@@ -2419,7 +2419,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/outside/meadow)
 "bRd" = (
-/mob/living/simple_animal/snail,
+/mob/living/simple/snail,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "bRy" = (
@@ -2677,7 +2677,7 @@
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "caN" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "caR" = (
@@ -2739,7 +2739,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "ces" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -2753,7 +2753,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "ceR" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -2967,7 +2967,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -3056,13 +3056,13 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "cpm" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "cpy" = (
@@ -3270,7 +3270,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "cui" = (
 /obj/item/toy/plushie/cat/siamese,
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/safehouse)
 "cun" = (
@@ -3340,7 +3340,7 @@
 	name = "Abandoned Bunker"
 	})
 "cvB" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "cwf" = (
@@ -3564,7 +3564,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "cDo" = (
 /obj/structure/bed/chair/custom/onestar,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "cDw" = (
@@ -4080,7 +4080,7 @@
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
 "cUr" = (
-/mob/living/simple_animal/hostile/panther,
+/mob/living/simple/hostile/panther,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "cUI" = (
@@ -4153,7 +4153,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "cXY" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "cYe" = (
@@ -4218,7 +4218,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "cZf" = (
 /obj/structure/bed/chair/comfy,
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cZh" = (
@@ -4296,7 +4296,7 @@
 /area/nadezhda/outside/one_star)
 "dcc" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "dci" = (
@@ -4454,7 +4454,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "dig" = (
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /obj/structure/snowfall{
 	name = "radioactive dust";
 	color = "#2CFA1F"
@@ -4502,7 +4502,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "djr" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "djA" = (
@@ -4603,7 +4603,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "dnC" = (
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -5228,7 +5228,7 @@
 /area/nadezhda/outside/meadow)
 "dGD" = (
 /obj/structure/table/bench/wooden,
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -5247,7 +5247,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dHr" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -5685,7 +5685,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "dZS" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/republicon/range,
+/mob/living/simple/hostile/republicon/range,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "dZX" = (
@@ -5975,23 +5975,23 @@
 /area/nadezhda/dungeon/outside/zoo)
 "elJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/openable/can{
+/obj/item/reagent_containers/snacks/openable/can{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -6352,7 +6352,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "ewd" = (
 /obj/structure/flora/small/busha2,
-/mob/living/carbon/superior_animal/vox/ashen,
+/mob/living/carbon/superior/vox/ashen,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "ewq" = (
@@ -6469,7 +6469,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "eAX" = (
-/mob/living/simple_animal/tindalos,
+/mob/living/simple/tindalos,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/dungeon/outside/zoo)
 "eBV" = (
@@ -6882,7 +6882,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -6929,7 +6929,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eTv" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "eUU" = (
@@ -7288,7 +7288,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "ffj" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "ffA" = (
@@ -7504,7 +7504,7 @@
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
 	},
-/mob/living/simple_animal/snail,
+/mob/living/simple/snail,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/dungeon/outside/zoo)
 "fmI" = (
@@ -7927,7 +7927,7 @@
 /area/colony/exposedsun/pastgate)
 "fFS" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/drinks/coffee{
 	desc = "Old cup of coffee. Very cold.  ";
 	name = "Old Robust Coffee"
 	},
@@ -8415,7 +8415,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "fWb" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "fWf" = (
@@ -8644,7 +8644,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "gfM" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -8669,7 +8669,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "gfU" = (
-/mob/living/simple_animal/hostile/samak,
+/mob/living/simple/hostile/samak,
 /turf/simulated/floor/snow{
 	icon_state = "grass_snow0"
 	},
@@ -8811,7 +8811,7 @@
 /obj/effect/overlay/water/top{
 	color = "#6B7A0D"
 	},
-/mob/living/simple_animal/hostile/panther,
+/mob/living/simple/hostile/panther,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/dungeon/outside/zoo)
 "gkd" = (
@@ -9168,26 +9168,26 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "gvJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/openable/mre/alt{
+/obj/item/reagent_containers/snacks/openable/mre/alt{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -9377,7 +9377,7 @@
 	})
 "gBW" = (
 /obj/structure/catwalk,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "gBX" = (
@@ -9394,7 +9394,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "gCj" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/voidwolf{
+/mob/living/carbon/superior/human/voidwolf{
 	health = 250;
 	melee_damage_upper = 40;
 	move_speed = 12;
@@ -9622,7 +9622,7 @@
 	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "gKn" = (
-/mob/living/simple_animal/tindalos,
+/mob/living/simple/tindalos,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "gKF" = (
@@ -9674,7 +9674,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "gMh" = (
-/mob/living/simple_animal/hostile/hivebot{
+/mob/living/simple/hostile/hivebot{
 	health = 400
 	},
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -9686,7 +9686,7 @@
 	name = "biomass";
 	color = "#750008"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -10027,7 +10027,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "gUm" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/mob/living/carbon/superior/robot/gp/custodian/chef,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "gUq" = (
@@ -10061,7 +10061,7 @@
 	})
 "gWs" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "gWu" = (
@@ -10242,7 +10242,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "hcu" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -10380,7 +10380,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "hhS" = (
-/mob/living/simple_animal/penguin,
+/mob/living/simple/penguin,
 /turf/simulated/floor/snow,
 /area/nadezhda/dungeon/outside/zoo)
 "hib" = (
@@ -10422,7 +10422,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "hjc" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -10608,7 +10608,7 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
 "hnK" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "hnL" = (
@@ -10656,7 +10656,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "hox" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -10822,7 +10822,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "huO" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "hvb" = (
@@ -10835,7 +10835,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
 "hvX" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_idle";
@@ -11304,8 +11304,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
@@ -11760,7 +11760,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "iaQ" = (
-/mob/living/simple_animal/penguin,
+/mob/living/simple/penguin,
 /turf/simulated/floor/beach/water/ice,
 /area/nadezhda/dungeon/outside/zoo)
 "iaY" = (
@@ -12037,7 +12037,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "ikZ" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "ilh" = (
@@ -12204,7 +12204,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "iqW" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "irf" = (
@@ -12404,7 +12404,7 @@
 "ixj" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/mob/living/carbon/superior/robot/gp/custodian,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "ixl" = (
@@ -12432,7 +12432,7 @@
 	name = "radioactive dust";
 	color = "#2CFA1F"
 	},
-/mob/living/carbon/superior_animal/roach/kaiser{
+/mob/living/carbon/superior/roach/kaiser{
 	name = "Malformed Kaiser Roach";
 	color = "#61DE2A";
 	maxHealth = 2500;
@@ -12541,7 +12541,7 @@
 /obj/structure/table/marble,
 /obj/item/tool/knife/butch,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cwj/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "iBq" = (
@@ -12675,7 +12675,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "iET" = (
-/mob/living/simple_animal/hostile/bear/excelsior,
+/mob/living/simple/hostile/bear/excelsior,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "iFg" = (
@@ -13169,7 +13169,7 @@
 	name = "Abandoned Bunker"
 	})
 "iYS" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/unsimulated/mineral,
 /area/colony)
 "iZh" = (
@@ -13220,7 +13220,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "jaz" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "jaO" = (
@@ -13484,7 +13484,7 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "jio" = (
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -13677,7 +13677,7 @@
 	name = "Abandoned Bunker"
 	})
 "jnq" = (
-/mob/living/simple_animal/hostile/bear/excelsior,
+/mob/living/simple/hostile/bear/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -14080,7 +14080,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "jHF" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "jIL" = (
@@ -14088,7 +14088,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/zoo)
 "jIZ" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -14661,7 +14661,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kec" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "kep" = (
@@ -14684,7 +14684,7 @@
 /obj/item/gun/projectile/shotgun/doublebarrel/flare,
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/china,
+/obj/item/pc_part/drive/disk/design/guns/china,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
 "kfd" = (
@@ -14808,7 +14808,7 @@
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "kiT" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle{
 	name = "WhiteGuard Solutions Autonomous Guard unit"
 	},
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -14983,11 +14983,11 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "kpd" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/dungeon/outside/zoo)
 "kpf" = (
-/mob/living/simple_animal/hostile/republicon,
+/mob/living/simple/hostile/republicon,
 /turf/unsimulated/mineral,
 /area/colony)
 "kpC" = (
@@ -15010,7 +15010,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/zoo)
 "kpU" = (
-/mob/living/simple_animal/penguin/baby,
+/mob/living/simple/penguin/baby,
 /turf/simulated/floor/beach/water/ice,
 /area/nadezhda/dungeon/outside/zoo)
 "kqd" = (
@@ -15397,14 +15397,14 @@
 /area/nadezhda/dungeon/outside/prepper)
 "kGs" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/mug/red{
+/obj/item/reagent_containers/drinks/mug/red{
 	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/mug/metal{
+/obj/item/reagent_containers/drinks/mug/metal{
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre_cracker,
+/obj/item/reagent_containers/snacks/mre_cracker,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
@@ -15432,7 +15432,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop/outsider)
 "kHq" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "kHs" = (
@@ -15670,7 +15670,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
 "kQk" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "kQt" = (
@@ -15754,7 +15754,7 @@
 	name = "LOCKDOWN";
 	id = "limamedwing"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "kUs" = (
@@ -15846,7 +15846,7 @@
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "kVY" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "kWg" = (
@@ -15923,7 +15923,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "kZp" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -16088,7 +16088,7 @@
 /obj/item/stock_parts/micro_laser/excelsior,
 /obj/item/stock_parts/scanning_module/excelsior,
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
+/obj/item/pc_part/drive/disk/design/guns/ex_vintorez,
 /obj/item/book/manual/nonfiction/thescienceofright,
 /obj/random/gun_fancy/low_chance,
 /obj/random/gun_fancy/low_chance,
@@ -16120,7 +16120,7 @@
 /area/nadezhda/outside/one_star)
 "lhf" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "lhi" = (
@@ -16263,7 +16263,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "lkF" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -16276,7 +16276,7 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/mob/living/simple_animal/crab/Coffee{
+/mob/living/simple/crab/Coffee{
 	desc = "It's Graves twin, the other pet! Despite his rather evil appearence he is utterly harmless. Best friends with Tea the Frog as well.";
 	name = "Grave's Twin";
 	real_name = "Coffee"
@@ -16335,7 +16335,7 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "loq" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez,
+/mob/living/carbon/superior/human/excelsior/excel_vintorez,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -16353,7 +16353,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "lpc" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -16365,7 +16365,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "lpu" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "lpR" = (
@@ -16508,11 +16508,11 @@
 "luY" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cwj/container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "lvi" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/mob/living/carbon/superior/human/voidwolf/ranged,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/meadow)
 "lvn" = (
@@ -17110,7 +17110,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "lTl" = (
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -17127,7 +17127,7 @@
 /obj/effect/overlay/water,
 /obj/structure/catwalk,
 /obj/structure/flora/big/rocks1,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "lTC" = (
@@ -17220,7 +17220,7 @@
 /area/nadezhda/outside/one_star)
 "lVP" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/republicon,
+/mob/living/simple/hostile/republicon,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "lVY" = (
@@ -17383,7 +17383,7 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "mbn" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "mbx" = (
@@ -17460,8 +17460,8 @@
 "mfT" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/obj/item/reagent_containers/cwj/container/pot,
+/obj/item/reagent_containers/cwj/container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "mfY" = (
@@ -17664,43 +17664,43 @@
 /area/nadezhda/outside/meadow)
 "moS" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -3;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 11;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 9;
 	pixel_y = -11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -9;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 5;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 1;
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = 7;
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky{
+/obj/item/reagent_containers/snacks/sosjerky{
 	pixel_x = -7;
 	pixel_y = 11
 	},
@@ -17965,7 +17965,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "mAM" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /obj/effect/floor_decal/border/techfloor/orange{
 	icon = 'icons/mob/blob.dmi';
 	icon_state = "blob_damaged2";
@@ -18471,7 +18471,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "mOu" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh,
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -18583,7 +18583,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "mSm" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/mob/living/carbon/superior/robot/gp/custodian,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "mSw" = (
@@ -18725,7 +18725,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "mXe" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "mXm" = (
@@ -18849,7 +18849,7 @@
 /area/nadezhda/outside/one_star)
 "naT" = (
 /obj/random/junk/cigbutt,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
+/obj/item/pc_part/drive/disk/design/excelsior_weapons,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "nbc" = (
@@ -19012,7 +19012,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "ngr" = (
-/mob/living/simple_animal/penguin/baby,
+/mob/living/simple/penguin/baby,
 /turf/simulated/floor/snow,
 /area/nadezhda/dungeon/outside/zoo)
 "ngF" = (
@@ -19480,7 +19480,7 @@
 /area/nadezhda/outside/meadow)
 "nuB" = (
 /obj/effect/decal/cleanable/filth,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -19498,7 +19498,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/plating/under{
 	icon_state = "OLDplating"
 	},
@@ -19594,7 +19594,7 @@
 /area/nadezhda/outside/meadow)
 "nxx" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/drinks/cans/sodawater,
+/obj/item/reagent_containers/drinks/cans/sodawater,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "nxJ" = (
@@ -19720,7 +19720,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "nCM" = (
-/mob/living/simple_animal/redpanda,
+/mob/living/simple/redpanda,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "nCV" = (
@@ -19791,12 +19791,12 @@
 /area/nadezhda/dungeon/outside/zoo)
 "nGI" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm/osmium,
+/mob/living/carbon/superior/wurm/osmium,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "nGT" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior,
+/mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -19906,7 +19906,7 @@
 	})
 "nJw" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/bear/excelsior,
+/mob/living/simple/hostile/bear/excelsior,
 /turf/simulated/floor/rock/grey,
 /area/asteroid/rogue)
 "nJz" = (
@@ -19976,7 +19976,7 @@
 /obj/structure/bed/double/padded,
 /obj/random/furniture/bedsheetdouble,
 /obj/random/junk,
-/obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+/obj/item/pc_part/drive/disk/design/excelsior,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "nOF" = (
@@ -20006,7 +20006,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "nPU" = (
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/asteroid/dirt,
@@ -20416,7 +20416,7 @@
 /area/nadezhda/outside/meadow)
 "ofK" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -20651,7 +20651,7 @@
 /obj/random/credits,
 /obj/random/credits,
 /obj/item/clothing/gloves/dusters/gold,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov,
+/obj/item/pc_part/drive/disk/design/guns/tac_kalashnikov,
 /obj/item/clothing/suit/armor/vest/full,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/dungeon/outside/prepper/lima)
@@ -20838,7 +20838,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "osU" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "otj" = (
@@ -21138,8 +21138,8 @@
 "oCD" = (
 /obj/structure/safe,
 /obj/item/storage/box/frag,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/cassad,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sol,
+/obj/item/pc_part/drive/disk/design/guns/cassad,
+/obj/item/pc_part/drive/disk/design/guns/sol,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper)
 "oCX" = (
@@ -21289,7 +21289,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
 "oHL" = (
-/mob/living/simple_animal/hostile/samak,
+/mob/living/simple/hostile/samak,
 /turf/simulated/floor/snow,
 /area/nadezhda/dungeon/outside/zoo)
 "oHY" = (
@@ -21757,7 +21757,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "oYZ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "oZm" = (
@@ -22111,7 +22111,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "pkP" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/mob/living/carbon/superior/robot/gp/custodian/chef,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "plj" = (
@@ -22234,7 +22234,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "ppl" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -22284,7 +22284,7 @@
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "prE" = (
-/mob/living/simple_animal/hostile/bear,
+/mob/living/simple/hostile/bear,
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/dungeon/outside/zoo)
 "prT" = (
@@ -22377,7 +22377,7 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "pvZ" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "pwa" = (
@@ -22399,7 +22399,7 @@
 "pwy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/clownburger,
+/obj/item/reagent_containers/snacks/clownburger,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "pwT" = (
@@ -22420,7 +22420,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "pwY" = (
-/mob/living/carbon/superior_animal/human/voidwolf{
+/mob/living/carbon/superior/human/voidwolf{
 	health = 250;
 	melee_damage_upper = 40;
 	move_speed = 12;
@@ -22447,19 +22447,19 @@
 	name = "radioactive dust";
 	color = "#2CFA1F"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "pxI" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
 /obj/structure/table/marble,
 /obj/random/rations,
 /obj/random/rations,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/safehouse)
 "pxK" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "pxV" = (
@@ -22493,7 +22493,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "pyv" = (
 /obj/machinery/light/small,
-/mob/living/carbon/superior_animal/human/voidwolf{
+/mob/living/carbon/superior/human/voidwolf{
 	health = 250;
 	melee_damage_upper = 40;
 	move_speed = 12;
@@ -22516,7 +22516,7 @@
 /obj/effect/overlay/water/top{
 	color = "#61DE2A"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /obj/structure/snowfall{
 	name = "radioactive dust";
 	color = "#2CFA1F"
@@ -23291,7 +23291,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "pYL" = (
-/mob/living/simple_animal/hostile/republicon,
+/mob/living/simple/hostile/republicon,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "pYT" = (
@@ -23389,7 +23389,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/zoo)
 "qcL" = (
-/mob/living/simple_animal/hostile/bear/polar,
+/mob/living/simple/hostile/bear/polar,
 /turf/simulated/floor/snow,
 /area/nadezhda/dungeon/outside/zoo)
 "qdm" = (
@@ -23416,7 +23416,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qen" = (
-/mob/living/carbon/superior_animal/human/voidwolf{
+/mob/living/carbon/superior/human/voidwolf{
 	health = 250;
 	melee_damage_upper = 40;
 	move_speed = 12;
@@ -23506,7 +23506,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "qhe" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
@@ -23954,7 +23954,7 @@
 "qvG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "qvJ" = (
@@ -23984,7 +23984,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "qwv" = (
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "qwT" = (
@@ -24207,7 +24207,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "qEB" = (
 /obj/structure/catwalk,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "qEW" = (
@@ -24494,7 +24494,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "qPt" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -24529,7 +24529,7 @@
 /area/asteroid/rogue)
 "qPV" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -24608,7 +24608,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "qSA" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "qSF" = (
@@ -24700,7 +24700,7 @@
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "qVz" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -24883,7 +24883,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "rcc" = (
 /obj/machinery/light/floor,
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "rce" = (
@@ -25006,7 +25006,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "rhw" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "rhQ" = (
@@ -25087,7 +25087,7 @@
 /area/asteroid/rogue)
 "rkK" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/hivebot{
+/mob/living/simple/hostile/hivebot{
 	health = 400
 	},
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -25143,7 +25143,7 @@
 "rna" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "rnb" = (
@@ -25159,7 +25159,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "rnk" = (
-/mob/living/simple_animal/schlorgo,
+/mob/living/simple/schlorgo,
 /turf/simulated/floor/snow,
 /area/nadezhda/dungeon/outside/zoo)
 "rnF" = (
@@ -25593,7 +25593,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "rBD" = (
 /obj/structure/bed/chair/custom/onestar/red,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "rBM" = (
@@ -25692,7 +25692,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "rCV" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -25832,7 +25832,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "rHX" = (
 /obj/structure/catwalk,
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/greengrid,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "rHY" = (
@@ -26178,7 +26178,7 @@
 /area/nadezhda/outside/one_star)
 "rWL" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "rWO" = (
@@ -26234,7 +26234,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "rYW" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/snacks/openable/syndicake,
+/obj/item/reagent_containers/snacks/openable/syndicake,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "rZf" = (
@@ -26286,7 +26286,7 @@
 "scg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26348,7 +26348,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "sdj" = (
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
@@ -26358,7 +26358,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "sdL" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple/hostile/retaliate/goat{
 	faction = "neutral"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -26388,7 +26388,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "seN" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/stat_buff/vig,
+/obj/item/reagent_containers/snacks/donut/stat_buff/vig,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "seU" = (
@@ -26461,7 +26461,7 @@
 /obj/effect/overlay/water/top{
 	color = "#61DE2A"
 	},
-/mob/living/carbon/superior_animal/roach/tazntz,
+/mob/living/carbon/superior/roach/tazntz,
 /obj/structure/snowfall{
 	name = "radioactive dust";
 	color = "#2CFA1F"
@@ -26505,7 +26505,7 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "siu" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "siC" = (
@@ -26805,7 +26805,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "ssP" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26982,7 +26982,7 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "swF" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "swH" = (
@@ -27114,7 +27114,7 @@
 "sBX" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/blood/gibs,
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "sCi" = (
@@ -27367,7 +27367,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "sLE" = (
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "sLV" = (
@@ -27444,26 +27444,26 @@
 /area/nadezhda/dungeon/outside/zoo)
 "sOp" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake,
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake,
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/openable/syndicake{
+/obj/item/reagent_containers/snacks/openable/syndicake{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -27520,7 +27520,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "sQA" = (
 /obj/structure/bed/chair/custom/onestar,
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "sRz" = (
@@ -27630,7 +27630,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "sXz" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -27827,7 +27827,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tdV" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "tfi" = (
@@ -28198,7 +28198,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo)
 "trV" = (
-/mob/living/carbon/superior_animal/sentinal_seeker,
+/mob/living/carbon/superior/sentinal_seeker,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "trW" = (
@@ -28718,7 +28718,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
 "tJa" = (
-/mob/living/simple_animal/hostile/republicon/range,
+/mob/living/simple/hostile/republicon/range,
 /turf/unsimulated/mineral,
 /area/colony)
 "tJe" = (
@@ -28999,8 +28999,8 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tUY" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/random/junkfood/rotten/low_chance,
 /obj/random/junkfood/rotten/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -29199,7 +29199,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "tZX" = (
 /obj/structure/bed/chair/custom/onestar,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "uae" = (
@@ -29292,7 +29292,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "udD" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "udZ" = (
@@ -29312,13 +29312,13 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "ueX" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/safehouse)
 "ufe" = (
@@ -29420,8 +29420,8 @@
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "uhF" = (
-/mob/living/carbon/superior_animal/human/excelsior,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -29521,7 +29521,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "umz" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez,
+/mob/living/carbon/superior/human/excelsior/excel_vintorez,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -29578,7 +29578,7 @@
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "uoa" = (
@@ -29727,7 +29727,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "uun" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "uuq" = (
@@ -29807,14 +29807,14 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "uxT" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uxW" = (
@@ -29868,7 +29868,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "uzO" = (
 /obj/machinery/light/floor,
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "uzW" = (
@@ -30194,7 +30194,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "uLM" = (
-/mob/living/simple_animal/hostile/republicon/range,
+/mob/living/simple/hostile/republicon/range,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "uLR" = (
@@ -30216,8 +30216,8 @@
 	},
 /obj/item/stack/medical/bruise_pack/handmade,
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
+/obj/item/pc_part/drive/disk/design/adv_tools,
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
@@ -30249,7 +30249,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "uNV" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "uOw" = (
@@ -30498,7 +30498,7 @@
 /area/colony)
 "uWk" = (
 /obj/structure/invislight,
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/asteroid/dirt,
 /area/asteroid/rogue)
 "uWq" = (
@@ -30579,7 +30579,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/zoo)
 "uYO" = (
-/mob/living/simple_animal/hostile/render/malformed,
+/mob/living/simple/hostile/render/malformed,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "vag" = (
@@ -30648,7 +30648,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "vbJ" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba,
+/mob/living/carbon/superior/robot/gp/roomba,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "vbL" = (
@@ -30678,7 +30678,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/zoo)
 "vcR" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "vde" = (
@@ -30743,7 +30743,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
 "veQ" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "veX" = (
@@ -30827,7 +30827,7 @@
 /area/asteroid/rogue)
 "vic" = (
 /obj/effect/decal/cleanable/filth,
-/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -30941,7 +30941,7 @@
 /obj/structure/salvageable/console_os{
 	dir = 1
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/onestar,
+/obj/item/pc_part/drive/disk/design/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "vme" = (
@@ -30984,7 +30984,7 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "vnq" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "vnD" = (
@@ -31286,7 +31286,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vBg" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle{
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle{
 	name = "WhiteGuard Solutions Autonomous Guard unit"
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
@@ -31581,7 +31581,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "vJU" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "vJW" = (
@@ -31621,7 +31621,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "vLF" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "vLG" = (
@@ -31715,7 +31715,7 @@
 "vOX" = (
 /obj/random/oddity_guns,
 /obj/effect/gibspawner/human,
-/obj/item/reagent_containers/food/snacks/meat/human,
+/obj/item/reagent_containers/snacks/meat/human,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/zoo)
 "vPe" = (
@@ -32416,7 +32416,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wqs" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
@@ -32667,9 +32667,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /obj/effect/decal/cleanable/dirt,
@@ -32684,7 +32684,7 @@
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "wyN" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/dungeon/outside/zoo)
 "wzc" = (
@@ -33025,7 +33025,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "wNp" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "wNs" = (
@@ -33196,7 +33196,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/dungeon/outside/prepper/lima)
 "wTe" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "wTy" = (
@@ -33299,7 +33299,7 @@
 /area/nadezhda/dungeon/outside/prepper/lima)
 "wXh" = (
 /obj/effect/floor_decal/industrial_plant/steel_warning,
-/mob/living/simple_animal/hostile/creature/tissue{
+/mob/living/simple/hostile/creature/tissue{
 	icon = 'icons/mob/mobs-domestic.dmi';
 	icon_state = "snail";
 	pixel_y = 13;
@@ -33323,7 +33323,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "wXs" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "wXx" = (
@@ -33510,7 +33510,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "xcI" = (
-/mob/living/simple_animal/hostile/creature/tissue,
+/mob/living/simple/hostile/creature/tissue,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/delta)
 "xdH" = (
@@ -33582,7 +33582,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "xfq" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "xfE" = (
@@ -33756,9 +33756,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -34168,8 +34168,8 @@
 /area/nadezhda/outside/one_star)
 "xyY" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/openable/mre,
-/obj/item/reagent_containers/food/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
+/obj/item/reagent_containers/snacks/openable/mre,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "xzf" = (
@@ -34406,7 +34406,7 @@
 /area/nadezhda/outside/one_star)
 "xGT" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
+/mob/living/simple/hostile/hivebot/range{
 	health = 300
 	},
 /turf/simulated/floor/tiled/dark,
@@ -34908,8 +34908,8 @@
 /area/nadezhda/outside/meadow)
 "xZx" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "xZI" = (

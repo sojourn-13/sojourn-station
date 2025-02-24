@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/bluespace
+/mob/living/carbon/superior/roach/bluespace
 	name = "Unbekannt roach"
 	desc = "This shimmering insectoid-like creature greatly resembles a giant cockroach. It flickers in and out of reality, as if it didn't really belong here."
 	icon_state = "bluespaceroach"
@@ -22,11 +22,11 @@
 	var/chance_tele_to_eat = 25
 	var/chance_tele_to_random = 10
 
-/mob/living/carbon/superior_animal/roach/bluespace/Initialize(mapload)
+/mob/living/carbon/superior/roach/bluespace/Initialize(mapload)
 	. = ..()
 	do_sparks(3, 0, src.loc)
 
-/mob/living/carbon/superior_animal/roach/bluespace/handle_ai()
+/mob/living/carbon/superior/roach/bluespace/handle_ai()
 	..()
 
 	var/atom/targetted_mob = (target_mob?.resolve())
@@ -44,7 +44,7 @@
 		do_teleport(src, target, 1)
 		playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 
-/mob/living/carbon/superior_animal/roach/bluespace/attackby(obj/item/W, mob/user, params)
+/mob/living/carbon/superior/roach/bluespace/attackby(obj/item/W, mob/user, params)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(prob(change_tele_to_mob))
@@ -57,7 +57,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/bluespace/attack_hand(mob/living/carbon/M)
+/mob/living/carbon/superior/roach/bluespace/attack_hand(mob/living/carbon/M)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent != I_HELP && prob(change_tele_to_mob))
@@ -70,7 +70,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/bluespace/bullet_act(obj/item/projectile/P, def_zone)
+/mob/living/carbon/superior/roach/bluespace/bullet_act(obj/item/projectile/P, def_zone)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if (!(P.testing))
@@ -84,7 +84,7 @@
 			return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+/mob/living/carbon/superior/roach/bluespace/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))

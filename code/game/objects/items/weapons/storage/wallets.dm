@@ -28,7 +28,7 @@
 		/obj/item/photo,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/tool/screwdriver,
-		/obj/item/computer_hardware/hard_drive/portable,
+		/obj/item/pc_part/drive/disk,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/genetics/purger,
 		/obj/item/genetics/sample,

@@ -1,5 +1,5 @@
 // More armor, HP and damage, but move slower
-/mob/living/carbon/superior_animal/handmade/sword
+/mob/living/carbon/superior/handmade/sword
 	name = "Custom-made Sword Drone"
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon_state = "soteria_sword_handmade"

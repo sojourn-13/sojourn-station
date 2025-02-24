@@ -292,7 +292,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/medium/high(src)
 	new /obj/item/ammo_kit(src)
 	new /obj/item/storage/firstaid/outsider(src)
-	new /obj/item/reagent_containers/food/drinks/flask/lithium(src)
+	new /obj/item/reagent_containers/drinks/flask/lithium(src)
 
 
 //////////////////////////////////////////Cards//////////////////////////////////////////
@@ -326,7 +326,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	max_w_class = ITEM_SIZE_SMALL //no large cells thanks
 	storage_slots = 20
 	can_hold = list(
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/stock_parts,
 		/obj/item/device,
 		/obj/item/cell,

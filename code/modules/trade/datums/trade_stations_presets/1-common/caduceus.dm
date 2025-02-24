@@ -86,7 +86,7 @@
 			/obj/item/storage/box/gloves,
 			/obj/item/storage/box/rxglasses,
 			/obj/item/storage/box/bodybags,
-			/obj/item/computer_hardware/hard_drive/portable/design/medical = custom_good_amount_range(list(3, 6))
+			/obj/item/pc_part/drive/disk/design/medical = custom_good_amount_range(list(3, 6))
 		)
 	)
 	hidden_inventory = list(
@@ -121,7 +121,7 @@
 		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 300, 3),
 		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 300, 3),
 		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 300, 3),
-		/obj/item/reagent_containers/food/snacks/meat/spider = offer_data("spider meat", 250, 5),
+		/obj/item/reagent_containers/snacks/meat/spider = offer_data("spider meat", 250, 5),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)
 		)

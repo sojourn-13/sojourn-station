@@ -376,7 +376,7 @@
 		if(istype(subject, /obj/machinery))
 			var/obj/machinery/victim = subject
 			if(prob(15) && victim.circuit)
-				new /mob/living/simple_animal/hostile/hivemind/mechiver(get_turf(subject))
+				new /mob/living/simple/hostile/hivemind/mechiver(get_turf(subject))
 				new victim.circuit.type(get_turf(subject))
 				qdel(subject)
 				return
@@ -418,10 +418,10 @@
 
 		//robot corpses
 		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
-			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
+			new /mob/living/simple/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
-			var/mob/living/simple_animal/hostile/hivemind/resurrected/transformed_mob =  new(loc)
+			var/mob/living/simple/hostile/hivemind/resurrected/transformed_mob =  new(loc)
 			transformed_mob.take_appearance(subject)
 
 		qdel(subject)
@@ -431,7 +431,7 @@
 		return
 	for(var/obj/item/W in L)
 		L.drop_from_inventory(W)
-	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	var/M = pick(/mob/living/simple/hostile/hivemind/himan, /mob/living/simple/hostile/hivemind/phaser)
 	new M(loc)
 
 	L.dust()

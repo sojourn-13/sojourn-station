@@ -1,12 +1,12 @@
 
-/mob/living/carbon/superior_animal/roach/Move()
+/mob/living/carbon/superior/roach/Move()
 	. = ..()
 	if(buckled_mob)
 		buckled_mob.dir = dir
 		buckled_mob.forceMove(get_turf(src))
 		buckled_mob.pixel_x = pixel_x
 
-/mob/living/carbon/superior_animal/roach/proc/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior/roach/proc/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/snacks/grown/thefood)
 	if(!istype(thefood))
 		return FALSE
 	if(prob(40)) // Flat 40% chance to fail

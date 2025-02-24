@@ -34,7 +34,7 @@
 	result = /obj/item/weldpack/canister/oil
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, 3),
-		list(/obj/item/reagent_containers/food/snacks/meat, 10), // 10u oil per meat
+		list(/obj/item/reagent_containers/snacks/meat, 10), // 10u oil per meat
 		list(QUALITY_HEATING, 5, 80)
 	)
 
@@ -57,7 +57,7 @@
 
 /datum/craft_recipe/alchemy/throwing_flask
 	name = "Throwing Flask"
-	result = /obj/item/reagent_containers/food/drinks/bottle/alchemy
+	result = /obj/item/reagent_containers/drinks/bottle/alchemy
 	steps = list(
 		list(/obj/item/stack/ore/glass, 5), // One per unit, offensive bottles, hard to get
 		list(QUALITY_HEATING, 5, 60)
@@ -131,7 +131,7 @@
 	result = /obj/item/reagent_containers/glass/bottle/carbon
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/meat, 3), // Any meat will do
+		list(/obj/item/reagent_containers/snacks/meat, 3), // Any meat will do
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -149,7 +149,7 @@
 	result = /obj/item/reagent_containers/glass/bottle/ethanol
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/grown, 3),
+		list(/obj/item/reagent_containers/snacks/grown, 3),
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -169,8 +169,8 @@
 	result = /obj/item/reagent_containers/glass/bottle/hydrazine
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Hydrogen from biomass
-		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Nitrogen from plants (I hate plant code)
+		list(/obj/item/reagent_containers/snacks/grown, 1), // Hydrogen from biomass
+		list(/obj/item/reagent_containers/snacks/grown, 1), // Nitrogen from plants (I hate plant code)
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -206,7 +206,7 @@
 	result = /obj/item/reagent_containers/glass/bottle/phosphorus
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/meat/carp, 1), // Feesh is a good source of phosphorus!
+		list(/obj/item/reagent_containers/snacks/meat/carp, 1), // Feesh is a good source of phosphorus!
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -215,7 +215,7 @@
 	result = /obj/item/reagent_containers/glass/bottle/potassium
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/grown, 3), // Can't make it exclusive to bananas so this is the next best thing.
+		list(/obj/item/reagent_containers/snacks/grown, 3), // Can't make it exclusive to bananas so this is the next best thing.
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -234,7 +234,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
 		list(/obj/item/stack/ore, 1), // Sulfur from rocks
-		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Hydrogen from biomass
+		list(/obj/item/reagent_containers/snacks/grown, 1), // Hydrogen from biomass
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -261,7 +261,7 @@
 	result = /obj/item/reagent_containers/glass/bottle/sugar
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
-		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Extracting sucrose from plants
+		list(/obj/item/reagent_containers/snacks/grown, 1), // Extracting sucrose from plants
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -271,7 +271,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
 		list(/obj/item/stack/ore, 1), // Leeching the sulfur from rocks
-		list(/obj/item/reagent_containers/food/snacks/egg, 1), // Not for luck! Extracting it from rotten eggs!
+		list(/obj/item/reagent_containers/snacks/egg, 1), // Not for luck! Extracting it from rotten eggs!
 		list(QUALITY_HEATING, 5, 10)
 	)
 
