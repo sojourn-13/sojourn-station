@@ -293,6 +293,12 @@
 	desc = "You cannot be inspired, and as such, artistic pursuits are beyond you. Though what you have already learned, you can apply very well."
 	perks = list(PERK_NO_INSPIRO)
 
+	restricted_to_species = list(
+		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT,
+		FORM_CINDAR, FORM_SLIME, FORM_MYCUS, FORM_FOLKEN)
+		// Flesh automata only
+
 // Beeg stat boosts, but you can't ever gain inspiration. Can still lose your sanity, so you're not a flesh automaton.
 
 	stat_modifiers = list(
