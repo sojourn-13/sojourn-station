@@ -288,3 +288,18 @@
 		STAT_COG = 10,
 	)
 
+/datum/category_item/setup_option/background/bckgrnd/close_minded
+	name = "Close Minded"
+	desc = "You cannot be inspired, and as such, artistic pursuits are beyond you. Though what you have already learned, you can apply very well."
+	perks = list(PERK_NO_INSPIRO)
+
+// Beeg stat boosts, but you can't ever gain inspiration. Can still lose your sanity, so you're not a flesh automaton.
+
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_VIG = 25,
+		STAT_BIO = 35,
+		STAT_MEC = 35,
+		STAT_COG = 35
+	)
