@@ -297,9 +297,6 @@
 		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
 		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT,
 		FORM_CINDAR, FORM_SLIME, FORM_MYCUS, FORM_FOLKEN)
-		// Flesh automata only
-
-// Beeg stat boosts, but you can't ever gain inspiration. Can still lose your sanity, so you're not a flesh automaton.
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
