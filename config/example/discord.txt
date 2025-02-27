@@ -1,28 +1,11 @@
 ## Chat Announce Options
 ## Various messages to be sent to game chats.
-## Uncommenting these will enable them, by default they will be broadcast to Game chat channels on TGS3 or non-admin channels on TGS>=4.
-## If using TGS>=4, the string option can be set as one of more chat channel tags (separated by ','s) to limit the message to channels with that tag name (case-sensitive). This will have no effect on TGS3.
-## i.e. CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag
 
 ## Welcome message sent at the start of a new round.
 ## Example of a notification message: "A new round has begun!"
-## Available placeholders for MESSAGE_ANNOUNCE_NEW_GAME:
-## {game_id}     - The unique identifier of the game.
-## {newline}     - Inserts a new line in the message.
-## {storyteller} - The name of the storyteller.
-## {welcome}     - The storyteller's welcome message.
-MESSAGE_ANNOUNCE_NEW_GAME A new round **{game_id}** is starting! {newline}Your storyteller is {storyteller}: {welcome}
+MESSAGE_ANNOUNCE_NEW_GAME A new round has begun!
 
 ## Message sent at the end of a round.
 ## Example of a role notification message: "<@&859887924223672360> The round is almost over! Get ready for the next one."
 ## Replace 859887924223672360 with the appropriate role ID if needed.
-## Available placeholders for MESSAGE_ANNOUNCE_ROUND_END:
-## {game_id} - The unique identifier of the game.
-## {newline} - Inserts a new line in the message.
-MESSAGE_ANNOUNCE_ROUND_END Round **{game_id}** is almost over! Get ready for the next one.
-
-## Which channel will have a message about a new game starting, message includes the station name.
-#CHANNEL_ANNOUNCE_NEW_GAME status
-
-## Which channel will have a message about a new game starting, message includes the round ID of the game that has just ended.
-#CHANNEL_ANNOUNCE_END_GAME status
+MESSAGE_ANNOUNCE_ROUND_END The round is almost over! Get ready for the next one.
