@@ -7,9 +7,12 @@
 	name = "End Round"
 	question = "End Shift?"
 	time = 90
-	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
+	minimum_win_percentage = 0.6
+	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/continue_round)
 	next_vote = 150 MINUTES //Minimum round length before it can be called for the first time
-	cooldown = 15 MINUTES //Cooldown is set to 15 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
+	cooldown = 15 MINUTES //Cooldown is set to 15 mins as 1 hour is a bit much when things change so much in so little time + maximum 8 hour rounds means we should be a bit more forgiving.
+	description = "You'll have 1.2 voting power if you're a head of staff or an antag, 0.6 if you're observing, dead, mouse / drone or joined for less than 15 minutes and 1 vote weight otherwise"
+
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
@@ -84,7 +87,7 @@
 /datum/vote_choice/restart/on_win()
 	SSticker.shift_end(15 MINUTES)
 
-/datum/vote_choice/countinue_round
+/datum/vote_choice/continue_round
 	text = "Continue Shift"
 
 
