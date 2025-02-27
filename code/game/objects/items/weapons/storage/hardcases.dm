@@ -445,6 +445,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 	new /obj/item/gun/projectile/makarov/moebius/preloaded_cbo(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
 
 /obj/item/storage/hcases/med/medical_job_trama
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -456,6 +457,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
 

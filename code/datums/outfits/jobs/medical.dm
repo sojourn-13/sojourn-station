@@ -20,6 +20,7 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
+	head = /obj/item/clothing/head/rank/cbo
 	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_cbo = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor
@@ -28,6 +29,7 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
+	head = /obj/item/clothing/head/rank/medical
 	backpack_contents = list(/obj/item/storage/hcases/med/medical_job = 1)
 
 /decl/hierarchy/outfit/job/medical/recovery_team
@@ -35,11 +37,11 @@
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
-	suit =  /obj/item/clothing/suit/armor/vest
+	suit =  /obj/item/clothing/suit/storage/vest/paramedic
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
-	head = /obj/item/clothing/head/soft/medical
+	head = /obj/item/clothing/head/rank/medical
 	gloves = /obj/item/clothing/gloves/stungloves/trauma
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
@@ -51,6 +53,7 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
+	head = /obj/item/clothing/head/rank/psych
 	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_psyco = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor/medStudent

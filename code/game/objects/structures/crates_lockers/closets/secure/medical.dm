@@ -64,6 +64,7 @@
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/under/rank/medical(src)
+	new /obj/item/clothing/head/rank/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/head/soft/medical(src)
@@ -76,6 +77,7 @@
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/clothing/accessory/stethoscope(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
 	name = "Soteria Field Doctor's locker"
@@ -100,7 +102,7 @@
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
-	new /obj/item/clothing/head/soft/medical(src)
+	new /obj/item/clothing/head/rank/medical(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
@@ -116,6 +118,8 @@
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/clothing/accessory/stethoscope(src)
 	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
+	new /obj/item/clothing/suit/storage/vest/paramedic(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
 	name = "soteria Paramedic locker"
@@ -129,7 +133,8 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
-	new /obj/item/clothing/under/rank/paramedic(src) // Not a surgery-oriented job, they don't need scrubs.
+	new /obj/item/clothing/under/rank/paramedic(src)
+	new /obj/item/clothing/head/rank/medical(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
@@ -139,7 +144,7 @@
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
-	new /obj/item/clothing/suit/storage/hazardvest(src)
+	new /obj/item/clothing/suit/storage/vest/paramedic(src)
 	new /obj/item/tool/baton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/pouch/medical_supply(src)
@@ -148,6 +153,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 	new /obj/item/clothing/accessory/stethoscope(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "Soteria Biolab Overseer's locker"
@@ -174,6 +180,7 @@
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/under/rank/moebius_biolab_officer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/cmo(src)
+	new /obj/item/clothing/head/rank/cbo(src)
 	new /obj/item/clothing/gloves/latex(src)
 	new /obj/item/clothing/accessory/halfcape/cbo(src)
 	new /obj/item/clothing/accessory/job/cape/mbo(src) // Both versions of capes for consistency - Seb
@@ -193,6 +200,8 @@
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
 	new /obj/item/clothing/accessory/holster/saber/rapiermed/occupied(src)
+	new /obj/item/clothing/accessory/holster/medical(src)
+	new /obj/item/clothing/suit/storage/vest/paramedic(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"

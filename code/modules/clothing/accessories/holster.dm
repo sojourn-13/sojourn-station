@@ -163,6 +163,12 @@
 	icon_state = "holster_leg"
 	overlay_state = "holster_leg"
 
+/obj/item/clothing/accessory/holster/medical
+	name = "medical holster"
+	desc = "A polymer weapon holster in medical colors mounted around the upper leg."
+	icon_state = "holster_medical"
+	overlay_state = "holster_medical"
+
 
 /*
 Sword holsters

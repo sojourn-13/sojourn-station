@@ -1073,6 +1073,20 @@
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.6
 
+//EQUINOX: alternate paramedic armor, for keeping a lighter footprint
+/obj/item/clothing/suit/storage/vest/paramedic
+	name = "paramedic armor"
+	desc = "A minimalistic lightweight armor vest with some pouches strapped to it. Has a cyan cross on the front and back."
+	icon_state = "medical_armor"
+	armor_list = list(
+		melee = 30,
+		bullet = 30,
+		energy = 30,
+		bomb = 25,
+		bio = 50,
+		rad = 25
+	)
+
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."

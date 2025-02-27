@@ -319,7 +319,125 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	desc = "A sterile green surgical cap for medical operations."
 	icon_state = "surgcap_green"
 
-/obj/item/clothing/head/rank/trooper/beret //blackshield hats
+//SARS berets
+
+/obj/item/clothing/head/rank/medical
+	name = "medical beret"
+	desc = "A sterile beret with cyan flash for doctors."
+	icon_state = "medical"
+
+/obj/item/clothing/head/rank/medical/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["regular"] = "medical"
+	options["rapid response"] = "medical_evil"
+	options["nursing"] = "medical_nurse"
+	options["nursing rapid response"] = "medical_nurse_evil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/rank/chemistry
+	name = "chemist's beret"
+	desc = "A sterile beret with orange flash for chemists."
+	icon_state = "chemistry"
+
+/obj/item/clothing/head/rank/chemistry/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["regular"] = "chemistry"
+	options["rapid response"] = "chemistry_evil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/rank/psych
+	name = "psychiatrist's beret"
+	desc = "A sterile beret with pruple flash for psychiatrists."
+	icon_state = "psych"
+
+/obj/item/clothing/head/rank/psych/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["regular"] = "psych"
+	options["rapid response"] = "psych_evil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/rank/cbo
+	name = "biolab overseer's beret"
+	desc = "A sterile beret with crimson flash for chief medical officers."
+	icon_state = "cbo"
+
+/obj/item/clothing/head/rank/cbo/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["regular"] = "cbo"
+	options["rapid response"] = "cbo_evil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//blackshield hats
+
+/obj/item/clothing/head/rank/trooper/beret
 	name = "blackshield beret"
 	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield."
 	icon_state = "beret_militia"
