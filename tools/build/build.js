@@ -22,7 +22,7 @@ Juke.setup({ file: import.meta.url }).then((code) => {
   process.exit(code);
 });
 
-const DME_NAME = 'sojourn-station';
+const DME_NAME = 'sojourn-iskhod';
 
 export const DefineParameter = new Juke.Parameter({
   type: 'string[]',

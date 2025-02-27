@@ -6,3 +6,6 @@
 ######################################################################
 
 # somerussians - host
+cfwmagic = Host
+potassium19 = Head Admin
+shiningpulsar = Game Master
