@@ -98,28 +98,33 @@
 /datum/robot_component/armour
 	name = "mark I armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour
-	max_damage = 80
+	max_damage = 100
+	burn_mult = 0.9
+	brute_mult = 0.9
 
 /datum/robot_component/armour/energy
 	name = "mark II energy armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
-	max_damage = 120
+	max_damage = 125
 	installed_by_default = FALSE
 	burn_mult = 0.5
+	brute_mult = 0.9
 
 /datum/robot_component/armour/melee
 	name = "mark III reinforced armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkiii
-	max_damage = 120
+	max_damage = 125
 	installed_by_default = FALSE
+	burn_mult = 0.9
 	brute_mult = 0.5
 
 /datum/robot_component/armour/extra
 	name = "mark V extra armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkv
-	max_damage = 160 //33% more hp then other plates but no resistances.
+	max_damage = 200
 	installed_by_default = FALSE
-
+	burn_mult = 0.6
+	brute_mult = 0.6
 
 // JETPACK
 // Allows the cyborg to move in space
@@ -323,24 +328,28 @@
 	desc = "A robot part, basic metal plates to be able to take dents and burns so more sensitive component inside dont."
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
-	internal_damage = 80
+	internal_damage = 100
+	burn_mult = 0.9
+	brute_mult = 0.9
 
 /obj/item/robot_parts/robot_component/armour/mkii
 	name = "Mark II energy armour plating"
 	desc = "A robot part, metal plates designed to resist burns better then other plates. Protects other sensitive components."
 	icon_state = "armormk2"
 	icon_state_broken = "armormk2_broken"
-	internal_damage = 120
+	internal_damage = 125
 	matter = list(MATERIAL_STEEL = 25)
 	burn_mult = 0.5
+	brute_mult = 0.9
 
 /obj/item/robot_parts/robot_component/armour/mkiii
 	name = "Mark III reinforced armour plating"
 	desc = "A robot part, metal plates designed to resist a beating better then other plates. Protects other sensitive components."
 	icon_state = "armormk2"
 	icon_state_broken = "armormk2_broken"
-	internal_damage = 120
+	internal_damage = 125
 	matter = list(MATERIAL_STEEL = 25)
+	burn_mult = 0.9
 	brute_mult = 0.5
 
 /obj/item/robot_parts/robot_component/armour/mkv
@@ -348,8 +357,10 @@
 	desc = "A robot part, whats better then a few metal plates? MORE metal plates! Protects other sensitive components."
 	icon_state = "armormk5"
 	icon_state_broken = "armormk5_broken"
-	internal_damage = 160
+	internal_damage = 200
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
+	burn_mult = 0.6
+	brute_mult = 0.6
 
 /obj/item/robot_parts/robot_component/camera
 	name = "camera"

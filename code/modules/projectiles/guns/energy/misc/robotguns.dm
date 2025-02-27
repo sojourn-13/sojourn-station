@@ -11,7 +11,7 @@
 	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
-	charge_cost = 200
+	charge_cost = 100 //16 shots
 	self_recharge = 1
 	init_firemodes = list(
 		list(mode_name="beanbag", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, fire_sound = 'sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=25, icon="stun"),
@@ -33,7 +33,7 @@
 	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
-	charge_cost = 80 //about 20 rounds per full charge
+	charge_cost = 32 //about 50 rounds per full charge
 	self_recharge = 1
 	charge_meter = TRUE
 	serial_type = "NM"
@@ -71,7 +71,7 @@
 	item_state = "glock"
 	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
-	charge_cost = 100
+	charge_cost = 50 //32 shots
 	self_recharge = 1
 	init_firemodes = list(
 		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10
@@ -87,7 +87,7 @@
 	name = "embedded energy SMG"
 	desc = "An energy-based SMG deployed from your arm. A favoured hidden weapon."
 	cell_type = /obj/item/cell/medium/greyson
-	charge_cost = 25
+	charge_cost = 20 //80 shots
 	self_recharge = 1
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal //self defense gun, great for bugs less good for a "real fight" against anyone with anything resembling armor

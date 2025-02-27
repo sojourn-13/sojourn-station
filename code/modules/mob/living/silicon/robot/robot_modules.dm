@@ -56,7 +56,7 @@ var/global/list/robot_modules = list(
 	// A list of robot traits , these can be found at cyborg_traits.dm
 	var/robot_traits = null
 	//Module stats, these are applied to the robot
-	health = 100 //Max health. Apparently this is already defined in item.dm
+	health = 200 //Max health. Apparently this is already defined in item.dm
 	var/speed_factor = 1.3 //Speed factor, applied as a divisor on movement delay
 	var/power_efficiency = 1.0 //Power efficiency, applied as a divisor on power taken from the internal cell
 
@@ -393,9 +393,9 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/medical/general
 	name = "medical robot module"
-	health = 120 //bit weaker
+	health = 240 //bit weaker
 	speed_factor = 1.3 //normal speed
-	power_efficiency = 0.9 //Very poor, shackled to a charger
+	power_efficiency = 1.0
 	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
 							  /obj/item/borg/upgrade/jetpack)
 
@@ -540,9 +540,9 @@ var/global/list/robot_modules = list(
 				"dullahancargo"
 				)
 
-	health = 120 //Slightly above average
+	health = 240 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
-	power_efficiency = 0.9 //Slightly below average
+	power_efficiency = 1.0
 
 	desc = "The engineering module is designed for setting up and maintaining core colony systems, \
 	as well as occasional repair work here and there. It's a good all rounder that can serve most \
@@ -685,9 +685,9 @@ var/global/list/robot_modules = list(
 							 /obj/item/borg/upgrade/bigknife)
 
 /obj/item/robot_module/security/defense
-	health = 160 //Kinda light! We're meant for rapid response
+	health = 320 //Kinda light! We're meant for rapid response
 	speed_factor = 1.45 //pretty fast!
-	power_efficiency = 0.95 //We're dangerous, but generally can't stray too far from our chargers!
+	power_efficiency = 1.0
 
 	desc = "Focused on protecting the colony from great threats! Ensure a rapid response to any  major threats, leave little stuff to the humans and enforcement bots \
 	heavily armed, though lightly armored security unit."
@@ -774,9 +774,9 @@ var/global/list/robot_modules = list(
 
 
 /obj/item/robot_module/security/enforcement
-	health = 220 //Very tanky!
+	health = 440 //Very tanky!
 	speed_factor = 1.15 //Kinda slow
-	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
+	power_efficiency = 1.55
 
 	desc = "Focused on keeping the peace and ensuring colony law is maintained, the enforcement module is a \
 	heavily armored, though lightly armed security unit."
@@ -918,9 +918,9 @@ var/global/list/robot_modules = list(
 					"dullahanjani"
 				)
 
-	health = 120 //Bulky
+	health = 240 //Bulky
 	speed_factor = 1.45 //Fast
-	power_efficiency = 0.8 //Poor
+	power_efficiency = 1.0
 
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
@@ -1018,7 +1018,7 @@ var/global/list/robot_modules = list(
 					"dullahanserv_alt"
 				)
 
-	health = 120
+	health = 240
 	speed_factor = 1.5 //Quick
 	power_efficiency = 1 //Base line
 
@@ -1129,7 +1129,7 @@ var/global/list/robot_modules = list(
 					"dullahanmine"
 				)
 
-	health = 160 //Pretty tough
+	health = 320 //Pretty tough
 	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
 
@@ -1210,9 +1210,9 @@ var/global/list/robot_modules = list(
 					"dullahansci"
 					)
 
-	health = 120 //Weak
+	health = 240 //Weak
 	speed_factor = 1.3 //Average
-	power_efficiency = 0.75 //Poor efficiency
+	power_efficiency = 1.0
 
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
 	duties, this module prioritises flexibility over efficiency. Capable of working in R&D, Toxins, \
@@ -1280,7 +1280,7 @@ var/global/list/robot_modules = list(
 	no_slip = 1
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
-	health = 35 //Basic colony drones and the like should have 35 health as they are not meant for combat
+	health = 100
 	stat_modifiers = list(
 		STAT_COG = 120,
 		STAT_MEC = 80
@@ -1385,7 +1385,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/drone/construction
 	name = "construction drone module"
 	channels = list("Engineering" = 1)
-	health = 75 //These spawn in high combat areas and zones, 1 shot by a random person mob isnt fun
+	health = 150
 	languages = list()
 
 /obj/item/robot_module/drone/construction/New(var/mob/living/silicon/robot/R)

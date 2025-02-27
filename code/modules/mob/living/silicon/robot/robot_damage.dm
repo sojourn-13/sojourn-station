@@ -155,13 +155,12 @@
 
 
 /mob/living/silicon/robot/get_fall_damage(var/turf/from, var/turf/dest)
-	//Robots should not be falling! Their bulky inarticulate frames lack shock absorbers, and gravity turns their armor plating against them
-	//Falling down a floor is extremely painful for robots, and for anything under them, including the floor
+	//Falling down a floor is painful for robots, and for anything under them, including the floor
 
-	var/damage = maxHealth*0.49 //Just under half of their health
+	var/damage = maxHealth*0.10 //10% health
 	//A percentage is used here to simulate different robots having different masses. The bigger they are, the harder they fall
 
-	//Falling two floors is not an instakill, but it almost is
+	//Falling more floors deals more damage
 	if (from && dest)
 		damage *= abs(from.z - dest.z)
 
@@ -172,7 +171,7 @@
 /mob/living/silicon/robot/fall_impact(var/turf/from, var/turf/dest)
 	take_overall_damage(get_fall_damage(from, dest))
 
-	Stun(5)
+	Stun(2)
 	updatehealth()
 	//Wreck the contents of the tile
 	for (var/atom/movable/AM in dest)

@@ -423,6 +423,8 @@
 	degradation = 0
 	sharp = 1
 	embed_mult = 0
+	max_health = 9999999 // Workaround to prevent borgtools from permanently breaking once upgrades are applied
+	workspeed = 1.25	// Better parity with regular crew
 
 /obj/item/tool/robotic_omni/surgery
 	name = "Surgery omni tool"
@@ -489,8 +491,8 @@
 						  QUALITY_DIGGING = 40)
 
 /obj/item/tool/robotic_omni/cleaner
-	name = "Borrow Omni tool"
-	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing borrows."
+	name = "Burrow Omni tool"
+	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing burrows."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
 						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
