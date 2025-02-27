@@ -230,12 +230,7 @@
 
 /datum/species/proc/hug(var/mob/living/carbon/human/H,var/mob/living/target)
 
-	var/t_him = "them"
-	switch(target.gender)
-		if(MALE)
-			t_him = "him"
-		if(FEMALE)
-			t_him = "her"
+	var/t_him = target.gender_word("him")
 
 	H.visible_message(SPAN_NOTICE("[H] hugs [target] to make [t_him] feel better!"), \
 					SPAN_NOTICE("You hug [target] to make [t_him] feel better!"))
