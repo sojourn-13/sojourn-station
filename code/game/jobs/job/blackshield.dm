@@ -182,7 +182,7 @@
 	spawn_positions = 3
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Blackshield Cadet"
+	// noob_name = "Blackshield Cadet"
 	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD

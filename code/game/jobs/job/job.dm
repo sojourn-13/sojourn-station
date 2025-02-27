@@ -15,7 +15,7 @@
 	var/current_positions = 0				// How many players have this job
 	var/supervisors					// Supervisors, who this person answers to directly
 	var/selection_color = "#ffffff"			// Selection screen color
-	var/noob_name
+	// var/noob_name - Equinox Edit: We trust players to select the alt title themselves if they feel like they don't have enough experience
 	var/list/alt_titles
 	var/list/alt_perks
 	var/difficulty = "Null"

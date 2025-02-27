@@ -130,7 +130,7 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Junior Ranger"
+	// noob_name = "Junior Ranger" - Equinox Edit it is going into alt titles below
 	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
@@ -189,8 +189,8 @@
 	spawn_positions = 3
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Marshal Assistant"
-	alt_titles = list("Marshal Civil Servant")
+	// noob_name = "Marshal Assistant" - Equinox Edit it is going into alt titles below
+	alt_titles = list("Marshal Assistant", "Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10

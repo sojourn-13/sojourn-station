@@ -205,7 +205,7 @@
 /datum/category_item/player_setup_item/occupation/OnTopic(href, href_list, user)
 
 	//Keeps track of the Player being looked at
-	var/client/C = usr.client
+	// var/client/C = usr.client - Equinox edit unused var
 
 	if(href_list["reset_jobs"])
 		ResetJobs()
@@ -222,14 +222,16 @@
 		var/datum/job/job = locate(href_list["select_alt_title"])
 		if (job)
 			var/choices
-			if (job.department != DEPARTMENT_LSS)
-				choices = list(job.noob_name)								// Time locks for Alt Names. Change the 0's to configure when the normal title opens up, and when the alternative ones do too.
-				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long a CKEY has to play a position until they're not forced a "n00b name"
-					choices += list(job.title)
-				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long to go from normal job name to unlocking the alternate names.
-					choices += job.alt_titles
-			else
-				choices = list(job.noob_name) + list(job.title) + job.alt_titles
+			// Equinox Edit START - Just remove the entire noob names + job title unlock system
+			// if (job.department != DEPARTMENT_LSS)
+			// 	choices = list(job.noob_name)								// Time locks for Alt Names. Change the 0's to configure when the normal title opens up, and when the alternative ones do too.
+			// 	if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long a CKEY has to play a position until they're not forced a "n00b name"
+			// 		choices += list(job.title)
+			// 	if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long to go from normal job name to unlocking the alternate names.
+			// 		choices += job.alt_titles
+			// else
+			// choices = list(job.noob_name) + list(job.title) + job.alt_titles
+			choices = list(job.title) + job.alt_titles
 
 			var/choice = input("Choose a title for [job.title].", "Choose Alternative Title", pref.GetPlayerAltTitle(job)) as anything in choices|null
 			if(choice && CanUseTopic(user))
