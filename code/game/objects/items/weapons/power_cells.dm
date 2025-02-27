@@ -611,6 +611,7 @@
 
 /obj/item/device/manual_charger/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+		cell.update_icon()
 		cell = null
 
 /obj/item/device/manual_charger/attack_self(mob/user)
@@ -625,11 +626,13 @@
 		return
 	inuse = TRUE
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
-	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	while(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
+			inuse = FALSE
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
+			inuse = FALSE
 			return
 		else
 			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
