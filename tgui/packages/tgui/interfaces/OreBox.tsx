@@ -19,8 +19,14 @@ export const OreBox = props => {
   const { act, data } = useBackend<Data>();
   const { materials } = data;
 
+  materials.sort((a, b) => {
+    if (a.name < b.name) { return -1; }
+    if (a.name > b.name) { return 1; }
+    return 0;
+  });
+
   return (
-    <Window width={460} height={265}>
+    <Window width={600} height={265}>
       <Window.Content>
         <Section
           fill
@@ -97,13 +103,17 @@ const OreRow = props => {
             step={1}
             stepPixelSize={5}
             minValue={1}
-            maxValue={100}
+            maxValue={600}
             value={amount}
             onChange={value => setAmount(value)}
           />
           <Button
             content='Eject Amount'
             onClick={() => onRelease(material.type, amount)}
+          />
+          <Button
+            content='Eject 120'
+            onClick={() => onRelease(material.type, 120)}
           />
           <Button
             content='Eject All'
