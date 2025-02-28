@@ -113,6 +113,11 @@ obj/item/clothing/under/costume/history/pirate
 	var/list/options = list()
 	options["Default Maid"] = "latexmaid"
 	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+	options["Endowed Crimson"] = "endowed_crimson" //Sprite by Tori... again. (Except this time actually added by Tori rather than someone else)
+	options["Endowed Crimson Bottomless"] = "endowed_crimson_alt"
+	options["Endowed Cyan"] = "endowed_cyan" //ditto
+	options["Endowed Cyan Bottomless"] = "endowed_cyan_alt"
+
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
