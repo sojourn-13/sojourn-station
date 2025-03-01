@@ -290,7 +290,7 @@
 
 /datum/category_item/setup_option/background/bckgrnd/close_minded
 	name = "Close Minded"
-	desc = "You cannot be inspired, and as such, artistic pursuits are beyond you. Though what you have already learned, you can apply very well."
+	desc = "You cannot be inspired and cannot gain insight. Oddities are just baubles to you. Though what you have already learned, you can apply very well."
 	perks = list(PERK_NO_INSPIRO)
 
 	restricted_to_species = list(

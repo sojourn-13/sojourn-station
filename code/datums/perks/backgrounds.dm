@@ -425,6 +425,6 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 /datum/perk/no_inspiro
 	name = "Cannot Be Inspired"
 	desc = "Unlike most, you are close-minded, leading you to be unable to be inspired. \
-	As such, oddities are little more than trinkets to you, and artistic pursuits are beyond you. \
+	As such, oddities are little more than trinkets to you. \
 	You can still suffer mental breaks from going insane, though!"
 	icon_state = "obfuscation_ranking"
