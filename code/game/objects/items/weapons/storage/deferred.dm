@@ -418,7 +418,7 @@
 	desc = "A container packed with gauze, for packing wounds with gauze."
 	initial_contents = list(/obj/item/stack/medical/bruise_pack = 6)
 
-obj/item/storage/deferred/ointment
+/obj/item/storage/deferred/ointment
 	name = "box of ointment"
 	desc = "A container filled with tubes of ointment."
 	initial_contents = list(/obj/item/stack/medical/ointment = 6)
@@ -431,7 +431,7 @@ obj/item/storage/deferred/ointment
 	/obj/item/ammo_magazine/ammobox/magnum_40 = 2
 	) // No magnum rifle speedloaders, just throwing an extra box in there.
 
-obj/item/storage/deferred/crate/infantry_armor
+/obj/item/storage/deferred/crate/infantry_armor
 	name = "infantry armor kit"
 	desc = "A (relatively) lightweight crate containing everything to armor a colonist (to the bare minimum.)"
 	initial_contents = list(/obj/item/clothing/suit/armor/vest,
