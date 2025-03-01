@@ -204,9 +204,12 @@
 	name = "mercenary's pilot suit"
 	desc = "A black composite suit made of pliable ballistic fibers with thin plating at the shoulders, chest, thighs, wrists, and neck. It leaves little to the imagination. It was tailored for a rather tall woman, judging from the rounded chestplate. This one has a few 3mm holes along the neck and the spine's plating. opening up access to several connection ports. \
 			The gray chestplate is inscribed with a crimson red sun and two black wings. The throat plate has 'XPAT' crudely written on it, next to a scannable identifier."
-	icon = 'icons/fluff/fluff_items.dmi'
-	icon_state = "mercpilot"
-	item_state = "mpilot_b"
+	icon = 'icons/fluff/clothing_mob.dmi'
+	icon_state = "mpilot_b"
+	item_state = "mercpilot"
+	item_state_slots = list(
+		"slot_w_uniform" = "mercpilot"
+	)
 
 /* /obj/item/clothing/under/skintight/mercpilot/verb/toggle_style()			//I'll fix this another day
 	set name = "Adjust Style"
