@@ -817,7 +817,6 @@
 	injury_type = INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
-	slowdown = 0.3
 	radiation_mod = 0
 	total_health = 75
 	breath_type = null
