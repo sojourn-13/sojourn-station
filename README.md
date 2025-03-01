@@ -9,12 +9,12 @@ A downstream branch of the Sojourn-13 codebase.
 
 Please contact us on the server Discord. 
 
-Project owner - MsRandylicious
-Loremaster - Bamhalazam
+Project owner - MsRandylicious<br/>
+Loremaster - Bamhalazam<br/>
 
 ## CREDITS
 
-Mapping - Glitchy, smoggie
-Spriting - Odisurin
-Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster
-Code - Bamhalazam, CFW Magic
+Mapping - Glitchy, smoggie<br/>
+Spriting - Odisurin<br/>
+Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster<br/>
+Code - Bamhalazam, CFW Magic<br/>
