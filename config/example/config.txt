@@ -200,7 +200,10 @@ GUEST_BAN
 # BANAPPEALS http://example.com
 
 ##Github address
-GITHUBURL https://github.com/Endless-Horizon/CEV-Eris
+GITHUBURL https://github.com/Equinox-SS13/equinox-sojourn
+
+##Rules address
+# RULESURL http://example.com
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard

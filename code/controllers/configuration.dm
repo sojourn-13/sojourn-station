@@ -102,6 +102,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/wikiurl
 	var/forumurl
 	var/githuburl
+	var/rulesurl
 	var/discordurl
 
 	var/static/ip_reputation = FALSE		//Should we query IPs to get scores? Generates HTTP traffic to an API service.
@@ -457,6 +458,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("githuburl")
 					config.githuburl = value
+
+				if ("rulesurl")
+					config.rulesurl = value
 
 				if("ip_reputation")
 					config.ip_reputation = 1
