@@ -231,6 +231,8 @@
 /atom/proc/is_drainable()
 	return reagents && (reagent_flags & DRAINABLE)
 
+/atom/proc/is_incorporeal()
+	return FALSE
 
 /atom/proc/CheckExit()
 	return TRUE

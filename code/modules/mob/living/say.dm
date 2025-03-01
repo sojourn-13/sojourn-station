@@ -374,7 +374,7 @@ mob/proc/format_say_message(var/message = null)
 /obj/effect/speech_bubble
 	var/mob/parent
 
-/mob/living/proc/GetVoice()
+/mob/living/GetVoice()
 	return name
 
 /mob/living/hear_say(message, verb = "says", datum/language/language = null, alt_name = "", italics = FALSE,\

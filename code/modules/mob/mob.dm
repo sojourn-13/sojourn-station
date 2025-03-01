@@ -951,6 +951,8 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 	if(HUDtech.Find("pain"))
 		flick("weak_pain", HUDtech["pain"])
 
+/mob/proc/GetVoice()
+	return name
 
 /mob/proc/get_visible_implants()
 	var/list/visible_implants = list()
@@ -1328,7 +1330,9 @@ mob/proc/yank_out_object()
 			in_use = 0
 
 
-//SoJ
+/mob/is_incorporeal()
+	return incorporeal_move
+
 
 /mob/proc/give_health_via_stats()
 	if(maxHealth && stats)
