@@ -210,7 +210,7 @@
 	result =  /obj/item/clothing/suit/lizard/robe
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 15, MATERIAL_CLOTH, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_CLOTH, "time" = 60),
 		list(QUALITY_CUTTING, 15, 30),
 	)
 
