@@ -53,7 +53,7 @@
 
 /obj/item/reagent_containers/snacks/warcake
 	name = "warcake"
-	desc = "A note done in cream and frosting says: "In memoriam to the sweetest Warcakey." The candles on the cake never seem to burn out."
+	desc = "A note done in cream and frosting says: 'In memoriam to the sweetest Warcakey.' The candles on the cake never seem to burn out."
 	icon_state = "birthdaycake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/snacks/birthdaycakeslice
