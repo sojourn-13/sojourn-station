@@ -1336,8 +1336,9 @@ mob/proc/yank_out_object()
 
 /mob/proc/give_health_via_stats()
 	if(maxHealth && stats)
-		health += src.stats.getStat(STAT_ANA)
-		maxHealth += src.stats.getStat(STAT_ANA)
-		if(maxHealth > 300) //soft cap to keep players from becoming killable only by organ damage or pain.
-			health = 300
-			maxHealth = 300
+		if(!(src.stats.getStat(STAT_ANA) < 0))	//If a player has negative ANA we don't want them losing health when they focus on an oddity.
+			health += src.stats.getStat(STAT_ANA)
+			maxHealth += src.stats.getStat(STAT_ANA)
+			if(maxHealth > 300) //soft cap to keep players from becoming killable only by organ damage or pain.
+				health = 300
+				maxHealth = 300
