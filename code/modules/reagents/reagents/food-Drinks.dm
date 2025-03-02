@@ -56,6 +56,29 @@
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
 	M.add_chemical_effect(CE_BLOODRESTORE, 0.1 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 
+// CFW - 02.03.25 - Adding War Cake taste
+/datum/reagent/organic/nutriment/warcake/sweetmemories
+	name = "Sweet Memories"
+	id = "warcakesm"
+	description = "The source of joy and a reminder of better times."
+	taste_description = "sweet memories"
+	color = "#FFFFFF"
+	scannable = FALSE
+	injectable = 1
+	common = FALSE //It's basically sugar
+	price_per_unit = 0.725
+
+/datum/reagent/organic/nutriment/warcake/unendingsadness
+	name = "Unending Sadness"
+	id = "warcakeus"
+	description = "A painful yet necessary reminder of better times."
+	taste_description = "unending sadness"
+	color = "#FFFFFF"
+	scannable = FALSE
+	injectable = 1
+	common = FALSE //It's basically sugar
+	price_per_unit = 0.725
+
 /datum/reagent/organic/nutriment/glucose
 	name = "Glucose"
 	id = "glucose"
