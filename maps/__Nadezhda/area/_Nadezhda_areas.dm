@@ -154,6 +154,12 @@
 	name = "Abandoned Maintenance Shed"
 	icon_state = "section2deck3starboard"
 
+/area/nadezhda/maintenance/stormshelter
+	name = "\improper Abandoned Storm Shelter"
+
+/area/nadezhda/maintenance/stormbunker
+	name = "\improper Abandoned Storm Bunker"
+
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
@@ -436,6 +442,11 @@
 
 /area/nadezhda/outside/inside_colony/west
 	name = "Colony Meadow - West"
+
+/area/nadezhda/outside/inside_colony/upper
+	name = "Colony Upper Level"
+	is_dungeon_lootable = FALSE
+
 /area/nadezhda/outside/mountainsolars
 	name = "Mountain Solars"
 	icon_state = "meadow"
@@ -474,19 +485,22 @@
 	name = "Engineering Substation"
 
 /area/nadezhda/maintenance/substation/medical
-	name = "Medial Substation"
+	name = "Medical Substation"
 
 /area/nadezhda/maintenance/substation/science
 	name = "Science Substation"
 
 /area/nadezhda/maintenance/substation/sec
-	name = "Marshal Substation"
+	name = "Port Authority Substation"
+
+/area/nadezhda/maintenance/substation/militia
+	name = "Colony Militia Substation"
 
 /area/nadezhda/maintenance/substation/cargo
 	name = "Cargo Substation"
 
 /area/nadezhda/maintenance/substation/servist
-	name = "Servist Substation"
+	name = "Service Substation"
 
 /area/nadezhda/maintenance/substation/misc1
 	name = "MISC Substation 1"
@@ -498,7 +512,7 @@
 	name = "MISC Substation 3"
 
 /area/nadezhda/maintenance/substation/bridge
-	name = "Bridge Substation"
+	name = "Command Substation"
 
 //Hallway
 
@@ -691,15 +705,9 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/smc
-	name = "Blackshield Commander's Office"
+	name = "Militia Commander's Office"
 	icon_state = "hammerred"
 	flags = AREA_FLAG_CRITICAL
-	sound_env = SMALL_SOFTFLOOR
-	area_light_color = COLOR_LIGHTING_CREW_SOFT
-
-/area/nadezhda/command/smc/quarters
-	name = "Blackshield Commander's Quarters"
-	icon_state = "hammerred"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
@@ -1147,6 +1155,9 @@
 /area/nadezhda/engineering/propulsion/right
 	name = "Right Propulsion Hangar"
 
+/area/nadezhda/engineering/water_treatment
+	name = "\improper Colony Water Treatment"
+
 //MedBay
 
 /area/nadezhda/medical/medbay
@@ -1322,6 +1333,9 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/medical/organ_lab
 	name = "Organ Laboratory"
 
+/area/nadezhda/medical/EMSbreakroom
+	name = "\improper Shared EMS Breakroom"
+
 //Security
 
 /area/nadezhda/security
@@ -1367,10 +1381,6 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Security - Armory"
 	icon_state = "Warden"
 
-/area/nadezhda/security/armory_blackshield
-	name = "\improper Blackshield - Armory"
-	icon_state = "Warden"
-
 /area/nadezhda/security/armoryshop
 	name = "\improper Security - Armory Shop"
 	icon_state = "Warden"
@@ -1386,10 +1396,6 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/tactical
 	name = "\improper Security - Tactical Equipment"
-	icon_state = "Tactical"
-
-/area/nadezhda/security/tactical_blackshield
-	name = "\improper Blackshield - Tactical Equipment"
 	icon_state = "Tactical"
 
 /area/nadezhda/security/nuke_storage
@@ -1437,7 +1443,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "security"
 
 /area/nadezhda/security/triage_blackshield
-	name = "\improper Blackshield Triage"
+	name = "\improper Militia Triage"
 	icon_state = "security"
 
 /area/nadezhda/security/vacantoffice2
@@ -1526,6 +1532,40 @@ area/nadezhda/medical/medbaymeeting
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hammerred"
 	is_maintenance = TRUE
+
+//Militia
+
+/area/nadezhda/security/tactical_blackshield
+	name = "\improper Militia Prep Room"
+	icon_state = "Tactical"
+
+/area/nadezhda/security/militia_breakroom
+	name = "\improper Militia Breakroom"
+
+/area/nadezhda/security/militia_barracks
+	name = "\improper Militia Barracks"
+
+/area/nadezhda/command/smc/quarters
+	name = "Militia Commander's Quarters"
+	icon_state = "hammerred"
+	sound_env = SMALL_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
+
+/area/nadezhda/security/armory_blackshield
+	name = "\improper Militia Armory"
+	icon_state = "Warden"
+
+/area/nadezhda/security/militia_gate
+	name = "\improper Colony Gate Office"
+
+/area/nadezhda/security/militia_srg
+	name = "\improper Militia Sergeant's Office"
+
+/area/nadezhda/security/contrabandstorage
+	name = "Militia Contraband Storage"
+
+/area/nadezhda/security/corpsmanprep
+	name = "\improper Corpsman Prep Room"
 
 //Cargo
 
@@ -1778,3 +1818,44 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/storage/tech
 	name = "Technical Storage"
 	icon_state = "auxstorage"
+
+//Caves
+
+/area/nadezhda/caves
+	is_maintenance = FALSE
+	ship_area = FALSE
+	flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = TUNNEL_ENCLOSED
+	turf_initializer = new /datum/turf_initializer/maintenance()
+	forced_ambience = list('sound/ambience/maintambience.ogg')
+	area_light_color = COLOR_LIGHTING_MAINT_DARK
+	requires_power = FALSE
+
+/area/nadezhda/caves/northcave
+	name = "\improper Southwestern Caves Northern Section"
+	icon_state = "erisred"
+
+/area/nadezhda/caves/centralcave
+	name = "\improper Southwestern Caves Central Section"
+	icon_state = "erisgreen"
+
+/area/nadezhda/caves/southcave
+	name = "\improper Southwestern Caves Southern Section"
+	icon_state = "erisblue"
+
+/area/nadezhda/caves/water_treatment
+	name = "\improper Old Water Treatment Facility"
+	icon_state = "erisyellow"
+
+/area/nadezhda/caves/spiderbunker
+	name = "Cave Spider Bunker"
+	icon_state = "erisblue"
+
+/area/nadezhda/caves/smugglerbase
+	name = "Old Colony Smuggler Base"
+	icon_state = "erisgreen"
+
+/area/nadezhda/caves/oldcolony
+	name = "\improper Ruined Colony"
+	icon_state = "erisred"
+
