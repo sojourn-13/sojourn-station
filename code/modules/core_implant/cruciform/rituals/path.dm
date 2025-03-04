@@ -161,6 +161,33 @@
 
 	return TRUE
 
+/datum/ritual/cruciform/tessellate/omnitool
+	name = "Touch of the Bleeding-Heart"
+	phrase = "Exaudi clamorem meum, et amplius noli pati." //"Hear my cry, and suffer no more."
+	desc = "Channels the power of your cruciform into an incorporeal omnitool."
+	power = 40
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	cooldown_category = "omnitool_litany"
+	success_message = "Your hand glows with holy light, and you feel more in tune with the workings of flesh."
+
+/datum/ritual/cruciform/tessellate/omnitool/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/stat_bio = 25
+	var/stat_cog = 25
+	var/obj/item/tool/tessellate_omni/tool = new /obj/item/tool/tessellate_omni(src, user)
+	if (user.stats.getStat(STAT_BIO) > 32)
+		stat_bio = user.stats.getStat(STAT_BIO) * 0.8
+		if (user.stats.getStat(STAT_BIO) > 62)
+			stat_bio = 50
+	if (user.stats.getStat(STAT_COG) > 32)
+		stat_cog = user.stats.getStat(STAT_COG) * 0.8
+		if (user.stats.getStat(STAT_COG) > 62)
+			stat_cog = 50
+	tool.tool_qualities = list(QUALITY_CLAMPING = stat_bio, QUALITY_CAUTERIZING = stat_bio, QUALITY_RETRACTING = stat_bio, QUALITY_DRILLING = stat_cog, QUALITY_SAWING = stat_cog, QUALITY_BONE_SETTING = stat_bio, QUALITY_CUTTING = stat_cog, QUALITY_BONE_GRAFTING = stat_bio)
+	usr.put_in_active_hand(tool)
+	set_personal_cooldown(user)
+	return TRUE
+
 //////////////////////////////////////////////////
 /////////         LEMNISCATE             /////////
 //////////////////////////////////////////////////
@@ -250,6 +277,47 @@
 	phrase = "Dominus, ait, in cujus conspectu ambulo, mittet angelum suum tecum, et diriget viam tuam." //"He replied, ‘The Lord, before whom I have walked faithfully, will send his angel with you and make your journey a success.'"
 	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
 
+/datum/ritual/cruciform/lemniscate/holy_boost
+	name = "Bolster the Fellowship"
+	phrase = "Benedicat tibi Dominus, et custodiat te. Ostendat Dominus faciem suam tibi, et misereatur tui. Convertat Dominus vultum suum ad te, et det tibi pacem." //“The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.”
+	var/stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10, STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	effect_time = 30 MINUTES
+	desc = "This litany boosts all the stats of all disciples who hear you for thirty minutes, but has no effect on those without cruciforms."
+
+/datum/ritual/cruciform/lemniscate/holy_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/list/people_around = list()
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H) && is_neotheology_disciple(H)) //This one only for the homies
+			people_around.Add(H)
+
+	if(people_around.len > 0)
+		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
+		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
+			give_boost(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
+		set_global_cooldown()
+		return TRUE
+	else
+		fail("Your cruciform sings, alone, unto the void.", user, C)
+		return FALSE
+
+/datum/ritual/cruciform/lemniscate/holy_boost/proc/give_boost(mob/living/carbon/human/participant)
+	for(var/stat in stats_to_boost)
+		var/amount = stats_to_boost[stat]
+		participant.stats.addTempStat(stat, amount, effect_time, src.name)
+		addtimer(CALLBACK(src, PROC_REF(take_boost), participant, stat, amount), effect_time)
+	spawn(30)
+		to_chat(participant, SPAN_NOTICE("The power of the Absolute infuses you, and you feel divine will guiding your hand in all that you do."))
+
+
+/datum/ritual/cruciform/lemniscate/holy_boost/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+	to_chat(participant, SPAN_WARNING("You feel the power that guided you fade away, leaving you with only your own skills."))
+
+
 /datum/ritual/targeted/cruciform/lemniscate/food_for_the_masses
 	name = "Food for the Masses"
 	phrase = "Sive ergo manducatis sive bibitis vel aliud quid facitis omnia in gloriam Dei facite." //"So whether you eat or drink or whatever you do, do it all for the glory of God."
@@ -266,22 +334,7 @@
 	set_personal_cooldown(user)
 	return TRUE
 
-/datum/ritual/cruciform/lemniscate/zoom_litany
-	name = "Infinite Hymn"
-	phrase = "Quam pulchri super montes pedes annuntiantis et praedicantis pacem; annuntiantis bonum, praedicantis salutem, dicentis Sion: Regnabit Deus tuus!" //"How beautiful on the mountains are the feet of those who bring good news, who proclaim peace, who bring good tidings, who proclaim salvation, who say to Zion, “Your God reigns!”"
-	desc = "Empowers the speaker with enhanced movement speed, allowing them to run faster and react quicker for a short time. While useful, the body must rest after exceeding its limits, normally for \
-	only a mere ten minutes."
-	cooldown = TRUE
-	cooldown_time = 15 MINUTES
-	power = 35
-	cooldown_category = "zoom_litany"
 
-/datum/ritual/cruciform/lemniscate/zoom_litany/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C,list/targets)
-	to_chat(H, "<span class='info'>You feel yourself speeding up, your senses and reaction times quickening!</span>")
-	H.reagents.add_reagent("hyperzine", 10)
-	H.updatehealth()
-	set_personal_cooldown(H)
-	return TRUE
 
 //////////////////////////////////////////////////
 /////////         MONOMIAL               /////////
@@ -498,59 +551,153 @@
 /datum/ritual/cruciform/divisor/probability_coefficient
 	name = "Probability Coefficient"
 	phrase = "Parasti in conspectu meo mensam adversus eos qui tribulant me." //"You prepare a table before me in the presence of my enemies."
-	desc = "A highly effective litany designed by divisors to warn them of danger, it will reveal the presence of hostile fauna, traps, and potentially monsters hiding as people. Though \
-	it may warn you of threats nearby, it cannot tell you exactly what or where. Far more reliable than the reveal adversaries litany, offering multiple detection methods and locating a wider \
-	selection of threats."
-	power = 50
+	desc = "A more powerful version of the danger detection litany, developed by Augustine for the Divisors when the threat of carrion first came to the attention of the Church. It can tell a Divisor just how many foes they are facing, their general types, and whether they are within seven meters. It can also detect the presence of the foul carrion, within or without a host."
+	power = 30 //This isn't particularly strong
+	var/longrange = 14 //The actual range of the litany
+	var/closerange = 7 //The range that the litany considers "close"
 
 /datum/ritual/cruciform/divisor/probability_coefficient/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
-	var/was_triggired = FALSE
+	var/was_triggered = FALSE
+	var/howfar
+	var/spiders = 0
+	var/spidersclose = 0
+	var/roaches = 0
+	var/roachesclose = 0
+	var/termites = 0
+	var/termitesclose = 0
+	var/ameridian = 0
+	var/ameridianclose = 0
+	var/psionic = 0
+	var/psionicclose = 0
+	var/other = 0
+	var/otherclose = 0
+	var/simples = 0
+	var/simplesclose = 0
+	var/traps
+	var/carrion
 	log_and_message_admins("performed empowered reveal litany")
-	for(var/mob/living/carbon/superior_animal/S in range(14, H))
+	for(var/mob/living/carbon/superior_animal/S in range(longrange, H))
 		if (S.stat != DEAD)
-			to_chat(H, SPAN_WARNING("Vermin are near. You can feel something nasty and hostile."))
-			was_triggired = TRUE
+			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
+				was_triggered = TRUE
+				howfar = get_dist(H.loc, S.loc)
+				switch(S.faction)
+					if("roach")
+						roaches += 1
+						if(howfar <= closerange)
+							roachesclose += 1
+					if("spiders")
+						spiders += 1
+						if(howfar <= closerange)
+							roachesclose += 1
+					if("ameridian")
+						ameridian += 1
+						if(howfar <= closerange)
+							ameridianclose += 1
+					if("wurm")
+						termites += 1
+						if(howfar <= closerange)
+							termitesclose += 1
+					if("psi_monster")
+						psionic += 1
+						if(howfar <= closerange)
+							S.alpha = 254 //Reveals cloaked psi creatures within the close radius! 254 because if you set it to 255 the cloaking code just executes again
+							psionicclose += 1
+					else
+						other += 1
+						if(howfar <= closerange)
+							otherclose += 1
 
-	for (var/mob/living/simple_animal/hostile/S in range(14, H))
+	for (var/mob/living/simple_animal/hostile/S in range(longrange, H))
 		if (S.stat != DEAD)
-			to_chat(H, SPAN_WARNING("A simple hostile brute is nearby, nasty and stupid."))
-			was_triggired = TRUE
+			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
+				howfar = get_dist(H.loc, S.loc)
+				if(istype(S, /mob/living/simple_animal/spider_core) && howfar >= closerange) //Carrions get detected separately
+					was_triggered = TRUE
+					carrion = TRUE
+				else
+					was_triggered = TRUE
+					simples += 1
+					if(howfar <= closerange)
+						simplesclose += 1
 
-	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine) in view(7, H))
-		to_chat(H, SPAN_WARNING("Something is wrong with this area. Tread carefully, someone has laid a trap nearby."))
-		was_triggired = TRUE
+	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine || /obj/effect/decal/cleanable/crayon/trap) in view(closerange, H))
+		traps = TRUE
+		was_triggered = TRUE
 
-	for(var/mob/living/carbon/human/target in range(14, H))
+	for(var/mob/living/carbon/human/target in range(closerange, H))
 		for(var/organ in target.organs)
 			if (organ in subtypesof(/obj/item/organ/internal/carrion))
-				to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity who's mere glancing ire is enough to leave you in a breathless cold sweat. You know there is a carrion nearby."))
-				was_triggired = TRUE
+				carrion = TRUE
+				was_triggered = TRUE
 
-	if(!was_triggired)
+	if(!was_triggered) //Nothing to see here!
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
-
+	else //Bad things around
+		var/return_message = ""
+		if(roaches)
+			return_message += "There are [roaches] giant roaches nearby, [roachesclose] of them are close!.\n"
+		if(spiders)
+			return_message +="There are [spiders] giant spiders nearby, [spidersclose] of them are close!.\n"
+		if(termites)
+			return_message += "There are [termites] giant termites nearby, [termitesclose] of them are close!\n"
+		if(ameridian)
+			return_message += "There are [ameridian] ameridian golems nearby, [ameridianclose] of them are close!\n"
+		if(psionic)
+			return_message += "There are [psionic] psionic abominations nearby, [psionicclose] of them are close!\n"
+		if(simples)
+			return_message += "There are [simples] dumb beasts nearby, [simplesclose] of them are close!\n"
+		if(traps)
+			return_message += "There are potential traps close, but the number of them cannot be determined!\n"
+		if(other)
+			return_message += "There are [other] unidentifiable threats nearby, [otherclose] of them are close!" //No other threats to add to the return message so we don't add a blank line to the end
+		to_chat(H, SPAN_NOTICE("[return_message]."))
+		if(carrion) //This one being an antag gets its own red text and second message
+			to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity whose views intelligent beings as prey. You know there is a carrion close."))
 	return TRUE
 
 /datum/ritual/cruciform/divisor/divisor_smite
 	name = "Divine Smite"
 	phrase = "In maxilla asini, in mandibula pulli asinarum, delevi eos, et percussi mille viros." //"With a donkey’s jawbone, I have made donkeys of them. With a donkey’s jawbone, I have killed a thousand men"
-	desc = "A short litany spoken in the middle of battle. Considered tricky to use, as it only lasts 30 seconds, but gives the speaker additional power and strength when swinging a melee weapon. Takes five minutes to recharge."
+	desc = "A short litany spoken in the middle of battle. Gives the speaker additional power and strength when swinging a melee weapon for ninety seconds. Takes five minutes to recharge."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	cooldown_category = "divisor_smite"
-	effect_time = 30 SECONDS
-	power = 30
+	effect_time = 90 SECONDS
+	power = 25
 	var/wrath_damage = 0.2
 
 /datum/ritual/cruciform/divisor/divisor_smite/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	user.damage_multiplier += wrath_damage
 	to_chat(user, SPAN_NOTICE("You feel divine wrath empowering you with immense but fleeting strength!"))
 	set_personal_cooldown(user)
-	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.effect_time)
 	return TRUE
 
 /datum/ritual/cruciform/divisor/divisor_smite/proc/discard_effect(mob/living/carbon/human/user, amount)
+	to_chat(user, SPAN_NOTICE("You feel the divine wrath fade, leaving you with only your own strength."))
 	user.damage_multiplier -= wrath_damage
+
+/datum/ritual/cruciform/divisor/zoom_litany
+	name = "Speed of Battle"
+	phrase = "Velox sicut fulgur." //Swift as Lightning perhaps?
+	desc = "Empowers the speaker with enhanced movement speed, allowing them to run faster for a short time. To avoid overtaxing the body, this may only be used once every five minutes."
+	cooldown = TRUE
+	cooldown_time = 5 MINUTES
+	effect_time = 1 MINUTES
+	power = 25
+	cooldown_category = "zoom_litany"
+
+/datum/ritual/cruciform/divisor/zoom_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	to_chat(user, "<span class='info'>You feel yourself speeding up, the Absolute speeding you on your way!</span>")
+	user.added_movedelay -= 0.5
+	set_personal_cooldown(user)
+	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.effect_time)
+	return TRUE
+
+/datum/ritual/cruciform/divisor/zoom_litany/proc/discard_effect(mob/living/carbon/human/user)
+	to_chat(user, "You feel yourself slowing down once more.")
+	user.added_movedelay += 0.5
 
 //////////////////////////////////////////////////
 /////////         FACTORIAL              /////////
@@ -813,3 +960,51 @@
 		return FALSE
 	anti_cheat = FALSE
 	return TRUE
+
+/datum/ritual/cruciform/factorial/nodrop_magnet
+	name = "Hand of Magnetism"
+	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
+	desc = "Harness the Physics of the Absolute. Items sanctified by the Church you are holding are no longer droppable. \
+	Only works with church-based items. \
+	If used on an item that already can't be dropped, it will become droppable. \
+	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
+	power = 15
+	cooldown = FALSE
+	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute."
+
+/datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/obj/item/O = user.get_active_hand()
+	var/success = FALSE
+	if(O)
+		var/list/can_magnet = list(
+			/obj/item/shield/riot/crusader,
+			/obj/item/shield/buckler/nt,
+			/obj/item/shield/riot/nt,
+			/obj/item/tool/factorial_omni,
+			/obj/item/tool/spear/halberd,
+			/obj/item/tool/knife/dagger/nt,
+			/obj/item/tool/sword/crusader,
+			/obj/item/storage/firstaid/nt,
+			/obj/item/stack/medical/bruise_pack/advanced/nt,
+			/obj/item/stack/medical/ointment/advanced/nt)
+
+		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
+		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant
+
+		for(var/list_item in can_magnet)
+			//message_admins("list_item = [list_item] O.type = [O.type]")
+			if(list_item == O.type)
+				O.canremove = !O.canremove
+				success = TRUE
+				break
+		if(O.canremove)
+			success_message = "You destroy the magnetic field binding [O.name] to you."
+		else
+			success_message = "[O.name] that you are holding feels impossible to let go."
+
+	if(!success && O)
+		fail("[O.name] is unable to be magnetized.", user, C)
+	if(!O)
+		fail("Nothing in hand to magnetize.", user, C)
+
+	return success

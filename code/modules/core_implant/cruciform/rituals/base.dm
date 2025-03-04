@@ -150,7 +150,7 @@
 		fail("You feel stupid.",user,C,targets)
 		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 
-	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically.", "Sending a message") as text|null
+	var/text = input(user, "What message will you send to the target? The message will be recieved by their cruciform and heard in their mind.", "Sending a message") as text|null
 	if (!text)
 		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")

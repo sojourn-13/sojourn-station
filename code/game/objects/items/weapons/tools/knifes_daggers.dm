@@ -141,6 +141,8 @@
 	embed_mult = 6
 	price_tag = 24
 
+/obj/item/tool/knife/neotritual/implant
+
 /obj/item/tool/knife/neotritual/equipped(mob/living/H)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(H))

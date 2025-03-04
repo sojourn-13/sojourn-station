@@ -46,6 +46,8 @@
 	price_tag = 500
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 
+/obj/item/tool/sword/nt/longsword/implant
+
 /obj/item/tool/knife/dagger/nt
 	name = "dagger"
 	desc = "A saintly looking dagger, may the absolute have mercy. \
