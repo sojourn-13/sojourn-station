@@ -1106,7 +1106,7 @@
 //Death releases a EMP pulse
 /////////////////////////////////////////////////
 
-/mob/living/simple_animal/hostile/hivemind/treader
+/mob/living/simple/hostile/hivemind/treader
 	name = "Treader"
 	desc = "A human head with a screen shoved in its mouth, connected to a large column with another screen displaying a human face."
 	icon_state = "treader"
@@ -1117,14 +1117,14 @@
 	resistance = RESISTANCE_AVERAGE
 	malfunction_chance = 10
 	move_to_delay = 10
-	rarity_value = 150
+//	rarity_value = 150
 	ranged = TRUE
 	minimum_distance = 3
 	fire_verb = "spits"
-	projectiletype = /obj/item/projectile/goo/weak
+	projectiletype = /obj/item/projectile/goo
 	projectilesound = 'sound/effects/blobattack.ogg'
 	ranged_cooldown = 10 SECONDS
-	ability_cooldown = 20 SECONDS
+	special_ability_cooldown = 20 SECONDS
 
 	speak = list(
 				"Hey, at least I got my head.",
@@ -1138,11 +1138,11 @@
 				"S-shoot the screen! God I hope it won\'t hurt."
 				)
 
-/mob/living/simple_animal/hostile/hivemind/treader/Initialize()
+/mob/living/simple/hostile/hivemind/treader/Initialize()
 	..()
 	set_light(2, 1, COLOR_BLUE_LIGHT)
 
-/mob/living/simple_animal/hostile/hivemind/treader/Life()
+/mob/living/simple/hostile/hivemind/treader/Life()
 	if(!..())
 		return
 
@@ -1150,16 +1150,16 @@
 		special_ability()
 
 
-/mob/living/simple_animal/hostile/hivemind/treader/special_ability()
+/mob/living/simple/hostile/hivemind/treader/special_ability()
 	visible_emote("vomits out a burst of rejuvenating nanites!")
 
-	for(var/mob/living/simple_animal/hostile/hivemind/ally in view(src))
+	for(var/mob/living/simple/hostile/hivemind/ally in view(src))
 		ally.heal_overall_damage(10, 0)
 
 	special_ability_cooldown = world.time + ability_cooldown
 
 
-/mob/living/simple_animal/hostile/hivemind/treader/death()
+/mob/living/simple/hostile/hivemind/treader/death()
 	..()
 	gibs(loc, null, /obj/effect/gibspawner/robot)
 	empulse(get_turf(src), 1, 3)

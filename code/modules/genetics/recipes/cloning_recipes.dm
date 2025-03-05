@@ -51,6 +51,7 @@
 		list("type" = /mob/living/carbon/superior/spider/hunter, "name" = "hunter spider"),
 		list("type" = /mob/living/carbon/superior/spider/hunter/cloaker, "name" = "cloaker spider"),
 		list("type" = /mob/living/carbon/superior/spider/hunter/viper, "name" = "viper spider"),
+		list("type" = /mob/living/carbon/superior/spider/hunter/mindweaver, "name" = "mindweaver spider"),
 		list("type" = /mob/living/carbon/superior/spider/hunter/shocker, "name" = "shocker spider"),
 		list("type" = /mob/living/carbon/superior/spider/hunter/pepper, "name" = "pepper spider"),
 		list("type" = /mob/living/carbon/superior/spider/fortress, "name" = "fortress spider"),
