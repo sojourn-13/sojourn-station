@@ -23,8 +23,11 @@ SUBSYSTEM_DEF(tickets)
 	var/span_class = "adminticket"
 	var/ticket_system_name = "Admin Tickets"
 	var/ticket_name = "Admin Ticket"
-	var/close_rights = R_ADMIN | R_MOD | R_DEBUG
-	var/rights_needed = R_ADMIN | R_MOD | R_DEBUG
+//	var/close_rights = R_ADMIN | R_MOD | R_DEBUG
+//	var/rights_needed = R_ADMIN | R_MOD | R_DEBUG
+// 05.03.25 - CFW - Removing admin tickets from everything but +ADMIN
+	var/close_rights = R_ADMIN
+	var/rights_needed = R_ADMIN
 
 	/// Text that will be added to the anchor link
 	var/anchor_link_extra = ""
