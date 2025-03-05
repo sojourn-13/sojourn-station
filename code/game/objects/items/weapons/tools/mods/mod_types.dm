@@ -726,7 +726,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MULT = 8,
+	UPGRADE_FORCE_MOD = 8,
 	UPGRADE_PRECISION = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5
