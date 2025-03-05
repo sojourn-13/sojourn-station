@@ -13,7 +13,7 @@
 									/obj/item/reagent_containers/glass/bottle/organic/vermicetol = 1, // Vermicetol, heal brute damage
 									/obj/item/reagent_containers/glass/bottle/organic/dermatane = 5, // Dermaline & Kelotane mix, heal brute & burn damage
 									/obj/item/reagent_containers/glass/bottle/organic/peridaxon = 2, // Peridaxon, heal internal organs and toxin
-									/obj/item/reagent_containers/glass/bottle/organic/varceptol = 3, // Varceptol, heal brute and purge toxins
+									/obj/item/reagent_containers/glass/bottle/organic/narceptol = 3, // Narceptol, purge toxin accumulation
 									/obj/item/reagent_containers/glass/bottle/organic/oxycodone = 1, // Oxycodone, Painkiller
 									/obj/item/reagent_containers/glass/bottle/organic/tricordrazine = 3, // Tricordrazine, heal brute, burn and toxin damage
 									/obj/item/reagent_containers/glass/bottle/organic/meralyne = 1, // Meralyne, heal brute damage better than bicaridine

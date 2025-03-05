@@ -8,6 +8,7 @@
 	var/additional_limb_parts = list()  // Other parts to put on top, if the limb is incomplete.
 	var/parent_organ_base = BP_CHEST			// Organ holding this object.
 	var/dead_icon
+	var/living_icon // Store the original icon state for revival purpose
 
 	// Status tracking.
 	var/status = NONE					// Various status flags
@@ -103,9 +104,19 @@
 	STOP_PROCESSING(SSobj, src)
 	death_time = world.time
 	if(dead_icon)
+		living_icon = icon_state
 		icon_state = dead_icon
 	if(owner && vital && owner.stat != DEAD)
 		owner.death()
+
+// Revive an organ
+/obj/item/organ/proc/revive()
+	damage = 1
+	status &= ~ORGAN_DEAD
+	START_PROCESSING(SSobj, src)
+	if(living_icon)
+		icon_state = living_icon
+
 
 /obj/item/organ/get_item_cost()
 	if((status & ORGAN_DEAD) || species != all_species["Human"]) //No dead or monkey organs!

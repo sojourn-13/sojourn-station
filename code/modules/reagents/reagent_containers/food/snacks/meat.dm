@@ -225,7 +225,7 @@
 	desc = "The meat of a strange, sentient fungal creature. It feels watery to the touch, yet it doesn't moisten, presumabily packed with myriad of chemicals." // You didn't just kill your mushroom friend for this, did you...?
 	icon_state = "fungalmeat"
 	filling_color = "#BF896B"
-	preloaded_reagents = list("protein" = 6, "dexalinp" = 3, "haloperidol" = 4, "hyronalin" = 5, "vermicetol" = 3, "dermaline" = 2, "kelotane" = 2, "peridaxon" = 2, "varceptol" = 3, "meralyne" = 3, "tricordrazine" = 4, "oxycodone" = 5)
+	preloaded_reagents = list("protein" = 6, "dexalinp" = 3, "haloperidol" = 4, "hyronalin" = 5, "vermicetol" = 3, "dermaline" = 2, "kelotane" = 2, "peridaxon" = 2, "narceptol" = 3, "meralyne" = 3, "tricordrazine" = 4, "oxycodone" = 5)
 
 /obj/item/reagent_containers/food/snacks/meat/chicken
 	name = "poultry"

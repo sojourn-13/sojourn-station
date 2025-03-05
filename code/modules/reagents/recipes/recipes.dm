@@ -90,6 +90,11 @@
 	required_reagents = list("sugar" = 1, "lithium" = 1, "water" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/myosynaptizine
+	result = "myosynaptizine"
+	required_reagents = list("synaptizine" = 1, "polystem" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/hyronalin
 	result = "hyronalin"
 	required_reagents = list("radium" = 1, "anti_toxin" = 1)
@@ -116,6 +121,12 @@
 	required_reagents = list("bicaridine" = 2, "cronexidone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
+
+/datum/chemical_reaction/revitaline
+	result = "revitaline"
+	required_reagents = list("cronexidone" = 1, "peridaxon" = 1, "blattedin" = 1)
+	catalysts = list("plasma" = 5)
+	result_amount = 1
 
 /datum/chemical_reaction/trypsin
 	result = "trypsin"
@@ -179,8 +190,8 @@
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
-/datum/chemical_reaction/varceptol
-	result = "varceptol"
+/datum/chemical_reaction/narceptol
+	result = "narceptol"
 	required_reagents = list("carthatoline" = 1, "bicaridine" = 1, "blattedin" = 1)
 	catalysts = list("plasma" = 5)
 	result_amount = 3

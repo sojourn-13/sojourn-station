@@ -292,8 +292,8 @@
 /obj/item/reagent_containers/glass/bottle/organic/peridaxon
 	preloaded_reagents = list("peridaxon" = 60)
 
-/obj/item/reagent_containers/glass/bottle/organic/varceptol
-	preloaded_reagents = list("varceptol" = 60)
+/obj/item/reagent_containers/glass/bottle/organic/narceptol
+	preloaded_reagents = list("narceptol" = 60)
 
 /obj/item/reagent_containers/glass/bottle/organic/oxycodone
 	preloaded_reagents = list("oxycodone" = 60)
@@ -364,6 +364,40 @@
 	preloaded_reagents = list("fuhrerole" = 60)
 
 // ===
+
+// Medicine bottles - Incomplete, to be reclassified later. Mostly for testing, maybe future trade.
+/obj/item/reagent_containers/glass/bottle/revitaline
+	name = "Revitaline bottle"
+	desc = "A small bottle. Contains revitaline - used to revive dead organs."
+	icon_state = "bottle"
+	preloaded_reagents = list("revitaline" = 60)
+
+/obj/item/reagent_containers/glass/bottle/myosynaptizine
+	name = "Myosynaptizine bottle"
+	desc = "A small bottle. Contains myosynaptizine - used to repair muscles and nerves."
+	icon_state = "bottle"
+	preloaded_reagents = list("myosynaptizine" = 60)
+
+
+/obj/item/reagent_containers/glass/bottle/purger
+	name = "Purger bottle"
+	desc = "A small bottle. Contains purger - used to temporarily purge addiction."
+	icon_state = "bottle"
+	preloaded_reagents = list("purger" = 60)
+
+
+/obj/item/reagent_containers/glass/bottle/addictol
+	name = "Addictol bottle"
+	desc = "A small bottle. Contains addictol - used to permanently treat addiction."
+	icon_state = "bottle"
+	preloaded_reagents = list("addictol" = 60)
+
+/obj/item/reagent_containers/glass/bottle/narceptol
+	name = "Narceptol bottle"
+	desc = "A small bottle. Contains narceptol - used to treat chemical poisoning."
+	icon_state = "bottle"
+	preloaded_reagents = list("narceptol" = 60)
+//
 
 /obj/item/reagent_containers/glass/bottle/trade
 

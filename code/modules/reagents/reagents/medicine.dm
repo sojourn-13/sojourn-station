@@ -72,10 +72,10 @@
 /datum/reagent/medicine/vermicetol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(12 * removed, 0)
 
-/datum/reagent/medicine/varceptol
-	name = "Varceptol"
-	id = "varceptol"
-	description = "A powerful treatment chemical capable of repairing both the body and purging of toxins."
+/datum/reagent/medicine/narceptol
+	name = "Narceptol"
+	id = "narceptol"
+	description = "A powerful chemical capable of treating full body chemical poisoning or toxin accumulation caused by overdoses."
 	taste_description = "tangy"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -84,13 +84,13 @@
 	scannable = TRUE
 	nerve_system_accumulations = 20
 
-/datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/medicine/narceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if((M.species?.reagent_tag == IS_SLIME))
 		M.take_organ_damage(1, 0)
 		M.apply_damage(1, HALLOSS)
 		if(prob(5)) // dont wanna do it constantly.
 			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
-	M.heal_organ_damage(9 * removed, 0)
+	M.add_chemical_effect(CE_PURGER, 10) // This is actually quite slow because each chemical treatment - 5 and poisoning applies across the whole body to multiple organs
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -693,6 +693,32 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	M.add_chemical_effect(CE_TOXIN, 2.5 * effect_multiplier) // It used to be incredibly deadly due to an oversight. Not anymore!
 	M.add_chemical_effect(CE_PAINKILLER, 40, TRUE)
 
+
+/datum/reagent/medicine/myosynaptizine
+	name = "Myosynaptizine"
+	id = "myosynaptizine"
+	description = "A combination of polystem and synaptizine that heals muscle and nerves damage slowly without need for surgery. Causes moderate amount of pain. Dangerous in large amount."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#BCD2C8" // Midway between Polystem and Synaptizine
+	scannable = 1
+	metabolism = REM / 2
+	overdose = 5
+	nerve_system_accumulations = 50
+
+/datum/reagent/medicine/myosynaptizine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(!ishuman(M))
+		return
+	var/mob/living/carbon/human/H = M
+	M.apply_damage(5, HALLOSS)
+	var/list/valid_organs = H.organ_list_by_process(OP_NERVE) + H.organ_list_by_process(OP_MUSCLE)
+
+	for(var/obj/item/organ/internal/I in valid_organs)
+		var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
+		for(var/datum/component/internal_wound/W in current_wounds)
+			W.treatment(FALSE) // Snowflake code because there's no better way to target only X type of organ without making a subtype
+
+
 /datum/reagent/medicine/alkysine
 	name = "Alkysine"
 	id = "alkysine"
@@ -750,9 +776,9 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#561EC3"
-	overdose = 10
+	overdose = 20 // Higher overdose vs Vanilla
 	scannable = TRUE
-	nerve_system_accumulations = 30
+	nerve_system_accumulations = 40 // But also higher NSA
 
 /datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
@@ -772,6 +798,34 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Since it doesn't heal brain/bones it shouldn't damage them too
 		if(LAZYLEN(organs_sans_brain_and_bones))
 			create_overdose_wound(pick(organs_sans_brain_and_bones), H, /datum/component/internal_wound/organic/heavy_poisoning)
+
+/datum/reagent/medicine/revitaline
+	name = "Revitaline"
+	id = "revitaline"
+	description = "A chemical used to restore dead organs to a barely functional state, taking advantage of the miraculous property of blattedin. Causes pain."
+	taste_description = "jiggly slime"
+	reagent_state = LIQUID
+	color = "#90EE90"
+	overdose = 10
+	scannable = TRUE
+	affects_dead = TRUE
+	nerve_system_accumulations = 50
+
+/datum/reagent/medicine/revitaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_bones = H.internal_organs - - H.internal_organs_by_efficiency[OP_BONE] // Nope, can't revive bone
+		for(var/obj/item/organ/O in organs_sans_bones)
+			if((O.status & ORGAN_DEAD))
+				O.revive()
+
+/datum/reagent/medicine/revitaline/overdose(mob/living/carbon/M, alien)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_bones = H.internal_organs - H.internal_organs_by_efficiency[OP_BONE] // Can heavily damage non-bone too
+		if(LAZYLEN(organs_sans_bones))
+			create_overdose_wound(pick(organs_sans_bones), H, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/medicine/trypsin
 	name = "Trypsin"
@@ -1104,7 +1158,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/quickclot
 	name = "Quickclot"
 	id = "quickclot"
-	description = "Temporarily halts any internal and external bleeding. Also helps heal and repair blood vessels"
+	description = "Temporarily halts any internal and external bleeding. Also helps heal and repair blood vessels. Can heal internal organs when overdosed."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#a6b85b"
@@ -1290,7 +1344,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/purger
 	name = "Purger"
 	id = "purger"
-	description = "Temporary purges all addictions and treats chemical poisoning in large doses."
+	description = "Temporary purges all addictions."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#d4cf3b"
@@ -1309,7 +1363,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/addictol
 	name = "Addictol"
 	id = "addictol"
-	description = "Purges all addictions and greatly aids in treating chemical poisoning."
+	description = "Purges all addictions."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0179e7"

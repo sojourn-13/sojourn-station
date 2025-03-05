@@ -84,7 +84,7 @@
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
-	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))	
+	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 	return
 
 /obj/item/reagent_containers/hypospray/verb/empty()
@@ -313,9 +313,9 @@
 	name = "vermicetol advanced autoinjector"
 	preloaded_reagents = list("vermicetol" = 10)
 
-/obj/item/reagent_containers/hypospray/autoinjector/large/varceptol
-	name = "varceptol advanced autoinjector"
-	preloaded_reagents = list("varceptol" = 10)
+/obj/item/reagent_containers/hypospray/autoinjector/large/narceptol
+	name = "narceptol advanced autoinjector"
+	preloaded_reagents = list("narceptol" = 10)
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/blood
 	name = "adv-bleed repair advanced autoinjector"
