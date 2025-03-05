@@ -2,11 +2,8 @@
 	var/reqed_type
 	var/reqed_quality
 	var/reqed_quality_level = 0//For tools, minimum threshold of a quality
-	var/building = FALSE //Prevents spamming one recipe requirement to finish the entire recipe
 	var/reqed_material
 	var/req_amount = 0
-
-
 
 	var/time = 15
 
@@ -93,12 +90,12 @@
 		if(reqed_type)
 			var/datum/asset/spritesheet/crafting/sprites = get_asset_datum(/datum/asset/spritesheet/crafting)
 			var/css = sprites.icon_class_name(sanitize_css_class_name("[reqed_type]"))
-			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>"
 		else if(reqed_material)
 			var/material/M = get_material_by_name("[reqed_material]")
 			var/datum/asset/spritesheet_batched/materials/sprites = get_asset_datum(/datum/asset/spritesheet_batched/materials)
 			var/css = sprites.icon_class_name(sanitize_css_class_name("[M.stack_type]"))
-			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>" 
+			icon = " <span style=\"margin-bottom:-8px\" class=\"[css]\" height=\"24\" width=\"24\"></span>"
 
 	switch(amt)
 		if(0)
@@ -125,28 +122,27 @@
 		msg
 	)
 
-/datum/craft_step/proc/apply(obj/item/I, mob/living/user, obj/item/craft/target, datum/craft_recipe/recipe)
-	if(building)
+/datum/craft_step/proc/apply(obj/item/I, mob/living/user, obj/item/craft/target, datum/craft_recipe/recipe, stepnum)
+	if(target && target.step == stepnum){
+		to_chat(user, SPAN_WARNING("You're already performing the same step!"))
+		// Early return to prevent eating up your material or spam clicking the same step and wasting stuffs
 		return
-	building = TRUE
+	}
 
 	if(reqed_material)
 		if(istype(I, /obj/item/stack/material))
 			var/obj/item/stack/material/M = I
 			if(M.get_default_type() != reqed_material)
 				to_chat(user, SPAN_WARNING("Wrong material!"))
-				building = FALSE
 				return
 		else
 			to_chat(user, SPAN_WARNING("This isn't a material stack!"))
-			building = FALSE
 			return
 
 	if(req_amount && istype(I, /obj/item/stack))
 		var/obj/item/stack/S = I
 		if(!S.can_use(req_amount))
 			to_chat(user, SPAN_WARNING("Not enough items in [I]"))
-			building = FALSE
 			return
 
 	var/new_time = time // for reqed_type or raw materials
@@ -160,60 +156,49 @@
 	if(reqed_type)
 		if(!istype(I, reqed_type))
 			to_chat(user, SPAN_WARNING("Wrong item!"))
-			building = FALSE
 			return
 		if(!is_valid_to_consume(I, user))
 			to_chat(user, SPAN_WARNING("That item can't be used for crafting!"))
-			building = FALSE
 			return
 
 		if(req_amount && istype(I, /obj/item/stack))
 			var/obj/item/stack/S = I
 			if(S.get_amount() < req_amount)
 				to_chat(user, SPAN_WARNING("Not enough items in [I]"))
-				building = FALSE
 				return
 
 		if(target)
 			announce_action(start_msg, user, I, target)
 
 		if(!do_after(user, new_time, target || user))
-			building = FALSE
 			return
 
 	else if(reqed_quality)
 		if(!istype(I,/obj/item/tool) && !istype(I,/obj/item/mecha_parts/mecha_equipment)) //Making it so mech equipment can also craft
 			to_chat(user, SPAN_WARNING("You need to use a tool to complete this step."))
-			building = FALSE
 			return
 		var/q = I.get_tool_quality(reqed_quality)
 		if(!q)
 			to_chat(user, SPAN_WARNING("Wrong type of tool. You need a tool with [reqed_quality] quality"))
-			building = FALSE
 			return
 		if(target)
 			announce_action(start_msg, user, I, target)
 		if(!I.use_tool(user, target || user, time, reqed_quality, FAILCHANCE_NORMAL, list(STAT_MEC, STAT_COG))) //FIXME: up here we pass a list down to getStat, which expects no list
 			to_chat(user, SPAN_WARNING("Work aborted"))
-			building = FALSE
 			return
 
 		if(q < reqed_quality_level)
 			to_chat(user, SPAN_WARNING("That tool is too crude for the task. You need a tool with [reqed_quality_level] [reqed_quality] quality. This tool only has [q] [reqed_quality]"))
-			building = FALSE
 			return
 	else
 		if(!do_after(user, new_time, target || user))
-			building = FALSE
 			return
 
 	if(target)
 		if(!recipe.can_build(user, get_turf(target)))
-			building = FALSE
 			return
 	else
 		if(!recipe.can_build(user, get_turf(user)))
-			building = FALSE
 			return
 
 	if(req_amount)
@@ -221,7 +206,6 @@
 			var/obj/item/stack/S = I
 			if(!S.use(req_amount))
 				to_chat(user, SPAN_WARNING("Not enough items in [S]. It has [S.get_amount()] units and we need [req_amount]"))
-				building = FALSE
 				return FALSE
 		else if(reqed_type) //No deleting tools
 			if(target)
@@ -240,11 +224,10 @@
 
 	if(target)
 		announce_action(end_msg, user, I, target)
-	building = FALSE
 
 	if(. != IN_PROGRESS)
 		if(target)
-			target.step++
+			target.step = stepnum
 		return IS_READY
 
 /datum/craft_step/proc/find_item(mob/living/user)

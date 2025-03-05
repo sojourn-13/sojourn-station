@@ -42,13 +42,13 @@
 
 	data["name"] = name
 	data["ref"] = "[REF(src)]"
-	
+
 	// because of course we have recipes that don't produce anything
 	data["icon"] = null
 	if(result)
 		var/datum/asset/spritesheet/crafting/sprite = get_asset_datum(/datum/asset/spritesheet/crafting)
 		data["icon"] = sprite.icon_class_name(sanitize_css_class_name("[result]"))
-		
+
 	data["batch"] = flags & CRAFT_BATCH
 
 	var/atom/A = result
@@ -97,7 +97,7 @@
 	if(!can_build(user, get_turf(target)))
 		return FALSE
 	var/datum/craft_step/CS = steps[step]
-	return CS.apply(I, user, target, src)
+	return CS.apply(I, user, target, src, step + 1)
 
 /datum/craft_recipe/proc/build_batch(mob/living/user, amount)
 	if(!amount)
@@ -134,7 +134,7 @@
 	if(ishuman(user) && !I.is_held())
 		to_chat(user, SPAN_WARNING("You should hold [I] in hands for doing that!"))
 		return
-	var/apply_type = CS.apply(I, user, null, src)
+	var/apply_type = CS.apply(I, user, null, src, 0)
 	if(!apply_type)
 		return
 
