@@ -36,7 +36,7 @@
 				{{else}}
 					{{:helper.link("Receiving Beacon", 'link', {'PRG_receiving' : 1})}}
 				{{/if}}
-			<td>		
+			<td>
 				{{if data.sending}}
 					{{:helper.link("Sending Beacon: " + data.sending, null, {'PRG_sending' : 1})}}
 				{{else}}
@@ -83,12 +83,23 @@
 					<td>
 						<div class="item">
 							<div class="itemLabel">
-								Favor:
+								Extra Inventory:
 							</div>
 							<div class="itemContent" style="text-align: center">
-								{{:helper.displayBar(data.station_favor, 0, data.station_favor_needed, data.station_favor < 0.25 * data.station_favor_needed ? 'bad' : data.station_favor < 0.50 * data.station_favor_needed ? 'average' : 'good', data.station_favor + ' / ' + data.station_favor_needed)}}
+								{{:helper.displayBar(data.station_favor, 0, data.hidden_inv_threshold, data.station_favor < 0.25 * data.hidden_inv_threshold ? 'bad' : data.station_favor < 0.50 * data.hidden_inv_threshold ? 'average' : 'good', data.station_favor + ' / ' + data.hidden_inv_threshold)}}
 							</div>
 						</div>
+						{{if data.recommendation_threshold}}
+						<div class="item">
+							<div class="itemLabel">
+								Recommendation:
+							</div>
+							<div class="itemContent" style="text-align: center">
+								{{:helper.displayBar(data.station_favor, 0, data.recommendation_threshold, data.station_favor < 0.25 * data.recommendation_threshold ? 'bad' : data.station_favor < 0.50 * data.recommendation_threshold ? 'average' : 'good', data.station_favor + ' / ' + data.recommendation_threshold)}}
+							</div>
+						</div>
+						{{/if}}
+
 				<tr>
 					<td>
 						<div class="item">
@@ -131,7 +142,7 @@
 				</div>
 			</td>
 			<td style="width: 25%" valign="top">
-				{{if data.station_name}}
+					{{if data.station_name}}
 					<b>Name</b><br>
 					{{:data.station_name}}
 					<br><br>
@@ -140,11 +151,16 @@
 						{{:data.station_desc}}
 						<br><br>
 					{{/if}}
-					{{if data.station_favor_needed}}
-						<b>Favor</b></br>
-						{{:data.station_favor}}/{{:data.station_favor_needed}}
+					<b>Favor</b></br>
+					{{if data.hidden_inv_threshold}}
+						Extra Inventory: {{:data.station_favor}}/{{:data.hidden_inv_threshold}}
+					{{/if}}
+					{{if data.recommendation_threshold}}
+						</br>
+						Recommendation: {{:data.station_favor}}/{{:data.recommendation_threshold}}
 						</br></br>
 					{{/if}}
+
 					{{if data.station_recommendations_needed}}
 						<b>Recommendations Required</b></br>
 						<span style="color:orange">{{:data.station_recommendations_needed}}</span></br>

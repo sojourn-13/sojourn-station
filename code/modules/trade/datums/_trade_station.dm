@@ -44,7 +44,7 @@
 	var/recommendation_threshold = 4000		// Amount of favor required to unlock recommendation
 	var/recommendation_unlocked = FALSE
 	var/list/stations_recommended = list()	// Stations recommended by this station
-	var/list/recommendations_needed = 0		// Station recommendations needed to unlock this station
+	var/recommendations_needed = 0		// Station recommendations needed to unlock this station
 
 	var/obj/effect/overmap_event/overmap_object
 	var/turf/overmap_location

@@ -649,7 +649,8 @@
 		.["station_id"] = PRG.station.uid
 		.["station_index"] = SStrade.discovered_stations.Find(PRG.station)
 		.["station_favor"] = PRG.station.favor
-		.["station_favor_needed"] = max(PRG.station.hidden_inv_threshold, PRG.station.recommendation_threshold)
+		.["hidden_inv_threshold"] = PRG.station.hidden_inv_threshold
+		.["recommendation_threshold"] = !isemptylist(PRG.station.stations_recommended) && PRG.station.recommendation_threshold
 		.["station_recommendations_needed"] = PRG.station.recommendations_needed
 		.["offer_time"] = time2text((PRG.station.update_time - (world.time - PRG.station.update_timer_start)), "mm:ss")
 
