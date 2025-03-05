@@ -41114,6 +41114,9 @@
 "hNT" = (
 /obj/machinery/light,
 /obj/structure/table/bar_special,
+/obj/item/reagent_containers/snacks/warcake{
+	pixel_y = 6
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/bar)
 "hNV" = (
