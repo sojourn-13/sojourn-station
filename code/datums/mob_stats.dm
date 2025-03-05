@@ -142,6 +142,13 @@
 	if(path)
 		return locate(path) in perks
 
+/datum/stat_holder/proc/getHasOneOfPerks(perkArray)
+	for(var/perkType in perkArray)
+		var/hasPerk = getPerk(perkType)
+		if(hasPerk)
+			return TRUE
+	return FALSE
+
 /// The main, public proc to add a perk to a mob. Accepts a path or a stringified path.
 /datum/stat_holder/proc/addPerk(perkType)
 	. = FALSE

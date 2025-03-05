@@ -40,7 +40,7 @@
 	RegisterSignal(parent, COMSIG_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/inspiration/proc/on_examine(mob/user)
-	for(var/stat  in stats)
+	for(var/stat in stats)
 		var/aspect
 		var/stat_noun
 		var/stat_adjective
@@ -120,7 +120,9 @@
 					aspect = pick(adjectives_weak)
 			else
 				continue
-		if(aspect_noun_or_adjective == "noun")
+		if(usr.stats?.getHasOneOfPerks(list(PERK_STALKER, PERK_NO_OBFUSCATION)))
+			message = "It would increase your [stat] by [stats[stat]]."
+		else if(aspect_noun_or_adjective == "noun")
 			message = pick(\
 			"This item has [a_or_an] [stat_color][aspect]</span> aspect of [stat_noun]",\
 			"Aura of [stat_color][aspect]</span> [stat_noun] pertains to it")
@@ -131,14 +133,13 @@
 			"It [stat_color][aspect]</span> reminds you of [stat_noun]", \
 			"It makes you feel [stat_color][aspect]</span> [stat_adjective]", \
 			"This feels like it might make you [stat_color][aspect]</span> [stat_adjective]", \
-			//"[stat_color][aspect]</span> [stat_adjective]."
 			)
 		if(message)
 			to_chat(user, SPAN_NOTICE(message))
 
 	if(perk)
 		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
-		if(usr.stats?.getPerk(PERK_STALKER))
+		if(usr.stats?.getHasOneOfPerks(list(PERK_STALKER, PERK_NO_OBFUSCATION)))
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 
@@ -149,15 +150,15 @@
 	var/strength
 	switch(get_power())
 		if(1)
-			strength = "a weak mechanical catalyst power"
+			strength = "a weak mechanical catalyst power."
 		if(2)
-			strength = "a normal mechanical catalyst power"
+			strength = "a normal mechanical catalyst power."
 		if(3)
-			strength = "a medium mechanical catalyst power"
+			strength = "a medium mechanical catalyst power."
 		if(4)
-			strength = "a strong mechanical catalyst power"
+			strength = "a strong mechanical catalyst power."
 		else
-			strength = "no catalyst power"
+			strength = "no catalyst power."
 	to_chat(user, SPAN_NOTICE("This item has [strength]"))
 
 /// Returns stats if defined, otherwise it returns the return value of get_stats
