@@ -62,6 +62,7 @@
 				/mob/living/carbon/superior/spider/hunter = 35,\
 				/mob/living/carbon/superior/spider/hunter/cloaker = 20,\
 				/mob/living/carbon/superior/spider/hunter/viper = 15,\
+				/mob/living/carbon/superior/spider/hunter/mindweaver = 5,\
 				/mob/living/carbon/superior/spider/hunter/shocker = 15,\
 				/mob/living/carbon/superior/spider/hunter/pepper = 10,\
 				/mob/living/carbon/superior/spider/fortress = 10,\
