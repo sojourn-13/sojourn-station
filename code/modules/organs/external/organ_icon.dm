@@ -197,6 +197,7 @@ var/global/list/limb_icon_cache = list()
 
 		mark_s.Blend(markings[M]["color"], mark_style.blend)
 		add_overlay(mark_s) //So when it's not on your body, it has icons
+		alpha = nonsolid ? 180 : 255
 		mob_icon.Blend(mark_s, ICON_OVERLAY) //So when it's on your body, it has icons
 	// EQUINOX EDIT END
 
