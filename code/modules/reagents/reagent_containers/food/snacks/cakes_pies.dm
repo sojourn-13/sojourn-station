@@ -63,19 +63,19 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("sweet memories" = 10, "unending sadness" = 10, "sour sweetness" = 5)
 	nutriment_amt = 20
-	preloaded_reagents = list("warcakesm" = 10, "warcakeus" = 10, "lemon" = 5)
+	preloaded_reagents = list("warcakesm" = 10, "warcakeus" = 10)
 	matter = list(MATERIAL_BIOMATTER = 45)
 
 /obj/item/reagent_containers/snacks/warcakeslice
-	name = "birthday cake slice"
-	desc = "A slice of birthday cake."
+	name = "warcake slice"
+	desc = "A slice of bittersweet happiness."
 	icon_state = "birthdaycakeslice"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "##FFB6C1"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=14)
-	preloaded_reagents = list("warcakesm" = 4, "warcakeus" = 4, "lemon" = 2)
+	preloaded_reagents = list("warcakesm" = 4, "warcakeus" = 4)
 	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/reagent_containers/snacks/carrotcake
