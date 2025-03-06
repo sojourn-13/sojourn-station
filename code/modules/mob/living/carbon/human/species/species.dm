@@ -14,7 +14,6 @@
 
 	var/default_form = FORM_HUMAN	//If nothing else sets it, what do we look like.
 	var/obligate_form = FALSE		//If true, character creation will force the use of either this form or its subforms.
-	var/obligate_name = TRUE		//If true, forces the character's species name and name color to conform.
 
 	var/list/permitted_ears  = null
 	var/list/permitted_tail  = null

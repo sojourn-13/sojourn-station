@@ -2,7 +2,6 @@
 	name = "Human"
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
-	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -39,7 +38,6 @@
 	name = "Exalt Human"
 	name_plural = "Exalt Humans"
 	default_form = FORM_EXALT_HUMAN
-	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Since its inception, Humankind has always sought to become something beyond itself- Exalts were their answer. Starting with baseline human DNA, \
 	an Exalt's genetic code has been tweaked to make them healthier, smarter, and stronger. Their metabolism is modified to predispose them towards staying \
@@ -600,7 +598,6 @@
 	name = "Folken"
 	name_plural = "Folkens"
 	default_form = FORM_FOLKEN
-	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
@@ -650,7 +647,6 @@
 	name = "Mycus"
 	name_plural = "Myci"
 	default_form = FORM_MYCUS
-	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
@@ -702,7 +698,6 @@
 	name = "Full Body Prosthetic"
 	default_form = FORM_FBP
 	obligate_form = TRUE
-	obligate_name = FALSE
 	name_plural = "FBPs"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
@@ -753,7 +748,6 @@
 	name = "Unbranded Full Body Prosthetic"
 	default_form = FORM_UNBRANDED
 	obligate_form = TRUE
-	obligate_name = FALSE
 	name_plural = "FBPs"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no"
@@ -804,7 +798,6 @@
 	name = "Soteria Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_SOTSYNTH
-	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
@@ -868,7 +861,6 @@
 	name = "Artificer Guild Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_AGSYNTH
-	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
@@ -931,7 +923,6 @@
 	name = "Blackshield Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_BSSYNTH
-	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
@@ -992,7 +983,6 @@
 	name = "Absolute Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_CHURCHSYNTH
-	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
@@ -1054,7 +1044,6 @@
 	name = "Nashef-Agunabi"
 	name_plural = "synthetics"
 	default_form = FORM_NASHEF
-	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no."
