@@ -351,9 +351,8 @@
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
-	name = "wendigo"
-	desc = "The venerable evolution of a tengolo stalker, morphing into a violent and destructive beast hostile to all but its own berserk kind. The wendigo is a violent transformation that involves \
-	much of the flesh and bone of a tengolo painfully and rapidly mutating, driving the creature insane and violent."
+	name = "Timberstag"
+	desc = "The Timberstag is a tall, quiet predator with limbs and joints that creak like tree branches and a head like a deer's skull. Almost indescernable from the surrounding forest, it is a deadly ambush predator."
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
