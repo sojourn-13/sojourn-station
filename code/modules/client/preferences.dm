@@ -246,13 +246,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 			if ("Furry",)
 				categoriesChanged=null
+				character.emissive_eyes = emissive_eyes
 				character.blood_color = blood_color //6
 				character.ears = GLOB.ears_styles_list[ears_style] //6
 				character.ears_colors = ears_colors
+				character.emissive_ears = emissive_ears
 				character.tail = GLOB.tail_styles_list[tail_style] //6
 				character.tail_colors = tail_colors
+				character.emissive_tail = emissive_tail
 				character.wings = GLOB.wings_styles_list[wings_style] //6
 				character.wings_colors = wings_colors
+				character.emissive_wings = emissive_wings
 				character.body_markings = body_markings //6
 			if ("Augmentation",)
 				categoriesChanged=null
@@ -325,6 +329,10 @@
 	character.wings = GLOB.wings_styles_list[wings_style] //6
 	character.wings_colors = wings_colors
 	character.body_markings = body_markings //6
+	character.emissive_eyes = emissive_eyes
+	character.emissive_ears = emissive_ears
+	character.emissive_tail = emissive_tail
+	character.emissive_wings = emissive_wings
 
 	character.update_implants(0) //7-8
 

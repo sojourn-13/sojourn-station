@@ -2,14 +2,19 @@
 
 datum/preferences
 	//Addons to the body.
+	var/emissive_eyes = FALSE
+
 	var/ears_style = "Default"
 	var/list/ears_colors = list("#ffffff", "#000000", "#777777")
+	var/emissive_ears = FALSE
 
 	var/tail_style = "Default"
 	var/list/tail_colors = list("#ffffff", "#000000", "#777777")
+	var/emissive_tail = FALSE
 
 	var/wings_style = "Default"
 	var/list/wings_colors = list("#ffffff", "#000000", "#777777")
+	var/emissive_wings = FALSE
 
 	var/list/body_markings = list()
 
@@ -32,6 +37,11 @@ datum/preferences
 
 	from_file(S["blood_color"], pref.blood_color)
 
+	from_file(S["emissive_eyes"], pref.emissive_eyes)
+	from_file(S["emissive_ears"], pref.emissive_ears)
+	from_file(S["emissive_tail"], pref.emissive_tail)
+	from_file(S["emissive_wings"], pref.emissive_wings)
+
 /datum/category_item/player_setup_item/physical/furry/save_character(var/savefile/S)
 	to_file(S["ears_style"], pref.ears_style)
 	to_file(S["tail_style"], pref.tail_style)
@@ -44,6 +54,10 @@ datum/preferences
 
 	to_file(S["blood_color"], pref.blood_color)
 
+	to_file(S["emissive_eyes"], pref.emissive_eyes)
+	to_file(S["emissive_ears"], pref.emissive_ears)
+	to_file(S["emissive_tail"], pref.emissive_tail)
+	to_file(S["emissive_wings"], pref.emissive_wings)
 
 /datum/category_item/player_setup_item/physical/furry/sanitize_character()
 	// Parts
@@ -80,6 +94,12 @@ datum/preferences
 	// Text
 	pref.custom_species		= sanitize_text(pref.custom_species, initial(pref.custom_species))
 
+	//Bools
+	pref.emissive_eyes = sanitize_bool(pref.emissive_eyes)
+	pref.emissive_ears = sanitize_bool(pref.emissive_ears)
+	pref.emissive_tail = sanitize_bool(pref.emissive_tail)
+	pref.emissive_wings = sanitize_bool(pref.emissive_wings)
+
 /datum/category_item/player_setup_item/physical/furry/content(var/mob/user)
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 
@@ -112,6 +132,13 @@ datum/preferences
 		. += "<a [counter <= 1 ? "" : "href='?src=\ref[src];marking_down=[counter]'"]>&#709;</a>"
 		. += "<a href='?src=\ref[src];marking_color=[counter]'><span class='color_holder_box' style='background-color:[pref.body_markings[pref.body_markings[counter]]]'></span></a>"
 		. += "<a href='?src=\ref[src];marking=[counter]'>[pref.body_markings[counter]]</a><br>"
+	. += "<br>"
+	. += "<br>"
+	. += "<b>Emissive Settings:</b><br>"
+	. += "<a href='?src=\ref[src];emissive_eyes_toggle=1'>Emissive Eyes: [pref.emissive_eyes ? "Yes" : "No"]</a><br>"
+	. += "<a href='?src=\ref[src];emissive_ears_toggle=1'>Emissive Ears: [pref.emissive_ears ? "Yes" : "No"]</a><br>"
+	. += "<a href='?src=\ref[src];emissive_tail_toggle=1'>Emissive Tail: [pref.emissive_tail ? "Yes" : "No"]</a><br>"
+	. += "<a href='?src=\ref[src];emissive_wings_toggle=1'>Emissive Wings: [pref.emissive_wings ? "Yes" : "No"]</a><br>"
 
 /datum/category_item/player_setup_item/physical/furry/OnTopic(var/href,var/list/href_list, var/mob/user)
 	pref.categoriesChanged = "Furry"
@@ -194,4 +221,16 @@ datum/preferences
 			if(color && (pos in pref.body_markings) && CanUseTopic(user))
 				pref.body_markings[pos] = color
 		return TOPIC_REFRESH_UPDATE_PREVIEW
+	else if(href_list["emissive_eyes_toggle"])
+		pref.emissive_eyes = !pref.emissive_eyes
+		return TOPIC_REFRESH
+	else if(href_list["emissive_ears_toggle"])
+		pref.emissive_ears = !pref.emissive_ears
+		return TOPIC_REFRESH
+	else if(href_list["emissive_tail_toggle"])
+		pref.emissive_tail = !pref.emissive_tail
+		return TOPIC_REFRESH
+	else if(href_list["emissive_wings_toggle"])
+		pref.emissive_wings = !pref.emissive_wings
+		return TOPIC_REFRESH
 	. = ..()

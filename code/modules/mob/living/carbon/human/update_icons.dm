@@ -155,10 +155,12 @@ Please contact me on #coderbus IRC. ~Carn x
 
 	if (icon_update)
 		icon = stand_icon
-		for(var/image/I in overlays_standing)
+		for(var/I in overlays_standing)
 			add_overlay(I)
-		if(form.has_floating_eyes)
-			add_overlay(species.get_eyes(src))
+		if(emissive_eyes)	//insanely janky workaround
+			for(var/obj/item/organ/internal/eyes/eyes in organ_list_by_process(OP_EYES))
+				if(eyes)
+					add_overlay(eyes.get_glowy_overlay())
 
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
 		add_new_transformations(list(
@@ -475,6 +477,7 @@ var/global/list/wings_icon_cache = list()
 
 	if(update_icons) update_icons()
 
+/* Dummying these as they have been superceded by the per-limb body marking system (see organ_icon.dm)
 //Markings
 /mob/living/carbon/human/proc/update_marking(var/update_icons = 1)
 	if(QDESTROYING(src))
@@ -531,6 +534,7 @@ var/global/list/wings_icon_cache = list()
 			marking_icon = specific_marking_icon
 		CHECK_TICK
 	return image(marking_icon)
+*/
 
 //Insert Furry Bits
 /mob/living/carbon/human/proc/update_ears(var/update_icons = 1)
@@ -543,31 +547,55 @@ var/global/list/wings_icon_cache = list()
 		return
 
 
-	var/image/ears_image = get_ears_image()
+	var/ears_image = get_ears_image()
 	if(ears_image)
-		var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
-		ears_image.alpha = head?.nonsolid ? 180 : 255
 		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
 		if(update_icons) update_icons()
 
 /mob/living/carbon/human/proc/get_ears_image()
 	if(!ears) return
-	var/cache_key = "[ears.name][ears.colored_layers][ears_colors.Join("", 1, ears.colored_layers+1)]"
+	var/cache_key = "[ears.name][ears.colored_layers][ears_colors.Join("", 1, ears.colored_layers+1)][emissive_ears]"
+
+	. = list()
+
 	if(ears_icon_cache[cache_key])
-		return ears_icon_cache[cache_key]
+		. += ears_icon_cache[cache_key]
+		return .
 
 	var/datum/sprite_accessory/ears/earstype = ears
-	var/icon/ears_icon = icon(earstype.icon, earstype.icon_state)
-	if(earstype.colored_layers)
-		ears_icon.Blend(ears_colors[1], earstype.blend)
-	for(var/i = 2, i <= earstype.colored_layers, i++)
-		var/icon/extra_overlay = icon(earstype.icon, (earstype.extra_overlay ? earstype.extra_overlay : earstype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(ears_colors[i], earstype.blend)
-		ears_icon.Blend(extra_overlay, ICON_OVERLAY)
+	var/mutable_appearance/ears_appearance = mutable_appearance(earstype.icon, earstype.icon_state)
+	var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
+	var/isnonsolid = FALSE
+	if(head && head.nonsolid)
+		isnonsolid = TRUE
 
-	var/ears_image = image(ears_icon)
-	ears_icon_cache[cache_key] = ears_image
-	return ears_image
+	if(earstype.colored_layers)
+		if(earstype.blend == ICON_ADD)
+			ears_appearance.color = color_to_full_rgba_matrix(ears_colors[1])
+		else
+			ears_appearance.color = ears_colors[1]
+
+	if(isnonsolid)
+		ears_appearance.alpha = 180
+	. += ears_appearance
+
+	for(var/i = 2, i <= earstype.colored_layers, i++)
+		var/mutable_appearance/extra_overlay = mutable_appearance(earstype.icon, (earstype.extra_overlay ? earstype.extra_overlay : earstype.icon_state)+"[(i-1)]")
+		if(earstype.blend == ICON_ADD)
+			extra_overlay.color = color_to_full_rgba_matrix(ears_colors[i])
+		else
+			extra_overlay.color = ears_colors[i]
+
+		if(isnonsolid)
+			extra_overlay.alpha = 180
+		. += extra_overlay
+
+		if(emissive_ears)
+			var/mutable_appearance/emissive = emissive_appearance_copy(extra_overlay)
+			. += emissive
+
+	ears_icon_cache[cache_key] = .
+	return .
 
 /mob/living/carbon/human/proc/update_tail(var/update_icons = 1)
 	if(QDESTROYING(src))
@@ -581,12 +609,10 @@ var/global/list/wings_icon_cache = list()
 		return
 	*/
 	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
-	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
-	var/image/tail_image = get_tail_image()
+	var/tail_image = get_tail_image()
 	if(tail_image)
 		overlays_standing[active_tail_layer] = tail_image
-		tail_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 /*	var/species_tail = species.get_tail(src) // Species tail icon_state prefix.
@@ -599,23 +625,54 @@ var/global/list/wings_icon_cache = list()
 
 /mob/living/carbon/human/proc/get_tail_image()
 	if(!tail) return
-	var/cache_key = "[tail.name][tail.colored_layers][tail_colors.Join("", 1, tail.colored_layers+1)]"
+	var/cache_key = "[tail.name][tail.colored_layers][tail_colors.Join("", 1, tail.colored_layers+1)][emissive_tail]"
+
+	. = list()
+
 	if(tail_icon_cache[cache_key])
-		return tail_icon_cache[cache_key]
+		. += tail_icon_cache[cache_key]
+		return .
 
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 	var/datum/sprite_accessory/tail/tailtype = tail
-	var/icon/tail_icon = icon(tailtype.icon, tailtype.icon_state)
-	if(tailtype.colored_layers)
-		tail_icon.Blend(tail_colors[1], tailtype.blend)
-	for(var/i = 2, i <= tailtype.colored_layers, i++)
-		var/icon/extra_overlay = icon(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(tail_colors[i], tailtype.blend)
-		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
-	if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16) //Equinox edit, part of enabling taurs
+	var/mutable_appearance/tail_appearance = mutable_appearance(tailtype.icon, tailtype.icon_state)
+	var/istaur = FALSE
+	var/isnonsolid = FALSE
+	if(istype(tailtype, /datum/sprite_accessory/tail/taur))
+		istaur = TRUE
+	if(chest && chest.nonsolid)
+		isnonsolid = TRUE
 
-	var/tail_image = image(tail_icon)
-	tail_icon_cache[cache_key] = tail_image
-	return tail_image
+	if(tailtype.colored_layers)
+		if(tailtype.blend == ICON_ADD)
+			tail_appearance.color = color_to_full_rgba_matrix(tail_colors[1])
+		else
+			tail_appearance.color = tail_colors[1]
+
+	if(isnonsolid)
+		tail_appearance.alpha = 180
+	if(istaur)
+		tail_appearance.pixel_x = -16
+	. += tail_appearance
+
+	for(var/i = 2, i <= tailtype.colored_layers, i++)
+		var/mutable_appearance/extra_overlay = mutable_appearance(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
+		if(tailtype.blend == ICON_ADD)
+			extra_overlay.color = color_to_full_rgba_matrix(tail_colors[i])
+		else
+			extra_overlay.color = tail_colors[i]
+		if(isnonsolid)
+			extra_overlay.alpha = 180
+		if(istaur)
+			extra_overlay.pixel_x = -16
+		. += extra_overlay
+
+		if(emissive_tail)
+			var/mutable_appearance/emissive = emissive_appearance_copy(extra_overlay)
+			. += emissive
+
+	tail_icon_cache[cache_key] = .
+	return .
 
 /mob/living/carbon/human/proc/update_wings(var/update_icons = 1)
 	if(QDESTROYING(src))
@@ -626,32 +683,53 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
-	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
-
-	var/image/wings_image = get_wings_image()
+	var/wings_image = get_wings_image()
 	if(wings_image)
 		overlays_standing[CUSTOM_WINGS_LAYER] = wings_image
-		wings_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 mob/living/carbon/human/proc/get_wings_image()
 	if(!wings) return
-	var/cache_key = "[wings.name][wings.colored_layers][wings_colors.Join("", 1, wings.colored_layers+1)]"
+	var/cache_key = "[wings.name][wings.colored_layers][wings_colors.Join("", 1, wings.colored_layers+1)][emissive_wings]"
+
+	. = list()
+
 	if(wings_icon_cache[cache_key])
-		return wings_icon_cache[cache_key]
+		. += wings_icon_cache[cache_key]
+		return .
 
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 	var/datum/sprite_accessory/wings/wingstype = wings
-	var/icon/wings_icon = icon(wingstype.icon, wingstype.icon_state)
-	if(wingstype.colored_layers)
-		wings_icon.Blend(wings_colors[1], wingstype.blend)
-	for(var/i = 2, i <= wingstype.colored_layers, i++)
-		var/icon/extra_overlay = icon(wingstype.icon, (wingstype.extra_overlay ? wingstype.extra_overlay : wingstype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(wings_colors[i], wingstype.blend)
-		wings_icon.Blend(extra_overlay, ICON_OVERLAY)
+	var/mutable_appearance/wings_appearance = mutable_appearance(wingstype.icon, wingstype.icon_state)
+	var/isnonsolid = FALSE
+	if(chest && chest.nonsolid)
+		isnonsolid = TRUE
 
-	var/wings_image = image(wings_icon)
-	wings_icon_cache[cache_key] = wings_image
-	return wings_image
+	if(wingstype.colored_layers)
+		if(wingstype.blend == ICON_ADD)
+			wings_appearance.color = color_to_full_rgba_matrix(wings_colors[1])
+		else
+			wings_appearance.color = wings_colors[1]
+	if(isnonsolid)
+		wings_appearance.alpha = 180
+	. += wings_appearance
+
+	for(var/i = 2, i <= wingstype.colored_layers, i++)
+		var/mutable_appearance/extra_overlay = mutable_appearance(wingstype.icon, (wingstype.extra_overlay ? wingstype.extra_overlay : wingstype.icon_state)+"[(i-1)]")
+		if(wingstype.blend == ICON_ADD)
+			extra_overlay.color = color_to_full_rgba_matrix(wings_colors[i])
+		else
+			extra_overlay.color = wings_colors[i]
+		if(isnonsolid)
+			extra_overlay.alpha = 180
+		. += extra_overlay
+
+		if(emissive_wings)
+			var/mutable_appearance/emissive = emissive_appearance_copy(extra_overlay)
+			. += emissive
+
+	wings_icon_cache[cache_key] = .
+	return .
 
 /* --------------------------------------- */
 //For legacy support.

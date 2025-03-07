@@ -160,6 +160,55 @@
 	else if (target.y > y)
 		pixel_y += offset
 
+/** A port of TG's proc
+ * Converts RGB shorthands into RGBA matrices complete of constants rows (ergo a 20 keys list in byond).
+ * if return_identity_on_fail is true, stack_trace is called instead of CRASH, and an identity is returned.
+ */
+/proc/color_to_full_rgba_matrix(color, return_identity_on_fail = TRUE)
+	if(!color)
+		return color_identity()
+	if(istext(color))
+		var/list/L = rgb2num(color)
+		if(!L)
+			var/message = "Invalid/unsupported color ([color]) argument in color_to_full_rgba_matrix()"
+			if(return_identity_on_fail)
+				stack_trace(message)
+				return color_identity()
+			CRASH(message)
+		return list(L[1]/255,0,0,0, 0,L[2]/255,0,0, 0,0,L[3]/255,0, 0,0,0,L.len>3?L[4]/255:1, 0,0,0,0)
+	if(!islist(color)) //invalid format
+		CRASH("Invalid/unsupported color ([color]) argument in color_to_full_rgba_matrix()")
+	var/list/L = color
+	switch(L.len)
+		if(3 to 5) // row-by-row hexadecimals
+			. = list()
+			for(var/a in 1 to L.len)
+				var/list/rgb = rgb2num(L[a])
+				for(var/b in rgb)
+					. += b/255
+				if(length(rgb) % 4) // RGB has no alpha instruction
+					. += a != 4 ? 0 : 1
+			if(L.len < 4) //missing both alphas and constants rows
+				. += list(0,0,0,1, 0,0,0,0)
+			else if(L.len < 5) //missing constants row
+				. += list(0,0,0,0)
+		if(9 to 12) //RGB
+			. = list(L[1],L[2],L[3],0, L[4],L[5],L[6],0, L[7],L[8],L[9],0, 0,0,0,1)
+			for(var/b in 1 to 3)  //missing constants row
+				. += L.len < 9+b ? 0 : L[9+b]
+			. += 0
+		if(16 to 20) // RGBA
+			. = L.Copy()
+			if(L.len < 20) //missing constants row
+				for(var/b in 1 to 20-L.len)
+					. += 0
+		else
+			var/message = "Invalid/unsupported color (list of length [L.len]) argument in color_to_full_rgba_matrix()"
+			if(return_identity_on_fail)
+				stack_trace(message)
+				return color_identity()
+			CRASH(message)
+
 #undef LUMR
 #undef LUMG
 #undef LUMB

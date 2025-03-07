@@ -1,4 +1,5 @@
 /mob/living/carbon/human
+	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
 	//Hair colour and style
 	var/hair_color = "#000000"
 	var/h_style = "Bald"
@@ -15,6 +16,7 @@
 
 	//Eye colour
 	var/eyes_color = "#000000"
+	var/emissive_eyes = FALSE	//Glowy eyes y/n
 
 	var/s_tone = 0	//Skin tone
 
@@ -31,10 +33,13 @@
 	//Ears, Tail and Wings
 	var/datum/sprite_accessory/ears/ears	=  null
 	var/list/ears_colors					= list()
+	var/emissive_ears						= FALSE		//Glowy secondary color y/n
 	var/datum/sprite_accessory/tail/tail	=  null
 	var/list/tail_colors					= list()
+	var/emissive_tail						= FALSE		//Glowy secondary color y/n
 	var/datum/sprite_accessory/wings/wings	=  null
 	var/list/wings_colors					= list()
+	var/emissive_wings						= FALSE		//Glowy secondary color y/n
 	var/tail_over = 0 //If the tail's on the alt layer or not.
 
 	var/list/body_markings						= list()

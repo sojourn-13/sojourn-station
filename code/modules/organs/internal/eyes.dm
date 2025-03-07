@@ -56,6 +56,13 @@
 	eyes_icon.Blend(BP_IS_ROBOTIC(src) ? robo_color : eyes_color, ICON_ADD)
 	return eyes_icon
 
+/obj/item/organ/internal/eyes/proc/get_glowy_overlay()		//painfully janky, someone please just modernize human_update_icon to use all overlays/mutable_appearances so we don't have to suffer anymore
+	var/mutable_appearance/eyes_icon_sw = mutable_appearance('icons/mob/human_face.dmi', "eyes_sw")
+	eyes_icon_sw.color = eyes_color
+	eyes_icon_sw.plane = ABOVE_LIGHTING_PLANE
+
+	return eyes_icon_sw
+
 /obj/item/organ/internal/eyes/proc/get_cache_key()
 	return "[cache_key][BP_IS_ROBOTIC(src) ? robo_color : eyes_color]"
 
