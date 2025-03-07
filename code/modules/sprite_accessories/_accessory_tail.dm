@@ -704,3 +704,9 @@
 	icon_state = "jackal"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/moyo
+	name = "Moyo Tail"
+	icon_state = "moyo"
+	colored_layers = 3
+	blend = ICON_MULTIPLY

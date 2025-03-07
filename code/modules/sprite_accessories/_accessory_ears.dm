@@ -741,3 +741,9 @@
     icon_state = "sheep_horn"
     colored_layers = 2
     blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/moyo
+    name = "Moyo Antennae"
+    icon_state = "moyo"
+    colored_layers = 2
+    blend = ICON_MULTIPLY
