@@ -887,7 +887,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_fruit, R_DEBUG, FALSE)
 	if(!seedtype || !plant_controller.seeds[seedtype])
 		return
 	var/datum/seed/S = plant_controller.seeds[seedtype]
-	S.harvest(usr,0,0,1)
+	S.harvest(usr,get_turf(usr),0,0,0,1)
 	log_admin("[key_name(usr)] spawned [seedtype] fruit at ([usr.x],[usr.y],[usr.z])")
 
 ADMIN_VERB_ADD(/datum/admins/proc/spawn_custom_item, R_DEBUG, FALSE)
