@@ -163,6 +163,9 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/riceseed
 	seed_type = "rice"
 
+/obj/item/seeds/linenseed
+	seed_type = "linen"
+
 /obj/item/seeds/carrotseed
 	seed_type = "carrot"
 

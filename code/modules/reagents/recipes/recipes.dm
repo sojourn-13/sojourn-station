@@ -884,6 +884,13 @@
 	maximum_temperature = INFINITY
 	minimum_temperature = 373
 
+/datum/chemical_reaction/carbon2
+	result = "carbon"
+	required_reagents = list("clothfiber" = 3)
+	result_amount = 2
+	maximum_temperature = INFINITY
+	minimum_temperature = 373
+
 /datum/chemical_reaction/cyanide
 	result = "cyanide"
 	required_reagents = list("toxin" = 5, "mindbreaker" = 3, "fuhrerole" = 2)

@@ -557,6 +557,15 @@
 	color = "#B97A57"
 	common = TRUE //Wood pulp is identifiable at a glance
 
+/datum/reagent/other/clothfiber
+	name = "Cellulose Fibers"
+	id = "clothfiber"
+	description = "A bunch of loose fibers."
+	taste_description = "cloth"
+	reagent_state = SOLID
+	color = "#e7ded0"
+	common = TRUE
+
 /datum/reagent/other/luminol
 	name = "Luminol"
 	id = "luminol"
