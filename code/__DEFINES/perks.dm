@@ -161,6 +161,7 @@
 #define PERK_SLIMEMETH /datum/perk/racial/speed_boost
 #define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
 #define PERK_SLIMEBUFF /datum/perk/racial/slime_stat_boost/physical
+#define PERK_SLIMEOPAQUE /datum/perk/racial/slime_opaque
 
 //////////////
 //Core Perks//

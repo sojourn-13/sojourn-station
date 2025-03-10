@@ -1158,7 +1158,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/slime
 	)
 
-	perks = list(PERK_SLIMEMETH, PERK_SLIMEBRAIN, PERK_SLIMEBUFF, PERK_LIMB_REGEN, PERK_SLIMEBODY)
+	perks = list(PERK_SLIMEMETH, PERK_SLIMEBRAIN, PERK_SLIMEBUFF, PERK_LIMB_REGEN, PERK_SLIMEOPAQUE, PERK_SLIMEBODY)
 
 /datum/species/slime/get_bodytype()
 	return "Aulvae"
