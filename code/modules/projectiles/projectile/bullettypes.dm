@@ -75,11 +75,13 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(2)
 		reagents.add_reagent(spray, 2)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
@@ -92,6 +94,8 @@
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
@@ -108,11 +112,13 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/pepperball/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(3)
 		reagents.add_reagent(spray, 3)
 
 /obj/item/projectile/bullet/pistol_35/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
@@ -212,11 +218,13 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(5)
 		reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
@@ -232,11 +240,13 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(3)
 		reagents.add_reagent(spray, 3)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
@@ -298,14 +308,16 @@
 
 /obj/item/projectile/bullet/kurtz_50/rubber/pepperball/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(8)
 		reagents.add_reagent(spray, 8)
 
 /obj/item/projectile/bullet/kurtz_50/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 8, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/kurtz_50/practice
@@ -410,6 +422,8 @@
 		reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
@@ -868,14 +882,16 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag/pepperball/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(10)
 		reagents.add_reagent(spray, 10)
 
 /obj/item/projectile/bullet/shotgun/beanbag/on_hit(atom/target, def_zone = null)
+	if(!testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 10, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
@@ -885,14 +901,16 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/New()
 	..()
-	if (!testing)
+	if(!testing)
 		create_reagents(5)
 		reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/on_hit(atom/target, def_zone = null)
+	if(!testing)
+		return
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 

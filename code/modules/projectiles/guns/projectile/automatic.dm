@@ -96,3 +96,16 @@
 		CH.receiver = gun //receiver is the gun that gets the fire events
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is
+
+// This function stop one bug where the firemode stay on when it is in backpack
+// But doesn't work when client's CH goes null (as in dropping while wielded).
+// There's a separate check in shooting loop
+/datum/firemode/automatic/force_deselect(mob/user)
+	if(CH)
+		if(CH.owner) //Remove our handler from the client
+			CH.owner.CH = null
+			QDEL_NULL(CH) //And delete it
+	if(user.client)
+		if(user.client.CH)
+			user.client.CH = null
+			QDEL_NULL(user.client.CH)

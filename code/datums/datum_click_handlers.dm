@@ -19,7 +19,6 @@
 		owner.CH = null
 		owner.mouse_pointer_icon=initial(owner.mouse_pointer_icon)
 	return ..()
-//	owner = null
 
 //Return false from these procs to discard the click afterwards
 /datum/click_handler/proc/Click(var/atom/target, location, control, params)
@@ -111,8 +110,8 @@
 	return TRUE
 
 /datum/click_handler/fullauto/proc/shooting_loop()
-
-	if(!owner || !owner.mob || owner.mob.resting || !receiver)
+	// Client's CH is set to nul when the handler is about to be destroyed, this safety check stop it from firing.
+	if(!owner || !owner.mob || owner.mob.resting || !receiver || !owner.CH)
 		return FALSE
 
 	if(target)
