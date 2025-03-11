@@ -35,7 +35,7 @@
 
 /mob/living/carbon/human/proc/relic_intuition()
 	set category = "Psionic powers"
-	set name = "Relic Reclamation (2)"
+	set name = "Reclamation (2)"
 	set desc = "Spend two psi points to reclaim a locker from the clutches of roaches and rust."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src

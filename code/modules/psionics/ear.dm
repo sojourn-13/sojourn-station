@@ -275,7 +275,7 @@
 /datum/eternal_ascension_resonances/relic_intuition
 	rune_resonance = "QuickSuppression"
 	output = /obj/item/device/psionic_catalyst/relic_intuition
-	out_put_name = "Relic Reclamation"
+	out_put_name = "Reclamation"
 
 /datum/eternal_ascension_resonances/summan_trash_pile
 	rune_resonance = "QuickSinking"

@@ -221,7 +221,7 @@
 	resonances = "Seeking"
 
 /obj/item/device/psionic_catalyst/relic_intuition
-	name = "psionic catalyst: Relic Reclamation"
+	name = "psionic catalyst: Reclamation"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	It is only natural to fight with all your might to keep things as they are. Fruitless, but natural."
