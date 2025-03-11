@@ -191,6 +191,11 @@
 			var/obj/item/implant/I = O
 			remove_implanted(I)
 
+	for(var/obj/item/material/shard/O in owner.contents)
+		if(istype(O, /obj/item/material/shard))
+			var/obj/item/material/shard/I = O
+			I.forceMove(get_turf(owner))
+
 
 
 // This proc removes all implanters other then non-metal ones.
