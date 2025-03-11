@@ -262,7 +262,7 @@
 	..()
 	color = "#5B0E4F"
 
-//MAX is 30 healing, MIN is 5
+//MAX is 37.5 healing, MIN is 5
 /obj/item/stack/medical/bruise_pack/psionic/grabbed_medical_skill(mob/living/carbon/user)
 	if(ishuman(user))
 		var/psionic_things = 0
@@ -271,6 +271,10 @@
 			psionic_things += 5
 		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
 			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PEACE))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psionic_things *= 1.25
 		return psionic_things
 	else
 		return FALSE
