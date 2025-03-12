@@ -266,7 +266,7 @@
 
 /obj/item/tool/baton/arcwelder
 	name = "arc welder"
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, partial multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, partial multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "arc_welder"
 	item_state = "arc_welder"
