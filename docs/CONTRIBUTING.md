@@ -23,34 +23,16 @@ Ask for help whenever you need it. No man is an island. Don't try to struggle al
 
 # Changelog Entries
 
-Any pull requests which add or change user-visible features should have a changelog written up. See example.yml in the html/changelogs directory. Make a copy of it, insert your own name, and write about what you've changed. Include it with your pull request. Not everything needs a changelog, only features that players will notice or care about. Minor bugfixes or code refactors can usually go without.
+Any pull requests which add or change user-visible features should have a changelog written up. This is included with the changelog format. 
 
-# Coding Policies
+# Code Standards 
 
-Eris and thus Sojourn has an unusual top-down development style, with future features largely planned out.
-To avoid conflicts, it is strongly recommended to discuss any proposed changes in the discord, and get the approval of the development team, before starting work on something that may ultimately be rejected. We can work with your ideas and help fit them into the broader vision.
+## DM Code Standards
 
-When making adjustments to game balance, changes should be explained, and generally made in small steps unless there's an egregious problem. 15-25% at a time is the recommended change for balancing values.
+### Do not use relative pathing
+While DM allows for relative pathing, absolute pathing is far superior for debugging purpose and make it possible to actually search up where a variable or a proc was defined.
 
-When working on large projects, try to make the resulting pull requests as small as feasible. Split large projects into multiple smaller phases if possible. We strongly encourage iterative development, and it's perfectly fine to implement a large feature in many PRs over several months.
-
-Try to comment your code well, there's rarely such a thing as overexplaining. comments are especially important when writing large new features, or using things in unexpected ways.
-
-Values which affect game balance, such as movespeeds, health values and weapon damage, should not be written in or read from config files. Whenever working on an area where such values already exist in config, phase them out and use defines or global variables instead.
-
-When designing new systems and features, try not to create an undue burden for future coders who will have to maintain your work.
-
-The following features or systems are deprecated and should not be used if at all possible.
-Datacore: Use modular records instead
-/obj/item/device/pda, and PDA cartridges: Use modular PDAs instead.
-Single Function computer consoles: Use modular computers instead.
-Direct html browse calls: Use NanoUI instead.
-
-Avoid "Cargo Cult Programming", the ritual of things you don't understand. Try your best to understand the function of codeblocks you copy and paste.
-
-# Code style
-
-Proc defines should contain full type path.
+New relative pathing may not be introduced to the codebase, except in files that predominantly use relative pathing where refactoring or using absolute pathing will take too much effort. When in doubt, don't.
 
 **_Good:_**
 
@@ -98,6 +80,8 @@ for(var/object in objects) foo(object)
 
 ---
 
+### Spacing
+
 Spaces are needed between function agruments (declaration and definition). Spaces are needed between the binary operator and arguments. Space is not needed when the operation is unary. Spaces are not needed near brackets. Spaces are needed around assignment operator.
 
 **_Good:_**
@@ -120,6 +104,30 @@ Spaces are needed between function agruments (declaration and definition). Space
 
 ---
 
+### Use Early Return / Guard Clause
+Guard clauses are early returns in a proc for specific conditions. This is preferred to wrapping most of a proc’s behavior in an in-block, as procs will often check a handful of early conditions to bail out on.
+
+This is bad:
+```
+/datum/datum1/proc/proc1()
+    if(thing1)
+        if(!thing2)
+            if(thing3 == 30)
+                do stuff
+```
+This is good:
+```
+/datum/datum1/proc/proc1()
+    if(!thing1)
+        return
+    if(thing2)
+        return
+    if(thing3 != 30)
+        return
+    do stuff
+```
+
+### Avoid unnecessary return 
 Don't have unnecessary return calls or return meaningless data.
 If there's nothing after a return, and its not returning a specific value, you don't need a return at all.
 The . var stores the return of a function and will be returned even without a specific return call.
@@ -154,7 +162,7 @@ The . var stores the return of a function and will be returned even without a sp
 ```
 
 ---
-
+### Boolean
 Boolean variables and return values should use TRUE and FALSE constans instead of 1 and 0.
 **_Good:_**
 
@@ -178,7 +186,8 @@ Boolean variables and return values should use TRUE and FALSE constans instead o
 
 ---
 
-Using colon operator (:) for object property and procs access is generally inadvisable.
+### Do not use colon operator
+Using colon operator (:) for object property and procs access is not allowed. Dot operator is preferred.
 
 **_Good:_**
 
@@ -197,6 +206,7 @@ if(hasvar(obj, "count"))
 
 ---
 
+### Span instead of <<
 Colorized text outputs should use `to_chat(target, text)` and html tags instead of `<<` and magic color symbols. Make use of our span defines when possible.
 
 **_Good:_**
@@ -232,9 +242,8 @@ del(src)
 
 ---
 
-# Naming
-
-Avoid short names for class variables. No acronyms or abbreviations.
+### Naming
+Avoid short, non-informative names for class variables. No acronyms or abbreviations.
 These are fine to use for local variables within a proc though.
 
 **_Good:_**
@@ -253,8 +262,8 @@ var/c = 1
 
 ---
 
-Name your proc parameters properly to prevent name conflicts. If in doubt, use the prefix \_ to clearly indicate an input parameter.
-Do not use src.var if it can be helped.
+### Name parameters properly 
+Name your proc parameters properly to prevent name conflicts. Do not use src.variablename to circumvent this problem. 
 
 **_Good:_**
 
@@ -262,8 +271,6 @@ Do not use src.var if it can be helped.
 /obj/set_name(newname)
 	name = newname
 
-/obj/set_name(_name)
-	name = _name
 ```
 
 **_Bad:_**
@@ -271,14 +278,12 @@ Do not use src.var if it can be helped.
 ```
 /obj/set_name(name)
 	name = name
-
-/obj/set_name(name)
-	src.name = name
 ```
 
 ---
 
-Variables, types and methods should be named in "snake case". Constant values should be named in uppercase.
+### Use snake case naming
+Variables, types and methods should be named in snake case, where underscore _ is used to replace space between words, and all words are written in lower case. Constant values should be named in uppercase. 
 
 **_Good:_**
 
@@ -296,6 +301,7 @@ var/brigArea
 
 ---
 
+### Procedure Arguments
 Procedure arguments should not contain `var/`. Specified input type e.g. `some_turf as turf` is inadvisable.
 
 **_Good:_**
@@ -311,5 +317,24 @@ Procedure arguments should not contain `var/`. Specified input type e.g. `some_t
 /proc/rename_area(var/mob/user as mob, var/area/A as area, var/new_name as text)
 
 ```
+
+### File Naming
+- Where possible, avoid having files with the same names across folders 
+- File names should be strictly lowercase to avoid issues on filesystems where case matters.
+- New file names for .dm file should be in snake_case, and avoid using spaces or character that would require escpaing in a url. 
+
+### No "Modular" Code 
+Some SS13 servers adhere to "Modular Coding", which is a concept not related to the practice of modules coding - where code are organized in smaller, reusable and maintainable modules. This practice involves: 
+- Creating a separate modular folder (Like modular_sojourn)
+- The files are given file names that force them to load after the original files, like (zzzz_)
+- Where edits to original files are needed, developers will add comments like // Equinox edit in order to make it easier to discern where code were edited. 
+
+This practice is **Not Allowed** in Equinox and will not be expanded on and added to. Upstream changes will not be blindly pulled in or merged, and this practice slow down development and greatly increases debugging difficulty because of how it overrides existing procs and variables across two files - generally considered a bad practice. Without searching for these overrides, it is impossible to understand code behavior because it may or may not have been overridden somewhere. 
+
+Existing modular codes should be gradually removed or decomissioned.
+
+
+### TGUI / NanoUI
+When you are adding a new interface, either use plain HTML (For admin interfaces that can't afford to go down, or in extremely rare case where it is justified), or uses TGUI. NanoUI is not maintained and is being phased out across SS13 due to its inability to be compiled at runtime and not following modern, reusable web development practices. 
 
 ---
