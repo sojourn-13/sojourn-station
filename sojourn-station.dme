@@ -1884,6 +1884,7 @@
 #include "code\modules\clothing\under\costume.dm"
 #include "code\modules\clothing\under\dress.dm"
 #include "code\modules\clothing\under\miscellaneous.dm"
+#include "code\modules\clothing\under\moyo.dm"
 #include "code\modules\clothing\under\pants.dm"
 #include "code\modules\clothing\under\shorts.dm"
 #include "code\modules\clothing\under\suits.dm"

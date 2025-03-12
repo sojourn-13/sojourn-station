@@ -251,3 +251,7 @@
 /datum/gear/uniform/sports
 	display_name = "white tank top"
 	path = /obj/item/clothing/under/sports
+
+/datum/gear/uniform/moyo_leotard
+	display_name = "abyssal leotard"
+	path = /obj/item/clothing/under/moyo_leotard

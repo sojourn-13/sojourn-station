@@ -113,3 +113,10 @@
 /datum/gear/shoes/winterboots
 	display_name = "winter boots"
 	path = /obj/item/clothing/shoes/winter
+
+/datum/gear/moyo_boots
+	display_name = "abyssal boots"
+	path = /obj/item/clothing/shoes/moyo_boots
+	slot = slot_shoes
+	sort_category = "Shoes and Footwear"
+	cost = 2 //semi-insulated

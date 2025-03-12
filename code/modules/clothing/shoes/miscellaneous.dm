@@ -439,4 +439,10 @@
 	icon_state = "explorer"
 	can_hold_knife = TRUE
 	armor_list = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0)
-	
+
+/obj/item/clothing/shoes/moyo_boots
+	name = "moyo thighighs"
+	desc = "A pair of sleek thigh highs designed for deep ocean use. Non slip grips. Made in the Abyss."
+	icon_state = "moyo_boots"
+	siemens_coefficient = 0.5
+	can_hold_knife = TRUE

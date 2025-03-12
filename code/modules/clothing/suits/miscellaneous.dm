@@ -493,3 +493,13 @@ obj/item/clothing/suit/gownrisque/alt
 	min_cold_protection_temperature= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	unacidable = TRUE
 	price_tag = 2000
+
+/obj/item/clothing/suit/storage/moyo_formal
+	name = "moyo formal dress"
+	desc = "A light and open robe made of the same sleek material moyo usually use. This dress however is much darker and more fanciful, worthy of nobility."
+	icon_state = "moyo_formal"
+	item_state = "moyo_formal"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 1000

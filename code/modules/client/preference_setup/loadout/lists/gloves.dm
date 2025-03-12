@@ -87,3 +87,10 @@
 	path = /obj/item/clothing/gloves/knuckles
 	slot = slot_gloves
 	cost = 1
+
+/datum/gear/gloves/moyo_gloves
+	display_name = "abyssal gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/moyo_gloves
+	slot = slot_gloves
+	cost = 3
