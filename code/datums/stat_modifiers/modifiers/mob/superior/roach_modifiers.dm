@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified
+/datum/stat_modifier/mob/living/carbon/superior/biosilicified
 
 	armor_adjustment = list(
 	melee = 2,
@@ -7,7 +7,7 @@
 	agony = 15 //Rubbers deal way less to us!
 	)
 
-	armor_divisor_increment = 1.5
+	armor_divisor_increment = 0.5
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -15,7 +15,7 @@
 
 	description = "Networks of wafer-thin crystalline lattice span the surface of this one, both hardening itself towards blunt trauma and improving its own penetration abilities."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian
+/datum/stat_modifier/mob/living/carbon/superior/lambertian
 
 	armor_adjustment = list(
 	energy = 2,
@@ -23,7 +23,7 @@
 	)
 
 	flash_resistances_increment = 2
-	armor_divisor_increment = 1.15
+	armor_divisor_increment = 0.15
 
 	stattags = DEFENSE_STATTAG
 

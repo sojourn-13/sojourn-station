@@ -83,6 +83,10 @@
 	display_name = "baton holster"
 	path = /obj/item/storage/pouch/baton_holster
 
+/datum/gear/armament/holster/saber/greatsword
+	display_name = "quickdraw scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/greatsword
+
 /datum/gear/armament/holster/saber/cutlass
 	display_name = "cutlass holster"
 	path = /obj/item/clothing/accessory/holster/saber/cutlass

@@ -164,7 +164,7 @@
 		return FALSE
 
 	//Kaisers are too fat, they can't fit in
-	if(istype(L, /mob/living/carbon/superior_animal/roach/kaiser))
+	if(istype(L, /mob/living/carbon/superior/roach/kaiser))
 		return FALSE
 
 	return TRUE
@@ -241,7 +241,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		//Alright now how do we make this mob come to us?
 		if (issuperioranimal(L))
 			//If its a superior animal, then we'll set their mob target to this burrow
-			var/mob/living/carbon/superior_animal/SA = L
+			var/mob/living/carbon/superior/SA = L
 			SA.activate_ai()
 			SA.target_mob = WEAKREF(src) //Tell them to target this burrow
 			SA.stance = HOSTILE_STANCE_ATTACK //This should make them walk over and attack it
@@ -692,7 +692,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	if (is_valid(user))
 		enter_burrow(user)
 	if (issuperioranimal(user))//So they don't carry burrow's reference and never qdel
-		var/mob/living/carbon/superior_animal/SA = user
+		var/mob/living/carbon/superior/SA = user
 		SA.target_mob = null
 
 

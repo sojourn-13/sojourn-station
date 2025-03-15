@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/renderpatriarch
+/mob/living/simple/hostile/renderpatriarch
 	name = "render patriarch"
 	desc = "A hulking monster out of a living nightmare. Its powerful hide can shrug off advanced lasers with ease and its heavily armored skin requires powerful ballistics to pierce."
 	icon = 'icons/mob/renderpatriarch.dmi'
@@ -33,7 +33,7 @@
 	pixel_x = -16
 	pixel_y = 0
 	meat_amount = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size = MOB_LARGE
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
@@ -45,7 +45,7 @@
 	damage_types = list(BRUTE = 12)
 	step_delay = 2
 
-/mob/living/simple_animal/hostile/renderpatriarch/death()
+/mob/living/simple/hostile/renderpatriarch/death()
 	..()
 	visible_message("<b>[src]</b> roars loudly as it falls apart, exploding at the seams! Its last meal drops down.")
 	var chancedrop = rand(1,3)
@@ -71,7 +71,7 @@
 	qdel(src)
 	return
 
-/mob/living/simple_animal/hostile/renderpatriarch/UnarmedAttack()
+/mob/living/simple/hostile/renderpatriarch/UnarmedAttack()
 	..()
 	if(fatigue <= maxfatigue)
 		fatigue = fatigue + 1
@@ -80,14 +80,14 @@
 		melee_damage_lower = initial(melee_damage_lower) - fatigue * 2
 		melee_damage_upper = initial(melee_damage_upper) - fatigue * 2
 
-/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
+/mob/living/simple/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
 	density = 0
 	return ..(gibbed,deathmessage)
 
-/mob/living/simple_animal/hostile/renderpatriarch/MiddleClickOn(mob/targetDD as mob)
+/mob/living/simple/hostile/renderpatriarch/MiddleClickOn(mob/targetDD as mob)
 	if(world.time < chargecooldown)
 		to_chat(usr, SPAN_NOTICE("You are too tired to charge again just yet."))
 		return FALSE
@@ -136,14 +136,14 @@
 	melee_damage_upper = initial(melee_damage_upper)
 	chargecooldown = world.time + 7 SECONDS
 
-/mob/living/simple_animal/hostile/renderpatriarch/Bump(var/atom/obstacle)
+/mob/living/simple/hostile/renderpatriarch/Bump(var/atom/obstacle)
 	.=..()
 	if(iscarbon(obstacle) && charging)
 		var/mob/living/carbon/J = obstacle
 		J.take_organ_damage(12)
 		J.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(3,6),30)
 
-/mob/living/simple_animal/hostile/renderpatriarch/proc/spineburst()
+/mob/living/simple/hostile/renderpatriarch/proc/spineburst()
 	if(world.time < spinecooldown)
 		to_chat(usr, SPAN_NOTICE("Your spines are still regrowing."))
 		return FALSE
@@ -177,7 +177,7 @@
 	melee_damage_upper = initial(melee_damage_upper)
 	spinecooldown = 15 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/renderpatriarch/verb/zoomthateye()
+/mob/living/simple/hostile/renderpatriarch/verb/zoomthateye()
 	if(zoomeye == 7)
 		zoomeye = 9
 		usr.client.view = 9
@@ -195,12 +195,12 @@
 		return
 	return
 
-/mob/living/simple_animal/hostile/renderpatriarch/verb/seteyedistance()
+/mob/living/simple/hostile/renderpatriarch/verb/seteyedistance()
 	set name = "Change Visual Distance"
 	set category = "Abilities"
 	src.zoomthateye()
 
-/mob/living/simple_animal/hostile/renderpatriarch/lay_down()
+/mob/living/simple/hostile/renderpatriarch/lay_down()
 	set category = "IC"
 	var/state_changed = FALSE
 	if(resting)
@@ -226,7 +226,7 @@
 		to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
 		update_lying_buckled_and_verb_status()
 
-/mob/living/simple_animal/hostile/renderpatriarch/proc/shoot_projectile(turf/marker, var/dir)
+/mob/living/simple/hostile/renderpatriarch/proc/shoot_projectile(turf/marker, var/dir)
 	if(!marker || marker == loc)
 		visible_emote("fizzle")
 		return
@@ -235,12 +235,12 @@
 	P.firer = src
 	P.launch(get_step(marker, dir))
 
-/mob/living/simple_animal/hostile/renderpatriarch/verb/spineburstverb()
+/mob/living/simple/hostile/renderpatriarch/verb/spineburstverb()
 	set name = "Spine Burst"
 	set category = "Abilities"
 	src.spineburst()
 
-/mob/living/simple_animal/hostile/renderpatriarch/proc/raginghowl()
+/mob/living/simple/hostile/renderpatriarch/proc/raginghowl()
 	if(world.time < roarcooldown)
 		to_chat(usr, SPAN_NOTICE("Your vocal chords are still regenerating."))
 		return FALSE
@@ -280,12 +280,12 @@
 	roarcooldown = 25 SECONDS + world.time
 	return
 
-/mob/living/simple_animal/hostile/renderpatriarch/verb/raginghowlverb()
+/mob/living/simple/hostile/renderpatriarch/verb/raginghowlverb()
 	set name = "Raging Howl"
 	set category = "Abilities"
 	src.raginghowl()
 
-/mob/living/simple_animal/hostile/renderpatriarch/proc/thunderhowl(var/turf/T, var/mob/living/carbon/M)
+/mob/living/simple/hostile/renderpatriarch/proc/thunderhowl(var/turf/T, var/mob/living/carbon/M)
 	var/ear_safety = 0
 	var/stat_def = -STAT_LEVEL_ADEPT
 	if(iscarbon(M))
@@ -341,7 +341,7 @@
 	M.stats.addTempStat(STAT_MEC, stat_def, 10 SECONDS, "shaken")
 	M.update_icons()
 
-/mob/living/simple_animal/hostile/poporavtomat
+/mob/living/simple/hostile/poporavtomat
 	name = "Excelsior Popor Avtomat"
 	desc = "The People's Machine! An advanced automaton created to enforce the will of the people over their capitalist overlords."
 	icon = 'icons/mob/40x40.dmi'
@@ -379,7 +379,7 @@
 	can_burrow = FALSE
 	mob_size = MOB_LARGE
 
-/mob/living/simple_animal/hostile/poporavtomat/ex_act(severity, target)
+/mob/living/simple/hostile/poporavtomat/ex_act(severity, target)
 	switch (severity)
 		if(1)
 			adjustFireLoss(rand(150,250)) //10 shots and good rng can take this down
@@ -388,8 +388,8 @@
 		if(3)
 			adjustFireLoss(rand(50,100))
 
-/mob/living/simple_animal/hostile/poporavtomat/MiddleClickOn(mob/targetDD as mob)
-	var /mob/living/simple_animal/hostile/shooter = src //We're the shooter.
+/mob/living/simple/hostile/poporavtomat/MiddleClickOn(mob/targetDD as mob)
+	var /mob/living/simple/hostile/shooter = src //We're the shooter.
 	if(ranged_cooldown >= world.time)
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
@@ -473,12 +473,12 @@
 	playsound(src, 'sound/weapons/guns/fire/m41_shoot.ogg', 30, 1, -3)
 	ranged_cooldown = world.time + 3
 
-/mob/living/simple_animal/hostile/poporavtomat/verb/loadapverb()
+/mob/living/simple/hostile/poporavtomat/verb/loadapverb()
 	set name = "Load AP Round"
 	set category = "Abilities"
 	src.loadap()
 
-/mob/living/simple_animal/hostile/poporavtomat/proc/loadap()
+/mob/living/simple/hostile/poporavtomat/proc/loadap()
 	if(world.time < apcooldown && nocooldown == 0)
 		to_chat(usr, SPAN_NOTICE("You can not load an AP round just yet."))
 		return
@@ -489,12 +489,12 @@
 	playsound(src, 'sound/weapons/guns/interact/rifle_load.ogg', 30, 1, -3)
 	apcooldown = 12 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/poporavtomat/verb/loadfireverb()
+/mob/living/simple/hostile/poporavtomat/verb/loadfireverb()
 	set name = "Load Flamethrower"
 	set category = "Abilities"
 	src.loadfire()
 
-/mob/living/simple_animal/hostile/poporavtomat/proc/loadfire()
+/mob/living/simple/hostile/poporavtomat/proc/loadfire()
 	if(world.time < firecooldown && nocooldown == 0)
 		to_chat(usr, SPAN_NOTICE("You can not load flamethrower just yet."))
 		return
@@ -504,12 +504,12 @@
 	icon_living = "excelatomiton"
 	firecooldown = 20 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/poporavtomat/verb/loadmgverb()
+/mob/living/simple/hostile/poporavtomat/verb/loadmgverb()
 	set name = "Load Maxim Machinegun"
 	set category = "Abilities"
 	src.loadmg()
 
-/mob/living/simple_animal/hostile/poporavtomat/proc/loadmg()
+/mob/living/simple/hostile/poporavtomat/proc/loadmg()
 	if(world.time < mgcooldown && nocooldown == 0)
 		to_chat(usr, SPAN_NOTICE("You can not load the Maxim just yet."))
 		return
@@ -520,12 +520,12 @@
 	icon_living = "excelatomiton"
 	mgcooldown = 20 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/poporavtomat/verb/loadartileriaverb()
+/mob/living/simple/hostile/poporavtomat/verb/loadartileriaverb()
 	set name = "Load Artileria Flares"
 	set category = "Abilities"
 	src.loadartileria()
 
-/mob/living/simple_animal/hostile/poporavtomat/proc/loadartileria()
+/mob/living/simple/hostile/poporavtomat/proc/loadartileria()
 	if(world.time < artileriacooldown && nocooldown == 0)
 		to_chat(usr, SPAN_NOTICE("You can not load Artilera Flares just yet."))
 		return
@@ -535,12 +535,12 @@
 	icon_living = "excelatomiton"
 	artileriacooldown = 40 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/poporavtomat/verb/smokeverb()
+/mob/living/simple/hostile/poporavtomat/verb/smokeverb()
 	set name = "Activate Smoke"
 	set category = "Abilities"
 	src.releasesmoke()
 
-/mob/living/simple_animal/hostile/poporavtomat/proc/releasesmoke()
+/mob/living/simple/hostile/poporavtomat/proc/releasesmoke()
 	if(world.time < smokecooldown && nocooldown == 0)
 		to_chat(usr, SPAN_NOTICE("You can not release smoke just yet."))
 		return
@@ -549,7 +549,7 @@
 	s1.prime()
 	smokecooldown = 30 SECONDS + world.time
 
-/mob/living/simple_animal/hostile/poporavtomat/Bump(var/atom/obstacle)
+/mob/living/simple/hostile/poporavtomat/Bump(var/atom/obstacle)
 	.=..()
 	if(iscarbon(obstacle))
 		var/mob/living/carbon/J = obstacle
@@ -557,7 +557,7 @@
 		say(pick("Freedom kick!", "Udar svobody!", "Ukhodi!"))
 		J.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(3,6),30)
 
-/mob/living/simple_animal/hostile/poporavtomat/death(gibbed, deathmessage = "buzzes out and teleports out of its current location!")
+/mob/living/simple/hostile/poporavtomat/death(gibbed, deathmessage = "buzzes out and teleports out of its current location!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead

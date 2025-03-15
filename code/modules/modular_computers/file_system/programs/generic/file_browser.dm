@@ -60,7 +60,7 @@
 			if(!newname)
 				return
 
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
 			if(!HDD || HDD.read_only)
 				return
 
@@ -72,7 +72,7 @@
 			. = TRUE
 
 		if("delete_file")
-			var/obj/item/computer_hardware/hard_drive/HDD
+			var/obj/item/pc_part/drive/HDD
 			if(params["portable"])
 				HDD = computer.portable_drive
 			else
@@ -94,7 +94,7 @@
 			. = TRUE
 
 		if("clone_file")
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
 			if(!HDD || HDD.read_only)
 				return
 
@@ -107,7 +107,7 @@
 			. = TRUE
 
 		if("rename_file")
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
 			if(!HDD || HDD.read_only)
 				return
 
@@ -124,7 +124,7 @@
 			if(!open_file)
 				return
 
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
 			if(!HDD || HDD.read_only)
 				return
 
@@ -160,7 +160,7 @@
 			if(!open_file)
 				return
 
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
 			if(!HDD)
 				return
 
@@ -179,8 +179,8 @@
 			. = TRUE
 
 		if("copy_to_usb")
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-			var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/disk/RHDD = computer.portable_drive
 			if(!HDD || !RHDD)
 				return
 
@@ -193,8 +193,8 @@
 			. = TRUE
 
 		if("copy_from_usb")
-			var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
-			var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+			var/obj/item/pc_part/drive/HDD = computer.hard_drive
+			var/obj/item/pc_part/drive/disk/RHDD = computer.portable_drive
 			if(!HDD || !RHDD)
 				return
 

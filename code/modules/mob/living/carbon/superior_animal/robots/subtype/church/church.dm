@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/church
+/mob/living/carbon/superior/robot/church
 	name = "Absolute"
 	desc = "You shouldn't be seeing this"
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -13,12 +13,12 @@
 	cleaning = FALSE
 	meat_type = /obj/item/stack/material/biomatter/random
 
-/mob/living/carbon/superior_animal/robot/church/obey_check(mob/living/speaker = null)
+/mob/living/carbon/superior/robot/church/obey_check(mob/living/speaker = null)
 	. = ..() // Check for fren.
 	if(speaker?.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return TRUE // We obey everyone with a cruciform
 
-/mob/living/carbon/superior_animal/robot/church/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/church/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 

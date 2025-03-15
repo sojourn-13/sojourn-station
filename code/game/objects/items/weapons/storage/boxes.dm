@@ -97,18 +97,18 @@
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/cell/small(src)
 	if(prob(50))
-		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+		new /obj/item/reagent_containers/snacks/openable/mre(src)
 	else
-		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
+		new /obj/item/reagent_containers/snacks/openable/mre/alt(src)
 
 /obj/item/storage/box/survival/extended/populate_contents()
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/tank/emergency_oxygen/engi(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	if(prob(50))
-		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+		new /obj/item/reagent_containers/snacks/openable/mre(src)
 	else
-		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
+		new /obj/item/reagent_containers/snacks/openable/mre/alt(src)
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/cell/small(src)
@@ -515,7 +515,7 @@
 
 /obj/item/storage/box/drinkingglasses/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/drinks/drinkingglass(src)
+		new /obj/item/reagent_containers/drinks/drinkingglass(src)
 
 /obj/item/storage/box/cdeathalarm_kit
 	name = "death alarm kit"
@@ -557,7 +557,7 @@
 
 /obj/item/storage/box/condimentbottles/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/condiment(src)
+		new /obj/item/reagent_containers/condiment(src)
 
 /obj/item/storage/box/cups
 	name = "box of paper cups"
@@ -565,7 +565,7 @@
 
 /obj/item/storage/box/cups/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/drinks/sillycup(src)
+		new /obj/item/reagent_containers/drinks/sillycup(src)
 
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
@@ -575,7 +575,7 @@
 
 /obj/item/storage/box/donkpockets/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+		new /obj/item/reagent_containers/snacks/donkpocket(src)
 
 /obj/item/storage/box/sinpockets
 	name = "box of sin-pockets"
@@ -585,7 +585,7 @@
 
 /obj/item/storage/box/sinpockets/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src)
+		new /obj/item/reagent_containers/snacks/donkpocket/sinpocket(src)
 
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
@@ -593,11 +593,11 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = "monkeycubebox"
 	illustration = null
-	can_hold = list(/obj/item/reagent_containers/food/snacks/monkeycube)
+	can_hold = list(/obj/item/reagent_containers/snacks/monkeycube)
 
 /obj/item/storage/box/monkeycubes/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/food/snacks/monkeycube/wrapped(src)
+		new /obj/item/reagent_containers/snacks/monkeycube/wrapped(src)
 
 /obj/item/storage/box/ids
 	name = "box of spare IDs"
@@ -726,7 +726,7 @@
 
 /obj/item/storage/box/data_disk/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/computer_hardware/hard_drive/portable(src)
+		new /obj/item/pc_part/drive/disk(src)
 
 /obj/item/storage/box/data_disk/basic
 	name = "basic data disk box"
@@ -734,7 +734,7 @@
 
 /obj/item/storage/box/data_disk/basic/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/computer_hardware/hard_drive/portable/basic(src)
+		new /obj/item/pc_part/drive/disk/basic(src)
 
 /obj/item/storage/box/data_disk/basic/empty/populate_contents()
 	return
@@ -809,7 +809,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 	New()
 		..()
-		new /obj/item/reagent_containers/food/snacks/popcorn(src)
+		new /obj/item/reagent_containers/snacks/popcorn(src)
 		new /obj/item/toy/junk/bosunwhistle(src)
 		new /obj/random/toy/plushie_onlysquid(src)
 		new /obj/item/device/binoculars(src)

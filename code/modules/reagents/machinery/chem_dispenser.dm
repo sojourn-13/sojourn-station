@@ -265,8 +265,8 @@
 	if(beaker)
 		to_chat(user, "Something is already loaded into the machine.")
 		return
-	if(istype(B, /obj/item/reagent_containers/glass) || istype(B, /obj/item/reagent_containers/food))
-		if(accept_beaker && istype(B, /obj/item/reagent_containers/food))
+	if(istype(B, /obj/item/reagent_containers/glass) || istype(B, /obj/item/reagent_containers))
+		if(accept_beaker && istype(B, /obj/item/reagent_containers))
 			to_chat(user, SPAN_NOTICE("This machine only accepts beakers"))
 		src.beaker =  B
 		if (user.unEquip(B, src))

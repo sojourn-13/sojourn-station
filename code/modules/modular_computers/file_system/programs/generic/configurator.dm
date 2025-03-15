@@ -38,11 +38,11 @@
 	data["battery_percent"] = round(computer.cell?.percent())
 
 	// Configurable stuff
-	var/obj/item/computer_hardware/printer/printer = computer.printer
+	var/obj/item/pc_part/printer/printer = computer.printer
 	data["print_language"] = printer ? printer.print_language : null
 
 	var/list/hardware_data = list()
-	for(var/obj/item/computer_hardware/H in hardware)
+	for(var/obj/item/pc_part/H in hardware)
 		hardware_data += list(list(
 			"name" = H.name,
 			"desc" = H.desc,
@@ -69,7 +69,7 @@
 			to_chat(usr, SPAN_DANGER("The theme '[theme]' is not available on this device."))
 
 		if("edit_language")
-			var/obj/item/computer_hardware/printer/printer = computer.printer
+			var/obj/item/pc_part/printer/printer = computer.printer
 			if (!printer)
 				to_chat(usr, SPAN_WARNING("No printer found, unable to update language."))
 				return TRUE

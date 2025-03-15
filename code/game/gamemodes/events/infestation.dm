@@ -151,21 +151,21 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 		if(INFESTATION_HIVEBOTS)
 			event_name = "Minor Hivebot Invasion"
 			chosen_verb = "have invaded"
-			chosen_mob_classification += /mob/living/simple_animal/hostile/hivebot
-			chosen_mob_classification += /mob/living/simple_animal/hostile/hivebot/range
+			chosen_mob_classification += /mob/living/simple/hostile/hivebot
+			chosen_mob_classification += /mob/living/simple/hostile/hivebot/range
 		if(INFESTATION_SPACE_BATS)
 			event_name = "Bat Roost"
 			chosen_verb = "have been roosting in"
-			chosen_mob_classification += /mob/living/simple_animal/hostile/scarybat
+			chosen_mob_classification += /mob/living/simple/hostile/scarybat
 			/*
 		if(INFESTATION_LIZARDS)
 			event_name = "Lizard Nest"
 			chosen_verb = "have been breeding in"
-			chosen_mob_classification += /mob/living/simple_animal/lizard
+			chosen_mob_classification += /mob/living/simple/lizard
 		if(INFESTATION_MICE)
 			event_name = "Mouse Nest"
 			chosen_verb = "have been breeding in"
-			chosen_mob_classification += /mob/living/simple_animal/mouse //Mice pick random colors on spawn
+			chosen_mob_classification += /mob/living/simple/mouse //Mice pick random colors on spawn
 			*/
 		if(INFESTATION_SLIMES)
 			event_name = "Slime Leak"
@@ -191,19 +191,19 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 			chosen_mob_classification += /obj/random/mob/termite_no_despawn
 /*		if(INFESTATION_YITHIAN)
 			unidentified = TRUE
-			chosen_mob_classification += /mob/living/simple_animal/yithian
+			chosen_mob_classification += /mob/living/simple/yithian
 		if(INFESTATION_TINDALOS)
 			unidentified = TRUE
-			chosen_mob_classification += /mob/living/simple_animal/tindalos*/
+			chosen_mob_classification += /mob/living/simple/tindalos*/
 		if(INFESTATION_SAMAK)
 			unidentified = TRUE
-			chosen_mob_classification += /mob/living/simple_animal/hostile/samak
+			chosen_mob_classification += /mob/living/simple/hostile/samak
 		if(INFESTATION_SHANTAK)
 			unidentified = TRUE
-			chosen_mob_classification += /mob/living/simple_animal/hostile/shantak
+			chosen_mob_classification += /mob/living/simple/hostile/shantak
 		if(INFESTATION_DIYAAB)
 			unidentified = TRUE
-			chosen_mob_classification += /mob/living/simple_animal/hostile/diyaab
+			chosen_mob_classification += /mob/living/simple/hostile/diyaab
 
 	//Chance for identification to fail even for normal mobs, to frustrate metagamers
 	if (prob(15))

@@ -664,8 +664,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	..()
 
-	if (istype(W, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/grown/G = W
+	if (istype(W, /obj/item/reagent_containers/snacks))
+		var/obj/item/reagent_containers/snacks/grown/G = W
 		if (!G.dry)
 			to_chat(user, SPAN_NOTICE("[G] must be dried before you stuff it into [src]."))
 			return

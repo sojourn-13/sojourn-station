@@ -16,7 +16,7 @@
 		return
 
 	// Fruits and vegetables.
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown) || istype(O, /obj/item/grown))
+	if(istype(O, /obj/item/reagent_containers/snacks/grown) || istype(O, /obj/item/grown))
 
 		user.remove_from_mob(O)
 
@@ -25,7 +25,7 @@
 			var/obj/item/grown/F = O
 			new_seed_type = plant_controller.seeds[F.plantname]
 		else
-			var/obj/item/reagent_containers/food/snacks/grown/F = O
+			var/obj/item/reagent_containers/snacks/grown/F = O
 			new_seed_type = plant_controller.seeds[F.plantname]
 
 		if(new_seed_type)

@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/nanobot
+/mob/living/carbon/superior/nanobot
 	name = "Nanobot"
 	desc = "A robot built from nanites to serve as a personal servant and guard. A product originally designed by the opifex before being mimiced by the Artificer Guild. They come in several variants \
 	and are known for being highly versatile."
@@ -71,25 +71,25 @@
 	var/treatment_tox = "carthatoline"
 	never_stimulate_air = TRUE
 
-/mob/living/carbon/superior_animal/nanobot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
+/mob/living/carbon/superior/nanobot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
-/mob/living/carbon/superior_animal/nanobot/handle_environment(var/datum/gas_mixture/environment) //were space proof
+/mob/living/carbon/superior/nanobot/handle_environment(var/datum/gas_mixture/environment) //were space proof
 	return
 
-/mob/living/carbon/superior_animal/nanobot/New()
+/mob/living/carbon/superior/nanobot/New()
 	. = ..()
 	Radio = new/obj/item/device/radio(src)
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
 	update_icon()
 
-/mob/living/carbon/superior_animal/nanobot/rejuvenate()
+/mob/living/carbon/superior/nanobot/rejuvenate()
 	..()
 	//We regain our console and radio if revived!
 	Radio = new/obj/item/device/radio(src)
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
 
-/mob/living/carbon/superior_animal/nanobot/examine(mob/user)
+/mob/living/carbon/superior/nanobot/examine(mob/user)
 	..()
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
@@ -114,7 +114,7 @@
 		else if (health < maxHealth)
 			to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
-/mob/living/carbon/superior_animal/nanobot/death()
+/mob/living/carbon/superior/nanobot/death()
 	if(controller) // Is there someone currently controlling the bot when it died?
 		to_chat(src, "You are suddenly shunted out of your nanobot as it dies.")
 		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
@@ -126,13 +126,13 @@
 		qdel(internals_items)
 	. = ..()
 
-/mob/living/carbon/superior_animal/nanobot/update_icon()
+/mob/living/carbon/superior/nanobot/update_icon()
 	cut_overlays()
 	add_overlay(image(icon, "[icon_state]_lights"))
 
 
 // For repairing damage to the bot.
-/mob/living/carbon/superior_animal/nanobot/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/nanobot/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
@@ -189,16 +189,16 @@
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/nanobot/attack_hand(mob/user as mob)
+/mob/living/carbon/superior/nanobot/attack_hand(mob/user as mob)
 	if(user.a_intent == I_HELP) // Are we on help intent?
 		interact(user)
 	else ..()
 
-/mob/living/carbon/superior_animal/nanobot/proc/spawn_food()
+/mob/living/carbon/superior/nanobot/proc/spawn_food()
 	new /obj/item/storage/ration_pack(src.loc) // Spawn the food
 	visible_emote("state, \"Dispensing emergency ration pack.\"") // Vocal Message
 
-/mob/living/carbon/superior_animal/nanobot/verb/return_mind()
+/mob/living/carbon/superior/nanobot/verb/return_mind()
 	set category = "Remote Control"
 	set name = "Deactivate Remote Control"
 	set desc = "Deactivate the remote control of the nanobot and return to your body.."

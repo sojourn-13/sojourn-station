@@ -73,7 +73,7 @@
 		if(M.stat!=DEAD)
 			var/flash_strength = 10
 			if(issuperioranimal(M))
-				var/mob/living/carbon/superior_animal/H = M
+				var/mob/living/carbon/superior/H = M
 				flash_strength -= H.flash_resistances
 			if(flash_strength > 0)
 				M.Weaken(flash_strength)

@@ -39,7 +39,7 @@
 		return
 
 	//Inserting a sample
-	if(istype(I, /obj/item/reagent_containers/food/snacks/meat))
+	if(istype(I, /obj/item/reagent_containers/snacks/meat))
 		if(meat.len >= 5)
 			src.visible_message(SPAN_WARNING("The pulper says in a sing-song voice: \"The Pulper is full~!\""))
 			return
@@ -74,18 +74,18 @@
 	var/temp_meat_count = 0
 	var/temp_meat_type
 	if (isanimal(target))
-		var/mob/living/simple_animal/animal = target
-		if(ispath(animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+		var/mob/living/simple/animal = target
+		if(ispath(animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			temp_meat_count = animal.meat_amount
 			temp_meat_type = animal.meat_type
 	else if (issuperioranimal(target))
-		var/mob/living/carbon/superior_animal/s_animal = target
-		if(ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+		var/mob/living/carbon/superior/s_animal = target
+		if(ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat))
 			temp_meat_count = s_animal.meat_amount
 			temp_meat_type = s_animal.meat_type
 	else if(istype(target, /mob/living/carbon/slime))
 		temp_meat_count = 1 //slimes don't normally have meat. So we add one so we can pull a single sample off.
-		temp_meat_type = /obj/item/reagent_containers/food/snacks/meat
+		temp_meat_type = /obj/item/reagent_containers/snacks/meat
 
 	if(temp_meat_count <= 0)
 		src.visible_message(SPAN_WARNING("The pulper gently reminds: \"That is creature has no genetic material, hun~\""))
@@ -129,7 +129,7 @@
 
 	update_icon()
 	spawn(gib_time) //Escape in time?
-		if(occupant && (occupant.loc == src)  && occupant_meat_count && ispath(occupant_meat_type, /obj/item/reagent_containers/food/snacks/meat))
+		if(occupant && (occupant.loc == src)  && occupant_meat_count && ispath(occupant_meat_type, /obj/item/reagent_containers/snacks/meat))
 			src.visible_message(SPAN_WARNING("The pulper says ecstatically: \"Pulping~! Creature~!\""))
 			//big-range splatter
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
@@ -164,7 +164,7 @@
 			var/obj/effect/decal/cleanable/blood/splatter/animated/B = new(src.loc)
 			B.target_turf = pick(range(2, src))
 
-			for(var/obj/item/reagent_containers/food/snacks/meat/meat_target in meat)
+			for(var/obj/item/reagent_containers/snacks/meat/meat_target in meat)
 				//Ensures we only do this if the meat has genetics holders
 				if(meat_target.source_name)
 					var/datum/genetics/genetics_holder/meat_genes =  new /datum/genetics/genetics_holder()

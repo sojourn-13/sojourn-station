@@ -17,7 +17,7 @@
 	icon_state = "cardboard_box_empty"
 	density = FALSE
 	anchored = TRUE
-	var/mob/living/simple_animal/cat/sitting = null // No one else shall use her favorite bed!
+	var/mob/living/simple/cat/sitting = null // No one else shall use her favorite bed!
 
 /obj/structure/cardboardbox/proc/sit_inside(var/mob/R, var/mob/user)
 	if(!R)
@@ -27,7 +27,7 @@
 		to_chat(user, SPAN_WARNING("[src] is already occupied by \the [R]."))
 		return
 
-	var/mob/living/simple_animal/cat/C = R
+	var/mob/living/simple/cat/C = R
 	if(!iscatto(C)) // Cardboard boxes are just for cats!
 		if(R == user) // Sanity check for player-controlled cat mobs
 			visible_message("[user] tries climbing into [src] but bluespace force pushes them back outside!")
@@ -88,9 +88,9 @@
 	icon_state = "cardboard_box_empty"
 
 	if(sitting)
-		if(istype(sitting, /mob/living/simple_animal/cat/runtime))
+		if(istype(sitting, /mob/living/simple/cat/runtime))
 			add_overlay("trilby_sit")
-		else if(istype(sitting, /mob/living/simple_animal/cat/fluff)) // Not making another overlay for just one pixel of an eye, sorry Bones!
+		else if(istype(sitting, /mob/living/simple/cat/fluff)) // Not making another overlay for just one pixel of an eye, sorry Bones!
 			add_overlay("runtime_sit")
 		else
 			add_overlay("catto_sit")

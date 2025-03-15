@@ -139,9 +139,18 @@ var/list/gunshot_sound = list('sound/weapons/Gunshot.ogg',
 	'sound/weapons/guns/fire/m41_shoot.ogg',
 	'sound/weapons/guns/fire/revolver_fire.ogg',
 	'sound/weapons/guns/fire/sfrifle_fire.ogg',
+	'sound/weapons/guns/fire/shotgun_fire.ogg',
 	'sound/weapons/guns/fire/shotgunp_fire.ogg',
+	'sound/weapons/guns/fire/riot_fire.ogg',
+	'sound/weapons/guns/fire/state_fire.ogg',
+	'sound/weapons/guns/fire/saiga_fire.ogg',
 	'sound/weapons/guns/fire/smg_fire.ogg',
-	'sound/weapons/guns/fire/sniper_fire.ogg'
+	'sound/weapons/guns/fire/sniper_fire.ogg',
+	'sound/weapons/guns/fire/carbine_fire.ogg',
+	'sound/weapons/guns/fire/ostwind_fire.ogg',
+	'sound/weapons/guns/fire/tk_fire.ogg',
+	'sound/weapons/guns/fire/lmg_fire.ogg',
+	'sound/weapons/guns/fire/dmr_fire.ogg'
 )
 /*var/list/gun_sound = list(
 	'sound/weapons/Gunshot.ogg', 'sound/weapons/Gunshot2.ogg','sound/weapons/Gunshot3.ogg',
@@ -149,6 +158,7 @@ var/list/gunshot_sound = list('sound/weapons/Gunshot.ogg',
 )*/
 
 var/list/gun_interact_sound = list(
+	'sound/weapons/guns/interact/gun_wield.ogg',
 	'sound/weapons/guns/interact/batrifle_cock.ogg',
 	'sound/weapons/guns/interact/batrifle_magin.ogg',
 	'sound/weapons/guns/interact/batrifle_magout.ogg',
@@ -162,6 +172,7 @@ var/list/gun_interact_sound = list(
 	'sound/weapons/guns/interact/lmg_magin.ogg',
 	'sound/weapons/guns/interact/lmg_magout.ogg',
 	'sound/weapons/guns/interact/lmg_open.ogg',
+	'sound/weapons/guns/interact/pan_magout.ogg',
 	'sound/weapons/guns/interact/ltrifle_cock.ogg',
 	'sound/weapons/guns/interact/ltrifle_magin.ogg',
 	'sound/weapons/guns/interact/ltrifle_magout.ogg',
@@ -181,9 +192,12 @@ var/list/gun_interact_sound = list(
 	'sound/weapons/guns/interact/sfrifle_magin.ogg',
 	'sound/weapons/guns/interact/sfrifle_magout.ogg',
 	'sound/weapons/guns/interact/shotgun_insert.ogg',
+	'sound/weapons/guns/interact/state_insert.ogg',
 	'sound/weapons/guns/interact/smg_cock.ogg',
 	'sound/weapons/guns/interact/smg_magin.ogg',
-	'sound/weapons/guns/interact/smg_magout.ogg'
+	'sound/weapons/guns/interact/smg_magout.ogg',
+	'sound/weapons/guns/interact/gun_pickup.ogg',
+	'sound/weapons/guns/interact/gun_drop.ogg'
 )
 
 var/list/short_equipement_sound = list(

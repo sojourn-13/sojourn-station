@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/hivebot
+/mob/living/simple/hostile/hivebot
 	name = "Malfunctioning Autonomous Drone"
 	desc = "An old machine of a long fallen alien empire. Looks like it just attacks everything on sight."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -36,7 +36,7 @@
 	cant_gib = TRUE
 	sanity_damage = 1
 
-/mob/living/simple_animal/hostile/hivebot/emp_act(severity)
+/mob/living/simple/hostile/hivebot/emp_act(severity)
 	..()
 	adjustFireLoss(rand(20,30))
 	if(rapid)
@@ -44,13 +44,13 @@
 	if(prob(95) && ranged)
 		ranged = FALSE
 
-/mob/living/simple_animal/hostile/hivebot/range
+/mob/living/simple/hostile/hivebot/range
 	name = "Malfunctioning Autonomous Sentinel"
 	icon_state = "range"
 	icon_dead = "range_broken"
 	ranged = 1
 
-/mob/living/simple_animal/hostile/hivebot/death()
+/mob/living/simple/hostile/hivebot/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
@@ -66,7 +66,7 @@
 	qdel(src)
 	return
 
-/mob/living/simple_animal/hostile/republicon
+/mob/living/simple/hostile/republicon
 	name = "Forgotten Engineer"
 	desc = "The creators of the malfunctioning autonomous drones, having long since gone haywire themselves they destroy anything they find."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -103,7 +103,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
 
-/mob/living/simple_animal/hostile/republicon/emp_act(severity)
+/mob/living/simple/hostile/republicon/emp_act(severity)
 	..()
 	adjustFireLoss(rand(80,130))
 	if(rapid)
@@ -111,14 +111,14 @@
 	if(prob(95) && ranged)
 		ranged = FALSE
 
-/mob/living/simple_animal/hostile/republicon/range
+/mob/living/simple/hostile/republicon/range
 	name = "Forgotten Sentinel"
 	desc = "The creators of the malfunctioning autonomous drones, having long since gone haywire themselves they destroy anything they find. This one is equipped with a heavy laser cannon."
 	icon_state = "republicon-armed"
 	icon_dead = "republicon-armed_dead"
 	ranged = 1
 
-/mob/living/carbon/superior_animal/sentinal_seeker
+/mob/living/carbon/superior/sentinal_seeker
 	name = "Forgotten Seeker"
 	desc = "An ancient and dangerous machine from a long forgotten time with a heavily armored body can shrug off bullets and melee strikes with ease. At some point, it had a purpose, now it has gone \
 	mad and seeks only death, yours and its own."
@@ -173,12 +173,12 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-/mob/living/carbon/superior_animal/sentinal_seeker/New()
+/mob/living/carbon/superior/sentinal_seeker/New()
 	..()
 	pixel_x = -16
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/sentinal_seeker/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/sentinal_seeker/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
 

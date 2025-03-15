@@ -14,7 +14,7 @@
 		/obj/item/material/star/uranium = 70,
 		/obj/item/tool/sword/katana = 20,
 		/obj/item/rig_module/modular_injector/medical/preloaded = 90, //Weakest chem dispenser rig
-		/obj/item/reagent_containers/food/drinks/bottle/pwine = 70,
+		/obj/item/reagent_containers/drinks/bottle/pwine = 70,
 		/obj/item/rig_module/vision/thermal = 10,
 		/obj/item/gun/projectile/lamia/socom = 5,
 		/obj/item/ammo_magazine/kurtz_50/hv = 1,

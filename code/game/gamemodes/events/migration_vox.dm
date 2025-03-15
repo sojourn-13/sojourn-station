@@ -77,7 +77,7 @@
 			spawned_vox.Add(new /obj/random/mob/vox(T))
 
 /datum/event/vox_migration/end()
-	for(var/mob/living/carbon/superior_animal/vox/v in spawned_vox)
+	for(var/mob/living/carbon/superior/vox/v in spawned_vox)
 		if(!v.stat)
 			var/turf/T = get_turf(v)
 			if(istype(T, /turf/space)) //If they end up outside the map then we remove them on end

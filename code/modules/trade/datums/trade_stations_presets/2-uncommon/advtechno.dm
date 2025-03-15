@@ -2,6 +2,7 @@
 	name_pool = list(
 		"FTB 'Nauka'" = "Free Trade Beacon 'Nauka': \"Privet, this is the trade beacon 'Nauka'.\""
 	)
+	icon_states = list("moe_cruiser", "planet")
 	uid = "techno_adv"
 	tree_x = 0.18
 	tree_y = 0.7

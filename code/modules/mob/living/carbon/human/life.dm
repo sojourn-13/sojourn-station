@@ -800,16 +800,6 @@
 		if(!(CE_ALCOHOL in chem_effects) && stats.getPerk(PERK_INSPIRATION))
 			stats.removePerk(PERK_ACTIVE_INSPIRATION)
 
-		var/total_plasmaloss = 0
-		for(var/obj/item/I in src)
-			if(I.contaminated)
-				if(isarmor(I) && I.is_worn())
-					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
-				else
-					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * min(1,(100 - getarmor(null,ARMOR_BIO)))
-		if(!(status_flags & GODMODE) && prob(10))
-			bloodstr.add_reagent("plasma", total_plasmaloss)
-
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 
@@ -1076,7 +1066,7 @@
 		else if(status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
 		else if(has_brain_worms())
-			var/mob/living/simple_animal/borer/B = has_brain_worms()
+			var/mob/living/simple/borer/B = has_brain_worms()
 			if(B.controlling)
 				holder.icon_state = "hudbrainworm"
 			else

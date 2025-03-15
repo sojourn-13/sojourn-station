@@ -15,6 +15,7 @@
 	var/heat = 0
 	//soj edit
 	var/clickdelay_offset = 0
+	var/food_quality = 1 //Added here do to some food calling for items that are not snack types
 
 /obj/proc/is_hot()
 	return heat
@@ -258,6 +259,8 @@
 //Same for AP
 /obj/proc/add_projectile_penetration(newmult)
 	armor_divisor = initial(armor_divisor) + newmult
+
+/obj/proc/wound_mult_adder(newmult)
 
 /obj/proc/multiply_pierce_penetration(newmult)
 

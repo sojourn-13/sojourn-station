@@ -84,7 +84,7 @@
 
 /obj/item/clothing/head/pin/attackby(var/obj/item/W, var/mob/user) //happy valentines day Gidgit
 	//do checks for what we were hit by and what kind of pin we turn into.
-	var/obj/item/reagent_containers/food/snacks/grown/G = W
+	var/obj/item/reagent_containers/snacks/grown/G = W
 	if(G.seed && G.name == "poppy")
 		new /obj/item/clothing/head/hairflower(src.loc)
 		user.drop_from_inventory(W)

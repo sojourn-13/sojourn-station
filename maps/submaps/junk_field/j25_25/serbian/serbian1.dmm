@@ -1,42 +1,42 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "ab" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ac" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "ad" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "ae" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "af" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ag" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "ah" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "ai" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "aj" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "aw" = (
@@ -70,13 +70,13 @@
 /turf/template_noop,
 /area/template_noop)
 "bu" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "by" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/template_noop)
 "bB" = (
@@ -151,19 +151,19 @@
 /area/template_noop)
 "fb" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 5;
 	pixel_y = 17
 	},
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 15
 	},
@@ -171,11 +171,11 @@
 /area/template_noop)
 "fM" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/snacks/mint,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 3
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -203,10 +203,10 @@
 "iY" = (
 /obj/structure/table/standard,
 /obj/item/packageWrap,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
 /obj/structure/cable/green,
@@ -327,11 +327,11 @@
 /turf/simulated/floor/airless,
 /area/template_noop)
 "rL" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 3;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/drinks/bottle/wine{
+/obj/item/reagent_containers/drinks/bottle/wine{
 	pixel_x = -1;
 	pixel_y = 8
 	},
@@ -606,7 +606,7 @@
 /area/template_noop)
 "Po" = (
 /obj/structure/lattice,
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "Pp" = (

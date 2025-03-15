@@ -15,20 +15,21 @@
 				entry += " - Ready as [C.prefs.real_name]"
 			else
 				entry += " - Playing as [C.mob.real_name]"
-			switch(C.mob.stat)
-				if(UNCONSCIOUS)
-					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
-				if(DEAD)
-					if(isghost(C.mob))
-						var/mob/observer/ghost/O = C.mob
-						if(O.started_as_observer)
-							entry += " - <font color='gray'>Observing</font>"
+			if (!istype(C.mob, /mob/new_player)) // /mob/new_player has no stat (happens if client is a new player)
+				switch(C.mob.stat)
+					if(UNCONSCIOUS)
+						entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					if(DEAD)
+						if(isghost(C.mob))
+							var/mob/observer/ghost/O = C.mob
+							if(O.started_as_observer)
+								entry += " - <font color='gray'>Observing</font>"
+							else
+								entry += " - <font color='black'><b>DEAD</b></font>"
 						else
 							entry += " - <font color='black'><b>DEAD</b></font>"
-					else
-						entry += " - <font color='black'><b>DEAD</b></font>"
-				else
-					entry += " - <font color='gray'>In Lobby</font>"
+			else
+				entry += " - <font color='gray'>In Lobby</font>"
 
 			if(is_limited_antag(C.mob))
 				entry += " - <b><font color='red'>Limited Antagonist</font></b>"
@@ -66,9 +67,9 @@
 	var/num_mentors_online = 0
 	if(holder)
 		for(var/client/C in admins)
-			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights))) //Used to determine who shows up in admin rows
+			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights)))	//Used to determine who shows up in admin rows
 
-				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights))) //Mentors can't see stealthmins
+				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights)))			//Mentors can't see stealthmins
 					continue
 
 				msg += "\t[C] is a [C.holder.rank]"

@@ -1,9 +1,9 @@
-/mob/living/carbon/superior_animal/xenomorph/doTargetMessage()
+/mob/living/carbon/superior/xenomorph/doTargetMessage()
 	. = ..()
 
 	playsound(loc, list('sound/xenomorph/alien_growl1.ogg', 'sound/xenomorph/alien_growl2.ogg', 'sound/xenomorph/alien_growl3.ogg', 'sound/xenomorph/alien_hiss1.ogg', 'sound/xenomorph/alien_hiss2.ogg', 'sound/xenomorph/alien_hiss3.ogg'), 120, 1)
 
-/mob/living/carbon/superior_animal/xenomorph/death(gibbed,message = deathmessage)
+/mob/living/carbon/superior/xenomorph/death(gibbed,message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)
@@ -16,7 +16,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/xenomorph/spitter/boiler/death(gibbed,message = deathmessage)
+/mob/living/carbon/superior/xenomorph/spitter/boiler/death(gibbed,message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)
@@ -30,7 +30,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/xenomorph/gib(anim = icon_gib, do_gibs = 1)
+/mob/living/carbon/superior/xenomorph/gib(anim = icon_gib, do_gibs = 1)
 	if (!anim)
 		anim = FALSE
 

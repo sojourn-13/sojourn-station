@@ -144,7 +144,7 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 		if(newT)
 			T = newT
 	T = get_random_secure_turf_in_range(T, 4)
-	var/mob/living/carbon/superior_animal/human/stranger/S = new (T)
+	var/mob/living/carbon/superior/human/stranger/S = new (T)
 	if(minor_distortion && prob(95))
 		S.maxHealth = S.maxHealth/1.5
 		S.health = S.maxHealth
@@ -170,7 +170,7 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 				Ttarget = get_random_secure_turf_in_range(Ttarget2, 4)
 		for(var/i=1, i<=amount, i++)
 			if(Ttarget)
-				new /mob/living/carbon/superior_animal/roach/bluespace(Ttarget)
+				new /mob/living/carbon/superior/roach/bluespace(Ttarget)
 
 /proc/trash_buble(turf/T, minor_distortion)
 	var/list/areas = list()

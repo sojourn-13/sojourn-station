@@ -80,7 +80,7 @@
 	var/reaction_sound = 'sound/effects/bubbles.ogg'
 
 	var/list/require_containers = list() // This reaction will only occure in these containers(Or their subtypes).
-	var/list/blacklist_containers = list(/obj/machinery/microwave, /obj/item/reagent_containers/cooking_with_jane) // This reaction will not occure in these containers(Or their subtypes).
+	var/list/blacklist_containers = list(/obj/machinery/microwave, /obj/item/reagent_containers/cwj) // This reaction will not occure in these containers(Or their subtypes).
 
 	var/log_is_important = 0 // If this reaction should be considered important for logging. Important recipes message admins when mixed, non-important ones just log to file.
 

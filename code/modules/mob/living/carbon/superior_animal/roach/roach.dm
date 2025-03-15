@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach
+/mob/living/carbon/superior/roach
 	name = "Kampfer Roach"
 	desc = "A monstrous, dog-sized cockroach. These huge mutants can be everywhere where humans are, on ships, planets and stations."
 	icon = 'icons/mob/mobs-roach.dmi'
@@ -18,13 +18,13 @@
 	armor = list(melee = 2, bullet = 0, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 16,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 42,
+		/datum/stat_modifier/mob/living/carbon/superior/biosilicified = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/lambertian = 16,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 42,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 9,
 	)
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	meat_amount = 2
 	leather_amount = 0
 	bones_amount = 0
@@ -70,11 +70,12 @@
 	known_languages = list(LANGUAGE_CHTMANT)
 
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
+	fancy_attack_overlay = "roach_attack_flick"
 
-/mob/living/carbon/superior_animal/roach/New()
+/mob/living/carbon/superior/roach/New()
 	..()
 
-/mob/living/carbon/superior_animal/roach/isValidAttackTarget(var/atom/O)
+/mob/living/carbon/superior/roach/isValidAttackTarget(var/atom/O)
 	if (isliving(O))
 		var/mob/living/L = O
 		if(L.faction=="sproachder")
@@ -82,18 +83,18 @@
 	return ..(O)
 
 //When roaches die near a leader, the leader may call for reinforcements
-/mob/living/carbon/superior_animal/roach/death()
+/mob/living/carbon/superior/roach/death()
 	.=..()
 	if (.)
-		for (var/mob/living/carbon/superior_animal/roach/fuhrer/F in range(src,8))
+		for (var/mob/living/carbon/superior/roach/fuhrer/F in range(src,8))
 			F.distress_call()
 
-/mob/living/carbon/superior_animal/roach/Destroy()
+/mob/living/carbon/superior/roach/Destroy()
 	eat_target = null //should fix the support roach GC fail
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/doTargetMessage()
+/mob/living/carbon/superior/roach/doTargetMessage()
 	. = ..()
 
 	playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)

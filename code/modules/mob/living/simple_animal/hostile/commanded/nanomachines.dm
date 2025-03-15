@@ -1,7 +1,7 @@
 #define COMMANDED_HEAL 8//we got healing powers yo
 #define COMMANDED_HEALING 9
 
-/mob/living/simple_animal/hostile/commanded/nanomachine
+/mob/living/simple/hostile/commanded/nanomachine
 	name = "swarm"
 	desc = "a cloud of tiny, tiny robots."
 	icon = 'icons/mob/mobs-roach.dmi'
@@ -19,11 +19,11 @@
 	response_disarm = "fans at"
 
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/emp_act(severity)
+/mob/living/simple/hostile/commanded/nanomachine/emp_act(severity)
 	..()
 	qdel(src)
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/Life()
+/mob/living/simple/hostile/commanded/nanomachine/Life()
 	regen_time++
 	if(regen_time == 2 && health < maxHealth) //slow regen
 		regen_time = 0
@@ -41,11 +41,11 @@
 			if(COMMANDED_HEALING)
 				heal()
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/death()
+/mob/living/simple/hostile/commanded/nanomachine/death()
 	..(null,"Dissipates into thin air")
 	qdel(src)
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/proc/move_to_heal()
+/mob/living/simple/hostile/commanded/nanomachine/proc/move_to_heal()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!targetted_mob)
@@ -55,7 +55,7 @@
 	if(Adjacent(targetted_mob))
 		stance = COMMANDED_HEALING
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/proc/heal()
+/mob/living/simple/hostile/commanded/nanomachine/proc/heal()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(health <= 3 && !emergency_protocols) //dont die doing this.
@@ -75,7 +75,7 @@
 	targetted_mob.adjustBruteLoss(-5)
 	targetted_mob.adjustFireLoss(-5)
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/misc_command(var/mob/speaker,var/text)
+/mob/living/simple/hostile/commanded/nanomachine/misc_command(var/mob/speaker,var/text)
 
 	if(stance != COMMANDED_HEAL || stance != COMMANDED_HEALING) //dont want attack to bleed into heal.
 		allowed_targets = list()

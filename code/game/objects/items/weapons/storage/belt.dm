@@ -157,8 +157,8 @@
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine,
 		/obj/item/melee,
-		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks,
+		/obj/item/reagent_containers/snacks,
+		/obj/item/reagent_containers/drinks,
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/pill,
@@ -184,7 +184,7 @@
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/sword/nt/shortsword,
-		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/reagent_containers/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
@@ -385,8 +385,8 @@
 		/obj/item/clipboard,
 		/obj/item/device/camera,
 		/obj/item/folder,
-		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks,
+		/obj/item/reagent_containers/snacks,
+		/obj/item/reagent_containers/drinks,
 		/obj/item/device/binoculars, // By popular demand. - Seb
 		/obj/item/tool/baton //So it can actually hold both sizes of batons like it used to.
 	)
@@ -519,7 +519,7 @@
 		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/sword/nt/shortsword,
-		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/reagent_containers/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,

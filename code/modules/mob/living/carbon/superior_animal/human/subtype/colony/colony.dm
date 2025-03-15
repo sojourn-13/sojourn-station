@@ -1,6 +1,6 @@
 //Colony allies for events to help support players
 
-/mob/living/carbon/superior_animal/human/colony_allie
+/mob/living/carbon/superior/human/colony_allie
 	name = "Blackshield Infantryman"
 	desc = "A Blackshield Vatgrown Trooper Ready To Fight for the Colony Armed with a Modern Duty Battle Carbine, He seems able to Fight on Long and Close Quarters, He seems like an Average Fighter"
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -27,19 +27,19 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 12,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/young = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/slowaimed = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/triggerfinger = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 5
 	)
 
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	can_burrow = FALSE
 	colony_friend = TRUE
@@ -53,7 +53,7 @@
 	rapid_fire_shooting_amount = 1
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257
-	projectilesound = 'sound/weapons/guns/fire/carbine.ogg'
+	projectilesound = 'sound/weapons/guns/fire/carbine_fire.ogg'
 	limited_ammo = FALSE
 	mag_drop = TRUE
 	rounds_left = 10
@@ -62,7 +62,7 @@
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
-/mob/living/carbon/superior_animal/human/colony_allie/ship_breaker_marks
+/mob/living/carbon/superior/human/colony_allie/ship_breaker_marks
 	name = "Shipbreaker Marksman"
 	desc = "A Prospector Shipbreaker Scout Armed with a Cog laser carbine, The gun seems modified to shoot on burst mode to deal the double of hits to the Enemy, he seems to be an Veteran Vatgrown Fighter."
 	icon_state = "Shipbreakercg"
@@ -89,7 +89,7 @@
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
-/mob/living/carbon/superior_animal/human/colony_allie/ship_breaker_marks/sword
+/mob/living/carbon/superior/human/colony_allie/ship_breaker_marks/sword
 	name = "Shipbreaker Marksman"
 	desc = "A Vatborn Prospector Shipbreaker Scout Armed with a Spider Rose and a Laser Sword To Kill any Enemy durable enough To survive his Aim, he Seems to be an Veteran Fighter."
 	icon_state = "Shipbreakerlssp"
@@ -106,7 +106,7 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	melee_sharp = TRUE //Eswords and welders
 /*
-/mob/living/carbon/superior_animal/human/colony_allie/lonestar_merc
+/mob/living/carbon/superior/human/colony_allie/lonestar_merc
 	name = "Lonestar Corporate Infantryman"
 	desc = "A private vatborn from lonestar, Well paid and Geared this veteran soldier is armed with a Laser Carbine ready to anihilate any threat to the Corporation, He Seems To be an Veteran Fighter."
 	icon_state = "LSCICarb"
@@ -134,7 +134,7 @@
 	min_air_pressure = 0
 	min_bodytemperature = 0
 
-/mob/living/carbon/superior_animal/human/colony_allie/lonestar_breacher_merc
+/mob/living/carbon/superior/human/colony_allie/lonestar_breacher_merc
 	name = "Lonestar Corporate Breacher"
 	desc = "A Private Vatborn Soldier from Lonestar Well paid and Geared This veteran soldier is armed with An Advanced Laser Handgun Set to kill while on his other hand he is wearing a charged Power Fist, He seems to be an Veteran Fighter."
 	icon_state = "LSCIRvMp"
@@ -164,25 +164,25 @@
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 */
-/mob/living/carbon/superior_animal/human/colony_allie/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
+/mob/living/carbon/superior/human/colony_allie/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	if(suited_for_space)
 		return
 	..()
 
-/mob/living/carbon/superior_animal/human/colony_allie/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
+/mob/living/carbon/superior/human/colony_allie/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
 	if(suited_for_space)
 		return
 	..()
 
-/mob/living/carbon/superior_animal/human/colony_allie/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior/human/colony_allie/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
-/mob/living/carbon/superior_animal/human/colony_allie/death()
+/mob/living/carbon/superior/human/colony_allie/death()
 	..()
 	drop_death_loot()
 
-/mob/living/carbon/superior_animal/human/colony_allie/emp_act(severity)
+/mob/living/carbon/superior/human/colony_allie/emp_act(severity)
 	..()
 	if(rapid && egun)
 		rapid = FALSE

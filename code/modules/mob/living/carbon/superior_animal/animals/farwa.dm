@@ -1,5 +1,5 @@
 //Farwa, funny lil monkey-cats. Sprite from Bay
-/mob/living/carbon/superior_animal/farwa
+/mob/living/carbon/superior/farwa
 	name = "farwa"
 	desc = "A small exotic creature. Often described as somewhere between a cat and a monkey, these playful little beasts are loved by the wealthy as exotic pets and detested by wildlife \
 	and conservation specialists the galaxy over for their propensity to escape, breed - and muck up any ecostystem they're involved in. Despite their seemingly clumsy and cute behavior \
@@ -17,7 +17,7 @@
 	melee_damage_upper = 25 //but sharp claws
 	attacktext = "clawed"
 	list/attack_sound = 'sound/weapons/bladeslice.ogg'
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 2
 	leather_amount = 1 //very small little guys
 	bones_amount = 1
@@ -26,7 +26,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/carbon/superior_animal/farwa/Life()
+/mob/living/carbon/superior/farwa/Life()
 	..()
 	if(prob(2)) //spooky
 		var/mob/observer/ghost/spook = locate() in range(src,5)
@@ -42,10 +42,10 @@
 				visible_emote("hisses as their fur stands on edge!") // GHOST DETECTED. CATTO NO LIKE.
 				playsound(loc, 'sound/effects/creatures/cat_hiss.ogg', 50, 1, -1)
 
-/mob/living/carbon/superior_animal/farwa/proc/beg(var/atom/thing, var/atom/holder)
+/mob/living/carbon/superior/farwa/proc/beg(var/atom/thing, var/atom/holder)
 	visible_emote("licks [get_gender() == MALE ? "his" : get_gender() == FEMALE ? "her" : "their"] lips and looks pleadingly at [holder]'s [thing.name]")
 
-/mob/living/carbon/superior_animal/farwa/kitter
+/mob/living/carbon/superior/farwa/kitter
 	name = "Sgt Kitters"
 	desc = "A Farwa, a small exotic creature often described as being somewhere between a cat and a monkey. This one appears to have a collar with a silver dog-tag attached that reads 'Staff Sgt Kitters'. "
 	icon_state = "sgt_kitter"

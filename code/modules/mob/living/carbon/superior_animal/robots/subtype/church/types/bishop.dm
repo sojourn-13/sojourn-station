@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/church/bishop
+/mob/living/carbon/superior/robot/church/bishop
 	name = "Bishop Golem"
 	desc = "The Bishop, a golem made by the church and fashioned after the time honored game of chess by Brynn. Frail compared to other church golems, but his plasma infused staff can send out a \
 	devastating and dangerous explosive, making him dangerous for his potential collateral. Use with caution."

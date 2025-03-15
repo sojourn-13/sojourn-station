@@ -71,9 +71,9 @@
 	result_amount = 3
 
 /datum/chemical_reaction/nicotine
-    result = "nicotine"
-    required_reagents = list("toxin" = 1, "carbon" = 1, "capsaicin" = 1, "mercury" = 1)
-    result_amount = 4
+	result = "nicotine"
+	required_reagents = list("toxin" = 1, "carbon" = 1, "capsaicin" = 1, "mercury" = 1)
+	result_amount = 4
 
 /datum/chemical_reaction/lube
 	result = "lube"
@@ -880,6 +880,13 @@
 	result = "carbon"
 	required_reagents = list("woodpulp" = 3)
 	inhibitors = list("water" = 1) // So that we can make ghetto cardboard
+	result_amount = 2
+	maximum_temperature = INFINITY
+	minimum_temperature = 373
+
+/datum/chemical_reaction/carbon2
+	result = "carbon"
+	required_reagents = list("clothfiber" = 3)
 	result_amount = 2
 	maximum_temperature = INFINITY
 	minimum_temperature = 373

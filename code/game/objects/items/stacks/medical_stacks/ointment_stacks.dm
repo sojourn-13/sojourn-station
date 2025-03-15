@@ -176,7 +176,7 @@
 	singular_name = "Absolutism Burnpack"
 	desc = "An advanced treatment kit for severe burns. Created by the will of God and made far easier to use than normal advanced kits."
 	icon_state = "nt_burnkit"
-	heal_brute = 5
+	heal_burn = 5
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 2)
 	origin_tech = list(TECH_BIO = 4)
@@ -192,6 +192,54 @@
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
+
+/obj/item/stack/medical/ointment/psionic
+	name = "Mindplasm"
+	singular_name = "Mindplasm drop"
+	desc = "A odd floating goo made out of thoughtstuff, capable of cleaning wounds and mending burns, it takes next to no skill to use."
+	icon_state = "spidergoo"
+	fancy_icon = FALSE
+	heal_burn = 5
+	bio_requirement = -15
+	needed_perk = PERK_PSION
+	stacktype_alt = null
+	amount = 3
+	max_amount = 9
+	color = "#5B0E4F" //spooooky!!!!!
+	consumable = FALSE //So we dont mess with dropping it
+	var/mob/living/carbon/holder // The one that prevent the tool from fading
+
+/obj/item/stack/medical/ointment/psionic/New(loc, mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/stack/medical/ointment/psionic/Process()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+/obj/item/stack/medical/ointment/psionic/update_icon()
+	color = "#5B0E4F"
+
+//MAX is 37.5 healing, MIN is 5
+/obj/item/stack/medical/ointment/psionic/grabbed_medical_skill(mob/living/carbon/user)
+	if(ishuman(user))
+		var/psionic_things = 0
+		psionic_things += round(clamp((user.stats.getStat(STAT_BIO) * 0.1), 0, 15))
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PEACE))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psionic_things *= 1.25
+		return psionic_things
+	else
+		return FALSE
 
 /obj/item/stack/medical/ointment/greyson
 	name = "Greyson Advanced Burn-Treatment Pack" //G(P)ABTP

@@ -959,7 +959,7 @@
 		to_chat(user, "<span class='info'>Further attempts have gotten you no closer to solving the [src].</span>")
 		return
 	if(prob(openchance))
-		new /mob/living/carbon/superior_animal/human/stranger(user.loc)
+		new /mob/living/carbon/superior/human/stranger(user.loc)
 		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)

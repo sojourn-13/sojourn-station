@@ -1,5 +1,5 @@
 //malfunctioning combat drones
-/mob/living/simple_animal/hostile/retaliate/malf_drone
+/mob/living/simple/hostile/retaliate/malf_drone
 	name = "combat drone"
 	desc = "An automated combat drone armed with state of the art weaponry and shielding."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -54,7 +54,7 @@
 
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/New()
+/mob/living/simple/hostile/retaliate/malf_drone/New()
 	..()
 	if(prob(5))
 		projectiletype = /obj/item/projectile/beam/pulse/drone
@@ -63,17 +63,17 @@
 	trail.set_up(src)
 	trail.start()
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/allow_spacemove()
+/mob/living/simple/hostile/retaliate/malf_drone/allow_spacemove()
 	return 1
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/ListTargets()
+/mob/living/simple/hostile/retaliate/malf_drone/ListTargets()
 	if(hostile_drone)
 		return view(src, 10)
 	else
 		return ..()
 
 //self repair systems have a chance to bring the drone back to life
-/mob/living/simple_animal/hostile/retaliate/malf_drone/Life()
+/mob/living/simple/hostile/retaliate/malf_drone/Life()
 
 	//emps and lots of damage can temporarily shut us down
 	if(disabled > 0)
@@ -161,7 +161,7 @@
 	..()
 
 //ion rifle!
-/mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)
+/mob/living/simple/hostile/retaliate/malf_drone/emp_act(severity)
 	adjustFireLoss(rand(20,30)*severity)
 	disabled = rand(150, 600)
 	hostile_drone = 0
@@ -171,11 +171,11 @@
 	if(prob(5) && ranged) //Kinda would suck if they lost their only weapon
 		ranged = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/death()
+/mob/living/simple/hostile/retaliate/malf_drone/death()
 	..(null,"suddenly breaks apart.")
 	qdel(src)
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/Destroy()
+/mob/living/simple/hostile/retaliate/malf_drone/Destroy()
 	//some random debris left behind
 	if(has_loot)
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread

@@ -2,7 +2,7 @@
 
 	var/turf/loc  // Location of the termite_controller
 	var/list/obj/structure/termite_burrow/burrows = list()  // List of termite burrows tied to the controller
-	var/list/mob/living/carbon/superior_animal/termite = list() //List of termites tied to the controller
+	var/list/mob/living/carbon/superior/termite = list() //List of termites tied to the controller
 	var/processing = TRUE
 	var/obj/machinery/mining/drill/DD
 
@@ -100,7 +100,7 @@
 			qdel(BU)
 
 		// Delete termites
-		for(var/mob/living/carbon/superior_animal/termite/GO)
+		for(var/mob/living/carbon/superior/termite/GO)
 			GO.ore = null  // Do not spawn ores
 			GO.death(FALSE, "burrows into the ground.")
 

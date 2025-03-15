@@ -1,7 +1,7 @@
-/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris
+/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris
 	plantname = "ambrosia"
 
-/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus
+/obj/item/reagent_containers/snacks/grown/ambrosiadeus
 	plantname = "ambrosiadeus"
 
 // Predefined types for placing on the map.
@@ -16,7 +16,7 @@
 /*
 /obj/plant_spawner/Initialize(mapload)
 	var/datum/seed/S = plant_controller.seeds[seedtype]
-	S.harvest(loc,0,0,1)
+	S.harvest(loc,get_turf(src),0,0,1)
 	spawn(1) if(src) qdel(src)
 */
 /obj/plant_spawner/New()
@@ -25,7 +25,7 @@
 
 /obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]
-	S.harvest(loc,force_amount = 1, harvest_sample = FALSE)
+	S.harvest(loc,get_turf(src),force_amount = 1, harvest_sample = FALSE)
 	spawn(5) if(src) qdel(src)
 
 /obj/plant_spawner/libertycap

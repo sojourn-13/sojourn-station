@@ -649,7 +649,7 @@ BLIND     // can't see anything
 		/obj/item/reagent_containers/spray,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/storage/box/matches,
-		/obj/item/reagent_containers/food/drinks/flask,
+		/obj/item/reagent_containers/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
 		/obj/item/storage/backpack/guncase,

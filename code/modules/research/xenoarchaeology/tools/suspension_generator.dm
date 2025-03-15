@@ -63,7 +63,7 @@
 			suspension_field.add_overlay("shield2")
 		I.forceMove(suspension_field)
 
-	for(var/mob/living/simple_animal/M in T)
+	for(var/mob/living/simple/M in T)
 		M.weakened = max(M.weakened, 3)
 		power_draw += power_use
 		if(prob(5))
@@ -231,7 +231,7 @@
 				M.weakened += 5
 				M.visible_message(SPAN_NOTICE("[M] begins to float in the air!"), "You feel tingly and light, but it is difficult to move.")
 
-	for(var/mob/living/simple_animal/M in T)
+	for(var/mob/living/simple/M in T)
 		M.weakened += 5
 		M.visible_message(SPAN_NOTICE("[M] begins to float in the air!"), "You feel tingly and light, but it is difficult to move.")
 

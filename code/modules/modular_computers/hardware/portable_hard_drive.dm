@@ -1,5 +1,5 @@
 // These are basically USB data sticks and may be used to transfer files between devices
-/obj/item/computer_hardware/hard_drive/portable
+/obj/item/pc_part/drive/disk
 	name = "data disk"
 	desc = "A removable disk used to store data."
 	w_class = ITEM_SIZE_SMALL
@@ -16,12 +16,12 @@
 	var/disk_name
 	var/license = 0
 
-/obj/item/computer_hardware/hard_drive/get_item_cost(export)
+/obj/item/pc_part/drive/get_item_cost(export)
 	. = ..()
 	for(var/datum/computer_file/wealth_of_file in stored_files)
 		. += (wealth_of_file.added_wealth * wealth_of_file.size)
 
-/obj/item/computer_hardware/hard_drive/portable/basic
+/obj/item/pc_part/drive/disk/basic
 	name = "basic data disk"
 	icon_state = "yellow"
 	max_capacity = 16
@@ -29,7 +29,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 2)
 	price_tag = 10
 
-/obj/item/computer_hardware/hard_drive/portable/advanced
+/obj/item/pc_part/drive/disk/adv
 	name = "advanced data disk"
 	desc = "A removable disk used to store large amounts of data."
 	icon_state = "black"
@@ -39,7 +39,7 @@
 	price_tag = 150
 
 
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady
+/obj/item/pc_part/drive/disk/adv/shady
 	name = "old data disk"
 	icon_state = "onestar"
 	disk_name = "warez"
@@ -52,7 +52,7 @@
 		/datum/computer_file/program/revelation
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/advanced/nuke
+/obj/item/pc_part/drive/disk/adv/nuke
 	name = "old data disk"
 	icon_state = "onestar"
 	disk_name = "nuke"
@@ -60,7 +60,7 @@
 		/datum/computer_file/program/revelation/primed
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/advanced/coin
+/obj/item/pc_part/drive/disk/adv/coin
 	name = "data disk"
 	icon_state = "ruined"
 	disk_name = "Key-Authenticated Zipped K-oin"
@@ -69,13 +69,13 @@
 		/datum/computer_file/program/coin_miner/disk //Fancy anticheat verson
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/Initialize()
+/obj/item/pc_part/drive/disk/Initialize()
 	. = ..()
 	w_class = ITEM_SIZE_SMALL
 	if(disk_name)
 		SetName("[initial(name)] - '[disk_name]'")
 
-/obj/item/computer_hardware/hard_drive/portable/attackby(obj/item/I, mob/user, params)
+/obj/item/pc_part/drive/disk/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
 		var/new_name = input(user, "What would you like to label the disk?", "Tape labeling") as null|text
 		if(isnull(new_name)) return
@@ -90,7 +90,7 @@
 
 	..()
 
-/obj/item/computer_hardware/hard_drive/portable/install_default_files()
+/obj/item/pc_part/drive/disk/install_default_files()
 	if(disk_name)
 		var/datum/computer_file/data/text/D = new
 		D.filename = "DISK_NAME"
@@ -99,7 +99,7 @@
 		store_file(D)
 	..()
 
-/obj/item/computer_hardware/hard_drive/portable/nano_ui_data()
+/obj/item/pc_part/drive/disk/nano_ui_data()
 	var/list/data = ..()
 	data["license"] = license
 	return data

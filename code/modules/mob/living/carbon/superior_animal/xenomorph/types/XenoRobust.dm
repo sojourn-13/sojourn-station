@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/xenomorph/warrior
+/mob/living/carbon/superior/xenomorph/warrior
 	name = "warrior"
 	desc = "A xenomorph warrior, the sturdier and more lethal step up from the sentinal."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -13,7 +13,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
-/mob/living/carbon/superior_animal/xenomorph/defender
+/mob/living/carbon/superior/xenomorph/defender
 	name = "defender"
 	desc = "A xenomorph defender, while not as lethal as a warrior it makes up for it in being hellishly sturdy."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -25,7 +25,7 @@
 	maxHealth = 140
 	health = 140
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike
+/mob/living/carbon/superior/xenomorph/warrior/shrike
 	name = "shrike"
 	desc = "A xenomorph shrike, what it loses in defense and power it makes up for in its power shriek."
 	icon_state = "shrike"
@@ -46,7 +46,7 @@ var/datum/xenomorph/xeno_morph_ai
 /datum/xenomorph
 	var/list/global_abilities_cooldown = list()
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/Life()
+/mob/living/carbon/superior/xenomorph/warrior/shrike/Life()
 	if((stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
 		return // Shrikes don't get to scream when passed out or dead
 	.=..()
@@ -69,7 +69,7 @@ var/datum/xenomorph/xeno_morph_ai
 		playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
 		cooldown = world.time
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/proc/use_ability(mob/living/target)
+/mob/living/carbon/superior/xenomorph/warrior/shrike/proc/use_ability(mob/living/target)
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
@@ -82,7 +82,7 @@ var/datum/xenomorph/xeno_morph_ai
 		target.Weaken(4)
 		to_chat(target, SPAN_WARNING("A horrifying roar of primal soul-less terror sears through your mind!"))
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/proc/targets_in_range(var/range = world.view, var/in_hear_range = FALSE)
+/mob/living/carbon/superior/xenomorph/warrior/shrike/proc/targets_in_range(var/range = world.view, var/in_hear_range = FALSE)
 	var/list/range_list = list()
 	var/list/target_list = list()
 	if(in_hear_range)
@@ -95,7 +95,7 @@ var/datum/xenomorph/xeno_morph_ai
 			target_list += target
 	return target_list
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/bull
+/mob/living/carbon/superior/xenomorph/warrior/bull
 	name = "bull"
 	desc = "A xenomorph bull, while it has horns the real threat is the weight behind the strike, likely to knock someone down."
 	icon_state = "bull"
@@ -109,7 +109,7 @@ var/datum/xenomorph/xeno_morph_ai
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
-/mob/living/carbon/superior_animal/xenomorph/spitter/boiler
+/mob/living/carbon/superior/xenomorph/spitter/boiler
 	name = "boiler"
 	desc = "A xenomorph boiler, the more evolved spitter, with far more toxic chemicals leaking from its maw and with an annoying habit of exploding on death."
 	icon = 'icons/mob/Xenos_2x2.dmi'

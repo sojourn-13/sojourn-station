@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/memory_eater
+/mob/living/carbon/superior/psi/memory_eater
 	name = "memory eater"
 	desc = "A memory eater, named for the fact that it can devour your perception of it until its close enough to strike. Not that strong, compared to other monsters in this realm, but the most discrete."
 	icon_state = "chameleon"
@@ -19,7 +19,7 @@
 	attacktext = "clawed"
 	armor_divisor = 1.2
 
-/mob/living/carbon/superior_animal/psi_monster/thought_melter
+/mob/living/carbon/superior/psi/thought_melter
 	name = "thought melter"
 	desc = "The thought melter, a quite weak creature, but one that carries a plague in its touch for psions, weakening the mind with every strike. They are quite talkitive, oddly enough."
 	icon_state = "arl"
@@ -35,7 +35,7 @@
 	attacktext = "caressed"
 	armor_divisor = 1.5
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot
+/mob/living/carbon/superior/psi/pus_maggot
 	name = "pus maggot"
 	desc = "Of all the things down here, the pus maggot is one of the most reviled, its tumorous squirming rear filled with a toxic and vile acid it tries to engorge onto its victims."
 	icon_state = "parasite"
@@ -57,12 +57,12 @@
 	stat_to_steal = STAT_VIV
 	steal_amount = -2
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/summoned
+/mob/living/carbon/superior/psi/pus_maggot/summoned
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/low_chance
 	drop_items = list(/obj/random/psi/low_chance)
 	psionic_respawn = FALSE
 
 
-/mob/living/carbon/superior_animal/psi_monster/Initialize()
+/mob/living/carbon/superior/psi/Initialize()
 	..()
 	stat_to_steal = pick(ALL_STATS_FOR_LEVEL_UP)

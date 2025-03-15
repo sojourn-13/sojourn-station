@@ -4,12 +4,12 @@
 
 /datum/design/bioprinter/meat
 	name = "Meat"
-	build_path = /obj/item/reagent_containers/food/snacks/meat
+	build_path = /obj/item/reagent_containers/snacks/meat
 	materials = list(MATERIAL_BIOMATTER = 5)
 
 /datum/design/bioprinter/milk
 	name = "Milk"
-	build_path = /obj/item/reagent_containers/food/drinks/milk
+	build_path = /obj/item/reagent_containers/drinks/milk
 
 /datum/design/bioprinter/soap
 	name = "Soap"
@@ -212,6 +212,10 @@
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
 	build_path = /obj/item/tool/spear/halberd
+
+/datum/design/autolathe/sword/nt_polehammer
+	name = "NT Polehammer"
+	build_path = /obj/item/tool/spear/polehammer
 
 /datum/design/autolathe/sword/nt_spear
 	name = "NT Spear"

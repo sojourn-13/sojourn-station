@@ -2,6 +2,7 @@
 	name_pool = list(
 		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction goods, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
+	icon_states = list("nt_destroyer", "ship")
 	uid = "techno_basic"
 	tree_x = 0.18
 	tree_y = 0.9
@@ -44,20 +45,21 @@
 			/obj/item/storage/briefcase/inflatable/empty,
 			/obj/item/inflatable/door,
 			/obj/item/inflatable/wall,
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 660), //Better deal here
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 660), //Worse deal here
 			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3200),
-			/obj/item/storage/belt/utility/full,
+			/obj/item/storage/belt/utility/full = good_data("equipped toolbelt", list(1, 5), 150),
 			/obj/item/clothing/head/welding,
 			/obj/item/tool/omnitool,
 			/obj/item/device/geiger,
 			/obj/structure/reagent_dispensers/fueltank,
-			/obj/machinery/floodlight
+			/obj/machinery/floodlight,
+			/obj/item/device/floor_painter
 		)
 	)
 
 	hidden_inventory = list(
 		"Sverkhmateriya" = list(
-			/obj/machinery/power/supermatter
+			/obj/machinery/power/supermatter = good_data("supermatter", list(1, 2), 8500) //The 'unsolicited supermatter shipment' play has gone on long enough. It's time we end it. -Wilson
 		),
 
 		"Bystroye Stroitel'stvo" = list(

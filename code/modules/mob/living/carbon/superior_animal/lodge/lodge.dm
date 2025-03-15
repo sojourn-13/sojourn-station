@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/lodge
+/mob/living/carbon/superior/lodge
 	name = "Lodge Farming Animals"
 	desc = "Report to Kaz if you see this"
 	icon = 'icons/mob/mobs-domestic.dmi'
@@ -12,6 +12,6 @@
 	friendly_to_colony = TRUE
 	obey_friends = FALSE
 	follow_distance = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	target_dummy = TRUE

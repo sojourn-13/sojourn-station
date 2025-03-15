@@ -29,6 +29,9 @@
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
 		tally += 0.5
+		//Behing damaged *is* speed
+		if(stats.getPerk(PERK_OVERBREATH))
+			tally -= 0.7
 	if(blocking)
 		tally += 1
 
@@ -48,8 +51,18 @@
 
 		if(hunger_deficiency >= hunger_half)
 			tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
+		//If you‘re hurt you will be slowed down
 		if(health_deficiency >= hunger_one_tenth)
-			tally += (health_deficiency / 25)
+			if(stats.getPerk(PERK_OVERBREATH))
+				//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
+				if(health_deficiency > 0)
+					//Less scailing but still noticeable
+					tally -= (health_deficiency / 25) * 0.5
+				else
+					//When we are closer to death.
+					tally += (health_deficiency / 25) * 0.75
+			else
+				tally += (health_deficiency / 25)
 
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		//Not porting bay's silly organ checking code here
@@ -66,7 +79,10 @@
 	//Soj edit - Are painkillers dont just magically make us faster
 	var/pain_effecting = (get_dynamic_pain() - get_painkiller())
 	if(pain_effecting >= 1)
-		tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
+		if(stats.getPerk(PERK_OVERBREATH))
+			tally -= min(pain_effecting / 250, 2) // Scales from 0 to 2,
+		else
+			tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
 
 	//if(stats.getPerk(PERK_TIMEISMONEY)?.is_active())
 		//tally -= 2

@@ -84,13 +84,13 @@
 
 	///List of lists. If to_spawn is empty or if none of the probabilities proc, we spawn one of these at random. Format: list(list(maximum, typepath), ...) Please don't put any typepaths in here that are in to_spawn.
 	var/list/default_spawn = list(
-								list(9, /mob/living/carbon/superior_animal/giant_spider/)
+								list(9, /mob/living/carbon/superior/spider/)
 	)
 
 	///List of lists. Format for usage: list(list(maximum, typepath, probability for prob()), ...) Please dont put any typepaths in here that are in default_spawn.
 	var/list/to_spawn = list(
-							list(30, /mob/living/carbon/superior_animal/giant_spider/hunter, 7),
-							list(1, /mob/living/carbon/superior_animal/giant_spider/tarantula/ogre, 5)
+							list(30, /mob/living/carbon/superior/spider/hunter, 7),
+							list(1, /mob/living/carbon/superior/spider/fortress/ogre, 5)
 	)
 
 	/// Do we use currently_spawned?

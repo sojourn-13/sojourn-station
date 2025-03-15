@@ -1433,6 +1433,10 @@
 	desc = "A favorite amongst clerks and desk jockeys."
 	icon_state= "dippybird"
 
+/obj/item/toy/desk/dippingbird/branded
+	name = "spector brand dipping bird model"
+	desc = "A favorite amongst clerks and desk jockeys. This one has a nigh impossible to remove 'Spector Station' sticker on the bottom of the base."
+
 //Consumer!!!
 
 /obj/item/toy/consumer

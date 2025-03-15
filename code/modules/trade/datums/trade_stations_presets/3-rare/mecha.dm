@@ -7,7 +7,7 @@
 	base_income = 1600
 	wealth = 0
 	markup = COMMON_GOODS
-	hidden_inv_threshold = 32000
+	hidden_inv_threshold = 6000
 	start_discovered = TRUE
 	spawn_always = TRUE
 	uid = "mecha"
@@ -81,14 +81,15 @@
 		/obj/item/tool_upgrade/reinforcement/plating = offer_data("reinforced plating", 120, 2),
 		/obj/item/gun_upgrade/mechanism/overdrive = offer_data("overdrive chip", 175, 2),
 		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 700, 3),
-		/obj/item/cell/large/greyson = offer_data("GP_SI \"Posi-cell 16000L\"", 1250, 2)
+		/obj/item/cell/large/greyson = offer_data("GP_SI \"Posi-cell 16000L\"", 1250, 2),
+		/obj/item/tool/polytool = offer_data("Jolly Co-Operation polytool", 4500, 2)
 	)
 
 /obj/mecha/working/hoverpod/cargo_imported
-	price_tag = 3000
+	price_tag = 6000
 
 /obj/mecha/working/ripley/cargo_imported
-	price_tag = 5500
+	price_tag = 10000
 
 /obj/mecha/working/ivan/cargo_imported
-	price_tag = 4000
+	price_tag = 7500

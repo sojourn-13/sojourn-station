@@ -4,6 +4,7 @@ SUBSYSTEM_DEF(mapping)
 	flags = SS_NO_FIRE
 
 	var/list/map_templates = list()
+	var/list/ruins_templates = list()
 	var/dmm_suite/maploader = null
 	var/list/teleportlocs = list()
 	var/list/ghostteleportlocs = list()
@@ -36,6 +37,10 @@ SUBSYSTEM_DEF(mapping)
 	maploader = new()
 	load_map_templates()
 
+// Generates the random maint ruin templates.
+#ifndef LOWMEMORYMODE
+	SSmapping.seedStation()
+#endif
 	// Generate cache of all areas in world. This cache allows world areas to be looked up on a list instead of being searched for EACH time
 	for(var/area/A in world)
 		GLOB.map_areas += A
@@ -91,6 +96,8 @@ SUBSYSTEM_DEF(mapping)
 	return TRUE
 
 /datum/controller/subsystem/mapping/proc/load_map_templates()
+	//Can also add other templates in the future. For now, maint ruins.
+	preloadTemplates()
 	for(var/T in subtypesof(/datum/map_template))
 		var/datum/map_template/template = T
 		if(!(initial(template.mappath))) // If it's missing the actual path its probably a base type or being used for inheritence.
@@ -98,3 +105,53 @@ SUBSYSTEM_DEF(mapping)
 		template = new T()
 		map_templates[template.name] = template
 	return TRUE
+
+
+/datum/controller/subsystem/mapping/proc/seedStation()
+	for(var/V in GLOB.stationroom_landmarks)
+		var/obj/effect/landmark/stationroom/LM = V
+		LM.load()
+	if(GLOB.stationroom_landmarks.len)
+		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
+
+
+/proc/cmp_ruincost_priority(datum/map_template/ruin/A, datum/map_template/ruin/B)
+	return initial(A.cost) - initial(B.cost)
+
+/datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
+	// Still supporting bans by filename
+	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/stationruinblacklist.txt")
+
+	for(var/item in sort_list(subtypesof(/datum/map_template/ruin), GLOBAL_PROC_REF(cmp_ruincost_priority)))
+		var/datum/map_template/ruin/ruin_type = item
+		// screen out the abstract subtypes
+		if(!initial(ruin_type.id))
+			continue
+		var/datum/map_template/ruin/R = new ruin_type()
+
+		if(banned.Find(R.mappath))
+			continue
+
+		map_templates[R.name] = R
+		ruins_templates[R.name] = R
+
+			//We have to be specific here.
+		if(istype(R, /datum/map_template/ruin/station))
+			station_room_templates[R.name] = R
+
+
+/datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
+	var/list/filelist = flist(path)
+	for(var/map in filelist)
+		var/datum/map_template/T = new(path = "[path][map]", rename = "[map]")
+		map_templates[T.name] = T
+
+	preloadRuinTemplates()
+
+
+	// Station Ruins, Maints Rooms, Random shit!
+/datum/controller/subsystem/mapping
+	var/list/station_room_templates = list()

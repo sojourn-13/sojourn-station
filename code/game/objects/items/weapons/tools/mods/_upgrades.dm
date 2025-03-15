@@ -613,6 +613,20 @@
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
 			to_chat(user, SPAN_NOTICE("Increases projectile damage multiplier by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
 
+		if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE]
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases melee damage by [amount]"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases melee damage by [abs(amount)]"))
+
+		if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
+			var/amount = weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases melee damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases melee damage by [abs(amount*100)]%"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1

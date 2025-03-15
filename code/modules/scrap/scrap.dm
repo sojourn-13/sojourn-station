@@ -121,8 +121,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	for(var/obj/item/loot in contents)
 		if(prob(66))
 			loot.make_old()
-		if(istype(loot, /obj/item/reagent_containers/food/snacks))
-			var/obj/item/reagent_containers/food/snacks/S = loot
+		if(istype(loot, /obj/item/reagent_containers/snacks))
+			var/obj/item/reagent_containers/snacks/S = loot
 			S.junk_food = TRUE
 			if(prob(20))
 				S.reagents.add_reagent("toxin", rand(2, 5))
@@ -355,7 +355,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/pack/prosthesis/low_chance = 0.05
 	)
 
 /obj/structure/scrap/vehicle
@@ -374,7 +375,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material_ore,
 		/obj/random/pack/rare = 0.3,
 		/obj/random/tool_upgrade = 1,
-		/obj/random/mecha_equipment = 2
+		/obj/random/mecha_equipment = 2,
+		/obj/random/pack/prosthesis/low_chance = 0.05
 	)
 
 /obj/structure/scrap/food
@@ -384,8 +386,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	parts_icon = 'icons/obj/structures/scrap/food_trash.dmi'
 	loot_list = list(
 		/obj/random/junkfood = 5,
-		/obj/random/junkfood,
 		/obj/random/booze,
+		/obj/random/soft_drink,
+		/obj/random/drinking_glasses = 0.5,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
@@ -396,19 +399,20 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "armaments refuse pile"
 	desc = "A pile of military supply refuse. Who thought it was a clever idea to throw that out?"
 	parts_icon = 'icons/obj/structures/scrap/guns_trash.dmi'
-	loot_min = 7
-	loot_max = 10
+	loot_min = 9
+	loot_max = 13
 	loot_list = list(
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/material/shard,
-		/obj/item/stack/material/steel/random,
+		/obj/item/material/shard = 0.2,
+		/obj/item/stack/material/steel/random = 0.4,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3,
-		/obj/random/gun_parts/frames = 1,
-		/obj/random/gun_parts = 2
+		/obj/random/gun_parts/frames = 2,
+		/obj/random/gun_parts = 1,
+		/obj/random/pouch/hardcase_ammo = 0.3 //Can spawn some really good ammo.
 	)
 
 /obj/structure/scrap/science
@@ -432,12 +436,15 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "cloth pile"
 	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
-	loot_list = list(/obj/random/pack/cloth,
-		/obj/random/pack/rare = 0.2,
-		/obj/random/gun_parts/frames = 0.2,
-		/obj/random/gun_parts = 0.5,
+	loot_list = list(/obj/random/pack/cloth = 4,
+		/obj/random/cigarettes = 0.5,
+		/obj/random/pack/rare = 0.1,
+		/obj/random/gun_parts/frames = 0.1,
+		/obj/random/gun_parts = 0.3,
 		/obj/item/storage/wallet = 0.2,
-		/obj/item/storage/wallet/random = 0.1)
+		/obj/item/storage/wallet/random = 0.1,
+		/obj/random/pack/prosthesis/low_chance = 0.2,
+		/obj/random/pouch/hardcase = 0.2)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
@@ -452,7 +459,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/cigarettes = 0.3,
 		/obj/random/material_ore,
 		/obj/item/material/shard,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/pack/prosthesis/low_chance = 0.05,
+		/obj/random/pouch/hardcase = 0.8 //Can be quite good
 	)
 
 /obj/structure/scrap/poor/large

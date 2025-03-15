@@ -28,7 +28,7 @@
 
 	return CWJ_CHECK_VALID
 
-/datum/cooking_with_jane/recipe_step/use_tool/follow_step(var/obj/added_item, var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_step/use_tool/follow_step(var/obj/added_item, var/obj/item/reagent_containers/cwj/container/container)
 	var/obj/item/tool/our_tool = added_item
 	if(our_tool.worksound && our_tool.worksound != NO_WORKSOUND)
 		playsound(usr.loc, our_tool.worksound, 50, 1)

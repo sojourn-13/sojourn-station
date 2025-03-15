@@ -34,6 +34,25 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
 
+/obj/item/storage/firstaid/regular/si
+	name = "soteria branded first-aid kit"
+	desc = "A soteria-branded emergency medical kit for those serious boo-boos. Contains more advanced and more expensive gauze and salves."
+	icon_state = "purplefirstaid"
+	item_state = "firstaid-purplefirstaid"
+
+/obj/item/storage/firstaid/regular/si/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/regular/si/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/device/scanner/health(src)
+
+
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
@@ -827,7 +846,7 @@
 	item_state = "medicalpack"
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 2)
-	can_hold = list(/obj/item/organ, /obj/item/modification/organ, /obj/item/reagent_containers/food, /obj/item/reagent_containers/glass)
+	can_hold = list(/obj/item/organ, /obj/item/modification/organ, /obj/item/reagent_containers, /obj/item/reagent_containers/glass)
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	use_to_pickup = TRUE
 

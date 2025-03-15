@@ -167,9 +167,13 @@
 	name = "Hydrogen \"Sollex\" Cannon"
 	build_path = /obj/item/gun/hydrogen/cannon
 
+/datum/design/research/item/weapon/hydrogen_sword
+	name = "Hydrogen Sword"
+	build_path = /obj/item/tool/hydrogen_sword/no_starting_fuel
+
 /datum/design/research/item/weapon/hydrogen_welder
 	name = "Hydrogen Torch"
-	build_path = /obj/item/tool/plasma_torch
+	build_path = /obj/item/tool/plasma_torch/no_starting_fuel
 
 /datum/design/research/item/weapon/hydrogrenade
 	name = "Hydrogen Grenade"
@@ -329,7 +333,7 @@
 /datum/design/research/item/disk/blackshield
 	name = "Blackshield Sovereignty Disk"
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
-	build_path = /obj/item/computer_hardware/hard_drive/portable/design/blackshield
+	build_path = /obj/item/pc_part/drive/disk/design/blackshield
 
 /datum/design/research/item/weapon/bastion
 	name = "bastion shield"

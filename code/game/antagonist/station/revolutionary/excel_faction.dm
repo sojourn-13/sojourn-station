@@ -99,10 +99,10 @@
 
 		var/obj/item/storage/deferred/stash/sack/stash = new
 
-		new /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons(stash)
-		new /obj/item/computer_hardware/hard_drive/portable/design/excelsior(stash)
-		new /obj/item/computer_hardware/hard_drive/portable/design/ex_cells(stash)
-		new /obj/item/computer_hardware/hard_drive/portable/design/ex_parts(stash)
+		new /obj/item/pc_part/drive/disk/design/excelsior_weapons(stash)
+		new /obj/item/pc_part/drive/disk/design/excelsior(stash)
+		new /obj/item/pc_part/drive/disk/design/ex_cells(stash)
+		new /obj/item/pc_part/drive/disk/design/ex_parts(stash)
 		new /obj/item/circuitboard/excelsiorautolathe(stash)
 		new /obj/item/circuitboard/excelsior_teleporter(stash)
 		new /obj/item/soap/commie(stash)

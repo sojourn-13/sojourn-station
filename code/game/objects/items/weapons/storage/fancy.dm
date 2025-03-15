@@ -51,13 +51,13 @@
 	name = "egg box"
 	storage_slots = 12
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks/egg,
-		/obj/item/reagent_containers/food/snacks/boiledegg
+		/obj/item/reagent_containers/snacks/egg,
+		/obj/item/reagent_containers/snacks/boiledegg
 		)
 
 /obj/item/storage/fancy/egg_box/populate_contents()
 	for(var/i in 1 to storage_slots)
-		new /obj/item/reagent_containers/food/snacks/egg(src)
+		new /obj/item/reagent_containers/snacks/egg(src)
 
 //MRE food
 /obj/item/storage/fancy/mre_cracker
@@ -66,12 +66,12 @@
 	storage_slots = 5
 	icon_type = "crackers"
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks/mre_cracker
+		/obj/item/reagent_containers/snacks/mre_cracker
 		)
 
 /obj/item/storage/fancy/mre_cracker/populate_contents()
 	for(var/i in 1 to storage_slots)
-		new /obj/item/reagent_containers/food/snacks/mre_cracker(src)
+		new /obj/item/reagent_containers/snacks/mre_cracker(src)
 
 
 //Kriosan treats
@@ -83,12 +83,12 @@ obj/item/storage/fancy/dogtreats
 	storage_slots = 4
 	icon_type = "dogtreat"
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks/dogtreats
+		/obj/item/reagent_containers/snacks/dogtreats
 		)
 
 obj/item/storage/fancy/dogtreats/populate_contents()
 	for(var/i in 1 to storage_slots)
-		new /obj/item/reagent_containers/food/snacks/dogtreats(src)
+		new /obj/item/reagent_containers/snacks/dogtreats(src)
 	update_icon()
 
 /obj/item/storage/fancy/dogtreats/update_icon()
@@ -583,19 +583,19 @@ obj/item/storage/fancy/cigar/attackby(obj/item/W, mob/user)
 	max_storage_space = 6
 	max_w_class = ITEM_SIZE_SMALL
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks/chocolatepiece,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece/white,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle
+		/obj/item/reagent_containers/snacks/chocolatepiece,
+		/obj/item/reagent_containers/snacks/chocolatepiece/white,
+		/obj/item/reagent_containers/snacks/chocolatepiece/truffle
 		)
 
 /obj/item/storage/fancy/heartbox/New()
 	..()
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece/white(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece/white(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatepiece/truffle(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece/white(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece/white(src)
+	new /obj/item/reagent_containers/snacks/chocolatepiece/truffle(src)
 	update_icon()
 
 /obj/item/storage/fancy/heartbox/Initialize()

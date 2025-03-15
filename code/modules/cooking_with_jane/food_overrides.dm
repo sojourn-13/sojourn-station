@@ -1,4 +1,4 @@
-/obj/item/reagent_containers/food/snacks/examine(mob/user)
+/obj/item/reagent_containers/snacks/examine(mob/user)
 	if(!..(user, get_dist(user, src)))
 		return
 

@@ -1,4 +1,4 @@
-/mob/living/simple_animal/armalis
+/mob/living/simple/armalis
 	name = "Vox Armalis"
 	desc = "In truth, this scares you."
 
@@ -27,7 +27,7 @@
 	a_intent = I_HURT
 
 
-/mob/living/simple_animal/armalis/armored
+/mob/living/simple/armalis/armored
 	icon_state = "armalis_armored"
 
 	health = 175

@@ -429,6 +429,12 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		if ((P.get_trait(TRAIT_JUICY)) && !("TRAIT_JUICY" in scanned_fruittraits))
 			scanned_fruittraits += "TRAIT_JUICY"
 			scanneddata += 1
+		if ((P.get_trait(TRAIT_CHEM_PRODUCTION)) && !("CHEM_PRODUCTION" in scanned_fruittraits))
+			scanned_fruittraits += "CHEM_PRODUCTION"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_COMPANION_PLANT)) && !("COMPANION_PLANT" in scanned_fruittraits))
+			scanned_fruittraits += "COMPANION_PLANT"
+			scanneddata += 1
 		if ((P.get_trait(TRAIT_EXPLOSIVE)) && !("TRAIT_EXPLOSIVE" in scanned_fruittraits))
 			scanned_fruittraits += "TRAIT_EXPLOSIVE"
 			scanneddata += 1
@@ -489,7 +495,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	scanned_fruittraits = list()
 	datablocks = 0
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/proc/get_title()
+/obj/item/pc_part/drive/disk/research_points/proc/get_title()
 	var/list/verb_ion = list("exploration", "development", "refinement", "investigation", "analysis", "improvement", "emulation", "simulation", "construction", "evaluation", "deployment", "synthesis", "visualization")
 	var/list/prefixes = list("","[pick(verb_ion)]: ")
 	var/list/suffixes = list("using [pick(verb_ion)]","with [pick(verb_ion)]")
@@ -518,22 +524,22 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 							"[buzzword_adj_multi] [pick(buzzword_nouns)] for [pick(subjects)]")
 	return capitalize(pick(titles))
 
-/obj/item/computer_hardware/hard_drive/portable/research_points
+/obj/item/pc_part/drive/disk/research_points
 	desc = "A removable disk used to store large amounts of research data."
 	icon_state = "onestar"
 	var/min_points = 2000
 	var/max_points = 10000
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/Initialize()
+/obj/item/pc_part/drive/disk/research_points/Initialize()
 	disk_name = get_title()
 	. = ..()
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/install_default_files()
+/obj/item/pc_part/drive/disk/research_points/install_default_files()
 	..()
 	var/datum/computer_file/binary/research_points/F = new(size = rand(min_points / 1000, max_points / 1000))
 	store_file(F)
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/rare
+/obj/item/pc_part/drive/disk/research_points/rare
 	min_points = 10000
 	max_points = 20000
 

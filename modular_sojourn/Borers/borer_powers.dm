@@ -1,4 +1,4 @@
-/mob/living/simple_animal/borer/proc/release_host()
+/mob/living/simple/borer/proc/release_host()
 	set category = "Abilities"
 	set name = "Release Host"
 	set desc = "Slither out of your host."
@@ -33,7 +33,7 @@
 		detatch()
 		leave_host()
 
-/mob/living/simple_animal/borer/proc/infest()
+/mob/living/simple/borer/proc/infest()
 	set category = "Abilities"
 	set name = "Infest"
 	set desc = "Infest a suitable humanoid host."
@@ -131,7 +131,7 @@
 			head.implants += src //Removed the brain eating/replacing proc reference.
 
 /*
-/mob/living/simple_animal/borer/verb/devour_brain()
+/mob/living/simple/borer/verb/devour_brain()
 	set category = "Abilities"
 	set name = "Devour Brain"
 	set desc = "Take permanent control of a dead host."
@@ -157,7 +157,7 @@
 
 
 // BRAIN WORM ZOMBIES AAAAH.
-/mob/living/simple_animal/borer/proc/replace_brain()
+/mob/living/simple/borer/proc/replace_brain()
 
 	var/mob/living/carbon/human/H = host
 
@@ -205,7 +205,7 @@
 	if(!H.lastKnownIP)
 		H.lastKnownIP = s2h_ip*/
 
-/mob/living/simple_animal/borer/proc/secrete_chemicals()
+/mob/living/simple/borer/proc/secrete_chemicals()
 	set category = "Abilities"
 	set name = "Secrete Chemicals"
 	set desc = "Push some chemicals into your host's bloodstream."
@@ -240,7 +240,7 @@
 	to_chat(src, SPAN_NOTICE("You secrete some chemicals from your reservoirs. There are [host.reagents.get_reagent_amount(chem)] units of [chem_name] in host's bloodstream now."))
 	chemicals -= 50
 
-/mob/living/simple_animal/borer/proc/paralyze_victim()
+/mob/living/simple/borer/proc/paralyze_victim()
 	set category = "Abilities"
 	set name = "Paralyze Victim"
 	set desc = "Freeze the limbs of a potential host with supernatural fear."
@@ -290,7 +290,7 @@
 
 	used_dominate = world.time
 
-/mob/living/simple_animal/borer/proc/assume_control()
+/mob/living/simple/borer/proc/assume_control()
 	set category = "Abilities"
 	set name = "Assume Control"
 	set desc = "Fully connect to the brain of your host."
@@ -354,15 +354,15 @@
 			controlling = TRUE
 
 			remove_verb(host, list(
-			/mob/living/simple_animal/verb/toggle_AI,
-			/mob/living/simple_animal/hostile/verb/break_around,
-			/mob/living/carbon/superior_animal/verb/toggle_AI,
-			/mob/living/carbon/superior_animal/verb/break_around,
+			/mob/living/simple/verb/toggle_AI,
+			/mob/living/simple/hostile/verb/break_around,
+			/mob/living/carbon/superior/verb/toggle_AI,
+			/mob/living/carbon/superior/verb/break_around,
 			))
 
 			update_abilities()
 
-/mob/living/simple_animal/borer/proc/jumpstart()
+/mob/living/simple/borer/proc/jumpstart()
 	set category = "Abilities"
 	set name = "Revive Host"
 	set desc = "Send a jolt of electricity through your host, reviving them."
@@ -399,7 +399,7 @@
 	host.update_lying_buckled_and_verb_status()
 	chemicals -= 500
 
-/mob/living/simple_animal/borer/proc/read_mind()
+/mob/living/simple/borer/proc/read_mind()
 	set category = "Abilities"
 	set name = "Read Mind"
 	set desc = "Extract information, languages and skills out of host's brain. May cause confusion and brain damage."
@@ -450,7 +450,7 @@
 		host.confused = max(host.confused, copied_amount * 4)
 
 
-/mob/living/simple_animal/borer/proc/write_mind()
+/mob/living/simple/borer/proc/write_mind()
 	set category = "Abilities"
 	set name = "Write Mind"
 	set desc = "Write known skills and languages to host's brain. May cause confusion and brain damage."
@@ -496,7 +496,7 @@
 		host.make_dizzy(copied_amount * 2)
 		host.confused = max(host.confused, copied_amount * 2)
 
-/mob/living/simple_animal/borer/proc/say_host()
+/mob/living/simple/borer/proc/say_host()
 	set category = "Abilities"
 	set name = "Say as Host"
 	set desc = "Say something as host."
@@ -517,7 +517,7 @@
 	var/message = input("", "say (text)") as text
 	host.say(message)
 
-/mob/living/simple_animal/borer/proc/whisper_host()
+/mob/living/simple/borer/proc/whisper_host()
 	set category = "Abilities"
 	set name = "Whisper as Host"
 	set desc = "Whisper something as host."
@@ -538,7 +538,7 @@
 	var/message = input("", "whisper (text)") as text
 	host.whisper(message)
 
-/mob/living/simple_animal/borer/proc/invisible()
+/mob/living/simple/borer/proc/invisible()
 	set category = "Abilities"
 	set name = "Invisibility"
 	set desc = "Become invisible for living being."
@@ -566,7 +566,7 @@
 		to_chat(src, SPAN_NOTICE("You become invisible for living being."))
 		return
 
-/mob/living/simple_animal/borer/proc/biograde()
+/mob/living/simple/borer/proc/biograde()
 	set category = "Abilities"
 	set name = "Biograde Vision"
 	set desc = "Make you see living being throug walls."
@@ -587,7 +587,7 @@
 		to_chat(src, SPAN_NOTICE("You can now sen living being throug walls."))
 		return
 
-/mob/living/simple_animal/borer/proc/reproduce()
+/mob/living/simple/borer/proc/reproduce()
 	set category = "Abilities"
 	set name = "Reproduce"
 	set desc = "Spawn several young."
@@ -608,13 +608,13 @@
 
 		new /obj/effect/decal/cleanable/vomit(get_turf(host))
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
-		new /mob/living/simple_animal/borer(get_turf(host))
+		new /mob/living/simple/borer(get_turf(host))
 
 	else
 		to_chat(src, SPAN_NOTICE("You do not have enough chemicals stored to reproduce."))
 		return
 
-/mob/living/simple_animal/borer/proc/commune()
+/mob/living/simple/borer/proc/commune()
 	set category = "Abilities"
 	set name = "Commune with humans"
 	set desc = "Send a telepathic message to an unlucky recipient."
@@ -653,7 +653,7 @@
 		to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
 		H.drip_blood(1)
 
-/mob/living/simple_animal/borer/proc/sample_blood()
+/mob/living/simple/borer/proc/sample_blood()
 	set category = "Abilities"
 	set name = "Sample blood"
 	set desc = "Discover what ails them."
@@ -680,7 +680,7 @@
 	src << browse(dat, "window=scanconsole;size=430x600")
 	return
 
-/mob/living/simple_animal/borer/proc/get_host_data()
+/mob/living/simple/borer/proc/get_host_data()
 	if (!ishuman(host))
 		return
 	var/mob/living/carbon/human/H = host
@@ -713,7 +713,7 @@
 	return host_data
 
 
-/mob/living/simple_animal/borer/proc/format_host_data(var/list/occ)
+/mob/living/simple/borer/proc/format_host_data(var/list/occ)
 	var/dat = "<font color='blue'><b>Sampling taken at [occ["stationtime"]]</b></font><br>"
 	dat += "<font color='blue'><b>Creature's vitality:</b></font><br>"
 

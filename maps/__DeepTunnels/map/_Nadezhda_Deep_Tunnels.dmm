@@ -381,7 +381,7 @@
 	name = "Emergency NanoMed";
 	pixel_y = 32
 	},
-/mob/living/carbon/superior_animal/robot/mining/aether,
+/mob/living/carbon/superior/robot/mining/aether,
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/steel/panels,
 /area/mine/prep)
@@ -879,7 +879,7 @@
 /obj/machinery/camera/network/mining{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/ratking{
+/mob/living/simple/hostile/ratking{
 	colony_friend = 1;
 	friendly_to_colony = 1
 	},
@@ -887,7 +887,7 @@
 /area/mine/lockers)
 "cJ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mouse/hooded,
+/mob/living/simple/mouse/hooded,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/lockers)
 "cK" = (
@@ -3378,12 +3378,12 @@
 /area/nadezhda/rnd/outpoststorage)
 "jr" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/computer,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/computer,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/medical,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "js" = (
@@ -4981,7 +4981,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "no" = (
-/mob/living/simple_animal/mouse/brown,
+/mob/living/simple/mouse/brown,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "np" = (
@@ -5752,7 +5752,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "oJ" = (
-/mob/living/simple_animal/hostile/diyaab{
+/mob/living/simple/hostile/diyaab{
 	colony_friend = 1;
 	desc = "A friendly diyaab that hunts mice in the research lower labs.";
 	faction = "neutral";
@@ -6187,10 +6187,10 @@
 /area/nadezhda/rnd/outpostgeneral)
 "pK" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "pL" = (
@@ -6224,7 +6224,7 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pQ" = (
-/mob/living/simple_animal/mouse/white,
+/mob/living/simple/mouse/white,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -7223,7 +7223,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
@@ -7347,7 +7347,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+/obj/item/reagent_containers/drinks/bottle/small/beer{
 	pixel_x = 6;
 	pixel_y = 6
 	},
@@ -7367,13 +7367,13 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sJ" = (
-/mob/living/simple_animal/mouse/irish,
+/mob/living/simple/mouse/irish,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sK" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/ration_pack,
 /turf/simulated/floor/tiled/cafe,
@@ -8161,7 +8161,7 @@
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/mixing)
 "vf" = (
-/mob/living/simple_animal/mouse/gray,
+/mob/living/simple/mouse/gray,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "vg" = (

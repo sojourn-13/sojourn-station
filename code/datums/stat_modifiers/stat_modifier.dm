@@ -102,11 +102,11 @@
 	holder = null //we no longer have a holder
 
 	if(zone_hit_rates_setter)
-		if(istype(holder, /mob/living/simple_animal/hostile))
-			var/mob/living/simple_animal/hostile/H = holder
+		if(istype(holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/H = holder
 			H.zone_hit_rates = initial(H.zone_hit_rates)
 		if(issuperioranimal(holder))
-			var/mob/living/carbon/superior_animal/SA
+			var/mob/living/carbon/superior/SA
 			SA.zone_hit_rates = initial(SA.zone_hit_rates)
 
 	if (qdel_src)
@@ -191,11 +191,11 @@
 		target.update_prefixes() // ...and regenerate their prefixes
 
 	if(zone_hit_rates_setter)
-		if(istype(holder, /mob/living/simple_animal/hostile))
-			var/mob/living/simple_animal/hostile/H = target
+		if(istype(holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/H = target
 			H.zone_hit_rates = zone_hit_rates_setter
 		if(issuperioranimal(holder))
-			var/mob/living/carbon/superior_animal/SA = target
+			var/mob/living/carbon/superior/SA = target
 			SA.zone_hit_rates = zone_hit_rates_setter
 
 

@@ -1,11 +1,12 @@
 // Hydrogen Sword, like an energy sword that use hydrogen fuel cell. It explode if it is EMP'ed while active.
 /obj/item/tool/hydrogen_sword
 	name = "hydrogen-plasma sword"
-	desc = "An energy sword that uses super heated hydrogen shaped into plasma. The only thing preventing this from blowing up in your face is a magnetic field produced by the hilt."
+	desc = "An energy sword that uses super heated hydrogen shaped into plasma. \
+	The only thing preventing this from blowing up in your face is a magnetic field produced by the hilt."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "sword"
 	item_state = "hydrogen"
-	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7) // Currently it is a unique, CRO-only item.
+	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 0.8, MATERIAL_OSMIUM = 0.8, MATERIAL_TRITIUM = 0.8)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
@@ -27,13 +28,17 @@
 	var/obj/item/hydrogen_fuel_cell/fuel_cell = null // The flask the sword consume to stay active
 	var/use_plasma_cost = 0.1 // Active cost
 
+/obj/item/tool/hydrogen_sword/no_starting_fuel
+	spawn_full = FALSE //For rnd
+
 /obj/item/tool/hydrogen_sword/New()
 	..()
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/hydrogen_sword/Initialize(mapload = TRUE)
 	..()
-	fuel_cell = new(src)
+	if(spawn_full)
+		fuel_cell = new(src)
 
 /obj/item/tool/hydrogen_sword/examine(mob/user)
 	..()
@@ -42,18 +47,20 @@
 	else
 		to_chat(user, SPAN_NOTICE("[src] doesn't have a fuel cell inserted."))
 
-/obj/item/tool/hydrogen_sword/proc/activate()
-	if(!fuel_cell || active)
-		return
+/obj/item/tool/hydrogen_sword/proc/activate(playsound = TRUE, force_update = FALSE)
+	if(!force_update)
+		if(!fuel_cell || active)
+			return
 	active = TRUE
-	force = active_force
-	throwforce = active_throwforce
-	armor_divisor = active_ap
+	force += active_force
+	throwforce += active_throwforce
+	armor_divisor += active_ap
 	sharp = TRUE
 	edge = TRUE
 	w_class = active_w_class
 	tool_qualities = switched_on_qualities
-	playsound(src, 'sound/weapons/saberon.ogg', 50, 1)
+	if(playsound)
+		playsound(src, 'sound/weapons/saberon.ogg', 50, 1)
 	update_icon()
 
 /obj/item/tool/hydrogen_sword/proc/deactivate()
@@ -61,12 +68,7 @@
 		return
 	playsound(src, 'sound/weapons/saberoff.ogg', 50, 1)
 	active = FALSE
-	force = initial(force)
-	throwforce = initial(throwforce)
-	armor_divisor = initial(armor_divisor)
-	sharp = initial(sharp)
-	edge = initial(edge)
-	w_class = initial(w_class)
+	refresh_upgrades()
 	tool_qualities = initial(tool_qualities)
 	update_icon()
 
@@ -96,9 +98,10 @@
 			deactivate()
 		update_icon()
 
-/*
+
 /obj/item/tool/hydrogen_sword/emp_act(severity)
-  if(active) // Blow up.
+	if(active) // Blow up.
+		deactivate() //stops a feedback loop
 		var/turf/T = get_turf(src)
 		src.visible_message(SPAN_DANGER("[src]'s active magnetic field get disturbed by an EMP, violently exploding and scorching everything nearby!"))
 		explosion(T, 0, 1, 2, 4) // Explode
@@ -107,7 +110,7 @@
 			to_chat(M, SPAN_DANGER("You feel a wave of heat scorch your body!"))
 			M.take_overall_damage(0, rand(emp_burn_min, emp_burn_max))
 	qdel(src)
-*/
+
 
 /obj/item/tool/hydrogen_sword/attack(mob/M as mob, mob/living/user as mob)
 	..()
@@ -127,83 +130,9 @@
 	update_wear_icon()
 
 
-// Hydrogen Grenade, explode when hitting something, even if thrown.
-/obj/item/hydrogen_grenade
-	name = "hydrogen grenade"
-	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."
-	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "grenade"
-	item_state = "grenade"
-	contained_sprite = TRUE
-	origin_tech = list(TECH_POWER = 3)
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_MHYDROGEN = 0.5, MATERIAL_OSMIUM = 0.5, MATERIAL_TRITIUM = 0.5)
-	force = WEAPON_FORCE_WEAK
-	throwforce = WEAPON_FORCE_WEAK
-	throw_speed = 3
-	throw_range = 7
-	w_class = ITEM_SIZE_SMALL
-	var/armed = FALSE
-	var/obj/item/hydrogen_fuel_cell/fuel_cell = null // The flask the sword consume to stay active
-	var/burn_min = 50 // How much burn damage the grenade do to nearby mobs.
-	var/burn_max = 75 // How much burn damage the grenade do to nearby mobs.
-	var/hydrogen_threshold = 10 // How much hydrogen must be in the cell for it to be viable.
-
-/obj/item/hydrogen_grenade/attack_self(mob/living/user as mob)
-	if(!fuel_cell)
-		to_chat(user, "There isn't any hydrogen cell in the grenade, you can't arm it.")
-		return
-
-	if(fuel_cell.plasma < hydrogen_threshold)
-		to_chat(user, "There isn't enough hydrogen in the cell, arming it would be useless.")
-		return
-
-	armed = !armed
-	to_chat(user, SPAN_NOTICE("You [armed ? "arm" : "disarm"] the [src.name]."))
-	playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
-	update_icon()
-	add_fingerprint(user)
-
-/obj/item/hydrogen_grenade/attackby(obj/item/W as obj, mob/living/user as mob)
-	if(istype(W, /obj/item/hydrogen_fuel_cell))
-		if(fuel_cell)
-			to_chat(usr, SPAN_WARNING("[src] is already loaded."))
-			return
-
-		if(insert_item(W, user))
-			fuel_cell = W
-			update_icon()
-	else
-		..()
-
-/obj/item/hydrogen_grenade/MouseDrop(over_object)
-	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_cell, usr))
-		fuel_cell = null
-		if(armed)
-			armed = FALSE
-		update_icon()
-
-/obj/item/hydrogen_grenade/update_icon()
-	cut_overlays()
-	if(fuel_cell)
-		add_overlay("[icon_state]_loaded")
-	if(armed)
-		add_overlay("[icon_state]_armed")
-
-/obj/item/hydrogen_grenade/throw_impact(atom/hit_atom, var/speed)
+/obj/item/tool/hydrogen_sword/refresh_upgrades()
 	..()
-	if(armed)
-		explode()
-
-/obj/item/hydrogen_grenade/attack(mob/living/M, mob/living/user, target_zone)
-	if(..() && armed)
-		explode()
-
-/obj/item/hydrogen_grenade/proc/explode()
-	var/turf/T = get_turf(src)
-	explosion(T, 0, 1, 2, 4) // Explode
-	new /obj/effect/explosion(T)
-	for(var/mob/M in view(2, T)) // Burn every mob nearby.
-		to_chat(M, SPAN_DANGER("You feel a wave of heat scorch your body!"))
-		M.take_overall_damage(0, rand(burn_min, burn_max))
-	spawn(20)
-		qdel(src)
+	w_class = initial(w_class)
+	if(active)
+		activate(FALSE, TRUE) //So we dont null are on state
+		SStgui.update_uis(src)

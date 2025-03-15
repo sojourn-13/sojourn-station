@@ -21,11 +21,10 @@
 	icon_state = "foambox"
 
 /obj/item/storage/box/blanks/populate_contents()
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-	new /obj/item/ammo_casing/cap(src)
-
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)
+	new /obj/item/ammo_casing/cap/prespawned(src)

@@ -145,11 +145,11 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
 	can_hold = list(/obj/item/stack/ore,
-	                /obj/item/reagent_containers/food/snacks/grown,
+	                /obj/item/reagent_containers/snacks/grown,
 	                /obj/item/seeds,
 	                /obj/item/grown,
-	                /obj/item/reagent_containers/food/snacks/egg,
-	                /obj/item/reagent_containers/food/snacks/meat)
+	                /obj/item/reagent_containers/snacks/egg,
+	                /obj/item/reagent_containers/snacks/meat)
 
 /obj/item/storage/bag/ore/holding/New()
 	..()
@@ -183,12 +183,12 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/reagent_containers/food/snacks/grown,
+	can_hold = list(/obj/item/reagent_containers/snacks/grown,
 		/obj/item/seeds,
 		/obj/item/grown,
-		/obj/item/reagent_containers/food/snacks/egg,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/chickenbreast)
+		/obj/item/reagent_containers/snacks/egg,
+		/obj/item/reagent_containers/snacks/meat,
+		/obj/item/reagent_containers/snacks/chickenbreast)
 
 
 /obj/item/storage/bag/produce/big
@@ -211,7 +211,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
 	can_hold = list(/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/snacks/monkeycube,
 		/obj/item/slime_extract,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/stack/material/plasma,

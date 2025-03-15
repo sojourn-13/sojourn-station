@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // Lonestar
-/obj/item/computer_hardware/hard_drive/portable/design/misc
+/obj/item/pc_part/drive/disk/design/misc
 	disk_name = "Lonestar Miscellaneous Pack"
 	icon_state = "guild"
 	license = 20
@@ -83,7 +83,7 @@
 		/datum/design/autolathe/ammo/flare_shell_b = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/robustcells
+/obj/item/pc_part/drive/disk/design/robustcells
 	disk_name = "Lonestar Robustcells"
 	icon_state = "guild"
 	license = 8
@@ -97,7 +97,7 @@
 		/datum/design/autolathe/part/cell_mout,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/cargo
+/obj/item/pc_part/drive/disk/design/cargo
 	disk_name = "Lonestar Tidbits Factory"
 	icon_state = "guild"
 	license = -1
@@ -184,7 +184,7 @@
 		/datum/design/autolathe/ammo/flare_shell_b,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/janitor
+/obj/item/pc_part/drive/disk/design/janitor
 	disk_name = "Lonestar Janitor Pack"
 	icon_state = "guild"
 	license = 8
@@ -202,7 +202,7 @@
 		/datum/design/autolathe/part/cable_coil,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/scav
+/obj/item/pc_part/drive/disk/design/scav
 	disk_name = "Prospectors Swag"
 	icon_state = "scav"
 	license = 6
@@ -215,7 +215,7 @@
 		/datum/design/autolathe/tool/manual_charger
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/scav/forman
+/obj/item/pc_part/drive/disk/design/scav/forman
 	disk_name = "Prospectors Sweatshop"
 	icon_state = "scav"
 	license = -1

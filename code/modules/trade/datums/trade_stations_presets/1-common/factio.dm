@@ -17,13 +17,13 @@
 	regain_stock = FALSE
 	inventory = list(
 		"Disk Designs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/misc = custom_good_nameprice("Lonestar Miscellaneous Pack", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = custom_good_nameprice("Lonestar Robustcells", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/janitor = custom_good_nameprice("Lonestar Janitor Pack", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = custom_good_nameprice("H&S Nonlethal Magazines Pack", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = custom_good_nameprice("H&S Lethal Magazines Pack", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/security = custom_good_nameprice("Security Miscellaneous Pack", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable = custom_good_nameprice("Blank Disk", list(1, 10))
+			/obj/item/pc_part/drive/disk/design/misc = custom_good_nameprice("Lonestar Miscellaneous Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/robustcells = custom_good_nameprice("Lonestar Robustcells", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/janitor = custom_good_nameprice("Lonestar Janitor Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/nonlethal_ammo = custom_good_nameprice("H&S Nonlethal Magazines Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/lethal_ammo = custom_good_nameprice("H&S Lethal Magazines Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/security = custom_good_nameprice("Security Miscellaneous Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk = custom_good_nameprice("Blank Disk", list(1, 10))
 		),
 		"Printed Goods" = list(
 			/obj/item/cell/large = good_data("Large Power Cell", list(-9900, -9850), 60),
@@ -38,7 +38,7 @@
 			/obj/item/bodybag = good_data("Body Bag", list(-9900, -9850), 15),
 			/obj/item/cane = good_data("Cane", list(-9900, -9850), 30),
 			/obj/item/light = good_data("Light Tube/Bolb", list(-9900, -9850), 5),
-			/obj/item/computer_hardware = good_data("Computer Hardware", list(-9900, -9850), 19),
+			/obj/item/pc_part = good_data("Computer Hardware", list(-9900, -9850), 19),
 			/obj/item/modular_computer = good_data("Computer Frame", list(-9900, -9850), 10),
 			/obj/item/construct/conveyor = good_data("Conveyor Belt", list(-9900, -9850), 15),
 			/obj/item/construct/conveyor_switch = good_data("Conveyor Switch Frame", list(-900, -850), 15),
@@ -56,11 +56,12 @@
 
 	hidden_inventory = list(
 		"Disk II" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/components = custom_good_nameprice("Artificer's ARK-034 Components", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/adv_tools = custom_good_nameprice("Artificer's IJIRO-451 Advanced Tools", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/circuits = custom_good_nameprice("Artificer's ESPO-830 Circuits", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/logistics = custom_good_nameprice("Artificer's LAT-018 Logistics", list(800, 1000)),
-			/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo = good_data("Exotic Ammo Disk", list(800, 1000), 700)
+			/obj/item/pc_part/drive/disk/design/components = custom_good_nameprice("Artificer's ARK-034 Components", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/adv_tools = custom_good_nameprice("Artificer's IJIRO-451 Advanced Tools", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/circuits = custom_good_nameprice("Artificer's ESPO-830 Circuits", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/logistics = custom_good_nameprice("Artificer's LAT-018 Logistics", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/guns/cheap_guns = good_data("H&S - 9mm Economy Pack", list(800, 1000), 550),
+			/obj/item/pc_part/drive/disk/design/exotic_ammo = good_data("Exotic Ammo Disk", list(800, 1000), 700)
 		),
 		"Printed II" = list(
 			/obj/item/tool/crowbar = good_data("Crowbar", list(-100, -50), 60),

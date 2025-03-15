@@ -13,7 +13,7 @@
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Fence","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Lifeline Technician","Soteria Roboticist","Lonestar Miner", "Blackshield Cadet", "Marshal Junior Officer"
+#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Fence","Salvager","Prospector","Steward","Janitor","Soteria Lifeline Technician","Lonestar Miner", "Blackshield Cadet", "Marshal Junior Officer"
 
 #define CREDITS "&cent;"
 #define CREDS "&cent;"

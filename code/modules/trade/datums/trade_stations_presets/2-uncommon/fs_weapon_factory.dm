@@ -10,6 +10,7 @@
 	wealth = 0
 //	secret_inv_threshold = 2000
 	recommendation_threshold = 3000
+	icon_states = list("htu_capital", "object")
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
@@ -20,7 +21,7 @@
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
 			/obj/item/gun/projectile/shotgun/pump/gladstone,
-			/obj/item/gun/projectile/shotgun/bull,
+			/obj/item/gun/projectile/shotgun/pump/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),
 		),
@@ -77,7 +78,7 @@
 			/obj/item/gun/energy/pulse/cassad
 		),
 		"Surplus Gun Parts & Disk for Resale" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale/high = good_data("SA Gun Frame Disk", list(1, 1), 1450),
+			/obj/item/pc_part/drive/disk/design/gun_frames/resale/high = good_data("SA Gun Frame Disk", list(1, 1), 1450),
 			/obj/item/part/gun/grip/serb,
 			/obj/item/part/gun/mechanism/autorifle,
 			/obj/item/part/gun/mechanism/smg,

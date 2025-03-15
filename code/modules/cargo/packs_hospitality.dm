@@ -54,12 +54,12 @@
 /datum/supply_pack/cateringbirthday
 	name = "Birthday Catering Crate"
 	contains = list(/obj/item/storage/box/drinkingglasses,
-					/obj/item/reagent_containers/food/drinks/shaker,
-					/obj/item/reagent_containers/food/drinks/flask/barflask,
-					/obj/item/reagent_containers/food/drinks/bottle/orangejuice,
-					/obj/item/reagent_containers/food/drinks/bottle/space_up,
-					/obj/item/reagent_containers/food/drinks/bottle/cola,
-					/obj/item/reagent_containers/food/snacks/sliceable/birthdaycake,
+					/obj/item/reagent_containers/drinks/shaker,
+					/obj/item/reagent_containers/drinks/flask/barflask,
+					/obj/item/reagent_containers/drinks/bottle/orangejuice,
+					/obj/item/reagent_containers/drinks/bottle/space_up,
+					/obj/item/reagent_containers/drinks/bottle/cola,
+					/obj/item/reagent_containers/snacks/birthdaycake,
 					/obj/item/tool/knife,
 					/obj/item/storage/fancy/heartbox,
 					/obj/item/storage/fancy/heartbox,
@@ -80,19 +80,19 @@
 
 /datum/supply_pack/bardrinks
 	name = "Bartending resupply crate"
-	contains = list(/obj/item/reagent_containers/food/drinks/bottle/gin = 2,/obj/item/reagent_containers/food/drinks/bottle/whiskey = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/tequilla = 2,/obj/item/reagent_containers/food/drinks/bottle/vodka = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/vermouth = 2,/obj/item/reagent_containers/food/drinks/bottle/rum = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/wine = 3,/obj/item/reagent_containers/food/drinks/bottle/cognac = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/kahlua = 3,/obj/item/reagent_containers/food/drinks/bottle/small/beer = 6,
-					/obj/item/reagent_containers/food/drinks/bottle/small/ale = 6,/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 2,/obj/item/reagent_containers/food/drinks/bottle/limejuice = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/cream = 2,/obj/item/reagent_containers/food/drinks/cans/tonic = 6,
-					/obj/item/reagent_containers/food/drinks/bottle/cola = 5,/obj/item/reagent_containers/food/drinks/bottle/space_up = 5,
-					/obj/item/reagent_containers/food/drinks/bottle/space_mountain_wind = 5,/obj/item/reagent_containers/food/drinks/cans/sodawater = 15,
-					/obj/item/reagent_containers/food/drinks/flask/barflask = 2,/obj/item/reagent_containers/food/drinks/bottle/bluecuracao = 2,
-					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,/obj/item/reagent_containers/food/drinks/bottle/grenadine = 5,
-					/obj/item/reagent_containers/food/drinks/bottle/melonliquor = 2,/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1)
+	contains = list(/obj/item/reagent_containers/drinks/bottle/gin = 2,/obj/item/reagent_containers/drinks/bottle/whiskey = 2,
+					/obj/item/reagent_containers/drinks/bottle/tequilla = 2,/obj/item/reagent_containers/drinks/bottle/vodka = 2,
+					/obj/item/reagent_containers/drinks/bottle/vermouth = 2,/obj/item/reagent_containers/drinks/bottle/rum = 2,
+					/obj/item/reagent_containers/drinks/bottle/wine = 3,/obj/item/reagent_containers/drinks/bottle/cognac = 2,
+					/obj/item/reagent_containers/drinks/bottle/kahlua = 3,/obj/item/reagent_containers/drinks/bottle/small/beer = 6,
+					/obj/item/reagent_containers/drinks/bottle/small/ale = 6,/obj/item/reagent_containers/drinks/bottle/orangejuice = 2,
+					/obj/item/reagent_containers/drinks/bottle/tomatojuice = 2,/obj/item/reagent_containers/drinks/bottle/limejuice = 2,
+					/obj/item/reagent_containers/drinks/bottle/cream = 2,/obj/item/reagent_containers/drinks/cans/tonic = 6,
+					/obj/item/reagent_containers/drinks/bottle/cola = 5,/obj/item/reagent_containers/drinks/bottle/space_up = 5,
+					/obj/item/reagent_containers/drinks/bottle/space_mountain_wind = 5,/obj/item/reagent_containers/drinks/cans/sodawater = 15,
+					/obj/item/reagent_containers/drinks/flask/barflask = 2,/obj/item/reagent_containers/drinks/bottle/bluecuracao = 2,
+					/obj/item/reagent_containers/drinks/drinkingglass = 30,/obj/item/reagent_containers/drinks/bottle/grenadine = 5,
+					/obj/item/reagent_containers/drinks/bottle/melonliquor = 2,/obj/item/reagent_containers/drinks/bottle/absinthe = 1)
 	cost = 300
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "bartending resupply crate"
@@ -100,13 +100,13 @@
 
 /datum/supply_pack/cakes
 	name = "Party Cakes"
-	contains = list(/obj/item/reagent_containers/food/snacks/sliceable/carrotcake,
-					/obj/item/reagent_containers/food/snacks/sliceable/cheesecake,
-					/obj/item/reagent_containers/food/snacks/sliceable/plaincake,
-					/obj/item/reagent_containers/food/snacks/sliceable/orangecake,
-					/obj/item/reagent_containers/food/snacks/sliceable/limecake,
-					/obj/item/reagent_containers/food/snacks/sliceable/lemoncake,
-					/obj/item/reagent_containers/food/snacks/sliceable/chocolatecake,)
+	contains = list(/obj/item/reagent_containers/snacks/carrotcake,
+					/obj/item/reagent_containers/snacks/cheesecake,
+					/obj/item/reagent_containers/snacks/plaincake,
+					/obj/item/reagent_containers/snacks/orangecake,
+					/obj/item/reagent_containers/snacks/limecake,
+					/obj/item/reagent_containers/snacks/lemoncake,
+					/obj/item/reagent_containers/snacks/chocolatecake,)
 	cost = 400
 	containertype = /obj/structure/closet/crate
 	crate_name = "Party Cake Box"
@@ -135,21 +135,21 @@
 
 /datum/supply_pack/cateringcorporate
 	name = "Corporate Catering Crate"
-	contains = list(/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/mug,
-					/obj/item/reagent_containers/food/drinks/teapot,
-					/obj/item/reagent_containers/food/drinks/bottle/pwine,
-					/obj/item/reagent_containers/food/drinks/bottle/cognac,
-					/obj/item/reagent_containers/food/snacks/mint,
-					/obj/item/reagent_containers/food/snacks/mint,
-					/obj/item/reagent_containers/food/snacks/mint,
-					/obj/item/reagent_containers/food/snacks/mint,
-					/obj/item/reagent_containers/food/snacks/mint,
-					/obj/item/reagent_containers/food/snacks/mint)
+	contains = list(/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/mug,
+					/obj/item/reagent_containers/drinks/teapot,
+					/obj/item/reagent_containers/drinks/bottle/pwine,
+					/obj/item/reagent_containers/drinks/bottle/cognac,
+					/obj/item/reagent_containers/snacks/mint,
+					/obj/item/reagent_containers/snacks/mint,
+					/obj/item/reagent_containers/snacks/mint,
+					/obj/item/reagent_containers/snacks/mint,
+					/obj/item/reagent_containers/snacks/mint,
+					/obj/item/reagent_containers/snacks/mint)
 	cost = 150
 	containertype = /obj/structure/closet/crate
 	crate_name = "corporate catering crate"
@@ -157,19 +157,19 @@
 
 /datum/supply_pack/kitchensupply
 	name = "Kitchen Supply Crate"
-	contains = list(/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/enzyme,
-					/obj/item/reagent_containers/food/condiment/sugar,
-					/obj/item/reagent_containers/food/drinks/milk,
-					/obj/item/reagent_containers/food/drinks/milk,
+	contains = list(/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/enzyme,
+					/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/drinks/milk,
+					/obj/item/reagent_containers/drinks/milk,
 					/obj/item/storage/fancy/egg_box,
-					/obj/item/reagent_containers/food/snacks/tofu,
-					/obj/item/reagent_containers/food/snacks/tofu,
-					/obj/item/reagent_containers/food/snacks/meat,
-					/obj/item/reagent_containers/food/snacks/meat)
+					/obj/item/reagent_containers/snacks/tofu,
+					/obj/item/reagent_containers/snacks/tofu,
+					/obj/item/reagent_containers/snacks/meat,
+					/obj/item/reagent_containers/snacks/meat)
 
 	cost = 100
 	containertype = /obj/structure/closet/crate/freezer
@@ -198,18 +198,18 @@
 /datum/supply_pack/cateringparty
 	name = "Party Catering Crate"
 	contains = list(/obj/item/storage/box/drinkingglasses,
-					/obj/item/reagent_containers/food/drinks/shaker,
-					/obj/item/reagent_containers/food/drinks/flask/barflask,
-					/obj/item/reagent_containers/food/drinks/bottle/patron,
-					/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+					/obj/item/reagent_containers/drinks/shaker,
+					/obj/item/reagent_containers/drinks/flask/barflask,
+					/obj/item/reagent_containers/drinks/bottle/patron,
+					/obj/item/reagent_containers/drinks/bottle/goldschlager,
 					/obj/item/storage/fancy/cigarettes/fortress,
 //					/obj/item/lipstick/jade,
-					/obj/item/reagent_containers/food/drinks/bottle/small/ale,
-					/obj/item/reagent_containers/food/drinks/bottle/small/ale,
-					/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-					/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-					/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-					/obj/item/reagent_containers/food/drinks/bottle/small/beer)
+					/obj/item/reagent_containers/drinks/bottle/small/ale,
+					/obj/item/reagent_containers/drinks/bottle/small/ale,
+					/obj/item/reagent_containers/drinks/bottle/small/beer,
+					/obj/item/reagent_containers/drinks/bottle/small/beer,
+					/obj/item/reagent_containers/drinks/bottle/small/beer,
+					/obj/item/reagent_containers/drinks/bottle/small/beer)
 	cost = 175
 	containertype = /obj/structure/closet/crate
 	crate_name = "party catering crate"

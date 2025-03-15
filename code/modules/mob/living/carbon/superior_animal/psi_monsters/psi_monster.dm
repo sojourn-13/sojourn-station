@@ -2,7 +2,7 @@
 // They tend to favor extremely high health pools but little armor, with most attacks being moderate damage and carrying secondary effects.
 // When killed, they disappear and may spawn a psionic catalyst in there place. -Kaz
 
-/mob/living/carbon/superior_animal/psi_monster
+/mob/living/carbon/superior/psi
 	name = "corrupted devourer"
 	desc = "In the realm of other the other worldly deep maintenance, there are things which should not be. This creature is the result of what a mindless thought can create, familiar and yet \
 	entirely alien."
@@ -104,7 +104,7 @@
 	var/can_leave = FALSE
 
 
-/mob/living/carbon/superior_animal/psi_monster/New()
+/mob/living/carbon/superior/psi/New()
 	..()
 	if(!icon_living)
 		icon_living = icon_state
@@ -117,15 +117,15 @@
 	pixel_x = size_pixel_offset_x
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/psi_monster/slip()
+/mob/living/carbon/superior/psi/slip()
 	return FALSE
 // Can't slip
 
-/mob/living/carbon/superior_animal/psi_monster/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior/psi/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets stopped preventing you from pulling \the [src]. !"))
 	return
 
-/mob/living/carbon/superior_animal/psi_monster/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/psi/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
 
@@ -229,10 +229,14 @@
 /obj/effect/decal/cleanable/psi_ash/ponderous
 	name = "strange ashes of ponderous"
 	catalyst_drop = /obj/random/psi_catalyst/ponderous
+	psion_chance = 35
+	normie_chance = 15
 
 /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
 	name = "strange ashes of flesh behemoth"
 	catalyst_drop = /obj/random/psi_catalyst/flesh_behemoth
+	psion_chance = 45
+	normie_chance = 20
 
 /obj/effect/decal/cleanable/psi_ash/king
 	name = "ashes of the throne bound tyrant"

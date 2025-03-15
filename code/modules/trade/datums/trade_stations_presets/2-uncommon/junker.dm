@@ -2,6 +2,7 @@
 	name_pool = list(
 		"JNK 'Garbaj'" = "Junk collector. We buy what other people won't.",
 	)
+	icon_states = list("mothership", "object")
 	uid = "junker"
 	tree_x = 0.1
 	tree_y = 0.7
@@ -40,7 +41,7 @@
 		"\"Treasure\"" = list(
 			/obj/structure/salvageable/bliss = custom_good_amount_range(list(-1, 2)),
 			/obj/item/noslipmodule = custom_good_amount_range(list(-1, 2)),
-			/obj/item/reagent_containers/food/snacks/candy_drop_red = custom_good_amount_range(list(-1, 2)),
+			/obj/item/reagent_containers/snacks/candy_drop_red = custom_good_amount_range(list(-1, 2)),
 			/obj/item/supply_beacon,
 			/obj/item/device/mental_imprinter = custom_good_amount_range(list(-3, 1))
 		)

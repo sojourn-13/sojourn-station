@@ -11,7 +11,7 @@ GLOBAL_LIST_INIT(antag_item_targets,list(
 		"the Guild Master's advanced voidsuit control module" = /obj/item/rig/ce,
 		"the colony blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/snacks/meat/corgi,
 		"a Soteria research overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
 		"a guild master's jumpsuit" = /obj/item/clothing/under/rank/exultant,
 		"a Soteria biolab overseer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"No slip shoe-soels" =  /obj/item/noslipmodule,
 		"Voidwolf energy sword" = /obj/item/melee/energy/sword/pirate,
 		"Spy-bug microphone" = /obj/item/device/spy_bug,
-		"Warlock velvet posion wine" = /obj/item/reagent_containers/food/drinks/bottle/pwine,
+		"Warlock velvet posion wine" = /obj/item/reagent_containers/drinks/bottle/pwine,
 		"explosive ordinance storage box" = /obj/item/storage/box/explosive,
 		"Frenchman butterfly knife" = /obj/item/material/butterfly/frenchman,
 		"Destiny antique laser gun" = /obj/item/gun/energy/captain,
@@ -61,17 +61,17 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"broken Excelsior implant" = /obj/item/implantcase/excelsior/broken,
 		"Excelsior branded soap" = /obj/item/soap/commie,
 		"Excelsior voidsuit" =  /obj/item/clothing/suit/space/void/excelsior,
-		"design disk Means of Production" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
-		"design disk Means of Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-		"design disk Stocking Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/ex_parts,
-		"design disk Means of Power" = /obj/item/computer_hardware/hard_drive/portable/design/ex_cells,
-		"design disk 9mm Drozd SMG" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd,
-		"design disk Makarov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov,
-		"design disk Vintorez" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
-		"design disk Kardashev-Mosin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
-		"design disk Kalashnikov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak,
-		"design disk Reclaimer" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
-		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
+		"design disk Means of Production" = /obj/item/pc_part/drive/disk/design/excelsior,
+		"design disk Means of Revolution" = /obj/item/pc_part/drive/disk/design/excelsior_weapons,
+		"design disk Stocking Revolution" = /obj/item/pc_part/drive/disk/design/ex_parts,
+		"design disk Means of Power" = /obj/item/pc_part/drive/disk/design/ex_cells,
+		"design disk 9mm Drozd SMG" = /obj/item/pc_part/drive/disk/design/guns/ex_drozd,
+		"design disk Makarov" = /obj/item/pc_part/drive/disk/design/guns/ex_makarov,
+		"design disk Vintorez" = /obj/item/pc_part/drive/disk/design/guns/ex_vintorez,
+		"design disk Kardashev-Mosin" = /obj/item/pc_part/drive/disk/design/guns/ex_boltgun,
+		"design disk Kalashnikov" = /obj/item/pc_part/drive/disk/design/guns/ex_ak,
+		"design disk Reclaimer" = /obj/item/pc_part/drive/disk/design/guns/ex_reclaimer,
+		"design disk Shpagin" = /obj/item/pc_part/drive/disk/design/guns/ex_ppsh,
 
 	))
 
@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/item/file/check_contents(list/contents)
 	var/list/all_files = list()
-	for(var/obj/item/computer_hardware/hard_drive/H in contents)
+	for(var/obj/item/pc_part/drive/H in contents)
 		all_files += H.stored_files
 
 	return check_files(all_files)
@@ -293,7 +293,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"the GM advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/snacks/meat/corgi,
 		"a CRO's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
 		"a GMs's jumpsuit" = /obj/item/clothing/under/rank/exultant,
 		"a CMO's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,

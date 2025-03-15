@@ -4,7 +4,7 @@
 
 /datum/objective/borer_survive/check_completion()
 	if(owner && owner.current)
-		var/mob/living/simple_animal/borer/B = owner.current
+		var/mob/living/simple/borer/B = owner.current
 		if(istype(B) && B.stat < DEAD && B.host && B.host.stat < DEAD)
 			return TRUE
 	return FALSE
@@ -18,7 +18,7 @@
 		return FALSE
 
 	if(owner && owner.current)
-		var/mob/living/simple_animal/borer/B = owner.current
+		var/mob/living/simple/borer/B = owner.current
 		if(istype(B) && B.has_reproduced)
 			return TRUE
 	return FALSE

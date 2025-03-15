@@ -5,12 +5,12 @@
 //Plus disks are available only from the EOTP and have additional license points and/or decreased item costs
 // Absolute
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt
+/obj/item/pc_part/drive/disk/design/nt
 	disk_name = "Absolute Armory"
 	icon_state = "neotheology"
 	license = -1
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility
+/obj/item/pc_part/drive/disk/design/nt/basic_utility
 	disk_name = "Church of the Absolute Bioprinter Utilities Factory"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
@@ -59,7 +59,7 @@
 		/datum/design/bioprinter/pouch/tubular/vial
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public
+/obj/item/pc_part/drive/disk/design/nt/basic_utility/public
 	disk_name = "Church of the Absolute Bioprinter Products and Utilities"
 	desc = "This disk is made by the Church and distributed at a nominal cost to anyone who wishes to use a bioprinter for basic needs."
 	license = 20
@@ -96,7 +96,7 @@
 		/datum/design/bioprinter/belt/misc/champion,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms
+/obj/item/pc_part/drive/disk/design/nt/basic_arms
 	disk_name = "Absolute Armory - Basic Armaments Factory"
 	icon_state = "neotheology_testament"
 	license = -1
@@ -106,6 +106,7 @@
 		/datum/design/autolathe/sword/nt_longsword,
 		/datum/design/autolathe/sword/nt_dagger,
 		/datum/design/autolathe/sword/nt_halberd,
+		/datum/design/autolathe/sword/nt_polehammer,
 		/datum/design/autolathe/sword/nt_scourge,
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/sword/nt_warhammer,
@@ -156,7 +157,7 @@
 		/datum/design/bioprinter/nt_cells/large/plasma
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public
+/obj/item/pc_part/drive/disk/design/nt/basic_arms/public
 	disk_name = "Absolute Armory - Basic Armaments"
 	license = 8 //Seems low, but everything is one point
 	designs = list(
@@ -165,6 +166,7 @@
 		/datum/design/autolathe/sword/nt_longsword,
 		/datum/design/autolathe/sword/nt_dagger,
 		/datum/design/autolathe/sword/nt_halberd,
+		/datum/design/autolathe/sword/nt_polehammer,
 		/datum/design/autolathe/sword/nt_scourge,
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/nt/shield/nt_buckler,
@@ -198,7 +200,7 @@
 		/datum/design/bioprinter/nt_cells/large,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns
+/obj/item/pc_part/drive/disk/design/nt/old_guns
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A disk containing designs for highly advanced energy and ballistic weaponry from the Testament, the Absolutes arms division. Old Testament designs are older, having been in use since New Byzantine."
 	license = 12 //Church can get this for free from their vendor, need to incentivize them to actually pray for the Plus without making it useless to outsiders
@@ -210,16 +212,17 @@
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
-		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		/datum/design/autolathe/gun/shepherd = 6
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns/plus
+/obj/item/pc_part/drive/disk/design/nt/old_guns/plus
 	disk_name = "Absolute Armory of the Old Testament Plus"
 	desc = "A disk containing designs for highly advanced energy and ballistic weaponry from the Testament, the Absolutes arms division. Obtained through praying at the Will of the Protector."
 
 	license = 18
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns
+/obj/item/pc_part/drive/disk/design/nt/new_guns
 	disk_name = "Absolute Armory of the New Testament"
 	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Nadezhda and are more experimental than the Old Testament designs."
 
@@ -237,13 +240,13 @@
 		/datum/design/autolathe/gun/carpediem = 4
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns/plus
+/obj/item/pc_part/drive/disk/design/nt/new_guns/plus
 	disk_name = "Absolute Armory of the New Testament Plus"
 	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Nadezhda and are more experimental than the Old Testament designs. Obtained through praying at the Will of the Protector."
 
 	license = 18
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
+/obj/item/pc_part/drive/disk/design/nt_bioaugment
 	disk_name = "Strange Disk"
 	desc = "Now,where did this come from?"
 	icon_state = "onestar"
@@ -261,7 +264,7 @@
 	)
 
 // Thorn and Rose Pack - both 10mm and 9mm
-/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
+/obj/item/pc_part/drive/disk/design/nt/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
 
 	license = 12
@@ -281,11 +284,11 @@
 		)
 
 //Thorn and Rose Pack - both 10mm and 9mm
-/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58/plus
+/obj/item/pc_part/drive/disk/design/nt/mk58/plus
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack Plus"
 	license = 20
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
+/obj/item/pc_part/drive/disk/design/nt/lemant
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver"
 
 	license = 12
@@ -304,7 +307,7 @@
 		)
 
 //Church Revolver
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant/plus
+/obj/item/pc_part/drive/disk/design/nt/lemant/plus
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver Plus"
 
 	license = 12
@@ -323,7 +326,7 @@
 		)
 
 //Church shotgun
-/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator
+/obj/item/pc_part/drive/disk/design/nt/regulator
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun"
 
 	license = 8
@@ -335,8 +338,25 @@
 		/datum/design/autolathe/ammo/shotgun_biomatter = 5
 		)
 
+//Church rifle
+/obj/item/pc_part/drive/disk/design/nt/shepherd
+	disk_name = "Absolute Armory - OT MR 8.6x70mm Shepherd"
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator/plus
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/shepherd = 3,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,
+		)
+
+/obj/item/pc_part/drive/disk/design/nt/shepherd/plus
+	disk_name = "Absolute Armory - OT MR 8.6x70mm Shepherd Plus"
+
+	license = 10
+
+/obj/item/pc_part/drive/disk/design/nt/regulator/plus
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun Plus"
 
 	license = 8
@@ -352,7 +372,7 @@
 
 // ENERGY SMALL ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
+/obj/item/pc_part/drive/disk/design/nt/counselor
 	disk_name = "Absolute Armory - Counselor PDW E"
 
 	license = 8
@@ -361,12 +381,12 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor/plus
+/obj/item/pc_part/drive/disk/design/nt/counselor/plus
 	disk_name = "Absolute Armory - Counselor PDW E Plus"
 
 	license = 10
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/serenity
+/obj/item/pc_part/drive/disk/design/nt/serenity
 	disk_name = "Absolute Armory - NT LP \"Serenity\""
 
 	license = 8
@@ -375,7 +395,7 @@
 		/datum/design/autolathe/cell/small/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/serenity/plus
+/obj/item/pc_part/drive/disk/design/nt/serenity/plus
 	disk_name = "Absolute Armory - NT LP \"Serenity\" Plus"
 
 	license = 8
@@ -386,7 +406,7 @@
 
 // ENERGY ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis
+/obj/item/pc_part/drive/disk/design/nt/nemesis
 	disk_name = "Absolute Armory - Nemesis Energy Crossbow"
 
 	license = 2
@@ -394,12 +414,12 @@
 		/datum/design/autolathe/gun/energy_crossbow,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis/plus
+/obj/item/pc_part/drive/disk/design/nt/nemesis/plus
 	disk_name = "Absolute Armory - Nemesis Energy Crossbow Plus"
 
 	license = 3
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/themis
+/obj/item/pc_part/drive/disk/design/nt/themis
 	disk_name = "Absolute Armory - Themis Energy Crossbow"
 
 	license = 1
@@ -407,12 +427,12 @@
 		/datum/design/autolathe/gun/large_energy_crossbow,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/themis/plus
+/obj/item/pc_part/drive/disk/design/nt/themis/plus
 	disk_name = "Absolute Armory - Themis Energy Crossbow Plus"
 
 	license = 2
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall
+/obj/item/pc_part/drive/disk/design/nt/lightfall
 	disk_name = "Absolute Armory - Lightfall Laser Gun"
 
 	license = 8
@@ -421,7 +441,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall/plus
+/obj/item/pc_part/drive/disk/design/nt/lightfall/plus
 	disk_name = "Absolute Armory - Lightfall Laser Gun Plus"
 
 	license = 8
@@ -430,7 +450,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye
+/obj/item/pc_part/drive/disk/design/nt/valkirye
 	disk_name = "Absolute Armory - Valkyrie Energy Rifle"
 
 	license = 12
@@ -440,7 +460,7 @@
 	)
 
 
-obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
+obj/item/pc_part/drive/disk/design/nt/valkirye/plus
 	disk_name = "Absolute Armory - Valkyrie Energy Rifle Plus"
 
 	license = 12
@@ -449,7 +469,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie
+/obj/item/pc_part/drive/disk/design/nt/carpedie
 	disk_name = "Absolute Armory - Carpediem Laser Musket"
 
 	license = 8
@@ -459,7 +479,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie/plus
+/obj/item/pc_part/drive/disk/design/nt/carpedie/plus
 	disk_name = "Absolute Armory - Carpediem Laser Musket Plus"
 
 	license = 8
@@ -468,7 +488,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
+/obj/item/pc_part/drive/disk/design/nt/concillium
 	disk_name = "Absolute Armory - Concillium Las-MG"
 
 	license = 8
@@ -478,7 +498,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 	)
 
 
-obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
+obj/item/pc_part/drive/disk/design/nt/concillium/plus
 	disk_name = "Absolute Armory - Concillium Las-MG Plus"
 
 	license = 8
@@ -487,7 +507,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
+/obj/item/pc_part/drive/disk/design/nt/halicon
 	disk_name = "Absolute Armory - Halcyon Ion Rifle"
 
 	license = 8
@@ -497,7 +517,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon/plus
+/obj/item/pc_part/drive/disk/design/nt/halicon/plus
 	disk_name = "Absolute Armory - Halcyon Ion Rifle Plus"
 
 	license = 8
@@ -508,7 +528,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 
 // PLASMA ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion
+/obj/item/pc_part/drive/disk/design/nt/dominion
 	disk_name = "Absolute Armory - Dominion Plasma Rifle"
 
 	license = 12
@@ -518,7 +538,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion/plus
+/obj/item/pc_part/drive/disk/design/nt/dominion/plus
 	disk_name = "Absolute Armory - Dominion Plasma Rifle Plus"
 
 	license = 12
@@ -527,7 +547,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/purger
+/obj/item/pc_part/drive/disk/design/nt/purger
 	disk_name = "Absolute Armory - Purger Plasma Rifle"
 
 	license = 8
@@ -536,7 +556,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/purger/plus
+/obj/item/pc_part/drive/disk/design/nt/purger/plus
 	disk_name = "Absolute Armory - Purger Plasma Rifle Plus"
 
 	license = 8
@@ -548,7 +568,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 
 // Grenade Launchers
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/protector
+/obj/item/pc_part/drive/disk/design/nt/protector
 	disk_name = "Absolute Armory GL - Grenade Launcher"
 
 	license = 3
@@ -557,7 +577,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/protector/plus
+/obj/item/pc_part/drive/disk/design/nt/protector/plus
 	disk_name = "Absolute Armory GL - Grenade Launcher Plus"
 
 	license = 5
@@ -570,7 +590,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/autolathe/ammo/grenade/flash = 2
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum
+/obj/item/pc_part/drive/disk/design/nt/antebellum
 	disk_name = "Absolute Armory - Antebellum Laser Blunderbuss"
 
 	license = 8
@@ -580,7 +600,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum/plus
+/obj/item/pc_part/drive/disk/design/nt/antebellum/plus
 	disk_name = "Absolute Armory - Antebellum Laser Blunderbuss Plus"
 
 	license = 8
@@ -591,7 +611,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades
+/obj/item/pc_part/drive/disk/design/nt/grenades
 	disk_name = "Absolute Armory - Grenades Pack"
 
 	license = 12
@@ -604,12 +624,12 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades/plus
+/obj/item/pc_part/drive/disk/design/nt/grenades/plus
 	disk_name = "Absolute Armory - Grenades Pack Plus"
 
 	license = 16
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells
+/obj/item/pc_part/drive/disk/design/nt/plasma_shells
 	disk_name = "Absolute Armory - Plasma Shell Pack"
 	desc = "A disk containing designs for highly advanced plasma based shotgun shells."
 
@@ -620,12 +640,12 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells/plus
+/obj/item/pc_part/drive/disk/design/nt/plasma_shells/plus
 	disk_name = "Absolute Armory - Plasma Shell Pack Plus"
 	desc = "A disk containing designs for highly advanced plasma based shotgun shells."
 	license = 10 // 36 heavy plasma shells or 56 normal shots.
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/cells
+/obj/item/pc_part/drive/disk/design/nt/cells
 	disk_name = "Absolute Armory - Power Cells Pack"
 
 	license = 12
@@ -637,7 +657,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/bioprinter/nt_cells/small,
 		/datum/design/bioprinter/nt_cells/small/plasma = 2
 		)
-/obj/item/computer_hardware/hard_drive/portable/design/nt/cells/plus
+/obj/item/pc_part/drive/disk/design/nt/cells/plus
 	disk_name = "Absolute Armory - Power Cells Pack Plus"
 	icon_state = "neotheology_testament"
 
@@ -651,7 +671,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/bioprinter/nt_cells/small/plasma
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/caustic_rounds
+/obj/item/pc_part/drive/disk/design/nt/caustic_rounds
 	disk_name = "Absolute Armory - Caustic Ammunition Pack"
 	desc = "A disk containing designs for biomatter based caseless ballistic rounds."
 	license = 12
@@ -661,7 +681,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium/plus
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt/caustic_rounds/plus
+/obj/item/pc_part/drive/disk/design/nt/caustic_rounds/plus
 	disk_name = "Absolute Armory - Caustic Ammunition Pack"
 
 	license = 20

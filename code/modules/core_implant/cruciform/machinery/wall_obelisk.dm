@@ -66,15 +66,15 @@
 		use_power = 2
 
 		var/to_fire = max_targets
-		for(var/mob/living/carbon/superior_animal/superior_mob in affected)
-			var/mob/living/carbon/superior_animal/animal = superior_mob
+		for(var/mob/living/carbon/superior/superior_mob in affected)
+			var/mob/living/carbon/superior/animal = superior_mob
 			if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got roach, spider, xenos, but not colony pets
 				animal.take_overall_damage(damage)
 				biomatter_ammo -= biomatter_use_per_shot
 				if(!--to_fire)
 					return
-		for(var/mob/living/simple_animal/hostile/simple_h in affected)
-			var/mob/living/simple_animal/hostile/animal = simple_h
+		for(var/mob/living/simple/hostile/simple_h in affected)
+			var/mob/living/simple/hostile/animal = simple_h
 			if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got misc things like tango, voild wolfs but not colony pets
 				animal.take_overall_damage(damage)
 				biomatter_ammo -= biomatter_use_per_shot

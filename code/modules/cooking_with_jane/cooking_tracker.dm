@@ -11,7 +11,7 @@
 	var/list/completed_list = list()//List of recipes marked as complete.
 	var/recipe_started = FALSE 	//Tells if steps have been taken for this recipe
 
-/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/reagent_containers/cwj/container/container)
 
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/New")
@@ -34,7 +34,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/generate_pointers")
 	#endif
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = holder_ref.resolve()
+	var/obj/item/reagent_containers/cwj/container/container = holder_ref.resolve()
 
 	#ifdef CWJ_DEBUG
 	log_debug("Loading all references to [container] of type [container.type] using [container.appliancetype]")
@@ -294,6 +294,7 @@
 	var/datum/weakref/parent_ref
 
 	var/tracked_quality = 0 //The current level of quality within that recipe.
+	var/tracked_price = 0
 
 	var/list/steps_taken = list() //built over the course of following a recipe, tracks what has been done to the object. Format is unique_id:result
 
@@ -449,6 +450,9 @@
 
 	var/step_quality = active_step.calculate_quality(used_obj, tracker)
 	tracked_quality += step_quality
+
+	tracked_price += active_step.add_price
+
 	steps_taken["[id]"] = active_step.get_step_result_text(used_obj, step_quality)
 	if(!(active_step.flags & CWJ_IS_OPTIONAL))
 		current_step = active_step

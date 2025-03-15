@@ -4,7 +4,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 
 //Non-hostile to regular colonists.
 //Roomba
-/mob/living/carbon/superior_animal/robot/greyson/roomba/allied
+/mob/living/carbon/superior/robot/gp/roomba/allied
 	name = "SI Combat Roomba"
 	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat."
 	faction = "neutral"
@@ -21,7 +21,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	get_stat_modifier = FALSE
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/gp/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
@@ -47,7 +47,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored/allied
 	name = "SI Armored Roomba"
 	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor."
 	faction = "neutral"
@@ -62,7 +62,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	cant_be_pulled = FALSE
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
@@ -89,7 +89,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	..()
 
 //Robots
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied
+/mob/living/carbon/superior/robot/gp/synth/allied
 	name = "SI Sword Drone"
 	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	faction = "neutral"
@@ -111,7 +111,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	get_stat_modifier = FALSE
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/gp/synth/allied/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
@@ -138,13 +138,13 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/doTargetMessage()
+/mob/living/carbon/superior/robot/gp/synth/allied/doTargetMessage()
 	. = ..()
 
 	visible_emote("lets out a buzz as it detects a target!")
 	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/advanced
+/mob/living/carbon/superior/robot/gp/synth/allied/advanced
 	name = "SI Mantis Drone"
 	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	icon_state = "soteria_mantis"
@@ -155,7 +155,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/junkbot
+/mob/living/carbon/superior/robot/gp/synth/allied/junkbot
 	name = "Prospector Junkbot"
 	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Soteria the prospector salvagers made these bots to function as disposable shields or \
 	to gaurd specific locations since they do not wander. While lightweight, fast, and capable of a wickedly damaging slash with its armblade, they are not that durable."

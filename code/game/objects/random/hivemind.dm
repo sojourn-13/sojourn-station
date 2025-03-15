@@ -4,13 +4,13 @@
 	alpha = 128
 
 /obj/random/structures/hivemind_mob/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/stinger = 5,
-		/mob/living/simple_animal/hostile/hivemind/bomber = 0.5,
-		/mob/living/simple_animal/hostile/hivemind/lobber = 3,
-		/mob/living/simple_animal/hostile/hivemind/hiborg = 5,
-		/mob/living/simple_animal/hostile/hivemind/himan = 1,
-		/mob/living/simple_animal/hostile/hivemind/phaser = 2,
-		/mob/living/simple_animal/hostile/hivemind/mechiver = 1
+	return pickweight(list(/mob/living/simple/hostile/hivemind/stinger = 5,
+		/mob/living/simple/hostile/hivemind/bomber = 0.5,
+		/mob/living/simple/hostile/hivemind/lobber = 3,
+		/mob/living/simple/hostile/hivemind/hiborg = 5,
+		/mob/living/simple/hostile/hivemind/himan = 1,
+		/mob/living/simple/hostile/hivemind/phaser = 2,
+		/mob/living/simple/hostile/hivemind/mechiver = 1
 		))
 
 /obj/random/structures/hivemind_machine
@@ -48,11 +48,11 @@
 		/obj/machinery/hivemind_machine/screamer = 1,
 		/obj/machinery/hivemind_machine/supplicant = 4,
 		/obj/machinery/hivemind_machine/distractor = 2,
-		/mob/living/simple_animal/hostile/hivemind/stinger = 5,
-		/mob/living/simple_animal/hostile/hivemind/bomber = 0.5,
-		/mob/living/simple_animal/hostile/hivemind/lobber = 3,
-		/mob/living/simple_animal/hostile/hivemind/hiborg = 5,
-		/mob/living/simple_animal/hostile/hivemind/himan = 1,
-		/mob/living/simple_animal/hostile/hivemind/phaser = 2,
-		/mob/living/simple_animal/hostile/hivemind/mechiver = 1
+		/mob/living/simple/hostile/hivemind/stinger = 5,
+		/mob/living/simple/hostile/hivemind/bomber = 0.5,
+		/mob/living/simple/hostile/hivemind/lobber = 3,
+		/mob/living/simple/hostile/hivemind/hiborg = 5,
+		/mob/living/simple/hostile/hivemind/himan = 1,
+		/mob/living/simple/hostile/hivemind/phaser = 2,
+		/mob/living/simple/hostile/hivemind/mechiver = 1
 		))

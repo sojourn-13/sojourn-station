@@ -25,12 +25,14 @@
 		/obj/item/tank,
 		/obj/item/circuitboard,
 		/obj/item/device/assembly,//Primarily for making improved cameras, but opens many possibilities
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/tool_upgrade,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/stack/tile, //Repair floors yay
-		/obj/item/oddity/blackbox_nanoforge
+		/obj/item/oddity/blackbox_nanoforge,
+		/obj/item/cement_bag,
+		/obj/item/stack/ore //So they can craft cement bags
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
@@ -231,7 +233,7 @@
 		/obj/item/spacecash,
 		/obj/item/coin,
 		/obj/item/device/toner,
-		/obj/item/computer_hardware/hard_drive/portable
+		/obj/item/pc_part/drive/disk
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -251,7 +253,7 @@
 		/obj/item/circuitboard,
 		/obj/item/slime_extract,
 		/obj/item/reagent_containers/glass,
-		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/snacks/monkeycube,
 		/obj/item/reagent_containers/blood,
 		/obj/item/device/assembly,//For building bots and similar complex R&D devices
 		/obj/item/device/scanner/health,//For building medibots
@@ -260,11 +262,13 @@
 		/obj/item/tool/minihoe,//Farmbots and xenoflora
 		/obj/item/seeds,
 		/obj/item/tank,
-		/obj/item/computer_hardware,
+		/obj/item/pc_part,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/device/integrated_electronics,
-		/obj/item/integrated_circuit
+		/obj/item/integrated_circuit,
+		/obj/item/hydro_tray_plant_bag_water,
+		/obj/item/hydro_tray_plant_bag_nutrient
 		)
 
 /obj/item/gripper/chemistry //A gripper designed for chemistry and medical, to allow borgs to work efficiently in the lab
@@ -288,8 +292,8 @@
 		/obj/item/modification/organ,
 		/obj/item/device/mmi,
 		/obj/item/tank,
-		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
-		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
+		/obj/item/reagent_containers/snacks/meat, //For grinding up roaches
+		/obj/item/reagent_containers/snacks/grown, //For grinding up herbs
 		/obj/item/genetics, //for doing genetics. Research borgs get this as well
 		/obj/item/stack/material/plasma
 		)
@@ -297,11 +301,12 @@
 /obj/item/gripper/service //Used to handle food, drinks, and seeds.
 	name = "service gripper"
 	icon_state = "gripper"
-	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, and seeds."
+	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, ores, and seeds."
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
-		/obj/item/reagent_containers/food,
+		/obj/item/reagent_containers/drinks,
+		/obj/item/reagent_containers/condiment,
 		/obj/item/seeds,
 		/obj/item/grown,
 		/obj/item/trash,
@@ -312,8 +317,11 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
-		/obj/item/spatula
+		/obj/item/reagent_containers/cwj/container,
+		/obj/item/spatula,
+		/obj/item/hydro_tray_plant_bag_water,
+		/obj/item/hydro_tray_plant_bag_nutrient,
+		/obj/item/stack/ore //So they can craft some items
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells

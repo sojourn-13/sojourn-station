@@ -28,12 +28,13 @@
 		/obj/item/photo,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/tool/screwdriver,
-		/obj/item/computer_hardware/hard_drive/portable,
+		/obj/item/pc_part/drive/disk,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/genetics/purger,
 		/obj/item/genetics/sample,
 		/obj/item/genetics/mut_injector,
 		/obj/item/stamp,
+		/obj/item/device/text_to_speech,
 		// All these anomalies should be small in size enough to be able to fit inside a wallet.
 		/obj/item/oddity/common/old_id, // ID's fit
 		/obj/item/oddity/common/lighter, // Zippos fit

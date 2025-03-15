@@ -1,0 +1,90 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster/placed/generic/here_for_your_safety{
+	pixel_y = 32
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"u" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"v" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"x" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/scrap,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"C" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"E" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/pen/multi,
+/obj/item/contraband/poster/placed/generic/work_for_a_future{
+	pixel_y = 32
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"J" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"N" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches/lower_chance,
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+"O" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster/placed/generic/do_not_question{
+	pixel_y = 32
+	},
+/turf/simulated/floor/industrial/bricks,
+/area/nadezhda/maintenance/undergroundfloor2east)
+
+(1,1,1) = {"
+O
+x
+N
+"}
+(2,1,1) = {"
+E
+C
+v
+"}
+(3,1,1) = {"
+a
+u
+J
+"}

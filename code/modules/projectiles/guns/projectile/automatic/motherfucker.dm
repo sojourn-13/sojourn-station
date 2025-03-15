@@ -46,7 +46,7 @@
 /obj/item/gun/projectile/automatic/motherfucker/attack_self(mob/living/user)
 	if(world.time >= recentpumpmsg + 10)
 		recentpumpmsg = world.time
-		playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+		playsound(user, 'sound/weapons/guns/interact/shotgun_pump.ogg', 60, 1)
 		pumped = TRUE
 
 /obj/item/gun/projectile/automatic/motherfucker/special_check(mob/user)

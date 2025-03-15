@@ -6,7 +6,7 @@
 	item_state = "mares"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_SHOTGUN
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun_fire.ogg'
 	max_shells = 6
 	price_tag = 650
 	init_recoil = HMG_RECOIL(1.0)

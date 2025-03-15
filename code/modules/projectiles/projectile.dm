@@ -179,6 +179,9 @@
 /obj/item/projectile/add_projectile_penetration(newmult)
 	armor_divisor = initial(armor_divisor) + newmult
 
+/obj/item/projectile/wound_mult_adder(newadd)
+	wounding_mult += newadd
+
 /obj/item/projectile/multiply_pierce_penetration(newmult)
 	penetrating = initial(penetrating) + newmult
 

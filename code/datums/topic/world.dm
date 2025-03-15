@@ -48,6 +48,8 @@
 	s["vote"] = config.allow_vote_mode
 	s["ai"] = config.allow_ai
 	s["host"] = host ? host : null
+	s["revision"] = GLOB.revdata.commit
+	s["revision_date"] = GLOB.revdata.date
 
 	// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 	s["players"] = 0
@@ -129,16 +131,6 @@
 		positions[k] = list2params(positions[k]) // converts positions["heads"] = list("Bob"="Captain", "Bill"="CMO") into positions["heads"] = "Bob=Captain&Bill=CMO"
 
 	return positions
-
-
-/datum/world_topic/revision
-	keyword = "revision"
-
-/datum/world_topic/revision/Run(list/input)
-	if(revdata.revision)
-		return list(branch = revdata.branch, date = revdata.date, revision = revdata.revision)
-	else
-		return "unknown"
 
 /datum/world_topic/info
 	keyword = "info"

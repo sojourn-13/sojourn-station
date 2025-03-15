@@ -26,9 +26,11 @@ Note: Must be placed within 3 tiles of the R&D Console
 
 /obj/machinery/r_n_d/destructive_analyzer/RefreshParts()
 	var/T = 0
-	for(var/obj/item/stock_parts/S in src)
+	for(var/obj/item/stock_parts/S in component_parts)
 		T += S.rating
 	decon_mod = T * 0.1
+	if(decon_mod > 1)
+		decon_mod = 1
 
 /obj/machinery/r_n_d/destructive_analyzer/update_icon()
 	if(panel_open)

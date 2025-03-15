@@ -14,8 +14,8 @@
 	var/copying_delay = 0
 	var/hack_fail_chance = 0
 
-	var/obj/item/computer_hardware/hard_drive/portable/original = null
-	var/obj/item/computer_hardware/hard_drive/portable/copy = null
+	var/obj/item/pc_part/drive/disk/original = null
+	var/obj/item/pc_part/drive/disk/copy = null
 
 	var/copying = FALSE
 
@@ -52,7 +52,7 @@
 	if(panel_open)
 		return
 
-	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/pc_part/drive/disk))
 		if(!original)
 			original = put_disk(I, user)
 			to_chat(user, SPAN_NOTICE("You put \the [I] into the first slot of [src]."))
@@ -79,7 +79,7 @@
 /obj/machinery/autolathe_disk_cloner/Process()
 	update_icon()
 
-/obj/machinery/autolathe_disk_cloner/proc/put_disk(obj/item/computer_hardware/hard_drive/portable/AD, var/mob/user)
+/obj/machinery/autolathe_disk_cloner/proc/put_disk(obj/item/pc_part/drive/disk/AD, var/mob/user)
 	ASSERT(istype(AD))
 
 	user.unEquip(AD,src)
@@ -140,7 +140,7 @@
 
 	if(href_list["eject"])
 		var/mob/living/H = null
-		var/obj/item/computer_hardware/hard_drive/portable/D = null
+		var/obj/item/pc_part/drive/disk/D = null
 		if(ishuman(usr))
 			H = usr
 			D = H.get_active_hand()
@@ -177,7 +177,7 @@
 	SSnano.update_uis(src)
 	update_icon()
 	if(original && copy && !copy.used_capacity)
-		var/designgrade = istype(copy, /obj/item/computer_hardware/hard_drive/portable/design) //Design disks ignore capacity restrictions.
+		var/designgrade = istype(copy, /obj/item/pc_part/drive/disk/design) //Design disks ignore capacity restrictions.
 		copy.name = original.name
 
 		for(var/f in original.stored_files)

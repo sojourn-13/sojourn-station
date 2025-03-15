@@ -181,13 +181,13 @@
 		return I.reagents.add_reagent(reagent, I.reagents.get_free_space())
 
 /datum/gear_tweak/tablet
-	var/list/ValidProcessors = list(/obj/item/computer_hardware/processor_unit/small)
+	var/list/ValidProcessors = list(/obj/item/pc_part/processor_unit/small)
 	var/list/ValidBatteries = list(/obj/item/cell/small, /obj/item/cell/small/high, /obj/item/cell/small/super)
-	var/list/ValidHardDrives = list(/obj/item/computer_hardware/hard_drive/micro, /obj/item/computer_hardware/hard_drive/small, /obj/item/computer_hardware/hard_drive)
-	var/list/ValidNetworkCards = list(/obj/item/computer_hardware/network_card, /obj/item/computer_hardware/network_card/advanced)
-	var/list/ValidPrinters = list(null, /obj/item/computer_hardware/printer)
-	var/list/ValidCardSlots = list(null, /obj/item/computer_hardware/card_slot)
-	var/list/ValidTeslaLinks = list(null, /obj/item/computer_hardware/tesla_link)
+	var/list/ValidHardDrives = list(/obj/item/pc_part/drive/micro, /obj/item/pc_part/drive/small, /obj/item/pc_part/drive)
+	var/list/ValidNetworkCards = list(/obj/item/pc_part/network_card, /obj/item/pc_part/network_card/advanced)
+	var/list/ValidPrinters = list(null, /obj/item/pc_part/printer)
+	var/list/ValidCardSlots = list(null, /obj/item/pc_part/card_slot)
+	var/list/ValidTeslaLinks = list(null, /obj/item/pc_part/tesla_link)
 
 /datum/gear_tweak/tablet/get_contents(var/list/metadata)
 	var/list/names = list()

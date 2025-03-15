@@ -104,6 +104,7 @@
 		/obj/item/stack/medical/ointment = 6,
 		/obj/item/stack/medical/ointment/soteria = 4,
 		/obj/item/stack/medical/ointment/advanced = 2,
+		/obj/item/storage/firstaid/regular/si = 2,
 
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
 		/obj/item/stack/nanopaste = 4,
@@ -140,12 +141,13 @@
 		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
 		/obj/item/stack/medical/bruise_pack/advanced = 100,
-		/obj/item/stack/medical/bruise_pack/soteria = 700,
+		/obj/item/stack/medical/bruise_pack/soteria = 250,
 		/obj/item/stack/medical/ointment/handmade  = 25,
 		/obj/item/stack/medical/ointment = 35,
 		/obj/item/stack/medical/ointment/advanced = 100,
-		/obj/item/stack/medical/ointment/soteria = 700,
+		/obj/item/stack/medical/ointment/soteria = 250,
 		/obj/item/stack/medical/splint/improvised = 5,
+		/obj/item/storage/firstaid/regular/si = 700,
 		/obj/item/stack/medical/splint = 10,
 		/obj/item/stack/nanopaste = 300,
 

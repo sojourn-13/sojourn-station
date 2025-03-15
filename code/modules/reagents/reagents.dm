@@ -62,7 +62,7 @@
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE
 	var/reagent_type = "404: ERROR FILE NOT FOUND!"
-	var/price_per_unit = 0.125 //por cargo rework
+	var/price_per_unit = 0.125 //for cargo rework / Celler
 	var/safty_process = 0 //This is used for when your metabolism is to low
 
 /datum/reagent/proc/remove_self(amount) // Shortcut

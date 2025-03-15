@@ -26,6 +26,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/mg_silenced.ogg'
 	init_recoil = HMG_RECOIL(1)
 	slowdown_hold = 1
 	init_firemodes = list(
@@ -82,25 +83,23 @@
 	..()
 
 /obj/item/gun/projectile/automatic/lmg/update_icon()
-	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]"
-	if(ammo_magazine)
-		add_overlay("_mag[ammo_magazine.max_ammo]")
-	else
-		cut_overlays()
-		return
 	..()
 
-//**** Saved in case we want the code in the future****//
-//obj/item/gun/projectile/automatic/lmg/equipped(var/mob/user, var/slot)
-//	.=..()
-//	update_icon()
+	var/itemstring = ""
+	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]"
+	wielded_item_state = "[initial(wielded_item_state)][ammo_magazine ? "_doble_mag" : "_doble"]"
+	itemstring += "[ammo_magazine ? "_mag" : null]"
 
-//obj/item/gun/projectile/automatic/lmg/update_icon()
-//	icon_state = "[icon_base][cover_open ? "open" : "closed"][ammo_magazine ? round(ammo_magazine.stored_ammo.len, 25) : "-empty"]"
-//	set_item_state("-[cover_open ? "open" : null][ammo_magazine ?"mag":"nomag"]", hands = TRUE)
-//	set_item_state("-[ammo_magazine ?"mag":"nomag"]", back = TRUE)
-//	update_wear_icon()
+	set_item_state(itemstring)
 
+	if (!ammo_magazine)
+		cut_overlays()
+		return
+
+	var/ratio = (get_ammo() / ammo_magazine.max_ammo) * 100
+	var/ammo = round(ratio, 25)
+
+	add_overlay("_mag[ammo]")
 
 // After the removal of the Unicorn, treat this as the "high-end of normal" for any future LMG's.
 /obj/item/gun/projectile/automatic/lmg/pk
@@ -108,8 +107,8 @@
 	desc = "\"Kalashnikov's Machinegun\", a well-made copy of what many consider to be the best traditional machinegun ever designed."
 	icon = 'icons/obj/guns/projectile/pk.dmi'
 	icon_base = "pk"
-	icon_state = "pk_closed"
-	item_state = "pk_closed"
+	icon_state = "pk"
+	item_state = "pk"
 	damage_multiplier = 1.0 // This becomes x0.8 as forced full auto modes incurr 20% damage penalty.
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	init_firemodes = list(
@@ -156,36 +155,6 @@
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
 	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
 
-/obj/item/gun/projectile/automatic/lmg/tk/update_icon()
-//	..() We are rather different than other guns and lmgs.
-//	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]" - this is for ref of what it did before.
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (cover_open)
-		iconstring += "open"
-		itemstring += "-open"
-	else
-		iconstring += "closed"
-		itemstring += "-closed"
-
-	if (ammo_magazine)
-		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
-		var/number = round(percent, 25)
-		iconstring += "[number]"
-		itemstring += "-mag"
-	else
-		iconstring += "-empty"
-		itemstring += "-nomag"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-
-/obj/item/gun/projectile/automatic/lmg/tk/Initialize()
-	. = ..()
-	update_icon()
-
 // I AM HEAVY WEAPONS GUY, AND THIS...IS MY WEAPON. - Seb
 /obj/item/gun/projectile/automatic/lmg/heroic
 	name = " \"Heroic\" General Purpose Machinegun"
@@ -197,7 +166,6 @@
 	icon_state = "heroic"
 	item_state = "heroic"
 	fire_sound = 'sound/weapons/guns/fire/heroic_fire.ogg'
-	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_mg.ogg' // Yay snowflake silenced sound!
 	caliber = CAL_RIFLE
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
 	penetration_multiplier = 1
@@ -212,36 +180,11 @@
 		)
 	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
-// Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
 /obj/item/gun/projectile/automatic/lmg/heroic/update_icon()
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
+	..()
 
-	if (cover_open)
-		iconstring += "open"
-		itemstring += "-open"
-	else
-		iconstring += "closed"
-		itemstring += "-closed"
+	if (!silenced)
+		cut_overlay("_s")
+		return
 
-	if (ammo_magazine)
-		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
-		var/number = round(percent, 25)
-		iconstring += "[number]"
-		itemstring += "-mag"
-	else
-		iconstring += "-empty"
-		itemstring += "-nomag"
-
-	if (silenced)
-		iconstring += "_s"
-		itemstring += "_s"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-
-/obj/item/gun/projectile/automatic/lmg/heroic/Initialize()
-	. = ..()
-	update_icon()
-
+	add_overlay("_s")

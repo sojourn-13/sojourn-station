@@ -3,7 +3,12 @@
 		"Name" = "Description",
 		"T3-ST" = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 	)
-	icon_states = "htu_station"		// Overmap icon
+
+	//When adding new station icons, nano -> imagines - > overmap.png      Names inside the png do not matter.
+	//Then add the new icon to the shared.css file in nano\css\shared.css
+
+	icon_states = list("htu_station", "station")	// Overmap icons, first one is what it looks like when unlocked second is locked, *uses shared.css* file
+
 	forced_overmap_zone = list()	// For forcing the station into a specific zone. Format: list(list(minx, maxx), list(miny, maxy))
 
 	spawn_always = FALSE			// Should this station always spawn? (does not affect whether the station is available at round start or not)
@@ -58,6 +63,6 @@
 	Any excess in those containers will be consumed with the 60u asked for and will not count.
 	*/
 	offer_types = list(
-		/obj/item/computer_hardware/hard_drive/cluster = offer_data("name", 100, 5),
+		/obj/item/pc_part/drive/cluster = offer_data("name", 100, 5),
 		/datum/reagent/medicine/inaprovaline = offer_data("inaprovaline bottle (60u)", 150, 3)
 	)

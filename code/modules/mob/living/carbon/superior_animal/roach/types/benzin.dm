@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/nitro
+/mob/living/carbon/superior/roach/nitro
 	name = "Benzin Roach"
 	desc = "A monstrous, dog-sized cockroach. This one smells like welding fuel. Likely to explode when shot!"
 	icon_state = "boomroach"
@@ -6,7 +6,7 @@
 	maxHealth = 25 * ROACH_HEALTH_MOD
 	health = 25 * ROACH_HEALTH_MOD
 	melee_damage_upper = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/nitro
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/nitro
 	meat_amount = 3
 	var/fuel_amount = 50
 	var/leaking = FALSE
@@ -14,31 +14,31 @@
 
 	var/exploded = FALSE
 
-/mob/living/carbon/superior_animal/roach/nitro/ex_act()
+/mob/living/carbon/superior/roach/nitro/ex_act()
 	if(!exploded)
 		kerplode()
 
-/mob/living/carbon/superior_animal/roach/nitro/Move()
+/mob/living/carbon/superior/roach/nitro/Move()
 	..()
 	if(leaking && (fuel_amount > 0.5))
 		var/transfer = fuel_amount * 0.2
 		new /obj/effect/decal/cleanable/liquid_fuel(src.loc, transfer, 1)
 		fuel_amount -= transfer
 
-/mob/living/carbon/superior_animal/roach/nitro/bullet_act(obj/item/projectile/slug)
+/mob/living/carbon/superior/roach/nitro/bullet_act(obj/item/projectile/slug)
 	if(!exploded && slug.ignition_source)
 		kerplode()
 	else
 		. = ..()
 
-/mob/living/carbon/superior_animal/roach/nitro/fire_act()
+/mob/living/carbon/superior/roach/nitro/fire_act()
 	if(!exploded && !impending_explosion)
 		impending_explosion = TRUE
 		spawn(rand(30,150))
 			kerplode()
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/nitro/proc/kerplode()
+/mob/living/carbon/superior/roach/nitro/proc/kerplode()
 	impending_explosion = TRUE
 	if(!exploded)
 		exploded = TRUE
@@ -46,7 +46,7 @@
 		explosion(src.loc,0,0,2) //explosion weaker than a welding tank
 		gib()
 
-/mob/living/carbon/superior_animal/roach/nitro/attackby(obj/item/I)
+/mob/living/carbon/superior/roach/nitro/attackby(obj/item/I)
 	if(isflamesource(I))
 		kerplode()
 	else
@@ -54,7 +54,7 @@
 			leaking = TRUE
 		. = ..()
 
-/mob/living/carbon/superior_animal/roach/nitro/death()
+/mob/living/carbon/superior/roach/nitro/death()
 	. = ..()
 	if(src)
 		if(!exploded && !leaking)

@@ -143,3 +143,6 @@
 
 	/// Icon used for speechbubbles
 	var/bubble_icon = "default"
+
+	var/mob_ablative_armor = 0
+	var/ablative_retaining = ABLATION_SKIN

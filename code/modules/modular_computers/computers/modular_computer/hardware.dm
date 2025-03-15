@@ -1,8 +1,8 @@
 // Attempts to install the hardware into apropriate slot.
 /obj/item/modular_computer/proc/try_install_component(obj/item/H, mob/living/user)
 	var/found = FALSE
-	var/obj/item/computer_hardware/CH //if it's anything other than a battery, then we need to set its holder2 var whatever the fuck that is
-	if(istype(H, /obj/item/computer_hardware))
+	var/obj/item/pc_part/CH //if it's anything other than a battery, then we need to set its holder2 var whatever the fuck that is
+	if(istype(H, /obj/item/pc_part))
 		CH = H
 		if(!(CH.usage_flags & hardware_flag))
 			to_chat(user, SPAN_WARNING("This computer isn't compatible with [CH]."))
@@ -13,38 +13,38 @@
 		return
 
 	// Data disk.
-	if(istype(H, /obj/item/computer_hardware/hard_drive/portable))
+	if(istype(H, /obj/item/pc_part/drive/disk))
 		if(portable_drive)
 			to_chat(user, SPAN_WARNING("This computer's portable drive slot is already occupied by \the [portable_drive]."))
 			return
 		found = TRUE
 		portable_drive = H
 
-	else if(istype(H, /obj/item/computer_hardware/led))
+	else if(istype(H, /obj/item/pc_part/led))
 		if(led)
 			to_chat(user, SPAN_WARNING("This computer's LED slot is already occupied by \the [led]."))
 			return
 		found = TRUE
 		led = H
-	else if(istype(H, /obj/item/computer_hardware/hard_drive))
+	else if(istype(H, /obj/item/pc_part/drive))
 		if(hard_drive)
 			to_chat(user, SPAN_WARNING("This computer's hard drive slot is already occupied by \the [hard_drive]."))
 			return
 		found = TRUE
 		hard_drive = H
-	else if(istype(H, /obj/item/computer_hardware/network_card))
+	else if(istype(H, /obj/item/pc_part/network_card))
 		if(network_card)
 			to_chat(user, SPAN_WARNING("This computer's network card slot is already occupied by \the [network_card]."))
 			return
 		found = TRUE
 		network_card = H
-	else if(istype(H, /obj/item/computer_hardware/printer))
+	else if(istype(H, /obj/item/pc_part/printer))
 		if(printer)
 			to_chat(user, SPAN_WARNING("This computer's printer slot is already occupied by \the [printer]."))
 			return
 		found = TRUE
 		printer = H
-	else if(istype(H, /obj/item/computer_hardware/card_slot))
+	else if(istype(H, /obj/item/pc_part/card_slot))
 		if(card_slot)
 			to_chat(user, SPAN_WARNING("This computer's card slot is already occupied by \the [card_slot]."))
 			return
@@ -56,32 +56,32 @@
 			return
 		found = TRUE
 		cell = H
-	else if(istype(H, /obj/item/computer_hardware/processor_unit))
+	else if(istype(H, /obj/item/pc_part/processor_unit))
 		if(processor_unit)
 			to_chat(user, SPAN_WARNING("This computer's processor slot is already occupied by \the [processor_unit]."))
 			return
 		found = TRUE
 		processor_unit = H
-	else if(istype(H, /obj/item/computer_hardware/ai_slot))
+	else if(istype(H, /obj/item/pc_part/ai_slot))
 		if(ai_slot)
 			to_chat(user, SPAN_WARNING("This computer's intellicard slot is already occupied by \the [ai_slot]."))
 			return
 		found = TRUE
 		ai_slot = H
-	else if(istype(H, /obj/item/computer_hardware/tesla_link))
+	else if(istype(H, /obj/item/pc_part/tesla_link))
 		if(tesla_link)
 			to_chat(user, SPAN_WARNING("This computer's tesla link slot is already occupied by \the [tesla_link]."))
 			return
 		found = TRUE
 		tesla_link = H
-	else if(istype(H, /obj/item/computer_hardware/scanner))
+	else if(istype(H, /obj/item/pc_part/scanner))
 		if(scanner)
 			to_chat(user, SPAN_WARNING("This computer's scanner slot is already occupied by \the [scanner]."))
 			return
 		found = TRUE
 		scanner = H
 		scanner.do_after_install(user, src)
-	else if(istype(H, /obj/item/computer_hardware/gps_sensor))
+	else if(istype(H, /obj/item/pc_part/gps_sensor))
 		if(gps_sensor)
 			to_chat(user, SPAN_WARNING("This computer's gps slot is already occupied by \the [gps_sensor]."))
 			return
@@ -96,7 +96,7 @@
 			CH.holder2 = src
 			if(CH.enabled)
 				CH.enabled()
-			if(istype(CH, /obj/item/computer_hardware/hard_drive) && enabled)
+			if(istype(CH, /obj/item/pc_part/drive) && enabled)
 				autorun_program(portable_drive) // Autorun malware: now in SS13!
 		update_verbs()
 
@@ -106,9 +106,9 @@
 		return
 
 	var/critical = FALSE
-	var/obj/item/computer_hardware/to_remove //If a battery, don't try to delete the snowflake vars
+	var/obj/item/pc_part/to_remove //If a battery, don't try to delete the snowflake vars
 
-	if(istype(H, /obj/item/computer_hardware))
+	if(istype(H, /obj/item/pc_part))
 		to_remove = H
 		critical = to_remove.critical && to_remove.enabled
 

@@ -2,6 +2,7 @@ var/list/clients = list()							//list of all clients
 var/list/admins = list()							//list of all clients whom are admins
 var/list/directory = list()							//list of all ckeys with associated client
 
+GLOBAL_DATUM_INIT(revdata, /datum/getrev, new)		//list of revdata
 //Since it didn't really belong in any other category, I'm putting this here
 //This is for procs to replace all the goddamn 'in world's that are chilling around the code
 
@@ -141,7 +142,7 @@ var/global/list/organ_tag_to_name = list(
 	)
 
 // Boss spawners
-var/list/psi_mega_fauna = list(/mob/living/carbon/superior_animal/psi_monster/dreaming_king, /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown, /obj/item/paper/psi_log_1, /obj/item/paper/psi_log_2, /obj/item/paper/psi_log_3, /obj/item/paper/psi_log_4, /obj/item/paper/psi_log_5)
+var/list/psi_mega_fauna = list(/mob/living/carbon/superior/psi/dreaming_king, /mob/living/carbon/superior/psi/dreaming_king/hound_crown, /obj/item/paper/psi_log_1, /obj/item/paper/psi_log_2, /obj/item/paper/psi_log_3, /obj/item/paper/psi_log_4, /obj/item/paper/psi_log_5)
 
 // Visual nets
 var/list/datum/visualnet/visual_nets = list()

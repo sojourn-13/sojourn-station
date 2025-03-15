@@ -1,6 +1,6 @@
 /obj/item/gun/energy/slimegun
 	name = "\"Ranch\" core stopper gun"
-	desc = "A gun suited for dealing with slime outbreaks, due to many safety innovations the beam will be harmless for anything other than slime lifeforms. \
+	desc = "A gun suited for dealing with slime outbreaks, due to many safety innovations the beam will be harmless for anything other than simple slime lifeforms. \
 	When hitting a slime, the beam will directly attack its core, shutting it down for an instantaneous death while keeping it intact for harvesting. Due to its small design it only takes small cells."
 	icon = 'icons/obj/guns/energy/slimegun.dmi'
 	icon_state = "slimepistol"

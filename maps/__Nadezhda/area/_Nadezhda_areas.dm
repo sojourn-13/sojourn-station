@@ -367,6 +367,11 @@
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
+/area/nadezhda/outside/forest/river_forest_nightmare
+	name = "Hunting plains dark forest"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
 /area/nadezhda/outside/forest/swamp_hut
 	name = "Swamp Hut"
 	icon_state = "erisblue"
@@ -384,6 +389,10 @@
 
 /area/nadezhda/outside/forest/river_forest_lake
 	name = "Hunting Plains River"
+	icon_state = "hammerblue"
+
+/area/nadezhda/outside/forest/carp_lair
+	name = "Carp Lair"
 	icon_state = "hammerblue"
 
 /area/nadezhda/outside/forest/river_forest_cabin

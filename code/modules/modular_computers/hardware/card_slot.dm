@@ -1,4 +1,4 @@
-/obj/item/computer_hardware/card_slot
+/obj/item/pc_part/card_slot
 	name = "ID card slot"
 	desc = "Slot that allows this computer to read and write data on ID cards. Necessary for some programs to run properly."
 	power_usage = 10 //W
@@ -10,7 +10,7 @@
 	var/obj/item/card/id/stored_card = null
 
 
-/obj/item/computer_hardware/card_slot/Destroy()
+/obj/item/pc_part/card_slot/Destroy()
 	if(stored_card)
 		stored_card.forceMove(drop_location())
 		stored_card = null

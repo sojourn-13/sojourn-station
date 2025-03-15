@@ -108,7 +108,7 @@
 		occupant = null
 	else
 		if(get_progress(progress) >= CLONING_MEAT)
-			new /obj/item/reagent_containers/food/snacks/meat(loc)
+			new /obj/item/reagent_containers/snacks/meat(loc)
 
 	update_icon()
 

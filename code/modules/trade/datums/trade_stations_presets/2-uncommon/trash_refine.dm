@@ -3,6 +3,7 @@
 		"ITR 'Lancer'" = "IRS Trash Railgun 'Lancer': \"Hoho, you want some Trash?\""
 	)
 	uid = "trash"
+	icon_states = list("planetcracker", "object")
 	tree_x = 0.1
 	tree_y = 0.8
 	start_discovered = FALSE
@@ -58,8 +59,8 @@
 	// TODO: offers
 	offer_types = list(
 		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 3),
-		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 500, 4),
-		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 500, 4),
+		/obj/item/reagent_containers/snacks/baconburger = offer_data("bacon burger", 500, 4),
+		/obj/item/reagent_containers/snacks/blt = offer_data("blt sandwich", 500, 4),
 		/obj/item/storage/bag/sheetsnatcher = offer_data("sheet snatcher", 300, 4),
 		/datum/reagent/drug/mindbreaker = offer_data("mindbreaker toxin bottle(60u)", 850, 2)
 	)

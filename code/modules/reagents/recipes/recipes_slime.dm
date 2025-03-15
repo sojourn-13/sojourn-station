@@ -46,7 +46,7 @@
 
 /datum/chemical_reaction/slime/monkey/on_reaction(var/datum/reagents/holder)
 	for(var/i = 1, i <= 3, i++)
-		var /obj/item/reagent_containers/food/snacks/monkeycube/M = new /obj/item/reagent_containers/food/snacks/monkeycube
+		var /obj/item/reagent_containers/snacks/monkeycube/M = new /obj/item/reagent_containers/snacks/monkeycube
 		M.loc = get_turf(holder.my_atom)
 	..()
 
@@ -168,7 +168,7 @@
 	required = /obj/item/slime_extract/silver
 
 /datum/chemical_reaction/slime/bork/on_reaction(var/datum/reagents/holder)
-	var/list/borks = typesof(/obj/item/reagent_containers/food/snacks) - /obj/item/reagent_containers/food/snacks
+	var/list/borks = typesof(/obj/item/reagent_containers/snacks) - /obj/item/reagent_containers/snacks
 	playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 	for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
 		if(M.eyecheck() < FLASH_PROTECTION_MINOR)

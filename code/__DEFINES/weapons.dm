@@ -21,7 +21,7 @@
 #define ARMOR_PEN_MASSIVE			3
 #define ARMOR_PEN_MAX				10
 
-//Wounding Multiplier: Increases damage taken, applied after armor.
+//Wounding Multiplier: Increases damage taken, applied after armor. Also increases odds of sharpnal embeds see human_defence.dm
 #define WOUNDING_HARMLESS			0.25
 #define WOUNDING_TINY				0.5
 #define WOUNDING_SMALL				0.75

@@ -26,8 +26,8 @@
 
 	if(!product_name)
 		product_name = initial(tmp.name)
-		if(ispath(tmp, /obj/item/computer_hardware/hard_drive/portable))
-			var/obj/item/computer_hardware/hard_drive/portable/tmp_disk = tmp
+		if(ispath(tmp, /obj/item/pc_part/drive/disk))
+			var/obj/item/pc_part/drive/disk/tmp_disk = tmp
 			if(initial(tmp_disk.disk_name))
 				product_name = initial(tmp_disk.disk_name)
 
@@ -1006,6 +1006,7 @@
 						/obj/item/tool/knife/psionic_blade,
 						/obj/item/shield/riot/crusader/psionic,
 						/obj/item/stack/medical/bruise_pack/psionic,
+						/obj/item/stack/medical/ointment/psionic,
 
 	) //Items that are not allowed for the vendor to use if custom
 

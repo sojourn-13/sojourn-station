@@ -73,6 +73,8 @@
 	var/precision = 0	//Subtracted from failure rates
 	var/workspeed = 1	//Worktimes are divided by this
 
+	var/spawn_full = TRUE
+
 
 /******************************
 	/* Core Procs */
@@ -80,15 +82,16 @@
 //Fuel and cell spawn
 /obj/item/tool/New()
 	..()
-	if(cell)
+	if(cell && spawn_full)
 		cell = new cell(src) //So when we have a cell spawn it spawns a cell, otherwise it will pick a suitable cell
 
-	if(!cell && suitable_cell)
+	if(!cell && suitable_cell && spawn_full)
 		cell = new suitable_cell(src) //No cell? We add are suitable cell
 
 	if(use_fuel_cost)
 		create_reagents(max_fuel)
-		reagents.add_reagent(my_fuel, max_fuel)
+		if(spawn_full)
+			reagents.add_reagent(my_fuel, max_fuel)
 
 	if(use_stock_cost)
 		stock = max_stock
@@ -109,7 +112,7 @@
 /obj/item/tool/Created()
 	QDEL_NULL(cell)
 	if(use_fuel_cost)
-		consume_fuel(get_fuel())
+		consume_fuel(get_fuel(), forced = TRUE)
 
 
 
@@ -911,7 +914,11 @@
 /obj/item/proc/get_fuel()
 	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
-/obj/item/tool/proc/consume_fuel(volume)
+/obj/item/tool/proc/consume_fuel(volume, forced)
+	if(forced)
+		reagents.remove_reagent(my_fuel, volume)
+		return TRUE
+
 	//Fixes tool off-state behavior
 	if(toggleable && !switched_on)
 		return TRUE
@@ -1074,8 +1081,8 @@
 				var/obj/item/weldpack/P = O
 				P.explode()
 			return
-		else if(istype(O, /mob/living/carbon/superior_animal/roach/nitro))
-			var/mob/living/carbon/superior_animal/roach/nitro/B = O
+		else if(istype(O, /mob/living/carbon/superior/roach/nitro))
+			var/mob/living/carbon/superior/roach/nitro/B = O
 			if(B.stat != DEAD)
 				if(has_quality(QUALITY_WELDING))
 					B.fire_act()

@@ -982,6 +982,8 @@ var/list/rank_prefix = list(\
 		if(organ.status & ORGAN_SPLINTED) //Splints prevent movement.
 			continue
 
+		//Small pity system to half the amount of damage done by stacks of sharpnal. Has to be exstreamly unlucky to use it.
+		var/pity = FALSE
 		for(var/obj/item/O in organ.implants)
 			// Shrapnel hurts when you move, and implanting knives is a bad idea
 			if(prob(5) && is_sharp(O))
@@ -1001,7 +1003,11 @@ var/list/rank_prefix = list(\
 					if(species.reagent_tag == IS_SYNTHETIC && istype(organ, /obj/item/organ/external/chest))
 						continue
 
-					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
+					if(!pity)
+						organ.take_damage(3, BRUTE, organ.max_damage, 1.3, TRUE, TRUE)
+						pity = TRUE
+					else
+						pity = FALSE
 					if(organ.setBleeding())
 						organ.take_damage(2, BRUTE) //Extra 2 damage
 					if(species.reagent_tag == IS_CHTMANT)

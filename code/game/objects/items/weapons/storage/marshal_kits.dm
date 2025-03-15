@@ -54,7 +54,7 @@
 	desc = "The standard Marshal box kit containing a Operator shotgun, a folding stock shotgun for only TRUE operators!"
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
+		new /obj/item/gun/projectile/shotgun/riot/opshot(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
@@ -77,7 +77,7 @@
 	desc = "The standard Marshal box kit containing a state auto shotgun. What is lacks in penetration it makes up for with ammo capacity and fire rate."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun(src)
+		new /obj/item/gun/projectile/shotgun/riot(src)
 		new /obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)

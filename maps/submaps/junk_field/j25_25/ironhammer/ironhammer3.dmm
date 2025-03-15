@@ -21,7 +21,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ah" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ai" = (
@@ -48,7 +48,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "an" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "ao" = (
@@ -62,7 +62,7 @@
 /obj/structure/bed/chair/office/light{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ar" = (
@@ -97,7 +97,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ax" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /obj/random/material/low_chance,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
@@ -279,7 +279,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "bk" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "bl" = (
@@ -344,7 +344,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "dn" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ej" = (
@@ -363,13 +363,13 @@
 /area/template_noop)
 "jn" = (
 /obj/random/material/low_chance,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "lF" = (
 /obj/structure/lattice,
 /obj/random/material/low_chance,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "lJ" = (
@@ -421,11 +421,11 @@
 /area/template_noop)
 "BE" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "Fq" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "Fr" = (
@@ -434,15 +434,15 @@
 /area/template_noop)
 "Ix" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "Pj" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "PU" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /obj/random/junk/low_chance,
 /turf/simulated/floor/plating/under,
 /area/template_noop)

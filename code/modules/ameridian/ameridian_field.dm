@@ -33,7 +33,7 @@
 			A.visible_message("[A] shatter into dust under the sonic field.")
 			qdel(A)
 
-		for(var/mob/living/carbon/superior_animal/ameridian_golem/G in get_turf(src))
+		for(var/mob/living/carbon/superior/ameridian_golem/G in get_turf(src))
 			G.drop_amount = 0 // The crystal golem is obliterated, don't drop any loot.
 			G.death() // Golem die.
 
@@ -46,8 +46,8 @@
 		qdel(O)
 		return
 
-	if(istype(O, /mob/living/carbon/superior_animal/ameridian_golem))
-		var/mob/living/carbon/superior_animal/ameridian_golem/G = O
+	if(istype(O, /mob/living/carbon/superior/ameridian_golem))
+		var/mob/living/carbon/superior/ameridian_golem/G = O
 		G.drop_amount = 0 // The crystal golem is obliterated, don't drop any loot.
 		G.death() // Golem die.
 		return

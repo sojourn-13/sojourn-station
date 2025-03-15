@@ -29,9 +29,9 @@
 	. = ..()
 	if(!running)
 		return
-	var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
-	var/obj/item/computer_hardware/hard_drive/HD = computer.hard_drive
-	var/obj/item/computer_hardware/hard_drive/portable/PD = computer.portable_drive
+	var/obj/item/pc_part/processor_unit/CPU = computer.processor_unit
+	var/obj/item/pc_part/drive/HD = computer.hard_drive
+	var/obj/item/pc_part/drive/disk/PD = computer.portable_drive
 
 	if(!istype(CPU) || !CPU.check_functionality() || !istype(HD))
 		message = "A fatal hardware error has been detected."
@@ -75,7 +75,7 @@
 	if(href_list["PRG_execute"])
 		if(running)
 			return 1
-		var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
+		var/obj/item/pc_part/processor_unit/CPU = computer.processor_unit
 		if(!istype(CPU) || !CPU.check_functionality())
 			message = "A fatal hardware error has been detected."
 			return

@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/carp
+/mob/living/simple/hostile/carp
 	name = "space carp"
 	desc = "A ferocious, fang-bearing creature that resembles a fish."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -6,7 +6,7 @@
 	icon_gib = "carp_gib"
 	speak_chance = 0
 	turns_per_move = 5
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/snacks/meat/carp
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -30,7 +30,7 @@
 	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 	faction = "carp"
 
-/mob/living/simple_animal/hostile/carp/baby
+/mob/living/simple/hostile/carp/baby
 	name = "space carp spawn"
 	desc = "A ferocious, fang-bearing creature that resembles a fish. This one is quite young."
 	icon_state = "babycarp"
@@ -42,7 +42,7 @@
 	melee_damage_lower = 4
 	melee_damage_upper = 6
 
-/mob/living/simple_animal/hostile/carp/pike
+/mob/living/simple/hostile/carp/pike
 	name = "space carp pike"
 	desc = "A bigger, angrier cousin of the space carp."
 	icon = 'icons/mob/spaceshark.dmi'
@@ -64,7 +64,7 @@
 
 	break_stuff_probability = 100
 
-/mob/living/simple_animal/hostile/carp/shark
+/mob/living/simple/hostile/carp/shark
 	name = "space shark"
 	desc = "A large carp with sets of sharp teeth and armored scales to be even more deadly."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -84,7 +84,7 @@
 
 	break_stuff_probability = 100
 
-/mob/living/simple_animal/hostile/carp/greatwhite
+/mob/living/simple/hostile/carp/greatwhite
 	name = "great white carp"
 	desc = "A very rare breed of carp and a very aggressive one."
 	icon = 'icons/mob/64x64.dmi'
@@ -111,15 +111,15 @@
 	armor = list(melee = 6, bullet = 2, energy = 16, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
 
-/mob/living/simple_animal/hostile/carp/allow_spacemove()
+/mob/living/simple/hostile/carp/allow_spacemove()
 	return 1	//No drifting in space for space carp!	//original comments do not steal
 
-/mob/living/simple_animal/hostile/carp/FindTarget()
+/mob/living/simple/hostile/carp/FindTarget()
 	. = ..()
 	if(.)
 		visible_emote("nashes at [.].")
 
-/mob/living/simple_animal/hostile/carp/AttackingTarget()
+/mob/living/simple/hostile/carp/AttackingTarget()
 	. =..()
 	var/mob/living/L = .
 	if(istype(L))

@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot
+/mob/living/carbon/superior/robot
 	name = "Robot"
 	desc = "Beep Boop!"
 	icon = 'icons/mob/battle_roomba.dmi'
@@ -52,13 +52,13 @@
 	var/cell_drop = null
 	cant_gib = TRUE
 
-/mob/living/carbon/superior_animal/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
+/mob/living/carbon/superior/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
-/mob/living/carbon/superior_animal/robot/handle_environment(datum/gas_mixture/environment) //We are robots, no air or pressure will harm us
+/mob/living/carbon/superior/robot/handle_environment(datum/gas_mixture/environment) //We are robots, no air or pressure will harm us
 	return
 
-/mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0) //WE CLEAN!
+/mob/living/carbon/superior/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0) //WE CLEAN!
 	. = ..()
 	if(cleaning)
 		var/turf/tile = loc
@@ -89,7 +89,7 @@
 						cleaned_human.clean_blood(1)
 						to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
-/mob/living/carbon/superior_animal/robot/death()
+/mob/living/carbon/superior/robot/death()
 	..()
 	new /obj/effect/decal/cleanable/blood/gibs/robot(loc)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -108,7 +108,7 @@
 		qdel(src)
 	return
 
-/mob/living/carbon/superior_animal/robot/emp_act(severity)
+/mob/living/carbon/superior/robot/emp_act(severity)
 	..()
 	if(rapid)
 		rapid = FALSE
@@ -117,7 +117,7 @@
 	if(emp_damage)
 		adjustFireLoss(rand(50,80)*severity)
 
-/mob/living/carbon/superior_animal/robot/examine(mob/user)
+/mob/living/carbon/superior/robot/examine(mob/user)
 	..()
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)

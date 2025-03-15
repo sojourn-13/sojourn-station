@@ -1,4 +1,4 @@
-/mob/living/simple_animal/slime
+/mob/living/simple/slime
 	name = "pet slime"
 	desc = "A lovable, domesticated slime."
 	icon = 'icons/mob/slimes.dmi'
@@ -20,12 +20,12 @@
 	var/list/speech_buffer = list() // Last phrase said near it and person who said it
 	sanity_damage = -2
 
-/mob/living/simple_animal/slime/New()
+/mob/living/simple/slime/New()
 	..()
 	add_overlay("aslime-:33")
 	handle_AI()
 
-/mob/living/simple_animal/slime/proc/handle_AI()  // the master AI process
+/mob/living/simple/slime/proc/handle_AI()  // the master AI process
 
 	if(stat == DEAD || client) // If we're dead or have a client, we don't need AI
 		return
@@ -45,12 +45,12 @@
 		else handle_AI()
 	return
 // code blow is how the slime hears things.
-/mob/living/simple_animal/slime/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/simple/slime/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	speech_buffer = list()
 	speech_buffer.Add(speaker)
 	speech_buffer.Add(lowertext(html_decode(message)))
 
-/mob/living/simple_animal/slime/proc/handle_speech()
+/mob/living/simple/slime/proc/handle_speech()
 	var/to_say
 	if (speech_buffer.len > 0)
 		var/who = speech_buffer[1] // Who said it?
@@ -81,7 +81,7 @@
 	if (to_say)
 		say (to_say)
 
-/mob/living/simple_animal/slime/say(var/message) //this cleans up the slimes speak.
+/mob/living/simple/slime/say(var/message) //this cleans up the slimes speak.
 
 	message = sanitize(message)
 	message = capitalize(trim_left(message))
@@ -104,7 +104,7 @@
 
 	return ..(message, null, verb)
 
-/mob/living/simple_animal/slime/attackby(var/obj/item/storage/s, mob/living/user as mob)
+/mob/living/simple/slime/attackby(var/obj/item/storage/s, mob/living/user as mob)
 	if(stat == DEAD) // we don't add things to dead slimes.
 		return
 	if(got_goods == FALSE && istype(s, /obj/item/storage))
@@ -119,7 +119,7 @@
 		to_chat(user, ("[src] looks a little flustered at having TWO things to carry."))
 	else to_chat(user, ("[src] can't seem to carry this."))
 
-/mob/living/simple_animal/slime/attack_hand(mob/living/user as mob)
+/mob/living/simple/slime/attack_hand(mob/living/user as mob)
 	if (got_goods == FALSE && stat != DEAD)
 		to_chat(user, "The [src] nuzzles your hand.")
 		return
@@ -132,25 +132,25 @@
 			add_overlay("aslime-:3")
 			user.visible_message(SPAN_NOTICE("[user] has [src] put the bag down."))
 
-/mob/living/simple_animal/slime/can_force_feed(var/feeder, var/food, var/feedback)
+/mob/living/simple/slime/can_force_feed(var/feeder, var/food, var/feedback)
 	if(feedback)
 		to_chat(feeder, "Where do you intend to put \the [food]? \The [src] doesn't have a mouth!")
 	return 0
 
 
-/mob/living/simple_animal/slime/adultslime
+/mob/living/simple/slime/adultslime
 	health = 200
 	maxHealth = 200
 	icon_state = "grey adult slime"
 
-/mob/living/simple_animal/slime/adult/death()
+/mob/living/simple/slime/adult/death()
 	..()
-	var/mob/living/simple_animal/slime/S1 = new /mob/living/simple_animal/slime (src.loc)
+	var/mob/living/simple/slime/S1 = new /mob/living/simple/slime (src.loc)
 	S1.icon_state = "[src.colour] baby slime"
 	S1.icon_living = "[src.colour] baby slime"
 	S1.icon_dead = "[src.colour] baby slime dead"
 	S1.colour = "[src.colour]"
-	var/mob/living/simple_animal/slime/S2 = new /mob/living/simple_animal/slime (src.loc)
+	var/mob/living/simple/slime/S2 = new /mob/living/simple/slime (src.loc)
 	S2.icon_state = "[src.colour] baby slime"
 	S2.icon_living = "[src.colour] baby slime"
 	S2.icon_dead = "[src.colour] baby slime dead"

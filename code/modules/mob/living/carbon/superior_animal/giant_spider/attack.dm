@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/giant_spider/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/spider/UnarmedAttack(atom/A, proximity)
 	. = ..()
 	if(!.)
 		return
@@ -12,7 +12,7 @@
 				var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
 				L.reagents.add_reagent(poison_type, poison_injected)
 
-/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/UnarmedAttack(atom/A, proximity, allow_attack_build = TRUE)
+/mob/living/carbon/superior/spider/fortress/emperor/UnarmedAttack(atom/A, proximity, allow_attack_build = TRUE)
 	. = ..()
 	if(!.)
 		return

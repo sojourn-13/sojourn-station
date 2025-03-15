@@ -1,5 +1,5 @@
 // This file is for custom drones built using the build_a_drone.dmi file.
-/mob/living/carbon/superior_animal/robot/custom_drone
+/mob/living/carbon/superior/robot/custom_drone
 	name = "Custom Drone"
 	desc = "A custom-built drone. They come in a variety of color and equipment."
 	icon = 'icons/mob/build_a_drone.dmi'
@@ -37,10 +37,10 @@
 	var/left_weapon_type
 	var/list/possible_ranged_attack = list() // List of possible ranged attack that the drone switch between
 
-/mob/living/carbon/superior_animal/robot/custom_drone/New()
+/mob/living/carbon/superior/robot/custom_drone/New()
 	..()
 
-/mob/living/carbon/superior_animal/robot/custom_drone/examine(mob/user)
+/mob/living/carbon/superior/robot/custom_drone/examine(mob/user)
 	..()
 
 	var/right_weapon
@@ -67,7 +67,7 @@
 	if(left_weapon)
 		to_chat(user, SPAN_NOTICE("[src] has a [left_weapon]."))
 
-/mob/living/carbon/superior_animal/robot/custom_drone/update_icon()
+/mob/living/carbon/superior/robot/custom_drone/update_icon()
 	cut_overlays()
 	icon_state = "[chassis]"
 	add_overlay("[radio]")
@@ -79,7 +79,7 @@
 	add_overlay("[left_tool]")
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/custom_drone/proc/customize(_chassis, _radio, _shell, _marks, _screen, _scanner, _right_weapon_type, _left_weapon_type, _right_tool, _left_tool)
+/mob/living/carbon/superior/robot/custom_drone/proc/customize(_chassis, _radio, _shell, _marks, _screen, _scanner, _right_weapon_type, _left_weapon_type, _right_tool, _left_tool)
 	if(!_chassis) // We only check if the chassis is null because it's the base icon. Anything else that is missing in on the coder's fault.
 		chassis = "drone_st"
 	else
@@ -97,7 +97,7 @@
 	update_weaponry()
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/custom_drone/proc/update_weaponry()
+/mob/living/carbon/superior/robot/custom_drone/proc/update_weaponry()
 	possible_ranged_attack = list() // Reset the attacks
 	ranged = initial(ranged)
 
@@ -127,7 +127,7 @@
 		else
 			drop2 = /obj/item/scrap_lump
 
-/mob/living/carbon/superior_animal/robot/custom_drone/OpenFire(target_mob)
+/mob/living/carbon/superior/robot/custom_drone/OpenFire(target_mob)
 	projectiletype = pick(possible_ranged_attack) // Random attack based on what we can do
 	if(projectiletype == /obj/item/projectile/beam) // We attack with the cog, who can fire in bursts
 		rapid = TRUE
@@ -135,7 +135,7 @@
 	..()
 	rapid = FALSE // Reset after the attack is done to preset the spring or flamethrower from shooting in bursts
 
-/mob/living/carbon/superior_animal/robot/custom_drone/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/robot/custom_drone/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 	if(.) // Make sure our attacks hit first.
 		if(left_weapon_type == TOOL_MEDIC) // Do we use chemical attacks?
@@ -151,7 +151,7 @@
 			death()
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/custom_drone/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/custom_drone/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 

@@ -7,13 +7,12 @@
 	icon_state = "pug"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal contractor shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
-	fire_sound = 'sound/weapons/guns/fire/riot_shotgun.ogg' //Meatier sound
+	fire_sound = 'sound/weapons/guns/fire/riot_fire.ogg' //Meatier sound
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/ltrifle_cock.ogg'

@@ -10,17 +10,17 @@
 /turf/simulated/wall,
 /area/deepmaint)
 "ad" = (
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /obj/effect/decal/cleanable/blood,
 /obj/item/tool/knife/hook,
-/mob/living/carbon/superior_animal/roach/roachling,
+/mob/living/carbon/superior/roach/roachling,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "ae" = (
 /obj/machinery/light/small,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /obj/effect/decal/cleanable/blood,
-/mob/living/carbon/superior_animal/roach/roachling,
+/mob/living/carbon/superior/roach/roachling,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "af" = (
@@ -135,7 +135,7 @@
 /area/deepmaint)
 "aI" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_mods,
 /turf/simulated/floor/tiled/cafe,
@@ -157,7 +157,7 @@
 /area/deepmaint)
 "aR" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /obj/random/credits,
 /turf/simulated/floor/wood/wild3,
 /area/deepmaint)
@@ -236,7 +236,7 @@
 "bp" = (
 /obj/structure/table/glass,
 /obj/item/trash/snack_bowl,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/wood/wild3,
 /area/deepmaint)
 "bq" = (
@@ -299,7 +299,7 @@
 /obj/structure/table/standard,
 /obj/machinery/light/floor,
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /obj/random/cloth/gloves,
 /turf/simulated/floor/wood,
 /area/deepmaint)
@@ -360,7 +360,7 @@
 /area/deepmaint)
 "ch" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /obj/random/junkfood/rotten,
 /obj/random/credits,
 /turf/simulated/floor/wood/wild3,
@@ -452,7 +452,7 @@
 /area/deepmaint)
 "oa" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/wood/wild3,
 /area/deepmaint)
 "qY" = (
@@ -583,7 +583,7 @@
 /area/deepmaint)
 "Za" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/wood/wild4,
 /area/deepmaint)
 "ZO" = (

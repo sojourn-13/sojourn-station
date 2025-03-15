@@ -248,21 +248,21 @@
 		if("robot")
 			M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
 		if("cat")
-			M.change_mob_type( /mob/living/simple_animal/cat , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/cat , null, null, delmob )
 		if("runtime")
-			M.change_mob_type( /mob/living/simple_animal/cat/fluff/Runtime , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/cat/fluff/Runtime , null, null, delmob )
 		if("corgi")
-			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
-			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/crab , null, null, delmob )
 		if("coffee")
-			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/crab/Coffee , null, null, delmob )
 		if("parrot")
-			M.change_mob_type( /mob/living/simple_animal/parrot , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/parrot , null, null, delmob )
 		if("polyparrot")
-			M.change_mob_type( /mob/living/simple_animal/parrot/Poly , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/parrot/Poly , null, null, delmob )
 
 
 /datum/admin_topic/unbanf
@@ -1026,8 +1026,8 @@
 		to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
 		return
 
-	if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_l_hand ))
-		if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_r_hand ))
+	if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/snacks/cookie(H), slot_l_hand ))
+		if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/snacks/cookie(H), slot_r_hand ))
 			log_admin("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			message_admins("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			return

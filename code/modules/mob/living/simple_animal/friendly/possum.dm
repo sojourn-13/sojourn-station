@@ -1,5 +1,5 @@
 // The poss itself.
-/mob/living/simple_animal/opossum
+/mob/living/simple/opossum
 	name = "opossum"
 	real_name = "opossum"
 	desc = "It's an opossum, a small scavenging marsupial."
@@ -20,21 +20,21 @@
 	var/play_dead_until = 0
 	var/be_angery_until = 0
 
-/mob/living/simple_animal/opossum/adjustBruteLoss(var/amount,var/include_robo)
+/mob/living/simple/opossum/adjustBruteLoss(var/amount,var/include_robo)
 	. = ..()
 	if(amount >= 3)
 		respond_to_damage()
 
-/mob/living/simple_animal/opossum/adjustFireLoss(var/amount,var/include_robo)
+/mob/living/simple/opossum/adjustFireLoss(var/amount,var/include_robo)
 	. = ..()
 	if(amount >= 3)
 		respond_to_damage()
 
-/mob/living/simple_animal/opossum/lay_down()
+/mob/living/simple/opossum/lay_down()
 	. = ..()
 	update_icon()
 
-/mob/living/simple_animal/opossum/Process()
+/mob/living/simple/opossum/Process()
 	..()
 	if(world.time > be_angery_until && is_angry)
 		is_angry = FALSE
@@ -42,7 +42,7 @@
 		resting = FALSE
 	update_icon()
 
-/mob/living/simple_animal/opossum/proc/respond_to_damage()
+/mob/living/simple/opossum/proc/respond_to_damage()
 	if(!resting && stat == CONSCIOUS)
 		if(!is_angry)
 			visible_message("<b>\The [src]</b> hisses!")
@@ -54,7 +54,7 @@
 			play_dead_until = world.time + rand(1 MINUTE, 2 MINUTES)
 		update_icon()
 
-/mob/living/simple_animal/opossum/update_icon()
+/mob/living/simple/opossum/update_icon()
 	icon_state = initial(icon_state)
 	if(stat == DEAD || (resting && is_angry))
 		icon_state = "[icon_state]_dead"
@@ -64,7 +64,7 @@
 		icon_state = "[icon_state]_aaa"
 
 
-/mob/living/simple_animal/opossum/poppy
+/mob/living/simple/opossum/poppy
 	name = "Poppy the Safety Possum"
 	desc = "It's an opossum, a small scavenging marsupial. It's wearing appropriate personal protective equipment, though."
 	icon_state = "poppy"
@@ -83,7 +83,7 @@
 		"vine"
 	)
 
-/mob/living/simple_animal/opossum/poppy/on_hear_say(mob/living/speaker, message)
+/mob/living/simple/opossum/poppy/on_hear_say(mob/living/speaker, message)
 	message = lowertext(message)
 	for(var/aaa in aaa_words)
 		if(findtext(message, aaa))

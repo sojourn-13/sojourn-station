@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency: gen-docs
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
@@ -28,10 +28,10 @@ jobs:
           touch dmdoc/.nojekyll
           echo codedocs.cev-eris.net > dmdoc/CNAME
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
-          BRANCH: gh-pages
-          CLEAN: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SINGLE_COMMIT: true
-          FOLDER: dmdoc
+          branch: gh-pages
+          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          single-commit: true
+          folder: dmdoc

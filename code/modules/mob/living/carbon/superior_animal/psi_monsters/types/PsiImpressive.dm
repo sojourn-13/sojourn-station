@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth
+/mob/living/carbon/superior/psi/flesh_behemoth
 	name = "flesh behemoth"
 	desc = "Hunger, hunger for meat. Meat meat meat. It comes, impossibly strong and looking to devour everything in its path, a wicked blade of bone ready to slice you apart. Its ability to regenerate \
 	from even the most disgusting wounds requires you to bring light to stall its power."
@@ -22,7 +22,7 @@
 	armor_divisor = 1
 
 
-/mob/living/carbon/superior_animal/psi_monster/mind_gazer
+/mob/living/carbon/superior/psi/mind_gazer
 	name = "mind gazer"
 	desc = "One of the most twisted creatures in this other world, its origin unknown, but its nightmarish speed and strength are to be greatly feared."
 	icon_state = "eelo"
@@ -44,7 +44,7 @@
 	stat_to_steal = STAT_VIG
 	steal_amount = -4
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo
+/mob/living/carbon/superior/psi/pus_maggot/ash_wendigo
 	name = "ash wendigo"
 	desc = "Rage given form, agonized and seeking to punish others for its fate. With skull wreathed in fire, it comes for you."
 	icon_state = "guardA"
@@ -65,7 +65,7 @@
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_divisor = 1.5
 
-/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher
+/mob/living/carbon/superior/psi/cerebral_crusher
 	name = "cerebral crusher"
 	desc = "A hulking creature of bone, powerful and ponderous in its strength, its claws are coated in toxins that weaken the mind, its touch draining and its ability to rend flesh, murderous."
 	icon_state = "farartbot"
@@ -84,7 +84,7 @@
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_divisor = 1.3
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly
+/mob/living/carbon/superior/psi/wasonce/crimson_jelly
 	name = "crimson jelly"
 	desc = "A genetic abomination left to rot, midway through the transformation into something far worse. The end result of horrible creatures left to gestate instead of being properly purged. \
 	It hungers for form and its body may spread its genetic instability, but at least through it, has weakened over time."
@@ -108,7 +108,7 @@
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
 	armor_divisor = 2.3
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
+/mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
 	desc = "Left to fester, to grow, to mutate into a terrible thing of eyes and teeth. What never should have been, twisted into something unbearable to the minds of men. It comes and brings \
 	mutating horror in its wake. Only the light may halt its unnatural regeneration."
@@ -122,38 +122,38 @@
 	armor_divisor = 4
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
-/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron
+/mob/living/carbon/superior/psi/flesh_behemoth/baron
 	name = "Baron Wormwood"
 	desc = "He sings for meat, for piles and piles of flesh heaped onto a rotting table for his greedy maw to consume all manner of ripened offal."
 	emote_see = list("chuckles lowly, split bleeding lips cracking into a pleased leer.", "murmurs, \"So troubling, so troubling, more gore for the pile but they bring so many toys...\"", "snorts, \"Too many butchers, not enough bakers.\"")
 	death_gasp = "<b><font size='3px'>Baron Wormwood heaves as his body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 
-/mob/living/carbon/superior_animal/psi_monster/mind_gazer/viscount
+/mob/living/carbon/superior/psi/mind_gazer/viscount
 	name = "Viscount Mannimarcus"
 	desc = "His all seeing eye has let its gaze fall upon you."
 	emote_see = list("chitters in song.", "rasps, \"I told the King they would come, but his arrogance led to nothing being done.\"", "sighs wearily, \"We must be ever vigil.\"")
 
-/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/duke
+/mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/duke
 	name = "Duke Ravencroft"
 	desc = "He comes to protect his king. Is it out of loyalty or simply the chance to kill?"
 	emote_see = list("growls quietly.", "hisses, \"The King is dead, long live the King.\"", "yells, \"Ashes! Ashes and dust, all of you!\"")
 
-/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/marshal
+/mob/living/carbon/superior/psi/cerebral_crusher/marshal
 	name = "Marshal Benedictus"
 	desc = "He shall pry your secrets from your flesh and slice your mind to colorful bloodied ribbons."
 	emote_see = list("knocks a closed fist on his bone plates.", "mutters, \"They call themselves marshals, yet with no court? Hmph!\"", "grinds his knuckles along the ground, \"Not a loss, not a loss at all.\"")
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/jester
+/mob/living/carbon/superior/psi/wasonce/crimson_jelly/jester
 	name = "Red Jester Thomas"
 	desc = "He laughed, even at the end."
 	emote_see = list("laughs in a chorus of voices!", "giggles madly!", "howls with laughter!")
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror/steward
+/mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror/steward
 	name = "Steward Kerevork"
 	desc = "Enslavement."
 	emote_see = list("moans, \"There was no escape.\"", "sighs, \"I have no regrets, I went with a clear conscience.\"", "groans, \"If only we could have forseen this.\"")
 
-/mob/living/carbon/superior_animal/psi_monster/licker/pack
+/mob/living/carbon/superior/psi/licker/pack
 	name = "pack runners"
 	desc = "The hound of the crown's pack, loyal and deadly, they've learned to meld into each other, weaving themselves like smoke between the hound and you. Even the Hound has his servants."
 	density = FALSE

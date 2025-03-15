@@ -1,4 +1,4 @@
-/obj/item/gun/projectile/automatic/buff_autoshotgun
+/obj/item/gun/projectile/shotgun/buffalo
 	name = "\"Buffalo\" tactical shotgun" //With correct mods this can be better then the pug
 	desc = "Lightweight, ergonomic and with a fast cycling speed, this semi-automatic shotgun is a breacher's dream. \
 	The internal components are a work of art, able to operate smoothly no matter the circumstance. \
@@ -11,15 +11,11 @@
 	max_shells = 8
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	flags = CONDUCT
-	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = EJECT_CASINGS
 	fire_sound = 'sound/weapons/guns/fire/buffalo.ogg'
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 800
 	penetration_multiplier = 1.5

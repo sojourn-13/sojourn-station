@@ -4,7 +4,7 @@
 #define SPINNING_COCOON 4
 
 //nursemaids - these create webs and eggs
-/mob/living/carbon/superior_animal/giant_spider/nurse
+/mob/living/carbon/superior/spider/nurse
 	name = "nurse spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
 	icon_state = "nurse"
@@ -16,7 +16,7 @@
 	poison_per_bite = 2
 	var/atom/cocoon_target
 	poison_type = "stoxin"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/nurse
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
@@ -27,7 +27,7 @@
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
 	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/midwife
+/mob/living/carbon/superior/spider/nurse/midwife
 	name = "midwife spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
 	icon_state = "midwife"
@@ -38,9 +38,9 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	egg_inject_chance = 5 //Yes
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/midwife
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider
+/mob/living/carbon/superior/spider/nurse/cave_spider
 	name = "cave spider"
 	desc = "Furry and white, it makes you shudder to look at it. This one has brilliant blue eyes and a pale cold body."
 	icon_state = "nurse_E"
@@ -52,9 +52,9 @@
 	poison_per_bite = 4
 	poison_type = "frostoil"
 	move_to_delay = 5 // Very slow
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/cave_spider
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/carrier
+/mob/living/carbon/superior/spider/nurse/carrier
 	name = "carrier spider"
 	desc = "Furry and tan, it makes you shudder to look at it. This one has brilliant green eyes, its body swollen with pulsating eggs."
 	icon_state = "carrier"
@@ -64,7 +64,7 @@
 	var/has_made_spiderlings = FALSE
 	move_to_delay = 5 //Has babys on it!
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
+/mob/living/carbon/superior/spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)
@@ -81,7 +81,7 @@
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver
+/mob/living/carbon/superior/spider/nurse/orb_weaver
 	name = "orb weaver spider"
 	desc = "Furry and green, it makes you shudder to look at it. This one has lots of energy and even more webs covering its body."
 	icon_state = "webslinger"
@@ -90,7 +90,7 @@
 	web_activity = 70
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/recluse
+/mob/living/carbon/superior/spider/nurse/recluse
 	name = "recluse spider"
 	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
 	icon_state = "recluse"
@@ -100,7 +100,7 @@
 	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/recluse
 	meat_amount = 2
 	egg_inject_chance = 15 //Defiently
 	move_to_delay = 5 // Very slow do to being 1 hit unfun
@@ -108,7 +108,7 @@
 	poison_type = "zombiepowder"
 	armor_divisor = 3
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen
+/mob/living/carbon/superior/spider/nurse/queen
 	name = "empress spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
 	icon = 'icons/mob/64x64.dmi'
@@ -120,7 +120,7 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/queen
+	meat_type = /obj/item/reagent_containers/snacks/meat/spider/queen
 	meat_amount = 3
 	flash_resistances = 5 //For balance against are speedy fello
 	egg_inject_chance = 10 //Likely
@@ -131,12 +131,12 @@
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	armor_divisor = 2
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
+/mob/living/carbon/superior/spider/nurse/queen/New()
 	..()
 	pixel_x = -16
 	pixel_y = null
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
+/mob/living/carbon/superior/spider/nurse/UnarmedAttack()
 	..()
 
 	var/atom/targetted_mob = (target_mob?.resolve())
@@ -151,7 +151,7 @@
 				S.loc = O
 				O.implants += S
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/proc/GiveUp(var/C)
+/mob/living/carbon/superior/spider/nurse/proc/GiveUp(var/C)
 	spawn(100)
 		if(busy == MOVING_TO_TARGET)
 			if(cocoon_target == C && get_dist(src,cocoon_target) > 1)
@@ -159,7 +159,7 @@
 				busy = 0
 				stop_automated_movement = 0
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/handle_ai()
+/mob/living/carbon/superior/spider/nurse/handle_ai()
 	..()
 	if(stance == HOSTILE_STANCE_IDLE)
 		//30% or 90% chance to stop wandering and do something

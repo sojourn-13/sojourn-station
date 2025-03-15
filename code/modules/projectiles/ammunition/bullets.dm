@@ -815,6 +815,9 @@
 	color = "#FF0000"
 	projectile_type = /obj/item/projectile/bullet/cap
 
+/obj/item/ammo_casing/cap/prespawned
+	amount = 15
+
 /obj/item/ammo_casing/laser_223
 	name = "laser casing"
 	desc = "A .223 pulse charged laser cavity."

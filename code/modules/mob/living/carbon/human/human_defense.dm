@@ -38,7 +38,7 @@ uniquic_armor_act
 		//Shrapnel
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
-			if(prob((20 + max(P.damage_types[BRUTE] - (armor * 4), -10) * P.embed_mult)))
+			if(prob((10 + max(P.damage_types[BRUTE] - (armor * (3 - P.wounding_mult)), -10) * P.embed_mult))) //Good/high armor can fully protect against sharpnal
 				if(!P.shrapnel_type)
 					var/obj/item/material/shard/shrapnel/SP = new()
 					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
@@ -113,22 +113,65 @@ uniquic_armor_act
 	return (armorval/max(total, 1))
 
 /mob/living/carbon/human/getarmorablative(var/def_zone, var/type)
-
+	var/total = 0
 	var/obj/item/rig/R = get_equipped_item(slot_back)
 	if(istype(R))
 		if(R.ablative_armor && (type in list(ARMOR_MELEE, ARMOR_BULLET, ARMOR_ENERGY, ARMOR_BOMB)))
-			return R.ablative_armor
-	return FALSE
+			total += R.ablative_armor
+
+	total += mob_ablative_armor
+	//Blocking gives of affectively free armor based on TGH + item in hand
+	if(blocking)
+		var/item_punishment = 0
+
+		if(get_active_hand())//are we blocking with an item?
+			var/obj/item/I = get_active_hand()
+			if(istype(I))
+				if(I.force)
+					var/math_var = clamp(0, (I.force * 0.05) + (I.w_class * 0.5), 10)
+					total += math_var
+					item_punishment = clamp(0, math_var, 8)
+
+		if(stats.getStat(STAT_TGH) > 0)
+			total += clamp(0, round(stats.getStat(STAT_TGH)/(12 + item_punishment)), 10)
+
+	if(stats.getPerk(PERK_OVERBREATH))
+		var/health_deficiency = (maxHealth - health)
+		//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
+		if(health_deficiency > 0)
+			//Less scailing but still noticeable
+			total += (health_deficiency * 0.015)
+		else
+			//When we are closer to death.
+			total -= (health_deficiency * 0.018)
+
+	if(stats.getPerk(PERK_RESILIENCE))
+		total += 3 //smoll universal armor boost
+
+	if(stats.getPerk(PERK_TANK_RESILIENCE))
+		var/slown_down = movement_delay()
+		if(slown_down > 0)
+			total += slown_down * 0.5 //Anti-Scaling as you can get a lot of slowdown fast
+
+
+	return total
 
 //Returns true if the ablative armor successfully took damage
 /mob/living/carbon/human/damageablative(var/def_zone, var/damage_taken)
-
+	var/damaged_armor = FALSE
+	//Rig ablative armor goes first
 	var/obj/item/rig/R = get_equipped_item(slot_back)
 	if(istype(R))
 		if(R.ablative_armor)
 			R.ablative_armor = max(R.ablative_armor - damage_taken / R.ablation, 0)
-			return TRUE
-	return FALSE
+			damage_taken = max(damage_taken / R.ablation, 0)
+			damaged_armor = TRUE
+
+	if(mob_ablative_armor && damage_taken > 0)
+		mob_ablative_armor = max(mob_ablative_armor - damage_taken / ablative_retaining, 0)
+		damaged_armor = TRUE
+
+	return damaged_armor
 
 //this proc returns the Siemens coefficient of electrical resistivity for a particular external organ.
 /mob/living/carbon/human/proc/get_siemens_coefficient_organ(obj/item/organ/external/def_zone)
@@ -609,22 +652,22 @@ uniquic_armor_act
 		//message_admins("bluecross_regaloutfit (Pass)")
 		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
 		var/list/mobs_we_hitless = list(
-			/mob/living/carbon/superior_animal/robot,
-			/mob/living/simple_animal/hostile/hivebot,
+			/mob/living/carbon/superior/robot,
+			/mob/living/simple/hostile/hivebot,
 			/obj/machinery/porta_turret,
 			/obj/machinery/power/os_turret,
-			/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant,
-			/mob/living/simple_animal/hostile/megafauna/one_star,
-			/mob/living/simple_animal/hostile/republicon,
-			/mob/living/carbon/superior_animal/sentinal_seeker,
-			/mob/living/carbon/superior_animal/roach/elektromagnetisch, //beep boop
-			/mob/living/carbon/superior_animal/roach/nanite,
-			/mob/living/simple_animal/hostile/naniteswarm,
-			/mob/living/simple_animal/hostile/commanded/nanomachine,
-			/mob/living/simple_animal/hostile/viscerator,
+			/mob/living/simple/hostile/megafauna/hivemind_tyrant,
+			/mob/living/simple/hostile/megafauna/one_star,
+			/mob/living/simple/hostile/republicon,
+			/mob/living/carbon/superior/sentinal_seeker,
+			/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
+			/mob/living/carbon/superior/roach/nanite,
+			/mob/living/simple/hostile/naniteswarm,
+			/mob/living/simple/hostile/commanded/nanomachine,
+			/mob/living/simple/hostile/viscerator,
 			/mob/living/silicon,
-			/mob/living/simple_animal/hostile/hivemind,
-			/mob/living/simple_animal/hostile/retaliate/malf_drone
+			/mob/living/simple/hostile/hivemind,
+			/mob/living/simple/hostile/retaliate/malf_drone
 			)
 		if(A)
 			if(istype(A, /obj/item/projectile))

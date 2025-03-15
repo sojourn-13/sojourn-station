@@ -16,7 +16,7 @@
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1000
-	fire_sound = 'sound/weapons/guns/fire/ak.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ak_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
@@ -79,7 +79,7 @@
 	icon = 'icons/obj/guns/projectile/saiga12.dmi'
 	icon_state = "saiga"
 	item_state = "saiga"
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/saiga_fire.ogg'
 	excelsior = TRUE
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
@@ -224,7 +224,7 @@
 /obj/item/gun/projectile/automatic/underslung/shotgun_3
 	name = "built in shotgun"
 	desc = "Not much more than a tube and a firing mechanism, this shotgun is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null

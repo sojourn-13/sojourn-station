@@ -1,5 +1,6 @@
-/mob/living/carbon/superior_animal/vox
-	name = "Matasa sojoji"
+//Bronze Bird - Bronze Bird
+/mob/living/carbon/superior/vox
+	name = "Bronzosko Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects."
 	icon_state = "vox_marsmud"
 	icon = 'icons/mob/mobs-voxy.dmi'
@@ -14,7 +15,7 @@
 	emote_see = list("looks around for a target.")
 	attacktext = "claws"
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken/vox
+	meat_type = /obj/item/reagent_containers/snacks/meat/chicken/vox
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
@@ -30,16 +31,18 @@
 
 	melee_sharp = TRUE //Claws
 	armor_divisor = 1.25
+	fancy_attack_overlay = "claw_attack_flick"
+	fancy_attack_shading = "#FFFFFF"
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/low = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/low = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/low = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/young = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/old = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutal = 3,
+		/datum/stat_modifier/mob/living/carbon/superior/deadeye = 6,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 5,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 		/datum/stat_modifier/mob/living/speed/flat/negative/low = 5,
 	)

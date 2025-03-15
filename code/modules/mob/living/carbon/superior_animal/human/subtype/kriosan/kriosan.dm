@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/rebel
+/mob/living/carbon/superior/human/rebel
 	name = "Rebel Trooper"
 	desc = "A mid-height Kriosian in heavy, battle scarred armor in the colors of the Kriosian Rebels. This one sporting a simple Strelki rifle and rig for extra ammo."
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -48,7 +48,7 @@
 	min_bodytemperature = 0
 	faction = "excelsior" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
-/mob/living/carbon/superior_animal/human/rebel/shield
+/mob/living/carbon/superior/human/rebel/shield
 	name = "Rebel Shield Trooper"
 	desc = "A mid-height Kriosian in heavy, battle scarred armor in the colors of the Kriosian Rebels. This one sporting a ballistic riot shield and an SMG along with his insignia marked heavy rig."
 	icon_state = "kriosan_troop_riot"
@@ -72,7 +72,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 
-/mob/living/carbon/superior_animal/human/rebel/heavy
+/mob/living/carbon/superior/human/rebel/heavy
 	name = "Rebel Heavy Trooper"
 	desc = "A mid-height Kriosian in heavy, battle scarred armor in the colors of the Kriosian Rebels. This one sporting a Fenrir heavy chaingun and a bandolier of ammo over his chest."
 	icon_state = "kriosan_troop_chaingun"

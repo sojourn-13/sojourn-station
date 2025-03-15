@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/psi_monster/dreaming_king
+/mob/living/carbon/superior/psi/dreaming_king
 	name = "Dreaming King"
 	desc = "The Dreaming King, named by the first psion who saw it through a drug induced haze. Thought first to be merely the creation of a fever dream until sojourns into deep maintenance revealed him \
 	to be a nightmare come to life. Only one may live at any one time, the king of the other world roams deep maintenance and woe to anyone that would try to take his crown."
@@ -32,7 +32,7 @@
 	respawn_mob_type = /obj/random/cluster/psi_monster
 	affects_chaos = TRUE
 
-/mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
+/mob/living/carbon/superior/psi/dreaming_king/hound_crown
 	name = "Hound of the Crown"
 	desc = "The faithful hound of the dreaming king, a terrible and nightmarish outsider that pursues intruders into the king's realm. At the behest of the king's decree, it has adapted to render psions \
 	into powerless nulls. After all, they are the most common thieves in this other wordly realm."

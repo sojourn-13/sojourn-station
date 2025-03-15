@@ -39,28 +39,28 @@
 
 	products = list(
 		/obj/item/clothing/mask/smokable/cigarette/os = 12,
-		/obj/item/reagent_containers/food/drinks/os_coffee = 12,
-		/obj/item/reagent_containers/food/snacks/openable/os_soypack = 6,
-		/obj/item/reagent_containers/food/snacks/openable/os_bun = 6,
-		/obj/item/reagent_containers/food/snacks/openable/os_meat = 6,
-		/obj/item/reagent_containers/food/snacks/openable/candy/os = 6,
-		/obj/item/reagent_containers/food/snacks/openable/mre/os = 6,
-		/obj/item/reagent_containers/food/snacks/os_paste = 3,
-		/obj/item/reagent_containers/food/snacks/openable/os_heart = 2,
-		/obj/item/reagent_containers/food/snacks/openable/os_liver = 2
+		/obj/item/reagent_containers/drinks/os_coffee = 12,
+		/obj/item/reagent_containers/snacks/openable/os_soypack = 6,
+		/obj/item/reagent_containers/snacks/openable/os_bun = 6,
+		/obj/item/reagent_containers/snacks/openable/os_meat = 6,
+		/obj/item/reagent_containers/snacks/openable/candy/os = 6,
+		/obj/item/reagent_containers/snacks/openable/mre/os = 6,
+		/obj/item/reagent_containers/snacks/os_paste = 3,
+		/obj/item/reagent_containers/snacks/openable/os_heart = 2,
+		/obj/item/reagent_containers/snacks/openable/os_liver = 2
 		)
 
 	prices = list(
 		/obj/item/clothing/mask/smokable/cigarette/os = 5,
-		/obj/item/reagent_containers/food/drinks/os_coffee = 7,
-		/obj/item/reagent_containers/food/snacks/openable/os_soypack = 60,
-		/obj/item/reagent_containers/food/snacks/openable/os_bun = 30,
-		/obj/item/reagent_containers/food/snacks/openable/os_meat = 75,
-		/obj/item/reagent_containers/food/snacks/openable/candy/os = 50,
-		/obj/item/reagent_containers/food/snacks/openable/mre/os = 65,
-		/obj/item/reagent_containers/food/snacks/os_paste = 80,
-		/obj/item/reagent_containers/food/snacks/openable/os_heart = 200,
-		/obj/item/reagent_containers/food/snacks/openable/os_liver = 120
+		/obj/item/reagent_containers/drinks/os_coffee = 7,
+		/obj/item/reagent_containers/snacks/openable/os_soypack = 60,
+		/obj/item/reagent_containers/snacks/openable/os_bun = 30,
+		/obj/item/reagent_containers/snacks/openable/os_meat = 75,
+		/obj/item/reagent_containers/snacks/openable/candy/os = 50,
+		/obj/item/reagent_containers/snacks/openable/mre/os = 65,
+		/obj/item/reagent_containers/snacks/os_paste = 80,
+		/obj/item/reagent_containers/snacks/openable/os_heart = 200,
+		/obj/item/reagent_containers/snacks/openable/os_liver = 120
 		)
 
 /obj/machinery/vending/one_star/health

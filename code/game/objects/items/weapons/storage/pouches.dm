@@ -465,7 +465,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/ammo_magazine/speed_loader_shotgun,
 		/obj/item/ammo_casing/grenade,
 		/obj/item/device/flash,
-		/obj/item/reagent_containers/food/snacks/openable/tastybread
+		/obj/item/reagent_containers/snacks/openable/tastybread
 		)
 
 /obj/item/storage/pouch/tubular/vial
@@ -490,7 +490,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	max_w_class = ITEM_SIZE_TINY
 
 	can_hold = list(
-		/obj/item/reagent_containers/food/snacks/cube/gun,
+		/obj/item/reagent_containers/snacks/cube/gun,
 		)
 
 /obj/item/storage/pouch/grow_a_gun/New()
@@ -498,7 +498,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 
 /obj/item/storage/pouch/grow_a_gun/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/snacks/cube/gun(src)
+		new /obj/item/reagent_containers/snacks/cube/gun(src)
 	update_icon()
 
 /obj/item/storage/pouch/grow_a_gun/update_icon()
@@ -721,10 +721,10 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/reagent_containers/food/snacks/openable/tastybread,
-		/obj/item/reagent_containers/food/snacks/baguette,
+		/obj/item/reagent_containers/snacks/openable/tastybread,
+		/obj/item/reagent_containers/snacks/baguette,
 		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/food/drinks/cans,
+		/obj/item/reagent_containers/drinks/cans,
 		/obj/item/gun/projectile/boltgun/flare_gun
 		)
 

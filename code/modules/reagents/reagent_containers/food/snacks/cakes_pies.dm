@@ -1,9 +1,9 @@
-/obj/item/reagent_containers/food/snacks/sliceable/applecake
+/obj/item/reagent_containers/snacks/applecake
 	name = "apple cake"
 	desc = "A cake centred with apple."
 	icon_state = "applecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/applecakeslice
+	slice_path = /obj/item/reagent_containers/snacks/applecakeslice
 	slices_num = 5
 	filling_color = "#EBF5B8"
 	center_of_mass = list("x"=16, "y"=10)
@@ -11,7 +11,7 @@
 	nutriment_amt = 15
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/applecakeslice
+/obj/item/reagent_containers/snacks/applecakeslice
 	name = "apple cake slice"
 	desc = "A slice of apple cake."
 	icon_state = "applecakeslice"
@@ -24,12 +24,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/birthdaycake
+/obj/item/reagent_containers/snacks/birthdaycake
 	name = "birthday cake"
 	desc = "A cake noting the date of birth, typically the candle is not eaten."
 	icon_state = "birthdaycake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/birthdaycakeslice
+	slice_path = /obj/item/reagent_containers/snacks/birthdaycakeslice
 	slices_num = 5
 	filling_color = "#FFD6D6"
 	bitesize = 3
@@ -39,7 +39,7 @@
 	preloaded_reagents = list("sprinkles" = 10)
 	matter = list(MATERIAL_BIOMATTER = 45)
 
-/obj/item/reagent_containers/food/snacks/birthdaycakeslice
+/obj/item/reagent_containers/snacks/birthdaycakeslice
 	name = "birthday cake slice"
 	desc = "A slice of birthday cake."
 	icon_state = "birthdaycakeslice"
@@ -51,12 +51,12 @@
 	preloaded_reagents = list("nutriment" = 4, "sprinkles" = 2)
 	matter = list(MATERIAL_BIOMATTER = 9)
 
-/obj/item/reagent_containers/food/snacks/sliceable/carrotcake
+/obj/item/reagent_containers/snacks/carrotcake
 	name = "carrot cake"
 	desc = "A cake made with carrots."
 	icon_state = "carrotcake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/carrotcakeslice
+	slice_path = /obj/item/reagent_containers/snacks/carrotcakeslice
 	slices_num = 5
 	filling_color = "#FFD675"
 	bitesize = 2
@@ -66,7 +66,7 @@
 	preloaded_reagents = list("imidazoline" = 10)
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/carrotcakeslice
+/obj/item/reagent_containers/snacks/carrotcakeslice
 	name = "carrot cake slice"
 	desc = "Carrotty slice of carrot cake."
 	icon_state = "carrotcake_slice"
@@ -81,12 +81,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/braincake
+/obj/item/reagent_containers/snacks/braincake
 	name = "brain cake"
 	desc = "A squishy cake-thing."
 	icon_state = "braincake"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/braincakeslice
+	slice_path = /obj/item/reagent_containers/snacks/braincakeslice
 	slices_num = 5
 	filling_color = "#E6AEDB"
 	center_of_mass = list("x"=16, "y"=10)
@@ -96,7 +96,7 @@
 	preloaded_reagents = list("protein" = 25, "alkysine" = 10)
 	matter = list(MATERIAL_BIOMATTER = 60)
 
-/obj/item/reagent_containers/food/snacks/braincakeslice
+/obj/item/reagent_containers/snacks/braincakeslice
 	name = "brain cake slice"
 	desc = "A slice of squishy cake-thing" //Lemme tell you something about prions. THEY'RE DELICIOUS
 	icon_state = "braincakeslice"
@@ -108,12 +108,12 @@
 	preloaded_reagents = list("protein" = 5, "nutriment" = 1, "alkysine" = 2)
 	matter = list(MATERIAL_BIOMATTER = 12)
 
-/obj/item/reagent_containers/food/snacks/sliceable/cheesecake
+/obj/item/reagent_containers/snacks/cheesecake
 	name = "cheese cake"
 	desc = "A heavy cake made with cheese."
 	icon_state = "cheesecake"
 	taste_tag = list(CHEESE_FOOD, SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/cheesecakeslice
+	slice_path = /obj/item/reagent_containers/snacks/cheesecakeslice
 	slices_num = 5
 	filling_color = "#FAF7AF"
 	center_of_mass = list("x"=16, "y"=10)
@@ -123,7 +123,7 @@
 	preloaded_reagents = list("protein" = 15)
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/cheesecakeslice
+/obj/item/reagent_containers/snacks/cheesecakeslice
 	name = "cheese cake slice"
 	desc = "A slice of cheese cake."
 	icon_state = "cheesecake_slice"
@@ -136,12 +136,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/plaincake
+/obj/item/reagent_containers/snacks/plaincake
 	name = "vanilla cake"
 	desc = "A plain cake."
 	icon_state = "plaincake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/plaincakeslice
+	slice_path = /obj/item/reagent_containers/snacks/plaincakeslice
 	slices_num = 5
 	filling_color = "#F7EDD5"
 	center_of_mass = list("x"=16, "y"=10)
@@ -149,7 +149,7 @@
 	nutriment_amt = 20
 	matter = list(MATERIAL_BIOMATTER = 20)
 
-/obj/item/reagent_containers/food/snacks/plaincakeslice
+/obj/item/reagent_containers/snacks/plaincakeslice
 	name = "vanilla cake slice"
 	desc = "A slice of cake."
 	icon_state = "plaincake_slice"
@@ -162,12 +162,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 4)
 
-/obj/item/reagent_containers/food/snacks/sliceable/orangecake
+/obj/item/reagent_containers/snacks/orangecake
 	name = "orange cake"
 	desc = "A cake with added orange."
 	icon_state = "orangecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/orangecakeslice
+	slice_path = /obj/item/reagent_containers/snacks/orangecakeslice
 	slices_num = 5
 	filling_color = "#FADA8E"
 	center_of_mass = list("x"=16, "y"=10)
@@ -175,7 +175,7 @@
 	nutriment_amt = 20
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/orangecakeslice
+/obj/item/reagent_containers/snacks/orangecakeslice
 	name = "orange cake slice"
 	desc = "A slice of orange cake."
 	icon_state = "orangecake_slice"
@@ -188,12 +188,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/limecake
+/obj/item/reagent_containers/snacks/limecake
 	name = "lime cake"
 	desc = "A cake with added lime."
 	icon_state = "limecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/limecakeslice
+	slice_path = /obj/item/reagent_containers/snacks/limecakeslice
 	slices_num = 5
 	filling_color = "#CBFA8E"
 	center_of_mass = list("x"=16, "y"=10)
@@ -201,7 +201,7 @@
 	nutriment_amt = 20
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/limecakeslice
+/obj/item/reagent_containers/snacks/limecakeslice
 	name = "lime cake slice"
 	desc = "A slice of lime cake."
 	icon_state = "limecake_slice"
@@ -214,12 +214,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/lemoncake
+/obj/item/reagent_containers/snacks/lemoncake
 	name = "lemon cake"
 	desc = "A cake with added lemon."
 	icon_state = "lemoncake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/lemoncakeslice
+	slice_path = /obj/item/reagent_containers/snacks/lemoncakeslice
 	slices_num = 5
 	filling_color = "#FAFA8E"
 	center_of_mass = list("x"=16, "y"=10)
@@ -227,7 +227,7 @@
 	nutriment_amt = 20
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/lemoncakeslice
+/obj/item/reagent_containers/snacks/lemoncakeslice
 	name = "lemon cake slice"
 	desc = "A slice of lemon cake."
 	icon_state = "lemoncake_slice"
@@ -240,12 +240,12 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
-/obj/item/reagent_containers/food/snacks/sliceable/chocolatecake
+/obj/item/reagent_containers/snacks/chocolatecake
 	name = "chocolate cake"
 	desc = "A cake with added chocolate."
 	icon_state = "chocolatecake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD, COCO_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/chocolatecakeslice
+	slice_path = /obj/item/reagent_containers/snacks/chocolatecakeslice
 	slices_num = 5
 	filling_color = "#805930"
 	center_of_mass = list("x"=16, "y"=10)
@@ -253,7 +253,7 @@
 	nutriment_amt = 20
 	matter = list(MATERIAL_BIOMATTER = 30)
 
-/obj/item/reagent_containers/food/snacks/chocolatecakeslice
+/obj/item/reagent_containers/snacks/chocolatecakeslice
 	name = "chocolate cake slice"
 	desc = "A slice of chocolate cake."
 	icon_state = "chocolatecake_slice"
@@ -266,20 +266,20 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
-/obj/item/reagent_containers/food/snacks/sliceable/brownie
+/obj/item/reagent_containers/snacks/brownie
 	name = "brownies"
 	desc = "A huge rectangular brownie ready to be sliced and shared."
 	icon_state = "brownies"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD, COCO_FOOD)
 	trash = /obj/item/trash/waffles
 	filling_color = "#362008"
-	slice_path = /obj/item/reagent_containers/food/snacks/brownieslice
+	slice_path = /obj/item/reagent_containers/snacks/brownieslice
 	slices_num = 5
 	nutriment_amt = 20
 	nutriment_desc = list("buttery goodness" = 10, "sweetness" = 10, "chocolate" = 15)
 	matter = list(MATERIAL_BIOMATTER = 30)
 
-/obj/item/reagent_containers/food/snacks/brownieslice
+/obj/item/reagent_containers/snacks/brownieslice
 	name = "brownie slice"
 	desc = "A buttery chocolate brownie."
 	icon_state = "brownieslice"
@@ -294,12 +294,12 @@
 
 ///////////////Pies//////////////
 
-/obj/item/reagent_containers/food/snacks/sliceable/pumpkinpie
+/obj/item/reagent_containers/snacks/pumpkinpie
 	name = "pumpkin pie"
 	desc = "A seasonal treat for the autumn months."
 	icon_state = "pumpkinpie"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/food/snacks/pumpkinpieslice
+	slice_path = /obj/item/reagent_containers/snacks/pumpkinpieslice
 	slices_num = 5
 	filling_color = "#F5B951"
 	center_of_mass = list("x"=16, "y"=10)
@@ -307,7 +307,7 @@
 	nutriment_amt = 15
 	matter = list(MATERIAL_BIOMATTER = 25)
 
-/obj/item/reagent_containers/food/snacks/pumpkinpieslice
+/obj/item/reagent_containers/snacks/pumpkinpieslice
 	name = "pumpkin pie slice"
 	desc = "A slice of pumpkin pie, with whipped cream on top."
 	icon_state = "pumpkinpieslice"
@@ -321,7 +321,7 @@
 	matter = list(MATERIAL_BIOMATTER = 5)
 
 
-/obj/item/reagent_containers/food/snacks/pie
+/obj/item/reagent_containers/snacks/pie
 	name = "banana cream pie"
 	desc = "A banana cream pie ready for an afternoon snack or to be used as a prop for an act."
 	icon_state = "pie"
@@ -336,7 +336,7 @@
 	matter = list(MATERIAL_BIOMATTER = 15)
 	cooked = TRUE
 
-/obj/item/reagent_containers/food/snacks/pie/throw_impact(atom/hit_atom)
+/obj/item/reagent_containers/snacks/pie/throw_impact(atom/hit_atom)
 	..()
 	new/obj/effect/decal/cleanable/pie_smudge(src.loc)
 	src.visible_message(
@@ -345,7 +345,7 @@
 	)
 	qdel(src)
 
-/obj/item/reagent_containers/food/snacks/berryclafoutis
+/obj/item/reagent_containers/snacks/berryclafoutis
 	name = "berry clafoutis"
 	desc = "A pie made with berries."
 	icon_state = "berryclafoutis"
@@ -359,7 +359,7 @@
 	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
-/obj/item/reagent_containers/food/snacks/applepie
+/obj/item/reagent_containers/snacks/applepie
 	name = "apple pie"
 	desc = "A pie containing apple."
 	icon_state = "applepie"
@@ -372,7 +372,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 9)
 
-/obj/item/reagent_containers/food/snacks/cherrypie
+/obj/item/reagent_containers/snacks/cherrypie
 	name = "cherry pie"
 	desc = "A pie containing cherries."
 	icon_state = "cherrypie"
@@ -385,7 +385,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 9)
 
-/obj/item/reagent_containers/food/snacks/meatpie
+/obj/item/reagent_containers/snacks/meatpie
 	name = "meat pie"
 	icon_state = "meatpie"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
@@ -398,7 +398,7 @@
 	matter = list(MATERIAL_BIOMATTER = 22)
 	cooked = TRUE
 
-/obj/item/reagent_containers/food/snacks/tofupie
+/obj/item/reagent_containers/snacks/tofupie
 	name = "tofu-pie"
 	icon_state = "meatpie"
 	taste_tag = list(BLAND_FOOD, FLOURY_FOOD)
@@ -412,7 +412,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 12)
 
-/obj/item/reagent_containers/food/snacks/amanita_pie
+/obj/item/reagent_containers/snacks/amanita_pie
 	name = "amanita pie"
 	desc = "A pie made with amanita fungi."
 	icon_state = "amanita_pie"
@@ -426,7 +426,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 12)
 
-/obj/item/reagent_containers/food/snacks/plump_pie
+/obj/item/reagent_containers/snacks/plump_pie
 	name = "plump pie"
 	desc = "A heavy pie made with plump helmets mushrooms"
 	icon_state = "plump_pie"
@@ -439,7 +439,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 12)
 
-/obj/item/reagent_containers/food/snacks/plump_pie/Initialize(mapload)
+/obj/item/reagent_containers/snacks/plump_pie/Initialize(mapload)
 	. = ..()
 	if(prob(10))
 		name = "exceptional plump pie"
@@ -447,7 +447,7 @@
 		reagents.add_reagent("tricordrazine", 5)
 		matter = list(MATERIAL_BIOMATTER = 18)
 
-/obj/item/reagent_containers/food/snacks/xemeatpie
+/obj/item/reagent_containers/snacks/xemeatpie
 	name = "xeno-pie"
 	icon_state = "xenomeatpie"
 	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)

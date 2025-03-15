@@ -81,6 +81,16 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
+	if(prob(30))
+		new /obj/item/storage/backpack/satchel/industrial(src)
+	else if(prob(50))
+		new /obj/item/storage/backpack/industrial(src)
+	else if(prob(50))
+		new /obj/item/storage/backpack/duffelbag(src)
+	else if(prob(75))
+		new /obj/item/storage/backpack/military(src)
+	else
+		new /obj/item/storage/backpack/holding(src)
 	new /obj/item/clothing/under/rank/cargotech(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
@@ -94,11 +104,13 @@
 	new /obj/item/gun/projectile/revolver/little_comet(src)
 	new /obj/item/gun_upgrade/mechanism/glass_widow(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35(src)
+	new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_pistol_35/rubber(src)
 	new /obj/item/stack/os_cash/random(src)
 	new /obj/item/direct_line(src)
 	new /obj/item/tool/omnitool(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/cargo(src)
+	new /obj/item/pc_part/drive/disk/design/cargo(src)
 
 //Prospector gear, you'll notice it is immensely heavily randomized, this is intentional to add some replayibility to prospector starts.
 //To anyone editing this, I advise using if statements over switch to better have control of what loot spawns, it rolls each in order of success so you can better set the odds.
@@ -763,7 +775,7 @@
 	//new/obj/item/clothing/mask/gas/mime(src)
 	new/obj/item/clothing/head/beret(src)
 	new/obj/item/pen/crayon/mime(src)
-	new/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing(src)
+	new/obj/item/reagent_containers/drinks/bottle/bottleofnothing(src)
 	new/obj/item/bikehorn(src)
 	new/obj/item/clothing/glasses/monocle(src)
 	new/obj/item/storage/fancy/crayons(src)

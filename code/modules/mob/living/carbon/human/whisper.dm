@@ -69,7 +69,7 @@
 			verb = safepick(speaking.whisper_verb)
 			not_heard = "[verb] something"
 		if(!verb)
-			var/adverb = pick("quietly", "softly")
+			var/adverb = pick("whispers quietly", "whispers softly")
 			verb = "[safepick(speaking.speech_verb)] [adverb]"
 			not_heard = "[verb] something [adverb]"
 	else
@@ -84,7 +84,7 @@
 		if(verb == "yells loudly")
 			verb = "slurs emphatically"
 		else
-			var/adverb = pick("quietly", "softly")
+			var/adverb = pick("whispers quietly", "whispers softly")
 			verb = "[verb] [adverb]"
 
 		speech_problem_flag = handle_r[3]

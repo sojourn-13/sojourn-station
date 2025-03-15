@@ -3,7 +3,7 @@
 
 // Magazines and ammo
 
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "H&S Nonlethal Magazines Pack"
 	icon_state = "frozenstar"
 
@@ -28,7 +28,7 @@
 		/datum/design/autolathe/ammo/shotgun_speedloader_beanbag = 2,//Neither blanks or illumination are LTL
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
+/obj/item/pc_part/drive/disk/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "SA Lethal Magazines Pack"
 	icon_state = "sa"
 
@@ -69,7 +69,7 @@
 		/datum/design/autolathe/ammo/shotgun_speedloader_slug = 2, //These are the mags
 	)//Ammo Can is on misc disk where it should be it has nothing to do with magazines
 
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms
+/obj/item/pc_part/drive/disk/design/ammo_boxes_smallarms
 	disk_name = "SA Handgun Ammunition"
 	icon_state = "sa"
 
@@ -91,7 +91,7 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 	) // Ammo can on misc disk
 
-/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle
+/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle
 	disk_name = "SA Rifle Ammunition"
 	icon_state = "sa"
 
@@ -119,7 +119,7 @@
 	) // Ammo can on misc disk
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo
+/obj/item/pc_part/drive/disk/design/exotic_ammo
 	disk_name = "SA Exotic Ammunition Pack"
 	icon_state = "sa"
 	license = 20
@@ -153,7 +153,7 @@
 
 // 9mm PISTOLS + REVOLVERS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns
+/obj/item/pc_part/drive/disk/design/guns/cheap_guns
 	disk_name = "H&S - 9mm Economy Pack"
 	icon_state = "frozenstar"
 
@@ -174,7 +174,7 @@
 		)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/colt
+/obj/item/pc_part/drive/disk/design/guns/colt
 	disk_name = "H&S - 9mm M1911"
 	icon_state = "ironhammer"
 
@@ -191,7 +191,7 @@
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/glock
+/obj/item/pc_part/drive/disk/design/guns/glock
 	disk_name = "Seinemetall Defense GmbH - 9mm Sky Auto Pistol"
 	icon_state = "frozenstar"
 
@@ -207,7 +207,7 @@
 
 // 10mm REVOLVERS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver
+/obj/item/pc_part/drive/disk/design/guns/revolver
 	disk_name = "H&S - 10mm Minotaur Revolver"
 	icon_state = "frozenstar"
 
@@ -220,7 +220,7 @@
 		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10
+/obj/item/pc_part/drive/disk/design/guns/rev10
 	disk_name = "H&S - 10mm Frontier Revolver"
 	icon_state = "ironhammer"
 
@@ -235,7 +235,7 @@
 
 // 10mm pistols
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark
+/obj/item/pc_part/drive/disk/design/guns/ladon/dark
 	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
 
@@ -248,7 +248,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon
+/obj/item/pc_part/drive/disk/design/guns/ladon
 	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
 	icon_state = "frozenstar"
 
@@ -261,7 +261,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/sa
+/obj/item/pc_part/drive/disk/design/guns/ladon/sa
 	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
 	icon_state = "sa"
 
@@ -274,7 +274,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/colt/ten
+/obj/item/pc_part/drive/disk/design/guns/colt/ten
 	disk_name = "H&S - 10mm Auto-Mag Delta Elite"
 	icon_state = "frozenstar"
 
@@ -287,7 +287,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/rafale
+/obj/item/pc_part/drive/disk/design/guns/rafale
 	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Rafale"
 	icon_state = "frozenstar"
 
@@ -300,7 +300,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong
+/obj/item/pc_part/drive/disk/design/guns/armstrong
 	disk_name = "H&S - 10mm lever action Armstrong"
 	icon_state = "frozenstar"
 
@@ -314,7 +314,7 @@
 		)
 
 // 10mm SMGS
-/obj/item/computer_hardware/hard_drive/portable/design/guns/vector
+/obj/item/pc_part/drive/disk/design/guns/vector
 	disk_name = "SA - 10mm Vector SMG"
 	icon_state = "sa"
 
@@ -329,7 +329,7 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 4
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
+/obj/item/pc_part/drive/disk/design/guns/thompson
 	disk_name = "SolFed - 10mm Thompson SMG"
 	icon_state = "solfed"
 
@@ -344,7 +344,7 @@
 
 // 12mm PISTOLS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia
+/obj/item/pc_part/drive/disk/design/guns/lamia
 	disk_name = "H&S - 12mm Lamia Handgun"
 	icon_state = "frozenstar"
 
@@ -357,7 +357,7 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk
+/obj/item/pc_part/drive/disk/design/guns/basilisk
 	disk_name = "H&S - 12mm Basilisk Handgun"
 	icon_state = "frozenstar"
 
@@ -370,7 +370,7 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/socom
+/obj/item/pc_part/drive/disk/design/guns/socom
 	disk_name = "SF - 12mm \"SOCOM\" Silenced Handgun"
 	icon_state = "solfed"
 
@@ -383,7 +383,7 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mateba
+/obj/item/pc_part/drive/disk/design/guns/mateba
 	disk_name = "Seinemetall Defense GmbH - \"Mateba\" autorevolver"
 	icon_state = "frozenstar"
 
@@ -398,7 +398,7 @@
 
 // SHOTGUNS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel
+/obj/item/pc_part/drive/disk/design/guns/doublebarrel
 	disk_name = "SA - 20mm Double Barrel Shotgun"
 	icon_state = "sa"
 
@@ -410,7 +410,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/grizzly
+/obj/item/pc_part/drive/disk/design/guns/grizzly
 	disk_name = "SA - 20mm Grizzly Shotgun"
 	icon_state = "sa"
 
@@ -422,7 +422,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw
+/obj/item/pc_part/drive/disk/design/guns/sbaw
 	disk_name = "20mm SBAW disk"
 	icon_state = "solfed"
 
@@ -436,7 +436,7 @@
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone
+/obj/item/pc_part/drive/disk/design/guns/gladstone
 	disk_name = "H&S - 20mm Gladstone Shotgun"
 	icon_state = "frozenstar"
 
@@ -448,7 +448,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/state
+/obj/item/pc_part/drive/disk/design/guns/state
 	disk_name = "Seinemetall Defense GmbH - 20mm State Auto Shotgun"
 	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
 	icon_state = "frozenstar"
@@ -461,7 +461,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/pug
+/obj/item/pc_part/drive/disk/design/guns/pug
 	disk_name = "SA - 20mm Pug Auto Shotgun"
 	icon_state = "sa"
 
@@ -473,7 +473,7 @@
 		/datum/design/autolathe/ammo/m12slug,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot
+/obj/item/pc_part/drive/disk/design/guns/sixshot
 	disk_name = "SA - 20mm Revolving Shotgun"
 	icon_state = "sa"
 
@@ -487,7 +487,7 @@
 
 // SMGs
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/texan
+/obj/item/pc_part/drive/disk/design/guns/texan
 	disk_name = "Seinemetall Defense GmbH - 9mm Texan SMG"
 	icon_state = "frozenstar"
 
@@ -503,7 +503,7 @@
 // 6.5mm carbines
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
+/obj/item/pc_part/drive/disk/design/guns/pitbull
 	disk_name = "SolFed  - 6.5mm Pitbull Carbine"
 	icon_state = "solfed"
 
@@ -521,7 +521,7 @@
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog
+/obj/item/pc_part/drive/disk/design/guns/bulldog
 	disk_name = "Seinemetall Defense GmbH - 6.5mm Bulldog Carbine"
 	icon_state = "frozenstar"
 
@@ -539,7 +539,7 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sol
+/obj/item/pc_part/drive/disk/design/guns/sol
 	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"
 	icon_state = "solfed"
 
@@ -559,7 +559,7 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag = 1,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind
+/obj/item/pc_part/drive/disk/design/guns/ostwind
 	disk_name = "Seinemetall Defense GmbH - 6.5mm Ostwind Carbine"
 	icon_state = "frozenstar"
 
@@ -578,7 +578,7 @@
 
 // 6.5mm Carbine
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/tk
+/obj/item/pc_part/drive/disk/design/guns/tk
 	disk_name = "SD GmbH - 6.5mm Takeshi LMG"
 	icon_state = "frozenstar"
 
@@ -592,7 +592,7 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/roe
+/obj/item/pc_part/drive/disk/design/guns/roe
 	disk_name = "Hunters Inc - 6.5mm Roe Rifle"
 	icon_state = "hunters"
 
@@ -608,7 +608,7 @@
 
 // 7.62mm Rifles
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
+/obj/item/pc_part/drive/disk/design/guns/sa_kalashnikov
 	disk_name = "SA - 7.62mm Kalashnikov Rifle"
 	icon_state = "sa"
 
@@ -625,7 +625,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/strelki
+/obj/item/pc_part/drive/disk/design/strelki
 	disk_name = "Hunters Inc - 7.62mm \"Strelki\""
 	icon_state = "hunters"
 	license = 8
@@ -638,7 +638,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov
+/obj/item/pc_part/drive/disk/design/guns/tac_kalashnikov
 	disk_name = "SA - 7.62mm Breacher Kalashnikov Rifle"
 	icon_state = "sa"
 
@@ -658,7 +658,7 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag = 1
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
+/obj/item/pc_part/drive/disk/design/guns/boltgun_sa
 	disk_name = "Hunters Inc - 7.62mm Novakovic Rifle"
 	icon_state = "hunters"
 
@@ -674,7 +674,7 @@
 
 //8.6mm heavy rifles
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/omni
+/obj/item/pc_part/drive/disk/design/guns/omni
 	disk_name = "H&S NM - 8.6mm Omnirifle"
 	icon_state = "ironhammer"
 
@@ -687,7 +687,7 @@
 		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm
+/obj/item/pc_part/drive/disk/design/guns/omni/longarm
 	disk_name = "H&S NM - 8.6mm Longarm Omnirfile"
 	icon_state = "ironhammer"
 
@@ -700,7 +700,7 @@
 		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/scout
+/obj/item/pc_part/drive/disk/design/guns/scout
 	disk_name = "H&S - 8.6mm Scout Sniper Rifle"
 	icon_state = "frozenstar"
 
@@ -714,7 +714,7 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_hv = 3,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/custer
+/obj/item/pc_part/drive/disk/design/guns/custer
 	disk_name = "H&S - 8.6mm Custer Repeating Rifle"
 	icon_state = "sa"
 
@@ -729,7 +729,7 @@
 
 // Heavy
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/heavysniper
+/obj/item/pc_part/drive/disk/design/guns/heavysniper
 	disk_name = "SA - 14.5×114mm Penetrator AMR"
 	icon_state = "sa"
 
@@ -741,7 +741,7 @@
 	)
 
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk
+/obj/item/pc_part/drive/disk/design/guns/sa_pk
 	disk_name = "SA - 7.62mm Pulemyot Kalashnikova MG"
 	icon_state = "sa"
 
@@ -754,7 +754,7 @@
 
 // Grenade Launchers
 
-obj/item/computer_hardware/hard_drive/portable/design/guns/lenar
+obj/item/pc_part/drive/disk/design/guns/lenar
 	disk_name = "Seinemetall Defense GmbH - Lenar Grenade Launcher"
 	icon_state = "frozenstar"
 
@@ -763,7 +763,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/lenar
 		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
 	)
 
-obj/item/computer_hardware/hard_drive/portable/design/guns/china
+obj/item/pc_part/drive/disk/design/guns/china
 	disk_name = "SA GL \"China Lake\""
 	icon_state = "ironhammer"
 
@@ -779,7 +779,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 
 // ENERGY ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/spiderrose
+/obj/item/pc_part/drive/disk/design/guns/spiderrose
 	disk_name = "H&S - Spider Rose PDW E"
 	icon_state = "frozenstar"
 
@@ -789,7 +789,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/martin
+/obj/item/pc_part/drive/disk/design/guns/martin
 	disk_name = "H&S - Martin PDW E"
 	icon_state = "frozenstar"
 
@@ -799,7 +799,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
+/obj/item/pc_part/drive/disk/design/guns/lasercore
 	disk_name = "H&S - Laser Core PDW E"
 	icon_state = "frozenstar"
 
@@ -809,7 +809,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm
+/obj/item/pc_part/drive/disk/design/guns/firestorm
 	disk_name = "H&S - Firestorm PDW E"
 	icon_state = "frozenstar"
 
@@ -819,7 +819,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercannon
+/obj/item/pc_part/drive/disk/design/guns/lasercannon
 	disk_name = "H&S - \"Titanica\" Laser Cannon"
 	icon_state = "frozenstar"
 
@@ -829,7 +829,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/auretian
+/obj/item/pc_part/drive/disk/design/guns/auretian
 	disk_name = "SI - \"Auretian\" E Pistol"
 	icon_state = "moebius"
 
@@ -839,7 +839,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/powercell/small/basic,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver_sci
+/obj/item/pc_part/drive/disk/design/guns/stun_revolver_sci
 	disk_name = "SI - \"Hera\" Stun Revolver"
 	icon_state = "moebius"
 
@@ -849,7 +849,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/powercell/small/basic,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver
+/obj/item/pc_part/drive/disk/design/guns/stun_revolver
 	disk_name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
 	icon_state = "frozenstar"
 
@@ -859,7 +859,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercannon
+/obj/item/pc_part/drive/disk/design/guns/lasercannon
 	disk_name = "SI - \"Solaris\" Laser Cannon"
 	icon_state = "moebius"
 
@@ -869,7 +869,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/powercell/medium/basic = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/centauri
+/obj/item/pc_part/drive/disk/design/guns/centauri
 	disk_name = "SI - \"Centauri\" PDW E"
 	icon_state = "moebius"
 
@@ -879,7 +879,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/powercell/medium/basic = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ion_pistol
+/obj/item/pc_part/drive/disk/design/guns/ion_pistol
 	disk_name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"
 	icon_state = "frozenstar"
 
@@ -892,7 +892,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 
 // PLASMA ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/cassad
+/obj/item/pc_part/drive/disk/design/guns/cassad
 	disk_name = "H&S - Cassad Plasma Rifle"
 	icon_state = "frozenstar"
 
@@ -902,7 +902,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/centurio
+/obj/item/pc_part/drive/disk/design/guns/centurio
 	disk_name = "SI - \"Centurio\" Plasma Pistol"
 	icon_state = "moebius"
 
@@ -915,7 +915,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 
 //10x24mm Guns
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
+/obj/item/pc_part/drive/disk/design/guns/pulse_rifle
 	disk_name = "PAR - 10x24mm Caseless Pulse Rifle"
 	icon_state = "black"
 
@@ -926,7 +926,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/ammo/box_10x24 = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle
+/obj/item/pc_part/drive/disk/design/guns/survivalrifle
 	disk_name = "Hunters Inc - 10x24mm Caseless /'Bond/' Rifle"
 	icon_state = "hunters"
 
@@ -937,7 +937,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/ammo/box_10x24_small = 1,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/rex10
+/obj/item/pc_part/drive/disk/design/guns/rex10
 	disk_name = "H&S - Cowboy Revolver"
 	icon_state = "ironhammer"
 

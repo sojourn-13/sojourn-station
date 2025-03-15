@@ -93,7 +93,7 @@
 			else
 				dmg = max(dmg - remaining_armor - remaining_ablative, 0)
 
-			if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //This code is kept as a bit of a dinosaur from GDR but is tweaked for allowing halloss=damage on mobs.
+			if(istype(src,/mob/living/simple/) || istype(src,/mob/living/carbon/superior/)) //This code is kept as a bit of a dinosaur from GDR but is tweaked for allowing halloss=damage on mobs.
 				var/mob_agony_armor = src.getarmor(def_zone, "agony")
 				var/guaranteed_damage_red = armor * 0.1 //0.1 is the former GDR value, tweak this to tweak the whole formulae
 				var/effective_damage = damage - guaranteed_damage_red
@@ -203,9 +203,13 @@
 	return FALSE
 
 /mob/living/proc/getarmorablative(var/def_zone, var/type)
-	return FALSE
+	return mob_ablative_armor
 
 /mob/living/proc/damageablative(var/def_zone, var/damage)
+	if(mob_ablative_armor)
+		mob_ablative_armor = round(mob_ablative_armor - damage / ablative_retaining)
+	if(mob_ablative_armor < 0)
+		mob_ablative_armor = 0
 	return FALSE
 
 /mob/living/proc/hit_impact(damage, dir)

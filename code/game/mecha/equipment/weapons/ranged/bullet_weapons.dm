@@ -103,14 +103,14 @@
 //Workhorse mech weapon, not great not terrible
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg
 	name = "\improper Mech Heavy Machinegun \"Liberator\""
-	desc = "A squad support weapon rechambered in 25mm with clasps from the side to be fitted on a mech's arm and to prevent anyone from trying to fire it outside of it."
+	desc = "An oversized 'machine gun' chambered in 25mm most often in use by militias and low budget mercenary companies. It's bulky design prevents humans from being able to fire it without using a specialized suit."
 	icon_state = "mecha_makeshift_uac2"
 	equip_cooldown = 20
 	projectile = /obj/item/projectile/bullet/mech_machinegun
 	ammo_type = CAL_MECH_MACHINEGUN
 	fire_sound = 'sound/mecha/weapons/hmg.ogg'
 	projectiles = 120
-	projectiles_per_shot = 6 // 20 bursts
+	projectiles_per_shot = 4 // 30 bursts
 	max_ammo = 120
 	deviation = 10 //heavy deviation, its cheap casing rattles with each shot
 	fire_cooldown = 1.2
@@ -137,7 +137,7 @@
 	projectiles_per_shot = 1
 
 	deviation = 2
-	fire_cooldown = 2
+	fire_cooldown = 3
 
 	required_type = list(/obj/mecha/combat)
 
@@ -146,7 +146,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon
 	name = "\improper Burst-Fire Autocannon \"Victory\""
-	desc = "An autocannon made with mechs in mind boasting only 30mm as a tradeoff being able to shoot two times in a row reliably without jamming. Due to the smaller caliber it is capable of firing at higher distances than the 60mm version."
+	desc = "An autocannon made with mechs in mind boasting only 30mm as a tradeoff being able to shoot two times in a row reliably without jamming. Due to the smaller caliber it is capable of firing at longer distances than the 60mm version."
 	icon_state = "mecha_burstcannon"
 	equip_cooldown = 10
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
@@ -156,7 +156,7 @@
 	projectiles = 60
 	max_ammo = 60 //20 salvos
 	projectiles_per_shot = 2
-	deviation = 4 //little bit innacurate, but still able to consistently lay down fire on targets
+	deviation = 3 //little bit innacurate, but still able to consistently lay down fire on targets
 	fire_cooldown = 1.5
 	required_type = list(/obj/mecha/combat)
 
@@ -165,7 +165,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	name = "\improper Scatter-Shot Autocannon \"Liberty\""
-	desc = "An anti-air autocannon using flak rounds instead of standard ones but not losing out on any of the precision that it comes with. In contrary to how most flak weapons operate this one concentrates most of it's shots in single place."
+	desc = "An anti-air autocannon utilizing 5cm flak rounds for maximum effect across targeted area. While surprisingly accurate for an oversized shotgun it doesn't have enough power to punch through objects with ease as other variants."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 25 // we fire fairly slow, but do a LOT of damage up close.
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
@@ -176,7 +176,7 @@
 	max_ammo = 30
 	projectiles_per_shot = 1 //each 'projectile' carries 8 pellets
 	fire_cooldown = 1
-	deviation = 6 //kinda innacurate, but a horribly deudly firearm none the less.
+	deviation = 4 //kinda innacurate, but a horribly deudly firearm none the less.
 	required_type = list(/obj/mecha/combat)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded

@@ -9,7 +9,7 @@
 	active_power_usage = 2000
 
 	var/obj/item/seeds/seed // Currently loaded seed packet
-	var/obj/item/computer_hardware/hard_drive/portable/disk //Currently loaded data disk
+	var/obj/item/pc_part/drive/disk/disk //Currently loaded data disk
 	var/datum/computer_file/binary/plantgene/loaded_gene //Currently loaded plant gene
 
 	var/action_time = 5 SECONDS
@@ -56,7 +56,7 @@
 		to_chat(user, SPAN_NOTICE("You load [I] into [src]."))
 		return
 
-	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/pc_part/drive/disk))
 		if(disk)
 			to_chat(user, SPAN_WARNING("There is already a data disk loaded."))
 		else

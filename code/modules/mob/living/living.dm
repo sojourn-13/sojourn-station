@@ -671,10 +671,10 @@ default behaviour is:
 		pass_flags -= PASSTABLE // Jumpn't over them anymore!
 		allow_spin = TRUE
 		if(!species.reagent_tag == IS_SYNTHETIC)
-			var/par_core = learnt_tasks.get_task_mastery_level("PARCORE")
+			var/par_core = learnt_tasks.get_task_mastery_level("PARCOURS")
 			var/hunger_to_take = clamp(25 - par_core, 0, 25)
 			nutrition -= hunger_to_take  //SOJ EDIT: WE TAKE HUNER
-			learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/parcore, "PARCORE", skill_gained = range, learner = src)
+			learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/parcours, "PARCOURS", skill_gained = range, learner = src)
 
 		// Slide
 		sleep(1.5)
@@ -685,7 +685,7 @@ default behaviour is:
 			sleep(world.tick_lag + 0.5)
 		C.mloop = 0
 
-/mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(obj/item/carried_item)
+/mob/living/simple/spiderbot/is_allowed_vent_crawl_item(obj/item/carried_item)
 	if(carried_item == held_item)
 		return FALSE
 	return ..()

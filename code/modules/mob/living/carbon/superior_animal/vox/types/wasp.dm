@@ -1,5 +1,5 @@
-/mob/living/carbon/superior_animal/vox/wasp
-	name = "Jungle wasp"
+/mob/living/carbon/superior/vox/wasp
+	name = "Amethyn Wasp"
 	desc = " A mostly normal wasp save for its extensive growth due to alteration by the anomalous planet itself. Its stinger is sharp and filled with painful toxins."
 	icon_state = "masterbee"
 	icon = 'icons/mob/mobs-voxy.dmi'
@@ -15,7 +15,7 @@
 	emote_see = list("looks around for a target.")
 	attacktext = "stings"
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/snacks/meat
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
@@ -32,14 +32,14 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/positive/low = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/low = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/low = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/young = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/old = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutal = 3,
+		/datum/stat_modifier/mob/living/carbon/superior/deadeye = 6,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 5,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 		/datum/stat_modifier/mob/living/speed/flat/negative/low = 5,
 	)
@@ -59,7 +59,7 @@
 	poison_per_bite = 3
 	poison_type = "wasp_toxin"
 
-/mob/living/carbon/superior_animal/vox/wasp/death(message = deathmessage)
+/mob/living/carbon/superior/vox/wasp/death(message = deathmessage)
 	..()
 	if(!dropped_goods)
 		dropped_goods = TRUE
