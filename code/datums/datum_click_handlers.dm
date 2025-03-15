@@ -112,7 +112,8 @@
 
 /datum/click_handler/fullauto/proc/shooting_loop()
 
-	if(!owner || !owner.mob || owner.mob.resting || !receiver)
+	// Client's CH is set to nul when the handler is about to be destroyed, this safety check stop it from firing.
+	if(!owner || !owner.mob || owner.mob.resting || !receiver || !owner.CH)
 		return FALSE
 
 	if(target)

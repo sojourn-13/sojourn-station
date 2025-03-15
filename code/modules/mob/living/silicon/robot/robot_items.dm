@@ -775,19 +775,6 @@
 	name = "internal trash container"
 	desc = "An internalized trash container for gathering trash. Become a walking trash can, today!"
 
-/obj/item/storage/bag/robotic/trash/autoload(mob/user as mob)
-	return //Prevent the trash bag from autoloading everything during movement, for sanity.
-
-/obj/item/storage/bag/robotic/trash/update_icon()
-	if(contents.len == 0)
-		icon_state = "trashbag0"
-	else if(contents.len < 24)
-		icon_state = "trashbag1"
-	else if(contents.len < 42)
-		icon_state = "trashbag2"
-	else
-		icon_state = "trashbag3"
-
 /obj/item/storage/bag/robotic/sheetsnatcher
 	name = "heavy-duty sheet snatcher"
 	desc = "A patented storage system designed for any kind of mineral sheet, this variation comes with larger capacity and is designed for cyborgs."

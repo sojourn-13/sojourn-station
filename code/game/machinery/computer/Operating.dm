@@ -52,6 +52,7 @@
 				<B>Name:</B> [victim.real_name]<BR>
 				<B>Age:</B> [victim.age]<BR>
 				<B>Blood Type:</B> [victim.b_type]<BR>
+				<B>Biological Form:</B> [victim.species]<BR>
 				<BR>
 				<B>Critical Health:</B> [victim.health]%<BR>
 				<B>Organ Health:</B> [internal_health]%<BR>
