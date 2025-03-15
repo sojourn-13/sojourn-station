@@ -48,6 +48,7 @@
 	stored_power = /mob/living/carbon/human/proc/bring_darkness
 	resonances = "Dark"
 
+/*
 /obj/item/device/psionic_catalyst/rust
 	name = "psionic catalyst: Rust"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
@@ -55,6 +56,15 @@
 	It is better this way. It will eventually be this way. We all will."
 	stored_power = /mob/living/carbon/human/proc/rust
 	resonances = "Rust"
+
+/obj/item/device/psionic_catalyst/restore
+	name = "psionic catalyst: Rust"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
+	It is only natural to fight with all your might to keep things as they are. Fruitless, but natural."
+	stored_power = /mob/living/carbon/human/proc/restore
+	resonances = "Rust"
+*/ // Added to the general power list, keeping this in here for code reference
 
 /obj/item/device/psionic_catalyst/decay
 	name = "psionic catalyst: Decay"
@@ -202,14 +212,6 @@
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_exploid
 	resonances = "Warm"
 
-/obj/item/device/psionic_catalyst/trash_pile_compress
-	name = "psionic catalyst: Reorganize"
-	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
-	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
-	Sometimes you need to compress your mind to fit more treasure inside. Just like trash."
-	stored_power = /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress
-	resonances = "Suppression"
-
 /obj/item/device/psionic_catalyst/summan_trash_pile
 	name = "psionic catalyst: Scrap Together"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
@@ -218,12 +220,28 @@
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile
 	resonances = "Seeking"
 
+/obj/item/device/psionic_catalyst/relic_intuition
+	name = "psionic catalyst: Reclamation"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	It is only natural to fight with all your might to keep things as they are. Fruitless, but natural."
+	stored_power = /mob/living/carbon/human/proc/relic_intuition
+	resonances = "Suppression"
+
 /obj/item/device/psionic_catalyst/needle_n_thread
 	name = "psionic catalyst: Psionic Suture"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	If it bleeds, it can die. Be better than it."
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread
+	resonances = "Healing"
+
+/obj/item/device/psionic_catalyst/psi_burn_cream
+	name = "psionic catalyst: Psionic Ointment"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	It is a common urge, to touch the fire, to hear the sizzling of flesh. This is the consequence."
+	stored_power = /mob/living/carbon/human/psionic_tumor/proc/psi_burn_cream
 	resonances = "Healing"
 
 /obj/item/device/psionic_catalyst/purify
@@ -277,7 +295,6 @@
 	return pickweight(list(
 				/obj/item/device/psionic_catalyst/nightmare_mind = 8,
 				/obj/item/device/psionic_catalyst/bring_darkness = 10,
-				/obj/item/device/psionic_catalyst/rust = 10,
 				/obj/item/device/psionic_catalyst/decay = 10,
 				/obj/item/device/psionic_catalyst/dream_seeker = 10,
 				/obj/item/device/psionic_catalyst/kings_decorum = 10,
@@ -295,7 +312,7 @@
 	return pickweight(list(
 				/obj/random/psi_catalyst = 15,
 				/obj/item/device/psionic_catalyst/summan_trash_pile = 15,
-				/obj/item/device/psionic_catalyst/trash_pile_compress = 15,
+				/obj/item/device/psionic_catalyst/relic_intuition = 15,
 				/obj/item/device/psionic_catalyst/trash_pile_exploid = 15))
 
 /obj/random/psi_catalyst/flesh_behemoth

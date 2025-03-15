@@ -299,14 +299,88 @@
 			"You swirl a finger in the air, collecting string from your thoughts, producing a needle soon after."
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-		var/suture_amount = 1
+		var/suture_amount = 3
 
 		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-			suture_amount += 1
+			suture_amount += 3
 		if(user.stats.getPerk(PERK_PSI_HARMONY))
-			suture_amount += 1
+			suture_amount += 3
 
 		PS.amount = suture_amount
 		PS.update_icon()
 
 		usr.put_in_active_hand(PS)
+
+/mob/living/carbon/human/psionic_tumor/proc/psi_burn_cream()
+	set category = "Psionic powers"
+	set name = "Psionic Ointment (1)"
+	set desc = "Spend a single psi point to create a psionic ointment in hand, which can be used to stop cleanse wounds and mend burns."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		var/obj/item/stack/medical/ointment/psionic/PO = new(src, user)
+		user.visible_message(
+			"[user] swirls a finger in the air collecting droplets of odd gel!",
+			"You swirl a finger in the air, collecting mental plasm, balling it up."
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		var/ointment_amount = 3
+
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			ointment_amount += 3
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			ointment_amount += 3
+
+		PO.amount = ointment_amount
+		PO.update_icon()
+
+		usr.put_in_active_hand(PO)
+
+/mob/living/carbon/human/proc/psionic_powercell()
+	set category = "Psionic powers"
+	set name = "Psionic Cell Creation (1)"
+	set desc = "Spend one psi points to create a self-charging psion-cell. If you're already holding a psion-cell, it will upgrade it by one size."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	var/obj/item/active = usr.get_active_hand()
+	if(istype(usr.get_active_hand(), /obj/item/cell/large/psionic))
+		to_chat(usr, "You cannot upgrade the [active] into a larger cell.")
+	else if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		if(istype(usr.get_active_hand(), /obj/item/cell/medium/psionic) || istype(usr.get_active_hand(), /obj/item/cell/small/psionic))
+			var/obj/item/cell/newcell = new(src, user)
+			if(istype(usr.get_active_hand(), /obj/item/cell/small/psionic))
+				newcell = /obj/item/cell/medium/psionic
+			else if(istype(usr.get_active_hand(), /obj/item/cell/medium/psionic))
+				newcell = /obj/item/cell/large/psionic
+			else
+				to_chat(usr, "You have a failure of imagination while trying to think of what to turn [active] into.")
+				return
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			newcell = new newcell(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] claps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : identifying_gender == "neuter" ? "its" : "their"] hand together, transforming the [active] into a [newcell]!"),
+				SPAN_DANGER("You clap your hands together, transforming the [active] into a [newcell]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(newcell)
+			qdel(active)
+		else
+
+			var/obj/item/cell/newcell = new /obj/item/cell/small/psionic(src, user)
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] claps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : identifying_gender == "neuter" ? "its" : "their"] hand together, condensing psionic energies into a [newcell]!"),
+				SPAN_DANGER("You clap your hands together, condensing psionic energies into a [newcell]!")
+				)
+			usr.put_in_active_hand(newcell)
+	else
+		to_chat(usr, "Your mind is too spent to form a powerful enough dynamo for the cell.")
+

@@ -180,10 +180,17 @@
 	output = /obj/item/device/psionic_catalyst/bring_darkness
 	out_put_name = "Bring Darkness"
 
+/*
 /datum/eternal_ascension_resonances/rust
 	rune_resonance = "QuickQuick"
 	output = /obj/item/device/psionic_catalyst/rust
 	out_put_name = "Rust"
+
+/datum/eternal_ascension_resonances/restore
+	rune_resonance = "QuickHealing"
+	output = /obj/item/device/psionic_catalyst/restore
+	out_put_name = "Restore"
+*/
 
 /datum/eternal_ascension_resonances/decay
 	rune_resonance = "QuickRust"
@@ -265,10 +272,10 @@
 	output = /obj/item/device/psionic_catalyst/trash_pile_exploid
 	out_put_name = "Discombobulate"
 
-/datum/eternal_ascension_resonances/trash_pile_compress
+/datum/eternal_ascension_resonances/relic_intuition
 	rune_resonance = "QuickSuppression"
-	output = /obj/item/device/psionic_catalyst/trash_pile_compress
-	out_put_name = "Reorganize"
+	output = /obj/item/device/psionic_catalyst/relic_intuition
+	out_put_name = "Reclamation"
 
 /datum/eternal_ascension_resonances/summan_trash_pile
 	rune_resonance = "QuickSinking"
@@ -279,6 +286,11 @@
 	rune_resonance = "HealingNull"
 	output = /obj/item/device/psionic_catalyst/needle_n_thread
 	out_put_name = "Psionic Suture"
+
+/datum/eternal_ascension_resonances/psi_burn_cream
+	rune_resonance = "HealingWarm"
+	output = /obj/item/device/psionic_catalyst/psi_burn_cream
+	out_put_name = "Psionic Ointment"
 
 /datum/eternal_ascension_resonances/purify
 	rune_resonance = "QuickNullDark"
