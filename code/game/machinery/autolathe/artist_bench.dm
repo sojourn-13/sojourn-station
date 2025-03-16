@@ -325,7 +325,9 @@
 		var/setname = sanitizeSafe(input(user,"Name your creation. Keep empty for a random name.","Set Name",""), MAX_LNAME_LEN)
 		if (setname)
 			artwork.name = setname
-			artwork.fake_name = setname
+			if(istype(artwork, /obj/item/gun/projectile/revolver/artwork_revolver))
+				var/obj/item/gun/projectile/revolver/artwork_revolver/AR = artwork
+				AR.fake_name = setname
 		var/setdesc = sanitizeSafe(input(user,"Describe your creation. Keep empty for a random description.","Set Description",""), MAX_DESC_LEN)
 		if (setdesc)
 			artwork.desc = setdesc

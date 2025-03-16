@@ -150,7 +150,6 @@
 	for(var/obj/item/organ/O in owner.organs)
 		if(istype(O, /obj/item/organ/external))
 			var/obj/item/organ/external/R = O
-			var/list/other_wounds = list()
 			for(var/obj/item/material/shard/shrapnel/emshrapnel in R.implants)
 				R.implants -= emshrapnel
 				emshrapnel.loc = get_turf(owner)
