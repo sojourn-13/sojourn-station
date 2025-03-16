@@ -1337,3 +1337,6 @@ mob/proc/yank_out_object()
 		if(maxHealth > 300) //soft cap to keep players from becoming killable only by organ damage or pain.
 			health = 300
 			maxHealth = 300
+		//If we get below 0 max HP it messes with stuff and damage values, 20 hp is the limit for this
+		if(maxHealth < 20)
+			maxHealth = 20
