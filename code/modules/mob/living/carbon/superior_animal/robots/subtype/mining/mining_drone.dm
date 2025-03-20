@@ -76,7 +76,7 @@
 		if(istype(W, /obj/item/tool))
 			T = W
 
-		if(QUALITY_WELDING in T.tool_qualities)
+		if(QUALITY_WELDING in T?.tool_qualities)
 			if(health < maxHealth)
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					user.visible_message(

@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	//Now we fuck around with power and find out
 	update_power_use()
-	apc = current_power_area.apc
+	apc = current_power_area?.apc
 
 /obj/machinery/tesla_turret/Destroy()
 	qdel(spark_system)

@@ -40,7 +40,7 @@
 		if (M.z == src.z && get_dist(src, M) <= dist)
 			return TRUE
 
-	for(var/mob/living/M in SSmobs.mob_living_by_zlevel[(get_turf(src)).z])
+	for(var/mob/living/M in SSmobs.mob_living_by_zlevel[(get_turf(src))?.z])
 		if(!(M.stat < DEAD))
 			continue
 		if(M.faction != faction)

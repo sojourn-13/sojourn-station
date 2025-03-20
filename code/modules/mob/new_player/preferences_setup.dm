@@ -251,7 +251,7 @@
 			if(leftover_to_equip) //Equip accessories to the preview
 				var/obj/item/clothing/under/under = mannequin.w_uniform
 				for(var/datum/gear/thing in leftover_to_equip)
-					under.attach_accessory(null, thing.spawn_item(mannequin, gear_list[gear_slot][thing.display_name]))
+					under?.attach_accessory(null, thing.spawn_item(mannequin, gear_list[gear_slot][thing.display_name]))
 
 	if(update_icon)
 		mannequin.update_icons()

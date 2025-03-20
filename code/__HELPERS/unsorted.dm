@@ -1425,7 +1425,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return null
 	var/tX = splittext(scr_loc, ",")
 	var/tY = splittext(tX[2], ":")
-	var/tZ = origin.z
+	var/tZ = origin?.z
 	tY = tY[1]
 	tX = splittext(tX[1], ":")
 	tX = tX[1]

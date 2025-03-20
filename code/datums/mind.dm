@@ -88,7 +88,7 @@
 	if(new_character.mind)		//remove any mind currently in our new body's mind variable
 		new_character.mind.current = null
 
-	if(current.client)
+	if(current?.client)
 		current.client.destroy_UI()
 
 	current = new_character		//link ourself to our new body

@@ -260,13 +260,14 @@
 							count++
 							AM.update_icon()
 					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
-						if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
-							break
-						if(C.caliber == caliber)
-							ammo_magazine.insertCasing(C)
-							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
-							count++
-							AM.update_icon()
+						if(ammo_magazine)
+							if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
+								break
+							if(C.caliber == caliber)
+								ammo_magazine.insertCasing(C)
+								AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+								count++
+								AM.update_icon()
 				if(count)
 					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into \the [src]."))
 					if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
