@@ -3523,6 +3523,7 @@
 #include "modular_sojourn\fencer.dm"
 #include "modular_sojourn\hand_stealth.dm"
 #include "modular_sojourn\lamp.dm"
+#include "modular_sojourn\os_assemly.dm"
 #include "modular_sojourn\pixelshift.dm"
 #include "modular_sojourn\power_puncher.dm"
 #include "modular_sojourn\shields.dm"
