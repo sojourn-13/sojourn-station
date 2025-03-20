@@ -61,6 +61,14 @@
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "rockold"
 
+/turf/simulated/wall/rock/snow
+	name = "snowy rock face"
+	desc = "A wall of cold rocks. Everything is like this over here..."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "snowwall"
+	icon_base_override = "snowwall"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 //Shuttle Floors
 /obj/landed_holder
