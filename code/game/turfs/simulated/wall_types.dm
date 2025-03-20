@@ -4,6 +4,24 @@
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
+/turf/simulated/wall/r_wall/iskhod/red //redmond mann
+	icon_state = "iskwall"
+
+/turf/simulated/wall/r_wall/iskhod/red/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
+
+/turf/simulated/wall/r_wall/iskhod/green //greenmond mann
+	icon_state = "iskwall_g"
+
+/turf/simulated/wall/r_wall/iskhod/green/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
+
+/turf/simulated/wall/r_wall/iskhod/blue //blutarch mann
+	icon_state = "iskwall_b"
+
+/turf/simulated/wall/r_wall/iskhod/blue/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
+
 /turf/simulated/wall/cult
 	icon_state = "cult"
 
