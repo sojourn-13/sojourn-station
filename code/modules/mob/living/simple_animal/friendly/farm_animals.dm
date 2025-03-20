@@ -515,6 +515,8 @@ var/global/chicken_count = 0
 				egg_type = /obj/item/stack/material/plastic
 			if("woodpulp")
 				egg_type = /obj/item/stack/material/wood
+			if("clothfiber")
+				egg_type = /obj/item/stack/material/cloth
 			if("crayon_dust")
 				egg_type = /obj/random/rations/crayon
 			if("slimejelly")
