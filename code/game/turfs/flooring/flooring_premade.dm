@@ -716,7 +716,7 @@
 	temperature = 233.15
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
-	initial_flooring = /decl/flooring/snow
+	initial_flooring = /decl/flooring/snow/smooth
 
 /turf/simulated/floor/icewater
 	name = "icewater"
