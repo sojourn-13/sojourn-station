@@ -30,7 +30,7 @@
         <div class="itemLabel">Blood level: <div style="float:right; margin-right:6px"><b>{{:helper.round(data.blood_amount)}}</b></div></div>
         <div class="itemContent">
 			{{:helper.displayBar(	data.blood_amount, 0, 100, 	(data.blood_amount >= 85) ? 'good' : (data.blood_amount >= 60) ? 'average' : 'bad')}}</div>
-			
+
         {{:helper.link('Toxin kelation: '+data.toxin_cost,  data.antitox_picked?'check':null,	{'toggle':'antitox', 	'id':1},	(data.antitox && !data.active)?	null:'disabled')}}
         {{:helper.link('Replenish blood: '+data.blood_cost, data.blood_picked?'check':null,		{'toggle':'blood', 		'id':1},	(data.blood && !data.active)? 	null:'disabled')}}
         {{:helper.link('Dialysis: '+data.dialysis_cost,     data.dialysis_picked?'check':null,	{'toggle':'dialysis', 	'id':1},	(data.dialysis && !data.active)? null:'disabled')}}
@@ -43,7 +43,7 @@
 			<div class="itemContent" style="color:red">
 			<b>Organ damage: {{:helper.round(value.inner_damage)}}</b>
 			</div><br>
-			{{:helper.link('Fix damage: '+data.damage_cost,         value.damage_picked?'check':null,	{'toggle':'damage',	 'id':value.id},    (value.damage && !data.active)? 	 null:'disabled')}}
+			{{:helper.link('Treat Internal Damage: '+data.damage_cost,         value.damage_picked?'check':null,	{'toggle':'internal_wound',	 'id':value.id},    (value.damage && !data.active)? 	 null:'disabled')}}
 		{{else}}
 			<div class="itemLabel"><b>{{:value.name}}</b></div>
 			<div class="itemContent">
@@ -52,7 +52,6 @@
 			</div><br>
 			{{:helper.link('Fix damage: '+data.damage_cost,         value.damage_picked?'check':null,	{'toggle':'damage',	 'id':value.id},    (value.damage && !data.active)?		null:'disabled')}}
 			{{:helper.link('Close wounds: '+data.wound_cost,        value.wound_picked?'check':null,	{'toggle':'wound',	 'id':value.id},    (value.wound && !data.active)?		null:'disabled')}}
-			{{:helper.link('Mend Internal Damage: '+data.ib_cost,               value.ib_picked?'check':null,		{'toggle':'ib',		 'id':value.id},    (value.ib && !data.active)?			null:'disabled')}}
 			{{:helper.link('Shrapnel removal: '+data.shrapnel_cost, value.shrapnel_picked?'check':null,	{'toggle':'shrapnel','id':value.id},    (value.shrapnel && !data.active)?	null:'disabled')}}
 			{{:helper.link('Mend Fracture: '+data.fracture_cost,    value.fracture_picked?'check':null,	{'toggle':'fracture','id':value.id},    (value.fracture && !data.active)?	null:'disabled')}}
 		{{/if}}
