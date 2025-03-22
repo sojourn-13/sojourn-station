@@ -428,7 +428,6 @@
 	if(additional_chems)
 		var/list/possible_chems = list(
 			"woodpulp",
-			"clothfiber",
 			"bicaridine",
 			"hyperzine",
 			"cryoxadone",
@@ -723,13 +722,10 @@
 		P.values[trait] = get_trait(trait)
 	return P
 
-//Place the plant products at the floor of the tray.
-/datum/seed/proc/harvest(mob/living/user,turf/location,yield_mod,potency_mod,harvest_sample,force_amount)
+//Place the plant products at the feet of the user.
+/datum/seed/proc/harvest(mob/living/user,yield_mod,potency_mod,harvest_sample,force_amount)
 
 	if(!user)
-		return
-
-	if(!location)
 		return
 
 	if(!force_amount && get_trait(TRAIT_YIELD) == 0 && !harvest_sample)
@@ -744,7 +740,7 @@
 			plant_controller.seeds[name] = src
 
 		if(harvest_sample)
-			var/obj/item/seeds/seeds = new(get_turf(location))
+			var/obj/item/seeds/seeds = new(get_turf(user))
 			seeds.seed_type = name
 			seeds.update_seed()
 			return
@@ -784,9 +780,9 @@
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product
 			if(has_mob_product)
-				product = new has_mob_product(get_turf(location),name)
+				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new /obj/item/reagent_containers/snacks/grown(get_turf(location),name,potency_mod)
+				product = new /obj/item/reagent_containers/snacks/grown(get_turf(user),name,potency_mod)
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!ismob(product))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)

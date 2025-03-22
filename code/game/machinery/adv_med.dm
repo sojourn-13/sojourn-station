@@ -229,7 +229,6 @@
 		"name" = H.get_visible_name(),
 		"stationtime" = stationtime2text(),
 		"stat" = H.stat,
-		"species" = H.species,
 		"health" = round(H.health / H.maxHealth * 100),
 		"bruteloss" = H.getBruteLoss(),
 		"fireloss" = H.getFireLoss(),
@@ -261,7 +260,6 @@
 	var/dat = "<font color='blue'><b>Scan performed at [occ["stationtime"]]</b></font><br>"
 	dat += "<font color='blue'><b>Occupant Statistics:</b></font><br>"
 	dat += text("ID Name: <i>[]</i><br>", occ["name"])
-	dat += text("Biological Form: <i>[]</i><br>", occ["species"])
 	var/aux
 	switch (occ["stat"])
 		if(0)

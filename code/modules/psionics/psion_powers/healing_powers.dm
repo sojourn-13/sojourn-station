@@ -175,10 +175,6 @@
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
-		if(!user.stats.getPerk(PERK_PSI_ATTUNEMENT))
-			user.adjustBruteLoss(10)
-		else
-			user.adjustBruteLoss(5)
 		if(bloodstr)
 			bloodstr.clear_reagents()
 		if(ingested)
@@ -187,7 +183,7 @@
 			touching.clear_reagents()
 		user.visible_message(
 			"[user] shifts around a moment then flicks something off.",
-			"You manually invoke the Purity of Body, painfully expeling any chemicals and other substances from your blood and stomach into the ether. It feels like a cold sweat."
+			"You pool any and all chemicals from your bloodstream, stomic and skin to a single point and then flick it off into deepmaints."
 			)
 
 // Heals heat/cold

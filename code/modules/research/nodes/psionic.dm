@@ -15,8 +15,8 @@
 	cost = 2500
 
 /datum/technology/psi_glasses
-	name = "Earrings P-3.1" //P for plasma
-	desc = "High-tech experimental ear accessories for Psions"
+	name = "Glasses P-22.1 LR" //P for plasma, LR for low risk
+	desc = "High-tech stablized experimental glasses for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.5
@@ -31,8 +31,8 @@
 	cost = 3000
 
 /datum/technology/psi_earring
-	name = "Glasses P-22.1 LR" //P for plasma, LR for low risk
-	desc = "High-tech stablized experimental glasses for Psions"
+	name = "Earrings P-3.1" //P for plasma
+	desc = "High-tech experimental ear accessories for Psions"
 	tech_type = RESEARCH_PSI
 
 	x = 0.6

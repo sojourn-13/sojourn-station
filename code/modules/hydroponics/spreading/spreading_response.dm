@@ -57,7 +57,7 @@
 			return
 		if(prob(70))
 			sampled = 1
-		seed.harvest(user,get_turf(src),0,1)
+		seed.harvest(user,0,1)
 		health -= (rand(3,5)*5)
 		sampled = 1
 		return

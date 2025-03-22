@@ -122,14 +122,6 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
 
-/datum/craft_recipe/clothing/footwraps
-	name = "cloth footwraps"
-	result = /obj/item/clothing/shoes/footwraps
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_CLOTH)
-	)
-
 /***********************
 * 	Outsider crafts
 ************************/
@@ -184,51 +176,6 @@
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
-		list(QUALITY_CUTTING, 15, 30),
-	)
-
-/datum/craft_recipe/clothing/loincloth
-	name = "Tribal Loincloth"
-	result =  /obj/item/clothing/under/loincloth
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, "time" = 60),
-		list(QUALITY_CUTTING, 15, 30),
-	)
-
-/datum/craft_recipe/clothing/chestwrap
-	name = "Tribal Chestwrap"
-	result =  /obj/item/clothing/under/chestwrap
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, "time" = 60),
-		list(QUALITY_CUTTING, 15, 30),
-	)
-
-/datum/craft_recipe/clothing/roughrobes
-	name = "Roughspun Robe"
-	result =  /obj/item/clothing/suit/lizard/robe
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_CLOTH, "time" = 60),
-		list(QUALITY_CUTTING, 15, 30),
-	)
-
-/datum/craft_recipe/clothing/hidemantle
-	name = "Hide Mantle"
-	result =  /obj/item/clothing/suit/lizard/mantle
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 60),
-		list(QUALITY_CUTTING, 15, 30),
-	)
-
-/datum/craft_recipe/clothing/heavyfurs
-	name = "Heavy Furs"
-	result =  /obj/item/clothing/suit/feline/furs
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_CUTTING, 15, 30),
 	)
 

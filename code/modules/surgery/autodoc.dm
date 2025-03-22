@@ -371,8 +371,6 @@
 	return data
 
 /datum/autodoc/capitalist_autodoc/proc/charge(var/amount = 100)
-	if(!linked_account)
-		linked_account = department_accounts[DEPARTMENT_MEDICAL]
 	if(linked_account && !linked_account.is_valid())
 		to_chat(patient, "Autodoc is out of service. Error code: #0x09")
 		return FALSE
@@ -391,7 +389,6 @@
 
 /datum/autodoc/capitalist_autodoc/scan_user()
 	. = ..()
-	playsound(usr, 'sound/machines/twobeep.ogg', 50, 1)
 	custom_cost = 0
 	total_cost = recalc_costs(scanned_patchnotes)
 

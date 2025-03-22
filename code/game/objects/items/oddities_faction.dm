@@ -726,7 +726,7 @@ No more of that.
 					"wheat",
 					"potato",
 					"rice")]
-				S.harvest(get_turf(src),get_turf(src),0,0,1)
+				S.harvest(get_turf(src),0,0,1)
 
 
 
