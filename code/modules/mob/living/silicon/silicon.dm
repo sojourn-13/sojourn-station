@@ -268,11 +268,14 @@
 	set desc = "Makes you use the correct borg based hotkeys."
 	set category = "OOC"
 
-	if(client)
-		if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
-			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
-		else
-			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+// CFW - This doesn't work (runtimes because client.get_preference_value always returns null.get_preference_value).
+//	if(client)
+//		if(client?.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+//			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
+//		else
+//			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+// Doing a work-around for now.
+	winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"
