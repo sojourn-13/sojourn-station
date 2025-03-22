@@ -23,9 +23,6 @@
 	rand_max = 5
 	stacktype_alt = /obj/item/stack/rods
 
-/obj/item/stack/rods/full
-	amount = 120
-
 /obj/item/stack/rods/cyborg
 	name = "metal rod synthesizer"
 	desc = "A device that makes metal rods."

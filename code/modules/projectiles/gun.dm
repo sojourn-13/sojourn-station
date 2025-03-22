@@ -1126,7 +1126,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
-	. = ..()
+	.=..()
 	update_firemode()
 
 /obj/item/gun/dropped(mob/user)
@@ -1137,15 +1137,15 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if (istype(H) && H.using_scope)
 		toggle_scope(H)
 	update_firemode(FALSE)
-	. = ..()
+	.=..()
 	force_firemode_deselect(H)
 
 /obj/item/gun/swapped_from()
-	. = ..()
+	.=..()
 	update_firemode(FALSE)
 
 /obj/item/gun/swapped_to()
-	. = ..()
+	.=..()
 	update_firemode()
 
 /obj/item/gun/proc/toggle_safety_verb()

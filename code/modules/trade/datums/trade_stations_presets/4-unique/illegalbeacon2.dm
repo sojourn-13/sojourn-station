@@ -32,7 +32,6 @@
 		),
 		"Weapons" = list(
 			/obj/item/melee/energy/sword,
-			/obj/item/shield/buckler/energy,
 			/obj/item/organ_module/active/simple/armblade/energy_blade,
 			/obj/item/gun/projectile/revolver/tacticool_revolver
 		)

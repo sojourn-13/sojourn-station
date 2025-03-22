@@ -74,13 +74,6 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
-/datum/craft_recipe/furniture/bench
-	name = "bench frame"
-	result = /obj/structure/table/bench
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
-	)
-
 //Custom chairs
 /datum/craft_recipe/furniture/bar_chair
 	name = "chair, bar"

@@ -55,7 +55,6 @@
 		/mob/living/carbon/human/proc/psionic_weapon,
 		/mob/living/carbon/human/proc/psionic_melee,
 		/mob/living/carbon/human/proc/psionic_tool,
-		/mob/living/carbon/human/proc/psionic_powercell,
 		/mob/living/carbon/human/proc/psychic_call,
 		/mob/living/carbon/human/proc/psychic_banish,
         /mob/living/carbon/human/proc/pain_infliction,
@@ -63,10 +62,7 @@
 		/mob/living/carbon/human/proc/journey_to_nowhere,
 		/mob/living/carbon/human/proc/psionic_armor,
 		/mob/living/carbon/human/proc/psionic_swarm,
-		/mob/living/carbon/human/proc/kinetic_blaster,
-		/mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress,
-		/mob/living/carbon/human/proc/restore,
-		/mob/living/carbon/human/proc/rust,
+		/mob/living/carbon/human/proc/kinetic_blaster
 	)
 
 /obj/item/organ/internal/psionic_tumor/psychiatrist
@@ -86,7 +82,6 @@
 		/mob/living/carbon/human/proc/psionic_weapon,
 		/mob/living/carbon/human/proc/psionic_melee,
 		/mob/living/carbon/human/proc/psionic_tool,
-		/mob/living/carbon/human/proc/psionic_powercell,
 		/mob/living/carbon/human/proc/psychic_call,
 		/mob/living/carbon/human/proc/psychic_banish,
         /mob/living/carbon/human/proc/pain_infliction,
@@ -95,9 +90,6 @@
 		/mob/living/carbon/human/proc/psionic_armor,
 		/mob/living/carbon/human/proc/kinetic_blaster,
 		/mob/living/carbon/human/proc/psionic_swarm,
-		/mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress,
-		/mob/living/carbon/human/proc/restore,
-		/mob/living/carbon/human/proc/rust,
 		/mob/living/carbon/human/proc/peace_of_mind,
 		/mob/living/carbon/human/proc/psionic_heal_other,
 		/mob/living/carbon/human/proc/meditative_focus_other,

@@ -88,10 +88,9 @@
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
-			to_chat(user, SPAN_NOTICE("There [src.amount == 1 ? "is" : "are"] [src.amount] [src.singular_name]\s in the stack."))
-			to_chat(user, SPAN_NOTICE("Ctrl-Shift-Click to take a custom amount."))
+			to_chat(user, "There [src.amount == 1 ? "is" : "are"] [src.amount] [src.singular_name]\s in the stack.")
 		else
-			to_chat(user, SPAN_NOTICE("There is enough charge for [get_amount()]."))
+			to_chat(user, "There is enough charge for [get_amount()].")
 
 /obj/item/stack/attack_self(mob/user as mob)
 	list_recipes(user)
@@ -400,9 +399,6 @@
 		..()
 	return
 
-/obj/item/stack/CtrlShiftClick(var/mob/living/user)
-	try_split(user)
-
 /obj/item/stack/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/stack))
 		var/obj/item/stack/S = W
@@ -419,10 +415,16 @@
 	else
 		return ..()
 
-// Function to split the stack, shared between verb and Ctrl Shift Click
-/obj/item/stack/proc/try_split(var/mob/usr)
+//Verb to split stacks
+/obj/item/stack/verb/split_verb()
+	set src in view(1)
+	set name = "Split"
+	set category = "Object"
+
 	if (!usr.IsAdvancedToolUser())
 		return
+
+
 
 	var/quantity = input(usr,
 	"This stack contains [amount]/[max_amount]. How many would you like to split off into a new stack?\n\
@@ -444,14 +446,6 @@
 		if (!(usr.put_in_hands(S)))
 			//If that fails, leave it beside the original stack
 			S.forceMove(get_turf(src))
-
-//Verb to split stacks
-/obj/item/stack/verb/split_verb()
-	set src in view(1)
-	set name = "Split"
-	set category = "Object"
-
-	try_split(usr)
 
 /obj/item/stack/get_item_cost(export)
 	return amount * ..()

@@ -8,6 +8,7 @@
 	volume = 100
 	price_tag = 150 //Mostly just to have a price for the beacon, but I guess you could sell them if you were REALLY desperate?
 
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
 
 	var/mechanical = 1         // Set to 0 to stop it from drawing the alert lights.
 	var/base_name = "tray"
@@ -271,7 +272,7 @@
 /*
 	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
 		yield_mod += 2
-		seed.harvest(user,get_turf(src),yield_mod)
+		seed.harvest(user,yield_mod)
 	else
 */
 	var/post_moder_yield_mod = yield_mod
@@ -292,7 +293,7 @@
 //	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
 
 	if(user)
-		seed.harvest(user,get_turf(src),yield_mod,potency_mod)
+		seed.harvest(user,yield_mod,potency_mod)
 	else
 		seed.selfharvest(get_turf(src),yield_mod,potency_mod)
 	// Reset values.
@@ -511,7 +512,7 @@
 				to_chat(user, SPAN_NOTICE("You have already sampled from this plant."))
 				if(user.a_intent == I_HURT)
 					to_chat(user, SPAN_NOTICE("You start killing it for one last sample."))
-					seed.harvest(user,get_turf(src),yield_mod,potency_mod,1)
+					seed.harvest(user,yield_mod,potency_mod,1)
 					dead = 1
 					update_icon()
 				return
@@ -522,7 +523,7 @@
 
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
-				seed.harvest(user,get_turf(src),yield_mod, potency_mod,1)
+				seed.harvest(user,yield_mod, potency_mod,1)
 				health -= (rand(3,5)*10)
 				sampled += 1 //no RnG not anymore
 

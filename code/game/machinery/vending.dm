@@ -1006,7 +1006,6 @@
 						/obj/item/tool/knife/psionic_blade,
 						/obj/item/shield/riot/crusader/psionic,
 						/obj/item/stack/medical/bruise_pack/psionic,
-						/obj/item/stack/medical/ointment/psionic,
 
 	) //Items that are not allowed for the vendor to use if custom
 

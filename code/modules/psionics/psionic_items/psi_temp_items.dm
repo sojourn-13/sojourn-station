@@ -100,7 +100,7 @@
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
 	degradation = 0 // Can't degrade
-	workspeed = 1.2
+	workspeed = 0.8
 	max_upgrades = 0 // Can't upgrade it
 	price_tag = 0
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
@@ -164,7 +164,7 @@
 	matter = list()
 	degradation = 0 // Can't degrade
 	embed_mult = 0 //Shouldn't embed, it's not real.
-	workspeed = 1.2
+	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
 	price_tag = 0
@@ -246,7 +246,6 @@
 	durability = 120
 	base_block_chance = 50
 	armor_list = list(melee = 1, bullet = 5, energy = 2, bomb = 25, bio = 0, rad = 0)
-	can_block_proj = TRUE
 
 // Psionic gun.
 /obj/item/gun/kinetic_blaster
