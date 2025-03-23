@@ -239,18 +239,23 @@
 		insertCasing(C)
 	else if(istype(W, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/other = W
+		if(src.used_now)
+			to_chat(user, SPAN_NOTICE("You're already loading into [src]."))
+			return
 		if(!src.stored_ammo.len)
 			to_chat(user, SPAN_WARNING("There is no ammo in \the [src]!"))
 			return
 		if(other.stored_ammo.len >= other.max_ammo)
 			to_chat(user, SPAN_NOTICE("\The [other] is already full."))
 			return
+		src.used_now = TRUE
 		var/diff = FALSE
 		for(var/obj/item/ammo in src.stored_ammo)
 			if(other.stored_ammo.len < other.max_ammo && do_after(user, reload_delay/other.max_ammo, src) && other.insertCasing(removeCasing()))
 				diff = TRUE
 				continue
 			break
+		src.used_now = FALSE
 		if(diff)
 			to_chat(user, SPAN_NOTICE("You finish loading \the [other]. It now contains [other.stored_ammo.len] rounds, and \the [src] now contains [stored_ammo.len] rounds."))
 		else
