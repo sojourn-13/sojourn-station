@@ -797,7 +797,7 @@
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/snacks/butterslice, qmod=0.5, add_price = 3),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/human, qmod=0.5),
 		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1, add_price = 1),
-		list(CWJ_ADD_PRODUCE, "soybeans", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "soybean", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1, add_price = 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/human, qmod=0.5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
@@ -813,7 +813,7 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/snacks/butterslice, qmod=0.5, add_price = 3),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/doughslice, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "soybeans", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "soybean", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1, add_price = 1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 3, base=3, add_price = 9),
 		list(CWJ_ADD_REAGENT, "flour", 10),
