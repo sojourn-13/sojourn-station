@@ -86,7 +86,7 @@ var/global/excelsior_last_draft = 0
 
 /obj/machinery/complant_teleporter/Destroy()
 	excelsior_teleporters -= src
-	RefreshParts() // To avoid energy overfills if a teleporter gets destroyed
+	// RefreshParts() // To avoid energy overfills if a teleporter gets destroyed // CFW - Disabled for now 'cause it creates divide by 0 runtimes
 	.=..()
 
 /obj/machinery/complant_teleporter/RefreshParts()
