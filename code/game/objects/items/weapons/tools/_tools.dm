@@ -1222,7 +1222,7 @@
 	if(use_power_cost)
 		var/ratio = 0
 		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
-		if(cell && cell.charge >= use_power_cost)
+		if(cell && cell.charge >= use_power_cost && cell.maxcharge > 0) // Makes sure cell.maxcharge is greater than 0, or it will divide by 0 - Ryuu
 			ratio = cell.charge / cell.maxcharge
 			ratio = max(round(ratio, 0.25) * 100, 25)
 			add_overlay("[icon_state]-[ratio]")
@@ -1230,7 +1230,7 @@
 	if(use_fuel_cost)
 		var/ratio = 0
 		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
-		if(get_fuel() >= use_fuel_cost)
+		if(get_fuel() >= use_fuel_cost && max_fuel > 0) // Makes sure that max_fuel is greater than 0, or it will divide by 0 - Ryuu
 			ratio = get_fuel() / max_fuel
 			ratio = max(round(ratio, 0.25) * 100, 25)
 			add_overlay("[icon_state]-[ratio]")
