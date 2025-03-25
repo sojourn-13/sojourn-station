@@ -55,7 +55,7 @@
 
 /obj/item/reagent_containers/snacks/openable/proc/heat()
 	for(var/reagent in heated_reagents)
-		reagents.add_reagent(reagent, heated_reagents[reagent])
+		reagents?.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
 	update_icon()
 	if(throw_away_wrapper)

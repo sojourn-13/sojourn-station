@@ -58,7 +58,7 @@
 			if(prob(GLOB.hive_data_float["hivemind_mob_spawn_odds"] + hive_mind_ai.evo_level)) //5->10ish% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
 				new /obj/random/structures/hivemind_mob(src.loc)
 			var/already_build = FALSE
-			for(var/obj/machinery/hivemind_machine/HM in loc.contents)
+			for(var/obj/machinery/hivemind_machine/HM in loc?.contents)
 				if(HM)
 					already_build = TRUE
 					break
