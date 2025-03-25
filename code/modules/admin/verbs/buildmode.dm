@@ -398,7 +398,7 @@
 			if(pa.Find("left"))
 				if(ispath(holder.buildmode.objholder,/turf))
 					var/turf/T = get_turf(object)
-					T.ChangeTurf(holder.buildmode.objholder)
+					T?.ChangeTurf(holder.buildmode.objholder)
 				else
 					var/obj/A = new holder.buildmode.objholder (get_turf(object))
 					A.set_dir(holder.builddir.dir)

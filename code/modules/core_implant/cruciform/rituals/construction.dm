@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/list/listed_components = list()
-	for(var/requirement in blueprint.materials)
+	for(var/requirement in blueprint?.materials)
 		var/atom/placeholder = requirement
 		if(!ispath(placeholder))
 			continue

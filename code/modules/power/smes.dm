@@ -172,7 +172,7 @@
 
 	//inputting
 	if(input_attempt && (!input_pulsed && !input_cut))
-		input_available = terminal.surplus()
+		input_available = terminal?.surplus()
 		target_load = min((capacity-charge)/SMESRATE, input_level)	// Amount we will request from the powernet.
 		if(terminal && terminal.powernet)
 			terminal.powernet.smes_demand += target_load
