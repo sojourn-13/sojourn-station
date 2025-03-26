@@ -556,6 +556,10 @@
 	resistance = RESISTANCE_FRAGILE
 	flags = null
 
+/obj/structure/window/basic/iskhod
+	icon_state = "window_n"
+	basestate = "window_n"
+
 /obj/structure/window/plasmabasic
 	name = "plasma window"
 	desc = "A borosilicate alloy window. It seems to be quite strong."
@@ -589,6 +593,10 @@
 
 	maxHealth = 100
 	resistance = RESISTANCE_AVERAGE
+
+/obj/structure/window/reinforced/iskhod
+	icon_state = "rwindow_n"
+	basestate = "rwindow_n"
 
 /obj/structure/window/New(Loc, constructed=0)
 	..()
@@ -634,11 +642,20 @@
 	basestate = "twindow"
 	opacity = 1
 
+/obj/structure/window/reinforced/tinted/iskhod
+	icon_state = "twindow_n"
+	basestate = "twindow_n"
+	opacity = 1
+
 /obj/structure/window/reinforced/tinted/frosted
 	name = "frosted window"
 	desc = "It looks rather strong and frosted over. Looks like it might take a few less hits then a normal reinforced window."
 	icon_state = "fwindow"
 	basestate = "fwindow"
+
+/obj/structure/window/reinforced/tinted/frosted/iskhod
+	icon_state = "fwindow_n"
+	basestate = "fwindow_n"
 
 /obj/structure/window/shuttle
 	name = "shuttle window"
@@ -657,6 +674,9 @@
 
 	desc = "Adjusts its tint with voltage. Might take a few good hits to shatter it."
 	var/id
+
+/obj/structure/window/reinforced/polarized/iskhod
+	icon_state = "twindow_n"
 
 /obj/structure/window/reinforced/polarized/full
 	dir = SOUTH|EAST
