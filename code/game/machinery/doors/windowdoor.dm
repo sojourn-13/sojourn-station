@@ -19,6 +19,16 @@
 	explosion_resistance = 5
 	air_properties_vary_with_direction = 1
 
+/obj/machinery/door/window/iskhod
+	icon = 'icons/obj/doors/windoor_iskhod.dmi'
+	icon_state = "left"
+	base_state = "left"
+
+/obj/machinery/door/window/iskhod/right
+	icon = 'icons/obj/doors/windoor_iskhod.dmi'
+	icon_state = "right"
+	base_state = "right"
+
 /obj/machinery/door/window/New()
 	..()
 	update_nearby_tiles()
