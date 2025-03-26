@@ -909,41 +909,42 @@ macro "borghotkeymode"
 		name = "NUMPAD3"
 		command = "body-l-leg"
 
+
 menu "menu"
-	elem
+	elem 
 		name = "&File"
 		command = ""
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Quick screenshot\tF2"
 		command = ".screenshot auto"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Save screenshot as...\tShift+F2"
 		command = ".screenshot"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = ""
 		command = ""
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Reconnect"
 		command = ".reconnect"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Quit\tAlt-F4"
 		command = ".quit"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Icons"
 		command = ""
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Size"
 		command = ""
 		category = "&Icons"
@@ -991,7 +992,7 @@ menu "menu"
 		can-check = true
 		group = "size"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Scaling"
 		command = ""
 		category = "&Icons"
@@ -1021,16 +1022,17 @@ menu "menu"
 		name = "&Help"
 		command = ""
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Admin Help\tF1"
 		command = "adminhelp"
 		category = "&Help"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Hotkeys"
 		command = "Hotkeys-Help"
 		category = "&Help"
 		saved-params = "is-checked"
+
 
 window "mainwindow"
 	elem "mainwindow"
@@ -1039,20 +1041,27 @@ window "mainwindow"
 		size = 640x440
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Sojourn Station"
+		title = "Sojourn Iskhod"
 		statusbar = false
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
 		menu = "menu"
+		outer-size = 1936x1066
+		outer-pos = -8,-8
+		inner-size = 1920x1008
+		inner-pos = 8,50
+		screen-size = 1920x1050
 	elem "split"
 		type = CHILD
 		pos = 0,0
 		size = 640x440
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "mapwindow"
 		right = "infowindow"
@@ -1063,6 +1072,7 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
@@ -1071,6 +1081,7 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "commandbar_spy"
@@ -1079,6 +1090,7 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = ""
 
@@ -1110,9 +1122,9 @@ window "mapwindow"
 		anchor1 = 0,0
 		anchor2 = -1,-1
 		font-family = "Grand9k Pixel"
-		font-size = 12pt
+		font-size = 12
 		text-color = #ffffff
-		background-color = #000
+		background-color = #000000
 		saved-params = ""
 		text = ""
 		align = left
@@ -1129,18 +1141,24 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 281,0
+		pos = 291,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		outer-size = 656x537
+		outer-pos = 291,0
+		inner-pos = 8,30
+		screen-size = 1920x1050
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -1151,6 +1169,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 2,0
 		anchor2 = 12,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "Changelog"
@@ -1160,6 +1179,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 12,0
 		anchor2 = 22,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "rules"
@@ -1169,6 +1189,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 22,0
 		anchor2 = 32,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -1178,6 +1199,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 42,0
 		anchor2 = 52,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -1187,6 +1209,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 52,0
 		anchor2 = 62,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Discord"
 		command = "discord"
@@ -1196,6 +1219,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 62,0
 		anchor2 = 72,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Tickets"
 		command = "tickets"
@@ -1203,28 +1227,34 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 291,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		outer-size = 656x537
+		outer-pos = 291,0
+		inner-pos = 8,30
+		screen-size = 1920x1050
 	elem "input"
 		type = INPUT
 		pos = 2,460
 		size = 480x20
 		anchor1 = 0,100
 		anchor2 = 100,100
+		font-size = 10
 		is-default = true
 		border = line
 		saved-params = "command"
-		font-size = 10
 	elem "oocbutton"
 		type = BUTTON
 		pos = 480,460
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
+		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "OOC"
@@ -1237,6 +1267,7 @@ window "outputwindow"
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
+		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "Say"
@@ -1249,6 +1280,7 @@ window "outputwindow"
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
+		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "Emote"
@@ -1261,6 +1293,7 @@ window "outputwindow"
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
+		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "Hotkey"
@@ -1273,6 +1306,7 @@ window "outputwindow"
 		size = 640x456
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		is-visible = false
 		is-disabled = true
 		saved-params = ""
@@ -1290,6 +1324,7 @@ window "outputwindow"
 		size = 1x1
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = ""
 
@@ -1354,3 +1389,4 @@ window "tgui_say"
 		anchor1 = 0,0
 		anchor2 = 0,0
 		saved-params = ""
+
