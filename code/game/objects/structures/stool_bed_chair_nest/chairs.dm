@@ -322,12 +322,12 @@
 
 
 /obj/structure/bed/chair/sofa/update_icon()
+	var/material/initmat = material
 	material = padding_material
 	..()
-	material = initial(material)
+	material = initmat
 	desc = initial(desc)
 	if(padding_material)
-		name = "[padding_material.display_name] [initial(name)]" //this is not perfect but it will do for now.
 		desc += " It's made of [material.use_name] and covered with [padding_material.use_name]."
 
 //color variations
