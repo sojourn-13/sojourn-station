@@ -127,13 +127,10 @@
 
 /datum/craft_recipe/consumer/cement_bag
 	name = "Bag: Quick-Cement"
-	result = /obj/item/cement_bag
+	result = /obj/item/stack/cement_bag
+	flags = CRAFT_BATCH
 	steps = list(
-		list(/obj/item/stack/ore/glass, 2, "time" = 2),
-		list(/obj/item/stack/rods, 1, "time" = 2),
-		list(/obj/item/stack/ore, 1, "time" = 2),
-		list(QUALITY_HAMMERING, 1, 12),
-		list(QUALITY_SHOVELING, 1, 15)
+		list(/obj/item/stack/ore, 2, "time" = 2),
 	)
 
 /datum/craft_recipe/consumer/hydro_tray_plant_bag_water

@@ -73752,7 +73752,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/surfacesec)
 "oaq" = (
-/obj/structure/bed/chair/sofa/teal/right{
+/obj/structure/bed/chair/sofa/teal/left{
 	dir = 1
 	},
 /obj/machinery/button/switch/holosign{

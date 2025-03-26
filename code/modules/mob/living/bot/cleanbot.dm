@@ -5,6 +5,8 @@
 	req_one_access = list(access_janitor, access_robotics)
 	botcard_access = list(access_janitor, access_maint_tunnels)
 
+	pass_flags = PASSTABLE
+
 	locked = 0 // Start unlocked so roboticist can set them to patrol.
 
 	var/obj/effect/decal/cleanable/target
@@ -207,17 +209,32 @@
 /mob/living/bot/cleanbot/proc/get_targets()
 	target_types = list()
 
+	target_types += /obj/effect/decal/cleanable/ash
 	target_types += /obj/effect/decal/cleanable/blood/oil
-	target_types += /obj/effect/decal/cleanable/vomit
+	target_types += /obj/effect/decal/cleanable/cobweb
+	target_types += /obj/effect/decal/cleanable/cobweb2
 	target_types += /obj/effect/decal/cleanable/crayon
-	target_types += /obj/effect/decal/cleanable/liquid_fuel
-	target_types += /obj/effect/decal/cleanable/mucus
 	target_types += /obj/effect/decal/cleanable/dirt
-	target_types += /obj/effect/decal/cleanable/rubble
+	target_types += /obj/effect/decal/cleanable/egg_smudge
+	target_types += /obj/effect/decal/cleanable/filth
+	target_types += /obj/effect/decal/cleanable/flour
+	target_types += /obj/effect/decal/cleanable/fruit_smudge
+	target_types += /obj/effect/decal/cleanable/generic
+	target_types += /obj/effect/decal/cleanable/greenglow
+	target_types += /obj/effect/decal/cleanable/liquid_fuel
+	target_types += /obj/effect/decal/cleanable/molten_item
 	target_types += /obj/effect/decal/cleanable/mucus
+	target_types += /obj/effect/decal/cleanable/pie_smudge
+	target_types += /obj/effect/decal/cleanable/reagents
+	target_types += /obj/effect/decal/cleanable/roach_egg_remains
+	target_types += /obj/effect/decal/cleanable/rubble
+	target_types += /obj/effect/decal/cleanable/spiderling_remains
+	target_types += /obj/effect/decal/cleanable/tomato_smudge
+	target_types += /obj/effect/decal/cleanable/vomit
 
 	if(blood)
 		target_types += /obj/effect/decal/cleanable/blood
+		target_types += /obj/effect/decal/cleanable/slimecorpse
 
 /* Assembly */
 

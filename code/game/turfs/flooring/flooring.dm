@@ -247,24 +247,24 @@ var/list/flooring_types
 			return
 		else
 			R.use(3)
-			to_chat(user, SPAN_NOTICE("You start connecting [R.name]s to [src.name], creating catwalk ..."))
+			to_chat(user, SPAN_NOTICE("You start connecting [R.name]s to [src.name], creating a catwalk ..."))
 			if(do_after(user,60))
 				T.alpha = 0
 				var/obj/structure/catwalk/CT = new /obj/structure/catwalk(T)
 				T.contents += CT
-	if (istype(I, /obj/item/cement_bag))
-		var/obj/item/cement_bag/CB = I
+	if (istype(I, /obj/item/stack/cement_bag))
+		var/obj/item/stack/cement_bag/CB = I
 		if(CB.inuse)
-			to_chat(user, SPAN_NOTICE("You cant poor the [src] that fast!"))
+			to_chat(user, SPAN_NOTICE("You cant pour the [src] that fast!"))
 			return
 		if(!T.wet)
-			to_chat(user, SPAN_NOTICE("The floor needs to be wet before pooring [src]!"))
+			to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
 			return
 		CB.inuse = TRUE
-		to_chat(user, SPAN_NOTICE("You start pooring and smoothing the [src]..."))
+		to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
 		if(do_after(user,60))
 			new /obj/effect/flooring_type_spawner/concrete(T)
-			qdel(CB)
+			CB.use(1)
 		else
 			to_chat(user, SPAN_NOTICE("You must stand still to finish the job!"))
 			CB.inuse = FALSE
@@ -1088,19 +1088,19 @@ var/list/flooring_types
 
 /decl/flooring/industrial/attackby(var/obj/item/I, var/mob/user, var/turf/simulated/T)
 	if(can_repair)
-		if(istype(I, /obj/item/cement_bag))
-			var/obj/item/cement_bag/CB = I
+		if(istype(I, /obj/item/stack/cement_bag))
+			var/obj/item/stack/cement_bag/CB = I
 			if(CB.inuse)
-				to_chat(user, SPAN_NOTICE("You cant poor the [src] that fast!"))
+				to_chat(user, SPAN_NOTICE("You cant pour the [src] that fast!"))
 				return
 			if(!T.wet)
-				to_chat(user, SPAN_NOTICE("The floor needs to be wet before pooring [src]!"))
+				to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
 				return
 			CB.inuse = TRUE
-			to_chat(user, SPAN_NOTICE("You start pooring and smoothing the [src]..."))
+			to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
 			if(do_after(user,60))
 				new repair_into(T)
-				qdel(CB)
+				CB.use(1)
 			else
 				to_chat(user, SPAN_NOTICE("You must stand still to finish the job!"))
 				CB.inuse = FALSE

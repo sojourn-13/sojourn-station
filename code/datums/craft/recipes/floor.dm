@@ -329,3 +329,80 @@
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(QUALITY_PULSING, 30, 80)
 	)
+
+// Maintenance floor tiles
+
+/datum/craft_recipe/floor/maint
+	name = "concrete slabs"
+	steps = list(
+		list(/obj/item/stack/cement_bag, 1, "time" = 1),
+	)
+	result = /obj/item/stack/tile/concrete_small_fixed
+
+/datum/craft_recipe/floor/maint/concrete_bricks
+	name = "concrete bricks"
+	result = /obj/item/stack/tile/concrete_bricks_fixed
+
+/datum/craft_recipe/floor/maint/bricks
+	name = "bricks"
+	result = /obj/item/stack/tile/bricks_fixed
+
+/datum/craft_recipe/floor/maint/ornate
+	name = "painted slates"
+	result = /obj/item/stack/tile/ornate_fixed
+
+/datum/craft_recipe/floor/maint/sierra
+	name = "ornate slates"
+	result = /obj/item/stack/tile/sierra_fixed
+
+/datum/craft_recipe/floor/maint/ceramic
+	name = "ceramic slates"
+	result = /obj/item/stack/tile/ceramic_fixed
+
+/datum/craft_recipe/floor/maint/grey_slates_long
+	name = "grey long slates"
+	result = /obj/item/stack/tile/grey_slates_long_fixed
+
+/datum/craft_recipe/floor/maint/blue_slates_long
+	name = "blue long slates"
+	result = /obj/item/stack/tile/blue_slates_long_fixed
+
+/datum/craft_recipe/floor/maint/grey_slates
+	name = "grey slates"
+	result = /obj/item/stack/tile/grey_slates_fixed
+
+/datum/craft_recipe/floor/maint/blue_slates
+	name = "blue slates"
+	result = /obj/item/stack/tile/blue_slates_fixed
+
+/datum/craft_recipe/floor/maint/navy_slates
+	name = "navy slates"
+	result = /obj/item/stack/tile/navy_slates_fixed
+
+/datum/craft_recipe/floor/maint/fancy_slates
+	name = "disk slates"
+	result = /obj/item/stack/tile/fancy_slates_fixed
+
+/datum/craft_recipe/floor/maint/navy_large_slates
+	name = "navy large slates"
+	result = /obj/item/stack/tile/navy_large_slates_fixed
+
+/datum/craft_recipe/floor/maint/black_large_slates
+	name = "black large slates"
+	result = /obj/item/stack/tile/black_large_slates_fixed
+
+/datum/craft_recipe/floor/maint/green_large_slates
+	name = "green large slates"
+	result = /obj/item/stack/tile/green_large_slates_fixed
+
+/datum/craft_recipe/floor/maint/white_large_slates
+	name = "white large slates"
+	result = /obj/item/stack/tile/white_large_slates_fixed
+
+/datum/craft_recipe/floor/maint/checker_large_slates
+	name = "white and black large slates"
+	result = /obj/item/stack/tile/checker_large_fixed
+
+/datum/craft_recipe/floor/maint/cafe_large_slates
+	name = "white and red large slates"
+	result = /obj/item/stack/tile/cafe_large_fixed

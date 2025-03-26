@@ -125,6 +125,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 	desc = "A box of crayons for all your rune drawing needs."
 	icon = 'icons/obj/crayons.dmi'
 	icon_state = "crayonbox"
+	max_storage_space = 5 // Icon breaks if putting more than 5 candles in the box
 	w_class = ITEM_SIZE_SMALL
 	icon_type = "crayon"
 	can_hold = list(

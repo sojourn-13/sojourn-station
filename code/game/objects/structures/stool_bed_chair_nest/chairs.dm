@@ -70,6 +70,7 @@
 		add_overlay(stool_cache[cache_key])
 
 /obj/structure/bed/chair/proc/update_layer()
+
 	if(src.dir == NORTH)
 		layer = ABOVE_MOB_LAYER
 	else
@@ -297,18 +298,17 @@
 	name = "sofa"
 	icon = 'icons/obj/sofas.dmi'
 	icon_state = "sofamiddle"
+	base_icon = "sofamiddle"
 	anchored = 1
 	buckle_lying = 0
 	buckle_dir = SOUTH
 	applies_material_colour = 1
 	var/sofa_material = "carpet"
 
-/obj/structure/bed/chair/sofa/left
-	icon_state = "sofaend_left"
+/obj/structure/bed/chair/sofa/New(var/newloc,var/newmaterial,var/new_padding_material)
+	..(newloc,MATERIAL_STEEL,sofa_material)
 
-/obj/structure/bed/chair/sofa/New()
-	..()
-	if(dir == 1)
+	if(dir == 1 && icon_state != "sofacorner")
 		buckle_dir = NORTH
 		plane = -15
 		layer = OBJ_LAYER
@@ -318,18 +318,17 @@
 		buckle_dir = EAST
 	if(dir == 8)
 		buckle_dir = WEST
-
 	update_icon()
 
-/obj/structure/bed/chair/sofa/update_icon()
-	if(applies_material_colour && sofa_material)
-		material = get_material_by_name(sofa_material)
-		color = material.icon_colour
 
-		if(sofa_material == "carpet")
-			name = "red [initial(name)]"
-		else
-			name = "[sofa_material] [initial(name)]"
+/obj/structure/bed/chair/sofa/update_icon()
+	material = padding_material
+	..()
+	material = initial(material)
+	desc = initial(desc)
+	if(padding_material)
+		name = "[padding_material.display_name] [initial(name)]" //this is not perfect but it will do for now.
+		desc += " It's made of [material.use_name] and covered with [padding_material.use_name]."
 
 //color variations
 
@@ -371,96 +370,126 @@
 
 /obj/structure/bed/chair/sofa/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 
 /obj/structure/bed/chair/sofa/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 
 /obj/structure/bed/chair/sofa/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/brown/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 
 /obj/structure/bed/chair/sofa/brown/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 
 /obj/structure/bed/chair/sofa/brown/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/teal/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/teal/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/teal/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/black/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/black/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/black/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/green/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/green/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/green/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/purp/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/purp/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/purp/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/blue/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/blue/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/blue/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/beige/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 
 /obj/structure/bed/chair/sofa/beige/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 
 /obj/structure/bed/chair/sofa/beige/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/lime/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/lime/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/lime/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
 
 /obj/structure/bed/chair/sofa/yellow/left
 	icon_state = "sofaend_left"
+	base_icon = "sofaend_left"
 
 /obj/structure/bed/chair/sofa/yellow/right
 	icon_state = "sofaend_right"
+	base_icon = "sofaend_right"
 
 /obj/structure/bed/chair/sofa/yellow/corner
 	icon_state = "sofacorner"
+	base_icon = "sofacorner"
