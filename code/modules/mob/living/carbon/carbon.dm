@@ -47,7 +47,7 @@
 	if(.)
 		if (src.nutrition && src.stat != 2)
 			src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
-			if (move_intent.flags & MOVE_INTENT_EXERTIVE)
+			if (move_intent?.flags & MOVE_INTENT_EXERTIVE)
 				src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
 
 		if(is_watching == TRUE)
