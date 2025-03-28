@@ -203,7 +203,7 @@
 		name = "Corvid Belly"
 		icon_state = "corvidbelly"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_GROIN,BP_TORSO,BP_HEAD,BP_L_LEG,BP_R_LEG)
+		body_parts = list(BP_GROIN,BP_TORSO,BP_HEAD)
 
 	cow_body
 		name = "Cow Markings"
@@ -405,11 +405,6 @@
 		icon_state ="warmonger"
 		body_parts = list(BP_HEAD)
 
-	punk_head
-		name = "FBP-Cerberus head"
-		icon_state ="punk"
-		body_parts = list(BP_HEAD)
-
 	bishop_alt_optics
 		name = "FBP-Bishop Alt. Optics (IPC)"
 		icon_state = "bishop_alt_optics"
@@ -449,37 +444,37 @@
 		name = "FBP-Human synthskin"
 		icon_state = "synthskinhuman"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	synthskin_humanf
 		name = "FBP-Human Female synthskin"
 		icon_state = "synthskinhumanf"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	synthskin_canine
 		name = "FBP-Canine synthskin"
 		icon_state = "synthskincanine"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	synthskin_feline
 		name = "FBP-Feline synthskin"
 		icon_state = "synthskinfeline"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	synthskin_shark
 		name = "FBP-Shark synthskin"
 		icon_state = "synthskinshark"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	synthskin_lizard
 		name = "FBP-Lizard synthskin"
 		icon_state = "synthskinlizard"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_GROIN,BP_TORSO,BP_HEAD)
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
 
 /*Modular Longsock*/
@@ -488,25 +483,25 @@
 		name = "Modular Longsock (Right Arm)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM,BP_R_HAND)
 
 	osocks_larm
 		name = "Modular Longsock (Left Arm)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM,BP_L_HAND)
 
 	osocks_rleg
 		name = "Modular Longsock (Right Leg)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_FOOT,BP_R_LEG)
 
 	osocks_lleg
 		name = "Modular Longsock (Left Leg)"
 		icon_state = "osocks"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_FOOT,BP_L_LEG)
 
 	monoeye
 		name = "Monoeye"
@@ -995,7 +990,6 @@
 		name = "Sablekyne (Bone, R.Arm)"
 		icon_state = "sbone"
 		body_parts = list(BP_R_ARM)
-		blend = ICON_MULTIPLY
 
 		left
 			name = "Sablekyne (Bone, L.Arm)"
@@ -1124,49 +1118,49 @@
 		name = "Absolute Prosthetic Right Arm, Male"
 		icon_state = "church_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	chuch_arm_left_male
 		name = "Absolute Prosthetic Left Arm, Male"
 		icon_state = "church_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	church_leg_right_male
 		name = "Absolute Prosthetic Right Leg, Male"
 		icon_state = "church_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	church_leg_left_male
 		name = "Absolute Prosthetic Left Leg, Male"
 		icon_state = "church_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	church_arm_right_female
 		name = "Absolute Prosthetic Right Arm, Female"
 		icon_state = "church_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	chuch_arm_left_female
 		name = "Absolute Prosthetic Left Arm, Female"
 		icon_state = "church_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	church_leg_right_female
 		name = "Absolute Prosthetic Right Leg, Female"
 		icon_state = "church_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	church_leg_left_female
 		name = "Absolute Prosthetic Left Leg, Female"
 		icon_state = "church_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //junktech/ghetto
 
@@ -1174,49 +1168,49 @@
 		name = "Junktech Prosthetic Right Arm, Male"
 		icon_state = "ghetto_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	ghetto_arm_left_male
 		name = "Junktech Prosthetic Left Arm, Male"
 		icon_state = "ghetto_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	ghetto_leg_right_male
 		name = "Junktech Prosthetic Right Leg, Male"
 		icon_state = "ghetto_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	ghetto_leg_left_male
 		name = "Junktech Prosthetic Left Leg, Male"
 		icon_state = "ghetto_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	ghetto_arm_right_female
 		name = "Junktech Prosthetic Right Arm, Female"
 		icon_state = "ghetto_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	ghetto_arm_left_female
 		name = "Junktech Prosthetic Left Arm, Female"
 		icon_state = "ghetto_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	ghetto_leg_right_female
 		name = "Junktech Prosthetic Right Leg, Female"
 		icon_state = "ghetto_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	ghetto_leg_left_female
 		name = "Junktech Prosthetic Left Leg, Female"
 		icon_state = "ghetto_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Lonestar Movement Lock
 
@@ -1224,49 +1218,49 @@
 		name = "Lonestar Prosthetic Right Arm, Male"
 		icon_state = "lonestar_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	lonestar_arm_left_male
 		name = "Lonestar Prosthetic Left Arm, Male"
 		icon_state = "lonestar_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	lonestar_leg_right_male
 		name = "Lonestar Prosthetic Right Leg, Male"
 		icon_state = "lonestar_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	lonestar_leg_left_male
 		name = "Lonestar Prosthetic Left Leg, Male"
 		icon_state = "lonestar_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	lonestar_arm_right_female
 		name = "Lonestar Prosthetic Right Arm, Female"
 		icon_state = "lonestar_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	lonestar_arm_left_female
 		name = "Lonestar Prosthetic Left Arm, Female"
 		icon_state = "lonestar_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	lonestar_leg_right_female
 		name = "Lonestar Prosthetic Right Leg, Female"
 		icon_state = "lonestar_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	lonestar_leg_left_female
 		name = "Lonestar Prosthetic Left Leg, Female"
 		icon_state = "lonestar_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Bishop
 
@@ -1274,49 +1268,49 @@
 		name = "Bishop Prosthetic Right Arm, Male"
 		icon_state = "bishop_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	bishop_arm_left_male
 		name = "Bishop Prosthetic Left Arm, Male"
 		icon_state = "bishop_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	bishop_leg_right_male
 		name = "Bishop Prosthetic Right Leg, Male"
 		icon_state = "bishop_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	bishop_leg_left_male
 		name = "Bishop Prosthetic Left Leg, Male"
 		icon_state = "bishop_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	bishop_arm_right_female
 		name = "Bishop Prosthetic Right Arm, Female"
 		icon_state = "bishop_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	bishop_arm_left_female
 		name = "Bishop Prosthetic Left Arm, Female"
 		icon_state = "bishop_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	bishop_leg_right_female
 		name = "Bishop Prosthetic Right Leg, Female"
 		icon_state = "bishop_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	bishop_leg_left_female
 		name = "Bishop Prosthetic Left Leg, Female"
 		icon_state = "bishop_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Blackshield
 
@@ -1324,49 +1318,49 @@
 		name = "Blackshield Prosthetic Right Arm, Male"
 		icon_state = "bs_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	blackshield_arm_left_male
 		name = "Blackshield Prosthetic Left Arm, Male"
 		icon_state = "bs_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	blackshield_leg_right_male
 		name = "Blackshield Prosthetic Right Leg, Male"
 		icon_state = "bs_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	blackshield_leg_left_male
 		name = "Blackshield Prosthetic Left Leg, Male"
 		icon_state = "bs_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	blackshield_arm_right_female
 		name = "Blackshield Prosthetic Right Arm, Female"
 		icon_state = "bs_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	blackshield_arm_left_female
 		name = "Blackshield Prosthetic Left Arm, Female"
 		icon_state = "bs_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	blackshield_leg_right_female
 		name = "Blackshield Prosthetic Right Leg, Female"
 		icon_state = "bs_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	blackshield_leg_left_female
 		name = "Blackshield Prosthetic Left Leg, Female"
 		icon_state = "bs_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Soteria
 
@@ -1374,49 +1368,49 @@
 		name = "Soteria Prosthetic Right Arm, Male"
 		icon_state = "soteria_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	soteria_arm_left_male
 		name = "Soteria Prosthetic Left Arm, Male"
 		icon_state = "soteria_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	soteria_leg_right_male
 		name = "Soteria Prosthetic Right Leg, Male"
 		icon_state = "soteria_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	soteria_leg_left_male
 		name = "Soteria Prosthetic Left Leg, Male"
 		icon_state = "soteria_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	soteria_arm_right_female
 		name = "Soteria Prosthetic Right Arm, Female"
 		icon_state = "soteria_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	soteria_arm_left_female
 		name = "Soteria Prosthetic Left Arm, Female"
 		icon_state = "soteria_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	soteria_leg_right_female
 		name = "Soteria Prosthetic Right Leg, Female"
 		icon_state = "soteria_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	soteria_leg_left_female
 		name = "Soteria Prosthetic Left Leg, Female"
 		icon_state = "soteria_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //FBP blank
 
@@ -1424,49 +1418,49 @@
 		name = "FBP Prosthetic Right Arm, Male"
 		icon_state = "fbp_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	fbp_arm_left_male
 		name = "FBP Prosthetic Left Arm, Male"
 		icon_state = "fbp_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	fbp_leg_right_male
 		name = "FBP Prosthetic Right Leg, Male"
 		icon_state = "fbp_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	fbp_leg_left_male
 		name = "FBP Prosthetic Left Leg, Male"
 		icon_state = "fbp_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	fbp_arm_right_female
 		name = "FBP Prosthetic Right Arm, Female"
 		icon_state = "fbp_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	fbp_arm_left_female
 		name = "FBP Prosthetic Left Arm, Female"
 		icon_state = "fbp_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	fbp_leg_right_female
 		name = "FBP Prosthetic Right Leg, Female"
 		icon_state = "fbp_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	fbp_leg_left_female
 		name = "FBP Prosthetic Left Leg, Female"
 		icon_state = "fbp_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Generic / Robotic
 
@@ -1474,49 +1468,49 @@
 		name = "Generic Prosthetic Right Arm, Male"
 		icon_state = "generic_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	generic_arm_left_male
 		name = "Generic Prosthetic Left Arm, Male"
 		icon_state = "generic_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	generic_leg_right_male
 		name = "Generic Prosthetic Right Leg, Male"
 		icon_state = "generic_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	generic_leg_left_male
 		name = "Generic Prosthetic Left Leg, Male"
 		icon_state = "generic_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	generic_arm_right_female
 		name = "Generic Prosthetic Right Arm, Female"
 		icon_state = "generic_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	generic_arm_left_female
 		name = "Generic Prosthetic Left Arm, Female"
 		icon_state = "generic_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	generic_leg_right_female
 		name = "Generic Prosthetic Right Leg, Female"
 		icon_state = "generic_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	generic_leg_left_female
 		name = "Generic Prosthetic Left Leg, Female"
 		icon_state = "generic_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Hephaistos Default
 
@@ -1524,49 +1518,49 @@
 		name = "Hephaistos Prosthetic Right Arm, Male"
 		icon_state = "heph_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	heph_arm_left_male
 		name = "Hephaistos Prosthetic Left Arm, Male"
 		icon_state = "heph_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	heph_leg_right_male
 		name = "Hephaistos Prosthetic Right Leg, Male"
 		icon_state = "heph_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	heph_leg_left_male
 		name = "Hephaistos Prosthetic Left Leg, Male"
 		icon_state = "heph_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	heph_arm_right_female
 		name = "Hephaistos Prosthetic Right Arm, Female"
 		icon_state = "heph_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	heph_arm_left_female
 		name = "Hephaistos Prosthetic Left Arm, Female"
 		icon_state = "heph_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	heph_leg_right_female
 		name = "Hephaistos Prosthetic Right Leg, Female"
 		icon_state = "heph_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	heph_leg_left_female
 		name = "Hephaistos Prosthetic Left Leg, Female"
 		icon_state = "heph_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Hephaistos Athena
 
@@ -1574,49 +1568,49 @@
 		name = "Hephaistos Prosthetic Right Arm, Male"
 		icon_state = "athena_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	athena_arm_left_male
 		name = "Hephaistos Prosthetic Left Arm, Male"
 		icon_state = "athena_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	athena_leg_right_male
 		name = "Hephaistos Prosthetic Right Leg, Male"
 		icon_state = "athena_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	athena_leg_left_male
 		name = "Hephaistos Prosthetic Left Leg, Male"
 		icon_state = "athena_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	athena_arm_right_female
 		name = "Hephaistos Prosthetic Right Arm, Female"
 		icon_state = "athena_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	athena_arm_left_female
 		name = "Hephaistos Prosthetic Left Arm, Female"
 		icon_state = "athena_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	athena_leg_right_female
 		name = "Hephaistos Prosthetic Right Leg, Female"
 		icon_state = "athena_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	athena_leg_left_female
 		name = "Hephaistos Prosthetic Left Leg, Female"
 		icon_state = "athena_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Serbian / Void Wolf
 
@@ -1624,49 +1618,49 @@
 		name = "Void Wolf Prosthetic Right Arm, Male"
 		icon_state = "serbian_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	serbian_arm_left_male
 		name = "Void Wolf Prosthetic Left Arm, Male"
 		icon_state = "serbian_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	serbian_leg_right_male
 		name = "Void Wolf Prosthetic Right Leg, Male"
 		icon_state = "serbian_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	serbian_leg_left_male
 		name = "Void Wolf Prosthetic Left Leg, Male"
 		icon_state = "serbian_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	serbian_arm_right_female
 		name = "Void Wolf Prosthetic Right Arm, Female"
 		icon_state = "serbian_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	serbian_arm_left_female
 		name = "Void Wolf Prosthetic Left Arm, Female"
 		icon_state = "serbian_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	serbian_leg_right_female
 		name = "Void Wolf Prosthetic Right Leg, Female"
 		icon_state = "serbian_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	serbian_leg_left_female
 		name = "Void Wolf Prosthetic Left Leg, Female"
 		icon_state = "serbian_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Ward Spirit
 
@@ -1674,49 +1668,49 @@
 		name = "Spirit Prosthetic Right Arm, Male"
 		icon_state = "spirit_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	spirit_arm_left_male
 		name = "Spirit Prosthetic Left Arm, Male"
 		icon_state = "spirit_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	spirit_leg_right_male
 		name = "Spirit Prosthetic Right Leg, Male"
 		icon_state = "spirit_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	spirit_leg_left_male
 		name = "Spirit Prosthetic Left Leg, Male"
 		icon_state = "spirit_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	spirit_arm_right_female
 		name = "Spirit Prosthetic Right Arm, Female"
 		icon_state = "spirit_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	spirit_arm_left_female
 		name = "Spirit Prosthetic Left Arm, Female"
 		icon_state = "spirit_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	spirit_leg_right_female
 		name = "Spirit Prosthetic Right Leg, Female"
 		icon_state = "spirit_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	spirit_leg_left_female
 		name = "Spirit Prosthetic Left Leg, Female"
 		icon_state = "spirit_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Technomancer / Guild
 
@@ -1724,49 +1718,49 @@
 		name = "Artificer Prosthetic Right Arm, Male"
 		icon_state = "techno_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	techno_arm_left_male
 		name = "Artificer Prosthetic Left Arm, Male"
 		icon_state = "techno_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	techno_leg_right_male
 		name = "Artificer Prosthetic Right Leg, Male"
 		icon_state = "techno_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	techno_leg_left_male
 		name = "Artificer Prosthetic Left Leg, Male"
 		icon_state = "techno_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	techno_arm_right_female
 		name = "Artificer Prosthetic Right Arm, Female"
 		icon_state = "techno_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	techno_arm_left_female
 		name = "Artificer Prosthetic Left Arm, Female"
 		icon_state = "techno_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	techno_leg_right_female
 		name = "Artificer Prosthetic Right Leg, Female"
 		icon_state = "techno_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	techno_leg_left_female
 		name = "Artificer Prosthetic Left Leg, Female"
 		icon_state = "techno_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Ward-Takahashi
 
@@ -1774,49 +1768,49 @@
 		name = "Ward-Takehashi Prosthetic Right Arm, Male"
 		icon_state = "ward_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	ward_arm_left_male
 		name = "Ward-Takehashi Prosthetic Left Arm, Male"
 		icon_state = "ward_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	ward_leg_right_male
 		name = "Ward-Takehashi Prosthetic Right Leg, Male"
 		icon_state = "ward_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	ward_leg_left_male
 		name = "Ward-Takehashi Prosthetic Left Leg, Male"
 		icon_state = "ward_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	ward_arm_right_female
 		name = "Ward-Takehashi Prosthetic Right Arm, Female"
 		icon_state = "ward_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	ward_arm_left_female
 		name = "Ward-Takehashi Prosthetic Left Arm, Female"
 		icon_state = "ward_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	ward_leg_right_female
 		name = "Ward-Takehashi Prosthetic Right Leg, Female"
 		icon_state = "ward_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	ward_leg_left_female
 		name = "Ward-Takehashi Prosthetic Left Leg, Female"
 		icon_state = "ward_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Xion
 
@@ -1824,49 +1818,49 @@
 		name = "Xion Prosthetic Right Arm, Male"
 		icon_state = "xion_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	xion_arm_left_male
 		name = "Xion Prosthetic Left Arm, Male"
 		icon_state = "xion_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	xion_leg_right_male
 		name = "Xion Prosthetic Right Leg, Male"
 		icon_state = "xion_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	xion_leg_left_male
 		name = "Xion Prosthetic Left Leg, Male"
 		icon_state = "xion_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	xion_arm_right_female
 		name = "Xion Prosthetic Right Arm, Female"
 		icon_state = "xion_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	xion_arm_left_female
 		name = "Xion Prosthetic Left Arm, Female"
 		icon_state = "xion_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	xion_leg_right_female
 		name = "Xion Prosthetic Right Leg, Female"
 		icon_state = "xion_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	xion_leg_left_female
 		name = "Xion Prosthetic Left Leg, Female"
 		icon_state = "xion_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 //Zeng-Hu
 
@@ -1874,46 +1868,46 @@
 		name = "Zeng-Hu Prosthetic Right Arm, Male"
 		icon_state = "zeng_r_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	zeng_arm_left_male
 		name = "Zeng-Hu Prosthetic Left Arm, Male"
 		icon_state = "zeng_l_arm_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	zeng_leg_right_male
 		name = "Zeng-Hu Prosthetic Right Leg, Male"
 		icon_state = "zeng_r_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	zeng_leg_left_male
 		name = "Zeng-Hu Prosthetic Left Leg, Male"
 		icon_state = "zeng_l_leg_m"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	zeng_arm_right_female
 		name = "Zeng-Hu Prosthetic Right Arm, Female"
 		icon_state = "zeng_r_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_ARM)
+		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	zeng_arm_left_female
 		name = "Zeng-Hu Prosthetic Left Arm, Female"
 		icon_state = "zeng_l_arm_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_ARM)
+		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	zeng_leg_right_female
 		name = "Zeng-Hu Prosthetic Right Leg, Female"
 		icon_state = "zeng_r_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_R_LEG)
+		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	zeng_leg_left_female
 		name = "Zeng-Hu Prosthetic Left Leg, Female"
 		icon_state = "zeng_l_leg_f"
 		blend = ICON_MULTIPLY
-		body_parts = list(BP_L_LEG)
+		body_parts = list(BP_L_LEG, BP_L_FOOT)
