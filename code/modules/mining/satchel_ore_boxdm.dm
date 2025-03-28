@@ -10,6 +10,7 @@
 	spawn_tags = SPAWN_TAG_STRUCTURE_COMMON
 	var/last_update = 0
 	var/list/stored_ore = list()
+	climbable = TRUE
 
 /obj/structure/ore_box/attackby(obj/item/W, mob/user)
 	if (istype(W, /obj/item/stack/ore/))
