@@ -393,7 +393,7 @@
 			//completely unknown alien device
 			if(prob(50))
 				apply_image_decorations = 0
-			new_item.price_tag = rand(450,800)
+			new_item?.price_tag = rand(450,800)
 		if(29)
 			//fossil bone/skull
 			//new_item = new /obj/item/fossil/base(src.loc)
