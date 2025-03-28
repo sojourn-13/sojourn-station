@@ -759,6 +759,7 @@ var/list/name_to_material
 /material/cloth_teal
 	name = "teal"
 	display_name ="teal"
+	stack_type = /obj/item/stack/tile/carpet/blucarpet
 	use_name = "teal cloth"
 	icon_colour = "#00EAFA"
 	flags = MATERIAL_PADDING
@@ -769,6 +770,7 @@ var/list/name_to_material
 	name = "black"
 	display_name = "black"
 	use_name = "black cloth"
+	stack_type = /obj/item/stack/tile/carpet/bcarpet
 	icon_colour = "#505050"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -778,6 +780,7 @@ var/list/name_to_material
 	name = "green"
 	display_name = "green"
 	use_name = "green cloth"
+	stack_type = /obj/item/stack/tile/carpet/turcarpet
 	icon_colour = "#01C608"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -787,6 +790,7 @@ var/list/name_to_material
 	name = "purple"
 	display_name = "purple"
 	use_name = "purple cloth"
+	stack_type = /obj/item/stack/tile/carpet/purcarpet
 	icon_colour = "#9C56C4"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -796,6 +800,7 @@ var/list/name_to_material
 	name = "blue"
 	display_name = "blue"
 	use_name = "blue cloth"
+	stack_type = /obj/item/stack/tile/carpet/sblucarpet
 	icon_colour = "#6B6FE3"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -805,6 +810,7 @@ var/list/name_to_material
 	name = "beige"
 	display_name = "beige"
 	use_name = "beige cloth"
+	stack_type = /obj/item/stack/material/cloth
 	icon_colour = "#E8E7C8"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -814,6 +820,7 @@ var/list/name_to_material
 	name = "lime"
 	display_name = "lime"
 	use_name = "lime cloth"
+	stack_type = /obj/item/stack/tile/carpet/turcarpet
 	icon_colour = "#62E36C"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
@@ -823,6 +830,7 @@ var/list/name_to_material
 	name = "yellow"
 	display_name = "yellow"
 	use_name = "yellow cloth"
+	stack_type = /obj/item/stack/tile/carpet/oracarpet
 	icon_colour = "#FFFF00"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232

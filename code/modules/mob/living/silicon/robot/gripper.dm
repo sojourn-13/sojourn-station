@@ -31,7 +31,7 @@
 		/obj/item/am_shielding_container,
 		/obj/item/stack/tile, //Repair floors yay
 		/obj/item/oddity/blackbox_nanoforge,
-		/obj/item/cement_bag,
+		/obj/item/stack/cement_bag,
 		/obj/item/stack/ore //So they can craft cement bags
 		)
 

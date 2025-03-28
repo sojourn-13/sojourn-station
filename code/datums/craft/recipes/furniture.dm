@@ -159,25 +159,156 @@
 	name = "comfy chair, teal"
 	result = /obj/structure/bed/chair/comfy/teal
 
+//Sofas
+
+// Red
+
 /datum/craft_recipe/furniture/sofa
-	name = "sofa middle"
+	name = "sofa middle, red"
 	result = /obj/structure/bed/chair/sofa
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
+
 /datum/craft_recipe/furniture/sofa/left
-	name = "sofa left"
+	name = "sofa left, red"
 	result = /obj/structure/bed/chair/sofa/left
 
 /datum/craft_recipe/furniture/sofa/right
-	name = "sofa right"
+	name = "sofa right, red"
 	result = /obj/structure/bed/chair/sofa/right
 
 /datum/craft_recipe/furniture/sofa/corner
-	name = "sofa corner"
+	name = "sofa corner, red"
 	result = /obj/structure/bed/chair/sofa/corner
 
+// Black
+
+/datum/craft_recipe/furniture/sofa/black
+	name = "sofa middle, black"
+	result = /obj/structure/bed/chair/sofa/black
+
+/datum/craft_recipe/furniture/sofa/left/black
+	name = "sofa left, black"
+	result = /obj/structure/bed/chair/sofa/black/left
+
+/datum/craft_recipe/furniture/sofa/right/black
+	name = "sofa right, black"
+	result = /obj/structure/bed/chair/sofa/black/right
+
+/datum/craft_recipe/furniture/sofa/corner/black
+	name = "sofa corner, black"
+	result = /obj/structure/bed/chair/sofa/black/corner
+
+// Blue
+
+/datum/craft_recipe/furniture/sofa/blue
+	name = "sofa middle, blue"
+	result = /obj/structure/bed/chair/sofa/blue
+
+/datum/craft_recipe/furniture/sofa/left/blue
+	name = "sofa left, blue"
+	result = /obj/structure/bed/chair/sofa/blue/left
+
+/datum/craft_recipe/furniture/sofa/right/blue
+	name = "sofa right, blue"
+	result = /obj/structure/bed/chair/sofa/blue/right
+
+/datum/craft_recipe/furniture/sofa/corner/blue
+	name = "sofa corner, blue"
+	result = /obj/structure/bed/chair/sofa/blue/corner
+
+// Brown
+
+/datum/craft_recipe/furniture/sofa/brown
+	name = "sofa middle, brown"
+	result = /obj/structure/bed/chair/sofa/brown
+
+/datum/craft_recipe/furniture/sofa/left/brown
+	name = "sofa left, brown"
+	result = /obj/structure/bed/chair/sofa/brown/left
+
+/datum/craft_recipe/furniture/sofa/right/brown
+	name = "sofa right, brown"
+	result = /obj/structure/bed/chair/sofa/brown/right
+
+/datum/craft_recipe/furniture/sofa/corner/brown
+	name = "sofa corner, brown"
+	result = /obj/structure/bed/chair/sofa/brown/corner
+
+// Green
+
+/datum/craft_recipe/furniture/sofa/green
+	name = "sofa middle, green"
+	result = /obj/structure/bed/chair/sofa/green
+
+/datum/craft_recipe/furniture/sofa/left/green
+	name = "sofa left, green"
+	result = /obj/structure/bed/chair/sofa/green/left
+
+/datum/craft_recipe/furniture/sofa/right/green
+	name = "sofa right, green"
+	result = /obj/structure/bed/chair/sofa/green/right
+
+/datum/craft_recipe/furniture/sofa/corner/green
+	name = "sofa corner, green"
+	result = /obj/structure/bed/chair/sofa/green/corner
+
+// Beige
+
+/datum/craft_recipe/furniture/sofa/beige
+	name = "sofa middle, beige"
+	result = /obj/structure/bed/chair/sofa/beige
+
+/datum/craft_recipe/furniture/sofa/left/beige
+	name = "sofa left, beige"
+	result = /obj/structure/bed/chair/sofa/beige/left
+
+/datum/craft_recipe/furniture/sofa/right/beige
+	name = "sofa right, beige"
+	result = /obj/structure/bed/chair/sofa/beige/right
+
+/datum/craft_recipe/furniture/sofa/corner/beige
+	name = "sofa corner, beige"
+	result = /obj/structure/bed/chair/sofa/beige/corner
+
+// Purple
+
+/datum/craft_recipe/furniture/sofa/purple
+	name = "sofa middle, purple"
+	result = /obj/structure/bed/chair/sofa/purp
+
+/datum/craft_recipe/furniture/sofa/left/purple
+	name = "sofa left, purple"
+	result = /obj/structure/bed/chair/sofa/purp/left
+
+/datum/craft_recipe/furniture/sofa/right/purple
+	name = "sofa right, purple"
+	result = /obj/structure/bed/chair/sofa/purp/right
+
+/datum/craft_recipe/furniture/sofa/corner/purple
+	name = "sofa corner, purple"
+	result = /obj/structure/bed/chair/sofa/purp/corner
+
+// Teal
+
+/datum/craft_recipe/furniture/sofa/teal
+	name = "sofa middle, teal"
+	result = /obj/structure/bed/chair/sofa/teal
+
+/datum/craft_recipe/furniture/sofa/left/teal
+	name = "sofa left, teal"
+	result = /obj/structure/bed/chair/sofa/teal/left
+
+/datum/craft_recipe/furniture/sofa/right/teal
+	name = "sofa right, teal"
+	result = /obj/structure/bed/chair/sofa/teal/right
+
+/datum/craft_recipe/furniture/sofa/corner/teal
+	name = "sofa corner, teal"
+	result = /obj/structure/bed/chair/sofa/teal/corner
+// -
 
 /datum/craft_recipe/furniture/stool
 	name = "stool"

@@ -103,30 +103,37 @@
 
 /obj/item/stack/tile/carpet/bcarpet
 	name = "black carpet"
+	singular_name = "black carpet"
 	icon_state = "tile_bcarpet"
 
 /obj/item/stack/tile/carpet/blucarpet
 	name = "blue carpet"
+	singular_name = "blue carpet"
 	icon_state = "tile_blucarpet"
 
 /obj/item/stack/tile/carpet/turcarpet
 	name = "turquoise carpet"
+	singular_name = "turquoise carpet"
 	icon_state = "tile_turcarpet"
 
 /obj/item/stack/tile/carpet/sblucarpet
 	name = "silver blue carpet"
+	singular_name = "silver blue carpet"
 	icon_state = "tile_sblucarpet"
 
 /obj/item/stack/tile/carpet/gaycarpet
 	name = "clown carpet"
+	singular_name = "clown carpet"
 	icon_state = "tile_gaycarpet"
 
 /obj/item/stack/tile/carpet/purcarpet
 	name = "purple carpet"
+	singular_name = "purple carpet"
 	icon_state = "tile_purcarpet"
 
 /obj/item/stack/tile/carpet/oracarpet
 	name = "orange carpet"
+	singular_name = "orange carpet"
 	icon_state = "tile_oracarpet"
 
 /*
@@ -527,191 +534,232 @@
 /obj/item/stack/tile/concrete_small
 	name = "concrete slabs"
 	singular_name = "concrete slab"
-	icon_state = "tile_slate"
+	icon_state = "tile_concrete_small"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/concrete_bricks
 	name = "concrete bricks"
 	singular_name = "concrete brick"
-	icon_state = "tile_slate"
+	icon_state = "tile_concrete_brick"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/bricks
 	name = "bricks"
 	singular_name = "brick"
-	icon_state = "tile_slate"
+	icon_state = "tile_brick"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/ornate
 	name = "painted slates"
 	singular_name = "painted slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_ornate"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/sierra
 	name = "painted slates"
 	singular_name = "painted slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_sierra"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/ceramic
 	name = "ceramic slates"
 	singular_name = "ceramic slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_ceramic"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/grey_slates_long
 	name = "grey long slates"
 	singular_name = "grey long slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_grey_long"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/blue_slates_long
 	name = "blue long slates"
 	singular_name = "blue long slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_blue_long"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/grey_slates
 	name = "grey slates"
 	singular_name = "grey slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_grey"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/blue_slates
 	name = "blue slates"
 	singular_name = "blue slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_blue"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/navy_slates
 	name = "navy slates"
 	singular_name = "navy slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_navy"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/fancy_slates
 	name = "disk slates"
 	singular_name = "disk slate"
 	icon_state = "tile_slate"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/navy_large_slates
 	name = "large navy slates"
 	singular_name = "large navy slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_navy_large"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/black_large_slates
 	name = "large black slates"
 	singular_name = "large black slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_black_large"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/green_large_slates
 	name = "large green slates"
 	singular_name = "large green slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_green_large"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
+/*
 /obj/item/stack/tile/brown_large_slates
 	name = "large brown slates"
 	singular_name = "large brown slate"
 	icon_state = "tile_slate"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
+*/ // Completely unused, don't even have turfs assigned to them
 
 /obj/item/stack/tile/white_large_slates
 	name = "large white slates"
 	singular_name = "large white slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_white_large"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/checker_large
 	name = "large white and black slates"
 	singular_name = "large and black slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_checker"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 /obj/item/stack/tile/cafe_large
 	name = "large white and red slates"
 	singular_name = "large and red slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_cafe_maint"
+	desc = "An old and worn flooring tile. It could probably be fixed with some concrete."
 
 //fixed versons
 
 /obj/item/stack/tile/concrete_small_fixed
 	name = "concrete slabs"
 	singular_name = "concrete slab"
-	icon_state = "tile_slate"
+	icon_state = "tile_concrete_small"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/concrete_bricks_fixed
 	name = "concrete bricks"
 	singular_name = "concrete brick"
-	icon_state = "tile_slate"
+	icon_state = "tile_concrete_brick"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/bricks_fixed
 	name = "bricks"
 	singular_name = "brick"
-	icon_state = "tile_slate"
+	icon_state = "tile_brick"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/ornate_fixed
 	name = "painted slates"
 	singular_name = "painted slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_ornate"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/sierra_fixed
 	name = "painted slates"
 	singular_name = "painted slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_sierra"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/ceramic_fixed
 	name = "ceramic slates"
 	singular_name = "ceramic slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_ceramic"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/grey_slates_long_fixed
 	name = "grey long slates"
 	singular_name = "grey long slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_grey_long"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/blue_slates_long_fixed
 	name = "blue long slates"
 	singular_name = "blue long slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_blue_long"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/grey_slates_fixed
 	name = "grey slates"
 	singular_name = "grey slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_grey"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/blue_slates_fixed
 	name = "blue slates"
 	singular_name = "blue slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_blue"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/navy_slates_fixed
 	name = "navy slates"
 	singular_name = "navy slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_navy"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/fancy_slates_fixed
 	name = "disk slates"
 	singular_name = "disk slate"
 	icon_state = "tile_slate"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/navy_large_slates_fixed
 	name = "large navy slates"
 	singular_name = "large navy slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_navy_large"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/black_large_slates_fixed
 	name = "large black slates"
 	singular_name = "large black slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_black_large"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/green_large_slates_fixed
 	name = "large green slates"
 	singular_name = "large green slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_green_large"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
+/*
 /obj/item/stack/tile/brown_large_slates_fixed
 	name = "large brown slates"
 	singular_name = "large brown slate"
 	icon_state = "tile_slate"
+*/ // Completely unused
 
 /obj/item/stack/tile/white_large_slates_fixed
 	name = "large white slates"
 	singular_name = "large white slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_white_large"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/checker_large_fixed
 	name = "large white and black slates"
 	singular_name = "large and black slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_checker"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
 
 /obj/item/stack/tile/cafe_large_fixed
 	name = "large white and red slates"
 	singular_name = "large and red slate"
-	icon_state = "tile_slate"
+	icon_state = "tile_cafe_maint"
+	desc = "A worn, but well maintained flooring tile. For that antique industial look."
