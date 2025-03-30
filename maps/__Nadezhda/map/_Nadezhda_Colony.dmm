@@ -64941,7 +64941,7 @@
 /area/nadezhda/maintenance/undergroundfloor2west)
 "muB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/right{
+/obj/structure/bed/chair/sofa/black/left{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/blue_slates,
@@ -67277,13 +67277,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/security/barracks)
-"mRj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/left{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/nadezhda/maintenance/undergroundfloor2east)
 "mRl" = (
 /obj/random/structures,
 /turf/simulated/floor/plating/under,
@@ -91562,6 +91555,13 @@
 /obj/item/grenade/chem_grenade/metalfoam,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
+"rsj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/sofa/black/right{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/nadezhda/maintenance/undergroundfloor2east)
 "rss" = (
 /obj/machinery/camera/network/colony_underground{
 	dir = 8
@@ -104889,11 +104889,11 @@
 /area/nadezhda/hallway/side/f2section1)
 "tTr" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
-/obj/item/toy/plushie/lizard,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/sofa/black{
 	dir = 4
 	},
+/obj/item/toy/plushie/lizard,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "tTv" = (
@@ -200590,7 +200590,7 @@ pJN
 gbE
 uWi
 cWE
-mRj
+muB
 wEB
 iWs
 wEB
@@ -200792,7 +200792,7 @@ hkZ
 gbE
 fEs
 gbE
-muB
+rsj
 wEB
 qbP
 qbP
