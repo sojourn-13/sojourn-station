@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(all_lobby_tracks)
 
 // Read the jukebox configuration file on system startup.
 /hook/startup/proc/load_jukebox_tracks()
-	var/jukebox_track_file = "config/jukebox.json"
+	var/jukebox_track_file = "jukebox.json" // CFW - Attempting a really weird fix specifically for Linux
 	if(!fexists(jukebox_track_file))
 		warning("File not found: [jukebox_track_file]")
 		return 1
