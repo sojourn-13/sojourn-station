@@ -28,9 +28,9 @@
 	user.set_machine(src)
 	var/dat
 	if (src.temp)
-		dat = "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
+		dat = "<html>[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
 	else
-		dat = {"
+		dat = {"<html>
 <B>Persistent Signal Locator</B><HR>
 Frequency:
 <A href='byond://?src=\ref[src];freq=-10'>-</A>
@@ -39,6 +39,7 @@ Frequency:
 <A href='byond://?src=\ref[src];freq=10'>+</A><BR>
 
 <A href='?src=\ref[src];refresh=1'>Refresh</A>"}
+	dat += "</html>"
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return

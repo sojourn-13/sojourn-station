@@ -112,7 +112,7 @@
 
 	updatemodules()
 
-	var/dat = "<h3>Cloning System Control</h3>"
+	var/dat = "<html><h3>Cloning System Control</h3>"
 	dat += "<font size=-1><a href='byond://?src=\ref[src];refresh=1'>Refresh</a></font>"
 
 	dat += "<br><tt>[temp]</tt><br>"
@@ -211,7 +211,7 @@
 			dat += "<b><a href='byond://?src=\ref[src];del_rec=1'>Scan card to confirm.</a></b><br>"
 			dat += "<b><a href='byond://?src=\ref[src];menu=3'>No</a></b>"
 
-
+	dat += "</html>"
 	user << browse(dat, "window=cloning")
 	onclose(user, "cloning")
 	return

@@ -111,6 +111,7 @@ obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
 
 	if(selected >= 0 && !isobserver(user))
 		dat += "<br><A href='?src=\ref[src];remove=0'>Remove Selected Piece</A>"
+	dat += "</html>"
 	user << browse(dat,"window=boardgame;size=500x500")
 	onclose(usr, "boardgame")
 

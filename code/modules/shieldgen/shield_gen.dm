@@ -105,7 +105,7 @@
 			user.unset_machine()
 			user << browse(null, "window=shield_generator")
 			return
-	var/t = "<B>Shield Generator Control Console</B><BR><br>"
+	var/t = "<html><B>Shield Generator Control Console</B><BR><br>"
 	if(locked)
 		t += "<i>Swipe your ID card to begin.</i>"
 	else
@@ -137,6 +137,7 @@
 	t += "<hr>"
 	t += "<A href='?src=\ref[src]'>Refresh</A> "
 	t += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
+	t += "</html>"
 	user << browse(t, "window=shield_generator;size=500x400")
 	user.set_machine(src)
 

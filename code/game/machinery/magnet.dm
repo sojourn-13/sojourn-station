@@ -250,7 +250,7 @@
 		if(stat & (BROKEN|NOPOWER))
 			return
 		user.set_machine(src)
-		var/dat = "<B>Magnetic Control Console</B><BR><BR>"
+		var/dat = "<html><B>Magnetic Control Console</B><BR><BR>"
 		if(!autolink)
 			dat += {"
 			Frequency: <a href='?src=\ref[src];operation=setfreq'>[frequency]</a><br>
@@ -268,7 +268,7 @@
 
 		dat += "<br>Speed: <a href='?src=\ref[src];operation=minusspeed'>-</a> [speed] <a href='?src=\ref[src];operation=plusspeed'>+</a><br>"
 		dat += "Path: {<a href='?src=\ref[src];operation=setpath'>[path]</a>}<br>"
-		dat += "Moving: <a href='?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a>"
+		dat += "Moving: <a href='?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a></html>"
 
 
 		user << browse(dat, "window=magnet;size=400x500")

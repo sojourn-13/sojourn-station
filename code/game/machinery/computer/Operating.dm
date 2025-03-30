@@ -33,7 +33,7 @@
 			return
 
 	user.set_machine(src)
-	var/dat = "<HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
+	var/dat = "<html><HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
 	dat += "<A HREF='?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <A HREF='?src=\ref[user];update=1'>Update</A>"
 	if(table && (table.check_victim()))
 		victim = table.victim
@@ -69,6 +69,7 @@
 <BR>
 <B>No Patient Detected</B>
 "}
+	dat += "</html>"
 	user << browse(dat, "window=op")
 	onclose(user, "op")
 

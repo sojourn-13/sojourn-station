@@ -23,7 +23,7 @@
 		if(..())
 			return
 		user.set_machine(src)
-		var/dat
+		var/dat = "<html>"
 		dat += "<B>Prisoner Implant Manager System</B><BR>"
 		if(screen == 0)
 			dat += "<HR><A href='?src=\ref[src];lock=1'>Unlock Console</A>"
@@ -51,6 +51,7 @@
 				dat += "********************************<BR>"
 			dat += "<HR><A href='?src=\ref[src];lock=1'>Lock Console</A>"
 
+		dat += "</html>"
 		user << browse(dat, "window=computer;size=400x500")
 		onclose(user, "computer")
 		return

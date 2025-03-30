@@ -5,10 +5,10 @@
 	. = ..()
 	if(!.)
 		return
-	var/dat = "<B>Showing DNA from blood.</B><HR>"
+	var/dat = "<html><B>Showing DNA from blood.</B><HR>"
 	dat += "<table cellspacing=5><tr><th>Name</th><th>DNA</th><th>Blood Type</th></tr>"
 	for(var/mob/living/carbon/human/H in SSmobs.mob_list)
 		if(H.dna && H.ckey)
 			dat += "<tr><td>[H]</td><td>[H.dna.unique_enzymes]</td><td>[H.b_type]</td></tr>"
-	dat += "</table>"
+	dat += "</table></html>"
 	user << browse(dat, "window=DNA;size=440x410")

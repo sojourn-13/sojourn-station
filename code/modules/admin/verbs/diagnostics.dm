@@ -34,7 +34,7 @@
 	set category = "Debug"
 	set name = "Radio report"
 
-	var/output = "<b>Radio Report</b><hr>"
+	var/output = "<html><b>Radio Report</b><hr>"
 	for (var/fq in SSradio.frequencies)
 		output += "<b>Freq: [fq]</b><br>"
 		var/datum/radio_frequency/fqs = SSradio.frequencies[fq]
@@ -53,6 +53,7 @@
 				else
 					output += "&nbsp;&nbsp;&nbsp;&nbsp;[device]<br>"
 
+	output += "</html>"
 	usr << browse(output,"window=radioreport")
 
 

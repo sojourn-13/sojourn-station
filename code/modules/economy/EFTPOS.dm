@@ -81,7 +81,7 @@
 
 /obj/item/device/eftpos/attack_self(mob/user as mob)
 	if(get_dist(src,user) <= 1)
-		var/dat = "<b>[eftpos_name]</b><br>"
+		var/dat = "<html><b>[eftpos_name]</b><br>"
 		dat += "<i>This terminal is</i> [machine_id]. <i>Report this code when contacting IT Support</i><br>"
 		if(transaction_locked)
 			dat += "<a href='?src=\ref[src];choice=toggle_lock'>Back[transaction_paid ? "" : " (authentication required)"]</a><br><br>"
@@ -103,6 +103,7 @@
 			dat += "<a href='?src=\ref[src];choice=change_code'>Change access code</a><br>"
 			dat += "<a href='?src=\ref[src];choice=change_id'>Change EFTPOS ID</a><br>"
 			dat += "Scan card to reset access code <a href='?src=\ref[src];choice=reset'>\[------\]</a>"
+		dat += "</html>"
 		user << browse(dat,"window=eftpos")
 	else
 		user << browse(null,"window=eftpos")

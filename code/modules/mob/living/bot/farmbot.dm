@@ -62,7 +62,7 @@
 		dat += "Enable speaker: <A href='?src=\ref[src];speakeron=1'>[speaker_on ? "Yes" : "No"]</A><BR>"
 		dat += "</TT>"
 
-	user << browse("<HEAD><TITLE>Farmbot v1.0 controls</TITLE></HEAD>[dat]", "window=autofarm")
+	user << browse("<html><HEAD><TITLE>Farmbot v1.0 controls</TITLE></HEAD>[dat]</html>", "window=autofarm")
 	onclose(user, "autofarm")
 	return
 

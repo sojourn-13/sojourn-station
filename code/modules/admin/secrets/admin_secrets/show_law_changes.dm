@@ -9,7 +9,8 @@
 	if(!.)
 		return
 
-	var/dat = "<B>Showing last [length(lawchanges)] law changes.</B><HR>"
+	var/dat = "<html><B>Showing last [length(lawchanges)] law changes.</B><HR>"
 	for(var/sig in lawchanges)
 		dat += "[sig]<BR>"
+	dat += "</html>"
 	user << browse(dat, "window=lawchanges;size=800x500")
