@@ -14,9 +14,9 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_WELDING, 1, add_price = 1),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2)
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat)
 	)
 
 /datum/cooking_with_jane/recipe/panzerburger
@@ -33,9 +33,9 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_WELDING, 1, add_price = 1),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/panzer),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2)
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/panzer)
 	)
 
 /datum/cooking_with_jane/recipe/jagerburger
@@ -52,9 +52,9 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_WELDING, 1, add_price = 1),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/jager),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2)
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/jager)
 	)
 
 /datum/cooking_with_jane/recipe/seucheburger
@@ -71,9 +71,9 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, add_price = 2),
 		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_WELDING, 1, add_price = 1),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/seuche),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "cabbage", reagent_skip=TRUE, qmod=0.2, add_price = 2),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2)
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "tomato", reagent_skip=TRUE, qmod=0.2, add_price = 2),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/meat/roachmeat/seuche)
 	)
 
 /datum/cooking_with_jane/recipe/fuhrerburger

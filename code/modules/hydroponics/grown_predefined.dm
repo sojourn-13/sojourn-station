@@ -70,7 +70,7 @@
 /obj/plant_spawner/plumphelmet
 	seedtype = "plumphelmet"
 
-/obj/plant_spawner/soybeans
+/obj/plant_spawner/soybean
 	seedtype = "soybean"
 
 /obj/plant_spawner/pineapple

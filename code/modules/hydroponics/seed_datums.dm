@@ -1004,9 +1004,9 @@
 /datum/seed/soybean
 	name = "soybean"
 	seed_name = "soybean"
-	display_name = "soybeans"
+	display_name = "soybean"
 	chems = list("nutriment" = list(1,20), "soymilk" = list(10,20))
-	kitchen_tag = "soybeans"
+	kitchen_tag = "soybean"
 	companions = list("corn", "potato", "eggplant", "chili")
 
 /datum/seed/soybean/New()
