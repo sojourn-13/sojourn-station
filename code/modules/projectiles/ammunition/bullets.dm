@@ -744,8 +744,8 @@
 /obj/item/ammo_casing/shotgun/relay
 	name = "GP relay shell"
 	desc = "A 20mm relay shot shell. \
-	A highly advanced AI controled bullet, plating in advanced materals and chemicals that are unable to be salvanged. \
-	When shot into a living or robotic target the bullet will relay a second projectile to the next closest target, this will repeat on succesful kills automatically."
+	A highly advanced AI controlled bullet, plated in advanced materials and chemicals that are unable to be salvaged. \
+	When shot into a living or robotic target the bullet will relay a second projectile to the next closest target, this will repeat on successful kills automatically."
 	icon_state = "relay-shell"
 	spent_icon = "relay-shell-spent"
 	shell_color = "i"
