@@ -190,6 +190,10 @@
 
 	. += move_intent.move_delay
 
+	if(client)
+		if(client.true_dir == NORTHEAST || client.true_dir == NORTHWEST || client.true_dir == SOUTHEAST || client.true_dir == SOUTHWEST)
+			. += MOVE_DELAY_DIAGONAL_ADDER //If we are moving in a cornerdirs then we slow down a bit to not cheat movement
+
 
 /mob/proc/Life()
 	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LIFE)
