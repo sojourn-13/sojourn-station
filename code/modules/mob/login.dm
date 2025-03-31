@@ -88,7 +88,7 @@
 			client.UI.show()
 		else
 			client.create_UI(src.type)
-		client.CAN_MOVE_DIAGONALLY = FALSE
+		client.CAN_MOVE_DIAGONALLY = TRUE //Soj change to allow diagonal movement
 		add_click_catcher()
 		client.fullscreen_check()
 		client.init_verbs()
