@@ -116,8 +116,9 @@
 			stored_points -= calculated_research_points
 			RD.files.adjust_research_points(calculated_research_points)
 
-		if(calculated_research_points)
-			autosay("Total Rewards: [calculated_research_points] Research Points.", name ,"Science")
+			//Give feedback to the player about the points they scored, be sure to only do this to consoles that matter to prevent duplicate messages
+			if(calculated_research_points)
+				autosay("Total Rewards: [calculated_research_points] Research Points.", name ,"Science")
 
 	targetBoom = rand(10,35)
 	if(target_wealth == initial(target_wealth))
