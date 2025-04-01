@@ -35,6 +35,19 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
+/mob/living/carbon/superior/spider/hunter/mindweaver
+	name = "mindweaver spider"
+	desc = "sleek and grey, it makes you shudder to look at it. This one has sparkling magenta eyes and grasping mandibles."
+	icon_state = "mindweaver"
+	icon_living = "mindweaver"
+	maxHealth = 95 * SPIDER_HEALTH_MOD
+	health = 95 * SPIDER_HEALTH_MOD
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	poison_per_bite = 1.5
+	poison_type = "mindbreaker"
+	move_to_delay = 3.2
+
 //bomb spider, very little toxins and not much health but explodes on reaching melee range.
 /mob/living/carbon/superior/spider/plasma
 	name = "plasma spider"

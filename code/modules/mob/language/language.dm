@@ -216,7 +216,7 @@
 // Can we speak this language, as opposed to just understanding it?
 /mob/proc/can_speak(datum/language/speaking)
 	var/mob/living/carbon/C = src
-	if (speaking.flags & NO_SPEAK) // Languages that can be understood and spoken only by specific species.
+	if (speaking?.flags & NO_SPEAK) // Languages that can be understood and spoken only by specific species.
 		if (speaking.name == LANGUAGE_SABLEKYNE)
 			if (!(C.species.reagent_tag == IS_TAJ || C.species.reagent_tag == IS_SYNTHETIC))
 				return null

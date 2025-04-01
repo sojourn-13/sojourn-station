@@ -19,7 +19,7 @@
 /mob/living/proc/damage_through_armor(damage = 0, damagetype = BRUTE, def_zone, attack_flag = ARMOR_MELEE, armor_divisor = 0, used_weapon, sharp = FALSE, edge = FALSE, wounding_multiplier, list/dmg_types = list(), return_continuation = FALSE, dir_mult = 1)
 	if(damage) // If damage is defined, we add it to the list
 		if(!dmg_types[damagetype])
-			dmg_types += damagetype
+			dmg_types[damagetype] = 0 // Should make damage be a numerical value that other damage can be added too - Ryuu
 		dmg_types[damagetype] += damage
 
 	if(armor_divisor <= 0)

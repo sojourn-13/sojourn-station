@@ -709,6 +709,15 @@
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/snow
 
+/turf/simulated/floor/snow/smooth
+	name = "snow"
+	icon = 'icons/turf/flooring/snow.dmi'
+	icon_state = "snow"
+	temperature = 233.15
+	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
+	nitrogen = MOLES_N2STANDARD *1.14
+	initial_flooring = /decl/flooring/snow/smooth
+
 /turf/simulated/floor/icewater
 	name = "icewater"
 	icon = 'icons/turf/flooring/icewater.dmi'

@@ -147,14 +147,14 @@ var/list/mob_hat_cache = list()
 
 	flavor_text = "It's a tiny little repair drone. The casing is stamped with an corporate logo and the subscript: '[company_name] Recursive Repair Systems: Fixing Tomorrow's Problem, Today!'"
 	playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
-	recalibrate_hotkeys()
+//	recalibrate_hotkeys()
 
 //Redefining some robot procs...
 /mob/living/silicon/robot/drone/SetName(pickedName as text)
 	// Would prefer to call the grandparent proc but this isn't possible, so..
 	real_name = pickedName
 	name = real_name
-	recalibrate_hotkeys()
+//	recalibrate_hotkeys()
 
 /mob/living/silicon/robot/drone/updatename()
 	if(controlling_ai)

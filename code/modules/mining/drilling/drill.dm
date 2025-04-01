@@ -256,7 +256,7 @@
 			soul = S
 		soul.loc = src.loc
 	else
-		TC.stop()
+		TC?.stop()
 		TC = null
 		visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
 		if(!soul)

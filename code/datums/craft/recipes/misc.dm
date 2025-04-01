@@ -79,6 +79,16 @@
 		list(QUALITY_CUTTING, 10, "time" = 30)
 	)
 
+// 10.03.25 - CFW - Minor QOL patch
+/datum/craft_recipe/cloth_stripe/minor
+	name = "salvage minor cloth"
+	result = /obj/item/stack/material/cloth/soteria
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing, 1, "time" = 25),
+		list(QUALITY_CUTTING, 10, "time" = 30)
+	)
+
 /datum/craft_recipe/ameridian_spire
 	name = "ameridian growth"
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF

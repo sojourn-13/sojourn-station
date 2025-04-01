@@ -16,6 +16,7 @@
 		/datum/design/autolathe/sec/electropack,
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/tool/combat_shovel,
+		/datum/design/autolathe/tool/militia_tomahawk,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/hailer,
 		/datum/design/research/item/medical/autopsy_scanner,

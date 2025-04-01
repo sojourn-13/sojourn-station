@@ -64,7 +64,8 @@
 /mob/living/silicon/New()
 	..()
 	if(ckey)
-		recalibrate_hotkeys()
+		return
+//		recalibrate_hotkeys()
 
 /mob/living/silicon/Destroy()
 	GLOB.silicon_mob_list -= src
@@ -87,7 +88,7 @@
 	real_name = pickedName
 	name = real_name
 	create_or_rename_email(pickedName, "root.rt")
-	recalibrate_hotkeys()
+//	recalibrate_hotkeys()
 
 /mob/living/silicon/proc/show_laws()
 	return
@@ -263,15 +264,20 @@
 
 	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null) as text)
 
-/mob/living/silicon/verb/recalibrate_hotkeys()
-	set name = "Recalibrate Hotkeys"
-	set desc = "Makes you use the correct borg based hotkeys."
-	set category = "OOC"
-
-	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
-	else
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+// CFW - killing this with fire because it doesn't work and creates runtimes
+///mob/living/silicon/verb/recalibrate_hotkeys()
+//	set name = "Recalibrate Hotkeys"
+//	set desc = "Makes you use the correct borg based hotkeys."
+//	set category = "OOC"
+//
+// CFW - This doesn't work (runtimes because client.get_preference_value always returns null.get_preference_value).
+//	if(client)
+//		if(client?.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+//			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
+//		else
+//			winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+// Doing a work-around for now.
+//	winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

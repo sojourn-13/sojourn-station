@@ -163,11 +163,12 @@
 // Otherwise, the user mob's machine var will be reset directly.
 //
 /proc/onclose(mob/user, windowid, atom/ref=null)
-	if(!user.client)
-		return
 	var/param = "null"
-	if(ref)
-		param = "[REF(ref)]"
+	if(user)
+		if(!user.client)
+			return
+		if(ref)
+			param = "[REF(ref)]"
 
 	winset(user, windowid, "on-close=\".windowclose [param]\"")
 

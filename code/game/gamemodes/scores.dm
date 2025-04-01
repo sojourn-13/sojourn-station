@@ -338,7 +338,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	dat += "<br><hr>"
 	dat += "<b><u>Personal Score</u></b><br><hr>"
-	var/objectives_score = mind.individual_objectives_completed * 20
+	var/objectives_score = mind?.individual_objectives_completed * 20
 	var/contracts_score = mind.contracts_completed * 20
 	var/survive_score = 0
 	var/scaped_score = 0

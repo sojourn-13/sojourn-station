@@ -172,6 +172,10 @@
 	name = "combat shovel"
 	build_path = /obj/item/tool/shovel/combat
 
+/datum/design/autolathe/tool/militia_tomahawk
+	name = "tactical tomahawk"
+	build_path = /obj/item/tool/fireaxe/militia_tomahawk
+
 /datum/design/autolathe/tool/spade
 	name = "spade"
 	build_path = /obj/item/tool/shovel/spade

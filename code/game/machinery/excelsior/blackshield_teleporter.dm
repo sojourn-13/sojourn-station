@@ -94,7 +94,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 
 /obj/machinery/blackshield_teleporter/Destroy()
 	blackshield_teleporters -= src
-	RefreshParts() // To avoid energy overfills if a teleporter gets destroyed
+	// RefreshParts() // To avoid energy overfills if a teleporter gets destroyed // CFW - Disabled for now 'cause it created divide by 0
 	.=..()
 
 /obj/machinery/blackshield_teleporter/RefreshParts()

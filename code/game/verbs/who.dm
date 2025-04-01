@@ -8,6 +8,7 @@
 
 	if(holder && (R_ADMIN & holder.rights || R_MOD & holder.rights))
 		for(var/client/C in clients)
+			var/sittingaround = TRUE
 			var/entry = "\t[C.key]"
 			if(C.holder && C.holder.fakekey)
 				entry += " <i>(as [C.holder.fakekey])</i>"
@@ -15,20 +16,23 @@
 				entry += " - Ready as [C.prefs.real_name]"
 			else
 				entry += " - Playing as [C.mob.real_name]"
-			if (!istype(C.mob, /mob/new_player)) // /mob/new_player has no stat (happens if client is a new player)
-				switch(C.mob.stat)
-					if(UNCONSCIOUS)
-						entry += " - <font color='darkgray'><b>Unconscious</b></font>"
-					if(DEAD)
-						if(isghost(C.mob))
-							var/mob/observer/ghost/O = C.mob
-							if(O.started_as_observer)
-								entry += " - <font color='gray'>Observing</font>"
-							else
-								entry += " - <font color='black'><b>DEAD</b></font>"
-						else
-							entry += " - <font color='black'><b>DEAD</b></font>"
-			else
+			if(C.mob.stat == CONSCIOUS)
+				sittingaround = FALSE
+				entry += " - <font color='green'><b>Alive</b></font>"
+			if(C.mob.stat == UNCONSCIOUS)
+				sittingaround = FALSE
+				entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+			if(C.mob.stat == DEAD)
+				if(isghost(C.mob))
+					sittingaround = FALSE
+					var/mob/observer/ghost/O = C.mob
+					if(O.started_as_observer)
+						entry += " - <font color='gray'>Observing</font>"
+					else
+						entry += " - <font color='black'><b>DEAD</b></font>"
+				else
+					entry += " - <font color='black'><b>DEAD</b></font>"
+			if(sittingaround)
 				entry += " - <font color='gray'>In Lobby</font>"
 
 			if(is_limited_antag(C.mob))
@@ -67,9 +71,9 @@
 	var/num_mentors_online = 0
 	if(holder)
 		for(var/client/C in admins)
-			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights)))	//Used to determine who shows up in admin rows
+			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights))) //Used to determine who shows up in admin rows
 
-				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights)))			//Mentors can't see stealthmins
+				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights))) //Mentors can't see stealthmins
 					continue
 
 				msg += "\t[C] is a [C.holder.rank]"
@@ -141,4 +145,4 @@
 	if(config.show_mentors)
 		msg += "\n<b> Current Mentors ([num_mentors_online]):</b>\n" + mentmsg
 
-	to_chat(src, msg)
+	to_chat(src, msg) 

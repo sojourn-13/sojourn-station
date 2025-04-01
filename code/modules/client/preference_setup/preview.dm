@@ -17,7 +17,8 @@ datum/preferences/proc/update_preview_icon(var/naked = FALSE)
 	mannequin.delete_inventory(TRUE)
 	preview_icon = icon('icons/effects/96x64.dmi', bgstate)
 
-	dress_preview_mob(mannequin, naked)
+	if(SSticker.current_state > GAME_STATE_STARTUP)
+		dress_preview_mob(mannequin, naked)
 
 	/*
 	mannequin.dir = EAST

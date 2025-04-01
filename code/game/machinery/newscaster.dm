@@ -350,7 +350,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				dat+="<HR><B><A href='?src=[REF(src)];set_channel_receiving=1'>Receiving Channel</A>:</B> [src.channel_name]<BR>" //MARK
 				dat+="<B>Message Author:</B> <FONT COLOR='green'>[src.scanned_user]</FONT><BR>"
 				dat+="<B><A href='?src=[REF(src)];set_new_message=1'>Message Body</A>:</B> [src.msg] <BR>"
-				dat+="<B><A href='?src=[REF(src)];set_attachment=1'>Attach Photo</A>:</B>  [(src.photo_data ? "Photo Attached" : "No Photo")]</BR>"
+				//dat+="<B><A href='?src=[REF(src)];set_attachment=1'>Attach Photo</A>:</B>  [(src.photo_data ? "Photo Attached" : "No Photo")]</BR>" // CFW - Kills the server and as such is disabled for now
 				dat+="<BR><A href='?src=[REF(src)];submit_new_message=1'>Submit</A><BR><BR><A href='?src=[REF(src)];setScreen=[0]'>Cancel</A><BR>"
 			if(4)
 				dat+="Feed story successfully submitted to [src.channel_name].<BR><BR>"

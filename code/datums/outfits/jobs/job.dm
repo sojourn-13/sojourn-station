@@ -14,12 +14,13 @@
 
 /decl/hierarchy/outfit/job/equip_id(mob/living/carbon/human/H)
 	var/obj/item/card/id/C = ..()
-	if(H.mind)
-		if(H.mind.initial_account)
-			C.associated_account_number = H.mind.initial_account.account_number
-		if(H.mind.initial_email_login)
-			C.associated_email_login = H.mind.initial_email_login.Copy()
-	return C
+	if(C)
+		if(H.mind)
+			if(H.mind.initial_account)
+				C.associated_account_number = H.mind.initial_account.account_number
+			if(H.mind.initial_email_login)
+				C.associated_email_login = H.mind.initial_email_login.Copy()
+		return C
 
 ///decl/hierarchy/outfit/job/equip(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
 //	var/obj/item/oddity/secdocs/D = /obj/item/oddity/secdocs

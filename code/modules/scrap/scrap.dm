@@ -102,8 +102,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 			big_item = CATCH.get_item(/obj/random/pack/junk_machine)
 		if(big_item) //Sanity check in case big_item is a null, as it may sometimes do.
 			big_item.forceMove(src)
-		if(prob(66))
-			big_item.make_old()
+			if(prob(66))
+				big_item.make_old()
 		qdel(CATCH)
 
 /obj/structure/scrap/proc/try_make_loot()

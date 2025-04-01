@@ -310,7 +310,7 @@
 	reagent_to_brew = "soysauce"
 	display_name = "Soy Sauce"
 	prerequisite = "vinegar"
-	needed_crops = list("wheat" = 20, "soybean" = 30, "plumphelmet" = 2)
+	needed_crops = list("wheat" = 20, "soybeans" = 30, "plumphelmet" = 2)
 	needed_chems = list("water" = 30, "sodiumchloride" = 30)
 	brew_timer = 5 MINUTES
 	brewed_amount = 3
@@ -330,7 +330,7 @@
 /datum/brewing_product/cream
 	reagent_to_brew = "cream"
 	display_name = "Cream"
-	needed_crops = list("soybean" = 40)
+	needed_crops = list("soybeans" = 40)
 	needed_chems = list("milk" = 30, "vinegar" = 10)
 	brew_timer = 3 MINUTES
 	brewed_amount = 3
@@ -350,7 +350,7 @@
 	reagent_to_brew = "vinegar" //Gives back some vinegar
 	display_name = "Cheese Wheels (Byproduct Vinegar)"
 	prerequisite = "cream"
-	needed_crops = list("soybean" = 20)
+	needed_crops = list("soybeans" = 20)
 	needed_chems = list("water" = 30, "milk" = 30, "vinegar" = 5)
 	brew_timer = 2 MINUTES
 	brewed_amount = 1

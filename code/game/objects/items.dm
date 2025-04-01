@@ -674,7 +674,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 
 	for(var/action in hud_actions)
-		user.client.screen -= action
+		user.client?.screen -= action
 
 /obj/item/proc/update_hud_actions()
 	if(!hud_actions)

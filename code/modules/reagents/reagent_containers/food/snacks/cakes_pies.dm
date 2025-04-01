@@ -51,6 +51,33 @@
 	preloaded_reagents = list("nutriment" = 4, "sprinkles" = 2)
 	matter = list(MATERIAL_BIOMATTER = 9)
 
+/obj/item/reagent_containers/snacks/warcake
+	name = "warcake"
+	desc = "A note done in cream and frosting says: 'In memoriam to the sweetest Warcakey.' The candles on the cake never seem to burn out."
+	icon_state = "birthdaycake"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
+	slice_path = /obj/item/reagent_containers/snacks/birthdaycakeslice
+	slices_num = 5
+	filling_color = "#FFB6C1"
+	bitesize = 3
+	center_of_mass = list("x"=16, "y"=10)
+	nutriment_desc = list("sweet memories" = 10, "unending sadness" = 10, "sour sweetness" = 5)
+	nutriment_amt = 20
+	preloaded_reagents = list("warcakesm" = 10, "warcakeus" = 10)
+	matter = list(MATERIAL_BIOMATTER = 45)
+
+/obj/item/reagent_containers/snacks/warcakeslice
+	name = "warcake slice"
+	desc = "A slice of bittersweet happiness."
+	icon_state = "birthdaycakeslice"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
+	trash = /obj/item/trash/plate
+	filling_color = "##FFB6C1"
+	bitesize = 2
+	center_of_mass = list("x"=16, "y"=14)
+	preloaded_reagents = list("warcakesm" = 4, "warcakeus" = 4)
+	matter = list(MATERIAL_BIOMATTER = 9)
+
 /obj/item/reagent_containers/snacks/carrotcake
 	name = "carrot cake"
 	desc = "A cake made with carrots."

@@ -8,7 +8,7 @@
 #define ERIS_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
 
 /// Depreciated. Use SEND_SIGNAL instead. This only exists for compatability.
-#define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
+#define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target?.comp_lookup || !target?.comp_lookup[sigtype] ? NONE : target?._SendSignal(sigtype, list(##arguments)) )
 
 #define SEND_GLOBAL_SIGNAL(sigtype, arguments...) ( SEND_SIGNAL(SSdcs, sigtype, ##arguments) )
 

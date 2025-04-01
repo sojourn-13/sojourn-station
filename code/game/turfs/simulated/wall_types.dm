@@ -4,6 +4,51 @@
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
+/turf/simulated/wall/iskhod
+	name = "reinforced wall"
+	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "iskwall"
+	icon_base = "iskwall"
+	icon_base_override = "iskwall"
+	icon_base_reinf = "iskwall"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#bebebe"
+
+/turf/simulated/wall/iskhod_red //redmond mann
+	name = "reinforced wall"
+	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "iskwall"
+	icon_base = "iskwall"
+	icon_base_override = "iskwall"
+	icon_base_reinf = "iskwall"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#bebebe"
+
+
+/turf/simulated/wall/iskhod_green //greenmond mann
+	name = "reinforced wall"
+	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "iskwall_g"
+	icon_base = "iskwall_g"
+	icon_base_override = "iskwall_g"
+	icon_base_reinf = "iskwall_g"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#bebebe"
+
+/turf/simulated/wall/iskhod_blue //blutarch mann
+	name = "reinforced wall"
+	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "iskwall_b"
+	icon_base = "iskwall_b"
+	icon_base_override = "iskwall_b"
+	icon_base_reinf = "iskwall_b"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#bebebe"
+
 /turf/simulated/wall/cult
 	icon_state = "cult"
 
@@ -61,6 +106,14 @@
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "rockold"
 
+/turf/simulated/wall/rock/snow
+	name = "snowy rock face"
+	desc = "A wall of cold rocks. Everything is like this over here..."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "snowwall"
+	icon_base_override = "snowwall"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 //Shuttle Floors
 /obj/landed_holder

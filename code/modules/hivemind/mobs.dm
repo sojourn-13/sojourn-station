@@ -920,7 +920,6 @@
 		gibs(loc, null, /obj/effect/gibspawner/human)
 	qdel(src)
 
-
 /////////////////////////////////////PHASER///////////////////////////////////
 //Special ability: Superposition. Phaser exists at four locations. But, actually he vulnerable only at one. Other is just a copies
 //Moves with teleportation only, can stun victim if he land on it
@@ -1098,4 +1097,70 @@
 			qdel(My_copy)
 	..()
 	gibs(loc, null, /obj/effect/gibspawner/human)
+	qdel(src)
+
+////////////////////////Treader///////////////////
+//Ranged just like the lobber, (deals more damage but needs longer to recharge, but given that ranged_cooldown does nothing not implemented yet)
+//When damaged, "releases a cloud of nanites" that heal all allies in view
+//A bit tanky, but moves slow
+//Death releases a EMP pulse
+/////////////////////////////////////////////////
+
+/mob/living/simple/hostile/hivemind/treader
+	name = "Treader"
+	desc = "A human head with a screen shoved in its mouth, connected to a large column with another screen displaying a human face."
+	icon_state = "treader"
+	attacktext = "slapped"
+	speak_chance = 2
+	health = 100
+	maxHealth = 100
+	resistance = RESISTANCE_AVERAGE
+	malfunction_chance = 10
+	move_to_delay = 10
+//	rarity_value = 150
+	ranged = TRUE
+	minimum_distance = 3
+	fire_verb = "spits"
+	projectiletype = /obj/item/projectile/goo
+	projectilesound = 'sound/effects/blobattack.ogg'
+	ranged_cooldown = 10 SECONDS
+	special_ability_cooldown = 20 SECONDS
+
+	speak = list(
+				"Hey, at least I got my head.",
+				"I can\'t... I can\'t feel my arms...",
+				"Oh god... my legs... where are my legs..."
+				)
+
+	target_speak = list(
+				"You there! Cut off my head!",
+				"So sorry! Can\'t exactly control my head anymore.",
+				"S-shoot the screen! God I hope it won\'t hurt."
+				)
+
+/mob/living/simple/hostile/hivemind/treader/Initialize()
+	..()
+	set_light(2, 1, COLOR_BLUE_LIGHT)
+
+/mob/living/simple/hostile/hivemind/treader/Life()
+	if(!..())
+		return
+
+	if(maxHealth > health && world.time > special_ability_cooldown)
+		special_ability()
+
+
+/mob/living/simple/hostile/hivemind/treader/special_ability()
+	visible_emote("vomits out a burst of rejuvenating nanites!")
+
+	for(var/mob/living/simple/hostile/hivemind/ally in view(src))
+		ally.heal_overall_damage(10, 0)
+
+	special_ability_cooldown = world.time + ability_cooldown
+
+
+/mob/living/simple/hostile/hivemind/treader/death()
+	..()
+	gibs(loc, null, /obj/effect/gibspawner/robot)
+	empulse(get_turf(src), 1, 3)
 	qdel(src)
