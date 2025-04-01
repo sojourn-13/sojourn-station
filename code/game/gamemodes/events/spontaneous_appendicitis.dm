@@ -19,14 +19,17 @@
 
 /datum/event/spontaneous_appendicitis/start()
 	var/success = FALSE
+	log_and_message_admins("Spontaneous appendicitis started!")
+
 	for(var/mob/living/carbon/human/H in shuffle(GLOB.living_mob_list))
 		if(H.client && H.stat != DEAD)
 			var/obj/item/organ/internal/appendix/A = H.random_organ_by_process(OP_APPENDIX)
-			if(!istype(A) || A.inflamed)
+			if(!istype(A) || A.inflamed || A.inflamed_counter)
 				continue
 			A.inflamed = 1
 			success = TRUE
 			A.update_icon()
+			log_and_message_admins("Spontaneous appendicitis found a vaild target: [H.real_name]!")
 			break
 	if(!success)
 		log_and_message_admins("Spontaneous appendicitis failed to fine a vaild target!")
