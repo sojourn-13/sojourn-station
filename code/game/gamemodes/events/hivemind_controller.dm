@@ -50,25 +50,25 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 
 /datum/hivemind_panel/proc/mob_list_interact()
-	var/data = "<table><tr><td>"
+	var/data = "<html><table><tr><td>"
 	for(var/i in GLOB.hivemind_mobs)
 		data += "<br>[i] - [GLOB.hivemind_mobs[i]]."
-	data += "</td></tr></table>"
+	data += "</td></tr></table></html>"
 	usr << browse(data, "window=hive_mob;size=600x600")
 
 
 /datum/hivemind_panel/proc/area_list_interact()
-	var/data = "<table><tr><td>"
+	var/data = "<html><table><tr><td>"
 	for(var/i in GLOB.hivemind_areas)
 		data += "<br>[i] - [GLOB.hivemind_areas[i]] wireweed."
-	data += "</td></tr></table>"
+	data += "</td></tr></table></html>"
 	usr << browse(data, "window=hive_area;size=600x600")
 
 /datum/hivemind_panel/proc/give_hivemind_points(cap)
 	hive_mind_ai.evo_points += cap
 
 /datum/hivemind_panel/proc/main_interact()
-	var/data = "<center><font size='3'><b>HIVEMIND PANEL v0.2</b></font></center>"
+	var/data = "<html><center><font size='3'><b>HIVEMIND PANEL v0.2</b></font></center>"
 	data += "<table><tr><td><a href='?src=\ref[src];refresh=1'>\[REFRESH\]</a>"
 
 	if(hive_mind_ai)
@@ -166,7 +166,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>Prevent Blob Events below 4 pop: [GLOB.hive_data_bool["slime_pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
 
-	data += "</td></tr></table>"
+	data += "</td></tr></table></html>"
 	usr << browse(data, "window=hive_main;size=600x600")
 
 

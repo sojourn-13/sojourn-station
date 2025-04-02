@@ -26,9 +26,9 @@
 		return
 	user.set_machine(src)
 	post_signal("supply")
-	var/dat
+	var/dat = "<html>"
 	if (temp)
-		dat = temp
+		dat = text("<html>", temp, "</html>")
 	else
 		var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
 		if (shuttle)
@@ -65,6 +65,7 @@
 		dat += {"
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR>
 		<A href='?src=\ref[src];vieworders=1'>View orders</A>"}
+	dat += "</html>"
 	user << browse(dat, "window=computer;size=575x450")
 	onclose(user, "computer")
 	return

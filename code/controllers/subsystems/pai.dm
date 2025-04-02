@@ -149,7 +149,7 @@ SUBSYSTEM_DEF(pai)
 			"}
 
 	dat += {"
-	<body>
+	<html><body>
 		<b><font size="3px">pAI Personality Configuration</font></b>
 		<p class="top">Please configure your pAI personality's options. Remember, what you enter here could determine whether or not the user requesting a personality chooses you!</p>
 
@@ -204,7 +204,7 @@ SUBSYSTEM_DEF(pai)
 			</table><br>
 			"}
 	dat += {"
-	<body>
+	<body></html>
 	"}
 
 	M << browse(dat, "window=paiRecruit;size=580x580;")

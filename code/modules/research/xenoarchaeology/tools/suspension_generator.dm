@@ -73,7 +73,7 @@
 		deactivate()
 
 /obj/machinery/suspension_gen/interact(mob/user as mob)
-	var/dat = "<b>Multi-phase mobile suspension field generator MK II \"Steadfast\"</b><br>"
+	var/dat = "<html><b>Multi-phase mobile suspension field generator MK II \"Steadfast\"</b><br>"
 	if(cell)
 		var/colour = "red"
 		var/charge_percent = cell.percent()
@@ -112,6 +112,7 @@
 		dat += "<br>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh console</A><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close console</A>"
+	dat += "</html>"
 	user << browse(dat, "window=suspension;size=500x400")
 	onclose(user, "suspension")
 

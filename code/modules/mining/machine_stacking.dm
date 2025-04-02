@@ -25,7 +25,7 @@
 /obj/machinery/mineral/stacking_unit_console/interact(mob/user)
 	user.set_machine(src)
 
-	var/dat
+	var/dat = "<html>"
 
 	dat += text("<h1>Stacking unit console</h1><hr><table>")
 
@@ -35,6 +35,7 @@
 			dat += "<tr><td width = 150><b>[capitalize(display_name)]:</b></td><td width = 30>[machine.stack_storage[stacktype]]</td><td width = 50><A href='?src=\ref[src];release_stack=[stacktype]'>\[release\]</a></td></tr>"
 	dat += "</table><hr>"
 	dat += text("<br>Stacking: [machine.stack_amt] <A href='?src=\ref[src];change_stack=1'>\[change\]</a><br><br>")
+	dat += "</html>"
 	user << browse("[dat]", "window=console_stacking_machine")
 	onclose(user, "console_stacking_machine")
 

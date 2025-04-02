@@ -24,7 +24,7 @@
 	if(!message)	return
 	var/F = investigate_subject2file(subject)
 	if(!F)	return
-	F << "<small>[time2text(world.timeofday,"hh:mm")] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>"
+	F << "<html><small>[time2text(world.timeofday,"hh:mm")] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>" //putting html tag into every line is cursed, but it works I guess
 
 //ADMINVERBS
 ADMIN_VERB_ADD(/client/proc/investigate_show, R_ADMIN, TRUE)

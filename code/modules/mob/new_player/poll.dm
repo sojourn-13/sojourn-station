@@ -10,7 +10,7 @@
 			log_world("Failed to retrieve active player polls. Error message: [select_query.ErrorMsg()].")
 			return
 
-		var/output = "<div align='center'><B>Player polls</B>"
+		var/output = "<html><div align='center'><B>Player polls</B>"
 		output +="<hr>"
 
 		var/poll_id
@@ -27,7 +27,7 @@
 			output += "<tr bgcolor='[ (i % 2 == 1) ? color1 : color2 ]'><td><a href=\"byond://?src=\ref[src];poll_id=[poll_id]\"><b>[poll_question]</b></a></td></tr>"
 			i++
 
-		output += "</table>"
+		output += "</table></html>"
 
 		src << browse(output,"window=playerpolllist;size=500x300")
 
@@ -85,7 +85,7 @@
 					option.text = options_query.item[2]
 					options.Add(option)
 
-				var/output = "<div align='center'><B>Player poll</B>"
+				var/output = "<html><div align='center'><B>Player poll</B>"
 				output +="<hr>"
 				output += "<b>Question: [question]</b><br>"
 				output += "<font size='2'>Poll runs from <b>[start_time]</b> until <b>[end_time]</b></font><p>"
@@ -112,7 +112,7 @@
 					output += "<p><input type='submit' value='Vote'>"
 					output += "</form>"
 
-				output += "</div>"
+				output += "</div></html>"
 
 				src << browse(output,"window=playerpoll;size=500x250")
 
@@ -130,7 +130,7 @@
 					voted = TRUE
 					break
 
-				var/output = "<div align='center'><B>Player poll</B>"
+				var/output = "<html><div align='center'><B>Player poll</B>"
 				output +="<hr>"
 				output += "<b>Question: [question]</b><br>"
 				output += "<font size='2'>Feedback gathering runs from <b>[start_time]</b> until <b>[end_time]</b></font><p>"
@@ -157,6 +157,7 @@
 				else
 					output += "[vote_text]"
 
+				output += "</html>"
 				src << browse(output,"window=playerpoll;size=500x500")
 
 
