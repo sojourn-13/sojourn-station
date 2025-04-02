@@ -325,7 +325,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
-	s += "18+ M/HRP, Frequent Events, Evolving Storyline. Storyteller"
+	s += "18+ M/HRP, Frequent Events, Evolving Storyline."
+	s += "<br>"
+	s += "Map: Nadezhda Colony"
+	s += "<br>"
+	s += "Storyteller"
 
 	var/list/features = list()
 
