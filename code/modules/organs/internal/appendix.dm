@@ -20,21 +20,25 @@
 	desc = "An appendix from a Mar'Qua, genetically modified and cultivated, still suffers from inflammation."
 	organ_efficiency = list(OP_APPENDIX = 125)
 	base_icon = "appendix_blue"
+	icon_state = "appendix_blue"
 
 /obj/item/organ/internal/appendix/exalt
 	desc = "An appendix with slight genetically modified, still suffers from inflammation."
 	organ_efficiency = list(OP_APPENDIX = 110)
 	base_icon = "appendix_exalt"
+	icon_state = "appendix_exalt"
 
 //Lore based balance
 /obj/item/organ/internal/appendix/naramad
 	desc = "A thicker leathery appendix, still suffers from inflammation."
 	organ_efficiency = list(OP_APPENDIX = 110)
 	base_icon = "appendix_naramad"
+	icon_state = "appendix_naramad"
 
 /obj/item/organ/internal/appendix/cindarite
 	desc = "A sickly gray and soft appendix."
 	base_icon = "appendix_cindarite"
+	icon_state = "appendix_cindarite"
 	inflamed_counter = TRUE
 
 /obj/item/organ/internal/appendix/update_icon()
