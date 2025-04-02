@@ -545,8 +545,8 @@ uniquic_armor_act
 /mob/living/carbon/human/proc/bloody_hands(var/mob/living/source, var/amount = 2)
 	if (gloves)
 		gloves.add_blood(source)
-		gloves:transfer_blood = amount
-		gloves:bloody_hands_mob = source
+		gloves.transfer_blood = amount
+		gloves.bloody_hands_mob = source
 	else
 		add_blood(source)
 		bloody_hands = amount
