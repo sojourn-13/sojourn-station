@@ -121,7 +121,7 @@
 
 	user.set_machine(src)
 
-	var/dat = ""
+	var/dat = "<html>"
 	dat += "<head><title>Liquid Ameridian Analyzer</title></head>"
 	dat += "Liquid Ameridian Analyzer<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
@@ -137,6 +137,7 @@
 	else
 		dat += "No bidon detected. Please connect a bidon."
 
+	dat += "</html>"
 	user << browse(dat, "window=AmeridianAnalyzer")
 	onclose(user, "AmeridianAnalyzer")
 	return
