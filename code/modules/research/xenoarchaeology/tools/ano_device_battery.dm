@@ -52,7 +52,7 @@
 	return src.interact(user)
 
 /obj/item/anodevice/interact(var/mob/user)
-	var/dat = "<b>Anomalous Materials Energy Utiliser</b><br>"
+	var/dat = "<html><b>Anomalous Materials Energy Utiliser</b><br>"
 	if(inserted_battery)
 		if(activated)
 			dat += "Device active.<br>"
@@ -75,7 +75,7 @@
 
 	dat += "<hr>"
 	dat += "<a href='?src=\ref[src];refresh=1'>Refresh</a> <a href='?src=\ref[src];close=1'>Close</a>"
-
+	dat += "</html>"
 	user << browse(dat, "window=anodevice;size=400x500")
 	onclose(user, "anodevice")
 

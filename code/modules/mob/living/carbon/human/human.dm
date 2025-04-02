@@ -202,7 +202,7 @@
 		suit = w_uniform
 
 	user.set_machine(src)
-	var/dat = "<B><HR><FONT size=3>[name]</FONT></B><BR><HR>"
+	var/dat = "<html><B><HR><FONT size=3>[name]</FONT></B><BR><HR>"
 
 	for(var/entry in species.hud.gear)
 		var/slot = species.hud.gear[entry]
@@ -238,6 +238,7 @@
 	dat += "<BR><A href='?src=\ref[src];item=pockets'>Empty pockets</A>"
 	dat += "<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>"
 	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
+	dat += "</html>"
 
 	user << browse(dat, text("window=mob[name];size=340x540"))
 	onclose(user, "mob[name]")

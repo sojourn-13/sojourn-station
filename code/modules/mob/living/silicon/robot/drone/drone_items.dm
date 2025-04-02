@@ -161,7 +161,7 @@
 	if(!module)
 		module = new /obj/item/robot_module/drone(src)
 
-	var/dat = "<HEAD><TITLE>Drone modules</TITLE></HEAD><BODY>\n"
+	var/dat = "<html><HEAD><TITLE>Drone modules</TITLE></HEAD><BODY>\n"
 	dat += {"
 	<B>Activated Modules</B>
 	<BR>
@@ -202,5 +202,5 @@
 			dat += text("[module.emag]: <A HREF=?src=\ref[src];act=\ref[module.emag]>Activate</A><BR>")
 
 	dat += resources
-
+	dat += "</html>"
 	src << browse(dat, "window=robotmod")

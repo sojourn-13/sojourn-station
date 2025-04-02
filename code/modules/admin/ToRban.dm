@@ -66,7 +66,7 @@ ADMIN_VERB_ADD(/client/proc/ToRban, R_SERVER, FALSE)
 			if( length(F.dir) )
 				for( var/i=1, i<=length(F.dir), i++ )
 					dat += "<tr><td>#[i]</td><td> [F.dir[i]]</td></tr>"
-				dat = "<table width='100%'>[dat]</table>"
+				dat = "<html><table width='100%'>[dat]</table></html>"
 			else
 				dat = "No addresses in list."
 			src << browse(dat,"window=ToRban_show")

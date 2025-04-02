@@ -153,7 +153,7 @@ var/global/list/navbeacons			// no I don't like putting this in, but it will do 
 			return
 
 
-		var/t
+		var/t = "<html>"
 
 		if(locked && !ai)
 			t = {"<TT><B>Navigation Beacon</B><HR><BR>
@@ -185,7 +185,7 @@ Transponder Codes:<UL>"}
 				t += " <small><A href='byond://?src=\ref[src];edit=1;code=[key]'>(edit)</A>"
 				t += " <A href='byond://?src=\ref[src];delete=1;code=[key]'>(delete)</A></small><BR>"
 			t += "<small><A href='byond://?src=\ref[src];add=1;'>(add new)</A></small><BR>"
-			t+= "<UL></TT>"
+			t += "<UL></TT></html>"
 
 		user << browse(t, "window=navbeacon")
 		onclose(user, "navbeacon")
