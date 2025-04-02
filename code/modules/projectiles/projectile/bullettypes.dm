@@ -883,7 +883,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 10, CHEM_TOUCH, copy = FALSE)
+				reagents?.trans_to_mob(L, 10, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
