@@ -9,7 +9,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.55)	// Tricordrazine/polystem + bicaridine + meralyne OR quickclot OD + any brute heal
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
 /datum/component/internal_wound/organic/blunt/rupture
@@ -34,7 +34,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.85)	// Brute heal chem mix + quickclot OD
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	next_wound = /datum/component/internal_wound/organic/swelling
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
@@ -60,7 +60,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.85)	// Brute heal chem mix + quickclot OD
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	next_wound = /datum/component/internal_wound/organic/swelling
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
@@ -87,7 +87,7 @@
 	treatments_chem = list(CE_STABLE = 1, CE_DEBRIDEMENT = 1)	// Inaprov will only keep it from killing you
 	scar = /datum/component/internal_wound/organic/necrosis_start
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	next_wound = /datum/component/internal_wound/organic/infection
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 

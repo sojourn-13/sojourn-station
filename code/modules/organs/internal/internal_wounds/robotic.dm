@@ -9,7 +9,7 @@
 	treatments_tool = list(QUALITY_HAMMERING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_MECH_REPAIR = 0.55)		// repair nanites + 3 metals OR repair nanite OD + a metal
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	hal_damage = IWOUND_INSIGNIFICANT_DAMAGE
 
 /datum/component/internal_wound/robotic/blunt/malfunction
@@ -34,7 +34,7 @@
 	treatments_tool = list(QUALITY_SEALING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_MECH_REPAIR = 0.85)		// repair nanites + 6 metals OR repair nanite OD + 7 metals
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	hal_damage = IWOUND_INSIGNIFICANT_DAMAGE
 
 /datum/component/internal_wound/robotic/sharp/perforation
@@ -59,7 +59,7 @@
 	treatments_tool = list(QUALITY_CLAMPING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_MECH_REPAIR = 0.85)
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	hal_damage = IWOUND_INSIGNIFICANT_DAMAGE
 
 /datum/component/internal_wound/robotic/edge/cut
@@ -84,7 +84,7 @@
 	treatments_tool = list(QUALITY_PULSING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_MECH_REPAIR = 0.95)	// repair nanite OD + all metals
 	severity = 0
-	severity_max = 5
+	severity_max = 2 //5
 	next_wound = /datum/component/internal_wound/robotic/overheat
 	hal_damage = IWOUND_INSIGNIFICANT_DAMAGE
 
