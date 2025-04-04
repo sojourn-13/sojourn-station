@@ -114,7 +114,7 @@
 			if(!LAZYLEN(possible_wounds))
 				break
 
-		owner.custom_pain("Something inside your [parent.name] hurts a lot.", 0)		// Let em know they're hurting
+		owner?.custom_pain("Something inside your [parent.name] hurts a lot.", 0)		// Let em know they're hurting
 
 		return TRUE
 	return FALSE
