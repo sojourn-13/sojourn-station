@@ -368,7 +368,7 @@ I said no!
 	result = /obj/item/reagent_containers/snacks/eggplantparm
 
 /datum/recipe/soylenviridians
-	fruit = list("soybeans" = 1)
+	fruit = list("soybean" = 1)
 	reagents = list("flour" = 10)
 	result = /obj/item/reagent_containers/snacks/soylenviridians
 
