@@ -315,7 +315,7 @@
 	close_spawn_windows()
 
 	SSjob.AssignRole(src, rank, 1)
-	var/datum/job/job = src.mind.assigned_job
+	var/datum/job/job = src.mind?.assigned_job
 	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core

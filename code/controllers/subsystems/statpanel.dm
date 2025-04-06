@@ -51,7 +51,7 @@ SUBSYSTEM_DEF(statpanels)
 			target.stat_panel.send_message("remove_admin_tabs")
 		else
 			target.stat_panel.send_message("update_split_admin_tabs", target.get_preference_value(/datum/client_preference/staff/split_admin_tabs) == GLOB.PREF_YES)
-			
+
 			if(!("MC" in target.panel_tabs) || !("Tickets" in target.panel_tabs))
 				// target << output("[url_encode(target.holder.href_token)]", "statbrowser:add_admin_tabs")
 				// very super secret secure admin token to prevent href exploits
@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(statpanels)
 
 		if(target.mob)
 			var/mob/target_mob = target.mob
-			
+
 			// we don't have spells
 			// if((target.stat_tab in target.spell_tabs) || !length(target.spell_tabs) && (length(target_mob.mob_spell_list) || length(target_mob.mind?.spell_list)))
 			// 	if(num_fires % default_wait == 0)
@@ -95,7 +95,7 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/perk_data = list()
 	for(var/datum/perk/P as anything in target_mob?.stats?.perks)
 		perk_data += list(list("name" = P.name, "desc" = P.desc, "cooldown" = P.cooldown_time, "ref" = "[REF(P)]", "passive" = P.passivePerk))
-	target.stat_panel.send_message("update_perks", list("world_time" = world.time, "perk_data" = perk_data))
+	target?.stat_panel.send_message("update_perks", list("world_time" = world.time, "perk_data" = perk_data))
 
 /datum/controller/subsystem/statpanels/proc/generate_mc_data()
 	mc_data = list(

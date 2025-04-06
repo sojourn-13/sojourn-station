@@ -298,18 +298,20 @@
 			new_item.price_tag = rand(350,1200) //Has some uses
 		if(16)
 			apply_prefix = 0
+			new_item = new /obj/structure/flora/pottedplant/clockcult(src.loc) //We use this for the glow + sanity regen
+				new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			if(prob(25))
-				icon = 'icons/obj/xenoarchaeology.dmi'
 				item_type = "smooth green crystal"
-				icon_state = "green_lump"
+				new_item.icon_state = "green_lump"
+				new_item.light_color = "#32CD32"
 			else if(prob(33))
-				icon = 'icons/obj/xenoarchaeology.dmi'
 				item_type = "irregular purple crystal"
-				icon_state = "phazon"
+				new_item.icon_state = "phazon"
+				new_item.light_color = "#4B365F"
 			else
-				icon = 'icons/obj/xenoarchaeology.dmi'
 				item_type = "rough red crystal"
-				icon_state = "changerock"
+				new_item.icon_state = "changerock"
+				new_item.light_color = "#47191B"
 			additional_desc = pick("It shines faintly as it catches the light.","It appears to have a faint inner glow.","It seems to draw you inward as you look it at.","Something twinkles faintly as you look at it.","It's mesmerizing to behold.")
 			new_item.price_tag = rand(750,2500) //It shines!
 			apply_material_decorations = 0
@@ -390,10 +392,11 @@
 			item_type = "gun"
 
 		if(28)
-			//completely unknown alien device
+			//completely unknown alien device -- no idea what this is meant to be, swapped to a a cystal
+			new_item = new /obj/structure/crystal(src.loc)
 			if(prob(50))
 				apply_image_decorations = 0
-			new_item.price_tag = rand(450,800)
+			new_item.price_tag = rand(1450,1800)
 		if(29)
 			//fossil bone/skull
 			//new_item = new /obj/item/fossil/base(src.loc)
@@ -430,6 +433,7 @@
 			new_item.price_tag = rand(1000,1750)
 		if(32)
 			//humanoid remains
+			new_item = new /obj/item/remains/human(src.loc)
 			apply_prefix = 0
 			item_type = "humanoid [pick("remains","skeleton")]"
 			icon = 'icons/effects/blood.dmi'
@@ -446,6 +450,7 @@
 			new_item.price_tag = rand(950,1750)
 		if(33)
 			//robot remains
+			new_item = new /obj/item/remains/robot(src.loc)
 			apply_prefix = 0
 			item_type = "[pick("mechanical","robotic","cyborg")] [pick("remains","chassis","debris")]"
 			icon = 'icons/mob/robots.dmi'
@@ -462,6 +467,7 @@
 			new_item.price_tag = rand(1000,2000)
 		if(34)
 			//xenos remains
+			new_item = new /obj/item/remains/xeno(src.loc)
 			apply_prefix = 0
 			item_type = "alien [pick("remains","skeleton")]"
 			icon = 'icons/effects/blood.dmi'
