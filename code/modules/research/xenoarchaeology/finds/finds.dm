@@ -299,7 +299,7 @@
 		if(16)
 			apply_prefix = 0
 			new_item = new /obj/structure/flora/pottedplant/clockcult(src.loc) //We use this for the glow + sanity regen
-				new_item.icon = 'icons/obj/xenoarchaeology.dmi'
+			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			if(prob(25))
 				item_type = "smooth green crystal"
 				new_item.icon_state = "green_lump"
