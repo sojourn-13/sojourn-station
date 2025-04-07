@@ -81,9 +81,13 @@
     tipText = "If you're hurt in the wilderness, some red-flowers can yield poppys if a knife is used on them. Poppys contain a small amount of brute healing meds."
 
 /tipsAndTricks/gameplay/sinks
-    tipText = "you can alt-click a sink with a container to pour the reagents down the drain."
+    tipText = "You can alt-click a sink with a container to pour the reagents down the drain."
 
-/tipsAndTricks/gameplay/sinks
+/tipsAndTricks/gameplay/ammou_mass_reload
     tipText = "if you spill all the bullets out of an ammobox, you can click the tile they're on with their box to scoop them back up"
 
+/tipsAndTricks/gameplay/traps_n_you
+    tipText = "Clicking a bear trap with rods or a gripper will disarm it slightly faster."
 
+/tipsAndTricks/gameplay/spider_traps_n_you
+    tipText = "Clicking a spider base traps (collection of webs, odd shadow) with meat will lure out the spider without stunning you!"
