@@ -131,6 +131,10 @@ uniquic_armor_act
 					var/math_var = clamp(0, (I.force * 0.05) + (I.w_class * 0.5), 10)
 					total += math_var
 					item_punishment = clamp(0, math_var, 8)
+			if(istype(I, /obj/item/gun))
+				var/obj/item/gun/G = I
+				if(G.recoil)
+					external_recoil(G.recoil.getRating(RECOIL_BASE) + 12) //Dont block with a gun that simple
 
 		if(stats.getStat(STAT_TGH) > 0)
 			total += clamp(0, round(stats.getStat(STAT_TGH)/(12 + item_punishment)), 10)
