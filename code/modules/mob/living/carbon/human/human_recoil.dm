@@ -4,7 +4,7 @@
 	var/base_recoil = 8
 
 	if(MOVING_DELIBERATELY(src) || src.stats.getPerk(PERK_SURE_STEP))
-		base_recoil -= 1
+		base_recoil -= 3
 
 	var/mob/living/carbon/human/H = src
 	var/suit_stiffness = 0
