@@ -90,4 +90,4 @@
     tipText = "Clicking a bear trap with rods or a gripper will disarm it slightly faster."
 
 /tipsAndTricks/gameplay/spider_traps_n_you
-    tipText = "Clicking a spider base traps (collection of webs, odd shadow) with meat will lure out the spider without stunning you!"
+    tipText = "Clicking a spider base traps (collection of webs, odd shadow) with meat (in hand) will lure out the spider without stunning you!"
