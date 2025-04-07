@@ -133,6 +133,20 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 	if (C.has_quality(QUALITY_PRYING))
 		attempt_release(user, C)
 		return
+
+	//Disarming a trap with rods or gripper, qol for borgs
+	if(!buckled_mob && deployed)
+		if(istype(C, /obj/item/stack/rods) || istype(C, /obj/item/gripper))
+			if (do_after(user, 15)) //Faster to disarm via just stabbing it with rods/triggering with a gripper
+				user.visible_message(
+					SPAN_DANGER("[user] has disarmed \the [src]."),
+					SPAN_DANGER("You have disarmed \the [src]!")
+					)
+				deployed = FALSE
+				anchored = FALSE
+				playsound(src, 'sound/effects/impacts/beartrap_shut.ogg', 10, 1,-2,-2)//Fairly quiet snapping sound, it was controled
+				update_icon()
+
 	.=..()
 
 /obj/item/beartrap/attack_hand(mob/user as mob)
