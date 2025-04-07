@@ -26,6 +26,7 @@
 	var/max_mob_size = 2
 	var/wall_mounted = FALSE //never solid (You can always pass over it)
 	health = 100
+	maxHealth = 100
 	var/breakout = FALSE //if someone is currently breaking out. mutex
 	var/storage_capacity = 2 * MOB_MEDIUM //This is so that someone can't pack hundreds of items in a locker/crate
 							  //then open it in a populated area to crash clients.
@@ -120,6 +121,30 @@
 				to_chat(user, "It is full.")
 		else
 			to_chat(user, "It's hard to tell how full [src] is.")
+
+	if(health > 0)
+		if(isliving(user))
+			var/mob/living/L = user
+			if(L.stats.getPerk(PERK_NO_OBFUSCATION))
+				to_chat(user, "It can take [health] more damage before being destroyed.")
+				return
+			var/health_rate = health / maxHealth
+			if(health == maxHealth)
+				to_chat(user, "[src] is undamaged.")
+				return
+			if(health_rate > 0.8)
+				to_chat(user, "[src] has some signs of damage.")
+				return
+			if(health_rate > 0.5)
+				to_chat(user, "[src] has clear signs of damage.")
+				return
+			if(health_rate > 0.25)
+				to_chat(user, "[src] shows lots of damage and can't take more.")
+				return
+			to_chat(user, "[src] is about to fall apart!")
+			return
+
+
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0 || wall_mounted)) return 1
@@ -405,26 +430,33 @@
 	if(secure && locked)
 		usable_qualities += QUALITY_PULSING
 
+	if(health < maxHealth && health > 0)
+		usable_qualities += QUALITY_SEALING
+
+
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_WELDING)
-			if(!opened)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					welded = !welded
-					update_icon()
-					visible_message(
-						SPAN_NOTICE("[src] has been disassembled by [user]."),
-						"You hear [tool_type]."
-					)
-			else
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					visible_message(
-						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
-						"You hear [tool_type]."
-					)
-					drop_materials(drop_location())
-					qdel(src)
-			return
+
+			//Welder qol so we dont keep accidently welding are eyes or deconing
+			if(user.a_intent != I_HELP)
+				if(!opened)
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+						welded = !welded
+						update_icon()
+						visible_message(
+							SPAN_NOTICE("[src] has been [welded ? "sealed" : "unsealed"] by [user]."),
+							"You hear [tool_type]."
+						)
+				else
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+						visible_message(
+							SPAN_NOTICE("\The [src] has been cut apart by [user] with \the [I]."),
+							"You hear [tool_type]."
+						)
+						drop_materials(drop_location())
+						qdel(src)
+				return
 
 		if(QUALITY_SAWING, QUALITY_BOLT_TURNING)
 			if(opened && user.a_intent != I_HELP)
@@ -436,6 +468,20 @@
 					drop_materials(drop_location())
 					qdel(src)
 				return
+
+		if(QUALITY_SEALING)
+			if(opened && user.a_intent != I_HELP)
+				var/damage_mod = health - initial(health)
+				damage_mod -= WORKTIME_NORMAL
+				damage_mod *= -1 //So we are possitive number
+				if(I.use_tool(user, src, damage_mod, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					visible_message(
+						SPAN_NOTICE("\The [src] has repaired apart by [user] with \the [I]."),
+						"You hear [tool_type]."
+					)
+					health = maxHealth
+				return
+
 
 		if(QUALITY_WIRE_CUTTING)
 			if(rigged)
