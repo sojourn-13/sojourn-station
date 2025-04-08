@@ -23,7 +23,7 @@
             {{:helper.displayBar(	data.over_burn, 0, 100, 	(data.over_burn <= 25) ? 'good' : (data.over_burn <= 50) ? 'average' : 'bad')}}</div>
         <div class="itemLabel">Toxin content: <div style="float:right; margin-right:6px"><b>{{:helper.round(data.over_tox)}}</b></div></div>
         <div class="itemContent">
-            {{:helper.displayBar(	data.over_tox, 0, 100, 		(data.over_tox <= 25) ? 'good' : (data.over_tox <= 50) ? 'average' : 'bad')}}</div>
+            {{:helper.displayBar(	data.over_tox, 0, 20, 		(data.over_tox <= 2) ? 'tolerable' : (data.over_tox <= 5) ? 'minor' : 'major')}}</div>
         <div class="itemLabel">Respiratory damage: <div style="float:right; margin-right:6px"><b>{{:helper.round(data.over_oxy)}}</b></div></div>
         <div class="itemContent">
             {{:helper.displayBar(	data.over_oxy, 0, 100, 		(data.over_oxy <= 25) ? 'good' : (data.over_oxy <= 50) ? 'average' : 'bad')}}</div>
@@ -31,7 +31,7 @@
         <div class="itemContent">
 			{{:helper.displayBar(	data.blood_amount, 0, 100, 	(data.blood_amount >= 85) ? 'good' : (data.blood_amount >= 60) ? 'average' : 'bad')}}</div>
 
-        {{:helper.link('Toxin kelation: '+data.toxin_cost,  data.antitox_picked?'check':null,	{'toggle':'antitox', 	'id':1},	(data.antitox && !data.active)?	null:'disabled')}}
+        {{:helper.link('Anti-Toxin Prescription: '+data.toxin_cost,  data.antitox_picked?'check':null,	{'toggle':'antitox', 	'id':1},	(data.antitox && !data.active)?	null:'disabled')}}
         {{:helper.link('Replenish blood: '+data.blood_cost, data.blood_picked?'check':null,		{'toggle':'blood', 		'id':1},	(data.blood && !data.active)? 	null:'disabled')}}
         {{:helper.link('Dialysis: '+data.dialysis_cost,     data.dialysis_picked?'check':null,	{'toggle':'dialysis', 	'id':1},	(data.dialysis && !data.active)? null:'disabled')}}
 	</div>
