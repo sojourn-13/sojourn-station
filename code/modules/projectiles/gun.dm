@@ -145,6 +145,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
 
+	var/pickup_recoil = 20
+
 	var/overcharge_timer //Holds ref to the timer used for overcharging
 	var/overcharge_timer_step = 1 SECOND
 	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
@@ -1134,13 +1136,13 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	update_firemode()
 	if(isliving(user))
 		var/mob/living/L = user
-		L.external_recoil(20) //Picking up guns gives you a lot of recoil
+		L.external_recoil(pickup_recoil) //Picking up guns gives you a lot of recoil
 
 /obj/item/gun/equipped(mob/user)
 	..()
 	if(isliving(user))
 		var/mob/living/L = user
-		L.external_recoil(20) //Picking up guns gives you a lot of recoil
+		L.external_recoil(pickup_recoil) //Picking up guns gives you a lot of recoil
 
 /obj/item/gun/dropped(mob/user)
 	// I really fucking hate this but this is how this is going to work.
@@ -1376,6 +1378,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	extra_bulk = initial(extra_bulk)
 
 	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+
+	pickup_recoil = initial(pickup_recoil)
 
 	braced = initial(braced)
 
