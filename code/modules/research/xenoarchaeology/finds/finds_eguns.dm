@@ -114,7 +114,9 @@
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch
 	name = "Fossilized Gun"
-	icon = 'icons/obj/xenoarchaeology.dmi'
+	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
+	icon_state = "heavysniper"
+	item_state = "heavysniper"
 	damage_multiplier = 1.5
 	max_upgrades = 0
 
