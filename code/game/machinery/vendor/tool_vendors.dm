@@ -26,17 +26,17 @@
 	products = list(/obj/item/stack/cable_coil/random = 10,
 					/obj/item/tool/crowbar = 5,
 					/obj/item/tool/weldingtool = 5,
-					/obj/item/tool/wirecutters = 3,
-					/obj/item/tool/wirecutters/pliers = 3,
+					/obj/item/tool/wirecutters = 5,
+					/obj/item/tool/wirecutters/pliers = 5,
 					/obj/item/tool/wrench = 5,
 					/obj/item/tool/hammer = 5,
 					/obj/item/device/scanner/gas = 5,
 					/obj/item/device/t_scanner = 5,
 					/obj/item/tool/screwdriver = 5,
-					/obj/item/clothing/gloves/insulated/cheap = 4,
-					/obj/item/clothing/gloves/insulated = 2,
-					/obj/item/storage/pouch/engineering_tools = 2,
-					/obj/item/storage/pouch/engineering_supply = 2,
+					/obj/item/clothing/gloves/insulated/cheap = 5,
+					/obj/item/clothing/gloves/insulated = 4,
+					/obj/item/storage/pouch/engineering_tools = 4,
+					/obj/item/storage/pouch/engineering_supply = 4,
 					/obj/item/weldpack/canister = 4,
 					/obj/item/weldpack = 2)
 	prices = list(/obj/item/tool/hammer = 30,
@@ -63,15 +63,15 @@
 	shut_up = 1
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
-	products = list(/obj/item/clothing/glasses/powered/meson = 2,
-					/obj/item/clothing/glasses/welding = 2,
+	products = list(/obj/item/clothing/glasses/powered/meson = 6,
+					/obj/item/clothing/glasses/welding = 6,
 					/obj/item/clothing/head/welding = 2,
 					/obj/item/tool/multitool = 4,
 					/obj/item/airlock_electronics = 10,
 					/obj/item/circuitboard/apc = 10,
 					/obj/item/airalarm_electronics = 10,
 					/obj/item/cell/large/high = 2,
-					/obj/item/storage/belt/utility = 3,
+					/obj/item/storage/belt/utility = 6,
 					/obj/item/weldpack/canister = 4,
 					/obj/item/weldpack = 2)
 	contraband = list(/obj/item/cell/large/potato = 3)
@@ -88,7 +88,7 @@
 	vendor_department = DEPARTMENT_ENGINEERING
 	products = list(/obj/item/clothing/head/hardhat = 4,
 					/obj/item/storage/belt/utility = 4,
-					/obj/item/storage/belt/webbing/artificer = 2,
+					/obj/item/storage/belt/webbing/artificer = 4,
 					/obj/item/clothing/glasses/powered/meson = 4,
 					/obj/item/clothing/glasses/powered/night/guild = 4,
 					/obj/item/clothing/gloves/insulated = 4,
@@ -298,7 +298,7 @@
 					/obj/item/clothing/suit/bio_suit = 6,
 					/obj/item/clothing/head/bio_hood = 6,
 					/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 6,
-					/obj/item/device/transfer_valve = 6,
+					/obj/item/device/transfer_valve = 20,
 					/obj/item/device/assembly/timer = 6,
 					/obj/item/device/assembly/signaler = 6,
 					/obj/item/device/assembly/prox_sensor = 6,
@@ -314,8 +314,8 @@
 	product_slogans = "Build your robot army TODAY!;How about a mech?;You know you need that Durand!;Lost your jumpsuit again?;Let's implant them, we both know they need it."
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
-	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 4,
-					/obj/item/clothing/under/rank/roboticist = 4,
+	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 6,
+					/obj/item/clothing/under/rank/roboticist = 6,
 					/obj/item/stack/cable_coil = 4,
 					/obj/item/device/flash = 4,
 					/obj/item/cell/large/high = 12,
