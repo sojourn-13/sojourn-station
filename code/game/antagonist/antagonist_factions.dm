@@ -279,7 +279,7 @@
 	add_icons(A)
 
 /datum/antag_faction/proc/faction_panel()
-	var/data = "<html><center><font size='3'><b>FACTION PANEL</b></font></center>"
+	var/data = "<center><font size='3'><b>FACTION PANEL</b></font></center>"
 	data += "<br>[name] - faction of [antag] ([id])"
 	data += "<br>Welcome: [welcome_text]"
 	data += {"<br><a href='?src=\ref[src];rename=1'>\[NAME\]</a>
@@ -308,7 +308,6 @@
 		O.update_explanation()
 		data += "[i]. [O.get_panel_entry()]<br>"
 
-	data += "</html>"
 	usr << browse(data,"window=[id]faction")
 
 /datum/antag_faction/Topic(href, href_list)

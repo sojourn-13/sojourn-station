@@ -97,7 +97,7 @@ var/global/vs_control/vsc = new
 
 /vs_control/proc/ChangeSettingsDialog(mob/user,list/L)
 	//var/which = input(user,"Choose a setting:") in L
-	var/dat = "<html>"
+	var/dat = ""
 	for(var/ch in L)
 		if(findtextEx(ch,"_RANDOM") || findtextEx(ch,"_DESC") || findtextEx(ch,"_METHOD") || findtextEx(ch,"_NAME")) continue
 		var/vw
@@ -113,7 +113,6 @@ var/global/vs_control/vsc = new
 			if("[ch]_NAME" in vars) vw_name = vars["[ch]_NAME"]
 		dat += "<b>[vw_name] = [vw]</b> <A href='?src=\ref[src];changevar=[ch]'>\[Change\]</A><br>"
 		dat += "<i>[vw_desc]</i><br><br>"
-	dat += "</html>"
 	user << browse(dat,"window=settings")
 
 /vs_control/Topic(href,href_list)

@@ -6,7 +6,7 @@
 	if(!.)
 		return
 	var/dat
-	dat += "<html><h4>Crew Manifest</h4>"
+	dat += "<h4>Crew Manifest</h4>"
 	dat += data_core.get_manifest()
-	dat += "</html>"
+
 	user << browse(dat, "window=manifest;size=370x420;can_close=1")

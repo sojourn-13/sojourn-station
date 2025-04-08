@@ -85,7 +85,7 @@
 		return
 
 	user.set_machine(src)
-	var/dat = "<html>"
+	var/dat
 
 	if (mode == 1) //Logs
 		dat += "<h3>Activity log</h3><br>"
@@ -109,7 +109,6 @@
 				dat += "<a href='?src=\ref[src];choice=access;access=[A]'>[area]</a><br>"
 		dat += "<br><a href='?src=\ref[src];action=issue'>Issue pass</a><br>"
 
-	dat += "</html>"
 	user << browse(dat, "window=guestpass;size=400x520")
 	onclose(user, "guestpass")
 

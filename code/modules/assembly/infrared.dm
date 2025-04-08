@@ -103,12 +103,12 @@
 	if(!secured)
 		return
 	user.set_machine(src)
-	var/dat = {"<html><tt><b>Infrared Laser</b><br>
+	var/dat = {"<tt><b>Infrared Laser</b><br>
 		<b>Status</b>: <a href='?src=\ref[src];state=[!on]'>[on ? "On" : "Off"]</a><br>
 		<b>Visibility</b>: <a href='?src=\ref[src];visible=[!visible]'>[visible ? "Visible" : "Invisible"]</a><br></tt>
 		<br><br><a href='?src=\ref[src];refresh=1'>Refresh</a>
 		<br><br><a href='?src=\ref[src];close=1'>Close</a>
-	</html>"}
+	"}
 	user << browse(dat, "window=infra")
 	onclose(user, "infra")
 

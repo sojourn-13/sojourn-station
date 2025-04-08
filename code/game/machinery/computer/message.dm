@@ -86,7 +86,7 @@
 	//If the computer is being hacked or is emagged, display the reboot message.
 	if(hacking || emag)
 		message = rebootmsg
-	var/dat = "<html><head><title>Message Monitor Console</title></head><body>"
+	var/dat = "<head><title>Message Monitor Console</title></head><body>"
 	dat += "<center><h2>Message Monitor Console</h2></center><hr>"
 	dat += "<center><h4><font color='blue'[message]</h5></center>"
 
@@ -252,7 +252,7 @@
 				dat += "<a href='?src=\ref[src];addtoken=1'>Add token</a><br>"
 
 
-	dat += "</body></html>"
+	dat += "</body>"
 	message = defaultmsg
 	user << browse(dat, "window=message;size=700x700")
 	onclose(user, "message")

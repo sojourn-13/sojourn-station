@@ -70,7 +70,7 @@
 	return ..()
 
 /datum/category_item/player_setup_item/physical/flavor/proc/SetFlavourTextRobot(mob/user)
-	var/HTML = "<html><body>"
+	var/HTML = "<body>"
 	HTML += "<tt><center>"
 	HTML += "<b>Set Robot Flavour Text</b> <hr />"
 	HTML += "<br></center>"
@@ -82,6 +82,6 @@
 		HTML += TextPreview(pref.flavour_texts_robot[module])
 		HTML += "<br>"
 	HTML += "<hr />"
-	HTML += "<tt></html>"
+	HTML += "<tt>"
 	user << browse(HTML, "window=flavour_text_robot;size=430x300")
 	return

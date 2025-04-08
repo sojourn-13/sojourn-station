@@ -359,7 +359,7 @@
 		to_chat(usr, "This mob has no ckey")
 		return
 
-	var/dat = "<html>"
+	var/dat = ""
 	var/header = {"
 		<title>Job-Ban Panel: [M.name]</title>
 		<style>
@@ -408,7 +408,7 @@
 		jobban_list[antag.role_text] = a_ban
 	body += source.formatJobGroup(M, "Antagonist Positions", "ffeeaa", "Syndicate", jobban_list)
 
-	dat = "<head>[header]</head><body><tt><table width='100%'>[body.Join(null)]</table></tt></body></html>"
+	dat = "<head>[header]</head><body><tt><table width='100%'>[body.Join(null)]</table></tt></body>"
 	usr << browse(dat, "window=jobban2;size=800x490")
 
 
@@ -736,10 +736,10 @@
 	require_perms = list(R_ADMIN)
 
 /datum/admin_topic/c_mode/Run(list/input)
-	var/dat = {"<html><B>What storyteller do you wish to install?</B><HR>"}
+	var/dat = {"<B>What storyteller do you wish to install?</B><HR>"}
 	for(var/mode in config.storytellers)
 		dat += {"<A href='?src=\ref[source];c_mode2=[mode]'>[config.storyteller_names[mode]]</A><br>"}
-	dat += {"Now: [master_storyteller]</html>"}
+	dat += {"Now: [master_storyteller]"}
 	usr << browse(dat, "window=c_mode")
 
 
@@ -1099,14 +1099,13 @@
 	else if (istype(fax, /obj/item/paper_bundle))
 		//having multiple people turning pages on a paper_bundle can cause issues
 		//open a browse window listing the contents instead
-		var/data = "<html>"
+		var/data = ""
 		var/obj/item/paper_bundle/B = fax
 
 		for (var/page = 1, page <= B.pages.len, page++)
 			var/obj/pageobj = B.pages[page]
 			data += "<A href='?src=\ref[source];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
 
-		data += "</html>"
 		usr << browse(data, "window=[B.name]")
 	else
 		to_chat(usr, "\red The faxed item is not viewable. This is probably a bug, and should be reported on the tracker: [fax.type]")

@@ -234,18 +234,17 @@
 	set category = "IC"
 	set src = usr
 
-	var/dat = "<html><b><font size = 5>Known Languages</font></b><br/><br/>"
+	var/dat = "<b><font size = 5>Known Languages</font></b><br/><br/>"
 
 	for(var/datum/language/L in languages)
 		if(!(L.flags & NONGLOBAL))
 			dat += "<b>[L.name] ([get_language_prefix()][L.key])</b><br/>[L.desc]<br/><br/>"
 
-	dat += "</html>"
 	src << browse(dat, "window=checklanguage")
 	return
 
 /mob/living/check_languages()
-	var/dat = "<HTML><b><font size = 5>Known Languages</font></b><br/><br/>"
+	var/dat = "<b><font size = 5>Known Languages</font></b><br/><br/>"
 
 	if(default_language)
 		dat += "Current default language: [default_language] - <a href='byond://?src=\ref[src];default_lang=reset'>reset</a><br/><br/>"
@@ -257,7 +256,6 @@
 			else
 				dat += "<b>[L.name] ([get_language_prefix()][L.key])</b> - <a href='byond://?src=\ref[src];default_lang=\ref[L]'>set default</a><br/>[L.desc]<br/><br/>"
 
-	dat += "</html>"
 	src << browse(dat, "window=checklanguage")
 
 /mob/living/Topic(href, href_list)

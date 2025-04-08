@@ -12,4 +12,4 @@ KeyState
 			if(client)client.KeyFocus()
 		close()
 			open = 0
-			if(client)client << browse(null,null)
+			if(client)client<<browse(null,null)

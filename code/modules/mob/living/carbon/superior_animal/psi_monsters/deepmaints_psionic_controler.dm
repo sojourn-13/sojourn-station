@@ -16,7 +16,7 @@ GLOBAL_VAR_INIT(deepmaints_panel, new /datum/deepmaints_panel)
 /datum/deepmaints_panel/New()
 
 /datum/deepmaints_panel/proc/main_interact()
-	var/data = "<html><center><font size='3'><b>DEEPMAINTS PANEL</b></font></center>"
+	var/data = "<center><font size='3'><b>DEEPMAINTS PANEL</b></font></center>"
 	data += "<table><tr><td><a href='?src=\ref[src];refresh=1'>\[REFRESH\]</a>"
 
 	data += "<br>Psionic Implant Powers Active: [GLOB.deepmaints_data_bool["active_psionics"] ? "Enabled" : "Disabled"] \
@@ -46,7 +46,7 @@ GLOBAL_VAR_INIT(deepmaints_panel, new /datum/deepmaints_panel)
 	data += "<br>Allow Dreaming King Teleportation: [GLOB.deepmaints_data_bool["king_teleporting"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];king_teleporting=1'>\[TOGGLE\]</a>"
 
-	data += "</td></tr></table></html>"
+	data += "</td></tr></table>"
 	usr << browse(data, "window=hive_main;size=600x600")
 
 

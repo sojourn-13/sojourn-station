@@ -5,7 +5,7 @@ var/inactive_keys = "None<br>"
 	set category = "Admin"
 	set name = "Check activity of players with custom items"
 
-	var/dat = "<html><b>Inactive players with custom items</b><br>"
+	var/dat = "<b>Inactive players with custom items</b><br>"
 	dat += "<br>"
 	dat += "The list below contains players with custom items that have not logged\
 	 in for the past two months, or have not logged in since this system was implemented.\
@@ -20,7 +20,6 @@ var/inactive_keys = "None<br>"
 		dat += "This system was implemented on March 1 2013, and the database a few days before that. Root server access is required to add or disable access to specific custom items.<br>"
 	else
 		dat += "<a href='?src=\ref[src];_src_=holder;populate_inactive_customitems=1'>Populate list (requires an active database connection)</a><br>"
-	dat += "</html>"
 
 	usr << browse(dat, "window=inactive_customitems;size=600x480")
 
