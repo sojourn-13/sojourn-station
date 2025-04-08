@@ -1433,5 +1433,5 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/client_offset_x = C ? round(C.pixel_x / world.icon_size) : 0
 	var/client_offset_y = C ? round(C.pixel_y / world.icon_size) : 0
 	tX = clamp(origin.x + text2num(tX) + client_offset_x - round(actual_view[1] / 2) - 1, 1, world.maxx)
-	tY = clamp(origin.y + text2num(tY) + client_offset_y - round(actual_view[2] / 2) - 1, 1, world.maxy)
+	tY = clamp(origin?.y + text2num(tY) + client_offset_y - round(actual_view[2] / 2) - 1, 1, world.maxy)
 	return locate(tX, tY, tZ)

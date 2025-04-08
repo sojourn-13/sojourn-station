@@ -52,7 +52,7 @@
 
 /obj/item/folder/examine()
 	. = ..()
-	if(contents)
+	if(contents && contents.len > 0) //Needs to be more than 0 or an attempt to access the index 1 (which will be empty as there is nothing there) will cause it to go out of bounds - Ryuu
 		. += "<span class='notice'>Alt-click to remove [contents[1]].</span>"
 
 /obj/item/folder/proc/rename(mob/user)

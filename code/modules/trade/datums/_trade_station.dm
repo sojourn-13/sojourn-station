@@ -245,7 +245,11 @@
 		if(islist(amounts_of_goods))
 			var/list/L = amounts_of_goods[cat]
 			if(islist(L))
-				. = L[L[index]]
+
+				if(index > 0 && index <= L.len && isnum(L[index])) // Check if index is within bounds and L[index] is a number - Ryuu
+					var next_index = L[index]
+					if(next_index > 0 && next_index <= L.len) // Check if next_index is within bounds - Ryuu
+						. = L[next_index]
 
 /datum/trade_station/proc/set_good_amount(cat, index, value)
 	if(isnum(cat))

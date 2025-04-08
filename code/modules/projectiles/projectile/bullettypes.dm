@@ -878,7 +878,7 @@
 		create_reagents(10)
 		reagents.add_reagent(spray, 10)
 
-/obj/item/projectile/bullet/shotgun/beanbag/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/shotgun/beanbag/pepperball/on_hit(atom/target, def_zone = null)
 	if (!testing)
 		if(isliving(target))
 			var/mob/living/L = target
