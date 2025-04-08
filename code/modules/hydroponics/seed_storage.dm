@@ -160,7 +160,7 @@
 	if (..())
 		return
 
-	var/dat = "<html><center><h1>Seed storage contents</h1></center>"
+	var/dat = "<center><h1>Seed storage contents</h1></center>"
 	if (piles.len == 0)
 		dat += "<font color='red'>No seeds</font>"
 	else
@@ -264,7 +264,7 @@
 			dat += "<td><a href='byond://?src=\ref[src];task=vend;id=[S.ID]'>Vend</a> <a href='byond://?src=\ref[src];task=purge;id=[S.ID]'>Purge</a></td>"
 			dat += "</tr>"
 		dat += "</table>"
-	dat += "</html>"
+
 	user << browse(dat, "window=seedstorage")
 	onclose(user, "seedstorage")
 

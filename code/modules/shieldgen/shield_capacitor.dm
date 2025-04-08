@@ -79,7 +79,7 @@
 			user.unset_machine()
 			user << browse(null, "window=shield_capacitor")
 			return
-	var/t = "<html><B>Shield Capacitor Control Console</B><br><br>"
+	var/t = "<B>Shield Capacitor Control Console</B><br><br>"
 	if(locked)
 		t += "<i>Swipe your ID card to begin.</i>"
 	else
@@ -98,7 +98,7 @@
 	t += "<hr>"
 	t += "<A href='?src=\ref[src]'>Refresh</A> "
 	t += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	t += "</html>"
+
 	user << browse(t, "window=shield_capacitor;size=500x400")
 	user.set_machine(src)
 

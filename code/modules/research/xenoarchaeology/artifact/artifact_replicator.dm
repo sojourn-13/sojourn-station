@@ -118,11 +118,11 @@
 	interact(user)
 
 /obj/machinery/replicator/interact(mob/user)
-	var/dat = "<html>The control panel displays an incomprehensible selection of controls, many with unusual markings or text around them.<br>"
+	var/dat = "The control panel displays an incomprehensible selection of controls, many with unusual markings or text around them.<br>"
 	dat += "<br>"
 	for(var/index=1, index<=construction.len, index++)
 		dat += "<A href='?src=\ref[src];activate=[index]'>\[[construction[index]]\]</a><br>"
-	dat += "</html>"
+
 	user << browse(dat, "window=alien_replicator")
 
 /obj/machinery/replicator/attackby(obj/item/W as obj, mob/living/user as mob)

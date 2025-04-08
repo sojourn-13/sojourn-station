@@ -183,7 +183,7 @@
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
-	var/dat = "<html>"
+	var/dat
 	if (src.delete && src.temphtml) //Window in buffer but its just simple message, so nothing
 		src.delete = src.delete
 	else if (!src.delete && src.temphtml) //Window in buffer - its a menu, dont add clear message
@@ -196,7 +196,6 @@
 			dat = SPAN_WARNING("Error: No Body Scanner connected.")
 
 	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", user)
-	dat += "</html>"
 	user << browse(dat, "window=scanconsole;size=430x600")
 	return
 

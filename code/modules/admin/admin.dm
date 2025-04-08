@@ -94,7 +94,6 @@ var/global/floorIsLava = 0
 		body += M.attack_log[i] + "<br>"
 		i--
 
-	body += "</html>"
 	usr << browse(body, "window=\ref[M]logs;size=500x500")
 
 
@@ -301,7 +300,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 		to_chat(usr, "Error: you are not an admin!")
 		return
 	var/dat
-	dat = text("<html><HEAD><TITLE>Admin Newscaster</TITLE></HEAD><H3>Admin Newscaster Unit</H3>")
+	dat = text("<HEAD><TITLE>Admin Newscaster</TITLE></HEAD><H3>Admin Newscaster Unit</H3>")
 
 	switch(admincaster_screen)
 		if(0)
@@ -531,7 +530,6 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 
 	//world << "Channelname: [src.admincaster_feed_channel.channel_name] [src.admincaster_feed_channel.author]"
 	//world << "Msg: [src.admincaster_feed_message.author] [src.admincaster_feed_message.body]"
-	dat += "</html>"
 	usr << browse(dat, "window=admincaster_main;size=400x600")
 	onclose(usr, "admincaster_main")
 
@@ -541,22 +539,20 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 	if(!check_rights(R_MOD) && !check_rights(R_ADMIN))
 		return
 
-	var/dat = "<html><B>Job Bans!</B><HR><table>"
+	var/dat = "<B>Job Bans!</B><HR><table>"
 	for(var/t in jobban_keylist)
 		var/r = t
 		if( findtext(r,"##") )
 			r = copytext( r, 1, findtext(r,"##") )//removes the description
 		dat += text("<tr><td>[t] (<A href='?src=\ref[src];removejobban=[r]'>unban</A>)</td></tr>")
-	dat += "</table></html>"
+	dat += "</table>"
 	usr << browse(dat, "window=ban;size=400x400")
 
 /datum/admins/proc/Game()
 	if(!check_rights(0))
 		return
 
-	var/dat = "<html>"
-
-	dat += "<center><B>Game Panel</B></center><hr>"
+	var/dat = "<center><B>Game Panel</B></center><hr>"
 	if(get_storyteller() && (SSticker.current_state != GAME_STATE_PREGAME))
 		dat += "<A href='?src=\ref[get_storyteller()]'>Storyteller Panel</A><br>"
 	else
@@ -572,8 +568,6 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 		<A href='?src=\ref[src];vsc=plasma'>Edit Plasma Settings</A><br>
 		<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
 		"}
-
-	dat += "</html>"
 
 	usr << browse(dat, "window=admin2;size=210x280")
 	return
@@ -594,7 +588,6 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 				continue
 			dat += "<A href='?src=\ref[src];admin_secrets=\ref[item]'>[item.name()]</A><BR>"
 		dat += "<BR>"
-	dat += "</html>"
 	usr << browse(dat, "window=secrets")
 	return
 

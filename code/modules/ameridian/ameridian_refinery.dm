@@ -145,7 +145,7 @@
 
 	user.set_machine(src)
 
-	var/dat = "<html>"
+	var/dat = ""
 	dat += "<head><title>Ameridian Refinery</title></head>"
 	dat += "Ameridian Refinery<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
@@ -167,7 +167,6 @@
 	else
 		dat += "No Bidon connected. Please connect a Bidon to start the transfer.<BR>"
 
-	dat += "</html>"
 	user << browse(dat, "window=AmeridianRefinery")
 	onclose(user, "AmeridianRefinery")
 	return

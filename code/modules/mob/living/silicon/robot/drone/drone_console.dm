@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(drones, list())
 
 	user.set_machine(src)
 	var/dat
-	dat += "<html><B>Maintenance Units</B><BR>"
+	dat += "<B>Maintenance Units</B><BR>"
 
 	for(var/mob/living/silicon/robot/drone/D in GLOB.drones)
 		if(D.z != src.z)
@@ -38,7 +38,6 @@ GLOBAL_LIST_INIT(drones, list())
 
 	dat += "<BR><BR><B>Drone fabricator</B>: "
 	dat += "[dronefab ? "<A href='?src=\ref[src];toggle_fab=1'>[(dronefab.produce_drones && !(dronefab.stat & NOPOWER)) ? "ACTIVE" : "INACTIVE"]</A>" : "<font color='red'><b>FABRICATOR NOT DETECTED.</b></font> (<A href='?src=\ref[src];search_fab=1'>search</a>)"]"
-	dat += "</html>"
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return

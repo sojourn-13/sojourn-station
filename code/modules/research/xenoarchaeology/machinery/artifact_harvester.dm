@@ -47,7 +47,7 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 	user.set_machine(src)
-	var/dat = "<html><B>Artifact Power Harvester</B><BR>"
+	var/dat = "<B>Artifact Power Harvester</B><BR>"
 	dat += "<HR><BR>"
 	//Scanner Pad connection check, Flows into user interface of battery charge.
 	if(!owned_scanner)
@@ -74,7 +74,6 @@
 	//
 	dat += "<HR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A> <A href='?src=\ref[src];close=1'>Close<BR>"
-	dat += "</html>"
 	user << browse(dat, "window=artharvester;size=450x500")
 	onclose(user, "artharvester")
 

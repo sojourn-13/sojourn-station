@@ -34,21 +34,19 @@
 	if(..())
 		return 1
 	user.set_machine(src)
-	var/dat = "<html>"
+	var/dat
 
 	dat += "<B>Holodeck Control System</B><BR>"
 	dat += "<HR>Current Loaded Programs:<BR>"
 
 	if(!linkedholodeck)
 		dat += SPAN_DANGER("Warning: Unable to locate holodeck.<br>")
-		dat += "</html>"
 		user << browse(dat, "window=computer;size=400x500")
 		onclose(user, "computer")
 		return
 
 	if(!supported_programs.len)
 		dat += SPAN_DANGER("Warning: No supported holo-programs loaded.<br>")
-		dat += "</html>"
 		user << browse(dat, "window=computer;size=400x500")
 		onclose(user, "computer")
 		return
@@ -87,7 +85,7 @@
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=green>(ON)</font></A><BR>"
 	else
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
-	dat += "</html>"
+
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return

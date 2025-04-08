@@ -18,7 +18,7 @@
 		if(stat & (BROKEN|NOPOWER))
 			return
 		user.set_machine(src)
-		var/dat = "<html><TITLE>Telecommunications Monitor</TITLE><center><b>Telecommunications Monitor</b></center>"
+		var/dat = "<TITLE>Telecommunications Monitor</TITLE><center><b>Telecommunications Monitor</b></center>"
 
 		switch(screen)
 
@@ -52,7 +52,7 @@
 				dat += "</ol>"
 
 
-		dat += "</html>"
+
 		user << browse(dat, "window=comm_monitor;size=575x400")
 		onclose(user, "server_control")
 

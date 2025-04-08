@@ -662,7 +662,7 @@
 		to_chat(src, SPAN_WARNING("This creature is too simplistic to care for."))
 		return
 
-	var/dat = "<html>"
+	var/dat
 	var/delete
 	var/temphtml
 
@@ -677,7 +677,6 @@
 			dat = SPAN_WARNING("This is a bug.")
 
 	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", src)
-	dat += "</html>"
 	src << browse(dat, "window=scanconsole;size=430x600")
 	return
 

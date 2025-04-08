@@ -245,7 +245,7 @@
 <A href='?src=\ref[src];action=dispose'>Eject ingredients!<BR>\
 "}
 
-	user << browse("<html><HEAD><TITLE>[src] Options</TITLE></HEAD><TT>[dat]</TT></html>", "window=[src]")
+	user << browse("<HEAD><TITLE>[src] Options</TITLE></HEAD><TT>[dat]</TT>", "window=[src]")
 	onclose(user, "[src]")
 	return
 

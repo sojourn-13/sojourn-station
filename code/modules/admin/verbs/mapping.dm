@@ -71,7 +71,7 @@ var/intercom_range_display_status = 0
 	for(var/obj/machinery/camera/C in cameranet.cameras)
 		CL += C
 
-	var/output = {"<html><B>CAMERA ANNOMALITIES REPORT</B><HR>
+	var/output = {"<B>CAMERA ANNOMALITIES REPORT</B><HR>
 <B>The following annomalities have been detected. The ones in red need immediate attention: Some of those in black may be intentional.</B><BR><ul>"}
 
 	for(var/obj/machinery/camera/C1 in CL)
@@ -94,7 +94,7 @@ var/intercom_range_display_status = 0
 				if(!window_check)
 					output += "<li><font color='red'>Camera not connected to wall at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Network: [C1.network]</color></li>"
 
-	output += "</ul></html>"
+	output += "</ul>"
 	usr << browse(output,"window=airreport;size=1000x500")
 
 
@@ -127,7 +127,7 @@ var/intercom_range_display_status = 0
 	if(amount)
 		log_admin("[key_name(usr)] has created [amount] fake crew record(s).")
 		message_admins("\blue [key_name_admin(usr)] has created [amount] fake crew record(s).", 1)
-
+	
 		for(var/i in 1 to amount)
 			var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
 			scramble_crew_record(CR)

@@ -222,7 +222,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_display_del_log, R_ADMIN|R_DEBUG, FALSE)
 	set name = "Display del() Log"
 	set desc = "Display del's log of everything that's passed through it."
 
-	var/list/dellog = list("<html><B>List of things that have gone through qdel this round</B><BR><BR><ol>")
+	var/list/dellog = list("<B>List of things that have gone through qdel this round</B><BR><BR><ol>")
 	sortTim(SSgarbage.items, cmp=/proc/cmp_qdel_item_time, associative = TRUE)
 	for(var/path in SSgarbage.items)
 		var/datum/qdel_item/I = SSgarbage.items[path]
@@ -242,7 +242,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_display_del_log, R_ADMIN|R_DEBUG, FALSE)
 			dellog += "<li>No hint: [I.no_hint]</li>"
 		dellog += "</ul></li>"
 
-	dellog += "</ol></html>"
+	dellog += "</ol>"
 
 	usr << browse(dellog.Join(), "window=dellog")
 
@@ -275,7 +275,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 		lines += "[entry] => [num2text(data[STAT_ENTRY_TIME], 10)]ms ([data[STAT_ENTRY_COUNT]]) (avg:[num2text(data[STAT_ENTRY_TIME]/(data[STAT_ENTRY_COUNT] || 1), 99)])"
 
 	if (user)
-		user << browse("<html><ol><li>[lines.Join("</li><li>")]</li></ol></html>", "window=[url_encode("stats:\ref[stats]")]")
+		user << browse("<ol><li>[lines.Join("</li><li>")]</li></ol>", "window=[url_encode("stats:\ref[stats]")]")
 	else
 		. = lines.Join("\n")
 
