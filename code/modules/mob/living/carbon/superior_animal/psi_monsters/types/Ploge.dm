@@ -65,14 +65,12 @@
 		projectiletype = /obj/item/projectile/tether/lash
 		for(var/mob/living/target in targets_in_range(in_hear_range = TRUE))
 			if(target.stat == CONSCIOUS && target.faction != "psi_monster")
-				if(isdeaf(target))
-					continue
 				if(ishuman(target))
 					var/mob/living/carbon/human/H = target
-					if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
-						continue
-					use_ability(target)
-					playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
+				if(target.earcheck() >= 2) //ear muffs or headset + helm
+					continue
+				use_ability(target)
+				playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
 
 /mob/living/carbon/superior/psi/ploge/proc/use_ability(mob/living/target)
 	if(target.faction == "psi_monster")

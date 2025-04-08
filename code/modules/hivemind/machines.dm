@@ -450,7 +450,7 @@
 /obj/machinery/hivemind_machine/turret
 	name = "projector"
 	desc = "This mass of machinery is topped with some sort of nozzle."
-	max_health = 220
+	max_health = 200
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "turret"
 	cooldown_time = 1 SECONDS
@@ -676,7 +676,7 @@
 	name = "tormentor"
 	desc = "A head impaled on a metal tendril. Still twitching, still living, still screaming."
 	icon_state = "head"
-	max_health = 100
+	max_health = 30
 	evo_level_required = 3
 	cooldown_time = 20 SECONDS
 	spawn_weight  =	35
@@ -694,7 +694,7 @@
 				continue
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
-				if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
+				if(target.earcheck() >= 2) //ear muffs or headset + helm
 					continue
 			use_ability(target)
 	if(can_scream)
@@ -705,10 +705,10 @@
 
 /obj/machinery/hivemind_machine/screamer/use_ability(mob/living/target)
 
-	var/mob/living/carbon/human/H = target
-	if(istype(H))
+	if(ishuman(H))
+		var/mob/living/carbon/human/H = target
 		if(prob(100 - H.stats.getStat(STAT_VIG)))
-			H.Weaken(5)
+			H.Weaken(3 - H.earcheck())
 			to_chat(H, SPAN_WARNING("A terrible howl tears through your mind, the voice senseless, soulless."))
 		else
 			to_chat(H, SPAN_NOTICE("A terrible howl tears through your mind, but you refuse to listen to it!"))
@@ -801,7 +801,7 @@
 /obj/machinery/hivemind_machine/cover
 	name = "cover"
 	desc = "A complex weaving of wires and metal rods."
-	max_health = 450
+	max_health = 350
 	evo_level_required = 0
 	spawn_weight = 0 //We get spawned when wires run rampet
 	icon_state = "coverted_cover"

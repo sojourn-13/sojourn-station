@@ -60,7 +60,7 @@ var/datum/xenomorph/xeno_morph_ai
 				continue
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
-				if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
+				if(target.earcheck() >= 2) //ear muffs or headset + helm
 					continue
 				use_ability(target)
 				can_scream = TRUE
