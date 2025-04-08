@@ -5,6 +5,12 @@
 /tipsAndTricks/gameplay/bracing
     tipText = "You can brace your weapon on a table or a low wall to reduce its recoil."
 
+/tipsAndTricks/gameplay/locker_repair
+    tipText = "Lockers, Crates, Trashcarts can be repaired via tape or other sealent when in any intent *other* then help."
+
+/tipsAndTricks/gameplay/locker_dont_decon
+    tipText = "Lockers, Crates, Trashcarts will not be decontructed by Saws, Welders, or Wrenches if in help intent. If you want to welder something shut, make sure it is closed, as well as on any other intent then help!"
+
 /tipsAndTricks/gameplay/airlockInteractions
     tipText = "Did you know? You can click on the turf tile where an airlock is located instead of the actual airlock to toggle it."
 
