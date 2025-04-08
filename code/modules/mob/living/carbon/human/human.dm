@@ -162,7 +162,7 @@
 			if (!shielded)
 				b_loss += 150
 
-			if (ear_protection < 2))
+			if (ear_protection < 2)
 				ear_damage += 30
 				ear_deaf += 120
 
@@ -669,7 +669,7 @@ var/list/rank_prefix = list(\
 		ear_protection_questionmark += 1
 
 	//we already speak loudly so we are used to it
-	if(HULK in M.mutations)
+	if(HULK in mutations)
 		ear_protection_questionmark += 1
 
 	if(sdisabilities & DEAF)

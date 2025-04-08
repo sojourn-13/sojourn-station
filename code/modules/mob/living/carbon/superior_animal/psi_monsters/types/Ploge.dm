@@ -65,8 +65,6 @@
 		projectiletype = /obj/item/projectile/tether/lash
 		for(var/mob/living/target in targets_in_range(in_hear_range = TRUE))
 			if(target.stat == CONSCIOUS && target.faction != "psi_monster")
-				if(ishuman(target))
-					var/mob/living/carbon/human/H = target
 				if(target.earcheck() >= 2) //ear muffs or headset + helm
 					continue
 				use_ability(target)

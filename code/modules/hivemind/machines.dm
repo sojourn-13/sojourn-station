@@ -692,10 +692,8 @@
 			can_scream = TRUE
 			if(isdeaf(target))
 				continue
-			if(ishuman(target))
-				var/mob/living/carbon/human/H = target
-				if(target.earcheck() >= 2) //ear muffs or headset + helm
-					continue
+			if(target.earcheck() >= 2) //ear muffs or headset + helm
+				continue
 			use_ability(target)
 	if(can_scream)
 		flick("[icon_state]-anim", src)
@@ -705,7 +703,7 @@
 
 /obj/machinery/hivemind_machine/screamer/use_ability(mob/living/target)
 
-	if(ishuman(H))
+	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(prob(100 - H.stats.getStat(STAT_VIG)))
 			H.Weaken(3 - H.earcheck())
