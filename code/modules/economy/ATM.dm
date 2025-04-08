@@ -141,7 +141,7 @@ log transactions
 	if(get_dist(src,user) <= 1)
 
 		//js replicated from obj/machinery/computer/card
-		var/dat = "<html><h1>Automatic Teller Machine</h1>"
+		var/dat = "<h1>Automatic Teller Machine</h1>"
 		dat += "For all your monetary needs!<br>"
 		dat += "<i>This terminal is</i> [machine_id]. <i>Report this code when contacting IT Support</i><br/>"
 
@@ -237,7 +237,6 @@ log transactions
 				dat += "<input type='submit' value='Submit'><br>"
 				dat += "</form>"
 
-		dat += "</html>"
 		user << browse(dat,"window=atm;size=600x650")
 	else
 		user << browse(null,"window=atm")

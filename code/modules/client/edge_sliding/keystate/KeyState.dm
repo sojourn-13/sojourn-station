@@ -98,7 +98,7 @@ client
 			keystate=new(src)
 			if(focus)KeyFocus()
 		InfoSetup()
-			src << browse({"
+			src<<browse({"
 <html>
 <head>
 </head>
@@ -115,7 +115,7 @@ window.location="?action=infosetup&resolution="+resolution+"&availresolution="+a
 </html>
 "},"window=infosetup;size=0x0;can_resize=0;titlebar=0")
 		MouseUpdate()
-			src << browse({"
+			src<<browse({"
 <html>
 <head>
 <script type="text/javascript">
@@ -188,4 +188,4 @@ for(index=0; index<255; index+=1)
 this.focus()
 </script>
 </body></html>"}
-			src << browse(key_repeat_code,"window=KeyEvent;size=0x0;can_resize=0;titlebar=0")
+			src<<browse(key_repeat_code,"window=KeyEvent;size=0x0;can_resize=0;titlebar=0")

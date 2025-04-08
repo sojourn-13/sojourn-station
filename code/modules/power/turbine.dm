@@ -158,7 +158,7 @@
 
 	user.machine = src
 
-	var/t = "<html><TT><B>Gas Turbine Generator</B><HR><PRE>"
+	var/t = "<TT><B>Gas Turbine Generator</B><HR><PRE>"
 
 	t += "Generated power : [round(lastgen)] W<BR><BR>"
 
@@ -168,7 +168,7 @@
 
 	t += "</PRE><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
-	t += "</TT></html>"
+	t += "</TT>"
 	user << browse(t, "window=turbine")
 	onclose(user, "turbine")
 
@@ -225,7 +225,7 @@
 
 /obj/machinery/computer/turbine_computer/attack_hand(var/mob/user as mob)
 	user.machine = src
-	var/dat = "<html>"
+	var/dat
 	if(src.compressor)
 		dat += {"<BR><B>Gas turbine remote control system</B><HR>
 		\nTurbine status: [ src.compressor.starter ? "<A href='?src=\ref[src];str=1'>Off</A> <B>On</B>" : "<B>Off</B> <A href='?src=\ref[src];str=1'>On</A>"]
@@ -240,7 +240,7 @@
 		\n"}
 	else
 		dat += SPAN_DANGER("No compatible attached compressor found.")
-	dat += "</html>"
+
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return

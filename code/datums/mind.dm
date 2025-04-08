@@ -126,7 +126,7 @@
 	return output
 
 /datum/mind/proc/show_memory(mob/recipient)
-	var/output = "<html><B>[current.real_name]'s Memory</B><HR>"
+	var/output = "<B>[current.real_name]'s Memory</B><HR>"
 	output += memory
 
 	for(var/datum/antagonist/A in antagonist)
@@ -138,7 +138,6 @@
 			output += "<br><b>Your [A.role_text] objectives:</b>"
 		output += "[A.print_objectives(FALSE)]"
 	output += print_individualobjectives()
-	output += "</html>"
 	recipient << browse(output, "window=memory")
 
 /datum/mind/proc/edit_memory()
@@ -146,7 +145,7 @@
 		alert("Not before round-start!", "Alert")
 		return
 
-	var/out = "<html><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
+	var/out = "<B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
 	out += "Mind currently owned by key: [key] [active?"(synced)":"(not synced)"]<br>"
 	out += "Assigned role: [assigned_role]. <a href='?src=\ref[src];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
@@ -167,7 +166,6 @@
 	out += print_individualobjectives()
 
 	out += "<br><a href='?src=\ref[src];edit_memory=1'>"
-	out += "</html>"
 	usr << browse(out, "window=edit_memory[src]")
 
 /datum/mind/Topic(href, href_list)

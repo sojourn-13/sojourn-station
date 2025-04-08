@@ -70,7 +70,7 @@
 	var/minute = (time - second) / 60
 
 	var/dat = {"
-		<html><tt><b>Timing Unit</b><br>[minute]:[second]<br>
+		<tt><b>Timing Unit</b><br>[minute]:[second]<br>
 		<a href='?src=\ref[src];tp=-30'>-</a>
 		<a href='?src=\ref[src];tp=-1'>-</a>
 		<a href='?src=\ref[src];tp=1'>+</a>
@@ -78,7 +78,7 @@
 		<a href='?src=\ref[src];time=[!timing]'>[timing ? "Timing" : "Not Timing"]</a>
 		<br><br><a href='?src=\ref[src];refresh=1'>Refresh</a>
 		<br><br><a href='?src=\ref[src];close=1'>Close</a>
-	</html>"}
+	"}
 	user << browse(dat, "window=timer")
 	onclose(user, "timer")
 

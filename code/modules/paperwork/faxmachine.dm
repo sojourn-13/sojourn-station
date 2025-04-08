@@ -33,7 +33,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
 	user.set_machine(src)
 
-	var/dat = "<html>Fax Machine<BR>"
+	var/dat = "Fax Machine<BR>"
 
 	var/scan_name
 	if(scan)
@@ -78,7 +78,6 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
 
-	dat += "</html>"
 	user << browse(dat, "window=copier")
 	onclose(user, "copier")
 	return

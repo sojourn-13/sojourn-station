@@ -168,7 +168,7 @@
 		dat += "Odd looking screw twiddled: <A href='?src=\ref[src];operation=screw'>[screwloose ? "Yes" : "No"]</A><BR>"
 		dat += "Weird button pressed: <A href='?src=\ref[src];operation=oddbutton'>[oddbutton ? "Yes" : "No"]</A>"
 
-	user << browse("<html><HEAD><TITLE>Cleaner v1.0 controls</TITLE></HEAD>[dat]</html>", "window=autocleaner")
+	user << browse("<HEAD><TITLE>Cleaner v1.0 controls</TITLE></HEAD>[dat]", "window=autocleaner")
 	onclose(user, "autocleaner")
 	return
 

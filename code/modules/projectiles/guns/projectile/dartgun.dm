@@ -137,7 +137,7 @@
 
 /obj/item/gun/projectile/dartgun/interact(mob/user)
 	user.set_machine(src)
-	var/dat = "<html><b>[src] mixing control:</b><br><br>"
+	var/dat = "<b>[src] mixing control:</b><br><br>"
 
 	if (beakers.len)
 		var/i = 1
@@ -164,7 +164,6 @@
 			dat += "<font color='red'>The dart cartridge is empty!</font>"
 		dat += " \[<A href='?src=\ref[src];eject_cart=1'>Eject</A>\]"
 
-	dat += "</html>"
 	user << browse(dat, "window=dartgun")
 	onclose(user, "dartgun", src)
 

@@ -84,7 +84,8 @@ level 5 manipulator 15 x 3 x 2 = 90w saved greyson level
 	var/obj/item/tool/multitool/P = get_multitool(user)
 
 	user.set_machine(src)
-	var/dat = "<html><font face = \"Courier\"><HEAD><TITLE>[src.name]</TITLE></HEAD><center><H3>[src.name] Access</H3></center>"
+	var/dat
+	dat = "<font face = \"Courier\"><HEAD><TITLE>[src.name]</TITLE></HEAD><center><H3>[src.name] Access</H3></center>"
 	dat += "<br>[temp]<br>"
 	dat += "<br>Power Status: <a href='?src=\ref[src];input=toggle'>[src.toggled ? "On" : "Off"]</a>"
 	if(on && toggled)
@@ -132,7 +133,7 @@ level 5 manipulator 15 x 3 x 2 = 90w saved greyson level
 			else
 				dat += "<br><br>MULTITOOL BUFFER: <a href='?src=\ref[src];buffer=1'>\[Add Machine\]</a>"
 
-	dat += "</font></html>"
+	dat += "</font>"
 	temp = ""
 	user << browse(dat, "window=tcommachine;size=520x500;can_resize=0")
 	onclose(user, "dormitory")

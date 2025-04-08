@@ -53,7 +53,7 @@
 
 /obj/item/implantpad/attack_self(mob/user as mob)
 	user.set_machine(src)
-	var/dat = "<html><B>Implant Mini-Computer:</B><HR>"
+	var/dat = "<B>Implant Mini-Computer:</B><HR>"
 	if (src.case)
 		if(src.case.implant)
 			if(istype(src.case.implant, /obj/item/implant))
@@ -68,7 +68,6 @@
 			dat += "The implant casing is empty."
 	else
 		dat += "Please insert an implant casing!"
-	dat += "</html>"
 	user << browse(dat, "window=implantpad")
 	onclose(user, "implantpad")
 	return

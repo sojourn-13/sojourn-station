@@ -23,13 +23,13 @@ return_angle()
 	Returns the direction (angle in degrees) the object is travelling in.
 
              (N)
-             90ï¿½
+             90°
               ^
               |
-  (W) 180ï¿½ <--+--> 0ï¿½ (E)
+  (W) 180° <--+--> 0° (E)
               |
               v
-             -90ï¿½
+             -90°
              (S)
 
 return_hypotenuse()
@@ -89,14 +89,14 @@ return_location()
 	// calculate the offset per increment step
 	if(abs(angle) in list(0, 45, 90, 135, 180))		// check if the angle is a cardinal
 		if(abs(angle) in list(0, 45, 135, 180))		// if so we can skip the trigonometry and set these to absolutes as
-			offset_x = signum(dx)						// they will always be a full step in one or more directions
+			offset_x = sign(dx)						// they will always be a full step in one or more directions
 		if(abs(angle) in list(45, 90, 135))
-			offset_y = signum(dy)
+			offset_y = sign(dy)
 	else if(abs(dy) > abs(dx))
 		offset_x = COT(abs(angle))					// otherwise set the offsets
-		offset_y = signum(dy)
+		offset_y = sign(dy)
 	else
-		offset_x = signum(dx)
+		offset_x = sign(dx)
 		offset_y = TAN(angle)
 		if(dx < 0)
 			offset_y = -offset_y
