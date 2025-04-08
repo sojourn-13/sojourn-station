@@ -118,6 +118,7 @@
 			to_chat(patient, SPAN_NOTICE("Administering carthatoline and purger and carbon to patient. Please wait before reschedule again."))
 			//should do the trick to counter toxins
 			patient.reagents.add_reagent("carthatoline", 5)
+			patient.reagents.add_reagent("anti_toxin", 5)
 			patient.reagents.add_reagent("purger", 3)
 			patient.ingested.add_reagent("carbon", 20)
 			if(round(patient.chem_effects[CE_TOXIN]))
