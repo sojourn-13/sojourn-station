@@ -55,6 +55,8 @@
 #define GUN_UPGRADE_FIRE_DELAY_MULT "fire_delay_mult"
 #define GUN_UPGRADE_MOVE_DELAY_MULT "move_delay_mult"
 #define GUN_UPGRADE_RECOIL "recoil_mult"
+#define GUN_UPGRADE_PICKUP_RECOIL "recoil_pickup_mult"
+
 #define GUN_UPGRADE_ONEHANDPENALTY "onehandpenalty_mult"
 #define GUN_UPGRADE_MUZZLEFLASH "muzzleflash_mult"
 #define GUN_UPGRADE_STEPDELAY_MULT "stepdelay_mult"

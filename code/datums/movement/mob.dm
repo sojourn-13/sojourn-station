@@ -301,7 +301,7 @@
 	var/extra_delay = HandleGrabs(direction, old_turf)
 	mob.add_move_cooldown(extra_delay)
 
-	if(!MOVING_DELIBERATELY(mob) && ishuman(mob)) //Do humans not have their own?
+	if(ishuman(mob)) //Do humans not have their own? //!MOVING_DELIBERATELY(mob)
 		mob.handle_movement_recoil()
 
 	/* TODO: Bay grab system
