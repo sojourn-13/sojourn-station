@@ -58,7 +58,7 @@
 	user.set_machine(src)
 	src.add_fingerprint(usr)
 
-	var/dat
+	var/dat = "<html>"
 
 	dat += "<hr/><br/><b>[storage_name]</b><br/>"
 	dat += "<i>Welcome, [user.real_name].</i><br/><br/><hr/>"
@@ -68,6 +68,7 @@
 		dat += "<a href='?src=\ref[src];item=1'>Recover object</a>.<br>"
 		dat += "<a href='?src=\ref[src];allitems=1'>Recover all objects</a>.<br>"
 
+	dat += "</html>"
 	user << browse(dat, "window=cryopod_console")
 	onclose(user, "cryopod_console")
 
@@ -82,20 +83,20 @@
 
 	if(href_list["log"])
 
-		var/dat = "<b>Recently stored [storage_type]</b><br/><hr/><br/>"
+		var/dat = "<html><b>Recently stored [storage_type]</b><br/><hr/><br/>"
 		for(var/person in frozen_crew)
 			dat += "[person]<br/>"
-		dat += "<hr/>"
+		dat += "<hr/></html>"
 
 		user << browse(dat, "window=cryolog")
 
 	if(href_list["view"])
 		if(!allow_items) return
 
-		var/dat = "<b>Recently stored objects</b><br/><hr/><br/>"
+		var/dat = "<html><b>Recently stored objects</b><br/><hr/><br/>"
 		for(var/obj/item/I in frozen_items)
 			dat += "[I.name]<br/>"
-		dat += "<hr/>"
+		dat += "<hr/></html>"
 
 		user << browse(dat, "window=cryoitems")
 

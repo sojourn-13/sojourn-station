@@ -112,7 +112,7 @@ sd_alert
 		if(!default) default = buttons[1]
 		if(!(flags & SD_ALERT_NOVALIDATE)) validation = buttons.Copy()
 
-		var/html = {"<head><title>[title]</title>[style]<script>\
+		var/html = {"<html><head><title>[title]</title>[style]<script>\
 		function c(x) {document.location.href='BYOND://?src=\ref[src];'+x;}\
 		</script></head><body onLoad="fcs.focus();"\
 		[(flags&SD_ALERT_SCROLL)?"":" scroll=no"]><table [table]><tr>\
@@ -146,7 +146,7 @@ sd_alert
 				html += "<INPUT[focus] TYPE=button VALUE='[html_encode(b)]' \
 					onClick=\"c('[html_string]')\"> "
 
-		html += "</th></tr></table></body>"
+		html += "</th></tr></table></body></html>"
 
 		target << browse(html, "window=\ref[src];size=[size];can_close=0")
 

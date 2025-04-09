@@ -64,7 +64,7 @@
 		return
 
 	user.set_machine(src)
-	var/dat = "<h3>AI System Integrity Restorer</h3><br><br>"
+	var/dat = "<html><h3>AI System Integrity Restorer</h3><br><br>"
 
 	if (src.occupant)
 		var/laws
@@ -83,7 +83,7 @@
 			dat += {"<br><br><A href='byond://?src=\ref[src];fix=1'>Begin Reconstruction</A>"}
 		else
 			dat += "<br><br>Reconstruction in process, please wait.<br>"
-	dat += {" <A href='?src=\ref[user];mach_close=computer'>Close</A>"}
+	dat += {" <A href='?src=\ref[user];mach_close=computer'>Close</A></html>"}
 
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")

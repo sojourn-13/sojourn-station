@@ -873,7 +873,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 /obj/item/newspaper/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		var/dat
+		var/dat = "<html>"
 		pages = 0
 		switch(screen)
 			if(0) //Cover
@@ -948,7 +948,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			else
 				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to Agouri, polyxenitopalidou@gmail.com"
 
-		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div>"
+		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div></html>"
 		human_user << browse(dat, "window=newspaper_main;size=300x400")
 		onclose(human_user, "newspaper_main")
 	else

@@ -205,7 +205,9 @@ ADMIN_VERB_ADD(/client/proc/SDQL2_query, R_DEBUG, FALSE)
 						text_list += "<br>"
 						CHECK_TICK
 
-					var/text = text_list.Join()
+					var/text =  "<html>"
+					text += text_list.Join()
+					text += "</html>"
 
 					if (text)
 						var/static/result_offset = 0

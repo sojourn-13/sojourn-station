@@ -83,7 +83,7 @@
 	if(!istype(MS)) return
 
 	var/dat
-	dat = "<center>[shuttle_tag] Ship Control<hr>"
+	dat = "<html><center>[shuttle_tag] Ship Control<hr>"
 
 
 	if(MS.moving_status != SHUTTLE_IDLE)
@@ -130,7 +130,7 @@
 			if("docked")
 				dat += "<b><A href='?src=\ref[src];undock_command=[1]'>Undock</A></b>"
 	dat += "</center>"
-
+	dat += "</html>"
 	user << browse("[dat]", "window=[shuttle_tag]shuttlecontrol;size=300x600")
 
 //check if we're undocked, give option to force launch

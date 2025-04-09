@@ -51,7 +51,7 @@
 
 
 /datum/storyteller/proc/storyteller_panel()
-	var/data = "<center><font size='3'><b>STORYTELLER PANEL</b></font></center>"
+	var/data = "<html><center><font size='3'><b>STORYTELLER PANEL</b></font></center>"
 
 	data += "<b><a href='?src=\ref[src];panel=1'>\[UPDATE\]</a></b>"
 	data += "<table><tr><td>"
@@ -147,7 +147,7 @@
 		data += "-------------------------<BR>"
 		severity = get_next_severity(severity)
 
-	data += "</div>"
+	data += "</div></html>"
 
 	usr << browse(data,"window=story;size=600x600")
 
