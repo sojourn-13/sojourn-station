@@ -226,16 +226,7 @@
 		if(emagged)
 			playsound(src.loc, 'sound/items/AirHorn.ogg', 100, 1)
 			for(var/mob/living/carbon/M in ohearers(6, src))
-				var/ear_safety = 0
-				if(ishuman(M))
-					if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
-						ear_safety += 2
-					if(HULK in M.mutations)
-						ear_safety += 1
-					if(istype(M:head, /obj/item/clothing/head/armor/helmet))
-						ear_safety += 1
-					if(M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
-						ear_safety -= 1
+				var/ear_safety = M.earcheck()
 				if(ear_safety >= 2)
 					continue
 				M.sleeping = 0

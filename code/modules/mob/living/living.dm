@@ -934,6 +934,9 @@ default behaviour is:
 /mob/living/proc/eyecheck()
 	return 0
 
+/mob/living/proc/earcheck()
+	return 0
+
 /mob/living/verb/show_tasks()
 	set name		= "Show tasks"
 	set desc		= "Browse your character tasks."

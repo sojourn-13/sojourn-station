@@ -58,8 +58,8 @@
 		else
 			threat_scale = max(active_players / AMOUNT_OF_THREAT_PER_PLAYER, THREAT_MIN_MULTI)
 
-		if(active_players < 1)
-			log_and_message_admins("Hivemind failed to spawn as there were less then 1 active player expected to combat the hivemind.")
+		if(active_players < 2)
+			log_and_message_admins("Hivemind failed to spawn as there were less then 3 active player expected to combat the hivemind.")
 			failed_to_spawn = TRUE
 			kill()
 			return

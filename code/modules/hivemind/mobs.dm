@@ -264,8 +264,8 @@
 	density = 0
 	speak_chance = 3
 	malfunction_chance = 5
-	health = 50
-	maxHealth = 50 //Should be a little bit sturdy, 2-3 hits with a crowbar is enough to take it down
+	health = 40
+	maxHealth = 40 //Should be a little bit sturdy, 2-3 hits with a crowbar is enough to take it down
 	melee_damage_lower = 15
 	melee_damage_upper = 20 //this is how much damage a scalpel does (at the time of writing),
 	speak_chance = 5
@@ -313,8 +313,8 @@
 	speak_chance = 3
 	malfunction_chance = 1
 	speak_chance = 4
-	health = 5
-	maxHealth = 5 //extremely fucking fragile, don't try fighting it in melee though
+	health = 2
+	maxHealth = 2 //extremely fucking fragile, don't try fighting it in melee though
 	malfunction_chance = 1 //1% chance of it exploding, for no reason at all
 	mob_size = MOB_SMALL
 	pass_flags = PASSTABLE
@@ -366,8 +366,8 @@
 	icon_state = "lobber"
 	attacktext = "spray painted" //this shouldn't appear anyways
 	density = FALSE
-	health = 150
-	maxHealth = 150
+	health = 50
+	maxHealth = 50
 	melee_damage_lower = 0
 	melee_damage_upper = 0
 	speak_chance = 6
@@ -457,8 +457,8 @@
 	desc = "A cyborg covered with something... something alive."
 	icon_state = "hiborg"
 	icon_dead = "hiborg-dead"
-	health = 400
-	maxHealth = 400
+	health = 180
+	maxHealth = 180
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	attacktext = "clawed"
@@ -540,8 +540,8 @@
 	desc = "Once a man, now metal plates and tubes weave in and out of their oozing sores."
 	icon_state = "himan"
 	icon_dead = "himan-dead"
-	health = 250
-	maxHealth = 250
+	health = 105
+	maxHealth = 105
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	attacktext = "slashed"
@@ -583,7 +583,7 @@
 
 
 	//low hp? It's time to play dead
-	if(health < 160 && !fake_dead && world.time > fake_death_cooldown)
+	if(health < 40 && !fake_dead && world.time > fake_death_cooldown)
 		fake_death()
 
 	//shhhh, there an ambush
@@ -642,10 +642,11 @@
 
 		if(ishuman(victim))
 			var/mob/living/carbon/human/H = victim
-			if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
+			if(H.earcheck() >= 2) //ear muffs or headset + helm
 				continue
-
-		victim.Weaken(5)
+			H.Weaken(2 - H.earcheck())
+		else
+			victim.Weaken(5)
 		to_chat(victim, SPAN_WARNING("You hear loud and terrible scream!"))
 	special_ability_cooldown = world.time + ability_cooldown
 
@@ -693,8 +694,8 @@
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "mechiver-closed"
 	icon_dead = "mechiver-dead"
-	health = 1000
-	maxHealth = 1000
+	health = 600
+	maxHealth = 600
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	mob_size = MOB_LARGE
@@ -934,8 +935,8 @@
 	desc = "A warped human with a strange device on its head. Or for its head."
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "phaser-1"
-	health = 160
-	maxHealth = 160
+	health = 80
+	maxHealth = 80
 	speak_chance = 0
 	malfunction_chance = 0
 	mob_size = MOB_MEDIUM
@@ -957,7 +958,7 @@
 
 	//special ability using
 	if(world.time > special_ability_cooldown && can_use_special_ability)
-		if(targetted_mob && (health <= 120))
+		if(targetted_mob && (health <= 60))
 			special_ability()
 
 	//closet hiding
