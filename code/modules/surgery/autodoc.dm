@@ -16,7 +16,7 @@
 #define AUTODOC_OPEN_WOUNDS_COST		100
 #define AUTODOC_INTERNAL_WOUNDS_COST	200
 #define AUTODOC_BLOOD_COST          	300
-#define AUTODOC_TOXIN_COST				200
+#define AUTODOC_TOXIN_COST				100 //Cheaper as this is literly worse then dualysis other then MAYBE healing an organ damage
 #define AUTODOC_DIALYSIS_COST			250
 
 /datum/autodoc_patchnote
@@ -60,7 +60,7 @@
 	picked_patchnotes = new()
 
 	var/datum/autodoc_patchnote/toxnote = new()
-	if(patient.getToxLoss())
+	if(round(patient.chem_effects[CE_TOXIN]))
 		toxnote.surgery_operations |= AUTODOC_TOXIN
 	if(patient.reagents.reagent_list.len)
 		toxnote.surgery_operations |= AUTODOC_DIALYSIS
@@ -113,10 +113,15 @@
 		return TRUE
 	var/obj/item/organ/external/external = patchnote.organ
 	if(!patchnote.organ)
+		//Premium anti-toxin products
 		if(patchnote.surgery_operations & AUTODOC_TOXIN)
-			to_chat(patient, SPAN_NOTICE("Administering anti-toxin to patient."))
-			patient.adjustToxLoss(-damage_heal_amount)
-			if(!patient.getToxLoss())
+			to_chat(patient, SPAN_NOTICE("Administering carthatoline and purger and carbon to patient. Please wait before reschedule again."))
+			//should do the trick to counter toxins
+			patient.reagents.add_reagent("carthatoline", 5)
+			patient.reagents.add_reagent("anti_toxin", 5)
+			patient.reagents.add_reagent("purger", 3)
+			patient.ingested.add_reagent("carbon", 20)
+			if(round(patient.chem_effects[CE_TOXIN]))
 				patchnote.surgery_operations &= ~AUTODOC_TOXIN
 
 		else if(patchnote.surgery_operations & AUTODOC_DIALYSIS)
@@ -215,7 +220,7 @@
 	data["over_brute"] = patient.getBruteLoss()
 	data["over_burn"] = patient.getFireLoss()
 	data["over_oxy"] = patient.getOxyLoss()
-	data["over_tox"] = patient.getToxLoss()
+	data["over_tox"] = round(patient.chem_effects[CE_TOXIN])
 	data["blood_amount"] = patient.vessel.get_reagent_amount("blood") / patient.species.blood_volume * 100
 
 	var/list/organs = list()
