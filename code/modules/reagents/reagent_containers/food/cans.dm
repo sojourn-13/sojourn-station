@@ -278,3 +278,18 @@
 			icon_state = "protein_shake_bottle"
 		else
 			icon_state = "protein_shake_bottle_whacked"
+
+//Low Tier Medicine Cans
+/obj/item/reagent_containers/drinks/cans/monocan
+	name = "Mono drink" // Needs a better name
+	desc = "Lonestar's solution to Cargo Technicians pinching their fingers in crate hinges. Ineffectually mends brute damage, tastes awful to boot."
+	icon_state = "cola" //Placeholder!!
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("monocaridine" = 20, "water" = 20)
+
+/obj/item/reagent_containers/drinks/cans/moonwatercan
+	name = "Moon drink" // This too
+	desc = "Lonestar's solution to Cargo Technicians burning themselves on self-heating rations. Ineffectually mends burn damage, tastes awful to boot."
+	icon_state = "mooncan" //Also a placeholder!!!!!!!!!
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("moon water" = 20, "water" = 20)
