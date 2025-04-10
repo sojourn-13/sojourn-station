@@ -38,7 +38,9 @@
 			/obj/item/tool/weldingtool,
 			/obj/item/tool/tape_roll,
 			/obj/item/device/geiger,
-			/obj/item/device/toner
+			/obj/item/device/toner,
+			/obj/item/reagent_containers/drinks/cans/monocan = good_data("Mono-Can", list(1, 10), 35),
+			/obj/item/reagent_containers/drinks/cans/moonwatercan = good_data("Moon-Can", list(1, 10), 35)
 		),
 		"Storage Utilities" = list(
 			/obj/item/storage/hcases/ammo,
