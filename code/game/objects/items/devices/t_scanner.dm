@@ -29,7 +29,7 @@
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
 
 	//Advanced T-rays can find hidden stashes and boxes
-	var/advanced = FALSE
+	var/advanced = TRUE //FALSE // CFW - Enabling this on request
 	/*Enabled and active are seperate things.
 	Enabled determines the power status. Is the scanner turned on or not?
 	The scanner is enabled as long as it has power, and the power switch is turned on. While enabled it will use power
