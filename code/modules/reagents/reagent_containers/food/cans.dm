@@ -283,7 +283,7 @@
 /obj/item/reagent_containers/drinks/cans/monocan
 	name = "Mono drink" // Needs a better name
 	desc = "Lonestar's solution to Cargo Technicians pinching their fingers in crate hinges. Ineffectually mends brute damage, tastes awful to boot."
-	icon_state = "cola" //Placeholder!!
+	icon_state = "monocan" //Placeholder!!
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("monocaridine" = 20, "water" = 20)
 
