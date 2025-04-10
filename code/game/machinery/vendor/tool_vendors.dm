@@ -1,14 +1,14 @@
 
 /obj/machinery/vending/assist
 	products = list(
-		/obj/item/device/assembly/prox_sensor = 10,
-		/obj/item/device/assembly/igniter = 10,
-		/obj/item/device/assembly/signaler = 10,
+		/obj/item/device/assembly/prox_sensor = 20,
+		/obj/item/device/assembly/igniter = 20,
+		/obj/item/device/assembly/signaler = 20,
 		/obj/item/tool/wirecutters = 5,
 		/obj/item/tool/wirecutters/pliers = 5,
 		/obj/item/cartridge/signal = 10,
 		/obj/item/device/lighting/toggleable/flashlight = 5,
-		/obj/item/device/assembly/timer = 10,
+		/obj/item/device/assembly/timer = 20,
 		)
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
 	shut_up = 1
@@ -300,7 +300,7 @@
 					/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 6,
 					/obj/item/device/transfer_valve = 20,
 					/obj/item/device/assembly/timer = 6,
-					/obj/item/device/assembly/signaler = 6,
+					/obj/item/device/assembly/signaler = 20,
 					/obj/item/device/assembly/prox_sensor = 6,
 					/obj/item/device/assembly/igniter = 6)
 	auto_price = FALSE
@@ -316,25 +316,25 @@
 	icon_deny = "robotics-deny"
 	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 6,
 					/obj/item/clothing/under/rank/roboticist = 6,
-					/obj/item/stack/cable_coil = 4,
-					/obj/item/device/flash = 4,
+					/obj/item/stack/cable_coil = 6,
+					/obj/item/device/flash = 6,
 					/obj/item/cell/large/high = 12,
-					/obj/item/device/assembly/prox_sensor = 3,
-					/obj/item/device/assembly/signaler = 3,
-					/obj/item/device/scanner/health = 3,
+					/obj/item/device/assembly/prox_sensor = 6,
+					/obj/item/device/assembly/signaler = 6,
+					/obj/item/device/scanner/health = 6,
 					/obj/item/tool/scalpel = 2,
 					/obj/item/tool/saw/circular = 2,
-					/obj/item/tank/anesthetic = 2,
+					/obj/item/tank/anesthetic = 4,
 					/obj/item/clothing/mask/breath/medical = 5,
 					/obj/item/tool/screwdriver = 5,
 					/obj/item/tool/crowbar = 5,
-					/obj/item/weldpack/canister = 2,
-					/obj/item/weldpack = 1,
+					/obj/item/weldpack/canister = 5,
+					/obj/item/weldpack = 2,
 					/obj/item/device/defib_kit/jumper_kit = 5,
 					//Drone Fabrication Kits
-					/obj/item/storage/box/roomba_kit = 3,
-					/obj/item/storage/box/sword_drone_kit = 1,
-					/obj/item/storage/box/mantis_drone_kit = 1,
+					/obj/item/storage/box/roomba_kit = 5,
+					/obj/item/storage/box/sword_drone_kit = 5,
+					/obj/item/storage/box/mantis_drone_kit = 5,
 					//Ripley
 					/obj/item/device/kit/paint/ripley = 3,
 					/obj/item/device/kit/paint/ripley/death = 3,
@@ -375,10 +375,10 @@
 					/obj/item/device/kit/paint/phazon/plazmus = 3,
 					/obj/item/device/kit/paint/phazon/imperion = 3,
 					/obj/item/device/kit/paint/phazon/janus = 3)
-	contraband = list(/obj/item/device/kit/paint/durand/phazon = 1,
-					/obj/item/device/kit/paint/odysseus/mime = 1,
-					/obj/item/device/kit/paint/gygax = 1,
-					/obj/item/device/kit/paint/ripley/clark_spider = 1)
+	contraband = list(/obj/item/device/kit/paint/durand/phazon = 3,
+					/obj/item/device/kit/paint/odysseus/mime = 3,
+					/obj/item/device/kit/paint/gygax = 3,
+					/obj/item/device/kit/paint/ripley/clark_spider = 3)
 	prices = list(	/obj/item/storage/box/roomba_kit = 250,
 					/obj/item/storage/box/sword_drone_kit = 750,
 					/obj/item/storage/box/mantis_drone_kit = 750)

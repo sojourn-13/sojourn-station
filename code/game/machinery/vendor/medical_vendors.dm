@@ -41,21 +41,21 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
 
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 4,
-		/obj/item/stack/medical/bruise_pack/soteria = 4,
-		/obj/item/stack/medical/ointment = 4,
-		/obj/item/stack/medical/ointment/soteria = 4,
+		/obj/item/stack/medical/bruise_pack = 6,
+		/obj/item/stack/medical/bruise_pack/soteria = 6,
+		/obj/item/stack/medical/ointment = 6,
+		/obj/item/stack/medical/ointment/soteria = 6,
 		/obj/item/stack/medical/splint = 10,
 
-		/obj/item/reagent_containers/hypospray/autoinjector = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 8,
-		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 10,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
-		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
-		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 10,
 
 		/obj/item/device/scanner/health = 3
 		)
@@ -109,19 +109,19 @@
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
 		/obj/item/stack/nanopaste = 4,
 
-		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 10,
 		/obj/item/reagent_containers/syringe/antitoxin = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 10,
 		/obj/item/reagent_containers/syringe/tricordrazine = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 3,
-		/obj/item/reagent_containers/syringe/spaceacillin = 3,
+		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 10,
+		/obj/item/reagent_containers/syringe/spaceacillin = 5,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
-		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
-		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 10,
+		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 10,
 
 		/obj/item/implantcase/death_alarm = 4,
 		/obj/item/implanter = 4,
@@ -129,8 +129,8 @@
 		/obj/item/device/defib_kit = 2
 		)
 	contraband = list(
-		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 1,
-		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 2,
+		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 10,
 		/obj/item/stack/medical/bruise_pack/handmade = 10,
 		/obj/item/stack/medical/ointment/handmade  = 10,
 		/obj/item/stack/medical/splint/improvised = 5
