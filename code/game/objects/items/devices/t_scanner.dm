@@ -58,7 +58,7 @@
 	name = "\improper High-Power T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes. This one scans deeper and more clearly showing hidden storage objects."
 	advanced = TRUE
-	active_power_usage = 75 //3x the Watts of a normal one
+	active_power_usage = 25 //3x the Watts of a normal one
 	icon_swap_to_old = FALSE // We start looking soj fancy
 
 /obj/item/device/t_scanner/verb/toggle_style()
