@@ -98,6 +98,11 @@
 	display_name = "kimono"
 	path = /obj/item/clothing/suit/fluff/kimono
 
+/datum/gear/suit/kimono/stylish
+	display_name = "stylish kimono selection"
+	path = /obj/item/clothing/suit/fluff/kimono/stylish
+	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/miko
 	display_name = "purple miko dress"
 	path = /obj/item/clothing/suit/fluff/miko
