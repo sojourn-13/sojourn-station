@@ -171,6 +171,7 @@
 	var/list/borks = typesof(/obj/item/reagent_containers/snacks) - /obj/item/reagent_containers/snacks
 	playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 	for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
+		M.update_equipment_vision()
 		if(M.eyecheck() < FLASH_PROTECTION_MINOR)
 			M.flash(0, FALSE , FALSE , FALSE, 0) // flashed by the gods or something idk
 

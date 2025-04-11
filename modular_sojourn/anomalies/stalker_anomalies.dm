@@ -59,6 +59,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/eye_safety = 0
+		H.update_equipment_vision()
 		eye_safety = H.eyecheck()
 		if(eye_safety >= FLASH_PROTECTION_MAJOR)
 			return

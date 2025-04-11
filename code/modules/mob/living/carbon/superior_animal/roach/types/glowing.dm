@@ -36,6 +36,7 @@
 			L.visible_message(SPAN_DANGER("\the [src] pinches hard, chemically burning \the [L]!"))
 		if(prob(5))
 			var/mob/living/carbon/C = L
+			C.update_equipment_vision()
 			var/safety = C.eyecheck()
 			if(safety < FLASH_PROTECTION_MINOR)
 				var/flash_strength = 5

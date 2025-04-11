@@ -58,7 +58,7 @@
 		return list(HUMAN_EATING_BLOCKED_MOUTH, blocked)
 	return list(HUMAN_EATING_NO_ISSUE)
 
-/mob/living/carbon/human/proc/update_equipment_vision()
+/mob/living/carbon/human/update_equipment_vision()
 	flash_protection = 0
 	psi_blocking = 0
 	equipment_tint_total = 0
