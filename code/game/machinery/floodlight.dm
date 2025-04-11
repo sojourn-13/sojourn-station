@@ -134,7 +134,7 @@
 			var/used_sound = unlocked ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
 			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, instant_finish_tier = 30, forced_sound = used_sound))
 				unlocked = !unlocked
-				to_chat(user, SPAN_NOTICE("You [unlocked ? "screw" : "unscrew"] the battery panel of \the [src] with [I]."))
+				to_chat(user, SPAN_NOTICE("You [unlocked ? "unscrew" : "screw"] the battery panel of \the [src] with [I]."))
 				update_icon()
 				return
 			return
