@@ -65,6 +65,7 @@
 	name = "enriched crackers pack"
 	storage_slots = 5
 	icon_type = "crackers"
+	w_class = ITEM_SIZE_SMALL
 	can_hold = list(
 		/obj/item/reagent_containers/snacks/mre_cracker
 		)
@@ -82,6 +83,7 @@ obj/item/storage/fancy/dogtreats
 	desc = "A small purple packet with a handful of Kriosan treats, a hardy snack well beloved by Kriosans the galaxy over."
 	storage_slots = 4
 	icon_type = "dogtreat"
+	w_class = ITEM_SIZE_SMALL
 	can_hold = list(
 		/obj/item/reagent_containers/snacks/dogtreats
 		)
