@@ -99,7 +99,7 @@
 	path = /obj/item/clothing/suit/fluff/kimono
 
 /datum/gear/suit/kimono/stylish
-	display_name = "stylish kimono"
+	display_name = "stylish kimono selection"
 	path = /obj/item/clothing/suit/fluff/kimono/stylish
 	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
 
