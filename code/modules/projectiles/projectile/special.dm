@@ -343,6 +343,7 @@
 
 		//blind adjacent people with enhanced vision
 		for (var/mob/living/carbon/M in viewers(T, flash_range))
+			M.update_equipment_vision()
 			if(M.eyecheck() < FLASH_PROTECTION_NONE)
 				flash(0, FALSE,FALSE,FALSE)
 

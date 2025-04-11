@@ -27,6 +27,7 @@
 
 		//blind adjacent people
 		for (var/mob/living/carbon/M in viewers(T, flash_range))
+			M.update_equipment_vision()
 			if(M.eyecheck() < FLASH_PROTECTION_MINOR)
 				flash(0, FALSE,FALSE,FALSE)
 
