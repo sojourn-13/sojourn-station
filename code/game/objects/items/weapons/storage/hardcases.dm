@@ -384,7 +384,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/tool/medmultitool,
-		/obj/item/tool/tape_roll
+		/obj/item/tool/tape_roll,
+		/obj/structure/closet/body_bag
 		)
 
 /obj/item/storage/hcases/med/scrap
