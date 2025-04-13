@@ -281,15 +281,15 @@
 
 //Low Tier Medicine Cans
 /obj/item/reagent_containers/drinks/cans/monocan
-	name = "Mono drink" // Needs a better name
-	desc = "Lonestar's solution to Cargo Technicians pinching their fingers in crate hinges. Ineffectually mends brute damage, tastes awful to boot."
+	name = "Elise's Mono Carbonate "
+	desc = "A drink from Lonestar's HR chef Elise to solve the issue of Cargo Technicians pinching their fingers in crate hinges. Ineffectually mends brute damage, tastes awful to boot. Has a photo of Elise on the back holding up a bandaged thumb."
 	icon_state = "monocan" //Placeholder!!
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("monocaridine" = 20, "water" = 20)
 
 /obj/item/reagent_containers/drinks/cans/moonwatercan
-	name = "Moon drink" // This too
-	desc = "Lonestar's solution to Cargo Technicians burning themselves on self-heating rations. Ineffectually mends burn damage, tastes awful to boot."
+	name = "Elise's Waxing Burn Tonic" // This too
+	desc = "A drink from Lonestar's HR chef Elise to solve the issue of Cargo Technicians burning themselves on self-heating rations, on the back has a image of Elise blowing on a hand that has been burned slightly. Ineffectually mends burn damage, tastes awful to boot. Despite its name it doesn't have any tonic water on the ingredients list."
 	icon_state = "mooncan" //Also a placeholder!!!!!!!!!
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("moon water" = 20, "water" = 20)
