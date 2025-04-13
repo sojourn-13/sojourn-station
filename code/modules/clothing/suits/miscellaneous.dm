@@ -55,6 +55,16 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A traditional Japanese kimono."
 	icon_state = "kimono"
 
+obj/item/clothing/suit/fluff/kimono/stylish
+	name = "stylish kimono"
+	desc = "A modern Japanese kimono, stylish. Colorable too."
+	icon_state = "stylish_kimono"
+
+obj/item/clothing/suit/fluff/kimono/stylish/alt
+	name = "elegant kimono"
+	desc = "A modern Japanese kimono, stylish. Short-sleeved and a little form-fitting. Also colorable."
+	icon_state = "elegant_kimono"
+
 obj/item/clothing/suit/fluff/miko
 	name = "miko dress"
 	desc = "A traditional purple Japanese miko dress."
