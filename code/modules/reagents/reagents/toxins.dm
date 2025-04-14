@@ -108,6 +108,7 @@
 	heating_point = 523
 	heating_products = list("toxin")
 	reagent_type = "Toxin/Stimulator"
+	withdrawal_threshold = 8 //gives you chances to purge it
 
 /datum/reagent/toxin/carpotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
