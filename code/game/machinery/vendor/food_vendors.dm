@@ -95,21 +95,21 @@
 					/obj/item/reagent_containers/snacks/candy_drop_blue = 6,
 					/obj/item/storage/fancy/dogtreats = 2,)
 	contraband = list(/obj/item/reagent_containers/snacks/openable/syndicake = 6)
-	prices = list(/obj/item/reagent_containers/snacks/candy = 20,
-					/obj/item/reagent_containers/drinks/dry_ramen = 25,
-					/obj/item/reagent_containers/snacks/openable/chips = 20,
-					/obj/item/reagent_containers/snacks/sosjerky = 25,
-					/obj/item/reagent_containers/snacks/openable/no_raisin = 20,
-					/obj/item/reagent_containers/snacks/openable/spacetwinkie = 20,
-					/obj/item/reagent_containers/snacks/cheesiehonkers = 20,
-					/obj/item/reagent_containers/snacks/openable/tastybread = 25,
-					/obj/item/reagent_containers/snacks/openable/syndicake = 30,
-					/obj/item/reagent_containers/snacks/candy/sunflowerseeds = 60,
-					/obj/item/reagent_containers/snacks/candy/pistachios_pack = 60,
-					/obj/item/reagent_containers/snacks/chocolatebar = 75,
-					/obj/item/reagent_containers/snacks/openable/gamerchips = 80,
-					/obj/item/reagent_containers/snacks/candy_drop_blue = 90,
-					/obj/item/storage/fancy/dogtreats = 125)
+	prices = list(/obj/item/reagent_containers/snacks/candy = 100,
+					/obj/item/reagent_containers/drinks/dry_ramen = 98,
+					/obj/item/reagent_containers/snacks/openable/chips = 200,
+					/obj/item/reagent_containers/snacks/sosjerky = 325,
+					/obj/item/reagent_containers/snacks/openable/no_raisin = 220,
+					/obj/item/reagent_containers/snacks/openable/spacetwinkie = 120,
+					/obj/item/reagent_containers/snacks/cheesiehonkers = 120,
+					/obj/item/reagent_containers/snacks/openable/tastybread = 125,
+					/obj/item/reagent_containers/snacks/openable/syndicake = 100,
+					/obj/item/reagent_containers/snacks/candy/sunflowerseeds = 120,
+					/obj/item/reagent_containers/snacks/candy/pistachios_pack = 120,
+					/obj/item/reagent_containers/snacks/chocolatebar = 140,
+					/obj/item/reagent_containers/snacks/openable/gamerchips = 160,
+					/obj/item/reagent_containers/snacks/candy_drop_blue = 180,
+					/obj/item/storage/fancy/dogtreats = 325)
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
@@ -117,26 +117,26 @@
 	icon_state = "Cola_Machine"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't believe the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in this colony.;Treat yourself to what you deserve!"
-	products = list(/obj/item/reagent_containers/drinks/cans/cola = 10,
-					/obj/item/reagent_containers/drinks/cans/space_mountain_wind = 10,
-					/obj/item/reagent_containers/drinks/cans/dr_gibb = 10,
-					/obj/item/reagent_containers/drinks/cans/starkist = 10,
-					/obj/item/reagent_containers/drinks/cans/space_up = 10,
-					/obj/item/reagent_containers/drinks/cans/iced_tea = 10,
-					/obj/item/reagent_containers/drinks/cans/grape_juice = 10,
-					/obj/item/reagent_containers/drinks/cans/waterbottle = 10,)
-	contraband = list(/obj/item/reagent_containers/drinks/cans/thirteenloko = 5,
-						/obj/item/reagent_containers/snacks/openable/liquidfood = 6)
-	prices = list(/obj/item/reagent_containers/drinks/cans/cola = 20,
-					/obj/item/reagent_containers/drinks/cans/space_mountain_wind = 20,
+	products = list(/obj/item/reagent_containers/drinks/cans/cola = 30,
+					/obj/item/reagent_containers/drinks/cans/space_mountain_wind = 40,
 					/obj/item/reagent_containers/drinks/cans/dr_gibb = 20,
 					/obj/item/reagent_containers/drinks/cans/starkist = 20,
-					/obj/item/reagent_containers/drinks/cans/waterbottle = 16,
-					/obj/item/reagent_containers/drinks/cans/space_up = 20,
-					/obj/item/reagent_containers/drinks/cans/iced_tea = 20,
-					/obj/item/reagent_containers/drinks/cans/grape_juice = 20,
-					/obj/item/reagent_containers/drinks/cans/thirteenloko = 25,
-					/obj/item/reagent_containers/snacks/openable/liquidfood = 30)
+					/obj/item/reagent_containers/drinks/cans/space_up = 30,
+					/obj/item/reagent_containers/drinks/cans/iced_tea = 15,
+					/obj/item/reagent_containers/drinks/cans/grape_juice = 30,
+					/obj/item/reagent_containers/drinks/cans/waterbottle = 5,)
+	contraband = list(/obj/item/reagent_containers/drinks/cans/thirteenloko = 5,
+						/obj/item/reagent_containers/snacks/openable/liquidfood = 6)
+	prices = list(/obj/item/reagent_containers/drinks/cans/cola = 40,
+					/obj/item/reagent_containers/drinks/cans/space_mountain_wind = 40,
+					/obj/item/reagent_containers/drinks/cans/dr_gibb = 70,
+					/obj/item/reagent_containers/drinks/cans/starkist = 60,
+					/obj/item/reagent_containers/drinks/cans/waterbottle = 10,
+					/obj/item/reagent_containers/drinks/cans/space_up = 50,
+					/obj/item/reagent_containers/drinks/cans/iced_tea = 25,
+					/obj/item/reagent_containers/drinks/cans/grape_juice = 50,
+					/obj/item/reagent_containers/drinks/cans/thirteenloko = 85,
+					/obj/item/reagent_containers/snacks/openable/liquidfood = 100)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/hydronutrients
@@ -517,12 +517,12 @@
 		/obj/item/reagent_containers/snacks/candy/energybar = 6,
 		/obj/item/towel/random = 8)
 	prices = list(
-		/obj/item/reagent_containers/snacks/candy/proteinbar = 20,
-		/obj/item/reagent_containers/snacks/openable/liquidfood = 20,
-		/obj/item/reagent_containers/drinks/milk/small = 15,
-		/obj/item/reagent_containers/drinks/cocamilk/small = 40,
-		/obj/item/reagent_containers/drinks/redmilk/small = 40,
-		/obj/item/reagent_containers/drinks/soymilk/small = 50,
+		/obj/item/reagent_containers/snacks/candy/proteinbar = 80,
+		/obj/item/reagent_containers/snacks/openable/liquidfood = 120,
+		/obj/item/reagent_containers/drinks/milk/small = 75,
+		/obj/item/reagent_containers/drinks/cocamilk/small = 70,
+		/obj/item/reagent_containers/drinks/redmilk/small = 80,
+		/obj/item/reagent_containers/drinks/soymilk/small = 90,
 		/obj/item/reagent_containers/drinks/cans/waterbottle = 16,
 		/obj/item/reagent_containers/snacks/candy_drop_blue = 90,
 		/obj/item/reagent_containers/snacks/candy/energybar = 90,
