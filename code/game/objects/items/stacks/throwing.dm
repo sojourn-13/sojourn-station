@@ -156,6 +156,7 @@
 	..()
 
 /obj/item/stack/thrown/throwing_knife/bone_needle/poison/post_thrown_hit(mob)
+	..()
 	if(isliving(mob))
 		var/mob/living/L
 		if(ishuman(L))
