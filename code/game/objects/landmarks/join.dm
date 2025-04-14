@@ -49,6 +49,14 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	spawn_datum_type = /datum/spawnpoint/cryo/outsider
 	restrict_job = list("Outsider")
 
+/obj/landmark/join/late/cryo_outsider
+	name = "Outsider Outpost"
+	icon_state = "player-blue-cluster"
+	join_tag = "aft_late_cryo"
+	message = null
+	spawn_datum_type = /datum/spawnpoint/cryo/outsider
+	restrict_job = list("Outsider")
+
 /obj/landmark/join/late/cryo/starboard
 	name = "Starboard Cryogenic Storage"
 	icon_state = "player-blue-cluster"

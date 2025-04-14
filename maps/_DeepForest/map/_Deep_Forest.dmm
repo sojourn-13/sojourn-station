@@ -1789,7 +1789,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "btt" = (
-/obj/landmark/join/late/cryo/outsider,
+/obj/landmark/join/late/cryo_outsider,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,7"
 	},
@@ -4717,11 +4717,11 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "drx" = (
-/obj/landmark/join/late/dormitory_outsider,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/landmark/join/late/cryo_outsider,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/outsider)
 "dsd" = (
@@ -7277,6 +7277,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/landmark/join/late/cryo_outsider,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,7"
 	},
@@ -17575,8 +17576,13 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/nadezhda/dungeon/outside/prepper)
 "mjW" = (
-/turf/simulated/wall/r_wall,
-/area/colony/exposedsun/crashed_shop/outsider)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/cryopod/dormitory{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "mkc" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
@@ -43355,7 +43361,7 @@ nLW
 coU
 uJw
 uJw
-rKz
+uJw
 uJw
 uJw
 qbU
@@ -55221,7 +55227,7 @@ mxn
 gkd
 uJw
 uJw
-rKz
+uJw
 uJw
 uJw
 qbU
@@ -64964,7 +64970,7 @@ coU
 coU
 uJw
 uJw
-rKz
+uJw
 uJw
 uJw
 qbU
@@ -67421,7 +67427,7 @@ tFh
 nrh
 jNa
 etM
-ovb
+mjW
 uWq
 eqW
 dRb
@@ -71923,7 +71929,7 @@ uDd
 vUg
 uDd
 nRC
-mjW
+oFE
 daI
 nja
 daI
