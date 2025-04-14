@@ -12212,6 +12212,10 @@
 /obj/machinery/camera/network/engineering{
 	dir = 4
 	},
+/obj/landmark/join/late/cyborg,
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "cum" = (

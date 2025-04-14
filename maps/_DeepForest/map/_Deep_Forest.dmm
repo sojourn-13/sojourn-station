@@ -8953,6 +8953,13 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"gpd" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/computer/cryopod/dormitory{
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood/wild5,
+/area/asteroid/rogue)
 "gpl" = (
 /obj/machinery/door/airlock/glass{
 	name = "Kitchen"
@@ -17567,6 +17574,9 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"mjW" = (
+/turf/simulated/wall/r_wall,
+/area/colony/exposedsun/crashed_shop/outsider)
 "mkc" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
@@ -20091,6 +20101,12 @@
 /obj/structure/invislight,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"nRC" = (
+/obj/machinery/computer/cryopod/dormitory{
+	pixel_y = -28
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "nSz" = (
 /obj/structure/railing{
 	dir = 1;
@@ -20159,6 +20175,18 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"nUZ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/machinery/computer/cryopod{
+	pixel_x = -32
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "nVd" = (
 /obj/structure/salvageable/data_os{
 	icon_state = "computer0"
@@ -30358,6 +30386,12 @@
 /obj/item/mine_old,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"uQZ" = (
+/obj/machinery/computer/cryopod/dormitory{
+	pixel_x = -32
+	},
+/turf/simulated/floor/wood/wild5,
+/area/asteroid/rogue)
 "uRa" = (
 /obj/structure/table/onestar,
 /obj/item/folder/blue,
@@ -43321,7 +43355,7 @@ nLW
 coU
 uJw
 uJw
-uJw
+rKz
 uJw
 uJw
 qbU
@@ -43530,7 +43564,7 @@ nLW
 coU
 uJw
 kAs
-kAs
+uQZ
 oRI
 uJw
 qbU
@@ -55187,7 +55221,7 @@ mxn
 gkd
 uJw
 uJw
-uJw
+rKz
 uJw
 uJw
 qbU
@@ -55396,7 +55430,7 @@ qbU
 qbU
 uJw
 mQA
-kAs
+uQZ
 oRI
 uJw
 qbU
@@ -64721,7 +64755,7 @@ qbU
 qbU
 uJw
 qNA
-ubR
+gpd
 uDC
 uJw
 qbU
@@ -64930,7 +64964,7 @@ coU
 coU
 uJw
 uJw
-uJw
+rKz
 uJw
 uJw
 qbU
@@ -67907,7 +67941,7 @@ wRZ
 gCB
 asp
 cUn
-asp
+nUZ
 aAn
 oUc
 qwo
@@ -71888,8 +71922,8 @@ vUg
 uDd
 vUg
 uDd
-vUg
-oFE
+nRC
+mjW
 daI
 nja
 daI
