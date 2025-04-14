@@ -130,6 +130,7 @@
 	var/ear_safety = 0
 	var/stat_def = -STAT_LEVEL_ADEPT
 	if(iscarbon(M))
+		M.update_equipment_vision()
 		eye_safety = M.eyecheck()
 		if(ishuman(M))
 			if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
