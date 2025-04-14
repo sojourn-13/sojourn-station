@@ -144,6 +144,7 @@
 	var/b_loss
 	var/f_loss
 	var/bomb_defense = getarmor(null, ARMOR_BOMB) + mob_bomb_defense
+	var/ear_protection = earcheck()
 	switch (severity)
 		if (1.0)
 			b_loss += 500
@@ -161,13 +162,13 @@
 			if (!shielded)
 				b_loss += 150
 
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (ear_protection < 2)
 				ear_damage += 30
 				ear_deaf += 120
 
 		if(3.0)
 			b_loss += 100
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (ear_protection < 1)
 				ear_damage += 15
 				ear_deaf += 60
 
@@ -655,6 +656,40 @@ var/list/rank_prefix = list(\
 		return FLASH_PROTECTION_MODERATE
 
 	return flash_protection
+
+///earcheck()
+///Returns a number
+/mob/living/carbon/human/earcheck()
+	var/ear_protection_questionmark = 0
+
+	if(istype(l_ear, /obj/item/clothing/ears/earmuffs) && istype(r_ear, /obj/item/clothing/ears/earmuffs))
+		ear_protection_questionmark += 2
+
+	if(istype(head, /obj/item/clothing/head/helmet))
+		ear_protection_questionmark += 1
+
+	//we already speak loudly so we are used to it
+	if(HULK in mutations)
+		ear_protection_questionmark += 1
+
+	if(sdisabilities & DEAF)
+		ear_protection_questionmark += 10 //Your deaf
+
+	if(isdeaf(src))
+		ear_protection_questionmark += 10 //Your deaf
+
+	if(istype(l_ear, /obj/item/device/radio/headset/headset_sec/bowman) || istype(r_ear, /obj/item/device/radio/headset/headset_sec/bowman))
+		ear_protection_questionmark += 1
+	if(istype(l_ear, /obj/item/device/radio/headset/heads/hos/bowman) || istype(r_ear, /obj/item/device/radio/headset/heads/hos/bowman))
+		ear_protection_questionmark += 1
+
+	// D:
+	if(stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+		ear_protection_questionmark *= 0.5
+		ear_protection_questionmark = round(ear_protection_questionmark)
+		ear_protection_questionmark -= 1
+
+	return ear_protection_questionmark
 
 //Used by various things that knock people out by applying blunt trauma to the head.
 //Checks that the species has a "head" (brain containing organ) and that hit_zone refers to it.

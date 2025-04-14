@@ -60,19 +60,7 @@
 	var/stat_def = -STAT_LEVEL_ADEPT
 	if(iscarbon(M))
 		eye_safety = M.eyecheck()
-		if(ishuman(M))
-			if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
-				ear_safety += 2
-			if(istype(M:l_ear, /obj/item/device/radio/headset/headset_sec/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/headset_sec/bowman))
-				ear_safety += 2
-			if(istype(M:l_ear, /obj/item/device/radio/headset/heads/hos/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/heads/hos/bowman))
-				ear_safety += 2
-//			if(HULK in M.mutations)
-//				ear_safety += 1
-			if(istype(M:head, /obj/item/clothing/head/helmet))
-				ear_safety += 1
-			if(M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
-				stat_def *= 2
+		ear_safety = M.earcheck()
 	if(intensity)
 		eye_safety += 1
 

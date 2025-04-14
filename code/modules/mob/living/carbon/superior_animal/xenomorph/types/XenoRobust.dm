@@ -58,12 +58,10 @@ var/datum/xenomorph/xeno_morph_ai
 		if(target.stat == CONSCIOUS && target.faction != "xenomorph")
 			if(isdeaf(target))
 				continue
-			if(ishuman(target))
-				var/mob/living/carbon/human/H = target
-				if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
-					continue
-				use_ability(target)
-				can_scream = TRUE
+			if(target.earcheck() >= 2) //ear muffs or headset + helm
+				continue
+			use_ability(target)
+			can_scream = TRUE
 	if(can_scream)
 		flick("[icon_state]_shriek", src)
 		playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
