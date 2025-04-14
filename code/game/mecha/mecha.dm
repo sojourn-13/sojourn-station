@@ -235,6 +235,12 @@
 
 /obj/mecha/proc/reload_gun()
 	var/obj/item/mech_ammo_box/MAB
+
+	if(istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack)) // Does it use bullets?
+		var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/missile = selected
+		missile.rearm()
+		return TRUE
+
 	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
 		return FALSE
 
@@ -256,6 +262,8 @@
 			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
 			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
 		return TRUE
+	//This means we dont have ammo stored for are weapon
+	return FALSE
 
 ////////////////////////
 ////// Helpers /////////
@@ -627,7 +635,7 @@
 		var/obj/machinery/atmospherics/portables_connector/possible_port = locate() in loc
 		if(possible_port)
 			var/obj/screen/alert/mech_port_available/A = occupant.throw_alert("mechaport", /obj/screen/alert/mech_port_available)
-			if(A) 
+			if(A)
 				A.target = possible_port
 		else
 			occupant.clear_alert("mechaport")
@@ -1504,12 +1512,12 @@ assassination method if you time it right*/
 	anchored = FALSE
 	if(!step(src, inertial_movement) || check_for_support() || (thruster && thruster.do_move()))
 		inertial_movement = 0
-	anchored = TRUE 
+	anchored = TRUE
 
 /obj/mecha/proc/regulate_temp()
 	if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
 		return
-	
+
 	if(cabin_air && cabin_air.volume > 0)
 		var/delta = cabin_air.temperature - T20C
 		cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
@@ -1593,19 +1601,19 @@ assassination method if you time it right*/
 
 	if(prob(probability))
 		use_internal_tank = !use_internal_tank // Flip internal tank mode on or off
-	
+
 	if(prob(probability))
 		toggle_lights() // toggle the lights
-	
+
 	if(prob(probability)) // Some settings to screw up the radio
 		radio.broadcasting = !radio.broadcasting
-	
+
 	if(prob(probability))
 		radio.listening = !radio.listening
-	
+
 	if(prob(probability))
 		radio.set_frequency(rand(PUBLIC_LOW_FREQ,PUBLIC_HIGH_FREQ))
-	
+
 	if(prob(probability))
 		maint_access = 0 // Disallow maintenance mode
 	else
@@ -1643,7 +1651,7 @@ assassination method if you time it right*/
 		occupant_message(SPAN_DANGER("You disable [src] defense mode."))
 	log_message("Toggled defence mode.")
 
-// Radial UI 
+// Radial UI
 /obj/mecha/CtrlClick(mob/living/L)
 	if(occupant != L || !istype(L))
 		return ..()
