@@ -425,6 +425,8 @@
 		G.move_delay *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
 		G.recoil = G.recoil.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
+	if(weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL])
+		G.pickup_recoil *= weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL]
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(tool_upgrades[UPGRADE_BULK])
@@ -722,6 +724,13 @@
 				to_chat(user, SPAN_WARNING("Increases kickback by [amount*100]%"))
 			else
 				to_chat(user, SPAN_NOTICE("Decreases kickback by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL]-1
+			if(amount > 0)
+				to_chat(user, SPAN_WARNING("Increases equipping recoil by [amount*100]%"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases equipping recoil by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]-1
