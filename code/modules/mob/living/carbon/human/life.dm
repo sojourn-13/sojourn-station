@@ -1172,8 +1172,26 @@
 		speech_problem_flag = 1
 	return stuttering
 
-/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
 /mob/living/carbon/human/handle_fire()
+	//feedback for being on fire!
+
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
+		..() //We are painless so just fast track back to taking the damage
+
+	if(stat == CONSCIOUS) //if we are dead then dont scream, same as if we are knocked out
+		var/burn_temperature = fire_burn_temperature()
+		var/thermal_protection = get_heat_protection(burn_temperature)
+
+		//no need to scream if we are not taking damage or are fireproof
+		if(thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
+			if(world.time >= next_onfire_brn)
+				if(prob(1 + fire_stacks) && fire_stacks > 0) //We are on fire, so sometimes force some screams, runs a lot so dont make it happen to often
+					emote("painscream") //We are taking fire damage! AHHHHHHH
+
+	..()
+
+/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
+
 	if(..())
 		return
 
