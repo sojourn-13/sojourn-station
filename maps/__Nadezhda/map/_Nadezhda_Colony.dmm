@@ -20006,9 +20006,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "dQN" = (
@@ -42009,12 +42006,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "hXL" = (
@@ -53598,12 +53589,6 @@
 /obj/machinery/centrifuge{
 	pixel_x = 1
 	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "kjS" = (
@@ -60156,9 +60141,6 @@
 "lBV" = (
 /obj/structure/table/standard,
 /obj/machinery/electrolyzer,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "lBZ" = (
@@ -83004,9 +82986,6 @@
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "pNx" = (
@@ -99282,6 +99261,11 @@
 /obj/item/device/lighting/toggleable/lantern,
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"sRS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "sRU" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -115359,9 +115343,6 @@
 /area/nadezhda/maintenance/undergroundfloor2north)
 "vRp" = (
 /obj/machinery/chem_master,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vRs" = (
@@ -119681,6 +119662,13 @@
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
+"wFn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "wFp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/portables_connector{
@@ -180251,7 +180239,7 @@ mek
 jjy
 xCa
 lWn
-puy
+sRS
 hXH
 pNu
 pGT
@@ -180453,7 +180441,7 @@ gbz
 sXm
 kWE
 qVc
-puy
+sRS
 dQM
 tOf
 pGT
@@ -180655,7 +180643,7 @@ aQl
 vFp
 agv
 vfQ
-puy
+sRS
 vRp
 pGT
 pGT
@@ -180857,7 +180845,7 @@ qPL
 ixb
 pIe
 lWn
-puy
+sRS
 kjM
 lBV
 pGT
@@ -181060,8 +181048,8 @@ rLW
 pIe
 lWn
 puy
-pGT
-pGT
+wFn
+wFn
 pGT
 pGT
 pJj
