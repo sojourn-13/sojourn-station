@@ -1749,6 +1749,24 @@ var/list/rank_prefix = list(\
 
 #undef SLIME_TRANSPARENCY
 
+//Appendix value!
+//Appendix's help in a *small way* acting as helper in the following chem affects giving a boost
+//Downside is of course having an appendix
+/mob/living/carbon/human/add_chemical_effect(var/effect, var/magnitude = 1, var/limited = FALSE)
+	var/appendix_value = get_organ_efficiency(OP_APPENDIX)
+
+	if(appendix_value)
+		appendix_value *= 0.001 // 100 -> 0.1
+		if(effect == CE_ANTIBIOTIC)
+			magnitude += appendix_value
+		if(effect == CE_ANTITOX)
+			magnitude += appendix_value
+		if(effect == CE_STABLE)
+			magnitude += appendix_value
+
+	..()
+
+
 //Typically works to set yourself on the top of same layers
 /mob/living/carbon/human/verb/move_to_top()
 	set name = "Move Self To Top"
