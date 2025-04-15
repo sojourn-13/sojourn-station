@@ -24,6 +24,11 @@
 			/obj/item/gun/projectile/shotgun/pump,
 			/obj/item/tool/knife/dagger
 		),
+		"Hunting Provisions" = list(
+			/obj/item/reagent_containers/drinks/bottle/applejuice,
+			/obj/item/reagent_containers/drinks/bottle/cider,
+			/obj/item/storage/fancy/dogtreats = good_data("Hunting Snacks", list(1, 2), 110) //Cheaper then vender
+		),
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
