@@ -89,7 +89,7 @@
 	var/list/markings = list() //EQUINOX EDIT - List of body markings for use in update_icon under organ_icon.dm (per-limb markings)
 
 	//Used for internal wounds, if limb damage is below this value dont progress it.
-	var/internal_wound_suppression = 10 //If you have *more* then this value, wounds progress
+	var/internal_wound_suppression = 4 //If you have *more* then this value, wounds progress
 	//When editing IWS ^ make sure to update the organ_description.dm
 
 /obj/item/organ/external/New(mob/living/carbon/human/holder, datum/organ_description/OD)
