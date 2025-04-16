@@ -389,7 +389,7 @@
 
 
 	//Handle job slot/tater cleanup.
-	var/job = occupant.mind.assigned_role
+	var/job = occupant.mind?.assigned_role
 
 	SSjob.FreeRole(job)
 

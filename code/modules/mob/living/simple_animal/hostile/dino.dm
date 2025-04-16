@@ -68,7 +68,7 @@
 			var/mob/living/L = A
 			if(istype(L,/mob/living/carbon/human))
 				var/mob/living/carbon/human/thetarget = L
-				if(thetarget.mind.assigned_job.department_flag == BLACKSHIELD)
+				if(thetarget.mind?.assigned_job.department_flag == BLACKSHIELD)
 					if(istype(L.lastarea,/area/nadezhda/pros/prep) || istype(L.lastarea,/area/nadezhda/pros/foreman))
 						if(!SA_attackable(thetarget))
 							stance = HOSTILE_STANCE_ATTACK
