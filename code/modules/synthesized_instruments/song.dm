@@ -144,7 +144,7 @@
 				var/note_str = splittext(components[1], "-")
 
 				duration = sanitize_tempo(src.tempo / delta)
-				src.player.event_manager.suspended = 1
+				src.player.event_manager?.suspended = 1
 				for (var/note in note_str)
 					if (!note)	continue // wtf, empty note
 					var/note_sym = CP(note, 1)

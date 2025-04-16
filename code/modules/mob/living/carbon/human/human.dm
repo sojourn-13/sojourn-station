@@ -132,7 +132,7 @@
 	if(eye_damage)
 		eye_damage *= species.flash_mod // increase based on how susceptible they are
 		var/obj/item/organ/internal/eyes/E = src.random_organ_by_process(OP_EYES)
-		E.take_damage(eye_damage, FALSE)
+		E?.take_damage(eye_damage, FALSE)
 		if (E && E.damage >= E.min_bruised_damage)
 			to_chat(src, SPAN_DANGER("Your eyes start to burn badly!"))
 	..(duration, drop_items, doblind, doblurry)

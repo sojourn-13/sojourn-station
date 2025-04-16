@@ -366,7 +366,7 @@
 		else
 			material.place_dismantled_girder(src)
 		var/obj/sheets = material.place_sheet(src, amount=3)
-		sheets.add_fingerprint(user)
+		sheets?.add_fingerprint(user)
 	for(var/obj/O in src.contents) //Eject contents!
 		if(istype(O,/obj/item/contraband/poster))
 			var/obj/item/contraband/poster/P = O

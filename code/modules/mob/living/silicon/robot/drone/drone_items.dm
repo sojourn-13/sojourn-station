@@ -108,7 +108,7 @@
 			if(plastic)
 				plastic.add_charge(3000)
 			if(glass)
-				plastic.add_charge(3000)
+				plastic?.add_charge(3000)
 		else if(istype(W,/obj/effect/decal/cleanable/blood/gibs/robot))
 			if(metal)
 				metal.add_charge(2000)

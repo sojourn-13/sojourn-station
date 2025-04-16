@@ -596,7 +596,7 @@ proc/is_blind(A)
 	if(stat == DEAD)
 		return FALSE
 
-	if(usr.health != usr.maxHealth)
+	if(usr?.health != usr.maxHealth)
 		return FALSE
 
 
