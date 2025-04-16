@@ -49,6 +49,9 @@
 	// Parent organ adjustments
 	var/status_flag = ORGAN_WOUNDED		// Causes the parent limb to start processing
 
+	//Prevents wounds that would be stoped by healthy limbs from being stopped
+	var/progress_while_healthy = FALSE
+
 /datum/component/internal_wound/RegisterWithParent()
 	// Internal organ parent
 	RegisterSignal(parent, COMSIG_IWOUND_EFFECTS, PROC_REF(apply_effects))
@@ -91,8 +94,8 @@
 	if(characteristic_flag & IWOUND_PROGRESS)
 		var/progression_suppression = FALSE
 
-		if(E) //Are we in a limb? If so check it's damage
-			if(E.brute_dam + E.burn_dam > E.internal_wound_suppression)
+		if(E) //Are we in a limb? If so check it's damage. Also check if we progress even in a healthy limb
+			if((E.brute_dam + E.burn_dam > E.internal_wound_suppression) && !progress_while_healthy)
 				progression_suppression = TRUE //Are limb is stable dont progress wounds
 
 		if(H)
