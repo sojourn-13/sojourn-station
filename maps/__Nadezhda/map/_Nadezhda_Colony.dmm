@@ -81252,9 +81252,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/computer/cryopod/robot{
-	pixel_x = -24
-	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
 "pvU" = (
@@ -86305,6 +86302,13 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"qrW" = (
+/obj/landmark/join/late/cyborg,
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/rnd/robotics)
 "qrX" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -181661,7 +181665,7 @@ dPU
 uoO
 efm
 hsz
-bHt
+qrW
 pvR
 eGz
 dPU
