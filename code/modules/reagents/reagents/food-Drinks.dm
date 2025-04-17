@@ -822,6 +822,17 @@
 	glass_name = "pineapple juice"
 	glass_desc = "A tart, yet tropical juice."
 
+/datum/reagent/drink/applejuice
+	name = "Apple Juice"
+	id = "applejuice"
+	description = "A juice made from an apple."
+	taste_description = "liquid apples"
+	color = "#f9d338"
+
+	glass_icon_state = "glass_yellow"
+	glass_name = "apple juice"
+	glass_desc = "A juice made from an apple."
+
 // Everything else
 
 /datum/reagent/drink/milk
@@ -1997,6 +2008,21 @@
 		M.adjust_hallucination(-0.9 * effect_multiplier)
 		M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
 		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
+
+/datum/reagent/ethanol/cider
+	name = "Cider"
+	id = "cider"
+	description = "A soft fermented and carbonated apple juice."
+	taste_description = "aged apples"
+	taste_tag = list(TASTE_SWEET)
+	color = "#664300d0"
+	strength = 60 //Not to strong its a soft alcholic drink
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "cider_glass"
+	glass_name = "Cider"
+	glass_desc = "A soft fermented and carbonated apple juice."
+	glass_center_of_mass = list("x"=16, "y"=12)
 
 // Cocktails
 

@@ -256,7 +256,7 @@
 	seed_name = "apple"
 	display_name = "apple tree"
 	mutants = list("poisonapple","goldapple")
-	chems = list("nutriment" = list(1,10))
+	chems = list("nutriment" = list(1,10), "applejuice" = list(1,10))
 	kitchen_tag = "apple"
 	//Random no research
 	companions = list("grass", "lime")
@@ -278,14 +278,14 @@
 /datum/seed/apple/poison
 	name = "poisonapple"
 	mutants = null
-	chems = list("cyanide" = list(1,5))
+	chems = list("cyanide" = list(1,5), "applejuice" = list(1,5))
 
 /datum/seed/apple/gold
 	name = "goldapple"
 	seed_name = "golden apple"
 	display_name = "gold apple tree"
 	mutants = null
-	chems = list("nutriment" = list(1,10), "gold" = list(1,5))
+	chems = list("applejuice" = list(1,10), "gold" = list(1,5))
 	kitchen_tag = "goldapple"
 
 /datum/seed/apple/gold/New()

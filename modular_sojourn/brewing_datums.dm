@@ -41,6 +41,17 @@
 	price_tag_setter = 2250
 	brew_timer = 2 MINUTES
 
+//Quick and easy, low strangth, could be used for later "dry" cider maybe if someone wants to do that
+/datum/brewing_product/cider
+	reagent_to_brew = "cider"
+	display_name = "Cider"
+	needed_crops = list("apple" = 20)
+	needed_chems = list("water" = 30, "carbon" = 5)
+
+	price_tag_setter = 1200
+	brew_timer = 1 MINUTES
+	brewed_amount = 6 //6 pack
+
 /datum/brewing_product/melonliquor
 	reagent_to_brew = "melonliquor"
 	display_name = "Melon Liquor"

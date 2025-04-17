@@ -358,6 +358,13 @@
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("schnapps" = 100)
 
+/obj/item/reagent_containers/drinks/bottle/cider
+	name = "Antimony Cider"
+	desc = "A bottle of low strangth Sir Linden apple cider, has engravings and Kriosan scrips on the lable with a crest on the quark."
+	icon_state = "ciderbottle"
+	center_of_mass = list("x"=16, "y"=4)
+	preloaded_reagents = list("cider" = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/drinks/bottle/orangejuice
@@ -405,6 +412,15 @@
 	isGlass = 0
 	preloaded_reagents = list("pineapplejuice" = 100)
 
+/obj/item/reagent_containers/drinks/bottle/applejuice
+	name = "Apple Juice"
+	desc = "A carton of Sir Linden apple juice, has fancy engraving on the cardboard and a crest on the cap."
+	icon_state = "applejuice"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=7)
+	isGlass = 0
+	preloaded_reagents = list("applejuice" = 100)
+
 //Small bottles
 /obj/item/reagent_containers/drinks/bottle/small
 	volume = 50
@@ -441,6 +457,14 @@
 	isGlass = 0
 	center_of_mass = list("x"=16, "y"=12)
 	preloaded_reagents = list("Kvass" = 30)
+
+/obj/item/reagent_containers/drinks/bottle/small/applejuice
+	name = "\improper Sir Linden Apple Juice"
+	desc = "A small carton of apple juice with a bendy straw on the side, made to look fancy with small engravings on the cardboard and a crest on the cap."
+	icon_state = "applejuice_cart"
+	isGlass = 0
+	center_of_mass = list("x"=16, "y"=12)
+	preloaded_reagents = list("applejuice" = 30)
 
 //glassess bottle
 /obj/item/reagent_containers/drinks/bottle/small/brewing_bottle

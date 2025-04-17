@@ -39,6 +39,7 @@
 			/obj/item/reagent_containers/drinks/bottle/grenadine,
 			/obj/item/reagent_containers/drinks/bottle/melonliquor,
 			/obj/item/reagent_containers/drinks/bottle/absinthe,
+			/obj/item/reagent_containers/drinks/bottle/cider,
 			/obj/item/reagent_containers/drinks/cans/thirteenloko
 		),
 		"Soft-Drinks" = list(
@@ -46,6 +47,7 @@
 			/obj/item/reagent_containers/drinks/bottle/tomatojuice,
 			/obj/item/reagent_containers/drinks/bottle/limejuice,
 			/obj/item/reagent_containers/drinks/bottle/pineapplejuice,
+			/obj/item/reagent_containers/drinks/bottle/applejuice,
 			/obj/item/reagent_containers/drinks/bottle/cream,
 			/obj/item/reagent_containers/drinks/bottle/cola,
 			/obj/item/reagent_containers/drinks/bottle/space_up,
