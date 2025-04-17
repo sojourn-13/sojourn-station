@@ -12213,9 +12213,6 @@
 	dir = 4
 	},
 /obj/landmark/join/late/cyborg,
-/obj/machinery/computer/cryopod/robot{
-	pixel_x = -24
-	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "cum" = (
@@ -39256,9 +39253,8 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "hyC" = (
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -32
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
@@ -77474,6 +77470,10 @@
 /obj/item/stock_parts/matter_bin,
 /obj/item/stock_parts/matter_bin,
 /obj/structure/table/rack/shelf,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "oJV" = (
