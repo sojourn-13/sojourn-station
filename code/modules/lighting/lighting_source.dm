@@ -71,7 +71,8 @@
 		else
 			source_atom.light_sources -= src
 
-	if(top_atom && top_atom.light_sources)
+//	if(top_atom && top_atom.light_sources)
+	if(top_atom)
 		top_atom.light_sources    -= src
 
 // Call it dirty, I don't care.
