@@ -169,7 +169,7 @@ var/list/outfits_decls_by_type_
 	var/obj/item/card/id/W = new id_type(H)
 	if(H.mind)
 		var/datum/job/job = SSjob.GetJob(H.mind.assigned_role)
-		W.access = job.get_access()
+		W.access = job?.get_access()
 	if(id_desc)
 		W.desc = id_desc
 	if(rank)

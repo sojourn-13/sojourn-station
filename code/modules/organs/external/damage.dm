@@ -13,7 +13,7 @@
 	switch(damage_type)
 		if(BRUTE)
 			amount = round(amount * brute_mod, 0.1)
-			external_wounding_multiplier = wound_check(species.injury_type, wounding_multiplier, edge, sharp)
+			external_wounding_multiplier = wound_check(species?.injury_type, wounding_multiplier, edge, sharp)
 		if(BURN)
 			amount = round(amount * burn_mod, 0.1)
 			external_wounding_multiplier = wound_check(species.injury_type, wounding_multiplier, edge, sharp)

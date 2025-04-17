@@ -430,7 +430,7 @@
 	cut_overlays()
 	var/image/ovrl
 
-	switch(H.sanity.level / H.sanity.max_level)
+	switch(H.sanity?.level / H.sanity.max_level)
 		if(-INFINITY to 0)
 			add_overlay( ovrls["sanity6"])
 			return
@@ -504,7 +504,7 @@
 	if(!istype(C) || C.stat == DEAD)
 		return
 	cut_overlays()
-	switch(C.metabolism_effects.get_nsa() * 100/C.metabolism_effects.calculate_nsa(TRUE))
+	switch(C.metabolism_effects?.get_nsa() * 100/C.metabolism_effects.calculate_nsa(TRUE))
 		if(200 to INFINITY)
 			add_overlay( ovrls["nsa10"])
 		if(-INFINITY to 20)
@@ -1074,7 +1074,7 @@ obj/screen/fire/DEADelize()
 	update_icon()
 
 /obj/screen/mov_intent/update_icon()
-	icon_state = parentmob.move_intent.hud_icon_state
+	icon_state = parentmob.move_intent?.hud_icon_state
 
 //-----------------------mov_intent END------------------------------
 /obj/screen/equip

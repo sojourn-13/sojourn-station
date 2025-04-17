@@ -1254,7 +1254,7 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
-	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
+	if(unnatural_mutations?.getMutation("MUTATION_CAT_EYES", TRUE))
 		see_invisible = SEE_INVISIBLE_NOLIGHTING
 	if(unnatural_mutations.getMutation("MUTATION_ECHOLOCATION", TRUE))
 		see_invisible = SEE_INVISIBLE_NOLIGHTING

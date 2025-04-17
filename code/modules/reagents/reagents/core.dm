@@ -30,7 +30,7 @@
 	if(!istype(D))
 		blood_splatter(T, src, 1)
 		return
-	
+
 	var/mob/living/something = D.resolve()
 	if(istype(something, /mob/living/carbon/human))
 		blood_splatter(T, src, 1)
@@ -129,7 +129,7 @@
 		M.take_organ_damage(0, 1 * effect_multiplier)
 
 /datum/reagent/water/extinguisher/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species.reagent_tag == IS_SLIME)
+	if(M.species?.reagent_tag == IS_SLIME)
 		M.take_organ_damage(0, 1 * effect_multiplier)
 
 /datum/reagent/water/extinguisher/affect_blood(var/mob/living/carbon/M, var/alien)

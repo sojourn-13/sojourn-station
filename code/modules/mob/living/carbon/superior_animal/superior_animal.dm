@@ -152,7 +152,7 @@
 
 			if (target_mode == GUESS_LOCATION_WITH_END_OF_LINE)
 				if (out_of_sight_turf_LOS_check)
-					for (var/i = possible_locations.len, i > 0, i--) //start from the last entry added
+					for (var/i = possible_locations?.len, i > 0, i--) //start from the last entry added
 						var/atom/possible_location = possible_locations[i]
 						if (can_see(possible_location, target, get_dist(possible_location, target))) //if this turf can see the target,
 							return possible_location // this is a valid target

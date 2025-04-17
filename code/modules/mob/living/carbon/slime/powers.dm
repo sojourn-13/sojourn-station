@@ -87,7 +87,7 @@
 
 	if(M && invalidFeedTarget(M)) // This means that the slime drained the victim
 		if(!client)
-			var/mob/living/carbon/LAssailant = (Victim.LAssailant_weakref?.resolve())
+			var/mob/living/carbon/LAssailant = (Victim?.LAssailant_weakref?.resolve())
 			if(Victim && !rabid && !attacked && LAssailant != Victim && prob(50))
 				if(!(LAssailant in Friends))
 					Friends[LAssailant] = 1

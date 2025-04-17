@@ -484,7 +484,7 @@ SUBSYSTEM_DEF(ticker)
 
 	for(var/datum/antag_contract/excel/targeted/overthrow/M in GLOB.excel_antag_contracts)
 		var/mob/living/carbon/human/H = M.target_mind.current
-		if (H.stat == DEAD || is_excelsior(H))
+		if (H?.stat == DEAD || is_excelsior(H))
 			M.complete()
 
 	for(var/datum/antag_contract/excel/targeted/liberate/M in GLOB.excel_antag_contracts)

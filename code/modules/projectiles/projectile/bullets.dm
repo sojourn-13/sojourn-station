@@ -92,7 +92,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = armor_divisor * penetrating/2
 
-	if(prob(chance) || (A in holder.force_penetration_on))
+	if(prob(chance) || (A in holder?.force_penetration_on))
 		if(A.opacity || istype(A, /obj/item/shield))
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))

@@ -240,7 +240,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	GLOB.ironhammer_score = GLOB.initial_ironhammer_score + GLOB.ironhammer_objectives_score + GLOB.score_antag_contracts + GLOB.ironhammer_operative_dead_score + GLOB.captured_or_dead_antags_score
 
-	//Lonestar score 
+	//Lonestar score
 	GLOB.score_guild_faction_item_loss -= 150 * GLOB.guild_faction_item_loss // ~-300
 	GLOB.guild_objectives_score = GLOB.guild_objectives_completed * 25 // ~100
 	GLOB.guild_profit_score	= round(GLOB.supply_profit/50) // ? review it //target_max~500//
@@ -339,7 +339,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	dat += "<br><hr>"
 	dat += "<b><u>Personal Score</u></b><br><hr>"
 	var/objectives_score = mind?.individual_objectives_completed * 20
-	var/contracts_score = mind.contracts_completed * 20
+	var/contracts_score = mind?.contracts_completed * 20
 	var/survive_score = 0
 	var/scaped_score = 0
 	if(client.survive)

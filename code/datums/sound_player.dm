@@ -196,7 +196,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	else if(prefer_mute)
 		listener_status[listener] &= ~SOUND_MUTE
 
-	sound.x = source_turf.x - listener_turf.x
+	sound?.x = source_turf?.x - listener_turf?.x
 	sound.z = source_turf.y - listener_turf.y
 	sound.y = 1
 

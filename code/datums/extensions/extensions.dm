@@ -15,7 +15,7 @@
 
 /datum/extension/Destroy()
 	holder = null
-	host_predicates.Cut()
+	host_predicates?.Cut()
 	user_predicates.Cut()
 	return ..()
 
