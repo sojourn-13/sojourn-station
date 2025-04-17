@@ -123,13 +123,13 @@ SUBSYSTEM_DEF(ticker)
 
 			if(config.automatic_restart_time_lobby)
 				if(world.time >= config.automatic_restart_time_lobby)
-					to_chat(world, "<span class='danger'>Restarting world due to no active players willing to start game. Save characters if working on them.</span>")
-					log_admin("World has rebooted due to no active players willing to play the game.")
 					if(automatic_restart_time_lobby_sound_cooldown < world.time)
-						automatic_restart_time_lobby_sound_cooldown = world.time + 10
+						automatic_restart_time_lobby_sound_cooldown = world.time + 10 SECONDS
 						SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
+						to_chat(world, "<span class='danger'>Restarting world due to no active players willing to start game. Save characters if working on them.</span>")
 					spawn(60 SECONDS)
 						if(!(current_state == GAME_STATE_PREGAME))
+							log_admin("World has rebooted due to no active players willing to play the game.")
 							world.Reboot()
 
 		if(GAME_STATE_SETTING_UP)
