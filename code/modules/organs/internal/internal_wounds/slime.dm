@@ -92,6 +92,7 @@
 	severity_max = 1
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	status_flag = ORGAN_WOUNDED|ORGAN_MUTATED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/slime/radiation/benign
 	name = "benign growth"
@@ -129,6 +130,7 @@
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/slime/infection/standard
 	name = "infection"

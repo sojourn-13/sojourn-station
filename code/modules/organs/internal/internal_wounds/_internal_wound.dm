@@ -49,6 +49,9 @@
 	// Parent organ adjustments
 	var/status_flag = ORGAN_WOUNDED		// Causes the parent limb to start processing
 
+	//Prevents wounds that would be stoped by healthy limbs from being stopped
+	var/progress_while_healthy = FALSE
+
 /datum/component/internal_wound/RegisterWithParent()
 	// Internal organ parent
 	RegisterSignal(parent, COMSIG_IWOUND_EFFECTS, PROC_REF(apply_effects))
@@ -87,14 +90,29 @@
 	if((!parent || O.status & ORGAN_DEAD) && !(characteristic_flag & IWOUND_PROGRESS_DEATH))
 		return PROCESS_KILL
 
-	// Progress if not in a cryo tube or in stasis
-	if(characteristic_flag & IWOUND_PROGRESS && (H && !(H.bodytemperature < 170 || H.in_stasis)))
-		++current_progression_tick
-		if(current_progression_tick >= progression_threshold)
-			current_progression_tick = 0
-			progress()
-			if(H)
-				H.custom_pain("Something inside your [E.name] hurts a lot.", 0)
+	//Handles if and when we progress are wound severity
+	if(characteristic_flag & IWOUND_PROGRESS)
+		var/progression_suppression = FALSE
+
+		if(E) //Are we in a limb? If so check it's damage. Also check if we progress even in a healthy limb
+			if((E.brute_dam + E.burn_dam > E.internal_wound_suppression) && !progress_while_healthy)
+				progression_suppression = TRUE //Are limb is stable dont progress wounds
+
+		if(H)
+			//Dont progress wounds if we are chemically stablized
+			if(H.chem_effects[CE_WOUND_STABLIZE])
+				progression_suppression = TRUE
+			//Dont progress wounds if we are in statis or cryo-tube like tempture
+			if(H.bodytemperature < 170 || H.in_stasis)
+				progression_suppression = TRUE
+
+		if(!progression_suppression)
+			++current_progression_tick
+			if(current_progression_tick >= progression_threshold)
+				current_progression_tick = 0
+				progress()
+				if(H)
+					H.custom_pain("Something inside your [E.name] hurts a lot.", 0)
 
 	if(!H)
 		return

@@ -137,6 +137,7 @@
 	severity = 0
 	severity_max = 3
 	hal_damage = IWOUND_LIGHT_DAMAGE
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/poisoning/pustule
 	name = "pustule"
@@ -167,6 +168,7 @@
 	blood_req_multiplier = 0.50
 	nutriment_req_multiplier = 0.50
 	oxygen_req_multiplier = 0.50
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/heavy_poisoning/toxin
 	name = "toxin accumulation"
@@ -186,6 +188,7 @@
 	severity_max = 1
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	status_flag = ORGAN_WOUNDED|ORGAN_MUTATED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/radiation/benign
 	name = "benign tumor"
@@ -207,6 +210,7 @@
 	next_wound = /datum/component/internal_wound/organic/infection
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	specific_organ_size_multiplier = 0.2
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/swelling/normal
 	name = "swelling"
@@ -220,6 +224,7 @@
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
 	progression_threshold = IWOUND_1_MINUTE	// Kills small organs in 7 minutes, normal in 14
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/oxy/blood_loss
 	name = "blood loss"
@@ -234,6 +239,7 @@
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/infection/standard
 	name = "infection"

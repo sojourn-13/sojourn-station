@@ -7,6 +7,7 @@
 	severity = 1
 	severity_max = 1
 	psy_damage = IWOUND_MEDIUM_DAMAGE
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/sanity/twitch
 	name = "twitching tissue"

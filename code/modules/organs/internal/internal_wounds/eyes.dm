@@ -102,6 +102,7 @@
 	severity_max = 3
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	diagnosis_difficulty = STAT_LEVEL_EXPERT
+	progress_while_healthy = TRUE
 
 /// Cheap hack, but prevents unbalanced toxins from killing someone immediately
 /datum/component/internal_wound/organic/eyes_poisoning/InheritComponent()

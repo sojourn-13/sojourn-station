@@ -25,6 +25,7 @@
 	var/icon_position = null
 	var/functions = NONE
 	var/list/drop_on_remove = null
+	var/internal_wound_suppression = 4
 
 /datum/organ_description/proc/create_organ(var/mob/living/carbon/human/H)
 	return new default_type(H,src)
