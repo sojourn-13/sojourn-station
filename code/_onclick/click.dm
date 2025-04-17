@@ -188,12 +188,13 @@
 /mob/proc/gather_click_delay(mob/living/M as mob)
 	var/gathered = 0
 	if(ishuman(M))
-		var/mob/living/carbon/human/back_pack_checker = M
-		var/obj/item/W = M.get_active_hand()
-		if(!back_pack_checker.back)
+		var/mob/living/carbon/human/H = M
+		var/obj/item/W = H.get_active_hand()
+		if(!H.back)
 			gathered -= 1
 		if(W)
 			gathered += W.clickdelay_offset
+		gathered += H.chem_effects[CE_ATTACK_COOLDOWN]
 	if(issilicon(M))
 		var/mob/living/silicon/S = M
 		var/obj/item/W = S.get_active_hand()

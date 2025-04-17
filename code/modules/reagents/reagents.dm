@@ -265,12 +265,12 @@
 /datum/reagent/proc/addiction_act_stage3(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You have an intense craving for [name]."))
-		M.sanity.changeLevel(-5)
+		M.sanity.changeLevel(-1)
 
 /datum/reagent/proc/addiction_act_stage4(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You're not feeling good at all! You really need some [name]."))
-		M.sanity.changeLevel(-10)
+		M.sanity.changeLevel(-2)
 
 /datum/reagent/proc/addiction_end(mob/living/carbon/human/M)
 	to_chat(M, SPAN_NOTICE("You feel like you've gotten over your need for [name]."))

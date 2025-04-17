@@ -91,10 +91,6 @@
 	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
 
-/datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
-
 /datum/reagent/medicine/sergatonin
 	name = "Naratonin"
 	id = "naratonin"
