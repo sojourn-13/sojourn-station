@@ -47,7 +47,7 @@
 	if(!can_trigger(H, E))
 		return
 
-	if(holding.loc == src) //item not in hands
+	if(holding?.loc == src) //item not in hands
 		deploy(H, E)
 	else //retract item
 		retract(E)
