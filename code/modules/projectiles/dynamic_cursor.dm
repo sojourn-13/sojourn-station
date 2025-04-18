@@ -25,7 +25,7 @@
 	user.remove_cursor()
 
 /obj/item/gun/dropped(mob/living/user)
-	user.remove_cursor()
+	user?.remove_cursor()
 	. = ..()
 
 /obj/item/gun/afterattack(atom/A, mob/living/user, adjacent, params)

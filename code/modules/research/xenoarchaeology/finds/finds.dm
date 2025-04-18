@@ -311,7 +311,7 @@
 				item_type = "rough red crystal"
 				icon_state = "changerock"
 			additional_desc = pick("It shines faintly as it catches the light.","It appears to have a faint inner glow.","It seems to draw you inward as you look it at.","Something twinkles faintly as you look at it.","It's mesmerizing to behold.")
-			new_item.price_tag = rand(750,2500) //It shines!
+			new_item?.price_tag = rand(750,2500) //It shines!
 			apply_material_decorations = 0
 			if(prob(10))
 				apply_image_decorations = 1

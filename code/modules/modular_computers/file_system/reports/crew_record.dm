@@ -55,7 +55,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_status(GLOB.default_physical_status)
 
 	set_email((H && H.mind) ? H.mind.initial_email_login["login"] : "none")
-	set_account((H && H.mind) ? H.mind.initial_account.account_number : "000000")
+	set_account((H && H.mind) ? H.mind.initial_account?.account_number : "000000")
 
 	// TODO: enable after baymed
 	set_species(H ? H.get_species() : SPECIES_HUMAN)

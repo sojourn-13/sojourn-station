@@ -39,7 +39,7 @@
 
 				if(!allow_skitter_skit)
 					return
-				if(T2.Enter(src)) //We can walk into the tile behind then we do are supper cool attack!
+				if(T2?.Enter(src)) // We can walk into the tile behind then we do our super cool attack!
 					sleep(1)
 					forceMove(T)
 					var/melee_damage_lower_save = melee_damage_lower
