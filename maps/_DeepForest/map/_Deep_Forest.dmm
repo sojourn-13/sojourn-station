@@ -30261,7 +30261,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "ukp" = (
 /obj/machinery/light/small,
-/obj/item/circuitboard/rdconsole_unlicensed,
+/obj/item/circuitboard/autolathe_industrial,
 /obj/structure/computerframe{
 	anchored = 1;
 	dir = 1
@@ -32812,7 +32812,6 @@
 "vUR" = (
 /obj/effect/floor_decal/industrial/box/white,
 /obj/structure/closet/crate/serbcrate_gray,
-/obj/item/circuitboard/autolathe_industrial,
 /turf/simulated/floor/reinforced,
 /area/space)
 "vVj" = (
