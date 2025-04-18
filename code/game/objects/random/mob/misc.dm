@@ -110,6 +110,8 @@
 	name = "random psi_monster"
 	icon_state = "hostilemob-brown"
 	alpha = 128
+	has_postspawn = TRUE
+	late_handling = TRUE //Dont spawn the 40 billion untill someone opens a burrow to deepmaints
 	mobs = list(/mob/living/carbon/superior/psi = 9,
 				//trash
 				/mob/living/carbon/superior/psi/memory_eater = 8,
@@ -156,6 +158,13 @@
 
 	return pickweight(mobs)
 
+//used for admins/events/respawns
+/obj/random/mob/psi_monster/insta_spawn
+	name = "random psionic monster will spawn instantly"
+	has_postspawn = FALSE
+	late_handling = FALSE
+
+//Spawn these instantly for they are bosses
 /obj/random/mob/psi_monster_mega_fauna
 	name = "random mega psi monster"
 	icon_state = "hostilemob-brown"
@@ -182,6 +191,13 @@
 
 /obj/random/cluster/psi_monster/item_to_spawn()
 	return /obj/random/mob/psi_monster
+
+ //used for admins/events/respawns
+/obj/random/cluster/psi_monster/insta_spawn
+	name = "random psionic monster will spawn instantly"
+
+/obj/random/cluster/psi_monster/insta_spawn/item_to_spawn()
+	return /obj/random/mob/psi_monster/insta_spawn
 
 /obj/random/cluster/psi_monster/low_chance
 	name = "low chance cluster of psi_monsters"

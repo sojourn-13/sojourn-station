@@ -337,10 +337,22 @@
 	desc = "A deep metal tunnel. You wonder where it leads."
 	icon = 'icons/obj/burrows.dmi'
 	icon_state = "maint_hole"
+	var/used = FALSE
 
+//Spawning all the mobs that are linked to that z-level
+/obj/structure/multiz/ladder/burrow_hole/climb()
+	if(!used && target)
+		used = TRUE
+		var/area/deepmaint/my_area = get_area(target.loc)
+		if(my_area)
+			if(my_area.name == "Deep Maintenance") //Shockingly this is how get area works
+				my_area.spawn_mobs()
+	..()
 
 /obj/structure/multiz/ladder/up/deepmaint
 	name = "maintenance ladder"
+	icon_state = "ladderup_dm"
+	alpha = 180 //So we can see a bit through them to avoid blocking sight
 
 /obj/structure/multiz/ladder/up/deepmaint/climb()
 	if(!target)

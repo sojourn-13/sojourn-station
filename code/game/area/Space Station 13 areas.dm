@@ -871,6 +871,17 @@ area/space/atmosalert()
 	has_gravity = 1
 	requires_power = 0
 	area_light_color = COLOR_NAVY_BLUE //That is below is that of above
+	var/has_late_game_spawned_for_folks = FALSE
+
+/area/deepmaint/proc/spawn_mobs()
+	if(has_late_game_spawned_for_folks)
+		return
+	has_late_game_spawned_for_folks = TRUE
+	for(var/obj/random/cluster/psi_monster/spawners in src)
+		spawners.late_handling()
+
+	for(var/obj/random/mob/psi_monster/clust_spawners in src)
+		clust_spawners.late_handling()
 
 // This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
 // In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6
