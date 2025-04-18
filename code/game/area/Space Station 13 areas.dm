@@ -873,10 +873,17 @@ area/space/atmosalert()
 	area_light_color = COLOR_NAVY_BLUE //That is below is that of above
 	var/has_late_game_spawned_for_folks = FALSE
 
-/area/deepmaint/proc/spawn_mobs()
+
+/area/deepmaint/Entered(A)
+	..()
 	if(has_late_game_spawned_for_folks)
 		return
+	if(!ishuman(A))
+		return
 	has_late_game_spawned_for_folks = TRUE
+	spawn_mobs()
+
+/area/deepmaint/proc/spawn_mobs()
 	for(var/obj/random/cluster/psi_monster/spawners in src)
 		spawners.late_handling()
 
