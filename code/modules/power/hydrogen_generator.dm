@@ -33,7 +33,7 @@
 	to_chat(user, SPAN_NOTICE("The generator is [active ? "on" : "off"].")) // Is the generator on?
 	if(active)
 		to_chat(user, SPAN_NOTICE("[src] is currently generating [(power_gen * power_output)/1000] KW of power.")) // How much power is it producing?
-	to_chat(user, SPAN_NOTICE("[src] currently hold [fuel_cell.plasma] units of hydrogen.")) // Show the total
+	to_chat(user, SPAN_NOTICE("[src] currently hold [fuel_cell?.plasma] units of hydrogen.")) // Show the total
 
 // Switch the machine on or off.
 /obj/machinery/power/hydrogen_gen/proc/SwitchOnOff(mob/user)

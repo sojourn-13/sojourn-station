@@ -191,7 +191,7 @@
 		return
 
 	vagabond_charity_budget -= stored_item_value
-	var/datum/transaction/T = new(-stored_item_value, "", "Recycling payout for [stored_item_object.name]", src)
+	var/datum/transaction/T = new(-stored_item_value, "", "Recycling payout for [stored_item_object?.name]", src)
 	T.apply_to(merchants_pocket)
 
 	for(var/i in stored_item_materials)
