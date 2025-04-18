@@ -29,7 +29,7 @@
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	fast_respawn = 1 MINUTES
 	slow_respawn = 3 MINUTES
-	respawn_mob_type = /obj/random/cluster/psi_monster
+	respawn_mob_type = /obj/random/cluster/psi_monster/insta_spawn
 	affects_chaos = TRUE
 
 /mob/living/carbon/superior/psi/dreaming_king/hound_crown
@@ -49,7 +49,7 @@
 	hound_of_the_crown = TRUE
 	fast_respawn = 1 MINUTES
 	slow_respawn = 3 MINUTES
-	respawn_mob_type = /obj/random/cluster/psi_monster
+	respawn_mob_type = /obj/random/cluster/psi_monster/insta_spawn
 	affects_chaos = TRUE
 
 /obj/random/psi_megafauna

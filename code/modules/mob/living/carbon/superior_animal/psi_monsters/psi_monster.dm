@@ -90,7 +90,7 @@
 	var/psionic_respawn = TRUE
 	var/fast_respawn = 5 MINUTES
 	var/slow_respawn = 15 MINUTES
-	var/respawn_mob_type = /obj/random/mob/psi_monster
+	var/respawn_mob_type = /obj/random/mob/psi_monster/insta_spawn
 	var/affects_chaos = FALSE
 
 	var/leach_on_odds = 0
