@@ -167,13 +167,9 @@
 	name = "Hydrogen \"Sollex\" Cannon"
 	build_path = /obj/item/gun/hydrogen/cannon
 
-/datum/design/research/item/weapon/hydrogen_sword
-	name = "Hydrogen Sword"
-	build_path = /obj/item/tool/hydrogen_sword/no_starting_fuel
-
 /datum/design/research/item/weapon/hydrogen_welder
 	name = "Hydrogen Torch"
-	build_path = /obj/item/tool/plasma_torch/no_starting_fuel
+	build_path = /obj/item/tool/plasma_torch
 
 /datum/design/research/item/weapon/hydrogrenade
 	name = "Hydrogen Grenade"
@@ -189,6 +185,12 @@
 	name = "Pistol Magazine 9mm (Empty)"
 	desc = "An empty magazine for pistols, chambered for 9mm"
 	build_path = /obj/item/ammo_magazine/pistol_35/empty
+	materials = list(MATERIAL_STEEL = 3)
+
+/datum/design/research/item/ammo/pistol/empty/laser
+	name = "Pistol Magazine 9mm Laser Marked (Empty)"
+	desc = "An empty magazine for pistols, chambered for 9mm, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/pistol_35/laser/empty
 	materials = list(MATERIAL_STEEL = 3)
 
 /datum/design/research/item/ammo/pistol
@@ -207,6 +209,12 @@
 	name = "SMG Magazine 9mm (Empty) "
 	desc = "A magazine for 9mm, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/smg_mag/laser
+	name = "SMG Magazine 9mm (Empty) "
+	desc = "A magazine for 9mm, used in smgs, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/smg_35/laser/empty
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/lethal
@@ -333,7 +341,7 @@
 /datum/design/research/item/disk/blackshield
 	name = "Blackshield Sovereignty Disk"
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
-	build_path = /obj/item/pc_part/drive/disk/design/blackshield
+	build_path = /obj/item/computer_hardware/hard_drive/portable/design/blackshield
 
 /datum/design/research/item/weapon/bastion
 	name = "bastion shield"

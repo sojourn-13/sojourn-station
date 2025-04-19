@@ -160,7 +160,9 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
 							/datum/design/research/item/ammo/pistol,
 							/datum/design/research/item/ammo/smg_mag,
+							/datum/design/research/item/ammo/smg_mag/laser,
 							/datum/design/research/item/ammo/pistol_laser,
+							/datum/design/research/item/ammo/pistol/empty/laser,
 							/datum/design/research/item/ammo/magum_laser,
 							/datum/design/research/item/robot_upgrade/bigknife,
 							/datum/design/research/item/weapon/slimebaton
@@ -349,7 +351,6 @@
 							/datum/design/research/item/weapon/hydrogen_pistol,
 							/datum/design/research/item/weapon/hydrogen_cannon,
 							/datum/design/research/item/mecha/weapon/hydrogen,
-							/datum/design/research/item/weapon/hydrogen_sword,
 							/datum/design/research/item/weapon/hydrogen_welder,
 							/datum/design/research/item/weapon/hydrogrenade,
 							/datum/design/research/item/ammo/hydroflaskette,
