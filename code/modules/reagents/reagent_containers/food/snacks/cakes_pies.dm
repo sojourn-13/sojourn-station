@@ -56,7 +56,7 @@
 	desc = "A note done in cream and frosting says: 'In memoriam to the sweetest Warcakey.' The candles on the cake never seem to burn out."
 	icon_state = "birthdaycake"
 	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
-	slice_path = /obj/item/reagent_containers/snacks/birthdaycakeslice
+	slice_path = /obj/item/reagent_containers/snacks/warcakeslice
 	slices_num = 5
 	filling_color = "#FFB6C1"
 	bitesize = 3
