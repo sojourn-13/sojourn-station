@@ -221,6 +221,7 @@
 				<br>
 				<p>Each time this button is pressed, a request will be sent out to any available personalities. Check back often give plenty of time for personalities to respond. This process could take anywhere from 15 seconds to several minutes, depending on the available personalities' timeliness.</p>
 			"}
+	dat += "</html>"
 	user << browse(dat, "window=paicard")
 	onclose(user, "paicard")
 	return

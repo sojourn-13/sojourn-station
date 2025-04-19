@@ -35,7 +35,7 @@
 		user.unset_machine(src)
 		return
 
-	var/dat = "<B>Anomalous material analyser</B><BR>"
+	var/dat = "<html><B>Anomalous material analyser</B><BR>"
 	dat += "<HR>"
 	if(!owned_scanner)
 		owned_scanner = locate() in orange(1, src)
@@ -51,7 +51,7 @@
 
 	dat += "<br>"
 	dat += "<hr>"
-	dat += "<a href='?src=\ref[src]'>Refresh</a> <a href='?src=\ref[src];close=1'>Close</a>"
+	dat += "<a href='?src=\ref[src]'>Refresh</a> <a href='?src=\ref[src];close=1'>Close</a></html>"
 	user << browse(dat, "window=artanalyser;size=450x500")
 	user.set_machine(src)
 	onclose(user, "artanalyser")

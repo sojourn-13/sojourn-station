@@ -336,7 +336,7 @@
 	slot_flags = SLOT_BELT
 
 /obj/item/device/destTagger/proc/openwindow(mob/user as mob)
-	var/dat = "<tt><center><h1><b>TagMaster 2.3</b></h1></center>"
+	var/dat = "<html><tt><center><h1><b>TagMaster 2.3</b></h1></center>"
 
 	dat += "<table style='width:100%; padding:4px;'><tr>"
 	for(var/i = 1, i <= tagger_locations.len, i++)
@@ -347,6 +347,7 @@
 
 	dat += "</tr></table><br>Current Selection: [currTag ? currTag : "None"]</tt>"
 	dat += "<br><a href='?src=\ref[src];nextTag=CUSTOM'>Enter custom location.</a>"
+	dat += "</html>"
 	user << browse(dat, "window=destTagScreen;size=450x375")
 	onclose(user, "destTagScreen")
 
@@ -380,7 +381,7 @@
 /obj/machinery/disposal/deliveryChute/Initialize(mapload, d)
 	..()
 	return INIT_ORDER_LATELOAD
-	
+
 /obj/machinery/disposal/deliveryChute/LateInitialize(mapload)
 	. = ..()
 	trunk = locate() in loc
@@ -486,7 +487,7 @@
 				C.density = TRUE
 				C.update()
 				qdel(src)
-				
+
 			return
 
 /obj/machinery/disposal/deliveryChute/Destroy()

@@ -102,7 +102,7 @@
 
 	user.set_machine(src)
 
-	var/t = "<PRE><B>Thermo-Electric Generator</B><HR>"
+	var/t = "<html><PRE><B>Thermo-Electric Generator</B><HR>"
 
 	t += "Output : [round(lastgen)] W<BR><BR>"
 
@@ -117,6 +117,7 @@
 	t += "<BR><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
 	t += "</PRE>"
+	t += "</html>"
 	user << browse(t, "window=teg;size=460x300")
 	onclose(user, "teg")
 	return 1

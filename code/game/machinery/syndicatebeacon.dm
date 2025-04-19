@@ -22,7 +22,7 @@
 
 /obj/machinery/syndicate_beacon/attack_hand(var/mob/user as mob)
 	usr.set_machine(src)
-	var/dat = "<font color=#005500><i>Scanning [pick("retina pattern", "voice print", "fingerprints", "dna sequence")]...<br>Identity confirmed,<br></i></font>"
+	var/dat = "<html><font color=#005500><i>Scanning [pick("retina pattern", "voice print", "fingerprints", "dna sequence")]...<br>Identity confirmed,<br></i></font>"
 	if(ishuman(user) || isAI(user))
 		if(is_special_character(user))
 			dat += "<font color=#007700><i>Operative record found. Greetings, Agent [user.name].</i></font><br>"
@@ -36,6 +36,7 @@
 			if(!selfdestructing)
 				dat += "<br><br><A href='?src=\ref[src];becontractor=1;contractormob=\ref[user]'>\"[pick("I want to switch teams.", "I want to work for you.", "Let me join you.", "I can be of use to you.", "You want me working for you, and here's why...", "Give me an objective.", "How's the 401k over at the Syndicate?")]\"</A><BR>"
 	dat += temptext
+	dat += </html>
 	user << browse(dat, "window=syndbeacon")
 	onclose(user, "syndbeacon")
 

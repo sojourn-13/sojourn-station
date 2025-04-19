@@ -63,7 +63,7 @@
 	return src.interact(user)
 
 /obj/item/device/beacon_locator/interact(var/mob/user as mob)
-	var/dat = "<b>Radio frequency tracker</b><br>"
+	var/dat = "<html><b>Radio frequency tracker</b><br>"
 	dat += {"
 				<A href='byond://?src=\ref[src];reset_tracking=1'>Reset tracker</A><BR>
 				Frequency:
@@ -75,6 +75,7 @@
 				"}
 
 	dat += "<A href='?src=\ref[src];close=1'>Close</a><br>"
+	dat += "</html>"
 	user << browse(dat,"window=locater;size=300x150")
 	onclose(user, "locater")
 

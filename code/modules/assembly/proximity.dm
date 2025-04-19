@@ -115,7 +115,7 @@
 	var/second = time % 60
 	var/minute = (time - second) / 60
 	var/dat = {"
-	<tt><b>Proximity Sensor</b><br>[minute]:[second]<br>
+	<html><tt><b>Proximity Sensor</b><br>[minute]:[second]<br>
 	<a href='?src=\ref[src];tp=-30'>-</a>
 	<a href='?src=\ref[src];tp=-1'>-</a>
 	<a href='?src=\ref[src];tp=1'>+</a>
@@ -125,7 +125,7 @@
 	<br><a href='?src=\ref[src];scanning=1'>[scanning ? "Armed" : "Unarmed"]</a> (Movement sensor active when armed!)
 	<br><br><a href='?src=\ref[src];refresh=1'>Refresh</a>
 	<br><br><a href='?src=\ref[src];close=1'>Close</a>
-	"}
+	</html>"}
 	user << browse(dat, "window=prox")
 	onclose(user, "prox")
 

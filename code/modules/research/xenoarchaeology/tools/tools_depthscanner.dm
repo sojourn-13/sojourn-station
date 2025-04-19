@@ -72,7 +72,7 @@
 	return src.interact(user)
 
 /obj/item/device/depth_scanner/interact(var/mob/user as mob)
-	var/dat = "<b>Co-ordinates with positive matches</b><br>"
+	var/dat = "<html><b>Co-ordinates with positive matches</b><br>"
 	dat += "<A href='?src=\ref[src];clear=0'>== Clear all ==</a><br>"
 	if(current)
 		dat += "Time: [current.time]<br>"
@@ -102,6 +102,7 @@
 	dat += "<hr>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</a><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</a><br>"
+	dat += "</html>"
 	user << browse(dat,"window=depth_scanner;size=300x500")
 	onclose(user, "depth_scanner")
 
