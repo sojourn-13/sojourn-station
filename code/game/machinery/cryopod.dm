@@ -447,7 +447,7 @@
 	// Remove the mob's record.
 	var/datum/computer_file/report/crew_record/record
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
-		if(occupant.mind.name == CR.get_name()) // Check the mind's name to the record's name
+		if(occupant.mind?.name == CR.get_name()) // Check the mind's name to the record's name
 			record = CR
 			break
 
