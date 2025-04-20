@@ -11,7 +11,7 @@ Please contact us on the server Discord.
 
 Project owner - MsRandylicious<br/>
 Loremaster - Bamhalazam<br/>
-Host - Ryuu
+Host - Ryuu<br/>
 Lead Janitor - CFWMagic
 
 ## CREDITS
