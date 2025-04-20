@@ -11,7 +11,8 @@ Please contact us on the server Discord.
 
 Project owner - MsRandylicious<br/>
 Loremaster - Bamhalazam<br/>
-
+Host - Ryuu
+Lead Janitor - CFWMagic
 
 ## CREDITS
 
@@ -19,5 +20,5 @@ Mapping - Glitchy, smoggie<br/>
 Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster<br/>
 Code - Ryuu, Tennessee, Bamhalazam, CFW Magic<br/>
 
-Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND<br/>
+Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND, Dr.Farson<br/>
 
