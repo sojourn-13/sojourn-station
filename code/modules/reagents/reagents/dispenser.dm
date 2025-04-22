@@ -374,7 +374,7 @@
 		our_man.wear_mask,
 		our_man.w_uniform,
 	)
-	var/factor = 0.3 // just chosen so that a labcoat barely protects against sulphuric acid, but not hydrochloric acid
+	var/factor = 0.3 // rather randomly chosen
 	remove_self(volume)
 	for(var/bodypart in bodyparts)
 		var/stop_loop = FALSE
