@@ -6,7 +6,7 @@ GLOBAL_LIST_INIT(drones, list())
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "power_key"
 	icon_screen = "dron_control_monitor"
-	req_access = list(access_engine_equip)
+	req_access = list(access_ai_upload)
 	circuit = /obj/item/circuitboard/drone_control
 
 	//Used when pinging drones.
