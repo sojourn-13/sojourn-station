@@ -506,16 +506,16 @@
 					h_user.put_in_l_hand(B)
 				else if (h_user.l_store == src)
 					h_user.drop_from_inventory(src)
-					B.loc = h_user
-					B.layer = 20
-					h_user.l_store = B
 					h_user.update_inv_pockets()
+					src.loc = get_turf(h_user)
+					if(h_user.client)	h_user.client.screen -= src
+					h_user.put_in_hands(B)
 				else if (h_user.r_store == src)
 					h_user.drop_from_inventory(src)
-					B.loc = h_user
-					B.layer = 20
-					h_user.r_store = B
 					h_user.update_inv_pockets()
+					src.loc = get_turf(h_user)
+					if(h_user.client)	h_user.client.screen -= src
+					h_user.put_in_hands(B)
 				else if (h_user.head == src)
 					h_user.u_equip(src)
 					h_user.put_in_hands(B)
