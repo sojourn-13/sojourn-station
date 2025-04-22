@@ -484,11 +484,12 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/smoking_change = SANITY_GAIN_SMOKE * S.quality_multiplier
 	var/smoking_allowed = FALSE
 	var/smoking_no = FALSE
-	for(var/obj/structure/sign/warning/nosmoking/dont in oview(owner, 7))
-
-		smoking_no = TRUE
-	for(var/obj/structure/sign/warning/smoking/undont in oview(owner, 7))
-		smoking_allowed = TRUE
+// 25.04.23 - CFW - Cutting out smoking/non-smoking zones calculation for performance and by request
+//	for(var/obj/structure/sign/warning/nosmoking/dont in oview(owner, 7))
+//
+//		smoking_no = TRUE
+//	for(var/obj/structure/sign/warning/smoking/undont in oview(owner, 7))
+//		smoking_allowed = TRUE
 
 	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		smoking_message += 1
