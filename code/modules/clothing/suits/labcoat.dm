@@ -16,10 +16,6 @@
 		rad = 0
 	)
 
-	// labcoat is made of fire-resistant material, comparable to armor, far from a firesuit
-	// heat_protection = UPPER_TORSO|ARMS
-	// max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
-
 /obj/item/clothing/suit/storage/toggle/labcoat/poofy
 	name = "formal labcoat"
 	desc = "A longer labcoat that protects against minor chemical spills."
