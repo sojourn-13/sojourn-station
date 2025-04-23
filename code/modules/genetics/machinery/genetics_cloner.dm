@@ -196,38 +196,38 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	reader = find_reader()
 	if(!reader)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Operations console not detected~!\""))
+		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Operations console not detected!\""))
 		return
 	reader_loc = reader.loc
 
 	if(cloning)
-		addLog("Error, Cloning already in progress~!")
+		addLog("Error, Cloning already in progress!")
 		return
 
 	if(embryo)
-		addLog("Error, Please vacate the nonviable embryo from the chamber~!")
+		addLog("Error, Please vacate the nonviable subject from the chamber!")
 		return
 
 	container = find_container()
 	if(!container)
-		addLog("Error, Protein canister not detected~!")
+		addLog("Error, Protein canister not detected!")
 		return
 
 	container_loc = container.loc
 
 	trunk = locate() in src.loc
 	if(!trunk)
-		addLog("Error, Pipe trunk not detected~!")
+		addLog("Error, Pipe trunk not detected!")
 		return
 
 	if(!clone_info)
-		addLog("Error, Genetic Sample Plate not detected~!")
+		addLog("Error, Genetic Sample Plate not detected!")
 		return
 
 	clone_mutation = clone_info.findCloneMutation()
 
 	if(!clone_mutation)
-		addLog("Error, Cloning data not found~!")
+		addLog("Error, Cloning data not found!")
 		return
 
 	progress = 0
@@ -373,24 +373,24 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
 						else
-							addLog("Protein not available~, The Embryo has starved.")
+							addLog("Protein not available, the test subject has starved.")
 							stop() //The clone is dead.
 					else if(clone_ready)
 						visible_message(SPAN_DANGER("The creature inside the cloning vat begins to stir..."))
 				else
-					addLog("Protein container not found~, The Embryo has starved.")
+					addLog("Protein container not found, the test subject has starved.")
 					stop()
 			else
 				breakout()
 
 	if (clone_ready && !ready_message)
-		addLog("The Test Subject has Matured~!")
+		addLog("The Test Subject has Matured!")
 		ready_message = TRUE
 		embryo = null
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
-		addLog("Flushed the Test Subject down the disposal pipe~")
+		addLog("Flushed the Test Subject down the disposal pipe")
 		flush()
 	if(mode != 1) //if off or ready, no need to charge
 		update_use_power(1)
@@ -461,7 +461,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 /obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 180))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, you were pressing some weird buttons so I locked you out~ Maybe have a scientist help~?\""))
+		to_chat(usr, SPAN_WARNING("The consle buzzes as you are locked out, displaying a message: "Contact Soteria Genetics personnel for further assistance.""))
 		return
 
 	if(default_deconstruction(I, user))
@@ -671,7 +671,7 @@ and which aren't.
 /obj/machinery/computer/genetics/clone_console/Initialize()
 	. = ..()
 	sync()
-	addLog("Soteria Cloning Vat Console initialized. Welcome~")
+	addLog("Soteria Cloning Vat Console initialized.")
 
 /obj/machinery/computer/genetics/clone_console/proc/addLog(string)
 	cloneLog = "\[[stationtime2text()]\] " + string + "<br>" + cloneLog
