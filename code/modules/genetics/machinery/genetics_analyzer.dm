@@ -78,7 +78,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console output is too difficult for you to understand."))"))
+		to_chat(usr, SPAN_WARNING("The console output is too difficult for you to understand."))
 		return
 	if(default_deconstruction(I, user))
 		return
