@@ -78,7 +78,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
+		to_chat(usr, SPAN_WARNING("The console output is too difficult for you to understand."))"))
 		return
 	if(default_deconstruction(I, user))
 		return
@@ -103,7 +103,7 @@ cannot isolate or combine desired genes.
 
 /obj/machinery/genetics/gene_analyzer/attack_hand(mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 60))
-		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
+		to_chat(usr, SPAN_WARNING("The console output is too difficult for you to understand."))
 		return
 	if(..())
 		return TRUE
@@ -232,7 +232,7 @@ cannot isolate or combine desired genes.
 					console.files.adjust_research_points(awarding_points) // Give the points
 					var/obj/item/device/radio/radio
 					radio = new /obj/item/device/radio{channels=list("Science")}(src) // Create a new radio
-					radio.autosay("Genetics Research Uploaded, granting [awarding_points] research points~!", "Genetics Announcement System", "Science") // Make the radio say a message.
+					radio.autosay("Genetics Research Uploaded, providing [awarding_points] research points!", "Genetics Announcement System", "Science") // Make the radio say a message.
 					qdel(radio)
 
 				//Update known mutations from the master console JIC
