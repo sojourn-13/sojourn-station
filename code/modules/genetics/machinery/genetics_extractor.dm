@@ -3,10 +3,12 @@
 	One of the most simple standalone machines in the department, but fairly important in its own right.
 	Meat goes in, Sample plates come out. The sample plates hold the mutations and cloning info of the meat the object came from.
 	It also talks in a really peppy voice, even while grinding creatures into a fine paste.
+
+	25.04.24 - CFW -It no longer talks, courtesy of Dr. Farson, as requested by several players
 */
 /obj/machinery/genetics/pulper
 	name = "Xenofauna Genetics Pulper"
-	desc = "A morosely clinical device that takes raw meat (or whole bodies), destroys it on a cellular level, and organizes as much genetic information as it can into sample plates. It also won't shut up."
+	desc = "A morosely clinical device that takes raw meat (or whole bodies), destroys it on a cellular level, and organizes as much genetic information as it can into sample plates."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "processor"
 	var/gib_time = 40 // Time from starting until sample plates appear.
