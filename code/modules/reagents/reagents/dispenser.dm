@@ -390,29 +390,9 @@
 			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
-				if (istype(C, /obj/item/clothing/shoes))
-					var/obj/item/clothing/shoes/S = C
-					if(S.holding)
-						S.holding.forceMove(get_turf(M))
-						S.holding = null
-
-				for(var/obj/item/clothing/accessory/A in C.accessories)
-					A.on_removed()
-					C.accessories -= A
-					C.update_wear_icon()
-
-				if (istype(C, /obj/item/clothing/suit/storage))
-					our_man.unEquip(our_man.l_store) // pockets!
-					our_man.unEquip(our_man.r_store)
-
-				if (istype(C, /obj/item/clothing/suit/gorka))
-					our_man.unEquip(our_man.l_store)
-					our_man.unEquip(our_man.r_store)
-
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
-				C.forceMove(NULLSPACE)
 				wearing_1 -= C
 				qdel(C)
 		if(stop_loop)
@@ -428,14 +408,9 @@
 			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
-				for(var/obj/item/clothing/accessory/A in C.accessories)
-					A.on_removed()
-					C.accessories -= A
-					C.update_wear_icon()
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
-				C.forceMove(NULLSPACE)
 				wearing_2 -= C
 				qdel(C)
 
@@ -446,7 +421,6 @@
 			if(!(U.required_free_body_parts & bodypart))
 				continue
 			our_man.worn_underwear -= U
-			U.forceMove(NULLSPACE)
 			qdel(U)
 		our_man.update_underwear()
 
