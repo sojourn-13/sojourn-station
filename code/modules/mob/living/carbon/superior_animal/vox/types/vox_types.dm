@@ -284,16 +284,18 @@
 
 /mob/living/carbon/superior/vox/rage/trained/updatehealth()
 	..()
-	//Heal thyself
-	if(stat == CONSCIOUS)
+	//Heal thyself.
+	if(stat == CONSCIOUS && health != maxHealth)
 		adjustBruteLoss(-12)
 		adjustFireLoss(-12)
+		adjustToxLoss(-3)
 
 	//Heal others
 	for(var/mob/living/carbon/superior/vox/V in oview(3))
-		if(V.stat == CONSCIOUS)
+		if(V.stat == CONSCIOUS && health != maxHealth)
 			V.adjustBruteLoss(-6)
 			V.adjustFireLoss(-6)
+			V.adjustToxLoss(-3)
 
 //Looking Bird
 /mob/living/carbon/superior/vox/scout
