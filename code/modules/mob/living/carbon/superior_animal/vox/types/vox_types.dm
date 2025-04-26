@@ -280,22 +280,31 @@
 	armor = list(melee = 8, bullet = 8, energy = 5, bomb = 50, bio = 0, rad = 0)
 
 	drop_items = list(/obj/item/storage/firstaid/regular/empty, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost)
-
+	var/healing_kit = 200
 
 /mob/living/carbon/superior/vox/rage/trained/updatehealth()
 	..()
 	//Heal thyself.
+	if(healing_kit < 0)
+		return
+
 	if(stat == CONSCIOUS && health != maxHealth)
-		adjustBruteLoss(-12)
-		adjustFireLoss(-12)
-		adjustToxLoss(-3)
+		if(bruteloss)
+			adjustBruteLoss(-3)
+			healing_kit -= 3
+		if(fireloss)
+			adjustFireLoss(-3)
+			healing_kit -= 3
 
 	//Heal others
 	for(var/mob/living/carbon/superior/vox/V in oview(3))
 		if(V.stat == CONSCIOUS && health != maxHealth)
-			V.adjustBruteLoss(-6)
-			V.adjustFireLoss(-6)
-			V.adjustToxLoss(-3)
+			if(V.bruteloss)
+				V.adjustBruteLoss(-3)
+				healing_kit -= 3
+			if(V.fireloss)
+				V.adjustFireLoss(-3)
+				healing_kit -= 3
 
 //Looking Bird
 /mob/living/carbon/superior/vox/scout
