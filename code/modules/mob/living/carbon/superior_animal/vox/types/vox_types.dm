@@ -284,10 +284,10 @@
 
 /mob/living/carbon/superior/vox/rage/trained/updatehealth()
 	..()
-	//Heal thyself.
 	if(healing_kit < 0)
 		return
 
+	//Heal thyself.
 	if(stat == CONSCIOUS && health != maxHealth)
 		if(bruteloss)
 			adjustBruteLoss(-3)
@@ -323,3 +323,28 @@
 	ranged = FALSE
 
 	can_burrow = TRUE
+	var/timeout = 0
+
+/mob/living/carbon/superior/vox/scout/pointed(atom/A as mob|obj|turf in view())
+	set name = "Point To"
+	set category = "Object"
+
+	if(istype(A, /obj/effect/decal/point))
+		return FALSE
+
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(_pointed), A))
+
+	usr.visible_message("<b>[src]</b> points to [A]")
+	if(timeout >= world.time)
+		return
+
+	//Small cooldown to prevent lag
+	timeout = world.time + 5 SECONDS
+
+	if(isliving(A))
+		for(var/mob/living/carbon/superior/vox/V in oview(6))
+			V.loseTarget(TRUE,TRUE)
+			V.react_to_attack(A,src,A)
+	if(ishuman(A))
+		var/mob/living/carbon/superior/H = A
+		H.stats.addPerk(PERK_ARMOR_REDUCTION)

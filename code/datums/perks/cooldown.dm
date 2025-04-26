@@ -73,3 +73,12 @@
 		else if(H.ingested.has_reagent("tea"))
 			perk_lifetime -= 0.5 SECONDS
 	..()
+
+/datum/perk/cooldown/armor_reduction
+	name = "Armor Reduction"
+	desc = "Something has pointed out the weaknesses in your stance and armor."
+	icon_state = "shield_no"
+	perk_lifetime = 30 SECONDS //recover this quickly its accually deblitating
+	gain_text = "Everything that attacks you knows exactly where to hit."
+	lose_text = "Everything attacking you no longer know exactly where to attack"
+

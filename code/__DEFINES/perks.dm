@@ -250,5 +250,6 @@
 //Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
+#define PERK_ARMOR_REDUCTION /datum/perk/cooldown/armor_reduction
 //Anti-art
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
