@@ -46,7 +46,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 4
 	melee_damage_upper = 6
-	var/knockdown_odds	= 15
+	knockdown_odds	= 15
 
 /mob/living/simple/hostile/carp/baby/Initialize(worldload)
 	..()
@@ -73,7 +73,7 @@
 	melee_damage_upper = 25
 
 	break_stuff_probability = 100
-	var/knockdown_odds	= 25
+	knockdown_odds	= 25
 
 /mob/living/simple/hostile/carp/pike/Initialize(worldload)
 	..()
@@ -98,7 +98,7 @@
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 
 	break_stuff_probability = 100
-	var/knockdown_odds	= 30
+	knockdown_odds	= 30
 
 /mob/living/simple/hostile/carp/shark/Initialize(worldload)
 	..()
@@ -129,7 +129,7 @@
 						 /obj/item/animal_part/carp_fang) //HOLY GRAIL
 
 	armor = list(melee = 6, bullet = 2, energy = 16, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
-	var/knockdown_odds	= 35
+	knockdown_odds	= 35
 
 /mob/living/simple/hostile/carp/greatwhite/Initialize(worldload)
 	..()
