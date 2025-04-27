@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/pitbull
 	name = "\"Pitbull\" carbine"
-	desc = "The M7 Pitbull was an older bullpup rifle model manufactured by \"Sol Federation\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses 6.5mm Carbine rounds."
+	desc = "The M7 Pitbull was an older bullpup rifle model manufactured by \"Sol Federation\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/pitbull.dmi'
 	icon_state = "pitbull"
 	item_state = "pitbull"
@@ -98,4 +98,3 @@
 /obj/item/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	update_icon()
-

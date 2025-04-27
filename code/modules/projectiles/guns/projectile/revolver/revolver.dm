@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver
 	name = "\"Minotaur\" magnum revolver"
-	desc = "The \"H&S\" \"Minotaur\" is a revolver of choice when you absolutely positively need to make sure a fist-sized hole has someone dead, but can't afford to do it in style. Uses 10mm Magnum bullets... always wanting more."
+	desc = "The \"H&S\" \"Minotaur\" is a revolver of choice when you absolutely positively need to make sure a fist-sized hole has someone dead, but can't afford to do it in style. Uses .40 Magnum bullets... always wanting more."
 	icon = 'icons/obj/guns/projectile/revolver.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"

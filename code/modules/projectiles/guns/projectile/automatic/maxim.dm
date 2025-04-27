@@ -2,7 +2,7 @@
 	name = "Excelsior \"Maxim\" machine gun"
 	desc = "\"There is only one way in which the murderous death agonies of the old society and the bloody birth throes of the new society can be shortened, \
 			simplified and concentrated, and that way is revolutionary terror.\"\nAn old and unsurprisingly deprecated gun from the Excelsior. \
-			One of their most dangerous weapons, effective at dealing with crowds or suppressing firing lines. Uses the unique 7.62mm pan-magazines."
+			One of their most dangerous weapons, effective at dealing with crowds or suppressing firing lines. Uses the unique 7.5mm pan-magazines."
 	icon = 'icons/obj/guns/projectile/maxim.dmi'
 	icon_state = "maxim"
 	item_state = "maxim"
@@ -42,7 +42,7 @@
 
 /obj/item/gun/projectile/automatic/maxim/NM_colony
 	name = "\"Oprichnik\" machine gun"
-	desc = "An old and unsurprisingly deprecated top feeding machine gun chambered in 7.62mm. A dangerous weapon effective at dealing with crowds or suppressing firing lines. Takes specialized pan-magazines from Excelsior Maxims, while being completely free from their taint."
+	desc = "An old and unsurprisingly deprecated top feeding machine gun chambered in 7.5mm. A dangerous weapon effective at dealing with crowds or suppressing firing lines. Takes specialized pan-magazines from Excelsior Maxims, while being completely free from their taint."
 	icon = 'icons/obj/guns/projectile/maxim_colony.dmi'
 	icon_state = "maxim_bs"
 	item_state = "maxim_bs"

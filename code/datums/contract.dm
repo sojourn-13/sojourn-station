@@ -1,6 +1,6 @@
-GLOBAL_LIST_EMPTY(various_antag_contracts)	//Contracts from "Various" emloyers, currently used by contractors, Changelings and Blitzshells
-GLOBAL_LIST_EMPTY(excel_antag_contracts)	//Excelsior contracts
-GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	//Excelsior contracts
+GLOBAL_LIST_EMPTY(various_antag_contracts)		// Contracts from "Various" employers, currently used by Contractors, Changelings and Blitzshells
+GLOBAL_LIST_EMPTY(excel_antag_contracts)		// Excelsior contracts
+GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	// Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
 		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
@@ -36,7 +36,6 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		"a cruciform" = /obj/item/implant/core_implant/cruciform,
 		"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		"Destiny antique laser gun" = /obj/item/gun/energy/captain
-
 	))
 
 GLOBAL_LIST_INIT(blackshield_item_targets,list(
@@ -65,14 +64,13 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"design disk Means of Revolution" = /obj/item/pc_part/drive/disk/design/excelsior_weapons,
 		"design disk Stocking Revolution" = /obj/item/pc_part/drive/disk/design/ex_parts,
 		"design disk Means of Power" = /obj/item/pc_part/drive/disk/design/ex_cells,
-		"design disk 9mm Drozd SMG" = /obj/item/pc_part/drive/disk/design/guns/ex_drozd,
+		"design disk .35 Drozd SMG" = /obj/item/pc_part/drive/disk/design/guns/ex_drozd,
 		"design disk Makarov" = /obj/item/pc_part/drive/disk/design/guns/ex_makarov,
 		"design disk Vintorez" = /obj/item/pc_part/drive/disk/design/guns/ex_vintorez,
 		"design disk Kardashev-Mosin" = /obj/item/pc_part/drive/disk/design/guns/ex_boltgun,
 		"design disk Kalashnikov" = /obj/item/pc_part/drive/disk/design/guns/ex_ak,
 		"design disk Reclaimer" = /obj/item/pc_part/drive/disk/design/guns/ex_reclaimer,
 		"design disk Shpagin" = /obj/item/pc_part/drive/disk/design/guns/ex_ppsh,
-
 	))
 
 /datum/antag_contract
@@ -119,7 +117,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		U.uses += reward
 		break
 
-
 // A contract to steal a specific item - allows you to check all contents (recursively) for the target item
 /datum/antag_contract/item
 
@@ -134,7 +131,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	warning("Item contract does not implement check_contents(): [name] [desc]")
 	return FALSE
 
-
 // A contract to steal a specific file - allows you to check all disks for the target file
 /datum/antag_contract/item/file
 
@@ -148,8 +144,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/item/file/proc/check_files(list/files)
 	warning("File contract does not implement check_files(): [name] [desc]")
 	return FALSE
-
-
 
 /datum/antag_contract/implant
 	name = "Implant"
@@ -225,7 +219,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	if(get_area(sensor) in targets)
 		complete(sensor.owner)
 
-
 /datum/antag_contract/derail
 	name = "Derail"
 	unique = TRUE
@@ -241,7 +234,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	if(completed)
 		return
 	complete(mindfryer.owner)
-
 
 /datum/antag_contract/item/assasinate
 	name = "Assassinate"
@@ -275,7 +267,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/item/assasinate/on_mob_despawned(datum/mind/M)
 	if(M == target_mind)
 		remove()
-
 
 /datum/antag_contract/item/steal
 	name = "Steal"
@@ -322,13 +313,11 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/item/steal/check_contents(list/contents)
 	return locate(target_type) in contents
 
-
 /datum/antag_contract/item/steal/docs
 	unique = TRUE
 	reward = 12
 	target_type = /obj/item/oddity/secdocs
 	desc = "Steal a folder of secret documents and send them via BSDM."
-
 
 /datum/antag_contract/item/dump
 	name = "Dump"
@@ -346,7 +335,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	for(var/obj/item/spacecash/cash in contents)
 		received += cash.worth
 	return received >= sum
-
 
 /datum/antag_contract/item/blood
 	name = "Steal blood samples"
@@ -369,8 +357,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		if(samples.len >= count)
 			return TRUE
 	return FALSE
-
-
 
 /datum/antag_contract/item/file/research
 	name = "Steal research"
@@ -403,8 +389,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 			return TRUE
 	return FALSE
 
-// Excelsior contracts
-
+// Excelsior Contracts
 /datum/antag_contract/excel
 
 /datum/antag_contract/excel/place()
@@ -454,15 +439,14 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/excel/appropriate/can_place()
 	return ..() && target_type
 
-
 // Mandates that target specific crew members
-/datum/antag_contract/excel/targeted  //Base targeted contract is mobilize
+/datum/antag_contract/excel/targeted  // Base targeted contract is mobilize
 	name = "Moblize"
 	reward = 1200
 	var/datum/mind/target_mind
 	var/cruciform_check = FALSE
 	var/desc_text = "by stuffing them alive in the teleporter" // Text for the end of desc, a bit hacky
-	var/command_bias = 15 //Bonus chance for targeting heads and sec
+	var/command_bias = 15 // Bonus chance for targeting heads and sec
 
 /datum/antag_contract/excel/targeted/New()
 	..()
@@ -502,11 +486,11 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	if(M == target_mind)
 		remove()
 
-//Cheks for theses mandates are in /datum/controller/subsystem/ticker/proc/excel_check()
-/datum/antag_contract/excel/targeted/overthrow  //Base targeted contract is mobilize
+// Checks for these mandates are in /datum/controller/subsystem/ticker/proc/excel_check()
+/datum/antag_contract/excel/targeted/overthrow  // Base targeted contract is mobilize
 	name = "Overthrow"
 	reward = 1000
-	command_bias = 100 //Also a bit hacky
+	command_bias = 100 // Also a bit hacky
 	desc_text = "and destabilize the colony by either killing or converting them."
 
 /datum/antag_contract/excel/targeted/liberate
@@ -526,7 +510,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		if(M.completed)
 			continue
 		candidates -= M.targets
-	while(candidates.len && targets.len < 4) //3 out of 4 locations needed
+	while(candidates.len && targets.len < 4) // 3 out of 4 locations needed
 		var/area/target = pick(candidates)
 		if(target.is_maintenance)
 			candidates -= target
@@ -538,8 +522,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/excel/propaganda/can_place()
 	return ..() && targets.len
 
-// Blackshield contracts
-
+// Blackshield Contracts
 /datum/antag_contract/blackshield
 
 /datum/antag_contract/blackshield/place()
@@ -560,10 +543,10 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	for (var/obj/machinery/blackshield_teleporter/t in blackshield_teleporters)
 		t.update_nano_data()
 
-//TODO: Make let them send in other things/place items in areas to allow for addionation points
+// TODO: Make let them send in other things/place items in areas to allow for addionation (is this supposed to additional or is this an ingame thing?) points
 /datum/antag_contract/blackshield/appropriate
 	name = "Appropriate"
-	reward = 200 //How many points we give for items
+	reward = 200 // How many points we give for items
 	var/target_desc
 	var/target_type
 

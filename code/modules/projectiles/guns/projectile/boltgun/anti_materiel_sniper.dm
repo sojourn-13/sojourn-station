@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/heavysniper
 	name = "Anti-Materiel Rifle"
-	desc = "A heavy anti-materiel rifle fitted with a night-vision scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells."
+	desc = "A heavy anti-materiel rifle fitted with a night-vision scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper"
@@ -73,7 +73,7 @@
 
 /obj/item/weaponparts/heavysniper/barrel
 	name = "heavy bore barrel"
-	desc = "This is a hefty barrel bored in 14.5mm, clearly part of an anti-materiel rifle. Needs to be attached to a combination of stock and receiver to finish assembly."
+	desc = "This is a hefty barrel bored in .60-06, clearly part of an anti-materiel rifle. Needs to be attached to a combination of stock and receiver to finish assembly."
 	icon_state = "AMR_barrel"
 
 /obj/item/weaponparts/heavysniper/stock/attackby(obj/item/W, mob/user,)

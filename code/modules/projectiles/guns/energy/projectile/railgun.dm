@@ -43,8 +43,8 @@
 	twohanded = FALSE
 	serial_type = "AG"
 	init_firemodes = list(
-		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurtz_50/railgun, icon="kill"),
-		list(mode_name="Less-lethal", mode_desc="fires a small rubber chunk at light speeds. Still likely to ruin someones day.", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
+		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurz_50/railgun, icon="kill"),
+		list(mode_name="Less-lethal", mode_desc="fires a small rubber chunk at light speeds. Still likely to ruin someones day.", projectile_type=/obj/item/projectile/bullet/kurz_50/rubber/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	price_tag = 1250

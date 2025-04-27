@@ -1,55 +1,60 @@
-/*************
-* Ammunition *
-*************/
+// Uplink Category
 /datum/uplink_item/item/ammo
 	item_cost = 4
 	category = /datum/uplink_category/ammunition
 
+// .35
 /datum/uplink_item/item/ammo/pistol
-	name = "9mm HV box"
+	name = ".35 HV box"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/ammobox/pistol_35/hv
 
 /datum/uplink_item/item/ammo/hpistol
-	name = "9mm HV high-capacity mag"
+	name = ".35 HV high-capacity mag"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/highcap_pistol_35/highvelocity
 
 /datum/uplink_item/item/ammo/smg
-	name = "9mm HV SMG mag"
+	name = ".35 HV SMG mag"
 	item_cost = 2
 	path = /obj/item/ammo_magazine/smg_35/hv
 
+// Darts
 /datum/uplink_item/item/ammo/darts
 	name = "Darts"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/chemdart
 
+// .40 Magnum
 /datum/uplink_item/item/ammo/magnum
-	name = "10mm HV Magnum Mag"
+	name = ".40 HV Magnum Mag"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/magnum_40/hv
 
 /datum/uplink_item/item/ammo/slmagnum
-	name = "10mm HV Magnum Speed Loader"
+	name = ".40 HV Magnum Speed Loader"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity
 
+// .257 Carbine
 /datum/uplink_item/item/ammo/lrifle
-	name = "6.5x39mm HV Carbine Clip"
+	name = ".257 HV Carbine Clip"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/light_rifle_257/highvelocity
 
+// 7.5mm Rifle
 /datum/uplink_item/item/ammo/rifle
-	name = "7.62x39mm HV Rifle Clip"
+	name = "7.5mm HV Rifle Clip"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/rifle_75/highvelocity
 
+// .408 Heavy Rifle
 /datum/uplink_item/item/ammo/hrifle
-	name = "8.6mm Heavy Rifle SLAP Mag"
+	name = ".408 Heavy Rifle SLAP Mag"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/heavy_rifle_408/hv
 
+// Shotgun
 /datum/uplink_item/item/ammo/m12
 	name = "M12 shotgun mag with slugs"
 	item_cost = 2
@@ -75,8 +80,9 @@
 	item_cost = 1
 	path = /obj/item/ammo_magazine/m12/empty
 
+// .60-06 Anti-Materiel
 /datum/uplink_item/item/ammo/sniperammo
-	name = "14.5x114mm AP"
+	name = ".60-06 AP"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/ammobox/antim_small
 
@@ -90,8 +96,8 @@
 	item_cost = 2
 	path = /obj/item/ammo_casing/antim/ion
 
-//Super-class cells, better than what you'll find in a vendor,
-//but not as good as the best maint loot, so scavenging is still encouraged
+// Super-Class Cells
+// Better than vendor items but not as good as the best maint loot, to encourage scavenging
 /datum/uplink_item/item/ammo/cell/small
 	name = "Lonestar \"Robustcell 300S\""
 	item_cost = 2

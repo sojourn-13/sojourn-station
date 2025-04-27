@@ -2,7 +2,7 @@
 	name = "Excelsior \"Drozd\" SMG"
 	desc = "\"The supremacy of the proletariat will cause the enemy to vanish even faster.\"\nAn excellent, fully automatic compact submachinegun. \
 			Famous for its perfomance in close quarters, and used by communist cells such as Excelsior. \
-			Chambered in 10mm, it takes both pistol and SMG magazines."
+			Chambered in .40, it takes both pistol and SMG magazines."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	icon_state = "drozd"
 	item_state = "drozd"
@@ -19,7 +19,7 @@
 	damage_multiplier = 0.95
 	init_recoil = SMG_RECOIL(0.4)
 	twohanded = FALSE
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
@@ -32,7 +32,7 @@
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
-	desc = "An excellent, fully automatic compact submachinegun. Famous for its perfomance in close quarters. Uses 10mm rounds and can take a variety of pistol and SMG magazines.\nThis model of the \"Drozd\" SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = "An excellent, fully automatic compact submachinegun. Famous for its perfomance in close quarters. Uses .40 rounds and can take a variety of pistol and SMG magazines.\nThis model of the \"Drozd\" SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
 	icon = 'icons/obj/guns/projectile/drozd_bs.dmi'
 	icon_state = "drozd-bs"
 	item_state = "drozd-bs"

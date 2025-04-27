@@ -51,7 +51,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/mechanism/machinegun,
 		/datum/design/autolathe/part/barrel/pistol,
 		/datum/design/autolathe/part/barrel/magnum,
-		/datum/design/autolathe/part/barrel/kurtz,
+		/datum/design/autolathe/part/barrel/kurz,
 		/datum/design/autolathe/part/barrel/carbine,
 		/datum/design/autolathe/part/barrel/rifle,
 		/datum/design/autolathe/part/barrel/heavy,

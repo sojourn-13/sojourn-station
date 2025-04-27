@@ -99,7 +99,7 @@
 //Ranger kits
 /obj/item/storage/box/m_kit/custer
 	name = "Custer lever action kit"
-	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
+	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in .408."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/lever/custer(src)
@@ -110,7 +110,7 @@
 
 /obj/item/storage/box/m_kit/viper
 	name = "Viper marksman rifle kit"
-	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.62 with a recoil compensating stock. Perfect for marksmen."
+	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.5mm with a recoil compensating stock. Perfect for marksmen."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba/viper(src)
@@ -152,7 +152,7 @@
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
-	desc = "The standard Marshal box kit containing a Liberty pistol. A 10mm Magnum pistol made by a local Marshal gunsmith near you!"
+	desc = "The standard Marshal box kit containing a Liberty pistol. A .40 Magnum pistol made by a local Marshal gunsmith near you!"
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
@@ -163,7 +163,7 @@
 
 /obj/item/storage/box/m_kit/mistral
 	name = "Mistral Secondary Kit" //WO gets a mateba and with how rest of the weapons are set up, makes sense
-	desc = "The standard Marshal box kit containing a Mistral revolver. A 10mm Magnum revolver used primarily by old timers due to it's reliability and meaty punch.\
+	desc = "The standard Marshal box kit containing a Mistral revolver. A .40 Magnum revolver used primarily by old timers due to it's reliability and meaty punch.\
 	'Do I Feel Lucky?' Well, Do Ya... PUNK?"
 
 	populate_contents()
@@ -175,7 +175,7 @@
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judicary 9mm pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
+	desc = "The standard Marshal box kit containing a Judicary .35 pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
 	Known for its low recoil, ability to fit a durm magazine and being an overall reliable workhorse."
 
 	populate_contents()
@@ -188,14 +188,14 @@
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
 	name = "Deckard Secondary Kit"
-	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six 12mm rounds."
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six .50 Kurz rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/zwang
@@ -222,13 +222,13 @@
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
 	name = "\improper Mateba Secondary Kit"
-	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
+	desc = "An equipment kit containing a specialized semiautomatic .50 Kurz revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/galaxy
@@ -243,12 +243,12 @@
 
 /obj/item/storage/box/m_kit/amnesty
 	name = "\"Amnesty\" Heavy Pistol Kit"
-	desc = "A kit containing the prototype \"Amnesty\" heavy pistol, a 12mm powerhouse of improvement over improvement of the \"Lamia\" pattern"
+	desc = "A kit containing the prototype \"Amnesty\" heavy pistol, a .50 Kurz powerhouse of improvement over improvement of the \"Lamia\" pattern"
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Armor Kits

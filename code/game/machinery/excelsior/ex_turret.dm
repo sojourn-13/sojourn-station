@@ -4,7 +4,7 @@
 
 /obj/machinery/porta_turret/excelsior
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
-	desc = "A fully automated anti infantry platform. Fires 7.62mm rounds."
+	desc = "A fully automated anti infantry platform. Fires 7.5mm rounds."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
@@ -12,9 +12,9 @@
 	circuit = /obj/item/circuitboard/excelsior_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
-	var/ammo = 0 // number of bullets left.
+	var/ammo = 0 // Number of bullets left.
 	var/ammo_max = 160
-	var/working_range = 30 // how far this turret operates from excelsior teleporter
+	var/working_range = 30 // How far this turret operates from excelsior teleporter
 	faction_iff = "excelsior"
 	health = 300
 	maxHealth = 300
@@ -26,7 +26,7 @@
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
-		if (dist3D(src, a) <= working_range) //The turret and teleporter can be on a different zlevel
+		if (dist3D(src, a) <= working_range) // The turret and teleporter can be on a different zlevel
 			return TRUE
 	return FALSE
 
@@ -70,7 +70,7 @@
 	return FALSE
 
 /obj/machinery/porta_turret/excelsior/attackby(obj/item/ammo_magazine/I, mob/user)
-	log_and_message_admins(" - Exc Turret being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+	log_and_message_admins(" - Exc Turret being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") // So we can go to it
 	if(istype(I, ammo_box) && I.stored_ammo.len)
 		if(ammo >= ammo_max)
 			to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
@@ -119,20 +119,20 @@
 	if(is_excelsior(L))
 		return TURRET_NOT_TARGET
 
-	if(L.faction == "excelsior") //Dont target colony pets if were allied with them
+	if(L.faction == "excelsior") // Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET
 
-	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
+	return TURRET_PRIORITY_TARGET	// If the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
 
 /obj/machinery/porta_turret/excelsior/tryToShootAt()
 	if(!ammo)
 		return FALSE
 	..()
 
-// this turret has no cover, it is always raised
+// This turret has no cover, it is always raised
 /obj/machinery/porta_turret/excelsior/popUp()
 	raised = TRUE
 
@@ -150,13 +150,12 @@
 	ammo--
 	..()
 
-
 //Guild brand auto turrets.
 /obj/machinery/porta_turret/artificer
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
 	name = "artificer turret"
 	desc = "A fully automated battery powered self-repairing anti-wildlife turret platform built by the Artificer's Guild. It features a three round burst fire automatic and an integrated \
-	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.62mm rounds and holds up to 180. Capable of IFF."
+	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.5mm rounds and holds up to 180. Capable of IFF."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
@@ -165,7 +164,7 @@
 	circuit = /obj/item/circuitboard/artificer_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
-	var/ammo = 0 // number of bullets left.
+	var/ammo = 0 // Number of bullets left.
 	var/ammo_max = 180
 	var/obj/item/cell/large/cell = null
 	friendly_to_colony = 1 //Artificers perfection.
@@ -242,8 +241,8 @@
 	if (user.a_intent == I_HELP)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
-				//If the turret is destroyed, you can remove it with a crowbar to
-				//try and salvage its components
+				// If the turret is destroyed, you can remove it with a crowbar to
+				// try and salvage its components
 				to_chat(user, SPAN_NOTICE("You begin prying the metal coverings off."))
 				if(do_after(user, 20, src))
 					if(prob(70))
@@ -256,16 +255,16 @@
 							new /obj/item/device/assembly/prox_sensor(loc)
 					else
 						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
-					qdel(src) // qdel
-				return TRUE //No whacking the turret with tools on help intent
+					qdel(src)
+				return TRUE // No whacking the turret with tools on help intent
 
 		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 			if(enabled)
 				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
-				return TRUE //No whacking the turret with tools on help intent
+				return TRUE // No whacking the turret with tools on help intent
 			if(!anchored && isinspace())
 				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
-				return TRUE //No whacking the turret with tools on help intent
+				return TRUE // No whacking the turret with tools on help intent
 
 			user.visible_message( \
 					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
@@ -273,7 +272,7 @@
 				)
 
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-				//This code handles moving the turret around. After all, it's a portable turret!
+				// This code handles moving the turret around. After all, it's a portable turret!
 				if(!anchored)
 					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 					anchored = TRUE
@@ -292,7 +291,7 @@
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
-			return TRUE //No whacking the turret with tools on help intent
+			return TRUE // No whacking the turret with tools on help intent
 
 		else if(istype(I, /obj/item/cell/large))
 			if(cell)
@@ -302,13 +301,13 @@
 				I.forceMove(src)
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
-			return TRUE //No whacking the turret with cells on help intent
+			return TRUE // No whacking the turret with cells on help intent
 
 		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
-				return TRUE //No whacking the turret with ammo boxes on help intent
+				return TRUE // No whacking the turret with ammo boxes on help intent
 
 			var/transfered_ammo = 0
 			for(var/obj/item/ammo_casing/AC in A.stored_ammo)
@@ -319,7 +318,7 @@
 				if(ammo == ammo_max)
 					break
 			to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
-			return TRUE //No whacking the turret with ammo boxes on help intent
+			return TRUE // No whacking the turret with ammo boxes on help intent
 
 	else
 		..()
@@ -349,7 +348,7 @@
 	if(L.stat == DEAD)
 		return TURRET_NOT_TARGET
 
-	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
+	if(!emagged && colony_allied_turret && L.colony_friend) // Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(emagged)	// If emagged not even the dead get a rest
@@ -367,7 +366,7 @@
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET
 
-	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
+	return TURRET_PRIORITY_TARGET	// If the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
 
 /obj/machinery/porta_turret/artificer/tryToShootAt()
 	if(!ammo)
@@ -380,7 +379,7 @@
 	if(!istype(T) || !istype(U))
 		return
 
-	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
+	if(!raised) // The turret has to be raised in order to fire - makes sense, right?
 		return
 
 	launch_projectile(target)
@@ -389,7 +388,7 @@
 	sleep(shot_delay)
 	launch_projectile(target)
 
-// this turret has no cover, it is always raised
+// This turret has no cover, it is always raised
 /obj/machinery/porta_turret/artificer/popUp()
 	raised = TRUE
 
@@ -409,7 +408,7 @@
 
 /obj/machinery/porta_turret/artificer/opifex
 	name = "opifex scrap turret"
-	desc = "A fully automated battery powered anti-wildlife turret designed by the opifex. It features a three round burst barrel and isn't as sturdy nor as functional as other turrets. Fires 7.62mm rounds and holds only a measly 30 rounds."
+	desc = "A fully automated battery powered anti-wildlife turret designed by the opifex. It features a three round burst barrel and isn't as sturdy nor as functional as other turrets. Fires 7.5mm rounds and holds only a measly 30 rounds."
 	circuit = /obj/item/circuitboard/artificer_turret/opifex
 	ammo_max = 30
 	health = 75
@@ -418,8 +417,8 @@
 	if (user.a_intent != I_HURT)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
-				//If the turret is destroyed, you can remove it with a crowbar to
-				//try and salvage its components
+				// If the turret is destroyed, you can remove it with a crowbar to
+				// try and salvage its components
 				to_chat(user, SPAN_NOTICE("You begin prying the metal coverings off."))
 				if(do_after(user, 20, src))
 					if(prob(70))
@@ -448,7 +447,7 @@
 				)
 
 			if(do_after(user, 50, src))
-				//This code handles moving the turret around. After all, it's a portable turret!
+				// This code handles moving the turret around. After all, it's a portable turret!
 				if(!anchored)
 					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 					anchored = TRUE

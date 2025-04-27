@@ -6,27 +6,27 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 
 // Marshals section
 /datum/design/autolathe/gun_frame/judiciary
-	name = "9mm judiciary pistol - frame"
+	name = ".35 judiciary pistol - frame"
 	build_path = /obj/item/part/gun/frame/judiciary
 
 /datum/design/autolathe/gun_frame/colt
-	name = "10mm liberty pistol - frame"
+	name = ".40 liberty pistol - frame"
 	build_path = /obj/item/part/gun/frame/colt
 
 /datum/design/autolathe/gun_frame/amnesty
-	name = "12mm amnesty pistol - frame"
+	name = ".50 Kurz amnesty pistol - frame"
 	build_path = /obj/item/part/gun/frame/amnesty
 
 /datum/design/autolathe/gun_frame/freedom
-	name = "10mm freedom SMG - frame"
+	name = ".40 freedom SMG - frame"
 	build_path = /obj/item/part/gun/frame/freedom
 
 /datum/design/autolathe/gun_frame/judge
-	name = "7.62mm judge revolver - frame"
+	name = "7.5mm judge revolver - frame"
 	build_path = /obj/item/part/gun/frame/judge
 
 /datum/design/autolathe/gun_frame/mamba
-	name = "6.5mm / 7.62mm mamba - frame"
+	name = ".257 / 7.5mm mamba - frame"
 	build_path = /obj/item/part/gun/frame/mamba
 
 /datum/design/autolathe/gun_frame/specop
@@ -38,29 +38,29 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/opshot
 
 /datum/design/autolathe/gun_frame/takeshi
-	name = "6.5mm takeshi - frame"
+	name = ".257 takeshi - frame"
 	build_path = /obj/item/part/gun/frame/tk
 
 /datum/design/autolathe/gun_frame/wind
-	name = "6.5mm/7.62mm Wind frame"
+	name = ".257/7.5mm Wind frame"
 	build_path = /obj/item/part/gun/frame/nord
 
 //Marshal Surplus
 
 /datum/design/autolathe/gun_frame/glock
-	name = "9mm sky - frame"
+	name = ".35 sky - frame"
 	build_path = /obj/item/part/gun/frame/glock
 
 /datum/design/autolathe/gun_frame/ladon
-	name = "10mm ladon - frame"
+	name = ".40 ladon - frame"
 	build_path = /obj/item/part/gun/frame/ladon
 
 /datum/design/autolathe/gun_frame/grease
-	name = "9mm greasegun/texan - frame"
+	name = ".35 greasegun/texan - frame"
 	build_path = /obj/item/part/gun/frame/grease
 
 /datum/design/autolathe/gun_frame/canine
-	name = "6.5mm K9 frame"
+	name = ".257 K9 frame"
 	build_path = /obj/item/part/gun/frame/bulldog
 
 /datum/design/autolathe/gun_frame/gladstone
@@ -68,21 +68,21 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/gladstone
 
 /datum/design/autolathe/gun_frame/bastard
-	name = "6.5mm bastard smg - frame"
+	name = ".257 bastard smg - frame"
 	build_path = /obj/item/part/gun/frame/bastard
 
 /datum/design/autolathe/gun_frame/dp
-	name = "7.62mm DP27 - frame"
+	name = "7.5mm DP27 - frame"
 	build_path = /obj/item/part/gun/frame/dp27
 
 //Blackshield guns.
 
 /datum/design/autolathe/gun_frame/discountnordwind
-	name = "6.5mm/7.62 carbine/rifle- frame"
+	name = ".257/7.5mm carbine/rifle- frame"
 	build_path = /obj/item/part/gun/frame/discountnordwind
 
 /datum/design/autolathe/gun_frame/omni
-	name = "8.6mm omni - frame"
+	name = ".408 omni - frame"
 	build_path = /obj/item/part/gun/frame/omni
 
 // Retail section - low-end guns for LSS to order gun-frame disks for. Allows more guns per-disk at a cheaper overall price, realistically.

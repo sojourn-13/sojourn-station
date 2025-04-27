@@ -279,23 +279,23 @@
 
 //Barrels
 /datum/design/autolathe/part/barrel/pistol
-	name = "firearm 9mm pistol barrel"
+	name = "firearm .35 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/pistol
 
 /datum/design/autolathe/part/barrel/magnum
-	name = "firearm 10mm pistol barrel"
+	name = "firearm .40 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/magnum
 
-/datum/design/autolathe/part/barrel/kurtz
-	name = "firearm 12mm pistol barrel"
-	build_path = /obj/item/part/gun/barrel/kurtz
+/datum/design/autolathe/part/barrel/kurz
+	name = "firearm .50 Kurz pistol barrel"
+	build_path = /obj/item/part/gun/barrel/kurz
 
 /datum/design/autolathe/part/barrel/carbine
-	name = "firearm 6.5mm carbine barrel"
+	name = "firearm .257 carbine barrel"
 	build_path = /obj/item/part/gun/barrel/srifle
 
 /datum/design/autolathe/part/barrel/rifle
-	name = "firearm 7.62mm rifle barrel"
+	name = "firearm 7.5mm rifle barrel"
 	build_path = /obj/item/part/gun/barrel/lrifle
 
 /datum/design/autolathe/part/barrel/caseless
@@ -303,7 +303,7 @@
 	build_path = /obj/item/part/gun/barrel/clrifle
 
 /datum/design/autolathe/part/barrel/heavy
-	name = "firearm 8.6mm heavy rifle barrel"
+	name = "firearm .408 heavy rifle barrel"
 	build_path = /obj/item/part/gun/barrel/hrifle
 
 /datum/design/autolathe/part/barrel/shotgun
@@ -311,25 +311,25 @@
 	build_path = /obj/item/part/gun/barrel/shotgun
 
 /datum/design/autolathe/part/barrel/amr
-	name = "firearm 14.5mm anti-materiel rifle barrel"
+	name = "firearm .60-06 anti-materiel rifle barrel"
 	build_path = /obj/item/part/gun/barrel/antim
 
 // Bootleg steel parts - for the shitty disk.
 
 /datum/design/autolathe/part/barrel/pistol/steel
-	name = "firearm steel 9mm pistol barrel"
+	name = "firearm steel .35 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/pistol/steel
 
 /datum/design/autolathe/part/barrel/magnum/steel
-	name = "firearm steel 10mm pistol barrel"
+	name = "firearm steel .40 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/magnum/steel
 
 /datum/design/autolathe/part/barrel/carbine/steel
-	name = "firearm steel 6.5mm carbine barrel"
+	name = "firearm steel .257 carbine barrel"
 	build_path = /obj/item/part/gun/barrel/srifle/steel
 
 /datum/design/autolathe/part/barrel/rifle/steel
-	name = "firearm steel 7.62mm rifle barrel"
+	name = "firearm steel 7.5mm rifle barrel"
 	build_path = /obj/item/part/gun/barrel/lrifle/steel
 
 /datum/design/autolathe/part/barrel/shotgun/steel

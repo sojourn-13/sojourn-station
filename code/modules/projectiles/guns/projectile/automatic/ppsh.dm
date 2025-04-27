@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/ppsh
 	name = "Excelsior \"Shpagin\" assault SMG"
-	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live on the pure hatred we feel. We cannot love. We destroy. We shout. We burn.\"\nAn experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. For the union, for the future."
+	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live on the pure hatred we feel. We cannot love. We destroy. We shout. We burn.\"\nAn experimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35. For the union, for the future."
 	icon = 'icons/obj/guns/projectile/ppsh.dmi'
 	icon_state = "ppsh"
 	item_state = "ppsh"
@@ -17,7 +17,7 @@
 	price_tag = 1000
 	penetration_multiplier = 1.2
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	init_recoil = SMG_RECOIL(1.2)
@@ -34,7 +34,7 @@
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
-	desc = "An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm.\nThis model of the \"Shpagin\" assault SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = "An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35.\nThis model of the \"Shpagin\" assault SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
 	icon = 'icons/obj/guns/projectile/ppsh_bs.dmi'
 	icon_state = "ppsh_bs"
 	item_state = "ppsh_bs"
@@ -57,7 +57,7 @@
 /obj/item/gun/projectile/automatic/ppsh/ppv
 	name = "\"Semyonovich\" assault SMG"
 	desc = "Some madmans bastardized yet idealized version of the past; while improved, its meaning and worth are lost to time. \
-		 An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm." // Don't add communist spiel on de-excelsiored guns for consistency, please.
+		 An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35." // Don't add communist spiel on de-excelsiored guns for consistency, please.
 	icon = 'icons/obj/guns/projectile/ppv.dmi'
 	icon_state = "ppv"
 	item_state = "ppv"

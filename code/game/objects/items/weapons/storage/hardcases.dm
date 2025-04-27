@@ -156,7 +156,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
-	storage_slots = 14 //336 rounds of 12mm. Really annoying big ammo box! More or less.
+	storage_slots = 14 //336 rounds of .50 Kurz. Really annoying big ammo box! More or less.
 	max_w_class = ITEM_SIZE_SMALL //no drum mags or big boxes etc.
 
 	can_hold = list(
@@ -207,8 +207,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
@@ -385,7 +385,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/tool/medmultitool,
 		/obj/item/tool/tape_roll,
-		/obj/item/bodybag
+		/obj/structure/closet/body_bag
 		)
 
 /obj/item/storage/hcases/med/scrap

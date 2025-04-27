@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/longboi
 	name = "\"Long\" revolver"
 	desc = "A novelty revolver made by the Lonestar with an incredously long barrel favored by those with more sense and style, its extended barrel gives it incredible recoil control but inexplicably reduces stopping power and penetration. \
-	Uses 12mm."
+	Uses .50 Kurz."
 	icon = 'icons/obj/guns/projectile/Long_Revolver.dmi'
 	icon_state = "longRevolver"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
@@ -15,7 +15,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1.1)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	twohanded = TRUE
 	serial_type = "LSS"
 	wield_delay = 0.5 SECOND

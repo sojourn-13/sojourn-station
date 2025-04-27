@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/detective
 	name = "\"Havelock\" revolver"
-	desc = "A cheap H&S J-frame revolver, simple, reliable, uses 9mm."
+	desc = "A cheap H&S J-frame revolver, simple, reliable, uses .35."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
 	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	icon_state = "detective"
@@ -15,7 +15,7 @@
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.5) //Rule of Cool
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "H&S"
 
 	wield_delay = 0 SECOND //god it's bad

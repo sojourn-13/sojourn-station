@@ -35758,7 +35758,7 @@
 /area/nadezhda/hallway/side/f2section3)
 "bNs" = (
 /obj/structure/closet/crate/secure/weapon{
-	name = "6.5mm ammo crate"
+	name = ".257 ammo crate"
 	},
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
@@ -36577,9 +36577,9 @@
 	name = "pistol crate"
 	},
 /obj/item/gun/projectile/revolver/minstral,
-/obj/item/ammo_magazine/ammobox/kurtz_50,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
+/obj/item/ammo_magazine/ammobox/kurz_50,
+/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
+/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "bPd" = (

@@ -4,7 +4,7 @@
 
 /obj/item/gun/projectile/automatic/lmg
 	name = "SA \"SAW\""
-	desc = "An extremely rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
+	desc = "An extremely rare HMG produced on a commision. Uses 7.5mm Rifle rounds."
 	description_info = "To reload, use an empty hand on it to open its cover, then again to take out the ammo box if any. Insert the linked box, then use in-hand to close it."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
@@ -132,7 +132,7 @@
 /obj/item/gun/projectile/automatic/lmg/tk
 	name = "\"Takeshi\" suppression machinegun"
 	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a well oiled machine of war and death. \
-			Takes 6.5mm linked boxes as well as normal carbine magazines."
+			Takes .257 linked boxes as well as normal carbine magazines."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
 	icon_state = "tk"
@@ -160,7 +160,7 @@
 	name = " \"Heroic\" General Purpose Machinegun"
 	desc = "The \"Heroic\" General Purpose Machinegun was created by Nadezhda Marshals in response to Blackshield's lack of suppressing fire armaments. \
 			Inspired by Seinemetall's Takeshi LMG, this GPMG features decent recoil control for its bore, and the bizarre capability of being silenced. \
-			Chambered in 7.62x39mm and meant for entrenched defense, its high rate of fire can mow down wave after wave of armored hostiles with sheer brutality."
+			Chambered in 7.5x39mm and meant for entrenched defense, its high rate of fire can mow down wave after wave of armored hostiles with sheer brutality."
 	icon = 'icons/obj/guns/projectile/heroic.dmi'
 	icon_base = "heroic" // Sprites by Albert7076
 	icon_state = "heroic"

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/ak47
 	name = "Excelsior \"Kalashnikov\" rifle"
 	desc = "\"We stand for organised terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
-		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.62mm. This is an abysmal, printed copy."
+		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. This is an abysmal, printed copy."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -46,7 +46,7 @@
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
-	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.62mm. \nThis abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \nThis abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
@@ -142,7 +142,7 @@
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A copy of the AKM pattern, shortened into a mid-length rifle and chambered in 7.62mm. The left arm of the unfree world."
+		 A copy of the AKM pattern, shortened into a mid-length rifle and chambered in 7.5mm. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -159,7 +159,7 @@
 /obj/item/gun/projectile/automatic/ak47/sa/sawn
 	name = "sawn-off \"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A copy of the AKM pattern chambered in 7.62mm and crudely sawed down to a shadow of its former self. The Rifle was fine before. Was."
+	A copy of the AKM pattern chambered in 7.5mm and crudely sawed down to a shadow of its former self. The Rifle was fine before. Was."
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -245,7 +245,7 @@
 /obj/item/gun/projectile/automatic/ak47/makeshift
 	name = "Homemade \"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-			This is a copy of an ancient semi-automatic rifle chambered for 7.62mm. If it won't fire, percussive maintenance should get it working again. \
+			This is a copy of an ancient semi-automatic rifle chambered for 7.5mm. If it won't fire, percussive maintenance should get it working again. \
 			It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
 			This crude copy shows just how forgiving the design can be."
 	icon = 'icons/obj/guns/projectile/ak_homemade.dmi'
@@ -297,5 +297,5 @@
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47/makeshift)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle/steel
-	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)	//6.5mm or 7.62mm.
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)	//.257 or 7.5mm.
 	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.

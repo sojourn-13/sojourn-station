@@ -33,10 +33,10 @@
 
 /obj/item/gun/projectile/revolver/artwork_revolver/proc/ensure_updates()
 	if(caliber == CAL_PISTOL)
-		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_9MM)// if we get 9mm then we should take 9mm upgrades
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_35)// if we get .35 then we should take .35 upgrades
 
 	if(caliber == CAL_PISTOL)
-		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)// if we get 12mm then we should take 12mm upgrades
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)// if we get .50 Kurz then we should take .50 Kurz upgrades
 
 
 	if(recoil)

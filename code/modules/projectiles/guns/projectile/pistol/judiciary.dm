@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/judiciary
 	name = "\"Judiciary\" pistol"
-	desc = "A common Nadezhda Marshal issue pistol chambered in 9mm. This pistol appears to be the workhorse of Marshals, a near staple found in pictures on nearly any recruiting ad. \
+	desc = "A common Nadezhda Marshal issue pistol chambered in .35. This pistol appears to be the workhorse of Marshals, a near staple found in pictures on nearly any recruiting ad. \
 			By the looks of the mag-loading mechanism this firearm is strangely able to take standard, high-cap and drum magazines! Truely a marvel of engineering; even... if it feels unsteady when holding the drum."
 	icon = 'icons/obj/guns/projectile/judiciary.dmi'
 	icon_state = "judiciary"
@@ -16,7 +16,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 	zoom_factors = list(0.2)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	init_recoil = HANDGUN_RECOIL(0.8)
 	auto_eject = TRUE
 	init_firemodes = list(

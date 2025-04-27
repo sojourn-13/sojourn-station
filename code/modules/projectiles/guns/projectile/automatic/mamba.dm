@@ -1,9 +1,9 @@
 /////////////////////////
-//6.5mm Mamba, Standard//
+//.257 Mamba, Standard//
 /////////////////////////
 /obj/item/gun/projectile/automatic/mamba
 	name = "\"Mamba\" carbine"
-	desc = "Cheaply produced, versatile and made for mass usage are all traits of the 6.5mm \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports an adjustable folding-stock and a holographic sight."
+	desc = "Cheaply produced, versatile and made for mass usage are all traits of the .257 \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports an adjustable folding-stock and a holographic sight."
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
@@ -67,12 +67,12 @@
 	update_icon()
 
 ////////////////////
-//7.62mm Viper DMR//
+//7.5mm Viper DMR//
 ////////////////////
 /obj/item/gun/projectile/automatic/mamba/viper
 	name = "\"Viper\" marksman rifle"
 	desc = "The \"Viper\" designated marksman rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine. \
-	Chambered in 7.62 and sporting a special recoil-compensating stock, along with an improved scope, the \"Viper\" acts as a perfect intermediate rifle between that of a battle rifle and a sniper; perfect for flexibility in the field."
+	Chambered in 7.5mm and sporting a special recoil-compensating stock, along with an improved scope, the \"Viper\" acts as a perfect intermediate rifle between that of a battle rifle and a sniper; perfect for flexibility in the field."
 	icon_state = "viper"
 	item_state = "viper"
 	icon = 'icons/obj/guns/projectile/viper.dmi'
@@ -98,12 +98,12 @@
 	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /////////////////////////////////////////
-//7.62mm Copperhead w/ grenade launcher//
+//7.5mm Copperhead w/ grenade launcher//
 /////////////////////////////////////////
 /obj/item/gun/projectile/automatic/mamba/copperhead
 	name = "\"Copperhead\" battle rifle"
 	desc = "The \"Copperhead\" rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine. \
-	Chambered in 7.62mm and sporting a carry handle the \"Copperhead\" is intended both as a squad support weapon and as a battle rifle sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
+	Chambered in 7.5mm and sporting a carry handle the \"Copperhead\" is intended both as a squad support weapon and as a battle rifle sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
@@ -170,12 +170,12 @@
 		to_chat(user, "\The [launcher] is empty.")
 
 //////////////////
-//7.62mm Python//
+//7.5mm Python//
 /////////////////
 /obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"
 	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability and an internal stabilization system. \
-	Chambered in the heavy 8.6mm for velocity and armor peircing capability, able to punch well above its weight even compared to other 8.6mm rifles. However, due to its design, it seems incapable of taking drum magazines."
+	Chambered in the heavy .408 for velocity and armor peircing capability, able to punch well above its weight even compared to other .408 rifles. However, due to its design, it seems incapable of taking drum magazines."
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'
@@ -190,7 +190,7 @@
 	damage_multiplier = 1.2			//~33 damage base. Same as longarm.
 	penetration_multiplier = 1.4
 	zoom_factors = list(0.6, 1.2)
-	extra_damage_mult_scoped = 0.4	//1.6 total; STRONG due to chambered in 8.6mm. ~42 damage base.
+	extra_damage_mult_scoped = 0.4	//1.6 total; STRONG due to chambered in .408. ~42 damage base.
 	init_recoil = RIFLE_RECOIL(0.8)	//More recoil than Longarm, because it slaps harder.
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)

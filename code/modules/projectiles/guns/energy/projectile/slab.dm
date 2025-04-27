@@ -11,7 +11,7 @@
 	self_recharge = 1
 	recharge_time = 20
 	charge_cost = 100
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/railgun
+	projectile_type = /obj/item/projectile/bullet/kurz_50/railgun
 	damage_multiplier = 1.3 //Less capacity and charge speed than a Posi'd Myrmidion, even when fully tuned; hits like a brick, to compensate.
 	penetration_multiplier = 1.3
 	cell_type = /obj/item/cell/medium/guild
@@ -45,4 +45,3 @@
 			to_chat(user, SPAN_NOTICE("Through your mechanical knowledge, you manage to overclock the Slab's reactor. It's now running at [round((charge_bonus * 6.6),5)]% efficiency!"))
 	if(!successful_fix)
 		to_chat(user, SPAN_NOTICE("Try as you might, you can't figure out how to improve the Slab's operation."))
-

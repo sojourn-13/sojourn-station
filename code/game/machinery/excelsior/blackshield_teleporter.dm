@@ -38,7 +38,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/highcap_pistol_35/drum = 125,
 		/obj/item/ammo_magazine/smg_35 = 35,
 		/obj/item/ammo_magazine/magnum_40 = 40,
-		/obj/item/ammo_magazine/kurtz_50 = 60,
+		/obj/item/ammo_magazine/kurz_50 = 60,
 		/obj/item/ammo_magazine/speed_loader_light_rifle_257 = 15,
 		/obj/item/ammo_magazine/speed_loader_rifle_75 = 15, //More or less for ammo rather then speedloader
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
@@ -49,7 +49,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/sbaw = 50,
 		/obj/item/ammo_magazine/ammobox/pistol_35 = 75,
 		/obj/item/ammo_magazine/ammobox/magnum_40 = 150,
-		/obj/item/ammo_magazine/ammobox/kurtz_50 = 200,
+		/obj/item/ammo_magazine/ammobox/kurz_50 = 200,
 		/obj/item/ammo_magazine/ammobox/shotgun = 500,
 		/obj/item/ammo_magazine/ammobox/light_rifle_257 = 300,
 		/obj/item/ammo_magazine/ammobox/rifle_75 = 400,

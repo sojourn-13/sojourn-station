@@ -397,7 +397,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 /obj/item/part/gun/barrel
 	name = "generic barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction."
-	icon_state = "barrel_9mm"
+	icon_state = "barrel_.35"
 	generic = FALSE
 	matter = list(MATERIAL_PLASTEEL = 4)
 	price_tag = 200
@@ -405,32 +405,32 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	var/refence_for_legal = "baseline"
 
 /obj/item/part/gun/barrel/pistol
-	name = "9mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 9mm."
-	icon_state = "barrel_9mm"
+	name = ".35 pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .35."
+	icon_state = "barrel_.35"
 	price_tag = 100
 	caliber = CAL_PISTOL
 	refence_for_legal = "pistol"
 
 /obj/item/part/gun/barrel/magnum
-	name = "10mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 10mm."
+	name = ".40 pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .40."
 	icon_state = "barrel_10mm"
 	price_tag = 125
 	caliber = CAL_MAGNUM
 	refence_for_legal = "magnum"
 
-/obj/item/part/gun/barrel/kurtz
-	name = "12mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 12mm."
+/obj/item/part/gun/barrel/kurz
+	name = ".50 Kurz pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .50 Kurz."
 	icon_state = "barrel_12mm"
 	price_tag = 150
 	caliber = CAL_50
-	refence_for_legal = "kurtz"
+	refence_for_legal = "kurz"
 
 /obj/item/part/gun/barrel/srifle
-	name = "6.5mm carbine barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 6.5mm carbine."
+	name = ".257 carbine barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .257 carbine."
 	icon_state = "barrel_carbine"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_LRIFLE
@@ -445,16 +445,16 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "clrifle"
 
 /obj/item/part/gun/barrel/lrifle
-	name = "7.62mm rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.62mm rifle."
+	name = "7.5mm rifle barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.5mm rifle."
 	icon_state = "barrel_rifle"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_RIFLE
 	refence_for_legal = "lrifle"
 
 /obj/item/part/gun/barrel/hrifle
-	name = "8.6mm heavy rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle."
+	name = ".408 heavy rifle barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .408 heavy rifle."
 	icon_state = "barrel_heavy"
 	matter = list(MATERIAL_PLASTEEL = 10)
 	caliber = CAL_HRIFLE
@@ -469,8 +469,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "shotgun"
 
 /obj/item/part/gun/barrel/antim
-	name = "14.5mm AMR barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered in 14.5mm AMR."
+	name = ".60-06 AMR barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered in .60-06 AMR."
 	icon_state = "barrel_amr"
 	matter = list(MATERIAL_PLASTEEL = 16)
 	caliber = CAL_ANTIM
@@ -478,26 +478,26 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 // steel barrels
 /obj/item/part/gun/barrel/pistol/steel
-	name = "cheap 9mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 9mm. \
+	name = "cheap .35 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .35. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/part/gun/barrel/magnum/steel
-	name = "cheap 10mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 10mm. \
+	name = "cheap .40 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .40. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 2)
 
-/obj/item/part/gun/barrel/kurtz/steel
-	name = "cheap 12mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 12mm. \
+/obj/item/part/gun/barrel/kurz/steel
+	name = "cheap .50 Kurz barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .50 Kurz. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/srifle/steel
-	name = "cheap 6.5mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 6.5mm carbine. \
+	name = "cheap .257 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .257 carbine. \
 			 This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 
@@ -508,13 +508,13 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/lrifle/steel
-	name = "cheap 7.62 barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.62mm rifle. \
+	name = "cheap 7.5 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.5mm rifle. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/hrifle/steel
-	name = "cheap 8.6mm heavy rifle barrel"
+	name = "cheap .408 heavy rifle barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle. \
 			This one does not look as high quality."
 	icon_state = "barrel_heavy"

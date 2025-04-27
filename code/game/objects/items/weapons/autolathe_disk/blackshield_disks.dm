@@ -1,4 +1,4 @@
-//Blackshield
+// Blackshield
 /obj/item/pc_part/drive/disk/design/blackshield
 	disk_name = ""
 	name = "Blackshield 'Shall-not-be-Infringed' Pack"
@@ -7,26 +7,26 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/ladon,
-		//SMGs
+		// SMGs
 		/datum/design/autolathe/gun/ppv = 3,
 		/datum/design/autolathe/gun/triage = 3,
-		//rifles
+		// Rifles
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 4,
 		/datum/design/autolathe/gun/rds_omnicarbine = 5,
-		//shotguns
+		// Shotguns
 		/datum/design/autolathe/gun/bounty_lever = 3,
 		/datum/design/autolathe/gun/hustler = 5,
-		//machinegun
+		// Machine Guns
 		/datum/design/autolathe/gun/heroic = 6,
-		//grenade launcher
+		// Grenade Launchers
 		/datum/design/autolathe/gun/grenade_launcher_china_lake = 4,
-		//Frames
+		// Frames
 		/datum/design/autolathe/gun_frame/discountnordwind,
 		/datum/design/autolathe/gun_frame/omni = 2,
 		/datum/design/autolathe/gun_frame/dp = 4,
-		//Misc
+		// Misc
 		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
@@ -38,7 +38,7 @@
 	license = 30
 
 	designs = list(
-		//Magazines
+		// Magazines
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/pistol_rubber,
@@ -54,10 +54,10 @@
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
 		/datum/design/autolathe/ammo/sbaw_empty = 0,
 		/datum/design/autolathe/ammo/sbaw_beanbag,
 		/datum/design/autolathe/ammo/sbaw_pellet,
@@ -66,7 +66,7 @@
 		/datum/design/autolathe/ammo/m12beanbag = 2,
 		/datum/design/autolathe/ammo/m12pellet = 2,
 		/datum/design/autolathe/ammo/m12slug = 2,
-		/datum/design/autolathe/ammo/shotgun_box = 3, //Might want to up these, but really only a ten point difference from the other disk.
+		/datum/design/autolathe/ammo/shotgun_box = 3, // Might want to up these, but really only a ten point difference from the other disk.
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_rubber,
@@ -83,7 +83,7 @@
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_drum = 2,
 		/datum/design/autolathe/ammo/hrifle_drum_empty = 1,
-		//Boxes
+		// Boxes
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox/large,
@@ -91,9 +91,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox/large,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox,
-		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox,
+		/datum/design/autolathe/ammo/kurz_ammobox_lethal,
+		/datum/design/autolathe/ammo/kurz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/rifle_pk,
@@ -116,7 +116,7 @@
 		/datum/design/autolathe/ammo/grenade/frag,
 		/datum/design/autolathe/ammo/grenade/blast,
 		/datum/design/autolathe/ammo/grenade/flash,
-		//Utility
+		// Utility
 		/datum/design/autolathe/ammo/flare_shell = 0,
 		/datum/design/autolathe/ammo/flare_shell_g = 0,
 		/datum/design/autolathe/ammo/flare_shell_b = 0,
@@ -124,7 +124,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/luger
-	name = "No-Publisher 9mm \"Vintovka Lyugera\" carbine"
+	name = "No-Publisher .35 \"Vintovka Lyugera\" carbine"
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 15
@@ -143,7 +143,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/semyonovich
-	name = "NM - 9mm PPV \"Semyonovich\""
+	name = "NM - .35 PPV \"Semyonovich\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -157,7 +157,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/triage
-	name = "NM - 10mm Triage SMG"
+	name = "NM - .40 Triage SMG"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -171,7 +171,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/watchtower
-	name = "NM - 7.62mm \"Watchtower\""
+	name = "NM - 7.5mm \"Watchtower\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -196,7 +196,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/duty
-	name = "NM - 6.5mm Duty Carbine"
+	name = "NM - .257 Duty Carbine"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -228,7 +228,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/heroic
-	name = "NM - 7.62 Heroic LMG"
+	name = "NM - 7.5mm Heroic LMG"
 	disk_name = ""
 	icon_state = "blackshield"
 

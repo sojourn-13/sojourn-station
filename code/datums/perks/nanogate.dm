@@ -165,8 +165,8 @@
 						/obj/item/ammo_magazine/ammobox/laser_223/box,
 						//obj/item/ammo_magazine/ammobox/laser_223/box/ap,
 						//obj/item/ammo_magazine/ammobox/laser_223/box/lethal,
-						/obj/item/ammo_magazine/ammobox/kurtz_50/hv,
-						/obj/item/ammo_magazine/ammobox/kurtz_50/laser,
+						/obj/item/ammo_magazine/ammobox/kurz_50/hv,
+						/obj/item/ammo_magazine/ammobox/kurz_50/laser,
 						/obj/item/ammo_magazine/ammobox/antim, //Unlike the small box holds 15
 						/obj/item/ammo_magazine/ammobox/antim/scrap,
 						/obj/item/ammo_magazine/ammobox/ball,

@@ -25,5 +25,5 @@
 	resultvars = list(/obj/item/gun/projectile/revolver/handmade)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver/steel
-	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel, /obj/item/part/gun/barrel/magnum/steel, /obj/item/part/gun/barrel/kurtz/steel)	//9mm, 10mm, or 12mm
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel, /obj/item/part/gun/barrel/magnum/steel, /obj/item/part/gun/barrel/kurz/steel)	//.35, .40, or 12mm
 	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.

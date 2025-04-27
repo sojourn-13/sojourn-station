@@ -30,7 +30,7 @@
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 9mm rounds."
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
@@ -186,87 +186,75 @@
 	category = "Ammo"
 
 /datum/design/research/item/ammo/pistol/empty
-	name = "Pistol Magazine 9mm (Empty)"
-	desc = "An empty magazine for pistols, chambered for 9mm"
+	name = "Pistol Magazine .35 (Empty)"
+	desc = "An empty magazine for pistols, chambered for .35"
 	build_path = /obj/item/ammo_magazine/pistol_35/empty
 	materials = list(MATERIAL_STEEL = 3)
 
-/datum/design/research/item/ammo/pistol/empty/laser
-	name = "Pistol Magazine 9mm Laser Marked (Empty)"
-	desc = "An empty magazine for pistols, chambered for 9mm, marked for laser based ammo"
-	build_path = /obj/item/ammo_magazine/pistol_35/laser/empty
-	materials = list(MATERIAL_STEEL = 3)
-
 /datum/design/research/item/ammo/pistol
-	name = "Pistol Magazine 9mm"
-	desc = "A magazine for pistols, chambered for 9mm"
+	name = "Pistol Magazine .35"
+	desc = "A magazine for pistols, chambered for .35"
 	build_path = /obj/item/ammo_magazine/pistol_35
 	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/research/item/ammo/pistol/rubber
-	name = "Pistol Magazine 9mm (Rubber)"
-	desc = "A magazine for pistols, chambered for 9mm rubber"
+	name = "Pistol Magazine .35 (Rubber)"
+	desc = "A magazine for pistols, chambered for .35 rubber"
 	build_path = /obj/item/ammo_magazine/pistol_35/rubber
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 3)
 
 /datum/design/research/item/ammo/smg_mag
-	name = "SMG Magazine 9mm (Empty) "
-	desc = "A magazine for 9mm, used in smgs."
+	name = "SMG Magazine .35 (Empty) "
+	desc = "A magazine for .35, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
 	materials = list(MATERIAL_STEEL = 15)
 
-/datum/design/research/item/ammo/smg_mag/laser
-	name = "SMG Magazine 9mm (Empty) "
-	desc = "A magazine for 9mm, used in smgs, marked for laser based ammo"
-	build_path = /obj/item/ammo_magazine/smg_35/laser/empty
-	materials = list(MATERIAL_STEEL = 15)
-
 /datum/design/research/item/ammo/smg_mag/lethal
-	name = "SMG Magazine 9mm"
-	desc = "A magazine for 9mm, used in smgs."
+	name = "SMG Magazine .35"
+	desc = "A magazine for .35, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35
 	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/research/item/ammo/smg_mag/rubber
-	name = "SMG Magazine 9mm (Rubber)"
-	desc = "A magazine for 9mm (Rubber), used in smgs."
+	name = "SMG Magazine .35 (Rubber)"
+	desc = "A magazine for .35 (Rubber), used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/rubber
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 /datum/design/research/item/ammo/pistol_laser
-	name = "Specialized Magaine 9mm, laser"
-	desc = "Auto 9mm cases fitted with a one time use laser payload."
+	name = "Specialized Magaine .35, laser"
+	desc = "Auto .35 cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/laser
 	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/magum_laser
-	name = "Magnum 10mm, laser case"
-	desc = "Magnum 10mm cases fitted with a one time use laser payload."
+	name = "Magnum .40, laser case"
+	desc = "Magnum .40 cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/laser
 	materials = list(MATERIAL_STEEL = 7, MATERIAL_GLASS = 7, MATERIAL_GOLD = 3.5)
 
 /datum/design/research/item/ammo/light_rifle_257
-	name = "Light rifle 6.5mm laser casing."
-	desc = "6.5mm casings fitted with a one time use laser payload."
+	name = "Light rifle .257 laser casing."
+	desc = ".257 casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	materials = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 12, MATERIAL_GOLD = 6)
 
 /datum/design/research/item/ammo/rifle_75
-	name = "Rifle 7.62mm laser casing."
-	desc = "7.62mm casings fitted with a one time use laser payload."
+	name = "Rifle 7.5mm laser casing."
+	desc = "7.5mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/heavy_rifle_408
-	name = "Heavy Rifle 8.6mm laser casing."
+	name = "Heavy Rifle .408 laser casing."
 	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 6, MATERIAL_GOLD = 3)
 
-/datum/design/research/item/ammo/kurtz_laser
-	name = "Specialized 12mm, laser cases"
-	desc = "12mm cases fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
+/datum/design/research/item/ammo/kurz_laser
+	name = "Specialized .50 Kurz, laser cases"
+	desc = ".50 Kurz cases fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/laser
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/laser_mag

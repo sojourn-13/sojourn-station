@@ -283,10 +283,10 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds extra burns and toxin damage to 9mm rounds. Acquired through raiding greyson machines or heavy SI investment.
+//Adds extra burns and toxin damage to .35 rounds. Acquired through raiding greyson machines or heavy SI investment.
 /obj/item/gun_upgrade/mechanism/glass_widow
 	name = "Greyson \"Glass Widow\" infuser"
-	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits 9mm weapons only and coats the bullets in dangerous caustic toxins."
+	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
 	price_tag = 800
@@ -299,14 +299,14 @@
 		GUN_UPGRADE_DAMAGE_TOX = 10,
 		UPGRADE_BULK = 1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "infused"
 
-// Guild made upgrade kit that makes 12mm guns a bit more viable
+// Guild made upgrade kit that makes .50 Kurz guns a bit more viable
 /obj/item/gun_upgrade/mechanism/upgrade_kit
-	name = "Kurtz's refinement kit"
-	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded 12mm weapon. This kit is produced by the Artificer's Guild so even \
+	name = "Kurz's refinement kit"
+	desc = "A kit made of plasteel designed to refit and refine any kurz loaded .50 Kurz weapon. This kit is produced by the Artificer's Guild so even \
 	the heaviest caliber pistols might stand a chance of competing with their legendary myrmidon design."
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
@@ -323,15 +323,15 @@
 		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "kitted"
 
-// Rare Bluecross spawn clock cult brass kit that will make any 12mm cal gun into something worth ya know... using...
+// Rare Bluecross spawn clock cult brass kit that will make any .50 Kurz cal gun into something worth ya know... using...
 // Todo make Cult spawn with this and the clockwork block
 /obj/item/gun_upgrade/mechanism/brass_kit
 	name = "\"Brass Fighter\" refinement kit"
-	desc = "A kit made from brass and designed to improve 12mm caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
+	desc = "A kit made from brass and designed to improve .50 Kurz caliber kurz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
 	and plays a faint melodic tone through brass gears and perptually grinding cogs. Was this an invention of the blue cross or a toy some other entity made?"
 	icon_state = "Clockblock"
 	can_remove = FALSE
@@ -349,7 +349,7 @@
 		GUN_UPGRADE_RECOIL = 0.75, //25% less recoil (dosnt help as much without stacking it with other mods)
 		UPGRADE_BULK = -2
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "brass kitted"
 
@@ -399,7 +399,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.62mm extra damage at new max charge
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.5mm extra damage at new max charge
 		GUN_UPGRADE_OVERCHARGE_MAX = 1.5,
 		GUN_UPGRADE_OVERCHARGE_RATE = 0.35
 		)

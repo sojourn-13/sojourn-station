@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/luger
 	name = "\"Vintovka Lyugera\" SMG"
 	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it... works! The look is hard to describe... a mix between 'jury rigged' and 'amazing'. \
-	While able to take all kinds of 9mm pistol and SMG magazines, it features only two modes: Semiauto, and uncontrollable automatic fire."
+	While able to take all kinds of .35 pistol and SMG magazines, it features only two modes: Semiauto, and uncontrollable automatic fire."
 	icon = 'icons/obj/guns/projectile/luger.dmi'
 	icon_state = "luger"
 	item_state = "luger"
@@ -10,7 +10,7 @@
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6, MATERIAL_STEEL = 10)
 	price_tag = 600
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 1
 	init_recoil = SMG_RECOIL(0.9)
 	load_method = SINGLE_CASING|MAGAZINE
@@ -53,4 +53,3 @@
 	resultvars = list(/obj/item/gun/projectile/automatic/luger)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)
-

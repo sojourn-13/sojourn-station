@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/c20r
 	name = "bullpup SMG"
-	desc = "The C20r is a lightweight and rapid-firing SMG for when you REALLY need someone dead. Fires either 9mm or 10mm depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
+	desc = "The C20r is a lightweight and rapid-firing SMG for when you REALLY need someone dead. Fires either .35 or .40 depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
 	icon = 'icons/obj/guns/projectile/cr20.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"
@@ -24,7 +24,7 @@
 	init_recoil = SMG_RECOIL(0.9)
 	serial_type = "SA"
 
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_SCOPE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_SCOPE, GUN_MAGWELL)
 	gun_parts = list(/obj/item/part/gun/frame/c20r = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 	init_firemodes = list(
@@ -62,7 +62,7 @@
 
 /obj/item/gun/projectile/automatic/c20r/sci
 	name = "Soteria \"Bullpip\" SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses 9mm or 10mm depending on the installed barrel."
+	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 or .40 depending on the installed barrel."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.3
@@ -85,5 +85,3 @@
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
-
-

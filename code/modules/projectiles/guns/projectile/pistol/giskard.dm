@@ -1,11 +1,11 @@
 /obj/item/gun/projectile/giskard
 	name = "\"Giskard\" pistol"
-	desc = "That's the most popular handgun produced by Holland & Sullivan. Can even fit into a pocket! Uses 9mm."
+	desc = "That's the most popular handgun produced by Holland & Sullivan. Can even fit into a pocket! Uses .35."
 	icon = 'icons/obj/guns/projectile/giskard.dmi'
 	icon_state = "giskard"
 	item_state = "pistol"
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	caliber = CAL_PISTOL
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE

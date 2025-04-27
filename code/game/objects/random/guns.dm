@@ -395,11 +395,11 @@
 	/obj/item/part/gun/barrel/srifle/steel = 1,
 	/obj/item/part/gun/barrel/lrifle/steel = 1,
 	/obj/item/part/gun/barrel/clrifle/steel = 0.5,
-	/obj/item/part/gun/barrel/kurtz/steel = 0.5,
+	/obj/item/part/gun/barrel/kurz/steel = 0.5,
 	/obj/item/part/gun/barrel/hrifle/steel = 0.1,
 	/obj/item/part/gun/barrel/pistol = 5,
 	/obj/item/part/gun/barrel/magnum = 5,
-	/obj/item/part/gun/barrel/kurtz = 1.5,
+	/obj/item/part/gun/barrel/kurz = 1.5,
 	/obj/item/part/gun/barrel/srifle = 4,
 	/obj/item/part/gun/barrel/clrifle = 3,
 	/obj/item/part/gun/barrel/lrifle = 4,
@@ -442,7 +442,7 @@
 	/obj/item/part/gun/barrel/lrifle = 2,
 	/obj/item/part/gun/barrel/clrifle = 1,
 	/obj/item/part/gun/barrel/srifle = 3,
-	/obj/item/part/gun/barrel/kurtz = 2,
+	/obj/item/part/gun/barrel/kurz = 2,
 	/obj/item/part/gun/grip/rubber = 2,
 	/obj/item/part/gun/grip/serb = 3,
 	/obj/item/part/gun/barrel/antim = 0.3,
@@ -554,4 +554,3 @@
 	/obj/item/part/gun/frame/bull = 5,
 	/obj/item/part/gun/frame/pug = 7
 	))
-

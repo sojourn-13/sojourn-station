@@ -769,8 +769,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
 			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
 			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
-			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
-			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurz_50
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurz_50
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
 
 			var/obj/item/card/id/W = new(M)

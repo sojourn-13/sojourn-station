@@ -159,7 +159,7 @@
 
 /obj/item/storage/deferred/crate/saw
 	name = "infantry support crate"
-	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.62mm ammunition."
+	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.5mm ammunition."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/automatic/lmg/pk = 2,
 	/obj/item/ammo_magazine/rifle_75_linked_box = 8)
@@ -209,7 +209,7 @@
 
 /obj/item/storage/deferred/crate/sidearm
 	name = "sidearm crate"
-	desc = "A crate containing six Makarov 9mm pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
+	desc = "A crate containing six Makarov .35 pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/makarov = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 20,

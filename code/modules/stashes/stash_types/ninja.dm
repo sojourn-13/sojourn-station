@@ -17,7 +17,7 @@
 		/obj/item/reagent_containers/drinks/bottle/pwine = 70,
 		/obj/item/rig_module/vision/thermal = 10,
 		/obj/item/gun/projectile/lamia/socom = 5,
-		/obj/item/ammo_magazine/kurtz_50/hv = 1,
+		/obj/item/ammo_magazine/kurz_50/hv = 1,
 		/obj/item/gun/projectile/revolver/mistral = 3,
 		/obj/item/noslipmodule = 90,
 		/obj/item/soap/syndie = 50,

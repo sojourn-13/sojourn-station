@@ -110,9 +110,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_pepperball,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox/large,
-		/datum/design/autolathe/ammo/kurtz_ammobox_rubber = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox_rubber = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/mag_10x24 = 0,
 		/datum/design/autolathe/ammo/box_10x24 = 3, // Two entire mags of a Pulse Rifle, thus costs 10% of license cost. It's also armory access exclusive.
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
@@ -137,10 +137,10 @@
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
-// 10mm Magnum
+// .40 Magnum
 
 /obj/item/pc_part/drive/disk/design/guns/judiciary
-	disk_name = "NM - 9mm Judiciary"
+	disk_name = "NM - .35 Judiciary"
 	icon_state = "marshal"
 
 	license = 8
@@ -153,7 +153,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/liberty
-	disk_name = "NM - 10mm Liberty"
+	disk_name = "NM - .40 Liberty"
 	icon_state = "marshal"
 
 	license = 8
@@ -166,7 +166,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/freedom
-	disk_name = "NM - 10mm Freedom SMG"
+	disk_name = "NM - .40 Freedom SMG"
 	icon_state = "marshal"
 
 	license = 12
@@ -178,19 +178,19 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// 12mm Heavy Pistol
+// .50 Kurz Heavy Pistol
 
 /obj/item/pc_part/drive/disk/design/guns/amnesty
-	disk_name = "NM - 12mm Amnesty Handgun"
+	disk_name = "NM - .50 Kurz Amnesty Handgun"
 	icon_state = "marshal"
 
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/amnesty = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 // SHOTGUNS
@@ -207,10 +207,10 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-// 6.5mm carbines
+// .257 carbines
 
 /obj/item/pc_part/drive/disk/design/guns/bastard
-	disk_name = "NM - 6.5mm \"Bastard\" Compact Machine Gun"
+	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
 	icon_state = "marshal"
 
 	license = 8
@@ -221,7 +221,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/mamba
-	disk_name = "NM - 6.5mm Mamba Carbine"
+	disk_name = "NM - .257 Mamba Carbine"
 	icon_state = "marshal"
 
 	license = 16
@@ -237,10 +237,10 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-// 7.62mm Rifles
+// 7.5mm Rifles
 
 /obj/item/pc_part/drive/disk/design/guns/copperhead
-	disk_name = "NM - 7.62mm Copperhead Rifle"
+	disk_name = "NM - 7.5mm Copperhead Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -257,7 +257,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/viper
-	disk_name = "NM - 7.62mm Viper DMR"
+	disk_name = "NM - 7.5mm Viper DMR"
 	icon_state = "marshal"
 
 	license = 16
@@ -275,7 +275,7 @@
 
 // 8.6 Rifles
 /obj/item/pc_part/drive/disk/design/guns/python
-	disk_name = "NM - 7.62mm Python Heavy Rifle"
+	disk_name = "NM - 7.5mm Python Heavy Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -291,7 +291,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-//10mm Guns
+//.40 Guns
 
 /obj/item/pc_part/drive/disk/design/guns/specop
 	disk_name = "NM - 10x24mm Caseless /'Spec-Op/' SMG"

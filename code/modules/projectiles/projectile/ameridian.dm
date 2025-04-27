@@ -18,7 +18,7 @@
 
 /obj/item/projectile/ameridian_shard
 	name = "ameridian shard"
-	damage_types = list(BRUTE = 30) //Were a bit better then 10mm to stay competitive
+	damage_types = list(BRUTE = 30) //Were a bit better then .40 to stay competitive
 	irradiate = 10
 	armor_divisor = 1.15
 	check_armour = ARMOR_BULLET

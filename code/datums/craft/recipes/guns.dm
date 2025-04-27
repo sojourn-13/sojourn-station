@@ -20,7 +20,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper1
-	name = "handmade 6.5mm carbine stripper clip"
+	name = "handmade .257 carbine stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
@@ -29,7 +29,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper2
-	name = "handmade 7.62mm rifle stripper clip"
+	name = "handmade 7.5mm rifle stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_rifle_75/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
@@ -38,7 +38,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper3
-	name = "handmade 8.6mm heavy rifle stripper clip"
+	name = "handmade .408 heavy rifle stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
@@ -242,7 +242,7 @@
 	)
 
 /datum/craft_recipe/gun/luty
-	name = "Handmade SMG 9mm \"Luty\""
+	name = "Handmade SMG .35 \"Luty\""
 	result = /obj/item/gun/projectile/automatic/luty
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
@@ -269,7 +269,7 @@
 	)
 
 /datum/craft_recipe/gun/kalash
-	name = "Makeshift 7.62 \"Kalash\""
+	name = "Makeshift 7.5 \"Kalash\""
 	result = /obj/item/gun/projectile/automatic/ak47/makeshift
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),

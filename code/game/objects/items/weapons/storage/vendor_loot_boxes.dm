@@ -44,7 +44,7 @@
 		new /obj/item/clothing/shoes/combat(src)
 		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurz_50/lethal(src)
 	else
 		new /obj/random/gun_cheap(src)
 		new /obj/random/gun_cheap/low_chance(src)
@@ -69,7 +69,7 @@
 		new /obj/item/clothing/shoes/combat(src)
 		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurz_50/lethal(src)
 	else
 		new /obj/random/gun_normal(src)
 		new /obj/random/gun_normal/low_chance(src)
@@ -94,7 +94,7 @@
 		new /obj/item/clothing/shoes/combat(src)
 		new /obj/item/reagent_containers/snacks/candy_drop_red(src)
 		new /obj/item/gun/projectile/basilisk(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurz_50/lethal(src)
 	else
 		new /obj/random/gun_combat(src)
 		new /obj/random/gun_combat/low_chance(src)

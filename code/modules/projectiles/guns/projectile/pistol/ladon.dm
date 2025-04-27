@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/ladon
 	name = "\"Ladon\" magnum pistol"
-	desc = "A Mk-68 \"Ladon\", the trimmed down decendant of the M6 service pistol family as a second-line pistol for law enforcement produced by Seinemetall Defense GmbH, non-combat personnel, and people with reasonably sized hands.  Uses 10mm Auto-Mag. This one appears to have been in SolFed service at some point."
+	desc = "A Mk-68 \"Ladon\", the trimmed down decendant of the M6 service pistol family as a second-line pistol for law enforcement produced by Seinemetall Defense GmbH, non-combat personnel, and people with reasonably sized hands.  Uses .40 Auto-Mag. This one appears to have been in SolFed service at some point."
 	icon = 'icons/obj/guns/projectile/ladon.dmi'
 	icon_state = "dark_ladon"
 	item_state = "dark_ladon"
@@ -35,7 +35,7 @@
 
 /obj/item/gun/projectile/ladon/hs
 	name = "\"Porton\" magnum pistol"
-	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by \"H&S\". Often found in self defence and private guards. Uses 10mm Auto-Mag rounds."
+	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by \"H&S\". Often found in self defence and private guards. Uses .40 Auto-Mag rounds."
 	icon_state = "ladon"
 	item_state = "ladon"
 	damage_multiplier = 1
@@ -46,7 +46,7 @@
 
 /obj/item/gun/projectile/ladon/sa
 	name = "\"Sigia\" magnum pistol"
-	desc = "A significant reinforcement of Mk-68 \"Ladon\". Uses 10mm Auto-Mag rounds. This one has a Scarborough Arms rollmark on the frame and no other markings."
+	desc = "A significant reinforcement of Mk-68 \"Ladon\". Uses .40 Auto-Mag rounds. This one has a Scarborough Arms rollmark on the frame and no other markings."
 	icon_state = "sigia"
 	item_state = "sigia"
 	damage_multiplier = 1.1

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/nail_gun
 	name = "Greyson Positronic \"Nail\" rifle"
 	desc = "An old and lost gun design of a rifle by Greyson Positronic, its high rate of fire, stopping power and more make it the perfect tool for war. \
-	Its caliber is 6.5mm and, shockingly, it can be fitted with a silencer, has room for a scope and the ablity to have a Master Unmaker integrated into it."
+	Its caliber is .257 and, shockingly, it can be fitted with a silencer, has room for a scope and the ablity to have a Master Unmaker integrated into it."
 	icon = 'icons/obj/guns/projectile/nail_gun.dmi'
 	icon_state = "nail_gun"
 	item_state = "nail_gun"

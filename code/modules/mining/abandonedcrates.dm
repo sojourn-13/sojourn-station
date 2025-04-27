@@ -87,7 +87,7 @@
 			new/obj/item/toy/weapon/katana(src)
 		if(85 to 89)
 			new/obj/item/gun/projectile/basilisk(src)
-			new/obj/item/ammo_magazine/kurtz_50/hv(src)
+			new/obj/item/ammo_magazine/kurz_50/hv(src)
 		if(90)
 			new/obj/item/orion_ship(src)
 		if(91)

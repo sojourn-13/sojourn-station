@@ -1,41 +1,41 @@
 /obj/machinery/vending/weapon_machine
 	name = "Marshal Portable Armory"
 	desc = "A self-defense equipment vending machine. When you need to be tacticool."
-	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Remember, 'Stand your Ground' is applicable in a court of law!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
+	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Remember, 'Stand your Ground' is applicable in a court of law!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" // Yes, It's a Zelda reference, fight me - Papalus
 	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;Guns don't kill people, YOU do!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in lead form!;Smell the gunpowder!;Better now than never!"
 	icon_state = "weapon"
 	no_criminals = TRUE
 	vendor_department = DEPARTMENT_SECURITY
 	products = list(
-	//Non-lethal
+	// Non-Lethal
 	/obj/item/device/flash = 6,
 	/obj/item/reagent_containers/spray/pepper = 6,
-	//Melee
+	// Melee
 	/obj/item/tool/baton/mini = 5,
 	/obj/item/tool/knife/tacknife = 6,
 	/obj/item/tool/fireaxe/militia_tomahawk = 6,
-	//Firearms, ordered by price and category. / My idea with these is we selling old stock so supply spec can still sell the new one
-	//Pistol
+	// Firearms, ordered by price and category. / My idea with these is we selling old stock so supply spec can still sell the new one
+	// Pistol
 	/obj/item/gun/projectile/automatic/slaught_o_matic = 5,
 	/obj/item/gun/projectile/boltgun/flare_gun = 5,
-	/obj/item/gun/projectile/clarissa = 3, //Pocket guns
+	/obj/item/gun/projectile/clarissa = 3, // Pocket guns
 	/obj/item/gun/projectile/ladon = 2,
 	/obj/item/gun/projectile/glock = 2,
-	//Revolver
-	/obj/item/gun/projectile/revolver/detective = 3, //Honey fetch the family revolver
-	/obj/item/gun/projectile/revolver = 2, //Old stock
-	//Automatic
+	// Revolver
+	/obj/item/gun/projectile/revolver/detective = 3, // Honey fetch the family revolver
+	/obj/item/gun/projectile/revolver = 2, // Old stock
+	// Automatic
 	/obj/item/gun/projectile/automatic/texan = 2,
 	/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 	/obj/item/gun/projectile/automatic/bulldog = 2,
 	/obj/item/gun/projectile/automatic/bulldog/rds = 2,
-	//Shotgun
+	// Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 2,
 	/obj/item/gun/projectile/shotgun/pump/gladstone = 2,
-	//Energy
+	// Energy
 	/obj/item/gun/energy/gun/martin = 2,
 	/obj/item/gun/energy/stunrevolver = 2,
-	//LTL Ammo
+	// LTL Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 6,
 	/obj/item/ammo_magazine/pistol_35/rubber = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35/rubber = 6,
@@ -43,13 +43,13 @@
 	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
 	/obj/item/ammo_magazine/magnum_40/rubber = 6,
 	/obj/item/ammo_magazine/smg_magnum_40/rubber = 6,
-	/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
-	/obj/item/ammo_magazine/kurtz_50/rubber = 6,
+	/obj/item/ammo_magazine/speed_loader_kurz_50/rubber = 6,
+	/obj/item/ammo_magazine/kurz_50/rubber = 6,
 	/obj/item/ammo_magazine/light_rifle_257/rubber = 6,
 	/obj/item/ammo_magazine/rifle_75/rubber = 6,
 	/obj/item/ammo_magazine/heavy_rifle_408/rubber = 6,
 	/obj/item/ammo_magazine/speed_loader_shotgun/beanbag = 6,
-	//Ammo
+	// Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35 = 6,
 	/obj/item/ammo_magazine/pistol_35 = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35 = 6,
@@ -57,21 +57,21 @@
 	/obj/item/ammo_magazine/speed_loader_magnum_40 = 6,
 	/obj/item/ammo_magazine/magnum_40 = 6,
 	/obj/item/ammo_magazine/smg_magnum_40 = 6,
-	/obj/item/ammo_magazine/speed_loader_kurtz_50 = 6,
-	/obj/item/ammo_magazine/kurtz_50 = 6,
+	/obj/item/ammo_magazine/speed_loader_kurz_50 = 6,
+	/obj/item/ammo_magazine/kurz_50 = 6,
 	/obj/item/ammo_magazine/light_rifle_257 = 6,
 	/obj/item/ammo_magazine/speed_loader_rifle_75 = 6,
 	/obj/item/ammo_magazine/rifle_75 = 6,
 	/obj/item/ammo_magazine/heavy_rifle_408 = 6,
 	/obj/item/ammo_magazine/speed_loader_shotgun/pellet = 6,
 	/obj/item/ammo_magazine/speed_loader_shotgun = 6,
-	//Boxes
+	// Boxes
 	/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 6,
 	/obj/item/ammo_magazine/ammobox/pistol_35 =6,
 	/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 6,
 	/obj/item/ammo_magazine/ammobox/magnum_40 = 6,
-	/obj/item/ammo_magazine/ammobox/kurtz_50/rubber = 6,
-	/obj/item/ammo_magazine/ammobox/kurtz_50 = 6,
+	/obj/item/ammo_magazine/ammobox/kurz_50/rubber = 6,
+	/obj/item/ammo_magazine/ammobox/kurz_50 = 6,
 	/obj/item/ammo_magazine/ammobox/light_rifle_257_small = 6,
 	/obj/item/ammo_magazine/ammobox/rifle_75_small = 6,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 6,
@@ -83,7 +83,7 @@
 	/obj/item/ammo_casing/flare/blue/prespawn = 15,
 	/obj/item/ammo_casing/flare/green/prespawn = 15,
 	/obj/item/storage/box/smokes = 6,
-	//Misc
+	// Misc
 	/obj/item/clothing/accessory/holster/armpit = 5,
 	/obj/item/clothing/accessory/holster/waist = 5,
 	/obj/item/clothing/accessory/holster/hip = 5,
@@ -97,35 +97,35 @@
 	)
 
 	prices = list(
-	//Non-lethal
+	// Non-Lethal
 	/obj/item/device/flash = 100,
 	/obj/item/reagent_containers/spray/pepper = 50,
-	//Melee
+	// Melee
 	/obj/item/tool/baton/mini = 100,
 	/obj/item/tool/knife/tacknife = 60,
 	/obj/item/tool/fireaxe/militia_tomahawk = 90,
-	//Firearms, ordered by price and category. / My idea with these is we selling old stock so supply spec can still sell the new one
-	//Pistol
+	// Firearms, ordered by price and category. / My idea with these is we selling old stock so supply spec can still sell the new one
+	// Pistol
 	/obj/item/gun/projectile/automatic/slaught_o_matic = 65,
 	/obj/item/gun/projectile/boltgun/flare_gun = 135,
-	/obj/item/gun/projectile/clarissa = 120, //Pocket guns
+	/obj/item/gun/projectile/clarissa = 120, // Pocket guns
 	/obj/item/gun/projectile/ladon = 800,
 	/obj/item/gun/projectile/glock = 950,
-	//Revolver
-	/obj/item/gun/projectile/revolver/detective = 120, //Honey fetch the family revolver
-	/obj/item/gun/projectile/revolver = 950, //Old stock
-	//Automatic
+	// Revolver
+	/obj/item/gun/projectile/revolver/detective = 120, // Honey fetch the family revolver
+	/obj/item/gun/projectile/revolver = 950, // Old stock
+	// Automatic
 	/obj/item/gun/projectile/automatic/texan = 1100,
 	/obj/item/gun/projectile/automatic/ppsh/ppv = 1400,
 	/obj/item/gun/projectile/automatic/bulldog = 1600,
 	/obj/item/gun/projectile/automatic/bulldog/rds = 1850,
-	//Shotgun
+	// Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 800,
 	/obj/item/gun/projectile/shotgun/pump/gladstone = 1150,
-	//Energy
+	// Energy
 	/obj/item/gun/energy/gun/martin = 330,
-	/obj/item/gun/energy/stunrevolver = 1000, //There is no way anyone is actually going to buy it but here we are
-	//LTL Ammo
+	/obj/item/gun/energy/stunrevolver = 1000, // There is no way anyone is actually going to buy it but here we are
+	// LTL Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 15,
 	/obj/item/ammo_magazine/pistol_35/rubber = 25,
 	/obj/item/ammo_magazine/highcap_pistol_35/rubber = 35,
@@ -133,13 +133,13 @@
 	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 25,
 	/obj/item/ammo_magazine/magnum_40/rubber = 40,
 	/obj/item/ammo_magazine/smg_magnum_40/rubber = 60,
-	/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 35,
-	/obj/item/ammo_magazine/kurtz_50/rubber = 50,
+	/obj/item/ammo_magazine/speed_loader_kurz_50/rubber = 35,
+	/obj/item/ammo_magazine/kurz_50/rubber = 50,
 	/obj/item/ammo_magazine/light_rifle_257/rubber = 55,
 	/obj/item/ammo_magazine/rifle_75/rubber = 75,
 	/obj/item/ammo_magazine/heavy_rifle_408/rubber = 95,
 	/obj/item/ammo_magazine/speed_loader_shotgun/beanbag = 60,
-	//Ammo
+	// Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35 = 30,
 	/obj/item/ammo_magazine/pistol_35 = 45,
 	/obj/item/ammo_magazine/highcap_pistol_35 = 55,
@@ -147,21 +147,21 @@
 	/obj/item/ammo_magazine/speed_loader_magnum_40 = 45,
 	/obj/item/ammo_magazine/magnum_40 = 55,
 	/obj/item/ammo_magazine/smg_magnum_40 = 100,
-	/obj/item/ammo_magazine/speed_loader_kurtz_50 = 60,
-	/obj/item/ammo_magazine/kurtz_50 = 80,
+	/obj/item/ammo_magazine/speed_loader_kurz_50 = 60,
+	/obj/item/ammo_magazine/kurz_50 = 80,
 	/obj/item/ammo_magazine/light_rifle_257 = 105,
 	/obj/item/ammo_magazine/speed_loader_rifle_75 = 120,
 	/obj/item/ammo_magazine/rifle_75 = 145,
 	/obj/item/ammo_magazine/heavy_rifle_408 = 160,
 	/obj/item/ammo_magazine/speed_loader_shotgun/pellet = 105,
 	/obj/item/ammo_magazine/speed_loader_shotgun = 110,
-	//Boxes
+	// Boxes
 	/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 150,
 	/obj/item/ammo_magazine/ammobox/pistol_35 = 250,
 	/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 180,
 	/obj/item/ammo_magazine/ammobox/magnum_40 = 280,
-	/obj/item/ammo_magazine/ammobox/kurtz_50/rubber = 210,
-	/obj/item/ammo_magazine/ammobox/kurtz_50 = 310,
+	/obj/item/ammo_magazine/ammobox/kurz_50/rubber = 210,
+	/obj/item/ammo_magazine/ammobox/kurz_50 = 310,
 	/obj/item/ammo_magazine/ammobox/light_rifle_257_small = 350,
 	/obj/item/ammo_magazine/ammobox/rifle_75_small = 400,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 450,
@@ -172,8 +172,8 @@
 	/obj/item/ammo_casing/flare/prespawn = 50,
 	/obj/item/ammo_casing/flare/blue/prespawn = 50,
 	/obj/item/ammo_casing/flare/green/prespawn = 50,
-	/obj/item/storage/box/smokes = 300, //Why was this so cheap again, kinda guh
-	//Misc
+	/obj/item/storage/box/smokes = 300, // Why was this so cheap again, kinda guh
+	// Misc
 	/obj/item/clothing/accessory/holster/armpit = 50,
 	/obj/item/clothing/accessory/holster/waist = 50,
 	/obj/item/clothing/accessory/holster/hip = 50,
@@ -210,8 +210,8 @@
 					/obj/item/ammo_magazine/smg_35/rubber/pepperball = 8,
 					/obj/item/ammo_magazine/magnum_40/rubber/pepperball = 8,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball = 6,
-					/obj/item/ammo_magazine/kurtz_50/rubber/pepperball = 6,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball = 6,
+					/obj/item/ammo_magazine/kurz_50/rubber/pepperball = 6,
+					/obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball = 6,
 					/obj/item/ammo_magazine/light_rifle_257_short/rubber/pepperball = 8,
 					/obj/item/ammo_magazine/rifle_75/rubber = 8,
 					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
@@ -279,7 +279,7 @@
 
 	prices = list(/obj/item/book/ritual/cruciform = 5,
 					/obj/item/storage/fancy/candle_box = 30,
-					/obj/item/storage/fancy/cigarettes/faith = 65, //Some healing chems
+					/obj/item/storage/fancy/cigarettes/faith = 65, // Some healing chems
 					/obj/item/reagent_containers/drinks/bottle/ntcahors = 100,
 					/obj/item/tool_upgrade/augment/sanctifier = 80,
 					/obj/item/soap/church = 50,
@@ -361,7 +361,7 @@
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
-					/obj/item/reagent_containers/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
+					/obj/item/reagent_containers/drinks/bottle/vodka = 30,
 					/obj/item/storage/deferred/crate/uniform_green = 4,
 					/obj/item/storage/deferred/crate/uniform_brown = 4,
 					/obj/item/storage/deferred/crate/uniform_black = 4,

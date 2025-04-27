@@ -333,7 +333,7 @@
 	rapid = 0
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
-	projectiletype = /obj/item/projectile/bullet/kurtz_50
+	projectiletype = /obj/item/projectile/bullet/kurz_50
 	drop_items = list(/obj/item/gun/projectile/revolver/mistral)
 
 /mob/living/simple/hostile/elitemercenary/range/space/heavy/shotgun

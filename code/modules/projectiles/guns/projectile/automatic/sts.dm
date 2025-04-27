@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right arm of the unfree world. Uses 6.5mm Carbine rounds."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -59,7 +59,7 @@
 
 /obj/item/gun/projectile/automatic/sts/sawn // Skeleton one for code reasons
 	name = "short-barreled \"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses 6.5mm Carbine rounds. This one has had its stock lopped off and its barrel shortened, rendering it rather impractical to use."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses .257 Carbine rounds. This one has had its stock lopped off and its barrel shortened, rendering it rather impractical to use."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
+	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -103,7 +103,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "short-barreled \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still being able to function properly."
+	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -167,7 +167,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
+	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
 	The lightweight polymer, skeletal stock and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
@@ -200,7 +200,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn
 	name = "short-barreled Blackshield \"STS PARA\" rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still being able to function properly."
+	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts35.dmi'
 	icon_state = "stspara"
 	item_state = "stspara"

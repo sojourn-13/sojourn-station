@@ -60,7 +60,7 @@
 			/obj/item/pc_part/drive/disk/design/adv_tools = custom_good_nameprice("Artificer's IJIRO-451 Advanced Tools", list(800, 1000)),
 			/obj/item/pc_part/drive/disk/design/circuits = custom_good_nameprice("Artificer's ESPO-830 Circuits", list(800, 1000)),
 			/obj/item/pc_part/drive/disk/design/logistics = custom_good_nameprice("Artificer's LAT-018 Logistics", list(800, 1000)),
-			/obj/item/pc_part/drive/disk/design/guns/cheap_guns = good_data("H&S - 9mm Economy Pack", list(800, 1000), 550),
+			/obj/item/pc_part/drive/disk/design/guns/cheap_guns = good_data("H&S - .35 Economy Pack", list(800, 1000), 550),
 			/obj/item/pc_part/drive/disk/design/exotic_ammo = good_data("Exotic Ammo Disk", list(800, 1000), 700)
 		),
 		"Printed II" = list(

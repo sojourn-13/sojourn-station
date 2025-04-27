@@ -2,7 +2,7 @@
 /obj/item/gun/projectile/clarissa
 	name = "\"Clarissa\" pistol"
 	desc = "A pocket pistol made on demand, it uses older designs of fully plastic pistols used by spies to take down a target while undercover as civilians,\
-	but now is commonly for self-defence. Due to its full plastic internals, it has low stopping power and is impossible to maintain. Uses 9mm rounds."
+	but now is commonly for self-defence. Due to its full plastic internals, it has low stopping power and is impossible to maintain. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_black.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
@@ -16,7 +16,7 @@
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.2)
 	serial_type = "SA"
@@ -62,7 +62,7 @@
 
 /obj/item/gun/projectile/makarov
 	name = "\"Makarov\" pistol"
-	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses 9mm rounds."
+	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/makarov.dmi'
 	icon_state = "makarov"
 	w_class = ITEM_SIZE_SMALL
@@ -73,7 +73,7 @@
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.4)
 	price_tag = 500
@@ -122,8 +122,8 @@
 	set_item_state(itemstring)
 
 /obj/item/gun/projectile/makarov/moebius
-	name = "SI HG 9mm \"Malpractice\"" // SI stands for Soteria Institution
-	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses 9mm rounds."
+	name = "SI HG .35 \"Malpractice\"" // SI stands for Soteria Institution
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	price_tag = 200

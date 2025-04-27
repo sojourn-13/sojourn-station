@@ -94,110 +94,110 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	data["point_cost"] = point_cost
 	return data
 
-// 9mm
+// .35
 /datum/recipe_crafting_station/ammo/nine_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_PISTOL
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_ammo_pile
-	name = "Scrap 9mm ammo pile"
+	name = "Scrap .35 ammo pile"
 	point_cost = 5
 	result = /obj/item/ammo_casing/pistol_35/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_speedloader
-	name = "Scrap 9mm speedloader"
+	name = "Scrap .35 speedloader"
 	point_cost = 3
 	result = /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_packet
-	name = "Scrap 9mm ammo packet"
+	name = "Scrap .35 ammo packet"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/ammobox/pistol_35/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_pile
-	name = "9mm ammo pile"
+	name = ".35 ammo pile"
 	point_cost = 8
 	result = /obj/item/ammo_casing/pistol_35/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_packet
-	name = "9mm ammo packet"
+	name = ".35 ammo packet"
 	point_cost = 18
 	result = /obj/item/ammo_magazine/ammobox/pistol_35
 
 /datum/recipe_crafting_station/ammo/nine_mm/pistol_mag
-	name = "EMPTY 9mm pistol magazine"
+	name = "EMPTY .35 pistol magazine"
 	point_cost = 5
 	result = /obj/item/ammo_magazine/pistol_35/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/extended_mag
-	name = "EMPTY 9mm extended magazine"
+	name = "EMPTY .35 extended magazine"
 	point_cost = 7
 	result = /obj/item/ammo_magazine/highcap_pistol_35/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/smg_mag
-	name = "EMPTY 9mm SMG magazine"
+	name = "EMPTY .35 SMG magazine"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/smg_35/empty
 
-// 10mm
+// .40
 /datum/recipe_crafting_station/ammo/ten_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_MAGNUM
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_pile
-	name = "Scrap 10mm ammo pile"
+	name = "Scrap .40 ammo pile"
 	point_cost = 3
 	result = /obj/item/ammo_casing/magnum_40/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_speedloader
-	name = "Scrap 10mm speedloader"
+	name = "Scrap .40 speedloader"
 	point_cost = 5
 	result = /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_packet
-	name = "Scrap 10mm ammo packet"
+	name = "Scrap .40 ammo packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/magnum_40/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_pile
-	name = "10mm magnum ammo pile"
+	name = ".40 magnum ammo pile"
 	point_cost = 7
 	result = /obj/item/ammo_casing/magnum_40/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_packet
-	name = "10mm ammo packet"
+	name = ".40 ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/magnum_40
 
 /datum/recipe_crafting_station/ammo/ten_mm/pistol_mag
-	name = "EMPTY 10mm pistol magazine"
+	name = "EMPTY .40 pistol magazine"
 	point_cost = 7
 	result = /obj/item/ammo_magazine/magnum_40/empty
 
-// 12mm
+// .50 Kurz
 /datum/recipe_crafting_station/ammo/twelve_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile
-	name = "12mm ammo pile"
+	name = ".50 Kurz ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/kurtz_50/prespawned
+	result = /obj/item/ammo_casing/kurz_50/prespawned
 
 /datum/recipe_crafting_station/ammo/twelve_mm/speed_loader
-	name = "12mm speedloader"
+	name = ".50 Kurz speedloader"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/speed_loader_kurtz_50
+	result = /obj/item/ammo_magazine/speed_loader_kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_box
-	name = "12mm ammo box"
+	name = ".50 Kurz ammo box"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/kurtz_50
+	result = /obj/item/ammo_magazine/ammobox/kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/mag
-	name = "EMPTY 12mm heavy pistol magazine"
+	name = "EMPTY .50 Kurz heavy pistol magazine"
 	point_cost = 8
-	result = /obj/item/ammo_magazine/kurtz_50/empty
+	result = /obj/item/ammo_magazine/kurz_50/empty
 
 // shotgun
 /datum/recipe_crafting_station/ammo/shotgun
@@ -284,7 +284,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 28
 	result = /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 
-// 6.5mm
+// .257
 /datum/recipe_crafting_station/ammo/lrifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_LRIFLE
@@ -339,7 +339,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 20
 	result = /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
 
-// 7.62mm
+// 7.5mm
 /datum/recipe_crafting_station/ammo/rifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_RIFLE
@@ -394,7 +394,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 20
 	result = /obj/item/ammo_magazine/rifle_75_linked_box/empty
 
-// 8.6mm
+// .408
 /datum/recipe_crafting_station/ammo/hrifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_HRIFLE
@@ -439,28 +439,28 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 30
 	result = /obj/item/ammo_magazine/heavy_rifle_408_drum/empty
 
-// 14.5mm
+// .60-06
 /datum/recipe_crafting_station/ammo/antim
 	category = "Long Arms Ammo"
 	subcategory = CAL_ANTIM
 
 /datum/recipe_crafting_station/ammo/antim/scrap_pile
-	name = "Scrap 14.5mm ammo pile"
+	name = "Scrap .60-06 ammo pile"
 	point_cost = 5
 	result = /obj/item/ammo_casing/antim/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/antim/scrap_box
-	name = "Scrap 14.5mm ammo box"
+	name = "Scrap .60-06 ammo box"
 	point_cost = 10
 	result = /obj/item/ammo_magazine/ammobox/antim/scrap
 
 /datum/recipe_crafting_station/ammo/antim/pile
-	name = "14.5mm ammo pile"
+	name = ".60-06 ammo pile"
 	point_cost = 10
 	result = /obj/item/ammo_casing/antim/prespawned
 
 /datum/recipe_crafting_station/ammo/antim/packet
-	name = "14.5mm ammo packet"
+	name = ".60-06 ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/antim_small // Same price as every packet for half the ammo, otherwise impossible to get
 
@@ -525,16 +525,16 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_PLASTEEL = 4)
 
 /datum/recipe_crafting_station/barrels/small/nine_mm
-	name = "9mm barrel"
+	name = ".35 barrel"
 	result = /obj/item/part/gun/barrel/pistol
 
 /datum/recipe_crafting_station/barrels/small/ten_mm
-	name = "10mm barrel"
+	name = ".40 barrel"
 	result = /obj/item/part/gun/barrel/magnum
 
 /datum/recipe_crafting_station/barrels/small/twelve_mm
-	name = "12mm barrel"
-	result = /obj/item/part/gun/barrel/kurtz
+	name = ".50 Kurz barrel"
+	result = /obj/item/part/gun/barrel/kurz
 	required_resources = list(MATERIAL_PLASTEEL = 8)
 
 // |----------------------------|
@@ -545,11 +545,11 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_PLASTEEL = 8)
 
 /datum/recipe_crafting_station/barrels/long/sixfive_mm
-	name = "6.5mm barrel"
+	name = ".257 barrel"
 	result = /obj/item/part/gun/barrel/srifle
 
 /datum/recipe_crafting_station/barrels/long/sevensixtwo_mm
-	name = "7.62mm barrel"
+	name = "7.5mm barrel"
 	result = /obj/item/part/gun/barrel/lrifle
 
 /datum/recipe_crafting_station/barrels/long/shotgun
@@ -564,16 +564,16 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_STEEL = 4)
 
 /datum/recipe_crafting_station/barrels/small_cheap/nine_mm
-	name = "9mm barrel"
+	name = ".35 barrel"
 	result = /obj/item/part/gun/barrel/pistol/steel
 
 /datum/recipe_crafting_station/barrels/small_cheap/ten_mm
-	name = "10mm barrel"
+	name = ".40 barrel"
 	result = /obj/item/part/gun/barrel/magnum/steel
 
 /datum/recipe_crafting_station/barrels/small_cheap/twelve_mm
-	name = "12mm barrel"
-	result = /obj/item/part/gun/barrel/kurtz/steel
+	name = ".50 Kurz barrel"
+	result = /obj/item/part/gun/barrel/kurz/steel
 	required_resources = list(MATERIAL_STEEL = 8)
 
 // |----------------------------|
@@ -584,7 +584,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_STEEL = 8)
 
 /datum/recipe_crafting_station/barrels/long_cheap/sixfive_mm
-	name = "6.5mm barrel"
+	name = ".257 barrel"
 	result = /obj/item/part/gun/barrel/srifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/caseless
@@ -592,11 +592,11 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/clrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/sevenfive_mm
-	name = "7.62mm barrel"
+	name = "7.5mm barrel"
 	result = /obj/item/part/gun/barrel/lrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/eightsix_mm
-	name = "8.6mm barrel"
+	name = ".408 barrel"
 	result = /obj/item/part/gun/barrel/hrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/shotgun

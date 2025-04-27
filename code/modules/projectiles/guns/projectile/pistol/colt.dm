@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/colt
 	name = "\"Colt\" pistol"
-	desc = "A cheap knock-off of an M1911 produced by Holland & Sullivan. Uses 9mm rounds."
+	desc = "A cheap knock-off of an M1911 produced by Holland & Sullivan. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "colt"
 	item_state = "colt"
@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.4)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "H&S"
 
 	wield_delay = 0.3 SECOND
@@ -23,7 +23,7 @@
 
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
-	desc = "A classy high-powered automatic commissionedby Blackshield and based on the M1911 series handguns, with significant reinforcements produced by Scarborough Arms. Uses 10mm Auto-Mag."
+	desc = "A classy high-powered automatic commissionedby Blackshield and based on the M1911 series handguns, with significant reinforcements produced by Scarborough Arms. Uses .40 Auto-Mag."
 	icon_state = "dark_delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
@@ -46,7 +46,7 @@
 
 /obj/item/gun/projectile/colt/liberty
 	name = "\"Liberty\" magnum pistol"
-	desc = "A common Nadezhda Marshal issue pistol chambered in 10mm Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide, polymer grip and a built-in holographic sight."
+	desc = "A common Nadezhda Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide, polymer grip and a built-in holographic sight."
 	icon = 'icons/obj/guns/projectile/liberty.dmi'
 	icon_state = "liberty"
 	item_state = "liberty"
@@ -95,4 +95,3 @@
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
 	resultvars = list(/obj/item/gun/projectile/colt, /obj/item/gun/projectile/colt/liberty, /obj/item/gun/projectile/colt/ten)
-

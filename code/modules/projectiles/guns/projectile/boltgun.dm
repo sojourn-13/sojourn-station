@@ -41,7 +41,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"
-	desc = "A crudely mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine before."
+	desc = "A crudely mangled and sawn-down 7.5mm bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

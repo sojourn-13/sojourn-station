@@ -40,14 +40,14 @@ const categorySortingOrder = [
 ];
 
 const subcategorySortingOrder = [
-  '9mm',
-  '10mm magnum',
-  '12mm heavy pistol',
+  '.35',
+  '.40 magnum',
+  '.50 Kurz heavy pistol',
   'shotgun shell',
-  '6.5mm carbine',
-  '7.62mm rifle',
-  '8.6mm heavy rifle',
-  '14.5mm anti-materiel',
+  '.257 carbine',
+  '7.5mm rifle',
+  '.408 heavy rifle',
+  '.60-06 anti-materiel',
   'flare shell',
   '17mm rolled shot',
   '19mm explosive',

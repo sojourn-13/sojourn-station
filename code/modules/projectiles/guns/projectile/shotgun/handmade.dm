@@ -53,11 +53,11 @@
 
 /obj/item/part/gun/frame/slideshot
 	name = "Homemade shotgun frame"
-	desc = "A homemade slide shotgun frame. Cobbled together from scrap metal and wood, it can take either shotgun or 12mm cheap barrels."
+	desc = "A homemade slide shotgun frame. Cobbled together from scrap metal and wood, it can take either shotgun or .50 Kurz cheap barrels."
 	icon_state = "frame_slideshot"
 	matter = list(MATERIAL_STEEL = 8)
 	resultvars = list(/obj/item/gun/projectile/shotgun/slidebarrel)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun/steel
-	barrelvars = list(/obj/item/part/gun/barrel/shotgun/steel, /obj/item/part/gun/barrel/kurtz/steel)	//shotgun or 12mm.
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun/steel, /obj/item/part/gun/barrel/kurz/steel)	//shotgun or .50 Kurz.
 	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.

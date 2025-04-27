@@ -92,8 +92,8 @@
 /datum/supply_pack/clownguncrate
 	name = "LS Clowning Around Specialty Crate"
 	contains = list(/obj/item/gun/projectile/revolver/longboi, //1000
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
 					/obj/item/gun_upgrade/trigger/honker,
 					/obj/item/gun_upgrade/mechanism/weintraub)
 	cost = 1400
@@ -104,8 +104,8 @@
 /datum/supply_pack/kickasscrate
 	name = "LS Time to Kick Ass Specialty Crate"
 	contains = list(/obj/item/gun/projectile/revolver/rev10/mateba, //1500
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
 					/obj/item/clothing/gloves/thick/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/under/johnny,
@@ -145,7 +145,7 @@
 
 //AMMUNITION
 /datum/supply_pack/thirtyfive_ammo
-	name = "HS 9mm Handgun Ammunition Crate"
+	name = "HS .35 Handgun Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/ammo_magazine/ammobox/pistol_35,
@@ -156,11 +156,11 @@
 					/obj/item/ammo_magazine/speed_loader_pistol_35,
 					/obj/item/ammo_magazine/speed_loader_pistol_35)
 	cost = 650
-	crate_name = "HS 9mm ammunition crate"
+	crate_name = "HS .35 ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/thirtyfive_ammo_nl
-	name = "HS 9mm Handgun Non-Lethal Ammunition Crate"
+	name = "HS .35 Handgun Non-Lethal Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
 					/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
 					/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
@@ -171,11 +171,11 @@
 					/obj/item/ammo_magazine/speed_loader_pistol_35/rubber,
 					/obj/item/ammo_magazine/speed_loader_pistol_35/rubber)
 	cost = 450
-	crate_name = "HS 9mm Non-Lethal ammunition crate"
+	crate_name = "HS .35 Non-Lethal ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/fourty_ammo
-	name = "HS 10mm Ammunition Crate"
+	name = "HS .40 Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/magnum_40,
 					/obj/item/ammo_magazine/ammobox/magnum_40,
 					/obj/item/ammo_magazine/ammobox/magnum_40,
@@ -186,11 +186,11 @@
 					/obj/item/ammo_magazine/speed_loader_magnum_40,
 					/obj/item/ammo_magazine/speed_loader_magnum_40)
 	cost = 750
-	crate_name = "HS 10mm ammunition crate"
+	crate_name = "HS .40 ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/fourty_ammo_nl
-	name = "HS 10mm Non-Lethal Ammunition Crate"
+	name = "HS .40 Non-Lethal Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
 					/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
 					/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
@@ -201,37 +201,37 @@
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber)
 	cost = 550
-	crate_name = "HS 10mm Non-Lethal ammunition crate"
+	crate_name = "HS .40 Non-Lethal ammunition crate"
 	group = "Enforcement"
 
-/datum/supply_pack/kurtz_ammo
-	name = "HS 12mm Ammunition Crate"
-	contains = list(/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50)
+/datum/supply_pack/kurz_ammo
+	name = "HS .50 Kurz Ammunition Crate"
+	contains = list(/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50)
 	cost = 950
-	crate_name = "HS 12mm ammunition crate"
+	crate_name = "HS .50 Kurz ammunition crate"
 	group = "Enforcement"
 
-/datum/supply_pack/kurtz_ammo_nl
-	name = "HS 12mm Less-Than-Lethal Ammunition Crate"
-	contains = list(/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/ammobox/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50)
+/datum/supply_pack/kurz_ammo_nl
+	name = "HS .50 Kurz Less-Than-Lethal Ammunition Crate"
+	contains = list(/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/ammobox/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50,
+					/obj/item/ammo_magazine/speed_loader_kurz_50)
 	cost = 750
-	crate_name = "HS 12mm Less-Than-Lethal ammunition crate"
+	crate_name = "HS .50 Kurz Less-Than-Lethal ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/ammo_disks_1
@@ -253,7 +253,7 @@
 					/obj/item/ammo_magazine/light_rifle_257)
 
 	cost = 980
-	crate_name = "7.62mm and 6.5mm Ammunition Crate"
+	crate_name = "7.5mm and .257 Ammunition Crate"
 	group = "Enforcement"
 
 

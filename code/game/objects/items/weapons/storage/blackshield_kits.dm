@@ -205,7 +205,7 @@
 /obj/item/storage/box/bs_kit/delta
 	name = "\improper Delta Elite Secondary Kit"
 	desc = "The standard Blackshield equipment kit containing a Delta Elite, a design based of the original M1911, modernized. Unlike the \
-	standard colt, it uses 10mm magnum rounds."
+	standard colt, it uses .40 magnum rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/ten(src)
@@ -215,7 +215,7 @@
 
 /obj/item/storage/box/bs_kit/rex10
 	name = "\improper Cowboy Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a cowboy break-action revolver, a dependeble choice for a 9mm caliber revolver. Due to its cheap cost, this box comes with two \
+	desc = "The standard Blackshield equipment kit containing a cowboy break-action revolver, a dependeble choice for a .35 caliber revolver. Due to its cheap cost, this box comes with two \
 	speed loaders and a bonus box of high velocity rounds, making it a favorite for those who like a well stocked side-arm."
 
 	populate_contents()
@@ -228,7 +228,7 @@
 /obj/item/storage/box/bs_kit/pilgrim
 	name = "\improper Pilgrim Secondary Kit"
 	desc = "The standard Blackshield equipment kit containing a Pilgrim revolver. A ballistic design by the Absolute's Old Testament arms division. A tricky choice, as a gift from the church it \
-	comes with a box of 10mm magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice for gunning down people and most animals. The internal design requires \
+	comes with a box of .40 magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice for gunning down people and most animals. The internal design requires \
 	unloading each shot from the revolver individually but it boasts a underslung shotgun, five 20mm buckshot shells, and can have all nine chambers loaded at once using an ammobox."
 
 	populate_contents()
@@ -282,22 +282,22 @@
 
 /obj/item/storage/box/bs_kit/mateba
 	name = "\improper Mateba Secondary Kit"
-	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
+	desc = "An equipment kit containing a specialized semiautomatic .50 Kurz revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/gemini
 	name = "\"Gemini\" Secondary Kit"
-	desc = "A kit containing a highly specialized 12mm pistol with smart-linked optics and stabilizers."
+	desc = "A kit containing a highly specialized .50 Kurz pistol with smart-linked optics and stabilizers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/gemini(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurz_50(src)
+		new /obj/item/ammo_magazine/kurz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits

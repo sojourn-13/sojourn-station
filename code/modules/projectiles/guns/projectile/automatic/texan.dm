@@ -1,7 +1,7 @@
 //SMG that basically is meant to deal damage even against armored mobs, counts as a normal gun for spawn pool
 /obj/item/gun/projectile/automatic/texan
 	name = "\"Texan\" SMG"
-	desc = "The Texan is a reliable assault weapon, mass-produced by SD GmbH for raiding parities in tight hallways, with a moderate effectiveness against soft body armor. Uses 9mm rounds."
+	desc = "The Texan is a reliable assault weapon, mass-produced by SD GmbH for raiding parities in tight hallways, with a moderate effectiveness against soft body armor. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/texan.dmi'
 	icon_state = "texan"
 	item_state = "texan"
@@ -17,7 +17,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 2
 	init_recoil = SMG_RECOIL(0.5)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	serial_type = "SD GmbH"
 
 	init_firemodes = list(

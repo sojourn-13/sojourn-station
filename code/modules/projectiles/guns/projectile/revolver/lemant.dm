@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/lemant
 	name = "\"Pilgrim\" magnum revolver"
 	desc = "Designed by the Old Testament to have good utility and plenty of shots at the cost of requiring each spent shell to individually be removed, and can't be speed loaded. \
-	This signature weapon from New Byzantine holds nine 10mm rounds and one single action underslung 20mm shell."
+	This signature weapon from New Byzantine holds nine .40 rounds and one single action underslung 20mm shell."
 	icon = 'icons/obj/guns/projectile/lemant.dmi'
 	icon_state = "lemant"
 	item_state = "lemant"
@@ -34,7 +34,7 @@
 	name = "\"Pilgrim Devout\" magnum revolver"
 	desc = "Artificer Guild's revamped design of the Pilgrim to have even more shots before requiring to reload. \
 	Even with the belt design this revolver requires each spent shell to individually be removed, and can't be speed loaded. \
-	Holds seventeen 10mm rounds and one single action underslung 20mm shell."
+	Holds seventeen .40 rounds and one single action underslung 20mm shell."
 	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
 	icon_state = "lemant_way"
 	item_state = "lemant_way"
@@ -54,7 +54,7 @@
 /*
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine .40 rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstakingly slow to reload since it requires removing each spent shell individually. \
 	Someone added a spike to the grip, allowing it to function as a rather deadly knife when pistol whipping, handy given how long it takes to reload."
 	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
@@ -66,20 +66,20 @@
 	price_tag = 475 // Still an upgrade.
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
-	name = "\"Pilgrim Hero\" kurtz revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
+	name = "\"Pilgrim Hero\" kurz revolver"
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six .50 Kurz rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstakingly slow to reload since it requires removing each spent shell individually. \
-	This model is a conversion, known as the pilgrim hero, its caliber is converted to 12mm but it loses ammo capacity due to the larger shells and lacks the \
+	This model is a conversion, known as the pilgrim hero, its caliber is converted to .50 Kurz but it loses ammo capacity due to the larger shells and lacks the \
 	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
 	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
 	caliber = CAL_50
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	max_shells = 6
 	price_tag = 500
-	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
+	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurz revolver without the weight to compensate for the blast. -Kaz
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
 */
@@ -186,7 +186,7 @@
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

@@ -8195,7 +8195,7 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "bFz" = (
 /obj/structure/closet/crate/secure/weapon{
-	name = "6.5mm ammo crate"
+	name = ".257 ammo crate"
 	},
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
@@ -85718,11 +85718,11 @@
 	},
 /obj/item/gun/projectile/revolver/tacticool_revolver,
 /obj/item/gun/projectile/revolver/rev10/mateba,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
+/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
+/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
 /obj/item/ammo_magazine/speed_loader_magnum_40,
 /obj/item/ammo_magazine/speed_loader_magnum_40,
-/obj/item/ammo_magazine/ammobox/kurtz_50,
+/obj/item/ammo_magazine/ammobox/kurz_50,
 /obj/item/ammo_magazine/ammobox/magnum_40,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)

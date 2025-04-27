@@ -95,7 +95,7 @@
 	penetration_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.
 	charge_meter = FALSE
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	init_firemodes = list(
 		FULL_AUTO_300_NOLOSS,
 		BURST_3_ROUND_NOLOSS,

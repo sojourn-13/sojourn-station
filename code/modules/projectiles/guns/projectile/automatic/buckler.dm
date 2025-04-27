@@ -19,7 +19,7 @@
 	price_tag = 600
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_35)
 	init_recoil = SMG_RECOIL(1)
 	folding_stock = TRUE
 

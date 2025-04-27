@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/freedom
 	name = "\"Freedom\" magnum SMG"
-	desc = "A modified version of the 10mm \"Liberty\" pistol, the aptly named \"Freedom\" sports an increased rate of fire and a brace-style stock to aid in recoil control."
+	desc = "A modified version of the .40 \"Liberty\" pistol, the aptly named \"Freedom\" sports an increased rate of fire and a brace-style stock to aid in recoil control."
 	icon_state = "freedom"
 	item_state = "freedom"
 	icon = 'icons/obj/guns/projectile/freedom.dmi'

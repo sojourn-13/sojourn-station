@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/basilisk
 	name = "\"Basilisk\" heavy pistol"
-	desc = "A distant relative of the Lamia produced by Holland & Sullivan. Robust and straight, this is a gun for a leader, not just an officer. Uses 12mm."
+	desc = "A distant relative of the Lamia produced by Holland & Sullivan. Robust and straight, this is a gun for a leader, not just an officer. Uses .50 Kurz."
 	icon = 'icons/obj/guns/projectile/basilisk.dmi'
 	icon_state = "basilisk"
 	item_state = "basilisk"
@@ -19,12 +19,12 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	serial_type = "H&S"
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
-	gun_parts = list(/obj/item/part/gun/frame/basilisk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+	gun_parts = list(/obj/item/part/gun/frame/basilisk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurz = 1)
 
 /obj/item/part/gun/frame/basilisk
 	name = "Basilisk frame"
@@ -34,7 +34,7 @@
 	resultvars = list(/obj/item/gun/projectile/basilisk)
 	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
-	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
+	barrelvars = list(/obj/item/part/gun/barrel/kurz)
 
 /obj/item/gun/projectile/basilisk/update_icon()
 	..()

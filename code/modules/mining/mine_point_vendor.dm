@@ -51,7 +51,7 @@
 		new /datum/data/mining_equipment("Armor Equipment - Deployable: Bastion Shield",		/obj/item/shield/riot/bastion,										3000),
 		new /datum/data/mining_equipment("Ammo Equipment - 20mm Illumination Shells",			/obj/item/ammo_magazine/ammobox/shotgun/flash,						700),
 		new /datum/data/mining_equipment("Ammo Equipment - 20mm Slug",							/obj/item/ammo_magazine/ammobox/shotgun,							1000),
-		new /datum/data/mining_equipment("Ammo Equipment - 7.62 Box",							/obj/item/ammo_magazine/ammobox/rifle_75,							15000)
+		new /datum/data/mining_equipment("Ammo Equipment - 7.5mm Box",							/obj/item/ammo_magazine/ammobox/rifle_75,							15000)
 		)
 
 /datum/data/mining_equipment

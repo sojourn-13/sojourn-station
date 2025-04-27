@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/rev10
 	name = "\"Frontier\" magnum revolver"
 	desc = "A well made police revolver used by many departments around the universal frontier. While the design appears to predate its production by H&S it has become iconic to their company for stopping power. \
-	It appears to take 10mm magnum rounds loaded via its break-action."
+	It appears to take .40 magnum rounds loaded via its break-action."
 	icon = 'icons/obj/guns/projectile/rev10.dmi'
 	icon_state = "rev10"
 	item_state = "rev10"
@@ -69,12 +69,12 @@
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.1)
 	zoom_factors = list()
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/rev10/mateba
 	name = "\"Mateba\" autorevolver"
-	desc = "The \"Mateba\" autorevolver is a unique semiautomatic revolver chambered in 12mm whose patents were acquired by Seinemetall Defense GmbH for production. \
+	desc = "The \"Mateba\" autorevolver is a unique semiautomatic revolver chambered in .50 Kurz whose patents were acquired by Seinemetall Defense GmbH for production. \
 			Its two-part frame is divided between cylinder and barrel, mounted atop rails on the lower grip, effectively reducing muzzle flip \
 			by aligning its bore with the operator's holding point, and sliding the whole mechanism back upon shooting thanks to its potent recoil compensator. \
 			Such a mechanism, sadly, limits the caliber of this gun to the highest bore despite having sported interchangeable barrels at some point."
@@ -99,17 +99,16 @@
 							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
 							  /obj/item/tool_upgrade/refinement/ported_barrel = TRUE,)
 	zoom_factors = list()
-	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurz = 1)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	serial_type = "SD GmbH"
 
 /obj/item/part/gun/frame/mateba
 	name = "Mateba frame"
-	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in 12mm."
+	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in .50 Kurz."
 	icon_state = "frame_mateba"
 	result = /obj/item/gun/projectile/revolver/rev10/mateba
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
-	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
+	barrelvars = list(/obj/item/part/gun/barrel/kurz)
 	resultvars = list(/obj/item/gun/projectile/revolver/rev10/mateba)
-

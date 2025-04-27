@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/rivet
 	name = "Greyson Positronic \"Rivet\" magnum pistol"
-	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only 10mm Auto-Mag. Also has the ablity to have a Master Unmaker integrated into it."
+	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only .40 Auto-Mag. Also has the ablity to have a Master Unmaker integrated into it."
 	icon = 'icons/obj/guns/projectile/rivet_gun.dmi'
 	icon_state = "rivet"
 	damage_multiplier = 1.2

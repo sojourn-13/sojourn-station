@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/light
 	name = "\"Roe\" light boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 6.5mm, it's a common varmint and plinking rifle."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
@@ -22,7 +22,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
-	desc = "A crudely mangled and sawn-down 6.5mm bolt action rifle. The rifle was fine before."
+	desc = "A crudely mangled and sawn-down .257 bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
