@@ -72,7 +72,7 @@
 /mob/living/carbon/superior/vox/thrower_spear/trained
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. \
 	This one throws spears with deadly speed, holding a bag in hand this one hands out rocks to other Ciriklo's"
-	icon_state = "vox_abyssal"
+	icon_state = "vox_abyssal_backpack"
 
 	//See vox/ai.dm for fancy affects
 
@@ -280,7 +280,7 @@
 	armor = list(melee = 8, bullet = 8, energy = 5, bomb = 50, bio = 0, rad = 0)
 
 	drop_items = list(/obj/item/storage/firstaid/regular/empty, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost, /obj/random/medical_lowcost)
-	var/healing_kit = 200
+	var/healing_kit = 50
 
 /mob/living/carbon/superior/vox/rage/trained/updatehealth()
 	..()
@@ -297,7 +297,7 @@
 			healing_kit -= 3
 
 	//Heal others
-	for(var/mob/living/carbon/superior/vox/V in oview(3))
+	for(var/mob/living/carbon/superior/vox/V in oview(3, src))
 		if(V.stat == CONSCIOUS && health != maxHealth)
 			if(V.bruteloss)
 				V.adjustBruteLoss(-3)
@@ -342,7 +342,7 @@
 	timeout = world.time + 5 SECONDS
 
 	if(isliving(A))
-		for(var/mob/living/carbon/superior/vox/V in oview(6))
+		for(var/mob/living/carbon/superior/vox/V in oview(6, src))
 			V.loseTarget(TRUE,TRUE)
 			V.react_to_attack(A,src,A)
 	if(ishuman(A))
