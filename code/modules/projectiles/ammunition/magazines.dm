@@ -45,7 +45,7 @@
 
 /obj/item/ammo_magazine/pistol_35/rubber/pepperball
 	name = "standard magazine (.35 pepperball)"
-	icon_state = "pistol_l"
+	icon_state = "pistol_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/pistol_35/lethal
@@ -59,6 +59,14 @@
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 /obj/item/ammo_magazine/pistol_35/scrap/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/pistol_35/laser
+	name = "standard magazine (.35 laser)"
+	icon_state = "pistol_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/pistol_35/laser/empty
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum
@@ -90,12 +98,12 @@
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber/pepperball
 	name = "standard auto drum (pepperball)"
-	icon_state = "ldrum_l"
+	icon_state = "ldrum_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo
 	name = "standard auto drum (sleeper)"
-	icon_state = "ldrum_r"
+	icon_state = "ldrum_spo"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
@@ -113,6 +121,13 @@
 	icon_state = "ldrum"
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/highcap_pistol_35/drum/laser
+	name = "standard drum magazine (.35 laser)"
+	icon_state = "ldrum_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/highcap_pistol_35/drum/laser/empty
+	initial_ammo = 0
 
 /////////////HighCap/////////////
 /obj/item/ammo_magazine/highcap_pistol_35
@@ -149,13 +164,21 @@
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball
 	name = "highcap magazine (.35 pepperball)"
-	icon_state = "hpistol_l"
+	icon_state = "hpistol_pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/lethal
 	name = "highcap magazine (.35 hollow-point)"
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+
+/obj/item/ammo_magazine/highcap_pistol_35/laser
+	name = "highcap magazine (.35 laser)"
+	icon_state = "hpistol_lsr"
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/highcap_pistol_35/laser/empty
+	initial_ammo = 0
 
 /////////////SMG/////////////
 
@@ -203,7 +226,7 @@
 
 /obj/item/ammo_magazine/smg_35/rubber/pepperball
 	name = "smg magazine (.35 pepperball)"
-	icon_state = "smg_l"
+	icon_state = "smg_pb"
 	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
@@ -212,6 +235,15 @@
 	icon_state = "smg_l"
 	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+
+/obj/item/ammo_magazine/smg_35/laser
+	name = "smg magazine (.35 laser)"
+	icon_state = "smg_lsr"
+	ammo_color = ""
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/smg_35/laser/empty
+	initial_ammo = 0
 
 ///////////// .40 pistol ///////////
 
@@ -248,7 +280,7 @@
 
 /obj/item/ammo_magazine/magnum_40/rubber/pepperball
 	name = "magazine(.40 Magnum pepperball)"
-	icon_state = "magnum_l"
+	icon_state = "magnum_pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/magnum_40/lethal
@@ -260,6 +292,14 @@
 	name = "old magazine (.40 Magnum)"
 	icon_state = "magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
+
+/obj/item/ammo_magazine/magnum_40/laser
+	name = "magazine (.40 Magnum laser)"
+	icon_state = "magnum_lsr"
+	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+
+/obj/item/ammo_magazine/magnum_40/laser/empty
+	initial_ammo = 0
 
 ////.40 SMG////
 
@@ -297,7 +337,7 @@
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball
 	name = "smg magazine (.40 Magnum pepperball)"
-	icon_state = "smg_magnum_l"
+	icon_state = "smg_magnum_pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/smg_magnum_40/lethal
@@ -346,7 +386,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball
 	name = "carbine magazine (pepperball)"
-	icon_state = "lrifle_long_l"
+	icon_state = "lrifle_long_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257/lethal
@@ -360,6 +400,14 @@
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
 
 /obj/item/ammo_magazine/light_rifle_257/scrap/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/light_rifle_257/laser
+	name = "carbine magazine (laser)"
+	icon_state = "lrifle_long_lsr"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
+
+/obj/item/ammo_magazine/light_rifle_257/laser/empty
 	initial_ammo = 0
 
 ////short////
@@ -398,7 +446,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_short/rubber/pepperball
 	name = "short carbine magazine (pepperball)"
-	icon_state = "lrifle_short_l"
+	icon_state = "lrifle_short_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257_short/lethal
@@ -443,7 +491,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_drum/rubber/pepperball
 	name = "carbine drum magazine (pepperball)"
-	icon_state = "lrifle_drum_pep"
+	icon_state = "lrifle_drum_pb"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257_drum/lethal
@@ -496,6 +544,14 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/rifle_75_short/scrap/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/rifle_75/laser
+	name = "rifle magazine (laser)"
+	icon_state = "rifle_lsr"
+	ammo_type = /obj/item/ammo_casing/rifle_75/laser
+
+/obj/item/ammo_magazine/rifle_75/laser/empty
 	initial_ammo = 0
 
 ////short////
@@ -777,6 +833,13 @@
 	matter = list(MATERIAL_STEEL = 12)
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/heavy_rifle_408/laser
+	name = "heavy rifle magazine (laser)"
+	icon_state = "hrifle_lsr"
+
+/obj/item/ammo_magazine/heavy_rifle_408/laser/empty
+	initial_ammo = 0
+
 ////10mm caseless////
 
 /obj/item/ammo_magazine/c10x24
@@ -833,7 +896,7 @@
 
 /obj/item/ammo_magazine/kurz_50/rubber/pepperball
 	name = "heavy pistol magazine (pepperball)"
-	icon_state = "kurz_l"
+	icon_state = "kurz_pb"
 	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
 /obj/item/ammo_magazine/kurz_50/practice
@@ -850,6 +913,14 @@
 	name = "heavy pistol magazine (hollow-point)"
 	icon_state = "kurz_l"
 	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
+
+/obj/item/ammo_magazine/kurz_50/laser
+	name = "heavy pistol magazine (laser)"
+	icon_state = "kurz_lsr"
+	ammo_type = /obj/item/ammo_casing/kurz_50/laser
+
+/obj/item/ammo_magazine/kurz_50/laser/empty
+	initial_ammo = 0
 
 ///////// SPEEDLOADERS ///////////
 
@@ -1195,7 +1266,7 @@
 /*
 /obj/item/ammo_magazine/sbaw/he
 	name = "20mm SBAW magazine (HEFI)"
-	icon_state = "sbaw_he"
+	icon_state = "sbaw_incend"
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
 */
 // SCI ammo

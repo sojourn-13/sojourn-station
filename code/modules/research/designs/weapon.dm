@@ -191,6 +191,12 @@
 	build_path = /obj/item/ammo_magazine/pistol_35/empty
 	materials = list(MATERIAL_STEEL = 3)
 
+/datum/design/research/item/ammo/pistol/empty/laser
+	name = "Pistol Magazine .35 Laser Marked (Empty)"
+	desc = "An empty magazine for pistols, chambered for .35, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/pistol_35/laser/empty
+	materials = list(MATERIAL_STEEL = 3)
+
 /datum/design/research/item/ammo/pistol
 	name = "Pistol Magazine .35"
 	desc = "A magazine for pistols, chambered for .35"
@@ -207,6 +213,12 @@
 	name = "SMG Magazine .35 (Empty) "
 	desc = "A magazine for .35, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/smg_mag/laser
+	name = "SMG Magazine .35 (Empty) "
+	desc = "A magazine for .35, used in smgs, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/smg_35/laser/empty
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/lethal
