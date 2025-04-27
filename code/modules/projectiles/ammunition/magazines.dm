@@ -1,5 +1,6 @@
 /obj/item/ammo_magazine/
 	name = "not a magazine"
+	icon = 'icons/obj/ammo_mags.dmi'
 	icon_state = "10l"
 
 /obj/item/ammo_magazine/pickup(mob/user)
