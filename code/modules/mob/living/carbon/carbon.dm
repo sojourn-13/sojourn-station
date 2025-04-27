@@ -400,3 +400,6 @@
 
 /mob/living/carbon/proc/need_breathe()
 	return TRUE
+
+/mob/living/carbon/proc/update_equipment_vision()
+	return 0
