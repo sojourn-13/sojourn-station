@@ -338,7 +338,7 @@
 
 		if (prob(miss_chance))
 			visible_message("\blue \The [O] misses [src] narrowly!")
-			playsound(src, "miss_sound", 50, 1, -6)
+			playsound(src, get_sfx("miss_sound"), 50, 1, -6)
 			return
 
 		if (O.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
