@@ -238,7 +238,6 @@ var/list/global/cutoff_plant_icons = list()
 
 //Used for plants that grow on walls
 /obj/effect/plant/proc/calc_dir()
-	set background = 1
 	pixel_x = 0
 	pixel_y = 0
 	var/turf/T = get_turf(src)

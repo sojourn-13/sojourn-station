@@ -1,6 +1,5 @@
 /mob/living/silicon/robot/Life()
 	set invisibility = 0
-	set background = 1
 
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
@@ -29,7 +28,6 @@
 
 /mob/living/silicon/robot/Life_Check_Light()
 	set invisibility = 0
-	set background = 1
 
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return

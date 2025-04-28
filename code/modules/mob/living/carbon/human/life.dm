@@ -38,7 +38,6 @@
 
 /mob/living/carbon/human/Life()
 	set invisibility = 0
-	set background = BACKGROUND_ENABLED
 
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return

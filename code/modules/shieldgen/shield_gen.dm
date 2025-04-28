@@ -208,7 +208,6 @@
 	return ..()
 
 /obj/machinery/shield_gen/proc/toggle()
-	set background = 1
 	active = !active
 	update_icon()
 	if(active)

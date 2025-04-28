@@ -50,7 +50,6 @@
 		icon_state = "ano_scanner"
 
 /obj/item/device/ano_scanner/proc/scan()
-	set background = 1
 
 	nearest_artifact_distance = -1
 

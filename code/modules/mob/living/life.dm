@@ -1,6 +1,5 @@
 /mob/living/Life()
 	set invisibility = 0
-	set background = BACKGROUND_ENABLED
 
 	. = FALSE
 	..()

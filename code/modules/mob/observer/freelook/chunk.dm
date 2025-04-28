@@ -73,8 +73,6 @@
 
 /datum/chunk/proc/update()
 
-	set background = 1
-
 	var/list/newVisibleTurfs = new()
 	acquireVisibleTurfs(newVisibleTurfs)
 

@@ -530,7 +530,6 @@
 	you where you've gone wrong.
 */
 /obj/procedural/jp_DungeonGenerator/proc/generate(seed=null)
-	set background = 1
 	if(!check_params()) return
 	out_numPaths = 0
 	out_numLongPaths = 0
@@ -824,7 +823,6 @@
 	Constructs a path between two jp_DungeonRegions.
 */
 /obj/procedural/jp_DungeonGenerator/proc/getPath(var/obj/procedural/jp_DungeonRegion/region1, var/obj/procedural/jp_DungeonRegion/region2)
-	set background = 1
 	//We pick our start on the border of our first room
 	var/turf/start = pick(region1.getBorder())
 	var/turf/end

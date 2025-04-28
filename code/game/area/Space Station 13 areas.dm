@@ -960,7 +960,6 @@ area/space/atmosalert()
 				Obj << mysound
 
 	Process()
-		set background = 1
 
 		var/sound/S = null
 		var/sound_delay = 0
