@@ -57,6 +57,41 @@
 		setOxyLoss(max(getOxyLoss(),60))
 		adjustOxyLoss(10)
 
+	var/blood_circulation_mult = get_blood_circulation() * 0.01
+	if(blood_circulation_mult < 0.1)
+		blood_circulation_mult = 0.1
+
+	//This is set to 1 as a defult for races that dont have blood
+	var/blood_volume_mult = 1
+
+	//Having less blood = less bleeding, this is counterbalanced by being low on blood will make pluse increase
+	//We use species.blood_volume over vessel.maximum_volume to have bleeding be worse if your over-filled or using genetics
+	if(vessel.get_reagent_amount("blood") && species.blood_volume)
+		blood_volume_mult = vessel.get_reagent_amount("blood") / species.blood_volume
+
+	var/pluse_drama = 1
+	switch(pulse)
+		if(PULSE_THREADY)
+			pluse_drama = 1.25 //25% more bleeding action for being on low blood, when it rains it poors
+		if(PULSE_NONE)
+			pluse_drama = 0.2  //-80% even if faking death or dieing
+		if(PULSE_FAST)
+			pluse_drama = 1.15 //15% your on chemicals that increase bpm so bleeding is faster
+		if(PULSE_2FAST)
+			pluse_drama = 1.35 //35% Your on drugs that make your heart race!
+		if(PULSE_SLOW)
+			pluse_drama = 0.85 //-15% Your pluse is slowed, reflect that in lowering blood loss
+
+	//If we are resting we dont bleed as much, this is to simulate elivating wounds poorly
+	var/resting_mult = 1
+	if(resting)
+		//60ish damage is at 100% blood around 2.1 bleed so 1.05, ect ect should be way easier to stablize yourself now
+		resting_mult = 0.5
+	if(buckled)
+		//Being buckled into a bed **not chair** gives the same affect
+		if(istype(buckled, /obj/structure/bed) && !istype(buckled, /obj/structure/bed/chair))
+			resting_mult = 0.5
+
 	//Bleeding out
 	var/blood_max = 0
 	for(var/obj/item/organ/external/temp in organs)
@@ -66,19 +101,30 @@
 			if(W.bleeding())
 				if(W.internal)
 					var/removed = W.damage/75
+					//Having a higher or lower pluse will affect your bleed out, for math we get this fist
+					removed *= pluse_drama
+					removed *= blood_circulation_mult
+					removed *= blood_volume_mult
+
 					if(chem_effects[CE_BLOODCLOT])
 						removed *= 1 - chem_effects[CE_BLOODCLOT]
+
 					vessel.remove_reagent("blood", temp.wound_update_accuracy * removed)
 					if(prob(1 * temp.wound_update_accuracy))
 						custom_pain("You feel a stabbing pain in your [temp]!",1)
 				else
-					blood_max += W.damage * WOUND_BLEED_MULTIPLIER
+					blood_max += (W.damage * resting_mult) * WOUND_BLEED_MULTIPLIER
 		if (temp.open)
 			blood_max += OPEN_ORGAN_BLEED_AMOUNT  //Yer stomach is cut open
+
+	blood_max *= pluse_drama
+	blood_max *= blood_circulation_mult
+	blood_max *= blood_volume_mult
 
 	// bloodclotting slows bleeding
 	if(chem_effects[CE_BLOODCLOT])
 		blood_max *=  1 - chem_effects[CE_BLOODCLOT]
+
 	drip_blood(blood_max)
 
 //Makes a blood drop, leaking amt units of blood from the mob

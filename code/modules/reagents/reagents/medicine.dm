@@ -1507,6 +1507,23 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		M.drowsyness = max(M.drowsyness, 60)
 	M.add_chemical_effect(CE_PULSE, -1)
 
+//Welsh -> oh weepless
+/datum/reagent/medicine/o_wylo
+	name = "Owylo"
+	id = "owylo"
+	description = "A SI branded mix of chemicals that are designed to prevent wounds from getting worse."
+	taste_description = "rosted lam"
+	reagent_state = LIQUID
+	color = "#043A5C"
+	scannable = TRUE
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = -5
+
+//Just stables, no need to add drawbacks, its a pain to make
+/datum/reagent/medicine/o_wylo/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_WOUND_STABLIZE, 1)
+	M.add_chemical_effect(CE_STABLE, 1)
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Meds made from animals. Unga.
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
