@@ -703,6 +703,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(!istype(P))
 		return //default behaviour only applies to true projectiles
 
+	//P.B gives you a bit more damage after all your in melee range
+	var/damage_mult = 1.1
+
 	//determine multiplier due to the target being grabbed
 	if(ismob(target))
 		var/mob/M = target
