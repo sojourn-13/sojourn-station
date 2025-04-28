@@ -442,7 +442,8 @@ Very rarely it might escape
 */
 /obj/item/beartrap/trible_vox
 	name = "wooden trap"
-	desc = "A simple wooden mechanical trap made with thorny branches and coiled bark as rope, covered in a rotten smelling meat. Anything stepping on it with force will activate it snapping teeth."
+	desc = "A classic shallow pit trap consisting of two planks of wood wrapped in thorned vines. It uses an unfortunate person's weight to drive the thorns into their leg. \
+	Useless once removed moved from a  pit. The vines have been dunked in a foul smelling substance."
 	icon_state = "woodtrap"
 	price_tag = 150 //Kros loves this kinda stuff maybe, or any real collectors
 	base_damage = 20
