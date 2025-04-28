@@ -978,10 +978,15 @@ var/list/flooring_types
 	icon_base = "dirt_ploughed"
 
 /decl/flooring/dirt/flood
+	desc = "Mud and clay. It's viscous and hard to move through."
 	icon_base = "flood_dirt"
+	tally_addition_decl = 1
 
+//Mini enforcements
 /decl/flooring/dirt/flood/plough
+	desc = "Mud and clay. It's viscous and hard to move through. This area has rows of ploughed dirt as well mixing and making it even harder"
 	icon_base = "flood_dirt_ploughed"
+	tally_addition_decl = 2
 
 /decl/flooring/dirt/dust
 	icon_base = "dust"

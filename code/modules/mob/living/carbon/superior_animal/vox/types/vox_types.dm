@@ -156,7 +156,7 @@
 
 /mob/living/carbon/superior/vox/hider/trainned
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is harder to see as it stalks low to the ground, hiding in bushes or other shadows waiting to pounce with hands covered in muck and dirt."
-	icon_state = "vox_ultraviolet_belt"
+	icon_state = "vox_ultraviolet_belted"
 
 	knock_over_odds = 50
 
@@ -201,6 +201,8 @@
 /mob/living/carbon/superior/vox/ashen/trainned
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. \
 	This one seems to be using a crude spear rather then its exstreamly sharp claws as well as a blood lust aura radiating off it..."
+
+	icon_state = "vox_pitchblack_spear"
 
 	melee_damage_lower = 18
 	melee_damage_upper = 22
