@@ -438,7 +438,7 @@
 	if(!H.client && !H.teleop)
 		for(var/mob/observer/ghost/ghost in GLOB.player_list)
 			if(ghost.mind == H.mind)
-				to_chat(ghost, "<b><font color = #330033><font size = 3>Someone is attempting to resuscitate you. Re-enter your body if you want to be revived!</b> (Verbs -> Ghost -> Re-enter corpse)</font></font>")
+				to_chat(ghost, "<b><font color = #ff2d00><font size = 6>Someone is attempting to resuscitate you. Re-enter your body if you want to be revived!</b> (Verbs -> Ghost -> Re-enter corpse)</font></font>")
 				break
 
 	//beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
