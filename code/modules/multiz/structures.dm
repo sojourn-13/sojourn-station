@@ -338,9 +338,10 @@
 	icon = 'icons/obj/burrows.dmi'
 	icon_state = "maint_hole"
 
-
 /obj/structure/multiz/ladder/up/deepmaint
 	name = "maintenance ladder"
+	icon_state = "ladderup_dm"
+	alpha = 180 //So we can see a bit through them to avoid blocking sight
 
 /obj/structure/multiz/ladder/up/deepmaint/climb()
 	if(!target)
