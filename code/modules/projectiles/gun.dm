@@ -361,15 +361,16 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/afterattack(atom/A, mob/living/user, adjacent, params)
 	if(adjacent) return //A is adjacent, is the user, or is on the user's person
 
+	//DUAL WIELDING
 	if(ishuman(user) && user.a_intent == I_HURT)
 		var/mob/living/carbon/human/H = user
-		var/obj/item/gun/off_hand   //DUAL WIELDING
+		var/obj/off_hand = H.get_inactive_hand()
 
-		if(istype(H.get_inactive_hand(), /obj/item/gun))
-			off_hand = H.get_inactive_hand()
+		if(istype(off_hand, /obj/item/gun))
+			var/obj/item/gun/G = off_hand
 
-		if(off_hand && off_hand.can_hit(user) && off_hand.can_dual)
-			off_hand.Fire(A,user,params)
+			if(G.can_dual)
+				G.Fire(A,user,params)
 
 	Fire(A,user,params) //Otherwise, fire normally.
 
