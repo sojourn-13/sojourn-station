@@ -589,7 +589,7 @@
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "cj" = (
-/obj/machinery/light/floor/built,
+/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "ck" = (
@@ -648,9 +648,9 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "eg" = (
-/obj/machinery/light/floor/built,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+/obj/random/junkfood,
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "gC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -843,7 +843,7 @@ aa
 aa
 aa
 aa
-cj
+aa
 aa
 aa
 aa
@@ -973,7 +973,7 @@ Pp
 KH
 cq
 Td
-cj
+aa
 aa
 "}
 (7,1,1) = {"
@@ -996,7 +996,7 @@ HZ
 KH
 cq
 Td
-aa
+cj
 aa
 "}
 (8,1,1) = {"
@@ -1180,7 +1180,7 @@ HZ
 ns
 cq
 Td
-aa
+cj
 aa
 "}
 (16,1,1) = {"
@@ -1249,7 +1249,7 @@ ab
 ab
 ab
 aa
-cj
+aa
 aa
 "}
 (19,1,1) = {"
@@ -1287,14 +1287,14 @@ ab
 ab
 ab
 bX
-eg
+bV
 aa
 Hd
-aa
-aa
 cj
 aa
-CF
+aa
+aa
+eg
 aa
 aa
 "}
@@ -1303,7 +1303,7 @@ aa
 aa
 aa
 aa
-cj
+aa
 aa
 aa
 aa

@@ -76,6 +76,9 @@
 #define CE_BRAINHEAL        "neural tissue restoration"
 #define CE_EYEHEAL          "sensory organ regeneration stimulant"
 #define CE_DEBRIDEMENT      "debriding agent" //for fixing burn/necrosis type wounds.
+#define CE_ATTACK_COOLDOWN  "attacking cooldown adder" //Used to *add* attack cooldown, negitives will increase attack speed
+
+#define CE_WOUND_STABLIZE   "wound stablizer" //for preventing internal wounds form progressing
 
 // Chem effects for robotic/assisted organs
 #define CE_MECH_STABLE 		"cooling"

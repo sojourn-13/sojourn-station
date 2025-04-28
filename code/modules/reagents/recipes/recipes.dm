@@ -963,6 +963,13 @@
 	result_amount = 1
 	catalysts = list("honey" = 5)
 
+//Quite a useful chem so its a bit annoying to make, but you get a lot
+/datum/chemical_reaction/owylo
+	result = "owylo"
+	required_reagents = list("spaceacillin" = 2, "sanguinum" = 3,"inaprovaline" = 5, "carthatoline" = 2, "meralyne" = 0.5, "somnadine" = 0.5)
+	result_amount = 10
+	catalysts = list("suppressital" = 5)
+
 /datum/chemical_reaction/suppressital
 	result = "suppressital"
 	required_reagents = list("blood" = 1, "citalopram" = 1)

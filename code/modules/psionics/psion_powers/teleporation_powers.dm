@@ -27,17 +27,18 @@
 				if(!PT.check_possibility())
 					return
 
-			for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
+			for(var/area/deepmaint/A in world)				//Clumbsy, but less intensive than iterating every tile
 				if(istype(A, /area/deepmaint))				//First find our deepmaint areas
+					A.Entered(user)
 					for(var/turf/simulated/floor/T in A)	//Pull a list of valid floor tiles from deepmaint
 						validtargets += T					//Add them to the list
 			target = pick(validtargets)						//Now we pick a target
 
-			do_sparks(1, 0, user.loc)							//Visual feedback before the teleport
+			do_sparks(1, 0, user.loc)						//Visual feedback before the teleport
 			user.forceMove(target)							//Moves the caster
 			if(L)											//If we have a grabbed target
-				do_sparks(1, 0, target.loc)						//Visual feeback before the teleport
+				do_sparks(1, 0, target.loc)					//Visual feeback before the teleport
 				L.forceMove(target)							//Moves the target
-				do_sparks(1, 0, target.loc)						//Visual feedback after the teleport
-			do_sparks(1, 0, user.loc)							//Visual feedback after the teleport
+				do_sparks(1, 0, target.loc)					//Visual feedback after the teleport
+			do_sparks(1, 0, user.loc)						//Visual feedback after the teleport
 			user.weakened += 10								//Moving like this is stressful and stuns you for a time.

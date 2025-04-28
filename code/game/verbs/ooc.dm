@@ -173,6 +173,16 @@
 				var/obj/O = I
 				hearturfs |= O.locs[1]
 				listening_obj |= O
+			else if(ismecha(I))
+				//MA for MechA
+				var/obj/mecha/MA = I
+				if(ismob(MA.occupant))
+					listening |= MA.occupant.client
+					listening_obj |= MA
+				for(var/obj/item/mecha_parts/mecha_equipment/tool/passenger/P in MA.equipment)
+					if(ismob(P.occupant))
+						listening |= P.occupant.client
+						listening_obj |= P
 
 		for(var/mob/M in GLOB.player_list)
 			if(M.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)

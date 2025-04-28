@@ -13,6 +13,8 @@
 	AM.throw_at(target,missile_range, missile_speed, chassis)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/proc/rearm()
+	if(chassis.get_charge() < projectile_energy_cost)
+		occupant_message(SPAN_WARNING("Insufficient Power to Flash Print."))
 	if(projectiles < initial(projectiles))
 		var/projectiles_to_add = initial(projectiles) - projectiles
 		while(chassis.get_charge() >= projectile_energy_cost && projectiles_to_add)
@@ -21,6 +23,8 @@
 			chassis.use_power(projectile_energy_cost)
 	send_byjax(chassis.occupant, "exosuit.browser", "\ref[src]", get_equip_info())
 	log_message("Rearmed [name].")
+	occupant_message(SPAN_WARNING("[name] rearmed."))
+
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/Topic(href, href_list)
 	. = ..()
