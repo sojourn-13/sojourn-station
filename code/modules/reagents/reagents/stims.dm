@@ -14,6 +14,7 @@
 	overdose = REAGENTS_OVERDOSE
 	addiction_chance = 20
 	nerve_system_accumulations = 15
+	withdrawal_threshold = 16
 
 /datum/reagent/stim/greaser/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "greaser")
@@ -59,6 +60,7 @@
 	overdose = REAGENTS_OVERDOSE + 5
 	nerve_system_accumulations = 20
 	addiction_chance = 30
+	withdrawal_threshold = 6
 
 /datum/reagent/stim/cherrydrops/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "cherrydrops")
@@ -86,6 +88,7 @@
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 20
 	addiction_chance = 20
+	withdrawal_threshold = 6
 
 /datum/reagent/stim/pro_surgeon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_BASIC, STIM_TIME, "pro_surgeon")
@@ -118,6 +121,7 @@
 	overdose = REAGENTS_OVERDOSE - 10
 	nerve_system_accumulations = 30
 	addiction_chance = 30
+	withdrawal_threshold = 11
 
 /datum/reagent/stim/violence/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "violence")
@@ -150,6 +154,7 @@
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 10
 	addiction_chance = 20
+	withdrawal_threshold = 5
 
 /datum/reagent/stim/bouncer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "bouncer")
@@ -179,6 +184,7 @@
 	overdose = REAGENTS_OVERDOSE - 10
 	nerve_system_accumulations = 20
 	addiction_chance = 20
+	withdrawal_threshold = 5
 
 /datum/reagent/stim/steady/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_BASIC, STIM_TIME, "steady")
@@ -207,6 +213,7 @@
 	overdose = REAGENTS_OVERDOSE - 12
 	nerve_system_accumulations = 30
 	addiction_chance = 30
+	withdrawal_threshold = 15
 
 /datum/reagent/stim/greasy_lard/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "greasy_lard")
@@ -236,6 +243,7 @@
 	overdose = REAGENTS_OVERDOSE - 5
 	nerve_system_accumulations = 30
 	addiction_chance = 40
+	withdrawal_threshold = 15
 
 /datum/reagent/stim/grape_drops/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "grape_drops")
@@ -266,6 +274,7 @@
 	overdose = REAGENTS_OVERDOSE - 13
 	nerve_system_accumulations = 30
 	addiction_chance = 30
+	withdrawal_threshold = 1
 
 /datum/reagent/stim/ultra_surgeon/on_mob_add(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
@@ -308,16 +317,19 @@
 	overdose = REAGENTS_OVERDOSE - 19
 	nerve_system_accumulations = 60
 	addiction_chance = 40
+	withdrawal_threshold = 1
 
 /datum/reagent/stim/violence_ultra/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "violence_ultra")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violence_ultra")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "violence_ultra")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, -0.6)
 
 /datum/reagent/stim/violence_ultra/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 0.6)
 	if(prob(25 - (10 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 	M.adjustNutrition(-5)
@@ -343,15 +355,18 @@
 	overdose = REAGENTS_OVERDOSE/2
 	nerve_system_accumulations = 50
 	addiction_chance = 30
+	withdrawal_threshold = 6
 
 /datum/reagent/stim/boxer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "boxer")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "boxer")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "boxer")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, -0.3)
 
 /datum/reagent/stim/boxer/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "boxer_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "boxer_w")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 0.3)
 
 /datum/reagent/stim/boxer/overdose(mob/living/carbon/M, alien)
 	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
@@ -373,6 +388,7 @@
 	overdose = REAGENTS_OVERDOSE-18
 	nerve_system_accumulations = 60
 	addiction_chance = 40
+	withdrawal_threshold = 1
 
 /datum/reagent/stim/turbo/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "turbo")
@@ -407,6 +423,7 @@
 	overdose = REAGENTS_OVERDOSE - 20
 	nerve_system_accumulations = 70
 	addiction_chance = 50
+	withdrawal_threshold = 6
 
 /datum/reagent/stim/party_drops/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
@@ -415,6 +432,7 @@
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 0.5)
 
 /datum/reagent/stim/party_drops/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "partyDrops_w")
@@ -453,6 +471,7 @@
 	overdose = REAGENTS_OVERDOSE - 18
 	nerve_system_accumulations = 70
 	addiction_chance = 90
+	withdrawal_threshold = 1
 
 /datum/reagent/stim/menace/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
@@ -463,11 +482,13 @@
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
 	M.slurring = max(M.slurring, 30)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, 4)
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, -0.9)
 
 /datum/reagent/stim/menace/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 0.9)
 	if(prob(25 - (5 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 	M.adjustNutrition(-7)
@@ -502,6 +523,7 @@
 	overdose = REAGENTS_OVERDOSE + 5
 	nerve_system_accumulations = 10
 	addiction_chance = 5
+	withdrawal_threshold = 12
 
 /datum/reagent/stim/gumdrops/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, (STAT_LEVEL_BASIC - 10), STIM_TIME, "gum drops")
@@ -522,6 +544,7 @@
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 80
 	addiction_chance = 100
+	withdrawal_threshold = 0.01
 
 /datum/reagent/stim/hacker/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_PROF, STIM_TIME, "hacker")
