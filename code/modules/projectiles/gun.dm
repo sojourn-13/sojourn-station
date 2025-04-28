@@ -59,7 +59,6 @@
 	var/list/gun_parts = list(/obj/item/part/gun = 1 ,/obj/item/stack/material/steel = 4)
 
 	var/muzzle_flash = 3
-	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
 	var/active_zoom_factor = 1 //Index of currently selected zoom factor
 	var/list/zoom_factors = list()//How much to scope in when using weapon,
@@ -321,20 +320,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		handle_click_empty(user)
 		return FALSE
 
-	if((CLUMSY in M.mutations) && prob(15))
-		var/obj/P = consume_next_projectile()
-		if(P)
-			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
-				handle_post_fire(user, user)
-				user.visible_message(
-					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot!"),
-					SPAN_DANGER("You fumble with \the [src] and accidentally shoot yourself in the foot with it!")
-					)
-				currently_firing = FALSE
-		else
-			handle_click_empty(user)
-		return FALSE
-
 	if(rigged)
 		var/obj/P = consume_next_projectile()
 		if(P)
@@ -376,37 +361,23 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/afterattack(atom/A, mob/living/user, adjacent, params)
 	if(adjacent) return //A is adjacent, is the user, or is on the user's person
 
-	var/obj/item/gun/off_hand   //DUAL WIELDING
-	if(ishuman(user) && user.a_intent == "harm")
+	if(ishuman(user) && user.a_intent == I_HURT)
 		var/mob/living/carbon/human/H = user
+		var/obj/item/gun/off_hand   //DUAL WIELDING
 
-		if(H.r_hand == src && istype(H.l_hand, /obj/item/gun))
-			off_hand = H.l_hand
-			dual_wielding = TRUE
+		if(istype(H.get_inactive_hand(), /obj/item/gun))
+			off_hand = H.get_inactive_hand()
 
-		else if(H.l_hand == src && istype(H.r_hand, /obj/item/gun))
-			off_hand = H.r_hand
-			dual_wielding = TRUE
-		else
-			dual_wielding = FALSE
-
-		if(!can_dual)
-			dual_wielding = FALSE
-		else if(off_hand && off_hand.can_hit(user))
-			spawn(1)
+		if(off_hand && off_hand.can_hit(user) && off_hand.can_dual)
 			off_hand.Fire(A,user,params)
-	else
-		dual_wielding = FALSE
 
 	Fire(A,user,params) //Otherwise, fire normally.
 
 /obj/item/gun/attack(atom/A, mob/living/user, def_zone)
-	if (A == user && user.targeted_organ == BP_MOUTH && !mouthshoot)
-		handle_suicide(user)
-	else if(user.a_intent == I_HURT) //point blank shooting
+	if(user.a_intent == I_HURT) //point blank shooting
 		Fire(A, user, pointblank=1)
-	else
-		return ..() //Pistolwhippin'
+		return
+	..() //Pistolwhippin'
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	//Detectable crime >:T
@@ -500,7 +471,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(ABORT_CHECK)
 				return
 
-
 	else
 		..()
 
@@ -513,7 +483,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 /obj/item/gun/proc/ready_to_shoot()
 	can_fire_next = TRUE
-
 
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0, multiply_pve_damage = 0)
 	if(!user || !target) return
@@ -536,9 +505,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	can_fire_next = FALSE
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), fire_delay)
 
-	if(muzzle_flash)
-		set_light(muzzle_flash)
-
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
@@ -546,6 +512,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		if(!projectile)
 			handle_click_empty(user)
 			break
+
+		if(muzzle_flash)
+			//Use a temp affect so we avoid using sleep and walking around with the light moving with us
+			var/obj/effect/temporary/S = new(get_turf(user), muzzle_flash / 7) //Dosnt stick around long but needs to be long enuff to allow for it to trigger
+			S.set_light(muzzle_flash)
 
 		if(extra_proj_damagemult)
 			projectile.multiply_projectile_damage(extra_proj_damagemult)
@@ -580,9 +551,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(fire_stacks)
 			projectile.add_fire_stacks(fire_stacks)
-
-		if(muzzle_flash)
-			set_light(muzzle_flash)
 
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
@@ -637,11 +605,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	currently_firing = FALSE
 
-	spawn(5) //gives us time to light up the area as we shoot
-
-	if(muzzle_flash)
-		set_light(0)
-
 //obtains the next projectile to fire
 /obj/item/gun/proc/consume_next_projectile()
 	return null
@@ -686,8 +649,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				"You hear a [fire_sound_text]!"
 				)
 */
-		if(muzzle_flash)
-			set_light(muzzle_flash)
 
 	kickback(user, P, 0)
 	user.handle_recoil(src)
@@ -741,12 +702,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
 	if(!istype(P))
 		return //default behaviour only applies to true projectiles
-
-	if(dual_wielding)
-		return //dual wielding deal too much damage as it is, so no point blank for it
-
-	//default point blank multiplier
-	var/damage_mult = 1.1
 
 	//determine multiplier due to the target being grabbed
 	if(ismob(target))
@@ -817,76 +772,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				return
 
 	return held_item
-
-//Suicide handling.
-/obj/item/gun/proc/handle_suicide(mob/living/user)
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/M = user
-
-	mouthshoot = TRUE
-	M.visible_message(SPAN_DANGER("[user] points their gun at their head, ready to pull the trigger..."))
-	if(!do_after(user, 40, progress=0))
-		M.visible_message(SPAN_NOTICE("[user] decided life was worth living"))
-		mouthshoot = FALSE
-		return
-
-	if(safety)
-		handle_click_empty(user)
-		mouthshoot = FALSE
-		return
-
-	var/obj/item/projectile/in_chamber = consume_next_projectile()
-	if (istype(in_chamber))
-		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
-		if(silenced)
-			playsound(user, fire_sound, 10, 1)
-		else
-			playsound(user, fire_sound, 60, 1)
-		if(istype(in_chamber, /obj/item/projectile/plasma/lastertag))
-			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
-			mouthshoot = FALSE
-			return
-
-	if (istype(in_chamber))
-		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
-		if(silenced)
-			playsound(user, fire_sound, 10, 1)
-		else
-			playsound(user, fire_sound, 60, 1)
-		if(istype(in_chamber, /obj/item/projectile/bullet/cap))
-			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
-			mouthshoot = FALSE
-			return
-
-	if (istype(in_chamber))
-		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
-		if(silenced)
-			playsound(user, fire_sound, 10, 1)
-		else
-			playsound(user, fire_sound, 60, 1)
-		if(istype(in_chamber, /obj/item/projectile/chameleon))
-			user.show_message(SPAN_WARNING("The gun fired but...you feel fine?"))
-			mouthshoot = FALSE
-			return
-
-		in_chamber.on_hit(M)
-		if (!in_chamber.is_halloss())
-			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
-			for(var/damage_type in in_chamber.damage_types)
-				var/damage = in_chamber.damage_types[damage_type]*2.5
-				user.apply_damage(damage, damage_type, BP_HEAD, used_weapon = "Point blank shot in the head with \a [in_chamber]", sharp=1)
-			user.death()
-		else
-			to_chat(user, SPAN_NOTICE("Ow..."))
-			user.adjustHalLoss(110)
-		qdel(in_chamber)
-		mouthshoot = FALSE
-		return
-	else
-		handle_click_empty(user)
-		mouthshoot = FALSE
-		return
 
 /obj/item/gun/proc/gun_brace(mob/living/user, atom/target)
 	if(braceable && !user.is_busy)
@@ -1089,7 +974,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if (sel_mode && firemodes && firemodes.len)
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.force_deselect(user)
-
 
 /obj/item/gun/AltClick(mob/user)
 	if(user.incapacitated())

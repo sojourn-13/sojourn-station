@@ -9,10 +9,6 @@
 /obj/item/gun/matter/launcher/can_hit(mob/living/target, mob/living/user)
 	return TRUE
 
-/obj/item/gun/matter/launcher/handle_suicide(mob/living/user)
-	to_chat(user, SPAN_WARNING("Shooting yourself with \a [src] is pretty tricky. You can't seem to manage it."))
-	return
-
 /obj/item/gun/matter/launcher/proc/update_release_force(obj/item/projectile)
 	return FALSE
 
