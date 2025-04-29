@@ -19,7 +19,8 @@
 	var/lifetime = INFINITY
 	///Delay between each move in deci-seconds
 	var/delay = 1
-	///The next time we should process
+	///Used to help keep track of mob delay
+	var/starting_delay = 1	///The next time we should process
 	///Used primarially as a hint to be reasoned about by our [controller], and as the id of our bucket
 	///Should not be modified directly outside of [start_loop]
 	var/timer = 0
@@ -41,6 +42,7 @@
 		return FALSE
 
 	src.delay = max(delay, world.tick_lag) //Please...
+	src.starting_delay = delay
 	src.lifetime = timeout
 	return TRUE
 
@@ -189,6 +191,8 @@
  *
 **/
 /datum/controller/subsystem/move_manager/proc/move_to_dir(moving, direction, delay, timeout, subsystem, priority, flags, datum/extra_info)
+	if(direction == NORTHEAST || direction == NORTHWEST || direction == SOUTHEAST || direction == SOUTHWEST)
+		delay += MOVE_DELAY_DIAGONAL_ADDER //help stops faster movement if going in diagonals
 	return add_to_loop(moving, subsystem, /datum/move_loop/move/move_to, priority, flags, extra_info, delay, timeout, direction)
 
 /datum/move_loop/move/move_to
@@ -468,13 +472,18 @@
 	return (get_dist(moving, target) > distance) //If you get too close, stop moving closer
 
 /datum/move_loop/has_target/dist_bound/move_to/move()
+	//log_and_message_admins("delay 1 [delay] vs [starting_delay]")
+	delay = starting_delay
 	. = ..()
 	if(!.)
 		return
 	var/atom/old_loc = moving.loc
+	var/true_direction = get_dir(moving, target)
+	if(true_direction == NORTHEAST || true_direction == NORTHWEST || true_direction == SOUTHEAST || true_direction == SOUTHWEST)
+		delay += MOVE_DELAY_DIAGONAL_ADDER //help stops faster movement if going in diagonalsy
 	step_to(moving, target)
+	//log_and_message_admins("delay 2 [delay] vs [starting_delay]")
 	return old_loc != moving?.loc
-
 /**
  * Wrapper around walk_away()
  *
