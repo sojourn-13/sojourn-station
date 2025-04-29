@@ -25,7 +25,7 @@
 
 		var/image/I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "ammo_up")
 		I.alpha /= icon_mover
-		I.pixel_y = icon_mover
+		I.pixel_y = -icon_mover
 		add_overlay(I)
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), I), 20 - icon_mover)
 		icon_mover += 1
