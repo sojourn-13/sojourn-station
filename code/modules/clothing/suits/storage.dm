@@ -13,6 +13,8 @@
 	pockets.cant_hold |= extra_allowed
 
 /obj/item/clothing/suit/storage/Destroy()
+	for(var/I in pockets.contents)
+		pockets.remove_from_storage(I)
 	qdel(pockets)
 	pockets = null
 	. = ..()
@@ -45,7 +47,6 @@
 /obj/item/clothing/suit/storage/toggle/New()
 	..()
 	check_coat_verbs()
-
 
 //Updates the verb list to accomodate with the jacket's current state
 /obj/item/clothing/suit/storage/toggle/proc/check_coat_verbs()

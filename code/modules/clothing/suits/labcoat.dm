@@ -13,7 +13,7 @@
 		bullet = 0,
 		bomb = 0,
 		bio = 50,
-		bomb = 0
+		rad = 0
 	)
 
 /obj/item/clothing/suit/storage/toggle/labcoat/poofy

@@ -374,6 +374,7 @@
 		our_man.wear_mask,
 		our_man.w_uniform,
 	)
+	var/factor = 0.3 // rather randomly chosen
 	remove_self(volume)
 	for(var/bodypart in bodyparts)
 		var/stop_loop = FALSE
@@ -385,15 +386,13 @@
 			if(C.unacidable || C.armor.bio > 99)
 				stop_loop = TRUE
 				continue
-			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
-			if(melting_requirement > units_per_bodypart)
-				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+			var/melting_requirement = (C.armor.bio / 100) * factor * meltdose
+			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
-				C.forceMove(NULLSPACE)
 				wearing_1 -= C
 				qdel(C)
 		if(stop_loop)
@@ -405,17 +404,26 @@
 			if(C.unacidable || C.armor.bio > 99)
 				stop_loop = TRUE
 				continue
-			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
-			if(melting_requirement > units_per_bodypart)
-				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+			var/melting_requirement = (C.armor.bio / 100) * factor * meltdose
+			if(C.armor.bio >= 100 || melting_requirement > units_per_bodypart)
 				stop_loop = TRUE
 			else
 				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
 				units_for_this_part -= melting_requirement
 				our_man.remove_from_mob(C)
-				C.forceMove(NULLSPACE)
 				wearing_2 -= C
 				qdel(C)
+
+		if(stop_loop)
+			continue
+		// third layer of clothing, no bio protection
+		for(var/obj/item/underwear/U in our_man.worn_underwear)
+			if(!(U.required_free_body_parts & bodypart))
+				continue
+			our_man.worn_underwear -= U
+			qdel(U)
+		our_man.update_underwear()
+
 		if(stop_loop)
 			continue
 		M.take_organ_damage(0, units_for_this_part * power * 0.1)
