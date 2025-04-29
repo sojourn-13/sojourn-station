@@ -14,7 +14,6 @@ SUBSYSTEM_DEF(xenoarch)
 	var/list/map_data_list = list()
 
 /datum/controller/subsystem/xenoarch/Initialize(start_timeofday)
-	set background = 1
 	//fill list of map data so we can use it to determine digsite types
 	for(var/obj/map_data/MD in world)
 		if (MD.digsites)

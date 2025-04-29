@@ -1,6 +1,5 @@
 /mob/living/carbon/slime/Life()
 	set invisibility = 0
-	set background = 1
 
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return

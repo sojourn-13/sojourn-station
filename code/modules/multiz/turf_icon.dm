@@ -60,8 +60,6 @@
 	update_openspace()
 
 /hook/roundstart/proc/init_openspace()
-	// Used to suppress a loop check warning
-	set background = 1
 	for (var/turf/T in turfs)
 		if (T.isTransparent)
 			T.update_icon(null, TRUE)

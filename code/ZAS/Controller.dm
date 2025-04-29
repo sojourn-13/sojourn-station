@@ -95,7 +95,6 @@ Class Procs:
 	//Outputs: None.
 
 	#ifndef ZASDBG
-	set background = 1
 	#endif
 
 	admin_notice(SPAN_DANGER("Processing Geometry..."), R_DEBUG)
@@ -129,7 +128,6 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 	//Outputs: None.
 
 	#ifndef ZASDBG
-	set background = 1
 	#endif
 
 	while(1)
