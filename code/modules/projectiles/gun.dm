@@ -516,7 +516,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(muzzle_flash)
 			//Use a temp affect so we avoid using sleep and walking around with the light moving with us
-			var/obj/effect/temporary/S = new(get_turf(user), muzzle_flash / 7) //Dosnt stick around long but needs to be long enuff to allow for it to trigger
+			var/obj/effect/temporary/S = new(get_turf(user), muzzle_flash / 3) //Dosnt stick around long but needs to be long enuff to allow for it to trigger
 			S.set_light(muzzle_flash)
 
 		if(extra_proj_damagemult)
