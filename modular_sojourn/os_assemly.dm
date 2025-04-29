@@ -32,8 +32,8 @@ o p b
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 				to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 				anchored = !anchored
-				update_icon()
 				update_connector(user)
+				update_icon()
 			return
 	..()
 
@@ -82,7 +82,7 @@ o p b
 				to_chat(user, SPAN_NOTICE("The [src] automatically connects to [P.name] after a slight tap."))
 				connect_to_printer = P
 				P.connected_tanker = src
-				break
+
 		if(!connect_to_printer)
 			to_chat(user, SPAN_NOTICE("The [src] can not to connect to anything."))
 
@@ -135,7 +135,7 @@ o p b
 	..()
 	if(istype(I, /obj/item/stack/os_cash))
 		var/obj/item/stack/os_cash/yuan = I
-		var/coins_to_add = input("How many coins.", "Yuan Coin Slot") as num | null
+		var/coins_to_add = input("How many coins?", "Yuan Coin Slot") as num | null
 		if(coins_to_add > yuan.amount)
 			to_chat(user, SPAN_NOTICE("You dont have that many coins."))
 			return
@@ -283,8 +283,6 @@ o p b
 				if(P.print_attempt(B.blueprint, B.cost, user))
 					to_chat(user, SPAN_NOTICE("The console's screen shows no errors."))
 
-				break
-			break
 		if(!printer_found)
 			to_chat(user, SPAN_NOTICE("A small error notice stating no printer detected north of console."))
 			return
@@ -321,8 +319,6 @@ o p b
 						P.print_item(B.blueprint, B.cost)
 						B.prints_left -= 1
 						B.update_icon()
-					break
-				break
 
 			if(!blueprinter_found)
 				to_chat(user, SPAN_NOTICE("A small error notice stating no data unit detected north east of console."))
@@ -408,7 +404,7 @@ o p b
 /obj/structure/os_assemly/blueprinter/attackby(obj/item/I, mob/user)
 	..()
 	if(istype(I, /obj/item/stack/os_cash))
-		var/obj/item/stack/os_cash/yuan
+		var/obj/item/stack/os_cash/yuan = I
 		yuan.amount -= 1
 		if(yuan.amount <= 0)
 			usr.drop_from_inventory(yuan)
