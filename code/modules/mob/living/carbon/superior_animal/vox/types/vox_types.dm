@@ -86,7 +86,6 @@
 
 	drop_items = list(/obj/item/stack/ore, /obj/item/stack/ore, /obj/item/stack/ore, /obj/item/stack/ore, /obj/item/stack/material/silk)
 
-
 //Solar Bird
 /mob/living/carbon/superior/vox/armord
 	name = "Solarno Ciriklo"
@@ -154,7 +153,7 @@
 	. = ..()
 	alpha = 255
 
-/mob/living/carbon/superior/vox/hider/trainned
+/mob/living/carbon/superior/vox/hider/trained
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is harder to see as it stalks low to the ground, hiding in bushes or other shadows waiting to pounce with hands covered in muck and dirt."
 	icon_state = "vox_ultraviolet_belted"
 
@@ -198,7 +197,7 @@
 	armor_divisor = 1.25
 
 
-/mob/living/carbon/superior/vox/ashen/trainned
+/mob/living/carbon/superior/vox/ashen/trained
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. \
 	This one seems to be using a crude spear rather then its exstreamly sharp claws as well as a blood lust aura radiating off it..."
 
@@ -298,9 +297,20 @@
 			adjustFireLoss(-3)
 			healing_kit -= 3
 
-	//Heal others
+		var/image/I
+		I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "healed")
+		add_overlay(I)
+
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), I), 40)
+
 	for(var/mob/living/carbon/superior/vox/V in oview(3, src))
 		if(V.stat == CONSCIOUS && health != maxHealth)
+			var/image/I
+			I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "healed")
+			add_overlay(I)
+			V.add_overlay(I)
+			addtimer(CALLBACK(V, TYPE_PROC_REF(/atom, cut_overlay), I), 40)
+
 			if(V.bruteloss)
 				V.adjustBruteLoss(-3)
 				healing_kit -= 3

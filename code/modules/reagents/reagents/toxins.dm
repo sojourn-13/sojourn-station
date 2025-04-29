@@ -840,7 +840,7 @@
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
 
-//Wasp toxin
+//Bird toxin
 /datum/reagent/toxin/slow_toxin
 	name = "Ciriklo stolidium"
 	id = "slow_toxin"

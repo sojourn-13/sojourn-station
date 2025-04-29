@@ -19,5 +19,15 @@
 /mob/living/carbon/superior/vox/mob_reload()
 	..()
 
+	//Litterly the worst code ive ever done for a simple icon tweaking, like idk how real games do this
+	var/icon_mover = 1
 	for(var/mob/living/carbon/superior/vox/thrower_spear/trained/T in oview(3, src))
+
+		var/image/I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "ammo_up")
+		I.alpha /= icon_mover
+		I.pixel_y = icon_mover
+		add_overlay(I)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), I), 20 - icon_mover)
+		icon_mover += 1
+
 		rounds_left += 2 //Torn Bandolier, once per Ciriklo
