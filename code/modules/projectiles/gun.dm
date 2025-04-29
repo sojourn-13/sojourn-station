@@ -69,26 +69,21 @@
 	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
 	var/wrench_intraction = FALSE
 	var/plusing_intraction = FALSE
-
 /*
+	NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
+	Do keep in mind that a normal player's view is seven tiles of vision in each direction.
 
-NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
-		  Do keep in mind that a normal player's view is seven tiles of vision in each direction.
+	Minimum value is 0.2 which gives 1 extra tile of vision.
+	From there, increases are mostly linear, with the following shared exceptions:
+	0.3 and 0.4 = 2 extra tiles
+	0.6 and 0.7 = 4 extra tiles
+	0.9 gives 6 extra tiles, from there jumps straight to 8 extra tiles at both 1 and 1.1
+	1.3 and 1.4 = 10 extra tiles (Character no longer seen on screen)
+	1.6 and 1.7 = 12 extra tiles
+	Largest zooming factor being 2, increases tile vision by 16 extra tiles.
 
-						Minimum value is 0.2 which gives 1 extra tile of vision.
-				From there, increases are mostly linear, with the following shared exceptions:
-									0.3 and 0.4 = 2 extra tiles
-									0.6 and 0.7 = 4 extra tiles
-			0.9 gives 6 extra tiles, from there jumps straight to 8 extra tiles at both 1 and 1.1
-						1.3 and 1.4 = 10 extra tiles (Character no longer seen on screen)
-									1.6 and 1.7 = 12 extra tiles
-					Largest zooming factor being 2, increases tile vision by 16 extra tiles.
-
-
-For the sake of consistency, I suggest always rounding up on even values when applicable. - Seb (ThePainkiller)
-
+	For the sake of consistency, I suggest always rounding up on even values when applicable. - Seb (ThePainkiller)
 */
-
 	var/suppress_delay_warning = FALSE
 
 	var/safety = TRUE//is safety will be toggled on spawn() or not
@@ -281,7 +276,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			else
 				item_state_slots[slot_l_hand_str] = initial(item_state)
 				item_state_slots[slot_r_hand_str] = initial(item_state)
-
 
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.
@@ -485,7 +479,13 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/proc/ready_to_shoot()
 	can_fire_next = TRUE
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0, multiply_pve_damage = 0)
+/obj/item/gun/proc/handle_muzzle_flash(mob/user)
+	if(muzzle_flash)
+		//Use a temp affect so we avoid using sleep and walking around with the light moving with us
+		var/obj/effect/temporary/S = new(get_turf(user), muzzle_flash / 3) //Dosnt stick around long but needs to be long enuff to allow for it to trigger
+		S.set_light(muzzle_flash)
+
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0)
 	if(!user || !target) return
 
 	if(!can_fire_next || currently_firing)
@@ -514,10 +514,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			handle_click_empty(user)
 			break
 
-		if(muzzle_flash)
-			//Use a temp affect so we avoid using sleep and walking around with the light moving with us
-			var/obj/effect/temporary/S = new(get_turf(user), muzzle_flash / 3) //Dosnt stick around long but needs to be long enuff to allow for it to trigger
-			S.set_light(muzzle_flash)
+		handle_muzzle_flash(user)
 
 		if(extra_proj_damagemult)
 			projectile.multiply_projectile_damage(extra_proj_damagemult)
@@ -546,9 +543,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			projectile.multiply_projectile_agony(multiply_projectile_agony)
 
 		projectile.multiply_projectile_agony(proj_agony_multiplier)
-
-		if(multiply_pve_damage)
-			projectile.multiply_pve_damage(multiply_pve_damage)
 
 		if(fire_stacks)
 			projectile.add_fire_stacks(fire_stacks)
@@ -636,20 +630,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		playsound(user, fire_sound_silenced, 15, 1, -3)
 	else
 		playsound(user, fire_sound, 60, 1)
-/*
-		if(reflex)
-			user.visible_message(
-				"<span class='reflex_shoot'><b>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""] by reflex!</b></span>",
-				"<span class='reflex_shoot'>You fire \the [src] by reflex!</span>",
-				"You hear a [fire_sound_text]!"
-			)
-		else
-			user.visible_message(
-				SPAN_WARNING("\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""]!"),
-				SPAN_WARNING("You fire \the [src]!"),
-				"You hear a [fire_sound_text]!"
-				)
-*/
 
 	kickback(user, P, 0)
 	user.handle_recoil(src)
@@ -671,33 +651,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	if(!wielded)
 		unwielded_recoil = recoil.getRating(RECOIL_ONEHAND)
-/*
-	if(unwielded_recoil)
-		switch(recoil.getRating(RECOIL_ONEHAND_LEVEL))
-			if(0.6 to 0.8)
-				if(prob(25)) // Don't need to tell them every single time
-					to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
-			if(0.8 to 1)
-				if(prob(50))
-					to_chat(user, SPAN_WARNING("Your aim wavers as you fire \the [src] with just one hand."))
-			if(1 to 1.5)
-				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target with just one hand."))
-			if(1.5 to INFINITY)
-				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target with just one hand!"))
 
-	else if(brace_recoil)
-		switch(recoil.getRating(RECOIL_BRACE_LEVEL))
-			if(0.6 to 0.8)
-				if(prob(25))
-					to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
-			if(0.8 to 1)
-				if(prob(50))
-					to_chat(user, SPAN_WARNING("Your aim wavers as you fire \the [src] while carrying it."))
-			if(1 to 1.2)
-				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target while carrying it!"))
-			if(1.2 to INFINITY)
-				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target while carrying it!"))
-*/
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil + hard_recoil) * proj_recoil)
 
 /obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
@@ -720,7 +674,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				damage_mult = 1.3
 		P.multiply_projectile_damage(damage_mult)
 
-
 //does the actual launching of the projectile
 /obj/item/gun/proc/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	if(!istype(P))
@@ -729,19 +682,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(params)
 		P.set_clickpoint(params)
 	var/offset = user.calculate_offset(init_offset)
-/*
-	var/remainder = offset % 4
-	offset /= 4
-	offset = round(offset)
-	offset = roll(offset,9) - offset * 5
-	switch(remainder)
-		if(1)
-			offset += roll(1,3) - 2
-		if(2)
-			offset += roll(1,5) - 3
-		if(3)
-			offset += roll(1,7) - 4
-*/
+
 	offset = round(offset)
 
 	offset = roll(2, offset) - (offset + 1)
